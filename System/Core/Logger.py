@@ -5,6 +5,7 @@
 import datetime
 import time
 import inspect
+import os
 import atexit
 
 '''
@@ -18,10 +19,26 @@ class SysLog():
 
     def __init__(self, NodeID:int, LogPath:str, BufferLength:int=10, ConsoleOutputEnabled:bool=True): # Initializes The Log #
 
+
         NodeID = str(NodeID)
 
         DateTimeObject = datetime.datetime.now()
         DateString = DateTimeObject.strftime('%y.%m.%d-%H-%M-%S-Node')
+
+        # Check If Logs Dir Exists #
+
+        print('Checking If Log Path Exists')
+
+        DoesLogDirExist = os.path.isdir(LogPath)
+
+        if not DoesLogDirExist:
+
+            print('Log Path Does Not Exist, Creating Directory')
+
+            os.mkdir(LogPath)
+                
+            print('Created Directory')
+        
 
         self.LogFileName = DateString + NodeID + '.log.txt'
         self.LogFileObject = open(LogPath + self.LogFileName, 'w')

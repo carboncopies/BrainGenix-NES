@@ -15,6 +15,7 @@ import time
 from Core.LoadConfig import LoadConfig
 from Core.LoadAddons import LoadAddons
 from Core.Logger import SysLog
+from Core.CheckCoreImports import CheckImport, CheckImports
 
 # Load Config #
 
@@ -40,6 +41,23 @@ def CleanLog():
     Logger.PurgeBuffer()
     Logger.CleanExit()
 
+# Check Dependencies #
+
+ModulesNeeded = [
+                'os',
+                'yaml',
+                'atexit',
+                'inspect',
+                'time',
+                'datetime',
+                'cpuinfo',
+                'platform',
+                'psutil',
+                'GPUtil',
+                'threading'
+                ]
+
+CheckImports(ModulesNeeded, Logger)
 
 # Load Addons #
 
