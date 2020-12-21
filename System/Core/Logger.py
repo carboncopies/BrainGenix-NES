@@ -11,12 +11,12 @@ import atexit
 Name: SysLog
 Description: This class handles the main log for this braingenix instance.
 Date-Created: 2020-12-19
-Date-Modified: 2020-12-20
+Date-Modified: 2020-12-21
 '''
 
 class SysLog():
 
-    def __init__(self, NodeID:int, LogPath:str, BufferLength:int=10, ConsoleOutputEnabled:bool=True): # Initalizes The Log #
+    def __init__(self, NodeID:int, LogPath:str, BufferLength:int=10, ConsoleOutputEnabled:bool=True): # Initializes The Log #
 
         NodeID = str(NodeID)
 

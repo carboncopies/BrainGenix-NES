@@ -6,7 +6,7 @@
 Name: Main Loop
 Description: This is the main file for a BrainGenix instance.
 Date-Created: 2020-12-18
-Date-Modified: 2020-12-20
+Date-Modified: 2020-12-21
 '''
 
 import atexit
@@ -23,7 +23,7 @@ ConfigPath = '../Config/Config.yaml'
 AddonsPath, LogPath = LoadConfig(ConfigPath)
 
 
-# Initalize Logger #
+# Initialize Logger #
 
 Logger = SysLog('0', LogPath) # NOTE: THE SYSLOG ID HERE NEEDS TO BE REPLACED WITH THE ZOOKEEPER ID LATER ON! (FIRST ARG)
 
@@ -43,26 +43,26 @@ def CleanLog():
 
 # Load Addons #
 
-Logger.Log('Initalizing Addon Loading Process')
+Logger.Log('Initializing Addon Loading Process')
 
 Plugins, Modules = LoadAddons(AddonsPath, Logger)
 
 Logger.Log('Addon Loading Process Complete')
 
 
-# Initalize Plugins #
+# Initialize Plugins #
 
-Logger.Log('Initalizing Plugins')
+Logger.Log('Initializing Plugins')
 
-InitalizationRegistry = {}
+InitializationRegistry = {}
 
 for PluginName, Plugin in Plugins.items():
 
-    InitalizationClassInstance = Plugin.Initalize(Logger)
+    InitializationClassInstance = Plugin.Initialize(Logger)
     
-    #atexit.register(InitalizationClassInstance.AtExit())
+    #atexit.register(InitializationClassInstance.AtExit())
 
-    InitalizationRegistry.update({PluginName : InitalizationClassInstance})
+    InitializationRegistry.update({PluginName : InitializationClassInstance})
 
 
 # Start System #

@@ -14,11 +14,11 @@ import time
 Name: SystemInfo
 Description: This plugin handles getting system usage statistics from the nodes.
 Date-Created: 2020-12-19
-Date-Modified: 2020-12-20
+Date-Modified: 2020-12-21
 '''
 
 
-class Initalize(): # This Class Gets System Information And Puts It Into The Registry For Later Gathering #
+class Initialize(): # This Class Gets System Information And Puts It Into The Registry For Later Gathering #
 
     def __init__(self, Logger:object, AutoRefreshUpdates:bool=True):
 

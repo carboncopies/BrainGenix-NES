@@ -10,7 +10,7 @@ def LoadConfig(ConfigFilePath):
     Name: LoadConfig
     Description: This function loads and parses the system config file which tells it where to look for plugins, etc.
     Date-Created: 2020-12-18
-    Date-Modified: 2020-12-20
+    Date-Modified: 2020-12-21
     '''
 
     # First Read the contents of the file and parse it #
