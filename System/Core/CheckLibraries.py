@@ -11,7 +11,7 @@ Date-Created: 2020-12-19
 Date-Modified: 2020-12-21
 '''
 
-def CheckImport(ModuleName:str, Logger:object):
+def CheckLibrary(ModuleName:str, Logger:object):
 
     Logger.Log(f'Checking Module: {ModuleName}')
 
@@ -33,6 +33,6 @@ def CheckImports(ModuleList:list, Logger:object):
 
     for Module in ModuleList:
 
-        CheckImport(Module, Logger)
+        CheckLibrary(Module, Logger)
 
     Logger.Log('Module Check Completed, No Issues Found')

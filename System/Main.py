@@ -6,16 +6,17 @@
 Name: Main Loop
 Description: This is the main file for a BrainGenix instance.
 Date-Created: 2020-12-18
-Date-Modified: 2020-12-21
+Date-Modified: 2020-12-26
 '''
 
 import atexit
 import time
 
 from Core.LoadConfig import LoadConfig
-from Core.LoadAddons import LoadAddons
+from Core.LoadAddons import LoadAddons, CheckDependencies
 from Core.Logger import SysLog
-from Core.CheckCoreImports import CheckImport, CheckImports
+from Core.CheckLibraries import CheckLibrary, CheckImports
+from Core.InitializeAddons import InitializePlugins, InitializeModules
 
 # Load Config #
 
@@ -66,21 +67,19 @@ Logger.Log('Initializing Addon Loading Process')
 Plugins, Modules = LoadAddons(AddonsPath, Logger)
 
 Logger.Log('Addon Loading Process Complete')
+Logger.Log('Checking Addon Dependencies')
+
+CheckDependencies(Plugins, Modules, Logger)
+
+Logger.Log('Completed Dependencies Check')
+
 
 
 # Initialize Plugins #
 
 Logger.Log('Initializing Plugins')
 
-InitializationRegistry = {}
-
-for PluginName, Plugin in Plugins.items():
-
-    InitializationClassInstance = Plugin.Initialize(Logger)
-    
-    #atexit.register(InitializationClassInstance.AtExit())
-
-    InitializationRegistry.update({PluginName : InitializationClassInstance})
+InitializationRegistry = InitializePlugins(Plugins, Logger)
 
 
 # Start System #

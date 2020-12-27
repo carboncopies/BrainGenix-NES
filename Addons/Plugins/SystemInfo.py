@@ -14,9 +14,17 @@ import time
 Name: SystemInfo
 Description: This plugin handles getting system usage statistics from the nodes.
 Date-Created: 2020-12-19
-Date-Modified: 2020-12-21
+Date-Modified: 2020-12-26
 '''
 
+class AddonInfo(): # All Addons contain this class, and it tells the system what dependencies this module has #
+
+    def __init__(self):
+
+        self.Version = '0.0.1'
+        self.Author = 'BrainGenix Team'
+        self.Dependencies = []
+        
 
 class Initialize(): # This Class Gets System Information And Puts It Into The Registry For Later Gathering #
 

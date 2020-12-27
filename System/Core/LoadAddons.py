@@ -5,13 +5,13 @@
 import importlib
 import os
 
-def LoadAddons(Path:str, Logger):
+def LoadAddons(Path:str, Logger:object):
 
     '''
     Name: LoadAddons
     Description: This function loads Addons from the Network Drive that it's pointed to.
     Date-Created: 2020-12-18
-    Date-Modified: 2020-12-20
+    Date-Modified: 2020-12-26
     '''
 
 
@@ -74,3 +74,184 @@ def LoadAddons(Path:str, Logger):
     # Return The Loaded Objects #
 
     return PluginObjects, ModuleObjects
+
+
+def CheckDependencies(Plugins:list, Modules:list, Logger:object):
+
+    '''
+    Name: CheckDependencies
+    Description: This function checks plugin dependencies.
+    Date-Created: 2020-12-26
+    Date-Modified: 2020-12-26
+    '''
+
+    # Get Addon Info Classes #
+
+    Logger.Log('Getting Addon Info')
+
+    PluginInfoClasses = []
+    PluginNames = []
+    ModuleInfoClasses = []
+    ModuleNames = []
+
+    for Plugin in list(Plugins.items()):
+        
+        Logger.Log(f'Getting Plugin Info For Plugin: {Plugin[0]}')
+
+        PluginNames.append(Plugin[0])
+
+        try:
+            PluginInfo = Plugin[1].AddonInfo()
+            PluginInfoClasses.append(PluginInfo)
+            #Logger.Log('Successfully Got Addon Info')
+        except AttributeError: # Catch Exception Thrown If Addon Does Not Have An AddonInfo Class #
+            Logger.Log(f'Plugin {Plugin[0]} Does Not Have An AddonInfo Class, This May Result In Undefined Behavior, And This Addon Will NOT Satisfy Others Dependencies!', 2)
+            PluginInfoClasses.append(None)
+    
+    
+    for Module in list(Modules.items()):
+
+        Logger.Log(f'Getting Plugin Info For Module: {Module[0]}')
+
+        ModuleNames.append(Module[0])
+
+        try:
+            ModuleInfo = Module[1].AddonInfo()
+            ModuleInfoClasses.append(ModuleInfo)
+            #Logger.Log('Successfully Got Addon Info')
+        except AttributeError: # Catch Exception Thrown If Addon Does Not Have An AddonInfo Class #
+            Logger.Log(f'Module {Module[0]} Does Not Have An AddonInfo Class, This May Result In Undefined Behavior, And This Addon Will NOT Satisfy Others Dependencies!', 2)
+            PluginInfoClasses.append(None)
+
+    Logger.Log('Done Getting Addon Metadata')
+
+
+    # Sort Addon Info Data #
+
+    PluginVersions = []
+    PluginAuthors = []
+    PluginDependencies = []
+    
+    ModuleVersions = []
+    ModuleAuthors = []
+    ModuleDependencies = []
+
+
+    for PluginInfoIndex in range(len(PluginInfoClasses)):
+
+        PluginInfo = PluginInfoClasses[PluginInfoIndex]
+
+        try:
+            PluginVersions.append(PluginInfo.Version)
+        except AttributeError:
+            PluginVersions.append('No Data Availiable')
+            Logger.Log(f'Plugin {list(Plugins.items())[PluginInfoIndex][0]} Is Missing "Version" Information', 2)
+
+        try:
+            PluginAuthors.append(PluginInfo.Author)
+        except AttributeError:
+            PluginAuthors.append('No Data Availiable')
+            Logger.Log(f'Plugin {list(Plugins.items())[PluginInfoIndex][0]} Is Missing "Author" Information', 2)
+        
+        try:
+            PluginDependencies.append(PluginInfo.Dependencies)
+        except AttributeError:
+            PluginDependencies.append('No Data Availiable')
+            Logger.Log(f'Plugin {list(Plugins.items())[PluginInfoIndex][0]} Is Missing "Dependencies" Information', 2)
+
+
+    for ModuleInfoIndex in range(len(ModuleInfoClasses)):
+
+        ModuleInfo = ModuleInfoClasses[ModuleInfoIndex]
+
+        try:
+            ModuleVersions.append(ModuleInfo.Version)
+        except AttributeError:
+            ModuleVersions.append('No Data Availiable')
+            Logger.Log(f'Module {list(Modules.items())[ModuleInfoIndex][0]} Is Missing "Version" Information', 2)
+
+        try:
+            ModuleAuthors.append(ModuleInfo.Author)
+        except AttributeError:
+            ModuleAuthors.append('No Data Availiable')
+            Logger.Log(f'Module {list(Modules.items())[ModuleInfoIndex][0]} Is Missing "Author" Information', 2)
+        
+        try:
+            ModuleDependencies.append(ModuleInfo.Dependencies)
+        except AttributeError:
+            ModuleDependencies.append('No Data Availiable')
+            Logger.Log(f'Module {list(Modules.items())[ModuleInfoIndex][0]} Is Missing "Dependencies" Information', 2)
+
+
+    # Check Dependencies #
+
+    for RequiredPlugins in PluginDependencies:
+
+        for Plugin in RequiredPlugins:
+
+            WantedName = Plugin[0]
+            WantedOperand = Plugin[1]
+            WantedVersion = Plugin[2]
+
+            if WantedName in PluginNames:
+
+                NameIndex = PluginNames.index(WantedName)
+                ActualVersion = PluginVersions[NameIndex]
+                ActualNumericVersion = int(ActualVersion.replace('.', ''))
+                WantedNumericVersion = int(WantedVersion.replace('.', ''))
+
+                if WantedOperand == '<':
+                    if ActualNumericVersion < WantedNumericVersion:
+                        pass # Condition Met! #
+                    else:
+                        Logger.Log(f'Version Warning on Plugin "{WantedName}", Wants {WantedOperand}{WantedVersion}, Has {ActualVersion}', 1)
+                elif WantedOperand == '=':
+                    if ActualNumericVersion == WantedNumericVersion:
+                        pass # Condition Met! #
+                    else:
+                        Logger.Log(f'Version Warning on Plugin "{WantedName}", Wants {WantedOperand}{WantedVersion}, Has {ActualVersion}', 1)
+                elif WantedOperand == '>':
+                    if ActualNumericVersion > WantedNumericVersion:
+                        pass # Condition Met! #
+                    else:
+                        Logger.Log(f'Version Warning on Plugin "{WantedName}", Wants {WantedOperand}{WantedVersion}, Has {ActualVersion}', 1)
+            
+            else:
+                Logger.Log(f'Missing Plugin "{WantedName}" at Version {WantedVersion}, Aborting startup. Please Locate and Install this Plugin.', 3)
+                exit()
+
+
+    for RequiredModules in ModuleDependencies:
+
+        for Module in RequiredModules:
+
+            WantedName = Module[0]
+            WantedOperand = Module[1]
+            WantedVersion = Module[2]
+
+            if WantedName in ModuleNames:
+
+                NameIndex = ModuleNames.index(WantedName)
+                ActualVersion = ModuleVersions[NameIndex]
+                ActualNumericVersion = int(ActualVersion.replace('.', ''))
+                WantedNumericVersion = int(WantedVersion.replace('.', ''))
+
+                if WantedOperand == '<':
+                    if ActualNumericVersion < WantedNumericVersion:
+                        pass # Condition Met! #
+                    else:
+                        Logger.Log(f'Version Warning on Module "{WantedName}", Wants {WantedOperand}{WantedVersion}, Has {ActualVersion}', 1)
+                elif WantedOperand == '=':
+                    if ActualNumericVersion == WantedNumericVersion:
+                        pass # Condition Met! #
+                    else:
+                        Logger.Log(f'Version Warning on Module "{WantedName}", Wants {WantedOperand}{WantedVersion}, Has {ActualVersion}', 1)
+                elif WantedOperand == '>':
+                    if ActualNumericVersion > WantedNumericVersion:
+                        pass # Condition Met! #
+                    else:
+                        Logger.Log(f'Version Warning on Module "{WantedName}", Wants {WantedOperand}{WantedVersion}, Has {ActualVersion}', 1)
+            
+            else:
+                Logger.Log(f'Missing Module "{WantedName}" at Version {WantedVersion}, Aborting startup. Please Locate and Install this Module.', 3)
+                exit()

@@ -43,7 +43,7 @@ class SysLog():
         self.LogFileName = DateString + NodeID + '.log.txt'
         self.LogFileObject = open(LogPath + self.LogFileName, 'w')
 
-        self.LogBuffer = '[Level] [ Module Name] [  Function] [Message]\n'
+        self.LogBuffer = '[Level] [     Module Name] [          Function] [Message]\n'
         self.BufferLength = BufferLength
         self.PrintEnabled = ConsoleOutputEnabled
 
@@ -59,7 +59,7 @@ class SysLog():
         CallingModuleName = CallStack[1][1]
         CallingFunctionName = CallStack[1][3]
 
-        LogString = f'[{Level.rjust(5, " ")}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(12, " ")}] [{CallingFunctionName.rjust(15, " ")}] {Message}\n'
+        LogString = f'[{Level.rjust(5, " ")}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(16, " ")}] [{CallingFunctionName.rjust(18, " ")}] {Message}\n'
 
         self.LogBuffer += LogString
 
