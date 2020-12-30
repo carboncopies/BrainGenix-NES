@@ -13,7 +13,6 @@ def LoadAddons(Path:str, Logger:object):
     Name: LoadAddons
     Description: This function loads Addons from the Network Drive that it's pointed to.
     Date-Created: 2020-12-18
-    Date-Modified: 2020-12-26
     '''
 
 

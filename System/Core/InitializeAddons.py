@@ -6,7 +6,6 @@
 Name: InitializeAddons
 Description: This Set of functions calls the Initialize function and gets any issues back.
 Date-Created: 2020-12-18
-Date-Modified: 2020-12-21
 '''
 
 def InitializePlugins(Plugins:list, Logger:object):

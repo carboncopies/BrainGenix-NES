@@ -12,7 +12,6 @@ import atexit
 Name: SysLog
 Description: This class handles the main log for this braingenix instance.
 Date-Created: 2020-12-19
-Date-Modified: 2020-12-21
 '''
 
 class SysLog():

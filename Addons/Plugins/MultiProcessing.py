@@ -8,7 +8,6 @@
 Name: MultiProcessing
 Description: This plugin handles multithreading needed to make brian2 use multiple cores on the same system.
 Date-Created: 2020-12-19
-Date-Modified: 2020-12-21
 '''
 
 
