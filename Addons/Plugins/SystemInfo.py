@@ -24,6 +24,7 @@ class AddonInfo(): # All Addons contain this class, and it tells the system what
         self.Version = '0.0.1'
         self.Author = 'BrainGenix Team'
         self.Dependencies = []
+        self.Imports = ['cpuinfo','platform','datetime','psutil','GPUtil','threading','time']
         
 
 class Initialize(): # This Class Gets System Information And Puts It Into The Registry For Later Gathering #

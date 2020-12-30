@@ -85,5 +85,5 @@ class SysLog():
         DateTimeObject = datetime.datetime.now()
         DateString = DateTimeObject.strftime('%y/%m/%d %H-%M-%S')
 
-        self.LogFileObject.write(f'----CleanLogExit At [{DateString}]----')
+        self.LogFileObject.write(f'----Buffer Successfully Flushed On [{DateString}]----')
         self.LogFileObject.close()

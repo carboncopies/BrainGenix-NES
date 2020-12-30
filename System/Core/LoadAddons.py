@@ -5,6 +5,8 @@
 import importlib
 import os
 
+from Core.CheckLibraries import CheckImports, CheckLibrary
+
 def LoadAddons(Path:str, Logger:object):
 
     '''
@@ -131,10 +133,12 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
     PluginVersions = []
     PluginAuthors = []
     PluginDependencies = []
+    PluginImports = []
     
     ModuleVersions = []
     ModuleAuthors = []
     ModuleDependencies = []
+    ModuleImports = []
 
 
     for PluginInfoIndex in range(len(PluginInfoClasses)):
@@ -144,20 +148,26 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
         try:
             PluginVersions.append(PluginInfo.Version)
         except AttributeError:
-            PluginVersions.append('No Data Availiable')
+            PluginVersions.append('No Data Available')
             Logger.Log(f'Plugin {list(Plugins.items())[PluginInfoIndex][0]} Is Missing "Version" Information', 2)
 
         try:
             PluginAuthors.append(PluginInfo.Author)
         except AttributeError:
-            PluginAuthors.append('No Data Availiable')
+            PluginAuthors.append('No Data Available')
             Logger.Log(f'Plugin {list(Plugins.items())[PluginInfoIndex][0]} Is Missing "Author" Information', 2)
         
         try:
             PluginDependencies.append(PluginInfo.Dependencies)
         except AttributeError:
-            PluginDependencies.append('No Data Availiable')
+            PluginDependencies.append('No Data Available')
             Logger.Log(f'Plugin {list(Plugins.items())[PluginInfoIndex][0]} Is Missing "Dependencies" Information', 2)
+
+        try:
+            PluginImports.append(PluginInfo.Imports)
+        except AttributeError:
+            PluginImports.append('No Data Available')
+            Logger.Log(f'Plugin {list(Plugins.items())[PluginInfoIndex][0]} Is Missing "Imports" Information', 2)
 
 
     for ModuleInfoIndex in range(len(ModuleInfoClasses)):
@@ -167,23 +177,29 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
         try:
             ModuleVersions.append(ModuleInfo.Version)
         except AttributeError:
-            ModuleVersions.append('No Data Availiable')
+            ModuleVersions.append('No Data Available')
             Logger.Log(f'Module {list(Modules.items())[ModuleInfoIndex][0]} Is Missing "Version" Information', 2)
 
         try:
             ModuleAuthors.append(ModuleInfo.Author)
         except AttributeError:
-            ModuleAuthors.append('No Data Availiable')
+            ModuleAuthors.append('No Data Available')
             Logger.Log(f'Module {list(Modules.items())[ModuleInfoIndex][0]} Is Missing "Author" Information', 2)
         
         try:
             ModuleDependencies.append(ModuleInfo.Dependencies)
         except AttributeError:
-            ModuleDependencies.append('No Data Availiable')
+            ModuleDependencies.append('No Data Available')
             Logger.Log(f'Module {list(Modules.items())[ModuleInfoIndex][0]} Is Missing "Dependencies" Information', 2)
 
+        try:
+            ModuleImports.append(ModuleInfo.Imports)
+        except AttributeError:
+            ModuleImports.append('No Data Available')
+            Logger.Log(f'Module {list(Module.items())[ModuleInfoIndex][0]} Is Missing "Imports" Information', 2)
 
-    # Check Dependencies #
+
+    # Check Add-On Dependencies #
 
     for RequiredPlugins in PluginDependencies:
 
@@ -255,3 +271,29 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
             else:
                 Logger.Log(f'Missing Module "{WantedName}" at Version {WantedVersion}, Aborting startup. Please Locate and Install this Module.', 3)
                 exit()
+
+
+    # Check Import Dependencies #
+
+    Logger.Log('Checking Plugin Imports')
+
+    for ImportIndex in range(len(PluginImports)):
+
+        Logger.Log(f'Checking Import(s) From Plugin {list(Plugins.items())[PluginInfoIndex][ImportIndex]}')
+
+        if PluginImports[ImportIndex] != 'No Data Available':
+            CheckImports(PluginImports[ImportIndex], Logger)
+        else:
+            Logger.Log('Plugin has no Import data, skipping.')
+
+
+    Logger.Log('Checking Module Imports')
+
+    for ImportIndex in range(len(ModuleImports)):
+
+        Logger.Log(f'Checking Import(s) From Module {list(Module.items())[ModuleInfoIndex][ImportIndex]}')
+
+        if PluginImports[ImportIndex] != 'No Data Available':
+            CheckImports(ModuleImports[ImportIndex], Logger)
+        else:
+            Logger.Log('Plugin has no Import data, skipping.')
