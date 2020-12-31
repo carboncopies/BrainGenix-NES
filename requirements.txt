@@ -1,5 +1,4 @@
 brian2
 py-cpuinfo
-platform
 psutil
 GPUtil
