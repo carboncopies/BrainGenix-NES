@@ -7,6 +7,7 @@ import time
 import inspect
 import os
 import atexit
+import gzip
 
 '''
 Name: SysLog
@@ -23,6 +24,7 @@ class SysLog():
 
         DateTimeObject = datetime.datetime.now()
         DateString = DateTimeObject.strftime('%y.%m.%d-%H-%M-%S-Node')
+
 
         # Check If Logs Dir Exists #
 
@@ -79,6 +81,7 @@ class SysLog():
             self.LogFileObject.write(self.LogBuffer)
             self.LogBuffer = ''
 
+
         # Truncate Log And Start New Log File If Log Is Over 
 
         self.CurrentLogLength += 1
@@ -86,7 +89,27 @@ class SysLog():
         if self.CurrentLogLength > self.LogSegmentLength:
 
             self.PurgeBuffer()
-            self.StartNewFile()
+            LogFileName = self.StartNewFile()
+            self.CompressFile(LogFileName)
+
+
+    def CompressFile(self, FileName):
+
+
+        # First, Read The File Into Ram, Then Remove The Original #
+
+        with open(FileName, 'rb') as FileObject:
+
+            FileText = FileObject.read()
+
+        os.remove(FileName)
+
+
+        # Write The Compressed File To The Disk #
+
+        with gzip.open(FileName + '.gz', 'wb') as FileObject:
+
+            FileObject.write(FileText)
 
 
     def StartNewFile(self):
@@ -115,6 +138,11 @@ class SysLog():
 
         self.LogBuffer = '[Level] [               Time] [     Module Name] [          Function] [Message]\n'
         self.CurrentLogLength = 1
+
+
+        # Return The Old File Name #
+
+        return NewLogName
 
 
 
