@@ -21,7 +21,7 @@ from Core.InitializeAddons import InitializePlugins, InitializeModules
 
 ConfigPath = '../Config/Config.yaml'
 
-AddonsPath, LogPath = LoadConfig(ConfigPath)
+AddonsPath, LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip = LoadConfig(ConfigPath)
 
 
 # Initialize Logger #

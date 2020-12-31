@@ -17,7 +17,7 @@ Date-Created: 2020-12-19
 
 class SysLog():
 
-    def __init__(self, NodeID:int, LogPath:str, BufferLength:int=10, LogSegmentLength:int=250, ConsoleOutputEnabled:bool=True): # Initializes The Log #
+    def __init__(self, NodeID:int, LogPath:str, BufferLength:int=10, LogSegmentLength:int=250, ConsoleOutputEnabled:bool=True, EnableGzip:bool=True): # Initializes The Log #
 
 
         NodeID = str(NodeID)
@@ -51,6 +51,7 @@ class SysLog():
         self.CurrentLogLength = 1
         self.LogPath = LogPath
         self.LogFileNumber = 0
+        self.EnableGzip = EnableGzip
 
         self.NodeID = NodeID
 
@@ -90,7 +91,9 @@ class SysLog():
 
             self.PurgeBuffer()
             LogFileName = self.StartNewFile()
-            self.CompressFile(LogFileName)
+
+            if self.EnableGzip:
+                self.CompressFile(LogFileName)
 
 
     def CompressFile(self, FileName):

@@ -23,9 +23,13 @@ def LoadConfig(ConfigFilePath):
     
     # Extract the important values from the dictionary and return them to the main system #
 
-    AddonsPath = ConfigFileDictionary.get('AddonsPath')
-    LogPath = ConfigFileDictionary.get('LogPath')
+    AddonsPath = str(ConfigFileDictionary.get('AddonsPath'))
+    LogPath = str(ConfigFileDictionary.get('LogPath'))
+    PrintLogText = bool(ConfigFileDictionary.get('PrintLogText'))
+    LogBufferLength = int(ConfigFileDictionary.get('LogBufferLength'))
+    LogFileLinesBeforeSplit = int(ConfigFileDictionary.get('LogFileLinesBeforeSplit'))
+    EnableGzip = bool(ConfigFileDictionary.get('gzipLogs'))
 
     # Return the values #
 
-    return AddonsPath, LogPath
+    return AddonsPath, LogPath, LogBufferLength, PrintLogText, LogFileLinesBeforeSplit, EnableGzip
