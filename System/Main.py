@@ -26,7 +26,7 @@ AddonsPath, LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip = Lo
 
 # Initialize Logger #
 
-Logger = SysLog('0', LogPath) # NOTE: THE SYSLOG ID HERE NEEDS TO BE REPLACED WITH THE ZOOKEEPER ID LATER ON! (FIRST ARG)
+Logger = SysLog('0', LogPath, BufferLength=BufferLength, LogSegmentLength=LinesPerFile, ConsoleOutputEnabled=PrintLogOutput, EnableGzip = EnableGzip) # NOTE: THE SYSLOG ID HERE NEEDS TO BE REPLACED WITH THE ZOOKEEPER ID LATER ON! (FIRST ARG)
 
 Logger.Log('-----------------------------------------')
 Logger.Log('-- Welcome To BrainGenix Version 0.0.1 --')
