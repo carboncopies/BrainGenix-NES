@@ -16,7 +16,7 @@ Date-Created: 2020-12-19
 
 class SysLog():
 
-    def __init__(self, NodeID:int, LogPath:str, BufferLength:int=10, ConsoleOutputEnabled:bool=True): # Initializes The Log #
+    def __init__(self, NodeID:int, LogPath:str, BufferLength:int=10, LogSegmentLength:int=250, ConsoleOutputEnabled:bool=True): # Initializes The Log #
 
 
         NodeID = str(NodeID)
@@ -39,12 +39,18 @@ class SysLog():
             print('Created Directory')
         
 
-        self.LogFileName = DateString + NodeID + '.log.txt'
+        self.LogFileName = 'Current-Node' + NodeID + '.log.txt'
         self.LogFileObject = open(LogPath + self.LogFileName, 'w')
 
         self.LogBuffer = '[Level] [               Time] [     Module Name] [          Function] [Message]\n'
         self.BufferLength = BufferLength
         self.PrintEnabled = ConsoleOutputEnabled
+        self.LogSegmentLength = LogSegmentLength
+        self.CurrentLogLength = 1
+        self.LogPath = LogPath
+        self.LogFileNumber = 0
+
+        self.NodeID = NodeID
 
         print(self.LogBuffer[:-1])
 
@@ -72,6 +78,44 @@ class SysLog():
 
             self.LogFileObject.write(self.LogBuffer)
             self.LogBuffer = ''
+
+        # Truncate Log And Start New Log File If Log Is Over 
+
+        self.CurrentLogLength += 1
+
+        if self.CurrentLogLength > self.LogSegmentLength:
+
+            self.PurgeBuffer()
+            self.StartNewFile()
+
+
+    def StartNewFile(self):
+
+
+        # Close Current File, and Move To New FileName #
+
+        self.LogFileObject.close()
+
+        NodeID = self.NodeID
+
+        DateTimeObject = datetime.datetime.now()
+        DateString = DateTimeObject.strftime('%y.%m.%d-%H-%M-%S-Node')
+
+        NewLogName = f'{self.LogPath}LogSegment{self.LogFileNumber}_{DateString}{NodeID}.log.txt'
+        self.LogFileNumber += 1
+
+
+        os.rename(f'{self.LogPath}Current-Node{NodeID}.log.txt', NewLogName)
+
+
+        # Start New LogFile #
+        
+        self.LogFileName = 'Current-Node' + NodeID + '.log.txt'
+        self.LogFileObject = open(self.LogPath + self.LogFileName, 'w')
+
+        self.LogBuffer = '[Level] [               Time] [     Module Name] [          Function] [Message]\n'
+        self.CurrentLogLength = 1
+
 
 
     def PurgeBuffer(self): # Writes The Contents Of The Buffer To Disk #
