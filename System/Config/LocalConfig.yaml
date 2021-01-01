@@ -1,0 +1,8 @@
+{
+AddonsPath: ../Addons/,
+LogPath: ../Logs/,
+PrintLogText: True,
+LogBufferLength: 10,
+LogFileLinesBeforeSplit: 250,
+gzipLogs: True
+}

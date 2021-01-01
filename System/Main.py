@@ -19,7 +19,7 @@ from Core.InitializeAddons import InitializePlugins, InitializeModules
 
 # Load Config #
 
-ConfigPath = '../Config/Config.yaml'
+ConfigPath = 'Config/LocalConfig.yaml'
 
 AddonsPath, LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip = LoadConfig(ConfigPath)
 
