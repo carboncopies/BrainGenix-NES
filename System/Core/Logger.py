@@ -22,9 +22,6 @@ class SysLog():
 
         NodeID = str(NodeID)
 
-        DateTimeObject = datetime.datetime.now()
-        DateString = DateTimeObject.strftime('%y.%m.%d-%H-%M-%S-Node')
-
 
         # Check If Logs Dir Exists #
 
@@ -41,7 +38,12 @@ class SysLog():
             print('Created Directory')
         
 
-        self.LogFileName = 'Current-Node' + NodeID + '.log.txt'
+        # Initialize Local Variables #
+
+        self.TryMakeDir(LogPath + 'Current')
+        self.TryMakeDir(LogPath + f'Current/Node-{NodeID}')
+
+        self.LogFileName = f'Current/Node-{NodeID}/Current' + '.log.txt'
         self.LogFileObject = open(LogPath + self.LogFileName, 'w')
 
         self.LogBuffer = '[Level] [               Time] [     Module Name] [          Function] [Message]\n'
@@ -55,11 +57,17 @@ class SysLog():
 
         self.NodeID = NodeID
 
+        self.StartTime = str(datetime.datetime.now()).replace(' ', '_')
+
+
+
         print(self.LogBuffer[:-1])
 
 
     def Log(self, Message:str, Level:int=0): # Handles The Log Of An Item #
 
+
+        # Update Log Buffer #
 
         Level = str(Level)
 
@@ -67,7 +75,7 @@ class SysLog():
         CallingModuleName = CallStack[1][1]
         CallingFunctionName = CallStack[1][3]
 
-        LogTime = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        LogTime = datetime.datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
 
         LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(16, " ")}] [{CallingFunctionName.rjust(18, " ")}] {Message}\n'
 
@@ -125,18 +133,18 @@ class SysLog():
         NodeID = self.NodeID
 
         DateTimeObject = datetime.datetime.now()
-        DateString = DateTimeObject.strftime('%y.%m.%d-%H-%M-%S-Node')
+        DateString = DateTimeObject.strftime('%y-%m-%d_%H-%M-%S')
 
-        NewLogName = f'{self.LogPath}LogSegment{self.LogFileNumber}_{DateString}{NodeID}.log.txt'
+        NewLogName = f'{self.LogPath}Current/Node-{NodeID}/LogSegment{self.LogFileNumber}_{DateString}.log.txt'
         self.LogFileNumber += 1
 
 
-        os.rename(f'{self.LogPath}Current-Node{NodeID}.log.txt', NewLogName)
+        os.rename(f'{self.LogPath}Current/Node-{NodeID}/Current.log.txt', NewLogName)
 
 
         # Start New LogFile #
         
-        self.LogFileName = 'Current-Node' + NodeID + '.log.txt'
+        self.LogFileName = f'Current/Node-{NodeID}/Current' + '.log.txt'
         self.LogFileObject = open(self.LogPath + self.LogFileName, 'w')
 
         self.LogBuffer = '[Level] [               Time] [     Module Name] [          Function] [Message]\n'
@@ -147,6 +155,13 @@ class SysLog():
 
         return NewLogName
 
+
+    def TryMakeDir(self, path): # Makes a Dir, catches exception if already exists #
+
+        try:
+            os.mkdir(path)
+        except:
+            pass
 
 
     def PurgeBuffer(self): # Writes The Contents Of The Buffer To Disk #
@@ -159,7 +174,9 @@ class SysLog():
 
 
         DateTimeObject = datetime.datetime.now()
-        DateString = DateTimeObject.strftime('%y/%m/%d %H-%M-%S')
+        DateString = DateTimeObject.strftime('%y-%m-%d_%H-%M-%S')
 
         self.LogFileObject.write(f'----Buffer Successfully Flushed On [{DateString}]----')
         self.LogFileObject.close()
+
+        os.rename(f'{self.LogPath}/Current', f'{self.LogPath}/{self.StartTime}')
