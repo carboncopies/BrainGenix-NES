@@ -179,4 +179,8 @@ class SysLog():
         self.LogFileObject.write(f'----Buffer Successfully Flushed On [{DateString}]----')
         self.LogFileObject.close()
 
-        os.rename(f'{self.LogPath}/Current', f'{self.LogPath}/{self.StartTime}')
+
+        try:
+            os.rename(f'{self.LogPath}/Current', f'{self.LogPath}/{self.StartTime}')
+        except: # Catch Exception if other node(s) has open files, this will fail #
+            pass
