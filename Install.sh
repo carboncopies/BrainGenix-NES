@@ -30,13 +30,6 @@ sudo apt install default-jdk -y
 
 # Install ZooKeeper #
 
-#sudo apt install zookeeper -y
-
-
-
-
-# Create Users For ZK #
-
 sudo useradd zookeeper -m
 sudo usermod --shell /bin/bash zookeeper
 sudo usermod -p 123456 zookeeper ##<---- Change This Password! ##
@@ -52,3 +45,7 @@ sudo tar -xvzf apache-zookeeper-3.6.2-bin.tar.gz
 sudo mv apache-zookeeper-3.6.2-bin zookeeper
 
 sudo chown -R zookeeper:zookeeper /opt/zookeeper
+
+
+cd /opt/zookeeper
+bin/zkServer.sh start
