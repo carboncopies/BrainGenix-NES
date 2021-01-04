@@ -16,10 +16,10 @@ def InitializePlugins(Plugins:list, Logger:object):
 
         Logger.Log(f'Initializing Plugin: {PluginName}')
 
-        try:
+        if hasattr(Plugin, 'Main'):
             ClassInstance = Plugin.Main(Logger=Logger)
             Registry.update({PluginName : ClassInstance})
-        except AttributeError: # Catch Exception from a plugin not using the init function #
+        else:
             Logger.Log(f'Plugin {PluginName} Does Not Have A Main Class')
         
 
@@ -34,10 +34,10 @@ def InitializeModules(Modules:list, Logger:object):
 
         Logger.Log(f'Initializing Module: {ModuleName}')
 
-        try:
+        if hasattr(Module, 'Main'):
             ClassInstance = Module.Initialize(Logger=Logger)
             Registry.update({ModuleName : IClassInstance})
-        except AttributeError: # Catch Exception from a Module not using the init function #
+        else:
             Logger.Log(f'Module {ModuleName} Does Not Have A Main Class')
         
 
