@@ -65,9 +65,9 @@ class Main(): # Main Class #
         if Logger != None:
             Logger.Log('Ensuring zNode Paths In Zookeeper')
 
-        self.ZooKeeperConnection.ensure_path('/BrainGenix/Interconnects', ephemeral=False)
-        self.ZooKeeperConnection.ensure_path('/BrainGenix/Logs', ephemeral=False)
-        self.ZooKeeperConnection.ensure_path('/BrainGenix/Config', ephemeral=False)
+        self.ZooKeeperConnection.ensure_path('/BrainGenix/Interconnects')
+        self.ZooKeeperConnection.ensure_path('/BrainGenix/Logs')
+        self.ZooKeeperConnection.ensure_path('/BrainGenix/Config')
 
         if Logger != None:
             Logger.Log('Completed zNode Path Check')
