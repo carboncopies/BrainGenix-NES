@@ -28,7 +28,11 @@ class AddonInfo(): # All Addons contain this class, and it tells the system what
 
 class Initialize(): # This Class Gets System Information And Puts It Into The Registry For Later Gathering #
 
-    def __init__(self, Logger:object, AutoRefreshUpdates:bool=True):
+    def __init__(self, AutoRefreshUpdates:bool=True, **kwargs):
+
+        # Extract Logger From kwargs #
+
+        Logger = kwargs['Logger']
 
         
         # Log Starting Message #

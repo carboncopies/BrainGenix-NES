@@ -17,7 +17,7 @@ def InitializePlugins(Plugins:list, Logger:object):
         Logger.Log(f'Initializing Plugin: {PluginName}')
 
         try:
-            InitializationClassInstance = Plugin.Initialize(Logger)
+            InitializationClassInstance = Plugin.Initialize(Logger=Logger)
             InitializationRegistry.update({PluginName : InitializationClassInstance})
         except AttributeError: # Catch Exception from a plugin not using the init function #
             Logger.Log(f'Plugin {PluginName} Does Not Have An Initialization Class')
@@ -35,7 +35,7 @@ def InitializeModules(Modules:list, Logger:object):
         Logger.Log(f'Initializing Module: {ModuleName}')
 
         try:
-            InitializationClassInstance = Module.Initialize(Logger)
+            InitializationClassInstance = Module.Initialize(Logger=Logger)
             InitializationRegistry.update({ModuleName : InitializationClassInstance})
         except AttributeError: # Catch Exception from a Module not using the init function #
             Logger.Log(f'Module {ModuleName} Does Not Have An Initialization Class')
