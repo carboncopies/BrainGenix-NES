@@ -75,7 +75,7 @@ class SysLog():
         CallingModuleName = CallStack[1][1]
         CallingFunctionName = CallStack[1][3]
 
-        LogTime = datetime.datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
+        LogTime = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 
         LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(16, " ")}] [{CallingFunctionName.rjust(18, " ")}] {Message}\n'
 
@@ -133,7 +133,7 @@ class SysLog():
         NodeID = self.NodeID
 
         DateTimeObject = datetime.datetime.now()
-        DateString = DateTimeObject.strftime('%y-%m-%d_%H-%M-%S')
+        DateString = DateTimeObject.strftime('%Y-%m-%d_%H-%M-%S')
 
         NewLogName = f'{self.LogPath}Current/Node-{NodeID}/LogSegment{self.LogFileNumber}_{DateString}.log.txt'
         self.LogFileNumber += 1
@@ -174,7 +174,7 @@ class SysLog():
 
 
         DateTimeObject = datetime.datetime.now()
-        DateString = DateTimeObject.strftime('%y-%m-%d_%H-%M-%S')
+        DateString = DateTimeObject.strftime('%Y-%m-%d_%H-%M-%S')
 
         self.LogFileObject.write(f'----Buffer Successfully Flushed On [{DateString}]----')
         self.LogFileObject.close()
