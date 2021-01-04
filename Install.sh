@@ -47,5 +47,13 @@ sudo mv apache-zookeeper-3.6.2-bin zookeeper
 sudo chown -R zookeeper:zookeeper /opt/zookeeper
 
 
+cat > /opt/zookeeper/conf/zoo.cfg <<EOF
+tickTime=2500
+dataDir=/zookeeper
+clientPort=2181
+maxClientCnxns=80
+EOF
+
+
 cd /opt/zookeeper
 bin/zkServer.sh start
