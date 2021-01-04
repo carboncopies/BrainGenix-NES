@@ -2,3 +2,4 @@ brian2
 py-cpuinfo
 psutil
 GPUtil
+kazoo
