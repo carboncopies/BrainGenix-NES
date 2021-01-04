@@ -19,9 +19,10 @@ class AddonInfo(): # All Addons contain this class, and it tells the system what
         self.Author = 'BrainGenix Team'
         self.Dependencies = []
 
-class Initialize(): # Initalization Class #
+class Main(): # Main Class #
 
     def __init__(self, **kwargs):
 
         pass
+
 

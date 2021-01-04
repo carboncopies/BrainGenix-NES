@@ -26,7 +26,7 @@ class AddonInfo(): # All Addons contain this class, and it tells the system what
         self.Imports = ['cpuinfo','platform','datetime','psutil','GPUtil','threading','time']
         
 
-class Initialize(): # This Class Gets System Information And Puts It Into The Registry For Later Gathering #
+class Main(): # This Class Gets System Information And Puts It Into The Registry For Later Gathering #
 
     def __init__(self, AutoRefreshUpdates:bool=True, **kwargs):
 

@@ -278,7 +278,7 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
 
     for ImportIndex in range(len(PluginImports)):
 
-        Logger.Log(f'Checking Import(s) From Plugin {list(Plugins.items())[PluginInfoIndex][ImportIndex]}')
+        Logger.Log(f'Checking Import(s) From Plugin {list(Plugins.items())[ImportIndex][1]}')
 
         if PluginImports[ImportIndex] != 'No Data Available':
             CheckImports(PluginImports[ImportIndex], Logger)
@@ -290,7 +290,7 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
 
     for ImportIndex in range(len(ModuleImports)):
 
-        Logger.Log(f'Checking Import(s) From Module {list(Module.items())[ModuleInfoIndex][ImportIndex]}')
+        Logger.Log(f'Checking Import(s) From Module {list(Module.items())[ImportIndex][1]}')
 
         if PluginImports[ImportIndex] != 'No Data Available':
             CheckImports(ModuleImports[ImportIndex], Logger)

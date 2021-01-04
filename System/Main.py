@@ -78,7 +78,7 @@ Logger.Log('Completed Dependencies Check')
 
 Logger.Log('Initializing Plugins')
 
-InitializationRegistry = InitializePlugins(Plugins, Logger)
+Registry = InitializePlugins(Plugins, Logger)
 
 
 # Start System #
