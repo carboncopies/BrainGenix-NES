@@ -5,12 +5,12 @@
 
 # First, Make Sure Python Is Installed #
 
-sudo apt install Python3 -y0
+sudo apt install python3 -y0
 
 
 # Next, Check That Pip3 Is Installed #
 
-sudo apt install Python3-pip -y
+sudo apt install python3-pip -y
 
 
 # Install Python Packages #
@@ -20,7 +20,7 @@ pip3 install -r requirements.txt
 
 # Install MySQL #
 
-sudo apt install MySQL -y
+sudo apt install mysql-server -y
 
 
 # Install Java For ZK #
