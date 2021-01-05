@@ -80,6 +80,8 @@ class Main(): # Main Class #
         self.ZookeeperConnection.ensure_path('/BrainGenix/Logs')
         self.ZookeeperConnection.ensure_path('/BrainGenix/Config')
         self.ZookeeperConnection.ensure_path('/BrainGenix/Nodes')
+        self.ZookeeperConnection.ensure_path('/BrainGenix/SystemInfo/Dynamic')
+        self.ZookeeperConnection.ensure_path('/BrainGenix/SystemInfo/Static')             
         
 
         if Logger != None:
@@ -116,42 +118,42 @@ class Main(): # Main Class #
     ########################################################################################
 
 
-    def Create(self, zNodePath:str, zNodeData:bytes=b'', ephemeral:bool=False):
+    # def Create(self, zNodePath:str, zNodeData:bytes=b'', ephemeral:bool=False):
 
-        self.ZookeeperConnection.create(zNodePath, value=zNodeData, ephemeral=ephemeral)
+    #     self.ZookeeperConnection.create(zNodePath, value=zNodeData, ephemeral=ephemeral)
     
-    def CreateAsync(self, zNodePath:str, ephemeral:bool=False):
+    # def CreateAsync(self, zNodePath:str, ephemeral:bool=False):
 
-        self.ZookeeperConnection.create_async(zNodePath, ephemeral=ephemeral)
+    #     self.ZookeeperConnection.create_async(zNodePath, ephemeral=ephemeral)
 
-    def EnsureExists(self, zNodePath:str):
+    # def EnsureExists(self, zNodePath:str):
 
-        self.ZookeeperConnection.ensure_path(zNodePath)
+    #     self.ZookeeperConnection.ensure_path(zNodePath)
 
-    def Get(self, zNodePath:str):
+    # def Get(self, zNodePath:str):
 
-        return self.ZookeeperConnection.get(zNodePath)
+    #     return self.ZookeeperConnection.get(zNodePath)
 
-    def GetChildren(self, zNodePath:str):
+    # def GetChildren(self, zNodePath:str):
 
-        return self.ZookeeperConnection.get_children(zNodePath)
+    #     return self.ZookeeperConnection.get_children(zNodePath)
 
-    def Exists(self, zNodePath:str):
+    # def Exists(self, zNodePath:str):
 
-        return self.ZookeeperConnection.exists(zNodePath)
+    #     return self.ZookeeperConnection.exists(zNodePath)
 
-    def Set(self, zNodePath:str, zNodeData:bytes=b''):
+    # def Set(self, zNodePath:str, zNodeData:bytes=b''):
 
-        self.ZookeeperConnection.set(zNodePath, value=zNodeData)
+    #     self.ZookeeperConnection.set(zNodePath, value=zNodeData)
 
-    def SetAsync(self, zNodePath:str, zNodeData:bytes=b''):
+    # def SetAsync(self, zNodePath:str, zNodeData:bytes=b''):
 
-        self.ZookeeperConnection.set_async(zNodePath, value=zNodeData)
+    #     self.ZookeeperConnection.set_async(zNodePath, value=zNodeData)
 
-    def Delete(self, zNodePath:str, recursive:bool=False):
+    # def Delete(self, zNodePath:str, recursive:bool=False):
 
-        self.ZookeeperConnection.delete(zNodePath, recursive=recursive)
+    #     self.ZookeeperConnection.delete(zNodePath, recursive=recursive)
         
-    def DeleteAsync(self, zNodePath:str, recursive:bool=False):
+    # def DeleteAsync(self, zNodePath:str, recursive:bool=False):
 
-        self.ZookeeperConnection.delete_async(zNodePath, recursive=recursive)
+    #     self.ZookeeperConnection.delete_async(zNodePath, recursive=recursive)
