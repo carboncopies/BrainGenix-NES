@@ -18,7 +18,7 @@ def LoadConfig(ConfigFilePath):
     with open(ConfigFilePath, 'r') as File:
         ConfigFileContents = File.read()
 
-    ConfigFileDictionary = yaml.load(ConfigFileContents)
+    ConfigFileDictionary = yaml.load(ConfigFileContents, Loader=yaml.FullLoader)
 
     
     # Extract the important values from the dictionary and return them to the main system #
