@@ -2,8 +2,10 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
-from kazoo.client import KazooClient
 import time
+import uuid
+
+from kazoo.client import KazooClient
 
 '''
 Name: ZooKeeper Interface
@@ -38,6 +40,8 @@ class Main(): # Main Class #
 
         self.InitializeZNodes(Logger)
 
+        self.ElectLeader(Logger)
+
 
     def ConnectToZookeeper(self, Logger:object=None): # Creates Connection With ZK #
 
@@ -49,8 +53,8 @@ class Main(): # Main Class #
         if Logger != None:
             Logger.Log(f'Connecting To Zookeeper Server At Address: {ZKHosts}')
 
-        self.ZooKeeperConnection = KazooClient(hosts=ZKHosts)
-        self.ZooKeeperConnection.start()
+        self.ZookeeperConnection = KazooClient(hosts=ZKHosts)
+        self.ZookeeperConnection.start()
 
         if Logger != None:
             Logger.Log('Established Connection To Zookeeper')
@@ -65,9 +69,30 @@ class Main(): # Main Class #
         if Logger != None:
             Logger.Log('Ensuring zNode Paths In Zookeeper')
 
-        self.ZooKeeperConnection.ensure_path('/BrainGenix/Interconnects')
-        self.ZooKeeperConnection.ensure_path('/BrainGenix/Logs')
-        self.ZooKeeperConnection.ensure_path('/BrainGenix/Config')
+        self.ZookeeperConnection.ensure_path('/BrainGenix/Interconnects')
+        self.ZookeeperConnection.ensure_path('/BrainGenix/Logs')
+        self.ZookeeperConnection.ensure_path('/BrainGenix/Config')
+        self.ZookeeperConnection.ensure_path('/BrainGenix/Nodes')
+        
 
         if Logger != None:
             Logger.Log('Completed zNode Path Check')
+
+
+    def ElectLeader(self, Logger:object=None): # Elects A Leader From The Pool #
+
+
+        # Create Zookeeper Election Object #
+
+        if Logger != None:
+            Logger.Log('Electing Leader From Zookeeper Ensemble')
+
+        UUIDString = str(uuid.uuid1())
+
+        ZookeeperElection = self.ZookeeperConnection.Election("/BrainGenix/Nodes", UUIDString)
+
+        ZookeeperElection.run(self.leaderf)
+
+    def leaderf(self):
+
+        print('---ELECTED LEADER!!!---')

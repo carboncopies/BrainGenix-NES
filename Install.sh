@@ -85,6 +85,7 @@ WantedBy=default.target
 
 EOF
 
+
 sudo systemctl daemon-reload
 
 sudo chown -R zookeeper:zookeeper /opt/zookeeper
