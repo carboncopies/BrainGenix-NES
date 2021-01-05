@@ -15,7 +15,7 @@ from Core.LoadConfig import LoadConfig
 from Core.LoadAddons import LoadAddons, CheckDependencies
 from Core.Logger import SysLog
 from Core.CheckLibraries import CheckLibrary, CheckImports
-from Core.InitializeAddons import InitializePlugins, InitializeModules
+from Core.InitializeAddons import InitializePlugins, InitializeModules, InitializePluginRegistry
 
 # Load Config #
 
@@ -79,6 +79,7 @@ Logger.Log('Completed Dependencies Check')
 Logger.Log('Initializing Plugins')
 
 Registry = InitializePlugins(Plugins, Logger)
+InitializePluginRegistry(Registry, Logger)
 
 
 # Start System #
