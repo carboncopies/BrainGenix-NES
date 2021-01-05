@@ -40,6 +40,11 @@ class Main(): # This Class Gets System Information And Puts It Into The Registry
         Logger.Log('Collecting System Information')
 
 
+        # Make Local Pointer To Logger #
+
+        self.Logger = Logger
+
+
         # Get Static System Info #
 
         self.GetStaticStats()
@@ -70,11 +75,22 @@ class Main(): # This Class Gets System Information And Puts It Into The Registry
 
         #    self.UpdateThread = None
 
+        # Define Registry #
+
+        self.Registry = None
+
 
         # Call Log Output #
 
         self.LogSystemInfo(Logger)
 
+
+    def GetPluginRegistry(self, Registry:dict): # Gets The Registry From The Main Process #
+
+        self.Registry = Registry
+
+        self.Logger.Log('Successfully Acquired Registry')
+        
 
     #def AtExit(self):
 
