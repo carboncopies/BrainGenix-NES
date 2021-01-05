@@ -157,3 +157,9 @@ class Main(): # Main Class #
     # def DeleteAsync(self, zNodePath:str, recursive:bool=False):
 
     #     self.ZookeeperConnection.delete_async(zNodePath, recursive=recursive)
+
+    def TryCreate(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
+
+        if not self.ZookeeperConnection.exists(zNodePath):
+
+            self.ZookeeperConnection.create(zNodePath, ephemeral=ephemeral, value=zNodeData)
