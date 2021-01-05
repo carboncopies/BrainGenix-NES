@@ -26,7 +26,7 @@ class AddonInfo(): # All Addons contain this class, and it tells the system what
         self.Imports = ['cpuinfo','platform','datetime','psutil','GPUtil','threading','time']
         
 
-class Main(): # This Class Gets System Information And Puts It Into The Registry For Later Gathering #
+class FollowerMain(): # This Class Gets System Information And Puts It Into The Registry For Later Gathering #
 
     def __init__(self, AutoRefreshUpdates:bool=True, **kwargs):
 
@@ -96,23 +96,13 @@ class Main(): # This Class Gets System Information And Puts It Into The Registry
 
 
         # Extract ZK Plugin From Registry
-        
+
         self.ZK = self.Registry.get('Zookeeper')
 
 
         # Write Data To ZK #
 
         self.SendStaticStats()
-
-    #def AtExit(self):
-
-        # Shuts Down The System Greacefully #
-
-        #if self.UpdateThread is not None:
-
-        #    self.UpdateThread.join()
-
-        #del self.UpdateThread
 
 
     def AutoRefresh(self, RefreshInterval:float=1):
@@ -616,3 +606,152 @@ class Main(): # This Class Gets System Information And Puts It Into The Registry
         self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/GPUUsage', zNodeData=GPUUsageSerialized, ephemeral=True)
         self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/GPUMem', zNodeData=GPUMemSerialized, ephemeral=True)
         self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/GPUTemps', zNodeData=GPUTempsSerialized, ephemeral=True)
+
+
+class LeaderMain(): # This Class Is Run By The Leader #
+
+    def __init__(self, **kwargs):
+
+        # Extract Logger From kwargs #
+
+        Logger = kwargs['Logger']
+
+        
+        # Log Starting Message #
+
+        Logger.Log('Collecting System Information')
+
+
+        # Make Local Pointer To Logger #
+
+        self.Logger = Logger
+
+    
+        # Define Registry #
+
+        self.FollowerRegistry = None
+        self.LeaderRegistry = None
+
+        self.DynamicInfo = []
+        self.StaticInfo = []
+
+
+        # Start The AutoUpdate Thread #
+
+        Logger.Log('Automatic Leader ZK Refresh Enabled, Starting Thread')
+        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(1,))
+        self.UpdateThread.start()
+        Logger.Log('Leader Thread Started, Dynamic Usage Stats Will Be Refreshed Automatically')
+
+
+    def AutoRefresh(self, RefreshInterval:float=1):
+
+        # Start Inf Loop #
+
+        while True:
+
+
+            # Get Start Time #
+
+            StartTime = time.time()
+
+
+            # Get Stats #
+            if self.LeaderRegistry != None:
+                self.PullDynamicDataFromZK()
+
+
+
+            # Delay For Requested Refresh Interval #
+
+            EndTime = time.time()
+            ExecutionTime = StartTime - EndTime
+            DelayTime = RefreshInterval - ExecutionTime
+
+            try:
+                time.sleep(DelayTime)
+            except ValueError: # Catch Exception if the execution time for finding stats takes longer than the refresh interval, resulting in negative delay #
+                pass
+
+
+
+
+    def GetPluginRegistry(self, FollowerRegistry:dict, LeaderRegistry:dict): # Gets The Registry From The Main Process #
+
+
+        # Get Registries From Leader And Follower #
+
+        self.FollowerRegistry = FollowerRegistry
+        self.LeaderRegistry = LeaderRegistry
+
+        self.Logger.Log('Successfully Acquired Registry')
+
+
+        # Extract ZK Plugin From Registry
+
+        self.ZK = self.FollowerRegistry.get('Zookeeper')
+
+
+        # Extract Static Data #
+
+        self.PullStaticDataFromZK()
+
+
+    def PullStaticDataFromZK(self): # Pulls Static ZK Data From Zookeeper # 
+
+        self.StaticInfo = []
+
+
+        # Get zNodes In Static Info Section #
+
+        StaticNodeChildren = self.ZK.ZookeeperConnection.get_children('/BrainGenix/SystemInfo/Static/')
+
+        
+        # Pull Data From zNodes #
+
+        for NodeName in StaticNodeChildren:
+            NodeStaticInfoList = self.ZK.ZookeeperConnection.get_children(f'/BrainGenix/SystemInfo/Static/{NodeName}')
+            
+            TempNodeDataDict = {}
+            for Attribute in NodeStaticInfoList:
+                NodeDataBytes = self.ZK.ZookeeperConnection.get(f'/BrainGenix/SystemInfo/Static/{NodeName}/{Attribute}')
+                TempNodeDataDict.update({Attribute : NodeDataBytes})
+
+            self.StaticInfo.append(TempNodeDataDict)
+
+
+    def PullDynamicDataFromZK(self): # Pulls Dynamic ZK Data From Zookeeper # 
+
+        DynamicCopy = self.DynamicInfo.copy()
+        self.DynamicInfo = []
+
+
+        # Get zNodes In Dynamic Info Section #
+
+        DynamicNodeChildren = self.ZK.ZookeeperConnection.get_children('/BrainGenix/SystemInfo/Dynamic/')
+
+        
+        # Pull Data From zNodes #
+
+        for NodeName in DynamicNodeChildren:
+            NodeDynamicInfoList = self.ZK.ZookeeperConnection.get_children(f'/BrainGenix/SystemInfo/Dynamic/{NodeName}')
+            
+            TempNodeDataDict = {}
+            for Attribute in NodeDynamicInfoList:
+                NodeDataBytes = self.ZK.ZookeeperConnection.get(f'/BrainGenix/SystemInfo/Dynamic/{NodeName}/{Attribute}')
+                TempNodeDataDict.update({Attribute : NodeDataBytes})
+
+            self.DynamicInfo.append(TempNodeDataDict)
+
+
+        # If The Dynamic Info Is Cleared #
+
+        if self.DynamicInfo == [{}]:
+            self.DynamicInfo = DynamicCopy
+
+
+    def DecodestaticInfo(self): # Decodes Static Stats From Extracted ZK Data #
+
+        pass
+
+        
