@@ -44,7 +44,7 @@ def InitializeModules(Modules:list, Logger:object):
     return Registry
 
 
-def InitializePluginRegistry(Registry:dict, Logger:object): # Passes The Registry To All The Plugins #
+def InitPluginRegistry(Registry:dict, Logger:object): # Passes The Registry To All The Plugins #
 
 
     # Convert Dict Into List #
@@ -70,3 +70,29 @@ def InitializePluginRegistry(Registry:dict, Logger:object): # Passes The Registr
 
     Logger.Log('Finished Initializing Plugin Registry')
         
+
+def InitModuleRegistry(Registry:dict, Logger:object): # Passes The Registry To All The Modules #
+
+
+    # Convert Dict Into List #
+
+    Logger.Log('Passing Registry To Modules')
+
+    ModuleList = list(Registry.items())
+
+    Logger.Log(f'Found {len(ModuleList)} Modules In Registry')
+
+
+    # Pass Registry #
+
+    for Module in ModuleList:
+
+        Logger.Log(f'Sending Registry To Module {Module[0]}')
+
+
+        if hasattr(Module[1], 'GetModuleRegistry'):
+            Module[1].GetModuleRegistry(Registry)
+        else:
+            Logger.Log(f'Module {Module[0]} Has No Attribute GetModuleRegistry', 1)
+
+    Logger.Log('Finished Initializing Module Registry')
