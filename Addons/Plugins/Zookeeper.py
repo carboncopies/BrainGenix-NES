@@ -23,7 +23,7 @@ class AddonInfo(): # All Addons contain this class, and it tells the system what
         self.Dependencies = []
         self.Imports = ['kazoo', 'uuid', 'time']
 
-class Main(): # Main Class #
+class FollowerMain(): # Main Class #
 
     def __init__(self, **kwargs):
 
