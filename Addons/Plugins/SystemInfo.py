@@ -132,11 +132,17 @@ class Main(): # This Class Gets System Information And Puts It Into The Registry
             self.GetDynamicStats()
 
 
+            # Update Zookeeper #
+            if self.Registry != None: # Wait Until The Registry Is Populated #
+                self.SendDynamicStats()
+
+
             # Delay For Requested Refresh Interval #
 
             EndTime = time.time()
             ExecutionTime = StartTime - EndTime
             DelayTime = RefreshInterval - ExecutionTime
+
 
             try:
                 time.sleep(DelayTime)
@@ -269,6 +275,7 @@ class Main(): # This Class Gets System Information And Puts It Into The Registry
             CPUUsage.append(Percent)
 
         self.CPUUsage = CPUUsage
+
 
         # Get Memory Info #
 
@@ -549,3 +556,63 @@ class Main(): # This Class Gets System Information And Puts It Into The Registry
         self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/GPUNames', zNodeData=GPUNamesSerialized, ephemeral=True)
         self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/GPUTotalMemory', zNodeData=GPUTotalMemorySerialized, ephemeral=True)
 
+
+    def SendDynamicStats(self): # Push Dynamic Statistics To Zookeeper #
+
+
+        # Create Current zNode #
+
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}', ephemeral=False)
+
+
+        # Write zNodes For CPU Info #
+
+        CPUUsageSerialized = b''
+
+        for Item in self.CPUUsage:
+            CPUUsageSerialized += str(Item).encode() + b'&'
+        CPUUsageSerialized = CPUUsageSerialized[:-1]
+
+        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/CPUFrequency', zNodeData=str(self.CPUFrequency).encode(), ephemeral=True)
+        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/CPUUsage', zNodeData=CPUUsageSerialized, ephemeral=True)
+
+
+        # Write zNodes For Memory Info #
+
+        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/RAMUsage', zNodeData=str(self.RAMUsage).encode(), ephemeral=True)
+        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/RAMFree', zNodeData=str(self.RAMFree).encode(), ephemeral=True)
+        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/RAMPercent', zNodeData=str(self.RAMPercent).encode(), ephemeral=True)
+
+        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/SwapUsage', zNodeData=str(self.SWAPUsage).encode(), ephemeral=True)
+        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/SwapFree', zNodeData=str(self.SWAPFree).encode(), ephemeral=True)
+        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/Swapercent', zNodeData=str(self.SWAPPercent).encode(), ephemeral=True)
+
+        
+        # Write zNodes For Network Info #
+        
+        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/BytesSent', zNodeData=str(self.BytesSent).encode(), ephemeral=True)
+        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/BytesRecv', zNodeData=str(self.BytesRecv).encode(), ephemeral=True)
+
+
+        # Write zNodes For GPU Info #
+        
+        GPUUsageSerialized = b''
+        GPUMemSerialized = b''
+        GPUTempsSerialized = b''
+
+        for Item in self.GPUUsage:
+            GPUUsageSerialized += str(Item).encode() + b'&'
+        GPUUsageSerialized = GPUUsageSerialized[:-1]
+
+        for Item in self.GPUMem:
+            GPUMemSerialized += str(Item).encode() + b'&'
+        GPUMemSerialized = GPUMemSerialized[:-1]
+        
+        for Item in self.GPUTemps:
+            GPUTempsSerialized += str(Item).encode() + b'&'
+        GPUTempsSerialized = GPUTempsSerialized[:-1]
+        
+
+        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/GPUUsage', zNodeData=GPUUsageSerialized, ephemeral=True)
+        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/GPUMem', zNodeData=GPUMemSerialized, ephemeral=True)
+        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/GPUTemps', zNodeData=GPUTempsSerialized, ephemeral=True)
