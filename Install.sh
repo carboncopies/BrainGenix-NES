@@ -56,4 +56,23 @@ EOF
 
 
 cd /opt/zookeeper
-bin/zkServer.sh start
+#bin/zkServer.sh start
+
+# Create Zookeeper Systemd start script #
+
+cd /etc/systemd/system/
+
+cat > Zookeeper.service <<EOF
+[Unit]
+Description=Zookeeper service
+
+[Service]
+ExecStart=/opt/zookeeper/bin/zkServer.sh
+
+[Install]
+WantedBy=sysinit.target
+Alias=zookeeper.service
+EOF
+
+sudo systemctl enable Zookeeper.service
+sudo systemctl start Zookeeper.service
