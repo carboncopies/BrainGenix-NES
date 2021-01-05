@@ -64,15 +64,33 @@ cd /etc/systemd/system/
 
 cat > Zookeeper.service <<EOF
 [Unit]
-Description=Zookeeper service
+Description=Zookeeper Daemon
+Documentation=http://zookeeper.apache.org
+Requires=network.target
+After=network.target
 
-[Service]
-ExecStart=/opt/zookeeper/bin/zkServer.sh
+[Service]    
+Type=forking
+WorkingDirectory=/opt/zookeeper
+User=zookeeper
+Group=zookeeper
+ExecStart=/opt/zookeeper/bin/zkServer.sh start /opt/zookeeper/conf/zoo.cfg
+ExecStop=/opt/zookeeper/bin/zkServer.sh stop /opt/zookeeper/conf/zoo.cfg
+ExecReload=/opt/zookeeper/bin/zkServer.sh restart /opt/zookeeper/conf/zoo.cfg
+TimeoutSec=30
+Restart=on-failure
 
 [Install]
-WantedBy=sysinit.target
-Alias=zookeeper.service
+WantedBy=default.target
+
 EOF
 
-sudo systemctl enable Zookeeper.service
-sudo systemctl start Zookeeper.service
+sudo systemctl daemon-reload
+
+sudo chown -R zookeeper:zookeeper /opt/zookeeper
+sudo chown -R zookeeper:zookeeper /zookeeper
+
+sudo systemctl enable zookeeper
+sudo systemctl start zookeeper
+
+systemctl status zookeeper
