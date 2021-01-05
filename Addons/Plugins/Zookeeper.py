@@ -21,6 +21,7 @@ class AddonInfo(): # All Addons contain this class, and it tells the system what
         self.Version = '0.0.1'
         self.Author = 'BrainGenix Team'
         self.Dependencies = []
+        self.Imports = ['kazoo', 'uuid', 'time']
 
 class Main(): # Main Class #
 
