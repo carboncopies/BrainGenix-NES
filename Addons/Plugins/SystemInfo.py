@@ -87,10 +87,22 @@ class Main(): # This Class Gets System Information And Puts It Into The Registry
 
     def GetPluginRegistry(self, Registry:dict): # Gets The Registry From The Main Process #
 
+
+        # Get Registry #
+
         self.Registry = Registry
 
         self.Logger.Log('Successfully Acquired Registry')
+
+
+        # Extract ZK Plugin From Registry
         
+        self.ZK = self.Registry.get('Zookeeper')
+
+
+        # Write Data To ZK #
+
+        self.SendStaticStats()
 
     #def AtExit(self):
 
@@ -375,4 +387,165 @@ class Main(): # This Class Gets System Information And Puts It Into The Registry
             Logger.Log(f'   GPU Name: {self.GPUNames[GPUIndex]}')
             Logger.Log(f'   GPU VRAM Total (MB): {self.GPUTotalMemory[GPUIndex]}')
             Logger.Log(f'   GPU UUID: {self.GPUIds[GPUIndex]}')
-            
+
+
+    def SendStaticStats(self): # Push Static Statistics To Zookeeper #
+
+
+        # Create Current zNode #
+
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}', ephemeral=False)
+
+
+        # Write zNodes For Platform Info #
+
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/OperatingSystemName', zNodeData=self.OperatingSystemName.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/NodeName', zNodeData=self.NodeName.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/OperatingSystemRelease', zNodeData=self.OperatingSystemRelease.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/OperatingSystemVersion', zNodeData=self.OperatingSystemVersion.encode(), ephemeral=True)
+
+
+        # Write zNodes For CPU Info #
+
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PythonVersion', zNodeData=self.PythonVersion.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUInfoVersion', zNodeData=self.CPUInfoVersion.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUArchitecture', zNodeData=self.CPUArchitecture.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUBits', zNodeData=str(self.CPUBits).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUThreads', zNodeData=str(self.CPUThreads).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUCores', zNodeData=str(self.CPUCores).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUVendor', zNodeData=self.CPUVendor.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUName', zNodeData=self.CPUName.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUBaseClock', zNodeData=str(self.CPUBaseClock).encode(), ephemeral=True)
+        #self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUInstructionSet', zNodeData=self.CPUInstructionSet.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUL3CacheSize', zNodeData=str(self.CPUL3CacheSize).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUL2CacheSize', zNodeData=str(self.CPUL2CacheSize).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUL1CacheSize', zNodeData=str(self.CPUL1CacheSize).encode(), ephemeral=True)
+
+
+        # Write zNodes For RAM Info #
+
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/TotalSystemRAM', zNodeData=str(self.TotalSystemRAM).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/TotalSystemSwap', zNodeData=str(self.TotalSystemSwap).encode(), ephemeral=True)
+
+
+        # Write zNodes For Disk Partition Info #
+
+        PartitionDeviceSerialized = b''
+        PartitionMountPointsSerialized = b''
+        PartitionFileSystemSerialized = b''
+        PartitionTotalSerialized = b''
+        PartitionUsedSerialized = b''
+        PartitionFreeSerialized = b''
+        PartitionUsagePercentSerialized = b''
+
+        for Item in self.PartitionDevices:
+            PartitionDeviceSerialized += Item.encode() + b'&'
+        PartitionDeviceSerialized = PartitionDeviceSerialized[:-1]
+
+        for Item in self.PartitionMountPoints:
+            PartitionMountPointsSerialized += Item.encode() + b'&'
+        PartitionMountPointsSerialized = PartitionMountPointsSerialized[:-1]
+
+        for Item in self.PartitionFileSystemType:
+            PartitionFileSystemSerialized += Item.encode() + b'&'
+        PartitionFileSystemSerialized = PartitionFileSystemSerialized[:-1]
+
+        for Item in self.PartitionTotal:
+            PartitionTotalSerialized += str(Item).encode() + b'&'
+        PartitionTotalSerialized = PartitionTotalSerialized[:-1]
+
+        for Item in self.PartitionUsed:
+            PartitionUsedSerialized += str(Item).encode() + b'&'
+        PartitionUsedSerialized = PartitionUsedSerialized[:-1]
+
+        for Item in self.PartitionFree:
+            PartitionFreeSerialized += str(Item).encode() + b'&'
+        PartitionFreeSerialized = PartitionFreeSerialized[:-1]
+
+        for Item in self.PartitionUsagePercent:
+            PartitionUsagePercentSerialized += str(Item).encode() + b'&'
+        PartitionUsagePercentSerialized = PartitionUsagePercentSerialized[:-1]
+
+
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PartitionDevice', zNodeData=PartitionDeviceSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PartitionMountPoints', zNodeData=PartitionMountPointsSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PartitionFileSystemType', zNodeData=PartitionFileSystemSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PartitionTotal', zNodeData=PartitionTotalSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PartitionUsed', zNodeData=PartitionUsedSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PartitionFree', zNodeData=PartitionFreeSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PartitionUsagePercent', zNodeData=PartitionUsagePercentSerialized, ephemeral=True)
+    
+
+        # Create zNodes For Network Info #
+
+        NetNamesSerialized = b''
+        NetAddressesSerialized = b''
+        NetMasksSerialized = b''
+        NetBroadcastsSerialized = b''
+
+        for Item in self.NetNames:
+            if Item == None:
+                NetNamesSerialized += b'None&'
+            else:
+                NetNamesSerialized += Item.encode() + b'&'
+        NetNamesSerialized = NetNamesSerialized[:-1]
+
+        for Item in self.NetAddresses:
+            if Item == None:
+                NetAddressesSerialized += b'None&'
+            else:
+                NetAddressesSerialized += Item.encode() + b'&'
+        NetAddressesSerialized = NetAddressesSerialized[:-1]
+
+        for Item in self.NetMasks:
+            if Item == None:
+                NetMasksSerialized += b'None&'
+            else:
+                NetMasksSerialized += Item.encode() + b'&'
+        NetMasksSerialized = NetMasksSerialized[:-1]
+
+        for Item in self.NetBroadcasts:
+            if Item == None:
+                NetBroadcastsSerialized += b'None&'
+            else:
+                NetBroadcastsSerialized += Item.encode() + b'&'
+        NetBroadcastsSerialized = NetBroadcastsSerialized[:-1]
+
+        
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/NetNames', zNodeData=NetNamesSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/NetAddresses', zNodeData=NetAddressesSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/NetMasks', zNodeData=NetMasksSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/NetBroadcasts', zNodeData=NetBroadcastsSerialized, ephemeral=True)
+
+
+        # Create zNodes For GPU Info #
+
+        GPUIdsSerialized = b''
+        GPUNamesSerialized = b''
+        GPUTotalMemorySerialized = b''
+
+        for Item in self.GPUIds:
+            if Item == None:
+                GPUIdsSerialized += b'None&'
+            else:
+                GPUIdsSerialized += Item.encode() + b'&'
+        GPUIdsSerialized = GPUIdsSerialized[:-1]
+
+        for Item in self.GPUNames:
+            if Item == None:
+                GPUNamesSerialized += b'None&'
+            else:
+                GPUNamesSerialized += Item.encode() + b'&'
+        GPUNamesSerialized = GPUNamesSerialized[:-1]
+
+        for Item in self.GPUTotalMemory:
+            if Item == None:
+                GPUTotalMemorySerialized += b'None&'
+            else:
+                GPUTotalMemorySerialized += Item.encode() + b'&'
+        GPUTotalMemorySerialized = GPUTotalMemorySerialized[:-1]
+
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/GPUIds', zNodeData=GPUIdsSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/GPUNames', zNodeData=GPUNamesSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/GPUTotalMemory', zNodeData=GPUTotalMemorySerialized, ephemeral=True)
+
