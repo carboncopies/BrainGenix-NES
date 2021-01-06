@@ -160,13 +160,13 @@ class FollowerMain(): # Main Class #
 
     #     self.ZookeeperConnection.delete_async(zNodePath, recursive=recursive)
 
-    def TryCreate(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
+    # def TryCreate(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
 
-        if not self.ZookeeperConnection.exists(zNodePath):
-            self.ZookeeperConnection.create(zNodePath, ephemeral=ephemeral, value=zNodeData)
+    #     if not self.ZookeeperConnection.exists(zNodePath):
+    #         self.ZookeeperConnection.create(zNodePath, ephemeral=ephemeral, value=zNodeData)
 
     
-    def TryCreateOverwrite(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
+    def TryCreate(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
 
         if not self.ZookeeperConnection.exists(zNodePath):
             self.ZookeeperConnection.create(zNodePath, ephemeral=ephemeral, value=zNodeData)
