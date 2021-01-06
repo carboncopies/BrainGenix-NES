@@ -45,7 +45,7 @@ class ZK(): # Create Interface Class #
 
         self.ZookeeperConnection = KazooClient(hosts=ZKHosts)
         self.ZookeeperConnection.start()
-
+ 
         if Logger != None:
             Logger.Log('Established Connection To Zookeeper')
             Logger.Log('NOTE: The Default Max zNode Size Is 1MB, Ensure No Writes To Any zNodes Exceed This Value', 1)
@@ -70,8 +70,6 @@ class ZK(): # Create Interface Class #
 
 
         # Create Zookeeper Election Object #
-
-
         self.Logger.Log('Electing Leader From Zookeeper Ensemble')
 
         UUIDString = str(uuid.uuid1())
@@ -91,59 +89,14 @@ class ZK(): # Create Interface Class #
 
     def ElectedLeader(self): # This Function Is Called If We're Elected Leader From The ZK Ensemble #
 
+
+        # Set Local Mode #
         self.ZookeeperMode = 'Leader'
 
 
+        # Create LockFile #
+        self.ZookeeperConnection.create('/BrainGenix/Leader', ephemeral=True)
 
-    ########################################################################################
-    # HANDLE ZOOKEEPER C.R.U.D (Create Nodes, Reading Data, Updating Data, Deleting Nodes) #
-    ########################################################################################
-
-
-    # def Create(self, zNodePath:str, zNodeData:bytes=b'', ephemeral:bool=False):
-
-    #     self.ZookeeperConnection.create(zNodePath, value=zNodeData, ephemeral=ephemeral)
-    
-    # def CreateAsync(self, zNodePath:str, ephemeral:bool=False):
-
-    #     self.ZookeeperConnection.create_async(zNodePath, ephemeral=ephemeral)
-
-    # def EnsureExists(self, zNodePath:str):
-
-    #     self.ZookeeperConnection.ensure_path(zNodePath)
-
-    # def Get(self, zNodePath:str):
-
-    #     return self.ZookeeperConnection.get(zNodePath)
-
-    # def GetChildren(self, zNodePath:str):
-
-    #     return self.ZookeeperConnection.get_children(zNodePath)
-
-    # def Exists(self, zNodePath:str):
-
-    #     return self.ZookeeperConnection.exists(zNodePath)
-
-    # def Set(self, zNodePath:str, zNodeData:bytes=b''):
-
-    #     self.ZookeeperConnection.set(zNodePath, value=zNodeData)
-
-    # def SetAsync(self, zNodePath:str, zNodeData:bytes=b''):
-
-    #     self.ZookeeperConnection.set_async(zNodePath, value=zNodeData)
-
-    # def Delete(self, zNodePath:str, recursive:bool=False):
-
-    #     self.ZookeeperConnection.delete(zNodePath, recursive=recursive)
-        
-    # def DeleteAsync(self, zNodePath:str, recursive:bool=False):
-
-    #     self.ZookeeperConnection.delete_async(zNodePath, recursive=recursive)
-
-    # def TryCreate(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
-
-    #     if not self.ZookeeperConnection.exists(zNodePath):
-    #         self.ZookeeperConnection.create(zNodePath, ephemeral=ephemeral, value=zNodeData)
 
     
     def TryCreate(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
