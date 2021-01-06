@@ -17,11 +17,13 @@ from Core.Logger import SysLog
 from Core.CheckLibraries import CheckLibrary, CheckImports
 from Core.InitializeAddons import InitializePlugins, InitializeModules, InitPluginRegistry, InitModuleRegistry, InitLeadPluginReg
 
+from Zookeeper.Zookeeper import ZK
+
 # Load Config #
 
 ConfigPath = 'Config/LocalConfig.yaml'
 
-AddonsPath, LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip = LoadConfig(ConfigPath)
+AddonsPath, LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip, ZKHost = LoadConfig(ConfigPath)
 
 
 # Initialize Logger #
@@ -29,10 +31,11 @@ AddonsPath, LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip = Lo
 Logger = SysLog('0', LogPath, BufferLength=BufferLength, LogSegmentLength=LinesPerFile, ConsoleOutputEnabled=PrintLogOutput, EnableGzip = EnableGzip) # NOTE: THE SYSLOG ID HERE NEEDS TO BE REPLACED WITH THE ZOOKEEPER ID LATER ON! (FIRST ARG)
 
 Logger.Log('-----------------------------------------')
-Logger.Log('-- Welcome To BrainGenix Version 0.0.1 --')
+Logger.Log('-- Welcome To BrainGenix Version 0.0.2 --')
 Logger.Log('-----------------------------------------')
 Logger.Log('')
 Logger.Log('')
+
 
 # Purges The Log Buffer On System Exit #
 @atexit.register
@@ -41,8 +44,8 @@ def CleanLog():
     Logger.PurgeBuffer()
     Logger.CleanExit()
 
-# Check Dependencies #
 
+# Check Dependencies #
 ModulesNeeded = [
                 'os',
                 'yaml',
@@ -54,13 +57,20 @@ ModulesNeeded = [
                 'platform',
                 'psutil',
                 'GPUtil',
-                'threading'
+                'threading',
+                'kazoo',
+                'uuid',
                 ]
 
 CheckImports(ModulesNeeded, Logger)
 
-# Load Addons #
 
+# Initialize ZK #
+Zookeeper = ZK(Logger)
+Zookeeper.ConnectToZookeeper(Logger, ZKHost)
+Zookeeper.AutoInitZKLeader()
+
+# Load Addons #
 Logger.Log('Initializing Addon Loading Process')
 
 Plugins, Modules = LoadAddons(AddonsPath, Logger)
@@ -75,7 +85,6 @@ Logger.Log('Completed Dependencies Check')
 
 
 # Initialize Plugins #
-
 Logger.Log('Initializing Plugins')
 
 FollowerRegistry, LeaderRegistry = InitializePlugins(Plugins, Logger)
@@ -84,7 +93,6 @@ InitLeadPluginReg(FollowerRegistry, LeaderRegistry, Logger)
 
 
 # Start System #
-
 Logger.Log('Starting BrainGenix Instance')
 
 
