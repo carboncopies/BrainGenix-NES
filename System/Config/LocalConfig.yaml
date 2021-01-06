@@ -4,5 +4,6 @@ LogPath: ../Logs/,
 PrintLogText: True,
 LogBufferLength: 10,
 LogFileLinesBeforeSplit: 1000,
-gzipLogs: True
+gzipLogs: True,
+ZKHost: 127.0.0.1:2181
 }

@@ -30,12 +30,6 @@ AddonsPath, LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip, ZKH
 
 Logger = SysLog('0', LogPath, BufferLength=BufferLength, LogSegmentLength=LinesPerFile, ConsoleOutputEnabled=PrintLogOutput, EnableGzip = EnableGzip) # NOTE: THE SYSLOG ID HERE NEEDS TO BE REPLACED WITH THE ZOOKEEPER ID LATER ON! (FIRST ARG)
 
-Logger.Log('-----------------------------------------')
-Logger.Log('-- Welcome To BrainGenix Version 0.0.2 --')
-Logger.Log('-----------------------------------------')
-Logger.Log('')
-Logger.Log('')
-
 
 # Purges The Log Buffer On System Exit #
 @atexit.register
@@ -70,29 +64,23 @@ Zookeeper = ZK(Logger)
 Zookeeper.ConnectToZookeeper(Logger, ZKHost)
 Zookeeper.AutoInitZKLeader()
 
+
 # Load Addons #
-Logger.Log('Initializing Addon Loading Process')
-
 Plugins, Modules = LoadAddons(AddonsPath, Logger)
-
-Logger.Log('Addon Loading Process Complete')
-Logger.Log('Checking Addon Dependencies')
-
 CheckDependencies(Plugins, Modules, Logger)
-
-Logger.Log('Completed Dependencies Check')
-
 
 
 # Initialize Plugins #
-Logger.Log('Initializing Plugins')
-
-FollowerRegistry, LeaderRegistry = InitializePlugins(Plugins, Logger)
+FollowerRegistry, LeaderRegistry = InitializePlugins(Plugins, Logger, Zookeeper)
 InitPluginRegistry(FollowerRegistry, Logger)
 InitLeadPluginReg(FollowerRegistry, LeaderRegistry, Logger)
 
 
 # Start System #
 Logger.Log('Starting BrainGenix Instance')
+Logger.Log('-----------------------------------------')
+Logger.Log('-- Welcome To BrainGenix Version 0.0.2 --')
+Logger.Log('-----------------------------------------')
+
 
 
