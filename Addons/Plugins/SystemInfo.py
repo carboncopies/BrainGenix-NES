@@ -24,11 +24,12 @@ class AddonInfo(): # All Addons contain this class, and it tells the system what
         self.Author = 'BrainGenix Team'
         self.Dependencies = []
         self.Imports = ['cpuinfo','platform','datetime','psutil','GPUtil','threading','time']
-        
+
+
 
 class FollowerMain(): # This Class Gets System Information And Puts It Into The Registry For Later Gathering #
 
-    def __init__(self, AutoRefreshUpdates:bool=True, **kwargs):
+    def __init__(self, **kwargs):
 
         # Extract Logger From kwargs #
 
@@ -45,44 +46,19 @@ class FollowerMain(): # This Class Gets System Information And Puts It Into The 
         self.Logger = Logger
 
 
-        # Get Static System Info #
-
-        self.GetStaticStats()
-
-
-        # Start The AutoUpdate Thread #
-
-        if AutoRefreshUpdates:
-
-            # Start Thread #
-
-            Logger.Log('Automatic Refresh Enabled, Starting Thread')
-            self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(1,))
-            self.UpdateThread.start()
-            Logger.Log('Thread Started, Dynamic Usage Stats Will Be Refreshed Automatically')
-
-
-            # Block System Until One Refresh Is Completed #
-
-            while True:
-                try:
-                    self.CPUUsage
-                    break
-                except:
-                    pass
-
-        #else: # Prevent an undefined error with the AtExit function
-
-        #    self.UpdateThread = None
-
         # Define Registry #
 
         self.Registry = None
 
+        
+        # Get Static Stats #
+
+        self.GetStaticStats()
+
 
         # Call Log Output #
 
-        self.LogSystemInfo(Logger)
+        self.LogSystemInfo(self.Logger)
 
 
     def GetPluginRegistry(self, Registry:dict): # Gets The Registry From The Main Process #
@@ -100,12 +76,16 @@ class FollowerMain(): # This Class Gets System Information And Puts It Into The 
         self.ZK = self.Registry.get('Zookeeper')
 
 
-        # Write Data To ZK #
+        # Start Thread #
 
-        self.SendStaticStats()
+        self.Logger.Log('Automatic Refresh Enabled, Starting Thread')
+        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(1,))
+        self.UpdateThread.start()
+        self.Logger.Log('Thread Started, Dynamic Usage Stats Will Be Refreshed Automatically')
 
 
     def AutoRefresh(self, RefreshInterval:float=1):
+        
 
         # Start Inf Loop #
 
@@ -117,14 +97,14 @@ class FollowerMain(): # This Class Gets System Information And Puts It Into The 
             StartTime = time.time()
 
 
-            # Get Stats #
+            # Get Dynamic Stats #
 
             self.GetDynamicStats()
 
 
             # Update Zookeeper #
-            if self.Registry != None: # Wait Until The Registry Is Populated #
-                self.SendDynamicStats()
+
+            self.SendStatistics()
 
 
             # Delay For Requested Refresh Interval #
@@ -386,20 +366,19 @@ class FollowerMain(): # This Class Gets System Information And Puts It Into The 
             Logger.Log(f'   GPU UUID: {self.GPUIds[GPUIndex]}')
 
 
-    def SendStaticStats(self): # Push Static Statistics To Zookeeper #
-
+    def SendStatistics(self): # Send Global Stats To Zookeeper #
 
         # Create Current zNode #
 
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}', ephemeral=False)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}', ephemeral=False)
 
 
         # Write zNodes For Platform Info #
 
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/OperatingSystemName', zNodeData=self.OperatingSystemName.encode(), ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/NodeName', zNodeData=self.NodeName.encode(), ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/OperatingSystemRelease', zNodeData=self.OperatingSystemRelease.encode(), ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/OperatingSystemVersion', zNodeData=self.OperatingSystemVersion.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/OperatingSystemName', zNodeData=self.OperatingSystemName.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/NodeName', zNodeData=self.NodeName.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/OperatingSystemRelease', zNodeData=self.OperatingSystemRelease.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/OperatingSystemVersion', zNodeData=self.OperatingSystemVersion.encode(), ephemeral=True)
 
 
         # Write zNodes For CPU Info #
@@ -410,25 +389,25 @@ class FollowerMain(): # This Class Gets System Information And Puts It Into The 
             InstructionSets += Item.encode() + b'&'
         InstructionSets = InstructionSets[:-1]
 
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PythonVersion', zNodeData=self.PythonVersion.encode(), ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUInfoVersion', zNodeData=self.CPUInfoVersion.encode(), ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUArchitecture', zNodeData=self.CPUArchitecture.encode(), ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUBits', zNodeData=str(self.CPUBits).encode(), ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUThreads', zNodeData=str(self.CPUThreads).encode(), ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUCores', zNodeData=str(self.CPUCores).encode(), ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUVendor', zNodeData=self.CPUVendor.encode(), ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUName', zNodeData=self.CPUName.encode(), ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUBaseClock', zNodeData=str(self.CPUBaseClock).encode(), ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUInstructionSet', zNodeData=InstructionSets, ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUL3CacheSize', zNodeData=str(self.CPUL3CacheSize).encode(), ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUL2CacheSize', zNodeData=str(self.CPUL2CacheSize).encode(), ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUL1CacheSize', zNodeData=str(self.CPUL1CacheSize).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/PythonVersion', zNodeData=self.PythonVersion.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/CPUInfoVersion', zNodeData=self.CPUInfoVersion.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/CPUArchitecture', zNodeData=self.CPUArchitecture.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/CPUBits', zNodeData=str(self.CPUBits).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/CPUThreads', zNodeData=str(self.CPUThreads).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/CPUCores', zNodeData=str(self.CPUCores).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/CPUVendor', zNodeData=self.CPUVendor.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/CPUName', zNodeData=self.CPUName.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/CPUBaseClock', zNodeData=str(self.CPUBaseClock).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/CPUInstructionSet', zNodeData=InstructionSets, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/CPUL3CacheSize', zNodeData=str(self.CPUL3CacheSize).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/CPUL2CacheSize', zNodeData=str(self.CPUL2CacheSize).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/CPUL1CacheSize', zNodeData=str(self.CPUL1CacheSize).encode(), ephemeral=True)
 
 
         # Write zNodes For RAM Info #
 
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/TotalSystemRAM', zNodeData=str(self.TotalSystemRAM).encode(), ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/TotalSystemSwap', zNodeData=str(self.TotalSystemSwap).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/TotalSystemRAM', zNodeData=str(self.TotalSystemRAM).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/TotalSystemSwap', zNodeData=str(self.TotalSystemSwap).encode(), ephemeral=True)
 
 
         # Write zNodes For Disk Partition Info #
@@ -470,13 +449,13 @@ class FollowerMain(): # This Class Gets System Information And Puts It Into The 
         PartitionUsagePercentSerialized = PartitionUsagePercentSerialized[:-1]
 
 
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PartitionDevice', zNodeData=PartitionDeviceSerialized, ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PartitionMountPoints', zNodeData=PartitionMountPointsSerialized, ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PartitionFileSystemType', zNodeData=PartitionFileSystemSerialized, ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PartitionTotal', zNodeData=PartitionTotalSerialized, ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PartitionUsed', zNodeData=PartitionUsedSerialized, ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PartitionFree', zNodeData=PartitionFreeSerialized, ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PartitionUsagePercent', zNodeData=PartitionUsagePercentSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/PartitionDevice', zNodeData=PartitionDeviceSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/PartitionMountPoints', zNodeData=PartitionMountPointsSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/PartitionFileSystemType', zNodeData=PartitionFileSystemSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/PartitionTotal', zNodeData=PartitionTotalSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/PartitionUsed', zNodeData=PartitionUsedSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/PartitionFree', zNodeData=PartitionFreeSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/PartitionUsagePercent', zNodeData=PartitionUsagePercentSerialized, ephemeral=True)
     
 
         # Create zNodes For Network Info #
@@ -515,10 +494,10 @@ class FollowerMain(): # This Class Gets System Information And Puts It Into The 
         NetBroadcastsSerialized = NetBroadcastsSerialized[:-1]
 
         
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/NetNames', zNodeData=NetNamesSerialized, ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/NetAddresses', zNodeData=NetAddressesSerialized, ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/NetMasks', zNodeData=NetMasksSerialized, ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/NetBroadcasts', zNodeData=NetBroadcastsSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/NetNames', zNodeData=NetNamesSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/NetAddresses', zNodeData=NetAddressesSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/NetMasks', zNodeData=NetMasksSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/NetBroadcasts', zNodeData=NetBroadcastsSerialized, ephemeral=True)
 
 
         # Create zNodes For GPU Info #
@@ -548,17 +527,10 @@ class FollowerMain(): # This Class Gets System Information And Puts It Into The 
                 GPUTotalMemorySerialized += Item.encode() + b'&'
         GPUTotalMemorySerialized = GPUTotalMemorySerialized[:-1]
 
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/GPUIds', zNodeData=GPUIdsSerialized, ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/GPUNames', zNodeData=GPUNamesSerialized, ephemeral=True)
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/GPUTotalMemory', zNodeData=GPUTotalMemorySerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/GPUIds', zNodeData=GPUIdsSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/GPUNames', zNodeData=GPUNamesSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/GPUTotalMemory', zNodeData=GPUTotalMemorySerialized, ephemeral=True)
 
-
-    def SendDynamicStats(self): # Push Dynamic Statistics To Zookeeper #
-
-
-        # Create Current zNode #
-
-        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}', ephemeral=False)
 
 
         # Write zNodes For CPU Info #
@@ -569,25 +541,25 @@ class FollowerMain(): # This Class Gets System Information And Puts It Into The 
             CPUUsageSerialized += str(Item).encode() + b'&'
         CPUUsageSerialized = CPUUsageSerialized[:-1]
 
-        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/CPUFrequency', zNodeData=str(self.CPUFrequency).encode(), ephemeral=True)
-        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/CPUUsage', zNodeData=CPUUsageSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/CPUFrequency', zNodeData=str(self.CPUFrequency).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/CPUUsage', zNodeData=CPUUsageSerialized, ephemeral=True)
 
 
         # Write zNodes For Memory Info #
 
-        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/RAMUsage', zNodeData=str(self.RAMUsage).encode(), ephemeral=True)
-        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/RAMFree', zNodeData=str(self.RAMFree).encode(), ephemeral=True)
-        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/RAMPercent', zNodeData=str(self.RAMPercent).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/RAMUsage', zNodeData=str(self.RAMUsage).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/RAMFree', zNodeData=str(self.RAMFree).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/RAMPercent', zNodeData=str(self.RAMPercent).encode(), ephemeral=True)
 
-        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/SwapUsage', zNodeData=str(self.SWAPUsage).encode(), ephemeral=True)
-        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/SwapFree', zNodeData=str(self.SWAPFree).encode(), ephemeral=True)
-        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/Swapercent', zNodeData=str(self.SWAPPercent).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/SwapUsage', zNodeData=str(self.SWAPUsage).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/SwapFree', zNodeData=str(self.SWAPFree).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/SwapPercent', zNodeData=str(self.SWAPPercent).encode(), ephemeral=True)
 
         
         # Write zNodes For Network Info #
         
-        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/BytesSent', zNodeData=str(self.BytesSent).encode(), ephemeral=True)
-        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/BytesRecv', zNodeData=str(self.BytesRecv).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/BytesSent', zNodeData=str(self.BytesSent).encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/BytesRecv', zNodeData=str(self.BytesRecv).encode(), ephemeral=True)
 
 
         # Write zNodes For GPU Info #
@@ -609,9 +581,10 @@ class FollowerMain(): # This Class Gets System Information And Puts It Into The 
         GPUTempsSerialized = GPUTempsSerialized[:-1]
         
 
-        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/GPUUsage', zNodeData=GPUUsageSerialized, ephemeral=True)
-        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/GPUMem', zNodeData=GPUMemSerialized, ephemeral=True)
-        self.ZK.TryCreateOverwrite(f'BrainGenix/SystemInfo/Dynamic/{self.NodeName}/GPUTemps', zNodeData=GPUTempsSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/GPUUsage', zNodeData=GPUUsageSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/GPUMem', zNodeData=GPUMemSerialized, ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/{self.NodeName}/GPUTemps', zNodeData=GPUTempsSerialized, ephemeral=True)
+
 
 
 class LeaderMain(): # This Class Is Run By The Leader #
@@ -644,24 +617,16 @@ class LeaderMain(): # This Class Is Run By The Leader #
         self.HasRegistry = False
 
 
-        # Start The AutoUpdate Thread #
-
-        Logger.Log('Automatic Leader ZK Refresh Enabled, Starting Thread')
-        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(1,))
-        self.UpdateThread.start()
-        Logger.Log('Leader Thread Started, Dynamic Usage Stats Will Be Refreshed Automatically')
-
-
     def AutoRefresh(self, RefreshInterval:float=1):
 
 
         # Pull Static Info #
 
-        while True:
-            if self.HasRegistry: # Await Registry Population #
-                self.PullStaticDataFromZK()
-                self.DecodeStaticInfo()
-                break
+        #while True:
+        #    if self.HasRegistry: # Await Registry Population #
+        #        self.PullStaticDataFromZK()
+        #        self.DecodeStaticInfo()
+        #        break
 
 
         # Start Inf Loop #
@@ -676,7 +641,11 @@ class LeaderMain(): # This Class Is Run By The Leader #
 
             # Get Stats #
             if self.LeaderRegistry != None:
-                self.PullDynamicDataFromZK()
+                try:
+                    self.PullStatsFromZK()
+                    self.DecodeStats()
+                except TypeError: # Catch Error If Stats Haven't Been Populated Yet #
+                    pass
 
 
 
@@ -710,7 +679,7 @@ class LeaderMain(): # This Class Is Run By The Leader #
 
         # Extract Static Data #
 
-        self.PullStaticDataFromZK()
+        self.PullStatsFromZK()
 
         
         # Set Has Reg Stat #
@@ -718,70 +687,50 @@ class LeaderMain(): # This Class Is Run By The Leader #
         self.HasRegistry = True
 
 
-    def PullStaticDataFromZK(self): # Pulls Static ZK Data From Zookeeper # 
+        # Start The AutoUpdate Thread #
 
-        self.StaticInfo = []
-
-
-        # Get zNodes In Static Info Section #
-
-        StaticNodeChildren = self.ZK.ZookeeperConnection.get_children('/BrainGenix/SystemInfo/Static/')
-
-        
-        # Pull Data From zNodes #
-
-        for NodeName in StaticNodeChildren:
-            NodeStaticInfoList = self.ZK.ZookeeperConnection.get_children(f'/BrainGenix/SystemInfo/Static/{NodeName}')
-            
-            TempNodeDataDict = {}
-            for Attribute in NodeStaticInfoList:
-                NodeDataBytes = self.ZK.ZookeeperConnection.get(f'/BrainGenix/SystemInfo/Static/{NodeName}/{Attribute}')
-                TempNodeDataDict.update({Attribute : NodeDataBytes})
-
-            self.StaticInfo.append(TempNodeDataDict)
+        self.Logger.Log('Automatic Leader ZK Refresh Enabled, Starting Thread')
+        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(1,))
+        self.UpdateThread.start()
+        self.Logger.Log('Leader Thread Started, Dynamic Usage Stats Will Be Refreshed Automatically')
 
 
-    def PullDynamicDataFromZK(self): # Pulls Dynamic ZK Data From Zookeeper # 
-
-        DynamicCopy = self.DynamicInfo.copy()
-        self.DynamicInfo = []
+    def PullStatsFromZK(self): # Pulls All System Stats From Zookeeper #
 
 
-        # Get zNodes In Dynamic Info Section #
+        self.Info = []
 
-        DynamicNodeChildren = self.ZK.ZookeeperConnection.get_children('/BrainGenix/SystemInfo/Dynamic/')
+
+        # Get zNodes In Info Section #
+
+        NodeChildren = self.ZK.ZookeeperConnection.get_children('/BrainGenix/SystemInfo/')
 
         
         # Pull Data From zNodes #
 
-        for NodeName in DynamicNodeChildren:
-            NodeDynamicInfoList = self.ZK.ZookeeperConnection.get_children(f'/BrainGenix/SystemInfo/Dynamic/{NodeName}')
+        for NodeName in NodeChildren:
+            NodeInfoList = self.ZK.ZookeeperConnection.get_children(f'/BrainGenix/SystemInfo/{NodeName}')
             
             TempNodeDataDict = {}
-            for Attribute in NodeDynamicInfoList:
-                NodeDataBytes = self.ZK.ZookeeperConnection.get(f'/BrainGenix/SystemInfo/Dynamic/{NodeName}/{Attribute}')
+            for Attribute in NodeInfoList:
+                NodeDataBytes = self.ZK.ZookeeperConnection.get(f'/BrainGenix/SystemInfo/{NodeName}/{Attribute}')
                 TempNodeDataDict.update({Attribute : NodeDataBytes})
-
-            self.DynamicInfo.append(TempNodeDataDict)
-
-
-        # If The Dynamic Info Is Cleared #
-
-        if self.DynamicInfo == [{}]:
-            self.DynamicInfo = DynamicCopy
+            
+            if TempNodeDataDict != {}:
+                self.Info.append(TempNodeDataDict)
 
 
-    def DecodeStaticInfo(self): # Decodes Static Stats From Extracted ZK Data #
+    def DecodeStats(self): # Decodes All System Data #
 
         
         # Initialize Dictionary #
 
-        self.StaticInfoDecoded = {}
+        self.InfoDecoded = {}
 
 
         # Decode All Nodes #
 
-        for Node in self.StaticInfo:
+        for Node in self.Info:
 
             NodeTemp = {}
 
@@ -843,26 +792,6 @@ class LeaderMain(): # This Class Is Run By The Leader #
             NodeTemp.update({'GPUTotalMemory' : Node.get('GPUTotalMemory')[0].decode()})
 
 
-            # Update Static Info Dictionary #
-
-            self.StaticInfoDecoded.update({NodeTemp.get('NodeName') : NodeTemp})
-    
-
-    def DecodeDynamicInfo(self): # Decodes Dynamic Stats From Extracted ZK Data #
-
-        # Initialize Dictionary #
-
-        self.DynamicInfoDecoded = {}
-
-
-        # Decode All Nodes #
-
-        for NodeIndex in range(len(self.DynamicInfo)):
-
-            Node = self.DynamicInfo[NodeIndex]
-            NodeTemp = {}
-
-
             # Get CPU Info #
 
             NodeTemp.update({'CPUFrequency' : Node.get('CPUFrequency')[0].decode()})
@@ -892,9 +821,10 @@ class LeaderMain(): # This Class Is Run By The Leader #
             NodeTemp.update({'GPUTemps' : Node.get('GPUTemps')[0].decode()})
 
 
-            # Update Dynamic Stats Dictionary #
+            # Update Info Dictionary #
 
-            self.DynamicInfoDecoded.update({self.StaticInfo.get('NodeName') : NodeTemp})
+            self.InfoDecoded.update({NodeTemp.get('NodeName') : NodeTemp})
+
 
 
 
