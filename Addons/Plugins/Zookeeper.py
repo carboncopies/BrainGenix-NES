@@ -48,6 +48,7 @@ class FollowerMain(): # Main Class #
         # Set Local Variables #
 
         self.ZookeeperMode = 'Follower'
+        self.ZookeeperModeOld = 'Follower'
 
 
 
@@ -171,3 +172,12 @@ class FollowerMain(): # Main Class #
             self.ZookeeperConnection.create(zNodePath, ephemeral=ephemeral, value=zNodeData)
         else:
             self.ZookeeperConnection.set(zNodePath, value=zNodeData)
+
+
+    def HasModeChanged(self): # Tells The User If The System Has Changed Modes #
+
+        if self.ZookeeperMode != self.ZookeeperModeOld:
+            self.ZookeeperModeOld = self.ZookeeperMode
+            return True
+        else:
+            return False        
