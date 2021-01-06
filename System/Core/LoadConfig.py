@@ -29,7 +29,8 @@ def LoadConfig(ConfigFilePath):
     LogBufferLength = int(ConfigFileDictionary.get('LogBufferLength'))
     LogFileLinesBeforeSplit = int(ConfigFileDictionary.get('LogFileLinesBeforeSplit'))
     EnableGzip = bool(ConfigFileDictionary.get('gzipLogs'))
+    ZKHost = str(ConfigFileDictionary.get('ZKHost'))
 
     # Return the values #
 
-    return AddonsPath, LogPath, LogBufferLength, PrintLogText, LogFileLinesBeforeSplit, EnableGzip
+    return AddonsPath, LogPath, LogBufferLength, PrintLogText, LogFileLinesBeforeSplit, EnableGzip, ZKHost

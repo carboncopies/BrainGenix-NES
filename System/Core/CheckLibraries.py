@@ -12,7 +12,7 @@ Date-Created: 2020-12-19
 
 def CheckLibrary(ModuleName:str, Logger:object):
 
-    Logger.Log(f'Checking Module: {ModuleName}')
+    #Logger.Log(f'Checking Module: {ModuleName}')
 
 
     # Check Module #
@@ -28,10 +28,10 @@ def CheckImports(ModuleList:list, Logger:object):
 
     # Check List Of Modules #
 
-    Logger.Log('Checking Module Dependencies')
+    #Logger.Log('Checking Module Dependencies')
 
     for Module in ModuleList:
 
         CheckLibrary(Module, Logger)
 
-    Logger.Log('Module Check Completed, No Issues Found')
+    Logger.Log('Python Module Check Completed, No Issues Found')
