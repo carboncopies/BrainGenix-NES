@@ -404,6 +404,12 @@ class FollowerMain(): # This Class Gets System Information And Puts It Into The 
 
         # Write zNodes For CPU Info #
 
+        InstructionSets = b''
+
+        for Item in self.CPUInstructionSet:
+            InstructionSets += Item.encode() + b'&'
+        InstructionSets = InstructionSets[:-1]
+
         self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/PythonVersion', zNodeData=self.PythonVersion.encode(), ephemeral=True)
         self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUInfoVersion', zNodeData=self.CPUInfoVersion.encode(), ephemeral=True)
         self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUArchitecture', zNodeData=self.CPUArchitecture.encode(), ephemeral=True)
@@ -413,7 +419,7 @@ class FollowerMain(): # This Class Gets System Information And Puts It Into The 
         self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUVendor', zNodeData=self.CPUVendor.encode(), ephemeral=True)
         self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUName', zNodeData=self.CPUName.encode(), ephemeral=True)
         self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUBaseClock', zNodeData=str(self.CPUBaseClock).encode(), ephemeral=True)
-        #self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUInstructionSet', zNodeData=self.CPUInstructionSet.encode(), ephemeral=True)
+        self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUInstructionSet', zNodeData=InstructionSets, ephemeral=True)
         self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUL3CacheSize', zNodeData=str(self.CPUL3CacheSize).encode(), ephemeral=True)
         self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUL2CacheSize', zNodeData=str(self.CPUL2CacheSize).encode(), ephemeral=True)
         self.ZK.TryCreate(f'BrainGenix/SystemInfo/Static/{self.NodeName}/CPUL1CacheSize', zNodeData=str(self.CPUL1CacheSize).encode(), ephemeral=True)
@@ -635,6 +641,8 @@ class LeaderMain(): # This Class Is Run By The Leader #
         self.DynamicInfo = []
         self.StaticInfo = []
 
+        self.HasRegistry = False
+
 
         # Start The AutoUpdate Thread #
 
@@ -645,6 +653,16 @@ class LeaderMain(): # This Class Is Run By The Leader #
 
 
     def AutoRefresh(self, RefreshInterval:float=1):
+
+
+        # Pull Static Info #
+
+        while True:
+            if self.HasRegistry: # Await Registry Population #
+                self.PullStaticDataFromZK()
+                self.DecodeStaticInfo()
+                break
+
 
         # Start Inf Loop #
 
@@ -674,8 +692,6 @@ class LeaderMain(): # This Class Is Run By The Leader #
                 pass
 
 
-
-
     def GetPluginRegistry(self, FollowerRegistry:dict, LeaderRegistry:dict): # Gets The Registry From The Main Process #
 
 
@@ -695,6 +711,11 @@ class LeaderMain(): # This Class Is Run By The Leader #
         # Extract Static Data #
 
         self.PullStaticDataFromZK()
+
+        
+        # Set Has Reg Stat #
+
+        self.HasRegistry = True
 
 
     def PullStaticDataFromZK(self): # Pulls Static ZK Data From Zookeeper # 
@@ -750,8 +771,130 @@ class LeaderMain(): # This Class Is Run By The Leader #
             self.DynamicInfo = DynamicCopy
 
 
-    def DecodestaticInfo(self): # Decodes Static Stats From Extracted ZK Data #
-
-        pass
+    def DecodeStaticInfo(self): # Decodes Static Stats From Extracted ZK Data #
 
         
+        # Initialize Dictionary #
+
+        self.StaticInfoDecoded = {}
+
+
+        # Decode All Nodes #
+
+        for Node in self.StaticInfo:
+
+            NodeTemp = {}
+
+
+            # Decode Platform Info #
+
+            NodeTemp.update({'NodeName' : Node.get('NodeName')[0].decode()})
+            NodeTemp.update({'OperatingSystemName' : Node.get('OperatingSystemName')[0].decode()})
+            NodeTemp.update({'OperatingSystemRelease' : Node.get('OperatingSystemRelease')[0].decode()})
+            NodeTemp.update({'OperatingSystemVersion' : Node.get('OperatingSystemVersion')[0].decode()})
+
+
+            # Get CPU Info #
+
+            NodeTemp.update({'PythonVersion' : Node.get('PythonVersion')[0].decode()})
+            NodeTemp.update({'CPUInfoVersion' : Node.get('CPUInfoVersion')[0].decode()})
+            NodeTemp.update({'CPUArchitecture' : Node.get('CPUArchitecture')[0].decode()})
+            NodeTemp.update({'CPUBits' : Node.get('CPUBits')[0].decode()})
+            NodeTemp.update({'CPUThreads' : Node.get('CPUThreads')[0].decode()})
+            NodeTemp.update({'CPUCores' : Node.get('CPUCores')[0].decode()})
+            NodeTemp.update({'CPUVendor' : Node.get('CPUVendor')[0].decode()})
+            NodeTemp.update({'CPUName' : Node.get('CPUName')[0].decode()})
+            NodeTemp.update({'CPUBaseClock' : Node.get('CPUBaseClock')[0].decode()})
+            NodeTemp.update({'CPUInstructionSet' : Node.get('CPUInstructionSet')[0].decode()})
+            NodeTemp.update({'CPUL3CacheSize' : Node.get('CPUL3CacheSize')[0].decode()})
+            NodeTemp.update({'CPUL2CacheSize' : Node.get('CPUL2CacheSize')[0].decode()})
+            NodeTemp.update({'CPUL1CacheSize' : Node.get('CPUL1CacheSize')[0].decode()})
+
+
+            # Get RAM Info #
+
+            NodeTemp.update({'TotalSystemRAM' : Node.get('TotalSystemRAM')[0].decode()})
+            NodeTemp.update({'TotalSystemSwap' : Node.get('TotalSystemSwap')[0].decode()})
+
+
+            # Get Disk Info #
+
+            NodeTemp.update({'PartitionDevice' : Node.get('PartitionDevice')[0].decode()})
+            NodeTemp.update({'PartitionMountPoints' : Node.get('PartitionMountPoints')[0].decode()})
+            NodeTemp.update({'PartitionFileSystemType' : Node.get('PartitionFileSystemType')[0].decode()})
+            NodeTemp.update({'PartitionTotal' : Node.get('PartitionTotal')[0].decode()})
+            NodeTemp.update({'PartitionUsed' : Node.get('PartitionUsed')[0].decode()})
+            NodeTemp.update({'PartitionFree' : Node.get('PartitionFree')[0].decode()})
+            NodeTemp.update({'PartitionUsagePercent' : Node.get('PartitionUsagePercent')[0].decode()})
+
+
+            # Get Network Info #
+
+            NodeTemp.update({'NetNames' : Node.get('NetNames')[0].decode()})
+            NodeTemp.update({'NetAddresses' : Node.get('NetAddresses')[0].decode()})
+            NodeTemp.update({'NetMasks' : Node.get('NetMasks')[0].decode()})
+            NodeTemp.update({'NetBroadcasts' : Node.get('NetBroadcasts')[0].decode()})
+
+
+            # Get GPU Info #
+
+            NodeTemp.update({'GPUIds' : Node.get('GPUIds')[0].decode()})
+            NodeTemp.update({'GPUNames' : Node.get('GPUNames')[0].decode()})
+            NodeTemp.update({'GPUTotalMemory' : Node.get('GPUTotalMemory')[0].decode()})
+
+
+            # Update Static Info Dictionary #
+
+            self.StaticInfoDecoded.update({NodeTemp.get('NodeName') : NodeTemp})
+    
+
+    def DecodeDynamicInfo(self): # Decodes Dynamic Stats From Extracted ZK Data #
+
+        # Initialize Dictionary #
+
+        self.DynamicInfoDecoded = {}
+
+
+        # Decode All Nodes #
+
+        for NodeIndex in range(len(self.DynamicInfo)):
+
+            Node = self.DynamicInfo[NodeIndex]
+            NodeTemp = {}
+
+
+            # Get CPU Info #
+
+            NodeTemp.update({'CPUFrequency' : Node.get('CPUFrequency')[0].decode()})
+            NodeTemp.update({'CPUUsage' : Node.get('CPUUsage')[0].decode()})
+
+
+            # Get Memory Info #
+
+            NodeTemp.update({'RAMUsage' : Node.get('RAMUsage')[0].decode()})
+            NodeTemp.update({'RAMFree' : Node.get('RAMFree')[0].decode()})
+            NodeTemp.update({'RAMPercent' : Node.get('RAMPercent')[0].decode()})
+            NodeTemp.update({'SwapUsage' : Node.get('SwapUsage')[0].decode()})
+            NodeTemp.update({'SwapFree' : Node.get('SwapFree')[0].decode()})
+            NodeTemp.update({'SwapPercent' : Node.get('SwapPercent')[0].decode()})
+
+
+            # Get Network Info #
+
+            NodeTemp.update({'BytesSent' : Node.get('BytesSent')[0].decode()})
+            NodeTemp.update({'BytesRecv' : Node.get('BytesRecv')[0].decode()})
+
+
+            # Get GPU Info #
+
+            NodeTemp.update({'GPUUsage' : Node.get('GPUUsage')[0].decode()})
+            NodeTemp.update({'GPUMem' : Node.get('GPUMem')[0].decode()})
+            NodeTemp.update({'GPUTemps' : Node.get('GPUTemps')[0].decode()})
+
+
+            # Update Dynamic Stats Dictionary #
+
+            self.DynamicInfoDecoded.update({self.StaticInfo.get('NodeName') : NodeTemp})
+
+
+
