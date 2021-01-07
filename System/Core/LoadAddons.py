@@ -124,7 +124,7 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
             Logger.Log(f'Module {Module[0]} Does Not Have An AddonInfo Class, This May Result In Undefined Behavior, And This Addon Will NOT Satisfy Others Dependencies!', 2)
             PluginInfoClasses.append(None)
 
-    Logger.Log('Done Getting Addon Metadata')
+    #Logger.Log('Done Getting Addon Metadata')
 
 
     # Sort Addon Info Data #

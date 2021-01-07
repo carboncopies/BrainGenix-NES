@@ -8,30 +8,41 @@ Description: This Set of functions calls the Initialize function and gets any is
 Date-Created: 2020-12-18
 '''
 
-def InitializePlugins(Plugins:list, Logger:object, Zookeeper:object):
+def InitializeFollowerPlugins(Plugins:list, Logger:object, Zookeeper:object):
 
     RegistryFollower = {}
-    RegistryLeader = {}
 
     for PluginName, Plugin in Plugins.items():
 
-        Logger.Log(f'Initializing Plugin: {PluginName}')
+        Logger.Log(f'Initializing Follower Mode Plugin: {PluginName}')
 
         if hasattr(Plugin, 'FollowerMain'):
-            ClassInstance = Plugin.FollowerMain(Logger=Logger, Zk=Zookeeper)
+            ClassInstance = Plugin.FollowerMain(Logger=Logger, Zookeeper=Zookeeper)
             RegistryFollower.update({PluginName : ClassInstance})
         else:
             Logger.Log(f'Plugin {PluginName} Does Not Have A FollowerMain Class')
 
 
+    return RegistryFollower
+
+
+def InitializeLeaderPlugins(Plugins:list, Logger:object, Zookeeper:object):
+
+
+    RegistryLeader = {}
+
+    for PluginName, Plugin in Plugins.items():
+
+        Logger.Log(f'Initializing Leader Mode Plugin: {PluginName}')
+
         if hasattr(Plugin, 'LeaderMain'):
-            ClassInstance = Plugin.LeaderMain(Logger=Logger, Zk=Zookeeper)
+            ClassInstance = Plugin.LeaderMain(Logger=Logger, Zookeeper=Zookeeper)
             RegistryLeader.update({PluginName : ClassInstance})
         else:
             Logger.Log(f'Plugin {PluginName} Does Not Have A LeaderMain Class')
 
 
-    return RegistryFollower, RegistryLeader
+    return RegistryLeader
 
 
 def InitializeModules(Modules:list, Logger:object, Zookeeper:object):
@@ -43,7 +54,7 @@ def InitializeModules(Modules:list, Logger:object, Zookeeper:object):
         Logger.Log(f'Initializing Module: {ModuleName}')
 
         if hasattr(Module, 'Main'):
-            ClassInstance = Module.LeaderMain(Logger=Logger, ZK=Zookeeper)
+            ClassInstance = Module.LeaderMain(Logger=Logger, Zookeeper=Zookeeper)
             Registry.update({ModuleName : IClassInstance})
         else:
             Logger.Log(f'Module {ModuleName} Does Not Have A Main Class')
@@ -56,16 +67,12 @@ def InitPluginRegistry(Registry:dict, Logger:object): # Passes The Registry To A
 
 
     # Convert Dict Into List #
-
-    #Logger.Log('Passing Registry To Follower-Side Plugins')
-
     PluginList = list(Registry.items())
 
     Logger.Log(f'Found {len(PluginList)} Plugins In Follower Registry')
 
 
     # Pass Registry #
-
     for Plugin in PluginList:
 
         Logger.Log(f'Sending Registry To Plugin {Plugin[0]}')
@@ -76,23 +83,17 @@ def InitPluginRegistry(Registry:dict, Logger:object): # Passes The Registry To A
         else:
             Logger.Log(f'Plugin {Plugin[0]} Has No Attribute GetPluginRegistry', 1)
 
-    #Logger.Log('Finished Initializing Plugin Registry')
-
 
 def InitLeadPluginReg(FollowerRegistry:dict, LeaderRegistry:dict, Logger:object): # Passes The Registry To All The Plugins #
 
 
     # Convert Dict Into List #
-
-    #Logger.Log('Passing Registry To Leader-Side Plugins')
-
     PluginList = list(LeaderRegistry.items())
 
     Logger.Log(f'Found {len(PluginList)} Plugins In Leader Registry')
 
 
     # Pass Registry #
-
     for Plugin in PluginList:
 
         Logger.Log(f'Sending Registry To Plugin {Plugin[0]}')
@@ -102,8 +103,6 @@ def InitLeadPluginReg(FollowerRegistry:dict, LeaderRegistry:dict, Logger:object)
             Plugin[1].GetPluginRegistry(FollowerRegistry, LeaderRegistry)
         else:
             Logger.Log(f'Plugin {Plugin[0]} Has No Attribute GetPluginRegistry', 1)
-
-    #Logger.Log('Finished Initializing Plugin Registry')
         
 
 def InitModuleRegistry(Registry:dict, Logger:object): # Passes The Registry To All The Modules #
