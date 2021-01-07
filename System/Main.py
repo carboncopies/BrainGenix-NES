@@ -15,7 +15,7 @@ from Core.LoadConfig import LoadConfig
 from Core.LoadAddons import LoadAddons, CheckDependencies
 from Core.Logger import SysLog
 from Core.CheckLibraries import CheckLibrary, CheckImports
-from Core.InitializeAddons import InitializePlugins, InitializeModules, InitPluginRegistry, InitModuleRegistry, InitLeadPluginReg
+from Core.InitializeAddons import InitializeFollowerPlugins, InitializeLeaderPlugins, InitializeModules, InitPluginRegistry, InitModuleRegistry, InitLeadPluginReg
 
 from Zookeeper.Zookeeper import ZK
 
@@ -71,9 +71,10 @@ CheckDependencies(Plugins, Modules, Logger)
 
 
 # Initialize Plugins #
-FollowerRegistry, LeaderRegistry = InitializePlugins(Plugins, Logger, Zookeeper)
+FollowerRegistry = InitializeFollowerPlugins(Plugins, Logger, Zookeeper)
+LeaderRegistry = InitializeLeaderPlugins(Plugins, Logger, Zookeeper)
 InitPluginRegistry(FollowerRegistry, Logger)
-InitLeadPluginReg(FollowerRegistry, LeaderRegistry, Logger)
+#InitLeadPluginReg(FollowerRegistry, LeaderRegistry, Logger)
 
 
 # Start System #
