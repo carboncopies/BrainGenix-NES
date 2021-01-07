@@ -48,8 +48,12 @@ class ZK(): # Create Interface Class #
  
         if Logger != None:
             Logger.Log('Established Connection To Zookeeper')
-            Logger.Log('NOTE: The Default Max zNode Size Is 1MB, Ensure No Writes To Any zNodes Exceed This Value', 1)
+            #Logger.Log('NOTE: The Default Max zNode Size Is 1MB, Ensure No Writes To Any zNodes Exceed This Value', 1)
 
+
+        self.ZookeeperConnection.ensure_path('BrainGenix/')
+        self.ZookeeperConnection.ensure_path('BrainGenix/Nodes')
+        
 
     def AutoInitZKLeader(self): # Init ZK Leader #
 
@@ -98,8 +102,13 @@ class ZK(): # Create Interface Class #
         self.ZookeeperConnection.create('/BrainGenix/Leader', ephemeral=True)
 
 
-    
     def TryCreate(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
+
+        if not self.ZookeeperConnection.exists(zNodePath):
+            self.ZookeeperConnection.create(zNodePath, ephemeral=ephemeral, value=zNodeData)
+    
+
+    def TryCreateOverwrite(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
 
         if not self.ZookeeperConnection.exists(zNodePath):
             self.ZookeeperConnection.create(zNodePath, ephemeral=ephemeral, value=zNodeData)
