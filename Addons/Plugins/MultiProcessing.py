@@ -15,6 +15,7 @@ class AddonInfo(): # All Addons contain this class, and it tells the system what
 
     def __init__(self):
 
-        self.Version = '0.0.1'
+        self.Version = '0.0.2'
         self.Author = 'BrainGenix Team'
-        self.Dependencies = [('SystemInfo', '>', '0.0.1')]
+        self.Dependencies = [('SystemInfo', '>=', '0.0.1')]
+        self.Imports = []
