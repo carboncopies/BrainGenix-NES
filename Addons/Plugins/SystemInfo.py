@@ -48,7 +48,7 @@ class FollowerMain(): # This Class Gets System Information And Puts It Into ZK #
 
         # Start AutoRefresh Daemon #
         self.Logger.Log('Automatic Refresh Enabled, Starting Thread')
-        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(1,))
+        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(1,), name='SystemInfo Plugin Follower Thread')
         self.UpdateThread.start()
         self.Logger.Log('Thread Started, Dynamic Usage Stats Will Be Refreshed Automatically')
 
@@ -297,7 +297,7 @@ class LeaderMain(): # This Class Is Run By The Leader #
 
         # Start The AutoUpdate Thread #
         self.Logger.Log('Automatic Leader ZK Refresh Enabled, Starting Thread')
-        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(3,))
+        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(3,), name='SystemInfo Plugin Leader Thread')
         self.UpdateThread.start()
         self.Logger.Log('Leader Thread Started, Dynamic Usage Stats Will Be Refreshed Automatically')
 
