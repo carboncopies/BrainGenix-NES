@@ -115,11 +115,4 @@ class ZK(): # Create Interface Class #
         else:
             self.ZookeeperConnection.set(zNodePath, value=zNodeData)
 
-
-    def HasModeChanged(self): # Tells The User If The System Has Changed Modes #
-
-        if self.ZookeeperMode != self.ZookeeperModeOld:
-            self.ZookeeperModeOld = self.ZookeeperMode
-            return True
-        else:
-            return False        
+   
