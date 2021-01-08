@@ -63,6 +63,7 @@ CheckImports(ModulesNeeded, Logger)
 Zookeeper = ZK(Logger)
 Zookeeper.ConnectToZookeeper(Logger, ZKHost)
 Zookeeper.AutoInitZKLeader()
+Zookeeper.SpawnCheckerThread()
 
 
 # Load Addons #

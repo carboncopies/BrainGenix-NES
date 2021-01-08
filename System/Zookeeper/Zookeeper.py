@@ -4,6 +4,7 @@
 
 import time
 import uuid
+import threading
 
 from kazoo.client import KazooClient
 
@@ -16,6 +17,7 @@ Date-Created: 2021-1-6
 
 class ZK(): # Create Interface Class #
 
+
     def __init__(self, Logger):
 
 
@@ -25,13 +27,12 @@ class ZK(): # Create Interface Class #
 
 
         # Set Local Variables #
-
         self.ZookeeperMode = 'Follower'
-        self.ZookeeperModeOld = 'Follower'
+        self.ZookeeperHaveLeader = False
+        self.TransactionTime = 0
 
 
         # Create Local Copy Of Logger Pointer #
-
         self.Logger = Logger
 
 
@@ -39,7 +40,6 @@ class ZK(): # Create Interface Class #
 
 
         # Connect To Zookeeper #
-
         if Logger != None:
             Logger.Log(f'Connecting To Zookeeper Server At Address: {ZKHosts}')
 
@@ -48,16 +48,19 @@ class ZK(): # Create Interface Class #
  
         if Logger != None:
             Logger.Log('Established Connection To Zookeeper')
-            #Logger.Log('NOTE: The Default Max zNode Size Is 1MB, Ensure No Writes To Any zNodes Exceed This Value', 1)
-
 
         self.ZookeeperConnection.ensure_path('BrainGenix/')
         self.ZookeeperConnection.ensure_path('BrainGenix/Nodes')
-        
+
+
+    def SpawnCheckerThread(self): # Spawn ZK Leader Check Thread #
+
+        self.LeaderCheckerThread = threading.Thread(target=self.LeaderCheckDaemon, args=(), name='Zookeeper Leader Timeout Checker').start()
+
 
     def AutoInitZKLeader(self): # Init ZK Leader #
 
-        self.Logger.Log('Checking If ZK Leader Already Exists')
+        self.Logger.Log('Attempting To Locate Zookeeper Leader')
 
         if not self.CheckIfLeaderExists():
 
@@ -65,9 +68,13 @@ class ZK(): # Create Interface Class #
 
             self.ElectLeader()
 
+            self.ZookeeperHaveLeader = True
+
         else:
 
-            self.Logger.Log('Leader Found, Skipping Election')
+            self.Logger.Log('Leader Located')
+
+            self.ZookeeperHaveLeader = True
 
 
     def ElectLeader(self): # Elects A Leader From The Pool #
@@ -77,9 +84,8 @@ class ZK(): # Create Interface Class #
         self.Logger.Log('Electing Leader From Zookeeper Ensemble')
 
         UUIDString = str(uuid.uuid1())
-
+        
         ZookeeperElection = self.ZookeeperConnection.Election("/BrainGenix/Nodes", UUIDString)
-
         ZookeeperElection.run(self.ElectedLeader)
 
         self.Logger.Log('Election Complete')
@@ -99,7 +105,7 @@ class ZK(): # Create Interface Class #
 
 
         # Create LockFile #
-        self.ZookeeperConnection.create('/BrainGenix/Leader', ephemeral=True)
+        self.ZookeeperConnection.create('/BrainGenix/Leader', b'LeaderNode', ephemeral=True)
 
 
     def TryCreate(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
@@ -114,5 +120,29 @@ class ZK(): # Create Interface Class #
             self.ZookeeperConnection.create(zNodePath, ephemeral=ephemeral, value=zNodeData)
         else:
             self.ZookeeperConnection.set(zNodePath, value=zNodeData)
+
+
+    def LeaderCheckDaemon(self, RefreshInterval=1): # Constantly Checks If Leader Disconnects #
+
+        while True:
+            StartTime = time.time()
+            LeaderExists = self.ZookeeperConnection.exists('/BrainGenix/Leader')
+
+            self.TransactionTime = time.time() - StartTime
+
+            if not LeaderExists:
+                self.LeaderTimeout()
+
+            time.sleep(RefreshInterval)
+
+
+    def LeaderTimeout(self): # Runs if a leader times out #
+
+        self.Logger.Log("Can't find Zookeeper Leader! Attempting To Reconnect", 2)
+
+        self.ZookeeperHaveLeader = False
+        self.AutoInitZKLeader()
+
+
 
    
