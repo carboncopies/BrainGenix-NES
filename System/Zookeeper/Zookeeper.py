@@ -101,13 +101,12 @@ class ZK(): # Create Interface Class #
     def ElectedLeader(self): # This Function Is Called If We're Elected Leader From The ZK Ensemble #
 
 
-        # Set Local Mode #
-        self.ZookeeperMode = 'Leader'
-
-
         # Create LockFile #
-        self.ZookeeperConnection.create('/BrainGenix/Leader', b'LeaderNode', ephemeral=True)
-
+        try:
+            self.ZookeeperConnection.create('/BrainGenix/Leader', b'LeaderNode', ephemeral=True)
+            self.ZookeeperMode = 'Leader'
+        except:
+            self.Logger.Log('Other Node Already Created Lockfile')
 
     def TryCreate(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
 
