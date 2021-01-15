@@ -32,6 +32,8 @@ class ZK(): # Create Interface Class #
         self.ZookeeperHaveLeader = False
         self.TransactionTime = 0
         self.Name = LeaderName = platform.uname().node
+        self.ConnectedNodes = []
+        self.ConnectedNodesLastUpdate = []
 
         # Create Local Copy Of Logger Pointer #
         self.Logger = Logger
@@ -51,7 +53,13 @@ class ZK(): # Create Interface Class #
             Logger.Log('Established Connection To Zookeeper')
 
         self.ZookeeperConnection.ensure_path('BrainGenix/')
-        self.ZookeeperConnection.ensure_path('BrainGenix/Nodes')
+        self.ZookeeperConnection.ensure_path('BrainGenix/System')
+        self.ZookeeperConnection.ensure_path('BrainGenix/System/Nodes')
+
+        self.ConnectedNodesLastUpdate = self.ZookeeperConnection.get_children('/BrainGenix/System/Nodes')
+        self.ConnectedNodes = self.ZookeeperConnection.get_children('/BrainGenix/System/Nodes')
+
+        self.TryCreateOverwrite(f'/BrainGenix/System/Nodes/{self.Name}/', zNodeData=b'', ephemeral=True)
 
 
     def SpawnCheckerThread(self): # Spawn ZK Leader Check Thread #
@@ -87,7 +95,7 @@ class ZK(): # Create Interface Class #
 
         UUIDString = str(uuid.uuid1())
         
-        ZookeeperElection = self.ZookeeperConnection.Election("/BrainGenix/Nodes", UUIDString)
+        ZookeeperElection = self.ZookeeperConnection.Election("/BrainGenix/System/Election", UUIDString)
         ZookeeperElection.run(self.ElectedLeader)
 
         self.Logger.Log('Election Complete')
@@ -96,7 +104,7 @@ class ZK(): # Create Interface Class #
 
     def CheckIfLeaderExists(self): # Checks If A Leader Has Already Been Elected #
 
-        return self.ZookeeperConnection.exists('/BrainGenix/Leader')
+        return self.ZookeeperConnection.exists('/BrainGenix/System/Leader')
 
 
     def ElectedLeader(self): # This Function Is Called If We're Elected Leader From The ZK Ensemble #
@@ -104,7 +112,7 @@ class ZK(): # Create Interface Class #
 
         # Create LockFile #
         try:
-            self.ZookeeperConnection.create('/BrainGenix/Leader', self.Name.encode(), ephemeral=True)
+            self.ZookeeperConnection.create('/BrainGenix/System/Leader', self.Name.encode(), ephemeral=True)
             self.ZookeeperMode = 'Leader'
         except:
             self.Logger.Log('Other Node Already Created Lockfile')
@@ -127,21 +135,63 @@ class ZK(): # Create Interface Class #
     def LeaderCheckDaemon(self, RefreshInterval=1): # Constantly Checks If Leader Disconnects #
 
         while True:
-            StartTime = time.time()
-            LeaderExists = self.ZookeeperConnection.exists('/BrainGenix/Leader')
 
+            # Check Latency #
+            StartTime = time.time()
+            LeaderExists = self.ZookeeperConnection.exists('/BrainGenix/System/Leader')
             self.TransactionTime = time.time() - StartTime
 
+            # Check Leader #
             if not LeaderExists:
                 self.LeaderTimeout()
             try:
-                if (self.ZookeeperConnection.get('/BrainGenix/Leader')[0] != self.Name.encode() and (self.ZookeeperMode == 'Leader')):
+                if (self.ZookeeperConnection.get('/BrainGenix/System/Leader')[0] != self.Name.encode() and (self.ZookeeperMode == 'Leader')):
                     self.Logger.Log('Node Lock File Overwritten, Degrading To Follower!', 1)
                     self.ZookeeperMode = 'Follower'
             except: # Catch exception if node is destroyed during check
                 pass
 
+            # Check Conn/Disconn Events #
+            self.GetConnectedNodes()
+            NewNodes, DelNodes = self.CheckIfNodeChangeEvents()
+            self.PrintDifferences(NewNodes, DelNodes)
+
+            # Delay Until Next Update Interval #
             time.sleep(RefreshInterval)
+
+
+    def GetConnectedNodes(self): # Updates The List Of Connected Nodes In ZK #
+
+        self.ConnectedNodes = self.ZookeeperConnection.get_children('/BrainGenix/System/Nodes')
+
+
+    def CheckIfNodeChangeEvents(self): # Checks If Any Nodes Have Joined Or Left The Cluster #
+
+        # Check Additions #
+        AddedNodes = []
+        for NodeName in self.ConnectedNodes:
+            if NodeName not in self.ConnectedNodesLastUpdate:
+                AddedNodes.append(NodeName)
+        
+        # Check Subtractions #
+        RemovedNodes = []
+        for NodeName in self.ConnectedNodesLastUpdate:
+            if NodeName not in self.ConnectedNodes:
+                RemovedNodes.append(NodeName)
+
+        # Update List Of Nodes Since Last Check #
+        self.ConnectedNodesLastUpdate = self.ConnectedNodes
+
+        return AddedNodes, RemovedNodes
+
+    
+    def PrintDifferences(self, AddedNodes, SubtractedNodes): # Prints Deltas Between Checks, IE A NODE ADDED OR REMOVED #
+
+        for NewNode in AddedNodes:
+            self.Logger.Log(f'Node {NewNode} Connected')
+
+        for RemNode in SubtractedNodes:
+            self.Logger.Log(f'Node {RemNode} Disconnected', 1)
 
 
     def LeaderTimeout(self): # Runs if a leader times out #
