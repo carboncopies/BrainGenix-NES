@@ -5,6 +5,7 @@
 import time
 import uuid
 import threading
+import platform
 
 from kazoo.client import KazooClient
 
@@ -30,7 +31,7 @@ class ZK(): # Create Interface Class #
         self.ZookeeperMode = 'Follower'
         self.ZookeeperHaveLeader = False
         self.TransactionTime = 0
-
+        self.Name = LeaderName = platform.uname().node
 
         # Create Local Copy Of Logger Pointer #
         self.Logger = Logger
@@ -103,10 +104,11 @@ class ZK(): # Create Interface Class #
 
         # Create LockFile #
         try:
-            self.ZookeeperConnection.create('/BrainGenix/Leader', b'LeaderNode', ephemeral=True)
+            self.ZookeeperConnection.create('/BrainGenix/Leader', self.Name.encode(), ephemeral=True)
             self.ZookeeperMode = 'Leader'
         except:
             self.Logger.Log('Other Node Already Created Lockfile')
+
 
     def TryCreate(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
 
@@ -132,6 +134,12 @@ class ZK(): # Create Interface Class #
 
             if not LeaderExists:
                 self.LeaderTimeout()
+            try:
+                if (self.ZookeeperConnection.get('/BrainGenix/Leader')[0] != self.Name.encode() and (self.ZookeeperMode == 'Leader')):
+                    self.Logger.Log('Node Lock File Overwritten, Degrading To Follower!', 1)
+                    self.ZookeeperMode = 'Follower'
+            except: # Catch exception if node is destroyed during check
+                pass
 
             time.sleep(RefreshInterval)
 
@@ -141,6 +149,7 @@ class ZK(): # Create Interface Class #
         self.Logger.Log("Can't find Zookeeper Leader! Attempting To Reconnect", 2)
 
         self.ZookeeperHaveLeader = False
+        self.ZookeeperMode = 'Follower'
         self.AutoInitZKLeader()
 
 

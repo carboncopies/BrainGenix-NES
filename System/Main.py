@@ -15,7 +15,8 @@ from Core.LoadConfig import LoadConfig
 from Core.LoadAddons import LoadAddons, CheckDependencies
 from Core.Logger import SysLog
 from Core.CheckLibraries import CheckLibrary, CheckImports
-from Core.InitializeAddons import InitializeFollowerPlugins, InitializeLeaderPlugins, InitializeModules, InitPluginRegistry, InitModuleRegistry, InitLeadPluginReg
+from Core.InitializeAddons import InitFollowerPlugins, InitLeaderPlugins, InitializeModules, InitPluginRegistry, InitModuleRegistry, InitLeadPluginReg
+from Core.PluginManager import LMPluginManager
 
 from Zookeeper.Zookeeper import ZK
 
@@ -72,10 +73,10 @@ CheckDependencies(Plugins, Modules, Logger)
 
 
 # Initialize Plugins #
-FollowerRegistry = InitializeFollowerPlugins(Plugins, Logger, Zookeeper)
-LeaderRegistry = InitializeLeaderPlugins(Plugins, Logger, Zookeeper)
+FollowerRegistry = InitFollowerPlugins(Plugins, Logger, Zookeeper)
+LeaderManager = LMPluginManager(Logger, Plugins, Zookeeper)
 InitPluginRegistry(FollowerRegistry, Logger)
-#InitLeadPluginReg(FollowerRegistry, LeaderRegistry, Logger)
+
 
 
 # Start System #
@@ -85,3 +86,8 @@ Logger.Log('-- Welcome To BrainGenix Version 0.0.2 --')
 Logger.Log('-----------------------------------------')
 
 
+# Main Loop #
+while True:
+
+    # Update Plugins For ZK Mode Change #
+    LeaderManager.CheckIfModeChange(Zookeeper.ZookeeperMode)

@@ -8,7 +8,7 @@ Description: This Set of functions calls the Initialize function and gets any is
 Date-Created: 2020-12-18
 '''
 
-def InitializeFollowerPlugins(Plugins:list, Logger:object, Zookeeper:object):
+def InitFollowerPlugins(Plugins:list, Logger:object, Zookeeper:object):
 
     RegistryFollower = {}
 
@@ -26,7 +26,7 @@ def InitializeFollowerPlugins(Plugins:list, Logger:object, Zookeeper:object):
     return RegistryFollower
 
 
-def InitializeLeaderPlugins(Plugins:list, Logger:object, Zookeeper:object):
+def InitLeaderPlugins(Plugins:list, Logger:object, Zookeeper:object):
 
 
     RegistryLeader = {}

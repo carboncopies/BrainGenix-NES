@@ -46,7 +46,7 @@ class SysLog():
         self.LogFileName = f'Current/Node-{NodeID}/Current' + '.log.txt'
         self.LogFileObject = open(LogPath + self.LogFileName, 'w')
 
-        self.LogBuffer = '[Level] [               Time] [     Module Name] [          Function] [Message]\n'
+        self.LogBuffer = '[Level] [               Time] [     Module Name] [           Function] [Message]\n'
         self.BufferLength = BufferLength
         self.PrintEnabled = ConsoleOutputEnabled
         self.LogSegmentLength = LogSegmentLength
@@ -77,7 +77,7 @@ class SysLog():
 
         LogTime = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 
-        LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(16, " ")}] [{CallingFunctionName.rjust(18, " ")}] {Message}\n'
+        LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(16, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}\n'
 
         self.LogBuffer += LogString
 
@@ -147,7 +147,7 @@ class SysLog():
         self.LogFileName = f'Current/Node-{NodeID}/Current' + '.log.txt'
         self.LogFileObject = open(self.LogPath + self.LogFileName, 'w')
 
-        self.LogBuffer = '[Level] [               Time] [     Module Name] [          Function] [Message]\n'
+        self.LogBuffer = '[Level] [               Time] [     Module Name] [           Function] [Message]\n'
         self.CurrentLogLength = 1
 
 
