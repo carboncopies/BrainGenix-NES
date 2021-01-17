@@ -74,3 +74,33 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+--insert data into the newly created tables
+insert into bgdb.Neurons values (1, 'Cerebellum', 0, 0, 0);
+insert into bgdb.Neurons (brainregion, x_coord, y_coord, z_coord) values ('Cerebellum', 1, 0, 0);
+
+insert into bgdb.Synapses (Neurons_id) values (1);
+insert into bgdb.Synapses (Neurons_id) values (2);
+
+insert into bgdb.SynapseConnections (synapses_id, connectedtosynapses_id, strength) values (1, 2, 10);
+insert into bgdb.SynapseConnections (synapses_id, connectedtosynapses_id, strength) values (1, 3, 9);
+
+--create a user for working on the local database if necessary; swap out real values for 'userName' and 'password'
+    CREATE USER 'userName'@'localhost' IDENTIFIED BY 'password';
+    GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'userName'@'localhost' WITH GRANT OPTION;
+
+    --user table for application login
+    CREATE TABLE IF NOT EXISTS `bgdb`.`User` (
+      `User_id` BIGINT NOT NULL AUTO_INCREMENT,
+      `User_Name` VARCHAR(45) NOT NULL unique,
+      `User_Password` blob not null,
+      `First_Name` VARCHAR(45) NOT NULL,
+      `Last_Name` VARCHAR(45) NOT NULL,
+      PRIMARY KEY (`User_id`))
+    ENGINE = InnoDB;
+
+    --sample for encrypting/dectrypting passwords
+    insert into bgdb.User (user_name, user_password, first_name, last_name) values ('bleu', aes_encrypt('password_text', 'secret'), 'Brad', 'Leu');
+
+    select user_name, aes_decrypt(`User_Password`, 'secret') as password, first_name, last_name as password from bgdb.User;
