@@ -18,6 +18,17 @@ Date-Created: 2021-1-6
 
 class ZK(): # Create Interface Class #
 
+    '''
+    This class is Braingenix's interface to zookeeper.
+    It contains both the Kazoo connection object, as well as some other attributes such as the current mode.
+    When the class is instantiated, it connects to zk and starts a monitoring thread.
+    This thread checks if there are any nodes joining or leaving.
+    It also contains information about the status of the current leader.
+    If the leader node disconnects, once it's ephemeral zNode is removed, it'll automatically elect another node.
+    This is to provide failover due to a crash.
+    It also allows BG to sustain nearly half of all nodes failing without any issues.
+    '''
+
 
     def __init__(self, Logger):
 
