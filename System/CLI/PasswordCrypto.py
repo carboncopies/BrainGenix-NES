@@ -52,4 +52,3 @@ def GeneratePassword(Password:str): # Generates A New Password #
     PasswordHash = Hash(SaltedPassword)
 
     return Salt, PasswordHash
-
