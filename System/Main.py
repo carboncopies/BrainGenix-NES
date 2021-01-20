@@ -20,6 +20,11 @@ from Core.PluginManager import LMPluginManager
 
 from Zookeeper.Zookeeper import ZK
 
+from CLI.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
+from CLI.PasswordCrypto import GeneratePassword, CheckPassword
+from CLI.ZKCLI import ZKCLI
+
+
 # Load Config #
 
 ConfigPath = 'Config/LocalConfig.yaml'
@@ -35,9 +40,16 @@ Logger = SysLog('0', LogPath, BufferLength=BufferLength, LogSegmentLength=LinesP
 # Purges The Log Buffer On System Exit #
 @atexit.register
 def CleanLog(): 
-
     Logger.PurgeBuffer()
     Logger.CleanExit()
+
+
+# Load SSH Keys #
+KeysExist = CheckIfKeysExist(Logger)
+if not KeysExist:
+    PubKey, PrivateKey = GenKeys(Logger)
+    WriteKeys(Logger, PubKey, PrivateKey)
+PubKey, PrivateKey = ReadKeys(Logger)
 
 
 # Check Dependencies #
@@ -76,6 +88,11 @@ CheckDependencies(Plugins, Modules, Logger)
 FollowerRegistry = InitFollowerPlugins(Plugins, Logger, Zookeeper)
 LeaderManager = LMPluginManager(Logger, Plugins, Zookeeper)
 InitPluginRegistry(FollowerRegistry, Logger)
+
+
+# Start CLI Process #
+ZookeeperCLI = ZKCLI(Logger, Zookeeper, LeaderManager.RegistryLeader, None) # Put the Module Registry where none is... #
+ZookeeperCLI.StartPollingThread()
 
 
 

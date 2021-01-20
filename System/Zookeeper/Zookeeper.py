@@ -55,6 +55,7 @@ class ZK(): # Create Interface Class #
         self.ZookeeperConnection.ensure_path('BrainGenix/')
         self.ZookeeperConnection.ensure_path('BrainGenix/System')
         self.ZookeeperConnection.ensure_path('BrainGenix/System/Nodes')
+        self.ZookeeperConnection.ensure_path('BrainGenix/CLI')
 
         self.ConnectedNodesLastUpdate = self.ZookeeperConnection.get_children('/BrainGenix/System/Nodes')
         self.ConnectedNodes = self.ZookeeperConnection.get_children('/BrainGenix/System/Nodes')
@@ -192,6 +193,9 @@ class ZK(): # Create Interface Class #
 
         for RemNode in SubtractedNodes:
             self.Logger.Log(f'Node {RemNode} Disconnected', 1)
+            if RemNode == self.Name:
+                self.Logger.Log('Did Another Instance Time Out?')
+                self.TryCreateOverwrite(f'/BrainGenix/System/Nodes/{self.Name}/', zNodeData=b'', ephemeral=True)
 
 
     def LeaderTimeout(self): # Runs if a leader times out #
