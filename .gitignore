@@ -3,3 +3,6 @@ DebuggingTools/
 
 *.pyc
 *.pyz
+
+System/Config/Key.pub
+System/Config/PrivateKey.key
