@@ -5,5 +5,9 @@ PrintLogText: True,
 LogBufferLength: 10,
 LogFileLinesBeforeSplit: 1000,
 gzipLogs: True,
-ZKHost: 127.0.0.1:2181
+ZKHost: 127.0.0.1:2181,
+DatabaseUsername: tliao,
+DatabasePassword: 123456,
+DatabaseHost: 10.0.4.3,
+DatabaseName: bgdb
 }

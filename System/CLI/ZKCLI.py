@@ -16,6 +16,9 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
     '''
     This class handles CLI connection instances.
     It's called by ZKCLI class and handles one specific instance of a connection.
+
+    We'll need to add end-to-end encryption support later, but for now everything is done in plain text.
+    Also adding ACL so the client can only interact with the zNode for it's own connection would be a good idea.
     '''
 
     def __init__(self, Logger:object, ZKInstance:object, zNodeLocation:str, LeaderPluginRegistry:dict, ModuleRegistry:dict):
@@ -26,6 +29,31 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
         self.zNodePath = zNodeLocation
         self.LeaderPluginRegistry = LeaderPluginRegistry
         self.ModuleRegistry = ModuleRegistry
+
+        # Start Main Loop #
+        self.MainThread()
+        
+
+
+    def MainThread(self, PollingInterval=0.05): # Main Thread That Runs The Connection #
+
+        # Authenticate #
+
+        while self.ZK.ZookeeperConnection.get(self.zNodePath)[0] == b'':
+            pass
+
+        AuthInfo = self.ZK.ZookeeperConnection.get(self.zNodePath)[0]
+        Username, Password = AuthInfo.decode().split('\n')
+
+        if ((Username == 'tliao') and (Password == '123456')):
+            self.Logger.Log(f'Authentication Completed For User {Username}')
+            pass
+        else:
+            self.Logger.Log(f'Client Failed Authentication With Uname {Username}')
+            return
+
+        while True:
+            pass
 
 
 class ZKCLI(): # This class handles creating/destroying Connection Instances based on connections #
@@ -76,11 +104,9 @@ class ZKCLI(): # This class handles creating/destroying Connection Instances bas
                 # Check If It's Already Handled #
                 for Connection in ConnectionList:
                     
-                    if Connection in self.HandledConnections:
-                        pass
-                    else:
+                    if Connection not in self.HandledConnections:
                         self.SpawnConnectionInstance(Connection)
-                        self.Logger.Log(f'ZKCLI Started Connection Handler For Con {Connection}')
+                        self.Logger.Log(f'ZKCLI Started Connection Handler For Session {Connection}')
 
             # Delay For The Polling Time #
             time.sleep(PollingFrequency)
@@ -93,3 +119,4 @@ class ZKCLI(): # This class handles creating/destroying Connection Instances bas
         NewInstance = threading.Thread(target=ConnectionInstance, args=(self.Logger, self.ZK, ConnectionLocation, self.LeaderPluginRegistry, self.ModuleRegistry, ), name=f'ZK CLI Connection Handler On Connection {ConnectionName}')
         NewInstance.start()
         self.ConnectionInstances.append(NewInstance)
+        self.HandledConnections.append(ConnectionName)

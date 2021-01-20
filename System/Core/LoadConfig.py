@@ -14,7 +14,6 @@ def LoadConfig(ConfigFilePath):
     '''
 
     # First Read the contents of the file and parse it #
-
     with open(ConfigFilePath, 'r') as File:
         ConfigFileContents = File.read()
 
@@ -22,7 +21,6 @@ def LoadConfig(ConfigFilePath):
 
     
     # Extract the important values from the dictionary and return them to the main system #
-
     AddonsPath = str(ConfigFileDictionary.get('AddonsPath'))
     LogPath = str(ConfigFileDictionary.get('LogPath'))
     PrintLogText = bool(ConfigFileDictionary.get('PrintLogText'))
@@ -31,6 +29,10 @@ def LoadConfig(ConfigFilePath):
     EnableGzip = bool(ConfigFileDictionary.get('gzipLogs'))
     ZKHost = str(ConfigFileDictionary.get('ZKHost'))
 
-    # Return the values #
+    DBUname = str(ConfigFileDictionary.get('DatabaseUsername'))
+    DBPasswd = str(ConfigFileDictionary.get('DatabasePassword'))
+    DBHost = str(ConfigFileDictionary.get('DatabaseHost'))
+    DBName = str(ConfigFileDictionary.get('DatabaseName'))
 
-    return AddonsPath, LogPath, LogBufferLength, PrintLogText, LogFileLinesBeforeSplit, EnableGzip, ZKHost
+    # Return the values #
+    return AddonsPath, LogPath, LogBufferLength, PrintLogText, LogFileLinesBeforeSplit, EnableGzip, ZKHost, DBUname, DBPasswd, DBHost, DBName

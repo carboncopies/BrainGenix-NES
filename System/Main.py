@@ -24,16 +24,15 @@ from CLI.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
 from CLI.PasswordCrypto import GeneratePassword, CheckPassword
 from CLI.ZKCLI import ZKCLI
 
+from Database.DatabaseInterface import DBInterface
+
 
 # Load Config #
-
 ConfigPath = 'Config/LocalConfig.yaml'
-
-AddonsPath, LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip, ZKHost = LoadConfig(ConfigPath)
+AddonsPath, LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip, ZKHost, DBUname, DBPasswd, DBHost, DBName = LoadConfig(ConfigPath)
 
 
 # Initialize Logger #
-
 Logger = SysLog('0', LogPath, BufferLength=BufferLength, LogSegmentLength=LinesPerFile, ConsoleOutputEnabled=PrintLogOutput, EnableGzip = EnableGzip) # NOTE: THE SYSLOG ID HERE NEEDS TO BE REPLACED WITH THE ZOOKEEPER ID LATER ON! (FIRST ARG)
 
 
@@ -42,6 +41,10 @@ Logger = SysLog('0', LogPath, BufferLength=BufferLength, LogSegmentLength=LinesP
 def CleanLog(): 
     Logger.PurgeBuffer()
     Logger.CleanExit()
+
+
+# Connect To DB #
+#DatabaseInterface = DBInterface(Logger, DBUname, DBPasswd, DBHost, DBName) <-- Not Working RN, sha caching issue
 
 
 # Load SSH Keys #
