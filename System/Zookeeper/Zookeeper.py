@@ -32,6 +32,12 @@ class ZK(): # Create Interface Class #
 
     def __init__(self, Logger):
 
+        '''
+        Init function for the zookeeper class.
+        This function sets local pointers to the variable containing the Logger class.
+        It also defines some variables that will be needed later on.
+        *You shouldn't have to interact with this class unless you're debugging BrainGenix.*
+        '''
 
         #########################################################################
         # NOTE: The Max zNode Size Is 1MB, So Large Files Will Need To Be Split #
@@ -52,6 +58,14 @@ class ZK(): # Create Interface Class #
 
     def ConnectToZookeeper(self, Logger:object=None, ZKHosts:str='127.0.0.1:2181'): # Creates Connection With ZK #
 
+        '''
+        This function is used to connect to Zookeeper, hence the name.
+        *It's automatically called by the main file, so you still shouldn't have to interact with this function.*
+        The function will also ensure that some essential paths exist for BG-Core. 
+        These paths are as follows: '/BrainGenix/System/Nodes', '/BrainGenix/CLI'
+        Lastly, It creates a node with it's own hostname to tell the leader that this node has joined.
+        That will create an event in the log that node {hostname} joined.
+        '''
 
         # Connect To Zookeeper #
         if Logger != None:
@@ -76,10 +90,22 @@ class ZK(): # Create Interface Class #
 
     def SpawnCheckerThread(self): # Spawn ZK Leader Check Thread #
 
+        '''
+        This function is pretty self-explanitory, it spawns a thread which checks if the leader is still responding.
+        The thread is assigned to a local variable self.LeaderCheckerThread.
+        *Again, you shouldn't have to interact with this function at all.*
+        '''
+
         self.LeaderCheckerThread = threading.Thread(target=self.LeaderCheckDaemon, args=(), name='Zookeeper Leader Timeout Checker').start()
 
 
     def AutoInitZKLeader(self): # Init ZK Leader #
+
+        '''
+        This function does exactly what the name implies, Initializing the ZK connection.
+        It's called by the checkthread in the event that the leader is disconnected.
+        *As with many of the functions in this file, you shouldn't have to interact with it at all.*
+        '''
 
         self.Logger.Log('Attempting To Locate Zookeeper Leader')
 
@@ -101,6 +127,10 @@ class ZK(): # Create Interface Class #
 
     def ElectLeader(self): # Elects A Leader From The Pool #
 
+        '''
+        This function is used by the AutoInit function to elect a leader if the current leader is missing.
+        *It's also not designed to be used by the end user, so you shouldn't have to use it.*
+        '''
 
         # Create Zookeeper Election Object #
         self.Logger.Log('Electing Leader From Zookeeper Ensemble')
@@ -116,11 +146,21 @@ class ZK(): # Create Interface Class #
 
     def CheckIfLeaderExists(self): # Checks If A Leader Has Already Been Elected #
 
+        '''
+        This function returns a boolean value indicating if the current leader's ephemeral zNode exists.
+        *The end user shouldn't have to interact with this function.*
+        '''
+
         return self.ZookeeperConnection.exists('/BrainGenix/System/Leader')
 
 
     def ElectedLeader(self): # This Function Is Called If We're Elected Leader From The ZK Ensemble #
 
+        '''
+        This function is called when the current node is elected as a leader.
+        If this function is called and the node is not actually the leader, it can cause some very unstable behavior.
+        *Please don't use this function unless you're really sure what you're doing.*
+        '''
 
         # Create LockFile #
         try:
@@ -132,11 +172,27 @@ class ZK(): # Create Interface Class #
 
     def TryCreate(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
 
+        '''
+        This function is designed to be used by plugins/modules to create a node even if it might already exist.
+        It's faster than first checking, and then creating a node.
+        By default, the nodes it creates are not ephemeral, so if you need ephemeral nodes, pass `ephemeral=False`.
+        You can also pass data to it as bytes by passing `zNodeData=b'something'`.
+        '''
+
         if not self.ZookeeperConnection.exists(zNodePath):
             self.ZookeeperConnection.create(zNodePath, ephemeral=ephemeral, value=zNodeData)
     
 
     def TryCreateOverwrite(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
+
+        '''
+        This function is designed to be used by plugins/modules to create a node even if it might already exist.
+        It will overwrite the node if it already exists, so please be careful about what you're doing here.
+        If you're careless, this function can cause undefined behavior.
+        It's faster than first checking, and then creating a node.
+        By default, the nodes it creates are not ephemeral, so if you need ephemeral nodes, pass `ephemeral=False`.
+        You can also pass data to it as bytes by passing `zNodeData=b'something'`.
+        '''
 
         if not self.ZookeeperConnection.exists(zNodePath):
             self.ZookeeperConnection.create(zNodePath, ephemeral=ephemeral, value=zNodeData)
@@ -145,6 +201,11 @@ class ZK(): # Create Interface Class #
 
 
     def LeaderCheckDaemon(self, RefreshInterval=1): # Constantly Checks If Leader Disconnects #
+
+        '''
+        This function is the actual thread target used by the leader checking process.
+        *Don't call this function unless you know what you're doing.*
+        '''
 
         while True:
 
@@ -174,10 +235,20 @@ class ZK(): # Create Interface Class #
 
     def GetConnectedNodes(self): # Updates The List Of Connected Nodes In ZK #
 
+        '''
+        This function returns a list of connected nodes' hostnames into a variable called self.ConnectedNodes.
+        You can call this function or just poll the list as it's updated by the polling thread.
+        '''
+
         self.ConnectedNodes = self.ZookeeperConnection.get_children('/BrainGenix/System/Nodes')
 
 
     def CheckIfNodeChangeEvents(self): # Checks If Any Nodes Have Joined Or Left The Cluster #
+
+        '''
+        This function checks if any new nodes have joined or left.
+        *Don't call this function unless you know what you're doing*
+        '''
 
         # Check Additions #
         AddedNodes = []
@@ -199,6 +270,11 @@ class ZK(): # Create Interface Class #
     
     def PrintDifferences(self, AddedNodes, SubtractedNodes): # Prints Deltas Between Checks, IE A NODE ADDED OR REMOVED #
 
+        '''
+        This function prints the list of new/disconnected nodes since the last time the CheckIfNodeChangeEvents function was called.
+        *Don't call this function unless you know what you're doing.*
+        '''
+
         for NewNode in AddedNodes:
             self.Logger.Log(f'Node {NewNode} Connected')
 
@@ -210,6 +286,11 @@ class ZK(): # Create Interface Class #
 
 
     def LeaderTimeout(self): # Runs if a leader times out #
+
+        '''
+        This function is called when the leader times out. It will elect a new leader and handle transitioning to leader mode if needed.
+        *Don't call this function unless you know what you're doing.*
+        '''
 
         self.Logger.Log("Can't find Zookeeper Leader! Attempting To Reconnect", 2)
 
