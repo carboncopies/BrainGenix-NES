@@ -23,6 +23,11 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
 
     def __init__(self, Logger:object, ZKInstance:object, zNodeLocation:str, LeaderPluginRegistry:dict, ModuleRegistry:dict):
 
+        '''
+        This function creates a local copy of pointers needed later on in the class, such as the logger.
+        *Please don't use this unless you know what you're doing!*
+        '''
+
         # Create Local Pointers #
         self.Logger = Logger
         self.ZK = ZKInstance
@@ -36,6 +41,14 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
 
 
     def MainThread(self, PollingInterval=0.05): # Main Thread That Runs The Connection #
+
+        '''
+        This function contains a loop which is used for every connection.
+        First, it handles authentication, and will check this with the user database.
+        Next, it goes into interactive mode, which is just a loop containing the actual commands.
+        If the user fails an authentication check, the connection is dropped.
+        *Please don't use this unless you know what you're doing!*
+        '''
 
         # Authenticate #
 
@@ -70,6 +83,12 @@ class ZKCLI(): # This class handles creating/destroying Connection Instances bas
 
     def __init__(self, Logger:object, ZKInstance:object, LeaderPluginRegistry:dict, ModuleRegistry:dict, zNodeRoot:str='/BrainGenix/CLI'):
 
+        '''
+        This function initializes the zkcli handler.
+        It creates local copies of the pointers needed by the rest of this class.
+        *Please don't use this unless you know what you're doing!*
+        '''
+
         # Create Local Pointers #
         self.Logger = Logger
         self.ZK = ZKInstance
@@ -86,6 +105,12 @@ class ZKCLI(): # This class handles creating/destroying Connection Instances bas
 
     def StartPollingThread(self): # Starts a thread that checks if new connections have been established #
 
+        '''
+        This function starts the polling thread.
+        It creates a threading.Thread, and then calls thread.start()
+        *Please don't use this unless you know what you're doing!*
+        '''
+
         # Spawn Thread #
         self.PollerThread = threading.Thread(target=self.PollingFunction, name='CLI Polling Thread').start()
 
@@ -93,6 +118,12 @@ class ZKCLI(): # This class handles creating/destroying Connection Instances bas
 
 
     def PollingFunction(self, PollingFrequency:int=1): # Polls the ZK CLI Root for any connections, and spawns new instances to handle it #
+
+        '''
+        This function contains the polling function, and is the target of the thread starting function.
+        This function should not be called because it contains a loop which will never return.
+        *Please don't use this unless you know what you're doing!*
+        '''
 
         while True:
 
@@ -113,6 +144,11 @@ class ZKCLI(): # This class handles creating/destroying Connection Instances bas
 
 
     def SpawnConnectionInstance(self, ConnectionName): # Creates A New Connection Instance #
+
+        '''
+        This function is used by the polling function to instantiate a new thread each time a new connection is detected.
+        *Please don't use this unless you know what you're doing!*
+        '''
 
         # Spawn Thread #
         ConnectionLocation = self.zNodeRoot + '/' + ConnectionName
