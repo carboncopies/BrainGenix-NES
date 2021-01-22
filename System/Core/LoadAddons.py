@@ -7,12 +7,18 @@ import os
 
 from Core.CheckLibraries import CheckImports, CheckLibrary
 
+'''
+Name: LoadAddons
+Description: This function loads Addons from the Network Drive that it's pointed to.
+Date-Created: 2020-12-18
+'''
+
 def LoadAddons(Path:str, Logger:object):
 
     '''
-    Name: LoadAddons
-    Description: This function loads Addons from the Network Drive that it's pointed to.
-    Date-Created: 2020-12-18
+    This function loads the addons from the addon directory.
+    It returns a list of all loaded addons.
+    *Do not use this unless you know what you're doing!*
     '''
 
 
@@ -80,10 +86,9 @@ def LoadAddons(Path:str, Logger:object):
 def CheckDependencies(Plugins:list, Modules:list, Logger:object):
 
     '''
-    Name: CheckDependencies
-    Description: This function checks plugin dependencies.
-    Date-Created: 2020-12-26
-    Date-Modified: 2020-12-26
+    This function checks for addon dependencies.
+    If an addon specified that it needs certain addons, this will attempt to locate them.
+    *Do not use this unless you know what you're doing!*
     '''
 
     # Get Addon Info Classes #
