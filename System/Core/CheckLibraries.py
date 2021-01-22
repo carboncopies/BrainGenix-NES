@@ -12,6 +12,12 @@ Date-Created: 2020-12-19
 
 def CheckLibrary(ModuleName:str, Logger:object):
 
+    '''
+    This function checks if a python module/library exists.
+    If the library does not exist, then it asks the user to install it, then exits the program.
+    *Please don't use this function unless you know what you're doing!*
+    '''
+
     #Logger.Log(f'Checking Module: {ModuleName}')
 
 
@@ -25,6 +31,11 @@ def CheckLibrary(ModuleName:str, Logger:object):
         exit()
 
 def CheckImports(ModuleList:list, Logger:object):
+
+    '''
+    This function checks a list of imports by calling the checklibrary function.
+    *Please don't use this function unless you know what you're doing!*
+    '''
 
     # Check List Of Modules #
 
