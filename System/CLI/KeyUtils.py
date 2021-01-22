@@ -16,6 +16,12 @@ Date-Created: 2021-01-17
 
 def GenKeys(Logger:object, KeyLength:int=8192): # Generates A Set Of RSA Keys For SSH Encryption #
 
+    '''
+    Generates a new keypair for encrypting CLI traffic.
+    This should generate a keypair of kength 8192 bits by default, however the KeyLength argument can be specified to set another length.
+    *Please don't use this function unless you know what you're doing!*
+    '''
+
     Logger.Log(f'Generating New Pub/Private Key Pair Of Length {KeyLength} Characters, Using The RSA Method')
 
     KeyPair = rsa.generate_private_key(backend=crypto_default_backend(), public_exponent=65537, key_size=KeyLength)
@@ -29,6 +35,13 @@ def GenKeys(Logger:object, KeyLength:int=8192): # Generates A Set Of RSA Keys Fo
 
 
 def WriteKeys(Logger:object, PublicKey:bytes, PrivateKey:bytes): # Writes The Keys To A File #
+
+    '''
+    This function writes the keyfiles to a set of files.
+    This is not secure, as anyone can read these files.
+    In the future, this function needs to be updated to prevent these key files from being read by anyone.
+    *Please don't use this function unless you know what you're doing!*
+    '''
 
     with open('Config/Key.pub', 'wb') as File:
         File.write(PublicKey)
@@ -45,6 +58,12 @@ def WriteKeys(Logger:object, PublicKey:bytes, PrivateKey:bytes): # Writes The Ke
 
 def ReadKeys(Logger:object): # Reads The SSL Keys From The Key Files #
 
+    '''
+    This function reads the insecure key files.
+    This also needs to be updated in the future to prevent these keys from being readable in plaintext.
+    *Please don't use this function unless you know what you're doing!*
+    '''
+
     Logger.Log('Reading Key Files')
 
     with open('Config/Key.pub', 'rb') as File:
@@ -57,6 +76,14 @@ def ReadKeys(Logger:object): # Reads The SSL Keys From The Key Files #
 
 
 def CheckIfKeysExist(Logger:object): # Checks If Keypair Has Already Been Generated #
+
+    '''
+    This function checks if the keys already exist.
+    It uses os to check if the files exist, and assumes the keyfiles are there if the files exist.
+    This does NOT check if the keyfiles are corrupted.
+    If you suspect the files are corrupted, delete them and they'll be regenerated on next start.
+    *Please don't use this function unless you know what you're doing!*
+    '''
 
     Logger.Log('Checking If Keys Exist')
 
