@@ -17,14 +17,26 @@ Date-Created: 2020-12-19
 
 class SysLog():
 
+    '''
+    This class contains the logger used by the entire BrainGenix system.
+    The logger is an essential part of the BrainGenix system, as it allows an entire cluster's log events to be aggregated into a usable format.
+    The logger contains some functions which are described below.
+    The most frequently used one will be the Log function, which accepts a message and a level, and puts it into the log.
+    This is the only function that should be called by an external function, as calling other functions will cause undefined behavior in the logger. 
+    '''
+
     def __init__(self, NodeID:int, LogPath:str, BufferLength:int=10, LogSegmentLength:int=250, ConsoleOutputEnabled:bool=True, EnableGzip:bool=True): # Initializes The Log #
 
+        '''
+        This function is used when the system is starting up, and should not be called anytime after that.
+        If this function is called later, it'll cause the logger to be reinitialized, which may loose the buffer.
+        *DO NOT CALL THIS*
+        '''
 
         NodeID = str(NodeID)
 
 
         # Check If Logs Dir Exists #
-
         print('Checking If Log Path Exists')
 
         DoesLogDirExist = os.path.isdir(LogPath)
@@ -39,7 +51,6 @@ class SysLog():
         
 
         # Initialize Local Variables #
-
         self.TryMakeDir(LogPath + 'Current')
         self.TryMakeDir(LogPath + f'Current/Node-{NodeID}')
 
@@ -66,9 +77,27 @@ class SysLog():
 
     def Log(self, Message:str, Level:int=0): # Handles The Log Of An Item #
 
+        '''
+        This function is the main logging function for the entire system.
+        It accepts both a message and a log level as arguments.
+        The log level has a default value built in, so if you are logging something at the system level, the Level argument does not need to be specified.
+        If you are logging anything at a different level, you should specifiy it at the different level.
+        The levels are as follows:
+
+        +==================================+
+        | Level             | Number Value |
+        | Info              | 0            |
+        | Warning           | 1            |
+        | Error (Non fatal) | 2            |
+        | Error (Fatal)     | 3            |
+        +==================================+
+
+        The error codes will be used to sort the log later, if the log is checked.
+        If your plugin needs custom error codes, you can specify any number as the error code, however it won't be classified as anything.
+        Please note that if you use custom codes, another plugin may conflict with these, so you may want to make it user configurable.
+        '''
 
         # Update Log Buffer #
-
         Level = str(Level)
 
         CallStack = inspect.stack()
@@ -92,7 +121,6 @@ class SysLog():
 
 
         # Truncate Log And Start New Log File If Log Is Over 
-
         self.CurrentLogLength += 1
 
         if self.CurrentLogLength > self.LogSegmentLength:
@@ -106,6 +134,11 @@ class SysLog():
 
     def CompressFile(self, FileName):
 
+        '''
+        This function is used to compress finished logfiles into a gzip file.
+        The function is called whenever a log file is split after a certain number of lines.
+        *DO NOT CALL THIS*
+        '''
 
         # First, Read The File Into Ram, Then Remove The Original #
 
@@ -125,6 +158,10 @@ class SysLog():
 
     def StartNewFile(self):
 
+        '''
+        This function is called after every file is split, and creates a new file.
+        *DO NOT CALL THIS*
+        '''
 
         # Close Current File, and Move To New FileName #
 
@@ -158,6 +195,11 @@ class SysLog():
 
     def TryMakeDir(self, path): # Makes a Dir, catches exception if already exists #
 
+        '''
+        This function attempts to make a directory, and if it already exists, skips it.
+        *DO NOT CALL THIS*
+        '''
+
         try:
             os.mkdir(path)
         except:
@@ -166,12 +208,22 @@ class SysLog():
 
     def PurgeBuffer(self): # Writes The Contents Of The Buffer To Disk #
 
+        '''
+        This function is called at BG exit, and purges the buffer of the log to the disk.
+        *DO NOT CALL THIS*
+        '''
+
         self.LogFileObject.write(self.LogBuffer)
         self.LogBuffer = ''
 
 
     def CleanExit(self): # Cleanly Closes The File Object #
 
+        '''
+        This function is used whenever BG exists, to purge the buffer and close the file stream.
+        If BG crashes, in most cases this will flush the log, however if it crashes in a way which results in immediate execution halting, this may not work.
+        *DO NOT CALL THIS*
+        '''
 
         DateTimeObject = datetime.datetime.now()
         DateString = DateTimeObject.strftime('%Y-%m-%d_%H-%M-%S')
