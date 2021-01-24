@@ -86,9 +86,9 @@ insert into bgdb.Synapses (Neurons_id) values (2);
 insert into bgdb.SynapseConnections (synapses_id, connectedtosynapses_id, strength) values (1, 2, 10);
 insert into bgdb.SynapseConnections (synapses_id, connectedtosynapses_id, strength) values (1, 3, 9);
 
---create a user for working on the local database if necessary; swap out real values for 'userName' and 'password'
-    CREATE USER 'userName'@'localhost' IDENTIFIED BY 'password';
-    GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'userName'@'localhost' WITH GRANT OPTION;
+--create a user for working on the local database if necessary; swap out real values for 'userName' and 'password' (password is the "identified by" part)
+    CREATE USER 'bgUser'@'localhost' IDENTIFIED BY '123456';
+    GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'bgUser'@'localhost' WITH GRANT OPTION;
 
     --user table for application login
     CREATE TABLE IF NOT EXISTS `bgdb`.`User` (
