@@ -102,7 +102,7 @@ ZookeeperCLI.StartPollingThread()
 # Start System #
 Logger.Log('Starting BrainGenix Instance')
 Logger.Log('-----------------------------------------')
-Logger.Log('-- Welcome To BrainGenix Version 0.0.2 --')
+Logger.Log('-- Welcome To BrainGenix Version 0.0.3 --')
 Logger.Log('-----------------------------------------')
 
 
