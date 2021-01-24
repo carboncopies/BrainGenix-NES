@@ -101,6 +101,6 @@ insert into bgdb.SynapseConnections (synapses_id, connectedtosynapses_id, streng
     ENGINE = InnoDB;
 
     --sample for encrypting/dectrypting passwords
-    insert into bgdb.User (user_name, user_password, first_name, last_name) values ('bleu', aes_encrypt('password_text', 'secret'), 'Brad', 'Leu');
+    insert into bgdb.User (user_name, user_password, first_name, last_name) values ('bleu', aes_encrypt('123456', 'bleu'), 'Brad', 'Leu');
 
     select user_name, aes_decrypt(`User_Password`, 'secret') as password, first_name, last_name as password from bgdb.User;

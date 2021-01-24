@@ -33,3 +33,53 @@ def GetNeuronInfoByNeuronId():
 if __name__ == '__main__':
     GetNeuronInfoByNeuronId()
 
+def UserLogin(userName, userPass):
+
+    result = ""
+
+    try:
+        dbconfig = read_db_config()
+        conn = MySQLConnection(**dbconfig)
+        cursor = conn.cursor()
+        cursor.execute("select user_name, aes_decrypt(%s, %s) as password, first_name, last_name as password from bgdb.User;", (userName, userPass))
+        #cursor.execute("INSERT INTO table VALUES (%s, %s, %s)", (var1, var2, var3))
+        rows = cursor.fetchall()
+        result = "sucess"
+
+        print('Total Row(s):', cursor.rowcount)
+        for row in rows:
+            print(row)
+
+    except Error as e:
+        result = e
+
+    finally:
+        cursor.close()
+        conn.close()
+        return result
+
+if __name__ == '__main__':
+    UserLogin()
+
+def UserAdd(userName, userPass, userFirst, userLast):
+
+    result = ""
+
+    try:
+        dbconfig = read_db_config()
+        conn = MySQLConnection(**dbconfig)
+        cursor = conn.cursor()
+        cursor.execute("insert into bgdb.User (user_name, user_password, first_name, last_name) values (%s, aes_encrypt(%s, %s), %s, %s);", (userName, userPass, userName, userFirst, userLast))
+        conn.commit()
+        result = "successful"
+
+    except Error as e:
+        result = e
+
+    finally:
+        cursor.close()
+        conn.close()
+        print(result)
+
+if __name__ == '__main__':
+    UserAdd()

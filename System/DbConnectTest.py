@@ -1,3 +1,4 @@
+import DbQuery
 from mysql.connector import MySQLConnection, Error
 from DbMysqlConfig import read_db_config
 
@@ -27,3 +28,7 @@ def connect():
 
 if __name__ == '__main__':
     connect()
+
+DbQuery.UserLogin('bleu', '123456')
+
+DbQuery.UserAdd('testuser', 'testuserpass', 'testfirst', 'testlast')
