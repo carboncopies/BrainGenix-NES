@@ -95,6 +95,7 @@ class Client(): # Client For BrainGenix System #
 @atexit.register
 def Disconnect():
     CLI.ZookeeperConnection.delete(CLI.ConnectionNode)
+    print('BGCLI Connection Destroyed Successfully')
 
 # Instantiate The Client #
 CLI = Client('root', 'turing', '127.0.0.1:2181')
