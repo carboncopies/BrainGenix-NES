@@ -50,6 +50,7 @@ def UserLogin(userName, userPass):
             print(row)
 
     except Error as e:
+        print(e)
         result = e
 
     finally:

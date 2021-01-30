@@ -14,17 +14,19 @@ import time
 from Core.LoadConfig import LoadConfig
 from Core.LoadAddons import LoadAddons, CheckDependencies
 from Core.Logger import SysLog
+from Core.SystemTelemetry import Follower, Leader
 from Core.CheckLibraries import CheckLibrary, CheckImports
 from Core.InitializeAddons import InitFollowerPlugins, InitLeaderPlugins, InitializeModules, InitPluginRegistry, InitModuleRegistry, InitLeadPluginReg
 from Core.PluginManager import LMPluginManager
 
 from Zookeeper.Zookeeper import ZK
+from Zookeeper.ZKManager import SystemTelemetryManager
 
 from CLI.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
 from CLI.PasswordCrypto import GeneratePassword, CheckPassword
 from CLI.ZKCLI import ZKCLI
 
-from Database.DatabaseInterface import DBInterface
+#from Database.DatabaseInterface import DBInterface
 
 
 # Load Config #
@@ -82,6 +84,13 @@ Zookeeper.AutoInitZKLeader()
 Zookeeper.SpawnCheckerThread()
 
 
+# Start System Telemetry #
+TelemetryFollower = Follower(Logger=Logger, Zookeeper=Zookeeper)
+TelemetryLeader = Leader(Logger=Logger, Zookeeper=Zookeeper) #<-- Note: This does NOT start it yet, you need to call start first. The manager handles this.
+TelManager = SystemTelemetryManager(Zookeeper, TelemetryLeader)
+
+
+
 # Load Addons #
 Plugins, Modules = LoadAddons(AddonsPath, Logger)
 CheckDependencies(Plugins, Modules, Logger)
@@ -109,5 +118,10 @@ Logger.Log('-----------------------------------------')
 # Main Loop #
 while True:
 
+    # Execute System Tasks If In Leader Mode #
+    TelManager.UpdateSysTel()
+
+
     # Update Plugins For ZK Mode Change #
     LeaderManager.CheckIfModeChange(Zookeeper.ZookeeperMode)
+
