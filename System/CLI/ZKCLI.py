@@ -45,7 +45,7 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
         
 
 
-    def MainThread(self, PollingInterval:float=0.05): # Main Thread That Runs The Connection #
+    def MainThread(self, PollingInterval:float=0.1): # Main Thread That Runs The Connection #
 
         '''
         This function contains a loop which is used for every connection.
@@ -96,10 +96,11 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
                     CommandOutput = self.CommandHandler(CommandText)
                     self.WriteTextBack(CommandOutput)
 
-                # Delay For Polling Period #
-                time.sleep(PollingInterval)
             except:
                 pass
+
+            # Delay For Polling Period #
+            time.sleep(PollingInterval)
 
 
     def CommandHandler(self, Command:str): # Handles a command #
