@@ -299,5 +299,5 @@ class ZK(): # Create Interface Class #
         self.AutoInitZKLeader()
 
 
-
-   
+    def Exit(self): # Shutsdown the ZK connection #
+        self.ZookeeperConnection.stop()
