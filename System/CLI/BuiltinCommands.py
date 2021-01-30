@@ -39,9 +39,9 @@ class BG(): # Standard Commands #
     - BG.WhoAmI: returns the name of the node the server runs on
     - BG.WhoIsLeader: returns name of leader node, should match output of BG.whoami
     - BG.ListCluster: outputs a list of all currently connected nodes
-    - BG.NodeCPU: Lists cpu usage percentages for this node
+    - BG.NodeCPU --Node [NODE Hostname]: Lists cpu usage percentages for this node. You must pass --Node followed by the node hostname.
     - BG.ClusterCPU: Lists cpu info for the entire cluster
-    - BG.NodeMemory: Displays Stats about this node's memory usages/totals
+    - BG.NodeMemory --Node [NODE Hostname]: Displays Stats about this node's memory usages/totals. You must pass --Node followed by the node hostname.
     - BG.ClusterMemory: Displays stats about the entire cluster's memory usages/totals
     - BG.help: this help message
         '''
