@@ -72,11 +72,22 @@ class BG(): # Standard Commands #
         return str(len(Nodes))
 
 
-    def NodeCPU(self):
-        info = self.SysTelLeader.Info.get(self.Zookeeper.Name)
+    def NodeCPU(self, CLA:dict):
+        try:
+            NodeName = CLA.get('--Node')
+        except:
+            return 'Invalid Argument, Please check your Arguments.'
+
+        try:
+            info = self.SysTelLeader.Info.get(NodeName)
+            if info == None:
+                return f'Node {NodeName} does not exist! Please check your arguments.'
+        except:
+            return f'Node {NodeName} does not exist! Please check your arguments.'
+        
         CPUInfo = info.get('CPUUsage')
         avgcpu = sum(CPUInfo)/len(CPUInfo)
-        Outstring = f'Average CPU for node {self.Zookeeper.Name}: {round(avgcpu)}%\n'
+        Outstring = f'Average CPU for node {NodeName}: {round(avgcpu)}%\n'
         for CpuCore in range(len(CPUInfo)):
             Outstring += f'    Core {CpuCore}: {CPUInfo[CpuCore]}%\n'
         Outstring = Outstring[:-1]
@@ -100,10 +111,20 @@ class BG(): # Standard Commands #
         return Outstring
 
 
-    def NodeMemory(self):
-        Info = self.SysTelLeader.Info.get(self.Zookeeper.Name)
+    def NodeMemory(self, CLA:dict):
+        try:
+            NodeName = CLA.get('--Node')
+        except:
+            return 'Invalid Argument, Please check your Arguments.'
 
-        Outstring = f'Node {self.Zookeeper.Name} Is Using {Info.get("RAMPercent")}% of Physical Memory\n'
+        try:
+            Info = self.SysTelLeader.Info.get(NodeName)
+            if Info == None:
+                return f'Node {NodeName} does not exist! Please check your arguments.'
+        except:
+            return f'Node {NodeName} does not exist! Please check your arguments.'
+
+        Outstring = f'Node {NodeName} Is Using {Info.get("RAMPercent")}% of Physical Memory\n'
         Outstring += f'    - {Info.get("RAMUsage")} Bytes Used\n'
         Outstring += f'    - {Info.get("RAMFree")} Bytes Free\n'
         Outstring += f'    - {int(Info.get("RAMUsage")) + int(Info.get("RAMFree"))} Bytes Total\n'
@@ -148,7 +169,6 @@ class BG(): # Standard Commands #
         Outstring += f'    - {int(SwapFreeTotal)} Bytes Swap Free\n'
 
         return Outstring        
-
 
     def SyntaxError(self):
         return 'BG_COMMAND_ENGINE: COMMAND IS NOT RECOGNIZED AS VALID IN FORMAT'
