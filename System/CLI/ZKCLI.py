@@ -104,6 +104,12 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
 
     def CommandHandler(self, Command:str): # Handles a command #
 
+        '''
+        This function Handles a command from the client.
+        It's called by the connection handling thread when a new command is detected.
+        *Please Don't Call This Unless You Know What You're Doing!*
+        '''
+
         CallStackList = TraceCall(Command)
 
         # Check if it's a Builtin Command #
@@ -119,6 +125,13 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
 
     def Poll(self): # Polls the Node And Returns True If The Node Changed #
     
+        '''
+        This function reads the connection zNode, and determines if the user has sent over any new commands.
+        It returns false if nothing has changed, and true if a new command is detected.
+        It also detects if a client has closed a connection, and sets a local var "ConnectionActive" to 'Connection Closed'.
+        *Please Don't Call This Unless You Know What You're Doing!*
+        '''
+
         # Check If Node Still Exists #
         self.ConnectionActive = self.ZK.ZookeeperConnection.exists(self.zNodePath)
 
@@ -138,6 +151,11 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
 
     def GetCommand(self): # Returns the command from the command zNode #
 
+        '''
+        This recieves the data from zk, and returns a string.
+        *Please Don't Call This Unless You Know What You're Doing!*
+        '''
+
         # Read zNode Data #
         CommandBytes = self.ZK.ZookeeperConnection.get(self.zNodePath)[0]
 
@@ -146,6 +164,11 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
 
 
     def WriteTextBack(self, Text:str): # Writes back the Command Output #
+
+        '''
+        Writes back the output from a command to ZK.
+        *Please Don't Call This Unless You Know What You're Doing!*
+        '''
 
         # Encode String #
         if Text != None:
