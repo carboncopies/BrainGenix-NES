@@ -273,7 +273,7 @@ class Leader(): # This Class Is Run By The Leader #
         # Extract Logger From kwargs #
         self.Logger = kwargs['Logger']
         self.ZK = kwargs['Zookeeper']
-        
+        self.Info = {}
 
         # Log Starting Message #
         self.Logger.Log('Starting System Telemetry Leader')
