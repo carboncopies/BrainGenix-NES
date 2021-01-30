@@ -103,7 +103,7 @@ InitPluginRegistry(FollowerRegistry, Logger)
 
 
 # Start CLI Process #
-ZookeeperCLI = ZKCLI(Logger, Zookeeper, LeaderManager.RegistryLeader, None) # Put the Module Registry where none is... #
+ZookeeperCLI = ZKCLI(Logger, Zookeeper, TelemetryLeader, LeaderManager.RegistryLeader, None) # Put the Module Registry where none is... #
 ZookeeperCLI.StartPollingThread()
 
 
