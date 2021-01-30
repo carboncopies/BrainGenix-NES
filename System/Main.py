@@ -83,6 +83,10 @@ Zookeeper.ConnectToZookeeper(Logger, ZKHost)
 Zookeeper.AutoInitZKLeader()
 Zookeeper.SpawnCheckerThread()
 
+@atexit.register
+def ShutdownZK():
+    Zookeeper.Exit()
+
 
 # Start System Telemetry #
 TelemetryFollower = Follower(Logger=Logger, Zookeeper=Zookeeper)
