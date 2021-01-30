@@ -10,7 +10,19 @@ Date-Created: 2021-01-29
 
 class BG(): # Standard Commands #
 
+    '''
+    This class contains a set of functions used by the ZKCLI as a builtin set of commands for the core systems to BG.
+    You can interact with these by calling 'BG.help' in the CLI. 
+    That will produce a list of commands and a breif description of what they do.
+    *Please Don't Call This Unless You Know What You're Doing!*
+    '''
+
     def __init__(self, Zookeeper, SystemTelemetryLeader): # Initialize System #
+
+        '''
+        Initializes the variables in the BG class.
+        *Please Don't Call This Unless You Know What You're Doing!*
+        '''
 
         # Create Local Pointers #
         self.Zookeeper = Zookeeper
