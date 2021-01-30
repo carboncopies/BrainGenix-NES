@@ -20,7 +20,7 @@ def TraceCall(Command:str): # Traces A Command To The Right Function Call #
     ArgumentList = Command.split(' ')
 
     # Parse Into List Of Calls #
-    NameList = ArgumentList[0].split('.')
+    NameList = ArgumentList[0].lower().split('.')
     del ArgumentList[0]
 
     # Format Args #
