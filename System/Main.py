@@ -129,3 +129,4 @@ while True:
     # Update Plugins For ZK Mode Change #
     LeaderManager.CheckIfModeChange(Zookeeper.ZookeeperMode)
 
+    time.sleep(0.5) # <-- Sleep for a polling interval to avoid excessive CPU usage
