@@ -5,6 +5,9 @@
 import threading
 import time
 
+from CLI.CommandParser import TraceCall
+from CLI.BuiltinCommands import BG
+
 '''
 Name: ZKCLI
 Description: This file runs the actual CLI used by BG.
@@ -21,7 +24,7 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
     Also adding ACL so the client can only interact with the zNode for it's own connection would be a good idea.
     '''
 
-    def __init__(self, Logger:object, ZKInstance:object, zNodeLocation:str, LeaderPluginRegistry:dict, ModuleRegistry:dict):
+    def __init__(self, Logger:object, ZKInstance:object, SysTelLead:object, zNodeLocation:str, LeaderPluginRegistry:dict, ModuleRegistry:dict):
 
         '''
         This function creates a local copy of pointers needed later on in the class, such as the logger.
@@ -35,12 +38,14 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
         self.LeaderPluginRegistry = LeaderPluginRegistry
         self.ModuleRegistry = ModuleRegistry
 
+        self.BuiltinCommands = BG(ZKInstance, SysTelLead)
+
         # Start Main Loop #
         self.MainThread()
         
 
 
-    def MainThread(self, PollingInterval=0.05): # Main Thread That Runs The Connection #
+    def MainThread(self, PollingInterval:float=0.05): # Main Thread That Runs The Connection #
 
         '''
         This function contains a loop which is used for every connection.
@@ -51,22 +56,105 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
         '''
 
         # Authenticate #
-
         while self.ZK.ZookeeperConnection.get(self.zNodePath)[0] == b'':
             pass
 
         AuthInfo = self.ZK.ZookeeperConnection.get(self.zNodePath)[0]
-        Username, Password = AuthInfo.decode().split('\n')
 
-        if ((Username == 'tliao') and (Password == '123456')):
+        try:
+            Username, Password = AuthInfo.decode().split('\n')
+        except ValueError:
+            self.Logger.Log('Invalid Auth Format, Dropping Connection')
+            return
+
+        if ((Username == 'root') and (Password == 'turing')):
             self.Logger.Log(f'Authentication Completed For User {Username}')
             pass
         else:
             self.Logger.Log(f'Client Failed Authentication With Uname {Username}')
             return
 
+        # Clear zNode #
+        self.ZK.ZookeeperConnection.set(self.zNodePath, b'')
+
+        # Initialize Polling Function #
+        self.zNodeReference = b''
+
         while True:
-            pass
+
+            try:
+                # Get The Command State #
+                CommandChanged = self.Poll()
+
+                # Check If Connection Terminated #
+                if CommandChanged == 'Connection Closed':
+                    return
+                
+                # Execute The Command If the zNode Data Has Changed #
+                if CommandChanged:
+                    CommandText = self.GetCommand()
+                    CommandOutput = self.CommandHandler(CommandText)
+                    self.WriteTextBack(CommandOutput)
+
+                # Delay For Polling Period #
+                time.sleep(PollingInterval)
+            except:
+                pass
+
+
+    def CommandHandler(self, Command:str): # Handles a command #
+
+        CallStackList = TraceCall(Command)
+
+        # Check if it's a Builtin Command #
+        if CallStackList[0].lower() == 'bg':
+
+            try:
+                CommandMethod = getattr(self.BuiltinCommands, CallStackList[1])
+                CommandOutput = CommandMethod()
+                return CommandOutput
+            except AttributeError:
+                return 'BG_COMMAND_ENGINE: ROOT MODULE DOES NOT HAVE THE REQUESTED ATTRIBUTE'
+
+
+    def Poll(self): # Polls the Node And Returns True If The Node Changed #
+    
+        # Check If Node Still Exists #
+        self.ConnectionActive = self.ZK.ZookeeperConnection.exists(self.zNodePath)
+
+        if not self.ConnectionActive:
+            self.Logger.Log('Client Closed Connection, Terminating Thread')
+            return 'Connection Closed'
+
+        # Get The Current Value #
+        CurrentValue = self.ZK.ZookeeperConnection.get(self.zNodePath)[0]
+
+        # Compare Values #
+        if CurrentValue != self.zNodeReference:
+            self.zNodeReference = CurrentValue
+            return True
+        return False
+
+
+    def GetCommand(self): # Returns the command from the command zNode #
+
+        # Read zNode Data #
+        CommandBytes = self.ZK.ZookeeperConnection.get(self.zNodePath)[0]
+
+        # Decode And Return #
+        return CommandBytes.decode()
+
+
+    def WriteTextBack(self, Text:str): # Writes back the Command Output #
+
+        # Encode String #
+        if Text != None:
+            TextBytes = Text.encode()
+        else:
+            TextBytes = b''
+
+        # Write To ZK #
+        self.ZK.ZookeeperConnection.set(self.zNodePath, TextBytes)
 
 
 class ZKCLI(): # This class handles creating/destroying Connection Instances based on connections #
@@ -81,7 +169,7 @@ class ZKCLI(): # This class handles creating/destroying Connection Instances bas
     '''
 
 
-    def __init__(self, Logger:object, ZKInstance:object, LeaderPluginRegistry:dict, ModuleRegistry:dict, zNodeRoot:str='/BrainGenix/CLI'):
+    def __init__(self, Logger:object, ZKInstance:object, SysTelLead:object, LeaderPluginRegistry:dict, ModuleRegistry:dict, zNodeRoot:str='/BrainGenix/CLI'):
 
         '''
         This function initializes the zkcli handler.
@@ -94,7 +182,8 @@ class ZKCLI(): # This class handles creating/destroying Connection Instances bas
         self.ZK = ZKInstance
         self.zNodeRoot = zNodeRoot
         self.LeaderPluginRegistry = LeaderPluginRegistry
-        self.ModuleRegistry = ModuleRegistry        
+        self.ModuleRegistry = ModuleRegistry    
+        self.SystemTelemetryLeader = SysTelLead    
 
         # Create Local Vars #
         self.HandledConnections = []
@@ -152,7 +241,7 @@ class ZKCLI(): # This class handles creating/destroying Connection Instances bas
 
         # Spawn Thread #
         ConnectionLocation = self.zNodeRoot + '/' + ConnectionName
-        NewInstance = threading.Thread(target=ConnectionInstance, args=(self.Logger, self.ZK, ConnectionLocation, self.LeaderPluginRegistry, self.ModuleRegistry, ), name=f'ZK CLI Connection Handler On Connection {ConnectionName}')
+        NewInstance = threading.Thread(target=ConnectionInstance, args=(self.Logger, self.ZK, self.SystemTelemetryLeader, ConnectionLocation, self.LeaderPluginRegistry, self.ModuleRegistry, ), name=f'ZK CLI Connection Handler On Connection {ConnectionName}')
         NewInstance.start()
         self.ConnectionInstances.append(NewInstance)
         self.HandledConnections.append(ConnectionName)
