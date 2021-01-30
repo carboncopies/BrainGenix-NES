@@ -4,6 +4,7 @@
 
 import threading
 import time
+import inspect
 
 from CLI.CommandParser import TraceCall
 from CLI.BuiltinCommands import BG
@@ -96,6 +97,7 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
                     CommandOutput = self.CommandHandler(CommandText)
                     self.WriteTextBack(CommandOutput)
 
+
             except:
                 pass
 
@@ -111,16 +113,23 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
         *Please Don't Call This Unless You Know What You're Doing!*
         '''
 
-        CallStackList = TraceCall(Command)
+        CallStackList, Arguments = TraceCall(Command)
 
         # Check if it's a Builtin Command #
         if CallStackList[0].lower() == 'bg':
 
             try:
+
+            if 'CLA' in inspect.getfullargspec(getattr(self.BuiltinCommands, CallStackList[1])).args:
                 CommandMethod = getattr(self.BuiltinCommands, CallStackList[1])
-                CommandOutput = CommandMethod()
+                CommandOutput = str(CommandMethod(CLA=Arguments))
                 return CommandOutput
-            except AttributeError:
+            else:
+                
+                CommandMethod = getattr(self.BuiltinCommands, CallStackList[1])
+                CommandOutput = str(CommandMethod())
+                return CommandOutput
+        except AttributeError:
                 return 'BG_COMMAND_ENGINE: ROOT MODULE DOES NOT HAVE THE REQUESTED ATTRIBUTE'
 
 
