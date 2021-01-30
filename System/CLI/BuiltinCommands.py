@@ -51,13 +51,27 @@ class BG(): # Standard Commands #
         NodeName = self.Zookeeper.ZookeeperConnection.get('/BrainGenix/System/Leader')[0].decode()
         return NodeName
 
-    def listcluster(self):
+    def listnodes(self):
         Nodes = self.Zookeeper.ZookeeperConnection.get_children('/BrainGenix/System/Nodes')
         OutString = ''
         for Node in Nodes:
             OutString += f'{Node}\n'
         OutString = OutString[:-1]
         return OutString
-        
+    
+    def nodecount(self):
+        Nodes = self.Zookeeper.ZookeeperConnection.get_children('/BrainGenix/System/Nodes')
+        return str(len(Nodes))
+
+    def nodecpu(self):
+        info = self.SysTelLeader.Info.get(self.Zookeeper.Name)
+        CPUInfo = info.get('CPUUsage')
+        avgcpu = sum(CPUInfo)/len(CPUInfo)
+        Outstring = f'Average CPU: {avgcpu}\n'
+        for CpuCore in range(len(CPUInfo)):
+            Outstring += f'    Core {CpuCore}: {CPUInfo[CpuCore]}\n'
+        Outstring = Outstring[:-1]
+        return Outstring
+
     def SyntaxError(self):
         return 'BG_COMMAND_ENGINE: COMMAND IS NOT RECOGNIZED AS VALID IN FORMAT'
