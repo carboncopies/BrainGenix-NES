@@ -17,5 +17,5 @@ class AddonInfo(): # All Addons contain this class, and it tells the system what
 
         self.Version = '0.0.2'
         self.Author = 'BrainGenix Team'
-        self.Dependencies = [('SystemInfo', '>=', '0.0.1')]
+        self.Dependencies = []
         self.Imports = []
