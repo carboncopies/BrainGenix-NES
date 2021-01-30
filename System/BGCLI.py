@@ -98,5 +98,5 @@ def Disconnect():
     print('BGCLI Connection Destroyed Successfully')
 
 # Instantiate The Client #
-CLI = Client('root', 'turing', '127.0.0.1:2181')
+CLI = Client('root', 'turing', '10.0.4.3:2181')
 CLI.Main()
