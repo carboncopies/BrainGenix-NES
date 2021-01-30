@@ -115,21 +115,44 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
 
         CallStackList, Arguments = TraceCall(Command)
 
+        # Check if it's a help command #
+        if CallStackList[0].lower() in ['?', 'help', 'h']:
+            
+            HelpPage = '''
+Welcome to the BrainGenix Command Line Interface (CLI).
+This interface is designed to simplify administration and debugging of the system.
+The interface is also designed to resemble Pythonic syntax, as the rest of BrainGenix uses Python as a main language, so the syntax should feel similar.
+
+The interface is layed out as follows: [Root Command].[Subcommand] arg1 arg1value arg2 arg2value, etc.
+The root command, simply points the command engine to a class where it can fish out the subcommand from.
+The subcommand is simply a function name which is called by the command engine.
+If the command is part of a plugin, the root command is going to be the plugin's name.
+
+For example, if the plugin's name is "SystemInfo.py", the Root Command is going to be "SystemInfo".
+The subcommand under that is going to be the function name that you want to call.
+It is worth noting that the plugin/module will only use commands defined in the leader side for obvious reasons.
+Additionally, the root and subcommand are not case sensitive, however the arguments are.
+
+To see a list of built-in commands, please type: "BG.help"
+            '''
+            return HelpPage
+
         # Check if it's a Builtin Command #
         if CallStackList[0].lower() == 'bg':
 
             try:
 
-            if 'CLA' in inspect.getfullargspec(getattr(self.BuiltinCommands, CallStackList[1])).args:
-                CommandMethod = getattr(self.BuiltinCommands, CallStackList[1])
-                CommandOutput = str(CommandMethod(CLA=Arguments))
-                return CommandOutput
-            else:
-                
-                CommandMethod = getattr(self.BuiltinCommands, CallStackList[1])
-                CommandOutput = str(CommandMethod())
-                return CommandOutput
-        except AttributeError:
+                if 'CLA' in inspect.getfullargspec(getattr(self.BuiltinCommands, CallStackList[1])).args:
+                    CommandMethod = getattr(self.BuiltinCommands, CallStackList[1])
+                    CommandOutput = str(CommandMethod(CLA=Arguments))
+                    return CommandOutput
+                else:
+                    
+                    CommandMethod = getattr(self.BuiltinCommands, CallStackList[1])
+                    CommandOutput = str(CommandMethod())
+                    return CommandOutput
+
+            except AttributeError:
                 return 'BG_COMMAND_ENGINE: ROOT MODULE DOES NOT HAVE THE REQUESTED ATTRIBUTE'
 
 
