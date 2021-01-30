@@ -11,6 +11,11 @@ Date-Created: 2021-01-29
 
 def TraceCall(Command:str): # Traces A Command To The Right Function Call #
 
+    '''
+    This function is used to parse the command into a list.
+    *Please Don't Call This Unless You Know What You're Doing!*
+    '''
+
     # Parse Into List Of Calls #
     NameList = Command.split('.')
 
