@@ -41,7 +41,7 @@ Built-in Commands:
     - BG.WhoIsLeader: returns name of leader node, should match output of BG.whoami
     - BG.Version: Prints Version Information about BG.
     - BG.License: Outputs the license text. BG is licensed under the Apache 2 Open Source License.
-    - BG.ListCluster: outputs a list of all currently connected nodes
+    - BG.ListNodes: outputs a list of all currently connected nodes
     - BG.NodeCPU --Node [NODE Hostname]: Lists cpu usage percentages for this node. You must pass --Node followed by the node hostname.
     - BG.ClusterCPU: Lists cpu info for the entire cluster
     - BG.NodeMemory --Node [NODE Hostname]: Displays Stats about this node's memory usages/totals. You must pass --Node followed by the node hostname.
@@ -321,7 +321,7 @@ Built-in Commands:
         return Outstring
 
 
-    def codememory(self, CLA:dict):
+    def nodememory(self, CLA:dict):
         try:
             NodeName = CLA.get('--Node')
         except:
