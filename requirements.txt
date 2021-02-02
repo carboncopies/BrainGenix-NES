@@ -3,4 +3,4 @@ py-cpuinfo
 psutil
 GPUtil
 kazoo
-mysql-connector
+pymysql
