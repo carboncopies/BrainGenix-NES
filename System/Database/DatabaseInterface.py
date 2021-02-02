@@ -2,7 +2,8 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
-import mysql.connector
+#import mysql.connector
+import pymysql
 
 '''
 Name: Database Interface
@@ -18,7 +19,7 @@ class DBInterface(): # Interface to MySQL database #
         self.Logger = Logger
 
         # Establish DB Connection #
-        self.DBConnection = mysql.connector.connect(user=Username, password=Password, host=Host, database=Database)
+        self.DBConnection = pymysql.connect(host=Host, user=Username, password=Password, db=Database)
         self.Logger.Log(f'Connected To DB At {Host}')
         
         self.DBConnection.close()
