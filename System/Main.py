@@ -26,7 +26,7 @@ from CLI.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
 from CLI.PasswordCrypto import GeneratePassword, CheckPassword
 from CLI.ZKCLI import ZKCLI
 
-#from Database.DatabaseInterface import DBInterface
+from Database.DatabaseInterface import DBInterface
 
 
 # Load Config #
@@ -46,7 +46,7 @@ def CleanLog():
 
 
 # Connect To DB #
-#DatabaseInterface = DBInterface(Logger, DBUname, DBPasswd, DBHost, DBName) <-- Not Working RN, sha caching issue
+DatabaseInterface = DBInterface(Logger, DBUname, DBPasswd, DBHost, DBName)
 
 
 # Load SSH Keys #
