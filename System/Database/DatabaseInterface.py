@@ -4,6 +4,7 @@
 
 #import mysql.connector
 import pymysql
+import encryption
 
 '''
 Name: Database Interface
@@ -20,6 +21,10 @@ class DBInterface(): # Interface to MySQL database #
 
         # Establish DB Connection #
         self.DBConnection = pymysql.connect(host=Host, user=Username, password=Password, db=Database)
+        
+        #Encrypt the host befor logging
+        Host= encryption.encrypt(Logger:object, Host:str)
+        
         self.Logger.Log(f'Connected To DB At {Host}')
         
         self.DBConnection.close()
