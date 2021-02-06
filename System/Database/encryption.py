@@ -21,15 +21,15 @@ def gen_secret(privatekey,publickey):
     secretKey = key.hexdigest()
     return secretKey
 
-def encrypt(Logger:object, Command:str):
+def encrypt(Logger:object, Host:str):
     PublicKey,PrivateKey= KeyUtils.GenKeys(Logger:object)
     SecretKey= gen_secret(PublicKey,PrivateKey)
     enc_Command= ""
 
-    for c in Command:
+    for c in Host:
         enc_Command += chr(ord(c)+ SecretKey)
 
-    return enc_Command
+    return enc_Host
     
 
     
