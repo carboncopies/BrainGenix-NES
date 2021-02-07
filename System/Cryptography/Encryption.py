@@ -1,4 +1,4 @@
-from CLI.KeyUtils import GenKeys
+from Cryptography.KeyUtils import GenKeys
 from Crypto.Util import number
 from Crypto.Hash import SHA256
 
