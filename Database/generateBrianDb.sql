@@ -110,28 +110,17 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
 -- insert data into the newly created tables
---insert into bgdb.Neurons values (1, 'Cerebellum', 0, 0, 0);
---insert into bgdb.Neurons (brainregion, x_coord, y_coord, z_coord) values ('Cerebellum', 1, 0, 0);
+insert into bgdb.equation values (1, 'e = mc ** 2');
+insert into bgdb.equation values (2, 'c ** 2 = (a ** 2) + (b ** 2)');
+
+insert into bgdb.neuron values (1, 0, 0, 0, 'node1', 1);
+insert into bgdb.neuron values (2, 0, 0, 0, 'node2', 2);
+
+insert into bgdb.synapse values (1, 2, 2, 2, 1, 1);
+insert into bgdb.synapse values (2, 3, 3, 3, 2, 2);
+
 --
---insert into bgdb.Synapses (Neurons_id) values (1);
---insert into bgdb.Synapses (Neurons_id) values (2);
---
---insert into bgdb.SynapseConnections (synapses_id, connectedtosynapses_id, strength) values (1, 2, 10);
---insert into bgdb.SynapseConnections (synapses_id, connectedtosynapses_id, strength) values (1, 3, 9);
---
-----create a user for working on the local database if necessary; swap out real values for 'userName' and 'password' (password is the "identified by" part)
---    CREATE USER 'bgUser'@'localhost' IDENTIFIED BY '123456';
---    GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'bgUser'@'localhost' WITH GRANT OPTION;
---
---    --user table for application login
---    CREATE TABLE IF NOT EXISTS `bgdb`.`User` (
---      `User_id` BIGINT NOT NULL AUTO_INCREMENT,
---      `User_Name` VARCHAR(45) NOT NULL unique,
---      `User_Password` blob not null,
---      `First_Name` VARCHAR(45) NOT NULL,
---      `Last_Name` VARCHAR(45) NOT NULL,
---      PRIMARY KEY (`User_id`))
---    ENGINE = InnoDB;
+insert into bgdb.user values (1, 'bleu', 'password', 'salt', 'Brad', 'Leu', 'some notes', 'T', null, null);
 --
 --    --sample for encrypting/dectrypting passwords
 --    insert into bgdb.User (user_name, user_password, first_name, last_name) values ('bleu', aes_encrypt('123456', 'bleu'), 'Brad', 'Leu');
