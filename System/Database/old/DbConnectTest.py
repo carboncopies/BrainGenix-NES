@@ -31,4 +31,4 @@ if __name__ == '__main__':
 
 DbQuery.UserLogin('bleu', '123456')
 
-DbQuery.UserAdd('testuser', 'testuserpass', 'testfirst', 'testlast')
+DbQuery.UserAdd(2, 'testuser', 'testuserpass', '', 'testfirst', 'testlast')
