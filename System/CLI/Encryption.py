@@ -1,4 +1,4 @@
-import KeyUtils
+from CLI.KeyUtils import GenKeys
 from Crypto.Util import number
 from Crypto.Hash import SHA256
 
@@ -18,7 +18,7 @@ def gen_secret(privatekey,publickey):
     return secretKey
 
 def encrypt(Logger:object, Command:str):
-    PublicKey,PrivateKey= KeyUtils.GenKeys(Logger:object)
+    PublicKey,PrivateKey= GenKeys(Logger:object)
     SecretKey= gen_secret(PublicKey,PrivateKey)
     enc_Command= ""
 
