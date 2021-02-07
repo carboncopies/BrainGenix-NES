@@ -25,6 +25,7 @@ from Zookeeper.ZKManager import SystemTelemetryManager
 from CLI.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
 from CLI.PasswordCrypto import GeneratePassword, CheckPassword
 from CLI.ZKCLI import ZKCLI
+from CLI.Encryption import encrypt
 
 from Database.DatabaseInterface import DBInterface
 
