@@ -4,7 +4,6 @@
 
 #import mysql.connector
 import pymysql
-import encryption
 
 '''
 Name: Database Interface
