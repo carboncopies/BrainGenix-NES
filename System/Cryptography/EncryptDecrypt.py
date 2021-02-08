@@ -8,11 +8,11 @@ from Crypto.Hash import SHA256
 
 '''
 Name: Encryption
-Description: This file encrypts the BrainGenix Command Line Traffic using the Diffie Hellman Algorithm.
+Description: This file performs encryption and decryption on the BrainGenix Command Line Traffic using the Diffie Hellman Algorithm.
 Date-Created: 2021-02-07
 '''
 
-class Encryption:
+class EncryptDecrypt:
 	
 	def __init__(self):
 		self.Prime= hex(number.getPrime(2048))
@@ -38,6 +38,17 @@ class Encryption:
 			enc_Command += chr(ord(c)+ SecretKey)
 
 	    	return enc_Command
+	
+	def Decrypt(self, Logger:object, encCommand:str):
+
+	    	PublicKey, PrivateKey = ReadKeys(Logger)
+	    	SecretKey = GenerateSecret(PublicKey, PrivateKey)
+		dec_Command = ""
+			
+		for c in encCommand:
+			dec_Command += chr(ord(c)-SecretKey)
+		
+		return dec_Command
 
 
     
