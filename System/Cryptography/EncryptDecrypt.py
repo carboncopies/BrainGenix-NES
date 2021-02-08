@@ -14,41 +14,57 @@ Date-Created: 2021-02-07
 
 class EncryptDecrypt:
 	
-	def __init__(self):
-		self.Prime= hex(number.getPrime(2048))
+	def __init__(self, PrimeLength:int=2048): # Initialize The Class #
+
+        # Generate A Prime Nubmer Of Specified Length #
+		self.Prime= hex(number.getPrime(PrimeLength)) 
+
 
 	def GenerateSecret(self, PrivateKey, PublicKey): # Generates A New Secret #
+
+		# Gen Secret #
 		Secret = pow(int(PublicKey), int(PrivateKey), self.Prime)
 		SecretBytes = str(Secret)
 
-	    	# Generate Hash Key Using SHA256 #
-	    	Key = SHA256.new()
-	    	Key.update(bytes(SecretBytes))
-	   	 SecretKey = Key.hexdigest()
-	    	return SecretKey
+	    # Generate Hash Key Using SHA256 #
+	    Key = SHA256.new()
+	    Key.update(bytes(SecretBytes))
+	   	SecretKey = Key.hexdigest()
+	    
+		# Return Secret Key #
+		return SecretKey
+
 
 	def Encrypt(self, Logger:object, Command:str):
 
-	    	# Load The Pub/Private Keys #
-	    	PublicKey, PrivateKey = ReadKeys(Logger)
-	    	SecretKey = GenerateSecret(PublicKey, PrivateKey)
-	    	enc_Command= ""
+		# Load The Pub/Private Keys #
+		PublicKey, PrivateKey = ReadKeys(Logger)
+		SecretKey = GenerateSecret(PublicKey, PrivateKey)
 
-	    	for c in Command:
-			enc_Command += chr(ord(c)+ SecretKey)
+		## CAN WE REPLACE THIS WITH AES 256 ##
+		EncryptedCommand = ""
 
-	    	return enc_Command
+		for c in Command:
+			EncryptedCommand += chr(ord(c)+ SecretKey)
+
+
+		# Return The Encrypted Command #
+		return EncryptedCommand
 	
+
 	def Decrypt(self, Logger:object, encCommand:str):
 
-	    	PublicKey, PrivateKey = ReadKeys(Logger)
-	    	SecretKey = GenerateSecret(PublicKey, PrivateKey)
-		dec_Command = ""
+	    PublicKey, PrivateKey = ReadKeys(Logger)
+	    SecretKey = GenerateSecret(PublicKey, PrivateKey)
+
+		## CAN WE REPLACE THIS WITH AES 256 ##
+		DecryptedCommand = ""
 			
 		for c in encCommand:
-			dec_Command += chr(ord(c)-SecretKey)
+			DecryptedCommand += chr(ord(c)-SecretKey)
 		
-		return dec_Command
+		# Return The Decrypted Command #
+		return DecryptedCommand
 
 
     
