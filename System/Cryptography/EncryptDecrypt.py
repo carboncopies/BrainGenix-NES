@@ -65,14 +65,3 @@ class EncryptDecrypt:
 		
 		# Return The Decrypted Command #
 		return DecryptedCommand
-
-
-    
-
-    
-        
-        
-    
-
-
-
