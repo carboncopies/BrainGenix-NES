@@ -145,7 +145,7 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
     ModuleImports = []
 
 
-    for PluginInfoIndex in range(len(PluginInfoClasses)):
+    for PluginInfoIndex in enumerate(PluginInfoClasses):
 
         PluginInfo = PluginInfoClasses[PluginInfoIndex]
 
