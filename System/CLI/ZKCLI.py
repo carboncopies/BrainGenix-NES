@@ -43,7 +43,7 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
 
         # Start Main Loop #
         self.MainThread()
-        
+
 
 
     def MainThread(self, PollingInterval:float=0.1): # Main Thread That Runs The Connection #
@@ -70,7 +70,6 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
 
         if ((Username == 'root') and (Password == 'turing')):
             self.Logger.Log(f'Authentication Completed For User {Username}')
-            pass
         else:
             self.Logger.Log(f'Client Failed Authentication With Uname {Username}')
             return
