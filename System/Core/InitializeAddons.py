@@ -77,7 +77,7 @@ def InitializeModules(Modules:list, Logger:object, Zookeeper:object):
             Registry.update({ModuleName : ClassInstance})
         else:
             Logger.Log(f'Module {ModuleName} Does Not Have A Main Class')
-        
+
 
     return Registry
 
