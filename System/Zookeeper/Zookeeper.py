@@ -217,11 +217,11 @@ class ZK(): # Create Interface Class #
             # Check Leader #
             if not LeaderExists:
                 self.LeaderTimeout()
-            try:
+            if not self.ZookeeperConnection.exists('/BrainGenix/System/Leader'):
                 if (self.ZookeeperConnection.get('/BrainGenix/System/Leader')[0] != self.Name.encode() and (self.ZookeeperMode == 'Leader')):
                     self.Logger.Log('Node Lock File Overwritten, Degrading To Follower!', 1)
                     self.ZookeeperMode = 'Follower'
-            except: # Catch exception if node is destroyed during check
+            else: # Catch exception if node is destroyed during check
                 pass
 
             # Check Conn/Disconn Events #
