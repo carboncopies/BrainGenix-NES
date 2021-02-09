@@ -5,7 +5,6 @@
 '''
 Name: Main Loop
 Description: This is the main file for a BrainGenix instance.
-
 Date-Created: 2020-12-18
 '''
 
