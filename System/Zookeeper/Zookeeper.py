@@ -48,7 +48,7 @@ class ZK(): # Create Interface Class #
         self.ZookeeperMode = 'Follower'
         self.ZookeeperHaveLeader = False
         self.TransactionTime = 0
-        self.Name = LeaderName = platform.uname().node
+        self.Name = platform.uname().node
         self.ConnectedNodes = []
         self.ConnectedNodesLastUpdate = []
 
