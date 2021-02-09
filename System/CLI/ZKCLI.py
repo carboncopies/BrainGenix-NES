@@ -146,7 +146,7 @@ To see a list of built-in commands, please type: "BG.help"
                     CommandOutput = str(CommandMethod(CLA=Arguments))
                     return CommandOutput
                 else:
-                    
+
                     CommandMethod = getattr(self.BuiltinCommands, CallStackList[1])
                     CommandOutput = str(CommandMethod())
                     return CommandOutput
@@ -156,7 +156,7 @@ To see a list of built-in commands, please type: "BG.help"
 
 
     def Poll(self): # Polls the Node And Returns True If The Node Changed #
-    
+
         '''
         This function reads the connection zNode, and determines if the user has sent over any new commands.
         It returns false if nothing has changed, and true if a new command is detected.
