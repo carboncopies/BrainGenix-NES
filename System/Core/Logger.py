@@ -14,7 +14,6 @@ Date-Created: 2020-12-19
 '''
 
 class SysLog():
-
     '''
     This class contains the logger used by the entire BrainGenix system.
     The logger is an essential part of the BrainGenix system, as it allows an entire cluster's log events to be aggregated into a usable format.
@@ -65,10 +64,7 @@ class SysLog():
         self.EnableGzip = EnableGzip
 
         self.NodeID = NodeID
-
         self.StartTime = str(datetime.datetime.now()).replace(' ', '_')
-
-
 
         print(self.LogBuffer[:-1])
 
@@ -117,7 +113,6 @@ class SysLog():
             self.LogFileObject.write(self.LogBuffer)
             self.LogBuffer = ''
 
-
         # Truncate Log And Start New Log File If Log Is Over 
         self.CurrentLogLength += 1
 
@@ -146,7 +141,6 @@ class SysLog():
 
         os.remove(FileName)
 
-
         # Write The Compressed File To The Disk #
 
         with gzip.open(FileName + '.gz', 'wb') as FileObject:
@@ -162,7 +156,6 @@ class SysLog():
         '''
 
         # Close Current File, and Move To New FileName #
-
         self.LogFileObject.close()
 
         NodeID = self.NodeID
@@ -198,10 +191,8 @@ class SysLog():
         *DO NOT CALL THIS*
         '''
 
-        try:
+        if not os.path.exists(path):
             os.mkdir(path)
-        except:
-            pass
 
 
     def PurgeBuffer(self): # Writes The Contents Of The Buffer To Disk #
@@ -230,7 +221,7 @@ class SysLog():
         self.LogFileObject.close()
 
 
-        try:
-            os.rename(f'{self.LogPath}/Current', f'{self.LogPath}/{self.StartTime}')
-        except: # Catch Exception If Other Node(s) Have Open Files #
-            pass
+        #try:
+        #    os.rename(f'{self.LogPath}/Current', f'{self.LogPath}/{self.StartTime}')
+        #except: # Catch Exception If Other Node(s) Have Open Files #
+        #    pass
