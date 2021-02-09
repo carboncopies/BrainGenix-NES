@@ -136,7 +136,7 @@ class ZK(): # Create Interface Class #
         self.Logger.Log('Electing Leader From Zookeeper Ensemble')
 
         UUIDString = str(uuid.uuid1())
-        
+
         ZookeeperElection = self.ZookeeperConnection.Election("/BrainGenix/System/Election", UUIDString)
         ZookeeperElection.run(self.ElectedLeader)
 
