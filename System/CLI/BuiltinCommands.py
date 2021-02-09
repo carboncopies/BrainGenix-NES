@@ -275,7 +275,7 @@ Built-in Commands:
             OutString += f'{Node}\n'
         OutString = OutString[:-1]
         return OutString
-    
+
 
     def nodecount(self):
         Nodes = self.Zookeeper.ZookeeperConnection.get_children('/BrainGenix/System/Nodes')
@@ -314,7 +314,7 @@ Built-in Commands:
         avgcpu = sum(CPUInfo)/len(CPUInfo)
         Outstring = f'Average CPU for cluster: {round(avgcpu)}%\n'
 
-        for CpuCore in range(len(CPUInfo)):
+        for CpuCore in enumerate(CPUInfo):
             Outstring += f'    Core {CpuCore}: {CPUInfo[CpuCore]}%\n'
         Outstring = Outstring[:-1]
 
