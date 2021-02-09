@@ -25,9 +25,9 @@ def LoadConfig(ConfigFilePath):
     with open(ConfigFilePath, 'r') as File:
         ConfigFileContents = File.read()
 
-    ConfigFileDictionary = yaml.load(ConfigFileContents, Loader=yaml.FullLoader)
+    ConfigFileDictionary = yaml.safe_load(ConfigFileContents, Loader=yaml.FullLoader)
 
-    
+
     # Extract the important values from the dictionary and return them to the main system #
     AddonsPath = str(ConfigFileDictionary.get('AddonsPath'))
     LogPath = str(ConfigFileDictionary.get('LogPath'))
