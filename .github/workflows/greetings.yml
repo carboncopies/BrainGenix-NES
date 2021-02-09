@@ -1,0 +1,13 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'Thank you for opening an issue. We will review the matter and get back to you soon. If you have further questions please email BrainGenix@carboncopies.org.'
+        pr-message: 'Thank you for contributing to BrainGenix. If you have further questions please email BrainGenix@carboncopies.org.'
