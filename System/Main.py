@@ -4,6 +4,7 @@
 
 '''
 Name: Main Loop
+
 Description: This is the main file for a BrainGenix instance.
 Date-Created: 2020-12-18
 '''
@@ -16,7 +17,7 @@ from Core.LoadAddons import LoadAddons, CheckDependencies
 from Core.Logger import SysLog
 from Core.SystemTelemetry import Follower, Leader
 from Core.CheckLibraries import CheckImports#, CheckLibrary
-from Core.InitializeAddons import InitFollowerPlugins, InitPluginRegistry, InitModuleRegistry, InitLeadPluginReg#, InitLeaderPlugins, InitializeModules
+from Core.InitializeAddons import InitFollowerPlugins, InitPluginRegistry, InitLeadPluginReg#, InitLeaderPlugins, InitializeModules, InitModuleRegistry
 from Core.PluginManager import LMPluginManager
 
 from Zookeeper.Zookeeper import ZK
