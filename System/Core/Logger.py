@@ -14,8 +14,7 @@ Date-Created: 2020-12-19
 '''
 
 
-def CompressFile(self, FileName):
-
+def CompressFile(FileName):
     '''
     This function is used to compress finished logfiles into a gzip file.
     The function is called whenever a log file is split after a certain number of lines.
@@ -23,22 +22,20 @@ def CompressFile(self, FileName):
     '''
 
     # First, Read The File Into Ram, Then Remove The Original #
-
     with open(FileName, 'rb') as FileObject:
 
         FileText = FileObject.read()
 
     os.remove(FileName)
 
-    # Write The Compressed File To The Disk #
 
+    # Write The Compressed File To The Disk #
     with gzip.open(FileName + '.gz', 'wb') as FileObject:
 
         FileObject.write(FileText)
 
 
-def TryMakeDir(self, path): # Makes a Dir, catches exception if already exists #
-
+def TryMakeDir(path): # Makes a Dir, catches exception if already exists #
     '''
     This function attempts to make a directory, and if it already exists, skips it.
     *DO NOT CALL THIS*
@@ -59,7 +56,7 @@ class SysLog():
     '''
 
     def __init__(self, NodeID:int, LogPath:str, BufferLength:int=10, LogSegmentLength:int=250, ConsoleOutputEnabled:bool=True, EnableGzip:bool=True): # Initializes The Log #
-        
+
         '''
         This function is used when the system is starting up, and should not be called anytime after that.
         If this function is called later, it'll cause the logger to be reinitialized, which may loose the buffer.
