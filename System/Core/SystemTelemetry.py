@@ -212,7 +212,7 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
         self.SystemHardware.update({'CPUFrequency' : CPUInfo.current})
         CPUUsage = []
 
-        for Index, Percent in enumerate(psutil.cpu_percent(percpu=True, interval=1)):
+        for _, Percent in enumerate(psutil.cpu_percent(percpu=True, interval=1)):
             CPUUsage.append(Percent)
 
         self.SystemHardware.update({'CPUUsage' : CPUUsage})
