@@ -13,8 +13,8 @@ Description: This class handles the main log for this braingenix instance.
 Date-Created: 2020-12-19
 '''
 
-
 def CompressFile(FileName):
+
     '''
     This function is used to compress finished logfiles into a gzip file.
     The function is called whenever a log file is split after a certain number of lines.
@@ -36,6 +36,7 @@ def CompressFile(FileName):
 
 
 def TryMakeDir(path): # Makes a Dir, catches exception if already exists #
+
     '''
     This function attempts to make a directory, and if it already exists, skips it.
     *DO NOT CALL THIS*
@@ -175,7 +176,7 @@ class SysLog():
 
 
         # Start New LogFile #
-        
+
         self.LogFileName = f'Current/Node-{NodeID}/Current' + '.log.txt'
         self.LogFileObject = open(self.LogPath + self.LogFileName, 'w')
 
