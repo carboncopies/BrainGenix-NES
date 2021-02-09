@@ -33,7 +33,7 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
         # Log Starting Message #
         self.Logger.Log('Collecting System Information')
 
-        
+
         # Get Static Stats #
         self.GetStaticStatsDict()
 
@@ -46,7 +46,7 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
 
 
     def AutoRefresh(self, RefreshInterval:float=1):
-        
+
 
         # Start Inf Loop #
         while True:
@@ -148,7 +148,7 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
                 PartitionUsage = psutil.disk_usage(Partition.mountpoint)
             except PermissionError: # Catch Exception Thrown If Partition Is Unreadable #
                 continue
-            
+
             PartitionTotal.append(PartitionUsage.total)
             PartitionUsed.append(PartitionUsage.used)
             PartitionFree.append(PartitionUsage.free)
@@ -189,7 +189,7 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
         GPUIds = []
         GPUNames = []
         GPUTotalMemory = []
-        
+
         GPUs = GPUtil.getGPUs()
 
         for GPU in GPUs:
@@ -236,8 +236,8 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
 
         self.SystemHardware.update({'BytesSent' : NetInfo.bytes_sent})
         self.SystemHardware.update({'BytesRecv' : NetInfo.bytes_recv})
-         
-        
+
+
         # Get RealTime GPU Info #
         GPUs = GPUtil.getGPUs()
 
@@ -278,7 +278,7 @@ class Leader(): # This Class Is Run By The Leader #
         # Log Starting Message #
         self.Logger.Log('Starting System Telemetry Leader')
 
-        
+
         # Ensure ZK Path #
         self.ZK.ZookeeperConnection.ensure_path('/BrainGenix/System/Telemetry')
 
@@ -333,7 +333,7 @@ class Leader(): # This Class Is Run By The Leader #
         # Get zNodes In Info Section #
         NodeChildren = self.ZK.ZookeeperConnection.get_children('/BrainGenix/System/Telemetry/')
 
-        
+
         # Pull Data From zNodes #
         for NodeName in NodeChildren:
             NodeInfoJSON = self.ZK.ZookeeperConnection.get(f'/BrainGenix/System/Telemetry/{NodeName}')[0]
