@@ -101,7 +101,7 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
     ModuleNames = []
 
     for Plugin in list(Plugins.items()):
-        
+
         Logger.Log(f'Getting Plugin Info For Plugin: {Plugin[0]}')
 
         PluginNames.append(Plugin[0])
@@ -113,8 +113,8 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
         except AttributeError: # Catch Exception Thrown If Addon Does Not Have An AddonInfo Class #
             Logger.Log(f'Plugin {Plugin[0]} Does Not Have An AddonInfo Class, This May Result In Undefined Behavior, And This Addon Will NOT Satisfy Others Dependencies!', 2)
             PluginInfoClasses.append(None)
-    
-    
+
+
     for Module in list(Modules.items()):
 
         Logger.Log(f'Getting Plugin Info For Module: {Module[0]}')
@@ -138,7 +138,7 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
     PluginAuthors = []
     PluginDependencies = []
     PluginImports = []
-    
+
     ModuleVersions = []
     ModuleAuthors = []
     ModuleDependencies = []
@@ -160,7 +160,7 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
         except AttributeError:
             PluginAuthors.append('No Data Available')
             Logger.Log(f'Plugin {list(Plugins.items())[PluginInfoIndex][0]} Is Missing "Author" Information', 2)
-        
+
         try:
             PluginDependencies.append(PluginInfo.Dependencies)
         except AttributeError:
@@ -271,7 +271,7 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
                         pass # Condition Met! #
                     else:
                         Logger.Log(f'Version Warning on Module "{WantedName}", Wants {WantedOperand}{WantedVersion}, Has {ActualVersion}', 1)
-            
+
             else:
                 Logger.Log(f'Missing Module "{WantedName}" at Version {WantedVersion}, Aborting startup. Please Locate and Install this Module.', 3)
                 exit()
