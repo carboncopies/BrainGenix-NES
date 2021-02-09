@@ -237,8 +237,8 @@ class ZKCLI(): # This class handles creating/destroying Connection Instances bas
         self.ZK = ZKInstance
         self.zNodeRoot = zNodeRoot
         self.LeaderPluginRegistry = LeaderPluginRegistry
-        self.ModuleRegistry = ModuleRegistry    
-        self.SystemTelemetryLeader = SysTelLead    
+        self.ModuleRegistry = ModuleRegistry
+        self.SystemTelemetryLeader = SysTelLead
 
         # Create Local Vars #
         self.HandledConnections = []
@@ -271,7 +271,7 @@ class ZKCLI(): # This class handles creating/destroying Connection Instances bas
 
         while True:
 
-            if self.ZK.ZookeeperMode == 'Leader':            
+            if self.ZK.ZookeeperMode == 'Leader':
 
                 # Grab A List Of Connection Instances #
                 ConnectionList = self.ZK.ZookeeperConnection.get_children(self.zNodeRoot)
