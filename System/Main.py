@@ -16,14 +16,14 @@ from Core.LoadAddons import LoadAddons, CheckDependencies
 from Core.Logger import SysLog
 from Core.SystemTelemetry import Follower, Leader
 from Core.CheckLibraries import CheckImports#, CheckLibrary
-from Core.InitializeAddons import InitFollowerPlugins, InitializeModules, InitPluginRegistry, InitModuleRegistry, InitLeadPluginReg#, InitLeaderPlugins
+from Core.InitializeAddons import InitFollowerPlugins, InitPluginRegistry, InitModuleRegistry, InitLeadPluginReg#, InitLeaderPlugins, InitializeModules
 from Core.PluginManager import LMPluginManager
 
 from Zookeeper.Zookeeper import ZK
 from Zookeeper.ZKManager import SystemTelemetryManager
 
 from Cryptography.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
-from Cryptography.PasswordCrypto import CheckPassword#, GeneratePassword
+#from Cryptography.PasswordCrypto import CheckPassword, GeneratePassword
 #from Cryptography.EncryptDecrypt import EncryptDecrypt
 
 from CLI.ZKCLI import ZKCLI
