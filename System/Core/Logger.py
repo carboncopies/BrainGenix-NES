@@ -3,10 +3,8 @@
 ###########################################################
 
 import datetime
-import time
 import inspect
 import os
-import atexit
 import gzip
 
 '''
@@ -15,6 +13,39 @@ Description: This class handles the main log for this braingenix instance.
 Date-Created: 2020-12-19
 '''
 
+def CompressFile(FileName): # Compresses The File #
+
+    '''
+    This function is used to compress finished logfiles into a gzip file.
+    The function is called whenever a log file is split after a certain number of lines.
+    *DO NOT CALL THIS*
+    '''
+
+    # First, Read The File Into Ram, Then Remove The Original #
+    with open(FileName, 'rb') as FileObject:
+
+        FileText = FileObject.read()
+
+    os.remove(FileName)
+
+
+    # Write The Compressed File To The Disk #
+    with gzip.open(FileName + '.gz', 'wb') as FileObject:
+
+        FileObject.write(FileText)
+
+
+def TryMakeDir(path): # Makes a Dir, catches exception if already exists #
+
+    '''
+    This function attempts to make a directory, and if it already exists, skips it.
+    *DO NOT CALL THIS*
+    '''
+
+    if not os.path.exists(path):
+        os.mkdir(path)
+
+
 class SysLog():
 
     '''
@@ -22,7 +53,7 @@ class SysLog():
     The logger is an essential part of the BrainGenix system, as it allows an entire cluster's log events to be aggregated into a usable format.
     The logger contains some functions which are described below.
     The most frequently used one will be the Log function, which accepts a message and a level, and puts it into the log.
-    This is the only function that should be called by an external function, as calling other functions will cause undefined behavior in the logger. 
+    This is the only function that should be called by an external function, as calling other functions will cause undefined behavior in the logger.
     '''
 
     def __init__(self, NodeID:int, LogPath:str, BufferLength:int=10, LogSegmentLength:int=250, ConsoleOutputEnabled:bool=True, EnableGzip:bool=True): # Initializes The Log #
@@ -35,24 +66,19 @@ class SysLog():
 
         NodeID = str(NodeID)
 
-
         # Check If Logs Dir Exists #
         print('Checking If Log Path Exists')
 
         DoesLogDirExist = os.path.isdir(LogPath)
-
         if not DoesLogDirExist:
 
             print('Log Path Does Not Exist, Creating Directory')
-
             os.mkdir(LogPath)
-                
             print('Created Directory')
-        
 
         # Initialize Local Variables #
-        self.TryMakeDir(LogPath + 'Current')
-        self.TryMakeDir(LogPath + f'Current/Node-{NodeID}')
+        TryMakeDir(LogPath + 'Current')
+        TryMakeDir(LogPath + f'Current/Node-{NodeID}')
 
         self.LogFileName = f'Current/Node-{NodeID}/Current' + '.log.txt'
         self.LogFileObject = open(LogPath + self.LogFileName, 'w')
@@ -67,16 +93,12 @@ class SysLog():
         self.EnableGzip = EnableGzip
 
         self.NodeID = NodeID
-
         self.StartTime = str(datetime.datetime.now()).replace(' ', '_')
-
-
 
         print(self.LogBuffer[:-1])
 
 
     def Log(self, Message:str, Level:int=0): # Handles The Log Of An Item #
-
         '''
         This function is the main logging function for the entire system.
         It accepts both a message and a log level as arguments.
@@ -119,8 +141,7 @@ class SysLog():
             self.LogFileObject.write(self.LogBuffer)
             self.LogBuffer = ''
 
-
-        # Truncate Log And Start New Log File If Log Is Over 
+        # Truncate Log And Start New Log File If Log Is Over #
         self.CurrentLogLength += 1
 
         if self.CurrentLogLength > self.LogSegmentLength:
@@ -129,31 +150,7 @@ class SysLog():
             LogFileName = self.StartNewFile()
 
             if self.EnableGzip:
-                self.CompressFile(LogFileName)
-
-
-    def CompressFile(self, FileName):
-
-        '''
-        This function is used to compress finished logfiles into a gzip file.
-        The function is called whenever a log file is split after a certain number of lines.
-        *DO NOT CALL THIS*
-        '''
-
-        # First, Read The File Into Ram, Then Remove The Original #
-
-        with open(FileName, 'rb') as FileObject:
-
-            FileText = FileObject.read()
-
-        os.remove(FileName)
-
-
-        # Write The Compressed File To The Disk #
-
-        with gzip.open(FileName + '.gz', 'wb') as FileObject:
-
-            FileObject.write(FileText)
+                CompressFile(LogFileName)
 
 
     def StartNewFile(self):
@@ -164,7 +161,6 @@ class SysLog():
         '''
 
         # Close Current File, and Move To New FileName #
-
         self.LogFileObject.close()
 
         NodeID = self.NodeID
@@ -180,7 +176,7 @@ class SysLog():
 
 
         # Start New LogFile #
-        
+
         self.LogFileName = f'Current/Node-{NodeID}/Current' + '.log.txt'
         self.LogFileObject = open(self.LogPath + self.LogFileName, 'w')
 
@@ -191,19 +187,6 @@ class SysLog():
         # Return The Old File Name #
 
         return NewLogName
-
-
-    def TryMakeDir(self, path): # Makes a Dir, catches exception if already exists #
-
-        '''
-        This function attempts to make a directory, and if it already exists, skips it.
-        *DO NOT CALL THIS*
-        '''
-
-        try:
-            os.mkdir(path)
-        except:
-            pass
 
 
     def PurgeBuffer(self): # Writes The Contents Of The Buffer To Disk #
@@ -232,7 +215,7 @@ class SysLog():
         self.LogFileObject.close()
 
 
-        try:
-            os.rename(f'{self.LogPath}/Current', f'{self.LogPath}/{self.StartTime}')
-        except: # Catch Exception If Other Node(s) Have Open Files #
-            pass
+        #try:
+        #    os.rename(f'{self.LogPath}/Current', f'{self.LogPath}/{self.StartTime}')
+        #except: # Catch Exception If Other Node(s) Have Open Files #
+        #    pass
