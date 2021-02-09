@@ -116,7 +116,7 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
 
         # Check if it's a help command #
         if CallStackList[0].lower() in ['?', 'help', 'h']:
-            
+
             HelpPage = '''
 Welcome to the BrainGenix Command Line Interface (CLI).
 This interface is designed to simplify administration and debugging of the system.
@@ -278,7 +278,7 @@ class ZKCLI(): # This class handles creating/destroying Connection Instances bas
 
                 # Check If It's Already Handled #
                 for Connection in ConnectionList:
-                    
+
                     if Connection not in self.HandledConnections:
                         self.SpawnConnectionInstance(Connection)
                         self.Logger.Log(f'ZKCLI Started Connection Handler For Session {Connection}')
