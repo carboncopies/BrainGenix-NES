@@ -16,8 +16,7 @@ Date-Created: 2020-12-19
 def CompressFile(FileName): # Compresses The File #
     '''This function is used to compress finished logfiles into a gzip file.
     The function is called whenever a log file is split after a certain number of lines.
-    *DO NOT CALL THIS*
-    '''
+    *DO NOT CALL THIS*'''
 
     # First, Read The File Into Ram, Then Remove The Original #
     with open(FileName, 'rb') as FileObject:
@@ -35,8 +34,7 @@ def CompressFile(FileName): # Compresses The File #
 
 def TryMakeDir(path): # Makes a Dir, catches exception if already exists #
     '''This function attempts to make a directory, and if it already exists, skips it.
-    *DO NOT CALL THIS*
-    '''
+    *DO NOT CALL THIS*'''
 
     if not os.path.exists(path):
         os.mkdir(path)
