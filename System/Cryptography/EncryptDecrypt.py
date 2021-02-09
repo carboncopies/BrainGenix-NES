@@ -2,7 +2,7 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
-#from Cryptography.KeyUtils import GenKeys
+from Cryptography.KeyUtils import ReadKeys
 from Crypto.Util import number
 from Crypto.Hash import SHA256
 
@@ -17,7 +17,7 @@ class EncryptDecrypt:
 
 	def __init__(self, PrimeLength:int=2048):# Generate A Prime Nubmer Of Specified Length #
 
-            self.Prime= hex(number.getPrime(PrimeLength)) 
+            self.Prime= hex(number.getPrime(PrimeLength))
 
 
 	def GenerateSecret(self, PrivateKey, PublicKey): # Generates A New Secret #
@@ -38,7 +38,7 @@ class EncryptDecrypt:
 
             # Load The Pub/Private Keys #
             PublicKey, PrivateKey = ReadKeys(Logger)
-            SecretKey = GenerateSecret(PublicKey, PrivateKey)
+            SecretKey = self.GenerateSecret(PublicKey, PrivateKey)
 
             EncryptedCommand = ""
 
@@ -47,12 +47,12 @@ class EncryptDecrypt:
 
             # Return The Encrypted Command #
             return EncryptedCommand
-	
+
 
 	def Decrypt(self, Logger:object, encCommand:str):
 
             PublicKey, PrivateKey = ReadKeys(Logger)
-            SecretKey = GenerateSecret(PublicKey, PrivateKey)
+            SecretKey = self.GenerateSecret(PublicKey, PrivateKey)
 
             ## CAN WE REPLACE THIS WITH AES 256 ##
             DecryptedCommand = ""
