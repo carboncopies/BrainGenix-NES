@@ -74,7 +74,7 @@ def InitializeModules(Modules:list, Logger:object, Zookeeper:object):
 
         if hasattr(Module, 'Main'):
             ClassInstance = Module.LeaderMain(Logger=Logger, Zookeeper=Zookeeper)
-            Registry.update({ModuleName : IClassInstance})
+            Registry.update({ModuleName : ClassInstance})
         else:
             Logger.Log(f'Module {ModuleName} Does Not Have A Main Class')
         
