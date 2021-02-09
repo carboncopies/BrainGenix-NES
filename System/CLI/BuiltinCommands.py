@@ -294,7 +294,7 @@ Built-in Commands:
                 return f'Node {NodeName} does not exist! Please check your arguments.'
         except:
             return f'Node {NodeName} does not exist! Please check your arguments.'
-        
+
         CPUInfo = info.get('CPUUsage')
         avgcpu = sum(CPUInfo)/len(CPUInfo)
         Outstring = f'Average CPU for node {NodeName}: {round(avgcpu)}%\n'
@@ -345,7 +345,7 @@ Built-in Commands:
         Outstring += f'    - {int(Info.get("SWAPUsage")) + int(Info.get("SWAPFree"))} Bytes Total\n'
 
         return Outstring
-    
+
 
     def clustermemory(self):
 
