@@ -12,7 +12,7 @@ class BG(): # Standard Commands #
 
     '''
     This class contains a set of functions used by the ZKCLI as a builtin set of commands for the core systems to BG.
-    You can interact with these by calling 'BG.help' in the CLI. 
+    You can interact with these by calling 'BG.help' in the CLI.
     That will produce a list of commands and a breif description of what they do.
     *Please Don't Call This Unless You Know What You're Doing!*
     '''
@@ -57,7 +57,7 @@ Built-in Commands:
 
     def version(self):
         return 'BrainGenix V0.0.3 Development,Unstable'
-    
+
     def license(self):
         LicenseText = '''                                 Apache License
                            Version 2.0, January 2004
@@ -298,7 +298,7 @@ Built-in Commands:
         CPUInfo = info.get('CPUUsage')
         avgcpu = sum(CPUInfo)/len(CPUInfo)
         Outstring = f'Average CPU for node {NodeName}: {round(avgcpu)}%\n'
-        for CpuCore in range(len(CPUInfo)):
+        for CpuCore in enumerate(CPUInfo):
             Outstring += f'    Core {CpuCore}: {CPUInfo[CpuCore]}%\n'
         Outstring = Outstring[:-1]
         return Outstring
@@ -378,7 +378,7 @@ Built-in Commands:
         Outstring += f'    - {int(SwapUsedTotal)} Bytes Swap Used\n'
         Outstring += f'    - {int(SwapFreeTotal)} Bytes Swap Free\n'
 
-        return Outstring        
+        return Outstring
 
     def SyntaxError(self):
         return 'BG_COMMAND_ENGINE: COMMAND IS NOT RECOGNIZED AS VALID IN FORMAT'
