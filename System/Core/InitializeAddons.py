@@ -61,7 +61,7 @@ def InitLeaderPlugins(Plugins:list, Logger:object, Zookeeper:object):
 def InitializeModules(Modules:list, Logger:object, Zookeeper:object):
 
     '''
-    This function initializes the modules. 
+    This function initializes the modules.
     Modules are only used by leaders, and so this function is only called when a node transitions to leader mode from follower mode.
     *Please don't call this unless you know what you're doing!*
     '''
