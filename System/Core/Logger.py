@@ -14,6 +14,7 @@ Date-Created: 2020-12-19
 '''
 
 class SysLog():
+
     '''
     This class contains the logger used by the entire BrainGenix system.
     The logger is an essential part of the BrainGenix system, as it allows an entire cluster's log events to be aggregated into a usable format.
@@ -32,20 +33,15 @@ class SysLog():
 
         NodeID = str(NodeID)
 
-
         # Check If Logs Dir Exists #
         print('Checking If Log Path Exists')
 
         DoesLogDirExist = os.path.isdir(LogPath)
-
         if not DoesLogDirExist:
 
             print('Log Path Does Not Exist, Creating Directory')
-
             os.mkdir(LogPath)
-                
             print('Created Directory')
-        
 
         # Initialize Local Variables #
         self.TryMakeDir(LogPath + 'Current')
