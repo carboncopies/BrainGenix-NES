@@ -181,7 +181,7 @@ class ZK(): # Create Interface Class #
 
         if not self.ZookeeperConnection.exists(zNodePath):
             self.ZookeeperConnection.create(zNodePath, ephemeral=ephemeral, value=zNodeData)
-    
+
 
     def TryCreateOverwrite(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
 
@@ -255,7 +255,7 @@ class ZK(): # Create Interface Class #
         for NodeName in self.ConnectedNodes:
             if NodeName not in self.ConnectedNodesLastUpdate:
                 AddedNodes.append(NodeName)
-        
+
         # Check Subtractions #
         RemovedNodes = []
         for NodeName in self.ConnectedNodesLastUpdate:
@@ -267,7 +267,7 @@ class ZK(): # Create Interface Class #
 
         return AddedNodes, RemovedNodes
 
-    
+
     def PrintDifferences(self, AddedNodes, SubtractedNodes): # Prints Deltas Between Checks, IE A NODE ADDED OR REMOVED #
 
         '''
