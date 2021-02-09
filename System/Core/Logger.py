@@ -14,22 +14,20 @@ Date-Created: 2020-12-19
 '''
 
 class SysLog():
-
-    '''
+    """
     This class contains the logger used by the entire BrainGenix system.
     The logger is an essential part of the BrainGenix system, as it allows an entire cluster's log events to be aggregated into a usable format.
     The logger contains some functions which are described below.
     The most frequently used one will be the Log function, which accepts a message and a level, and puts it into the log.
     This is the only function that should be called by an external function, as calling other functions will cause undefined behavior in the logger. 
-    '''
+    """
 
     def __init__(self, NodeID:int, LogPath:str, BufferLength:int=10, LogSegmentLength:int=250, ConsoleOutputEnabled:bool=True, EnableGzip:bool=True): # Initializes The Log #
-
-        '''
+        """
         This function is used when the system is starting up, and should not be called anytime after that.
         If this function is called later, it'll cause the logger to be reinitialized, which may loose the buffer.
         *DO NOT CALL THIS*
-        '''
+        """
 
         NodeID = str(NodeID)
 
