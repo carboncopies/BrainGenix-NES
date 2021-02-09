@@ -61,7 +61,7 @@ class ZK(): # Create Interface Class #
         '''
         This function is used to connect to Zookeeper, hence the name.
         *It's automatically called by the main file, so you still shouldn't have to interact with this function.*
-        The function will also ensure that some essential paths exist for BG-Core. 
+        The function will also ensure that some essential paths exist for BG-Core.
         These paths are as follows: '/BrainGenix/System/Nodes', '/BrainGenix/CLI'
         Lastly, It creates a node with it's own hostname to tell the leader that this node has joined.
         That will create an event in the log that node {hostname} joined.
@@ -73,7 +73,7 @@ class ZK(): # Create Interface Class #
 
         self.ZookeeperConnection = KazooClient(hosts=ZKHosts)
         self.ZookeeperConnection.start()
- 
+
         if Logger != None:
             Logger.Log('Established Connection To Zookeeper')
 
@@ -163,10 +163,10 @@ class ZK(): # Create Interface Class #
         '''
 
         # Create LockFile #
-        try:
+        if not self.ZookeeperConnection.exists('/BrainGenix/System/Leader'):
             self.ZookeeperConnection.create('/BrainGenix/System/Leader', self.Name.encode(), ephemeral=True)
             self.ZookeeperMode = 'Leader'
-        except:
+        else:
             self.Logger.Log('Other Node Already Created Lockfile')
 
 
