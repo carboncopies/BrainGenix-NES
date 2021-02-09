@@ -3,10 +3,8 @@
 ###########################################################
 
 import datetime
-import time
 import inspect
 import os
-import atexit
 import gzip
 
 '''
