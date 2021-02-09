@@ -80,7 +80,7 @@ class Client(): # Client For BrainGenix System #
                 # Block Until Command Finished #
                 while self.ZookeeperConnection.get(self.ConnectionNode)[0] == Command.encode():
                     time.sleep(0.05)
-                
+
                 # Handle Output #
                 CommandOutput = self.ZookeeperConnection.get(self.ConnectionNode)[0].decode()
 
