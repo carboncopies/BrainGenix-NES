@@ -2,10 +2,8 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
-import threading
 import time
 import uuid
-import readline
 import atexit
 
 from kazoo.client import KazooClient
