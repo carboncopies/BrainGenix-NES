@@ -13,6 +13,41 @@ Description: This class handles the main log for this braingenix instance.
 Date-Created: 2020-12-19
 '''
 
+
+def CompressFile(self, FileName):
+
+    '''
+    This function is used to compress finished logfiles into a gzip file.
+    The function is called whenever a log file is split after a certain number of lines.
+    *DO NOT CALL THIS*
+    '''
+
+    # First, Read The File Into Ram, Then Remove The Original #
+
+    with open(FileName, 'rb') as FileObject:
+
+        FileText = FileObject.read()
+
+    os.remove(FileName)
+
+    # Write The Compressed File To The Disk #
+
+    with gzip.open(FileName + '.gz', 'wb') as FileObject:
+
+        FileObject.write(FileText)
+
+
+def TryMakeDir(self, path): # Makes a Dir, catches exception if already exists #
+
+    '''
+    This function attempts to make a directory, and if it already exists, skips it.
+    *DO NOT CALL THIS*
+    '''
+
+    if not os.path.exists(path):
+        os.mkdir(path)
+
+
 class SysLog():
 
     '''
@@ -44,8 +79,8 @@ class SysLog():
             print('Created Directory')
 
         # Initialize Local Variables #
-        self.TryMakeDir(LogPath + 'Current')
-        self.TryMakeDir(LogPath + f'Current/Node-{NodeID}')
+        TryMakeDir(LogPath + 'Current')
+        TryMakeDir(LogPath + f'Current/Node-{NodeID}')
 
         self.LogFileName = f'Current/Node-{NodeID}/Current' + '.log.txt'
         self.LogFileObject = open(LogPath + self.LogFileName, 'w')
@@ -117,30 +152,7 @@ class SysLog():
             LogFileName = self.StartNewFile()
 
             if self.EnableGzip:
-                self.CompressFile(LogFileName)
-
-
-    def CompressFile(self, FileName):
-
-        '''
-        This function is used to compress finished logfiles into a gzip file.
-        The function is called whenever a log file is split after a certain number of lines.
-        *DO NOT CALL THIS*
-        '''
-
-        # First, Read The File Into Ram, Then Remove The Original #
-
-        with open(FileName, 'rb') as FileObject:
-
-            FileText = FileObject.read()
-
-        os.remove(FileName)
-
-        # Write The Compressed File To The Disk #
-
-        with gzip.open(FileName + '.gz', 'wb') as FileObject:
-
-            FileObject.write(FileText)
+                CompressFile(LogFileName)
 
 
     def StartNewFile(self):
@@ -177,17 +189,6 @@ class SysLog():
         # Return The Old File Name #
 
         return NewLogName
-
-
-    def TryMakeDir(self, path): # Makes a Dir, catches exception if already exists #
-
-        '''
-        This function attempts to make a directory, and if it already exists, skips it.
-        *DO NOT CALL THIS*
-        '''
-
-        if not os.path.exists(path):
-            os.mkdir(path)
 
 
     def PurgeBuffer(self): # Writes The Contents Of The Buffer To Disk #
