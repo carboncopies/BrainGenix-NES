@@ -13,8 +13,7 @@ Description: This class handles the main log for this braingenix instance.
 Date-Created: 2020-12-19
 '''
 
-def CompressFile(FileName):
-
+def CompressFile(FileName): # Compresses The File #
     '''
     This function is used to compress finished logfiles into a gzip file.
     The function is called whenever a log file is split after a certain number of lines.
