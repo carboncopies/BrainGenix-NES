@@ -168,7 +168,7 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
         NetAddresses = []
         NetMasks = []
         NetBroadcasts = []
-        
+
         IFAddresses = psutil.net_if_addrs()
 
         for InterfaceName, InterfaceAddresses in IFAddresses.items():
