@@ -36,7 +36,7 @@ def CompressFile(FileName): # Compresses The File #
 
 
 def TryMakeDir(path): # Makes a Dir, catches exception if already exists #
-    
+
     '''
     This function attempts to make a directory, and if it already exists, skips it.
     *DO NOT CALL THIS*
