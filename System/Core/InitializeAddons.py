@@ -134,7 +134,7 @@ def InitLeadPluginReg(FollowerRegistry:dict, LeaderRegistry:dict, Logger:object)
             Plugin[1].GetPluginRegistry(FollowerRegistry, LeaderRegistry)
         else:
             Logger.Log(f'Plugin {Plugin[0]} Has No Attribute GetPluginRegistry', 1)
-        
+
 
 def InitModuleRegistry(Registry:dict, Logger:object): # Passes The Registry To All The Modules #
 
