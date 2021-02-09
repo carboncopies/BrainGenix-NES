@@ -20,6 +20,7 @@ class DBInterface(): # Interface to MySQL database #
 
         # Establish DB Connection #
         self.DBConnection = pymysql.connect(host=Host, user=Username, password=Password, db=Database)
+        
         self.Logger.Log(f'Connected To DB At {Host}')
         
         self.DBConnection.close()

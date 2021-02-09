@@ -22,8 +22,10 @@ from Core.PluginManager import LMPluginManager
 from Zookeeper.Zookeeper import ZK
 from Zookeeper.ZKManager import SystemTelemetryManager
 
-from CLI.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
-from CLI.PasswordCrypto import GeneratePassword, CheckPassword
+from Cryptography.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
+from Cryptography.PasswordCrypto import GeneratePassword, CheckPassword
+from Cryptography.EncryptDecrypt import EncryptDecrypt
+
 from CLI.ZKCLI import ZKCLI
 
 from Database.DatabaseInterface import DBInterface
