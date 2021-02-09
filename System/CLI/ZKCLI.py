@@ -89,7 +89,7 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
                 # Check If Connection Terminated #
                 if CommandChanged == 'Connection Closed':
                     return
-                
+
                 # Execute The Command If the zNode Data Has Changed #
                 if CommandChanged:
                     CommandText = self.GetCommand()
