@@ -174,7 +174,7 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
             Logger.Log(f'Plugin {list(Plugins.items())[PluginInfoIndex][0]} Is Missing "Imports" Information', 2)
 
 
-    for ModuleInfoIndex in range(len(ModuleInfoClasses)):
+    for ModuleInfoIndex in enumerate(ModuleInfoClasses):
 
         ModuleInfo = ModuleInfoClasses[ModuleInfoIndex]
 
