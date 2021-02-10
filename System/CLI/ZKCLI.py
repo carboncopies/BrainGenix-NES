@@ -82,23 +82,23 @@ class ConnectionInstance(): # This class is instantiated every time a user conne
 
         while True:
 
-            try:
-                # Get The Command State #
-                CommandChanged = self.Poll()
+            #try:
+            # Get The Command State #
+            CommandChanged = self.Poll()
 
-                # Check If Connection Terminated #
-                if CommandChanged == 'Connection Closed':
-                    return
+            # Check If Connection Terminated #
+            if CommandChanged == 'Connection Closed':
+                return
 
-                # Execute The Command If the zNode Data Has Changed #
-                if CommandChanged:
-                    CommandText = self.GetCommand()
-                    CommandOutput = self.CommandHandler(CommandText)
-                    self.WriteTextBack(CommandOutput)
+            # Execute The Command If the zNode Data Has Changed #
+            if CommandChanged:
+                CommandText = self.GetCommand()
+                CommandOutput = self.CommandHandler(CommandText)
+                self.WriteTextBack(CommandOutput)
 
 
-            except:
-                pass
+            #except:
+            #    pass
 
             # Delay For Polling Period #
             time.sleep(PollingInterval)
