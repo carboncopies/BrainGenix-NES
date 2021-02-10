@@ -298,7 +298,7 @@ Built-in Commands:
         CPUInfo = info.get('CPUUsage')
         avgcpu = sum(CPUInfo)/len(CPUInfo)
         Outstring = f'Average CPU for node {NodeName}: {round(avgcpu)}%\n'
-        for CpuCore in enumerate(CPUInfo):
+        for CpuCore, _ in enumerate(CPUInfo):
             Outstring += f'    Core {CpuCore}: {CPUInfo[CpuCore]}%\n'
         Outstring = Outstring[:-1]
         return Outstring
@@ -314,7 +314,7 @@ Built-in Commands:
         avgcpu = sum(CPUInfo)/len(CPUInfo)
         Outstring = f'Average CPU for cluster: {round(avgcpu)}%\n'
 
-        for CpuCore in enumerate(CPUInfo):
+        for CpuCore, _ in enumerate(CPUInfo):
             Outstring += f'    Core {CpuCore}: {CPUInfo[CpuCore]}%\n'
         Outstring = Outstring[:-1]
 
