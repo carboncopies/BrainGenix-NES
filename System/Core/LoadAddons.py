@@ -235,7 +235,7 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
                         pass # Condition Met! #
                     else:
                         Logger.Log(f'Version Warning on Plugin "{WantedName}", Wants {WantedOperand}{WantedVersion}, Has {ActualVersion}', 1)
-            
+
             else:
                 Logger.Log(f'Missing Plugin "{WantedName}" at Version {WantedVersion}, Aborting startup. Please Locate and Install this Plugin.', 3)
                 exit()
