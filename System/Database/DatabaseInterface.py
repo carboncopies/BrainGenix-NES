@@ -3,6 +3,7 @@
 ###########################################################
 
 import pymysql
+import atexit
 
 '''
 Name: Database Interface
@@ -35,6 +36,8 @@ class DBInterface(): # Interface to MySQL database #
 
         self.Logger.Log(f'Connected To DB At {Host}')
 
+        # Register Shutdown Function #
+        atexit.register(self.ShutdownConnection)
 
     def CreateCursor(self): # Creates A Database Cursor #
 
@@ -73,3 +76,10 @@ class DBInterface(): # Interface to MySQL database #
     def ReadNeuronInformation(self, UserName:str): # ... #
 
         raise NotYetImplementedError
+
+
+    def ShutdownConnection(self): # Closes The Database Connection #
+
+        # Close DB Connection #
+        self.DBConnection.close()
+        self.Logger.Log('Shutdown Database Connection')
