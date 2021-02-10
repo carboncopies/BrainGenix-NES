@@ -281,7 +281,7 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
 
     Logger.Log('Checking Plugin Imports')
 
-    for ImportIndex in range(len(PluginImports)):
+    for ImportIndex in enumerate(PluginImports):
 
         Logger.Log(f'Checking Import(s) From Plugin {list(Plugins.items())[ImportIndex][1]}')
 
@@ -293,7 +293,7 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
 
     Logger.Log('Checking Module Imports')
 
-    for ImportIndex in range(len(ModuleImports)):
+    for ImportIndex in enumerate(ModuleImports):
 
         Logger.Log(f'Checking Import(s) From Module {list(Module.items())[ImportIndex][1]}')
 
