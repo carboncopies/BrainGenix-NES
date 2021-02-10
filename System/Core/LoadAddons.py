@@ -189,7 +189,7 @@ def CheckDependencies(Plugins:list, Modules:list, Logger:object):
         except AttributeError:
             ModuleAuthors.append('No Data Available')
             Logger.Log(f'Module {list(Modules.items())[ModuleInfoIndex][0]} Is Missing "Author" Information', 2)
-        
+
         try:
             ModuleDependencies.append(ModuleInfo.Dependencies)
         except AttributeError:
