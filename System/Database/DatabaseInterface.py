@@ -14,7 +14,7 @@ Date-Created: 2021-01-17
 class DBInterface(): # Interface to MySQL database #
 
     '''
-    This class is used to provide a layer of abstraction between the BrainGenix system and mysql. 
+    This class is used to provide a layer of abstraction between the BrainGenix system and mysql.
     It uses pymysql to interact with the database over sockets.
     This class is designed with some specific methods to check user information, and other such information.
     As the database changes structure, this file will also change, to add new database features.
@@ -38,6 +38,7 @@ class DBInterface(): # Interface to MySQL database #
 
         # Register Shutdown Function #
         atexit.register(self.ShutdownConnection)
+
 
     def CreateCursor(self): # Creates A Database Cursor #
 
