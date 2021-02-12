@@ -49,12 +49,12 @@ class DBInterface(): # Interface to MySQL database #
         # Create Cursor #
         self.DatabaseCursor = pymysql.cursors.Cursor()
 
-    
+
     def CheckIfUserExists(self, UserName:str, table:str): # Checks If A Given User Exists #
 
         '''
         Returns a boolean indicating if the target username exists or does not exist.
-        This method is part of the DBInterface class. 
+        This method is part of the DBInterface class.
         '''
 
         # Execute Some MYSQL Cursor Code #
