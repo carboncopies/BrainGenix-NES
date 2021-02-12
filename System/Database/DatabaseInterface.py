@@ -62,7 +62,7 @@ class DBInterface(): # Interface to MySQL database #
 
 
         #Count of number of Users having the same UserName in the table
-        cnt= self.DatabaseCursor.execute("SELECT * from "+table+" where UserName='"+UserName+"'")
+        cnt= self.DatabaseCursor.execute("SELECT * from "+table+" where UserName='"+UserName+"'") # <-- Potential SQL Injection vector? See Codacy for more info.
 
         UserExists= True
         #If User Exists
@@ -83,7 +83,7 @@ class DBInterface(): # Interface to MySQL database #
         The specific format of the information is a dictionary with key values being the names of the columns.
         '''
 
-        sql = "SELECT UserID, UserName, FirstName, LastName, AccountEnabled, AccountExpirationDate FROM "+table+" WHERE UserName ='"+UserName+"'"
+        sql = "SELECT UserID, UserName, FirstName, LastName, AccountEnabled, AccountExpirationDate FROM "+table+" WHERE UserName ='"+UserName+"'" # <-- Potential SQL Injection vector? See Codacy for more info.
         self.DatabaseCursor.execute(sql)
         
         #List of user details in the table
@@ -103,7 +103,7 @@ class DBInterface(): # Interface to MySQL database #
 
     def ReadNeuronInformation(self, UserName:str): # ... #
 
-        raise NotYetImplementedError
+        pass
 
 
     def ShutdownConnection(self): # Closes The Database Connection #
