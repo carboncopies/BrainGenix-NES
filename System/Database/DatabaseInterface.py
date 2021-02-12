@@ -85,7 +85,7 @@ class DBInterface(): # Interface to MySQL database #
 
         sql = "SELECT UserID, UserName, FirstName, LastName, AccountEnabled, AccountExpirationDate FROM "+table+" WHERE UserName ='"+UserName+"'" # <-- Potential SQL Injection vector? See Codacy for more info.
         self.DatabaseCursor.execute(sql)
-        
+
         #List of user details in the table
         UserDetails=[]
         for row in self.DatabaseCursor:
