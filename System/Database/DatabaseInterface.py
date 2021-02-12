@@ -68,7 +68,7 @@ class DBInterface(): # Interface to MySQL database #
         #If User Exists
         if cnt==1:
             UserExists=True
-            
+
         else:
             UserExists=False
 
