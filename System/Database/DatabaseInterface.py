@@ -97,7 +97,7 @@ class DBInterface(): # Interface to MySQL database #
             l.append(row['AccountExpirationDate'])
             UserDetails.append(l)
             
-         return UserDetails
+        return UserDetails
 
 
     def ReadNeuronInformation(self, UserName:str): # ... #
