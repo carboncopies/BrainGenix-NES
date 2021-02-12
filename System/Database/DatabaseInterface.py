@@ -87,7 +87,7 @@ class DBInterface(): # Interface to MySQL database #
         
         #List of user details in the table
         UserDetails=[]
-        for row in cur:
+        for row in self.DatabaseCursor:
             l=[]
             l.append(row['UserID'])
             l.append(row['UserName'])
