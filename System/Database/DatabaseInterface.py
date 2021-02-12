@@ -49,7 +49,7 @@ class DBInterface(): # Interface to MySQL database #
         self.DatabaseCursor = pymysql.cursors.Cursor()
 
     
-    def CheckIfUserExists(self, UserName:str): # Checks If A Given User Exists #
+    def CheckIfUserExists(self, UserName:str, table:str): # Checks If A Given User Exists #
 
         '''
         Returns a boolean indicating if the target username exists or does not exist.
@@ -58,11 +58,23 @@ class DBInterface(): # Interface to MySQL database #
 
         # Execute Some MYSQL Cursor Code #
         # something here...
+        
+       
+        #Count of number of Users having the same UserName in the table
+        cnt= self.DatabaseCursor.execute("SELECT * from "+table+" where UserName='"+UserName+"'")
+        
+        UserExists= True
+        #If User Exists
+        if cnt==1:
+            UserExists=True
+            
+        else:
+            UserExists=False
 
-        raise NotYetImplementedError
+        return UserExists
 
 
-    def GetUserInformation(self, UserName:str): # Returns A List Of User Information #
+    def GetUserInformation(self, UserName:str, table:str): # Returns A List Of User Information #
 
         '''
         Returns some user information from the specific row of the user.
@@ -70,7 +82,22 @@ class DBInterface(): # Interface to MySQL database #
         The specific format of the information is a dictionary with key values being the names of the columns.
         '''
 
-        raise NotYetImplementedError
+        sql = "SELECT UserID, UserName, FirstName, LastName, AccountEnabled, AccountExpirationDate FROM "+table+" WHERE UserName ='"+UserName+"'"
+        self.DatabaseCursor.execute(sql)
+        
+        #List of user details in the table
+        UserDetails=[]
+        for row in cur:
+            l=[]
+            l.append(row['UserID'])
+            l.append(row['UserName'])
+            l.append(row['FirstName'])
+            l.append(row['LastName'])
+            l.append(row['AccountEnabled'])
+            l.append(row['AccountExpirationDate'])
+            UserDetails.append(l)
+            
+         return UserDetails
 
 
     def ReadNeuronInformation(self, UserName:str): # ... #
