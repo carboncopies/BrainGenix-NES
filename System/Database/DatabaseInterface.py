@@ -59,7 +59,7 @@ class DBInterface(): # Interface to MySQL database #
 
         # Execute Some MYSQL Cursor Code #
         # something here...
-        
+
        
         #Count of number of Users having the same UserName in the table
         cnt= self.DatabaseCursor.execute("SELECT * from "+table+" where UserName='"+UserName+"'")
