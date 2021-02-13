@@ -14,5 +14,5 @@ BrainGenix is a distributed biological neuron simulator designed for the emulati
 Currently, our documentation lives in Google Docs and is at the link below: 
 https://docs.google.com/document/d/1R2Zk7qGkwjAa3g9k2tVrDdsyme5nByGAks-30Ec13M8/edit
 
-You can also read the tech spec here:
+You can also read the technical specifications document/outline here:
 https://docs.google.com/document/d/1tVIB7KQcSRKNU_df8oPVR3wyBHagjv2xvqaMy-oDg18/edit#
