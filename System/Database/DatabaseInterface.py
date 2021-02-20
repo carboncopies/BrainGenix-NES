@@ -111,3 +111,10 @@ class DBInterface(): # Interface to MySQL database #
         # Close DB Connection #
         self.DBConnection.close()
         self.Logger.Log('Shutdown Database Connection')
+
+
+    def GetAllNeurons(self): # gets all neurons with equations#
+
+        allNeurons= self.DatabaseCursor.execute("SELECT neuronId, xCoord, yCoord, zCoord, Assigned_Node, equationId, equationText from bgdb.neuron n inner join bgdb.equation e on e.equationId = n.equationId" )
+
+        return allNeurons
