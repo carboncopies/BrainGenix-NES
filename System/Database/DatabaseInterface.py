@@ -115,6 +115,27 @@ class DBInterface(): # Interface to MySQL database #
 
     def GetAllNeurons(self): # gets all neurons with equations#
 
-        allNeurons= self.DatabaseCursor.execute("SELECT neuronId, xCoord, yCoord, zCoord, Assigned_Node, equationId, equationText from bgdb.neuron n inner join bgdb.equation e on e.equationId = n.equationId" )
+        allNeurons= self.DatabaseCursor.execute("SELECT neuronId, xCoord, yCoord, zCoord, Assigned_Node, equationId, "
+        + "equationText from bgdb.neuron n inner join bgdb.equation e on e.equationId = n.equationId" )
 
         return allNeurons
+
+    def GetNeuronsOfNode(self, NodeName:str): # gets all neurons from a node#
+
+        allNeuronsOfNode= self.DatabaseCursor.execute("SELECT neuronId, xCoord, yCoord, zCoord, Assigned_Node, "
+        + "equationId, equationText from bgdb.neuron n inner join bgdb.equation e on e.equationId = n.equationId "
+        + "Where Assigned_Node = ?", NodeName)
+
+        return allNeuronsOfNode
+
+
+    def GetSynapsesOfNodes(self, NodeIds:list): # gets all synapses with equations for a list of neuronId#
+
+        placeholder = '?'
+        placeholders = ', '.join(placeholder for unused in NodeIds)
+        query = "SELECT synapseId, xCoord, yCoord, zCoord, neuronId, equationId, equationText from bgdb.synapse s "
+        + "inner join bgdb.equation e on e.equationId = s.equationId Where neuronId in (%s)" % placeholders
+
+        SynapsesOfNeurons= self.DatabaseCursor.execute(query, NodeIds)
+
+        return SynapsesOfNeurons
