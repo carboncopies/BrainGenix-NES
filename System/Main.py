@@ -21,8 +21,6 @@ from Zookeeper.ZKManager import SystemTelemetryManager
 
 from Cryptography.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
 
-from CLI.ZKCLI import ZKCLI
-
 from Database.DatabaseInterface import DBInterface
 
 
@@ -91,12 +89,6 @@ TelemetryLeader = Leader(Logger=Logger, Zookeeper=Zookeeper) #<-- Note: This doe
 TelManager = SystemTelemetryManager(Zookeeper, TelemetryLeader)
 
 
-# Start CLI Process #
-#ZookeeperCLI = ZKCLI(Logger, Zookeeper, TelemetryLeader, LeaderManager.RegistryLeader, None) # Put the Module Registry where none is... #
-#ZookeeperCLI.StartPollingThread()
-
-
-
 # Start System #
 Logger.Log('Starting BrainGenix Instance')
 Logger.Log('-----------------------------------------')
@@ -109,9 +101,6 @@ while True:
 
     # Execute System Tasks If In Leader Mode #
     TelManager.UpdateSysTel()
-
-
-    # Update Plugins For ZK Mode Change #
-    #LeaderManager.CheckIfModeChange(Zookeeper.ZookeeperMode)
+    
 
     time.sleep(0.5) # <-- Sleep for a polling interval to avoid excessive CPU usage
