@@ -12,19 +12,14 @@ import atexit
 import time
 
 from Core.LoadConfig import LoadConfig
-from Core.LoadAddons import LoadAddons, CheckDependencies
 from Core.Logger import SysLog
 from Core.SystemTelemetry import Follower, Leader
 from Core.CheckLibraries import CheckImports#, CheckLibrary
-from Core.InitializeAddons import InitFollowerPlugins, InitPluginRegistry#, InitLeaderPlugins, InitializeModules, InitModuleRegistry, InitLeadPluginReg
-from Core.PluginManager import LMPluginManager
 
 from Zookeeper.Zookeeper import ZK
 from Zookeeper.ZKManager import SystemTelemetryManager
 
 from Cryptography.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
-#from Cryptography.PasswordCrypto import CheckPassword, GeneratePassword
-#from Cryptography.EncryptDecrypt import EncryptDecrypt
 
 from CLI.ZKCLI import ZKCLI
 
@@ -96,28 +91,16 @@ TelemetryLeader = Leader(Logger=Logger, Zookeeper=Zookeeper) #<-- Note: This doe
 TelManager = SystemTelemetryManager(Zookeeper, TelemetryLeader)
 
 
-
-# Load Addons #
-Plugins, Modules = LoadAddons(AddonsPath, Logger)
-CheckDependencies(Plugins, Modules, Logger)
-
-
-# Initialize Plugins #
-FollowerRegistry = InitFollowerPlugins(Plugins, Logger, Zookeeper)
-LeaderManager = LMPluginManager(Logger, Plugins, Zookeeper)
-InitPluginRegistry(FollowerRegistry, Logger)
-
-
 # Start CLI Process #
-ZookeeperCLI = ZKCLI(Logger, Zookeeper, TelemetryLeader, LeaderManager.RegistryLeader, None) # Put the Module Registry where none is... #
-ZookeeperCLI.StartPollingThread()
+#ZookeeperCLI = ZKCLI(Logger, Zookeeper, TelemetryLeader, LeaderManager.RegistryLeader, None) # Put the Module Registry where none is... #
+#ZookeeperCLI.StartPollingThread()
 
 
 
 # Start System #
 Logger.Log('Starting BrainGenix Instance')
 Logger.Log('-----------------------------------------')
-Logger.Log('-- Welcome To BrainGenix Version 0.0.3 --')
+Logger.Log('-- Welcome To BrainGenix Version 0.0.4 --')
 Logger.Log('-----------------------------------------')
 
 
@@ -129,6 +112,6 @@ while True:
 
 
     # Update Plugins For ZK Mode Change #
-    LeaderManager.CheckIfModeChange(Zookeeper.ZookeeperMode)
+    #LeaderManager.CheckIfModeChange(Zookeeper.ZookeeperMode)
 
     time.sleep(0.5) # <-- Sleep for a polling interval to avoid excessive CPU usage
