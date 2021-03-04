@@ -13,11 +13,12 @@ import time
 
 from Core.LoadConfig import LoadConfig
 from Core.Logger import SysLog
-from Core.SystemTelemetry import Follower, Leader
 from Core.CheckLibraries import CheckImports#, CheckLibrary
 
 from Zookeeper.Zookeeper import ZK
 from Zookeeper.ZKManager import SystemTelemetryManager
+
+from Telemetry.SystemTelemetry import Follower, Leader
 
 from Cryptography.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
 
