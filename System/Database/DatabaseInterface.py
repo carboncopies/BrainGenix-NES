@@ -92,7 +92,7 @@ class DBInterface(): # Interface to MySQL database #
                 self.Logger.Log(f'Potential MYSQL Injection Attack Detected: "{String}"', 4)
 
                 return False
-        
+
         return True
 
     def GetUserInformation(self, UserName:str, Table:str): # Returns A List Of User Information #
