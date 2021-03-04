@@ -10,7 +10,7 @@ Date-Created: 2021-03-03
 
 class TelemetryAPI(): # Exposes Telemetry Functions To The Leader # 
 
-    def __init__(self, ZooKeeper, Logger, LeaderAttributes): # Initializes the System #
+    def __init__(self, Zookeeper, Logger, LeaderAttributes): # Initializes the System #
 
         # Set Local Variables #
         self.LeaderAttributes = LeaderAttributes
