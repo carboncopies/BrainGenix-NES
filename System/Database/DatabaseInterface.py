@@ -4,6 +4,7 @@
 
 import pymysql
 import atexit
+import re
 
 '''
 Name: Database Interface
@@ -50,7 +51,7 @@ class DBInterface(): # Interface to MySQL database #
         self.DatabaseCursor = pymysql.cursors.Cursor()
 
 
-    def CheckIfUserExists(self, UserName:str, table:str): # Checks If A Given User Exists #
+    def CheckIfUserExists(self, UserName:str, Table:str): # Checks If A Given User Exists #
 
         '''
         Returns a boolean indicating if the target username exists or does not exist.
@@ -60,9 +61,12 @@ class DBInterface(): # Interface to MySQL database #
         # Execute Some MYSQL Cursor Code #
         # something here...
 
+        # Strip SQL Injection Vectors #
+        Table = re.sub(r'\W+', '', Table)
+        UserName = re.sub(r'\W+', '', UserName)
 
-        #Count of number of Users having the same UserName in the table
-        cnt= self.DatabaseCursor.execute("SELECT * from "+table+" where UserName='"+UserName+"'") # <-- Potential SQL Injection vector? See Codacy for more info.
+        # Count of number of Users having the same UserName in the table
+        cnt= self.DatabaseCursor.execute(f"SELECT * from {Table} where UserName='{UserName}'") # <-- Potential SQL Injection vector? See Codacy for more info.
 
         UserExists= True
         #If User Exists
@@ -75,7 +79,7 @@ class DBInterface(): # Interface to MySQL database #
         return UserExists
 
 
-    def GetUserInformation(self, UserName:str, table:str): # Returns A List Of User Information #
+    def GetUserInformation(self, UserName:str, Table:str): # Returns A List Of User Information #
 
         '''
         Returns some user information from the specific row of the user.
@@ -83,7 +87,11 @@ class DBInterface(): # Interface to MySQL database #
         The specific format of the information is a dictionary with key values being the names of the columns.
         '''
 
-        sql = "SELECT UserID, UserName, FirstName, LastName, AccountEnabled, AccountExpirationDate FROM "+table+" WHERE UserName ='"+UserName+"'" # <-- Potential SQL Injection vector? See Codacy for more info.
+        # Purge SQL Injection Vectors #
+        Table = re.sub(r'\W+', '', Table)
+        UserName = re.sub(r'\W+', '', UserName)
+
+        sql = "SELECT UserID, UserName, FirstName, LastName, AccountEnabled, AccountExpirationDate FROM "+Table+" WHERE UserName ='"+UserName+"'" # <-- Potential SQL Injection vector? See Codacy for more info.
         self.DatabaseCursor.execute(sql)
 
         #List of user details in the table
