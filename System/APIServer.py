@@ -12,7 +12,6 @@ import atexit
 
 from Core.LoadConfig import LoadConfig
 from Core.Logger import SysLog
-from Core.SystemTelemetry import Follower, Leader
 
 from Zookeeper.Zookeeper import ZK
 
