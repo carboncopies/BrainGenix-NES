@@ -215,7 +215,7 @@ class SysLog():
         self.LogFileObject.close()
 
 
-        try:
-            os.rename(f'{self.LogPath}/Current', f'{self.LogPath}/{self.StartTime}')
-        except: # Catch Exception If Other Node(s) Have Open Files #
-            print('Warning, Failed to Move Logs Directory To BG Start Time, Logs will be overwritten on next start if not moved.')
+        # try:
+        #     os.rename(f'{self.LogPath}/Current', f'{self.LogPath}/{self.StartTime}')
+        # except: # Catch Exception If Other Node(s) Have Open Files #
+        #     print('Warning, Failed to Move Logs Directory To BG Start Time, Logs will be overwritten on next start if not moved.')
