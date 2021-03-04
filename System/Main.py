@@ -24,6 +24,10 @@ from Cryptography.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
 from Database.DatabaseInterface import DBInterface
 
 
+# Set Version Information
+Version = '0.0.4'
+
+
 # Load Config #
 ConfigPath = 'Config/LocalConfig.yaml'
 AddonsPath, LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip, ZKHost, DBUname, DBPasswd, DBHost, DBName = LoadConfig(ConfigPath)
@@ -91,9 +95,20 @@ TelManager = SystemTelemetryManager(Zookeeper, TelemetryLeader)
 
 # Start System #
 Logger.Log('Starting BrainGenix Instance')
-Logger.Log('-----------------------------------------')
-Logger.Log('-- Welcome To BrainGenix Version 0.0.4 --')
-Logger.Log('-----------------------------------------')
+Logger.Log('')
+Logger.Log('---------------------------------------------------------------------------')
+Logger.Log('██████╗ ██████╗  █████╗ ██╗███╗   ██╗ ██████╗ ███████╗███╗   ██╗██╗██╗  ██╗')
+Logger.Log('██╔══██╗██╔══██╗██╔══██╗██║████╗  ██║██╔════╝ ██╔════╝████╗  ██║██║╚██╗██╔╝')
+Logger.Log('██████╔╝██████╔╝███████║██║██╔██╗ ██║██║  ███╗█████╗  ██╔██╗ ██║██║ ╚███╔╝ ')
+Logger.Log('██╔══██╗██╔══██╗██╔══██║██║██║╚██╗██║██║   ██║██╔══╝  ██║╚██╗██║██║ ██╔██╗ ')
+Logger.Log('██████╔╝██║  ██║██║  ██║██║██║ ╚████║╚██████╔╝███████╗██║ ╚████║██║██╔╝ ██╗')
+Logger.Log('╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝')
+Logger.Log('---------------------------------------------------------------------------')
+Logger.Log('')
+Logger.Log('    +-----------------------------------------------------------------+')
+Logger.Log(f'    |               Welcome To BrainGenix Version {Version}               |')
+Logger.Log('    +-----------------------------------------------------------------+')
+Logger.Log('')
 
 
 # Main Loop #
@@ -101,6 +116,6 @@ while True:
 
     # Execute System Tasks If In Leader Mode #
     TelManager.UpdateSysTel()
-    
+
 
     time.sleep(0.5) # <-- Sleep for a polling interval to avoid excessive CPU usage
