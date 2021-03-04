@@ -59,6 +59,6 @@ Logger.Log('╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═
 Logger.Log('---------------------------------------------------------------------------')
 Logger.Log('')
 Logger.Log('    +-----------------------------------------------------------------+')
-Logger.Log(f'    |               Welcome To BrainGenix Version {Version}               |')
+Logger.Log(f'    |          Welcome To BrainGenix-APIServer Version {Version}          |')
 Logger.Log('    +-----------------------------------------------------------------+')
 Logger.Log('')
