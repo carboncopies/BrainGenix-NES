@@ -32,6 +32,9 @@ class DBInterface(): # Interface to MySQL database #
         # Create Local Pointer #
         self.Logger = Logger
 
+        # Create Prohibited Characters List #
+        self.ProhibitedChars = ['*','{','}','[',']','(',')',';']
+
         # Establish DB Connection #
         self.DBConnection = pymysql.connect(host=Host, user=Username, password=Password, db=Database)
 
@@ -62,11 +65,14 @@ class DBInterface(): # Interface to MySQL database #
         # something here...
 
         # Strip SQL Injection Vectors #
+        self.CheckIfStringClean(Table)
+        self.CheckIfStringClean(UserName)
+
         Table = re.sub(r'\W+', '', Table)
         UserName = re.sub(r'\W+', '', UserName)
 
         # Count of number of Users having the same UserName in the table
-        cnt= self.DatabaseCursor.execute(f"SELECT * from {Table} where UserName='{UserName}'") # <-- Potential SQL Injection vector? See Codacy for more info.
+        cnt = self.DatabaseCursor.execute(f"SELECT * from {Table} where UserName='{UserName}'") # <-- Potential SQL Injection vector? See Codacy for more info.
 
         UserExists= True
         #If User Exists
@@ -78,6 +84,16 @@ class DBInterface(): # Interface to MySQL database #
 
         return UserExists
 
+    def CheckIfStringClean(self, String): # Checks If A String Is Clean (SQL INJECTION DETECTION) #
+
+        # Perform The Check Against The Prohibited Strings List #
+        for Character in self.Prohibited:
+            if Character in String:
+                self.Logger.Log(f'Potential MYSQL Injection Attack Detected: "{String}"', 4)
+
+                return False
+        
+        return True
 
     def GetUserInformation(self, UserName:str, Table:str): # Returns A List Of User Information #
 
@@ -88,6 +104,9 @@ class DBInterface(): # Interface to MySQL database #
         '''
 
         # Purge SQL Injection Vectors #
+        self.CheckIfStringClean(Table)
+        self.CheckIfStringClean(UserName)
+
         Table = re.sub(r'\W+', '', Table)
         UserName = re.sub(r'\W+', '', UserName)
 
