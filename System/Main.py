@@ -93,6 +93,39 @@ TelemetryFollower = Follower(Logger=Logger, Zookeeper=Zookeeper)
 TelemetryLeader = Leader(Logger=Logger, Zookeeper=Zookeeper) #<-- Note: This does NOT start it yet, you need to call start first. The manager handles this.
 TelManager = SystemTelemetryManager(Zookeeper, TelemetryLeader)
 
+'''
+        # Verify Zookeeper Path Requirements #
+        self.Zookeeper.ZookeeperConnection.ensure_path('/BrainGenix/API/Requests')
+
+        # Start ZK Command Polling Thread #
+        self.ZKCommandThread = threading.Thread(target=self.ReadZKRequests, args=())
+        self.ZKCommandThread.start()
+        self.Logger.Log('Started Telemetry Command Polling Thread')
+
+
+    ##############################################################
+    #                                                            #
+    # A QUICK NOTE HERE ABOUT FORMATTING OF API COMMANDS:        #
+    # THEY ARE FORMATTED AS FOLLOWS IN THE /BRAINGENIX/API ZNODE #
+    # command: function.command json of arguments                #
+    #                                                            #
+    ##############################################################
+
+
+    def ReadZKRequests(self): # Reads the command and creates a response # 
+
+        # Enter While True Loop To Poll #
+        while True:
+
+            ActiveRequests = self.Zookeeper.ZookeeperConnection.get_children('/BrainGenix/API/Requests')
+
+            for RequestIndex, RequestID in enumerate(ActiveRequests):
+
+                if RequestID not in self.ActiveConnections:
+
+                    self.SpawnConnectionHandler()
+                    '''
+
 
 # Start System #
 Logger.Log('Starting BrainGenix Instance')
