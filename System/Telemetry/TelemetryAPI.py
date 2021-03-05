@@ -2,6 +2,9 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
+import threading
+import time
+
 '''
 Name: API Functions
 Description: This file is used to connect the system's API to the leader.
@@ -20,6 +23,10 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         # Log Message #
         self.Logger.Log('Starting Telemetry API Handler')
 
+        # Verify Zookeeper Path Requirements #
+        self.Zookeeper.ensure_path('/BrainGenix/API/Telemetry')
+
+        # Start ZK Command Polling Thread #
 
 
     def ReadZKCommands(self): # Reads the command and creates a response # 
