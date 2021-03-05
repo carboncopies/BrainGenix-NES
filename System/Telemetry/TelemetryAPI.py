@@ -24,9 +24,12 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         self.Logger.Log('Starting Telemetry API Handler')
 
         # Verify Zookeeper Path Requirements #
-        self.Zookeeper.ensure_path('/BrainGenix/API/Telemetry')
+        self.Zookeeper.ZookeeperConnection.ensure_path('/BrainGenix/API/Telemetry')
 
         # Start ZK Command Polling Thread #
+        self.ZKCommandThread = threading.Thread(target=self.ReadZKCommands, args=())
+        self.ZKCommandThread.start()
+        self.Logger.Log('Started Telemetry Command Polling Thread')
 
 
     def ReadZKCommands(self): # Reads the command and creates a response # 
@@ -40,15 +43,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return len(self.LeaderAttributes.Info)
 
 
-    def GetOperatingSystem(self, NodeName) # Gets The Operating System Name #
-
-        # Get The Info #
-
-        # Get The Number Of Currently Connected Nodes In the System #
-        return len(self.LeaderAttributes.Info)
-
-
-    def GetOperatingSystem(self, NodeName) # Gets The Operating System Name #
+    def GetOperatingSystem(self, NodeName): # Gets The Operating System Name #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -68,7 +63,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return NodeName
 
 
-    def GetOperatingSystemRelease(self, NodeName) # Gets The Operating System Release Version #
+    def GetOperatingSystemRelease(self, NodeName): # Gets The Operating System Release Version #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -78,7 +73,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetOperatingSystemVersion(self, NodeName) # Gets The Operating System Version #
+    def GetOperatingSystemVersion(self, NodeName): # Gets The Operating System Version #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -88,7 +83,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetLastBootDate(self, NodeName) # Gets The Last Boot Date #
+    def GetLastBootDate(self, NodeName): # Gets The Last Boot Date #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -98,7 +93,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetPythonVersion(self, NodeName) # Gets Node Info #
+    def GetPythonVersion(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -108,7 +103,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetCPUInfoVersion(self, NodeName) # Gets Node Info #
+    def GetCPUInfoVersion(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -118,7 +113,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetCPUArchitecture(self, NodeName) # Gets Node Info #
+    def GetCPUArchitecture(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -128,7 +123,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetCPUBits(self, NodeName) # Gets Node Info #
+    def GetCPUBits(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -138,7 +133,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetCPUThreads(self, NodeName) # Gets Node Info #
+    def GetCPUThreads(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -148,7 +143,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetCPUCores(self, NodeName) # Gets Node Info #
+    def GetCPUCores(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -158,7 +153,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetCPUThreads(self, NodeName) # Gets Node Info #
+    def GetCPUThreads(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -168,7 +163,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetCPUVendor(self, NodeName) # Gets Node Info #
+    def GetCPUVendor(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -178,7 +173,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetCPUName(self, NodeName) # Gets Node Info #
+    def GetCPUName(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -188,7 +183,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetCPUBaseClock(self, NodeName) # Gets Node Info #
+    def GetCPUBaseClock(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -198,7 +193,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetCPUInstructionSet(self, NodeName) # Gets Node Info #
+    def GetCPUInstructionSet(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -208,7 +203,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetCPUL3CacheSize(self, NodeName) # Gets Node Info #
+    def GetCPUL3CacheSize(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -218,7 +213,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetCPUL2CacheSize(self, NodeName) # Gets Node Info #
+    def GetCPUL2CacheSize(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -228,7 +223,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetCPUL1CacheSize(self, NodeName) # Gets Node Info #
+    def GetCPUL1CacheSize(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -238,7 +233,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetTotalSystemRam(self, NodeName) # Gets Node Info #
+    def GetTotalSystemRam(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -248,7 +243,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetTotalSystemSwap(self, NodeName) # Gets Node Info #
+    def GetTotalSystemSwap(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -258,7 +253,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetPartitionDevices(self, NodeName) # Gets Node Info #
+    def GetPartitionDevices(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -268,7 +263,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetPartitionMountPoints(self, NodeName) # Gets Node Info #
+    def GetPartitionMountPoints(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -278,7 +273,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetPartitonFileSystemType(self, NodeName) # Gets Node Info #
+    def GetPartitonFileSystemType(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -288,7 +283,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetPartitionTotalBytes(self, NodeName) # Gets Node Info #
+    def GetPartitionTotalBytes(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -298,7 +293,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetPartitionUsedBytes(self, NodeName) # Gets Node Info #
+    def GetPartitionUsedBytes(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -308,7 +303,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetPartitionFreeBytes(self, NodeName) # Gets Node Info #
+    def GetPartitionFreeBytes(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -317,7 +312,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         # Return The Information #
         return Info
 
-    def GetPartitionUsedPercent(self, NodeName) # Gets Node Info #
+    def GetPartitionUsedPercent(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -327,7 +322,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetNetworkAdapterNames(self, NodeName) # Gets Node Info #
+    def GetNetworkAdapterNames(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -337,7 +332,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetNetworkAddresses(self, NodeName) # Gets Node Info #
+    def GetNetworkAddresses(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -347,7 +342,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetNetMasks(self, NodeName) # Gets Node Info #
+    def GetNetMasks(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -357,7 +352,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetNetBroadcasts(self, NodeName) # Gets Node Info #
+    def GetNetBroadcasts(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -367,7 +362,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetGPUIds(self, NodeName) # Gets Node Info #
+    def GetGPUIds(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -377,7 +372,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetGPUNames(self, NodeName) # Gets Node Info #
+    def GetGPUNames(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -387,7 +382,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetGPUTotalMemory(self, NodeName) # Gets Node Info #
+    def GetGPUTotalMemory(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -397,7 +392,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetGPUClockRate(self, NodeName) # Gets Node Info #
+    def GetGPUClockRate(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -407,7 +402,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetCPUUsage(self, NodeName) # Gets Node Info #
+    def GetCPUUsage(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -417,7 +412,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetRamUsage(self, NodeName) # Gets Node Info #
+    def GetRamUsage(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -427,7 +422,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetRamFree(self, NodeName) # Gets Node Info #
+    def GetRamFree(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -437,7 +432,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetRamPercent(self, NodeName) # Gets Node Info #
+    def GetRamPercent(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -447,7 +442,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetSwapFree(self, NodeName) # Gets Node Info #
+    def GetSwapFree(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -457,7 +452,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetSwapUsage(self, NodeName) # Gets Node Info #
+    def GetSwapUsage(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -467,7 +462,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetSwapPercent(self, NodeName) # Gets Node Info #
+    def GetSwapPercent(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -477,7 +472,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetBytesSent(self, NodeName) # Gets Node Info #
+    def GetBytesSent(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -487,7 +482,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetBytesRecieved(self, NodeName) # Gets Node Info #
+    def GetBytesRecieved(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -497,7 +492,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetGPUUsage(self, NodeName) # Gets Node Info #
+    def GetGPUUsage(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -507,7 +502,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetGPUMemory(self, NodeName) # Gets Node Info #
+    def GetGPUMemory(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
@@ -517,7 +512,7 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetGPUTemps(self, NodeName) # Gets Node Info #
+    def GetGPUTemps(self, NodeName): # Gets Node Info #
 
         # Get The Info #
         NodeJSON = self.LeaderAttributes.Info[NodeName]
