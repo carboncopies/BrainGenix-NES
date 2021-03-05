@@ -20,22 +20,6 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         self.Zookeeper = Zookeeper
         self.Logger = Logger
 
-        # Log Message #
-        self.Logger.Log('Starting Telemetry API Handler')
-
-        # Verify Zookeeper Path Requirements #
-        self.Zookeeper.ZookeeperConnection.ensure_path('/BrainGenix/API/Telemetry')
-
-        # Start ZK Command Polling Thread #
-        self.ZKCommandThread = threading.Thread(target=self.ReadZKCommands, args=())
-        self.ZKCommandThread.start()
-        self.Logger.Log('Started Telemetry Command Polling Thread')
-
-
-    def ReadZKCommands(self): # Reads the command and creates a response # 
-
-        pass
-
 
     def GetClusterSize(self): # Gets the cluster's size #
 
