@@ -292,7 +292,7 @@ class ZK(): # Create Interface Class #
         *Don't call this function unless you know what you're doing.*
         '''
 
-        self.Logger.Log("Can't find Zookeeper Leader! Attempting To Reconnect", 2)
+        self.Logger.Log("Can't find Zookeeper Leader! No Quorum?", 2)
 
         self.ZookeeperHaveLeader = False
         self.ZookeeperMode = 'Follower'

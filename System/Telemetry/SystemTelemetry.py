@@ -11,6 +11,8 @@ import threading
 import time
 import json
 
+from Telemetry.TelemetryAPI import TelemetryAPI
+
 '''
 Name: System Telemetry
 Description: This handles getting system usage statistics from the nodes.
@@ -288,14 +290,23 @@ class Leader(): # This Class Is Run By The Leader #
 
 
         # Start The AutoUpdate Thread #
-        self.Logger.Log('Automatic Leader ZK Refresh Enabled, Starting Thread')
+        self.Logger.Log('Created System Telemetry Leader Polling Thread')
         self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(3,), name='System Telemetry Leader Thread')
 
+        # Start API Interface Thread #
+        self.APIThread = threading.Thread(target=TelemetryAPI, args=(self.ZK, self.Logger, self))
+        self.Logger.Log('Created Telemetry-Zookeeper API Interaction Handler')
 
     def Start(self):
 
+        # Start System Telemetry Leader Thread #
         self.UpdateThread.start()
-        self.Logger.Log('Leader Thread Started, Dynamic Usage Stats Will Be Refreshed Automatically')
+        self.Logger.Log('Started Leader Refresh Thread')
+
+        # Start ZK-API Interface Thread #
+        self.APIThread.start()
+        self.Logger.Log('Started Telemetry-Zookeeper Interaction Thread')
+
 
 
     def AutoRefresh(self, RefreshInterval:float=1):

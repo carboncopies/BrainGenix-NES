@@ -8,7 +8,6 @@ import yaml
 Name: LoadConfig
 Description: This function loads and parses the system config file which tells it where to look for plugins, etc.
 Date-Created: 2020-12-18
-Date-Modified: 2020-12-21
 '''
 
 

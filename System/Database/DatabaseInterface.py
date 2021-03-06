@@ -4,6 +4,7 @@
 
 import pymysql
 import atexit
+import re
 
 '''
 Name: Database Interface
@@ -31,6 +32,9 @@ class DBInterface(): # Interface to MySQL database #
         # Create Local Pointer #
         self.Logger = Logger
 
+        # Create Prohibited Characters List #
+        self.ProhibitedChars = ['*','{','}','[',']','(',')',';']
+
         # Establish DB Connection #
         self.DBConnection = pymysql.connect(host=Host, user=Username, password=Password, db=Database)
 
@@ -50,7 +54,7 @@ class DBInterface(): # Interface to MySQL database #
         self.DatabaseCursor = pymysql.cursors.Cursor()
 
 
-    def CheckIfUserExists(self, UserName:str, table:str): # Checks If A Given User Exists #
+    def CheckIfUserExists(self, UserName:str, Table:str): # Checks If A Given User Exists #
 
         '''
         Returns a boolean indicating if the target username exists or does not exist.
@@ -60,7 +64,14 @@ class DBInterface(): # Interface to MySQL database #
         # Execute Some MYSQL Cursor Code #
         # something here...
 
+        # Strip SQL Injection Vectors #
+        self.CheckIfStringClean(Table)
+        self.CheckIfStringClean(UserName)
 
+        Table = re.sub(r'\W+', '', Table)
+        UserName = re.sub(r'\W+', '', UserName)
+
+        dbMoreMethodsForData
         #Count of number of Users having the same UserName in the table
         cnt= self.DatabaseCursor.execute("SELECT * from user where UserName= %s", UserName)
 
@@ -74,8 +85,18 @@ class DBInterface(): # Interface to MySQL database #
 
         return UserExists
 
+    def CheckIfStringClean(self, String): # Checks If A String Is Clean (SQL INJECTION DETECTION) #
 
-    def GetUserInformation(self, UserName:str, table:str): # Returns A List Of User Information #
+        # Perform The Check Against The Prohibited Strings List #
+        for Character in self.Prohibited:
+            if Character in String:
+                self.Logger.Log(f'Potential MYSQL Injection Attack Detected: "{String}"', 4)
+
+                return False
+
+        return True
+
+    def GetUserInformation(self, UserName:str, Table:str): # Returns A List Of User Information #
 
         '''
         Returns some user information from the specific row of the user.
@@ -83,6 +104,7 @@ class DBInterface(): # Interface to MySQL database #
         The specific format of the information is a dictionary with key values being the names of the columns.
         '''
 
+        dbMoreMethodsForData
         sql = "SELECT UserID, UserName, FirstName, LastName, AccountEnabled, AccountExpirationDate FROM user WHERE UserName =%s"
         self.DatabaseCursor.execute(sql, UserName)
 
