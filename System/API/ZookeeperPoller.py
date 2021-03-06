@@ -4,6 +4,7 @@
 
 import time
 import threading
+import json
 
 '''
 Name: API Poll Watcher
@@ -109,12 +110,23 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
 
             if (CommandData != b'') and (CommandData != None):
 
-                #################################################################################################
-                # Command formatting should be as follows: [Root Module].[SubModule].[etc...] arg1 arg2 arg3... #
-                #################################################################################################
 
-                Command = CommandData.decode('utf-8').split(' ')
+                # Parse Command #
+                RawJSONString = CommandData.decode('utf-8')
+                CommandDictionary = json.loads(RawJSONString)
 
 
-                CommandFunction = getattr(self, CallStack[0])
+                CommandCallStack = CommandDictionary['CallStack']
+                KeywordArguments = CommandDictionary['KeywordArgs']
+
+                # Get Target Function #
+                Layers = CommandCallStack.split('.')
+                CommandFunction = self
+
+                for LayerIndex, LayerName in enumerate(Layers):
+                    CommandFunction = getattr(CommandFunction, LayerName)
+
+                # Send Arguments #
+                CommandFunction(KeywordArguments)
+
 
