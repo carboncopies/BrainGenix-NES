@@ -71,7 +71,6 @@ class DBInterface(): # Interface to MySQL database #
         Table = re.sub(r'\W+', '', Table)
         UserName = re.sub(r'\W+', '', UserName)
 
-        dbMoreMethodsForData
         #Count of number of Users having the same UserName in the table
         cnt= self.DatabaseCursor.execute("SELECT * from user where UserName= %s", UserName)
 
