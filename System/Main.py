@@ -48,7 +48,7 @@ def CleanLog():
 
 
 # Connect To DB #
-DatabaseInterface = DBInterface(Logger, DBUname, DBPasswd, DBHost, DBName)
+#DatabaseInterface = DBInterface(Logger, DBUname, DBPasswd, DBHost, DBName)
 
 
 # Load SSH Keys #
