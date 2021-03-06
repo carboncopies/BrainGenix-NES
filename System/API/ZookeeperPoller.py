@@ -47,9 +47,10 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
             if (self.Zookeeper.ZookeeperMode == 'Leader') and (not self.HasInitialized):
 
                 # Start Polling Thread #
-                self.PollingThread = threading.Thread(target=self.PollingThread, args=())
+                self.PollingThread = threading.Thread(target=self.PollingThreadFunction)
                 self.PollingThread.start()
 
+                # Log Event #
                 self.Logger.Log('Started Polling Thread')
 
                 # Update Has Initialized #
@@ -62,13 +63,13 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
                 self.ConnectionThreads = []
 
                 # Log Event #
-                self.Logger.Log('Zoookeeper Polling System Demoted To Follower')
+                self.Logger.Log('Zoookeeper Polling System Now Running As Follower')
 
                 # Update Initialized Var #
                 self.HasInitialized = True
 
 
-    def PollingThread(self, PollingInterval:float = 0.5): # Polls The API zNode For New Connections #
+    def PollingThreadFunction(self, PollingInterval:float = 0.5): # Polls The API zNode For New Connections #
 
         # Enter Loop #
         while True:
@@ -77,9 +78,43 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
             EstablishedConnections = self.Zookeeper.ZookeeperConnection.get_children('/BrainGenix/API/Connections')
 
             for ConnectionIndex, ConnectionID in enumerate(EstablishedConnections):
-                if ConnectionID not in self.EstablishedConnections:
-                    self.SpawnConnectionHandler()
+                if ConnectionID not in self.KnownConnections:
+
+                    # Create Connection Thread #
+                    Thread = threading.Thread(target=self.ConnectionHandler, args=(ConnectionID, ))
+                    Thread.start()
+
+                    self.ConnectionThreads.append(Thread)
+
+                    # Add Connection To Handled List #
+                    self.KnownConnections.append(ConnectionID)
 
             # Delay For Set Interval #
             time.sleep(PollingInterval)
+
+
+    def ConnectionHandler(self, TargetConnection, PollingInterval:float = 0.025): # Executes Functions For A Given Command #
+
+        # Log Info #
+        self.Logger.Log(f'Started Connection Thread For Connection: {TargetConnection}')
+
+        # Enter Loop # 
+        while True:
+
+            # Delay For Polling Interval #
+            time.sleep(PollingInterval)
+
+            # Check For New Commands #
+            CommandData = self.Zookeeper.ZookeeperConnection.get(f'/BrainGenix/API/Connections/{TargetConnection}')[0]
+
+            if (CommandData != b'') and (CommandData != None):
+
+                #################################################################################################
+                # Command formatting should be as follows: [Root Module].[SubModule].[etc...] arg1 arg2 arg3... #
+                #################################################################################################
+
+                Command = CommandData.decode('utf-8').split(' ')
+
+
+                CommandFunction = getattr(self, CallStack[0])
 
