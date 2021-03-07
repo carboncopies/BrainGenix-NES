@@ -106,7 +106,11 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
             time.sleep(PollingInterval)
 
             # Check For New Commands #
-            CommandData = self.Zookeeper.ZookeeperConnection.get(f'/BrainGenix/API/Connections/{TargetConnection}')[0]
+            try:
+                CommandData = self.Zookeeper.ZookeeperConnection.get(f'/BrainGenix/API/Connections/{TargetConnection}')[0]
+            except: ## THIS NEEDS TO BE SPECIFIED TO NoNodeError For Kazoo! ##
+                self.Logger.Log(f'Connection {TargetConnection} Destroyed')
+                return
 
             if (CommandData != b'') and (CommandData != None):
 
@@ -128,5 +132,4 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
 
                 # Send Arguments #
                 CommandFunction(KeywordArguments)
-
 
