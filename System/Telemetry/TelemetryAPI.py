@@ -138,16 +138,6 @@ class TelemetryAPI(): # Exposes Telemetry Functions To The Leader #
         return Info
 
 
-    def GetCPUThreads(self, NodeName): # Gets Node Info #
-
-        # Get The Info #
-        NodeJSON = self.LeaderAttributes.Info[NodeName]
-        Info = NodeJSON['CPUThreads']
-
-        # Return The Information #
-        return Info
-
-
     def GetCPUVendor(self, NodeName): # Gets Node Info #
 
         # Get The Info #
