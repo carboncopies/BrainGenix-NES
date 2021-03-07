@@ -127,7 +127,7 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
                 Layers = CommandCallStack.split('.')
                 CommandFunction = self
 
-                for LayerIndex, LayerName in enumerate(Layers):
+                for _, LayerName in enumerate(Layers):
                     CommandFunction = getattr(CommandFunction, LayerName)
 
                 # Send Arguments #
