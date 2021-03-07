@@ -78,7 +78,7 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
             # Check For New Connections #
             EstablishedConnections = self.Zookeeper.ZookeeperConnection.get_children('/BrainGenix/API/Connections')
 
-            for ConnectionIndex, ConnectionID in enumerate(EstablishedConnections):
+            for _, ConnectionID in enumerate(EstablishedConnections):
                 if ConnectionID not in self.KnownConnections:
 
                     # Create Connection Thread #
