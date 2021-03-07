@@ -9,6 +9,7 @@
 import time
 import uuid
 import atexit
+import json
 
 from kazoo.client import KazooClient
 
@@ -27,7 +28,7 @@ class Client(): # Client For BrainGenix System #
     '''
 
 
-    def __init__(self, Username:str, Password:str, ZKAddress:str):
+    def __init__(self, ZKAddress:str):
 
         '''
         Initializes the Client, Authenticates, and waits until connection accepted.
@@ -36,28 +37,16 @@ class Client(): # Client For BrainGenix System #
         # Connect To ZK #
         self.ZookeeperConnection = KazooClient(hosts=ZKAddress)
         self.ZookeeperConnection.start()
-        self.Username = Username
         self.Host = ZKAddress
         print('Initializing Connection')
 
         self.UUID = str(uuid.uuid1())
 
         # Create A Connection zNode #
-        self.ConnectionNode = f'/BrainGenix/CLI/{self.UUID}'
+        self.ConnectionNode = f'/BrainGenix/API/Connections/{self.UUID}'
         print('Connected to Zookeeper')
         self.ZookeeperConnection.create(self.ConnectionNode, ephemeral=True)
         print('Created Epehemeral zNode')
-
-        # Write The Authentication Information To The System #
-        AuthInfo = f'{Username}\n{Password}'
-        AuthInfo = AuthInfo.encode()
-        self.ZookeeperConnection.set(self.ConnectionNode, AuthInfo)
-        print('Wrote Authentication Information')
-
-        # Block Until Auth Passes #
-        while self.ZookeeperConnection.get(self.ConnectionNode)[0] == AuthInfo:
-            time.sleep(0.05)
-        print('Connection Picked up by Leader')
 
 
 
@@ -72,14 +61,37 @@ class Client(): # Client For BrainGenix System #
         while True:
 
             # Get Command Input From User #
-            Command = input(f'[BrainGenix: {self.Host}(Connected:{self.Username})]: ')
+            Command = input(f'root@BrainGenix:/# ')
 
             if Command == '':
                 pass
             elif Command == 'exit':
                 exit()
             else:
-                self.ZookeeperConnection.set(self.ConnectionNode, Command.encode())
+
+                # Format The Connection #
+                CommandParsed = Command.split(' ')
+
+                CommandPrefix = CommandParsed[0]
+
+                Arguments = {}
+                for Argument in CommandParsed[1:]:
+                    Value = Argument.split('=')[0]
+                    Value2 = Argument.split('=')[1]
+
+                    Arguments.update({Value : Value2})
+
+                # Compile Command Into Dictionary #
+                CommandDictionary = {}
+
+                CommandDictionary.update({'CallStack' : CommandPrefix})
+                CommandDictionary.update({'KeywordArgs' : Arguments})
+
+                # Encode As JSON #
+                JSONString = json.dumps(CommandDictionary)
+
+
+                self.ZookeeperConnection.set(self.ConnectionNode, JSONString.encode())
 
                 # Block Until Command Finished #
                 while self.ZookeeperConnection.get(self.ConnectionNode)[0] == Command.encode():
@@ -100,5 +112,5 @@ def Disconnect():
     print('BGCLI Connection Destroyed Successfully')
 
 # Instantiate The Client #
-CLI = Client('root', 'turing', '10.0.4.3:2181')
+CLI = Client('10.0.4.3:2181')
 CLI.Main()
