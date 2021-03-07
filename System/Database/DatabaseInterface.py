@@ -145,7 +145,7 @@ class DBInterface(): # Interface to MySQL database #
 
         allNeuronsOfNode= self.DatabaseCursor.execute("SELECT neuronId, xCoord, yCoord, zCoord, Assigned_Node, "
         + "equationId, equationText from bgdb.neuron n inner join bgdb.equation e on e.equationId = n.equationId "
-        + "Where Assigned_Node = ?", NodeName)
+        + "Where Assigned_Node = %s", NodeName)
 
         return allNeuronsOfNode
 
