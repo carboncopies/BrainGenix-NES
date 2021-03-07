@@ -61,7 +61,7 @@ class Client(): # Client For BrainGenix System #
         while True:
 
             # Get Command Input From User #
-            Command = input(f'root@BrainGenix:/# ')
+            Command = input('root@BrainGenix:/# ')
 
             if Command == '':
                 pass
