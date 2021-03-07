@@ -99,7 +99,7 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
         # Log Info #
         self.Logger.Log(f'Started Connection Thread For Connection: {TargetConnection}')
 
-        # Enter Loop # 
+        # Enter Loop #
         while True:
 
             # Delay For Polling Interval #
