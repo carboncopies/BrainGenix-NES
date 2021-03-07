@@ -84,6 +84,7 @@ class DBInterface(): # Interface to MySQL database #
 
         return UserExists
 
+
     def CheckIfStringClean(self, String): # Checks If A String Is Clean (SQL INJECTION DETECTION) #
 
         # Perform The Check Against The Prohibited Strings List #
@@ -95,6 +96,7 @@ class DBInterface(): # Interface to MySQL database #
 
         return True
 
+
     def GetUserInformation(self, UserName:str, Table:str): # Returns A List Of User Information #
 
         '''
@@ -103,6 +105,9 @@ class DBInterface(): # Interface to MySQL database #
         The specific format of the information is a dictionary with key values being the names of the columns.
         '''
 
+        # Detect and Log Potential Injections #
+        self.CheckIfStringClean(UserName)
+        self.CheckIfStringClean(Table)
 
         sql = "SELECT UserID, UserName, FirstName, LastName, AccountEnabled, AccountExpirationDate FROM user WHERE UserName =%s"
         self.DatabaseCursor.execute(sql, UserName)
@@ -140,6 +145,7 @@ class DBInterface(): # Interface to MySQL database #
         + "equationText from bgdb.neuron n inner join bgdb.equation e on e.equationId = n.equationId" )
 
         return allNeurons
+
 
     def GetNeuronsOfNode(self, NodeName:str): # gets all neurons from a node#
 
