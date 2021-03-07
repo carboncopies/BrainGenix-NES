@@ -103,7 +103,7 @@ class DBInterface(): # Interface to MySQL database #
         The specific format of the information is a dictionary with key values being the names of the columns.
         '''
 
-        dbMoreMethodsForData
+
         sql = "SELECT UserID, UserName, FirstName, LastName, AccountEnabled, AccountExpirationDate FROM user WHERE UserName =%s"
         self.DatabaseCursor.execute(sql, UserName)
 
