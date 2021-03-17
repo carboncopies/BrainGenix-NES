@@ -127,7 +127,7 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
 
 
                     CommandCallStack = CommandDictionary['CallStack']
-                    KeywordArguments = CommandDictionary['KeywordArgs']
+                    ArgumentsDictionary = CommandDictionary['KeywordArgs']
 
                     # Get Target Function #
                     Layers = CommandCallStack.split('.')
@@ -142,7 +142,7 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
                         CommandFunction = getattr(CommandFunction, LayerName)
 
                         # Run Function #
-                        Output = CommandFunction(KeywordArguments)
+                        Output = CommandFunction(ArgumentsDictionary)
 
                     except AttributeError:
                         
@@ -156,8 +156,9 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
     ## BUILTIN COMMANDS ARE BELOW, THESE ARE HARDCODED THINGS LIKE LICENSE, HELP, ETC ##
     ####################################################################################
 
+    def Help(Self, ArgumentsDictionary): # 
 
-    def License(self, KeywordArguments): # Provides Basic License Information As Command 
+    def License(self, ArgumentsDictionary): # Provides Basic License Information As Command 
 
         LicenseText = '''                                 Apache License
                            Version 2.0, January 2004
