@@ -93,8 +93,9 @@ class Client(): # Client For BrainGenix System #
 
                 self.ZookeeperConnection.set(self.ConnectionNode, JSONString.encode())
 
+
                 # Block Until Command Finished #
-                while self.ZookeeperConnection.get(self.ConnectionNode)[0] == Command.encode():
+                while self.ZookeeperConnection.get(self.ConnectionNode)[0] == JSONString.encode():
                     time.sleep(0.05)
 
                 # Handle Output #
