@@ -99,6 +99,9 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
         # Log Info #
         self.Logger.Log(f'Started Connection Thread For Connection: {TargetConnection}')
 
+        # Set Output Variable #
+        Output = 'Command Not Found'
+
         # Enter Loop #
         while True:
 
@@ -112,8 +115,7 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
                 self.Logger.Log(f'Connection {TargetConnection} Destroyed')
                 return
 
-            if (CommandData != b'') and (CommandData != None):
-
+            if (CommandData != b'') and (CommandData != None) and (CommandData != Output.encode()):
 
                 # Parse Command #
                 RawJSONString = CommandData.decode('utf-8')
@@ -132,10 +134,14 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
                         CommandFunction = getattr(CommandFunction, LayerName)
 
                         # Run Function #
-                        CommandFunction(KeywordArguments)
+                        Output = CommandFunction(KeywordArguments)
 
                     except AttributeError:
                         
-                        print('Invalid Command')
+                        Output = 'Command Not Found'
+
+                # Return Output To CLI #
+                self.Zookeeper.ZookeeperConnection.set(f'/BrainGenix/API/Connections/{TargetConnection}', Output.encode())
+                
 
 
