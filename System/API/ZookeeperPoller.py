@@ -128,8 +128,14 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
                 CommandFunction = self
 
                 for _, LayerName in enumerate(Layers):
-                    CommandFunction = getattr(CommandFunction, LayerName)
+                    try:
+                        CommandFunction = getattr(CommandFunction, LayerName)
 
-                # Send Arguments #
-                CommandFunction(KeywordArguments)
+                        # Run Function #
+                        CommandFunction(KeywordArguments)
+
+                    except AttributeError:
+                        
+                        print('Invalid Command')
+
 
