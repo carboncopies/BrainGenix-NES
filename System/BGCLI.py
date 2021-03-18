@@ -38,16 +38,17 @@ class Client(): # Client For BrainGenix System #
         self.ZookeeperConnection = KazooClient(hosts=ZKAddress)
         self.ZookeeperConnection.start()
         self.Host = ZKAddress
-        print('Initializing Connection')
+
 
         self.UUID = str(uuid.uuid1())
 
         # Create A Connection zNode #
         self.ConnectionNode = f'/BrainGenix/API/Connections/{self.UUID}'
-        print('Connected to Zookeeper')
-        self.ZookeeperConnection.create(self.ConnectionNode, ephemeral=True)
-        print('Created Epehemeral zNode')
 
+        self.ZookeeperConnection.create(self.ConnectionNode, ephemeral=True)
+
+        # Print Welcome Message #
+        print('Type "Help", "License", "Authors" or "Copyright" for more information.')
 
 
     def Main(self): # Main Loop #
