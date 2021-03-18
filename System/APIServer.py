@@ -9,6 +9,12 @@ Date-Created: 2021-03-03
 '''
 
 import atexit
+import fastapi
+import random
+import time
+import json
+
+from fastapi import FastAPI, Depends
 
 from Core.LoadConfig import LoadConfig
 from Core.Logger import SysLog
@@ -46,6 +52,34 @@ Zookeeper = ZK(Logger)
 Zookeeper.ConnectToZookeeper(Logger, ZKHost)
 
 
+# Define API #
+app = FastAPI()
+
+# Create A Connection zNode #
+global ConnectionNode
+ConnectionNode = f'/BrainGenix/API/Connections/{random.randint(0,38564328964397256432564372)}'
+Zookeeper.ZookeeperConnection.create(ConnectionNode, ephemeral=True)
+
+
+# Define Methods In API #
+@app.get('/')
+async def root():
+    return {'message': 'test'}
+
+@app.get('/test')
+async def test():
+
+    Zookeeper.ZookeeperConnection.set(ConnectionNode, b'{"CallStack": "Version", "KeywordArgs": {}}')
+
+    value = b'{"CallStack": "Version", "KeywordArgs": {}}'
+
+    while Zookeeper.ZookeeperConnection.get(ConnectionNode)[0] == b'{"CallStack": "Version", "KeywordArgs": {}}':
+        pass
+
+
+    return json.loads(Zookeeper.ZookeeperConnection.get(ConnectionNode)[0].decode())
+
+
 # Start System #
 Logger.Log('Starting API Server')
 Logger.Log('')
@@ -62,3 +96,5 @@ Logger.Log('    +---------------------------------------------------------------
 Logger.Log(f'    |          Welcome To BrainGenix-APIServer Version {Version}          |')
 Logger.Log('    +-----------------------------------------------------------------+')
 Logger.Log('')
+
+

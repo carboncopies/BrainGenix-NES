@@ -35,6 +35,9 @@ def LoadConfig(ConfigFilePath):
     LogFileLinesBeforeSplit = int(ConfigFileDictionary.get('LogFileLinesBeforeSplit'))
     EnableGzip = bool(ConfigFileDictionary.get('gzipLogs'))
     ZKHost = str(ConfigFileDictionary.get('ZKHost'))
+    ZKPort = str(ConfigFileDictionary.get('ZKPort'))
+    
+    ZKHost += f':{ZKPort}'
 
     DBUname = str(ConfigFileDictionary.get('DatabaseUsername'))
     DBPasswd = str(ConfigFileDictionary.get('DatabasePassword'))

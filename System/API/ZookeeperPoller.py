@@ -94,7 +94,7 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
             time.sleep(PollingInterval)
 
 
-    def ConnectionHandler(self, TargetConnection, PollingInterval:float = 0.025): # Executes Functions For A Given Command #
+    def ConnectionHandler(self, TargetConnection, PollingInterval:float = 0.005): # Executes Functions For A Given Command #
 
         # Log Info #
         self.Logger.Log(f'Started Connection Thread For Connection: {TargetConnection}')
@@ -147,6 +147,10 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
                     except AttributeError:
                         
                         Output = 'Command Not Found'
+
+                # Format Output #
+                OutDict = {'Response':Output}
+                Output = json.dumps(OutDict)
 
                 # Return Output To CLI #
                 self.Zookeeper.ZookeeperConnection.set(f'/BrainGenix/API/Connections/{TargetConnection}', Output.encode())
