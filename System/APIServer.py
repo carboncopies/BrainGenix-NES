@@ -23,7 +23,7 @@ from Zookeeper.Zookeeper import ZK
 
 
 #https://realpython.com/python-https/
-#Client -> Proxy(This File, Hosts API) -> Zookeeper -> Leader -> Follower(s)
+#Client -HTTP> Proxy(This File, Hosts API) -zNode> Zookeeper -zNode> Leader -zNode(s)> Follower(s)
 
 
 

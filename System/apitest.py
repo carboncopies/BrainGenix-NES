@@ -7,7 +7,7 @@ def avg(listin):
 timelist = []
 for z in range(100):
     t = time.time()
-    requests.get('http://10.0.0.82:8000/test')
+    requests.get('http://10.0.0.82:8000/')
     timelist.append(time.time()-t)
 
 print(avg(timelist))
