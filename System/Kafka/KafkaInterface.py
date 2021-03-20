@@ -21,14 +21,19 @@ from kafka.admin import NewTopic
 class KafkaInterface(): # Defines a class used to communicate with Kafka from BrainGenix #
 
 
-    def __init__(self, Host):
+    def __init__(self, Host, Logger): # Initializes the Kafka Interface to BrainGenix #
 
         # Store Host For Later Use #
         self.Host = Host
+        self.Logger = Logger
+
 
         # Initialize Kafka Interfaces #
         self.KafkaProducer = KafkaProducer(bootstrap_servers = Host)
         self.KafkaConsumer = KafkaConsumer(bootstrap_servers = Host)
+
+        # Log Connection #
+        self.Logger.Log('Established Connection To Kafka Server')
 
 
     def CreateTopics(self, TopicNames): # Creates a topic or Queue
@@ -46,8 +51,19 @@ class KafkaInterface(): # Defines a class used to communicate with Kafka from Br
         AdminClient.create_topics(new_topics=TopicsList, validate_only=False)
 
 
+    def CreateProducerObject(self, TopicName): # Creates A Producer Object #
+
+        # Create Object #
+        KafkaProducerObject = KafkaProducer(TopicName, bootstrap_servers = self.Host)
+
+        # Return Object #
+        return KafkaProducerObject
 
 
+    def CreateConsumerObject(self, TopicName): # Creates A Consomer Object #
 
-K = KafkaInterface('127.0.0.1:9092')
-K.CreateTopics(['test1','test2'])
+        # Create Object #
+        KafkaConsumerObject = KafkaConsumer(TopicName, bootstrap_servers = self.Host)
+
+        # Return Object #
+        return KafkaConsumerObject
