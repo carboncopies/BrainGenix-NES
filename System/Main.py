@@ -22,9 +22,12 @@ from API.ZookeeperPoller import PollWatcher
 
 from Telemetry.SystemTelemetry import Follower, Leader
 
+from Kafka.KafkaInterface import KafkaInterface
+
 from Cryptography.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
 
-#from Database.DatabaseInterface import DBInterface
+from Diagnostics.ZKDiagnostics import CanAccessZookeeper
+from Diagnostics.KafkaDiagnostics import CanAccessKafka
 
 
 # Set Version Information
@@ -33,7 +36,7 @@ Version = '0.0.4'
 
 # Load Config #
 ConfigPath = 'Config/LocalConfig.yaml'
-AddonsPath, LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip, ZKHost, DBUname, DBPasswd, DBHost, DBName = LoadConfig(ConfigPath)
+AddonsPath, LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip, ZKHost, DBUname, DBPasswd, DBHost, DBName, KafkaHost = LoadConfig(ConfigPath)
 
 
 # Initialize Logger #
@@ -79,15 +82,41 @@ ModulesNeeded = [
 CheckImports(ModulesNeeded, Logger)
 
 
-# Initialize ZK #
-Zookeeper = ZK(Logger)
-Zookeeper.ConnectToZookeeper(Logger, ZKHost)
-Zookeeper.AutoInitZKLeader()
-Zookeeper.SpawnCheckerThread()
+# Connect To Zookeeper Service #
+try:
+    Zookeeper = ZK(Logger)
+    Zookeeper.ConnectToZookeeper(Logger, ZKHost)
+    Zookeeper.AutoInitZKLeader()
+    Zookeeper.SpawnCheckerThread()
 
-@atexit.register
-def ShutdownZK():
-    Zookeeper.Exit()
+    @atexit.register
+    def ShutdownZK():
+        Zookeeper.Exit()
+
+except Exception as E:
+
+    # Print Exception Message #
+    Logger.Log(f'Exception: {E}; Running Zookeeper Diagnostics!', 3)
+
+    # Run Diagnostics #
+    CanAccessZookeeper(ZKHost, Logger)
+    exit()
+
+
+# Connect To Kafka Service #
+try:
+    KafkaInterfaceInstance = KafkaInterface(KafkaHost, Logger)
+except Exception as E:
+
+    # Print Exception Message #
+    Logger.Log(f'Exception: {E}; Running Kafka Diagnostics!', 3)
+
+    # Run Diagnostics #
+    CanAccessKafka(KafkaHost, Logger)
+    exit()
+
+
+
 
 
 # Start System Telemetry #
@@ -98,6 +127,7 @@ TelManager = SystemTelemetryManager(Zookeeper, TelemetryLeader)
 
 # Initialize The API ZK Watcher #
 ZookeeperAPIWatcher = PollWatcher(Logger, Zookeeper, TelemetryLeader)
+
 
 
 
@@ -117,6 +147,7 @@ Logger.Log('    +---------------------------------------------------------------
 Logger.Log(f'    |               Welcome To BrainGenix Version {Version}               |')
 Logger.Log('    +-----------------------------------------------------------------+')
 Logger.Log('')
+
 
 
 # Main Loop #
