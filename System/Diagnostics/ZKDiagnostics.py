@@ -71,6 +71,13 @@ def CanAccessZookeeper(Host, Logger): # Runs Some Diagnostics About The Zookeepe
             return False
     Logger.Log('Octets Valid, Advancing To Next Test', 1)
 
+    # Check If Port In Allowed Range #
+    Logger.Log('Checking If Port In Allowed Range (0-65535)', 1)
+    if not ((Port > 0) and (Port < 65536)):
+        Logger.Log('Port Outside Allwed Range, Please Check Configuration File')
+        return False
+    Logger.Log('Port Within Valid Range, Advancing To Next Test')
+
     # Check If Device Is Reachable #
     Logger.Log(f'Checking If Zookeeper Host Server Is Reachable At {Address}', 1)
     PingResult = CheckPing(Address)
