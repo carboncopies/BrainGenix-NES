@@ -86,6 +86,13 @@ def CanAccessKafka(Host, Logger): # Runs Some Diagnostics About The Kafka Connec
     else:
         Logger.Log('System Reachable, Advancing To Next Test', 1)
 
+    # Check If Port In Allowed Range #
+    Logger.Log('Checking If Port In Allowed Range (0-65535)', 1)
+    if not ((Port > 0) and (Port < 65536)):
+        Logger.Log('Port Outside Allwed Range, Please Check Configuration File')
+        return False
+    Logger.Log('Port Within Valid Range, Advancing To Next Test')
+
     # Check If Host Has Port Open #
     Logger.Log('Checking If Remote Host Has Port Open')
     if not IsPortOpen(Address, Port):
