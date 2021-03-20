@@ -5,3 +5,4 @@ GPUtil
 kazoo
 pymysql
 pycrypto
+kafka-python
