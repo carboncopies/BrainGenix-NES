@@ -39,10 +39,15 @@ def LoadConfig(ConfigFilePath):
     
     ZKHost += f':{ZKPort}'
 
+    KafkaHost = str(ConfigFileDictionary.get('KafkaHost'))
+    KafkaPort = str(ConfigFileDictionary.get('KafkaPort'))
+
+    KafkaHost += f':{KafkaPort}'
+
     DBUname = str(ConfigFileDictionary.get('DatabaseUsername'))
     DBPasswd = str(ConfigFileDictionary.get('DatabasePassword'))
     DBHost = str(ConfigFileDictionary.get('DatabaseHost'))
     DBName = str(ConfigFileDictionary.get('DatabaseName'))
 
     # Return the values #
-    return AddonsPath, LogPath, LogBufferLength, PrintLogText, LogFileLinesBeforeSplit, EnableGzip, ZKHost, DBUname, DBPasswd, DBHost, DBName
+    return AddonsPath, LogPath, LogBufferLength, PrintLogText, LogFileLinesBeforeSplit, EnableGzip, ZKHost, DBUname, DBPasswd, DBHost, DBName, KafkaHost
