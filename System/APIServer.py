@@ -9,7 +9,7 @@ Date-Created: 2021-03-03
 '''
 
 import atexit
-import random
+from random import SystemRandom
 import json
 
 from fastapi import FastAPI
@@ -54,7 +54,8 @@ Zookeeper.ConnectToZookeeper(Logger, ZKHost)
 app = FastAPI()
 
 # Create A Connection zNode #
-ConnectionNode = f'/BrainGenix/API/Connections/{random.randint(0,38564328964397256432564372)}'
+cryptogen = SystemRandom()
+ConnectionNode = f'/BrainGenix/API/Connections/{cryptogen.randrange(38564328964397256432564372)}'
 Zookeeper.ZookeeperConnection.create(ConnectionNode, ephemeral=True)
 
 
