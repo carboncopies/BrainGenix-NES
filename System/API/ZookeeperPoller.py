@@ -145,7 +145,7 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
                         Output = CommandFunction(ArgumentsDictionary)
 
                     except AttributeError:
-                        
+
                         Output = 'Command Not Found'
 
                 # Format Output #
