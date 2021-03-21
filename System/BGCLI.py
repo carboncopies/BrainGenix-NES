@@ -90,7 +90,7 @@ class Client(): # Client For BrainGenix System #
 
                 # Encode As JSON #
                 JSONString = json.dumps(CommandDictionary)
-                
+
 
                 self.ZookeeperConnection.set(self.ConnectionNode, JSONString.encode())
 
