@@ -9,12 +9,10 @@ Date-Created: 2021-03-03
 '''
 
 import atexit
-import fastapi
 import random
-import time
 import json
 
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI
 
 from Core.LoadConfig import LoadConfig
 from Core.Logger import SysLog
@@ -71,7 +69,7 @@ async def test():
 
     Zookeeper.ZookeeperConnection.set(ConnectionNode, b'{"CallStack": "Version", "KeywordArgs": {}}')
 
-    value = b'{"CallStack": "Version", "KeywordArgs": {}}'
+    # value = b'{"CallStack": "Version", "KeywordArgs": {}}'
 
     while Zookeeper.ZookeeperConnection.get(ConnectionNode)[0] == b'{"CallStack": "Version", "KeywordArgs": {}}':
         pass

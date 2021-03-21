@@ -9,7 +9,6 @@ Date-Created: 2021-03-19
 '''
 
 import kazoo
-import platform
 import subprocess
 import os
 import socket

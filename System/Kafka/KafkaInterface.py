@@ -8,10 +8,6 @@ Description: This is the main interface between BrainGenix and the Kafka server 
 Date-Created: 2021-03-18
 '''
 
-import kafka
-import time
-import random
-
 from kafka import KafkaConsumer
 from kafka import KafkaProducer
 from kafka.admin import KafkaAdminClient

@@ -36,7 +36,7 @@ def LoadConfig(ConfigFilePath):
     EnableGzip = bool(ConfigFileDictionary.get('gzipLogs'))
     ZKHost = str(ConfigFileDictionary.get('ZKHost'))
     ZKPort = str(ConfigFileDictionary.get('ZKPort'))
-    
+
     ZKHost += f':{ZKPort}'
 
     KafkaHost = str(ConfigFileDictionary.get('KafkaHost'))

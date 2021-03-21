@@ -1,7 +1,5 @@
 import atexit
-import random
 import time
-import json
 import kazoo
 
 from Core.LoadConfig import LoadConfig
