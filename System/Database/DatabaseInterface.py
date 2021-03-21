@@ -151,7 +151,7 @@ class DBInterface(): # Interface to MySQL database #
 
         allNeuronsOfNode= self.DatabaseCursor.execute("SELECT neuronId, xCoord, yCoord, zCoord, Assigned_Node, "
         + "equationId, equationText from bgdb.neuron n inner join bgdb.equation e on e.equationId = n.equationId "
-        + "Where Assigned_Node = %s", NodeName)
+        + "Where Assigned_Node = %s", (NodeName,))
 
         return allNeuronsOfNode
 
@@ -161,7 +161,7 @@ class DBInterface(): # Interface to MySQL database #
         Placeholder = '?'
         Placeholders = ', '.join(Placeholder for Placeholder in NodeIds)
         query = ("SELECT synapseId, xCoord, yCoord, zCoord, neuronId, equationId, equationText from bgdb.synapse s "
-                 + "inner join bgdb.equation e on e.equationId = s.equationId Where neuronId in (%s)" % Placeholders)
+                 + "inner join bgdb.equation e on e.equationId = s.equationId Where neuronId in (%s)", (Placeholders,))
 
         SynapsesOfNeurons= self.DatabaseCursor.execute(query, NodeIds)
 
