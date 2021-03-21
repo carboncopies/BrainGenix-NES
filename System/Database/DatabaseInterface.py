@@ -158,10 +158,9 @@ class DBInterface(): # Interface to MySQL database #
 
     def GetSynapsesOfNodes(self, NodeIds:list): # gets all synapses with equations for a list of neuronId#
 
-        Placeholder = '?'
-        Placeholders = ', '.join(Placeholder for Placeholder in NodeIds)
+        Placeholders = ','.join(NodeIds)
 
         SynapsesOfNeurons= self.DatabaseCursor.execute("SELECT synapseId, xCoord, yCoord, zCoord, neuronId, equationId, equationText from bgdb.synapse s "
-                 + "inner join bgdb.equation e on e.equationId = s.equationId Where neuronId in (%s)", (Placeholders,))
+                 + "inner join bgdb.equation e on e.equationId = s.equationId Where neuronId in ("+ Placeholders +")")
 
         return SynapsesOfNeurons
