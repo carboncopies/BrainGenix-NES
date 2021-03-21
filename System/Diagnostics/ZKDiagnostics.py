@@ -80,7 +80,7 @@ def CanAccessZookeeper(Host, Logger): # Runs Some Diagnostics About The Zookeepe
     # Check If Device Is Reachable #
     Logger.Log(f'Checking If Zookeeper Host Server Is Reachable At {Address}', 1)
     PingResult = CheckPing(Address)
-    
+
     if not PingResult:
         Logger.Log('System Unreachable, Please Check Your Config File Or Zookeeper Installation!', 3)
         return False
