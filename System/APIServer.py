@@ -54,7 +54,6 @@ Zookeeper.ConnectToZookeeper(Logger, ZKHost)
 app = FastAPI()
 
 # Create A Connection zNode #
-global ConnectionNode
 ConnectionNode = f'/BrainGenix/API/Connections/{random.randint(0,38564328964397256432564372)}'
 Zookeeper.ZookeeperConnection.create(ConnectionNode, ephemeral=True)
 
