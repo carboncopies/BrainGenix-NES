@@ -8,8 +8,6 @@ Description: This file is used to check if a Kafka service is up and availiable 
 Date-Created: 2021-03-19
 '''
 
-import kafka
-import platform
 import subprocess
 import os
 import socket
@@ -17,7 +15,6 @@ import socket
 from kafka import KafkaConsumer
 from kafka import KafkaProducer
 from kafka.admin import KafkaAdminClient
-from kafka.admin import NewTopic
 
 
 def IsPortOpen(Address,Port): # Checks If A Given Port Is Open #

@@ -9,12 +9,10 @@ Date-Created: 2021-03-03
 '''
 
 import atexit
-import fastapi
-import random
-import time
+from random import SystemRandom
 import json
 
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI
 
 from Core.LoadConfig import LoadConfig
 from Core.Logger import SysLog
@@ -56,8 +54,8 @@ Zookeeper.ConnectToZookeeper(Logger, ZKHost)
 app = FastAPI()
 
 # Create A Connection zNode #
-global ConnectionNode
-ConnectionNode = f'/BrainGenix/API/Connections/{random.randint(0,38564328964397256432564372)}'
+cryptogen = SystemRandom()
+ConnectionNode = f'/BrainGenix/API/Connections/{cryptogen.randrange(38564328964397256432564372)}'
 Zookeeper.ZookeeperConnection.create(ConnectionNode, ephemeral=True)
 
 
@@ -71,7 +69,7 @@ async def test():
 
     Zookeeper.ZookeeperConnection.set(ConnectionNode, b'{"CallStack": "Version", "KeywordArgs": {}}')
 
-    value = b'{"CallStack": "Version", "KeywordArgs": {}}'
+    # value = b'{"CallStack": "Version", "KeywordArgs": {}}'
 
     while Zookeeper.ZookeeperConnection.get(ConnectionNode)[0] == b'{"CallStack": "Version", "KeywordArgs": {}}':
         pass
