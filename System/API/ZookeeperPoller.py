@@ -200,7 +200,7 @@ class PollWatcher(): # Watches Zookeeper to check for new API requests #
         '''
         return AuthorText
 
-    def License(self, ArgumentsDictionary): # Provides Basic License Information As Command 
+    def License(self, ArgumentsDictionary): # Provides Basic License Information As Command
 
         LicenseText = '''                                 Apache License
                             Version 2.0, January 2004
