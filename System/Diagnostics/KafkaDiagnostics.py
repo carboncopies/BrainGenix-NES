@@ -76,7 +76,7 @@ def CanAccessKafka(Host, Logger): # Runs Some Diagnostics About The Kafka Connec
     # Check If Device Is Reachable #
     Logger.Log(f'Checking If Kafka Host Server Is Reachable At {Address}', 1)
     PingResult = CheckPing(Address)
-    
+
     if not PingResult:
         Logger.Log('System Unreachable, Please Check Your Config File Or Kafka Installation!', 3)
         return False
