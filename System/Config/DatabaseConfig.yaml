@@ -1,0 +1,6 @@
+{
+DatabaseUsername: bgUser,
+DatabasePassword: 123456,
+DatabaseHost: 127.0.0.1,
+DatabaseName: bgdb
+}
