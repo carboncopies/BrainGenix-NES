@@ -10,6 +10,8 @@ Date-Created: 2021-03-18
 
 from kafka import KafkaConsumer
 from kafka import KafkaProducer
+from kafka import TopicPartition
+
 from kafka.admin import KafkaAdminClient
 from kafka.admin import NewTopic
 
@@ -59,7 +61,10 @@ class KafkaInterface(): # Defines a class used to communicate with Kafka from Br
     def CreateConsumerObject(self, TopicName): # Creates A Consomer Object #
 
         # Create Object #
-        KafkaConsumerObject = KafkaConsumer(TopicName, bootstrap_servers = self.Host)
+        KafkaConsumerObject = KafkaConsumer(bootstrap_servers = self.Host)
+
+        # Assign It #
+        KafkaConsumerObject.assign([TopicPartition(TopicName, 1)])
 
         # Return Object #
         return KafkaConsumerObject
