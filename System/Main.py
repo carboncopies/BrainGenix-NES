@@ -11,9 +11,13 @@ Date-Created: 2020-12-18
 import atexit
 import time
 
-from Core.LoadConfig import LoadConfig
+from Core.LoadConfig import LoadLoggerConfig
+from Core.LoadConfig import LoadDatabaseConfig
+from Core.LoadConfig import LoadZookeeperConfig
+from Core.LoadConfig import LoadKafkaConfig
+
 from Core.Logger import SysLog
-from Core.CheckLibraries import CheckImports#, CheckLibrary
+from Core.CheckLibraries import CheckImports
 
 from Zookeeper.Zookeeper import ZK
 from Zookeeper.ZKManager import SystemTelemetryManager
@@ -24,7 +28,7 @@ from Telemetry.SystemTelemetry import Follower, Leader
 
 from Kafka.KafkaInterface import KafkaInterface
 
-from Cryptography.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
+#from Cryptography.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
 
 from Diagnostics.ZKDiagnostics import CanAccessZookeeper
 from Diagnostics.KafkaDiagnostics import CanAccessKafka
@@ -35,8 +39,10 @@ Version = '0.0.4'
 
 
 # Load Config #
-ConfigPath = 'Config/LocalConfig.yaml'
-AddonsPath, LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip, ZKHost, DBUname, DBPasswd, DBHost, DBName, KafkaHost = LoadConfig(ConfigPath)
+LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
+DBUname, DBPasswd, DBHost, DBName = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
+ZKHost = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
+KafkaHost = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
 
 
 # Initialize Logger #
@@ -55,11 +61,11 @@ def CleanLog():
 
 
 # Load SSH Keys #
-KeysExist = CheckIfKeysExist(Logger)
-if not KeysExist:
-    PubKey, PrivateKey = GenKeys(Logger)
-    WriteKeys(Logger, PubKey, PrivateKey)
-PubKey, PrivateKey = ReadKeys(Logger)
+# KeysExist = CheckIfKeysExist(Logger)
+# if not KeysExist:
+#     PubKey, PrivateKey = GenKeys(Logger)
+#     WriteKeys(Logger, PubKey, PrivateKey)
+# PubKey, PrivateKey = ReadKeys(Logger)
 
 
 # Check Dependencies #
@@ -147,6 +153,24 @@ Logger.Log('    +---------------------------------------------------------------
 Logger.Log(f'    |               Welcome To BrainGenix Version {Version}               |')
 Logger.Log('    +-----------------------------------------------------------------+')
 Logger.Log('')
+
+
+# Kafka Testing Here #
+
+import threading
+def Push(KP):
+    while True:
+        KP.send(b'test')
+KP = KafkaInterfaceInstance.CreateProducerObject('Test')
+t = threading.thread(target=Push, args=(KP,))
+t.start()
+
+
+print('-------Starting Kafka Test--------')
+KafkaConsumer = KafkaInterfaceInstance.CreateConsumerObject('Test')
+for msg in KafkaConsumer:
+    print(msg)
+
 
 
 
