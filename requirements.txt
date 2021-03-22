@@ -5,4 +5,4 @@ GPUtil
 kazoo
 pymysql
 pycrypto
-kafka-python
+confluent-kafka
