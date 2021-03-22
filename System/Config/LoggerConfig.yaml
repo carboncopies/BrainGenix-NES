@@ -1,0 +1,7 @@
+{
+LogPath: ../Logs/,
+PrintLogText: True,
+LogBufferLength: 10,
+LogFileLinesBeforeSplit: 10000,
+gzipLogs: True
+}
