@@ -71,11 +71,11 @@ class DBInterface(): # Interface to MySQL database #
         Table = re.sub(r'\W+', '', Table)
         UserName = re.sub(r'\W+', '', UserName)
 
-        # Count of number of Users having the same UserName in the table
-        cnt = self.DatabaseCursor.execute(f"SELECT * from {Table} where UserName='{UserName}'") # <-- Potential SQL Injection vector? See Codacy for more info.
+        #Count of number of Users having the same UserName in the table
+        cnt= self.DatabaseCursor.execute("SELECT * from user where UserName= %s", UserName)
 
         UserExists= True
-        #If User Exists
+        # If User Exists
         if cnt==1:
             UserExists=True
 
@@ -83,6 +83,7 @@ class DBInterface(): # Interface to MySQL database #
             UserExists=False
 
         return UserExists
+
 
     def CheckIfStringClean(self, String): # Checks If A String Is Clean (SQL INJECTION DETECTION) #
 
@@ -95,6 +96,7 @@ class DBInterface(): # Interface to MySQL database #
 
         return True
 
+
     def GetUserInformation(self, UserName:str, Table:str): # Returns A List Of User Information #
 
         '''
@@ -103,15 +105,12 @@ class DBInterface(): # Interface to MySQL database #
         The specific format of the information is a dictionary with key values being the names of the columns.
         '''
 
-        # Purge SQL Injection Vectors #
-        self.CheckIfStringClean(Table)
+        # Detect and Log Potential Injections #
         self.CheckIfStringClean(UserName)
+        self.CheckIfStringClean(Table)
 
-        Table = re.sub(r'\W+', '', Table)
-        UserName = re.sub(r'\W+', '', UserName)
-
-        sql = "SELECT UserID, UserName, FirstName, LastName, AccountEnabled, AccountExpirationDate FROM "+Table+" WHERE UserName ='"+UserName+"'" # <-- Potential SQL Injection vector? See Codacy for more info.
-        self.DatabaseCursor.execute(sql)
+        sql = "SELECT UserID, UserName, FirstName, LastName, AccountEnabled, AccountExpirationDate FROM user WHERE UserName =%s"
+        self.DatabaseCursor.execute(sql, UserName)
 
         #List of user details in the table
         UserDetails=[]
@@ -138,3 +137,30 @@ class DBInterface(): # Interface to MySQL database #
         # Close DB Connection #
         self.DBConnection.close()
         self.Logger.Log('Shutdown Database Connection')
+
+
+    def GetAllNeurons(self): # gets all neurons with equations#
+
+        allNeurons= self.DatabaseCursor.execute("SELECT neuronId, xCoord, yCoord, zCoord, Assigned_Node, equationId, "
+        + "equationText from bgdb.neuron n inner join bgdb.equation e on e.equationId = n.equationId" )
+
+        return allNeurons
+
+
+    def GetNeuronsOfNode(self, NodeName:str): # gets all neurons from a node#
+
+        allNeuronsOfNode= self.DatabaseCursor.execute("SELECT neuronId, xCoord, yCoord, zCoord, Assigned_Node, "
+        + "equationId, equationText from bgdb.neuron n inner join bgdb.equation e on e.equationId = n.equationId "
+        + "Where Assigned_Node = %s", (NodeName,))
+
+        return allNeuronsOfNode
+
+
+    def GetSynapsesOfNodes(self, NodeIds:list): # gets all synapses with equations for a list of neuronId#
+
+        Placeholders = ','.join(NodeIds)
+
+        SynapsesOfNeurons= self.DatabaseCursor.execute("SELECT synapseId, xCoord, yCoord, zCoord, neuronId, equationId, equationText from bgdb.synapse s "
+                 + "inner join bgdb.equation e on e.equationId = s.equationId Where neuronId in ("+ Placeholders +")")
+
+        return SynapsesOfNeurons
