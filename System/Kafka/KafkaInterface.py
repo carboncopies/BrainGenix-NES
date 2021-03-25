@@ -137,7 +137,7 @@ class ProducerQueue(): # Provides A Queue Based Interface To Send Messages To Th
         while True:
 
             # Produce Message #
-            Message = Queue.get()
+            Message = self.Queue.get()
             self.ProducerObject.Produce(self.TopicName, Message)
 
 
