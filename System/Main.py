@@ -30,8 +30,6 @@ from API.ZookeeperPoller import PollWatcher
 from Telemetry.SystemTelemetry import Follower
 from Telemetry.SystemTelemetry import Leader
 
-from Kafka.KafkaInterface import KafkaInterface
-
 from Diagnostics.ZKDiagnostics import CanAccessZookeeper
 from Diagnostics.KafkaDiagnostics import CanAccessKafka
 
