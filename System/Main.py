@@ -23,7 +23,6 @@ from Core.Instantiator import InstantiateKafka
 from Core.Logger import SysLog
 from Core.CheckLibraries import CheckImports
 
-from Zookeeper.Zookeeper import ZK
 from Zookeeper.ZKManager import SystemTelemetryManager
 
 from API.ZookeeperPoller import PollWatcher
