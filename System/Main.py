@@ -86,6 +86,11 @@ CheckImports(ModulesNeeded, Logger)
 # Connect To Zookeeper Service #
 Zookeeper = InstantiateZK(Logger, ZKHost)
 
+# Register Shutdown Function To Automatically Disconnect#
+@atexit.register
+def ShutdownZK():
+    Zookeeper.Exit()
+
 
 # Connect To Kafka Service #
 Kafka = InstantiateKafka(Logger, KafkaHost)
