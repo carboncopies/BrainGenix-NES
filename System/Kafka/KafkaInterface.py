@@ -120,7 +120,7 @@ class ProducerQueue(): # Provides A Queue Based Interface To Send Messages To Th
         self.Queue = Queue
         self.Partition = Partition
 
-        # Create Producer Object # 
+        # Create Producer Object #
         Configuration = {'bootstrap.servers' : Host}
         self.ProducerObject = Producer(Configuration)
 
