@@ -1,4 +1,4 @@
 {
-KafkaHost: 127.0.0.1,
+KafkaHost: localhost,
 KafkaPort: 9092
 }
