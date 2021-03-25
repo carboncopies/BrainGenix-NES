@@ -88,7 +88,7 @@ class ConsumerQueue():
         # Enter Main Loop #
         while True:
 
-            self.ConsumerInstance.subscribe([TopicName])
+            self.ConsumerInstance.subscribe([self.TopicName])
             Message = self.ConsumerInstance.poll(timeout=1.0)
 
             if Message is None:
