@@ -72,7 +72,7 @@ class ConsumerQueue():
                 self.Logger.Log(f'Exception In KafkaConsumerObject: {Message.error()}', 1)
 
             else:
-                
+
                 self.Queue.put(Message.value())
 
 
