@@ -14,34 +14,8 @@ import atexit
 from confluent_kafka import Producer
 from confluent_kafka import Consumer
 from confluent_kafka import TopicPartition
-
-
-# import random
-
-
-
-
-
-
-# import threading, time
-
-# def t():
-#     print('Thread Started')
-#     p = Producer({'bootstrap.servers':'localhost:9092'})
-#     msg = random.randint(1000000000000,57849327543802754839257438905743829057438957432908476829564397256437825647328956437285643728564378256437895432969275689786875430898534288534287342578245073248705870942349786253498)
-#     for _ in range(10):
-#         msg += msg
-#     msg = str(msg).encode('utf-8')
-#     time.sleep(0.1)
-#     for z in range(20000):
-#         t = time.time()
-#         p.produce('Test2', msg)
-#         print(time.time()-t)
-
-#     p.flush()
-
-# t2 = threading.Thread(target=t, args=())
-
+from confluent_kafka import AdminClient
+from confluent_kafka import NewTopic
 
 
 class ConsumerQueue():
@@ -163,6 +137,14 @@ class KafkaInterface(): # Provides An Interface To Kafka Via The Confluent-Kafka
         self.ConsumerQueues = []
         self.ProducerQueues = []
 
+        # Create Admin Client For Later Use #
+        self.Logger.Log('Creating Kafka Administration Client')
+
+        Config = {'bootstrap_servers' : self.Host}
+        self.AdminClient = AdminClient(Config)
+
+        self.Logger.Log('Kafka Admin Client Connection Initialization Completed')
+
         # Register Shutdown Function #
         atexit.register(self.Shutdown, self)
 
@@ -199,6 +181,19 @@ class KafkaInterface(): # Provides An Interface To Kafka Via The Confluent-Kafka
 
         # Return Functions #
         return QueueInstance
+
+    
+    def CreateTopic(self, TopicName:str, Partitions:int = 1): # Create New Topic #
+
+        # Create Topic List #
+        TopicList = []
+        TopicList.append(NewTopic(TopicName, Partitions))
+
+        # Push To Kafka #
+        self.AdminClient.create_topics(TopicList)
+
+        # Return Success #
+        return True
 
 
     def Shutdown(self): # Destroys Connection Objects #
