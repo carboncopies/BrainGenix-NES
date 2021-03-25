@@ -201,7 +201,7 @@ class KafkaInterface(): # Provides An Interface To Kafka Via The Confluent-Kafka
         return QueueInstance
 
 
-    def Shutdown(self): # Destroys Connection Objects # 
+    def Shutdown(self): # Destroys Connection Objects #
 
         # Shutdown Processes # 
         self.Logger.Log(f'Shutting Down {len(self.ConsumerProcess) + len(self.ProducerProcesses)} Processes')
