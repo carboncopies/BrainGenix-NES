@@ -11,10 +11,14 @@ Date-Created: 2020-12-18
 import atexit
 import time
 
+
 from Core.LoadConfig import LoadLoggerConfig
 from Core.LoadConfig import LoadDatabaseConfig
 from Core.LoadConfig import LoadZookeeperConfig
 from Core.LoadConfig import LoadKafkaConfig
+
+from Core.Instantiator import InstantiateZK
+from Core.Instantiator import InstantiateKafka
 
 from Core.Logger import SysLog
 from Core.CheckLibraries import CheckImports
@@ -24,11 +28,10 @@ from Zookeeper.ZKManager import SystemTelemetryManager
 
 from API.ZookeeperPoller import PollWatcher
 
-from Telemetry.SystemTelemetry import Follower, Leader
+from Telemetry.SystemTelemetry import Follower
+from Telemetry.SystemTelemetry import Leader
 
 from Kafka.KafkaInterface import KafkaInterface
-
-#from Cryptography.KeyUtils import GenKeys, WriteKeys, ReadKeys, CheckIfKeysExist
 
 from Diagnostics.ZKDiagnostics import CanAccessZookeeper
 from Diagnostics.KafkaDiagnostics import CanAccessKafka
@@ -60,14 +63,6 @@ def CleanLog():
 #DatabaseInterface = DBInterface(Logger, DBUname, DBPasswd, DBHost, DBName)
 
 
-# Load SSH Keys #
-# KeysExist = CheckIfKeysExist(Logger)
-# if not KeysExist:
-#     PubKey, PrivateKey = GenKeys(Logger)
-#     WriteKeys(Logger, PubKey, PrivateKey)
-# PubKey, PrivateKey = ReadKeys(Logger)
-
-
 # Check Dependencies #
 ModulesNeeded = [
                 'os',
@@ -89,38 +84,11 @@ CheckImports(ModulesNeeded, Logger)
 
 
 # Connect To Zookeeper Service #
-try:
-    Zookeeper = ZK(Logger)
-    Zookeeper.ConnectToZookeeper(Logger, ZKHost)
-    Zookeeper.AutoInitZKLeader()
-    Zookeeper.SpawnCheckerThread()
-
-    @atexit.register
-    def ShutdownZK():
-        Zookeeper.Exit()
-
-except Exception as E:
-
-    # Print Exception Message #
-    Logger.Log(f'Exception: {E}; Running Zookeeper Diagnostics!', 3)
-
-    # Run Diagnostics #
-    CanAccessZookeeper(ZKHost, Logger)
-    exit()
+Zookeeper = InstantiateZK(Logger, ZKHost)
 
 
 # Connect To Kafka Service #
-try:
-    KafkaInterfaceInstance = KafkaInterface(KafkaHost, Logger)
-except Exception as E:
-
-    # Print Exception Message #
-    Logger.Log(f'Exception: {E}; Running Kafka Diagnostics!', 3)
-
-    # Run Diagnostics #
-    CanAccessKafka(KafkaHost, Logger)
-    exit()
-
+Kafka = InstantiateKafka(Logger, KafkaHost)
 
 
 
@@ -153,24 +121,6 @@ Logger.Log('    +---------------------------------------------------------------
 Logger.Log(f'    |               Welcome To BrainGenix Version {Version}               |')
 Logger.Log('    +-----------------------------------------------------------------+')
 Logger.Log('')
-
-
-# Kafka Testing Here #
-
-import threading
-def Push(KP):
-    while True:
-        KP.send(b'test')
-KP = KafkaInterfaceInstance.CreateProducerObject('Test')
-t = threading.thread(target=Push, args=(KP,))
-t.start()
-
-
-print('-------Starting Kafka Test--------')
-KafkaConsumer = KafkaInterfaceInstance.CreateConsumerObject('Test')
-for msg in KafkaConsumer:
-    print(msg)
-
 
 
 
