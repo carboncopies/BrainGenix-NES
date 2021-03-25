@@ -34,11 +34,6 @@ def InstantiateZK(Logger, ZookeeperHost): # Instantiates Zookeeper #
         Zookeeper.AutoInitZKLeader()
         Zookeeper.SpawnCheckerThread()
 
-        # Register Shutdown Function To Automatically Disconnect#
-        @atexit.register
-        def ShutdownZK():
-            Zookeeper.Exit()
-
         # Log Success #
         Logger.Log('Zookeeper Interface Instantiation Successful')
 
@@ -53,7 +48,7 @@ def InstantiateZK(Logger, ZookeeperHost): # Instantiates Zookeeper #
         Logger.Log(f'Exception: {E}; Running Zookeeper Diagnostics!', 3)
 
         # Run Diagnostics #
-        CanAccessZookeeper(ZKHost, Logger)
+        CanAccessZookeeper(ZookeeperHost, Logger)
         exit()
 
 
