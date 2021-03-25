@@ -93,7 +93,7 @@ class ConsumerQueue():
 
             if Message is None:
                 continue
-        
+
             if Message.error():
                 self.Logger.Log(f'Exception In KafkaConsumerObject: {Message.error()}', 1)
 
