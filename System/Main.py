@@ -30,8 +30,6 @@ from API.ZookeeperPoller import PollWatcher
 from Telemetry.SystemTelemetry import Follower
 from Telemetry.SystemTelemetry import Leader
 
-from Diagnostics.KafkaDiagnostics import CanAccessKafka
-
 
 # Set Version Information
 Version = '0.0.5'
