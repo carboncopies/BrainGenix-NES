@@ -26,7 +26,7 @@ from Zookeeper.Zookeeper import ZK
 
 
 # Set Version Information
-Version = '0.0.4'
+Version = '0.0.5'
 
 
 # Load Config #
