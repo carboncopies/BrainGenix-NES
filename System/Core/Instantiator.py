@@ -8,8 +8,6 @@ Description: This file is used to create instances of other subsystems.
 Date-Created: 2021-03-24
 '''
 
-import atexit
-
 
 from Zookeeper.Zookeeper import ZK
 
