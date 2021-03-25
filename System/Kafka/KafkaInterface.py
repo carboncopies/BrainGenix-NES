@@ -152,7 +152,7 @@ class KafkaInterface(): # Provides An Interface To Kafka Via The Confluent-Kafka
 
     def __init__(self, Logger:object, Host:object): # Initialize Iface #
 
-        # Create Local Vars # 
+        # Create Local Vars #
         self.Logger = Logger
         self.Host = Host
 
