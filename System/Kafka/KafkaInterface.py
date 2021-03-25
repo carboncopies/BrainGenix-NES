@@ -197,7 +197,7 @@ class KafkaInterface(): # Provides An Interface To Kafka Via The Confluent-Kafka
         self.ProducerProcesses.append(ProducerProcess)
         self.ProducerQueues.append(QueueInstance)
 
-        # Return Functions # 
+        # Return Functions #
         return QueueInstance
 
 
