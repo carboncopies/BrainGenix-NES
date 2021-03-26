@@ -59,7 +59,7 @@ def InstantiateKafka(Logger, KafkaHost): # Instantiates Kafka #
     # Instantiate Kafka #
     try:
 
-        KafkaInterfaceInstance = KafkaInterface(KafkaHost, Logger)
+        KafkaInterfaceInstance = KafkaInterface(Logger, KafkaHost)
 
         # Log Success #
         Logger.Log('Kafka Interface Instantiation Successful')
