@@ -14,8 +14,8 @@ import atexit
 from confluent_kafka import Producer
 from confluent_kafka import Consumer
 from confluent_kafka import TopicPartition
-from confluent_kafka import AdminClient
-from confluent_kafka import NewTopic
+from confluent_kafka.admin import AdminClient
+from confluent_kafka.admin import NewTopic
 
 
 class ConsumerQueue():
@@ -140,7 +140,7 @@ class KafkaInterface(): # Provides An Interface To Kafka Via The Confluent-Kafka
         # Create Admin Client For Later Use #
         self.Logger.Log('Creating Kafka Administration Client')
 
-        Config = {'bootstrap_servers' : self.Host}
+        Config = {'bootstrap.servers' : self.Host}
         self.AdminClient = AdminClient(Config)
 
         self.Logger.Log('Kafka Admin Client Connection Initialization Completed')
