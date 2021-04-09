@@ -30,12 +30,11 @@ def LoadLoggerConfig(ConfigFilePath):
     # Extract the important values from the dictionary and return them to the main system #
     LogPath = str(ConfigFileDictionary.get('LogPath'))
     PrintLogText = bool(ConfigFileDictionary.get('PrintLogText'))
-    LogBufferLength = int(ConfigFileDictionary.get('LogBufferLength'))
-    LogFileLinesBeforeSplit = int(ConfigFileDictionary.get('LogFileLinesBeforeSplit'))
-    EnableGzip = bool(ConfigFileDictionary.get('gzipLogs'))
+    RetentionPolicy = int(ConfigFileDictionary.get('RetentionPolicy'))
+    
 
     # Return the values #
-    return LogPath, LogBufferLength, PrintLogText, LogFileLinesBeforeSplit, EnableGzip
+    return LogPath, PrintLogText, RetentionPolicy
 
 
 
