@@ -36,7 +36,7 @@ Version = '0.0.5'
 
 
 # Load Config #
-LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
+LogPath, PrintLogOutput, LineRetentionCount = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
 DBUname, DBPasswd, DBHost, DBName = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
 ZKHost = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
 KafkaHost = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
@@ -44,7 +44,7 @@ KafkaHost = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
 
 # Initialize Logger #
 DatabaseConfig = (DBUname, DBPasswd, DBHost, DBName)
-Logger = SysLog('0', DatabaseConfig, LogPath, BufferLength=BufferLength, LogSegmentLength=LinesPerFile, ConsoleOutputEnabled=PrintLogOutput, EnableGzip = EnableGzip) # NOTE: THE SYSLOG ID HERE NEEDS TO BE REPLACED WITH THE ZOOKEEPER ID LATER ON! (FIRST ARG)
+Logger = SysLog('0', DatabaseConfig, LineRetentionCount, LogPath, ConsoleOutputEnabled=PrintLogOutput) # NOTE: THE SYSLOG ID HERE NEEDS TO BE REPLACED WITH THE ZOOKEEPER ID LATER ON! (FIRST ARG)
 
 
 # Purges The Log Buffer On System Exit #
