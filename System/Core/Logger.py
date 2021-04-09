@@ -49,7 +49,7 @@ def TryMakeDir(path): # Makes a Dir, catches exception if already exists #
 
 
 
-class NewLogger(): # Logger Class #
+class SysLog(): # Logger Class #
 
     '''
     This class contains the logger used by the entire BrainGenix system.
@@ -130,15 +130,25 @@ class NewLogger(): # Logger Class #
         if self.PrintEnabled:
             print(LogString[:-1])
 
-        if self.LogBuffer.count('\n') >= self.BufferLength:
-            self.LogFileObject.write(self.LogBuffer)
-            self.LogBuffer = ''
+        # if self.LogBuffer.count('\n') >= self.BufferLength:
+        #     self.LogFileObject.write(self.LogBuffer)
+        #     self.LogBuffer = ''
+
+    def CleanExit(self): # Create Logger Shutdown Command #
+
+        # Finalize Any Outstanding Database Commits #
+
+
+        # Destroy Connection To Database #
+
+
+        # Return Done #
+        return
 
 
 
 
-
-class SysLog():
+class SysLog2():
 
     '''
     This class contains the logger used by the entire BrainGenix system.
