@@ -5,6 +5,7 @@
 import datetime
 import inspect
 import os
+import pymysql
 
 '''
 Name: SysLog
@@ -106,8 +107,28 @@ class SysLog(): # Logger Class #
             return 'Database Configuration Null'
 
         # Connect To The Database # 
-        pass # Fill this in later (MAKE SURE TO CHECK IF WORKING, THEN SET DATABASE WORKING TO TRUE)
+        #pass # Fill this in later (MAKE SURE TO CHECK IF WORKING, THEN SET DATABASE WORKING TO TRUE)
+        
+        DBUname, DBPasswd, DBHost, DBName = DataBaseConfig.split(',')
+        
+        conn = pymysql.connect(
+        host= DBHost,
+        user= DBUname, 
+        password = DBPasswd,
+        db= DBName,
+        )
+      
+        cur = conn.cursor()
+        cur.execute("select @@version")
+        output = cur.fetchall()
 
+        self.LogFileObject.write(str(output))
+
+        self.LogFileObject.close()
+
+        conn.close()
+    
+    
 
     def Log(self, Message:str, Level:int=0): # Handles The Log Of An Item #
 
