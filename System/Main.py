@@ -44,7 +44,7 @@ KafkaHost = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
 
 # Initialize Logger #
 DatabaseConfig = (DBUname, DBPasswd, DBHost, DBName)
-Logger = SysLog('0', DatabaseConfig, LineRetentionCount, LogPath, ConsoleOutputEnabled=PrintLogOutput) # NOTE: THE SYSLOG ID HERE NEEDS TO BE REPLACED WITH THE ZOOKEEPER ID LATER ON! (FIRST ARG)
+Logger = SysLog(DatabaseConfig, LineRetentionCount, LogPath, ConsoleOutputEnabled=PrintLogOutput) # NOTE: THE SYSLOG ID HERE NEEDS TO BE REPLACED WITH THE ZOOKEEPER ID LATER ON! (FIRST ARG)
 
 
 # Purges The Log Buffer On System Exit #

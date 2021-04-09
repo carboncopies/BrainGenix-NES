@@ -59,7 +59,7 @@ class SysLog(): # Logger Class #
     This is the only function that should be called by an external function, as calling other functions will cause undefined behavior in the logger.
     '''
 
-    def __init__(self, DatabaseConfig:str, LineRetentionCount:int, NodeID:int, LogPath:str, ConsoleOutputEnabled:bool=True): # Connect To Database #
+    def __init__(self, DatabaseConfig:tuple, LineRetentionCount:int, LogPath:str, ConsoleOutputEnabled:bool=True): # Connect To Database #
 
         '''
         This function is used when the system is starting up, and should not be called anytime after that.
@@ -89,7 +89,6 @@ class SysLog(): # Logger Class #
         self.LoggerRetentionLineCount = LineRetentionCount
         self.DatabaseWorking = False
 
-        self.NodeID = NodeID
         self.StartTime = str(datetime.datetime.now()).replace(' ', '_')
 
         print(self.LogBuffer[:-1])
@@ -101,34 +100,36 @@ class SysLog(): # Logger Class #
 
 
         # Perform Database Connection Validation #
-
         if DatabaseConfig == None:
             print('Database Configuration Null, Please Check Config File')
             return 'Database Configuration Null'
 
-        # Connect To The Database # 
-        #pass # Fill this in later (MAKE SURE TO CHECK IF WORKING, THEN SET DATABASE WORKING TO TRUE)
+        # Parse Database Configuration # 
+        DBUname, DBPasswd, DBHost, DBName = DatabaseConfig
         
-        DBUname, DBPasswd, DBHost, DBName = DataBaseConfig.split(',')
-        
-        conn = pymysql.connect(
-        host= DBHost,
-        user= DBUname, 
-        password = DBPasswd,
-        db= DBName,
+
+        # Connect To Database #
+        self.DatabaseConnection = pymysql.connect(
+            host = DBHost,
+            user = DBUname, 
+            password = DBPasswd,
+            db = DBName
         )
       
-        cur = conn.cursor()
-        cur.execute("select @@version")
-        output = cur.fetchall()
+        # Create Database Cursor #
+        self.LoggerCursor = self.DatabaseConnection.cursor()
+
+        ##################################################################################################
+        # NOTE: PLEASE SEE COMMENTS BELOW, BUT WE'RE WRITING DATA *TO* THE DB NOT READING IT FROM THE DB #
+        ##################################################################################################
+
+        self.LoggerCursor.execute("select @@version")
+        output = self.LoggerCursor.fetchall()
 
         self.LogFileObject.write(str(output))
 
-        self.LogFileObject.close()
+        self.DatabaseWorking = True
 
-        conn.close()
-    
-    
 
     def Log(self, Message:str, Level:int=0): # Handles The Log Of An Item #
 
@@ -172,14 +173,28 @@ class SysLog(): # Logger Class #
             self.LogFileObject.write(self.LogBuffer)
             self.LogBuffer = ''
 
+        else:
+
+            pass
+
+            #
+            # Write data *from the logbuffer* into the database here
+            #
+
 
     def CleanExit(self): # Create Logger Shutdown Command #
 
         # Finalize Any Outstanding Database Commits #
 
+        #
+        # Write any data from the logbuffer *into* the database here
+        #
+
 
         # Destroy Connection To Database #
-
+        print('Destroying Database Connector')
+        self.DatabaseConnection.close()
+        print('Destroyed Database Connector')
 
         # Return Done #
         return
