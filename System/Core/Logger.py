@@ -13,6 +13,13 @@ Description: This class handles the main log for this braingenix instance.
 Date-Created: 2020-12-19
 '''
 
+class NewLogger(): # Logger Class #
+
+    def __init__(self, DatabaseConfig): # Connect To Database #
+
+        pass
+
+
 def CompressFile(FileName): # Compresses The File #
 
     '''
