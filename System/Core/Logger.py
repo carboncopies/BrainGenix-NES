@@ -5,7 +5,6 @@
 import datetime
 import inspect
 import os
-import gzip
 
 '''
 Name: SysLog
@@ -59,29 +58,45 @@ class SysLog(): # Logger Class #
     This is the only function that should be called by an external function, as calling other functions will cause undefined behavior in the logger.
     '''
 
-    def __init__(self, DatabaseConfig:str, NodeID:int, LogPath:str, BufferLength:int=10, LogSegmentLength:int=250, ConsoleOutputEnabled:bool=True, EnableGzip:bool=True): # Connect To Database #
+    def __init__(self, DatabaseConfig:str, LineRetentionCount:int, NodeID:int, LogPath:str, ConsoleOutputEnabled:bool=True): # Connect To Database #
 
         '''
         This function is used when the system is starting up, and should not be called anytime after that.
         If this function is called later, it'll cause the logger to be reinitialized, which may loose the buffer.
         *DO NOT CALL THIS*
         '''
+        
+
+        # Create Local Log Path Directory #
+        print('Checking If Log Path Exists')
+
+        DoesLogDirExist = os.path.isdir(LogPath)
+        if not DoesLogDirExist:
+
+            print('Log Path Does Not Exist, Creating Directory')
+            os.mkdir(LogPath)
+            print('Created Directory')
+
 
         # Initialize Local Variable Information #
 
         self.LogBuffer = '[Level] [               Time] [     Module Name] [           Function] [Message]\n'
-        self.BufferLength = BufferLength
         self.PrintEnabled = ConsoleOutputEnabled
-        self.LogSegmentLength = LogSegmentLength
         self.CurrentLogLength = 1
         self.LogPath = LogPath
         self.LogFileNumber = 0
-        self.EnableGzip = EnableGzip
+        self.LoggerRetentionLineCount = LineRetentionCount
+        self.DatabaseWorking = False
 
         self.NodeID = NodeID
         self.StartTime = str(datetime.datetime.now()).replace(' ', '_')
 
         print(self.LogBuffer[:-1])
+
+
+        # Open Log File #
+        self.LogFileName = 'BG.log'
+        self.LogFileObject = open(LogPath + self.LogFileName, 'w')
 
 
         # Perform Database Connection Validation #
@@ -91,7 +106,7 @@ class SysLog(): # Logger Class #
             return 'Database Configuration Null'
 
         # Connect To The Database # 
-        pass # Fill this in later
+        pass # Fill this in later (MAKE SURE TO CHECK IF WORKING, THEN SET DATABASE WORKING TO TRUE)
 
 
     def Log(self, Message:str, Level:int=0): # Handles The Log Of An Item #
@@ -130,9 +145,12 @@ class SysLog(): # Logger Class #
         if self.PrintEnabled:
             print(LogString[:-1])
 
-        # if self.LogBuffer.count('\n') >= self.BufferLength:
-        #     self.LogFileObject.write(self.LogBuffer)
-        #     self.LogBuffer = ''
+
+        if self.DatabaseWorking == False:
+
+            self.LogFileObject.write(self.LogBuffer)
+            self.LogBuffer = ''
+
 
     def CleanExit(self): # Create Logger Shutdown Command #
 
