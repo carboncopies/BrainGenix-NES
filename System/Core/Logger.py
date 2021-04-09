@@ -13,11 +13,6 @@ Description: This class handles the main log for this braingenix instance.
 Date-Created: 2020-12-19
 '''
 
-class NewLogger(): # Logger Class #
-
-    def __init__(self, DatabaseConfig): # Connect To Database #
-
-        pass
 
 
 def CompressFile(FileName): # Compresses The File #
@@ -51,6 +46,96 @@ def TryMakeDir(path): # Makes a Dir, catches exception if already exists #
 
     if not os.path.exists(path):
         os.mkdir(path)
+
+
+
+class NewLogger(): # Logger Class #
+
+    '''
+    This class contains the logger used by the entire BrainGenix system.
+    The logger is an essential part of the BrainGenix system, as it allows an entire cluster's log events to be aggregated into a usable format.
+    The logger contains some functions which are described below.
+    The most frequently used one will be the Log function, which accepts a message and a level, and puts it into the log.
+    This is the only function that should be called by an external function, as calling other functions will cause undefined behavior in the logger.
+    '''
+
+    def __init__(self, DatabaseConfig:str, NodeID:int, LogPath:str, BufferLength:int=10, LogSegmentLength:int=250, ConsoleOutputEnabled:bool=True, EnableGzip:bool=True): # Connect To Database #
+
+        '''
+        This function is used when the system is starting up, and should not be called anytime after that.
+        If this function is called later, it'll cause the logger to be reinitialized, which may loose the buffer.
+        *DO NOT CALL THIS*
+        '''
+
+        # Initialize Local Variable Information #
+
+        self.LogBuffer = '[Level] [               Time] [     Module Name] [           Function] [Message]\n'
+        self.BufferLength = BufferLength
+        self.PrintEnabled = ConsoleOutputEnabled
+        self.LogSegmentLength = LogSegmentLength
+        self.CurrentLogLength = 1
+        self.LogPath = LogPath
+        self.LogFileNumber = 0
+        self.EnableGzip = EnableGzip
+
+        self.NodeID = NodeID
+        self.StartTime = str(datetime.datetime.now()).replace(' ', '_')
+
+        print(self.LogBuffer[:-1])
+
+
+        # Perform Database Connection Validation #
+
+        if DatabaseConfig == None:
+            print('Database Configuration Null, Please Check Config File')
+            return 'Database Configuration Null'
+
+        # Connect To The Database # 
+        pass # Fill this in later
+
+
+    def Log(self, Message:str, Level:int=0): # Handles The Log Of An Item #
+
+        '''
+        This function is the main logging function for the entire system.
+        It accepts both a message and a log level as arguments.
+        The log level has a default value built in, so if you are logging something at the system level, the Level argument does not need to be specified.
+        If you are logging anything at a different level, you should specifiy it at the different level.
+        The levels are as follows:
+
+        +==================================+
+        | Level             | Number Value |
+        | Info              | 0            |
+        | Warning           | 1            |
+        | Error (Non fatal) | 2            |
+        | Error (Fatal)     | 3            |
+        +==================================+
+
+        The error codes will be used to sort the log later, if the log is checked.
+        If your plugin needs custom error codes, you can specify any number as the error code, however it won't be classified as anything.
+        Please note that if you use custom codes, another plugin may conflict with these, so you may want to make it user configurable.
+        '''
+
+        # Reformat Log For Human Readabillity #
+        Level = str(Level)
+
+        CallStack = inspect.stack()
+        CallingModuleName = CallStack[1][1]
+        CallingFunctionName = CallStack[1][3]
+
+        LogTime = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+        LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(16, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}\n'
+        self.LogBuffer += LogString
+
+        if self.PrintEnabled:
+            print(LogString[:-1])
+
+        if self.LogBuffer.count('\n') >= self.BufferLength:
+            self.LogFileObject.write(self.LogBuffer)
+            self.LogBuffer = ''
+
+
+
 
 
 class SysLog():
