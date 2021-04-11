@@ -102,6 +102,12 @@ CREATE TABLE IF NOT EXISTS `bgdb`.`user` (
   PRIMARY KEY (`userId`))
 ENGINE = InnoDB;
 
+create table if not exists `bgdb`.`log` (
+`LogId` bigint not null auto_increment,
+`LogDatetime` datetime null,
+`LogOutput` LONGTEXT,
+primary key (`logId`));
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
