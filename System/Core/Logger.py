@@ -119,15 +119,6 @@ class SysLog(): # Logger Class #
         # Create Database Cursor #
         self.LoggerCursor = self.DatabaseConnection.cursor()
 
-        ##################################################################################################
-        # NOTE: PLEASE SEE COMMENTS BELOW, BUT WE'RE WRITING DATA *TO* THE DB NOT READING IT FROM THE DB #
-        ##################################################################################################
-
-        self.LoggerCursor.execute("select @@version")
-        output = self.LoggerCursor.fetchall()
-
-        self.LogFileObject.write(str(output))
-
         self.DatabaseWorking = True
 
 
@@ -175,11 +166,15 @@ class SysLog(): # Logger Class #
 
         else:
 
-            pass
-
+            self.LogFileObject.write(self.LogBuffer)
             #
             # Write data *from the logbuffer* into the database here
             #
+            
+            insertStatement= "INSERT INTO log(LogDatetime,LogOutput) VALUES (%s,%s)"%(LogTime,LogString)
+            self.LoggerCUrsor.execute(insertStatement)
+            
+            self.LogBuffer = ''
 
 
     def CleanExit(self): # Create Logger Shutdown Command #
@@ -189,7 +184,18 @@ class SysLog(): # Logger Class #
         #
         # Write any data from the logbuffer *into* the database here
         #
-
+        
+        if self.LogBuffer != '':
+            
+            self.LogFileObject.write(self.LogBuffer)
+            #
+            # Write data *from the logbuffer* into the database here
+            #
+            
+            insertStatement= "INSERT INTO log(LogDatetime,LogOutput) VALUES (%s,%s)"%(LogTime,LogString)
+            self.LoggerCUrsor.execute(insertStatement)
+            
+            self.LogBuffer = ''
 
         # Destroy Connection To Database #
         print('Destroying Database Connector')
