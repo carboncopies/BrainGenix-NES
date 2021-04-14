@@ -171,7 +171,7 @@ class SysLog(): # Logger Class #
             #
             
             insertStatement= "INSERT INTO log(LogDatetime,LogOutput) VALUES (%s,%s)"%(LogTime,LogString)
-            self.LoggerCUrsor.execute(insertStatement)
+            self.LoggerCursor.execute(insertStatement)
             
             self.LogBuffer = ''
 
@@ -191,10 +191,10 @@ class SysLog(): # Logger Class #
             # Write data *from the logbuffer* into the database here
             #
             
-            insertStatement= "INSERT INTO log(LogDatetime,LogOutput) VALUES (%s,%s)"%(LogTime,LogString)
-            self.LoggerCUrsor.execute(insertStatement)
+            # insertStatement= "INSERT INTO log(LogDatetime,LogOutput) VALUES (%s,%s)"%(LogTime,LogString)
+            # self.LoggerCUrsor.execute(insertStatement)
             
-            self.LogBuffer = ''
+            # self.LogBuffer = ''
 
         # Destroy Connection To Database #
         print('Destroying Database Connector')
