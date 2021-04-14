@@ -102,7 +102,6 @@ class SysLog(): # Logger Class #
         # Perform Database Connection Validation #
         if DatabaseConfig == None:
             print('Database Configuration Null, Please Check Config File')
-            return 'Database Configuration Null'
 
         # Parse Database Configuration # 
         DBUname, DBPasswd, DBHost, DBName = DatabaseConfig
