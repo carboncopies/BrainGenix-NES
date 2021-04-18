@@ -65,7 +65,7 @@ class SysLog(): # Logger Class #
         If this function is called later, it'll cause the logger to be reinitialized, which may loose the buffer.
         *DO NOT CALL THIS*
         '''
-        
+
 
         # Create Local Log Path Directory #
         print('Checking If Log Path Exists')
@@ -105,7 +105,7 @@ class SysLog(): # Logger Class #
             print('Database Configuration Null, Please Check Config File')
             return 'Database Configuration Null'
 
-        # Connect To The Database # 
+        # Connect To The Database #
         pass # Fill this in later (MAKE SURE TO CHECK IF WORKING, THEN SET DATABASE WORKING TO TRUE)
 
 
