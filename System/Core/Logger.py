@@ -6,6 +6,7 @@ import datetime
 import inspect
 import os
 import pymysql
+import socket
 
 '''
 Name: SysLog
@@ -80,7 +81,6 @@ class SysLog(): # Logger Class #
 
 
         # Initialize Local Variable Information #
-
         self.LogBuffer = '[Level] [               Time] [     Module Name] [           Function] [Message]\n'
         self.PrintEnabled = ConsoleOutputEnabled
         self.CurrentLogLength = 1
@@ -88,6 +88,7 @@ class SysLog(): # Logger Class #
         self.LogFileNumber = 0
         self.LoggerRetentionLineCount = LineRetentionCount
         self.DatabaseWorking = False
+        self.NodeID = socket.gethostname()
 
         self.StartTime = str(datetime.datetime.now()).replace(' ', '_')
 
@@ -121,7 +122,7 @@ class SysLog(): # Logger Class #
         self.DatabaseWorking = True
 
 
-    def Log(self, Message:str, Level:int=0, NodeID:str): # Handles The Log Of An Item #
+    def Log(self, Message:str, Level:int=0): # Handles The Log Of An Item #
 
         '''
         This function is the main logging function for the entire system.
@@ -170,8 +171,8 @@ class SysLog(): # Logger Class #
             # Write data *from the logbuffer* into the database here
             #
             
-            insertStatement= "INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node) VALUES (%d,%s,%s,%s,%s,%s)"
-            self.LoggerCursor.execute(insertStatement, Level, LogTime, CallingModuleName, CallingFunctionName, Message, NodeID)
+            insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node) VALUES (%d, '%s', '%s', '%s', '%s', '%s')" %  (int(Level), LogTime, CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, self.NodeID))
+            self.LoggerCursor.execute(insertStatement)
             
             self.LogBuffer = ''
 
