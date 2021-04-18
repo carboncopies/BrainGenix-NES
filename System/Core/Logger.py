@@ -170,8 +170,8 @@ class SysLog(): # Logger Class #
             # Write data *from the logbuffer* into the database here
             #
             
-            insertStatement= "INSERT INTO log(LogDatetime,LogOutput) VALUES (%s,%s)"%(LogTime,LogString)
-            self.LoggerCursor.execute(insertStatement)
+            insertStatement= "INSERT INTO log(LogDatetime,LogOutput) VALUES (%s,%s)"
+            self.LoggerCursor.execute(insertStatement, LogTime, LogString)
             
             self.LogBuffer = ''
 
