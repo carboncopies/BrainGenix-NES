@@ -121,7 +121,7 @@ class SysLog(): # Logger Class #
         self.DatabaseWorking = True
 
 
-    def Log(self, Message:str, Level:int=0): # Handles The Log Of An Item #
+    def Log(self, Message:str, Level:int=0, NodeID:str): # Handles The Log Of An Item #
 
         '''
         This function is the main logging function for the entire system.
@@ -170,8 +170,8 @@ class SysLog(): # Logger Class #
             # Write data *from the logbuffer* into the database here
             #
             
-            insertStatement= "INSERT INTO log(LogDatetime,LogOutput) VALUES (%s,%s)"
-            self.LoggerCursor.execute(insertStatement, LogTime, LogString)
+            insertStatement= "INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node) VALUES (%d,%s,%s,%s,%s,%s)"
+            self.LoggerCursor.execute(insertStatement, Level, LogTime, CallingModuleName, CallingFunctionName, Message, NodeID)
             
             self.LogBuffer = ''
 
