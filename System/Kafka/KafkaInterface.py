@@ -182,7 +182,7 @@ class KafkaInterface(): # Provides An Interface To Kafka Via The Confluent-Kafka
         # Return Functions #
         return QueueInstance
 
-    
+
     def CreateTopic(self, TopicName:str, Partitions:int = 1): # Create New Topic #
 
         # Create Topic List #
