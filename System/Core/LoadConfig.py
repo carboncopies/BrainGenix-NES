@@ -31,7 +31,7 @@ def LoadLoggerConfig(ConfigFilePath):
     LogPath = str(ConfigFileDictionary.get('LogPath'))
     PrintLogText = bool(ConfigFileDictionary.get('PrintLogText'))
     RetentionPolicy = int(ConfigFileDictionary.get('RetentionPolicy'))
-    
+
 
     # Return the values #
     return LogPath, PrintLogText, RetentionPolicy

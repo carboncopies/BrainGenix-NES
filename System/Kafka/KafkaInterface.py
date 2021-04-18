@@ -182,7 +182,7 @@ class KafkaInterface(): # Provides An Interface To Kafka Via The Confluent-Kafka
         # Return Functions #
         return QueueInstance
 
-    
+
     def CreateTopic(self, TopicName:str, Partitions:int = 1): # Create New Topic #
 
         # Create Topic List #
@@ -200,7 +200,7 @@ class KafkaInterface(): # Provides An Interface To Kafka Via The Confluent-Kafka
 
         # Shutdown Processes #
         self.Logger.Log(f'Shutting Down {len(self.ConsumerProcess) + len(self.ProducerProcesses)} Processes')
-        
+
         for Process in self.ConsumerProcesses:
             self.Logger.Log(f'Terminating Process {Process}')
             Process.terminate()

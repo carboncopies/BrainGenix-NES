@@ -66,7 +66,7 @@ class SysLog(): # Logger Class #
         If this function is called later, it'll cause the logger to be reinitialized, which may loose the buffer.
         *DO NOT CALL THIS*
         '''
-        
+
 
         # Create Local Log Path Directory #
         print('Checking If Log Path Exists')
