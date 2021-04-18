@@ -103,14 +103,14 @@ class SysLog(): # Logger Class #
         if DatabaseConfig == None:
             print('Database Configuration Null, Please Check Config File')
 
-        # Parse Database Configuration # 
+        # Parse Database Configuration #
         DBUname, DBPasswd, DBHost, DBName = DatabaseConfig
         
 
         # Connect To Database #
         self.DatabaseConnection = pymysql.connect(
             host = DBHost,
-            user = DBUname, 
+            user = DBUname,
             password = DBPasswd,
             db = DBName
         )
