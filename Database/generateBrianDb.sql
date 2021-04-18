@@ -102,10 +102,16 @@ CREATE TABLE IF NOT EXISTS `bgdb`.`user` (
   PRIMARY KEY (`userId`))
 ENGINE = InnoDB;
 
+DROP TABLE IF EXISTS `bgdb`.`log` ;
+
 create table if not exists `bgdb`.`log` (
 `LogId` bigint not null auto_increment,
+`LogLevel` bigint null,
 `LogDatetime` datetime null,
+`CallingModule` varchar(150) null,
+`FunctionName` varchar(150) null,
 `LogOutput` LONGTEXT,
+`Node` varchar(50) null,
 primary key (`logId`));
 
 
@@ -127,6 +133,9 @@ insert into bgdb.synapse values (2, 3, 3, 3, 2, 2);
 
 --
 insert into bgdb.user values (1, 'bleu', 'password', 'salt', 'Brad', 'Leu', 'some notes', 'T', null, null);
+
+insert into bgdb.log (LogLevel, LogDateTime, CallingModule, FunctionName, LogOutput, Node) values (2, current_timestamp,
+'Module1', 'GetImaginaryStuff', 'Error in GetImaginaryStuff', 'Node2');
 --
 --    --sample for encrypting/dectrypting passwords
 --    insert into bgdb.User (user_name, user_password, first_name, last_name) values ('bleu', aes_encrypt('123456', 'bleu'), 'Brad', 'Leu');
