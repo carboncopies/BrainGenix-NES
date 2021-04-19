@@ -175,6 +175,22 @@ class SysLog(): # Logger Class #
             self.LoggerCursor.execute(insertStatement)
             
             self.LogBuffer = ''
+            
+    def PullLog(self, n:int): # Pull n most recent entries from the log table #
+        
+        PullStatement= ("SELECT * FROM log ORDER BY LogId DESC LIMIT %d" % int(n))
+        self.LoggerCursor.execute(PullStatement)
+        
+        rows = self.LoggerCursor.fetchall()
+        
+        print("Showing last %d entries of log" % int(n))
+        print("LogID \t LogLevel \t LogDatetime \t CallingModule \t FunctionName \t LogOutput \t Node")
+        
+        for row in rows:
+            print(f'{row[0]} \t {row[1]} \t {row[2]} \t {row[3]} \t {row[4]} \t {row[5]} \t {row[6]}')
+            
+    def CheckDelete(self): # Deletes entries from the Log Table prior to a specific time # 
+        
 
 
     def CleanExit(self): # Create Logger Shutdown Command #
