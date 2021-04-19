@@ -176,6 +176,7 @@ class SysLog(): # Logger Class #
             
             self.LogBuffer = ''
             
+
     def PullLog(self, n:int): # Pull n most recent entries from the log table #
         
         PullStatement= ("SELECT * FROM log ORDER BY LogId DESC LIMIT %d" % int(n))
@@ -191,7 +192,7 @@ class SysLog(): # Logger Class #
             
     def CheckDelete(self): # Deletes entries from the Log Table prior to a specific time # 
         
-
+        pass
 
     def CleanExit(self): # Create Logger Shutdown Command #
 
