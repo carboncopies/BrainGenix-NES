@@ -179,7 +179,7 @@ class SysLog(): # Logger Class #
 
     def PullLog(self, NumberOfLines:int): # Pull n most recent entries from the log table #
         
-        PullStatement= ("SELECT * FROM log ORDER BY LogId DESC LIMIT %d" % int(NumberOfLines))
+        PullStatement= ("SELECT * FROM log LIMIT %d" % int(NumberOfLines))
         self.LoggerCursor.execute(PullStatement)
         
         Rows = self.LoggerCursor.fetchall()
@@ -204,8 +204,6 @@ class SysLog(): # Logger Class #
             OutDict[LineItem[6]].append(LineItem)
 
         return OutDict        
-
-
 
     def CheckDelete(self): # Deletes entries from the Log Table prior to a specific time # 
         
