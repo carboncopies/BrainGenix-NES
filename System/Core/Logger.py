@@ -177,15 +177,35 @@ class SysLog(): # Logger Class #
             self.LogBuffer = ''
             
 
-    def PullLog(self, n:int): # Pull n most recent entries from the log table #
+    def PullLog(self, NumberOfLines:int): # Pull n most recent entries from the log table #
         
-        PullStatement= ("SELECT * FROM log ORDER BY LogId DESC LIMIT %d" % int(n))
+        PullStatement= ("SELECT * FROM log ORDER BY LogId DESC LIMIT %d" % int(NumberOfLines))
         self.LoggerCursor.execute(PullStatement)
         
-        rows = self.LoggerCursor.fetchall()
+        Rows = self.LoggerCursor.fetchall()
+        print(len(Rows), NumberOfLines)
+        return Rows
 
-        return rows
-            
+
+    def PullSort(self, NumberOfLines:int): # Pull Set Number Of Lines And Return A Sorted Output Dictionary #
+
+        Rows = self.PullLog(NumberOfLines)
+        NodesInList = []
+
+        for LineItem in Rows:
+            if LineItem[6] not in NodesInList:
+                NodesInList.append(LineItem[6])
+
+        OutDict = {}
+        for NodeHostName in NodesInList:
+            OutDict.update({NodeHostName : []})
+
+        for LineItem in Rows:
+            OutDict[LineItem[6]].append(LineItem)
+
+        return OutDict        
+
+
 
     def CheckDelete(self): # Deletes entries from the Log Table prior to a specific time # 
         
