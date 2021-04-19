@@ -87,7 +87,7 @@ def ShutdownZK():
 
 
 # Connect To Kafka Service #
-Kafka = InstantiateKafka(Logger, KafkaHost)
+#Kafka = InstantiateKafka(Logger, KafkaHost)
 
 
 
@@ -121,7 +121,12 @@ Logger.Log(f'    |               Welcome To BrainGenix Version {Version}        
 Logger.Log('    +-----------------------------------------------------------------+')
 Logger.Log('')
 
-
+a = Logger.PullSort(620)
+print('\n\n\n\n')
+print(len(a['bg-turing-0']))
+print('\n\n\n\n')
+for z in a['bg-turing-0']:
+    print(z)
 
 # Main Loop #
 while True:
