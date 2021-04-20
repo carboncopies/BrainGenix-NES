@@ -30,11 +30,11 @@ def LoadLoggerConfig(ConfigFilePath):
     # Extract the important values from the dictionary and return them to the main system #
     LogPath = str(ConfigFileDictionary.get('LogPath'))
     PrintLogText = bool(ConfigFileDictionary.get('PrintLogText'))
-    RetentionPolicy = int(ConfigFileDictionary.get('RetentionPolicy'))
+    SecondsToKeepLogs = int(ConfigFileDictionary.get('SecondsToKeepLogs'))
 
 
     # Return the values #
-    return LogPath, PrintLogText, RetentionPolicy
+    return LogPath, PrintLogText, SecondsToKeepLogs
 
 
 
