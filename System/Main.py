@@ -122,11 +122,9 @@ Logger.Log('    +---------------------------------------------------------------
 Logger.Log('')
 
 a = Logger.PullSort(1000)
-print('\n\n\n\n')
-print(len(a['bg-turing-0']))
-print('\n\n\n\n')
-for z in a['bg-turing-0']:
-    print(z)
+
+
+print(a)
 
 # Main Loop #
 while True:
