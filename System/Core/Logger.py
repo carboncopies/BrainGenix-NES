@@ -205,9 +205,9 @@ class SysLog(): # Logger Class #
 
         return OutDict        
 
-    def CheckDelete(self, Days: int ): # Deletes entries from the Log Table prior to a specific time # 
+    def CheckDelete(self, Date: str): # Deletes entries from the Log Table prior to a specific date# 
         
-        DeleteStatement= ("DELETE FROM log WHERE LogId < %d " % Days)
+        DeleteStatement= ("DELETE FROM log WHERE LogDatetime < '%s' " % Date)
         self.LoggerCursor.execute(DeleteStatement)
         
 
