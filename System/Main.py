@@ -121,7 +121,7 @@ Logger.Log(f'    |               Welcome To BrainGenix Version {Version}        
 Logger.Log('    +-----------------------------------------------------------------+')
 Logger.Log('')
 
-a = Logger.PullSort(620)
+a = Logger.PullSort(1000)
 print('\n\n\n\n')
 print(len(a['bg-turing-0']))
 print('\n\n\n\n')
