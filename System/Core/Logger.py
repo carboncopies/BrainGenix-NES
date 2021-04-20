@@ -205,9 +205,11 @@ class SysLog(): # Logger Class #
 
         return OutDict        
 
-    def CheckDelete(self): # Deletes entries from the Log Table prior to a specific time # 
+    def CheckDelete(self, Days: int ): # Deletes entries from the Log Table prior to a specific time # 
         
-        pass
+        DeleteStatement= ("DELETE FROM log WHERE LogId < %d " % Days)
+        self.LoggerCursor.execute(DeleteStatement)
+        
 
     def CleanExit(self): # Create Logger Shutdown Command #
 
