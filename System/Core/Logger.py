@@ -68,7 +68,7 @@ class SysLog(): # Logger Class #
         *DO NOT CALL THIS*
         '''
 
-
+        ConsoleOutputEnabled=False
         # Create Local Log Path Directory #
         print('Checking If Log Path Exists')
 
