@@ -12,9 +12,9 @@ import subprocess
 import os
 import socket
 
-from kafka import KafkaConsumer
-from kafka import KafkaProducer
-from kafka.admin import KafkaAdminClient
+from confluent_kafka import Consumer
+from confluent_kafka import Producer
+from confluent_kafka.admin import AdminClient
 
 
 def IsPortOpen(Address,Port): # Checks If A Given Port Is Open #
