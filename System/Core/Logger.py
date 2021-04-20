@@ -60,7 +60,7 @@ class SysLog(): # Logger Class #
     This is the only function that should be called by an external function, as calling other functions will cause undefined behavior in the logger.
     '''
 
-    def __init__(self, DatabaseConfig:tuple, LineRetentionCount:int, LogPath:str, ConsoleOutputEnabled:bool=True): # Connect To Database #
+    def __init__(self, DatabaseConfig:tuple, SecondsToKeepLogs:int, LogPath:str, ConsoleOutputEnabled:bool=True): # Connect To Database #
 
         '''
         This function is used when the system is starting up, and should not be called anytime after that.
@@ -68,7 +68,6 @@ class SysLog(): # Logger Class #
         *DO NOT CALL THIS*
         '''
 
-        ConsoleOutputEnabled=False
         # Create Local Log Path Directory #
         print('Checking If Log Path Exists')
 
@@ -86,7 +85,7 @@ class SysLog(): # Logger Class #
         self.CurrentLogLength = 1
         self.LogPath = LogPath
         self.LogFileNumber = 0
-        self.LoggerRetentionLineCount = LineRetentionCount
+        self.SecondsToKeepLogs = SecondsToKeepLogs
         self.DatabaseWorking = False
         self.NodeID = socket.gethostname()
 
@@ -179,19 +178,23 @@ class SysLog(): # Logger Class #
 
     def PullLog(self, NumberOfLines:int): # Pull n most recent entries from the log table #
         
+        # Pull Lines From Database #
         PullStatement= ("SELECT * FROM log LIMIT %d" % int(NumberOfLines))
         self.LoggerCursor.execute(PullStatement)
         
         Rows = self.LoggerCursor.fetchall()
-        print(len(Rows), NumberOfLines)
+
+        # Return Them #
         return Rows
 
 
     def PullSort(self, NumberOfLines:int): # Pull Set Number Of Lines And Return A Sorted Output Dictionary #
 
+        # Pull Lines Here #
         Rows = self.PullLog(NumberOfLines)
         NodesInList = []
 
+        # Sort Lines #
         for LineItem in Rows:
             if LineItem[6] not in NodesInList:
                 NodesInList.append(LineItem[6])
@@ -203,33 +206,33 @@ class SysLog(): # Logger Class #
         for LineItem in Rows:
             OutDict[LineItem[6]].append(LineItem)
 
+        # Return Lines #
         return OutDict        
 
-    def CheckDelete(self, Date: str): # Deletes entries from the Log Table prior to a specific date# 
+
+    def CheckDelete(self, Date:str): # Deletes entries from the Log Table prior to a specific date # 
         
+        # Delete Old Logs #
         DeleteStatement= ("DELETE FROM log WHERE LogDatetime < '%s' " % Date)
         self.LoggerCursor.execute(DeleteStatement)
+
+
+    def PurgeOldLogs(self): # Automatically Removes Logs As Per The LogFile Retention Policy #
+
+        # Calculate Old Date (Current Date Minus KeepSeconds) # 
+        DeleteDateRaw = datetime.datetime.now() - datetime.timedelta(seconds=self.SecondsToKeepLogs)
+        DeleteDate = DeleteDateRaw.strftime('%Y-%m-%d_%H-%M-%S')
         
+        # Execute Deletion Command # 
+        self.CheckDelete(DeleteDate)
+
 
     def CleanExit(self): # Create Logger Shutdown Command #
 
-        # Finalize Any Outstanding Database Commits #
-
-        #
-        # Write any data from the logbuffer *into* the database here
-        #
-        
+        # Check LogBuffer, Flush #
         if self.LogBuffer != '':
-            
             self.LogFileObject.write(self.LogBuffer)
-            #
-            # Write data *from the logbuffer* into the database here
-            #
-            
-            # insertStatement= "INSERT INTO log(LogDatetime,LogOutput) VALUES (%s,%s)"%(LogTime,LogString)
-            # self.LoggerCUrsor.execute(insertStatement)
-            
-            # self.LogBuffer = ''
+
 
         # Destroy Connection To Database #
         print('Destroying Database Connector')
