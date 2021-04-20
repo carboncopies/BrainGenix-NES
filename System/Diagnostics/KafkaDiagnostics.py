@@ -12,9 +12,9 @@ import subprocess
 import os
 import socket
 
-from kafka import KafkaConsumer
-from kafka import KafkaProducer
-from kafka.admin import KafkaAdminClient
+from confluent_kafka import Consumer
+from confluent_kafka import Producer
+from confluent_kafka.admin import AdminClient
 
 
 def IsPortOpen(Address,Port): # Checks If A Given Port Is Open #
@@ -101,7 +101,11 @@ def CanAccessKafka(Host, Logger): # Runs Some Diagnostics About The Kafka Connec
     # Attempt Kafka Consumer Connection #
     Logger.Log('Attempting Consumer Connection')
     try:
-        KafkaConsumer(bootstrap_servers=Host)
+        Configuration = {'bootstrap.servers' : Host}
+        Consumer(Configuration)
+        Logger.Log('Kafka Consumer Connection Test Passed')
+    except ValueError: # NOTE: A value error is expected as we've not sent it a topic name to connect with #
+        Logger.Log('Kafka Consumer Connection Test Passed')
     except Exception as E:
         Logger.Log('An Unknown Error Was Detected With Consumer Test! See Line Below.', 3)
         Logger.Log(E, 3)
@@ -110,7 +114,9 @@ def CanAccessKafka(Host, Logger): # Runs Some Diagnostics About The Kafka Connec
     # Attempt Kafka Producer Connection #
     Logger.Log('Attempting Producer Connection')
     try:
-        KafkaProducer(bootstrap_servers=Host)
+        Configuration = {'bootstrap.servers' : Host}
+        Producer(Configuration)
+        Logger.Log('Kafka Producer Connection Test Passed')
     except Exception as E:
         Logger.Log('An Unknown Error Was Detected With Producer Test! See Line Below.', 3)
         Logger.Log(E, 3)
@@ -119,7 +125,9 @@ def CanAccessKafka(Host, Logger): # Runs Some Diagnostics About The Kafka Connec
     # Attempt Kafka Admin Connection #
     Logger.Log('Attempting Admin Connection')
     try:
-        KafkaAdminClient(bootstrap_servers=Host)
+        Configuration = {'bootstrap.servers' : Host}
+        AdminClient(Configuration)
+        Logger.Log('Kafka Admin Connection Test Passed')
     except Exception as E:
         Logger.Log('An Unknown Error Was Detected With Kafka Admin Test! See Line Below.', 3)
         Logger.Log(E, 3)
