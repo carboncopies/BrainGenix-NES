@@ -58,7 +58,7 @@ class SysLog(): # Logger Class #
     This is the only function that should be called by an external function, as calling other functions will cause undefined behavior in the logger.
     '''
 
-    def __init__(self, DatabaseConfig:str, LineRetentionCount:int, NodeID:int, LogPath:str, ConsoleOutputEnabled:bool=True): # Connect To Database #
+    def __init__(self, DatabaseConfig:str, LineRetentionCount:int, LogPath:str, ConsoleOutputEnabled:bool=True): # Connect To Database #
 
         '''
         This function is used when the system is starting up, and should not be called anytime after that.
@@ -68,8 +68,6 @@ class SysLog(): # Logger Class #
 
 
         # Create Local Log Path Directory #
-        print('Checking If Log Path Exists')
-
         DoesLogDirExist = os.path.isdir(LogPath)
         if not DoesLogDirExist:
 
@@ -88,7 +86,6 @@ class SysLog(): # Logger Class #
         self.LoggerRetentionLineCount = LineRetentionCount
         self.DatabaseWorking = False
 
-        self.NodeID = NodeID
         self.StartTime = str(datetime.datetime.now()).replace(' ', '_')
 
         print(self.LogBuffer[:-1])
