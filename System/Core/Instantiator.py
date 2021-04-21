@@ -19,6 +19,8 @@ from Diagnostics.ZKDiagnostics import CanAccessZookeeper
 from Diagnostics.KafkaDiagnostics import CanAccessKafka
 from Diagnostics.DatabaseDiagnostics import CanAccessDatabase
 
+from Core.Logger import SysLog
+
 
 def InstantiateZK(Logger, ZookeeperHost): # Instantiates Zookeeper #
 
@@ -107,4 +109,41 @@ def InstantiateDB(Logger, Username, Password, Host, Database): # Instantiates Da
 
         # Run Diagnostics #
         CanAccessDatabase(Host, Username, Password, Database, Logger)
+        exit()
+
+
+def InstantiateLogger(DBUname, DBPasswd, DBHost, DBName, LineRetentionCount, LogPath, PrintLogOutput): # Instantiates Kafka #
+
+    # Log Message #
+    print('Initializing Centralized Logging System')
+
+
+    # Instantiate Kafka #
+    try:
+
+        DatabaseConfig = (DBUname, DBPasswd, DBHost, DBName)
+        Logger = SysLog(DatabaseConfig, LineRetentionCount, LogPath, ConsoleOutputEnabled=PrintLogOutput)
+        
+        # Log Success #
+        Logger.Log('Centralized Logging Daemon Started')
+
+        # Return Instantiated Kafka Interface Object #
+        return Logger
+
+    # If Something Fails During Instantiation #
+    except Exception as E:
+
+        # Print Exception Message #
+        ErrorMessage = ''
+        ErrorMessage += 'Error During Logger Initialization!\n'
+        ErrorMessage += f'Fatal Exception: {E}'
+
+        # Save Error Output To Disk#
+        with open('README-BRAINGENIX-CLS-ERROR.txt', 'w') as FileObject:
+            FileObject.write(ErrorMessage)
+
+        # Print Error Message #
+        print(ErrorMessage)
+
+        # Exit #
         exit()
