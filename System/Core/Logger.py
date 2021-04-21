@@ -80,7 +80,7 @@ class SysLog(): # Logger Class #
 
 
         # Initialize Local Variable Information #
-        
+
         self.LogBuffer = '[Level] [               Time] [         Module Name] [           Function] [Message]\n'
         self.PrintEnabled = ConsoleOutputEnabled
         self.CurrentLogLength = 1
