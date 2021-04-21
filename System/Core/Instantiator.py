@@ -13,9 +13,11 @@ from Zookeeper.Zookeeper import ZK
 
 from Kafka.KafkaInterface import KafkaInterface
 
+from Database.DatabaseInterface import DBInterface
+
 from Diagnostics.ZKDiagnostics import CanAccessZookeeper
 from Diagnostics.KafkaDiagnostics import CanAccessKafka
-
+from Diagnostics.DatabaseDiagnostics import CanAccessDatabase
 
 
 def InstantiateZK(Logger, ZookeeperHost): # Instantiates Zookeeper #
@@ -76,4 +78,33 @@ def InstantiateKafka(Logger, KafkaHost): # Instantiates Kafka #
 
         # Run Diagnostics #
         CanAccessKafka(KafkaHost, Logger)
+        exit()
+
+
+def InstantiateDB(Logger, Username, Password, Host, Database): # Instantiates Database Interface #
+
+    # Log Message #
+    Logger.Log('Instantiating Database Interface')
+
+
+    # Instantiate DB #
+    try:
+
+        DBInterfaceInstance = DBInterface(Logger, Username, Password, Host, Database)
+
+        # Log Success #
+        Logger.Log('Database Connector Created Successfully')
+
+        # Return Instantiated DB Interface Object #
+        return DBInterfaceInstance
+
+    # If Something Fails During Instantiation #
+    except Exception as E:
+
+        # Print Exception Message #
+        Logger.Log('Error During DB Instantiation', 3)
+        Logger.Log(f'Exception: {E}; Running Database Diagnostics!', 3)
+
+        # Run Diagnostics #
+        CanAccessDatabase(Host, Username, Password, Database, Logger)
         exit()
