@@ -19,6 +19,7 @@ from Core.LoadConfig import LoadKafkaConfig
 
 from Core.Instantiator import InstantiateZK
 from Core.Instantiator import InstantiateKafka
+from Core.Instantiator import InstantiateDB
 
 from Core.Logger import SysLog
 from Core.CheckLibraries import CheckImports
@@ -32,7 +33,7 @@ from Telemetry.SystemTelemetry import Leader
 
 
 # Set Version Information
-Version = '0.0.5'
+Version = '0.0.6'
 
 
 # Load Config #
@@ -54,7 +55,7 @@ def CleanLog():
 
 
 # Connect To DB #
-#DatabaseInterface = DBInterface(Logger, DBUname, DBPasswd, DBHost, DBName)
+DatabaseInterface = InstantiateDB(Logger, DBUname, DBPasswd, DBHost, DBName)
 
 
 # Check Dependencies #
