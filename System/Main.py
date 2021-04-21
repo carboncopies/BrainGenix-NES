@@ -45,7 +45,6 @@ KafkaHost = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
 
 
 # Initialize Logger #
-
 Logger = InstantiateLogger(DBUname, DBPasswd, DBHost, DBName, LineRetentionCount, LogPath, PrintLogOutput)
 
 
