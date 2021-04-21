@@ -62,7 +62,6 @@ class SysLog(): # Logger Class #
 
     def __init__(self, DatabaseConfig:str, LineRetentionCount:int, LogPath:str, ConsoleOutputEnabled:bool=True): # Connect To Database #
 
-
         '''
         This function is used when the system is starting up, and should not be called anytime after that.
         If this function is called later, it'll cause the logger to be reinitialized, which may loose the buffer.
@@ -81,7 +80,7 @@ class SysLog(): # Logger Class #
 
 
         # Initialize Local Variable Information #
-        self.LogBuffer = '[Level] [                 Time] [     Module Name] [           Function] [Message]\n'
+        self.LogBuffer = '[Level] [               Time] [         Module Name] [           Function] [Message]\n'
         self.PrintEnabled = ConsoleOutputEnabled
         self.CurrentLogLength = 1
         self.LogPath = LogPath
