@@ -60,7 +60,8 @@ class SysLog(): # Logger Class #
     This is the only function that should be called by an external function, as calling other functions will cause undefined behavior in the logger.
     '''
 
-    def __init__(self, DatabaseConfig:tuple, SecondsToKeepLogs:int, LogPath:str, ConsoleOutputEnabled:bool=True): # Connect To Database #
+    def __init__(self, DatabaseConfig:str, LineRetentionCount:int, LogPath:str, ConsoleOutputEnabled:bool=True): # Connect To Database #
+
 
         '''
         This function is used when the system is starting up, and should not be called anytime after that.
@@ -80,7 +81,7 @@ class SysLog(): # Logger Class #
 
 
         # Initialize Local Variable Information #
-        self.LogBuffer = '[Level] [               Time] [     Module Name] [           Function] [Message]\n'
+        self.LogBuffer = '[Level] [                 Time] [     Module Name] [           Function] [Message]\n'
         self.PrintEnabled = ConsoleOutputEnabled
         self.CurrentLogLength = 1
         self.LogPath = LogPath
@@ -151,7 +152,7 @@ class SysLog(): # Logger Class #
         CallingFunctionName = CallStack[1][3]
 
         LogTime = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-        LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(16, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}\n'
+        LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(20, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}\n'
         self.LogBuffer += LogString
 
         if self.PrintEnabled:
