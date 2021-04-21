@@ -20,6 +20,7 @@ from Core.LoadConfig import LoadKafkaConfig
 from Core.Instantiator import InstantiateZK
 from Core.Instantiator import InstantiateKafka
 from Core.Instantiator import InstantiateDB
+from Core.Instantiator import InstantiateLogger
 
 from Core.Logger import SysLog
 from Core.CheckLibraries import CheckImports
@@ -44,8 +45,8 @@ KafkaHost = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
 
 
 # Initialize Logger #
-DatabaseConfig = (DBUname, DBPasswd, DBHost, DBName)
-Logger = SysLog('0', DatabaseConfig, LineRetentionCount, LogPath, ConsoleOutputEnabled=PrintLogOutput) # NOTE: THE SYSLOG ID HERE NEEDS TO BE REPLACED WITH THE ZOOKEEPER ID LATER ON! (FIRST ARG)
+
+Logger = InstantiateLogger(DBUname, DBPasswd, DBHost, DBName, LineRetentionCount, LogPath, PrintLogOutput)
 
 
 # Purges The Log Buffer On System Exit #
