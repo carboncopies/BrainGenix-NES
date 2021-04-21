@@ -80,7 +80,7 @@ class SysLog(): # Logger Class #
 
         # Initialize Local Variable Information #
 
-        self.LogBuffer = '[Level] [               Time] [     Module Name] [           Function] [Message]\n'
+        self.LogBuffer = '[Level] [               Time] [         Module Name] [           Function] [Message]\n'
         self.PrintEnabled = ConsoleOutputEnabled
         self.CurrentLogLength = 1
         self.LogPath = LogPath
@@ -139,7 +139,7 @@ class SysLog(): # Logger Class #
         CallingFunctionName = CallStack[1][3]
 
         LogTime = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-        LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(16, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}\n'
+        LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(20, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}\n'
         self.LogBuffer += LogString
 
         if self.PrintEnabled:
