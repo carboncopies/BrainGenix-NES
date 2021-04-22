@@ -38,7 +38,7 @@ Version = '0.0.6'
 
 
 # Load Config #
-LogPath, PrintLogOutput, LineRetentionCount = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
+LogPath, PrintLogOutput, SecondsToKeepLogs = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
 DBUname, DBPasswd, DBHost, DBName = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
 ZKHost = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
 KafkaHost = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
@@ -88,7 +88,7 @@ def ShutdownZK():
 
 
 # Connect To Kafka Service #
-Kafka = InstantiateKafka(Logger, KafkaHost)
+#Kafka = InstantiateKafka(Logger, KafkaHost)
 
 
 
@@ -122,7 +122,11 @@ Logger.Log(f'    |               Welcome To BrainGenix Version {Version}        
 Logger.Log('    +-----------------------------------------------------------------+')
 Logger.Log('')
 
-
+time.sleep(2)
+a = Logger.PullSort(1000)
+print(len(a['bg-turing-0']))
+Logger.PurgeOldLogs()
+print(len(a['bg-turing-0']))
 
 # Main Loop #
 while True:

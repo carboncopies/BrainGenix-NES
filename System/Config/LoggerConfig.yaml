@@ -1,5 +1,5 @@
 {
 LogPath: ../Logs/, # Set The Path For Logs
 PrintLogText: True, # Enable or Disable Printing Logs
-RetentionPolicy: 20  # Define The Number Of Lines Of Logs To Keep 
+SecondsToKeepLogs: 1  # Define The Number Of Seconds To Keep Logs Before They Are Purged
 }

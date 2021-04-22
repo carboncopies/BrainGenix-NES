@@ -5,6 +5,8 @@
 import datetime
 import inspect
 import os
+import pymysql
+import socket
 
 '''
 Name: SysLog
@@ -66,7 +68,6 @@ class SysLog(): # Logger Class #
         *DO NOT CALL THIS*
         '''
 
-
         # Create Local Log Path Directory #
         DoesLogDirExist = os.path.isdir(LogPath)
         if not DoesLogDirExist:
@@ -83,8 +84,9 @@ class SysLog(): # Logger Class #
         self.CurrentLogLength = 1
         self.LogPath = LogPath
         self.LogFileNumber = 0
-        self.LoggerRetentionLineCount = LineRetentionCount
+        self.SecondsToKeepLogs = SecondsToKeepLogs
         self.DatabaseWorking = False
+        self.NodeID = socket.gethostname()
 
         self.StartTime = str(datetime.datetime.now()).replace(' ', '_')
 
@@ -97,13 +99,25 @@ class SysLog(): # Logger Class #
 
 
         # Perform Database Connection Validation #
-
         if DatabaseConfig == None:
             print('Database Configuration Null, Please Check Config File')
-            return 'Database Configuration Null'
 
-        # Connect To The Database #
-        pass # Fill this in later (MAKE SURE TO CHECK IF WORKING, THEN SET DATABASE WORKING TO TRUE)
+        # Parse Database Configuration #
+        DBUname, DBPasswd, DBHost, DBName = DatabaseConfig
+        
+
+        # Connect To Database #
+        self.DatabaseConnection = pymysql.connect(
+            host = DBHost,
+            user = DBUname,
+            password = DBPasswd,
+            db = DBName
+        )
+      
+        # Create Database Cursor #
+        self.LoggerCursor = self.DatabaseConnection.cursor()
+
+        self.DatabaseWorking = True
 
 
     def Log(self, Message:str, Level:int=0): # Handles The Log Of An Item #
@@ -148,14 +162,81 @@ class SysLog(): # Logger Class #
             self.LogFileObject.write(self.LogBuffer)
             self.LogBuffer = ''
 
+        else:
+
+            self.LogFileObject.write(self.LogBuffer)
+            #
+            # Write data *from the logbuffer* into the database here
+            #
+            
+            insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node) VALUES (%d, '%s', '%s', '%s', '%s', '%s')" %  (int(Level), LogTime, CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, self.NodeID))
+            self.LoggerCursor.execute(insertStatement)
+            
+            self.LogBuffer = ''
+            
+
+    def PullLog(self, NumberOfLines:int): # Pull n most recent entries from the log table #
+        
+        # Pull Lines From Database #
+        PullStatement= ("SELECT * FROM log LIMIT %d" % int(NumberOfLines))
+        self.LoggerCursor.execute(PullStatement)
+        
+        Rows = self.LoggerCursor.fetchall()
+
+        # Return Them #
+        return Rows
+
+
+    def PullSort(self, NumberOfLines:int): # Pull Set Number Of Lines And Return A Sorted Output Dictionary #
+
+        # Pull Lines Here #
+        Rows = self.PullLog(NumberOfLines)
+        NodesInList = []
+
+        # Sort Lines #
+        for LineItem in Rows:
+            if LineItem[6] not in NodesInList:
+                NodesInList.append(LineItem[6])
+
+        OutDict = {}
+        for NodeHostName in NodesInList:
+            OutDict.update({NodeHostName : []})
+
+        for LineItem in Rows:
+            OutDict[LineItem[6]].append(LineItem)
+
+        # Return Lines #
+        return OutDict        
+
+
+    def CheckDelete(self, DeleteDate:str): # Deletes entries from the Log Table prior to a specific date # 
+        
+        # Delete Old Logs #
+        DeleteStatement= ("DELETE FROM log WHERE LogDatetime < %s" % DeleteDate)
+        self.LoggerCursor.execute(DeleteStatement)
+
+
+    def PurgeOldLogs(self): # Automatically Removes Logs As Per The LogFile Retention Policy #
+
+        # Calculate Old Date (Current Date Minus KeepSeconds) # 
+        DeleteDateRaw = datetime.datetime.now() - datetime.timedelta(seconds=self.SecondsToKeepLogs)
+        DeleteDate = DeleteDateRaw.strftime('%Y-%m-%d_%H-%M-%S')
+        
+        # Execute Deletion Command # 
+        self.CheckDelete(DeleteDate)
+
 
     def CleanExit(self): # Create Logger Shutdown Command #
 
-        # Finalize Any Outstanding Database Commits #
+        # Check LogBuffer, Flush #
+        if self.LogBuffer != '':
+            self.LogFileObject.write(self.LogBuffer)
 
 
         # Destroy Connection To Database #
-
+        print('Destroying Database Connector')
+        self.DatabaseConnection.close()
+        print('Destroyed Database Connector')
 
         # Return Done #
         return
