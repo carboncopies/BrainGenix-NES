@@ -232,7 +232,6 @@ class SysLog(): # Logger Class #
         if self.LogBuffer != '':
             self.LogFileObject.write(self.LogBuffer)
 
-
         # Destroy Connection To Database #
         print('Destroying Database Connector')
         self.DatabaseConnection.close()
