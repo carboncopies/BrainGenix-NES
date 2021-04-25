@@ -60,7 +60,7 @@ class SysLog(): # Logger Class #
     This is the only function that should be called by an external function, as calling other functions will cause undefined behavior in the logger.
     '''
 
-    def __init__(self, DatabaseConfig:str, LineRetentionCount:int, LogPath:str, ConsoleOutputEnabled:bool=True): # Connect To Database #
+    def __init__(self, DatabaseConfig:str, SecondsToKeepLogs:int, LogPath:str, ConsoleOutputEnabled:bool=True): # Connect To Database #
 
         '''
         This function is used when the system is starting up, and should not be called anytime after that.
@@ -169,7 +169,7 @@ class SysLog(): # Logger Class #
             # Write data *from the logbuffer* into the database here
             #
             
-            insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node) VALUES (%d, '%s', '%s', '%s', '%s', '%s')" %  (int(Level), LogTime, CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, self.NodeID))
+            insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node) VALUES (%d, \"%s\", \"%s\", \"%s\", \"%s\", \"%s\")" %  (int(Level), LogTime, CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, self.NodeID))
             self.LoggerCursor.execute(insertStatement)
             
             self.LogBuffer = ''
