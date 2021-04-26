@@ -22,7 +22,6 @@ from Core.Instantiator import InstantiateKafka
 from Core.Instantiator import InstantiateDB
 from Core.Instantiator import InstantiateLogger
 
-from Core.Logger import SysLog
 from Core.CheckLibraries import CheckImports
 
 from Zookeeper.ZKManager import SystemTelemetryManager
