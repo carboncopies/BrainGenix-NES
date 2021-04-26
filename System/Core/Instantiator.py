@@ -19,7 +19,7 @@ from Diagnostics.ZKDiagnostics import CanAccessZookeeper
 from Diagnostics.KafkaDiagnostics import CanAccessKafka
 from Diagnostics.DatabaseDiagnostics import CanAccessDatabase
 
-from Core.Logger import SysLog
+from Logger.Logger import SysLog
 
 
 def InstantiateZK(Logger, ZookeeperHost): # Instantiates Zookeeper #
