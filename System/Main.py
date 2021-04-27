@@ -31,7 +31,7 @@ from API.ZookeeperPoller import PollWatcher
 from Telemetry.SystemTelemetry import Follower
 from Telemetry.SystemTelemetry import Leader
 
-from Logger.CentralizedLogAggregation import CentralizedLoggerAggregationSystem
+from Logger.CLAS import CentralizedLoggerAggregationSystem
 
 
 ##############################################################################
@@ -43,6 +43,7 @@ from Logger.CentralizedLogAggregation import CentralizedLoggerAggregationSystem
 
 # Set Version Information
 Version = '0.0.7'
+Branch = 'dev' # 'dev' or 'rel'
 
 
 # Load Config #
@@ -115,9 +116,11 @@ TelManager = SystemTelemetryManager(sZookeeper, TelemetryLeader)
 ZookeeperAPIWatcher = PollWatcher(mLogger, sZookeeper, TelemetryLeader)
 
 
+# Get NodeCount #
+NodeCount = sZookeeper.ConcurrentConnectedNodes()
 
 
-# Start System #
+# MOTD #
 mLogger.Log('Starting BrainGenix Instance')
 mLogger.Log('')
 mLogger.Log('---------------------------------------------------------------------------')
@@ -130,7 +133,10 @@ mLogger.Log('╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚�
 mLogger.Log('---------------------------------------------------------------------------')
 mLogger.Log('')
 mLogger.Log('    +-----------------------------------------------------------------+')
-mLogger.Log(f'    |               Welcome To BrainGenix Version {Version}               |')
+mLogger.Log('    |                 BrainGenix WBE Simulation System                |')
+mLogger.Log(f'    |                 Version: {Version}                                  |')
+mLogger.Log(f'    |                 Branch: {Branch}                                     |')
+mLogger.Log(f'    |                 Clustersize: {NodeCount}                                  |')
 mLogger.Log('    +-----------------------------------------------------------------+')
 mLogger.Log('')
 
