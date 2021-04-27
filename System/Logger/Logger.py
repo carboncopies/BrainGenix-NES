@@ -169,8 +169,12 @@ class SysLog(): # Logger Class #
             # Write data *from the logbuffer* into the database here
             #
             
-            insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node) VALUES (%d, \"%s\", \"%s\", \"%s\", \"%s\", \"%s\")" %  (int(Level), LogTime, CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, self.NodeID))
-            self.LoggerCursor.execute(insertStatement)
+            insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node) VALUES (\"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\")") %  (int(Level), LogTime, CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, self.NodeID)
+
+            val = (int(Level), CAST(LogTime as DATETIME), CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, self.NodeID)
+
+            self.LoggerCursor.execute(insertStatement, val)
+
             
             self.LogBuffer = ''
             
