@@ -18,4 +18,45 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         # Create Local Pointers To Logger Object #
         self.Logger = Logger
 
+        # Print "Welcome" Message #
         self.Logger.Log('Initializing Centralized Logger Aggregation System')
+
+        # Finalize Init #
+        self.Logger.Log('Finished CLAS Initialization')
+
+
+
+    def ReadLog(self, Lines=500): # Read Lines From The Log, Default=500Lines #
+
+        # Get Log Text #
+        LogEntries = self.Logger.PullLog(Lines)
+
+        # Return Log Text #
+        return LogEntries
+
+
+    def ProcessLog(self, Lines=500): # Read And Filter Lines From The Log # 
+
+        # Get Log Text #
+        LogEntries = self.Logger.PullLog(Lines)
+
+        # Identify Nodes #
+        Nodes = []
+
+        for Item in LogEntries:
+            if Item[6] not in Nodes:
+                Nodes.append(Item[6])
+        
+        # Generate Output Format #
+        Output = {}
+
+        for NodeName in Nodes:
+            output.update({NodeName : []})
+
+        # Sort Into List #
+        for LogItem in LogEntries:
+            LineNodeName = LogItem[6]
+            Output[LineNodeName].append(LogItem)
+
+        # Return Output #
+        return Output
