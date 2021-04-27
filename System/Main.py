@@ -31,9 +31,18 @@ from API.ZookeeperPoller import PollWatcher
 from Telemetry.SystemTelemetry import Follower
 from Telemetry.SystemTelemetry import Leader
 
+from Logger.CentralizedLogAggregation import CentralizedLoggerAggregationSystem
+
+
+##############################################################################
+## NOTE: A Lowercase "m" Preceeding A Class Means It's a Main System        ##
+## NOTE: A Lowercase "s" Preceeding A Class Means It's a Subsystem          ##
+##############################################################################
+
+
 
 # Set Version Information
-Version = '0.0.6'
+Version = '0.0.7'
 
 
 # Load Config #
@@ -44,17 +53,21 @@ KafkaHost = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
 
 
 # Initialize Logger #
-Logger = InstantiateLogger(DBUname, DBPasswd, DBHost, DBName, SecondsToKeepLogs, LogPath, PrintLogOutput)
+mLogger = InstantiateLogger(DBUname, DBPasswd, DBHost, DBName, SecondsToKeepLogs, LogPath, PrintLogOutput)
+
+
+# Initialize CLAS #
+sCLAS = CentralizedLoggerAggregationSystem(mLogger)
 
 
 # Purges The Log Buffer On System Exit #
 @atexit.register
 def CleanLog():
-    Logger.CleanExit()
+    mLogger.CleanExit()
 
 
 # Connect To DB #
-DatabaseInterface = InstantiateDB(Logger, DBUname, DBPasswd, DBHost, DBName)
+sDatabaseInterface = InstantiateDB(mLogger, DBUname, DBPasswd, DBHost, DBName)
 
 
 # Check Dependencies #
@@ -74,11 +87,11 @@ ModulesNeeded = [
                 'uuid',
                 ]
 
-CheckImports(ModulesNeeded, Logger)
+CheckImports(ModulesNeeded, mLogger)
 
 
 # Connect To Zookeeper Service #
-Zookeeper = InstantiateZK(Logger, ZKHost)
+sZookeeper = InstantiateZK(mLogger, ZKHost)
 
 # Register Shutdown Function To Automatically Disconnect#
 @atexit.register
@@ -87,45 +100,42 @@ def ShutdownZK():
 
 
 # Connect To Kafka Service #
-#Kafka = InstantiateKafka(Logger, KafkaHost)
+#Kafka = InstantiateKafka(mLogger, KafkaHost)
 
 
 
 
 # Start System Telemetry #
-TelemetryFollower = Follower(Logger=Logger, Zookeeper=Zookeeper)
-TelemetryLeader = Leader(Logger=Logger, Zookeeper=Zookeeper) #<-- Note: This does NOT start it yet, you need to call start first. The manager handles this.
-TelManager = SystemTelemetryManager(Zookeeper, TelemetryLeader)
+TelemetryFollower = Follower(Logger=mLogger, Zookeeper=sZookeeper)
+TelemetryLeader = Leader(Logger=mLogger, Zookeeper=sZookeeper) #<-- Note: This does NOT start it yet, you need to call start first. The manager handles this.
+TelManager = SystemTelemetryManager(sZookeeper, TelemetryLeader)
 
 
 # Initialize The API ZK Watcher #
-ZookeeperAPIWatcher = PollWatcher(Logger, Zookeeper, TelemetryLeader)
+ZookeeperAPIWatcher = PollWatcher(mLogger, sZookeeper, TelemetryLeader)
 
 
 
 
 # Start System #
-Logger.Log('Starting BrainGenix Instance')
-Logger.Log('')
-Logger.Log('---------------------------------------------------------------------------')
-Logger.Log('██████╗ ██████╗  █████╗ ██╗███╗   ██╗ ██████╗ ███████╗███╗   ██╗██╗██╗  ██╗')
-Logger.Log('██╔══██╗██╔══██╗██╔══██╗██║████╗  ██║██╔════╝ ██╔════╝████╗  ██║██║╚██╗██╔╝')
-Logger.Log('██████╔╝██████╔╝███████║██║██╔██╗ ██║██║  ███╗█████╗  ██╔██╗ ██║██║ ╚███╔╝ ')
-Logger.Log('██╔══██╗██╔══██╗██╔══██║██║██║╚██╗██║██║   ██║██╔══╝  ██║╚██╗██║██║ ██╔██╗ ')
-Logger.Log('██████╔╝██║  ██║██║  ██║██║██║ ╚████║╚██████╔╝███████╗██║ ╚████║██║██╔╝ ██╗')
-Logger.Log('╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝')
-Logger.Log('---------------------------------------------------------------------------')
-Logger.Log('')
-Logger.Log('    +-----------------------------------------------------------------+')
-Logger.Log(f'    |               Welcome To BrainGenix Version {Version}               |')
-Logger.Log('    +-----------------------------------------------------------------+')
-Logger.Log('')
+mLogger.Log('Starting BrainGenix Instance')
+mLogger.Log('')
+mLogger.Log('---------------------------------------------------------------------------')
+mLogger.Log('██████╗ ██████╗  █████╗ ██╗███╗   ██╗ ██████╗ ███████╗███╗   ██╗██╗██╗  ██╗')
+mLogger.Log('██╔══██╗██╔══██╗██╔══██╗██║████╗  ██║██╔════╝ ██╔════╝████╗  ██║██║╚██╗██╔╝')
+mLogger.Log('██████╔╝██████╔╝███████║██║██╔██╗ ██║██║  ███╗█████╗  ██╔██╗ ██║██║ ╚███╔╝ ')
+mLogger.Log('██╔══██╗██╔══██╗██╔══██║██║██║╚██╗██║██║   ██║██╔══╝  ██║╚██╗██║██║ ██╔██╗ ')
+mLogger.Log('██████╔╝██║  ██║██║  ██║██║██║ ╚████║╚██████╔╝███████╗██║ ╚████║██║██╔╝ ██╗')
+mLogger.Log('╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝')
+mLogger.Log('---------------------------------------------------------------------------')
+mLogger.Log('')
+mLogger.Log('    +-----------------------------------------------------------------+')
+mLogger.Log(f'    |               Welcome To BrainGenix Version {Version}               |')
+mLogger.Log('    +-----------------------------------------------------------------+')
+mLogger.Log('')
 
 time.sleep(2)
-a = Logger.PullSort(1000)
-print(len(a['bg-turing-0']))
-Logger.PurgeOldLogs()
-print(len(a['bg-turing-0']))
+
 
 # Main Loop #
 while True:
