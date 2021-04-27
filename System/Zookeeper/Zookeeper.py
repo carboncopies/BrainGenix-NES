@@ -85,7 +85,22 @@ class ZK(): # Create Interface Class #
         self.ConnectedNodesLastUpdate = self.ZookeeperConnection.get_children('/BrainGenix/System/Nodes')
         self.ConnectedNodes = self.ZookeeperConnection.get_children('/BrainGenix/System/Nodes')
 
-        self.TryCreateOverwrite(f'/BrainGenix/System/Nodes/{self.Name}/', zNodeData=b'', ephemeral=True)
+        self.TryCreate(f'/BrainGenix/System/Nodes/{self.Name}/', zNodeData=b'', ephemeral=True)
+
+
+    def ConcurrentConnectedNodes(self): # Return The Number Of Concurrently Connected Nodes #
+
+        '''
+        This function is used to get the number of connected concurrent nodes.
+        It's used to get the number of connected nodes on the MOTD splash page.
+        It just returns the number of children znodes under the system/nodes path in ZK.
+        '''
+
+        # Get Number Of Children zNodes #
+        NodeCount = len(self.ZookeeperConnection.get_children('/BrainGenix/System/Nodes'))
+
+        # Return Count #
+        return NodeCount
 
 
     def SpawnCheckerThread(self): # Spawn ZK Leader Check Thread #
