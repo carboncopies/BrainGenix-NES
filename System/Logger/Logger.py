@@ -149,7 +149,7 @@ class SysLog(): # Logger Class #
         CallingModuleName = CallStack[1][1]
         CallingFunctionName = CallStack[1][3]
 
-        LogTime = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+        LogTime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(20, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}\n'
         self.LogBuffer += LogString
 
@@ -171,7 +171,7 @@ class SysLog(): # Logger Class #
             
             insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node) VALUES (\"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\")") %  (int(Level), LogTime, CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, self.NodeID)
 
-            val = (int(Level), CAST(LogTime as DATETIME), CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, self.NodeID)
+            val = (int(Level), LogTime, CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, self.NodeID)
 
             self.LoggerCursor.execute(insertStatement, val)
 
