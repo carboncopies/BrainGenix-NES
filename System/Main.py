@@ -119,6 +119,9 @@ ZookeeperAPIWatcher = PollWatcher(mLogger, sZookeeper, TelemetryLeader)
 # Get NodeCount #
 NodeCount = sZookeeper.ConcurrentConnectedNodes()
 
+# Get API Server Count #
+APIServerCount = len(sZookeeper.ZookeeperConnection.get_children('/BrainGenix/API/Connections'))
+
 
 # MOTD #
 mLogger.Log('Starting BrainGenix Instance')
@@ -137,6 +140,7 @@ mLogger.Log('    |                 BrainGenix WBE Simulation System             
 mLogger.Log(f'    |                 Version: {Version}                                  |')
 mLogger.Log(f'    |                 Branch: {Branch}                                     |')
 mLogger.Log(f'    |                 Clustersize: {NodeCount}                                  |')
+mLogger.Log(f'    |                 MAPIServers: {APIServerCount}                                  |')
 mLogger.Log('    +-----------------------------------------------------------------+')
 mLogger.Log('')
 
