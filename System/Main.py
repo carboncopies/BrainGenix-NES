@@ -47,14 +47,14 @@ Branch = 'dev' # 'dev' or 'rel'
 
 
 # Load Config #
-LogPath, PrintLogOutput, SecondsToKeepLogs = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
+LoggerConfigDict = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
 DBConfigDict = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
 ZKHost = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
 KafkaHost = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
 
 
 # Initialize Logger #
-mLogger = InstantiateLogger(DBConfigDict, SecondsToKeepLogs, LogPath, PrintLogOutput)
+mLogger = InstantiateLogger(DBConfigDict, LoggerConfigDict)
 
 
 # Initialize CLAS #
