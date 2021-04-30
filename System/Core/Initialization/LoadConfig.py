@@ -25,16 +25,10 @@ def LoadLoggerConfig(ConfigFilePath):
         ConfigFileContents = File.read()
 
     ConfigFileDictionary = yaml.safe_load(ConfigFileContents)
-
-
-    # Extract the important values from the dictionary and return them to the main system #
-    LogPath = str(ConfigFileDictionary.get('LogPath'))
-    PrintLogText = bool(ConfigFileDictionary.get('PrintLogText'))
-    SecondsToKeepLogs = int(ConfigFileDictionary.get('SecondsToKeepLogs'))
-
+    
 
     # Return the values #
-    return LogPath, PrintLogText, SecondsToKeepLogs
+    return ConfigFileDictionary
 
 
 
@@ -52,6 +46,7 @@ def LoadDatabaseConfig(ConfigFilePath):
         ConfigFileContents = File.read()
 
     ConfigFileDictionary = yaml.safe_load(ConfigFileContents)
+
 
     # Return Config Data #
     return ConfigFileDictionary
