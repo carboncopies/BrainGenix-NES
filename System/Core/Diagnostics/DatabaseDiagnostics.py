@@ -43,10 +43,18 @@ def CheckPing(Host): # Returns True Or False If A Given Address Is Reachable #
         return False
 
 
-def CanAccessDatabase(Host, Username, Password, Database, Logger): # Runs Some Diagnostics About The Database Connection #
+def CanAccessDatabase(Host, DatabaseConfig:dict): # Runs Some Diagnostics About The Database Connection #
+
+    # Extract Values From Dictionary #
+    Username = str(DatabaseConfig.get('DatabaseUsername'))
+    Password = str(DatabaseConfig.get('DatabasePassword'))
+    Host = str(DatabaseConfig.get('DatabaseHost'))
+    Database = str(DatabaseConfig.get('DatabaseName'))
+
 
     # Diagnostic Message #
     Logger.Log('Starting Database Connection Diagnostic Tool', 1)
+
 
     # Seperate Host Port And Address #
     Address = Host.split(':')[0]
@@ -54,6 +62,7 @@ def CanAccessDatabase(Host, Username, Password, Database, Logger): # Runs Some D
         Port = Host.split(':')[1]
     else:
         Port = None
+
 
     # Check If Address Valid #
     Logger.Log('Checking If Address Has Correct Number Of Octets', 1)
