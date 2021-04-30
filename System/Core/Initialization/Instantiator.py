@@ -22,7 +22,7 @@ from Core.Diagnostics.DatabaseDiagnostics import CanAccessDatabase
 from Core.Management.Logger.Logger import SysLog
 
 
-def InstantiateZK(Logger, ZookeeperHost): # Instantiates Zookeeper #
+def InstantiateZK(Logger, ZookeeperConfig): # Instantiates Zookeeper #
 
     # Log Info #
     Logger.Log('Instantiating Zookeeper Interface')
@@ -32,7 +32,7 @@ def InstantiateZK(Logger, ZookeeperHost): # Instantiates Zookeeper #
 
         # Attempt Normal Connection #
         Zookeeper = ZK(Logger)
-        Zookeeper.ConnectToZookeeper(Logger, ZookeeperHost)
+        Zookeeper.ConnectToZookeeper(Logger, ZookeeperConfig)
         Zookeeper.AutoInitZKLeader()
         Zookeeper.SpawnCheckerThread()
 
@@ -50,7 +50,7 @@ def InstantiateZK(Logger, ZookeeperHost): # Instantiates Zookeeper #
         Logger.Log(f'Exception: {E}; Running Zookeeper Diagnostics!', 3)
 
         # Run Diagnostics #
-        CanAccessZookeeper(ZookeeperHost, Logger)
+        CanAccessZookeeper(ZookeeperHost, Logger) ###############################################################################
         exit()
 
 
