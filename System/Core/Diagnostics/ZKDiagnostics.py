@@ -43,7 +43,14 @@ def CheckPing(Host): # Returns True Or False If A Given Address Is Reachable #
         return False
 
 
-def CanAccessZookeeper(Host, Logger): # Runs Some Diagnostics About The Zookeeper Connection #
+def CanAccessZookeeper(ZKConfigDict:dict, Logger:object): # Runs Some Diagnostics About The Zookeeper Connection #
+
+    # Extract Values From Dictionary #
+    ZKHost = str(ZKConfigDict.get('ZKHost'))
+    ZKPort = str(ZKConfigDict.get('ZKPort'))
+
+    ZKHost += f':{ZKPort}'
+
 
     # Diagnostic Message #
     Logger.Log('Starting Zookeeper Connection Diagnostic Tool', 1)
