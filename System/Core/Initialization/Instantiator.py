@@ -112,7 +112,7 @@ def InstantiateDB(Logger, DBConfig): # Instantiates Database Interface #
         exit()
 
 
-def InstantiateLogger(DBConfig, LineRetentionCount, LogPath, PrintLogOutput): # Instantiates Kafka #
+def InstantiateLogger(DBConfig, LoggerConfigDict): # Instantiates Kafka #
 
     # Log Message #
     print('Initializing Centralized Logging System')
@@ -121,7 +121,7 @@ def InstantiateLogger(DBConfig, LineRetentionCount, LogPath, PrintLogOutput): # 
     # Instantiate Kafka #
     try:
 
-        Logger = SysLog(DBConfig, LineRetentionCount, LogPath, ConsoleOutputEnabled=PrintLogOutput)
+        Logger = SysLog(DBConfig, LoggerConfigDict)
         
         # Log Success #
         Logger.Log('Centralized Logging Daemon Started')
