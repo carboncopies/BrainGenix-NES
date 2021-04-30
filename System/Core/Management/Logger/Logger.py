@@ -60,7 +60,7 @@ class SysLog(): # Logger Class #
     This is the only function that should be called by an external function, as calling other functions will cause undefined behavior in the logger.
     '''
 
-    def __init__(self, DatabaseConfig:str, SecondsToKeepLogs:int, LogPath:str, ConsoleOutputEnabled:bool=True): # Connect To Database #
+    def __init__(self, DatabaseConfig:dict, SecondsToKeepLogs:int, LogPath:str, ConsoleOutputEnabled:bool=True): # Connect To Database #
 
         '''
         This function is used when the system is starting up, and should not be called anytime after that.
@@ -102,16 +102,20 @@ class SysLog(): # Logger Class #
         if DatabaseConfig == None:
             print('Database Configuration Null, Please Check Config File')
 
-        # Parse Database Configuration #
-        DBUname, DBPasswd, DBHost, DBName = DatabaseConfig
+
+        # Extract Values From Dictionary #
+        DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
+        DBPassword = str(DatabaseConfig.get('DatabasePassword'))
+        DBHost = str(DatabaseConfig.get('DatabaseHost'))
+        DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
         
 
         # Connect To Database #
         self.DatabaseConnection = pymysql.connect(
             host = DBHost,
-            user = DBUname,
-            password = DBPasswd,
-            db = DBName
+            user = DBUsername,
+            password = DBPassword,
+            db = DBDatabaseName
         )
       
         # Create Database Cursor #
