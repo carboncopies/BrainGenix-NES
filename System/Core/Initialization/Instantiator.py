@@ -54,7 +54,7 @@ def InstantiateZK(Logger, ZookeeperConfig): # Instantiates Zookeeper #
         exit()
 
 
-def InstantiateKafka(Logger, KafkaHost): # Instantiates Kafka #
+def InstantiateKafka(Logger, KafkaConfigDict): # Instantiates Kafka #
 
     # Log Message #
     Logger.Log('Instantiating Kafka Interface')
@@ -63,7 +63,7 @@ def InstantiateKafka(Logger, KafkaHost): # Instantiates Kafka #
     # Instantiate Kafka #
     try:
 
-        KafkaInterfaceInstance = KafkaInterface(Logger, KafkaHost)
+        KafkaInterfaceInstance = KafkaInterface(Logger, KafkaConfigDict)
 
         # Log Success #
         Logger.Log('Kafka Interface Instantiation Successful')
