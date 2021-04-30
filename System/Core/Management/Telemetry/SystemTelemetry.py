@@ -11,7 +11,7 @@ import threading
 import time
 import json
 
-from Telemetry.TelemetryAPI import TelemetryAPI
+from Core.Management.Telemetry.TelemetryAPI import TelemetryAPI
 
 '''
 Name: System Telemetry
