@@ -31,7 +31,6 @@ def LoadLoggerConfig(ConfigFilePath):
     return ConfigFileDictionary
 
 
-
 def LoadDatabaseConfig(ConfigFilePath):
 
     '''
@@ -67,13 +66,9 @@ def LoadZookeeperConfig(ConfigFilePath):
 
     ConfigFileDictionary = yaml.safe_load(ConfigFileContents)
 
-    # Extract Values From Dictionary #
-    ZKHost = str(ConfigFileDictionary.get('ZKHost'))
-    ZKPort = str(ConfigFileDictionary.get('ZKPort'))
 
-    ZKHost += f':{ZKPort}'
-
-    return ZKHost
+    # Return Output Config File #
+    return ConfigFileDictionary
 
 
 def LoadKafkaConfig(ConfigFilePath):
