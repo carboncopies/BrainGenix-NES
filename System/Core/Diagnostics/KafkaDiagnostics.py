@@ -46,7 +46,15 @@ def CheckPing(Host): # Returns True Or False If A Given Address Is Reachable #
         return False
 
 
-def CanAccessKafka(Host, Logger): # Runs Some Diagnostics About The Kafka Connection #
+def CanAccessKafka(Config, Logger): # Runs Some Diagnostics About The Kafka Connection #
+
+
+    # Extract Values From Dictionary #
+    Host = str(KafkaConfigDict.get('KafkaHost'))
+    Port = str(KafkaConfigDict.get('KafkaPort'))
+
+    Host += f':{Port}'
+
 
     # Diagnostic Message #
     Logger.Log('Starting Kafka Connection Diagnostic Tool', 1)
