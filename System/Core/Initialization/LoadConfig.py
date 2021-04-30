@@ -25,17 +25,10 @@ def LoadLoggerConfig(ConfigFilePath):
         ConfigFileContents = File.read()
 
     ConfigFileDictionary = yaml.safe_load(ConfigFileContents)
-
-
-    # Extract the important values from the dictionary and return them to the main system #
-    LogPath = str(ConfigFileDictionary.get('LogPath'))
-    PrintLogText = bool(ConfigFileDictionary.get('PrintLogText'))
-    SecondsToKeepLogs = int(ConfigFileDictionary.get('SecondsToKeepLogs'))
-
+    
 
     # Return the values #
-    return LogPath, PrintLogText, SecondsToKeepLogs
-
+    return ConfigFileDictionary
 
 
 def LoadDatabaseConfig(ConfigFilePath):
@@ -53,13 +46,9 @@ def LoadDatabaseConfig(ConfigFilePath):
 
     ConfigFileDictionary = yaml.safe_load(ConfigFileContents)
 
-    # Extract Values From Dictionary #
-    DBUname = str(ConfigFileDictionary.get('DatabaseUsername'))
-    DBPasswd = str(ConfigFileDictionary.get('DatabasePassword'))
-    DBHost = str(ConfigFileDictionary.get('DatabaseHost'))
-    DBName = str(ConfigFileDictionary.get('DatabaseName'))
 
-    return DBUname, DBPasswd, DBHost, DBName
+    # Return Config Data #
+    return ConfigFileDictionary
 
 
 def LoadZookeeperConfig(ConfigFilePath):
@@ -77,13 +66,9 @@ def LoadZookeeperConfig(ConfigFilePath):
 
     ConfigFileDictionary = yaml.safe_load(ConfigFileContents)
 
-    # Extract Values From Dictionary #
-    ZKHost = str(ConfigFileDictionary.get('ZKHost'))
-    ZKPort = str(ConfigFileDictionary.get('ZKPort'))
 
-    ZKHost += f':{ZKPort}'
-
-    return ZKHost
+    # Return Output Config File #
+    return ConfigFileDictionary
 
 
 def LoadKafkaConfig(ConfigFilePath):
@@ -101,10 +86,6 @@ def LoadKafkaConfig(ConfigFilePath):
 
     ConfigFileDictionary = yaml.safe_load(ConfigFileContents)
 
-    # Extract Values From Dictionary #
-    KafkaHost = str(ConfigFileDictionary.get('KafkaHost'))
-    KafkaPort = str(ConfigFileDictionary.get('KafkaPort'))
 
-    KafkaHost += f':{KafkaPort}'
-
-    return KafkaHost
+    # Return Output #
+    return ConfigFileDictionary

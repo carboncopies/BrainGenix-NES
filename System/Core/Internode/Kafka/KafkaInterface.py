@@ -124,7 +124,14 @@ class ProducerQueue(): # Provides A Queue Based Interface To Send Messages To Th
 
 class KafkaInterface(): # Provides An Interface To Kafka Via The Confluent-Kafka Module #
 
-    def __init__(self, Logger:object, Host:object): # Initialize Iface #
+    def __init__(self, Logger:object, KafkaConfigDict:dict): # Initialize Iface #
+
+        # Extract Values From Dictionary #
+        Host = str(KafkaConfigDict.get('KafkaHost'))
+        Port = str(KafkaConfigDict.get('KafkaPort'))
+
+        Host += f':{Port}'
+
 
         # Create Local Vars #
         self.Logger = Logger

@@ -47,14 +47,14 @@ Branch = 'dev' # 'dev' or 'rel'
 
 
 # Load Config #
-LogPath, PrintLogOutput, SecondsToKeepLogs = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
-DBUname, DBPasswd, DBHost, DBName = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
-ZKHost = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
-KafkaHost = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
+LoggerConfigDict = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
+DBConfigDict = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
+ZKConfigDict = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
+KafkaConfigDict = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
 
 
 # Initialize Logger #
-mLogger = InstantiateLogger(DBUname, DBPasswd, DBHost, DBName, SecondsToKeepLogs, LogPath, PrintLogOutput)
+mLogger = InstantiateLogger(DBConfigDict, LoggerConfigDict)
 
 
 # Initialize CLAS #
@@ -68,7 +68,7 @@ def CleanLog():
 
 
 # Connect To DB #
-sDatabaseInterface = InstantiateDB(mLogger, DBUname, DBPasswd, DBHost, DBName)
+sDatabaseInterface = InstantiateDB(mLogger, DBConfigDict)
 
 
 # Check Dependencies #
@@ -92,7 +92,7 @@ CheckImports(ModulesNeeded, mLogger)
 
 
 # Connect To Zookeeper Service #
-sZookeeper = InstantiateZK(mLogger, ZKHost)
+sZookeeper = InstantiateZK(mLogger, ZKConfigDict)
 
 # Register Shutdown Function To Automatically Disconnect#
 @atexit.register
@@ -101,7 +101,7 @@ def ShutdownZK():
 
 
 # Connect To Kafka Service #
-sKafka = InstantiateKafka(mLogger, KafkaHost)
+sKafka = InstantiateKafka(mLogger, KafkaConfigDict)
 
 
 
