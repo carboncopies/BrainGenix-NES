@@ -48,13 +48,13 @@ Branch = 'dev' # 'dev' or 'rel'
 
 # Load Config #
 LogPath, PrintLogOutput, SecondsToKeepLogs = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
-DBUname, DBPasswd, DBHost, DBName = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
+DBConfigDict = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
 ZKHost = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
 KafkaHost = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
 
 
 # Initialize Logger #
-mLogger = InstantiateLogger(DBUname, DBPasswd, DBHost, DBName, SecondsToKeepLogs, LogPath, PrintLogOutput)
+mLogger = InstantiateLogger(DBConfigDict, SecondsToKeepLogs, LogPath, PrintLogOutput)
 
 
 # Initialize CLAS #
@@ -68,7 +68,7 @@ def CleanLog():
 
 
 # Connect To DB #
-sDatabaseInterface = InstantiateDB(mLogger, DBUname, DBPasswd, DBHost, DBName)
+sDatabaseInterface = InstantiateDB(mLogger, DBConfigDict)
 
 
 # Check Dependencies #
