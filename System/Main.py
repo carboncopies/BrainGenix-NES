@@ -101,7 +101,7 @@ def ShutdownZK():
 
 
 # Connect To Kafka Service #
-#Kafka = InstantiateKafka(mLogger, KafkaHost)
+sKafka = InstantiateKafka(mLogger, KafkaHost)
 
 
 
@@ -145,6 +145,14 @@ mLogger.Log('    +--------------------------------------------------------------
 mLogger.Log('')
 
 time.sleep(2)
+
+sKafka.CreateTopic('TestTopic')
+
+Prod = sKafka.CreateProducer('TestTopic')
+Cons = sKafka.CreateConsumer('TestTopic')
+
+Prod.put('test')
+print(Cons.get())
 
 
 # Main Loop #
