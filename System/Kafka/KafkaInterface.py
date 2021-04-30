@@ -112,7 +112,7 @@ class ProducerQueue(): # Provides A Queue Based Interface To Send Messages To Th
 
             # Produce Message #
             Message = self.Queue.get()
-            self.ProducerObject.Produce(self.TopicName, Message)
+            self.ProducerObject.produce(self.TopicName, Message)
 
 
     def Shutdown(self): # Destroys Connection Object #
@@ -155,7 +155,7 @@ class KafkaInterface(): # Provides An Interface To Kafka Via The Confluent-Kafka
         QueueInstance = multiprocessing.Queue()
 
         # Create And Instantiate Process/Interface #
-        ConsumerProcess = multiprocessing.Process(target=ConsumerQueue, args=(self.Logger, self.Host, TopicName, GroupID, TimeoutMilliseconds, Offset, ))
+        ConsumerProcess = multiprocessing.Process(target=ConsumerQueue, args=(self.Logger, self.Host, TopicName, QueueInstance, GroupID, TimeoutMilliseconds, Offset, ))
         ConsumerProcess.start()
 
         # Append Instances #
