@@ -71,7 +71,7 @@ def LoadZookeeperConfig(ConfigFilePath):
     return ConfigFileDictionary
 
 
-def LoadKafkaConfig(ConfigFilePath):
+def LoadInternodeQueueConfig(ConfigFilePath):
 
     '''
     This function loads the config from a file path.
