@@ -49,7 +49,7 @@ Branch = 'dev' # 'dev' or 'rel'
 # Load Config #
 LoggerConfigDict = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
 DBConfigDict = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
-ZKHost = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
+ZKConfigDict = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
 KafkaHost = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
 
 
@@ -92,7 +92,7 @@ CheckImports(ModulesNeeded, mLogger)
 
 
 # Connect To Zookeeper Service #
-sZookeeper = InstantiateZK(mLogger, ZKHost)
+sZookeeper = InstantiateZK(mLogger, ZKConfigDict)
 
 # Register Shutdown Function To Automatically Disconnect#
 @atexit.register
