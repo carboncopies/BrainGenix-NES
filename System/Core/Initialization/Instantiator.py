@@ -83,7 +83,7 @@ def InstantiateKafka(Logger, KafkaHost): # Instantiates Kafka #
         exit()
 
 
-def InstantiateDB(Logger, Username, Password, Host, Database): # Instantiates Database Interface #
+def InstantiateDB(Logger, DBConfig): # Instantiates Database Interface #
 
     # Log Message #
     Logger.Log('Instantiating Database Interface')
@@ -92,7 +92,7 @@ def InstantiateDB(Logger, Username, Password, Host, Database): # Instantiates Da
     # Instantiate DB #
     try:
 
-        DBInterfaceInstance = DBInterface(Logger, Username, Password, Host, Database)
+        DBInterfaceInstance = DBInterface(Logger, DBConfig)
 
         # Log Success #
         Logger.Log('Database Connector Created Successfully')
@@ -108,11 +108,11 @@ def InstantiateDB(Logger, Username, Password, Host, Database): # Instantiates Da
         Logger.Log(f'Exception: {E}; Running Database Diagnostics!', 3)
 
         # Run Diagnostics #
-        CanAccessDatabase(Host, Username, Password, Database, Logger)
+        CanAccessDatabase(Host, Username, Password, Database, Logger) ###############################################################################################
         exit()
 
 
-def InstantiateLogger(DBUname, DBPasswd, DBHost, DBName, LineRetentionCount, LogPath, PrintLogOutput): # Instantiates Kafka #
+def InstantiateLogger(DBConfig, LineRetentionCount, LogPath, PrintLogOutput): # Instantiates Kafka #
 
     # Log Message #
     print('Initializing Centralized Logging System')
@@ -121,8 +121,7 @@ def InstantiateLogger(DBUname, DBPasswd, DBHost, DBName, LineRetentionCount, Log
     # Instantiate Kafka #
     try:
 
-        DatabaseConfig = (DBUname, DBPasswd, DBHost, DBName)
-        Logger = SysLog(DatabaseConfig, LineRetentionCount, LogPath, ConsoleOutputEnabled=PrintLogOutput)
+        Logger = SysLog(DBConfig, LineRetentionCount, LogPath, ConsoleOutputEnabled=PrintLogOutput)
         
         # Log Success #
         Logger.Log('Centralized Logging Daemon Started')
