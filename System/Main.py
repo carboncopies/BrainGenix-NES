@@ -50,7 +50,7 @@ Branch = 'dev' # 'dev' or 'rel'
 LoggerConfigDict = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
 DBConfigDict = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
 ZKConfigDict = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
-KafkaHost = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
+KafkaConfigDict = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
 
 
 # Initialize Logger #
@@ -101,7 +101,7 @@ def ShutdownZK():
 
 
 # Connect To Kafka Service #
-sKafka = InstantiateKafka(mLogger, KafkaHost)
+sKafka = InstantiateKafka(mLogger, KafkaConfigDict)
 
 
 
