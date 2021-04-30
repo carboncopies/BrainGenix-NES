@@ -12,26 +12,26 @@ import atexit
 import time
 
 
-from Core.LoadConfig import LoadLoggerConfig
-from Core.LoadConfig import LoadDatabaseConfig
-from Core.LoadConfig import LoadZookeeperConfig
-from Core.LoadConfig import LoadKafkaConfig
+from Core.Initialization.LoadConfig import LoadLoggerConfig
+from Core.Initialization.LoadConfig import LoadDatabaseConfig
+from Core.Initialization.LoadConfig import LoadZookeeperConfig
+from Core.Initialization.LoadConfig import LoadKafkaConfig
 
-from Core.Instantiator import InstantiateZK
-from Core.Instantiator import InstantiateKafka
-from Core.Instantiator import InstantiateDB
-from Core.Instantiator import InstantiateLogger
+from Core.Initialization.Instantiator import InstantiateZK
+from Core.Initialization.Instantiator import InstantiateKafka
+from Core.Initialization.Instantiator import InstantiateDB
+from Core.Initialization.Instantiator import InstantiateLogger
 
-from Core.CheckLibraries import CheckImports
+from Core.Initialization.CheckLibraries import CheckImports
 
-from Zookeeper.ZKManager import SystemTelemetryManager
+from Core.Internode.Zookeeper.ZKManager import SystemTelemetryManager
 
-from API.ZookeeperPoller import PollWatcher
+from Core.Management.API.ZookeeperPoller import PollWatcher
 
-from Telemetry.SystemTelemetry import Follower
-from Telemetry.SystemTelemetry import Leader
+from Core.Management.Telemetry.SystemTelemetry import Follower
+from Core.Management.Telemetry.SystemTelemetry import Leader
 
-from Logger.CLAS import CentralizedLoggerAggregationSystem
+from Core.Management.Logger.CLAS import CentralizedLoggerAggregationSystem
 
 
 ##############################################################################
@@ -47,14 +47,14 @@ Branch = 'dev' # 'dev' or 'rel'
 
 
 # Load Config #
-LogPath, PrintLogOutput, SecondsToKeepLogs = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
-DBUname, DBPasswd, DBHost, DBName = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
-ZKHost = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
-KafkaHost = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
+LoggerConfigDict = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
+DBConfigDict = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
+ZKConfigDict = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
+KafkaConfigDict = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
 
 
 # Initialize Logger #
-mLogger = InstantiateLogger(DBUname, DBPasswd, DBHost, DBName, SecondsToKeepLogs, LogPath, PrintLogOutput)
+mLogger = InstantiateLogger(DBConfigDict, LoggerConfigDict)
 
 
 # Initialize CLAS #
@@ -68,7 +68,7 @@ def CleanLog():
 
 
 # Connect To DB #
-sDatabaseInterface = InstantiateDB(mLogger, DBUname, DBPasswd, DBHost, DBName)
+sDatabaseInterface = InstantiateDB(mLogger, DBConfigDict)
 
 
 # Check Dependencies #
@@ -92,7 +92,7 @@ CheckImports(ModulesNeeded, mLogger)
 
 
 # Connect To Zookeeper Service #
-sZookeeper = InstantiateZK(mLogger, ZKHost)
+sZookeeper = InstantiateZK(mLogger, ZKConfigDict)
 
 # Register Shutdown Function To Automatically Disconnect#
 @atexit.register
@@ -101,7 +101,7 @@ def ShutdownZK():
 
 
 # Connect To Kafka Service #
-#Kafka = InstantiateKafka(mLogger, KafkaHost)
+sKafka = InstantiateKafka(mLogger, KafkaConfigDict)
 
 
 
@@ -118,6 +118,9 @@ ZookeeperAPIWatcher = PollWatcher(mLogger, sZookeeper, TelemetryLeader)
 
 # Get NodeCount #
 NodeCount = sZookeeper.ConcurrentConnectedNodes()
+
+# Get API Server Count #
+APIServerCount = len(sZookeeper.ZookeeperConnection.get_children('/BrainGenix/API/Connections'))
 
 
 # MOTD #
@@ -137,10 +140,19 @@ mLogger.Log('    |                 BrainGenix WBE Simulation System             
 mLogger.Log(f'    |                 Version: {Version}                                  |')
 mLogger.Log(f'    |                 Branch: {Branch}                                     |')
 mLogger.Log(f'    |                 Clustersize: {NodeCount}                                  |')
+mLogger.Log(f'    |                 MAPIServers: {APIServerCount}                                  |')
 mLogger.Log('    +-----------------------------------------------------------------+')
 mLogger.Log('')
 
 time.sleep(2)
+
+sKafka.CreateTopic('TestTopic')
+
+Prod = sKafka.CreateProducer('TestTopic')
+Cons = sKafka.CreateConsumer('TestTopic')
+
+Prod.put('test')
+print(Cons.get())
 
 
 # Main Loop #

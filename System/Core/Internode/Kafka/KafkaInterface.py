@@ -112,7 +112,7 @@ class ProducerQueue(): # Provides A Queue Based Interface To Send Messages To Th
 
             # Produce Message #
             Message = self.Queue.get()
-            self.ProducerObject.Produce(self.TopicName, Message)
+            self.ProducerObject.produce(self.TopicName, Message)
 
 
     def Shutdown(self): # Destroys Connection Object #
@@ -124,7 +124,14 @@ class ProducerQueue(): # Provides A Queue Based Interface To Send Messages To Th
 
 class KafkaInterface(): # Provides An Interface To Kafka Via The Confluent-Kafka Module #
 
-    def __init__(self, Logger:object, Host:object): # Initialize Iface #
+    def __init__(self, Logger:object, KafkaConfigDict:dict): # Initialize Iface #
+
+        # Extract Values From Dictionary #
+        Host = str(KafkaConfigDict.get('KafkaHost'))
+        Port = str(KafkaConfigDict.get('KafkaPort'))
+
+        Host += f':{Port}'
+
 
         # Create Local Vars #
         self.Logger = Logger
@@ -155,7 +162,7 @@ class KafkaInterface(): # Provides An Interface To Kafka Via The Confluent-Kafka
         QueueInstance = multiprocessing.Queue()
 
         # Create And Instantiate Process/Interface #
-        ConsumerProcess = multiprocessing.Process(target=ConsumerQueue, args=(self.Logger, self.Host, TopicName, GroupID, TimeoutMilliseconds, Offset, ))
+        ConsumerProcess = multiprocessing.Process(target=ConsumerQueue, args=(self.Logger, self.Host, TopicName, QueueInstance, GroupID, TimeoutMilliseconds, Offset, ))
         ConsumerProcess.start()
 
         # Append Instances #

@@ -14,8 +14,15 @@ import json
 
 from fastapi import FastAPI
 
-from Core.LoadConfig import LoadConfig
-from Core.Logger import SysLog
+from Core.LoadConfig import LoadLoggerConfig
+from Core.LoadConfig import LoadDatabaseConfig
+from Core.LoadConfig import LoadZookeeperConfig
+from Core.LoadConfig import LoadKafkaConfig
+
+from Core.Instantiator import InstantiateZK
+from Core.Instantiator import InstantiateKafka
+from Core.Instantiator import InstantiateDB
+from Core.Instantiator import InstantiateLogger
 
 from Zookeeper.Zookeeper import ZK
 
@@ -25,38 +32,48 @@ from Zookeeper.Zookeeper import ZK
 
 
 
+##############################################################################
+## NOTE: A Lowercase "m" Preceeding A Class Means It's a Main System        ##
+## NOTE: A Lowercase "s" Preceeding A Class Means It's a Subsystem          ##
+##############################################################################
+
+
+
 # Set Version Information
-Version = '0.0.5'
+Version = '0.0.7'
+Branch = 'dev' # 'dev' or 'rel'
 
 
 # Load Config #
-ConfigPath = 'Config/LocalConfig.yaml'
-AddonsPath, LogPath, BufferLength, PrintLogOutput, LinesPerFile, EnableGzip, ZKHost, DBUname, DBPasswd, DBHost, DBName = LoadConfig(ConfigPath)
+LogPath, PrintLogOutput, SecondsToKeepLogs = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
+DBUname, DBPasswd, DBHost, DBName = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
+ZKHost = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
+KafkaHost = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
 
 
 # Initialize Logger #
-Logger = SysLog('0', LogPath+'-APIServer', BufferLength=BufferLength, LogSegmentLength=LinesPerFile, ConsoleOutputEnabled=PrintLogOutput, EnableGzip = EnableGzip) # NOTE: THE SYSLOG ID HERE NEEDS TO BE REPLACED WITH THE ZOOKEEPER ID LATER ON! (FIRST ARG)
+mLogger = InstantiateLogger(DBUname, DBPasswd, DBHost, DBName, SecondsToKeepLogs, LogPath, PrintLogOutput)
+
 
 
 # Purges The Log Buffer On System Exit #
 @atexit.register
 def CleanLog():
-    Logger.PurgeBuffer()
-    Logger.CleanExit()
+    mLogger.CleanExit()
 
 
-# Initialize ZK #
-Zookeeper = ZK(Logger)
-Zookeeper.ConnectToZookeeper(Logger, ZKHost)
+# Connect To Zookeeper Service #
+sZookeeper = InstantiateZK(mLogger, ZKHost)
 
 
 # Define API #
 app = FastAPI()
 
+
 # Create A Connection zNode #
 cryptogen = SystemRandom()
 ConnectionNode = f'/BrainGenix/API/Connections/{cryptogen.randrange(38564328964397256432564372)}'
-Zookeeper.ZookeeperConnection.create(ConnectionNode, ephemeral=True)
+sZookeeper.ZookeeperConnection.create(ConnectionNode, ephemeral=True)
 
 
 # Define Methods In API #
@@ -67,32 +84,32 @@ async def root():
 @app.get('/test')
 async def test():
 
-    Zookeeper.ZookeeperConnection.set(ConnectionNode, b'{"CallStack": "Version", "KeywordArgs": {}}')
+    sZookeeper.ZookeeperConnection.set(ConnectionNode, b'{"CallStack": "Version", "KeywordArgs": {}}')
 
     # value = b'{"CallStack": "Version", "KeywordArgs": {}}'
 
-    while Zookeeper.ZookeeperConnection.get(ConnectionNode)[0] == b'{"CallStack": "Version", "KeywordArgs": {}}':
+    while sZookeeper.ZookeeperConnection.get(ConnectionNode)[0] == b'{"CallStack": "Version", "KeywordArgs": {}}':
         pass
 
 
-    return json.loads(Zookeeper.ZookeeperConnection.get(ConnectionNode)[0].decode())
+    return json.loads(sZookeeper.ZookeeperConnection.get(ConnectionNode)[0].decode())
 
 
 # Start System #
-Logger.Log('Starting API Server')
-Logger.Log('')
-Logger.Log('---------------------------------------------------------------------------')
-Logger.Log('██████╗ ██████╗  █████╗ ██╗███╗   ██╗ ██████╗ ███████╗███╗   ██╗██╗██╗  ██╗')
-Logger.Log('██╔══██╗██╔══██╗██╔══██╗██║████╗  ██║██╔════╝ ██╔════╝████╗  ██║██║╚██╗██╔╝')
-Logger.Log('██████╔╝██████╔╝███████║██║██╔██╗ ██║██║  ███╗█████╗  ██╔██╗ ██║██║ ╚███╔╝ ')
-Logger.Log('██╔══██╗██╔══██╗██╔══██║██║██║╚██╗██║██║   ██║██╔══╝  ██║╚██╗██║██║ ██╔██╗ ')
-Logger.Log('██████╔╝██║  ██║██║  ██║██║██║ ╚████║╚██████╔╝███████╗██║ ╚████║██║██╔╝ ██╗')
-Logger.Log('╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝')
-Logger.Log('---------------------------------------------------------------------------')
-Logger.Log('')
-Logger.Log('    +-----------------------------------------------------------------+')
-Logger.Log(f'    |          Welcome To BrainGenix-APIServer Version {Version}          |')
-Logger.Log('    +-----------------------------------------------------------------+')
-Logger.Log('')
+mLogger.Log('Starting API Server')
+mLogger.Log('')
+mLogger.Log('---------------------------------------------------------------------------')
+mLogger.Log('██████╗ ██████╗  █████╗ ██╗███╗   ██╗ ██████╗ ███████╗███╗   ██╗██╗██╗  ██╗')
+mLogger.Log('██╔══██╗██╔══██╗██╔══██╗██║████╗  ██║██╔════╝ ██╔════╝████╗  ██║██║╚██╗██╔╝')
+mLogger.Log('██████╔╝██████╔╝███████║██║██╔██╗ ██║██║  ███╗█████╗  ██╔██╗ ██║██║ ╚███╔╝ ')
+mLogger.Log('██╔══██╗██╔══██╗██╔══██║██║██║╚██╗██║██║   ██║██╔══╝  ██║╚██╗██║██║ ██╔██╗ ')
+mLogger.Log('██████╔╝██║  ██║██║  ██║██║██║ ╚████║╚██████╔╝███████╗██║ ╚████║██║██╔╝ ██╗')
+mLogger.Log('╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝')
+mLogger.Log('---------------------------------------------------------------------------')
+mLogger.Log('')
+mLogger.Log('    +-----------------------------------------------------------------+')
+mLogger.Log(f'    |          Welcome To BrainGenix-APIServer Version {Version}          |')
+mLogger.Log('    +-----------------------------------------------------------------+')
+mLogger.Log('')
 
 

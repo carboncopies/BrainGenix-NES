@@ -9,20 +9,20 @@ Date-Created: 2021-03-24
 '''
 
 
-from Zookeeper.Zookeeper import ZK
+from Core.Internode.Zookeeper.Zookeeper import ZK
 
-from Kafka.KafkaInterface import KafkaInterface
+from Core.Internode.Kafka.KafkaInterface import KafkaInterface
 
-from Database.DatabaseInterface import DBInterface
+from Core.Internode.Database.DatabaseInterface import DBInterface
 
-from Diagnostics.ZKDiagnostics import CanAccessZookeeper
-from Diagnostics.KafkaDiagnostics import CanAccessKafka
-from Diagnostics.DatabaseDiagnostics import CanAccessDatabase
+from Core.Diagnostics.ZKDiagnostics import CanAccessZookeeper
+from Core.Diagnostics.KafkaDiagnostics import CanAccessKafka
+from Core.Diagnostics.DatabaseDiagnostics import CanAccessDatabase
 
-from Logger.Logger import SysLog
+from Core.Management.Logger.Logger import SysLog
 
 
-def InstantiateZK(Logger, ZookeeperHost): # Instantiates Zookeeper #
+def InstantiateZK(Logger, ZookeeperConfig): # Instantiates Zookeeper #
 
     # Log Info #
     Logger.Log('Instantiating Zookeeper Interface')
@@ -32,7 +32,7 @@ def InstantiateZK(Logger, ZookeeperHost): # Instantiates Zookeeper #
 
         # Attempt Normal Connection #
         Zookeeper = ZK(Logger)
-        Zookeeper.ConnectToZookeeper(Logger, ZookeeperHost)
+        Zookeeper.ConnectToZookeeper(Logger, ZookeeperConfig)
         Zookeeper.AutoInitZKLeader()
         Zookeeper.SpawnCheckerThread()
 
@@ -50,11 +50,11 @@ def InstantiateZK(Logger, ZookeeperHost): # Instantiates Zookeeper #
         Logger.Log(f'Exception: {E}; Running Zookeeper Diagnostics!', 3)
 
         # Run Diagnostics #
-        CanAccessZookeeper(ZookeeperHost, Logger)
+        CanAccessZookeeper(ZookeeperHost, Logger) ###############################################################################
         exit()
 
 
-def InstantiateKafka(Logger, KafkaHost): # Instantiates Kafka #
+def InstantiateKafka(Logger, KafkaConfigDict): # Instantiates Kafka #
 
     # Log Message #
     Logger.Log('Instantiating Kafka Interface')
@@ -63,7 +63,7 @@ def InstantiateKafka(Logger, KafkaHost): # Instantiates Kafka #
     # Instantiate Kafka #
     try:
 
-        KafkaInterfaceInstance = KafkaInterface(Logger, KafkaHost)
+        KafkaInterfaceInstance = KafkaInterface(Logger, KafkaConfigDict)
 
         # Log Success #
         Logger.Log('Kafka Interface Instantiation Successful')
@@ -83,7 +83,7 @@ def InstantiateKafka(Logger, KafkaHost): # Instantiates Kafka #
         exit()
 
 
-def InstantiateDB(Logger, Username, Password, Host, Database): # Instantiates Database Interface #
+def InstantiateDB(Logger, DBConfig): # Instantiates Database Interface #
 
     # Log Message #
     Logger.Log('Instantiating Database Interface')
@@ -92,7 +92,7 @@ def InstantiateDB(Logger, Username, Password, Host, Database): # Instantiates Da
     # Instantiate DB #
     try:
 
-        DBInterfaceInstance = DBInterface(Logger, Username, Password, Host, Database)
+        DBInterfaceInstance = DBInterface(Logger, DBConfig)
 
         # Log Success #
         Logger.Log('Database Connector Created Successfully')
@@ -108,11 +108,11 @@ def InstantiateDB(Logger, Username, Password, Host, Database): # Instantiates Da
         Logger.Log(f'Exception: {E}; Running Database Diagnostics!', 3)
 
         # Run Diagnostics #
-        CanAccessDatabase(Host, Username, Password, Database, Logger)
+        CanAccessDatabase(Host, Username, Password, Database, Logger) ###############################################################################################
         exit()
 
 
-def InstantiateLogger(DBUname, DBPasswd, DBHost, DBName, LineRetentionCount, LogPath, PrintLogOutput): # Instantiates Kafka #
+def InstantiateLogger(DBConfig, LoggerConfigDict): # Instantiates Kafka #
 
     # Log Message #
     print('Initializing Centralized Logging System')
@@ -121,8 +121,7 @@ def InstantiateLogger(DBUname, DBPasswd, DBHost, DBName, LineRetentionCount, Log
     # Instantiate Kafka #
     try:
 
-        DatabaseConfig = (DBUname, DBPasswd, DBHost, DBName)
-        Logger = SysLog(DatabaseConfig, LineRetentionCount, LogPath, ConsoleOutputEnabled=PrintLogOutput)
+        Logger = SysLog(DBConfig, LoggerConfigDict)
         
         # Log Success #
         Logger.Log('Centralized Logging Daemon Started')

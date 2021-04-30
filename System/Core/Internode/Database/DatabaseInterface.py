@@ -21,13 +21,20 @@ class DBInterface(): # Interface to MySQL database #
     As the database changes structure, this file will also change, to add new database features.
     '''
 
-    def __init__(self, Logger:object, Username:str, Password:str, Host:str, Database:str):
+    def __init__(self, Logger:object, DatabaseConfig:dict):
 
         '''
         Initializes the DB Interface by connecting to mysql.
         The connection information is passed in as arguments.
         These arguments are loaded from the local config YAML file.
         '''
+
+        # Extract Values From Dictionary #
+        Username = str(DatabaseConfig.get('DatabaseUsername'))
+        Password = str(DatabaseConfig.get('DatabasePassword'))
+        Host = str(DatabaseConfig.get('DatabaseHost'))
+        DatabaseName = str(DatabaseConfig.get('DatabaseName'))
+
 
         # Create Local Pointer #
         self.Logger = Logger
@@ -36,7 +43,7 @@ class DBInterface(): # Interface to MySQL database #
         self.ProhibitedChars = ['*','{','}','[',']','(',')',';']
 
         # Establish DB Connection #
-        self.DBConnection = pymysql.connect(host=Host, user=Username, password=Password, db=Database)
+        self.DBConnection = pymysql.connect(host=Host, user=Username, password=Password, db=DatabaseName)
 
         self.Logger.Log(f'Connected To DB At {Host}')
 
