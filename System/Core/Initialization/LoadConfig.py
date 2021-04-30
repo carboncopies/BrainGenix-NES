@@ -53,13 +53,8 @@ def LoadDatabaseConfig(ConfigFilePath):
 
     ConfigFileDictionary = yaml.safe_load(ConfigFileContents)
 
-    # Extract Values From Dictionary #
-    DBUname = str(ConfigFileDictionary.get('DatabaseUsername'))
-    DBPasswd = str(ConfigFileDictionary.get('DatabasePassword'))
-    DBHost = str(ConfigFileDictionary.get('DatabaseHost'))
-    DBName = str(ConfigFileDictionary.get('DatabaseName'))
-
-    return DBUname, DBPasswd, DBHost, DBName
+    # Return Config Data #
+    return ConfigFileDictionary
 
 
 def LoadZookeeperConfig(ConfigFilePath):
