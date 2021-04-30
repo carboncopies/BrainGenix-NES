@@ -56,7 +56,7 @@ class ZK(): # Create Interface Class #
         self.Logger = Logger
 
 
-    def ConnectToZookeeper(self, Logger:object=None, ZKHosts:str='127.0.0.1:2181'): # Creates Connection With ZK #
+    def ConnectToZookeeper(self, Logger:object, ZKConfigDict:dict): # Creates Connection With ZK #
 
         '''
         This function is used to connect to Zookeeper, hence the name.
@@ -67,11 +67,20 @@ class ZK(): # Create Interface Class #
         That will create an event in the log that node {hostname} joined.
         '''
 
+
+        # Extract Values From Dictionary #
+        ZKHost = str(ZKConfigDict.get('ZKHost'))
+        ZKPort = str(ZKConfigDict.get('ZKPort'))
+
+        ZKHost += f':{ZKPort}'
+
+
+
         # Connect To Zookeeper #
         if Logger != None:
-            Logger.Log(f'Connecting To Zookeeper Server At Address: {ZKHosts}')
+            Logger.Log(f'Connecting To Zookeeper Server At Address: {ZKHost}')
 
-        self.ZookeeperConnection = KazooClient(hosts=ZKHosts)
+        self.ZookeeperConnection = KazooClient(hosts=ZKHost)
         self.ZookeeperConnection.start()
 
         if Logger != None:
