@@ -86,10 +86,6 @@ def LoadKafkaConfig(ConfigFilePath):
 
     ConfigFileDictionary = yaml.safe_load(ConfigFileContents)
 
-    # Extract Values From Dictionary #
-    KafkaHost = str(ConfigFileDictionary.get('KafkaHost'))
-    KafkaPort = str(ConfigFileDictionary.get('KafkaPort'))
 
-    KafkaHost += f':{KafkaPort}'
-
-    return KafkaHost
+    # Return Output #
+    return ConfigFileDictionary
