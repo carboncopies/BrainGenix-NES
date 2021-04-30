@@ -15,7 +15,7 @@ import time
 from Core.Initialization.LoadConfig import LoadLoggerConfig
 from Core.Initialization.LoadConfig import LoadDatabaseConfig
 from Core.Initialization.LoadConfig import LoadZookeeperConfig
-from Core.Initialization.LoadConfig import LoadKafkaConfig
+from Core.Initialization.LoadConfig import LoadInternodeQueueConfig
 
 from Core.Initialization.Instantiator import InstantiateZK
 from Core.Initialization.Instantiator import InstantiateKafka
@@ -50,7 +50,7 @@ Branch = 'dev' # 'dev' or 'rel'
 LoggerConfigDict = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
 DBConfigDict = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
 ZKConfigDict = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
-KafkaConfigDict = LoadKafkaConfig(ConfigFilePath = 'Config/KafkaConfig.yaml')
+InternodeConfigDict = LoadInternodeConfig(ConfigFilePath = 'Config/InternodeQueue.yaml')
 
 
 # Initialize Logger #
@@ -100,8 +100,8 @@ def ShutdownZK():
     Zookeeper.Exit()
 
 
-# Connect To Kafka Service #
-sKafka = InstantiateKafka(mLogger, KafkaConfigDict)
+# Connect To Queue Service #
+sInternodeQueue = InstantiateInternodeQueue(mLogger, InternodeConfigDict)
 
 
 
@@ -146,13 +146,6 @@ mLogger.Log('')
 
 time.sleep(2)
 
-sKafka.CreateTopic('TestTopic')
-
-Prod = sKafka.CreateProducer('TestTopic')
-Cons = sKafka.CreateConsumer('TestTopic')
-
-Prod.put('test')
-print(Cons.get())
 
 
 # Main Loop #

@@ -1,0 +1,12 @@
+{
+# Set Your System Type Here, "Kafka" For Kafka And "Socket" For Sockets. (Remove "")
+QueueType: Kafka,
+
+# Set Socket Params Here #
+SocketBindAddress: 0.0.0.0, # Bind To All Addresses By Default
+Protocol: TCP, # Only supports TCP for now, changing this doesn't do anything
+
+# If Using Kafka, Include These Params, Else, Leave As Default #
+KafkaHost: 127.0.0.1,
+KafkaPort: 9092
+}

@@ -54,32 +54,58 @@ def InstantiateZK(Logger, ZookeeperConfig): # Instantiates Zookeeper #
         exit()
 
 
-def InstantiateKafka(Logger, KafkaConfigDict): # Instantiates Kafka #
+def InstantiateInternodeQueue(Logger, InternodeConfigDict): # Instantiates Kafka #
 
     # Log Message #
-    Logger.Log('Instantiating Kafka Interface')
+    Logger.Log('Instantiating Internode Queue Subsystem')
+
+    # Read Mode From File #
+    Logger.Log('Reading Configuration File')
+    QueueType = InternodeConfigDict['Type']
 
 
-    # Instantiate Kafka #
-    try:
+    # Check Queueing System Type #
+    if QueueType == 'Kafka':
 
-        KafkaInterfaceInstance = KafkaInterface(Logger, KafkaConfigDict)
+        Logger.Log('Internode Queue Subsystem Backend Has Been Set To Kafka')
 
-        # Log Success #
-        Logger.Log('Kafka Interface Instantiation Successful')
+        # Instantiate Kafka #
+        try:
 
-        # Return Instantiated Kafka Interface Object #
-        return KafkaInterfaceInstance
+            KafkaInterfaceInstance = KafkaInterface(Logger, InternodeConfigDict)
 
-    # If Something Fails During Instantiation #
-    except Exception as E:
+            # Log Success #
+            Logger.Log('Kafka Interface Instantiation Successful')
 
-        # Print Exception Message #
-        Logger.Log('Error During Kafka Instantiation', 3)
-        Logger.Log(f'Exception: {E}; Running Kafka Diagnostics!', 3)
+            # Return Instantiated Kafka Interface Object #
+            return KafkaInterfaceInstance
 
-        # Run Diagnostics #
-        CanAccessKafka(KafkaHost, Logger)
+        # If Something Fails During Instantiation #
+        except Exception as E:
+
+            # Print Exception Message #
+            Logger.Log('Error During Kafka Instantiation', 3)
+            Logger.Log(f'Exception: {E}; Running Kafka Diagnostics!', 3)
+
+            # Run Diagnostics #
+            CanAccessKafka(InternodeConfigDict, Logger)
+            exit()
+
+    elif QueueType == 'Socket': 
+
+        Logger.Log('Internode Queue Subsystem Backend Has Been Set To Sockets')
+
+        # Instantiate Socket System #
+
+        pass
+
+
+    else:
+        
+        # If It's An Unsupported Backend #
+        Logger.Log('Unknown Backend For Queue Subsystem! Please Check Your Configuration File.', 3)
+
+        # Terminate System #
         exit()
 
 
