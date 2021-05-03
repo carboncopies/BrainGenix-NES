@@ -181,11 +181,11 @@ class SysLog(): # Logger Class #
             # Write data *from the logbuffer* into the database here
             #
             
-            # insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node) VALUES (%d, \"%s\", \"%s\", \"%s\", \"%s\", \"%s\")") %  (int(Level), LogTime, CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, str(self.NodeID))
+            insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node) VALUES (%s, %s, \"%s\", \"%s\", \"%s\", \"%s\")")
 
-            # val = (int(Level), LogTime, CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, self.NodeID)
+            val = (Level, str(LogTime), CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, str(self.NodeID))
 
-            # self.LoggerCursor.execute(insertStatement, val)
+            self.LoggerCursor.execute(insertStatement,val)
 
             
             self.LogBuffer = ''
@@ -236,7 +236,7 @@ class SysLog(): # Logger Class #
 
         # Calculate Old Date (Current Date Minus KeepSeconds) # 
         DeleteDateRaw = datetime.datetime.now() - datetime.timedelta(seconds=self.SecondsToKeepLogs)
-        DeleteDate = DeleteDateRaw.strftime('%Y-%m-%d_%H-%M-%S')
+        DeleteDate = DeleteDateRaw.strftime('%Y-%m-%d %H:%M:%S')
         
         # Execute Deletion Command # 
         self.CheckDelete(DeleteDate)
