@@ -18,7 +18,6 @@ from Core.Initialization.LoadConfig import LoadZookeeperConfig
 from Core.Initialization.LoadConfig import LoadInternodeQueueConfig
 
 from Core.Initialization.Instantiator import InstantiateZK
-from Core.Initialization.Instantiator import InstantiateKafka
 from Core.Initialization.Instantiator import InstantiateDB
 from Core.Initialization.Instantiator import InstantiateLogger
 
@@ -50,7 +49,7 @@ Branch = 'dev' # 'dev' or 'rel'
 LoggerConfigDict = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
 DBConfigDict = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
 ZKConfigDict = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
-InternodeConfigDict = LoadInternodeConfig(ConfigFilePath = 'Config/InternodeQueue.yaml')
+InternodeConfigDict = LoadInternodeQueueConfig(ConfigFilePath = 'Config/InternodeQueue.yaml')
 
 
 # Initialize Logger #
@@ -101,8 +100,11 @@ def ShutdownZK():
 
 
 # Connect To Queue Service #
-sInternodeQueue = InstantiateInternodeQueue(mLogger, InternodeConfigDict)
+#sInternodeQueue = InstantiateInternodeQueue(mLogger, InternodeConfigDict)
 
+##############################################################################################################
+## THIS WILL CONNECT TO THE C++ INTERFACE WITH BRIAN HERE. THE HEAVY PROCESING WORK IS DONE ON THE C++ SIDE ##
+##############################################################################################################
 
 
 
