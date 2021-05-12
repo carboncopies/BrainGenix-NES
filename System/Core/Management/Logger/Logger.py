@@ -116,7 +116,7 @@ class SysLog(): # Logger Class #
         DBPassword = str(DatabaseConfig.get('DatabasePassword'))
         DBHost = str(DatabaseConfig.get('DatabaseHost'))
         DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
-        
+
 
         # Connect To Database #
         self.DatabaseConnection = pymysql.connect(
@@ -222,11 +222,11 @@ class SysLog(): # Logger Class #
             OutDict[LineItem[6]].append(LineItem)
 
         # Return Lines #
-        return OutDict        
+        return OutDict
 
 
     def CheckDelete(self, DeleteDate:str): # Deletes entries from the Log Table prior to a specific date # 
-        
+
         # Delete Old Logs #
         DeleteStatement= ("DELETE FROM log WHERE LogDatetime < %s" % DeleteDate)
         self.LoggerCursor.execute(DeleteStatement)
@@ -237,7 +237,7 @@ class SysLog(): # Logger Class #
         # Calculate Old Date (Current Date Minus KeepSeconds) # 
         DeleteDateRaw = datetime.datetime.now() - datetime.timedelta(seconds=self.SecondsToKeepLogs)
         DeleteDate = DeleteDateRaw.strftime('%Y-%m-%d %H:%M:%S')
-        
+
         # Execute Deletion Command # 
         self.CheckDelete(DeleteDate)
 

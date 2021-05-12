@@ -8,7 +8,7 @@
 Name: CLAS
 Description: The Centralized Logger Aggregation System is used by the leader to present a unfied system log across the entire BG cluster.
 Date-Created: 2021-04-25
-''' 
+'''
 
 
 class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
@@ -35,7 +35,7 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         return LogEntries
 
 
-    def ProcessLog(self, Lines=500): # Read And Filter Lines From The Log # 
+    def ProcessLog(self, Lines=500): # Read And Filter Lines From The Log #
 
         # Get Log Text #
         LogEntries = self.Logger.PullLog(Lines)
@@ -46,7 +46,7 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         for Item in LogEntries:
             if Item[6] not in Nodes:
                 Nodes.append(Item[6])
-        
+
         # Generate Output Format #
         Output = {}
 

@@ -91,7 +91,7 @@ def InstantiateInternodeQueue(Logger, InternodeConfigDict): # Instantiates Kafka
             CanAccessKafka(InternodeConfigDict, Logger)
             exit()
 
-    elif QueueType == 'Socket': 
+    elif QueueType == 'Socket':
 
         Logger.Log('Internode Queue Subsystem Backend Has Been Set To Sockets')
 
@@ -101,7 +101,7 @@ def InstantiateInternodeQueue(Logger, InternodeConfigDict): # Instantiates Kafka
 
 
     else:
-        
+
         # If It's An Unsupported Backend #
         Logger.Log('Unknown Backend For Queue Subsystem! Please Check Your Configuration File.', 3)
 
