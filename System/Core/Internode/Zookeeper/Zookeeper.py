@@ -6,6 +6,7 @@ import time
 import uuid
 import threading
 import platform
+import yaml
 
 from kazoo.client import KazooClient
 
@@ -56,6 +57,7 @@ class ZK(): # Create Interface Class #
         self.Logger = Logger
 
 
+
     def ConnectToZookeeper(self, Logger:object, ZKConfigDict:dict): # Creates Connection With ZK #
 
         '''
@@ -74,6 +76,10 @@ class ZK(): # Create Interface Class #
 
         ZKHost += f':{ZKPort}'
 
+
+        # Save Info About Connection #
+        self.ZKIP = ZKHost
+        self.ZKPort = ZKPort
 
 
         # Connect To Zookeeper #
@@ -97,6 +103,7 @@ class ZK(): # Create Interface Class #
         self.TryCreate(f'/BrainGenix/System/Nodes/{self.Name}/', zNodeData=b'', ephemeral=True)
 
 
+
     def ConcurrentConnectedNodes(self): # Return The Number Of Concurrently Connected Nodes #
 
         '''
@@ -112,6 +119,7 @@ class ZK(): # Create Interface Class #
         return NodeCount
 
 
+
     def SpawnCheckerThread(self): # Spawn ZK Leader Check Thread #
 
         '''
@@ -121,6 +129,7 @@ class ZK(): # Create Interface Class #
         '''
 
         self.LeaderCheckerThread = threading.Thread(target=self.LeaderCheckDaemon, args=(), name='Zookeeper Leader Timeout Checker').start()
+
 
 
     def AutoInitZKLeader(self): # Init ZK Leader #
@@ -149,6 +158,7 @@ class ZK(): # Create Interface Class #
             self.ZookeeperHaveLeader = True
 
 
+
     def ElectLeader(self): # Elects A Leader From The Pool #
 
         '''
@@ -168,6 +178,7 @@ class ZK(): # Create Interface Class #
         self.Logger.Log(f'This Node Is Running In {self.ZookeeperMode} Mode')
 
 
+
     def CheckIfLeaderExists(self): # Checks If A Leader Has Already Been Elected #
 
         '''
@@ -178,6 +189,7 @@ class ZK(): # Create Interface Class #
         return self.ZookeeperConnection.exists('/BrainGenix/System/Leader')
 
 
+
     def ElectedLeader(self): # This Function Is Called If We're Elected Leader From The ZK Ensemble #
 
         '''
@@ -186,12 +198,19 @@ class ZK(): # Create Interface Class #
         *Please don't use this function unless you're really sure what you're doing.*
         '''
 
+        # Create Leader Dictionary #
+        LeaderDictionary = {
+            'Hostname': self.Name,
+            'IP': self.ZKIP
+        }
+
         # Create LockFile #
         if not self.ZookeeperConnection.exists('/BrainGenix/System/Leader'):
-            self.ZookeeperConnection.create('/BrainGenix/System/Leader', self.Name.encode(), ephemeral=True)
+            self.ZookeeperConnection.create('/BrainGenix/System/Leader', str(LeaderDictionary).encode(), ephemeral=True)
             self.ZookeeperMode = 'Leader'
         else:
             self.Logger.Log('Other Node Already Created Lockfile')
+
 
 
     def TryCreate(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
@@ -205,6 +224,7 @@ class ZK(): # Create Interface Class #
 
         if not self.ZookeeperConnection.exists(zNodePath):
             self.ZookeeperConnection.create(zNodePath, ephemeral=ephemeral, value=zNodeData)
+
 
 
     def TryCreateOverwrite(self, zNodePath:str, ephemeral:bool=False, zNodeData:bytes=None):
@@ -222,6 +242,7 @@ class ZK(): # Create Interface Class #
             self.ZookeeperConnection.create(zNodePath, ephemeral=ephemeral, value=zNodeData)
         else:
             self.ZookeeperConnection.set(zNodePath, value=zNodeData)
+
 
 
     def LeaderCheckDaemon(self, RefreshInterval=1): # Constantly Checks If Leader Disconnects #
@@ -257,6 +278,7 @@ class ZK(): # Create Interface Class #
             time.sleep(RefreshInterval)
 
 
+
     def GetConnectedNodes(self): # Updates The List Of Connected Nodes In ZK #
 
         '''
@@ -265,6 +287,7 @@ class ZK(): # Create Interface Class #
         '''
 
         self.ConnectedNodes = self.ZookeeperConnection.get_children('/BrainGenix/System/Nodes')
+
 
 
     def CheckIfNodeChangeEvents(self): # Checks If Any Nodes Have Joined Or Left The Cluster #
@@ -292,6 +315,7 @@ class ZK(): # Create Interface Class #
         return AddedNodes, RemovedNodes
 
 
+
     def PrintDifferences(self, AddedNodes, SubtractedNodes): # Prints Deltas Between Checks, IE A NODE ADDED OR REMOVED #
 
         '''
@@ -309,6 +333,7 @@ class ZK(): # Create Interface Class #
                 self.TryCreateOverwrite(f'/BrainGenix/System/Nodes/{self.Name}/', zNodeData=b'', ephemeral=True)
 
 
+
     def LeaderTimeout(self): # Runs if a leader times out #
 
         '''
@@ -321,6 +346,7 @@ class ZK(): # Create Interface Class #
         self.ZookeeperHaveLeader = False
         self.ZookeeperMode = 'Follower'
         self.AutoInitZKLeader()
+
 
 
     def Exit(self): # Shutsdown the ZK connection #
