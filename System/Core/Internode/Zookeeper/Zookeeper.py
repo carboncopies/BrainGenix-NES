@@ -198,15 +198,19 @@ class ZK(): # Create Interface Class #
         *Please don't use this function unless you're really sure what you're doing.*
         '''
 
+
         # Create Leader Dictionary #
         LeaderDictionary = {
             'Hostname': self.Name,
             'IP': self.ZKIP
         }
 
+        LeaderDictionaryString = yaml.dump(LeaderDictionary)
+
+
         # Create LockFile #
         if not self.ZookeeperConnection.exists('/BrainGenix/System/Leader'):
-            self.ZookeeperConnection.create('/BrainGenix/System/Leader', str(LeaderDictionary).encode(), ephemeral=True)
+            self.ZookeeperConnection.create('/BrainGenix/System/Leader', LeaderDictionaryString.encode(), ephemeral=True)
             self.ZookeeperMode = 'Leader'
         else:
             self.Logger.Log('Other Node Already Created Lockfile')
