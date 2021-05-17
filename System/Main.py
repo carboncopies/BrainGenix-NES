@@ -16,6 +16,7 @@ from Core.Initialization.LoadConfig import LoadLoggerConfig
 from Core.Initialization.LoadConfig import LoadDatabaseConfig
 from Core.Initialization.LoadConfig import LoadZookeeperConfig
 from Core.Initialization.LoadConfig import LoadInternodeQueueConfig
+from Core.Initialization.LoadConfig import LoadManagementAPIServerConfig
 
 from Core.Initialization.Instantiator import InstantiateZK
 from Core.Initialization.Instantiator import InstantiateDB
@@ -25,7 +26,7 @@ from Core.Initialization.CheckLibraries import CheckImports
 
 from Core.Internode.Zookeeper.ZKManager import SystemTelemetryManager
 
-from Core.Management.API.ZookeeperPoller import PollWatcher
+#from Core.Management.API.ZookeeperPoller import PollWatcher
 
 from Core.Management.Telemetry.SystemTelemetry import Follower
 from Core.Management.Telemetry.SystemTelemetry import Leader
@@ -50,6 +51,7 @@ LoggerConfigDict = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
 DBConfigDict = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
 ZKConfigDict = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
 InternodeConfigDict = LoadInternodeQueueConfig(ConfigFilePath = 'Config/InternodeQueue.yaml')
+ManagementAPIServerConfig = LoadManagementAPIServerConfig(ConfigFilePath = 'Config/ManagementAPIConfig.yaml')
 
 
 # Initialize Logger #
@@ -96,7 +98,7 @@ sZookeeper = InstantiateZK(mLogger, ZKConfigDict)
 # Register Shutdown Function To Automatically Disconnect#
 @atexit.register
 def ShutdownZK():
-    Zookeeper.Exit()
+    sZookeeper.Exit()
 
 
 # Connect To Queue Service #
@@ -115,7 +117,7 @@ TelManager = SystemTelemetryManager(sZookeeper, TelemetryLeader)
 
 
 # Initialize The API ZK Watcher #
-ZookeeperAPIWatcher = PollWatcher(mLogger, sZookeeper, TelemetryLeader)
+#ZookeeperAPIWatcher = PollWatcher(mLogger, sZookeeper, TelemetryLeader)
 
 
 # Get NodeCount #
