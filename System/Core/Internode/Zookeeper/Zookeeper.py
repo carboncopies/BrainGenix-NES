@@ -6,7 +6,7 @@ import time
 import uuid
 import threading
 import platform
-import yaml
+import json
 
 from kazoo.client import KazooClient
 
@@ -205,7 +205,7 @@ class ZK(): # Create Interface Class #
             'IP': self.ZKIP
         }
 
-        LeaderDictionaryString = yaml.dump(LeaderDictionary)
+        LeaderDictionaryString = json.dumps(LeaderDictionary)
 
 
         # Create LockFile #
