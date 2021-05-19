@@ -10,6 +10,7 @@ Date-Created: 2020-12-18
 
 import atexit
 import time
+import os
 
 
 from Core.Initialization.LoadConfig import LoadLoggerConfig
@@ -26,12 +27,12 @@ from Core.Initialization.CheckLibraries import CheckImports
 
 from Core.Internode.Zookeeper.ZKManager import SystemTelemetryManager
 
-#from Core.Management.API.ZookeeperPoller import PollWatcher
-
 from Core.Management.Telemetry.SystemTelemetry import Follower
 from Core.Management.Telemetry.SystemTelemetry import Leader
 
 from Core.Management.Logger.CLAS import CentralizedLoggerAggregationSystem
+
+from Core.Management.API.ManagementAPI import ManagementAPISocketServer
 
 
 ##############################################################################
@@ -62,14 +63,12 @@ mLogger = InstantiateLogger(DBConfigDict, LoggerConfigDict)
 sCLAS = CentralizedLoggerAggregationSystem(mLogger)
 
 
-# Purges The Log Buffer On System Exit #
-@atexit.register
-def CleanLog():
-    mLogger.CleanExit()
-
-
 # Connect To DB #
 sDatabaseInterface = InstantiateDB(mLogger, DBConfigDict)
+
+
+# Start API Server #
+sSocketAPI = ManagementAPISocketServer(mLogger, ManagementAPIServerConfig, ZKConfigDict)
 
 
 # Check Dependencies #
@@ -95,14 +94,6 @@ CheckImports(ModulesNeeded, mLogger)
 # Connect To Zookeeper Service #
 sZookeeper = InstantiateZK(mLogger, ZKConfigDict)
 
-# Register Shutdown Function To Automatically Disconnect#
-@atexit.register
-def ShutdownZK():
-    sZookeeper.Exit()
-
-
-# Connect To Queue Service #
-#sInternodeQueue = InstantiateInternodeQueue(mLogger, InternodeConfigDict)
 
 ##############################################################################################################
 ## THIS WILL CONNECT TO THE C++ INTERFACE WITH BRIAN HERE. THE HEAVY PROCESING WORK IS DONE ON THE C++ SIDE ##
@@ -148,7 +139,28 @@ mLogger.Log(f'    |                 MAPIServers: {APIServerCount}               
 mLogger.Log('    +-----------------------------------------------------------------+')
 mLogger.Log('')
 
-time.sleep(2)
+
+
+# Purges The Log Buffer On System Exit #
+@atexit.register
+def CleanLog():
+    mLogger.CleanExit()
+
+
+# Register Shutdown Function To Automatically Disconnect#
+@atexit.register
+def ShutdownZK():
+    sZookeeper.Exit()
+
+# Register Shutdown For Socket #
+@atexit.register
+def ShutdownSockets():
+    sSocketAPI.Quit()
+
+# Force Exit #
+@atexit.register
+def ForceExit():
+    os._exit(1)
 
 
 
