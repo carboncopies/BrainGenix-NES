@@ -43,48 +43,57 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
     def ManagementAPIThread(self): # Create A Thread Function For The Management API #
 
-        # Wait Accept Incoming Connections #
-        self.Connection, self.ConnectionInformation = self.Socket.accept()
-        self.Logger.Log(f'Management API Recieved Connection From: {self.ConnectionInformation}')
-
-        # Enter Listening Loop To Recieve Commands #
+        # Enter Connection Accept Loop #
         while True:
 
-            # Get Command From Client #
-            self.Command = self.Connection.recv(65535)
-            self.Command = self.Command.decode()
-
-            # Convert To Dict From JSON #
-            self.Command = json.loads(self.Command)
+            # Log That Server Awaiting Connections #
+            self.Logger.Log(f'MAPI Server Awaiting Connections On Port: {self.Port}')
 
 
-            # Check That Command Syntax Is Correct #
-            if str(type(self.Command)) != "<class 'dict'>":
-                self.Connection.send(json.dumps({"Response": "INVALID DICTIONARY FORMAT"}).encode())
+            # Wait Accept Incoming Connections #
+            self.Connection, self.ConnectionInformation = self.Socket.accept()
+            self.Logger.Log(f'Management API Recieved Connection From: {self.ConnectionInformation}')
+
+            # Enter Listening Loop To Recieve Commands #
+            while True:
+
+                # Get Command From Client #
+                self.Command = self.Connection.recv(65535)
+                self.Command = self.Command.decode()
+
+                # Convert To Dict From JSON #
+                self.Command = json.loads(self.Command)
 
 
-            if 'CallStack' not in self.Command:
-                self.Connection.send(json.dumps({"Response": "COMMAND DOES NOT INCLUDE 'CallStack' FIELD"}).encode())
-
-            # Check If Disconnect (Must be before SysName check to remain client agnostic) #
-            if self.Command['CallStack'] == 'Disconnect':
-                self.Connection.close()
+                # Check That Command Syntax Is Correct #
+                if str(type(self.Command)) != "<class 'dict'>":
+                    self.Connection.send(json.dumps({"Response": "INVALID DICTIONARY FORMAT"}).encode())
 
 
-            if 'SysName' not in self.Command:
-                self.Connection.send(json.dumps({"Response": "COMMAND DOES NOT INCLUDE 'SysName' FIELD"}).encode())
+                if 'CallStack' not in self.Command:
+                    self.Connection.send(json.dumps({"Response": "COMMAND DOES NOT INCLUDE 'CallStack' FIELD"}).encode())
 
-            if 'KeywordArgs' not in self.Command:
-                self.Connection.send(json.dumps({"Response": "COMMAND DOES NOT INCLUDE 'KeywordArgs' FIELD"}).encode())
+                # Check If Disconnect (Must be before SysName check to remain client agnostic) #
+                if self.Command['CallStack'] == 'Disconnect':
+                    self.Logger.Log('Client Initiated MAPI Disconnect, Connection Closed')
+                    self.Connection.close()
+                    break
 
 
-            if self.Command['SysName'] != 'NES':
-                self.Connection.send(json.dumps({"Response": "INVALID VALUE FOR 'SysName' FIELD"}).encode())
+                if 'SysName' not in self.Command:
+                    self.Connection.send(json.dumps({"Response": "COMMAND DOES NOT INCLUDE 'SysName' FIELD"}).encode())
 
-            
-            # Built in Commands #
-            if self.Command['CallStack'] == 'TestAPI':
-                self.Connection.send(json.dumps({"Response": "but most of all, samy is my hero"}).encode())
+                if 'KeywordArgs' not in self.Command:
+                    self.Connection.send(json.dumps({"Response": "COMMAND DOES NOT INCLUDE 'KeywordArgs' FIELD"}).encode())
+
+
+                if self.Command['SysName'] != 'NES':
+                    self.Connection.send(json.dumps({"Response": "INVALID VALUE FOR 'SysName' FIELD"}).encode())
+
+                
+                # Built in Commands #
+                if self.Command['CallStack'] == 'TestAPI':
+                    self.Connection.send(json.dumps({"Response": "but most of all, samy is my hero"}).encode())
 
 
 
