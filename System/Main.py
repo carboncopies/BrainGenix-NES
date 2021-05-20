@@ -140,26 +140,12 @@ mLogger.Log('    +--------------------------------------------------------------
 mLogger.Log('')
 
 
-
-# Purges The Log Buffer On System Exit #
+# Run Shutdown Commands On System Exit #
 @atexit.register
-def CleanLog():
+def ShutdownSystem():
     mLogger.CleanExit()
-
-
-# Register Shutdown Function To Automatically Disconnect#
-@atexit.register
-def ShutdownZK():
     sZookeeper.Exit()
-
-# Register Shutdown For Socket #
-@atexit.register
-def ShutdownSockets():
     sSocketAPI.Quit()
-
-# Force Exit #
-@atexit.register
-def ForceExit():
     os._exit(1)
 
 
