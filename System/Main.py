@@ -143,18 +143,34 @@ mLogger.Log('')
 # Run Shutdown Commands On System Exit #
 @atexit.register
 def ShutdownSystem():
+
+    # Log Shutdown Message #
+    mLogger.Log('Shutting Down System')
+
+    # Call Shutdown Functions #
     mLogger.CleanExit()
     sZookeeper.Exit()
     sSocketAPI.Quit()
+
+    # Exit Program #
     os._exit(1)
 
 
+# Try Except Statement To Catch [Control]+[C] #
+try:
 
-# Main Loop #
-while True:
+    # Main Loop #
+    while True:
 
-    # Execute System Tasks If In Leader Mode #
-    TelManager.UpdateSysTel()
+        # Execute System Tasks If In Leader Mode #
+        TelManager.UpdateSysTel()
 
 
-    time.sleep(0.5) # <-- Sleep for a polling interval to avoid excessive CPU usage
+        time.sleep(0.5) # <-- Sleep for a polling interval to avoid excessive CPU usage
+
+except KeyboardInterrupt:
+    
+    # Call Shutdown Function #
+    mLogger.Log('System Shutdown Invoked By KeyboardInterrupt')
+
+    ShutdownSystem()
