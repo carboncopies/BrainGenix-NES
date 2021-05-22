@@ -47,87 +47,98 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Enter Connection Accept Loop #
         while True:
 
-            # Log That Server Awaiting Connections #
-            self.Logger.Log(f'MAPI Server Awaiting Connections On Port: {self.Port}')
+            try:
+                # Log That Server Awaiting Connections #
+                self.Logger.Log(f'MAPI Server Awaiting Connections On Port: {self.Port}')
 
 
-            # Wait Accept Incoming Connections #
-            self.Connection, self.ConnectionInformation = self.Socket.accept()
-            self.Logger.Log(f'Management API Recieved Connection From: {self.ConnectionInformation}')
+                # Wait Accept Incoming Connections #
+                self.Connection, self.ConnectionInformation = self.Socket.accept()
+                self.Logger.Log(f'Management API Recieved Connection From: {self.ConnectionInformation}')
 
-            # Enter Listening Loop To Recieve Commands #
-            while True:
+                # Enter Listening Loop To Recieve Commands #
+                while True:
 
-                # Get Command From Client #
-                self.Command = self.Connection.recv(65535)
-                self.Command = self.Command.decode()
+                    # Get Command From Client #
+                    self.Command = self.Connection.recv(65535)
+                    self.Command = self.Command.decode()
 
-                # Convert To Dict From JSON #
+
+                    # Convert To Dict From JSON #
+                    try:
+                        self.Command = json.loads(self.Command)
+                    except Exception as e:
+                        print(e)
+
+
+                    # Check That Command Syntax Is Correct #
+                    if str(type(self.Command)) != "<class 'dict'>":
+                        CommandOutput = "INVALID DICTIONARY FORMAT"
+
+                    elif 'CallStack' not in self.Command:
+                        CommandOutput = "COMMAND DOES NOT INCLUDE 'CallStack' FIELD"
+
+
+                    # Check If Disconnect (Must be before SysName check to remain client agnostic) #
+                    elif self.Command['CallStack'] == 'Disconnect':
+                        self.Logger.Log('Client Initiated MAPI Disconnect, Connection Closed')
+                        self.Connection.close()
+                        break
+
+
+                    # More Command Syntax Checks #
+                    elif 'SysName' not in self.Command:
+                        CommandOutput = "COMMAND DOES NOT INCLUDE 'SysName' FIELD"
+
+                    elif 'KeywordArgs' not in self.Command:
+                        CommandOutput = "COMMAND DOES NOT INCLUDE 'KeywordArgs' FIELD"
+
+                    elif self.Command['SysName'] != 'NES':
+                        CommandOutput = "INVALID VALUE FOR 'SysName' FIELD"
+
+                
+                    # Run System Command #
+                    else:
+                        CommandCallStack = self.Command['CallStack']
+                        ArgumentsDictionary = self.Command['KeywordArgs']
+
+                        # Get Target Function #
+                        Layers = CommandCallStack.split('.')
+                        CommandFunction = self
+
+
+
+                        for _, LayerName in enumerate(Layers):
+
+                            try:
+                                CommandFunction = getattr(CommandFunction, LayerName)
+
+                                # Run Function #
+                                CommandOutput = CommandFunction(ArgumentsDictionary)
+
+
+                            except Exception as ErrorString:
+                                CommandOutput = ErrorString
+
+
+
+                    # Encode JSON Output #
+                    Response = {"Response" : CommandOutput}
+                    ResponseString = json.dumps(Response)
+                    ResponseByteString = ResponseString.encode()
+
+                    # Send Output #
+                    self.Connection.send(ResponseByteString)
+
+            except Exception as E:
+
+                self.Logger.Log(E)
+                self.Logger.Log('Exception within APIServer, Restarting Server!')
+                
                 try:
-                    self.Command = json.loads(self.Command)
-                except Exception as e:
-                    print(e)
-
-
-                # Check That Command Syntax Is Correct #
-                if str(type(self.Command)) != "<class 'dict'>":
-                    CommandOutput = "INVALID DICTIONARY FORMAT"
-
-                elif 'CallStack' not in self.Command:
-                    CommandOutput = "COMMAND DOES NOT INCLUDE 'CallStack' FIELD"
-
-
-                # Check If Disconnect (Must be before SysName check to remain client agnostic) #
-                elif self.Command['CallStack'] == 'Disconnect':
-                    self.Logger.Log('Client Initiated MAPI Disconnect, Connection Closed')
                     self.Connection.close()
-                    break
-
-
-                # More Command Syntax Checks #
-                elif 'SysName' not in self.Command:
-                    CommandOutput = "COMMAND DOES NOT INCLUDE 'SysName' FIELD"
-
-                elif 'KeywordArgs' not in self.Command:
-                    CommandOutput = "COMMAND DOES NOT INCLUDE 'KeywordArgs' FIELD"
-
-                elif self.Command['SysName'] != 'NES':
-                    CommandOutput = "INVALID VALUE FOR 'SysName' FIELD"
-
-            
-                # Run System Command #
-                else:
-                    CommandCallStack = self.Command['CallStack']
-                    ArgumentsDictionary = self.Command['KeywordArgs']
-
-                    # Get Target Function #
-                    Layers = CommandCallStack.split('.')
-                    CommandFunction = self
-
-
-
-                    for _, LayerName in enumerate(Layers):
-
-                        try:
-                            CommandFunction = getattr(CommandFunction, LayerName)
-
-                            # Run Function #
-                            CommandOutput = CommandFunction(ArgumentsDictionary)
-
-
-                        except Exception as ErrorString:
-                            CommandOutput = ErrorString
-
-
-
-                # Encode JSON Output #
-                Response = {"Response" : CommandOutput}
-                ResponseString = json.dumps(Response)
-                ResponseByteString = ResponseString.encode()
-
-                # Send Output #
-                self.Connection.send(ResponseByteString)
-
+                except:
+                    pass
 
 
 
