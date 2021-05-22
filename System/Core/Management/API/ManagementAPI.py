@@ -7,9 +7,6 @@ import threading
 import json
 
 
-
-
-
 '''
 Name: Management API
 Description: This file provides the socket based interface to the management api backend.
@@ -66,8 +63,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                 self.Command = self.Command.decode()
 
                 # Convert To Dict From JSON #
-                self.Command = json.loads(self.Command)
-
+                try:
+                    self.Command = json.loads(self.Command)
+                except Exception as e:
+                    print(e)
 
 
                 # Check That Command Syntax Is Correct #
