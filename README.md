@@ -1,4 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/df1c58e2d172468b9b39c113c52e9f13)](https://app.codacy.com/gh/carboncopies/BrainGenix?utm_source=github.com&utm_medium=referral&utm_content=carboncopies/BrainGenix&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/64207ebc26b34f24b1ad39ad43df315d)](https://www.codacy.com/gh/carboncopies/BrainGenix-NES/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=carboncopies/BrainGenix-NES&amp;utm_campaign=Badge_Grade)
 # What's BrainGenix?
 
 BrainGenix is a distributed biological neuron simulator designed for the emulation of human minds. The simulator uses Apache Zookeeper and other production-grade systems to ensure that it's both stable and fault-tolerant. It's designed with scalability in mind to run with one neuron or a hundred billion.
