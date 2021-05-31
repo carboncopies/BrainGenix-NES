@@ -70,13 +70,14 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     except Exception as e:
                         print(e)
 
+                    print(self.Command)
 
                     # Check That Command Syntax Is Correct #
                     if str(type(self.Command)) != "<class 'dict'>":
                         CommandOutput = "INVALID DICTIONARY FORMAT"
 
-                    elif 'CallStack' not in self.Command:
-                        CommandOutput = "COMMAND DOES NOT INCLUDE 'CallStack' FIELD"
+                    if 'CallStack' not in self.Command:
+                        CommandOutput = "COMMAND DOES NOT INCLUDE 'CallStack' FIELD. If using CLI, run 'scope (NES, ERS, STS)'"
 
 
                     # Check If Disconnect (Must be before SysName check to remain client agnostic) #
