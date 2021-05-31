@@ -169,7 +169,7 @@ try:
         time.sleep(0.5) # <-- Sleep for a polling interval to avoid excessive CPU usage
 
 except KeyboardInterrupt:
-    
+
     # Call Shutdown Function #
     mLogger.Log('System Shutdown Invoked By KeyboardInterrupt')
 

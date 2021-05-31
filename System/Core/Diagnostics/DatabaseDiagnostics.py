@@ -12,7 +12,7 @@ import subprocess
 import os
 import socket
 import pymysql
-'''from Logger import Log #giving undefined name errors''' 
+'''from Logger import Log #giving undefined name errors'''
 
 def IsPortOpen(Address,Port): # Checks If A Given Port Is Open #
 
