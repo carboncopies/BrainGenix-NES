@@ -8,10 +8,6 @@ Description: This is the main file for a BrainGenix instance.
 Date-Created: 2020-12-18
 '''
 
-import atexit
-import time
-import os
-
 
 from Core.Initialization.LoadConfig import LoadLoggerConfig
 from Core.Initialization.LoadConfig import LoadDatabaseConfig
@@ -25,14 +21,11 @@ from Core.Initialization.Instantiator import InstantiateLogger
 
 from Core.Initialization.CheckLibraries import CheckImports
 
-from Core.Internode.Zookeeper.ZKManager import SystemTelemetryManager
-
-from Core.Management.Telemetry.SystemTelemetry import Follower
-from Core.Management.Telemetry.SystemTelemetry import Leader
-
 from Core.Management.Logger.CLAS import CentralizedLoggerAggregationSystem
 
 from Core.Management.API.ManagementAPI import ManagementAPISocketServer
+
+from Core.Internode.Zookeeper.LFTransitionManager import LFTM
 
 
 ##############################################################################
@@ -100,22 +93,15 @@ sZookeeper = InstantiateZK(mLogger, ZKConfigDict)
 ##############################################################################################################
 
 
-
-# Start System Telemetry #
-TelemetryFollower = Follower(Logger=mLogger, Zookeeper=sZookeeper)
-TelemetryLeader = Leader(Logger=mLogger, Zookeeper=sZookeeper) #<-- Note: This does NOT start it yet, you need to call start first. The manager handles this.
-TelManager = SystemTelemetryManager(sZookeeper, TelemetryLeader)
-
-
-# Initialize The API ZK Watcher #
-#ZookeeperAPIWatcher = PollWatcher(mLogger, sZookeeper, TelemetryLeader)
-
-
 # Get NodeCount #
 NodeCount = sZookeeper.ConcurrentConnectedNodes()
 
+
 # Get API Server Count #
 APIServerCount = len(sZookeeper.ZookeeperConnection.get_children('/BrainGenix/API/Connections'))
+
+# Instantiate Leader/Follower Transition Manager #
+LFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI)
 
 
 # MOTD #
@@ -140,37 +126,5 @@ mLogger.Log('    +--------------------------------------------------------------
 mLogger.Log('')
 
 
-# Run Shutdown Commands On System Exit #
-@atexit.register
-def ShutdownSystem():
-
-    # Log Shutdown Message #
-    mLogger.Log('Shutting Down System')
-
-    # Call Shutdown Functions #
-    mLogger.CleanExit()
-    sZookeeper.Exit()
-    sSocketAPI.Quit()
-
-    # Exit Program #
-    os._exit(1)
-
-
-# Try Except Statement To Catch [Control]+[C] #
-try:
-
-    # Main Loop #
-    while True:
-
-        # Execute System Tasks If In Leader Mode #
-        TelManager.UpdateSysTel()
-
-
-        time.sleep(0.5) # <-- Sleep for a polling interval to avoid excessive CPU usage
-
-except KeyboardInterrupt:
-
-    # Call Shutdown Function #
-    mLogger.Log('System Shutdown Invoked By KeyboardInterrupt')
-
-    ShutdownSystem()
+# Start System #
+LFTMInstance.MainLoop()
