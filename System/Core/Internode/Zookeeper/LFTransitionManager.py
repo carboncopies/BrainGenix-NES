@@ -17,7 +17,6 @@ from Core.LFTM.SystemTelemetryManager import SystemTelemetryManager
 
 
 
-
 class LFTM(): # Define Class Object #
 
     def __init__(self, Logger, ZookeeperInstance, SocketAPI): # Initialize LFTM #
