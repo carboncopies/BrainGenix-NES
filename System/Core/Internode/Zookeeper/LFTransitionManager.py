@@ -13,7 +13,7 @@ import os
 import time
 
 
-from Core.Internode.Zookeeper.ZKManager import SystemTelemetryManager
+from Core.LFTM.SystemTelemetryManager import SystemTelemetryManager
 
 
 
@@ -124,11 +124,16 @@ class LFTM(): # Define Class Object #
         # Log Shutdown Message #
         self.Logger.Log('Shutting Down System')
 
+
         # Call Shutdown Functions #
-        self.Zookeeper.Exit()
+        self.ZookeeperInstance.Exit()
         self.SocketAPI.Quit()
         self.Logger.CleanExit()
-        
+
+
+        # Print SQL Style Message #
+        print('Bye.')
+
 
         # Exit Program #
         os._exit(1)
