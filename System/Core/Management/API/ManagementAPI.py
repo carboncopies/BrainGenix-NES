@@ -68,9 +68,9 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     try:
                         self.Command = json.loads(self.Command)
                     except Exception as e:
-                        print(e)
+                        self.Logger.Log('Exception In Management Server JSONLOAD', 1)
+                        self.Logger.Log(e)
 
-                    print(self.Command)
 
                     # Check That Command Syntax Is Correct #
                     if str(type(self.Command)) != "<class 'dict'>":
@@ -108,7 +108,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         CommandFunction = self
 
 
-
+                        # Iterate Through Layers, Run Command Called #
                         for _, LayerName in enumerate(Layers):
 
                             try:
@@ -119,7 +119,9 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
 
                             except Exception as ErrorString:
-                                CommandOutput = ErrorString
+
+                                # Format Return Error For Return To Client #
+                                CommandOutput = str(ErrorString)
 
 
 
