@@ -125,6 +125,12 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     elif (self.Command['CallStack'] == 'TestAPI') and (self.Command['KeywordArgs'] == {}):
                         CommandOutput = self.TestAPI({})
                         CommandName = 'TestAPI'
+
+
+                    # Call Info Commands #
+                    elif (self.Command['CallStack'] == 'ls'):
+                        CommandOutput = self.ls(self.Command['KeywordArgs'])
+                        CommandName = 'ls'
                     
                     
 
@@ -208,8 +214,11 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Get Attributes #
         AttrTarget = self.LFTM
-        for TargetPathName in TargetPath.split('.'):
-            AttrTarget = getattr(AttrTarget, TargetPathName)
+        
+        if TargetPath != "":
+
+            for TargetPathName in TargetPath.split('.'):
+                AttrTarget = getattr(AttrTarget, TargetPathName)
 
         Attributes = dir(AttrTarget)
 
