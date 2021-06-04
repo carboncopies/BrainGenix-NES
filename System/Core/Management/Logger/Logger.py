@@ -132,8 +132,8 @@ class SysLog(): # Logger Class #
 
         self.DatabaseWorking = True
 
-    def create_global_function():
-        global Log
+
+    global Log # unworking global Log #
     def Log(self, Message:str, Level:int=0): # Handles The Log Of An Item #
 
         '''
