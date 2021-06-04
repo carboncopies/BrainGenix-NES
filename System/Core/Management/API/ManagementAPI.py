@@ -112,6 +112,23 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         CommandOutput = "INVALID VALUE FOR 'SysName' FIELD"
 
 
+                    # Check Builtin Commands #
+                    elif (self.Command['CallStack'] == 'help') and (self.Command['KeywordArgs'] == {}):
+                        CommandOutput = self.Help({})
+                        CommandName = 'help'
+                    elif (self.Command['CallStack'] == 'license') and (self.Command['KeywordArgs'] == {}):
+                        CommandOutput = self.License({})
+                        CommandName = 'license'
+                    elif (self.Command['CallStack'] == 'version') and (self.Command['KeywordArgs'] == {}):
+                        CommandOutput = self.Version({})
+                        CommandName = 'version'
+                    elif (self.Command['CallStack'] == 'TestAPI') and (self.Command['KeywordArgs'] == {}):
+                        CommandOutput = self.TestAPI({})
+                        CommandName = 'TestAPI'
+                    
+                    
+
+
                     # Run System Command #
                     else:
                         CommandCallStack = self.Command['CallStack']
@@ -119,7 +136,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
                         # Get Target Function #
                         Layers = CommandCallStack.split('.')
-                        CommandFunction = self
+                        CommandFunction = self.LFTM
 
 
                         # Iterate Through Layers, Run Command Called #
@@ -171,13 +188,14 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
     
     # ListAttribute Command #
-    def LS(self, ArgumentsDictionary):
+    def ls(self, ArgumentsDictionary):
 
         
         ##################################################################################################
         ## NOTE: WE SHOULD HAVE THE COMMAND TREE BE PRE-INDEXED TO PROVIDE THE BEST LS FUNCTIONALLITY   ##
         ## THIS SHOULD MAKE USE OF A NESTED DICT APPROACH, INCLUDING THE COMMANDS WITH THE mAPI_ PREFIX ##
         ##################################################################################################
+        # Also implement "Cd" functionallity
 
 
         # Check Command Validity #
@@ -189,7 +207,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         TargetPath = ArgumentsDictionary['Path']
 
         # Get Attributes #
-        AttrTarget = self
+        AttrTarget = self.LFTM
         for TargetPathName in TargetPath.split('.'):
             AttrTarget = getattr(AttrTarget, TargetPathName)
 
@@ -207,43 +225,14 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
     def Help(self, ArgumentsDictionary): # Provides Basic About The BGCLI #
 
-        HelpMessage = '''
-        This shell is a wrapper ontop of the BrainGenix API, so if you're looking for help on a specific "command", please referene the API Documentation.
-        Commands are structured as they are in the API, using "." to .
-        Following that are the arguments with an equals to the value. An example is shown below:
-
-        Zookeeper.DoesNodeExist NodeName=ExampleName
-
-
-        Some Built-In Commands are listed below as well.
-            Help (This Message)
-            License (Shows the BG license)
-            Authors (Provides a list of the current authors)
-            Version (Shows a version number)
-            '''
+        HelpMessage = 'This system provides a functional management interface to the BrainGenix system. Please use "ls Path=[path here]" to find commands, and use help Path=[path here] to find more information about a specific command. Please note that commands are seperated via a ".", so if calling command b nested under a, it would be "a.b".'
 
         return HelpMessage
 
 
     def Version(self, ArgumentsDictionary): # Provide Versioning Information #
 
-        return '''
-    BrainGenix-Development Version 0.0.7
-    '''
-
-
-    def Copyright(self, ArgumentsDictionary): # B.S. Copyright nonsense #
-
-        return '''
-    Copyright (c) Carboncopies Foundation For Substrate-Independent Minds, Inc.
-        '''
-
-    def Authors(self, ArgumentsDictionary): # Provides Author Information #
-
-        AuthorText = '''
-    Thanks to The Carboncopies Foundation and its members for contributing to and supporting the development of BrainGenix.
-        '''
-        return AuthorText
+        return 'BrainGenix-NES Development 0.0.7'
 
     def License(self, ArgumentsDictionary): # Provides Basic License Information As Command
 
