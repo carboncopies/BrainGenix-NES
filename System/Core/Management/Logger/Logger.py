@@ -193,7 +193,7 @@ class SysLog(): # Logger Class #
 
 
     def PullLog(self, NumberOfLines:int): # Pull n most recent entries from the log table #
-        
+
         # Pull Lines From Database #
         PullStatement= ("SELECT * FROM log LIMIT %d" % int(NumberOfLines))
         self.LoggerCursor.execute(PullStatement)
