@@ -298,6 +298,9 @@ class Leader(): # This Class Is Run By The Leader #
         self.Logger.Log('Created Telemetry-Zookeeper API Interaction Handler')
 
 
+        # Start #
+        self.Start()
+
 
     def Start(self):
 
@@ -311,7 +314,7 @@ class Leader(): # This Class Is Run By The Leader #
 
 
 
-    def AutoRefresh(self, RefreshInterval:float=1):
+    def AutoRefresh(self, RefreshInterval:float=0):
 
 
         # Start Inf Loop #
