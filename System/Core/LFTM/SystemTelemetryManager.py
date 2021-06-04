@@ -63,6 +63,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         pass
 
     
+    
     # Include Any mAPI Commands Here #
     def mAPI_GetClusterSize(self, APIArgs):
 
@@ -71,6 +72,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
 
         # Set Command #
         return self.Zookeeper.ConcurrentConnectedNodes()
+
 
     def mAPI_GetNodeList(self, APIArgs):
 
