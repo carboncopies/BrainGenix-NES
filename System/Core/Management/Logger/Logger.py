@@ -188,7 +188,7 @@ class SysLog(): # Logger Class #
 
             self.LoggerCursor.execute(insertStatement,val)
 
-            
+
             self.LogBuffer = ''
             
 

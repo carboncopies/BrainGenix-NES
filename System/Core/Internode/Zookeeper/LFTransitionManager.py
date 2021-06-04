@@ -81,7 +81,7 @@ class LFTM(): # Define Class Object #
                     # Call Transition Functions #                                   # ADD YOUR FUNCTION CALL BELOW HERE!
                     self.SystemTelemetryManager.TransitionFollower()
 
-                
+
                 elif ((self.HasZookeeperStateChanged) and (self.CurrentZookeeperState == 'Leader')):
 
                     # System Upgraded To Leader #

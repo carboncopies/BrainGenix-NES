@@ -156,7 +156,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
                 self.Logger.Log(E)
                 self.Logger.Log('Exception within APIServer, Restarting Server!')
-                
+
                 try:
                     self.Connection.close()
                 except:
