@@ -173,6 +173,12 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
     # ListAttribute Command #
     def LS(self, ArgumentsDictionary):
 
+        
+        ##################################################################################################
+        ## NOTE: WE SHOULD HAVE THE COMMAND TREE BE PRE-INDEXED TO PROVIDE THE BEST LS FUNCTIONALLITY   ##
+        ## THIS SHOULD MAKE USE OF A NESTED DICT APPROACH, INCLUDING THE COMMANDS WITH THE mAPI_ PREFIX ##
+        ##################################################################################################
+
 
         # Check Command Validity #
         if 'Path' not in ArgumentsDictionary:
@@ -182,13 +188,12 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Get Attributes From Arguments #
         TargetPath = ArgumentsDictionary['Path']
 
-        print(TargetPath)
-
         # Get Attributes #
-        AttrTarget = getattr(self, TargetPath)
-        print(AttrTarget)
+        AttrTarget = self
+        for TargetPathName in TargetPath.split('.'):
+            AttrTarget = getattr(AttrTarget, TargetPathName)
+
         Attributes = dir(AttrTarget)
-        print(Attributes)
 
         # Sort Attributes #
         OutAttr = []
@@ -197,7 +202,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                 OutAttr.append(Attr)
 
         # Return Output #
-        print(OutAttr)
         return str(OutAttr)
 
 
