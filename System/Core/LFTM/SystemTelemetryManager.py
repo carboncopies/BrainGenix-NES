@@ -63,3 +63,19 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         pass
 
     
+    # Include Any mAPI Commands Here #
+    def mAPI_GetClusterSize(self, APIArgs):
+
+        # Set Help String (NOTE, THE NAMESCHEME IS VERY IMPORTANT! MAKE SURE TO FOLLOW IT! (self.mAPI_[CommandName]_Help = 'HelpString')) #
+        self.mAPI_GetClusterSize_Help = '''The GetClusterSize function is responsible for returning the current number of nodes in the cluster. This is returned as an integar.'''
+
+        # Set Command #
+        return self.Zookeeper.ConcurrentConnectedNodes()
+
+    def mAPI_GetNodeList(self, APIArgs):
+
+        # Set Help String #
+        self.mAPI_GetNodeList_Help = 'The Get NodeList function returns a list of the hostnames of all nodes within this cluster'
+
+        # Set Command #
+        return self.Zookeeper.ConnectedNodes
