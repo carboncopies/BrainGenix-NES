@@ -54,7 +54,7 @@ def CanAccessDatabase(Host, DatabaseConfig:dict): # Runs Some Diagnostics About 
 
 
     # Diagnostic Message #
-    
+
 
     # Seperate Host Port And Address #
     Address = Host.split(':')[0]
