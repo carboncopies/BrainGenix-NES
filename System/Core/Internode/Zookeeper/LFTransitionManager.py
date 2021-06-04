@@ -115,7 +115,7 @@ class LFTM(): # Define Class Object #
 
             self.ShutdownSystem()
 
-            
+
 
     # Run Shutdown Commands On System Exit #
     def ShutdownSystem(self):

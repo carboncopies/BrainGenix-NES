@@ -169,7 +169,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Close The Socket #
         self.Socket.close()
 
-    
+
     # ListAttribute Command #
     def ls(self, ArgumentsDictionary):
 

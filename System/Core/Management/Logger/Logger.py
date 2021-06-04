@@ -190,7 +190,7 @@ class SysLog(): # Logger Class #
 
 
             self.LogBuffer = ''
-            
+
 
     def PullLog(self, NumberOfLines:int): # Pull n most recent entries from the log table #
         
