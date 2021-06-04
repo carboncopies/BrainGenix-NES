@@ -6,10 +6,10 @@
 Name: System telemetry management api.
 Description: This interface connects the system telemetry subsystem to the management api.
 Date-Created: 2021-06-03
-''' 
+'''
 
 class SystemTelemetryAPIInterface():
-    
+
     def __init__(self, SystemTelemetryInstance): # Get Some Params Here #
 
         # Create Local Pointer #

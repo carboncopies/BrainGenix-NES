@@ -110,7 +110,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
                     elif self.Command['SysName'] != 'NES':
                         CommandOutput = "INVALID VALUE FOR 'SysName' FIELD"
-                
+
 
                     # Run System Command #
                     else:

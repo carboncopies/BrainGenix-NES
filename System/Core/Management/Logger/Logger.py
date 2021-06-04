@@ -181,7 +181,7 @@ class SysLog(): # Logger Class #
             #
             # Write data *from the logbuffer* into the database here
             #
-            
+
             insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node) VALUES (%s, %s, \"%s\", \"%s\", \"%s\", \"%s\")")
 
             val = (Level, str(LogTime), CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, str(self.NodeID))

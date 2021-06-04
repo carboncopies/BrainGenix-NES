@@ -62,7 +62,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         # Skip, Nothing To Do #
         pass
 
-    
+
 
     # Include Any mAPI Commands Here #
     def mAPI_GetClusterSize(self, APIArgs):
