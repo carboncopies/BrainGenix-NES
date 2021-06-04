@@ -50,7 +50,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         # Log Finish Message #
         self.Logger.Log('Initalized System Telemetry Subsystem In Mode [None, Follower]')
 
-    
+
     def UpdateLeader(self): # Called To Update Anything That Needs Updating #
 
         # Skip, Nothing To Do #

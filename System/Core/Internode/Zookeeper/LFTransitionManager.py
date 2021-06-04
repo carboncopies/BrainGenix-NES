@@ -6,7 +6,7 @@
 Name: LFTM
 Description: The LFTM is used to handle the transitions between leader and follower modes.
 Date-Created: 2021-06-03
-''' 
+'''
 
 
 import os
@@ -59,7 +59,7 @@ class LFTM(): # Define Class Object #
                 ZookeeperState = self.ZookeeperInstance.ZookeeperMode
 
                 # Check If State Updated #
-                if (ZookeeperState != self.CurrentZookeeperState): 
+                if (ZookeeperState != self.CurrentZookeeperState):
 
                     # Log Change Message #
                     self.Logger.Log('Zookeeper State Change Asserted')
@@ -69,7 +69,7 @@ class LFTM(): # Define Class Object #
                     self.HasZookeeperStateChanged = True
                     self.CurrentZookeeperState = ZookeeperState
 
-                
+
 
                 # TRANSITION CONDIITONALS BELOW, CALLED WHEN SYSTEM TRANSITIONS TO/FROM LEADER/FOLLOWER #
                 if ((self.HasZookeeperStateChanged) and (self.CurrentZookeeperState == 'Follower')):
@@ -101,7 +101,7 @@ class LFTM(): # Define Class Object #
 
 
 
-                elif ((not self.HasZookeeperStateChanged) and (self.CurrentZookeeperState == 'Leader')): 
+                elif ((not self.HasZookeeperStateChanged) and (self.CurrentZookeeperState == 'Leader')):
 
                     # Execute Leader Main Loop Calls #                              # ADD YOUR FUNCTION CALL BELOW HERE!
                     self.SystemTelemetryManager.UpdateLeader()
