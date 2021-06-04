@@ -101,7 +101,10 @@ NodeCount = sZookeeper.ConcurrentConnectedNodes()
 APIServerCount = len(sZookeeper.ZookeeperConnection.get_children('/BrainGenix/API/Connections'))
 
 # Instantiate Leader/Follower Transition Manager #
-LFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI)
+sLFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI)
+
+# Link LFTM #
+sSocketAPI.LinkLFTM(sLFTMInstance)
 
 
 # MOTD #
@@ -127,4 +130,4 @@ mLogger.Log('')
 
 
 # Start System #
-LFTMInstance.MainLoop()
+sLFTMInstance.MainLoop()
