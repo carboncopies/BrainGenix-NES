@@ -63,7 +63,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         pass
 
     
-    
+
     # Include Any mAPI Commands Here #
     def mAPI_GetClusterSize(self, APIArgs):
 
@@ -81,3 +81,22 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
 
         # Set Command #
         return self.Zookeeper.ConnectedNodes
+
+
+    def mAPI_GetNodeStats(self, APIArgs):
+
+        # Set Help String #
+        self.mAPI_GetNodeList_Help = 'The Get Node Stats returns a json array of all collected node performance information. You must pass it a JSON request containing {"Node":[NodeName]}.'
+
+        # Set Command #
+        NodeName = APIArgs['Node']
+        return self.SysTelLeader.Info[NodeName]
+
+
+    def mAPI_GetAllNodeStats(self, APIArgs):
+
+        # Set Help String #
+        self.mAPI_GetNodeList_Help = 'The Get Node Stats returns a json array of all collected node performance information. It does not accept any parameters as input.'
+
+        # Set Command #
+        return self.SysTelLeader.Info
