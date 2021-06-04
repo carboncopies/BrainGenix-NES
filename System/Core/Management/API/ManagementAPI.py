@@ -190,7 +190,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Get Attributes #
         AttrTarget = self
-        
+
         if TargetPath != "":
 
             for TargetPathName in TargetPath.split('.'):

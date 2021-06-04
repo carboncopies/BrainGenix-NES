@@ -197,7 +197,7 @@ class SysLog(): # Logger Class #
         # Pull Lines From Database #
         PullStatement= ("SELECT * FROM log LIMIT %d" % int(NumberOfLines))
         self.LoggerCursor.execute(PullStatement)
-        
+
         Rows = self.LoggerCursor.fetchall()
 
         # Return Them #
