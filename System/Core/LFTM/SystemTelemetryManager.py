@@ -64,7 +64,8 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
 
 
 
-    # Include Any mAPI Commands Here #
+    ## Include Any mAPI Commands Here ##
+    # Command: {"SysName":"NES", "CallStack":"LFTM.SystemTelemetryManager.mAPI_GetClusterSize", "KeywordArgs": {}}
     def mAPI_GetClusterSize(self, APIArgs):
 
         # Set Help String (NOTE, THE NAMESCHEME IS VERY IMPORTANT! MAKE SURE TO FOLLOW IT! (self.mAPI_[CommandName]_Help = 'HelpString')) #
@@ -74,6 +75,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         return self.Zookeeper.ConcurrentConnectedNodes()
 
 
+    # Command: {"SysName":"NES", "CallStack":"LFTM.SystemTelemetryManager.mAPI_GetNodeList", "KeywordArgs": {}}
     def mAPI_GetNodeList(self, APIArgs):
 
         # Set Help String #
@@ -83,6 +85,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         return self.Zookeeper.ConnectedNodes
 
 
+    # Command: {"SysName":"NES", "CallStack":"LFTM.SystemTelemetryManager.mAPI_GetNodeStats", "KeywordArgs": {"Node": %Your Node Hostname% }}
     def mAPI_GetNodeStats(self, APIArgs):
 
         # Set Help String #
@@ -93,6 +96,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         return self.SysTelLeader.Info[NodeName]
 
 
+    # Command: {"SysName":"NES", "CallStack":"LFTM.SystemTelemetryManager.mAPI_GetAllNodeStats", "KeywordArgs": {}}
     def mAPI_GetAllNodeStats(self, APIArgs):
 
         # Set Help String #
