@@ -2,6 +2,7 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
+import gzip
 import datetime
 import inspect
 import os
