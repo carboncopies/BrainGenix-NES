@@ -77,7 +77,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     self.Command = self.Connection.recv(65535)
                     self.Command = self.Command.decode()
 
-                    print(self.Command)
+
                     # Convert To Dict From JSON #
                     try:
                         self.Command = json.loads(self.Command)
