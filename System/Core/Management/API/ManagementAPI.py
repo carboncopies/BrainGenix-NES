@@ -110,30 +110,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
                     elif self.Command['SysName'] != 'NES':
                         CommandOutput = "INVALID VALUE FOR 'SysName' FIELD"
-
-
-                    # Check Builtin Commands #
-                    elif (self.Command['CallStack'] == 'help') and (self.Command['KeywordArgs'] == {}):
-                        CommandOutput = self.Help({})
-                        CommandName = 'help'
-                    elif (self.Command['CallStack'] == 'license') and (self.Command['KeywordArgs'] == {}):
-                        CommandOutput = self.License({})
-                        CommandName = 'license'
-                    elif (self.Command['CallStack'] == 'version') and (self.Command['KeywordArgs'] == {}):
-                        CommandOutput = self.Version({})
-                        CommandName = 'version'
-                    elif (self.Command['CallStack'] == 'TestAPI') and (self.Command['KeywordArgs'] == {}):
-                        CommandOutput = self.TestAPI({})
-                        CommandName = 'TestAPI'
-
-
-                    # Call Info Commands #
-                    elif (self.Command['CallStack'] == 'ls'):
-                        CommandOutput = self.ls(self.Command['KeywordArgs'])
-                        CommandName = 'ls'
-                    
-                    
-
+                
 
                     # Run System Command #
                     else:
@@ -142,7 +119,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
                         # Get Target Function #
                         Layers = CommandCallStack.split('.')
-                        CommandFunction = self.LFTM
+                        CommandFunction = self
 
 
                         # Iterate Through Layers, Run Command Called #
@@ -201,7 +178,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         ## NOTE: WE SHOULD HAVE THE COMMAND TREE BE PRE-INDEXED TO PROVIDE THE BEST LS FUNCTIONALLITY   ##
         ## THIS SHOULD MAKE USE OF A NESTED DICT APPROACH, INCLUDING THE COMMANDS WITH THE mAPI_ PREFIX ##
         ##################################################################################################
-        # Also implement "Cd" functionallity
 
 
         # Check Command Validity #
@@ -213,7 +189,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         TargetPath = ArgumentsDictionary['Path']
 
         # Get Attributes #
-        AttrTarget = self.LFTM
+        AttrTarget = self
         
         if TargetPath != "":
 
