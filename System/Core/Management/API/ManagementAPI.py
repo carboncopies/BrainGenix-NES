@@ -42,6 +42,19 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.Thread.start()
 
 
+    # Load In External Commands #
+    def LinkLFTM(self, LFTMInstance): # Link LFTM #
+
+        # Log Link Start #
+        self.Logger.Log('Linking LFTM Instance To APIServer')
+
+        # Link LFTM #
+        self.LFTM = LFTMInstance
+
+        # Log Finish Method #
+        self.Logger.Log('Linking Complete')
+
+
     def ManagementAPIThread(self): # Create A Thread Function For The Management API #
 
         # Enter Connection Accept Loop #
@@ -56,6 +69,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                 self.Connection, self.ConnectionInformation = self.Socket.accept()
                 self.Logger.Log(f'Management API Recieved Connection From: {self.ConnectionInformation}')
 
+
                 # Enter Listening Loop To Recieve Commands #
                 while True:
 
@@ -63,7 +77,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     self.Command = self.Connection.recv(65535)
                     self.Command = self.Command.decode()
 
-
+                    print(self.Command)
                     # Convert To Dict From JSON #
                     try:
                         self.Command = json.loads(self.Command)
@@ -114,24 +128,29 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                             try:
                                 CommandFunction = getattr(CommandFunction, LayerName)
 
+
                                 # Run Function #
                                 CommandOutput = CommandFunction(ArgumentsDictionary)
+                                CommandName = CommandCallStack
 
 
                             except Exception as ErrorString:
 
                                 # Format Return Error For Return To Client #
                                 CommandOutput = str(ErrorString)
+                                CommandName = 'Error'
 
 
 
                     # Encode JSON Output #
-                    Response = {"Response" : CommandOutput}
+                    Response = {"Name" : CommandName, "Content" : CommandOutput}
                     ResponseString = json.dumps(Response)
                     ResponseByteString = ResponseString.encode()
 
                     # Send Output #
                     self.Connection.send(ResponseByteString)
+
+
 
             except Exception as E:
 
@@ -149,6 +168,37 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Close The Socket #
         self.Socket.close()
+
+    
+    # ListAttribute Command #
+    def LS(self, ArgumentsDictionary):
+
+
+        # Check Command Validity #
+        if 'Path' not in ArgumentsDictionary:
+            return 'Invalid Argument, Please Check Your "Path" Variable'
+
+
+        # Get Attributes From Arguments #
+        TargetPath = ArgumentsDictionary['Path']
+
+        print(TargetPath)
+
+        # Get Attributes #
+        AttrTarget = getattr(self, TargetPath)
+        print(AttrTarget)
+        Attributes = dir(AttrTarget)
+        print(Attributes)
+
+        # Sort Attributes #
+        OutAttr = []
+        for Attr in Attributes:
+            if '__' not in str(Attr):
+                OutAttr.append(Attr)
+
+        # Return Output #
+        print(OutAttr)
+        return str(OutAttr)
 
 
     def Help(self, ArgumentsDictionary): # Provides Basic About The BGCLI #
