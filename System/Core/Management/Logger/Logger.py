@@ -133,7 +133,6 @@ class SysLog(): # Logger Class #
         self.DatabaseWorking = True
 
 
-    global Log # unworking global Log #
     def Log(self, Message:str, Level:int=0): # Handles The Log Of An Item #
 
         '''

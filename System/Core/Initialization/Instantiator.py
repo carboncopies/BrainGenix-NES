@@ -9,17 +9,17 @@ Date-Created: 2021-03-24
 '''
 
 
-from Core.Internode.Zookeeper.Zookeeper import ZK
+from System.Core.Internode.Zookeeper.Zookeeper import ZK
 
-from Core.Internode.Kafka.KafkaInterface import KafkaInterface
+from System.Core.Internode.Kafka.KafkaInterface import KafkaInterface
 
-from Core.Internode.Database.DatabaseInterface import DBInterface
+from System.Core.Internode.Database.DatabaseInterface import DBInterface
 
-from Core.Diagnostics.ZKDiagnostics import CanAccessZookeeper
-from Core.Diagnostics.KafkaDiagnostics import CanAccessKafka
-from Core.Diagnostics.DatabaseDiagnostics import CanAccessDatabase
+from System.Core.Diagnostics.ZKDiagnostics import CanAccessZookeeper
+from System.Core.Diagnostics.KafkaDiagnostics import CanAccessKafka
+from System.Core.Diagnostics.DatabaseDiagnostics import CanAccessDatabase
 
-from Core.Management.Logger.Logger import SysLog
+from System.Core.Management.Logger.Logger import SysLog
 
 
 def InstantiateZK(Logger, ZookeeperConfig): # Instantiates Zookeeper #
