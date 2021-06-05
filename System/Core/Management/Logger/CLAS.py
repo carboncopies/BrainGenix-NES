@@ -51,7 +51,7 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         Output = {}
 
         for NodeName in Nodes:
-            output.update({NodeName : []})
+            Output.update({NodeName : []})
 
         # Sort Into List #
         for LogItem in LogEntries:
