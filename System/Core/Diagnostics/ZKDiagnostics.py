@@ -56,8 +56,8 @@ def CanAccessZookeeper(ZKConfigDict:dict, Logger:object): # Runs Some Diagnostic
     Logger.Log('Starting Zookeeper Connection Diagnostic Tool', 1)
 
     # Seperate Host Port And Address #
-    Address = Host.split(':')[0]
-    Port = Host.split(':')[1]
+    Address = ZKHost.split(':')[0]
+    Port = ZKHost.split(':')[1]
 
     # Check If Address Valid #
     Logger.Log('Checking If Address Has Correct Number Of Octets', 1)
@@ -105,7 +105,7 @@ def CanAccessZookeeper(ZKConfigDict:dict, Logger:object): # Runs Some Diagnostic
     # Attempt Kazoo Connection #
     Logger.Log('Retrying Connection To Zookeeper Service')
     try:
-        zk = kazoo.client.KazooClient(hosts=Host)
+        zk = kazoo.client.KazooClient(hosts=ZKHost)
         zk.start()
     except Exception as E:
         Logger.Log('An Unknown Error Was Detected! See Line Below.', 3)
