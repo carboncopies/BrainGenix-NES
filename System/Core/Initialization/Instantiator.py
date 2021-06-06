@@ -50,7 +50,7 @@ def InstantiateZK(Logger, ZookeeperConfig): # Instantiates Zookeeper #
         Logger.Log(f'Exception: {E}; Running Zookeeper Diagnostics!', 3)
 
         # Run Diagnostics #
-        CanAccessZookeeper(ZookeeperHost, Logger) ###############################################################################
+        CanAccessZookeeper(ZookeeperConfig, Logger) ###############################################################################
         exit()
 
 
