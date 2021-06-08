@@ -89,7 +89,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         return CommandOutput, CommandName
 
 
- 
+
 
 
     def ManagementAPIThread(self): # Create A Thread Function For The Management API #
