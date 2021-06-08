@@ -8,12 +8,10 @@ Description: This file is used to check if a Database service is up and availiab
 Date-Created: 2021-03-19
 '''
 
-from System.Core.Management.Logger.Logger import Log
 import subprocess
 import os
 import socket
 import pymysql
-Log('Starting Database Connection Diagnostic Tool', 1)
 
 def IsPortOpen(Address,Port): # Checks If A Given Port Is Open #
 
@@ -44,7 +42,7 @@ def CheckPing(Host): # Returns True Or False If A Given Address Is Reachable #
         return False
 
 
-def CanAccessDatabase(Host, DatabaseConfig:dict): # Runs Some Diagnostics About The Database Connection #
+def CanAccessDatabase(DatabaseConfig:dict, Logger): # Runs Some Diagnostics About The Database Connection #
 
     # Extract Values From Dictionary #
     Username = str(DatabaseConfig.get('DatabaseUsername'))
@@ -54,7 +52,7 @@ def CanAccessDatabase(Host, DatabaseConfig:dict): # Runs Some Diagnostics About 
 
 
     # Diagnostic Message #
-
+    Logger.Log('Starting Database Connection Diagnostic Tool', 1)
 
     # Seperate Host Port And Address #
     Address = Host.split(':')[0]
@@ -65,60 +63,60 @@ def CanAccessDatabase(Host, DatabaseConfig:dict): # Runs Some Diagnostics About 
 
 
     # Check If Address Valid #
-    Log('Checking If Address Has Correct Number Of Octets', 1)
+    Logger.Log('Checking If Address Has Correct Number Of Octets', 1)
     Octets = Address.split('.')
     if len(Octets) != 4:
-        Log('Address Invalid Octet Count, Please Use A Valid IPv4 Address! Check Configuration File.', 3)
+        Logger.Log('Address Invalid Octet Count, Please Use A Valid IPv4 Address! Check Configuration File.', 3)
         return False
     else:
-        Log('Address Valid Octet Count, Advancing To Next Test', 1)
+        Logger.Log('Address Valid Octet Count, Advancing To Next Test', 1)
 
 
     # Check If Address Valid Numbers #
-    Log('Checking If Address Has Valid Numbers In Octets', 1)
+    Logger.Log('Checking If Address Has Valid Numbers In Octets', 1)
     for Octet in Octets:
         if (int(Octet) > 255) or (int(Octet) < 0):
-            Log('Invalid Number In Database Host Address Octet! Check Configuration File.', 3)
+            Logger.Log('Invalid Number In Database Host Address Octet! Check Configuration File.', 3)
             return False
-    Log('Octets Valid, Advancing To Next Test', 1)
+    Logger.Log('Octets Valid, Advancing To Next Test', 1)
 
     # Check If Device Is Reachable #
-    Log(f'Checking If Database Host Server Is Reachable At {Address}', 1)
+    Logger.Log(f'Checking If Database Host Server Is Reachable At {Address}', 1)
     PingResult = CheckPing(Address)
 
     if not PingResult:
-        Log('System Unreachable, Please Check Your Config File Or Database Installation!', 3)
+        Logger.Log('System Unreachable, Please Check Your Config File Or Database Installation!', 3)
         return False
     else:
-        Log('System Reachable, Advancing To Next Test', 1)
+        Logger.Log('System Reachable, Advancing To Next Test', 1)
 
     # Check If Port In Allowed Range #
     if Port != None:
-        Log('Checking If Port In Allowed Range (0-65535)', 1)
+        Logger.Log('Checking If Port In Allowed Range (0-65535)', 1)
         if not ((int(Port) > 0) and (int(Port) < 65536)):
-            Log('Port Outside Allwed Range, Please Check Configuration File')
+            Logger.Log('Port Outside Allwed Range, Please Check Configuration File')
             return False
-        Log('Port Within Valid Range, Advancing To Next Test')
+        Logger.Log('Port Within Valid Range, Advancing To Next Test')
 
     # Check If Host Has Port Open #
     if Port != None:
-        Log('Checking If Remote Host Has Port Open')
+        Logger.Log('Checking If Remote Host Has Port Open')
         if not IsPortOpen(Address, Port):
-            Log(f'Address {Address} Does Not Have Port {Port} Open, Check Configuration Or Database Service!', 3)
+            Logger.Log(f'Address {Address} Does Not Have Port {Port} Open, Check Configuration Or Database Service!', 3)
             return False
         else:
-            Log('Port Open, Advancing To Next Test', 1)
+            Logger.Log('Port Open, Advancing To Next Test', 1)
 
     # Attempt Database Connection #
-    Log('Attempting Database Connection')
+    Logger.Log('Attempting Database Connection')
     try:
         pymysql.connect(host=Host, user=Username, password=Password, db=Database)
     except Exception as E:
-        Log('A Fatal Error Has Been Asserted, Please See Line Below For More Information:', 3)
-        Log(E, 3)
+        Logger.Log('A Fatal Error Has Been Asserted, Please See Line Below For More Information:', 3)
+        Logger.Log(E, 3)
         return False
 
-    Log('All Tests Passed, Please Check For Intermittent Problems Such As Networking Issues, Or DB Configuration Issues')
+    Logger.Log('All Tests Passed, Please Check For Intermittent Problems Such As Networking Issues, Or DB Configuration Issues')
 
     # Return True, After All Tests Passed #
     return True
