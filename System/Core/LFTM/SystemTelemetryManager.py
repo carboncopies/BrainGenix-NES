@@ -38,19 +38,6 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         self.Logger.Log('Initalized System Telemetry Subsystem')
 
 
-    # def StartSystemLeader(self): # Called During Startup #
-
-    #     # Log Instantiation #
-    #     self.Logger.Log('Starting System Telemetry Subsystem In Leader Mode')
-
-    #     # Instantiate #
-    #     self.SysTelFollower = Follower(Logger=self.Logger, Zookeeper=self.Zookeeper)
-    #     self.SysTelLeader = Leader(Logger=self.Logger, Zookeeper=self.Zookeeper)
-
-    #     # Log Finish Message #
-    #     self.Logger.Log('Initalized System Telemetry Subsystem In Mode Leader')
-
-
     def TransitionLeader(self): # Transitions The System To Follower Mode #
 
         # Log Instantiation #
