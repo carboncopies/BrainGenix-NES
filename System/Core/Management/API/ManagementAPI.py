@@ -55,6 +55,43 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.Logger.Log('Linking Complete')
 
 
+    def ExecuteCommand(self): # Runs The Command #
+
+        # Extract Values From Command Dict #
+        CommandCallStack = self.Command['CallStack']
+        ArgumentsDictionary = self.Command['KeywordArgs']
+
+        # Get Target Function #
+        Layers = CommandCallStack.split('.')
+        CommandFunction = self
+
+
+        # Iterate Through Layers, Run Command Called #
+        for _, LayerName in enumerate(Layers):
+
+            try:
+                CommandFunction = getattr(CommandFunction, LayerName)
+
+
+                # Run Function #
+                CommandOutput = CommandFunction(ArgumentsDictionary)
+                CommandName = CommandCallStack
+
+
+            except Exception as ErrorString:
+
+                # Format Return Error For Return To Client #
+                CommandOutput = str(ErrorString)
+                CommandName = 'Error'
+
+
+        # Return Values #
+        return CommandOutput, CommandName
+
+
+ 
+
+
     def ManagementAPIThread(self): # Create A Thread Function For The Management API #
 
         # Enter Connection Accept Loop #
@@ -77,7 +114,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     self.Command = self.Connection.recv(65535)
                     self.Command = self.Command.decode()
 
-
+                    print(self.Command)
                     # Convert To Dict From JSON #
                     try:
                         self.Command = json.loads(self.Command)
@@ -85,7 +122,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         self.Logger.Log('Exception In Management Server JSONLOAD', 1)
                         self.Logger.Log(e)
 
-
+                    print(self.Command)
                     # Check That Command Syntax Is Correct #
                     if str(type(self.Command)) != "<class 'dict'>":
                         CommandOutput = "INVALID DICTIONARY FORMAT"
@@ -111,44 +148,21 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     elif self.Command['SysName'] != 'NES':
                         CommandOutput = "INVALID VALUE FOR 'SysName' FIELD"
 
-
                     # Run System Command #
                     else:
-                        CommandCallStack = self.Command['CallStack']
-                        ArgumentsDictionary = self.Command['KeywordArgs']
+                        print(self.Command)
+                        CommandOutput, CommandName = self.ExecuteCommand()
 
-                        # Get Target Function #
-                        Layers = CommandCallStack.split('.')
-                        CommandFunction = self
+                        print(CommandOutput)
 
 
-                        # Iterate Through Layers, Run Command Called #
-                        for _, LayerName in enumerate(Layers):
+                # Encode JSON Output #
+                Response = {"Name" : CommandName, "Content" : CommandOutput}
+                ResponseString = json.dumps(Response)
+                ResponseByteString = ResponseString.encode()
 
-                            try:
-                                CommandFunction = getattr(CommandFunction, LayerName)
-
-
-                                # Run Function #
-                                CommandOutput = CommandFunction(ArgumentsDictionary)
-                                CommandName = CommandCallStack
-
-
-                            except Exception as ErrorString:
-
-                                # Format Return Error For Return To Client #
-                                CommandOutput = str(ErrorString)
-                                CommandName = 'Error'
-
-
-
-                    # Encode JSON Output #
-                    Response = {"Name" : CommandName, "Content" : CommandOutput}
-                    ResponseString = json.dumps(Response)
-                    ResponseByteString = ResponseString.encode()
-
-                    # Send Output #
-                    self.Connection.send(ResponseByteString)
+                # Send Output #
+                self.Connection.send(ResponseByteString)
 
 
 
