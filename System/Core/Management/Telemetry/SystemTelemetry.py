@@ -80,32 +80,11 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
         # Start Inf Loop #
         while True:
 
-
-            # Get Start Time #
-            #StartTime = time.time()
-
-
             # Get Dynamic Stats #
-            t = time.time()
             self.GetDynamicStatsDict()
-
 
             # Update Zookeeper #
             QueueObject.put(self.SystemHardware)
-            print(time.time()-t)
-
-
-
-            # Delay For Requested Refresh Interval #
-
-            # EndTime = time.time()
-            # ExecutionTime = StartTime - EndTime
-            # DelayTime = RefreshInterval - ExecutionTime
-
-            # try:
-            #     time.sleep(DelayTime)
-            # except ValueError: # Catch Exception if the execution time for finding stats takes longer than the refresh interval, resulting in negative delay
-            #     pass
 
 
     def GetStaticStatsDict(self): # Gets Static Stats And Puts Them Into A Dictionary #
