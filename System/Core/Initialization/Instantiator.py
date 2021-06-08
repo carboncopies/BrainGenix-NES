@@ -97,8 +97,6 @@ def InstantiateInternodeQueue(Logger, InternodeConfigDict): # Instantiates Kafka
 
         # Instantiate Socket System #
 
-        pass
-
 
     else:
 
