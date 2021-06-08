@@ -166,8 +166,35 @@ class SysLog(): # Logger Class #
         self.LogBuffer += LogString
 
         if self.PrintEnabled:
-            print(LogString[:-1])
-
+            if False == True: #is color enabled? "unadded"
+                #
+                # checks level color to use
+                #
+                if Level == 0:
+                  print("\x1b[255;255;255m" + LogString[:-1])
+                if Level == 1:
+                    print("\x1b[77;166;255m" + LogString[:-1])
+                if Level == 2:
+                    print("\x1b[179;255;217m" + LogString[:-1])
+                if Level == 3:
+                    print("\x1b[51;51;255m" + LogString[:-1])
+                if Level == 4:
+                    print("\x1b[212;0;255m" + LogString[:-1])
+                if Level == 5:
+                    print("\x1b[106;255;77m" + LogString[:-1])
+                if Level == 6:
+                    print("\x1b[204;153;255m" + LogString[:-1])
+                if Level == 7:
+                    print("\x1b[149;179;0m" + LogString[:-1])
+                if Level == 8:
+                    print("\x1b[255;255;0m" + LogString[:-1])
+                if Level == 9:
+                    print("\x1b[255;170;0m" + LogString[:-1])
+                if Level == 10:
+                    print("\x1b[255;0;0m" + LogString[:-1])
+            else:
+                print(LogString[:-1])
+                print("\x1b[255;0;0m" + "test")
 
         if self.DatabaseWorking == False:
 
