@@ -8,6 +8,7 @@ import datetime
 import psutil
 import GPUtil
 import threading
+import queue
 import time
 import json
 
@@ -42,12 +43,38 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
 
         # Start AutoRefresh Daemon #
         self.Logger.Log('Automatic Refresh Enabled, Starting Thread')
-        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(1,), name='System Telemetry Follower Thread')
+        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(0,), name='System Telemetry Follower Thread')
         self.UpdateThread.start()
         self.Logger.Log('Thread Started, Dynamic Usage Stats Will Be Refreshed Automatically')
 
 
+    def SendStatsThread(self, InQueue): # Send Stats Via Send Command #
+
+        # Log Start #
+        self.Logger.Log('Starting SystemTelemetry Transmission Thread')
+
+        # Enter Main Loop #
+        while True:
+
+            # Pull Data From Queue #
+            Data = InQueue.get()
+
+            # Send Data #
+            self.SendStats(Data)
+
+
     def AutoRefresh(self, RefreshInterval:float=1):
+
+        # Create Queue #
+        self.Logger.Log('Creating SendStats Queue')
+        QueueObject = queue.Queue()
+
+        # Start ZKDataSend Thread #
+        self.Logger.Log('Creating SystemStatistics Auto Transmission Thread')
+        self.ZKDataSendThread = threading.Thread(target=self.SendStatsThread, args=(QueueObject,))
+
+        self.Logger.Log('Starting System Statistics Auto Transmission Thread')
+        self.ZKDataSendThread.start()
 
 
         # Start Inf Loop #
@@ -55,27 +82,30 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
 
 
             # Get Start Time #
-            StartTime = time.time()
+            #StartTime = time.time()
 
 
             # Get Dynamic Stats #
+            t = time.time()
             self.GetDynamicStatsDict()
 
 
             # Update Zookeeper #
-            self.SendStats()
+            QueueObject.put(self.SystemHardware)
+            print(time.time()-t)
+
 
 
             # Delay For Requested Refresh Interval #
 
-            EndTime = time.time()
-            ExecutionTime = StartTime - EndTime
-            DelayTime = RefreshInterval - ExecutionTime
+            # EndTime = time.time()
+            # ExecutionTime = StartTime - EndTime
+            # DelayTime = RefreshInterval - ExecutionTime
 
-            try:
-                time.sleep(DelayTime)
-            except ValueError: # Catch Exception if the execution time for finding stats takes longer than the refresh interval, resulting in negative delay
-                pass
+            # try:
+            #     time.sleep(DelayTime)
+            # except ValueError: # Catch Exception if the execution time for finding stats takes longer than the refresh interval, resulting in negative delay
+            #     pass
 
 
     def GetStaticStatsDict(self): # Gets Static Stats And Puts Them Into A Dictionary #
@@ -209,15 +239,17 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
 
 
         # Get CPU Realtime Statistics #
+
         CPUInfo = psutil.cpu_freq()
 
         self.SystemHardware.update({'CPUFrequency' : CPUInfo.current})
         CPUUsage = []
 
-        for _, Percent in enumerate(psutil.cpu_percent(percpu=True, interval=1)):
+        for _, Percent in enumerate(psutil.cpu_percent(percpu=True, interval=0.05)):
             CPUUsage.append(Percent)
 
         self.SystemHardware.update({'CPUUsage' : CPUUsage})
+
 
 
         # Get Memory Info #
@@ -233,11 +265,15 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
         self.SystemHardware.update({'SWAPPercent' : Swap.percent})
 
 
+
+
         # Get Realtime Network Info #
         NetInfo = psutil.net_io_counters()
 
         self.SystemHardware.update({'BytesSent' : NetInfo.bytes_sent})
         self.SystemHardware.update({'BytesRecv' : NetInfo.bytes_recv})
+
+
 
 
         # Get RealTime GPU Info #
@@ -258,15 +294,20 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
         self.SystemHardware.update({'GPUTemps' : GPUTemps})
 
 
-    def SendStats(self): # Sends JSON Compressed Stats #
+
+
+    def SendStats(self, Data): # Sends JSON Compressed Stats #
 
         # Dump The JSON Data #
 
-        JSONArray = json.dumps(self.SystemHardware)
+        JSONArray = json.dumps(Data)
         JSONArray = JSONArray.encode('ascii')
 
-        self.ZK.TryCreateOverwrite(f'/BrainGenix/System/Telemetry/{self.NodeName}', zNodeData = JSONArray, ephemeral = True)
-
+        # Dump Data #
+        try:
+            self.ZK.TryCreateOverwrite(f'/BrainGenix/System/Telemetry/{self.NodeName}', zNodeData = JSONArray, ephemeral = True)
+        except Exception as E:
+            self.Logger.Log(E, 6)
 
 class Leader(): # This Class Is Run By The Leader #
 

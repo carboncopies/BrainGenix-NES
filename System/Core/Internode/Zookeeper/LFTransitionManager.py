@@ -31,11 +31,15 @@ class LFTM(): # Define Class Object #
 
         # Set Default State #
         self.CurrentZookeeperState = 'Follower' # <-- Don't change this, it's set to follower for a reason...
-        self.HasZookeeperStateChanged = True # <-- Again, don't change this, its set this way for initialization.
+        self.HasZookeeperStateChanged = False # <-- Again, don't change this, its set this way for initialization.
 
 
         # Create Instances Of Requested Systems #                                   # ADD YOUR FUNCTION CALL BELOW HERE!
         self.SystemTelemetryManager = SystemTelemetryManager(self.Logger, self.ZookeeperInstance)
+
+
+        ## INCLUDE INITIALIZATION CALLS BELOW TO START SUBSYSTEMS ##
+        self.SystemTelemetryManager.StartSystem()
 
 
         # Log End Message #
