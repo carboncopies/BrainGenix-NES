@@ -11,8 +11,8 @@ Date-Created: 2021-01-29
 '''
 
 
-from System.Core.Management.Telemetry.SystemTelemetry import Follower
-from System.Core.Management.Telemetry.SystemTelemetry import Leader
+from Core.Management.Telemetry.SystemTelemetry import Follower
+from Core.Management.Telemetry.SystemTelemetry import Leader
 
 
 
