@@ -72,7 +72,6 @@ class SysLog(): # Logger Class #
 
         # Extract the important values from the dictionary and return them to the main system #
         LogPath = str(ConfigFileDictionary.get('LogPath'))
-        PrintLogText = bool(ConfigFileDictionary.get('PrintLogText'))
         SecondsToKeepLogs = int(ConfigFileDictionary.get('SecondsToKeepLogs'))
         ConsoleOutputEnabled = bool(ConfigFileDictionary.get('ConsoleOutputEnabled'))
 
