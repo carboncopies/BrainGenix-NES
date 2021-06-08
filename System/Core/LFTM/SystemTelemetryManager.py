@@ -2,7 +2,7 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
-import copy
+#import copy
 
 '''
 Name: ZKManager
@@ -11,8 +11,8 @@ Date-Created: 2021-01-29
 '''
 
 
-from Core.Management.Telemetry.SystemTelemetry import Follower
-from Core.Management.Telemetry.SystemTelemetry import Leader
+from System.Core.Management.Telemetry.SystemTelemetry import Follower
+from System.Core.Management.Telemetry.SystemTelemetry import Leader
 
 
 
