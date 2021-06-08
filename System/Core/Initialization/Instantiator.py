@@ -134,7 +134,7 @@ def InstantiateDB(Logger, DBConfig): # Instantiates Database Interface #
         Logger.Log(f'Exception: {E}; Running Database Diagnostics!', 3)
 
         # Run Diagnostics #
-        CanAccessDatabase(Host, Username, Password, Database, Logger) ###############################################################################################
+        CanAccessDatabase(DBConfig, Logger)
         exit()
 
 
