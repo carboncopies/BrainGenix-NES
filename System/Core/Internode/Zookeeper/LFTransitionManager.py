@@ -8,13 +8,10 @@ Description: The LFTM is used to handle the transitions between leader and follo
 Date-Created: 2021-06-03
 '''
 
-
 import os
-#import time
 
 
-from System.Core.LFTM.SystemTelemetryManager import SystemTelemetryManager
-
+from Core.LFTM.SystemTelemetryManager import SystemTelemetryManager
 
 
 class LFTM(): # Define Class Object #
