@@ -76,6 +76,9 @@ class SysLog(): # Logger Class #
         ConsoleOutputEnabled = bool(ConfigFileDictionary.get('ConsoleOutputEnabled'))
         self.ConsoleColorEnabled = bool(ConfigFileDictionary.get('ConsoleColorEnabled'))
 
+        # Logger Config Params #
+        self.LevelColors = ConfigFileDictionary['LogLevelColors']
+        self.LevelNames = ConfigFileDictionary['LogLevelNames']
 
 
         # Create Local Log Path Directory #
@@ -88,7 +91,6 @@ class SysLog(): # Logger Class #
 
 
         # Initialize Local Variable Information #
-
         self.LogBuffer = '[Level] [               Time] [            Module Name] [           Function] [Message]\n'
         self.PrintEnabled = ConsoleOutputEnabled
         self.CurrentLogLength = 1
@@ -133,12 +135,14 @@ class SysLog(): # Logger Class #
 
         self.DatabaseWorking = True
 
+
     def ColorizeText(self, Text, Color): # Colorizes And Prints A String Of Text #
 
         # Get RGB #
         Red = Color[0]
         Green = Color[1]
         Blue = Color[2]
+
 
         # Add Colorization Char #
         PrintString = f'\x1b[38;2;{Red};{Green};{Blue}m'
@@ -194,34 +198,16 @@ class SysLog(): # Logger Class #
         self.LogBuffer += LogString
 
         if self.PrintEnabled:
-            if self.ConsoleColorEnabled == True: #is color enabled?
-                #
-                # checks level color to use
-                #
-                if Level == 0:
-                    self.ColorizeText(LogString,(255,255,255))
-                if Level == 1:
-                    self.ColorizeText(LogString,(77,166,255))
-                if Level == 2:
-                    self.ColorizeText(LogString,(179,255,217))
-                if Level == 3:
-                    self.ColorizeText(LogString,(51,51,255))
-                if Level == 4:
-                    self.ColorizeText(LogString,(212,0,255))
-                if Level == 5:
-                    self.ColorizeText(LogString,(106,255,77))
-                if Level == 6:
-                    self.ColorizeText(LogString,(204,153,0))
-                if Level == 7:
-                    self.ColorizeText(LogString,(149,179,0))
-                if Level == 8:
-                    self.ColorizeText(LogString,(255,255,0))
-                if Level == 9:
-                    self.ColorizeText(LogString,(255,170,0))
-                if Level == 10:
-                    self.ColorizeText(LogString,(255,0,0))
+
+            # Colorize Text #
+            if self.ConsoleColorEnabled == True:
+
+                # Log With Colors #
+                self.ColorizeText(LogString, self.LevelColors[int(Level)])
+
+            # Print Text Normally #
             else:
-                print(LogString[:])
+                print(LogString)
 
 
 
