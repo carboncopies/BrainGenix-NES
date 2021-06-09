@@ -74,7 +74,7 @@ class SysLog(): # Logger Class #
         LogPath = str(ConfigFileDictionary.get('LogPath'))
         SecondsToKeepLogs = int(ConfigFileDictionary.get('SecondsToKeepLogs'))
         ConsoleOutputEnabled = bool(ConfigFileDictionary.get('ConsoleOutputEnabled'))
-        ConsoleColorEnabled = bool(ConfigFileDictionary.get('ConsoleColorEnabled'))
+        self.ConsoleColorEnabled = bool(ConfigFileDictionary.get('ConsoleColorEnabled'))
 
 
 
@@ -187,7 +187,7 @@ class SysLog(): # Logger Class #
         self.LogBuffer += LogString
 
         if self.PrintEnabled:
-            if False == True: #is color enabled? "unadded"
+            if self.ConsoleColorEnabled == True: #is color enabled? "unadded"
                 #
                 # checks level color to use
                 #
