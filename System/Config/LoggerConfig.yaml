@@ -2,5 +2,6 @@
 LogPath: ../Logs/, # Set The Path For Logs
 PrintLogText: True, # Enable or Disable Printing Logs
 SecondsToKeepLogs: 1,  # Define The Number Of Seconds To Keep Logs Before They Are Purged
-ConsoleOutputEnabled: True # Enable or disable console output
+ConsoleOutputEnabled: True, # Enable or disable console output
+
 }
