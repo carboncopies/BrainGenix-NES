@@ -22,10 +22,7 @@ def LoadLoggerConfig(ConfigFilePath):
 
     # First Read the contents of the file and parse it #
     with open(ConfigFilePath, 'r') as File:
-        ConfigFileContents = File.read()
-
-    ConfigFileDictionary = yaml.safe_load(ConfigFileContents)
-
+        ConfigFileDictionary = yaml.safe_load(File)
 
     # Return the values #
     return ConfigFileDictionary
