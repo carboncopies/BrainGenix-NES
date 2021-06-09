@@ -74,6 +74,8 @@ class SysLog(): # Logger Class #
         LogPath = str(ConfigFileDictionary.get('LogPath'))
         SecondsToKeepLogs = int(ConfigFileDictionary.get('SecondsToKeepLogs'))
         ConsoleOutputEnabled = bool(ConfigFileDictionary.get('ConsoleOutputEnabled'))
+        ConsoleColorEnabled = bool(ConfigFileDictionary.get('ConsoleColorEnabled'))
+
 
 
         # Create Local Log Path Directory #
@@ -130,6 +132,25 @@ class SysLog(): # Logger Class #
         self.LoggerCursor = self.DatabaseConnection.cursor()
 
         self.DatabaseWorking = True
+
+    def ColorizeText(self, Text, Color): # Colorizes And Prints A String Of Text #
+
+        # Get RGB #
+        Red = Color[0]
+        Green = Color[1]
+        Blue = Color[2]
+
+        # Add Colorization Char #
+        PrintString = f'\x1b[38;2;{Red};{Green};{Blue}m'
+
+        # Add Text #
+        PrintString += Text
+
+        # Add EndColor Char #
+        PrintString += '\x1b[0m'
+
+        # Print #
+        print(PrintString)
 
 
     def Log(self, Message:str, Level:int=0): # Handles The Log Of An Item #
@@ -194,7 +215,9 @@ class SysLog(): # Logger Class #
                     print("\x1b[255;0;0m" + LogString[:-1])
             else:
                 print(LogString[:-1])
-                print("\x1b[255;0;0m" + "test")
+                
+                self.ColorizeText('test', (255,0,0))
+                #print("\x1b[255;0;0m" + "test")
 
         if self.DatabaseWorking == False:
 
