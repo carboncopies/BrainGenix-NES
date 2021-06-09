@@ -164,10 +164,17 @@ class SysLog(): # Logger Class #
 
         +==================================+
         | Level             | Number Value |
-        | Info              | 0            |
-        | Warning           | 1            |
-        | Error (Non fatal) | 2            |
-        | Error (Fatal)     | 3            |
+        | System            | 0            |
+        | Config            | 1            |
+        | Audit             | 2            |
+        | Info              | 3            |
+        | Detail            | 4            |
+        | Fine              | 5            |
+        | Finer             | 6            |
+        | Finest            | 7            |
+        | Warning           | 8            |
+        | Severe (Non Fatal)| 9            |
+        | Fatal             | 10           |
         +==================================+
 
         The error codes will be used to sort the log later, if the log is checked.
@@ -183,41 +190,40 @@ class SysLog(): # Logger Class #
         CallingFunctionName = CallStack[1][3]
 
         LogTime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(23, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}\n'
+        LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(23, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}'
         self.LogBuffer += LogString
 
         if self.PrintEnabled:
-            if self.ConsoleColorEnabled == True: #is color enabled? "unadded"
+            if self.ConsoleColorEnabled == True: #is color enabled?
                 #
                 # checks level color to use
                 #
                 if Level == 0:
-                  print("\x1b[255;255;255m" + LogString[:-1])
+                    self.ColorizeText(LogString,(255,255,255))
                 if Level == 1:
-                    print("\x1b[77;166;255m" + LogString[:-1])
+                    self.ColorizeText(LogString,(77,166,255))
                 if Level == 2:
-                    print("\x1b[179;255;217m" + LogString[:-1])
+                    self.ColorizeText(LogString,(179,255,217))
                 if Level == 3:
-                    print("\x1b[51;51;255m" + LogString[:-1])
+                    self.ColorizeText(LogString,(51,51,255))
                 if Level == 4:
-                    print("\x1b[212;0;255m" + LogString[:-1])
+                    self.ColorizeText(LogString,(212,0,255))
                 if Level == 5:
-                    print("\x1b[106;255;77m" + LogString[:-1])
+                    self.ColorizeText(LogString,(106,255,77))
                 if Level == 6:
-                    print("\x1b[204;153;255m" + LogString[:-1])
+                    self.ColorizeText(LogString,(204,153,0))
                 if Level == 7:
-                    print("\x1b[149;179;0m" + LogString[:-1])
+                    self.ColorizeText(LogString,(149,179,0))
                 if Level == 8:
-                    print("\x1b[255;255;0m" + LogString[:-1])
+                    self.ColorizeText(LogString,(255,255,0))
                 if Level == 9:
-                    print("\x1b[255;170;0m" + LogString[:-1])
+                    self.ColorizeText(LogString,(255,170,0))
                 if Level == 10:
-                    print("\x1b[255;0;0m" + LogString[:-1])
+                    self.ColorizeText(LogString,(255,0,0))
             else:
-                print(LogString[:-1])
-                
-                self.ColorizeText('test', (255,0,0))
-                #print("\x1b[255;0;0m" + "test")
+                print(LogString[:])
+
+
 
         if self.DatabaseWorking == False:
 
