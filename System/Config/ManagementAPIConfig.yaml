@@ -1,4 +1,4 @@
 {
-"Port" : 6555 # Set the port number to be used by the APIServer
+"Port" : 6556 # Set the port number to be used by the APIServer
 # Note: There is no ip value here, as the leader is automatically used as the apiserver backend
 } 
