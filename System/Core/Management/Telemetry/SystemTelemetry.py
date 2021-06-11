@@ -11,6 +11,7 @@ import threading
 import queue
 import time
 import json
+import sys
 
 from Core.Management.Telemetry.TelemetryAPI import TelemetryAPI
 
@@ -286,7 +287,11 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
         try:
             self.ZK.TryCreateOverwrite(f'/BrainGenix/System/Telemetry/{self.NodeName}', zNodeData = JSONArray, ephemeral = True)
         except Exception as E:
-            self.Logger.Log(E, 6)
+            if E == "Connection has been closed":
+                self.Logger.Log(E, 6)
+                sys.exit
+            else:
+                self.Logger.Log(E, 9)
 
 class Leader(): # This Class Is Run By The Leader #
 
