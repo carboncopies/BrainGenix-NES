@@ -5,12 +5,31 @@
 import pymysql
 import atexit
 import re
+import threading
 
 '''
 Name: Database Interface
 Description: This file creates an interface from BrainGenix to mySQL.
 Date-Created: 2021-01-17
 '''
+
+def PymysqlInstanceCreate():
+    MainThread = threading.main_thread.__name__
+    #ThisThread = threading. , add thread name when this is implemented
+    Threads = list[MainThread] # setup thread list #  ^
+    RunOnce = False
+    # loop throgh threads #
+    for ExistingThread in threading.Thread:
+        # loop throgh thread list #
+        for Thread in Threads:
+            # check if thread has pymysql #
+            if Thread == ExistingThread.__name__:
+                RunOnce = True
+    
+    if RunOnce != True:
+        # if thread has no pymysql add pymysql #
+        Threads.extend(ExistingThread.__name__)
+        print("add Pymysql instance to thread")
 
 class DBInterface(): # Interface to MySQL database #
 
