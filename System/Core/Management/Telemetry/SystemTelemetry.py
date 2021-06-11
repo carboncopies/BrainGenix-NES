@@ -365,7 +365,7 @@ class Leader(): # This Class Is Run By The Leader #
                     # Log Connection Destroyed #
                     self.Logger.Log('Zookeeper Connection Destroyed, Shutting Down System Telemetry Leader Thread', 8)
                     sys.exit()
-                
+
                 else:
 
                     # Log Other Errors #
