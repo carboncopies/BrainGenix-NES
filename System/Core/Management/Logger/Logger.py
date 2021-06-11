@@ -123,15 +123,15 @@ class SysLog(): # Logger Class #
 
 
         # Connect To Database #
-        #self.DatabaseConnection = pymysql.connect(
-        #    host = DBHost,
-        #    user = DBUsername,
-        #    password = DBPassword,
-        #    db = DBDatabaseName
-        #)
+        self.DatabaseConnection = pymysql.connect(
+            host = DBHost,
+            user = DBUsername,
+            password = DBPassword,
+            db = DBDatabaseName
+        )
 
         # Create Database Cursor #
-        #self.LoggerCursor = self.DatabaseConnection.cursor()
+        self.LoggerCursor = self.DatabaseConnection.cursor()
 
         self.DatabaseWorking = False#True
 
@@ -292,9 +292,9 @@ class SysLog(): # Logger Class #
 
 
         # Destroy Connection To Database #
-        #print('Destroying Database Connector')
-        #self.DatabaseConnection.close()
-        #print('Destroyed Database Connector')
+        print('Destroying Database Connector')
+        self.DatabaseConnection.close()
+        print('Destroyed Database Connector')
 
         # Return Done #
         return
