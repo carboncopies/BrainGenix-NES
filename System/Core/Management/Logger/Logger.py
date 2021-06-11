@@ -123,17 +123,17 @@ class SysLog(): # Logger Class #
 
 
         # Connect To Database #
-        self.DatabaseConnection = pymysql.connect(
-            host = DBHost,
-            user = DBUsername,
-            password = DBPassword,
-            db = DBDatabaseName
-        )
+        #self.DatabaseConnection = pymysql.connect(
+        #    host = DBHost,
+        #    user = DBUsername,
+        #    password = DBPassword,
+        #    db = DBDatabaseName
+        #)
 
         # Create Database Cursor #
-        self.LoggerCursor = self.DatabaseConnection.cursor()
+        #self.LoggerCursor = self.DatabaseConnection.cursor()
 
-        self.DatabaseWorking = True
+        self.DatabaseWorking = False#True
 
 
     def ColorizeText(self, Text, Color): # Colorizes And Prints A String Of Text #
