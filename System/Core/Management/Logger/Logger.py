@@ -292,9 +292,9 @@ class SysLog(): # Logger Class #
 
 
         # Destroy Connection To Database #
-        print('Destroying Database Connector')
-        self.DatabaseConnection.close()
-        print('Destroyed Database Connector')
+        #print('Destroying Database Connector')
+        #self.DatabaseConnection.close()
+        #print('Destroyed Database Connector')
 
         # Return Done #
         return

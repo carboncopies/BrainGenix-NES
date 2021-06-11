@@ -8,6 +8,7 @@ Description: The LFTM is used to handle the transitions between leader and follo
 Date-Created: 2021-06-03
 '''
 
+import sys
 import os
 
 
@@ -136,4 +137,4 @@ class LFTM(): # Define Class Object #
 
 
         # Exit Program #
-        os._exit(1)
+        sys.exit()

@@ -286,12 +286,16 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
         # Dump Data #
         try:
             self.ZK.TryCreateOverwrite(f'/BrainGenix/System/Telemetry/{self.NodeName}', zNodeData = JSONArray, ephemeral = True)
+        
         except Exception as E:
-            if E == "Connection has been closed":
-                self.Logger.Log(E, 6)
-                sys.exit
+            if str(E) == 'Connection has been closed':
+        
+                self.Logger.Log('Zookeeper Connection Destroyed, Shutting Down SystemTelemetry Module', 8)
+                sys.exit()
+            elif str(E) == '':
+                pass
             else:
-                self.Logger.Log(E, 9)
+                self.Logger.Log(f'Exception: {E}', 9)
 
 class Leader(): # This Class Is Run By The Leader #
 
@@ -351,7 +355,21 @@ class Leader(): # This Class Is Run By The Leader #
 
 
             # Get Stats #
-            self.PullStatsFromZK()
+            try:
+                self.PullStatsFromZK()
+
+            # Catch Closed Connection Excption #
+            except Exception as E:
+                if str(E) == 'Connection has been closed':
+            
+                    # Log Connection Destroyed #
+                    self.Logger.Log('Zookeeper Connection Destroyed, Shutting Down System Telemetry Leader Thread', 8)
+                    sys.exit()
+                
+                else:
+
+                    # Log Other Errors #
+                    self.Logger.Log(f'Exception: {E}', 9)
 
 
             # Delay For Requested Refresh Interval #
