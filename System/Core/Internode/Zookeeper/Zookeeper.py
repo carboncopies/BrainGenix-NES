@@ -7,6 +7,7 @@ import uuid
 import threading
 import platform
 import json
+import sys
 
 from kazoo.client import KazooClient
 
@@ -255,31 +256,47 @@ class ZK(): # Create Interface Class #
         This function is the actual thread target used by the leader checking process.
         *Don't call this function unless you know what you're doing.*
         '''
-
         while True:
 
-            # Check Latency #
-            StartTime = time.time()
-            LeaderExists = self.ZookeeperConnection.exists('/BrainGenix/System/Leader')
-            self.TransactionTime = time.time() - StartTime
+            # Catch Errors #
+            try:
 
-            # Check Leader #
-            if not LeaderExists:
-                self.LeaderTimeout()
-            if not self.ZookeeperConnection.exists('/BrainGenix/System/Leader'):
-                if (self.ZookeeperConnection.get('/BrainGenix/System/Leader')[0] != self.Name.encode() and (self.ZookeeperMode == 'Leader')):
-                    self.Logger.Log('Node Lock File Overwritten, Degrading To Follower!', 1)
-                    self.ZookeeperMode = 'Follower'
-            else: # Catch exception if node is destroyed during check
-                pass
 
-            # Check Conn/Disconn Events #
-            self.GetConnectedNodes()
-            NewNodes, DelNodes = self.CheckIfNodeChangeEvents()
-            self.PrintDifferences(NewNodes, DelNodes)
+                # Check Latency #
+                StartTime = time.time()
+                LeaderExists = self.ZookeeperConnection.exists('/BrainGenix/System/Leader')
+                self.TransactionTime = time.time() - StartTime
 
-            # Delay Until Next Update Interval #
-            time.sleep(RefreshInterval)
+                # Check Leader #
+                if not LeaderExists:
+                    self.LeaderTimeout()
+                if not self.ZookeeperConnection.exists('/BrainGenix/System/Leader'):
+                    if (self.ZookeeperConnection.get('/BrainGenix/System/Leader')[0] != self.Name.encode() and (self.ZookeeperMode == 'Leader')):
+                        self.Logger.Log('Node Lock File Overwritten, Degrading To Follower!', 1)
+                        self.ZookeeperMode = 'Follower'
+                else: # Catch exception if node is destroyed during check
+                    pass
+
+                # Check Conn/Disconn Events #
+                self.GetConnectedNodes()
+                NewNodes, DelNodes = self.CheckIfNodeChangeEvents()
+                self.PrintDifferences(NewNodes, DelNodes)
+
+                # Delay Until Next Update Interval #
+                time.sleep(RefreshInterval)
+
+
+            except Exception as E:
+                if str(E) == 'Connection has been closed':
+            
+                    # Log Connection Destroyed #
+                    self.Logger.Log('Zookeeper Connection Destroyed, Shutting Down ZKLeaderCheck Daemon', 8)
+                    sys.exit()
+                
+                else:
+
+                    # Log Other Errors #
+                    self.Logger.Log(E, 9)
 
 
 
