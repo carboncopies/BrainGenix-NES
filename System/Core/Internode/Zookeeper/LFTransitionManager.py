@@ -9,8 +9,6 @@ Date-Created: 2021-06-03
 '''
 
 import sys
-import os
-
 
 from Core.LFTM.SystemTelemetryManager import SystemTelemetryManager
 
