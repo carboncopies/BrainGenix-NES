@@ -114,7 +114,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     self.Command = self.Connection.recv(65535)
                     self.Command = self.Command.decode()
 
-                    print(self.Command)
+
                     # Convert To Dict From JSON #
                     try:
                         self.Command = json.loads(self.Command)
@@ -122,7 +122,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         self.Logger.Log('Exception In Management Server JSONLOAD', 1)
                         self.Logger.Log(e)
 
-                    print(self.Command)
+
                     # Check That Command Syntax Is Correct #
                     if str(type(self.Command)) != "<class 'dict'>":
                         CommandOutput = "INVALID DICTIONARY FORMAT"
@@ -150,19 +150,17 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
                     # Run System Command #
                     else:
-                        print(self.Command)
                         CommandOutput, CommandName = self.ExecuteCommand()
 
-                        print(CommandOutput)
 
 
-                # Encode JSON Output #
-                Response = {"Name" : CommandName, "Content" : CommandOutput}
-                ResponseString = json.dumps(Response)
-                ResponseByteString = ResponseString.encode()
+                    # Encode JSON Output #
+                    Response = {"Name" : CommandName, "Content" : CommandOutput}
+                    ResponseString = json.dumps(Response)
+                    ResponseByteString = ResponseString.encode()
 
-                # Send Output #
-                self.Connection.send(ResponseByteString)
+                    # Send Output #
+                    self.Connection.send(ResponseByteString)
 
 
 
