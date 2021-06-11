@@ -288,7 +288,7 @@ class ZK(): # Create Interface Class #
 
             except Exception as E:
                 if str(E) == 'Connection has been closed':
-            
+
                     # Log Connection Destroyed #
                     self.Logger.Log('Zookeeper Connection Destroyed, Shutting Down ZKLeaderCheck Daemon', 8)
                     sys.exit()

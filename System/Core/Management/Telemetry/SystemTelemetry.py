@@ -289,7 +289,7 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
 
         except Exception as E:
             if str(E) == 'Connection has been closed':
-        
+
                 self.Logger.Log('Zookeeper Connection Destroyed, Shutting Down SystemTelemetry Module', 8)
                 sys.exit()
             elif str(E) == '':
