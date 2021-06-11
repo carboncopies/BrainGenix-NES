@@ -292,7 +292,7 @@ class ZK(): # Create Interface Class #
                     # Log Connection Destroyed #
                     self.Logger.Log('Zookeeper Connection Destroyed, Shutting Down ZKLeaderCheck Daemon', 8)
                     sys.exit()
-                
+
                 else:
 
                     # Log Other Errors #

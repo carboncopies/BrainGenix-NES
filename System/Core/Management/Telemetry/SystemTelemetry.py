@@ -361,7 +361,7 @@ class Leader(): # This Class Is Run By The Leader #
             # Catch Closed Connection Excption #
             except Exception as E:
                 if str(E) == 'Connection has been closed':
-            
+
                     # Log Connection Destroyed #
                     self.Logger.Log('Zookeeper Connection Destroyed, Shutting Down System Telemetry Leader Thread', 8)
                     sys.exit()
