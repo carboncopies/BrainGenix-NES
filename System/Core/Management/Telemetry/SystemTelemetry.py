@@ -286,7 +286,7 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
         # Dump Data #
         try:
             self.ZK.TryCreateOverwrite(f'/BrainGenix/System/Telemetry/{self.NodeName}', zNodeData = JSONArray, ephemeral = True)
-        
+
         except Exception as E:
             if str(E) == 'Connection has been closed':
         

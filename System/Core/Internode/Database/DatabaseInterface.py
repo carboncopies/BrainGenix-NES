@@ -27,7 +27,7 @@ def PymysqlInstanceCreate():
                 # check if thread has pymysql #
                 if Thread == ExistingThread.__name__:
                     RunOnce = True
-        
+
         if RunOnce != True:
             # if thread has no pymysql add pymysql #
             Threads.extend(ExistingThread.__name__)
