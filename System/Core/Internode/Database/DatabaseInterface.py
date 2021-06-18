@@ -13,13 +13,21 @@ Description: This file creates an interface from BrainGenix to mySQL.
 Date-Created: 2021-01-17
 '''
 
-def PymysqlInstanceCreate(Logger:object):
+def PymysqlInstanceCreate(Logger:object, DatabaseConfig:dict):
+    # start loop #
     MainThread = threading.main_thread.__name__
     ThisThread = threading.PyMysqlInstanceUpdate.__name__
     Threads = list[MainThread, ThisThread] # setup thread list #
     Run = True
     Logger = Logger
     Logger.Log("Pymysql Instance Create Initalized", 3)
+
+    # Connect To DB #
+    DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
+    DBPassword = str(DatabaseConfig.get('DatabasePassword'))
+    DBHost = str(DatabaseConfig.get('DatabaseHost'))
+    DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
+
     while Run == True:
         # loop throgh threads #
         for ExistingThread in threading.Thread:
@@ -30,10 +38,11 @@ def PymysqlInstanceCreate(Logger:object):
                 if Thread == ExistingThread.__name__:
                     RunOnce = True
 
-        if RunOnce != True:
-            # if thread has no pymysql add pymysql #
-            Threads.extend(ExistingThread.__name__)
-            print("add Pymysql instance to thread")
+            if RunOnce != True:
+                # if thread has no pymysql add pymysql #
+                Threads.extend(ExistingThread.__name__)
+                ExistingThread.PymysqlInstance = pymysql.connect(host = DBHost, user = DBUsername, password = DBPassword, db = DBDatabaseName)
+                Logger.Log("Pymysql Instance Created", 3)
 
 class DBInterface(): # Interface to MySQL database #
 
@@ -69,7 +78,7 @@ class DBInterface(): # Interface to MySQL database #
         self.DBConnection = pymysql.connect(host=Host, user=Username, password=Password, db=DatabaseName)
 
         # Start Pymysql Instance creator #
-        self.Thread = threading.Thread(target=PymysqlInstanceCreate, args=(Logger))
+        self.Thread = threading.Thread(target=PymysqlInstanceCreate, args=(Logger, DatabaseConfig))
         self.Thread.name = "PymysqlInstanceUpdate"
         self.Thread.start()
 
