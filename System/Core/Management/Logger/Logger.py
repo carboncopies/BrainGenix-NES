@@ -7,7 +7,14 @@ import datetime
 import inspect
 import os
 import pymysql
+import threading
 import socket
+import queue
+
+print(os.listdir('.'))
+#from Core.Management.Logger import DBLoggerThread# import DatabaseLogTransmissionSystem
+
+from Core.Management.Logger.DBLoggerThread import DatabaseLogTransmissionSystem
 
 '''
 Name: SysLog
@@ -91,7 +98,7 @@ class SysLog(): # Logger Class #
 
 
         # Initialize Local Variable Information #
-        self.LogBuffer = '[Level] [               Time] [            Module Name] [           Function] [Message]\n'
+        self.LogBuffer = '[Level] [               Time] [        Thread] [            Module Name] [           Function] [Message]\n'
         self.PrintEnabled = ConsoleOutputEnabled
         self.CurrentLogLength = 1
         self.LogPath = LogPath
@@ -114,28 +121,33 @@ class SysLog(): # Logger Class #
         if DatabaseConfig == None:
             print('Database Configuration Null, Please Check Config File')
 
-
-        # Extract Values From Dictionary #
-        DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
-        DBPassword = str(DatabaseConfig.get('DatabasePassword'))
-        DBHost = str(DatabaseConfig.get('DatabaseHost'))
-        DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
+        self.LogQueue = queue.Queue()
+        ### FIXME !!!
+        #self.DatabasingThread = threading.Thread(DBLoggerThread.something)
 
 
-        # Connect To Database #
-        self.DatabaseConnection = pymysql.connect(
-            host = DBHost,
-            user = DBUsername,
-            password = DBPassword,
-            db = DBDatabaseName
-        )
+#       # Extract Values From Dictionary #
+#       DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
+#       DBPassword = str(DatabaseConfig.get('DatabasePassword'))
+#       DBHost = str(DatabaseConfig.get('DatabaseHost'))
+#       DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
+#
+#
+#       # Connect To Database #
+#       self.DatabaseConnection = pymysql.connect(
+#           host = DBHost,
+#           user = DBUsername,
+#           password = DBPassword,
+#           db = DBDatabaseName
+#       )
+#
+#       # Create Database Cursor #
+#       self.LoggerCursor = self.DatabaseConnection.cursor()
+#
+#       self.DatabaseWorking = True
 
-        # Create Database Cursor #
-        self.LoggerCursor = self.DatabaseConnection.cursor()
 
-        self.DatabaseWorking = False#True
-
-
+    # TODO: Either rename, or better rework so that it really only colorizes, without printing
     def ColorizeText(self, Text, Color): # Colorizes And Prints A String Of Text #
 
         # Get RGB #
@@ -155,6 +167,17 @@ class SysLog(): # Logger Class #
 
         # Print #
         print(PrintString)
+
+
+    def EnqueueLogEntry(self, Level, LogTime, CallingModuleName, CallingFunctionName, Message, NodeID):
+        self.LogQueue.put({
+            'LogLevel': Level,
+            'LogDateTime': LogTime,
+            'CallingModule': CallingModuleName,
+            'FunctionName': CallingFunctionName,
+            'LogOutput': Message,
+            'Node': NodeID
+        })
 
 
     def Log(self, Message:str, Level:int=0): # Handles The Log Of An Item #
@@ -192,9 +215,10 @@ class SysLog(): # Logger Class #
         CallStack = inspect.stack()
         CallingModuleName = CallStack[1][1]
         CallingFunctionName = CallStack[1][3]
+        ThreadName = threading.current_thread().name
 
         LogTime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(23, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}'
+        LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{ThreadName.rjust(14, " ")}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(23, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}'
         self.LogBuffer += LogString
 
         if self.PrintEnabled:
@@ -210,29 +234,33 @@ class SysLog(): # Logger Class #
                 print(LogString)
 
 
-
-        if self.DatabaseWorking == False:
-
-            self.LogFileObject.write(self.LogBuffer)
-            self.LogBuffer = ''
-
-        else:
-
-            self.LogFileObject.write(self.LogBuffer)
-            #
-            # Write data *from the logbuffer* into the database here
-            #
-
-            insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node) VALUES (%s, %s, \"%s\", \"%s\", \"%s\", \"%s\")")
-
-            val = (Level, str(LogTime), CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, str(self.NodeID))
-
-            self.LoggerCursor.execute(insertStatement,val)
+        self.EnqueueLogEntry(Level, str(LogTime), CallingModuleName, CallingFunctionName, Message, str(self.NodeID))
 
 
-            self.LogBuffer = ''
+#       if self.DatabaseWorking == False:
+#
+#           self.LogFileObject.write(self.LogBuffer)
+#           self.LogBuffer = ''
+#
+#       else:
+#
+#           self.LogFileObject.write(self.LogBuffer)
+#           #
+#           # Write data *from the logbuffer* into the database here
+#           #
+#
+#           insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node) VALUES (%s, %s, \"%s\", \"%s\", \"%s\", \"%s\")")
+#
+#           val = (Level, str(LogTime), CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, str(self.NodeID))
+#
+#           self.LoggerCursor.execute(insertStatement,val)
+#
+#
+#           self.LogBuffer = ''
 
 
+    # TODO: Remove or rework (Logger instance no longer has a database cursor)
+    # Most probably, just move to the dumper
     def PullLog(self, NumberOfLines:int): # Pull n most recent entries from the log table #
 
         # Pull Lines From Database #
@@ -245,6 +273,8 @@ class SysLog(): # Logger Class #
         return Rows
 
 
+    # TODO: Remove or rework (Logger instance no longer has a database cursor)
+    # Most probably, just move to the dumper
     def PullSort(self, NumberOfLines:int): # Pull Set Number Of Lines And Return A Sorted Output Dictionary #
 
         # Pull Lines Here #
@@ -267,6 +297,8 @@ class SysLog(): # Logger Class #
         return OutDict
 
 
+    # TODO: Remove or rework (Logger instance no longer has a database cursor)
+    # Most probably, just move to the dumper
     def CheckDelete(self, DeleteDate:str): # Deletes entries from the Log Table prior to a specific date #
 
         # Delete Old Logs #
@@ -274,6 +306,8 @@ class SysLog(): # Logger Class #
         self.LoggerCursor.execute(DeleteStatement)
 
 
+    # TODO: Remove or rework (Logger instance no longer has a database cursor)
+    # Most probably, just move to the dumper
     def PurgeOldLogs(self): # Automatically Removes Logs As Per The LogFile Retention Policy #
 
         # Calculate Old Date (Current Date Minus KeepSeconds) #
@@ -291,10 +325,13 @@ class SysLog(): # Logger Class #
             self.LogFileObject.write(self.LogBuffer)
 
 
+        ### FIXME!
         # Destroy Connection To Database #
         print('Destroying Database Connector')
-        self.DatabaseConnection.close()
+        self.DatabasingThread.join()
+#        self.DatabaseConnection.close()
         print('Destroyed Database Connector')
 
         # Return Done #
         return
+
