@@ -27,6 +27,8 @@ from Core.Management.API.ManagementAPI import ManagementAPISocketServer
 
 from Core.Internode.Zookeeper.LFTransitionManager import LFTM
 
+from Core.VersionData import VersionData
+
 
 ##############################################################################
 ## NOTE: A Lowercase "m" Preceeding A Class Means It's a Main System        ##
@@ -36,7 +38,7 @@ from Core.Internode.Zookeeper.LFTransitionManager import LFTM
 
 
 # Set Version Information
-Version = '0.0.7'
+Version = VersionData
 Branch = 'dev' # 'dev' or 'rel'
 
 
