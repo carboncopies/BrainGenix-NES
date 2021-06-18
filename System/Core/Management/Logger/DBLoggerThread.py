@@ -4,6 +4,7 @@
 
 import threading
 import pymysql
+import queue
 
 '''
 Name: DB Logger Thread
@@ -14,26 +15,13 @@ Date-Created: 2021-06-18
 
 class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The Database #
 
-    def __init__(self, Logger:object, LogBufferQueue:object, DatabaseConfiguration:dict): # Init #
+    def __init__(self, Logger:object, LogBufferQueue:object, ControlQueue:object, DatabaseConfiguration:dict): # Init #
 
         # Init Logger #
         self.Logger = Logger
+        self.LogBufferQueue = LogBufferQueue
+        self.ControlQueue = ControlQueue
         self.Logger.Log('Initializing Database Log Transmission System', 4)
-
-        # Create Thread #
-        self.Logger.Log('Creating Database Log Transmission System Thread', 3)
-        self.DatabaseLogTransmissionSystemThread = threading.Thread(target=self.__call__, args=(LogBufferQueue, DatabaseConfiguration,))
-        self.DatabaseLogTransmissionSystemThread.name = 'DB Log Transmission'
-        self.Logger.Log('Starting Thread for Database Log Transmission System', 3)
-        self.DatabaseLogTransmissionSystemThread.start()
-
-
-    def ShouldStop():
-        # TODO: implement
-        pass
-
-
-    def __call__(self, LogBufferQueue:object, DatabaseConfig:dict): # Thread To Transmit Logs To DB #
 
         # Connect To DB #
         DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
@@ -52,6 +40,38 @@ class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The D
 
         # Create Database Cursor #
         self.LoggerCursor = self.DatabaseConnection.cursor()
+
+#       # Create Thread #
+#       self.Logger.Log('Creating Database Log Transmission System Thread', 3)
+#       self.DatabaseLogTransmissionSystemThread = threading.Thread(target=self.__call__, args=(LogBufferQueue, DatabaseConfiguration,))
+#       self.DatabaseLogTransmissionSystemThread.name = 'DB Log Transmission'
+#       self.Logger.Log('Starting Thread for Database Log Transmission System', 3)
+#       self.DatabaseLogTransmissionSystemThread.start()
+
+
+    def ShouldStop():
+        return not self.ControlQueue.empty()
+
+
+    def __call__(self, LogBufferQueue:object, DatabaseConfig:dict): # Thread To Transmit Logs To DB #
+
+#       # Connect To DB #
+#       DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
+#       DBPassword = str(DatabaseConfig.get('DatabasePassword'))
+#       DBHost = str(DatabaseConfig.get('DatabaseHost'))
+#       DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
+#
+#
+#       # Connect To Database #
+#       self.DatabaseConnection = pymysql.connect(
+#           host = DBHost,
+#           user = DBUsername,
+#           password = DBPassword,
+#           db = DBDatabaseName
+#       )
+#
+#       # Create Database Cursor #
+#       self.LoggerCursor = self.DatabaseConnection.cursor()
 
 
         # Enter Loop #
