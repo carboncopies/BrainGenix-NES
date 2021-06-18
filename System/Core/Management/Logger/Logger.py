@@ -125,6 +125,7 @@ class SysLog(): # Logger Class #
         self.ControlQueue = queue.Queue()
         self.DBDumper = DatabaseLogTransmissionSystem(self, LogQueue, ControlQueue, DatabaseConfig)
         self.DumperThread = threading.Thread(self.DBDumper)
+        self.DumperThread.start()
         
         ### FIXME !!!
         #self.DatabasingThread = threading.Thread(DBLoggerThread.something)
