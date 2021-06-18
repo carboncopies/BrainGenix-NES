@@ -13,12 +13,13 @@ Description: This file creates an interface from BrainGenix to mySQL.
 Date-Created: 2021-01-17
 '''
 
-def PymysqlInstanceCreate(self, Logger:object):
+def PymysqlInstanceCreate(Logger:object):
     MainThread = threading.main_thread.__name__
     ThisThread = threading.PyMysqlInstanceUpdate.__name__
     Threads = list[MainThread, ThisThread] # setup thread list #
     Run = True
-    self.Logger.Log("Pymysql Instance Create Initalized", 3)
+    Logger = Logger
+    Logger.Log("Pymysql Instance Create Initalized", 3)
     while Run == True:
         # loop throgh threads #
         for ExistingThread in threading.Thread:
