@@ -122,6 +122,10 @@ class SysLog(): # Logger Class #
             print('Database Configuration Null, Please Check Config File')
 
         self.LogQueue = queue.Queue()
+        self.ControlQueue = queue.Queue()
+        self.DBDumper = DatabaseLogTransmissionSystem(self, LogQueue, ControlQueue, DatabaseConfig)
+        self.DumperThread = threading.Thread(self.DBDumper)
+        
         ### FIXME !!!
         #self.DatabasingThread = threading.Thread(DBLoggerThread.something)
 
