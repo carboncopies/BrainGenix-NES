@@ -69,7 +69,7 @@ class DBInterface(): # Interface to MySQL database #
         self.DBConnection = pymysql.connect(host=Host, user=Username, password=Password, db=DatabaseName)
 
         # Start Pymysql Instance creator #
-        self.Thread = threading.Thread(target=os.path.abspath(self).PymysqlInstanceCreate, args=(Logger))
+        self.Thread = threading.Thread(target=Core.Internode.Database.DatabaseInterface.PymysqlInstanceCreate, args=(Logger))
         self.Thread.name = "PymysqlInstanceUpdate"
         self.Thread.start()
 
