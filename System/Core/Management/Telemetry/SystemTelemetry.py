@@ -318,36 +318,53 @@ class Leader(): # This Class Is Run By The Leader #
         self.PullStatsFromZK()
 
 
+        # System Telemetry Thread #
+        self.Logger.Log('Creating System Telemetry Leader Polling Thread', 3)
+
+
+        # Create Control Queue For Data Collection Daemon #
+        self.Logger.Log('Creating Control Queue For Data Collection Daemon', 2)
+        self.ControlQueueDataCollectionDaemon = queue.Queue()
+        self.Logger.Log('Created Control Queue For Data Collection Daemon', 1)
+
+        # Create Control Queue For API Interface Thread #
+        #self.Logger.Log('Creating Control Queue For API Interface Thread')
+        #self.ControlQueueAPIInterfaceDaemon = queue.Queue()
+
         # Start The AutoUpdate Thread #
-        self.Logger.Log('Created System Telemetry Leader Polling Thread')
-        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(3,), name='System Telemetry Leader Thread')
+        self.Logger.Log('Creating Data Collection Daemon Thread Object', 2)
+        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(self.ControlQueueDataCollectionDaemon))
+        self.UpdateThread.__name__ = 'Data Collection Daemon'
+        self.Logger.Log('Thread Object Created for Data Collection Daemon', 1)
 
         # Start API Interface Thread #
-        self.APIThread = threading.Thread(target=TelemetryAPI, args=(self.ZK, self.Logger, self))
-        self.Logger.Log('Created Telemetry-Zookeeper API Interaction Handler')
+        #self.Logger.Log('Creating Thread Object For Telemetry-Zookeeper API', 2)
+        #self.APIThread = threading.Thread(target=TelemetryAPI, args=(self.ZK, self.Logger, self))
+        #self.APIThread.__name__ = 'SysTel-ZK API Daemon'
+        #self.Logger.Log('Created Telemetry-Zookeeper API Interaction Handler', 1)
 
 
-        # Start #
-        self.Start()
+        # Log Thread Start #
+        self.Logger.Log('Starting System Telemetry Leader Threads', 3)
 
-
-    def Start(self):
 
         # Start System Telemetry Leader Thread #
+        self.Logger.Log('Starting Data Collection Daemon Thread', 2)
         self.UpdateThread.start()
-        self.Logger.Log('Started Leader Refresh Thread')
+        self.Logger.Log('Started Data Collection Daemon Thread', 1)
 
         # Start ZK-API Interface Thread #
-        self.APIThread.start()
-        self.Logger.Log('Started Telemetry-Zookeeper Interaction Thread')
+        #self.Logger.Log('Starting Telemetry-Zookeeper Interaction Thread', 2)
+        #self.APIThread.start()
+        #self.Logger.Log('Started Telemetry-Zookeeper Interaction Thread', 1)
 
 
 
-    def AutoRefresh(self, RefreshInterval:float=0):
+    def AutoRefresh(self, ControlQueue, RefreshInterval:float=0):
 
 
         # Start Inf Loop #
-        while True:
+        while ControlQueue.empty():
 
 
             # Get Start Time #
