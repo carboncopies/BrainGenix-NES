@@ -18,11 +18,12 @@ from Core.Management.Telemetry.SystemTelemetry import Leader
 
 class SystemTelemetryManager(): # Manages the system telemetry leader class #
 
-    def __init__(self, Logger, Zookeeper):
+    def __init__(self, Logger, Zookeeper, ThreadManager):
 
         # Create Local Pointers To These Objects #
         self.Logger = Logger
         self.Zookeeper = Zookeeper
+        self.ThreadManager = ThreadManager
 
 
     def StartSystem(self): # Called During Startup #
@@ -45,6 +46,10 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
 
         # Instantiate #
         self.SysTelLeader = Leader(Logger=self.Logger, Zookeeper=self.Zookeeper)
+
+        # SysTelLeader Thread Creation Process #
+        self.SysTelLeader.
+        
 
         # Log Finish Message #
         self.Logger.Log('Initalized System Telemetry Subsystem In Mode [Leader, Follower]')
