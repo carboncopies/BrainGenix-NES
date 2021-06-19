@@ -17,7 +17,7 @@ def PymysqlInstanceCreate(Logger:object, DatabaseConfig:dict):
     # start loop #
     MainThread = threading.Thread.getName (threading.main_thread())
     ThisThread = threading.Thread.getName (threading.current_thread())
-    Threads = list[MainThread, ThisThread] # setup thread list #
+    Threads = [MainThread, ThisThread] # setup thread list #
     Run = True
     Logger = Logger
     Logger.Log("Pymysql Instance Create Initalized", 3)
