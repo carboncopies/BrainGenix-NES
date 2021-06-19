@@ -42,7 +42,7 @@ def PymysqlInstanceCreate(Logger:object, DatabaseConfig:dict):
                 # if thread has no pymysql add pymysql #
                 Threads.extend(threading.Thread.getName (ExistingThread))
                 ExistingThread.PymysqlInstance = pymysql.connect(host = DBHost, user = DBUsername, password = DBPassword, db = DBDatabaseName)
-                Logger.Log("Pymysql Instance Created for thread " + ExistingThread, 3)
+                Logger.Log("Pymysql Instance Created for thread " + threading.Thread.getName (ExistingThread), 3)
 
 class DBInterface(): # Interface to MySQL database #
 
