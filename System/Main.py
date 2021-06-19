@@ -15,9 +15,7 @@ from Core.Initialization.LoadConfig import LoadZookeeperConfig
 from Core.Initialization.LoadConfig import LoadInternodeQueueConfig
 from Core.Initialization.LoadConfig import LoadManagementAPIServerConfig
 
-from Core.Initialization.Instantiator import InstantiateZK
-from Core.Initialization.Instantiator import InstantiateDB
-from Core.Initialization.Instantiator import InstantiateLogger
+from Core.ThreadManager import ThreadManager
 
 from Core.Initialization.CheckLibraries import CheckImports
 
@@ -49,9 +47,12 @@ ZKConfigDict = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml
 InternodeConfigDict = LoadInternodeQueueConfig(ConfigFilePath = 'Config/InternodeQueue.yaml')
 ManagementAPIServerConfig = LoadManagementAPIServerConfig(ConfigFilePath = 'Config/ManagementAPIConfig.yaml')
 
+# Instantiate Thread Manager #
+ThreadManagerInstance = ThreadManager()
+
 
 # Initialize Logger #
-mLogger = InstantiateLogger(DBConfigDict, LoggerConfigDict)
+mLogger = ThreadManagerInstance.InstantiateLogger(DBConfigDict, LoggerConfigDict)
 
 
 # Initialize CLAS #
@@ -59,7 +60,7 @@ sCLAS = CentralizedLoggerAggregationSystem(mLogger)
 
 
 # Connect To DB #
-sDatabaseInterface = InstantiateDB(mLogger, DBConfigDict)
+sDatabaseInterface = ThreadManagerInstance.InstantiateDB(mLogger, DBConfigDict)
 
 
 # Start API Server #
@@ -87,7 +88,7 @@ CheckImports(ModulesNeeded, mLogger)
 
 
 # Connect To Zookeeper Service #
-sZookeeper = InstantiateZK(mLogger, ZKConfigDict)
+sZookeeper = ThreadManagerInstance.InstantiateZK(mLogger, ZKConfigDict)
 
 
 ##############################################################################################################
