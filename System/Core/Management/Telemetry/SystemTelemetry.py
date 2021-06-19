@@ -138,6 +138,8 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
             # Update Zookeeper #
             StatisticsQueue.put(self.SystemHardware)
 
+        # Send Shutdown Message #
+        self.Logger.Log('Shutting Down Local Statistics AutoRefresh Daemon', 4)
 
 
     def GetStaticStatsDict(self): # Gets Static Stats And Puts Them Into A Dictionary #
