@@ -119,7 +119,7 @@ def InstantiateDB(Logger, DBConfig): # Instantiates Database Interface #
     # Instantiate DB #
     try:
 
-        
+
         # Create Queues for DBInstance Manager #
         ControlQueue = queue.Queue()
 

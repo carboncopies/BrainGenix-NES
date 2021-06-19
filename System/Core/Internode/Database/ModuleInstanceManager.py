@@ -15,7 +15,7 @@ Date-Created: 2021-01-17
 
 
 class DatabaseInstanceCreator: # Pymysql Instance Creation System #
-    
+
 
     def __init__(self, Logger:object, DatabaseConfig:dict, ControlQueue:object): # Initialization #
 

@@ -127,7 +127,7 @@ class ThreadManager(): # This Class Manages Threads #
         # Instantiate DB #
         try:
 
-            
+
             # Create Queues for DBInstance Manager #
             self.DBInstanceUpdateControlQueue = queue.Queue()
 
