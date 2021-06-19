@@ -4,7 +4,6 @@
 
 import time
 import uuid
-import threading
 import platform
 import json
 import sys
@@ -334,10 +333,11 @@ class ZK(): # Create Interface Class #
         '''
 
         for NewNode in AddedNodes:
-            self.Logger.Log(f'Node {NewNode} Connected')
+            self.Logger.Log(f'Node {NewNode} Connected', 4)
+
 
         for RemNode in SubtractedNodes:
-            self.Logger.Log(f'Node {RemNode} Disconnected', 1)
+            self.Logger.Log(f'Node {RemNode} Disconnected', 5)
             if RemNode == self.Name:
                 self.Logger.Log('Did Another Instance Time Out?')
                 self.TryCreateOverwrite(f'/BrainGenix/System/Nodes/{self.Name}/', zNodeData=b'', ephemeral=True)
