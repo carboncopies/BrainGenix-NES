@@ -228,7 +228,7 @@ class ThreadManager(): # This Class Manages Threads #
             for ControlQueueIndex in range(len(self.ControlQueues)):
 
                 # Log Sending "Stawp!" #
-                self.Logger.Log(f'Sending Term Signal To Thread', 0)
+                self.Logger.Log(f'Sending Term Signal To Thread {ControlQueueIndex + 1}', 0)
 
                 # Send Thread Term Signal #
                 self.ControlQueues[ControlQueueIndex].put('stawp!')
@@ -237,7 +237,7 @@ class ThreadManager(): # This Class Manages Threads #
                 self.Logger.Log(f'Sent Stop Signal To Queue {ControlQueueIndex + 1}/{len(self.ControlQueues)}', 0)
 
             # Log Task Completion #
-            self.Logger.Log(f'Stop Signals Sent To Thread {ControlQueueIndex + 1}', 2)
+            self.Logger.Log(f'Stop Signals Sent To Threads', 2)
 
 
             # Merge Threads #
