@@ -48,8 +48,16 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         self.SysTelLeader = Leader(Logger=self.Logger, Zookeeper=self.Zookeeper)
 
         # SysTelLeader Thread Creation Process #
-        #self.SysTelLeader.
-        
+        self.Logger.Log('Adding Data Collection Daemon To Thread Manager', 3)
+
+        self.Logger.Log('Adding Data Collection Daemon Control Queue To Thread Manager', 2)
+        self.ThreadManager.ControlQueues.append(self.SysTelLeader.ControlQueueDataCollectionDaemon)
+        self.Logger.Log('Added Data Collection Daemon To Control Queue List', 1)
+
+        self.Logger.Log('Adding Data Collection Thread Object To Thread Manager', 2)
+        self.ThreadManager.Threads.append(self.SysTelLeader.UpdateThread)
+        self.Logger.Log('Added Data Collection Thread Object To Thread List', 1)
+
 
         # Log Finish Message #
         self.Logger.Log('Initalized System Telemetry Subsystem In Mode [Leader, Follower]')
@@ -60,8 +68,23 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         # Log Instantiation #
         self.Logger.Log('System Telemetry Transition Asserted, Called For Mode "FOLLOWER"')
 
+
+        # Join Threads #
+        self.Logger.Log('Joining Data Collection Daemon Threads', 3)
+
+        self.Logger.Log('Sending Data Collection Daemon Control Queue Shutdown Message', 2)
+        self.SysTelLeader.ControlQueueDataCollectionDaemon.put('Stawp!')
+        self.Logger.Log('Sent Shutdown Message To Data Collection Control Queue', 1)
+
+        self.Logger.Log('Joining Data Collection Daemon To Main Thread', 2)
+        self.SysTelLeader.UpdateThread.join()
+        self.Logger.Log('Joined Data Collection Daemon Thread', 1)
+
+
         # Instantiate #
+        self.Logger.Log('Destroying Data Collection Daemon Class', 2)
         self.SysTelLeader = None
+        self.Logger.Log('Destroyed Data Collection Daemon Class', 1)
 
         # Log Finish Message #
         self.Logger.Log('Initalized System Telemetry Subsystem In Mode [None, Follower]')
