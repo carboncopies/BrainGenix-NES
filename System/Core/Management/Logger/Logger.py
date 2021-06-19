@@ -280,7 +280,6 @@ class SysLog(): # Logger Class #
     def CleanExit(self): # Create Logger Shutdown Command #
 
         # Destroy Connection To Database #
-        self.Logger.Log('Sending Stop Command To Database-Logger Daemon Control Queue', 4)
         self.ControlQueue.put('stahp!')
         self.DumperThread.join()
 
