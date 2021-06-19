@@ -33,7 +33,7 @@ class LFTM(): # Define Class Object #
 
 
         # Create Instances Of Requested Systems #                                   # ADD YOUR FUNCTION CALL BELOW HERE!
-        self.SystemTelemetryManager = SystemTelemetryManager(self.Logger, self.ZookeeperInstance)
+        self.SystemTelemetryManager = SystemTelemetryManager(self.Logger, self.ZookeeperInstance, self.ThreadManager)
 
 
         ## INCLUDE INITIALIZATION CALLS BELOW TO START SUBSYSTEMS ##
