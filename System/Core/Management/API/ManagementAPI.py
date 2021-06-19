@@ -16,12 +16,13 @@ Date-Created: 2021-05-17
 
 class ManagementAPISocketServer(): # Creates A Class To Connect To The Management API #
 
-    def __init__(self, Logger, MAPIConfig:dict, ZookeeperConfigDict:dict): # This function initialializes sockets #
+    def __init__(self, Logger, MAPIConfig:dict, ZookeeperConfigDict:dict, ThreadManager:object): # This function initialializes sockets #
 
         # Get Config Params #
         self.Logger = Logger
         self.Port = MAPIConfig['Port'] # Get the port from the port config
         self.IPAddr = ZookeeperConfigDict['ZKHost'] # Get The IP Addr from the zoomeeper dict
+        self.ThreadManager = ThreadManager
 
         # Create Socket Host Variable #
         self.Logger.Log('Creating Host Variable')
