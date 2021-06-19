@@ -6,6 +6,11 @@ import pymysql
 import atexit
 import re
 import threading
+import queue
+
+
+from Core.Internode.Database.ModuleInstanceManager import DatabaseInstanceCreator
+
 
 '''
 Name: Database Interface
@@ -13,39 +18,7 @@ Description: This file creates an interface from BrainGenix to mySQL.
 Date-Created: 2021-01-17
 '''
 
-def PymysqlInstanceCreate(Logger:object, DatabaseConfig:dict):
-    # start loop #
-    MainThread = threading.Thread.getName (threading.main_thread())
-    ThisThread = threading.Thread.getName (threading.current_thread())
-    Threads = [MainThread, ThisThread] # setup thread list #
-    Run = True
-    Logger = Logger
-    Logger.Log("Pymysql Instance Create Initalized", 3)
 
-    # Connect To DB #
-    DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
-    DBPassword = str(DatabaseConfig.get('DatabasePassword'))
-    DBHost = str(DatabaseConfig.get('DatabaseHost'))
-    DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
-
-    while Run == True:
-
-        print(Threads)
-
-        # loop throgh threads #
-        for ExistingThread in threading.enumerate():
-            RunOnce = False
-            # loop throgh thread list #
-            for Thread in Threads:
-                # check if thread has pymysql #
-                if Thread == threading.Thread.getName (ExistingThread):
-                    RunOnce = True
-
-            if RunOnce != True:
-                # if thread has no pymysql add pymysql #
-                Threads.append(threading.Thread.getName (ExistingThread))
-                ExistingThread.PymysqlInstance = pymysql.connect(host = DBHost, user = DBUsername, password = DBPassword, db = DBDatabaseName)
-                Logger.Log("Pymysql Instance Created for thread " + threading.Thread.getName (ExistingThread), 3)
 
 
 class DBInterface(): # Interface to MySQL database #
@@ -81,11 +54,9 @@ class DBInterface(): # Interface to MySQL database #
         # Establish DB Connection #
         self.DBConnection = pymysql.connect(host=Host, user=Username, password=Password, db=DatabaseName)
 
-        # Start Pymysql Instance creator #
-        NewThread = threading.Thread(target=PymysqlInstanceCreate, args=(Logger, DatabaseConfig))
-        NewThread.name = "PymysqlInstanceUpdate"
-        NewThread.start()
 
+
+        # 
         self.Logger.Log(f'Connected To DB At {Host}')
 
         # Register Shutdown Function #
