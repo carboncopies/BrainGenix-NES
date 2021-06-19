@@ -42,14 +42,67 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
         self.GetStaticStatsDict()
 
 
+        # Start Autorefresh Daemon #
+        self.Logger.Log('Starting Local System Data Collection Daemon', 3)
+
+
+
+        # Create Control Queue #
+        self.Logger.Log('Creating Control Queue For SendStats', 2)
+        self.ControlQueueSendStatsThread = queue.Queue()
+        self.Logger.Log('Created Control Queue For SendStats', 1)
+
+        # Create Queue #
+        self.Logger.Log('Creating System Telemetry SendStats Queue', 2)
+        StatisticsQueue = queue.Queue()
+        self.Logger.Log('Created System Telemetry SendStats Queue', 1)
+
+
+
+        # Create Local System Data Control Queue #
+        self.Logger.Log('Creating Control Queue For Local System Data Daemon', 2)
+        self.LocalSystemDataDaemonControlQueue = queue.Queue()
+        self.Logger.Log('Created Control Queue For Local System Data Daemon', 1)
+
+
         # Start AutoRefresh Daemon #
-        self.Logger.Log('Automatic Refresh Enabled, Starting Thread')
-        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(0,), name='System Telemetry Follower Thread')
+        self.Logger.Log('Creating Local System Data Daemon Thread Object', 2)
+        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(self.LocalSystemDataDaemonControlQueue, StatisticsQueue, 0, ))
+        self.UpdateThread.__name__ = name='LocalSystem Data Daemon'
+        self.Logger.Log('Created Local System Data Daemon Thread Object', 1)
+
+        self.Logger.Log('Starting Local System Data Daemon Thread Object', 2)
         self.UpdateThread.start()
-        self.Logger.Log('Thread Started, Dynamic Usage Stats Will Be Refreshed Automatically')
+        self.Logger.Log('Started Local System Data Daemon Thread Object', 1)
+
+        # Log AutoRefresh Startup Complete #
+        self.Logger.Log('Local System Data Collection Daemon Instantiation Complete', 2)
 
 
-    def SendStatsThread(self, InQueue): # Send Stats Via Send Command #
+
+        # Start Stat Transmission Thread #
+        self.Logger.Log('Starting System Telemetry Follower SendStatsThread', 3)
+
+
+
+
+
+        # Start ZKDataSend Thread #
+        self.Logger.Log('Creating System Statistics Auto Transmission Thread', 2)
+        self.ZKDataSendThread = threading.Thread(target=self.SendStatsThread, args=(self.ControlQueueSendStatsThread, StatisticsQueue,))
+        self.ZKDataSendThread.__name__='Send Statistics Thread'
+        self.Logger.Log('Created System Statistcs Auto Transmission Thread', 1)
+
+        # Start ZKDataSend Thread #
+        self.Logger.Log('Starting System Statistics Auto Transmission Thread', 2)
+        self.ZKDataSendThread.start()
+        self.Logger.Log('Started System Statistics Auto Transmission Thread', 1)
+
+
+
+
+
+    def SendStatsThread(self, ControlQueue, InQueue): # Send Stats Via Send Command #
 
         # Log Start #
         self.Logger.Log('Starting SystemTelemetry Transmission Thread')
@@ -64,28 +117,16 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
             self.SendStats(Data)
 
 
-    def AutoRefresh(self, RefreshInterval:float=1):
-
-        # Create Queue #
-        self.Logger.Log('Creating SendStats Queue')
-        QueueObject = queue.Queue()
-
-        # Start ZKDataSend Thread #
-        self.Logger.Log('Creating SystemStatistics Auto Transmission Thread')
-        self.ZKDataSendThread = threading.Thread(target=self.SendStatsThread, args=(QueueObject,))
-
-        self.Logger.Log('Starting System Statistics Auto Transmission Thread')
-        self.ZKDataSendThread.start()
-
+    def AutoRefresh(self, ControlQueue:object, StatisticsQueue:object, RefreshInterval:float=1):
 
         # Start Inf Loop #
-        while True:
+        while ControlQueue.empty():
 
             # Get Dynamic Stats #
             self.GetDynamicStatsDict()
 
             # Update Zookeeper #
-            QueueObject.put(self.SystemHardware)
+            StatisticsQueue.put(self.SystemHardware)
 
 
     def GetStaticStatsDict(self): # Gets Static Stats And Puts Them Into A Dictionary #
