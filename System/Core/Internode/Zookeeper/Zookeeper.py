@@ -120,19 +120,6 @@ class ZK(): # Create Interface Class #
         return NodeCount
 
 
-
-    def SpawnCheckerThread(self): # Spawn ZK Leader Check Thread #
-
-        '''
-        This function is pretty self-explanitory, it spawns a thread which checks if the leader is still responding.
-        The thread is assigned to a local variable self.LeaderCheckerThread.
-        *Again, you shouldn't have to interact with this function at all.*
-        '''
-
-        self.LeaderCheckerThread = threading.Thread(target=self.LeaderCheckDaemon, args=(), name='ZK Leader Timeout Daemon').start()
-
-
-
     def AutoInitZKLeader(self): # Init ZK Leader #
 
         '''
