@@ -15,8 +15,8 @@ Date-Created: 2021-01-17
 
 def PymysqlInstanceCreate(Logger:object, DatabaseConfig:dict):
     # start loop #
-    MainThread = threading.main_thread.__name__
-    ThisThread = threading.current_thread.__name__
+    MainThread = threading.Thread.getName (threading.main_thread)
+    ThisThread = threading.Thread.getName (threading.current_thread)
     Threads = list[MainThread, ThisThread] # setup thread list #
     Run = True
     Logger = Logger
@@ -35,12 +35,12 @@ def PymysqlInstanceCreate(Logger:object, DatabaseConfig:dict):
             # loop throgh thread list #
             for Thread in Threads:
                 # check if thread has pymysql #
-                if Thread == ExistingThread.__name__:
+                if Thread == threading.Thread.getName (ExistingThread):
                     RunOnce = True
 
             if RunOnce != True:
                 # if thread has no pymysql add pymysql #
-                Threads.extend(ExistingThread.__name__)
+                Threads.extend(threading.Thread.getName (ExistingThread))
                 ExistingThread.PymysqlInstance = pymysql.connect(host = DBHost, user = DBUsername, password = DBPassword, db = DBDatabaseName)
                 Logger.Log("Pymysql Instance Created", 3)
 
