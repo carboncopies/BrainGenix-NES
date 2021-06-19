@@ -48,7 +48,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         self.SysTelLeader = Leader(Logger=self.Logger, Zookeeper=self.Zookeeper)
 
         # SysTelLeader Thread Creation Process #
-        self.SysTelLeader.
+        #self.SysTelLeader.
         
 
         # Log Finish Message #
