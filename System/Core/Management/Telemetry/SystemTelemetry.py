@@ -67,8 +67,7 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
 
         # Start AutoRefresh Daemon #
         self.Logger.Log('Creating Local System Data Daemon Thread Object', 2)
-        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(self.LocalSystemDataDaemonControlQueue, StatisticsQueue, 0, ))
-        self.UpdateThread.__name__ = name='LocalSystem Data Daemon'
+        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(self.LocalSystemDataDaemonControlQueue, StatisticsQueue, 0, ), name='LocalSystem Data Daemon')
         self.Logger.Log('Created Local System Data Daemon Thread Object', 1)
 
         self.Logger.Log('Starting Local System Data Daemon Thread Object', 2)
@@ -90,7 +89,7 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
         # Start ZKDataSend Thread #
         self.Logger.Log('Creating System Statistics Auto Transmission Thread', 2)
         self.ZKDataSendThread = threading.Thread(target=self.SendStatsThread, args=(self.ControlQueueSendStatsThread, StatisticsQueue,))
-        self.ZKDataSendThread.__name__='Send Statistics Thread'
+        self.ZKDataSendThread.name='Send Statistics Thread'
         self.Logger.Log('Created System Statistcs Auto Transmission Thread', 1)
 
         # Start ZKDataSend Thread #
@@ -105,7 +104,7 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
     def SendStatsThread(self, ControlQueue, InQueue): # Send Stats Via Send Command #
 
         # Log Start #
-        self.Logger.Log('Starting SystemTelemetry Transmission Thread')
+        self.Logger.Log('Starting SystemTelemetry Transmission Thread', 1)
 
         # Enter Main Loop #
         while ControlQueue.empty():
