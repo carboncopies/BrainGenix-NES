@@ -48,13 +48,24 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Create Thread #
         self.Logger.Log('Creating Thread For ManagementAPISocketServer Daemon', 2)
-        self.Thread = threading.Thread(target=self.ManagementAPIThread, args=(self.ManagementAPIThreadControlQueue), name='mAPI Socket Server')
+        self.Thread = threading.Thread(target=self.ManagementAPIThread, args=(self.ManagementAPIThreadControlQueue, ), name='mAPI Socket Server')
         self.Logger.Log('Created Control Queue For ManagementAPISocketServer Daemon', 1)
 
         # Start Thread #
         self.Logger.Log('Starting ManagementAPISocketServer Daemon', 2)
         self.Thread.start()
         self.Logger.Log('Started ManagementAPISocketServer Daemon', 1)
+
+        # Add Thread To Control Manager #
+        self.Logger.Log('Adding ManagementAPISocketServer To Thread Manager', 3)
+        
+        self.Logger.Log('Appending ManagementAPISocketServerControlQueue To Control Queue List', 2)
+        self.ThreadManager.ControlQueues.append(self.ManagementAPIThreadControlQueue)
+        self.Logger.Log('Appended ManagementAPISocketServerControlQueue To Control Queue List', 1)
+
+        self.Logger.Log('Appending ManagementAPISocketServer Thread Object To ThreadManager Thread List', 2)
+        self.ThreadManager.Threads.append(self.Thread)
+        self.Logger.Log('Appended ManagementAPISocketServer Thread To ThreadManager Thread List', 1)
 
 
     # Load In External Commands #
