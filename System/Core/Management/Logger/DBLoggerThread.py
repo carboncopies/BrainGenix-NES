@@ -75,6 +75,10 @@ class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The D
         self.Logger.Log('Committed Outstanding pymysql Statements', 2)
 
         self.Logger.Log('Closing pymysql Connection', 3)
+
+        # FIX ME!
+        # ADD FINAL LOG MESSAGE HERE STATING THAT THE SYSTEM DISCONNECTED FROM THE DB
+
         self.DatabaseConnection.close()
         self.Logger.Log('Closed pymysql Connection', 2)
 
