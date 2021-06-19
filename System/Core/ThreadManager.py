@@ -115,57 +115,58 @@ class ThreadManager(): # This Class Manages Threads #
             exit()
 
 
-    def InstantiateInternodeQueue(self, Logger, InternodeConfigDict): # Instantiates Kafka #
+    # def InstantiateInternodeQueue(self, Logger, InternodeConfigDict): # Instantiates Kafka #
 
-        # Log Message #
-        Logger.Log('Instantiating Internode Queue Subsystem')
+    #     # Log Message #
+    #     Logger.Log('Instantiating Internode Queue Subsystem')
 
-        # Read Mode From File #
-        Logger.Log('Reading Configuration File')
-        QueueType = InternodeConfigDict['Type']
-
-
-        # Check Queueing System Type #
-        if QueueType == 'Kafka':
-
-            Logger.Log('Internode Queue Subsystem Backend Has Been Set To Kafka')
-
-            # Instantiate Kafka #
-            try:
-
-                KafkaInterfaceInstance = KafkaInterface(Logger, InternodeConfigDict)
-
-                # Log Success #
-                Logger.Log('Kafka Interface Instantiation Successful')
-
-                # Return Instantiated Kafka Interface Object #
-                return KafkaInterfaceInstance
-
-            # If Something Fails During Instantiation #
-            except Exception as E:
-
-                # Print Exception Message #
-                Logger.Log('Error During Kafka Instantiation', 3)
-                Logger.Log(f'Exception: {E}; Running Kafka Diagnostics!', 3)
-
-                # Run Diagnostics #
-                CanAccessKafka(InternodeConfigDict, Logger)
-                exit()
-
-        elif QueueType == 'Socket':
-
-            Logger.Log('Internode Queue Subsystem Backend Has Been Set To Sockets')
-
-            # Instantiate Socket System #
+    #     # Read Mode From File #
+    #     Logger.Log('Reading Configuration File')
+    #     QueueType = InternodeConfigDict['Type']
 
 
-        else:
+    #     # Check Queueing System Type #
+    #     if QueueType == 'Kafka':
 
-            # If It's An Unsupported Backend #
-            Logger.Log('Unknown Backend For Queue Subsystem! Please Check Your Configuration File.', 3)
+    #         Logger.Log('Internode Queue Subsystem Backend Has Been Set To Kafka')
 
-            # Terminate System #
-            exit()
+    #         # Instantiate Kafka #
+    #         try:
+
+    #             KafkaInterfaceInstance = KafkaInterface(Logger, InternodeConfigDict)
+
+    #             # Log Success #
+    #             Logger.Log('Kafka Interface Instantiation Successful')
+
+    #             # Return Instantiated Kafka Interface Object #
+    #             return KafkaInterfaceInstance
+
+    #         # If Something Fails During Instantiation #
+    #         except Exception as E:
+
+    #             # Print Exception Message #
+    #             Logger.Log('Error During Kafka Instantiation', 3)
+    #             Logger.Log(f'Exception: {E}; Running Kafka Diagnostics!', 3)
+
+    #             # Run Diagnostics #
+    #             CanAccessKafka(InternodeConfigDict, Logger)
+    #             exit()
+
+    #     elif QueueType == 'Socket':
+
+    #         Logger.Log('Internode Queue Subsystem Backend Has Been Set To Sockets')
+
+    #         # Instantiate Socket System #
+
+
+    #     else:
+
+    #         # If It's An Unsupported Backend #
+    #         Logger.Log('Unknown Backend For Queue Subsystem! Please Check Your Configuration File.', 3)
+
+    #         # Terminate System #
+    #         exit()
+    
 
 
     def InstantiateDB(self, Logger, DBConfig): # Instantiates Database Interface #
