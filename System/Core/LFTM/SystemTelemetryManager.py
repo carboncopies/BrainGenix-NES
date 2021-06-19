@@ -35,6 +35,32 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         self.SysTelFollower = Follower(Logger=self.Logger, Zookeeper=self.Zookeeper)
         self.SysTelLeader = None
 
+
+        # Connect Local System Data Thread To Thread Manager #
+        self.Logger.Log('Adding Local System Data Collection Daemon To Thread Manager', 3)
+
+        self.Logger.Log('Adding Local System Data Collection Daemon Control Queue To Thread Manager', 2)
+        self.ThreadManager.ControlQueues.append(self.SysTelFollower.LocalSystemDataDaemonControlQueue)
+        self.Logger.Log('Added Local System Data Collection Daemon To Control Queue List', 1)
+
+        self.Logger.Log('Adding Local System Data Collection Daemon Object To Thread Manager', 2)
+        self.ThreadManager.Threads.append(self.SysTelFollower.UpdateThread)
+        self.Logger.Log('Added Local System Data Collection Daemon Object To Thread List', 1)
+
+
+        # Connect Local System Autorefresh To Thread Manager #
+        self.Logger.Log('Adding SendStatsThread To Thread Manager', 3)
+
+        self.Logger.Log('Adding SendStatsThread Control Queue To Thread Manager', 2)
+        self.ThreadManager.ControlQueues.append(self.SysTelFollower.ControlQueueSendStatsThread)
+        self.Logger.Log('Added SendStatsThread To Control Queue List', 1)
+
+        self.Logger.Log('Adding SendStatsThread Object To Thread Manager', 2)
+        self.ThreadManager.Threads.append(self.SysTelFollower.ZKDataSendThread)
+        self.Logger.Log('Added SendStatsThread Object To Thread List', 1)
+
+
+
         # Log Finish Message #
         self.Logger.Log('Initalized System Telemetry Subsystem')
 
