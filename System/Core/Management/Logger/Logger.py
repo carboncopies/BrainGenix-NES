@@ -115,6 +115,7 @@ class SysLog(): # Logger Class #
         if DatabaseConfig == None:
             print('Database Configuration Null, Please Check Config File')
 
+
         self.LogQueue = queue.Queue()
         self.ControlQueue = queue.Queue() # Causes thread exit when item placed in queue
         self.DBDumper = DatabaseLogTransmissionSystem(self, self.LogQueue, self.ControlQueue, DatabaseConfig)
