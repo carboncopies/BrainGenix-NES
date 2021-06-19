@@ -129,11 +129,6 @@ class LFTM(): # Define Class Object #
         # Shut Down System #
         self.ThreadManager.ShutdownSystem()
 
-        # # Call Shutdown Functions #
-        # self.ZookeeperInstance.Exit()
-        # self.SocketAPI.Quit()
-        # self.Logger.CleanExit()
-
 
         # Print SQL Style Message #
         print('Bye.')
