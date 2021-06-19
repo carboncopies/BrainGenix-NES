@@ -8,12 +8,15 @@ Description: This file is used to create instances of other subsystems.
 Date-Created: 2021-03-24
 '''
 
+import queue
+import threading
+
 
 from Core.Internode.Zookeeper.Zookeeper import ZK
 
 from Core.Internode.Kafka.KafkaInterface import KafkaInterface
 
-from Core.Internode.Database.DatabaseInterface import DBInterface
+from Core.Internode.Database.ModuleInstanceManager import DatabaseInstanceCreator
 
 from Core.Diagnostics.ZKDiagnostics import CanAccessZookeeper
 from Core.Diagnostics.KafkaDiagnostics import CanAccessKafka
@@ -116,13 +119,24 @@ def InstantiateDB(Logger, DBConfig): # Instantiates Database Interface #
     # Instantiate DB #
     try:
 
-        DBInterfaceInstance = DBInterface(Logger, DBConfig)
+        
+        # Create Queues for DBInstance Manager #
+        ControlQueue = queue.Queue()
+
+        # Instantiate DatabaseInstanceManager #
+        DBInstanceManager = DatabaseInstanceCreator(Logger, DBConfig, ControlQueue)
+
+
+        # Start Pymysql Instance creator #
+        DBInstanceManagerThread = threading.Thread(target=DBInstanceManager.__call__, args=())
+        DBInstanceManagerThread.name = "DBInstanceUpdate"
+        DBInstanceManagerThread.start()
 
         # Log Success #
         Logger.Log('Database Connector Created Successfully')
 
         # Return Instantiated DB Interface Object #
-        return DBInterfaceInstance
+        return DBInstanceManagerThread
 
     # If Something Fails During Instantiation #
     except Exception as E:
