@@ -116,6 +116,7 @@ class SysLog(): # Logger Class #
             print('Database Configuration Null, Please Check Config File')
 
 
+        # Create Queues #
         self.LogQueue = queue.Queue()
         self.ControlQueue = queue.Queue() # Causes thread exit when item placed in queue
         self.DBDumper = DatabaseLogTransmissionSystem(self, self.LogQueue, self.ControlQueue, DatabaseConfig)
@@ -281,7 +282,7 @@ class SysLog(): # Logger Class #
         # Destroy Connection To Database #
         print('Destroying DB Logger Thread')
         self.ControlQueue.put('stahp!')
-        self.DatabasingThread.join()
+        self.DumperThread.join()
         print('Destroyed DB Logger Thread')
 
         # Return Done #
