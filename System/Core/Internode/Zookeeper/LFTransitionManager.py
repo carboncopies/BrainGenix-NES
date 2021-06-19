@@ -15,7 +15,7 @@ from Core.LFTM.SystemTelemetryManager import SystemTelemetryManager
 
 class LFTM(): # Define Class Object #
 
-    def __init__(self, Logger, ZookeeperInstance, SocketAPI): # Initialize LFTM #
+    def __init__(self, Logger, ZookeeperInstance, SocketAPI, ThreadManager): # Initialize LFTM #
 
         # Log Start Message #
         Logger.Log('Initializing Leader-Follower Transition Manager')
@@ -24,6 +24,8 @@ class LFTM(): # Define Class Object #
         self.Logger = Logger
         self.ZookeeperInstance = ZookeeperInstance
         self.SocketAPI = SocketAPI
+        self.ThreadManager = ThreadManager
+
 
         # Set Default State #
         self.CurrentZookeeperState = 'Follower' # <-- Don't change this, it's set to follower for a reason...
@@ -124,10 +126,13 @@ class LFTM(): # Define Class Object #
         self.Logger.Log('Shutting Down System')
 
 
-        # Call Shutdown Functions #
-        self.ZookeeperInstance.Exit()
-        self.SocketAPI.Quit()
-        self.Logger.CleanExit()
+        # Shut Down System #
+        self.ThreadManager.ShutdownSystem()
+
+        # # Call Shutdown Functions #
+        # self.ZookeeperInstance.Exit()
+        # self.SocketAPI.Quit()
+        # self.Logger.CleanExit()
 
 
         # Print SQL Style Message #
