@@ -67,5 +67,15 @@ class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The D
             self.LoggerCursor.execute(insertStatement,val)
 
 
-    # Add function to close DB connection on thread exit
-    # self.DatabaseConnection.close()
+        # Log System Shutdown #
+        self.Logger.Log('Shutting Down Database Log Transmission Daemon', 5)
+        
+        self.Logger.Log('Commiting Oustanding Cursor Commands', 3)
+        self.LoggerCursor.commit()
+        self.Logger.Log('Committed Outstanding Cursor Statements', 2)
+
+        self.Logger.Log('Closing pymysql Connection', 3)
+        self.DatabaseConnection.close()
+        self.Logger.Log('Closed pymysql Connection', 2)
+
+        self.Logger.Log('Database Log Transmission System Shutdown Complete', 4)
