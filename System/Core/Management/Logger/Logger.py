@@ -6,7 +6,6 @@ import gzip
 import datetime
 import inspect
 import os
-import pymysql
 import threading
 import socket
 import queue
@@ -120,11 +119,11 @@ class SysLog(): # Logger Class #
             print('Database Configuration Null, Please Check Config File')
 
         self.LogQueue = queue.Queue()
-        self.ControlQueue = queue.Queue() # Causes thread exit when item placed in queue 
+        self.ControlQueue = queue.Queue() # Causes thread exit when item placed in queue
         self.DBDumper = DatabaseLogTransmissionSystem(self, self.LogQueue, self.ControlQueue, DatabaseConfig)
         self.DumperThread = threading.Thread(target=self.DBDumper)
         self.DumperThread.start()
-        
+
 
 
 

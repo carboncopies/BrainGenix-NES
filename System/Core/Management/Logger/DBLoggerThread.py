@@ -2,15 +2,13 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
-import threading
 import pymysql
-import queue
 
 '''
 Name: DB Logger Thread
 Description: This system is responsible for sending logs to the database.
 Date-Created: 2021-06-18
-''' 
+'''
 
 
 class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The Database #
