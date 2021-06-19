@@ -384,8 +384,7 @@ class Leader(): # This Class Is Run By The Leader #
 
         # Start The AutoUpdate Thread #
         self.Logger.Log('Creating Data Collection Daemon Thread Object', 2)
-        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(self.ControlQueueDataCollectionDaemon, ))
-        self.UpdateThread.__name__ = 'Data Collection Daemon'
+        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(self.ControlQueueDataCollectionDaemon, ), name='Data Collection Daemon')
         self.Logger.Log('Thread Object Created for Data Collection Daemon', 1)
 
 
