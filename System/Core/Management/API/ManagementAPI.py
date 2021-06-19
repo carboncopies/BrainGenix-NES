@@ -4,6 +4,7 @@
 
 import socket
 import threading
+import queue
 import json
 
 
@@ -38,9 +39,22 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.Socket.listen()
 
         # Create MAPI Thread #
-        self.Logger.Log('Starting Management API Server Thread')
-        self.Thread = threading.Thread(target=self.ManagementAPIThread, args=())
+        self.Logger.Log('Starting Management API Server Thread', 3)
+        
+        # Create Control Queue #
+        self.Logger.Log('Creating Control Queue For ManagementAPISocketServer Thread', 2)
+        self.ManagementAPIThreadControlQueue = queue.Queue()
+        self.Logger.Log('Created Control Queue For ManagementAPISocketServer Thread', 1)
+
+        # Create Thread #
+        self.Logger.Log('Creating Thread For ManagementAPISocketServer Daemon', 2)
+        self.Thread = threading.Thread(target=self.ManagementAPIThread, args=(self.ManagementAPIThreadControlQueue), name='mAPI Socket Server')
+        self.Logger.Log('Created Control Queue For ManagementAPISocketServer Daemon', 1)
+
+        # Start Thread #
+        self.Logger.Log('Starting ManagementAPISocketServer Daemon', 2)
         self.Thread.start()
+        self.Logger.Log('Started ManagementAPISocketServer Daemon', 1)
 
 
     # Load In External Commands #
@@ -93,10 +107,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
 
 
-    def ManagementAPIThread(self): # Create A Thread Function For The Management API #
+    def ManagementAPIThread(self, ControlQueue): # Create A Thread Function For The Management API #
 
         # Enter Connection Accept Loop #
-        while True:
+        while ControlQueue.empty():
 
             try:
                 # Log That Server Awaiting Connections #
