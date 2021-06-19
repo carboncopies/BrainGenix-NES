@@ -115,7 +115,7 @@ sSocketAPI.LinkLFTM(sLFTMInstance)
 
 
 # MOTD #
-mLogger.Log('Starting BrainGenix Instance', 5)
+mLogger.Log('Starting BrainGenix Instance', 7)
 mLogger.Log('', 5)
 mLogger.Log('---------------------------------------------------------------------------', 5)
 mLogger.Log('██████╗ ██████╗  █████╗ ██╗███╗   ██╗ ██████╗ ███████╗███╗   ██╗██╗██╗  ██╗', 5)
@@ -126,14 +126,14 @@ mLogger.Log('██████╔╝██║  ██║██║  ██║█
 mLogger.Log('╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝', 5)
 mLogger.Log('---------------------------------------------------------------------------', 5)
 mLogger.Log('', 5)
-mLogger.Log('    +-----------------------------------------------------------------+', 5)
-mLogger.Log('    |                 BrainGenix WBE Simulation System                |', 5)
-mLogger.Log(f'    |                 Version: {Version}                                  |', 5)
-mLogger.Log(f'    |                 Branch: {Branch}                                     |', 5)
-mLogger.Log(f'    |                 Clustersize: {NodeCount}                                  |', 5)
-mLogger.Log(f'    |                 MAPIServers: {APIServerCount}                                  |', 5)
-mLogger.Log('    +-----------------------------------------------------------------+', 5)
-mLogger.Log('', 5)
+mLogger.Log('    +-----------------------------------------------------------------+', 4)
+mLogger.Log('    |                 BrainGenix WBE Simulation System                |', 4)
+mLogger.Log(f'    |                 Version: {Version}                                  |', 4)
+mLogger.Log(f'    |                 Branch: {Branch}                                     |', 4)
+mLogger.Log(f'    |                 Clustersize: {NodeCount}                                  |', 4)
+mLogger.Log(f'    |                 MAPIServers: {APIServerCount}                                  |', 4)
+mLogger.Log('    +-----------------------------------------------------------------+', 4)
+mLogger.Log('', 4)
 
 
 # Start System #
