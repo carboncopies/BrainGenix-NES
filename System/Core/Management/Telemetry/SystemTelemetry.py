@@ -108,13 +108,21 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
         self.Logger.Log('Starting SystemTelemetry Transmission Thread')
 
         # Enter Main Loop #
-        while True:
+        while ControlQueue.empty():
+
+            # Short Delay #
+            time.sleep(0.005)
 
             # Pull Data From Queue #
-            Data = InQueue.get()
+            if not InQueue.empty():
+                Data = InQueue.get()
+            else:
+                Data = None
+
 
             # Send Data #
-            self.SendStats(Data)
+            if Data != None:
+                self.SendStats(Data)
 
 
     def AutoRefresh(self, ControlQueue:object, StatisticsQueue:object, RefreshInterval:float=1):
@@ -127,6 +135,7 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
 
             # Update Zookeeper #
             StatisticsQueue.put(self.SystemHardware)
+
 
 
     def GetStaticStatsDict(self): # Gets Static Stats And Puts Them Into A Dictionary #
