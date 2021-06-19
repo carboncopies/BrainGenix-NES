@@ -129,10 +129,12 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                 self.Logger.Log(f'MAPI Server Awaiting Connections On Port: {self.Port}')
 
                 # Set Socket Timeout #
-                
+                self.Logger.Log('Setting Socket Timeout', 2)
                 self.Socket.settimeout(0.2)
+                self.Logger.Log('Set Socket Timeout', 1)
 
                 # Wait Accept Incoming Connections #
+                self.Logger.Log('Entering Connection Accept Loop', 2)
                 while ControlQueue.empty():
 
                     # Await Connection #
@@ -226,6 +228,14 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     # Log Exception #
                     self.Logger.Log(f'Exception In Management APIServer: {E}')
 
+        # Exit Message #
+        self.Logger.Log('Management API Socket Server Shutting Down', 4)
+
+        self.Logger.Log('Closing Management API Server Socket', 2)
+        self.Quit()
+        self.Logger.Log('mAPI Server Socket Closed', 1)
+
+        self.Logger.Log('Finished Shutting Down Management API Socket Server', 3)
 
 
     def Quit(self): # Release The Socket #
