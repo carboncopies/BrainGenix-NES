@@ -439,6 +439,10 @@ class Leader(): # This Class Is Run By The Leader #
             except ValueError: # Catch Exception if the execution time for finding stats takes longer than the refresh interval, resulting in negative delay #
                 pass
 
+        # Send Shutdown Message #
+        self.Logger.Log('Shutting Down Leader Data Collection Daemon', 4)
+
+
 
     def PullStatsFromZK(self): # Pulls All System Stats From Zookeeper #
 
