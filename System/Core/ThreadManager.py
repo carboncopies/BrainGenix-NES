@@ -15,7 +15,7 @@ Date-Created: 2021-06-18
 
 from Core.Internode.Zookeeper.Zookeeper import ZK
 
-from Core.Internode.Kafka.KafkaInterface import KafkaInterface
+#from Core.Internode.Kafka.KafkaInterface import KafkaInterface
 
 from Core.Internode.Database.ModuleInstanceManager import DatabaseInstanceCreator
 
@@ -166,7 +166,7 @@ class ThreadManager(): # This Class Manages Threads #
 
     #         # Terminate System #
     #         exit()
-    
+
 
 
     def InstantiateDB(self, Logger, DBConfig): # Instantiates Database Interface #
