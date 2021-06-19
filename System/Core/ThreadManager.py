@@ -26,6 +26,9 @@ from Core.Diagnostics.DatabaseDiagnostics import CanAccessDatabase
 from Core.Management.Logger.Logger import SysLog
 
 
+#################################################################
+# TODO: LINK THIS THREAD MANAGER WITH THE MANAGEMENT API THREAD #
+#################################################################
 
 class ThreadManager(): # This Class Manages Threads #
 
