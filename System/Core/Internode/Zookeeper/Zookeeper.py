@@ -129,7 +129,7 @@ class ZK(): # Create Interface Class #
         *Again, you shouldn't have to interact with this function at all.*
         '''
 
-        self.LeaderCheckerThread = threading.Thread(target=self.LeaderCheckDaemon, args=(), name='Zookeeper Leader Timeout Checker').start()
+        self.LeaderCheckerThread = threading.Thread(target=self.LeaderCheckDaemon, args=(), name='ZK Leader Timeout Daemon').start()
 
 
 
@@ -250,13 +250,15 @@ class ZK(): # Create Interface Class #
 
 
 
-    def LeaderCheckDaemon(self, RefreshInterval=1): # Constantly Checks If Leader Disconnects #
+    def LeaderCheckDaemon(self, ControlQueue, RefreshInterval=1): # Constantly Checks If Leader Disconnects #
 
         '''
         This function is the actual thread target used by the leader checking process.
         *Don't call this function unless you know what you're doing.*
         '''
-        while True:
+
+        # Enter Loop #
+        while ControlQueue.empty():
 
             # Catch Errors #
             try:
