@@ -29,7 +29,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
     def StartSystem(self): # Called During Startup #
 
         # Log Instantiation #
-        self.Logger.Log('Starting System Telemetry Subsystem')
+        self.Logger.Log('Starting System Telemetry Subsystem', 4)
 
         # Instantiate #
         self.SysTelFollower = Follower(Logger=self.Logger, Zookeeper=self.Zookeeper)
@@ -62,13 +62,13 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
 
 
         # Log Finish Message #
-        self.Logger.Log('Initalized System Telemetry Subsystem')
+        self.Logger.Log('Initalized System Telemetry Subsystem', 3)
 
 
     def TransitionLeader(self): # Transitions The System To Follower Mode #
 
         # Log Instantiation #
-        self.Logger.Log('System Telemetry Transition Asserted, Called For Mode "LEADER"')
+        self.Logger.Log('System Telemetry Transition Asserted, Called For Mode "LEADER"', 6)
 
         # Instantiate #
         self.SysTelLeader = Leader(Logger=self.Logger, Zookeeper=self.Zookeeper)
@@ -86,13 +86,13 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
 
 
         # Log Finish Message #
-        self.Logger.Log('Initalized System Telemetry Subsystem In Mode [Leader, Follower]')
+        self.Logger.Log('Initalized System Telemetry Subsystem In Mode [Leader, Follower]', 5)
 
 
     def TransitionFollower(self): # Transitions The System To Follower Mode #
 
         # Log Instantiation #
-        self.Logger.Log('System Telemetry Transition Asserted, Called For Mode "FOLLOWER"')
+        self.Logger.Log('System Telemetry Transition Asserted, Called For Mode "FOLLOWER"', 6)
 
 
         # Join Threads #
@@ -113,7 +113,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         self.Logger.Log('Destroyed Data Collection Daemon Class', 1)
 
         # Log Finish Message #
-        self.Logger.Log('Initalized System Telemetry Subsystem In Mode [None, Follower]')
+        self.Logger.Log('Initalized System Telemetry Subsystem In Mode [None, Follower]', 5)
 
 
     def UpdateLeader(self): # Called To Update Anything That Needs Updating #
