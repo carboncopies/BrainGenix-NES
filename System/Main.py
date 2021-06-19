@@ -17,6 +17,8 @@ from Core.Initialization.LoadConfig import LoadManagementAPIServerConfig
 
 from Core.ThreadManager import ThreadManager
 
+from Core.Initialization.Instantiator import InstantiateLogger
+
 from Core.Initialization.CheckLibraries import CheckImports
 
 from Core.Management.Logger.CLAS import CentralizedLoggerAggregationSystem
@@ -47,12 +49,13 @@ ZKConfigDict = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml
 InternodeConfigDict = LoadInternodeQueueConfig(ConfigFilePath = 'Config/InternodeQueue.yaml')
 ManagementAPIServerConfig = LoadManagementAPIServerConfig(ConfigFilePath = 'Config/ManagementAPIConfig.yaml')
 
-# Instantiate Thread Manager #
-ThreadManagerInstance = ThreadManager()
-
 
 # Initialize Logger #
-mLogger = ThreadManagerInstance.InstantiateLogger(DBConfigDict, LoggerConfigDict)
+mLogger = InstantiateLogger(DBConfigDict, LoggerConfigDict)
+
+
+# Instantiate Thread Manager #
+mThreadManagerInstance = ThreadManager(mLogger)
 
 
 # Initialize CLAS #
@@ -60,7 +63,7 @@ sCLAS = CentralizedLoggerAggregationSystem(mLogger)
 
 
 # Connect To DB #
-sDatabaseInterface = ThreadManagerInstance.InstantiateDB(mLogger, DBConfigDict)
+sDatabaseInterface = mThreadManagerInstance.InstantiateDB(mLogger, DBConfigDict)
 
 
 # Start API Server #
@@ -88,7 +91,7 @@ CheckImports(ModulesNeeded, mLogger)
 
 
 # Connect To Zookeeper Service #
-sZookeeper = ThreadManagerInstance.InstantiateZK(mLogger, ZKConfigDict)
+sZookeeper = mThreadManagerInstance.InstantiateZK(mLogger, ZKConfigDict)
 
 
 ##############################################################################################################
@@ -104,10 +107,11 @@ NodeCount = sZookeeper.ConcurrentConnectedNodes()
 APIServerCount = len(sZookeeper.ZookeeperConnection.get_children('/BrainGenix/API/Connections'))
 
 # Instantiate Leader/Follower Transition Manager #
-sLFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI)
+sLFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI, mThreadManagerInstance)
 
 # Link LFTM #
 sSocketAPI.LinkLFTM(sLFTMInstance)
+
 
 
 # MOTD #
