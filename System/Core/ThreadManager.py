@@ -73,8 +73,7 @@ class ThreadManager(): # This Class Manages Threads #
 
             # Create ZK Thread Object #
             self.Logger.Log('Creating Zookeeper Leader Timeout Daemon Thread Object', 1)
-            Zookeeper.LeaderCheckerThread = threading.Thread(target=Zookeeper.LeaderCheckDaemon, args=(ControlQueue, ))
-            Zookeeper.LeaderCheckerThread.__name__ = 'ZK Leader Timeout Daemon'
+            Zookeeper.LeaderCheckerThread = threading.Thread(target=Zookeeper.LeaderCheckDaemon, args=(ControlQueue, ), name='ZK Leader Timeout Daemon')
             self.Logger.Log('Zookeeper Leader Timeout Daemon Thread Created', 1)
             
             # Start ZK Thread #
@@ -215,7 +214,7 @@ class ThreadManager(): # This Class Manages Threads #
 
 
 
-    def ShutdownSystem(self): # Shuts Down Threads #
+    def ShutdownSystem(self): # Shuts Down Threads Across Entire System #
 
         # Check If Threads Already Destroyed #
         if not self.ThreadsDestroyed:
