@@ -6,6 +6,7 @@ import socket
 import threading
 import queue
 import json
+import select
 
 
 '''
@@ -127,66 +128,87 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                 # Log That Server Awaiting Connections #
                 self.Logger.Log(f'MAPI Server Awaiting Connections On Port: {self.Port}')
 
+                # Set Socket Timeout #
+                
+                self.Socket.settimeout(0.2)
 
                 # Wait Accept Incoming Connections #
-                self.Connection, self.ConnectionInformation = self.Socket.accept()
-                self.Logger.Log(f'Management API Recieved Connection From: {self.ConnectionInformation}')
+                while ControlQueue.empty():
+
+                    # Await Connection #
+                    try:
+                        self.Connection, self.ConnectionInformation = self.Socket.accept()
+                        self.Logger.Log(f'Management API Recieved Connection From: {self.ConnectionInformation}')\
+                        
+                        # Set Nonblocking #
+                        self.Connection.setblocking(0)
+                    
+                    except socket.timeout:
+                        pass
 
 
                 # Enter Listening Loop To Recieve Commands #
-                while True:
+                while ControlQueue.empty():
+
 
                     # Get Command From Client #
-                    self.Command = self.Connection.recv(65535)
-                    self.Command = self.Command.decode()
-
-
-                    # Convert To Dict From JSON #
-                    try:
-                        self.Command = json.loads(self.Command)
-                    except Exception as e:
-                        self.Logger.Log('Exception In Management Server JSONLOAD', 1)
-                        self.Logger.Log(e)
-
-
-                    # Check That Command Syntax Is Correct #
-                    if str(type(self.Command)) != "<class 'dict'>":
-                        CommandOutput = "INVALID DICTIONARY FORMAT"
-
-                    if 'CallStack' not in self.Command:
-                        CommandOutput = "COMMAND DOES NOT INCLUDE 'CallStack' FIELD. If using CLI, run 'scope (NES, ERS, STS)'"
-
-
-                    # Check If Disconnect (Must be before SysName check to remain client agnostic) #
-                    elif self.Command['CallStack'] == 'Disconnect':
-                        self.Logger.Log('Client Initiated MAPI Disconnect, Connection Closed')
-                        self.Connection.close()
-                        break
-
-
-                    # More Command Syntax Checks #
-                    elif 'SysName' not in self.Command:
-                        CommandOutput = "COMMAND DOES NOT INCLUDE 'SysName' FIELD"
-
-                    elif 'KeywordArgs' not in self.Command:
-                        CommandOutput = "COMMAND DOES NOT INCLUDE 'KeywordArgs' FIELD"
-
-                    elif self.Command['SysName'] != 'NES':
-                        CommandOutput = "INVALID VALUE FOR 'SysName' FIELD"
-
-                    # Run System Command #
+                    SocketReady = select.select([self.Connection], [], [], 1)
+                    if SocketReady[0]:
+                        self.Command = self.Connection.recv(65535)
+                        self.Command = self.Command.decode()
                     else:
-                        CommandOutput, CommandName = self.ExecuteCommand()
+                        self.Command = None
+
+
+                    # Check If Command Ready #
+                    if self.Command != None:
+
+                        # Convert To Dict From JSON #
+                        try:
+                            self.Command = json.loads(self.Command)
+                        except Exception as e:
+                            self.Logger.Log('Exception In Management Server JSONLOAD', 1)
+                            self.Logger.Log(e)
+
+
+                        # Check That Command Syntax Is Correct #
+                        if str(type(self.Command)) != "<class 'dict'>":
+                            CommandOutput = "INVALID DICTIONARY FORMAT"
+
+                        if 'CallStack' not in self.Command:
+                            CommandOutput = "COMMAND DOES NOT INCLUDE 'CallStack' FIELD. If using CLI, run 'scope (NES, ERS, STS)'"
+
+
+                        # Check If Disconnect (Must be before SysName check to remain client agnostic) #
+                        elif self.Command['CallStack'] == 'Disconnect':
+                            self.Logger.Log('Client Initiated MAPI Disconnect, Connection Closed')
+                            self.Connection.close()
+                            break
+
+
+                        # More Command Syntax Checks #
+                        elif 'SysName' not in self.Command:
+                            CommandOutput = "COMMAND DOES NOT INCLUDE 'SysName' FIELD"
+
+                        elif 'KeywordArgs' not in self.Command:
+                            CommandOutput = "COMMAND DOES NOT INCLUDE 'KeywordArgs' FIELD"
+
+                        elif self.Command['SysName'] != 'NES':
+                            CommandOutput = "INVALID VALUE FOR 'SysName' FIELD"
+
+                        # Run System Command #
+                        else:
+                            CommandOutput, CommandName = self.ExecuteCommand()
 
 
 
-                    # Encode JSON Output #
-                    Response = {"Name" : CommandName, "Content" : CommandOutput}
-                    ResponseString = json.dumps(Response)
-                    ResponseByteString = ResponseString.encode()
+                        # Encode JSON Output #
+                        Response = {"Name" : CommandName, "Content" : CommandOutput}
+                        ResponseString = json.dumps(Response)
+                        ResponseByteString = ResponseString.encode()
 
-                    # Send Output #
-                    self.Connection.send(ResponseByteString)
+                        # Send Output #
+                        self.Connection.send(ResponseByteString)
 
 
 
