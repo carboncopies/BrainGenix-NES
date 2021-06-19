@@ -140,7 +140,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     # Await Connection #
                     try:
                         self.Connection, self.ConnectionInformation = self.Socket.accept()
-                        self.Logger.Log(f'Management API Recieved Connection From: {self.ConnectionInformation}')\
+                        self.Logger.Log(f'Management API Recieved Connection From: {self.ConnectionInformation}', 7)
                         
                         # Set Nonblocking #
                         self.Connection.setblocking(0)
