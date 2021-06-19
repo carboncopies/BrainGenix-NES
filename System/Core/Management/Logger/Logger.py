@@ -123,8 +123,8 @@ class SysLog(): # Logger Class #
 
         self.LogQueue = queue.Queue()
         self.ControlQueue = queue.Queue()
-        self.DBDumper = DatabaseLogTransmissionSystem(self, LogQueue, ControlQueue, DatabaseConfig)
-        self.DumperThread = threading.Thread(self.DBDumper)
+        self.DBDumper = DatabaseLogTransmissionSystem(self, self.LogQueue, self.ControlQueue, DatabaseConfig)
+        self.DumperThread = threading.Thread(target=self.DBDumper)
         self.DumperThread.start()
         
         ### FIXME !!!
@@ -333,6 +333,7 @@ class SysLog(): # Logger Class #
         ### FIXME!
         # Destroy Connection To Database #
         print('Destroying Database Connector')
+        self.ControlQueue.put('stahp!')
         self.DatabasingThread.join()
 #        self.DatabaseConnection.close()
         print('Destroyed Database Connector')
