@@ -2,6 +2,7 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
+
 import queue
 import threading
 import atexit
@@ -28,9 +29,24 @@ from Core.Management.Logger.Logger import SysLog
 
 class ThreadManager(): # This Class Manages Threads #
 
-    def __init__(self): # Initialization #
+    def __init__(self, Logger): # Initialization #
 
+        # Create Local Pointers #
+        self.Logger = Logger
+
+
+        # Create Control Queue List #
+        self.ControlQueues = []
+
+        # Create Thread List #
+        self.Threads = []
+
+        # Create Local Var #
+        self.ThreadsDestroyed = False
+
+        # Register Exit Function #
         atexit.register(self.ShutdownSystem)
+
 
 
     def InstantiateZK(self, Logger, ZookeeperConfig): # Instantiates Zookeeper #
@@ -129,16 +145,24 @@ class ThreadManager(): # This Class Manages Threads #
 
 
             # Create Queues for DBInstance Manager #
-            self.DBInstanceUpdateControlQueue = queue.Queue()
+            ControlQueue = queue.Queue()
 
             # Instantiate DatabaseInstanceManager #
-            self.DBInstanceManager = DatabaseInstanceCreator(Logger, DBConfig, self.DBInstanceUpdateControlQueue)
+            self.DBInstanceManager = DatabaseInstanceCreator(Logger, DBConfig, ControlQueue)
+
+            # Append Control Queue To Control Queues #
+            self.ControlQueues.append(ControlQueue)
 
 
             # Start Pymysql Instance creator #
             self.DBInstanceManagerThread = threading.Thread(target=self.DBInstanceManager.__call__, args=())
             self.DBInstanceManagerThread.name = "DBInstanceUpdate"
             self.DBInstanceManagerThread.start()
+
+            
+            # Append Thread To Stoplist #
+            self.Threads.append(self.DBInstanceManagerThread)
+
 
             # Log Success #
             Logger.Log('Database Connector Created Successfully')
@@ -158,48 +182,57 @@ class ThreadManager(): # This Class Manages Threads #
             exit()
 
 
-    def InstantiateLogger(self, DBConfig, LoggerConfigDict): # Instantiates Kafka #
-
-        # Log Message #
-        print('Initializing Centralized Logging System')
-
-
-        # Instantiate Kafka #
-        try:
-
-            Logger = SysLog(DBConfig, LoggerConfigDict)
-
-            # Log Success #
-            Logger.Log('Centralized Logging Daemon Started')
-
-            # Return Instantiated Kafka Interface Object #
-            return Logger
-
-        # If Something Fails During Instantiation #
-        except Exception as E:
-
-            # Print Exception Message #
-            ErrorMessage = ''
-            ErrorMessage += 'Error During Logger Initialization!\n'
-            ErrorMessage += f'Fatal Exception: {E}'
-
-            # Save Error Output To Disk#
-            with open('README-BRAINGENIX-CLS-ERROR.txt', 'w') as FileObject:
-                FileObject.write(ErrorMessage)
-
-            # Print Error Message #
-            print(ErrorMessage)
-
-            # Exit #
-            exit()
-
 
     def ShutdownSystem(self): # Shuts Down Threads #
 
-        # This part needs to have control queues added for the other threads, but for now, we'll just do the ones that support it. #
+        # Check If Threads Already Destroyed #
+        if not self.ThreadsDestroyed:
 
-        # Send Shutdown Message To Control Queues #
-        self.DBInstanceUpdateControlQueue.put('stawp!')
+            # Log Shutdown Initiated #
+            self.Logger.Log('System Shutdown Initiated', 3)
 
-        # Merge Threads #
-        self.DBInstanceManagerThread.join()
+            # Send Shutdown Message To Control Queues #
+            self.Logger.Log('Sending Shutdown Signal To Threads', 2)
+            for ControlQueueIndex in range(len(self.ControlQueues)):
+
+                # Log Sending "Stawp!" #
+                self.Logger.Log(f'Sending Term Signal To Thread', 0)
+
+                # Send Thread Term Signal #
+                self.ControlQueues[ControlQueueIndex].put('stawp!')
+
+                # Log "Stawp!" Sent #
+                self.Logger.Log(f'Sent Stop Signal To Queue {ControlQueueIndex + 1}/{len(self.ControlQueues)}', 0)
+
+            # Log Task Completion #
+            self.Logger.Log(f'Stop Signals Sent To Thread {ControlQueueIndex + 1}', 2)
+
+
+            # Merge Threads #
+            self.Logger.Log('Joining Threads', 2)
+            for ThreadIndex in range(len(self.Threads)):
+
+                # Log Join Init #
+                self.Logger.Log(f'Joining Thread {ThreadIndex + 1}/{len(self.Threads)}', 0)
+
+                # Join Thread #
+                self.Threads[ThreadIndex].join()
+
+                # Log Join Completion #
+                self.Logger.Log(f'Joined Thread {ThreadIndex + 1}', 0)
+            
+            # Log Task Completion #
+            self.Logger.Log('Thread Joining Complete', 2)
+
+            # Delete Thread Dict #
+            self.Logger.Log('Deleting Thread List', 2)
+            del self.Threads
+            self.Logger.Log('Thread List Deleted', 1)
+
+            # Delete Queues #
+            self.Logger.Log('Deleting Control Queue List', 2)
+            del self.ControlQueues
+            self.Logger.Log('Control Queue List Deleted', 1)
+
+            # Set Threads Destroyed To True #
+            self.ThreadsDestroyed = True
