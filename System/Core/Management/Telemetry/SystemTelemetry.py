@@ -327,21 +327,12 @@ class Leader(): # This Class Is Run By The Leader #
         self.ControlQueueDataCollectionDaemon = queue.Queue()
         self.Logger.Log('Created Control Queue For Data Collection Daemon', 1)
 
-        # Create Control Queue For API Interface Thread #
-        #self.Logger.Log('Creating Control Queue For API Interface Thread')
-        #self.ControlQueueAPIInterfaceDaemon = queue.Queue()
 
         # Start The AutoUpdate Thread #
         self.Logger.Log('Creating Data Collection Daemon Thread Object', 2)
-        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(self.ControlQueueDataCollectionDaemon))
+        self.UpdateThread = threading.Thread(target=self.AutoRefresh, args=(self.ControlQueueDataCollectionDaemon, ))
         self.UpdateThread.__name__ = 'Data Collection Daemon'
         self.Logger.Log('Thread Object Created for Data Collection Daemon', 1)
-
-        # Start API Interface Thread #
-        #self.Logger.Log('Creating Thread Object For Telemetry-Zookeeper API', 2)
-        #self.APIThread = threading.Thread(target=TelemetryAPI, args=(self.ZK, self.Logger, self))
-        #self.APIThread.__name__ = 'SysTel-ZK API Daemon'
-        #self.Logger.Log('Created Telemetry-Zookeeper API Interaction Handler', 1)
 
 
         # Log Thread Start #
@@ -352,11 +343,6 @@ class Leader(): # This Class Is Run By The Leader #
         self.Logger.Log('Starting Data Collection Daemon Thread', 2)
         self.UpdateThread.start()
         self.Logger.Log('Started Data Collection Daemon Thread', 1)
-
-        # Start ZK-API Interface Thread #
-        #self.Logger.Log('Starting Telemetry-Zookeeper Interaction Thread', 2)
-        #self.APIThread.start()
-        #self.Logger.Log('Started Telemetry-Zookeeper Interaction Thread', 1)
 
 
 
