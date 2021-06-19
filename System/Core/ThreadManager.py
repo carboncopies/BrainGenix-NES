@@ -52,7 +52,7 @@ class ThreadManager(): # This Class Manages Threads #
     def InstantiateZK(self, Logger, ZookeeperConfig): # Instantiates Zookeeper #
 
         # Log Info #
-        Logger.Log('Instantiating Zookeeper Interface')
+        Logger.Log('Instantiating Zookeeper Interface', 3)
 
         # Instantiate Zookeeper #
         try:
@@ -61,10 +61,42 @@ class ThreadManager(): # This Class Manages Threads #
             Zookeeper = ZK(Logger)
             Zookeeper.ConnectToZookeeper(Logger, ZookeeperConfig)
             Zookeeper.AutoInitZKLeader()
-            Zookeeper.SpawnCheckerThread()
+
+
+            # Create ZK Thread #
+            self.Logger.Log('Creating Zookeeper Leader Timeout Daemon', 2)
+
+            # Creating ZK Control Queue #
+            self.Logger.Log('Creating Zookeeper Leader Timeout Daemon Control Queue', 1)
+            ControlQueue = queue.Queue()
+            self.Logger.Log('Created Zookeeper Leader Timeout Daemon Control Queue', 1)
+
+            # Create ZK Thread Object #
+            self.Logger.Log('Creating Zookeeper Leader Timeout Daemon Thread Object', 1)
+            Zookeeper.LeaderCheckerThread = threading.Thread(target=Zookeeper.LeaderCheckDaemon, args=(ControlQueue, ))
+            Zookeeper.LeaderCheckerThread.__name__ = 'ZK Leader Timeout Daemon'
+            self.Logger.Log('Zookeeper Leader Timeout Daemon Thread Created', 1)
+            
+            # Start ZK Thread #
+            self.Logger.Log('Starting Zookeeper Leader Timeout Daemon Thread', 1)
+            Zookeeper.LeaderCheckerThread.start()
+            self.Logger.Log('Zookeeper Leader Timeout Daemon Thread Started', 1)
+
+
+            # Connect Thread And Queue To Shutdown System #
+            self.Logger.Log('Connecting Zookeeper Leader Timeout Daemon To Shutdown System', 1)
+
+            self.Logger.Log('Appending Zookeeper Leader Timeout Daemon Thread To Thread List', 0)
+            self.Threads.append(Zookeeper.LeaderCheckerThread)
+
+            self.Logger.Log('Appending Zookeeper Leader Timeout Daemon Control Queue To Control Queue List', 0)
+            self.ControlQueues.append(ControlQueue)
+            self.Logger.Log('Appended Zookeeper Leader Timeout Daemon Control Queue To Control Queue List', 0)
+
+
 
             # Log Success #
-            Logger.Log('Zookeeper Interface Instantiation Successful')
+            Logger.Log('Zookeeper Interface Instantiation Successful', 3)
 
             # Return ZK Instance #
             return Zookeeper
