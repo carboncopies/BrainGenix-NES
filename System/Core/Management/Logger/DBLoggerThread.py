@@ -15,7 +15,7 @@ Date-Created: 2021-06-18
 
 class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The Database #
 
-    def __init__(self, Logger:object, LogBufferQueue:object, ControlQueue:object, DatabaseConfiguration:dict): # Init #
+    def __init__(self, Logger:object, LogBufferQueue:object, ControlQueue:object, DatabaseConfig:dict): # Init #
 
         # Init Logger #
         self.Logger = Logger
