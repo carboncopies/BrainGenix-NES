@@ -271,3 +271,8 @@ class ThreadManager(): # This Class Manages Threads #
 
             # Set Threads Destroyed To True #
             self.ThreadsDestroyed = True
+
+
+            # Shutdown Logging System #
+            self.Logger.Log('Disconnecting Logging Subsystem From Centralized Log Database', 5)
+            self.Logger.CleanExit()
