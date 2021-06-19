@@ -10,9 +10,6 @@ import threading
 import socket
 import queue
 
-print(os.listdir('.'))
-#from Core.Management.Logger import DBLoggerThread# import DatabaseLogTransmissionSystem
-
 from Core.Management.Logger.DBLoggerThread import DatabaseLogTransmissionSystem
 
 '''
