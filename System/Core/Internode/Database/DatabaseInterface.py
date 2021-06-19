@@ -16,7 +16,7 @@ Date-Created: 2021-01-17
 def PymysqlInstanceCreate(Logger:object, DatabaseConfig:dict):
     # start loop #
     MainThread = threading.main_thread.__name__
-    ThisThread = threading.PyMysqlInstanceUpdate.__name__
+    ThisThread = threading.current_thread.__name__
     Threads = list[MainThread, ThisThread] # setup thread list #
     Run = True
     Logger = Logger
