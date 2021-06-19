@@ -122,6 +122,9 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
             # Send Data #
             if Data != None:
                 self.SendStats(Data)
+        
+        # Send Shutdown Message #
+        self.Logger.Log('Shutting Down SystemTelemetry Transmission Thread', 4)
 
 
     def AutoRefresh(self, ControlQueue:object, StatisticsQueue:object, RefreshInterval:float=1):
