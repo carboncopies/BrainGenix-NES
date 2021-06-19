@@ -29,6 +29,9 @@ def PymysqlInstanceCreate(Logger:object, DatabaseConfig:dict):
     DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
 
     while Run == True:
+
+        print(Threads)
+
         # loop throgh threads #
         for ExistingThread in threading.enumerate():
             RunOnce = False
@@ -40,9 +43,10 @@ def PymysqlInstanceCreate(Logger:object, DatabaseConfig:dict):
 
             if RunOnce != True:
                 # if thread has no pymysql add pymysql #
-                Threads.extend(threading.Thread.getName (ExistingThread))
+                Threads.append(threading.Thread.getName (ExistingThread))
                 ExistingThread.PymysqlInstance = pymysql.connect(host = DBHost, user = DBUsername, password = DBPassword, db = DBDatabaseName)
                 Logger.Log("Pymysql Instance Created for thread " + threading.Thread.getName (ExistingThread), 3)
+
 
 class DBInterface(): # Interface to MySQL database #
 
