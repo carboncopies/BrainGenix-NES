@@ -3,6 +3,7 @@
 ###########################################################
 
 #import copy
+import time
 
 '''
 Name: ZKManager
@@ -167,5 +168,10 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         # Set Help String #
         self.mAPI_GetNodeList_Help = 'The Get Node Stats returns a json array of all collected node performance information. It does not accept any parameters as input.'
 
+
         # Set Command #
+        while not self.SysTelLeader.InfoReady:
+            time.sleep(0.001)
+
+        # Return Result #
         return self.SysTelLeader.Info
