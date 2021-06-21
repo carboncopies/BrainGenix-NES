@@ -193,7 +193,7 @@ class ThreadManager(): # This Class Manages Threads #
             self.DBInstanceManagerThread.name = "DBInstanceUpdate"
             self.DBInstanceManagerThread.start()
 
-            
+
             # Append Thread To Stoplist #
             self.Threads.append(self.DBInstanceManagerThread)
 
@@ -238,7 +238,7 @@ class ThreadManager(): # This Class Manages Threads #
                 self.Logger.Log(f'Sent Stop Signal To Queue {ControlQueueIndex + 1}/{len(self.ControlQueues)}', 0)
 
             # Log Task Completion #
-            self.Logger.Log(f'Stop Signals Sent To Threads', 2)
+            self.Logger.Log('Stop Signals Sent To Threads', 2)
 
 
             # Merge Threads #
@@ -246,7 +246,7 @@ class ThreadManager(): # This Class Manages Threads #
             for ThreadIndex in range(len(self.Threads)):
 
                 # Log Join Init #
-                self.Logger.Log('Joining Thread {ThreadIndex + 1}/{len(self.Threads)}', 0)
+                self.Logger.Log(f'Joining Thread {ThreadIndex + 1}/{len(self.Threads)}', 0)
 
                 # Join Thread #
                 self.Threads[ThreadIndex].join()
