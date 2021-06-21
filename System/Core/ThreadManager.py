@@ -21,10 +21,8 @@ from Core.Internode.Zookeeper.Zookeeper import ZK
 from Core.Internode.Database.ModuleInstanceManager import DatabaseInstanceCreator
 
 from Core.Diagnostics.ZKDiagnostics import CanAccessZookeeper
-from Core.Diagnostics.KafkaDiagnostics import CanAccessKafka
+# from Core.Diagnostics.KafkaDiagnostics import CanAccessKafka
 from Core.Diagnostics.DatabaseDiagnostics import CanAccessDatabase
-
-from Core.Management.Logger.Logger import SysLog
 
 
 #################################################################

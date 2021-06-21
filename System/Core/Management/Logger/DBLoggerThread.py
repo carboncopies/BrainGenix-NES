@@ -69,7 +69,7 @@ class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The D
 
         # Log System Shutdown #
         self.Logger.Log('Shutting Down Database Log Transmission Daemon', 5)
-        
+
         self.Logger.Log('Commiting Oustanding pymysql Commands', 3)
         self.DatabaseConnection.commit()
         self.Logger.Log('Committed Outstanding pymysql Statements', 2)

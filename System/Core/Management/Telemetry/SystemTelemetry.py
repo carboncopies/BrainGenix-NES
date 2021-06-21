@@ -13,8 +13,6 @@ import time
 import json
 import sys
 
-from Core.Management.Telemetry.TelemetryAPI import TelemetryAPI
-
 '''
 Name: System Telemetry
 Description: This handles getting system usage statistics from the nodes.
@@ -122,7 +120,7 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
             # Send Data #
             if Data != None:
                 self.SendStats(Data)
-        
+
         # Send Shutdown Message #
         self.Logger.Log('Shutting Down SystemTelemetry Transmission Thread', 4)
 
@@ -412,7 +410,6 @@ class Leader(): # This Class Is Run By The Leader #
 
             # Get Stats #
             try:
-                t1 = time.time()
                 self.PullStatsFromZK()
 
 

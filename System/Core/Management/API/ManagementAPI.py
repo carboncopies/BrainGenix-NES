@@ -41,7 +41,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Create MAPI Thread #
         self.Logger.Log('Starting Management API Server Thread', 3)
-        
+
         # Create Control Queue #
         self.Logger.Log('Creating Control Queue For ManagementAPISocketServer Thread', 2)
         self.ManagementAPIThreadControlQueue = queue.Queue()
