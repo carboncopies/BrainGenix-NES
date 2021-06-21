@@ -253,7 +253,7 @@ class ThreadManager(): # This Class Manages Threads #
 
                 # Log Join Completion #
                 self.Logger.Log(f'Joined Thread {ThreadIndex + 1}', 0)
-            
+
             # Log Task Completion #
             self.Logger.Log('Thread Joining Complete', 2)
 
