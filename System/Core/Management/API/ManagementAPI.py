@@ -141,15 +141,19 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     try:
                         self.Connection, self.ConnectionInformation = self.Socket.accept()
                         self.Logger.Log(f'Management API Recieved Connection From: {self.ConnectionInformation}', 7)
-                        
+
                         # Set Nonblocking #
                         self.Connection.setblocking(0)
+
+                        # Exit Loop #
+                        break
                     
                     except socket.timeout:
                         pass
 
 
                 # Enter Listening Loop To Recieve Commands #
+                self.Logger.Log('Management API Server Awaiting Commands', 4)
                 while ControlQueue.empty():
 
 
@@ -160,7 +164,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         self.Command = self.Command.decode()
                     else:
                         self.Command = None
-
 
                     # Check If Command Ready #
                     if self.Command != None:
