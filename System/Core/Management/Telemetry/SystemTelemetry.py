@@ -351,6 +351,9 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
             else:
                 self.Logger.Log(f'Exception: {E}', 9)
 
+
+
+
 class Leader(): # This Class Is Run By The Leader #
 
     def __init__(self, **kwargs):
@@ -359,6 +362,8 @@ class Leader(): # This Class Is Run By The Leader #
         self.Logger = kwargs['Logger']
         self.ZK = kwargs['Zookeeper']
         self.Info = {}
+        self.InfoReady = False
+
 
         # Log Starting Message #
         self.Logger.Log('Starting System Telemetry Leader')
@@ -399,20 +404,17 @@ class Leader(): # This Class Is Run By The Leader #
 
 
 
-    def AutoRefresh(self, ControlQueue, RefreshInterval:float=0):
-
+    def AutoRefresh(self, ControlQueue):
 
         # Start Inf Loop #
         while ControlQueue.empty():
 
 
-            # Get Start Time #
-            StartTime = time.time()
-
-
             # Get Stats #
             try:
+                t1 = time.time()
                 self.PullStatsFromZK()
+
 
             # Catch Closed Connection Excption #
             except Exception as E:
@@ -428,15 +430,7 @@ class Leader(): # This Class Is Run By The Leader #
                     self.Logger.Log(f'Exception: {E}', 9)
 
 
-            # Delay For Requested Refresh Interval #
-            EndTime = time.time()
-            ExecutionTime = StartTime - EndTime
-            DelayTime = RefreshInterval - ExecutionTime
 
-            try:
-                time.sleep(DelayTime)
-            except ValueError: # Catch Exception if the execution time for finding stats takes longer than the refresh interval, resulting in negative delay #
-                pass
 
         # Send Shutdown Message #
         self.Logger.Log('Shutting Down Leader Data Collection Daemon', 4)
@@ -446,18 +440,32 @@ class Leader(): # This Class Is Run By The Leader #
     def PullStatsFromZK(self): # Pulls All System Stats From Zookeeper #
 
 
+        # Set Info To Disabled, Clear Info #
+        self.InfoReady = False
         self.Info = {}
 
 
         # Get zNodes In Info Section #
+        t=time.time()
         NodeChildren = self.ZK.ZookeeperConnection.get_children('/BrainGenix/System/Telemetry/')
+
+        print(time.time()-t)
+        t=time.time()
 
 
         # Pull Data From zNodes #
         for NodeName in NodeChildren:
+
+            t=time.time()
             NodeInfoJSON = self.ZK.ZookeeperConnection.get(f'/BrainGenix/System/Telemetry/{NodeName}')[0]
             NodeInfoJSON = NodeInfoJSON.decode('ascii')
 
             NodeInfoDecoded = json.loads(NodeInfoJSON)
 
             self.Info.update({NodeName : NodeInfoDecoded})
+            #print(time.time()-t)
+
+
+        
+        # Set Info Ready To True #
+        self.InfoReady = True
