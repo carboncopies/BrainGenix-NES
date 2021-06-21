@@ -1,0 +1,1 @@
+/bin/x86_64-linux-gnu-g++-9  -g   CMakeFiles/Producer.dir/src/KafkaProducer.cpp.o  -o ../artifacts/bin/Producer  -lrdkafka++ 

@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/tliao/BrainGenix/BrainGenix/sandbox/KafkaTest/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/usr/include/librdkafka  -g   -fPIC -std=c++17 -Wall -Wextra -o CMakeFiles/Producer.dir/src/KafkaProducer.cpp.o -c /home/tliao/BrainGenix/BrainGenix/sandbox/KafkaTest/src/KafkaProducer.cpp",
+  "file": "/home/tliao/BrainGenix/BrainGenix/sandbox/KafkaTest/src/KafkaProducer.cpp"
+},
+{
+  "directory": "/home/tliao/BrainGenix/BrainGenix/sandbox/KafkaTest/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/usr/include/librdkafka  -g   -fPIC -std=c++17 -Wall -Wextra -o CMakeFiles/Consumer.dir/src/KafkaConsumer.cpp.o -c /home/tliao/BrainGenix/BrainGenix/sandbox/KafkaTest/src/KafkaConsumer.cpp",
+  "file": "/home/tliao/BrainGenix/BrainGenix/sandbox/KafkaTest/src/KafkaConsumer.cpp"
+}
+]

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tliao/BrainGenix/BrainGenix/sandbox/KafkaTest/src/KafkaProducer.cpp
+iostream
+-
+string
+-
+cstdlib
+-
+cstdio
+-
+csignal
+-
+cstring
+-
+unistd.h
+-
+rdkafkacpp.h
+-
+
