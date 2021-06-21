@@ -21,10 +21,8 @@ from Core.Internode.Zookeeper.Zookeeper import ZK
 from Core.Internode.Database.ModuleInstanceManager import DatabaseInstanceCreator
 
 from Core.Diagnostics.ZKDiagnostics import CanAccessZookeeper
-from Core.Diagnostics.KafkaDiagnostics import CanAccessKafka
+# from Core.Diagnostics.KafkaDiagnostics import CanAccessKafka
 from Core.Diagnostics.DatabaseDiagnostics import CanAccessDatabase
-
-from Core.Management.Logger.Logger import SysLog
 
 
 #################################################################
@@ -79,7 +77,7 @@ class ThreadManager(): # This Class Manages Threads #
             self.Logger.Log('Creating Zookeeper Leader Timeout Daemon Thread Object', 1)
             Zookeeper.LeaderCheckerThread = threading.Thread(target=Zookeeper.LeaderCheckDaemon, args=(ControlQueue, ), name='ZK Leader Timeout Daemon')
             self.Logger.Log('Zookeeper Leader Timeout Daemon Thread Created', 1)
-            
+
             # Start ZK Thread #
             self.Logger.Log('Starting Zookeeper Leader Timeout Daemon Thread', 1)
             Zookeeper.LeaderCheckerThread.start()
@@ -195,7 +193,7 @@ class ThreadManager(): # This Class Manages Threads #
             self.DBInstanceManagerThread.name = "DBInstanceUpdate"
             self.DBInstanceManagerThread.start()
 
-            
+
             # Append Thread To Stoplist #
             self.Threads.append(self.DBInstanceManagerThread)
 
@@ -240,7 +238,7 @@ class ThreadManager(): # This Class Manages Threads #
                 self.Logger.Log(f'Sent Stop Signal To Queue {ControlQueueIndex + 1}/{len(self.ControlQueues)}', 0)
 
             # Log Task Completion #
-            self.Logger.Log(f'Stop Signals Sent To Threads', 2)
+            self.Logger.Log('Stop Signals Sent To Threads', 2)
 
 
             # Merge Threads #
@@ -255,7 +253,7 @@ class ThreadManager(): # This Class Manages Threads #
 
                 # Log Join Completion #
                 self.Logger.Log(f'Joined Thread {ThreadIndex + 1}', 0)
-            
+
             # Log Task Completion #
             self.Logger.Log('Thread Joining Complete', 2)
 

@@ -41,7 +41,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Create MAPI Thread #
         self.Logger.Log('Starting Management API Server Thread', 3)
-        
+
         # Create Control Queue #
         self.Logger.Log('Creating Control Queue For ManagementAPISocketServer Thread', 2)
         self.ManagementAPIThreadControlQueue = queue.Queue()
@@ -59,7 +59,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Add Thread To Control Manager #
         self.Logger.Log('Adding ManagementAPISocketServer To Thread Manager', 3)
-        
+
         self.Logger.Log('Appending ManagementAPISocketServerControlQueue To Control Queue List', 2)
         self.ThreadManager.ControlQueues.append(self.ManagementAPIThreadControlQueue)
         self.Logger.Log('Appended ManagementAPISocketServerControlQueue To Control Queue List', 1)
@@ -147,7 +147,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
                         # Exit Loop #
                         break
-                    
+
                     except socket.timeout:
                         pass
 
