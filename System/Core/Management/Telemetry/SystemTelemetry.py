@@ -463,6 +463,6 @@ class Leader(): # This Class Is Run By The Leader #
             #print(time.time()-t)
 
 
-        
+
         # Set Info Ready To True #
         self.InfoReady = True

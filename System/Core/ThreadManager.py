@@ -77,7 +77,7 @@ class ThreadManager(): # This Class Manages Threads #
             self.Logger.Log('Creating Zookeeper Leader Timeout Daemon Thread Object', 1)
             Zookeeper.LeaderCheckerThread = threading.Thread(target=Zookeeper.LeaderCheckDaemon, args=(ControlQueue, ), name='ZK Leader Timeout Daemon')
             self.Logger.Log('Zookeeper Leader Timeout Daemon Thread Created', 1)
-            
+
             # Start ZK Thread #
             self.Logger.Log('Starting Zookeeper Leader Timeout Daemon Thread', 1)
             Zookeeper.LeaderCheckerThread.start()
@@ -246,7 +246,7 @@ class ThreadManager(): # This Class Manages Threads #
             for ThreadIndex in range(len(self.Threads)):
 
                 # Log Join Init #
-                self.Logger.Log(f'Joining Thread {ThreadIndex + 1}/{len(self.Threads)}', 0)
+                self.Logger.Log('Joining Thread {ThreadIndex + 1}/{len(self.Threads)}', 0)
 
                 # Join Thread #
                 self.Threads[ThreadIndex].join()

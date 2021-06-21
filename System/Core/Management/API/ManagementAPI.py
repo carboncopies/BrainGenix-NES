@@ -59,7 +59,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Add Thread To Control Manager #
         self.Logger.Log('Adding ManagementAPISocketServer To Thread Manager', 3)
-        
+
         self.Logger.Log('Appending ManagementAPISocketServerControlQueue To Control Queue List', 2)
         self.ThreadManager.ControlQueues.append(self.ManagementAPIThreadControlQueue)
         self.Logger.Log('Appended ManagementAPISocketServerControlQueue To Control Queue List', 1)
