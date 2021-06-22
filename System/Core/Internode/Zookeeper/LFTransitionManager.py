@@ -15,7 +15,7 @@ from Core.LFTM.SystemTelemetryManager import SystemTelemetryManager
 
 class LFTM(): # Define Class Object #
 
-    def __init__(self, Logger, ZookeeperInstance, SocketAPI, ThreadManager): # Initialize LFTM #
+    def __init__(self, Logger, ZookeeperInstance, SocketAPI, ThreadManager, KafkaConfig): # Initialize LFTM #
 
         # Log Start Message #
         Logger.Log('Initializing Leader-Follower Transition Manager')
@@ -25,6 +25,7 @@ class LFTM(): # Define Class Object #
         self.ZookeeperInstance = ZookeeperInstance
         self.SocketAPI = SocketAPI
         self.ThreadManager = ThreadManager
+        self.KafkaConfig = KafkaConfig
 
 
         # Set Default State #
@@ -33,7 +34,7 @@ class LFTM(): # Define Class Object #
 
 
         # Create Instances Of Requested Systems #                                   # ADD YOUR FUNCTION CALL BELOW HERE!
-        self.SystemTelemetryManager = SystemTelemetryManager(self.Logger, self.ZookeeperInstance, self.ThreadManager)
+        self.SystemTelemetryManager = SystemTelemetryManager(self.Logger, self.ZookeeperInstance, self.ThreadManager, self.KafkaConfig)
 
 
         ## INCLUDE INITIALIZATION CALLS BELOW TO START SUBSYSTEMS ##
