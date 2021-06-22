@@ -171,8 +171,8 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
 
 
         # Set Command #
-        while not self.SysTelLeader.InfoReady:
-            time.sleep(0.001)
+        #while not self.SysTelLeader.InfoReady:
+        #    time.sleep(0.001)
 
         # Return Result #
         return self.SysTelLeader.Info
