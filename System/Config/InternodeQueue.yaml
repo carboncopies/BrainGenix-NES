@@ -7,6 +7,6 @@ SocketBindAddress: 0.0.0.0, # Bind To All Addresses By Default
 Protocol: TCP, # Only supports TCP for now, changing this doesn't do anything
 
 # If Using Kafka, Include These Params, Else, Leave As Default #
-KafkaHost: 127.0.0.1,
+KafkaHost: 10.1.4.2,
 KafkaPort: 9092
 }
