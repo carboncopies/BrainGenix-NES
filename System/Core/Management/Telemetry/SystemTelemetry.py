@@ -13,6 +13,14 @@ import time
 import json
 import sys
 
+
+from confluent_kafka import Producer
+from confluent_kafka import Consumer
+from confluent_kafka import TopicPartition
+from confluent_kafka.admin import AdminClient
+from confluent_kafka.admin import NewTopic
+
+
 '''
 Name: System Telemetry
 Description: This handles getting system usage statistics from the nodes.
@@ -22,18 +30,65 @@ Date-Created: 2021-01-29
 
 
 
-class Follower(): # This Class Gets System Information And Puts It Into ZK #
+class Follower(): # This Class Gets System Information And Puts It Into Kafka #
 
     def __init__(self, **kwargs):
 
 
         # Extract Logger From kwargs #
         self.Logger = kwargs['Logger']
+        KafkaConfig = kwargs['KafkaConfig']
         self.ZK = kwargs['Zookeeper']
+
+        # Get Node HostName  #
+        NodeHostname = platform.uname().node
+        self.TopicName = "BrainGenix-NES-SystemTelemetry-" + NodeHostname
+
+        # Get Kafka Host #
+        BootstrapAddress = KafkaConfig['KafkaHost']
+        BootstrapAddress += ':' + str(KafkaConfig['KafkaPort'])
+
+
+        # Create Kafka Topic #
+        self.Logger.Log('Creating Kafka Topic For System Information', 4)
+
+        self.Logger.Log('Instantiating Kafka Admin Client For Topic Creation', 3)
+        KafkaAdminClientConfiguration = {'bootstrap.servers' : BootstrapAddress}
+        KafkaAdminClient = AdminClient(KafkaAdminClientConfiguration)
+        self.Logger.Log('Created Kafka Admin Client For System Telemetry', 2)
+
+
+        self.Logger.Log(f'Creating System Telemetry Kafka Topic: {self.TopicName}', 3)
+        TopicList = []
+        self.Logger.Log('Appending New Topic To Topic List', 1)
+        TopicList.append(NewTopic(
+            self.TopicName,
+            num_partitions=1,
+            replication_factor=1
+        ))
+
+        self.Logger.Log('Appended New Topic To Topic List', 0)
+
+
+        self.Logger.Log('Creating Listed Kafka Topics', 2)
+        KafkaAdminClient.create_topics(
+            new_topics=TopicList,
+            validate_only=False
+            )
+        self.Logger.Log('Created Kafka Topics', 1)
+
+
+        # Create Producer And Assign To Topic #
+        self.Logger.Log("Creating Kafka Producer for system information", 3)
+
+        KafkaProducerConfiguration = {'bootstrap.servers' : BootstrapAddress}
+        self.KafkaProducer = Producer(KafkaProducerConfiguration)
+
+        self.Logger.Log("Created Kafka Producer for system information", 2)
 
 
         # Log Starting Message #
-        self.Logger.Log('Collecting System Information')
+        self.Logger.Log('Collecting Static System Information', 3)
 
 
         # Get Static Stats #
@@ -84,26 +139,27 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
 
 
 
-        # Start ZKDataSend Thread #
+        # Define KafkaDataSend Thread #
         self.Logger.Log('Creating System Statistics Auto Transmission Thread', 2)
-        self.ZKDataSendThread = threading.Thread(target=self.SendStatsThread, args=(self.ControlQueueSendStatsThread, StatisticsQueue,))
-        self.ZKDataSendThread.name='Send Statistics Thread'
+        self.KafkaDataSendThread = threading.Thread(target=self.SendStatsThread, args=(self.ControlQueueSendStatsThread, StatisticsQueue,))
+        self.KafkaDataSendThread.name='Send Statistics Thread'
         self.Logger.Log('Created System Statistcs Auto Transmission Thread', 1)
 
-        # Start ZKDataSend Thread #
+        # Start KafkaDataSend Thread #
         self.Logger.Log('Starting System Statistics Auto Transmission Thread', 2)
-        self.ZKDataSendThread.start()
+        self.KafkaDataSendThread.start()
         self.Logger.Log('Started System Statistics Auto Transmission Thread', 1)
 
 
 
 
 
-    def SendStatsThread(self, ControlQueue, InQueue): # Send Stats Via Send Command #
+    def SendStatsThread(self, ControlQueue, StatisticsQueue): # Send Stats Via Send Command #
 
         # Log Start #
         self.Logger.Log('Starting SystemTelemetry Transmission Thread', 1)
-
+        # Give Node Name #
+        self.ZK.TryCreateOverwrite(f'/BrainGenix/System/Telemetry/{self.NodeName}', ephemeral = True)
         # Enter Main Loop #
         while ControlQueue.empty():
 
@@ -111,8 +167,8 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
             time.sleep(0.005)
 
             # Pull Data From Queue #
-            if not InQueue.empty():
-                Data = InQueue.get()
+            if not StatisticsQueue.empty():
+                Data = StatisticsQueue.get()
             else:
                 Data = None
 
@@ -283,7 +339,6 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
         self.SystemHardware.update({'CPUUsage' : CPUUsage})
 
 
-
         # Get Memory Info #
         PhysRAM = psutil.virtual_memory()
         Swap = psutil.swap_memory()
@@ -336,13 +391,16 @@ class Follower(): # This Class Gets System Information And Puts It Into ZK #
         JSONArray = JSONArray.encode('ascii')
 
         # Dump Data #
+
+        self.KafkaProducer.produce(self.TopicName, JSONArray)
+
         try:
-            self.ZK.TryCreateOverwrite(f'/BrainGenix/System/Telemetry/{self.NodeName}', zNodeData = JSONArray, ephemeral = True)
+            pass
 
         except Exception as E:
             if str(E) == 'Connection has been closed':
 
-                self.Logger.Log('Zookeeper Connection Destroyed, Shutting Down SystemTelemetry Module', 8)
+                self.Logger.Log('Kafka Connection Destroyed, Shutting Down SystemTelemetry Module', 8)
                 sys.exit()
             elif str(E) == '':
                 pass
@@ -359,12 +417,27 @@ class Leader(): # This Class Is Run By The Leader #
         # Extract Logger From kwargs #
         self.Logger = kwargs['Logger']
         self.ZK = kwargs['Zookeeper']
+        self.KafkaConfig = kwargs['KafkaConfig']
         self.Info = {}
+        self.SubscribedConsumers = {}
         self.InfoReady = False
 
 
+        # Get Kafka Host #
+        BootstrapAddress = self.KafkaConfig['KafkaHost']
+        BootstrapAddress += ':' + str(self.KafkaConfig['KafkaPort'])
+
         # Log Starting Message #
         self.Logger.Log('Starting System Telemetry Leader')
+
+
+        # Create Kafka Consumer #
+        self.Logger.Log('Creating System Telemetry Kafka Consumer', 3)
+
+        KafkaConsumerConfiguration = {'bootstrap.servers' : BootstrapAddress, 'group.id':platform.uname().node}
+        self.KafkaConsumer = Consumer(KafkaConsumerConfiguration)
+
+        self.Logger.Log("Created System Telemetry Kafka Consumer", 2)
 
 
         # Ensure ZK Path #
@@ -441,20 +514,17 @@ class Leader(): # This Class Is Run By The Leader #
         self.InfoReady = False
         self.Info = {}
 
-
         # Get zNodes In Info Section #
-        t=time.time()
         NodeChildren = self.ZK.ZookeeperConnection.get_children('/BrainGenix/System/Telemetry/')
-
-        print(time.time()-t)
-        t=time.time()
 
 
         # Pull Data From zNodes #
         for NodeName in NodeChildren:
 
-            t=time.time()
-            NodeInfoJSON = self.ZK.ZookeeperConnection.get(f'/BrainGenix/System/Telemetry/{NodeName}')[0]
+            if NodeName not in self.SubscribedConsumers:
+                self.SubscribedConsumers.update({NodeName : self.KafkaConsumer.subscribe(['BrainGenix-NES-SystemTelemetry-' + NodeName])})
+
+            NodeInfoJSON = self.SubscribedConsumers[NodeName].readall()
             NodeInfoJSON = NodeInfoJSON.decode('ascii')
 
             NodeInfoDecoded = json.loads(NodeInfoJSON)
