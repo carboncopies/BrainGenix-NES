@@ -19,12 +19,13 @@ from Core.Management.Telemetry.SystemTelemetry import Leader
 
 class SystemTelemetryManager(): # Manages the system telemetry leader class #
 
-    def __init__(self, Logger, Zookeeper, ThreadManager):
+    def __init__(self, Logger, Zookeeper, ThreadManager, KafkaConfig):
 
         # Create Local Pointers To These Objects #
         self.Logger = Logger
         self.Zookeeper = Zookeeper
         self.ThreadManager = ThreadManager
+        self.KafkaConfig = KafkaConfig
 
 
     def StartSystem(self): # Called During Startup #
@@ -33,7 +34,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         self.Logger.Log('Starting System Telemetry Subsystem', 4)
 
         # Instantiate #
-        self.SysTelFollower = Follower(Logger=self.Logger, Zookeeper=self.Zookeeper)
+        self.SysTelFollower = Follower(Logger=self.Logger, KafkaConfig=self.KafkaConfig, Zookeeper=self.Zookeeper)
         self.SysTelLeader = None
 
 
@@ -57,7 +58,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         self.Logger.Log('Added SendStatsThread To Control Queue List', 1)
 
         self.Logger.Log('Adding SendStatsThread Object To Thread Manager', 2)
-        self.ThreadManager.Threads.append(self.SysTelFollower.ZKDataSendThread)
+        self.ThreadManager.Threads.append(self.SysTelFollower.KafkaDataSendThread)
         self.Logger.Log('Added SendStatsThread Object To Thread List', 1)
 
 
@@ -72,7 +73,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         self.Logger.Log('System Telemetry Transition Asserted, Called For Mode "LEADER"', 6)
 
         # Instantiate #
-        self.SysTelLeader = Leader(Logger=self.Logger, Zookeeper=self.Zookeeper)
+        self.SysTelLeader = Leader(Logger=self.Logger, KafkaConfig=self.KafkaConfig, Zookeeper=self.Zookeeper)
 
         # SysTelLeader Thread Creation Process #
         self.Logger.Log('Adding Data Collection Daemon To Thread Manager', 3)
