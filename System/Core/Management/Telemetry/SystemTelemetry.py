@@ -42,7 +42,7 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
 
         # Get Node HostName  #
         NodeHostname = platform.uname().node
-        self.TopicName = "BrainGenix-NES-SystemTelemetry-" + NodeHostname
+        self.TopicName = "BrainGenix-NES-SystemTelemetry"
 
         # Get Kafka Host #
         BootstrapAddress = KafkaConfig['KafkaHost']
@@ -50,7 +50,7 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
 
 
         # Create Kafka Topic #
-        self.Logger.Log('Creating Kafka Topic For System Information', 4)
+        self.Logger.Log('Attempting To Create Kafka Topic For System Information', 4)
 
         self.Logger.Log('Instantiating Kafka Admin Client For Topic Creation', 3)
         KafkaAdminClientConfiguration = {'bootstrap.servers' : BootstrapAddress}
@@ -481,6 +481,9 @@ class Leader(): # This Class Is Run By The Leader #
 
     def AutoRefresh(self, ControlQueue):
 
+        # Subscribe To Topic #
+        self.KafkaConsumer.Subscribe(['BrainGenix-NES-SystemTelemetry'])
+
         # Start Inf Loop #
         while ControlQueue.empty():
 
@@ -516,79 +519,27 @@ class Leader(): # This Class Is Run By The Leader #
 
         # Set Info To Disabled, Clear Info #
         self.InfoReady = False
-        self.Info = {}
-
-        # Get zNodes In Info Section #
-        NodeChildren = self.ZK.ZookeeperConnection.get_children('/BrainGenix/System/Telemetry/')
 
 
-        # Get Information From Topics #
-        for _ in NodeChildren:
+        # Get System Information From Queue #
+        SystemTelemetryInformation = self.KafkaConsumer.poll(timeout=0.05)
 
-            # Get System Information From Queue #
-            SystemTelemetryInformation = self.KafkaConsumer.poll(timeout=0.05)
+        # Check If Not None #
+        if SystemTelemetryInformation != None:
+            print(SystemTelemetryInformation.topic())
+            print(SystemTelemetryInformation.value())
+            #NodeInfoJSON = b''#self.SubscribedConsumers[NodeName].readall()
+            #NodeInfoJSON = NodeInfoJSON.decode('ascii')
 
-            # Check If Not None #
-            if SystemTelemetryInformation != None:
-                print(SystemTelemetryInformation.topic())
-                print(SystemTelemetryInformation.value())
-                #NodeInfoJSON = b''#self.SubscribedConsumers[NodeName].readall()
-                #NodeInfoJSON = NodeInfoJSON.decode('ascii')
+            #NodeInfoDecoded = json.loads(NodeInfoJSON)
 
-                #NodeInfoDecoded = json.loads(NodeInfoJSON)
-
-                #self.Info.update({NodeName : NodeInfoDecoded})
-                #print(time.time()-t)
+            #self.Info.update({NodeName : NodeInfoDecoded})
+            #print(time.time()-t)
 
 
-        # Identify New Nodes #
-        for NodeName in NodeChildren:
-
-            # Identify New Nodes #
-            if NodeName not in self.KnownHostnames:
-                
-                # Log New Node Found In Kafka #
-                self.Logger.Log(f'System Telemetry Aggregation Service Identified New Node: {NodeName}', 5)
-
-                # Update Hostname List #
-                self.KnownHostnames.append(NodeName)
-
-                # Update Subscriptions #
-                self.UpdateKafkaSubscriptions()
-
-        # Identify Disconnected Nodes #
-        for NodeName in self.KnownHostnames:
-
-            if NodeName not in NodeChildren:
-
-                # Log Disconnection #
-                self.Logger.Log(f'System Telemetry Aggregation Service Identifed Node Disconnection: {NodeName}', 5)
-
-                # Update Hostname List #
-                del self.KnownHostnames[self.KnownHostnames.index(NodeName)]
-
-                # Update Subscriptions #
-                self.UpdateKafkaSubscriptions()
 
 
         # Set Info Ready To True #
         self.InfoReady = True
 
 
-    def UpdateKafkaSubscriptions(self): # Updates Kafka Subscribers #
-
-        # Log Update #
-        self.Logger.Log('Updating System Telemetry Aggregation Daemon Kafka Subscriptions', 4)
-
-        # Generate New List Of Kafka Topics #
-        self.Logger.Log('Generating Topic List From Hostnames', 2)
-        Topics = []
-        for Hostname in self.KnownHostnames:
-            TopicName = 'BrainGenix-NES-SystemTelemetry-' + Hostname
-            Topics.append(TopicName)
-        self.Logger.Log('Kafka Topic List Generated', 1)
-
-        # Subscribe To Kafka Topics #
-        self.Logger.Log('Subscribing To Kafka Topics', 3)
-        self.KafkaConsumer.subscribe(Topics)
-        self.Logger.Log('Subscribed To Kafka Topics', 2)
