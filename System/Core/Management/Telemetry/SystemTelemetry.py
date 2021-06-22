@@ -390,8 +390,6 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
         self.SystemHardware.update({'GPUTemps' : GPUTemps})
 
 
-
-
     def SendStats(self, Data): # Sends JSON Compressed Stats #
 
         # Dump The JSON Data #
@@ -411,21 +409,20 @@ class Leader(): # This Class Is Run By The Leader #
 
         # Extract Logger From kwargs #
         self.Logger = kwargs['Logger']
-        self.ZK = kwargs['Zookeeper']
         self.KafkaConfig = kwargs['KafkaConfig']
+
         self.Info = {}
-        self.SubscribedConsumers = {}
+
         self.KnownHostnames = []
         self.InfoReady = False
 
-        # Init Kafka Consumer #
-        self.KafkaConsumer = None
 
 
         # Get Kafka Host #
         BootstrapAddress = self.KafkaConfig['KafkaHost']
         BootstrapAddress += ':' + str(self.KafkaConfig['KafkaPort'])
 
+        print('fdsafdsafghdjskagfdhsjgfhdjskgkhjsadfkhgjfdaskghjafdkghjdsfakgdasfkg')
         # Log Starting Message #
         self.Logger.Log('Starting System Telemetry Leader')
 
@@ -449,7 +446,7 @@ class Leader(): # This Class Is Run By The Leader #
 
 
         # Ensure ZK Path #
-        self.ZK.ZookeeperConnection.ensure_path('/BrainGenix/System/Telemetry')
+        #self.ZK.ZookeeperConnection.ensure_path('/BrainGenix/System/Telemetry')
 
 
         # System Telemetry Thread #
@@ -482,7 +479,7 @@ class Leader(): # This Class Is Run By The Leader #
     def AutoRefresh(self, ControlQueue):
 
         # Subscribe To Topic #
-        self.KafkaConsumer.Subscribe(['BrainGenix-NES-SystemTelemetry'])
+        self.KafkaConsumer.subscribe(['BrainGenix-NES-SystemTelemetry'])
 
         # Start Inf Loop #
         while ControlQueue.empty():
