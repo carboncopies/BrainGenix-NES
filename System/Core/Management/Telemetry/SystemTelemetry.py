@@ -413,16 +413,13 @@ class Leader(): # This Class Is Run By The Leader #
 
         self.Info = {}
 
-        self.KnownHostnames = []
+        self.NodeInfoDict = {}
         self.InfoReady = False
-
-
 
         # Get Kafka Host #
         BootstrapAddress = self.KafkaConfig['KafkaHost']
         BootstrapAddress += ':' + str(self.KafkaConfig['KafkaPort'])
 
-        print('fdsafdsafghdjskagfdhsjgfhdjskgkhjsadfkhgjfdaskghjafdkghjdsfakgdasfkg')
         # Log Starting Message #
         self.Logger.Log('Starting System Telemetry Leader')
 
@@ -486,22 +483,22 @@ class Leader(): # This Class Is Run By The Leader #
 
 
             # Get Stats #
-            try:
-                self.PullStatsFromZK()
+            #try:
+            self.PullStatsFromZK()
 
 
-            # Catch Closed Connection Excption #
-            except Exception as E:
-                if str(E) == 'Connection has been closed':
+            # # Catch Closed Connection Excption #
+            # except Exception as E:
+            #     if str(E) == 'Connection has been closed':
 
-                    # Log Connection Destroyed #
-                    self.Logger.Log('Zookeeper Connection Destroyed, Shutting Down System Telemetry Leader Thread', 8)
-                    sys.exit()
+            #         # Log Connection Destroyed #
+            #         self.Logger.Log('Zookeeper Connection Destroyed, Shutting Down System Telemetry Leader Thread', 8)
+            #         sys.exit()
 
-                else:
+            #     else:
 
-                    # Log Other Errors #
-                    self.Logger.Log(f'Exception: {E}', 9)
+            #         # Log Other Errors #
+            #         self.Logger.Log(f'Exception: {E}', 9)
 
 
 
@@ -523,16 +520,41 @@ class Leader(): # This Class Is Run By The Leader #
 
         # Check If Not None #
         if SystemTelemetryInformation != None:
-            print(SystemTelemetryInformation.topic())
-            print(SystemTelemetryInformation.value())
-            #NodeInfoJSON = b''#self.SubscribedConsumers[NodeName].readall()
-            #NodeInfoJSON = NodeInfoJSON.decode('ascii')
 
-            #NodeInfoDecoded = json.loads(NodeInfoJSON)
+            # Exctract New Value #
+            NodeInfoJSONBytes = SystemTelemetryInformation.value()
 
-            #self.Info.update({NodeName : NodeInfoDecoded})
-            #print(time.time()-t)
+            # Parse Out NodeName #
+            NodeName = json.loads(NodeInfoJSONBytes.decode())['NodeName']
 
+            # Check For New Nodes #
+            if NodeName not in self.Info:
+
+                # Log New Node #
+                self.Logger.Log(f'System Telemetry Subsystem Found New Node: {NodeName}', 5)
+
+
+            # Update System Information Dictionary #
+            NodeInfoJSONString = NodeInfoJSONBytes.decode('ascii')
+            NodeInfoDecoded = json.loads(NodeInfoJSONString)
+            self.Info.update({NodeName : NodeInfoDecoded})
+
+            # Update APIServer Last Communication Date #
+            self.NodeInfoDict.update({NodeName : time.time()})
+            print(self.Info)
+
+
+        # Check For Disconnects #
+        for Node in self.NodeInfoDict.keys():
+
+            # Check For Timouts (>5s since last update) #
+            if (time.time() - self.NodeInfoDict[Node]) > 5.0:
+
+                # Log Timeout #
+                self.Logger.Log(f'System Telemetry Subsystem Potential Node Timeout: {Node}', 8)
+
+                del self.NodeInfoDict[Node]
+                del self.Info[Node]
 
 
 
