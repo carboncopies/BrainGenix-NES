@@ -430,7 +430,7 @@ class Leader(): # This Class Is Run By The Leader #
             'bootstrap.servers' : BootstrapAddress,
             'group.id':platform.uname().node}
         self.Logger.Log('Created Kafka System Telemetry Consumer Configtuation Dictionary', 1)
-        
+
         self.Logger.Log(f'Kafka System Telemetry Bootstrap Server: {BootstrapAddress}')
         self.Logger.Log(f'Kafka System Telemetry Group ID: {platform.uname().node}')
 
