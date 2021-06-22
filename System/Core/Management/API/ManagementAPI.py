@@ -2,11 +2,13 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
+import os
 import socket
 import threading
 import queue
 import json
 import select
+import pymysql
 
 
 '''
@@ -18,7 +20,7 @@ Date-Created: 2021-05-17
 
 class ManagementAPISocketServer(): # Creates A Class To Connect To The Management API #
 
-    def __init__(self, Logger, MAPIConfig:dict, ZookeeperConfigDict:dict, ThreadManager:object): # This function initialializes sockets #
+    def __init__(self, Logger, MAPIConfig:dict, ZookeeperConfigDict:dict, DatabaseConfig:dict, ThreadManager:object): # This function initialializes sockets #
 
         # Get Config Params #
         self.Logger = Logger
@@ -67,6 +69,8 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.Logger.Log('Appending ManagementAPISocketServer Thread Object To ThreadManager Thread List', 2)
         self.ThreadManager.Threads.append(self.Thread)
         self.Logger.Log('Appended ManagementAPISocketServer Thread To ThreadManager Thread List', 1)
+        
+        self.WriteAuthentication(DatabaseConfig)
 
 
     # Load In External Commands #
@@ -114,10 +118,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Return Values #
         return CommandOutput, CommandName
-
-
-
-
 
     def ManagementAPIThread(self, ControlQueue): # Create A Thread Function For The Management API #
 
@@ -503,6 +503,36 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         return LicenseText
 
+    def WriteAuthentication(self, DatabaseConfig:dict):
+        
+            '''To enable Read/Write/Execute modes for the owner/group and Read only mode for other users'''
+            os.system('chmod -R 774')
+            
+            # Connect To DB #
+            DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
+            DBPassword = str(DatabaseConfig.get('DatabasePassword'))
+            DBHost = str(DatabaseConfig.get('DatabaseHost'))
+            DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
+
+            # Connect To Database #
+            self.DatabaseConnection = pymysql.connect(
+                host = DBHost,
+                user = DBUsername,
+                password = DBPassword,
+                db = DBDatabaseName
+            )
+            cur = DatabaseConnection.cursor(pymysql.cursors.DictCursor)
+            
+            sql = "SELECT * FROM userName='%s' AND passwordHash='%s'"
+            res= cur.execute(sql % (DBUsername,DBPassword))
+            
+            '''If user found in group'''
+            if res!=0:
+                print("Write Authentication Enabled.") 
+                
+            '''If user not found in group'''
+            else:
+                print("Write Authentication Disabled.")
 
     def TestAPI(self, ArgumentsDictionary): # Returns A Test String #
 
