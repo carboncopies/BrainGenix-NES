@@ -506,7 +506,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
     def WriteAuthentication(self, DatabaseConfig:dict):
         
             '''To enable Read/Write/Execute modes for the owner/group and Read only mode for other users'''
-            os.system('chmod -R 774')
+            os.system('chmod -R 774 /home/BrainGenix')
             
             # Connect To DB #
             DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
