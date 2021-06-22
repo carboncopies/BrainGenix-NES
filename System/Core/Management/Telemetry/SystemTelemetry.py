@@ -11,12 +11,10 @@ import threading
 import queue
 import time
 import json
-import sys
 
 
 from confluent_kafka import Producer
 from confluent_kafka import Consumer
-from confluent_kafka import TopicPartition
 from confluent_kafka.admin import AdminClient
 from confluent_kafka.admin import NewTopic
 
@@ -42,7 +40,7 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
 
         # Get Node HostName  #
         NodeHostname = platform.uname().node
-        self.TopicName = "BrainGenix-NES-SystemTelemetry"
+        self.TopicName = "BrainGenix-NES-SystemTelemetry-" + NodeHostname
 
         # Get Kafka Host #
         BootstrapAddress = KafkaConfig['KafkaHost']
@@ -400,7 +398,7 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
         # Dump Data #
         self.KafkaProducer.produce(self.TopicName, JSONArray)
         self.KafkaProducer.flush()
-        
+
 
 
 class Leader(): # This Class Is Run By The Leader #
