@@ -46,7 +46,7 @@ Branch = 'dev' # 'dev' or 'rel'
 LoggerConfigDict = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
 DBConfigDict = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
 ZKConfigDict = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
-InternodeConfigDict = LoadInternodeQueueConfig(ConfigFilePath = 'Config/InternodeQueue.yaml')
+KafkaConfigDict = LoadInternodeQueueConfig(ConfigFilePath = 'Config/InternodeQueue.yaml')
 ManagementAPIServerConfig = LoadManagementAPIServerConfig(ConfigFilePath = 'Config/ManagementAPIConfig.yaml')
 
 
@@ -107,7 +107,7 @@ NodeCount = sZookeeper.ConcurrentConnectedNodes()
 APIServerCount = len(sZookeeper.ZookeeperConnection.get_children('/BrainGenix/API/Connections'))
 
 # Instantiate Leader/Follower Transition Manager #
-sLFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI, mThreadManagerInstance)
+sLFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI, mThreadManagerInstance, KafkaConfigDict)
 
 # Link LFTM #
 sSocketAPI.LinkLFTM(sLFTMInstance)
