@@ -56,7 +56,7 @@ class LFTM(): # Define Class Object #
 
             # Enter Main Loop #
             while True:
-                
+
 
                 # Fetch Current ZK State #
                 ZookeeperState = self.ZookeeperInstance.ZookeeperMode
