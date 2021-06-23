@@ -7,7 +7,7 @@ import threading
 import queue
 import json
 import select
-
+from ... import VersionData
 
 '''
 Name: Management API
@@ -294,7 +294,8 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
     def Version(self, ArgumentsDictionary): # Provide Versioning Information #
 
-        return 'BrainGenix-NES Development 0.0.7'
+        version= 'BrainGenix-NES Development 0.0.7'+VersionData.VersionData
+        return version
 
     def License(self, ArgumentsDictionary): # Provides Basic License Information As Command
 
