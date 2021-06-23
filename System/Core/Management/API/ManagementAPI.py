@@ -294,7 +294,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
     def Version(self, ArgumentsDictionary): # Provide Versioning Information #
 
-        version= 'BrainGenix-NES Development 0.0.7'+VersionData.VersionData
+        version= "BrainGenix-NES Development "+VersionData.VersionData
         return version
 
     def License(self, ArgumentsDictionary): # Provides Basic License Information As Command
