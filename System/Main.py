@@ -132,7 +132,6 @@ mLogger.Log('    |                 BrainGenix WBE Simulation System             
 mLogger.Log(f'    |                 Version: {Version}                                  |', 4)
 mLogger.Log(f'    |                 Branch: {Branch}                                     |', 4)
 mLogger.Log(f'    |                 Clustersize: {NodeCount}                                  |', 4)
-mLogger.Log(f'    |                 MAPIServers: {APIServerCount}                                  |', 4)
 mLogger.Log('    +-----------------------------------------------------------------+', 4)
 mLogger.Log('', 4)
 
