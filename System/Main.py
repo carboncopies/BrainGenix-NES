@@ -27,7 +27,7 @@ from Core.Management.API.ManagementAPI import ManagementAPISocketServer
 
 from Core.Internode.Zookeeper.LFTransitionManager import LFTM
 
-from Core.VersionData import VersionData
+from Core.VersionData import VersionNumber
 from Core.VersionData import BranchVersion
 
 
@@ -39,7 +39,7 @@ from Core.VersionData import BranchVersion
 
 
 # Set Version Information
-Version = VersionData
+Version = VersionNumber
 Branch = BranchVersion
 
 
