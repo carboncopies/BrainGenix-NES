@@ -28,6 +28,7 @@ from Core.Management.API.ManagementAPI import ManagementAPISocketServer
 from Core.Internode.Zookeeper.LFTransitionManager import LFTM
 
 from Core.VersionData import VersionData
+from Core.VersionData import BranchVersion
 
 
 ##############################################################################
@@ -39,7 +40,7 @@ from Core.VersionData import VersionData
 
 # Set Version Information
 Version = VersionData
-Branch = 'dev' # 'dev' or 'rel'
+Branch = BranchVersion
 
 
 # Load Config #
