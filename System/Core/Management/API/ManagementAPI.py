@@ -307,7 +307,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             BranchVersionType = 'ERR-UNKNOWN'
 
         # Construct Version Information #
-        Version = f'BrainGenix-NES (Neuron Emulation System) [{BranchVersionType}Branch] [{VersionNumber}]'
+        Version = f'BrainGenix-NES (Neuron Emulation System) [{BranchVersionType} Branch] [{VersionNumber}]'
         
         # Return Version String #
         return Version
