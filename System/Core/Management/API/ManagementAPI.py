@@ -7,7 +7,11 @@ import threading
 import queue
 import json
 import select
-from ... import VersionData
+
+
+from Core.VersionData import VersionNumber
+from Core.VersionData import BranchVersion
+
 
 '''
 Name: Management API
@@ -294,8 +298,20 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
     def Version(self, ArgumentsDictionary): # Provide Versioning Information #
 
-        version= "BrainGenix-NES Development "+VersionData.VersionData
-        return version
+        # Set Full Branch Version #
+        if BranchVersion == 'dev':
+            BranchVersionType = 'Development'
+        elif BranchVersion == 'rel':
+            BranchVersionType = 'Release'
+        else:
+            BranchVersionType = 'ERR-UNKNOWN'
+
+        # Construct Version Information #
+        Version = f'BrainGenix-NES (Neuron Emulation System) [{BranchVersionType}Branch] [{VersionNumber}]'
+        
+        # Return Version String #
+        return Version
+
 
     def License(self, ArgumentsDictionary): # Provides Basic License Information As Command
 
