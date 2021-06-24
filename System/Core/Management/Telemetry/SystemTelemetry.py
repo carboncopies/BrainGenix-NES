@@ -542,16 +542,19 @@ class Leader(): # This Class Is Run By The Leader #
 
 
         # Check For Disconnects #
-        for Node in self.NodeInfoDict.keys():
+        try:
+            for Node in self.NodeInfoDict.keys():
 
-            # Check For Timouts (>5s since last update) #
-            if (time.time() - self.NodeInfoDict[Node]) > 5.0:
+                # Check For Timouts (>5s since last update) #
+                if (time.time() - self.NodeInfoDict[Node]) > 5.0:
 
-                # Log Timeout #
-                self.Logger.Log(f'System Telemetry Subsystem Potential Node Timeout: {Node}', 8)
+                    # Log Timeout #
+                    self.Logger.Log(f'System Telemetry Subsystem Potential Node Timeout: {Node}', 8)
 
-                del self.NodeInfoDict[Node]
-                del self.Info[Node]
+                    del self.NodeInfoDict[Node]
+                    del self.Info[Node]
+        except RuntimeError: # Catch exception where dictionary changes size during loop, potential fix is to create a lock for modifying the dict. #
+            pass
 
 
 
