@@ -252,7 +252,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
 
     # ListAttribute Command #
-    def ls(self, ArgumentsDictionary):
+    def mAPI_ls(self, ArgumentsDictionary):
 
 
         ##################################################################################################
@@ -289,14 +289,14 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         return str(OutAttr)
 
 
-    def Help(self, ArgumentsDictionary): # Provides Basic About The BGCLI #
+    def mAPI_Help(self, ArgumentsDictionary): # Provides Basic About The BGCLI #
 
         HelpMessage = 'This system provides a functional management interface to the BrainGenix system. Please use "ls Path=[path here]" to find commands, and use help Path=[path here] to find more information about a specific command. Please note that commands are seperated via a ".", so if calling command b nested under a, it would be "a.b".'
 
         return HelpMessage
 
 
-    def Version(self, ArgumentsDictionary): # Provide Versioning Information #
+    def mAPI_Version(self, ArgumentsDictionary): # Provide Versioning Information #
 
         # Set Full Branch Version #
         if BranchVersion == 'dev':
@@ -313,7 +313,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         return Version
 
 
-    def License(self, ArgumentsDictionary): # Provides Basic License Information As Command
+    def mAPI_License(self, ArgumentsDictionary): # Provides Basic License Information As Command
 
         LicenseText = '''                                 Apache License
                             Version 2.0, January 2004
@@ -521,7 +521,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         return LicenseText
 
 
-    def TestAPI(self, ArgumentsDictionary): # Returns A Test String #
+    def mAPI_TestAPI(self, ArgumentsDictionary): # Returns A Test String #
 
         # You should get this refrerence... (Look it up) #
         return "but most of all, samy is my hero" 
