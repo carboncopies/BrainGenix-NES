@@ -98,7 +98,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
 
         # Iterate Through Layers, Run Command Called #
-        for _, LayerName in enumerate(Layers):
+        for LayerName in range(len(Layers)):
 
             try:
                 CommandFunction = getattr(CommandFunction, LayerName)
