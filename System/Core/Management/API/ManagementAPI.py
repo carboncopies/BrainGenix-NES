@@ -323,6 +323,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     for Attr2 in dir(Attr):
                         if "mAPI_" in str(Attr2):
                             Allow = True
+                    print("1")
                     Attr4 = Attr
                 mAPI = True
                 if Allow:
@@ -330,12 +331,14 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         for Attr6 in dir(Attr5):
                             if "mAPI_" in str(Attr6):
                                 mAPI = False
+                    print("2")
                 else:
                     Directory = False
                 Dir = False
                 if Allow:
                     Attr7 = Attr4
                     Attr4 = []
+                    print("3")
                     for Attr8 in dir(Attr7):
                         Attr4.Append(Attr8)
                 for Dir2 in (Attr4):
@@ -343,6 +346,8 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         Dir = True
                 if Dir == True:
                     Directory = False
+            print("4")
+            print(mAPI)
             if mAPI == False:
                 for Object in OutAttr:
                     for Attr3 in Attributes:
@@ -350,6 +355,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                             Exists = True
                 if Exists == False:
                     OutAttr.append(Attr)
+                    print("5")
         del OutAttr[0]
 
         # Return Output #
