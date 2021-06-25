@@ -98,11 +98,14 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
 
         # Iterate Through Layers, Run Command Called #
-        for LayerName in range(len(Layers)):
+        for LayerIndex in range(len(Layers)):
 
             try:
-                CommandFunction = getattr(CommandFunction, LayerName)
-
+                # Run Command With Prefix Included (mAPI_[Command Name]) #
+                if LayerIndex < (len(Layers) - 1):
+                    CommandFunction = getattr(CommandFunction, Layers[LayerIndex])
+                else:
+                    CommandFunction = getattr(CommandFunction, 'mAPI_'+Layers[LayerIndex])
 
                 # Run Function #
                 CommandOutput = CommandFunction(ArgumentsDictionary)
@@ -267,7 +270,8 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
 
         # Get Attributes From Arguments #
-        TargetPath = ArgumentsDictionary['Path']
+        TargetPath = 'LFTM.'
+        TargetPath += ArgumentsDictionary['Path']
 
         # Get Attributes #
         AttrTarget = self
