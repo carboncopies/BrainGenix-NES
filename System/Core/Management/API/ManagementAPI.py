@@ -80,9 +80,15 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Create List Of Attributes #
         self.Logger.Log('Generating Raw List Of Attributes Exposed To Management API', 3)
-        UnsortedList = []
+        UnsortedList = dir(self.LFTM)
+        HigherLevelAttr = self.LFTM
 
-        
+        # Recursive Filter #
+        for AttributeNameString in UnsortedList:
+
+            AttributeObject = getattr(HigherLevelAttr, AttributeNameString)
+            
+
 
 
 
@@ -305,10 +311,34 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         Attributes = dir(AttrTarget)
 
         # Sort Attributes #
-        OutAttr = []
+        OutAttr = ['__']
+        
         for Attr in Attributes:
-            if '__' not in str(Attr):
-                OutAttr.append(Attr)
+            Exists = False
+            Allow = False
+            Directory = True
+            while Directory:
+                if (not Allow) and ('__' not in str(Attr)) and ("mAPI_" in str("Attr")):
+                    for Attr2 in dir(Attr):
+                        if "mAPI_" in str(Attr2):
+                            Allow = True
+                mAPI = True
+                if Allow:
+                    for Attr2 in dir(Attr2):
+                        if "mAPI_" in str(Attr2):
+                            mAPI = False
+                else:
+                    Directory = False
+                if dir(Attr2) == []:
+                    Directory = False
+            if mAPI == False:
+                for Object in OutAttr:
+                    for Attr3 in Attributes:
+                        if Object == Attr3:
+                            Exists = True
+                if Exists == False:
+                    OutAttr.append(Attr)
+        del OutAttr[0]
 
         # Return Output #
         return str(OutAttr)
