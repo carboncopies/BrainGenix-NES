@@ -73,6 +73,22 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.Logger.Log('Appended ManagementAPISocketServer Thread To ThreadManager Thread List', 1)
 
 
+    def IndexCommands(self): # Creates An Index Of Commands For LS To Search Through #
+
+        # Log Process Start #
+        self.Logger.Log('Indexing Management API Commands', 4)
+
+        # Create List Of Attributes #
+        self.Logger.Log('Generating Raw List Of Attributes Exposed To Management API', 3)
+        UnsortedList = []
+
+        
+
+
+
+
+
+
     # Load In External Commands #
     def LinkLFTM(self, LFTMInstance): # Link LFTM #
 
