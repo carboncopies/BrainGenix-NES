@@ -319,7 +319,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             Directory = True
             Attr4 = []
             while Directory:
-                if (not Allow) and ('__' not in str(Attr)) and ("mAPI_" in str("Attr")):
+                if (Allow == False) and ('__' not in str(Attr)) and ("mAPI_" in str("Attr")):
                     for Attr2 in dir(Attr):
                         if "mAPI_" in str(Attr2):
                             Allow = True
