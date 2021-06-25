@@ -266,7 +266,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Check Command Validity #
         if 'Path' not in ArgumentsDictionary:
-            return 'Invalid Argument, Please Check Your "Path" Variable'
+            ArgumentsDictionary.update({'Path':''})
 
 
         # Get Attributes From Arguments #
