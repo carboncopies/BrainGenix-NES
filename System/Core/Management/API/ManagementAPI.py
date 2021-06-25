@@ -270,8 +270,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
 
         # Get Attributes From Arguments #
-        TargetPath = 'LFTM.'
-        TargetPath += ArgumentsDictionary['Path']
+        TargetPath = ArgumentsDictionary['Path']
 
         # Get Attributes #
         AttrTarget = self
