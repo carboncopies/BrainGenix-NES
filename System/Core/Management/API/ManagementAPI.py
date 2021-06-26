@@ -7,7 +7,6 @@ import threading
 import queue
 import json
 import select
-import os
 
 
 from Core.VersionData import VersionNumber
@@ -88,7 +87,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         for AttributeNameString in UnsortedList:
 
             AttributeObject = getattr(HigherLevelAttr, AttributeNameString)
-            
+
 
 
 
@@ -324,7 +323,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                 print(Attr)
                 while Directory:
                     mAPI = True
-                    print("in") 
+                    print("in")
                     if Allow == False:
                         print("first")
                         if "mAPI_" in str(Attr):
@@ -334,7 +333,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         Allow = True
                     if Allow:
                         for Attr5 in Attr4:
-                            for Attr6 in dir(Attr5):
+                            for Attr6 in getattr(Attr,Attr5):
                                 if "mAPI_" in str(Attr6):
                                     mAPI = False
                         print("2")
@@ -345,7 +344,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         Attr7 = Attr4
                         Attr4 = []
                         print("3")
-                        for Attr8 in dir(Attr7):
+                        for Attr8 in getattr(Attr,Attr7):
                             print(Attr8)
                             print("5")
                             Attr4.append(Attr8)
@@ -606,4 +605,4 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
     def mAPI_TestAPI(self, ArgumentsDictionary): # Returns A Test String #
 
         # You should get this refrerence... (Look it up) #
-        return "but most of all, samy is my hero" 
+        return "but most of all, samy is my hero"
