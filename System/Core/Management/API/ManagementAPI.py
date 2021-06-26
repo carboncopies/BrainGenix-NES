@@ -352,6 +352,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                             Dir = True
                     if Dir != True:
                         Directory = False
+                print(Attr4)
             print("4")
             print(mAPI)
             if mAPI == False:
