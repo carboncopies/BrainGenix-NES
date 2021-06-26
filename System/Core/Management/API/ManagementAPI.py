@@ -346,10 +346,12 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         Attr4 = []
                         print("3")
                         for Attr8 in Attr7:
+                            print("new")
                             for Attr9 in dir(Key1 + "." + Attr8):
                                 print(Attr9)
                                 print("5")
                                 Attr4.append(Attr8 + "." + Attr9)
+                        print("end")
                     for Dir2 in (Attr4):
                         if dir(Dir2) != []:
                             Dir = True
