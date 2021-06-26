@@ -318,7 +318,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             Allow = False
             Directory = True
             Attr4 = []
-            
+            Key = "LFTM"
             if '__' not in str(Attr):
                 print(Attr)
                 while Directory:
@@ -331,9 +331,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                             print("1")
                         Attr4 = Attr
                         Allow = True
+                        Key1 = Key
                     if Allow:
                         for Attr5 in Attr4:
-                            for Attr6 in Attr5:
+                            for Attr6 in dir(Key1 + "." + Attr5):
                                 if "mAPI_" in str(Attr6):
                                     mAPI = False
                         print("2")
@@ -345,10 +346,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         Attr4 = []
                         print("3")
                         for Attr8 in Attr7:
-                            for Attr9 in Attr8:
+                            for Attr9 in dir(Key1 + "." + Attr8):
                                 print(Attr9)
                                 print("5")
-                                Attr4.append(Attr9)
+                                Attr4.append(Attr8 + "." + Attr9)
                     for Dir2 in (Attr4):
                         if dir(Dir2) != []:
                             Dir = True
