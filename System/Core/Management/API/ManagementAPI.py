@@ -345,6 +345,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         Attr4 = []
                         print("3")
                         for Attr8 in dir(Attr7):
+                            print(Attr8)
                             print("5")
                             Attr4.append(Attr8)
                     for Dir2 in (Attr4):
@@ -352,7 +353,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                             Dir = True
                     if Dir != True:
                         Directory = False
-                print(Attr4)
+                
             print("4")
             print(mAPI)
             if mAPI == False:
