@@ -7,6 +7,7 @@ import threading
 import queue
 import json
 import select
+import os
 
 
 from Core.VersionData import VersionNumber
@@ -317,9 +318,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             Exists = False
             Allow = False
             Directory = True
-            Attr4 = []
+            Attr4 = None
             
             if '__' not in str(Attr):
+                print (os.listdir(Attr))
                 print(Attr)
                 while Directory:
                     mAPI = True
@@ -351,7 +353,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     for Dir2 in (Attr4):
                         if dir(Dir2) != []:
                             Dir = True
-                    if Dir != True:
+                    if Dir != True or mAPI == False:
                         Directory = False
                 
             print("4")
