@@ -318,10 +318,9 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             Exists = False
             Allow = False
             Directory = True
-            Attr4 = None
+            Attr4 = []
             
             if '__' not in str(Attr):
-                print (os.listdir(Attr))
                 print(Attr)
                 while Directory:
                     mAPI = True
@@ -344,7 +343,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     Dir = False
                     if Allow:
                         Attr7 = Attr4
-                        Attr4 = []
+                        list.clear(Attr4)
                         print("3")
                         for Attr8 in dir(Attr7):
                             print(Attr8)
