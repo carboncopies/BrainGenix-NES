@@ -318,37 +318,39 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             Allow = False
             Directory = True
             Attr4 = []
-            print(Attr)
-            while Directory:
-                print("in")
-                #if (not Allow) and ('__' not in str(Attr)) and ("mAPI_" in str(Attr)):
-                if Allow == False:
-                    print("first")
-                    if "mAPI_" in str(Attr):
+            
+            if '__' not in str(Attr):
+                print(Attr)
+                while Directory:
+                    mAPI = True
+                    print("in") 
+                    if Allow == False:
+                        print("first")
+                        if "mAPI_" in str(Attr):
+                            mAPI = False
+                            print("1")
+                            Attr4 = Attr
                         Allow = True
-                        print("1")
-                        Attr4 = Attr
-                mAPI = True
-                if Allow:
-                    for Attr5 in Attr4:
-                        for Attr6 in dir(Attr5):
-                            if "mAPI_" in str(Attr6):
-                                mAPI = False
-                    print("2")
-                else:
-                    Directory = False
-                Dir = False
-                if Allow:
-                    Attr7 = Attr4
-                    Attr4 = []
-                    print("3")
-                    for Attr8 in dir(Attr7):
-                        Attr4.Append(Attr8)
-                for Dir2 in (Attr4):
-                    if dir(Dir2) != []:
-                        Dir = True
-                if Dir == True:
-                    Directory = False
+                    if Allow:
+                        for Attr5 in Attr4:
+                            for Attr6 in dir(Attr5):
+                                if "mAPI_" in str(Attr6):
+                                    mAPI = False
+                        print("2")
+                    else:
+                        Directory = False
+                    Dir = False
+                    if Allow:
+                        Attr7 = Attr4
+                        Attr4 = []
+                        print("3")
+                        for Attr8 in dir(Attr7):
+                            Attr4.Append(Attr8)
+                    for Dir2 in (Attr4):
+                        if dir(Dir2) != []:
+                            Dir = True
+                    if Dir == True:
+                        Directory = False
             print("4")
             print(mAPI)
             if mAPI == False:
