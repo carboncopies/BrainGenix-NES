@@ -343,7 +343,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     Dir = False
                     if Allow:
                         Attr7 = Attr4
-                        list.clear(Attr4)
+                        Attr4.clear()
                         print("3")
                         for Attr8 in dir(Attr7):
                             print(Attr8)
