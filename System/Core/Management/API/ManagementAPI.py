@@ -329,7 +329,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         if "mAPI_" in str(Attr):
                             mAPI = False
                             print("1")
-                            Attr4 = Attr
+                        Attr4 = Attr
                         Allow = True
                     if Allow:
                         for Attr5 in Attr4:
