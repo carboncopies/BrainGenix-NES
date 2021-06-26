@@ -345,11 +345,12 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         Attr4 = []
                         print("3")
                         for Attr8 in dir(Attr7):
+                            print("5")
                             Attr4.Append(Attr8)
                     for Dir2 in (Attr4):
                         if dir(Dir2) != []:
                             Dir = True
-                    if Dir == True:
+                    if Dir != True:
                         Directory = False
             print("4")
             print(mAPI)
