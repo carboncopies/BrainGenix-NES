@@ -314,7 +314,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         OutAttr = ['__']
 
         for Attr in Attributes:
-            Exists = False
             Allow = False
             Directory = True
             Attr4 = []
