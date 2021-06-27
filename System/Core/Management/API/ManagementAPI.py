@@ -361,13 +361,8 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             print("4")
             print(mAPI)
             if mAPI == False:
-                for Object in OutAttr:
-                    for Attr3 in Attributes:
-                        if Object == Attr3:
-                            Exists = True
-                if Exists == False:
-                    OutAttr.append(Attr)
-                    print("5")
+                OutAttr.append(Attr)
+                print("5")
         del OutAttr[0]
 
         # Return Output #
