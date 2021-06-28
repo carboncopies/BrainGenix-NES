@@ -355,11 +355,11 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                 self.OutAttr = self.IndexCommands(ArgumentsDictionary)
                 self.CommandTreeIndexed = True
         except Exception:
-            if Exception == "<class 'Exception'>":
+            if str(Exception) == "<class 'Exception'>":
                 CommandTreeIndexed = False
                 self.CommandTreeIndexed = CommandTreeIndexed
             else:
-                print(Exception)
+                print(str(Exception))
 
         # Return Output #
         return str(self.OutAttr)
