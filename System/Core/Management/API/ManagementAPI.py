@@ -360,6 +360,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                 self.CommandTreeIndexed = CommandTreeIndexed
             else:
                 print("unmatched")
+                print(Exception)
 
         # Return Output #
         return str(self.OutAttr)
