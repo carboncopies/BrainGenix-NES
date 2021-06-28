@@ -350,14 +350,17 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
     # ListAttribute Command #
     def mAPI_ls(self, ArgumentsDictionary):
 
-        
-        if self.CommandTreeIndexed == None:
-            CommandTreeIndexed = False
-            self.CommandTreeIndexed = CommandTreeIndexed
-            self.OutAttr = self.IndexCommands(ArgumentsDictionary)
-            self.CommandTreeIndexed = True
-        
-
+        try:
+            if self.CommandTreeIndexed == False:
+                self.OutAttr = self.IndexCommands(ArgumentsDictionary)
+                self.CommandTreeIndexed = True
+        except Exception:
+            if Exception == "'ManagementAPISocketServer' object has no attribute 'CommandTreeIndexed'":
+                CommandTreeIndexed = False
+                self.CommandTreeIndexed = CommandTreeIndexed
+            else:
+                pass
+            
         # Return Output #
         return str(self.OutAttr)
 
