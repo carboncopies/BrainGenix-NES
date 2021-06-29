@@ -591,7 +591,9 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
     
     #Updates commands to bgdb.Command table to establish usage permission levels
     def UpdateCommand(self, DatabaseConfig:dict):
-
+        
+        return
+    
     #Returns list of commands that a user can execute based on his/her permission level
     def WriteAuthentication(self, DatabaseConfig:dict):
         
