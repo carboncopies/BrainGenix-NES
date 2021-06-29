@@ -27,7 +27,8 @@ from Core.Management.API.ManagementAPI import ManagementAPISocketServer
 
 from Core.Internode.Zookeeper.LFTransitionManager import LFTM
 
-from Core.VersionData import VersionData
+from Core.VersionData import VersionNumber
+from Core.VersionData import BranchVersion
 
 
 ##############################################################################
@@ -38,8 +39,8 @@ from Core.VersionData import VersionData
 
 
 # Set Version Information
-Version = VersionData
-Branch = 'dev' # 'dev' or 'rel'
+Version = VersionNumber
+Branch = BranchVersion
 
 
 # Load Config #
@@ -127,11 +128,10 @@ mLogger.Log('\x1b[38;2;0;128;55m╚═════╝ ╚═╝  ╚═╝╚═
 mLogger.Log('---------------------------------------------------------------------------', 5)
 mLogger.Log('', 5)
 mLogger.Log('    +-----------------------------------------------------------------+', 4)
-mLogger.Log('    |                 BrainGenix WBE Simulation System                |', 4)
-mLogger.Log(f'    |                 Version: {Version}                                  |', 4)
-mLogger.Log(f'    |                 Branch: {Branch}                                     |', 4)
-mLogger.Log(f'    |                 Clustersize: {NodeCount}                                  |', 4)
-mLogger.Log(f'    |                 MAPIServers: {APIServerCount}                                  |', 4)
+mLogger.Log('    |     BrainGenix-NES Biological Neuron Simulation System          |', 4)
+mLogger.Log(f'    |     Version: {Version}                                              |', 4)
+mLogger.Log(f'    |     Branch: {Branch}                                                 |', 4)
+mLogger.Log(f'    |     Clustersize: {NodeCount}                                              |', 4)
 mLogger.Log('    +-----------------------------------------------------------------+', 4)
 mLogger.Log('', 4)
 

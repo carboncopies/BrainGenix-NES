@@ -9,7 +9,8 @@ import queue
 import json
 import select
 import pymysql
-from ... import VersionData
+from Core.VersionData import VersionNumber
+from Core.VersionData import BranchVersion
 
 '''
 Name: Management API
@@ -73,6 +74,93 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.WriteAuthentication(DatabaseConfig)
 
 
+    def IndexCommands(self, ArgumentsDictionary): # Creates An Index Of Commands For LS To Search Through #
+
+        # Log Process Start #
+        self.Logger.Log('Indexing Management API Commands', 4)
+
+        # Check Command Validity #
+        if 'Path' not in ArgumentsDictionary:
+            ArgumentsDictionary.update({'Path':''})
+
+
+        # Get Attributes From Arguments #
+        TargetPath = 'LFTM'
+
+        if ArgumentsDictionary['Path'] != '':
+            TargetPath += f'.{ArgumentsDictionary["Path"]}'
+        else:
+            pass
+
+        # Get Attributes #
+        AttrTarget = self
+
+        if TargetPath != "":
+
+            for TargetPathName in TargetPath.split('.'):
+                AttrTarget = getattr(AttrTarget, TargetPathName)
+
+        Attributes = dir(AttrTarget)
+
+        # Sort Attributes #
+        OutAttr = ['__']
+
+        for Attr in Attributes:
+            Allow = False
+            Directory = True
+            Attr4 = []
+            Key = "LFTM"
+            if '__' not in str(Attr):
+                print(Attr)
+                while Directory:
+                    mAPI = True
+                    print("in")
+                    if Allow == False:
+                        print("first")
+                        if "mAPI_" in str(Attr):
+                            mAPI = False
+                            print("1")
+                        Attr4 = Attr
+                        Allow = True
+                        Key1 = Key
+                    if Allow:
+                        for Attr5 in Attr4:
+                            for Attr6 in dir(Key1 + "." + Attr5):
+                                if "mAPI_" in str(Attr6):
+                                    mAPI = False
+                        print("2")
+                    else:
+                        Directory = False
+                    Dir = False
+                    if Allow:
+                        Attr7 = Attr4
+                        Attr4 = []
+                        print("3")
+                        for Attr8 in Attr7:
+                            print("new")
+                            for Attr9 in dir(Key1 + "." + Attr8):
+                                print(Attr9)
+                                print("5")
+                                Attr4.append(Attr8 + "." + Attr9)
+                        print("end")
+                    for Dir2 in (Attr4):
+                        if dir(Dir2) != []:
+                            Dir = True
+                    if Dir != True or mAPI == False:
+                        Directory = False
+                
+            print("4")
+            print(mAPI)
+            if mAPI == False:
+                OutAttr.append(Attr)
+                print("5")
+        del OutAttr[0]
+        # Log Process End #
+        self.Logger.Log('Management API Commands Indexed', 4)
+
+        return OutAttr
+        
+
     # Load In External Commands #
     def LinkLFTM(self, LFTMInstance): # Link LFTM #
 
@@ -98,11 +186,14 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
 
         # Iterate Through Layers, Run Command Called #
-        for _, LayerName in enumerate(Layers):
+        for LayerIndex in range(len(Layers)):
 
             try:
-                CommandFunction = getattr(CommandFunction, LayerName)
-
+                # Run Command With Prefix Included (mAPI_[Command Name]) #
+                if LayerIndex < (len(Layers) - 1):
+                    CommandFunction = getattr(CommandFunction, Layers[LayerIndex])
+                else:
+                    CommandFunction = getattr(CommandFunction, 'mAPI_'+Layers[LayerIndex])
 
                 # Run Function #
                 CommandOutput = CommandFunction(ArgumentsDictionary)
@@ -248,56 +339,50 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
 
     # ListAttribute Command #
-    def ls(self, ArgumentsDictionary):
+    def mAPI_ls(self, ArgumentsDictionary):
 
-
-        ##################################################################################################
-        ## NOTE: WE SHOULD HAVE THE COMMAND TREE BE PRE-INDEXED TO PROVIDE THE BEST LS FUNCTIONALLITY   ##
-        ## THIS SHOULD MAKE USE OF A NESTED DICT APPROACH, INCLUDING THE COMMANDS WITH THE mAPI_ PREFIX ##
-        ##################################################################################################
-
-
-        # Check Command Validity #
-        if 'Path' not in ArgumentsDictionary:
-            return 'Invalid Argument, Please Check Your "Path" Variable'
-
-
-        # Get Attributes From Arguments #
-        TargetPath = ArgumentsDictionary['Path']
-
-        # Get Attributes #
-        AttrTarget = self
-
-        if TargetPath != "":
-
-            for TargetPathName in TargetPath.split('.'):
-                AttrTarget = getattr(AttrTarget, TargetPathName)
-
-        Attributes = dir(AttrTarget)
-
-        # Sort Attributes #
-        OutAttr = []
-        for Attr in Attributes:
-            if '__' not in str(Attr):
-                OutAttr.append(Attr)
+        try:
+            if self.CommandTreeIndexed == False:
+                self.OutAttr = self.IndexCommands(ArgumentsDictionary)
+                self.CommandTreeIndexed = True
+        except Exception:
+            if str(Exception) == "<class 'Exception'>":
+                CommandTreeIndexed = False
+                self.CommandTreeIndexed = CommandTreeIndexed
+                self.OutAttr = self.IndexCommands(ArgumentsDictionary)
+                self.CommandTreeIndexed = True
+            else:
+                print(str(Exception))
 
         # Return Output #
-        return str(OutAttr)
+        return str(self.OutAttr)
 
 
-    def Help(self, ArgumentsDictionary): # Provides Basic About The BGCLI #
+    def mAPI_Help(self, ArgumentsDictionary): # Provides Basic About The BGCLI #
 
         HelpMessage = 'This system provides a functional management interface to the BrainGenix system. Please use "ls Path=[path here]" to find commands, and use help Path=[path here] to find more information about a specific command. Please note that commands are seperated via a ".", so if calling command b nested under a, it would be "a.b".'
 
         return HelpMessage
 
 
-    def Version(self, ArgumentsDictionary): # Provide Versioning Information #
+    def mAPI_Version(self, ArgumentsDictionary): # Provide Versioning Information #
 
-        version= "BrainGenix-NES Development "+VersionData.VersionData
-        return version
+        # Set Full Branch Version #
+        if BranchVersion == 'dev':
+            BranchVersionType = 'Development'
+        elif BranchVersion == 'rel':
+            BranchVersionType = 'Release'
+        else:
+            BranchVersionType = 'ERR-UNKNOWN'
 
-    def License(self, ArgumentsDictionary): # Provides Basic License Information As Command
+        # Construct Version Information #
+        Version = f'BrainGenix-NES (Neuron Emulation System) [{BranchVersionType} Branch] [{VersionNumber}]'
+        
+        # Return Version String #
+        return Version
+
+
+    def mAPI_License(self, ArgumentsDictionary): # Provides Basic License Information As Command
 
         LicenseText = '''                                 Apache License
                             Version 2.0, January 2004
@@ -535,7 +620,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             else:
                 print("Write Authentication Disabled.")
 
-    def TestAPI(self, ArgumentsDictionary): # Returns A Test String #
+    def mAPI_TestAPI(self, ArgumentsDictionary): # Returns A Test String #
 
         # You should get this refrerence... (Look it up) #
-        return "but most of all, samy is my hero" 
+        return "but most of all, samy is my hero"
