@@ -2,7 +2,6 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
-import os
 import socket
 import threading
 import queue
@@ -610,7 +609,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                 password = DBPassword,
                 db = DBDatabaseName
             )
-            cur = DatabaseConnection.cursor(pymysql.cursors.DictCursor)
+            cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
             
             sql = ("SELECT * FROM user WHERE userName='%s' AND passwordHash='%s'" %(DBUsername,DBPassword))
             rows = cur.execute(sql)
