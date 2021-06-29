@@ -610,14 +610,14 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             )
             cur = DatabaseConnection.cursor(pymysql.cursors.DictCursor)
             
-            sql = "SELECT * FROM user WHERE userName='%s' AND passwordHash='%s'"
-            rows = cur.execute(sql % (DBUsername,DBPassword))
+            sql = ("SELECT * FROM user WHERE userName='%s' AND passwordHash='%s'" %(DBUsername,DBPassword))
+            rows = cur.execute(sql)
             
             if rows!=0:
                 for row in rows:
                     level = row['permissionLevel']
-                    sql = "SELECT * FROM command WHERE permissionLevel'%s'"
-                    rows = cur.execute(sql % (level))
+                    sql = ("SELECT * FROM command WHERE permissionLevel=%d" % int(level))
+                    rows = cur.execute(sql)
 
                     if rows!=0:
                         print("Executable Commands for current permission level:")
