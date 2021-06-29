@@ -588,12 +588,13 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         '''
 
         return LicenseText
+    
+    #Updates commands to bgdb.Command table to establish usage permission levels
+    def UpdateCommand(self, DatabaseConfig:dict):
 
+    #Returns list of commands that a user can execute based on his/her permission level
     def WriteAuthentication(self, DatabaseConfig:dict):
         
-            '''To enable Read/Write/Execute modes for the owner/group and Read only mode for other users'''
-            os.system('chmod -R 774 /home/BrainGenix')
-            
             # Connect To DB #
             DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
             DBPassword = str(DatabaseConfig.get('DatabasePassword'))
@@ -609,16 +610,26 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             )
             cur = DatabaseConnection.cursor(pymysql.cursors.DictCursor)
             
-            sql = "SELECT * FROM userName='%s' AND passwordHash='%s'"
-            res= cur.execute(sql % (DBUsername,DBPassword))
+            sql = "SELECT * FROM user WHERE userName='%s' AND passwordHash='%s'"
+            rows = cur.execute(sql % (DBUsername,DBPassword))
             
-            '''If user found in group'''
-            if res!=0:
-                print("Write Authentication Enabled.") 
-                
-            '''If user not found in group'''
+            if rows!=0:
+                for row in rows:
+                    level = row['permissionLevel']
+                    sql = "SELECT * FROM command WHERE permissionLevel'%s'"
+                    rows = cur.execute(sql % (level))
+
+                    if rows!=0:
+                        print("Executable Commands for current permission level:")
+                        for row in rows:
+                            print(row['commandName'],"\t",row['commandDescription'])
+                            
+                    else:
+                        print("No commands available for current permission level")
+                            
             else:
-                print("Write Authentication Disabled.")
+                print("No matching user found in Database.")
+            
 
     def mAPI_TestAPI(self, ArgumentsDictionary): # Returns A Test String #
 
