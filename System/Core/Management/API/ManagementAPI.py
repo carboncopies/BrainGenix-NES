@@ -34,6 +34,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.Logger.Log('Creating Host Variable')
         self.SocketHost = (self.IPAddr, self.Port)
 
+        # Load License File #
+        with open('../License', 'r') as FileIO:
+            self.LicenseText = FileIO.read()
+
         # Bind To Port #
         self.Logger.Log('Binding To Host')
         self.Socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
