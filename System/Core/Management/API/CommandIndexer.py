@@ -71,22 +71,27 @@ def FilterGetAttributes(Target): # Returns A Filtered List Of Commands Excluding
     return SortedAttributes
 
 
-def GeneratePathTraversals(TargetDictionary, path=None):
+def GeneratePathTraversals(TargetDictionary, Path=None):
     
-    if not path:
-        path=[]
+    # Check If Path Not Set #
+    if not Path:
+        Path=[]
 
+    # Check IF Not Yet Populated #
     if TargetDictionary == {}:
-        yield path,TargetDictionary
-    elif isinstance(TargetDictionary, dict):
-        for x in TargetDictionary.keys():
-            local_path = path[:]
-            local_path.append(x)
-            for b in GeneratePathTraversals(TargetDictionary[x], local_path):
-                yield b
+        yield Path,TargetDictionary
 
+    # If Valid Subdict #
+    elif isinstance(TargetDictionary, dict):
+        for SubAttributeIndex in TargetDictionary.keys():
+            SubPath = Path[:]
+            SubPath.append(SubAttributeIndex) 
+            for SubAttributeValue in GeneratePathTraversals(TargetDictionary[SubAttributeIndex], SubPath):
+                yield SubAttributeValue
+
+    # If Non-Dict Value #
     else: 
-        yield path,TargetDictionary
+        yield Path,TargetDictionary
 
 
 
@@ -102,10 +107,11 @@ def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Co
     # Recursion Depth Loop #
     for CurrentRecursionDepth in range(RecursionDepth - 1):
 
-        # Generate Path Traversal List #
+        # Iterate Through Traversed Subdicts #
         for Path in GeneratePathTraversals(OutputDictionary):
 
-            print(Path)
+            # Update Attribute For Dictionary #
+            pass
         
 
 
