@@ -107,7 +107,7 @@ def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Co
     return OutputDictionary
 
 
-def TryCreateOverwrite(Target, Path):
+def CreatePath(Target, Path):
     
     # Set Up Working Target #
     WorkingTarget = Target
@@ -123,7 +123,7 @@ def TryCreateOverwrite(Target, Path):
         WorkingTarget = WorkingTarget[PathNameString]
 
 
-def Filter2Test(InputDictionary, RequiredString = 'mAPI_'):
+def FilterPaths(InputDictionary, RequiredString = 'mAPI_'):
 
     # Init Output Dictionary #
     OutputDictionary = {}
@@ -150,7 +150,7 @@ def Filter2Test(InputDictionary, RequiredString = 'mAPI_'):
         # Check If Valid Path #
         if ( (CurrentAttribute != {}) or (RequiredString in Paths[PathIndex][-1:][0]) ):
 
-            TryCreateOverwrite(OutputDictionary, Paths[PathIndex])
+            CreatePath(OutputDictionary, Paths[PathIndex])
 
 
     # Return Output #
