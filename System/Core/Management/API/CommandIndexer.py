@@ -193,7 +193,13 @@ def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters 
     return OutputDictionary
 
 
+def TryCreateOverwrite(Target, Path, Value):
+    pass
+
 def Filter2Test(InputDictionary, RequiredString = 'mAPI_'):
+
+    # Init Output Dictionary #
+    OutputDictionary = {}
 
     # Generate Path Lists #
     Paths = []
@@ -203,7 +209,24 @@ def Filter2Test(InputDictionary, RequiredString = 'mAPI_'):
     # Sort From Shortest To Longest #
     SortedPaths = sorted(Paths, key=lambda ListLength: (len(ListLength), ListLength))
 
-    print(Paths)
+    # Iterate From Longest To Shortest #
+    for InvertedPathIndex in range(len(SortedPaths)):
+
+        # Calculate Non-Inverted Path Index #
+        PathIndex = len(SortedPaths)-InvertedPathIndex
+
+        # Get Path #
+        CurrentAttribute = InputDictionary
+        for PathNameString in Paths[PathIndex]:
+            CurrentAttribute = CurrentAttribute[PathNameString]
+
+        # Check If Valid Path #
+        if ( (CurrentAttribute != {}) or (RequiredString in Paths[PathIndex][-1:][0]) ):
+
+            print(Paths[PathIndex])
+
+
+    #print(Paths)
     print(SortedPaths)
 
 
