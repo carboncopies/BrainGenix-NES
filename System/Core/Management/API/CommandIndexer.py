@@ -189,9 +189,15 @@ def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters 
             # Update Output Dictionary #
             UpdateDictByPath(OutputDictionary, InputDictionary, Path[0])
         
-    print(OutputDictionary)
+    
+    # Return Output #
+    return OutputDictionary
 
 
 TestClass = Test4()
 DictVar = IndexCommands(TestClass, RecursionDepth=5)
-FilterCommandDictionary(DictVar)
+Out = FilterCommandDictionary(DictVar)
+
+import yaml
+
+print(yaml.safe_dump(Out))
