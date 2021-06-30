@@ -168,7 +168,11 @@ def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters 
     # Traverse Input Dictionary #
     for Path in GeneratePathTraversals(InputDictionary):
 
-        print(Path)
+        # Check If Path Valid #
+        if RequiredString in Path[0]:
+
+            # Update Output Dictionary #
+            print(Path)
 
 
 TestClass = Test4()
