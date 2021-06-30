@@ -155,8 +155,9 @@ def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Co
             # Update Output Dictionary #
             AttributesToDictionary(OutputDictionary, Path[0], SubAttributes)
 
-        print(OutputDictionary)
         
+    # Return Output Dictionay #
+    return OutputDictionary
 
 
 TestClass = Test4()
