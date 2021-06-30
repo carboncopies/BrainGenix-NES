@@ -143,7 +143,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         Allow = True
                     if Allow:
                         for Path2 in PathList1:
-                            for Attr6 in self.GetFunctions(Key + "." + Path2):
+                            for Attr6 in self.GetFunctions(str(Key + "." + Path2)):
                                 if "mAPI_" in str(Attr6):
                                     mAPI = False
                         print("2")
@@ -161,13 +161,13 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                             print(Attr10)
                             if ( (str(Attr10[len(Attr10)-1])[:1].isupper()) and ('__' not in Path1) ):
                                 print(str(Key) + "." + str(Path1))
-                                for Attr9 in self.GetFunctions(Key + "." + Path1):
+                                for Attr9 in self.GetFunctions(str(Key + "." + Path1)):
                                     PathList1.append(str(Path1) + "." + str(Attr9))
                         MaxDepth += 1
                     else:
                         Directory = False
                     for Dir2 in PathList1:
-                        if self.GetFunctions(Key + "." + Dir2) != []:
+                        if self.GetFunctions(str(Key + "." + Dir2)) != []:
                             Dir = True
                     if Dir != True or mAPI == False:
                         Directory = False
