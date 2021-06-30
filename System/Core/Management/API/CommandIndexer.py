@@ -84,6 +84,18 @@ def GeneratePathTraversals(TargetDictionary, path=None):
         yield path,TargetDictionary
 
 
+def traverse(dic, path=None):
+    if not path:
+        path=[]
+    if isinstance(dic,dict):
+        for x in dic.keys():
+            local_path = path[:]
+            local_path.append(x)
+            for b in traverse(dic[x], local_path):
+                 yield b
+    else: 
+        yield path,dic
+
 
 def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Commands With The Valid mAPI Prefix #
 
@@ -92,7 +104,7 @@ def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Co
     AttributesToDictionary(OutputDictionary, [], FilterGetAttributes(Target))
 
     print(OutputDictionary)
-    print(GeneratePathTraversals(OutputDictionary))
+    print(traverse(OutputDictionary))
     # Recursion Depth Loop #
     for CurrentRecursionDepth in range(RecursionDepth - 1):
 
