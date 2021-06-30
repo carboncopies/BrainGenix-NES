@@ -164,21 +164,17 @@ def UpdateDictByPath(InputDictionary, TargetDictionary, Path):
 
     # Init Root Level #
     PathDictionary = TargetDictionary
-    TempDict = {}
 
     # Generate Temp Dict #
-    for PathName in Path:
-        TempDict.update()
-
-    # Iterate Through Path Elements #
-    for PathName in Path:
+    for PathIndex in range(len(Path) - 1):
 
         # Update Target Dictionary #
-        PathDictionary = PathDictionary[PathName]
+        PathDictionary = PathDictionary[Path[PathIndex]]
 
         # Update
-        InputDictionary.update({PathName : PathDictionary})
+        InputDictionary.update({Path[PathIndex] : PathDictionary[Path[PathIndex + 1]]]})
 
+    print(InputDictionary)
 
 def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters Out Irrelevent Attributes #
 
