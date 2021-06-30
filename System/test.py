@@ -50,19 +50,29 @@ def CheckIfBottomLevel(TargetAttribute):
     return BottomLevel
 
 
-def GetRecursiveAttributes(Target):
+def GetRecursiveAttributes(Target, SearchDepth=5):
 
     # Get Attributes #
-    StagingList = dir(Target)
-    OutputList = []
+    StageDict = {'.' : Target}
+    CurrentPathIndexes = []
 
 
-    while StagingList != []:
+    for CurrentSearchDepth in range(SearchDepth):
 
+        # Add Item To Current Path #
+        CurrentPathIndexes.append(0)
+
+        # Get String Name For Current Path #
+        PathString = ''
+        for PathLevelIndex in CurrentPathIndexes:
+            AttributeName = dir(getattr(Target, PathString))
+            PathString += AttributeName + '.'
+        PathString = PathString[:-1]
+
+        print(PathString)
         
 
 
 
 TargetInstance = Test()
-print(CheckIfBottomLevel(TargetInstance.TestAttribute))
 GetRecursiveAttributes(TargetInstance)
