@@ -169,7 +169,6 @@ def UpdateDictByPath(InputDictionary, TargetDictionary, Path):
     for PathName in Path:
 
         # Update Target Dictionary #
-        print(TempDictionary)
         TempDictionary = TempDictionary[PathName]
 
         # Update
@@ -189,6 +188,8 @@ def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters 
 
             # Update Output Dictionary #
             UpdateDictByPath(OutputDictionary, InputDictionary, Path[0])
+        
+    print(OutputDictionary)
 
 
 TestClass = Test4()
