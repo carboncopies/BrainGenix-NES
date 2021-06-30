@@ -199,7 +199,7 @@ def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters 
     return OutputDictionary
 
 
-TestClass = Test4()
+TestClass = Test2()
 DictVar = IndexCommands(TestClass, RecursionDepth=5)
 Out = FilterCommandDictionary(DictVar)
 
