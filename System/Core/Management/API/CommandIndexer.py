@@ -172,9 +172,12 @@ def UpdateDictByPath(InputDictionary, TargetDictionary, Path):
         PathDictionary = PathDictionary[Path[PathIndex]]
 
         # Update
-        InputDictionary.update({Path[PathIndex] : PathDictionary[Path[PathIndex + 1]]})
+        print(Path)
+        AttributeDictionary = PathDictionary[Path[PathIndex + 1]]
+        print(AttributeDictionary)
+        InputDictionary.update({Path[PathIndex] : AttributeDictionary})
 
-    print(InputDictionary)
+
 
 def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters Out Irrelevent Attributes #
 
