@@ -7,7 +7,6 @@ import threading
 import queue
 import json
 import select
-import ast
 
 from Core.VersionData import VersionNumber
 from Core.VersionData import BranchVersion
