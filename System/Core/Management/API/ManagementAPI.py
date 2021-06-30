@@ -206,7 +206,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Get Target Function #
         Layers = CommandCallStack.split('.')
         CommandFunction = self
-
+        print(CommandCallStack)
 
         # Iterate Through Layers, Run Command Called #
         for LayerIndex in range(len(Layers)):
@@ -424,6 +424,8 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Check If Path Has Been Provided #
         if 'Path' in ArgumentsDictionary:
 
+            print(ArgumentsDictionary['Path'])
+
              # Get Target Function #
             Layers = ArgumentsDictionary['Path'].split('.')
             CommandFunction = self
@@ -432,7 +434,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
             # Iterate Through Layers, Run Command Called #
             for LayerIndex in range(len(Layers)):
-                    print(Layers[LayerIndex])
+                    print('fjdslakjfjldks' + Layers[LayerIndex])
 
                     # Run Command With Prefix Included (mAPI_[Command Name]) #
                     if LayerIndex < (len(Layers) - 1):
@@ -442,8 +444,8 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
                     print(CommandFunction)
 
-                    # Run Function #
-                    HelpMessage = CommandFunction.Help
+            # Run Function #
+            HelpMessage = CommandFunction.Help
 
 
 
