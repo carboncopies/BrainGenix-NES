@@ -78,12 +78,15 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.ThreadManager.Threads.append(self.Thread)
         self.Logger.Log('Appended ManagementAPISocketServer Thread To ThreadManager Thread List', 1)
 
+
     def TopLevelFunctions(body):
         return (f for f in body if isinstance(f, ast.FunctionDef))
+
 
     def ParseAst(filename):
         with open(filename, "rt") as file:
             return ast.parse(file.read(), filename=filename)
+
 
     def GetFunctions(self, filename):
         FunctionList = []
@@ -91,8 +94,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         for func in self.TopLevelFunctions(tree.body):
             FunctionList.append(func)
         return FunctionList
-
-
 
 
     def IndexCommands(self, ArgumentsDictionary): # Creates An Index Of Commands For LS To Search Through #
@@ -184,7 +185,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         return OutAttr
         
 
-    # Load In External Commands #
     def LinkLFTM(self, LFTMInstance): # Link LFTM #
 
         # Log Link Start #
@@ -232,9 +232,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Return Values #
         return CommandOutput, CommandName
-
-
-
 
 
     def ManagementAPIThread(self, ControlQueue): # Create A Thread Function For The Management API #
@@ -440,7 +437,8 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     if LayerIndex < (len(Layers) - 1):
                         CommandFunction = getattr(CommandFunction, Layers[LayerIndex])
                     else:
-                        CommandFunction = getattr(CommandFunction, 'mAPI_'+Layers[LayerIndex])
+                        pass
+                        #CommandFunction = getattr(CommandFunction, 'mAPI_'+Layers[LayerIndex])
 
                     print(CommandFunction)
 
