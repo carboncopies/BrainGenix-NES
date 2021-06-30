@@ -209,7 +209,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
 
         # Iterate Through Layers, Run Command Called #
-        for LayerIndex in range(len(Layers)):
+        for LayerIndex, _ in enumerate(Layers):
 
             try:
                 # Run Command With Prefix Included (mAPI_[Command Name]) #
