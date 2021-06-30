@@ -92,6 +92,7 @@ def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Co
     AttributesToDictionary(OutputDictionary, [], FilterGetAttributes(Target))
 
     print(OutputDictionary)
+    print(GeneratePathTraversals(OutputDictionary))
     # Recursion Depth Loop #
     for CurrentRecursionDepth in range(RecursionDepth - 1):
 
