@@ -193,8 +193,21 @@ def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters 
     return OutputDictionary
 
 
-def TryCreateOverwrite(Target, Path, Value):
-    pass
+def TryCreateOverwrite(Target, Path):
+    
+    # Set Up Working Target #
+    WorkingTarget = Target
+
+    # Iterate Through Path #
+    for PathNameString in Path:
+
+        # Check If Target Does Not Have Attribute #
+        if not PathNameString in WorkingTarget:
+            WorkingTarget.update({PathNameString : {}})
+        
+        # Update Working Target #
+        WorkingTarget = WorkingTarget[PathNameString]
+
 
 def Filter2Test(InputDictionary, RequiredString = 'mAPI_'):
 
@@ -213,8 +226,8 @@ def Filter2Test(InputDictionary, RequiredString = 'mAPI_'):
     for InvertedPathIndex in range(len(SortedPaths)):
 
         # Calculate Non-Inverted Path Index #
-        PathIndex = len(SortedPaths)-InvertedPathIndex-1
-        print(PathIndex)
+        PathIndex = (len(SortedPaths) - InvertedPathIndex) - 1
+
         # Get Path #
         CurrentAttribute = InputDictionary
         for PathNameString in Paths[PathIndex]:
@@ -223,11 +236,11 @@ def Filter2Test(InputDictionary, RequiredString = 'mAPI_'):
         # Check If Valid Path #
         if ( (CurrentAttribute != {}) or (RequiredString in Paths[PathIndex][-1:][0]) ):
 
-            print(Paths[PathIndex])
+            TryCreateOverwrite(OutputDictionary, Paths[PathIndex])
 
 
     #print(Paths)
-    print(SortedPaths)
+    print(OutputDictionary)
 
 
 TestClass = Test2()
