@@ -243,7 +243,7 @@ def Filter2Test(InputDictionary, RequiredString = 'mAPI_'):
     print(OutputDictionary)
 
 
-TestClass = Test2()
+TestClass = Test4()
 DictVar = IndexCommands(TestClass, RecursionDepth=5)
 Out = Filter2Test(DictVar)#FilterCommandDictionary(DictVar)
 
