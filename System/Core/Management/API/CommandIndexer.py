@@ -171,10 +171,9 @@ def UpdateDictByPath(InputDictionary, TargetDictionary, Path):
         # Update Target Dictionary #
         TempDictionary = TempDictionary[PathName]
 
+        # Update
+        TargetDictionary.update({PathName : TempDictionary})
 
-
-    # Update
-    TargetDictionary.update(TempDictionary)
 
 def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters Out Irrelevent Attributes #
 
