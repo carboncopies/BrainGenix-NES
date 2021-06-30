@@ -1,0 +1,7 @@
+from inspect import getmembers, isfunction
+
+
+print(getmembers(__file__, ifrom inspect import getmembers, isfunction
+
+
+print(getmembers(__file__, isfunction)sfunction))
