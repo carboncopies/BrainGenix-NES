@@ -148,7 +148,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                                 #print(Attr9)
                                 #print("5")
                                 Attr4.append(str(Attr8) + "." + str(Attr9))
-                            break
                         #print("end")
                         MaxDepth += 1
                     else:
