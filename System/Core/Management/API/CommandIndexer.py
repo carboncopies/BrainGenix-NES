@@ -198,7 +198,7 @@ def Filter2Test(InputDictionary, RequiredString = 'mAPI_'):
     # Generate Path Lists #
     Paths = []
     for Path in GeneratePathTraversals(InputDictionary):
-        Paths.append(Path)
+        Paths.append(Path[0])
 
     # Sort From Longest Lists To Shortest #
     SortedPaths = sorted(Paths, key=lambda ListLength: (len(ListLength), ListLength))
