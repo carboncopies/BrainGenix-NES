@@ -119,12 +119,12 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                 print(Attr)
                 while Directory:
                     mAPI = True
-                    print("in")
+                    #print("in")
                     if Allow == False:
-                        print("first")
+                        #print("first")
                         if "mAPI_" in str(Attr):
                             mAPI = False
-                            print("1")
+                            #print("1")
                         Attr4 = str(Attr)
                         Allow = True
                         Key1 = Key
@@ -133,29 +133,30 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                             for Attr6 in dir(Key1 + "." + Attr5):
                                 if "mAPI_" in str(Attr6):
                                     mAPI = False
-                        print("2")
+                        #print("2")
                     else:
                         Directory = False
                     Dir = False
                     if Allow:
                         Attr7 = Attr4
                         Attr4 = []
-                        print("3")
+                        #print("3")
                         for Attr8 in Attr7:
-                            print("new")
+                            #print("new")
                             for Attr9 in dir(str(Key1) + "." + str(Attr8)):
-                                print(Attr9)
-                                print("5")
+                                #print(Attr9)
+                                #print("5")
                                 Attr4.append(str(Attr8) + "." + str(Attr9))
-                        print("end")
+                            break
+                        #print("end")
                     for Dir2 in (Attr4):
                         if dir(Dir2) != []:
                             Dir = True
                     if Dir != True or mAPI == False:
                         Directory = False
                 
-            print("4")
-            print(mAPI)
+            #print("4")
+            #print(mAPI)
             if mAPI == False:
                 OutAttr.append(Attr)
                 print("5")
