@@ -56,7 +56,7 @@ def AttributesToDictionary(DictionaryTarget, TargetPath, AttributeList): # Conve
     TargetDictionaryLocation.update(TempDict)
 
 
-def FilterDir(Target): # Returns A Filtered List Of Commands Excluding The '__' #
+def FilterGetAttributes(Target): # Returns A Filtered List Of Commands Excluding The '__' #
 
     # Get List Of Attributes #
     RawAttributes = dir(Target)
