@@ -200,7 +200,11 @@ def Filter2Test(InputDictionary, RequiredString = 'mAPI_'):
     for Path in GeneratePathTraversals(InputDictionary):
         Paths.append(Path)
 
+    # Sort From Longest Lists To Shortest #
+    SortedPaths = sorted(Paths, key=lambda ListLength: (len(ListLength), ListLength))
+
     print(Paths)
+    print(SortedPaths)
 
 
 TestClass = Test2()
