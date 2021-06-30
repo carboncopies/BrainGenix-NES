@@ -201,7 +201,7 @@ def Filter2Test(InputDictionary, RequiredString = 'mAPI_'):
         Paths.append(Path[0])
 
     # Sort From Longest Lists To Shortest #
-    SortedPaths = sorted(Paths, key=lambda ListLength: (ListLength, len(ListLength)))
+    SortedPaths = sorted(Paths, key=lambda ListLength: (len(ListLength)-ListLength, ListLength))
 
     print(Paths)
     print(SortedPaths)
