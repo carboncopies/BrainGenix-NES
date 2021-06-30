@@ -85,13 +85,24 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.ThreadManager.Threads.append(self.Thread)
         self.Logger.Log('Appended ManagementAPISocketServer Thread To ThreadManager Thread List', 1)
 
-    def IndexCommands(self):
+    def IndexCommands(self, MaxRecursionDepth=5):
 
-        print('\n\n\n\n\n\n\n\n\n\n\n')
-        self.CommandIndex = IndexCommands(self)
-        self.CommandIndex = FilterPaths(self.CommandIndex)
-        print(self.CommandIndex)
+        # Logger Message #
+        self.Logger.Log('Beginning Command Indexing Process', 3)
 
+        # Index Commands #
+        self.Logger.Log('Beginning Recursive Attribute Search', 2)
+        self.Logger.Log(f'Max Recursion Depth: {MaxRecursionDepth}' , 0)
+        self.CommandIndex = IndexCommands(self, self.Logger, MaxRecursionDepth)
+        self.Logger.Log('Recursive Attribute Search Complete',1)
+
+        self.Logger.Log('Starting Attribute Sorting' ,2)
+        self.CommandIndex = FilterPaths(self.CommandIndex, self.Logger)
+        self.Logger.Log('Finished Attribute Sorting' ,1)
+
+        # Log Completion #
+        self.Logger.Log('Command Indexing Complete', 2)
+        
     # def TopLevelFunctions(body):
     #     return (f for f in body if isinstance(f, ast.FunctionDef))
 
