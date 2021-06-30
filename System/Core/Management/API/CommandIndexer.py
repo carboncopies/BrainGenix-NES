@@ -162,14 +162,8 @@ def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Co
 
 def UpdateDictByPath(InputDictionary, TargetDictionary, Path):
 
-    # Init Root Level #
-    PathDictionary = TargetDictionary
-
     # Generate Temp Dict #
     for PathIndex in range(len(Path) - 1):
-
-        # Update Target Dictionary #
-        PathDictionary = PathDictionary[Path[PathIndex]]
 
         # Update
         print(Path)
