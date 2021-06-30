@@ -387,7 +387,36 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
     def mAPI_Help(self, ArgumentsDictionary): # Provides Basic About The BGCLI #
 
+        # Set Default Help Message #
         HelpMessage = 'This system provides a functional management interface to the BrainGenix system. Please use "ls Path=[path here]" to find commands, and use help Path=[path here] to find more information about a specific command. Please note that commands are seperated via a ".", so if calling command b nested under a, it would be "a.b".'
+
+        # Check If Path Has Been Provided #
+        if 'Path' in ArgumentsDictionary:
+
+             # Get Target Function #
+            Layers = ArgumentsDictionary['Path'].split('.')
+            CommandFunction = self
+
+
+
+            # Iterate Through Layers, Run Command Called #
+            for LayerIndex in range(len(Layers)):
+
+
+                    # Run Command With Prefix Included (mAPI_[Command Name]) #
+                    if LayerIndex < (len(Layers) - 1):
+                        CommandFunction = getattr(CommandFunction, Layers[LayerIndex])
+                    else:
+                        CommandFunction = getattr(CommandFunction, 'mAPI_'+Layers[LayerIndex])
+
+                    print(CommandFunction)
+
+                    # Run Function #
+                    HelpMessage = CommandFunction.Help
+
+
+
+
 
         return HelpMessage
 
