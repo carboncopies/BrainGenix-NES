@@ -160,39 +160,6 @@ def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Co
     return OutputDictionary
 
 
-def UpdateDictByPath(InputDictionary, TargetDictionary, Path):
-
-    # Generate Temp Dict #
-    for PathIndex in range(len(Path)):
-
-        # Update
-        print(Path)
-
-        AttributeDictionary = TargetDictionary[Path[PathIndex]]
-
-        InputDictionary.update({Path[PathIndex] : AttributeDictionary})
-
-    print(InputDictionary)
-
-def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters Out Irrelevent Attributes #
-
-    # Initialize Variables #
-    OutputDictionary = {}
-
-    # Traverse Input Dictionary #
-    for Path in GeneratePathTraversals(InputDictionary):
-
-        # Check If Path Valid #
-        if RequiredString in Path[0][-1:][0]:
-
-            # Update Output Dictionary #
-            UpdateDictByPath(OutputDictionary, InputDictionary, Path[0])
-        
-    
-    # Return Output #
-    return OutputDictionary
-
-
 def TryCreateOverwrite(Target, Path):
     
     # Set Up Working Target #
