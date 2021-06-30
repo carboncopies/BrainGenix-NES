@@ -366,7 +366,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
 
     # ListAttribute Command #
-    def mAPI_ls(self, ArgumentsDictionary):
+    def mAPI_lsnew(self, ArgumentsDictionary):
 
         try:
             if self.CommandTreeIndexed == False:
