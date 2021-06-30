@@ -72,15 +72,19 @@ def FilterGetAttributes(Target): # Returns A Filtered List Of Commands Excluding
 
 
 def GeneratePathTraversals(TargetDictionary, path=None):
+    
     if not path:
         path=[]
-    if isinstance(TargetDictionary, dict):
+
+    if TargetDictionary == {}:
+        yield path,TargetDictionary
+    elif isinstance(TargetDictionary, dict):
         for x in TargetDictionary.keys():
             local_path = path[:]
             local_path.append(x)
             for b in GeneratePathTraversals(TargetDictionary[x], local_path):
-                print(b)
                 yield b
+
     else: 
         yield path,TargetDictionary
 
@@ -103,7 +107,6 @@ def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Co
 
             print(Path)
         
-
 
 
 TestClass = Test2()
