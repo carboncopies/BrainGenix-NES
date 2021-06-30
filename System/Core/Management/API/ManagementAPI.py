@@ -206,11 +206,11 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Get Target Function #
         Layers = CommandCallStack.split('.')
         CommandFunction = self
-        print(CommandCallStack)
+
 
         # Iterate Through Layers, Run Command Called #
         for LayerIndex in range(len(Layers)):
-            print(Layers[LayerIndex])
+
             try:
                 # Run Command With Prefix Included (mAPI_[Command Name]) #
                 if LayerIndex < (len(Layers) - 1):
