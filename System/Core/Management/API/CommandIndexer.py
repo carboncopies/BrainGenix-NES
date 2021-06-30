@@ -13,59 +13,6 @@ Date-Created: 2021-06-30
 from typing import Dict
 
 
-class Test1():
-
-    def __init__(self):
-        pass
-
-    def Attr1(self):
-        pass
-
-    def mAPI_Attr2(self):
-        pass
-
-class Test3():
-
-    def __init__(self):
-        self.InitTest1()
-
-    def Attr1(self):
-        pass
-
-    def mAPI_Attr2(self):
-        pass
-
-    def InitTest1(self):
-        self.Class2 = Test2()
-
-class Test4():
-
-    def __init__(self):
-        self.InitTest1()
-
-    def Attr1(self):
-        pass
-
-    def mAPI_Attr2(self):
-        pass
-
-    def InitTest1(self):
-        self.Class3 = Test3()
-
-class Test2():
-
-    def __init__(self):
-        self.InitTest1()
-
-    def Attr1(self):
-        pass
-
-    def mAPI_Attr2(self):
-        pass
-
-    def InitTest1(self):
-        self.Class1 = Test1() 
-
 
 def AttributesToDictionary(DictionaryTarget, TargetPath, AttributeList): # Converts AttributeList To Dictionary Format #
 
@@ -206,14 +153,5 @@ def Filter2Test(InputDictionary, RequiredString = 'mAPI_'):
             TryCreateOverwrite(OutputDictionary, Paths[PathIndex])
 
 
-    #print(Paths)
-    print(OutputDictionary)
-
-
-TestClass = Test4()
-DictVar = IndexCommands(TestClass, RecursionDepth=5)
-Out = Filter2Test(DictVar)#FilterCommandDictionary(DictVar)
-
-import yaml
-print('')
-print(yaml.safe_dump(DictVar))
+    # Return Output #
+    return OutputDictionary
