@@ -112,6 +112,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         for Attr in Attributes:
             Allow = False
+            MaxDepth = 1
             Directory = True
             Attr4 = []
             Key = "LFTM"
@@ -137,7 +138,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     else:
                         Directory = False
                     Dir = False
-                    if Allow:
+                    if (Allow) and (MaxDepth < 6):
                         Attr7 = Attr4
                         Attr4 = []
                         #print("3")
@@ -149,6 +150,9 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                                 Attr4.append(str(Attr8) + "." + str(Attr9))
                             break
                         #print("end")
+                        MaxDepth += 1
+                    else:
+                        Directory = False
                     for Dir2 in (Attr4):
                         if dir(Dir2) != []:
                             Dir = True
