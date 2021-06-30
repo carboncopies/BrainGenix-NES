@@ -126,7 +126,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         if "mAPI_" in str(Attr):
                             mAPI = False
                             #print("1")
-                        Attr4 = str(Attr)
+                        Attr4 = [Attr]
                         Allow = True
                         Key1 = Key
                     if Allow:
@@ -141,14 +141,23 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     if (Allow) and (MaxDepth < 6):
                         Attr7 = Attr4
                         Attr4 = []
-                        #print("3")
+                        print("3")
+                        
                         for Attr8 in Attr7:
-                            #print("new")
-                            for Attr9 in dir(str(Key1) + "." + str(Attr8)):
-                                #print(Attr9)
-                                #print("5")
-                                Attr4.append(str(Attr8) + "." + str(Attr9))
-                        #print("end")
+
+                            Attr10 = Attr8.split('.')[-1:]
+                            
+                            print(Attr10)
+
+                            if ( (str(Attr10)[:1].isupper()) and ('__' not in Attr8) ):
+                                #print("new")
+                                print(str(Key1) + "." + str(Attr8))
+                                for Attr9 in dir(str(Key1) + "." + str(Attr8)):
+                                    
+                                    #print(Attr9)
+                                    #print("5")
+                                    Attr4.append(str(Attr8) + "." + str(Attr9))
+                        print("end")
                         MaxDepth += 1
                     else:
                         Directory = False
