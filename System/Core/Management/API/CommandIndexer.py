@@ -56,16 +56,34 @@ def AttributesToDictionary(DictionaryTarget, TargetPath, AttributeList): # Conve
     TargetDictionaryLocation.update(TempDict)
 
 
+def FilterDir(Target): # Returns A Filtered List Of Commands Excluding The '__' #
+
+    # Get List Of Attributes #
+    RawAttributes = dir(Target)
+
+    # Sort List #
+    SortedAttributes = []
+    for Attribute in RawAttributes:
+        if '__' not in Attribute:
+            SortedAttributes.append(Attribute)
+
+    # Return Output #
+    return SortedAttributes
+
+
 def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Commands With The Valid mAPI Prefix #
 
     # Initialize Parameters #
     OutputDictionary = {}
+    AttributesToDictionary(OutputDictionary, [], dir(Target))
 
 
     # Recursion Depth Loop #
     for CurrentRecursionDepth in range(RecursionDepth - 1):
 
         print(f'Current Depth Is: {CurrentRecursionDepth}')
+
+        
 
 
 
