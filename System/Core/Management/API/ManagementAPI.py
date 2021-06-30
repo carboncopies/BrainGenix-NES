@@ -421,32 +421,19 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Check If Path Has Been Provided #
         if 'Path' in ArgumentsDictionary:
 
-            print(ArgumentsDictionary['Path'])
-
              # Get Target Function #
             Layers = ArgumentsDictionary['Path'].split('.')
             CommandFunction = self
 
-
-
             # Iterate Through Layers, Run Command Called #
             for LayerIndex in range(len(Layers)):
-                    print('fjdslakjfjldks' + Layers[LayerIndex])
+                    print(Layers[LayerIndex])
 
                     # Run Command With Prefix Included (mAPI_[Command Name]) #
-                    if LayerIndex < (len(Layers) - 1):
+                    if LayerIndex < (len(Layers) - 2):
                         CommandFunction = getattr(CommandFunction, Layers[LayerIndex])
                     else:
-                        pass
-                        #CommandFunction = getattr(CommandFunction, 'mAPI_'+Layers[LayerIndex])
-
-                    print(CommandFunction)
-
-            # Run Function #
-            HelpMessage = CommandFunction.Help
-
-
-
+                        HelpMessage = getattr(CommandFunction, 'mAPI_'+Layers[LayerIndex] + '_Help')
 
 
         return HelpMessage
