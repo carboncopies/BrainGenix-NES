@@ -430,7 +430,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     print(Layers[LayerIndex])
 
                     # Run Command With Prefix Included (mAPI_[Command Name]) #
-                    if LayerIndex < (len(Layers) - 2):
+                    if LayerIndex < (len(Layers) - 1):
                         CommandFunction = getattr(CommandFunction, Layers[LayerIndex])
                     else:
                         HelpMessage = getattr(CommandFunction, 'mAPI_'+Layers[LayerIndex] + '_Help')
