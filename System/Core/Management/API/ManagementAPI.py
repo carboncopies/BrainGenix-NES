@@ -47,10 +47,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             self.LicenseText = FileIO.read()
         self.Logger.Log('Loaded License Text File', 2)
 
-        print('\n\n\n\n\n\n\n\n\n\n\n')
-        self.CommandIndex = IndexCommands(self)
-        self.CommandIndex = FilterPaths(self.CommandIndex)
-
         # Bind To Port #
         self.Logger.Log('Binding To Host')
         self.Socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -89,7 +85,12 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.ThreadManager.Threads.append(self.Thread)
         self.Logger.Log('Appended ManagementAPISocketServer Thread To ThreadManager Thread List', 1)
 
+    def IndexCommands(self):
 
+        print('\n\n\n\n\n\n\n\n\n\n\n')
+        self.CommandIndex = IndexCommands(self)
+        self.CommandIndex = FilterPaths(self.CommandIndex)
+        print(self.CommandIndex)
 
     # def TopLevelFunctions(body):
     #     return (f for f in body if isinstance(f, ast.FunctionDef))
