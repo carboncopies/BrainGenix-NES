@@ -160,6 +160,22 @@ def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Co
     return OutputDictionary
 
 
+def UpdateDictByPath(InputDictionary, TargetDictionary, Path):
+
+    # Init Root Level #
+    TempDictionary = InputDictionary
+
+    # Iterate Through Path Elements #
+    for PathName in Path:
+
+        # Update Target Dictionary #
+        TempDictionary = TempDictionary[PathName]
+
+
+
+    # Update
+    TargetDictionary.update(TempDictionary)
+
 def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters Out Irrelevent Attributes #
 
     # Initialize Variables #
@@ -172,7 +188,7 @@ def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters 
         if RequiredString in Path[0][-1:][0]:
 
             # Update Output Dictionary #
-            print(Path)
+            pass
 
 
 TestClass = Test4()
