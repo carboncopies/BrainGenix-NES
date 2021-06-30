@@ -64,7 +64,7 @@ class Test2():
         pass
 
     def InitTest1(self):
-        self.Class1 = Test1()
+        self.Class1 = Test1() 
 
 
 def AttributesToDictionary(DictionaryTarget, TargetPath, AttributeList): # Converts AttributeList To Dictionary Format #
