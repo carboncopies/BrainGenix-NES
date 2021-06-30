@@ -132,17 +132,23 @@ def CreatePath(Target, Path):
 def FilterPaths(InputDictionary, Logger, RequiredString = 'mAPI_'):
 
     # Init Output Dictionary #
+    Logger.Log('Initializng Command Index Sorting System', 3)
     OutputDictionary = {}
 
     # Generate Path Lists #
+    Logger.Log('Creating Command Index Path Traversal List', 2)
     Paths = []
     for Path in GeneratePathTraversals(InputDictionary):
         Paths.append(Path[0])
+    Logger.Log('Path Traversal Complete', 1)
 
     # Sort From Shortest To Longest #
+    Logger.Log('Sorting Path List', 2)
     SortedPaths = sorted(Paths, key=lambda ListLength: (len(ListLength), ListLength))
+    Logger.Log('Sorted Path List', 1)
 
     # Iterate From Longest To Shortest #
+    Logger.Log('Moving Relevant Elements To Output Dictionary', 2)
     for InvertedPathIndex in range(len(SortedPaths)):
 
         # Calculate Non-Inverted Path Index #
@@ -158,6 +164,8 @@ def FilterPaths(InputDictionary, Logger, RequiredString = 'mAPI_'):
 
             CreatePath(OutputDictionary, Paths[PathIndex])
 
+    # Log Completion #
+    Logger.Log('Command Filtering Complete', 2)
 
     # Return Output #
     return OutputDictionary
