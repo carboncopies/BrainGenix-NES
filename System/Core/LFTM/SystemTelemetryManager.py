@@ -26,6 +26,14 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         self.KafkaConfig = KafkaConfig
 
 
+        # Set Help Strings (NOTE, THE NAMESCHEME IS VERY IMPORTANT! MAKE SURE TO FOLLOW IT! (self.mAPI_[CommandName]_Help = 'HelpString')) #
+        self.mAPI_GetClusterSize_Help = 'The GetClusterSize function is responsible for returning the current number of nodes in the cluster. This is returned as an integar.'
+        self.mAPI_GetNodeList_Help = 'The Get NodeList function returns a list of the hostnames of all nodes within this cluster'
+        self.mAPI_GetNodeStats_Help = 'The Get Node Stats returns a json array of all collected node performance information. You must pass it a JSON request containing {"Node":[NodeName]}.'
+        self.mAPI_GetAllNodeStats_Help = 'The Get Node Stats returns a json array of all collected node performance information. It does not accept any parameters as input.'
+
+
+
     def StartSystem(self): # Called During Startup #
 
         # Log Instantiation #
@@ -128,13 +136,10 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         pass
 
 
-
     ## Include Any mAPI Commands Here ##
     # Command: {"SysName":"NES", "CallStack":"LFTM.SystemTelemetryManager.mAPI_GetClusterSize", "KeywordArgs": {}}
     def mAPI_GetClusterSize(self, APIArgs):
 
-        # Set Help String (NOTE, THE NAMESCHEME IS VERY IMPORTANT! MAKE SURE TO FOLLOW IT! (self.mAPI_[CommandName]_Help = 'HelpString')) #
-        self.mAPI_GetClusterSize_Help = 'The GetClusterSize function is responsible for returning the current number of nodes in the cluster. This is returned as an integar.'
 
         # Set Command #
         return self.Zookeeper.ConcurrentConnectedNodes()
@@ -143,8 +148,6 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
     # Command: {"SysName":"NES", "CallStack":"LFTM.SystemTelemetryManager.mAPI_GetNodeList", "KeywordArgs": {}}
     def mAPI_GetNodeList(self, APIArgs):
 
-        # Set Help String #
-        self.mAPI_GetNodeList_Help = 'The Get NodeList function returns a list of the hostnames of all nodes within this cluster'
 
         # Set Command #
         return self.Zookeeper.ConnectedNodes
@@ -153,8 +156,6 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
     # Command: {"SysName":"NES", "CallStack":"LFTM.SystemTelemetryManager.mAPI_GetNodeStats", "KeywordArgs": {"Node": %Your Node Hostname% }}
     def mAPI_GetNodeStats(self, APIArgs):
 
-        # Set Help String #
-        self.mAPI_GetNodeList_Help = 'The Get Node Stats returns a json array of all collected node performance information. You must pass it a JSON request containing {"Node":[NodeName]}.'
 
         # Set Command #
         NodeName = APIArgs['Node']
@@ -163,14 +164,6 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
 
     # Command: {"SysName":"NES", "CallStack":"LFTM.SystemTelemetryManager.mAPI_GetAllNodeStats", "KeywordArgs": {}}
     def mAPI_GetAllNodeStats(self, APIArgs):
-
-        # Set Help String #
-        self.mAPI_GetNodeList_Help = 'The Get Node Stats returns a json array of all collected node performance information. It does not accept any parameters as input.'
-
-
-        # Set Command #
-        #while not self.SysTelLeader.InfoReady:
-        #    time.sleep(0.001)
 
         # Return Result #
         return self.SysTelLeader.Info
