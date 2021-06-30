@@ -119,8 +119,16 @@ def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Co
         # Iterate Through Traversed Subdicts #
         for Path in GeneratePathTraversals(OutputDictionary):
 
-            # Update Attribute For Dictionary #
-            pass
+            # Get Current Attribute #
+            CurrentAttribute = GetAttributeFromPath(Target, Path[0])
+
+            # Get Subattributes From Current Attribute #
+            SubAttributes = FilterGetAttributes(CurrentAttribute)
+
+            # Update Output Dictionary #
+            AttributesToDictionary(OutputDictionary, Path[0], SubAttributes)
+
+        print(OutputDictionary)
         
 
 
