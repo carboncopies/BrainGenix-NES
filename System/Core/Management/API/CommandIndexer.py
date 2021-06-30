@@ -172,7 +172,7 @@ def UpdateDictByPath(InputDictionary, TargetDictionary, Path):
 
         InputDictionary.update({Path[PathIndex] : AttributeDictionary})
 
-
+    print(InputDictionary)
 
 def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters Out Irrelevent Attributes #
 
@@ -193,9 +193,19 @@ def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters 
     return OutputDictionary
 
 
+def Filter2Test(InputDictionary, RequiredString = 'mAPI_'):
+
+    # Generate Path Lists #
+    Paths = []
+    for Path in GeneratePathTraversals(InputDictionary):
+        Paths.append(Path)
+
+    print(Paths)
+
+
 TestClass = Test2()
 DictVar = IndexCommands(TestClass, RecursionDepth=5)
-Out = FilterCommandDictionary(DictVar)
+Out = Filter2Test(DictVar)#FilterCommandDictionary(DictVar)
 
 import yaml
 print('')
