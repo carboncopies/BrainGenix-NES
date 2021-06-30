@@ -36,7 +36,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Load License File #
         self.Logger.Log('Loading License Text For Management API Command', 3)
-        with open('../License', 'r') as FileIO:
+        with open('../LICENSE', 'r') as FileIO:
             self.LicenseText = FileIO.read()
         self.Logger.Log('Loaded License Text File', 2)
 
@@ -107,59 +107,60 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         Attributes = dir(AttrTarget)
 
-        # Sort Attributes #
-        OutAttr = ['__']
 
-        for Attr in Attributes:
-            Allow = False
-            Directory = True
-            Attr4 = []
-            Key = "LFTM"
-            if '__' not in str(Attr):
-                print(Attr)
-                while Directory:
-                    mAPI = True
-                    print("in")
-                    if Allow == False:
-                        print("first")
-                        if "mAPI_" in str(Attr):
-                            mAPI = False
-                            print("1")
-                        Attr4 = Attr
-                        Allow = True
-                        Key1 = Key
-                    if Allow:
-                        for Attr5 in Attr4:
-                            for Attr6 in dir(Key1 + "." + Attr5):
-                                if "mAPI_" in str(Attr6):
-                                    mAPI = False
-                        print("2")
-                    else:
-                        Directory = False
-                    Dir = False
-                    if Allow:
-                        Attr7 = Attr4
-                        Attr4 = []
-                        print("3")
-                        for Attr8 in Attr7:
-                            print("new")
-                            for Attr9 in dir(Key1 + "." + Attr8):
-                                print(Attr9)
-                                print("5")
-                                Attr4.append(Attr8 + "." + Attr9)
-                        print("end")
-                    for Dir2 in (Attr4):
-                        if dir(Dir2) != []:
-                            Dir = True
-                    if Dir != True or mAPI == False:
-                        Directory = False
+        # Sort Attributes #
+        # OutAttr = ['__']
+
+        # for Attr in Attributes:
+        #     Allow = False
+        #     Directory = True
+        #     AttributeList = []
+        #     Key = "LFTM"
+        #     if '__' not in str(Attr):
+        #         print(Attr)
+        #         while Directory:
+        #             mAPI = True
+        #             print("in")
+        #             if Allow == False:
+        #                 print("first")
+        #                 if "mAPI_" in str(Attr):
+        #                     mAPI = False
+        #                     print("1")
+        #                 AttributeList = Attr
+        #                 Allow = True
+        #                 Key1 = Key
+        #             if Allow:
+        #                 for Attr5 in AttributeList:
+        #                     for Attr6 in dir(Key1 + "." + Attr5):
+        #                         if "mAPI_" in str(Attr6):
+        #                             mAPI = False
+        #                 print("2")
+        #             else:
+        #                 Directory = False
+        #             Dir = False
+        #             if Allow:
+        #                 Attr7 = AttributeList
+        #                 AttributeList = []
+        #                 print("3")
+        #                 for Attr8 in Attr7:
+        #                     print("new")
+        #                     for Attr9 in dir(Key1 + "." + Attr8):
+        #                         print(Attr9)
+        #                         print("5")
+        #                         AttributeList.append(Attr8 + "." + Attr9)
+        #                 print("end")
+        #             for Dir2 in (AttributeList):
+        #                 if dir(Dir2) != []:
+        #                     Dir = True
+        #             if Dir != True or mAPI == False:
+        #                 Directory = False
                 
-            print("4")
-            print(mAPI)
-            if mAPI == False:
-                OutAttr.append(Attr)
-                print("5")
-        del OutAttr[0]
+        #     print("4")
+        #     print(mAPI)
+        #     if mAPI == False:
+        #         OutAttr.append(Attr)
+        #         print("5")
+        # del OutAttr[0]
         # Log Process End #
         self.Logger.Log('Management API Commands Indexed', 4)
 
