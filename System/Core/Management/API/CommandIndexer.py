@@ -160,5 +160,17 @@ def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Co
     return OutputDictionary
 
 
+def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters Out Irrelevent Attributes #
+
+    # Initialize Variables #
+    OutputDictionary = {}
+
+    # Traverse Input Dictionary #
+    for Path in GeneratePathTraversals(InputDictionary):
+
+        print(Path)
+
+
 TestClass = Test4()
-IndexCommands(TestClass, RecursionDepth=5)
+DictVar = IndexCommands(TestClass, RecursionDepth=5)
+FilterCommandDictionary(DictVar)
