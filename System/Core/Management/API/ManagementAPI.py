@@ -146,10 +146,8 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         for Attr8 in Attr7:
 
                             Attr10 = Attr8.split('.')[-1:]
-                            
-                            print(Attr10)
 
-                            if ( (str(Attr10)[:1].isupper()) and ('__' not in Attr8) ):
+                            if ( (str(Attr10[len(Attr10)-1])[:1].isupper()) and ('__' not in Attr8) ):
                                 #print("new")
                                 print(str(Key1) + "." + str(Attr8))
                                 for Attr9 in dir(str(Key1) + "." + str(Attr8)):
