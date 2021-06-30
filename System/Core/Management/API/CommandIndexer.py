@@ -71,18 +71,33 @@ def FilterGetAttributes(Target): # Returns A Filtered List Of Commands Excluding
     return SortedAttributes
 
 
+def GeneratePathTraversals(TargetDictionary, path=None):
+    if not path:
+        path=[]
+    if isinstance(TargetDictionary,dict):
+        for x in TargetDictionary.keys():
+            local_path = path[:]
+            local_path.append(x)
+            for b in GeneratePathTraversals(TargetDictionary[x], local_path):
+                 yield b
+    else: 
+        yield path,TargetDictionary
+
+
+
 def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Commands With The Valid mAPI Prefix #
 
     # Initialize Parameters #
     OutputDictionary = {}
-    AttributesToDictionary(OutputDictionary, [], dir(Target))
-
+    AttributesToDictionary(OutputDictionary, [], FilterGetAttributes(Target))
 
     # Recursion Depth Loop #
     for CurrentRecursionDepth in range(RecursionDepth - 1):
 
-        print(f'Current Depth Is: {CurrentRecursionDepth}')
+        # Generate Path Traversal List #
+        for Path in GeneratePathTraversals(OutputDictionary):
 
+            print(Path)
         
 
 
