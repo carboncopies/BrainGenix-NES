@@ -114,59 +114,50 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             Allow = False
             MaxDepth = 1
             Directory = True
-            Attr4 = []
+            PathList1 = []
             Key = "LFTM"
             if '__' not in str(Attr):
                 print(Attr)
                 while Directory:
                     mAPI = True
-                    #print("in")
                     if Allow == False:
-                        #print("first")
                         if "mAPI_" in str(Attr):
                             mAPI = False
-                            #print("1")
-                        Attr4 = [Attr]
+                        PathList1 = [Attr]
                         Allow = True
-                        Key1 = Key
                     if Allow:
-                        for Attr5 in Attr4:
-                            for Attr6 in dir(Key1 + "." + Attr5):
+                        for Path2 in PathList1:
+                            for Attr6 in dir(Key + "." + Path2):
                                 if "mAPI_" in str(Attr6):
                                     mAPI = False
-                        #print("2")
+                        print("2")
                     else:
                         Directory = False
                     Dir = False
                     if (Allow) and (MaxDepth < 6):
-                        Attr7 = Attr4
-                        Attr4 = []
+                        PathList2 = PathList1
+                        PathList1 = []
                         print("3")
                         
-                        for Attr8 in Attr7:
+                        for Path1 in PathList2:
 
-                            Attr10 = Attr8.split('.')
+                            Attr10 = Path1.split('.')
                             print(Attr10)
-                            if ( (str(Attr10[len(Attr10)-1])[:1].isupper()) and ('__' not in Attr8) ):
-                                #print("new")
-                                print(str(Key1) + "." + str(Attr8))
-                                for Attr9 in dir(str(Key1) + "." + str(Attr8)):
-                                    
-                                    #print(Attr9)
-                                    #print("5")
-                                    Attr4.append(str(Attr8) + "." + str(Attr9))
-                        print("end")
+                            if ( (str(Attr10[len(Attr10)-1])[:1].isupper()) and ('__' not in Path1) ):
+                                print(str(Key) + "." + str(Path1))
+                                for Attr9 in dir(str(Key) + "." + str(Path1)):
+                                    PathList1.append(str(Path1) + "." + str(Attr9))
                         MaxDepth += 1
                     else:
                         Directory = False
-                    for Dir2 in (Attr4):
+                    for Dir2 in (PathList1):
                         if dir(Dir2) != []:
                             Dir = True
                     if Dir != True or mAPI == False:
                         Directory = False
                 
-            #print("4")
-            #print(mAPI)
+            print("4")
+            print(mAPI)
             if mAPI == False:
                 OutAttr.append(Attr)
                 print("5")
