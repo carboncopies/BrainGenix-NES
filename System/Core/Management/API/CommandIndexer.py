@@ -214,7 +214,7 @@ def Filter2Test(InputDictionary, RequiredString = 'mAPI_'):
 
         # Calculate Non-Inverted Path Index #
         PathIndex = len(SortedPaths)-InvertedPathIndex
-
+        print(PathIndex)
         # Get Path #
         CurrentAttribute = InputDictionary
         for PathNameString in Paths[PathIndex]:
