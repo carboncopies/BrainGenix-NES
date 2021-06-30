@@ -80,7 +80,7 @@ def GetAttributeFromPath(RootAttribute, Path): # Gets An Attribute From A Path #
     return TargetAttr
 
 
-def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Commands With The Valid mAPI Prefix #
+def IndexCommands(Target, Logger, RecursionDepth=5): # Creates Dictionary Tree Of All Commands With The Valid mAPI Prefix #
 
     # Initialize Parameters #
     OutputDictionary = {}
@@ -123,7 +123,7 @@ def CreatePath(Target, Path):
         WorkingTarget = WorkingTarget[PathNameString]
 
 
-def FilterPaths(InputDictionary, RequiredString = 'mAPI_'):
+def FilterPaths(InputDictionary, Logger, RequiredString = 'mAPI_'):
 
     # Init Output Dictionary #
     OutputDictionary = {}
