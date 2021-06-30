@@ -83,12 +83,16 @@ def GetAttributeFromPath(RootAttribute, Path): # Gets An Attribute From A Path #
 def IndexCommands(Target, Logger, RecursionDepth=5): # Creates Dictionary Tree Of All Commands With The Valid mAPI Prefix #
 
     # Initialize Parameters #
+    Logger.Log('Initializing Command Indexing Parameters', 2)
     OutputDictionary = {}
     AttributesToDictionary(OutputDictionary, [], FilterGetAttributes(Target))
 
 
     # Recursion Depth Loop #
-    for _ in range(RecursionDepth - 1):
+    for RecursionDepthIndex in range(RecursionDepth - 1):
+
+        # Log Depth #
+        Logger.Log(f'Getting Attributes At Recursion Depth: {RecursionDepthIndex}', 0)
 
         # Iterate Through Traversed Subdicts #
         for Path in GeneratePathTraversals(OutputDictionary):
@@ -102,6 +106,8 @@ def IndexCommands(Target, Logger, RecursionDepth=5): # Creates Dictionary Tree O
             # Update Output Dictionary #
             AttributesToDictionary(OutputDictionary, Path[0], SubAttributes)
 
+    # Log Completion #
+    Logger.Log('Attribute Dictionary Generated', 2)
         
     # Return Output Dictionay #
     return OutputDictionary
