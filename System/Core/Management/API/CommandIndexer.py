@@ -94,7 +94,16 @@ def GeneratePathTraversals(TargetDictionary, Path=None):
         yield Path,TargetDictionary
 
 
+def GetAttributeFromPath(RootAttribute, Path): # Gets An Attribute From A Path #
 
+    # Get Attribute #
+    TargetAttr = RootAttribute
+
+    for PathStep in Path:
+        TargetAttr = getattr(TargetAttr, PathStep)
+
+    # Return Target Attribute #
+    return TargetAttr
 
 
 def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Commands With The Valid mAPI Prefix #
