@@ -24,6 +24,19 @@ class Test1():
     def mAPI_Attr2(self):
         pass
 
+class Test3():
+
+    def __init__(self):
+        self.InitTest1()
+
+    def Attr1(self):
+        pass
+
+    def mAPI_Attr2(self):
+        pass
+
+    def InitTest1(self):
+        self.Class2 = Test2()
 
 class Test2():
 
@@ -132,5 +145,5 @@ def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Co
         
 
 
-TestClass = Test2()
+TestClass = Test3()
 IndexCommands(TestClass, RecursionDepth=5)
