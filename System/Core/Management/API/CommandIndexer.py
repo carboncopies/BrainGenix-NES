@@ -188,7 +188,7 @@ def FilterCommandDictionary(InputDictionary, RequiredString='mAPI_'): # Filters 
         if RequiredString in Path[0][-1:][0]:
 
             # Update Output Dictionary #
-            pass
+            UpdateDictByPath(OutputDictionary, InputDictionary, Path[0])
 
 
 TestClass = Test4()
