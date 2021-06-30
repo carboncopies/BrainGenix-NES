@@ -173,7 +173,7 @@ def UpdateDictByPath(InputDictionary, TargetDictionary, Path):
 
         # Update
         print(Path)
-        AttributeDictionary = PathDictionary[Path[PathIndex + 1]]
+        AttributeDictionary = TargetDictionary[Path[PathIndex + 1]]
         print(AttributeDictionary)
         InputDictionary.update({Path[PathIndex] : AttributeDictionary})
 
