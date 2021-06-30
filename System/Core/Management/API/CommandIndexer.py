@@ -91,6 +91,7 @@ def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Co
     OutputDictionary = {}
     AttributesToDictionary(OutputDictionary, [], FilterGetAttributes(Target))
 
+    print(OutputDictionary)
     # Recursion Depth Loop #
     for CurrentRecursionDepth in range(RecursionDepth - 1):
 
