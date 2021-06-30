@@ -56,10 +56,10 @@ def GetRecursiveAttributes(Target):
     StagingList = dir(Target)
     OutputList = []
 
-    while StagingList != []:
-        
-        pass
 
+    while StagingList != []:
+
+        
 
 
 

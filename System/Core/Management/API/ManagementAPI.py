@@ -36,7 +36,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Load License File #
         self.Logger.Log('Loading License Text For Management API Command', 3)
-        with open('../License', 'r') as FileIO:
+        with open('../LICENSE', 'r') as FileIO:
             self.LicenseText = FileIO.read()
         self.Logger.Log('Loaded License Text File', 2)
 
