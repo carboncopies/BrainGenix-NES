@@ -427,7 +427,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
             # Iterate Through Layers, Run Command Called #
             for LayerIndex in range(len(Layers)):
-                    print(Layers[LayerIndex])
 
                     # Run Command With Prefix Included (mAPI_[Command Name]) #
                     if LayerIndex < (len(Layers) - 1):
