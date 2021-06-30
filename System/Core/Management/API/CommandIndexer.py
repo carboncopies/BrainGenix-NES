@@ -141,7 +141,7 @@ def IndexCommands(Target, RecursionDepth=5): # Creates Dictionary Tree Of All Co
 
 
     # Recursion Depth Loop #
-    for CurrentRecursionDepth in range(RecursionDepth - 1):
+    for _ in range(RecursionDepth - 1):
 
         # Iterate Through Traversed Subdicts #
         for Path in GeneratePathTraversals(OutputDictionary):
