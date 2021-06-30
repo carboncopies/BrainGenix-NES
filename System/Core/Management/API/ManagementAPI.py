@@ -11,6 +11,14 @@ import select
 from Core.VersionData import VersionNumber
 from Core.VersionData import BranchVersion
 
+from Core.Management.API.CommandIndexer import AttributesToDictionary
+from Core.Management.API.CommandIndexer import FilterGetAttributes
+from Core.Management.API.CommandIndexer import GeneratePathTraversals
+from Core.Management.API.CommandIndexer import GetAttributeFromPath
+from Core.Management.API.CommandIndexer import IndexCommands
+from Core.Management.API.CommandIndexer import CreatePath
+from Core.Management.API.CommandIndexer import FilterPaths
+
 
 '''
 Name: Management API
@@ -38,6 +46,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         with open('../LICENSE', 'r') as FileIO:
             self.LicenseText = FileIO.read()
         self.Logger.Log('Loaded License Text File', 2)
+
+        print('\n\n\n\n\n\n\n\n\n\n\n')
+        self.CommandIndex = IndexCommands(self)
+        self.CommandIndex = FilterPaths(self.CommandIndex)
 
         # Bind To Port #
         self.Logger.Log('Binding To Host')
@@ -76,6 +88,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.Logger.Log('Appending ManagementAPISocketServer Thread Object To ThreadManager Thread List', 2)
         self.ThreadManager.Threads.append(self.Thread)
         self.Logger.Log('Appended ManagementAPISocketServer Thread To ThreadManager Thread List', 1)
+
 
 
     # def TopLevelFunctions(body):
