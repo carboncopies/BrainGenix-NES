@@ -167,9 +167,9 @@ def UpdateDictByPath(InputDictionary, TargetDictionary, Path):
 
         # Update
         print(Path)
-        print(Path[PathIndex])
+
         AttributeDictionary = TargetDictionary[Path[PathIndex]]
-        print(AttributeDictionary)
+
         InputDictionary.update({Path[PathIndex] : AttributeDictionary})
 
 
@@ -198,5 +198,5 @@ DictVar = IndexCommands(TestClass, RecursionDepth=5)
 Out = FilterCommandDictionary(DictVar)
 
 import yaml
-print('\n\n\n\n')
+print('')
 print(yaml.safe_dump(DictVar))
