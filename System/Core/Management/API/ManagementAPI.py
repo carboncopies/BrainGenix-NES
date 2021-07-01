@@ -388,8 +388,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
         
         for index in self.CommandIndex.keys():
-            insertStatement = ("INSERT INTO command (commandId,commandName) VALUES (%d,'\%s\')" % (index,self.CommandIndex[index]))
-            cur.execute(insertStatement)
+            cur.execute("INSERT INTO command (commandId,commandName) VALUES (%d, %s)",(index,self.CommandIndex[index]))
             
         self.DatabaseConnection.close()
         
@@ -412,15 +411,13 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         )
         
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
-
-        sql = ("SELECT * FROM user WHERE userName=\'%s\' AND passwordHash=\'%s\'" %(DBUsername,DBPassword))
-        rows = cur.execute(sql)
+        
+        rows = cur.execute("SELECT * FROM user WHERE userName=%s AND passwordHash=%s",(DBUsername,DBPassword))
 
         if rows!=0:
             for row in rows:
                 level = row['permissionLevel']
-                sql = ("SELECT * FROM command WHERE permissionLevel=%d" % int(level))
-                rows = cur.execute(sql)
+                rows = cur.execute("SELECT * FROM command WHERE permissionLevel=%d",int(level))
 
                 if rows!=0:
                     print("Executable Commands for current permission level:")
