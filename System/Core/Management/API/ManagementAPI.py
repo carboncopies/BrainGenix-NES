@@ -7,10 +7,20 @@ import threading
 import queue
 import json
 import select
+
 import pymysql
 import ast
+
 from Core.VersionData import VersionNumber
 from Core.VersionData import BranchVersion
+
+from Core.Management.API.CommandIndexer import AttributesToDictionary
+from Core.Management.API.CommandIndexer import FilterGetAttributes
+from Core.Management.API.CommandIndexer import GeneratePathTraversals
+from Core.Management.API.CommandIndexer import GetAttributeFromPath
+from Core.Management.API.CommandIndexer import IndexCommands
+from Core.Management.API.CommandIndexer import CreatePath
+from Core.Management.API.CommandIndexer import FilterPaths
 
 '''
 Name: Management API
@@ -79,111 +89,31 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         
         self.WriteAuthentication(DatabaseConfig)
 
-
-    # def TopLevelFunctions(body):
-    #     return (f for f in body if isinstance(f, ast.FunctionDef))
-
-
-    # def ParseAst(filename):
-    #     with open(filename, "rt") as file:
-    #         return ast.parse(file.read(), filename=filename)
+        # Set Management API Help Strings #
+        self.mAPI_Help_Help = 'Help command. Accepts a path arguemnt to provide specialized help for a given command.'
+        self.mAPI_ls_Help = 'Lists Commands, Accpets a Path argument to provide commands for a given path.'
+        self.mAPI_Version_Help = 'Returns a version string.'
+        self.mAPI_TestAPI_Help = 'Testing for debugging API problems or benchmarking API latency. Returns "but most of all, samy is my hero".'
+        self.mAPI_RegenerateCommandIndex_Help = 'Regenerates Command Index, optional Argument RecursionDepth allows user definable recursion depth.'
 
 
-    # def GetFunctions(self, filename):
-    #     FunctionList = []
-    #     tree = self.ParseAst(filename)
-    #     for func in self.TopLevelFunctions(tree.body):
-    #         FunctionList.append(func)
-    #     return FunctionList
+    def IndexCommands(self, MaxRecursionDepth=5):
 
+        # Logger Message #
+        self.Logger.Log('Beginning Command Indexing Process', 3)
 
-    # def IndexCommands(self, ArgumentsDictionary): # Creates An Index Of Commands For LS To Search Through #
+        # Index Commands #
+        self.Logger.Log('Beginning Recursive Attribute Search', 2)
+        self.Logger.Log(f'Max Recursion Depth: {MaxRecursionDepth}' , 0)
+        self.CommandIndex = IndexCommands(self, self.Logger, MaxRecursionDepth)
+        self.Logger.Log('Recursive Attribute Search Complete',1)
 
-    #     # Log Process Start #
-    #     self.Logger.Log('Indexing Management API Commands', 4)
+        self.Logger.Log('Starting Attribute Sorting' ,2)
+        self.CommandIndex = FilterPaths(self.CommandIndex, self.Logger)
+        self.Logger.Log('Finished Attribute Sorting' ,1)
 
-    #     # Check Command Validity #
-    #     if 'Path' not in ArgumentsDictionary:
-    #         ArgumentsDictionary.update({'Path':''})
-
-
-    #     # Get Attributes From Arguments #
-    #     TargetPath = 'LFTM'
-
-    #     if ArgumentsDictionary['Path'] != '':
-    #         TargetPath += f'.{ArgumentsDictionary["Path"]}'
-    #     else:
-    #         pass
-
-    #     # Get Attributes #
-    #     AttrTarget = self
-
-    #     if TargetPath != "":
-
-    #         for TargetPathName in TargetPath.split('.'):
-    #             AttrTarget = getattr(AttrTarget, TargetPathName)
-
-    #     Attributes = dir(AttrTarget)
-
-    #     # Sort Attributes #
-    #     OutAttr = ['__']
-
-    #     for Attr in Attributes:
-    #         Allow = False
-    #         MaxDepth = 1
-    #         Directory = True
-    #         PathList1 = []
-    #         Key = "LFTM"
-    #         if '__' not in str(Attr):
-    #             print(Attr)
-    #             while Directory:
-    #                 mAPI = True
-    #                 if Allow == False:
-    #                     if "mAPI_" in str(Attr):
-    #                         mAPI = False
-    #                     PathList1 = [Attr]
-    #                     Allow = True
-    #                 if Allow:
-    #                     for Path2 in PathList1:
-    #                         for Attr6 in self.GetFunctions(str(Path2)):
-    #                             if "mAPI_" in str(Attr6):
-    #                                 mAPI = False
-    #                     print("2")
-    #                 else:
-    #                     Directory = False
-    #                 Dir = False
-    #                 if (Allow) and (MaxDepth < 6):
-    #                     PathList2 = PathList1
-    #                     PathList1 = []
-    #                     print("3")
-                        
-    #                     for Path1 in PathList2:
-
-    #                         Attr10 = Path1.split('.')
-    #                         print(Attr10)
-    #                         if ( (str(Attr10[len(Attr10)-1])[:1].isupper()) and ('__' not in Path1) ):
-    #                             print(Path1)
-    #                             for Attr9 in self.GetFunctions(Path1):
-    #                                 PathList1.append(str(Attr9))
-    #                     MaxDepth += 1
-    #                 else:
-    #                     Directory = False
-    #                 for Dir2 in PathList1:
-    #                     if self.GetFunctions(Dir2) != []:
-    #                         Dir = True
-    #                 if Dir != True or mAPI == False:
-    #                     Directory = False
-                
-    #         print("4")
-    #         print(mAPI)
-    #         if mAPI == False:
-    #             OutAttr.append(Attr)
-    #             print("5")
-    #     del OutAttr[0]
-    #     # Log Process End #
-    #     self.Logger.Log('Management API Commands Indexed', 4)
-
-    #     return OutAttr
+        # Log Completion #
+        self.Logger.Log('Command Indexing Complete', 2)
         
 
     def LinkLFTM(self, LFTMInstance): # Link LFTM #
@@ -361,27 +291,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Close The Socket #
         self.Socket.close()
 
-    
-    # def mAPI_lsnew(self, ArgumentsDictionary): # ListAttribute Command #
-
-    #     try:
-    #         if self.CommandTreeIndexed == False:
-    #             self.OutAttr = self.IndexCommands(ArgumentsDictionary)
-    #             self.CommandTreeIndexed = True
-    #     except Exception:
-    #         if str(Exception) == "<class 'Exception'>":
-    #             CommandTreeIndexed = False
-    #             self.CommandTreeIndexed = CommandTreeIndexed
-    #             self.OutAttr = self.IndexCommands(ArgumentsDictionary)
-    #             self.CommandTreeIndexed = True
-    #         else:
-    #             print(str(Exception))
-
-    #     # Return Output #
-    #     return str(self.OutAttr)
-
-    #     # ListAttribute Command #
-
 
     def mAPI_ls(self, ArgumentsDictionary): # Old ls Command #
 
@@ -508,3 +417,21 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # You should get this refrerence... (Look it up) #
         return "but most of all, samy is my hero"
+
+
+    def mAPI_RegenerateCommandIndex(self, ArgumentsDictionary): # Regenerates The Command Index #
+
+        # Log Command Regeneration #
+        self.Logger.Log('Command Index Regeneration Invoked By Management API', 6)
+
+        # Regenerate Index #
+        if 'RecursionDepth' in ArgumentsDictionary:
+            self.IndexCommands(int(ArgumentsDictionary['RecursionDepth']))
+        else:
+            self.IndexCommands()
+
+        # Log Completion #
+        self.Logger.Log('Command Index Regeneration Complete', 6)
+
+        # Return Success #
+        return 'Success'

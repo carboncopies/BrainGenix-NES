@@ -112,6 +112,7 @@ sLFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI, mThreadManagerInstance, Ka
 
 # Link LFTM #
 sSocketAPI.LinkLFTM(sLFTMInstance)
+sSocketAPI.IndexCommands()
 
 
 

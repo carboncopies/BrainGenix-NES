@@ -148,8 +148,8 @@ insert into bgdb.synapse values (2, 3, 3, 3, 2, 2);
 --
 insert into bgdb.user values (1, 'bleu', 'password', 'salt', 'Brad', 'Leu', 'some notes', 'T', null, null, 5);
 
-insert into bdg.command values (1, 'runSim', 'run the simulation', 1);
-insert into bdg.command values (1, 'loadNeurons', 'upload neuron data', 5);
+insert into bgdb.command values (1, 'runSim', 'run the simulation', 1);
+insert into bgdb.command values (2, 'loadNeurons', 'upload neuron data', 5);
 
 insert into bgdb.log (LogLevel, LogDateTime, CallingModule, FunctionName, LogOutput, Node) values (2, current_timestamp,
 'Module1', 'GetImaginaryStuff', 'Error in GetImaginaryStuff', 'Node2');
