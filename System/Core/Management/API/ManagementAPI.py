@@ -85,6 +85,14 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.ThreadManager.Threads.append(self.Thread)
         self.Logger.Log('Appended ManagementAPISocketServer Thread To ThreadManager Thread List', 1)
 
+        # Set Management API Help Strings #
+        self.mAPI_Help_Help = 'Help command. Accepts a path arguemnt to provide specialized help for a given command.'
+        self.mAPI_ls_Help = 'Lists Commands, Accpets a Path argument to provide commands for a given path.'
+        self.mAPI_Version_Help = 'Returns a version string.'
+        self.mAPI_TestAPI_Help = 'Testing for debugging API problems or benchmarking API latency. Returns "but most of all, samy is my hero".'
+        self.mAPI_RegenerateCommandIndex_Help = 'Regenerates Command Index, optional Argument RecursionDepth allows user definable recursion depth.'
+
+
     def IndexCommands(self, MaxRecursionDepth=5):
 
         # Logger Message #
