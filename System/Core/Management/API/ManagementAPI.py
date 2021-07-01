@@ -87,6 +87,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.ThreadManager.Threads.append(self.Thread)
         self.Logger.Log('Appended ManagementAPISocketServer Thread To ThreadManager Thread List', 1)
         
+        self.UpdateCommand(DatabaseConfig)
         self.WriteAuthentication(DatabaseConfig)
 
         # Set Management API Help Strings #
@@ -372,45 +373,69 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
     #Updates commands to bgdb.Command table to establish usage permission levels
     def UpdateCommand(self, DatabaseConfig:dict):
         
-        return
+        # Connect To DB #
+        DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
+        DBPassword = str(DatabaseConfig.get('DatabasePassword'))
+        DBHost = str(DatabaseConfig.get('DatabaseHost'))
+        DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
+
+        # Connect To Database #
+        self.DatabaseConnection = pymysql.connect(
+            host = DBHost,
+            user = DBUsername,
+            password = DBPassword,
+            db = DBDatabaseName
+        )
+        
+        cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
+        
+        for index in self.CommandIndex.keys():
+            insertStatement = ("INSERT INTO command (commandId,commandName) VALUES (%d,'%s')" % (index,self.CommandIndex[index]))
+            cur.execute(insertStatement)
+            
+        self.DatabaseConnection.close()
+        
     
     #Returns list of commands that a user can execute based on his/her permission level
     def WriteAuthentication(self, DatabaseConfig:dict):
+
+        # Connect To DB #
+        DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
+        DBPassword = str(DatabaseConfig.get('DatabasePassword'))
+        DBHost = str(DatabaseConfig.get('DatabaseHost'))
+        DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
+
+        # Connect To Database #
+        self.DatabaseConnection = pymysql.connect(
+            host = DBHost,
+            user = DBUsername,
+            password = DBPassword,
+            db = DBDatabaseName
+        )
         
-            # Connect To DB #
-            DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
-            DBPassword = str(DatabaseConfig.get('DatabasePassword'))
-            DBHost = str(DatabaseConfig.get('DatabaseHost'))
-            DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
+        cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
 
-            # Connect To Database #
-            self.DatabaseConnection = pymysql.connect(
-                host = DBHost,
-                user = DBUsername,
-                password = DBPassword,
-                db = DBDatabaseName
-            )
-            cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
-            
-            sql = ("SELECT * FROM user WHERE userName='%s' AND passwordHash='%s'" %(DBUsername,DBPassword))
-            rows = cur.execute(sql)
-            
-            if rows!=0:
-                for row in rows:
-                    level = row['permissionLevel']
-                    sql = ("SELECT * FROM command WHERE permissionLevel=%d" % int(level))
-                    rows = cur.execute(sql)
+        sql = ("SELECT * FROM user WHERE userName='%s' AND passwordHash='%s'" %(DBUsername,DBPassword))
+        rows = cur.execute(sql)
 
-                    if rows!=0:
-                        print("Executable Commands for current permission level:")
-                        for row in rows:
-                            print(row['commandName'],"\t",row['commandDescription'])
-                            
-                    else:
-                        print("No commands available for current permission level")
-                            
-            else:
-                print("No matching user found in Database.")
+        if rows!=0:
+            for row in rows:
+                level = row['permissionLevel']
+                sql = ("SELECT * FROM command WHERE permissionLevel=%d" % int(level))
+                rows = cur.execute(sql)
+
+                if rows!=0:
+                    print("Executable Commands for current permission level:")
+                    for row in rows:
+                        print(row['commandName'],"\t",row['commandDescription'])
+
+                else:
+                    print("No commands available for current permission level")
+
+        else:
+            print("No matching user found in Database.")
+            
+        self.DatabaseConnection.close()
             
 
     def mAPI_TestAPI(self, ArgumentsDictionary): # Returns A Test String #
