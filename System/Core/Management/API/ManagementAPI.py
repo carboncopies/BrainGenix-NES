@@ -8,6 +8,8 @@ import queue
 import json
 import select
 
+import pymysql
+
 from Core.VersionData import VersionNumber
 from Core.VersionData import BranchVersion
 
@@ -19,17 +21,15 @@ from Core.Management.API.CommandIndexer import IndexCommands
 from Core.Management.API.CommandIndexer import CreatePath
 from Core.Management.API.CommandIndexer import FilterPaths
 
-
 '''
 Name: Management API
 Description: This file provides the socket based interface to the management api backend.
 Date-Created: 2021-05-17
 '''
 
-
 class ManagementAPISocketServer(): # Creates A Class To Connect To The Management API #
 
-    def __init__(self, Logger, MAPIConfig:dict, ZookeeperConfigDict:dict, ThreadManager:object): # This function initialializes sockets #
+    def __init__(self, Logger, MAPIConfig:dict, ZookeeperConfigDict:dict, DatabaseConfig:dict, ThreadManager:object): # This function initialializes sockets #
 
         # Get Config Params #
         self.Logger = Logger
@@ -84,6 +84,9 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.Logger.Log('Appending ManagementAPISocketServer Thread Object To ThreadManager Thread List', 2)
         self.ThreadManager.Threads.append(self.Thread)
         self.Logger.Log('Appended ManagementAPISocketServer Thread To ThreadManager Thread List', 1)
+        
+        self.UpdateCommand(DatabaseConfig)
+        self.WriteAuthentication(DatabaseConfig)
 
         # Set Management API Help Strings #
         self.mAPI_Help_Help = 'Help command. Accepts a path arguemnt to provide specialized help for a given command.'
@@ -159,7 +162,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Return Values #
         return CommandOutput, CommandName
-
 
     def ManagementAPIThread(self, ControlQueue): # Create A Thread Function For The Management API #
 
@@ -365,7 +367,71 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Return License Text #
         return self.LicenseText
+    
+    #Updates commands to bgdb.Command table to establish usage permission levels
+    def UpdateCommand(self, DatabaseConfig:dict):
+        
+        # Connect To DB #
+        DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
+        DBPassword = str(DatabaseConfig.get('DatabasePassword'))
+        DBHost = str(DatabaseConfig.get('DatabaseHost'))
+        DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
 
+        # Connect To Database #
+        self.DatabaseConnection = pymysql.connect(
+            host = DBHost,
+            user = DBUsername,
+            password = DBPassword,
+            db = DBDatabaseName
+        )
+        
+        cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
+        
+        for index in self.CommandIndex.keys():
+            cur.execute("INSERT INTO command (commandId,commandName) VALUES (%d, %s)",(index,self.CommandIndex[index]))
+            
+        self.DatabaseConnection.close()
+        
+    
+    #Returns list of commands that a user can execute based on his/her permission level
+    def WriteAuthentication(self, DatabaseConfig:dict):
+
+        # Connect To DB #
+        DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
+        DBPassword = str(DatabaseConfig.get('DatabasePassword'))
+        DBHost = str(DatabaseConfig.get('DatabaseHost'))
+        DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
+
+        # Connect To Database #
+        self.DatabaseConnection = pymysql.connect(
+            host = DBHost,
+            user = DBUsername,
+            password = DBPassword,
+            db = DBDatabaseName
+        )
+        
+        cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
+        
+        rows = cur.execute("SELECT * FROM user WHERE userName=%s AND passwordHash=%s",(DBUsername,DBPassword))
+
+        if rows!=0:
+            for row in rows:
+                level = row['permissionLevel']
+                rows = cur.execute("SELECT * FROM command WHERE permissionLevel=%d",int(level))
+
+                if rows!=0:
+                    print("Executable Commands for current permission level:")
+                    for row in rows:
+                        print(row['commandName'],"\t",row['commandDescription'])
+
+                else:
+                    print("No commands available for current permission level")
+
+        else:
+            print("No matching user found in Database.")
+            
+        self.DatabaseConnection.close()
+            
 
     def mAPI_TestAPI(self, ArgumentsDictionary): # Returns A Test String #
 
