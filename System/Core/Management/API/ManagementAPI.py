@@ -96,7 +96,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.mAPI_RegenerateCommandIndex_Help = 'Regenerates Command Index, optional Argument RecursionDepth allows user definable recursion depth.'
 
 
-    def IndexCommands(self, MaxRecursionDepth=5):
+    def IndexCommands(self, MaxRecursionDepth=4):
 
         # Logger Message #
         self.Logger.Log('Beginning Command Indexing Process', 3)
