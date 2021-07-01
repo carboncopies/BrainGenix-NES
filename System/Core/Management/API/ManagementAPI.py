@@ -37,6 +37,9 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.IPAddr = ZookeeperConfigDict['ZKHost'] # Get The IP Addr from the zoomeeper dict
         self.ThreadManager = ThreadManager
 
+        # Make Local DBConfig Param #
+        self.DatabaseConfig = DatabaseConfig
+
         # Create Socket Host Variable #
         self.Logger.Log('Creating Host Variable')
         self.SocketHost = (self.IPAddr, self.Port)
