@@ -9,7 +9,6 @@ import json
 import select
 
 import pymysql
-import ast
 
 from Core.VersionData import VersionNumber
 from Core.VersionData import BranchVersion
@@ -27,7 +26,6 @@ Name: Management API
 Description: This file provides the socket based interface to the management api backend.
 Date-Created: 2021-05-17
 '''
-
 
 class ManagementAPISocketServer(): # Creates A Class To Connect To The Management API #
 
@@ -390,7 +388,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
         
         for index in self.CommandIndex.keys():
-            insertStatement = ("INSERT INTO command (commandId,commandName) VALUES (%d,'%s')" % (index,self.CommandIndex[index]))
+            insertStatement = ("INSERT INTO command (commandId,commandName) VALUES (%d,'\%s\')" % (index,self.CommandIndex[index]))
             cur.execute(insertStatement)
             
         self.DatabaseConnection.close()
@@ -415,7 +413,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
 
-        sql = ("SELECT * FROM user WHERE userName='%s' AND passwordHash='%s'" %(DBUsername,DBPassword))
+        sql = ("SELECT * FROM user WHERE userName=\'%s\' AND passwordHash=\'%s\'" %(DBUsername,DBPassword))
         rows = cur.execute(sql)
 
         if rows!=0:
