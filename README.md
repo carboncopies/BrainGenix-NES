@@ -12,5 +12,6 @@ BrainGenix-NES or NES is the Neuron Emulation System division of the BrainGenix 
  - NES also interfaces with ERS and STS, the other parts of BrainGenix.
  
 <h1 align="center">Documentation</h1>
-Currently the best source of information about NES can be found within our [Technical specifications](https://docs.google.com/document/d/1tVIB7KQcSRKNU_df8oPVR3wyBHagjv2xvqaMy-oDg18/edit#) document.
+Currently the best source of information about NES can be found within our Technical specifications document down below:
+https://docs.google.com/document/d/1tVIB7KQcSRKNU_df8oPVR3wyBHagjv2xvqaMy-oDg18/edit#
 
