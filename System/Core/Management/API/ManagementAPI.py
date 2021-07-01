@@ -371,7 +371,13 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.Logger.Log('Command Index Regeneration Invoked By Management API', 6)
 
         # Regenerate Index #
-        self.IndexCommands()
+        if 'RecursionDepth' in ArgumentsDictionary:
+            self.IndexCommands(int(ArgumentsDictionary['RecursionDepth']))
+        else:
+            self.IndexCommands()
 
         # Log Completion #
         self.Logger.Log('Command Index Regeneration Complete', 6)
+
+        # Return Success #
+        return 'Success'
