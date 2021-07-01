@@ -103,111 +103,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Log Completion #
         self.Logger.Log('Command Indexing Complete', 2)
         
-    # def TopLevelFunctions(body):
-    #     return (f for f in body if isinstance(f, ast.FunctionDef))
-
-
-    # def ParseAst(filename):
-    #     with open(filename, "rt") as file:
-    #         return ast.parse(file.read(), filename=filename)
-
-
-    # def GetFunctions(self, filename):
-    #     FunctionList = []
-    #     tree = self.ParseAst(filename)
-    #     for func in self.TopLevelFunctions(tree.body):
-    #         FunctionList.append(func)
-    #     return FunctionList
-
-
-    # def IndexCommands(self, ArgumentsDictionary): # Creates An Index Of Commands For LS To Search Through #
-
-    #     # Log Process Start #
-    #     self.Logger.Log('Indexing Management API Commands', 4)
-
-    #     # Check Command Validity #
-    #     if 'Path' not in ArgumentsDictionary:
-    #         ArgumentsDictionary.update({'Path':''})
-
-
-    #     # Get Attributes From Arguments #
-    #     TargetPath = 'LFTM'
-
-    #     if ArgumentsDictionary['Path'] != '':
-    #         TargetPath += f'.{ArgumentsDictionary["Path"]}'
-    #     else:
-    #         pass
-
-    #     # Get Attributes #
-    #     AttrTarget = self
-
-    #     if TargetPath != "":
-
-    #         for TargetPathName in TargetPath.split('.'):
-    #             AttrTarget = getattr(AttrTarget, TargetPathName)
-
-    #     Attributes = dir(AttrTarget)
-
-    #     # Sort Attributes #
-    #     OutAttr = ['__']
-
-    #     for Attr in Attributes:
-    #         Allow = False
-    #         MaxDepth = 1
-    #         Directory = True
-    #         PathList1 = []
-    #         Key = "LFTM"
-    #         if '__' not in str(Attr):
-    #             print(Attr)
-    #             while Directory:
-    #                 mAPI = True
-    #                 if Allow == False:
-    #                     if "mAPI_" in str(Attr):
-    #                         mAPI = False
-    #                     PathList1 = [Attr]
-    #                     Allow = True
-    #                 if Allow:
-    #                     for Path2 in PathList1:
-    #                         for Attr6 in self.GetFunctions(str(Path2)):
-    #                             if "mAPI_" in str(Attr6):
-    #                                 mAPI = False
-    #                     print("2")
-    #                 else:
-    #                     Directory = False
-    #                 Dir = False
-    #                 if (Allow) and (MaxDepth < 6):
-    #                     PathList2 = PathList1
-    #                     PathList1 = []
-    #                     print("3")
-                        
-    #                     for Path1 in PathList2:
-
-    #                         Attr10 = Path1.split('.')
-    #                         print(Attr10)
-    #                         if ( (str(Attr10[len(Attr10)-1])[:1].isupper()) and ('__' not in Path1) ):
-    #                             print(Path1)
-    #                             for Attr9 in self.GetFunctions(Path1):
-    #                                 PathList1.append(str(Attr9))
-    #                     MaxDepth += 1
-    #                 else:
-    #                     Directory = False
-    #                 for Dir2 in PathList1:
-    #                     if self.GetFunctions(Dir2) != []:
-    #                         Dir = True
-    #                 if Dir != True or mAPI == False:
-    #                     Directory = False
-                
-    #         print("4")
-    #         print(mAPI)
-    #         if mAPI == False:
-    #             OutAttr.append(Attr)
-    #             print("5")
-    #     del OutAttr[0]
-    #     # Log Process End #
-    #     self.Logger.Log('Management API Commands Indexed', 4)
-
-    #     return OutAttr
-        
 
     def LinkLFTM(self, LFTMInstance): # Link LFTM #
 
@@ -384,27 +279,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Close The Socket #
         self.Socket.close()
-
-    
-    # def mAPI_lsnew(self, ArgumentsDictionary): # ListAttribute Command #
-
-    #     try:
-    #         if self.CommandTreeIndexed == False:
-    #             self.OutAttr = self.IndexCommands(ArgumentsDictionary)
-    #             self.CommandTreeIndexed = True
-    #     except Exception:
-    #         if str(Exception) == "<class 'Exception'>":
-    #             CommandTreeIndexed = False
-    #             self.CommandTreeIndexed = CommandTreeIndexed
-    #             self.OutAttr = self.IndexCommands(ArgumentsDictionary)
-    #             self.CommandTreeIndexed = True
-    #         else:
-    #             print(str(Exception))
-
-    #     # Return Output #
-    #     return str(self.OutAttr)
-
-    #     # ListAttribute Command #
 
 
     def mAPI_ls(self, ArgumentsDictionary): # Old ls Command #
