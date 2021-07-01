@@ -87,9 +87,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.Logger.Log('Appending ManagementAPISocketServer Thread Object To ThreadManager Thread List', 2)
         self.ThreadManager.Threads.append(self.Thread)
         self.Logger.Log('Appended ManagementAPISocketServer Thread To ThreadManager Thread List', 1)
-        
-        self.UpdateCommand(DatabaseConfig)
-        self.WriteAuthentication(DatabaseConfig)
 
         # Set Management API Help Strings #
         self.mAPI_Help_Help = 'Help command. Accepts a path arguemnt to provide specialized help for a given command.'
