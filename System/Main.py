@@ -68,7 +68,7 @@ sDatabaseInterface = mThreadManagerInstance.InstantiateDB(mLogger, DBConfigDict)
 
 
 # Start API Server #
-sSocketAPI = ManagementAPISocketServer(mLogger, ManagementAPIServerConfig, ZKConfigDict, mThreadManagerInstance)
+sSocketAPI = ManagementAPISocketServer(mLogger, ManagementAPIServerConfig, ZKConfigDict, DBConfigDict, mThreadManagerInstance)
 
 
 # Check Dependencies #
