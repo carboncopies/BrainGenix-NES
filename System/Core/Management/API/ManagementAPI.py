@@ -369,8 +369,11 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         return self.LicenseText
     
     
-    def UpdateCommand(self, DatabaseConfig:dict): # Updates commands to bgdb.Command table to establish usage permission levels #
+    def UpdateCommand(self): # Updates commands to bgdb.Command table to establish usage permission levels #
         
+        # Get Database Config #
+        DatabaseConfig = self.DatabaseConfig
+
         # Connect To DB #
         DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
         DBPassword = str(DatabaseConfig.get('DatabasePassword'))
