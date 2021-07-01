@@ -391,7 +391,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
         
         for index in self.CommandIndex.keys():
-            cur.execute("INSERT INTO command (commandId,commandName) VALUES (%d, %s)",(index,self.CommandIndex[index]))
+            cur.execute("INSERT INTO command (commandId,commandName) VALUES (%d, %s)",(int(index),self.CommandIndex[index]))
             
         self.DatabaseConnection.close()
         
