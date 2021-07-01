@@ -363,3 +363,15 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # You should get this refrerence... (Look it up) #
         return "but most of all, samy is my hero"
+
+
+    def mAPI_RegenerateCommandIndex(self, ArgumentsDictionary): # Regenerates The Command Index #
+
+        # Log Command Regeneration #
+        self.Logger.Log('Command Index Regeneration Invoked By Management API', 6)
+
+        # Regenerate Index #
+        self.IndexCommands()
+
+        # Log Completion #
+        self.Logger.Log('Command Index Regeneration Complete', 6)
