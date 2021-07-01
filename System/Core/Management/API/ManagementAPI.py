@@ -397,7 +397,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         
     
     #Returns list of commands that a user can execute based on his/her permission level
-    def WriteAuthentication(self, DatabaseConfig:dict):
+    def WriteAuthentication(self):
+
+        # Get Database Config #
+        DatabaseConfig = self.DatabaseConfig
 
         # Connect To DB #
         DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
