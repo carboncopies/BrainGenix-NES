@@ -64,7 +64,7 @@ class SysLog(): # Logger Class #
     This is the only function that should be called by an external function, as calling other functions will cause undefined behavior in the logger.
     '''
 
-    def __init__(self, DatabaseConfig:dict, ConfigFileDictionary:dict): # Connect To Database #
+    def __init__(self, SystemConfiguration:dict): # Connect To Database #
 
         '''
         This function is used when the system is starting up, and should not be called anytime after that.
@@ -74,14 +74,14 @@ class SysLog(): # Logger Class #
 
 
         # Extract the important values from the dictionary and return them to the main system #
-        LogPath = str(ConfigFileDictionary.get('LogPath'))
-        SecondsToKeepLogs = int(ConfigFileDictionary.get('SecondsToKeepLogs'))
-        ConsoleOutputEnabled = bool(ConfigFileDictionary.get('ConsoleOutputEnabled'))
-        self.ConsoleColorEnabled = bool(ConfigFileDictionary.get('ConsoleColorEnabled'))
+        LogPath = str(SystemConfiguration.get('LogPath'))
+        SecondsToKeepLogs = int(SystemConfiguration.get('SecondsToKeepLogs'))
+        ConsoleOutputEnabled = bool(SystemConfiguration.get('ConsoleOutputEnabled'))
+        self.ConsoleColorEnabled = bool(SystemConfiguration.get('ConsoleColorEnabled'))
 
         # Logger Config Params #
-        self.LevelColors = ConfigFileDictionary['LogLevelColors']
-        self.LevelNames = ConfigFileDictionary['LogLevelNames']
+        self.LevelColors = SystemConfiguration['LogLevelColors']
+        self.LevelNames = SystemConfiguration['LogLevelNames']
 
 
         # Create Local Log Path Directory #
@@ -112,14 +112,14 @@ class SysLog(): # Logger Class #
 
 
         # Perform Database Connection Validation #
-        if DatabaseConfig == None:
+        if SystemConfiguration == None:
             print('Database Configuration Null, Please Check Config File')
 
 
         # Create Queues #
         self.LogQueue = queue.Queue()
         self.ControlQueue = queue.Queue() # Causes thread exit when item placed in queue
-        self.DBDumper = DatabaseLogTransmissionSystem(self, self.LogQueue, self.ControlQueue, DatabaseConfig)
+        self.DBDumper = DatabaseLogTransmissionSystem(self, self.LogQueue, self.ControlQueue, SystemConfiguration)
         self.DumperThread = threading.Thread(target=self.DBDumper)
         self.DumperThread.start()
 
