@@ -58,7 +58,7 @@ class ZK(): # Create Interface Class #
 
 
 
-    def ConnectToZookeeper(self, Logger:object, ZKConfigDict:dict): # Creates Connection With ZK #
+    def ConnectToZookeeper(self, Logger:object, SystemConfiguration:dict): # Creates Connection With ZK #
 
         '''
         This function is used to connect to Zookeeper, hence the name.
@@ -71,8 +71,8 @@ class ZK(): # Create Interface Class #
 
 
         # Extract Values From Dictionary #
-        ZKHost = str(ZKConfigDict.get('ZKHost'))
-        ZKPort = str(ZKConfigDict.get('ZKPort'))
+        ZKHost = str(SystemConfiguration.get('ZKHost'))
+        ZKPort = str(SystemConfiguration.get('ZKPort'))
 
         ZKHost += f':{ZKPort}'
 
