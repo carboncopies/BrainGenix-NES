@@ -91,7 +91,7 @@ CheckImports(ModulesNeeded, mLogger)
 
 
 # Connect To Zookeeper Service #
-sZookeeper = mThreadManagerInstance.InstantiateZK(mLogger, ZKConfigDict)
+sZookeeper = mThreadManagerInstance.InstantiateZK(mLogger, SystemConfiguration)
 
 
 ##############################################################################################################
