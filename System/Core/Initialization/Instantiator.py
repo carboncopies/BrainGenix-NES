@@ -22,7 +22,7 @@ def InstantiateLogger(SystemConfiguration): # Instantiates Kafka #
     # Instantiate Kafka #
     try:
 
-        Logger = SysLog(SystemConfiguration, SystemConfiguration)
+        Logger = SysLog(SystemConfiguration)
 
         # Log Success #
         Logger.Log('Centralized Logging Daemon Started')
