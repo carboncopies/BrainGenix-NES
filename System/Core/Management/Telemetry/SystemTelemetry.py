@@ -403,11 +403,11 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
 
 class Leader(): # This Class Is Run By The Leader #
 
-    def __init__(self, **kwargs):
+    def __init__(self, Logger, SystemConfiguration):
 
         # Extract Logger From kwargs #
-        self.Logger = kwargs['Logger']
-        self.KafkaConfig = kwargs['KafkaConfig']
+        self.Logger = Logger
+        self.KafkaConfig = SystemConfiguration
 
         self.Info = {}
 
