@@ -210,7 +210,16 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         # Check If Command String Empty #
                         if self.Command == '':
                             self.Logger.Log('Management API Client Disconnected, Restarting Server', 6)
+
+                            self.Logger.Log('Destroying Management API Server Socket Connection', 3)
                             self.Connection.close()
+                            self.Logger.Log('Socket Connection Destroyed', 2)
+
+                            self.Logger.Log('Deleting Socket Connection Object', 2)
+                            del self.Connection
+                            self.Logger.Log('Deleted Socket Connection Object', 1)
+
+                            self.Logger.Log('Invoking New Socket Server Instance', 2)
                             self.ManagementAPIThread(ControlQueue)
 
                     else:
