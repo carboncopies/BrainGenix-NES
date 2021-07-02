@@ -68,7 +68,7 @@ sDatabaseInterface = mThreadManagerInstance.InstantiateDB(mLogger, DBConfigDict)
 
 
 # Start API Server #
-sSocketAPI = ManagementAPISocketServer(mLogger, ManagementAPIServerConfig, ZKConfigDict, mThreadManagerInstance)
+sSocketAPI = ManagementAPISocketServer(mLogger, ManagementAPIServerConfig, ZKConfigDict, DBConfigDict, mThreadManagerInstance)
 
 
 # Check Dependencies #
@@ -114,6 +114,8 @@ sLFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI, mThreadManagerInstance, Ka
 sSocketAPI.LinkLFTM(sLFTMInstance)
 sSocketAPI.IndexCommands()
 
+#sSocketAPI.UpdateCommand()
+#sSocketAPI.WriteAuthentication()
 
 
 # MOTD #

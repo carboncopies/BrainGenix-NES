@@ -37,6 +37,9 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.IPAddr = ZookeeperConfigDict['ZKHost'] # Get The IP Addr from the zoomeeper dict
         self.ThreadManager = ThreadManager
 
+        # Make Local DBConfig Param #
+        self.DatabaseConfig = DatabaseConfig
+
         # Create Socket Host Variable #
         self.Logger.Log('Creating Host Variable')
         self.SocketHost = (self.IPAddr, self.Port)
@@ -84,9 +87,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.Logger.Log('Appending ManagementAPISocketServer Thread Object To ThreadManager Thread List', 2)
         self.ThreadManager.Threads.append(self.Thread)
         self.Logger.Log('Appended ManagementAPISocketServer Thread To ThreadManager Thread List', 1)
-        
-        self.UpdateCommand(DatabaseConfig)
-        self.WriteAuthentication(DatabaseConfig)
 
         # Set Management API Help Strings #
         self.mAPI_Help_Help = 'Help command. Accepts a path arguemnt to provide specialized help for a given command.'
@@ -96,7 +96,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.mAPI_RegenerateCommandIndex_Help = 'Regenerates Command Index, optional Argument RecursionDepth allows user definable recursion depth.'
 
 
-    def IndexCommands(self, MaxRecursionDepth=5):
+    def IndexCommands(self, MaxRecursionDepth=4):
 
         # Logger Message #
         self.Logger.Log('Beginning Command Indexing Process', 3)
@@ -368,9 +368,12 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Return License Text #
         return self.LicenseText
     
-    #Updates commands to bgdb.Command table to establish usage permission levels
-    def UpdateCommand(self, DatabaseConfig:dict):
+    
+    def UpdateCommand(self): # Updates commands to bgdb.Command table to establish usage permission levels #
         
+        # Get Database Config #
+        DatabaseConfig = self.DatabaseConfig
+
         # Connect To DB #
         DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
         DBPassword = str(DatabaseConfig.get('DatabasePassword'))
@@ -388,13 +391,16 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
         
         for index in self.CommandIndex.keys():
-            cur.execute("INSERT INTO command (commandId,commandName) VALUES (%d, %s)",(index,self.CommandIndex[index]))
+            cur.execute("INSERT INTO command (commandId,commandName) VALUES (%d, %s)",(int(index),self.CommandIndex[index]))
             
         self.DatabaseConnection.close()
         
     
     #Returns list of commands that a user can execute based on his/her permission level
-    def WriteAuthentication(self, DatabaseConfig:dict):
+    def WriteAuthentication(self):
+
+        # Get Database Config #
+        DatabaseConfig = self.DatabaseConfig
 
         # Connect To DB #
         DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
