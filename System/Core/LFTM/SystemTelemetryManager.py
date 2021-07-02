@@ -79,7 +79,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         self.Logger.Log('System Telemetry Transition Asserted, Called For Mode "LEADER"', 6)
 
         # Instantiate #
-        self.SysTelLeader = Leader(Logger=self.Logger, SystemConfiguration=self.SystemConfiguration, Zookeeper=self.Zookeeper)
+        self.SysTelLeader = Leader(self.Logger, self.SystemConfiguration, self.Zookeeper)
 
         # SysTelLeader Thread Creation Process #
         self.Logger.Log('Adding Data Collection Daemon To Thread Manager', 3)
