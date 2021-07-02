@@ -13,7 +13,7 @@ from Core.Management.Logger.Logger import SysLog
 
 
 
-def InstantiateLogger(DBConfig, LoggerConfigDict): # Instantiates Kafka #
+def InstantiateLogger(DBConfig, SystemConfiguration): # Instantiates Kafka #
 
     # Log Message #
     print('Initializing Centralized Logging System')
@@ -22,7 +22,7 @@ def InstantiateLogger(DBConfig, LoggerConfigDict): # Instantiates Kafka #
     # Instantiate Kafka #
     try:
 
-        Logger = SysLog(DBConfig, LoggerConfigDict)
+        Logger = SysLog(DBConfig, SystemConfiguration)
 
         # Log Success #
         Logger.Log('Centralized Logging Daemon Started')
