@@ -51,7 +51,7 @@ ManagementAPIServerConfig = SystemConfiguration
 
 
 # Initialize Logger #
-mLogger = InstantiateLogger(DBConfigDict, LoggerConfigDict)
+mLogger = InstantiateLogger(SystemConfiguration, LoggerConfigDict)
 
 
 # Instantiate Thread Manager #
@@ -63,11 +63,11 @@ sCLAS = CentralizedLoggerAggregationSystem(mLogger)
 
 
 # Connect To DB #
-sDatabaseInterface = mThreadManagerInstance.InstantiateDB(mLogger, DBConfigDict)
+sDatabaseInterface = mThreadManagerInstance.InstantiateDB(mLogger, SystemConfiguration)
 
 
 # Start API Server #
-sSocketAPI = ManagementAPISocketServer(mLogger, ManagementAPIServerConfig, ZKConfigDict, DBConfigDict, mThreadManagerInstance)
+sSocketAPI = ManagementAPISocketServer(mLogger, SystemConfiguration, mThreadManagerInstance)
 
 
 # Check Dependencies #
@@ -113,8 +113,8 @@ sLFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI, mThreadManagerInstance, Ka
 sSocketAPI.LinkLFTM(sLFTMInstance)
 sSocketAPI.IndexCommands()
 
-sSocketAPI.UpdateCommand()
-sSocketAPI.WriteAuthentication()
+#sSocketAPI.UpdateCommand()
+#sSocketAPI.WriteAuthentication()
 
 
 # MOTD #
