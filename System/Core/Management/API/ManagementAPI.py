@@ -29,16 +29,16 @@ Date-Created: 2021-05-17
 
 class ManagementAPISocketServer(): # Creates A Class To Connect To The Management API #
 
-    def __init__(self, Logger, MAPIConfig:dict, ZookeeperConfigDict:dict, DatabaseConfig:dict, ThreadManager:object): # This function initialializes sockets #
+    def __init__(self, Logger, SystemConfigration:dict, ThreadManager:object): # This function initialializes sockets #
 
         # Get Config Params #
         self.Logger = Logger
-        self.Port = MAPIConfig['Port'] # Get the port from the port config
-        self.IPAddr = ZookeeperConfigDict['ZKHost'] # Get The IP Addr from the zoomeeper dict
+        self.Port = SystemConfigration['Port'] # Get the port from the port config
+        self.IPAddr = SystemConfigration['ZKHost'] # Get The IP Addr from the zoomeeper dict
         self.ThreadManager = ThreadManager
 
-        # Make Local DBConfig Param #
-        self.DatabaseConfig = DatabaseConfig
+        # Make Local SysConfig Param #
+        self.SystemConfiguration = SystemConfigration
 
         # Create Socket Host Variable #
         self.Logger.Log('Creating Host Variable')
@@ -368,16 +368,16 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Return License Text #
         return self.LicenseText
     
-    def DBUpdate(self, DatabaseConfig:dict, command:str): # Executes SQL queries to update commands into the bgdb.Command table #
+    def DBUpdate(self, SystemConfiguration:dict, command:str): # Executes SQL queries to update commands into the bgdb.Command table #
         
         # Get Database Config #
-        DatabaseConfig = self.DatabaseConfig
+        SystemConfiguration = self.SystemConfiguration
 
         # Connect To DB #
-        DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
-        DBPassword = str(DatabaseConfig.get('DatabasePassword'))
-        DBHost = str(DatabaseConfig.get('DatabaseHost'))
-        DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
+        DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
+        DBPassword = str(SystemConfiguration.get('DatabasePassword'))
+        DBHost = str(SystemConfiguration.get('DatabaseHost'))
+        DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
 
         # Connect To Database #
         self.DatabaseConnection = pymysql.connect(
@@ -399,7 +399,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Can we add more comments here explaining this?
 
         for key, value in self.CommandIndex.items():
-            self.DBUpdate(self.DatabaseConfig, key)
+            self.DBUpdate(self.SystemConfiguration, key)
             if isinstance(value, dict):
                 if len(value)!=0:
                     self.UpdateCommand(value)
@@ -408,13 +408,13 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
     def WriteAuthentication(self):
 
         # Get Database Config #
-        DatabaseConfig = self.DatabaseConfig
+        SystemConfiguration = self.SystemConfiguration
 
         # Connect To DB #
-        DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
-        DBPassword = str(DatabaseConfig.get('DatabasePassword'))
-        DBHost = str(DatabaseConfig.get('DatabaseHost'))
-        DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
+        DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
+        DBPassword = str(SystemConfiguration.get('DatabasePassword'))
+        DBHost = str(SystemConfiguration.get('DatabaseHost'))
+        DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
 
         # Connect To Database #
         self.DatabaseConnection = pymysql.connect(
