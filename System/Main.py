@@ -46,11 +46,13 @@ Branch = BranchVersion
 
 # Load Config #
 SystemConfiguration = LoadLocalConfig(ConfigFilePath = 'BrainGenix-NES-Config.yaml')
-LoggerConfigDict = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
-DBConfigDict = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
-ZKConfigDict = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
-KafkaConfigDict = LoadInternodeQueueConfig(ConfigFilePath = 'Config/InternodeQueue.yaml')
-ManagementAPIServerConfig = LoadManagementAPIServerConfig(ConfigFilePath = 'Config/ManagementAPIConfig.yaml')
+
+
+LoggerConfigDict = SystemConfiguration
+DBConfigDict = SystemConfiguration
+ZKConfigDict = SystemConfiguration
+KafkaConfigDict = SystemConfiguration
+ManagementAPIServerConfig = SystemConfiguration
 
 
 # Initialize Logger #
