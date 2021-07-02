@@ -368,8 +368,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Return License Text #
         return self.LicenseText
     
-    
-    def UpdateCommand(self): # Updates commands to bgdb.Command table to establish usage permission levels #
+    def DBUpdate(self, DatabaseConfig:dict, command:str): # Executes SQL queries to update commands into the bgdb.Command table #
         
         # Get Database Config #
         DatabaseConfig = self.DatabaseConfig
@@ -390,11 +389,18 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
         
-        for index in self.CommandIndex.keys():
-            cur.execute("INSERT INTO command (commandId,commandName) VALUES (%d, %s)",(int(index),self.CommandIndex[index]))
-            
+        cur.execute("INSERT INTO command (commandName) VALUES (%s)",(command))    
+        
         self.DatabaseConnection.close()
         
+    
+    def UpdateCommand(self, commands=self.CommandIndex): # Updates commands to bgdb.Command table to establish usage permission levels #
+        
+        for key, value in self.CommandIndex.items():
+            if isinstance(value, dict):
+                self.UpdateCommand(value)
+            else:
+                self.DBUpdate(value)
     
     #Returns list of commands that a user can execute based on his/her permission level
     def WriteAuthentication(self):
