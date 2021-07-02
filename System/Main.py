@@ -51,7 +51,7 @@ ManagementAPIServerConfig = SystemConfiguration
 
 
 # Initialize Logger #
-mLogger = InstantiateLogger(SystemConfiguration, LoggerConfigDict)
+mLogger = InstantiateLogger(SystemConfiguration)
 
 
 # Instantiate Thread Manager #
