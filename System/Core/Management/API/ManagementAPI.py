@@ -206,7 +206,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     if SocketReady[0]:
                         self.Command = self.Connection.recv(65535)
                         self.Command = self.Command.decode()
-                        print(self.Command, self.Connection)
 
                         # Check If Command String Empty #
                         if self.Command == '':
@@ -214,6 +213,8 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
                     else:
                         self.Command = None
+
+                    print(self.Command)
 
                     # Check If Command Ready #
                     if self.Command != None:
