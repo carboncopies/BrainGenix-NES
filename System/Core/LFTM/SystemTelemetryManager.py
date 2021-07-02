@@ -10,6 +10,7 @@ Date-Created: 2021-01-29
 '''
 
 
+from home.tliao.BrainGenix.BrainGenix.System.Main import SystemConfiguration
 from Core.Management.Telemetry.SystemTelemetry import Follower
 from Core.Management.Telemetry.SystemTelemetry import Leader
 
@@ -40,7 +41,8 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         self.Logger.Log('Starting System Telemetry Subsystem', 4)
 
         # Instantiate #
-        self.SysTelFollower = Follower(Logger=self.Logger, self.SystemConfiguration, Zookeeper=self.Zookeeper)
+        SystemConfiguration = self.SystemConfiguration
+        self.SysTelFollower = Follower(Logger=self.Logger, SystemConfiguration, Zookeeper=self.Zookeeper)
         self.SysTelLeader = None
 
 
