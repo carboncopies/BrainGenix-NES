@@ -207,6 +207,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         self.Command = self.Connection.recv(65535)
                         self.Command = self.Command.decode()
                         print(self.Command, self.Connection)
+
                         # Check If Command String Empty #
                         if self.Command == '':
                             self.Command = None
@@ -295,8 +296,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         if 'Connection' in dir(self):
 
             self.Connection.close()
-
-            print('fhdsjahgfdkslaghfjdkagfjhkdagfhdjsakfhjds')
 
         # Close The Socket #
         self.Socket.close()
