@@ -107,7 +107,7 @@ NodeCount = sZookeeper.ConcurrentConnectedNodes()
 APIServerCount = len(sZookeeper.ZookeeperConnection.get_children('/BrainGenix/API/Connections'))
 
 # Instantiate Leader/Follower Transition Manager #
-sLFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI, mThreadManagerInstance, KafkaConfigDict)
+sLFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI, mThreadManagerInstance, SystemConfiguration)
 
 # Link LFTM #
 sSocketAPI.LinkLFTM(sLFTMInstance)
