@@ -41,8 +41,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         self.Logger.Log('Starting System Telemetry Subsystem', 4)
 
         # Instantiate #
-        SystemConfiguration = self.SystemConfiguration
-        self.SysTelFollower = Follower(Logger=self.Logger, SystemConfiguration, Zookeeper=self.Zookeeper)
+        self.SysTelFollower = Follower(self.Logger, self.SystemConfiguration, self.Zookeeper)
         self.SysTelLeader = None
 
 
