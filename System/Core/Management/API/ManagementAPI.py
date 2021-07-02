@@ -394,10 +394,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.DatabaseConnection.close()
         
     
-    def UpdateCommand(self, commands=self.CommandIndex): # Updates commands to bgdb.Command table to establish usage permission levels #
+    def UpdateCommand(self): # Updates commands to bgdb.Command table to establish usage permission levels #
         
-        for key, value in commands.items():
-            self.DBUpdate(key)
+        for key, value in self.CommandIndex.items():
+            self.DBUpdate(self.DatabaseConfig, key)
             if isinstance(value, dict):
                 if len(value)!=0:
                     self.UpdateCommand(value)
