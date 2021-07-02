@@ -287,6 +287,12 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
     def Quit(self): # Release The Socket #
 
+        if 'Connection' in dir(self):
+
+            self.Connection.close()
+
+            print('fhdsjahgfdkslaghfjdkagfjhkdagfhdjsakfhjds')
+
         # Close The Socket #
         self.Socket.close()
 
