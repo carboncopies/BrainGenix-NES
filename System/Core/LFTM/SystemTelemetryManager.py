@@ -10,7 +10,6 @@ Date-Created: 2021-01-29
 '''
 
 
-from home.tliao.BrainGenix.BrainGenix.System.Main import SystemConfiguration
 from Core.Management.Telemetry.SystemTelemetry import Follower
 from Core.Management.Telemetry.SystemTelemetry import Leader
 
