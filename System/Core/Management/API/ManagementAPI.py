@@ -209,12 +209,12 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
                         # Check If Command String Empty #
                         if self.Command == '':
-                            self.Command = None
+                            self.Logger.Log('Management API Client Disconnected, Restarting Server', 6)
+                            self.Connection.close()
+                            self.ManagementAPIThread(ControlQueue)
 
                     else:
                         self.Command = None
-
-                    print(self.Command)
 
                     # Check If Command Ready #
                     if self.Command != None:
@@ -264,7 +264,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         ResponseByteString = ResponseString.encode()
 
                         # Send Output #
-                        self.Connection.send(ResponseByteString)
+                        self.Connection.sendall(ResponseByteString)
 
 
 
