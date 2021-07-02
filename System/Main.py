@@ -9,11 +9,12 @@ Date-Created: 2020-12-18
 '''
 
 
-from Core.Initialization.LoadConfig import LoadLoggerConfig
+from Core.Initialization.LoadConfig import LoadLocalConfig, LoadLoggerConfig
 from Core.Initialization.LoadConfig import LoadDatabaseConfig
 from Core.Initialization.LoadConfig import LoadZookeeperConfig
 from Core.Initialization.LoadConfig import LoadInternodeQueueConfig
 from Core.Initialization.LoadConfig import LoadManagementAPIServerConfig
+from Core.Initialization.LoadConfig import LoadLocalConfig
 
 from Core.ThreadManager import ThreadManager
 
@@ -44,6 +45,7 @@ Branch = BranchVersion
 
 
 # Load Config #
+SystemConfiguration = LoadLocalConfig(ConfigFilePath = 'BrainGenix-NES-Config.yaml')
 LoggerConfigDict = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
 DBConfigDict = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
 ZKConfigDict = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
