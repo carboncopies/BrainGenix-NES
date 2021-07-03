@@ -30,13 +30,13 @@ Date-Created: 2021-01-29
 
 class Follower(): # This Class Gets System Information And Puts It Into Kafka #
 
-    def __init__(self, **kwargs):
+    def __init__(self, Logger, SystemConfig, ZookeeperInstance):
 
 
-        # Extract Logger From kwargs #
-        self.Logger = kwargs['Logger']
-        KafkaConfig = kwargs['KafkaConfig']
-        self.ZK = kwargs['Zookeeper']
+        # Add To Local Pointers #
+        self.Logger = Logger
+        KafkaConfig = SystemConfig
+        self.ZK = ZookeeperInstance
 
         # Get Node HostName  #
         NodeHostname = platform.uname().node
@@ -403,11 +403,11 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
 
 class Leader(): # This Class Is Run By The Leader #
 
-    def __init__(self, **kwargs):
+    def __init__(self, Logger, SystemConfiguration):
 
         # Extract Logger From kwargs #
-        self.Logger = kwargs['Logger']
-        self.KafkaConfig = kwargs['KafkaConfig']
+        self.Logger = Logger
+        self.KafkaConfig = SystemConfiguration
 
         self.Info = {}
 

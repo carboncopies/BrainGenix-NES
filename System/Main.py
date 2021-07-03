@@ -9,11 +9,7 @@ Date-Created: 2020-12-18
 '''
 
 
-from Core.Initialization.LoadConfig import LoadLoggerConfig
-from Core.Initialization.LoadConfig import LoadDatabaseConfig
-from Core.Initialization.LoadConfig import LoadZookeeperConfig
-from Core.Initialization.LoadConfig import LoadInternodeQueueConfig
-from Core.Initialization.LoadConfig import LoadManagementAPIServerConfig
+from Core.Initialization.LoadConfig import LoadLocalConfig
 
 from Core.ThreadManager import ThreadManager
 
@@ -44,15 +40,11 @@ Branch = BranchVersion
 
 
 # Load Config #
-LoggerConfigDict = LoadLoggerConfig(ConfigFilePath = 'Config/LoggerConfig.yaml')
-DBConfigDict = LoadDatabaseConfig(ConfigFilePath = 'Config/DatabaseConfig.yaml')
-ZKConfigDict = LoadZookeeperConfig(ConfigFilePath = 'Config/ZookeeperConfig.yaml')
-KafkaConfigDict = LoadInternodeQueueConfig(ConfigFilePath = 'Config/InternodeQueue.yaml')
-ManagementAPIServerConfig = LoadManagementAPIServerConfig(ConfigFilePath = 'Config/ManagementAPIConfig.yaml')
+SystemConfiguration = LoadLocalConfig(ConfigFilePath = 'BrainGenix-NES-Config.yaml')
 
 
 # Initialize Logger #
-mLogger = InstantiateLogger(DBConfigDict, LoggerConfigDict)
+mLogger = InstantiateLogger(SystemConfiguration)
 
 
 # Instantiate Thread Manager #
@@ -64,11 +56,11 @@ sCLAS = CentralizedLoggerAggregationSystem(mLogger)
 
 
 # Connect To DB #
-sDatabaseInterface = mThreadManagerInstance.InstantiateDB(mLogger, DBConfigDict)
+sDatabaseInterface = mThreadManagerInstance.InstantiateDB(mLogger, SystemConfiguration)
 
 
 # Start API Server #
-sSocketAPI = ManagementAPISocketServer(mLogger, ManagementAPIServerConfig, ZKConfigDict, DBConfigDict, mThreadManagerInstance)
+sSocketAPI = ManagementAPISocketServer(mLogger, SystemConfiguration, mThreadManagerInstance)
 
 
 # Check Dependencies #
@@ -92,7 +84,7 @@ CheckImports(ModulesNeeded, mLogger)
 
 
 # Connect To Zookeeper Service #
-sZookeeper = mThreadManagerInstance.InstantiateZK(mLogger, ZKConfigDict)
+sZookeeper = mThreadManagerInstance.InstantiateZK(mLogger, SystemConfiguration)
 
 
 ##############################################################################################################
@@ -108,7 +100,7 @@ NodeCount = sZookeeper.ConcurrentConnectedNodes()
 APIServerCount = len(sZookeeper.ZookeeperConnection.get_children('/BrainGenix/API/Connections'))
 
 # Instantiate Leader/Follower Transition Manager #
-sLFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI, mThreadManagerInstance, KafkaConfigDict)
+sLFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI, mThreadManagerInstance, SystemConfiguration)
 
 # Link LFTM #
 sSocketAPI.LinkLFTM(sLFTMInstance)

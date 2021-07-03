@@ -13,7 +13,7 @@ Date-Created: 2021-06-18
 
 class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The Database #
 
-    def __init__(self, Logger:object, LogBufferQueue:object, ControlQueue:object, DatabaseConfig:dict): # Init #
+    def __init__(self, Logger:object, LogBufferQueue:object, ControlQueue:object, SystemConfiguration:dict): # Init #
 
         # Init Logger #
         self.Logger = Logger
@@ -22,10 +22,10 @@ class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The D
         self.Logger.Log('Initializing Database Log Transmission System', 4)
 
         # Connect To DB #
-        DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
-        DBPassword = str(DatabaseConfig.get('DatabasePassword'))
-        DBHost = str(DatabaseConfig.get('DatabaseHost'))
-        DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
+        DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
+        DBPassword = str(SystemConfiguration.get('DatabasePassword'))
+        DBHost = str(SystemConfiguration.get('DatabaseHost'))
+        DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
 
 
         # Connect To Database #
