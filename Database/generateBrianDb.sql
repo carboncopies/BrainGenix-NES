@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `bgdb`.`user` (
   `firstName` VARCHAR(45) NOT NULL,
   `lastName` VARCHAR(45) NOT NULL,
   `notes` VARCHAR(200) NOT NULL,
-  `accountEnabled` CHAR(1) NOT NULL,
+  `accountEnabled` CHAR(1) NOT NULL DEFAULT 'n',
   `accountExpirationDate` DATETIME NULL DEFAULT NULL,
   `passwordExpirationDate` DATETIME NULL DEFAULT NULL,
   `permissionLevel` INT NOT NULL, 
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `bgdb`.`command` (
   `commandId` BIGINT NOT NULL AUTO_INCREMENT,
   `commandName` VARCHAR(45) NOT NULL,
   `commandDescription` VARCHAR(200) NULL,
-  `permissionLevel` INT NOT NULL,
+  `permissionLevel` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`commandId`))
 ENGINE = InnoDB;
 
