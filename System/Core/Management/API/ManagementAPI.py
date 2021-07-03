@@ -168,7 +168,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Enter Connection Accept Loop #
         while ControlQueue.empty():
 
-            try:
+            #try:
                 # Log That Server Awaiting Connections #
                 self.Logger.Log(f'MAPI Server Awaiting Connections On Port: {self.Port}')
 
@@ -206,6 +206,22 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     if SocketReady[0]:
                         self.Command = self.Connection.recv(65535)
                         self.Command = self.Command.decode()
+
+                        # Check If Command String Empty #
+                        if self.Command == '':
+                            self.Logger.Log('Management API Client Disconnected, Restarting Server', 6)
+
+                            self.Logger.Log('Destroying Management API Server Socket Connection', 3)
+                            self.Connection.close()
+                            self.Logger.Log('Socket Connection Destroyed', 2)
+
+                            self.Logger.Log('Deleting Socket Connection Object', 2)
+                            del self.Connection
+                            self.Logger.Log('Deleted Socket Connection Object', 1)
+
+                            self.Logger.Log('Invoking New Socket Server Instance', 2)
+                            self.ManagementAPIThread(ControlQueue)
+
                     else:
                         self.Command = None
 
@@ -213,11 +229,11 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     if self.Command != None:
 
                         # Convert To Dict From JSON #
-                        try:
-                            self.Command = json.loads(self.Command)
-                        except Exception as e:
-                            self.Logger.Log('Exception In Management Server JSONLOAD', 1)
-                            self.Logger.Log(e)
+                        #try:
+                        self.Command = json.loads(self.Command)
+                        #except Exception as e:
+                        #    self.Logger.Log('Exception In Management Server JSONLOAD', 1)
+                        #    self.Logger.Log(e)
 
 
                         # Check That Command Syntax Is Correct #
@@ -257,23 +273,23 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         ResponseByteString = ResponseString.encode()
 
                         # Send Output #
-                        self.Connection.send(ResponseByteString)
+                        self.Connection.sendall(ResponseByteString)
 
 
 
-            except Exception as E:
+            # except Exception as E:
 
-                self.Logger.Log(E)
-                self.Logger.Log('Exception within APIServer, Restarting Server!')
+            #     self.Logger.Log(E)
+            #     self.Logger.Log('Exception within APIServer, Restarting Server!')
 
-                try:
+            #     try:
 
-                    self.Connection.close()
+            #         self.Connection.close()
 
-                except Exception as E:
+            #     except Exception as E:
 
-                    # Log Exception #
-                    self.Logger.Log(f'Exception In Management APIServer: {E}')
+            #         # Log Exception #
+            #         self.Logger.Log(f'Exception In Management APIServer: {E}')
 
         # Exit Message #
         self.Logger.Log('Management API Socket Server Shutting Down', 4)
@@ -286,6 +302,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
 
     def Quit(self): # Release The Socket #
+
+        if 'Connection' in dir(self):
+
+            self.Connection.close()
 
         # Close The Socket #
         self.Socket.close()
