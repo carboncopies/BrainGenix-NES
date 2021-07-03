@@ -132,8 +132,9 @@ class LFTM(): # Define Class Object #
 
 
         # Print SQL Style Message #
-        print('Bye.')
+        print('\x1b[38;2;256;0;0m' + 'Bye.' + '\x1b[0m')
 
 
         # Exit Program #
         sys.exit()
+
