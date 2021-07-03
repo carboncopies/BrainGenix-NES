@@ -40,7 +40,7 @@ Branch = BranchVersion
 
 
 # Load Config #
-SystemConfiguration = LoadLocalConfig(ConfigFilePath = 'BrainGenix-NES-Config.yaml')
+SystemConfiguration = LoadLocalConfig(ConfigFilePath = 'Config.yaml')
 
 
 # Initialize Logger #
