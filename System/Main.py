@@ -43,13 +43,6 @@ Branch = BranchVersion
 SystemConfiguration = LoadLocalConfig(ConfigFilePath = 'BrainGenix-NES-Config.yaml')
 
 
-LoggerConfigDict = SystemConfiguration
-DBConfigDict = SystemConfiguration
-ZKConfigDict = SystemConfiguration
-KafkaConfigDict = SystemConfiguration
-ManagementAPIServerConfig = SystemConfiguration
-
-
 # Initialize Logger #
 mLogger = InstantiateLogger(SystemConfiguration)
 
