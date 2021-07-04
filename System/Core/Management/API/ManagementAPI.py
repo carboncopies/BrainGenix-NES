@@ -109,6 +109,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         self.Logger.Log('Starting Attribute Sorting' ,2)
         self.CommandIndex = FilterPaths(self.CommandIndex, self.Logger)
+        self.RecursionCommands= self.CommandIndex
         self.Logger.Log('Finished Attribute Sorting' ,1)
 
         # Log Completion #
@@ -418,11 +419,12 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         
         # Can we add more comments here explaining this?
 
-        for key, value in self.CommandIndex.items():
+        for key, value in self.RecursionCommands.items():
             self.DBUpdate(self.SystemConfiguration, key)
             if isinstance(value, dict):
                 if len(value)!=0:
-                    self.UpdateCommand(value)
+                    self.RecursionCommands= value
+                    self.UpdateCommand()
     
     #Returns list of commands that a user can execute based on his/her permission level
     def WriteAuthentication(self):
