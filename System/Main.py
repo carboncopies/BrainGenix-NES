@@ -106,8 +106,8 @@ sLFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI, mThreadManagerInstance, Sy
 sSocketAPI.LinkLFTM(sLFTMInstance)
 sSocketAPI.IndexCommands()
 
-#sSocketAPI.UpdateCommand()
-#sSocketAPI.WriteAuthentication()
+sSocketAPI.UpdateCommand()
+sSocketAPI.WriteAuthentication()
 
 
 # MOTD #
