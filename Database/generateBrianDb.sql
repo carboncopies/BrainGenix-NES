@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `bgdb`.`neuron` (
   `zCoord` INT NULL DEFAULT NULL,
   `assignedNode` VARCHAR(45) NULL,
   `equationId` bigINT NULL DEFAULT NULL,
-  region varchar(40) null,
+  `region` VARCHAR(40) NULL DEFAULT NULL,
   PRIMARY KEY (`neuronId`),
   CONSTRAINT `neuron_fk_equationid`
     FOREIGN KEY (equationId)
@@ -140,8 +140,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 insert into bgdb.equation values (1, 'e = mc ** 2');
 insert into bgdb.equation values (2, 'c ** 2 = (a ** 2) + (b ** 2)');
 
-insert into bgdb.neuron values (1, 0, 0, 0, 'node1', 1);
-insert into bgdb.neuron values (2, 0, 0, 0, 'node2', 2);
+insert into bgdb.neuron values (1, 0, 0, 0, 'node1', 1, 'region1');
+insert into bgdb.neuron values (2, 0, 0, 0, 'node2', 2, 'region2');
 
 insert into bgdb.synapse values (1, 2, 2, 2, 1, 1);
 insert into bgdb.synapse values (2, 3, 3, 3, 2, 2);
