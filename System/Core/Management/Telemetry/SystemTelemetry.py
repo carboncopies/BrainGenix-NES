@@ -40,7 +40,7 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
 
         # Get Node HostName  #
         NodeHostname = platform.uname().node
-        self.TopicName = "BrainGenix-NES-SystemTelemetry-" + NodeHostname
+        self.TopicName = 'BrainGenix-NES-SystemTelemetry'
 
         # Get Kafka Host #
         BootstrapAddress = KafkaConfig['KafkaHost']
@@ -398,6 +398,7 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
         # Dump Data #
         self.KafkaProducer.produce(self.TopicName, JSONArray)
         self.KafkaProducer.flush()
+        print(JSONArray)
 
 
 
@@ -518,7 +519,7 @@ class Leader(): # This Class Is Run By The Leader #
 
         # Check If Not None #
         if SystemTelemetryInformation != None:
-
+            print('fdhsafhjkdsahfdjkslfdsjkahfjkdslahfjkdsljhklfsajhklafdshjafdjhlfdashjdfahjlfdsalj')
             # Exctract New Value #
             NodeInfoJSONBytes = SystemTelemetryInformation.value()
 
@@ -536,6 +537,7 @@ class Leader(): # This Class Is Run By The Leader #
             NodeInfoJSONString = NodeInfoJSONBytes.decode('ascii')
             NodeInfoDecoded = json.loads(NodeInfoJSONString)
             self.Info.update({NodeName : NodeInfoDecoded})
+
 
             # Update APIServer Last Communication Date #
             self.NodeInfoDict.update({NodeName : time.time()})
