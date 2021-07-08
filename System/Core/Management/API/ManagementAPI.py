@@ -230,13 +230,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     if self.Command != None:
 
                         # Convert To Dict From JSON #
-                        #try:
                         self.Command = json.loads(self.Command)
-
-                        print(self.Command)
-                        #except Exception as e:
-                        #    self.Logger.Log('Exception In Management Server JSONLOAD', 1)
-                        #    self.Logger.Log(e)
 
 
                         # Check That Command Syntax Is Correct #
