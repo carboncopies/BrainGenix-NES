@@ -398,7 +398,6 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
         # Dump Data #
         self.KafkaProducer.produce(self.TopicName, JSONArray)
         self.KafkaProducer.flush()
-        print(JSONArray)
 
 
 
