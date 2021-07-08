@@ -519,7 +519,7 @@ class Leader(): # This Class Is Run By The Leader #
 
         # Check If Not None #
         if SystemTelemetryInformation != None:
-            print('fdhsafhjkdsahfdjkslfdsjkahfjkdslahfjkdsljhklfsajhklafdshjafdjhlfdashjdfahjlfdsalj')
+
             # Exctract New Value #
             NodeInfoJSONBytes = SystemTelemetryInformation.value()
 
