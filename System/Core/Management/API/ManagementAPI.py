@@ -463,7 +463,32 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             print("No matching user found in Database.")
             
         self.DatabaseConnection.close()
-            
+        
+    def addUser(self, SystemConfiguration:dict, userName:str, passwordHash:str, salt:str, firstName:str, lastName:str. notes:str, permissionLevel:int):
+        
+        # Get Database Config #
+        SystemConfiguration = self.SystemConfiguration
+
+        # Connect To DB #
+        DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
+        DBPassword = str(SystemConfiguration.get('DatabasePassword'))
+        DBHost = str(SystemConfiguration.get('DatabaseHost'))
+        DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
+
+        # Connect To Database #
+        self.DatabaseConnection = pymysql.connect(
+            host = DBHost,
+            user = DBUsername,
+            password = DBPassword,
+            db = DBDatabaseName
+        )
+        
+        cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
+        
+        cur.execute("INSERT INTO user (userName, passwordHash, salt, firstName, lastName, notes, permissionLevel) VALUES (%s,%s,%s,%s,%s,%s,%d)",(userName, passwordHash, salt, firstName, lastName, notes, permissionLevel))    
+        
+        self.DatabaseConnection.close()
+         
 
     def mAPI_TestAPI(self, ArgumentsDictionary): # Returns A Test String #
 
