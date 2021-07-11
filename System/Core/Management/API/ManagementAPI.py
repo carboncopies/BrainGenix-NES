@@ -29,16 +29,16 @@ Date-Created: 2021-05-17
 
 class ManagementAPISocketServer(): # Creates A Class To Connect To The Management API #
 
-    def __init__(self, Logger, MAPIConfig:dict, ZookeeperConfigDict:dict, DatabaseConfig:dict, ThreadManager:object): # This function initialializes sockets #
+    def __init__(self, Logger, SystemConfiguration:dict, ThreadManager:object): # This function initialializes sockets #
 
         # Get Config Params #
         self.Logger = Logger
-        self.Port = MAPIConfig['Port'] # Get the port from the port config
-        self.IPAddr = ZookeeperConfigDict['ZKHost'] # Get The IP Addr from the zoomeeper dict
+        self.Port = SystemConfiguration['Port'] # Get the port from the port config
+        self.IPAddr = SystemConfiguration['ZKHost'] # Get The IP Addr from the zoomeeper dict
         self.ThreadManager = ThreadManager
 
-        # Make Local DBConfig Param #
-        self.DatabaseConfig = DatabaseConfig
+        # Make Local SysConfig Param #
+        self.SystemConfiguration = SystemConfiguration
 
         # Create Socket Host Variable #
         self.Logger.Log('Creating Host Variable')
@@ -109,6 +109,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         self.Logger.Log('Starting Attribute Sorting' ,2)
         self.CommandIndex = FilterPaths(self.CommandIndex, self.Logger)
+        self.RecursionCommands= self.CommandIndex
         self.Logger.Log('Finished Attribute Sorting' ,1)
 
         # Log Completion #
@@ -168,7 +169,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Enter Connection Accept Loop #
         while ControlQueue.empty():
 
-            try:
+            #try:
                 # Log That Server Awaiting Connections #
                 self.Logger.Log(f'MAPI Server Awaiting Connections On Port: {self.Port}')
 
@@ -206,6 +207,22 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     if SocketReady[0]:
                         self.Command = self.Connection.recv(65535)
                         self.Command = self.Command.decode()
+
+                        # Check If Command String Empty #
+                        if self.Command == '':
+                            self.Logger.Log('Management API Client Disconnected, Restarting Server', 6)
+
+                            self.Logger.Log('Destroying Management API Server Socket Connection', 3)
+                            self.Connection.close()
+                            self.Logger.Log('Socket Connection Destroyed', 2)
+
+                            self.Logger.Log('Deleting Socket Connection Object', 2)
+                            del self.Connection
+                            self.Logger.Log('Deleted Socket Connection Object', 1)
+
+                            self.Logger.Log('Invoking New Socket Server Instance', 2)
+                            self.ManagementAPIThread(ControlQueue)
+
                     else:
                         self.Command = None
 
@@ -213,11 +230,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     if self.Command != None:
 
                         # Convert To Dict From JSON #
-                        try:
-                            self.Command = json.loads(self.Command)
-                        except Exception as e:
-                            self.Logger.Log('Exception In Management Server JSONLOAD', 1)
-                            self.Logger.Log(e)
+                        self.Command = json.loads(self.Command)
 
 
                         # Check That Command Syntax Is Correct #
@@ -257,23 +270,23 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         ResponseByteString = ResponseString.encode()
 
                         # Send Output #
-                        self.Connection.send(ResponseByteString)
+                        self.Connection.sendall(ResponseByteString)
 
 
 
-            except Exception as E:
+            # except Exception as E:
 
-                self.Logger.Log(E)
-                self.Logger.Log('Exception within APIServer, Restarting Server!')
+            #     self.Logger.Log(E)
+            #     self.Logger.Log('Exception within APIServer, Restarting Server!')
 
-                try:
+            #     try:
 
-                    self.Connection.close()
+            #         self.Connection.close()
 
-                except Exception as E:
+            #     except Exception as E:
 
-                    # Log Exception #
-                    self.Logger.Log(f'Exception In Management APIServer: {E}')
+            #         # Log Exception #
+            #         self.Logger.Log(f'Exception In Management APIServer: {E}')
 
         # Exit Message #
         self.Logger.Log('Management API Socket Server Shutting Down', 4)
@@ -286,6 +299,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
 
     def Quit(self): # Release The Socket #
+
+        if 'Connection' in dir(self):
+
+            self.Connection.close()
 
         # Close The Socket #
         self.Socket.close()
@@ -368,16 +385,16 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Return License Text #
         return self.LicenseText
     
-    def DBUpdate(self, DatabaseConfig:dict, command:str): # Executes SQL queries to update commands into the bgdb.Command table #
+    def DBUpdate(self, SystemConfiguration:dict, command:str): # Executes SQL queries to update commands into the bgdb.Command table #
         
         # Get Database Config #
-        DatabaseConfig = self.DatabaseConfig
+        SystemConfiguration = self.SystemConfiguration
 
         # Connect To DB #
-        DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
-        DBPassword = str(DatabaseConfig.get('DatabasePassword'))
-        DBHost = str(DatabaseConfig.get('DatabaseHost'))
-        DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
+        DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
+        DBPassword = str(SystemConfiguration.get('DatabasePassword'))
+        DBHost = str(SystemConfiguration.get('DatabaseHost'))
+        DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
 
         # Connect To Database #
         self.DatabaseConnection = pymysql.connect(
@@ -394,25 +411,28 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.DatabaseConnection.close()
         
     
-    def UpdateCommand(self, commands=self.CommandIndex): # Updates commands to bgdb.Command table to establish usage permission levels #
+    def UpdateCommand(self): # Updates commands to bgdb.Command table to establish usage permission levels #
         
-        for key, value in self.CommandIndex.items():
+        # Can we add more comments here explaining this?
+
+        for key, value in self.RecursionCommands.items():
+            self.DBUpdate(self.SystemConfiguration, key)
             if isinstance(value, dict):
-                self.UpdateCommand(value)
-            else:
-                self.DBUpdate(value)
+                if len(value)!=0:
+                    self.RecursionCommands= value
+                    self.UpdateCommand()
     
     #Returns list of commands that a user can execute based on his/her permission level
     def WriteAuthentication(self):
 
         # Get Database Config #
-        DatabaseConfig = self.DatabaseConfig
+        SystemConfiguration = self.SystemConfiguration
 
         # Connect To DB #
-        DBUsername = str(DatabaseConfig.get('DatabaseUsername'))
-        DBPassword = str(DatabaseConfig.get('DatabasePassword'))
-        DBHost = str(DatabaseConfig.get('DatabaseHost'))
-        DBDatabaseName = str(DatabaseConfig.get('DatabaseName'))
+        DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
+        DBPassword = str(SystemConfiguration.get('DatabasePassword'))
+        DBHost = str(SystemConfiguration.get('DatabaseHost'))
+        DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
 
         # Connect To Database #
         self.DatabaseConnection = pymysql.connect(

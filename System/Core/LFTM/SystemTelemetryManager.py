@@ -17,13 +17,13 @@ from Core.Management.Telemetry.SystemTelemetry import Leader
 
 class SystemTelemetryManager(): # Manages the system telemetry leader class #
 
-    def __init__(self, Logger, Zookeeper, ThreadManager, KafkaConfig):
+    def __init__(self, Logger, Zookeeper, ThreadManager, SystemConfiguration):
 
         # Create Local Pointers To These Objects #
         self.Logger = Logger
         self.Zookeeper = Zookeeper
         self.ThreadManager = ThreadManager
-        self.KafkaConfig = KafkaConfig
+        self.SystemConfiguration = SystemConfiguration
 
 
         # Set Help Strings (NOTE, THE NAMESCHEME IS VERY IMPORTANT! MAKE SURE TO FOLLOW IT! (self.mAPI_[CommandName]_Help = 'HelpString')) #
@@ -40,7 +40,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         self.Logger.Log('Starting System Telemetry Subsystem', 4)
 
         # Instantiate #
-        self.SysTelFollower = Follower(Logger=self.Logger, KafkaConfig=self.KafkaConfig, Zookeeper=self.Zookeeper)
+        self.SysTelFollower = Follower(self.Logger, self.SystemConfiguration, self.Zookeeper)
         self.SysTelLeader = None
 
 
@@ -79,7 +79,7 @@ class SystemTelemetryManager(): # Manages the system telemetry leader class #
         self.Logger.Log('System Telemetry Transition Asserted, Called For Mode "LEADER"', 6)
 
         # Instantiate #
-        self.SysTelLeader = Leader(Logger=self.Logger, KafkaConfig=self.KafkaConfig, Zookeeper=self.Zookeeper)
+        self.SysTelLeader = Leader(self.Logger, self.SystemConfiguration)
 
         # SysTelLeader Thread Creation Process #
         self.Logger.Log('Adding Data Collection Daemon To Thread Manager', 3)

@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `bgdb`.`neuron` (
   `zCoord` INT NULL DEFAULT NULL,
   `assignedNode` VARCHAR(45) NULL,
   `equationId` bigINT NULL DEFAULT NULL,
-  region varchar(40) null,
+  `region` VARCHAR(40) NULL DEFAULT NULL,
   PRIMARY KEY (`neuronId`),
   CONSTRAINT `neuron_fk_equationid`
     FOREIGN KEY (equationId)
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `bgdb`.`user` (
   `firstName` VARCHAR(45) NOT NULL,
   `lastName` VARCHAR(45) NOT NULL,
   `notes` VARCHAR(200) NOT NULL,
-  `accountEnabled` CHAR(1) NOT NULL,
+  `accountEnabled` CHAR(1) NOT NULL DEFAULT 'n',
   `accountExpirationDate` DATETIME NULL DEFAULT NULL,
   `passwordExpirationDate` DATETIME NULL DEFAULT NULL,
   `permissionLevel` INT NOT NULL, 
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `bgdb`.`command` (
   `commandId` BIGINT NOT NULL AUTO_INCREMENT,
   `commandName` VARCHAR(45) NOT NULL,
   `commandDescription` VARCHAR(200) NULL,
-  `permissionLevel` INT NOT NULL,
+  `permissionLevel` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`commandId`))
 ENGINE = InnoDB;
 
@@ -126,6 +126,7 @@ create table if not exists `bgdb`.`log` (
 `FunctionName` varchar(150) null,
 `LogOutput` LONGTEXT,
 `Node` varchar(50) null,
+`Thread` varchar(2000) null,
 primary key (`logId`));
 
 SET SQL_MODE=@OLD_SQL_MODE;
@@ -139,8 +140,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 insert into bgdb.equation values (1, 'e = mc ** 2');
 insert into bgdb.equation values (2, 'c ** 2 = (a ** 2) + (b ** 2)');
 
-insert into bgdb.neuron values (1, 0, 0, 0, 'node1', 1);
-insert into bgdb.neuron values (2, 0, 0, 0, 'node2', 2);
+insert into bgdb.neuron values (1, 0, 0, 0, 'node1', 1, 'region1');
+insert into bgdb.neuron values (2, 0, 0, 0, 'node2', 2, 'region2');
 
 insert into bgdb.synapse values (1, 2, 2, 2, 1, 1);
 insert into bgdb.synapse values (2, 3, 3, 3, 2, 2);
@@ -151,8 +152,8 @@ insert into bgdb.user values (1, 'bleu', 'password', 'salt', 'Brad', 'Leu', 'som
 insert into bgdb.command values (1, 'runSim', 'run the simulation', 1);
 insert into bgdb.command values (2, 'loadNeurons', 'upload neuron data', 5);
 
-insert into bgdb.log (LogLevel, LogDateTime, CallingModule, FunctionName, LogOutput, Node) values (2, current_timestamp,
-'Module1', 'GetImaginaryStuff', 'Error in GetImaginaryStuff', 'Node2');
+insert into bgdb.log (LogLevel, LogDateTime, CallingModule, FunctionName, LogOutput, Node, Thread) values (2, current_timestamp,
+'Module1', 'GetImaginaryStuff', 'Error in GetImaginaryStuff', 'Node2', 'Thread text here');
 --
 --    --sample for encrypting/dectrypting passwords
 --    insert into bgdb.User (user_name, user_password, first_name, last_name) values ('bleu', aes_encrypt('123456', 'bleu'), 'Brad', 'Leu');

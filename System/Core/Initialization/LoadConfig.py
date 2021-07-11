@@ -10,6 +10,19 @@ Description: This function loads and parses the system config file which tells i
 Date-Created: 2020-12-18
 '''
 
+def LoadLocalConfig(ConfigFilePath):
+
+    '''
+    This function loads the local configuration file from the system folder.
+    '''
+
+    # First Read the contents of the file and parse it #
+    with open(ConfigFilePath, 'r') as File:
+        ConfigFileDictionary = yaml.safe_load(File)
+
+    # Return the values #
+    return ConfigFileDictionary
+
 
 def LoadLoggerConfig(ConfigFilePath):
 

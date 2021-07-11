@@ -30,17 +30,17 @@ Date-Created: 2021-01-29
 
 class Follower(): # This Class Gets System Information And Puts It Into Kafka #
 
-    def __init__(self, **kwargs):
+    def __init__(self, Logger, SystemConfig, ZookeeperInstance):
 
 
-        # Extract Logger From kwargs #
-        self.Logger = kwargs['Logger']
-        KafkaConfig = kwargs['KafkaConfig']
-        self.ZK = kwargs['Zookeeper']
+        # Add To Local Pointers #
+        self.Logger = Logger
+        KafkaConfig = SystemConfig
+        self.ZK = ZookeeperInstance
 
         # Get Node HostName  #
         NodeHostname = platform.uname().node
-        self.TopicName = "BrainGenix-NES-SystemTelemetry-" + NodeHostname
+        self.TopicName = 'BrainGenix-NES-SystemTelemetry'
 
         # Get Kafka Host #
         BootstrapAddress = KafkaConfig['KafkaHost']
@@ -137,14 +137,8 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
         # Log AutoRefresh Startup Complete #
         self.Logger.Log('Local System Data Collection Daemon Instantiation Complete', 2)
 
-
-
         # Start Stat Transmission Thread #
         self.Logger.Log('Starting System Telemetry Follower SendStatsThread', 3)
-
-
-
-
 
         # Define KafkaDataSend Thread #
         self.Logger.Log('Creating System Statistics Auto Transmission Thread', 2)
@@ -156,9 +150,6 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
         self.Logger.Log('Starting System Statistics Auto Transmission Thread', 2)
         self.KafkaDataSendThread.start()
         self.Logger.Log('Started System Statistics Auto Transmission Thread', 1)
-
-
-
 
 
     def SendStatsThread(self, ControlQueue, StatisticsQueue): # Send Stats Via Send Command #
@@ -359,15 +350,11 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
         self.SystemHardware.update({'SWAPPercent' : Swap.percent})
 
 
-
-
         # Get Realtime Network Info #
         NetInfo = psutil.net_io_counters()
 
         self.SystemHardware.update({'BytesSent' : NetInfo.bytes_sent})
         self.SystemHardware.update({'BytesRecv' : NetInfo.bytes_recv})
-
-
 
 
         # Get RealTime GPU Info #
@@ -403,11 +390,11 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
 
 class Leader(): # This Class Is Run By The Leader #
 
-    def __init__(self, **kwargs):
+    def __init__(self, Logger, SystemConfiguration):
 
         # Extract Logger From kwargs #
-        self.Logger = kwargs['Logger']
-        self.KafkaConfig = kwargs['KafkaConfig']
+        self.Logger = Logger
+        self.KafkaConfig = SystemConfiguration
 
         self.Info = {}
 
@@ -479,27 +466,7 @@ class Leader(): # This Class Is Run By The Leader #
         # Start Inf Loop #
         while ControlQueue.empty():
 
-
-            # Get Stats #
-            #try:
             self.PullStatsFromZK()
-
-
-            # # Catch Closed Connection Excption #
-            # except Exception as E:
-            #     if str(E) == 'Connection has been closed':
-
-            #         # Log Connection Destroyed #
-            #         self.Logger.Log('Zookeeper Connection Destroyed, Shutting Down System Telemetry Leader Thread', 8)
-            #         sys.exit()
-
-            #     else:
-
-            #         # Log Other Errors #
-            #         self.Logger.Log(f'Exception: {E}', 9)
-
-
-
 
         # Send Shutdown Message #
         self.Logger.Log('Shutting Down Leader Data Collection Daemon', 4)
@@ -536,6 +503,7 @@ class Leader(): # This Class Is Run By The Leader #
             NodeInfoJSONString = NodeInfoJSONBytes.decode('ascii')
             NodeInfoDecoded = json.loads(NodeInfoJSONString)
             self.Info.update({NodeName : NodeInfoDecoded})
+
 
             # Update APIServer Last Communication Date #
             self.NodeInfoDict.update({NodeName : time.time()})
