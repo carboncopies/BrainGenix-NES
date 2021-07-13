@@ -13,12 +13,7 @@ import pymysql
 from Core.VersionData import VersionNumber
 from Core.VersionData import BranchVersion
 
-from Core.Management.API.CommandIndexer import AttributesToDictionary
-from Core.Management.API.CommandIndexer import FilterGetAttributes
-from Core.Management.API.CommandIndexer import GeneratePathTraversals
-from Core.Management.API.CommandIndexer import GetAttributeFromPath
 from Core.Management.API.CommandIndexer import IndexCommands
-from Core.Management.API.CommandIndexer import CreatePath
 from Core.Management.API.CommandIndexer import FilterPaths
 
 '''
@@ -114,7 +109,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Log Completion #
         self.Logger.Log('Command Indexing Complete', 2)
-        
+
 
     def LinkLFTM(self, LFTMInstance): # Link LFTM #
 
@@ -351,7 +346,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             CommandFunction = self
 
             # Iterate Through Layers, Run Command Called #
-            for LayerIndex in range(len(Layers)):
+            for LayerIndex in enumerate(Layers)):
 
                     # Run Command With Prefix Included (mAPI_[Command Name]) #
                     if LayerIndex < (len(Layers) - 1):
@@ -403,7 +398,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             password = DBPassword,
             db = DBDatabaseName
         )
-        
+
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
         
         cur.execute("INSERT INTO command (commandName) VALUES (%s)",(command))    

@@ -10,9 +10,6 @@ Date-Created: 2021-06-30
 '''
 
 
-from typing import Dict
-
-
 
 def AttributesToDictionary(DictionaryTarget, TargetPath, AttributeList): # Converts AttributeList To Dictionary Format #
 
@@ -46,7 +43,7 @@ def FilterGetAttributes(Target): # Returns A Filtered List Of Commands Excluding
 
 
 def GeneratePathTraversals(TargetDictionary, Path=None):
-    
+
     # Check If Path Not Set #
     if not Path:
         Path=[]
@@ -64,7 +61,7 @@ def GeneratePathTraversals(TargetDictionary, Path=None):
                 yield SubAttributeValue
 
     # If Non-Dict Value #
-    else: 
+    else:
         yield Path,TargetDictionary
 
 
