@@ -2,7 +2,7 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
-
+import pymysql
 
 '''
 Name: CLAS
@@ -35,6 +35,19 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         return LogEntries
 
 
+    # TODO: This is moved from the Logger and needs to be adapted/fixed/reworked
+    def PullLog(self, NumberOfLines:int): # Pull n most recent entries from the log table #
+
+        # Pull Lines From Database #
+        PullStatement= ("SELECT * FROM log LIMIT %d" % int(NumberOfLines))
+        self.LoggerCursor.execute(PullStatement)
+
+        Rows = self.LoggerCursor.fetchall()
+
+        # Return Them #
+        return Rows
+
+
     def ProcessLog(self, Lines=500): # Read And Filter Lines From The Log #
 
         # Get Log Text #
@@ -60,3 +73,51 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
 
         # Return Output #
         return Output
+
+
+    # TODO: Below is the code moved from the Logger; it needs to be adapted/fixed/reworked
+
+    # TODO: Remove or rework (Logger instance no longer has a database cursor)
+    # Most probably, just move to the CLAS
+    def PullSort(self, NumberOfLines:int): # Pull Set Number Of Lines And Return A Sorted Output Dictionary #
+
+        # Pull Lines Here #
+        Rows = self.PullLog(NumberOfLines)
+        NodesInList = []
+
+        # Sort Lines #
+        for LineItem in Rows:
+            if LineItem[6] not in NodesInList:
+                NodesInList.append(LineItem[6])
+
+        OutDict = {}
+        for NodeHostName in NodesInList:
+            OutDict.update({NodeHostName : []})
+
+        for LineItem in Rows:
+            OutDict[LineItem[6]].append(LineItem)
+
+        # Return Lines #
+        return OutDict
+
+
+    # TODO: Remove or rework (Logger instance no longer has a database cursor)
+    # Most probably, just move to the CLAS
+    def CheckDelete(self, DeleteDate:str): # Deletes entries from the Log Table prior to a specific date #
+
+        # Delete Old Logs #
+        DeleteStatement= ("DELETE FROM log WHERE LogDatetime < %s" % DeleteDate)
+        self.LoggerCursor.execute(DeleteStatement)
+
+
+    # TODO: Remove or rework (Logger instance no longer has a database cursor)
+    # Most probably, just move to the CLAS
+    def PurgeOldLogs(self): # Automatically Removes Logs As Per The LogFile Retention Policy #
+
+        # Calculate Old Date (Current Date Minus KeepSeconds) #
+        DeleteDateRaw = datetime.datetime.now() - datetime.timedelta(seconds=self.SecondsToKeepLogs)
+        DeleteDate = DeleteDateRaw.strftime('%Y-%m-%d %H:%M:%S')
+
+        # Execute Deletion Command #
+        self.CheckDelete(DeleteDate)
+        

@@ -119,15 +119,13 @@ class SysLog(): # Logger Class #
         # Create Queues #
         self.LogQueue = queue.Queue()
         self.ControlQueue = queue.Queue() # Causes thread exit when item placed in queue
-        self.DBDumper = DatabaseLogTransmissionSystem(self, self.LogQueue, self.ControlQueue, SystemConfiguration)
-        self.DumperThread = threading.Thread(target=self.DBDumper)
-        self.DumperThread.start()
+        self.QueueDBWorker = DatabaseLogTransmissionSystem(self, self.LogQueue, self.ControlQueue, SystemConfiguration)
+        self.QueueDBWorkerThread = threading.Thread(target=self.QueueDBWorker)
+        self.QueueDBWorkerThread.start()
 
 
 
-
-    # TODO: Either rename, or better rework so that it really only colorizes, without printing
-    def ColorizeText(self, Text, Color): # Colorizes And Prints A String Of Text #
+    def ColorizeText(self, Text, Color): # Colorizes A String Of Text #
 
         # Get RGB #
         Red = Color[0]
@@ -189,6 +187,9 @@ class SysLog(): # Logger Class #
         Please note that if you use custom codes, another plugin may conflict with these, so you may want to make it user configurable.
         '''
 
+        # Get time first thing when called to make it more precise (not sure if that's needed, but it seems to have no drawbacks) #
+        LogTime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
         # Reformat Log For Human Readabillity #
         Level = str(Level)
 
@@ -197,14 +198,13 @@ class SysLog(): # Logger Class #
         CallingFunctionName = CallStack[1][3]
         ThreadName = threading.current_thread().name
 
-        LogTime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{ThreadName.rjust(24, " ")}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(23, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}'
 
 
         if self.PrintEnabled:
 
             # Colorize Text #
-            if self.ConsoleColorEnabled == True:
+            if self.ConsoleColorEnabled:
 
                 # Log With Colors #
                 Msg = self.ColorizeText(LogString, self.LevelColors[int(Level)])
@@ -218,71 +218,11 @@ class SysLog(): # Logger Class #
         self.EnqueueLogEntry(Level, str(LogTime), CallingModuleName, CallingFunctionName, Message, str(self.NodeID))
 
 
-    # TODO: Remove or rework (Logger instance no longer has a database cursor)
-    # Most probably, just move to the CLAS
-    def PullLog(self, NumberOfLines:int): # Pull n most recent entries from the log table #
-
-        # Pull Lines From Database #
-        PullStatement= ("SELECT * FROM log LIMIT %d" % int(NumberOfLines))
-        self.LoggerCursor.execute(PullStatement)
-
-        Rows = self.LoggerCursor.fetchall()
-
-        # Return Them #
-        return Rows
-
-
-    # TODO: Remove or rework (Logger instance no longer has a database cursor)
-    # Most probably, just move to the CLAS
-    def PullSort(self, NumberOfLines:int): # Pull Set Number Of Lines And Return A Sorted Output Dictionary #
-
-        # Pull Lines Here #
-        Rows = self.PullLog(NumberOfLines)
-        NodesInList = []
-
-        # Sort Lines #
-        for LineItem in Rows:
-            if LineItem[6] not in NodesInList:
-                NodesInList.append(LineItem[6])
-
-        OutDict = {}
-        for NodeHostName in NodesInList:
-            OutDict.update({NodeHostName : []})
-
-        for LineItem in Rows:
-            OutDict[LineItem[6]].append(LineItem)
-
-        # Return Lines #
-        return OutDict
-
-
-    # TODO: Remove or rework (Logger instance no longer has a database cursor)
-    # Most probably, just move to the CLAS
-    def CheckDelete(self, DeleteDate:str): # Deletes entries from the Log Table prior to a specific date #
-
-        # Delete Old Logs #
-        DeleteStatement= ("DELETE FROM log WHERE LogDatetime < %s" % DeleteDate)
-        self.LoggerCursor.execute(DeleteStatement)
-
-
-    # TODO: Remove or rework (Logger instance no longer has a database cursor)
-    # Most probably, just move to the CLAS
-    def PurgeOldLogs(self): # Automatically Removes Logs As Per The LogFile Retention Policy #
-
-        # Calculate Old Date (Current Date Minus KeepSeconds) #
-        DeleteDateRaw = datetime.datetime.now() - datetime.timedelta(seconds=self.SecondsToKeepLogs)
-        DeleteDate = DeleteDateRaw.strftime('%Y-%m-%d %H:%M:%S')
-
-        # Execute Deletion Command #
-        self.CheckDelete(DeleteDate)
-
-
     def CleanExit(self): # Create Logger Shutdown Command #
 
         # Destroy Connection To Database #
         self.ControlQueue.put('stahp!')
-        self.DumperThread.join()
+        self.QueueDBWorkerThread.join()
 
         # Return Done #
         return
-
