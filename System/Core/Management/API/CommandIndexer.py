@@ -56,7 +56,7 @@ def GeneratePathTraversals(TargetDictionary, Path=None):
     elif isinstance(TargetDictionary, dict):
         for SubAttributeIndex in TargetDictionary.keys():
             SubPath = Path[:]
-            SubPath.append(SubAttributeIndex) 
+            SubPath.append(SubAttributeIndex)
             for SubAttributeValue in GeneratePathTraversals(TargetDictionary[SubAttributeIndex], SubPath):
                 yield SubAttributeValue
 
@@ -105,7 +105,7 @@ def IndexCommands(Target, Logger, RecursionDepth=5): # Creates Dictionary Tree O
 
     # Log Completion #
     Logger.Log('Attribute Dictionary Generated', 2)
-        
+
     # Return Output Dictionay #
     return OutputDictionary
 
