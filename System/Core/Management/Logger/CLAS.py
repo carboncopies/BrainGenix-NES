@@ -2,8 +2,6 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
-import pymysql
-
 '''
 Name: CLAS
 Description: The Centralized Logger Aggregation System is used by the leader to present a unfied system log across the entire BG cluster.
