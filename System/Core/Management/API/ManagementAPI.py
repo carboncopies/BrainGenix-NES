@@ -13,12 +13,7 @@ import pymysql
 from Core.VersionData import VersionNumber
 from Core.VersionData import BranchVersion
 
-from Core.Management.API.CommandIndexer import AttributesToDictionary
-from Core.Management.API.CommandIndexer import FilterGetAttributes
-from Core.Management.API.CommandIndexer import GeneratePathTraversals
-from Core.Management.API.CommandIndexer import GetAttributeFromPath
 from Core.Management.API.CommandIndexer import IndexCommands
-from Core.Management.API.CommandIndexer import CreatePath
 from Core.Management.API.CommandIndexer import FilterPaths
 
 '''
@@ -114,7 +109,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Log Completion #
         self.Logger.Log('Command Indexing Complete', 2)
-        
+
 
     def LinkLFTM(self, LFTMInstance): # Link LFTM #
 
@@ -351,7 +346,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             CommandFunction = self
 
             # Iterate Through Layers, Run Command Called #
-            for LayerIndex in range(len(Layers)):
+            for LayerIndex in enumerate(Layers):
 
                     # Run Command With Prefix Included (mAPI_[Command Name]) #
                     if LayerIndex < (len(Layers) - 1):
@@ -375,7 +370,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Construct Version Information #
         Version = f'BrainGenix-NES (Neuron Emulation System) [{BranchVersionType} Branch] [{VersionNumber}]'
-        
+
         # Return Version String #
         return Version
 
@@ -384,9 +379,9 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Return License Text #
         return self.LicenseText
-    
+
     def DBUpdate(self, SystemConfiguration:dict, command:str): # Executes SQL queries to update commands into the bgdb.Command table #
-        
+
         # Get Database Config #
         SystemConfiguration = self.SystemConfiguration
 
@@ -403,16 +398,16 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             password = DBPassword,
             db = DBDatabaseName
         )
-        
+
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
-        
-        cur.execute("INSERT INTO command (commandName) VALUES (%s)",(command))    
-        
+
+        cur.execute("INSERT INTO command (commandName) VALUES (%s)",(command))
+
         self.DatabaseConnection.close()
-        
-    
+
+
     def UpdateCommand(self): # Updates commands to bgdb.Command table to establish usage permission levels #
-        
+
         # Can we add more comments here explaining this?
 
         for key, value in self.RecursionCommands.items():
@@ -421,7 +416,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                 if len(value)!=0:
                     self.RecursionCommands= value
                     self.UpdateCommand()
-    
+
     #Returns list of commands that a user can execute based on his/her permission level
     def WriteAuthentication(self):
 
@@ -441,9 +436,9 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             password = DBPassword,
             db = DBDatabaseName
         )
-        
+
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
-        
+
         rows = cur.execute("SELECT * FROM user WHERE userName=%s AND passwordHash=%s",(DBUsername,DBPassword))
 
         if rows!=0:
@@ -461,7 +456,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         else:
             print("No matching user found in Database.")
-            
+
         self.DatabaseConnection.close()
         
     def addUser(self, SystemConfiguration:dict, userName:str, passwordHash:str, salt:str, firstName:str, lastName:str, notes:str, permissionLevel:int):
@@ -488,7 +483,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         cur.execute("INSERT INTO user (userName, passwordHash, salt, firstName, lastName, notes, permissionLevel) VALUES (%s,%s,%s,%s,%s,%s,%d)",(userName, passwordHash, salt, firstName, lastName, notes, permissionLevel))    
         
         self.DatabaseConnection.close()
-         
 
     def mAPI_TestAPI(self, ArgumentsDictionary): # Returns A Test String #
 

@@ -10,9 +10,6 @@ Date-Created: 2021-06-30
 '''
 
 
-from typing import Dict
-
-
 
 def AttributesToDictionary(DictionaryTarget, TargetPath, AttributeList): # Converts AttributeList To Dictionary Format #
 
@@ -46,7 +43,7 @@ def FilterGetAttributes(Target): # Returns A Filtered List Of Commands Excluding
 
 
 def GeneratePathTraversals(TargetDictionary, Path=None):
-    
+
     # Check If Path Not Set #
     if not Path:
         Path=[]
@@ -59,12 +56,12 @@ def GeneratePathTraversals(TargetDictionary, Path=None):
     elif isinstance(TargetDictionary, dict):
         for SubAttributeIndex in TargetDictionary.keys():
             SubPath = Path[:]
-            SubPath.append(SubAttributeIndex) 
+            SubPath.append(SubAttributeIndex)
             for SubAttributeValue in GeneratePathTraversals(TargetDictionary[SubAttributeIndex], SubPath):
                 yield SubAttributeValue
 
     # If Non-Dict Value #
-    else: 
+    else:
         yield Path,TargetDictionary
 
 
@@ -108,13 +105,13 @@ def IndexCommands(Target, Logger, RecursionDepth=5): # Creates Dictionary Tree O
 
     # Log Completion #
     Logger.Log('Attribute Dictionary Generated', 2)
-        
+
     # Return Output Dictionay #
     return OutputDictionary
 
 
 def CreatePath(Target, Path):
-    
+
     # Set Up Working Target #
     WorkingTarget = Target
 
@@ -124,7 +121,7 @@ def CreatePath(Target, Path):
         # Check If Target Does Not Have Attribute #
         if not PathNameString in WorkingTarget:
             WorkingTarget.update({PathNameString : {}})
-        
+
         # Update Working Target #
         WorkingTarget = WorkingTarget[PathNameString]
 
