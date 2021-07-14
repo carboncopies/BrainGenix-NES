@@ -370,7 +370,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Construct Version Information #
         Version = f'BrainGenix-NES (Neuron Emulation System) [{BranchVersionType} Branch] [{VersionNumber}]'
-        
+
         # Return Version String #
         return Version
 
@@ -401,7 +401,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
         
-        cur.execute("INSERT INTO command (commandName) VALUES (%s)",(command))    
+        cur.execute("INSERT INTO command (commandName) VALUES (%s)",(command))
         
         self.DatabaseConnection.close()
         

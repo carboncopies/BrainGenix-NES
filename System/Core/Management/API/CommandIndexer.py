@@ -111,7 +111,7 @@ def IndexCommands(Target, Logger, RecursionDepth=5): # Creates Dictionary Tree O
 
 
 def CreatePath(Target, Path):
-    
+
     # Set Up Working Target #
     WorkingTarget = Target
 
