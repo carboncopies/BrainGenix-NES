@@ -456,7 +456,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         else:
             print("No matching user found in Database.")
-            
+
         self.DatabaseConnection.close()
 
 
