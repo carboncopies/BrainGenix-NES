@@ -381,7 +381,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         return self.LicenseText
 
     def DBUpdate(self, SystemConfiguration:dict, command:str): # Executes SQL queries to update commands into the bgdb.Command table #
-        
+
         # Get Database Config #
         SystemConfiguration = self.SystemConfiguration
 
@@ -400,14 +400,14 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         )
 
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
-        
+
         cur.execute("INSERT INTO command (commandName) VALUES (%s)",(command))
-        
+
         self.DatabaseConnection.close()
-        
-    
+
+
     def UpdateCommand(self): # Updates commands to bgdb.Command table to establish usage permission levels #
-        
+
         # Can we add more comments here explaining this?
 
         for key, value in self.RecursionCommands.items():
@@ -416,7 +416,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                 if len(value)!=0:
                     self.RecursionCommands= value
                     self.UpdateCommand()
-    
+
     #Returns list of commands that a user can execute based on his/her permission level
     def WriteAuthentication(self):
 
@@ -436,9 +436,9 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             password = DBPassword,
             db = DBDatabaseName
         )
-        
+
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
-        
+
         rows = cur.execute("SELECT * FROM user WHERE userName=%s AND passwordHash=%s",(DBUsername,DBPassword))
 
         if rows!=0:
@@ -458,7 +458,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             print("No matching user found in Database.")
             
         self.DatabaseConnection.close()
-            
+
 
     def mAPI_TestAPI(self, ArgumentsDictionary): # Returns A Test String #
 
