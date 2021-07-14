@@ -121,7 +121,7 @@ def CreatePath(Target, Path):
         # Check If Target Does Not Have Attribute #
         if not PathNameString in WorkingTarget:
             WorkingTarget.update({PathNameString : {}})
-        
+
         # Update Working Target #
         WorkingTarget = WorkingTarget[PathNameString]
 

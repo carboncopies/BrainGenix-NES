@@ -379,7 +379,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         # Return License Text #
         return self.LicenseText
-    
+
     def DBUpdate(self, SystemConfiguration:dict, command:str): # Executes SQL queries to update commands into the bgdb.Command table #
         
         # Get Database Config #
