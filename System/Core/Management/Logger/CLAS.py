@@ -81,15 +81,6 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         return CommandOutput
 
 
-    # # TODO: This is moved from the Logger and needs to be adapted/fixed/reworked
-    # def PullLog(self, NumberOfLines:int): # Pull n most recent entries from the log table #
-
-
-
-    #     # Return Them #
-    #     return Rows
-
-
     def ProcessLog(self, Lines=500): # Read And Filter Lines From The Log #
 
         # Get Log Text #
