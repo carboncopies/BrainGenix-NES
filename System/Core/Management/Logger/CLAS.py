@@ -46,12 +46,21 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         self.LoggerCursor = self.DatabaseConnection.cursor()
         self.Logger.Log('Created CLAS Cursor', 1)
 
+
+        # Create Help Strings #
+        self.Logger.Log('Setting CLAS mAPI Help Strings', 2)
+        self.mAPI_ReadLog_Help = ''
+        self.Logger.Log('Set CLAS mAPI Help Strings', 1)
+
         # Finalize Init #
         self.Logger.Log('Finished CLAS Initialization', 3)
 
 
 
-    def ReadLog(self, Lines=500): # Read Lines From The Log, Default=500Lines #
+    def mAPI_ReadLog(self, APIArgs): # Read Lines From The Log, Default=500Lines #
+
+        # Get Lines Param From APIArgs Dict #
+        Lines = APIArgs['Lines']
 
         # Get Log Text #
         LogEntries = self.Logger.PullLog(Lines)
