@@ -26,17 +26,37 @@ class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The D
 
         # TODO: Wrap further initialization in try/except; log errors in case there are any
         # Connect To DB #
-        DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
-        DBPassword = str(SystemConfiguration.get('DatabasePassword'))
-        DBHost = str(SystemConfiguration.get('DatabaseHost'))
-        DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
-        print(DBUsername, DBPassword, DBHost, DBDatabaseName)
-        # Connect To Database #
+        # DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
+        # DBPassword = str(SystemConfiguration.get('DatabasePassword'))
+        # DBHost = str(SystemConfiguration.get('DatabaseHost'))
+        # DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
+        # print(DBUsername, DBPassword, DBHost, DBDatabaseName)
+        # # Connect To Database #
+        # self.DatabaseConnection = pymysql.connect(
+        #     host = DBHost,
+        #     user = DBUsername,
+        #     password = DBPassword,
+        #     db = DBDatabaseName
+        # )
+        self.SystemConfiguration = SystemConfiguration
+                # Read MYSQL Information From System Configuration Dictionary #
+        self.Logger.Log('Reading CLAS Configuration Parameters From Local Configuration File', 2)
+        MySQLUname = self.SystemConfiguration['DatabaseUsername']
+        MySQLPassword = self.SystemConfiguration['DatabasePassword']
+        MySQLHost = self.SystemConfiguration['DatabaseHost']
+        MySQLName = self.SystemConfiguration['DatabaseName']
+        self.Logger.Log('Read CLAS Configuration Parameters', 1)
+
+        # Connect To DB Server #
+        self.Logger.Log('Creating CLAS PymySQL Instance, Connecting To Database Server', 2)
+        # import time
+        # time.sleep(5)
+        print(MySQLPassword, MySQLHost, MySQLName, MySQLUname)
         self.DatabaseConnection = pymysql.connect(
-            host = DBHost,
-            user = DBUsername,
-            password = DBPassword,
-            db = DBDatabaseName
+            host = MySQLHost,
+            user = MySQLUname,
+            password = MySQLPassword,
+            db = MySQLName
         )
 
         # Create Database Cursor #
