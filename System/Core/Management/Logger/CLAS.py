@@ -2,6 +2,8 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
+import pymysql
+
 '''
 Name: CLAS
 Description: The Centralized Logger Aggregation System is used by the leader to present a unfied system log across the entire BG cluster.
@@ -18,6 +20,22 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
 
         # Print "Welcome" Message #
         self.Logger.Log('Initializing Centralized Logger Aggregation System')
+
+
+        # Read MYSQL Information From System Configuration Dictionary #
+        MySQLUname = self.SystemConfiguration['DatabaseUsername']
+        MySQLPassword = self.SystemConfiguration['DatabasePassword']
+        MySQLHost = self.SystemConfiguration['DatabaseHost']
+        MySQLName = self.SystemConfiguration['DatabaseName']
+
+        # Connect To DB Server #
+        self.DatabaseConnection = pymysql.connect(
+            host = DBHost,
+            user = DBUsername,
+            password = DBPassword,
+            db = DBDatabaseName
+        )
+
 
         # Finalize Init #
         self.Logger.Log('Finished CLAS Initialization')
