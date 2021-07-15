@@ -318,10 +318,14 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Get Attributes #
         AttrTarget = self.LFTM
 
-        if TargetPath != "":
+        if TargetPath != '':
 
             for TargetPathName in TargetPath.split('.'):
                 AttrTarget = getattr(AttrTarget, TargetPathName)
+
+        elif TargetPath == '.':
+            AttrTarget = self.LFTM
+
 
         Attributes = dir(AttrTarget)
 
