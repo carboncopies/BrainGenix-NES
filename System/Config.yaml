@@ -14,7 +14,7 @@ KafkaPort: 9092
 
 LogPath: ../Logs/ # Set The Path For Logs
 PrintLogText: True # Enable or Disable Printing Logs
-SecondsToKeepLogs: 1  # Define The Number Of Seconds To Keep Logs Before They Are Purged
+SecondsToKeepLogs: 15768000  # Define The Number Of Seconds To Keep Logs Before They Are Purged
 ConsoleOutputEnabled: True # Enable or disable console output
 ConsoleColorEnabled: True # Enable or disable console color output
 
