@@ -56,7 +56,7 @@ sCLAS = CentralizedLoggerAggregationSystem(mLogger, SystemConfiguration)
 
 
 # Connect To DB #
-sDatabaseInterface = mThreadManagerInstance.InstantiateDB(mLogger, SystemConfiguration)
+# = mThreadManagerInstance.InstantiateDB(mLogger, SystemConfiguration)
 
 
 # Start API Server #
