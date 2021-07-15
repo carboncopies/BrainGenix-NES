@@ -16,7 +16,7 @@ from Core.Management.Logger.LogDeletionSystem import LogAutoDeletionSystem
 
 
 
-class SystemTelemetryManager(): # Manages the system telemetry leader class #
+class LADSManager(): # Manages the system telemetry leader class #
 
     def __init__(self, Logger, Zookeeper, ThreadManager, SystemConfiguration):
 
