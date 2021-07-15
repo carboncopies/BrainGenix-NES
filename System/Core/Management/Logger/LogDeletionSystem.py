@@ -67,7 +67,15 @@ class LogAutoDeletionSystem(): # Create Class To Hold Log Auto Deletion System #
         # Enter Polling Loop #
         while self.ControlQueue.empty():
 
-            
+
+            # Calculate Old Date (Current Date Minus KeepSeconds) #
+            DeleteDateRaw = datetime.datetime.now() - datetime.timedelta(seconds=self.SecondsToKeepLogs)
+            DeleteDate = DeleteDateRaw.strftime('%Y-%m-%d %H:%M:%S')
+
+            # Delete Old Logs #
+            DeleteStatement= ("DELETE FROM log WHERE LogDatetime < %s" % DeleteDate)
+            self.LoggerCursor.execute(DeleteStatement)
+
 
             # Delay For Set Polling Interval #
             time.sleep(self.PollingInterval)
