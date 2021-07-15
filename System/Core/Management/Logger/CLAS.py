@@ -67,7 +67,7 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         self.LoggerCursor.execute(PullStatement)
 
         LogEntries = self.LoggerCursor.fetchall()
-
+        print(LogEntries)
 
         # Return Log Text #
         return LogEntries
