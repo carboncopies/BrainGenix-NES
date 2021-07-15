@@ -81,10 +81,13 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         return CommandOutput
 
 
-    def ProcessLog(self, Lines=500): # Read And Filter Lines From The Log #
+    def mAPI_ProcessLog(self, APIArgs): # Read And Filter Lines From The Log #
+
+        # Get Lines Param From APIArgs Dict #
+        NumLines = APIArgs['Lines']
 
         # Get Log Text #
-        LogEntries = self.Logger.PullLog(Lines)
+        LogEntries = self.Logger.PullLog(NumLines)
 
         # Identify Nodes #
         Nodes = []
