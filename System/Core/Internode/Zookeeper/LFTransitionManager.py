@@ -39,7 +39,7 @@ class LFTM(): # Define Class Object #
 
         ## INCLUDE INITIALIZATION CALLS BELOW TO START SUBSYSTEMS ##
         self.SystemTelemetryManager.StartSystem()
-        self.LADSManager.StartStystem()
+        self.LADSManager.StartSystem()
 
 
         # Log End Message #
