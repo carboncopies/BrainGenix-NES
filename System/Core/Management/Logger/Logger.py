@@ -126,8 +126,6 @@ class SysLog(): # Logger Class #
         self.QueueDBWorkerThread = threading.Thread(target=self.QueueDBWorker)
         self.QueueDBWorkerThread.start()
 
-    #def InitializeCLAS(self): # Initializes CLAS #
-
         # Initialize CLAS #
         self.CLAS = CentralizedLoggerAggregationSystem(self, self.SystemConfiguration)
 
