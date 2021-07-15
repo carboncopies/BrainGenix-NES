@@ -60,26 +60,26 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
     def mAPI_ReadLog(self, APIArgs): # Read Lines From The Log, Default=500Lines #
 
         # Get Lines Param From APIArgs Dict #
-        Lines = APIArgs['Lines']
+        NumLines = APIArgs['Lines']
 
         # Get Log Text #
-        LogEntries = self.Logger.PullLog(Lines)
+        PullStatement= ("SELECT * FROM log LIMIT %d" % int(NumLines))
+        self.LoggerCursor.execute(PullStatement)
+
+        LogEntries = self.LoggerCursor.fetchall()
+
 
         # Return Log Text #
         return LogEntries
 
 
-    # TODO: This is moved from the Logger and needs to be adapted/fixed/reworked
-    def PullLog(self, NumberOfLines:int): # Pull n most recent entries from the log table #
+    # # TODO: This is moved from the Logger and needs to be adapted/fixed/reworked
+    # def PullLog(self, NumberOfLines:int): # Pull n most recent entries from the log table #
 
-        # Pull Lines From Database #
-        PullStatement= ("SELECT * FROM log LIMIT %d" % int(NumberOfLines))
-        self.LoggerCursor.execute(PullStatement)
 
-        Rows = self.LoggerCursor.fetchall()
 
-        # Return Them #
-        return Rows
+    #     # Return Them #
+    #     return Rows
 
 
     def ProcessLog(self, Lines=500): # Read And Filter Lines From The Log #
