@@ -67,15 +67,18 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         self.LoggerCursor.execute(PullStatement)
 
         LogEntries = self.LoggerCursor.fetchall()
-        print(LogEntries)
+        CommandOutput = []
+
         # Convert Datetime Objects To Unix Epoch Time (UTC) #
         for LogEntry in LogEntries:
-            print(LogEntry)
-            LogEntry[2] = LogEntry[2].timestamp()
-        print(LogEntries)
+
+            OutputEntry = list(LogEntry)
+            OutputEntry = OutputEntry[2].timestamp()
+
+            CommandOutput.append(OutputEntry)
 
         # Return Log Text #
-        return LogEntries
+        return CommandOutput
 
 
     # # TODO: This is moved from the Logger and needs to be adapted/fixed/reworked
