@@ -51,10 +51,6 @@ mLogger = InstantiateLogger(SystemConfiguration)
 mThreadManagerInstance = ThreadManager(mLogger)
 
 
-# Initialize CLAS #
-sCLAS = CentralizedLoggerAggregationSystem(mLogger, SystemConfiguration)
-
-
 # Connect To DB #
 # = mThreadManagerInstance.InstantiateDB(mLogger, SystemConfiguration)
 
