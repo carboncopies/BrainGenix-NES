@@ -17,6 +17,7 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
 
         # Create Local Pointers To Logger Object #
         self.Logger = Logger
+        self.SystemConfiguration = SystemConfiguration
 
         # Print "Welcome" Message #
         self.Logger.Log('Initializing Centralized Logger Aggregation System', 4)
