@@ -228,6 +228,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         try:
                             self.Command = json.loads(self.Command)
                         except json.decoder.JSONDecodeError:
+                            print(self.Command)
                             self.Logger.Log('Management API Socket Connection Forcibly Terminated', 6)
 
                         # Check That Command Syntax Is Correct #
