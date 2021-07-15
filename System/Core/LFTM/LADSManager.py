@@ -52,7 +52,7 @@ class LADSManager(): # Manages the system telemetry leader class #
         self.Logger.Log('Adding LADS Daemon To Thread Manager', 3)
 
         self.Logger.Log('Adding LADS Daemon Control Queue To Thread Manager', 2)
-        self.ThreadManager.ControlQueues.append(self.LADSDaemon.ControlQueueDataCollectionDaemon)
+        self.ThreadManager.ControlQueues.append(self.LADSDaemon.ControlQueue)
         self.Logger.Log('Added LADS Daemon To Control Queue List', 1)
 
         self.Logger.Log('Adding LADS Thread Object To Thread Manager', 2)
