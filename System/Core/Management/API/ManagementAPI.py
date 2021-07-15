@@ -225,8 +225,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     if self.Command != None:
 
                         # Convert To Dict From JSON #
-                        self.Command = json.loads(self.Command)
-
+                        try:
+                            self.Command = json.loads(self.Command)
+                        except json.decoder.JSONDecodeError:
+                            self.Logger.Log('Management API Socket Connection Forcibly Terminated', 6)
 
                         # Check That Command Syntax Is Correct #
                         if str(type(self.Command)) != "<class 'dict'>":
