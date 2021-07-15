@@ -66,7 +66,7 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         PullStatement= ("SELECT * FROM log LIMIT %d" % int(NumLines))
         self.LoggerCursor.execute(PullStatement)
 
-        LogEntries = self.LoggerCursor.fetchall()
+        LogEntries = self.LoggerCursor.fetchall()[0]
 
         # Convert Datetime Objects To Unix Epoch Time (UTC) #
         for LogEntry in LogEntries:
