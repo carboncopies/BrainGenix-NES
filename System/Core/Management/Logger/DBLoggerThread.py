@@ -30,7 +30,7 @@ class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The D
         DBPassword = str(SystemConfiguration.get('DatabasePassword'))
         DBHost = str(SystemConfiguration.get('DatabaseHost'))
         DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
-
+        print(DBUsername, DBPassword, DBHost, DBDatabaseName)
         # Connect To Database #
         self.DatabaseConnection = pymysql.connect(
             host = DBHost,
