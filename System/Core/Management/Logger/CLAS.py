@@ -71,7 +71,7 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         # Convert Datetime Objects To Unix Epoch Time (UTC) #
         for LogEntry in LogEntries:
             print(LogEntry)
-            LogEntry[2] = LogEntry[2].total_seconds()
+            LogEntry[2] = LogEntry[2].timestamp()
         print(LogEntries)
 
         # Return Log Text #
