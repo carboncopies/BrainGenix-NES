@@ -3,6 +3,7 @@
 ###########################################################
 
 import datetime
+import time
 import pymysql
 import threading
 
@@ -14,12 +15,14 @@ Date-Created: 2021-07-15
  
 class LogAutoDeletionSystem(): # Create Class To Hold Log Auto Deletion System #
 
-    def __init__(self, Logger:object, ControlQueue: object, SystemConfiguration:dict): # Initialize The System #
+
+    def __init__(self, Logger:object, ControlQueue: object, SystemConfiguration:dict, PollingInterval:int=5): # Initialize The System #
 
         # Create Local Variables #
         self.Logger = Logger
         self.ControlQueue = ControlQueue
         self.SystemConfiguration = SystemConfiguration
+        self.PollingInterval = PollingInterval
 
         # Log Init Start #
         self.Logger.Log('Initializing Log AutoDeletion Thread', 3)
@@ -64,3 +67,7 @@ class LogAutoDeletionSystem(): # Create Class To Hold Log Auto Deletion System #
         # Enter Polling Loop #
         while self.ControlQueue.empty():
 
+            
+
+            # Delay For Set Polling Interval #
+            time.sleep(self.PollingInterval)
