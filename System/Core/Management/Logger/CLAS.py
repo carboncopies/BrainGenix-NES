@@ -73,7 +73,7 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         for LogEntry in LogEntries:
 
             OutputEntry = list(LogEntry)
-            OutputEntry = OutputEntry[2].timestamp()
+            OutputEntry[2] = OutputEntry[2].timestamp()
 
             CommandOutput.append(OutputEntry)
 
