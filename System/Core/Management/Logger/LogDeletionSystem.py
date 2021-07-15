@@ -28,11 +28,17 @@ class LogAutoDeletionSystem(): # Create Class To Hold Log Auto Deletion System #
         self.Logger.Log('Initializing Log AutoDeletion Thread', 3)
 
         # Create Thread Object #
+        self.Logger.Log('Creating LADS Daemon Thread', 2)
         self.UpdateThread = threading.Thread(
             target=self.DeleteLogThread, 
             args=(), 
             name='Log Auto Deletion System'
         )
+        self.Logger.Log('Created LADS Daemon Thread', 1)
+
+        self.Logger.Log('Starting LADS Daemon Thread', 2)
+        self.UpdateThread.start()
+        self.Logger.Log('Started LADS Daemon Thread', 1)
 
 
     def DeleteLogThread(self): # Thread Target That Deletes Old Logs #
