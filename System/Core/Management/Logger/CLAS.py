@@ -81,34 +81,7 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         return CommandOutput
 
 
-    def mAPI_ProcessLog(self, APIArgs): # Read And Filter Lines From The Log #
 
-        # Get Lines Param From APIArgs Dict #
-        NumLines = APIArgs['Lines']
-
-        # Get Log Text #
-        LogEntries = self.Logger.PullLog(NumLines)
-
-        # Identify Nodes #
-        Nodes = []
-
-        for Item in LogEntries:
-            if Item[6] not in Nodes:
-                Nodes.append(Item[6])
-
-        # Generate Output Format #
-        Output = {}
-
-        for NodeName in Nodes:
-            Output.update({NodeName : []})
-
-        # Sort Into List #
-        for LogItem in LogEntries:
-            LineNodeName = LogItem[6]
-            Output[LineNodeName].append(LogItem)
-
-        # Return Output #
-        return Output
 
 
     # TODO: Below is the code moved from the Logger; it needs to be adapted/fixed/reworked
