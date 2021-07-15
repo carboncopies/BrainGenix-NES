@@ -43,7 +43,7 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
 
         # Create Database Cursor #
         self.Logger.Log('Creating CLAS Daemon Cursor', 2)
-        #self.LoggerCursor = self.DatabaseConnection.cursor()
+        self.LoggerCursor = self.DatabaseConnection.cursor()
         self.Logger.Log('Created CLAS Cursor', 1)
 
         # Finalize Init #
