@@ -24,6 +24,10 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         self.Logger.Log('Initializing Centralized Logger Aggregation System', 4)
 
 
+        # Read Log Retention Second Number #
+        self.SecondsToKeepLogs = int(SystemConfiguration['SecondsToKeepLogs'])
+
+
         # Read MYSQL Information From System Configuration Dictionary #
         self.Logger.Log('Reading CLAS Configuration Parameters From Local Configuration File', 2)
         DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
@@ -31,6 +35,7 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         DBHost = str(SystemConfiguration.get('DatabaseHost'))
         DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
         self.Logger.Log('Read CLAS Configuration Parameters', 1)
+
 
         # Connect To DB Server #
         self.Logger.Log('Creating CLAS PymySQL Instance, Connecting To Database Server', 2)
@@ -47,11 +52,11 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         self.LoggerCursor = self.DatabaseConnection.cursor()
         self.Logger.Log('Created CLAS Cursor', 1)
 
-
         # Create Help Strings #
         self.Logger.Log('Setting CLAS mAPI Help Strings', 2)
         self.mAPI_ReadLog_Help = ''
         self.Logger.Log('Set CLAS mAPI Help Strings', 1)
+
 
         # Finalize Init #
         self.Logger.Log('Finished CLAS Initialization', 3)
