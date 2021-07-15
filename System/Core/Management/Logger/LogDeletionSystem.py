@@ -79,3 +79,17 @@ class LogAutoDeletionSystem(): # Create Class To Hold Log Auto Deletion System #
 
             # Delay For Set Polling Interval #
             time.sleep(self.PollingInterval)
+
+
+        # Shutdown Thread #
+        self.Logger.Log('Shutting Down LADS Daemon', 4)
+        
+        self.Logger.Log('Committing Outstanding Cursor Queries', 2)
+        self.DatabaseConnection.commit()
+        self.Logger.Log('Committed Oustanding Queries', 1)
+
+        self.Logger.Log('Closing Log AutoDeletion System MySQL Instance', 2)
+        self.DatabaseConnection.close()
+        self.Logger.Log('Closed Log AutoDeletion System Connection', 1)
+
+        self.Logger.Log('Log AutoDeletion System UnInit Completed', 3)
