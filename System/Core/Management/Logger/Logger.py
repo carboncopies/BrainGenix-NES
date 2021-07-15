@@ -11,6 +11,7 @@ import socket
 import queue
 
 from Core.Management.Logger.DBLoggerThread import DatabaseLogTransmissionSystem
+from Core.Management.Logger.CLAS import CentralizedLoggerAggregationSystem
 
 '''
 Name: SysLog
@@ -79,6 +80,8 @@ class SysLog(): # Logger Class #
         ConsoleOutputEnabled = bool(SystemConfiguration.get('ConsoleOutputEnabled'))
         self.ConsoleColorEnabled = bool(SystemConfiguration.get('ConsoleColorEnabled'))
 
+        self.SystemConfiguration = SystemConfiguration
+
         # Logger Config Params #
         self.LevelColors = SystemConfiguration['LogLevelColors']
         self.LevelNames = SystemConfiguration['LogLevelNames']
@@ -122,7 +125,6 @@ class SysLog(): # Logger Class #
         self.QueueDBWorker = DatabaseLogTransmissionSystem(self, self.LogQueue, self.ControlQueue, SystemConfiguration)
         self.QueueDBWorkerThread = threading.Thread(target=self.QueueDBWorker)
         self.QueueDBWorkerThread.start()
-
 
 
     def ColorizeText(self, Text, Color): # Colorizes A String Of Text #
