@@ -19,26 +19,29 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         self.Logger = Logger
 
         # Print "Welcome" Message #
-        self.Logger.Log('Initializing Centralized Logger Aggregation System')
+        self.Logger.Log('Initializing Centralized Logger Aggregation System', 4)
 
 
         # Read MYSQL Information From System Configuration Dictionary #
+        self.Logger.Log('Reading CLAS Configuration Parameters From Local Configuration File', 2)
         MySQLUname = self.SystemConfiguration['DatabaseUsername']
         MySQLPassword = self.SystemConfiguration['DatabasePassword']
         MySQLHost = self.SystemConfiguration['DatabaseHost']
         MySQLName = self.SystemConfiguration['DatabaseName']
+        self.Logger.Log('Read CLAS Configuration Parameters', 1)
 
         # Connect To DB Server #
+        self.Logger.Log('Creating CLAS PymySQL Instance, Connecting To Database Server', 2)
         self.DatabaseConnection = pymysql.connect(
-            host = DBHost,
-            user = DBUsername,
-            password = DBPassword,
-            db = DBDatabaseName
+            host = MySQLHost,
+            user = MySQLUname,
+            password = MySQLPassword,
+            db = MySQLName
         )
-
+        self.Logger.Log('Created CLAS PymySQL Instance', 1)
 
         # Finalize Init #
-        self.Logger.Log('Finished CLAS Initialization')
+        self.Logger.Log('Finished CLAS Initialization', 3)
 
 
 
