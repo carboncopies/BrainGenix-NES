@@ -52,7 +52,7 @@ mThreadManagerInstance = ThreadManager(mLogger)
 
 
 # Initialize CLAS #
-sCLAS = CentralizedLoggerAggregationSystem(mLogger)
+sCLAS = CentralizedLoggerAggregationSystem(mLogger, SystemConfiguration)
 
 
 # Connect To DB #
