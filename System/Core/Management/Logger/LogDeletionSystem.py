@@ -46,6 +46,9 @@ class LogAutoDeletionSystem(): # Create Class To Hold Log Auto Deletion System #
         # Log Initialization #
         self.Logger.Log('Log Deletion Thread Created')
 
+        # Get Seconds To Keep Logs #
+        self.SecondsToKeepLogs = self.SystemConfiguration['SecondsToKeepLogs']
+
         # Connect To MySQL Server #
         self.Logger.Log('Reading LADS AutoDeletion Configuration Parameters From Local Configuration File', 2)
         DBUsername = str(self.SystemConfiguration.get('DatabaseUsername'))
