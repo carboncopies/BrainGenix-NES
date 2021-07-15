@@ -11,7 +11,7 @@ Date-Created: 2021-06-03
 import sys
 
 from Core.LFTM.SystemTelemetryManager import SystemTelemetryManager
-
+from Core.LFTM.SystemTelemetryManager import LADSManager
 
 class LFTM(): # Define Class Object #
 
@@ -35,10 +35,11 @@ class LFTM(): # Define Class Object #
 
         # Create Instances Of Requested Systems #                                   # ADD YOUR FUNCTION CALL BELOW HERE!
         self.SystemTelemetryManager = SystemTelemetryManager(self.Logger, self.ZookeeperInstance, self.ThreadManager, self.KafkaConfig)
-
+        self.LADSManager = LADSManager(self.Logger, self.ZookeeperInstance, self.ThreadManager, self.KafkaConfig)
 
         ## INCLUDE INITIALIZATION CALLS BELOW TO START SUBSYSTEMS ##
         self.SystemTelemetryManager.StartSystem()
+        self.LADSManager.StartStystem()
 
 
         # Log End Message #
@@ -83,6 +84,7 @@ class LFTM(): # Define Class Object #
 
                     # Call Transition Functions #                                   # ADD YOUR FUNCTION CALL BELOW HERE!
                     self.SystemTelemetryManager.TransitionFollower()
+                    self.LADSManager.TransitionFollower()
 
 
                 elif ((self.HasZookeeperStateChanged) and (self.CurrentZookeeperState == 'Leader')):
@@ -93,6 +95,7 @@ class LFTM(): # Define Class Object #
 
                     # Call Transition Functions #                                   # ADD YOUR FUNCTION CALL BELOW HERE!
                     self.SystemTelemetryManager.TransitionLeader()
+                    self.LADSManager.TransitionLeader()
 
 
 
@@ -101,6 +104,7 @@ class LFTM(): # Define Class Object #
 
                     # Execute Follower Main Loop Calls #                            # ADD YOUR FUNCTION CALL BELOW HERE!
                     self.SystemTelemetryManager.UpdateFollower()
+                    self.LADSManager.UpdateFollower()
 
 
 
@@ -108,6 +112,7 @@ class LFTM(): # Define Class Object #
 
                     # Execute Leader Main Loop Calls #                              # ADD YOUR FUNCTION CALL BELOW HERE!
                     self.SystemTelemetryManager.UpdateLeader()
+                    self.LADSManager.UpdateLeader()
 
 
 
