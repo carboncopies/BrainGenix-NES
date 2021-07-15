@@ -314,7 +314,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         TargetPath = ArgumentsDictionary['Path']
 
         # Get Attributes #
-        AttrTarget = self
+        AttrTarget = self.LFTM
 
         if TargetPath != "":
 
