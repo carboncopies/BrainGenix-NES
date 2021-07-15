@@ -13,7 +13,7 @@ Date-Created: 2021-04-25
 
 class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
 
-    def __init__(self, Logger): # Initialization Function #
+    def __init__(self, Logger:object, SystemConfiguration:dict): # Initialization Function #
 
         # Create Local Pointers To Logger Object #
         self.Logger = Logger
