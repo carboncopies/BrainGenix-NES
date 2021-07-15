@@ -25,39 +25,20 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
 
         # Read MYSQL Information From System Configuration Dictionary #
         self.Logger.Log('Reading CLAS Configuration Parameters From Local Configuration File', 2)
-        MySQLUname = self.SystemConfiguration['DatabaseUsername']
-        MySQLPassword = self.SystemConfiguration['DatabasePassword']
-        MySQLHost = self.SystemConfiguration['DatabaseHost']
-        MySQLName = self.SystemConfiguration['DatabaseName']
-        self.Logger.Log('Read CLAS Configuration Parameters', 1)
-
-        # Connect To DB Server #
-        self.Logger.Log('Creating CLAS PymySQL Instance, Connecting To Database Server', 2)
-        # import time
-        # time.sleep(5)
-        # print(MySQLPassword, MySQLHost, MySQLName, MySQLUname)
-        # self.DatabaseConnection = pymysql.connect(
-        #     host = MySQLHost,
-        #     user = MySQLUname,
-        #     password = MySQLPassword,
-        #     db = MySQLName
-        # )
-
         DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
         DBPassword = str(SystemConfiguration.get('DatabasePassword'))
         DBHost = str(SystemConfiguration.get('DatabaseHost'))
         DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
-        print(DBUsername, DBPassword, DBHost, DBDatabaseName)
-        # Connect To Database #
+        self.Logger.Log('Read CLAS Configuration Parameters', 1)
+
+        # Connect To DB Server #
+        self.Logger.Log('Creating CLAS PymySQL Instance, Connecting To Database Server', 2)
         self.DatabaseConnection = pymysql.connect(
             host = DBHost,
             user = DBUsername,
             password = DBPassword,
             db = DBDatabaseName
         )
-
-
-
         self.Logger.Log('Created CLAS PymySQL Instance', 1)
 
         # Create Database Cursor #
