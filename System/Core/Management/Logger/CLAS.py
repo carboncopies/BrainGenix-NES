@@ -40,6 +40,9 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         )
         self.Logger.Log('Created CLAS PymySQL Instance', 1)
 
+        # Create Database Cursor #
+        self.LoggerCursor = self.DatabaseConnection.cursor()
+
         # Finalize Init #
         self.Logger.Log('Finished CLAS Initialization', 3)
 
