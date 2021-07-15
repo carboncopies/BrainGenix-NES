@@ -93,19 +93,8 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
     # Most probably, just move to the CLAS
     def CheckDelete(self, DeleteDate:str): # Deletes entries from the Log Table prior to a specific date #
 
-        # Delete Old Logs #
-        DeleteStatement= ("DELETE FROM log WHERE LogDatetime < %s" % DeleteDate)
-        self.LoggerCursor.execute(DeleteStatement)
 
 
-    # TODO: Remove or rework (Logger instance no longer has a database cursor)
-    # Most probably, just move to the CLAS
-    def PurgeOldLogs(self): # Automatically Removes Logs As Per The LogFile Retention Policy #
 
-        # Calculate Old Date (Current Date Minus KeepSeconds) #
-        DeleteDateRaw = datetime.datetime.now() - datetime.timedelta(seconds=self.SecondsToKeepLogs)
-        DeleteDate = DeleteDateRaw.strftime('%Y-%m-%d %H:%M:%S')
 
-        # Execute Deletion Command #
-        self.CheckDelete(DeleteDate)
         
