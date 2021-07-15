@@ -270,22 +270,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         # Send Output #
                         self.Connection.sendall(ResponseByteString)
 
-
-
-            # except Exception as E:
-
-            #     self.Logger.Log(E)
-            #     self.Logger.Log('Exception within APIServer, Restarting Server!')
-
-            #     try:
-
-            #         self.Connection.close()
-
-            #     except Exception as E:
-
-            #         # Log Exception #
-            #         self.Logger.Log(f'Exception In Management APIServer: {E}')
-
         # Exit Message #
         self.Logger.Log('Management API Socket Server Shutting Down', 4)
 
