@@ -35,13 +35,29 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         self.Logger.Log('Creating CLAS PymySQL Instance, Connecting To Database Server', 2)
         # import time
         # time.sleep(5)
-        print(MySQLPassword, MySQLHost, MySQLName, MySQLUname)
+        # print(MySQLPassword, MySQLHost, MySQLName, MySQLUname)
+        # self.DatabaseConnection = pymysql.connect(
+        #     host = MySQLHost,
+        #     user = MySQLUname,
+        #     password = MySQLPassword,
+        #     db = MySQLName
+        # )
+
+        DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
+        DBPassword = str(SystemConfiguration.get('DatabasePassword'))
+        DBHost = str(SystemConfiguration.get('DatabaseHost'))
+        DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
+        print(DBUsername, DBPassword, DBHost, DBDatabaseName)
+        # Connect To Database #
         self.DatabaseConnection = pymysql.connect(
-            host = MySQLHost,
-            user = MySQLUname,
-            password = MySQLPassword,
-            db = MySQLName
+            host = DBHost,
+            user = DBUsername,
+            password = DBPassword,
+            db = DBDatabaseName
         )
+
+
+
         self.Logger.Log('Created CLAS PymySQL Instance', 1)
 
         # Create Database Cursor #
