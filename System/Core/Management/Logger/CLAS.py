@@ -2,7 +2,6 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
-import datetime
 import pymysql
 
 '''
