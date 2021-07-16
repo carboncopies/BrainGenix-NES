@@ -17,8 +17,6 @@ from Core.Initialization.Instantiator import InstantiateLogger
 
 from Core.Initialization.CheckLibraries import CheckImports
 
-from Core.Management.Logger.CLAS import CentralizedLoggerAggregationSystem
-
 from Core.Management.API.ManagementAPI import ManagementAPISocketServer
 
 from Core.Internode.Zookeeper.LFTransitionManager import LFTM
