@@ -162,6 +162,9 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
     def ManagementAPIThread(self, ControlQueue): # Create A Thread Function For The Management API #
 
+        # Create Local Pointer #
+        self.ControlQueue = ControlQueue
+
         # Enter Connection Accept Loop #
         while ControlQueue.empty():
 
@@ -193,79 +196,8 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         pass
 
 
-                # Enter Listening Loop To Recieve Commands #
-                self.Logger.Log('Management API Server Awaiting Commands', 4)
-                while ControlQueue.empty():
-
-
-                    # Get Command From Client #
-                    SocketReady = select.select([self.Connection], [], [], 1)
-                    if SocketReady[0]:
-                        self.Command = self.Connection.recv(65535)
-                        self.Command = self.Command.decode()
-
-                        # Check If Command String Empty #
-                        if self.Command == '':
-                            self.Logger.Log('Management API Client Disconnected, Restarting Server', 6)
-
-                            self.Logger.Log('Destroying Management API Server Socket Connection', 3)
-                            self.Connection.close()
-                            self.Logger.Log('Socket Connection Destroyed', 2)
-
-                            self.Logger.Log('Invoking New Socket Server Instance', 2)
-                            self.ManagementAPIThread(ControlQueue)
-
-                    else:
-                        self.Command = None
-
-                    # Check If Command Ready #
-                    if self.Command != None:
-
-                        # Convert To Dict From JSON #
-                        try:
-                            self.Command = json.loads(self.Command)
-                        except json.decoder.JSONDecodeError:
-                            print(self.Command)
-                            self.Logger.Log('Management API Socket Connection Forcibly Terminated', 6)
-
-                        # Check That Command Syntax Is Correct #
-                        if str(type(self.Command)) != "<class 'dict'>":
-                            CommandOutput = "INVALID DICTIONARY FORMAT"
-
-                        if 'CallStack' not in self.Command:
-                            CommandOutput = "COMMAND DOES NOT INCLUDE 'CallStack' FIELD. If using CLI, run 'scope (NES, ERS, STS)'"
-
-
-                        # Check If Disconnect (Must be before SysName check to remain client agnostic) #
-                        elif self.Command['CallStack'] == 'Disconnect':
-                            self.Logger.Log('Client Initiated MAPI Disconnect, Connection Closed')
-                            self.Connection.close()
-                            break
-
-
-                        # More Command Syntax Checks #
-                        elif 'SysName' not in self.Command:
-                            CommandOutput = "COMMAND DOES NOT INCLUDE 'SysName' FIELD"
-
-                        elif 'KeywordArgs' not in self.Command:
-                            CommandOutput = "COMMAND DOES NOT INCLUDE 'KeywordArgs' FIELD"
-
-                        elif self.Command['SysName'] != 'NES':
-                            CommandOutput = "INVALID VALUE FOR 'SysName' FIELD"
-
-                        # Run System Command #
-                        else:
-                            CommandOutput, CommandName = self.ExecuteCommand()
-
-
-
-                        # Encode JSON Output #
-                        Response = {"Name" : CommandName, "Content" : CommandOutput}
-                        ResponseString = json.dumps(Response)
-                        ResponseByteString = ResponseString.encode()
-
-                        # Send Output #
-                        self.Connection.sendall(ResponseByteString)
+                    # Call Management API Update #
+                    self.UpdateManagementAPI()
 
         # Exit Message #
         self.Logger.Log('Management API Socket Server Shutting Down', 4)
@@ -275,6 +207,82 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.Logger.Log('mAPI Server Socket Closed', 1)
 
         self.Logger.Log('Finished Shutting Down Management API Socket Server', 3)
+
+
+    def UpdateManagementAPI(self): # Management API Update Call #
+
+        # Enter Listening Loop To Recieve Commands #
+        self.Logger.Log('Management API Server Awaiting Commands', 4)
+        while self.ControlQueue.empty():
+
+            # Get Command From Client #
+            SocketReady = select.select([self.Connection], [], [], 1)
+            if SocketReady[0]:
+                self.Command = self.Connection.recv(65535)
+                self.Command = self.Command.decode()
+
+                # Check If Command String Empty #
+                if self.Command == '':
+                    self.Logger.Log('Management API Client Disconnected, Restarting Server', 6)
+
+                    self.Logger.Log('Destroying Management API Server Socket Connection', 3)
+                    self.Connection.close()
+                    self.Logger.Log('Socket Connection Destroyed', 2)
+
+                    self.Logger.Log('Invoking New Socket Server Instance', 2)
+                    self.ManagementAPIThread(self.ControlQueue)
+
+            else:
+                self.Command = None
+
+            # Check If Command Ready #
+            if self.Command != None:
+
+                # Convert To Dict From JSON #
+                try:
+                    self.Command = json.loads(self.Command)
+                except json.decoder.JSONDecodeError:
+                    print(self.Command)
+                    self.Logger.Log('Management API Socket Connection Forcibly Terminated', 6)
+
+                # Check That Command Syntax Is Correct #
+                if str(type(self.Command)) != "<class 'dict'>":
+                    CommandOutput = "INVALID DICTIONARY FORMAT"
+
+                if 'CallStack' not in self.Command:
+                    CommandOutput = "COMMAND DOES NOT INCLUDE 'CallStack' FIELD. If using CLI, run 'scope (NES, ERS, STS)'"
+
+
+                # Check If Disconnect (Must be before SysName check to remain client agnostic) #
+                elif self.Command['CallStack'] == 'Disconnect':
+                    self.Logger.Log('Client Initiated MAPI Disconnect, Connection Closed')
+                    self.Connection.close()
+                    break
+
+
+                # More Command Syntax Checks #
+                elif 'SysName' not in self.Command:
+                    CommandOutput = "COMMAND DOES NOT INCLUDE 'SysName' FIELD"
+
+                elif 'KeywordArgs' not in self.Command:
+                    CommandOutput = "COMMAND DOES NOT INCLUDE 'KeywordArgs' FIELD"
+
+                elif self.Command['SysName'] != 'NES':
+                    CommandOutput = "INVALID VALUE FOR 'SysName' FIELD"
+
+                # Run System Command #
+                else:
+                    CommandOutput, CommandName = self.ExecuteCommand()
+
+
+
+                # Encode JSON Output #
+                Response = {"Name" : CommandName, "Content" : CommandOutput}
+                ResponseString = json.dumps(Response)
+                ResponseByteString = ResponseString.encode()
+
+                # Send Output #
+                self.Connection.sendall(ResponseByteString)
 
 
     def Quit(self): # Release The Socket #
