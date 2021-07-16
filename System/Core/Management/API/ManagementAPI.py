@@ -196,8 +196,8 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                         pass
 
 
-                    # Call Management API Update #
-                    self.UpdateManagementAPI()
+                # Call Management API Update #
+                self.UpdateManagementAPI()
 
         # Exit Message #
         self.Logger.Log('Management API Socket Server Shutting Down', 4)
