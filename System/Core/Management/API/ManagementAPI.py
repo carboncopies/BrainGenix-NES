@@ -211,10 +211,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                             self.Connection.close()
                             self.Logger.Log('Socket Connection Destroyed', 2)
 
-                            self.Logger.Log('Deleting Socket Connection Object', 2)
-                            del self.Connection
-                            self.Logger.Log('Deleted Socket Connection Object', 1)
-
                             self.Logger.Log('Invoking New Socket Server Instance', 2)
                             self.ManagementAPIThread(ControlQueue)
 
