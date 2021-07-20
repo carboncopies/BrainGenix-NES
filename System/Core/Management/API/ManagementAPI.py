@@ -414,7 +414,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     self.UpdateCommand()
 
     #Returns list of commands that a user can execute based on his/her permission level
-    def WriteAuthentication(self):
+    def WriteAuthentication(self, userName:str, passwordHash:str):
 
         # Get Database Config #
         SystemConfiguration = self.SystemConfiguration
@@ -435,7 +435,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
 
-        rows = cur.execute("SELECT * FROM user WHERE userName=%s AND passwordHash=%s",(DBUsername,DBPassword))
+        rows = cur.execute("SELECT * FROM user WHERE userName=%s AND passwordHash=%s",(userName,passwordHash))
 
         if rows!=0:
             for row in rows:
@@ -455,6 +455,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         self.DatabaseConnection.close()
 
+        
     def addUser(self, userName:str, passwordHash:str, salt:str, firstName:str, lastName:str, notes:str, permissionLevel:int):
 
         # Get Database Config #
