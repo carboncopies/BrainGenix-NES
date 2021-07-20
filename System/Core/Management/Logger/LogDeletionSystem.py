@@ -82,8 +82,8 @@ class LogAutoDeletionSystem(): # Create Class To Hold Log Auto Deletion System #
             DeleteDate = DeleteDateRaw.strftime('%Y-%m-%d %H:%M:%S')
             DeleteDate = DeleteDate
             # Delete Old Logs #
-            # DeleteStatement= ("DELETE FROM log WHERE LogDatetime < %s" % DeleteDate)
-            # self.LoggerCursor.execute(DeleteStatement)
+            DeleteStatement= ("DELETE FROM log WHERE LogDatetime < %s" % str(DeleteDate))
+            self.LoggerCursor.execute(DeleteStatement)
 
 
             # Delay For Set Polling Interval #
