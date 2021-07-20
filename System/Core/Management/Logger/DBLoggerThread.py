@@ -66,9 +66,10 @@ class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The D
             CallingFunctionName = LogDataDict['FunctionName']
             Message = LogDataDict['LogOutput']
             Node = LogDataDict['Node']
+            Thread = LogDataDict['Thread']
 
             # Transmit Log Line #
-            insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node) VALUES (%s, %s, \"%s\", \"%s\", \"%s\", \"%s\")")
+            insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node,Thread) VALUES (%s, %s, \"%s\", \"%s\", \"%s\", \"%s\",%s)")
             val = (Level, str(LogTime), CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, Node)
             self.LoggerCursor.execute(insertStatement, val)
 
