@@ -11,7 +11,6 @@ prefs.codegen.target = 'cython'
 prefs.logging.std_redirection = False
 set_device('cpp_standalone', clean=True)
 # set_device('cpp_standalone', clean=True, build_on_run=False)
-# device.build()
 filename = os.path.abspath('Megamind.avi')
 
 #if not os.path.exists(filename):
@@ -26,22 +25,32 @@ filename = os.path.abspath('Megamind.avi')
 #                              int(video.get(cv2.CAP_PROP_FRAME_HEIGHT)),
 #                              int(video.get(cv2.CAP_PROP_FRAME_COUNT)))
 
-width, height, frame_count = 100, 100, 100
+width, height, frame_count = 2, 2, 10
 
 fps = 24
 time_between_frames = 1*second/fps
 
 @implementation('cpp', '''
-double video_input(const int x, const int y)
+double video_input(const int x, const int y, const double v)
 {
+    double result = std::sqrt(v) + 100.0;
+    std::cout << x << ", " << y << ": got voltage " << v << ", setting input current to " << result << std::endl;
+    return result;
+
+    //if (x == 0 && y == 0) {
+    //    int value = 0.0;
+    //    std::cout << "it's 42! Give me YOUR value" << std::endl;
+    //    std::cin >> value;
+    //    return double(value);
+    //}
     int r = rand();
     int denominator = std::numeric_limits<int>::max();
     return r / static_cast<double>(denominator);
     // return 42;
 }
-''', headers=['<cstdlib>', '<limits>'])
+''', headers=['<cstdlib>', '<limits>', '<iostream>', '<cmath>'])
 @check_units(x=1, y=1, result=1)
-def video_input(x, y):
+def video_input(x, y, v):
     # we assume this will only be called in the custom operation (and not for
     # example in a reset or synaptic statement), so we don't need to do indexing
     # but we can directly return the full result
@@ -66,13 +75,14 @@ G.v_th = 1
 G.row = 'i//width'
 G.column = 'i%width'
 
-G.run_regularly('I = video_input(column, row)',
+G.run_regularly('I = video_input(column, row, v)',
                 dt=time_between_frames)
 # G.run_regularly('I = 42',
 #                 dt=time_between_frames)
 mon = SpikeMonitor(G)
 runtime = frame_count*time_between_frames
 t0 = time.time()
+# device.build()
 run(runtime, report='text')
 # for _ in range(frame_count):
 #     run(time_between_frames, report='text')
@@ -97,6 +107,11 @@ stepsize = 100*ms
 #     pass
 #     # print([(type(x), x) for x in gen_out])
 # sys.exit(0)
+
+
+for idx, val in enumerate(i):
+    print(idx, val)
+sys.exit(0)
 
 
 import matplotlib.animation as animation
@@ -125,5 +140,5 @@ def run(data):
     dots.set_data(x, y)
 
 ani = animation.FuncAnimation(fig, run, next_spikes, blit=False, repeat=True,
-                              repeat_delay=1000)
+                              repeat_delay=10000)
 plt.show()
