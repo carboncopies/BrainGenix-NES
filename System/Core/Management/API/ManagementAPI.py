@@ -455,7 +455,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         self.DatabaseConnection.close()
 
-    def addUser(self, SystemConfiguration:dict, userName:str, passwordHash:str, salt:str, firstName:str, lastName:str, notes:str, permissionLevel:int):
+    def addUser(self, userName:str, passwordHash:str, salt:str, firstName:str, lastName:str, notes:str, permissionLevel:int):
 
         # Get Database Config #
         SystemConfiguration = self.SystemConfiguration
