@@ -68,6 +68,12 @@ systemctl start zookeeper
 systemctl enable zookeeper
 
 
+# Install Python3 PIP #
+sudo apt install python3-pip -y
+
+# Install Python3 Packages #
+pip3 install -r requirements.txt
+
 
 # Add Reminder To Configure Replicated Mode #
 echo "Remember to configure /opt/zookeeper/conf/zoo.cfg in replicated mode!"
