@@ -83,16 +83,17 @@ pip3 install -r requirements.txt
 ### KAFKA INSTALLATION SECTION ###
 
 # Create Kafka User Prereqs #
-sudo adduser kafka
-sudo adduser kafka sudo
+sudo useradd kafka
+sudo usermod -aG sudo kafka
 
+mkdir /home/kafka
 mkdir /home/kafka/Downloads
 curl "https://downloads.apache.org/kafka/2.6.2/kafka_2.13-2.6.2.tgz" -o /home/kafka/Downloads/kafka.tgz 
 
 cd /home/kafka
 
 mkdir kafka && cd kafka
-tar -xvzf Downloads/kafka.tgz --strip 1
+tar -xvzf /home/kafka/Downloads/kafka.tgz --strip 1
 
 sudo chown -R kafka /home/kafka
 
@@ -116,6 +117,7 @@ _EOF_
 
 # Start Kafka Systemd Service #
 sudo systemctl start kafka
+sudo systemctl enable kafka
 
 
 ### REMINDER SECTION ###
