@@ -40,7 +40,7 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
 
         # Get Node HostName  #
         NodeHostname = platform.uname().node
-        self.TopicName = f'BrainGenix-NES-SystemTelemetry-{NodeHostname}'
+        self.TopicName = f'BrainGenix-NES-SystemTelemetry'
 
         # Get Kafka Host #
         BootstrapAddress = KafkaConfig['KafkaHost']
