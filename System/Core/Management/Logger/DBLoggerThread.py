@@ -70,7 +70,7 @@ class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The D
 
             # Transmit Log Line #
             insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node,Thread) VALUES (%s, %s, \"%s\", \"%s\", \"%s\", \"%s\",%s)")
-            val = (Level, str(LogTime), CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, Node)
+            val = (Level, str(LogTime), CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, Node, Thread)
             self.LoggerCursor.execute(insertStatement, val)
 
             # Commit if enough operations were done #
