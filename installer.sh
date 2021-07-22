@@ -7,6 +7,8 @@ Zookeeper_Password='123456'
 sudo apt update
 
 
+### ZOOKEEPER INSTALLATION SECTION ###
+
 # Install PreReqs For Zookeeper #
 sudo apt install default-jre -y
 
@@ -68,11 +70,15 @@ systemctl start zookeeper
 systemctl enable zookeeper
 
 
-# Install Python3 PIP #
+### PYTHON INSTALLATION SECTION ###
+
+# Install Python And Pip #
+sudo apt install python3 -y
 sudo apt install python3-pip -y
 
 # Install Python3 Packages #
 pip3 install -r requirements.txt
+
 
 
 # Add Reminder To Configure Replicated Mode #
