@@ -80,6 +80,45 @@ sudo apt install python3-pip -y
 pip3 install -r requirements.txt
 
 
+### KAFKA INSTALLATION SECTION ###
+
+# Create Kafka User Prereqs #
+sudo adduser kafka
+sudo adduser kafka sudo
+
+mkdir /home/kafka/Downloads
+curl "https://downloads.apache.org/kafka/2.6.2/kafka_2.13-2.6.2.tgz" -o /home/kafka/Downloads/kafka.tgz 
+
+cd /home/kafka
+
+mkdir kafka && cd kafka
+tar -xvzf Downloads/kafka.tgz --strip 1
+
+sudo chown -R kafka /home/kafka
+
+
+# Create Systemd Files #
+sudo cat > /etc/systemd/system/kafka.service <<_EOF_
+[Unit]
+Requires=zookeeper.service
+After=zookeeper.service
+
+[Service]
+Type=simple
+User=kafka
+ExecStart=/bin/sh -c '/home/kafka/kafka/bin/kafka-server-start.sh /home/kafka/kafka/config/server.properties > /home/kafka/kafka/kafka.log 2>&1'
+ExecStop=/home/kafka/kafka/bin/kafka-server-stop.sh
+Restart=on-abnormal
+
+[Install]
+WantedBy=multi-user.target
+_EOF_
+
+# Start Kafka Systemd Service #
+sudo systemctl start kafka
+
+
+### REMINDER SECTION ###
 
 # Add Reminder To Configure Replicated Mode #
 echo "Remember to configure /opt/zookeeper/conf/zoo.cfg in replicated mode!"
