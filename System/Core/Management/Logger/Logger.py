@@ -151,14 +151,15 @@ class SysLog(): # Logger Class #
 
 
     # Put Log Item In Queue #
-    def EnqueueLogEntry(self, Level, LogTime, CallingModuleName, CallingFunctionName, Message, NodeID):
+    def EnqueueLogEntry(self, Level, LogTime, CallingModuleName, CallingFunctionName, Message, NodeID, Thread):
         self.LogQueue.put({
             'LogLevel': Level,
             'LogDateTime': LogTime,
             'CallingModule': CallingModuleName,
             'FunctionName': CallingFunctionName,
             'LogOutput': Message,
-            'Node': NodeID
+            'Node': NodeID,
+            'Thread': Thread
         })
 
 
@@ -219,7 +220,7 @@ class SysLog(): # Logger Class #
                 print(LogString)
 
 
-        self.EnqueueLogEntry(Level, str(LogTime), CallingModuleName, CallingFunctionName, Message, str(self.NodeID))
+        self.EnqueueLogEntry(Level, str(LogTime), CallingModuleName, CallingFunctionName, Message, str(self.NodeID), ThreadName)
 
 
     def CleanExit(self): # Create Logger Shutdown Command #
