@@ -157,7 +157,7 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
         # Log Start #
         self.Logger.Log('Starting SystemTelemetry Transmission Thread', 1)
         # Give Node Name #
-        self.ZK.TryCreateOverwrite(f'/BrainGenix/System/Telemetry/{self.NodeName}', ephemeral = True)
+        #self.ZK.TryCreateOverwrite(f'/BrainGenix/System/Telemetry/{self.NodeName}', ephemeral = True)
         # Enter Main Loop #
         while ControlQueue.empty():
 
