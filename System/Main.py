@@ -90,9 +90,6 @@ sZookeeper = mThreadManagerInstance.InstantiateZK(mLogger, SystemConfiguration)
 NodeCount = sZookeeper.ConcurrentConnectedNodes()
 
 
-# Get API Server Count #
-APIServerCount = len(sZookeeper.ZookeeperConnection.get_children('/BrainGenix/API/Connections'))
-
 # Instantiate Leader/Follower Transition Manager #
 sLFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI, mThreadManagerInstance, SystemConfiguration)
 
