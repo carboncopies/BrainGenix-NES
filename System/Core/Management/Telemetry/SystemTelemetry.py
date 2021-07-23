@@ -39,8 +39,8 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
         self.ZK = ZookeeperInstance
 
         # Get Node HostName  #
-        NodeHostname = platform.uname().node
-        self.TopicName = f'BrainGenix-NES-SystemTelemetry'
+        # NodeHostname = platform.uname().node
+        self.TopicName = 'BrainGenix-NES-SystemTelemetry'
 
         # Get Kafka Host #
         BootstrapAddress = KafkaConfig['KafkaHost']
