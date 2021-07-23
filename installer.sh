@@ -77,7 +77,14 @@ sudo apt install python3 -y
 sudo apt install python3-pip -y
 
 # Install Python3 Packages #
-pip3 install -r requirements.txt
+pip3 install brian2
+pip3 install py-cpuinfo
+pip3 install psutil
+pip3 install GPUtil
+pip3 install kazoo
+pip3 install pymysql
+pip3 install pycrypto
+pip3 install confluent-kafka
 
 
 ### KAFKA INSTALLATION SECTION ###
