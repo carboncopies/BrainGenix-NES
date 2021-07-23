@@ -7,6 +7,8 @@ Zookeeper_Password='123456'
 sudo apt update
 
 
+### ZOOKEEPER INSTALLATION SECTION ###
+
 # Install PreReqs For Zookeeper #
 sudo apt install default-jre -y
 
@@ -68,12 +70,64 @@ systemctl start zookeeper
 systemctl enable zookeeper
 
 
-# Install Python3 PIP #
+### PYTHON INSTALLATION SECTION ###
+
+# Install Python And Pip #
+sudo apt install python3 -y
 sudo apt install python3-pip -y
 
 # Install Python3 Packages #
-pip3 install -r requirements.txt
+pip3 install brian2
+pip3 install py-cpuinfo
+pip3 install psutil
+pip3 install GPUtil
+pip3 install kazoo
+pip3 install pymysql
+pip3 install pycrypto
+pip3 install confluent-kafka
 
+
+### KAFKA INSTALLATION SECTION ###
+
+# Create Kafka User Prereqs #
+sudo useradd kafka
+sudo usermod -aG sudo kafka
+
+mkdir /home/kafka
+mkdir /home/kafka/Downloads
+curl "https://downloads.apache.org/kafka/2.6.2/kafka_2.13-2.6.2.tgz" -o /home/kafka/Downloads/kafka.tgz 
+
+cd /home/kafka
+
+mkdir kafka && cd kafka
+tar -xvzf /home/kafka/Downloads/kafka.tgz --strip 1
+
+sudo chown -R kafka /home/kafka
+
+
+# Create Systemd Files #
+sudo cat > /etc/systemd/system/kafka.service <<_EOF_
+[Unit]
+Requires=zookeeper.service
+After=zookeeper.service
+
+[Service]
+Type=simple
+User=kafka
+ExecStart=/bin/sh -c '/home/kafka/kafka/bin/kafka-server-start.sh /home/kafka/kafka/config/server.properties > /home/kafka/kafka/kafka.log 2>&1'
+ExecStop=/home/kafka/kafka/bin/kafka-server-stop.sh
+Restart=on-abnormal
+
+[Install]
+WantedBy=multi-user.target
+_EOF_
+
+# Start Kafka Systemd Service #
+sudo systemctl start kafka
+sudo systemctl enable kafka
+
+
+### REMINDER SECTION ###
 
 # Add Reminder To Configure Replicated Mode #
 echo "Remember to configure /opt/zookeeper/conf/zoo.cfg in replicated mode!"
