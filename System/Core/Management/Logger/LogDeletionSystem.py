@@ -84,7 +84,7 @@ class LogAutoDeletionSystem(): # Create Class To Hold Log Auto Deletion System #
 
             # Delete Old Logs #
             DeleteStatement= ("DELETE FROM log WHERE LogDatetime < %s" % str(DeleteDate))
-            self.LoggerCursor.execute(DeleteStatement)
+            #self.LoggerCursor.execute(DeleteStatement) ## FIXME, SQL SYNTAX ERROR 
 
 
             # Delay For Set Polling Interval #
