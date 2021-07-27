@@ -1,3 +1,5 @@
+#! /bin/bash
+
 
 # Set Variables #
 Zookeeper_Password='123456'
