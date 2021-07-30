@@ -441,7 +441,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         for row in userCursor:
             level = row['permissionLevel']
             cur.execute("SELECT * FROM command WHERE permissionLevel=%s",level)
-            
+
             print("Executable Commands for current permission level:")
             for row1 in cur:
                 print(row1['commandName'],"\t",row1['commandDescription'])
