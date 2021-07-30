@@ -19,7 +19,6 @@ ZKPort: 2181 # Set port used to connect to the zookeeper server, default is 2181
 
 
 ### LOGGER CONFIGURATION ###
-LogPath: ../Logs/ # Set The Path For Logs
 PrintLogText: True # Enable or Disable Printing Logs
 SecondsToKeepLogs: 100000  # Define The Number Of Seconds To Keep Logs
 ConsoleOutputEnabled: True # Enable or disable console output
