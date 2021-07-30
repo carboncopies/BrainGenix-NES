@@ -1,3 +1,5 @@
+#! /bin/bash
+
 
 # Set Variables #
 Zookeeper_Password='123456'
@@ -30,7 +32,7 @@ chown -R zookeeper:zookeeper /opt/zookeeper
 
 
 # Configure Zookeeper #
-sudo cat > /opt/zookeeper/conf/zoo.cfg <<_EOF_
+cat > /opt/zookeeper/conf/zoo.cfg <<_EOF_
 tickTime = 2000
 dataDir = /data/zookeeper
 clientPort = 2181
@@ -40,7 +42,7 @@ _EOF_
 
 
 # Create Zookeeper Service #
-sudo cat > /etc/systemd/system/zookeeper.service <<_EOF_
+cat > /etc/systemd/system/zookeeper.service <<_EOF_
 [Unit]
 Description=Zookeeper Daemon
 Documentation=http://zookeeper.apache.org
@@ -106,7 +108,7 @@ sudo chown -R kafka /home/kafka
 
 
 # Create Systemd Files #
-sudo cat > /etc/systemd/system/kafka.service <<_EOF_
+cat > /etc/systemd/system/kafka.service <<_EOF_
 [Unit]
 Requires=zookeeper.service
 After=zookeeper.service

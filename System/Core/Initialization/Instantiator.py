@@ -2,6 +2,8 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
+import time
+
 '''
 Name: Subsystem Instantiator
 Description: This file is used to create instances of other subsystems.
@@ -33,9 +35,11 @@ def InstantiateLogger(SystemConfiguration): # Instantiates Kafka #
     # If Something Fails During Instantiation #
     except Exception as E:
 
+        T = time.time
+
         # Print Exception Message #
         ErrorMessage = ''
-        ErrorMessage += 'Error During Logger Initialization!\n'
+        ErrorMessage += f'Error During Logger Initialization at time: {T}\n'
         ErrorMessage += f'Fatal Exception: {E}'
 
         # Save Error Output To Disk#
