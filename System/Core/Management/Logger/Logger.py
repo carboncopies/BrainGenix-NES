@@ -74,6 +74,11 @@ class SysLog(): # Logger Class #
         '''
 
 
+        # Perform Database Connection Validation #
+        if SystemConfiguration == None:
+            print('System Configuration Null, Please Check Config File')
+            exit()
+
         # Extract the important values from the dictionary and return them to the main system #
         SecondsToKeepLogs = int(SystemConfiguration.get('SecondsToKeepLogs'))
         ConsoleOutputEnabled = bool(SystemConfiguration.get('ConsoleOutputEnabled'))
@@ -96,11 +101,6 @@ class SysLog(): # Logger Class #
         self.NodeID = socket.gethostname()
 
         self.StartTime = str(datetime.datetime.now()).replace(' ', '_')
-
-
-        # Perform Database Connection Validation #
-        if SystemConfiguration == None:
-            print('Database Configuration Null, Please Check Config File')
 
 
         # Create Queues #
