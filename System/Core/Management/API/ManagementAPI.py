@@ -435,23 +435,16 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
 
-        rows = cur.execute("SELECT * FROM user WHERE userName=%s AND passwordHash=%s",(userName,passwordHash))
+        cur.execute("SELECT * FROM user WHERE userName=%s AND passwordHash=%s",(userName,passwordHash))
+        userCursor = cur
 
-        if rows!=0:
-            for row in rows:
-                level = row['permissionLevel']
-                rows = cur.execute("SELECT * FROM command WHERE permissionLevel=%d",int(level))
-
-                if rows!=0:
-                    print("Executable Commands for current permission level:")
-                    for row in rows:
-                        print(row['commandName'],"\t",row['commandDescription'])
-
-                else:
-                    print("No commands available for current permission level")
-
-        else:
-            print("No matching user found in Database.")
+        for row in userCursor:
+            level = row['permissionLevel']
+            cur.execute("SELECT * FROM command WHERE permissionLevel=%s",level)
+            
+            print("Executable Commands for current permission level:")
+            for row1 in cur:
+                print(row1['commandName'],"\t",row1['commandDescription'])
 
         self.DatabaseConnection.close()
 
@@ -476,7 +469,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         )
 
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
-        cur.execute("INSERT INTO user (userName, passwordHash, salt, firstName, lastName, notes, permissionLevel) VALUES (%s,%s,%s,%s,%s,%s,%d)",(userName, passwordHash, salt, firstName, lastName, notes, permissionLevel))
+        cur.execute("INSERT INTO user (userName, passwordHash, salt, firstName, lastName, notes, permissionLevel) VALUES (%s,%s,%s,%s,%s,%s,%s)",(userName, passwordHash, salt, firstName, lastName, notes, permissionLevel))
 
         self.DatabaseConnection.close()
 
