@@ -4,11 +4,8 @@ DatabasePassword: 123456 # Set the mysql database password
 DatabaseHost: 10.1.4.2 # Set the mysql server host
 DatabaseName: bgdb # Set the name of the database 
 
-
-# Set Socket Params Here #
-SocketBindAddress: 0.0.0.0, # Bind To All Addresses By Default
-Protocol: TCP # Only supports TCP for now, changing this doesn't do anything
-Port : 6598 # Set the port number to be used by the APIServer
+### MANAGEMENT API CONFIGURATION ###
+Port : 6598 # Set the port number used by the management api, should be the same across all bg divisions, eg. NES, ERS, STS
 
 
 #### APACHE KAFKA CONFIGURATION ###
