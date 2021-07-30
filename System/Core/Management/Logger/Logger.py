@@ -75,7 +75,6 @@ class SysLog(): # Logger Class #
 
 
         # Extract the important values from the dictionary and return them to the main system #
-        LogPath = str(SystemConfiguration.get('LogPath'))
         SecondsToKeepLogs = int(SystemConfiguration.get('SecondsToKeepLogs'))
         ConsoleOutputEnabled = bool(SystemConfiguration.get('ConsoleOutputEnabled'))
         self.ConsoleColorEnabled = bool(SystemConfiguration.get('ConsoleColorEnabled'))
@@ -87,31 +86,16 @@ class SysLog(): # Logger Class #
         self.LevelNames = SystemConfiguration['LogLevelNames']
 
 
-        # Create Local Log Path Directory #
-        DoesLogDirExist = os.path.isdir(LogPath)
-        if not DoesLogDirExist:
-
-            print('Log Path Does Not Exist, Creating Directory')
-            os.mkdir(LogPath)
-            print('Created Directory')
-
-
         # Initialize Local Variable Information #
         print('[Level] [               Time] [                Thread] [            Module Name] [           Function] [Message]')
         self.PrintEnabled = ConsoleOutputEnabled
         self.CurrentLogLength = 1
-        self.LogPath = LogPath
         self.LogFileNumber = 0
         self.SecondsToKeepLogs = SecondsToKeepLogs
         self.DatabaseWorking = False
         self.NodeID = socket.gethostname()
 
         self.StartTime = str(datetime.datetime.now()).replace(' ', '_')
-
-
-        # Open Log File #
-        self.LogFileName = 'BG.log'
-        self.LogFileObject = open(LogPath + self.LogFileName, 'w')
 
 
         # Perform Database Connection Validation #
