@@ -9,7 +9,7 @@ ManagementAPIPort : 1698 # Set the port number used by the management api, shoul
 ManagementAPIHost: 127.0.0.1 # This defines the IP address of the unified management API server, default is 127.0.0.1
 
 #### APACHE KAFKA CONFIGURATION ###
-KafkaHost: 10.1.18.1 # Set the address of the server running the kafka broker, default is localhost
+KafkaHost: 127.0.0.1 # Set the address of the server running the kafka broker, default is localhost
 KafkaPort: 9092 # Set the port to connect to the kafka broker, default is 9092
 
 #### SYSTEM TELEMETRY CONFIGURATION #
