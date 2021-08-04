@@ -107,7 +107,7 @@ class ZK(): # Create Interface Class #
     def ZKStateMonitor(self, CallbackMessage): # Handles ZK State Transition Logging #
 
         # Log State Change #
-        self.Logger.Log(f'Zookeeper Connection State Has Changed To: {CallbackMessage}')
+        self.Logger.Log(f'Zookeeper Connection State Has Changed To: {CallbackMessage}', 5)
 
 
     def ConcurrentConnectedNodes(self): # Return The Number Of Concurrently Connected Nodes #
