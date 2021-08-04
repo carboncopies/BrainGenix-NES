@@ -158,8 +158,14 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
         # Check Error Status #
         if Error is not None:
 
-            # Log Error #
-            self.Logger.Log(f'LibRDKafka Subsystem Reporting Error: {Error}', 9)
+            # Attempt To ID Error #
+            if 'timeout' in str(Message).lower():
+                self.Logger.Log(f'Kafka Timeout Error: {Error}', 8)
+            elif 'refused' in str(Message).lower():
+                self.Logger.Log(f'Kafka Connection Refused Error: {Error}', 10)
+
+            else: # Unknown Error #
+                self.Logger.Log(f'Unknown rdkafka Error: {Error}', 10)
 
         # Else, Dump Message #
         else:
