@@ -168,7 +168,7 @@ class ZK(): # Create Interface Class #
         ZookeeperElection.run(self.ElectedLeader)
 
         self.Logger.Log('Election Complete', 6)
-        self.Logger.Log(f'This Node Is Running In {self.ZookeeperMode} Mode')
+        self.Logger.Log(f'This Node Is Running In {self.ZookeeperMode} Mode', 4)
 
 
 
