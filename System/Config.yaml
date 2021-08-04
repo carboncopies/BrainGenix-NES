@@ -14,7 +14,7 @@ KafkaPort: 9092 # Set the port to connect to the kafka broker, default is 9092
 
 
 ### ZOOKEEPER CONFIGURATION ###
-ZKHost: 10.1.18.1 # Set the host running the zookeeper server, default is localhost
+ZookeeperHost: 10.1.18.1 # Set the host running the zookeeper server, default is localhost
 ZKPort: 2181 # Set port used to connect to the zookeeper server, default is 2181
 
 
