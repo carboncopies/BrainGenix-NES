@@ -137,7 +137,7 @@ class ZK(): # Create Interface Class #
 
         if not self.CheckIfLeaderExists():
 
-            self.Logger.Log('Failed To Find ZK Leader, Starting Election')
+            self.Logger.Log('Failed To Find ZK Leader, Starting Election', 6)
 
             self.ElectLeader()
 
