@@ -90,7 +90,7 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
         self.Logger.Log(f'Kafka Producer Bootstrap Server: {BootstrapAddress}')
         self.Logger.Log(f'Kafka System Telemetry Message Timout Period: {5000}ms')
 
-        self.KafkaProducer = Producer(KafkaProducerConfiguration)
+        self.KafkaProducer = Producer(KafkaProducerConfiguration, callback=self.KafkaCallbackMethod)
 
         self.Logger.Log("Created Kafka Producer For System Information", 2)
 
