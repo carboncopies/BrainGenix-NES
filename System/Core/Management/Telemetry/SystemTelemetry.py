@@ -159,7 +159,7 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
         if Error is not None:
 
             # Attempt To ID Error #
-            if 'timeout' in str(Message).lower():
+            if 'message timed out' in str(Message).lower():
                 self.Logger.Log(f'Kafka Timeout Error: {Error}', 8)
             elif 'refused' in str(Message).lower():
                 self.Logger.Log(f'Kafka Connection Refused Error: {Error}', 10)
