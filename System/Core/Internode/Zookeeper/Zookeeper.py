@@ -167,7 +167,7 @@ class ZK(): # Create Interface Class #
         ZookeeperElection = self.ZookeeperConnection.Election("/BrainGenix/System/Election", UUIDString)
         ZookeeperElection.run(self.ElectedLeader)
 
-        self.Logger.Log('Election Complete')
+        self.Logger.Log('Election Complete', 6)
         self.Logger.Log(f'This Node Is Running In {self.ZookeeperMode} Mode')
 
 
