@@ -29,7 +29,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Get Config Params #
         self.Logger = Logger
         self.Port = SystemConfiguration['Port'] # Get the port from the port config
-        self.IPAddr = SystemConfiguration['ZKHost'] # Get The IP Addr from the zoomeeper dict
+        self.IPAddr = SystemConfiguration['ManagementAPIHost'] # Get The IP Addr from the zoomeeper dict
         self.ThreadManager = ThreadManager
 
         # Make Local SysConfig Param #
