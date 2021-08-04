@@ -25,6 +25,7 @@ PrintLogText: True # Enable or Disable Printing Logs
 SecondsToKeepLogs: 100000  # Define The Number Of Seconds To Keep Logs
 ConsoleOutputEnabled: True # Enable or disable console output
 ConsoleColorEnabled: True # Enable or disable console color output
+DisplayLogLevelsAsText: False # Enable or disable showing log levels as text or numerical values
 
 # Set The Colors For Various Log Levels #
 LogLevelColors:

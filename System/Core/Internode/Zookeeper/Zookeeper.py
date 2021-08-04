@@ -84,14 +84,14 @@ class ZK(): # Create Interface Class #
 
         # Connect To Zookeeper #
         if Logger != None:
-            Logger.Log(f'Connecting To Zookeeper Server At Address: {ZookeeperHost}')
+            Logger.Log(f'Connecting To Zookeeper Server At Address: {ZookeeperHost}', 3)
 
         self.ZookeeperConnection = KazooClient(hosts=ZookeeperHost)
-        self.ZookeeperConnection.add_listener(self.ZKStateTransitionCallback)
+        self.ZookeeperConnection.add_listener(self.ZKStateMonitor)
         self.ZookeeperConnection.start()
 
         if Logger != None:
-            Logger.Log('Established Connection To Zookeeper')
+            Logger.Log('Established Connection To Zookeeper', 2)
 
         self.ZookeeperConnection.ensure_path('BrainGenix/')
         self.ZookeeperConnection.ensure_path('BrainGenix/System')
@@ -104,10 +104,10 @@ class ZK(): # Create Interface Class #
         self.TryCreate(f'/BrainGenix/System/Nodes/{self.Name}/', zNodeData=b'', ephemeral=True)
 
 
-    def ZKStateTransitionCallback(self, CallbackMessage): # Handles ZK State Transition Logging #
+    def ZKStateMonitor(self, CallbackMessage): # Handles ZK State Transition Logging #
 
         # Log State Change #
-        self.Logger.Log(f'Zookeeper Connection State Has Changed To: {CallbackMessage}')
+        self.Logger.Log(f'Zookeeper Connection State Has Changed To: {CallbackMessage}', 5)
 
 
     def ConcurrentConnectedNodes(self): # Return The Number Of Concurrently Connected Nodes #
@@ -137,7 +137,7 @@ class ZK(): # Create Interface Class #
 
         if not self.CheckIfLeaderExists():
 
-            self.Logger.Log('Failed To Find ZK Leader, Starting Election')
+            self.Logger.Log('Failed To Find ZK Leader, Starting Election', 6)
 
             self.ElectLeader()
 
@@ -145,8 +145,8 @@ class ZK(): # Create Interface Class #
 
         else:
 
-            self.Logger.Log('Leader Located')
-            self.Logger.Log('This Node Is Running In Follower Mode')
+            self.Logger.Log('Leader Located', 4)
+            self.Logger.Log('This Node Is Running In Follower Mode', 3)
 
             self.ZookeeperHaveLeader = True
 
@@ -167,8 +167,8 @@ class ZK(): # Create Interface Class #
         ZookeeperElection = self.ZookeeperConnection.Election("/BrainGenix/System/Election", UUIDString)
         ZookeeperElection.run(self.ElectedLeader)
 
-        self.Logger.Log('Election Complete')
-        self.Logger.Log(f'This Node Is Running In {self.ZookeeperMode} Mode')
+        self.Logger.Log('Election Complete', 6)
+        self.Logger.Log(f'This Node Is Running In {self.ZookeeperMode} Mode', 4)
 
 
 

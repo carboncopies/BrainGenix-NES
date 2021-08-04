@@ -92,7 +92,13 @@ class SysLog(): # Logger Class #
 
 
         # Initialize Local Variable Information #
-        print('[Level] [               Time] [                  Thread] [            Module Name] [           Function] [Message]')
+        
+        if bool(self.SystemConfiguration['DisplayLogLevelsAsText']) == False:
+            print('[Level] [               Time] [                  Thread] [            Module Name] [           Function] [Message]')
+        else:
+            print('[  Level] [               Time] [                  Thread] [            Module Name] [           Function] [Message]')
+
+
         self.PrintEnabled = ConsoleOutputEnabled
         self.CurrentLogLength = 1
         self.LogFileNumber = 0
@@ -179,15 +185,22 @@ class SysLog(): # Logger Class #
         # Get time first thing when called to make it more precise (not sure if that's needed, but it seems to have no drawbacks) #
         LogTime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-        # Reformat Log For Human Readabillity #
-        Level = str(Level)
+        # Set Log Level #
+        if bool(self.SystemConfiguration['DisplayLogLevelsAsText']) == False:
+            LevelString = str(Level)
+        else:
+            LevelString = dict(self.SystemConfiguration['LogLevelNames'])[int(Level)]
 
+        # Reformat Log For Human Readabillity #
         CallStack = inspect.stack()
         CallingModuleName = CallStack[1][1]
         CallingFunctionName = CallStack[1][3]
         ThreadName = threading.current_thread().name
 
-        LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{ThreadName.rjust(24, " ")}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(23, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}'
+        if bool(self.SystemConfiguration['DisplayLogLevelsAsText']) == False:
+            LogString = f'[{LevelString.rjust(5, " ")}] [{LogTime}] [{ThreadName.rjust(24, " ")}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(23, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}'
+        else:
+            LogString = f'[{LevelString.rjust(7, " ")}] [{LogTime}] [{ThreadName.rjust(24, " ")}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(23, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}'
 
 
         if self.PrintEnabled:
