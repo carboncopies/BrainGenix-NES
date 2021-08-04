@@ -207,17 +207,6 @@ class SysLog(): # Logger Class #
         self.EnqueueLogEntry(Level, str(LogTime), CallingModuleName, CallingFunctionName, Message, str(self.NodeID), ThreadName)
 
 
-    # ALIASES FOR KAZOO #
-    def log(self, Level, Message): # Alias Method For Kazoo Subsystem #
-
-        self.Log(f'KAZOO SUBSYSTEM: {Message}', Level)
-
-
-    def info(self, Level, Message): # Alias Method For Kazoo Subsystem #
-
-        self.Log(f'KAZOO SUBSYSTEM: {Message}', Level)
-
-
     def CleanExit(self): # Create Logger Shutdown Command #
 
         # Destroy Connection To Database #
