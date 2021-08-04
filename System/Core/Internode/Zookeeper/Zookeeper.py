@@ -145,7 +145,7 @@ class ZK(): # Create Interface Class #
 
         else:
 
-            self.Logger.Log('Leader Located')
+            self.Logger.Log('Leader Located', 4)
             self.Logger.Log('This Node Is Running In Follower Mode')
 
             self.ZookeeperHaveLeader = True
