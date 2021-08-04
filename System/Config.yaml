@@ -5,7 +5,7 @@ DatabaseHost: 10.1.4.2 # Set the mysql server host
 DatabaseName: bgdb # Set the name of the database 
 
 ### MANAGEMENT API CONFIGURATION ###
-Port : 1698 # Set the port number used by the management api, should be the same across all bg divisions, eg. NES, ERS, STS
+ManagementAPIPort : 1698 # Set the port number used by the management api, should be the same across all bg divisions, eg. NES, ERS, STS
 ManagementAPIHost: 127.0.0.1 # This defines the IP address of the unified management API server, default is 127.0.0.1
 
 #### APACHE KAFKA CONFIGURATION ###
