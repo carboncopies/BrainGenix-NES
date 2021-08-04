@@ -207,6 +207,11 @@ class SysLog(): # Logger Class #
         self.EnqueueLogEntry(Level, str(LogTime), CallingModuleName, CallingFunctionName, Message, str(self.NodeID), ThreadName)
 
 
+    def log(self, Message, Level): # Alias Method For Kazoo Subsystem #
+
+        self.Log(Message, Level)
+
+
     def CleanExit(self): # Create Logger Shutdown Command #
 
         # Destroy Connection To Database #
