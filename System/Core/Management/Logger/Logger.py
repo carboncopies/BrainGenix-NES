@@ -92,7 +92,13 @@ class SysLog(): # Logger Class #
 
 
         # Initialize Local Variable Information #
-        print('[Level] [               Time] [                  Thread] [            Module Name] [           Function] [Message]')
+        
+        if bool(self.SystemConfiguration['DisplayLogLevelsAsText']) == False:
+            print('[Level] [               Time] [                  Thread] [            Module Name] [           Function] [Message]')
+        else:
+            print('[  Level] [               Time] [                  Thread] [            Module Name] [           Function] [Message]')
+
+
         self.PrintEnabled = ConsoleOutputEnabled
         self.CurrentLogLength = 1
         self.LogFileNumber = 0
@@ -184,7 +190,6 @@ class SysLog(): # Logger Class #
             LevelString = str(Level)
         else:
             LevelString = dict(self.SystemConfiguration['LogLevelNames'])[int(Level)]
-            print(LevelString)
 
         # Reformat Log For Human Readabillity #
         CallStack = inspect.stack()
@@ -192,7 +197,10 @@ class SysLog(): # Logger Class #
         CallingFunctionName = CallStack[1][3]
         ThreadName = threading.current_thread().name
 
-        LogString = f'[{LevelString.rjust(5, " ")}] [{LogTime}] [{ThreadName.rjust(24, " ")}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(23, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}'
+        if bool(self.SystemConfiguration['DisplayLogLevelsAsText']) == False:
+            LogString = f'[{LevelString.rjust(5, " ")}] [{LogTime}] [{ThreadName.rjust(24, " ")}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(23, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}'
+        else:
+            LogString = f'[{LevelString.rjust(7, " ")}] [{LogTime}] [{ThreadName.rjust(24, " ")}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(23, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}'
 
 
         if self.PrintEnabled:
