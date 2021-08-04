@@ -84,7 +84,7 @@ class ZK(): # Create Interface Class #
 
         # Connect To Zookeeper #
         if Logger != None:
-            Logger.Log(f'Connecting To Zookeeper Server At Address: {ZookeeperHost}')
+            Logger.Log(f'Connecting To Zookeeper Server At Address: {ZookeeperHost}', 3)
 
         self.ZookeeperConnection = KazooClient(hosts=ZookeeperHost)
         self.ZookeeperConnection.add_listener(self.ZKStateMonitor)
