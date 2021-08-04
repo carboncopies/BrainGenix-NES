@@ -489,14 +489,14 @@ class Leader(): # This Class Is Run By The Leader #
         # Start Inf Loop #
         while ControlQueue.empty():
 
-            self.PullStatsFromZK()
+            self.PullStatsFromKafka()
 
         # Send Shutdown Message #
         self.Logger.Log('Shutting Down Leader Data Collection Daemon', 4)
 
 
 
-    def PullStatsFromZK(self): # Pulls All System Stats From Zookeeper #
+    def PullStatsFromKafka(self): # Pulls All System Stats From Zookeeper #
 
 
         # Set Info To Disabled, Clear Info #
@@ -507,29 +507,34 @@ class Leader(): # This Class Is Run By The Leader #
         SystemTelemetryInformation = self.KafkaConsumer.poll(timeout=0.05)
 
         # Check If Not None #
-        if SystemTelemetryInformation != None:
+        try:
 
-            # Exctract New Value #
-            NodeInfoJSONBytes = SystemTelemetryInformation.value()
+            if SystemTelemetryInformation != None:
 
-            # Parse Out NodeName #
-            NodeName = json.loads(NodeInfoJSONBytes.decode())['NodeName']
+                # Exctract New Value #
+                NodeInfoJSONBytes = SystemTelemetryInformation.value()
 
-            # Check For New Nodes #
-            if NodeName not in self.Info:
+                # Parse Out NodeName #
+                NodeName = json.loads(NodeInfoJSONBytes.decode())['NodeName']
 
-                # Log New Node #
-                self.Logger.Log(f'System Telemetry Subsystem Found New Node: {NodeName}', 5)
+                # Check For New Nodes #
+                if NodeName not in self.Info:
 
-
-            # Update System Information Dictionary #
-            NodeInfoJSONString = NodeInfoJSONBytes.decode('ascii')
-            NodeInfoDecoded = json.loads(NodeInfoJSONString)
-            self.Info.update({NodeName : NodeInfoDecoded})
+                    # Log New Node #
+                    self.Logger.Log(f'System Telemetry Subsystem Found New Node: {NodeName}', 5)
 
 
-            # Update APIServer Last Communication Date #
-            self.NodeInfoDict.update({NodeName : time.time()})
+                # Update System Information Dictionary #
+                NodeInfoJSONString = NodeInfoJSONBytes.decode('ascii')
+                NodeInfoDecoded = json.loads(NodeInfoJSONString)
+                self.Info.update({NodeName : NodeInfoDecoded})
+
+
+                # Update APIServer Last Communication Date #
+                self.NodeInfoDict.update({NodeName : time.time()})
+
+        except json.decoder.JSONDecodeError: # Catch exception caused by malformed json data
+            pass
 
 
         # Check For Disconnects #
