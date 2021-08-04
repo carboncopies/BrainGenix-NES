@@ -71,22 +71,23 @@ class ZK(): # Create Interface Class #
 
 
         # Extract Values From Dictionary #
-        ZKHost = str(SystemConfiguration.get('ZookeeperHost'))
-        ZKPort = str(SystemConfiguration.get('ZookeeperPort'))
+        ZookeeperHost = str(SystemConfiguration.get('ZookeeperHost'))
+        ZookeeperPort = str(SystemConfiguration.get('ZookeeperPort'))
 
-        ZKHost += f':{ZKPort}'
+        ZookeeperHost += f':{ZookeeperPort}'
 
 
         # Save Info About Connection #
-        self.ZKIP = ZKHost
-        self.ZKPort = ZKPort
+        self.ZKIP = ZookeeperHost
+        self.ZookeeperPort = ZookeeperPort
 
 
         # Connect To Zookeeper #
         if Logger != None:
-            Logger.Log(f'Connecting To Zookeeper Server At Address: {ZKHost}')
+            Logger.Log(f'Connecting To Zookeeper Server At Address: {ZookeeperHost}')
 
-        self.ZookeeperConnection = KazooClient(hosts=ZKHost)
+        self.ZookeeperConnection = KazooClient(hosts=ZookeeperHost)
+        self.ZookeeperConnection.add_listener(self.ZKStateTransitionCallback)
         self.ZookeeperConnection.start()
 
         if Logger != None:
@@ -102,6 +103,11 @@ class ZK(): # Create Interface Class #
 
         self.TryCreate(f'/BrainGenix/System/Nodes/{self.Name}/', zNodeData=b'', ephemeral=True)
 
+
+    def ZKStateTransitionCallback(self, CallbackMessage): # Handles ZK State Transition Logging #
+
+        # Log State Change #
+        self.Logger.Log(f'Zookeeper Connection State Has Changed To: {CallbackMessage}')
 
 
     def ConcurrentConnectedNodes(self): # Return The Number Of Concurrently Connected Nodes #
