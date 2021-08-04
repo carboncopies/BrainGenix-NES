@@ -87,7 +87,7 @@ class ZK(): # Create Interface Class #
             Logger.Log(f'Connecting To Zookeeper Server At Address: {ZookeeperHost}')
 
         self.ZookeeperConnection = KazooClient(hosts=ZookeeperHost)
-        self.ZookeeperConnection.add_listener(self.ZKStateTransitionCallback)
+        self.ZookeeperConnection.add_listener(self.ZKStateMonitor)
         self.ZookeeperConnection.start()
 
         if Logger != None:
@@ -104,7 +104,7 @@ class ZK(): # Create Interface Class #
         self.TryCreate(f'/BrainGenix/System/Nodes/{self.Name}/', zNodeData=b'', ephemeral=True)
 
 
-    def ZKStateTransitionCallback(self, CallbackMessage): # Handles ZK State Transition Logging #
+    def ZKStateMonitor(self, CallbackMessage): # Handles ZK State Transition Logging #
 
         # Log State Change #
         self.Logger.Log(f'Zookeeper Connection State Has Changed To: {CallbackMessage}')
