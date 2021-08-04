@@ -179,9 +179,13 @@ class SysLog(): # Logger Class #
         # Get time first thing when called to make it more precise (not sure if that's needed, but it seems to have no drawbacks) #
         LogTime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-        # Reformat Log For Human Readabillity #
-        Level = str(Level)
+        # Set Log Level #
+        if bool(self.SystemConfiguration['DisplayLogLevelsAsText']) == False:
+            Level = str(Level)
+        else:
+            Level = dict(self.SystemConfiguration['LogLevelNames'])[int(Level)]
 
+        # Reformat Log For Human Readabillity #
         CallStack = inspect.stack()
         CallingModuleName = CallStack[1][1]
         CallingFunctionName = CallStack[1][3]
