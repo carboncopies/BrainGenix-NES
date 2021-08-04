@@ -91,7 +91,7 @@ class ZK(): # Create Interface Class #
         self.ZookeeperConnection.start()
 
         if Logger != None:
-            Logger.Log('Established Connection To Zookeeper')
+            Logger.Log('Established Connection To Zookeeper', 2)
 
         self.ZookeeperConnection.ensure_path('BrainGenix/')
         self.ZookeeperConnection.ensure_path('BrainGenix/System')
