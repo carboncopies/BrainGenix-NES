@@ -12,6 +12,8 @@ ManagementAPIHost: 127.0.0.1 # This defines the IP address of the unified manage
 KafkaHost: 10.1.18.1 # Set the address of the server running the kafka broker, default is localhost
 KafkaPort: 9092 # Set the port to connect to the kafka broker, default is 9092
 
+#### SYSTEM TELEMETRY CONFIGURATION #
+SystemTelemetryProducerEventPollingPeriod: 0.5 # Set the time that the system telemetry module is willing to wait for callback events
 
 ### ZOOKEEPER CONFIGURATION ###
 ZookeeperHost: 10.1.18.1 # Set the host running the zookeeper server, default is localhost
