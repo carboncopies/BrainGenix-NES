@@ -159,7 +159,7 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
         if Error is not None:
 
             # Log Error #
-            self.Logger.Log(f'LibRDKafka Subsystem Reporting Error: {Error}, With Message: {Message}', 7)
+            self.Logger.Log(f'LibRDKafka Subsystem Reporting Error: {Error}', 9)
 
         # Else, Dump Message #
         else:
