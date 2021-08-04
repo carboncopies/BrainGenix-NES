@@ -74,7 +74,7 @@ class LADSManager(): # Manages the system telemetry leader class #
         self.Logger.Log('Joining LADS Daemon Threads', 3)
 
         self.Logger.Log('Sending LADS Daemon Control Queue Shutdown Message', 2)
-        self.LADSDaemon.ControlQueueDataCollectionDaemon.put('Stawp!')
+        self.LADSDaemon.ControlQueue.put('Stawp!')
         self.Logger.Log('Sent Shutdown Message To LADS Control Queue', 1)
 
         self.Logger.Log('Joining LADS Daemon To Main Thread', 2)
