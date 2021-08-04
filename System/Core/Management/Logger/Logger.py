@@ -209,6 +209,10 @@ class SysLog(): # Logger Class #
 
     def log(self, Message, Level): # Alias Method For Kazoo Subsystem #
 
+        print(Message)
+
+        print(Level)
+
         self.Log(Message, Level)
 
 
