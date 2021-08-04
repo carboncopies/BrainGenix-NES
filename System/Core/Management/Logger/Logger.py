@@ -181,9 +181,10 @@ class SysLog(): # Logger Class #
 
         # Set Log Level #
         if bool(self.SystemConfiguration['DisplayLogLevelsAsText']) == False:
-            Level = str(Level)
+            LevelString = str(Level)
         else:
-            Level = dict(self.SystemConfiguration['LogLevelNames'])[int(Level)]
+            LevelString = dict(self.SystemConfiguration['LogLevelNames'])[int(Level)]
+            print(LevelString)
 
         # Reformat Log For Human Readabillity #
         CallStack = inspect.stack()
@@ -191,7 +192,7 @@ class SysLog(): # Logger Class #
         CallingFunctionName = CallStack[1][3]
         ThreadName = threading.current_thread().name
 
-        LogString = f'[{Level.rjust(5, " ")}] [{LogTime}] [{ThreadName.rjust(24, " ")}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(23, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}'
+        LogString = f'[{LevelString.rjust(5, " ")}] [{LogTime}] [{ThreadName.rjust(24, " ")}] [{CallingModuleName.split("/")[-1].split(".")[0].rjust(23, " ")}] [{CallingFunctionName.rjust(19, " ")}] {Message}'
 
 
         if self.PrintEnabled:
