@@ -152,6 +152,21 @@ class Follower(): # This Class Gets System Information And Puts It Into Kafka #
         self.Logger.Log('Started System Statistics Auto Transmission Thread', 1)
 
 
+    def KafkaCallbackMethod(self, Error, Message): # librdkafka Message Callback Service For Message Error Reporting #
+
+        # Check Error Status #
+        if Error is not None:
+
+            # Log Error #
+            self.Logger.Log(f'LibRDKafka Subsystem Reporting Error: {Error}, With Message: {Message}', 7)
+
+        # Else, Dump Message #
+        else:
+
+            pass
+
+
+
     def SendStatsThread(self, ControlQueue, StatisticsQueue): # Send Stats Via Send Command #
 
         # Log Start #
