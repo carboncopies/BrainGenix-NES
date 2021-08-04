@@ -207,11 +207,7 @@ class SysLog(): # Logger Class #
         self.EnqueueLogEntry(Level, str(LogTime), CallingModuleName, CallingFunctionName, Message, str(self.NodeID), ThreadName)
 
 
-    def log(self, Message, Level): # Alias Method For Kazoo Subsystem #
-
-        print(Message)
-
-        print(Level)
+    def log(self, Level, Message): # Alias Method For Kazoo Subsystem #
 
         self.Log(Message, Level)
 
