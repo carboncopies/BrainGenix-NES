@@ -72,7 +72,7 @@ class ZK(): # Create Interface Class #
 
         # Extract Values From Dictionary #
         ZKHost = str(SystemConfiguration.get('ZookeeperHost'))
-        ZKPort = str(SystemConfiguration.get('ZKPort'))
+        ZKPort = str(SystemConfiguration.get('ZookeeperPort'))
 
         ZKHost += f':{ZKPort}'
 
