@@ -5,16 +5,16 @@ DatabaseHost: 10.1.4.2 # Set the mysql server host
 DatabaseName: bgdb # Set the name of the database 
 
 ### MANAGEMENT API CONFIGURATION ###
-Port : 6598 # Set the port number used by the management api, should be the same across all bg divisions, eg. NES, ERS, STS
-
+Port : 1698 # Set the port number used by the management api, should be the same across all bg divisions, eg. NES, ERS, STS
+ManagementAPIHost: 127.0.0.1 # This defines the IP address of the unified management API server, default is 127.0.0.1
 
 #### APACHE KAFKA CONFIGURATION ###
-KafkaHost: localhost # Set the address of the server running the kafka broker, default is localhost
+KafkaHost: 10.1.18.1 # Set the address of the server running the kafka broker, default is localhost
 KafkaPort: 9092 # Set the port to connect to the kafka broker, default is 9092
 
 
 ### ZOOKEEPER CONFIGURATION ###
-ZKHost: 127.0.0.1 # Set the host running the zookeeper server, default is localhost
+ZKHost: 10.1.18.1 # Set the host running the zookeeper server, default is localhost
 ZKPort: 2181 # Set port used to connect to the zookeeper server, default is 2181
 
 
