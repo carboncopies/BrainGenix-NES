@@ -92,7 +92,7 @@ class SysLog(): # Logger Class #
 
 
         # Initialize Local Variable Information #
-        print('[Level] [               Time] [                  Thread] [            Module Name] [           Function] [Message]')
+        print('[Level] [               Time] [                    Thread] [            Module Name] [           Function] [Message]')
         self.PrintEnabled = ConsoleOutputEnabled
         self.CurrentLogLength = 1
         self.LogFileNumber = 0
