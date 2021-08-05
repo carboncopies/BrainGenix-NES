@@ -1,7 +1,7 @@
 ### DATABASE CONFIGURATION ###
 DatabaseUsername: bgUser # Set the mysql database username
 DatabasePassword: 123456 # Set the mysql database password
-DatabaseHost: 10.1.4.2 # Set the mysql server host
+DatabaseHost: localhost # Set the mysql server host
 DatabaseName: bgdb # Set the name of the database 
 
 ### MANAGEMENT API CONFIGURATION ###
