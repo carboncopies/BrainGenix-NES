@@ -98,7 +98,7 @@ sSocketAPI.LinkLFTM(sLFTMInstance)
 sSocketAPI.IndexCommands()
 
 sSocketAPI.UpdateCommand()
-sSocketAPI.addUser('pray@carboncopies.org','123456','789','Prishita','Ray','', 3)
+sSocketAPI.addUser('pray@carboncopies.org','123456','789','Prishita','Ray','', 5)
 sSocketAPI.WriteAuthentication('pray@carboncopies.org','123456')
 
 
