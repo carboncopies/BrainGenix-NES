@@ -92,7 +92,7 @@ class SysLog(): # Logger Class #
 
 
         # Initialize Local Variable Information #
-        
+
         if bool(self.SystemConfiguration['DisplayLogLevelsAsText']) == False:
             print('[Level] [               Time] [                  Thread] [            Module Name] [           Function] [Message]')
         else:
