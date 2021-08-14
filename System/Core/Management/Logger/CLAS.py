@@ -68,8 +68,7 @@ class CentralizedLoggerAggregationSystem(): # Define Class for CLAS #
         NumLines = APIArgs['Lines']
 
         # Get Log Text #
-        PullStatement= ("SELECT * FROM log LIMIT %d" % int(NumLines))
-        self.LoggerCursor.execute(PullStatement)
+        self.LoggerCursor.execute("SELECT * FROM log LIMIT %d" % int(NumLines))
 
         LogEntries = self.LoggerCursor.fetchall()
         CommandOutput = []
