@@ -20,7 +20,7 @@ class UserManagementSystem(): # User Management Class #
     def mAPI_CreateUser(self, APIArgs): # Create User Statemenet #
         
         # Get User Info #
-        UserName = APIArgs['UserName']
+        UserName = APIArgs['Username']
         Password = APIArgs['Password']
         FirstName = APIArgs['FirstName']
         LastName = APIArgs['LastName']
