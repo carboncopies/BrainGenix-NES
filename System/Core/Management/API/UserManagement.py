@@ -6,14 +6,14 @@
 Name: User Management API
 Description: This subsystem exposes management API functionality to the user auth system.
 Date-Created: 2021-08-13
-''' 
+'''
 
 import secrets
 
 class UserManagementSystem(): # User Management Class #
 
     def __init__(self, SocketAPI): # Initialization Function #
-        
+
         # Create Local Pointers #
         self.SocketAPI = SocketAPI
 
