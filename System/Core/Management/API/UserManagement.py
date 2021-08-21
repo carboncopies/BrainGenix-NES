@@ -18,7 +18,7 @@ class UserManagementSystem(): # User Management Class #
         self.SocketAPI = SocketAPI
 
     def mAPI_CreateUser(self, APIArgs): # Create User Statemenet #
-        
+
         # Get User Info #
         UserName = APIArgs['Username']
         Password = APIArgs['Password']
