@@ -416,37 +416,45 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
     #Returns list of commands that a user can execute based on his/her permission level
     def WriteAuthentication(self, userName:str, passwordHash:str):
 
-        # Get Database Config #
-        SystemConfiguration = self.SystemConfiguration
+        try:
 
-        # Connect To DB #
-        DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
-        DBPassword = str(SystemConfiguration.get('DatabasePassword'))
-        DBHost = str(SystemConfiguration.get('DatabaseHost'))
-        DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
+            # Get Database Config #
+            SystemConfiguration = self.SystemConfiguration
 
-        # Connect To Database #
-        self.DatabaseConnection = pymysql.connect(
-            host = DBHost,
-            user = DBUsername,
-            password = DBPassword,
-            db = DBDatabaseName
-        )
+            # Connect To DB #
+            DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
+            DBPassword = str(SystemConfiguration.get('DatabasePassword'))
+            DBHost = str(SystemConfiguration.get('DatabaseHost'))
+            DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
 
-        cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
+            # Connect To Database #
+            self.DatabaseConnection = pymysql.connect(
+                host = DBHost,
+                user = DBUsername,
+                password = DBPassword,
+                db = DBDatabaseName
+            )
 
-        cur.execute("SELECT * FROM user WHERE userName=%s AND passwordHash=%s",(userName,passwordHash))
-        userCursor = cur
+            cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
 
-        for row in userCursor:
-            level = row['permissionLevel']
-            cur.execute("SELECT * FROM command WHERE permissionLevel=%s",level)
+            cur.execute("SELECT * FROM user WHERE userName=%s AND passwordHash=%s",(userName,passwordHash))
+            userCursor = cur
 
-            print("Executable Commands for current permission level:")
-            for row1 in cur:
-                print(row1['commandName'],"\t",row1['commandDescription'])
+            for row in userCursor:
+                level = row['permissionLevel']
+                cur.execute("SELECT * FROM command WHERE permissionLevel=%s",level)
 
-        self.DatabaseConnection.close()
+                print("Executable Commands for current permission level:")
+                for row1 in cur:
+                    print(row1['commandName'],"\t",row1['commandDescription'])
+
+            self.DatabaseConnection.close()
+            
+        except Exception as e:
+            
+            return False
+        
+        return Truw
 
 
     def addUser(self, userName:str, passwordHash:str, salt:str, firstName:str, lastName:str, notes:str, permissionLevel:int):
