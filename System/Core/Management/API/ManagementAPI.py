@@ -449,12 +449,12 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     print(row1['commandName'],"\t",row1['commandDescription'])
 
             self.DatabaseConnection.close()
-            
-        except Exception as e:
+
+        except Exception:
             
             return False
         
-        return Truw
+        return True
 
 
     def addUser(self, userName:str, passwordHash:str, salt:str, firstName:str, lastName:str, notes:str, permissionLevel:int):
