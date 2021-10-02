@@ -147,7 +147,7 @@ insert into bgdb.synapse values (1, 2, 2, 2, 1, 1);
 insert into bgdb.synapse values (2, 3, 3, 3, 2, 2);
 
 --
-insert into bgdb.user values (1, 'bleu', 'password', 'salt', 'Brad', 'Leu', 'some notes', 'T', null, null, 5);
+insert into bgdb.user values (1, 'root', 'Riddle', 'salt', 'default', 'user', 'some notes', 'T', null, null, 5);
 
 insert into bgdb.command values (1, 'runSim', 'run the simulation', 1);
 insert into bgdb.command values (2, 'loadNeurons', 'upload neuron data', 5);
