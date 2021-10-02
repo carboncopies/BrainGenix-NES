@@ -129,6 +129,65 @@ create table if not exists `bgdb`.`log` (
 `Thread` varchar(2000) null,
 primary key (`logId`));
 
+-- -----------------------------------------------------
+-- Table `bgdb`.`ersData`
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `bgdb`.`ersData` ;
+
+create table if not exists `bgdb`.`ersData` (
+`ersDataId` bigint not null auto_increment,
+`rawBinaryString` LONGTEXT null,
+`metaData` mediumtext null,
+`byteString` mediumtext null,
+primary key (`ErsDataId`));
+
+-- -----------------------------------------------------
+-- Table `bgdb`.`ersString`
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `bgdb`.`ersString` ;
+
+create table if not exists `bgdb`.`ersString` (
+`ersStringId` bigint not null auto_increment,
+`ersDataId` bigint not null,
+`string` mediumtext null,
+`byteString` mediumtext null,
+primary key (`ersStringId`),
+  CONSTRAINT `ersString_fk_ErsDataId`
+    FOREIGN KEY (ersDataId)
+    REFERENCES `bgdb`.`ersData` (ersDataId)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `bgdb`.`imageDef`
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `bgdb`.`imageDef` ;
+
+create table if not exists `bgdb`.`imageDef` (
+`imageDefId` bigint not null auto_increment,
+`ersStringId` bigint not null,
+`name` mediumtext null,
+`order` bigint null,
+`v1` bigint null,
+`v2` bigint null,
+`v3` bigint null,
+`v4` bigint null,
+`f1` bigint null,
+`f2` bigint null,
+`f3` bigint null,
+`f4` bigint null,
+primary key (`imageDefId`),
+  CONSTRAINT `ersString_fk_ErsStringId`
+    FOREIGN KEY (ersStringId)
+    REFERENCES `bgdb`.`ersString` (ersStringId)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
