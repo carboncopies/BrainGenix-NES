@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `bgdb`.`user` (
   `userId` BIGINT NOT NULL AUTO_INCREMENT,
   `userName` VARCHAR(45) NOT NULL,
   `passwordHash` VARCHAR(50) NOT NULL,
-  `salt` VARCHAR(6) NOT NULL,
+  `salt` VARCHAR(5000) NOT NULL,
   `firstName` VARCHAR(45) NOT NULL,
   `lastName` VARCHAR(45) NOT NULL,
   `notes` VARCHAR(200) NOT NULL,
