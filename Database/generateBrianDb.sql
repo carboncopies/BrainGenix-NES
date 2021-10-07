@@ -137,6 +137,7 @@ DROP TABLE IF EXISTS `bgdb`.`ersData` ;
 
 create table if not exists `bgdb`.`ersData` (
 `ersDataId` bigint not null auto_increment,
+`imageName` mediumtext null,
 `rawBinaryString` LONGTEXT null,
 `metaData` mediumtext null,
 `byteString` mediumtext null,
@@ -213,6 +214,27 @@ insert into bgdb.command values (2, 'loadNeurons', 'upload neuron data', 5);
 
 insert into bgdb.log (LogLevel, LogDateTime, CallingModule, FunctionName, LogOutput, Node, Thread) values (2, current_timestamp,
 'Module1', 'GetImaginaryStuff', 'Error in GetImaginaryStuff', 'Node2', 'Thread text here');
+
+insert into bgdb.ersdata values(1, 'cube one', 'some sort of string', 'cube is 10 x 10, etc.', 'some sort of bytestring');
+
+insert into bgdb.ersstring values (10, 1, 'string', 'another bytestring');
+
+insert into bgdb.imagedef values
+(100, 10, 'image name?', 1, 0, 2, 2, null, null, null, null, null),
+(101, 10, 'image name?', 2, 0, 2, 2, null, null, null, null, null),
+(102, 10, 'image name?', 3, 0, 2, 2, null, null, null, null, null),
+(103, 10, 'image name?', 4, 0, 2, 2, null, null, null, null, null),
+(104, 10, 'image name?', 5, 0, 2, 2, null, null, null, null, null),
+(105, 10, 'image name?', 6, 0, 2, 2, null, null, null, null, null),
+(106, 10, 'image name?', 7, 0, 2, 2, null, null, null, null, null),
+(107, 10, 'image name?', 8, 0, 2, 2, null, null, null, null, null), -- end of v
+(108, 10, 'image name?', 9, null, null, null, null, 1, 2, 3, 4),
+(109, 10, 'image name?', 10, null, null, null, null, 8, 7, 6, 5),
+(110, 10, 'image name?', 11, null, null, null, null, 4, 3, 7, 8),
+(111, 10, 'image name?', 12, null, null, null, null, 5, 1, 4, 8),
+(112, 10, 'image name?', 13, null, null, null, null, 5, 6, 2, 1),
+(113, 10, 'image name?', 14, null, null, null, null, 2, 6, 7, 3)-- end of f
+;
 --
 --    --sample for encrypting/dectrypting passwords
 --    insert into bgdb.User (user_name, user_password, first_name, last_name) values ('bleu', aes_encrypt('123456', 'bleu'), 'Brad', 'Leu');
