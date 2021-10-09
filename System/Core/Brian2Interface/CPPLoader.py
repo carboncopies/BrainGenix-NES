@@ -2,8 +2,11 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
-
-
+'''
+Name: CPPLoader
+Description: This file is responsible for creating the C++ Code Loader For The Main Simulation Engine.
+Date-Created: 2021-10-08
+'''
 
 # This Function Loads C++ Code As A String And Feeds It To The BrianInterface
 def LoadCPP(Logger:object, FileStreamObject:str):
