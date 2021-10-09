@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `bgdb`.`user` (
   `userId` BIGINT NOT NULL AUTO_INCREMENT,
   `userName` VARCHAR(45) NOT NULL,
   `passwordHash` VARCHAR(50) NOT NULL,
-  `salt` VARCHAR(6) NOT NULL,
+  `salt` VARCHAR(5000) NOT NULL,
   `firstName` VARCHAR(45) NOT NULL,
   `lastName` VARCHAR(45) NOT NULL,
   `notes` VARCHAR(200) NOT NULL,
@@ -129,6 +129,66 @@ create table if not exists `bgdb`.`log` (
 `Thread` varchar(2000) null,
 primary key (`logId`));
 
+-- -----------------------------------------------------
+-- Table `bgdb`.`ersData`
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `bgdb`.`ersData` ;
+
+create table if not exists `bgdb`.`ersData` (
+`ersDataId` bigint not null auto_increment,
+`imageName` mediumtext null,
+`rawBinaryString` LONGTEXT null,
+`metaData` mediumtext null,
+`byteString` mediumtext null,
+primary key (`ErsDataId`));
+
+-- -----------------------------------------------------
+-- Table `bgdb`.`ersString`
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `bgdb`.`ersString` ;
+
+create table if not exists `bgdb`.`ersString` (
+`ersStringId` bigint not null auto_increment,
+`ersDataId` bigint not null,
+`string` mediumtext null,
+`byteString` mediumtext null,
+primary key (`ersStringId`),
+  CONSTRAINT `ersString_fk_ErsDataId`
+    FOREIGN KEY (ersDataId)
+    REFERENCES `bgdb`.`ersData` (ersDataId)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `bgdb`.`imageDef`
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `bgdb`.`imageDef` ;
+
+create table if not exists `bgdb`.`imageDef` (
+`imageDefId` bigint not null auto_increment,
+`ersStringId` bigint not null,
+`name` mediumtext null,
+`order` bigint null,
+`v1` bigint null,
+`v2` bigint null,
+`v3` bigint null,
+`v4` bigint null,
+`f1` bigint null,
+`f2` bigint null,
+`f3` bigint null,
+`f4` bigint null,
+primary key (`imageDefId`),
+  CONSTRAINT `ersString_fk_ErsStringId`
+    FOREIGN KEY (ersStringId)
+    REFERENCES `bgdb`.`ersString` (ersStringId)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
@@ -154,6 +214,27 @@ insert into bgdb.command values (2, 'loadNeurons', 'upload neuron data', 5);
 
 insert into bgdb.log (LogLevel, LogDateTime, CallingModule, FunctionName, LogOutput, Node, Thread) values (2, current_timestamp,
 'Module1', 'GetImaginaryStuff', 'Error in GetImaginaryStuff', 'Node2', 'Thread text here');
+
+insert into bgdb.ersdata values(1, 'cube one', 'some sort of string', 'cube is 10 x 10, etc.', 'some sort of bytestring');
+
+insert into bgdb.ersstring values (10, 1, 'string', 'another bytestring');
+
+insert into bgdb.imagedef values
+(100, 10, 'image name?', 1, 0, 2, 2, null, null, null, null, null),
+(101, 10, 'image name?', 2, 0, 2, 2, null, null, null, null, null),
+(102, 10, 'image name?', 3, 0, 2, 2, null, null, null, null, null),
+(103, 10, 'image name?', 4, 0, 2, 2, null, null, null, null, null),
+(104, 10, 'image name?', 5, 0, 2, 2, null, null, null, null, null),
+(105, 10, 'image name?', 6, 0, 2, 2, null, null, null, null, null),
+(106, 10, 'image name?', 7, 0, 2, 2, null, null, null, null, null),
+(107, 10, 'image name?', 8, 0, 2, 2, null, null, null, null, null), -- end of v
+(108, 10, 'image name?', 9, null, null, null, null, 1, 2, 3, 4),
+(109, 10, 'image name?', 10, null, null, null, null, 8, 7, 6, 5),
+(110, 10, 'image name?', 11, null, null, null, null, 4, 3, 7, 8),
+(111, 10, 'image name?', 12, null, null, null, null, 5, 1, 4, 8),
+(112, 10, 'image name?', 13, null, null, null, null, 5, 6, 2, 1),
+(113, 10, 'image name?', 14, null, null, null, null, 2, 6, 7, 3)-- end of f
+;
 --
 --    --sample for encrypting/dectrypting passwords
 --    insert into bgdb.User (user_name, user_password, first_name, last_name) values ('bleu', aes_encrypt('123456', 'bleu'), 'Brad', 'Leu');
