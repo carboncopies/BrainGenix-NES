@@ -5,7 +5,6 @@
 import brian2
 
 from Core.Brian2Interface.CPPLoader import LoadCPP
-from brian2.core.functions import implementation
 
 '''
 Name: Main Simulation Engine
@@ -39,8 +38,8 @@ class MainSimulationEngine():
         # Create Callback
         self.Logger.Log('Creating Brian2 Implementation Callback', 4)
 
-        @implementation('cpp', CPPSource, headers=HeaderSource) ## TODO: Make this make sense, it's not super clear right now how this works
-        #@check_units(x=1, y=1, result=1)
+        @brian2.core.functions.implementation('cpp', CPPSource, headers=HeaderSource) ## TODO: Make this make sense, it's not super clear right now how this works
+        @brian2.core.functions.check_units(x=1, y=1, result=1)
         def BrianInterfaceCallback(x, y):
             
             pass
