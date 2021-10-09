@@ -5,6 +5,7 @@
 import brian2
 
 from Core.Brian2Interface.CPPLoader import LoadCPP
+from brian2.core.functions import implementation
 
 '''
 Name: Main Simulation Engine
@@ -35,4 +36,7 @@ class MainSimulationEngine():
             'CPPSource/BrianInterface.h'
             )
 
-        
+        # Create Callback
+        self.Logger.Log('Creating Brian2 Implementation Callback', 4)
+
+        @implementation('cpp', CPPSource, headers=HeaderSource)
