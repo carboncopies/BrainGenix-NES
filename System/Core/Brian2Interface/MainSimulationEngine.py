@@ -4,6 +4,8 @@
  
 import brian2
 
+from Core.Brian2Interface.CPPLoader import LoadCPP
+
 '''
 Name: Main Simulation Engine
 Description: This file is responsible for creating the Main Simulation Engine Class.
@@ -24,4 +26,13 @@ class MainSimulationEngine():
         self.SystemConfiguration = SystemConfiguration
 
 
+        # Load CPP
+        self.Logger.Log('Brian2Interface Loading C++ Callback', 5)
 
+        CPPSource, HeaderSource = LoadCPP(
+            Logger, 
+            'CPPSource/BrianInterface.cpp',
+            'CPPSource/BrianInterface.h'
+            )
+
+        
