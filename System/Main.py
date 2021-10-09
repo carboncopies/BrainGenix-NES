@@ -21,6 +21,8 @@ from Core.Management.API.ManagementAPI import ManagementAPISocketServer
 
 from Core.Internode.Zookeeper.LFTransitionManager import LFTM
 
+from Core.Brian2Interface.MainSimulationEngine import MainSimulationEngine
+
 from Core.VersionData import VersionNumber
 from Core.VersionData import BranchVersion
 
@@ -100,6 +102,9 @@ sSocketAPI.IndexCommands()
 sSocketAPI.UpdateCommand()
 sSocketAPI.addUser('pray@carboncopies.org','123456','789','Prishita','Ray','', 5)
 sSocketAPI.WriteAuthentication('pray@carboncopies.org','123456')
+
+# Instantiate Main Simulation Engine #
+sMainSimulationEngine = MainSimulationEngine(mLogger, SystemConfiguration)
 
 
 # MOTD #
