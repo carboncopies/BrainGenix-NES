@@ -35,11 +35,14 @@ class MainSimulationEngine():
             'CPPSource/BrianInterface.h'
             )
 
+
         # Create Callback
-        self.Logger.Log('Creating Brian2 Implementation Callback', 4)
+        self.Logger.Log('Creating Brian2Interface Callback', 4)
 
         @brian2.core.functions.implementation('cpp', CPPSource, headers=HeaderSource) ## TODO: Make this make sense, it's not super clear right now how this works
         @brian2.units.fundamentalunits.check_units(x=1, y=1, result=1)
         def BrianInterfaceCallback(x, y):
             
             pass
+
+        self.Logger.Log('Brian2Interface Callback Created', 3)
