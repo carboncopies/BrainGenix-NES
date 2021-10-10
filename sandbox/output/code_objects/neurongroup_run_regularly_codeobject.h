@@ -1,0 +1,7 @@
+#ifndef _INCLUDED_neurongroup_run_regularly_codeobject
+#define _INCLUDED_neurongroup_run_regularly_codeobject
+
+void _run_neurongroup_run_regularly_codeobject();
+
+
+#endif

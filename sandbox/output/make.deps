@@ -1,0 +1,79 @@
+randomkit.o: brianlib/randomkit/randomkit.c \
+ brianlib/randomkit/randomkit.h
+neurongroup_group_variable_set_conditional_codeobject.o: \
+ code_objects/neurongroup_group_variable_set_conditional_codeobject.cpp \
+ code_objects/neurongroup_group_variable_set_conditional_codeobject.h \
+ objects.h synapses_classes.h brianlib/spikequeue.h \
+ brianlib/stdint_compat.h brianlib/clocks.h brianlib/stdint_compat.h \
+ brianlib/dynamic_array.h brianlib/stdint_compat.h network.h \
+ brianlib/randomkit/randomkit.h brianlib/common_math.h
+neurongroup_group_variable_set_conditional_codeobject_1.o: \
+ code_objects/neurongroup_group_variable_set_conditional_codeobject_1.cpp \
+ code_objects/neurongroup_group_variable_set_conditional_codeobject_1.h \
+ objects.h synapses_classes.h brianlib/spikequeue.h \
+ brianlib/stdint_compat.h brianlib/clocks.h brianlib/stdint_compat.h \
+ brianlib/dynamic_array.h brianlib/stdint_compat.h network.h \
+ brianlib/randomkit/randomkit.h brianlib/common_math.h
+neurongroup_resetter_codeobject.o: \
+ code_objects/neurongroup_resetter_codeobject.cpp \
+ code_objects/neurongroup_resetter_codeobject.h objects.h \
+ synapses_classes.h brianlib/spikequeue.h brianlib/stdint_compat.h \
+ brianlib/clocks.h brianlib/stdint_compat.h brianlib/dynamic_array.h \
+ brianlib/stdint_compat.h network.h brianlib/randomkit/randomkit.h \
+ brianlib/common_math.h
+neurongroup_run_regularly_codeobject.o: \
+ code_objects/neurongroup_run_regularly_codeobject.cpp \
+ code_objects/neurongroup_run_regularly_codeobject.h objects.h \
+ synapses_classes.h brianlib/spikequeue.h brianlib/stdint_compat.h \
+ brianlib/clocks.h brianlib/stdint_compat.h brianlib/dynamic_array.h \
+ brianlib/stdint_compat.h network.h brianlib/randomkit/randomkit.h \
+ brianlib/common_math.h
+neurongroup_stateupdater_codeobject.o: \
+ code_objects/neurongroup_stateupdater_codeobject.cpp \
+ code_objects/neurongroup_stateupdater_codeobject.h objects.h \
+ synapses_classes.h brianlib/spikequeue.h brianlib/stdint_compat.h \
+ brianlib/clocks.h brianlib/stdint_compat.h brianlib/dynamic_array.h \
+ brianlib/stdint_compat.h network.h brianlib/randomkit/randomkit.h \
+ brianlib/common_math.h
+neurongroup_thresholder_codeobject.o: \
+ code_objects/neurongroup_thresholder_codeobject.cpp \
+ code_objects/neurongroup_thresholder_codeobject.h objects.h \
+ synapses_classes.h brianlib/spikequeue.h brianlib/stdint_compat.h \
+ brianlib/clocks.h brianlib/stdint_compat.h brianlib/dynamic_array.h \
+ brianlib/stdint_compat.h network.h brianlib/randomkit/randomkit.h \
+ brianlib/common_math.h
+spikemonitor_codeobject.o: code_objects/spikemonitor_codeobject.cpp \
+ code_objects/spikemonitor_codeobject.h objects.h synapses_classes.h \
+ brianlib/spikequeue.h brianlib/stdint_compat.h brianlib/clocks.h \
+ brianlib/stdint_compat.h brianlib/dynamic_array.h \
+ brianlib/stdint_compat.h network.h brianlib/randomkit/randomkit.h \
+ brianlib/common_math.h
+main.o: main.cpp objects.h synapses_classes.h brianlib/spikequeue.h \
+ brianlib/stdint_compat.h brianlib/clocks.h brianlib/stdint_compat.h \
+ brianlib/dynamic_array.h brianlib/stdint_compat.h network.h \
+ brianlib/randomkit/randomkit.h run.h brianlib/common_math.h \
+ code_objects/neurongroup_group_variable_set_conditional_codeobject.h \
+ code_objects/neurongroup_group_variable_set_conditional_codeobject_1.h \
+ code_objects/neurongroup_resetter_codeobject.h \
+ code_objects/neurongroup_run_regularly_codeobject.h \
+ code_objects/neurongroup_stateupdater_codeobject.h \
+ code_objects/neurongroup_thresholder_codeobject.h \
+ code_objects/spikemonitor_codeobject.h
+network.o: network.cpp network.h brianlib/clocks.h \
+ brianlib/stdint_compat.h
+objects.o: objects.cpp objects.h synapses_classes.h brianlib/spikequeue.h \
+ brianlib/stdint_compat.h brianlib/clocks.h brianlib/stdint_compat.h \
+ brianlib/dynamic_array.h brianlib/stdint_compat.h network.h \
+ brianlib/randomkit/randomkit.h
+run.o: run.cpp objects.h synapses_classes.h brianlib/spikequeue.h \
+ brianlib/stdint_compat.h brianlib/clocks.h brianlib/stdint_compat.h \
+ brianlib/dynamic_array.h brianlib/stdint_compat.h network.h \
+ brianlib/randomkit/randomkit.h \
+ code_objects/neurongroup_group_variable_set_conditional_codeobject.h \
+ code_objects/neurongroup_group_variable_set_conditional_codeobject_1.h \
+ code_objects/neurongroup_resetter_codeobject.h \
+ code_objects/neurongroup_run_regularly_codeobject.h \
+ code_objects/neurongroup_stateupdater_codeobject.h \
+ code_objects/neurongroup_thresholder_codeobject.h \
+ code_objects/spikemonitor_codeobject.h
+synapses_classes.o: synapses_classes.cpp

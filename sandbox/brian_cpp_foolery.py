@@ -25,7 +25,7 @@ filename = os.path.abspath('Megamind.avi')
 #                              int(video.get(cv2.CAP_PROP_FRAME_HEIGHT)),
 #                              int(video.get(cv2.CAP_PROP_FRAME_COUNT)))
 
-width, height, frame_count = 2, 2, 10
+width, height, frame_count = 128, 128, 10
 
 fps = 24
 time_between_frames = 1*second/fps
@@ -108,10 +108,11 @@ stepsize = 100*ms
 #     # print([(type(x), x) for x in gen_out])
 # sys.exit(0)
 
+#import sys
 
 for idx, val in enumerate(i):
     print(idx, val)
-sys.exit(0)
+#sys.exit(0)
 
 
 import matplotlib.animation as animation
@@ -135,8 +136,10 @@ dots, = ax.plot([], [], 'k.', markersize=2, alpha=.25)
 ax.set_xlim(0, width)
 ax.set_ylim(0, height)
 ax.invert_yaxis()
+
 def run(data):
     x, y = data
+    print('X: ', x, 'Y: ', y)
     dots.set_data(x, y)
 
 ani = animation.FuncAnimation(fig, run, next_spikes, blit=False, repeat=True,
