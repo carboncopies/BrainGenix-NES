@@ -215,11 +215,11 @@ insert into bgdb.command values (2, 'loadNeurons', 'upload neuron data', 5);
 insert into bgdb.log (LogLevel, LogDateTime, CallingModule, FunctionName, LogOutput, Node, Thread) values (2, current_timestamp,
 'Module1', 'GetImaginaryStuff', 'Error in GetImaginaryStuff', 'Node2', 'Thread text here');
 
-insert into bgdb.ersdata values(1, 'cube one', 'some sort of string', 'cube is 10 x 10, etc.', 'some sort of bytestring');
+insert into bgdb.ersData values(1, 'cube one', 'some sort of string', 'cube is 10 x 10, etc.', 'some sort of bytestring');
 
-insert into bgdb.ersstring values (10, 1, 'string', 'another bytestring');
+insert into bgdb.ersString values (10, 1, 'string', 'another bytestring');
 
-insert into bgdb.imagedef values
+insert into bgdb.imageDef values
 (100, 10, 'image name?', 1, 0, 2, 2, null, null, null, null, null),
 (101, 10, 'image name?', 2, 0, 2, 2, null, null, null, null, null),
 (102, 10, 'image name?', 3, 0, 2, 2, null, null, null, null, null),
