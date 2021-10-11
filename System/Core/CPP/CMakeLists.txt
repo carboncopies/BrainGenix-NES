@@ -24,13 +24,15 @@ set(CMAKE_SWIG_OUTDIR              ${SOURCE_ROOT_DIR}/Artifacts/PythonImports)
 set(WRAPPER_DIR                    ${SOURCE_ROOT_DIR}/Wrap)
 set(SWIG_OUTFILE_DIR               ${BINARY_ROOT_DIR}/SWIGGenerated)
 
+set(CPP_SOURCE_DIR                 ${SOURCE_ROOT_DIR}/CPP)
+
 
 # Add c++ library to link against
 add_library(cpptest OBJECT
-  cpp/src/cpptest.cpp
-  cpp/include/cpptest/cpptest.h
+  ${CPP_SOURCE_DIR}/src/cpptest.cpp
+  ${CPP_SOURCE_DIR}/include/cpptest/cpptest.h
   )
-target_include_directories(cpptest PUBLIC cpp/include)
+target_include_directories(cpptest PUBLIC ${CPP_SOURCE_DIR}/include)
 target_compile_options(cpptest PRIVATE
   -fPIC
   -std=c++17
