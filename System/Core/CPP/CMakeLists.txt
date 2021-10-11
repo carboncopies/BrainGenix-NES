@@ -26,7 +26,6 @@ set(SWIG_OUTFILE_DIR               ${BINARY_ROOT_DIR}/SWIGGenerated)
 
 
 # Add c++ library to link against
-
 add_library(cpptest OBJECT
   cpp/src/cpptest.cpp
   cpp/include/cpptest/cpptest.h
@@ -41,7 +40,6 @@ target_compile_options(cpptest PRIVATE
 
 
 # Generate wrapper with swig
-
 set_source_files_properties(${WRAPPER_DIR}/pycpptest.i PROPERTIES
   CPLUSPLUS ON
   SWIG_MODULE_NAME pycpptest
