@@ -10,7 +10,6 @@ set(BINARY_ROOT_DIR ${CMAKE_CURRENT_BINARY_DIR})
 
 
 # Find necessary packages
-
 find_package(PythonLibs REQUIRED)
 
 find_package(SWIG REQUIRED)
@@ -18,11 +17,11 @@ include(${SWIG_USE_FILE})
 
 
 # Set some output locations
-
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SOURCE_ROOT_DIR}/artifacts/bin)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SOURCE_ROOT_DIR}/artifacts/bin)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${SOURCE_ROOT_DIR}/artifacts/lib)
-set(CMAKE_SWIG_OUTDIR              ${SOURCE_ROOT_DIR}/artifacts/py)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SOURCE_ROOT_DIR}/Artifacts/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SOURCE_ROOT_DIR}/Artifacts/bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${SOURCE_ROOT_DIR}/Artifacts/lib)
+set(CMAKE_SWIG_OUTDIR              ${SOURCE_ROOT_DIR}/Artifacts/py)
+set(WRAPPER_DIR                    ${SOURCE_ROOT_DIR}/Wrap)
 set(SWIG_OUTFILE_DIR               ${BINARY_ROOT_DIR}/swig_generated)
 
 
@@ -43,12 +42,12 @@ target_compile_options(cpptest PRIVATE
 
 # Generate wrapper with swig
 
-set_source_files_properties(wrap/pycpptest.i PROPERTIES
+set_source_files_properties(${WRAPPER_DIR}/pycpptest.i PROPERTIES
   CPLUSPLUS ON
   SWIG_MODULE_NAME pycpptest
   )
 
-swig_add_library(pycpptest LANGUAGE python SOURCES wrap/pycpptest.i)
+swig_add_library(pycpptest LANGUAGE python SOURCES ${WRAPPER_DIR}/pycpptest.i)
 
 target_include_directories(pycpptest PRIVATE ${PYTHON_INCLUDE_PATH})
 target_link_libraries(pycpptest PRIVATE cpptest ${PYTHON_LIBRARIES})
