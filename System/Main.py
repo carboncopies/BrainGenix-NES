@@ -21,7 +21,7 @@ from Core.Management.API.ManagementAPI import ManagementAPISocketServer
 
 from Core.Internode.Zookeeper.LFTransitionManager import LFTM
 
-from Core.Brian2Interface.MainSimulationEngine import MainSimulationEngine
+from Core.MainSimulationEngine.MainSimulationEngine import MainSimulationEngine
 
 from Core.VersionData import VersionNumber
 from Core.VersionData import BranchVersion
