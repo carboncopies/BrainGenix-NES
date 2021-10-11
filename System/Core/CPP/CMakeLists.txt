@@ -17,12 +17,12 @@ include(${SWIG_USE_FILE})
 
 
 # Set some output locations
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SOURCE_ROOT_DIR}/Artifacts/bin)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SOURCE_ROOT_DIR}/Artifacts/bin)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${SOURCE_ROOT_DIR}/Artifacts/lib)
-set(CMAKE_SWIG_OUTDIR              ${SOURCE_ROOT_DIR}/Artifacts/py)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SOURCE_ROOT_DIR}/Artifacts/Bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SOURCE_ROOT_DIR}/Artifacts/Bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${SOURCE_ROOT_DIR}/Artifacts/Lib)
+set(CMAKE_SWIG_OUTDIR              ${SOURCE_ROOT_DIR}/Artifacts/PythonImports)
 set(WRAPPER_DIR                    ${SOURCE_ROOT_DIR}/Wrap)
-set(SWIG_OUTFILE_DIR               ${BINARY_ROOT_DIR}/swig_generated)
+set(SWIG_OUTFILE_DIR               ${BINARY_ROOT_DIR}/SWIGGenerated)
 
 
 # Add c++ library to link against
