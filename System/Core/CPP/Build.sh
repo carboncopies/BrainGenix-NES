@@ -1,6 +1,9 @@
 #! /bin/bash
 
 # Create Build Directory
-if ! -d Build; then
-    mkdir Build
-fi
+mkdir -p Build
+
+# Build With CMAKE
+cd Build
+cmake ..
+make

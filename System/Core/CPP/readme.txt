@@ -15,3 +15,4 @@ After any of the 2 ways the result is 2 files in artifacts directory: artifacts/
 
 The usage example is in the python/pytest.py.
 
+## NOTE: REMOVED SCRIPT TO BUILD WITHOUT CMAKE
