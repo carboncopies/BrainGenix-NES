@@ -20,8 +20,8 @@ from Core.MainLoop.MainLoop import LFTM
 
 from Core.Utils.MainSimulationEngine.MainSimulationEngine import MainSimulationEngine
 
-from Core.VersionData import VersionNumber
-from Core.VersionData import BranchVersion
+from Core.Utils.VersionData import VersionNumber
+from Core.Utils.VersionData import BranchVersion
 
 
 ##############################################################################
