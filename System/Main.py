@@ -13,7 +13,7 @@ from Core.Initialization.LoadConfig import LoadLocalConfig
 from Core.Initialization.Instantiator import InstantiateLogger
 from Core.Initialization.CheckLibraries import CheckImports
 
-from Core.ThreadManager import ThreadManager
+from Core.Initialization.ThreadManager import ThreadManager
 
 from Core.Management.API.ManagementAPI import ManagementAPISocketServer
 
