@@ -64,7 +64,7 @@ class ZK(): # Create Interface Class #
         This function is used to connect to Zookeeper, hence the name.
         *It's automatically called by the main file, so you still shouldn't have to interact with this function.*
         The function will also ensure that some essential paths exist for BG-Core.
-        These paths are as follows: '/BrainGenix/System/Nodes', '/BrainGenix/CLI'
+        These paths are as follows: '/BrainGenix-NES/System/Nodes', '/BrainGenix-NES/CLI'
         Lastly, It creates a node with it's own hostname to tell the leader that this node has joined.
         That will create an event in the log that node {hostname} joined.
         '''
@@ -93,15 +93,15 @@ class ZK(): # Create Interface Class #
         if Logger != None:
             Logger.Log('Established Connection To Zookeeper', 2)
 
-        self.ZookeeperConnection.ensure_path('BrainGenix/')
-        self.ZookeeperConnection.ensure_path('BrainGenix/System')
-        self.ZookeeperConnection.ensure_path('BrainGenix/System/Nodes')
-        self.ZookeeperConnection.ensure_path('BrainGenix/CLI')
+        self.ZookeeperConnection.ensure_path('BrainGenix-NES/')
+        self.ZookeeperConnection.ensure_path('BrainGenix-NES/System')
+        self.ZookeeperConnection.ensure_path('BrainGenix-NES/System/Nodes')
+        self.ZookeeperConnection.ensure_path('BrainGenix-NES/CLI')
 
-        self.ConnectedNodesLastUpdate = self.ZookeeperConnection.get_children('/BrainGenix/System/Nodes')
-        self.ConnectedNodes = self.ZookeeperConnection.get_children('/BrainGenix/System/Nodes')
+        self.ConnectedNodesLastUpdate = self.ZookeeperConnection.get_children('/BrainGenix-NES/System/Nodes')
+        self.ConnectedNodes = self.ZookeeperConnection.get_children('/BrainGenix-NES/System/Nodes')
 
-        self.TryCreate(f'/BrainGenix/System/Nodes/{self.Name}/', zNodeData=b'', ephemeral=True)
+        self.TryCreate(f'/BrainGenix-NES/System/Nodes/{self.Name}/', zNodeData=b'', ephemeral=True)
 
 
     def ZKStateMonitor(self, CallbackMessage): # Handles ZK State Transition Logging #
@@ -119,7 +119,7 @@ class ZK(): # Create Interface Class #
         '''
 
         # Get Number Of Children zNodes #
-        NodeCount = len(self.ZookeeperConnection.get_children('/BrainGenix/System/Nodes'))
+        NodeCount = len(self.ZookeeperConnection.get_children('/BrainGenix-NES/System/Nodes'))
 
         # Return Count #
         return NodeCount
@@ -179,7 +179,7 @@ class ZK(): # Create Interface Class #
         *The end user shouldn't have to interact with this function.*
         '''
 
-        return self.ZookeeperConnection.exists('/BrainGenix/System/Leader')
+        return self.ZookeeperConnection.exists('/BrainGenix-NES/System/Leader')
 
 
 
@@ -202,8 +202,8 @@ class ZK(): # Create Interface Class #
 
 
         # Create LockFile #
-        if not self.ZookeeperConnection.exists('/BrainGenix/System/Leader'):
-            self.ZookeeperConnection.create('/BrainGenix/System/Leader', LeaderDictionaryString.encode(), ephemeral=True)
+        if not self.ZookeeperConnection.exists('/BrainGenix-NES/System/Leader'):
+            self.ZookeeperConnection.create('/BrainGenix-NES/System/Leader', LeaderDictionaryString.encode(), ephemeral=True)
             self.ZookeeperMode = 'Leader'
         else:
             self.Logger.Log('Other Node Already Created Lockfile')
@@ -258,14 +258,14 @@ class ZK(): # Create Interface Class #
 
                 # Check Latency #
                 StartTime = time.time()
-                LeaderExists = self.ZookeeperConnection.exists('/BrainGenix/System/Leader')
+                LeaderExists = self.ZookeeperConnection.exists('/BrainGenix-NES/System/Leader')
                 self.TransactionTime = time.time() - StartTime
 
                 # Check Leader #
                 if not LeaderExists:
                     self.LeaderTimeout()
-                if not self.ZookeeperConnection.exists('/BrainGenix/System/Leader'):
-                    if (self.ZookeeperConnection.get('/BrainGenix/System/Leader')[0] != self.Name.encode() and (self.ZookeeperMode == 'Leader')):
+                if not self.ZookeeperConnection.exists('/BrainGenix-NES/System/Leader'):
+                    if (self.ZookeeperConnection.get('/BrainGenix-NES/System/Leader')[0] != self.Name.encode() and (self.ZookeeperMode == 'Leader')):
                         self.Logger.Log('Node Lock File Overwritten, Degrading To Follower!', 1)
                         self.ZookeeperMode = 'Follower'
                 else: # Catch exception if node is destroyed during check
@@ -301,7 +301,7 @@ class ZK(): # Create Interface Class #
         You can call this function or just poll the list as it's updated by the polling thread.
         '''
 
-        self.ConnectedNodes = self.ZookeeperConnection.get_children('/BrainGenix/System/Nodes')
+        self.ConnectedNodes = self.ZookeeperConnection.get_children('/BrainGenix-NES/System/Nodes')
 
 
 
@@ -346,7 +346,7 @@ class ZK(): # Create Interface Class #
             self.Logger.Log(f'Node {RemNode} Disconnected', 5)
             if RemNode == self.Name:
                 self.Logger.Log('Did Another Instance Time Out?')
-                self.TryCreateOverwrite(f'/BrainGenix/System/Nodes/{self.Name}/', zNodeData=b'', ephemeral=True)
+                self.TryCreateOverwrite(f'/BrainGenix-NES/System/Nodes/{self.Name}/', zNodeData=b'', ephemeral=True)
 
 
 
