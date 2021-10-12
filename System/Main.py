@@ -18,7 +18,7 @@ from Core.Management.API.ManagementAPI import ManagementAPISocketServer
 
 from Core.MainLoop.MainLoop import LFTM
 
-from Core.MainSimulationEngine.MainSimulationEngine import MainSimulationEngine
+from Core.Utils.MainSimulationEngine.MainSimulationEngine import MainSimulationEngine
 
 from Core.VersionData import VersionNumber
 from Core.VersionData import BranchVersion
