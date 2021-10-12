@@ -4,7 +4,7 @@
  
 import brian2
 
-from Core.MainSimulationEngine.Brian2Interface.CPPLoader import LoadCPP
+from Core.Utils.MainSimulationEngine.Brian2Interface.CPPLoader import LoadCPP
 
 '''
 Name: Main Simulation Engine
