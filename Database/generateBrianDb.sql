@@ -181,6 +181,7 @@ create table if not exists `bgdb`.`imageDef` (
 `f2` bigint null,
 `f3` bigint null,
 `f4` bigint null,
+`imageBlob` blob null,
 primary key (`imageDefId`),
   CONSTRAINT `ersString_fk_ErsStringId`
     FOREIGN KEY (ersStringId)
@@ -219,21 +220,21 @@ insert into bgdb.ersData values(1, 'cube one', 'some sort of string', 'cube is 1
 
 insert into bgdb.ersString values (10, 1, 'string', 'another bytestring');
 
-insert into bgdb.imageDef values
-(100, 10, 'image name?', 1, 0, 2, 2, null, null, null, null, null),
-(101, 10, 'image name?', 2, 0, 2, 2, null, null, null, null, null),
-(102, 10, 'image name?', 3, 0, 2, 2, null, null, null, null, null),
-(103, 10, 'image name?', 4, 0, 2, 2, null, null, null, null, null),
-(104, 10, 'image name?', 5, 0, 2, 2, null, null, null, null, null),
-(105, 10, 'image name?', 6, 0, 2, 2, null, null, null, null, null),
-(106, 10, 'image name?', 7, 0, 2, 2, null, null, null, null, null),
-(107, 10, 'image name?', 8, 0, 2, 2, null, null, null, null, null), -- end of v
-(108, 10, 'image name?', 9, null, null, null, null, 1, 2, 3, 4),
-(109, 10, 'image name?', 10, null, null, null, null, 8, 7, 6, 5),
-(110, 10, 'image name?', 11, null, null, null, null, 4, 3, 7, 8),
-(111, 10, 'image name?', 12, null, null, null, null, 5, 1, 4, 8),
-(112, 10, 'image name?', 13, null, null, null, null, 5, 6, 2, 1),
-(113, 10, 'image name?', 14, null, null, null, null, 2, 6, 7, 3)-- end of f
+insert into imagedef values
+(100, 10, 'image name?', 1, 0, 2, 2, null, null, null, null, null, 'https://www.everythingdoormats.com/images/products/minnesota-twins-mlb-roundel-area-rug-27-inches.jpg?mh=100'),
+(101, 10, 'image name?', 2, 0, 2, 2, null, null, null, null, null, 'another BLOB'),
+(102, 10, 'image name?', 3, 0, 2, 2, null, null, null, null, null, 'another BLOB'),
+(103, 10, 'image name?', 4, 0, 2, 2, null, null, null, null, null, 'another BLOB'),
+(104, 10, 'image name?', 5, 0, 2, 2, null, null, null, null, null, 'another BLOB'),
+(105, 10, 'image name?', 6, 0, 2, 2, null, null, null, null, null, 'another BLOB'),
+(106, 10, 'image name?', 7, 0, 2, 2, null, null, null, null, null, 'another BLOB'),
+(107, 10, 'image name?', 8, 0, 2, 2, null, null, null, null, null, 'another BLOB'), -- end of v
+(108, 10, 'image name?', 9, null, null, null, null, 1, 2, 3, 4, 'another BLOB'),
+(109, 10, 'image name?', 10, null, null, null, null, 8, 7, 6, 5, 'another BLOB'),
+(110, 10, 'image name?', 11, null, null, null, null, 4, 3, 7, 8, 'another BLOB'),
+(111, 10, 'image name?', 12, null, null, null, null, 5, 1, 4, 8, 'another BLOB'),
+(112, 10, 'image name?', 13, null, null, null, null, 5, 6, 2, 1, 'another BLOB'),
+(113, 10, 'image name?', 14, null, null, null, null, 2, 6, 7, 3, 'another BLOB')-- end of f
 ;
 --
 --    --sample for encrypting/dectrypting passwords
