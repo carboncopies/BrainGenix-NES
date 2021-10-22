@@ -89,7 +89,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.mAPI_Version_Help = 'Returns a version string.'
         self.mAPI_TestAPI_Help = 'Testing for debugging API problems or benchmarking API latency. Returns "but most of all, samy is my hero".'
         self.mAPI_RegenerateCommandIndex_Help = 'Regenerates Command Index, optional Argument RecursionDepth allows user definable recursion depth.'
-        
+
         # Connect To DB #
         DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
         DBPassword = str(SystemConfiguration.get('DatabasePassword'))
