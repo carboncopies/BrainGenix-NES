@@ -89,6 +89,13 @@ pip3 install pycrypto
 pip3 install confluent-kafka
 
 
+### INSTALL CMAKE/C++ SECTION ###
+
+sudo apt install -y make
+sudo apt install -y cmake
+sudo apt install -y swig4.0
+
+
 ### KAFKA INSTALLATION SECTION ###
 
 # Create Kafka User Prereqs #

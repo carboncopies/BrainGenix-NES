@@ -1,7 +1,7 @@
 ###########################################################
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
- 
+
 import brian2
 
 from Core.MainSimulationEngine.Brian2Interface.CPPLoader import LoadCPP
@@ -30,7 +30,7 @@ class MainSimulationEngine():
         self.Logger.Log('Brian2Interface Loading C++ Callback', 5)
 
         CPPSource, HeaderSource = LoadCPP(
-            Logger, 
+            Logger,
             'CPPSource/BrianInterface.cpp',
             'CPPSource/BrianInterface.h'
             )
@@ -42,7 +42,7 @@ class MainSimulationEngine():
         @brian2.core.functions.implementation('cpp', CPPSource, headers=HeaderSource) ## TODO: Make this make sense, it's not super clear right now how this works
         @brian2.units.fundamentalunits.check_units(x=1, y=1, result=1)
         def BrianInterfaceCallback(x, y):
-            
+
             pass
 
         self.Logger.Log('Brian2Interface Callback Created', 3)

@@ -90,6 +90,19 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         self.mAPI_TestAPI_Help = 'Testing for debugging API problems or benchmarking API latency. Returns "but most of all, samy is my hero".'
         self.mAPI_RegenerateCommandIndex_Help = 'Regenerates Command Index, optional Argument RecursionDepth allows user definable recursion depth.'
 
+        # Connect To DB #
+        DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
+        DBPassword = str(SystemConfiguration.get('DatabasePassword'))
+        DBHost = str(SystemConfiguration.get('DatabaseHost'))
+        DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
+
+        # Connect To Database #
+        self.DatabaseConnection = pymysql.connect(
+            host = DBHost,
+            user = DBUsername,
+            password = DBPassword,
+            db = DBDatabaseName
+        )
 
     def IndexCommands(self, MaxRecursionDepth=4):
 
@@ -381,20 +394,6 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         # Get Database Config #
         SystemConfiguration = self.SystemConfiguration
 
-        # Connect To DB #
-        DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
-        DBPassword = str(SystemConfiguration.get('DatabasePassword'))
-        DBHost = str(SystemConfiguration.get('DatabaseHost'))
-        DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
-
-        # Connect To Database #
-        self.DatabaseConnection = pymysql.connect(
-            host = DBHost,
-            user = DBUsername,
-            password = DBPassword,
-            db = DBDatabaseName
-        )
-
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
 
         cur.execute("INSERT INTO command (commandName) VALUES (%s)",(command))
@@ -418,26 +417,9 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
         try:
 
-            # Get Database Config #
-            SystemConfiguration = self.SystemConfiguration
-
-            # Connect To DB #
-            DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
-            DBPassword = str(SystemConfiguration.get('DatabasePassword'))
-            DBHost = str(SystemConfiguration.get('DatabaseHost'))
-            DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
-
-            # Connect To Database #
-            self.DatabaseConnection = pymysql.connect(
-                host = DBHost,
-                user = DBUsername,
-                password = DBPassword,
-                db = DBDatabaseName
-            )
-
             cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
 
-            cur.execute("SELECT * FROM user WHERE userName=%s AND passwordHash=%s",(userName,passwordHash))
+            cur.execute("SELECT permissionLevel FROM user WHERE userName=%s AND passwordHash=%s",(userName,passwordHash))
             userCursor = cur
 
             for row in userCursor:
@@ -459,27 +441,11 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
     def addUser(self, userName:str, passwordHash:str, salt:str, firstName:str, lastName:str, notes:str, permissionLevel:int):
 
-        # Get Database Config #
-        SystemConfiguration = self.SystemConfiguration
-
-        # Connect To DB #
-        DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
-        DBPassword = str(SystemConfiguration.get('DatabasePassword'))
-        DBHost = str(SystemConfiguration.get('DatabaseHost'))
-        DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
-
-        # Connect To Database #
-        self.DatabaseConnection = pymysql.connect(
-            host = DBHost,
-            user = DBUsername,
-            password = DBPassword,
-            db = DBDatabaseName
-        )
-
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
         cur.execute("INSERT INTO user (userName, passwordHash, salt, firstName, lastName, notes, permissionLevel) VALUES (%s,%s,%s,%s,%s,%s,%s)",(userName, passwordHash, salt, firstName, lastName, notes, permissionLevel))
         self.DatabaseConnection.commit()
         self.DatabaseConnection.close()
+        
 
     def mAPI_TestAPI(self, ArgumentsDictionary): # Returns A Test String #
 
