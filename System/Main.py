@@ -21,7 +21,7 @@ from Core.Management.API.ManagementAPI import ManagementAPISocketServer
 
 from Core.Internode.Zookeeper.LFTransitionManager import LFTM
 
-from Core.MainSimulationEngine.MainSimulationEngine import MainSimulationEngine
+#from Core.MainSimulationEngine.MainSimulationEngine import MainSimulationEngine
 
 from Core.VersionData import VersionNumber
 from Core.VersionData import BranchVersion
@@ -104,7 +104,7 @@ sSocketAPI.UpdateCommand()
 #sSocketAPI.WriteAuthentication('pray@carboncopies.org','123456')
 
 # Instantiate Main Simulation Engine #
-sMainSimulationEngine = MainSimulationEngine(mLogger, SystemConfiguration)
+#sMainSimulationEngine = MainSimulationEngine(mLogger, SystemConfiguration)
 
 
 # MOTD #

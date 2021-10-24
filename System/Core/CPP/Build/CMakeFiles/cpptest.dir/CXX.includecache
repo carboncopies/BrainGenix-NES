@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../CPP/include/cpptest/cpptest.h
+string
+-
+
+/home/tliao/Documents/BrainGenix-NES/System/Core/CPP/CPP/src/cpptest.cpp
+cpptest/cpptest.h
+-
+
