@@ -14,7 +14,7 @@ void NeuronManager::CreateNeurons() {
 
     std::cout << "Creating Neurons\n";
 
-    int NumberNeurons = 500;
+    int NumberNeurons = 5000;
     int NumberSynapses = 1000;
 
     std::vector<TestFive> Neurons;
@@ -33,35 +33,28 @@ void NeuronManager::CreateNeurons() {
     std::cout << "Connecting Neurons\n";
 
     // Connect Neurons
-    //std::map<int, std::vector<long>> ConnectionList;
+    //std::map<int, std::vector<TestFive *>> ConnectionList;
 
     for (int i = 0; i < NumberNeurons; i++) {
 
-        std::vector<long> NeuronConnectionMap;
+        // Make a list of neuron indices, our target neurons
+        //std::vector<long> NeuronConnectionMap;
         for (int x = 0; x < NumberSynapses; x++) {
-            NeuronConnectionMap.insert(NeuronConnectionMap.end(), RandomNumber(NumberNeurons));
+            //NeuronConnectionMap.emplace_back(RandomNumber(NumberNeurons));
+            Neurons[i].ConnectionIndexList.emplace_back(&Neurons[RandomNumber(NumberNeurons)]);
         }
 
-
-        Neurons[i].ConnectionIndexList = &NeuronConnectionMap;
-
-        //ConnectionList.insert({i, NeuronConnectionMap});
     }
 
-    // std::cout << "Assigning Connections To Neurons\n";
-
-    // // Assign Connections
-    // for (int i = 0; i < NumberNeurons; i++) {
-
-        
-
-    // }
 
 
     std::cout << "Simulating Neurons\n";
 
     // Enter Main Loop
+    long t =0;
     while (true) {
+
+        t++;
 
         // Time it
         std::chrono::time_point<std::chrono::system_clock> start, end;
@@ -70,8 +63,11 @@ void NeuronManager::CreateNeurons() {
         // Update Neurons
         uint64_t TotalVoltage = 0;
         for (int i = 0; i < NumberNeurons; i++) {
-            TotalVoltage += Neurons[i].UpdateNeuron();
+            Neurons[i].UpdateNeuron(t);
+            TotalVoltage += Neurons[i].MembranePotential;
         }
+
+        std::cout << TotalVoltage << "\n";
 
         // end time
         end = std::chrono::system_clock::now();
@@ -81,7 +77,7 @@ void NeuronManager::CreateNeurons() {
 
 
         // print out voltages
-        std::cout << elapsed_seconds.count() << "\n";
+        //std::cout << elapsed_seconds.count() << "\n";
 
     }
 

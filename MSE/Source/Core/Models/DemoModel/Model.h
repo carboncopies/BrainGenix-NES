@@ -10,36 +10,45 @@ struct TestFive {
 
     // Connection Info
     long NumberOfConnections;
-    std::vector<long> *ConnectionIndexList;
+    std::vector<TestFive*> ConnectionIndexList; // suggest renaming to be specific: PreSynConnectionList (to other neurons)
 
 
     // Set Config Params
     double MembranePotential = 0;
-
-    std::vector<double> Voltages = {-70.0, 40.0, -90.0};
-    int VoltageIndex = 0;
+    double ThresholdPotential = -50;
+    long lastSpike_ms = -1;
 
     // Update Neuron
-    int UpdateNeuron() {
+    void UpdateNeuron(long t) {
 
-        // Get Voltages Of Connected Neurons
+        MembranePotential = -70;
 
-        // Sum Them
+        // Get momentary voltage/potential of the postsynaptic response triggered by the most recent spike of connected presynaptic neuron
+        for (auto & neuron_ptr: ConnectionIndexList) {
+            long spike_t = neuron_ptr->lastSpike_ms;
+            if (spike_t>0) {
+                
+                if (t-spike_t != 0) {
+                    double postsyn_v = 1/((t-spike_t));
+                    MembranePotential += postsyn_v;
+                    
+                }
+                
+            }
+        }
         
+        // Random Fire
+        if (rand() % 100 == 5) {
+            lastSpike_ms = t;
+            //std::cout << "Random Spike!\n";
+        }
+
         // Check Threshold
+        if (MembranePotential > ThresholdPotential) {
+            lastSpike_ms = t;
+            //std::cout << "Spike!\n";
+        }
         
-        // Fire
-        std::cout << ConnectionIndexList->size()<<"\n";
-        // long double MembranePotential = Voltages[VoltageIndex];
-        // for (int i = 0; i < ConnectionIndexList->size(); i++) {
-        // }
-
-
-
-
-        MembranePotential;
-
-        return 7;
 
     }
 
