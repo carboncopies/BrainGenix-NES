@@ -1,11 +1,20 @@
-<mxfile host="app.diagrams.net" modified="2021-10-29T23:11:09.471Z" agent="5.0 (X11)" etag="BnztNxrSxKtzhczQN6M2" version="15.5.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-29T23:14:27.339Z" agent="5.0 (X11)" etag="Db9TT7RtU5FRkRVIc7MV" version="15.5.2" type="github">
   <diagram id="zaYmULVZt83Btt4TcF50" name="MSE">
-    <mxGraphModel dx="1177" dy="461" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="981" dy="384" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="jcV9qj33FPpNnaMKg-zi-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="10" y="10" width="120" height="60" as="geometry" />
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="20" y="100" width="810" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-3" value="&lt;h1&gt;Main Simulation Engine&lt;br&gt;&lt;/h1&gt;&lt;p&gt;The MSE is &lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="10" y="10" width="840" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-4" value="Overview" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="100" width="810" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="130" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
