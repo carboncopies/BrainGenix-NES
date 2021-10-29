@@ -10,8 +10,8 @@ import select
 
 import pymysql
 
-from Core.VersionData import VersionNumber
-from Core.VersionData import BranchVersion
+from Core.Utils.VersionData import VersionNumber
+from Core.Utils.VersionData import BranchVersion
 
 from Core.Management.API.CommandIndexer import IndexCommands
 from Core.Management.API.CommandIndexer import FilterPaths

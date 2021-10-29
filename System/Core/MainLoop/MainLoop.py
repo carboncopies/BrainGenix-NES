@@ -10,8 +10,8 @@ Date-Created: 2021-06-03
 
 import sys
 
-from Core.LFTM.SystemTelemetryManager import SystemTelemetryManager
-from Core.LFTM.LADSManager import LADSManager
+from Core.MainLoop.SystemTelemetryManager import SystemTelemetryManager
+from Core.MainLoop.LADSManager import LADSManager
 
 class LFTM(): # Define Class Object #
 

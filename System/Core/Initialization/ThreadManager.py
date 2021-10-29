@@ -14,15 +14,10 @@ Date-Created: 2021-06-18
 '''
 
 from Core.Internode.Zookeeper.Zookeeper import ZK
-
-# Remove This Later #
-#from Core.Internode.Kafka.KafkaInterface import KafkaInterface
-
 from Core.Internode.Database.ModuleInstanceManager import DatabaseInstanceCreator
 
-from Core.Diagnostics.ZKDiagnostics import CanAccessZookeeper
-# from Core.Diagnostics.KafkaDiagnostics import CanAccessKafka
-from Core.Diagnostics.DatabaseDiagnostics import CanAccessDatabase
+from Core.Initialization.Diagnostics.ZKDiagnostics import CanAccessZookeeper
+from Core.Initialization.Diagnostics.DatabaseDiagnostics import CanAccessDatabase
 
 
 #################################################################
