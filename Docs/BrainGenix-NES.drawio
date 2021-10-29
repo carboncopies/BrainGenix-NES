@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-10-29T23:49:54.679Z" agent="5.0 (X11)" etag="vso6tsrIUkHe4Mm63ECI" version="15.5.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-29T23:54:04.470Z" agent="5.0 (X11)" etag="V6XrDckxuBaWZu6kSYSL" version="15.5.2" type="github">
   <diagram id="zaYmULVZt83Btt4TcF50" name="MSE">
-    <mxGraphModel dx="981" dy="384" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="817" dy="320" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -17,16 +17,16 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-5" value="Load Neuron Simulation Kernels/Models" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="225" y="150" width="120" height="60" as="geometry" />
+          <mxGeometry x="365" y="150" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="jcV9qj33FPpNnaMKg-zi-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-8" target="jcV9qj33FPpNnaMKg-zi-5">
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-8" target="jcV9qj33FPpNnaMKg-zi-33">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-8" value="Get Configuration Params" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="85" y="150" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-9" value="Initialize Compute Devices" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="365" y="150" width="120" height="60" as="geometry" />
+          <mxGeometry x="505" y="150" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-17" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
           <mxGeometry x="20" y="250" width="810" height="130" as="geometry" />
@@ -71,12 +71,15 @@
           <mxGeometry x="40" y="280" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-23" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="20" y="400" width="810" height="110" as="geometry" />
+          <mxGeometry x="20" y="400" width="810" height="280" as="geometry" />
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-24" value="Overview - Run Simulation" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="20" y="400" width="810" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="jcV9qj33FPpNnaMKg-zi-25" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-25" value="Get Command From Leader" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
           <mxGeometry x="40" y="430" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-26" target="jcV9qj33FPpNnaMKg-zi-29">
@@ -87,6 +90,27 @@
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-29" value="Load Simulation To Compute Device" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="680" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-33" target="jcV9qj33FPpNnaMKg-zi-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-33" value="Elect Leader From Zookeeper Ensemble" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="225" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-36" target="jcV9qj33FPpNnaMKg-zi-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-36" value="Simulate Neurons" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="280" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-37" target="jcV9qj33FPpNnaMKg-zi-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-37" value="Send Interconnect Data" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="420" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-39" value="Go To Start Of Loop" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="560" y="430" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
