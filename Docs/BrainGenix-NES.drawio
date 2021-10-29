@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-29T23:41:42.489Z" agent="5.0 (X11)" etag="NN1qclm_pSP8BOBsX65z" version="15.5.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-29T23:44:10.306Z" agent="5.0 (X11)" etag="PvPUDzwW46SglySGW8IV" version="15.5.2" type="github">
   <diagram id="zaYmULVZt83Btt4TcF50" name="MSE">
     <mxGraphModel dx="981" dy="384" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -29,19 +29,31 @@
           <mxGeometry x="365" y="150" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-17" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="20" y="250" width="810" height="290" as="geometry" />
+          <mxGeometry x="20" y="250" width="810" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="jcV9qj33FPpNnaMKg-zi-18" value="Overview - Init" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-18" value="Overview - Initialize Simulation" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="20" y="250" width="810" height="30" as="geometry" />
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-6" target="jcV9qj33FPpNnaMKg-zi-13">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-6" value="Load Neurons" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="40" y="280" width="120" height="60" as="geometry" />
+          <mxGeometry x="180" y="280" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-13" value="Check Optimization Status" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="180" y="280" width="120" height="60" as="geometry" />
+          <mxGeometry x="320" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-21" target="jcV9qj33FPpNnaMKg-zi-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-21" value="Load Simulation Configuration" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-23" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="20" y="380" width="810" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-24" value="Overview - Run Simulation" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="380" width="810" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
