@@ -1,9 +1,18 @@
-<mxfile host="app.diagrams.net" modified="2021-10-30T03:22:21.970Z" agent="5.0 (X11)" etag="uv3Kpc_FRpWPnK7e4x2q" version="15.6.2" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-10-30T03:24:16.692Z" agent="5.0 (X11)" etag="FcDUuJyK12HP_gowTWNO" version="15.6.2" type="github" pages="2">
   <diagram id="c22UB_N92mJE8_4pfcwG" name="System Overview">
-    <mxGraphModel dx="2942" dy="1152" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2027" dy="461" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="vfc7t2bRJuwnPYp2ou_e-0" />
         <mxCell id="vfc7t2bRJuwnPYp2ou_e-1" parent="vfc7t2bRJuwnPYp2ou_e-0" />
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-3" value="&lt;h1&gt;NES System Overview&lt;br&gt;&lt;/h1&gt;&lt;div&gt;A simple explanation of the NES system requirements and functions.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-840" y="10" width="370" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-4" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;glass=0;sketch=0;shadow=0;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-755" y="110" width="440" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-5" value="&lt;div&gt;&lt;b&gt;BrainGenix User&#39;s Intranet&lt;/b&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-755" y="110" width="440" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
