@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-30T03:24:35.867Z" agent="5.0 (X11)" etag="r673E0ngzOFVcRHTimat" version="15.6.2" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-10-30T03:25:43.951Z" agent="5.0 (X11)" etag="Q4_vUNjxajMi4WO7It2-" version="15.6.2" type="github" pages="2">
   <diagram id="c22UB_N92mJE8_4pfcwG" name="System Overview">
     <mxGraphModel dx="2027" dy="461" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -15,6 +15,23 @@
         </mxCell>
         <mxCell id="vfc7t2bRJuwnPYp2ou_e-6" value="BrainGenix::NES" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
           <mxGeometry x="-485" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-8" value="Admin" style="shape=actor;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-670" y="150" width="50" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;fontSize=12;startArrow=classic;startFill=1;" edge="1" parent="vfc7t2bRJuwnPYp2ou_e-1" source="vfc7t2bRJuwnPYp2ou_e-11" target="vfc7t2bRJuwnPYp2ou_e-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-10" value="Web UI/CLI" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="vfc7t2bRJuwnPYp2ou_e-9">
+          <mxGeometry x="0.4085" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" edge="1" parent="vfc7t2bRJuwnPYp2ou_e-1" source="vfc7t2bRJuwnPYp2ou_e-11" target="vfc7t2bRJuwnPYp2ou_e-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-11" value="&lt;div&gt;BrainGenix&lt;/div&gt;&lt;div&gt;Management &lt;br&gt;&lt;/div&gt;&lt;div&gt;API Server&lt;br&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-485" y="140" width="120" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
