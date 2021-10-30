@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-30T03:25:43.951Z" agent="5.0 (X11)" etag="Q4_vUNjxajMi4WO7It2-" version="15.6.2" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-10-30T03:27:03.248Z" agent="5.0 (X11)" etag="sGBY1BfKXsDHB9zD9EWc" version="15.6.2" type="github" pages="2">
   <diagram id="c22UB_N92mJE8_4pfcwG" name="System Overview">
     <mxGraphModel dx="2027" dy="461" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -32,6 +32,17 @@
         </mxCell>
         <mxCell id="vfc7t2bRJuwnPYp2ou_e-11" value="&lt;div&gt;BrainGenix&lt;/div&gt;&lt;div&gt;Management &lt;br&gt;&lt;/div&gt;&lt;div&gt;API Server&lt;br&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
           <mxGeometry x="-485" y="140" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" edge="1" parent="vfc7t2bRJuwnPYp2ou_e-1" source="vfc7t2bRJuwnPYp2ou_e-13" target="vfc7t2bRJuwnPYp2ou_e-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-15" value="Simulation API" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vfc7t2bRJuwnPYp2ou_e-14">
+          <mxGeometry x="-0.2211" y="1" relative="1" as="geometry">
+            <mxPoint x="12" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-13" value="&lt;div&gt;BrainGenix::ERS / Other Applications&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-715" y="250" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
