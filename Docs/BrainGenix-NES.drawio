@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-30T00:08:17.335Z" agent="5.0 (X11)" etag="lGZ7nivDKbl0YDG_zVnn" version="15.5.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-30T00:10:31.371Z" agent="5.0 (X11)" etag="ghas1y24qLA-wmkR0JVO" version="15.5.2" type="github">
   <diagram id="zaYmULVZt83Btt4TcF50" name="MSE">
     <mxGraphModel dx="1177" dy="461" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -8,7 +8,7 @@
           <mxGeometry x="65" y="120" width="720" height="110" as="geometry" />
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-3" value="&lt;h1&gt;Main Simulation Engine&lt;br&gt;&lt;/h1&gt;&lt;p&gt;The MSE is responsible for simulating neurons.&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="10" y="10" width="830" height="90" as="geometry" />
+          <mxGeometry x="10" y="10" width="830" height="100" as="geometry" />
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-4" value="Overview - Initialize MSE" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="65" y="120" width="720" height="30" as="geometry" />
