@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-10-30T03:31:25.543Z" agent="5.0 (X11)" etag="DdP09deKW_wIZKqTzKzw" version="15.6.2" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-10-30T03:43:46.013Z" agent="5.0 (X11)" etag="I5ldCm8QkVBhTDa8LPOQ" version="15.6.2" type="github" pages="2">
   <diagram id="c22UB_N92mJE8_4pfcwG" name="System Overview">
-    <mxGraphModel dx="2531" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2027" dy="461" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="vfc7t2bRJuwnPYp2ou_e-0" />
         <mxCell id="vfc7t2bRJuwnPYp2ou_e-1" parent="vfc7t2bRJuwnPYp2ou_e-0" />
@@ -65,6 +65,9 @@
         </mxCell>
         <mxCell id="vfc7t2bRJuwnPYp2ou_e-20" value="Datacenter" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.device_farm;fillColor=#AD688B;gradientColor=none;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
           <mxGeometry x="-573.25" y="480" width="76.5" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-24" value="&lt;h1&gt;BrainGenix::NES System&lt;br&gt;&lt;/h1&gt;&lt;p&gt;The NES system is designed to efficiently simulate massive simulations at various scales (level of detail) with many servers. The system&#39;s simulation engine can simulate neurons at different levels of detail within the same simulation. Additionally, the simulation engine can make use of other server accelerators such as GPUs or FPGAs. Support for these will be added at a later date, so the engine is currently being designed to account for these in the future.&lt;/p&gt;&lt;p&gt;Additionally, the system is being designed with reliability in mind. If a few nodes go down for any reason, the system will be able to handle the faults in a stable manner. The simulation will be interrupted, but will ultimately continue without those nodes. NES provides several methods for handling faults, which the user can choose between.&amp;nbsp;&lt;/p&gt;&lt;p&gt;Neurons and synapses are stored and loaded from a database. This database can be populated by another system such as BrainGenix::STS or a user defined system. The format for the database is described within the technical specifications document. If the need to generate new neural networks or synapses arises, NES provides functionality for this as well. The Neuron and Synapse generators provide a simple and intuitive method to generate networks via a GUI or CLI.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-830" y="620" width="790" height="260" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
