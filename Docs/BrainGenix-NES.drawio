@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-10-30T00:01:27.238Z" agent="5.0 (X11)" etag="saSTTKY4RIQNurgZneEQ" version="15.5.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-30T00:08:17.335Z" agent="5.0 (X11)" etag="lGZ7nivDKbl0YDG_zVnn" version="15.5.2" type="github">
   <diagram id="zaYmULVZt83Btt4TcF50" name="MSE">
-    <mxGraphModel dx="981" dy="384" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1177" dy="461" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -71,7 +71,7 @@
           <mxGeometry x="40" y="280" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-23" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="20" y="400" width="810" height="440" as="geometry" />
+          <mxGeometry x="20" y="400" width="810" height="530" as="geometry" />
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-24" value="Overview - Run Simulation" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="20" y="400" width="810" height="30" as="geometry" />
@@ -98,6 +98,32 @@
         <mxCell id="jcV9qj33FPpNnaMKg-zi-50" value="Stop Simulation" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jcV9qj33FPpNnaMKg-zi-49">
           <mxGeometry x="0.6542" relative="1" as="geometry">
             <mxPoint x="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-57" value="Optimize" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jcV9qj33FPpNnaMKg-zi-56">
+          <mxGeometry x="0.7129" y="1" relative="1" as="geometry">
+            <mxPoint x="5" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-62">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-60" value="Edit Neurons" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jcV9qj33FPpNnaMKg-zi-59">
+          <mxGeometry x="0.7144" y="-1" relative="1" as="geometry">
+            <mxPoint x="16" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-70" value="Edit Synapses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jcV9qj33FPpNnaMKg-zi-69">
+          <mxGeometry x="0.7643" y="1" relative="1" as="geometry">
+            <mxPoint x="12" y="1" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="jcV9qj33FPpNnaMKg-zi-25" value="Get Command From Leader" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
@@ -151,8 +177,44 @@
         <mxCell id="jcV9qj33FPpNnaMKg-zi-51" value="End Simulation Instance" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="550" y="590" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="jcV9qj33FPpNnaMKg-zi-53" value="De-allocate Memory" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-55" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-53" target="jcV9qj33FPpNnaMKg-zi-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-53" value="Optimize Simulation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="410" y="670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-54" value="Go To Start Of Loop" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="550" y="670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-65" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-58" target="jcV9qj33FPpNnaMKg-zi-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-58" value="Update Neurons" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="550" y="750" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-63" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-62" target="jcV9qj33FPpNnaMKg-zi-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-62" value="Get Updates From Kafka" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="410" y="750" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-64" value="Go To Start Of Loop" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="690" y="750" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-72" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-66" target="jcV9qj33FPpNnaMKg-zi-68">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-66" value="Update Synapses" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="550" y="830" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-71" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jcV9qj33FPpNnaMKg-zi-67" target="jcV9qj33FPpNnaMKg-zi-66">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-67" value="Get Updates From Kafka" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="410" y="830" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-68" value="Go To Start Of Loop" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="690" y="830" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
