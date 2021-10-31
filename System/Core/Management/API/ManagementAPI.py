@@ -392,7 +392,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
     def DBUpdate(self, SystemConfiguration:dict, command:str): # Executes SQL queries to update commands into the bgdb.Command table #
 
         # Get Database Config #
-        SystemConfiguration = self.SystemConfiguration
+        # SystemConfiguration = self.SystemConfiguration
 
         cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)
 
@@ -433,9 +433,9 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             self.DatabaseConnection.close()
 
         except Exception:
-            
+
             return False
-        
+
         return True
 
 
@@ -445,7 +445,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
         cur.execute("INSERT INTO user (userName, passwordHash, salt, firstName, lastName, notes, permissionLevel) VALUES (%s,%s,%s,%s,%s,%s,%s)",(userName, passwordHash, salt, firstName, lastName, notes, permissionLevel))
         self.DatabaseConnection.commit()
         self.DatabaseConnection.close()
-        
+
 
     def mAPI_TestAPI(self, ArgumentsDictionary): # Returns A Test String #
 
