@@ -41,7 +41,7 @@ void NeuronManager::CreateNeurons() {
         //std::vector<long> NeuronConnectionMap;
         for (int x = 0; x < NumberSynapses; x++) {
             //NeuronConnectionMap.emplace_back(RandomNumber(NumberNeurons));
-            Neurons[i].ConnectionIndexList.emplace_back(&Neurons[RandomNumber(NumberNeurons)]);
+            Neurons[i].PreSynConnectionList.emplace_back(&Neurons[RandomNumber(NumberNeurons)]);
         }
 
     }
