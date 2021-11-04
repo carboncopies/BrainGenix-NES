@@ -1,0 +1,295 @@
+<mxfile host="app.diagrams.net" modified="2021-10-30T03:52:14.964Z" agent="5.0 (X11)" etag="DQTSKAS4Wg1-JPjbYvX2" version="15.6.2" type="github" pages="2">
+  <diagram id="c22UB_N92mJE8_4pfcwG" name="System Overview">
+    <mxGraphModel dx="2027" dy="461" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-0" />
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-1" parent="vfc7t2bRJuwnPYp2ou_e-0" />
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-3" value="&lt;h1&gt;NES System Overview&lt;br&gt;&lt;/h1&gt;&lt;div&gt;A simple explanation of the NES system requirements and functions.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-840" y="10" width="370" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-4" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;glass=0;sketch=0;shadow=0;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-645" y="110" width="440" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-5" value="&lt;div&gt;&lt;b&gt;BrainGenix User&#39;s Intranet&lt;/b&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-645" y="110" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-6" value="BrainGenix::NES" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-375" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-8" value="Admin" style="shape=actor;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-560" y="150" width="50" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;fontSize=12;startArrow=classic;startFill=1;" edge="1" parent="vfc7t2bRJuwnPYp2ou_e-1" source="vfc7t2bRJuwnPYp2ou_e-11" target="vfc7t2bRJuwnPYp2ou_e-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-10" value="Web UI/CLI" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="vfc7t2bRJuwnPYp2ou_e-9">
+          <mxGeometry x="0.4085" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" edge="1" parent="vfc7t2bRJuwnPYp2ou_e-1" source="vfc7t2bRJuwnPYp2ou_e-11" target="vfc7t2bRJuwnPYp2ou_e-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-11" value="&lt;div&gt;BrainGenix&lt;/div&gt;&lt;div&gt;Management &lt;br&gt;&lt;/div&gt;&lt;div&gt;API Server&lt;br&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-375" y="140" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" edge="1" parent="vfc7t2bRJuwnPYp2ou_e-1" source="vfc7t2bRJuwnPYp2ou_e-13" target="vfc7t2bRJuwnPYp2ou_e-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-15" value="Simulation API" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vfc7t2bRJuwnPYp2ou_e-14">
+          <mxGeometry x="-0.2211" y="1" relative="1" as="geometry">
+            <mxPoint x="12" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-13" value="&lt;div&gt;BrainGenix::ERS / Other Applications&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-605" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" edge="1" parent="vfc7t2bRJuwnPYp2ou_e-1" source="vfc7t2bRJuwnPYp2ou_e-17" target="vfc7t2bRJuwnPYp2ou_e-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-19" value="&lt;div&gt;Neuron/Synapse&lt;/div&gt;&lt;div&gt;Loading/Saving&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vfc7t2bRJuwnPYp2ou_e-18">
+          <mxGeometry x="-0.4761" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-17" value="BrainGenix::NES Database" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-585" y="330" width="100" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" edge="1" parent="vfc7t2bRJuwnPYp2ou_e-1" source="vfc7t2bRJuwnPYp2ou_e-20" target="vfc7t2bRJuwnPYp2ou_e-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-23" value="&lt;div&gt;Simulation Engine&lt;/div&gt;&lt;div&gt;CPU/GPU/FPGA&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="vfc7t2bRJuwnPYp2ou_e-22">
+          <mxGeometry x="-0.5754" relative="1" as="geometry">
+            <mxPoint x="12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-20" value="Datacenter" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.device_farm;fillColor=#AD688B;gradientColor=none;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-573.25" y="480" width="76.5" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-24" value="&lt;h1&gt;BrainGenix::NES System&lt;br&gt;&lt;/h1&gt;&lt;p&gt;The NES system is designed to efficiently simulate massive simulations at various scales (level of detail) with many servers. The system&#39;s simulation engine can simulate neurons at different levels of detail within the same simulation. Additionally, the simulation engine can make use of other server accelerators such as GPUs or FPGAs. Support for these will be added at a later date, so the engine is currently being designed to account for these in the future.&lt;/p&gt;&lt;p&gt;Additionally, the system is being designed with reliability in mind. If a few nodes go down for any reason, the system will be able to handle the faults in a stable manner. The simulation will be interrupted, but will ultimately continue without those nodes. NES provides several methods for handling faults, which the user can choose between. NES is built on top of Apache Zookeeper and Kafka to allow it to operate with up to a 50% failure in nodes without an issue. Even if the leader node fails, the system can recover from this fault automatically.&lt;br&gt;&lt;/p&gt;&lt;p&gt;Neurons and synapses are stored and loaded from a database. This database can be populated by another system such as BrainGenix::STS or a user defined system. The format for the database is described within the technical specifications document. If the need to generate new neural networks or synapses arises, NES provides functionality for this as well. The Neuron and Synapse generators provide a simple and intuitive method to generate networks via a GUI or CLI.&lt;/p&gt;&lt;p&gt;To aid in ease of use, the entire BrainGenix software suite contains a unified web interface. This interface allows NES users to interact with simulations in real-time using a 3d editor. The editor allows for the creation, modification, and visualization of the simulation in a more efficient way.&lt;/p&gt;&lt;p&gt;The system also provides an optimization heuristic to assign neurons in the most efficient manner. The heuristic has two components, compute and network optimization. The compute optimization heuristic matches the compute times of each node in the system to ensure that no systems are waiting for each-other to finish. The network optimization heuristic groups densely connected neurons with each-other to reduce the time spent sending interconnect data across the network. At a later date, functionality may be added to group neurons with larger interconnect loads on servers with faster bandwidth. &lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="vfc7t2bRJuwnPYp2ou_e-1">
+          <mxGeometry x="-830" y="620" width="790" height="460" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="zaYmULVZt83Btt4TcF50" name="MSE">
+    <mxGraphModel dx="1681" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="65" y="120" width="720" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-3" value="&lt;h1&gt;Main Simulation Engine&lt;br&gt;&lt;/h1&gt;&lt;p&gt;The MSE is responsible for simulating neurons.&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="10" y="10" width="830" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-4" value="Overview - Initialize MSE" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="65" y="120" width="720" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-5" target="jcV9qj33FPpNnaMKg-zi-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-5" value="Load Neuron Simulation Kernels/Models" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="365" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-8" target="jcV9qj33FPpNnaMKg-zi-33" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-8" value="Get Configuration Params" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="85" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-9" value="Initialize Compute Devices" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="505" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-17" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="20" y="250" width="810" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-18" value="Overview - Initialize Simulation" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="20" y="250" width="810" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-6" target="jcV9qj33FPpNnaMKg-zi-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-6" value="Load Neurons" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="180" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-13" target="jcV9qj33FPpNnaMKg-zi-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-28" value="Not Optimized" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-27" vertex="1" connectable="0">
+          <mxGeometry x="-0.2556" y="-1" relative="1" as="geometry">
+            <mxPoint x="8" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-13" target="jcV9qj33FPpNnaMKg-zi-29" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="360" />
+              <mxPoint x="740" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-31" value="Optimized" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-30" vertex="1" connectable="0">
+          <mxGeometry x="-0.0698" relative="1" as="geometry">
+            <mxPoint x="-61" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-13" value="Check Optimization Status" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="320" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-21" target="jcV9qj33FPpNnaMKg-zi-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-21" value="Load Simulation Configuration" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="40" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-23" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="20" y="400" width="810" height="530" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-24" value="Overview - Run Simulation" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="20" y="400" width="810" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-36" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-43" value="Run Simulation" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-41" vertex="1" connectable="0">
+          <mxGeometry x="0.1241" y="-1" relative="1" as="geometry">
+            <mxPoint x="44" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-42" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-45" value="Save State" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-44" vertex="1" connectable="0">
+          <mxGeometry x="0.5586" relative="1" as="geometry">
+            <mxPoint x="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-48" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-50" value="Stop Simulation" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-49" vertex="1" connectable="0">
+          <mxGeometry x="0.6542" relative="1" as="geometry">
+            <mxPoint x="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-53" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-57" value="Optimize" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-56" vertex="1" connectable="0">
+          <mxGeometry x="0.7129" y="1" relative="1" as="geometry">
+            <mxPoint x="5" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-62" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-60" value="Edit Neurons" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-59" vertex="1" connectable="0">
+          <mxGeometry x="0.7144" y="-1" relative="1" as="geometry">
+            <mxPoint x="16" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-67" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-70" value="Edit Synapses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-69" vertex="1" connectable="0">
+          <mxGeometry x="0.7643" y="1" relative="1" as="geometry">
+            <mxPoint x="12" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-25" value="Get Command From Leader" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="40" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-26" target="jcV9qj33FPpNnaMKg-zi-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-26" value="Optimize Simulation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="540" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-29" value="Load Simulation To Compute Device" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="680" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-33" target="jcV9qj33FPpNnaMKg-zi-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-33" value="Elect Leader From Zookeeper Ensemble" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="225" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-36" target="jcV9qj33FPpNnaMKg-zi-37" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-36" value="Simulate Neurons" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="410" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-37" target="jcV9qj33FPpNnaMKg-zi-39" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-37" value="Send Interconnect / Simulation API Data" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="550" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-39" value="Go To Start Of Loop" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="690" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-47" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-42" target="jcV9qj33FPpNnaMKg-zi-46" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-42" value="Save Neuron States Into Database" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="410" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-46" value="Go To Start Of Loop" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="550" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-52" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-48" target="jcV9qj33FPpNnaMKg-zi-51" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-48" value="De-allocate Memory" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="410" y="590" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-51" value="End Simulation Instance" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="550" y="590" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-55" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-53" target="jcV9qj33FPpNnaMKg-zi-54" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-53" value="Optimize Simulation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="410" y="670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-54" value="Go To Start Of Loop" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="550" y="670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-65" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-58" target="jcV9qj33FPpNnaMKg-zi-64" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-58" value="Update Neurons" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="550" y="750" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-63" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-62" target="jcV9qj33FPpNnaMKg-zi-58" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-62" value="Get Updates From Kafka" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="410" y="750" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-64" value="Go To Start Of Loop" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="690" y="750" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-72" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-66" target="jcV9qj33FPpNnaMKg-zi-68" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-66" value="Update Synapses" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="550" y="830" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-71" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-67" target="jcV9qj33FPpNnaMKg-zi-66" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-67" value="Get Updates From Kafka" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="410" y="830" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-68" value="Go To Start Of Loop" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="690" y="830" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
