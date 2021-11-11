@@ -7,7 +7,7 @@
                 <source_extension>.py</source_extension>
             </source_extensions>
             <source_paths>
-                <source_path>..</source_path>
+                <source_path>../..</source_path>
             </source_paths>
             <status>enabled</status>
             <type>Python Source Group</type>
