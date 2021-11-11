@@ -92,7 +92,7 @@ class LogAutoDeletionSystem(): # Create Class To Hold Log Auto Deletion System #
 
 
         # Shutdown Thread #
-        self.Logger.Log('Shutting Down LADS Daemon', 4)
+        self.Logger.Log('Shutting Down Log Auto Deletion System Daemon', 4)
 
         self.Logger.Log('Committing Outstanding Cursor Queries', 2)
         self.DatabaseConnection.commit()
