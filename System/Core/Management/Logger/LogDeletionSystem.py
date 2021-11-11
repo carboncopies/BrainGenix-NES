@@ -55,7 +55,7 @@ class LogAutoDeletionSystem(): # Create Class To Hold Log Auto Deletion System #
         DBPassword = str(self.SystemConfiguration.get('DatabasePassword'))
         DBHost = str(self.SystemConfiguration.get('DatabaseHost'))
         DBDatabaseName = str(self.SystemConfiguration.get('DatabaseName'))
-        self.Logger.Log('Read LADS Configuration Parameters', 1)
+        self.Logger.Log('Read Log Auto Deletion System Configuration Parameters', 1)
 
 
         # Connect To DB Server #
