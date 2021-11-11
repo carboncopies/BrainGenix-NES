@@ -34,7 +34,7 @@ class LogAutoDeletionSystem(): # Create Class To Hold Log Auto Deletion System #
             args=(),
             name='Log Auto Deletion System'
         )
-        self.Logger.Log('Created LADS Daemon Thread', 1)
+        self.Logger.Log('Created Log Auto Deletion System Daemon Thread', 1)
 
         self.Logger.Log('Starting LADS Daemon Thread', 2)
         self.UpdateThread.start()
