@@ -66,7 +66,7 @@ class LogAutoDeletionSystem(): # Create Class To Hold Log Auto Deletion System #
             password = DBPassword,
             db = DBDatabaseName
         )
-        self.Logger.Log('Created LADS PymySQL Instance', 1)
+        self.Logger.Log('Created Log Auto Deletion System PymySQL Instance', 1)
 
         # Create Database Cursor #
         self.Logger.Log('Creating LADS Daemon Cursor', 2)
