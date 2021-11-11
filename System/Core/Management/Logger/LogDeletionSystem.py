@@ -59,7 +59,7 @@ class LogAutoDeletionSystem(): # Create Class To Hold Log Auto Deletion System #
 
 
         # Connect To DB Server #
-        self.Logger.Log('Creating LADS PymySQL Instance, Connecting To Database Server', 2)
+        self.Logger.Log('Creating Log Auto Deletion System PymySQL Instance, Connecting To Database Server', 2)
         self.DatabaseConnection = pymysql.connect(
             host = DBHost,
             user = DBUsername,
