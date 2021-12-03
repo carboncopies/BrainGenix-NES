@@ -1,6 +1,6 @@
-//======================================================================//
-// This file is part of the BrainGenix-ERS Environment Rendering System //
-//======================================================================//
+//=================================================================//
+// This file is part of the BrainGenix-NES Neuron Emulation System //
+//=================================================================//
 
 /*
     Description: This file is responsible for implementing the logger system used by the rest of the system.
@@ -22,6 +22,8 @@
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <yaml-cpp/yaml.h>
+
+// Internal Libraries (BG convention: use <> instead of "")
 
 
 /**
