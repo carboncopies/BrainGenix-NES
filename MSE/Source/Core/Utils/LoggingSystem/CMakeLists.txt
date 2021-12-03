@@ -1,7 +1,6 @@
-########################################################################
-# This file is part of the BrainGenix-ERS Environment Rendering System #
-########################################################################
-
+###################################################################
+# This file is part of the BrainGenix-NES Neuron Emulation System #
+###################################################################
 
 
 # Specify CPP Files In Source (Name Should Start With Parent Dir Name)
