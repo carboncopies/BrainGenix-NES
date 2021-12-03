@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-12-03T04:27:54.298Z" agent="5.0 (X11)" etag="2V9x_nfQyZunxb677GKk" version="15.7.4" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-12-03T04:32:08.873Z" agent="5.0 (X11)" etag="zMxUK0py2eb48AKoWOik" version="15.7.4" type="github" pages="3">
   <diagram id="c22UB_N92mJE8_4pfcwG" name="System Overview">
     <mxGraphModel dx="2492" dy="640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -293,7 +293,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="xMWuN7kUsRBOxygCEo12" name="Page-3">
-    <mxGraphModel dx="2346" dy="914" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="684" dy="267" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="jV3cQ5NdMDDjI3qOkedW-0" />
         <mxCell id="jV3cQ5NdMDDjI3qOkedW-1" parent="jV3cQ5NdMDDjI3qOkedW-0" />
@@ -327,7 +327,7 @@
         <mxCell id="GqX4W7e0cYpgo2O12TCR-11" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
           <mxGeometry x="900" y="90" width="790" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="GqX4W7e0cYpgo2O12TCR-12" value="&lt;h1&gt;Naming Convention&lt;br&gt;&lt;/h1&gt;&lt;p&gt;For classes: The name should start with ERS_Class_ and describe the function (Ex: ERS_Class_Asset_Loader).&lt;/p&gt;&lt;p&gt;For functions: Should describe the purpose of the function, must be in UpperCamelCase (Ex: LoadAsset).&lt;/p&gt;&lt;p&gt;For structs: Should be in all capitals with underscores between words. Must start with ERS_STRUCTURE. (Ex: ERS_STRUCTURE_MODEL).&lt;/p&gt;&lt;p&gt;For variables: Should also be in UpperCamelCase and should describe the purpose for it&#39;s existence. (Ex: HasLoggerBeenInitialized).&lt;/p&gt;&lt;p&gt;For member variables: Should be UpperCamelCase with a trailing underscore. (Ex: TestVariable_).&lt;/p&gt;&lt;p&gt;For comments: Every block of code (around ten lines or so) should have a comment explaining the purpose of that section. &lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-12" value="&lt;h1&gt;Naming Convention&lt;br&gt;&lt;/h1&gt;&lt;p&gt;For classes: The name should start with ERS_CLASS_ and describe the function (Ex: ERS_Class_Asset_Loader).&lt;/p&gt;&lt;p&gt;For functions: Should describe the purpose of the function, must be in UpperCamelCase (Ex: LoadAsset).&lt;/p&gt;&lt;p&gt;For structs: Should be in all capitals with underscores between words. Must start with ERS_STRUCTURE. (Ex: ERS_STRUCTURE_MODEL).&lt;/p&gt;&lt;p&gt;For variables: Should also be in UpperCamelCase and should describe the purpose for it&#39;s existence. (Ex: HasLoggerBeenInitialized).&lt;/p&gt;&lt;p&gt;For member variables: Should be UpperCamelCase with a trailing underscore. (Ex: TestVariable_).&lt;/p&gt;&lt;p&gt;For comments: Every block of code (around ten lines or so) should have a comment explaining the purpose of that section. &lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
           <mxGeometry x="910" y="100" width="770" height="200" as="geometry" />
         </mxCell>
         <mxCell id="GqX4W7e0cYpgo2O12TCR-13" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
