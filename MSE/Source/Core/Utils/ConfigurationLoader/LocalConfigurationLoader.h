@@ -1,6 +1,6 @@
-//======================================================================//
-// This file is part of the BrainGenix-ERS Environment Rendering System //
-//======================================================================//
+//=================================================================//
+// This file is part of the BrainGenix-NES Neuron Emulation System //
+//=================================================================//
 
 /*
     Description: This file is responsible for implementing the configuration loading classes.
