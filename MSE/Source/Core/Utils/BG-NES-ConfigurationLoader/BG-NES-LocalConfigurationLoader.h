@@ -24,4 +24,4 @@
  * @param ConfigurationPath 
  * @return YAML::Node 
  */
-static YAML::Node LoadConfig(const char* ConfigurationPath);
+YAML::Node LoadConfig(const char* ConfigurationPath);

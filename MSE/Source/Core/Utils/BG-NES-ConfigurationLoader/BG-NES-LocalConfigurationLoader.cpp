@@ -13,7 +13,7 @@
 
 
 // Define Configuration Loader
-static YAML::Node LoadConfig(const char* ConfigurationPath) {
+YAML::Node LoadConfig(const char* ConfigurationPath) {
 
     // Read Configuration //
     YAML::Node ConfigurationDictionary = YAML::LoadFile(ConfigurationPath);
