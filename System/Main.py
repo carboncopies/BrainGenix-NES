@@ -17,19 +17,9 @@ from Core.Initialization.ThreadManager import ThreadManager
 from Core.Management.API.ManagementAPI import ManagementAPISocketServer
 
 from Core.MainLoop.MainLoop import LFTM
-#from Core.Internode.Zookeeper.LFTransitionManager import LFTM
 
-#from Core.MainSimulationEngine.MainSimulationEngine import MainSimulationEngine
-
-#from Core.Utils.MainSimulationEngine.MainSimulationEngine import MainSimulationEngine
 from Core.Utils.VersionData import VersionNumber
 from Core.Utils.VersionData import BranchVersion
-
-
-##############################################################################
-## NOTE: A Lowercase "m" Preceeding A Class Means It's a Main System        ##
-## NOTE: A Lowercase "s" Preceeding A Class Means It's a Subsystem          ##
-##############################################################################
 
 
 
@@ -48,10 +38,6 @@ mLogger = InstantiateLogger(SystemConfiguration)
 
 # Instantiate Thread Manager #
 mThreadManagerInstance = ThreadManager(mLogger)
-
-
-# Connect To DB #
-# = mThreadManagerInstance.InstantiateDB(mLogger, SystemConfiguration)
 
 
 # Start API Server #

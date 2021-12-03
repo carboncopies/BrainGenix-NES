@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/BrainGenix-NES.dir/Source/Main.cpp.o  -o ../Binaries/BrainGenix-NES 
