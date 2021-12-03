@@ -1,1 +1,63 @@
- 
+# Set Window Configuration Parameters #
+WindowEnabled: True
+WindowWidth: 800
+WindowHeight: 600
+WindowTitle: "BrainGenix-ERS"
+
+
+# Renderer Settings #
+RenderWidth: 800
+RenderHeight: 600
+EnableValidationLayers: True
+MaxFramesInFlight: 2
+EnableDebugLogging: True # To Be added Later <-- https://vulkan-tutorial.com/en/Drawing_a_triangle/Setup/Validation_layers
+
+
+# Database Loading Settings #
+DatabaseLoadingEnabled: False
+DatabaseHost: "127.0.0.1" # FIX ME
+DatabasePort: 1 # FIX ME
+DatabaseUser: "" # FIX ME
+DatabaseName: "" # FIX ME
+DatabasePassword: "" # FIX ME
+
+# File Loading Params
+AssetPath: "Assets/" # NOTE: PATH MUST END WITH A "/"
+
+
+# Set Logger Configuration Parameters #
+EnablePrintOutput: True
+EnableDatabaseOutput: False
+
+SetMinimumLogLevel: 0
+
+ColorizeLogOutput: True
+UseTextLogLevel: False
+
+# Set The Colors For Various Log Levels #
+LogLevelColors:
+    0: [255,255,255] # System
+    1: [77,166,255] # Config
+    2: [179,255,217] # Audit
+    3: [181,121,255] # Info
+    4: [212,0,255] # Detail
+    5: [106,255,77] # Fine
+    6: [204,153,0] # Finer
+    7: [149,179,0] # Finest
+    8: [255,255,0] # Warning
+    9: [255,170,0] # Severe (Non Fatal)
+    10: [255,0,0] # Fatal
+
+# Set Name For Log Strings #
+LogLevelNames:
+    0: System
+    1: Config
+    2: Audit
+    3: Info
+    4: Detail
+    5: Fine
+    6: Finer
+    7: Finest
+    8: Warning
+    9: Severe
+    10: Fatal
