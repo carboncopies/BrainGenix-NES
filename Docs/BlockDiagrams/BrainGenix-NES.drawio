@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-12-03T03:54:51.159Z" agent="5.0 (X11)" etag="bO8acAcckQ1UpLz_wN2v" version="15.8.9" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-12-03T03:57:16.290Z" agent="5.0 (X11)" etag="WoEXZGVtWe4V6_Dvr1ZL" version="15.7.4" type="github" pages="3">
   <diagram id="c22UB_N92mJE8_4pfcwG" name="System Overview">
-    <mxGraphModel dx="2912" dy="1124" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2492" dy="640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="vfc7t2bRJuwnPYp2ou_e-0" />
         <mxCell id="vfc7t2bRJuwnPYp2ou_e-1" parent="vfc7t2bRJuwnPYp2ou_e-0" />
@@ -73,7 +73,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="zaYmULVZt83Btt4TcF50" name="MSE">
-    <mxGraphModel dx="2062" dy="1124" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1642" dy="640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -293,21 +293,33 @@
     </mxGraphModel>
   </diagram>
   <diagram id="xMWuN7kUsRBOxygCEo12" name="Page-3">
-    <mxGraphModel dx="1178" dy="642" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="821" dy="320" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="jV3cQ5NdMDDjI3qOkedW-0" />
         <mxCell id="jV3cQ5NdMDDjI3qOkedW-1" parent="jV3cQ5NdMDDjI3qOkedW-0" />
-        <mxCell id="jV3cQ5NdMDDjI3qOkedW-2" value="&lt;div&gt;&lt;b&gt;Milestone 1:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Integrate and Fire network with specifications&lt;/div&gt;&lt;div&gt;Build it, test it,&lt;/div&gt;&lt;div&gt;Abstract the system methods from it&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
+        <mxCell id="jV3cQ5NdMDDjI3qOkedW-2" value="&lt;div&gt;&lt;b&gt;Milestone 1:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Integrate and Fire network with specifications&lt;/div&gt;&lt;div&gt;Build it, test it,&lt;/div&gt;&lt;div&gt;Abstract the system methods from it&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
           <mxGeometry x="80" y="40" width="200" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="jV3cQ5NdMDDjI3qOkedW-3" value="&lt;div&gt;&lt;b&gt;Milestone 2:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Compartmental Neurons with HH&lt;/div&gt;&lt;div&gt;Specifications for what the model should do (e.g. 10 neurons, 100 compartments each)&lt;/div&gt;&lt;div&gt;Build it, test it,&lt;/div&gt;&lt;div&gt;Abstract the system methods from it&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
+        <mxCell id="jV3cQ5NdMDDjI3qOkedW-3" value="&lt;div&gt;&lt;b&gt;Milestone 2:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Compartmental Neurons with HH&lt;/div&gt;&lt;div&gt;Specifications for what the model should do (e.g. 10 neurons, 100 compartments each)&lt;/div&gt;&lt;div&gt;Build it, test it,&lt;/div&gt;&lt;div&gt;Abstract the system methods from it&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
           <mxGeometry x="320" y="40" width="200" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="jV3cQ5NdMDDjI3qOkedW-4" value="&lt;div&gt;&lt;b&gt;Milestone 3:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Connect the examples from milestones 1 and 2, measure how input from the integrate and fire network arriving at different locations on the dendrites of the compartmental model leads to interesting outcomes&lt;/div&gt;&lt;div&gt;Build it, test it,&lt;/div&gt;&lt;div&gt;Abstract the system methods from it&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
+        <mxCell id="jV3cQ5NdMDDjI3qOkedW-4" value="&lt;div&gt;&lt;b&gt;Milestone 3:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Connect the examples from milestones 1 and 2, measure how input from the integrate and fire network arriving at different locations on the dendrites of the compartmental model leads to interesting outcomes&lt;/div&gt;&lt;div&gt;Build it, test it,&lt;/div&gt;&lt;div&gt;Abstract the system methods from it&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
           <mxGeometry x="560" y="40" width="200" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="jV3cQ5NdMDDjI3qOkedW-7" value="&lt;div align=&quot;left&quot;&gt;Milestone 1, Specifications:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
+        <mxCell id="jV3cQ5NdMDDjI3qOkedW-7" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
           <mxGeometry x="80" y="280" width="440" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-0" value="&lt;div align=&quot;left&quot;&gt;Milestone 1, Specifications:&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
+          <mxGeometry x="80" y="280" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-1" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="310" as="sourcePoint" />
+            <mxPoint x="520" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-3" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/div&gt;&lt;div&gt;fdsafdsafjkdsklaj;flkd;ljka&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;f&lt;/div&gt;&lt;div&gt;ds&lt;/div&gt;&lt;div&gt;a&lt;/div&gt;&lt;div&gt;fd&lt;/div&gt;&lt;div&gt;saf&lt;/div&gt;&lt;div&gt;ds&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;align=left;" vertex="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
+          <mxGeometry x="90" y="320" width="420" height="190" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
