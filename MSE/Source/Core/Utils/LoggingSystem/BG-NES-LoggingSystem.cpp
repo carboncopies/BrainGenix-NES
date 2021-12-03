@@ -14,7 +14,7 @@
 
 
 // LoggerClass Constructor
-LoggerClass::LoggerClass(YAML::Node SystemConfiguration) {
+NES_CLASS_LoggerClass::NES_CLASS_LoggerClass(YAML::Node SystemConfiguration) {
 
     // Make Local Copy Of System Config
     LocalSystemConfiguration = SystemConfiguration;
@@ -54,7 +54,7 @@ LoggerClass::LoggerClass(YAML::Node SystemConfiguration) {
 };
 
 // LoggerClass Destructor
-LoggerClass::~LoggerClass() {
+NES_CLASS_LoggerClass::~NES_CLASS_LoggerClass() {
 
     // Log Shutdown
     Log("System Logger Destructor Called, Logger Shutting Down", 6);
@@ -67,7 +67,7 @@ LoggerClass::~LoggerClass() {
 
 
 // Define LoggerClass::Log
-void LoggerClass::Log(const char* LogItem, int LogLevel) {
+void NES_CLASS_LoggerClass::Log(const char* LogItem, int LogLevel) {
 
     // Get Current Time In YYYY-MM-DD-HH-MM-SS Format
     std::time_t RawCurrentTime;
@@ -128,7 +128,7 @@ void LoggerClass::Log(const char* LogItem, int LogLevel) {
 }
 
 // Define LoggerClass::ColorizeText
-void LoggerClass::ColorizeText(std::string Message, int LogLevel) {
+void NES_CLASS_LoggerClass::ColorizeText(std::string Message, int LogLevel) {
 
     // Get Color Value
     RGBColor ColorValue = ColorLookup_[LogLevel];

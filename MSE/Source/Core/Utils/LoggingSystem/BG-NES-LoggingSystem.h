@@ -29,7 +29,7 @@
 /**
  * @brief Main Logging System, Saves Logs To Database/Text File If Configured To.
  */
-class LoggerClass {
+class NES_CLASS_LoggerClass {
 
     // Define "Local" Variables And Functions //
     private: 
@@ -78,13 +78,13 @@ class LoggerClass {
          * 
          * @param SystemConfiguration System configuration file in YAML::Node format from Config.yaml.
          */
-        LoggerClass(YAML::Node SystemConfiguration);
+        NES_CLASS_LoggerClass(YAML::Node SystemConfiguration);
 
         /**
          * @brief Cleanup the logger class, close db connection, close file io, etc.
          * 
          */
-        ~LoggerClass();
+        ~NES_CLASS_LoggerClass();
 
         /**
          * @brief Add item to system log. 
