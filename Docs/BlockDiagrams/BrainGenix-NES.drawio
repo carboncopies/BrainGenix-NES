@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-12-03T04:32:08.873Z" agent="5.0 (X11)" etag="zMxUK0py2eb48AKoWOik" version="15.7.4" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-12-03T23:07:37.388Z" agent="5.0 (X11)" etag="wHc59l03X6z9wnwpRVoF" version="15.7.4" type="github" pages="3">
   <diagram id="c22UB_N92mJE8_4pfcwG" name="System Overview">
     <mxGraphModel dx="2492" dy="640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -293,7 +293,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="xMWuN7kUsRBOxygCEo12" name="Page-3">
-    <mxGraphModel dx="684" dy="267" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1185" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="jV3cQ5NdMDDjI3qOkedW-0" />
         <mxCell id="jV3cQ5NdMDDjI3qOkedW-1" parent="jV3cQ5NdMDDjI3qOkedW-0" />
@@ -319,7 +319,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="GqX4W7e0cYpgo2O12TCR-3" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Independent worker threads&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- 24 threads for 24 cores&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- equal / balanced load for each&lt;br&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;Neurons are in regions with no clear layering, connected in any way possible.&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- random connectivity with distribution&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- load from file&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- database load&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- Hebbian learning&lt;br&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;200,000 neurons&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- 3D locations in virtual space (randomized, load architecture, ...)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- percentage interneurons, percentage principal neurons (one type is fine)&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- standardized model format to make it easy to extend&lt;br&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;1000-10,000 connection per neuron&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- connection models&lt;br&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;60 seconds should be simulated&lt;/li&gt;&lt;li&gt;On a 24 core system with 64 GB RAM, GeForce 1080Ti GPU, want to achieve the simulation in real-time 1:1.&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;align=left;" vertex="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
-          <mxGeometry x="90" y="320" width="650" height="390" as="geometry" />
+          <mxGeometry x="90" y="320" width="660" height="400" as="geometry" />
         </mxCell>
         <mxCell id="GqX4W7e0cYpgo2O12TCR-10" value="&lt;h1&gt;System Development Convention&lt;br&gt;&lt;/h1&gt;&lt;p&gt;The system has a few conventions that make maintaining it easier while making it clear to others what&#39;s going on within the code.&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
           <mxGeometry x="880" y="10" width="830" height="70" as="geometry" />
