@@ -3,21 +3,27 @@
 ###################################################################
 
 
-# Specify CPP Files In Source (Name Should Start With Parent Dir Name)
-set(LoggingSystem_Sources
-    "LoggingSystem.cpp"
-)
-
-# Specify Header Files In Source (Name Should Start With Parent Dir Name)
-set(LoggingSystem_Headers
-    "LoggingSystem.h"
-)
-
-
 # Create Library (Name Should Be Parent Dir Name)
-add_library(LoggingSystem ${LoggingSystem_Sources} ${LoggingSystem_Headers} ${BACKWARD_ENABLE})
-target_link_libraries(LoggingSystem 
+add_library(BG-NES-LoggingSystem
+
+            # Add Source Files (.cpp)
+            "BG-NES-LoggingSystem.cpp"
+
+            # Add Header Files (.h)
+            "BG-NES-LoggingSystem.h"
+            
+            ${BACKWARD_ENABLE}
+            )
+
+# Link 3rd Party Libs
+target_link_libraries(BG-NES-LoggingSystem
     yaml-cpp
     )
-target_include_directories(LoggingSystem PUBLIC ./)
+
+# Link Internal Libs
+target_link_libraries(BG-NES-LoggingSystem
+
+    )
+
+target_include_directories(BG-NES-LoggingSystem PUBLIC ./)
 
