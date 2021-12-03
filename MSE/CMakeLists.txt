@@ -59,7 +59,7 @@ target_link_libraries(${PROJECT_NAME}
 
 
 # ADD INTERNAL SUBDIRECTORIES
-add_subdirectory(${SRC_DIR}/Core/Utils/LoggingSystem)
+add_subdirectory(${SRC_DIR}/Core/Utils/BG-NES-LoggingSystem)
 add_subdirectory(${SRC_DIR}/Core/Utils/BG-NES-ConfigurationLoader)
 
 # COPY FILES TO BINARY DIR
