@@ -1,6 +1,6 @@
-//======================================================================//
-// This file is part of the BrainGenix-ERS Environment Rendering System //
-//======================================================================//
+//=================================================================//
+// This file is part of the BrainGenix-NES Neuron Emulation System //
+//=================================================================//
 
 /*
     Description: This file is responsible for implementing the logger system used by the rest of the system.
@@ -9,9 +9,7 @@
 */
 
 
-
-
-#include "LoggingSystem.h"
+#include <BG-NES-LoggingSystem.h>
 
 
 
