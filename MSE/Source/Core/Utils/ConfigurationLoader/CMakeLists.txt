@@ -3,7 +3,7 @@
 ###################################################################
 
 
-# Create Library (Name Should Be BG-NES-[Parent Dir Name])
+# Create Library (Name Should Be Parent Dir Name)
 add_library(BG-NES-ConfigurationLoader
 
             # Add Source Files (.cpp)
