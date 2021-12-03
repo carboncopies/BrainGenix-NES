@@ -52,8 +52,8 @@ target_link_libraries(${PROJECT_NAME}
   yaml-cpp
 
   # Internal Libs
-  ConfigurationLoader
-  LoggingSystem
+  BG-NES-ConfigurationLoader
+  BG-NES-LoggingSystem
 
   )
 

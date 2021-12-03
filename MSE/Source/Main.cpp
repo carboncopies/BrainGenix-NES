@@ -17,8 +17,8 @@
 
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include "BG-NES-LocalConfigurationLoader.h"
-#include "BG-NES-LoggingSystem.h"
+#include <BG-NES-LocalConfigurationLoader.h>
+#include <BG-NES-LoggingSystem.h>
 
 
 // TODO: ADD 
