@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-12-03T03:50:20.892Z" agent="5.0 (X11)" etag="owJKJOIjs-oO20do2v8w" version="15.8.9" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-12-03T03:54:51.159Z" agent="5.0 (X11)" etag="bO8acAcckQ1UpLz_wN2v" version="15.8.9" type="github" pages="3">
   <diagram id="c22UB_N92mJE8_4pfcwG" name="System Overview">
     <mxGraphModel dx="2912" dy="1124" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -305,6 +305,9 @@
         </mxCell>
         <mxCell id="jV3cQ5NdMDDjI3qOkedW-4" value="&lt;div&gt;&lt;b&gt;Milestone 3:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Connect the examples from milestones 1 and 2, measure how input from the integrate and fire network arriving at different locations on the dendrites of the compartmental model leads to interesting outcomes&lt;/div&gt;&lt;div&gt;Build it, test it,&lt;/div&gt;&lt;div&gt;Abstract the system methods from it&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
           <mxGeometry x="560" y="40" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="jV3cQ5NdMDDjI3qOkedW-7" value="&lt;div align=&quot;left&quot;&gt;Milestone 1, Specifications:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="jV3cQ5NdMDDjI3qOkedW-1">
+          <mxGeometry x="80" y="280" width="440" height="240" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
