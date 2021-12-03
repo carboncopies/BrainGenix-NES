@@ -35,7 +35,7 @@ int main() {
     YAML::Node sNESLocalSystemConfiguration = LoadConfig("Config.yaml");
 
     // Instantiate Logging Subsystem
-    LoggerClass sNESLogger(sNESLocalSystemConfiguration);
+    NES_CLASS_LoggerClass sNESLogger(sNESLocalSystemConfiguration);
     sNESLogger.Log("Initialized Logging System", 5);
 
 
