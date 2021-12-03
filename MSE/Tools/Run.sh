@@ -1,3 +1,3 @@
 cd ..
 cd Binaries
-./BrainGenix-ERS
+./BrainGenix-NES
