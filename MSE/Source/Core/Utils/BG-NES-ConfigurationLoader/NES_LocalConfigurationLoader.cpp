@@ -9,7 +9,7 @@
     Date Created: 2021-05-31
 */ 
 
-#include <BG-NES-LocalConfigurationLoader.h>
+#include <NES_LocalConfigurationLoader.h>
 
 
 // Define Configuration Loader
