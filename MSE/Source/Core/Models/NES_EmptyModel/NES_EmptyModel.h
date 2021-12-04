@@ -16,3 +16,33 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+
+
+class EmptyModel {
+
+    private:
+
+        // Set Neuron Metadata
+        float PositionX;
+        float PositionY;
+        float PositionZ;
+
+
+    public:
+
+        /**
+         * @brief Construct a new Empty Model object
+         * 
+         */
+        EmptyModel();
+        EmptyModel(float PosX, float PosY, float PosZ);
+
+        /**
+         * @brief Destroy the Empty Model object
+         * 
+         */
+        ~EmptyModel();
+
+
+
+};
