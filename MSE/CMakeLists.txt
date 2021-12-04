@@ -59,6 +59,11 @@ target_link_libraries(${PROJECT_NAME}
 
 
 # ADD INTERNAL SUBDIRECTORIES
+
+add_subdirectory(${SRC_DIR}/Core/ModelExecutionSystem/NES_ThreadingEngine)
+
+add_subdirectory(${SRC_DIR}/Core/Models/Neurons/NES_EmptyNeuronModel)
+
 add_subdirectory(${SRC_DIR}/Core/Utils/NES_LoggingSystem)
 add_subdirectory(${SRC_DIR}/Core/Utils/NES_ConfigurationLoader)
 

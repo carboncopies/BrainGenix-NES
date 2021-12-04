@@ -18,7 +18,7 @@
 #include <NES_LocalConfigurationLoader.h>
 #include <NES_LoggingSystem.h>
 
-
+#include <NES_ThreadingEngine.h>
 
 
 /**
@@ -54,7 +54,8 @@ int main() {
     sNESLogger.Log("", 4);
 
 
-   
+    NES_CLASS_ThreadingEngine sNESThreadingEngine();
+
 
     // Program Exit (Destructors Automatically Called)
     return 0;
