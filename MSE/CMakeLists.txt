@@ -52,15 +52,15 @@ target_link_libraries(${PROJECT_NAME}
   yaml-cpp
 
   # Internal Libs
-  BG-NES-ConfigurationLoader
-  BG-NES-LoggingSystem
+  NES_ConfigurationLoader
+  NES_LoggingSystem
 
   )
 
 
 # ADD INTERNAL SUBDIRECTORIES
-add_subdirectory(${SRC_DIR}/Core/Utils/BG-NES-LoggingSystem)
-add_subdirectory(${SRC_DIR}/Core/Utils/BG-NES-ConfigurationLoader)
+add_subdirectory(${SRC_DIR}/Core/Utils/NES_LoggingSystem)
+add_subdirectory(${SRC_DIR}/Core/Utils/NES_ConfigurationLoader)
 
 # COPY FILES TO BINARY DIR
 file(COPY "${SRC_DIR}/Config.yaml" DESTINATION "${BIN_DIR}")

@@ -15,8 +15,8 @@
 #include <yaml-cpp/yaml.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <BG-NES-LocalConfigurationLoader.h>
-#include <BG-NES-LoggingSystem.h>
+#include <NES_LocalConfigurationLoader.h>
+#include <NES_LoggingSystem.h>
 
 
 
