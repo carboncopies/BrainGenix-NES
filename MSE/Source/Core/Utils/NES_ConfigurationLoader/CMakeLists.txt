@@ -4,25 +4,25 @@
 
 
 # Create Library (Name Should Be Parent Dir Name)
-add_library(BG-NES-ConfigurationLoader
+add_library(NES_ConfigurationLoader
 
             # Add Source Files (.cpp)
-            "BG-NES-LocalConfigurationLoader.cpp"
+            "NES_LocalConfigurationLoader.cpp"
 
             # Add Header Files (.h)
-            "BG-NES-LocalConfigurationLoader.h"
+            "NES_LocalConfigurationLoader.h"
             
             ${BACKWARD_ENABLE}
             )
 
 # Link 3rd Party Libs
-target_link_libraries(BG-NES-ConfigurationLoader
+target_link_libraries(NES_ConfigurationLoader
     yaml-cpp
     )
 
 # Link Internal Libs
-target_link_libraries(BG-NES-ConfigurationLoader
+target_link_libraries(NES_ConfigurationLoader
 
     )
 
-target_include_directories(BG-NES-ConfigurationLoader PUBLIC ./)
+target_include_directories(NES_ConfigurationLoader PUBLIC ./)
