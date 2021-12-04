@@ -50,7 +50,7 @@ class EmptyNeuronModel {
          * @brief Called every time the simulation advances by one timestep. Used to update the model.
          * 
          */
-        void UpdateModel();
+        void UpdateNeuron();
 
 
 
