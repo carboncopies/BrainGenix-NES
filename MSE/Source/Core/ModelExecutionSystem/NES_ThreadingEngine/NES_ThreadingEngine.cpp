@@ -10,3 +10,26 @@
 */ 
 
 #include <NES_ThreadingEngine.h>
+
+
+void Test(const char* msg) {
+
+    std::cout<<msg<<std::endl;
+
+}
+
+
+// Constructor
+NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine() {
+
+    std::thread Test (Test, "Something funny :P");
+    Test.join();
+
+}
+
+
+// Destructor
+NES_CLASS_ThreadingEngine::~NES_CLASS_ThreadingEngine() {
+
+
+}

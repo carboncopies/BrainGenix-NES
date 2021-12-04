@@ -12,7 +12,35 @@
 #pragma once
 
 // Standard Libraries (BG convention: use <> instead of "")
+#include <thread>
+#include <vector>
+#include <iostream>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+
+
+class NES_CLASS_ThreadingEngine {
+
+    private:
+
+        std::vector<std::thread> ThreadList_; /**<Vector containing worker threads.*/
+
+
+    public:
+
+        /**
+         * @brief Construct a new nes class threadingengine object
+         * 
+         */
+        NES_CLASS_ThreadingEngine();
+
+
+        /**
+         * @brief Destroy the nes class threadingengine object
+         * 
+         */
+        ~NES_CLASS_ThreadingEngine();
+
+};
