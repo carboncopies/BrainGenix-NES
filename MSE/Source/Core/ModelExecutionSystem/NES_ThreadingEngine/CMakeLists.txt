@@ -2,6 +2,8 @@
 # This file is part of the BrainGenix-NES Neuron Emulation System #
 ###################################################################
 
+# Add Threads Lib
+find_package(Threads REQUIRED)
 
 # Create Library (Name Should Be Parent Dir Name)
 add_library(NES_ThreadingEngine
@@ -17,7 +19,7 @@ add_library(NES_ThreadingEngine
 
 # Link 3rd Party Libs
 target_link_libraries(NES_ThreadingEngine
-    yaml-cpp
+    ${CMAKE_THREAD_LIBS_INIT}
     )
 
 # Link Internal Libs
