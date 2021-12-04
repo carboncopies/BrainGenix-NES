@@ -4,25 +4,25 @@
 
 
 # Create Library (Name Should Be Parent Dir Name)
-add_library(BG-NES-ParentDirName
+add_library(NES_ParentDirName
 
             # Add Source Files (.cpp)
-            "BG-NES-SourceName.cpp"
+            "NES_SourceName.cpp"
 
             # Add Header Files (.h)
-            "BG-NES-SourceName.h"
+            "NES_SourceName.h"
             
             ${BACKWARD_ENABLE}
             )
 
 # Link 3rd Party Libs
-target_link_libraries(BG-NES-ParentDirName
+target_link_libraries(NES_ParentDirName
     yaml-cpp
     )
 
 # Link Internal Libs
-target_link_libraries(BG-NES-ParentDirName
+target_link_libraries(NES_ParentDirName
 
     )
 
-target_include_directories(BG-NES-ParentDirName PUBLIC ./)
+target_include_directories(NES_ParentDirName PUBLIC ./)
