@@ -12,9 +12,9 @@
 #pragma once
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <thread>
 #include <vector>
 #include <iostream>
+#include <thread>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -25,7 +25,7 @@ class NES_CLASS_ThreadingEngine {
 
     private:
 
-        std::vector<std::thread> ThreadList_; /**<Vector containing worker threads.*/
+        //std::vector<std::thread> ThreadList_; /**<Vector containing worker threads.*/
 
 
     public:
@@ -34,7 +34,7 @@ class NES_CLASS_ThreadingEngine {
          * @brief Construct a new nes class threadingengine object
          * 
          */
-        NES_CLASS_ThreadingEngine();
+        NES_CLASS_ThreadingEngine(int bob);
 
 
         /**
@@ -42,5 +42,7 @@ class NES_CLASS_ThreadingEngine {
          * 
          */
         ~NES_CLASS_ThreadingEngine();
+
+
 
 };

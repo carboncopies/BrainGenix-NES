@@ -20,10 +20,12 @@ void Test(const char* msg) {
 
 
 // Constructor
-NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine() {
+NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine(int bob) {
 
-    std::thread Test (Test, "Something funny :P");
-    Test.join();
+    std::cout<<"something boring"<<bob<<std::endl;
+
+    std::thread first (Test, "Something funny :P");
+    first.join();
 
 }
 

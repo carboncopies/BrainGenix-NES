@@ -55,6 +55,8 @@ target_link_libraries(${PROJECT_NAME}
   NES_ConfigurationLoader
   NES_LoggingSystem
 
+  NES_ThreadingEngine
+
   )
 
 
