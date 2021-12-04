@@ -3,7 +3,7 @@
 //=================================================================//
 
 /*
-    Description: This file is responsible for implementing a template model for testing.
+    Description: This file is responsible for implementing a template neuron model for testing.
     Documentation Status: Complete
     Additonal Notes: None
     Date Created: 2021-12-03
@@ -18,7 +18,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 
 
-class EmptyModel {
+class EmptyNeuronModel {
 
     private:
 
@@ -30,18 +30,29 @@ class EmptyModel {
 
     public:
 
-        /**
-         * @brief Construct a new Empty Model object
-         * 
-         */
-        EmptyModel();
-        EmptyModel(float PosX, float PosY, float PosZ);
 
         /**
-         * @brief Destroy the Empty Model object
+         * @brief Construct a new Empty neuron Model object
          * 
          */
-        ~EmptyModel();
+        EmptyNeuronModel();
+        EmptyNeuronModel(float PosX, float PosY, float PosZ);
+
+
+        /**
+         * @brief Destroy the Empty neuron Model object
+         * 
+         */
+        ~EmptyNeuronModel();
+
+
+        /**
+         * @brief Called every time the simulation advances by one timestep. Used to update the model.
+         * 
+         */
+        void UpdateModel();
+
+
 
 
 

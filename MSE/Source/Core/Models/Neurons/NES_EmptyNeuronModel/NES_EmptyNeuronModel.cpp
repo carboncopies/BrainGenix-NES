@@ -3,12 +3,12 @@
 //=================================================================//
 
 /*
-    Description: This file is responsible for implementing a template model for testing.
+    Description: This file is responsible for implementing a template neuron model for testing.
     Documentation Status: Complete
     Additonal Notes: None
     Date Created: 2021-12-03
 */ 
 
-#include <NES_EmptyModel.h>
+#include <NES_EmptyNeuronModel.h>
 
 

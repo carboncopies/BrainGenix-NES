@@ -4,25 +4,25 @@
 
 
 # Create Library (Name Should Be Parent Dir Name)
-add_library(NES_EmptyModel
+add_library(NES_EmptyNeuronModel
 
             # Add Source Files (.cpp)
-            "NES_EmptyModel.cpp"
+            "NES_EmptyNeuronModel.cpp"
 
             # Add Header Files (.h)
-            "NES_EmptyModel.h"
+            "NES_EmptyNeuronModel.h"
             
             ${BACKWARD_ENABLE}
             )
 
 # Link 3rd Party Libs
-target_link_libraries(NES_EmptyModel
+target_link_libraries(NES_EmptyNeuronModel
     yaml-cpp
     )
 
 # Link Internal Libs
-target_link_libraries(NES_EmptyModel
+target_link_libraries(NES_EmptyNeuronModel
 
     )
 
-target_include_directories(NES_EmptyModel PUBLIC ./)
+target_include_directories(NES_EmptyNeuronModel PUBLIC ./)
