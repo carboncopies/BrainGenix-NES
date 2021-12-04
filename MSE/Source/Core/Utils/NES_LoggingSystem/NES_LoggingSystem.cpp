@@ -9,7 +9,7 @@
 */
 
 
-#include <BG-NES-LoggingSystem.h>
+#include <NES_LoggingSystem.h>
 
 
 
