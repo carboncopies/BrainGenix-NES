@@ -14,11 +14,18 @@
 
 
 // Constructor
-NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine(int bob) {
+NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine(NES_CLASS_LoggerClass *Logger) {
 
-    std::cout<<"fdsafsdfdsafd\n";
-    const auto CPUCount = std::thread::hardware_concurrency();
-    std::cout<<"CPU CORES: "<<CPUCount<<std::endl;
+    // Copy Logger Pointer
+    Logger_ = Logger;
+
+    // Log Init
+    Logger_->Log("Initializing Threading Engine", 5);
+
+    // Detect CPU Cores
+    Logger_->Log("Detecing Number Of CPU Cores", 4);
+    CPUCount_ = std::thread::hardware_concurrency();
+    Logger_->Log(std::string(std::string("Found ") + std::to_string(CPUCount_) + std::string(" CPU Cores")).c_str(), 4);
 
     //std::cout<<"something boring"<<bob<<std::endl;
 

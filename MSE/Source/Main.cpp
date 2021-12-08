@@ -35,6 +35,9 @@ int main() {
     NES_CLASS_LoggerClass sNESLogger(sNESLocalSystemConfiguration);
     sNESLogger.Log("Initialized Logging System", 5);
 
+    // Setup Threading Engine
+    NES_CLASS_ThreadingEngine sNESThreadingEngine(&sNESLogger);
+
 
     // Log Logo Text
     sNESLogger.Log("Starting BrainGenix-NES Instance", 2);
@@ -54,7 +57,6 @@ int main() {
     sNESLogger.Log("", 4);
 
 
-    NES_CLASS_ThreadingEngine sNESThreadingEngine(50);
 
 
     // Program Exit (Destructors Automatically Called)
