@@ -15,6 +15,8 @@
 #include <vector>
 #include <iostream>
 #include <thread>
+#include <mutex>
+#include <chrono>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -25,8 +27,8 @@ class NES_CLASS_ThreadingEngine {
 
     private:
 
-        //std::vector<std::thread> ThreadList_; /**<Vector containing worker threads.*/
-
+        std::vector<std::thread> ThreadList_; /**<Vector containing worker threads.*/
+        std::mutex CanPrint;
 
     public:
 
@@ -43,6 +45,6 @@ class NES_CLASS_ThreadingEngine {
          */
         ~NES_CLASS_ThreadingEngine();
 
-
+        void Test(const char* Msg, int i, int *counter);
 
 };
