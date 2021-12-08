@@ -36,7 +36,7 @@ class NES_CLASS_ThreadingEngine {
          * @brief Construct a new nes class threadingengine object
          * 
          */
-        NES_CLASS_ThreadingEngine(int bob);
+        NES_CLASS_ThreadingEngine();
 
 
         /**
@@ -45,6 +45,6 @@ class NES_CLASS_ThreadingEngine {
          */
         ~NES_CLASS_ThreadingEngine();
 
-        void Test(const char* Msg, int i, int *counter);
+        //void Test(const char* Msg, int i, int *counter);
 
 };

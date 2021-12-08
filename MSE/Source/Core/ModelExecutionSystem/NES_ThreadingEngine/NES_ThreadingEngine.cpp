@@ -14,23 +14,23 @@
 
 
 // Constructor
-NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine(int bob) {
+NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine() {
 
-    std::cout<<"something boring"<<bob<<std::endl;
-
-
-    int StartNum = 1;
-    int EndNum = 10000;
+    //std::cout<<"something boring"<<bob<<std::endl;
 
 
-    int counter = StartNum;
-    for (int i = StartNum; i < EndNum; i++) {
-        ThreadList_.push_back(std::thread(&NES_CLASS_ThreadingEngine::Test, this, "Something funny :P", i, &counter));
-    }
+    // int StartNum = 1;
+    // int EndNum = 10000;
 
-    for (int i = 0; i < ThreadList_.size(); i++) {
-        ThreadList_[i].join();
-    }
+
+    // int counter = StartNum;
+    // for (int i = StartNum; i < EndNum; i++) {
+    //     ThreadList_.push_back(std::thread(&NES_CLASS_ThreadingEngine::Test, this, "Something funny :P", i, &counter));
+    // }
+
+    // for (int i = 0; i < ThreadList_.size(); i++) {
+    //     ThreadList_[i].join();
+    // }
 
 }
 
@@ -41,24 +41,25 @@ NES_CLASS_ThreadingEngine::~NES_CLASS_ThreadingEngine() {
 
 }
 
-void NES_CLASS_ThreadingEngine::Test(const char* msg, int i, int *counter) {
 
-    long double ans = i;
-    for (int z = i-1; z > 0; z--) {
-        ans*=z;
-    }
+// void NES_CLASS_ThreadingEngine::Test(const char* msg, int i, int *counter) {
 
-
-    while (true) {
-
-        if (*counter == i) {
-            std::lock_guard<std::mutex> guard(CanPrint);
-            std::cout<<"Input X Value: "<<i<<" = "<<ans<<std::endl;
-            *counter = *counter + 1;
-
-            break;
-        }
-    }
+//     long double ans = i;
+//     for (int z = i-1; z > 0; z--) {
+//         ans*=z;
+//     }
 
 
-}
+//     while (true) {
+
+//         if (*counter == i) {
+//             std::lock_guard<std::mutex> guard(CanPrint);
+//             std::cout<<"Input X Value: "<<i<<" = "<<ans<<std::endl;
+//             *counter = *counter + 1;
+
+//             break;
+//         }
+//     }
+
+
+// }
