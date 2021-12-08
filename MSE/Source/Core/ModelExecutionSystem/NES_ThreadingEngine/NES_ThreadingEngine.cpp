@@ -16,6 +16,10 @@
 // Constructor
 NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine() {
 
+
+    int CPUCount = std::thread::hardware_concurrency();
+    std::cout<<"CPU CORES: "<<CPUCount<<std::endl;
+
     //std::cout<<"something boring"<<bob<<std::endl;
 
 
