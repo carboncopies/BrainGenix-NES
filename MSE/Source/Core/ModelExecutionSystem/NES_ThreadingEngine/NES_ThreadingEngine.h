@@ -21,12 +21,14 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <LoggingSystem.h>
 
 
 class NES_CLASS_ThreadingEngine {
 
     private:
 
+        LoggerClass *Logger_; /**<Logger Instance Pointer*/
         std::vector<std::thread> ThreadList_; /**<Vector containing worker threads.*/
         std::mutex CanPrint;
 
@@ -36,7 +38,7 @@ class NES_CLASS_ThreadingEngine {
          * @brief Construct a new nes class threadingengine object
          * 
          */
-        NES_CLASS_ThreadingEngine();
+        NES_CLASS_ThreadingEngine(LoggerClass *Logger);
 
 
         /**

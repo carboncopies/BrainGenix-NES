@@ -54,7 +54,7 @@ int main() {
     sNESLogger.Log("", 4);
 
 
-    NES_CLASS_ThreadingEngine sNESThreadingEngine();
+    NES_CLASS_ThreadingEngine sNESThreadingEngine(50);
 
 
     // Program Exit (Destructors Automatically Called)

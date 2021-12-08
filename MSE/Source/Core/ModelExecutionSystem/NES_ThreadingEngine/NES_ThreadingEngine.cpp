@@ -14,10 +14,10 @@
 
 
 // Constructor
-NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine() {
+NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine(int bob) {
 
-
-    int CPUCount = std::thread::hardware_concurrency();
+    std::cout<<"fdsafsdfdsafd\n";
+    const auto CPUCount = std::thread::hardware_concurrency();
     std::cout<<"CPU CORES: "<<CPUCount<<std::endl;
 
     //std::cout<<"something boring"<<bob<<std::endl;
