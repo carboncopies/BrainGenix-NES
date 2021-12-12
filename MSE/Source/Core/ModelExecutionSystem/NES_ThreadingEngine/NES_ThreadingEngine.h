@@ -32,8 +32,8 @@ class NES_CLASS_ThreadingEngine {
 
         // Neuron Vector(s) will need to add more vectors here for other neuron types in the future
         std::vector<std::vector<EmptyNeuronModel>> NeuronModelVector_EmptyNeuronModel; /**<Vector Contaiining Empty Neuron Models*/
-        std::vector<std::mutex> ThreadBlockMutexes_; /*<<Vector To Block ThreadS*/
-        std::vector<std::mutex> ThreadExitMutexes_; /*<<Vector To Exit Threads*/
+        std::mutex ThreadBlockMutexes_[65535]; /*<<Thread Block Mutex Array*/
+        std::mutex ThreadExitMutexes_[65535]; /*<<Vector To Exit Threads*/
 
 
         // Member Vars
