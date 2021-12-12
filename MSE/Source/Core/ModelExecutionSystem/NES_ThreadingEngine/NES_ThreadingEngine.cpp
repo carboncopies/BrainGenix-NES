@@ -98,3 +98,16 @@ void NES_CLASS_ThreadingEngine::CreateNeurons(int NumberNeurons) {
     }
 
 }
+
+// Worker Thread (Move this to another file later)
+void NES_CLASS_ThreadingEngine::WorkerThread(std::mutex* NeuronVectorReady, std::mutex* ExitThread) {
+
+    // Enter Loop
+    while (true) {
+
+        // Check IF NeuronVectors Ready
+        if (NeuronVectorReady->try_lock())
+
+    }
+
+}
