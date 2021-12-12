@@ -87,7 +87,7 @@ void NES_CLASS_ThreadingEngine::CreateNeurons(int NumberNeurons) {
     for (int ThreadIndex = 0; ThreadIndex < CPUCount_; ThreadIndex++) {
 
         // Create Neuron
-        for (int NeuronID = 0; NeuronID < NumberNeuronsPerThread; NeuronID++) {
+        for (long NeuronID = 0; NeuronID < NumberNeuronsPerThread; NeuronID++) {
 
             // Setup Neuron
             EmptyNeuronModel Neuron = EmptyNeuronModel();
