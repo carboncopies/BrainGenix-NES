@@ -43,7 +43,7 @@ NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine(NES_CLASS_LoggerClass *Logg
     Logger_->Log("Creating Worker Threads", 5);
     for (int i = 0; i < CPUCount_; i++) {
 
-        ThreadList_.push_back(std::thread(&NES_CLASS_ThreadingEngine::WorkerThread, this));
+        ThreadList_.push_back(std::thread(&NES_CLASS_ThreadingEngine::WorkerThread, this, ));
 
     }
 
