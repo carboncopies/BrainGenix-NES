@@ -107,6 +107,8 @@ void NES_CLASS_ThreadingEngine::WorkerThread(std::vector<EmptyNeuronModel>* Neur
     // Enter Loop
     while (true) {
 
+        std::cout<<"test\n";
+
         // Iterate Through Neurons, Update
         BlockThread->lock();
         for (long NeuronID = 0; NeuronID < Neurons->size(); NeuronID++) {
