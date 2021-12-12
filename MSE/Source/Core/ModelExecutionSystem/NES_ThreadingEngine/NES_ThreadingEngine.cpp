@@ -117,6 +117,7 @@ void NES_CLASS_ThreadingEngine::WorkerThread(std::vector<EmptyNeuronModel>* Neur
             Neurons->at(NeuronID).UpdateNeuron();
 
         }
+        BlockThread->unlock();
 
         // Check If Thread Should Exit (Locked = Exit)
         if (ExitThread->try_lock()) {
