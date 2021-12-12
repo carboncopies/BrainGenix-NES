@@ -58,6 +58,9 @@ int main() {
     sNESLogger.Log("", 4);
 
 
+    while (true) {
+        
+    }
 
 
     // Program Exit (Destructors Automatically Called)
