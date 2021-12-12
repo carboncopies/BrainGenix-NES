@@ -65,7 +65,7 @@ NES_CLASS_ThreadingEngine::~NES_CLASS_ThreadingEngine() {
         ThreadList_[i].join();
 
         // Log Join
-        Logger_->Log(std::string("Joined Worker Thread [%d/%d]", i, CPUCount_).c_str(), 4);
+        Logger_->Log(std::string(std::string("Joined Worker Thread ") + std::to_string(i)).c_str(), 4);
     }
 
 }
