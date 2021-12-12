@@ -44,7 +44,7 @@ class NES_CLASS_ThreadingEngine {
 
     // Private Methods
     private:
-        void WorkerThread(std::mutex* NeuronVectorReady, std::mutex* ExitThread);
+        void WorkerThread(std::vector<EmptyNeuronModel>* Neurons, std::mutex* NeuronVectorReady, std::mutex* ExitThread);
 
 
     // Public Functions
