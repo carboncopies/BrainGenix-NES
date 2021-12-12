@@ -100,13 +100,13 @@ void NES_CLASS_ThreadingEngine::CreateNeurons(int NumberNeurons) {
 }
 
 // Worker Thread (Move this to another file later)
-void NES_CLASS_ThreadingEngine::WorkerThread(std::vector<EmptyNeuronModel>* Neurons, std::mutex* NeuronVectorReady, std::mutex* ExitThread) {
+void NES_CLASS_ThreadingEngine::WorkerThread(std::vector<EmptyNeuronModel>* Neurons, std::mutex* BlockThread, std::mutex* ExitThread) {
 
     // Enter Loop
     while (true) {
 
         // Iterate Through Neurons, Update
-        NeuronVectorReady->lock();
+        BlockThread->lock();
         for (long NeuronID = 0; NeuronID < Neurons->size(); NeuronID++) {
 
             // Update Neuron
