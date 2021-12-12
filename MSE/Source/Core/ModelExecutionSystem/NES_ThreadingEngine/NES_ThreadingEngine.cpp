@@ -107,7 +107,6 @@ void NES_CLASS_ThreadingEngine::WorkerThread(std::vector<EmptyNeuronModel>* Neur
     // Enter Loop
     while (true) {
 
-        std::cout<<"test\n";
 
         // Iterate Through Neurons, Update
         BlockThread->lock();
@@ -120,9 +119,10 @@ void NES_CLASS_ThreadingEngine::WorkerThread(std::vector<EmptyNeuronModel>* Neur
         BlockThread->unlock();
 
         // Check If Thread Should Exit (Locked = Exit)
-        if (ExitThread->try_lock()) {
-            break;
-        }
+        //if (ExitThread->try_lock()) {
+        //    break;
+        //}
+
 
     }
 
