@@ -110,7 +110,7 @@ void NES_CLASS_ThreadingEngine::WorkerThread(std::vector<EmptyNeuronModel>* Neur
         for (long NeuronID = 0; NeuronID < Neurons->size(); NeuronID++) {
 
             // Update Neuron
-            Neurons[NeuronID].UpdateNeuron();
+            Neurons->at(NeuronID).UpdateNeuron();
 
         }
 
