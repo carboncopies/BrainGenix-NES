@@ -49,7 +49,7 @@ NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine(NES_CLASS_LoggerClass *Logg
         ThreadBlockMutexes_.push_back(ThreadBlockMutex);
         ThreadExitMutexes_.push_back(ThreadExitMutex);
 
-        ThreadList_.push_back(std::thread(&NES_CLASS_ThreadingEngine::WorkerThread, this, &NeuronModelVector_EmptyNeuronModel[i], &ThreadBlockMutex, &ThreadExitMutex;));
+        ThreadList_.push_back(std::thread(&NES_CLASS_ThreadingEngine::WorkerThread, this, &NeuronModelVector_EmptyNeuronModel[i], &ThreadBlockMutex, &ThreadExitMutex));
 
     }
 
