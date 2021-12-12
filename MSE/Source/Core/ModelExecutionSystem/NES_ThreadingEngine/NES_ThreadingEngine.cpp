@@ -37,25 +37,3 @@ NES_CLASS_ThreadingEngine::~NES_CLASS_ThreadingEngine() {
 
 }
 
-
-// void NES_CLASS_ThreadingEngine::Test(const char* msg, int i, int *counter) {
-
-//     long double ans = i;
-//     for (int z = i-1; z > 0; z--) {
-//         ans*=z;
-//     }
-
-
-//     while (true) {
-
-//         if (*counter == i) {
-//             std::lock_guard<std::mutex> guard(CanPrint);
-//             std::cout<<"Input X Value: "<<i<<" = "<<ans<<std::endl;
-//             *counter = *counter + 1;
-
-//             break;
-//         }
-//     }
-
-
-// }
