@@ -27,21 +27,6 @@ NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine(NES_CLASS_LoggerClass *Logg
     CPUCount_ = std::thread::hardware_concurrency();
     Logger_->Log(std::string(std::string("Found ") + std::to_string(CPUCount_) + std::string(" CPU Cores")).c_str(), 4);
 
-    //std::cout<<"something boring"<<bob<<std::endl;
-
-
-    // int StartNum = 1;
-    // int EndNum = 10000;
-
-
-    // int counter = StartNum;
-    // for (int i = StartNum; i < EndNum; i++) {
-    //     ThreadList_.push_back(std::thread(&NES_CLASS_ThreadingEngine::Test, this, "Something funny :P", i, &counter));
-    // }
-
-    // for (int i = 0; i < ThreadList_.size(); i++) {
-    //     ThreadList_[i].join();
-    // }
 
 }
 

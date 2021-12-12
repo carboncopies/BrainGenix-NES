@@ -26,6 +26,7 @@
 
 class NES_CLASS_ThreadingEngine {
 
+    // Private Vars
     private:
 
         NES_CLASS_LoggerClass *Logger_; /**<Logger Instance Pointer*/
@@ -33,6 +34,11 @@ class NES_CLASS_ThreadingEngine {
         std::mutex CanPrint; /**<Thread Mutex*/
 
         int CPUCount_; /**<Number of cpu cores in system*/
+
+    // Private Workers
+    private:
+        void WorkerThread();
+
 
     public:
 
@@ -48,6 +54,14 @@ class NES_CLASS_ThreadingEngine {
          * 
          */
         ~NES_CLASS_ThreadingEngine();
+
+        /**
+         * @brief Create the given number of neurons and add them to the neurons vector
+         * 
+         */
+        void CreateNeurons();
+
+
 
         //void Test(const char* Msg, int i, int *counter);
 
