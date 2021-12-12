@@ -38,11 +38,22 @@ NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine(NES_CLASS_LoggerClass *Logg
 
     }
 
+
+    // Start Threads
+    Logger_->Log("Creating Worker Threads", 5);
+    for (int i = 0; i < CPUCount_; i++) {
+
+        ThreadList_.push_back(std::thread(&NES_CLASS_ThreadingEngine::WorkerThread, this));
+
+    }
+
 }
 
 // Destructor
 NES_CLASS_ThreadingEngine::~NES_CLASS_ThreadingEngine() {
 
+    // Log Destructor Call
+    Logger_->Log("Threaidng Engine Destructor Called", 5);
 
 }
 
