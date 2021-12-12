@@ -30,7 +30,6 @@ NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine(NES_CLASS_LoggerClass *Logg
 
 }
 
-
 // Destructor
 NES_CLASS_ThreadingEngine::~NES_CLASS_ThreadingEngine() {
 
