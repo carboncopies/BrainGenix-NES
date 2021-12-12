@@ -114,6 +114,11 @@ void NES_CLASS_ThreadingEngine::WorkerThread(std::vector<EmptyNeuronModel>* Neur
 
         }
 
+        // Check If Thread Should Exit (Locked = Exit)
+        if (ExitThread->try_lock()) {
+            break;
+        }
+
     }
 
 }
