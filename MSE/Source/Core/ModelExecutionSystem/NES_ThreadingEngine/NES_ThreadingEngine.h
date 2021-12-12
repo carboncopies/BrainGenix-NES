@@ -22,6 +22,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <NES_LoggingSystem.h>
+#include <NES_EmptyNeuronModel.h>
 
 
 class NES_CLASS_ThreadingEngine {
@@ -29,17 +30,24 @@ class NES_CLASS_ThreadingEngine {
     // Private Vars
     private:
 
+        // Neuron Vector(s) will need to add more vectors here for other neuron types in the future
+        std::vector<std::vector<EmptyNeuronModel>> NeuronModelVector_EmptyNeuronModel; /**<Vector Contaiining Empty Neuron Models*/
+
+        // Member Vars
         NES_CLASS_LoggerClass *Logger_; /**<Logger Instance Pointer*/
         std::vector<std::thread> ThreadList_; /**<Vector containing worker threads.*/
         std::mutex CanPrint; /**<Thread Mutex*/
 
         int CPUCount_; /**<Number of cpu cores in system*/
 
-    // Private Workers
+
+
+    // Private Methods
     private:
         void WorkerThread();
 
 
+    // Public Functions
     public:
 
         /**
@@ -56,10 +64,10 @@ class NES_CLASS_ThreadingEngine {
         ~NES_CLASS_ThreadingEngine();
 
         /**
-         * @brief Create the given number of neurons and add them to the neurons vector
-         * 
+         * @brief Create the given number of neurons and add them to the neurons vector. NOTE: THE NUMBER OF NEURONS MUST BE A MULTIPLE OF THE NUMBER OF THREADS!
+         * @note This is temporary, and will need to be updated later to add multiscale support!
          */
-        void CreateNeurons();
+        void CreateNeurons(int NumberNeurons);
 
 
 

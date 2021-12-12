@@ -28,6 +28,16 @@ NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine(NES_CLASS_LoggerClass *Logg
     Logger_->Log(std::string(std::string("Found ") + std::to_string(CPUCount_) + std::string(" CPU Cores")).c_str(), 4);
 
 
+    // Setup Empty Neuron Model Vectors
+    Logger_->Log("Popuplating Neuron Assignments To Worker Threads", 4);
+    for (int i = 0; i < CPUCount_; i++) {
+
+        // Create Empty Vector
+        std::vector<EmptyNeuronModel> EmptyVec;
+        NeuronModelVector_EmptyNeuronModel.push_back(EmptyVec);
+
+    }
+
 }
 
 // Destructor
@@ -36,3 +46,30 @@ NES_CLASS_ThreadingEngine::~NES_CLASS_ThreadingEngine() {
 
 }
 
+// Create Neurons
+void NES_CLASS_ThreadingEngine::CreateNeurons(int NumberNeurons) {
+
+    // Log Creation
+    std::string LogString = std::string("Creating ") + std::to_string(NumberNeurons) + std::string(" Neurons");
+    Logger_->Log(LogString.c_str(), 5);
+
+    // Calculate Number Of Neurons Per Worker
+    int NumberNeuronsPerThread = NumberNeurons / CPUCount_;
+
+    // Loop Through Worker Threads' Neuron Vectors
+    for (int ThreadIndex = 0; ThreadIndex < CPUCount_; ThreadIndex++) {
+
+        // Create Neuron
+        for (int NeuronID = 0; NeuronID < NumberNeuronsPerThread; NeuronID++) {
+
+            // Setup Neuron
+            EmptyNeuronModel Neuron = EmptyNeuronModel();
+
+            // Add To Vector
+            NeuronModelVector_EmptyNeuronModel[ThreadIndex].push_back(Neuron);
+
+        }
+
+    }
+
+}

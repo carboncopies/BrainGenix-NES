@@ -25,6 +25,7 @@ target_link_libraries(NES_ThreadingEngine
 # Link Internal Libs
 target_link_libraries(NES_ThreadingEngine
     NES_LoggingSystem
+    NES_EmptyNeuronModel
     )
 
 target_include_directories(NES_ThreadingEngine PUBLIC ./)
