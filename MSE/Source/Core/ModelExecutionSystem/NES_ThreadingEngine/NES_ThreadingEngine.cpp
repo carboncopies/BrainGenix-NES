@@ -53,7 +53,19 @@ NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine(NES_CLASS_LoggerClass *Logg
 NES_CLASS_ThreadingEngine::~NES_CLASS_ThreadingEngine() {
 
     // Log Destructor Call
-    Logger_->Log("Threaidng Engine Destructor Called", 5);
+    Logger_->Log("Threading Engine Destructor Called", 6);
+
+    // Join Threads
+    Logger_->Log("Stopping Worker Threads", 4);
+    for (int i = 0; i < ThreadList_.size(); i++) {
+
+        // Put something here to tell worker threads to join!
+
+        ThreadList_[i].join();
+
+        // Log Join
+        Logger_->Log(std::string("Joined Worker Thread [%d/%d]", i, CPUCount_).c_str(), 4);
+    }
 
 }
 
