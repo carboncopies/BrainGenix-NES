@@ -39,7 +39,6 @@ class NES_CLASS_ThreadingEngine {
         // Member Vars
         NES_CLASS_LoggerClass *Logger_; /**<Logger Instance Pointer*/
         std::vector<std::thread> ThreadList_; /**<Vector containing worker threads.*/
-        std::mutex CanPrint; /**<Thread Mutex*/
 
         int CPUCount_; /**<Number of cpu cores in system*/
 
