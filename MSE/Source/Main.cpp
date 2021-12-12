@@ -37,6 +37,7 @@ int main() {
 
     // Setup Threading Engine
     NES_CLASS_ThreadingEngine sNESThreadingEngine(&sNESLogger);
+    sNESThreadingEngine.CreateNeurons(96);
 
 
     // Log Logo Text
