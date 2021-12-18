@@ -15,6 +15,8 @@ from Core.Utils.VersionData import BranchVersion
 
 from Core.Management.API.CommandIndexer import IndexCommands
 from Core.Management.API.CommandIndexer import FilterPaths
+from Core.Management.API.EncryptDecrypt import EncryptCommand
+from Core.Management.API.EncryptDecrypt import DecryptCommand
 
 '''
 Name: Management API
@@ -139,8 +141,8 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
     def ExecuteCommand(self): # Runs The Command #
 
         # Extract Values From Command Dict #
-        CommandCallStack = self.Command['CallStack']
-        ArgumentsDictionary = self.Command['KeywordArgs']
+        CommandCallStack = DecryptCommand(self.Command)['CallStack']
+        ArgumentsDictionary = DecryptCommand(self.Command)['KeywordArgs']
 
         # Get Target Function #
         Layers = CommandCallStack.split('.')
@@ -197,6 +199,7 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     # Await Connection #
                     try:
                         self.Connection, self.ConnectionInformation = self.Socket.accept()
+                        # Removing Connection Address Information for security
                         self.Logger.Log(f'Management API Recieved Connection From: {self.ConnectionInformation}', 7)
 
                         # Set Nonblocking #
@@ -232,10 +235,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             SocketReady = select.select([self.Connection], [], [], 1)
             if SocketReady[0]:
                 self.Command = self.Connection.recv(65535)
-                self.Command = self.Command.decode()
+                self.Command = EncryptCommand(self.Command.decode())
 
                 # Check If Command String Empty #
-                if self.Command == '':
+                if DecryptCommand(self.Command) == '':
                     self.Logger.Log('Management API Client Disconnected, Restarting Server', 6)
 
                     self.Logger.Log('Destroying Management API Server Socket Connection', 3)
@@ -249,38 +252,39 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                 self.Command = None
 
             # Check If Command Ready #
-            if self.Command != None:
+            if DecryptCommand(self.Command) != None:
 
                 # Convert To Dict From JSON #
                 try:
                     self.Command = json.loads(self.Command)
                 except json.decoder.JSONDecodeError:
-                    print(self.Command)
+                    # Commenting the print statement out as encryption is necessary
+                    # print(self.Command)
                     self.Logger.Log('Management API Socket Connection Forcibly Terminated', 6)
 
                 # Check That Command Syntax Is Correct #
                 if str(type(self.Command)) != "<class 'dict'>":
                     CommandOutput = "INVALID DICTIONARY FORMAT"
 
-                if 'CallStack' not in self.Command:
+                if 'CallStack' not in DecryptCommand(self.Command):
                     CommandOutput = "COMMAND DOES NOT INCLUDE 'CallStack' FIELD. If using CLI, run 'scope (NES, ERS, STS)'"
 
 
                 # Check If Disconnect (Must be before SysName check to remain client agnostic) #
-                elif self.Command['CallStack'] == 'Disconnect':
+                elif DecryptCommand(self.Command)['CallStack'] == 'Disconnect':
                     self.Logger.Log('Client Initiated MAPI Disconnect, Connection Closed')
                     self.Connection.close()
                     break
 
 
                 # More Command Syntax Checks #
-                elif 'SysName' not in self.Command:
+                elif 'SysName' not in DecryptCommand(self.Command):
                     CommandOutput = "COMMAND DOES NOT INCLUDE 'SysName' FIELD"
 
-                elif 'KeywordArgs' not in self.Command:
+                elif 'KeywordArgs' not in DecryptCommand(self.Command):
                     CommandOutput = "COMMAND DOES NOT INCLUDE 'KeywordArgs' FIELD"
 
-                elif self.Command['SysName'] != 'NES':
+                elif DecryptCommand(self.Command)['SysName'] != 'NES':
                     CommandOutput = "INVALID VALUE FOR 'SysName' FIELD"
 
                 # Run System Command #
