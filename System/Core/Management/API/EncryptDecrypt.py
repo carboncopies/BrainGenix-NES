@@ -1,4 +1,4 @@
-import pycrypto
+from Crypto.Cipher import AES
 import random
 
 AESkey = ''.join(chr(random.randint(0, 0xFF)) for i in range(16))
