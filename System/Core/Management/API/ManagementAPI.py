@@ -232,10 +232,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
             SocketReady = select.select([self.Connection], [], [], 1)
             if SocketReady[0]:
                 self.Command = self.Connection.recv(65535)
-                self.Command = self.Command.decode()
+                self.Command = EncryptCommand(self.Command.decode())
 
                 # Check If Command String Empty #
-                if self.Command == '':
+                if DecryptCommand(self.Command) == '':
                     self.Logger.Log('Management API Client Disconnected, Restarting Server', 6)
 
                     self.Logger.Log('Destroying Management API Server Socket Connection', 3)
@@ -246,14 +246,15 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                     self.ManagementAPIThread(self.ControlQueue)
 
             else:
-                self.Command = None
+                self.Command = ''
+                self.Command = EncryptCommand(self.Command)
 
             # Check If Command Ready #
-            if self.Command != None:
+            if DecryptCommand(self.Command).decode("utf-8") != '':
 
                 # Convert To Dict From JSON #
                 try:
-                    self.Command = json.loads(self.Command)
+                    self.Command = json.loads(DecryptCommand(self.Command).decode("utf-8"))
                 except json.decoder.JSONDecodeError:
                     print(self.Command)
                     self.Logger.Log('Management API Socket Connection Forcibly Terminated', 6)
@@ -261,8 +262,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
                 # Check That Command Syntax Is Correct #
                 if str(type(self.Command)) != "<class 'dict'>":
                     CommandOutput = "INVALID DICTIONARY FORMAT"
+                    
+                CommandKeys = self.Command.keys()
 
-                if 'CallStack' not in self.Command:
+                if 'CallStack' not in CommandKeys:
                     CommandOutput = "COMMAND DOES NOT INCLUDE 'CallStack' FIELD. If using CLI, run 'scope (NES, ERS, STS)'"
 
 
@@ -274,10 +277,10 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
 
                 # More Command Syntax Checks #
-                elif 'SysName' not in self.Command:
+                elif 'SysName' not in CommandKeys:
                     CommandOutput = "COMMAND DOES NOT INCLUDE 'SysName' FIELD"
 
-                elif 'KeywordArgs' not in self.Command:
+                elif 'KeywordArgs' not in CommandKeys:
                     CommandOutput = "COMMAND DOES NOT INCLUDE 'KeywordArgs' FIELD"
 
                 elif self.Command['SysName'] != 'NES':
