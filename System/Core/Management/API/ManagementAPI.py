@@ -16,6 +16,9 @@ from Core.Utils.VersionData import BranchVersion
 from Core.Management.API.CommandIndexer import IndexCommands
 from Core.Management.API.CommandIndexer import FilterPaths
 
+from Core.Management.API.EncryptDecrypt import EncryptCommand
+from Core.Management.API.EncryptDecrypt import DecryptCommand
+
 '''
 Name: Management API
 Description: This file provides the socket based interface to the management api backend.
@@ -424,6 +427,18 @@ class ManagementAPISocketServer(): # Creates A Class To Connect To The Managemen
 
             cur.execute("SELECT permissionLevel FROM user WHERE userName=%s AND passwordHash=%s",(userName,passwordHash))
             userCursor = cur
+            
+            if cur==0: 
+                print("User not Found")
+                salt = input("Enter salt")                                                                                                                                                                   
+                firstName = input("Enter first name")                                                                                                                                                        
+                lastName = input("Enter last name")
+                notes = input("Enter notes")                                                                                                                                                                 
+                permissionLevel = 1
+                addUser(userName,passwordHash,salt,firstName,lastName,notes,permissionLevel)
+                cur = self.DatabaseConnection.cursor(pymysql.cursors.DictCursor)                                                                                                             
+                cur.execute("SELECT permissionLevel FROM user WHERE userName=%s AND passwordHash=%s",(userName,passwordHash))                                                                                
+                userCursor = cur
 
             for row in userCursor:
                 level = row['permissionLevel']
