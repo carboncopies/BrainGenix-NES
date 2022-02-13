@@ -4,7 +4,7 @@
 
 # What's BrainGenix-NES?
 
-BrainGenix-NES or NES is the Neuron Emulation System division of the BrainGenix department. NES is a distributed biological neuron simulator designed for the emulation of human minds. The simulator uses Apache Zookeeper and other production-grade systems to ensure that it's both stable and fault-tolerant. It's designed with scalability in mind to run with one neuron or a hundred billion.
+BrainGenix Neuron Emulation System (NES) aims to be a distributed biological neuron simulator designed for the emulation of human brains. The simulator uses Apache Zookeeper and other production-grade systems to ensure that it is both stable and fault-tolerant. It is designed with scalability in mind to run with one neuron or a hundred billion. NES will work in conjunction with other BrainGenix programs, including the management API.
 
 ## Key Features
  - NES runs with as many neurons as your simulation has, be it one or a billion.
