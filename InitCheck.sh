@@ -13,10 +13,11 @@ do
    # Check validity of config file
    yamllint file
    
-   # Return data values after parsing config file
+   # Return data values and their datatypes after parsing config file
    cat test.yaml | shyaml values-0 | \
    while read -r -d $'\0' value; do
        echo "RECEIVED: '$value'"
+       echo "DATATYPE: '$type(value)'"
    done
    
 done
