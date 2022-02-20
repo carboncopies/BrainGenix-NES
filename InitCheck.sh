@@ -3,20 +3,20 @@
 sudo apt-get install yamllint
 sudo pip install shyaml
 
-files= find . -type f -name '*.yaml'
+files= $(sudo find . -type f -name '*.yaml')
+
+echo $files
 
 for file in $files
 do
    echo $file
-
    # Check validity of config file
    yamllint log.yml $file
 
    # Return data values and their datatypes after parsing config file
    cat $file | shyaml values-0 | \
    while read -r -d $'\0' value; do
-       echo "RECEIVED: '$value'"
-       echo "DATATYPE: '$type(value)'"
+       echo "RECEIVED: $value"
+       echo "DATATYPE: $type(value)"
    done
-
 done
