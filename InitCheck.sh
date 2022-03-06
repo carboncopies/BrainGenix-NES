@@ -1,22 +1,25 @@
 #!/bin/bash
 
-sudo apt-get install yamllint
-sudo pip install shyaml
+enable -n local
 
-files= $(sudo find . -type f -name '*.yaml')
+parse_check () {
+   local prefix=$2
+   local s='[[:space:]]*' w='[a-zA-Z0-9_]*' fs=$(echo @|tr @ '\034')
+   sed -ne "s|^\($s\):|\1|" \
+        -e "s|^\($s\)\($w\)$s:$s[\"']\(.*\)[\"']$s\$|\1$fs\2$fs\3|p" \
+        -e "s|^\($s\)\($w\)$s:$s\(.*\)$s\$|\1$fs\2$fs\3|p"  $1 |
+   awk -F$fs '{
+      indent = length($1)/2;
+      vname[indent] = $2;
+      for (i in vname) {if (i > indent) {delete vname[i]}}
+      if (length($3) > 0) {
+          printf("%s\n",$3)
+      }
+   }'
+}
 
-echo $files
-
-for file in $files
+for file in **/*.yaml;
 do
    echo $file
-   # Check validity of config file
-   yamllint log.yml $file
-
-   # Return data values and their datatypes after parsing config file
-   cat $file | shyaml values-0 | \
-   while read -r -d $'\0' value; do
-       echo "RECEIVED: $value"
-       echo "DATATYPE: $type(value)"
-   done
+   parse_check $file
 done
