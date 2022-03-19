@@ -21,7 +21,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <NES_LoggingSystem.h>
+#include <NES_CLASS_LoggingSystem.h>
 #include <NES_EmptyNeuronModel.h>
 
 
