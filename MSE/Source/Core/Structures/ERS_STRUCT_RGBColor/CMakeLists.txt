@@ -1,6 +1,6 @@
-########################################################################
-# This file is part of the BrainGenix-NES Environment Rendering System #
-########################################################################
+###################################################################
+# This file is part of the BrainGenix-NES Neuron Emulation System #
+###################################################################
 
 
 # Create Library (Name Should Be Parent Dir Name)
