@@ -27,7 +27,6 @@
 
 class NES_CLASS_ThreadingEngine {
 
-    // Private Vars
     private:
 
         // Neuron Vector(s) will need to add more vectors here for other neuron types in the future
@@ -44,12 +43,10 @@ class NES_CLASS_ThreadingEngine {
 
 
 
-    // Private Methods
     private:
         void WorkerThread(std::vector<EmptyNeuronModel>* Neurons, std::mutex* BlockThread, std::mutex* ExitThread);
 
 
-    // Public Functions
     public:
 
         /**
