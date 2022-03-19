@@ -49,6 +49,9 @@ add_subdirectory(${SRC_DIR}/Core/ModelExecutionSystem/NES_ThreadingEngine)
 
 add_subdirectory(${SRC_DIR}/Core/Models/Neurons/NES_EmptyNeuronModel)
 
+add_subdirectory(${SRC_DIR}/Core/Structures/NES_CLASS_RGBColor)
+
+
 add_subdirectory(${SRC_DIR}/Core/Utils/NES_LoggingSystem)
 add_subdirectory(${SRC_DIR}/Core/Utils/NES_ConfigurationLoader)
 
