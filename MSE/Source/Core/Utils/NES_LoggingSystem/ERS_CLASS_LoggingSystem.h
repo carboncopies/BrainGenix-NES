@@ -20,13 +20,13 @@
 #include <yaml-cpp/yaml.h>
 
 // Interna; Libraries (BG convention: use <> instead of "")
-#include <ERS_STRUCT_RGBColor.h>
+#include <NES_STRUCT_RGBColor.h>
 
 
 /**
  * @brief Main Logging System, Saves Logs To Database/Text File If Configured To.
  */
-class ERS_CLASS_LoggingSystem {
+class NES_CLASS_LoggingSystem {
 
 private: 
 
@@ -46,7 +46,7 @@ private:
     std::mutex LogMutex_; /**<Used to ensure thread safety during vector operations*/
 
 
-    std::map<int, ERS_STRUCT_RGBColor> ColorLookup_; /*!< Lookup for converting log level to RGB values (stored in RGBColor struct). Populated based on values stored in Config.yaml */
+    std::map<int, NES_STRUCT_RGBColor> ColorLookup_; /*!< Lookup for converting log level to RGB values (stored in RGBColor struct). Populated based on values stored in Config.yaml */
     std::map<int, std::string> LogNameLookup_; /*!< Lookup for converting log level to name of log level (See Config.yaml for values). */
 
 private:
@@ -66,7 +66,7 @@ public:
     std::vector<std::string> FullLogMessages_; /**<Full Messages*/
     std::vector<int> LogLevels_; /**<List of Log Levels*/
     std::vector<std::string> LogTimes_; /**<List Of Times*/
-    std::vector<ERS_STRUCT_RGBColor> LogColors_; /**<List of Colors For Messages*/
+    std::vector<NES_STRUCT_RGBColor> LogColors_; /**<List of Colors For Messages*/
 
 
 public: 
@@ -77,13 +77,13 @@ public:
      * 
      * @param SystemConfiguration System configuration file in YAML::Node format from Config.yaml.
      */
-    ERS_CLASS_LoggingSystem(YAML::Node SystemConfiguration);
+    NES_CLASS_LoggingSystem(YAML::Node SystemConfiguration);
 
     /**
      * @brief Cleanup the logger class, close db connection, close file io, etc.
      * 
      */
-    ~ERS_CLASS_LoggingSystem();
+    ~NES_CLASS_LoggingSystem();
 
     /**
      * @brief Add item to system log. 
