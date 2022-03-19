@@ -84,7 +84,7 @@ void NES_CLASS_ThreadingEngine::CreateNeurons(int NumberNeurons) {
 
     // Loop Through Worker Threads' Neuron Vectors
     Logger_->Log(std::string(std::string("Each Worker Thread Will Have ") + std::to_string(NumberNeuronsPerThread) + std::string(" Neurons")).c_str(), 5);
-    for (int ThreadIndex = 0; ThreadIndex < CPUCount_; ThreadIndex++) {
+    for (unsigned long ThreadIndex = 0; ThreadIndex < CPUCount_; ThreadIndex++) {
 
         // Create Neuron
         for (long NeuronID = 0; NeuronID < NumberNeuronsPerThread; NeuronID++) {
