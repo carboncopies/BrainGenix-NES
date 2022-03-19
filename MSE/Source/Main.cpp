@@ -16,7 +16,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <NES_LocalConfigurationLoader.h>
-#include <NES_LoggingSystem.h>
+#include <NES_CLASS_LoggingSystem.h>
 
 #include <NES_ThreadingEngine.h>
 
