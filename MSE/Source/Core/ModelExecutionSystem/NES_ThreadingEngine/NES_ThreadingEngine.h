@@ -44,7 +44,7 @@ private:
 
 
 private:
-    void WorkerThread(std::vector<EmptyNeuronModel>* Neurons, std::mutex* BlockThread, std::mutex* ExitThread);
+    void WorkerThread(std::vector<EmptyNeuronModel>* Neurons);
 
 
 public:
