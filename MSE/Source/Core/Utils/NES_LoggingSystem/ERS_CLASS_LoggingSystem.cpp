@@ -2,11 +2,11 @@
 // This file is part of the BrainGenix-NES Neuron Emulation System //
 //=================================================================//
 
-#include "ERS_CLASS_LoggingSystem.h"
+#include "NES_CLASS_LoggingSystem.h"
 
 
 
-ERS_CLASS_LoggingSystem::ERS_CLASS_LoggingSystem(YAML::Node SystemConfiguration) {
+NES_CLASS_LoggingSystem::NES_CLASS_LoggingSystem(YAML::Node SystemConfiguration) {
 
     LocalSystemConfiguration = SystemConfiguration;
 
@@ -44,21 +44,21 @@ ERS_CLASS_LoggingSystem::ERS_CLASS_LoggingSystem(YAML::Node SystemConfiguration)
 
 }
 
-ERS_CLASS_LoggingSystem::~ERS_CLASS_LoggingSystem() {
+NES_CLASS_LoggingSystem::~NES_CLASS_LoggingSystem() {
 
     Log("System Logger Destructor Called, Logger Shutting Down", 6);
 
 }
 
 
-void ERS_CLASS_LoggingSystem::Log(std::string LogItem, int LogLevel) {
+void NES_CLASS_LoggingSystem::Log(std::string LogItem, int LogLevel) {
 
     Log(LogItem.c_str(), LogLevel);
 
 }
 
 
-void ERS_CLASS_LoggingSystem::Log(const char* LogItem, int LogLevel) {
+void NES_CLASS_LoggingSystem::Log(const char* LogItem, int LogLevel) {
 
     // Get Current Time In YYYY-MM-DD-HH-MM-SS Format
     std::time_t RawCurrentTime;
@@ -128,9 +128,9 @@ void ERS_CLASS_LoggingSystem::Log(const char* LogItem, int LogLevel) {
 
 }
 
-void ERS_CLASS_LoggingSystem::ColorizeText(std::string Message, int LogLevel) {
+void NES_CLASS_LoggingSystem::ColorizeText(std::string Message, int LogLevel) {
 
-    ERS_STRUCT_RGBColor ColorValue = ColorLookup_[LogLevel];
+    NES_STRUCT_RGBColor ColorValue = ColorLookup_[LogLevel];
 
     std::string RedString = std::to_string(ColorValue.Red);
     std::string GreenString = std::to_string(ColorValue.Green);
