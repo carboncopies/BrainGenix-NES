@@ -59,7 +59,7 @@ NES_CLASS_ThreadingEngine::~NES_CLASS_ThreadingEngine() {
 
     // Join Threads
     Logger_->Log("Stopping Worker Threads", 4);
-    for (int i = 0; i < ThreadList_.size(); i++) {
+    for (unsigned long i = 0; i < ThreadList_.size(); i++) {
 
         // Put something here to tell worker threads to join!
 
