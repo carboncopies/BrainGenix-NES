@@ -31,8 +31,8 @@ private:
 
     // Neuron Vector(s) will need to add more vectors here for other neuron types in the future
     std::vector<std::vector<EmptyNeuronModel>> NeuronModelVector_EmptyNeuronModel; /**<Vector Contaiining Empty Neuron Models*/
-    std::mutex ThreadBlockMutexes_[65535]; /*<<Thread Block Mutex Array*/
-    std::mutex ThreadExitMutexes_[65535]; /*<<Vector To Exit Threads*/
+    std::mutex BlockThreads_; /**<Mutex that when locked blocks all worker threads*/
+    bool ExitThreads_ = false; /**<Bool that when set to true, causes the worker threads to terminate*/
 
 
     // Member Vars
