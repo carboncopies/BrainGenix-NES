@@ -45,7 +45,7 @@ NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine(NES_CLASS_LoggingSystem *Lo
 
         // Log Create
         Logger_->Log(std::string(std::string("Creating Worker Thread ") + std::to_string(i)).c_str(), 4);
-        ThreadList_.push_back(std::thread(&NES_CLASS_ThreadingEngine::WorkerThread, this, &NeuronModelVector_EmptyNeuronModel[i], &ThreadBlockMutexes_[i], &ThreadExitMutexes_[i]));
+        ThreadList_.push_back(std::thread(&NES_CLASS_ThreadingEngine::WorkerThread, this, &NeuronModelVector_EmptyNeuronModel[i]));
 
     }
 
