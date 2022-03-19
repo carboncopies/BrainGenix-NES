@@ -98,3 +98,5 @@ sudo systemctl enable zookeeper
 sudo systemctl start zookeeper
 
 systemctl status zookeeper
+
+sudo sh InitCheck.sh
