@@ -18,13 +18,9 @@ include(${CMAKE_UTIL_DIR}/SetBinaryDir.cmake)
 include(${CMAKE_UTIL_DIR}/DisableTargetWarnings.cmake)
 
 
-# Add YAML-CPP Library (Not Header Only)
-add_subdirectory("${LIB_DIR}/yaml-cpp")
-disable_target_warnings(yaml-cpp)
-
-# Add Backward Library (Header Only)
-add_subdirectory(${LIB_DIR}/backward)
-
+# Include Package Addition Scripts
+include(${CMAKE_BUILD_UTILS_DIR}/YAML-CPP.cmake)
+include(${CMAKE_BUILD_UTILS_DIR}/Backward.cmake)
 
 
 # Add Main.cpp
