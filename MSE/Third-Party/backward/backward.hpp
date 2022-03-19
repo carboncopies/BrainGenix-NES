@@ -184,10 +184,12 @@
 //
 // Note that only one of the define should be set to 1 at a time.
 //
-#if BACKWARD_HAS_DW == 1
-#elif BACKWARD_HAS_BFD == 1
-#elif BACKWARD_HAS_DWARF == 1
-#elif BACKWARD_HAS_BACKTRACE_SYMBOL == 1
+
+
+//#if BACKWARD_HAS_DW == 1
+//#elif BACKWARD_HAS_BFD == 1 <-- MODIFIED, BROKEN ON UBUNTU 20.04. SHOULD BE FIXED LATER. 
+//#elif BACKWARD_HAS_DWARF == 1
+#if BACKWARD_HAS_BACKTRACE_SYMBOL == 1
 #else
 #undef BACKWARD_HAS_DW
 #define BACKWARD_HAS_DW 0
