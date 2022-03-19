@@ -41,8 +41,8 @@ else ()
     set(BoldWhite   " ")
 endif()
 
-function(ERSBuildLogger Color Message)
-    message("${BoldMagenta}[ERS Build System]${ColourReset} ${Color}${Message}${ColourReset}")
+function(NESBuildLogger Color Message)
+    message("${BoldMagenta}[NES Build System]${ColourReset} ${Color}${Message}${ColourReset}")
 endfunction()
 
 # function(message)
