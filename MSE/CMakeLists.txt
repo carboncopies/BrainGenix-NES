@@ -36,7 +36,7 @@ target_link_libraries(${PROJECT_NAME}
 
   # Internal Libs
   NES_ConfigurationLoader
-  NES_LoggingSystem
+  NES_CLASS_LoggingSystem
 
   NES_ThreadingEngine
 
