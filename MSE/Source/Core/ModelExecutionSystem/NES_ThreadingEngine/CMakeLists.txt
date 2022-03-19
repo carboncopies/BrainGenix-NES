@@ -24,7 +24,7 @@ target_link_libraries(NES_ThreadingEngine
 
 # Link Internal Libs
 target_link_libraries(NES_ThreadingEngine
-    NES_LoggingSystem
+    NES_CLASS_LoggingSystem
     NES_EmptyNeuronModel
     )
 
