@@ -36,7 +36,7 @@ private:
 
 
     // Member Vars
-    NES_CLASS_LoggerClass *Logger_; /**<Logger Instance Pointer*/
+    NES_CLASS_LoggingSystem *Logger_; /**<Logger Instance Pointer*/
     std::vector<std::thread> ThreadList_; /**<Vector containing worker threads.*/
 
     int CPUCount_; /**<Number of cpu cores in system*/
@@ -53,7 +53,7 @@ public:
      * @brief Construct a new nes class threadingengine object
      * 
      */
-    NES_CLASS_ThreadingEngine(NES_CLASS_LoggerClass *Logger);
+    NES_CLASS_ThreadingEngine(NES_CLASS_LoggingSystem *Logger);
 
 
     /**

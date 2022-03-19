@@ -32,7 +32,7 @@ int main() {
     YAML::Node sNESLocalSystemConfiguration = LoadConfig("Config.yaml");
 
     // Instantiate Logging Subsystem
-    NES_CLASS_LoggerClass sNESLogger(sNESLocalSystemConfiguration);
+    NES_CLASS_LoggingSystem sNESLogger(sNESLocalSystemConfiguration);
     sNESLogger.Log("Initialized Logging System", 5);
 
     // Setup Threading Engine

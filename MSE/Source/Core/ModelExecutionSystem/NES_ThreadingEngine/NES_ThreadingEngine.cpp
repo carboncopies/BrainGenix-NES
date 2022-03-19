@@ -14,7 +14,7 @@
 
 
 // Constructor
-NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine(NES_CLASS_LoggerClass *Logger) {
+NES_CLASS_ThreadingEngine::NES_CLASS_ThreadingEngine(NES_CLASS_LoggingSystem *Logger) {
 
     // Copy Logger Pointer
     Logger_ = Logger;
