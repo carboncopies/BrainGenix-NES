@@ -20,40 +20,36 @@
 
 class EmptyNeuronModel {
 
-    private:
+private:
 
-        // Set Neuron Metadata
-        float PositionX;
-        float PositionY;
-        float PositionZ;
-
-
-    public:
+    // Set Neuron Metadata
+    float PositionX;
+    float PositionY;
+    float PositionZ;
 
 
-        /**
-         * @brief Construct a new Empty neuron Model object
-         * 
-         */
-        EmptyNeuronModel();
-        EmptyNeuronModel(float PosX, float PosY, float PosZ);
+public:
 
 
-        /**
-         * @brief Destroy the Empty neuron Model object
-         * 
-         */
-        ~EmptyNeuronModel();
+    /**
+     * @brief Construct a new Empty neuron Model object
+     * 
+     */
+    EmptyNeuronModel();
+    EmptyNeuronModel(float PosX, float PosY, float PosZ);
 
 
-        /**
-         * @brief Called every time the simulation advances by one timestep. Used to update the model.
-         * 
-         */
-        void UpdateNeuron();
+    /**
+     * @brief Destroy the Empty neuron Model object
+     * 
+     */
+    ~EmptyNeuronModel();
 
 
-
-
+    /**
+     * @brief Called every time the simulation advances by one timestep. Used to update the model.
+     * 
+     */
+    void UpdateNeuron();
 
 };
