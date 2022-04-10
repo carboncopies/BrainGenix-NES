@@ -2,24 +2,28 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
-'''
-Name: User Management API
-Description: This subsystem exposes management API functionality to the user auth system.
-Date-Created: 2021-08-13
-'''
+## @package UserManagement
+# Name: User Management API
+# Description: This subsystem exposes management API functionality to the user auth system.
+# Date-Created: 2021-08-13
 
 import secrets
 
-class UserManagementSystem(): # User Management Class #
+## User Management Class 
+class UserManagementSystem(): 
 
-    def __init__(self, SocketAPI): # Initialization Function #
+    ## Initialization Function 
+    # @param SocketAPI Socket Pointer
+    def __init__(self, SocketAPI): 
 
-        # Create Local Pointers #
+        ## Create Local Pointers 
         self.SocketAPI = SocketAPI
 
-    def mAPI_CreateUser(self, APIArgs): # Create User Statemenet #
+    ## Create User Statement 
+    # @param APIArgs New User Arguments passed from UI to mAPI
+    def mAPI_CreateUser(self, APIArgs): 
 
-        # Get User Info #
+        ## Get User Info 
         UserName = APIArgs['Username']
         Password = APIArgs['Password']
         FirstName = APIArgs['FirstName']
@@ -27,8 +31,8 @@ class UserManagementSystem(): # User Management Class #
         Notes = APIArgs['Notes']
         PermissionLevel = APIArgs['PermissionLevel']
 
-        # Create Salt Token #
+        ## Create Salt Token 
         Salt = secrets.token_urlsafe(65535)
 
-        # Add User To DB #
+        ## Add User To DB 
         self.SocketAPI.addUser(UserName, Password, Salt, FirstName, LastName, Notes, PermissionLevel)
