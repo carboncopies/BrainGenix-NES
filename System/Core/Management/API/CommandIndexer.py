@@ -172,8 +172,8 @@ def FilterPaths(InputDictionary, Logger, RequiredString = 'mAPI_'):
 
             CreatePath(OutputDictionary, Paths[PathIndex])
 
-    ## Log Completion 
+    ## Log Completion
     Logger.Log('Command Filtering Complete', 2)
 
-    ## Return Output 
+    ## Return Output
     return OutputDictionary
