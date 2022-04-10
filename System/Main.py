@@ -26,23 +26,23 @@ Version = VersionNumber
 Branch = BranchVersion
 
 
-## Load Config 
+## Load Config
 SystemConfiguration = LoadLocalConfig(ConfigFilePath = 'Config.yaml')
 
 
-## Initialize Logger 
+## Initialize Logger
 mLogger = InstantiateLogger(SystemConfiguration)
 
 
-## Instantiate Thread Manager 
+## Instantiate Thread Manager
 mThreadManagerInstance = ThreadManager(mLogger)
 
 
-## Start API Server 
+## Start API Server
 sSocketAPI = ManagementAPISocketServer(mLogger, SystemConfiguration, mThreadManagerInstance)
 
 
-## Check Dependencies 
+## Check Dependencies
 ModulesNeeded = [
                 'os',
                 'yaml',
@@ -62,21 +62,21 @@ ModulesNeeded = [
 CheckImports(ModulesNeeded, mLogger)
 
 
-## Connect To Zookeeper Service 
+## Connect To Zookeeper Service
 sZookeeper = mThreadManagerInstance.InstantiateZK(mLogger, SystemConfiguration)
 
 ## NOTE:
 #
-# THIS WILL CONNECT TO THE C++ INTERFACE WITH BRIAN HERE. THE HEAVY PROCESING WORK IS DONE ON THE C++ SIDE 
+# THIS WILL CONNECT TO THE C++ INTERFACE WITH BRIAN HERE. THE HEAVY PROCESING WORK IS DONE ON THE C++ SIDE
 
-## Get NodeCount 
+## Get NodeCount
 NodeCount = sZookeeper.ConcurrentConnectedNodes()
 
 
-## Instantiate Leader/Follower Transition Manager 
+## Instantiate Leader/Follower Transition Manager
 sLFTMInstance = LFTM(mLogger, sZookeeper, sSocketAPI, mThreadManagerInstance, SystemConfiguration)
 
-## Link LFTM 
+## Link LFTM
 sSocketAPI.LinkLFTM(sLFTMInstance)
 sSocketAPI.IndexCommands()
 
@@ -84,11 +84,11 @@ sSocketAPI.UpdateCommand()
 #sSocketAPI.addUser('pray@carboncopies.org','123456','789','Prishita','Ray','', 5)
 #sSocketAPI.WriteAuthentication('pray@carboncopies.org','123456')
 
-## Instantiate Main Simulation Engine 
+## Instantiate Main Simulation Engine
 #sMainSimulationEngine = MainSimulationEngine(mLogger, SystemConfiguration)
 
 
-## MOTD 
+## MOTD
 mLogger.Log('Starting BrainGenix Instance', 7)
 mLogger.Log('', 5)
 mLogger.Log('---------------------------------------------------------------------------', 5)
@@ -109,5 +109,5 @@ mLogger.Log('    +--------------------------------------------------------------
 mLogger.Log('', 4)
 
 
-## Start System 
+## Start System
 sLFTMInstance.MainLoop()

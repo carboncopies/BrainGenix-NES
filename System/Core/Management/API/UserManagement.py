@@ -9,21 +9,21 @@
 
 import secrets
 
-## User Management Class 
-class UserManagementSystem(): 
+## User Management Class
+class UserManagementSystem():
 
-    ## Initialization Function 
+    ## Initialization Function
     # @param SocketAPI Socket Pointer
-    def __init__(self, SocketAPI): 
+    def __init__(self, SocketAPI):
 
-        ## Create Local Pointers 
+        ## Create Local Pointers
         self.SocketAPI = SocketAPI
 
-    ## Create User Statement 
+    ## Create User Statement
     # @param APIArgs New User Arguments passed from UI to mAPI
-    def mAPI_CreateUser(self, APIArgs): 
+    def mAPI_CreateUser(self, APIArgs):
 
-        ## Get User Info 
+        ## Get User Info
         UserName = APIArgs['Username']
         Password = APIArgs['Password']
         FirstName = APIArgs['FirstName']
@@ -31,8 +31,8 @@ class UserManagementSystem():
         Notes = APIArgs['Notes']
         PermissionLevel = APIArgs['PermissionLevel']
 
-        ## Create Salt Token 
+        ## Create Salt Token
         Salt = secrets.token_urlsafe(65535)
 
-        ## Add User To DB 
+        ## Add User To DB
         self.SocketAPI.addUser(UserName, Password, Salt, FirstName, LastName, Notes, PermissionLevel)
