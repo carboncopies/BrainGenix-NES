@@ -2,7 +2,7 @@
 ## This file is part of the BrainGenix Simulation System ##
 ###########################################################
 
-import brian2
+# import brian2
 
 from Core.Utils.MainSimulationEngine.Brian2Interface.CPPLoader import LoadCPP
 
