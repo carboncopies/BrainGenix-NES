@@ -1,7 +1,7 @@
 #include <glib.h>
 #include <librdkafka/rdkafka.h>
 
-#include "common.c"
+#include "Common.c"
 
 #define ARR_SIZE(arr) ( sizeof((arr)) / sizeof((arr[0])) )
 
