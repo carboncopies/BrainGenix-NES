@@ -4,34 +4,37 @@
 
 import pymysql
 
-'''
-Name: DB Logger Thread
-Description: This system is responsible for sending logs to the database.
-Date-Created: 2021-06-18
-'''
+## @package DBLoggerThread
+# Name: DB Logger Thread
+# Description: This system is responsible for sending logs to the database.
+# Date-Created: 2021-06-18
 
+## Transmits Logs From The Logger To The Database
+class DatabaseLogTransmissionSystem(): 
 
-class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The Database #
+    ## Init
+    # @param Logger Logger object
+    # @param LogBufferQueue Log Buffer Queue object
+    # @param ControlQueue Control Queue object 
+    # @param SystemConfiguration System Configuration Dictionary
+    def __init__(self, Logger:object, LogBufferQueue:object, ControlQueue:object, SystemConfiguration:dict): 
 
-    def __init__(self, Logger:object, LogBufferQueue:object, ControlQueue:object, SystemConfiguration:dict): # Init #
+        ## Count of DB operations to be executed before committing 
+        self.OpsBeforeCommit = 64 
 
-        # TODO: Make this part of parameters
-        self.OpsBeforeCommit = 64 # Count of DB operations to be executed before committing #
-
-        # Init Logger #
+        ## Init Logger
         self.Logger = Logger
         self.LogBufferQueue = LogBufferQueue
         self.ControlQueue = ControlQueue
         self.Logger.Log('Initializing Database Log Transmission System', 4)
 
-        # TODO: Wrap further initialization in try/except; log errors in case there are any
-        # Connect To DB #
+        ## Connect To DB
         DBUsername = str(SystemConfiguration.get('DatabaseUsername'))
         DBPassword = str(SystemConfiguration.get('DatabasePassword'))
         DBHost = str(SystemConfiguration.get('DatabaseHost'))
         DBDatabaseName = str(SystemConfiguration.get('DatabaseName'))
 
-        # Connect To Database #
+        ## Connect To Database
         self.DatabaseConnection = pymysql.connect(
             host = DBHost,
             user = DBUsername,
@@ -39,27 +42,25 @@ class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The D
             db = DBDatabaseName
         )
 
-        # Create Database Cursor #
+        ## Create Database Cursor
         self.LoggerCursor = self.DatabaseConnection.cursor()
-        # TODO: (maybe) log successful initialization
+        
 
-
-    def ShouldStop(self): # Check If Thread Should Exit #
+    ## Check If Thread Should Exit
+    def ShouldStop(self):
         return not self.ControlQueue.empty()
 
-
-    def __call__(self): # Thread To Transmit Logs To DB #
+    ## Thread To Transmit Logs To DB
+    def __call__(self):  #
 
         OpsSinceLastCommit = 0
 
-        ### Is the next comment really necessary?
-        # Enter Loop #
         while not self.ShouldStop():
 
-            # Read Log Item #
+            ## Read Log Item
             LogDataDict = self.LogBufferQueue.get()
 
-            # Decode Dict #
+            ## Decode Dict
             Level = LogDataDict['LogLevel']
             LogTime = LogDataDict['LogDateTime']
             CallingModuleName = LogDataDict['CallingModule']
@@ -68,19 +69,19 @@ class DatabaseLogTransmissionSystem(): # Transmits Logs From The Logger To The D
             Node = LogDataDict['Node']
             Thread = LogDataDict['Thread']
 
-            # Transmit Log Line #
+            ## Transmit Log Line
             insertStatement= ("INSERT INTO log(LogLevel,LogDatetime,CallingModule,FunctionName,LogOutput,Node,Thread) VALUES (%s, %s, \"%s\", \"%s\", \"%s\", \"%s\",%s)")
             val = (Level, str(LogTime), CallingModuleName.split("/")[-1].split(".")[0], CallingFunctionName, Message, Node, Thread)
             self.LoggerCursor.execute(insertStatement, val)
 
-            # Commit if enough operations were done #
+            ## Commit if enough operations were done
             OpsSinceLastCommit += 1
             if OpsSinceLastCommit == self.OpsBeforeCommit:
                 self.DatabaseConnection.commit()
                 OpsSinceLastCommit = 0
 
 
-        # Log System Shutdown #
+        ## Log System Shutdown
         self.Logger.Log('Shutting Down Database Log Transmission Daemon', 5)
 
         self.Logger.Log('Commiting Pending pymysql Transactions', 3)
