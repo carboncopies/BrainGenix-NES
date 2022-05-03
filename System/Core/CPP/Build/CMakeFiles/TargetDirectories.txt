@@ -1,5 +1,0 @@
-/home/tliao/Documents/BrainGenix-NES/System/Core/CPP/Build/CMakeFiles/rebuild_cache.dir
-/home/tliao/Documents/BrainGenix-NES/System/Core/CPP/Build/CMakeFiles/edit_cache.dir
-/home/tliao/Documents/BrainGenix-NES/System/Core/CPP/Build/CMakeFiles/pycpptest_swig_compilation.dir
-/home/tliao/Documents/BrainGenix-NES/System/Core/CPP/Build/CMakeFiles/pycpptest.dir
-/home/tliao/Documents/BrainGenix-NES/System/Core/CPP/Build/CMakeFiles/cpptest.dir
