@@ -1,4 +1,0 @@
-/home/tliao/BrainGenix/BrainGenix/sandbox/KafkaTest/build/CMakeFiles/rebuild_cache.dir
-/home/tliao/BrainGenix/BrainGenix/sandbox/KafkaTest/build/CMakeFiles/edit_cache.dir
-/home/tliao/BrainGenix/BrainGenix/sandbox/KafkaTest/build/CMakeFiles/Producer.dir
-/home/tliao/BrainGenix/BrainGenix/sandbox/KafkaTest/build/CMakeFiles/Consumer.dir
