@@ -53,7 +53,8 @@ add_subdirectory(${SRC_DIR}/Core/Models/Neurons/NES_EmptyNeuronModel)
 add_subdirectory(${SRC_DIR}/Core/Structures/NES_STRUCT_RGBColor)
 
 
-add_subdirectory(${SRC_DIR}/Core/Utils/NES_LoggingSystem)
+add_subdirectory(${SRC_DIR}/Core/Utils/NES_CLASS_LoggingSystem)
+add_subdirectory(${SRC_DIR}/Core/Utils/NES_CLASS_HardwareInformation)
 add_subdirectory(${SRC_DIR}/Core/Utils/NES_ConfigurationLoader)
 
 # COPY FILES TO BINARY DIR
