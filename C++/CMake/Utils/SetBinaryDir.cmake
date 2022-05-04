@@ -1,8 +1,8 @@
 ##################
-# ERS BUILD UTIL #
+# NES BUILD UTIL #
 ##################
 
-ERSBuildLogger($Green} "Setting Binary Directories")
+NESBuildLogger($Green} "Setting Binary Directories")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${BIN_DIR})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${BIN_DIR})
@@ -15,4 +15,4 @@ foreach( OUTPUTCONFIG ${CMAKE_CONFIGURATION_TYPES} )
 endforeach( OUTPUTCONFIG CMAKE_CONFIGURATION_TYPES )
 
 set(CMAKE_INSTALL_PREFIX ${BIN_DIR})
-ERSBuildLogger(${BoldGreen} "Finished Setting Binary Directories")
+NESBuildLogger(${BoldGreen} "Finished Setting Binary Directories")
