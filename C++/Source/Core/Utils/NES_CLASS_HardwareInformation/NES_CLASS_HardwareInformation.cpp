@@ -1,5 +1,5 @@
 //======================================================================//
-// This file is part of the BrainGenix-NES Environment Rendering System //
+// This file is part of the BrainGenix-NES Neuron Emulation System //
 //======================================================================//
 
 #include <NES_CLASS_HardwareInformation.h>
