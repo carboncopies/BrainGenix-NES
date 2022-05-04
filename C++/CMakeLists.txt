@@ -25,6 +25,7 @@ include(${CMAKE_UTIL_DIR}/DisableTargetWarnings.cmake)
 # Include Package Addition Scripts
 include(${CMAKE_BUILD_UTILS_DIR}/YAML-CPP.cmake)
 include(${CMAKE_BUILD_UTILS_DIR}/Backward.cmake)
+include(${CMAKE_BUILD_UTILS_DIR}/PCIIDS.cmake)
 
 
 # Add Main.cpp
@@ -52,7 +53,8 @@ add_subdirectory(${SRC_DIR}/Core/Models/Neurons/NES_EmptyNeuronModel)
 add_subdirectory(${SRC_DIR}/Core/Structures/NES_STRUCT_RGBColor)
 
 
-add_subdirectory(${SRC_DIR}/Core/Utils/NES_LoggingSystem)
+add_subdirectory(${SRC_DIR}/Core/Utils/NES_CLASS_LoggingSystem)
+add_subdirectory(${SRC_DIR}/Core/Utils/NES_CLASS_HardwareInformation)
 add_subdirectory(${SRC_DIR}/Core/Utils/NES_ConfigurationLoader)
 
 # COPY FILES TO BINARY DIR
