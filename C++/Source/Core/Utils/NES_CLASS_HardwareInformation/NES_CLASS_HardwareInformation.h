@@ -1,5 +1,5 @@
 //======================================================================//
-// This file is part of the BrainGenix-ERS Environment Rendering System //
+// This file is part of the BrainGenix-NES Environment Rendering System //
 //======================================================================//
 
 #pragma once
@@ -18,21 +18,21 @@
 #include <infoware/gpu.hpp>
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <ERS_CLASS_LoggingSystem.h>
-#include <ERS_STRUCT_HardwareInfo.h>
+#include <NES_CLASS_LoggingSystem.h>
+#include <NES_STRUCT_HardwareInfo.h>
 
 
 /**
  * @brief Create Hardware Information Class
  * 
  */
-class ERS_CLASS_HardwareInformation {
+class NES_CLASS_HardwareInformation {
 
     private:
 
         // Class Instances
-        ERS_CLASS_LoggingSystem* Logger_; /**<Instance Of Logging System*/
-        ERS_STRUCT_HardwareInfo HardwareInfo_; /**<Internal Hardware Information Struct*/
+        NES_CLASS_LoggingSystem* Logger_; /**<Instance Of Logging System*/
+        NES_STRUCT_HardwareInfo HardwareInfo_; /**<Internal Hardware Information Struct*/
 
         // Config
         YAML::Node SystemConfiguration_; /**MSystem Configuration*/
@@ -63,21 +63,21 @@ class ERS_CLASS_HardwareInformation {
          * @param Logger 
          * @param SystemConfig 
          */
-        ERS_CLASS_HardwareInformation(ERS_CLASS_LoggingSystem* Logger, YAML::Node SystemConfig);
+        NES_CLASS_HardwareInformation(NES_CLASS_LoggingSystem* Logger, YAML::Node SystemConfig);
 
         /**
          * @brief Destroy the Hardware Information object
          * 
          */
-        ~ERS_CLASS_HardwareInformation();
+        ~NES_CLASS_HardwareInformation();
 
 
         /**
          * @brief Get the HardwareInfo Object
          * 
-         * @return ERS_STRUCT_HardwareInfo 
+         * @return NES_STRUCT_HardwareInfo 
          */
-        ERS_STRUCT_HardwareInfo GetHWInfo();
+        NES_STRUCT_HardwareInfo GetHWInfo();
 
 
 };

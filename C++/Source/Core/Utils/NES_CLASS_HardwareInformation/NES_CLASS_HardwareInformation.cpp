@@ -1,12 +1,12 @@
 //======================================================================//
-// This file is part of the BrainGenix-ERS Environment Rendering System //
+// This file is part of the BrainGenix-NES Environment Rendering System //
 //======================================================================//
 
-#include <ERS_CLASS_HardwareInformation.h>
+#include <NES_CLASS_HardwareInformation.h>
 
 
 
-ERS_CLASS_HardwareInformation::ERS_CLASS_HardwareInformation(ERS_CLASS_LoggingSystem* Logger, YAML::Node SystemConfig) {
+NES_CLASS_HardwareInformation::NES_CLASS_HardwareInformation(NES_CLASS_LoggingSystem* Logger, YAML::Node SystemConfig) {
 
     Logger_ = Logger;
     SystemConfiguration_ = SystemConfig;
@@ -109,7 +109,7 @@ ERS_CLASS_HardwareInformation::ERS_CLASS_HardwareInformation(ERS_CLASS_LoggingSy
 }
 
 
-ERS_CLASS_HardwareInformation::~ERS_CLASS_HardwareInformation() {
+NES_CLASS_HardwareInformation::~NES_CLASS_HardwareInformation() {
 
     Logger_->Log("Hardware Information Destructor Called", 6);
 
@@ -121,17 +121,17 @@ ERS_CLASS_HardwareInformation::~ERS_CLASS_HardwareInformation() {
 }
 
 
-std::thread ERS_CLASS_HardwareInformation::SpawnThread() {
+std::thread NES_CLASS_HardwareInformation::SpawnThread() {
 
-    return std::thread(&ERS_CLASS_HardwareInformation::DynamicInformationThread, this);
+    return std::thread(&NES_CLASS_HardwareInformation::DynamicInformationThread, this);
 
 }
 
-ERS_STRUCT_HardwareInfo ERS_CLASS_HardwareInformation::GetHWInfo() {
+NES_STRUCT_HardwareInfo NES_CLASS_HardwareInformation::GetHWInfo() {
     return HardwareInfo_;
 }
 
-void ERS_CLASS_HardwareInformation::DynamicInformationThread() {
+void NES_CLASS_HardwareInformation::DynamicInformationThread() {
 
     while (ShouldDynamicInfoThreadRun_) {
 
@@ -145,7 +145,7 @@ void ERS_CLASS_HardwareInformation::DynamicInformationThread() {
 
 }
 
-void ERS_CLASS_HardwareInformation::GetDynamicInformation() {
+void NES_CLASS_HardwareInformation::GetDynamicInformation() {
 
     // Get Memory Info
     const auto MemoryInfo = iware::system::memory();
@@ -157,7 +157,7 @@ void ERS_CLASS_HardwareInformation::GetDynamicInformation() {
 }
 
 // Functions from https://github.com/ThePhD/infoware/blob/main/examples
-const char* ERS_CLASS_HardwareInformation::cache_type_name(iware::cpu::cache_type_t cache_type) noexcept {
+const char* NES_CLASS_HardwareInformation::cache_type_name(iware::cpu::cache_type_t cache_type) noexcept {
 	switch(cache_type) {
 		case iware::cpu::cache_type_t::unified:
 			return "Unified";
@@ -172,7 +172,7 @@ const char* ERS_CLASS_HardwareInformation::cache_type_name(iware::cpu::cache_typ
 	}
 }
 
-const char* ERS_CLASS_HardwareInformation::architecture_name(iware::cpu::architecture_t architecture) noexcept {
+const char* NES_CLASS_HardwareInformation::architecture_name(iware::cpu::architecture_t architecture) noexcept {
 	switch(architecture) {
 		case iware::cpu::architecture_t::x64:
 			return "x64";
@@ -187,7 +187,7 @@ const char* ERS_CLASS_HardwareInformation::architecture_name(iware::cpu::archite
 	}
 }
 
-const char* ERS_CLASS_HardwareInformation::endianness_name(iware::cpu::endianness_t endianness) noexcept {
+const char* NES_CLASS_HardwareInformation::endianness_name(iware::cpu::endianness_t endianness) noexcept {
 	switch(endianness) {
 		case iware::cpu::endianness_t::little:
 			return "Little-Endian";
@@ -198,7 +198,7 @@ const char* ERS_CLASS_HardwareInformation::endianness_name(iware::cpu::endiannes
 	}
 }
 
-const char* ERS_CLASS_HardwareInformation::kernel_variant_name(iware::system::kernel_t variant) noexcept {
+const char* NES_CLASS_HardwareInformation::kernel_variant_name(iware::system::kernel_t variant) noexcept {
 	switch(variant) {
 		case iware::system::kernel_t::windows_nt:
 			return "Windows NT";
@@ -211,7 +211,7 @@ const char* ERS_CLASS_HardwareInformation::kernel_variant_name(iware::system::ke
 	}
 }
 
-const char* ERS_CLASS_HardwareInformation::gpu_vendor_name(iware::gpu::vendor_t vendor) noexcept {
+const char* NES_CLASS_HardwareInformation::gpu_vendor_name(iware::gpu::vendor_t vendor) noexcept {
 	switch(vendor) {
 		case iware::gpu::vendor_t::intel:
 			return "Intel";
