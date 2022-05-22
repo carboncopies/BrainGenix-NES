@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-05-22T23:16:58.102Z" agent="5.0 (X11)" etag="je5d3RRFlFc59_lWhZ4M" version="17.4.6" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2022-05-22T23:17:06.263Z" agent="5.0 (X11)" etag="vaSmc_nNBPTxSQ2jWfE2" version="17.4.6" type="github" pages="4">
   <diagram id="c22UB_N92mJE8_4pfcwG" name="System Overview">
     <mxGraphModel dx="2272" dy="889" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -358,7 +358,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="akdt0uJ3EusryHX0j9MJ" name="Neural Tissue Generator">
-    <mxGraphModel dx="1185" dy="741" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="677" dy="423" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -416,7 +416,7 @@
           <mxGeometry x="140" y="290" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="280" y="180" width="270" height="180" as="geometry" />
+          <mxGeometry x="280" y="180" width="450" height="290" as="geometry" />
         </mxCell>
         <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-15" value="Neuron Tissue Generator" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="280" y="180" width="270" height="20" as="geometry" />
