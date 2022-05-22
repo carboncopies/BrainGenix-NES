@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-05-22T23:18:22.851Z" agent="5.0 (X11)" etag="S4IYMbw5PTprWJBXJ4XW" version="17.4.6" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2022-05-22T23:20:04.184Z" agent="5.0 (X11)" etag="0p7NgwlkCi-r90uMCeVA" version="17.4.6" type="github" pages="4">
   <diagram id="c22UB_N92mJE8_4pfcwG" name="System Overview">
     <mxGraphModel dx="2272" dy="889" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -416,19 +416,22 @@
           <mxGeometry x="140" y="290" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="280" y="180" width="450" height="290" as="geometry" />
+          <mxGeometry x="330" y="190" width="450" height="290" as="geometry" />
         </mxCell>
         <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-15" value="Neuron Tissue Generator" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="280" y="180" width="270" height="20" as="geometry" />
+          <mxGeometry x="330" y="190" width="450" height="20" as="geometry" />
         </mxCell>
         <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-16" value="NPS (Neuron Placement System)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="290" y="210" width="120" height="60" as="geometry" />
+          <mxGeometry x="340" y="220" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-17" value="Neuron " style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="425" y="210" width="120" height="60" as="geometry" />
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-17" value="Neuron Type Generator (NTG)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="475" y="220" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-18" value="(Brain Connectome Format) BCF Reader/Writer Module" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="140" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-19" value="Neuron Synapse Generator" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="220" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
