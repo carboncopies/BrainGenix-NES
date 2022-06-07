@@ -172,6 +172,7 @@ create table if not exists `bgdb`.`imageDef` (
 `imageDefId` bigint not null auto_increment,
 `ersStringId` bigint not null,
 `name` mediumtext null,
+asset_type varchar(130),
 `order` bigint null,
 `v1` bigint null,
 `v2` bigint null,
@@ -182,6 +183,8 @@ create table if not exists `bgdb`.`imageDef` (
 `f3` bigint null,
 `f4` bigint null,
 `imageBlob` blob null,
+created_date datetime null,
+updated_date datetime null,
 primary key (`imageDefId`),
   CONSTRAINT `ersString_fk_ErsStringId`
     FOREIGN KEY (ersStringId)
@@ -221,20 +224,20 @@ insert into bgdb.ersData values(1, 'cube one', 'some sort of string', 'cube is 1
 insert into bgdb.ersString values (10, 1, 'string', 'another bytestring');
 
 insert into imagedef values
-(100, 10, 'image name?', 1, 0, 2, 2, null, null, null, null, null, 'https://www.everythingdoormats.com/images/products/minnesota-twins-mlb-roundel-area-rug-27-inches.jpg?mh=100'),
-(101, 10, 'image name?', 2, 0, 2, 2, null, null, null, null, null, 'another BLOB'),
-(102, 10, 'image name?', 3, 0, 2, 2, null, null, null, null, null, 'another BLOB'),
-(103, 10, 'image name?', 4, 0, 2, 2, null, null, null, null, null, 'another BLOB'),
-(104, 10, 'image name?', 5, 0, 2, 2, null, null, null, null, null, 'another BLOB'),
-(105, 10, 'image name?', 6, 0, 2, 2, null, null, null, null, null, 'another BLOB'),
-(106, 10, 'image name?', 7, 0, 2, 2, null, null, null, null, null, 'another BLOB'),
-(107, 10, 'image name?', 8, 0, 2, 2, null, null, null, null, null, 'another BLOB'), -- end of v
-(108, 10, 'image name?', 9, null, null, null, null, 1, 2, 3, 4, 'another BLOB'),
-(109, 10, 'image name?', 10, null, null, null, null, 8, 7, 6, 5, 'another BLOB'),
-(110, 10, 'image name?', 11, null, null, null, null, 4, 3, 7, 8, 'another BLOB'),
-(111, 10, 'image name?', 12, null, null, null, null, 5, 1, 4, 8, 'another BLOB'),
-(112, 10, 'image name?', 13, null, null, null, null, 5, 6, 2, 1, 'another BLOB'),
-(113, 10, 'image name?', 14, null, null, null, null, 2, 6, 7, 3, 'another BLOB')-- end of f
+(100, 10, 'image name?', 'shader', 1, 0, 2, 2, null, null, null, null, null, 'https://www.everythingdoormats.com/images/products/minnesota-twins-mlb-roundel-area-rug-27-inches.jpg?mh=100', '2022-04-02', '2022-06-06'),
+(101, 10, 'image name?', 'shader', 2, 0, 2, 2, null, null, null, null, null, 'another BLOB', '2022-04-02', '2022-06-06'),
+(102, 10, 'image name?', 'shader', 3, 0, 2, 2, null, null, null, null, null, 'another BLOB', '2022-04-02', '2022-06-06'),
+(103, 10, 'image name?', 'shader', 4, 0, 2, 2, null, null, null, null, null, 'another BLOB', '2022-04-02', '2022-06-06'),
+(104, 10, 'image name?', 'shader', 5, 0, 2, 2, null, null, null, null, null, 'another BLOB', '2022-04-02', '2022-06-06'),
+(105, 10, 'image name?', 'shader', 6, 0, 2, 2, null, null, null, null, null, 'another BLOB', '2022-04-02', '2022-06-06'),
+(106, 10, 'image name?', 'shader', 7, 0, 2, 2, null, null, null, null, null, 'another BLOB', '2022-04-02', '2022-06-06'),
+(107, 10, 'image name?', 'shader', 8, 0, 2, 2, null, null, null, null, null, 'another BLOB', '2022-04-02', '2022-06-06'), -- end of v
+(108, 10, 'image name?', 'shader', 9, null, null, null, null, 1, 2, 3, 4, 'another BLOB', '2022-04-02', '2022-06-06'),
+(109, 10, 'image name?', 'shader', 10, null, null, null, null, 8, 7, 6, 5, 'another BLOB', '2022-01-02', '2022-06-06'),
+(110, 10, 'image name?', 'shader', 11, null, null, null, null, 4, 3, 7, 8, 'another BLOB', '2022-02-02', '2022-06-06'),
+(111, 10, 'image name?', 'shader', 12, null, null, null, null, 5, 1, 4, 8, 'another BLOB', '2022-07-02', '2022-06-06'),
+(112, 10, 'image name?', 'shader', 13, null, null, null, null, 5, 6, 2, 1, 'another BLOB', '2022-06-02', '2022-06-06'),
+(113, 10, 'image name?', 'shader', 14, null, null, null, null, 2, 6, 7, 3, 'another BLOB', '2022-05-02', '2022-06-06')-- end of f
 ;
 --
 --    --sample for encrypting/dectrypting passwords
