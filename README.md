@@ -1,10 +1,10 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/64207ebc26b34f24b1ad39ad43df315d)](https://www.codacy.com/gh/carboncopies/BrainGenix-NES/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=carboncopies/BrainGenix-NES&amp;utm_campaign=Badge_Grade)
 
-# This project is currently in development.
+# This project is currently in development
 
 # What's BrainGenix-NES?
 
-BrainGenix-NES or NES is the Neuron Emulation System division of the BrainGenix department. NES is a distributed biological neuron simulator designed for the emulation of human minds. The simulator uses Apache Zookeeper and other production-grade systems to ensure that it's both stable and fault-tolerant. It's designed with scalability in mind to run with one neuron or a hundred billion.
+BrainGenix Neuron Emulation System (NES) aims to be a distributed biological neuron simulator designed for the emulation of human brains. The simulator uses Apache Zookeeper and other production-grade systems to ensure that it is both stable and fault-tolerant. It is designed with scalability in mind to run with one neuron or a hundred billion. NES will work in conjunction with other BrainGenix programs, including the management API.
 
 ## Key Features
  - NES runs with as many neurons as your simulation has, be it one or a billion.
