@@ -223,7 +223,7 @@ insert into bgdb.ersData values(1, 'cube one', 'some sort of string', 'cube is 1
 
 insert into bgdb.ersString values (10, 1, 'string', 'another bytestring');
 
-insert into imagedef values
+insert into bgdb.imageDef values
 (100, 10, 'image name?', 'shader', 1, 0, 2, 2, null, null, null, null, null, 'https://www.everythingdoormats.com/images/products/minnesota-twins-mlb-roundel-area-rug-27-inches.jpg?mh=100', '2022-04-02', '2022-06-06'),
 (101, 10, 'image name?', 'shader', 2, 0, 2, 2, null, null, null, null, null, 'another BLOB', '2022-04-02', '2022-06-06'),
 (102, 10, 'image name?', 'shader', 3, 0, 2, 2, null, null, null, null, null, 'another BLOB', '2022-04-02', '2022-06-06'),
