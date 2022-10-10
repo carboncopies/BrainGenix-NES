@@ -163,44 +163,13 @@ ERSBuildLogger(${BoldGreen} "Finished Configuring Core Subsystems")
 
 
 # Add Main.cpp
-add_executable(${PROJECT_NAME} ${SRC_DIR}/Main.cpp ${LIB_DIR}/tracy/TracyClient.cpp ${BACKWARD_ENABLE})
+add_executable(${PROJECT_NAME} ${SRC_DIR}/Main.cpp ${BACKWARD_ENABLE})
 target_link_libraries(${PROJECT_NAME}
 
-  # Third Party Libs
-  yaml-cpp
-  glad
-  glfw
-  TracyClient
-  ozz_animation
-  Lucifer
-
-  # Internal Libs
-  ERS_GPURequest
-  ERS_LoggingSystem
-  ERS_ModelImporter
-
-
-  ERS_HardwareInformation
-  ERS_CLASS_PythonInterpreterIntegration
   ERS_ArgumentParser
 
-  ERS_SceneManager
-  ERS_ModelLoader
-  ERS_SceneLoader  
-  ERS_ModelWriter
-  ERS_ProjectLoader
-  ERS_ProjectWriter
-  ERS_InputOutputSubsystem
-  ERS_FramerateManager
-  ERS_ProjectManager
-  ERS_ControllerInputManager
-  
-  ERS_STRUCT_HumanInputDeviceUtils
   ERS_STRUCT_SystemUtils
-  ERS_STRUCT_ProjectUtils
-  ERS_STRUCT_RendererSettings
 
-  Renderer
   )
 
 
