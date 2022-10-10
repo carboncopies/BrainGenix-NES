@@ -1,0 +1,1085 @@
+0:
+  AssetType: Metadata
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+  AssetFileName: ""
+1:
+  AssetType: Undefined
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-08-05-21-27-25
+  AssetFileName: ""
+2:
+  AssetType: Placeholder
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+  AssetFileName: ""
+3:
+  AssetType: Undefined
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-04-03-02-53-59
+  AssetFileName: ""
+4:
+  AssetType: Mesh
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+  AssetFileName: ""
+5:
+  AssetType: Image
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+  AssetFileName: ""
+6:
+  AssetType: Image
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+  AssetFileName: ""
+7:
+  AssetType: Image
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+  AssetFileName: ""
+8:
+  AssetType: Image
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+  AssetFileName: ""
+9:
+  AssetType: Image
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+  AssetFileName: ""
+10:
+  AssetType: Model
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+  AssetFileName: ""
+11:
+  AssetType: Controller Settings
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+  AssetFileName: ""
+10000:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10001:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10002:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10003:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10004:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10005:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10006:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10007:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10008:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10009:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10010:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10011:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10012:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10013:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10014:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10015:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10016:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10017:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10018:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10019:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10020:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10021:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10022:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10023:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10024:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10025:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10026:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10027:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10028:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10029:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10030:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10031:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10032:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10033:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10034:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10035:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10036:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10037:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10038:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10039:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+  AssetFileName: ""
+10040:
+  AssetType: Undefined
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-04-28-06-24-53
+  AssetFileName: ""
+10041:
+  AssetType: Undefined
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-04-28-06-24-53
+  AssetFileName: ""
+1744105170:
+  AssetType: Undefined
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-08-05-21-27-25
+  AssetFileName: ""
+1292312979:
+  AssetType: Undefined
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-08-05-21-29-45
+  AssetFileName: ""
+1452597419:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-29-52
+  AssetModificationDate: 2022-08-05-21-29-52
+  AssetFileName: ""
+1572298791:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-29-53
+  AssetModificationDate: 2022-08-05-21-29-53
+  AssetFileName: ""
+1715600053:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-29-54
+  AssetModificationDate: 2022-08-05-21-29-54
+  AssetFileName: ""
+177932363:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-29-54
+  AssetModificationDate: 2022-08-05-21-29-54
+  AssetFileName: ""
+549239478:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-29-55
+  AssetModificationDate: 2022-08-05-21-29-55
+  AssetFileName: ""
+107932010:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-29-55
+  AssetModificationDate: 2022-08-05-21-29-55
+  AssetFileName: ""
+1988857339:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-29-56
+  AssetModificationDate: 2022-08-05-21-29-56
+  AssetFileName: ""
+1842333668:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-29-57
+  AssetModificationDate: 2022-08-05-21-29-57
+  AssetFileName: ""
+2138080572:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-29-57
+  AssetModificationDate: 2022-08-05-21-29-57
+  AssetFileName: ""
+868808973:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-29-57
+  AssetModificationDate: 2022-08-05-21-29-57
+  AssetFileName: ""
+1122373787:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-29-59
+  AssetModificationDate: 2022-08-05-21-29-59
+  AssetFileName: ""
+2060683676:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-01
+  AssetModificationDate: 2022-08-05-21-30-01
+  AssetFileName: ""
+1002987662:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-01
+  AssetModificationDate: 2022-08-05-21-30-01
+  AssetFileName: ""
+338897592:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-02
+  AssetModificationDate: 2022-08-05-21-30-02
+  AssetFileName: ""
+6016243:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-02
+  AssetModificationDate: 2022-08-05-21-30-02
+  AssetFileName: ""
+797823056:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-03
+  AssetModificationDate: 2022-08-05-21-30-03
+  AssetFileName: ""
+1211430406:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-03
+  AssetModificationDate: 2022-08-05-21-30-03
+  AssetFileName: ""
+1514492833:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-04
+  AssetModificationDate: 2022-08-05-21-30-04
+  AssetFileName: ""
+515264422:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-04
+  AssetModificationDate: 2022-08-05-21-30-04
+  AssetFileName: ""
+1053013440:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-05
+  AssetModificationDate: 2022-08-05-21-30-05
+  AssetFileName: ""
+10987839:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-06
+  AssetModificationDate: 2022-08-05-21-30-06
+  AssetFileName: ""
+2103096003:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-07
+  AssetModificationDate: 2022-08-05-21-30-07
+  AssetFileName: ""
+1663430277:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-07
+  AssetModificationDate: 2022-08-05-21-30-07
+  AssetFileName: ""
+1335442896:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-07
+  AssetModificationDate: 2022-08-05-21-30-07
+  AssetFileName: ""
+799434223:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-08
+  AssetModificationDate: 2022-08-05-21-30-08
+  AssetFileName: ""
+918198991:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-08
+  AssetModificationDate: 2022-08-05-21-30-08
+  AssetFileName: ""
+1899465731:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-08
+  AssetModificationDate: 2022-08-05-21-30-08
+  AssetFileName: ""
+323144897:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-08
+  AssetModificationDate: 2022-08-05-21-30-08
+  AssetFileName: ""
+1884807022:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-08
+  AssetModificationDate: 2022-08-05-21-30-08
+  AssetFileName: ""
+913178646:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-08
+  AssetModificationDate: 2022-08-05-21-30-08
+  AssetFileName: ""
+1425521209:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-09
+  AssetModificationDate: 2022-08-05-21-30-09
+  AssetFileName: ""
+1930337181:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-10
+  AssetModificationDate: 2022-08-05-21-30-10
+  AssetFileName: ""
+793281814:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-11
+  AssetModificationDate: 2022-08-05-21-30-11
+  AssetFileName: ""
+1789832410:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-11
+  AssetModificationDate: 2022-08-05-21-30-11
+  AssetFileName: ""
+128442719:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-12
+  AssetModificationDate: 2022-08-05-21-30-12
+  AssetFileName: ""
+425092947:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-12
+  AssetModificationDate: 2022-08-05-21-30-12
+  AssetFileName: ""
+1059581004:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-12
+  AssetModificationDate: 2022-08-05-21-30-12
+  AssetFileName: ""
+339340998:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-13
+  AssetModificationDate: 2022-08-05-21-30-13
+  AssetFileName: ""
+1231396210:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-13
+  AssetModificationDate: 2022-08-05-21-30-13
+  AssetFileName: ""
+991306712:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-13
+  AssetModificationDate: 2022-08-05-21-30-13
+  AssetFileName: ""
+1138097076:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-14
+  AssetModificationDate: 2022-08-05-21-30-14
+  AssetFileName: ""
+1299845103:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-15
+  AssetModificationDate: 2022-08-05-21-30-15
+  AssetFileName: ""
+956566911:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-15
+  AssetModificationDate: 2022-08-05-21-30-15
+  AssetFileName: ""
+1421633569:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-15
+  AssetModificationDate: 2022-08-05-21-30-15
+  AssetFileName: ""
+901102010:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-16
+  AssetModificationDate: 2022-08-05-21-30-16
+  AssetFileName: ""
+341551207:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-16
+  AssetModificationDate: 2022-08-05-21-30-16
+  AssetFileName: ""
+2009298887:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-16
+  AssetModificationDate: 2022-08-05-21-30-16
+  AssetFileName: ""
+372676988:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-16
+  AssetModificationDate: 2022-08-05-21-30-16
+  AssetFileName: ""
+1498124365:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-16
+  AssetModificationDate: 2022-08-05-21-30-16
+  AssetFileName: ""
+457226190:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-16
+  AssetModificationDate: 2022-08-05-21-30-16
+  AssetFileName: ""
+1557793172:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-18
+  AssetModificationDate: 2022-08-05-21-30-18
+  AssetFileName: ""
+1607728392:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-19
+  AssetModificationDate: 2022-08-05-21-30-19
+  AssetFileName: ""
+1117341586:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-20
+  AssetModificationDate: 2022-08-05-21-30-20
+  AssetFileName: ""
+436831981:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-20
+  AssetModificationDate: 2022-08-05-21-30-20
+  AssetFileName: ""
+1814281009:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-20
+  AssetModificationDate: 2022-08-05-21-30-20
+  AssetFileName: ""
+15811061:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-20
+  AssetModificationDate: 2022-08-05-21-30-20
+  AssetFileName: ""
+604527257:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-21
+  AssetModificationDate: 2022-08-05-21-30-21
+  AssetFileName: ""
+844591155:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-21
+  AssetModificationDate: 2022-08-05-21-30-21
+  AssetFileName: ""
+1160692590:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-21
+  AssetModificationDate: 2022-08-05-21-30-21
+  AssetFileName: ""
+2122238831:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-21
+  AssetModificationDate: 2022-08-05-21-30-21
+  AssetFileName: ""
+985576315:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-22
+  AssetModificationDate: 2022-08-05-21-30-22
+  AssetFileName: ""
+493122892:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-23
+  AssetModificationDate: 2022-08-05-21-30-23
+  AssetFileName: ""
+981083116:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-23
+  AssetModificationDate: 2022-08-05-21-30-23
+  AssetFileName: ""
+722498980:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-24
+  AssetModificationDate: 2022-08-05-21-30-24
+  AssetFileName: ""
+1110779192:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-24
+  AssetModificationDate: 2022-08-05-21-30-24
+  AssetFileName: ""
+969550237:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-24
+  AssetModificationDate: 2022-08-05-21-30-24
+  AssetFileName: ""
+556360516:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-24
+  AssetModificationDate: 2022-08-05-21-30-24
+  AssetFileName: ""
+1493950175:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-25
+  AssetModificationDate: 2022-08-05-21-30-25
+  AssetFileName: ""
+659805849:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-25
+  AssetModificationDate: 2022-08-05-21-30-25
+  AssetFileName: ""
+1067254272:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-25
+  AssetModificationDate: 2022-08-05-21-30-25
+  AssetFileName: ""
+1405560091:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-27
+  AssetModificationDate: 2022-08-05-21-30-27
+  AssetFileName: ""
+1008581308:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-29
+  AssetModificationDate: 2022-08-05-21-30-29
+  AssetFileName: ""
+303139545:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-29
+  AssetModificationDate: 2022-08-05-21-30-29
+  AssetFileName: ""
+741279105:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-30
+  AssetModificationDate: 2022-08-05-21-30-30
+  AssetFileName: ""
+381096806:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-30
+  AssetModificationDate: 2022-08-05-21-30-30
+  AssetFileName: ""
+714689887:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-31
+  AssetModificationDate: 2022-08-05-21-30-31
+  AssetFileName: ""
+1135480541:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-31
+  AssetModificationDate: 2022-08-05-21-30-31
+  AssetFileName: ""
+496517719:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-32
+  AssetModificationDate: 2022-08-05-21-30-32
+  AssetFileName: ""
+710065370:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-32
+  AssetModificationDate: 2022-08-05-21-30-32
+  AssetFileName: ""
+1454747797:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-32
+  AssetModificationDate: 2022-08-05-21-30-32
+  AssetFileName: ""
+1296744267:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-34
+  AssetModificationDate: 2022-08-05-21-30-34
+  AssetFileName: ""
+862406496:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-36
+  AssetModificationDate: 2022-08-05-21-30-36
+  AssetFileName: ""
+1547080800:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-37
+  AssetModificationDate: 2022-08-05-21-30-37
+  AssetFileName: ""
+168131781:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-37
+  AssetModificationDate: 2022-08-05-21-30-37
+  AssetFileName: ""
+777566684:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-38
+  AssetModificationDate: 2022-08-05-21-30-38
+  AssetFileName: ""
+2012946842:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-38
+  AssetModificationDate: 2022-08-05-21-30-38
+  AssetFileName: ""
+2144066015:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-38
+  AssetModificationDate: 2022-08-05-21-30-38
+  AssetFileName: ""
+1976060648:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-39
+  AssetModificationDate: 2022-08-05-21-30-39
+  AssetFileName: ""
+1977090142:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-39
+  AssetModificationDate: 2022-08-05-21-30-39
+  AssetFileName: ""
+1126465952:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-39
+  AssetModificationDate: 2022-08-05-21-30-39
+  AssetFileName: ""
+1216667794:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-41
+  AssetModificationDate: 2022-08-05-21-30-41
+  AssetFileName: ""
+1350247257:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-42
+  AssetModificationDate: 2022-08-05-21-30-42
+  AssetFileName: ""
+1718644779:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-43
+  AssetModificationDate: 2022-08-05-21-30-43
+  AssetFileName: ""
+780901454:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-43
+  AssetModificationDate: 2022-08-05-21-30-43
+  AssetFileName: ""
+844624288:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-44
+  AssetModificationDate: 2022-08-05-21-30-44
+  AssetFileName: ""
+1324183976:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-44
+  AssetModificationDate: 2022-08-05-21-30-44
+  AssetFileName: ""
+271488280:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-45
+  AssetModificationDate: 2022-08-05-21-30-45
+  AssetFileName: ""
+675746007:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-45
+  AssetModificationDate: 2022-08-05-21-30-45
+  AssetFileName: ""
+1194080524:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-46
+  AssetModificationDate: 2022-08-05-21-30-46
+  AssetFileName: ""
+1230542316:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-46
+  AssetModificationDate: 2022-08-05-21-30-46
+  AssetFileName: ""
+1605798021:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-48
+  AssetModificationDate: 2022-08-05-21-30-48
+  AssetFileName: ""
+1326742169:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-50
+  AssetModificationDate: 2022-08-05-21-30-50
+  AssetFileName: ""
+1516262544:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-51
+  AssetModificationDate: 2022-08-05-21-30-51
+  AssetFileName: ""
+1980854617:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-52
+  AssetModificationDate: 2022-08-05-21-30-52
+  AssetFileName: ""
+830358494:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-52
+  AssetModificationDate: 2022-08-05-21-30-52
+  AssetFileName: ""
+671543583:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-53
+  AssetModificationDate: 2022-08-05-21-30-53
+  AssetFileName: ""
+1304268343:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-53
+  AssetModificationDate: 2022-08-05-21-30-53
+  AssetFileName: ""
+1765795601:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-53
+  AssetModificationDate: 2022-08-05-21-30-53
+  AssetFileName: ""
+1075243055:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-54
+  AssetModificationDate: 2022-08-05-21-30-54
+  AssetFileName: ""
+1931205818:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-54
+  AssetModificationDate: 2022-08-05-21-30-54
+  AssetFileName: ""
+1780558688:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-56
+  AssetModificationDate: 2022-08-05-21-30-56
+  AssetFileName: ""
+1131616384:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-57
+  AssetModificationDate: 2022-08-05-21-30-57
+  AssetFileName: ""
+116476549:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-58
+  AssetModificationDate: 2022-08-05-21-30-58
+  AssetFileName: ""
+752021677:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-58
+  AssetModificationDate: 2022-08-05-21-30-58
+  AssetFileName: ""
+675293993:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-59
+  AssetModificationDate: 2022-08-05-21-30-59
+  AssetFileName: ""
+1456700166:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-30-59
+  AssetModificationDate: 2022-08-05-21-30-59
+  AssetFileName: ""
+364930208:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-00
+  AssetModificationDate: 2022-08-05-21-31-00
+  AssetFileName: ""
+388870630:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-00
+  AssetModificationDate: 2022-08-05-21-31-00
+  AssetFileName: ""
+1525829306:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-01
+  AssetModificationDate: 2022-08-05-21-31-01
+  AssetFileName: ""
+2103892248:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-01
+  AssetModificationDate: 2022-08-05-21-31-01
+  AssetFileName: ""
+1735318148:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-03
+  AssetModificationDate: 2022-08-05-21-31-03
+  AssetFileName: ""
+1148924387:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-04
+  AssetModificationDate: 2022-08-05-21-31-04
+  AssetFileName: ""
+907418514:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-05
+  AssetModificationDate: 2022-08-05-21-31-05
+  AssetFileName: ""
+2137189286:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-06
+  AssetModificationDate: 2022-08-05-21-31-06
+  AssetFileName: ""
+1597707806:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-06
+  AssetModificationDate: 2022-08-05-21-31-06
+  AssetFileName: ""
+546099893:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-07
+  AssetModificationDate: 2022-08-05-21-31-07
+  AssetFileName: ""
+324871846:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-07
+  AssetModificationDate: 2022-08-05-21-31-07
+  AssetFileName: ""
+1601035300:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-08
+  AssetModificationDate: 2022-08-05-21-31-08
+  AssetFileName: ""
+60197256:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-08
+  AssetModificationDate: 2022-08-05-21-31-08
+  AssetFileName: ""
+512437780:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-08
+  AssetModificationDate: 2022-08-05-21-31-08
+  AssetFileName: ""
+852700209:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-10
+  AssetModificationDate: 2022-08-05-21-31-10
+  AssetFileName: ""
+70947301:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-12
+  AssetModificationDate: 2022-08-05-21-31-12
+  AssetFileName: ""
+836768236:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-13
+  AssetModificationDate: 2022-08-05-21-31-13
+  AssetFileName: ""
+428112227:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-13
+  AssetModificationDate: 2022-08-05-21-31-13
+  AssetFileName: ""
+619356427:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-14
+  AssetModificationDate: 2022-08-05-21-31-14
+  AssetFileName: ""
+269825084:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-14
+  AssetModificationDate: 2022-08-05-21-31-14
+  AssetFileName: ""
+1893937050:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-15
+  AssetModificationDate: 2022-08-05-21-31-15
+  AssetFileName: ""
+1311177128:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-15
+  AssetModificationDate: 2022-08-05-21-31-15
+  AssetFileName: ""
+1617112159:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-15
+  AssetModificationDate: 2022-08-05-21-31-15
+  AssetFileName: ""
+1286877007:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-16
+  AssetModificationDate: 2022-08-05-21-31-16
+  AssetFileName: ""
+1830511356:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-17
+  AssetModificationDate: 2022-08-05-21-31-17
+  AssetFileName: ""
+572175078:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-19
+  AssetModificationDate: 2022-08-05-21-31-19
+  AssetFileName: ""
+294164271:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-20
+  AssetModificationDate: 2022-08-05-21-31-20
+  AssetFileName: ""
+2112649890:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-20
+  AssetModificationDate: 2022-08-05-21-31-20
+  AssetFileName: ""
+1593919263:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-21
+  AssetModificationDate: 2022-08-05-21-31-21
+  AssetFileName: ""
+152768703:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-21
+  AssetModificationDate: 2022-08-05-21-31-21
+  AssetFileName: ""
+2027330357:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-21
+  AssetModificationDate: 2022-08-05-21-31-21
+  AssetFileName: ""
+1708612984:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-22
+  AssetModificationDate: 2022-08-05-21-31-22
+  AssetFileName: ""
+318511001:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-22
+  AssetModificationDate: 2022-08-05-21-31-22
+  AssetFileName: ""
+1616807434:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-22
+  AssetModificationDate: 2022-08-05-21-31-22
+  AssetFileName: ""
+2062537184:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-24
+  AssetModificationDate: 2022-08-05-21-31-24
+  AssetFileName: ""
+541909072:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-26
+  AssetModificationDate: 2022-08-05-21-31-26
+  AssetFileName: ""
+1309220460:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-27
+  AssetModificationDate: 2022-08-05-21-31-27
+  AssetFileName: ""
+873806676:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-27
+  AssetModificationDate: 2022-08-05-21-31-27
+  AssetFileName: ""
+1128407292:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-28
+  AssetModificationDate: 2022-08-05-21-31-28
+  AssetFileName: ""
+1027090494:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-28
+  AssetModificationDate: 2022-08-05-21-31-28
+  AssetFileName: ""
+434243868:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-29
+  AssetModificationDate: 2022-08-05-21-31-29
+  AssetFileName: ""
+918488479:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-29
+  AssetModificationDate: 2022-08-05-21-31-29
+  AssetFileName: ""
+1313145488:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-29
+  AssetModificationDate: 2022-08-05-21-31-29
+  AssetFileName: ""
+345324137:
+  AssetType: TextureImage
+  AssetCreationDate: 2022-08-05-21-31-29
+  AssetModificationDate: 2022-08-05-21-31-29
+  AssetFileName: ""
+496437997:
+  AssetType: Model
+  AssetCreationDate: 2022-08-05-21-31-30
+  AssetModificationDate: 2022-08-05-21-31-30
+  AssetFileName: barstool_RC.fbx

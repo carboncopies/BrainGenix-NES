@@ -1,0 +1,7 @@
+# This Configuration File Is Used To Set Default User Preferences
+
+# Set GUI Prefs
+DefaultFont: "Hack-Regular"
+DefaultFontSize: 16
+
+DefaultColorTheme: "High Contrast Dark"

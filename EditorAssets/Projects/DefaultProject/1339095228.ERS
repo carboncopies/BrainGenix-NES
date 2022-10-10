@@ -1,0 +1,256 @@
+Name: /home/tliao/Documents/EGSC/SourceAssets/Models/StorageCabinet_RC/storage_RC.fbx
+FormatVersion: 0.0.1
+ModelID: 1883043308
+Textures:
+  storage_RC.fbm\drawer_rc_Material_BaseColor.png:
+    9:
+      TextureLevelAssetID: 375649066
+      TextureLevelMemorySizeBytes: 16777656
+      TextureLevelResolutionX: 2048
+      TextureLevelResolutionY: 2048
+      TextureLevelNumberChannels: 3
+    8:
+      TextureLevelAssetID: 871725388
+      TextureLevelMemorySizeBytes: 4194744
+      TextureLevelResolutionX: 1024
+      TextureLevelResolutionY: 1024
+      TextureLevelNumberChannels: 3
+    7:
+      TextureLevelAssetID: 224740772
+      TextureLevelMemorySizeBytes: 1049016
+      TextureLevelResolutionX: 512
+      TextureLevelResolutionY: 512
+      TextureLevelNumberChannels: 3
+    6:
+      TextureLevelAssetID: 1904967532
+      TextureLevelMemorySizeBytes: 262584
+      TextureLevelResolutionX: 256
+      TextureLevelResolutionY: 256
+      TextureLevelNumberChannels: 3
+    5:
+      TextureLevelAssetID: 367920808
+      TextureLevelMemorySizeBytes: 65976
+      TextureLevelResolutionX: 128
+      TextureLevelResolutionY: 128
+      TextureLevelNumberChannels: 3
+    4:
+      TextureLevelAssetID: 95986436
+      TextureLevelMemorySizeBytes: 16824
+      TextureLevelResolutionX: 64
+      TextureLevelResolutionY: 64
+      TextureLevelNumberChannels: 3
+    3:
+      TextureLevelAssetID: 206756685
+      TextureLevelMemorySizeBytes: 4536
+      TextureLevelResolutionX: 32
+      TextureLevelResolutionY: 32
+      TextureLevelNumberChannels: 3
+    2:
+      TextureLevelAssetID: 1810149538
+      TextureLevelMemorySizeBytes: 1464
+      TextureLevelResolutionX: 16
+      TextureLevelResolutionY: 16
+      TextureLevelNumberChannels: 3
+    1:
+      TextureLevelAssetID: 997809538
+      TextureLevelMemorySizeBytes: 696
+      TextureLevelResolutionX: 8
+      TextureLevelResolutionY: 8
+      TextureLevelNumberChannels: 3
+    0:
+      TextureLevelAssetID: 991387154
+      TextureLevelMemorySizeBytes: 504
+      TextureLevelResolutionX: 4
+      TextureLevelResolutionY: 4
+      TextureLevelNumberChannels: 3
+  storage_RC.fbm\drawer_rc_Material_Metallic.png:
+    9:
+      TextureLevelAssetID: 810232925
+      TextureLevelMemorySizeBytes: 16777656
+      TextureLevelResolutionX: 2048
+      TextureLevelResolutionY: 2048
+      TextureLevelNumberChannels: 3
+    8:
+      TextureLevelAssetID: 1100554084
+      TextureLevelMemorySizeBytes: 4194744
+      TextureLevelResolutionX: 1024
+      TextureLevelResolutionY: 1024
+      TextureLevelNumberChannels: 3
+    7:
+      TextureLevelAssetID: 2080167905
+      TextureLevelMemorySizeBytes: 1049016
+      TextureLevelResolutionX: 512
+      TextureLevelResolutionY: 512
+      TextureLevelNumberChannels: 3
+    6:
+      TextureLevelAssetID: 2028443213
+      TextureLevelMemorySizeBytes: 262584
+      TextureLevelResolutionX: 256
+      TextureLevelResolutionY: 256
+      TextureLevelNumberChannels: 3
+    5:
+      TextureLevelAssetID: 187104045
+      TextureLevelMemorySizeBytes: 65976
+      TextureLevelResolutionX: 128
+      TextureLevelResolutionY: 128
+      TextureLevelNumberChannels: 3
+    4:
+      TextureLevelAssetID: 534035448
+      TextureLevelMemorySizeBytes: 16824
+      TextureLevelResolutionX: 64
+      TextureLevelResolutionY: 64
+      TextureLevelNumberChannels: 3
+    3:
+      TextureLevelAssetID: 1617619587
+      TextureLevelMemorySizeBytes: 4536
+      TextureLevelResolutionX: 32
+      TextureLevelResolutionY: 32
+      TextureLevelNumberChannels: 3
+    2:
+      TextureLevelAssetID: 1337696639
+      TextureLevelMemorySizeBytes: 1464
+      TextureLevelResolutionX: 16
+      TextureLevelResolutionY: 16
+      TextureLevelNumberChannels: 3
+    1:
+      TextureLevelAssetID: 259490434
+      TextureLevelMemorySizeBytes: 696
+      TextureLevelResolutionX: 8
+      TextureLevelResolutionY: 8
+      TextureLevelNumberChannels: 3
+    0:
+      TextureLevelAssetID: 1136620793
+      TextureLevelMemorySizeBytes: 504
+      TextureLevelResolutionX: 4
+      TextureLevelResolutionY: 4
+      TextureLevelNumberChannels: 3
+  storage_RC.fbm\drawer_rc_Material_Normal.png:
+    9:
+      TextureLevelAssetID: 1493962228
+      TextureLevelMemorySizeBytes: 16777656
+      TextureLevelResolutionX: 2048
+      TextureLevelResolutionY: 2048
+      TextureLevelNumberChannels: 3
+    8:
+      TextureLevelAssetID: 1920397981
+      TextureLevelMemorySizeBytes: 4194744
+      TextureLevelResolutionX: 1024
+      TextureLevelResolutionY: 1024
+      TextureLevelNumberChannels: 3
+    7:
+      TextureLevelAssetID: 1529133551
+      TextureLevelMemorySizeBytes: 1049016
+      TextureLevelResolutionX: 512
+      TextureLevelResolutionY: 512
+      TextureLevelNumberChannels: 3
+    6:
+      TextureLevelAssetID: 1426616691
+      TextureLevelMemorySizeBytes: 262584
+      TextureLevelResolutionX: 256
+      TextureLevelResolutionY: 256
+      TextureLevelNumberChannels: 3
+    5:
+      TextureLevelAssetID: 1093581134
+      TextureLevelMemorySizeBytes: 65976
+      TextureLevelResolutionX: 128
+      TextureLevelResolutionY: 128
+      TextureLevelNumberChannels: 3
+    4:
+      TextureLevelAssetID: 1550195343
+      TextureLevelMemorySizeBytes: 16824
+      TextureLevelResolutionX: 64
+      TextureLevelResolutionY: 64
+      TextureLevelNumberChannels: 3
+    3:
+      TextureLevelAssetID: 1807400753
+      TextureLevelMemorySizeBytes: 4536
+      TextureLevelResolutionX: 32
+      TextureLevelResolutionY: 32
+      TextureLevelNumberChannels: 3
+    2:
+      TextureLevelAssetID: 839728942
+      TextureLevelMemorySizeBytes: 1464
+      TextureLevelResolutionX: 16
+      TextureLevelResolutionY: 16
+      TextureLevelNumberChannels: 3
+    1:
+      TextureLevelAssetID: 1286986365
+      TextureLevelMemorySizeBytes: 696
+      TextureLevelResolutionX: 8
+      TextureLevelResolutionY: 8
+      TextureLevelNumberChannels: 3
+    0:
+      TextureLevelAssetID: 166087504
+      TextureLevelMemorySizeBytes: 504
+      TextureLevelResolutionX: 4
+      TextureLevelResolutionY: 4
+      TextureLevelNumberChannels: 3
+  storage_RC.fbm\drawer_rc_Material_Roughness.png:
+    9:
+      TextureLevelAssetID: 906117464
+      TextureLevelMemorySizeBytes: 16777656
+      TextureLevelResolutionX: 2048
+      TextureLevelResolutionY: 2048
+      TextureLevelNumberChannels: 3
+    8:
+      TextureLevelAssetID: 209335334
+      TextureLevelMemorySizeBytes: 4194744
+      TextureLevelResolutionX: 1024
+      TextureLevelResolutionY: 1024
+      TextureLevelNumberChannels: 3
+    7:
+      TextureLevelAssetID: 1661997123
+      TextureLevelMemorySizeBytes: 1049016
+      TextureLevelResolutionX: 512
+      TextureLevelResolutionY: 512
+      TextureLevelNumberChannels: 3
+    6:
+      TextureLevelAssetID: 1215535110
+      TextureLevelMemorySizeBytes: 262584
+      TextureLevelResolutionX: 256
+      TextureLevelResolutionY: 256
+      TextureLevelNumberChannels: 3
+    5:
+      TextureLevelAssetID: 301101571
+      TextureLevelMemorySizeBytes: 65976
+      TextureLevelResolutionX: 128
+      TextureLevelResolutionY: 128
+      TextureLevelNumberChannels: 3
+    4:
+      TextureLevelAssetID: 971923154
+      TextureLevelMemorySizeBytes: 16824
+      TextureLevelResolutionX: 64
+      TextureLevelResolutionY: 64
+      TextureLevelNumberChannels: 3
+    3:
+      TextureLevelAssetID: 62170042
+      TextureLevelMemorySizeBytes: 4536
+      TextureLevelResolutionX: 32
+      TextureLevelResolutionY: 32
+      TextureLevelNumberChannels: 3
+    2:
+      TextureLevelAssetID: 917091384
+      TextureLevelMemorySizeBytes: 1464
+      TextureLevelResolutionX: 16
+      TextureLevelResolutionY: 16
+      TextureLevelNumberChannels: 3
+    1:
+      TextureLevelAssetID: 100196991
+      TextureLevelMemorySizeBytes: 696
+      TextureLevelResolutionX: 8
+      TextureLevelResolutionY: 8
+      TextureLevelNumberChannels: 3
+    0:
+      TextureLevelAssetID: 604744997
+      TextureLevelMemorySizeBytes: 504
+      TextureLevelResolutionX: 4
+      TextureLevelResolutionY: 4
+      TextureLevelNumberChannels: 3
+Vertices: 1382
+Indices: 4890
+BoundingBoxX: 226.485931
+BoundingBoxY: 216.000031
+BoundingBoxZ: 216.000031
+OffsetX: 5.24295807
+OffsetY: 119.297287
+OffsetZ: 0

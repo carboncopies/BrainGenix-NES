@@ -1,0 +1,49 @@
+#version 400
+
+// Set IO
+out vec4 FragColor;
+in vec3 UV;
+in vec3 OriginalPosition;
+
+// Get Configuration Params
+uniform vec3 CameraPosition;
+uniform vec3 GRID_COLOR_BASE;
+uniform vec3 GRID_COLOR_X;
+uniform vec3 GRID_COLOR_Z;
+uniform float GRID_SIZE;
+uniform float GRID_LINE_THICKNESS;
+uniform float GRID_SCALE;
+
+
+
+void main(void)
+{
+
+    if(fract(UV.x / GRID_SIZE) < GRID_LINE_THICKNESS || fract(UV.y / GRID_SIZE) < GRID_LINE_THICKNESS) {
+
+        // Check If X Or Y Axis Line, Set Color
+        vec3 LineColor;
+        float ScaledThickness = GRID_LINE_THICKNESS * GRID_SIZE;
+        if (abs(OriginalPosition[0] + ScaledThickness) < ScaledThickness) {
+            LineColor = GRID_COLOR_Z;
+        } else if (abs(OriginalPosition[1] + ScaledThickness) < ScaledThickness) {
+            LineColor = GRID_COLOR_X;
+        } else {
+            LineColor = GRID_COLOR_BASE;
+        }
+    
+        // Calculate Opacity Based On Distance From Camera
+        vec3 CameraLocation2D = vec3(CameraPosition[0], CameraPosition[2], CameraPosition[1]/4.0f);
+        float Distance = distance(CameraLocation2D, GRID_SCALE*OriginalPosition);
+        float Alpha = 75.0f/pow(Distance, 3);
+        
+        // Draw Pixel
+        if (Alpha > 0.0001f) {
+            FragColor = vec4(LineColor, Alpha);
+        }
+
+    } else {
+        FragColor = vec4(0.0f);
+    }
+}
+

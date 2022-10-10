@@ -1,0 +1,36 @@
+#version 330 core
+layout (location = 0) in vec3 aPos;
+
+uniform mat4 model;
+
+void main()
+{
+    gl_Position = model * vec4(aPos, 1.0);
+}
+
+
+
+/**
+
+Fix For Transparency (Andrei Despinoiu)
+
+
+
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 2) in vec2 aTexCoords;
+
+
+out vec2 TexCoordsInitial;
+
+
+uniform mat4 model;
+
+
+void main()
+{
+    TexCoordsInitial = aTexCoords;
+    gl_Position = model * vec4(aPos, 1.0);
+}
+**/
+

@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug-nodx12|x64">
+      <Configuration>debug-nodx12</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release-nodx12|x64">
+      <Configuration>release-nodx12</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F6BE1E98-E164-40A8-BCA5-1631F2E16618}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>sample</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug-nodx12|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release-nodx12|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" Condition="'$(Configuration)'=='debug-nodx12'">
+    <MyToolset>v120</MyToolset>
+    <MyConfig>debug</MyConfig>
+    <MyIncludeDx12>false</MyIncludeDx12>
+  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" Condition="'$(Configuration)'=='release-nodx12'">
+    <MyToolset>v120</MyToolset>
+    <MyConfig>release</MyConfig>
+    <MyIncludeDx12>false</MyIncludeDx12>
+  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" Condition="'$(Configuration)'=='debug'">
+    <MyToolset>v140</MyToolset>
+    <MyConfig>debug</MyConfig>
+    <MyIncludeDx12>true</MyIncludeDx12>
+  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" Condition="'$(Configuration)'=='release'">
+    <MyToolset>v140</MyToolset>
+    <MyConfig>release</MyConfig>
+    <MyIncludeDx12>true</MyIncludeDx12>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)build\bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\obj\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MyConfig)'=='debug'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MyConfig)'=='release'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>
+        ..\imgui;
+        ..\imgui\examples;
+        ..\metrics_gui\include;
+        $(intdir)
+      </AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>
+        d3d11.lib;
+        d3dcompiler.lib;
+        dxgi.lib;
+        user32.lib;
+      </AdditionalDependencies>
+      <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
+    </Link>
+    <FxCompile>
+      <ShaderModel>5.0</ShaderModel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <VariableName>%(filename)</VariableName>
+      <HeaderFileOutput>$(intdir)%(identity).h</HeaderFileOutput>
+      <ObjectFileOutput>
+      </ObjectFileOutput>
+    </FxCompile>
+    <PostBuildEvent>
+      <Command>
+        copy /Y "$(WindowsSDKDir_81)redist\d3d\$(Platform)\d3dcompiler_47.dll" "$(OutDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(MyConfig)'=='debug'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(MyConfig)'=='release'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(MyIncludeDx12)'=='true'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>
+        ..\imgui\examples;
+        %(AdditionalIncludeDirectories)
+      </AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>
+        INCLUDE_DX12;
+        %(PreprocessorDefinitions)
+      </PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>
+        d3d12.lib;
+        %(AdditionalDependencies)
+      </AdditionalDependencies>
+      <DelayLoadDLLs>d3d12.dll</DelayLoadDLLs>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="impl.h" />
+    <ClInclude Include="impl_d3d11.h" />
+    <ClInclude Include="impl_d3d12.h" />
+    <ClInclude Include="..\imgui\imconfig.h" />
+    <ClInclude Include="..\imgui\imgui.h" />
+    <ClInclude Include="..\imgui\imgui_internal.h" />
+    <ClInclude Include="..\imgui\examples\imgui_impl_dx11.h" />
+    <ClInclude Include="..\imgui\examples\imgui_impl_dx12.h" />
+    <ClInclude Include="..\imgui\examples\imgui_impl_win32.h" />
+    <ClInclude Include="..\metrics_gui\include\metrics_gui\metrics_gui.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="impl_d3d11.cpp" />
+    <ClCompile Include="impl_d3d12.cpp" Condition="'$(MyIncludeDx12)'=='true'" />
+    <ClCompile Include="..\imgui\imgui.cpp" />
+    <ClCompile Include="..\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="..\imgui\examples\imgui_impl_dx11.cpp" />
+    <ClCompile Include="..\imgui\examples\imgui_impl_dx12.cpp" Condition="'$(MyIncludeDx12)'=='true'" />
+    <ClCompile Include="..\imgui\examples\imgui_impl_win32.cpp" />
+    <ClCompile Include="..\metrics_gui\source\metrics_gui.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="ps.hlsl">
+      <ShaderType>Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="vs.hlsl">
+      <ShaderType>Vertex</ShaderType>
+    </FxCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

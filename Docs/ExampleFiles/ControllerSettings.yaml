@@ -1,0 +1,43 @@
+#################################################################################################################################################
+# Example for controller settings. Would normally be stored as a .ERS asset on disk or in DB like all other ERS assets. Is set for each project #
+#################################################################################################################################################
+
+# Name For Controller To Apply To
+ControllerName: "PS4 Controller"
+SettingsProfileName: "Example Profile"
+
+# Joystick Gain Settings
+JoystickLeftXGain: 1.0
+JoystickLeftYGain: 1.0
+JoystickRightXGain: 1.0
+JoystickRightYGain: 1.0
+
+# Joystick Thresholds (Range is scaled up from these thresholds to -1, +1. Useful if your controller doesn't sit at exactly 0 or go to +-1)
+MinThresholdJoystickLeftX: 0.02
+MinThresholdJoystickLeftY: 0.02
+MinThresholdJoystickRightX: 0.02
+MinThresholdJoystickRightY: 0.02
+
+MaxThresholdJoystickLeftX: 0.98
+MaxThresholdJoystickLeftY: 0.98
+MaxThresholdJoystickRightX: 0.98
+MaxThresholdJoystickRightY: 0.98
+
+
+# Button Indexes (For Remapping)
+JoystickLeftButtonIndex: 9
+JoystickRightButtonIndex: 10
+BackButtonIndex: 6
+MenuButtonIndex: 7
+OptionsButtonIndex: 8
+TriangleButtonIndex: 3
+SquareButtonIndex: 2
+CircleButtonIndex: 1
+CrossButtonIndex: 0
+RightBumperButtonIndex: 5
+LeftBumperButtonIndex: 4
+DPADUpButtonIndex: 11
+DPADDownButtonIndex: 12
+DPADLeftButtonIndex: 13
+DPADRightButtonIndex: 14
+

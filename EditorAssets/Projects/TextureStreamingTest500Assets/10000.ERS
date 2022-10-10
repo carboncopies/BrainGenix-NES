@@ -1,0 +1,37 @@
+#version 400
+
+layout (location = 0) in vec4 aPos;
+layout (location = 2) in vec3 aTexCoords;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+out vec3 UV;
+out vec3 OriginalPosition;
+
+
+void main()
+{
+    gl_Position = projection * view * model * aPos;
+
+    UV = aTexCoords;
+    OriginalPosition = vec3(aPos.xyz);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1 @@
+This directory contains some editor assets that are used for icons, fonts, config and internal projects. User projects are not stored in the projects dir. These are only defaults and some testing projects which are only to be used for development!

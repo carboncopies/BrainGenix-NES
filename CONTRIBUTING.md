@@ -1,63 +1,70 @@
-# Contributing to BrainGenix
+# Contribution Guide
+First of all, thank you for taking the time to contribute, we really appreciate it.
+With that said, we would also appreciate it if you would make sure that your code conforms to the standards below:
 
-Thanks for taking the time to contribute! We really do appreciate it.
-Below is an outline on how to contribute:
+- Please use UpperCamelCase for naming varaibles, and add a trailing Underscore_ for class member variables.
+- When creating functions/classes/structs, please add ERS_CLASS_, ERS_STRUCT_, or ERS_FUCTION_ to the start of your name.
+- When creating directories, please also add ERS_[name of function] to the directory you put your files under.
+- For file names, please also add ERS_[CLASS/STRUCT/FUNCTION]_ to the start of the name to indicate what is contained within the file.
+- Every dir should have it's own CMakeLists.txt file which tells cmake how to build your code. These can be adapted from the example below.
+- Make sure to call add_subdirectory with that dir in the root CMakeLists.txt file, or else it won't build.
+- Please also document your code with doxygen formatting. We use doxygen to generate the online docs page, so all code should use that format.
+- Finally, please also add the following boilerplate code below to your the start of your code.
 
+## Templates
 
-
-# Function Formatting 
-
-BrainGenix tries to format it's code as defined in the UppserCamelCase standard, with a few modifications for readabillity. Below is a list of guidelines that should be followed:
-
- * Specify object when defining arguments to a function. This simplifies the debugging of the system, as we can check the type of the argument passed to see if it's right. Example: `Level:int=0`
- * Add a comment on the definition of a function. Just write a bit about what your function does so that if it needs to be changed in the future then it's relatively simple to do.
- * Write a description of the function in more deatail below the definition line. Please use the tripple single-quote, so that it's all uniform. This should be as long as you need to make it to explain your function well.
- * Block out parts of your code. If your code has certain lines that can be grouped together, then please do so. These lines should also be preceded by a comment block formatted as # comment #. This block should briefly describe the purpose of that code "block".
- * Please also make sure to use well-maintained libraries and create a function to abstract them, so that they can be easily swapped out in the future if that is needed.
-
+Template `CMakeLists.txt` File:
 
 ```
-def Log(self, Message:str, Level:int=0): # Handles The Log Of An Item #
+########################################################################
+# This file is part of the BrainGenix-ERS Environment Rendering System #
+########################################################################
 
-	'''
-	This function is the main logging function for the entire system.
-	etc...
-	'''
+# Create Library (Name Should Be Parent Dir Name)
+add_library([NAME OF PARENT DIR HERE]
 
-	# Update Log Buffer #
-	Level = str(Level)
+            # Add Source Files (.cpp)
+            "[Name of your .cpp file, (keep quotes) add more below if more than one]"
 
-	CallStack = inspect.stack()
-	CallingModuleName = CallStack[1][1]
-	CallingFunctionName = CallStack[1][3]
+            # Add Header Files (.h)
+            "[Name of your .h file, (keep quotes) also add more below if needed]"
 
-	etc...
+            ${BACKWARD_ENABLE}
+            )
+
+# Link 3rd Party Libs
+target_link_libraries([NAME OF PARENT DIR HERE]
+    # whatever thrid party libs your code needs
+    )
+
+# Link Internal Libs
+target_link_libraries([NAME OF PARENT DIR HERE]
+    # Whatever other ers cmake targets your code needs
+    )
+
+target_include_directories([NAME OF PARENT DIR HERE] PUBLIC ./)
 ```
 
-# File Formatting
-
-When creating a new file you should make sure to add the following headers to the top of your file:
-
- * A BrainGenix header which just says that this file is part of the BrainGenix simulation system.
- * A Descriptor below your imports which specifies the date that your file was created, and the description/name of the file.
- 
- ```
- ###########################################################
-## This file is part of the BrainGenix Simulation System ##
-###########################################################
-
-import datetime
-import time
-import inspect
-import os
-import atexit
-import gzip
-
-'''
-Name: SysLog
-Description: This class handles the main log for this braingenix instance.
-Date-Created: 2020-12-19
-'''
+Template Header `.cpp` files:
+```
+//======================================================================//
+// This file is part of the BrainGenix-ERS Environment Rendering System //
+//======================================================================//
 ```
 
+Template Header `.h` files:
 
+```
+//======================================================================//
+// This file is part of the BrainGenix-ERS Environment Rendering System //
+//======================================================================//
+
+#pragma once
+
+
+// Standard Libraries (BG convention: use <> instead of "")
+
+// Third-Party Libraries (BG convention: use <> instead of "")
+
+// Internal Libraries (BG convention: use <> instead of "")
+```

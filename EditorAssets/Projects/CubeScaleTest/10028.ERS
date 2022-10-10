@@ -1,0 +1,27 @@
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aNormal;
+layout (location = 2) in vec2 aTexCoords;
+
+out vec2 TexCoords;
+
+
+// Set Model Info
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+// Get Input Vars
+uniform float Time; // Time since program started in seconds
+uniform float FrameTime; // Render Time Of The Frame
+uniform int FrameNumber; // Number of the frame, counts up from zero
+uniform vec2 ViewportRes; // XY Resolution of the viewport
+
+
+
+void main()
+{
+    TexCoords = aTexCoords;    
+    gl_Position = projection * view * model * vec4(aPos, 1.0);
+}
+

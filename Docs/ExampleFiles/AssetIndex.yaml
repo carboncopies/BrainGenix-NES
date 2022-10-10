@@ -1,0 +1,17 @@
+# Example Asset Index File
+# --
+# This file is used to tell the IO system what type of file you have loaded. For Example, if you're loading a Model, this tells ERS that it's actually a model, as well as some other metadata.
+
+0: # Asset ID
+
+    # String Containing Name Of Type"
+    AssetType: "Model"
+    
+    # Dates in year-month-day-hour-minute-second"
+    AssetCreationDate: "1970-01-01-00-00-00"
+    AssetModificationDate: "2022-01-01-00-00-00"
+    
+1: # Second Asset, put the following ones after this.
+    AssetType: "Image"
+    AssetCreationDate: "1970-01-01-00-00-00"
+    AssetModificationDate: "2022-01-01-00-00-00"

@@ -1,0 +1,25 @@
+#version 400
+
+// Set IO
+out vec4 FragColor;
+in vec3 UV;
+in vec3 OriginalPosition;
+
+// Get Configuration Params
+uniform sampler2D IconTexture;
+uniform vec3 CameraPosition;
+
+
+
+
+void main(void)
+{
+
+
+    FragColor = texture(IconTexture, vec2(UV));
+    
+}
+
+
+
+

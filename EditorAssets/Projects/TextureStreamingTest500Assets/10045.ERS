@@ -1,0 +1,55 @@
+#version 330 core
+in vec4 FragPos;
+
+uniform vec3 LightPos;
+uniform float FarPlane;
+
+void main()
+{
+    float lightDistance = length(FragPos.xyz - LightPos);
+    
+    // map to [0;1] range by dividing by far_plane
+    lightDistance = lightDistance / FarPlane;
+    
+    // write this as modified depth
+    gl_FragDepth = lightDistance;
+    
+}
+
+
+
+/**
+
+Fix For Transparency (Andrei Despinoiu)
+
+#version 330 core
+
+
+in vec4 FragPos;
+in vec2 TexCoords;
+
+
+uniform vec3 lightPos;
+uniform float farPlane;
+uniform sampler2D texture1;
+
+
+void main()
+{
+    // Opacity check
+    vec4 textureColour = texture(texture1, TexCoords);
+    if (textureColour.a < 0.5) {
+        discard;
+    }
+
+
+    // get distance between fragment and light source
+    float lightDistance = length(FragPos.xyz - lightPos);
+    // map to [0-1] range by dividing by farPlane
+    lightDistance = lightDistance / farPlane;
+    // write this as modified depth
+    gl_FragDepth = lightDistance;
+}
+
+**/
+

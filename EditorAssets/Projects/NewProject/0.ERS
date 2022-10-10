@@ -1,0 +1,216 @@
+0:
+  AssetType: Metadata
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+1:
+  AssetType: Undefined
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-04-03-02-53-58
+2:
+  AssetType: Placeholder
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+3:
+  AssetType: Undefined
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-04-03-02-53-59
+4:
+  AssetType: Mesh
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+5:
+  AssetType: Image
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+6:
+  AssetType: Image
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+7:
+  AssetType: Image
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+8:
+  AssetType: Image
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+9:
+  AssetType: Image
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+10:
+  AssetType: Model
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+11:
+  AssetType: Controller Settings
+  AssetCreationDate: 1970-01-01-00-00-00
+  AssetModificationDate: 2022-01-01-00-00-00
+10000:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10001:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10002:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10003:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10004:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10005:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10006:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10007:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10008:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10009:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10010:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10011:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10012:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10013:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10014:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10015:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10016:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10017:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10018:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10019:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10020:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10021:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10022:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10023:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10024:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10025:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10026:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10027:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10028:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10029:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10030:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10031:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10032:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10033:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10034:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10035:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10036:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10037:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10038:
+  AssetType: Vertex Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10039:
+  AssetType: Fragment Shader
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-02-16-23-23-16
+10040:
+  AssetType: Undefined
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-04-28-06-24-53
+10041:
+  AssetType: Undefined
+  AssetCreationDate: 1970-01-01-00-00-01
+  AssetModificationDate: 2022-04-28-06-24-53

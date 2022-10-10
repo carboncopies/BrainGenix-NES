@@ -1,0 +1,36 @@
+#version 330 core
+out vec4 FragColor;
+
+in vec2 TexCoords;
+
+// Get Texture Sampler And Lighting Info
+uniform sampler2D texture_ambient1;
+uniform sampler2D texture_ambient_occlusion1;
+uniform sampler2D texture_base_color1;
+uniform sampler2D texture_diffuse1;
+uniform sampler2D texture_diffuse_roughness1;
+uniform sampler2D texture_displacement1;
+uniform sampler2D texture_emission_color1;
+uniform sampler2D texture_emissive1;
+uniform sampler2D texture_height1;
+uniform sampler2D texture_lightmap1;
+uniform sampler2D texture_metalness1;
+uniform sampler2D texture_normal_camera1;
+uniform sampler2D texture_normals1;
+uniform sampler2D texture_opacity1;
+uniform sampler2D texture_reflection1;
+uniform sampler2D texture_shininess1;
+uniform sampler2D texture_specular1;
+
+
+// Get Input Vars
+uniform float Time; // Time since program started in seconds
+uniform float FrameTime; // Render Time Of The Frame
+uniform int FrameNumber; // Number of the frame, counts up from zero
+uniform vec2 ViewportRes; // XY Resolution of the viewport
+
+
+void main()
+{
+    FragColor = texture(texture_ambient1, TexCoords);
+}

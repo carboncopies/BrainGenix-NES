@@ -1,0 +1,36 @@
+SceneName: Untitled Scene
+SceneFormatVersion: 1
+SceneData:
+  0:
+    AssetName: storage_RC.fbx
+    AssetType: Model
+    AssetID: 1339095228
+    AssetPositionX: 0
+    AssetPositionY: 0.200000003
+    AssetPositionZ: 0
+    AssetRotationX: 0
+    AssetRotationY: 0
+    AssetRotationZ: 0
+    AssetScaleX: 0.00100000005
+    AssetScaleY: 0.00100000005
+    AssetScaleZ: 0.00100000005
+    CastDynamicShadows: true
+    CastStaticShadows: true
+    ReceiveShadows: true
+    ShaderOverrideIndex: -1
+    AttachedScripts:
+      {}
+  1:
+    AssetName: New Point Light
+    AssetType: PointLight
+    ColorRed: 1
+    ColorGreen: 1
+    ColorBlue: 1
+    PosX: 0.5
+    PosY: 0.400000036
+    PosZ: -0.200000003
+    Intensity: 1
+    MaxDistance: 20
+    CastShadows: true
+    AttachedScripts:
+      {}

@@ -1,0 +1,31 @@
+SceneName: Untitled Scene
+SceneFormatVersion: 3
+ActiveCameraIndex: -1
+Models:
+  0:
+    AssetName: Cube_1Meter.fbx
+    AssetType: Model
+    AssetID: 168231494
+    AssetPositionX: 0
+    AssetPositionY: 0
+    AssetPositionZ: 0
+    AssetRotationX: 0
+    AssetRotationY: 0
+    AssetRotationZ: 0
+    AssetScaleX: 1
+    AssetScaleY: 1
+    AssetScaleZ: 1
+    CastDynamicShadows: true
+    CastStaticShadows: true
+    ReceiveShadows: true
+    ShaderOverrideIndex: -1
+    AttachedScripts:
+      {}
+DirectionalLights:
+  {}
+PointLights:
+  {}
+SpotLights:
+  {}
+SceneCameras:
+  {}

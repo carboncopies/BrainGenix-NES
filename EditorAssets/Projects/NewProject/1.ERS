@@ -1,0 +1,123 @@
+ProjectName: ERS Test Project
+ProjectDescription: Test development scene for EGSC.
+ProjectVersion: 1.0.0
+ProjectCreationDate: 0000-00-00 00-00-00
+ProjectModificationDate: 2022-07-27 07-18-16
+ProjectCreator: BrainGenix-ERS Development Team
+ProjectLicense: AGPL-V3.0 Or Higher
+IsLicenseProprietary: false
+PlayOnLoad: false
+SceneIDs:
+  0: 1744105170
+DefaultScene: 0
+EditorLayouts:
+  0: 2
+DefaultLayout: 0
+DefaultShaderProgram: 12
+ShaderPrograms:
+  0:
+    Name: _Grid
+    VertexID: 10000
+    FragmentID: 10001
+    GeometryID: -1
+    ComputeID: -1
+    TessContolID: -1
+    TessEvalID: -1
+  1:
+    Name: _LightIcon
+    VertexID: 10038
+    FragmentID: 10039
+    GeometryID: -1
+    ComputeID: -1
+    TessContolID: -1
+    TessEvalID: -1
+  2:
+    Name: _DepthMap
+    VertexID: 10042
+    FragmentID: 10043
+    GeometryID: -1
+    ComputeID: -1
+    TessContolID: -1
+    TessEvalID: -1
+  3:
+    Name: _DepthCubeMap
+    VertexID: 10044
+    FragmentID: 10045
+    GeometryID: 10046
+    ComputeID: -1
+    TessContolID: -1
+    TessEvalID: -1
+  4:
+    Name: _BoundingBox
+    VertexID: 10047
+    FragmentID: 10048
+    GeometryID: -1
+    ComputeID: -1
+    TessContolID: -1
+    TessEvalID: -1
+  5:
+    Name: Ambient Occlusion Texture Map
+    VertexID: 10004
+    FragmentID: 10005
+    GeometryID: -1
+    ComputeID: -1
+    TessContolID: -1
+    TessEvalID: -1
+  6:
+    Name: Diffuse Texture Map
+    VertexID: 10008
+    FragmentID: 10009
+    GeometryID: -1
+    ComputeID: -1
+    TessContolID: -1
+    TessEvalID: -1
+  7:
+    Name: Emissive Texture Map
+    VertexID: 10016
+    FragmentID: 10017
+    GeometryID: -1
+    ComputeID: -1
+    TessContolID: -1
+    TessEvalID: -1
+  8:
+    Name: Height Texture Map
+    VertexID: 10018
+    FragmentID: 10019
+    GeometryID: -1
+    ComputeID: -1
+    TessContolID: -1
+    TessEvalID: -1
+  9:
+    Name: Metalic Texture Map
+    VertexID: 10022
+    FragmentID: 10023
+    GeometryID: -1
+    ComputeID: -1
+    TessContolID: -1
+    TessEvalID: -1
+  10:
+    Name: Normals Texture Map
+    VertexID: 10026
+    FragmentID: 10027
+    GeometryID: -1
+    ComputeID: -1
+    TessContolID: -1
+    TessEvalID: -1
+  11:
+    Name: Shininess Texture Map
+    VertexID: 10032
+    FragmentID: 10033
+    GeometryID: -1
+    ComputeID: -1
+    TessContolID: -1
+    TessEvalID: -1
+  12:
+    Name: Viewport
+    VertexID: 10040
+    FragmentID: 10041
+    GeometryID: -1
+    ComputeID: -1
+    TessContolID: -1
+    TessEvalID: -1
+Scripts:
+  {}

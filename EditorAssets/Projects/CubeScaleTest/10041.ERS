@@ -1,0 +1,875 @@
+#version 420 core
+
+// Set Outputs
+out vec4 FragColor;
+
+// Set Inputs
+in VS_OUT {
+    vec3 FragPos;
+    vec2 TexCoords;
+    mat3 TBN;
+    vec3 WorldPos;
+    vec3 TangentViewPos;
+    vec3 TangentFragPos;
+    vec3 Normal; // Used when normal texture not present
+
+    //vec4 FragPosLightSpace;
+} Object;
+
+// Define Structs
+struct STRUCT_DirectionalLight {
+
+    vec3 Direction;
+
+    // Light Color Parameters
+    vec3 Color;
+    float Intensity;
+    float MaxDistance;
+    int DepthMapIndex;
+    mat4 LightSpaceMatrix;
+    
+    bool CastsShadows;
+
+};
+
+struct STRUCT_PointLight {
+
+    // Physical Parameters
+    vec3 Position;
+
+    // Light Color Parameters
+    vec3 Color;
+
+    // Light Rolloff Parameters
+    float Intensity;
+    float MaxDistance;
+    
+    int DepthCubemapIndex;
+    
+    bool CastsShadows;
+
+};
+
+struct STRUCT_SpotLight {
+
+    // Physical Parameters
+    vec3 Position;
+    vec3 Direction;
+
+    // Light Color Parameters
+    vec3 Color;
+
+    // Light Rolloff Parameters
+    float Intensity;
+    float MaxDistance;
+
+    // Spotlight Parameters
+    float CutOff;
+    float RollOff;
+    
+    int DepthMapIndex;
+    mat4 LightSpaceMatrix;
+    
+    bool CastsShadows;
+
+};
+
+struct STRUCT_SampledData {
+
+    vec4 Albedo;
+    vec3 Normal;
+    vec3 Emissive;
+    float Metallic;
+    float Roughness;
+    float AO;
+
+};
+
+
+
+
+
+// Get Metadata Params
+uniform int FrameNumber; // Number of the frame, counts up from zero
+
+uniform float Time; // Time since program started in seconds
+uniform float FrameTime; // Render Time Of The Frame
+
+uniform vec2 ViewportRes; // XY Resolution of the viewport
+uniform vec3 CameraPosition; // Get Camera XYZ Position
+
+
+
+// Get Texture Info
+uniform sampler2D texture_diffuse1;
+uniform sampler2D texture_normals1;
+uniform sampler2D texture_shininess1;
+uniform sampler2D texture_emissive1;
+uniform sampler2D texture_metalness1;
+uniform sampler2D texture_ambient_occlusion1;
+uniform sampler2DArray DepthMapArray;
+uniform samplerCubeArray DepthMapCubeArray;
+
+uniform bool HasAmbientOcclusion;
+uniform bool HasDiffuse;
+uniform bool HasDisplacement;
+uniform bool HasEmissive;
+uniform bool HasMetalness;
+uniform bool HasNormals;
+uniform bool HasShininess;
+
+
+// Get Shadow Configuration Information
+uniform bool ReceiveShadows_;
+uniform int ShadowFilterType_;
+uniform int ShadowFilterKernelSize_;
+
+// Get Lighting Info
+uniform int NumberDirectionalLights;
+uniform int NumberPointLights;
+uniform int NumberSpotLights;
+uniform STRUCT_DirectionalLight DirectionalLights[2];
+uniform STRUCT_PointLight PointLights[42];
+uniform STRUCT_SpotLight SpotLights[56];
+
+// Gamma Correction Info
+uniform bool GammaCorrectionEnabled_;
+uniform bool HDREnabled_;
+uniform float Exposure_;
+uniform float Gamma_;
+
+const float PI = 3.14159265358979;
+
+vec2 PoissonDisk[16] = vec2[]( 
+vec2( -0.94201624, -0.39906216 ), 
+vec2( 0.94558609, -0.76890725 ), 
+vec2( -0.094184101, -0.92938870 ), 
+vec2( 0.34495938, 0.29387760 ), 
+vec2( -0.91588581, 0.45771432 ), 
+vec2( -0.81544232, -0.87912464 ), 
+vec2( -0.38277543, 0.27676845 ), 
+vec2( 0.97484398, 0.75648379 ), 
+vec2( 0.44323325, -0.97511554 ), 
+vec2( 0.53742981, -0.47373420 ), 
+vec2( -0.26496911, -0.41893023 ), 
+vec2( 0.79197514, 0.19090188 ), 
+vec2( -0.24188840, 0.99706507 ), 
+vec2( -0.81409955, 0.91437590 ), 
+vec2( 0.19984126, 0.78641367 ), 
+vec2( 0.14383161, -0.14100790 ) 
+);
+
+vec3 Poisson3D[16] = vec3[] (
+vec3(0.7439873218536399, -0.541186283808202, 0.17664264608175007),
+vec3(-0.275775456801057, -0.32272001542150996, 0.68133261147887),
+vec3(0.44897621078416994, -0.467917730100453, -0.659653108566999),
+vec3(-0.847784673329443, 0.028283810708670032, -0.400656977668405),
+vec3(-0.727825771085918, -0.283869738690555, 0.08675202075392008),
+vec3(-0.452855029609054, 0.66060589626431, 0.7711005629971599),
+vec3(0.61847387859598, -0.33074145298451196, 0.51381932664663),
+vec3(0.35371939232573, 0.3825031747110199, -0.18291005725040999),
+vec3(0.08679201826453009, 0.61422011069953, -0.5682788607664411),
+vec3(-0.733357671182603, 0.78749090107158, 0.42277105059474995),
+vec3(0.58986698603258, -0.422245749272406, 0.42315440950914995),
+vec3(-0.081056734547019, -0.26176304789259996, 0.33600588003173004),
+vec3(-0.158656360581517, -0.436631633434445, 0.09938938915729989),
+vec3(-0.534419173840433, 0.81530744861811, 0.26251380564645),
+vec3(0.7347787003964199, -0.17376213055103995, -0.05371918901801098),
+vec3(0.59472335595638, 0.43984056729822996, -0.564682560041547)
+);
+
+vec3 SampleOffsetDirections[20] = vec3[]
+(
+   vec3( 1,  1,  1), vec3( 1, -1,  1), vec3(-1, -1,  1), vec3(-1,  1,  1), 
+   vec3( 1,  1, -1), vec3( 1, -1, -1), vec3(-1, -1, -1), vec3(-1,  1, -1),
+   vec3( 1,  1,  0), vec3( 1, -1,  0), vec3(-1, -1,  0), vec3(-1,  1,  0),
+   vec3( 1,  0,  1), vec3(-1,  0,  1), vec3( 1,  0, -1), vec3(-1,  0, -1),
+   vec3( 0,  1,  1), vec3( 0, -1,  1), vec3( 0, -1, -1), vec3( 0,  1, -1)
+); 
+
+float random(vec3 seed, int i){
+    vec4 seed4 = vec4(seed,i);
+    float dot_product = dot(seed4, vec4(1.9898,7.233,4.164,9.673));
+    return fract(sin(dot_product) * 43758.5453);
+}
+
+
+float PCFSampler(float Bias, vec3 ProjCoords, int Index, float CurrentDepth, int SampleSize) {
+
+    float shadow = 0.0;
+    vec2 texelSize = 1.0 / textureSize(DepthMapArray, 0).xy;
+    for(int x = -SampleSize; x <= SampleSize; ++x)
+    {
+        for(int y = -SampleSize; y <= SampleSize; ++y)
+        {
+            vec2 TexCoords2D = ProjCoords.xy + (vec2(x, y) * texelSize);
+            float pcfDepth = texture(DepthMapArray, vec3(TexCoords2D, Index)).r;
+            shadow += CurrentDepth - Bias > pcfDepth ? 1.0 : 0.0;      
+        }    
+    }
+    shadow /= (SampleSize*2)*(SampleSize*2);
+
+    return shadow;
+
+}
+
+float PCFSamplerCubemap(float BiasedCurrentDepth, vec3 TexCoords3D, int Index, float ViewDistance, int SampleSize) {
+
+    float shadow = 0.0;
+
+    int samples = SampleSize*SampleSize;
+    float diskRadius = 0.01f;//(1.0 + (viewDistance / far_plane)) / 25.0;
+    for(int i = 0; i < samples; ++i)
+    {
+        float closestDepth = texture(DepthMapCubeArray, vec4(TexCoords3D + SampleOffsetDirections[i] * diskRadius, Index)).r;
+        closestDepth *= ViewDistance;   // undo mapping [0;1]
+        if(BiasedCurrentDepth > closestDepth)
+            shadow += 1.0;
+    }
+    shadow /= float(samples);
+
+    return shadow;
+}
+
+
+float PoissonSampler(float Bias, vec3 ProjCoords, int Index, float CurrentDepth, int SampleSize) {
+
+    float shadow = 0.0f;
+    vec2 texelSize = 1.0f / textureSize(DepthMapArray, 0).xy;
+
+    for(int x = -SampleSize; x <= SampleSize; ++x)
+    {
+        for(int y = -SampleSize; y <= SampleSize; ++y)
+        {
+            vec2 TexCoords2D = ProjCoords.xy + (vec2(x, y) * texelSize);
+            int index = int(x*y)%16;
+            float pcfDepth = texture(DepthMapArray, vec3(TexCoords2D + PoissonDisk[index]/700.0f, Index)).r;
+            shadow += CurrentDepth - Bias > pcfDepth ? 1.0f : 0.0f;  
+        }
+    }
+    shadow /= (SampleSize*2)*(SampleSize*2);
+    return shadow;
+
+}
+
+float PoissonSamplerCube(float BiasedCurrentDepth, vec3 TexCoords3D, int Index, float ViewDistance, int SampleSize) {
+
+    float shadow = 0.0;
+
+    int samples = SampleSize*SampleSize;
+
+
+    for(int i = 0; i < samples; ++i)
+    {
+
+        vec3 PoissonOffset = vec3(Poisson3D[i%16]/150.0f);
+        float closestDepth = texture(DepthMapCubeArray, vec4(TexCoords3D + PoissonOffset, Index)).r;
+        closestDepth *= ViewDistance;   // undo mapping [0;1]
+        if(BiasedCurrentDepth > closestDepth)
+            shadow += 1.0;
+    }
+    shadow /= float(samples);
+
+
+    return shadow;
+
+}
+
+
+float StratifiedPoissonSampler(float Bias, vec3 ProjCoords, int Index, float CurrentDepth, int SampleSize) {
+    float shadow = 0.0f;
+    vec2 texelSize = 1.0f / textureSize(DepthMapArray, 0).xy;
+
+    for(int x = -SampleSize; x <= SampleSize; ++x)
+    {
+        for(int y = -SampleSize; y <= SampleSize; ++y)
+        {
+            
+            vec2 TexCoords2D = ProjCoords.xy + (vec2(x, y) * texelSize);
+
+            int index = int(6.0f*random(floor(gl_FragCoord.yxz*1000.0f), int(ProjCoords.x*ProjCoords.y)));
+            float pcfDepth = texture(DepthMapArray, vec3(TexCoords2D + PoissonDisk[index]/1000.0f, Index)).r;
+            //pcfDepth = texture(DepthMapArray, vec3(TexCoords2D, Index)).r;
+            shadow += CurrentDepth - Bias > pcfDepth ? 1.0f : 0.0f;  
+        }
+    }
+    shadow /= (SampleSize*2)*(SampleSize*2);
+    return shadow;
+}
+
+
+float StratifiedPoissonSamplerCube(float BiasedCurrentDepth, vec3 TexCoords3D, int Index, float ViewDistance, int SampleSize) {
+
+    float shadow = 0.0;
+
+    int samples = SampleSize*SampleSize;
+    for(int i = 0; i < samples; ++i)
+    {
+        int PoissonIndex = int(6.0f*random(floor(gl_FragCoord.yxz*1000.0f), int(i)))%16;
+        vec3 PoissonOffset = vec3(Poisson3D[PoissonIndex]/250.0f);
+        float closestDepth = texture(DepthMapCubeArray, vec4(TexCoords3D + PoissonOffset, Index)).r;
+        closestDepth *= ViewDistance;   // undo mapping [0;1]
+        if(BiasedCurrentDepth > closestDepth)
+            shadow += 1.0;
+    }
+    shadow /= float(samples);
+
+
+    return shadow;
+
+
+}
+
+
+float ShadowCalculation(STRUCT_PointLight Light)
+{
+
+    // If Shadows Are Not Enabled, Exit Early
+    if (!ReceiveShadows_ || !Light.CastsShadows) {
+        return 1.0f;
+    }
+    
+    // get vector between fragment position and light position
+    vec3 fragToLight = Object.FragPos - Light.Position;
+
+    // ise the fragment to light vector to sample from the depth map    
+    float closestDepth = texture(DepthMapCubeArray, vec4(fragToLight, Light.DepthCubemapIndex)).r;
+    // it is currently in linear range between [0,1], let's re-transform it back to original depth value
+    closestDepth *= Light.MaxDistance;
+    // now get current linear depth as the length between the fragment and light position
+    float currentDepth = length(fragToLight);
+    // test for shadows
+
+    // Generate Shadow Map Bias
+    int TextureSize = textureSize(DepthMapCubeArray, 0).x;
+    float BiasMax = 0.005f;
+    if (TextureSize <= 512) {
+        BiasMax = 0.075;
+    } else if (TextureSize <= 1024) {
+        BiasMax = 0.05;
+    } else if (TextureSize <= 2048) {
+        BiasMax = 0.03;
+    } else if (TextureSize <= 4096) {
+        BiasMax = 0.02;
+    } else if (TextureSize <= 8192) {
+        BiasMax = 0.015;
+    } else if (TextureSize <= 16384) {
+        BiasMax = 0.01;
+    }
+    
+    float Bias = max(0.00 * (1.0 - dot(Object.Normal, normalize(fragToLight))), BiasMax);
+
+
+    // Select Correct Filter Based On Selection Uniform
+    float Shadow;
+    if (ShadowFilterType_ == 0) { // No Filtering
+        Shadow = currentDepth - Bias > closestDepth  ? 1.0 : 0.0;
+    } else if (ShadowFilterType_ == 1) { // PCF Filtering
+        Shadow = PCFSamplerCubemap(currentDepth-Bias, fragToLight, Light.DepthCubemapIndex, Light.MaxDistance, ShadowFilterKernelSize_);
+    } else if (ShadowFilterType_ == 2) { // Poisson Filtering
+        Shadow = PoissonSamplerCube(currentDepth-Bias, fragToLight, Light.DepthCubemapIndex, Light.MaxDistance, ShadowFilterKernelSize_);
+    } else if (ShadowFilterType_ == 3) {
+        Shadow = StratifiedPoissonSamplerCube(currentDepth-Bias, fragToLight, Light.DepthCubemapIndex, Light.MaxDistance, ShadowFilterKernelSize_);
+    } else {
+        return 0.0f; // Return Failure, All Black)
+    }
+    
+    // display closestDepth as debug (to visualize depth cubemap)
+    // FragColor = vec4(vec3(closestDepth / Light.MaxDistance), 1.0);    
+        
+    return 1.0f - Shadow;
+}
+
+float ShadowCalculation(STRUCT_DirectionalLight Light)
+{
+
+     // ., Light.Direction, Light.DepthMapIndex
+
+    // If Shadows Are Not Enabled, Exit Early
+    if (!ReceiveShadows_ || !Light.CastsShadows) {
+        return 1.0f;
+    }
+    
+    
+    vec4 fragPosLightSpace = Light.LightSpaceMatrix * vec4(Object.FragPos, 1.0f);
+
+    // perform perspective divide
+    vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
+    // transform to [0,1] range
+    projCoords = projCoords * 0.5f + 0.5;
+    
+    // get closest depth value from light's perspective (using [0,1] range fragPosLight as coords)
+    float closestDepth = texture(DepthMapArray, vec3(projCoords.xy, Light.DepthMapIndex)).r; 
+    // get depth of current fragment from light's perspective
+    float currentDepth = projCoords.z;
+    // check whether current frag pos is in shadow
+    //vec3 LightDir = normalize(L - Object.FragPos);
+    
+    float Bias = max(0.00 * (1.0 - dot(Object.Normal, Light.Direction)), 0.0025);
+    
+    //float Shadow = currentDepth - Bias > closestDepth  ? 1.0 : 0.0;
+    float Shadow = PCFSampler(Bias, projCoords, Light.DepthMapIndex, currentDepth, 2);
+    //float Shadow = ShadowPCFRandom(Bias, projCoords, Index, currentDepth, 1);
+    
+    if (projCoords.z > 1.0) {
+        Shadow = 0.0f;
+    }
+
+    if (Shadow > 1.0f) {
+        Shadow = 1.0f;
+    } else if (Shadow < 0.0f) {
+        Shadow = 0.0f;
+    }
+
+
+    return 1.0f - Shadow;
+}
+
+
+float ShadowCalculation(STRUCT_SpotLight Light)
+{
+
+    // If Shadows Are Not Enabled, Exit Early
+    if (!ReceiveShadows_ || !Light.CastsShadows) {
+    return 1.0f;
+    }
+    
+    
+    vec4 fragPosLightSpace = Light.LightSpaceMatrix * vec4(Object.FragPos, 1.0f);
+
+    // perform perspective divide
+    vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
+    // transform to [0,1] range
+    projCoords = projCoords * 0.5f + 0.5;
+    
+    // get closest depth value from light's perspective (using [0,1] range fragPosLight as coords)
+    float closestDepth = texture(DepthMapArray, vec3(projCoords.xy, Light.DepthMapIndex)).r; 
+    // get depth of current fragment from light's perspective
+    float currentDepth = projCoords.z;
+    // check whether current frag pos is in shadow
+    vec3 LightDir = normalize(Light.Position - Object.FragPos);
+    
+    
+    // Generate Shadow Map Bias
+    int TextureSize = textureSize(DepthMapArray, 0).x;
+    float BiasMax = 0.0005f;
+    if (TextureSize <= 512) {
+        BiasMax = 0.003;
+    } else if (TextureSize <= 1024) {
+        BiasMax = 0.0015;
+    } else if (TextureSize <= 2048) {
+        BiasMax = 0.001;
+    } else if (TextureSize <= 4096) {
+        BiasMax = 0.00075;
+    } else if (TextureSize <= 8192) {
+        BiasMax = 0.00045;
+    } else if (TextureSize <= 16384) {
+        BiasMax = 0.00025;
+    }
+    
+    float Bias = max(0.00 * (1.0 - dot(Object.Normal, LightDir)), BiasMax);//0.00225);
+    
+    
+    // Select Correct Filter Based On Selection Uniform
+    float Shadow;
+    if (ShadowFilterType_ == 0) { // No Filtering
+        Shadow = currentDepth - Bias > closestDepth  ? 1.0 : 0.0;
+    } else if (ShadowFilterType_ == 1) { // PCF Filtering
+        Shadow = PCFSampler(Bias, projCoords, Light.DepthMapIndex, currentDepth, ShadowFilterKernelSize_);
+    } else if (ShadowFilterType_ == 2) { // Poisson Filtering
+        Shadow = PoissonSampler(Bias, projCoords, Light.DepthMapIndex, currentDepth, ShadowFilterKernelSize_);
+    } else if (ShadowFilterType_ == 3) {
+        Shadow = StratifiedPoissonSampler(Bias, projCoords, Light.DepthMapIndex, currentDepth, ShadowFilterKernelSize_);
+    } else {
+        return 0.0f; // Return Failure, All Black)
+    }
+    
+    if (projCoords.z > 1.0) {
+        Shadow = 0.0f;
+    }
+
+    if (Shadow > 1.0f) {
+        Shadow = 1.0f;
+    } else if (Shadow < 0.0f) {
+        Shadow = 0.0f;
+    }
+
+
+    return 1.0f - Shadow;
+}
+
+
+
+
+
+
+vec3 GetNormalFromMap(sampler2D Normal) {
+
+    // Ensure That Textures Are Present/Valid, If Not, Provide Fallback
+    vec3 SampledColor = texture(Normal, Object.TexCoords).xyz;
+    if (!HasNormals || (SampledColor == vec3(0.0f))) {
+    SampledColor = vec3(0.5f, 0.5f, 1.0f);
+    }
+
+    // Use Texture Data To Calculate Normal Data
+    vec3 TangentNormal = SampledColor * 2.0f - 1.0f;
+
+    vec3 Q1 = dFdx(Object.WorldPos);
+    vec3 Q2 = dFdy(Object.WorldPos);
+    vec2 st1 = dFdx(Object.TexCoords);
+    vec2 st2 = dFdy(Object.TexCoords);
+
+    vec3 N = normalize(Object.Normal);
+    vec3 T = normalize(Q1*st2.t - Q2*st1.t);
+    vec3 B = -normalize(cross(N, T));
+    mat3 TBN = mat3(T,B,N);
+
+    return normalize(TBN * TangentNormal);
+}
+
+
+float DistributionGGX(vec3 N, vec3 H, float Roughness) {
+
+    float a = Roughness*Roughness;
+    float a2 = a*a;
+    float NdotH = max(dot(N,H), 0.0f);
+    float NdotH2 = NdotH*NdotH;
+    
+    float nom = a2;
+    float denom = (NdotH2 * (a2 - 1.0f) + 1.0f);
+    
+    return nom / denom;
+
+}
+// ----------------------------------------------------------------------------
+float GeometrySchlickGGX(float NdotV, float roughness)
+{
+    float r = (roughness + 1.0);
+    float k = (r*r) / 8.0;
+
+    float nom   = NdotV;
+    float denom = NdotV * (1.0 - k) + k;
+
+    return nom / denom;
+}
+// ----------------------------------------------------------------------------
+float GeometrySmith(vec3 N, vec3 V, vec3 L, float roughness)
+{
+    float NdotV = max(dot(N, V), 0.0);
+    float NdotL = max(dot(N, L), 0.0);
+    float ggx2 = GeometrySchlickGGX(NdotV, roughness);
+    float ggx1 = GeometrySchlickGGX(NdotL, roughness);
+
+    return ggx1 * ggx2;
+}
+// ----------------------------------------------------------------------------
+vec3 FresnelSchlick(float cosTheta, vec3 F0)
+{
+    return F0 + (1.0 - F0) * pow(clamp(1.0 - cosTheta, 0.0, 1.0), 5.0);
+}
+// ----------------------------------------------------------------------------
+
+
+
+
+
+
+// Used To Enable Gamma Correction On The Output
+vec4 GammaCorrectResult(vec4 Input, bool GammaEnabled) {
+    if (GammaEnabled) {
+        Input.rgb = pow(Input.rgb, vec3(1.0/Gamma_));
+    }
+    return Input;
+}
+
+
+// Used To Make Sure Textures Aren't Too Bright
+vec4 GammaCorrectTexture(sampler2D Texture, bool GammaEnabled) {
+    vec4 Color = texture(Texture, Object.TexCoords);
+    if (GammaEnabled) {
+        Color.rgb = pow(Color.rgb, vec3(Gamma_));
+    }
+    return Color;
+}
+
+
+
+
+STRUCT_SampledData SetSampledData() {
+    STRUCT_SampledData SampledData;
+    
+    // Handle Albedo/Diffuse Textures
+    SampledData.Albedo = GammaCorrectTexture(texture_diffuse1, GammaCorrectionEnabled_);
+
+    // Handle Metalness Textures
+    if (HasMetalness) {
+        SampledData.Metallic = texture(texture_metalness1, Object.TexCoords).r;
+    } else {
+        SampledData.Metallic = 0.0f;
+    }
+
+    // Handle Normal Textures
+    if (HasNormals) {
+        SampledData.Normal = GetNormalFromMap(texture_normals1);
+    } else {
+        SampledData.Normal = vec3(0.5f, 0.5f, 0.5f);
+    }
+
+    // Handle Shininess (Inverse Of Roughness)
+    if (HasShininess) {
+        SampledData.Roughness = texture(texture_shininess1, Object.TexCoords).r;
+
+    } else {
+        SampledData.Roughness = 0.0f;
+    }
+
+    // Handle Emissive Textures
+    if (HasEmissive) {
+        SampledData.Emissive = GammaCorrectTexture(texture_emissive1, GammaCorrectionEnabled_).rgb;
+    } else {
+        SampledData.Emissive = vec3(0.0f);
+    }
+
+
+    return SampledData;
+
+}
+
+
+
+
+
+
+vec3 PBRPointLight(STRUCT_PointLight Light, vec3 ViewDir, vec3 Reflectance, STRUCT_SampledData Model) {
+
+    // calculate per-light radiance
+    vec3 L = normalize(Light.Position - Object.WorldPos);
+    vec3 H = normalize(ViewDir + L);
+    float distance = length(Light.Position - Object.WorldPos);
+    float attenuation = 1.0 / (distance * distance);
+    vec3 radiance = Light.Color * Light.Intensity * attenuation;
+
+    // Cook-Torrance BRDF
+    float NDF = DistributionGGX(Model.Normal, H, Model.Roughness);   
+    float G   = GeometrySmith(Model.Normal, ViewDir, L, Model.Roughness);      
+    vec3 F    = FresnelSchlick(max(dot(H, ViewDir), 0.0), Reflectance);
+        
+    vec3 numerator    = NDF * G * F; 
+    float denominator = 4.0 * max(dot(Model.Normal, ViewDir), 0.0) * max(dot(Model.Normal, L), 0.0) + 0.0001; // + 0.0001 to prevent divide by zero
+    vec3 specular = numerator / denominator;
+    
+    // kS is equal to Fresnel
+    vec3 kS = F;
+    // for energy conservation, the diffuse and specular light can't
+    // be above 1.0 (unless the surface emits light); to preserve this
+    // relationship the diffuse component (kD) should equal 1.0 - kS.
+    vec3 kD = vec3(1.0) - kS;
+    // multiply kD by the inverse metalness such that only non-metals 
+    // have diffuse lighting, or a linear blend if partly metal (pure metals
+    // have no diffuse light).
+    kD *= 1.0 - Model.Metallic;	  
+
+    // scale light by NdotL
+    float NdotL = max(dot(Model.Normal, L), 0.0);
+    
+    // add to outgoing radiance Lo
+    return ((kD * Model.Albedo.rgb / PI + specular) * radiance * NdotL) * ShadowCalculation(Light);  // note that we already multiplied the BRDF by the Fresnel (kS) so we won't multiply by kS again
+
+
+}
+
+
+vec3 PBRSpotLight(STRUCT_SpotLight Light, vec3 ViewDir, vec3 Reflectance, STRUCT_SampledData Model) {
+
+    vec3 LightDirectionVector ;
+    if (HasNormals) {
+    LightDirectionVector = normalize(Object.TBN * Light.Position - Object.TangentFragPos);
+    } else {
+    LightDirectionVector = normalize(Light.Position - Object.FragPos);
+    }
+    vec3 ReflectionDirectionVector = reflect(-LightDirectionVector, Object.Normal);
+
+    // Calculate Spot Intensity
+    float Theta = dot(normalize(Light.Position  - Object.FragPos), normalize(-Light.Direction));
+    float Epsilon = (Light.RollOff);
+    float Intensity = clamp((Theta - Light.CutOff) / Epsilon, 0.0f, 1.0f);
+    
+    if (GammaCorrectionEnabled_) {
+        Intensity = pow(Intensity, Gamma_*Gamma_);
+    }
+
+    // calculate per-light radiance
+    vec3 L = normalize(Light.Position - Object.WorldPos);
+    vec3 H = normalize(ViewDir + L);
+    float LightDistance = length(Light.Position - Object.WorldPos);
+    float attenuation = 1.0 / (LightDistance * LightDistance);
+    vec3 radiance = Light.Color * Light.Intensity * attenuation;
+
+    // Cook-Torrance BRDF
+    float NDF = DistributionGGX(Model.Normal, H, Model.Roughness);   
+    float G   = GeometrySmith(Model.Normal, ViewDir, L, Model.Roughness);      
+    vec3 F    = FresnelSchlick(max(dot(H, ViewDir), 0.0), Reflectance);
+
+    vec3 numerator    = NDF * G * F; 
+    float denominator = 4.0 * max(dot(Model.Normal, ViewDir), 0.0) * max(dot(Model.Normal, L), 0.0) + 0.0001; // + 0.0001 to prevent divide by zero
+    vec3 specular = numerator / denominator;
+
+    // kS is equal to Fresnel
+    vec3 kS = F;
+    // for energy conservation, the diffuse and specular light can't
+    // be above 1.0 (unless the surface emits light); to preserve this
+    // relationship the diffuse component (kD) should equal 1.0 - kS.
+    vec3 kD = vec3(1.0) - kS;
+    // multiply kD by the inverse metalness such that only non-metals 
+    // have diffuse lighting, or a linear blend if partly metal (pure metals
+    // have no diffuse light).
+    kD *= 1.0 - Model.Metallic;	  
+
+    // scale light by NdotL
+    float NdotL = max(dot(Model.Normal, L), 0.0);        
+    
+    // Check Distance, And Roll Off According To Max Distance
+    float DistanceToEnd = Light.MaxDistance - LightDistance;
+    if (DistanceToEnd < 1.0f) {
+        Intensity = clamp(Intensity * (DistanceToEnd), 0.0f, 1.0f);
+    }
+
+    // add to outgoing radiance Lo
+    return ((kD * Model.Albedo.rgb / PI + specular) * radiance * NdotL * Intensity) * ShadowCalculation(Light);  // note that we already multiplied the BRDF by the Fresnel (kS) so we won't multiply by kS again
+
+}
+
+
+vec3 PBRDirectionalLight(STRUCT_DirectionalLight Light, vec3 ViewDir, vec3 Reflectance, STRUCT_SampledData Model) {
+    
+    vec3 LightDirectionVector = normalize(-Light.Direction);
+    vec3 ReflectionDirectionVector = reflect(-LightDirectionVector, Model.Normal);
+
+    // Diffuse/Specular Components
+    float Diffuse = max(dot(Model.Normal, LightDirectionVector), 0.0f);
+    float Specular = pow(max(dot(ViewDir, ReflectionDirectionVector), 0.0f), Model.Roughness);
+
+    // calculate per-light radiance
+    vec3 L = normalize(Light.Direction);
+    vec3 H = normalize(ViewDir + L);
+    vec3 radiance = Light.Color * Light.Intensity;
+
+    // Cook-Torrance BRDF
+    float NDF = DistributionGGX(Model.Normal, H, Model.Roughness);   
+    float G   = GeometrySmith(Model.Normal, ViewDir, L, Model.Roughness);      
+    vec3 F    = FresnelSchlick(max(dot(H, ViewDir), 0.0), Reflectance);
+        
+    vec3 numerator    = NDF * G * F; 
+    float denominator = 4.0 * max(dot(Model.Normal, ViewDir), 0.0) * max(dot(Model.Normal, L), 0.0) + 0.0001; // + 0.0001 to prevent divide by zero
+    vec3 specular = numerator / denominator;
+    
+    // kS is equal to Fresnel
+    vec3 kS = F;
+    // for energy conservation, the diffuse and specular light can't
+    // be above 1.0 (unless the surface emits light); to preserve this
+    // relationship the diffuse component (kD) should equal 1.0 - kS.
+    vec3 kD = vec3(1.0) - kS;
+    // multiply kD by the inverse metalness such that only non-metals 
+    // have diffuse lighting, or a linear blend if partly metal (pure metals
+    // have no diffuse light).
+    kD *= 1.0 - Model.Metallic;	  
+
+    // scale light by NdotL
+    float NdotL = max(dot(Model.Normal, L), 0.0);        
+
+    // add to outgoing radiance Lo
+    return ((kD * Model.Albedo.rgb / PI + specular) * radiance * NdotL) * ShadowCalculation(Light);  // note that we already multiplied the BRDF by the Fresnel (kS) so we won't multiply by kS again
+
+
+}
+
+
+void main() {
+
+    // Get Model Parameters
+    STRUCT_SampledData Model = SetSampledData();
+    vec3 ViewDir = normalize(CameraPosition - Object.WorldPos);
+
+    // calculate reflectance at normal incidence; if dia-electric (like plastic) use F0 
+    // of 0.04 and if it's a metal, use the albedo color as F0 (metallic workflow)    
+    vec3 Reflectance = vec3(0.04); 
+    Reflectance = mix(Reflectance, Model.Albedo.rgb, Model.Metallic);
+
+
+    // ---- Calculate Lighting Contributions ---- //
+    vec3 Lo = vec3(0.0f);
+
+    // Calculate Directional Lights
+    for (int i = 0; i < NumberDirectionalLights; i++) {
+        Lo += PBRDirectionalLight(DirectionalLights[i], ViewDir, Reflectance, Model);
+    }
+
+    // Calculate Point Lights
+    for (int i = 0; i < NumberPointLights; i++) {
+        Lo += PBRPointLight(PointLights[i], ViewDir, Reflectance, Model);// *  ShadowCalculation(PointLights[i].LightSpaceMatrix, PointLights[i].Position, PointLights[i].DepthMapIndex);
+    }
+
+    // Calculate Spot Lights
+    for(int i = 0; i < NumberSpotLights; ++i) {
+        Lo += PBRSpotLight(SpotLights[i], ViewDir, Reflectance, Model);
+    }
+
+    // ambient lighting (note that the next IBL tutorial will replace 
+    // this ambient lighting with environment lighting).
+    vec4 Ambient = vec4(0.03) * Model.Albedo * Model.AO;
+    vec4 Color = Ambient + vec4(Lo, Model.Albedo.a);
+
+
+    // Add Emissive Texture
+    if (HasEmissive) {
+        Color.rgb += Model.Emissive;
+    }
+
+    // Apply Gamma Correction
+    if (HDREnabled_) {
+        vec3 Mapped = vec3(1.0f) - exp(-Color.xyz * Exposure_);
+        FragColor = GammaCorrectResult(vec4(Mapped, Color.a), GammaCorrectionEnabled_);
+    } else {
+        FragColor = GammaCorrectResult(Color, GammaCorrectionEnabled_);
+    }
+    
+    
+    
+    //FragColor = vec4(vec3(1.0f - ShadowCalculation(Object.FragPosLightSpace, DirectionalLights[0].Direction)), 1.0f);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

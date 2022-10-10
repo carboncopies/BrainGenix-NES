@@ -1,0 +1,87 @@
+######################################################
+# Color Configuration File For BrainGenix-ERS Editor #
+######################################################
+
+# System Base Color
+EditorBackgroundColor: [0, 0, 0]
+
+# Curve Precision
+CurveTessellationTolerance: 1.0
+CircleTessellationMaxError: 0.2
+
+# Where To Put Window Title Text
+WindowTitlePosition: 0.50
+
+# Borders
+WindowBorderSize: 2
+ChildBorderSize: 1
+PopupBorderSize: 1
+FrameBorderSize: 1
+TabBorderSize: 1
+
+# Rounding Sections
+WindowRounding: 4
+ChildRounding: 4
+FrameRounding: 4
+PopupRounding: 4
+ScrollbarRounding: 4
+GrabRounding: 4
+LogSliderDeadzone: 4
+TabRounding: 4
+
+
+# Note: You MUST Populate The Alpha Value!
+# FORMAT:                     R,   G    B    A    
+TextColor:                   [255, 255, 255, 255]
+DisabledTextColor:           [200, 200, 200, 180]
+TextSelectedBackgroundColor: [200, 200, 200, 1255]
+
+WindowBackgroundColor: [0, 0, 0, 255]
+ChildBackgroundColor:  [15, 15, 15, 255]
+PopupBackgroundColor:  [30, 30, 30, 255]
+
+BorderColor:       [120, 0, 255, 255]
+BorderShadowColor: [120, 9, 169, 255]
+
+FrameBackgroundColor:        [0, 0, 0, 255]
+FrameBackgroundHoveredColor: [0, 128, 175, 255]
+FrameBackgroundActiveColor:  [0, 150, 50, 255]
+
+TitleBackgroundColor:          [0, 100, 0, 255]
+TitleBackgroundCollapsedColor: [0, 75, 0, 255]
+TitleBackgroundActiveColor:    [0, 150, 0, 255]
+
+TitleBarColor: [0, 0, 0, 255]
+
+ScrollbarBackgroundColor: [25, 25, 25, 255]
+ScrollbarGrabColor:       [0, 75, 0, 255]
+ScrollbarHoveredColor:    [0, 150, 0, 255]
+ScrollbarActiveColor:     [180, 90, 0, 255]
+
+CheckmarkColor: [0, 180, 180, 255]
+
+SliderGrabColor:       [200, 200, 200, 255]
+SliderGrabActiveColor: [175, 175, 175, 255]
+
+ButtonColor:        [0, 0, 0, 255]
+ButtonHoveredColor: [0, 128, 175, 255]
+ButtonActiveColor:  [0, 150, 50, 255]
+
+HeaderColor:        [50, 0, 140, 255]
+HeaderHoveredColor: [0, 128, 175, 255]
+HeaderActiveColor:  [0, 150, 50, 255]
+
+SeperatorColor: [100, 0, 255, 255]
+
+ResizeColor:        [100, 0, 200, 255]
+ResizeHoveredColor: [0, 255, 255, 255]
+ResizeActiveColor:  [255, 175, 0, 255]
+
+DockingPreview: [100, 0, 255, 180]
+DockingEmptyBackground: [0, 0, 0, 255]
+
+PlotLinesColor: [200, 0, 200, 255]
+PlotLinesHoveredColor: [200, 200, 0, 255]
+
+PlotHistogramColor: [200, 0, 200, 255]
+PlotHistogramHoveredColor: [200, 200, 0, 255]
