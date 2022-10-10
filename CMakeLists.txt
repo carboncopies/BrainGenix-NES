@@ -63,9 +63,6 @@ include(${CMAKE_BUILD_UTILS_DIR}/MeshOptimizer.cmake)
 # Add LIBRARY INTERFACE SUBDIRECTORIES
 ERSBuildLogger(${Green} "Configuring Library Interfaces")
 
-add_subdirectory(${SRC_DIR}/Interface/Library/MeshOptimizerInterface)
-message("-- Configured MeshOptimizer Interface")
-
 ERSBuildLogger(${BoldGreen} "Finished Configuring Library Interfaces")
 
 
@@ -80,85 +77,17 @@ ERSBuildLogger(${Green} "Configuring Internal Libraries")
 
 add_subdirectory(${SRC_DIR}/Internal/LoggingSystem)
 message("-- Configured Internal Library 'LoggingSystem'")
-add_subdirectory(${SRC_DIR}/Internal/OpenGLLoggingSystem)
-message("-- Configured Internal Library 'OpenGLLoggingSystem'")
 add_subdirectory(${SRC_DIR}/Internal/ArgumentParser)
 message("-- Configured Internal Library 'ArgumentParser'")
-add_subdirectory(${SRC_DIR}/Internal/GPURequest)
-message("-- Configured Internal Library 'GPURequest'")
 add_subdirectory(${SRC_DIR}/Internal/HardwareInformation)
 message("-- Configured Internal Library 'HardwareInformation'")
-add_subdirectory(${SRC_DIR}/Internal/InputOutputSubsystem)
-message("-- Configured Internal Library 'InputOutputSubsystem'")
-add_subdirectory(${SRC_DIR}/Internal/ExternalModelLoader)
-message("-- Configured Internal Library 'ExternalModelLoader'")
-add_subdirectory(${SRC_DIR}/Internal/ModelImporter)
-message("-- Configured Internal Library 'ModelImporter'")
-
 
 ERSBuildLogger(${BoldGreen} "Finished Configuring Internal Libraries")
 
-
 # ADD CORE SUBDIRECTORIES
 ERSBuildLogger(${Green} "Configuring Core Subsystems")
-add_subdirectory(${SRC_DIR}/Core/Manager/ERS_FramerateManager)
-add_subdirectory(${SRC_DIR}/Core/Manager/ERS_SceneManager)
-add_subdirectory(${SRC_DIR}/Core/Manager/ERS_ProjectManager)
-add_subdirectory(${SRC_DIR}/Core/Manager/ERS_ControllerManager)
-
-add_subdirectory(${SRC_DIR}/Core/Editor/)
-add_subdirectory(${SRC_DIR}/Core/Editor/Utils/ERS_Editor_ThemeManager)
-add_subdirectory(${SRC_DIR}/Core/Editor/Utils/ERS_Editor_FontManager)
-add_subdirectory(${SRC_DIR}/Core/Editor/Utils/ERS_Editor_UserProfileManager)
-add_subdirectory(${SRC_DIR}/Core/Editor/Utils/ERS_Editor_LayoutManager)
-add_subdirectory(${SRC_DIR}/Core/Editor/Utils/ERS_Editor_3DCursor)
-add_subdirectory(${SRC_DIR}/Core/Editor/Utils/ERS_Editor_WindowManager)
-add_subdirectory(${SRC_DIR}/Core/Editor/Windows)
-add_subdirectory(${SRC_DIR}/Core/Editor/Menus)
-
-add_subdirectory(${SRC_DIR}/Core/Renderer/ERS_CLASS_RendererManager)
-add_subdirectory(${SRC_DIR}/Core/Renderer/ERS_CLASS_VisualRenderer)
-
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_Camera)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_SceneCamera)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_HumanInputDeviceUtils)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_Mesh)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_Model)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_Texture)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_TextureLevel)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_Vertex)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_Scene)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_Shader)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_HardwareInfo)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_LocRotScale)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_IOData)
 add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_SystemUtils)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_ProjectUtils)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_Project)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_ControllerSettings)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_ModelWriterData)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_ShaderProgramAssetIDs)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_Viewport)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_Light)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_OpenGLDefaults)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_SceneObject)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_Script)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_DepthMap)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_RendererSettings)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_ShaderUniformData)
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_ModelImportOptions)
 
-add_subdirectory(${SRC_DIR}/Core/Script/ERS_CLASS_PythonInterpreterIntegration)
-
-add_subdirectory(${SRC_DIR}/Core/Loader/ERS_SceneLoader)
-add_subdirectory(${SRC_DIR}/Core/Loader/ERS_ShaderLoader)
-add_subdirectory(${SRC_DIR}/Core/Loader/ERS_ProjectLoader)
-add_subdirectory(${SRC_DIR}/Core/Loader/ERS_ModelLoader)
-add_subdirectory(${SRC_DIR}/Core/Loader/ERS_ControllerSettingsLoader)
-
-add_subdirectory(${SRC_DIR}/Core/Writers/ERS_SceneWriter)
-add_subdirectory(${SRC_DIR}/Core/Writers/ERS_ModelWriter)
-add_subdirectory(${SRC_DIR}/Core/Writers/ERS_ProjectWriter)
 ERSBuildLogger(${BoldGreen} "Finished Configuring Core Subsystems")
 
 
