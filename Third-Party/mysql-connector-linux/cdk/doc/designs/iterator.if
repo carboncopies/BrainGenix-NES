@@ -1,5 +1,0 @@
-interface Iterator {
-  Iterate over sequence of items
-  --
-  next() : bool
-}
