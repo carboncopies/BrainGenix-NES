@@ -52,6 +52,7 @@ ERSBuildLogger(${BoldGreen} "Finished Configuring Library Interfaces")
 ERSBuildLogger(${Green} "Configuring Structure Interfaces")
 
 add_subdirectory(${SRC_DIR}/Internal/Structs/SystemUtils)
+message("-- Configured Internal Interface 'SystemUtils'")
 
 
 ERSBuildLogger(${BoldGreen} "Finished Configuring Structure Interfaces")
