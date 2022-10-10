@@ -208,8 +208,4 @@ file(COPY "${CMAKE_ASSETS_DIR}/" DESTINATION "${BIN_DIR}/EditorAssets")
 file(COPY "${CMAKE_ASSETS_DIR}/DefaultLayout/imgui.ini" DESTINATION "${BIN_DIR}")
 
 # Set Configuration Based On Platform
-if (WIN32 OR APPLE)
-  configure_file("${SRC_DIR}/Config-Windows.yaml" "${BIN_DIR}/Config.yaml" COPYONLY)
-else()
-  configure_file("${SRC_DIR}/Config-Linux.yaml" "${BIN_DIR}/Config.yaml" COPYONLY)
-endif()
+configure_file("${SRC_DIR}/Config.yaml" "${BIN_DIR}/Config.yaml" COPYONLY)
