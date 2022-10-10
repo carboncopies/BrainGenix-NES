@@ -203,9 +203,6 @@ target_link_libraries(${PROJECT_NAME}
   Renderer
   )
 
-# COPY FILES TO BINARY DIR
-file(COPY "${CMAKE_ASSETS_DIR}/" DESTINATION "${BIN_DIR}/EditorAssets")
-file(COPY "${CMAKE_ASSETS_DIR}/DefaultLayout/imgui.ini" DESTINATION "${BIN_DIR}")
 
 # Set Configuration Based On Platform
 configure_file("${SRC_DIR}/Config.yaml" "${BIN_DIR}/Config.yaml" COPYONLY)
