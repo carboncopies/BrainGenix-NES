@@ -51,6 +51,9 @@ ERSBuildLogger(${BoldGreen} "Finished Configuring Library Interfaces")
 # ADD STRUCT INTERFACE SUBDIRECTORIES
 ERSBuildLogger(${Green} "Configuring Structure Interfaces")
 
+add_subdirectory(${SRC_DIR}/Internal/Structs/SystemUtils)
+
+
 ERSBuildLogger(${BoldGreen} "Finished Configuring Structure Interfaces")
 
 
@@ -68,7 +71,6 @@ ERSBuildLogger(${BoldGreen} "Finished Configuring Internal Libraries")
 
 # ADD CORE SUBDIRECTORIES
 ERSBuildLogger(${Green} "Configuring Core Subsystems")
-add_subdirectory(${SRC_DIR}/Core/Structures/ERS_STRUCT_SystemUtils)
 
 ERSBuildLogger(${BoldGreen} "Finished Configuring Core Subsystems")
 

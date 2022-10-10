@@ -38,7 +38,7 @@ int main(int NumArguments, char** ArguemntValues) {
     SystemUtils->Logger_->Log("Initialized Logging System", 5);
 
     // Handle Command Line Arguments
-    BrainGenix::ERS::Module::ArgumentParser ArgumentParser = BrainGenix::ERS::Module::ArgumentParser(SystemUtils->Logger_.get());
+    BrainGenix::ERS::Module::ArgumentParser ArgumentParser = BrainGenix::NES::Module::ArgumentParser(SystemUtils->Logger_.get());
     ArgumentParser.ParseArguments(NumArguments, ArguemntValues);
     SystemUtils->ArgumentString_ = ArgumentParser.GetArgumentString();
     SystemUtils->Arguments_ = ArgumentParser.GetArgumentPairs();
@@ -71,56 +71,6 @@ int main(int NumArguments, char** ArguemntValues) {
     SystemUtils->ERS_CLASS_PythonInterpreterIntegration_ = std::make_unique<ERS_CLASS_PythonInterpreterIntegration>(
         SystemUtils->Logger_.get()
     );
-
-    SystemUtils->RendererSettings_ = std::make_unique<ERS_STRUCT_RendererSettings>();
-
-
-    // Create ProjectUtils Struct
-    SystemUtils->Logger_->Log("Setting Up Project Utilities Structure", 3);
-    std::unique_ptr<ERS_STRUCT_ProjectUtils> ProjectUtils = std::make_unique<ERS_STRUCT_ProjectUtils>();
-
-    // Setup Loaders
-    SystemUtils->Logger_->Log("Instantiating Scene Manager Shared Pointer", 4);
-    ProjectUtils->SceneManager_ = std::make_unique<ERS_CLASS_SceneManager>(SystemUtils->Logger_.get());
-
-    SystemUtils->Logger_->Log("Instantiating Model Loader Shared Pointer", 4);
-    ProjectUtils->ModelLoader_ = std::make_unique<ERS_CLASS_ModelLoader>(SystemUtils.get());
-
-    SystemUtils->Logger_->Log("Instantiating Scene Loader Shared Pointer", 4);
-    ProjectUtils->SceneLoader_ = std::make_unique<ERS_CLASS_SceneLoader>(SystemUtils.get(), ProjectUtils->ModelLoader_.get());
-
-    SystemUtils->Logger_->Log("Instantiating ERS Project Loader Pointer", 4);
-    ProjectUtils->ProjectLoader_ = std::make_unique<ERS_CLASS_ProjectLoader>(SystemUtils.get());
-
-    SystemUtils->Logger_->Log("Instantiating ERS Project Writer Pointer", 4);
-    ProjectUtils->ProjectWriter_ = std::make_unique<ERS_CLASS_ProjectWriter>(SystemUtils.get());
-
-    SystemUtils->Logger_->Log("Instantiating ERS Project Manager Pointer", 4);
-    ProjectUtils->ProjectManager_ = std::make_unique<ERS_CLASS_ProjectManager>(SystemUtils.get(), ProjectUtils->ProjectLoader_.get(), ProjectUtils->ProjectWriter_.get(), ProjectUtils->SceneManager_.get(), ProjectUtils->SceneLoader_.get());
-
-    SystemUtils->Logger_->Log("Instantiating ERS Model Importer", 4);
-    ProjectUtils->ModelImporter_ = std::make_unique<ERS_ModelImporter>(SystemUtils.get());
-
-
-    // Setup Human Input Devices
-    SystemUtils->Logger_->Log("Setting Up Human Input Device Managers", 5);
-
-    // Create Struct
-    std::unique_ptr<ERS_STRUCT_HumanInputDeviceUtils> HIDUtils = std::make_unique<ERS_STRUCT_HumanInputDeviceUtils>();
-
-    // Setup Controller Manager
-    SystemUtils->Logger_->Log("Instantiating ERS Controller Input Manager", 5);
-    HIDUtils->ControllerInputManager = std::make_unique<ERS_CLASS_ControllerInputManager>(SystemUtils.get());
-
-    // VR Driver here?
-
-    // More????
-
-    SystemUtils->Logger_->Log("Finished Setting Up Human Input Device Managers", 5);    
-
-
-    // Instantiate RendererManager
-    RendererManager sERSRendererManager(SystemUtils.get(), ProjectUtils.get(), HIDUtils.get());
 
 
     ERS_LogSystemInfo(SystemUtils->Logger_.get());
@@ -167,5 +117,3 @@ int main(int NumArguments, char** ArguemntValues) {
 
 }
 
-// TODO: Add script editor
-// add functions to duplicate scripts, etc.
