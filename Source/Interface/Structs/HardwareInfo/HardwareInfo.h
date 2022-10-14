@@ -12,6 +12,11 @@
 // Internal Libraries (BG convention: use <> instead of "")
 
 
+namespace BrainGenix {
+namespace NES {
+namespace Interface {
+
+
 
 /**
  * @brief This structure is used to store static hardware information.
@@ -83,3 +88,6 @@ struct HardwareInfo {
 };
 
 
+}
+}
+}

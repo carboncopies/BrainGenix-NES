@@ -14,6 +14,11 @@
 #include <HardwareInformation.h>
 
 
+namespace BrainGenix {
+namespace NES {
+namespace Interface {
+
+
 
 /**
  * @brief The System utils struct contains most system utils prepopulated as shared pointers within.
@@ -33,3 +38,7 @@ struct SystemUtils {
 
 };
 
+
+}
+}
+}
