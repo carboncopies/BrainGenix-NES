@@ -21,7 +21,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <ERS_LoggingSystem.h>
-#include <ERS_STRUCT_HardwareInfo.h>
+#include <HardwareInfo.h>
 
 
 /**
@@ -34,7 +34,7 @@ class ERS_HardwareInformation {
 
         // Class Instances
         ERS_LoggingSystem* Logger_; /**<Instance Of Logging System*/
-        ERS_STRUCT_HardwareInfo HardwareInfo_; /**<Internal Hardware Information Struct*/
+        HardwareInfo HardwareInfo_; /**<Internal Hardware Information Struct*/
 
         // Config
         YAML::Node SystemConfiguration_; /**MSystem Configuration*/
@@ -77,9 +77,9 @@ class ERS_HardwareInformation {
         /**
          * @brief Get the HardwareInfo Object
          * 
-         * @return ERS_STRUCT_HardwareInfo 
+         * @return HardwareInfo 
          */
-        ERS_STRUCT_HardwareInfo GetHWInfo();
+        HardwareInfo GetHWInfo();
 
 
 };

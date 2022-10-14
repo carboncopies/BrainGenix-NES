@@ -27,7 +27,7 @@ target_link_libraries(ERS_HardwareInformation
 
     ERS_LoggingSystem
 
-    ERS_STRUCT_HardwareInfo
+    HardwareInfo
 
     )
 

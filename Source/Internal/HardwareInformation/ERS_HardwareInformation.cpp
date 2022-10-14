@@ -127,7 +127,7 @@ std::thread ERS_HardwareInformation::SpawnThread() {
 
 }
 
-ERS_STRUCT_HardwareInfo ERS_HardwareInformation::GetHWInfo() {
+HardwareInfo ERS_HardwareInformation::GetHWInfo() {
     return HardwareInfo_;
 }
 

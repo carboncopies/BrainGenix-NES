@@ -75,7 +75,7 @@ struct DynamicHardwareInfo {
  * @brief This structure is used as a container for static and dynamic hardware info structs.
  * 
  */
-struct ERS_STRUCT_HardwareInfo {
+struct HardwareInfo {
 
     // Set Dynamic, Static Info
     StaticHardwareInfo Static_; /**<Structure To Store Static Hardware Information*/
