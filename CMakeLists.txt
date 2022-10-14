@@ -83,6 +83,7 @@ add_executable(${PROJECT_NAME} ${SRC_DIR}/Main.cpp ${BACKWARD_ENABLE})
 target_link_libraries(${PROJECT_NAME}
 
   ERS_ArgumentParser
+  ERS_HardwareUtils
 
   ERS_STRUCT_SystemUtils
 
