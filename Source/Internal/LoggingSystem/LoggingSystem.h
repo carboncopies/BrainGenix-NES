@@ -20,7 +20,7 @@
 #include <yaml-cpp/yaml.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <ERS_RGBColor.h>
+#include <RGBColor.h>
 
 
 /**
@@ -46,7 +46,7 @@ private:
     std::mutex LogMutex_; /**<Used to ensure thread safety during vector operations*/
 
 
-    std::map<int, ERS_RGBColor> ColorLookup_; /*!< Lookup for converting log level to RGB values (stored in RGBColor struct). Populated based on values stored in Config.yaml */
+    std::map<int, RGBColor> ColorLookup_; /*!< Lookup for converting log level to RGB values (stored in RGBColor struct). Populated based on values stored in Config.yaml */
     std::map<int, std::string> LogNameLookup_; /*!< Lookup for converting log level to name of log level (See Config.yaml for values). */
 
 private:
@@ -75,7 +75,7 @@ public:
     std::vector<std::string> FullLogMessages_; /**<Full Messages*/
     std::vector<int> LogLevels_; /**<List of Log Levels*/
     std::vector<std::string> LogTimes_; /**<List Of Times*/
-    std::vector<ERS_RGBColor> LogColors_; /**<List of Colors For Messages*/
+    std::vector<RGBColor> LogColors_; /**<List of Colors For Messages*/
 
 
 public: 

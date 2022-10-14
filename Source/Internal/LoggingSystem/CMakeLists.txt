@@ -8,12 +8,12 @@ add_library(LoggingSystem
 
             # Add Source Files (.cpp)
             "LoggingSystem.cpp"
-            "ERS_RGBColor.cpp"
+            "RGBColor.cpp"
             "ERS_LogSystemInfo.cpp"
 
             # Add Header Files (.h)
             "LoggingSystem.h"
-            "ERS_RGBColor.h"
+            "RGBColor.h"
             "ERS_LogSystemInfo.h"
 
             

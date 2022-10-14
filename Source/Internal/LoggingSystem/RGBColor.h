@@ -16,7 +16,7 @@
  * @brief This class stores an rgb color value.
  * 
  */
-struct ERS_RGBColor {
+struct RGBColor {
 
     int Red; /**<Red Component*/
     int Green; /**<Green Component*/
