@@ -22,6 +22,12 @@
 #include <RGBColor.h>
 
 
+
+namespace BrainGenix {
+namespace NES {
+namespace Module {
+
+
 /**
  * @brief Main Logging System, Saves Logs To Database/Text File If Configured To.
  */
@@ -117,3 +123,6 @@ public:
 };
 
 
+}
+}
+}

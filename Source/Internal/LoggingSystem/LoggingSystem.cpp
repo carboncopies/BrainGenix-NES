@@ -159,3 +159,7 @@ void LoggingSystem::ColorizeText(std::string Message, int LogLevel) {
     // Print Output To COUT
     std::cout << ColorString;
 }
+
+}
+}
+}
