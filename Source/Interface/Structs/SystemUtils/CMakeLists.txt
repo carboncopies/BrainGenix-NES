@@ -23,7 +23,7 @@ target_link_libraries(SystemUtils
 target_link_libraries(SystemUtils
 
     ERS_LoggingSystem
-    ERS_HardwareInformation
+    HardwareInformation
 
     )
 

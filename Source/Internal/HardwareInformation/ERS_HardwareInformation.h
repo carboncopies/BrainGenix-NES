@@ -28,7 +28,7 @@
  * @brief Create Hardware Information Class
  * 
  */
-class ERS_HardwareInformation {
+class HardwareInformation {
 
     private:
 
@@ -65,13 +65,13 @@ class ERS_HardwareInformation {
          * @param Logger 
          * @param SystemConfig 
          */
-        ERS_HardwareInformation(ERS_LoggingSystem* Logger, YAML::Node SystemConfig);
+        HardwareInformation(ERS_LoggingSystem* Logger, YAML::Node SystemConfig);
 
         /**
          * @brief Destroy the Hardware Information object
          * 
          */
-        ~ERS_HardwareInformation();
+        ~HardwareInformation();
 
 
         /**
