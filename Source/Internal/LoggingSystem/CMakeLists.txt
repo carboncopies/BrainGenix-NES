@@ -29,7 +29,7 @@ target_link_libraries(ERS_LoggingSystem
 target_link_libraries(ERS_LoggingSystem
     ERS_VersioningSystem
     ERS_CompileTimeStamp
-    ERS_CompilePlatformInfo
+    CompilePlatformInfo
     )
 
 if (WIN32) 

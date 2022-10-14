@@ -13,7 +13,7 @@
 #include <ERS_LoggingSystem.h>
 
 #include <ERS_Version.h>
-#include <ERS_CompilePlatformInfo.h>
+#include <CompilePlatformInfo.h>
 #include <ERS_CompileTimeStamp.h>
 
 
