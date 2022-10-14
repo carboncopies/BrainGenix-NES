@@ -4,23 +4,23 @@
 
 
 # Create Library (Name Should Be Parent Dir Name)
-add_library(ERS_STRUCT_SystemUtils
+add_library(SystemUtils
 
             # Add Source Files (.cpp)
-            "ERS_STRUCT_SystemUtils.cpp"
+            "SystemUtils.cpp"
 
             # Add Header Files (.h)
-            "ERS_STRUCT_SystemUtils.h"
+            "SystemUtils.h"
             
             ${BACKWARD_ENABLE}
             )
 
 # Link 3rd Party Libs
-target_link_libraries(ERS_STRUCT_SystemUtils
+target_link_libraries(SystemUtils
     )
 
 # Link Internal Libs
-target_link_libraries(ERS_STRUCT_SystemUtils
+target_link_libraries(SystemUtils
 
     ERS_LoggingSystem
     ERS_HardwareInformation
@@ -28,4 +28,4 @@ target_link_libraries(ERS_STRUCT_SystemUtils
     )
 
 
-target_include_directories(ERS_STRUCT_SystemUtils PUBLIC ./)
+target_include_directories(SystemUtils PUBLIC ./)

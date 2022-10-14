@@ -86,7 +86,7 @@ target_link_libraries(${PROJECT_NAME}
 
   ERS_ArgumentParser
 
-  ERS_STRUCT_SystemUtils
+  SystemUtils
 
   )
 

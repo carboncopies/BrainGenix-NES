@@ -19,7 +19,7 @@
 #include <ERS_HardwareInformation.h>
 #include <ERS_ArgumentParser.h>
 
-#include <ERS_STRUCT_SystemUtils.h>
+#include <SystemUtils.h>
 
 
 

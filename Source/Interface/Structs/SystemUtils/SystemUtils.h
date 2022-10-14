@@ -20,7 +20,7 @@
  * @brief The System utils struct contains most system utils prepopulated as shared pointers within.
  * 
  */
-struct ERS_STRUCT_SystemUtils {
+struct SystemUtils {
 
 
     std::vector<std::pair<std::string, std::string>> Arguments_; /**<Pair of key and value arguments used to launch the program*/
