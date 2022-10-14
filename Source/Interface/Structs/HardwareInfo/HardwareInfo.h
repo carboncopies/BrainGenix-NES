@@ -22,7 +22,7 @@ namespace Interface {
  * @brief This structure is used to store static hardware information.
  * 
  */
-struct StaticHardwareInfo {
+struct StaticInterface::HardwareInfo {
 
     // System Info
     std::string KernelName; /**<Name of OS Kernel*/
@@ -61,7 +61,7 @@ struct StaticHardwareInfo {
  * @brief This structure is used to store dynamically changing hardware information.
  * 
  */
-struct DynamicHardwareInfo {
+struct DynamicInterface::HardwareInfo {
 
     // Memory Info
     unsigned long long PhysicalMemoryCapacity; /**<Get Amount Of Memory In System*/
@@ -79,11 +79,11 @@ struct DynamicHardwareInfo {
  * @brief This structure is used as a container for static and dynamic hardware info structs.
  * 
  */
-struct HardwareInfo {
+struct Interface::HardwareInfo {
 
     // Set Dynamic, Static Info
-    StaticHardwareInfo Static_; /**<Structure To Store Static Hardware Information*/
-    DynamicHardwareInfo Dynamic_; /**<Structure To Store Dynamic Hardware Information*/
+    StaticInterface::HardwareInfo Static_; /**<Structure To Store Static Hardware Information*/
+    DynamicInterface::HardwareInfo Dynamic_; /**<Structure To Store Dynamic Hardware Information*/
 
 };
 

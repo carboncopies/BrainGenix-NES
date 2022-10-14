@@ -130,7 +130,7 @@ std::thread HardwareInformation::SpawnThread() {
 
 }
 
-HardwareInfo HardwareInformation::GetHWInfo() {
+Interface::HardwareInfo HardwareInformation::GetHWInfo() {
     return HardwareInfo_;
 }
 

@@ -42,7 +42,7 @@ class HardwareInformation {
 
         // Class Instances
         LoggingSystem* Logger_; /**<Instance Of Logging System*/
-        HardwareInfo HardwareInfo_; /**<Internal Hardware Information Struct*/
+        Interface::HardwareInfo HardwareInfo_; /**<Internal Hardware Information Struct*/
 
         // Config
         YAML::Node SystemConfiguration_; /**MSystem Configuration*/
@@ -83,11 +83,11 @@ class HardwareInformation {
 
 
         /**
-         * @brief Get the HardwareInfo Object
+         * @brief Get the Interface::HardwareInfo Object
          * 
-         * @return HardwareInfo 
+         * @return Interface::HardwareInfo 
          */
-        HardwareInfo GetHWInfo();
+        Interface::HardwareInfo GetHWInfo();
 
 
 };
