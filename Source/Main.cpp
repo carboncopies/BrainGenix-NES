@@ -24,6 +24,7 @@
 
 int main(int NumArguments, char** ArguemntValues) {
 
-    return 0;
+    // Setup Main System Struct
+    BG::NES::SystemUtils SystemUtils = SystemUtils();
 
 }

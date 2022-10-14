@@ -5,7 +5,7 @@
 
 
 namespace BrainGenix {
-namespace ERS {
+namespace NES {
 namespace Module {
 
 
