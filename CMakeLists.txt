@@ -55,8 +55,8 @@ ERSBuildLogger(${Green} "Configuring Structure Interfaces")
 
 add_subdirectory(${SRC_DIR}/Interface/Structs/SystemUtils)
 message("-- Configured Internal Interface 'SystemUtils'")
-add_subdirectory(${SRC_DIR}/Interface/Structs/HardwareInformation)
-message("-- Configured Internal Interface 'HardwareInformation'")
+add_subdirectory(${SRC_DIR}/Interface/Structs/HardwareInfo)
+message("-- Configured Internal Interface 'HardwareInfo'")
 
 
 ERSBuildLogger(${BoldGreen} "Finished Configuring Structure Interfaces")
