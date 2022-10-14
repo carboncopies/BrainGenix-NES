@@ -4,6 +4,10 @@
 #include <HardwareInformation.h>
 
 
+namespace BrainGenix {
+namespace NES {
+namespace Module {
+
 
 HardwareInformation::HardwareInformation(LoggingSystem* Logger, YAML::Node SystemConfig) {
 
@@ -230,4 +234,8 @@ const char* HardwareInformation::gpu_vendor_name(iware::gpu::vendor_t vendor) no
 		default:
 			return "Unknown";
 	}
+}
+
+}
+}
 }

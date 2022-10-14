@@ -23,6 +23,15 @@
 #include <HardwareInfo.h>
 
 
+
+
+
+namespace BrainGenix {
+namespace NES {
+namespace Module {
+
+
+
 /**
  * @brief Create Hardware Information Class
  * 
@@ -82,3 +91,7 @@ class HardwareInformation {
 
 
 };
+
+}
+}
+}

@@ -4,6 +4,10 @@
 #include <LoggingSystem.h>
 
 
+namespace BrainGenix {
+namespace NES {
+namespace Module {
+
 
 LoggingSystem::LoggingSystem(YAML::Node SystemConfiguration) {
 
