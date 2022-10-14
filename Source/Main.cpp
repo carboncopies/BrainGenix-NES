@@ -25,6 +25,6 @@
 int main(int NumArguments, char** ArguemntValues) {
 
     // Setup Main System Struct
-    BG::NES::SystemUtils SystemUtils = SystemUtils();
+    BG::NES::Interface::SystemUtils SystemUtils = BG::NES::Interface::SystemUtils();
 
 }

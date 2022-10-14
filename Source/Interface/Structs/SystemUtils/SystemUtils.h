@@ -33,7 +33,7 @@ struct SystemUtils {
     std::unique_ptr<YAML::Node> LocalSystemConfiguration_; /**<Pointer To Config.yaml Data From Local Hard Drive*/
     std::unique_ptr<bool> SystemShouldRun_; /**<Pointer To Variable Setting If System Should Run Or Not*/
 
-    std::unique_ptr<LoggingSystem> Logger_; /**<Pointer To BG-ERS Logging System*/
+    std::unique_ptr<Module::LoggingSystem> Logger_; /**<Pointer To BG-ERS Logging System*/
 
 
 };
