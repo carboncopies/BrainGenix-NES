@@ -47,18 +47,16 @@ target_include_directories([NAME OF PARENT DIR HERE] PUBLIC ./)
 
 Template Header `.cpp` files:
 ```
-//======================================================================//
-// This file is part of the BrainGenix-ERS Environment Rendering System //
-//======================================================================//
-```
+//=================================================================//
+// This file is part of the BrainGenix-NES Neuron Emulation System //
+//=================================================================//```
 
 Template Header `.h` files:
 
 ```
-//======================================================================//
-// This file is part of the BrainGenix-ERS Environment Rendering System //
-//======================================================================//
-
+//=================================================================//
+// This file is part of the BrainGenix-NES Neuron Emulation System //
+//=================================================================//
 #pragma once
 
 
