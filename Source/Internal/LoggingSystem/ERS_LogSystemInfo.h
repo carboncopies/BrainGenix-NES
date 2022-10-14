@@ -14,7 +14,7 @@
 
 #include <ERS_Version.h>
 #include <CompilePlatformInfo.h>
-#include <ERS_CompileTimeStamp.h>
+#include <CompileTimeStamp.h>
 
 
 /**
