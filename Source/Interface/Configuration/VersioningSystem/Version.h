@@ -4,4 +4,4 @@
 
 #pragma once
 
-#define ERS_VERSION "0.4.0"
+#define Version "0.4.0"

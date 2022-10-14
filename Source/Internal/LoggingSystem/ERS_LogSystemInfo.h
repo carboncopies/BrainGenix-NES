@@ -12,7 +12,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <ERS_LoggingSystem.h>
 
-#include <ERS_Version.h>
+#include <Version.h>
 #include <CompilePlatformInfo.h>
 #include <CompileTimeStamp.h>
 

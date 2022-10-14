@@ -25,7 +25,7 @@ void ERS_LogSystemInfo(ERS_LoggingSystem* Logger) {
     Logger->Log("    +-----------------------------------------------------------------+", 4);
     Logger->Log("", 4);
 
-    Logger->Log(std::string("Version: ")                       + ERS_VERSION,            4);
+    Logger->Log(std::string("Version: ")                       + Version,            4);
     Logger->Log(std::string("Compile Date: ")                  + ERS_COMPILE_TIME_STAMP, 4);
     Logger->Log(std::string("Target OS: ")                     + ERS_TARGET_OS_NAME,     4);
     Logger->Log(std::string("Target OS Version: ")             + ERS_TARGET_OS_VERSION,  4);

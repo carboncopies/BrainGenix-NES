@@ -4,25 +4,25 @@
 
 
 # Create Library (Name Should Be Parent Dir Name)
-add_library(ERS_VersioningSystem
+add_library(VersioningSystem
 
             # Add Source Files (.cpp)
-            "ERS_Version.cpp"
+            "Version.cpp"
 
             # Add Header Files (.h)
-            "ERS_Version.h"
+            "Version.h"
             
             ${BACKWARD_ENABLE}
             )
 
 # Link 3rd Party Libs
-target_link_libraries(ERS_VersioningSystem
+target_link_libraries(VersioningSystem
     
     )
 
 # Link Internal Libs
-target_link_libraries(ERS_VersioningSystem
+target_link_libraries(VersioningSystem
     
     )
 
-target_include_directories(ERS_VersioningSystem PUBLIC ./)
+target_include_directories(VersioningSystem PUBLIC ./)
