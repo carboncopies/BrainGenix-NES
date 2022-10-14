@@ -6,7 +6,7 @@
 
 
 
-HardwareInformation::HardwareInformation(ERS_LoggingSystem* Logger, YAML::Node SystemConfig) {
+HardwareInformation::HardwareInformation(LoggingSystem* Logger, YAML::Node SystemConfig) {
 
     Logger_ = Logger;
     SystemConfiguration_ = SystemConfig;

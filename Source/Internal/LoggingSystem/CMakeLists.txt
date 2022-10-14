@@ -4,15 +4,15 @@
 
 
 # Create Library (Name Should Be Parent Dir Name)
-add_library(ERS_LoggingSystem
+add_library(LoggingSystem
 
             # Add Source Files (.cpp)
-            "ERS_LoggingSystem.cpp"
+            "LoggingSystem.cpp"
             "ERS_RGBColor.cpp"
             "ERS_LogSystemInfo.cpp"
 
             # Add Header Files (.h)
-            "ERS_LoggingSystem.h"
+            "LoggingSystem.h"
             "ERS_RGBColor.h"
             "ERS_LogSystemInfo.h"
 
@@ -21,12 +21,12 @@ add_library(ERS_LoggingSystem
             )
 
 # Link 3rd Party Libs
-target_link_libraries(ERS_LoggingSystem
+target_link_libraries(LoggingSystem
     yaml-cpp
     )
 
 # Link Internal Libs
-target_link_libraries(ERS_LoggingSystem
+target_link_libraries(LoggingSystem
     VersioningSystem
     CompileTimeStamp
     CompilePlatformInfo
@@ -35,9 +35,9 @@ target_link_libraries(ERS_LoggingSystem
 if (WIN32) 
     ERSBuildLogger(${BoldGreen} "Build Warnings Not Enabled")
 else ()
-    target_compile_options(ERS_LoggingSystem PUBLIC -Wall -Wextra -Wpedantic)
-    target_compile_options(ERS_LoggingSystem PUBLIC -Werror=uninitialized)
+    target_compile_options(LoggingSystem PUBLIC -Wall -Wextra -Wpedantic)
+    target_compile_options(LoggingSystem PUBLIC -Werror=uninitialized)
 endif()
 
-target_include_directories(ERS_LoggingSystem PUBLIC ./)
+target_include_directories(LoggingSystem PUBLIC ./)
 

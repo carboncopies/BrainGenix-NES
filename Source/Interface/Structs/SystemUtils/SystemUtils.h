@@ -11,7 +11,7 @@
 #include <yaml-cpp/yaml.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <ERS_LoggingSystem.h>
+#include <LoggingSystem.h>
 #include <HardwareInformation.h>
 
 
@@ -29,7 +29,7 @@ struct SystemUtils {
     std::unique_ptr<YAML::Node> LocalSystemConfiguration_; /**<Pointer To Config.yaml Data From Local Hard Drive*/
     std::unique_ptr<bool> SystemShouldRun_; /**<Pointer To Variable Setting If System Should Run Or Not*/
 
-    std::unique_ptr<ERS_LoggingSystem> Logger_; /**<Pointer To BG-ERS Logging System*/
+    std::unique_ptr<LoggingSystem> Logger_; /**<Pointer To BG-ERS Logging System*/
 
 
 };

@@ -10,7 +10,7 @@ namespace ERS {
 namespace Module {
 
 
-ArgumentParser::ArgumentParser(ERS_LoggingSystem* Logger) {
+ArgumentParser::ArgumentParser(LoggingSystem* Logger) {
 
     Logger_ = Logger;
     Logger_->Log("Initialiizng Argument Parser Subsystem", 4);

@@ -6,7 +6,7 @@
 
 
 
-void ERS_LogSystemInfo(ERS_LoggingSystem* Logger) {
+void ERS_LogSystemInfo(LoggingSystem* Logger) {
 
     // Log Logo Text
     Logger->Log("Starting BrainGenix-ERS Instance", 2);

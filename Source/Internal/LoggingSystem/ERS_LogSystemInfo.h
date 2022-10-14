@@ -10,7 +10,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <ERS_LoggingSystem.h>
+#include <LoggingSystem.h>
 
 #include <Version.h>
 #include <CompilePlatformInfo.h>
@@ -21,4 +21,4 @@
  * @brief Logs the system information as defined during compilation (version, target os, etc.)
  * 
  */
-void ERS_LogSystemInfo(ERS_LoggingSystem* Logger);
+void ERS_LogSystemInfo(LoggingSystem* Logger);
