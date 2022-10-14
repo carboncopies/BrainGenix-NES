@@ -2,11 +2,11 @@
 // This file is part of the BrainGenix-ERS Environment Rendering System //
 //======================================================================//
 
-#include <ERS_LogSystemInfo.h>
+#include <LogSystemInfo.h>
 
 
 
-void ERS_LogSystemInfo(LoggingSystem* Logger) {
+void LogSystemInfo(LoggingSystem* Logger) {
 
     // Log Logo Text
     Logger->Log("Starting BrainGenix-ERS Instance", 2);

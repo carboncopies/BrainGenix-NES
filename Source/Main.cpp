@@ -15,7 +15,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <LoggingSystem.h>
-#include <ERS_LogSystemInfo.h>
+#include <LogSystemInfo.h>
 #include <HardwareInformation.h>
 #include <ArgumentParser.h>
 

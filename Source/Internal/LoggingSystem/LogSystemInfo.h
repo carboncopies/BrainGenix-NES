@@ -21,4 +21,4 @@
  * @brief Logs the system information as defined during compilation (version, target os, etc.)
  * 
  */
-void ERS_LogSystemInfo(LoggingSystem* Logger);
+void LogSystemInfo(LoggingSystem* Logger);
