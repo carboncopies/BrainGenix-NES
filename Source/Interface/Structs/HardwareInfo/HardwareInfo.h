@@ -61,7 +61,7 @@ struct StaticInterface::HardwareInfo {
  * @brief This structure is used to store dynamically changing hardware information.
  * 
  */
-struct DynamicInterface::HardwareInfo {
+struct DynamicHardwareInfo {
 
     // Memory Info
     unsigned long long PhysicalMemoryCapacity; /**<Get Amount Of Memory In System*/
@@ -79,7 +79,7 @@ struct DynamicInterface::HardwareInfo {
  * @brief This structure is used as a container for static and dynamic hardware info structs.
  * 
  */
-struct Interface::HardwareInfo {
+struct StaticHardwareInfo {
 
     // Set Dynamic, Static Info
     StaticInterface::HardwareInfo Static_; /**<Structure To Store Static Hardware Information*/
