@@ -84,7 +84,7 @@ ERSBuildLogger(${BoldGreen} "Finished Configuring Core Subsystems")
 add_executable(${PROJECT_NAME} ${SRC_DIR}/Main.cpp ${BACKWARD_ENABLE})
 target_link_libraries(${PROJECT_NAME}
 
-  ERS_ArgumentParser
+  ArgumentParser
 
   SystemUtils
 

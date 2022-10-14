@@ -17,7 +17,7 @@
 #include <ERS_LoggingSystem.h>
 #include <ERS_LogSystemInfo.h>
 #include <ERS_HardwareInformation.h>
-#include <ERS_ArgumentParser.h>
+#include <ArgumentParser.h>
 
 #include <SystemUtils.h>
 
