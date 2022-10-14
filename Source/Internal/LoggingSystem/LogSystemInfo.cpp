@@ -3,6 +3,10 @@
 //=================================================================//
 #include <LogSystemInfo.h>
 
+namespace BrainGenix {
+namespace NES {
+namespace Module {
+
 
 
 void LogSystemInfo(LoggingSystem* Logger) {
@@ -33,4 +37,8 @@ void LogSystemInfo(LoggingSystem* Logger) {
     Logger->Log(std::string("Host OS Version: ")               + ERS_HOST_OS_VERSION,    4);
     Logger->Log(std::string("Host Processor Architecture:  ")  + ERS_HOST_PROCESSOR,     4);
 
+}
+
+}
+}
 }

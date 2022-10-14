@@ -11,6 +11,11 @@
 // Internal Libraries (BG convention: use <> instead of "")
 
 
+namespace BrainGenix {
+namespace NES {
+namespace Module {
+
+
 /**
  * @brief This class stores an rgb color value.
  * 
@@ -23,3 +28,7 @@ struct RGBColor {
 
 
 };
+
+}
+}
+}

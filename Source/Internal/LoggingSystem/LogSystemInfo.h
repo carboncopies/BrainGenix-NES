@@ -16,8 +16,19 @@
 #include <CompileTimeStamp.h>
 
 
+
+namespace BrainGenix {
+namespace NES {
+namespace Module {
+
+
 /**
  * @brief Logs the system information as defined during compilation (version, target os, etc.)
  * 
  */
 void LogSystemInfo(LoggingSystem* Logger);
+
+
+}
+}
+}
