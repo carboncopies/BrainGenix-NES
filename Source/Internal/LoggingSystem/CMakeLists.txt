@@ -23,7 +23,6 @@ add_library(ERS_LoggingSystem
 # Link 3rd Party Libs
 target_link_libraries(ERS_LoggingSystem
     yaml-cpp
-    glad
     )
 
 # Link Internal Libs
