@@ -1,13 +1,13 @@
 # Set CMAKE Version, Define Project
 cmake_minimum_required (VERSION 3.1...3.21)
 project(
-	"BrainGenix-ERS"
-	VERSION "0.4.0"
+	"BrainGenix-NES"
+	VERSION "0.0.1"
 	LANGUAGES CXX
 	)
 
 # Set Configuration Options
-option(ENABLE_BACKWARD "Build ERS With Backward to provide some stack trace information or not" ON)
+option(ENABLE_BACKWARD "Build NES With Backward to provide some stack trace information or not" ON)
 
 
 # Set Dirs
