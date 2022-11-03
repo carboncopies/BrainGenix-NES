@@ -22,9 +22,19 @@
 
 
 
+namespace BrainGenix {
+namespace NES {
+namespace Module {
+
+
 int main(int NumArguments, char** ArguemntValues) {
 
     // Setup Main System Struct
     BrainGenix::NES::Interface::SystemUtils SystemUtils = BrainGenix::NES::Interface::SystemUtils();
 
+
+}
+
+}
+}
 }
