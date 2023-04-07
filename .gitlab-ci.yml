@@ -29,17 +29,17 @@ Main Build:
       - Binaries/
 
 
-# Generates Doxygen Docs And Adds Them To Archive
-Generate Documentation:
-  image: "$DOCKER_REGISTRY/ers_generate_docs_image:latest"
-  stage: Build
-  tags:
-    - linux
-  script:
-    - cd CI/Pipelines/GenerateDocs
-    - bash Run.sh
-  artifacts:
-    name: "Docs_BrainGenix-ERS_$CI_COMMIT_SHORT_SHA"
-    paths:
-      - Docs/Doxygen/Generated/
+# # Generates Doxygen Docs And Adds Them To Archive
+# Generate Documentation:
+#   image: "$DOCKER_REGISTRY/ers_generate_docs_image:latest"
+#   stage: Build
+#   tags:
+#     - linux
+#   script:
+#     - cd CI/Pipelines/GenerateDocs
+#     - bash Run.sh
+#   artifacts:
+#     name: "Docs_BrainGenix-ERS_$CI_COMMIT_SHORT_SHA"
+#     paths:
+#       - Docs/Doxygen/Generated/
 
