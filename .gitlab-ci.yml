@@ -16,7 +16,7 @@ stages:          # List of stages for jobs, and their order of execution
 
 # Main build for compiling the main project executable.
 Main Build:
-  image: "ubuntu:latest"
+  image: "ubuntu:22.04"
   tags:
    - linux
   stage: Build
