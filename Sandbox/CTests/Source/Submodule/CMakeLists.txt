@@ -23,7 +23,7 @@ target_include_directories(Submodule PUBLIC ./)
 
 
 # Test Code
-option(BUILD_TESTS "Enable or Disable Tests" true)
+option(BUILD_TESTS "Enable or Disable Tests" ON)
 
 if($BUILD_TESTS)
 
