@@ -19,3 +19,16 @@ target_link_libraries(Submodule
     )
 
 target_include_directories(Submodule PUBLIC ./)
+
+
+
+# Test Code
+option(BUILD_TESTS "Enable or Disable Tests" true)
+
+if($BUILD_TESTS)
+
+    add_executable("AddTwoNumbers_Test" AddTwoNumbersTest.cpp)
+    target_link_libraries("AddTwoNumbers_Test" Submodule)
+    add_test(NAME "Test AddTwoNumbers Function" COMMAND "./AddTwoNumbers_Test")
+
+endif()
