@@ -2,4 +2,4 @@ cd ..
 mkdir Build
 cd Build
 cmake ..
-make -j test
+make -j MyProject
