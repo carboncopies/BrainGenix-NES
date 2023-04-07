@@ -23,14 +23,12 @@ target_include_directories(Submodule PUBLIC ./)
 
 
 # Test Code
-option(BUILD_TESTS "Enable or Disable Tests" ON)
+# option(BUILD_TESTS "Enable or Disable Tests" ON)
 
-if($BUILD_TESTS)
+# if($BUILD_TESTS)
 
-    enable_testing()
+add_executable("AddTwoNumbers_Test" AddTwoNumbersTest.cpp)
+target_link_libraries("AddTwoNumbers_Test" Submodule)
+add_test(NAME "Test AddTwoNumbers Function" COMMAND "./AddTwoNumbers_Test")
 
-    add_executable("AddTwoNumbers_Test" AddTwoNumbersTest.cpp)
-    target_link_libraries("AddTwoNumbers_Test" Submodule)
-    add_test(NAME "Test AddTwoNumbers Function" COMMAND "./AddTwoNumbers_Test")
-
-endif()
+# endif()
