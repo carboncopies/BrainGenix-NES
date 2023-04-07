@@ -29,6 +29,7 @@ target_include_directories(Submodule PUBLIC ./)
 
 add_executable("AddTwoNumbers_Test" AddTwoNumbersTest.cpp)
 target_link_libraries("AddTwoNumbers_Test" Submodule)
+
 add_test(NAME "Test AddTwoNumbers Function" COMMAND "./AddTwoNumbers_Test")
 
 # endif()
