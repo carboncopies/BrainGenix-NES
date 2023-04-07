@@ -2,10 +2,10 @@
 add_library(Submodule
 
             # Add Source Files (.cpp)
-            "NES_EmptyNeuronModel.cpp"
+            "AddTwoNumbers.cpp"
 
             # Add Header Files (.h)
-            "NES_EmptyNeuronModel.h"
+            "AddTwoNumbers.h"
             
             ${BACKWARD_ENABLE}
             )
