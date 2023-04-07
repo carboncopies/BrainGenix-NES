@@ -1,5 +1,5 @@
 project(test)
 
-add_subdirectory("Submodule")
+add_subdirectory("Source/Submodule")
 
-add_executable(main_executable Source/Main.cpp)
+add_executable(main_executable Source/Core/Main.cpp)
