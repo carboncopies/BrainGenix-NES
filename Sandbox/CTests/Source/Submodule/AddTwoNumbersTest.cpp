@@ -3,7 +3,7 @@
 
 int main() {
 
-    if (AddTwoNums(1,2) != 3) {
+    if (AddTwoNumbers(1,2) != 3) {
         return 1;
     }
 
