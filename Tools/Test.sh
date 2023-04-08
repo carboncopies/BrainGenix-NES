@@ -40,13 +40,13 @@ echo "[NES BUILD HELPER] - Building, Please Wait. This may take some time"
 cmake --build . -j $1
 make test
 
+
 # # Run Program
 # cd ../Binaries
 # echo "[NES BUILD HELPER] - Checking If Binary Exists"
 # if [ -f "BrainGenix-NES" ]
 # then
 #     echo "[NES BUILD HELPER] - Running Tests"
-#     ./BrainGenix-NES
 # else
 #     echo "[NES BUILD HELPER] - Build Failed! Exiting"
 # fi
