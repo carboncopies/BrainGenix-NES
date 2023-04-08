@@ -21,6 +21,8 @@ include(${CMAKE_UTIL_DIR}/ColorizeMessages.cmake)
 include(${CMAKE_UTIL_DIR}/SetBinaryDir.cmake)
 include(${CMAKE_UTIL_DIR}/DisableTargetWarnings.cmake)
 
+# Enable CTests
+enable_testing()
 
 # Include Package Addition Scripts
 include(${CMAKE_BUILD_UTILS_DIR}/YAML-CPP.cmake)

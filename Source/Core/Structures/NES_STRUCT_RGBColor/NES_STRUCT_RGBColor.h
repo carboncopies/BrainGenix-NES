@@ -22,5 +22,4 @@ struct NES_STRUCT_RGBColor {
     int Green; /**<Green Component*/
     int Blue; /**<Blue Component*/
 
-
 };
