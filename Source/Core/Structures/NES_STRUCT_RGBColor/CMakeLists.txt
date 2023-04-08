@@ -44,4 +44,4 @@ target_include_directories(${LIBRARY_NAME} PUBLIC ./)
 # Unit Test Executable
 add_executable("${LIBRARY_NAME}_Test" ${LIBRARY_TEST_SOURCES})
 target_link_libraries("${LIBRARY_NAME}_Test" ${LIBRARY_NAME})
-add_test(NAME "${LIBRARY_NAME} ${LIBRARY_TEST_NAME}" COMMAND "./${LIBRARY_NAME}_Test")
+add_test(NAME "${LIBRARY_NAME} ${LIBRARY_TEST_NAME}" COMMAND "${BIN_DIR}/${LIBRARY_NAME}_Test")
