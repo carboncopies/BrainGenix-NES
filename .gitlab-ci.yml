@@ -8,6 +8,7 @@ variables:
 
 stages:          # List of stages for jobs, and their order of execution
   - Build
+  # - Test
 #  - Platform Build Testing
 
 
@@ -27,6 +28,20 @@ Main Build:
     name: "NES_$CI_COMMIT_SHORT_SHA"
     paths:
       - Binaries/
+
+# # Main build for compiling the main project executable.
+# Test:
+#   # image: "ubuntu:22.04"
+#   tags:
+#    - linux
+#   stage: Test
+#   script:
+#     - cd CI/Pipelines/MainBuild
+#     - bash Run.sh $NUMBER_THREADS
+#   artifacts:
+#     name: "NES_$CI_COMMIT_SHORT_SHA"
+#     paths:
+#       - Binaries/
 
 
 # # Generates Doxygen Docs And Adds Them To Archive
