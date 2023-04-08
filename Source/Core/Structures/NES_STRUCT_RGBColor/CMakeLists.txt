@@ -25,14 +25,10 @@ set(LIBRARY_TEST_SOURCES
 )
 set(LIBRARY_TEST_NAME "Tests RGB Color Struct Values")
 
+
+
 # Create Library (Name Should Be Parent Dir Name)
-add_library(${LIBRARY_NAME}
-
-
-            ${LIBRARY_SOURCES}
-            
-            ${BACKWARD_ENABLE}
-            )
+add_library(${LIBRARY_NAME} ${LIBRARY_SOURCES} ${BACKWARD_ENABLE})
 
 # Link 3rd Party Libs
 target_link_libraries(${LIBRARY_NAME}
@@ -41,8 +37,6 @@ target_link_libraries(${LIBRARY_NAME}
 # Link Internal Libs
 target_link_libraries(${LIBRARY_NAME}
     )
-
-
 target_include_directories(${LIBRARY_NAME} PUBLIC ./)
 
 
