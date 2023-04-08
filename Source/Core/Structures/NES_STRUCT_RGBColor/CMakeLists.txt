@@ -6,6 +6,9 @@
 # Create Library (Name Should Be Parent Dir Name)
 add_library(NES_STRUCT_RGBColor
 
+            # Add Header Files (.cpp)
+            "NES_STRUCT_RGBColor.cpp"
+
             # Add Header Files (.h)
             "NES_STRUCT_RGBColor.h"
             
