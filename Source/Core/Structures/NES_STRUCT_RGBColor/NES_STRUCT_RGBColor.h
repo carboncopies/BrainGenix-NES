@@ -16,4 +16,10 @@
  * @brief This class stores an rgb color value.
  * 
  */
-struct NES_STRUCT_RGBColor;
+struct NES_STRUCT_RGBColor {
+
+    int Red; /**<Red Component*/
+    int Green; /**<Green Component*/
+    int Blue; /**<Blue Component*/
+
+};
