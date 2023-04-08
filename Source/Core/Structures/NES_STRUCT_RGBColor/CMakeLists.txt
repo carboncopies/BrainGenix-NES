@@ -4,7 +4,7 @@
 
 
 # Define Variables
-set(LIBRARY_NAME "ERS_STRUCT_RGBColor")
+set(LIBRARY_NAME "NES_STRUCT_RGBColor")
 set(LIBRARY_SOURCES
 
     # Add Header Files (.cpp)
