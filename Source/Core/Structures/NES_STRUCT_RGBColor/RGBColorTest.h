@@ -10,5 +10,6 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <NES_STRUCT_RGBColor.h>
 
-
+int main();

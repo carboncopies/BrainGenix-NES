@@ -20,8 +20,10 @@ set(LIBRARY_TEST_SOURCES
     "RGBColorTest.cpp"
     
     # Add Header Files (.h)
+    "RGBColorTest.h"
 
 )
+set(LIBRARY_TEST_NAME "Tests RGB Color Struct Values")
 
 # Create Library (Name Should Be Parent Dir Name)
 add_library(${LIBRARY_NAME}
@@ -45,9 +47,7 @@ target_include_directories(${LIBRARY_NAME} PUBLIC ./)
 
 
 
-
-
-add_executable("${LIBRARY_NAME}_Test" AddTwoNumbersTest.cpp)
-target_link_libraries("AddTwoNumbers_Test" Submodule)
-
-add_test(NAME "Test AddTwoNumbers Function" COMMAND "./AddTwoNumbers_Test")
+# Unit Test Executable
+add_executable("${LIBRARY_NAME}_Test" ${LIBRARY_TEST_SOURCES})
+target_link_libraries("${LIBRARY_NAME}_Test" ${LIBRARY_NAME})
+add_test(NAME "${LIBRARY_NAME} ${LIBRARY_TEST_NAME}" COMMAND "./${LIBRARY_NAME}_Test")
