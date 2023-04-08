@@ -37,7 +37,7 @@ fi
 
 # Build Files
 echo "[NES BUILD HELPER] - Building, Please Wait. This may take some time"
-cmake --build . -j $1
+# cmake --build . -j $1
 make test
 
 
