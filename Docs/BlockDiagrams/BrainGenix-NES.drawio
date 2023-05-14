@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-05-22T23:21:59.121Z" agent="5.0 (X11)" etag="I2oNkecTb8QZosTFEiuI" version="17.4.6" type="github" pages="4">
+<mxfile host="Electron" modified="2023-05-14T19:30:59.854Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.1 Chrome/112.0.5615.87 Electron/24.1.2 Safari/537.36" etag="uFHdQSwef1D7yobS7x9p" version="21.2.1" type="device" pages="5">
   <diagram id="c22UB_N92mJE8_4pfcwG" name="System Overview">
-    <mxGraphModel dx="2272" dy="889" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2284" dy="1003" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="vfc7t2bRJuwnPYp2ou_e-0" />
         <mxCell id="vfc7t2bRJuwnPYp2ou_e-1" parent="vfc7t2bRJuwnPYp2ou_e-0" />
@@ -73,7 +73,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="zaYmULVZt83Btt4TcF50" name="MSE">
-    <mxGraphModel dx="1422" dy="889" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="1003" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -293,7 +293,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="xMWuN7kUsRBOxygCEo12" name="Page-3">
-    <mxGraphModel dx="1422" dy="889" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="1003" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="jV3cQ5NdMDDjI3qOkedW-0" />
         <mxCell id="jV3cQ5NdMDDjI3qOkedW-1" parent="jV3cQ5NdMDDjI3qOkedW-0" />
@@ -358,14 +358,14 @@
     </mxGraphModel>
   </diagram>
   <diagram id="akdt0uJ3EusryHX0j9MJ" name="Neural Tissue Generator">
-    <mxGraphModel dx="677" dy="423" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="1003" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-8" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-8" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
           <mxGeometry x="130" y="150" width="690" height="390" as="geometry" />
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="BLPvVIBPXcZd1Q6Ld9Ve-1" target="BLPvVIBPXcZd1Q6Ld9Ve-5">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="BLPvVIBPXcZd1Q6Ld9Ve-1" target="BLPvVIBPXcZd1Q6Ld9Ve-5" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="310" y="120" />
@@ -373,15 +373,15 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-7" value="Sends Commands To" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BLPvVIBPXcZd1Q6Ld9Ve-6">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-7" value="Sends Commands To" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="BLPvVIBPXcZd1Q6Ld9Ve-6" vertex="1" connectable="0">
           <mxGeometry x="-0.3556" y="-1" relative="1" as="geometry">
             <mxPoint x="1" y="1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-1" value="API Server" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-1" value="API Server" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="250" y="40" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="BLPvVIBPXcZd1Q6Ld9Ve-2" target="BLPvVIBPXcZd1Q6Ld9Ve-1">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="BLPvVIBPXcZd1Q6Ld9Ve-2" target="BLPvVIBPXcZd1Q6Ld9Ve-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="320" y="80" as="targetPoint" />
             <Array as="points">
@@ -390,56 +390,67 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-4" value="Provides Data To" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BLPvVIBPXcZd1Q6Ld9Ve-3">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-4" value="Provides Data To" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="BLPvVIBPXcZd1Q6Ld9Ve-3" vertex="1" connectable="0">
           <mxGeometry x="-0.2431" y="1" relative="1" as="geometry">
             <mxPoint x="8" y="1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-2" value="&lt;div&gt;Web Interface / API Client&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-2" value="&lt;div&gt;Web Interface / API Client&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="20" y="40" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="BLPvVIBPXcZd1Q6Ld9Ve-5" target="BLPvVIBPXcZd1Q6Ld9Ve-10">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="BLPvVIBPXcZd1Q6Ld9Ve-5" target="BLPvVIBPXcZd1Q6Ld9Ve-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-12" value="Interact With" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BLPvVIBPXcZd1Q6Ld9Ve-11">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-12" value="Interact With" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="BLPvVIBPXcZd1Q6Ld9Ve-11" vertex="1" connectable="0">
           <mxGeometry x="-0.344" y="-1" relative="1" as="geometry">
             <mxPoint x="1" y="4" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="BLPvVIBPXcZd1Q6Ld9Ve-5" target="BLPvVIBPXcZd1Q6Ld9Ve-14">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="BLPvVIBPXcZd1Q6Ld9Ve-5" target="BLPvVIBPXcZd1Q6Ld9Ve-14" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-22" value="Calls" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BLPvVIBPXcZd1Q6Ld9Ve-21">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-22" value="Calls" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="BLPvVIBPXcZd1Q6Ld9Ve-21" vertex="1" connectable="0">
           <mxGeometry x="-0.1834" y="1" relative="1" as="geometry">
             <mxPoint y="15" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-5" value="NES API Module" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-5" value="NES API Module" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="180" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-9" value="NES System" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-9" value="NES System" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="130" y="150" width="690" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-10" value="Other NES Modules" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-10" value="Other NES Modules" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="290" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="330" y="190" width="450" height="290" as="geometry" />
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-15" value="Neuron Tissue Generator" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-15" value="Neuron Tissue Generator" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="330" y="190" width="450" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-16" value="NPS (Neuron Placement System)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-16" value="NPS (Neuron Placement System)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="360" y="230" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-17" value="Neuron Type Generator (NTG)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-17" value="Neuron Type Generator (NTG)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="495" y="230" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-18" value="(Brain Connectome Format) BCF Reader/Writer Module" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-18" value="(Brain Connectome Format) BCF Reader/Writer Module" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="370" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-19" value="Neuron Synapse Generator" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-19" value="Neuron Synapse Generator" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="630" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="0o3kSKDr4PriA3uzI7bE" name="Page-5">
+    <mxGraphModel dx="819" dy="573" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-2" value="Todo: make basic nes diagram for scott" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="10" y="20" width="360" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
