@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-05-14T20:48:16.495Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.1 Chrome/112.0.5615.87 Electron/24.1.2 Safari/537.36" etag="Xjr-zcwws90OXuSozmMp" version="21.2.1" type="device" pages="5">
+<mxfile host="Electron" modified="2023-05-14T20:50:32.035Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.1 Chrome/112.0.5615.87 Electron/24.1.2 Safari/537.36" etag="k7fSLzQZ9WgXImCAnHIO" version="21.2.1" type="device" pages="5">
   <diagram id="c22UB_N92mJE8_4pfcwG" name="System Overview">
     <mxGraphModel dx="2284" dy="1003" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -445,15 +445,15 @@
     </mxGraphModel>
   </diagram>
   <diagram id="0o3kSKDr4PriA3uzI7bE" name="Page-5">
-    <mxGraphModel dx="1793" dy="1254" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1024" dy="716" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="7VZggHnhRIL4FaEqvfFq-4" value="Description" style="swimlane;whiteSpace=wrap;html=1;rounded=0;strokeColor=#006EAF;fontFamily=Courier New;fontSize=12;fontColor=#ffffff;startSize=23;fillColor=#1ba1e2;" vertex="1" parent="1">
-          <mxGeometry x="10" y="10" width="400" height="410" as="geometry" />
+          <mxGeometry x="10" y="10" width="400" height="550" as="geometry" />
         </mxCell>
-        <mxCell id="7VZggHnhRIL4FaEqvfFq-5" value="&lt;h1&gt;NES Python Implementation&lt;/h1&gt;&lt;p&gt;To start developing NES, we will initially use a single-threaded CPU only implementation of the simulator. This will only be written in pure python just so we have some easy to understand code that can be tested and then improved upon later on as we continue working on the system.&lt;/p&gt;&lt;p&gt;Later on, this will be used as a reference by the C++ single-threaded and then C++ multi-threaded versions. Eventually, we&#39;ll be able to completely remove this but that can only be done when the entire system has switched over to using the C++ single threaded version.&lt;/p&gt;&lt;p&gt;In this simple version, we&#39;d like to implement the following:&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Leaky integrate and fire neurons&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Various synapses&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Save/Load simulation&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-4">
-          <mxGeometry x="10" y="35" width="380" height="365" as="geometry" />
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-5" value="&lt;h1&gt;NES Python Implementation&lt;/h1&gt;&lt;p&gt;To start developing NES, we will initially use a single-threaded CPU only implementation of the simulator. This will only be written in pure python just so we have some easy to understand code that can be tested and then improved upon later on as we continue working on the system.&lt;/p&gt;&lt;p&gt;Later on, this will be used as a reference by the C++ single-threaded and then C++ multi-threaded versions. Eventually, we&#39;ll be able to completely remove this but that can only be done when the entire system has switched over to using the C++ single threaded version.&lt;/p&gt;&lt;p&gt;In this simple version, we&#39;d like to implement the following:&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Leaky integrate and fire neurons&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Various synapses&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Save/Load simulation&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Client/Server API (Local only)&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Python package for user installation&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Query properties for model(s)&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Batch update (one or more or all parts)&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-4">
+          <mxGeometry x="10" y="35" width="380" height="505" as="geometry" />
         </mxCell>
         <mxCell id="7VZggHnhRIL4FaEqvfFq-6" value="Project Structure" style="swimlane;whiteSpace=wrap;html=1;rounded=0;strokeColor=#006EAF;fontFamily=Courier New;fontSize=12;fontColor=#ffffff;startSize=23;fillColor=#1ba1e2;" vertex="1" parent="1">
           <mxGeometry x="10" y="570" width="1900" height="620" as="geometry" />
