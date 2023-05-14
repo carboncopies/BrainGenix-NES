@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-05-14T21:00:58.589Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.1 Chrome/112.0.5615.87 Electron/24.1.2 Safari/537.36" etag="QiovVzBm7icbh43NXck8" version="21.2.1" type="device" pages="5">
+<mxfile host="Electron" modified="2023-05-14T21:10:09.370Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.1 Chrome/112.0.5615.87 Electron/24.1.2 Safari/537.36" etag="ABPnOfqbVqOZohEfYt1p" version="21.2.1" type="device" pages="5">
   <diagram id="0o3kSKDr4PriA3uzI7bE" name="Python Implementation">
-    <mxGraphModel dx="1509" dy="1056" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="735" dy="514" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -210,19 +210,66 @@
         <mxCell id="7VZggHnhRIL4FaEqvfFq-86" value="Done." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-80">
           <mxGeometry x="70" y="340" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="7VZggHnhRIL4FaEqvfFq-89" value="Configuration" style="swimlane;whiteSpace=wrap;html=1;rounded=0;fontFamily=Courier New;fontSize=11;fontColor=#ffffff;fillColor=#6a00ff;strokeColor=#3700CC;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-70">
-          <mxGeometry x="880" y="40" width="260" height="500" as="geometry" />
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-89" value="Usage" style="swimlane;whiteSpace=wrap;html=1;rounded=0;fontFamily=Courier New;fontSize=11;fontColor=#ffffff;fillColor=#6a00ff;strokeColor=#3700CC;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-70">
+          <mxGeometry x="880" y="40" width="600" height="500" as="geometry" />
         </mxCell>
         <mxCell id="7VZggHnhRIL4FaEqvfFq-90" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="170" y="210.02127659574467" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="7VZggHnhRIL4FaEqvfFq-91" value="&lt;h1&gt;Configuration Process&lt;/h1&gt;&lt;p&gt;For now, this does not need anything to be done.&amp;nbsp;&lt;/p&gt;&lt;p&gt;In the future, the user would likely set some environment variable with their NES endpoint&#39;s host, port and token. Since this is running locally for now, there is no need to do any of that.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Courier New;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
-          <mxGeometry x="10" y="40" width="240" height="200" as="geometry" />
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-91" value="&lt;h1&gt;Usage Process&lt;/h1&gt;&lt;p&gt;When the user interacts with NES, we&#39;d like to implement a model similar to how Vulkan operates. Users will create instances of structs (or classes in python), configure them and then send them off to be processed. The client will act in a similar fashion to the Vulkan Context acts.&amp;nbsp;&lt;/p&gt;&lt;p&gt;By using a similar structure, we hope to allow for future performance improvements by updating the backend. This design paradigm should allow for this since users are not interacting with the simulation except through well-defined and restricted ways, allowing for more freedom on the backend.&lt;/p&gt;&lt;p&gt;Additionally, since this API design model is used in computer graphics, it should be well-suited to parallelism.&amp;nbsp;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Courier New;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="10" y="30" width="570" height="210" as="geometry" />
         </mxCell>
-        <mxCell id="7VZggHnhRIL4FaEqvfFq-92" value="Done." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
-          <mxGeometry x="70" y="340" width="120" height="60" as="geometry" />
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-105" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89" source="7VZggHnhRIL4FaEqvfFq-92" target="7VZggHnhRIL4FaEqvfFq-93">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="360" />
+              <mxPoint x="160" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-106" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89" source="7VZggHnhRIL4FaEqvfFq-92" target="7VZggHnhRIL4FaEqvfFq-98">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-107" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89" source="7VZggHnhRIL4FaEqvfFq-92" target="7VZggHnhRIL4FaEqvfFq-102">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-92" value="User Creates NES API Context" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="20" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-95" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89" source="7VZggHnhRIL4FaEqvfFq-93" target="7VZggHnhRIL4FaEqvfFq-94">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-93" value="Create Frontend Class (of something)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="180" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-97" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89" source="7VZggHnhRIL4FaEqvfFq-94" target="7VZggHnhRIL4FaEqvfFq-96">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-94" value="Populate This Class" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="320" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-96" value="Give To Context (returns ID)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="460" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-101" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89" source="7VZggHnhRIL4FaEqvfFq-98" target="7VZggHnhRIL4FaEqvfFq-99">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-98" value="Give ID,Attribute(s) To Context" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="180" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-99" value="Get Attribute(s) Requested" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="320" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-104" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89" source="7VZggHnhRIL4FaEqvfFq-102" target="7VZggHnhRIL4FaEqvfFq-103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-102" value="Save/Load Object (Give ID)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="180" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-103" value="Get Status Code" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="320" y="410" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
