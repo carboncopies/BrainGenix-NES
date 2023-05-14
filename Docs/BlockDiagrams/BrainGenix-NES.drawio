@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-05-14T20:43:35.349Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.1 Chrome/112.0.5615.87 Electron/24.1.2 Safari/537.36" etag="87_dqV_oHNKTvE68FXvc" version="21.2.1" type="device" pages="5">
+<mxfile host="Electron" modified="2023-05-14T20:48:16.495Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.1 Chrome/112.0.5615.87 Electron/24.1.2 Safari/537.36" etag="Xjr-zcwws90OXuSozmMp" version="21.2.1" type="device" pages="5">
   <diagram id="c22UB_N92mJE8_4pfcwG" name="System Overview">
     <mxGraphModel dx="2284" dy="1003" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -445,7 +445,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="0o3kSKDr4PriA3uzI7bE" name="Page-5">
-    <mxGraphModel dx="1509" dy="1056" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1793" dy="1254" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -456,7 +456,7 @@
           <mxGeometry x="10" y="35" width="380" height="365" as="geometry" />
         </mxCell>
         <mxCell id="7VZggHnhRIL4FaEqvfFq-6" value="Project Structure" style="swimlane;whiteSpace=wrap;html=1;rounded=0;strokeColor=#006EAF;fontFamily=Courier New;fontSize=12;fontColor=#ffffff;startSize=23;fillColor=#1ba1e2;" vertex="1" parent="1">
-          <mxGeometry x="10" y="430" width="1900" height="620" as="geometry" />
+          <mxGeometry x="10" y="570" width="1900" height="620" as="geometry" />
         </mxCell>
         <UserObject label="NES Repo" treeRoot="1" id="7VZggHnhRIL4FaEqvfFq-13">
           <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
@@ -486,6 +486,9 @@
         <mxCell id="7VZggHnhRIL4FaEqvfFq-64" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-18" target="7VZggHnhRIL4FaEqvfFq-39">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-66" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-18" target="7VZggHnhRIL4FaEqvfFq-65">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="7VZggHnhRIL4FaEqvfFq-18" value="Backend" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
           <mxGeometry x="453" y="260" width="100" height="20" as="geometry" />
         </mxCell>
@@ -493,7 +496,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="7VZggHnhRIL4FaEqvfFq-20" value="SimulationEngine" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
-          <mxGeometry x="253" y="420" width="100" height="20" as="geometry" />
+          <mxGeometry x="90" y="430" width="120" height="20" as="geometry" />
         </mxCell>
         <mxCell id="7VZggHnhRIL4FaEqvfFq-22" value="Client" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
           <mxGeometry x="1440" y="430" width="80" height="20" as="geometry" />
@@ -537,7 +540,7 @@
           <mxGeometry x="1230" y="510" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="7VZggHnhRIL4FaEqvfFq-39" value="Models" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
-          <mxGeometry x="663" y="420" width="80" height="20" as="geometry" />
+          <mxGeometry x="663" y="430" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="7VZggHnhRIL4FaEqvfFq-50" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;labelBackgroundColor=default;strokeColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-40" target="7VZggHnhRIL4FaEqvfFq-39">
           <mxGeometry relative="1" as="geometry" />
@@ -597,10 +600,19 @@
           <mxGeometry x="1530" y="395" width="350" height="195" as="geometry" />
         </mxCell>
         <mxCell id="7VZggHnhRIL4FaEqvfFq-61" value="&lt;h1&gt;Backend Models&lt;/h1&gt;&lt;p&gt;The backend models contain the attributes contained in the frontend models as well as a class which can be used to simulate that individual model (an &#39;updater&#39; class or something like that)&lt;/p&gt;&lt;p&gt;The updater code will be managed by the simulation engine and called when a model of that type will be updated.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Helvetica;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
-          <mxGeometry x="683" y="240" width="250" height="170" as="geometry" />
+          <mxGeometry x="700" y="260" width="250" height="170" as="geometry" />
         </mxCell>
         <mxCell id="7VZggHnhRIL4FaEqvfFq-63" value="&lt;h1&gt;Backend&lt;/h1&gt;&lt;p&gt;This contains the code needed for the simple python simulation engine backend. It will host the local API that is used by the frontend, and will accept a client connection. The client may then create and pass over models and create a simulation which can be run here.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Helvetica;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
           <mxGeometry x="151.5" y="190" width="303" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-65" value="Server" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="453" y="430" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-67" value="&lt;h1&gt;Server&lt;/h1&gt;&lt;p&gt;The server simply provides an endpoint to which the client may connect. It then calls the appropriate functions in the simulation engine and model code to do what the client has asked for.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Helvetica;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="310" y="450" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-68" value="&lt;h1&gt;Simulation Engine&lt;/h1&gt;&lt;p&gt;As the name suggests, the simulation engine actually runs the simulation. It also contains the code needed to save and load simulations as requested by the client.&lt;/p&gt;&lt;p&gt;It will own the simulation object, and all models within, and run the updater classes for each type of model that is in the simulation and is requested to be updated.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Helvetica;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="20" y="450" width="240" height="170" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
