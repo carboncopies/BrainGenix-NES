@@ -1,0 +1,2 @@
+# About
+This contains the code needed for the simple python simulation engine backend. It will host the local API that is used by the frontend, and will accept a client connection. The client may then create and pass over models and create a simulation which can be run here.
