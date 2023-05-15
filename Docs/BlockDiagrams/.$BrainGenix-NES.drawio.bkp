@@ -1,0 +1,722 @@
+<mxfile host="Electron" modified="2023-05-14T21:10:09.370Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.1 Chrome/112.0.5615.87 Electron/24.1.2 Safari/537.36" etag="ABPnOfqbVqOZohEfYt1p" version="21.2.1" type="device" pages="5">
+  <diagram id="0o3kSKDr4PriA3uzI7bE" name="Python Implementation">
+    <mxGraphModel dx="735" dy="514" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-4" value="Description" style="swimlane;whiteSpace=wrap;html=1;rounded=0;strokeColor=#006EAF;fontFamily=Courier New;fontSize=12;fontColor=#ffffff;startSize=23;fillColor=#1ba1e2;" vertex="1" parent="1">
+          <mxGeometry x="10" y="10" width="400" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-5" value="&lt;h1&gt;NES Python Implementation&lt;/h1&gt;&lt;p&gt;To start developing NES, we will initially use a single-threaded CPU only implementation of the simulator. This will only be written in pure python just so we have some easy to understand code that can be tested and then improved upon later on as we continue working on the system.&lt;/p&gt;&lt;p&gt;Later on, this will be used as a reference by the C++ single-threaded and then C++ multi-threaded versions. Eventually, we&#39;ll be able to completely remove this but that can only be done when the entire system has switched over to using the C++ single threaded version.&lt;/p&gt;&lt;p&gt;In this simple version, we&#39;d like to implement the following:&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Leaky integrate and fire neurons&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Various synapses&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Save/Load simulation&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Client/Server API (Local only)&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Python package for user installation&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Query properties for model(s)&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Batch update (one or more or all parts)&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-4">
+          <mxGeometry x="10" y="35" width="380" height="505" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-6" value="Project Structure" style="swimlane;whiteSpace=wrap;html=1;rounded=0;strokeColor=#006EAF;fontFamily=Courier New;fontSize=12;fontColor=#ffffff;startSize=23;fillColor=#1ba1e2;" vertex="1" parent="1">
+          <mxGeometry x="10" y="570" width="1900" height="620" as="geometry" />
+        </mxCell>
+        <UserObject label="NES Repo" treeRoot="1" id="7VZggHnhRIL4FaEqvfFq-13">
+          <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+            <mxGeometry x="823" y="50" width="120" height="20" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-14" value="Python" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="833" y="150" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-15" value="" style="elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontFamily=Courier New;" edge="1" target="7VZggHnhRIL4FaEqvfFq-14" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="878" y="110" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-17" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=horizontal;startArrow=none;endArrow=none;fontFamily=Courier New;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-16" target="7VZggHnhRIL4FaEqvfFq-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-23" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;fontFamily=Courier New;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-16" target="7VZggHnhRIL4FaEqvfFq-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-16" value="Frontend" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="1430" y="270" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-19" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;fontFamily=Courier New;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-18" target="7VZggHnhRIL4FaEqvfFq-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-64" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-18" target="7VZggHnhRIL4FaEqvfFq-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-66" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-18" target="7VZggHnhRIL4FaEqvfFq-65">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-18" value="Backend" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="453" y="260" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-21" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;fontFamily=Courier New;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-20" target="7VZggHnhRIL4FaEqvfFq-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-20" value="SimulationEngine" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="90" y="430" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-22" value="Client" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="1440" y="430" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-56" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0.5;entryY=1;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-24" target="7VZggHnhRIL4FaEqvfFq-55">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-24" value="Neurons" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="1330" y="470" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-57" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-26" target="7VZggHnhRIL4FaEqvfFq-55">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-26" value="Synapses" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="1140" y="470" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-30" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;fontFamily=Courier New;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-29" target="7VZggHnhRIL4FaEqvfFq-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-29" value="LIF" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="1330" y="510" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-36" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-31" target="7VZggHnhRIL4FaEqvfFq-26">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1110" y="525" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-31" value="GABA" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="1050" y="510" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-35" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-32" target="7VZggHnhRIL4FaEqvfFq-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-32" value="AMPA" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="1140" y="510" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-34" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-33" target="7VZggHnhRIL4FaEqvfFq-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-33" value="..." style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="1230" y="510" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-39" value="Models" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="663" y="430" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-50" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-40" target="7VZggHnhRIL4FaEqvfFq-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-40" value="Synapses" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="663" y="470" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-51" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-41" target="7VZggHnhRIL4FaEqvfFq-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-41" value="Neurons" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="853" y="470" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-45" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-42" target="7VZggHnhRIL4FaEqvfFq-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-42" value="GABA" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="573" y="510" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-46" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-43" target="7VZggHnhRIL4FaEqvfFq-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-43" value="AMPA" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="663" y="510" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-47" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-44" target="7VZggHnhRIL4FaEqvfFq-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-44" value="..." style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="753" y="510" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-49" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;entryX=0.5;entryY=1;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-48" target="7VZggHnhRIL4FaEqvfFq-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-48" value="LIF" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="853" y="510" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-52" value="&lt;h1&gt;Python Implementation Structure&lt;/h1&gt;&lt;p&gt;This diagram describes the file structure for the python implementation. Each directory is listed here along with some descriptions for its purpose. From this diagram, we can create a matching repository structure followed by lower-level class diagrams.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Courier New;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="10" y="40" width="490" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-53" value="&lt;h1&gt;Python Subdir&lt;/h1&gt;&lt;div&gt;All of the python code is located in this subdirectory. The python code is split up between the user-facing python package (frontend) and the simulator (backend) code.&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Courier New;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="943" y="80" width="437" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-54" value="&lt;h1&gt;Frontend&lt;/h1&gt;&lt;div&gt;This directory contains the code which users directly interact with. The frontend should be packaged as pip installable package which users may install to access NES. For now, this will include the backend simulator for python, but eventually we will require users to connect to an NES server.&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Courier New;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="1535" y="165" width="345" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-58" style="shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-6" source="7VZggHnhRIL4FaEqvfFq-55" target="7VZggHnhRIL4FaEqvfFq-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-55" value="Models" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="1250" y="430" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-59" value="&lt;h1&gt;Frontend Models&lt;/h1&gt;&lt;p&gt;Frontend models contain the parameters for all the models that will be later passed over to the backend for simulation. These do not contain any code for how to run them, just the attributes needed to describe the.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Courier New;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="1060" y="280" width="250" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-60" value="&lt;h1&gt;Client&lt;/h1&gt;&lt;p&gt;The client allows the user to actually talk to a backend and run their code (even though for now the backend is on their own machine). The client API will be designed to model that of graphics rendering libraries - that is to say, users should create their neurons, buffer them, and then can simulate them in groups. (similar to draw calls).&lt;/p&gt;&lt;p&gt;We will implement a paradigm in which users create models (by instancing the Frontend models), set the parameters for them, and then pass those objects to the client to be added to the simulation. They are given back and ID which may be used to destroy them later.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Courier New;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="1530" y="382.5" width="350" height="227.5" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-61" value="&lt;h1&gt;Backend Models&lt;/h1&gt;&lt;p&gt;The backend models contain the attributes contained in the frontend models as well as a class which can be used to simulate that individual model (an &#39;updater&#39; class or something like that)&lt;/p&gt;&lt;p&gt;The updater code will be managed by the simulation engine and called when a model of that type will be updated.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Courier New;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="693" y="240" width="277" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-63" value="&lt;h1&gt;Backend&lt;/h1&gt;&lt;p&gt;This contains the code needed for the simple python simulation engine backend. It will host the local API that is used by the frontend, and will accept a client connection. The client may then create and pass over models and create a simulation which can be run here.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Courier New;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="30" y="190" width="424.5" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-65" value="Server" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;fontFamily=Courier New;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="453" y="430" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-67" value="&lt;h1&gt;Server&lt;/h1&gt;&lt;p&gt;The server simply provides an endpoint to which the client may connect. It then calls the appropriate functions in the simulation engine and model code to do what the client has asked for.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Courier New;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="330" y="450" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-68" value="&lt;h1&gt;Simulation Engine&lt;/h1&gt;&lt;p&gt;As the name suggests, the simulation engine actually runs the simulation. It also contains the code needed to save and load simulations as requested by the client.&lt;/p&gt;&lt;p&gt;It will own the simulation object, and all models within, and run the updater classes for each type of model that is in the simulation and is requested to be updated.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Courier New;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-6">
+          <mxGeometry x="10" y="450" width="310" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-70" value="User Model" style="swimlane;whiteSpace=wrap;html=1;rounded=0;strokeColor=#006EAF;fontFamily=Courier New;fontSize=12;fontColor=#ffffff;startSize=23;fillColor=#1ba1e2;" vertex="1" parent="1">
+          <mxGeometry x="420" y="10" width="1490" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-72" value="&lt;h1&gt;About&lt;/h1&gt;&lt;p&gt;The user model provides a diagram showing how users are supposed to interact with the system.&lt;/p&gt;&lt;p&gt;This includes the following subsections:&amp;nbsp;&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Installation&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Configuration&lt;/p&gt;&lt;p&gt;&amp;nbsp;- Usage&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Courier New;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-70">
+          <mxGeometry x="10" y="35" width="500" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-73" value="Installation" style="swimlane;whiteSpace=wrap;html=1;rounded=0;fontFamily=Courier New;fontSize=11;fontColor=#ffffff;fillColor=#6a00ff;strokeColor=#3700CC;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-70">
+          <mxGeometry x="10" y="240" width="590" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-78" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-73" source="7VZggHnhRIL4FaEqvfFq-74" target="7VZggHnhRIL4FaEqvfFq-76">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-74" value="User Installs Python" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-73">
+          <mxGeometry x="23" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-75" value="&lt;h1&gt;Installation Process&lt;/h1&gt;&lt;p&gt;We would like users to be able to install the NES python client on essentially any machine. This means that we&#39;d like to allow users to use the python package index (PyPi) to install it through pip.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Courier New;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-73">
+          <mxGeometry x="10" y="40" width="570" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-79" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-73" source="7VZggHnhRIL4FaEqvfFq-76" target="7VZggHnhRIL4FaEqvfFq-77">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-76" value="User Executes `pip install BrainGenix-NES`" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-73">
+          <mxGeometry x="170" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-77" value="Done." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-73">
+          <mxGeometry x="320" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-80" value="Configuration" style="swimlane;whiteSpace=wrap;html=1;rounded=0;fontFamily=Courier New;fontSize=11;fontColor=#ffffff;fillColor=#6a00ff;strokeColor=#3700CC;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-70">
+          <mxGeometry x="610" y="40" width="260" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-81" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-80" source="7VZggHnhRIL4FaEqvfFq-82">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="210.02127659574467" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-83" value="&lt;h1&gt;Configuration Process&lt;/h1&gt;&lt;p&gt;For now, this does not need anything to be done.&amp;nbsp;&lt;/p&gt;&lt;p&gt;In the future, the user would likely set some environment variable with their NES endpoint&#39;s host, port and token. Since this is running locally for now, there is no need to do any of that.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Courier New;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-80">
+          <mxGeometry x="10" y="40" width="240" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-86" value="Done." style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-80">
+          <mxGeometry x="70" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-89" value="Usage" style="swimlane;whiteSpace=wrap;html=1;rounded=0;fontFamily=Courier New;fontSize=11;fontColor=#ffffff;fillColor=#6a00ff;strokeColor=#3700CC;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-70">
+          <mxGeometry x="880" y="40" width="600" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-90" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="210.02127659574467" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-91" value="&lt;h1&gt;Usage Process&lt;/h1&gt;&lt;p&gt;When the user interacts with NES, we&#39;d like to implement a model similar to how Vulkan operates. Users will create instances of structs (or classes in python), configure them and then send them off to be processed. The client will act in a similar fashion to the Vulkan Context acts.&amp;nbsp;&lt;/p&gt;&lt;p&gt;By using a similar structure, we hope to allow for future performance improvements by updating the backend. This design paradigm should allow for this since users are not interacting with the simulation except through well-defined and restricted ways, allowing for more freedom on the backend.&lt;/p&gt;&lt;p&gt;Additionally, since this API design model is used in computer graphics, it should be well-suited to parallelism.&amp;nbsp;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=11;fontFamily=Courier New;fontColor=default;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="10" y="30" width="570" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-105" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89" source="7VZggHnhRIL4FaEqvfFq-92" target="7VZggHnhRIL4FaEqvfFq-93">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="360" />
+              <mxPoint x="160" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-106" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89" source="7VZggHnhRIL4FaEqvfFq-92" target="7VZggHnhRIL4FaEqvfFq-98">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-107" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89" source="7VZggHnhRIL4FaEqvfFq-92" target="7VZggHnhRIL4FaEqvfFq-102">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-92" value="User Creates NES API Context" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="20" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-95" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89" source="7VZggHnhRIL4FaEqvfFq-93" target="7VZggHnhRIL4FaEqvfFq-94">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-93" value="Create Frontend Class (of something)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="180" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-97" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89" source="7VZggHnhRIL4FaEqvfFq-94" target="7VZggHnhRIL4FaEqvfFq-96">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-94" value="Populate This Class" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="320" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-96" value="Give To Context (returns ID)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="460" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-101" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89" source="7VZggHnhRIL4FaEqvfFq-98" target="7VZggHnhRIL4FaEqvfFq-99">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-98" value="Give ID,Attribute(s) To Context" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="180" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-99" value="Get Attribute(s) Requested" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="320" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-104" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=default;strokeColor=default;fontFamily=Courier New;fontSize=11;fontColor=default;startArrow=none;endArrow=classic;endFill=1;" edge="1" parent="7VZggHnhRIL4FaEqvfFq-89" source="7VZggHnhRIL4FaEqvfFq-102" target="7VZggHnhRIL4FaEqvfFq-103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-102" value="Save/Load Object (Give ID)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="180" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7VZggHnhRIL4FaEqvfFq-103" value="Get Status Code" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Courier New;fontSize=11;fontColor=default;fillColor=none;gradientColor=none;" vertex="1" parent="7VZggHnhRIL4FaEqvfFq-89">
+          <mxGeometry x="320" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="c22UB_N92mJE8_4pfcwG" name="System Overview">
+    <mxGraphModel dx="2284" dy="1003" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-0" />
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-1" parent="vfc7t2bRJuwnPYp2ou_e-0" />
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-3" value="&lt;h1&gt;NES System Overview&lt;br&gt;&lt;/h1&gt;&lt;div&gt;A simple explanation of the NES system requirements and functions.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="vfc7t2bRJuwnPYp2ou_e-1" vertex="1">
+          <mxGeometry x="-840" y="10" width="370" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-4" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;glass=0;sketch=0;shadow=0;" parent="vfc7t2bRJuwnPYp2ou_e-1" vertex="1">
+          <mxGeometry x="-645" y="110" width="440" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-5" value="&lt;div&gt;&lt;b&gt;BrainGenix User&#39;s Intranet&lt;/b&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" parent="vfc7t2bRJuwnPYp2ou_e-1" vertex="1">
+          <mxGeometry x="-645" y="110" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-6" value="BrainGenix::NES" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" parent="vfc7t2bRJuwnPYp2ou_e-1" vertex="1">
+          <mxGeometry x="-375" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-8" value="Admin" style="shape=actor;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="vfc7t2bRJuwnPYp2ou_e-1" vertex="1">
+          <mxGeometry x="-560" y="150" width="50" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;fontSize=12;startArrow=classic;startFill=1;" parent="vfc7t2bRJuwnPYp2ou_e-1" source="vfc7t2bRJuwnPYp2ou_e-11" target="vfc7t2bRJuwnPYp2ou_e-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-10" value="Web UI/CLI" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" parent="vfc7t2bRJuwnPYp2ou_e-9" vertex="1" connectable="0">
+          <mxGeometry x="0.4085" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" parent="vfc7t2bRJuwnPYp2ou_e-1" source="vfc7t2bRJuwnPYp2ou_e-11" target="vfc7t2bRJuwnPYp2ou_e-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-11" value="&lt;div&gt;BrainGenix&lt;/div&gt;&lt;div&gt;Management &lt;br&gt;&lt;/div&gt;&lt;div&gt;API Server&lt;br&gt;&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="vfc7t2bRJuwnPYp2ou_e-1" vertex="1">
+          <mxGeometry x="-375" y="140" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" parent="vfc7t2bRJuwnPYp2ou_e-1" source="vfc7t2bRJuwnPYp2ou_e-13" target="vfc7t2bRJuwnPYp2ou_e-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-15" value="Simulation API" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="vfc7t2bRJuwnPYp2ou_e-14" vertex="1" connectable="0">
+          <mxGeometry x="-0.2211" y="1" relative="1" as="geometry">
+            <mxPoint x="12" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-13" value="&lt;div&gt;BrainGenix::ERS / Other Applications&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="vfc7t2bRJuwnPYp2ou_e-1" vertex="1">
+          <mxGeometry x="-605" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" parent="vfc7t2bRJuwnPYp2ou_e-1" source="vfc7t2bRJuwnPYp2ou_e-17" target="vfc7t2bRJuwnPYp2ou_e-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-19" value="&lt;div&gt;Neuron/Synapse&lt;/div&gt;&lt;div&gt;Loading/Saving&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="vfc7t2bRJuwnPYp2ou_e-18" vertex="1" connectable="0">
+          <mxGeometry x="-0.4761" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-17" value="BrainGenix::NES Database" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="vfc7t2bRJuwnPYp2ou_e-1" vertex="1">
+          <mxGeometry x="-585" y="330" width="100" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" parent="vfc7t2bRJuwnPYp2ou_e-1" source="vfc7t2bRJuwnPYp2ou_e-20" target="vfc7t2bRJuwnPYp2ou_e-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-23" value="&lt;div&gt;Simulation Engine&lt;/div&gt;&lt;div&gt;CPU/GPU/FPGA&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="vfc7t2bRJuwnPYp2ou_e-22" vertex="1" connectable="0">
+          <mxGeometry x="-0.5754" relative="1" as="geometry">
+            <mxPoint x="12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-20" value="Datacenter" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.device_farm;fillColor=#AD688B;gradientColor=none;" parent="vfc7t2bRJuwnPYp2ou_e-1" vertex="1">
+          <mxGeometry x="-573.25" y="480" width="76.5" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="vfc7t2bRJuwnPYp2ou_e-24" value="&lt;h1&gt;BrainGenix::NES System&lt;br&gt;&lt;/h1&gt;&lt;p&gt;The NES system is designed to efficiently simulate massive simulations at various scales (level of detail) with many servers. The system&#39;s simulation engine can simulate neurons at different levels of detail within the same simulation. Additionally, the simulation engine can make use of other server accelerators such as GPUs or FPGAs. Support for these will be added at a later date, so the engine is currently being designed to account for these in the future.&lt;/p&gt;&lt;p&gt;Additionally, the system is being designed with reliability in mind. If a few nodes go down for any reason, the system will be able to handle the faults in a stable manner. The simulation will be interrupted, but will ultimately continue without those nodes. NES provides several methods for handling faults, which the user can choose between. NES is built on top of Apache Zookeeper and Kafka to allow it to operate with up to a 50% failure in nodes without an issue. Even if the leader node fails, the system can recover from this fault automatically.&lt;br&gt;&lt;/p&gt;&lt;p&gt;Neurons and synapses are stored and loaded from a database. This database can be populated by another system such as BrainGenix::STS or a user defined system. The format for the database is described within the technical specifications document. If the need to generate new neural networks or synapses arises, NES provides functionality for this as well. The Neuron and Synapse generators provide a simple and intuitive method to generate networks via a GUI or CLI.&lt;/p&gt;&lt;p&gt;To aid in ease of use, the entire BrainGenix software suite contains a unified web interface. This interface allows NES users to interact with simulations in real-time using a 3d editor. The editor allows for the creation, modification, and visualization of the simulation in a more efficient way.&lt;/p&gt;&lt;p&gt;The system also provides an optimization heuristic to assign neurons in the most efficient manner. The heuristic has two components, compute and network optimization. The compute optimization heuristic matches the compute times of each node in the system to ensure that no systems are waiting for each-other to finish. The network optimization heuristic groups densely connected neurons with each-other to reduce the time spent sending interconnect data across the network. At a later date, functionality may be added to group neurons with larger interconnect loads on servers with faster bandwidth. &lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="vfc7t2bRJuwnPYp2ou_e-1" vertex="1">
+          <mxGeometry x="-830" y="620" width="790" height="460" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="zaYmULVZt83Btt4TcF50" name="MSE">
+    <mxGraphModel dx="1434" dy="1003" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="65" y="120" width="720" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-3" value="&lt;h1&gt;Main Simulation Engine&lt;br&gt;&lt;/h1&gt;&lt;p&gt;The MSE is responsible for simulating neurons.&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="10" y="10" width="830" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-4" value="Overview - Initialize MSE" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="65" y="120" width="720" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-5" target="jcV9qj33FPpNnaMKg-zi-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-5" value="Load Neuron Simulation Kernels/Models" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="365" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-8" target="jcV9qj33FPpNnaMKg-zi-33" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-8" value="Get Configuration Params" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="85" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-9" value="Initialize Compute Devices" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="505" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-17" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="20" y="250" width="810" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-18" value="Overview - Initialize Simulation" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="20" y="250" width="810" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-6" target="jcV9qj33FPpNnaMKg-zi-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-6" value="Load Neurons" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="180" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-13" target="jcV9qj33FPpNnaMKg-zi-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-28" value="Not Optimized" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-27" vertex="1" connectable="0">
+          <mxGeometry x="-0.2556" y="-1" relative="1" as="geometry">
+            <mxPoint x="8" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-13" target="jcV9qj33FPpNnaMKg-zi-29" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="360" />
+              <mxPoint x="740" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-31" value="Optimized" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-30" vertex="1" connectable="0">
+          <mxGeometry x="-0.0698" relative="1" as="geometry">
+            <mxPoint x="-61" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-13" value="Check Optimization Status" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="320" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-21" target="jcV9qj33FPpNnaMKg-zi-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-21" value="Load Simulation Configuration" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="40" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-23" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="20" y="400" width="810" height="530" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-24" value="Overview - Run Simulation" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="20" y="400" width="810" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-36" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-43" value="Run Simulation" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-41" vertex="1" connectable="0">
+          <mxGeometry x="0.1241" y="-1" relative="1" as="geometry">
+            <mxPoint x="44" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-42" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-45" value="Save State" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-44" vertex="1" connectable="0">
+          <mxGeometry x="0.5586" relative="1" as="geometry">
+            <mxPoint x="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-48" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-50" value="Stop Simulation" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-49" vertex="1" connectable="0">
+          <mxGeometry x="0.6542" relative="1" as="geometry">
+            <mxPoint x="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-53" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-57" value="Optimize" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-56" vertex="1" connectable="0">
+          <mxGeometry x="0.7129" y="1" relative="1" as="geometry">
+            <mxPoint x="5" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-62" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-60" value="Edit Neurons" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-59" vertex="1" connectable="0">
+          <mxGeometry x="0.7144" y="-1" relative="1" as="geometry">
+            <mxPoint x="16" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jcV9qj33FPpNnaMKg-zi-25" target="jcV9qj33FPpNnaMKg-zi-67" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-70" value="Edit Synapses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jcV9qj33FPpNnaMKg-zi-69" vertex="1" connectable="0">
+          <mxGeometry x="0.7643" y="1" relative="1" as="geometry">
+            <mxPoint x="12" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-25" value="Get Command From Leader" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="40" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-26" target="jcV9qj33FPpNnaMKg-zi-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-26" value="Optimize Simulation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="540" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-29" value="Load Simulation To Compute Device" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="680" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-33" target="jcV9qj33FPpNnaMKg-zi-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-33" value="Elect Leader From Zookeeper Ensemble" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="225" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-36" target="jcV9qj33FPpNnaMKg-zi-37" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-36" value="Simulate Neurons" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="410" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-37" target="jcV9qj33FPpNnaMKg-zi-39" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-37" value="Send Interconnect / Simulation API Data" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="550" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-39" value="Go To Start Of Loop" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="690" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-47" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-42" target="jcV9qj33FPpNnaMKg-zi-46" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-42" value="Save Neuron States Into Database" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="410" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-46" value="Go To Start Of Loop" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="550" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-52" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-48" target="jcV9qj33FPpNnaMKg-zi-51" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-48" value="De-allocate Memory" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="410" y="590" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-51" value="End Simulation Instance" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="550" y="590" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-55" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-53" target="jcV9qj33FPpNnaMKg-zi-54" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-53" value="Optimize Simulation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="410" y="670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-54" value="Go To Start Of Loop" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="550" y="670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-65" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-58" target="jcV9qj33FPpNnaMKg-zi-64" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-58" value="Update Neurons" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="550" y="750" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-63" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-62" target="jcV9qj33FPpNnaMKg-zi-58" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-62" value="Get Updates From Kafka" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="410" y="750" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-64" value="Go To Start Of Loop" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="690" y="750" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-72" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-66" target="jcV9qj33FPpNnaMKg-zi-68" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-66" value="Update Synapses" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="550" y="830" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-71" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jcV9qj33FPpNnaMKg-zi-67" target="jcV9qj33FPpNnaMKg-zi-66" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-67" value="Get Updates From Kafka" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="410" y="830" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jcV9qj33FPpNnaMKg-zi-68" value="Go To Start Of Loop" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="690" y="830" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="xMWuN7kUsRBOxygCEo12" name="Page-3">
+    <mxGraphModel dx="1434" dy="1003" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="jV3cQ5NdMDDjI3qOkedW-0" />
+        <mxCell id="jV3cQ5NdMDDjI3qOkedW-1" parent="jV3cQ5NdMDDjI3qOkedW-0" />
+        <mxCell id="jV3cQ5NdMDDjI3qOkedW-2" value="&lt;div&gt;&lt;b&gt;Milestone 1:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Integrate and Fire network with specifications&lt;/div&gt;&lt;div&gt;Build it, test it,&lt;/div&gt;&lt;div&gt;Abstract the system methods from it&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="80" y="40" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="jV3cQ5NdMDDjI3qOkedW-3" value="&lt;div&gt;&lt;b&gt;Milestone 2:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Compartmental Neurons with HH&lt;/div&gt;&lt;div&gt;Specifications for what the model should do (e.g. 10 neurons, 100 compartments each)&lt;/div&gt;&lt;div&gt;Build it, test it,&lt;/div&gt;&lt;div&gt;Abstract the system methods from it&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="320" y="40" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="jV3cQ5NdMDDjI3qOkedW-4" value="&lt;div&gt;&lt;b&gt;Milestone 3:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Connect the examples from milestones 1 and 2, measure how input from the integrate and fire network arriving at different locations on the dendrites of the compartmental model leads to interesting outcomes&lt;/div&gt;&lt;div&gt;Build it, test it,&lt;/div&gt;&lt;div&gt;Abstract the system methods from it&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="560" y="40" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="jV3cQ5NdMDDjI3qOkedW-7" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="80" y="280" width="680" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-0" value="&lt;div align=&quot;left&quot;&gt;Milestone 1, Specifications:&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="80" y="280" width="680" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-1" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="jV3cQ5NdMDDjI3qOkedW-1" source="GqX4W7e0cYpgo2O12TCR-0" target="GqX4W7e0cYpgo2O12TCR-0" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="110" y="310" as="sourcePoint" />
+            <mxPoint x="730" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-3" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Independent worker threads&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- 24 threads for 24 cores&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- equal / balanced load for each&lt;br&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;Neurons are in regions with no clear layering, connected in any way possible.&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- random connectivity with distribution&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- load from file&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- database load&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- Hebbian learning&lt;br&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;200,000 neurons&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- 3D locations in virtual space (randomized, load architecture, ...)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- percentage interneurons, percentage principal neurons (one type is fine)&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- standardized model format to make it easy to extend&lt;br&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;1000-10,000 connection per neuron&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- connection models&lt;br&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;60 seconds should be simulated&lt;/li&gt;&lt;li&gt;On a 24 core system with 64 GB RAM, GeForce 1080Ti GPU, want to achieve the simulation in real-time 1:1.&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;align=left;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="90" y="320" width="660" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-10" value="&lt;h1&gt;System Development Convention&lt;br&gt;&lt;/h1&gt;&lt;p&gt;The system has a few conventions that make maintaining it easier while making it clear to others what&#39;s going on within the code.&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="880" y="10" width="830" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-11" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="900" y="90" width="790" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-12" value="&lt;h1&gt;Naming Convention&lt;br&gt;&lt;/h1&gt;&lt;p&gt;For classes: The name should start with ERS_CLASS_ and describe the function (Ex: ERS_Class_Asset_Loader).&lt;/p&gt;&lt;p&gt;For functions: Should describe the purpose of the function, must be in UpperCamelCase (Ex: LoadAsset).&lt;/p&gt;&lt;p&gt;For structs: Should be in all capitals with underscores between words. Must start with ERS_STRUCTURE. (Ex: ERS_STRUCTURE_MODEL).&lt;/p&gt;&lt;p&gt;For variables: Should also be in UpperCamelCase and should describe the purpose for it&#39;s existence. (Ex: HasLoggerBeenInitialized).&lt;/p&gt;&lt;p&gt;For member variables: Should be UpperCamelCase with a trailing underscore. (Ex: TestVariable_).&lt;/p&gt;&lt;p&gt;For comments: Every block of code (around ten lines or so) should have a comment explaining the purpose of that section. &lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="910" y="100" width="770" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-13" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="900" y="320" width="790" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-14" value="&lt;h1&gt;Code Structure Guidelines&lt;br&gt;&lt;/h1&gt;&lt;p&gt;For classes: Classes should do the &quot;heavy lifting&quot; within the system. Structures should be sent into classes, but should not do any processing. They should just store information. Additionally, classes are responsible for managing their own threads. Classes should always contain constructors and destructors to prevent any memory leaks or other bad behaviors. Unless a class needs to be created and destroyed a lot, it should log when it&#39;s destructor is called to make debugging easier. Whenever possible, classes should be self contained structures that don&#39;t rely on any other classes to do their work (except system functions like the logger). &lt;br&gt;&lt;/p&gt;&lt;p&gt;For functions: Functions should have a comment block above the definition explaining what they do. When dealing with large pieces of data, functions should try to accept and output pointers to eliminate the need to copy large blocks of memory.&lt;/p&gt;&lt;p&gt;For structs: Structs should be completely self contained and very well documented. As an exception to the comment guide, structs should have a comment on a variable if it&#39;s not clear from the name. Vectors, Lists, Maps, etc. should always have a code block at the end explaining the purpose of that type. Structs should have *absolutely no functions*, as this makes everything more confusing. Rather, these functions should be either standalone or preferably baked into classes.&lt;br&gt;&lt;/p&gt;&lt;p&gt;For variables: Variables are pretty self-explanatory, so not many restrictions apply. The only important thing is that they should never be defined outside of a class, or function - that is to say, no global variables unless absolutely necessary. If a global variable must be used, then it should be marked as so.&lt;br&gt;&lt;/p&gt;&lt;p&gt;For member variables: Member variables are also rather self-explanatory. If the variable is a pointer, there should be a check to make sure it&#39;s been initialized unless it&#39;s initialized by the constructor. Remember to deallocate any variables without a built-in destructor in the class destructor!&lt;/p&gt;&lt;p&gt;For comments: Remember to clearly mark everything out by comments into blocks of around ten or so lines. More comments is better, but don&#39;t put one on every line unless it&#39;s a complicated struct where things really need to be explained in detail. &lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="910" y="330" width="770" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-15" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="900" y="750" width="790" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-16" value="&lt;h1&gt;Additional Notes&lt;br&gt;&lt;/h1&gt;&lt;div&gt;When working on code, please remember to do the following:&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- If working on something with a Trello card, please remember to update the card when done or if encountering a problem. Even following up with an email is helpful, preferably both. Remember that we can&#39;t help you or give you credit for working on the code if we don&#39;t know you did it. Worse yet, if we don&#39;t know you&#39;re doing it, another person may be assigned to work on the same thing you already did. TL;DR please please please update your cards so we can all avoid confusion and frustration.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- If you&#39;re *NOT* working on something with a Trello card, *PLEASE MAKE ONE*! This allows us to understand the changes that have been made to better help you.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- When working on a new feature, or something that could potentially break something else, please make a new branch describing what you&#39;re doing (in UpperCamelCase). Also, remember to commit frequently.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- When creating a new function or changing the purpose of an existing one, please make sure to update the block diagram here. Use the appropriate page and make sure that it&#39;s function, purpose, and structure are clear to anyone coming on board - even those not familiar with the code. This allows us to bring on new people more easily, which lets us work on the system more quickly.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;- Please document any potential failure cases in your functions with comments so that other developers don&#39;t accidentally create unexpected results.&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="910" y="760" width="770" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-17" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="1740" y="90" width="790" height="630" as="geometry" />
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-18" value="&lt;h1&gt;CMake Convention&lt;br&gt;&lt;/h1&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;CMake files should all start with the following header:&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; background-color: rgb(0 , 0 , 0) ; font-family: &amp;#34;droid sans mono&amp;#34; , &amp;#34;monospace&amp;#34; , monospace , &amp;#34;droid sans fallback&amp;#34; ; font-weight: normal ; line-height: 19px&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(124 , 166 , 104)&quot;&gt;########################################################################&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(124 , 166 , 104)&quot;&gt;# This file is part of the BrainGenix-ERS Neuron Emulation System #&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(124 , 166 , 104)&quot;&gt;########################################################################&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;Additionally, every folder containing a header file should contain an additional CMakeLists.txt. This needs to be linked in the main CMakeLists.txt file with the add_subdirectory command. Below is an example of the recursive cmake followed by its add subdirectory:&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;In Core/Utils/ConfigurationLoader/CMakeLists.txt&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; background-color: rgb(0 , 0 , 0) ; font-family: &amp;#34;droid sans mono&amp;#34; , &amp;#34;monospace&amp;#34; , monospace , &amp;#34;droid sans fallback&amp;#34; ; font-weight: normal ; line-height: 19px&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(124 , 166 , 104)&quot;&gt;# Specify CPP Files In Source (Name Should Start With Parent Dir Name)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(86 , 156 , 214)&quot;&gt;set&lt;/span&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;(ConfigurationLoader_Sources&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(124 , 166 , 104)&quot;&gt;# Specify Header Files In Source (Name Should Start With Parent Dir Name)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(86 , 156 , 214)&quot;&gt;set&lt;/span&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;(ConfigurationLoader_Headers&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color: rgb(206 , 145 , 120)&quot;&gt;&quot;LocalConfigurationLoader.h&quot;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(124 , 166 , 104)&quot;&gt;# Create Library (Name Should Be Parent Dir Name)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(86 , 156 , 214)&quot;&gt;add_library&lt;/span&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;(ConfigurationLoader &lt;/span&gt;&lt;span style=&quot;color: rgb(86 , 156 , 214)&quot;&gt;${LoggingSystem_Sources}&lt;/span&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: rgb(86 , 156 , 214)&quot;&gt;${LoggingSystem_Headers}&lt;/span&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: rgb(86 , 156 , 214)&quot;&gt;${BACKWARD_ENABLE}&lt;/span&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(86 , 156 , 214)&quot;&gt;target_link_libraries&lt;/span&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;(ConfigurationLoader &lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;    yaml-cpp&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;    )&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(86 , 156 , 214)&quot;&gt;target_include_directories&lt;/span&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;(ConfigurationLoader PUBLIC ./)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(86 , 156 , 214)&quot;&gt;target_link_libraries&lt;/span&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: rgb(86 , 156 , 214)&quot;&gt;${PROJECT_NAME}&lt;/span&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt; ConfigurationLoader)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;In root level CMakeLists.txt file:&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; background-color: rgb(0 , 0 , 0) ; font-family: &amp;#34;droid sans mono&amp;#34; , &amp;#34;monospace&amp;#34; , monospace , &amp;#34;droid sans fallback&amp;#34; ; font-weight: normal ; line-height: 19px&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;span style=&quot;color: rgb(86 , 156 , 214)&quot;&gt;add_subdirectory&lt;/span&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: rgb(86 , 156 , 214)&quot;&gt;${SRC_DIR}&lt;/span&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;/Core/Utils/ConfigurationLoader)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt; &lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="1750" y="100" width="770" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-19" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="1740" y="730" width="790" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="GqX4W7e0cYpgo2O12TCR-20" value="&lt;h1&gt;Code Header Convention&lt;br&gt;&lt;/h1&gt;&lt;div&gt;All code files should begin with the following header (if not using cpp/header file, change comment to match with the commenting style of that language.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Additionally, please remember to add doxygen comments to all relevant sections of your code/classes/vars.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; background-color: rgb(0 , 0 , 0) ; font-family: &amp;#34;droid sans mono&amp;#34; , &amp;#34;monospace&amp;#34; , monospace , &amp;#34;droid sans fallback&amp;#34; ; font-weight: normal ; line-height: 19px&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(124 , 166 , 104)&quot;&gt;//======================================================================//&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(124 , 166 , 104)&quot;&gt;// This file is part of the BrainGenix-ERS Neuron Emulation System //&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(124 , 166 , 104)&quot;&gt;//======================================================================//&lt;/span&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(124 , 166 , 104)&quot;&gt;/*&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(124 , 166 , 104)&quot;&gt;    Description: [YOUR DESCRIPTION HERE].&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(124 , 166 , 104)&quot;&gt;    Additional Notes: [ANY ADDITIONAL NOTES]&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(124 , 166 , 104)&quot;&gt;    Date Created: YYYY-MM-DD&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(124 , 166 , 104)&quot;&gt;*/&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="jV3cQ5NdMDDjI3qOkedW-1" vertex="1">
+          <mxGeometry x="1750" y="740" width="770" height="340" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="akdt0uJ3EusryHX0j9MJ" name="Neural Tissue Generator">
+    <mxGraphModel dx="1434" dy="1003" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-8" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="130" y="150" width="690" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="BLPvVIBPXcZd1Q6Ld9Ve-1" target="BLPvVIBPXcZd1Q6Ld9Ve-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="120" />
+              <mxPoint x="200" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-7" value="Sends Commands To" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="BLPvVIBPXcZd1Q6Ld9Ve-6" vertex="1" connectable="0">
+          <mxGeometry x="-0.3556" y="-1" relative="1" as="geometry">
+            <mxPoint x="1" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-1" value="API Server" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="250" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="BLPvVIBPXcZd1Q6Ld9Ve-2" target="BLPvVIBPXcZd1Q6Ld9Ve-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="80" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="200" y="70" />
+              <mxPoint x="200" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-4" value="Provides Data To" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="BLPvVIBPXcZd1Q6Ld9Ve-3" vertex="1" connectable="0">
+          <mxGeometry x="-0.2431" y="1" relative="1" as="geometry">
+            <mxPoint x="8" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-2" value="&lt;div&gt;Web Interface / API Client&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="20" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="BLPvVIBPXcZd1Q6Ld9Ve-5" target="BLPvVIBPXcZd1Q6Ld9Ve-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-12" value="Interact With" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="BLPvVIBPXcZd1Q6Ld9Ve-11" vertex="1" connectable="0">
+          <mxGeometry x="-0.344" y="-1" relative="1" as="geometry">
+            <mxPoint x="1" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="BLPvVIBPXcZd1Q6Ld9Ve-5" target="BLPvVIBPXcZd1Q6Ld9Ve-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-22" value="Calls" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="BLPvVIBPXcZd1Q6Ld9Ve-21" vertex="1" connectable="0">
+          <mxGeometry x="-0.1834" y="1" relative="1" as="geometry">
+            <mxPoint y="15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-5" value="NES API Module" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="140" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-9" value="NES System" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="130" y="150" width="690" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-10" value="Other NES Modules" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="140" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="330" y="190" width="450" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-15" value="Neuron Tissue Generator" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="330" y="190" width="450" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-16" value="NPS (Neuron Placement System)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-17" value="Neuron Type Generator (NTG)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="495" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-18" value="(Brain Connectome Format) BCF Reader/Writer Module" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="140" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BLPvVIBPXcZd1Q6Ld9Ve-19" value="Neuron Synapse Generator" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="630" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
