@@ -14,6 +14,44 @@ def RandXYZ():
     return (X,Y,Z)
 
 
+def BuildSynapse(_Simulation:NES.Simulation, _NumReceptors:int):
+
+    # Create ion channels for each synapse
+    ReceptorIDs = []
+    for i in range(_NumReceptors):
+        Receptor = NES.Models.Receptors.TestReceptor()
+
+        # Configure the properties here
+
+        ReceptorID = _Simulation.AddReceptor(Receptor)
+        if (ReceptorID == -1) {
+            print("Error creating receptor!")
+            exit()
+        }
+        ReceptorIDs.append(ReceptorID)
+
+
+    Synapse = NES.Models.Synapses.TestSynapse()
+
+    # Configure other properties here
+
+    Synapse.Receptors = ReceptorIDs
+
+    SynapseID = _Simulation.AddSynapse(Synapse)
+    if (SynapseID == -1) {
+        print("Error creating synapse!")
+        exit()
+    }
+
+    return SynapseID
+
+
+def BuildEndCompartment(_Simulation:NES.Simulation, _NumSynapses:int, _NumReceptors:int):
+
+    
+
+
+
 def main():
 
     print("Starting NES Frontend Tests")
@@ -41,6 +79,10 @@ def main():
     
     # Now Add Neurons
     NumNeurons = 100
+    NumAxonCompartments = 100 # we're just making a line here
+    NumDendriteCompartments = 100 # again just making a line
+    NumSynapsesPerEndCompartment = 10 # just some simple synapses
+    NumReceptersPerSynapse = 5 # ramdom num
     
     NeuronIDs = []
     for i in range(NumNeurons):
@@ -67,7 +109,7 @@ def main():
         # (this may be a multi-step process since compartments can link to eachother)
         # Finally, link the root axon/dendrite compartments to the neuron struct
 
-
+        # Build Synapse
 
 
         NeuronConfig = NES.Models.Neurons.TestNeuron()
