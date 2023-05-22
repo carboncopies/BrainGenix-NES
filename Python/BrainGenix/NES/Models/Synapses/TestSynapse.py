@@ -1,0 +1,2 @@
+# BrainGenix-NES
+# AGPLv3
