@@ -1,1 +1,1 @@
-import Client.Client as Client
+from Client import Client
