@@ -6,7 +6,12 @@ import NES.Client
 def main():
 
     print("Starting NES Frontend Tests")
-    ClientInstance = NES.Client.Client(Endpoint="127.0.0.1", Port="8765", Token="blah")
+
+    # Setup Client
+    ClientConfiguration = NES.Client.Configuration()
+    ClientConfiguration.Mode = NES.Client.Modes.Local
+
+    ClientInstance = NES.Client(ClientConfiguration)
 
     if not ClientInstance.IsConnected():
         print("Cannot Connect To Client")
