@@ -57,6 +57,18 @@ def main():
         #         ============== <- More Compartments          
         #         0     |  0   |              
         #               0      0  <- More Synapses+Receptors          
+        #
+        # So, this means that we need to make the following
+        # Create and configure receptor structs
+        # Then add these to the simulation, and note the IDs returned
+        # Now, create the synapses and connect the receptors by id to them
+        # Then add these to the sim and note the ID
+        # Then create the compartments 
+        # (this may be a multi-step process since compartments can link to eachother)
+        # Finally, link the root axon/dendrite compartments to the neuron struct
+
+
+
 
         NeuronConfig = NES.Models.Neurons.TestNeuron()
         NeuronConfig.Position = RandXYZ() 
