@@ -1,12 +1,12 @@
 # Test Driver
 
-import Client
+import BrainGenix.NES.Client
 
 
 def main():
 
     print("Starting NES Frontend Tests")
-    ClientInstance = Client.Client(Endpoint="127.0.0.1", Port="8765", Token="blah")
+    ClientInstance = BrainGenix.NES.Client.Client(Endpoint="127.0.0.1", Port="8765", Token="blah")
 
     if not ClientInstance.IsConnected():
         print("Cannot Connect To Client")

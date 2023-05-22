@@ -2,5 +2,5 @@
 
 # Frontend Tests
 echo "Running Frontend Example"
-cd ../Frontend
-python3 ExampleUsage.py
+cd ..
+python3 Test/ExampleUsage.py
