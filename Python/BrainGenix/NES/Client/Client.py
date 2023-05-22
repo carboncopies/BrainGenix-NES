@@ -29,7 +29,7 @@ class Client:
 
 
     def Setup(self): # this should do some logic to make sure the connection is actually good.
-        self.IsConnected = True
+        self.HasConnection = True
 
 
     # Getter Functions
