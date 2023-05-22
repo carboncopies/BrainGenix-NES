@@ -1,8 +1,8 @@
 # BrainGenix-NES
 # AGPLv3
 
-import Configuration
-import Modes
+from . import Configuration
+from . import Modes
 
 class Client:
 
@@ -12,7 +12,7 @@ class Client:
         self.Configuration = _Configuration
         self.ValidateConfig()
     
-        
+
     
 
     def ValidateConfig(self):

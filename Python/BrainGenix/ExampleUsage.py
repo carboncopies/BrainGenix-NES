@@ -8,10 +8,10 @@ def main():
     print("Starting NES Frontend Tests")
 
     # Setup Client
-    ClientConfiguration = NES.Client.Configuration()
+    ClientConfiguration = NES.Client.Configuration.Configuration()
     ClientConfiguration.Mode = NES.Client.Modes.Local
 
-    ClientInstance = NES.Client(ClientConfiguration)
+    ClientInstance = NES.Client.Client.Client(ClientConfiguration)
 
     if not ClientInstance.IsConnected():
         print("Cannot Connect To Client")
