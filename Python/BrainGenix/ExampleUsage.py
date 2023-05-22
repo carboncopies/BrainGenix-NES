@@ -19,11 +19,11 @@ def BuildSynapse(_Simulation:NES.Simulation, _NumReceptors:int):
     # Create ion channels for each synapse
     ReceptorIDs = []
     for i in range(_NumReceptors):
-        Receptor = NES.Models.Receptors.TestReceptor()
+        ReceptorCfg = NES.Models.Receptors.TestReceptor()
 
         # Configure the properties here
 
-        ReceptorID = _Simulation.AddReceptor(Receptor)
+        ReceptorID = _Simulation.AddReceptor(ReceptorCfg)
         if (ReceptorID == -1) {
             print("Error creating receptor!")
             exit()
@@ -31,24 +31,65 @@ def BuildSynapse(_Simulation:NES.Simulation, _NumReceptors:int):
         ReceptorIDs.append(ReceptorID)
 
 
-    Synapse = NES.Models.Synapses.TestSynapse()
+    SynapseCfg = NES.Models.Synapses.TestSynapse()
 
     # Configure other properties here
 
-    Synapse.Receptors = ReceptorIDs
+    SynapseCfg.Receptors = ReceptorIDs
 
-    SynapseID = _Simulation.AddSynapse(Synapse)
-    if (SynapseID == -1) {
+    SynapseID = _Simulation.AddSynapse(SynapseCfg)
+    if (SynapseID == -1):
         print("Error creating synapse!")
         exit()
-    }
+
 
     return SynapseID
 
 
 def BuildEndCompartment(_Simulation:NES.Simulation, _NumSynapses:int, _NumReceptors:int):
 
+    # Create Synapses For This Compartment
+    SynapseIDs = []
+    for i in range(_NumSynapses):
+        SynapseID = BuildSynapse(_Simulation, _NumReceptors)
+        SynapseIDs.append(SynapseID)
+
+    CompartmentCfg = NES.Models.Compartments.TestCompartment()
     
+    # Configure other stuff here (like membrane conductance/capacitance, etc.)
+    CompartmentCfg.Synapses = SynapseIDs
+
+    CompartmentID = _Simulation.AddCompartment(CompartmentCfg)
+    if (CompartmentID == -1):
+        print("Error creating end compartment with synapses!")
+        exit()
+    
+    return CompartmentID
+
+
+def BuildCompartment(_Simulation:NES.Simulation, _Length:int, _NumSynapses:int, _NumReceptors:int):
+
+    # Create Child
+    ChildCompartmentID = None
+    
+    # Check if we're at the end
+    if (_Length == 0):
+        ChildCompartmentID = BuildEndCompartment(_Simulation, _NumSynapses, _NumReceptors)
+    else:
+        ChildCompartmentID = BuildCompartment(_Simulation, _Length-1, _NumSynapses, _NumReceptors)
+
+    # Create This Compartment, configure and build
+    CompartmentCfg = NES.Models.Compartments.TestCompartment()
+    
+    # Configure other stuff here (like membrane conductance/capacitance, etc.)
+    CompartmentCfg.ChildCompartments = [ChildCompartmentID]
+
+    CompartmentID = _Simulation.AddCompartment(CompartmentCfg)
+    if (CompartmentID == -1):
+        print("Error creating end compartment with synapses!")
+        exit()
+
+    return CompartmentID
 
 
 
