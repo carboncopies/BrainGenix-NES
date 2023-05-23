@@ -1,1 +1,1 @@
-from .Simulation import Simulation
+from .Configuration import Configuration

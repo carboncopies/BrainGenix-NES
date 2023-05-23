@@ -2,7 +2,7 @@
 # AGPLv3
 
 
-class Simulation():
+class Configuration():
 
     def __init__(self):
         
