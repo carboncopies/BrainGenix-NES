@@ -183,6 +183,24 @@ def main():
             exit()
         NeuronIDs.append(NeuronID)
 
+    # Example To Update All Neurons 
+    SimulationInstance.RunAll(Time="5ms", Step="100us")
+
+    # Get Membrane (soma) Voltages For All Neurons At End Step (this will probably change)
+    MembraneVoltages = []
+    for NeuronID in NeuronIDs:
+        AttribList = [NES.Models.Neurons.TestNeuron.Attribs.SomaVoltage]
+        NeuronAttribs = SimulationInstance.GetNeuronAttributes(NeuronID, AttribList)
+        MembraneVoltages.append(NeuronAttribs.SomaVoltage)
+    
+    # Print them
+    for i in range(len(MembraneVoltages)-1):
+        print(f"Neuron {NeuronIDs[i]} Has Ending Soma Voltage Of {MembraneVoltages[i]}")
+
+    # Teardown Sim
+    ClientInstance.UnbindSimulation()
+    ClientInstance.Terminate()
+
 
 
 if __name__ == "__main__":
