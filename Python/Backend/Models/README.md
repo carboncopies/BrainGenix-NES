@@ -1,2 +1,0 @@
-# About
-Frontend models contain the parameters for all the models that will be later passed over to the backend for simulation. This folder also contains a file for each synapse type with code on how to update it.
