@@ -1,6 +1,6 @@
-from . import Client
-from . import Configuration
-from . import Modes
+from .Client import Client
+from .Configuration import Configuration
+from .Modes import Modes
 
 __all__ = [
 
