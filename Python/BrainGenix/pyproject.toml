@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "BrainGenix-NES"
+version = "0.0.1"
+authors = [
+  { name="BrainGenix Team", email="braingenix@carboncopies.org" },
+]
+description = "Python client for BrainGenix-NES simulation platform."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: AGPL License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://gitlab.braingenix.org/carboncopies/BrainGenix-NES"
+"Bug Tracker" = "https://gitlab.braingenix.org/carboncopies/BrainGenix-NES/issues"
