@@ -13,5 +13,5 @@ pip3 install dist/*.whl
 
 # Run Example Usage Code
 cd Test
-python3 ExampleUsage.py
+python3 SimpleTest.py
 
