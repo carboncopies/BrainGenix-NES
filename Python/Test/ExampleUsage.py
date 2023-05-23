@@ -2,9 +2,9 @@
 
 import random
 
-import NES.Client
-import NES.Models
-import NES.Simulation
+import BrainGenix.NES.Client
+import BrainGenix.NES.Models
+import BrainGenix.NES.Simulation
 
 
 def RandXYZ():
