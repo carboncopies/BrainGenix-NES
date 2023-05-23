@@ -115,7 +115,7 @@ def main():
     if (SimID == -1):
         print("Failed To Create Simulation!")
         exit()
-    ClientInstance.BindSimulation(SimID)
+    SimulationInstance = ClientInstance.BindSimulation(SimID)
 
     
     # Now Add Neurons
@@ -150,13 +150,38 @@ def main():
         # (this may be a multi-step process since compartments can link to eachother)
         # Finally, link the root axon/dendrite compartments to the neuron struct
 
-        # Build Synapse
+        # Build Axon Compartments, Dendrite Compartments
+        AxonCompartmentIDs = [
+                            BuildCompartment(SimulationInstance, 
+                                            NumAxonCompartments,
+                                            NumSynapsesPerEndCompartment,
+                                            NumReceptersPerSynapse
+                                            )
+                            ]
+        DendriteCompartmentIDs = [
+                            BuildCompartment(SimulationInstance, 
+                                            NumDendriteCompartments,
+                                            NumSynapsesPerEndCompartment,
+                                            NumReceptersPerSynapse
+                                            )
+                            ]
+        
+
+        # Create Neuron
+        NeuronCfg = NES.Models.Neurons.TestNeuron()
+
+        # Configure, this will have more stuff in it later...
+        NeuronCfg.Position = RandXYZ()
+        NeuronCfg.Axons = AxonCompartmentIDs
+        NeuronCfg.Dendrites = DendriteCompartmentIDs
 
 
-        NeuronConfig = NES.Models.Neurons.TestNeuron()
-        NeuronConfig.Position = RandXYZ() 
-
-        NeuronConfig.Axons = []
+        # Create Neuron
+        NeuronID = SimulationInstance.AddNeuron(NeuronCfg)
+        if (NeuronID == -1):
+            print("Error creating Neuron!")
+            exit()
+        NeuronIDs.append(NeuronID)
 
 
 
