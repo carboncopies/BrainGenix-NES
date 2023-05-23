@@ -35,3 +35,9 @@ class Client:
     # Getter Functions
     def IsReady(self):
         return self.HasConnection
+    
+
+    # Creation Functions
+    def CreateSimulation(self, _SimulationConfig):
+
+        return 0 # temporary simulation id until we actually implement this

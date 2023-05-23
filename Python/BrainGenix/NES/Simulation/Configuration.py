@@ -6,4 +6,7 @@ class Configuration():
 
     def __init__(self):
         
-        pass
+        # Create Attributes
+        self.Name = None
+        self.Description = None
+    

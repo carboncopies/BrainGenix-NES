@@ -22,7 +22,15 @@ def main():
 
     
     # Create A New Simulation
+    print("Creating Simulation Configuration Event")
     SimulationCfg = NES.Simulation.Configuration()
+    SimulationCfg.Name = "TestSimulation"
+    SimulationCfg.Description = "Example Description"
+
+    # Create Simulation Instance
+    SimulationID = ClientInstance.CreateSimulation(SimulationCfg)
+    assert(SimulationID != -1)
+    
 
 
 
