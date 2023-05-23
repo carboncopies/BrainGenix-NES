@@ -1,2 +1,2 @@
-from . import Local
-from . import Remote
+from .Local import Local
+from .Remote import Remote
