@@ -102,7 +102,7 @@ def main():
 
     ClientInstance = NES.Client.Client.Client(ClientConfiguration)
 
-    if not ClientInstance.IsConnected():
+    if not ClientInstance.IsReady():
         print("Cannot Connect To Client")
 
 

@@ -33,5 +33,5 @@ class Client:
 
 
     # Getter Functions
-    def IsConnected(self):
+    def IsReady(self):
         return self.HasConnection
