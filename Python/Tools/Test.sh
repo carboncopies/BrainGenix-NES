@@ -11,3 +11,7 @@ source TestEnv/bin/activate
 echo "Installing NES Package"
 pip3 install dist/*.whl
 
+# Run Example Usage Code
+cd Test
+python3 ExampleUsage.py
+
