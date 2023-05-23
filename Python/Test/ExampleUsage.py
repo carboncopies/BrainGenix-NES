@@ -24,10 +24,9 @@ def BuildSynapse(_Simulation:NES.Simulation, _NumReceptors:int):
         # Configure the properties here
 
         ReceptorID = _Simulation.AddReceptor(ReceptorCfg)
-        if (ReceptorID == -1) {
+        if (ReceptorID == -1):
             print("Error creating receptor!")
             exit()
-        }
         ReceptorIDs.append(ReceptorID)
 
 
