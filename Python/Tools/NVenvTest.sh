@@ -4,7 +4,8 @@
 cd ..
 mkdir -p .Test
 cp -r BrainGenix .Test
-cp -r Test/* .Test/BrainGenix
+cp -r Test/* .Test
+echo "" >> .Test/__init__.py
 cd .Test/BrainGenix
 
 # Run Example Usage Code
