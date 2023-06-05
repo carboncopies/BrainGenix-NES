@@ -3,6 +3,7 @@
 
 from . import Configuration
 from . import Modes
+from .. import Simulation
 
 
 class Client:
@@ -46,3 +47,4 @@ class Client:
     # Binding Functions
     def BindSimulation(self, _SimID):
         assert(_SimID == 0) # temp until we actually do this part...
+        return Simulation.Simulation()
