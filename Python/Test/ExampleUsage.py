@@ -181,7 +181,7 @@ def main():
         NeuronIDs.append(NeuronID)
 
     # Example To Update All Neurons 
-    SimulationInstance.RunAll(Time="5ms", Step="100us")
+    SimulationInstance.RunAll(_Time="5ms", _Step="100us")
 
     # Get Membrane (soma) Voltages For All Neurons At End Step (this will probably change)
     MembraneVoltages = []
