@@ -23,3 +23,8 @@ class Simulation():
 
     def AddNeuron(self, _NeuronConfig):
         return 0 # temp stuff
+    
+
+    # Run Funcs
+    def RunAll(self, _Time="1s", _Step="100us"):
+        return True # do something, we'll implement this later
