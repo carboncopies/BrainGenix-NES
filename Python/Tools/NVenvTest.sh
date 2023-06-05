@@ -4,7 +4,7 @@
 cd ..
 mkdir -p .Test
 cp -r BrainGenix .Test
-cp -r Tools/* .Test/BrainGenix
+cp -r Test/* .Test/BrainGenix
 cd .Test/BrainGenix
 
 # Run Example Usage Code

@@ -1,6 +1,7 @@
 # Ignore Dist directory
 dist/
 TestEnv
+.Test/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
