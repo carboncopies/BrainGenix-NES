@@ -105,7 +105,7 @@ def main():
 
 
     # Create Simulation
-    MySim = NES.Simulation.Simulation()
+    MySim = NES.Simulation.Configuration()
     MySim.Name = "Test Sim"
     
     SimID = ClientInstance.CreateSimulation(MySim)

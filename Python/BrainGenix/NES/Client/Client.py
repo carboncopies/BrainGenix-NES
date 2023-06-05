@@ -41,3 +41,7 @@ class Client:
     def CreateSimulation(self, _SimulationConfig):
 
         return 0 # temporary simulation id until we actually implement this
+    
+    # Binding Functions
+    def BindSimulation(self, _SimID):
+        assert(_SimID == 0) # temp until we actually do this part...
