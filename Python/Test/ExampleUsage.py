@@ -95,7 +95,7 @@ def main():
     print("Starting NES Frontend Tests")
 
     # Setup Client (use local config)
-    ClientConfiguration = NES.Client.Configuration.Configuration()
+    ClientConfiguration = NES.Client.Configuration()
     ClientConfiguration.Mode = NES.Client.Modes.Local
 
     ClientInstance = NES.Client.Client(ClientConfiguration)
