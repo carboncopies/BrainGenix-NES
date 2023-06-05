@@ -13,5 +13,8 @@ pip3 install dist/*.whl
 
 # Run Example Usage Code
 cd Test
+echo "Running Simple API Test"
 python3 SimpleTest.py
+echo "Running More Extensive API Test"
+python3 ExampleUsage.py
 

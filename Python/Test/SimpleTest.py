@@ -31,7 +31,7 @@ def main():
     SimulationID = ClientInstance.CreateSimulation(SimulationCfg)
     assert(SimulationID != -1)
     
-
+    
 
 
 if __name__ == "__main__":

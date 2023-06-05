@@ -2,9 +2,7 @@
 
 import random
 
-import BrainGenix.NES.Client
-import BrainGenix.NES.Models
-import BrainGenix.NES.Simulation
+import BrainGenix.NES as NES
 
 
 def RandXYZ():
@@ -100,7 +98,7 @@ def main():
     ClientConfiguration = NES.Client.Configuration.Configuration()
     ClientConfiguration.Mode = NES.Client.Modes.Local
 
-    ClientInstance = NES.Client.Client.Client(ClientConfiguration)
+    ClientInstance = NES.Client.Client(ClientConfiguration)
 
     if not ClientInstance.IsReady():
         print("Cannot Connect To Client")
