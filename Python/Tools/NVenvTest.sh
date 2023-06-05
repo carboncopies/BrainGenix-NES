@@ -6,7 +6,7 @@ mkdir -p .Test
 cp -r BrainGenix .Test
 cp -r Test/* .Test
 echo "" >> .Test/__init__.py
-cd .Test/BrainGenix
+cd .Test
 
 # Run Example Usage Code
 echo "Running Simple API Test"
