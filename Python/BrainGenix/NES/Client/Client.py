@@ -4,6 +4,7 @@
 from . import Configuration
 from . import Modes
 
+
 class Client:
 
     def __init__(self, _Configuration:Configuration):
