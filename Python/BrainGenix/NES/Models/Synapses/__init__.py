@@ -1,1 +1,1 @@
-from . import TestSynapse
+from .TestSynapse import TestSynapse

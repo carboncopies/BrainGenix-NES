@@ -1,1 +1,1 @@
-from . import TestNeuron
+from .TestNeuron import TestNeuron

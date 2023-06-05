@@ -1,1 +1,1 @@
-from . import TestCompartment
+from .TestCompartment import TestCompartment

@@ -1,1 +1,1 @@
-from . import TestReceptor
+from .TestReceptor import TestReceptor
