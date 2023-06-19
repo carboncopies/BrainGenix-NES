@@ -1,2 +1,2 @@
-from .Config import Config
 from . import Attribs
+from .TestNeuron import TestNeuron

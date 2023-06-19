@@ -165,7 +165,7 @@ def main():
         
 
         # Create Neuron
-        NeuronCfg = NES.Models.Neurons.TestNeuron()
+        NeuronCfg = NES.Models.Neurons.TestNeuron.TestNeuron()
 
         # Configure, this will have more stuff in it later...
         NeuronCfg.Position = RandXYZ()
