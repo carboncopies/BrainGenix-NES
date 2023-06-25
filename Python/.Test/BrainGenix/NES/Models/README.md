@@ -1,2 +1,0 @@
-# About
-Frontend models contain the parameters for all the models that will be later passed over to the backend for simulation. These do not contain any code for how to run them, just the user-editable attributes needed to describe them.
