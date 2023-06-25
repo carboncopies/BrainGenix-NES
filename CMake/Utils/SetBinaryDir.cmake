@@ -2,7 +2,7 @@
 # NES BUILD UTIL #
 ##################
 
-NESBuildLogger($Green} "Setting Binary Directories")
+NESBuildLogger(${Green} "Setting Binary Directories")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${BIN_DIR})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${BIN_DIR})
