@@ -5,6 +5,6 @@
   "dependencies": [
     "boost-program-options",
     "nlohmann-json",
-    "brpc"
+    "rpclib"
   ]
 }

@@ -25,6 +25,17 @@ project(
 include(${CMAKE_UTIL_DIR}/ColorizeMessages.cmake)
 include(${CMAKE_UTIL_DIR}/SetBinaryDir.cmake)
 
+# Add Libraries
+message(STATUS "Finding nlohmann_json Package")
+find_package(nlohmann_json CONFIG REQUIRED)
+
+message(STATUS "Finding boost Package")
+set(Boost_NO_WARN_NEW_VERSIONS 1)
+find_package(Boost REQUIRED COMPONENTS program_options)
+
+message(STATUS "Finding rpclib Package")
+find_package(rpclib CONFIG REQUIRED)
+
 # Ensure config is copied to bin
 file(COPY "${SRC_DIR}/Data/NES.cfg" DESTINATION "${BIN_DIR}")
 

@@ -12,9 +12,10 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <iostream>
+#include <functional>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-
+#include <rpc/server.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 
