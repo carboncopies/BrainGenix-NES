@@ -20,6 +20,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/RPC/StaticRoutes.cpp
   ${SRC_DIR}/Core/RPC/StaticRoutes.h
 
+  ${SRC_DIR}/Core/Simulator/Manager.cpp
+  ${SRC_DIR}/Core/Simulator/Manager.h
+
   )
 
 
