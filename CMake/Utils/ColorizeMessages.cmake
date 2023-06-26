@@ -41,8 +41,8 @@ else ()
     set(BoldWhite   " ")
 endif()
 
-function(NESBuildLogger Color Message)
-    message("${BoldMagenta}[NES Build System]${ColourReset} ${Color}${Message}${ColourReset}")
+function(BGBuildLogger Color Message)
+    message("${BoldMagenta}[BG Build System]${ColourReset} ${Color}${Message}${ColourReset}")
 endfunction()
 
 # function(message)

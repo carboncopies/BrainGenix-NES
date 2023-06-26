@@ -6,6 +6,7 @@ set(LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty")
 set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source")
 set(BIN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Binaries")
 set(CMAKE_UTIL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake/Utils")
+set(CMAKE_SCRIPTS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake/CompileInfo")
 set(PROJECT_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR})
 
 
@@ -38,6 +39,13 @@ find_package(rpclib CONFIG REQUIRED)
 
 # Ensure config is copied to bin
 file(COPY "${SRC_DIR}/Data/NES.cfg" DESTINATION "${BIN_DIR}")
+
+# Run Configuration Tools
+include(${CMAKE_SCRIPTS_DIR}/VersioningSystem/VersioningSystem.cmake)
+include(${CMAKE_SCRIPTS_DIR}/CompilePlatformInfo/CompilePlatformInfo.cmake)
+include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
+
+
 
 
 add_subdirectory(${SRC_DIR}/Core)
