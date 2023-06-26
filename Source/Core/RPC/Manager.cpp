@@ -1,0 +1,13 @@
+#include <RPC/Manager.h>
+
+
+
+namespace BG {
+namespace NES {
+namespace API {
+
+
+
+}; // Close Namespace API
+}; // Close Namespace NES
+}; // Close Namespace BG
