@@ -12,12 +12,14 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <iostream>
-#include <functional>
+#include <memory>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <rpc/server.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <RPC/StaticRoutes.h>
+
 #include <Config/Config.h>
 
 
@@ -35,6 +37,7 @@ class Manager {
 private:
 
     Config::Config* Config_; /**Pointer to configuration struct owned by rest of system*/
+    std::unique_ptr<rpc::server> RPCServer_; /**Instance of RPC Server from rpclib*/
 
 public:
 

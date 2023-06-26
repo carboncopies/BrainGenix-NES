@@ -7,10 +7,6 @@ namespace NES {
 namespace API {
 
 
-std::string GetVersion() {
-    return "2023.06.25";
-}
-
 class Test {
 private:
     int foo_;
@@ -32,12 +28,25 @@ public:
 
 Manager::Manager(Config::Config* _Config) {
 
-    rpc::server srv(8001);
-    Test TestInstance(0);
-    srv.bind("GetAPIVersion", &GetVersion);
-    srv.bind("add", [&TestInstance](int a, int b){ return TestInstance.Add(a, b); });
-    srv.bind("echo", [&TestInstance](std::string _in){return TestInstance.Echo(_in); });
-    srv.run();
+    // Intiialize Server
+    std::string ServerHost = _Config->Host;
+    int ServerPort = _Config->PortNumber;
+
+    RPCServer_ = std::make_unique<rpc::server>(ServerPort);
+
+    // Register Basic Routes
+    RPCServer_->bind("GetAPIVersion", &GetAPIVersion);
+    RPCServer_->bind("Echo", &Echo);
+    
+    int ThreadCount = 4;
+    RPCServer_->async_run(ThreadCount);
+
+    // rpc::server srv(8001);
+    // Test TestInstance(0);
+    // srv.bind("GetAPIVersion", &GetVersion);
+    // srv.bind("add", [&TestInstance](int a, int b){ return TestInstance.Add(a, b); });
+    // srv.bind("echo", [&TestInstance](std::string _in){return TestInstance.Echo(_in); });
+    // srv.run();
 
     // NOTE: you have to make sure that the lifetime of foo_obj
     // exceeds that of the server.
