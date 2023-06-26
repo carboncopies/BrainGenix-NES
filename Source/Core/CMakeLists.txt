@@ -17,6 +17,8 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/RPC/Manager.cpp
   ${SRC_DIR}/Core/RPC/Manager.h
+  ${SRC_DIR}/Core/RPC/StaticRoutes.cpp
+  ${SRC_DIR}/Core/RPC/StaticRoutes.h
 
   )
 
