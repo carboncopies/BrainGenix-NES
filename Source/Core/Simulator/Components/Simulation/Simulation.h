@@ -3,7 +3,7 @@
 //=================================================================//
 
 /*
-    Description: This file provides the main simulation manager code.
+    Description: This file provides the simulation struct.
     Additional Notes: None
     Date Created: 2023-06-26
 */
@@ -21,36 +21,10 @@
 namespace BG {
 namespace NES {
 namespace Simulator {
+namespace Component {
 
 
-/**
- * @brief This class provides the infrastructure to run simulations.
- */
-class Manager {
-
-private:
-    Config::Config* Config_; /**Pointer to configuration struct owned by rest of system*/
-
-public:
-
-    /**
-     * @brief Construct a new Manager object
-     * Give this a pointer to an initialized configuration object.
-     * 
-     * @param _Config 
-     */
-    Manager(Config::Config* _Config);
-
-
-    /**
-     * @brief Destroy the Manager object
-     * 
-     */
-    ~Manager();
-
-
-};
-
+}; // Close Namespace Component
 }; // Close Namespace Simulator
 }; // Close Namespace NES
 }; // Close Namespace BG
