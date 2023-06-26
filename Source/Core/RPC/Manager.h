@@ -18,6 +18,7 @@
 #include <rpc/server.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Config/Config.h>
 
 
 namespace BG {
@@ -31,10 +32,26 @@ namespace API {
  */
 class Manager {
 
+private:
+
+    Config::Config* Config_; /**Pointer to configuration struct owned by rest of system*/
+
 public:
 
-    
-    Manager();
+    /**
+     * @brief Construct a new Manager object
+     * Give this a pointer to an initialized configuration object.
+     * 
+     * @param _Config 
+     */
+    Manager(Config::Config* _Config);
+
+
+    /**
+     * @brief Destroy the Manager object
+     * 
+     */
+    ~Manager();
 
 
 };

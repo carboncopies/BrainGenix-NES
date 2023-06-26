@@ -21,6 +21,8 @@
 #include <Config/ConfigurationManager.h>
 #include <Config/Config.h>
 
+#include <RPC/Manager.h>
+
 
 /**
  * Main function.

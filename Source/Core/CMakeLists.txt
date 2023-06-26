@@ -15,6 +15,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Config/ConfigDefaults.cpp
   ${SRC_DIR}/Core/Config/ConfigDefaults.h
 
+  ${SRC_DIR}/Core/RPC/Manager.cpp
+  ${SRC_DIR}/Core/RPC/Manager.h
+
   )
 
 
