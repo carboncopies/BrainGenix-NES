@@ -57,6 +57,15 @@ public:
     ~Manager();
 
 
+    /**
+     * @brief Registers a callback to the api service. Assume your callback function may be accessed from any thread.
+     * 
+     * @param _RouteName 
+     * @param _CallbackFunction 
+     */
+    template <typename F> void AddRoute(std::string _RouteName, F _CallbackFunction);
+
+
 };
 
 }; // Close Namespace API

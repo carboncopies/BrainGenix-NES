@@ -17,7 +17,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Simulator/Structs/Simulation/Simulation.h>
+#include <Simulator/Structs/Simulation.h>
 
 #include <Config/Config.h>
 

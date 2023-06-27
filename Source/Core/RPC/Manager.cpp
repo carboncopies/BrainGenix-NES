@@ -35,8 +35,8 @@ Manager::Manager(Config::Config* _Config) {
     RPCServer_ = std::make_unique<rpc::server>(ServerPort);
 
     // Register Basic Routes
-    RPCServer_->bind("GetAPIVersion", &GetAPIVersion);
-    RPCServer_->bind("Echo", &Echo);
+    AddRoute("GetAPIVersion", &GetAPIVersion);
+    AddRoute("Echo", &Echo);
     
     int ThreadCount = 1;
     RPCServer_->async_run(ThreadCount);
@@ -57,6 +57,14 @@ Manager::Manager(Config::Config* _Config) {
 Manager::~Manager() {
 
 }
+
+
+template <typename F> void Manager::AddRoute(std::string _RouteName, F _CallbackFunction) {
+    std::cout<<"[INFO] Registering Callback For Route: "<<_RouteName<<std::endl;
+    RPCServer_->bind(_RouteName.c_str(), _CallbackFunction);
+}
+
+
 
 
 }; // Close Namespace API

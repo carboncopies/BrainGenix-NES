@@ -12,6 +12,11 @@ Manager::Manager(Config::Config* _Config) {
 
 }
 
+Manager::~Manager() {
+
+}
+
+
 
 
 }; // Close Namespace Simulator
