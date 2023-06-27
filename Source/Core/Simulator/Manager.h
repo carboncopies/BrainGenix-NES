@@ -20,10 +20,10 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
-
+#include <Simulator/Structs/Sphere.h>
 #include <Config/Config.h>
-
 #include <RPC/Manager.h>
+#include <Util/JSONHelpers.h>
 
 
 namespace BG {
@@ -70,6 +70,15 @@ public:
      * @return std::string 
      */
     std::string SimulationCreate(std::string _JSONRequest);
+
+    /**
+     * @brief This function handles the create sphere route on the API.
+     * 
+     * @param _JSONRequest 
+     * @return std::string 
+     */
+    std::string SphereCreate(std::string _JSONRequest);
+
 
 };
 

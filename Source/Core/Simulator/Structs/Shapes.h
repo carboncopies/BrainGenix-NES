@@ -3,19 +3,20 @@
 //=================================================================//
 
 /*
-    Description: This file provides the sphere struct.
+    Description: This file provides the shapes struct.
     Additional Notes: None
-    Date Created: 2023-06-26
+    Date Created: 2023-06-27
 */
 
 #pragma once
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <string>
+#include <vector>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Structs/Sphere.h>
 
 
 namespace BG {
@@ -28,13 +29,9 @@ namespace Shapes {
  * @brief Name of the Sphere
  * 
  */
-struct Sphere {
+struct Shapes {
 
-    std::string Name; /**Name of the Sphere*/
-    int ID; /**ID of the Sphere*/
-
-    float Radius_nm; /**Radius in nanometers of the sphere*/
-    float Center_nm[3]; /**Position of the center of the sphere in nanometers (relative to origin)*/
+    std::vector<Sphere> Spheres; /**Vector of spheres owned by the simulation.*/
 
 };
 

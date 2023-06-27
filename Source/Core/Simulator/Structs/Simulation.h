@@ -16,7 +16,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-
+#include <Simulator/Structs/Shapes.h>
 
 namespace BG {
 namespace NES {
@@ -31,6 +31,8 @@ struct Simulation {
 
     std::string Name; /**Name of the simulation*/
     int ID; /**ID of the simulation*/
+
+    Shapes::Shapes Shapes;
 
 };
 

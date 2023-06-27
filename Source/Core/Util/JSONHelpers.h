@@ -3,9 +3,9 @@
 //=================================================================//
 
 /*
-    Description: This file provides the sphere struct.
+    Description: This file provides helper utils for managing json requests/responses.
     Additional Notes: None
-    Date Created: 2023-06-26
+    Date Created: 2023-06-27
 */
 
 #pragma once
@@ -14,31 +14,21 @@
 #include <string>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+#include <nlohmann/json.hpp>
 
 // Internal Libraries (BG convention: use <> instead of "")
 
 
 namespace BG {
 namespace NES {
-namespace Simulator {
-namespace Shapes {
+namespace Util {
 
 
-/**
- * @brief Name of the Sphere
- * 
- */
-struct Sphere {
+int GetInt(nlohmann::json *_JSON, std::string _ParamName);
+float GetFloat(nlohmann::json *_JSON, std::string _ParamName);
+std::string GetString(nlohmann::json *_JSON, std::string _ParamName);
 
-    std::string Name; /**Name of the Sphere*/
-    int ID; /**ID of the Sphere*/
 
-    float Radius_nm; /**Radius in nanometers of the sphere*/
-    float Center_nm[3]; /**Position of the center of the sphere in nanometers (relative to origin)*/
-
-};
-
-}; // Close Namespace Shapes
-}; // Close Namespace Simulator
+}; // Close Namespace Util
 }; // Close Namespace NES
 }; // Close Namespace BG

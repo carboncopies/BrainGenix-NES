@@ -12,6 +12,7 @@ Manager::Manager(Config::Config* _Config, API::Manager* _RPCManager) {
 
     // Register Callback For CreateSim
     _RPCManager->AddRoute("Simulation/Create", [this](std::string RequestJSON){ return SimulationCreate(RequestJSON);});
+    _RPCManager->AddRoute("Geometry/Shape/Sphere/Create", [this](std::string RequestJSON){ return SphereCreate(RequestJSON);});
     
 
 }
@@ -39,6 +40,42 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     // Return Status ID
     nlohmann::json ResponseJSON;
     ResponseJSON["SimulationID"] = SimID;
+    return ResponseJSON.dump();
+}
+
+std::string Manager::SphereCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+    float Radius_nm  = Util::GetFloat(&RequestJSON, "Radius_nm");
+    float CenterPosX_nm = Util::GetFloat(&RequestJSON, "CenterPosX_nm");
+    float CenterPosY_nm = Util::GetFloat(&RequestJSON, "CenterPosY_nm");
+    float CenterPosZ_nm = Util::GetFloat(&RequestJSON, "CenterPosZ_nm");
+    std::string Name = Util::GetString(&RequestJSON, "Name");
+
+    std::cout<<"[Info] Create Sphere Called, On Sim "<<SimulationID<<std::endl;
+
+
+    // Build New Sphere Object
+    Shapes::Sphere S;
+    S.Name = Name;
+    S.Radius_nm = Radius_nm;
+    S.Center_nm[0] = CenterPosX_nm;
+    S.Center_nm[1] = CenterPosY_nm;
+    S.Center_nm[2] = CenterPosZ_nm;
+
+
+    // Add to Sim, Set ID
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    int SphereID = ThisSimulation->Shapes.Spheres.size();
+    S.ID = SphereID;
+    ThisSimulation->Shapes.Spheres.push_back(S);
+
+
+    // Return Status ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["ShapeID"] = SphereID;
     return ResponseJSON.dump();
 }
 
