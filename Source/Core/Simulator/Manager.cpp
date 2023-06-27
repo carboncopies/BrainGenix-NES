@@ -7,6 +7,10 @@ namespace NES {
 namespace Simulator {
 
 
+Manager::Manager(Config::Config* _Config) {
+    Config_ = _Config;
+
+}
 
 
 

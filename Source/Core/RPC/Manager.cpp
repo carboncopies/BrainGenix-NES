@@ -38,8 +38,9 @@ Manager::Manager(Config::Config* _Config) {
     RPCServer_->bind("GetAPIVersion", &GetAPIVersion);
     RPCServer_->bind("Echo", &Echo);
     
-    int ThreadCount = 4;
+    int ThreadCount = 1;
     RPCServer_->async_run(ThreadCount);
+
 
     // rpc::server srv(8001);
     // Test TestInstance(0);
