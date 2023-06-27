@@ -13,13 +13,17 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <vector>
 #include <memory>
+#include <iostream>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+#include <nlohmann/json.hpp>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
 #include <Config/Config.h>
+
+#include <RPC/Manager.h>
 
 
 namespace BG {
@@ -46,8 +50,9 @@ public:
      * Give this a pointer to an initialized configuration object.
      * 
      * @param _Config 
+     * @param _RPCManager
      */
-    Manager(Config::Config* _Config);
+    Manager(Config::Config* _Config, API::Manager* _RPCManager);
 
 
     /**
@@ -56,6 +61,15 @@ public:
      */
     ~Manager();
 
+
+    /**
+     * 
+     * @brief This function handles the add simulation route on the API.
+     * 
+     * @param _JSONRequest 
+     * @return std::string 
+     */
+    std::string SimulationCreate(std::string _JSONRequest);
 
 };
 

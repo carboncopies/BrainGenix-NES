@@ -10,6 +10,10 @@ int main(int NumArguments, char** ArgumentValues) {
     // Setup API Server
     BG::NES::API::Manager APIManager(&SystemConfiguration);
 
+    // Setup Simulator
+    BG::NES::Simulator::Manager SimulationManager(&SystemConfiguration, &APIManager);
+
+    
     // block forever while servers are running
     while (true) {}
 

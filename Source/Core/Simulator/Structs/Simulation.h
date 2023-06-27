@@ -30,6 +30,7 @@ namespace Simulator {
 struct Simulation {
 
     std::string Name; /**Name of the simulation*/
+    int ID; /**ID of the simulation*/
 
 };
 

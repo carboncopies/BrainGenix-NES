@@ -59,10 +59,10 @@ Manager::~Manager() {
 }
 
 
-template <typename F> void Manager::AddRoute(std::string _RouteName, F _CallbackFunction) {
-    std::cout<<"[INFO] Registering Callback For Route: "<<_RouteName<<std::endl;
-    RPCServer_->bind(_RouteName.c_str(), _CallbackFunction);
-}
+// template <typename F> void Manager::AddRoute(std::string _RouteName, F _CallbackFunction) {
+//     std::cout<<"[INFO] Registering Callback For Route: "<<_RouteName<<std::endl;
+//     RPCServer_->bind(_RouteName.c_str(), _CallbackFunction);
+// }
 
 
 

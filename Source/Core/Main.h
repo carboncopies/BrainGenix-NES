@@ -22,6 +22,7 @@
 #include <Config/Config.h>
 
 #include <RPC/Manager.h>
+#include <Simulator/Manager.h>
 
 
 /**

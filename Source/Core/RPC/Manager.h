@@ -63,7 +63,10 @@ public:
      * @param _RouteName 
      * @param _CallbackFunction 
      */
-    template <typename F> void AddRoute(std::string _RouteName, F _CallbackFunction);
+    template <typename F> void AddRoute(std::string _RouteName, F _CallbackFunction) {
+        std::cout<<"[INFO] Registering Callback For Route: "<<_RouteName<<std::endl;
+        RPCServer_->bind(_RouteName.c_str(), _CallbackFunction);
+    }
 
 
 };
