@@ -71,36 +71,14 @@ public:
 
 
     /**
-     * 
-     * @brief This function handles the add simulation route on the API.
-     * 
-     * @param _JSONRequest 
-     * @return std::string 
-     */
-    std::string SimulationCreate(std::string _JSONRequest);
-
-    /**
-     * @brief This function handles the create sphere route on the API.
-     * 
-     * @param _JSONRequest 
-     * @return std::string 
-     */
-    std::string SphereCreate(std::string _JSONRequest);
-
-    /**
-     * @brief This function handles the create cylinder route on the API.
-     * 
-     * @param _JSONRequest 
-     * @return std::string 
-     */
-    std::string CylinderCreate(std::string _JSONRequest);
-
-    /**
      * @brief Various routes for API
      * 
      * @param _JSONRequest 
      * @return std::string 
      */
+    std::string SimulationCreate(std::string _JSONRequest);
+    std::string SphereCreate(std::string _JSONRequest);
+    std::string CylinderCreate(std::string _JSONRequest);
     std::string BoxCreate(std::string _JSONRequest);
     std::string BSCreate(std::string _JSONRequest);
     std::string StapleCreate(std::string _JSONRequest);
