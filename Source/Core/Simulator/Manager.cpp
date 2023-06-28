@@ -16,7 +16,7 @@ Manager::Manager(Config::Config* _Config, API::Manager* _RPCManager) {
     _RPCManager->AddRoute("Geometry/Shape/Cylinder/Create", [this](std::string RequestJSON){ return CylinderCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Box/Create", [this](std::string RequestJSON){ return BoxCreate(RequestJSON);});
     _RPCManager->AddRoute("Compartment/BS/Create", [this](std::string RequestJSON){ return BSCreate(RequestJSON);});
-    _RPCManager->AddRoute("Connections/Staple/Create", [this](std::string RequestJSON){ return StapleCreate(RequestJSON);});
+    _RPCManager->AddRoute("Connection/Staple/Create", [this](std::string RequestJSON){ return StapleCreate(RequestJSON);});
 
 
 }
