@@ -24,6 +24,10 @@
 #include <Simulator/Structs/Cylinder.h>
 #include <Simulator/Structs/Box.h>
 #include <Simulator/Structs/BS.h>
+#include <Simulator/Structs/Staple.h>
+#include <Simulator/Structs/Receptor.h>
+#include <Simulator/Structs/PatchClampDAC.h>
+#include <Simulator/Structs/PatchClampADC.h>
 
 #include <Config/Config.h>
 #include <RPC/Manager.h>
