@@ -23,6 +23,7 @@
 #include <Simulator/Structs/Sphere.h>
 #include <Simulator/Structs/Cylinder.h>
 #include <Simulator/Structs/Box.h>
+#include <Simulator/Structs/BS.h>
 
 #include <Config/Config.h>
 #include <RPC/Manager.h>
@@ -97,6 +98,7 @@ public:
      * @return std::string 
      */
     std::string BoxCreate(std::string _JSONRequest);
+    std::string BSCreate(std::string _JSONRequest);
 
 
 };

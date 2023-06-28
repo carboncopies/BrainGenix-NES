@@ -15,6 +15,7 @@ Manager::Manager(Config::Config* _Config, API::Manager* _RPCManager) {
     _RPCManager->AddRoute("Geometry/Shape/Sphere/Create", [this](std::string RequestJSON){ return SphereCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Cylinder/Create", [this](std::string RequestJSON){ return CylinderCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Box/Create", [this](std::string RequestJSON){ return BoxCreate(RequestJSON);});
+    _RPCManager->AddRoute("Compartment/BS/Create", [this](std::string RequestJSON){ return BSCreate(RequestJSON);});
 
 
 }
@@ -173,6 +174,45 @@ std::string Manager::BoxCreate(std::string _JSONRequest) {
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["ShapeID"] = ShapeID;
+    return ResponseJSON.dump();
+}
+
+std::string Manager::BSCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    std::cout<<"[Info] Create BS Called, On Sim "<<SimulationID<<std::endl;
+
+
+    // Build New BS Object
+    Compartments::BS C;
+    C.Name = Util::GetString(&RequestJSON, "Name");
+    C.ShapeID = Util::GetInt(&RequestJSON, "ShapeID");
+    C.MembranePotential_mV = Util::GetFloat(&RequestJSON, "MembanePotential_mV");
+    C.SpikeThreshold_mV = Util::GetFloat(&RequestJSON, "SpikeThreshold_mV");
+    C.DecayTime_ms = Util::GetFloat(&RequestJSON, "DecayTime_ms");
+
+
+
+    // Add to Sim, Set ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        ResponseJSON["CompartmentID"] = -1;
+        return ResponseJSON.dump();
+    }
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    int CompartmentID = ThisSimulation->BSCompartments.size();
+    C.ID = CompartmentID;
+    ThisSimulation->BSCompartments.push_back(S);
+
+
+    // Return Status ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    ResponseJSON["CompartmentID"] = CompartmentID;
     return ResponseJSON.dump();
 }
 
