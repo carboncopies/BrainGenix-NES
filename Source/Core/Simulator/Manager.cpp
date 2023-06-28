@@ -181,7 +181,6 @@ std::string Manager::BSCreate(std::string _JSONRequest) {
 
     // Parse Request
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    std::cout<<RequestJSON<<std::endl;
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
     std::cout<<"[Info] Create BS Called, On Sim "<<SimulationID<<std::endl;
