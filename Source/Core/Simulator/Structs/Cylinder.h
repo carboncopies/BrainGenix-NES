@@ -3,21 +3,19 @@
 //=================================================================//
 
 /*
-    Description: This file provides the shapes struct.
+    Description: This file provides the cylinder struct.
     Additional Notes: None
-    Date Created: 2023-06-27
+    Date Created: 2023-06-26
 */
 
 #pragma once
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <vector>
+#include <string>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Simulator/Structs/Sphere.h>
-#include <Simulator/Structs/Cylinder.h>
 
 
 namespace BG {
@@ -27,14 +25,18 @@ namespace Shapes {
 
 
 /**
- * @brief This struct contains the various shapes used in the simulation. It has a vector containing each of the shapes.
- * For now, the "id" of the shape, is simply it's index minus an offset (cylinders are -1000000, boxes -2000000, etc.)
+ * @brief Name of the Cylinder
  * 
  */
-struct Shapes {
+struct Cylinder {
 
-    std::vector<Sphere> Spheres; /**Vector of spheres owned by the simulation.*/
-    std::vector<Cylinder> Cylinders; /**Vector of cylinders owned by the simulation*/
+    std::string Name; /**Name of the Cylinder*/
+    int ID; /**ID of the Cylinder*/
+
+    float Point1Radius_nm; /**Radius in nanometers of the first point of the cylinder*/
+    float Point1Pos_nm[3]; /**Position of the first point of the Cylinder in nanometers (relative to origin)*/
+    float Point2Radius_nm; /**Radius in nanometers of the second point of the cylinder*/
+    float Point2Pos_nm[3]; /**Position of the second point of the Cylinder in nanometers (relative to origin)*/
 
 };
 

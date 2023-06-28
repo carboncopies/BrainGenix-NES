@@ -29,7 +29,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/Shapes.h
   ${SRC_DIR}/Core/Simulator/Structs/Sphere.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Sphere.h
-
+  ${SRC_DIR}/Core/Simulator/Structs/Cylinder.cpp
+  ${SRC_DIR}/Core/Simulator/Structs/Cylinder.h
 
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h
