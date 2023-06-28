@@ -22,6 +22,8 @@
 #include <Simulator/Structs/Simulation.h>
 #include <Simulator/Structs/Sphere.h>
 #include <Simulator/Structs/Cylinder.h>
+#include <Simulator/Structs/Box.h>
+
 #include <Config/Config.h>
 #include <RPC/Manager.h>
 #include <Util/JSONHelpers.h>
@@ -87,6 +89,14 @@ public:
      * @return std::string 
      */
     std::string CylinderCreate(std::string _JSONRequest);
+
+    /**
+     * @brief Various routes for API
+     * 
+     * @param _JSONRequest 
+     * @return std::string 
+     */
+    std::string BoxCreate(std::string _JSONRequest);
 
 
 };

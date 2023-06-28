@@ -137,6 +137,44 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
+std::string Manager::BoxCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    std::cout<<"[Info] Create Box Called, On Sim "<<SimulationID<<std::endl;
+
+
+    // Build New Box Object
+    Shapes::Box S;
+    S.Name = Util::GetString(&RequestJSON, "Name");;
+    Util::GetVec3(S.CenterPos_nm, &RequestJSON, "CenterPos");
+    Util::GetVec3(S.Scale_nm, &RequestJSON, "Scale");
+    Util::GetVec3(S.Rotation_rad, &RequestJSON, "Rotation", "rad");
+
+
+
+    // Add to Sim, Set ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        ResponseJSON["ShapeID"] = -1;
+        return ResponseJSON.dump();
+    }
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    int ShapeID = ThisSimulation->Shapes.Shapes.size(); // we can do this since the shapes vector is a variant
+    S.ID = ShapeID;
+    ThisSimulation->Shapes.Shapes.push_back(S);
+
+
+    // Return Status ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    ResponseJSON["ShapeID"] = ShapeID;
+    return ResponseJSON.dump();
+}
+
 
 
 }; // Close Namespace Simulator

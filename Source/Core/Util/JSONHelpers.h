@@ -31,7 +31,7 @@ std::string GetString(nlohmann::json *_JSON, std::string _ParamName);
 void SetVec3(nlohmann::json* _Target, std::string _Input, std::string _Prefix, std::string _Units="nm");
 void SetVec3(float* _Vector, std::string _Input);
 
-void GetVec3(float* _Vector, nlohmann::json* _Target, std::string _Input, std::string _Prefix, std::string _Units="nm");
+void GetVec3(float* _Vector, nlohmann::json* _Input, std::string _Prefix, std::string _Units="nm");
 
 }; // Close Namespace Util
 }; // Close Namespace NES
