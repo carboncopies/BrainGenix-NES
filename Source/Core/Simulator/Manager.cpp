@@ -93,11 +93,11 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
     std::cout<<"[Info] Create Cylinder Called, On Sim "<<SimulationID<<std::endl;
-    float P1Radius_nm  = Util::GetFloat(&RequestJSON, "Point1Radius_nm ");
+    float P1Radius_nm  = Util::GetFloat(&RequestJSON, "Point1Radius_nm");
     float P1X_nm = Util::GetFloat(&RequestJSON, "Point1PosX_nm");
     float P1Y_nm = Util::GetFloat(&RequestJSON, "Point1PosY_nm");
     float P1Z_nm = Util::GetFloat(&RequestJSON, "Point1PosZ_nm");
-    float P2Radius_nm  = Util::GetFloat(&RequestJSON, "Point2Radius_nm ");
+    float P2Radius_nm  = Util::GetFloat(&RequestJSON, "Point2Radius_nm");
     float P2X_nm = Util::GetFloat(&RequestJSON, "Point2PosX_nm");
     float P2Y_nm = Util::GetFloat(&RequestJSON, "Point2PosY_nm");
     float P2Z_nm = Util::GetFloat(&RequestJSON, "Point2PosZ_nm");
