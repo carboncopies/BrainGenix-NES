@@ -12,18 +12,27 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <vector>
+#include <variant>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Sphere.h>
 #include <Simulator/Structs/Cylinder.h>
+#include <Simulator/Structs/Box.h>
 
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 namespace Shapes {
+
+
+enum ShapeVariantOrder {
+    SHAPE_SPHERE=0,
+    SHAPE_CYLINDER,
+    SHAPE_BOX
+};
 
 
 /**
@@ -35,6 +44,9 @@ struct Shapes {
 
     std::vector<Sphere> Spheres; /**Vector of spheres owned by the simulation.*/
     std::vector<Cylinder> Cylinders; /**Vector of cylinders owned by the simulation*/
+    std::vector<Box> Boxes; /**Vector of Boxes owned by the simulation*/
+
+    std::vector<std::variant<Sphere, Cylinder, Box>> Shapes; /**Vector of variants, each being a shape, note that the type order here MUST match the above enum*/
 
 };
 
