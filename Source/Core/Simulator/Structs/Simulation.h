@@ -40,8 +40,16 @@ struct Simulation {
     std::string Name; /**Name of the simulation*/
     int ID; /**ID of the simulation*/
 
-    Shapes::Shapes Shapes;
+    Shapes::Shapes Shapes; /**Instance of shape struct containing all shapes in this simulation*/
+
     std::vector<Compartments::BS> BSCompartments; /**This will need to be updated later to a std::variant type, but for now it stores the only type of supported compartments, BallStick type*/
+
+    std::vector<Connections::Staple> Staples; /**List of staple connections, index is their id (also stored in struct)*/
+    std::vector<Connections::Receptor> Receptors; /**List of receptor connections, index is their id (and it's also stored in the struct itself)*/
+
+    std::vector<Tools::PatchClampDAC> PatchClampDACs; /**List of patchclamp dacs, id is index*/
+    std::vector<Tools::PatchClampADC> PatchClampADCs; /**List of patchclamp adcs, id is index*/
+
 
 };
 
