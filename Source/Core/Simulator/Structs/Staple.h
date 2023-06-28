@@ -24,7 +24,7 @@ namespace Simulator {
 namespace Connections {
 
 /**
- * @brief This struct provides the data storage for each of the compartments
+ * @brief This struct provides the data storage for the staple connection
  * 
  */
 struct Staple {
