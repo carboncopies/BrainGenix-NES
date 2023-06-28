@@ -3,7 +3,7 @@
 //=================================================================//
 
 /*
-    Description: This file provides the PatchClampDAC struct.
+    Description: This file provides the PatchClampADC struct.
     Additional Notes: None
     Date Created: 2023-06-28
 */
@@ -25,20 +25,21 @@ namespace Simulator {
 namespace Tools {
 
 /**
- * @brief This struct implements the storage state of the DACs.
+ * @brief This struct provides the data storage for the PatchClampADC
  * 
  */
-struct PatchClampDAC {
+struct PatchClampADC {
 
-    std::string Name; /**Name of the DAC.*/
-    int ID; /**ID of the DAC.*/
+    std::string Name; /**Name of the ADC*/
+    int ID; /**ID of this ADC*/
 
-    int DestinationCompartmentID; /**DestinationCompartmentID ID of the compartment receiving DAC output.*/
+    int SourceCompartmentID; /**SourceCompartmentID ID of the compartment being read by the ADC output.*/
+    float ClampPos_nm[3]; /**Position of the clamp adc in world space, in nanometers*/
 
-    float ClampPos_nm[3]; /**Position of the clamp in world space coordinates*/
-    float Timestep_ms; /**Simulation time for which each step in the output voltages list is replayed.*/
+    float Timestep_ms; /**Recording Timestep for this patchclamp ADC*/
 
-    std::vector<float> DACVoltages_mV; /**List of voltages to be replayed by the DAC.*/
+    std::vector<float> RecordedData_mV; /**Vector containing list of recorded data in milliseconds*/
+
 
 };
 
