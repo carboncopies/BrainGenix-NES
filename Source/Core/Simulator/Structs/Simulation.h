@@ -12,11 +12,13 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <string>
+#include <vector>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Shapes.h>
+#include <Simulator/Structs/BS.h>
 
 namespace BG {
 namespace NES {
@@ -33,6 +35,7 @@ struct Simulation {
     int ID; /**ID of the simulation*/
 
     Shapes::Shapes Shapes;
+    std::vector<Compartments::BS> BSCompartments; /**This will need to be updated later to a std::variant type, but for now it stores the only type of supported compartments, BallStick type*/
 
 };
 

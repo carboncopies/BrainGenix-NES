@@ -33,7 +33,10 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/Cylinder.h
   ${SRC_DIR}/Core/Simulator/Structs/Box.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Box.h
-  
+  ${SRC_DIR}/Core/Simulator/Structs/BS.cpp
+  ${SRC_DIR}/Core/Simulator/Structs/BS.h
+
+
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h
 
