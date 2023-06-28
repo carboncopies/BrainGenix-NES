@@ -181,6 +181,7 @@ std::string Manager::BSCreate(std::string _JSONRequest) {
 
     // Parse Request
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    std::cout<<RequestJSON<<std::endl;
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
     std::cout<<"[Info] Create BS Called, On Sim "<<SimulationID<<std::endl;
@@ -190,7 +191,7 @@ std::string Manager::BSCreate(std::string _JSONRequest) {
     Compartments::BS C;
     C.Name = Util::GetString(&RequestJSON, "Name");
     C.ShapeID = Util::GetInt(&RequestJSON, "ShapeID");
-    C.MembranePotential_mV = Util::GetFloat(&RequestJSON, "MembanePotential_mV");
+    C.MembranePotential_mV = Util::GetFloat(&RequestJSON, "MembranePotential_mV");
     C.SpikeThreshold_mV = Util::GetFloat(&RequestJSON, "SpikeThreshold_mV");
     C.DecayTime_ms = Util::GetFloat(&RequestJSON, "DecayTime_ms");
 
