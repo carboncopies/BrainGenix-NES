@@ -104,6 +104,7 @@ public:
     std::string BoxCreate(std::string _JSONRequest);
     std::string BSCreate(std::string _JSONRequest);
     std::string StapleCreate(std::string _JSONRequest);
+    std::string ReceptorCreate(std::string _JSONRequest);
 
 
 };

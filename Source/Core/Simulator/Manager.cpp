@@ -17,6 +17,7 @@ Manager::Manager(Config::Config* _Config, API::Manager* _RPCManager) {
     _RPCManager->AddRoute("Geometry/Shape/Box/Create", [this](std::string RequestJSON){ return BoxCreate(RequestJSON);});
     _RPCManager->AddRoute("Compartment/BS/Create", [this](std::string RequestJSON){ return BSCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Staple/Create", [this](std::string RequestJSON){ return StapleCreate(RequestJSON);});
+    _RPCManager->AddRoute("Connection/Receptor/Create", [this](std::string RequestJSON){ return ReceptorCreate(RequestJSON);});
 
 
 }
@@ -250,6 +251,45 @@ std::string Manager::StapleCreate(std::string _JSONRequest) {
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["StapleID"] = StapleID;
+    return ResponseJSON.dump();
+}
+
+std::string Manager::ReceptorCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    std::cout<<"[Info] Create Receptor Called, On Sim "<<SimulationID<<std::endl;
+
+
+    // Build New Staple Object
+    Connections::Receptor C;
+    C.Name = Util::GetString(&RequestJSON, "Name");
+    C.SourceCompartmentID = Util::GetInt(&RequestJSON, "SourceCompartmentID");
+    C.DestinationCompartmentID = Util::GetInt(&RequestJSON, "DestinationCompartmentID");
+    C.Conductance_nS = Util::GetFloat(&RequestJSON, "Conductance_nS");
+    C.TimeConstant_ms  = Util::GetFloat(&RequestJSON, "TimeConstant_ms");
+    Util::GetVec3(C.ReceptorPos_nm, &RequestJSON, "ReceptorPos");    
+
+
+    // Add to Sim, Set ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        ResponseJSON["ReceptorID"] = -1;
+        return ResponseJSON.dump();
+    }
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    int ReceptorID = ThisSimulation->Receptors.size();
+    C.ID = ReceptorID;
+    ThisSimulation->Receptors.push_back(C);
+
+
+    // Return Status ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    ResponseJSON["ReceptorID"] = ReceptorID;
     return ResponseJSON.dump();
 }
 
