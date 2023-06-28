@@ -28,6 +28,10 @@ int GetInt(nlohmann::json *_JSON, std::string _ParamName);
 float GetFloat(nlohmann::json *_JSON, std::string _ParamName);
 std::string GetString(nlohmann::json *_JSON, std::string _ParamName);
 
+void SetVec3(nlohmann::json* _Target, std::string _Input, std::string _Prefix, std::string _Units="nm");
+void SetVec3(float* _Vector, std::string _Input);
+
+
 
 }; // Close Namespace Util
 }; // Close Namespace NES
