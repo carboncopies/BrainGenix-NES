@@ -206,7 +206,7 @@ std::string Manager::BSCreate(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     int CompartmentID = ThisSimulation->BSCompartments.size();
     C.ID = CompartmentID;
-    ThisSimulation->BSCompartments.push_back(S);
+    ThisSimulation->BSCompartments.push_back(C);
 
 
     // Return Status ID
