@@ -48,13 +48,14 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
     // Parse Request
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    std::cout<<"[Info] Create Sphere Called, On Sim "<<SimulationID<<std::endl;
     float Radius_nm  = Util::GetFloat(&RequestJSON, "Radius_nm");
     float CenterPosX_nm = Util::GetFloat(&RequestJSON, "CenterPosX_nm");
     float CenterPosY_nm = Util::GetFloat(&RequestJSON, "CenterPosY_nm");
     float CenterPosZ_nm = Util::GetFloat(&RequestJSON, "CenterPosZ_nm");
     std::string Name = Util::GetString(&RequestJSON, "Name");
 
-    std::cout<<"[Info] Create Sphere Called, On Sim "<<SimulationID<<std::endl;
 
 
     // Build New Sphere Object
@@ -67,6 +68,11 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
 
 
     // Add to Sim, Set ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["ShapeID"] = -1;
+        return ResponseJSON.dump();
+    }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     int SphereID = ThisSimulation->Shapes.Spheres.size();
     S.ID = SphereID;
