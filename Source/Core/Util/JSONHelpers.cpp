@@ -32,6 +32,12 @@ void SetVec3(float* _Vector, std::string _Input) {
     _Vector[2] = Vec3[2].template get<float>();
 }
 
+void GetVec3(float* _Vector, nlohmann::json* _Input, std::string _Prefix, std::string _Units) {
+    _Vector[0] = Util::GetFloat(_Input, _Prefix + "X_" + _Units);
+    _Vector[1] = Util::GetFloat(_Input, _Prefix + "Y_" + _Units);
+    _Vector[2] = Util::GetFloat(_Input, _Prefix + "Z_" + _Units);
+}
+
 
 }; // Close Namespace Util
 }; // Close Namespace NES
