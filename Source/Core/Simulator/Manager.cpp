@@ -75,9 +75,9 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    int SphereID = ThisSimulation->Shapes.Spheres.size();
+    int SphereID = ThisSimulation->Shapes.Shapes.size();
     S.ID = SphereID;
-    ThisSimulation->Shapes.Spheres.push_back(S);
+    ThisSimulation->Shapes.Shapes.push_back(S);
 
 
     // Return Status ID
@@ -125,9 +125,9 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    int ShapeID = ThisSimulation->Shapes.Cylinders.size() + 1000000; // this is bad I know, we're being lazy for making a proper mapping service
+    int ShapeID = ThisSimulation->Shapes.Shapes.size(); // we can do this since the shapes vector is a variant
     S.ID = ShapeID;
-    ThisSimulation->Shapes.Cylinders.push_back(S);
+    ThisSimulation->Shapes.Shapes.push_back(S);
 
 
     // Return Status ID

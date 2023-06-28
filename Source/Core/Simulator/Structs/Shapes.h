@@ -42,9 +42,9 @@ enum ShapeVariantOrder {
  */
 struct Shapes {
 
-    std::vector<Sphere> Spheres; /**Vector of spheres owned by the simulation.*/
-    std::vector<Cylinder> Cylinders; /**Vector of cylinders owned by the simulation*/
-    std::vector<Box> Boxes; /**Vector of Boxes owned by the simulation*/
+    // std::vector<Sphere> Spheres; /**Vector of spheres owned by the simulation.*/
+    // std::vector<Cylinder> Cylinders; /**Vector of cylinders owned by the simulation*/
+    // std::vector<Box> Boxes; /**Vector of Boxes owned by the simulation*/
 
     std::vector<std::variant<Sphere, Cylinder, Box>> Shapes; /**Vector of variants, each being a shape, note that the type order here MUST match the above enum*/
 
