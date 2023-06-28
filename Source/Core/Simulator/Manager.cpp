@@ -216,6 +216,43 @@ std::string Manager::BSCreate(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
+std::string Manager::StapleCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    std::cout<<"[Info] Create Staple Called, On Sim "<<SimulationID<<std::endl;
+
+
+    // Build New Staple Object
+    Connections::Staple C;
+    C.Name = Util::GetString(&RequestJSON, "Name");
+    C.SourceCompartmentID = Util::GetInt(&RequestJSON, "SourceCompartmentID");
+    C.DestinationCompartmentID = Util::GetInt(&RequestJSON, "DestinationCompartmentID");
+
+
+    // Add to Sim, Set ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        ResponseJSON["StapleID"] = -1;
+        return ResponseJSON.dump();
+    }
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    int StapleID = ThisSimulation->Staples.size();
+    C.ID = StapleID;
+    ThisSimulation->Staples.push_back(C);
+
+
+    // Return Status ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    ResponseJSON["StapleID"] = StapleID;
+    return ResponseJSON.dump();
+}
+
+
 
 
 }; // Close Namespace Simulator
