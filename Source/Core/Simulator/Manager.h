@@ -21,6 +21,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 #include <Simulator/Structs/Sphere.h>
+#include <Simulator/Structs/Cylinder.h>
 #include <Config/Config.h>
 #include <RPC/Manager.h>
 #include <Util/JSONHelpers.h>
@@ -78,6 +79,14 @@ public:
      * @return std::string 
      */
     std::string SphereCreate(std::string _JSONRequest);
+
+    /**
+     * @brief This function handles the create cylinder route on the API.
+     * 
+     * @param _JSONRequest 
+     * @return std::string 
+     */
+    std::string CylinderCreate(std::string _JSONRequest);
 
 
 };
