@@ -81,6 +81,7 @@ public:
     std::string SimulationRunFor(std::string _JSONRequest);
     std::string SimulationRecordAll(std::string _JSONRequest);
     std::string SimulationGetRecording(std::string _JSONRequest);
+    std::string SimulationGetStatus(std::string _JSONRequest);
     std::string SphereCreate(std::string _JSONRequest);
     std::string CylinderCreate(std::string _JSONRequest);
     std::string BoxCreate(std::string _JSONRequest);

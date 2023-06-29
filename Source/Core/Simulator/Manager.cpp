@@ -155,6 +155,35 @@ std::string Manager::SimulationGetRecording(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
+std::string Manager::SimulationGetStatus(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    std::cout<<"[Info] Simulation GetStatus Called, On Sim "<<SimulationID<<std::endl;
+
+
+    // Check Sim ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid sim id
+        return ResponseJSON.dump();
+    }
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+
+
+    // Return JSON
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    ResponseJSON["IsSimulating"] = (bool)ThisSimulation->IsSimulating; /////////////////////////////////////////////////////////////////HARD CODED STUFF HERE - FIXME!!!!
+    ResponseJSON["RealWorldTimeRemaining_ms"] = 0.0;
+    ResponseJSON["RealWorldTimeElapsed_ms"] = 0.0;
+    ResponseJSON["InSimulationTime_ms"] = 0.0;
+    ResponseJSON["InSimulationTimeRemaining_ms"] = 0.0;
+    ResponseJSON["PercentComplete"] = 0.0;
+    return ResponseJSON.dump();
+}
 
 
 std::string Manager::SphereCreate(std::string _JSONRequest) {

@@ -13,6 +13,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <string>
 #include <vector>
+#include <atomic>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -48,6 +49,7 @@ struct Simulation {
     float MaxRecordTime_ms = 0.; /**Maximum god-mode record time for everything*/
     std::string RecordingBlob; /**Blob of json data that contains all recorded states for each thing in the simulation*/
 
+    std::atomic<bool> IsSimulating; /**Indicator if the simulation is currently being simulated or not*/
 
     std::vector<float> RunTimes_ms; /**List containing number of milliseconds to run the simulation for next time SIMULATION_RUNFOR is called, removes from start of list every time.*/
     std::vector<SimulationActions> ProcessingQueue; /**List of tasks that need to be processed on this simulation, could be run for, or reset, etc. See above enum for more info.*/
