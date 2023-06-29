@@ -13,7 +13,7 @@ void SimulationEngineThread(Simulation* _Sim, std::atomic<bool>* _StopThreads) {
     std::cout<<"[Info] Starting Simulation Updater Thread\n";
 
     // Setup Engine
-    Engine SimulationEngine(_Sim);
+    Engine SimulationEngine();
 
     // Enter into loop until thread should stop
     while (!_StopThreads) {
