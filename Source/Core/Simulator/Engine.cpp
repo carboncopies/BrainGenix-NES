@@ -16,7 +16,7 @@ Engine::~Engine() {
 
 
 void Engine::Reset(Simulation* _Sim) {
-    assert(_Sim != nullptr);
+    assert(_Sim != nullptr && "Engine::Reset was passed a null _Sim (Simulation*) pointer!");
 
     // Reset Tools
     for (unsigned int i = 0; i < _Sim->PatchClampDACs.size(); i++) {
@@ -39,6 +39,7 @@ void Engine::Reset(Simulation* _Sim) {
 }
 
 void Engine::RunFor(Simulation* _Sim) {
+    assert(_Sim != nullptr && "Engine::RunFor was passed a null _Sim (Simulation*) pointer!");
 
 }
 
