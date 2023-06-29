@@ -46,8 +46,8 @@ struct Simulation {
     std::string Name; /**Name of the simulation*/
     int ID; /**ID of the simulation*/
 
-    
-    float RunForTime_ms; /**Number of milliseconds to run the simulation for next time SIMULATION_RUNFOR is called*/
+
+    std::vector<float> RunTimes_ms; /**List containing number of milliseconds to run the simulation for next time SIMULATION_RUNFOR is called, removes from start of list every time.*/
     std::vector<SimulationActions> ProcessingQueue; /**List of tasks that need to be processed on this simulation, could be run for, or reset, etc. See above enum for more info.*/
 
 

@@ -13,6 +13,7 @@ Manager::Manager(Config::Config* _Config, API::Manager* _RPCManager) {
     // Register Callback For CreateSim
     _RPCManager->AddRoute("Simulation/Create", [this](std::string RequestJSON){ return SimulationCreate(RequestJSON);});
     _RPCManager->AddRoute("Simulation/Reset", [this](std::string RequestJSON){ return SimulationReset(RequestJSON);});
+    _RPCManager->AddRoute("Simulation/RunFor", [this](std::string RequestJSON){ return SimulationRunFor(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Sphere/Create", [this](std::string RequestJSON){ return SphereCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Cylinder/Create", [this](std::string RequestJSON){ return CylinderCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Box/Create", [this](std::string RequestJSON){ return BoxCreate(RequestJSON);});
@@ -71,6 +72,31 @@ std::string Manager::SimulationReset(std::string _JSONRequest) {
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     ThisSimulation->ProcessingQueue.push_back(SIMULATION_RESET); // add a reset to the queue of things to be done
+
+    // Return Status ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    return ResponseJSON.dump();
+}
+
+std::string Manager::SimulationRunFor(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    std::cout<<"[Info] Simulation RunFor Called, On Sim "<<SimulationID<<std::endl;
+
+
+    // Check Sim ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid sim id
+        return ResponseJSON.dump();
+    }
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    ThisSimulation->ProcessingQueue.push_back(SIMULATION_RUNFOR); // add a run call to the queue of things to be done
+    ThisSimulation->RunTimes_ms.push_back(Util::GetFloat(&RequestJSON, "Runtime_ms")); // add requested runtime to list of runtimes
 
     // Return Status ID
     nlohmann::json ResponseJSON;
