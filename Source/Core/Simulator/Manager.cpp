@@ -611,7 +611,6 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["Timestep_ms"] = ThisADC->Timestep_ms;
     ResponseJSON["RecordedData_mV"] = ThisADC->RecordedData_mV;
-    std::cout<<ResponseJSON<<std::endl;
     return ResponseJSON.dump();
 }
 
