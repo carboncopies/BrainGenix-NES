@@ -352,7 +352,7 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
 
     // Get/Check PatchClampdDACID
     int PatchClampDACID = Util::GetInt(&RequestJSON, "PatchClampDACID");
-    if (PatchClampDACID >= ThisSimulation->PatchClampDACs.size(); || PatchClampDACID < 0) {
+    if (PatchClampDACID >= ThisSimulation->PatchClampDACs.size() || PatchClampDACID < 0) {
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 2; // invalid ID
         return ResponseJSON.dump();
