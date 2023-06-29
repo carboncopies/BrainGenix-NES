@@ -19,6 +19,7 @@ Manager::Manager(Config::Config* _Config, API::Manager* _RPCManager) {
     _RPCManager->AddRoute("Connection/Staple/Create", [this](std::string RequestJSON){ return StapleCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Receptor/Create", [this](std::string RequestJSON){ return ReceptorCreate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampDAC/Create", [this](std::string RequestJSON){ return PatchClampDACCreate(RequestJSON);});
+    _RPCManager->AddRoute("Tool/PatchClampDAC/SetOutputList", [this](std::string RequestJSON){ return PatchClampDACSetOutputList(RequestJSON);});
 
 
 }
@@ -330,6 +331,44 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
     ResponseJSON["PatchClampDACID"] = PatchClampDACID;
     return ResponseJSON.dump();
 }
+
+std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    std::cout<<"[Info] PatchClampDAC SetOutputList Called, On Sim "<<SimulationID<<std::endl;
+
+    // Check Sim ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        ResponseJSON["PatchClampDACID"] = -1;
+        return ResponseJSON.dump();
+    }
+
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+
+    // Get/Check PatchClampdDACID
+    int PatchClampDACID = Util::GetInt(&RequestJSON, "PatchClampDACID");
+    if (PatchClampDACID >= ThisSimulation->PatchClampDACs.size(); || PatchClampDACID < 0) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2; // invalid ID
+        return ResponseJSON.dump();
+    }
+    Tools::PatchClampDAC* ThisDAC = &ThisSimulation->PatchClampDACs[PatchClampDACID];
+    
+    // Set Params
+    ThisDAC->Timestep_ms = Util::GetFloat(&RequestJSON, "Timestep_ms");
+    Util::GetFloatVector(&ThisDAC->DACVoltages_mV, &RequestJSON, "DDACVoltages_mV");
+
+    // Return Status ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    return ResponseJSON.dump();
+}
+
 
 
 

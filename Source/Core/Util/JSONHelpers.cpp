@@ -39,6 +39,14 @@ void GetVec3(float* _Vector, nlohmann::json* _Input, std::string _Prefix, std::s
 }
 
 
+void GetFloatVector(std::vector<float>* _Vector, nlohmann::json* _Input, std::string _JSONKey) {
+    _Vector->clear();
+    nlohmann::json Vector = (*_Input)[_JSONKey];
+    for (nlohmann::json::iterator it = Vector.begin(); it != Vector.end(); it++) {
+        _Vector->push_back(it.value());
+    }    
+}
+
 }; // Close Namespace Util
 }; // Close Namespace NES
 }; // Close Namespace BG

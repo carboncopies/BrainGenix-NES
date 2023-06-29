@@ -33,6 +33,9 @@ void SetVec3(float* _Vector, std::string _Input);
 
 void GetVec3(float* _Vector, nlohmann::json* _Input, std::string _Prefix, std::string _Units="nm");
 
+void GetFloatVector(std::vector<float>* _Vector, std::string* _Input, std::string _JSONKey);
+
+
 }; // Close Namespace Util
 }; // Close Namespace NES
 }; // Close Namespace BG
