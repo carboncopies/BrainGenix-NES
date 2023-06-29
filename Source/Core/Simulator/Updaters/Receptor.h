@@ -16,12 +16,29 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Structs/Receptor.h>
 
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 namespace Updater {
+
+
+/**
+ * @brief Resets the target Receptor.
+ * 
+ * @param _Target 
+ */
+void ReceptorReset(Connections::Receptor* _Target);
+
+
+/**
+ * @brief Updates the target Receptor.
+ * 
+ * @param _Target 
+ */
+void ReceptorUpdate(Connections::Receptor* _Target);
 
 
 
