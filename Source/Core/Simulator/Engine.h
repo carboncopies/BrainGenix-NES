@@ -48,13 +48,13 @@ public:
      * @brief Resets all attributes of the given simulation which need to be cleared, (this includes any recorded data).
      * 
      */
-    void ResetSimulation(Simulation* _Sim);
+    void Reset(Simulation* _Sim);
 
     /**
      * @brief Runs the simulation for the amount of time specified in the simulation's struct.
      * 
      */
-    void RunSimulationFor(Simulation* _Sim);
+    void RunFor(Simulation* _Sim);
 
 
 };

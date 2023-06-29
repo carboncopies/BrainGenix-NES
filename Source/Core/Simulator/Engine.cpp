@@ -15,11 +15,11 @@ Engine::~Engine() {
 
 
 
-void Engine::ResetSimulation(Simulation* _Sim) {
+void Engine::Reset(Simulation* _Sim) {
 
 }
 
-void Engine::RunSimulationFor(Simulation* _Sim) {
+void Engine::RunFor(Simulation* _Sim) {
 
 }
 
