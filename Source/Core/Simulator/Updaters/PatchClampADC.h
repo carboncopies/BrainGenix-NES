@@ -17,13 +17,28 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-
+#include <Simulator/Structs/PatchClampADC.h>
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 namespace Updater {
 
+/**
+ * @brief Resets the target ADC.
+ * Clears all recorded data, and resets the list to empty.
+ * 
+ * @param _Target 
+ */
+void PatchClampADCReset(Tools::PatchClampADC* _Target);
+
+/**
+ * @brief Updates the target ADC.
+ * Will record membrane potnetial data into local vector as needed.
+ * 
+ * @param _Target 
+ */
+void PatchClampADCUpdate(Tools::PatchClampADC* _Target);
 
 
 }; // Close Namespace Updater

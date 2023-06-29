@@ -48,6 +48,15 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampADC.cpp
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampADC.h
 
+  ${SRC_DIR}/Core/Simulator/Updaters/Staple.cpp
+  ${SRC_DIR}/Core/Simulator/Updaters/Staple.h
+  ${SRC_DIR}/Core/Simulator/Updaters/Receptor.cpp
+  ${SRC_DIR}/Core/Simulator/Updaters/Receptor.h
+  ${SRC_DIR}/Core/Simulator/Updaters/PatchClampDAC.cpp
+  ${SRC_DIR}/Core/Simulator/Updaters/PatchClampDAC.h
+  ${SRC_DIR}/Core/Simulator/Updaters/PatchClampADC.cpp
+  ${SRC_DIR}/Core/Simulator/Updaters/PatchClampADC.h
+
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h
 
