@@ -18,6 +18,7 @@ Manager::Manager(Config::Config* _Config, API::Manager* _RPCManager) {
     _RPCManager->AddRoute("Compartment/BS/Create", [this](std::string RequestJSON){ return BSCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Staple/Create", [this](std::string RequestJSON){ return StapleCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Receptor/Create", [this](std::string RequestJSON){ return ReceptorCreate(RequestJSON);});
+    _RPCManager->AddRoute("Connection/PatchClampDAC/Create", [this](std::string RequestJSON){ return PatchClampDACCreate(RequestJSON);});
 
 
 }
@@ -293,6 +294,42 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
+std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    std::cout<<"[Info] Create PatchClampDAC Called, On Sim "<<SimulationID<<std::endl;
+
+
+    // Build New Staple Object
+    Tools::PatchClampDAC T;
+    T.Name = Util::GetString(&RequestJSON, "Name");
+    T.DestinationCompartmentID = Util::GetInt(&RequestJSON, "DestinationCompartmentID");
+    T.Timestep_ms = 0.0f;
+    Util::GetVec3(T.ClampPos_nm, &RequestJSON, "ClampPos");    
+
+
+    // Add to Sim, Set ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        ResponseJSON["PatchClampDACID"] = -1;
+        return ResponseJSON.dump();
+    }
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    int PatchClampDACID = ThisSimulation->PatchClampDACs.size();
+    T.ID = PatchClampDACID;
+    ThisSimulation->PatchClampDACs.push_back(T);
+
+
+    // Return Status ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    ResponseJSON["PatchClampDACID"] = PatchClampDACID;
+    return ResponseJSON.dump();
+}
 
 
 
