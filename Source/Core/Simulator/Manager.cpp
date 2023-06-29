@@ -186,7 +186,6 @@ std::string Manager::SimulationGetStatus(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
-
 std::string Manager::SphereCreate(std::string _JSONRequest) {
 
     // Parse Request
@@ -610,8 +609,9 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
     // Build Response
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
-    ResponseJSON["Timesetp_ms"] = ThisADC->Timestep_ms;
+    ResponseJSON["Timestep_ms"] = ThisADC->Timestep_ms;
     ResponseJSON["RecordedData_mV"] = ThisADC->RecordedData_mV;
+    std::cout<<ResponseJSON<<std::endl;
     return ResponseJSON.dump();
 }
 
