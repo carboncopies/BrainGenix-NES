@@ -22,6 +22,7 @@ Manager::Manager(Config::Config* _Config, API::Manager* _RPCManager) {
     _RPCManager->AddRoute("Tool/PatchClampDAC/SetOutputList", [this](std::string RequestJSON){ return PatchClampDACSetOutputList(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampADC/Create", [this](std::string RequestJSON){ return PatchClampADCCreate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampADC/SetSampleRate", [this](std::string RequestJSON){ return PatchClampADCSetSampleRate(RequestJSON);});
+    _RPCManager->AddRoute("Tool/PatchClampADC/GetRecordedData", [this](std::string RequestJSON){ return PatchClampADCGetRecordedData(RequestJSON);});
 
 
 }
@@ -443,6 +444,43 @@ std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest) {
     ResponseJSON["StatusCode"] = 0; // ok
     return ResponseJSON.dump();
 }
+
+std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    std::cout<<"[Info] PatchClampADC GetRecordedData Called, On Sim "<<SimulationID<<std::endl;
+
+
+    // Check Sim ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        return ResponseJSON.dump();
+    }
+
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+
+    // Get/Check PatchClampdADDCID
+    int PatchClampADCID = Util::GetInt(&RequestJSON, "PatchClampADCID");
+    if (PatchClampADCID >= ThisSimulation->PatchClampADCs.size() || PatchClampADCID < 0) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2; // invalid ID
+        return ResponseJSON.dump();
+    }
+    Tools::PatchClampADC* ThisADC = &ThisSimulation->PatchClampADCs[PatchClampADCID];
+    
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    ResponseJSON["Timesetp_ms"] = ThisADC->Timestep_ms;
+    ResponseJSON["RecordedData_mV"] = ThisADC->RecordedData_mV;
+    return ResponseJSON.dump();
+}
+
 
 
 }; // Close Namespace Simulator
