@@ -33,6 +33,7 @@ namespace Simulator {
 
 
 enum SimulationActions {
+    SIMULATION_NONE,
     SIMULATION_RESET,
     SIMULATION_RUNFOR
 };
@@ -49,10 +50,10 @@ struct Simulation {
     float MaxRecordTime_ms = 0.; /**Maximum god-mode record time for everything*/
     std::string RecordingBlob; /**Blob of json data that contains all recorded states for each thing in the simulation*/
 
-    std::atomic<bool> IsSimulating; /**Indicator if the simulation is currently being simulated or not*/
-
-    std::vector<float> RunTimes_ms; /**List containing number of milliseconds to run the simulation for next time SIMULATION_RUNFOR is called, removes from start of list every time.*/
-    std::vector<SimulationActions> ProcessingQueue; /**List of tasks that need to be processed on this simulation, could be run for, or reset, etc. See above enum for more info.*/
+    std::atomic<bool> IsProcessing; /**Indicator if the simulation is currently being modified or not*/
+    std::atomic<bool> WorkRequested; /**Indicator if work is requested to be done on this simulation by a worker thread*/
+    float RunTimes_ms; /**Number of ms to be simulated next time runfor is called - if not, set to -1*/
+    SimulationActions CurrentTask; /**Current task to be processed on this simulation, could be run for, or reset, etc. See above enum for more info.*/
 
 
     Shapes::Shapes Shapes; /**Instance of shape struct containing all shapes in this simulation*/

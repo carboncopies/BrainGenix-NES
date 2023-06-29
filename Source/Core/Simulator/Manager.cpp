@@ -29,12 +29,54 @@ Manager::Manager(Config::Config* _Config, API::Manager* _RPCManager) {
     _RPCManager->AddRoute("Tool/PatchClampADC/SetSampleRate", [this](std::string RequestJSON){ return PatchClampADCSetSampleRate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampADC/GetRecordedData", [this](std::string RequestJSON){ return PatchClampADCGetRecordedData(RequestJSON);});
 
+    // Start SE Thread
+    StopThreads_ = false;
 
 }
 
 Manager::~Manager() {
 
+    std::cout<<"[Info] Signaling To Worker Threads To Stop\n";
+    StopThreads_ = true;
+
+    std::cout<<"[Info] Joining Simulation Worker Threads\n";
+    for (unsigned int i = 0; i < SimulationThreads_.size(); i++) {
+        SimulationThreads_[i].join();
+    }
 }
+
+
+void Manager::SimulationEngineThread(Simulation* _Sim) {
+
+    // Log Init message
+    std::cout<<"[Info] Starting Simulation Updater Thread\n";
+
+    // Enter into loop until thread should stop
+    while (!StopThreads_) {
+
+        if (_Sim->WorkRequested) {
+            _Sim->IsProcessing = true;
+
+            if (_Sim->CurrentTask == SIMULATION_RESET) {
+                std::cout<<"[Info] Worker Performing Simulation Reset For Simulation "<<_Sim->ID<<std::endl;
+                _Sim->CurrentTask = SIMULATION_NONE;
+                _Sim->WorkRequested = false;
+
+            } else if (_Sim->CurrentTask == SIMULATION_RUNFOR) {
+                std::cout<<"[Info] Worker Performing Simulation RunFor For Simulation "<<_Sim->ID<<std::endl;
+                _Sim->CurrentTask = SIMULATION_NONE;
+                _Sim->WorkRequested = false;
+            }
+
+            _Sim->IsProcessing = false;
+        } else {
+            std::this_thread::sleep_for(std::chrono::milliseconds(10)); // sleep for 10ms
+        }
+
+    }
+
+}
+
 
 std::string Manager::SimulationCreate(std::string _JSONRequest) {
 
@@ -50,6 +92,9 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     Simulation* Sim = Simulations_[SimID].get();
     Sim->Name = SimulationName;
     Sim->ID = SimID;
+
+    // Start Thread
+    SimulationThreads_.push_back(std::thread(SimulationEngineThread, Sim));
 
 
     // Return Status ID
@@ -74,7 +119,13 @@ std::string Manager::SimulationReset(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    ThisSimulation->ProcessingQueue.push_back(SIMULATION_RESET); // add a reset to the queue of things to be done
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
+    ThisSimulation->CurrentTask = SIMULATION_RESET; // request a reset be done
+    ThisSimulation->WorkRequested = true;
 
     // Return Status ID
     nlohmann::json ResponseJSON;
@@ -98,8 +149,14 @@ std::string Manager::SimulationRunFor(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    ThisSimulation->ProcessingQueue.push_back(SIMULATION_RUNFOR); // add a run call to the queue of things to be done
-    ThisSimulation->RunTimes_ms.push_back(Util::GetFloat(&RequestJSON, "Runtime_ms")); // add requested runtime to list of runtimes
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
+    ThisSimulation->RunTimes_ms = Util::GetFloat(&RequestJSON, "Runtime_ms"); // set requested runtime
+    ThisSimulation->CurrentTask = SIMULATION_RUNFOR; // request work be done
+    ThisSimulation->WorkRequested = true;
 
     // Return Status ID
     nlohmann::json ResponseJSON;
@@ -123,6 +180,11 @@ std::string Manager::SimulationRecordAll(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
     ThisSimulation->MaxRecordTime_ms = Util::GetFloat(&RequestJSON, "MaxRecordTime_ms");
 
     // Return Status ID
@@ -147,6 +209,11 @@ std::string Manager::SimulationGetRecording(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
 
 
     // Return JSON
@@ -172,12 +239,17 @@ std::string Manager::SimulationGetStatus(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
 
 
     // Return JSON
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
-    ResponseJSON["IsSimulating"] = (bool)ThisSimulation->IsSimulating; /////////////////////////////////////////////////////////////////HARD CODED STUFF HERE - FIXME!!!!
+    ResponseJSON["IsSimulating"] = (bool)ThisSimulation->IsProcessing; /////////////////////////////////////////////////////////////////HARD CODED STUFF HERE - FIXME!!!!
     ResponseJSON["RealWorldTimeRemaining_ms"] = 0.0;
     ResponseJSON["RealWorldTimeElapsed_ms"] = 0.0;
     ResponseJSON["InSimulationTime_ms"] = 0.0;
@@ -217,6 +289,11 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
     int SphereID = ThisSimulation->Shapes.Shapes.size();
     S.ID = SphereID;
     ThisSimulation->Shapes.Shapes.push_back(S);
@@ -267,6 +344,11 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
     int ShapeID = ThisSimulation->Shapes.Shapes.size(); // we can do this since the shapes vector is a variant
     S.ID = ShapeID;
     ThisSimulation->Shapes.Shapes.push_back(S);
@@ -305,6 +387,11 @@ std::string Manager::BoxCreate(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
     int ShapeID = ThisSimulation->Shapes.Shapes.size(); // we can do this since the shapes vector is a variant
     S.ID = ShapeID;
     ThisSimulation->Shapes.Shapes.push_back(S);
@@ -344,6 +431,11 @@ std::string Manager::BSCreate(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
     int CompartmentID = ThisSimulation->BSCompartments.size();
     C.ID = CompartmentID;
     ThisSimulation->BSCompartments.push_back(C);
@@ -380,6 +472,11 @@ std::string Manager::StapleCreate(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
     int StapleID = ThisSimulation->Staples.size();
     C.ID = StapleID;
     ThisSimulation->Staples.push_back(C);
@@ -419,6 +516,11 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
     int ReceptorID = ThisSimulation->Receptors.size();
     C.ID = ReceptorID;
     ThisSimulation->Receptors.push_back(C);
@@ -456,6 +558,11 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
     int PatchClampDACID = ThisSimulation->PatchClampDACs.size();
     T.ID = PatchClampDACID;
     ThisSimulation->PatchClampDACs.push_back(T);
@@ -484,6 +591,11 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
     }
 
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
 
     // Get/Check PatchClampdDACID
     int PatchClampDACID = Util::GetInt(&RequestJSON, "PatchClampDACID");
@@ -529,6 +641,11 @@ std::string Manager::PatchClampADCCreate(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
     int PatchClampADCID = ThisSimulation->PatchClampADCs.size();
     T.ID = PatchClampADCID;
     ThisSimulation->PatchClampADCs.push_back(T);
@@ -558,6 +675,11 @@ std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest) {
     }
 
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
 
     // Get/Check PatchClampdADDCID
     int PatchClampADCID = Util::GetInt(&RequestJSON, "PatchClampADCID");
@@ -595,6 +717,11 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
     }
 
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
 
     // Get/Check PatchClampdADDCID
     int PatchClampADCID = Util::GetInt(&RequestJSON, "PatchClampADCID");
@@ -615,6 +742,9 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
 }
 
 
+bool Manager::IsSimulationBusy(Simulation* _Sim) {
+    return _Sim->IsProcessing || _Sim->WorkRequested;
+}
 
 }; // Close Namespace Simulator
 }; // Close Namespace NES

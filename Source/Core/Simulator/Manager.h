@@ -14,7 +14,9 @@
 #include <vector>
 #include <memory>
 #include <iostream>
+#include <atomic>
 #include <thread>
+#include <chrono>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <nlohmann/json.hpp>
@@ -48,7 +50,8 @@ class Manager {
 private:
     Config::Config* Config_; /**Pointer to configuration struct owned by rest of system*/
 
-    std::thread SimulationThread_; /**Thread that enumerates simulations and checks for any tasks to be done.*/
+    std::vector<std::thread> SimulationThreads_; /**Threads that enumerate simulations and checks for any tasks to be done.*/
+    std::atomic<bool> StopThreads_; /**Indicates to workers to stop what they're doing*/
     std::vector<std::unique_ptr<Simulation>> Simulations_; /**Vector containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
     // Note: This simulation vector is not thread safe and will probably segfault if you try to multithread this
     // we will fix this later when we scale the system (DO NOT ALLOW RPC to use more than 1 thread unless this is fixed!)
@@ -96,6 +99,21 @@ public:
     std::string PatchClampADCSetSampleRate(std::string _JSONRequest);
     std::string PatchClampADCGetRecordedData(std::string _JSONRequest);
 
+
+    /**
+     * @brief Function for thread to run, checks for new updates in each simulation.
+     * 
+     */
+    void SimulationEngineThread(Simulation* _Sim);
+
+    /**
+     * @brief Returns true if the simulation is being worked on by another thread.
+     * 
+     * @param _Sim 
+     * @return true 
+     * @return false 
+     */
+    bool IsSimulationBusy(Simulation* _Sim);
 
 };
 
