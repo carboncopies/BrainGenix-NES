@@ -18,7 +18,7 @@ Manager::Manager(Config::Config* _Config, API::Manager* _RPCManager) {
     _RPCManager->AddRoute("Compartment/BS/Create", [this](std::string RequestJSON){ return BSCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Staple/Create", [this](std::string RequestJSON){ return StapleCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Receptor/Create", [this](std::string RequestJSON){ return ReceptorCreate(RequestJSON);});
-    _RPCManager->AddRoute("Connection/PatchClampDAC/Create", [this](std::string RequestJSON){ return PatchClampDACCreate(RequestJSON);});
+    _RPCManager->AddRoute("Tool/PatchClampDAC/Create", [this](std::string RequestJSON){ return PatchClampDACCreate(RequestJSON);});
 
 
 }
