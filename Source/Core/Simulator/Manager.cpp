@@ -104,6 +104,30 @@ std::string Manager::SimulationRunFor(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
+std::string Manager::SimulationRecordAll(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    std::cout<<"[Info] Simulation RecordAll Called, On Sim "<<SimulationID<<std::endl;
+
+
+    // Check Sim ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid sim id
+        return ResponseJSON.dump();
+    }
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    ThisSimulation->MaxRecordTime_ms = Util::GetFloat(&RequestJSON, "MaxRecordTime_ms");
+
+    // Return Status ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    return ResponseJSON.dump();
+}
+
 
 std::string Manager::SphereCreate(std::string _JSONRequest) {
 
