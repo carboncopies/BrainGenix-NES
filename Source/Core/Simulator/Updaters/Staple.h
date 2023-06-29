@@ -16,12 +16,29 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Structs/Staple.h>
 
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 namespace Updater {
+
+
+/**
+ * @brief Resets the target Staple.
+ * 
+ * @param _Target 
+ */
+void StapleReset(Connections::Staple* _Target);
+
+
+/**
+ * @brief Updates the target Staple.
+ * 
+ * @param _Target 
+ */
+void StapleUpdate(Connections::Staple* _Target);
 
 
 
