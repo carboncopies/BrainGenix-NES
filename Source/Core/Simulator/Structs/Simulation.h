@@ -46,6 +46,7 @@ struct Simulation {
     std::string Name; /**Name of the simulation*/
     int ID; /**ID of the simulation*/
     float MaxRecordTime_ms = 0.; /**Maximum god-mode record time for everything*/
+    std::string RecordingBlob; /**Blob of json data that contains all recorded states for each thing in the simulation*/
 
 
     std::vector<float> RunTimes_ms; /**List containing number of milliseconds to run the simulation for next time SIMULATION_RUNFOR is called, removes from start of list every time.*/
