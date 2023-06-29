@@ -14,6 +14,7 @@ Manager::Manager(Config::Config* _Config, API::Manager* _RPCManager) {
     _RPCManager->AddRoute("Simulation/Create", [this](std::string RequestJSON){ return SimulationCreate(RequestJSON);});
     _RPCManager->AddRoute("Simulation/Reset", [this](std::string RequestJSON){ return SimulationReset(RequestJSON);});
     _RPCManager->AddRoute("Simulation/RunFor", [this](std::string RequestJSON){ return SimulationRunFor(RequestJSON);});
+    _RPCManager->AddRoute("Simulation/RecordAll", [this](std::string RequestJSON){ return SimulationRecordAll(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Sphere/Create", [this](std::string RequestJSON){ return SphereCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Cylinder/Create", [this](std::string RequestJSON){ return CylinderCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Box/Create", [this](std::string RequestJSON){ return BoxCreate(RequestJSON);});
