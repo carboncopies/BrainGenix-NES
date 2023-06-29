@@ -17,12 +17,29 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Structs/PatchClampDAC.h>
 
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 namespace Updater {
+
+
+/**
+ * @brief Resets the target DAC.
+ * 
+ * @param _Target 
+ */
+void PatchClampDACReset(Tools::PatchClampDAC* _Target);
+
+
+/**
+ * @brief Updates the target DAC.
+ * 
+ * @param _Target 
+ */
+void PatchClampDACUpdate(Tools::PatchClampDAC* _Target);
 
 
 
