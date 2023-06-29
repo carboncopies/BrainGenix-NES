@@ -7,13 +7,19 @@ namespace NES {
 namespace Simulator {
 
 
-Engine::Engine(Simulation* _Sim) {
-
-    Sim_ = _Sim;
-
+Engine::Engine() {
 }
 
 Engine::~Engine() {
+}
+
+
+
+void Engine::ResetSimulation(Simulation* _Sim) {
+
+}
+
+void Engine::RunSimulationFor(Simulation* _Sim) {
 
 }
 

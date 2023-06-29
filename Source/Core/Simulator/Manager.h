@@ -32,6 +32,7 @@
 #include <Simulator/Structs/PatchClampDAC.h>
 #include <Simulator/Structs/PatchClampADC.h>
 
+#include <Simulator/EngineController.h>
 #include <Config/Config.h>
 #include <RPC/Manager.h>
 #include <Util/JSONHelpers.h>
@@ -100,11 +101,11 @@ public:
     std::string PatchClampADCGetRecordedData(std::string _JSONRequest);
 
 
-    /**
-     * @brief Function for thread to run, checks for new updates in each simulation.
-     * 
-     */
-    void SimulationEngineThread(Simulation* _Sim);
+    // /**
+    //  * @brief Function for thread to run, checks for new updates in each simulation.
+    //  * 
+    //  */
+    // void SimulationEngineThread(Simulation* _Sim);
 
     /**
      * @brief Returns true if the simulation is being worked on by another thread.

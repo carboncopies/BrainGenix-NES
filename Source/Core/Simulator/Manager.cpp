@@ -46,36 +46,36 @@ Manager::~Manager() {
 }
 
 
-void Manager::SimulationEngineThread(Simulation* _Sim) {
+// void Manager::SimulationEngineThread(Simulation* _Sim) {
 
-    // Log Init message
-    std::cout<<"[Info] Starting Simulation Updater Thread\n";
+//     // Log Init message
+//     std::cout<<"[Info] Starting Simulation Updater Thread\n";
 
-    // Enter into loop until thread should stop
-    while (!StopThreads_) {
+//     // Enter into loop until thread should stop
+//     while (!StopThreads_) {
 
-        if (_Sim->WorkRequested) {
-            _Sim->IsProcessing = true;
+//         if (_Sim->WorkRequested) {
+//             _Sim->IsProcessing = true;
 
-            if (_Sim->CurrentTask == SIMULATION_RESET) {
-                std::cout<<"[Info] Worker Performing Simulation Reset For Simulation "<<_Sim->ID<<std::endl;
-                _Sim->CurrentTask = SIMULATION_NONE;
-                _Sim->WorkRequested = false;
+//             if (_Sim->CurrentTask == SIMULATION_RESET) {
+//                 std::cout<<"[Info] Worker Performing Simulation Reset For Simulation "<<_Sim->ID<<std::endl;
+//                 _Sim->CurrentTask = SIMULATION_NONE;
+//                 _Sim->WorkRequested = false;
 
-            } else if (_Sim->CurrentTask == SIMULATION_RUNFOR) {
-                std::cout<<"[Info] Worker Performing Simulation RunFor For Simulation "<<_Sim->ID<<std::endl;
-                _Sim->CurrentTask = SIMULATION_NONE;
-                _Sim->WorkRequested = false;
-            }
+//             } else if (_Sim->CurrentTask == SIMULATION_RUNFOR) {
+//                 std::cout<<"[Info] Worker Performing Simulation RunFor For Simulation "<<_Sim->ID<<std::endl;
+//                 _Sim->CurrentTask = SIMULATION_NONE;
+//                 _Sim->WorkRequested = false;
+//             }
 
-            _Sim->IsProcessing = false;
-        } else {
-            std::this_thread::sleep_for(std::chrono::milliseconds(10)); // sleep for 10ms
-        }
+//             _Sim->IsProcessing = false;
+//         } else {
+//             std::this_thread::sleep_for(std::chrono::milliseconds(10)); // sleep for 10ms
+//         }
 
-    }
+//     }
 
-}
+// }
 
 
 std::string Manager::SimulationCreate(std::string _JSONRequest) {
@@ -94,7 +94,7 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     Sim->ID = SimID;
 
     // Start Thread
-    SimulationThreads_.push_back(std::thread(&Manager::SimulationEngineThread, this, Sim));
+    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Sim, &StopThreads_));
 
 
     // Return Status ID

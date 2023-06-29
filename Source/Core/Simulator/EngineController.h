@@ -23,6 +23,8 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
+#include <Simulator/Engine.h>
+
 
 namespace BG {
 namespace NES {
@@ -33,7 +35,7 @@ namespace Simulator {
  * @brief This function is what is the target of the new worker thread, and handles setting up a new engine for this simulation, as well as monitoring it and invoking the util functions as needed.
  * 
  */
-void SimulationEngineThread(Simulation* _Sim);
+void SimulationEngineThread(Simulation* _Sim, std::atomic<bool>* _StopThreads);
 
 
 

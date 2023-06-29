@@ -37,15 +37,24 @@ class Engine {
 
 private:
 
-    Simulation* Sim_; /**Local copy of pointer to simulation. We assume that this pointer will *never* be invalidated.*/
-
 public:
 
-    Engine(Simulation* _Sim);
+    Engine();
 
     ~Engine();
 
 
+    /**
+     * @brief Resets all attributes of the given simulation which need to be cleared, (this includes any recorded data).
+     * 
+     */
+    void ResetSimulation(Simulation* _Sim);
+
+    /**
+     * @brief Runs the simulation for the amount of time specified in the simulation's struct.
+     * 
+     */
+    void RunSimulationFor(Simulation* _Sim);
 
 
 };
