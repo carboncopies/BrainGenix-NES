@@ -77,6 +77,7 @@ public:
      * @return std::string 
      */
     std::string SimulationCreate(std::string _JSONRequest);
+    std::string SimulationReset(std::string _JSONRequest);
     std::string SphereCreate(std::string _JSONRequest);
     std::string CylinderCreate(std::string _JSONRequest);
     std::string BoxCreate(std::string _JSONRequest);
