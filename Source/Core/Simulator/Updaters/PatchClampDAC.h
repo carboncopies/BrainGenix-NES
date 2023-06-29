@@ -18,6 +18,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Structs/Simulation.h>
 #include <Simulator/Structs/PatchClampDAC.h>
 
 
@@ -32,7 +33,7 @@ namespace Updater {
  * 
  * @param _Target 
  */
-void PatchClampDACReset(Tools::PatchClampDAC* _Target);
+void PatchClampDACReset(Tools::PatchClampDAC* _Target, Simulation* _Sim);
 
 
 /**
@@ -40,7 +41,7 @@ void PatchClampDACReset(Tools::PatchClampDAC* _Target);
  * 
  * @param _Target 
  */
-void PatchClampDACUpdate(Tools::PatchClampDAC* _Target);
+void PatchClampDACUpdate(Tools::PatchClampDAC* _Target, Simulation* _Sim);
 
 
 

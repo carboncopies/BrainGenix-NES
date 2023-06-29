@@ -8,14 +8,16 @@ namespace Updater {
 
 
 
-void PatchClampDACReset(Tools::PatchClampDAC* _Target) {
+void PatchClampDACReset(Tools::PatchClampDAC* _Target, Simulation* _Sim) {
     assert(_Target != nullptr && "You have passed _Target a null pointer!");
+
+    
 
 }
 
 
 
-void PatchClampDACUpdate(Tools::PatchClampDAC* _Target) {
+void PatchClampDACUpdate(Tools::PatchClampDAC* _Target, Simulation* _Sim) {
     assert(_Target != nullptr && "You have passed _Target a null pointer!");
 
 }

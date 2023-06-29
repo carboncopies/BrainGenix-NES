@@ -17,6 +17,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Structs/Simulation.h>
 #include <Simulator/Structs/Receptor.h>
 
 
@@ -31,7 +32,7 @@ namespace Updater {
  * 
  * @param _Target 
  */
-void ReceptorReset(Connections::Receptor* _Target);
+void ReceptorReset(Connections::Receptor* _Target, Simulation* _Sim);
 
 
 /**
@@ -39,7 +40,7 @@ void ReceptorReset(Connections::Receptor* _Target);
  * 
  * @param _Target 
  */
-void ReceptorUpdate(Connections::Receptor* _Target);
+void ReceptorUpdate(Connections::Receptor* _Target, Simulation* _Sim);
 
 
 

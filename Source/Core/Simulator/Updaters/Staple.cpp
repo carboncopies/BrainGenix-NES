@@ -8,14 +8,14 @@ namespace Updater {
 
 
 
-void StapleReset(Connections::Staple* _Target) {
+void StapleReset(Connections::Staple* _Target, Simulation* _Sim) {
     assert(_Target != nullptr && "You have passed _Target a null pointer!");
 
 }
 
 
 
-void StapleUpdate(Connections::Staple* _Target) {
+void StapleUpdate(Connections::Staple* _Target, Simulation* _Sim) {
     assert(_Target != nullptr && "You have passed _Target a null pointer!");
 
 }

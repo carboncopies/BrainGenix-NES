@@ -17,6 +17,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Structs/Simulation.h>
 #include <Simulator/Structs/Staple.h>
 
 
@@ -31,7 +32,7 @@ namespace Updater {
  * 
  * @param _Target 
  */
-void StapleReset(Connections::Staple* _Target);
+void StapleReset(Connections::Staple* _Target, Simulation* _Sim);
 
 
 /**
@@ -39,7 +40,7 @@ void StapleReset(Connections::Staple* _Target);
  * 
  * @param _Target 
  */
-void StapleUpdate(Connections::Staple* _Target);
+void StapleUpdate(Connections::Staple* _Target, Simulation* _Sim);
 
 
 

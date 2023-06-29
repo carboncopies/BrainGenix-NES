@@ -18,6 +18,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Structs/Simulation.h>
 #include <Simulator/Structs/PatchClampADC.h>
 
 namespace BG {
@@ -31,7 +32,7 @@ namespace Updater {
  * 
  * @param _Target 
  */
-void PatchClampADCReset(Tools::PatchClampADC* _Target);
+void PatchClampADCReset(Tools::PatchClampADC* _Target, Simulation* _Sim);
 
 /**
  * @brief Updates the target ADC.
@@ -39,7 +40,7 @@ void PatchClampADCReset(Tools::PatchClampADC* _Target);
  * 
  * @param _Target 
  */
-void PatchClampADCUpdate(Tools::PatchClampADC* _Target);
+void PatchClampADCUpdate(Tools::PatchClampADC* _Target, Simulation* _Sim);
 
 
 }; // Close Namespace Updater

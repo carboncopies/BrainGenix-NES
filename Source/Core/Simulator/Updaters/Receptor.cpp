@@ -8,7 +8,7 @@ namespace Updater {
 
 
 
-void ReceptorReset(Connections::Receptor* _Target) {
+void ReceptorReset(Connections::Receptor* _Target, Simulation* _Sim) {
     assert(_Target != nullptr && "You have passed _Target a null pointer!");
 
 
@@ -16,7 +16,7 @@ void ReceptorReset(Connections::Receptor* _Target) {
 
 
 
-void ReceptorUpdate(Connections::Receptor* _Target) {
+void ReceptorUpdate(Connections::Receptor* _Target, Simulation* _Sim) {
     assert(_Target != nullptr && "You have passed _Target a null pointer!");
 
 
