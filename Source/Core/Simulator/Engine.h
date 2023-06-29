@@ -23,6 +23,11 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
+#include <Simulator/Updaters/PatchClampADC.h>
+#include <Simulator/Updaters/PatchClampDAC.h>
+#include <Simulator/Updaters/Receptor.h>
+#include <Simulator/Updaters/Staple.h>
+
 
 namespace BG {
 namespace NES {
