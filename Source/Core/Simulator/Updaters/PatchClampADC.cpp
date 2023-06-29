@@ -9,12 +9,16 @@ namespace Updater {
 
 
 void PatchClampADCReset(Tools::PatchClampADC* _Target) {
+    assert(_Target != nullptr && "You have passed _Target a null pointer!");
+
 
 }
 
 
 
 void PatchClampADCUpdate(Tools::PatchClampADC* _Target) {
+    assert(_Target != nullptr && "You have passed _Target a null pointer!");
+
 
 }
 

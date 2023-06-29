@@ -11,6 +11,7 @@
 #pragma once
 
 // Standard Libraries (BG convention: use <> instead of "")
+#include <assert.h>
 #include <string>
 
 // Third-Party Libraries (BG convention: use <> instead of "")

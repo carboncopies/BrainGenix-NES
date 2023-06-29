@@ -13,6 +13,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <vector>
 #include <memory>
+#include <assert.h>
 #include <iostream>
 #include <atomic>
 #include <thread>

@@ -9,12 +9,16 @@ namespace Updater {
 
 
 void ReceptorReset(Connections::Receptor* _Target) {
+    assert(_Target != nullptr && "You have passed _Target a null pointer!");
+
 
 }
 
 
 
 void ReceptorUpdate(Connections::Receptor* _Target) {
+    assert(_Target != nullptr && "You have passed _Target a null pointer!");
+
 
 }
 
