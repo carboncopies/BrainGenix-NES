@@ -22,6 +22,10 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/Simulator/Manager.cpp
   ${SRC_DIR}/Core/Simulator/Manager.h
+  ${SRC_DIR}/Core/Simulator/Engine.cpp
+  ${SRC_DIR}/Core/Simulator/Engine.h
+  ${SRC_DIR}/Core/Simulator/EngineController.cpp
+  ${SRC_DIR}/Core/Simulator/EngineController.h
 
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.h
