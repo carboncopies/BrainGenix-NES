@@ -12,6 +12,8 @@ void ReceptorReset(Connections::Receptor* _Target, Simulation* _Sim) {
     assert(_Target != nullptr && "You have passed _Target a null pointer!");
 
 
+    // Nothing to do here so we can just skip this
+
 }
 
 
@@ -19,6 +21,8 @@ void ReceptorReset(Connections::Receptor* _Target, Simulation* _Sim) {
 void ReceptorUpdate(Connections::Receptor* _Target, Simulation* _Sim) {
     assert(_Target != nullptr && "You have passed _Target a null pointer!");
 
+
+    // To be filled in
 
 }
 
