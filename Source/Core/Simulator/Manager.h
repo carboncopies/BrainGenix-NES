@@ -85,6 +85,7 @@ public:
     std::string ReceptorCreate(std::string _JSONRequest);
     std::string PatchClampDACCreate(std::string _JSONRequest);
     std::string PatchClampDACSetOutputList(std::string _JSONRequest);
+    std::string PatchClampADCCreate(std::string _JSONRequest);
 
 
 };

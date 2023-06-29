@@ -20,6 +20,7 @@ Manager::Manager(Config::Config* _Config, API::Manager* _RPCManager) {
     _RPCManager->AddRoute("Connection/Receptor/Create", [this](std::string RequestJSON){ return ReceptorCreate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampDAC/Create", [this](std::string RequestJSON){ return PatchClampDACCreate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampDAC/SetOutputList", [this](std::string RequestJSON){ return PatchClampDACSetOutputList(RequestJSON);});
+    _RPCManager->AddRoute("Tool/PatchClampADC/Create", [this](std::string RequestJSON){ return PatchClampADCCreate(RequestJSON);});
 
 
 }
@@ -265,7 +266,7 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     std::cout<<"[Info] Create Receptor Called, On Sim "<<SimulationID<<std::endl;
 
 
-    // Build New Staple Object
+    // Build New Receptor Object
     Connections::Receptor C;
     C.Name = Util::GetString(&RequestJSON, "Name");
     C.SourceCompartmentID = Util::GetInt(&RequestJSON, "SourceCompartmentID");
@@ -304,7 +305,7 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
     std::cout<<"[Info] Create PatchClampDAC Called, On Sim "<<SimulationID<<std::endl;
 
 
-    // Build New Staple Object
+    // Build New DAC Object
     Tools::PatchClampDAC T;
     T.Name = Util::GetString(&RequestJSON, "Name");
     T.DestinationCompartmentID = Util::GetInt(&RequestJSON, "DestinationCompartmentID");
@@ -369,6 +370,42 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
+std::string Manager::PatchClampADCCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    std::cout<<"[Info] Create PatchClampADC Called, On Sim "<<SimulationID<<std::endl;
+
+
+    // Build New ADC Object
+    Tools::PatchClampADC T;
+    T.Name = Util::GetString(&RequestJSON, "Name");
+    T.SourceCompartmentID = Util::GetInt(&RequestJSON, "SourceCompartmentID");
+    T.Timestep_ms = 0.0f;
+    Util::GetVec3(T.ClampPos_nm, &RequestJSON, "ClampPos");    
+
+
+    // Add to Sim, Set ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        ResponseJSON["PatchClampADCID"] = -1;
+        return ResponseJSON.dump();
+    }
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    int PatchClampADCID = ThisSimulation->PatchClampADCs.size();
+    T.ID = PatchClampADCID;
+    ThisSimulation->PatchClampADCs.push_back(T);
+
+
+    // Return Status ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    ResponseJSON["PatchClampADCID"] = PatchClampADCID;
+    return ResponseJSON.dump();
+}
 
 
 
