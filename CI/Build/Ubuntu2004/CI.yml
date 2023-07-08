@@ -1,0 +1,19 @@
+Ubuntu_2004_Build:
+  image: "${CI_REGISTRY_IMAGE}:build_ubuntu2004"
+  tags:
+   - linux
+  stage: Build
+  script:
+    - cd Tools
+    - bash Build.sh $NUMBER_THREADS
+  artifacts:
+    name: "$PLATFORM_BUILD_PREAMBLE-Ubuntu20.04"
+    paths:
+      - Build/
+      - Binaries/
+  only: # Only run build job when the source code, cmake, dependencies or CI change
+      changes:
+        - Source/**/*
+        - CMake/**/*
+        - ThirdParty/**/*
+        - CI/**/*

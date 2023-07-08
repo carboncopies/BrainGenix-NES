@@ -69,6 +69,7 @@ set(MAIN_SOURCES
 # Create Main Executable
 add_executable(${PROJECT_NAME} ${MAIN_SOURCES})
 set(EXECUTABLE_TYPE "Binary")
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE 
     nlohmann_json::nlohmann_json

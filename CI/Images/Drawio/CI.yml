@@ -1,0 +1,39 @@
+# In order to add container scanning for known vulnerabilities on your built Docker images, please refer to https://gitlab.cern.ch/gitlabci-examples/container_scanning
+
+# Using Kaniko
+# ------------
+
+# Kaniko is the recommended method for running Docker-builds as of May 2019. 
+# See https://docs.gitlab.com/ee/ci/docker/using_kaniko.html for GitLab's documentation.
+#
+# N.B.: if using docker-image-build tag in the past, and passing arguments to the image at build time (such as BUILD_ARG_1:'MY_VAR=my_value'),
+# consider checking https://github.com/GoogleContainerTools/kaniko#flag---build-arg to pass arguments to the Kaniko executor.
+Build_Drawio_Container:
+    stage: Update CI Containers
+    tags:
+      - linux
+    variables:
+      # To push to a specific docker tag other than latest(the default), amend the --destination parameter, e.g. --destination $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME
+      # See https://docs.gitlab.com/ee/ci/variables/predefined_variables.html#variables-reference for available variables
+      IMAGE_DESTINATION: ${CI_REGISTRY_IMAGE}:build_drawio
+      BUILD_CONTEXT: ${CI_PROJECT_DIR}/CI/Images/Drawio
+    image: 
+        # The kaniko debug image is recommended because it has a shell, and a shell is required for an image to be used with GitLab CI/CD.
+        name: gcr.io/kaniko-project/executor:debug
+        entrypoint: [""]
+    script:
+        # Prepare Kaniko configuration file
+        - echo "{\"auths\":{\"$CI_REGISTRY\":{\"auth\":\"$(echo -n ${CI_REGISTRY_USER}:${CI_REGISTRY_PASSWORD} | base64)\"}}}" > /kaniko/.docker/config.json
+        # Build and push the image from the Dockerfile at the root of the project.
+        - /kaniko/executor 
+          --context $CI_PROJECT_DIR
+          --dockerfile $BUILD_CONTEXT/Dockerfile
+          --destination $IMAGE_DESTINATION
+          --build-arg REPO_ROOT_DIR=$CI_PROJECT_DIR
+        # Print the full registry path of the pushed image
+        - echo "Image pushed successfully to ${IMAGE_DESTINATION}"
+
+    only: # Only run rebuild job when the CI config changes
+      changes:
+        - CI/Images/Drawio/**/*
+        - CI/.gitlab-ci.yml

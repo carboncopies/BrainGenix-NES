@@ -64,15 +64,5 @@ fi
 echo "[BG BUILD HELPER] - Building, Please Wait. This may take some time"
 cmake --build . -j $1
 
-
-# Run Program
-cd ../Binaries
-echo "[BG BUILD HELPER] - Checking If Binary Exists"
-if [ -f "BrainGenix-NES" ]
-then
-    echo "[BG BUILD HELPER] - Running Program"
-    ./BrainGenix-NES
-else
-    echo "[BG BUILD HELPER] - Build Failed! Exiting"
-fi
-cd ..
+# Return status code of build (0=success, else=fail)
+exit $?
