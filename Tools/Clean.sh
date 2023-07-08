@@ -1,9 +1,9 @@
 # Cleans the build directories
-echo "Cleaning Build"
+echo "[BG BUILD SYSTEM] - Cleaning Build"
 
 cd ..
 rm -rf Build/
 rm -rf build/
 rm -rf Binaries/
 
-echo "Build Cleaned"
+echo "[BG BUILD SYSTEM] - Build Cleaned"

@@ -1,0 +1,10 @@
+{
+  "name": "braingenix-nes",
+  "version-string": "0.2.0",
+  "license": "AGPL-3.0-or-later",
+  "dependencies": [
+    "boost-program-options",
+    "nlohmann-json",
+    "rpclib"
+  ]
+}

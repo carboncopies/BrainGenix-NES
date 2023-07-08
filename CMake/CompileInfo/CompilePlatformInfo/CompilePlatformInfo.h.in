@@ -1,0 +1,14 @@
+//=============================================================//
+// This file is part of the BrainGenix-API Unified API Endpoint //
+//=============================================================//
+
+#pragma once
+
+
+#define TARGET_OS_NAME    "${TARGET_OS_NAME}"    // Name of the operating system which BG is being built for.
+#define TARGET_OS_VERSION "${TARGET_OS_VERSION}" // Version of the operating system which BG is being built for.
+#define TARGET_PROCESSOR  "${TARGET_PROCESSOR}"  // Name of the CPU which BG is being built for.
+
+#define HOST_OS_NAME     "${HOST_OS_NAME}"    // Name of the operating system which is compiling BG.
+#define HOST_OS_VERSION  "${HOST_OS_VERSION}" // Version of the operating system which is compiling BG.
+#define HOST_PROCESSOR   "${HOST_PROCESSOR}"  // Name of the CPU which is compiling BG.

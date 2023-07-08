@@ -1,63 +1,51 @@
-# Set CMAKE Version, Define Project
 cmake_minimum_required (VERSION 3.1...3.21)
-project(
-	"BrainGenix-NES"
-	VERSION "0.1.0"
-	LANGUAGES CXX
-	)
+
 
 # Set Dirs
-set(LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Third-Party")
+set(LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty")
 set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source")
 set(BIN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Binaries")
 set(CMAKE_UTIL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake/Utils")
-set(CMAKE_BUILD_UTILS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake/BuildUtils")
-set(CMAKE_FIND_UTILS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake/FindUtils")
+set(CMAKE_SCRIPTS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake/CompileInfo")
 set(PROJECT_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR})
+
+
+# Setup vcpkg script with CMake (note: should be placed before project() call)
+set(CMAKE_TOOLCHAIN_FILE ${LIB_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "Vcpkg toolchain file")
+
+
+# Define Project
+project(
+	"BrainGenix-NES"
+	VERSION "0.2.0"
+	LANGUAGES CXX
+	)
 
 
 # Include Util CMake Scripts
 include(${CMAKE_UTIL_DIR}/ColorizeMessages.cmake)
 include(${CMAKE_UTIL_DIR}/SetBinaryDir.cmake)
-include(${CMAKE_UTIL_DIR}/DisableTargetWarnings.cmake)
 
-# Enable CTests
-enable_testing()
+# Add Libraries
+message(STATUS "Finding nlohmann_json Package")
+find_package(nlohmann_json CONFIG REQUIRED)
 
-# Include Package Addition Scripts
-include(${CMAKE_BUILD_UTILS_DIR}/YAML-CPP.cmake)
-include(${CMAKE_BUILD_UTILS_DIR}/Backward.cmake)
-include(${CMAKE_BUILD_UTILS_DIR}/PCIIDS.cmake)
+message(STATUS "Finding boost Package")
+set(Boost_NO_WARN_NEW_VERSIONS 1)
+find_package(Boost REQUIRED COMPONENTS program_options)
 
+message(STATUS "Finding rpclib Package")
+find_package(rpclib CONFIG REQUIRED)
 
-# Add Main.cpp
-add_executable(${PROJECT_NAME} ${SRC_DIR}/Main.cpp ${BACKWARD_ENABLE})
-target_link_libraries(${PROJECT_NAME}
+# Ensure config is copied to bin
+file(COPY "${SRC_DIR}/Data/NES.cfg" DESTINATION "${BIN_DIR}")
 
-  # Third Party Libs
-  yaml-cpp
-
-  # Internal Libs
-  NES_ConfigurationLoader
-  NES_CLASS_LoggingSystem
-
-  NES_ThreadingEngine
-
-  )
+# Run Configuration Tools
+include(${CMAKE_SCRIPTS_DIR}/VersioningSystem/VersioningSystem.cmake)
+include(${CMAKE_SCRIPTS_DIR}/CompilePlatformInfo/CompilePlatformInfo.cmake)
+include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
 
-# ADD INTERNAL SUBDIRECTORIES
-
-add_subdirectory(${SRC_DIR}/Core/ModelExecutionSystem/NES_ThreadingEngine)
-
-add_subdirectory(${SRC_DIR}/Core/Models/Neurons/NES_EmptyNeuronModel)
-
-add_subdirectory(${SRC_DIR}/Core/Structures/NES_STRUCT_RGBColor)
 
 
-add_subdirectory(${SRC_DIR}/Core/Utils/NES_CLASS_LoggingSystem)
-add_subdirectory(${SRC_DIR}/Core/Utils/NES_CLASS_HardwareInformation)
-add_subdirectory(${SRC_DIR}/Core/Utils/NES_ConfigurationLoader)
-
-# COPY FILES TO BINARY DIR
-file(COPY "${SRC_DIR}/Config.yaml" DESTINATION "${BIN_DIR}")
+add_subdirectory(${SRC_DIR}/Core)

@@ -1,0 +1,8 @@
+//=============================================================//
+// This file is part of the BrainGenix-API Unified API Endpoint //
+//=============================================================//
+
+#pragma once
+
+
+#define COMPILE_TIME_STAMP "${COMPILE_TIME_STAMP}"  // Timestamp when build was made

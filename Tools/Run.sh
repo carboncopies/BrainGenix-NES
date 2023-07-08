@@ -1,3 +1,7 @@
+
+# Enter Artifact/Binary Dir
 cd ..
 cd Binaries
-./BrainGenix-NES
+
+# Depending On Platform, Run
+./BrainGenix-NES $1 $2 $3 $4
