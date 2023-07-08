@@ -8,15 +8,15 @@
 #
 # N.B.: if using docker-image-build tag in the past, and passing arguments to the image at build time (such as BUILD_ARG_1:'MY_VAR=my_value'),
 # consider checking https://github.com/GoogleContainerTools/kaniko#flag---build-arg to pass arguments to the Kaniko executor.
-Build_Debian10_Container:
+Build_Drawio_Container:
     stage: Update CI Containers
     tags:
       - linux
     variables:
       # To push to a specific docker tag other than latest(the default), amend the --destination parameter, e.g. --destination $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME
       # See https://docs.gitlab.com/ee/ci/variables/predefined_variables.html#variables-reference for available variables
-      IMAGE_DESTINATION: ${CI_REGISTRY_IMAGE}:build_debian10
-      BUILD_CONTEXT: ${CI_PROJECT_DIR}/CI/Images/Debian10
+      IMAGE_DESTINATION: ${CI_REGISTRY_IMAGE}:build_drawio
+      BUILD_CONTEXT: ${CI_PROJECT_DIR}/CI/Images/Drawio
     image: 
         # The kaniko debug image is recommended because it has a shell, and a shell is required for an image to be used with GitLab CI/CD.
         name: gcr.io/kaniko-project/executor:debug
@@ -35,6 +35,5 @@ Build_Debian10_Container:
 
     only: # Only run rebuild job when the CI config changes
       changes:
-        - CI/Images/Debian10/**/*
+        - CI/Images/Drawio/**/*
         - CI/.gitlab-ci.yml
-        - Tools/Setup.sh

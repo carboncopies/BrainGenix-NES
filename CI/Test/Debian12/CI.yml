@@ -1,10 +1,10 @@
-Ubuntu_2004_Test:
-  image: "${CI_REGISTRY_IMAGE}:build_ubuntu2004"
+Debian_12_Test:
+  image: "${CI_REGISTRY_IMAGE}:build_debian12"
   tags:
    - linux
   stage: Test
   dependencies:
-   - Ubuntu_2004_Build
+    - Debian_12_Build
   script:
     - cd Tools
     - bash Test.sh
