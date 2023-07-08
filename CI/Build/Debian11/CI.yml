@@ -16,4 +16,5 @@ Debian_11_Build:
         - Source/**/*
         - CMake/**/*
         - ThirdParty/**/*
+        - CMakeLists.txt
         - CI/**/*

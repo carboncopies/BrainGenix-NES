@@ -16,4 +16,5 @@ Ubuntu_2204_Build:
         - Source/**/*
         - CMake/**/*
         - ThirdParty/**/*
+        - CMakeLists.txt
         - CI/**/*
