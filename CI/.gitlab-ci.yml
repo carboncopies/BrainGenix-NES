@@ -1,0 +1,33 @@
+# Set some global variables
+variables:
+  PROJECT_NAME: "BrainGenix-NES"
+  PLATFORM_BUILD_PREAMBLE: "$PROJECT_NAME_$CI_COMMIT_SHORT_SHA"
+  GIT_SUBMODULE_STRATEGY: recursive
+  
+
+# List of stages for jobs, and their order of execution
+stages:
+  - Update CI Containers
+  - Build
+  # - Test # Temp. disabled tests as they have not yet been implemented.
+
+include: 
+  # Update CI Containersers
+  - '/CI/Images/Ubuntu2204/CI.yml'
+  - '/CI/Images/Ubuntu2004/CI.yml'
+  - '/CI/Images/Doxygen/CI.yml'
+  - '/CI/Images/Debian11/CI.yml'
+  - '/CI/Images/Debian10/CI.yml'
+
+  # Executable Builders
+  - '/CI/Build/Ubuntu2204/CI.yml'
+  - '/CI/Build/Ubuntu2004/CI.yml'
+  - '/CI/Docs/Doxygen/CI.yml'
+  - '/CI/Build/Debian11/CI.yml'
+  - '/CI/Build/Debian10/CI.yml'
+
+  # # Tests
+  # - '/CI/Test/Ubuntu2204/CI.yml'
+  # - '/CI/Test/Ubuntu2004/CI.yml'
+  # - '/CI/Test/Debian11/CI.yml'
+  # - '/CI/Test/Debian10/CI.yml'

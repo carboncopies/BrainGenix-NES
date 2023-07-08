@@ -1,0 +1,13 @@
+# Generates Doxygen Docs And Adds Them To Archive
+Docs_Doxygen_Generate:
+  image: "${CI_REGISTRY_IMAGE}:build_doxygen"
+  stage: Build
+  tags:
+    - linux
+  script:
+    - cd Tools/Docs
+    - bash GenerateDoxygen.sh
+  artifacts:
+    name: "Docs_BrainGenix-ERS_$CI_COMMIT_SHORT_SHA"
+    paths:
+      - Docs/Doxygen/Generated/

@@ -1,0 +1,10 @@
+Ubuntu_2204_Test:
+  image: "${CI_REGISTRY_IMAGE}:build_ubuntu2204"
+  tags:
+   - linux
+  stage: Test
+  dependencies:
+   - Ubuntu_2204_Build
+  script:
+    - cd Tools
+    - bash Test.sh
