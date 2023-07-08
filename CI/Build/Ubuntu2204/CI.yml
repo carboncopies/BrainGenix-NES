@@ -11,6 +11,10 @@ Ubuntu_2204_Build:
     paths:
       - Build/
       - Binaries/
+  cache:
+    - key:
+      paths:
+        - ThirdParty/**/*
   only: # Only run build job when the source code, cmake, dependencies or CI change
       changes:
         - Source/**/*
