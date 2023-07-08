@@ -36,4 +36,3 @@ git submodule update --init
 echo "Setting Up vcpkg"
 ./../ThirdParty/vcpkg/bootstrap-vcpkg.sh
 echo "Done, you can now run Build.sh"
-
