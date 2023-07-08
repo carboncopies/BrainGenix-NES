@@ -75,6 +75,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     nlohmann_json::nlohmann_json
     Boost::program_options
     rpclib::rpc
+    ${CMAKE_THREAD_LIBS_INIT}
 
     VersioningSystem
     CompileTimeStamp
