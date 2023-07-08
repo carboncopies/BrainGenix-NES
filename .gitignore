@@ -1,9 +1,9 @@
 # Ignore Build Files
-Build/
-Binaries/
-build/
+/Build/
+/Binaries/
+/build/
 
-.vscode/
+/.vscode/
 
 
 ## C++ Gitignore template from github
