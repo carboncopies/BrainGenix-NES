@@ -25,14 +25,21 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
 
 
     // Open Configuration File, Parse
-    std::ifstream ConfigFileStream(_Config.ConfigFilePath.c_str());
-    if (!ConfigFileStream) {
-        std::cerr<<"[FATAL] Cannot Open Configuration File At `"<<_Config.ConfigFilePath<<"`.\nAborting.\n";
-        exit(1);
-    } else {
-        store(parse_config_file(ConfigFileStream, ConfigFileOptions), Cfg);
-        notify(Cfg);
+    bool HasConfigFile = false;
+    for (unsigned int i = 0; i < _Config.ConfigFilePaths.size(); i++) {
+        std::ifstream ConfigFileStream(_Config.ConfigFilePaths[i].c_str());
+        if (ConfigFileStream) {
+            store(parse_config_file(ConfigFileStream, ConfigFileOptions), Cfg);
+            notify(Cfg);
+            HasConfigFile = true;
+            break;
+        }
     }
+    if (!HasConfigFile) {
+        std::cerr<<"[FATAL] Cannot Open Configuration File At `"<<_Config.ConfigFilePaths[0]<<"`.\nAborting.\n";
+        exit(1);
+    } 
+
 
     // Update Parent's Config As Needed
     if (_Config.PortNumber == CONFIG_DEFAULT_PORT_NUMBER) {

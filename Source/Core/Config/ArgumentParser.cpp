@@ -17,7 +17,7 @@ ArgumentParser::ArgumentParser(Config& _Config, int _NumArguments, char** _Args)
         ("CompilePlatformInfo,w", "Print BG-NES Compile Platform Information")
         ("Port, p", boost::program_options::value<int>(&_Config.PortNumber)->default_value(CONFIG_DEFAULT_PORT_NUMBER), "Port Number Of The Service")
         ("Host, o", boost::program_options::value<std::string>(&_Config.Host)->default_value(CONFIG_DEFAULT_HOST), "Host That The Service Binds To")
-        ("Config,c", boost::program_options::value<std::string>(&_Config.ConfigFilePath)->default_value(CONFIG_DEFAULT_CFG_FILE_PATH), "Path To Config File")
+        ("Config,c", boost::program_options::value<std::string>(&_Config.ConfigFilePaths[0])->default_value(CONFIG_DEFAULT_CFG_FILE_PATH1), "Path To Config File")
         ;
     
     boost::program_options::options_description CommandLineOptions;
