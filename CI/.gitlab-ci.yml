@@ -8,6 +8,8 @@ variables:
 stages:
   - Update CI Containers
   - Build
+  - Package
+  - Deploy
   # - Test # Temp. disabled tests as they have not yet been implemented.
 
 include: 
