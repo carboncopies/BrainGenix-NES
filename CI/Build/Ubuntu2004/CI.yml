@@ -21,4 +21,4 @@ Ubuntu_2004_Build:
         - CMake/**/*
         - ThirdParty/**/*
         - CMakeLists.txt
-        - CI/**/*
+        - CI/Build/**/*

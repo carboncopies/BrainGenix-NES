@@ -32,3 +32,23 @@ include:
   # - '/CI/Test/Ubuntu2004/CI.yml'
   # - '/CI/Test/Debian11/CI.yml'
   # - '/CI/Test/Debian12/CI.yml'
+
+
+  # Package Stage
+  - '/CI/Package/Ubuntu2204/CI.yml'
+  # - '/CI/Package/Ubuntu2004/CI.yml'
+  - '/CI/Package/Debian11/CI.yml'
+  - '/CI/Package/Debian12/CI.yml'
+
+
+
+  # TODO: Packaging Tets here
+
+  # TODO: Staging here
+
+  # TODO: Staging Tests here
+
+
+
+  # Deploy To Prod
+  - '/CI/Deploy/Prod.yml'
