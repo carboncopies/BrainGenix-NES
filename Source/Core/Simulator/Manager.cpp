@@ -92,8 +92,8 @@ std::string Manager::SimulationReset(std::string _JSONRequest) {
         ResponseJSON["StatusCode"] = 4; // simulation is currently processing
         return ResponseJSON.dump();
     }
-    ThisSimulation->CurrentTask = SIMULATION_RESET; // request a reset be done
-    ThisSimulation->WorkRequested = true;
+    // ThisSimulation->CurrentTask = SIMULATION_RESET; // request a reset be done
+    // ThisSimulation->WorkRequested = true;
 
     // Return Status ID
     nlohmann::json ResponseJSON;
@@ -122,9 +122,9 @@ std::string Manager::SimulationRunFor(std::string _JSONRequest) {
         ResponseJSON["StatusCode"] = 4; // simulation is currently processing
         return ResponseJSON.dump();
     }
-    ThisSimulation->RunTimes_ms = Util::GetFloat(&RequestJSON, "Runtime_ms"); // set requested runtime
-    ThisSimulation->CurrentTask = SIMULATION_RUNFOR; // request work be done
-    ThisSimulation->WorkRequested = true;
+    // ThisSimulation->RunTimes_ms = Util::GetFloat(&RequestJSON, "Runtime_ms"); // set requested runtime
+    // ThisSimulation->CurrentTask = SIMULATION_RUNFOR; // request work be done
+    // ThisSimulation->WorkRequested = true;
 
     // Return Status ID
     nlohmann::json ResponseJSON;
