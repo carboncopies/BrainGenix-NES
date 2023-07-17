@@ -36,5 +36,4 @@ Build_Debian12_Container:
     only: # Only run rebuild job when the CI config changes
       changes:
         - CI/Images/Debian12/**/*
-        - CI/.gitlab-ci.yml
         - Tools/Setup.sh

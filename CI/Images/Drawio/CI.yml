@@ -36,4 +36,3 @@ Build_Drawio_Container:
     only: # Only run rebuild job when the CI config changes
       changes:
         - CI/Images/Drawio/**/*
-        - CI/.gitlab-ci.yml
