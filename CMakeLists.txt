@@ -9,6 +9,8 @@ set(CMAKE_UTIL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake/Utils")
 set(CMAKE_SCRIPTS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake/CompileInfo")
 set(PROJECT_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR})
 
+set(INSTALL_PREFIX "/etc/BrainGenix/NES")
+
 
 # Setup vcpkg script with CMake (note: should be placed before project() call)
 set(CMAKE_TOOLCHAIN_FILE ${LIB_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "Vcpkg toolchain file")
@@ -52,3 +54,34 @@ include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
 
 add_subdirectory(${SRC_DIR}/Core)
+
+
+
+
+# Set Install Targets
+message(STATUS "Install Prefix Set To '${INSTALL_PREFIX}'")
+message(STATUS "Executable Will Be Installed To '/usr/bin'")
+install(TARGETS ${PROJECT_NAME}
+    COMPONENT Release
+    RUNTIME DESTINATION "/usr/bin/"
+    LIBRARY DESTINATION ${INSTALL_PREFIX}
+    DESTINATION ${INSTALL_PREFIX}
+)
+install(FILES "${SRC_DIR}/Data/NES.cfg"
+    DESTINATION ${INSTALL_PREFIX}
+    COMPONENT Release
+)
+message(STATUS "Installing Unit File To '/etc/systemd/system'")
+install(FILES "${SRC_DIR}/Data/BrainGenix-NES.service"
+    DESTINATION "/etc/systemd/system/"
+    COMPONENT Release
+)
+
+
+
+# CPack Information
+SET(CPACK_GENERATOR "DEB")
+SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Carboncopies Foundation")
+set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${SRC_DIR}/Data/prerm;${SRC_DIR}/Data/postrm;${SRC_DIR}/Data/postinst")
+SET(CPACK_OUTPUT_FILE_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/Artifacts)
+INCLUDE(CPack)

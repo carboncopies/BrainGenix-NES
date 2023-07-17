@@ -1,0 +1,12 @@
+[Unit]
+Description=BrainGenix NES Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/BrainGenix-NES
+
+[Install]
+WantedBy=multi-user.target
+
+

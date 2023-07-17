@@ -1,0 +1,19 @@
+Debian_12_Package:
+  image: "${CI_REGISTRY_IMAGE}:build_debian12"
+  tags:
+   - linux
+  stage: Package
+  script:
+    - cd Tools
+    - bash Package.sh
+  dependencies: 
+    - Debian_12_Build
+  artifacts:
+    paths:
+      - Artifacts/
+  only: # Only run Package job when the source code, cmake, dependencies or CI change
+      changes:
+        - Source/**/*
+        - CMake/**/*
+        - ThirdParty/**/*
+        - CI/Package/**/*
