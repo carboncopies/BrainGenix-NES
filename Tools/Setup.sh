@@ -49,5 +49,5 @@ git submodule update --init
 
 # Bootstrap vcpkg
 echo "Setting Up vcpkg"
-./../ThirdParty/vcpkg/bootstrap-vcpkg.sh
+./../ThirdParty/vcpkg/bootstrap-vcpkg.sh --disable-metrics
 echo "Done, you can now run Build.sh"
