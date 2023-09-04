@@ -16,14 +16,14 @@ PACKAGE_MANAGER_INSTALL_CMD=""
 PACKAGE_MANAGER_UPDATE_CMD=""
 
 case $DISTRO in
-    "arch") PACKAGE_MANAGER_INSTALL_CMD="pacman -S";
-            PACKAGE_MANAGER_UPDATE_CMD="pacman -Syu";;
+    "arch") PACKAGE_MANAGER_INSTALL_CMD="pacman -S --noconfirm";
+            PACKAGE_MANAGER_UPDATE_CMD="pacman -Sy --noconfirm";;
     "ubuntu") PACKAGE_MANAGER_INSTALL_CMD="apt install -y";
-              PACKAGE_MANAGER_UPDATE_CMD="apt update";;
+              PACKAGE_MANAGER_UPDATE_CMD="apt update -y";;
     "fedora") PACKAGE_MANAGER_INSTALL_CMD="dnf install -y";
-              PACKAGE_MANAGER_UPDATE_CMD="dnf update";;
-    *) PACKAGE_MANAGER_INSTALL_CMD="apt install";
-       PACKAGE_MANAGER_UPDATE_CMD="dnf update";;
+              PACKAGE_MANAGER_UPDATE_CMD="dnf update -y";;
+    *) PACKAGE_MANAGER_INSTALL_CMD="apt install -y";
+       PACKAGE_MANAGER_UPDATE_CMD="apt update -y";;
 esac
 
 # Setup, update package registry
@@ -46,8 +46,7 @@ VCPKG_DEPS="curl zip unzip tar pkg-config autoconf flex bison"
 # Install Everything
 INSTALL_COMMAND="$SUDO_PREFIX $PACKAGE_MANAGER_INSTALL_CMD $VCPKG_DEPS $COMPILER_DEPS"
 echo "Running Install Command: $INSTALL_COMMAND"
-# $INSTALL_COMMAND || exit 1
-$INSTALL_COMMAND
+$INSTALL_COMMAND || exit 1
 
 # Update Submodules
 echo "Updating Submodules"
