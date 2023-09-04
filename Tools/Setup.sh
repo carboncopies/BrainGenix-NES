@@ -32,7 +32,13 @@ $SUDO_PREFIX $PACKAGE_MANAGER_UPDATE_CMD || exit 1
 
 
 # Install Compiler Tools
-COMPILER_DEPS="git wget cmake g++"
+COMPILER_DEPS="git wget cmake"
+
+if [ "$DISTRO" = "arch" ]; then
+    COMPILER_DEPS="$COMPILER_DEPS gcc"
+else
+    COMPILER_DEPS="$COMPILER_DEPS g++"   
+fi
 
 # vcpkg Dependencies
 VCPKG_DEPS="curl zip unzip tar pkg-config autoconf flex bison"
