@@ -4,6 +4,7 @@
   "license": "AGPL-3.0-or-later",
   "dependencies": [
     "bg-common-logger",
+    "yaml-cpp",
     "boost-program-options",
     "nlohmann-json",
     "rpclib",

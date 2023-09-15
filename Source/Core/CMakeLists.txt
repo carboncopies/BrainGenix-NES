@@ -77,6 +77,8 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
 
+    bg-common-logger
+    
     VersioningSystem
     CompileTimeStamp
     CompilePlatformInfo

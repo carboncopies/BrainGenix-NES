@@ -61,9 +61,8 @@ FetchContent_MakeAvailable(fetch_vk_bootstrap)
 message(STATUS "Setting Up SDL2 Library")
 find_package(SDL2 CONFIG REQUIRED)
 
-
-# message(STATUS "Setting Up glfw3 Library")
-# find_package(glfw3 CONFIG REQUIRED)
+message(STATUS "Setting Up yaml-cpp Library")
+find_package(yaml-cpp CONFIG REQUIRED)
 
 message(STATUS "Setting Up glm Library")
 find_package(glm CONFIG REQUIRED)

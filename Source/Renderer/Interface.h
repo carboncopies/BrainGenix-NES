@@ -46,14 +46,14 @@ namespace Renderer {
 
 
 /**
- * @brief Rendering system for NES. This system is used to generate virtual scan data from models.
+ * @brief Rendering system interface for NES. This system is used to generate virtual scan data from models.
  */
-class Renderer {
+class Interface {
 
 private: 
 
     BG::Common::Logger::LoggingSystem *Logger_; /**Logging Class Pointer*/
-    
+
     bool EnableDebugWindow_ = false; /**Window For Debugging Purposes - should be disabled in most cases.*/
 
 public:
@@ -63,12 +63,12 @@ public:
      * Use the EnableWindow param for debugging by shwoing an SDL window containing the to-be-rendered content.
      * Note that use of this parameter is for debugging only and requires having either an X-Server or Wayland installed.
     */
-    Renderer(BG::Common::Logger::LoggingSystem* _Logger, bool _EnableDebugWindow = true);
+    Interface(BG::Common::Logger::LoggingSystem* _Logger, bool _EnableDebugWindow = true);
 
     /**
      * @brief Destructor to the renderer, pretty self-explanitory.
     */
-    ~Renderer();
+    ~Interface();
 
 
 };
