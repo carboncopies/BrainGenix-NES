@@ -53,6 +53,7 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
     }
 
     // Configure Vulkan Instance
+    Logger_->Log("Querying Information About Available Vulkan Layers", 3);
     static vkb::Result<vkb::SystemInfo> SystemInfoReturn = vkb::SystemInfo::get_system_info();
     if (!SystemInfoReturn) {
         Logger_->Log("Error During Renderer Initialization", 10);
@@ -62,10 +63,24 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
         
         return false;
     }
+    vkb::SystemInfo SystemInfo = SystemInfoReturn.value();
 
     if (_EnableValidationLayers) {
-        Logger_->Log("Vulkan Validation Layers Have Been [ENABLED]", 2);
-        VulkanInstanceBuilder.request_validation_layers();
+        Logger_->Log("Vulkan Validation Layers Have Been [REQUESTED]", 2);
+
+        if (SystemInfo.is_layer_available("VK_LAYER_LUNARG_api_dump")) {
+            Logger_->Log("Enabling Vulkan Layer 'VK_LAYER_LUNARG_api_dump'", 1);
+            VulkanInstanceBuilder.enable_layer("VK_LAYER_LUNARG_api_dump");
+        } else {
+            Logger_->Log("Unable To Enable Vulkan Layer 'VK_LAYER_LUNARG_api_dump'", 7);
+        }
+
+        if (SystemInfo.validation_layers_available) {
+            Logger_->Log("Enabling Vulkan Validation Layers", 1);
+            VulkanInstanceBuilder.enable_validation_layers();
+        } else {
+            Logger_->Log("Unable To Enable Vulkan Validation Layers, As They Are Not Available", 8);
+        }
     } else {
         Logger_->Log("Vulkan Validation Layers Have Been [DISABLED]", 2);
     }
