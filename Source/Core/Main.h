@@ -20,6 +20,9 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
+#include <BG/Renderer/Interface.h>
+
+
 #include <Config/ConfigurationManager.h>
 #include <Config/Config.h>
 

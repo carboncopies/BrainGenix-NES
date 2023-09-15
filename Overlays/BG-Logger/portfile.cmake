@@ -1,7 +1,7 @@
 vcpkg_from_git(
   OUT_SOURCE_PATH SOURCE_PATH
   URL https://gitlab.braingenix.org/carboncopies/BrainGenix/Common/Logger.git
-  REF 702992fe5c01e6dfc112f0a0eb9214625425a705
+  REF dfd8ea5289cfd001b67ec9cb1a65256b2837467b
   HEAD_REF main
 )
 

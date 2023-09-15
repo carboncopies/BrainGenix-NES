@@ -1,7 +1,7 @@
 add_library(NESRenderer 
 
-    "Interface.h"
-    "Interface.cpp"
+    "BG/Renderer/Interface.h"
+    "BG/Renderer/Interface.cpp"
 
 )
 

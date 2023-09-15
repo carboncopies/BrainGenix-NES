@@ -79,6 +79,8 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 
     bg-common-logger
     
+    NESRenderer
+
     VersioningSystem
     CompileTimeStamp
     CompilePlatformInfo
