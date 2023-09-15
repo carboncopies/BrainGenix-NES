@@ -3,6 +3,7 @@
   "version-string": "0.2.0",
   "license": "AGPL-3.0-or-later",
   "dependencies": [
+    "bg-common-logger",
     "boost-program-options",
     "nlohmann-json",
     "rpclib",
