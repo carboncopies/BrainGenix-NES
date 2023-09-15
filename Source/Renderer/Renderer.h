@@ -52,10 +52,23 @@ class Renderer {
 
 private: 
 
+    BG::Common::Logger::LoggingSystem *Logger_; /**Logging Class Pointer*/
+    
+    bool EnableDebugWindow_ = false; /**Window For Debugging Purposes - should be disabled in most cases.*/
 
 public:
 
-    Renderer();
+    /**
+     * @brief Constructor for the rendering system.
+     * Use the EnableWindow param for debugging by shwoing an SDL window containing the to-be-rendered content.
+     * Note that use of this parameter is for debugging only and requires having either an X-Server or Wayland installed.
+    */
+    Renderer(BG::Common::Logger::LoggingSystem* _Logger, bool _EnableDebugWindow = true);
+
+    /**
+     * @brief Destructor to the renderer, pretty self-explanitory.
+    */
+    ~Renderer();
 
 
 };
