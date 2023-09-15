@@ -32,8 +32,11 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <iostream>
+#include <assert.h>
+
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+#include <VkBootstrap.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
@@ -52,7 +55,7 @@ class Interface {
 
 private: 
 
-    BG::Common::Logger::LoggingSystem *Logger_; /**Logging Class Pointer*/
+    BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
 
     bool EnableDebugWindow_ = false; /**Window For Debugging Purposes - should be disabled in most cases.*/
 
@@ -60,16 +63,25 @@ public:
 
     /**
      * @brief Constructor for the rendering system.
-     * Use the EnableWindow param for debugging by shwoing an SDL window containing the to-be-rendered content.
-     * Note that use of this parameter is for debugging only and requires having either an X-Server or Wayland installed.
     */
-    Interface(BG::Common::Logger::LoggingSystem* _Logger, bool _EnableDebugWindow = true);
+    Interface(BG::Common::Logger::LoggingSystem* _Logger);
 
     /**
      * @brief Destructor to the renderer, pretty self-explanitory.
     */
     ~Interface();
 
+
+    /**
+     * @brief Initializes the Rendering interface. 
+     * Use the EnableWindow param for debugging by shwoing an SDL window containing the to-be-rendered content.
+     * Note that use of this parameter is for debugging only and requires having either an X-Server or Wayland installed.
+     * 
+     * EnableValidationLayers as the name implies, toggles on and off debug/validation layers.
+     * These layers serve to provide debug information for the application developers.
+     * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
+    */
+    bool Initialize(bool _EnableDebugWindow = false, bool _EnableValidationLayers = true);
 
 };
 

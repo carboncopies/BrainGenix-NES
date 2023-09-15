@@ -18,7 +18,8 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::NES::Simulator::Manager SimulationManager(&SystemConfiguration, &APIManager);
 
     // Setup Renderer
-    BG::NES::Renderer::Interface RenderingInterface(&Logger, true); // NOTE THAT THE 'true' PARAM INDICATES THAT
+    BG::NES::Renderer::Interface RenderingInterface(&Logger);
+    RenderingInterface.Initialize(true); // NOTE THAT THE 'true' PARAM INDICATES THAT
     // THE DEBUG WINDOW IS ENABLED. THIS SHOULD BE EVENTUALLY HANDLED BY THE CONFIG SUBSYS (FROM FILE/COMMAND LINE ARG)
 
 
