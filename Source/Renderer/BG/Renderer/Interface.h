@@ -57,6 +57,8 @@ private:
 
     BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
 
+    vkb::Instance VulkanInstance_; /**VulkanBoostrap Wrapper For Our Vulkan Instance*/
+
     bool EnableDebugWindow_ = false; /**Window For Debugging Purposes - should be disabled in most cases.*/
 
 public:

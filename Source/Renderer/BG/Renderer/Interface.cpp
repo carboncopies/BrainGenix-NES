@@ -52,8 +52,17 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
         return false;
     }
 
-    // Setup Vulkan Instance
-    vkb::Instance VulkanInstance = VulkanInstanceBuilderReturn.value();
+    // Configure Vulkan Instance
+    static vkb::Result<vkb::SystemInfo> SystemInfoReturn = vkb::SystemInfo::get_system_info();
+    if (!SystemInfoReturn) {
+        Logger_->Log("Error During Renderer Initialization", 10);
+        Logger_->Log("Failed To Get Vulkan System Information Data", 10);
+        std::string ErrorMessage = "VK_Bootstrap Reported Error: " + SystemInfoReturn.error().message();
+        Logger_->Log(ErrorMessage, 10);
+        
+        return false;
+    }
+
     if (_EnableValidationLayers) {
         Logger_->Log("Vulkan Validation Layers Have Been [ENABLED]", 2);
         VulkanInstanceBuilder.request_validation_layers();
@@ -62,6 +71,7 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
     }
 
 
+    //FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME
     /*
     FUTURE TODO: ADD OUR OWN VULKAN DEBUG MESSAGE CALLBACK HANDLER 
     (ALLOWS US TO LOG VULKAN ERRORS USING THE BG LOGGER, NOT VIA std::cout/std::cerr)
@@ -84,6 +94,13 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
     */
     Logger_->Log("FIXME: Add Our Own Vulkan Debug Callback System [Renderer]", 8);
     VulkanInstanceBuilder.use_default_debug_messenger(); // FIXME, SEE ABOVE FIXME NOTICE!
+    //FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME
+    // Was that enough FIXMEs?
+    // I think we need more.
+
+
+    // 
+    VulkanInstance_ = VulkanInstanceBuilderReturn.value();
 
 
 
