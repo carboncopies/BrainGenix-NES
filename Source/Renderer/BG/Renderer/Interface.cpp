@@ -79,7 +79,7 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
             Logger_->Log("Enabling Vulkan Validation Layers", 1);
             VulkanInstanceBuilder.enable_validation_layers();
         } else {
-            Logger_->Log("Unable To Enable Vulkan Validation Layers, As They Are Not Available", 8);
+            Logger_->Log("Unable To Enable Vulkan Validation Layers, As They Are Not Available (Check If They Have Been Installed?)", 8);
         }
     } else {
         Logger_->Log("Vulkan Validation Layers Have Been [DISABLED]", 2);
