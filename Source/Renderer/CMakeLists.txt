@@ -6,6 +6,9 @@ add_library(NESRenderer
 )
 
 target_link_libraries(NESRenderer
+
+    bg-common-logger
+
     vk-bootstrap::vk-bootstrap
     Vulkan::Vulkan
     $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>

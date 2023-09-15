@@ -42,6 +42,41 @@ find_package(rpclib CONFIG REQUIRED)
 message(STATUS "Finding system pthreads lib")
 find_package(Threads REQUIRED)
 
+
+# Renderer Dependencies
+message(STATUS "Setting up Vulkan Library")
+find_package(Vulkan REQUIRED)
+
+message(STATUS "Setting Up vk-bootstrap Library")
+# find_package(vk-bootstrap CONFIG REQUIRED) # Will eventually use this when vcpkg sorts out their build issues
+# in the meantime, this works:
+include(FetchContent)
+FetchContent_Declare(
+    fetch_vk_bootstrap
+    GIT_REPOSITORY https://github.com/charles-lunarg/vk-bootstrap
+    GIT_TAG        v0.7 #suggest using a tag so the library doesn't update whenever new commits are pushed to a branch
+)
+FetchContent_MakeAvailable(fetch_vk_bootstrap)
+
+message(STATUS "Setting Up SDL2 Library")
+find_package(SDL2 CONFIG REQUIRED)
+
+
+# message(STATUS "Setting Up glfw3 Library")
+# find_package(glfw3 CONFIG REQUIRED)
+
+message(STATUS "Setting Up glm Library")
+find_package(glm CONFIG REQUIRED)
+
+
+
+
+# Internal Deps
+message(STATUS "Finding bg-common-logger Package")
+find_package(bg-common-logger CONFIG REQUIRED)
+
+
+
 # Ensure config is copied to bin
 file(COPY "${SRC_DIR}/Data/NES.cfg" DESTINATION "${BIN_DIR}")
 
@@ -54,6 +89,7 @@ include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
 
 add_subdirectory(${SRC_DIR}/Core)
+add_subdirectory(${SRC_DIR}/Renderer)
 
 
 
