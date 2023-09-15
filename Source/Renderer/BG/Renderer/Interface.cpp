@@ -16,6 +16,13 @@ Interface::Interface(BG::Common::Logger::LoggingSystem* _Logger) {
 
 
 Interface::~Interface() {
+    assert(Logger_ != nullptr);
+    Logger_->Log("Shutting Down NES Rendering Subsystem", 3);
+
+
+    // Cleanup Vulkan Context
+    Logger_->Log("Cleaning Up Vulkan Instance", 2);
+    vkb::destroy_instance(VulkanInstance_);
 
 }
 
