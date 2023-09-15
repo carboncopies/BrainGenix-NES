@@ -5,6 +5,16 @@
   "dependencies": [
     "boost-program-options",
     "nlohmann-json",
-    "rpclib"
+    "rpclib",
+    "vulkan",
+      "vk-bootstrap",
+        {
+          "name": "sdl2",
+          "features": [
+            "vulkan"
+          ]
+        },
+    "glm",
+    "shaderc"
   ]
 }
