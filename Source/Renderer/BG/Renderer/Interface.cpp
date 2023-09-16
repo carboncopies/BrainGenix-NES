@@ -19,8 +19,10 @@ Interface::~Interface() {
     assert(Logger_ != nullptr);
     Logger_->Log("Shutting Down NES Rendering Subsystem", 3);
 
+    // Cleanup Vulkan Objects
+    Logger_->Log("Cleaning Up Vulkan Logical Device", 2);
+    vkb::destroy_device(VulkanDevice_);
 
-    // Cleanup Vulkan Context
     Logger_->Log("Cleaning Up Vulkan Instance", 2);
     vkb::destroy_instance(VulkanInstance_);
 
@@ -165,8 +167,6 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
     Logger_->Log("Selecting Physical Vulkan Capable Device From Available Devices", 3);
     vkb::PhysicalDeviceSelector VulkanPhysicalDeviceSelector(VulkanInstance_);
     
-    //
-    
     /*
         A quick note about vk-bootstrap and headless/offscreen rendering.
         It seems that by default it does not support this using the PhysicalDeviceSelector, however, there is an option to enable it.
@@ -181,10 +181,9 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
         VulkanPhysicalDeviceSelector.set_surface(Optional_WindowSurface_);
     }
 
+    // Note that if we need any extra extensions/requirements, this is the place to tell the selector to use them.
+
     vkb::Result<vkb::PhysicalDevice> VulkanPhysicalDeviceSelectorReturn = VulkanPhysicalDeviceSelector.select();;
-
-
-
     if (!VulkanPhysicalDeviceSelectorReturn) {
         Logger_->Log("Error During Renderer Initialization", 10);
         Logger_->Log("Failed To Select Vulkan Device (See Following Line For Error)", 10);
@@ -194,6 +193,24 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
         return false;
     }
     vkb::PhysicalDevice VulkanPhysicalDevice = VulkanPhysicalDeviceSelectorReturn.value();
+    Logger_->Log(std::string("Selected Physical Device: ") + VulkanPhysicalDevice.name, 4);
+
+
+    // Now, We Create The Logical Device (VkDevice) Instance On The Selected Physical Device
+    Logger_->Log("Creating Logical Device On Selected Physical Device", 4);
+    vkb::DeviceBuilder VulkanDeviceBuilder{VulkanPhysicalDevice};
+    vkb::Result<vkb::Device> VulkanDeviceBuilderReturn = VulkanDeviceBuilder.build();
+    if (!VulkanDeviceBuilderReturn) {
+        Logger_->Log("Error During Renderer Initialization", 10);
+        Logger_->Log("Failed To Create Logical Vulkan Device (See Following Line For Error)", 10);
+        std::string ErrorMessage = "VK_Bootstrap Reported Error: " + VulkanDeviceBuilderReturn.error().message();
+        Logger_->Log(ErrorMessage, 10);
+
+        return false;
+    }
+    VulkanDevice_ = VulkanDeviceBuilderReturn.value();
+
+
 
 
     return true;
