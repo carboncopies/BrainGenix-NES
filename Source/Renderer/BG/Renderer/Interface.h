@@ -38,6 +38,10 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <VkBootstrap.h>
 
+#include <SDL.h>
+#include <SDL_vulkan.h>
+
+
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
@@ -58,6 +62,8 @@ private:
     BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
 
     vkb::Instance VulkanInstance_; /**VulkanBoostrap Wrapper For Our Vulkan Instance*/
+    VkSurfaceKHR Optional_WindowSurface_; /**Optional (If debug window is enabled) Window surface for presenting to a window*/
+    SDL_Window* Optional_SDLWindow_ = nullptr; /**Optional (if debug window is enabled) Pointer to SDL Window object*/
 
     bool EnableDebugWindow_ = false; /**Window For Debugging Purposes - should be disabled in most cases.*/
 
