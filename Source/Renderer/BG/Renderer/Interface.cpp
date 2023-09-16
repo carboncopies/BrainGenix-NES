@@ -2,6 +2,17 @@
 
 
 
+/**
+ * MEMORY LEAK NOTICE:
+ * 
+ * There are false positives in this code! 
+ * It's not actually leaking memory, valgrind just repots memory leaks due to dl_open calls.
+ * To *actually* check for memory leaks, please use a null icd driver (see this for more info):
+ *     https://github.com/KhronosGroup/Vulkan-Loader/issues/256
+ * 
+ * THIS IS A KNOWN BUG IN VALGRIND!
+*/
+
 namespace BG {
 namespace NES {
 namespace Renderer {
@@ -17,7 +28,7 @@ Interface::Interface(BG::Common::Logger::LoggingSystem* _Logger) {
 
 Interface::~Interface() {
     assert(Logger_ != nullptr);
-    // Logger_->Log("Shutting Down NES Rendering Subsystem", 3);
+    Logger_->Log("Shutting Down NES Rendering Subsystem", 3);
 
     // Shutdown SDL (If Enabled)
     if (EnableDebugWindow_) {
@@ -25,14 +36,20 @@ Interface::~Interface() {
     }
 
     // Cleanup Vulkan Objects
-    // Logger_->Log("Cleaning Up Optional Window Surface", 2);
-    vkb::destroy_surface(VulkanInstance_, Optional_WindowSurface_);
+    Logger_->Log("Cleaning Up Optional Window Surface", 2);
+    if (Optional_WindowSurface_) {
+        vkb::destroy_surface(VulkanInstance_, Optional_WindowSurface_);
+    }
 
-    // Logger_->Log("Cleaning Up Vulkan Logical Device", 2);
-    vkb::destroy_device(VulkanDevice_);
+    Logger_->Log("Cleaning Up Vulkan Logical Device", 2);
+    if (VulkanDevice_) {
+        vkb::destroy_device(VulkanDevice_);
+    }
 
-    // Logger_->Log("Cleaning Up Vulkan Instance", 2);
-    vkb::destroy_instance(VulkanInstance_);
+    Logger_->Log("Cleaning Up Vulkan Instance", 2);
+    if (VulkanInstance_) {
+        vkb::destroy_instance(VulkanInstance_);
+    }
 
 }
 
@@ -75,6 +92,8 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
         
         return false;
     }
+    return false;
+
     vkb::SystemInfo SystemInfo = SystemInfoReturn.value();
 
     if (_EnableValidationLayers) {
@@ -140,7 +159,6 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
     }
 
     VulkanInstance_ = VulkanInstanceBuilderReturn.value();
-
 
 
     // Now, We Optionally Create The Debug Window
