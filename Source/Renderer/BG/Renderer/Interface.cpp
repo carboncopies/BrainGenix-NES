@@ -38,9 +38,14 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
     Vulkan Initialization Process Outline:
 
         1. Initialize Vulkan
-        2. [if enabled] Request Vulkan Validation Layers (for debugging purposes)
-        3. 
-
+        2. Tell Vulkan some info about our application (such as name, engine, etc.)
+        3. [if enabled] Request Vulkan Validation Layers (for debugging purposes)
+        4. Build vulkan instance
+        5. [if enabled] create window for debugging purposes
+        6. Find a suitable physical device (GPU card or something like that)
+        7. Create a logical device on the physical device (let us use the physical device)
+        8. Setup queues (graphics, transfer, compute, etc.) these let us talk to the gpu and tell it to do things
+        9. [if enabled] Setup Swapchain (what is shown onscreen)
     */
 
     // Configure Vulkan Builder Helper Instance
@@ -163,6 +168,7 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
     }
 
 
+
     // Next, We Select the Physical Device To Use
     Logger_->Log("Selecting Physical Vulkan Capable Device From Available Devices", 3);
     vkb::PhysicalDeviceSelector VulkanPhysicalDeviceSelector(VulkanInstance_);
@@ -196,6 +202,8 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
     Logger_->Log(std::string("Selected Physical Device: ") + VulkanPhysicalDevice.name, 4);
 
 
+
+
     // Now, We Create The Logical Device (VkDevice) Instance On The Selected Physical Device
     Logger_->Log("Creating Logical Device On Selected Physical Device", 4);
     vkb::DeviceBuilder VulkanDeviceBuilder{VulkanPhysicalDevice};
@@ -210,6 +218,33 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
     }
     VulkanDevice_ = VulkanDeviceBuilderReturn.value();
 
+
+
+
+    // Create Vulkan Queues
+    Logger_->Log("Setting Up Vulkan Graphics Queue", 4);
+    vkb::Result<VkQueue> VulkanGraphicsQueueReturn = VulkanDevice_.get_queue(vkb::QueueType::graphics);
+    if (!VulkanGraphicsQueueReturn) {
+        Logger_->Log("Error During Renderer Initialization", 10);
+        Logger_->Log("Failed to Get Vulkan Graphics Queue (See Following Line For Error)", 10);
+        std::string ErrorMessage = "VK_Bootstrap Reported Error: " + VulkanGraphicsQueueReturn.error().message();
+        Logger_->Log(ErrorMessage, 10);
+
+        return false;
+    }
+    VulkanGraphicsQeueue_ = VulkanGraphicsQueueReturn.value();
+
+    Logger_->Log("Setting Up Vulkan Transfer Queue", 4);
+    vkb::Result<VkQueue> VulkanTransferQueueReturn = VulkanDevice_.get_queue(vkb::QueueType::transfer);
+    if (!VulkanTransferQueueReturn) {
+        Logger_->Log("Error During Renderer Initialization", 10);
+        Logger_->Log("Failed to Get Vulkan Transfer Queue (See Following Line For Error)", 10);
+        std::string ErrorMessage = "VK_Bootstrap Reported Error: " + VulkanTransferQueueReturn.error().message();
+        Logger_->Log(ErrorMessage, 10);
+
+        return false;
+    }
+    VulkanTransferQeueue_ = VulkanTransferQueueReturn.value();
 
 
 
