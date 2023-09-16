@@ -17,13 +17,21 @@ Interface::Interface(BG::Common::Logger::LoggingSystem* _Logger) {
 
 Interface::~Interface() {
     assert(Logger_ != nullptr);
-    Logger_->Log("Shutting Down NES Rendering Subsystem", 3);
+    // Logger_->Log("Shutting Down NES Rendering Subsystem", 3);
+
+    // Shutdown SDL (If Enabled)
+    if (EnableDebugWindow_) {
+        SDL_Quit();
+    }
 
     // Cleanup Vulkan Objects
-    Logger_->Log("Cleaning Up Vulkan Logical Device", 2);
+    // Logger_->Log("Cleaning Up Optional Window Surface", 2);
+    vkb::destroy_surface(VulkanInstance_, Optional_WindowSurface_);
+
+    // Logger_->Log("Cleaning Up Vulkan Logical Device", 2);
     vkb::destroy_device(VulkanDevice_);
 
-    Logger_->Log("Cleaning Up Vulkan Instance", 2);
+    // Logger_->Log("Cleaning Up Vulkan Instance", 2);
     vkb::destroy_instance(VulkanInstance_);
 
 }
