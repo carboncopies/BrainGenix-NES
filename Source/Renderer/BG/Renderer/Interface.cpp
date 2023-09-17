@@ -30,13 +30,10 @@ Interface::~Interface() {
     assert(Logger_ != nullptr);
     Logger_->Log("Shutting Down NES Rendering Subsystem", 3);
 
-    // Shutdown SDL (If Enabled)
-    if (EnableDebugWindow_) {
-        SDL_Quit();
-    }
 
-    // Cleanup Vulkan Objects
-    if (Optional_WindowSurface_) {
+
+    // Cleanup Windowed (Optional) Vulkan Objects
+    if (Optional_Swapchain_) {
         Logger_->Log("Cleaning Up Optional Swapchain Surface", 2);
         vkb::destroy_swapchain(Optional_Swapchain_);
     }
@@ -46,8 +43,13 @@ Interface::~Interface() {
         vkb::destroy_surface(VulkanInstance_, Optional_WindowSurface_);
     }
 
+    // Shutdown SDL (If Enabled)
+    if (EnableDebugWindow_) {
+        SDL_Quit();
+    }
 
 
+    // Cleanup Required Vulkan Objects
     Logger_->Log("Cleaning Up Vulkan Logical Device", 2);
     if (VulkanDevice_) {
         vkb::destroy_device(VulkanDevice_);
