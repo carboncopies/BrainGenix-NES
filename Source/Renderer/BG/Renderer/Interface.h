@@ -68,6 +68,7 @@ private:
 
     VkSurfaceKHR Optional_WindowSurface_; /**Optional (If debug window is enabled) Window surface for presenting to a window*/
     SDL_Window* Optional_SDLWindow_ = nullptr; /**Optional (if debug window is enabled) Pointer to SDL Window object*/
+    vkb::Swapchain Optional_Swapchain_; /**Optiona (If debug window is enabled) Swapchain for rendering to window*/
 
     bool EnableDebugWindow_ = false; /**Window For Debugging Purposes - should be disabled in most cases.*/
 

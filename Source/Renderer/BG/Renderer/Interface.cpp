@@ -36,10 +36,17 @@ Interface::~Interface() {
     }
 
     // Cleanup Vulkan Objects
-    Logger_->Log("Cleaning Up Optional Window Surface", 2);
     if (Optional_WindowSurface_) {
+        Logger_->Log("Cleaning Up Optional Swapchain Surface", 2);
+        vkb::destroy_swapchain(Optional_Swapchain_);
+    }
+
+    if (Optional_WindowSurface_) {
+        Logger_->Log("Cleaning Up Optional Window Surface", 2);
         vkb::destroy_surface(VulkanInstance_, Optional_WindowSurface_);
     }
+
+
 
     Logger_->Log("Cleaning Up Vulkan Logical Device", 2);
     if (VulkanDevice_) {
@@ -92,7 +99,6 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
         
         return false;
     }
-    return false;
 
     vkb::SystemInfo SystemInfo = SystemInfoReturn.value();
 
@@ -272,6 +278,23 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
     }
     VulkanTransferQeueue_ = VulkanTransferQueueReturn.value();
 
+
+    // Create Swapchain Optionally If The Debug Window Is Enabled
+    if (EnableDebugWindow_) {
+        Logger_->Log("Setting Up Vulkan Swapchain For Windowed Rendering", 4);
+        vkb::SwapchainBuilder VulkanSwapchainBuilder{VulkanDevice_};
+        vkb::Result<vkb::Swapchain> SwapchainResult = VulkanSwapchainBuilder.build();
+        if (!SwapchainResult) {
+            Logger_->Log("Error During Renderer Initialization", 10);
+            Logger_->Log("Failed to Create Vulkan Swapchain (See Following Line For Error)", 10);
+            std::string ErrorMessage = "VK_Bootstrap Reported Error: " + SwapchainResult.error().message();
+            Logger_->Log(ErrorMessage, 10);
+
+            return false;
+        }
+        Optional_Swapchain_ = SwapchainResult.value();
+
+    }
 
 
     return true;
