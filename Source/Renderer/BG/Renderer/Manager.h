@@ -91,6 +91,37 @@ public:
     */
     bool Initialize(bool _IsWindowed = false, bool _IsDebugging = true);
 
+
+    /**
+     * @brief Return true or false if the renderer is ready to be used to start drawing things.
+     * Note that this should return false if Initialize has not been called yet.
+     * This should return true if Initialize has been called and succeeded. If not, something went terribly wrong...
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool IsReady();
+
+    /**
+     * @brief Return true or false if the renderer has a window or not. Pretty self-explanitory.
+     * Note that this will always return false if Initialize has not yet been called.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool IsWindowed();
+
+    /**
+     * @brief Return true or false if the renderer is in debug mode or not.
+     * Note that this will default to true if Initialize has not yet been called.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool IsDebugging();
+
+
+
 };
 
 

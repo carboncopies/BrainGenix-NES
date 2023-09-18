@@ -311,7 +311,17 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
 }
 
 
+bool Manager::IsReady() {
+    return RenderData_.IsReady_;
+}
 
+bool Manager::IsWindowed() {
+    return RenderData_.IsWindowed_;
+}
+
+bool Manager::IsDebugging() {
+    return RenderData_.IsDebugging_;
+}
 
 
 
