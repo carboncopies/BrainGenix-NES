@@ -20,6 +20,7 @@ namespace Renderer {
 
 
 Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger) {
+    assert(_Logger != nullptr);
     Logger_ = _Logger;
 
 }
