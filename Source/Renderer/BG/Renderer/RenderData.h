@@ -78,9 +78,9 @@ struct RenderData {
 
 
     // Status Indicator Variables
-    bool IsReady_    = false; /**Indicates that the system is ready for rendering. True DOES NOT MEAN OPTIONAL VARIABLES ARE SETUP. YOU MUST CHECK IsWindowed_ FOR OPTIONAL VARS*/
-    bool IsWindowed_ = false; /**Indicates if the renderer is running with a window or not. False means headless, true means windowed*/
-
+    bool IsReady_     = false; /**Indicates that the system is ready for rendering. True DOES NOT MEAN OPTIONAL VARIABLES ARE SETUP. YOU MUST CHECK IsWindowed_ FOR OPTIONAL VARS*/
+    bool IsWindowed_  = false; /**Indicates if the renderer is running with a window or not. False means headless, true means windowed*/
+    bool IsDebugging_ = false; /**Indicates if vulkan debug information is to be enabled or not.*/
 
 
     // FIXME: will eventually need more attribs, something like this:

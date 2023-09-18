@@ -45,6 +45,9 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
+#include <BG/Renderer/RenderData.h>
+
+
 
 namespace BG {
 namespace NES {
@@ -61,6 +64,8 @@ private:
 
     BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
 
+    RenderData RenderData_; /**Instance of Render Data Struct. Stores All Data About The Renderer (Vulkan Handles, etc)*/
+
    
 public:
 
@@ -75,16 +80,16 @@ public:
     ~Manager();
 
 
-    // /**
-    //  * @brief Initializes the Rendering interface. 
-    //  * Use the EnableWindow param for debugging by shwoing an SDL window containing the to-be-rendered content.
-    //  * Note that use of this parameter is for debugging only and requires having either an X-Server or Wayland installed.
-    //  * 
-    //  * EnableValidationLayers as the name implies, toggles on and off debug/validation layers.
-    //  * These layers serve to provide debug information for the application developers.
-    //  * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
-    // */
-    // bool Initialize(bool _EnableDebugWindow = false, bool _EnableValidationLayers = true);
+    /**
+     * @brief Initializes the Rendering interface. 
+     * Use the _IsWindowed param for debugging by shwoing an SDL window containing the to-be-rendered content.
+     * Note that use of this parameter is for debugging only and requires having either an X-Server or Wayland installed.
+     * 
+     * _IsDebugging as the name implies, toggles on and off debug/validation layers.
+     * These layers serve to provide debug information for the application developers.
+     * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
+    */
+    bool Initialize(bool _IsWindowed = false, bool _IsDebugging = true);
 
 };
 

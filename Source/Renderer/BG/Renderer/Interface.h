@@ -33,6 +33,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <iostream>
 #include <assert.h>
+#include <memory>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -44,6 +45,9 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
+
+#include <BG/Renderer/Manager.h>
+
 
 
 namespace BG {
@@ -61,16 +65,8 @@ private:
 
     BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
 
-    vkb::Instance VulkanInstance_; /**VulkanBoostrap Wrapper For Our Vulkan Instance*/
-    vkb::Device VulkanDevice_; /**Vulkan Logical Device Wrapper*/
-    VkQueue VulkanGraphicsQeueue_; /**Vulkan Graphics Queue Handle (Used for graphics operations, hence the name)*/
-    VkQueue VulkanTransferQeueue_; /**Vulkan Transfer Queue Handle (Used to push/pull data to/from GPU VRAM and CPU RAM)*/
+    std::unique_ptr<Manager> RendererManager_ = nullptr; /**Instance of the renderer manager, setup when the init call is made.*/
 
-    VkSurfaceKHR Optional_WindowSurface_; /**Optional (If debug window is enabled) Window surface for presenting to a window*/
-    SDL_Window* Optional_SDLWindow_ = nullptr; /**Optional (if debug window is enabled) Pointer to SDL Window object*/
-    vkb::Swapchain Optional_Swapchain_; /**Optiona (If debug window is enabled) Swapchain for rendering to window*/
-
-    bool EnableDebugWindow_ = false; /**Window For Debugging Purposes - should be disabled in most cases.*/
 
 public:
 

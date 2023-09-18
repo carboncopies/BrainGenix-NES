@@ -2,6 +2,10 @@ add_library(NESRenderer
 
     "BG/Renderer/Interface.h"
     "BG/Renderer/Interface.cpp"
+    "BG/Renderer/Manager.h"
+    "BG/Renderer/Manager.cpp"
+    "BG/Renderer/RenderData.h"
+    "BG/Renderer/RenderData.cpp"
 
 )
 
