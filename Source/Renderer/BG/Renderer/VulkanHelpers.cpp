@@ -246,6 +246,62 @@ bool VulkanInit_Optional_CreateSwapchain(BG::Common::Logger::LoggingSystem* _Log
 
 
 
+
+bool VulkanInit_CreateRenderPass(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
+    assert(_Logger != nullptr);
+    assert(_RD != nullptr);
+
+    // Create Color ATtachment for Renderpass
+    VkAttachmentDescription ColorAttachment = {};
+    ColorAttachment.format = _RD->Optional_Swapchain_.image_format;
+	ColorAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
+	ColorAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
+	ColorAttachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
+	ColorAttachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+	ColorAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
+	ColorAttachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+	ColorAttachment.finalLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
+
+
+    VkAttachmentReference ColorAttachmentRef = {};
+	ColorAttachmentRef.attachment = 0;
+	ColorAttachmentRef.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
+
+	VkSubpassDescription Subpass = {};
+	Subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
+	Subpass.colorAttachmentCount = 1;
+	Subpass.pColorAttachments = &ColorAttachmentRef;
+
+	VkSubpassDependency Dependency = {};
+	Dependency.srcSubpass = VK_SUBPASS_EXTERNAL;
+	Dependency.dstSubpass = 0;
+	Dependency.srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+	Dependency.srcAccessMask = 0;
+	Dependency.dstStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+	Dependency.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_READ_BIT | VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;
+
+	VkRenderPassCreateInfo RenderPassInfo = {};
+	RenderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
+	RenderPassInfo.attachmentCount = 1;
+	RenderPassInfo.pAttachments = &ColorAttachment;
+	RenderPassInfo.subpassCount = 1;
+	RenderPassInfo.pSubpasses = &Subpass;
+	RenderPassInfo.dependencyCount = 1;
+	RenderPassInfo.pDependencies = &Dependency;
+
+    _Logger->Log("Creating Vulkan Render Pass", 2);
+    if (!vkCreateRenderPass(_RD->VulkanDevice_.device, &RenderPassInfo, nullptr, &_RD->VulkanRenderPass_)) {
+        _Logger->Log("Failed To Create Vulkan Render Pass", 9);
+        return false;
+    }
+
+
+    return true;
+
+}
+
+
+
 bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
     assert(_Logger != nullptr);
     assert(_RD != nullptr);
@@ -373,7 +429,6 @@ bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logge
     if (!vkCreatePipelineLayout(_RD->VulkanDevice_.device, &PipelineLayoutInfo, nullptr, &_RD->VulkanPipelineLayout_)) {
         _Logger->Log("Failed To Create Vulkan Pipeline Layout", 9);
         return false;
-        
     }
 
 

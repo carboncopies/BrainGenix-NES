@@ -112,7 +112,16 @@ bool VulkanInit_CreateQueues(BG::Common::Logger::LoggingSystem* _Logger, RenderD
 bool VulkanInit_Optional_CreateSwapchain(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
 
 
-
+/**
+ * @brief Substep During Vulkan Initialization. This function creates Vulkan's renderpass.  
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger 
+ * @param _RD 
+ * @return true 
+ * @return false 
+ */
+bool VulkanInit_CreateRenderPass(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
 
 
 
