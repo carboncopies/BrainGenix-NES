@@ -33,6 +33,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <iostream>
 #include <assert.h>
+#include <vector>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -74,7 +75,7 @@ struct RenderData {
     // Optional Vulkan Handles (For Windowed Mode Only)
     VkSurfaceKHR Optional_WindowSurface_; /**Optional (If debug window is enabled) Window surface for presenting to a window*/
     SDL_Window* Optional_SDLWindow_ = nullptr; /**Optional (if debug window is enabled) Pointer to SDL Window object*/
-    vkb::Swapchain Optional_Swapchain_; /**Optiona (If debug window is enabled) Swapchain for rendering to window*/
+    vkb::Swapchain Optional_Swapchain_; /**Optional (If debug window is enabled) Swapchain for rendering to window*/
 
 
     // Status Indicator Variables

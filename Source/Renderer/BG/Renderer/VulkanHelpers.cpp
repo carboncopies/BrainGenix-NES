@@ -100,7 +100,7 @@ bool VulkanInit_CreateInstance(BG::Common::Logger::LoggingSystem* _Logger, Rende
     return true;
 }
 
-bool VulkanInit_CreateWindow(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
+bool VulkanInit_Optional_CreateWindow(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
     assert(_Logger != nullptr);
     assert(_RD != nullptr);
 
@@ -223,7 +223,7 @@ bool VulkanInit_CreateQueues(BG::Common::Logger::LoggingSystem* _Logger, RenderD
 
 }
 
-bool VulkanInit_CreateSwapchain(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
+bool VulkanInit_Optional_CreateSwapchain(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
     assert(_Logger != nullptr);
     assert(_RD != nullptr);
 
@@ -240,12 +240,11 @@ bool VulkanInit_CreateSwapchain(BG::Common::Logger::LoggingSystem* _Logger, Rend
     }
     _RD->Optional_Swapchain_ = SwapchainResult.value();
 
+
+    return true;
 }
 
 
-bool VulkanInit_CreateImageViews(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
-
-}
 
 
 }; // Close Namespace Logger

@@ -111,17 +111,6 @@ bool VulkanInit_CreateQueues(BG::Common::Logger::LoggingSystem* _Logger, RenderD
 bool VulkanInit_Optional_CreateSwapchain(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
 
 
-/**
- * @brief Optional Substep during Vulkan initialization. Creates an image view on the given renderdata pointer using the logger as a pointer to that place.
- * Returns true on success, false on failure.
- * 
- * @param _Logger 
- * @param _RD 
- * @return true 
- * @return false 
- */
-bool VulkanInit_CreateImageViews(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
-
 
 
 }; // Close Namespace Logger
