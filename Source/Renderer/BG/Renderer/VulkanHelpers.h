@@ -77,6 +77,17 @@ bool VulkanInit_CreateInstance(BG::Common::Logger::LoggingSystem* _Logger, Rende
 bool VulkanInit_CreateWindow(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
 
 /**
+ * @brief Substep during Vulkan initalization. This function performs two critical steps during Vulkan init - firstly, it will enumerate physical devices and select a physical device. Then, it will create a logical device on the physical device selected.
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger 
+ * @param _RD 
+ * @return true 
+ * @return false 
+ */
+bool VulkanInit_DeviceInit(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+
+/**
  * @brief Optional Substep during Vulkan initialization. Creates an image view on the given renderdata pointer using the logger as a pointer to that place.
  * Returns true on success, false on failure.
  * 

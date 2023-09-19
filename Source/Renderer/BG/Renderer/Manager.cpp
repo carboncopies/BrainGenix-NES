@@ -88,97 +88,25 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
     RenderData_.IsDebugging_ = _IsDebugging;
     RenderData_.IsWindowed_  = _IsWindowed;
 
-    // Now, hand this off to the vulkan initialization helper
     if (!VulkanInit_CreateInstance(Logger_, &RenderData_)) {
         // Note that error messages are made by the init func, so we can just return false here
         return false;
     }
 
-    
-
 
     // Now, We Optionally Create The Renderer Window
     if (RenderData_.IsWindowed_) {
-
-        Logger_->Log("Debug Window Requested, Initializing SDL", 3);
-        SDL_Init(SDL_INIT_VIDEO);
-
-        Logger_->Log("Creating SDL Window", 3);
-	    SDL_WindowFlags WindowFlags = (SDL_WindowFlags)(SDL_WINDOW_VULKAN);
-        RenderData_.Optional_SDLWindow_ = SDL_CreateWindow(
-            "BrainGenix-NES Debugging Window",
-            SDL_WINDOWPOS_UNDEFINED,
-            SDL_WINDOWPOS_UNDEFINED,
-            800,
-            600,
-            WindowFlags
-        );
-        if (RenderData_.Optional_SDLWindow_ == nullptr) {
-            Logger_->Log("Failed to Create SDL Window (See Following Line For Error)", 10);
-            std::string ErrorMessage = "SDL Reported Error: ";
-            ErrorMessage += SDL_GetError();
-            Logger_->Log(ErrorMessage, 10);
-            return false;
-        }
-
-        Logger_->Log("Enabling Vulkan Extensions For Debug Window", 4);
-        SDL_bool SurfaceCreateStatus = SDL_Vulkan_CreateSurface(RenderData_.Optional_SDLWindow_, RenderData_.VulkanInstance_.instance, &RenderData_.Optional_WindowSurface_);
-        if (!SurfaceCreateStatus) {
-            Logger_->Log("Failed to Create Vulkan Surface", 10);
+        if (!VulkanInit_CreateWindow(Logger_, &RenderData_)) {
             return false;
         }
     }
-
 
 
     // Next, We Select the Physical Device To Use
-    Logger_->Log("Selecting Physical Vulkan Capable Device From Available Devices", 3);
-    vkb::PhysicalDeviceSelector VulkanPhysicalDeviceSelector(RenderData_.VulkanInstance_);
-    
-    /*
-        A quick note about vk-bootstrap and headless/offscreen rendering.
-        It seems that by default it does not support this using the PhysicalDeviceSelector, however, there is an option to enable it.
-        This is done via the (somewhat confusingly named) 'defer_surface_initialization'. 
-        Please see the following if statement, which is what indicates this is to be disabled (if the debug window is NOT enabled).
-    */
-    if (!RenderData_.IsWindowed_) {
-        Logger_->Log("System Is Running Headless, No Presentation Surface Will Be Used", 1);
-        VulkanPhysicalDeviceSelector.defer_surface_initialization();
-    } else {
-        Logger_->Log("System Is Windowed, Setting Presentation Surface", 1);
-        VulkanPhysicalDeviceSelector.set_surface(RenderData_.Optional_WindowSurface_);
-    }
-
-    // Note that if we need any extra extensions/requirements, this is the place to tell the selector to use them.
-
-    vkb::Result<vkb::PhysicalDevice> VulkanPhysicalDeviceSelectorReturn = VulkanPhysicalDeviceSelector.select();;
-    if (!VulkanPhysicalDeviceSelectorReturn) {
-        Logger_->Log("Error During Renderer Initialization", 10);
-        Logger_->Log("Failed To Select Vulkan Device (See Following Line For Error)", 10);
-        std::string ErrorMessage = "VK_Bootstrap Reported Error: " + VulkanPhysicalDeviceSelectorReturn.error().message();
-        Logger_->Log(ErrorMessage, 10);
-
+    if (!VulkanInit_DeviceInit(Logger_, &RenderData_)) {
         return false;
     }
-    vkb::PhysicalDevice VulkanPhysicalDevice = VulkanPhysicalDeviceSelectorReturn.value();
-    Logger_->Log(std::string("Selected Physical Device: ") + VulkanPhysicalDevice.name, 4);
 
-
-
-
-    // Now, We Create The Logical Device (VkDevice) Instance On The Selected Physical Device
-    Logger_->Log("Creating Logical Device On Selected Physical Device", 4);
-    vkb::DeviceBuilder VulkanDeviceBuilder{VulkanPhysicalDevice};
-    vkb::Result<vkb::Device> VulkanDeviceBuilderReturn = VulkanDeviceBuilder.build();
-    if (!VulkanDeviceBuilderReturn) {
-        Logger_->Log("Error During Renderer Initialization", 10);
-        Logger_->Log("Failed To Create Logical Vulkan Device (See Following Line For Error)", 10);
-        std::string ErrorMessage = "VK_Bootstrap Reported Error: " + VulkanDeviceBuilderReturn.error().message();
-        Logger_->Log(ErrorMessage, 10);
-
-        return false;
-    }
-    RenderData_.VulkanDevice_ = VulkanDeviceBuilderReturn.value();
 
 
 
