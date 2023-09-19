@@ -74,7 +74,7 @@ bool VulkanInit_CreateInstance(BG::Common::Logger::LoggingSystem* _Logger, Rende
  * @return true
  * @return false 
  */
-bool VulkanInit_CreateWindow(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+bool VulkanInit_Optional_CreateWindow(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
 
 /**
  * @brief Substep during Vulkan initalization. This function performs two critical steps during Vulkan init - firstly, it will enumerate physical devices and select a physical device. Then, it will create a logical device on the physical device selected.
@@ -85,7 +85,31 @@ bool VulkanInit_CreateWindow(BG::Common::Logger::LoggingSystem* _Logger, RenderD
  * @return true 
  * @return false 
  */
-bool VulkanInit_DeviceInit(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+bool VulkanInit_CreateDevice(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+
+
+/**
+ * @brief Substep during Vulkan initialization. This function creates various queues in each of the required queue families, enabling us to talk to the gpu.
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger 
+ * @param _RD 
+ * @return true 
+ * @return false 
+ */
+bool VulkanInit_CreateQueues(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+
+/**
+ * @brief Optional substep during Vulkan initialization. This function optionally creates the swapchain for windowed rendering. 
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger 
+ * @param _RD 
+ * @return true 
+ * @return false 
+ */
+bool VulkanInit_Optional_CreateSwapchain(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+
 
 /**
  * @brief Optional Substep during Vulkan initialization. Creates an image view on the given renderdata pointer using the logger as a pointer to that place.

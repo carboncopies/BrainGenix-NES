@@ -82,7 +82,7 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
     */
 
 
-    // Setup RenderData Struct With Configuration Options
+    // Setup RenderData Struct With Configuration Options, Create Instance
     Logger_->Log("Initializing Vulkan Handle Struct", 2);
     RenderData_.IsReady_     = false;
     RenderData_.IsDebugging_ = _IsDebugging;
@@ -93,65 +93,28 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
         return false;
     }
 
-
     // Now, We Optionally Create The Renderer Window
     if (RenderData_.IsWindowed_) {
-        if (!VulkanInit_CreateWindow(Logger_, &RenderData_)) {
+        if (!VulkanInit_Optional_CreateWindow(Logger_, &RenderData_)) {
             return false;
         }
     }
 
-
-    // Next, We Select the Physical Device To Use
-    if (!VulkanInit_DeviceInit(Logger_, &RenderData_)) {
+    // Next, We Select the Physical Device To Use, Create a logical device on that physical device
+    if (!VulkanInit_CreateDevice(Logger_, &RenderData_)) {
         return false;
     }
 
-
-
-
-
-    // Create Vulkan Queues
-    Logger_->Log("Setting Up Vulkan Graphics Queue", 4);
-    vkb::Result<VkQueue> VulkanGraphicsQueueReturn = RenderData_.VulkanDevice_.get_queue(vkb::QueueType::graphics);
-    if (!VulkanGraphicsQueueReturn) {
-        Logger_->Log("Error During Renderer Initialization", 10);
-        Logger_->Log("Failed to Get Vulkan Graphics Queue (See Following Line For Error)", 10);
-        std::string ErrorMessage = "VK_Bootstrap Reported Error: " + VulkanGraphicsQueueReturn.error().message();
-        Logger_->Log(ErrorMessage, 10);
-
+    // Now, We Need To Create Vulkan Queues
+    if (!VulkanInit_CreateQueues(Logger_, &RenderData_)) {
         return false;
     }
-    RenderData_.VulkanGraphicsQeueue_ = VulkanGraphicsQueueReturn.value();
-
-    Logger_->Log("Setting Up Vulkan Transfer Queue", 4);
-    vkb::Result<VkQueue> VulkanTransferQueueReturn = RenderData_.VulkanDevice_.get_queue(vkb::QueueType::transfer);
-    if (!VulkanTransferQueueReturn) {
-        Logger_->Log("Error During Renderer Initialization", 10);
-        Logger_->Log("Failed to Get Vulkan Transfer Queue (See Following Line For Error)", 10);
-        std::string ErrorMessage = "VK_Bootstrap Reported Error: " + VulkanTransferQueueReturn.error().message();
-        Logger_->Log(ErrorMessage, 10);
-
-        return false;
-    }
-    RenderData_.VulkanTransferQeueue_ = VulkanTransferQueueReturn.value();
-
 
     // Create Swapchain Optionally If Rendering To A Window
     if (RenderData_.IsWindowed_) {
-        Logger_->Log("Setting Up Vulkan Swapchain For Windowed Rendering", 4);
-        vkb::SwapchainBuilder VulkanSwapchainBuilder{RenderData_.VulkanDevice_};
-        vkb::Result<vkb::Swapchain> SwapchainResult = VulkanSwapchainBuilder.build();
-        if (!SwapchainResult) {
-            Logger_->Log("Error During Renderer Initialization", 10);
-            Logger_->Log("Failed to Create Vulkan Swapchain (See Following Line For Error)", 10);
-            std::string ErrorMessage = "VK_Bootstrap Reported Error: " + SwapchainResult.error().message();
-            Logger_->Log(ErrorMessage, 10);
-
+        if (!VulkanInit_Optional_CreateSwapchain(Logger_, &RenderData_)) {
             return false;
         }
-        RenderData_.Optional_Swapchain_ = SwapchainResult.value();
-
     }
 
 

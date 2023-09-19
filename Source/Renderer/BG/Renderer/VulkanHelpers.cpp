@@ -135,7 +135,7 @@ bool VulkanInit_CreateWindow(BG::Common::Logger::LoggingSystem* _Logger, RenderD
     return true;
 }
 
-bool VulkanInit_DeviceInit(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
+bool VulkanInit_CreateDevice(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
     assert(_Logger != nullptr);
     assert(_RD != nullptr);
    
@@ -188,6 +188,58 @@ bool VulkanInit_DeviceInit(BG::Common::Logger::LoggingSystem* _Logger, RenderDat
     _RD->VulkanDevice_ = VulkanDeviceBuilderReturn.value();
 
     return true;
+}
+
+bool VulkanInit_CreateQueues(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
+    assert(_Logger != nullptr);
+    assert(_RD != nullptr);
+
+    // Create Vulkan Queues
+    _Logger->Log("Setting Up Vulkan Graphics Queue", 4);
+    vkb::Result<VkQueue> VulkanGraphicsQueueReturn = _RD->VulkanDevice_.get_queue(vkb::QueueType::graphics);
+    if (!VulkanGraphicsQueueReturn) {
+        _Logger->Log("Error During Renderer Initialization", 10);
+        _Logger->Log("Failed to Get Vulkan Graphics Queue (See Following Line For Error)", 10);
+        std::string ErrorMessage = "VK_Bootstrap Reported Error: " + VulkanGraphicsQueueReturn.error().message();
+        _Logger->Log(ErrorMessage, 10);
+
+        return false;
+    }
+    _RD->VulkanGraphicsQeueue_ = VulkanGraphicsQueueReturn.value();
+
+    _Logger->Log("Setting Up Vulkan Transfer Queue", 4);
+    vkb::Result<VkQueue> VulkanTransferQueueReturn = _RD->VulkanDevice_.get_queue(vkb::QueueType::transfer);
+    if (!VulkanTransferQueueReturn) {
+        _Logger->Log("Error During Renderer Initialization", 10);
+        _Logger->Log("Failed to Get Vulkan Transfer Queue (See Following Line For Error)", 10);
+        std::string ErrorMessage = "VK_Bootstrap Reported Error: " + VulkanTransferQueueReturn.error().message();
+        _Logger->Log(ErrorMessage, 10);
+
+        return false;
+    }
+    _RD->VulkanTransferQeueue_ = VulkanTransferQueueReturn.value();
+
+    return true;
+
+}
+
+bool VulkanInit_CreateSwapchain(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
+    assert(_Logger != nullptr);
+    assert(_RD != nullptr);
+
+    _Logger->Log("Setting Up Vulkan Swapchain For Windowed Rendering", 4);
+    vkb::SwapchainBuilder VulkanSwapchainBuilder{_RD->VulkanDevice_};
+    vkb::Result<vkb::Swapchain> SwapchainResult = VulkanSwapchainBuilder.build();
+    if (!SwapchainResult) {
+        _Logger->Log("Error During Renderer Initialization", 10);
+        _Logger->Log("Failed to Create Vulkan Swapchain (See Following Line For Error)", 10);
+        std::string ErrorMessage = "VK_Bootstrap Reported Error: " + SwapchainResult.error().message();
+        _Logger->Log(ErrorMessage, 10);
+
+        return false;
+    }
+    _RD->Optional_Swapchain_ = SwapchainResult.value();
+
 }
 
 
