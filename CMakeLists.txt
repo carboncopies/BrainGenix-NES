@@ -112,6 +112,11 @@ install(FILES "${SRC_DIR}/Data/BrainGenix-NES.service"
     COMPONENT Release
 )
 
+# TEMPORARY COPIES FOR SHADER CODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+install(FILES "${SRC_DIR}/Data/vert.spv" "${SRC_DIR}/Data/frag.spv"
+    DESTINATION ${INSTALL_PREFIX}
+    COMPONENT Release
+)
 
 
 # CPack Information

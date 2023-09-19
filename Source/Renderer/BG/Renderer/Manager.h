@@ -46,6 +46,7 @@
 #include <BG/Common/Logger/Logger.h>
 
 #include <BG/Renderer/VulkanHelpers.h>
+#include <BG/Renderer/VulkanShaders.h>
 #include <BG/Renderer/RenderData.h>
 
 

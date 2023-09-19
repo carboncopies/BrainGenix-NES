@@ -34,6 +34,8 @@
 #include <iostream>
 #include <assert.h>
 
+#include <fstream> // temporary include, for testing precompiled shaders - use iosubsystem for this later
+
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <VkBootstrap.h>
@@ -52,6 +54,46 @@
 namespace BG {
 namespace NES {
 namespace Renderer {
+namespace Internal {
+
+/**
+ * @brief Simple helper function for reading files.
+ * 
+ * @param _FileName 
+ * @return std::vector<char> 
+ */
+std::vector<char> ReadFile(std::string _FileName);
+
+
+
+/**
+ * @brief Intermediate Vulkan Shader Helper, used to create a shader module from existing SPIR-V bytecode.
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger Pointer to the logging system, used to log any messages.
+ * @param _RD Pointer to system renderdata instance.
+ * @param _ShaderBytecode Pointer to vector of characters of the compiled SPIR-V bytecode.
+ * @param _ShaderModule Pointer to the VkShaderModule to be populated
+ * @return true 
+ * @return false 
+ */
+bool Vulkan_CreateShaderModule(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD, const std::vector<char>* _ShaderBytecode, VkShaderModule* _ShaderModule);
+
+}; // Close Namespace Internal
+
+
+
+/**
+ * @brief Vulkan Shader Helper, sets up the vulkan graphics pipeline, including the creation of any needed shaders.
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger Pointer to the logging system, used to log any messages.
+ * @param _RD Pointer to system renderdata instance.
+ * @return true 
+ * @return false 
+ */
+bool Vulkan_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+
 
 
 

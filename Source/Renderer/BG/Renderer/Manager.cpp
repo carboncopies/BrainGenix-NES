@@ -117,6 +117,25 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
         }
     }
 
+    // Create Render Pass
+    //  FIXME - ADD THIS LATER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    // Create Graphics Pipeline
+    if (!Vulkan_CreateGraphicsPipeline(Logger_, &RenderData_)) {
+        return false;
+    }
+
+    // Create Framebuffer (if windowed rendering enabled)
+
+    // Create Command Buffers
+
+    // Create Sync Objects
+
+
+    // Phew, done. *wipes sweat from forehead*
+    // That was a hell of a lot of work!
+    // Why are we using Vulkan again?
+
 
     return true;
 }
