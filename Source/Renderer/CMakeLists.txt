@@ -6,6 +6,8 @@ add_library(NESRenderer
     "BG/Renderer/Manager.cpp"
     "BG/Renderer/VulkanHelpers.h"
     "BG/Renderer/VulkanHelpers.cpp"
+    "BG/Renderer/VulkanShaders.h"
+    "BG/Renderer/VulkanShaders.cpp"
     "BG/Renderer/RenderData.h"
     "BG/Renderer/RenderData.cpp"
 
