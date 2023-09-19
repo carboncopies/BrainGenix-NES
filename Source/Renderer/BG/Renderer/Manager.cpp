@@ -118,6 +118,7 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
     }
 
     // Create Render Pass
+    
     //  FIXME - ADD THIS LATER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     // Create Graphics Pipeline

@@ -78,6 +78,15 @@ struct RenderData {
     vkb::Swapchain Optional_Swapchain_; /**Optional (If debug window is enabled) Swapchain for rendering to window*/
 
 
+    // To Be sorted
+    VkPipelineLayout VulkanPipelineLayout_;
+    VkRenderPass VulkanRenderPass_;
+    VkPipeline VulkanGraphicsPipeline;
+    
+    VkCommandPool VulkanCommandPool_;
+    
+
+
     // Status Indicator Variables
     bool IsReady_     = false; /**Indicates that the system is ready for rendering. True DOES NOT MEAN OPTIONAL VARIABLES ARE SETUP. YOU MUST CHECK IsWindowed_ FOR OPTIONAL VARS*/
     bool IsWindowed_  = false; /**Indicates if the renderer is running with a window or not. False means headless, true means windowed*/
