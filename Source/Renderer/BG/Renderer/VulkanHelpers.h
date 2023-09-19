@@ -45,6 +45,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
+#include <BG/Renderer/VulkanShaders.h>
 #include <BG/Renderer/RenderData.h>
 
 
@@ -109,6 +110,26 @@ bool VulkanInit_CreateQueues(BG::Common::Logger::LoggingSystem* _Logger, RenderD
  * @return false 
  */
 bool VulkanInit_Optional_CreateSwapchain(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+
+
+
+
+
+
+/**
+ * @brief Vulkan Shader Helper, sets up the vulkan graphics pipeline, including the creation of any needed shaders.
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger Pointer to the logging system, used to log any messages.
+ * @param _RD Pointer to system renderdata instance.
+ * @return true 
+ * @return false 
+ */
+bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+
+
+
+
 
 
 

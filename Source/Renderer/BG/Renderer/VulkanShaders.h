@@ -83,17 +83,6 @@ bool Vulkan_CreateShaderModule(BG::Common::Logger::LoggingSystem* _Logger, Rende
 
 
 
-/**
- * @brief Vulkan Shader Helper, sets up the vulkan graphics pipeline, including the creation of any needed shaders.
- * Returns true on success, false on failure.
- * 
- * @param _Logger Pointer to the logging system, used to log any messages.
- * @param _RD Pointer to system renderdata instance.
- * @return true 
- * @return false 
- */
-bool Vulkan_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
-
 
 
 

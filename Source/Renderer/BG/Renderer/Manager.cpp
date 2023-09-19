@@ -118,11 +118,11 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
     }
 
     // Create Render Pass
-    
+
     //  FIXME - ADD THIS LATER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     // Create Graphics Pipeline
-    if (!Vulkan_CreateGraphicsPipeline(Logger_, &RenderData_)) {
+    if (!VulkanInit_CreateGraphicsPipeline(Logger_, &RenderData_)) {
         return false;
     }
 
