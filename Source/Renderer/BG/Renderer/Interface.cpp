@@ -43,7 +43,7 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
 }
 
 bool Interface::DrawFrame() {
-    RendererManager_->DrawFrame();
+    return RendererManager_->DrawFrame();
 }
 
 
