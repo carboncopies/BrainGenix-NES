@@ -242,14 +242,11 @@ bool VulkanInit_Optional_CreateSwapchain(BG::Common::Logger::LoggingSystem* _Log
 
 
     // Update RenderData ColorFormat Enum
-    _RD->ColorFormat_ = _RD->Optional_Swapchain_.image_format;
+    _RD->VulkanColorFormat_ = _RD->Optional_Swapchain_.image_format;
 
 
     return true;
 }
-
-
-
 
 bool VulkanInit_CreateRenderPass(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
     assert(_Logger != nullptr);
@@ -265,7 +262,7 @@ bool VulkanInit_CreateRenderPass(BG::Common::Logger::LoggingSystem* _Logger, Ren
 
     // Create Color ATtachment for Renderpass
     VkAttachmentDescription ColorAttachment{};
-    ColorAttachment.format = _RD->ColorFormat_;
+    ColorAttachment.format = _RD->VulkanColorFormat_;
 	ColorAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
 	ColorAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
 	ColorAttachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
@@ -318,8 +315,6 @@ bool VulkanInit_CreateRenderPass(BG::Common::Logger::LoggingSystem* _Logger, Ren
     return true;
 
 }
-
-
 
 bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
     assert(_Logger != nullptr);
@@ -490,6 +485,50 @@ bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logge
 
     return true;
 }
+
+bool VulkanInit_CreateFramebuffer(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
+    assert(_Logger != nullptr);
+    assert(_RD != nullptr);
+
+
+    // FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME 
+    // This section will also need to be updated for headless rendering!
+    // We probably will need to make the framebuffer in a different way for headless rendering, since the swapchain doesn't exist without a window.
+    // FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME 
+    _Logger->Log("FIXME: Update CreateFramebuffer For Headless Rendering", 8);
+    
+
+
+    _Logger->Log("Creating Vulkan Framebuffers", 2);
+    _RD->VulkanSwapchainImages_ = _RD->Optional_Swapchain_.get_images().value();
+    _RD->VulkanSwapchainImageViews_ = _RD->Optional_Swapchain_.get_image_views().value();
+
+    _RD->VulkanFramebuffers_.resize(_RD->VulkanSwapchainImageViews_.size());
+    for (int i = 0; i < _RD->VulkanSwapchainImageViews_.size(); i++) {
+        VkImageView Attachments[] = {_RD->VulkanSwapchainImageViews_[i]};
+
+        VkFramebufferCreateInfo FramebufferCreateInfo{};
+        FramebufferCreateInfo.sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
+        FramebufferCreateInfo.renderPass = _RD->VulkanRenderPass_;
+        FramebufferCreateInfo.attachmentCount = 1;
+        FramebufferCreateInfo.pAttachments = Attachments;
+        FramebufferCreateInfo.width = _RD->Width_;
+        FramebufferCreateInfo.height = _RD->Height_;
+        FramebufferCreateInfo.layers = 1;
+
+        VkResult FramebufferCreateStatus = vkCreateFramebuffer(_RD->VulkanDevice_.device, &FramebufferCreateInfo, nullptr, &_RD->VulkanFramebuffers_[i]);
+        if (FramebufferCreateStatus != VK_SUCCESS) {
+            _Logger->Log("Error During Renderer Initialization", 10);
+            _Logger->Log("Failed To Create Vulkan Framebuffer (vkCreateFramebuffer returned !VK_SUCCESS)", 10);
+            return false;
+        }
+
+    }
+
+    return true;
+
+}
+
 
 
 

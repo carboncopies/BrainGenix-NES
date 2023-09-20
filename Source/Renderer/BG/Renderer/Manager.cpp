@@ -130,6 +130,9 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
     }
 
     // Create Framebuffer (if windowed rendering enabled)
+    if (!VulkanInit_CreateFramebuffer(Logger_, &RenderData_)) {
+        return false;
+    }
 
     // Create Command Buffers
 

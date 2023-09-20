@@ -126,7 +126,7 @@ bool VulkanInit_CreateRenderPass(BG::Common::Logger::LoggingSystem* _Logger, Ren
 
 
 /**
- * @brief Vulkan Shader Helper, sets up the vulkan graphics pipeline, including the creation of any needed shaders.
+ * @brief Vulkan Init Helper, sets up the vulkan graphics pipeline, including the creation of any needed shaders.
  * Returns true on success, false on failure.
  * 
  * @param _Logger Pointer to the logging system, used to log any messages.
@@ -137,6 +137,16 @@ bool VulkanInit_CreateRenderPass(BG::Common::Logger::LoggingSystem* _Logger, Ren
 bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
 
 
+/**
+ * @brief Vulkan Init helper, gets info about the framebuffer in windowed mode, creates framebuffer in headless mode.
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger 
+ * @param _RD 
+ * @return true 
+ * @return false 
+ */
+bool VulkanInit_CreateFramebuffer(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
 
 
 

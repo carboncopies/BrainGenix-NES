@@ -72,8 +72,13 @@ struct RenderData {
     vkb::Instance VulkanInstance_; /**VulkanBoostrap Wrapper For Our Vulkan Instance*/
     vkb::Device VulkanDevice_; /**Vulkan Logical Device Wrapper*/
 
-    VkFormat ColorFormat_ = VK_FORMAT_R8G8B8A8_UNORM; /**Vulkan color format for render target (either vkImage in headless mode, or swapchain format in windowed mode). Note that in swapchain format, the default value is overwritten.*/
+    VkFormat VulkanColorFormat_ = VK_FORMAT_R8G8B8A8_UNORM; /**Vulkan color format for render target (either vkImage in headless mode, or swapchain format in windowed mode). Note that in swapchain format, the default value is overwritten.*/
 
+	std::vector<VkFramebuffer> VulkanFramebuffers_;
+
+    // maybe optional? Not sure yet.
+	std::vector<VkImage> VulkanSwapchainImages_;
+	std::vector<VkImageView> VulkanSwapchainImageViews_;
 
     // Optional Vulkan Handles (For Windowed Mode Only)
     VkSurfaceKHR Optional_WindowSurface_; /**Optional (If debug window is enabled) Window surface for presenting to a window*/
