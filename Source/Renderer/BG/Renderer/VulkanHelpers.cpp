@@ -736,7 +736,9 @@ bool VulkanUtil_WaitUntilGPUDone(BG::Common::Logger::LoggingSystem* _Logger, Ren
     assert(_Logger != nullptr && "_Logger pointer cannot be null");
     assert(_RD != nullptr && "_RD pointer cannot be null");
 
-    vkWaitForFences(_RD->VulkanDevice_.device, 1, &_RD->VulkanInTransitFences_[_RD->CurrentFrame_], VK_TRUE, UINT64_MAX);
+    for (unsigned int i = 0; i < _RD->VulkanInTransitFences_.size(); i++) {
+        vkWaitForFences(_RD->VulkanDevice_.device, 1, &_RD->VulkanInTransitFences_[i], VK_TRUE, UINT64_MAX);
+    }
 
     return true;
 
