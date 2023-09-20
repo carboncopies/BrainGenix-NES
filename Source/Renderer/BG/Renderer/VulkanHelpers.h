@@ -149,6 +149,28 @@ bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logge
 bool VulkanInit_CreateFramebuffer(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
 
 
+/**
+ * @brief Vulkan Init Helper. Creates the command pool for later creating command buffers so we can tell the GPU what to do.
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger 
+ * @param _RD 
+ * @return true 
+ * @return false 
+ */
+bool VulkanInit_CreateCommandPool(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+
+
+/**
+ * @brief Vulkan Init Helper. Creates the command buffers using the command pool, allowing us to tell the gpu what to do.
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger 
+ * @param _RD 
+ * @return true 
+ * @return false 
+ */
+bool VulkanInit_CreateCommandBuffers(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
 
 
 

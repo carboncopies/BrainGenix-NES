@@ -107,7 +107,15 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
         return false;
     }
 
+    // Create Command Pool
+    if (!VulkanInit_CreateCommandPool(Logger_, &RenderData_)) {
+        return false;
+    }
+
     // Create Command Buffers
+    if (!VulkanInit_CreateCommandBuffers(Logger_, &RenderData_)) {
+        return false;
+    }
 
     // Create Sync Objects
 

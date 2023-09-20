@@ -529,6 +529,24 @@ bool VulkanInit_CreateFramebuffer(BG::Common::Logger::LoggingSystem* _Logger, Re
 
 }
 
+bool VulkanInit_CreateCommandPool(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
+    assert(_Logger != nullptr);
+    assert(_RD != nullptr);
+
+    return false;
+}
+
+
+
+bool VulkanInit_CreateCommandBuffers(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
+    assert(_Logger != nullptr);
+    assert(_RD != nullptr);
+
+    return false;
+}
+
+
+
 
 
 
