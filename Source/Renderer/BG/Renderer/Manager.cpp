@@ -25,8 +25,6 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger) {
 
 }
 
-
-
 Manager::~Manager() {
     assert(Logger_ != nullptr);
     Logger_->Log("Shutting Down Rendering Subsystem", 3);
@@ -34,6 +32,7 @@ Manager::~Manager() {
     VulkanDeinit_DestroyAll(Logger_, &RenderData_);
     
 }
+
 
 bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
     assert(Logger_ != nullptr);
@@ -126,6 +125,10 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
 
 
     return true;
+}
+
+bool Manager::DrawFrame() {
+    VulkanRenderer_DrawFrame(Logger_, &RenderData_);
 }
 
 

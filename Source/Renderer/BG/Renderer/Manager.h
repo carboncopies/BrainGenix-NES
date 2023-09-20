@@ -47,6 +47,7 @@
 
 #include <BG/Renderer/VulkanHelpers.h>
 #include <BG/Renderer/VulkanShaders.h>
+#include <BG/Renderer/VulkanRenderer.h>
 #include <BG/Renderer/RenderData.h>
 
 
@@ -92,6 +93,15 @@ public:
      * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
     */
     bool Initialize(bool _IsWindowed = false, bool _IsDebugging = true);
+
+    /**
+     * @brief Does what it sounds like, this draws a frame on the renderer.
+     * Returns true on success, false on failure.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool DrawFrame();
 
 
     /**

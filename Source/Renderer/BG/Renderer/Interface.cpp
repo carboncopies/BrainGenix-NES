@@ -18,7 +18,6 @@ namespace NES {
 namespace Renderer {
 
 
-
 Interface::Interface(BG::Common::Logger::LoggingSystem* _Logger) {
     assert(_Logger != nullptr);
     Logger_ = _Logger;
@@ -28,8 +27,6 @@ Interface::Interface(BG::Common::Logger::LoggingSystem* _Logger) {
 
 
 }
-
-
 
 Interface::~Interface() {
     assert(Logger_ != nullptr);
@@ -45,6 +42,9 @@ bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers
     return RendererManager_->Initialize(_EnableDebugWindow, _EnableValidationLayers);
 }
 
+bool Interface::DrawFrame() {
+    RendererManager_->DrawFrame();
+}
 
 
 

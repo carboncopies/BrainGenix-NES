@@ -92,6 +92,14 @@ public:
     */
     bool Initialize(bool _EnableDebugWindow = false, bool _EnableValidationLayers = true);
 
+    /**
+     * @brief Does what the name suggests - draws a frame on the window or offscreen if rendering headless.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool DrawFrame();
+
 };
 
 
