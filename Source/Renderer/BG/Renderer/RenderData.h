@@ -92,7 +92,7 @@ struct RenderData {
     // To Be sorted
     VkPipelineLayout VulkanPipelineLayout_;
     VkRenderPass VulkanRenderPass_;
-    VkPipeline VulkanGraphicsPipeline;
+    VkPipeline VulkanGraphicsPipeline_;
     
     VkCommandPool VulkanCommandPool_;
 

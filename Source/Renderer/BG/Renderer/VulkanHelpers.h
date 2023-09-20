@@ -153,6 +153,21 @@ bool VulkanInit_CreateFramebuffer(BG::Common::Logger::LoggingSystem* _Logger, Re
 
 
 
+
+/**
+ * @brief Vulkan Destructor Helper, Will Cleanup All Vulkan Objects Created. Should Be Called In Destructor Of the Manager.
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger 
+ * @param _RD 
+ * @return true 
+ * @return false 
+ */
+bool VulkanDeinit_DestroyAll(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+
+
+
+
 }; // Close Namespace Logger
 }; // Close Namespace Common
 }; // Close Namespace BG

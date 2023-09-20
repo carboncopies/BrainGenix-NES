@@ -471,7 +471,7 @@ bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logge
 	PipelineInfo.subpass = 0;
 	PipelineInfo.basePipelineHandle = VK_NULL_HANDLE;
 
-    VkResult PipelineCreateStatus = vkCreateGraphicsPipelines(_RD->VulkanDevice_.device, VK_NULL_HANDLE, 1, &PipelineInfo, nullptr, &_RD->VulkanGraphicsPipeline);
+    VkResult PipelineCreateStatus = vkCreateGraphicsPipelines(_RD->VulkanDevice_.device, VK_NULL_HANDLE, 1, &PipelineInfo, nullptr, &_RD->VulkanGraphicsPipeline_);
     if (PipelineCreateStatus != VK_SUCCESS) {
         _Logger->Log("Failed To Create Vulkan Graphics Pipeline", 9);
         return false;
@@ -529,6 +529,67 @@ bool VulkanInit_CreateFramebuffer(BG::Common::Logger::LoggingSystem* _Logger, Re
 
 }
 
+
+
+
+
+bool VulkanDeinit_DestroyAll(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
+    assert(_Logger != nullptr);
+    assert(_RD != nullptr);
+
+    // Cleanup Windowed (Optional) Vulkan Objects
+    if (_RD->Optional_Swapchain_) {
+        _Logger->Log("Cleaning Up Optional Swapchain Surface", 2);
+        _RD->Optional_Swapchain_.destroy_image_views(_RD->VulkanSwapchainImageViews_);
+        vkb::destroy_swapchain(_RD->Optional_Swapchain_);
+    }
+
+    if (_RD->Optional_WindowSurface_) {
+        _Logger->Log("Cleaning Up Optional Window Surface", 2);
+        vkb::destroy_surface(_RD->VulkanInstance_, _RD->Optional_WindowSurface_);
+    }
+
+
+    // Shutdown SDL (If Enabled)
+    if (_RD->IsWindowed_) {
+        SDL_Quit();
+    }
+
+
+    // Cleanup Required Vulkan Objects
+    _Logger->Log("Cleaning Up Vulkan Pipeline", 2);
+    if (_RD->VulkanGraphicsPipeline_) {
+        vkDestroyPipeline(_RD->VulkanDevice_.device, _RD->VulkanGraphicsPipeline_, nullptr);
+    }
+
+    _Logger->Log("Cleaning Up Vulkan Pipeline Layout", 2);
+    if (_RD->VulkanPipelineLayout_) {
+        vkDestroyPipelineLayout(_RD->VulkanDevice_.device, _RD->VulkanPipelineLayout_, nullptr);
+    }
+
+    _Logger->Log("Cleaning Up Vulkan Renderpass", 2);
+    if (_RD->VulkanRenderPass_) {
+        vkDestroyRenderPass(_RD->VulkanDevice_.device, _RD->VulkanRenderPass_, nullptr);
+    }
+
+    _Logger->Log("Cleaning Up Vulkan Framebuffers", 2);
+    for (unsigned int i = 0; i < _RD->VulkanFramebuffers_.size(); i++) {
+        vkDestroyFramebuffer(_RD->VulkanDevice_.device, _RD->VulkanFramebuffers_[i], nullptr);
+    }
+
+    _Logger->Log("Cleaning Up Vulkan Logical Device", 2);
+    if (_RD->VulkanDevice_) {
+        vkb::destroy_device(_RD->VulkanDevice_);
+    }
+
+    _Logger->Log("Cleaning Up Vulkan Instance", 2);
+    if (_RD->VulkanInstance_) {
+        vkb::destroy_instance(_RD->VulkanInstance_);
+    }
+
+    return true;
+
+}
 
 
 

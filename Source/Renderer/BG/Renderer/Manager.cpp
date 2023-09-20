@@ -31,35 +31,8 @@ Manager::~Manager() {
     assert(Logger_ != nullptr);
     Logger_->Log("Shutting Down Rendering Subsystem", 3);
 
-
-
-    // Cleanup Windowed (Optional) Vulkan Objects
-    if (RenderData_.Optional_Swapchain_) {
-        Logger_->Log("Cleaning Up Optional Swapchain Surface", 2);
-        vkb::destroy_swapchain(RenderData_.Optional_Swapchain_);
-    }
-
-    if (RenderData_.Optional_WindowSurface_) {
-        Logger_->Log("Cleaning Up Optional Window Surface", 2);
-        vkb::destroy_surface(RenderData_.VulkanInstance_, RenderData_.Optional_WindowSurface_);
-    }
-
-    // Shutdown SDL (If Enabled)
-    if (RenderData_.IsWindowed_) {
-        SDL_Quit();
-    }
-
-
-    // Cleanup Required Vulkan Objects
-    Logger_->Log("Cleaning Up Vulkan Logical Device", 2);
-    if (RenderData_.VulkanDevice_) {
-        vkb::destroy_device(RenderData_.VulkanDevice_);
-    }
-
-    Logger_->Log("Cleaning Up Vulkan Instance", 2);
-    if (RenderData_.VulkanInstance_) {
-        vkb::destroy_instance(RenderData_.VulkanInstance_);
-    }
+    VulkanDeinit_DestroyAll(Logger_, &RenderData_);
+    
 }
 
 bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
