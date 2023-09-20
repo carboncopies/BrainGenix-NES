@@ -603,7 +603,7 @@ bool VulkanInit_CreateSyncObjects(BG::Common::Logger::LoggingSystem* _Logger, Re
         }
 
         // Create Finished Semaphores
-        VkResult SemaphoreCreateStatus = vkCreateSemaphore(_RD->VulkanDevice_.device, &SemaphoreCreateInfo, nullptr, &_RD->VulkanFinishedSemaphores_[i]);
+        SemaphoreCreateStatus = vkCreateSemaphore(_RD->VulkanDevice_.device, &SemaphoreCreateInfo, nullptr, &_RD->VulkanFinishedSemaphores_[i]);
         if (SemaphoreCreateStatus != VK_SUCCESS) {
             _Logger->Log("Error During Renderer Initialization", 10);
             _Logger->Log("Failed To Create Vulkan Semaphore (vkCreateSemaphore returned !VK_SUCCESS)", 10);
@@ -611,8 +611,8 @@ bool VulkanInit_CreateSyncObjects(BG::Common::Logger::LoggingSystem* _Logger, Re
         }
 
         // Create Fences
-        VkResult SemaphoreCreateStatus = vkCreateFence(_RD->VulkanDevice_.device, &FenceCreateInfo, nullptr, &_RD->VulkanInTransitFences_[i]);
-        if (SemaphoreCreateStatus != VK_SUCCESS) {
+        VkResult FenceCreateStatus = vkCreateFence(_RD->VulkanDevice_.device, &FenceCreateInfo, nullptr, &_RD->VulkanInTransitFences_[i]);
+        if (FenceCreateStatus != VK_SUCCESS) {
             _Logger->Log("Error During Renderer Initialization", 10);
             _Logger->Log("Failed To Create Vulkan Fence (vkCreateFence returned !VK_SUCCESS)", 10);
             return false;
