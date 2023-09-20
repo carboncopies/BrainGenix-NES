@@ -72,10 +72,16 @@ struct RenderData {
     vkb::Instance VulkanInstance_; /**VulkanBoostrap Wrapper For Our Vulkan Instance*/
     vkb::Device VulkanDevice_; /**Vulkan Logical Device Wrapper*/
 
+    VkFormat ColorFormat_ = VK_FORMAT_R8G8B8A8_UNORM; /**Vulkan color format for render target (either vkImage in headless mode, or swapchain format in windowed mode). Note that in swapchain format, the default value is overwritten.*/
+
+
     // Optional Vulkan Handles (For Windowed Mode Only)
     VkSurfaceKHR Optional_WindowSurface_; /**Optional (If debug window is enabled) Window surface for presenting to a window*/
     SDL_Window* Optional_SDLWindow_ = nullptr; /**Optional (if debug window is enabled) Pointer to SDL Window object*/
     vkb::Swapchain Optional_Swapchain_; /**Optional (If debug window is enabled) Swapchain for rendering to window*/
+
+    // Optional Vulkan Handles (For Headless Mode Only)
+    
 
 
     // To Be sorted
@@ -84,13 +90,18 @@ struct RenderData {
     VkPipeline VulkanGraphicsPipeline;
     
     VkCommandPool VulkanCommandPool_;
-    
+
 
 
     // Status Indicator Variables
     bool IsReady_     = false; /**Indicates that the system is ready for rendering. True DOES NOT MEAN OPTIONAL VARIABLES ARE SETUP. YOU MUST CHECK IsWindowed_ FOR OPTIONAL VARS*/
     bool IsWindowed_  = false; /**Indicates if the renderer is running with a window or not. False means headless, true means windowed*/
     bool IsDebugging_ = false; /**Indicates if vulkan debug information is to be enabled or not.*/
+
+    // Configuration Variables
+    unsigned int Width_  = 800; /**Width in pixels that we should render at.*/
+    unsigned int Height_ = 600; /**Height in pixels that we should render at.*/
+    
 
 
     // FIXME: will eventually need more attribs, something like this:

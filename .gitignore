@@ -42,3 +42,4 @@
 *.out
 *.app
 example.cpp
+example_headless.cpp

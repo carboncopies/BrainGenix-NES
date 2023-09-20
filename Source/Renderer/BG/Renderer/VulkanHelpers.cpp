@@ -241,6 +241,10 @@ bool VulkanInit_Optional_CreateSwapchain(BG::Common::Logger::LoggingSystem* _Log
     _RD->Optional_Swapchain_ = SwapchainResult.value();
 
 
+    // Update RenderData ColorFormat Enum
+    _RD->ColorFormat_ = _RD->Optional_Swapchain_.image_format;
+
+
     return true;
 }
 
@@ -251,9 +255,17 @@ bool VulkanInit_CreateRenderPass(BG::Common::Logger::LoggingSystem* _Logger, Ren
     assert(_Logger != nullptr);
     assert(_RD != nullptr);
 
+
+    // FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME 
+    // This will likely need to be updated for headless rendering - something about a framebuffer and more stuff. 
+    // I'm leaving it alone for now since I'm not sure how to implement that stuff yet. 
+    // FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME 
+    _Logger->Log("FIXME: SETUP HEADLESS RENDERPASS FRAMEBUFFER STUFF OR SOMETHING (see example_headless.cpp)", 8);
+
+
     // Create Color ATtachment for Renderpass
     VkAttachmentDescription ColorAttachment{};
-    ColorAttachment.format = _RD->Optional_Swapchain_.image_format;
+    ColorAttachment.format = _RD->ColorFormat_;
 	ColorAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
 	ColorAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
 	ColorAttachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
