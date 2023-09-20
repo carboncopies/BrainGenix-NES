@@ -533,7 +533,19 @@ bool VulkanInit_CreateCommandPool(BG::Common::Logger::LoggingSystem* _Logger, Re
     assert(_Logger != nullptr);
     assert(_RD != nullptr);
 
-    return false;
+    _Logger->Log("Creating Vulkan Command Pool", 2);
+    VkCommandPoolCreateInfo PoolCreateInfo{};
+    PoolCreateInfo.sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
+    PoolCreateInfo.queueFamilyIndex = _RD->VulkanDevice_.get_queue_index(vkb::QueueType::graphics).value();
+
+    VkResult CommandPoolCreateStatus = vkCreateCommandPool(_RD->VulkanDevice_.device, &PoolCreateInfo, nullptr, &_RD->VulkanCommandPool_);
+    if (CommandPoolCreateStatus != VK_SUCCESS) {
+        _Logger->Log("Error During Renderer Initialization", 10);
+        _Logger->Log("Failed To Create Vulkan Command Pool (vkCreateCommandPool returned !VK_SUCCESS)", 10);
+        return false;
+    }
+
+    return true;
 }
 
 
@@ -575,6 +587,11 @@ bool VulkanDeinit_DestroyAll(BG::Common::Logger::LoggingSystem* _Logger, RenderD
 
 
     // Cleanup Required Vulkan Objects
+    _Logger->Log("Cleaning Up Vulkan Command Pool", 2);
+    if (_RD->VulkanCommandPool_) {
+        vkDestroyCommandPool(_RD->VulkanDevice_.device, _RD->VulkanCommandPool_, nullptr);
+    }
+
     _Logger->Log("Cleaning Up Vulkan Pipeline", 2);
     if (_RD->VulkanGraphicsPipeline_) {
         vkDestroyPipeline(_RD->VulkanDevice_.device, _RD->VulkanGraphicsPipeline_, nullptr);
