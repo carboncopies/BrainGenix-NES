@@ -654,6 +654,14 @@ bool VulkanDeinit_DestroyAll(BG::Common::Logger::LoggingSystem* _Logger, RenderD
 
 
     // Cleanup Required Vulkan Objects
+    _Logger->Log("Cleaning Up Vulkan Sync Objects", 2);
+    for (unsigned int i = 0; i < _RD->MaxFramesInTransit_; i++) {
+        vkDestroySemaphore(_RD->VulkanDevice_.device, _RD->VulkanFinishedSemaphores_[i], nullptr);
+        vkDestroySemaphore(_RD->VulkanDevice_.device, _RD->VulkanAvailableSemaphores_[i], nullptr);
+        vkDestroyFence(_RD->VulkanDevice_.device, _RD->VulkanInTransitFences_[i], nullptr);
+    }
+
+
     _Logger->Log("Cleaning Up Vulkan Command Pool", 2);
     if (_RD->VulkanCommandPool_) {
         vkDestroyCommandPool(_RD->VulkanDevice_.device, _RD->VulkanCommandPool_, nullptr);
