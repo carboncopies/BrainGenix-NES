@@ -19,16 +19,19 @@ int main(int NumArguments, char** ArgumentValues) {
 
     // Setup Renderer
     BG::NES::Renderer::Interface RenderingInterface(&Logger);
-    RenderingInterface.Initialize(true); // NOTE THAT THE 'true' PARAM INDICATES THAT
+    if (!RenderingInterface.Initialize(true)) { // NOTE THAT THE 'true' PARAM INDICATES THAT
     // THE DEBUG WINDOW IS ENABLED. THIS SHOULD BE EVENTUALLY HANDLED BY THE CONFIG SUBSYS (FROM FILE/COMMAND LINE ARG)
-
+        Logger.Log("Error During Renderer Initialization, Aborting", 10);
+        return -1;
+    }
 
     
     // block forever while servers are running
     // while (true) {}
 
     // draw a thousand frames
-    for (unsigned int i = 0; i < 1000; i++) {
+    for (unsigned int i = 0; i < 50; i++) {
+        std::cout<<"Drawing Frame: "<<i<<std::endl;
         RenderingInterface.DrawFrame();
     }
 

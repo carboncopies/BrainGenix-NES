@@ -571,7 +571,7 @@ bool VulkanInit_CreateCommandBuffers(BG::Common::Logger::LoggingSystem* _Logger,
         return false;
     }
 
-    return false;
+    return true;
 }
 
 bool VulkanInit_CreateSyncObjects(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
@@ -657,6 +657,8 @@ bool VulkanUtil_RecreateSwapchain(BG::Common::Logger::LoggingSystem* _Logger, Re
     if (!VulkanInit_CreateCommandBuffers(_Logger, _RD)) {
         return false;
     }
+
+    return true;
     
 }
 
@@ -686,12 +688,15 @@ bool VulkanDeinit_DestroyAll(BG::Common::Logger::LoggingSystem* _Logger, RenderD
 
     // Cleanup Required Vulkan Objects
     _Logger->Log("Cleaning Up Vulkan Sync Objects", 2);
-    for (unsigned int i = 0; i < _RD->MaxFramesInTransit_; i++) {
+    for (unsigned int i = 0; i < _RD->VulkanFinishedSemaphores_.size(); i++) {
         vkDestroySemaphore(_RD->VulkanDevice_.device, _RD->VulkanFinishedSemaphores_[i], nullptr);
+    }
+    for (unsigned int i = 0; i < _RD->VulkanAvailableSemaphores_.size(); i++) {
         vkDestroySemaphore(_RD->VulkanDevice_.device, _RD->VulkanAvailableSemaphores_[i], nullptr);
+    }
+    for (unsigned int i = 0; i < _RD->VulkanInTransitFences_.size(); i++) {
         vkDestroyFence(_RD->VulkanDevice_.device, _RD->VulkanInTransitFences_[i], nullptr);
     }
-
 
     _Logger->Log("Cleaning Up Vulkan Command Pool", 2);
     if (_RD->VulkanCommandPool_) {

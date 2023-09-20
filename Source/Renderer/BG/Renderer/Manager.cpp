@@ -117,6 +117,9 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
     }
 
     // Create Sync Objects
+    if (!VulkanInit_CreateSyncObjects(Logger_, &RenderData_)) {
+        return false;
+    }
 
 
     // Phew, done. *wipes sweat from forehead*
@@ -129,6 +132,9 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
 
 bool Manager::DrawFrame() {
     VulkanRenderer_DrawFrame(Logger_, &RenderData_);
+
+    
+    return false;
 }
 
 
