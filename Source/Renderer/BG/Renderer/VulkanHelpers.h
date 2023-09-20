@@ -200,6 +200,17 @@ bool VulkanUtil_RecreateSwapchain(BG::Common::Logger::LoggingSystem* _Logger, Re
 
 
 /**
+ * @brief Util Function to wait until the gpu is done doing whatever it is supposed to be. Used to make sure we're not in the middle of drawing something.
+ * 
+ * @param _Logger 
+ * @param _RD 
+ * @return true 
+ * @return false 
+ */
+bool VulkanUtil_WaitUntilGPUDone(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+
+
+/**
  * @brief Vulkan Destructor Helper, Will Cleanup All Vulkan Objects Created. Should Be Called In Destructor Of the Manager.
  * Returns true on success, false on failure.
  * 

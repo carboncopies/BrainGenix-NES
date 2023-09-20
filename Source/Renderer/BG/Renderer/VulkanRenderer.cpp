@@ -40,7 +40,7 @@ bool VulkanRenderer_DrawFrame(BG::Common::Logger::LoggingSystem* _Logger, Render
 	SubmitInfo.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
 
 	VkSemaphore WaitSemaphores[] = {_RD->VulkanAvailableSemaphores_[_RD->CurrentFrame_]};
-	VkPipelineStageFlags WaitStages[] = { VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT};
+	VkPipelineStageFlags WaitStages[] = {VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT};
 	SubmitInfo.waitSemaphoreCount = 1;
 	SubmitInfo.pWaitSemaphores = WaitSemaphores;
 	SubmitInfo.pWaitDstStageMask = WaitStages;

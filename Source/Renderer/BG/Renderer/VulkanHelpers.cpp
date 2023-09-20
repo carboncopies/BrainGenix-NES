@@ -583,6 +583,64 @@ bool VulkanInit_CreateCommandBuffers(BG::Common::Logger::LoggingSystem* _Logger,
         return false;
     }
 
+
+    // Populate The Command Buffers
+    for (unsigned int i = 0; i < _RD->VulkanCommandBuffers_.size(); i++) {
+
+        VkCommandBufferBeginInfo BeginInfo{};
+        BeginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+        
+        VkResult BeginCommandBufferResult = vkBeginCommandBuffer(_RD->VulkanCommandBuffers_[i], &BeginInfo);
+        if (BeginCommandBufferResult != VK_SUCCESS) {
+            _Logger->Log("Failed To Begin Vulkan Command Buffer", 10);
+            return false;
+        }
+
+        VkClearValue ClearColor = {{{0., 0., 0., 1.}}};
+
+        VkRenderPassBeginInfo RenderPassBeginInfo{};
+        RenderPassBeginInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
+        RenderPassBeginInfo.renderPass = _RD->VulkanRenderPass_;
+        RenderPassBeginInfo.framebuffer = _RD->VulkanFramebuffers_[i];
+        RenderPassBeginInfo.renderArea.offset = {0,0};
+        RenderPassBeginInfo.renderArea.extent = _RD->Optional_Swapchain_.extent;
+        RenderPassBeginInfo.clearValueCount = 1;
+        RenderPassBeginInfo.pClearValues = &ClearColor;
+
+
+        VkViewport Viewport{};
+        Viewport.x = 0.;
+        Viewport.y = 0.;
+        Viewport.width = _RD->Width_;
+        Viewport.height = _RD->Height_;
+        Viewport.minDepth = 0.;
+        Viewport.maxDepth = 1.;
+        
+        VkRect2D Scissor = {};
+        Scissor.offset = {0,0};
+        Scissor.extent = _RD->Optional_Swapchain_.extent;
+
+
+        // Now Record Into The Command Buffer
+        vkCmdSetViewport(_RD->VulkanCommandBuffers_[i], 0, 1, &Viewport);
+        vkCmdSetScissor(_RD->VulkanCommandBuffers_[i], 0, 1, &Scissor);
+        
+        vkCmdBeginRenderPass(_RD->VulkanCommandBuffers_[i], &RenderPassBeginInfo, VK_SUBPASS_CONTENTS_INLINE);
+
+        vkCmdBindPipeline(_RD->VulkanCommandBuffers_[i], VK_PIPELINE_BIND_POINT_GRAPHICS, _RD->VulkanGraphicsPipeline_);
+
+        vkCmdDraw(_RD->VulkanCommandBuffers_[i], 3, 1, 0, 0);
+
+        vkCmdEndRenderPass(_RD->VulkanCommandBuffers_[i]);
+
+        VkResult EndCommandBufferResult = vkEndCommandBuffer(_RD->VulkanCommandBuffers_[i]);
+        if (EndCommandBufferResult != VK_SUCCESS) {
+            _Logger->Log("Failed To End Vulkan Command Buffer", 10);
+            return false;
+        }
+
+    }
+
     return true;
 }
 
@@ -672,6 +730,16 @@ bool VulkanUtil_RecreateSwapchain(BG::Common::Logger::LoggingSystem* _Logger, Re
 
     return true;
     
+}
+
+bool VulkanUtil_WaitUntilGPUDone(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
+    assert(_Logger != nullptr && "_Logger pointer cannot be null");
+    assert(_RD != nullptr && "_RD pointer cannot be null");
+
+    vkWaitForFences(_RD->VulkanDevice_.device, 1, &_RD->VulkanInTransitFences_[_RD->CurrentFrame_], VK_TRUE, UINT64_MAX);
+
+    return true;
+
 }
 
 

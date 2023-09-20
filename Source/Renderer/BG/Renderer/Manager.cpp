@@ -29,6 +29,8 @@ Manager::~Manager() {
     assert(Logger_ != nullptr);
     Logger_->Log("Shutting Down Rendering Subsystem", 3);
 
+    VulkanUtil_WaitUntilGPUDone(Logger_, &RenderData_);
+
     VulkanDeinit_DestroyAll(Logger_, &RenderData_);
     
 }
