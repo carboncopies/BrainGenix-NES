@@ -76,6 +76,13 @@ struct RenderData {
 
 	std::vector<VkFramebuffer> VulkanFramebuffers_;
 
+
+    std::vector<VkSemaphore> VulkanAvailableSemaphores_; /**Vulkan Sync objects not yet locked*/
+    std::vector<VkSemaphore> VulkanFinishedSemaphores_; /**Vulkan Sync objects that have finished on the GPU*/
+    std::vector<VkFence> VulkanInTransitFences_; 
+    std::vector<VkFence> VulkanImageInTransit_; 
+    unsigned int CurrentFrame_ = 0; /**Current frame being rendered.*/
+
     // maybe optional? Not sure yet.
 	std::vector<VkImage> VulkanSwapchainImages_;
 	std::vector<VkImageView> VulkanSwapchainImageViews_;
@@ -107,6 +114,7 @@ struct RenderData {
     // Configuration Variables
     unsigned int Width_  = 800; /**Width in pixels that we should render at.*/
     unsigned int Height_ = 600; /**Height in pixels that we should render at.*/
+    unsigned int MaxFramesInTransit_ = 3; /**Maxinum number of frames to be in transit to the screen at once.*/
     
 
 

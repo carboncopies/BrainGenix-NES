@@ -173,6 +173,18 @@ bool VulkanInit_CreateCommandPool(BG::Common::Logger::LoggingSystem* _Logger, Re
 bool VulkanInit_CreateCommandBuffers(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
 
 
+/**
+ * @brief Vulkan Init helper, creates the synchronization objects needed for rendering.
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger 
+ * @param _RD 
+ * @return true 
+ * @return false 
+ */
+bool VulkanInit_CreateSyncObjects(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+
+
 
 
 
