@@ -554,6 +554,25 @@ bool VulkanInit_CreateCommandBuffers(BG::Common::Logger::LoggingSystem* _Logger,
     assert(_Logger != nullptr);
     assert(_RD != nullptr);
 
+    _Logger->Log("Creating Vulkan Command Buffers", 2);
+    //FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME
+    _Logger->Log("FIXME: UPDATE COMMAND BUFFER CREATE FUNC WITH HEADLESS COMMAND BUFFER INFO!", 8);
+    //FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME
+    _RD->VulkanCommandBuffers_.resize(_RD->VulkanFramebuffers_.size());
+
+    VkCommandBufferAllocateInfo CommandBufferAllocateInfo{};
+    CommandBufferAllocateInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
+    CommandBufferAllocateInfo.commandPool = _RD->VulkanCommandPool_;
+    CommandBufferAllocateInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
+    CommandBufferAllocateInfo.commandBufferCount = (uint32_t)_RD->VulkanCommandBuffers_.size();
+
+    VkResult CommandBufferCreateStatus = vkAllocateCommandBuffers(_RD->VulkanDevice_.device, &CommandBufferAllocateInfo, _RD->VulkanCommandBuffers_.data());
+    if (CommandBufferCreateStatus != VK_SUCCESS) {
+        _Logger->Log("Error During Renderer Initialization", 10);
+        _Logger->Log("Failed To Allocate Vulkan Command Buffers (vkAllocateCommandBuffers returned !VK_SUCCESS)", 10);
+        return false;
+    }
+
     return false;
 }
 

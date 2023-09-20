@@ -95,6 +95,7 @@ struct RenderData {
     VkPipeline VulkanGraphicsPipeline_;
     
     VkCommandPool VulkanCommandPool_;
+    std::vector<VkCommandBuffer> VulkanCommandBuffers_;
 
 
 
