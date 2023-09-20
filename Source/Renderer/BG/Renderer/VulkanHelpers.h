@@ -186,6 +186,17 @@ bool VulkanInit_CreateSyncObjects(BG::Common::Logger::LoggingSystem* _Logger, Re
 
 
 
+/**
+ * @brief Vulkan util function. Recreates the swapchain to allow for window resizing.
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger 
+ * @param _RD 
+ * @return true 
+ * @return false 
+ */
+bool VulkanUtil_RecreateSwapchain(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+
 
 
 /**

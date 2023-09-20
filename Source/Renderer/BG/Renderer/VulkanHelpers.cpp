@@ -548,8 +548,6 @@ bool VulkanInit_CreateCommandPool(BG::Common::Logger::LoggingSystem* _Logger, Re
     return true;
 }
 
-
-
 bool VulkanInit_CreateCommandBuffers(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
     assert(_Logger != nullptr);
     assert(_RD != nullptr);
@@ -627,7 +625,40 @@ bool VulkanInit_CreateSyncObjects(BG::Common::Logger::LoggingSystem* _Logger, Re
 }
 
 
+bool VulkanUtil_RecreateSwapchain(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
+    assert(_Logger != nullptr);
+    assert(_RD != nullptr);
 
+
+    // Wait Until GPU Is Done Doing Stuff
+    vkDeviceWaitIdle(_RD->VulkanDevice_.device);
+
+
+    // Cleanup Existing VK Objects
+    vkDestroyCommandPool(_RD->VulkanDevice_.device, _RD->VulkanCommandPool_, nullptr);
+
+    for (unsigned int i = 0; i < _RD->VulkanFramebuffers_.size(); i++) {
+        vkDestroyFramebuffer(_RD->VulkanDevice_.device, _RD->VulkanFramebuffers_[i], nullptr);
+    } 
+
+    _RD->Optional_Swapchain_.destroy_image_views(_RD->VulkanSwapchainImageViews_);
+
+    
+    // Now, recreate them at the given resolution
+    if (!VulkanInit_Optional_CreateSwapchain(_Logger, _RD)) {
+        return false;
+    }
+    if (!VulkanInit_CreateFramebuffer(_Logger, _RD)) {
+        return false;
+    }
+    if (!VulkanInit_CreateCommandPool(_Logger, _RD)) {
+        return false;
+    }
+    if (!VulkanInit_CreateCommandBuffers(_Logger, _RD)) {
+        return false;
+    }
+    
+}
 
 
 bool VulkanDeinit_DestroyAll(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {

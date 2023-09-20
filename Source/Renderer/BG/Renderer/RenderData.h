@@ -95,7 +95,6 @@ struct RenderData {
     // Optional Vulkan Handles (For Headless Mode Only)
     
 
-
     // To Be sorted
     VkPipelineLayout VulkanPipelineLayout_;
     VkRenderPass VulkanRenderPass_;
@@ -117,34 +116,7 @@ struct RenderData {
     unsigned int MaxFramesInTransit_ = 3; /**Maxinum number of frames to be in transit to the screen at once.*/
     
 
-
-    // FIXME: will eventually need more attribs, something like this:
-    /*
-
-        VkQueue graphics_queue;
-        VkQueue present_queue;
-
-        std::vector<VkImage> swapchain_images;
-        std::vector<VkImageView> swapchain_image_views;
-        std::vector<VkFramebuffer> framebuffers;
-
-        VkRenderPass render_pass;
-        VkPipelineLayout pipeline_layout;
-        VkPipeline graphics_pipeline;
-
-        VkCommandPool command_pool;
-        std::vector<VkCommandBuffer> command_buffers;
-
-        std::vector<VkSemaphore> available_semaphores;
-        std::vector<VkSemaphore> finished_semaphore;
-        std::vector<VkFence> in_flight_fences;
-        std::vector<VkFence> image_in_flight;
-        size_t current_frame = 0;
-    */
-
-
 };
-
 
 
 
