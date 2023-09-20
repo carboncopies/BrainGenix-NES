@@ -67,6 +67,7 @@ struct RenderData {
     // Queues (How we talk to the GPU through Vulkan)
     VkQueue VulkanGraphicsQeueue_; /**Vulkan Graphics Queue Handle (Used for graphics operations, hence the name)*/
     VkQueue VulkanTransferQeueue_; /**Vulkan Transfer Queue Handle (Used to push/pull data to/from GPU VRAM and CPU RAM)*/
+    VkQueue VulkanPresentQueue_;   /**Vulkan Present Queue Handle*/
 
     // Required Vulkan Handles (For Both Headless Mode And Windowed Mode)
     vkb::Instance VulkanInstance_; /**VulkanBoostrap Wrapper For Our Vulkan Instance*/

@@ -219,6 +219,18 @@ bool VulkanInit_CreateQueues(BG::Common::Logger::LoggingSystem* _Logger, RenderD
     }
     _RD->VulkanTransferQeueue_ = VulkanTransferQueueReturn.value();
 
+    _Logger->Log("Setting Up Vulkan Present Queue", 4);
+    vkb::Result<VkQueue> VulkanPresentQueueReturn = _RD->VulkanDevice_.get_queue(vkb::QueueType::present);
+    if (!VulkanPresentQueueReturn) {
+        _Logger->Log("Error During Renderer Initialization", 10);
+        _Logger->Log("Failed to Get Vulkan Present Queue (See Following Line For Error)", 10);
+        std::string ErrorMessage = "VK_Bootstrap Reported Error: " + VulkanPresentQueueReturn.error().message();
+        _Logger->Log(ErrorMessage, 10);
+
+        return false;
+    }
+    _RD->VulkanPresentQueue_ = VulkanPresentQueueReturn.value();
+
     return true;
 
 }
