@@ -125,9 +125,9 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
     }
 
     // Create Graphics Pipeline
-    // if (!VulkanInit_CreateGraphicsPipeline(Logger_, &RenderData_)) {
-    //     return false;
-    // }
+    if (!VulkanInit_CreateGraphicsPipeline(Logger_, &RenderData_)) {
+        return false;
+    }
 
     // Create Framebuffer (if windowed rendering enabled)
 

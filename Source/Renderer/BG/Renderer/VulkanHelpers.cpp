@@ -445,7 +445,8 @@ bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logge
     PipelineLayoutInfo.setLayoutCount = 0;
     PipelineLayoutInfo.pushConstantRangeCount = 0;
 
-    if (!vkCreatePipelineLayout(_RD->VulkanDevice_.device, &PipelineLayoutInfo, nullptr, &_RD->VulkanPipelineLayout_)) {
+    VkResult PipelineLayoutCreateStatus = vkCreatePipelineLayout(_RD->VulkanDevice_.device, &PipelineLayoutInfo, nullptr, &_RD->VulkanPipelineLayout_);
+    if (PipelineLayoutCreateStatus != VK_SUCCESS) {
         _Logger->Log("Failed To Create Vulkan Pipeline Layout", 9);
         return false;
     }
@@ -475,7 +476,8 @@ bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logge
 	PipelineInfo.subpass = 0;
 	PipelineInfo.basePipelineHandle = VK_NULL_HANDLE;
 
-    if (!vkCreateGraphicsPipelines(_RD->VulkanDevice_.device, VK_NULL_HANDLE, 1, &PipelineInfo, nullptr, &_RD->VulkanGraphicsPipeline)) {
+    VkResult PipelineCreateStatus = vkCreateGraphicsPipelines(_RD->VulkanDevice_.device, VK_NULL_HANDLE, 1, &PipelineInfo, nullptr, &_RD->VulkanGraphicsPipeline);
+    if (PipelineCreateStatus != VK_SUCCESS) {
         _Logger->Log("Failed To Create Vulkan Graphics Pipeline", 9);
         return false;
         
