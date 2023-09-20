@@ -40,7 +40,8 @@ bool Vulkan_CreateShaderModule(BG::Common::Logger::LoggingSystem* _Logger, Rende
     CreateInfo.pCode = reinterpret_cast<const uint32_t*>(_ShaderBytecode->data());
 
     // Now Setup The Module
-    if (!vkCreateShaderModule(_RD->VulkanDevice_.device, &CreateInfo, nullptr, _ShaderModule)) {
+    VkResult ShaderCreateStatus = vkCreateShaderModule(_RD->VulkanDevice_.device, &CreateInfo, nullptr, _ShaderModule);
+    if (ShaderCreateStatus != VK_SUCCESS) {
         _Logger->Log("Error During Shader Module Creation, Failed To Create Shader Module", 8);
         return false;
     }
