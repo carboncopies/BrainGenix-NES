@@ -252,7 +252,7 @@ bool VulkanInit_CreateRenderPass(BG::Common::Logger::LoggingSystem* _Logger, Ren
     assert(_RD != nullptr);
 
     // Create Color ATtachment for Renderpass
-    VkAttachmentDescription ColorAttachment = {};
+    VkAttachmentDescription ColorAttachment{};
     ColorAttachment.format = _RD->Optional_Swapchain_.image_format;
 	ColorAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
 	ColorAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
@@ -263,24 +263,24 @@ bool VulkanInit_CreateRenderPass(BG::Common::Logger::LoggingSystem* _Logger, Ren
 	ColorAttachment.finalLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
 
 
-    VkAttachmentReference ColorAttachmentRef = {};
+    VkAttachmentReference ColorAttachmentRef{};
 	ColorAttachmentRef.attachment = 0;
 	ColorAttachmentRef.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
 
-	VkSubpassDescription Subpass = {};
+	VkSubpassDescription Subpass{};
 	Subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
 	Subpass.colorAttachmentCount = 1;
 	Subpass.pColorAttachments = &ColorAttachmentRef;
 
-	VkSubpassDependency Dependency = {};
+	VkSubpassDependency Dependency{};
 	Dependency.srcSubpass = VK_SUBPASS_EXTERNAL;
 	Dependency.dstSubpass = 0;
 	Dependency.srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
 	Dependency.srcAccessMask = 0;
 	Dependency.dstStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
-	Dependency.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_READ_BIT | VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;
+	Dependency.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_READ_BIT | VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT; // | VK_ACCESS_COLOR_ATTACHMENT_READ_BIT
 
-	VkRenderPassCreateInfo RenderPassInfo = {};
+	VkRenderPassCreateInfo RenderPassInfo{};
 	RenderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
 	RenderPassInfo.attachmentCount = 1;
 	RenderPassInfo.pAttachments = &ColorAttachment;
@@ -289,9 +289,16 @@ bool VulkanInit_CreateRenderPass(BG::Common::Logger::LoggingSystem* _Logger, Ren
 	RenderPassInfo.dependencyCount = 1;
 	RenderPassInfo.pDependencies = &Dependency;
 
+    // So apparently, VkResult cannot just be checked in an if statement - doing if (!Status) WILL NOT WORK
+    // This cost me so much time ~13 hours. WHY KHRONOS, WHY!
+    // So, I highly suggest not doing that. Instead, do if (Status != VK_SUCCESS) which will actually work, unlike the other thing.
+    // Rant over.
     _Logger->Log("Creating Vulkan Render Pass", 2);
-    if (!vkCreateRenderPass(_RD->VulkanDevice_.device, &RenderPassInfo, nullptr, &_RD->VulkanRenderPass_)) {
+    VkResult Status = vkCreateRenderPass(_RD->VulkanDevice_.device, &RenderPassInfo, nullptr, &_RD->VulkanRenderPass_);
+    if (Status != VK_SUCCESS) {
         _Logger->Log("Failed To Create Vulkan Render Pass", 9);
+        _Logger->Log(std::string("vkCreateRenderPass Returned Code ") + std::to_string(Status), 9);
+        
         return false;
     }
 

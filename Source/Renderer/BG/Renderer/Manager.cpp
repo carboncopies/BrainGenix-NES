@@ -105,11 +105,6 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
         return false;
     }
 
-    // Now, We Need To Create Vulkan Queues
-    if (!VulkanInit_CreateQueues(Logger_, &RenderData_)) {
-        return false;
-    }
-
     // Create Swapchain Optionally If Rendering To A Window
     if (RenderData_.IsWindowed_) {
         if (!VulkanInit_Optional_CreateSwapchain(Logger_, &RenderData_)) {
@@ -117,14 +112,22 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
         }
     }
 
-    // Create Render Pass
-
-    //  FIXME - ADD THIS LATER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    // Create Graphics Pipeline
-    if (!VulkanInit_CreateGraphicsPipeline(Logger_, &RenderData_)) {
+    // Now, We Need To Create Vulkan Queues
+    if (!VulkanInit_CreateQueues(Logger_, &RenderData_)) {
         return false;
     }
+
+
+
+    // Create Render Pass
+    if (!VulkanInit_CreateRenderPass(Logger_, &RenderData_)) {
+        return false;
+    }
+
+    // Create Graphics Pipeline
+    // if (!VulkanInit_CreateGraphicsPipeline(Logger_, &RenderData_)) {
+    //     return false;
+    // }
 
     // Create Framebuffer (if windowed rendering enabled)
 
