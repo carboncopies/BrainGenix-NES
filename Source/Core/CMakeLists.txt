@@ -27,16 +27,17 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/EngineController.cpp
   ${SRC_DIR}/Core/Simulator/EngineController.h
 
+  ${SRC_DIR}/Core/Simulator/Geometries/Geometry.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/Geometry.h
+  ${SRC_DIR}/Core/Simulator/Geometries/Sphere.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/Sphere.h
+  ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.h
+  ${SRC_DIR}/Core/Simulator/Geometries/Box.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/Box.h
+
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.h
-  ${SRC_DIR}/Core/Simulator/Structs/Shapes.cpp
-  ${SRC_DIR}/Core/Simulator/Structs/Shapes.h
-  ${SRC_DIR}/Core/Simulator/Structs/Sphere.cpp
-  ${SRC_DIR}/Core/Simulator/Structs/Sphere.h
-  ${SRC_DIR}/Core/Simulator/Structs/Cylinder.cpp
-  ${SRC_DIR}/Core/Simulator/Structs/Cylinder.h
-  ${SRC_DIR}/Core/Simulator/Structs/Box.cpp
-  ${SRC_DIR}/Core/Simulator/Structs/Box.h
   ${SRC_DIR}/Core/Simulator/Structs/BS.cpp
   ${SRC_DIR}/Core/Simulator/Structs/BS.h
   ${SRC_DIR}/Core/Simulator/Structs/Staple.cpp

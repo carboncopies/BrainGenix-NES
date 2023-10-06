@@ -10,35 +10,31 @@
 
 #pragma once
 
-// Standard Libraries (BG convention: use <> instead of "")
-#include <string>
-
-// Third-Party Libraries (BG convention: use <> instead of "")
-
 // Internal Libraries (BG convention: use <> instead of "")
-
+#include <Simulator/Geometries/Geometry.h>
 
 namespace BG {
 namespace NES {
 namespace Simulator {
-namespace Shapes {
+namespace Geometries {
 
 
 /**
- * @brief Name of the Sphere
+ * @brief This struct defines a sphere geometry used in creation of components of a simple ball-and-stick neural circuit.
  * 
  */
-struct Sphere {
+struct Sphere: Geometry {
+    
+    float Radius_um; //! Radius in micrometers of the sphere.
 
-    std::string Name; /**Name of the Sphere*/
-    int ID; /**ID of the Sphere*/
-
-    float Radius_nm; /**Radius in nanometers of the sphere*/
-    float Center_nm[3]; /**Position of the center of the sphere in nanometers (relative to origin)*/
-
+    //! Renders the sphere in 3D.
+    void Show(); 
+    
+    //! Returns the volume of the sphere in micrometer^3.
+    float Volume_um3();
 };
 
-}; // Close Namespace Shapes
+}; // Close Namespace Geometries
 }; // Close Namespace Simulator
 }; // Close Namespace NES
 }; // Close Namespace BG
