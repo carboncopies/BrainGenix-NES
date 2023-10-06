@@ -25,9 +25,14 @@ namespace Geometries {
  */
 struct Box: Geometry {
 
-    float Dims_um[3]; //! Dimensions of the box.
-    float Rotations_rad[3]; //! Rotation of the box (euler angles) in radians.
+    float Dims_um[3] = {5.0, 10.0, 10.0}; //! Dimensions of the box.
+    float Rotations_rad[3] = {0.0, 0.0, 0.0}; //! Rotation of the box (euler angles) in radians.
     
+    //! Constructors
+    Box();  
+    Box(float Center_um[3], float Dims_um[3]); 
+    Box(float Center_um[3], float Dims_um[3], float Rotations_rad[3]);
+
     //! Renders the box in 3D.
     void Show(); 
     
