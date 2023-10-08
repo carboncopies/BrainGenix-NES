@@ -30,7 +30,7 @@ void Box::Show() {
 
 //! Returns the volume of the box in micrometer^3.
 float Box::Volume_um3() {
-    return 0.0;
+    return this->Dims_um[0] * this->Dims_um[1] * this->Dims_um[2];
 };
 
 }; // Close Namespace Geometries

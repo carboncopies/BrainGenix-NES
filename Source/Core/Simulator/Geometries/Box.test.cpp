@@ -22,6 +22,7 @@
 
 struct BoxTest: testing::Test {
     BG::NES::Simulator::Geometries::Box* testBox = nullptr;
+    float tol = 1e-3;
 
     void SetUp() {
         float Center_um[3] = {10.0, 10.0, 10.0};
@@ -40,6 +41,6 @@ TEST_F( BoxTest, test_Volume_um3_default ) {
 
     float volume_um3 = testBox->Volume_um3();
 
-    ASSERT_EQ(volume_um3, 5.5 * 10.2 * 6.7);
+    ASSERT_NEAR(volume_um3, 5.5 * 10.2 * 6.7, tol) << "Volume = " << volume_um3;
 }
 
