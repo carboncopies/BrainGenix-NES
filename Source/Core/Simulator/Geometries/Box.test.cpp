@@ -12,7 +12,7 @@
 
 #include <gtest/gtest.h>
 
-#include <Simulator/Geometries/Geometry.h>
+#include <Simulator/Geometries/Box.h>
 
 
 /**
@@ -21,20 +21,20 @@
  */
 
 struct BoxTest: testing::Test {
-    Box* testBox = nullptr;
+    BG::NES::Simulator::Geometries::Box* testBox = nullptr;
 
     void SetUp() {
-        float Center_um = {10.0, 10.0, 10.0};
-        float Dims_um = {5.5, 10.2, 6.7};
-        float Rotations_rad = {M_PI / 4.0, M_PI / 4.0, M_PI / 2.0};
+        float Center_um[3] = {10.0, 10.0, 10.0};
+        float Dims_um[3] = {5.5, 10.2, 6.7};
+        float Rotations_rad[3] = {M_PI / 4.0, M_PI / 4.0, M_PI / 2.0};
 
-        testBox = new Box(Center_um, Dims_um, Rotations_rad);
+        testBox = new BG::NES::Simulator::Geometries::Box(Center_um, Dims_um, Rotations_rad);
     }
 
     void TearDown() {
         delete testBox;
     }
-}
+};
 
 TEST_F( BoxTest, test_Volume_um3_default ) {
 
