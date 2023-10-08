@@ -5,3 +5,6 @@ cd ../Build
 
 echo "Running Tests"
 ctest
+
+# Return to Tools directory
+cd ../Tools
