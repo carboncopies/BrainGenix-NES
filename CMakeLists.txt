@@ -23,6 +23,9 @@ project(
 	LANGUAGES CXX
 	)
 
+# Set project static library name
+set(PROJECT_LIBRARY_NAME "braingenix_nes")
+
 
 # Include Util CMake Scripts
 include(${CMAKE_UTIL_DIR}/ColorizeMessages.cmake)
@@ -38,6 +41,9 @@ find_package(Boost REQUIRED COMPONENTS program_options)
 
 message(STATUS "Finding rpclib Package")
 find_package(rpclib CONFIG REQUIRED)
+
+message(STATUS "Finding gtest Package")
+find_package(GTest REQUIRED)
 
 message(STATUS "Finding system pthreads lib")
 find_package(Threads REQUIRED)
@@ -76,6 +82,9 @@ install(FILES "${SRC_DIR}/Data/BrainGenix-NES.service"
     DESTINATION "/etc/systemd/system/"
     COMPONENT Release
 )
+
+# Enable testing
+include(CTest)
 
 
 

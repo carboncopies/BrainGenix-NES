@@ -61,11 +61,35 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h
 
+  )
+ 
+set(UNITTEST_SOURCES
 
+  ${SRC_DIR}/Core/Simulator/Geometries/Box.test.cpp
   )
 
+# Configure test binaries
+set(TEST_BINS
+
+  Box.test
+)
 
 
+# Create Main Library
+add_library(${PROJECT_LIBRARY_NAME} STATIC ${MAIN_SOURCES})
+target_compile_features(${PROJECT_LIBRARY_NAME} PRIVATE cxx_std_17)
+
+target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE 
+    nlohmann_json::nlohmann_json
+    Boost::program_options
+    rpclib::rpc
+    ${CMAKE_THREAD_LIBS_INIT}
+
+    VersioningSystem
+    CompileTimeStamp
+    CompilePlatformInfo
+)
+target_include_directories(${PROJECT_LIBRARY_NAME} PUBLIC ${SRC_DIR}/Core)
 
 # Create Main Executable
 add_executable(${PROJECT_NAME} ${MAIN_SOURCES})
@@ -82,5 +106,19 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     CompileTimeStamp
     CompilePlatformInfo
 )
-
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
+
+# Configure testing.
+enable_testing()
+message(STATUS "Testing enabled. Building test binaries ...")
+find_package(GTest REQUIRED)
+add_executable(${TEST_BINS} ${UNITTEST_SOURCES})
+target_link_libraries(${TEST_BINS} PRIVATE 
+    GTest::gtest 
+    GTest::gtest_main
+    ${PROJECT_LIBRARY_NAME}
+)
+target_include_directories(${TEST_BINS} PUBLIC ${SRC_DIR}/Core)
+
+include(GoogleTest)
+gtest_discover_tests(${TEST_BINS})
