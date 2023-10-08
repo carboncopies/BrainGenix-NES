@@ -27,6 +27,10 @@ struct Sphere: Geometry {
     
     float Radius_um; //! Radius in micrometers of the sphere.
 
+    //! Constructors
+    Sphere();
+    Sphere(float Center_um[3], float Radius_um);
+
     //! Renders the sphere in 3D.
     void Show(); 
     

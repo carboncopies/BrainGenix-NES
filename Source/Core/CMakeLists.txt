@@ -61,17 +61,19 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h
 
-  )
+)
  
 set(UNITTEST_SOURCES
 
   ${SRC_DIR}/Core/Simulator/Geometries/Box.test.cpp
-  )
+  ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.test.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/Sphere.test.cpp
+)
 
 # Configure test binaries
 set(TEST_BINS
 
-  Box.test
+    BrainGenix-NES.test
 )
 
 

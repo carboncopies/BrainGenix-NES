@@ -25,11 +25,15 @@ namespace Geometries {
  */
 struct Cylinder: Geometry {
 
-    float End0Radius_um; //! Radius in micrometers of the first end of the cylinder.
-    float End0Pos_um[3]; //! Position of the first end of the Cylinder in micrometers (relative to origin).
-    float End1Radius_um; //! Radius in micrometers of the second end of the cylinder.
-    float End1Pos_um[3]; //! Position of the second end of the Cylinder in micrometers (relative to origin).
-                         
+    float End0Radius_um = 1.0; //! Radius in micrometers of the first end of the cylinder.
+    float End0Pos_um[3] = {}; //! Position of the first end of the Cylinder in micrometers (relative to origin).
+    float End1Radius_um = 1.0; //! Radius in micrometers of the second end of the cylinder.
+    float End1Pos_um[3] = {1.0, 0.0, 0.0}; //! Position of the second end of the Cylinder in micrometers (relative to origin).
+    
+    // Constructors
+    Cylinder();
+    Cylinder(float End0Radius_um, float End0Pos_um[3], float End1Radius_um, float End1Pos_um[3]);  
+    
     //! Renders the cylinder in 3D.
     void Show();
     
