@@ -76,7 +76,6 @@ set(TEST_BINS
     BrainGenix-NES.test
 )
 
-
 # Create Main Library
 add_library(${PROJECT_LIBRARY_NAME} STATIC ${MAIN_SOURCES})
 target_compile_features(${PROJECT_LIBRARY_NAME} PRIVATE cxx_std_17)
@@ -112,8 +111,9 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
 
 # Configure testing.
 enable_testing()
+include(GoogleTest)
+
 message(STATUS "Testing enabled. Building test binaries ...")
-find_package(GTest REQUIRED)
 add_executable(${TEST_BINS} ${UNITTEST_SOURCES})
 target_link_libraries(${TEST_BINS} PRIVATE 
     GTest::gtest 
@@ -122,5 +122,4 @@ target_link_libraries(${TEST_BINS} PRIVATE
 )
 target_include_directories(${TEST_BINS} PUBLIC ${SRC_DIR}/Core)
 
-include(GoogleTest)
 gtest_discover_tests(${TEST_BINS})

@@ -10,6 +10,8 @@
 
 #pragma once
 
+#include <vector>
+
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Geometries/Geometry.h>
 
@@ -38,6 +40,10 @@ struct Box: Geometry {
     
     //! Returns the volume of the box in micrometer^3.
     float Volume_um3();
+
+    //! Returns 1 of n equally sliced subpartitions of the Box
+    //! shape, when lined up from left to right along the width.
+    std::vector<std::vector<float>> EqualSliceBounds(int nSlices, int slice);
 };
 
 }; // Close Namespace Geometries
