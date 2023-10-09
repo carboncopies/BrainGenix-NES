@@ -59,3 +59,16 @@ TEST_F( CylinderTest, test_Volume_um3_default ) {
     ASSERT_NEAR(volume_um3, expected_volume_um3, tol) << "Volume = " << volume_um3;
 }
 
+TEST_F( CylinderTest, test_RAtPosition_um_default ) {
+    float gotR_um = 0.0;
+   
+    gotR_um = testCylinder->RAtPosition_um(0.5);
+    ASSERT_NEAR(gotR_um, 0.5 * (1.2 + 0.5), tol) << "R = " << gotR_um;
+
+    gotR_um = testCylinder->RAtPosition_um(1.0);
+    ASSERT_NEAR(gotR_um, 1.2, tol) << "R = " << gotR_um;
+
+    gotR_um = testCylinder->RAtPosition_um(0.0);
+    ASSERT_NEAR(gotR_um, 0.5, tol) << "R = " << gotR_um;
+}
+

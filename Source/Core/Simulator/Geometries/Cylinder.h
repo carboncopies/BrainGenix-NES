@@ -39,6 +39,10 @@ struct Cylinder: Geometry {
     
     //! Returns the volume of the cylinder in micrometer^3.
     float Volume_um3();
+
+    //! Returns the distance from the origin along cylinder axis at specified
+    //! fraction of height distance from end 0.
+    float RAtPosition_um(float position);
 };
 
 }; // Close Namespace Geometries

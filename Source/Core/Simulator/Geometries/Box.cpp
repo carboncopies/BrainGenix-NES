@@ -60,6 +60,11 @@ std::vector<std::vector<float>> Box::EqualSliceBounds(int nSlices, int slice) {
     return Bounds;
 }
 
+//! Returns a vector of dimensions of the Box.
+std::vector<float> Box::Sides() {
+    std::vector<float> sides = {this->Dims_um[0], this->Dims_um[1], this->Dims_um[2]};
+    return sides;
+}
 
 }; // Close Namespace Geometries
 }; // Close Namespace Simulator

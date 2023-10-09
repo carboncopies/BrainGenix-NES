@@ -45,6 +45,17 @@ float Cylinder::Volume_um3() {
     return volume_um3;
 };
 
+
+//! Returns the distance from the origin along cylinder axis at specified
+//! fraction of height distance from end 0.
+float Cylinder::RAtPosition_um(float pos) {
+    if (pos<=0.0) return this->End0Radius_um;
+    if (pos>=1.0) return this->End1Radius_um;
+
+    float rDiff = this->End1Radius_um - this->End0Radius_um;
+    return this->End0Radius_um + pos * rDiff;
+};
+
 }; // Close Namespace Geometries
 }; // Close Namespace Simulator
 }; // Close Namespace NES

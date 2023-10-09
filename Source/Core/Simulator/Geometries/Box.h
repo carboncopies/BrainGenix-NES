@@ -44,6 +44,9 @@ struct Box: Geometry {
     //! Returns 1 of n equally sliced subpartitions of the Box
     //! shape, when lined up from left to right along the width.
     std::vector<std::vector<float>> EqualSliceBounds(int nSlices, int slice);
+
+    //! Returns a vector of dimensions of the Box.
+    std::vector<float> Sides();
 };
 
 }; // Close Namespace Geometries
