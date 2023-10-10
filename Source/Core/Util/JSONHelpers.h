@@ -17,7 +17,7 @@
 #include <nlohmann/json.hpp>
 
 // Internal Libraries (BG convention: use <> instead of "")
-
+#include <Simulator/Geometries/VecTools.h>
 
 namespace BG {
 namespace NES {
@@ -29,9 +29,9 @@ float GetFloat(nlohmann::json *_JSON, std::string _ParamName);
 std::string GetString(nlohmann::json *_JSON, std::string _ParamName);
 
 void SetVec3(nlohmann::json* _Target, std::string _Input, std::string _Prefix, std::string _Units="nm");
-void SetVec3(float* _Vector, std::string _Input);
+void SetVec3(Simulator::Geometries::Vec3D& _Vector, std::string _Input);
 
-void GetVec3(float* _Vector, nlohmann::json* _Input, std::string _Prefix, std::string _Units="nm");
+void GetVec3(Simulator::Geometries::Vec3D& _Vector, nlohmann::json* _Input, std::string _Prefix, std::string _Units="nm");
 
 void GetFloatVector(std::vector<float>* _Vector, nlohmann::json* _Input, std::string _JSONKey);
 

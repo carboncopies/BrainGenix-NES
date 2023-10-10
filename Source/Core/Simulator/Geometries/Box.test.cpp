@@ -10,6 +10,7 @@
 
 #include <cmath>
 #include <vector>
+#include <memory>
 
 #include <gtest/gtest.h>
 
@@ -22,23 +23,24 @@
  */
 
 struct BoxTest: testing::Test {
-    BG::NES::Simulator::Geometries::Box* testBox = nullptr;
+    std::unique_ptr<BG::NES::Simulator::Geometries::Box> testBox = nullptr;
     float tol = 1e-3;
     float minY = 0.0, maxY = 0.0;
 
     void SetUp() {
-        float Center_um[3] = {10.0, 10.0, 10.0};
-        float Dims_um[3] = {5.5, 10.2, 6.7};
-        float Rotations_rad[3] = {M_PI / 4.0, M_PI / 4.0, M_PI / 2.0};
+        BG::NES::Simulator::Geometries::Vec3D Center_um(10.0, 10.0, 10.0);
+        BG::NES::Simulator::Geometries::Vec3D Dims_um(5.5, 10.2, 6.7);
+        BG::NES::Simulator::Geometries::Vec3D Rotations_rad(M_PI / 4.0, M_PI / 4.0, M_PI / 2.0);
 
-        testBox = new BG::NES::Simulator::Geometries::Box(Center_um, Dims_um, Rotations_rad);
+        testBox = std::make_unique<BG::NES::Simulator::Geometries::Box>(
+                Center_um, Dims_um, Rotations_rad);
 
-        minY = testBox->Center_um[1] - testBox->Dims_um[1] / 2.0;
-        maxY = testBox->Center_um[1] + testBox->Dims_um[1] / 2.0;
+        minY = testBox->Center_um.y_um - testBox->Dims_um.y_um / 2.0;
+        maxY = testBox->Center_um.y_um + testBox->Dims_um.y_um / 2.0;
     }
 
     void TearDown() {
-        delete testBox;
+        return;
     }
 };
 
@@ -62,7 +64,7 @@ TEST_F( BoxTest, test_EqualSliceBounds_default ) {
 TEST_F( BoxTest, test_Sides_default ) {
     std::vector<float> gotSides = testBox->Sides();
 
-    ASSERT_EQ(gotSides[0], testBox->Dims_um[0]) << "Length = " << gotSides[0];
-    ASSERT_EQ(gotSides[1], testBox->Dims_um[1]) <<  "Breadth = " << gotSides[1];
-    ASSERT_EQ(gotSides[2], testBox->Dims_um[2]) <<  "Height = " << gotSides[2];
+    ASSERT_EQ(gotSides[0], testBox->Dims_um.x_um) << "Length = " << gotSides[0];
+    ASSERT_EQ(gotSides[1], testBox->Dims_um.y_um) <<  "Breadth = " << gotSides[1];
+    ASSERT_EQ(gotSides[2], testBox->Dims_um.z_um) <<  "Height = " << gotSides[2];
 }

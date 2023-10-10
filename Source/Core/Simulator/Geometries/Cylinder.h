@@ -11,6 +11,7 @@
 #pragma once
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Geometries/Geometry.h>
 
 namespace BG {
@@ -26,13 +27,16 @@ namespace Geometries {
 struct Cylinder: Geometry {
 
     float End0Radius_um = 1.0; //! Radius in micrometers of the first end of the cylinder.
-    float End0Pos_um[3] = {}; //! Position of the first end of the Cylinder in micrometers (relative to origin).
+    Vec3D End0Pos_um; //! Position of the first end of the Cylinder in micrometers (relative to origin).
     float End1Radius_um = 1.0; //! Radius in micrometers of the second end of the cylinder.
-    float End1Pos_um[3] = {1.0, 0.0, 0.0}; //! Position of the second end of the Cylinder in micrometers (relative to origin).
+    Vec3D End1Pos_um{1.0, 0.0, 0.0}; //! Position of the second end of the Cylinder in micrometers (relative to origin).
     
     // Constructors
     Cylinder();
-    Cylinder(float End0Radius_um, float End0Pos_um[3], float End1Radius_um, float End1Pos_um[3]);  
+    Cylinder(float _End0Radius_um, 
+             BG::NES::Simulator::Geometries::Vec3D _End0Pos_um, 
+             float _End1Radius_um, 
+             BG::NES::Simulator::Geometries::Vec3D _End1Pos_um);  
     
     //! Renders the cylinder in 3D.
     void Show();

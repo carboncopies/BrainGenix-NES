@@ -35,6 +35,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.h
   ${SRC_DIR}/Core/Simulator/Geometries/Box.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Box.h
+  ${SRC_DIR}/Core/Simulator/Geometries/VecTools.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/VecTools.h
 
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.h
@@ -48,7 +50,7 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampDAC.h
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampADC.cpp
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampADC.h
-
+  
   ${SRC_DIR}/Core/Simulator/Updaters/Staple.cpp
   ${SRC_DIR}/Core/Simulator/Updaters/Staple.h
   ${SRC_DIR}/Core/Simulator/Updaters/Receptor.cpp
@@ -68,6 +70,7 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/Geometries/Box.test.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.test.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Sphere.test.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/VecTools.test.cpp
 )
 
 # Configure test binaries

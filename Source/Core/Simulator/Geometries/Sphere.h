@@ -11,6 +11,7 @@
 #pragma once
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Geometries/Geometry.h>
 
 namespace BG {
@@ -29,7 +30,7 @@ struct Sphere: Geometry {
 
     //! Constructors
     Sphere();
-    Sphere(float Center_um[3], float Radius_um);
+    Sphere(Vec3D _Center_um, float _Radius_um);
 
     //! Renders the sphere in 3D.
     void Show(); 

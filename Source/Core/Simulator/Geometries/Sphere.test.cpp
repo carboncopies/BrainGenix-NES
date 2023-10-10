@@ -9,6 +9,7 @@
 */
 
 #include <cmath>
+#include <memory>
 
 #include <gtest/gtest.h>
 
@@ -21,17 +22,18 @@
  */
 
 struct SphereTest: testing::Test {
-    BG::NES::Simulator::Geometries::Sphere* testSphere = nullptr;
+    std::unique_ptr<BG::NES::Simulator::Geometries::Sphere> testSphere = nullptr;
     float tol = 1e-3;
 
     void SetUp() {
-        float center_um[3] = {10.0, 10.0, 10.0};
+        BG::NES::Simulator::Geometries::Vec3D center_um{10.0, 10.0, 10.0};
         float radius_um = 2.32;
-        testSphere = new BG::NES::Simulator::Geometries::Sphere(center_um, radius_um);
+        testSphere = std::make_unique<BG::NES::Simulator::Geometries::Sphere>(
+                center_um, radius_um);
     }   
 
     void TearDown() {
-        delete testSphere;
+        return;
     }
 };
 
@@ -44,4 +46,3 @@ TEST_F( SphereTest, test_Volume_um3_default ) {
 
     ASSERT_NEAR(volume_um3, expected_volume_um3, tol) << "Volume = " << volume_um3;
 }
-

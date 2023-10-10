@@ -10,10 +10,10 @@ namespace Geometries {
 //! Constructors
 Sphere::Sphere() { };
 
-Sphere::Sphere(float Center_um[3], float Radius_um) {
-    std::copy(Center_um, Center_um+3, this->Center_um);
-    this->Radius_um = Radius_um;
-}
+Sphere::Sphere(Vec3D _Center_um, float _Radius_um) { 
+    this->Center_um = _Center_um;
+    this->Radius_um = _Radius_um;
+};
 
 //! Renders the sphere in 3D.
 void Sphere::Show(){

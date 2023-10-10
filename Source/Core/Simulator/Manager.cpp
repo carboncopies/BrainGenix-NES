@@ -239,15 +239,13 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
     float CenterPosZ_um = Util::GetFloat(&RequestJSON, "CenterPosZ_um");
     std::string Name = Util::GetString(&RequestJSON, "Name");
 
-
-
     // Build New Sphere Object
     Geometries::Sphere S;
     S.Name = Name;
     S.Radius_um = Radius_um;
-    S.Center_um[0] = CenterPosX_um;
-    S.Center_um[1] = CenterPosY_um;
-    S.Center_um[2] = CenterPosZ_um;
+    S.Center_um.x_um = CenterPosX_um;
+    S.Center_um.y_um = CenterPosY_um;
+    S.Center_um.z_um = CenterPosZ_um;
 
 
     // Add to Sim, Set ID
@@ -295,13 +293,13 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     Geometries::Cylinder S;
     S.Name = Name;
     S.End0Radius_um = E0Radius_um;
-    S.End0Pos_um[0] = E0X_um;
-    S.End0Pos_um[1] = E0Y_um;
-    S.End0Pos_um[2] = E0Z_um;
+    S.End0Pos_um.x_um = E0X_um;
+    S.End0Pos_um.y_um = E0Y_um;
+    S.End0Pos_um.z_um = E0Z_um;
     S.End1Radius_um = E1Radius_um;
-    S.End1Pos_um[0] = E1X_um;
-    S.End1Pos_um[1] = E1Y_um;
-    S.End1Pos_um[2] = E1Z_um;
+    S.End1Pos_um.x_um = E1X_um;
+    S.End1Pos_um.y_um = E1Y_um;
+    S.End1Pos_um.z_um = E1Z_um;
 
 
     // Add to Sim, Set ID
@@ -340,7 +338,7 @@ std::string Manager::BoxCreate(std::string _JSONRequest) {
 
     // Build New Box Object
     Geometries::Box S;
-    S.Name = Util::GetString(&RequestJSON, "Name");;
+    S.Name = Util::GetString(&RequestJSON, "Name");
     Util::GetVec3(S.Center_um, &RequestJSON, "Center");
     Util::GetVec3(S.Dims_um, &RequestJSON, "Dims");
     Util::GetVec3(S.Rotations_rad, &RequestJSON, "Rotations", "rad");
@@ -471,7 +469,7 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     C.DestinationCompartmentID = Util::GetInt(&RequestJSON, "DestinationCompartmentID");
     C.Conductance_nS = Util::GetFloat(&RequestJSON, "Conductance_nS");
     C.TimeConstant_ms  = Util::GetFloat(&RequestJSON, "TimeConstant_ms");
-    Util::GetVec3(C.ReceptorPos_nm, &RequestJSON, "ReceptorPos");    
+    Util::GetVec3(C.ReceptorPos_um, &RequestJSON, "ReceptorPos");    
 
 
     // Add to Sim, Set ID
@@ -513,7 +511,7 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
     T.Name = Util::GetString(&RequestJSON, "Name");
     T.DestinationCompartmentID = Util::GetInt(&RequestJSON, "DestinationCompartmentID");
     T.Timestep_ms = 0.0f;
-    Util::GetVec3(T.ClampPos_nm, &RequestJSON, "ClampPos");    
+    Util::GetVec3(T.ClampPos_um, &RequestJSON, "ClampPos");    
 
 
     // Add to Sim, Set ID
@@ -596,7 +594,7 @@ std::string Manager::PatchClampADCCreate(std::string _JSONRequest) {
     T.Name = Util::GetString(&RequestJSON, "Name");
     T.SourceCompartmentID = Util::GetInt(&RequestJSON, "SourceCompartmentID");
     T.Timestep_ms = 0.0f;
-    Util::GetVec3(T.ClampPos_nm, &RequestJSON, "ClampPos");    
+    Util::GetVec3(T.ClampPos_um, &RequestJSON, "ClampPos");    
 
 
     // Add to Sim, Set ID

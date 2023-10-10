@@ -13,6 +13,7 @@
 #include <vector>
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Geometries/Geometry.h>
 
 namespace BG {
@@ -27,13 +28,13 @@ namespace Geometries {
  */
 struct Box: Geometry {
 
-    float Dims_um[3] = {5.0, 10.0, 10.0}; //! Dimensions of the box.
-    float Rotations_rad[3] = {0.0, 0.0, 0.0}; //! Rotation of the box (euler angles) in radians.
+    Vec3D Dims_um{5.0, 10.0, 10.0}; //! Dimensions of the box.
+    Vec3D Rotations_rad{0.0, 0.0, 0.0}; //! Rotation of the box (euler angles) in radians.
     
     //! Constructors
     Box();  
-    Box(float Center_um[3], float Dims_um[3]); 
-    Box(float Center_um[3], float Dims_um[3], float Rotations_rad[3]);
+    Box(Vec3D _Center_um, Vec3D _Dims_um); 
+    Box(Vec3D _Center_um, Vec3D _Dims_um, Vec3D _Rotations_rad);
 
     //! Renders the box in 3D.
     void Show(); 

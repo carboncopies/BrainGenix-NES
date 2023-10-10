@@ -12,17 +12,15 @@ namespace Geometries {
 
 Box::Box() { };
 
-Box::Box(float Center_um[3], float Dims_um[3]){
-
-    std::copy(Center_um, Center_um+3, this->Center_um);
-    std::copy(Dims_um, Dims_um+3, this->Dims_um);
+Box::Box(Vec3D _Center_um, Vec3D _Dims_um) {
+    this->Center_um = _Center_um;
+    this->Dims_um = _Dims_um;
 };
 
-Box::Box(float Center_um[3], float Dims_um[3], float Rotations_rad[3]) {
-
-    std::copy(Center_um, Center_um+3, this->Center_um);
-    std::copy(Dims_um, Dims_um+3, this->Dims_um);
-    std::copy(Rotations_rad, Rotations_rad+3, this->Rotations_rad);
+Box::Box(Vec3D _Center_um, Vec3D _Dims_um, Vec3D _Rotations_rad) {
+    this->Center_um = _Center_um;
+    this->Dims_um = _Dims_um;
+    this->Rotations_rad = _Rotations_rad;
 };
 
 //! Renders the box in 3D.
@@ -32,7 +30,7 @@ void Box::Show() {
 
 //! Returns the volume of the box in micrometer^3.
 float Box::Volume_um3() {
-    return this->Dims_um[0] * this->Dims_um[1] * this->Dims_um[2];
+    return this->Dims_um.x_um * this->Dims_um.y_um * this->Dims_um.z_um;
 };
 
 
@@ -45,24 +43,25 @@ std::vector<std::vector<float>> Box::EqualSliceBounds(int nSlices, int slice) {
 
     assert(slice <= nSlices);
 
-    pWidth = this->Dims_um[1] / nSlices;
-    y0 = this->Center_um[1] - this->Dims_um[1] / 2.0;
+    pWidth = this->Dims_um.y_um / nSlices;
+    y0 = this->Center_um.y_um - this->Dims_um.y_um / 2.0;
 
-    topLeft[0] = this->Center_um[0] - this->Dims_um[0] / 2.0; 
+    topLeft[0] = this->Center_um.x_um - this->Dims_um.x_um / 2.0; 
     topLeft[1] = y0 + slice * pWidth; 
-    topLeft[2] = this->Center_um[2] - this->Dims_um[2] / 2.0;
+    topLeft[2] = this->Center_um.z_um - this->Dims_um.z_um / 2.0;
 
-    bottomRight[0] = this->Center_um[0] + this->Dims_um[0] / 2.0; 
+    bottomRight[0] = this->Center_um.x_um + this->Dims_um.x_um / 2.0; 
     bottomRight[1] = y0 + (slice + 1.0) * pWidth; 
-    bottomRight[2] = this->Center_um[2] + this->Dims_um[2] / 2.0;
+    bottomRight[2] = this->Center_um.z_um + this->Dims_um.z_um / 2.0;
 
-    std::vector<std::vector<float>> Bounds = {topLeft, bottomRight};
-    return Bounds;
+    std::vector<std::vector<float>> bounds = {topLeft, bottomRight};
+    return bounds;
 }
 
 //! Returns a vector of dimensions of the Box.
 std::vector<float> Box::Sides() {
-    std::vector<float> sides = {this->Dims_um[0], this->Dims_um[1], this->Dims_um[2]};
+    std::vector<float> sides = \
+        {this->Dims_um.x_um, this->Dims_um.y_um, this->Dims_um.z_um};
     return sides;
 }
 

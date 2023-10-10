@@ -13,6 +13,8 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <string>
 
+#include <Simulator/Geometries/VecTools.h>
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -28,7 +30,7 @@ struct Geometry {
     std::string Name;   //! Name of the Geometry
     int ID;             //! ID of the Geometry
 
-    float Center_um[3] = {}; //! Center of the geometry in micrometers.
+    Vec3D Center_um; //! Center of the geometry in micrometers.
 
    
     //! Renders the object in 3D.
