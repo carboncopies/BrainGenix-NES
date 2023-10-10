@@ -39,6 +39,8 @@ struct Vec3D {
     Vec3D operator*(const float other) const;
     //! 1/scalar * Vector
     Vec3D operator/(const float other) const;
+    //! Vector == Vector
+    bool operator==(const Vec3D& other) const;
     
     //! Distance between two vectors
     float Distance(const Vec3D& other) const; 

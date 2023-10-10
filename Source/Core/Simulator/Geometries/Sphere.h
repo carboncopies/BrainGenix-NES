@@ -30,6 +30,7 @@ struct Sphere: Geometry {
 
     //! Constructors
     Sphere();
+    Sphere(float _Radius_um);
     Sphere(Vec3D _Center_um, float _Radius_um);
 
     //! Renders the sphere in 3D.

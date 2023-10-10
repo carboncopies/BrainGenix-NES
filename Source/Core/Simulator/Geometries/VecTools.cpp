@@ -42,6 +42,12 @@ Vec3D Vec3D::operator/(const float other) const {
                 this->y_um / other, this->z_um / other);
 };
 
+//! Vector == Vector
+bool Vec3D::operator==(const Vec3D& other) const {
+    return (this->x_um==other.x_um) && \
+           (this->y_um==other.y_um) && \
+           (this->z_um==other.z_um);
+};
 float Vec3D::Distance(const Vec3D& other) const {
     float distance = 0.0;
     Vec3D diff = *this - other;

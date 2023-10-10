@@ -10,6 +10,8 @@ namespace Geometries {
 //! Constructors
 Sphere::Sphere() { };
 
+Sphere::Sphere(float _Radius_um) : Radius_um(_Radius_um) { };
+
 Sphere::Sphere(Vec3D _Center_um, float _Radius_um) { 
     this->Center_um = _Center_um;
     this->Radius_um = _Radius_um;

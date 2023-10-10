@@ -24,11 +24,11 @@
 struct Vec3DTest: testing::Test {
     std::unique_ptr<BG::NES::Simulator::Geometries::Vec3D> testVec3D = nullptr;
     std::unique_ptr<BG::NES::Simulator::Geometries::Vec3D> testVec3D_2 = nullptr;
-    float tol = 1e-3;
+    float tol = 1e-3f;
 
     void SetUp() {
         testVec3D = std::make_unique<BG::NES::Simulator::Geometries::Vec3D>();
-        testVec3D_2 = std::make_unique<BG::NES::Simulator::Geometries::Vec3D>(1.2, 3.4, 5.6);
+        testVec3D_2 = std::make_unique<BG::NES::Simulator::Geometries::Vec3D>(1.2f, 3.4f, 5.6f);
     }   
 
     void TearDown() {
@@ -73,6 +73,14 @@ TEST_F( Vec3DTest, test_ScalarDivide_default ) {
     ASSERT_NEAR(res.x_um, 0.6, tol);
     ASSERT_NEAR(res.y_um, 1.7, tol);
     ASSERT_NEAR(res.z_um, 2.8, tol);
+}
+
+TEST_F( Vec3DTest, test_Equality_default ) {
+    
+    BG::NES::Simulator::Geometries::Vec3D equalVec{1.2f, 3.4f, 5.6f};
+
+    ASSERT_EQ(equalVec == *testVec3D_2, true);
+    ASSERT_EQ(equalVec == *testVec3D, false);
 }
 
 TEST_F( Vec3DTest, test_Distance_default ) {
