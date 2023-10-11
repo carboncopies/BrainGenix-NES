@@ -40,9 +40,10 @@ struct TruncNormTest: testing::Test {
 
 TEST_F( TruncNormTest, test_RandomSample_default ) {
     std::vector<float> sample = testTruncNorm->RandomSample(10);
-
+    
+    ASSERT_EQ(sample.size(), 10);
     for (float val: sample)
-        ASSERT_TRUE((0.0 <= val) && (val <= 1.0));
+        ASSERT_TRUE((0.1f <= val) && (val <= 2.0f));
 }
 
 TEST_F( TruncNormTest, test_PDF_default ) {
@@ -64,12 +65,10 @@ TEST_F( TruncNormTest, test_CDF_default ) {
 }
 
 TEST_F( TruncNormTest, test_Stats_default ) {
-    std::tuple<float, float, float, float> stats = testTruncNorm->Stats();
+    std::tuple<float, float> stats = testTruncNorm->Stats();
 
     ASSERT_NEAR(std::get<0>(stats), 0.7840, tol);
-    ASSERT_NEAR(std::get<1>(stats), 0.2292, tol);
-    ASSERT_NEAR(std::get<2>(stats), 0.5695, tol);
-    ASSERT_NEAR(std::get<3>(stats), -0.5987, tol);
+    ASSERT_NEAR(std::get<1>(stats), 0.4787, tol);
 }
 
 TEST_F( TruncNormTest, test_Mean_default ) {

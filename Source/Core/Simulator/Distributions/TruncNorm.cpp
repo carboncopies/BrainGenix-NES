@@ -37,7 +37,18 @@ TruncNorm::TruncNorm(float _a, float _b, float _loc, float _scale) {
 
 //! Generates a random sample from the distribution of size numSamples.
 std::vector<float> TruncNorm::RandomSample(size_t numSamples) {
-    return std::vector<float>();
+    // Standard normal distribution
+    static std::normal_distribution<float> _stdNormalDist;
+    std::vector<float> randomSample;
+    
+    while (randomSample.size() < numSamples) {
+        float val = this->loc + _stdNormalDist(this->_Gen) * this->scale;
+        if (val < this->a || val > this->b)
+            continue;
+        randomSample.emplace_back(val);
+    }
+    
+    return randomSample;
 };
 
 //! Probability distribution function
@@ -83,19 +94,35 @@ float TruncNorm::CDF(float x) {
     return (_StandardNormalCDF(z_x) - _StandardNormalCDF(z_a)) / Z;
 };
 
-//! Mean, variance, skewness and kurtosis
-std::tuple<float, float, float, float> TruncNorm::Stats() {
-    return std::tuple<float, float, float, float>();
+//! Mean and standard deviation.
+std::tuple<float, float> TruncNorm::Stats() {
+    std::tuple<float, float> stats{this->Mean(), this->Std()};
+    return stats;
 };
 
 //! Mean
 float TruncNorm::Mean() {
-    return 0.0;
+    static float z_a = (this->a - this->loc) / this->scale;
+    static float z_b = (this->b - this->loc) / this->scale;
+    static float Z = _StandardNormalCDF(z_b) - _StandardNormalCDF(z_a);
+    static float mean = this->loc + (_StandardNormalPDF(z_a) - _StandardNormalPDF(z_b)) * this->scale / Z;
+
+    return mean;
 };
 
 //! Standard deviation
 float TruncNorm::Std() {
-    return 0.0;
+    static float z_a = (this->a - this->loc) / this->scale;
+    static float z_b = (this->b - this->loc) / this->scale;
+    static float Z = _StandardNormalCDF(z_b) - _StandardNormalCDF(z_a);
+    static float pdf_z_a = _StandardNormalPDF(z_a);
+    static float pdf_z_b = _StandardNormalPDF(z_b);
+
+    static float sigma = this->scale * sqrt(
+            1 - (z_b * pdf_z_b - z_a * pdf_z_a) / Z \
+            - pow((pdf_z_a - pdf_z_b) / Z, 2.0));
+    
+    return sigma;
 };
 
 }; // Close Namespace Distributions

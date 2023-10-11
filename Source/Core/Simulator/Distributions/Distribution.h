@@ -26,7 +26,7 @@ namespace Distributions {
  * 
  */
 class Distribution {
-private:
+protected:
     std::mt19937 _Gen; //! Random number generator.
 
 public:
@@ -50,11 +50,12 @@ public:
     virtual std::vector<float> CDF(std::vector<float> x) = 0;
     virtual float CDF(float x) = 0;
 
-    //! Mean, variance, skewness and kurtosis
-    virtual std::tuple<float, float, float, float> Stats() = 0;
+    //! Mean, variance
+    virtual std::tuple<float, float> Stats() = 0;
 
     //! Mean
     virtual float Mean() = 0;
+
     //! Standard deviation
     virtual float Std() = 0;
 };

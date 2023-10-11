@@ -42,8 +42,8 @@ public:
     std::vector<float> CDF(std::vector<float> x);
     float CDF(float x);
 
-    //! Mean, variance, skewness and kurtosis
-    std::tuple<float, float, float, float> Stats();
+    //! Mean and standard deviation
+    std::tuple<float, float> Stats();
 
     //! Mean
     float Mean();
