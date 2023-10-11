@@ -28,30 +28,31 @@ public:
 
     //! Constructors
     TruncNorm(float _a, float _b);
+    TruncNorm(float _a, float _b, float _loc, float _scale);
 
     //! Generates a random sample from the distribution of size numSamples.
-    std::vector<float> RandomSample(float loc, float scale, size_t numSamples);
+    std::vector<float> RandomSample(size_t numSamples);
     
     //! Probability distribution function
-    std::vector<float> PDF(std::vector<float> x, float loc, float scale);
-    float PDF(float x, float loc, float scale);
+    std::vector<float> PDF(std::vector<float> x);
+    float PDF(float x);
     
     //! Cumulative distribution function
-    std::vector<float> CDF(std::vector<float> x, float loc, float scale);
-    float CDF(float x, float loc, float scale);
+    std::vector<float> CDF(std::vector<float> x);
+    float CDF(float x);
 
     //! Percent point function.
-    std::vector<float> PPF(std::vector<float> x, float loc, float scale);
-    float PPF(float x, float loc, float scale);
+    std::vector<float> PPF(std::vector<float> x);
+    float PPF(float x);
     
     //! Mean, variance, skewness and kurtosis
-    std::tuple<float, float, float, float> Stats(float loc, float scale);
+    std::tuple<float, float, float, float> Stats();
 
     //! Mean
-    float Mean(float loc, float scale);
+    float Mean();
 
     //! Standard deviation
-    float Std(float loc, float scale);
+    float Std();
 };
 
 }; // Close Namespace Distributions

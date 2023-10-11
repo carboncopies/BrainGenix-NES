@@ -30,6 +30,9 @@ private:
     std::mt19937 _Gen; //! Random number generator.
 
 public:
+    float loc = 0.0;
+    float scale = 1.0;
+
     //! Constructor
     Distribution();
 
@@ -37,27 +40,27 @@ public:
     void SetSeed(uint32_t _Seed);
 
     //! Generates a random sample from the distribution of size numSamples.
-    virtual std::vector<float> RandomSample(float loc, float scale, size_t numSamples) = 0;
+    virtual std::vector<float> RandomSample(size_t numSamples) = 0;
     
     //! Probability distribution function
-    virtual std::vector<float> PDF(std::vector<float> x, float loc, float scale) = 0;
-    virtual float PDF(float x, float loc, float scale) = 0;
+    virtual std::vector<float> PDF(std::vector<float> x) = 0;
+    virtual float PDF(float x) = 0;
     
     //! Cumulative distribution function
-    virtual std::vector<float> CDF(std::vector<float> x, float loc, float scale) = 0;
-    virtual float CDF(float x, float loc, float scale) = 0;
+    virtual std::vector<float> CDF(std::vector<float> x) = 0;
+    virtual float CDF(float x) = 0;
 
     //! Percent point function.
-    virtual std::vector<float> PPF(std::vector<float> x, float loc, float scale) = 0;
-    virtual float PPF(float x, float loc, float scale) = 0;
+    virtual std::vector<float> PPF(std::vector<float> x) = 0;
+    virtual float PPF(float x) = 0;
     
     //! Mean, variance, skewness and kurtosis
-    virtual std::tuple<float, float, float, float> Stats(float loc, float scale) = 0;
+    virtual std::tuple<float, float, float, float> Stats() = 0;
 
     //! Mean
-    virtual float Mean(float loc, float scale) = 0;
+    virtual float Mean() = 0;
     //! Standard deviation
-    virtual float Std(float loc, float scale) = 0;
+    virtual float Std() = 0;
 };
 
 }; // Close Namespace Distributions
