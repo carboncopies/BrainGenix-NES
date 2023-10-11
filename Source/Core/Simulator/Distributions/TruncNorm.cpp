@@ -1,4 +1,19 @@
+#include <cmath>
+#include <cassert>
+
 #include <Simulator/Distributions/TruncNorm.h>
+
+//! Probability distribution function for the standard normal distribution.
+static float _StandardNormalPDF(float x) {
+    static float multiplier = 1.0 / sqrt(2 * M_PI);
+    return multiplier * exp(-0.5 * x * x);
+};
+
+//! Cumulative distribution function for the standard normal distribution.
+static float _StandardNormalCDF(float x) {
+    static float sqrt_2 = sqrt(2.0);
+    return 0.5 * (1 + erf(x / sqrt_2));
+};
 
 namespace BG {
 namespace NES {
@@ -6,8 +21,16 @@ namespace Simulator {
 namespace Distributions {
 
 //! Constructors
-TruncNorm::TruncNorm(float _a, float _b) : a(_a), b(_b) { };
-TruncNorm::TruncNorm(float _a, float _b, float _loc, float _scale) : a(_a), b(_b) {
+TruncNorm::TruncNorm(float _a, float _b) {
+    assert(_b > _a);
+    this->a = _a;
+    this->b = _b;
+};
+
+TruncNorm::TruncNorm(float _a, float _b, float _loc, float _scale) {
+    assert(_b > _a);
+    this->a = _a;
+    this->b = _b;
     this->loc = _loc;
     this->scale = _scale;
 };
@@ -19,29 +42,45 @@ std::vector<float> TruncNorm::RandomSample(size_t numSamples) {
 
 //! Probability distribution function
 std::vector<float> TruncNorm::PDF(std::vector<float> x) {
-    return std::vector<float>();
+    std::vector<float> pdf;
+    for (float val: x) 
+        pdf.emplace_back(this->PDF(val));
+    return pdf;
 };
 
 float TruncNorm::PDF(float x) {
-    return 0.0;
+    // If out of bounds, return 0
+    if (x<this->a || x>this->b) return 0.0;
+
+    static float z_a = (this->a - this->loc) / this->scale;
+    static float z_b = (this->b - this->loc) / this->scale;
+    static float Z = _StandardNormalCDF(z_b) - _StandardNormalCDF(z_a);
+    
+    float z_x = (x - this->loc) / this->scale;
+    return _StandardNormalPDF(z_x) / (this->scale * Z);
 };
 
 //! Cumulative distribution function
 std::vector<float> TruncNorm::CDF(std::vector<float> x) {
-    return std::vector<float>();
+    std::vector<float> cdf;
+    for (float val: x) 
+        cdf.emplace_back(this->CDF(val));
+    return cdf;
 };
 
 float TruncNorm::CDF(float x) {
-    return 0.0;
-};
+    // If x < a, return 0
+    if (x<a) return 0.0;
+    // If x > b, return 1
+    if (x>b) return 1.0;
 
-//! Percent point function.
-std::vector<float> TruncNorm::PPF(std::vector<float> x) {
-    return std::vector<float>();
-};
+    static float z_a = (this->a - this->loc) / this->scale;
+    static float z_b = (this->b - this->loc) / this->scale;
+    static float Z = _StandardNormalCDF(z_b) - _StandardNormalCDF(z_a);
+    
+    float z_x = (x - this->loc) / this->scale;
 
-float TruncNorm::PPF(float x) {
-    return 0.0;
+    return (_StandardNormalCDF(z_x) - _StandardNormalCDF(z_a)) / Z;
 };
 
 //! Mean, variance, skewness and kurtosis

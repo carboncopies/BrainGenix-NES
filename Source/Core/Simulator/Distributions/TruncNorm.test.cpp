@@ -63,15 +63,6 @@ TEST_F( TruncNormTest, test_CDF_default ) {
     ASSERT_NEAR(cdf[2], 0.999, tol);
 }
 
-TEST_F( TruncNormTest, test_PPF_default ) {
-    std::vector<float> x = {0.001f, 0.5f, 0.999f}; 
-    std::vector<float> ppf = testTruncNorm->PPF(x);
-
-    ASSERT_NEAR(ppf[0], 0.1011, tol);
-    ASSERT_NEAR(ppf[1], 0.7016, tol);
-    ASSERT_NEAR(ppf[2], 1.9920, tol);
-}
-
 TEST_F( TruncNormTest, test_Stats_default ) {
     std::tuple<float, float, float, float> stats = testTruncNorm->Stats();
 

@@ -24,7 +24,8 @@ namespace Distributions {
  */
 class TruncNorm: public Distribution {
 public:
-    float a, b;
+    float a; //! Lower bound of the distribution.
+    float b; //! Upper bound of the distribution.
 
     //! Constructors
     TruncNorm(float _a, float _b);
@@ -41,10 +42,6 @@ public:
     std::vector<float> CDF(std::vector<float> x);
     float CDF(float x);
 
-    //! Percent point function.
-    std::vector<float> PPF(std::vector<float> x);
-    float PPF(float x);
-    
     //! Mean, variance, skewness and kurtosis
     std::tuple<float, float, float, float> Stats();
 
@@ -53,6 +50,7 @@ public:
 
     //! Standard deviation
     float Std();
+
 };
 
 }; // Close Namespace Distributions

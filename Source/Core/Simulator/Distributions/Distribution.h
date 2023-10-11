@@ -30,8 +30,8 @@ private:
     std::mt19937 _Gen; //! Random number generator.
 
 public:
-    float loc = 0.0;
-    float scale = 1.0;
+    float loc = 0.0;    //! Center of the distribution.
+    float scale = 1.0;  //! Multiplier to scale the distribution.
 
     //! Constructor
     Distribution();
@@ -50,10 +50,6 @@ public:
     virtual std::vector<float> CDF(std::vector<float> x) = 0;
     virtual float CDF(float x) = 0;
 
-    //! Percent point function.
-    virtual std::vector<float> PPF(std::vector<float> x) = 0;
-    virtual float PPF(float x) = 0;
-    
     //! Mean, variance, skewness and kurtosis
     virtual std::tuple<float, float, float, float> Stats() = 0;
 
