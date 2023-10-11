@@ -15,7 +15,7 @@
 #include <gtest/gtest.h>
 
 #include <Simulator/BallAndStick/BSNeuron.h>
-
+#include <Simulator/Distributions/TruncNorm.h>
 
 /**
  * @brief Test class for unit tests for struct BSNeuron.
@@ -67,15 +67,29 @@ TEST_F( BSNeuronTest, test_AttachDirectStim_default ) {
     ASSERT_EQ(testBSNeuron->tDirectStim_ms.size(), 6);  
 }
 
-// TEST_F( BSNeuronTest, test_SetSpontaneousActivity_default ) {
-//     float testMu = 0.1;
-//     float testStd = 0.5;
-// 
-//     calc_dt_spont_dist = stats.truncnorm(
-//         -test_mu / test_std, test_mu / test_std, loc=test_mu, scale=test_std
-//     )
-//     self.neuron.set_spontaneous_activity((test_mu, test_std))
-//     assert self.neuron.tau_spont_mean_stdev_ms == (test_mu, test_std)
-//     assert self.neuron.dt_spont_dist.stats() == calc_dt_spont_dist.stats()
-// 
-// }
+TEST_F( BSNeuronTest, test_SetSpontaneousActivity_default ) {
+    float testMu = 0.1;
+    float testStd = 0.5;
+    std::tuple<float, float> gotTauSpontMeanStdev_ms;
+    std::tuple<float, float> expectedDistStats, gotDistStats;
+
+
+    std::unique_ptr<BG::NES::Simulator::Distributions::Distribution> expectedDtSpontDist =\
+         std::make_unique<BG::NES::Simulator::Distributions::TruncNorm>(
+        -testMu / testStd, testMu / testStd, testMu, testStd
+    );
+    expectedDistStats = expectedDtSpontDist->Stats();
+    
+    testBSNeuron->SetSpontaneousActivity(testMu, testStd);
+
+    gotTauSpontMeanStdev_ms = testBSNeuron->tauSpontMeanStdev_ms;
+    gotDistStats = testBSNeuron->dtSpontDist->Stats();
+    
+    // TauSpontMeanStdev_ms must be equal to the mu and sigma values supplied
+    ASSERT_NEAR(std::get<0>(gotTauSpontMeanStdev_ms), testMu, tol);
+    ASSERT_NEAR(std::get<1>(gotTauSpontMeanStdev_ms), testStd, tol);
+    
+    // Statistics for the spontaneous Dt distribution must match the
+    // statistics of the expected distribution.
+    ASSERT_EQ(expectedDistStats, gotDistStats);
+}

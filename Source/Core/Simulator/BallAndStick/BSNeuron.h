@@ -21,6 +21,7 @@
 #include <Simulator/Geometries/Cylinder.h>
 #include <Simulator/Geometries/Geometry.h>
 #include <Simulator/Geometries/VecTools.h>
+#include <Simulator/Distributions/Distribution.h>
 
 
 namespace BG {
@@ -66,9 +67,11 @@ struct BSNeuron: CoreStructs::Neuron {
     std::vector<float> VmRecorded_mV;
     std::vector<float> FIFO;
     std::vector<float> convolved_FIFO;
-
+    
+    std::unique_ptr<Distributions::Distribution> dtSpontDist{}; //! Distribution for delta t spontaneous 
+                                             //! (time changed since last spontaneous activity).
+    
     // std::vector<std::shared_ptr<BG::NES::Receptors::Receptor>> receptors;
-    // float dt_spont_dist = None
     
     //! Constructors
     BSNeuron(int ID, 
@@ -83,8 +86,9 @@ struct BSNeuron: CoreStructs::Neuron {
     //! of a direct stimulation.
     void AttachDirectStim(float t_ms);
 
-    //!
-    // void SetSpontaneousActivity(std::tuple<float, float> meanStdev);
+    //! Set the distribution for delta t spontaneous (time changed
+    //! since last spontaneous activity).
+    void SetSpontaneousActivity(float mean, float stdev);
     
     //! Keeps track of the membrane potential and the time of update.
     void Record(float t_ms);

@@ -1,5 +1,7 @@
 #include <cassert>
+#include <memory>
 #include <Simulator/BallAndStick/BSNeuron.h>
+#include <Simulator/Distributions/TruncNorm.h>
 
 namespace BG {
 namespace NES {
@@ -28,8 +30,13 @@ void BSNeuron::AttachDirectStim(float t_ms) {
     this->tDirectStim_ms.push_back(t_ms);
 };
 
-//!
-// void SetSpontaneousActivity(std::tuple<float, float> meanStdev);
+//! Set the distribution for delta t spontaneous (time changed
+//! since last spontaneous activity).
+void BSNeuron::SetSpontaneousActivity(float mean, float stdev) {
+    this->tauSpontMeanStdev_ms = std::make_tuple(mean, stdev);
+    this->dtSpontDist = std::make_unique<Distributions::TruncNorm>(
+            -mean / stdev, mean / stdev, mean, stdev);
+};
 
 //! Keeps track of the membrane potential and the time of update.
 void BSNeuron::Record(float t_ms) {
