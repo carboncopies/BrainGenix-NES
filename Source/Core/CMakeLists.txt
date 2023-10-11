@@ -38,6 +38,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.h
 
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.h
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.cpp
+
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.cpp
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.h
   ${SRC_DIR}/Core/Simulator/Distributions/Distribution.cpp
@@ -55,6 +58,7 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampDAC.h
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampADC.cpp
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampADC.h
+  ${SRC_DIR}/Core/Simulator/Structs/Neuron.h
   
   ${SRC_DIR}/Core/Simulator/Updaters/Staple.cpp
   ${SRC_DIR}/Core/Simulator/Updaters/Staple.h
@@ -76,7 +80,10 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.test.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Sphere.test.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.test.cpp
+
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.test.cpp
+  
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.test.cpp
 )
 
 # Configure test binaries
