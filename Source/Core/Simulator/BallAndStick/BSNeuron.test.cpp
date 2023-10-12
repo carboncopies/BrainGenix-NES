@@ -147,6 +147,7 @@ TEST_F( BSNeuronTest, test_UpdateVm_default ) {
 
     ASSERT_EQ(testBSNeuron->TRecorded_ms.size(), oldLenTimesteps + 1);
     ASSERT_EQ(testBSNeuron->VmRecorded_mV.size(), oldLenVmRecorded + 1);
+    // TODO: What happens after there is a spike event?
 }
 
 TEST_F( BSNeuronTest, test_DetectThreshold_default ) {
@@ -156,6 +157,18 @@ TEST_F( BSNeuronTest, test_DetectThreshold_default ) {
 
     testBSNeuron->DetectThreshold(0.1);
     ASSERT_EQ(testBSNeuron->TAct_ms.size(), oldTAct_ms_Length);
+    // TODO: What happens after there is a spike event?
+}
+
+TEST_F( BSNeuronTest, test_GetRecording_default ) {
+    auto recording = testBSNeuron->GetRecording();
+    ASSERT_FALSE(recording.empty());
+
+    // Immediately after set up no membrane potentials have
+    // been recorded.
+    ASSERT_EQ(recording.at("Vm_mV").size(), 0);
+
+    // TODO: What happens after a spike event has been detected?
 }
 
 TEST_F( BSNeuronTest, test_xx_default ) {

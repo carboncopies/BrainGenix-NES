@@ -49,6 +49,7 @@ void BSNeuron::Record(float t_ms) {
 //! Returns the recorded membrane potentials.
 std::unordered_map<std::string, std::vector<float>> BSNeuron::GetRecording() {
     std::unordered_map<std::string, std::vector<float>> recording;
+    recording["Vm_mV"] = this->VmRecorded_mV;
     return recording;
 };
 
@@ -148,7 +149,15 @@ void BSNeuron::UpdateVm(float t_ms, bool recording) {
 
 //! Compares Vm with Vact.
 void BSNeuron::DetectThreshold(float t_ms) {
-    return;
+    assert(t_ms >= 0.0);
+
+    float dtAct_ms = this->DtAct_ms(t_ms);
+
+    if (dtAct_ms == _NO_SPIKE_DT_mS) return;
+    if (this->InAbsRef(dtAct_ms)) return;
+    
+    if (this->Vm_mV >= this->VAct_mV)
+        this->TAct_ms.push_back(t_ms);
 };
 
 //! Checks for possible spontaneous activity.
@@ -174,7 +183,6 @@ void BSNeuron::UpdateConvolvedFIFO(std::vector<float> kernel) {
 void BSNeuron::SetFIFO(float FIFO_ms, float dt_ms) {
     return;
 };
-
 
 }; // Close Namespace BallAndStick
 }; // Close Namespace Simulator
