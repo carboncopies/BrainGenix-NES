@@ -40,7 +40,9 @@ void BSNeuron::SetSpontaneousActivity(float mean, float stdev) {
 
 //! Keeps track of the membrane potential and the time of update.
 void BSNeuron::Record(float t_ms) {
-    return;
+    assert(t_ms >= 0.0);
+    this->tRecorded_ms.emplace_back(t_ms);
+    this->VmRecorded_mV.emplace_back(this->Vm_mV);
 };
 
 //! Returns the recorded membrane potentials.
@@ -51,23 +53,48 @@ std::unordered_map<std::string, std::vector<float>> BSNeuron::GetRecording() {
 
 //! Tells if the action potential threshold has been crossed.
 bool BSNeuron::HasSpiked() {
-    return -9999999.0;
+    return (this->tAct_ms).size() > 0;
 };
 
 //! Returns the time since the action potential threshold was
 //! crossed last.
 float BSNeuron::DtAct_ms(float t_ms) {
-    return -99999999.9;
+    assert(t_ms >= 0.0);
+    if (this->HasSpiked())
+        return t_ms - this->tAct_ms.back();
+    return _NO_SPIKE_DT_mS;
 };
 
+
+//! Tells if the time since the latest spike is within the absolute refractory period threshold.
+bool BSNeuron::InAbsRef(float dtAct_ms) {
+    assert(dtAct_ms >= 0.0);
+
+    if (!this->HasSpiked()) return false;
+    return dtAct_ms <= _TAU_ABS_mS;
+};
+
+
 //! Updates V_spike_t.
-float BSNeuron::VSpikeT_mV(float t_ms){
-    return -99999999.0;
+float BSNeuron::VSpikeT_mV(float t_ms){\
+    assert(t_ms>=0.0);
+    
+    // If a spike has not occurred return 0.0
+    if (!this->HasSpiked()) return 0.0;
+
+    // if within absolute refractory period, return 
+    // the spike potential during absolute refractory period.
+    return this->InAbsRef(this->DtAct_ms(t_ms)) ? _VSPIKE_ABS_REF_mV : 0.0;
 };
 
 //! Updates V_AHP_t.
 float BSNeuron::VAHPT_mV(float t_ms) {
-    return -99999999.0;
+    assert(t_ms>=0.0);
+    
+    if (!this->HasSpiked()) return 0.0;
+    if (this->InAbsRef(this->DtAct_ms(t_ms))) return 0.0;
+
+    return this->VAHP_mV * exp(-this->DtAct_ms(t_ms) / this->tauAHP_ms);
 };
 
 //! Updates V_PSP_t.

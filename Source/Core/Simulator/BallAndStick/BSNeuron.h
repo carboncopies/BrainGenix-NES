@@ -23,6 +23,12 @@
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Distributions/Distribution.h>
 
+//! DtAct_ms to return when there has not been any spike.
+#define _NO_SPIKE_DT_mS -1.0   
+//! Spike potential in mV within absolute refractory period
+#define _VSPIKE_ABS_REF_mV 60.0
+//! Time span of absolute refractory period in ms
+#define _TAU_ABS_mS 1.0 
 
 namespace BG {
 namespace NES {
@@ -53,20 +59,16 @@ struct BSNeuron: CoreStructs::Neuron {
     
     float t_ms = 0.0;
     float tSpontNext_ms = -1.0;
-    float _dt_act_ms = -999999999.0;
 
-    bool _hasSpiked = false;
-    bool inAbsref = false;
+    std::vector<float> tAct_ms{};
+    std::vector<float> tDirectStim_ms{};
+    std::vector<float> CaSamples{};
+    std::vector<float> tCaSamples_ms{};
 
-    std::vector<float> tAct_ms;
-    std::vector<float> tDirectStim_ms;
-    std::vector<float> CaSamples;
-    std::vector<float> tCaSamples_ms;
-
-    std::vector<float> tRecorded_ms;
-    std::vector<float> VmRecorded_mV;
-    std::vector<float> FIFO;
-    std::vector<float> convolved_FIFO;
+    std::vector<float> tRecorded_ms{};
+    std::vector<float> VmRecorded_mV{};
+    std::vector<float> FIFO{};
+    std::vector<float> convolved_FIFO{};
     
     std::unique_ptr<Distributions::Distribution> dtSpontDist{}; //! Distribution for delta t spontaneous 
                                              //! (time changed since last spontaneous activity).
@@ -98,6 +100,9 @@ struct BSNeuron: CoreStructs::Neuron {
     
     //! Tells if the action potential threshold has been crossed.
     bool HasSpiked();
+
+    //! Tells if the time since the latest spike is within the absolute refractory period threshold.
+    bool InAbsRef(float dtAct_ms);
 
     //! Returns the time since the action potential threshold was
     //! crossed last.
