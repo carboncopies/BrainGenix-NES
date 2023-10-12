@@ -58,6 +58,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampDAC.h
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampADC.cpp
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampADC.h
+  ${SRC_DIR}/Core/Simulator/Structs/SignalFunctions.cpp
+  ${SRC_DIR}/Core/Simulator/Structs/SignalFunctions.h
   ${SRC_DIR}/Core/Simulator/Structs/Neuron.h
   
   ${SRC_DIR}/Core/Simulator/Updaters/Staple.cpp
