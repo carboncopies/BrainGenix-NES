@@ -8,59 +8,6 @@
     Date Created: 2023-10-06
 */
 
-////! Records the time of direct stimulation for every occurrence
-////! of a direct stimulation.
-//void AttachDirectStim(float t_ms);
-
-////! Set the distribution for delta t spontaneous (time changed
-////! since last spontaneous activity).
-//void SetSpontaneousActivity(float mean, float stdev);
-//
-////! Keeps track of the membrane potential and the time of update.
-//void Record(float t_ms);
-
-////! Returns the recorded membrane potentials.
-//std::unordered_map<std::string, std::vector<float>> GetRecording();
-//
-////! Tells if the action potential threshold has been crossed.
-//bool HasSpiked();
-
-////! Returns the time since the action potential threshold was
-////! crossed last.
-//float DtAct_ms(float t_ms);
-
-////! Updates V_spike_t.
-//float VSpikeT_mV(float t_ms);
-
-////! Updates V_AHP_t.
-//float VAHPT_mV(float t_ms);
-
-////! Updates V_PSP_t.
-//float VPSPT_mV(float t_ms);
-
-////! Vm = Vrest + VSpike(t) + VAHP(t) + VPSP(t)
-////! Compares Vm with Vact.
-//void UpdateVm(float t_ms, bool recording);
-
-////! Compares Vm with Vact.
-//void DetectThreshold(float t_ms);
-
-////! Checks for possible spontaneous activity.
-//void SpontaneousActivity(float t_ms);
-//
-////! Updates all potential components, the membrane potential
-////! and the time of update.
-//void Update(float t_ms, bool recording);
-
-////! We have to flip the signal FIFO, because the most recent is in [0].
-////! We need this, because the kernel has a specific time order.
-////! Alternatively, when we prepare the kernel we can flip it and
-////! remember to view [0] as most recent in the convolution result.
-//void UpdateConvolvedFIFO(std::vector<float> kernel);
-//
-////! Sets the initial value of the FIFO.
-//void SetFIFO(float FIFO_ms, float dt_ms);
-
 #include <cmath>
 #include <vector>
 #include <memory>
@@ -112,13 +59,13 @@ TEST_F( BSNeuronTest, test_AttachDirectStim_default ) {
     testBSNeuron->AttachDirectStim(0.1f);
 
     // Time recorded successfully
-    ASSERT_EQ(testBSNeuron->tDirectStim_ms[0], 0.1f);
+    ASSERT_EQ(testBSNeuron->TDirectStim_ms[0], 0.1f);
 
     for (size_t i=0; i<5; ++i)
         testBSNeuron->AttachDirectStim(i * 0.15f);
 
     // Number of direct stimulus activities recorded.
-    ASSERT_EQ(testBSNeuron->tDirectStim_ms.size(), 6);  
+    ASSERT_EQ(testBSNeuron->TDirectStim_ms.size(), 6);  
 }
 
 TEST_F( BSNeuronTest, test_SetSpontaneousActivity_default ) {
@@ -136,8 +83,8 @@ TEST_F( BSNeuronTest, test_SetSpontaneousActivity_default ) {
     
     testBSNeuron->SetSpontaneousActivity(testMu, testStd);
 
-    gotTauSpontMeanStdev_ms = testBSNeuron->tauSpontMeanStdev_ms;
-    gotDistStats = testBSNeuron->dtSpontDist->Stats();
+    gotTauSpontMeanStdev_ms = testBSNeuron->TauSpontMeanStdev_ms;
+    gotDistStats = testBSNeuron->DtSpontDist->Stats();
     
     // TauSpontMeanStdev_ms must be equal to the mu and sigma values supplied
     ASSERT_NEAR(std::get<0>(gotTauSpontMeanStdev_ms), testMu, tol);
@@ -149,12 +96,12 @@ TEST_F( BSNeuronTest, test_SetSpontaneousActivity_default ) {
 }
 
 TEST_F( BSNeuronTest, test_Record_default ) {
-    size_t oldLenTimesteps = testBSNeuron->tRecorded_ms.size();
+    size_t oldLenTimesteps = testBSNeuron->TRecorded_ms.size();
     size_t oldLenVmRecorded = testBSNeuron->VmRecorded_mV.size();
 
     testBSNeuron->Record(0.1);
     
-    ASSERT_EQ( testBSNeuron->tRecorded_ms.size(), oldLenTimesteps + 1 );
+    ASSERT_EQ( testBSNeuron->TRecorded_ms.size(), oldLenTimesteps + 1 );
     ASSERT_EQ( testBSNeuron->VmRecorded_mV.size(), oldLenVmRecorded + 1 );
 }
 
@@ -193,22 +140,22 @@ TEST_F( BSNeuronTest, test_VPSPT_mV_default ) {
 
 TEST_F( BSNeuronTest, test_UpdateVm_default ) {
     // No spike event immediately after set up.
-    size_t oldLenTimesteps = testBSNeuron->tRecorded_ms.size();
+    size_t oldLenTimesteps = testBSNeuron->TRecorded_ms.size();
     size_t oldLenVmRecorded = testBSNeuron->VmRecorded_mV.size();
     
     testBSNeuron->UpdateVm(0.1, true);
 
-    ASSERT_EQ(testBSNeuron->tRecorded_ms.size(), oldLenTimesteps + 1);
+    ASSERT_EQ(testBSNeuron->TRecorded_ms.size(), oldLenTimesteps + 1);
     ASSERT_EQ(testBSNeuron->VmRecorded_mV.size(), oldLenVmRecorded + 1);
 }
 
 TEST_F( BSNeuronTest, test_DetectThreshold_default ) {
     // Action potential threshold will not be crossed immediately
     // after set up.
-    size_t oldTAct_ms_Length = testBSNeuron->tAct_ms.size();
+    size_t oldTAct_ms_Length = testBSNeuron->TAct_ms.size();
 
     testBSNeuron->DetectThreshold(0.1);
-    ASSERT_EQ(testBSNeuron->tAct_ms.size(), oldTAct_ms_Length);
+    ASSERT_EQ(testBSNeuron->TAct_ms.size(), oldTAct_ms_Length);
 }
 
 TEST_F( BSNeuronTest, test_xx_default ) {

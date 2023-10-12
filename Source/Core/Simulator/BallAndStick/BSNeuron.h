@@ -13,6 +13,7 @@
 
 #include <vector>
 #include <tuple>
+#include <queue>
 #include <unordered_map>
 #include <memory>
 
@@ -35,6 +36,10 @@ namespace NES {
 namespace Simulator {
 namespace BallAndStick {
 
+//! ReceptorData is a tuple containing a pointer to the source (pre-synaptic) 
+//! neuron of a connection and its weight.
+typedef std::tuple<std::shared_ptr<CoreStructs::Neuron>, float> ReceptorData;
+
 /**
  * @brief This struct provides the structure representing a basic building block for a ball-and-stick neural circuit.
  * 
@@ -49,31 +54,31 @@ struct BSNeuron: CoreStructs::Neuron {
     float VAct_mV = -50.0;    //! Action potential firing threshold
 
     float VAHP_mV = -20.0;    //! After HyperPolarization potential
-    float tauAHP_ms = 30.0;   //! AfterHyperPolarization decay time constant
+    float TauAHP_ms = 30.0;   //! AfterHyperPolarization decay time constant
 
-    float tauPSPr_ms = 5.0;   //! PostSynaptic Potential rise time constant
-    float tauPSPd_ms = 25.0;  //! PostSynaptic Potential decay time constant
+    float TauPSPr_ms = 5.0;   //! PostSynaptic Potential rise time constant
+    float TauPSPd_ms = 25.0;  //! PostSynaptic Potential decay time constant
     float VPSP_mV = 20.0;     //! PostSynaptic Potential amplitude
 
-    std::tuple<float, float> tauSpontMeanStdev_ms = {0.0, 0.0}; //! 0 means no spontaneous activity
+    std::tuple<float, float> TauSpontMeanStdev_ms = {0.0, 0.0}; //! 0 means no spontaneous activity
     
-    float t_ms = 0.0;
-    float tSpontNext_ms = -1.0;
+    float T_ms = 0.0;
+    float TSpontNext_ms = -1.0;
 
-    std::vector<float> tAct_ms{};
-    std::vector<float> tDirectStim_ms{};
+    std::vector<float> TAct_ms{};
+    std::vector<float> TDirectStim_ms{};
     std::vector<float> CaSamples{};
-    std::vector<float> tCaSamples_ms{};
+    std::vector<float> TCaSamples_ms{};
 
-    std::vector<float> tRecorded_ms{};
+    std::vector<float> TRecorded_ms{};
     std::vector<float> VmRecorded_mV{};
-    std::vector<float> FIFO{};
-    std::vector<float> convolved_FIFO{};
+    std::queue<float> FIFO{};
+    std::queue<float> ConvolvedFIFO{};
+    std::vector<ReceptorData> ReceptorDataVec{};
     
-    std::unique_ptr<Distributions::Distribution> dtSpontDist{}; //! Distribution for delta t spontaneous 
+    std::unique_ptr<Distributions::Distribution> DtSpontDist{}; //! Distribution for delta t spontaneous 
                                              //! (time changed since last spontaneous activity).
     
-    // std::vector<std::shared_ptr<BG::NES::Receptors::Receptor>> receptors;
     
     //! Constructors
     BSNeuron(int ID, 
@@ -101,7 +106,8 @@ struct BSNeuron: CoreStructs::Neuron {
     //! Tells if the action potential threshold has been crossed.
     bool HasSpiked();
 
-    //! Tells if the time since the latest spike is within the absolute refractory period threshold.
+    //! Tells if the time since the latest spike is within the 
+    //! absolute refractory period threshold.
     bool InAbsRef(float dtAct_ms);
 
     //! Returns the time since the action potential threshold was
@@ -117,8 +123,8 @@ struct BSNeuron: CoreStructs::Neuron {
     //! Updates V_PSP_t.
     float VPSPT_mV(float t_ms);
 
+    //! Updates the momentary membrane potential Vm according to
     //! Vm = Vrest + VSpike(t) + VAHP(t) + VPSP(t)
-    //! Compares Vm with Vact.
     void UpdateVm(float t_ms, bool recording);
 
     //! Compares Vm with Vact.

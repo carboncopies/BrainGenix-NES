@@ -2,6 +2,7 @@
 #include <memory>
 #include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/Distributions/TruncNorm.h>
+#include <Simulator/Structs/SignalFunctions.h>
 
 namespace BG {
 namespace NES {
@@ -27,21 +28,21 @@ Geometries::Vec3D& BSNeuron::GetCellCenter() {
 //! of a direct stimulation.
 void BSNeuron::AttachDirectStim(float t_ms) {
     assert(t_ms >= 0.0);
-    this->tDirectStim_ms.push_back(t_ms);
+    this->TDirectStim_ms.push_back(t_ms);
 };
 
 //! Set the distribution for delta t spontaneous (time changed
 //! since last spontaneous activity).
 void BSNeuron::SetSpontaneousActivity(float mean, float stdev) {
-    this->tauSpontMeanStdev_ms = std::make_tuple(mean, stdev);
-    this->dtSpontDist = std::make_unique<Distributions::TruncNorm>(
+    this->TauSpontMeanStdev_ms = std::make_tuple(mean, stdev);
+    this->DtSpontDist = std::make_unique<Distributions::TruncNorm>(
             -mean / stdev, mean / stdev, mean, stdev);
 };
 
 //! Keeps track of the membrane potential and the time of update.
 void BSNeuron::Record(float t_ms) {
     assert(t_ms >= 0.0);
-    this->tRecorded_ms.emplace_back(t_ms);
+    this->TRecorded_ms.emplace_back(t_ms);
     this->VmRecorded_mV.emplace_back(this->Vm_mV);
 };
 
@@ -53,7 +54,7 @@ std::unordered_map<std::string, std::vector<float>> BSNeuron::GetRecording() {
 
 //! Tells if the action potential threshold has been crossed.
 bool BSNeuron::HasSpiked() {
-    return (this->tAct_ms).size() > 0;
+    return (this->TAct_ms).size() > 0;
 };
 
 //! Returns the time since the action potential threshold was
@@ -61,7 +62,7 @@ bool BSNeuron::HasSpiked() {
 float BSNeuron::DtAct_ms(float t_ms) {
     assert(t_ms >= 0.0);
     if (this->HasSpiked())
-        return t_ms - this->tAct_ms.back();
+        return t_ms - this->TAct_ms.back();
     return _NO_SPIKE_DT_mS;
 };
 
@@ -94,18 +95,55 @@ float BSNeuron::VAHPT_mV(float t_ms) {
     if (!this->HasSpiked()) return 0.0;
     if (this->InAbsRef(this->DtAct_ms(t_ms))) return 0.0;
 
-    return this->VAHP_mV * exp(-this->DtAct_ms(t_ms) / this->tauAHP_ms);
+    return this->VAHP_mV * exp(-this->DtAct_ms(t_ms) / this->TauAHP_ms);
 };
 
 //! Updates V_PSP_t.
 float BSNeuron::VPSPT_mV(float t_ms) {
-    return -99999999.0;
+    assert(t_ms>=0.0);
+    float VPSPT_mV = 0.0;
+
+    for (auto receptorData: this->ReceptorDataVec) {
+        auto srcCell = std::get<0>(receptorData);
+        if (!srcCell->HasSpiked()) 
+            continue;
+        
+        float weight = std::get<1>(receptorData);
+        float dtPSP_ms = srcCell->DtAct_ms(t_ms);
+        
+        VPSPT_mV += SignalFunctions::DoubleExponentExpr(weight * this->VPSP_mV, 
+                this->TauPSPr_ms, this->TauPSPd_ms, dtPSP_ms);
+    }
+    return VPSPT_mV;
 };
 
+//! Updates the momentary membrane potential Vm according to
 //! Vm = Vrest + VSpike(t) + VAHP(t) + VPSP(t)
-//! Compares Vm with Vact.
 void BSNeuron::UpdateVm(float t_ms, bool recording) {
-    return;
+    assert(t_ms >= 0.0);
+
+    float dtAct_ms = 0.0;
+    float VSpikeT_mV, VAHPT_mV, VPSPT_mV;
+
+    // 1. Prepare data used by VSpike_t and V_AHP_t
+    if (this->HasSpiked())
+        dtAct_ms = this->DtAct_ms(t_ms);
+
+    // 2. Calculate contributions
+    VSpikeT_mV = this->VSpikeT_mV(t_ms);
+    VAHPT_mV = this->VAHPT_mV(t_ms);
+    VPSPT_mV = this->VPSPT_mV(t_ms);
+
+    // 3. Calculate membrane potential
+    this->Vm_mV = this->VRest_mV + VSpikeT_mV + VAHPT_mV + VPSPT_mV;
+
+    if (!this->FIFO.empty()) {
+        this->FIFO.pop();
+        this->FIFO.push(this->Vm_mV - this->VRest_mV);
+    }
+
+    if (recording)
+        this->Record(t_ms);
 };
 
 //! Compares Vm with Vact.
