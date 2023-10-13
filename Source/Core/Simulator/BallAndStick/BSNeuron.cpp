@@ -1,5 +1,6 @@
 #include <cassert>
 #include <memory>
+#include <algorithm>
 #include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/Distributions/TruncNorm.h>
 #include <Simulator/Structs/SignalFunctions.h>
@@ -141,8 +142,8 @@ void BSNeuron::UpdateVm(float t_ms, bool recording) {
     this->Vm_mV = this->VRest_mV + VSpikeT_mV + VAHPT_mV + VPSPT_mV;
 
     if (!this->FIFO.empty()) {
-        this->FIFO.pop();
-        this->FIFO.push(this->Vm_mV - this->VRest_mV);
+        this->FIFO.erase(this->FIFO.begin());
+        this->FIFO.push_back(this->Vm_mV - this->VRest_mV);
     }
 
     if (recording)
@@ -204,17 +205,37 @@ void BSNeuron::Update(float t_ms, bool recording) {
     this->T_ms = t_ms;
 };
 
+//! Sets the initial value of the FIFO.
+void BSNeuron::SetFIFO(float FIFO_ms, float dt_ms) {
+    assert(FIFO_ms>=0.0 && dt_ms>=0.0);
+
+    size_t fifoSize = dt_ms == 0.0? 1: FIFO_ms / dt_ms + 1;
+
+    for (size_t i=0; i<fifoSize; ++i)
+        this->FIFO.emplace_back(0.0);
+};
+
 //! We have to flip the signal FIFO, because the most recent is in [0].
 //! We need this, because the kernel has a specific time order.
 //! Alternatively, when we prepare the kernel we can flip it and
 //! remember to view [0] as most recent in the convolution result.
 void BSNeuron::UpdateConvolvedFIFO(std::vector<float> kernel) {
-    return;
-};
+    assert(!kernel.empty());
 
-//! Sets the initial value of the FIFO.
-void BSNeuron::SetFIFO(float FIFO_ms, float dt_ms) {
-    return;
+    std::vector<float> CaSignal = std::vector<float>(this->FIFO);
+
+    std::reverse(CaSignal.begin(), CaSignal.end());
+
+    for (size_t i=0; i<CaSignal.size(); ++i) {
+        CaSignal[i] *= -1.0;
+        if (CaSignal[i] < 0.0)
+            CaSignal[i] = 0.0;
+    }
+
+    this->ConvolvedFIFO = SignalFunctions::Convolve1D(CaSignal, kernel);
+    
+    this->CaSamples.emplace_back(this->ConvolvedFIFO.back() + 1.0);
+    this->TCaSamples_ms.emplace_back(this->T_ms);
 };
 
 }; // Close Namespace BallAndStick

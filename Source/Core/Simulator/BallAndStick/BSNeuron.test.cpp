@@ -11,12 +11,13 @@
 #include <cmath>
 #include <vector>
 #include <memory>
-#include <cstddef>
+#include <algorithm>
 
 #include <gtest/gtest.h>
 
 #include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/Distributions/TruncNorm.h>
+#include <Simulator/Structs/SignalFunctions.h>
 
 /**
  * @brief Test class for unit tests for struct BSNeuron.
@@ -193,16 +194,61 @@ TEST_F( BSNeuronTest, test_Update_default ) {
     
     testBSNeuron->SetSpontaneousActivity(0.5, 5.0);
     testBSNeuron->Update(0.1, true);
-    testBSNeuron->SpontaneousActivity(1.5);
+    testBSNeuron->Update(1.5, true);
 
-    ASSERT_EQ(testBSNeuron->TRecorded_ms.size(), oldLenTimesteps + 1);
-    ASSERT_EQ(testBSNeuron->VmRecorded_mV.size(), oldLenVmRecorded + 1);
+    ASSERT_EQ(testBSNeuron->TRecorded_ms.size(), oldLenTimesteps + 2);
+    ASSERT_EQ(testBSNeuron->VmRecorded_mV.size(), oldLenVmRecorded + 2);
     ASSERT_EQ(testBSNeuron->TAct_ms.size(), 1);
     ASSERT_TRUE(testBSNeuron->T_ms >= 0.0);
     ASSERT_TRUE(testBSNeuron->TSpontNext_ms >= 0.0);
 }
 
 TEST_F( BSNeuronTest, test_SetFIFO_default ) {
+    // Immediately after set up, size of FIFO has not been set
+    ASSERT_EQ(testBSNeuron->FIFO.size(), 0);
+    
+    float FIFO_ms = 1.1, dt_ms = 0.1;
+    size_t expectedFIFOSize = FIFO_ms / dt_ms + 1;
+
+    testBSNeuron->SetFIFO(1.1, 0.1);
+
+    ASSERT_EQ(testBSNeuron->FIFO.size(), expectedFIFOSize);
+}
+
+TEST_F( BSNeuronTest, test_UpdateConvolvedFIFO_default ) {
+    std::vector<float> kernel = {-1.0, 0.0, 1.0};
+    std::vector<float> expectedConvolvedFIFO{};
+    std::vector<float> FIFO{};
+
+    testBSNeuron->SetFIFO(1.1, 0.1);
+    testBSNeuron->SetSpontaneousActivity(0.5, 5.0);
+    testBSNeuron->Update(0.1, true);
+    testBSNeuron->Update(1.5, true);
+    testBSNeuron->Update(0.2, true);
+    testBSNeuron->Update(0.3, true);
+    testBSNeuron->Update(1.6, true);
+    testBSNeuron->UpdateConvolvedFIFO(kernel);
+    
+    FIFO = std::vector<float>(testBSNeuron->FIFO);
+    std::reverse(FIFO.begin(), FIFO.end());
+
+    for (size_t i=0; i<FIFO.size(); ++i) {
+        FIFO[i] *= -1.0;
+        if (FIFO[i] < 0.0)
+            FIFO[i] = 0.0;
+    }
+
+    expectedConvolvedFIFO = BG::NES::Simulator::SignalFunctions::Convolve1D(FIFO, kernel);
+
+    ASSERT_EQ(testBSNeuron->ConvolvedFIFO.size(), 
+            expectedConvolvedFIFO.size());
+    for (size_t i=0; i<testBSNeuron->ConvolvedFIFO.size(); ++i)
+        ASSERT_NEAR(testBSNeuron->ConvolvedFIFO[i], 
+                    expectedConvolvedFIFO[i], tol);
+    
+    ASSERT_EQ(testBSNeuron->CaSamples.back(),
+            testBSNeuron->ConvolvedFIFO.back() + 1.0f);   
+    ASSERT_EQ(testBSNeuron->TCaSamples_ms.back(), 1.6f);
 }
 
 TEST_F( BSNeuronTest, test_xx_default ) {

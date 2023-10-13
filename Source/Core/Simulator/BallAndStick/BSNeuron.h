@@ -13,7 +13,6 @@
 
 #include <vector>
 #include <tuple>
-#include <queue>
 #include <unordered_map>
 #include <memory>
 
@@ -74,8 +73,8 @@ struct BSNeuron: CoreStructs::Neuron {
 
     std::vector<float> TRecorded_ms{};
     std::vector<float> VmRecorded_mV{};
-    std::queue<float> FIFO{};
-    std::queue<float> ConvolvedFIFO{};
+    std::vector<float> FIFO{};
+    std::vector<float> ConvolvedFIFO{};
     std::vector<ReceptorData> ReceptorDataVec{};
     
     std::unique_ptr<Distributions::Distribution> DtSpontDist{}; //! Distribution for delta t spontaneous 
