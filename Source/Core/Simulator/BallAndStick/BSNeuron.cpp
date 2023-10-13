@@ -70,6 +70,8 @@ float BSNeuron::DtAct_ms(float t_ms) {
 
 //! Tells if the time since the latest spike is within the absolute refractory period threshold.
 bool BSNeuron::InAbsRef(float dtAct_ms) {
+    if (dtAct_ms==_NO_SPIKE_DT_mS) return false;
+
     assert(dtAct_ms >= 0.0);
 
     if (!this->HasSpiked()) return false;
@@ -162,13 +164,44 @@ void BSNeuron::DetectThreshold(float t_ms) {
 
 //! Checks for possible spontaneous activity.
 void BSNeuron::SpontaneousActivity(float t_ms) {
-    return;
+    assert(t_ms>=0.0);
+
+    float dtAct_ms = this->DtAct_ms(t_ms);
+    
+    if (this->InAbsRef(dtAct_ms)) return;
+    if (std::get<0>(this->TauSpontMeanStdev_ms) == 0) return;
+    
+    if (t_ms >= this->TSpontNext_ms) {
+        if (this->TSpontNext_ms >= 0)
+            this->TAct_ms.push_back(t_ms);
+        this->TSpontNext_ms = t_ms + this->DtSpontDist->RandomSample(1)[0];
+    }
 };
 
 //! Updates all potential components, the membrane potential
 //! and the time of update.
 void BSNeuron::Update(float t_ms, bool recording) {
-    return;
+    assert(t_ms>=0.0);
+    
+    float tDiff_ms = t_ms - this->T_ms;
+    if (tDiff_ms < 0) return;
+
+    // 1. Has there been a directed stimulation?
+    if (!(this->TDirectStim_ms.empty())) {
+        float tFire_ms = this->TDirectStim_ms.front();
+        if (tFire_ms <= t_ms) {
+            this->TAct_ms.push_back(tFire_ms);
+            this->TDirectStim_ms.erase(this->TDirectStim_ms.begin());
+        }
+    }
+
+    // 2. Update variables.
+    this->UpdateVm(t_ms, recording);
+    this->DetectThreshold(t_ms);
+    this->SpontaneousActivity(t_ms);
+
+    // 3. Remember the update time.
+    this->T_ms = t_ms;
 };
 
 //! We have to flip the signal FIFO, because the most recent is in [0].

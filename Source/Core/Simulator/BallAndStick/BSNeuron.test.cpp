@@ -171,6 +171,39 @@ TEST_F( BSNeuronTest, test_GetRecording_default ) {
     // TODO: What happens after a spike event has been detected?
 }
 
-TEST_F( BSNeuronTest, test_xx_default ) {
+// void BSNeuron::UpdateConvolvedFIFO(std::vector<float> kernel) {
+// void BSNeuron::SetFIFO(float FIFO_ms, float dt_ms) {
 
+TEST_F( BSNeuronTest, test_SpontaneousActivity_default ) {
+    // No spontaneous activity immediately after setup
+    ASSERT_NEAR(testBSNeuron->TSpontNext_ms, _T_SPONT_NEXT_mS_INIT, tol);
+    
+    testBSNeuron->SetSpontaneousActivity(0.5, 5.0);
+    testBSNeuron->SpontaneousActivity(0.1);
+    testBSNeuron->SpontaneousActivity(1.5);
+    
+    ASSERT_TRUE(testBSNeuron->TSpontNext_ms >= 0.0);
+    ASSERT_EQ(testBSNeuron->TAct_ms.size(), 1);
+}
+
+TEST_F( BSNeuronTest, test_Update_default ) {
+
+    size_t oldLenTimesteps = testBSNeuron->TRecorded_ms.size();
+    size_t oldLenVmRecorded = testBSNeuron->VmRecorded_mV.size();
+    
+    testBSNeuron->SetSpontaneousActivity(0.5, 5.0);
+    testBSNeuron->Update(0.1, true);
+    testBSNeuron->SpontaneousActivity(1.5);
+
+    ASSERT_EQ(testBSNeuron->TRecorded_ms.size(), oldLenTimesteps + 1);
+    ASSERT_EQ(testBSNeuron->VmRecorded_mV.size(), oldLenVmRecorded + 1);
+    ASSERT_EQ(testBSNeuron->TAct_ms.size(), 1);
+    ASSERT_TRUE(testBSNeuron->T_ms >= 0.0);
+    ASSERT_TRUE(testBSNeuron->TSpontNext_ms >= 0.0);
+}
+
+TEST_F( BSNeuronTest, test_SetFIFO_default ) {
+}
+
+TEST_F( BSNeuronTest, test_xx_default ) {
 }

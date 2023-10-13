@@ -30,6 +30,8 @@
 #define _VSPIKE_ABS_REF_mV 60.0
 //! Time span of absolute refractory period in ms
 #define _TAU_ABS_mS 1.0 
+//! Initial value of TSpontNext_ms before any spontaneous activity.
+#define _T_SPONT_NEXT_mS_INIT -99.0   
 
 namespace BG {
 namespace NES {
@@ -63,7 +65,7 @@ struct BSNeuron: CoreStructs::Neuron {
     std::tuple<float, float> TauSpontMeanStdev_ms = {0.0, 0.0}; //! 0 means no spontaneous activity
     
     float T_ms = 0.0;
-    float TSpontNext_ms = -1.0;
+    float TSpontNext_ms = _T_SPONT_NEXT_mS_INIT;
 
     std::vector<float> TAct_ms{};
     std::vector<float> TDirectStim_ms{};
