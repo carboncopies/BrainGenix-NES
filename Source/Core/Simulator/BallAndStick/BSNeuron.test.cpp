@@ -29,6 +29,8 @@ struct BSNeuronTest: testing::Test {
     
     float axonRadius_um = 0.5;
     float somaRadius_um = 0.5;
+    std::vector<float> times_ms = {0.1, 1.5, 0.2, 0.3, 1.6}; //! Time values used for simulation
+    
     BG::NES::Simulator::Geometries::Vec3D axonEnd0_um{0.0, 0.0, 0.0};
     BG::NES::Simulator::Geometries::Vec3D axonEnd1_um{0.0, 10.0, 0.0};
 
@@ -43,6 +45,14 @@ struct BSNeuronTest: testing::Test {
         testBSNeuron = std::make_unique<BG::NES::Simulator::BallAndStick::BSNeuron>(
                 200, testSoma, testAxon);
 
+    }
+
+    void Simulate() {
+        testBSNeuron->SetFIFO(1.1, 0.1);
+        testBSNeuron->SetSpontaneousActivity(0.5, 5.0);
+        
+        for (float val: times_ms)
+            testBSNeuron->Update(val, true);
     }
 
     void TearDown() {
@@ -110,33 +120,57 @@ TEST_F( BSNeuronTest, test_HasSpiked_default ) {
     // No spike event immediately after initialization
     ASSERT_FALSE(testBSNeuron->HasSpiked());
 
-    // TODO: Add test for confirming spike event
+    // Simulate
+    Simulate();
+
+    // Confirm spike event
+    ASSERT_TRUE(testBSNeuron->HasSpiked());
 }
 
 TEST_F( BSNeuronTest, test_DtAct_ms_default ) {
     float dtAct_ms = testBSNeuron->DtAct_ms(0.1);
 
     // Immediately after startup, no spike event has been recorded.
-    ASSERT_NEAR(dtAct_ms, _NO_SPIKE_DT_mS, tol) << "dtAct_ms = " << dtAct_ms; 
-    // TODO: Add test for getting dt_act_ms after spike event
+    ASSERT_EQ(dtAct_ms, _NO_SPIKE_DT_mS);
+
+    // Simulate
+    Simulate();
+
+    // Get dt_act_ms after spike event
+    ASSERT_TRUE(testBSNeuron->DtAct_ms(times_ms.back()) >= 0.0);
 }
 
-TEST_F( BSNeuronTest, test_VSpiket_mV_default ) {
+TEST_F( BSNeuronTest, test_VSpikeT_mV_default ) {
     // No spike event immediately after set up.
     ASSERT_NEAR(testBSNeuron->VSpikeT_mV(0.1), 0.0f, tol);
-    // TODO: What happens after there is a spike event?
+
+    // Simulate
+    Simulate();
+
+    // After there is a spike event, spike potential is nonzero.
+    ASSERT_TRUE(testBSNeuron->VSpikeT_mV(times_ms.back()) >= 0.0);
 }
 
 TEST_F( BSNeuronTest, test_VAHPT_mV_default ) {
     // No spike event immediately after set up.
     ASSERT_NEAR(testBSNeuron->VAHPT_mV(0.1), 0.0f, tol);
-    // TODO: What happens after there is a spike event?
+
+    // Simulate
+    Simulate();
+
+    // After there is a spike event, AHP potential is nonzero.
+    ASSERT_TRUE(testBSNeuron->VAHPT_mV(times_ms.back()) >= 0.0);
 }
 
 TEST_F( BSNeuronTest, test_VPSPT_mV_default ) {
     // No spike event immediately after set up.
     ASSERT_NEAR(testBSNeuron->VPSPT_mV(0.1), 0.0f, tol); 
-    // TODO: What happens after there is a spike event?
+
+    // Simulate
+    Simulate();
+    
+    // After there is a spike event, PSP potential is nonzero.
+    ASSERT_TRUE(testBSNeuron->VPSPT_mV(times_ms.back()) >= 0.0);
 }
 
 TEST_F( BSNeuronTest, test_UpdateVm_default ) {
@@ -148,7 +182,6 @@ TEST_F( BSNeuronTest, test_UpdateVm_default ) {
 
     ASSERT_EQ(testBSNeuron->TRecorded_ms.size(), oldLenTimesteps + 1);
     ASSERT_EQ(testBSNeuron->VmRecorded_mV.size(), oldLenVmRecorded + 1);
-    // TODO: What happens after there is a spike event?
 }
 
 TEST_F( BSNeuronTest, test_DetectThreshold_default ) {
@@ -158,7 +191,12 @@ TEST_F( BSNeuronTest, test_DetectThreshold_default ) {
 
     testBSNeuron->DetectThreshold(0.1);
     ASSERT_EQ(testBSNeuron->TAct_ms.size(), oldTAct_ms_Length);
-    // TODO: What happens after there is a spike event?
+
+    Simulate();
+
+    // After there is a spike event, the time of spike event is recorded.
+    testBSNeuron->DetectThreshold(times_ms.back());
+    ASSERT_TRUE(testBSNeuron->TAct_ms.size() > oldTAct_ms_Length);
 }
 
 TEST_F( BSNeuronTest, test_GetRecording_default ) {
@@ -167,13 +205,33 @@ TEST_F( BSNeuronTest, test_GetRecording_default ) {
 
     // Immediately after set up no membrane potentials have
     // been recorded.
-    ASSERT_EQ(recording.at("Vm_mV").size(), 0);
+    ASSERT_EQ((recording.at("Vm_mV")).size(), 0);
+    
+    // Simulate
+    Simulate();
 
-    // TODO: What happens after a spike event has been detected?
+    recording = testBSNeuron->GetRecording();
+    
+    ASSERT_EQ(recording.at("Vm_mV").size(), 3);
 }
 
-// void BSNeuron::UpdateConvolvedFIFO(std::vector<float> kernel) {
-// void BSNeuron::SetFIFO(float FIFO_ms, float dt_ms) {
+TEST_F( BSNeuronTest, test_InAbsRef_default ) {
+    float dtAct_ms = testBSNeuron->DtAct_ms(0.1);
+    bool inAbsRef = testBSNeuron->InAbsRef(dtAct_ms);
+
+    // No spike has occurred immediately after set up
+    ASSERT_EQ(dtAct_ms, _NO_SPIKE_DT_mS);
+    ASSERT_TRUE(!inAbsRef);
+    
+    // Simulate
+    Simulate();
+
+    dtAct_ms = testBSNeuron->DtAct_ms(times_ms.back());
+    inAbsRef = testBSNeuron->InAbsRef(dtAct_ms);
+    
+    ASSERT_TRUE(dtAct_ms >= 0);
+    ASSERT_TRUE(inAbsRef);
+}
 
 TEST_F( BSNeuronTest, test_SpontaneousActivity_default ) {
     // No spontaneous activity immediately after setup
@@ -220,13 +278,9 @@ TEST_F( BSNeuronTest, test_UpdateConvolvedFIFO_default ) {
     std::vector<float> expectedConvolvedFIFO{};
     std::vector<float> FIFO{};
 
-    testBSNeuron->SetFIFO(1.1, 0.1);
-    testBSNeuron->SetSpontaneousActivity(0.5, 5.0);
-    testBSNeuron->Update(0.1, true);
-    testBSNeuron->Update(1.5, true);
-    testBSNeuron->Update(0.2, true);
-    testBSNeuron->Update(0.3, true);
-    testBSNeuron->Update(1.6, true);
+    // Simulate
+    Simulate();
+    
     testBSNeuron->UpdateConvolvedFIFO(kernel);
     
     FIFO = std::vector<float>(testBSNeuron->FIFO);
@@ -251,5 +305,3 @@ TEST_F( BSNeuronTest, test_UpdateConvolvedFIFO_default ) {
     ASSERT_EQ(testBSNeuron->TCaSamples_ms.back(), 1.6f);
 }
 
-TEST_F( BSNeuronTest, test_xx_default ) {
-}

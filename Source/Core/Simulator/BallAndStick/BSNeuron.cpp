@@ -56,7 +56,7 @@ std::unordered_map<std::string, std::vector<float>> BSNeuron::GetRecording() {
 
 //! Tells if the action potential threshold has been crossed.
 bool BSNeuron::HasSpiked() {
-    return (this->TAct_ms).size() > 0;
+    return this->TAct_ms.size() > 0;
 };
 
 //! Returns the time since the action potential threshold was
@@ -95,11 +95,13 @@ float BSNeuron::VSpikeT_mV(float t_ms){\
 //! Updates V_AHP_t.
 float BSNeuron::VAHPT_mV(float t_ms) {
     assert(t_ms>=0.0);
+
+    float dtAct_ms = this->DtAct_ms(t_ms);
     
     if (!this->HasSpiked()) return 0.0;
-    if (this->InAbsRef(this->DtAct_ms(t_ms))) return 0.0;
+    if (this->InAbsRef(dtAct_ms)) return 0.0;
 
-    return this->VAHP_mV * exp(-this->DtAct_ms(t_ms) / this->TauAHP_ms);
+    return this->VAHP_mV * exp(-dtAct_ms / this->TauAHP_ms);
 };
 
 //! Updates V_PSP_t.
@@ -126,19 +128,14 @@ float BSNeuron::VPSPT_mV(float t_ms) {
 void BSNeuron::UpdateVm(float t_ms, bool recording) {
     assert(t_ms >= 0.0);
 
-    float dtAct_ms = 0.0;
     float VSpikeT_mV, VAHPT_mV, VPSPT_mV;
 
-    // 1. Prepare data used by VSpike_t and V_AHP_t
-    if (this->HasSpiked())
-        dtAct_ms = this->DtAct_ms(t_ms);
-
-    // 2. Calculate contributions
+    // 1. Calculate contributions
     VSpikeT_mV = this->VSpikeT_mV(t_ms);
     VAHPT_mV = this->VAHPT_mV(t_ms);
     VPSPT_mV = this->VPSPT_mV(t_ms);
 
-    // 3. Calculate membrane potential
+    // 2. Calculate membrane potential
     this->Vm_mV = this->VRest_mV + VSpikeT_mV + VAHPT_mV + VPSPT_mV;
 
     if (!this->FIFO.empty()) {
