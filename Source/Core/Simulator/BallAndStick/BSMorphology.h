@@ -20,13 +20,16 @@ Description: This file provides functions that use geometric structs to
 #include <Simulator/Geometries/Sphere.h>
 #include <Simulator/Geometries/VecTools.h>
 
+//! Default dimension of receptor box (represented as a cube).
+#define _DEFAULT_RECEPTOR_DIM_um 0.1f
+
 namespace BG {
 namespace NES {
 namespace Simulator {
 namespace BallAndStick {
 
 //! Different ways the geometries can be aligned to create the morphology.
-enum Align { LEFT = 0, RIGHT, CENTER };
+enum Align { ALIGN_LEFT = 0, ALIGN_RIGHT, ALIGN_CENTER };
 
 //! Create the soma of a neuron in the shape of a sphere.
 std::unique_ptr<Geometries::Sphere>
