@@ -8,10 +8,10 @@
     Date Created: 2023-10-06
 */
 
-#include <cmath>
-#include <vector>
-#include <memory>
 #include <algorithm>
+#include <cmath>
+#include <memory>
+#include <vector>
 
 #include <gtest/gtest.h>
 
@@ -24,99 +24,99 @@
  *
  */
 
-struct BSNeuronTest: testing::Test {
-    std::unique_ptr<BG::NES::Simulator::BallAndStick::BSNeuron> testBSNeuron = nullptr;
-    
+struct BSNeuronTest : testing::Test {
+    std::unique_ptr<BG::NES::Simulator::BallAndStick::BSNeuron> testBSNeuron =
+        nullptr;
+
     float axonRadius_um = 0.5;
     float somaRadius_um = 0.5;
-    std::vector<float> times_ms = {0.1, 1.5, 0.2, 0.3, 1.6}; //! Time values used for simulation
-    
+    std::vector<float> times_ms = {0.1, 1.5, 0.2, 0.3,
+                                   1.6}; //! Time values used for simulation
+
     BG::NES::Simulator::Geometries::Vec3D axonEnd0_um{0.0, 0.0, 0.0};
     BG::NES::Simulator::Geometries::Vec3D axonEnd1_um{0.0, 10.0, 0.0};
 
-    std::shared_ptr<BG::NES::Simulator::Geometries::Sphere> testSoma = \
-         std::make_shared<BG::NES::Simulator::Geometries::Sphere>(somaRadius_um);
-    std::shared_ptr<BG::NES::Simulator::Geometries::Cylinder> testAxon = \
-         std::make_shared<BG::NES::Simulator::Geometries::Cylinder>(
-                 axonRadius_um, axonEnd0_um, axonRadius_um, axonEnd1_um);
+    std::shared_ptr<BG::NES::Simulator::Geometries::Sphere> testSoma =
+        std::make_shared<BG::NES::Simulator::Geometries::Sphere>(somaRadius_um);
+    std::shared_ptr<BG::NES::Simulator::Geometries::Cylinder> testAxon =
+        std::make_shared<BG::NES::Simulator::Geometries::Cylinder>(
+            axonRadius_um, axonEnd0_um, axonRadius_um, axonEnd1_um);
     float tol = 1e-3;
 
     void SetUp() {
-        testBSNeuron = std::make_unique<BG::NES::Simulator::BallAndStick::BSNeuron>(
+        testBSNeuron =
+            std::make_unique<BG::NES::Simulator::BallAndStick::BSNeuron>(
                 200, testSoma, testAxon);
-
     }
 
     void Simulate() {
         testBSNeuron->SetFIFO(1.1, 0.1);
         testBSNeuron->SetSpontaneousActivity(0.5, 5.0);
-        
-        for (float val: times_ms)
+
+        for (float val : times_ms)
             testBSNeuron->Update(val, true);
     }
 
-    void TearDown() {
-        return;
-    }
+    void TearDown() { return; }
 };
 
-TEST_F( BSNeuronTest, test_GetCellCenter_default ) {
-    BG::NES::Simulator::Geometries::Vec3D cellCenter = testBSNeuron->GetCellCenter();
+TEST_F(BSNeuronTest, test_GetCellCenter_default) {
+    BG::NES::Simulator::Geometries::Vec3D cellCenter =
+        testBSNeuron->GetCellCenter();
     BG::NES::Simulator::Geometries::Vec3D expectedCenter = testSoma->Center_um;
-    ASSERT_EQ(cellCenter==expectedCenter, true);
+    ASSERT_EQ(cellCenter == expectedCenter, true);
 }
 
-TEST_F( BSNeuronTest, test_AttachDirectStim_default ) {
+TEST_F(BSNeuronTest, test_AttachDirectStim_default) {
     testBSNeuron->AttachDirectStim(0.1f);
 
     // Time recorded successfully
     ASSERT_EQ(testBSNeuron->TDirectStim_ms[0], 0.1f);
 
-    for (size_t i=0; i<5; ++i)
+    for (size_t i = 0; i < 5; ++i)
         testBSNeuron->AttachDirectStim(i * 0.15f);
 
     // Number of direct stimulus activities recorded.
-    ASSERT_EQ(testBSNeuron->TDirectStim_ms.size(), 6);  
+    ASSERT_EQ(testBSNeuron->TDirectStim_ms.size(), 6);
 }
 
-TEST_F( BSNeuronTest, test_SetSpontaneousActivity_default ) {
+TEST_F(BSNeuronTest, test_SetSpontaneousActivity_default) {
     float testMu = 0.1;
     float testStd = 0.5;
     std::tuple<float, float> gotTauSpontMeanStdev_ms;
     std::tuple<float, float> expectedDistStats, gotDistStats;
 
-
-    std::unique_ptr<BG::NES::Simulator::Distributions::Distribution> expectedDtSpontDist =\
-         std::make_unique<BG::NES::Simulator::Distributions::TruncNorm>(
-        -testMu / testStd, testMu / testStd, testMu, testStd
-    );
+    std::unique_ptr<BG::NES::Simulator::Distributions::Distribution>
+        expectedDtSpontDist =
+            std::make_unique<BG::NES::Simulator::Distributions::TruncNorm>(
+                -testMu / testStd, testMu / testStd, testMu, testStd);
     expectedDistStats = expectedDtSpontDist->Stats();
-    
+
     testBSNeuron->SetSpontaneousActivity(testMu, testStd);
 
     gotTauSpontMeanStdev_ms = testBSNeuron->TauSpontMeanStdev_ms;
     gotDistStats = testBSNeuron->DtSpontDist->Stats();
-    
+
     // TauSpontMeanStdev_ms must be equal to the mu and sigma values supplied
     ASSERT_NEAR(std::get<0>(gotTauSpontMeanStdev_ms), testMu, tol);
     ASSERT_NEAR(std::get<1>(gotTauSpontMeanStdev_ms), testStd, tol);
-    
+
     // Statistics for the spontaneous Dt distribution must match the
     // statistics of the expected distribution.
     ASSERT_EQ(expectedDistStats, gotDistStats);
 }
 
-TEST_F( BSNeuronTest, test_Record_default ) {
+TEST_F(BSNeuronTest, test_Record_default) {
     size_t oldLenTimesteps = testBSNeuron->TRecorded_ms.size();
     size_t oldLenVmRecorded = testBSNeuron->VmRecorded_mV.size();
 
     testBSNeuron->Record(0.1);
-    
-    ASSERT_EQ( testBSNeuron->TRecorded_ms.size(), oldLenTimesteps + 1 );
-    ASSERT_EQ( testBSNeuron->VmRecorded_mV.size(), oldLenVmRecorded + 1 );
+
+    ASSERT_EQ(testBSNeuron->TRecorded_ms.size(), oldLenTimesteps + 1);
+    ASSERT_EQ(testBSNeuron->VmRecorded_mV.size(), oldLenVmRecorded + 1);
 }
 
-TEST_F( BSNeuronTest, test_HasSpiked_default ) {
+TEST_F(BSNeuronTest, test_HasSpiked_default) {
     // No spike event immediately after initialization
     ASSERT_FALSE(testBSNeuron->HasSpiked());
 
@@ -127,7 +127,7 @@ TEST_F( BSNeuronTest, test_HasSpiked_default ) {
     ASSERT_TRUE(testBSNeuron->HasSpiked());
 }
 
-TEST_F( BSNeuronTest, test_DtAct_ms_default ) {
+TEST_F(BSNeuronTest, test_DtAct_ms_default) {
     float dtAct_ms = testBSNeuron->DtAct_ms(0.1);
 
     // Immediately after startup, no spike event has been recorded.
@@ -140,7 +140,7 @@ TEST_F( BSNeuronTest, test_DtAct_ms_default ) {
     ASSERT_TRUE(testBSNeuron->DtAct_ms(times_ms.back()) >= 0.0);
 }
 
-TEST_F( BSNeuronTest, test_VSpikeT_mV_default ) {
+TEST_F(BSNeuronTest, test_VSpikeT_mV_default) {
     // No spike event immediately after set up.
     ASSERT_NEAR(testBSNeuron->VSpikeT_mV(0.1), 0.0f, tol);
 
@@ -151,7 +151,7 @@ TEST_F( BSNeuronTest, test_VSpikeT_mV_default ) {
     ASSERT_TRUE(testBSNeuron->VSpikeT_mV(times_ms.back()) >= 0.0);
 }
 
-TEST_F( BSNeuronTest, test_VAHPT_mV_default ) {
+TEST_F(BSNeuronTest, test_VAHPT_mV_default) {
     // No spike event immediately after set up.
     ASSERT_NEAR(testBSNeuron->VAHPT_mV(0.1), 0.0f, tol);
 
@@ -162,29 +162,29 @@ TEST_F( BSNeuronTest, test_VAHPT_mV_default ) {
     ASSERT_TRUE(testBSNeuron->VAHPT_mV(times_ms.back()) >= 0.0);
 }
 
-TEST_F( BSNeuronTest, test_VPSPT_mV_default ) {
+TEST_F(BSNeuronTest, test_VPSPT_mV_default) {
     // No spike event immediately after set up.
-    ASSERT_NEAR(testBSNeuron->VPSPT_mV(0.1), 0.0f, tol); 
+    ASSERT_NEAR(testBSNeuron->VPSPT_mV(0.1), 0.0f, tol);
 
     // Simulate
     Simulate();
-    
+
     // After there is a spike event, PSP potential is nonzero.
     ASSERT_TRUE(testBSNeuron->VPSPT_mV(times_ms.back()) >= 0.0);
 }
 
-TEST_F( BSNeuronTest, test_UpdateVm_default ) {
+TEST_F(BSNeuronTest, test_UpdateVm_default) {
     // No spike event immediately after set up.
     size_t oldLenTimesteps = testBSNeuron->TRecorded_ms.size();
     size_t oldLenVmRecorded = testBSNeuron->VmRecorded_mV.size();
-    
+
     testBSNeuron->UpdateVm(0.1, true);
 
     ASSERT_EQ(testBSNeuron->TRecorded_ms.size(), oldLenTimesteps + 1);
     ASSERT_EQ(testBSNeuron->VmRecorded_mV.size(), oldLenVmRecorded + 1);
 }
 
-TEST_F( BSNeuronTest, test_DetectThreshold_default ) {
+TEST_F(BSNeuronTest, test_DetectThreshold_default) {
     // Action potential threshold will not be crossed immediately
     // after set up.
     size_t oldTAct_ms_Length = testBSNeuron->TAct_ms.size();
@@ -199,57 +199,57 @@ TEST_F( BSNeuronTest, test_DetectThreshold_default ) {
     ASSERT_TRUE(testBSNeuron->TAct_ms.size() > oldTAct_ms_Length);
 }
 
-TEST_F( BSNeuronTest, test_GetRecording_default ) {
+TEST_F(BSNeuronTest, test_GetRecording_default) {
     auto recording = testBSNeuron->GetRecording();
     ASSERT_FALSE(recording.empty());
 
     // Immediately after set up no membrane potentials have
     // been recorded.
     ASSERT_EQ((recording.at("Vm_mV")).size(), 0);
-    
+
     // Simulate
     Simulate();
 
     recording = testBSNeuron->GetRecording();
-    
+
     ASSERT_EQ(recording.at("Vm_mV").size(), 3);
 }
 
-TEST_F( BSNeuronTest, test_InAbsRef_default ) {
+TEST_F(BSNeuronTest, test_InAbsRef_default) {
     float dtAct_ms = testBSNeuron->DtAct_ms(0.1);
     bool inAbsRef = testBSNeuron->InAbsRef(dtAct_ms);
 
     // No spike has occurred immediately after set up
     ASSERT_EQ(dtAct_ms, _NO_SPIKE_DT_mS);
     ASSERT_TRUE(!inAbsRef);
-    
+
     // Simulate
     Simulate();
 
     dtAct_ms = testBSNeuron->DtAct_ms(times_ms.back());
     inAbsRef = testBSNeuron->InAbsRef(dtAct_ms);
-    
+
     ASSERT_TRUE(dtAct_ms >= 0);
     ASSERT_TRUE(inAbsRef);
 }
 
-TEST_F( BSNeuronTest, test_SpontaneousActivity_default ) {
+TEST_F(BSNeuronTest, test_SpontaneousActivity_default) {
     // No spontaneous activity immediately after setup
     ASSERT_NEAR(testBSNeuron->TSpontNext_ms, _T_SPONT_NEXT_mS_INIT, tol);
-    
+
     testBSNeuron->SetSpontaneousActivity(0.5, 5.0);
     testBSNeuron->SpontaneousActivity(0.1);
     testBSNeuron->SpontaneousActivity(1.5);
-    
+
     ASSERT_TRUE(testBSNeuron->TSpontNext_ms >= 0.0);
     ASSERT_EQ(testBSNeuron->TAct_ms.size(), 1);
 }
 
-TEST_F( BSNeuronTest, test_Update_default ) {
+TEST_F(BSNeuronTest, test_Update_default) {
 
     size_t oldLenTimesteps = testBSNeuron->TRecorded_ms.size();
     size_t oldLenVmRecorded = testBSNeuron->VmRecorded_mV.size();
-    
+
     testBSNeuron->SetSpontaneousActivity(0.5, 5.0);
     testBSNeuron->Update(0.1, true);
     testBSNeuron->Update(1.5, true);
@@ -261,10 +261,10 @@ TEST_F( BSNeuronTest, test_Update_default ) {
     ASSERT_TRUE(testBSNeuron->TSpontNext_ms >= 0.0);
 }
 
-TEST_F( BSNeuronTest, test_SetFIFO_default ) {
+TEST_F(BSNeuronTest, test_SetFIFO_default) {
     // Immediately after set up, size of FIFO has not been set
     ASSERT_EQ(testBSNeuron->FIFO.size(), 0);
-    
+
     float FIFO_ms = 1.1, dt_ms = 0.1;
     size_t expectedFIFOSize = FIFO_ms / dt_ms + 1;
 
@@ -273,35 +273,34 @@ TEST_F( BSNeuronTest, test_SetFIFO_default ) {
     ASSERT_EQ(testBSNeuron->FIFO.size(), expectedFIFOSize);
 }
 
-TEST_F( BSNeuronTest, test_UpdateConvolvedFIFO_default ) {
+TEST_F(BSNeuronTest, test_UpdateConvolvedFIFO_default) {
     std::vector<float> kernel = {-1.0, 0.0, 1.0};
     std::vector<float> expectedConvolvedFIFO{};
     std::vector<float> FIFO{};
 
     // Simulate
     Simulate();
-    
+
     testBSNeuron->UpdateConvolvedFIFO(kernel);
-    
+
     FIFO = std::vector<float>(testBSNeuron->FIFO);
     std::reverse(FIFO.begin(), FIFO.end());
 
-    for (size_t i=0; i<FIFO.size(); ++i) {
+    for (size_t i = 0; i < FIFO.size(); ++i) {
         FIFO[i] *= -1.0;
         if (FIFO[i] < 0.0)
             FIFO[i] = 0.0;
     }
 
-    expectedConvolvedFIFO = BG::NES::Simulator::SignalFunctions::Convolve1D(FIFO, kernel);
+    expectedConvolvedFIFO =
+        BG::NES::Simulator::SignalFunctions::Convolve1D(FIFO, kernel);
 
-    ASSERT_EQ(testBSNeuron->ConvolvedFIFO.size(), 
-            expectedConvolvedFIFO.size());
-    for (size_t i=0; i<testBSNeuron->ConvolvedFIFO.size(); ++i)
-        ASSERT_NEAR(testBSNeuron->ConvolvedFIFO[i], 
-                    expectedConvolvedFIFO[i], tol);
-    
+    ASSERT_EQ(testBSNeuron->ConvolvedFIFO.size(), expectedConvolvedFIFO.size());
+    for (size_t i = 0; i < testBSNeuron->ConvolvedFIFO.size(); ++i)
+        ASSERT_NEAR(testBSNeuron->ConvolvedFIFO[i], expectedConvolvedFIFO[i],
+                    tol);
+
     ASSERT_EQ(testBSNeuron->CaSamples.back(),
-            testBSNeuron->ConvolvedFIFO.back() + 1.0f);   
+              testBSNeuron->ConvolvedFIFO.back() + 1.0f);
     ASSERT_EQ(testBSNeuron->TCaSamples_ms.back(), 1.6f);
 }
-

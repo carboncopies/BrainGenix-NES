@@ -1,6 +1,7 @@
+#include <algorithm>
 #include <cassert>
 #include <memory>
-#include <algorithm>
+
 #include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/Distributions/TruncNorm.h>
 #include <Simulator/Structs/SignalFunctions.h>
@@ -11,17 +12,15 @@ namespace Simulator {
 namespace BallAndStick {
 
 //! Constructors
-BSNeuron::BSNeuron(int ID, 
-            std::shared_ptr<Geometries::Sphere> soma,
-            std::shared_ptr<Geometries::Cylinder> axon
-    ) {
+BSNeuron::BSNeuron(int ID, std::shared_ptr<Geometries::Sphere> soma,
+                   std::shared_ptr<Geometries::Cylinder> axon) {
     this->ID = ID;
     this->morphology["soma"] = soma;
     this->morphology["axon"] = axon;
 };
 
 //! Returns the geometric center of the neuron.
-Geometries::Vec3D& BSNeuron::GetCellCenter() {
+Geometries::Vec3D &BSNeuron::GetCellCenter() {
     return this->morphology["soma"]->Center_um;
 };
 
@@ -37,7 +36,7 @@ void BSNeuron::AttachDirectStim(float t_ms) {
 void BSNeuron::SetSpontaneousActivity(float mean, float stdev) {
     this->TauSpontMeanStdev_ms = std::make_tuple(mean, stdev);
     this->DtSpontDist = std::make_unique<Distributions::TruncNorm>(
-            -mean / stdev, mean / stdev, mean, stdev);
+        -mean / stdev, mean / stdev, mean, stdev);
 };
 
 //! Keeps track of the membrane potential and the time of update.
@@ -55,9 +54,7 @@ NeuronRecording BSNeuron::GetRecording() {
 };
 
 //! Tells if the action potential threshold has been crossed.
-bool BSNeuron::HasSpiked() {
-    return this->TAct_ms.size() > 0;
-};
+bool BSNeuron::HasSpiked() { return this->TAct_ms.size() > 0; };
 
 //! Returns the time since the action potential threshold was
 //! crossed last.
@@ -68,57 +65,62 @@ float BSNeuron::DtAct_ms(float t_ms) {
     return _NO_SPIKE_DT_mS;
 };
 
-
-//! Tells if the time since the latest spike is within the absolute refractory period threshold.
+//! Tells if the time since the latest spike is within the absolute refractory
+//! period threshold.
 bool BSNeuron::InAbsRef(float dtAct_ms) {
-    if (dtAct_ms==_NO_SPIKE_DT_mS) return false;
+    if (dtAct_ms == _NO_SPIKE_DT_mS)
+        return false;
 
     assert(dtAct_ms >= 0.0);
 
-    if (!this->HasSpiked()) return false;
+    if (!this->HasSpiked())
+        return false;
     return dtAct_ms <= _TAU_ABS_mS;
 };
 
-
 //! Updates V_spike_t.
-float BSNeuron::VSpikeT_mV(float t_ms){\
-    assert(t_ms>=0.0);
-    
-    // If a spike has not occurred return 0.0
-    if (!this->HasSpiked()) return 0.0;
+float BSNeuron::VSpikeT_mV(float t_ms) {
+    assert(t_ms >= 0.0);
 
-    // if within absolute refractory period, return 
+    // If a spike has not occurred return 0.0
+    if (!this->HasSpiked())
+        return 0.0;
+
+    // if within absolute refractory period, return
     // the spike potential during absolute refractory period.
     return this->InAbsRef(this->DtAct_ms(t_ms)) ? _VSPIKE_ABS_REF_mV : 0.0;
 };
 
 //! Updates V_AHP_t.
 float BSNeuron::VAHPT_mV(float t_ms) {
-    assert(t_ms>=0.0);
+    assert(t_ms >= 0.0);
 
     float dtAct_ms = this->DtAct_ms(t_ms);
-    
-    if (!this->HasSpiked()) return 0.0;
-    if (this->InAbsRef(dtAct_ms)) return 0.0;
+
+    if (!this->HasSpiked())
+        return 0.0;
+    if (this->InAbsRef(dtAct_ms))
+        return 0.0;
 
     return this->VAHP_mV * exp(-dtAct_ms / this->TauAHP_ms);
 };
 
 //! Updates V_PSP_t.
 float BSNeuron::VPSPT_mV(float t_ms) {
-    assert(t_ms>=0.0);
+    assert(t_ms >= 0.0);
     float VPSPT_mV = 0.0;
 
-    for (auto receptorData: this->ReceptorDataVec) {
+    for (auto receptorData : this->ReceptorDataVec) {
         auto srcCell = std::get<0>(receptorData);
-        if (!srcCell->HasSpiked()) 
+        if (!srcCell->HasSpiked())
             continue;
-        
+
         float weight = std::get<1>(receptorData);
         float dtPSP_ms = srcCell->DtAct_ms(t_ms);
-        
-        VPSPT_mV += SignalFunctions::DoubleExponentExpr(weight * this->VPSP_mV, 
-                this->TauPSPr_ms, this->TauPSPd_ms, dtPSP_ms);
+
+        VPSPT_mV += SignalFunctions::DoubleExponentExpr(
+            weight * this->VPSP_mV, this->TauPSPr_ms, this->TauPSPd_ms,
+            dtPSP_ms);
     }
     return VPSPT_mV;
 };
@@ -153,22 +155,26 @@ void BSNeuron::DetectThreshold(float t_ms) {
 
     float dtAct_ms = this->DtAct_ms(t_ms);
 
-    if (dtAct_ms == _NO_SPIKE_DT_mS) return;
-    if (this->InAbsRef(dtAct_ms)) return;
-    
+    if (dtAct_ms == _NO_SPIKE_DT_mS)
+        return;
+    if (this->InAbsRef(dtAct_ms))
+        return;
+
     if (this->Vm_mV >= this->VAct_mV)
         this->TAct_ms.push_back(t_ms);
 };
 
 //! Checks for possible spontaneous activity.
 void BSNeuron::SpontaneousActivity(float t_ms) {
-    assert(t_ms>=0.0);
+    assert(t_ms >= 0.0);
 
     float dtAct_ms = this->DtAct_ms(t_ms);
-    
-    if (this->InAbsRef(dtAct_ms)) return;
-    if (std::get<0>(this->TauSpontMeanStdev_ms) == 0) return;
-    
+
+    if (this->InAbsRef(dtAct_ms))
+        return;
+    if (std::get<0>(this->TauSpontMeanStdev_ms) == 0)
+        return;
+
     if (t_ms >= this->TSpontNext_ms) {
         if (this->TSpontNext_ms >= 0)
             this->TAct_ms.push_back(t_ms);
@@ -179,10 +185,11 @@ void BSNeuron::SpontaneousActivity(float t_ms) {
 //! Updates all potential components, the membrane potential
 //! and the time of update.
 void BSNeuron::Update(float t_ms, bool recording) {
-    assert(t_ms>=0.0);
-    
+    assert(t_ms >= 0.0);
+
     float tDiff_ms = t_ms - this->T_ms;
-    if (tDiff_ms < 0) return;
+    if (tDiff_ms < 0)
+        return;
 
     // 1. Has there been a directed stimulation?
     if (!(this->TDirectStim_ms.empty())) {
@@ -204,11 +211,11 @@ void BSNeuron::Update(float t_ms, bool recording) {
 
 //! Sets the initial value of the FIFO.
 void BSNeuron::SetFIFO(float FIFO_ms, float dt_ms) {
-    assert(FIFO_ms>=0.0 && dt_ms>=0.0);
+    assert(FIFO_ms >= 0.0 && dt_ms >= 0.0);
 
-    size_t fifoSize = dt_ms == 0.0? 1: FIFO_ms / dt_ms + 1;
+    size_t fifoSize = dt_ms == 0.0 ? 1 : FIFO_ms / dt_ms + 1;
 
-    for (size_t i=0; i<fifoSize; ++i)
+    for (size_t i = 0; i < fifoSize; ++i)
         this->FIFO.emplace_back(0.0);
 };
 
@@ -223,19 +230,19 @@ void BSNeuron::UpdateConvolvedFIFO(std::vector<float> kernel) {
 
     std::reverse(CaSignal.begin(), CaSignal.end());
 
-    for (size_t i=0; i<CaSignal.size(); ++i) {
+    for (size_t i = 0; i < CaSignal.size(); ++i) {
         CaSignal[i] *= -1.0;
         if (CaSignal[i] < 0.0)
             CaSignal[i] = 0.0;
     }
 
     this->ConvolvedFIFO = SignalFunctions::Convolve1D(CaSignal, kernel);
-    
+
     this->CaSamples.emplace_back(this->ConvolvedFIFO.back() + 1.0);
     this->TCaSamples_ms.emplace_back(this->T_ms);
 };
 
-}; // Close Namespace BallAndStick
-}; // Close Namespace Simulator
-}; // Close Namespace NES
-}; // Close Namespace BG
+}; // namespace BallAndStick
+}; // namespace Simulator
+}; // namespace NES
+}; // namespace BG

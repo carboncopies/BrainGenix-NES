@@ -42,6 +42,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.cpp
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.h
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.h
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.cpp
 
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.cpp
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.h
@@ -88,6 +90,8 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.test.cpp
   
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.test.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.test.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.test.cpp
 )
 
 # Configure test binaries
