@@ -40,6 +40,8 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.h
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.h
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.cpp
 
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.cpp
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.h

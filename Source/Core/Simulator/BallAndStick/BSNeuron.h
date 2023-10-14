@@ -41,6 +41,9 @@ namespace BallAndStick {
 //! neuron of a connection and its weight.
 typedef std::tuple<std::shared_ptr<CoreStructs::Neuron>, float> ReceptorData;
 
+//! NeuronRecording is an unordered map containing data from simulation in a neuron. 
+typedef std::unordered_map<std::string, std::vector<float>> NeuronRecording;
+
 /**
  * @brief This struct provides the structure representing a basic building block for a ball-and-stick neural circuit.
  * 
@@ -102,7 +105,7 @@ struct BSNeuron: CoreStructs::Neuron {
     void Record(float t_ms);
 
     //! Returns the recorded membrane potentials.
-    std::unordered_map<std::string, std::vector<float>> GetRecording();
+    NeuronRecording GetRecording();
     
     //! Tells if the action potential threshold has been crossed.
     bool HasSpiked();
