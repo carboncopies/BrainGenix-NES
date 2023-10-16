@@ -88,6 +88,8 @@ bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, st
 
 /**
  * @brief This is the second step in compiling GLSL to SPIR-V at runtime (at least with the shaderc library).
+ * There are two options for the second step. The one you probably should use is the compile to binary option.
+ * If you want to see the compiled assembly as a string, this is the otpion for you.
  * You should have already called the preprocess step, which does things like macro substitution and that sort of thing.
  * To use this function, provide a preprocessed source string, the name, type and a pointer to where the result is to be put.
  * If you wish to enable optimizations, set optimize to true.
@@ -105,8 +107,26 @@ bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, st
  */
 bool Shaderc_CompileToAssembly(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::string* _CompiledResult, bool _Optimize = false, bool _Verbose = true);
 
-//https://github.com/google/shaderc/blob/main/examples/online-compile/main.cc
-bool Shaderc_CompileToBinary();
+/**
+ * @brief This is the second step in compiling GLSL to SPIR-V at runtime (at least with the shaderc library).
+ * There are two options for compining after preprocessing. This is likely the option you want to use.
+ * You should have already called the preprocess step, which does things like macro substitution and that sort of thing.
+ * To use this function, provide a preprocessed source string, the name, type and a pointer to where the result is to be put.
+ * If you wish to enable optimizations, set optimize to true.
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger Pointer to the logging system, used to log any messages.
+ * @param _Source tring containing the preprocessed source GLSL code to be compiled.
+ * @param _SourceName Name of the shader (probably just use 'shader_src')
+ * @param _ShaderType Type of the shader (ex: vertex, fragment, geometry, compute, etc.) (use shader_glsl_[type]_shader enum)
+ * @param _CompiledResult Valid ptr to a uint32_t vector where the result is to be put.
+ * @param _Optimize Enable or disable compiler optimizations to the shader code.
+ * @param _Verbose Toggle between verbose compiling and non-verbose compiling.
+ * @return true 
+ * @return false 
+ */
+bool Shaderc_CompileToBinary(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::vector<uint32_t>* _CompiledResult, bool _Optimize = false, bool _Verbose = true);
+
 
 
 

@@ -74,7 +74,7 @@ bool Shaderc_CompileToAssembly(BG::Common::Logger::LoggingSystem* _Logger, std::
 
     // Compile Now
     if (_Verbose) {
-        std::string Msg = "Compiling Shader '" + _SourceName + "' With Optimizations ";
+        std::string Msg = "Compiling Shader '" + _SourceName + "' To Assembly With Optimizations ";
         if (_Optimize) {
             Msg += "'Enabled'";
         } else {
@@ -96,6 +96,47 @@ bool Shaderc_CompileToAssembly(BG::Common::Logger::LoggingSystem* _Logger, std::
 
 
 }
+
+bool Shaderc_CompileToBinary(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::vector<uint32_t>* _CompiledResult, bool _Optimize, bool _Verbose) {
+    assert(_Logger != nullptr);
+    assert(_CompiledResult != nullptr);    
+
+    // Setup Shaderc Compiler
+    shaderc::Compiler Compiler;
+    shaderc::CompileOptions Options;
+
+    // If we want to add our own macros, do so like this (can be useful for say numlights or something like that):
+    // options.AddMacroDefinition("MY_DEFINE", "1");
+
+    // Set Optimization Enable/Disable
+    if (_Optimize) {
+        Options.SetOptimizationLevel(shaderc_optimization_level_size);
+    }
+
+    // Compile Now
+    if (_Verbose) {
+        std::string Msg = "Compiling Shader '" + _SourceName + "' To Binary With Optimizations ";
+        if (_Optimize) {
+            Msg += "'Enabled'";
+        } else {
+            Msg += "'Disabled'";
+        }
+        _Logger->Log(Msg, 3);
+    }
+    shaderc::AssemblyCompilationResult BinResult = Compiler.CompileGlslToSpv(_Source, _ShaderType, _SourceName.c_str(), Options);
+
+    if (BinResult.GetCompilationStatus() != shaderc_compilation_status_success) {
+        std::string Msg = "Failed To Compile Shader '" + _SourceName + "' With Error '";
+        Msg += BinResult.GetErrorMessage();
+        Msg += "'";
+        _Logger->Log(Msg, 7);
+        return false;
+    }
+    (*_CompiledResult) = {BinResult.cbegin(), BinResult.cend()};
+    return true;
+
+}
+
 
 bool Vulkan_CreateShaderModule(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD, const std::vector<char>* _ShaderBytecode, VkShaderModule* _ShaderModule) {
     assert(_Logger != nullptr);
