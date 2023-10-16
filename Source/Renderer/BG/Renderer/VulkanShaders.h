@@ -105,6 +105,9 @@ bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, st
  */
 bool Shaderc_CompileToAssembly(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::string* _CompiledResult, bool _Optimize = false, bool _Verbose = true);
 
+//https://github.com/google/shaderc/blob/main/examples/online-compile/main.cc
+bool Shaderc_CompileToBinary();
+
 
 
 /**
