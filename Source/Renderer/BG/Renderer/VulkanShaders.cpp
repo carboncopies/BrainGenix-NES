@@ -52,6 +52,9 @@ bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, st
     return true;
 }
 
+bool Shaderc_CompileToAssembly(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::string* _CompiledResult, bool _Optimize = false, bool _Verbose = true) {
+    
+}
 
 bool Vulkan_CreateShaderModule(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD, const std::vector<char>* _ShaderBytecode, VkShaderModule* _ShaderModule) {
     assert(_Logger != nullptr);

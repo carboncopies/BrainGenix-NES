@@ -80,10 +80,32 @@ std::vector<char> ReadFile(std::string _FileName);
  * @param _SourceName Name of the shader (probably just use 'shader_src')
  * @param _ShaderType Type of the shader (ex: vertex, fragment, geometry, compute, etc.) (use shader_glsl_[type]_shader enum)
  * @param _PreprocessedResult Valid ptr to a string where the result is to be put.
+ * @param _Verbose Toggle between verbose compiling and non-verbose compiling.
  * @return true 
  * @return false 
  */
-bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::string* _PreprocessedResult);
+bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::string* _PreprocessedResult, bool _Verbose = true);
+
+/**
+ * @brief This is the second step in compiling GLSL to SPIR-V at runtime (at least with the shaderc library).
+ * You should have already called the preprocess step, which does things like macro substitution and that sort of thing.
+ * To use this function, provide a preprocessed source string, the name, type and a pointer to where the result is to be put.
+ * If you wish to enable optimizations, set optimize to true.
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger Pointer to the logging system, used to log any messages.
+ * @param _Source tring containing the preprocessed source GLSL code to be compiled.
+ * @param _SourceName Name of the shader (probably just use 'shader_src')
+ * @param _ShaderType Type of the shader (ex: vertex, fragment, geometry, compute, etc.) (use shader_glsl_[type]_shader enum)
+ * @param _CompiledResult Valid ptr to a string where the result is to be put.
+ * @param _Optimize Enable or disable compiler optimizations to the shader code.
+ * @param _Verbose Toggle between verbose compiling and non-verbose compiling.
+ * @return true 
+ * @return false 
+ */
+bool Shaderc_CompileToAssembly(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::string* _CompiledResult, bool _Optimize = false, bool _Verbose = true);
+
+
 
 /**
  * @brief Intermediate Vulkan Shader Helper, used to create a shader module from existing SPIR-V bytecode.
@@ -92,7 +114,7 @@ bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, st
  * @param _Logger Pointer to the logging system, used to log any messages.
  * @param _RD Pointer to system renderdata instance.
  * @param _ShaderBytecode Pointer to vector of characters of the compiled SPIR-V bytecode.
- * @param _ShaderModule Pointer to the VkShaderModule to be populated
+ * @param _ShaderModule Pointer to the VkShaderModule to be populated.
  * @return true 
  * @return false 
  */
