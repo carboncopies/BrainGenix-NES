@@ -144,8 +144,8 @@ bool VulkanInit_CreateDevice(BG::Common::Logger::LoggingSystem* _Logger, RenderD
 
     // Prefer to pick a physical gpu rather than integrated or virtualized
     VulkanPhysicalDeviceSelector.prefer_gpu_device_type(vkb::PreferredDeviceType::discrete);
-    VulkanPhysicalDeviceSelector.require_dedicated_transfer_queue();
-    VulkanPhysicalDeviceSelector.require_dedicated_compute_queue();
+    VulkanPhysicalDeviceSelector.require_separate_transfer_queue();
+    VulkanPhysicalDeviceSelector.require_separate_compute_queue();
     
     
     /*
