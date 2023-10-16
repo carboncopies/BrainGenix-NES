@@ -53,7 +53,7 @@ typedef std::unordered_map<std::string, std::vector<float>> NeuronRecording;
 struct BSNeuron : CoreStructs::Neuron {
 
     std::unordered_map<std::string, std::shared_ptr<Geometries::Geometry>>
-        morphology;
+        Morphology;
 
     float Vm_mV = -60.0;    //! Membrane potential
     float VRest_mV = -60.0; //! Resting membrane potential
@@ -83,7 +83,7 @@ struct BSNeuron : CoreStructs::Neuron {
     std::vector<float> ConvolvedFIFO{};
     std::vector<ReceptorData> ReceptorDataVec{};
 
-    std::unique_ptr<Distributions::Distribution>
+    std::shared_ptr<Distributions::Distribution>
         DtSpontDist{}; //! Distribution for delta t spontaneous
                        //! (time changed since last spontaneous activity).
 

@@ -32,18 +32,18 @@ namespace BallAndStick {
 enum Align { ALIGN_LEFT = 0, ALIGN_RIGHT, ALIGN_CENTER };
 
 //! Create the soma of a neuron in the shape of a sphere.
-std::unique_ptr<Geometries::Sphere>
+std::shared_ptr<Geometries::Sphere>
 CreateBSSoma(std::vector<std::vector<float>> domainBounds, Align align,
              float radius_um = 0.5);
 
 //! Create the axon of a neuron in the shape of a cylinder.
-std::unique_ptr<Geometries::Cylinder>
+std::shared_ptr<Geometries::Cylinder>
 CreateBSAxon(std::vector<std::vector<float>> domainBounds, Align align,
              float somaRadius_um = 0.5, float end0Radius_um = 0.1,
              float end1Radius_um = 0.1);
 
 //! Create a receptor in the form of a box.
-std::unique_ptr<Geometries::Box>
+std::shared_ptr<Geometries::Box>
 CreateBSReceptor(Geometries::Vec3D receptorLocation_um);
 
 }; // namespace BallAndStick

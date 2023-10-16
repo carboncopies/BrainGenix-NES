@@ -15,13 +15,13 @@ namespace BallAndStick {
 BSNeuron::BSNeuron(int ID, std::shared_ptr<Geometries::Sphere> soma,
                    std::shared_ptr<Geometries::Cylinder> axon) {
     this->ID = ID;
-    this->morphology["soma"] = soma;
-    this->morphology["axon"] = axon;
+    this->Morphology["soma"] = soma;
+    this->Morphology["axon"] = axon;
 };
 
 //! Returns the geometric center of the neuron.
 Geometries::Vec3D &BSNeuron::GetCellCenter() {
-    return this->morphology["soma"]->Center_um;
+    return this->Morphology["soma"]->Center_um;
 };
 
 //! Records the time of direct stimulation for every occurrence
@@ -35,7 +35,7 @@ void BSNeuron::AttachDirectStim(float t_ms) {
 //! since last spontaneous activity).
 void BSNeuron::SetSpontaneousActivity(float mean, float stdev) {
     this->TauSpontMeanStdev_ms = std::make_tuple(mean, stdev);
-    this->DtSpontDist = std::make_unique<Distributions::TruncNorm>(
+    this->DtSpontDist = std::make_shared<Distributions::TruncNorm>(
         -mean / stdev, mean / stdev, mean, stdev);
 };
 

@@ -29,10 +29,10 @@ struct BSMorphologyTest : testing::Test {
 
 TEST_F(BSMorphologyTest, test_CreateBSSoma_default) {
     BG::NES::Simulator::BallAndStick::Align align =
-        BG::NES::Simulator::BallAndStick::ALIGN_CENTER;
+        BG::NES::Simulator::BallAndStick::Align::ALIGN_CENTER;
     std::vector<std::vector<float>> domainBounds = {{0.0, 0.0, 0.0},
                                                     {1.0, 1.0, 1.0}};
-    std::unique_ptr<BG::NES::Simulator::Geometries::Sphere> soma =
+    std::shared_ptr<BG::NES::Simulator::Geometries::Sphere> soma =
         CreateBSSoma(domainBounds, align);
 
     ASSERT_EQ(soma->Radius_um, 0.5f);
@@ -43,10 +43,10 @@ TEST_F(BSMorphologyTest, test_CreateBSSoma_default) {
 
 TEST_F(BSMorphologyTest, test_CreateBSAxon_default) {
     BG::NES::Simulator::BallAndStick::Align align =
-        BG::NES::Simulator::BallAndStick::ALIGN_LEFT;
+        BG::NES::Simulator::BallAndStick::Align::ALIGN_LEFT;
     std::vector<std::vector<float>> domainBounds = {{0.0, 0.0, 0.0},
                                                     {1.0, 1.0, 1.0}};
-    std::unique_ptr<BG::NES::Simulator::Geometries::Cylinder> axon =
+    std::shared_ptr<BG::NES::Simulator::Geometries::Cylinder> axon =
         CreateBSAxon(domainBounds, align, 0.4);
 
     ASSERT_EQ(axon->End0Radius_um, 0.1f);
@@ -61,7 +61,7 @@ TEST_F(BSMorphologyTest, test_CreateBSAxon_default) {
 
 TEST_F(BSMorphologyTest, test_CreateBSReceptor_default) {
     BG::NES::Simulator::Geometries::Vec3D receptorLocation{0.1f, 0.2f, 0.3f};
-    std::unique_ptr<BG::NES::Simulator::Geometries::Box> receptor =
+    std::shared_ptr<BG::NES::Simulator::Geometries::Box> receptor =
         BG::NES::Simulator::BallAndStick::CreateBSReceptor(receptorLocation);
 
     ASSERT_EQ(receptor->Dims_um.x_um, _DEFAULT_RECEPTOR_DIM_um);

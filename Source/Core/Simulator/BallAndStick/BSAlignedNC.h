@@ -17,7 +17,7 @@
 #include <vector>
 
 #include <Simulator/BallAndStick/BSNeuron.h>
-#include <Simulator/Geometries/Geometry.h>
+#include <Simulator/Geometries/Box.h>
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/NeuralCircuit.h>
 
@@ -33,8 +33,20 @@ namespace BallAndStick {
  */
 struct BSAlignedNC : CoreStructs::NeuralCircuit {
 
+    //! Methods for setting the weight of synaptic connections between
+    //! pairs of neurons.
+    enum SetWeightMethod {
+        BINARY = 0,
+    };
+
+    //! Methods for encoding weights of the cells in synaptic connections
+    //! between pairs of neurons.
+    enum EncodingMethod {
+        INSTANT = 0,
+    };
+
     //! Neurons in the neural circuit.
-    std::unordered_map<std::string, std::shared_ptr<CoreStructs::Neuron>> Cells;
+    std::unordered_map<std::string, std::shared_ptr<BSNeuron>> Cells;
 
     int NumCells = 2; //! Number of cells
 
@@ -43,31 +55,33 @@ struct BSAlignedNC : CoreStructs::NeuralCircuit {
     BSAlignedNC(int _ID, int _NumCells);
 
     //! Initializes the neurons in the neural circuit.
-    void InitCells(std::shared_ptr<Geometries::Geometry> domain);
+    void InitCells(std::shared_ptr<Geometries::Box> domain);
 
     //! Returns all neurons in the neural circuit.
     std::vector<std::shared_ptr<BSNeuron>> GetNeurons();
 
     //! Returns all neurons in the neural circuit with specified IDs.
     std::vector<std::shared_ptr<BSNeuron>>
-    GetNeuronsByID(std::vector<int> IDList);
+    GetNeuronsByIDs(std::vector<size_t> IDList);
 
     //! Returns the geometric centers of all neurons in the neural circuit.
     std::vector<Geometries::Vec3D> GetCellCenters();
 
     //! Sets the weights of pairs of synaptic connections between neurons
     //! in the neural circuit.
-    void SetWeight(std::tuple<int, int> fromTo, std::string method);
+    void SetWeight(size_t from, size_t to, SetWeightMethod method);
 
     //! Sets synapse weights in the neurons according to specified methods.
-    void Encode(std::vector<std::tuple<int, int>> patternSet,
-                std::string encodingMethod, std::string synapseWeightMethod);
+    void Encode(std::vector<std::tuple<size_t, size_t>> patternSet,
+                EncodingMethod encodingMethod,
+                SetWeightMethod synapseWeightMethod);
 
     //! Attach direct stimulation to specified neurons in neural circuit.
-    void AttachDirectStim(std::vector<std::tuple<float, int>> ListOfStims);
+    void AttachDirectStim(std::vector<std::tuple<float, size_t>> ListOfStims);
     //! Set parameters of the distribution of the spontaneous activity
     //! in the neurons in the neural circuit.
-    void SetSpontaneousActivity(std::vector<std::tuple<float, float, int>>);
+    void SetSpontaneousActivity(
+        std::vector<std::tuple<float, float, size_t>> spontSpikeSettings);
 
     //! Updates the membrane potentials in the neurons in the circuit.
     void Update(float t_ms, bool recording);

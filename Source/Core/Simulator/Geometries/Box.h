@@ -13,32 +13,32 @@
 #include <vector>
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Geometries/Geometry.h>
+#include <Simulator/Geometries/VecTools.h>
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 namespace Geometries {
 
-
 /**
  * @brief Struct representing a cuboidal box geometry.
- * 
+ *
  */
-struct Box: Geometry {
+struct Box : Geometry {
 
     Vec3D Dims_um{5.0, 10.0, 10.0}; //! Dimensions of the box.
-    Vec3D Rotations_rad{0.0, 0.0, 0.0}; //! Rotation of the box (euler angles) in radians.
-    
+    Vec3D Rotations_rad{0.0, 0.0,
+                        0.0}; //! Rotation of the box (euler angles) in radians.
+
     //! Constructors
-    Box();  
-    Box(Vec3D _Center_um, Vec3D _Dims_um); 
+    Box();
+    Box(Vec3D _Center_um, Vec3D _Dims_um);
     Box(Vec3D _Center_um, Vec3D _Dims_um, Vec3D _Rotations_rad);
 
     //! Renders the box in 3D.
-    void Show(); 
-    
+    void Show();
+
     //! Returns the volume of the box in micrometer^3.
     float Volume_um3();
 
@@ -50,7 +50,7 @@ struct Box: Geometry {
     std::vector<float> Sides();
 };
 
-}; // Close Namespace Geometries
-}; // Close Namespace Simulator
-}; // Close Namespace NES
-}; // Close Namespace BG
+}; // namespace Geometries
+}; // namespace Simulator
+}; // namespace NES
+}; // namespace BG
