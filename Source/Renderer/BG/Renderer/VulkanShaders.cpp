@@ -141,6 +141,12 @@ bool Shaderc_CompileToBinary(BG::Common::Logger::LoggingSystem* _Logger, std::st
         return false;
     }
     (*_CompiledResult) = {BinResult.cbegin(), BinResult.cend()};
+    
+    if (_Verbose) {
+        std::string LogMessage = "Compiled Shader Is '" + std::to_string(_CompiledResult->size() * 4) + "' Bytes Long";
+        _Logger->Log(LogMessage, 2);
+    }
+
     return true;
 
 }

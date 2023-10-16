@@ -120,6 +120,7 @@ install(FILES "${SRC_DIR}/Data/BrainGenix-NES.service"
 file(COPY "${SRC_DIR}/Data/vert.spv" DESTINATION "${BIN_DIR}")
 file(COPY "${SRC_DIR}/Data/frag.spv" DESTINATION "${BIN_DIR}")
 
+file(COPY "${SRC_DIR}/Data/" DESTINATION "${BIN_DIR}")
 
 
 
