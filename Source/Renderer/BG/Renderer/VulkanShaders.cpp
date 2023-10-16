@@ -163,8 +163,7 @@ bool Vulkan_DynamicallyCompileShader(BG::Common::Logger::LoggingSystem* _Logger,
 
 }
 
-
-bool Vulkan_CreateShaderModule(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD, const std::vector<char>* _ShaderBytecode, VkShaderModule* _ShaderModule) {
+bool Vulkan_CreateShaderModule(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD, const std::vector<uint32_t>* _ShaderBytecode, VkShaderModule* _ShaderModule) {
     assert(_Logger != nullptr);
     assert(_RD != nullptr);
     assert(_ShaderBytecode != nullptr);

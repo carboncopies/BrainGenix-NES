@@ -69,6 +69,15 @@ namespace Internal {
 std::vector<char> ReadFile(std::string _FileName);
 
 /**
+ * @brief Simple helper function for reading files.
+ * 
+ * @param _FileName 
+ * @return std::string
+ */
+std::string ReadFileToString(std::string _FileName);
+
+
+/**
  * @brief First step to compiling GLSL to SPIR-V at runtime for use with Vulkan.
  * This function performs the preoprocessing steps (and probably should be done with one thread per shader (maybe a threadpool?)).
  * To use this function, provide a source string with the glsl to compile, a name of the shader (can just be 'shader_src'), the type of shader
@@ -158,7 +167,7 @@ bool Vulkan_DynamicallyCompileShader(BG::Common::Logger::LoggingSystem* _Logger,
  * @return true 
  * @return false 
  */
-bool Vulkan_CreateShaderModule(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD, const std::vector<char>* _ShaderBytecode, VkShaderModule* _ShaderModule);
+bool Vulkan_CreateShaderModule(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD, const std::vector<uint32_t>* _ShaderBytecode, VkShaderModule* _ShaderModule);
 
 
 }; // Close Namespace Internal

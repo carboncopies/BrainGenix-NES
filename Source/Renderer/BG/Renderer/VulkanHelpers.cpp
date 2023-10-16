@@ -141,6 +141,12 @@ bool VulkanInit_CreateDevice(BG::Common::Logger::LoggingSystem* _Logger, RenderD
    
     _Logger->Log("Selecting Physical Vulkan Capable Device From Available Devices", 3);
     vkb::PhysicalDeviceSelector VulkanPhysicalDeviceSelector(_RD->VulkanInstance_);
+
+    // Prefer to pick a physical gpu rather than integrated or virtualized
+    VulkanPhysicalDeviceSelector.prefer_gpu_device_type(vkb::PreferredDeviceType::discrete);
+    VulkanPhysicalDeviceSelector.require_dedicated_transfer_queue();
+    VulkanPhysicalDeviceSelector.require_dedicated_compute_queue();
+    
     
     /*
         A quick note about vk-bootstrap and headless/offscreen rendering.
@@ -336,24 +342,38 @@ bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logge
     _Logger->Log("Creating Graphics Pipeline", 3);
 
 
-    // Load Shaders - TEMPORARY FIXME LATER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    _Logger->Log("Using [FIXME] SPIRV Loader To Load Precompiled Shaders ", 7);
-    auto VertShaderCode = Internal::ReadFile("vert.spv");
-    auto FragShaderCode = Internal::ReadFile("frag.spv");
+    // // Load Shaders - TEMPORARY FIXME LATER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // _Logger->Log("Using [FIXME] SPIRV Loader To Load Precompiled Shaders ", 7);
+    // auto VertShaderCode = Internal::ReadFile("vert.spv");
+    // auto FragShaderCode = Internal::ReadFile("frag.spv");
 
 
-    // TODO: ADD SHADER COMPILATION STAGE HERE - WE WANT TO DO DYNAMIC SHADER COMPILATION (AND MAYBE ALSO IMPLEMENT SHADER CACHING)
-    _Logger->Log("FIXME: ADD SHADER COMPILATION STAGE HERE!", 9);
+    // // TODO: ADD SHADER COMPILATION STAGE HERE - WE WANT TO DO DYNAMIC SHADER COMPILATION (AND MAYBE ALSO IMPLEMENT SHADER CACHING)
+    // _Logger->Log("FIXME: ADD SHADER COMPILATION STAGE HERE!", 9);
+
+    // Load Shader Strings
+    _Logger->Log("Loading GLSL Shader Code"), 3;
+    std::string VertShader = Internal::ReadFileToString("test.vert");
+    std::string FragShader = Internal::ReadFileToString("test.frag");
+
+    // Now, Compile Into Bytecode
+    _Logger->Log("Compiling Shaders Into SPIR-V Bytecode", 2);
+    std::vector<uint32_t> VertBytecode;
+    std::vector<uint32_t> FragBytecode;
+    Internal::Vulkan_DynamicallyCompileShader(_Logger, VertShader, "test.vert", shaderc_glsl_vertex_shader,   &VertBytecode, false, true);
+    Internal::Vulkan_DynamicallyCompileShader(_Logger, FragShader, "test.frag", shaderc_glsl_fragment_shader, &FragBytecode, false, true);
+
+
 
 
     // Build Shader Pipelines
     _Logger->Log("Building Shader Modules From SPIR-V Bytecode", 2);
     VkShaderModule VertexShaderModule;
     VkShaderModule FragmentShaderModule;
-    if (!Internal::Vulkan_CreateShaderModule(_Logger, _RD, &VertShaderCode, &VertexShaderModule)) {
+    if (!Internal::Vulkan_CreateShaderModule(_Logger, _RD, &VertBytecode, &VertexShaderModule)) {
         return false;
     }
-    if (!Internal::Vulkan_CreateShaderModule(_Logger, _RD, &FragShaderCode, &FragmentShaderModule)) {
+    if (!Internal::Vulkan_CreateShaderModule(_Logger, _RD, &VertBytecode, &FragmentShaderModule)) {
         return false;
     }
 

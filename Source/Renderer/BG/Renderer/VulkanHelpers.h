@@ -38,6 +38,8 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <VkBootstrap.h>
 
+#include <shaderc/shaderc.h>
+
 #include <SDL.h>
 #include <SDL_vulkan.h>
 
