@@ -27,7 +27,7 @@ std::vector<char> ReadFile(std::string filename) {
 }
 
 
-bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::string* _PreprocessedResult) {
+bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::string* _PreprocessedResult, bool _Verbose) {
     assert(_Logger != nullptr);
     assert(_PreprocessedResult != nullptr);
 
@@ -39,6 +39,10 @@ bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, st
     // options.AddMacroDefinition("MY_DEFINE", "1");
 
     // Preprocess, then check result
+    if (_Verbose) {
+        std::string Msg = "Preprocessing Shader '" + _SourceName + "'";
+        _Logger->Log(Msg, 3);
+    }
     shaderc::PreprocessedSourceCompilationResult PreprocessedResult = Compiler.PreprocessGlsl(_Source, _ShaderType, _SourceName.c_str(), Options);
 
     if (PreprocessedResult.GetCompilationStatus() != shaderc_compilation_status_success) {
@@ -52,8 +56,45 @@ bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, st
     return true;
 }
 
-bool Shaderc_CompileToAssembly(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::string* _CompiledResult, bool _Optimize = false, bool _Verbose = true) {
-    
+bool Shaderc_CompileToAssembly(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::string* _CompiledResult, bool _Optimize, bool _Verbose) {
+    assert(_Logger != nullptr);
+    assert(_CompiledResult != nullptr);    
+
+    // Setup Shaderc Compiler
+    shaderc::Compiler Compiler;
+    shaderc::CompileOptions Options;
+
+    // If we want to add our own macros, do so like this (can be useful for say numlights or something like that):
+    // options.AddMacroDefinition("MY_DEFINE", "1");
+
+    // Set Optimization Enable/Disable
+    if (_Optimize) {
+        Options.SetOptimizationLevel(shaderc_optimization_level_size);
+    }
+
+    // Compile Now
+    if (_Verbose) {
+        std::string Msg = "Compiling Shader '" + _SourceName + "' With Optimizations ";
+        if (_Optimize) {
+            Msg += "'Enabled'";
+        } else {
+            Msg += "'Disabled'";
+        }
+        _Logger->Log(Msg, 3);
+    }
+    shaderc::AssemblyCompilationResult AssmResult = Compiler.CompileGlslToSpvAssembly(_Source, _ShaderType, _SourceName.c_str(), Options);
+
+    if (AssmResult.GetCompilationStatus() != shaderc_compilation_status_success) {
+        std::string Msg = "Failed To Compile Shader '" + _SourceName + "' With Error '";
+        Msg += AssmResult.GetErrorMessage();
+        Msg += "'";
+        _Logger->Log(Msg, 7);
+        return false;
+    }
+    (*_CompiledResult) = {AssmResult.cbegin(), AssmResult.cend()};
+    return true;
+
+
 }
 
 bool Vulkan_CreateShaderModule(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD, const std::vector<char>* _ShaderBytecode, VkShaderModule* _ShaderModule) {
