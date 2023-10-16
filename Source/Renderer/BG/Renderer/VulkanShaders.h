@@ -41,7 +41,7 @@
 #include <VkBootstrap.h>
 
 
-#include <shaderc/shaderc.h>
+#include <shaderc/shaderc.hpp>
 
 // #include <SDL.h>
 // #include <SDL_vulkan.h>
@@ -68,7 +68,22 @@ namespace Internal {
  */
 std::vector<char> ReadFile(std::string _FileName);
 
-
+/**
+ * @brief First step to compiling GLSL to SPIR-V at runtime for use with Vulkan.
+ * This function performs the preoprocessing steps (and probably should be done with one thread per shader (maybe a threadpool?)).
+ * To use this function, provide a source string with the glsl to compile, a name of the shader (can just be 'shader_src'), the type of shader
+ * such as shaderc_glsl_vertex_shader, and finally a ptr to a string where the result will be put.
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger Pointer to the logging system, used to log any messages.
+ * @param _Source String containing the source GLSL code to be compiled. (Contents of the .vert/.frag/etc file or wherever it's stored.)
+ * @param _SourceName Name of the shader (probably just use 'shader_src')
+ * @param _ShaderType Type of the shader (ex: vertex, fragment, geometry, compute, etc.) (use shader_glsl_[type]_shader enum)
+ * @param _PreprocessedResult Valid ptr to a string where the result is to be put.
+ * @return true 
+ * @return false 
+ */
+bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::string* _PreprocessedResult);
 
 /**
  * @brief Intermediate Vulkan Shader Helper, used to create a shader module from existing SPIR-V bytecode.
@@ -82,6 +97,7 @@ std::vector<char> ReadFile(std::string _FileName);
  * @return false 
  */
 bool Vulkan_CreateShaderModule(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD, const std::vector<char>* _ShaderBytecode, VkShaderModule* _ShaderModule);
+
 
 }; // Close Namespace Internal
 

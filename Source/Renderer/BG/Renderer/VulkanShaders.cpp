@@ -27,6 +27,32 @@ std::vector<char> ReadFile(std::string filename) {
 }
 
 
+bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::string* _PreprocessedResult) {
+    assert(_Logger != nullptr);
+    assert(_PreprocessedResult != nullptr);
+
+    // Setup Shaderc Compiler
+    shaderc::Compiler Compiler;
+    shaderc::CompileOptions Options;
+
+    // If we want to add our own macros, do so like this (can be useful for say numlights or something like that):
+    // options.AddMacroDefinition("MY_DEFINE", "1");
+
+    // Preprocess, then check result
+    shaderc::PreprocessedSourceCompilationResult PreprocessedResult = Compiler.PreprocessGlsl(_Source, _ShaderType, _SourceName.c_str(), Options);
+
+    if (PreprocessedResult.GetCompilationStatus() != shaderc_compilation_status_success) {
+        std::string Msg = "Failed To Preprocess Shader '" + _SourceName + "' With Error '";
+        Msg += PreprocessedResult.GetErrorMessage();
+        Msg += "'";
+        _Logger->Log(Msg, 7);
+        return false;
+    }
+    (*_PreprocessedResult) = {PreprocessedResult.cbegin(), PreprocessedResult.cend()};
+    return true;
+}
+
+
 bool Vulkan_CreateShaderModule(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD, const std::vector<char>* _ShaderBytecode, VkShaderModule* _ShaderModule) {
     assert(_Logger != nullptr);
     assert(_RD != nullptr);
