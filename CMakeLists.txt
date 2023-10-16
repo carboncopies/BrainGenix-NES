@@ -67,6 +67,10 @@ find_package(yaml-cpp CONFIG REQUIRED)
 message(STATUS "Setting Up glm Library")
 find_package(glm CONFIG REQUIRED)
 
+message(STATUS "Setting Up shaderc Library")
+find_package(unofficial-shaderc CONFIG REQUIRED)
+
+
 
 
 

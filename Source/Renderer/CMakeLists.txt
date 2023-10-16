@@ -24,5 +24,6 @@ target_link_libraries(NESRenderer
     $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
     $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
     glm::glm
+    unofficial::shaderc::shaderc
 )
 target_include_directories(NESRenderer PUBLIC ${SRC_DIR}/Renderer)
