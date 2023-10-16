@@ -128,6 +128,23 @@ bool Shaderc_CompileToAssembly(BG::Common::Logger::LoggingSystem* _Logger, std::
 bool Shaderc_CompileToBinary(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::vector<uint32_t>* _CompiledResult, bool _Optimize = false, bool _Verbose = true);
 
 
+/**
+ * @brief This is a helper function for vulkan which will compile a GLSL shader string to SPIR-V bytecode in the format of a uint32_t vector.
+ * It will handle all intermediary steps automatically. 
+ * If you wish to enable optimizations, set optimize to true.
+ * Returns true on success, false on failure.
+ * 
+ * @param _Logger Pointer to the logging system, used to log any messages.
+ * @param _Source tring containing the raw source GLSL code to be compiled.
+ * @param _SourceName Name of the shader (probably just use 'shader_src')
+ * @param _ShaderType Type of the shader (ex: vertex, fragment, geometry, compute, etc.) (use shader_glsl_[type]_shader enum)
+ * @param _CompiledResult Valid ptr to a uint32_t vector where the result is to be put.
+ * @param _Optimize Enable or disable compiler optimizations to the shader code.
+ * @param _Verbose Toggle between verbose compiling and non-verbose compiling.
+ * @return true 
+ * @return false 
+ */
+bool Vulkan_DynamicallyCompileShader(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::vector<uint32_t>* _CompiledResult, bool _Optimize = false, bool _Verbose = true);
 
 
 /**

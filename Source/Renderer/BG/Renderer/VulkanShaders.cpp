@@ -26,6 +26,14 @@ std::vector<char> ReadFile(std::string filename) {
 
 }
 
+std::string ReadFileToString(std::string _Filename) {
+    std::vector<char> FileData = ReadFile(_Filename);
+    std::string Out(FileData.begin(), FileData.end());
+    return Out;
+
+}
+
+
 
 bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::string* _PreprocessedResult, bool _Verbose) {
     assert(_Logger != nullptr);
@@ -123,7 +131,7 @@ bool Shaderc_CompileToBinary(BG::Common::Logger::LoggingSystem* _Logger, std::st
         }
         _Logger->Log(Msg, 3);
     }
-    shaderc::AssemblyCompilationResult BinResult = Compiler.CompileGlslToSpv(_Source, _ShaderType, _SourceName.c_str(), Options);
+    shaderc::SpvCompilationResult BinResult = Compiler.CompileGlslToSpv(_Source, _ShaderType, _SourceName.c_str(), Options);
 
     if (BinResult.GetCompilationStatus() != shaderc_compilation_status_success) {
         std::string Msg = "Failed To Compile Shader '" + _SourceName + "' With Error '";
@@ -134,6 +142,24 @@ bool Shaderc_CompileToBinary(BG::Common::Logger::LoggingSystem* _Logger, std::st
     }
     (*_CompiledResult) = {BinResult.cbegin(), BinResult.cend()};
     return true;
+
+}
+
+bool Vulkan_DynamicallyCompileShader(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::vector<uint32_t>* _CompiledResult, bool _Optimize, bool _Verbose) {
+    assert(_Logger != nullptr);
+    assert(_CompiledResult != nullptr);    
+
+
+    // First, Preprocess
+    std::string PreprocessedShader;
+    bool PreprocessStatus = Shaderc_PreprocessShaderGLSL(_Logger, _Source, _SourceName, _ShaderType, &PreprocessedShader, _Verbose);
+    if (!PreprocessStatus) {
+        return false;
+    }
+
+    // Next, Compile To Bytecode
+    return Shaderc_CompileToBinary(_Logger, PreprocessedShader, _SourceName, _ShaderType, _CompiledResult, _Optimize, _Verbose);
+    
 
 }
 
