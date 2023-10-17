@@ -169,6 +169,14 @@ bool VulkanInit_CreateFramebuffer(BG::Common::Logger::LoggingSystem* _Logger, Re
  */
 bool VulkanInit_CreateCommandPool(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
 
+/**
+ * @brief Vulkan Initialization Helper. Creates the vertex buffer so we can transfer data in and out of the renderer.
+ * This will likely need to be extended in the future to allow us to do this dynamically (for model streaming).
+ * Returns true on success, false on failure.
+ * 
+ * 
+*/
+bool VulkanInit_CreateVertexBuffer(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
 
 /**
  * @brief Vulkan Init Helper. Creates the command buffers using the command pool, allowing us to tell the gpu what to do.

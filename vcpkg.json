@@ -17,6 +17,7 @@
           ]
         },
     "glm",
-    "shaderc"
+    "shaderc",
+    "vulkan-memory-allocator"
   ]
 }

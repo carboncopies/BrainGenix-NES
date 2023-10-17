@@ -70,6 +70,9 @@ find_package(glm CONFIG REQUIRED)
 message(STATUS "Setting Up shaderc Library")
 find_package(unofficial-shaderc CONFIG REQUIRED)
 
+message(STATUS "Setting Up vulkan-memory-allocator Library")
+find_package(vulkan-memory-allocator CONFIG REQUIRED)
+
 
 
 
