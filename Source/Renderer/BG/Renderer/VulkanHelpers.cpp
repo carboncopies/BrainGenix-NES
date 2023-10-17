@@ -7,6 +7,44 @@ namespace NES {
 namespace Renderer {
 
 
+struct Vertex {
+    glm::vec2 pos;
+    glm::vec3 color;
+
+    static VkVertexInputBindingDescription getBindingDescription() {
+        VkVertexInputBindingDescription bindingDescription{};
+        bindingDescription.binding = 0;
+        bindingDescription.stride = sizeof(Vertex);
+        bindingDescription.inputRate = VK_VERTEX_INPUT_RATE_VERTEX;
+
+        return bindingDescription;
+    }
+
+    static std::array<VkVertexInputAttributeDescription, 2> getAttributeDescriptions() {
+        std::array<VkVertexInputAttributeDescription, 2> attributeDescriptions{};
+
+        attributeDescriptions[0].binding = 0;
+        attributeDescriptions[0].location = 0;
+        attributeDescriptions[0].format = VK_FORMAT_R32G32_SFLOAT;
+        attributeDescriptions[0].offset = offsetof(Vertex, pos);
+
+        attributeDescriptions[1].binding = 0;
+        attributeDescriptions[1].location = 1;
+        attributeDescriptions[1].format = VK_FORMAT_R32G32B32_SFLOAT;
+        attributeDescriptions[1].offset = offsetof(Vertex, color);
+
+        return attributeDescriptions;
+    }
+};
+
+const std::vector<Vertex> vertices = {
+    {{0.0f, -0.5f}, {1.0f, 0.0f, 0.0f}},
+    {{0.5f, 0.5f}, {0.0f, 1.0f, 0.0f}},
+    {{-0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}}
+};
+
+
+
 bool VulkanInit_CreateInstance(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
     assert(_Logger != nullptr);
     assert(_RD != nullptr);
@@ -385,10 +423,18 @@ bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logge
 
 
     // Now a bunch of boilerplate to finish setting up the vulkan graphics pipeline. This will probably need to be filled in more later
+    auto BindingDescription = Vertex::getBindingDescription();
+    auto AttributeDescriptions = Vertex::getAttributeDescriptions();
+
     VkPipelineVertexInputStateCreateInfo VertexInputInfo = {};
     VertexInputInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
-    VertexInputInfo.vertexBindingDescriptionCount = 0;
-    VertexInputInfo.vertexAttributeDescriptionCount = 0;
+
+    VertexInputInfo.vertexBindingDescriptionCount = 1;
+    VertexInputInfo.vertexAttributeDescriptionCount = static_cast<uint32_t>(AttributeDescriptions.size());
+    VertexInputInfo.pVertexBindingDescriptions = &BindingDescription;
+    VertexInputInfo.pVertexAttributeDescriptions = AttributeDescriptions.data();
+
+
 
     VkPipelineInputAssemblyStateCreateInfo InputAssembly = {};
     InputAssembly.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;

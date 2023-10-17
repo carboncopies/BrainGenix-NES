@@ -40,6 +40,8 @@
 
 #include <shaderc/shaderc.h>
 
+#include <glm/glm.hpp>
+
 #include <SDL.h>
 #include <SDL_vulkan.h>
 
@@ -55,6 +57,11 @@
 namespace BG {
 namespace NES {
 namespace Renderer {
+
+
+
+
+
 
 
 /**
