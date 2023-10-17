@@ -50,6 +50,13 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Distributions/Distribution.cpp
   ${SRC_DIR}/Core/Simulator/Distributions/Distribution.h
 
+  ${SRC_DIR}/Core/Simulator/Receptors/Receptor.cpp
+  ${SRC_DIR}/Core/Simulator/Receptors/Receptor.h
+  ${SRC_DIR}/Core/Simulator/Receptors/AMPAReceptor.cpp
+  ${SRC_DIR}/Core/Simulator/Receptors/AMPAReceptor.h
+  ${SRC_DIR}/Core/Simulator/Receptors/NMDAReceptor.cpp
+  ${SRC_DIR}/Core/Simulator/Receptors/NMDAReceptor.h
+  
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.h
   ${SRC_DIR}/Core/Simulator/Structs/BS.cpp
@@ -92,6 +99,9 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.test.cpp
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.test.cpp
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.test.cpp
+
+  ${SRC_DIR}/Core/Simulator/Receptors/NMDAReceptor.test.cpp
+  ${SRC_DIR}/Core/Simulator/Receptors/AMPAReceptor.test.cpp
 )
 
 # Configure test binaries
