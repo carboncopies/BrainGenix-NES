@@ -25,5 +25,6 @@ target_link_libraries(NESRenderer
     $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
     glm::glm
     unofficial::shaderc::shaderc
+    GPUOpen::VulkanMemoryAllocator
 )
 target_include_directories(NESRenderer PUBLIC ${SRC_DIR}/Renderer)
