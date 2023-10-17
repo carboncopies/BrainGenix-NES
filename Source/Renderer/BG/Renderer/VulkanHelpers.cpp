@@ -1,6 +1,8 @@
 #include <BG/Renderer/VulkanHelpers.h>
 
-
+// Todo: make the vulkan memory allocator use it's own class - probably have a list of allocations in the render data struct?
+// Then, have a memory management class do the rest
+// then, try and clean up this file
 
 namespace BG {
 namespace NES {

@@ -118,6 +118,11 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
         return false;
     }
 
+    // Create Vertex Buffer
+    if (!VulkanInit_CreateVertexBuffer(Logger_, &RenderData_)) {
+        return false;
+    }
+
     // Create Sync Objects
     if (!VulkanInit_CreateSyncObjects(Logger_, &RenderData_)) {
         return false;
