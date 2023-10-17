@@ -135,6 +135,7 @@ bool VulkanInit_CreateInstance(BG::Common::Logger::LoggingSystem* _Logger, Rende
 
     _RD->VulkanInstance_ = VulkanInstanceBuilderReturn.value();
 
+
     return true;
 }
 
@@ -230,6 +231,22 @@ bool VulkanInit_CreateDevice(BG::Common::Logger::LoggingSystem* _Logger, RenderD
         return false;
     }
     _RD->VulkanDevice_ = VulkanDeviceBuilderReturn.value();
+
+
+
+    // Setup Memory Allocator Instance
+    VmaVulkanFunctions VulkanFunctions = {};
+    VulkanFunctions.vkGetInstanceProcAddr = &vkGetInstanceProcAddr;
+    VulkanFunctions.vkGetDeviceProcAddr = &vkGetDeviceProcAddr;
+    
+    VmaAllocatorCreateInfo AllocatorCreateInfo = {};
+    AllocatorCreateInfo.vulkanApiVersion = VK_API_VERSION_1_2;
+    AllocatorCreateInfo.physicalDevice = _RD->VulkanDevice_.physical_device;
+    AllocatorCreateInfo.device = _RD->VulkanDevice_.device;
+    AllocatorCreateInfo.instance = _RD->VulkanInstance_.instance;
+    // AllocatorCreateInfo.pVulkanFunctions = &_RD->VulkanInstance_.;
+    
+    vmaCreateAllocator(&AllocatorCreateInfo, &_RD->Allocator_);
 
     return true;
 }
@@ -704,18 +721,20 @@ bool VulkanInit_CreateVertexBuffer(BG::Common::Logger::LoggingSystem* _Logger, R
     assert(_RD != nullptr);
 
     _Logger->Log("Creating Vulkan Vertex Buffer", 2);
-    VkBufferCreateInfo bufferInfo = { VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO };
-    bufferInfo.size = 65536;
-    bufferInfo.usage = VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT;
+    VkBufferCreateInfo BufferInfo = { VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO };
+    BufferInfo.size = 65536;
+    BufferInfo.usage = VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT;
 
-    VmaAllocationCreateInfo allocInfo = {};
-    allocInfo.usage = VMA_MEMORY_USAGE_AUTO;
+    VmaAllocationCreateInfo AllocInfo = {};
+    AllocInfo.usage = VMA_MEMORY_USAGE_AUTO;
 
-    VkBuffer buffer;
-    VmaAllocation allocation;
-    vmaCreateBuffer(allocator, &bufferInfo, &allocInfo, &buffer, &allocation, nullptr);
+    VkBuffer Buffer;
+    VmaAllocation Allocation;
+    vmaCreateBuffer(_RD->Allocator_, &BufferInfo, &AllocInfo, &Buffer, &Allocation, nullptr);
 
-    
+    // probably should convert this into a class that manages the allocations (perhaps so we can just have it manage everything for us.)
+
+    // return true;
 
 }
 
@@ -878,6 +897,11 @@ bool VulkanDeinit_DestroyAll(BG::Common::Logger::LoggingSystem* _Logger, RenderD
     _Logger->Log("Cleaning Up Vulkan Framebuffers", 2);
     for (unsigned int i = 0; i < _RD->VulkanFramebuffers_.size(); i++) {
         vkDestroyFramebuffer(_RD->VulkanDevice_.device, _RD->VulkanFramebuffers_[i], nullptr);
+    }
+
+    _Logger->Log("Cleaning Up VMA Allocator", 2);
+    if (_RD->Allocator_) {
+        vmaDestroyAllocator(_RD->Allocator_);
     }
 
     _Logger->Log("Cleaning Up Vulkan Logical Device", 2);
