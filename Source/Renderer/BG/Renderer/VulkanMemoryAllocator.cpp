@@ -74,6 +74,16 @@ void MemoryManager::FreeBuffer(Allocation* _Allocation) {
 
 }
 
+VmaAllocationInfo MemoryManager::GetAllocationInfo(Allocation* _Allocation) {
+    assert(_Allocation != nullptr && "Error, Cannot Get Get VmaAllocationInfo When _Allocation is null");
+
+    VmaAllocationInfo Info;
+    vmaGetAllocationInfo(Allocator_, _Allocation->Allocation_, &Info);
+
+    return Info;
+
+}
+
 }; // Close Namespace Logger
 }; // Close Namespace Common
 }; // Close Namespace BG

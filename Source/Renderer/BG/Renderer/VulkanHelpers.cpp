@@ -57,7 +57,7 @@ bool VulkanInit_CreateInstance(BG::Common::Logger::LoggingSystem* _Logger, Rende
     vkb::InstanceBuilder VulkanInstanceBuilder;
     VulkanInstanceBuilder.set_app_name("BrainGenix-NES Neuron Emulation System");
     VulkanInstanceBuilder.set_engine_name("BrainGenix-NES Rendering Engine");
-    VulkanInstanceBuilder.require_api_version(1, 0, 0);
+    VulkanInstanceBuilder.require_api_version(1, 2, 0);
 
 
     _Logger->Log("Querying Information About Available Vulkan Layers", 3);
@@ -136,6 +136,7 @@ bool VulkanInit_CreateInstance(BG::Common::Logger::LoggingSystem* _Logger, Rende
     }
 
     _RD->VulkanInstance_ = VulkanInstanceBuilderReturn.value();
+
 
 
     return true;
@@ -724,6 +725,8 @@ bool VulkanInit_CreateVertexBuffer(BG::Common::Logger::LoggingSystem* _Logger, R
 
     _Logger->Log("Creating Vulkan Vertex Buffer", 2);
 
+
+    // Create Buffer, Check that it was successfully created
     int BufferSize = sizeof(vertices[0]) * vertices.size();
     _RD->VertexBufferAllocation_ = _MemManager->CreateBuffer(BufferSize, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT);
 
@@ -731,6 +734,28 @@ bool VulkanInit_CreateVertexBuffer(BG::Common::Logger::LoggingSystem* _Logger, R
         _Logger->Log("Failed to create vertex buffer", 9);
         return false;
     }
+
+
+    // Map Vertex Buffer (So we can write to it), and copy over the vertex data
+    void* Data;
+    VmaAllocationInfo VertexAllocInfo = _MemManager->GetAllocationInfo(_RD->VertexBufferAllocation_);
+    
+    vkMapMemory(_RD->VulkanDevice_.device, VertexAllocInfo.deviceMemory, 0, VertexAllocInfo.size, 0, &Data);
+    memcpy(Data, vertices.data(), (size_t)VertexAllocInfo.size);
+
+    // Ensure that the memory was fully pushed to the GPU
+    VkMappedMemoryRange VertexRange;
+    VertexRange.sType = VK_STRUCTURE_TYPE_MAPPED_MEMORY_RANGE;
+    VertexRange.memory = VertexAllocInfo.deviceMemory;
+    VertexRange.offset = 0;
+    VertexRange.size = VertexAllocInfo.size;
+    vkFlushMappedMemoryRanges(_RD->VulkanDevice_.device, 1, &VertexRange);
+
+    vkUnmapMemory(_RD->VulkanDevice_.device, VertexAllocInfo.deviceMemory);
+    
+
+
+
     return true;
 
 }

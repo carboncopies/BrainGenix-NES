@@ -107,6 +107,14 @@ public:
      */
     void FreeBuffer(Allocation* _Allocation);
 
+    /**
+     * @brief Returns information about a given allocation.
+     * Gets the underlying allocation info from Vma's vmaGetAllocationInfo function.
+     * 
+     * @param _Allocation Pointer to a given allocation
+     * @return VmaAllocationInfo struct containing info
+     */
+    VmaAllocationInfo GetAllocationInfo(Allocation* _Allocation);
 
 };
 
