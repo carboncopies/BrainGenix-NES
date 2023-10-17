@@ -730,7 +730,7 @@ bool VulkanInit_CreateVertexBuffer(BG::Common::Logger::LoggingSystem* _Logger, R
     int BufferSize = sizeof(vertices[0]) * vertices.size();
     _RD->VertexBufferAllocation_ = _MemManager->CreateBuffer(BufferSize, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT);
 
-    if (_RD->VertexBufferAllocation_ != nullptr) {
+    if (_RD->VertexBufferAllocation_ == nullptr) {
         _Logger->Log("Failed to create vertex buffer", 9);
         return false;
     }
