@@ -35,6 +35,35 @@ MemoryManager::MemoryManager(BG::Common::Logger::LoggingSystem* _Logger, RenderD
 
 MemoryManager::~MemoryManager() {
 
+    // Free All Allocations
+    for (unsigned int i = 0; i < Allocations_.size(); i++) {
+        vmaDestroyBuffer(Allocator_, Allocations_[i].Buffer_, Allocations_[i].Allocation_);
+        free(Allocations_[i]);
+    }
+
+}
+
+MemoryManager::CreateBuffer(size_t _Size, unsigned short _Usage) {
+
+    VkBufferCreateInfo BufferInfo = { VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO };
+    BufferInfo.size = 65536;
+    BufferInfo.usage = VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT;
+
+    VmaAllocationCreateInfo AllocInfo = {};
+    AllocInfo.usage = VMA_MEMORY_USAGE_AUTO;
+
+    Allocation* Alloc = new Allocation;
+    Alloc->Buffer_ = VkBuffer();
+    Alloc->Allocation_ = VmaAllocation();
+    VkResult Status = vmaCreateBuffer(_RD->Allocator_, &BufferInfo, &AllocInfo, &Alloc->Buffer_, &Alloc->Allocation_, nullptr);
+
+    if (Status != VK_SUCCESS) {
+        free(Alloc);
+        return false
+    }
+    Allocations_.append(Alloc);
+    return true;
+
 }
 
 

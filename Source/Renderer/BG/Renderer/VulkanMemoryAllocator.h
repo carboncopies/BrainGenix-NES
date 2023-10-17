@@ -48,6 +48,15 @@ namespace BG {
 namespace NES {
 namespace Renderer {
 
+struct Allocation {
+
+    VmaAllocation Allocation_; /**VMA Alloc Object*/
+    VkBuffer      Buffer_;     /**Vulkan Bufer Object*/
+
+};
+
+
+
 /**
  * @brief Vulkan Memory Management Helper. Will automatically help to allocate, deallocate and own all allocated memory for Vulkan. 
  * This class may not yet be thread-safe, so allocating from multiple threads may be dangerous (at least for now - we will fix this later).
@@ -59,8 +68,11 @@ private:
 
     BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
 
+
     VmaAllocator Allocator_; /**Vulkan memory allocation manager - simplifies buffer creation and other things like that*/
-    
+
+
+    std::vector<Allocation*> Allocations_; /**List of Allocations - contains buffer object and other info*/    
 
     
 
@@ -79,6 +91,19 @@ public:
      * Note that this should not be relied on to free memory generally - you should do it yourself.
     */
     ~MemoryManager();
+
+    /**
+     * @brief Use VMA to create a buffer with the specified size in bytes and allocate associated memory on the GPU.
+     * Note that this will populate an Alloc struct which will contain pointers to the data.
+     * Additional Note - you MUST use the free function in this memory manager - otherwise bad things will happen (double frees, etc).
+     * Returns true on success, false on failure.
+     * 
+     * @param _Size Size in bytes of the buffer.
+     * @param _Usage Usage flags, example: VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT
+     * @return true 
+     * @return false 
+     */
+    bool CreateBuffer(size_t _Size, unsigned short _Usage);
 
 
 
