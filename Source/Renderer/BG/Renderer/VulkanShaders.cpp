@@ -42,6 +42,15 @@ bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, st
     // Setup Shaderc Compiler
     shaderc::Compiler Compiler;
     shaderc::CompileOptions Options;
+	Options.SetTargetEnvironment( shaderc_target_env_vulkan, shaderc_env_version_vulkan_1_0 );
+	Options.SetSourceLanguage( shaderc_source_language_glsl );
+
+	std::vector<std::pair<std::string, std::string>> Definitions;
+	Definitions.push_back(std::make_pair("__VK_GLSL__", "1"));
+
+	for (std::pair<std::string, std::string> &DefinitionPairs : Definitions) {
+		Options.AddMacroDefinition(DefinitionPairs.first, DefinitionPairs.second);
+    }
 
     // If we want to add our own macros, do so like this (can be useful for say numlights or something like that):
     // options.AddMacroDefinition("MY_DEFINE", "1");
@@ -71,6 +80,16 @@ bool Shaderc_CompileToAssembly(BG::Common::Logger::LoggingSystem* _Logger, std::
     // Setup Shaderc Compiler
     shaderc::Compiler Compiler;
     shaderc::CompileOptions Options;
+	Options.SetTargetEnvironment( shaderc_target_env_vulkan, shaderc_env_version_vulkan_1_0 );
+	Options.SetSourceLanguage( shaderc_source_language_glsl );
+
+	std::vector<std::pair<std::string, std::string>> Definitions;
+	Definitions.push_back(std::make_pair("__VK_GLSL__", "1"));
+
+	for (std::pair<std::string, std::string> &DefinitionPairs : Definitions) {
+		Options.AddMacroDefinition(DefinitionPairs.first, DefinitionPairs.second);
+    }
+
 
     // If we want to add our own macros, do so like this (can be useful for say numlights or something like that):
     // options.AddMacroDefinition("MY_DEFINE", "1");
@@ -112,9 +131,20 @@ bool Shaderc_CompileToBinary(BG::Common::Logger::LoggingSystem* _Logger, std::st
     // Setup Shaderc Compiler
     shaderc::Compiler Compiler;
     shaderc::CompileOptions Options;
+	Options.SetTargetEnvironment( shaderc_target_env_vulkan, shaderc_env_version_vulkan_1_0 );
+	Options.SetSourceLanguage( shaderc_source_language_glsl );
+
+	std::vector<std::pair<std::string, std::string>> Definitions;
+	Definitions.push_back(std::make_pair("__VK_GLSL__", "1"));
+
+	for (std::pair<std::string, std::string> &DefinitionPairs : Definitions) {
+		Options.AddMacroDefinition(DefinitionPairs.first, DefinitionPairs.second);
+    }
+
 
     // If we want to add our own macros, do so like this (can be useful for say numlights or something like that):
     // options.AddMacroDefinition("MY_DEFINE", "1");
+
 
     // Set Optimization Enable/Disable
     if (_Optimize) {
@@ -178,8 +208,8 @@ bool Vulkan_CreateShaderModule(BG::Common::Logger::LoggingSystem* _Logger, Rende
     // Setup Shader Create Info
     VkShaderModuleCreateInfo CreateInfo{};
     CreateInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
-    CreateInfo.codeSize = _ShaderBytecode->size();
-    CreateInfo.pCode = reinterpret_cast<const uint32_t*>(_ShaderBytecode->data());
+    CreateInfo.codeSize = _ShaderBytecode->size() * sizeof(uint32_t);
+    CreateInfo.pCode = _ShaderBytecode->data();
 
     // Now Setup The Module
     VkResult ShaderCreateStatus = vkCreateShaderModule(_RD->VulkanDevice_.device, &CreateInfo, nullptr, _ShaderModule);
