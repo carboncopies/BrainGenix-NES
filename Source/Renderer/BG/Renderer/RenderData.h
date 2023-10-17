@@ -69,6 +69,8 @@ struct RenderData {
 
     // Allocator Info
     // VmaAllocator Allocator_; /**Vulkan memory allocation manager - simplifies buffer creation and other things like that*/
+    Allocation* VertexBufferAllocation_; /**Pointer to vertex buffer allocation*/
+
 
     // Queues (How we talk to the GPU through Vulkan)
     VkQueue VulkanGraphicsQeueue_; /**Vulkan Graphics Queue Handle (Used for graphics operations, hence the name)*/

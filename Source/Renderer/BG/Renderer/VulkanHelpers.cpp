@@ -725,22 +725,13 @@ bool VulkanInit_CreateVertexBuffer(BG::Common::Logger::LoggingSystem* _Logger, R
     _Logger->Log("Creating Vulkan Vertex Buffer", 2);
 
     int BufferSize = sizeof(vertices[0]) * vertices.size();
-    
+    _RD->VertexBufferAllocation_ = _MemManager->CreateBuffer(BufferSize, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT);
 
-    // VkBufferCreateInfo BufferInfo = { VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO };
-    // BufferInfo.size = 65536;
-    // BufferInfo.usage = VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT;
-
-    // VmaAllocationCreateInfo AllocInfo = {};
-    // AllocInfo.usage = VMA_MEMORY_USAGE_AUTO;
-
-    // VkBuffer Buffer;
-    // VmaAllocation Allocation;
-    // vmaCreateBuffer(_RD->Allocator_, &BufferInfo, &AllocInfo, &Buffer, &Allocation, nullptr);
-
-    // probably should convert this into a class that manages the allocations (perhaps so we can just have it manage everything for us.)
-
-    // return true;
+    if (_RD->VertexBufferAllocation_ != nullptr) {
+        _Logger->Log("Failed to create vertex buffer", 9);
+        return false;
+    }
+    return true;
 
 }
 
