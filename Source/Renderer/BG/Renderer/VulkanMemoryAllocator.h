@@ -96,15 +96,21 @@ public:
      * @brief Use VMA to create a buffer with the specified size in bytes and allocate associated memory on the GPU.
      * Note that this will populate an Alloc struct which will contain pointers to the data.
      * Additional Note - you MUST use the free function in this memory manager - otherwise bad things will happen (double frees, etc).
-     * Returns true on success, false on failure.
+ 
      * 
      * @param _Size Size in bytes of the buffer.
      * @param _Usage Usage flags, example: VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT
-     * @return true 
-     * @return false 
+     * @return Allocation* pointer to created allocation. Will be null if a failure occurs. 
      */
-    bool CreateBuffer(size_t _Size, unsigned short _Usage);
+    Allocation* CreateBuffer(size_t _Size, unsigned short _Usage);
 
+    /**
+     * @brief Frees a buffer that was previously created. Pretty self-explanitory.
+     * The allocation pointer will become invalid after calling this function.
+     * 
+     * @param _Allocation Pointer to Allocation struct instance.
+     */
+    void FreeBuffer(Allocation* _Allocation);
 
 
 };

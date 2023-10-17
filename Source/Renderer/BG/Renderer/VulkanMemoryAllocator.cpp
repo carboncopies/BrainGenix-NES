@@ -43,7 +43,7 @@ MemoryManager::~MemoryManager() {
 
 }
 
-bool MemoryManager::CreateBuffer(size_t _Size, unsigned short _Usage) {
+Allocation* MemoryManager::CreateBuffer(size_t _Size, unsigned short _Usage) {
 
     VkBufferCreateInfo BufferInfo = { VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO };
     BufferInfo.size = 65536;
@@ -60,13 +60,19 @@ bool MemoryManager::CreateBuffer(size_t _Size, unsigned short _Usage) {
     if (Status != VK_SUCCESS) {
         Logger_->Log("Failed To Create Vulkan Buffer", 9);
         free(Alloc);
-        return false;
+        return nullptr;
     }
     Allocations_.push_back(Alloc);
-    return true;
+    return Alloc;
 
 }
 
+void MemoryManager::FreeBuffer(Allocation* _Allocation) {
+    assert(_Allocation != nullptr && "Cannot free an allocation when allocation is a null pointer!");
+
+    vmaDestroyBuffer(Allocator_, _Allocation->Buffer_, _Allocation->Allocation_);
+
+}
 
 }; // Close Namespace Logger
 }; // Close Namespace Common
