@@ -102,6 +102,7 @@ set(UNITTEST_SOURCES
 
   ${SRC_DIR}/Core/Simulator/Receptors/NMDAReceptor.test.cpp
   ${SRC_DIR}/Core/Simulator/Receptors/AMPAReceptor.test.cpp
+  ${SRC_DIR}/Core/Simulator/Receptors/Receptor.test.cpp
 )
 
 # Configure test binaries

@@ -13,53 +13,25 @@ NMDAReceptor::NMDAReceptor(size_t _ID, float _GSyn_pS, float _GPeak_pS,
                            float _TauD_ms, float _TauR_ms, float _TauD2_ms,
                            float _TauD3_ms, float _D1, float _D2, float _D3,
                            float _X, float _ANorm, float _VHalfBlocked_mV,
-                           float _K)
-    : ID(_ID), GSyn_pS(_GSyn_pS), GPeak_pS(_GPeak_pS), ESyn_mV(_ESyn_mV),
-      Vm_mV(_Vm_mV), ISyn_pA(_ISyn_pA), TauD_ms(_TauD_ms), TauR_ms(_TauR_ms),
-      TauD2_ms(_TauD2_ms), TauD3_ms(_TauD3_ms), D1(_D1), D2(_D2), D3(_D3),
-      X(_X), ANorm(_ANorm), VHalfBlocked_mV(_VHalfBlocked_mV), K(_K){};
-
-float NMDAReceptor::PostSynCurrent_pA() { return 0.0; };
-
-float NMDAReceptor::Conductance_pS() { return 0.0; };
-
-float NMDAReceptor::GSynT_pS(float t_ms, NMDAReceptor::PSPType pspType) {
-    return 0.0;
+                           float _K) {
+    this->ID = _ID;
+    this->GSyn_pS = _GSyn_pS;
+    this->GPeak_pS = _GPeak_pS;
+    this->ESyn_mV = _ESyn_mV;
+    this->Vm_mV = _Vm_mV;
+    this->ISyn_pA = _ISyn_pA;
+    this->TauD_ms = _TauD_ms;
+    this->TauR_ms = _TauR_ms;
+    this->TauD2_ms = _TauD2_ms;
+    this->TauD3_ms = _TauD3_ms;
+    this->D1 = _D1;
+    this->D2 = _D2;
+    this->D3 = _D3;
+    this->X = _X;
+    this->ANorm = _ANorm;
+    this->VHalfBlocked_mV = _VHalfBlocked_mV;
+    this->K = _K;
 };
-std::vector<float> NMDAReceptor::GSynT_pS(std::vector<float> t_ms,
-                                          NMDAReceptor::PSPType pspType) {
-    return std::vector<float>();
-};
-
-//! Modeled with a simple exponential.
-float NMDAReceptor::GSynT_pS_DecayZeroRiseTime(float t_ms) { return 0.0; };
-std::vector<float>
-NMDAReceptor::GSynT_pS_DecayZeroRiseTime(std::vector<float> t_ms) {
-    return std::vector<float>();
-};
-
-//! Modeled with an alpha function.
-float NMDAReceptor::GSynT_pS_RiseDecay(float t_ms) { return 0.0; };
-std::vector<float> NMDAReceptor::GSynT_pS_RiseDecay(std::vector<float> t_ms) {
-    return std::vector<float>();
-};
-
-//! Modeled with a double exponential.
-float NMDAReceptor::GSynT_pS_DoubleExponential(float t_ms) { return 0.0; };
-std::vector<float>
-NMDAReceptor::GSynT_pS_DoubleExponential(std::vector<float> t_ms) {
-    return std::vector<float>();
-};
-
-//! Modeled with a multiexponential function with m^xh formalism to fit
-//! more complex waveforms.
-float NMDAReceptor::GSynT_pS_MXH(float t_ms) { return 0.0; };
-std::vector<float> NMDAReceptor::GSynT_pS_MXH(std::vector<float> t_ms) {
-    return std::vector<float>();
-};
-
-//! For analytical solution see Roth & van Rossum (2009).
-float NMDAReceptor::FindANorm(bool verbose) { return 0.0; };
 
 void NMDAReceptor::SetPhiVType(PhiVType phiVType) { return; };
 

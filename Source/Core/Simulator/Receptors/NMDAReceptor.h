@@ -65,34 +65,7 @@ struct NMDAReceptor : Receptor {
                  float _Vm_mV, float _Isyn_pA, float _TauD_ms, float _TauR_ms,
                  float _TauD2_ms, float _TauD3_ms, float _D1, float _D2,
                  float _D3, float _X, float _ANorm, float _VHalfBlocked_mV,
-                 float _k);
-
-    float PostSynCurrent_pA();
-
-    float Conductance_pS();
-
-    float GSynT_pS(float t_ms, PSPType pspType);
-    std::vector<float> GSynT_pS(std::vector<float> t_ms, PSPType pspType);
-
-    //! Modeled with a simple exponential.
-    float GSynT_pS_DecayZeroRiseTime(float t_ms);
-    std::vector<float> GSynT_pS_DecayZeroRiseTime(std::vector<float> t_ms);
-
-    //! Modeled with an alpha function.
-    float GSynT_pS_RiseDecay(float t_ms);
-    std::vector<float> GSynT_pS_RiseDecay(std::vector<float> t_ms);
-
-    //! Modeled with a double exponential.
-    float GSynT_pS_DoubleExponential(float t_ms);
-    std::vector<float> GSynT_pS_DoubleExponential(std::vector<float> t_ms);
-
-    //! Modeled with a multiexponential function with m^xh formalism to fit
-    //! more complex waveforms.
-    float GSynT_pS_MXH(float t_ms);
-    std::vector<float> GSynT_pS_MXH(std::vector<float> t_ms);
-
-    //! For analytical solution see Roth & van Rossum (2009).
-    float FindANorm(bool verbose = false);
+                 float _K);
 
     void SetPhiVType(PhiVType phiVType);
 
