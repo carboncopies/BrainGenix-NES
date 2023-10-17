@@ -35,6 +35,8 @@ std::string ReadFileToString(std::string _Filename) {
 
 
 
+// Note: these shaderc tools should probably be made into a class with multithreading (one shader compiler per thread) - as the compilation process is *REALLY* slow otherwise.
+
 bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::string* _PreprocessedResult, bool _Verbose) {
     assert(_Logger != nullptr);
     assert(_PreprocessedResult != nullptr);

@@ -36,12 +36,12 @@ bool VulkanInit_CreateInstance(BG::Common::Logger::LoggingSystem* _Logger, Rende
     if (_RD->IsDebugging_) {
         _Logger->Log("Vulkan Validation Layers Have Been [REQUESTED]", 2);
 
-        if (SystemInfo.is_layer_available("VK_LAYER_LUNARG_api_dump")) {
-            _Logger->Log("Enabling Vulkan Layer 'VK_LAYER_LUNARG_api_dump'", 1);
-            VulkanInstanceBuilder.enable_layer("VK_LAYER_LUNARG_api_dump");
-        } else {
-            _Logger->Log("Unable To Enable Vulkan Layer 'VK_LAYER_LUNARG_api_dump'", 7);
-        }
+        // if (SystemInfo.is_layer_available("VK_LAYER_LUNARG_api_dump")) {
+        //     _Logger->Log("Enabling Vulkan Layer 'VK_LAYER_LUNARG_api_dump'", 1);
+        //     VulkanInstanceBuilder.enable_layer("VK_LAYER_LUNARG_api_dump");
+        // } else {
+        //     _Logger->Log("Unable To Enable Vulkan Layer 'VK_LAYER_LUNARG_api_dump'", 7);
+        // }
 
         if (SystemInfo.validation_layers_available) {
             _Logger->Log("Enabling Vulkan Validation Layers", 1);
