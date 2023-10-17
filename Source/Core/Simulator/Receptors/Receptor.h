@@ -10,6 +10,7 @@
 
 #pragma once
 
+#include <cstddef>
 #include <vector>
 
 //! Maximum number of iterations for finding a_norm

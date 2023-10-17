@@ -13,7 +13,8 @@ NMDAReceptor::NMDAReceptor(size_t _ID, float _GSyn_pS, float _GPeak_pS,
                            float _TauD_ms, float _TauR_ms, float _TauD2_ms,
                            float _TauD3_ms, float _D1, float _D2, float _D3,
                            float _X, float _ANorm, float _VHalfBlocked_mV,
-                           float _K) {
+                           float _K, float _KBinding, float _KUnbinding,
+                           float _KDissociation_0mV) {
     this->ID = _ID;
     this->GSyn_pS = _GSyn_pS;
     this->GPeak_pS = _GPeak_pS;
@@ -31,9 +32,15 @@ NMDAReceptor::NMDAReceptor(size_t _ID, float _GSyn_pS, float _GPeak_pS,
     this->ANorm = _ANorm;
     this->VHalfBlocked_mV = _VHalfBlocked_mV;
     this->K = _K;
+    this->KBinding = _KBinding;
+    this->KUnbinding = _KUnbinding;
+    this->KDissociation_0mV = _KDissociation_0mV;
 };
 
-void NMDAReceptor::SetPhiVType(PhiVType phiVType) { return; };
+float NMDAReceptor::PhiV(PhiVType phiVType, float Mg2plus_0, float delta,
+                         float voltage_V, float temperature_K) {
+    return 0.0;
+};
 
 //! Modeled with a Bolzmann function. Easy to use, but not directly
 //! related to physical aspects of Mg2+ blocking mechanism.
@@ -44,36 +51,31 @@ float NMDAReceptor::PhiVBolzmann() { return 0.0; };
 float NMDAReceptor::Phi(float temperature_K, int z) { return 0.0; };
 
 //! Mg2plus_0 - Mg2+ concentration outside membrane.
-//! KBinding - Binding constant.
 //! delta - Fraction of membrane voltage that Mg2+ experiences at the
-//! blocking site. temperature_K - absolute temperature. voltage_V -
-//! voltage.
-float NMDAReceptor::KBindingRate(float Mg2plus_0, float KBinding, float delta,
-                                 float V, float temperature_K) {
+//! blocking site. temperature_K - absolute temperature.
+//! voltage_V - voltage.
+float NMDAReceptor::KBindingRate(float Mg2plus_0, float delta, float voltage_V,
+                                 float temperature_K) {
     return 0.0;
 };
 
-//! KUnbinding - Unbinding constant.
 //! delta - Fraction of membrane voltage that Mg2+
 //!         experiences at the blocking site.
-float NMDAReceptor::KUnbindingRate(float KUnbinding, float delta,
-                                   float voltage_V, float temperature_K) {
+float NMDAReceptor::KUnbindingRate(float delta, float voltage_V,
+                                   float temperature_K) {
     return 0.0;
 };
 
 //! Modeled with a two-state Woodhull formalism derived from a kinetic
 //! model of an extracellular Mg2+ block. An ion channel is blocked
-//! when an ion species (here, Mg2+)	is bound to a binding site
+//! when an ion species (here, Mg2+) is bound to a binding site
 //! inside the channel, open when the ion species is unbound.
 //! Mg2plus_0 - Mg2+ concentration outside membrane.
-//! KBinding - Binding constant.
-//! KUnbinding - Unbinding constant.
 //! delta - Fraction of membrane voltage that Mg2+ experiences at the
 //! blocking site.
 
-float NMDAReceptor::PhiVWoodhull_1(float Mg2plus_0, float KBinding,
-                                   float KUnbinding, float delta,
-                                   float voltage_V, float temperature_K) {
+float NMDAReceptor::PhiVWoodhull1(float Mg2plus_0, float delta, float voltage_V,
+                                  float temperature_K) {
     return 0.0;
 };
 
@@ -84,12 +86,10 @@ float NMDAReceptor::PhiVWoodhull_1(float Mg2plus_0, float KBinding,
 //! quantifies the strength or affinity of Mg2+ binding and delta quantifies
 //! the location of the Mg2+ binding site within the channel.
 //! Mg2plus_0 - Mg2+ concentration outside membrane.
-//! KDissociation_0mV - Dissociation constant at 0 mV, equal to
-//! K_unbinding/K_binding. delta - Fraction of membrane voltage that Mg2+
+//! delta - Fraction of membrane voltage that Mg2+
 //! experiences at the blocking site.
-float NMDAReceptor::PhiVWoodhull_2(float Mg2plus_0, float K_dissociation_0mV,
-                                   float delta, float voltage_V,
-                                   float temperature_K) {
+float NMDAReceptor::PhiVWoodhull2(float Mg2plus_0, float delta, float voltage_V,
+                                  float temperature_K) {
     return 0.0;
 };
 
