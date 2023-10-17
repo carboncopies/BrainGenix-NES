@@ -53,6 +53,7 @@
 
 #include <BG/Renderer/VulkanShaders.h>
 #include <BG/Renderer/RenderData.h>
+#include <BG/Renderer/VulkanMemoryAllocator.h>
 
 
 
@@ -176,9 +177,13 @@ bool VulkanInit_CreateCommandPool(BG::Common::Logger::LoggingSystem* _Logger, Re
  * This will likely need to be extended in the future to allow us to do this dynamically (for model streaming).
  * Returns true on success, false on failure.
  * 
- * 
+ * @param _Logger Pointer to logging subsystem
+ * @param _RD Pointer to render data struct
+ * @param _MemManager Pointer to an initialized memory manager subsystem
+ * @return true 
+ * @return false 
 */
-bool VulkanInit_CreateVertexBuffer(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+bool VulkanInit_CreateVertexBuffer(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD, MemoryManager* _MemManager);
 
 /**
  * @brief Vulkan Init Helper. Creates the command buffers using the command pool, allowing us to tell the gpu what to do.

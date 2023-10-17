@@ -5,7 +5,7 @@
 /*
     Description: This file defines the RenderData struct, which contains all relevant variables (vulkan handles) for rendering.
     Additional Notes: None
-    Date Created: 2023-09-15
+    Date Created: 2023-10-16
     Author(s): Thomas Liao
 
 
@@ -41,19 +41,14 @@
 #include <BG/Common/Logger/Logger.h>
 
 #include <BG/Renderer/RenderData.h>
-
+#include <BG/Renderer/Allocation.h>
 
 
 namespace BG {
 namespace NES {
 namespace Renderer {
 
-struct Allocation {
 
-    VmaAllocation Allocation_; /**VMA Alloc Object*/
-    VkBuffer      Buffer_;     /**Vulkan Bufer Object*/
-
-};
 
 
 

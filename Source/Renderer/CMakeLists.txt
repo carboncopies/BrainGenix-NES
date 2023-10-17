@@ -14,6 +14,8 @@ add_library(NESRenderer
     "BG/Renderer/VulkanMemoryAllocator.cpp"
     "BG/Renderer/RenderData.h"
     "BG/Renderer/RenderData.cpp"
+    "BG/Renderer/Allocation.h"
+    "BG/Renderer/Allocation.cpp"
 
 )
 

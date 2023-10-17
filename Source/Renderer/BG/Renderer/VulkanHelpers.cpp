@@ -718,11 +718,15 @@ bool VulkanInit_CreateCommandBuffers(BG::Common::Logger::LoggingSystem* _Logger,
     return true;
 }
 
-bool VulkanInit_CreateVertexBuffer(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
+bool VulkanInit_CreateVertexBuffer(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD, MemoryManager* _MemManager) {
     assert(_Logger != nullptr);
     assert(_RD != nullptr);
 
     _Logger->Log("Creating Vulkan Vertex Buffer", 2);
+
+    int BufferSize = sizeof(vertices[0]) * vertices.size();
+    
+
     // VkBufferCreateInfo BufferInfo = { VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO };
     // BufferInfo.size = 65536;
     // BufferInfo.usage = VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT;

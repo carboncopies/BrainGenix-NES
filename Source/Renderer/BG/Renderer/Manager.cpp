@@ -79,6 +79,10 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
         return false;
     }
 
+    // Setup Memory Management Subsystem
+    MemoryManager_ = std::make_unique<MemoryManager>(Logger_, &RenderData_);
+
+
     // Create Swapchain Optionally If Rendering To A Window
     if (RenderData_.IsWindowed_) {
         if (!VulkanInit_Optional_CreateSwapchain(Logger_, &RenderData_)) {
@@ -119,7 +123,7 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
     }
 
     // Create Vertex Buffer
-    if (!VulkanInit_CreateVertexBuffer(Logger_, &RenderData_)) {
+    if (!VulkanInit_CreateVertexBuffer(Logger_, &RenderData_, MemoryManager_.get())) {
         return false;
     }
 

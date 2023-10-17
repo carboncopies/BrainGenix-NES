@@ -46,6 +46,7 @@
 
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <BG/Renderer/Allocation.h>
 
 
 namespace BG {
