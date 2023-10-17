@@ -37,13 +37,13 @@ MemoryManager::~MemoryManager() {
 
     // Free All Allocations
     for (unsigned int i = 0; i < Allocations_.size(); i++) {
-        vmaDestroyBuffer(Allocator_, Allocations_[i].Buffer_, Allocations_[i].Allocation_);
+        vmaDestroyBuffer(Allocator_, Allocations_[i]->Buffer_, Allocations_[i]->Allocation_);
         free(Allocations_[i]);
     }
 
 }
 
-MemoryManager::CreateBuffer(size_t _Size, unsigned short _Usage) {
+bool MemoryManager::CreateBuffer(size_t _Size, unsigned short _Usage) {
 
     VkBufferCreateInfo BufferInfo = { VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO };
     BufferInfo.size = 65536;
@@ -55,13 +55,14 @@ MemoryManager::CreateBuffer(size_t _Size, unsigned short _Usage) {
     Allocation* Alloc = new Allocation;
     Alloc->Buffer_ = VkBuffer();
     Alloc->Allocation_ = VmaAllocation();
-    VkResult Status = vmaCreateBuffer(_RD->Allocator_, &BufferInfo, &AllocInfo, &Alloc->Buffer_, &Alloc->Allocation_, nullptr);
+    VkResult Status = vmaCreateBuffer(Allocator_, &BufferInfo, &AllocInfo, &Alloc->Buffer_, &Alloc->Allocation_, nullptr);
 
     if (Status != VK_SUCCESS) {
+        Logger_->Log("Failed To Create Vulkan Buffer", 9);
         free(Alloc);
-        return false
+        return false;
     }
-    Allocations_.append(Alloc);
+    Allocations_.push_back(Alloc);
     return true;
 
 }

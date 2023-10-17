@@ -901,10 +901,10 @@ bool VulkanDeinit_DestroyAll(BG::Common::Logger::LoggingSystem* _Logger, RenderD
         vkDestroyFramebuffer(_RD->VulkanDevice_.device, _RD->VulkanFramebuffers_[i], nullptr);
     }
 
-    _Logger->Log("Cleaning Up VMA Allocator", 2);
-    if (_RD->Allocator_) {
-        vmaDestroyAllocator(_RD->Allocator_);
-    }
+    // _Logger->Log("Cleaning Up VMA Allocator", 2);
+    // if (_RD->Allocator_) {
+    //     vmaDestroyAllocator(_RD->Allocator_);
+    // }
 
     _Logger->Log("Cleaning Up Vulkan Logical Device", 2);
     if (_RD->VulkanDevice_) {
