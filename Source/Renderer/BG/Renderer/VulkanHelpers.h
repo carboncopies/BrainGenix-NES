@@ -45,6 +45,8 @@
 #include <SDL.h>
 #include <SDL_vulkan.h>
 
+#include <vk_mem_alloc.h>
+
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
