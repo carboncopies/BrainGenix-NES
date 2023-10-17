@@ -67,7 +67,7 @@ namespace Renderer {
 struct RenderData {
 
     // Allocator Info
-    VmaAllocator Allocator_; /**Vulkan memory allocation manager - simplifies buffer creation and other things like that*/
+    // VmaAllocator Allocator_; /**Vulkan memory allocation manager - simplifies buffer creation and other things like that*/
 
     // Queues (How we talk to the GPU through Vulkan)
     VkQueue VulkanGraphicsQeueue_; /**Vulkan Graphics Queue Handle (Used for graphics operations, hence the name)*/

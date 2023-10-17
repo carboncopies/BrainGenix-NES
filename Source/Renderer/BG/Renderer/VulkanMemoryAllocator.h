@@ -31,21 +31,58 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-
+#include <assert.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <vk_mem_alloc.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <BG/Common/Logger/Logger.h>
+
+#include <BG/Renderer/RenderData.h>
+
 
 
 namespace BG {
 namespace NES {
 namespace Renderer {
 
+/**
+ * @brief Vulkan Memory Management Helper. Will automatically help to allocate, deallocate and own all allocated memory for Vulkan. 
+ * This class may not yet be thread-safe, so allocating from multiple threads may be dangerous (at least for now - we will fix this later).
+ * 
+ */
+class MemoryManager {
+
+private:
+
+    BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
+
+    VmaAllocator Allocator_; /**Vulkan memory allocation manager - simplifies buffer creation and other things like that*/
     
 
+    
+
+
+public:
+
+    /**
+     * @brief Constructor for the memory management system.
+     * Note that this must be called after initializing vulkan to the point of selecting the physical device.
+    */
+    MemoryManager(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+
+    /**
+     * @brief Destructor to the renderer, pretty self-explanitory.
+     * Will also free all gpu memory not yet freed by the rest of the system.
+     * Note that this should not be relied on to free memory generally - you should do it yourself.
+    */
+    ~MemoryManager();
+
+
+
+};
 
 
 }; // Close Namespace Logger

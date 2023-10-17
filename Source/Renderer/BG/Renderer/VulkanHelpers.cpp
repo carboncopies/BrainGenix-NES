@@ -236,19 +236,19 @@ bool VulkanInit_CreateDevice(BG::Common::Logger::LoggingSystem* _Logger, RenderD
 
 
 
-    // Setup Memory Allocator Instance
-    VmaVulkanFunctions VulkanFunctions = {};
-    VulkanFunctions.vkGetInstanceProcAddr = &vkGetInstanceProcAddr;
-    VulkanFunctions.vkGetDeviceProcAddr = &vkGetDeviceProcAddr;
+    // // Setup Memory Allocator Instance
+    // VmaVulkanFunctions VulkanFunctions = {};
+    // VulkanFunctions.vkGetInstanceProcAddr = &vkGetInstanceProcAddr;
+    // VulkanFunctions.vkGetDeviceProcAddr = &vkGetDeviceProcAddr;
     
-    VmaAllocatorCreateInfo AllocatorCreateInfo = {};
-    AllocatorCreateInfo.vulkanApiVersion = VK_API_VERSION_1_2;
-    AllocatorCreateInfo.physicalDevice = _RD->VulkanDevice_.physical_device;
-    AllocatorCreateInfo.device = _RD->VulkanDevice_.device;
-    AllocatorCreateInfo.instance = _RD->VulkanInstance_.instance;
-    // AllocatorCreateInfo.pVulkanFunctions = &_RD->VulkanInstance_.;
+    // VmaAllocatorCreateInfo AllocatorCreateInfo = {};
+    // AllocatorCreateInfo.vulkanApiVersion = VK_API_VERSION_1_2;
+    // AllocatorCreateInfo.physicalDevice = _RD->VulkanDevice_.physical_device;
+    // AllocatorCreateInfo.device = _RD->VulkanDevice_.device;
+    // AllocatorCreateInfo.instance = _RD->VulkanInstance_.instance;
+    // // AllocatorCreateInfo.pVulkanFunctions = &_RD->VulkanInstance_.;
     
-    vmaCreateAllocator(&AllocatorCreateInfo, &_RD->Allocator_);
+    // vmaCreateAllocator(&AllocatorCreateInfo, &_RD->Allocator_);
 
     return true;
 }
