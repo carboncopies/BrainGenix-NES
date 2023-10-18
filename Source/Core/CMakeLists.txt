@@ -44,6 +44,10 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.cpp
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.h
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedBrainRegion.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedBrainRegion.h
+
+  ${SRC_DIR}/Core/Simulator/BrainRegion/BrainRegion.h
 
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.cpp
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.h
