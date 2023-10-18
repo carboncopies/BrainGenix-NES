@@ -704,7 +704,16 @@ bool VulkanInit_CreateCommandBuffers(BG::Common::Logger::LoggingSystem* _Logger,
 
         vkCmdBindPipeline(_RD->VulkanCommandBuffers_[i], VK_PIPELINE_BIND_POINT_GRAPHICS, _RD->VulkanGraphicsPipeline_);
 
-        vkCmdDraw(_RD->VulkanCommandBuffers_[i], 3, 1, 0, 0);
+        // -- NEW -- UNTESTED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        VkBuffer vertexBuffers[] = {_RD->VertexBufferAllocation_->Buffer_};
+        VkDeviceSize offsets[] = {0};
+        vkCmdBindVertexBuffers(_RD->VulkanCommandBuffers_[i], 0, 1, vertexBuffers, offsets);
+
+        vkCmdDraw(_RD->VulkanCommandBuffers_[i], static_cast<uint32_t>(vertices.size()), 1, 0, 0);
+        // -- (END) NEW -- UNTESTED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+        // vkCmdDraw(_RD->VulkanCommandBuffers_[i], 3, 1, 0, 0);
 
         vkCmdEndRenderPass(_RD->VulkanCommandBuffers_[i]);
 
@@ -728,7 +737,7 @@ bool VulkanInit_CreateVertexBuffer(BG::Common::Logger::LoggingSystem* _Logger, R
 
     // Create Buffer, Check that it was successfully created
     int BufferSize = sizeof(vertices[0]) * vertices.size();
-    _RD->VertexBufferAllocation_ = _MemManager->CreateBuffer(BufferSize, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT);
+    _RD->VertexBufferAllocation_ = _MemManager->CreateBuffer(BufferSize, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT, VMA_MEMORY_USAGE_CPU_TO_GPU);
 
     if (_RD->VertexBufferAllocation_ == nullptr) {
         _Logger->Log("Failed to create vertex buffer", 9);
@@ -743,13 +752,13 @@ bool VulkanInit_CreateVertexBuffer(BG::Common::Logger::LoggingSystem* _Logger, R
     vkMapMemory(_RD->VulkanDevice_.device, VertexAllocInfo.deviceMemory, 0, VertexAllocInfo.size, 0, &Data);
     memcpy(Data, vertices.data(), (size_t)VertexAllocInfo.size);
 
-    // Ensure that the memory was fully pushed to the GPU
-    VkMappedMemoryRange VertexRange;
-    VertexRange.sType = VK_STRUCTURE_TYPE_MAPPED_MEMORY_RANGE;
-    VertexRange.memory = VertexAllocInfo.deviceMemory;
-    VertexRange.offset = 0;
-    VertexRange.size = VertexAllocInfo.size;
-    vkFlushMappedMemoryRanges(_RD->VulkanDevice_.device, 1, &VertexRange);
+    // // Ensure that the memory was fully pushed to the GPU
+    // VkMappedMemoryRange VertexRange;
+    // VertexRange.sType = VK_STRUCTURE_TYPE_MAPPED_MEMORY_RANGE;
+    // VertexRange.memory = VertexAllocInfo.deviceMemory;
+    // VertexRange.offset = 0;
+    // VertexRange.size = VertexAllocInfo.size;
+    // vkFlushMappedMemoryRanges(_RD->VulkanDevice_.device, 1, &VertexRange);
 
     vkUnmapMemory(_RD->VulkanDevice_.device, VertexAllocInfo.deviceMemory);
     

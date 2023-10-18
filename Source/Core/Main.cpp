@@ -19,7 +19,7 @@ int main(int NumArguments, char** ArgumentValues) {
 
     // Setup Renderer
     BG::NES::Renderer::Interface RenderingInterface(&Logger);
-    if (!RenderingInterface.Initialize(true)) { // NOTE THAT THE 'true' PARAM INDICATES THAT
+    if (!RenderingInterface.Initialize(false)) { // NOTE THAT THE 'true' PARAM INDICATES THAT
     // THE DEBUG WINDOW IS ENABLED. THIS SHOULD BE EVENTUALLY HANDLED BY THE CONFIG SUBSYS (FROM FILE/COMMAND LINE ARG)
         Logger.Log("Error During Renderer Initialization, Aborting", 10);
         return -1;

@@ -117,15 +117,17 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
         return false;
     }
 
+    // Create Vertex Buffer
+    if (!VulkanInit_CreateVertexBuffer(Logger_, &RenderData_, MemoryManager_.get())) {
+        return false;
+    }
+
+
     // Create Command Buffers
     if (!VulkanInit_CreateCommandBuffers(Logger_, &RenderData_)) {
         return false;
     }
 
-    // Create Vertex Buffer
-    if (!VulkanInit_CreateVertexBuffer(Logger_, &RenderData_, MemoryManager_.get())) {
-        return false;
-    }
 
     // Create Sync Objects
     if (!VulkanInit_CreateSyncObjects(Logger_, &RenderData_)) {

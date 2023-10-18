@@ -97,7 +97,7 @@ public:
      * @param _Usage Usage flags, example: VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT
      * @return Allocation* pointer to created allocation. Will be null if a failure occurs. 
      */
-    Allocation* CreateBuffer(size_t _Size, unsigned short _Usage);
+    Allocation* CreateBuffer(size_t _Size, unsigned short _BufferUsage, VmaMemoryUsage _MemoryUsage = VMA_MEMORY_USAGE_AUTO);
 
     /**
      * @brief Frees a buffer that was previously created. Pretty self-explanitory.
