@@ -34,9 +34,6 @@ class BrainRegion {
     std::shared_ptr<Geometries::Geometry> Shape{};
     std::shared_ptr<CoreStructs::NeuralCircuit> Content{};
 
-    //! Constructors
-    BrainRegion();
-
     virtual void Show(float lineWidth) = 0;
 };
 
