@@ -129,7 +129,9 @@ struct NMDAReceptor : Receptor {
                         float temperature_K);
 
     //! Strong voltage dependence.
-    float Isyn_pA();
+    float PostSynCurrentStrongVoltageDep_pA(
+        PhiVType phiVType = PhiVType::BOLZMANN, float Mg2plus_0 = 1.0,
+        float delta = 1.0, float temperature_K = 273.0, float voltage_V = 1.0);
 };
 
 }; // namespace Receptors

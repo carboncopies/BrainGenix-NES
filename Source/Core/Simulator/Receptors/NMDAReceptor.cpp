@@ -1,3 +1,6 @@
+#include <cmath>
+#include <stdexcept>
+
 #include <Simulator/Receptors/NMDAReceptor.h>
 
 namespace BG {
@@ -39,16 +42,41 @@ NMDAReceptor::NMDAReceptor(size_t _ID, float _GSyn_pS, float _GPeak_pS,
 
 float NMDAReceptor::PhiV(PhiVType phiVType, float Mg2plus_0, float delta,
                          float voltage_V, float temperature_K) {
-    return 0.0;
+    float answer = 0.0;
+
+    switch (phiVType) {
+    case PhiVType::BOLZMANN:
+        answer = this->PhiVBolzmann();
+        break;
+    case PhiVType::WOODHULL_1:
+        answer =
+            this->PhiVWoodhull1(Mg2plus_0, delta, voltage_V, temperature_K);
+        break;
+    case PhiVType::WOODHULL_2:
+        answer =
+            this->PhiVWoodhull2(Mg2plus_0, delta, voltage_V, temperature_K);
+        break;
+    default:
+        break;
+    }
+    return answer;
 };
 
 //! Modeled with a Bolzmann function. Easy to use, but not directly
 //! related to physical aspects of Mg2+ blocking mechanism.
-float NMDAReceptor::PhiVBolzmann() { return 0.0; };
+float NMDAReceptor::PhiVBolzmann() {
+    if (this->K == 0.0)
+        throw std::overflow_error("Cannot divide by zero.(K)");
+    return 1.0 / (1.0 + exp(-(this->Vm_mV - this->VHalfBlocked_mV) / this->K));
+};
 
 //! temperature_K - absolute temperatue
 //! z - valence of blocking ion (e.g. +2 for Mg2+)
-float NMDAReceptor::Phi(float temperature_K, int z) { return 0.0; };
+float NMDAReceptor::Phi(float temperature_K, int z) {
+    if (temperature_K == 0.0)
+        throw std::overflow_error("Cannot divide by zero.(temperature_K)");
+    return z * _F / (_R * temperature_K);
+};
 
 //! Mg2plus_0 - Mg2+ concentration outside membrane.
 //! delta - Fraction of membrane voltage that Mg2+ experiences at the
@@ -56,14 +84,16 @@ float NMDAReceptor::Phi(float temperature_K, int z) { return 0.0; };
 //! voltage_V - voltage.
 float NMDAReceptor::KBindingRate(float Mg2plus_0, float delta, float voltage_V,
                                  float temperature_K) {
-    return 0.0;
+    return Mg2plus_0 * this->KBinding *
+           exp(-delta * this->Phi(temperature_K) * voltage_V / 2.0);
 };
 
 //! delta - Fraction of membrane voltage that Mg2+
 //!         experiences at the blocking site.
 float NMDAReceptor::KUnbindingRate(float delta, float voltage_V,
                                    float temperature_K) {
-    return 0.0;
+    return this->KUnbinding *
+           exp(delta * this->Phi(temperature_K) * voltage_V / 2.0);
 };
 
 //! Modeled with a two-state Woodhull formalism derived from a kinetic
@@ -76,7 +106,14 @@ float NMDAReceptor::KUnbindingRate(float delta, float voltage_V,
 
 float NMDAReceptor::PhiVWoodhull1(float Mg2plus_0, float delta, float voltage_V,
                                   float temperature_K) {
-    return 0.0;
+    if (this->KUnbinding == 0.0)
+        throw std::overflow_error("Cannot divide by zero.(KUnbinding)");
+    float KBindingRate =
+        this->KBindingRate(Mg2plus_0, delta, temperature_K, voltage_V);
+    float KUnbindingRate =
+        this->KUnbindingRate(delta, temperature_K, voltage_V);
+
+    return 1.0 / (1.0 + KBindingRate / KUnbindingRate);
 };
 
 //! Modeled with a two-state Woodhull formalism derived from a kinetic
@@ -90,11 +127,24 @@ float NMDAReceptor::PhiVWoodhull1(float Mg2plus_0, float delta, float voltage_V,
 //! experiences at the blocking site.
 float NMDAReceptor::PhiVWoodhull2(float Mg2plus_0, float delta, float voltage_V,
                                   float temperature_K) {
-    return 0.0;
+    if (this->KDissociation_0mV == 0.0)
+        throw std::overflow_error("Cannot divide by zero.(KDissociation_0mV)");
+    float KD = this->KDissociation_0mV *
+               exp(delta * this->Phi(temperature_K) * voltage_V);
+
+    return 1.0 / (1.0 + Mg2plus_0 / KD);
 };
 
 //! Strong voltage dependence.
-float NMDAReceptor::Isyn_pA() { return 0.0; };
+float NMDAReceptor::PostSynCurrentStrongVoltageDep_pA(PhiVType phiVType,
+                                                      float Mg2plus_0,
+                                                      float delta,
+                                                      float voltage_V,
+                                                      float temperature_K) {
+    return this->PhiV(phiVType, Mg2plus_0, delta, temperature_K, voltage_V) *
+           this->PostSynCurrent_pA();
+    ;
+};
 
 }; // namespace Receptors
 }; // namespace Simulator
