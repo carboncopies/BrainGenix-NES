@@ -150,6 +150,8 @@ include(GoogleTest)
 
 message(STATUS "Testing enabled. Building test binaries ...")
 add_executable(${TEST_BINS} ${UNITTEST_SOURCES})
+target_compile_features(${TEST_BINS} PRIVATE cxx_std_17)
+
 target_link_libraries(${TEST_BINS} PRIVATE 
     GTest::gtest 
     GTest::gtest_main
