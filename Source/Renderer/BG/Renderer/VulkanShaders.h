@@ -33,6 +33,8 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <iostream>
 #include <assert.h>
+#include <mutxex>
+#include <vector>
 
 #include <fstream> // temporary include, for testing precompiled shaders - use iosubsystem for this later
 
@@ -58,6 +60,8 @@ namespace BG {
 namespace NES {
 namespace Renderer {
 namespace Internal {
+
+
 
 
 /**
@@ -89,17 +93,39 @@ public:
     */
     ~ShaderCompiler();
 
+
     /**
-     * @brief Add a given shader to the compiler work queue - will return the index which can be passed to GetCompiledResult to get the compiled bytecode and status information.
+     * @brief Add a given shader to the compiler work queue.
+     * Will return the index which can be passed to GetCompiledResult to get the compiled bytecode and status information.
+     * Note that Process Work Queue must be called after this, else shaders will not yet be processed.
      * 
-     * 
-     * @param _GLSLSourceCode 
-     * @param _SourceName 
-     * @param _ShaderType 
-     * @param _Optimize 
-     * @return int 
+     * @param _GLSLSourceCode String containing glsl source
+     * @param _SourceName Name of the shader - helps to figure out what this shader does
+     * @param _ShaderType Type of the shader (vertex, frag, geometry, compute, etc)
+     * @param _Optimize Enable or disable optimizations to the shader
+     * @return int Integer index which can be used to get the result after processing
      */
-    int AppendThreadToWorkQueue(std::string _GLSLSourceCode, std::string _SourceName, shaderc_shader_kind _ShaderType, bool _Optimize = false);
+    int AppendShaderToWorkQueue(std::string _GLSLSourceCode, std::string _SourceName, shaderc_shader_kind _ShaderType, bool _Optimize = false);
+
+    /**
+     * @brief Processes the existing work queue which has been built from calls to AppendShaderToWorkQueue()
+     * Will use the number of threads specified to process the shaders.
+     * Blocks until all shaders are done compiling.
+     * 
+     * @param _NumThreads Specify the number of threads to use.
+     */
+    void ProcessWorkQueue(int _NumThreads);
+
+    /**
+     * @brief Retrieve compiled shader code from the system and push that data into the _DestinationVector.
+     * Returns true on success, false if there was an error.
+     * 
+     * @param _ShaderID Index of the shader given during the AppendShaderToQorkQueue function
+     * @param _DestinationVector Vector of uint32_t where the bytecode is to be put
+     * @return true 
+     * @return false 
+     */
+    bool GetShaderBytecode(int _ShaderID, std::vector<uint32_t>* _DestinationVector);
 
 };
 

@@ -17,6 +17,10 @@ add_library(NESRenderer
     "BG/Renderer/Allocation.h"
     "BG/Renderer/Allocation.cpp"
 
+    "BG/Renderer/Shader/ShaderCompileObject.h"
+    "BG/Renderer/Shader/ShaderCompileObject.cpp"
+
+
 )
 
 target_link_libraries(NESRenderer
