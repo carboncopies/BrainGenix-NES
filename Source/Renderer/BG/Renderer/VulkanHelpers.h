@@ -51,7 +51,8 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
-#include <BG/Renderer/VulkanShaders.h>
+#include <BG/Renderer/Shader/ShaderHelpers.h>
+
 #include <BG/Renderer/RenderData.h>
 #include <BG/Renderer/VulkanMemoryAllocator.h>
 
