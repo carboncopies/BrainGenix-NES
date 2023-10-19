@@ -6,8 +6,7 @@ add_library(NESRenderer
     "BG/Renderer/Manager.cpp"
     "BG/Renderer/VulkanHelpers.h"
     "BG/Renderer/VulkanHelpers.cpp"
-    "BG/Renderer/VulkanShaders.h"
-    "BG/Renderer/VulkanShaders.cpp"
+
     "BG/Renderer/VulkanRenderer.h"
     "BG/Renderer/VulkanRenderer.cpp"
     "BG/Renderer/VulkanMemoryAllocator.h"
@@ -21,7 +20,8 @@ add_library(NESRenderer
     "BG/Renderer/Shader/ShaderCompileObject.cpp"
     "BG/Renderer/Shader/ShaderCompiler.h"
     "BG/Renderer/Shader/ShaderCompiler.cpp"
-
+    "BG/Renderer/Shader/ShaderHelpers.h"
+    "BG/Renderer/Shader/ShaderHelpers.cpp"
 )
 
 target_link_libraries(NESRenderer
