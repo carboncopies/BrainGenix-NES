@@ -61,6 +61,50 @@ namespace Internal {
 
 
 /**
+ * @brief Multithreaded dynamic shader compiler - can create batches of shaders for compilation with many threads later.
+ * Is a wrapper on google's ShaderC compiler which will compile shader source to spir-v bytecode.
+ * 
+ */
+class ShaderCompiler {
+
+
+private:
+
+    BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
+
+
+    
+
+
+public:
+
+    /**
+     * @brief Constructor for the multithreaded shader compiler.
+     * This can be done 
+    */
+    ShaderCompiler(BG::Common::Logger::LoggingSystem* _Logger);
+
+    /**
+     * @brief Destructor to the shader compiler.
+    */
+    ~ShaderCompiler();
+
+    /**
+     * @brief Add a given shader to the compiler work queue - will return the index which can be passed to GetCompiledResult to get the compiled bytecode and status information.
+     * 
+     * 
+     * @param _GLSLSourceCode 
+     * @param _SourceName 
+     * @param _ShaderType 
+     * @param _Optimize 
+     * @return int 
+     */
+    int AppendThreadToWorkQueue(std::string _GLSLSourceCode, std::string _SourceName, shaderc_shader_kind _ShaderType, bool _Optimize = false);
+
+};
+
+
+/**
  * @brief Simple helper function for reading files.
  * 
  * @param _FileName 
