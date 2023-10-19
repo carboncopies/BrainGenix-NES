@@ -19,7 +19,8 @@ add_library(NESRenderer
 
     "BG/Renderer/Shader/ShaderCompileObject.h"
     "BG/Renderer/Shader/ShaderCompileObject.cpp"
-
+    "BG/Renderer/Shader/ShaderCompiler.h"
+    "BG/Renderer/Shader/ShaderCompiler.cpp"
 
 )
 

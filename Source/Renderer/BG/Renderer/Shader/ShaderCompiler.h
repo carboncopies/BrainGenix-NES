@@ -33,7 +33,8 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <iostream>
 #include <assert.h>
-#include <mutxex>
+#include <mutex>
+#include <atomic>
 #include <vector>
 
 #include <fstream> // temporary include, for testing precompiled shaders - use iosubsystem for this later
@@ -77,8 +78,10 @@ private:
 
     BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
 
-
-    
+    // Worker Management Variables
+    std::vector<std::shared_ptr<ShaderCompileObject>> WorkQueue_; /**List of items to be processed by threads*/
+    std::atomic_int NextItemToWorkOn_;                            /**During processing, this indicates the next piece to work on*/
+    std::atomic_bool KeepThreadsAlive_;                           /**Flag which when set to false tells all worker threads to terminate*/ 
 
 
 public:
@@ -127,6 +130,13 @@ public:
      * @return false 
      */
     bool GetShaderBytecode(int _ShaderID, std::vector<uint32_t>* _DestinationVector);
+
+    /**
+     * @brief Will clear the work queue and invalidatate all Work IDs.
+     * Call this before appending to the work queue again (after processing).
+     * 
+     */
+    void ResetWorkQueue();
 
 };
 
