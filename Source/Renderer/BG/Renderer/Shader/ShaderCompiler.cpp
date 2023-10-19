@@ -45,12 +45,13 @@ void ShaderCompiler::ProcessWorkQueue(int _NumThreads) {
     // Firstly, Build Threadpool
     std::unique_lock LockQueue_ = std::lock(AllowWorkQueueAccess_);
     KeepWorkerThreadsAlive_ = true;
+    NextItemToWorkOn_ = 0;
     for (unsigned int i = 0; i < _NumThreads) {
         WorkerThreads.push_back(std::thread(&ShaderCompiler::WorkerFunction));
     }
 
     // Next, Process Items
-    while (NextItemToWorkOn_ < WorkQueue.size()) {
+    while (NextItemToWorkOn_ < WorkQueue_.size() - 1) {
         // add a sleep function for like 5 ms
     }
 
@@ -98,6 +99,47 @@ void ShaderCompiler::ResetWorkQueue() {
 }
 
 void ShaderCompiler::WorkerFunction() {
+
+    // Firstly, Setup Shader Compiler
+    shaderc::Compiler Compiler;
+    
+    while (KeepThreadsAlive_ && MextItemToWorkOn_ < WorkQueue_.size() - 1) {
+
+        // Setup Options
+        shaderc::CompileOptions Options;
+        Options.SetTargetEnvironment( shaderc_target_env_vulkan, shaderc_env_version_vulkan_1_0 );
+        Options.SetSourceLanguage( shaderc_source_language_glsl );
+
+        std::vector<std::pair<std::string, std::string>> Definitions;
+        Definitions.push_back(std::make_pair("__VK_GLSL__", "1"));
+
+        for (std::pair<std::string, std::string> &DefinitionPairs : Definitions) {
+            Options.AddMacroDefinition(DefinitionPairs.first, DefinitionPairs.second);
+        }
+
+
+        // Get Work Item
+        int ItemIndex = NextItemToWorkOn_++;
+        std::shared_ptr<ShaderCompileObject> WorkItem = WorkQueue_[ItemIndex];
+
+
+        // Preprocess
+        shaderc::PreprocessedSourceCompilationResult PreprocessedResult = Compiler.PreprocessGlsl(WorkItem->GLSLSource_, WorkItem->ShaderType_, WorkItem->SourceName_.c_str(), Options);
+        if (PreprocessedResult.GetCompilationStatus() != shaderc_compilation_status_success) {
+            std::string Msg = "Failed To Preprocess Shader '" + _SourceName + "' With Error '";
+            Msg += PreprocessedResult.GetErrorMessage();
+            Msg += "'";
+            _Logger->Log(Msg, 7);
+            continue;
+        }
+        std::string PreprocessedSource = {PreprocessedResult.cbegin(), PreprocessedResult.cend()};
+
+        // Compile
+        WorkItem->Result_ = Compiler.CompileGlslToSpv(PreprocessedSource, WorkItem->ShaderType_, WorkItem->SourceName_.c_str(), Options);
+
+    }
+
+    // Now the compiler goes out of scope and is deallocated
 
 }
 
