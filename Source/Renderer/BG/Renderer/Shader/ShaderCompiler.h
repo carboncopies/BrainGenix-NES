@@ -31,29 +31,21 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <iostream>
 #include <assert.h>
+#include <thread>
 #include <mutex>
 #include <atomic>
 #include <vector>
 
-#include <fstream> // temporary include, for testing precompiled shaders - use iosubsystem for this later
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <VkBootstrap.h>
-
-
 #include <shaderc/shaderc.hpp>
-
-// #include <SDL.h>
-// #include <SDL_vulkan.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
-#include <BG/Renderer/RenderData.h>
 #include <BG/Renderer/Shader/ShaderCompileObject.h>
 
 
@@ -79,10 +71,19 @@ private:
     BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
 
     // Worker Management Variables
+    std::mutex AllowWorkQueueAccess_;                             /**Mutex which blocks access to the work queue so only one thread may use it*/
     std::vector<std::shared_ptr<ShaderCompileObject>> WorkQueue_; /**List of items to be processed by threads*/
     std::atomic_int NextItemToWorkOn_;                            /**During processing, this indicates the next piece to work on*/
     std::atomic_bool KeepThreadsAlive_;                           /**Flag which when set to false tells all worker threads to terminate*/ 
+    std::vector<std::thread> WorkerThreads_;                      /**List of worker threads*/
 
+
+    /**
+     * @brief Worker thread function.
+     * Created and destroyed by the ProcessWorkQueue Function.
+     * 
+     */
+    void WorkerFunction();
 
 public:
 
@@ -137,6 +138,7 @@ public:
      * 
      */
     void ResetWorkQueue();
+
 
 };
 

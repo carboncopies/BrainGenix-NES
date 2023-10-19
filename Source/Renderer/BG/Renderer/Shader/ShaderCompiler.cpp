@@ -7,35 +7,102 @@ namespace NES {
 namespace Renderer {
 namespace Internal {
 
-// copy pasted from vulkan-tutorial's shader_module page. Temporary, until we implement dynamic shader compilation.
-std::vector<char> ReadFile(std::string filename) {
-    std::ifstream file(filename, std::ios::ate | std::ios::binary);
 
-    if (!file.is_open()) {
-        throw std::runtime_error("failed to open file!");
+ShaderCompiler::ShaderCompiler(BG::Common::Logger::LoggingSystem* _Logger) {
+    assert(_Logger != nullptr);
+    Logger_ = _Logger;
+
+    Logger_->Log("Initializing Shader Compiler Subsystem", 2);
+    ResetWorkQueue();
+
+}
+
+ShaderCompiler::~ShaderCompiler() {
+
+}
+
+
+
+int ShaderCompiler::AppendShaderToWorkQueue(std::string _GLSLSourceCode, std::string _SourceName, shaderc_shader_kind _ShaderType, bool _Optimize) {
+    
+    // Build Work Item
+    std::shared_ptr<ShaderCompileObject> WorkItem = std::make_shared<ShaderCompileObject>();
+    WorkItem->GLSLSource_     = _GLSLSourceCode;
+    WorkItem->SourceName_     = _SourceName;
+    WorkItem->ShaderType_     = _ShaderType;
+    WorkItem->Optimize_       = _Optimize;
+    WorkItem->ReadyToCompile_ = true;
+    
+    // Append To Work Queue
+    std::unique_lock WorkQueueLock = std::lock(AllowWorkQueueAccess_);
+    WorkQueue.push_back(WorkItem);
+    return WorkQueue.size() - 1;
+
+}
+
+void ShaderCompiler::ProcessWorkQueue(int _NumThreads) {
+
+    // Firstly, Build Threadpool
+    std::unique_lock LockQueue_ = std::lock(AllowWorkQueueAccess_);
+    KeepWorkerThreadsAlive_ = true;
+    for (unsigned int i = 0; i < _NumThreads) {
+        WorkerThreads.push_back(std::thread(&ShaderCompiler::WorkerFunction));
     }
-    size_t fileSize = (size_t) file.tellg();
-    std::vector<char> buffer(fileSize);
 
-    file.seekg(0);
-    file.read(buffer.data(), fileSize);
+    // Next, Process Items
+    while (NextItemToWorkOn_ < WorkQueue.size()) {
+        // add a sleep function for like 5 ms
+    }
 
-    file.close();
-
-    return buffer;
-
-}
-
-std::string ReadFileToString(std::string _Filename) {
-    std::vector<char> FileData = ReadFile(_Filename);
-    std::string Out(FileData.begin(), FileData.end());
-    return Out;
+    // Finally, Terminate Threads
+    KeepWorkerThreadsAlive_ = false;
+    for (unsigned int i = 0; i < WorkerThreads_.size(); i++) {
+        WorkerThreads_[i].join();
+    }
 
 }
 
+bool ShaderCompiler::GetShaderBytecode(int _ShaderID, std::vector<uint32_t>* _DestintationVector) {
+    assert(_DestintationVector != nullptr && "Cannot Get Shader Bytecode, Destination Is Null");
+
+    // Early Out If Not Yet Compiled
+    if (NextItemToWorkOn_ < _ShaderID) {
+        return false;
+    }
+
+    // Get Work Data, Early Out If Compiler Still Not Yet Done
+    std::shared_ptr<ShaderCompileObject> WorkObject = WorkQueue_[_ShaderID];
+    if (WorkObject->!HasCompiled_) {
+        return false;
+    }
+
+    // Check Status, Log Error If There's One, Exit
+    if (WorkObject->Result->GetCompilationStatus() != shaderc_compilation_status_success) {
+        std::string Msg = "Failed To Compile Shader '" + _SourceName + "' With Error '";
+        Msg += WorkObject->Result->GetErrorMessage();
+        Msg += "'";
+        _Logger->Log(Msg, 7);
+        return false;
+    }
+
+    // Finally, Write To Destination Vector, Return True
+    (*_DestintationVector) = {WorkObject->Result->cbegin(), WorkObject->Result->cend()};
+    return true;
+
+}
+
+void ShaderCompiler::ResetWorkQueue() {
+    WorkQueue.reset();
+    NextItemToWorkOn_ = 0;
+    KeepThreadsAlive_ = false;
+}
+
+void ShaderCompiler::WorkerFunction() {
+
+}
 
 
-// Note: these shaderc tools should probably be made into a class with multithreading (one shader compiler per thread) - as the compilation process is *REALLY* slow otherwise.
+
 
 bool Shaderc_PreprocessShaderGLSL(BG::Common::Logger::LoggingSystem* _Logger, std::string _Source, std::string _SourceName, shaderc_shader_kind _ShaderType, std::string* _PreprocessedResult, bool _Verbose) {
     assert(_Logger != nullptr);
