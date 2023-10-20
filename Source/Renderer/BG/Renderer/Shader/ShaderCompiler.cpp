@@ -101,9 +101,19 @@ void ShaderCompiler::ResetWorkQueue() {
 void ShaderCompiler::WorkerFunction() {
 
     // Firstly, Setup Shader Compiler
+    int MaxSize = WorkQueue_.size();
     shaderc::Compiler Compiler;
     
-    while (KeepThreadsAlive_ && NextItemToWorkOn_ < WorkQueue_.size()) {
+    while (KeepThreadsAlive_ && NextItemToWorkOn_ < MaxSize) {
+
+        // Get Work Item
+        WorkQueueReadAccess_.lock();
+        int ItemIndex = NextItemToWorkOn_++;
+        if (ItemIndex >= MaxSize) {
+            continue;
+        }
+        std::shared_ptr<ShaderCompileObject> WorkItem = WorkQueue_[ItemIndex];
+        WorkQueueReadAccess_.unlock();
 
         // Setup Options
         shaderc::CompileOptions Options;
@@ -118,11 +128,6 @@ void ShaderCompiler::WorkerFunction() {
         }
 
 
-        // Get Work Item
-        WorkQueueReadAccess_.lock();
-        int ItemIndex = NextItemToWorkOn_++;
-        std::shared_ptr<ShaderCompileObject> WorkItem = WorkQueue_[ItemIndex];
-        WorkQueueReadAccess_.unlock();
 
 
         // Preprocess
