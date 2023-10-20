@@ -105,7 +105,7 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
     }
 
     // Create Graphics Pipeline
-    if (!VulkanInit_CreateGraphicsPipeline(Logger_, &RenderData_)) {
+    if (!VulkanInit_CreateGraphicsPipeline(Logger_, &RenderData_, ShaderCompiler_.get())) {
         return false;
     }
 

@@ -51,7 +51,7 @@ void ShaderCompiler::ProcessWorkQueue(int _NumThreads) {
     }
 
     // Next, Process Items
-    while (NextItemToWorkOn_ < WorkQueue_.size() - 1) {
+    while (NextItemToWorkOn_ < WorkQueue_.size()) {
         // add a sleep function for like 5 ms
     }
 
@@ -103,7 +103,7 @@ void ShaderCompiler::WorkerFunction() {
     // Firstly, Setup Shader Compiler
     shaderc::Compiler Compiler;
     
-    while (KeepThreadsAlive_ && NextItemToWorkOn_ < WorkQueue_.size() - 1) {
+    while (KeepThreadsAlive_ && NextItemToWorkOn_ < WorkQueue_.size()) {
 
         // Setup Options
         shaderc::CompileOptions Options;
@@ -136,6 +136,7 @@ void ShaderCompiler::WorkerFunction() {
 
         // Compile
         WorkItem->Result_ = Compiler.CompileGlslToSpv(PreprocessedSource, WorkItem->ShaderType_, WorkItem->SourceName_.c_str(), Options);
+        WorkItem->HasCompiled_ = true;
 
     }
 
