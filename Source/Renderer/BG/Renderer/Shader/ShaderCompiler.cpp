@@ -34,20 +34,20 @@ int ShaderCompiler::AppendShaderToWorkQueue(std::string _GLSLSourceCode, std::st
     WorkItem->ReadyToCompile_ = true;
     
     // Append To Work Queue
-    std::unique_lock WorkQueueLock = std::lock(AllowWorkQueueAccess_);
-    WorkQueue.push_back(WorkItem);
-    return WorkQueue.size() - 1;
+    std::lock_guard<std::mutex> WorkQueueLock(AllowWorkQueueAccess_);
+    WorkQueue_.push_back(WorkItem);
+    return WorkQueue_.size() - 1;
 
 }
 
 void ShaderCompiler::ProcessWorkQueue(int _NumThreads) {
 
     // Firstly, Build Threadpool
-    std::unique_lock LockQueue_ = std::lock(AllowWorkQueueAccess_);
-    KeepWorkerThreadsAlive_ = true;
+    std::lock_guard<std::mutex> WorkQueueLock(AllowWorkQueueAccess_);
+    KeepThreadsAlive_ = true;
     NextItemToWorkOn_ = 0;
-    for (unsigned int i = 0; i < _NumThreads) {
-        WorkerThreads.push_back(std::thread(&ShaderCompiler::WorkerFunction));
+    for (unsigned int i = 0; i < _NumThreads; i++) {
+        WorkerThreads_.push_back(std::thread(&ShaderCompiler::WorkerFunction));
     }
 
     // Next, Process Items
@@ -56,7 +56,7 @@ void ShaderCompiler::ProcessWorkQueue(int _NumThreads) {
     }
 
     // Finally, Terminate Threads
-    KeepWorkerThreadsAlive_ = false;
+    KeepThreadsAlive_ = false;
     for (unsigned int i = 0; i < WorkerThreads_.size(); i++) {
         WorkerThreads_[i].join();
     }
@@ -73,27 +73,27 @@ bool ShaderCompiler::GetShaderBytecode(int _ShaderID, std::vector<uint32_t>* _De
 
     // Get Work Data, Early Out If Compiler Still Not Yet Done
     std::shared_ptr<ShaderCompileObject> WorkObject = WorkQueue_[_ShaderID];
-    if (WorkObject->!HasCompiled_) {
+    if (!WorkObject->HasCompiled_) {
         return false;
     }
 
     // Check Status, Log Error If There's One, Exit
-    if (WorkObject->Result->GetCompilationStatus() != shaderc_compilation_status_success) {
-        std::string Msg = "Failed To Compile Shader '" + _SourceName + "' With Error '";
-        Msg += WorkObject->Result->GetErrorMessage();
+    if (WorkObject->Result_.GetCompilationStatus() != shaderc_compilation_status_success) {
+        std::string Msg = "Failed To Compile Shader '" + WorkObject->SourceName_ + "' With Error '";
+        Msg += WorkObject->Result_.GetErrorMessage();
         Msg += "'";
-        _Logger->Log(Msg, 7);
+        Logger_->Log(Msg, 7);
         return false;
     }
 
     // Finally, Write To Destination Vector, Return True
-    (*_DestintationVector) = {WorkObject->Result->cbegin(), WorkObject->Result->cend()};
+    (*_DestintationVector) = {WorkObject->Result_.cbegin(), WorkObject->Result_.cend()};
     return true;
 
 }
 
 void ShaderCompiler::ResetWorkQueue() {
-    WorkQueue.reset();
+    WorkQueue_.clear();
     NextItemToWorkOn_ = 0;
     KeepThreadsAlive_ = false;
 }
@@ -103,7 +103,7 @@ void ShaderCompiler::WorkerFunction() {
     // Firstly, Setup Shader Compiler
     shaderc::Compiler Compiler;
     
-    while (KeepThreadsAlive_ && MextItemToWorkOn_ < WorkQueue_.size() - 1) {
+    while (KeepThreadsAlive_ && NextItemToWorkOn_ < WorkQueue_.size() - 1) {
 
         // Setup Options
         shaderc::CompileOptions Options;
@@ -126,10 +126,10 @@ void ShaderCompiler::WorkerFunction() {
         // Preprocess
         shaderc::PreprocessedSourceCompilationResult PreprocessedResult = Compiler.PreprocessGlsl(WorkItem->GLSLSource_, WorkItem->ShaderType_, WorkItem->SourceName_.c_str(), Options);
         if (PreprocessedResult.GetCompilationStatus() != shaderc_compilation_status_success) {
-            std::string Msg = "Failed To Preprocess Shader '" + _SourceName + "' With Error '";
+            std::string Msg = "Failed To Preprocess Shader '" + WorkItem->SourceName_ + "' With Error '";
             Msg += PreprocessedResult.GetErrorMessage();
             Msg += "'";
-            _Logger->Log(Msg, 7);
+            Logger_->Log(Msg, 7);
             continue;
         }
         std::string PreprocessedSource = {PreprocessedResult.cbegin(), PreprocessedResult.cend()};

@@ -33,6 +33,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <assert.h>
 #include <thread>
+#include <functional>
 #include <mutex>
 #include <atomic>
 #include <vector>
@@ -40,11 +41,15 @@
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+#include <VkBootstrap.h>
+
 #include <shaderc/shaderc.hpp>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
+
+#include <BG/Renderer/RenderData.h>
 
 #include <BG/Renderer/Shader/ShaderCompileObject.h>
 

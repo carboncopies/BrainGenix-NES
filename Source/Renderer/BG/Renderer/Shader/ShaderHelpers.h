@@ -33,7 +33,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <iostream>
 #include <assert.h>
-#include <mutxex>
+#include <mutex>
 #include <vector>
 
 #include <fstream> // temporary include, for testing precompiled shaders - use iosubsystem for this later
