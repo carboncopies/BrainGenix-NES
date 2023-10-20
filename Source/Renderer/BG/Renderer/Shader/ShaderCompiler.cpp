@@ -119,8 +119,10 @@ void ShaderCompiler::WorkerFunction() {
 
 
         // Get Work Item
+        WorkQueueReadAccess_.lock();
         int ItemIndex = NextItemToWorkOn_++;
         std::shared_ptr<ShaderCompileObject> WorkItem = WorkQueue_[ItemIndex];
+        WorkQueueReadAccess_.unlock();
 
 
         // Preprocess
