@@ -52,6 +52,7 @@
 #include <BG/Common/Logger/Logger.h>
 
 #include <BG/Renderer/Shader/ShaderHelpers.h>
+#include <BG/Renderer/Shader/ShaderCompiler.h>
 
 #include <BG/Renderer/RenderData.h>
 #include <BG/Renderer/VulkanMemoryAllocator.h>
@@ -144,10 +145,11 @@ bool VulkanInit_CreateRenderPass(BG::Common::Logger::LoggingSystem* _Logger, Ren
  * 
  * @param _Logger Pointer to the logging system, used to log any messages.
  * @param _RD Pointer to system renderdata instance.
+ * @param _Compiler Pointer to the system's shader compiler instance.
  * @return true 
  * @return false 
  */
-bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD, Internal::ShaderCompiler* _Compiler);
 
 
 /**

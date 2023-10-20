@@ -392,7 +392,7 @@ bool VulkanInit_CreateRenderPass(BG::Common::Logger::LoggingSystem* _Logger, Ren
 
 }
 
-bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD) {
+bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD, Internal::ShaderCompiler* _Compiler) {
     assert(_Logger != nullptr);
     assert(_RD != nullptr);
 
@@ -407,10 +407,25 @@ bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logge
 
     // Now, Compile Into Bytecode
     _Logger->Log("Compiling Shaders Into SPIR-V Bytecode", 2);
+    int VertID = _Compiler->AppendShaderToWorkQueue(VertShader, "test.vert", shaderc_glsl_vertex_shader, false);
+    int FragID = _Compiler->AppendShaderToWorkQueue(FragShader, "test.frag", shaderc_glsl_fragment_shader, false);
+    _Compiler->ProcessWorkQueue(2);
+    
+
+        
     std::vector<uint32_t> VertBytecode;
     std::vector<uint32_t> FragBytecode;
-    Internal::Vulkan_DynamicallyCompileShader(_Logger, VertShader, "test.vert", shaderc_glsl_vertex_shader,   &VertBytecode, false, true);
-    Internal::Vulkan_DynamicallyCompileShader(_Logger, FragShader, "test.frag", shaderc_glsl_fragment_shader, &FragBytecode, false, true);
+    bool Status = true;
+    Status &= _Compiler->GetShaderBytecode(VertID, &VertBytecode);
+    Status &= _Compiler->GetShaderBytecode(FragID, &FragBytecode);
+    if (!Status) {
+        _Logger->Log("Error During Shader Compilation", 10);
+        return false;
+    }
+    _Compiler->ResetWorkQueue();
+
+    // Internal::Vulkan_DynamicallyCompileShader(_Logger, VertShader, "test.vert", shaderc_glsl_vertex_shader,   &VertBytecode, false, true);
+    // Internal::Vulkan_DynamicallyCompileShader(_Logger, FragShader, "test.frag", shaderc_glsl_fragment_shader, &FragBytecode, false, true);
 
 
     // Build Shader Pipelines
