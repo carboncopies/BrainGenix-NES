@@ -82,6 +82,8 @@ bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
     // Setup Memory Management Subsystem
     MemoryManager_ = std::make_unique<MemoryManager>(Logger_, &RenderData_);
 
+    ShaderCompiler_ = std::make_unique<Internal::ShaderCompiler>(Logger_);
+
 
     // Create Swapchain Optionally If Rendering To A Window
     if (RenderData_.IsWindowed_) {

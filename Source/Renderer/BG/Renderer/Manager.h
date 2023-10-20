@@ -47,6 +47,7 @@
 
 #include <BG/Renderer/VulkanHelpers.h>
 #include <BG/Renderer/Shader/ShaderHelpers.h>
+#include <BG/Renderer/Shader/ShaderCompiler.h>
 #include <BG/Renderer/VulkanRenderer.h>
 #include <BG/Renderer/RenderData.h>
 #include <BG/Renderer/VulkanMemoryAllocator.h>
@@ -71,7 +72,8 @@ private:
     RenderData RenderData_; /**Instance of Render Data Struct. Stores All Data About The Renderer (Vulkan Handles, etc)*/
 
     std::unique_ptr<MemoryManager> MemoryManager_; /**Instance of our own wrapper for a memory manager*/
-   
+    std::unique_ptr<Internal::ShaderCompiler> ShaderCompiler_; /**Instance of the multithreaded shader compiler*/
+
 
 public:
 
