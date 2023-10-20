@@ -409,8 +409,7 @@ bool VulkanInit_CreateGraphicsPipeline(BG::Common::Logger::LoggingSystem* _Logge
     _Logger->Log("Compiling Shaders Into SPIR-V Bytecode", 2);
     int VertID = _Compiler->AppendShaderToWorkQueue(VertShader, "test.vert", shaderc_glsl_vertex_shader, false);
     int FragID = _Compiler->AppendShaderToWorkQueue(FragShader, "test.frag", shaderc_glsl_fragment_shader, false);
-    _Compiler->ProcessWorkQueue(1);
-    
+    _Compiler->ProcessWorkQueue(10); // number here sets the number of threads to use
 
         
     std::vector<uint32_t> VertBytecode;
