@@ -18,7 +18,7 @@ BSAlignedBrainRegion::BSAlignedBrainRegion(
 };
 
 //! Display the BrainRegion
-void Show(float linewidth) { return; }
+void BSAlignedBrainRegion::Show(float linewidth) { return; }
 
 }; // namespace BallAndStick
 }; // namespace Simulator

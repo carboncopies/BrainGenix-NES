@@ -31,7 +31,7 @@ namespace BallAndStick {
  * ball and stick neural circuit.
  *
  */
-class BSAlignedBrainRegion : public BrainRegion::BrainRegion {
+class BSAlignedBrainRegion : public BrainRegions::BrainRegion {
   public:
     size_t ID;
     std::shared_ptr<Geometries::Box> Shape{};
@@ -42,7 +42,7 @@ class BSAlignedBrainRegion : public BrainRegion::BrainRegion {
     BSAlignedBrainRegion(size_t _ID, std::shared_ptr<Geometries::Box> _Shape,
                          std::shared_ptr<BallAndStick::BSAlignedNC> _Content);
 
-    void Show(float lineWidth) = 0;
+    void Show(float lineWidth);
 };
 
 }; // namespace BallAndStick
