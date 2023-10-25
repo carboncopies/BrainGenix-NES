@@ -99,8 +99,12 @@ TEST_F(BSAlignedNCTest, test_SetWeight_default) {
     testBSAlignedNC->SetWeight(
         from, to,
         BG::NES::Simulator::BallAndStick::BSAlignedNC::SetWeightMethod::BINARY);
-    targetCell = testBSAlignedNC->Cells[std::to_string(to)];
-    sourceCell = testBSAlignedNC->Cells[std::to_string(from)];
+    targetCell =
+        std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSNeuron>(
+            testBSAlignedNC->Cells[std::to_string(to)]);
+    sourceCell =
+        std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSNeuron>(
+            testBSAlignedNC->Cells[std::to_string(from)]);
 
     auto lastReceptorData = targetCell->ReceptorDataVec.back();
 
@@ -123,18 +127,23 @@ TEST_F(BSAlignedNCTest, test_Encode_default) {
     testBSAlignedNC->Encode(patternSet, encodingMethod, weightMethod);
 
     // No receptors have been added to any cell
-    for (const auto &[cellID, cell] : testBSAlignedNC->Cells)
-        ASSERT_TRUE(cell->ReceptorDataVec.empty());
+    for (const auto &[cellID, cell] : testBSAlignedNC->Cells) {
+        auto bsCellPtr = std::dynamic_pointer_cast<
+            BG::NES::Simulator::BallAndStick::BSNeuron>(cell);
+        ASSERT_TRUE(bsCellPtr->ReceptorDataVec.empty());
+    }
 
     // Case 2: All parameters valid and non-empty pattern set
     patternSet.push_back(std::make_tuple(0, 1));
     testBSAlignedNC->Encode(patternSet, encodingMethod, weightMethod);
 
     for (const auto fromTo : patternSet) {
-        auto targetCell =
-            testBSAlignedNC->Cells[std::to_string(std::get<1>(fromTo))];
-        auto sourceCell =
-            testBSAlignedNC->Cells[std::to_string(std::get<0>(fromTo))];
+        auto targetCell = std::dynamic_pointer_cast<
+            BG::NES::Simulator::BallAndStick::BSNeuron>(
+            testBSAlignedNC->Cells[std::to_string(std::get<1>(fromTo))]);
+        auto sourceCell = std::dynamic_pointer_cast<
+            BG::NES::Simulator::BallAndStick::BSNeuron>(
+            testBSAlignedNC->Cells[std::to_string(std::get<0>(fromTo))]);
         auto lastReceptorData = targetCell->ReceptorDataVec.back();
 
         ASSERT_EQ(std::get<0>(lastReceptorData), sourceCell);
@@ -151,8 +160,11 @@ TEST_F(BSAlignedNCTest, test_AttachDirectStim_default) {
 
     // Case 1: An empty list is passed.
     testBSAlignedNC->AttachDirectStim(tStim_ms);
-    for (const auto &[cellId, cell] : testBSAlignedNC->Cells)
-        ASSERT_TRUE(cell->TDirectStim_ms.empty());
+    for (const auto &[cellId, cell] : testBSAlignedNC->Cells) {
+        auto cellPtr = std::dynamic_pointer_cast<
+            BG::NES::Simulator::BallAndStick::BSNeuron>(cell);
+        ASSERT_TRUE(cellPtr->TDirectStim_ms.empty());
+    }
 
     // Case 2: A non-existent cell's ID is passed.
     tStim_ms.push_back(std::make_pair(0.1, 99));
@@ -170,8 +182,11 @@ TEST_F(BSAlignedNCTest, test_AttachDirectStim_default) {
 
     testBSAlignedNC->AttachDirectStim(tStim_ms);
 
-    for (const auto &[cellId, cell] : testBSAlignedNC->Cells)
-        ASSERT_EQ(cell->TDirectStim_ms.size(), 1);
+    for (const auto &[cellId, cell] : testBSAlignedNC->Cells) {
+        auto cellPtr = std::dynamic_pointer_cast<
+            BG::NES::Simulator::BallAndStick::BSNeuron>(cell);
+        ASSERT_EQ(cellPtr->TDirectStim_ms.size(), 1);
+    }
 }
 
 TEST_F(BSAlignedNCTest, test_SetSpontaneousActivity_default) {
@@ -181,8 +196,12 @@ TEST_F(BSAlignedNCTest, test_SetSpontaneousActivity_default) {
 
     // Case 1: An empty list is supplied.
     testBSAlignedNC->SetSpontaneousActivity(spontSpikeSettings);
-    for (const auto &[cellID, cell] : testBSAlignedNC->Cells)
-        ASSERT_TRUE(cell->DtSpontDist == nullptr);
+    for (const auto &[cellID, cell] : testBSAlignedNC->Cells) {
+
+        auto cellPtr = std::dynamic_pointer_cast<
+            BG::NES::Simulator::BallAndStick::BSNeuron>(cell);
+        ASSERT_TRUE(cellPtr->DtSpontDist == nullptr);
+    }
 
     // Case 2: A nonexistent cell ID is supplied.
     spontSpikeSettings.push_back(std::make_tuple(0.1f, 0.05f, 99u));
@@ -209,8 +228,10 @@ TEST_F(BSAlignedNCTest, test_SetSpontaneousActivity_default) {
             -mu / sigma, mu / sigma, mu, sigma);
 
         auto cell = testBSAlignedNC->Cells[std::to_string(listedCellID)];
+        auto cellPtr = std::dynamic_pointer_cast<
+            BG::NES::Simulator::BallAndStick::BSNeuron>(cell);
         auto expectedStats = expectedDist.Stats();
-        auto gotStats = cell->DtSpontDist->Stats();
+        auto gotStats = cellPtr->DtSpontDist->Stats();
 
         ASSERT_EQ(gotStats, expectedStats);
     }
@@ -220,8 +241,11 @@ TEST_F(BSAlignedNCTest, test_Update_default) {
     InitCells();
 
     testBSAlignedNC->Update(0.1, false);
-    for (const auto &[cellID, cell] : testBSAlignedNC->Cells)
-        ASSERT_EQ(cell->T_ms, 0.1f);
+    for (const auto &[cellID, cell] : testBSAlignedNC->Cells) {
+        auto cellPtr = std::dynamic_pointer_cast<
+            BG::NES::Simulator::BallAndStick::BSNeuron>(cell);
+        ASSERT_EQ(cellPtr->T_ms, 0.1f);
+    }
 }
 
 TEST_F(BSAlignedNCTest, test_GetRecording_default) {
@@ -229,14 +253,17 @@ TEST_F(BSAlignedNCTest, test_GetRecording_default) {
 
     auto data = testBSAlignedNC->GetRecording();
 
-    for (const auto &[cellID, cell] : testBSAlignedNC->Cells)
-        ASSERT_EQ(data[cellID], cell->GetRecording());
+    for (const auto &[cellID, cell] : testBSAlignedNC->Cells) {
+        auto cellPtr = std::dynamic_pointer_cast<
+            BG::NES::Simulator::BallAndStick::BSNeuron>(cell);
+        ASSERT_EQ(data[cellID], cellPtr->GetRecording());
+    }
 }
 
 TEST_F(BSAlignedNCTest, test_GetNeurons_default) {
-    std::vector<std::shared_ptr<BG::NES::Simulator::BallAndStick::BSNeuron>>
+    std::vector<std::shared_ptr<BG::NES::Simulator::CoreStructs::Neuron>>
         expectedNeurons{};
-    std::vector<std::shared_ptr<BG::NES::Simulator::BallAndStick::BSNeuron>>
+    std::vector<std::shared_ptr<BG::NES::Simulator::CoreStructs::Neuron>>
         gotNeurons;
 
     for (auto &[cellID, cell] : testBSAlignedNC->Cells)
@@ -252,9 +279,9 @@ TEST_F(BSAlignedNCTest, test_GetNeurons_default) {
 }
 
 TEST_F(BSAlignedNCTest, test_GetNeuronsByIDs_default) {
-    std::vector<std::shared_ptr<BG::NES::Simulator::BallAndStick::BSNeuron>>
+    std::vector<std::shared_ptr<BG::NES::Simulator::CoreStructs::Neuron>>
         expectedNeurons{};
-    std::vector<std::shared_ptr<BG::NES::Simulator::BallAndStick::BSNeuron>>
+    std::vector<std::shared_ptr<BG::NES::Simulator::CoreStructs::Neuron>>
         gotNeurons;
     std::vector<size_t> idList;
 
