@@ -38,15 +38,6 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.h
 
-  ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.h
-  ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.cpp
-  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.h
-  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.cpp
-  ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.h
-  ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.cpp
-  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedBrainRegion.cpp
-  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedBrainRegion.h
-
   ${SRC_DIR}/Core/Simulator/BrainRegion/BrainRegion.h
 
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.cpp
@@ -76,6 +67,7 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/SignalFunctions.cpp
   ${SRC_DIR}/Core/Simulator/Structs/SignalFunctions.h
   ${SRC_DIR}/Core/Simulator/Structs/Neuron.h
+  ${SRC_DIR}/Core/Simulator/Structs/NeuralCircuit.h
   
   ${SRC_DIR}/Core/Simulator/Updaters/Staple.cpp
   ${SRC_DIR}/Core/Simulator/Updaters/Staple.h
@@ -86,9 +78,17 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Updaters/PatchClampADC.cpp
   ${SRC_DIR}/Core/Simulator/Updaters/PatchClampADC.h
 
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.h
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.h
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.h
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedBrainRegion.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedBrainRegion.h
+
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h
-
 )
  
 set(UNITTEST_SOURCES
@@ -107,6 +107,8 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/Receptors/NMDAReceptor.test.cpp
   ${SRC_DIR}/Core/Simulator/Receptors/AMPAReceptor.test.cpp
   ${SRC_DIR}/Core/Simulator/Receptors/Receptor.test.cpp
+  
+  ${SRC_DIR}/Core/Simulator/Structs/SignalFunctions.test.cpp
 )
 
 # Configure test binaries
