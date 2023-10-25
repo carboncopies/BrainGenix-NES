@@ -21,7 +21,7 @@
 namespace BG {
 namespace NES {
 namespace Simulator {
-namespace BrainRegion {
+namespace BrainRegions {
 
 /**
  * @brief This class defines the characteristics of a brain region, such as
@@ -37,7 +37,7 @@ class BrainRegion {
     virtual void Show(float lineWidth) = 0;
 };
 
-}; // namespace BrainRegion
+}; // namespace BrainRegions
 }; // namespace Simulator
 }; // namespace NES
 }; // namespace BG
