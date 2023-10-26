@@ -37,8 +37,8 @@
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <SDL.h>
-#include <SDL_vulkan.h>
+// #include <SDL.h>
+// #include <SDL_vulkan.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
