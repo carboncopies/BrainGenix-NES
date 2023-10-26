@@ -18,7 +18,7 @@ int main(int NumArguments, char** ArgumentValues) {
     // BG::NES::Simulator::Manager SimulationManager(&SystemConfiguration, &APIManager);
 
     // Setup Renderer
-    BG::NES::Renderer::Interface RenderingInterface(&Logger);
+    BG::NES::Renderer::Interface RenderingInterface(&Logger, NumArguments, ArgumentValues);
     if (!RenderingInterface.Initialize(true)) { // NOTE THAT THE 'true' PARAM INDICATES THAT
     // THE DEBUG WINDOW IS ENABLED. THIS SHOULD BE EVENTUALLY HANDLED BY THE CONFIG SUBSYS (FROM FILE/COMMAND LINE ARG)
         Logger.Log("Error During Renderer Initialization, Aborting", 10);

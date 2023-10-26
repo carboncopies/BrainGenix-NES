@@ -40,6 +40,9 @@
 // #include <SDL.h>
 // #include <SDL_vulkan.h>
 
+#include <vsg/all.h>
+#include <vsgXchange/all.h>
+
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
@@ -70,8 +73,12 @@ public:
 
     /**
      * @brief Constructor for the rendering system.
+     * 
+     * @param _Logger Pointer to instance of the bg logging system.
+     * @param _NumArgs Number of args gotten from the main func, known commonly as argc.
+     * @param _ArgValues Values of each of the arguments. Known from main commonly as argv.
     */
-    Interface(BG::Common::Logger::LoggingSystem* _Logger);
+    Interface(BG::Common::Logger::LoggingSystem* _Logger, int _NumArgs, char** _ArgValues);
 
     /**
      * @brief Destructor to the renderer, pretty self-explanitory.
