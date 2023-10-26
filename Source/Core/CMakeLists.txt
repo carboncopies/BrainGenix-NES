@@ -38,6 +38,13 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.h
 
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.h
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.h
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.h
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.cpp
+
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.cpp
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.h
   ${SRC_DIR}/Core/Simulator/Distributions/Distribution.cpp
@@ -55,6 +62,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampDAC.h
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampADC.cpp
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampADC.h
+  ${SRC_DIR}/Core/Simulator/Structs/SignalFunctions.cpp
+  ${SRC_DIR}/Core/Simulator/Structs/SignalFunctions.h
+  ${SRC_DIR}/Core/Simulator/Structs/Neuron.h
   
   ${SRC_DIR}/Core/Simulator/Updaters/Staple.cpp
   ${SRC_DIR}/Core/Simulator/Updaters/Staple.h
@@ -76,7 +86,12 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.test.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Sphere.test.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.test.cpp
+
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.test.cpp
+  
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.test.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.test.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.test.cpp
 )
 
 # Configure test binaries
@@ -130,6 +145,7 @@ include(GoogleTest)
 
 message(STATUS "Testing enabled. Building test binaries ...")
 add_executable(${TEST_BINS} ${UNITTEST_SOURCES})
+target_compile_features(${TEST_BINS} PRIVATE cxx_std_17)
 target_link_libraries(${TEST_BINS} PRIVATE 
     GTest::gtest 
     GTest::gtest_main
