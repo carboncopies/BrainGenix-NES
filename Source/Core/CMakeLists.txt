@@ -110,6 +110,8 @@ target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
 
+    NESRenderer
+
     VersioningSystem
     CompileTimeStamp
     CompilePlatformInfo
@@ -126,6 +128,10 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     Boost::program_options
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
+
+    bg-common-logger
+    
+    NESRenderer
 
     VersioningSystem
     CompileTimeStamp

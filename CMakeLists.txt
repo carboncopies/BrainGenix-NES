@@ -45,13 +45,54 @@ find_package(rpclib CONFIG REQUIRED)
 message(STATUS "Finding system pthreads lib")
 find_package(Threads REQUIRED)
 
+
+# Renderer Dependencies
+message(STATUS "Setting up Vulkan Library")
+find_package(Vulkan REQUIRED)
+
+message(STATUS "Setting Up vk-bootstrap Library")
+# find_package(vk-bootstrap CONFIG REQUIRED) # Will eventually use this when vcpkg sorts out their build issues
+# in the meantime, this works:
+include(FetchContent)
+FetchContent_Declare(
+    fetch_vk_bootstrap
+    GIT_REPOSITORY https://github.com/charles-lunarg/vk-bootstrap
+    GIT_TAG        v0.7 #suggest using a tag so the library doesn't update whenever new commits are pushed to a branch
+)
+FetchContent_MakeAvailable(fetch_vk_bootstrap)
+
+message(STATUS "Setting Up SDL2 Library")
+find_package(SDL2 CONFIG REQUIRED)
+
+message(STATUS "Setting Up yaml-cpp Library")
+find_package(yaml-cpp CONFIG REQUIRED)
+
+message(STATUS "Setting Up glm Library")
+find_package(glm CONFIG REQUIRED)
+
+message(STATUS "Setting Up shaderc Library")
+find_package(unofficial-shaderc CONFIG REQUIRED)
+
+message(STATUS "Setting Up vulkan-memory-allocator Library")
+find_package(VulkanMemoryAllocator CONFIG REQUIRED)
+
+
+# Internal Deps
+message(STATUS "Finding bg-common-logger Package")
+find_package(bg-common-logger CONFIG REQUIRED)
+
+
 # Enabling testing and finding GTest
 enable_testing()
 message(STATUS "Finding gtest Package")
 find_package(GTest CONFIG REQUIRED)
 
+
+
 # Ensure config is copied to bin
 file(COPY "${SRC_DIR}/Data/NES.cfg" DESTINATION "${BIN_DIR}")
+
+
 
 # Run Configuration Tools
 include(${CMAKE_SCRIPTS_DIR}/VersioningSystem/VersioningSystem.cmake)
@@ -59,6 +100,9 @@ include(${CMAKE_SCRIPTS_DIR}/CompilePlatformInfo/CompilePlatformInfo.cmake)
 include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
 add_subdirectory(${SRC_DIR}/Core)
+add_subdirectory(${SRC_DIR}/Renderer)
+
+
 
 # Set Install Targets
 message(STATUS "Install Prefix Set To '${INSTALL_PREFIX}'")
@@ -81,6 +125,20 @@ install(FILES "${SRC_DIR}/Data/BrainGenix-NES.service"
 
 # Include CTest for testing
 include(CTest)
+
+
+
+# TEMPORARY COPIES FOR SHADER CODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# file(COPY "${SRC_DIR}/Data/vert.spv" DESTINATION "${BIN_DIR}")
+# file(COPY "${SRC_DIR}/Data/frag.spv" DESTINATION "${BIN_DIR}")
+
+file(COPY "${SRC_DIR}/Data/" DESTINATION "${BIN_DIR}")
+
+
+
+# Include CTest for testing
+include(CTest)
+
 
 # CPack Information
 SET(CPACK_GENERATOR "DEB")
