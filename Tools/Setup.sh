@@ -43,8 +43,11 @@ fi
 # vcpkg Dependencies
 VCPKG_DEPS="curl zip unzip tar pkg-config autoconf flex bison"
 
+# Vulkan Dependencies
+VULKAN_DEPS="libvulkan-dev vulkan-validationlayers-dev vulkan-tools"
+
 # Install Everything
-INSTALL_COMMAND="$SUDO_PREFIX $PACKAGE_MANAGER_INSTALL_CMD $VCPKG_DEPS $COMPILER_DEPS"
+INSTALL_COMMAND="$SUDO_PREFIX $PACKAGE_MANAGER_INSTALL_CMD $VCPKG_DEPS $COMPILER_DEPS $VULKAN_DEPS"
 echo "Running Install Command: $INSTALL_COMMAND"
 $INSTALL_COMMAND || exit 1
 

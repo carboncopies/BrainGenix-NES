@@ -3,9 +3,22 @@
   "version-string": "0.2.0",
   "license": "AGPL-3.0-or-later",
   "dependencies": [
+    "bg-common-logger",
+    "yaml-cpp",
     "boost-program-options",
     "nlohmann-json",
     "rpclib",
+    "vulkan",
+      "vk-bootstrap",
+        {
+          "name": "sdl2",
+          "features": [
+            "vulkan"
+          ]
+        },
+    "glm",
+    "shaderc",
+    "vulkan-memory-allocator",
     "gtest"
   ]
 }
