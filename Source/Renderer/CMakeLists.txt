@@ -28,12 +28,12 @@ target_link_libraries(NESRenderer
 
     bg-common-logger
 
-    vk-bootstrap::vk-bootstrap
+    # vk-bootstrap::vk-bootstrap
     Vulkan::Vulkan
     $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
     $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
-    glm::glm
-    unofficial::shaderc::shaderc
-    GPUOpen::VulkanMemoryAllocator
+    # glm::glm
+    # unofficial::shaderc::shaderc
+    # GPUOpen::VulkanMemoryAllocator
 )
 target_include_directories(NESRenderer PUBLIC ${SRC_DIR}/Renderer)
