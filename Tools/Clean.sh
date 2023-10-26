@@ -7,3 +7,6 @@ rm -rf build/
 rm -rf Binaries/
 
 echo "[BG BUILD SYSTEM] - Build Cleaned"
+
+# Return to Tools directory
+cd Tools

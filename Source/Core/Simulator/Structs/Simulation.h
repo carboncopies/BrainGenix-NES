@@ -18,7 +18,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Simulator/Structs/Shapes.h>
+#include <Simulator/Geometries/GeometryCollection.h>
 #include <Simulator/Structs/BS.h>
 #include <Simulator/Structs/Staple.h>
 #include <Simulator/Structs/Receptor.h>
@@ -56,7 +56,7 @@ struct Simulation {
     SimulationActions CurrentTask; /**Current task to be processed on this simulation, could be run for, or reset, etc. See above enum for more info.*/
 
 
-    Shapes::Shapes Shapes; /**Instance of shape struct containing all shapes in this simulation*/
+    Geometries::GeometryCollection Collection; /**Instance of GeometryCollection struct containing all geometries in this simulation*/
 
 
     std::vector<Compartments::BS> BSCompartments; /**This will need to be updated later to a std::variant type, but for now it stores the only type of supported compartments, BallStick type*/

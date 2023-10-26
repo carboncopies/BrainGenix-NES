@@ -5,6 +5,7 @@
   "dependencies": [
     "boost-program-options",
     "nlohmann-json",
-    "rpclib"
+    "rpclib",
+    "gtest"
   ]
 }

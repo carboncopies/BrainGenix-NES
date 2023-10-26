@@ -21,7 +21,10 @@ project(
 	"BrainGenix-NES"
 	VERSION "0.2.0"
 	LANGUAGES CXX
-	)
+)
+
+# Set project static library name
+set(PROJECT_LIBRARY_NAME "braingenix_nes")
 
 
 # Include Util CMake Scripts
@@ -42,6 +45,11 @@ find_package(rpclib CONFIG REQUIRED)
 message(STATUS "Finding system pthreads lib")
 find_package(Threads REQUIRED)
 
+# Enabling testing and finding GTest
+enable_testing()
+message(STATUS "Finding gtest Package")
+find_package(GTest CONFIG REQUIRED)
+
 # Ensure config is copied to bin
 file(COPY "${SRC_DIR}/Data/NES.cfg" DESTINATION "${BIN_DIR}")
 
@@ -50,13 +58,7 @@ include(${CMAKE_SCRIPTS_DIR}/VersioningSystem/VersioningSystem.cmake)
 include(${CMAKE_SCRIPTS_DIR}/CompilePlatformInfo/CompilePlatformInfo.cmake)
 include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
-
-
-
 add_subdirectory(${SRC_DIR}/Core)
-
-
-
 
 # Set Install Targets
 message(STATUS "Install Prefix Set To '${INSTALL_PREFIX}'")
@@ -77,7 +79,8 @@ install(FILES "${SRC_DIR}/Data/BrainGenix-NES.service"
     COMPONENT Release
 )
 
-
+# Include CTest for testing
+include(CTest)
 
 # CPack Information
 SET(CPACK_GENERATOR "DEB")
