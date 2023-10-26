@@ -86,7 +86,6 @@ message(STATUS "Finding bg-common-logger Package")
 find_package(bg-common-logger CONFIG REQUIRED)
 
 
-=======
 # Enabling testing and finding GTest
 enable_testing()
 message(STATUS "Finding gtest Package")
@@ -131,7 +130,6 @@ install(FILES "${SRC_DIR}/Data/BrainGenix-NES.service"
 file(COPY "${SRC_DIR}/Data/" DESTINATION "${BIN_DIR}")
 
 
-=======
 # Include CTest for testing
 include(CTest)
 
