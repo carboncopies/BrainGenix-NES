@@ -36,8 +36,6 @@
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <VkBootstrap.h>
-
 #include <SDL.h>
 #include <SDL_vulkan.h>
 
@@ -45,12 +43,6 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
-#include <BG/Renderer/VulkanHelpers.h>
-#include <BG/Renderer/Shader/ShaderHelpers.h>
-#include <BG/Renderer/Shader/ShaderCompiler.h>
-#include <BG/Renderer/VulkanRenderer.h>
-#include <BG/Renderer/RenderData.h>
-#include <BG/Renderer/VulkanMemoryAllocator.h>
 
 
 
@@ -68,11 +60,6 @@ class Manager {
 private: 
 
     BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
-
-    RenderData RenderData_; /**Instance of Render Data Struct. Stores All Data About The Renderer (Vulkan Handles, etc)*/
-
-    std::unique_ptr<MemoryManager> MemoryManager_; /**Instance of our own wrapper for a memory manager*/
-    std::unique_ptr<Internal::ShaderCompiler> ShaderCompiler_; /**Instance of the multithreaded shader compiler*/
 
 
 public:
