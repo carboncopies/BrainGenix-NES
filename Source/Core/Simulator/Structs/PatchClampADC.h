@@ -17,7 +17,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-
+#include <Simulator/Geometries/VecTools.h>
 
 namespace BG {
 namespace NES {
@@ -34,7 +34,7 @@ struct PatchClampADC {
     int ID; /**ID of this ADC*/
 
     int SourceCompartmentID; /**SourceCompartmentID ID of the compartment being read by the ADC output.*/
-    float ClampPos_nm[3]; /**Position of the clamp adc in world space, in nanometers*/
+    Geometries::Vec3D ClampPos_um; /**Position of the clamp adc in world space, in micrometers*/
 
     float Timestep_ms; /**Recording Timestep for this patchclamp ADC*/
 

@@ -27,16 +27,19 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/EngineController.cpp
   ${SRC_DIR}/Core/Simulator/EngineController.h
 
+  ${SRC_DIR}/Core/Simulator/Geometries/Geometry.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/Geometry.h
+  ${SRC_DIR}/Core/Simulator/Geometries/Sphere.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/Sphere.h
+  ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.h
+  ${SRC_DIR}/Core/Simulator/Geometries/Box.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/Box.h
+  ${SRC_DIR}/Core/Simulator/Geometries/VecTools.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/VecTools.h
+
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.h
-  ${SRC_DIR}/Core/Simulator/Structs/Shapes.cpp
-  ${SRC_DIR}/Core/Simulator/Structs/Shapes.h
-  ${SRC_DIR}/Core/Simulator/Structs/Sphere.cpp
-  ${SRC_DIR}/Core/Simulator/Structs/Sphere.h
-  ${SRC_DIR}/Core/Simulator/Structs/Cylinder.cpp
-  ${SRC_DIR}/Core/Simulator/Structs/Cylinder.h
-  ${SRC_DIR}/Core/Simulator/Structs/Box.cpp
-  ${SRC_DIR}/Core/Simulator/Structs/Box.h
   ${SRC_DIR}/Core/Simulator/Structs/BS.cpp
   ${SRC_DIR}/Core/Simulator/Structs/BS.h
   ${SRC_DIR}/Core/Simulator/Structs/Staple.cpp
@@ -47,7 +50,7 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampDAC.h
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampADC.cpp
   ${SRC_DIR}/Core/Simulator/Structs/PatchClampADC.h
-
+  
   ${SRC_DIR}/Core/Simulator/Updaters/Staple.cpp
   ${SRC_DIR}/Core/Simulator/Updaters/Staple.h
   ${SRC_DIR}/Core/Simulator/Updaters/Receptor.cpp
@@ -60,11 +63,37 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h
 
+)
+ 
+set(UNITTEST_SOURCES
 
-  )
+  ${SRC_DIR}/Core/Simulator/Geometries/Box.test.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.test.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/Sphere.test.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/VecTools.test.cpp
+)
 
+# Configure test binaries
+set(TEST_BINS
 
+    BrainGenix-NES.test
+)
 
+# Create Main Library
+add_library(${PROJECT_LIBRARY_NAME} STATIC ${MAIN_SOURCES})
+target_compile_features(${PROJECT_LIBRARY_NAME} PRIVATE cxx_std_17)
+
+target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE 
+    nlohmann_json::nlohmann_json
+    Boost::program_options
+    rpclib::rpc
+    ${CMAKE_THREAD_LIBS_INIT}
+
+    VersioningSystem
+    CompileTimeStamp
+    CompilePlatformInfo
+)
+target_include_directories(${PROJECT_LIBRARY_NAME} PUBLIC ${SRC_DIR}/Core)
 
 # Create Main Executable
 add_executable(${PROJECT_NAME} ${MAIN_SOURCES})
@@ -85,5 +114,19 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     CompileTimeStamp
     CompilePlatformInfo
 )
-
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
+
+# Configure testing.
+enable_testing()
+include(GoogleTest)
+
+message(STATUS "Testing enabled. Building test binaries ...")
+add_executable(${TEST_BINS} ${UNITTEST_SOURCES})
+target_link_libraries(${TEST_BINS} PRIVATE 
+    GTest::gtest 
+    GTest::gtest_main
+    ${PROJECT_LIBRARY_NAME}
+)
+target_include_directories(${TEST_BINS} PUBLIC ${SRC_DIR}/Core)
+
+gtest_discover_tests(${TEST_BINS})

@@ -1,6 +1,5 @@
 #include <Util/JSONHelpers.h>
 
-
 namespace BG {
 namespace NES {
 namespace Util {
@@ -25,17 +24,17 @@ void SetVec3(nlohmann::json* _Target, std::string _Input, std::string _Prefix, s
     (*_Target)[_Prefix + "Z_" + _Units] = Vec3[2].template get<float>();
 }
 
-void SetVec3(float* _Vector, std::string _Input) {
+void SetVec3(Simulator::Geometries::Vec3D& _Vector, std::string _Input) {
     nlohmann::json Vec3 = nlohmann::json::parse(_Input);
-    _Vector[0] = Vec3[0].template get<float>();
-    _Vector[1] = Vec3[1].template get<float>();
-    _Vector[2] = Vec3[2].template get<float>();
+    _Vector.x_um = Vec3[0].template get<float>();
+    _Vector.y_um = Vec3[1].template get<float>();
+    _Vector.z_um = Vec3[2].template get<float>();
 }
 
-void GetVec3(float* _Vector, nlohmann::json* _Input, std::string _Prefix, std::string _Units) {
-    _Vector[0] = Util::GetFloat(_Input, _Prefix + "X_" + _Units);
-    _Vector[1] = Util::GetFloat(_Input, _Prefix + "Y_" + _Units);
-    _Vector[2] = Util::GetFloat(_Input, _Prefix + "Z_" + _Units);
+void GetVec3(Simulator::Geometries::Vec3D& _Vector, nlohmann::json* _Input, std::string _Prefix, std::string _Units) {
+    _Vector.x_um = Util::GetFloat(_Input, _Prefix + "X_" + _Units);
+    _Vector.y_um = Util::GetFloat(_Input, _Prefix + "Y_" + _Units);
+    _Vector.z_um = Util::GetFloat(_Input, _Prefix + "Z_" + _Units);
 }
 
 

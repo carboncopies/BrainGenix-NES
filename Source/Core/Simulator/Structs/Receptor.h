@@ -16,7 +16,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-
+#include <Simulator/Geometries/VecTools.h>
 
 namespace BG {
 namespace NES {
@@ -37,7 +37,7 @@ struct Receptor {
 
     float Conductance_nS; /**Conductance from source to destination in nanoSiemens.*/
     float TimeConstant_ms; /**Postsynaptic potential time constant in milliseconds*/
-    float ReceptorPos_nm[3]; /**Position of the receptor in world space, in nanometers*/
+    Geometries::Vec3D ReceptorPos_um; /**Position of the receptor in world space, in micrometers*/
 
 };
 

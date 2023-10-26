@@ -18,6 +18,7 @@
         },
     "glm",
     "shaderc",
-    "vulkan-memory-allocator"
+    "vulkan-memory-allocator",
+    "gtest"
   ]
 }
