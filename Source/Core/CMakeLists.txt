@@ -38,6 +38,11 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.h
 
+  ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.cpp
+  ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.h
+  ${SRC_DIR}/Core/Simulator/Distributions/Distribution.cpp
+  ${SRC_DIR}/Core/Simulator/Distributions/Distribution.h
+
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.h
   ${SRC_DIR}/Core/Simulator/Structs/BS.cpp
@@ -71,6 +76,7 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.test.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Sphere.test.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.test.cpp
+  ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.test.cpp
 )
 
 # Configure test binaries

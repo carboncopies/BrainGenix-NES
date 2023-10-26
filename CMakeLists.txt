@@ -123,7 +123,8 @@ install(FILES "${SRC_DIR}/Data/BrainGenix-NES.service"
     COMPONENT Release
 )
 
-
+# Include CTest for testing
+include(CTest)
 
 
 
