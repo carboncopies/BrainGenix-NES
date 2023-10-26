@@ -77,10 +77,6 @@ message(STATUS "Setting Up vulkan-memory-allocator Library")
 find_package(VulkanMemoryAllocator CONFIG REQUIRED)
 
 
-
-
-
-
 # Internal Deps
 message(STATUS "Finding bg-common-logger Package")
 find_package(bg-common-logger CONFIG REQUIRED)
@@ -92,8 +88,11 @@ message(STATUS "Finding gtest Package")
 find_package(GTest CONFIG REQUIRED)
 
 
+
 # Ensure config is copied to bin
 file(COPY "${SRC_DIR}/Data/NES.cfg" DESTINATION "${BIN_DIR}")
+
+
 
 # Run Configuration Tools
 include(${CMAKE_SCRIPTS_DIR}/VersioningSystem/VersioningSystem.cmake)
@@ -102,6 +101,8 @@ include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
 add_subdirectory(${SRC_DIR}/Core)
 add_subdirectory(${SRC_DIR}/Renderer)
+
+
 
 # Set Install Targets
 message(STATUS "Install Prefix Set To '${INSTALL_PREFIX}'")
@@ -123,11 +124,15 @@ install(FILES "${SRC_DIR}/Data/BrainGenix-NES.service"
 )
 
 
+
+
+
 # TEMPORARY COPIES FOR SHADER CODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # file(COPY "${SRC_DIR}/Data/vert.spv" DESTINATION "${BIN_DIR}")
 # file(COPY "${SRC_DIR}/Data/frag.spv" DESTINATION "${BIN_DIR}")
 
 file(COPY "${SRC_DIR}/Data/" DESTINATION "${BIN_DIR}")
+
 
 
 # Include CTest for testing
