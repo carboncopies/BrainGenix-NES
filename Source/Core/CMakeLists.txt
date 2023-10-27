@@ -109,6 +109,7 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/Receptors/Receptor.test.cpp
   
   ${SRC_DIR}/Core/Simulator/Structs/SignalFunctions.test.cpp
+  ${SRC_DIR}/Core/Simulator/Structs/Simulation.test.cpp
 )
 
 # Configure test binaries
