@@ -32,12 +32,10 @@ struct Receptor {
     std::string Name; /**Name of the Staple connection*/
     int ID;           /**ID of the Staple connection*/
 
-    int SourceCompartmentID; /**ID of the compartment whos data will be copied to the destination.*/
-    int DestinationCompartmentID; /**ID of the compartment whos data will be overwritten with the source.*/
-
-    float Conductance_nS; /**Conductance from source to destination in nanoSiemens.*/
-    float TimeConstant_ms; /**Postsynaptic potential time constant in milliseconds*/
-    Geometries::Vec3D ReceptorPos_um; /**Position of the receptor in world space, in micrometers*/
+    int SourceCompartmentID; /**ID of the compartment whos data will be copied
+                                to the destination.*/
+    int DestinationCompartmentID; /**ID of the compartment whos data will be
+                                     overwritten with the source.*/
 
     float Conductance_nS;  /**Conductance from source to destination in
                               nanoSiemens.*/
