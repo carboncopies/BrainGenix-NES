@@ -53,14 +53,13 @@ namespace State {
 
 
 /**
- * @brief Struct that contains the data which holds the state of the renderer.
- * This includes things like the window and associated high level vulkan abstractions.
- * It does NOT include things like the scene and as that is managed separately.
- * 
+ * @brief Struct that holds the data needed for a scene.
+ * Contains the geometry itself as well as any associated cameras, lights, etc.
  * 
  */
-struct RenderData {
+struct Scene {
 
+    vsg::Group Scene_; /**Group that contains the scene graph*/
 
 
 };

@@ -51,7 +51,7 @@ Interface::Interface(BG::Common::Logger::LoggingSystem* _Logger, int _NumArgs, c
     auto scene = vsg::Group::create();
 
     // read any vsg files from command line arguments
-    for (int i=1; i<argc; ++i)
+    for (int i=1; i<_NumArgs; ++i)
     {
         vsg::Path filename = arguments[i];
         auto loaded_scene = vsg::read_cast<vsg::Node>(filename, options);
