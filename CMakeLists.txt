@@ -21,7 +21,10 @@ project(
 	"BrainGenix-NES"
 	VERSION "0.2.0"
 	LANGUAGES CXX
-	)
+)
+
+# Set project static library name
+set(PROJECT_LIBRARY_NAME "braingenix_nes")
 
 
 # Include Util CMake Scripts
@@ -79,21 +82,25 @@ message(STATUS "Finding bg-common-logger Package")
 find_package(bg-common-logger CONFIG REQUIRED)
 
 
+# Enabling testing and finding GTest
+enable_testing()
+message(STATUS "Finding gtest Package")
+find_package(GTest CONFIG REQUIRED)
+
+
 
 # Ensure config is copied to bin
 file(COPY "${SRC_DIR}/Data/NES.cfg" DESTINATION "${BIN_DIR}")
+
+
 
 # Run Configuration Tools
 include(${CMAKE_SCRIPTS_DIR}/VersioningSystem/VersioningSystem.cmake)
 include(${CMAKE_SCRIPTS_DIR}/CompilePlatformInfo/CompilePlatformInfo.cmake)
 include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
-
-
-
 add_subdirectory(${SRC_DIR}/Core)
 add_subdirectory(${SRC_DIR}/Renderer)
-
 
 
 
@@ -116,12 +123,21 @@ install(FILES "${SRC_DIR}/Data/BrainGenix-NES.service"
     COMPONENT Release
 )
 
+# Include CTest for testing
+include(CTest)
+
+
+
 # TEMPORARY COPIES FOR SHADER CODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # file(COPY "${SRC_DIR}/Data/vert.spv" DESTINATION "${BIN_DIR}")
 # file(COPY "${SRC_DIR}/Data/frag.spv" DESTINATION "${BIN_DIR}")
 
 file(COPY "${SRC_DIR}/Data/" DESTINATION "${BIN_DIR}")
 
+
+
+# Include CTest for testing
+include(CTest)
 
 
 # CPack Information

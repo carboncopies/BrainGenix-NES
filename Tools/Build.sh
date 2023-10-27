@@ -66,3 +66,6 @@ cmake --build . -j $1
 
 # Return status code of build (0=success, else=fail)
 exit $?
+
+# Return to Tools directory
+cd ../Tools

@@ -17,7 +17,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-
+#include <Simulator/Geometries/VecTools.h>
 
 namespace BG {
 namespace NES {
@@ -35,7 +35,7 @@ struct PatchClampDAC {
 
     int DestinationCompartmentID; /**DestinationCompartmentID ID of the compartment receiving DAC output.*/
 
-    float ClampPos_nm[3]; /**Position of the clamp in world space coordinates*/
+    Geometries::Vec3D ClampPos_um; /**Position of the clamp in world space coordinates*/
     float Timestep_ms; /**Simulation time for which each step in the output voltages list is replayed.*/
 
     std::vector<float> DACVoltages_mV; /**List of voltages to be replayed by the DAC.*/
