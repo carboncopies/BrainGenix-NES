@@ -39,6 +39,12 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.h
 
   ${SRC_DIR}/Core/Simulator/BrainRegion/BrainRegion.h
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.h
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.h
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.h
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.cpp
 
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.cpp
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.h
@@ -111,6 +117,24 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/SignalFunctions.test.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.test.cpp
 )
+ 
+set(UNITTEST_SOURCES
+
+  ${SRC_DIR}/Core/Simulator/Geometries/Box.test.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.test.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/Sphere.test.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/VecTools.test.cpp
+
+  ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.test.cpp
+  
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.test.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.test.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.test.cpp
+
+  ${SRC_DIR}/Core/Simulator/Receptors/NMDAReceptor.test.cpp
+  ${SRC_DIR}/Core/Simulator/Receptors/AMPAReceptor.test.cpp
+  ${SRC_DIR}/Core/Simulator/Receptors/Receptor.test.cpp
+)
 
 # Configure test binaries
 set(TEST_BINS
@@ -128,6 +152,8 @@ target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
 
+    NESRenderer
+
     VersioningSystem
     CompileTimeStamp
     CompilePlatformInfo
@@ -144,6 +170,10 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     Boost::program_options
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
+
+    bg-common-logger
+    
+    NESRenderer
 
     VersioningSystem
     CompileTimeStamp
