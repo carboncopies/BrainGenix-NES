@@ -1,14 +1,15 @@
 add_library(NESRenderer 
 
+    "BG/Renderer/Interface.h"
+    "BG/Renderer/Interface.cpp"
+
     "BG/Renderer/State/Scene.h"
     "BG/Renderer/State/Scene.cpp"
     "BG/Renderer/State/RenderData.h"
     "BG/Renderer/State/RenderData.cpp"
 
-    "BG/Renderer/Interface.h"
-    "BG/Renderer/Interface.cpp"
-    "BG/Renderer/Manager.h"
-    "BG/Renderer/Manager.cpp"
+    "BG/Renderer/SceneGraph/Manager.h"
+    "BG/Renderer/SceneGraph/Manager.cpp"
 
 )
 

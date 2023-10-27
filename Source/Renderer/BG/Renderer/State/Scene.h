@@ -59,7 +59,11 @@ namespace State {
  */
 struct Scene {
 
-    vsg::Group Scene_; /**Group that contains the scene graph*/
+    vsg::Group Group_; /**Group that contains the scene graph*/
+
+    // Note: that we will likely need to make a list of cameras in the
+    // future that can be switched between as most scenes will likely have more than one camera
+    vsg::Camera Camera_; /**Camera object for the scene*/
 
 
 };

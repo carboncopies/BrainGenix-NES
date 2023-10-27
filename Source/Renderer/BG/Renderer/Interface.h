@@ -47,7 +47,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
-#include <BG/Renderer/Manager.h>
+#include <BG/Renderer/SceneGraph/Manager.h>
 
 
 
