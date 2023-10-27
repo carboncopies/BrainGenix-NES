@@ -64,6 +64,14 @@ private:
 
     BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
 
+    // todo:
+    // migrate vsg argparser to function here
+    // implement state structures for the rest of the code
+    // add access functions to allow us to read the sim and create a rendered version of it
+    // then work on shader functionality to recreate the TEM look
+    // also work on making something so we can slice the shapes and create a cross section of it
+    // (maybe geom shader?)
+
 
 public:
 
