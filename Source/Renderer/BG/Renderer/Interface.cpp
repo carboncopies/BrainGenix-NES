@@ -13,6 +13,7 @@
  * THIS IS A KNOWN BUG IN VALGRIND!
 */
 
+
 namespace BG {
 namespace NES {
 namespace Renderer {
@@ -43,10 +44,8 @@ Interface::Interface(BG::Common::Logger::LoggingSystem* _Logger, int _NumArgs, c
 
     if (arguments.errors()) return;
 
-// #ifdef vsgXchange_all
     // add use of vsgXchange's support for reading and writing 3rd party file formats
     options->add(vsgXchange::all::create());
-// #endif
 
     auto scene = vsg::Group::create();
 
@@ -145,7 +144,7 @@ Interface::~Interface() {
 bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers) {
     assert(Logger_ != nullptr);
 
-    return RendererManager_->Initialize(_EnableDebugWindow, _EnableValidationLayers);
+    // return RendererManager_->Initialize(_EnableDebugWindow, _EnableValidationLayers);
 }
 
 bool Interface::DrawFrame() {

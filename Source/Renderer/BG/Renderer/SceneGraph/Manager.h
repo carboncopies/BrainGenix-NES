@@ -39,14 +39,11 @@
 #include <vsg/all.h>
 #include <vsgXchange/all.h>
 
-// #include <SDL.h>
-// #include <SDL_vulkan.h>
-
-
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
-
+#include <BG/Renderer/State/RenderData.h>
+#include <BG/Renderer/State/Scene.h>
 
 
 namespace BG {
@@ -63,6 +60,9 @@ class Manager {
 private: 
 
     BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
+
+    std::unique_ptr<State::RenderData> RenderData_; /**Instance of renderdata struct, stores vulkan scene graph state*/
+    std::unique_ptr<State::Scene>      Scene_;      /**Instance of scene struct, stores the geometry for this scene*/
 
     // todo:
     // migrate vsg argparser to function here
@@ -95,7 +95,21 @@ public:
      * These layers serve to provide debug information for the application developers.
      * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
     */
-    bool Initialize(bool _IsWindowed = false, bool _IsDebugging = true);
+    bool Initialize(int _NumArgs, char** _ArgValues);
+
+
+
+    bool SetupScene();
+
+
+
+
+
+
+
+
+
+
 
     /**
      * @brief Does what it sounds like, this draws a frame on the renderer.

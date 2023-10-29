@@ -61,20 +61,15 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(fetch_vk_bootstrap)
 
-message(STATUS "Setting Up SDL2 Library")
-find_package(SDL2 CONFIG REQUIRED)
 
 message(STATUS "Setting Up yaml-cpp Library")
 find_package(yaml-cpp CONFIG REQUIRED)
-
 
 message(STATUS "Setting Up Vulkan Scene Graph Library")
 find_package(vsg CONFIG REQUIRED)
 
 message(STATUS "Setting Up vsgXchange Library")
 find_package(vsgXchange CONFIG REQUIRED)
-
-
 
 
 # Internal Deps

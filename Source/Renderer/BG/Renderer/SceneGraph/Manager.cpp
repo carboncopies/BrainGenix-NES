@@ -38,11 +38,18 @@ Manager::~Manager() {
 }
 
 
-bool Manager::Initialize(bool _IsWindowed, bool _IsDebugging) {
+bool Manager::Initialize(int _NumArgs, char** _ArgValues) {
     assert(Logger_ != nullptr);
     Logger_->Log("Initializing NES Rendering Subsystem", 5);
 
-      return true;
+    // Iniitalize State Structs
+    RenderData_ = std::make_unique<State::RenderData>();
+    Scene_      = std::make_unique<State::Scene>();
+
+    // Setup Renderer
+
+
+    return true;
 }
 
 bool Manager::DrawFrame() {

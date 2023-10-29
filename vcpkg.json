@@ -10,12 +10,6 @@
     "rpclib",
     "vulkan",
     "vk-bootstrap",
-    {
-      "name": "sdl2",
-      "features": [
-        "vulkan"
-      ]
-    },
     "vsg",
     {
       "name": "vsgxchange",

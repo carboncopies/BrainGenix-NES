@@ -61,7 +61,11 @@ namespace State {
  */
 struct RenderData {
 
+    // Required Structs
+    vsg::ref_ptr<vsg::Options>      Options_;      /**Vulkan Scene Graph Options Configuration*/
 
+    // Optional Data For Windowing
+    vsg::ref_ptr<vsg::WindowTraits> WindowTraits_; /**If a window is enabled, this will be setup with windowing information.*/
 
 };
 
