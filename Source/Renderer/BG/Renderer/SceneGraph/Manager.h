@@ -101,7 +101,7 @@ public:
 
     bool SetupScene();
 
-
+    bool SetupViewer();
 
 
 

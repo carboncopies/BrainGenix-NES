@@ -75,10 +75,8 @@ public:
      * @brief Constructor for the rendering system.
      * 
      * @param _Logger Pointer to instance of the bg logging system.
-     * @param _NumArgs Number of args gotten from the main func, known commonly as argc.
-     * @param _ArgValues Values of each of the arguments. Known from main commonly as argv.
     */
-    Interface(BG::Common::Logger::LoggingSystem* _Logger, int _NumArgs, char** _ArgValues);
+    Interface(BG::Common::Logger::LoggingSystem* _Logge);
 
     /**
      * @brief Destructor to the renderer, pretty self-explanitory.
@@ -94,6 +92,9 @@ public:
      * EnableValidationLayers as the name implies, toggles on and off debug/validation layers.
      * These layers serve to provide debug information for the application developers.
      * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
+     * 
+     * @param _NumArgs Number of args gotten from the main func, known commonly as argc.
+     * @param _ArgValues Values of each of the arguments. Known from main commonly as argv.
     */
     bool Initialize(int _NumArgs, char** _ArgValues);
 
