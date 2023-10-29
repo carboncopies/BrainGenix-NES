@@ -12,20 +12,24 @@ namespace Tools {
 RecordingElectrode::RecordingElectrode(
     std::shared_ptr<Simulator::Simulation> _Sim)
     : Sim(_Sim) {
-
+    auto firstSite = std::make_tuple(0.0, 0.0, 0.0);
+    this->Sites.emplace_back(firstSite);
     this->InitSystemCoordSiteLocations();
     this->InitNeuronReferencesAndDistances();
+    this->InitRecords();
 };
 
 RecordingElectrode::RecordingElectrode(
     int _ID, Geometries::Vec3D _TipPosition_um,
     Geometries::Vec3D _EndPosition_um,
     std::vector<std::tuple<float, float, float>> _Sites, float _NoiseLevel,
-    std::shared_ptr<Simulator::Simulation> _Sim)
+    float _SensitivityDampening, std::shared_ptr<Simulator::Simulation> _Sim)
     : ID(_ID), TipPosition_um(_TipPosition_um), EndPosition_um(_EndPosition_um),
-      Sites(_Sites), NoiseLevel(_NoiseLevel), Sim(_Sim) {
+      Sites(_Sites), NoiseLevel(_NoiseLevel),
+      SensitivityDampening(_SensitivityDampening), Sim(_Sim) {
     this->InitSystemCoordSiteLocations();
     this->InitNeuronReferencesAndDistances();
+    this->InitRecords();
 };
 
 //! 1. Get a vector from tip to end.
@@ -39,9 +43,10 @@ Geometries::Vec3D RecordingElectrode::CoordsElectrodeToSystem(
 };
 
 void RecordingElectrode::InitSystemCoordSiteLocations() {
-    for (auto &site : this->Sites)
-        this->SiteLocations_um.emplace_back(
-            this->CoordsElectrodeToSystem(site));
+    for (auto &site : this->Sites) {
+        Geometries::Vec3D coords = this->CoordsElectrodeToSystem(site);
+        this->SiteLocations_um.emplace_back(coords);
+    }
 };
 
 void RecordingElectrode::InitNeuronReferencesAndDistances() {
@@ -61,14 +66,58 @@ void RecordingElectrode::InitNeuronReferencesAndDistances() {
     }
 };
 
-void RecordingElectrode::InitRecords() { return; };
-float RecordingElectrode::AddNoise() { return 0.0; };
+void RecordingElectrode::InitRecords() {
+    this->E_mV.clear();
+    for (size_t i = 0; i < this->Sites.size(); ++i)
+        this->E_mV.emplace_back(std::vector<float>());
+};
+
+float RecordingElectrode::AddNoise() {
+    return this->NoiseLevel * (rand() % 100 / 100.0 - 0.5);
+};
 
 //! Calculate the electric field potential at the electrode site as
 //! a combination of the effects of nearby neurons.
-float RecordingElectrode::ElectricFieldPotential(int siteIdx) { return 0.0; };
-void RecordingElectrode::Record(float t_ms) { return; };
+float RecordingElectrode::ElectricFieldPotential(size_t siteIdx) {
+    if (this->SensitivityDampening == 0.0)
+        throw std::overflow_error(
+            "Cannot divide by zero. (SensitivityDampening)");
+    if (siteIdx >= this->NeuronSomaToSiteDistances_um2.size())
+        throw std::out_of_range("Out of bounds. (siteIdx)");
+
+    float Ei_mV{};
+    auto siteDistances_um = this->NeuronSomaToSiteDistances_um2[siteIdx];
+
+    for (size_t i = 0; i < this->Neurons.size(); ++i) {
+        float Vm_mV =
+            std::dynamic_pointer_cast<
+                BG::NES::Simulator::BallAndStick::BSNeuron>(this->Neurons[i])
+                ->Vm_mV;
+
+        if (siteDistances_um[i] <= 1.0)
+            Ei_mV = Vm_mV;
+        else {
+            Ei_mV = Vm_mV / siteDistances_um[i];
+            Ei_mV += (Ei_mV / this->SensitivityDampening);
+        }
+    }
+
+    Ei_mV += this->AddNoise();
+
+    return Ei_mV;
+};
+
+void RecordingElectrode::Record(float t_ms) {
+    assert(t_ms >= 0.0);
+    this->TRecorded_ms.emplace_back(t_ms);
+    for (size_t i = 0; i < this->SiteLocations_um.size(); ++i) {
+        float Ei_mV = this->ElectricFieldPotential(i);
+        (this->E_mV[i]).emplace_back(Ei_mV);
+    }
+};
+
 std::unordered_map<std::string, std::vector<float>> GetRecording() {
+
     return std::unordered_map<std::string, std::vector<float>>();
 };
 
