@@ -37,14 +37,6 @@ namespace NES {
 namespace Simulator {
 namespace BallAndStick {
 
-//! ReceptorData is a tuple containing a pointer to the source (pre-synaptic)
-//! neuron of a connection and its weight.
-typedef std::tuple<std::shared_ptr<CoreStructs::Neuron>, float> ReceptorData;
-
-//! NeuronRecording is an unordered map containing data from simulation in a
-//! neuron.
-typedef std::unordered_map<std::string, std::vector<float>> NeuronRecording;
-
 /**
  * @brief This struct provides the structure representing a basic building block
  * for a ball-and-stick neural circuit.
@@ -81,7 +73,7 @@ struct BSNeuron : CoreStructs::Neuron {
     std::vector<float> VmRecorded_mV{};
     std::vector<float> FIFO{};
     std::vector<float> ConvolvedFIFO{};
-    std::vector<ReceptorData> ReceptorDataVec{};
+    std::vector<CoreStructs::ReceptorData> ReceptorDataVec{};
 
     std::shared_ptr<Distributions::Distribution>
         DtSpontDist{}; //! Distribution for delta t spontaneous
@@ -106,7 +98,7 @@ struct BSNeuron : CoreStructs::Neuron {
     void Record(float t_ms);
 
     //! Returns the recorded membrane potentials.
-    NeuronRecording GetRecording();
+    CoreStructs::NeuronRecording GetRecording();
 
     //! Tells if the action potential threshold has been crossed.
     bool HasSpiked();

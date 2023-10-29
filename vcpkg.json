@@ -8,17 +8,6 @@
     "boost-program-options",
     "nlohmann-json",
     "rpclib",
-    "vulkan",
-      "vk-bootstrap",
-        {
-          "name": "sdl2",
-          "features": [
-            "vulkan"
-          ]
-        },
-    "glm",
-    "shaderc",
-    "vulkan-memory-allocator",
     "gtest"
   ]
 }

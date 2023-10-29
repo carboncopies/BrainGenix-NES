@@ -17,13 +17,16 @@ BSAlignedNC::BSAlignedNC(int _ID, int _NumCells) : NumCells(_NumCells) {
 };
 
 //! Initializes the neurons in the neural circuit.
-void BSAlignedNC::InitCells(std::shared_ptr<Geometries::Box> domain) {
+void BSAlignedNC::InitCells(std::shared_ptr<Geometries::Geometry> domain) {
     std::vector<std::vector<float>> domainBounds;
     std::shared_ptr<Geometries::Sphere> soma = nullptr;
     std::shared_ptr<Geometries::Cylinder> axon = nullptr;
+    auto boxDomain = std::dynamic_pointer_cast<Geometries::Box>(domain);
+
+    assert(boxDomain);
 
     for (size_t i = 0; i < this->NumCells; ++i) {
-        domainBounds = domain->EqualSliceBounds(this->NumCells, i);
+        domainBounds = boxDomain->EqualSliceBounds(this->NumCells, i);
         soma = CreateBSSoma(domainBounds, Align::ALIGN_LEFT);
         axon = CreateBSAxon(domainBounds, Align::ALIGN_RIGHT, soma->Radius_um);
         this->Cells[std::to_string(i)] =
@@ -32,8 +35,8 @@ void BSAlignedNC::InitCells(std::shared_ptr<Geometries::Box> domain) {
 };
 
 //! Returns all neurons in the neural circuit.
-std::vector<std::shared_ptr<BSNeuron>> BSAlignedNC::GetNeurons() {
-    std::vector<std::shared_ptr<BSNeuron>> neurons;
+std::vector<std::shared_ptr<CoreStructs::Neuron>> BSAlignedNC::GetNeurons() {
+    std::vector<std::shared_ptr<CoreStructs::Neuron>> neurons;
 
     for (auto &[cellID, cell] : this->Cells)
         neurons.push_back(cell);
@@ -42,12 +45,12 @@ std::vector<std::shared_ptr<BSNeuron>> BSAlignedNC::GetNeurons() {
 };
 
 //! Returns all neurons in the neural circuit with specified IDs.
-std::vector<std::shared_ptr<BSNeuron>>
+std::vector<std::shared_ptr<CoreStructs::Neuron>>
 BSAlignedNC::GetNeuronsByIDs(std::vector<size_t> IDList) {
-    std::vector<std::shared_ptr<BSNeuron>> neurons;
+    std::vector<std::shared_ptr<CoreStructs::Neuron>> neurons;
 
     for (const size_t id : IDList)
-        neurons.emplace_back(this->Cells[std::to_string(id)]);
+        neurons.emplace_back(this->Cells.at(std::to_string(id)));
     return neurons;
 };
 
@@ -75,8 +78,8 @@ void BSAlignedNC::SetWeight(size_t from, size_t to, SetWeightMethod method) {
 
     switch (method) {
     case SetWeightMethod::BINARY:
-        targetCell = itTo->second;
-        sourceCell = itFrom->second;
+        targetCell = std::dynamic_pointer_cast<BSNeuron>(itTo->second);
+        sourceCell = std::dynamic_pointer_cast<BSNeuron>(itFrom->second);
 
         // source and weight
         targetCell->ReceptorDataVec.push_back(std::make_tuple(sourceCell, 1.0));
@@ -115,7 +118,8 @@ void BSAlignedNC::AttachDirectStim(
         auto it = this->Cells.find(std::to_string(cellID));
         if (it == this->Cells.end())
             throw std::invalid_argument("Cell not found.");
-        it->second->AttachDirectStim(t_ms);
+        auto cellPtr = std::dynamic_pointer_cast<BSNeuron>(it->second);
+        cellPtr->AttachDirectStim(t_ms);
     }
 };
 
@@ -133,22 +137,29 @@ void BSAlignedNC::SetSpontaneousActivity(
 
         if (cellIt == this->Cells.end())
             throw std::invalid_argument("Cell not found.");
-        cellIt->second->SetSpontaneousActivity(mean, std);
+
+        auto cellPtr = std::dynamic_pointer_cast<BSNeuron>(cellIt->second);
+        cellPtr->SetSpontaneousActivity(mean, std);
     }
 };
 
 //! Updates the membrane potentials in the neurons in the circuit.
 void BSAlignedNC::Update(float t_ms, bool recording) {
     assert(t_ms >= 0.0);
-    for (auto &[cellID, cell] : this->Cells)
-        cell->Update(t_ms, recording);
+    for (auto &[cellID, cell] : this->Cells) {
+        auto BSNeuronPtr = std::dynamic_pointer_cast<BSNeuron>(cell);
+        BSNeuronPtr->Update(t_ms, recording);
+    }
 };
 
 //! Returns recorded data from all neurons.
-std::unordered_map<std::string, NeuronRecording> BSAlignedNC::GetRecording() {
-    std::unordered_map<std::string, NeuronRecording> recording;
-    for (auto &[cellID, cell] : this->Cells)
-        recording[cellID] = cell->GetRecording();
+std::unordered_map<std::string, CoreStructs::NeuronRecording>
+BSAlignedNC::GetRecording() {
+    BG::NES::Simulator::CoreStructs::CircuitRecording recording;
+    for (auto &[cellID, cell] : this->Cells) {
+        auto BSNeuronPtr = std::dynamic_pointer_cast<BSNeuron>(cell);
+        recording[cellID] = BSNeuronPtr->GetRecording();
+    }
 
     return recording;
 };

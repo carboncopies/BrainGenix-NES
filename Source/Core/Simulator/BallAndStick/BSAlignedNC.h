@@ -20,6 +20,7 @@
 #include <Simulator/Geometries/Box.h>
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/NeuralCircuit.h>
+#include <Simulator/Structs/Neuron.h>
 
 namespace BG {
 namespace NES {
@@ -46,7 +47,7 @@ struct BSAlignedNC : CoreStructs::NeuralCircuit {
     };
 
     //! Neurons in the neural circuit.
-    std::unordered_map<std::string, std::shared_ptr<BSNeuron>> Cells;
+    std::unordered_map<std::string, std::shared_ptr<CoreStructs::Neuron>> Cells;
 
     int NumCells = 2; //! Number of cells
 
@@ -55,14 +56,14 @@ struct BSAlignedNC : CoreStructs::NeuralCircuit {
     BSAlignedNC(int _ID, int _NumCells);
 
     //! Initializes the neurons in the neural circuit.
-    void InitCells(std::shared_ptr<Geometries::Box> domain);
+    void InitCells(std::shared_ptr<Geometries::Geometry> domain) override;
 
     //! Returns all neurons in the neural circuit.
-    std::vector<std::shared_ptr<BSNeuron>> GetNeurons();
+    std::vector<std::shared_ptr<CoreStructs::Neuron>> GetNeurons() override;
 
     //! Returns all neurons in the neural circuit with specified IDs.
-    std::vector<std::shared_ptr<BSNeuron>>
-    GetNeuronsByIDs(std::vector<size_t> IDList);
+    std::vector<std::shared_ptr<CoreStructs::Neuron>>
+    GetNeuronsByIDs(std::vector<size_t> IDList) override;
 
     //! Returns the geometric centers of all neurons in the neural circuit.
     std::vector<Geometries::Vec3D> GetCellCenters();
@@ -87,7 +88,7 @@ struct BSAlignedNC : CoreStructs::NeuralCircuit {
     void Update(float t_ms, bool recording);
 
     //! Returns recorded data from all neurons.
-    std::unordered_map<std::string, NeuronRecording> GetRecording();
+    CoreStructs::CircuitRecording GetRecording();
 };
 
 }; // namespace BallAndStick
