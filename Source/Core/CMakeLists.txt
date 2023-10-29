@@ -70,6 +70,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/NeuralCircuit.h
   ${SRC_DIR}/Core/Simulator/Structs/RecordingElectrode.h
   ${SRC_DIR}/Core/Simulator/Structs/RecordingElectrode.cpp
+  ${SRC_DIR}/Core/Simulator/Structs/SynTrQuantalRelease.h
+  ${SRC_DIR}/Core/Simulator/Structs/SynTrQuantalRelease.cpp
   
   ${SRC_DIR}/Core/Simulator/Updaters/Staple.cpp
   ${SRC_DIR}/Core/Simulator/Updaters/Staple.h
@@ -113,6 +115,7 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/SignalFunctions.test.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.test.cpp
   ${SRC_DIR}/Core/Simulator/Structs/RecordingElectrode.test.cpp
+  ${SRC_DIR}/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp
 )
 
 # Configure test binaries
