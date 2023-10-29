@@ -183,16 +183,6 @@ bool Manager::DrawFrame() {
 }
 
 
-bool Manager::IsReady() {
-}
-
-bool Manager::IsWindowed() {
-}
-
-bool Manager::IsDebugging() {
-}
-
-
 
 
 }; // Close Namespace Logger
