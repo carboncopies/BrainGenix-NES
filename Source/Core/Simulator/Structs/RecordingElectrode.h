@@ -79,7 +79,8 @@ struct RecordingElectrode {
     //! a combination of the effects of nearby neurons.
     float ElectricFieldPotential(size_t siteIdx);
     void Record(float t_ms);
-    std::unordered_map<std::string, std::vector<float>> GetRecording();
+    std::unordered_map<std::string, std::vector<std::vector<float>>>
+    GetRecording();
 };
 
 }; // namespace Tools

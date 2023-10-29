@@ -116,9 +116,12 @@ void RecordingElectrode::Record(float t_ms) {
     }
 };
 
-std::unordered_map<std::string, std::vector<float>> GetRecording() {
+std::unordered_map<std::string, std::vector<std::vector<float>>>
+RecordingElectrode::GetRecording() {
+    std::unordered_map<std::string, std::vector<std::vector<float>>> data{};
 
-    return std::unordered_map<std::string, std::vector<float>>();
+    data["E_mV"] = this->E_mV;
+    return data;
 };
 
 }; // namespace Tools

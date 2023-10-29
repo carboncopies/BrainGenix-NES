@@ -62,7 +62,6 @@ struct RecordingElectrodeTest : testing::Test {
     void TearDown() { return; }
 };
 
-//  void Record(float t_ms);
 //  std::unordered_map<std::string, std::vector<float>> GetRecording();
 
 TEST_F(RecordingElectrodeTest, test_CoordsElectrodeToSystem_default) {
@@ -171,4 +170,22 @@ TEST_F(RecordingElectrodeTest, test_Record_default) {
         ASSERT_FALSE(E_mVVec.empty());
 }
 
-TEST_F(RecordingElectrodeTest, test_GetRecording_default) {}
+TEST_F(RecordingElectrodeTest, test_GetRecording_default) {
+    auto data = testElectrode->GetRecording();
+
+    // No data immediately after setup
+    auto it = data.find("E_mV");
+    ASSERT_TRUE(it != data.end());
+    for (const auto &E_mVVec : data.at("E_mV"))
+        ASSERT_TRUE(E_mVVec.empty());
+
+    // Data available after recording for some time.
+    testElectrode->Record(0.1);
+    testElectrode->Record(0.4);
+    testElectrode->Record(0.2);
+    data = testElectrode->GetRecording();
+    for (const auto &E_mVVec : data.at("E_mV")) {
+        ASSERT_FALSE(E_mVVec.empty());
+        ASSERT_EQ(E_mVVec.size(), 3);
+    }
+}
