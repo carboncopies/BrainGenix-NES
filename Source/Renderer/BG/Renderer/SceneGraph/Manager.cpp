@@ -60,6 +60,7 @@ bool Manager::Initialize(int _NumArgs, char** _ArgValues) {
     Arguments.read("--display", RenderData_->WindowTraits_->display);
 
     if (Arguments.errors()) {
+        Logger_->Log("Error Parsing Arguments For Renderer", 10);
         return false;
     }
 
@@ -160,7 +161,7 @@ bool Manager::SetupViewer() {
     // compile all the Vulkan objects and transfer data required to render the scene
     RenderData_->Viewer_->compile();
 
-
+    return true;
 }
 
 
