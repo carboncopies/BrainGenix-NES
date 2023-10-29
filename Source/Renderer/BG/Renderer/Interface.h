@@ -95,7 +95,7 @@ public:
      * These layers serve to provide debug information for the application developers.
      * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
     */
-    bool Initialize(bool _EnableDebugWindow = false, bool _EnableValidationLayers = true);
+    bool Initialize(int _NumArgs, char** _ArgValues);
 
     /**
      * @brief Does what the name suggests - draws a frame on the window or offscreen if rendering headless.

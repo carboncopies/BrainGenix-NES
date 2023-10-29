@@ -14,6 +14,9 @@
 */
 
 
+// TODO: Update Doxygen Docs!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
 namespace BG {
 namespace NES {
 namespace Renderer {
@@ -28,45 +31,9 @@ Interface::Interface(BG::Common::Logger::LoggingSystem* _Logger, int _NumArgs, c
 
 
 
-    auto options = vsg::Options::create();
-    auto windowTraits = vsg::WindowTraits::create();
-    windowTraits->windowTitle = "MyFirstVsgApplication";
 
-    // set up defaults and read command line arguments to override them
-    vsg::CommandLine arguments(&_NumArgs, _ArgValues);
-    windowTraits->debugLayer = arguments.read({"--debug","-d"});
-    windowTraits->apiDumpLayer = arguments.read({"--api","-a"});
-    if (arguments.read({"--fullscreen", "--fs"})) windowTraits->fullscreen = true;
-    if (arguments.read({"--window", "-w"}, windowTraits->width, windowTraits->height)) { windowTraits->fullscreen = false; }
-    auto horizonMountainHeight = arguments.value(0.0, "--hmh");
-    arguments.read("--screen", windowTraits->screenNum);
-    arguments.read("--display", windowTraits->display);
 
-    if (arguments.errors()) return;
-
-    // add use of vsgXchange's support for reading and writing 3rd party file formats
-    options->add(vsgXchange::all::create());
-
-    auto scene = vsg::Group::create();
-
-    // read any vsg files from command line arguments
-    for (int i=1; i<_NumArgs; ++i)
-    {
-        vsg::Path filename = arguments[i];
-        auto loaded_scene = vsg::read_cast<vsg::Node>(filename, options);
-        if (loaded_scene)
-        {
-            scene->addChild(loaded_scene);
-            arguments.remove(i, 1);
-            --i;
-        }
-    }
-
-    if (scene->children.empty())
-    {
-        std::cout<<"No scene loaded, please specify valid 3d model(s) on command line."<<std::endl;
-        return;
-    }
+    
 
     // create the viewer and assign window(s) to it
     auto viewer = vsg::Viewer::create();
@@ -141,10 +108,10 @@ Interface::~Interface() {
 }
 
 
-bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers) {
+bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
     assert(Logger_ != nullptr);
 
-    // return RendererManager_->Initialize(_EnableDebugWindow, _EnableValidationLayers);
+    return RendererManager_->Initialize(_NumArgs, _ArgValues);
 }
 
 bool Interface::DrawFrame() {
