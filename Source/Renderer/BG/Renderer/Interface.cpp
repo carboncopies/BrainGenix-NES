@@ -43,10 +43,10 @@ Interface::Interface(BG::Common::Logger::LoggingSystem* _Logger, int _NumArgs, c
 
     if (arguments.errors()) return;
 
-#ifdef vsgXchange_all
+// #ifdef vsgXchange_all
     // add use of vsgXchange's support for reading and writing 3rd party file formats
     options->add(vsgXchange::all::create());
-#endif
+// #endif
 
     auto scene = vsg::Group::create();
 

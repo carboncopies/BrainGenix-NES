@@ -9,14 +9,22 @@
     "nlohmann-json",
     "rpclib",
     "vulkan",
-      "vk-bootstrap",
-        {
-          "name": "sdl2",
-          "features": [
-            "vulkan"
-          ]
-        },
+    "vk-bootstrap",
+    {
+      "name": "sdl2",
+      "features": [
+        "vulkan"
+      ]
+    },
     "vsg",
-    "vsgxchange"
+    {
+      "name": "vsgxchange",
+      "features": [
+        "assimp",
+        "curl",
+        "freetype",
+        "openexr"
+      ]
+    }
   ]
 }
