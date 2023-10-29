@@ -11,6 +11,7 @@ Ubuntu_2204_Build:
     paths:
       - Build/
       - Binaries/
+      - "**/*.log"
   cache:
     - key:
       paths:
