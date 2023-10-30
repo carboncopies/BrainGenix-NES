@@ -47,7 +47,7 @@ void BSNeuron::Record(float t_ms) {
 };
 
 //! Returns the recorded membrane potentials.
-NeuronRecording BSNeuron::GetRecording() {
+CoreStructs::NeuronRecording BSNeuron::GetRecording() {
     std::unordered_map<std::string, std::vector<float>> recording;
     recording["Vm_mV"] = this->VmRecorded_mV;
     return recording;

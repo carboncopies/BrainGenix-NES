@@ -82,8 +82,6 @@ enable_testing()
 message(STATUS "Finding gtest Package")
 find_package(GTest CONFIG REQUIRED)
 
-
-
 # Ensure config is copied to bin
 file(COPY "${SRC_DIR}/Data/NES.cfg" DESTINATION "${BIN_DIR}")
 
