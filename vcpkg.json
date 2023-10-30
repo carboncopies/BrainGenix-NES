@@ -17,7 +17,6 @@
       "name": "vsgxchange",
       "features": [
         "assimp",
-        "curl",
         "freetype",
         "openexr"
       ]
