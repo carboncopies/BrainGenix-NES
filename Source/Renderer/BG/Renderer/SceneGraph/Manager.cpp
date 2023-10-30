@@ -114,13 +114,11 @@ bool Manager::SetupViewer() {
 
     // create the viewer and assign window(s) to it
     RenderData_->Viewer_ = vsg::Viewer::create();
-
     RenderData_->Window_ = vsg::Window::create(RenderData_->WindowTraits_);
     if (!RenderData_->Window_) {
         Logger_->Log("Failed To Create Window", 10);
         return false;
     }
-
     RenderData_->Viewer_->addWindow(RenderData_->Window_);
 
 
@@ -132,9 +130,11 @@ bool Manager::SetupViewer() {
     double nearFarRatio = 0.0001;
 
     // set up the camera
+    double FOV = 80.f; // FOV In degrees
+    
     auto lookAt = vsg::LookAt::create(centre+vsg::dvec3(0.0, -radius*3.5, 0.0), centre, vsg::dvec3(0.0, 0.0, 1.0));
     vsg::ref_ptr<vsg::ProjectionMatrix> perspective;
-    perspective = vsg::Perspective::create(30.0, static_cast<double>(RenderData_->Window_->extent2D().width) / static_cast<double>(RenderData_->Window_->extent2D().height), nearFarRatio*radius, radius * 4.5);
+    perspective = vsg::Perspective::create(FOV, static_cast<double>(RenderData_->Window_->extent2D().width) / static_cast<double>(RenderData_->Window_->extent2D().height), nearFarRatio*radius, radius * 4.5);
     Scene_->Camera_ = vsg::Camera::create(perspective, lookAt, vsg::ViewportState::create(RenderData_->Window_->extent2D()));
 
 
@@ -144,13 +144,12 @@ bool Manager::SetupViewer() {
     // add a trackball event handler to control the camera view using the mouse
     RenderData_->Viewer_->addEventHandler(vsg::Trackball::create(Scene_->Camera_));
 
-    // create a command graph to render the scene on the specified window
+    // // create a command graph to render the scene on the specified window
     auto commandGraph = vsg::createCommandGraphForView(RenderData_->Window_, Scene_->Camera_, Scene_->Group_);
     RenderData_->Viewer_->assignRecordAndSubmitTaskAndPresentation({commandGraph});
 
-    // compile all the Vulkan objects and transfer data required to render the scene
-    RenderData_->Viewer_->compile();
-
+    // Compile Scene
+    CompileScene();
 
 
     return true;
@@ -172,6 +171,11 @@ bool Manager::CompileScene() {
 
     // // compile all the Vulkan objects and transfer data required to render the scene
     // RenderData_->Viewer_->compile();
+
+
+
+
+    RenderData_->Viewer_->compile();
     
 
     return true;
