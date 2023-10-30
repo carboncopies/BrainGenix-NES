@@ -118,7 +118,13 @@ public:
 
 
 
-
+    /**
+     * @brief Returns scene pointer.
+     * Assumes that the scene has been initialized at this point.
+     * 
+     * @return vsg::ref_ptr<vsg::Group> 
+     */
+    vsg::ref_ptr<vsg::Group> GetScene();
 
 
 

@@ -49,11 +49,44 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
     if (!RendererManager_->SetupScene()) {
         return false;
     }
+    AddBox();
     return RendererManager_->SetupViewer();
 }
 
 bool Interface::DrawFrame() {
     return RendererManager_->DrawFrame();
+}
+
+
+bool Interface::AddBox() {
+
+    // Get Scene From RendererMangaer
+    vsg::ref_ptr<vsg::Group> Scene = RendererManager_->GetScene();
+
+
+    // Setup Builder
+    vsg::ref_ptr<vsg::Builder> Builder = vsg::Builder::create();
+
+
+    // Setup Geom Info
+    vsg::GeometryInfo Info;
+    Info.dx.set(1.0f, 0.0f, 0.0f);
+    Info.dy.set(0.0f, 1.0f, 0.0f);
+    Info.dz.set(0.0f, 0.0f, 1.0f);
+    Info.position = vsg::vec3(0.0f, 0.0f, 0.0f);
+
+    // Setup State Information
+    vsg::StateInfo StateInfo;
+    StateInfo.lighting = false;
+
+
+    Scene->addChild(Builder->createBox(Info, StateInfo));
+    // // Setup Shader
+    // vsg::Options Options;
+    // Options.add()
+    // Builder->shaderSet = vsg::createPhongShaderSet();
+
+
 }
 
 

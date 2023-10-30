@@ -183,6 +183,10 @@ bool Manager::DrawFrame() {
 }
 
 
+vsg::ref_ptr<vsg::Group> Manager::GetScene() {
+    return Scene_->Group_;
+}
+
 
 
 }; // Close Namespace Logger

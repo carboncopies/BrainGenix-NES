@@ -106,6 +106,19 @@ public:
      */
     bool DrawFrame();
 
+
+// -- needed improvement
+    /**
+     * @brief Adds a box of the given parameters.
+     * Will need to be improved in the future, works for now though.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool AddBox();
+
+// -- end improvement needed
+
 };
 
 
