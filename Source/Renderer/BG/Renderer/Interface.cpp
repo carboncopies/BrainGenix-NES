@@ -77,15 +77,25 @@ bool Interface::AddBox() {
 
     // Setup State Information
     vsg::StateInfo StateInfo;
-    StateInfo.lighting = false;
+    StateInfo.lighting = true;
+
+
+    // Setup Shader
+    vsg::ref_ptr<vsg::Options> Options = vsg::Options::create();
+    Builder->shaderSet = vsg::createPhongShaderSet(Options);
+
+    vsg::UniformBinding& MaterialBinding = Builder->shaderSet->getUniformBinding("material");
+
+    vsg::ref_ptr<vsg::PhongMaterialValue> Material = vsg::PhongMaterialValue::create();
+    Material->value().specular = vsg::vec4(0.9f, 0.3f, 0.3f, 1.0f);
+    Material->value().diffuse = vsg::vec4(0.3f, 0.8f, 0.3f, 1.0f);
+    MaterialBinding.data = Material;
 
 
     Scene->addChild(Builder->createBox(Info, StateInfo));
-    // // Setup Shader
-    // vsg::Options Options;
-    // Options.add()
-    // Builder->shaderSet = vsg::createPhongShaderSet();
 
+
+    return true;
 
 }
 
