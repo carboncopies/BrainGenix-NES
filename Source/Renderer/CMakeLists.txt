@@ -10,6 +10,8 @@ add_library(NESRenderer
 
     "BG/Renderer/SceneGraph/Manager.h"
     "BG/Renderer/SceneGraph/Manager.cpp"
+    "BG/Renderer/SceneGraph/GeometryBuilder.h"
+    "BG/Renderer/SceneGraph/GeometryBuilder.cpp"
 
 )
 
