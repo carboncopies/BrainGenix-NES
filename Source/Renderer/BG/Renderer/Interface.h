@@ -49,6 +49,9 @@
 
 #include <BG/Renderer/SceneGraph/Manager.h>
 
+#include <BG/Renderer/SceneGraph/GeometryBuilder.h>
+#include <BG/Renderer/SceneGraph/Primitive/Cube.h>
+
 
 
 namespace BG {
@@ -66,8 +69,8 @@ private:
 
     BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
 
-    std::unique_ptr<Manager> RendererManager_ = nullptr; /**Instance of the renderer manager, setup when the init call is made.*/
-
+    std::unique_ptr<Manager>         RendererManager_ = nullptr; /**Instance of the renderer manager, setup when the init call is made.*/
+    std::unique_ptr<GeometryBuilder> GeometryBuilder_ = nullptr; /**Instance of the geometry builder, used to create various primitives in the scene*/
 
 public:
 

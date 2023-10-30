@@ -3,8 +3,6 @@
 //=================================//
 
 /*
-    Description: This file contains the NES Rendering Manager. It is responsible for the underlying initialization and ownership of the Vulkan subsystem.
-    Additional Notes: None
     Date Created: 2023-09-17
     Author(s): Thomas Liao
 

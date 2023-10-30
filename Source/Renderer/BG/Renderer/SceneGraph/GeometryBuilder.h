@@ -3,9 +3,7 @@
 //=================================//
 
 /*
-    Description: This file contains the NES Rendering Manager. It is responsible for the underlying initialization and ownership of the Vulkan subsystem.
-    Additional Notes: None
-    Date Created: 2023-09-17
+    Date Created: 2023-10-30
     Author(s): Thomas Liao
 
 
@@ -42,6 +40,11 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
+#include <BG/Renderer/SceneGraph/Primitive/Cube.h>
+
+#include <BG/Renderer/SceneGraph/Shader/Shader.h>
+#include <BG/Renderer/SceneGraph/Shader/Phong.h>
+
 #include <BG/Renderer/State/RenderData.h>
 #include <BG/Renderer/State/Scene.h>
 
@@ -53,92 +56,47 @@ namespace Renderer {
 
 
 /**
- * @brief The renderer manager is responsible for underlying Vulkan management (init, deinit, controling access, etc.)
+ * @brief This class provides an interface for creating geometric primitives in the scene (e.g cubes, spheres, cylinders, etc.)
+ * The instance of this class can be accessed via the interface which will allow for other parts of the system to create shapes in the scene.
+ * This will likely be used to create a 3d representation of the simulation.
  */
-class Manager {
+class GeometryBuilder {
 
 private: 
 
+    // Logging Stuff
     BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
 
-    std::unique_ptr<State::RenderData> RenderData_; /**Instance of renderdata struct, stores vulkan scene graph state*/
-    std::unique_ptr<State::Scene>      Scene_;      /**Instance of scene struct, stores the geometry for this scene*/
 
-    // todo:
-    // migrate vsg argparser to function here
-    // implement state structures for the rest of the code
-    // add access functions to allow us to read the sim and create a rendered version of it
-    // then work on shader functionality to recreate the TEM look
-    // also work on making something so we can slice the shapes and create a cross section of it
-    // (maybe geom shader?)
+    // VSG Builder Utils
+    vsg::ref_ptr<vsg::Builder> Builder_; /**Instance of the vsg builder class. Used to create 3d primitives.*/
+
 
 
 public:
 
     /**
-     * @brief Constructor for the rendering system.
+     * @brief Constructor for the geometry builder.
     */
-    Manager(BG::Common::Logger::LoggingSystem* _Logger);
+    GeometryBuilder(BG::Common::Logger::LoggingSystem* _Logger);
 
     /**
      * @brief Destructor to the renderer, pretty self-explanitory.
     */
-    ~Manager();
+    ~GeometryBuilder();
 
 
     /**
-     * @brief Initializes the Rendering interface. 
-     * Use the _IsWindowed param for debugging by shwoing an SDL window containing the to-be-rendered content.
-     * Note that use of this parameter is for debugging only and requires having either an X-Server or Wayland installed.
+     * @brief Adds a cube to the given scene, with the information defined in the cubecreateinfo struct.
+     * Returns true on success, false otherwise.
      * 
-     * _IsDebugging as the name implies, toggles on and off debug/validation layers.
-     * These layers serve to provide debug information for the application developers.
-     * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
-    */
-    bool Initialize(int _NumArgs, char** _ArgValues);
-
-
-    /**
-     * @brief Initialization function that iniitalizes the Scene struct in the renderer.
-     * Will not build a scene with anything in it, just sets up a dumb empty scene.
-     * 
+     * @param _Scene VSG Group instance wrapped by vsg::ref_ptr
+     * @param _CubeCreateInfo Pointer to cube create information.
      * @return true 
      * @return false 
      */
-    bool SetupScene();
-
-    /**
-     * @brief Sets up the viewport and other stuff associated with preparing to render.
-     * Helps to initialize the camera and other associated things.
-     * 
-     * @return true 
-     * @return false 
-     */
-    bool SetupViewer();
-
-
-
-    /**
-     * @brief Returns scene pointer.
-     * Assumes that the scene has been initialized at this point.
-     * 
-     * @return vsg::ref_ptr<vsg::Group> 
-     */
-    vsg::ref_ptr<vsg::Group> GetScene();
-
-
-
-
-
-    /**
-     * @brief Does what it sounds like, this draws a frame on the renderer.
-     * Returns true on success, false on failure.
-     * 
-     * @return true 
-     * @return false 
-     */
-    bool DrawFrame();
-
+    bool CreateCube(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cube* _CubeCreateInfo);
+    
 
 };
 

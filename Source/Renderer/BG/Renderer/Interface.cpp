@@ -26,8 +26,9 @@ Interface::Interface(BG::Common::Logger::LoggingSystem* _Logger) {
     assert(_Logger != nullptr);
     Logger_ = _Logger;
 
-    // Instantiate Subclass RendererManager
+    // Instantiate Subclasses
     RendererManager_ = std::make_unique<Manager>(_Logger);
+    GeometryBuilder_ = std::make_unique<GeometryBuilder>(Logger_);
 
 
 }
@@ -60,42 +61,56 @@ bool Interface::DrawFrame() {
 
 bool Interface::AddBox() {
 
-    // Get Scene From RendererMangaer
-    vsg::ref_ptr<vsg::Group> Scene = RendererManager_->GetScene();
+    Shaders::Phong CubeShader;
+    CubeShader.DiffuseColor_  = vsg::vec4(0.2f, 0.8f, 0.2f, 1.0f);
+    CubeShader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
+    CubeShader.Type_ = Shaders::SHADER_PHONG;
+    
+
+    Primitive::Cube CreateInfo;
+    CreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 0.0f);
+    CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
+    CreateInfo.Scale_    = vsg::vec3(1.0f, 1.0f, 1.0f);
+    CreateInfo.Shader_ = &CubeShader;
+    
+    return GeometryBuilder_->CreateCube(RendererManager_->GetScene(), &CreateInfo);
+
+    // // Get Scene From RendererMangaer
+    // vsg::ref_ptr<vsg::Group> Scene = RendererManager_->GetScene();
 
 
-    // Setup Builder
-    vsg::ref_ptr<vsg::Builder> Builder = vsg::Builder::create();
+    // // Setup Builder
+    // vsg::ref_ptr<vsg::Builder> Builder = vsg::Builder::create();
 
 
-    // Setup Geom Info
-    vsg::GeometryInfo Info;
-    Info.dx.set(1.0f, 0.0f, 0.0f);
-    Info.dy.set(0.0f, 1.0f, 0.0f);
-    Info.dz.set(0.0f, 0.0f, 1.0f);
-    Info.position = vsg::vec3(0.0f, 0.0f, 0.0f);
+    // // Setup Geom Info
+    // vsg::GeometryInfo Info;
+    // Info.dx.set(1.0f, 0.0f, 0.0f);
+    // Info.dy.set(0.0f, 1.0f, 0.0f);
+    // Info.dz.set(0.0f, 0.0f, 1.0f);
+    // Info.position = vsg::vec3(0.0f, 0.0f, 0.0f);
 
-    // Setup State Information
-    vsg::StateInfo StateInfo;
-    StateInfo.lighting = true;
-
-
-    // Setup Shader
-    vsg::ref_ptr<vsg::Options> Options = vsg::Options::create();
-    Builder->shaderSet = vsg::createPhongShaderSet(Options);
-
-    vsg::UniformBinding& MaterialBinding = Builder->shaderSet->getUniformBinding("material");
-
-    vsg::ref_ptr<vsg::PhongMaterialValue> Material = vsg::PhongMaterialValue::create();
-    Material->value().specular = vsg::vec4(0.9f, 0.3f, 0.3f, 1.0f);
-    Material->value().diffuse = vsg::vec4(0.3f, 0.8f, 0.3f, 1.0f);
-    MaterialBinding.data = Material;
+    // // Setup State Information
+    // vsg::StateInfo StateInfo;
+    // StateInfo.lighting = true;
 
 
-    Scene->addChild(Builder->createBox(Info, StateInfo));
+    // // Setup Shader
+    // vsg::ref_ptr<vsg::Options> Options = vsg::Options::create();
+    // Builder->shaderSet = vsg::createPhongShaderSet(Options);
+
+    // vsg::UniformBinding& MaterialBinding = Builder->shaderSet->getUniformBinding("material");
+
+    // vsg::ref_ptr<vsg::PhongMaterialValue> Material = vsg::PhongMaterialValue::create();
+    // Material->value().specular = vsg::vec4(0.9f, 0.3f, 0.3f, 1.0f);
+    // Material->value().diffuse = vsg::vec4(0.3f, 0.8f, 0.3f, 1.0f);
+    // MaterialBinding.data = Material;
 
 
-    return true;
+    // Scene->addChild(Builder->createBox(Info, StateInfo));
+
+
+    // return true;
 
 }
 
