@@ -30,14 +30,6 @@ bool GeometryBuilder::CreateCube(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cub
 
     // Setup Geom Info
     vsg::GeometryInfo Info;
-    // Info.dx.set(1.0f, 0.0f, 0.0f); // maybe this
-    // Info.dy.set(0.0f, 1.0f, 0.0f); // does something
-    // Info.dz.set(0.0f, 0.0f, 1.0f); // to rotation?
-    // Info.transform = vsg::rotate(_CubeCreateInfo->Rotation_);
-    // Info.position = _CubeCreateInfo->Position_;
-    // Info.transform = vsg::rotate(vsg::radians(_CubeCreateInfo->Rotation_.z), vsg::vec3(0.f, 0.f, 1.f));
-    // Info.transform = vsg::rotate(vsg::radians(_CubeCreateInfo->Rotation_.y), vsg::vec3(0.f, 1.f, 0.f));
-    // Info.transform = vsg::rotate(vsg::radians(_CubeCreateInfo->Rotation_.x), vsg::vec3(1.f, 0.f, 0.f));
 
     // Extract Values From Struct
     glm::vec3 Position = glm::vec3(_CubeCreateInfo->Position_.x, _CubeCreateInfo->Position_.y, _CubeCreateInfo->Position_.z);
@@ -56,7 +48,6 @@ bool GeometryBuilder::CreateCube(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cub
     float* FloatArr = (float*)glm::value_ptr(LRSMat);
     TransformMatrix.set(FloatArr[0], FloatArr[1], FloatArr[2], FloatArr[3], FloatArr[4], FloatArr[5], FloatArr[6], FloatArr[7], FloatArr[8], FloatArr[9], FloatArr[10], FloatArr[11], FloatArr[12], FloatArr[13], FloatArr[14], FloatArr[15]);
     Info.transform = TransformMatrix;
-
 
 
     std::string PositionString = std::to_string(Position.x) + "X " + std::to_string(Position.y) + "Y " + std::to_string(Position.z) + "Z";
