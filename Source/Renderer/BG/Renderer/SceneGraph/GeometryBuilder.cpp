@@ -48,7 +48,7 @@ bool GeometryBuilder::CreateCube(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cub
     glm::mat4 LRSMat = glm::translate(glm::mat4(1.0f), Position);
     LRSMat = glm::rotate(LRSMat, glm::radians(Rotation.z), glm::vec3(0, 0, 1));
     LRSMat = glm::rotate(LRSMat, glm::radians(Rotation.y), glm::vec3(0, 1, 0));
-    LRSMat = glm::rotate(LRSMat, glm::radians(Rotation.z), glm::vec3(1, 0, 0));
+    LRSMat = glm::rotate(LRSMat, glm::radians(Rotation.x), glm::vec3(1, 0, 0));
     LRSMat = glm::scale(LRSMat, Scale);
 
     // Convert GLM Mat4 Transformation Matrix To VSG Mat4
