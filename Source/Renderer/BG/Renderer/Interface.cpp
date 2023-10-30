@@ -50,16 +50,6 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
     if (!RendererManager_->SetupScene()) {
         return false;
     }
-    AddBox();
-    return RendererManager_->SetupViewer();
-}
-
-bool Interface::DrawFrame() {
-    return RendererManager_->DrawFrame();
-}
-
-
-bool Interface::AddBox() {
 
     Shaders::Phong CubeShader;
     CubeShader.DiffuseColor_  = vsg::vec4(0.2f, 0.8f, 0.2f, 1.0f);
@@ -72,46 +62,19 @@ bool Interface::AddBox() {
     CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
     CreateInfo.Scale_    = vsg::vec3(1.0f, 1.0f, 1.0f);
     CreateInfo.Shader_ = &CubeShader;
-    
-    return GeometryBuilder_->CreateCube(RendererManager_->GetScene(), &CreateInfo);
 
-    // // Get Scene From RendererMangaer
-    // vsg::ref_ptr<vsg::Group> Scene = RendererManager_->GetScene();
+    AddBox(&CreateInfo);
+    return RendererManager_->SetupViewer();
+}
 
-
-    // // Setup Builder
-    // vsg::ref_ptr<vsg::Builder> Builder = vsg::Builder::create();
-
-
-    // // Setup Geom Info
-    // vsg::GeometryInfo Info;
-    // Info.dx.set(1.0f, 0.0f, 0.0f);
-    // Info.dy.set(0.0f, 1.0f, 0.0f);
-    // Info.dz.set(0.0f, 0.0f, 1.0f);
-    // Info.position = vsg::vec3(0.0f, 0.0f, 0.0f);
-
-    // // Setup State Information
-    // vsg::StateInfo StateInfo;
-    // StateInfo.lighting = true;
+bool Interface::DrawFrame() {
+    return RendererManager_->DrawFrame();
+}
 
 
-    // // Setup Shader
-    // vsg::ref_ptr<vsg::Options> Options = vsg::Options::create();
-    // Builder->shaderSet = vsg::createPhongShaderSet(Options);
-
-    // vsg::UniformBinding& MaterialBinding = Builder->shaderSet->getUniformBinding("material");
-
-    // vsg::ref_ptr<vsg::PhongMaterialValue> Material = vsg::PhongMaterialValue::create();
-    // Material->value().specular = vsg::vec4(0.9f, 0.3f, 0.3f, 1.0f);
-    // Material->value().diffuse = vsg::vec4(0.3f, 0.8f, 0.3f, 1.0f);
-    // MaterialBinding.data = Material;
-
-
-    // Scene->addChild(Builder->createBox(Info, StateInfo));
-
-
-    // return true;
-
+bool Interface::AddBox(Primitive::Cube* _CreateInfo) {
+    assert(_CreateInfo != nullptr);
+    return GeometryBuilder_->CreateCube(RendererManager_->GetScene(), _CreateInfo);
 }
 
 

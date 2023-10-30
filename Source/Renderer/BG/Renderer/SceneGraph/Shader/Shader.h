@@ -67,8 +67,6 @@ struct Shader {
 
     ShaderType Type_ = SHADER_UNDEFINED; /**Type of the shader, defined by enum.*/
     
-    
-
 };
 
 

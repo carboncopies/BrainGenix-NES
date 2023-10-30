@@ -110,17 +110,15 @@ public:
     bool DrawFrame();
 
 
-// -- needed improvement
     /**
-     * @brief Adds a box of the given parameters.
-     * Will need to be improved in the future, works for now though.
+     * @brief Creates a box with the given parameters to the current scene graph.
+     * Returns true on success, false otherwise.
      * 
+     * @param _CreateInfo Instance of the cube create info struct - fully populated with the right info.
      * @return true 
      * @return false 
      */
-    bool AddBox();
-
-// -- end improvement needed
+    bool AddBox(Primitive::Cube* _CreateInfo);
 
 };
 
