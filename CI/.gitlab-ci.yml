@@ -37,10 +37,10 @@ include:
 
 
   # Package Stage
-  - '/CI/Package/Ubuntu2204/CI.yml'
-  # - '/CI/Package/Ubuntu2004/CI.yml'
-  # - '/CI/Package/Debian11/CI.yml'
-  - '/CI/Package/Debian12/CI.yml'
+  # - '/CI/Package/Ubuntu2204/CI.yml'
+  # # - '/CI/Package/Ubuntu2004/CI.yml'
+  # # - '/CI/Package/Debian11/CI.yml'
+  # - '/CI/Package/Debian12/CI.yml'
 
 
 

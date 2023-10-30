@@ -11,6 +11,8 @@ Ubuntu_2204_Package:
   artifacts:
     paths:
       - Artifacts/
+      - "**/*.log"
+    when: always
   only: # Only run Package job when the source code, cmake, dependencies or CI change
       changes:
         - Source/**/*
