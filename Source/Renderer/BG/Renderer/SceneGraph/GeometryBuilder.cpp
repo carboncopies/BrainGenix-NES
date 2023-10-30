@@ -59,7 +59,7 @@ bool GeometryBuilder::CreateCube(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cub
 
 
 
-    std::string PositionString = std::to_string(Info.position.x) + "X " + std::to_string(Info.position.y) + "Y " + std::to_string(Info.position.y) + "Z";
+    std::string PositionString = std::to_string(Position.x) + "X " + std::to_string(Position.y) + "Y " + std::to_string(Position.z) + "Z";
     Logger_->Log(std::string("Creating Cube At ") + PositionString, 0);
 
 
