@@ -1,5 +1,4 @@
-#include <BG/Renderer/RenderData.h>
-
+#include <BG/Renderer/State/RenderData.h>
 
 
 
@@ -7,7 +6,6 @@
 namespace BG {
 namespace NES {
 namespace Renderer {
-
 
 
 

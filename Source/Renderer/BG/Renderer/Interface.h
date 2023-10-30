@@ -37,16 +37,17 @@
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <VkBootstrap.h>
+// #include <SDL.h>
+// #include <SDL_vulkan.h>
 
-#include <SDL.h>
-#include <SDL_vulkan.h>
+#include <vsg/all.h>
+#include <vsgXchange/all.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
-#include <BG/Renderer/Manager.h>
+#include <BG/Renderer/SceneGraph/Manager.h>
 
 
 
@@ -72,8 +73,10 @@ public:
 
     /**
      * @brief Constructor for the rendering system.
+     * 
+     * @param _Logger Pointer to instance of the bg logging system.
     */
-    Interface(BG::Common::Logger::LoggingSystem* _Logger);
+    Interface(BG::Common::Logger::LoggingSystem* _Logge);
 
     /**
      * @brief Destructor to the renderer, pretty self-explanitory.
@@ -89,8 +92,11 @@ public:
      * EnableValidationLayers as the name implies, toggles on and off debug/validation layers.
      * These layers serve to provide debug information for the application developers.
      * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
+     * 
+     * @param _NumArgs Number of args gotten from the main func, known commonly as argc.
+     * @param _ArgValues Values of each of the arguments. Known from main commonly as argv.
     */
-    bool Initialize(bool _EnableDebugWindow = false, bool _EnableValidationLayers = true);
+    bool Initialize(int _NumArgs, char** _ArgValues);
 
     /**
      * @brief Does what the name suggests - draws a frame on the window or offscreen if rendering headless.

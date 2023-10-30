@@ -13,6 +13,10 @@
  * THIS IS A KNOWN BUG IN VALGRIND!
 */
 
+
+// TODO: Update Doxygen Docs!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
 namespace BG {
 namespace NES {
 namespace Renderer {
@@ -36,10 +40,16 @@ Interface::~Interface() {
 }
 
 
-bool Interface::Initialize(bool _EnableDebugWindow, bool _EnableValidationLayers) {
+bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
     assert(Logger_ != nullptr);
 
-    return RendererManager_->Initialize(_EnableDebugWindow, _EnableValidationLayers);
+    if (!RendererManager_->Initialize(_NumArgs, _ArgValues)) {
+        return false;
+    }
+    if (!RendererManager_->SetupScene()) {
+        return false;
+    }
+    return RendererManager_->SetupViewer();
 }
 
 bool Interface::DrawFrame() {

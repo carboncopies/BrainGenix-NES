@@ -47,7 +47,7 @@ VCPKG_DEPS="curl zip unzip tar pkg-config autoconf flex bison"
 if [ "$DISTRO" = "arch" ]; then
     VULKAN_DEPS="vulkan-devel"
 else
-    VULKAN_DEPS="libvulkan-dev vulkan-validationlayers-dev vulkan-tools"  
+    VULKAN_DEPS="libvulkan-dev vulkan-validationlayers-dev vulkan-tools libxcb-xfixes0-dev"  
 fi
 
 # Install Everything

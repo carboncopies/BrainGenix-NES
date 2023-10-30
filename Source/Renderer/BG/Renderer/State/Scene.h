@@ -3,9 +3,9 @@
 //=================================//
 
 /*
-    Description: This file contains the sets of functions used to render each frame.
+    Description: This file contains the NES Rendering Manager. It is responsible for the underlying initialization and ownership of the Vulkan subsystem.
     Additional Notes: None
-    Date Created: 2023-09-17
+    Date Created: 2023-10-26
     Author(s): Thomas Liao
 
 
@@ -36,42 +36,42 @@
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <VkBootstrap.h>
-
-#include <SDL.h>
-#include <SDL_vulkan.h>
+#include <vsg/all.h>
+#include <vsgXchange/all.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <BG/Common/Logger/Logger.h>
 
-#include <BG/Renderer/Shader/ShaderHelpers.h>
-#include <BG/Renderer/RenderData.h>
 
 
 
 namespace BG {
 namespace NES {
 namespace Renderer {
-
-
+namespace State {
 
 
 
 /**
- * @brief Vulkan Renderer Helper. Main Renderer Function, Draws The Frame.
- * Returns true on success, false on failure.
+ * @brief Struct that holds the data needed for a scene.
+ * Contains the geometry itself as well as any associated cameras, lights, etc.
  * 
- * @param _Logger 
- * @param _RD 
- * @return true 
- * @return false 
  */
-bool VulkanRenderer_DrawFrame(BG::Common::Logger::LoggingSystem* _Logger, RenderData* _RD);
+struct Scene {
+
+    vsg::ref_ptr<vsg::Group> Group_; /**Group that contains the scene graph*/
+
+    // Note: that we will likely need to make a list of cameras in the
+    // future that can be switched between as most scenes will likely have more than one camera
+    vsg::ref_ptr<vsg::Camera> Camera_; /**Camera object for the scene*/
+
+
+};
 
 
 
 
+}; // Close Namespace State
 }; // Close Namespace Logger
 }; // Close Namespace Common
 }; // Close Namespace BG

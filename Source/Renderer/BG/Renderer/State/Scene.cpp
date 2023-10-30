@@ -1,5 +1,4 @@
-#include <BG/Renderer/Allocation.h>
-
+#include <BG/Renderer/State/Scene.h>
 
 
 
@@ -7,7 +6,6 @@
 namespace BG {
 namespace NES {
 namespace Renderer {
-
 
 
 

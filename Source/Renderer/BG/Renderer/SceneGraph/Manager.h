@@ -36,22 +36,14 @@
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <VkBootstrap.h>
-
-#include <SDL.h>
-#include <SDL_vulkan.h>
-
+#include <vsg/all.h>
+#include <vsgXchange/all.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
-#include <BG/Renderer/VulkanHelpers.h>
-#include <BG/Renderer/Shader/ShaderHelpers.h>
-#include <BG/Renderer/Shader/ShaderCompiler.h>
-#include <BG/Renderer/VulkanRenderer.h>
-#include <BG/Renderer/RenderData.h>
-#include <BG/Renderer/VulkanMemoryAllocator.h>
-
+#include <BG/Renderer/State/RenderData.h>
+#include <BG/Renderer/State/Scene.h>
 
 
 namespace BG {
@@ -69,10 +61,16 @@ private:
 
     BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
 
-    RenderData RenderData_; /**Instance of Render Data Struct. Stores All Data About The Renderer (Vulkan Handles, etc)*/
+    std::unique_ptr<State::RenderData> RenderData_; /**Instance of renderdata struct, stores vulkan scene graph state*/
+    std::unique_ptr<State::Scene>      Scene_;      /**Instance of scene struct, stores the geometry for this scene*/
 
-    std::unique_ptr<MemoryManager> MemoryManager_; /**Instance of our own wrapper for a memory manager*/
-    std::unique_ptr<Internal::ShaderCompiler> ShaderCompiler_; /**Instance of the multithreaded shader compiler*/
+    // todo:
+    // migrate vsg argparser to function here
+    // implement state structures for the rest of the code
+    // add access functions to allow us to read the sim and create a rendered version of it
+    // then work on shader functionality to recreate the TEM look
+    // also work on making something so we can slice the shapes and create a cross section of it
+    // (maybe geom shader?)
 
 
 public:
@@ -97,7 +95,34 @@ public:
      * These layers serve to provide debug information for the application developers.
      * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
     */
-    bool Initialize(bool _IsWindowed = false, bool _IsDebugging = true);
+    bool Initialize(int _NumArgs, char** _ArgValues);
+
+
+    /**
+     * @brief Initialization function that iniitalizes the Scene struct in the renderer.
+     * Will not build a scene with anything in it, just sets up a dumb empty scene.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool SetupScene();
+
+    /**
+     * @brief Sets up the viewport and other stuff associated with preparing to render.
+     * Helps to initialize the camera and other associated things.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool SetupViewer();
+
+
+
+
+
+
+
+
 
     /**
      * @brief Does what it sounds like, this draws a frame on the renderer.
@@ -107,36 +132,6 @@ public:
      * @return false 
      */
     bool DrawFrame();
-
-
-    /**
-     * @brief Return true or false if the renderer is ready to be used to start drawing things.
-     * Note that this should return false if Initialize has not been called yet.
-     * This should return true if Initialize has been called and succeeded. If not, something went terribly wrong...
-     * 
-     * @return true 
-     * @return false 
-     */
-    bool IsReady();
-
-    /**
-     * @brief Return true or false if the renderer has a window or not. Pretty self-explanitory.
-     * Note that this will always return false if Initialize has not yet been called.
-     * 
-     * @return true 
-     * @return false 
-     */
-    bool IsWindowed();
-
-    /**
-     * @brief Return true or false if the renderer is in debug mode or not.
-     * Note that this will default to true if Initialize has not yet been called.
-     * 
-     * @return true 
-     * @return false 
-     */
-    bool IsDebugging();
-
 
 
 };

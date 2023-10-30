@@ -134,6 +134,7 @@ target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
 
+    NESRenderer
     VersioningSystem
     CompileTimeStamp
     CompilePlatformInfo
@@ -151,6 +152,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
 
+    NESRenderer
     VersioningSystem
     CompileTimeStamp
     CompilePlatformInfo

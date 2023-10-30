@@ -10,7 +10,6 @@
     "gtest",
     "nlohmann-json",
     "rpclib",
-    "shaderc",
     "vulkan",
     "vk-bootstrap",
     "vsg",

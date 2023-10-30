@@ -3,9 +3,9 @@
 //=================================//
 
 /*
-    Description: This file contains various helper functions for managing shaders. This is intended to simplify the process of shader creation, usage, and initialization dramatically.
+    Description: This file contains the NES Rendering Manager. It is responsible for the underlying initialization and ownership of the Vulkan subsystem.
     Additional Notes: None
-    Date Created: 2023-10-19
+    Date Created: 2023-10-26
     Author(s): Thomas Liao
 
 
@@ -31,48 +31,50 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-
+#include <iostream>
+#include <assert.h>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <shaderc/shaderc.hpp>
-
+#include <vsg/all.h>
+#include <vsgXchange/all.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
 
 
 
+
 namespace BG {
 namespace NES {
 namespace Renderer {
-namespace Internal {
+namespace State {
+
 
 
 /**
- * @brief Internal helper struct, contains all needed work information to compile shader into bytecode.
+ * @brief Struct that contains the data which holds the state of the renderer.
+ * This includes things like the window and associated high level vulkan abstractions.
+ * It does NOT include things like the scene and as that is managed separately.
+ * 
  * 
  */
-struct ShaderCompileObject {
+struct RenderData {
 
-    // Internal Status Flags
-    bool ReadyToCompile_             = false; /**Indicates if the struct is fully populated and ready to compile*/
-    bool HasCompiled_                = false; /**Indicates if the shader has gone through the compiler*/
+    // Required Structs
+    vsg::ref_ptr<vsg::Options>      Options_;      /**Vulkan Scene Graph Options Configuration*/
+    vsg::ref_ptr<vsg::Viewer>       Viewer_;       /**Vulkan Scene Graph Viewer Object*/
 
-    // Input Data
-    bool Optimize_                   = false; /**Enable compiler optimizations or disable them*/
-    std::string GLSLSource_;                  /**Source string, contains the raw glsl code*/
-    std::string SourceName_;                  /**Name of the shader*/
-    shaderc_shader_kind ShaderType_;          /**Type of the shader, vertex, fragment, etc.*/
-
-    // Output Data
-    shaderc::SpvCompilationResult Result_;    /**End result of the compiled bytecode (SPIR-V)*/
-
+    // Optional Data For Windowing
+    vsg::ref_ptr<vsg::WindowTraits> WindowTraits_; /**If a window is enabled, this will be setup with windowing information.*/
+    vsg::ref_ptr<vsg::Window>       Window_;       /**Only initialized if a window is created, holds the vsg window state*/
 
 };
 
 
-}; // Close Namespace Internal
+
+
+}; // Close Namespace State
 }; // Close Namespace Logger
 }; // Close Namespace Common
 }; // Close Namespace BG
