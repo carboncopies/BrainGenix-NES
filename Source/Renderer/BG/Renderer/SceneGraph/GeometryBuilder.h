@@ -34,6 +34,10 @@
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #include <vsg/all.h>
 #include <vsgXchange/all.h>
 
