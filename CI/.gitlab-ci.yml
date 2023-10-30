@@ -33,7 +33,7 @@ include:
   - '/CI/Test/Ubuntu2204/CI.yml'
   # - '/CI/Test/Ubuntu2004/CI.yml'
   # - '/CI/Test/Debian11/CI.yml'
-  - '/CI/Test/Debian12/CI.yml'
+  - '/CI/Test/Debian12/CI.yml' 
 
 
   # Package Stage
