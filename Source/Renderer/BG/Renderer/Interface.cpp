@@ -83,11 +83,12 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
 
 
 
+    CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
 
     for (int i = -20; i < 20; i++) {
         for (int y = -20; y < 20; y++) {
-            CreateInfo.Position_ = vsg::vec3((float)i + 0.1f*i, float(y) + 0.1f*y, -1.1f);
-            CreateInfo.Rotation_ = vsg::vec3(8.0f*i, 8.0f*y, 0.0f);
+            CreateInfo.Position_ = vsg::vec3((float)i + 0.0f*i, float(y) + 0.0f*y, -1.3f);
+            // CreateInfo.Rotation_ = vsg::vec3(8.0f*i, 8.0f*y, 0.0f);
             AddBox(&CreateInfo);
         }
     }
