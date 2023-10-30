@@ -28,7 +28,7 @@ int main(int NumArguments, char** ArgumentValues) {
     
     // block forever while servers are running
     // while (true) {}
-
+    
     // draw a thousand frames
     for (unsigned int i = 0; i < 1000; i++) {
         RenderingInterface.DrawFrame();
