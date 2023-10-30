@@ -16,10 +16,11 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <BG/Common/Logger/Logger.h>
+#include <BG/Renderer/Interface.h>
 #include <Simulator/Structs/Simulation.h>
 
 
-#include <BG/Renderer/Interface.h>
 
 
 
@@ -37,7 +38,7 @@ namespace Simulator {
  * @return true 
  * @return false 
  */
-bool BuildMeshFromSimulation(BG::Common::Logger* _Logger, Renderer::Interface* _Renderer, Simulation* _Simulation);
+bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, Simulation* _Simulation);
 
 }; // Close Namespace Simulator
 }; // Close Namespace NES
