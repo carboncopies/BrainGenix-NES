@@ -123,6 +123,7 @@ bool Manager::SetupViewer() {
 
     RenderData_->Viewer_->addWindow(RenderData_->Window_);
 
+
     // compute the bounds of the scene graph to help position the camera
     vsg::ComputeBounds computeBounds;
     Scene_->Group_->accept(computeBounds);
@@ -132,38 +133,49 @@ bool Manager::SetupViewer() {
 
     // set up the camera
     auto lookAt = vsg::LookAt::create(centre+vsg::dvec3(0.0, -radius*3.5, 0.0), centre, vsg::dvec3(0.0, 0.0, 1.0));
-
     vsg::ref_ptr<vsg::ProjectionMatrix> perspective;
-    // if (vsg::ref_ptr<vsg::EllipsoidModel> ellipsoidModel(Scene_->Group_->getObject<vsg::EllipsoidModel>("EllipsoidModel")); ellipsoidModel)
-    // {
-    //     // EllipsoidPerspective is useful for whole earth databases where per frame management of the camera's near & far values is optimized
-    //     // to the current view relative to an ellipsoid model of the earth so that when near to the earth the near and far planes are pulled in close to the eye
-    //     // and when far away from the earth's surface the far plane is pushed out to ensure that it encompasses the horizon line, accounting for mountains over the horizon.
-    //     perspective = vsg::EllipsoidPerspective::create(lookAt, ellipsoidModel, 30.0, static_cast<double>(window->extent2D().width) / static_cast<double>(window->extent2D().height), nearFarRatio, horizonMountainHeight);
-    // }
-    // else
-    // {
     perspective = vsg::Perspective::create(30.0, static_cast<double>(RenderData_->Window_->extent2D().width) / static_cast<double>(RenderData_->Window_->extent2D().height), nearFarRatio*radius, radius * 4.5);
-    // }
+    Scene_->Camera_ = vsg::Camera::create(perspective, lookAt, vsg::ViewportState::create(RenderData_->Window_->extent2D()));
 
-    auto camera = vsg::Camera::create(perspective, lookAt, vsg::ViewportState::create(RenderData_->Window_->extent2D()));
 
+    // Split into event handler function (separate?) -------------------------------------------------------------------------------------
     // add close handler to respond to pressing the window's close window button and to pressing escape
     RenderData_->Viewer_->addEventHandler(vsg::CloseHandler::create(RenderData_->Viewer_));
-
     // add a trackball event handler to control the camera view using the mouse
-    RenderData_->Viewer_->addEventHandler(vsg::Trackball::create(camera));
+    RenderData_->Viewer_->addEventHandler(vsg::Trackball::create(Scene_->Camera_));
 
     // create a command graph to render the scene on the specified window
-    auto commandGraph = vsg::createCommandGraphForView(RenderData_->Window_, camera, Scene_->Group_);
+    auto commandGraph = vsg::createCommandGraphForView(RenderData_->Window_, Scene_->Camera_, Scene_->Group_);
     RenderData_->Viewer_->assignRecordAndSubmitTaskAndPresentation({commandGraph});
 
     // compile all the Vulkan objects and transfer data required to render the scene
     RenderData_->Viewer_->compile();
 
+
+
     return true;
 }
 
+// -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- 
+// TODO: Add support for dynamic scenes - (implement functionality such that users may modify the scene and it will be recompiled when requested)
+// - also add the other primitives - sphere, capsule, cylinder, etc.
+// - then implement the simulation to mesh converter in the VSDA section of the simulator
+// - fix documentation.
+// -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- 
+
+
+bool Manager::CompileScene() {
+    
+    // // create a command graph to render the scene on the specified window
+    // auto commandGraph = vsg::createCommandGraphForView(RenderData_->Window_, Scene_->Camera_, Scene_->Group_);
+    // RenderData_->Viewer_->assignRecordAndSubmitTaskAndPresentation({commandGraph});
+
+    // // compile all the Vulkan objects and transfer data required to render the scene
+    // RenderData_->Viewer_->compile();
+    
+
+    return true;
+}
 
 
 

@@ -51,6 +51,7 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
         return false;
     }
 
+
     Shaders::Phong CubeShader;
     CubeShader.DiffuseColor_  = vsg::vec4(0.2f, 0.8f, 0.2f, 1.0f);
     CubeShader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
@@ -64,7 +65,13 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
     CreateInfo.Shader_ = &CubeShader;
 
     AddBox(&CreateInfo);
+
     return RendererManager_->SetupViewer();
+
+
+
+    RendererManager_->CompileScene();
+
 }
 
 bool Interface::DrawFrame() {

@@ -105,6 +105,17 @@ public:
      */
     bool SetupScene();
 
+
+    /**
+     * @brief Call this after changing the scene - updates the command graph and other attributes so it's ready to draw.
+     * Will return true on success, false otherwise.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool CompileScene();
+
+
     /**
      * @brief Sets up the viewport and other stuff associated with preparing to render.
      * Helps to initialize the camera and other associated things.
