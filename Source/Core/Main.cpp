@@ -1,4 +1,3 @@
-#include <iostream>
 #include <Main.h>
 
 
@@ -29,9 +28,6 @@ int main(int NumArguments, char** ArgumentValues) {
     
     // block forever while servers are running
     // while (true) {}
-
-    // Testing. Remove this line later,
-    std::cout << "Hello! This is BrainGenix-NES!\n";
     
     // draw a thousand frames
     for (unsigned int i = 0; i < 1000; i++) {
