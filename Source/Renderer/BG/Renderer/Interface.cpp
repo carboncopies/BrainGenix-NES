@@ -58,7 +58,7 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
     CubeShader.Type_ = Shaders::SHADER_PHONG;
     Primitive::Cube CreateInfo;
     CreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 0.0f);
-    CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
+    CreateInfo.Rotation_ = vsg::vec3(45.0f, 0.0f, 0.0f);
     CreateInfo.Scale_    = vsg::vec3(1.0f, 1.0f, 1.0f);
     CreateInfo.Shader_ = &CubeShader;
     AddBox(&CreateInfo);
@@ -68,22 +68,23 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
 
 
     CreateInfo.Position_ = vsg::vec3(1.1f, 0.0f, 0.0f);
+    CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
     CubeShader.DiffuseColor_  = vsg::vec4(0.2f, 0.2f, 0.8f, 1.0f);
     CubeShader.SpecularColor_ = vsg::vec4(0.1f, 1.f, 0.1f, 1.0f);
     AddBox(&CreateInfo);
 
-    CreateInfo.Position_ = vsg::vec3(-1.1f, 0.0f, 0.0f);
-    CubeShader.DiffuseColor_  = vsg::vec4(0.8f, 0.2f, 0.2f, 1.0f);
-    CubeShader.SpecularColor_ = vsg::vec4(0.1f, 0.1f, 1.0f, 1.0f);
-    AddBox(&CreateInfo);
+    // CreateInfo.Position_ = vsg::vec3(-1.1f, 0.0f, 0.0f);
+    // CubeShader.DiffuseColor_  = vsg::vec4(0.8f, 0.2f, 0.2f, 1.0f);
+    // CubeShader.SpecularColor_ = vsg::vec4(0.1f, 0.1f, 1.0f, 1.0f);
+    // AddBox(&CreateInfo);
 
 
-    for (int i = -10; i < 10; i++) {
-        for (int y = -10; y < 10; y++) {
-            CreateInfo.Position_ = vsg::vec3((float)i + 0.1f*i, float(y) + 0.1f*y, 0.0f);
-            AddBox(&CreateInfo);
-        }
-    }
+    // for (int i = -10; i < 10; i++) {
+    //     for (int y = -10; y < 10; y++) {
+    //         CreateInfo.Position_ = vsg::vec3((float)i + 0.1f*i, float(y) + 0.1f*y, 0.0f);
+    //         AddBox(&CreateInfo);
+    //     }
+    // }
 
 
     return RendererManager_->CompileScene();

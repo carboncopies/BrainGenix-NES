@@ -34,6 +34,9 @@ bool GeometryBuilder::CreateCube(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cub
     Info.dy.set(0.0f, 1.0f, 0.0f); // does something
     Info.dz.set(0.0f, 0.0f, 1.0f); // to rotation?
     Info.position = _CubeCreateInfo->Position_;
+    Info.transform = vsg::rotate(vsg::radians(_CubeCreateInfo->Rotation_.z), vsg::vec3(0.f, 0.f, 1.f));
+    Info.transform = vsg::rotate(vsg::radians(_CubeCreateInfo->Rotation_.y), vsg::vec3(0.f, 1.f, 0.f));
+    Info.transform = vsg::rotate(vsg::radians(_CubeCreateInfo->Rotation_.x), vsg::vec3(1.f, 0.f, 0.f));
     std::string PositionString = std::to_string(Info.position.x) + "X " + std::to_string(Info.position.y) + "Y " + std::to_string(Info.position.y) + "Z";
     Logger_->Log(std::string("Creating Cube At ") + PositionString, 0);
 
