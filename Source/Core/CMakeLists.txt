@@ -90,6 +90,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.cpp
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedBrainRegion.cpp
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedBrainRegion.h
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.h
 
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h
@@ -106,6 +108,7 @@ set(UNITTEST_SOURCES
   
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.test.cpp
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.test.cpp
+  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.test.cpp
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.test.cpp
 
   ${SRC_DIR}/Core/Simulator/Receptors/NMDAReceptor.test.cpp
