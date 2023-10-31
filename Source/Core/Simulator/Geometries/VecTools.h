@@ -3,9 +3,8 @@
 //=================================================================//
 
 /*
-    Description: This file provides utilities for creating and interacting with 3D vectors.
-    Additional Notes: None
-    Date Created: 2023-10-09
+    Description: This file provides utilities for creating and interacting with
+   3D vectors. Additional Notes: None Date Created: 2023-10-09
 */
 
 #pragma once
@@ -15,13 +14,13 @@ namespace NES {
 namespace Simulator {
 namespace Geometries {
 
-
 /**
- * @brief This struct defines a 3D object that will be used to represent Cartesian coordinates.
- * 
+ * @brief This struct defines a 3D object that will be used to represent
+ * Cartesian coordinates.
+ *
  */
 struct Vec3D {
-    
+
     float x_um{}; //! X-coordinate in micrometers.
     float y_um{}; //! Y-coordinate in micrometers.
     float z_um{}; //! Z-coordinate in micrometers.
@@ -32,21 +31,34 @@ struct Vec3D {
 
     //! Operators
     //! Vector + Vector
-    Vec3D operator+(const Vec3D& other) const;
+    Vec3D operator+(const Vec3D &other) const;
     //! Vector - Vector
-    Vec3D operator-(const Vec3D& other) const;
+    Vec3D operator-(const Vec3D &other) const;
+    //! Vector * Vector (Elementwise)
+    Vec3D operator*(const Vec3D other) const;
     //! scalar * Vector
     Vec3D operator*(const float other) const;
-    //! 1/scalar * Vector
+    //! Vector / scalar
     Vec3D operator/(const float other) const;
     //! Vector == Vector
-    bool operator==(const Vec3D& other) const;
-    
+    bool operator==(const Vec3D &other) const;
+    //! Vector != Vector
+    bool operator!=(const Vec3D &other) const;
+
     //! Distance between two vectors
-    float Distance(const Vec3D& other) const; 
+    float Distance(const Vec3D &other) const;
+
+    //! Dot product of two vectors
+    float Dot(const Vec3D &other) const;
+
+    //! Maximum coordinate value
+    float Max() const;
+
+    //! Minimum coordinate value
+    float Min() const;
 };
 
-}; // Close Namespace Geometries
-}; // Close Namespace Simulator
-}; // Close Namespace NES
-}; // Close Namespace BG
+}; // namespace Geometries
+}; // namespace Simulator
+}; // namespace NES
+}; // namespace BG
