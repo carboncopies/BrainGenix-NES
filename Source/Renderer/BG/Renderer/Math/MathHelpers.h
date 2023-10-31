@@ -80,7 +80,20 @@ vsg::vec3 Vec3_GLMToVSG(glm::vec3 _Vector);
 vsg::mat4 Mat4_GLMToVSG(glm::mat4 _Matrix);
 
 
-}; // Close Namespace State
+
+/**
+ * @brief Helper util to create a transformation matrix from the given position, rotation (euler angles), and scale.
+ * 
+ * @param _Position World-space position
+ * @param _Rotation Rotation in degrees (Euler angles)
+ * @param _Scale Scale, relative to base size of object
+ * @return glm::mat4 Constructed transformation matrix
+ */
+glm::mat4 BuildTransformMatrix(glm::vec3 _Position, glm::vec3 _Rotation, glm::vec3 _Scale);
+
+
+
+}; // Close Namespace Math
 }; // Close Namespace Logger
 }; // Close Namespace Common
 }; // Close Namespace BG

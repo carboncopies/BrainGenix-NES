@@ -6,7 +6,7 @@
 namespace BG {
 namespace NES {
 namespace Renderer {
-
+namespace Math {
 
 glm::vec3 Vec3_VSGToGLM(vsg::vec3 _Vector) {
     return glm::vec3(_Vector.x, _Vector.y, _Vector.z);
@@ -31,6 +31,7 @@ vsg::mat4 Mat4_GLMToVSG(glm::mat4 _Matrix) {
     return Output;
 }
 
+}; // Close Namespace Math
 }; // Close Namespace Logger
 }; // Close Namespace Common
 }; // Close Namespace BG
