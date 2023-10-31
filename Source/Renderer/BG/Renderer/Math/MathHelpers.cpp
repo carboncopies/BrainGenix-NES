@@ -12,6 +12,10 @@ glm::vec3 Vec3_VSGToGLM(vsg::vec3 _Vector) {
     return glm::vec3(_Vector.x, _Vector.y, _Vector.z);
 }
 
+vsg::vec3 Vec3_GLMToVSG(glm::vec3 _Vector) {
+    return vsg::vec3(_Vector.x, _Vector.y, _Vector.z);
+}
+
 
 }; // Close Namespace Logger
 }; // Close Namespace Common
