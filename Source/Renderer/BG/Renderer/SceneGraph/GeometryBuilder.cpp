@@ -51,11 +51,11 @@ bool GeometryBuilder::CreateCube(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cub
 
 
     std::string PositionString = std::to_string(Position.x) + "X " + std::to_string(Position.y) + "Y " + std::to_string(Position.z) + "Z";
-    Logger_->Log(std::string("Creating Cube At ") + PositionString, 0);
+    // Logger_->Log(std::string("Creating Cube At ") + PositionString, 0);
 
 
     // TODO: Handle rotation as well as scale
-    Logger_->Log("TODO: Implement Rotation/Scale for CubeCreate", 8);
+    // Logger_->Log("TODO: Implement Rotation/Scale for CubeCreate", 8);
 
 
 

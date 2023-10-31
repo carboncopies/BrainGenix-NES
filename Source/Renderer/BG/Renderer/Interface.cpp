@@ -87,9 +87,12 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
 
     for (int i = -20; i < 20; i++) {
         for (int y = -20; y < 20; y++) {
-            CreateInfo.Position_ = vsg::vec3((float)i + 0.0f*i, float(y) + 0.0f*y, -1.3f);
-            // CreateInfo.Rotation_ = vsg::vec3(8.0f*i, 8.0f*y, 0.0f);
-            AddBox(&CreateInfo);
+            for (int z = -20; z < 20; z++) {
+                CubeShader.DiffuseColor_  = vsg::vec4(0.05f*abs(i), 0.05f*abs(y), 0.05f*abs(z), 1.0f);
+                CreateInfo.Position_ = vsg::vec3(float(i) + 0.4f*i, float(y) + 0.4f*y, float(z) + 0.4f*z);
+                CreateInfo.Rotation_ = vsg::vec3(8.0f*i, 8.0f*y, 8.0f*z);
+                AddBox(&CreateInfo);
+            }
         }
     }
 
