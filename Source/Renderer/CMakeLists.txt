@@ -15,6 +15,8 @@ add_library(NESRenderer
 
     "BG/Renderer/SceneGraph/Primitive/Cube.h"
     "BG/Renderer/SceneGraph/Primitive/Cube.cpp"
+    "BG/Renderer/SceneGraph/Primitive/Sphere.h"
+    "BG/Renderer/SceneGraph/Primitive/Sphere.cpp"
 
     "BG/Renderer/SceneGraph/Shader/Shader.h"
     "BG/Renderer/SceneGraph/Shader/Shader.cpp"

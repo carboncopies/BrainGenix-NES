@@ -45,6 +45,7 @@
 #include <BG/Common/Logger/Logger.h>
 
 #include <BG/Renderer/SceneGraph/Primitive/Cube.h>
+#include <BG/Renderer/SceneGraph/Primitive/Sphere.h>
 #include <BG/Renderer/SceneGraph/Shader/Shader.h>
 #include <BG/Renderer/SceneGraph/Shader/Phong.h>
 #include <BG/Renderer/State/RenderData.h>
@@ -75,6 +76,8 @@ private:
     vsg::ref_ptr<vsg::Builder> Builder_; /**Instance of the vsg builder class. Used to create 3d primitives.*/
 
 
+    // bool ShaderHandler()
+
 
 public:
 
@@ -90,7 +93,7 @@ public:
 
 
     /**
-     * @brief Adds a cube to the given scene, with the information defined in the cubecreateinfo struct.
+     * @brief Adds a cube to the given scene, with the information defined in the Cube struct.
      * Returns true on success, false otherwise.
      * 
      * @param _Scene VSG Group instance wrapped by vsg::ref_ptr
@@ -99,7 +102,20 @@ public:
      * @return false 
      */
     bool CreateCube(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cube* _CubeCreateInfo);
-    
+
+
+
+    /**
+     * @brief Adds a sphere to the given scene, with the information defined in the Sphere struct.
+     * Returns true on success, false otherwise.
+     * 
+     * @param _Scene VSG Group instance wrapped by vsg::ref_ptr
+     * @param _SphereCreateInfo Pointer to Sphere create information.
+     * @return true 
+     * @return false 
+     */
+    bool CreateSphere(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Sphere* _SphereCreateInfo);
+      
 
 };
 
