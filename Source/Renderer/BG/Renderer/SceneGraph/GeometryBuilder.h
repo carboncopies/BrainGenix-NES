@@ -45,12 +45,11 @@
 #include <BG/Common/Logger/Logger.h>
 
 #include <BG/Renderer/SceneGraph/Primitive/Cube.h>
-
 #include <BG/Renderer/SceneGraph/Shader/Shader.h>
 #include <BG/Renderer/SceneGraph/Shader/Phong.h>
-
 #include <BG/Renderer/State/RenderData.h>
 #include <BG/Renderer/State/Scene.h>
+#include <BG/Renderer/Math/MathHelpers.h>
 
 
 namespace BG {

@@ -44,18 +44,16 @@ bool GeometryBuilder::CreateCube(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cub
     LRSMat = glm::scale(LRSMat, Scale);
 
     // Convert GLM Mat4 Transformation Matrix To VSG Mat4
-    vsg::mat4 TransformMatrix;
-    float* FloatArr = (float*)glm::value_ptr(LRSMat);
-    TransformMatrix.set(FloatArr[0], FloatArr[1], FloatArr[2], FloatArr[3], FloatArr[4], FloatArr[5], FloatArr[6], FloatArr[7], FloatArr[8], FloatArr[9], FloatArr[10], FloatArr[11], FloatArr[12], FloatArr[13], FloatArr[14], FloatArr[15]);
-    Info.transform = TransformMatrix;
+    // vsg::mat4 TransformMatrix;
+    // float* FloatArr = (float*)glm::value_ptr(LRSMat);
+    // TransformMatrix.set(FloatArr[0], FloatArr[1], FloatArr[2], FloatArr[3], FloatArr[4], FloatArr[5], FloatArr[6], FloatArr[7], FloatArr[8], FloatArr[9], FloatArr[10], FloatArr[11], FloatArr[12], FloatArr[13], FloatArr[14], FloatArr[15]);
+    // Info.transform = TransformMatrix;
+
+    Info.transform = Math::Mat4_GLMToVSG(LRSMat);
 
 
     std::string PositionString = std::to_string(Position.x) + "X " + std::to_string(Position.y) + "Y " + std::to_string(Position.z) + "Z";
-    // Logger_->Log(std::string("Creating Cube At ") + PositionString, 0);
-
-
-    // TODO: Handle rotation as well as scale
-    // Logger_->Log("TODO: Implement Rotation/Scale for CubeCreate", 8);
+    Logger_->Log(std::string("Creating Cube At ") + PositionString, 0);
 
 
 
