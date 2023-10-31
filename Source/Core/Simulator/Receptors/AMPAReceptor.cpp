@@ -1,5 +1,3 @@
-#include <cstddef>
-
 #include <Simulator/Receptors/AMPAReceptor.h>
 
 namespace BG {

@@ -1,7 +1,4 @@
 
-#include <cassert>
-#include <cmath>
-
 #include <Simulator/Geometries/VecTools.h>
 
 namespace BG {

@@ -3,15 +3,21 @@
 //=================================================================//
 
 /*
-    Description: This file provides functions for creating some fundamental signals using basic mathematical functions.
-    Additional Notes: None
-    Date Created: 2023-06-28
+    Description: This file provides functions for creating some fundamental
+   signals using basic mathematical functions.
+
+   Additional Notes: None
+
+   Date
+   Created: 2023-06-28
 */
 
 #pragma once
 
-#include <string>
+#include <algorithm>
+#include <cassert>
 #include <cmath>
+#include <string>
 #include <vector>
 
 namespace BG {
@@ -19,12 +25,14 @@ namespace NES {
 namespace Simulator {
 namespace SignalFunctions {
 
-//! Double exponential expression used in calculation of post-synaptic potential contributions.
+//! Double exponential expression used in calculation of post-synaptic potential
+//! contributions.
 float DoubleExponentExpr(float amp, float tauRise, float tauDecay, float tDiff);
 //! One-dimensional convolution.
-std::vector<float> Convolve1D(std::vector<float> signal, std::vector<float> kernel);
+std::vector<float> Convolve1D(std::vector<float> signal,
+                              std::vector<float> kernel);
 
-}; // Close Namespace 
-}; // Close Namespace Simulator
-}; // Close Namespace NES
-}; // Close Namespace BG
+}; // namespace SignalFunctions
+}; // namespace Simulator
+}; // namespace NES
+}; // namespace BG

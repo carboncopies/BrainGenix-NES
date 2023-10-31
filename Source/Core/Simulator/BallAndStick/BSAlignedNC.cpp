@@ -1,8 +1,4 @@
-#include <cassert>
-#include <stdexcept>
-
 #include <Simulator/BallAndStick/BSAlignedNC.h>
-#include <Simulator/BallAndStick/BSMorphology.h>
 
 namespace BG {
 namespace NES {

@@ -11,11 +11,14 @@
 
 #pragma once
 
+#include <cassert>
 #include <memory>
+#include <stdexcept>
 #include <string>
 #include <unordered_map>
 #include <vector>
 
+#include <Simulator/BallAndStick/BSMorphology.h>
 #include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/Geometries/Box.h>
 #include <Simulator/Geometries/VecTools.h>

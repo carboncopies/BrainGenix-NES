@@ -1,6 +1,3 @@
-#include <cassert>
-
-#include <Simulator/BallAndStick/BSAlignedNC.h>
 #include <Simulator/Structs/Simulation.h>
 
 namespace BG {

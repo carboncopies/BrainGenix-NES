@@ -1,4 +1,3 @@
-#include <chrono>
 #include <Simulator/Distributions/Distribution.h>
 
 namespace BG {
@@ -10,19 +9,19 @@ namespace Distributions {
 Distribution::Distribution() {
     uint32_t seed;
     std::random_device rd;
-    if (rd.entropy()) 
+    if (rd.entropy())
         seed = rd();
     else
-        seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
+        seed = std::chrono::high_resolution_clock::now()
+                   .time_since_epoch()
+                   .count();
     this->_Gen.seed(seed);
 };
 
 //! Sets the random number generator seed.
-void Distribution::SetSeed(uint32_t _Seed) {
-    this->_Gen.seed(_Seed);
-};
+void Distribution::SetSeed(uint32_t _Seed) { this->_Gen.seed(_Seed); };
 
-}; // Close Namespace Distributions
-}; // Close Namespace Simulator
-}; // Close Namespace NES
-}; // Close Namespace BG
+}; // namespace Distributions
+}; // namespace Simulator
+}; // namespace NES
+}; // namespace BG

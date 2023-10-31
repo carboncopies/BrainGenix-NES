@@ -11,17 +11,21 @@
 
 #pragma once
 
+#include <algorithm>
+#include <cassert>
 #include <memory>
 #include <tuple>
 #include <unordered_map>
 #include <vector>
 
 #include <Simulator/Distributions/Distribution.h>
+#include <Simulator/Distributions/TruncNorm.h>
 #include <Simulator/Geometries/Cylinder.h>
 #include <Simulator/Geometries/Geometry.h>
 #include <Simulator/Geometries/Sphere.h>
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/Neuron.h>
+#include <Simulator/Structs/SignalFunctions.h>
 
 //! DtAct_ms to return when there has not been any spike.
 #define _NO_SPIKE_DT_mS -1.0

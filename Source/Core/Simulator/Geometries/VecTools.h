@@ -9,6 +9,9 @@
 
 #pragma once
 
+#include <cassert>
+#include <cmath>
+
 namespace BG {
 namespace NES {
 namespace Simulator {

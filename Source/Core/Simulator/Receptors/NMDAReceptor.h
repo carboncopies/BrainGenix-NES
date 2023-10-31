@@ -10,6 +10,8 @@
 
 #pragma once
 
+#include <cmath>
+#include <stdexcept>
 #include <vector>
 
 #include <Simulator/Receptors/Receptor.h>
