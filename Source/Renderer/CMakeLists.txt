@@ -21,6 +21,9 @@ add_library(NESRenderer
     "BG/Renderer/SceneGraph/Shader/Phong.h"
     "BG/Renderer/SceneGraph/Shader/Phong.cpp"
 
+    "BG/Renderer/Math/MathHelpers.h"
+    "BG/Renderer/Math/MathHelpers.cpp"
+
 )
 
 target_link_libraries(NESRenderer

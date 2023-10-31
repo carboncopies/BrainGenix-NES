@@ -71,6 +71,14 @@ glm::vec3 Vec3_VSGToGLM(vsg::vec3 _Vector);
  */
 vsg::vec3 Vec3_GLMToVSG(glm::vec3 _Vector);
 
+/**
+ * @brief Converts glm mat4 to vsg mat4.
+ * 
+ * @param _Matrix Source GLM Matrix
+ * @return vsg::mat4 Destination VSG Matrix
+ */
+vsg::mat4 Mat4_GLMToVSG(glm::mat4 _Matrix);
+
 
 }; // Close Namespace State
 }; // Close Namespace Logger
