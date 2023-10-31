@@ -21,7 +21,31 @@ GeometryBuilder::~GeometryBuilder() {
     assert(Logger_ != nullptr);
 }
 
+bool GeometryBuilder::ShaderHandler(Shaders::Shader* _Shader) {
+    assert(_Shader != nullptr);
 
+    // Setup Shader (maybe make this it's own function?)
+    vsg::ref_ptr<vsg::Options> Options = vsg::Options::create();
+
+    if (_Shader->Type_ == Shaders::SHADER_PHONG) {
+        Builder_->shaderSet = vsg::createPhongShaderSet(Options);
+        vsg::UniformBinding& MaterialBinding = Builder_->shaderSet->getUniformBinding("material");
+        vsg::ref_ptr<vsg::PhongMaterialValue> Material = vsg::PhongMaterialValue::create();
+
+        Shaders::Phong* ShaderInfo = (Shaders::Phong*)_Shader; // If this fails and explodes, someone set the Shader.Type_ enum wrong!
+
+        Material->value().diffuse = ShaderInfo->DiffuseColor_;
+        Material->value().specular = ShaderInfo->SpecularColor_;
+
+        MaterialBinding.data = Material;
+        return true;
+    } else {
+        // No shader was set, log error and return false
+        Logger_->Log("Shader Was Not Specified. Please Specify A Shader Type Prior To Calling Create", 8);
+        return false;
+    }
+
+}
 
 bool GeometryBuilder::CreateCube(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cube* _CubeCreateInfo) {
     assert(_CubeCreateInfo != nullptr && "_CubeCreateInfo is a nullptr");
@@ -36,29 +60,9 @@ bool GeometryBuilder::CreateCube(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cub
     // Setup State Information
     vsg::StateInfo StateInfo;
     StateInfo.lighting = true;
-
-
-    // Setup Shader (maybe make this it's own function?)
-    vsg::ref_ptr<vsg::Options> Options = vsg::Options::create();
-
-    if (_CubeCreateInfo->Shader_->Type_ == Shaders::SHADER_PHONG) {
-        Builder_->shaderSet = vsg::createPhongShaderSet(Options);
-        vsg::UniformBinding& MaterialBinding = Builder_->shaderSet->getUniformBinding("material");
-        vsg::ref_ptr<vsg::PhongMaterialValue> Material = vsg::PhongMaterialValue::create();
-
-        Shaders::Phong* ShaderInfo = (Shaders::Phong*)_CubeCreateInfo->Shader_; // If this fails and explodes, someone set the Shader.Type_ enum wrong!
-
-        Material->value().diffuse = ShaderInfo->DiffuseColor_;
-        Material->value().specular = ShaderInfo->SpecularColor_;
-
-        MaterialBinding.data = Material;
-
-    } else {
-        // No shader was set, log error and return false
-        Logger_->Log("Shader Was Not Specified. Please Specify A Shader Type Prior To Calling Create", 8);
+    if (!ShaderHandler(_CubeCreateInfo->Shader_)) {
         return false;
     }
-
     
     // Add Primitive To Scene Provided
     _Scene->addChild(Builder_->createBox(Info, StateInfo));
@@ -85,32 +89,13 @@ bool GeometryBuilder::CreateSphere(vsg::ref_ptr<vsg::Group> _Scene, Primitive::S
     // Setup State Information
     vsg::StateInfo StateInfo;
     StateInfo.lighting = true;
-
-
-    // Setup Shader (maybe make this it's own function?)
-    vsg::ref_ptr<vsg::Options> Options = vsg::Options::create();
-
-    if (_SphereCreateInfo->Shader_->Type_ == Shaders::SHADER_PHONG) {
-        Builder_->shaderSet = vsg::createPhongShaderSet(Options);
-        vsg::UniformBinding& MaterialBinding = Builder_->shaderSet->getUniformBinding("material");
-        vsg::ref_ptr<vsg::PhongMaterialValue> Material = vsg::PhongMaterialValue::create();
-
-        Shaders::Phong* ShaderInfo = (Shaders::Phong*)_SphereCreateInfo->Shader_; // If this fails and explodes, someone set the Shader.Type_ enum wrong!
-
-        Material->value().diffuse = ShaderInfo->DiffuseColor_;
-        Material->value().specular = ShaderInfo->SpecularColor_;
-
-        MaterialBinding.data = Material;
-
-    } else {
-        // No shader was set, log error and return false
-        Logger_->Log("Shader Was Not Specified. Please Specify A Shader Type Prior To Calling Create", 8);
+    if (!ShaderHandler(_SphereCreateInfo->Shader_)) {
         return false;
     }
 
     
     // Add Primitive To Scene Provided
-    _Scene->addChild(Builder_->createBox(Info, StateInfo));
+    _Scene->addChild(Builder_->createSphere(Info, StateInfo));
 
     return true;
 }

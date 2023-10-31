@@ -84,20 +84,29 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
     AddBox(&CreateInfo);
 
 
+    Shaders::Phong SphereShader;
+    SphereShader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
+    SphereShader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
+    SphereShader.Type_ = Shaders::SHADER_PHONG;
+    Primitive::Sphere SphereCreateInfo;
+    SphereCreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 2.0f);
+    SphereCreateInfo.Radius_   = 1.0f;
+    SphereCreateInfo.Shader_ = &CubeShader;
+    AddSphere(&SphereCreateInfo);
 
 
     CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
 
-    for (int i = -20; i < 20; i++) {
-        for (int y = -20; y < 20; y++) {
-            for (int z = -20; z < 20; z++) {
-                CubeShader.DiffuseColor_  = vsg::vec4(0.05f*abs(i), 0.05f*abs(y), 0.05f*abs(z), 1.0f);
-                CreateInfo.Position_ = vsg::vec3(float(i) + 0.4f*i, float(y) + 0.4f*y, float(z) + 0.4f*z);
-                CreateInfo.Rotation_ = vsg::vec3(8.0f*i, 8.0f*y, 8.0f*z);
-                AddBox(&CreateInfo);
-            }
-        }
-    }
+    // for (int i = -20; i < 20; i++) {
+    //     for (int y = -20; y < 20; y++) {
+    //         for (int z = -20; z < 20; z++) {
+    //             CubeShader.DiffuseColor_  = vsg::vec4(0.05f*abs(i), 0.05f*abs(y), 0.05f*abs(z), 1.0f);
+    //             CreateInfo.Position_ = vsg::vec3(float(i) + 0.4f*i, float(y) + 0.4f*y, float(z) + 0.4f*z);
+    //             CreateInfo.Rotation_ = vsg::vec3(8.0f*i, 8.0f*y, 8.0f*z);
+    //             AddBox(&CreateInfo);
+    //         }
+    //     }
+    // }
 
     RendererManager_->SetupViewer();
 
@@ -116,6 +125,11 @@ bool Interface::AddBox(Primitive::Cube* _CreateInfo) {
     return GeometryBuilder_->CreateCube(RendererManager_->GetScene(), _CreateInfo);
 }
 
+bool Interface::AddSphere(Primitive::Sphere* _CreateInfo) {
+    assert(_CreateInfo != nullptr);
+    return GeometryBuilder_->CreateSphere(RendererManager_->GetScene(), _CreateInfo);
+
+}
 
 
 }; // Close Namespace Logger

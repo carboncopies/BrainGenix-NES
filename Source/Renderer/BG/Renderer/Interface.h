@@ -120,6 +120,16 @@ public:
      */
     bool AddBox(Primitive::Cube* _CreateInfo);
 
+    /**
+     * @brief Creates a sphere with the given parameters to the current scene graph.
+     * Returns true on success, false otherwise.
+     * 
+     * @param _CreateInfo Instance of the cube create info struct - fully populated with the right info.
+     * @return true 
+     * @return false 
+     */
+    bool AddSphere(Primitive::Sphere* _CreateInfo);
+
 };
 
 

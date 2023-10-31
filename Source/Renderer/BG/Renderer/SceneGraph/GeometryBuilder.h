@@ -76,7 +76,14 @@ private:
     vsg::ref_ptr<vsg::Builder> Builder_; /**Instance of the vsg builder class. Used to create 3d primitives.*/
 
 
-    // bool ShaderHandler()
+    /**
+     * @brief Sets up the builder with the right shader according to the struct pointer passed in.
+     * 
+     * @param _Shader Pointer to shader struct instance.
+     * @return true 
+     * @return false 
+     */
+    bool ShaderHandler(Shaders::Shader* _Shader);
 
 
 public:
