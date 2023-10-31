@@ -90,6 +90,7 @@ vsg::mat4 Mat4_GLMToVSG(glm::mat4 _Matrix);
  * @return glm::mat4 Constructed transformation matrix
  */
 glm::mat4 BuildTransformMatrix(glm::vec3 _Position, glm::vec3 _Rotation, glm::vec3 _Scale);
+vsg::mat4 BuildTransformMatrix(vsg::vec3 _Position, vsg::vec3 _Rotation, vsg::vec3 _Scale);
 
 
 
