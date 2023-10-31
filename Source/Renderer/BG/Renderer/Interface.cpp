@@ -67,16 +67,19 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
 
     CreateInfo.Position_ = vsg::vec3(-1.1f, 0.0f, 0.0f);
     CreateInfo.Rotation_ = vsg::vec3(45.0f, 0.0f, 0.0f);
+    CreateInfo.Scale_    = vsg::vec3(2.0f, 1.0f, 1.0f);
     CubeShader.DiffuseColor_  = vsg::vec4(0.8f, 0.2f, 0.2f, 1.0f);
     AddBox(&CreateInfo);
 
     CreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 0.0f);
     CreateInfo.Rotation_ = vsg::vec3(0.0f, 45.0f, 0.0f);
+    CreateInfo.Scale_    = vsg::vec3(1.0f, 2.0f, 1.0f);
     CubeShader.DiffuseColor_  = vsg::vec4(0.2f, 0.8f, 0.2f, 1.0f);
     AddBox(&CreateInfo);
 
     CreateInfo.Position_ = vsg::vec3(1.1f, 0.0f, 0.0f);
     CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 45.0f);
+    CreateInfo.Scale_    = vsg::vec3(1.0f, 1.0f, 2.0f);
     CubeShader.DiffuseColor_  = vsg::vec4(0.2f, 0.2f, 0.8f, 1.0f);
     AddBox(&CreateInfo);
 
@@ -85,16 +88,16 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
 
     CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
 
-    // for (int i = -20; i < 20; i++) {
-    //     for (int y = -20; y < 20; y++) {
-    //         for (int z = -20; z < 20; z++) {
-    //             CubeShader.DiffuseColor_  = vsg::vec4(0.05f*abs(i), 0.05f*abs(y), 0.05f*abs(z), 1.0f);
-    //             CreateInfo.Position_ = vsg::vec3(float(i) + 0.4f*i, float(y) + 0.4f*y, float(z) + 0.4f*z);
-    //             CreateInfo.Rotation_ = vsg::vec3(8.0f*i, 8.0f*y, 8.0f*z);
-    //             AddBox(&CreateInfo);
-    //         }
-    //     }
-    // }
+    for (int i = -20; i < 20; i++) {
+        for (int y = -20; y < 20; y++) {
+            for (int z = -20; z < 20; z++) {
+                CubeShader.DiffuseColor_  = vsg::vec4(0.05f*abs(i), 0.05f*abs(y), 0.05f*abs(z), 1.0f);
+                CreateInfo.Position_ = vsg::vec3(float(i) + 0.4f*i, float(y) + 0.4f*y, float(z) + 0.4f*z);
+                CreateInfo.Rotation_ = vsg::vec3(8.0f*i, 8.0f*y, 8.0f*z);
+                AddBox(&CreateInfo);
+            }
+        }
+    }
 
     RendererManager_->SetupViewer();
 
