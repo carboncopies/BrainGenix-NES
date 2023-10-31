@@ -10,6 +10,7 @@
 
 #pragma once
 
+#include <cassert>
 #include <vector>
 
 // Internal Libraries (BG convention: use <> instead of "")

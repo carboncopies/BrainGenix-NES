@@ -12,6 +12,7 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <atomic>
+#include <cassert>
 #include <memory>
 #include <stdexcept>
 #include <string>
@@ -22,6 +23,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/BallAndStick/BSAlignedNC.h>
 #include <Simulator/BrainRegion/BrainRegion.h>
 #include <Simulator/Geometries/Geometry.h>
 #include <Simulator/Geometries/GeometryCollection.h>

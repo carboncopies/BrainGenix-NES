@@ -1,6 +1,3 @@
-#include <cmath>
-#include <stdexcept>
-
 #include <Simulator/Receptors/NMDAReceptor.h>
 
 namespace BG {

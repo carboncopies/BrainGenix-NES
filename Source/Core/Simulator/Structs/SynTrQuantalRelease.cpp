@@ -1,5 +1,3 @@
-#include <cassert>
-
 #include <Simulator/Structs/SynTrQuantalRelease.h>
 
 namespace BG {

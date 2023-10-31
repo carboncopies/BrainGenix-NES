@@ -1,10 +1,4 @@
-#include <algorithm>
-#include <cassert>
-#include <memory>
-
 #include <Simulator/BallAndStick/BSNeuron.h>
-#include <Simulator/Distributions/TruncNorm.h>
-#include <Simulator/Structs/SignalFunctions.h>
 
 namespace BG {
 namespace NES {

@@ -10,7 +10,12 @@
 
 #pragma once
 
+#include <algorithm>
+#include <cassert>
+#include <cmath>
 #include <cstddef>
+#include <iostream>
+#include <stdexcept>
 #include <vector>
 
 //! Maximum number of iterations for finding a_norm
