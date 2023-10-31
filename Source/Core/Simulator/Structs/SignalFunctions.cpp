@@ -1,7 +1,3 @@
-
-#include <algorithm>
-#include <cassert>
-
 #include <Simulator/Structs/SignalFunctions.h>
 
 namespace BG {

@@ -12,7 +12,9 @@ Description: This file provides functions that use geometric structs to
 
 #pragma once
 
+#include <cassert>
 #include <memory>
+#include <stdexcept>
 #include <vector>
 
 #include <Simulator/Geometries/Box.h>

@@ -1,6 +1,3 @@
-#include <cassert>
-
-#include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/Structs/RecordingElectrode.h>
 
 namespace BG {

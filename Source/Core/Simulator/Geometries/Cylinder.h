@@ -10,37 +10,44 @@
 
 #pragma once
 
+#include <cmath>
+
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Geometries/Geometry.h>
+#include <Simulator/Geometries/VecTools.h>
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 namespace Geometries {
 
-
 /**
- * @brief This struct defines a cylinder geometry used in creation of components of simple ball-and-stick neural circuits.
- * 
+ * @brief This struct defines a cylinder geometry used in creation of components
+ * of simple ball-and-stick neural circuits.
+ *
  */
-struct Cylinder: Geometry {
+struct Cylinder : Geometry {
 
-    float End0Radius_um = 1.0; //! Radius in micrometers of the first end of the cylinder.
-    Vec3D End0Pos_um; //! Position of the first end of the Cylinder in micrometers (relative to origin).
-    float End1Radius_um = 1.0; //! Radius in micrometers of the second end of the cylinder.
-    Vec3D End1Pos_um{1.0, 0.0, 0.0}; //! Position of the second end of the Cylinder in micrometers (relative to origin).
-    
+    float End0Radius_um =
+        1.0; //! Radius in micrometers of the first end of the cylinder.
+    Vec3D End0Pos_um; //! Position of the first end of the Cylinder in
+                      //! micrometers (relative to origin).
+    float End1Radius_um =
+        1.0; //! Radius in micrometers of the second end of the cylinder.
+    Vec3D End1Pos_um{1.0, 0.0,
+                     0.0}; //! Position of the second end of the Cylinder in
+                           //! micrometers (relative to origin).
+
     // Constructors
     Cylinder();
-    Cylinder(float _End0Radius_um, 
-             BG::NES::Simulator::Geometries::Vec3D _End0Pos_um, 
-             float _End1Radius_um, 
-             BG::NES::Simulator::Geometries::Vec3D _End1Pos_um);  
-    
+    Cylinder(float _End0Radius_um,
+             BG::NES::Simulator::Geometries::Vec3D _End0Pos_um,
+             float _End1Radius_um,
+             BG::NES::Simulator::Geometries::Vec3D _End1Pos_um);
+
     //! Renders the cylinder in 3D.
     void Show();
-    
+
     //! Returns the volume of the cylinder in micrometer^3.
     float Volume_um3();
 
@@ -49,7 +56,7 @@ struct Cylinder: Geometry {
     float RAtPosition_um(float position);
 };
 
-}; // Close Namespace Geometries
-}; // Close Namespace Simulator
-}; // Close Namespace NES
-}; // Close Namespace BG
+}; // namespace Geometries
+}; // namespace Simulator
+}; // namespace NES
+}; // namespace BG

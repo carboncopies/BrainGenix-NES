@@ -1,6 +1,3 @@
-#include <cassert>
-#include <stdexcept>
-
 #include <Simulator/BallAndStick/BSMorphology.h>
 
 namespace BG {

@@ -11,6 +11,7 @@
 #pragma once
 
 // Standard Libraries (BG convention: use <> instead of "")
+#include <cassert>
 #include <memory>
 #include <random>
 #include <string>
@@ -19,6 +20,7 @@
 #include <vector>
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/Neuron.h>
 #include <Simulator/Structs/Simulation.h>

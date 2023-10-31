@@ -1,6 +1,3 @@
-#include <cassert>
-#include <cmath>
-
 #include <Simulator/Distributions/TruncNorm.h>
 
 namespace BG {

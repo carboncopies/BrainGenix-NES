@@ -1,9 +1,3 @@
-#include <algorithm>
-#include <cassert>
-#include <cmath>
-#include <iostream>
-#include <stdexcept>
-
 #include <Simulator/Receptors/Receptor.h>
 
 namespace BG {

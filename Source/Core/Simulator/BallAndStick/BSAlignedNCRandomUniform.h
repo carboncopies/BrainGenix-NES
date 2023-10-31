@@ -14,7 +14,11 @@
 
 #pragma once
 
+#include <algorithm>
+#include <cassert>
 #include <memory>
+#include <random>
+#include <stdexcept>
 #include <string>
 #include <unordered_map>
 #include <vector>

@@ -10,6 +10,8 @@
 
 #pragma once
 
+#include <cstddef>
+
 #include <Simulator/Receptors/Receptor.h>
 
 namespace BG {
