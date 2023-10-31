@@ -34,6 +34,10 @@
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #include <vsg/all.h>
 #include <vsgXchange/all.h>
 
@@ -49,6 +53,14 @@ namespace Renderer {
 namespace Math {
 
 
+/**
+ * @brief Helper function that converts a vsg vector to a glm vector.
+ * Basically just reads the x,y,z values of _Vector and creates a glm vector from that. 
+ * 
+ * @param _Vector VSG Source Vector
+ * @return glm::vec3 GLM Vector
+ */
+glm::vec3 Vec3_VSGToGLM(vsg::vec3 _Vector);
 
 
 }; // Close Namespace State
