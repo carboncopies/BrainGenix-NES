@@ -31,24 +31,25 @@ bool GeometryBuilder::CreateCube(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cub
     // Setup Geom Info
     vsg::GeometryInfo Info;
 
-    // Extract Values From Struct
-    glm::vec3 Position = glm::vec3(_CubeCreateInfo->Position_.x, _CubeCreateInfo->Position_.y, _CubeCreateInfo->Position_.z);
-    glm::vec3 Rotation = glm::vec3(_CubeCreateInfo->Rotation_.x, _CubeCreateInfo->Rotation_.y, _CubeCreateInfo->Rotation_.z);
-    glm::vec3 Scale    = glm::vec3(_CubeCreateInfo->Scale_.x, _CubeCreateInfo->Scale_.y, _CubeCreateInfo->Scale_.z);
+    // // Extract Values From Struct
+    // glm::vec3 Position = glm::vec3(_CubeCreateInfo->Position_.x, _CubeCreateInfo->Position_.y, _CubeCreateInfo->Position_.z);
+    // glm::vec3 Rotation = glm::vec3(_CubeCreateInfo->Rotation_.x, _CubeCreateInfo->Rotation_.y, _CubeCreateInfo->Rotation_.z);
+    // glm::vec3 Scale    = glm::vec3(_CubeCreateInfo->Scale_.x, _CubeCreateInfo->Scale_.y, _CubeCreateInfo->Scale_.z);
     
-    // Build Transformation Matrix
-    glm::mat4 LRSMat = glm::translate(glm::mat4(1.0f), Position);
-    LRSMat = glm::rotate(LRSMat, glm::radians(Rotation.z), glm::vec3(0, 0, 1));
-    LRSMat = glm::rotate(LRSMat, glm::radians(Rotation.y), glm::vec3(0, 1, 0));
-    LRSMat = glm::rotate(LRSMat, glm::radians(Rotation.x), glm::vec3(1, 0, 0));
-    LRSMat = glm::scale(LRSMat, Scale);
+    // // Build Transformation Matrix
+    // glm::mat4 LRSMat = glm::translate(glm::mat4(1.0f), Position);
+    // LRSMat = glm::rotate(LRSMat, glm::radians(Rotation.z), glm::vec3(0, 0, 1));
+    // LRSMat = glm::rotate(LRSMat, glm::radians(Rotation.y), glm::vec3(0, 1, 0));
+    // LRSMat = glm::rotate(LRSMat, glm::radians(Rotation.x), glm::vec3(1, 0, 0));
+    // LRSMat = glm::scale(LRSMat, Scale);
 
-    // Convert GLM Mat4 Transformation Matrix To VSG Mat4
-    Info.transform = Math::Mat4_GLMToVSG(LRSMat);
+    // // Convert GLM Mat4 Transformation Matrix To VSG Mat4
+    // Info.transform = Math::Mat4_GLMToVSG(LRSMat);
+    Info.transform = Math::BuildTransformMatrix(_CubeCreateInfo->Position_, _CubeCreateInfo->Rotation_, _CubeCreateInfo->Scale_);
 
 
-    std::string PositionString = std::to_string(Position.x) + "X " + std::to_string(Position.y) + "Y " + std::to_string(Position.z) + "Z";
-    Logger_->Log(std::string("Creating Cube At ") + PositionString, 0);
+    // std::string PositionString = std::to_string(Position.x) + "X " + std::to_string(Position.y) + "Y " + std::to_string(Position.z) + "Z";
+    // Logger_->Log(std::string("Creating Cube At ") + PositionString, 0);
 
 
 
