@@ -101,6 +101,34 @@ bool GeometryBuilder::CreateSphere(vsg::ref_ptr<vsg::Group> _Scene, Primitive::S
 }
 
 
+bool GeometryBuilder::CreateCylinder(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cylinder* _CylinderCreateInfo) {
+    assert(_CylinderCreateInfo != nullptr && "_CylinderCreateInfo is a nullptr");
+    assert(_CylinderCreateInfo->Shader_ != nullptr && "_CylinderCreateInfo->Shader_ is null");
+
+
+    // Setup Geom Info
+    vsg::GeometryInfo Info;
+    Info.transform = Math::BuildTransformMatrix(
+            _CylinderCreateInfo->Position_,
+            _CylinderCreateInfo->Rotation_,
+            vsg::vec3(_CylinderCreateInfo->Radius_, _CylinderCreateInfo->Radius_, _CylinderCreateInfo->Height_)
+        );
+
+
+    // Setup State Information
+    vsg::StateInfo StateInfo;
+    StateInfo.lighting = true;
+    if (!ShaderHandler(_CylinderCreateInfo->Shader_)) {
+        return false;
+    }
+
+    
+    // Add Primitive To Scene Provided
+    _Scene->addChild(Builder_->createCylinder(Info, StateInfo));
+
+    return true;
+}
+
 
 }; // Close Namespace Logger
 }; // Close Namespace Common

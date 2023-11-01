@@ -46,6 +46,7 @@
 
 #include <BG/Renderer/SceneGraph/Primitive/Cube.h>
 #include <BG/Renderer/SceneGraph/Primitive/Sphere.h>
+#include <BG/Renderer/SceneGraph/Primitive/Cylinder.h>
 #include <BG/Renderer/SceneGraph/Shader/Shader.h>
 #include <BG/Renderer/SceneGraph/Shader/Phong.h>
 #include <BG/Renderer/State/RenderData.h>
@@ -110,8 +111,6 @@ public:
      */
     bool CreateCube(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cube* _CubeCreateInfo);
 
-
-
     /**
      * @brief Adds a sphere to the given scene, with the information defined in the Sphere struct.
      * Returns true on success, false otherwise.
@@ -122,6 +121,17 @@ public:
      * @return false 
      */
     bool CreateSphere(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Sphere* _SphereCreateInfo);
+      
+    /**
+     * @brief Adds a cylinder to the given scene, with the information defined in the Cylinder struct.
+     * Returns true on success, false otherwise.
+     * 
+     * @param _Scene VSG Group instance wrapped by vsg::ref_ptr
+     * @param _CylinderCreateInfo Pointer to Cylinder create information.
+     * @return true 
+     * @return false 
+     */
+    bool CreateCylinder(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cylinder* _CylinderCreateInfo);
       
 
 };
