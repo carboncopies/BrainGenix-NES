@@ -6,6 +6,7 @@ namespace Simulator {
 
 //! Constructors
 Simulation::Simulation(){};
+Simulation::Simulation(std::string _Name) : Name(_Name){};
 
 void Simulation::AddCircuit(
     std::shared_ptr<CoreStructs::NeuralCircuit> circuit) {
