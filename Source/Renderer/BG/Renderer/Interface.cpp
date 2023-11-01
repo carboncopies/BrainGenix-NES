@@ -91,22 +91,36 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
     Primitive::Sphere SphereCreateInfo;
     SphereCreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 2.0f);
     SphereCreateInfo.Radius_   = 1.0f;
-    SphereCreateInfo.Shader_ = &CubeShader;
+    SphereCreateInfo.Shader_ = &SphereShader;
     AddSphere(&SphereCreateInfo);
 
 
-    CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
+    Shaders::Phong CylinderShader;
+    CylinderShader.DiffuseColor_  = vsg::vec4(1.0f, 0.5f, 0.5f, 1.0f);
+    CylinderShader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
+    CylinderShader.Type_ = Shaders::SHADER_PHONG;
+    Primitive::Cylinder CylinderCreateInfo;
+    CylinderCreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 4.0f);
+    CylinderCreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 2.0f);
+    CylinderCreateInfo.Radius_   = 1.0f;
+    CylinderCreateInfo.Height_   = 1.0f;
+    CylinderCreateInfo.Shader_ = &CylinderShader;
+    AddCylinder(&CylinderCreateInfo);
 
-    for (int i = -20; i < 20; i++) {
-        for (int y = -20; y < 20; y++) {
-            for (int z = -20; z < 20; z++) {
-                CubeShader.DiffuseColor_  = vsg::vec4(0.05f*abs(i), 0.05f*abs(y), 0.05f*abs(z), 1.0f);
-                CreateInfo.Position_ = vsg::vec3(float(i) + 0.4f*i, float(y) + 0.4f*y, float(z) + 0.4f*z);
-                CreateInfo.Rotation_ = vsg::vec3(8.0f*i, 8.0f*y, 8.0f*z);
-                AddBox(&CreateInfo);
-            }
-        }
-    }
+
+
+    // CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
+
+    // for (int i = -20; i < 20; i++) {
+    //     for (int y = -20; y < 20; y++) {
+    //         for (int z = -20; z < 20; z++) {
+    //             CubeShader.DiffuseColor_  = vsg::vec4(0.05f*abs(i), 0.05f*abs(y), 0.05f*abs(z), 1.0f);
+    //             CreateInfo.Position_ = vsg::vec3(float(i) + 0.4f*i, float(y) + 0.4f*y, float(z) + 0.4f*z);
+    //             CreateInfo.Rotation_ = vsg::vec3(8.0f*i, 8.0f*y, 8.0f*z);
+    //             AddBox(&CreateInfo);
+    //         }
+    //     }
+    // }
 
     RendererManager_->SetupViewer();
 
@@ -128,7 +142,11 @@ bool Interface::AddBox(Primitive::Cube* _CreateInfo) {
 bool Interface::AddSphere(Primitive::Sphere* _CreateInfo) {
     assert(_CreateInfo != nullptr);
     return GeometryBuilder_->CreateSphere(RendererManager_->GetScene(), _CreateInfo);
+}
 
+bool Interface::AddCylinder(Primitive::Cylinder* _CreateInfo) {
+    assert(_CreateInfo != nullptr);
+    return GeometryBuilder_->CreateCylinder(RendererManager_->GetScene(), _CreateInfo);
 }
 
 
