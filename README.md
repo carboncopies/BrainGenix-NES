@@ -19,7 +19,7 @@ The BrainGenix-NES platform integrates and interoperates closely with:
 
 ## Distributed processing and multi-resolution models
 
-Distributed processing in BrainGenix-NES includes the distribution of tasks across multiple - potentially spatially separated - CPU architectures, as wells as GPUs. [Apache Zookeeper](https://zookeeper.apache.org/) and other production-grade systems in employed to ensure stability and fault-tolerance. Simulation tasks are expected to range from the simulation of detailed single-neuron models to brain architectures composed of billions of neurons.
+Distributed processing in BrainGenix-NES includes the distribution of tasks across multiple - potentially spatially separated - CPU architectures, as wells as GPUs. [Apache Zookeeper](https://zookeeper.apache.org/) and other production-grade systems are employed to ensure stability and fault-tolerance. Simulation tasks are expected to range from the simulation of detailed single-neuron models to brain architectures composed of billions of neurons.
 
 A special feature of BrainGenix-NES is that it is designed from the ground-up to enable simulation across multiple resolutions and for model components at those different resolutions to interact sensibly. This is a requirement for efficient brain emulation design, because some aspects of brain function require high resolution modeling (e.g. [dendritic computation](https://pubmed.ncbi.nlm.nih.gov/16033324/)) while others operate well at a much lower resolution of replication (e.g. [ephaptic coupling](https://en.wikipedia.org/wiki/Ephaptic_coupling)).
 
@@ -44,7 +44,7 @@ Many users or client front-ends can interact with BrainGenix-NES concurrently, r
 BrainGenix-NES compiles and runs on modern Linux distributions.
 
 ## More information
-Currently the best source of information about NES can be found within our technical specifications document below:
+Currently the best source of information about NES can be found within our technical specifications document:
 https://docs.google.com/document/d/1tVIB7KQcSRKNU_df8oPVR3wyBHagjv2xvqaMy-oDg18/edit#
 
 You can also view our Trello Boards here: https://trello.com/braingenixdepartment
