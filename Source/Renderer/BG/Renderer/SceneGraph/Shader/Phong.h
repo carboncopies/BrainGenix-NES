@@ -39,6 +39,7 @@
 
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <BG/Renderer/SceneGraph/Shader/Shader.h>
 
 
 
@@ -46,28 +47,22 @@
 namespace BG {
 namespace NES {
 namespace Renderer {
-namespace State {
-
-
+namespace Shaders {
 
 /**
- * @brief Struct that contains the data which holds the state of the renderer.
- * This includes things like the window and associated high level vulkan abstractions.
- * It does NOT include things like the scene and as that is managed separately.
- * 
+ * @brief This struct contains information stating how a given object should be shaded.
+ * It tells the renderer if it should use a blinn-phong shading model, or something else entirely.
+ * Ensure that you set the Type_ enum inherited from the shader base struct correctly.
  * 
  */
-struct RenderData {
+struct Phong: public Shader {
 
-    // Required Structs
-    vsg::ref_ptr<vsg::Options>      Options_;      /**Vulkan Scene Graph Options Configuration*/
-    vsg::ref_ptr<vsg::Viewer>       Viewer_;       /**Vulkan Scene Graph Viewer Object*/
-
-    // Optional Data For Windowing
-    vsg::ref_ptr<vsg::WindowTraits> WindowTraits_; /**If a window is enabled, this will be setup with windowing information.*/
-    vsg::ref_ptr<vsg::Window>       Window_;       /**Only initialized if a window is created, holds the vsg window state*/
+    // Phong Info
+    vsg::vec4 DiffuseColor_; /**Sets the diffuse color of the shader (main color)*/
+    vsg::vec4 SpecularColor_; /**Sets the specular color of the shader (reflection)*/
 
 };
+
 
 
 

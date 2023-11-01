@@ -95,6 +95,10 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h
+
+  ${SRC_DIR}/Core/VSDA/MeshBuilder.cpp
+  ${SRC_DIR}/Core/VSDA/MeshBuilder.h
+
 )
  
 set(UNITTEST_SOURCES

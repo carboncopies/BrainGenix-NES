@@ -42,37 +42,38 @@
 
 
 
-
 namespace BG {
 namespace NES {
 namespace Renderer {
-namespace State {
+namespace Shaders {
 
+/**
+ * @brief Enum that indicates the type of shader to be used.
+ * Various parameters are determined based on the value set here.
+ * 
+ */
+enum ShaderType {
+    SHADER_UNDEFINED,
+    SHADER_PHONG
+};
 
 
 /**
- * @brief Struct that contains the data which holds the state of the renderer.
- * This includes things like the window and associated high level vulkan abstractions.
- * It does NOT include things like the scene and as that is managed separately.
- * 
+ * @brief This struct contains information stating how a given object should be shaded.
+ * It tells the renderer if it should use a blinn-phong shading model, or something else entirely
  * 
  */
-struct RenderData {
+struct Shader {
 
-    // Required Structs
-    vsg::ref_ptr<vsg::Options>      Options_;      /**Vulkan Scene Graph Options Configuration*/
-    vsg::ref_ptr<vsg::Viewer>       Viewer_;       /**Vulkan Scene Graph Viewer Object*/
-
-    // Optional Data For Windowing
-    vsg::ref_ptr<vsg::WindowTraits> WindowTraits_; /**If a window is enabled, this will be setup with windowing information.*/
-    vsg::ref_ptr<vsg::Window>       Window_;       /**Only initialized if a window is created, holds the vsg window state*/
-
+    ShaderType Type_ = SHADER_UNDEFINED; /**Type of the shader, defined by enum.*/
+    
 };
 
 
 
 
-}; // Close Namespace State
+
+}; // Close Namespace Shaders
 }; // Close Namespace Logger
 }; // Close Namespace Common
 }; // Close Namespace BG

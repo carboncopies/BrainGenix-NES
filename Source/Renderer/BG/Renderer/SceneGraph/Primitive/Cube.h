@@ -39,33 +39,31 @@
 
 
 // Internal Libraries (BG convention: use <> instead of "")
-
+#include <BG/Renderer/SceneGraph/Shader/Shader.h>
 
 
 
 namespace BG {
 namespace NES {
 namespace Renderer {
-namespace State {
+namespace Primitive {
 
 
 
 /**
- * @brief Struct that contains the data which holds the state of the renderer.
- * This includes things like the window and associated high level vulkan abstractions.
- * It does NOT include things like the scene and as that is managed separately.
- * 
+ * @brief This struct contains the data needed to create a cube.
+ * It's intended to be populated by a calling function and then passed into a GeometryBuilder instance.
+ * From there, it will create a cube with the defined values. 
  * 
  */
-struct RenderData {
+struct Cube {
 
-    // Required Structs
-    vsg::ref_ptr<vsg::Options>      Options_;      /**Vulkan Scene Graph Options Configuration*/
-    vsg::ref_ptr<vsg::Viewer>       Viewer_;       /**Vulkan Scene Graph Viewer Object*/
+    // Physical Attributes
+    vsg::vec3 Position_; /**Position of the cube from the origin of the world*/
+    vsg::vec3 Rotation_; /**Rotation of the cube from the origin*/
+    vsg::vec3 Scale_;    /**Dimensions of the cube*/
 
-    // Optional Data For Windowing
-    vsg::ref_ptr<vsg::WindowTraits> WindowTraits_; /**If a window is enabled, this will be setup with windowing information.*/
-    vsg::ref_ptr<vsg::Window>       Window_;       /**Only initialized if a window is created, holds the vsg window state*/
+    Shaders::Shader* Shader_ = nullptr; /**Defines the info/type of shader to be used for this cube*/
 
 };
 

@@ -10,21 +10,30 @@ add_library(NESRenderer
 
     "BG/Renderer/SceneGraph/Manager.h"
     "BG/Renderer/SceneGraph/Manager.cpp"
+    "BG/Renderer/SceneGraph/GeometryBuilder.h"
+    "BG/Renderer/SceneGraph/GeometryBuilder.cpp"
+
+    "BG/Renderer/SceneGraph/Primitive/Cube.h"
+    "BG/Renderer/SceneGraph/Primitive/Cube.cpp"
+    "BG/Renderer/SceneGraph/Primitive/Sphere.h"
+    "BG/Renderer/SceneGraph/Primitive/Sphere.cpp"
+    "BG/Renderer/SceneGraph/Primitive/Cylinder.h"
+    "BG/Renderer/SceneGraph/Primitive/Cylinder.cpp"
+
+    "BG/Renderer/SceneGraph/Shader/Shader.h"
+    "BG/Renderer/SceneGraph/Shader/Shader.cpp"
+    "BG/Renderer/SceneGraph/Shader/Phong.h"
+    "BG/Renderer/SceneGraph/Shader/Phong.cpp"
+
+    "BG/Renderer/Math/MathHelpers.h"
+    "BG/Renderer/Math/MathHelpers.cpp"
 
 )
 
 target_link_libraries(NESRenderer
-
     bg-common-logger
-
-    # vk-bootstrap::vk-bootstrap
     Vulkan::Vulkan
-    # $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
-    # $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
     vsg::vsg
     vsgXchange::vsgXchange
-    # glm::glm
-    # unofficial::shaderc::shaderc
-    # GPUOpen::VulkanMemoryAllocator
 )
 target_include_directories(NESRenderer PUBLIC ${SRC_DIR}/Renderer)

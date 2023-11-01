@@ -49,6 +49,9 @@
 
 #include <BG/Renderer/SceneGraph/Manager.h>
 
+#include <BG/Renderer/SceneGraph/GeometryBuilder.h>
+#include <BG/Renderer/SceneGraph/Primitive/Cube.h>
+
 
 
 namespace BG {
@@ -66,8 +69,8 @@ private:
 
     BG::Common::Logger::LoggingSystem *Logger_ = nullptr; /**Logging Class Pointer*/
 
-    std::unique_ptr<Manager> RendererManager_ = nullptr; /**Instance of the renderer manager, setup when the init call is made.*/
-
+    std::unique_ptr<Manager>         RendererManager_ = nullptr; /**Instance of the renderer manager, setup when the init call is made.*/
+    std::unique_ptr<GeometryBuilder> GeometryBuilder_ = nullptr; /**Instance of the geometry builder, used to create various primitives in the scene*/
 
 public:
 
@@ -105,6 +108,37 @@ public:
      * @return false 
      */
     bool DrawFrame();
+
+
+    /**
+     * @brief Creates a box with the given parameters to the current scene graph.
+     * Returns true on success, false otherwise.
+     * 
+     * @param _CreateInfo Instance of the cube create info struct - fully populated with the right info.
+     * @return true 
+     * @return false 
+     */
+    bool AddBox(Primitive::Cube* _CreateInfo);
+
+    /**
+     * @brief Creates a sphere with the given parameters to the current scene graph.
+     * Returns true on success, false otherwise.
+     * 
+     * @param _CreateInfo Instance of the sphere create info struct - fully populated with the right info.
+     * @return true 
+     * @return false 
+     */
+    bool AddSphere(Primitive::Sphere* _CreateInfo);
+
+    /**
+     * @brief Creates a cylinder with the given parameters to the current scene graph.
+     * Returns true on success, false otherwise.
+     * 
+     * @param _CreateInfo Instance of the cylinder create info struct - fully populated with the right info.
+     * @return true 
+     * @return false 
+     */
+    bool AddCylinder(Primitive::Cylinder* _CreateInfo);
 
 };
 
