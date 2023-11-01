@@ -56,16 +56,6 @@ struct SimulationTest : testing::Test {
     void TearDown() { return; }
 };
 
-//  Geometries::Vec3D GetGeoCenter();
-//  void AttachDirectStim(std::vector<float> tStim_ms);
-//  void SetSpontaneousActivity(
-//      std::vector<std::tuple<float, float, float>> spontSpikeSettings);
-//  void SetRecordAll(float tMax_ms = -1.0);
-//  bool IsRecording();
-//  std::unordered_map<std::string, CoreStructs::NeuronRecording>
-//  GetRecording();
-//  void RunFor(float tRun_ms);
-
 TEST_F(SimulationTest, test_AddCircuit_default) {
     auto testNC =
         std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(4000,
@@ -92,8 +82,7 @@ TEST_F(SimulationTest, test_AddRegion_default) {
     testSimulation->AddCircuit(testNC);
     testSimulation->AddRegion(testRegion);
 
-    ASSERT_EQ(testSimulation->Regions.at(std::to_string(testRegion->ID)),
-              testRegion);
+    ASSERT_EQ(testSimulation->Regions.at(std::to_string(3000)), testRegion);
 }
 
 TEST_F(SimulationTest, test_GetAllNeurons_default) {
