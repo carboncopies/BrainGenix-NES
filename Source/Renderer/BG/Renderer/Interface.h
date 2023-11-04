@@ -140,6 +140,15 @@ public:
      */
     bool AddCylinder(Primitive::Cylinder* _CreateInfo);
 
+    /**
+     * @brief Recompile scene graph. Call this after modifying the scene's geometry.
+     * Returns true on succes, false otherwise.
+     * 
+     * @return true 
+     * @return false
+     */
+    bool UpdateScene();
+
 };
 
 
