@@ -60,7 +60,7 @@ struct Cube {
 
     // Physical Attributes
     vsg::vec3 Position_; /**Position of the cube from the origin of the world*/
-    vsg::vec3 Rotation_; /**Rotation of the cube from the origin*/
+    vsg::vec3 Rotation_; /**Rotation of the cube from the origin in degrees*/
     vsg::vec3 Scale_;    /**Dimensions of the cube*/
 
     Shaders::Shader* Shader_ = nullptr; /**Defines the info/type of shader to be used for this cube*/
