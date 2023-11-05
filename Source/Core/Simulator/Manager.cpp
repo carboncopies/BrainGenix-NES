@@ -277,7 +277,8 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Create Sphere Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Simulation Create Sphere Called, On Sim " + std::to_string(SimulationID), 1);
+    
     float Radius_um  = Util::GetFloat(&RequestJSON, "Radius_um");
     float CenterPosX_um = Util::GetFloat(&RequestJSON, "CenterPosX_um");
     float CenterPosY_um = Util::GetFloat(&RequestJSON, "CenterPosY_um");
