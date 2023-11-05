@@ -7,8 +7,16 @@ namespace NES {
 namespace Simulator {
 
 
-Manager::Manager(Config::Config* _Config, API::Manager* _RPCManager) {
+Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, API::Manager* _RPCManager, BG::NES::Renderer::Interface* _Renderer) {
+    assert(_Logger != nullptr);
+    assert(_Config != nullptr);
+    assert(_RPCManager != nullptr);
+    assert(_Renderer != nullptr);
+
     Config_ = _Config;
+    Renderer_ = _Renderer;
+    Logger_ = _Logger;
+    
 
     // Register Callback For CreateSim
     _RPCManager->AddRoute("Simulation/Create", [this](std::string RequestJSON){ return SimulationCreate(RequestJSON);});
@@ -17,6 +25,7 @@ Manager::Manager(Config::Config* _Config, API::Manager* _RPCManager) {
     _RPCManager->AddRoute("Simulation/RecordAll", [this](std::string RequestJSON){ return SimulationRecordAll(RequestJSON);});
     _RPCManager->AddRoute("Simulation/GetRecording", [this](std::string RequestJSON){ return SimulationGetRecording(RequestJSON);});
     _RPCManager->AddRoute("Simulation/GetStatus", [this](std::string RequestJSON){ return SimulationGetStatus(RequestJSON);});
+    _RPCManager->AddRoute("Simulation/BuildMesh", [this](std::string RequestJSON){ return SimulationBuildMesh(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Sphere/Create", [this](std::string RequestJSON){ return SphereCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Cylinder/Create", [this](std::string RequestJSON){ return CylinderCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Box/Create", [this](std::string RequestJSON){ return BoxCreate(RequestJSON);});
@@ -225,6 +234,42 @@ std::string Manager::SimulationGetStatus(std::string _JSONRequest) {
     ResponseJSON["PercentComplete"] = 0.0;
     return ResponseJSON.dump();
 }
+
+std::string Manager::SimulationBuildMesh(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    std::cout<<"[Info] Simulation BuildMesh Called, On Sim "<<SimulationID<<std::endl;
+
+
+    // Check Sim ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid sim id
+        return ResponseJSON.dump();
+    }
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
+
+    if (!BuildMeshFromSimulation(Logger_, Renderer_, ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 999; // general failure
+        return ResponseJSON.dump();
+    }
+    
+
+    // Return JSON
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    return ResponseJSON.dump();
+}
+
 
 std::string Manager::SphereCreate(std::string _JSONRequest) {
 
