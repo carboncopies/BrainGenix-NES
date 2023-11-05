@@ -385,9 +385,9 @@ std::string Manager::BoxCreate(std::string _JSONRequest) {
     // Build New Box Object
     Geometries::Box S;
     S.Name = Util::GetString(&RequestJSON, "Name");
-    Util::GetVec3(S.Center_um, &RequestJSON, "Center");
-    Util::GetVec3(S.Dims_um, &RequestJSON, "Dims");
-    Util::GetVec3(S.Rotations_rad, &RequestJSON, "Rotations", "rad");
+    Util::GetVec3(S.Center_um, &RequestJSON, "CenterPosition_um");
+    Util::GetVec3(S.Dims_um, &RequestJSON, "Dimensions_um");
+    Util::GetVec3(S.Rotations_rad, &RequestJSON, "Rotation_rad", "rad");
 
     // Add to Sim, Set ID
     if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
