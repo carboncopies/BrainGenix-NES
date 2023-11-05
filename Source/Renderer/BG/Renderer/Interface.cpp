@@ -153,6 +153,17 @@ bool Interface::UpdateScene() {
     return RendererManager_->CompileScene();
 }
 
+void Interface::WaitUntilGPUDone() {
+    RendererManager_->WaitUntilGPUDone();
+    return;
+}
+void Interface::LockScene() {
+    RendererManager_->LockScene();
+}
+
+void Interface::UnlockScene() {
+    RendererManager_->UnlockScene();
+}
 
 }; // Close Namespace Logger
 }; // Close Namespace Common

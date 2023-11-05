@@ -12,6 +12,8 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
     assert(_Simulation != nullptr && "You have passed a nullptr to the simulation parameter, bad!");
 
     _Logger->Log("Building 3D Mesh For Simulation " + _Simulation->Name, 5);
+    _Renderer->LockScene();
+    _Renderer->WaitUntilGPUDone();
 
     // Enumerate Simulation Primitives
     for (unsigned int i = 0; i < _Simulation->BSCompartments.size(); i++) {
@@ -70,6 +72,8 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
 
 
     _Renderer->UpdateScene();
+    _Renderer->UnlockScene();
+
 
     return true;
 

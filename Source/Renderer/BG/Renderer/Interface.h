@@ -149,6 +149,25 @@ public:
      */
     bool UpdateScene();
 
+    /**
+     * @brief Waits until VSG is done doing things (if drawing a frame).
+     * 
+     */
+    void WaitUntilGPUDone();
+
+    /**
+     * @brief Locks the scene mutex, allowing other threads to access the scene.
+     * 
+     */
+    void LockScene();
+
+    /**
+     * @brief Unlocks the scene mutex, allowing other threads to access the scene.
+     * 
+     */
+    void UnlockScene();
+
+
 };
 
 

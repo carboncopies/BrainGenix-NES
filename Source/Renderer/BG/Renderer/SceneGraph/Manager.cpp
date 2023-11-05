@@ -155,44 +155,36 @@ bool Manager::SetupViewer() {
     return true;
 }
 
-// -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- 
-// TODO: Add support for dynamic scenes - (implement functionality such that users may modify the scene and it will be recompiled when requested)
-// - also add the other primitives - sphere, capsule, cylinder, etc.
-// - then implement the simulation to mesh converter in the VSDA section of the simulator
-// - fix documentation.
-// -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- -- TODO -- 
 
 
 bool Manager::CompileScene() {
-    
-    // // create a command graph to render the scene on the specified window
-    // auto commandGraph = vsg::createCommandGraphForView(RenderData_->Window_, Scene_->Camera_, Scene_->Group_);
-    // RenderData_->Viewer_->assignRecordAndSubmitTaskAndPresentation({commandGraph});
-
-    // // compile all the Vulkan objects and transfer data required to render the scene
-    // RenderData_->Viewer_->compile();
-
-
-
-
     RenderData_->Viewer_->compile();
-    
-
     return true;
 }
 
 
-
 bool Manager::DrawFrame() {
 
+
     // rendering main loop
-    while (RenderData_->Viewer_->advanceToNextFrame())
-    {
+    while (true) {
+
+        LockScene(); // Control Thread Safety
+
+        bool Status = RenderData_->Viewer_->advanceToNextFrame();
+        if (!Status) {
+            break;
+        }
+
         // pass any events into EventHandlers assigned to the Viewer
         RenderData_->Viewer_->handleEvents();
         RenderData_->Viewer_->update();
         RenderData_->Viewer_->recordAndSubmit();
         RenderData_->Viewer_->present();
+
+        UnlockScene();
+
+        std::this_thread::sleep_for(std::chrono::microseconds(750)); // delay so our mutex is easier to get by another thread if needed
     }
 
     return false;
@@ -204,6 +196,18 @@ vsg::ref_ptr<vsg::Group> Manager::GetScene() {
 }
 
 
+void Manager::WaitUntilGPUDone() {
+    RenderData_->Viewer_->deviceWaitIdle();
+    return;
+}
+
+void Manager::LockScene() {
+    SceneAccessLock_.lock();
+}
+
+void Manager::UnlockScene() {
+    SceneAccessLock_.unlock();
+}
 
 }; // Close Namespace Logger
 }; // Close Namespace Common
