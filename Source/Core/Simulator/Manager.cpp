@@ -16,7 +16,7 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     Config_ = _Config;
     Renderer_ = _Renderer;
     Logger_ = _Logger;
-    
+
 
     // Register Callback For CreateSim
     _RPCManager->AddRoute("Simulation/Create", [this](std::string RequestJSON){ return SimulationCreate(RequestJSON);});
@@ -241,7 +241,7 @@ std::string Manager::SimulationBuildMesh(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Simulation BuildMesh Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Simulation BuildMesh Called, On Sim " + std::to_string(SimulationID), 1);
 
 
     // Check Sim ID
