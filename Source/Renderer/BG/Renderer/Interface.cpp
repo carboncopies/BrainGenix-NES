@@ -52,6 +52,7 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
     }
 
 
+    //[Review Comment] Can this be deleted?
     // Shaders::Phong CubeShader;
     // CubeShader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
     // CubeShader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
@@ -108,7 +109,7 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
     AddCylinder(&CylinderCreateInfo);
 
 
-
+    //[Review Comment] Can this be deleted?
     // CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
 
     // for (int i = -20; i < 20; i++) {
