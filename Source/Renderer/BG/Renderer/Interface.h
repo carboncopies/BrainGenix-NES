@@ -9,7 +9,7 @@
     Author(s): Thomas Liao
 
 
-    Copyright (C) 2023  Thomas Liao
+    Copyright (C) 2023  The BrainGenix Authors
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
