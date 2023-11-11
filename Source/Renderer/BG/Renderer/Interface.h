@@ -37,9 +37,6 @@
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-// #include <SDL.h>
-// #include <SDL_vulkan.h>
-
 #include <vsg/all.h>
 #include <vsgXchange/all.h>
 
