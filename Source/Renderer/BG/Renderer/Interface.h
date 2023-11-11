@@ -56,7 +56,7 @@ namespace NES {
 namespace Renderer {
 
 
-
+//[Review Comment] Add more descriptions to this doxygen string. Unclear function
 /**
  * @brief Rendering system interface for NES. This system is used to generate virtual scan data from models.
  */
