@@ -23,7 +23,7 @@ namespace Renderer {
 
 
 Interface::Interface(BG::Common::Logger::LoggingSystem* _Logger) {
-    assert(_Logger != nullptr);
+    assert(_Logger != nullptr && "You have passed the Interface Constructor a null _Logger pointer.");
     Logger_ = _Logger;
 
     // Instantiate Subclasses
