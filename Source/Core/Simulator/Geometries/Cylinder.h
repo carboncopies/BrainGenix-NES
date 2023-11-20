@@ -12,7 +12,8 @@
 
 #include <cmath>
 
-// Internal Libraries (BG convention: use <> instead of "")
+#include <glm/mat3x3.hpp>
+
 #include <Simulator/Geometries/Geometry.h>
 #include <Simulator/Geometries/VecTools.h>
 
@@ -54,6 +55,9 @@ struct Cylinder : Geometry {
     //! Returns the distance from the origin along cylinder axis at specified
     //! fraction of height distance from end 0.
     float RAtPosition_um(float position);
+
+    //! Gets the rotation in radians with respect to the x, y and z axes
+    std::tuple<float, float, float> GetRotation_rad();
 };
 
 }; // namespace Geometries

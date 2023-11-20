@@ -66,6 +66,14 @@ float Vec3D::Dot(const Vec3D &other) const {
            this->z_um * other.z_um;
 }
 
+//! Cross product of two vectors
+Vec3D Vec3D::Cross(const Vec3D &other) const {
+    float iComp = 0.0;
+    float jComp = 0.0;
+    float kComp = 0.0;
+    return Vec3D(iComp, jComp, kComp);
+}
+
 //! Maximum coordinate value.
 float Vec3D::Max() const {
     float max = this->x_um;

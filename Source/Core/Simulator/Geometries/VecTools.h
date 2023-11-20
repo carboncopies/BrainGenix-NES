@@ -54,6 +54,9 @@ struct Vec3D {
     //! Dot product of two vectors
     float Dot(const Vec3D &other) const;
 
+    //! Cross product of two vectors
+    Vec3D Cross(const Vec3D &other) const;
+
     //! Maximum coordinate value
     float Max() const;
 
