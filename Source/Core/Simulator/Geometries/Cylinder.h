@@ -11,6 +11,7 @@
 #pragma once
 
 #include <cmath>
+#include <tuple>
 
 #include <glm/mat3x3.hpp>
 
