@@ -1,4 +1,3 @@
-
 #include <Simulator/Geometries/VecTools.h>
 
 namespace BG {
@@ -68,9 +67,9 @@ float Vec3D::Dot(const Vec3D &other) const {
 
 //! Cross product of two vectors
 Vec3D Vec3D::Cross(const Vec3D &other) const {
-    float iComp = 0.0;
-    float jComp = 0.0;
-    float kComp = 0.0;
+    float iComp = this->y_um * other.z_um - this->z_um * other.y_um;
+    float jComp = this->z_um * other.x_um - this->x_um * other.z_um;
+    float kComp = this->x_um * other.y_um - this->y_um * other.x_um;
     return Vec3D(iComp, jComp, kComp);
 }
 
