@@ -54,7 +54,7 @@ float Cylinder::RAtPosition_um(float pos) {
 //! Gets the rotation in radians with respect to the x, y and z axes
 std::tuple<float, float, float> Cylinder::GetRotation_rad() {
     // Assuming initial orientation of the cylinder is such that the
-    // axis is along the direction (0, 0, 1)
+    // axis is along the direction (0, 0, 1), i.e. the Z-axis
 
     static Geometries::Vec3D refAxisVec{0.0, 0.0, 1.0};
     static Geometries::Vec3D originVec{0.0, 0.0, 0.0};
@@ -75,7 +75,7 @@ std::tuple<float, float, float> Cylinder::GetRotation_rad() {
              (axisVec.Distance(originVec) * refAxisVec.Distance(originVec)));
 
     // 2. The axis is found from the cross product of the two vectors.
-    crossProdVec = axisVec.Cross(refAxisVec);
+    crossProdVec = refAxisVec.Cross(axisVec);
     crossProdVec = crossProdVec / crossProdVec.Distance(originVec); // Normalize
 
     // 3. Fill normalMat from calculated cross product vector

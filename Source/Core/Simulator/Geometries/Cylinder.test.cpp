@@ -77,7 +77,7 @@ TEST_F(CylinderTest, test_RAtPosition_um_default) {
 
 TEST_F(CylinderTest, test_GetRotation_rad_default) {
     std::tuple<float, float, float> expectedRot_rad =
-        std::make_tuple(0.0, M_PI / 2.0, 0.0);
+        std::make_tuple(-M_PI / 2.0, 0.0, 0.0);
     std::tuple<float, float, float> gotRot_rad =
         testCylinder->GetRotation_rad();
 
