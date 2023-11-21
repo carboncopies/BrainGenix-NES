@@ -120,6 +120,15 @@ TEST_F(Vec3DTest, test_Dot_default) {
     ASSERT_NEAR(dot, expectedDot, tol);
 }
 
+TEST_F(Vec3DTest, test_Cross_default) {
+    BG::NES::Simulator::Geometries::Vec3D vec1{1.0f, 0.0f, 0.0f};
+    BG::NES::Simulator::Geometries::Vec3D vec2{0.0f, 0.0f, 1.0f};
+    BG::NES::Simulator::Geometries::Vec3D expectedCross{0.0f, -1.0f, 0.0f};
+    BG::NES::Simulator::Geometries::Vec3D gotCross = vec1.Cross(vec2);
+
+    ASSERT_EQ(expectedCross, gotCross);
+}
+
 TEST_F(Vec3DTest, test_Minimum_default) {
 
     float min = testVec3D_2->Min();
