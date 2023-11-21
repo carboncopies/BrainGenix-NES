@@ -49,17 +49,17 @@ CreateBSAxon(std::vector<std::vector<float>> domainBounds, Align align,
         End0Pos_um = Geometries::Vec3D(
             (domainBounds[0][0] + domainBounds[1][0]) / 2.0, domainBounds[0][1],
             (domainBounds[0][2] + domainBounds[1][2]) / 2.0);
-        End1Pos_um = Geometries::Vec3D(End0Pos_um.x_um,
+        End1Pos_um = Geometries::Vec3D(End0Pos_um.x,
                                        domainBounds[1][1] - somaRadius_um * 2.0,
-                                       End0Pos_um.z_um);
+                                       End0Pos_um.z);
         break;
     case Align::ALIGN_RIGHT:
         End0Pos_um = Geometries::Vec3D(
             (domainBounds[0][0] + domainBounds[1][0]) / 2.0, domainBounds[1][1],
             (domainBounds[0][2] + domainBounds[1][2]) / 2.0);
-        End1Pos_um = Geometries::Vec3D(End0Pos_um.x_um,
+        End1Pos_um = Geometries::Vec3D(End0Pos_um.x,
                                        domainBounds[0][1] + somaRadius_um * 2.0,
-                                       End0Pos_um.z_um);
+                                       End0Pos_um.z);
         break;
     case Align::ALIGN_CENTER:
         throw std::invalid_argument(

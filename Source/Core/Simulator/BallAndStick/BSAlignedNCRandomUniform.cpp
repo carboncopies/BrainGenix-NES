@@ -17,9 +17,9 @@ findSomaPosition(std::vector<Geometries::Vec3D> &somaPositions,
     Geometries::Vec3D coord{};
 
     while (needPos) {
-        coord.x_um = _dist(_gen);
-        coord.y_um = _dist(_gen);
-        coord.z_um = _dist(_gen);
+        coord.x = _dist(_gen);
+        coord.y = _dist(_gen);
+        coord.z = _dist(_gen);
 
         coord = coord * domainDims_um + domainCenter_um;
 

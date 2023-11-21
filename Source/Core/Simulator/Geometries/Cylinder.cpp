@@ -79,12 +79,12 @@ std::tuple<float, float, float> Cylinder::GetRotation_rad() {
     crossProdVec = crossProdVec / crossProdVec.Distance(originVec); // Normalize
 
     // 3. Fill normalMat from calculated cross product vector
-    normalMat[0][1] = -crossProdVec.z_um;
-    normalMat[0][2] = crossProdVec.y_um;
-    normalMat[1][0] = crossProdVec.z_um;
-    normalMat[1][2] = -crossProdVec.x_um;
-    normalMat[2][0] = -crossProdVec.y_um;
-    normalMat[2][1] = crossProdVec.x_um;
+    normalMat[0][1] = -crossProdVec.z;
+    normalMat[0][2] = crossProdVec.y;
+    normalMat[1][0] = crossProdVec.z;
+    normalMat[1][2] = -crossProdVec.x;
+    normalMat[2][0] = -crossProdVec.y;
+    normalMat[2][1] = crossProdVec.x;
 
     // 4. Calculate rotation matrix (using Rodrigues' rotation formula.)
     // Ref.:

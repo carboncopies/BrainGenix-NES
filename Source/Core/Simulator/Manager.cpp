@@ -243,9 +243,9 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
     Geometries::Sphere S;
     S.Name = Name;
     S.Radius_um = Radius_um;
-    S.Center_um.x_um = CenterPosX_um;
-    S.Center_um.y_um = CenterPosY_um;
-    S.Center_um.z_um = CenterPosZ_um;
+    S.Center_um.x = CenterPosX_um;
+    S.Center_um.y = CenterPosY_um;
+    S.Center_um.z = CenterPosZ_um;
 
 
     // Add to Sim, Set ID
@@ -293,13 +293,13 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     Geometries::Cylinder S;
     S.Name = Name;
     S.End0Radius_um = E0Radius_um;
-    S.End0Pos_um.x_um = E0X_um;
-    S.End0Pos_um.y_um = E0Y_um;
-    S.End0Pos_um.z_um = E0Z_um;
+    S.End0Pos_um.x = E0X_um;
+    S.End0Pos_um.y = E0Y_um;
+    S.End0Pos_um.z = E0Z_um;
     S.End1Radius_um = E1Radius_um;
-    S.End1Pos_um.x_um = E1X_um;
-    S.End1Pos_um.y_um = E1Y_um;
-    S.End1Pos_um.z_um = E1Z_um;
+    S.End1Pos_um.x = E1X_um;
+    S.End1Pos_um.y = E1Y_um;
+    S.End1Pos_um.z = E1Z_um;
 
 
     // Add to Sim, Set ID
