@@ -12,10 +12,12 @@ namespace Simulator {
 
 bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
 
+    std::cout<<_BB->ToString()<<std::endl;
 
     for (float X = _BB->bb_point1[0]; X < _BB->bb_point2[0]; X+= _VoxelScale) {
         for (float Y = _BB->bb_point1[1]; Y < _BB->bb_point2[1]; Y+= _VoxelScale) {
             for (float Z = _BB->bb_point1[2]; Z < _BB->bb_point2[2]; Z+= _VoxelScale) {
+                std::cout<<"Setting Voxel At "<<X<<" "<<Y<<" "<<Z<<"\n";
                 _Array->SetVoxelAtPosition(X, Y, Z, FILLED);
             }
         }
@@ -73,11 +75,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
     float VoxelSize = _Array->GetResolution();
     BoundingBox VoxelBB = _Array->GetBoundingBox();
     
-    // Build Shaders for Use Later
-    Renderer::Shaders::Phong BoxShader;
-    BoxShader.DiffuseColor_  = vsg::vec4(1.0f, 0.5f, 0.5f, 1.0f);
-    BoxShader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
-    BoxShader.Type_ = Renderer::Shaders::SHADER_PHONG;
+
 
     // Enumerate Slice, Build Cubes Where Needed
     for (unsigned int X = 0; X < _Array->GetX(); X++) {
@@ -87,13 +85,21 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
             VoxelType ThisVoxel = _Array->GetVoxel(X, Y, SliceNumber);
             if (ThisVoxel != EMPTY) {
 
+
+                // Build Shader with different color so we can tell each voxel apart
+                Renderer::Shaders::Phong BoxShader;
+                BoxShader.DiffuseColor_  = vsg::vec4(1.0f, X/(float)_Array->GetX(), Y/(float)_Array->GetY(), SliceNumber/(float)_Array->GetZ());
+                BoxShader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
+                BoxShader.Type_ = Renderer::Shaders::SHADER_PHONG;
+
+
                 // If It's Not Empty, Create A Cube There
                 Renderer::Primitive::Cube CubeCreateInfo;
                 CubeCreateInfo.Position_ = vsg::vec3(X*VoxelSize + VoxelBB.bb_point1[0], Y*VoxelSize + VoxelBB.bb_point1[1], SliceNumber*VoxelSize + VoxelBB.bb_point1[2]);
-                CubeCreateInfo.Position_ /= 10.f;
+                // CubeCreateInfo.Position_ /= 10.f;
                 CubeCreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
                 CubeCreateInfo.Scale_ = vsg::vec3(VoxelSize, VoxelSize, VoxelSize);
-                CubeCreateInfo.Scale_ /= 10.f;
+                // CubeCreateInfo.Scale_ /= 10.f;
                 CubeCreateInfo.Shader_ = &BoxShader;
 
                 _Renderer->AddBox(&CubeCreateInfo);

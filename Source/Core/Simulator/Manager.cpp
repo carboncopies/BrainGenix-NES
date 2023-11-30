@@ -771,9 +771,9 @@ std::string Manager::Debug(std::string _JSONRequest) {
     BB.bb_point1[1] = 0.;
     BB.bb_point1[2] = 0.;
 
-    BB.bb_point2[0] = 50.;
-    BB.bb_point2[1] = 50.;
-    BB.bb_point2[2] = 50.;
+    BB.bb_point2[0] = 20.;
+    BB.bb_point2[1] = 20.;
+    BB.bb_point2[2] = 20.;
 
     
     VoxelArray Arr(BB, 1);
