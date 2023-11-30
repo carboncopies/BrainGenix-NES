@@ -21,6 +21,12 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     for (unsigned int i = 0; i < _Sim->BSCompartments.size(); i++) {
 
         Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
+
+        Geometry * ThisShape = put something here;
+        bb = ThisShape.GetBoundingBox();
+
+        auto ThisShape = _Sim->Shapes.Shapes[ThisCompartment->ShapeID];
+
         std::variant<Shapes::Sphere, Shapes::Cylinder, Shapes::Box> ThisShape = _Sim->Shapes.Shapes[ThisCompartment->ShapeID];
 
         if (std::holds_alternative<Shapes::Sphere>(ThisShape)) {

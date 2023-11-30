@@ -16,7 +16,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-
+#include <Geometry>
 
 namespace BG {
 namespace NES {
@@ -28,13 +28,15 @@ namespace Shapes {
  * @brief Name of the Sphere
  * 
  */
-struct Sphere {
+struct Sphere: public Geometry {
 
     std::string Name; /**Name of the Sphere*/
     int ID; /**ID of the Sphere*/
 
     float Radius_nm; /**Radius in nanometers of the sphere*/
     float Center_nm[3]; /**Position of the center of the sphere in nanometers (relative to origin)*/
+
+    BoundingBox GetBoundingBox();
 
 };
 
