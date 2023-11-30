@@ -783,11 +783,17 @@ std::string Manager::Debug(std::string _JSONRequest) {
     MParams.VoxelResolution_um = 1.;
 
 
-    CreateVoxelArrayFromSimulation(Logger_, ThisSimulation, &MParams, &Arr);
+    // CreateVoxelArrayFromSimulation(Logger_, ThisSimulation, &MParams, &Arr);
+
+    for (unsigned int i = 0; i < Arr.GetZ(); i++) {
+        Arr.SetVoxel(i, i, i, FILLED);
+    }
 
     for (unsigned int i = 0; i < Arr.GetZ(); i++) {
         RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, i);
     }
+
+    // Renderer_->ResetViewer();
 
 
 

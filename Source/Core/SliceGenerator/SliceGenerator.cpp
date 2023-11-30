@@ -55,6 +55,9 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, MicroscopeParameters* _Params, VoxelArray* _Array, int SliceNumber) {
 
+    _Logger->Log(std::string("Rendering Slice '") + std::to_string(SliceNumber) + "'", 2);
+
+
     // Ensure Scene Is Now Threadsafe
     _Renderer->LockScene();
     _Renderer->WaitUntilGPUDone();
@@ -80,11 +83,14 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
                 // If It's Not Empty, Create A Cube There
                 Renderer::Primitive::Cube CubeCreateInfo;
                 CubeCreateInfo.Position_ = vsg::vec3(X*VoxelSize + VoxelBB.bb_point1[0], Y*VoxelSize + VoxelBB.bb_point1[1], SliceNumber*VoxelSize + VoxelBB.bb_point1[2]);
+                CubeCreateInfo.Position_ /= 10.f;
                 CubeCreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
                 CubeCreateInfo.Scale_ = vsg::vec3(VoxelSize, VoxelSize, VoxelSize);
+                CubeCreateInfo.Scale_ /= 10.f;
                 CubeCreateInfo.Shader_ = &BoxShader;
 
                 _Renderer->AddBox(&CubeCreateInfo);
+                std::cout<<"Adding Cube for voxel "<< X <<"x, "<< Y<<"y, " << SliceNumber<<"z  at position (um) " << CubeCreateInfo.Position_<<std::endl;
 
             }
 

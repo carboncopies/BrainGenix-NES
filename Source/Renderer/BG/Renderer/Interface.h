@@ -167,6 +167,12 @@ public:
      */
     void UnlockScene();
 
+    /**
+     * @brief Setup a default viewer position.
+     * 
+     */
+    void ResetViewer();
+
 
 };
 
