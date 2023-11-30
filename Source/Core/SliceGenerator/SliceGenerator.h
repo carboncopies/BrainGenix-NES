@@ -42,6 +42,8 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
+#include <SliceGenerator/Structs/MicroscopeParameters.h>
+
 #include <BG/Common/Logger/Logger.h>
 
 
@@ -65,8 +67,8 @@ namespace Simulator {
  * @param _Sim Pointer to simulation that data is to be generated from
  * @param _Region Pointer to region in that simulation where we'll be generating an array
  * @param _Array Pointer to array to be populated.
- * @return true 
- * @return false 
+ * @return true On success
+ * @return false On failure (eg: out of memory, out of bounds, etc.)
  */
 bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, ScanRegion* _Region, VoxelArray* _Array);
 

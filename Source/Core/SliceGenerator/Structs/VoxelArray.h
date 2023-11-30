@@ -4,7 +4,7 @@
 //=================================//
 
 /*
-    Description: This file defines what is imaged and how it's imaged.
+    Description: This file defines the struct used to store the voxel array.
     Additional Notes: None
     Date Created: 2023-11-29
     Author(s): Thomas Liao, Randal Koene
@@ -32,29 +32,52 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
+#include <inttypes.h>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <SliceGenerator/Structs/ScanRegion.h>
 
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 
+
+typedef uint8_t VoxelType;
+
+enum VoxelState {
+    EMPTY=0,
+    FILLED=1
+};
+
+
 /**
- * @brief Defines a set of parameters used to feed the renderer that specifies what and how to scan something.
+ * @brief Defines the voxel array.
  * 
  */
-struct MicroscopeParameters {
+class VoxelArray {
 
-    ScanRegion Region_; /**Defines the bounding box of the area we're scanning*/
+public:
 
-    float VoxelResolution_um; /**Set the size of each voxel*/
+    VoxelType*** Data_;
 
+    int SizeX_; /**Number of voxels in x dimension*/
+    int SizeY_; /**Number of voxels in y dimension*/
+    int SizeZ_; /**Number of voxels in z dimension*/
+
+    /**
+     * @brief Construct a new Voxel Array object
+     * 
+     * @param _SizeX X dimension (in voxels)
+     * @param _SizeY Y dimension (in voxels)
+     * @param _SizeZ Z dimension (in voxels)
+     */
+    VoxelArray(int _SizeX, int _SizeY, int _SizeZ);
+
+    ~VoxelArray();
 
 }
 
