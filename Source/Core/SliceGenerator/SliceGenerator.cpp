@@ -16,7 +16,7 @@ bool FillBoundingBox(VoxelArray* _Array, Geometries::BoundingBox* _BB, float _Vo
     for (float X = _BB->bb_point1[0]; X < _BB->bb_point2[0]; X+= _VoxelScale) {
         for (float Y = _BB->bb_point1[1]; Y < _BB->bb_point2[1]; Y+= _VoxelScale) {
             for (float Z = _BB->bb_point1[2]; Z < _BB->bb_point2[2]; Z+= _VoxelScale) {
-                _Array->SetVoxelAtPosition(X, Y, Z, _VoxelScale);
+                _Array->SetVoxelAtPosition(X, Y, Z, FILLED);
             }
         }
     }
@@ -51,6 +51,51 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
     return true;
 
+}
+
+bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, MicroscopeParameters* _Params, VoxelArray* _Array, int SliceNumber) {
+
+    // Ensure Scene Is Now Threadsafe
+    _Renderer->LockScene();
+    _Renderer->WaitUntilGPUDone();
+
+    // Setup Voxel Info
+    float VoxelSize = _Array->GetResolution();
+    Geometries::BoundingBox VoxelBB = _Array->GetBoundingBox();
+    
+    // Build Shaders for Use Later
+    Renderer::Shaders::Phong BoxShader;
+    BoxShader.DiffuseColor_  = vsg::vec4(1.0f, 0.5f, 0.5f, 1.0f);
+    BoxShader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
+    BoxShader.Type_ = Renderer::Shaders::SHADER_PHONG;
+
+    // Enumerate Slice, Build Cubes Where Needed
+    for (unsigned int X = 0; X < _Array->GetX(); X++) {
+        for (unsigned int Y = 0; Y < _Array->GetY(); Y++) {
+
+            // Get Voxel At The Specified Position
+            VoxelType ThisVoxel = _Array->GetVoxel(X, Y, SliceNumber);
+            if (ThisVoxel != EMPTY) {
+
+                // If It's Not Empty, Create A Cube There
+                Renderer::Primitive::Cube CubeCreateInfo;
+                CubeCreateInfo.Position_ = vsg::vec3(X*VoxelSize + VoxelBB.bb_point1[0], Y*VoxelSize + VoxelBB.bb_point1[1], SliceNumber*VoxelSize + VoxelBB.bb_point1[2]);
+                CubeCreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
+                CubeCreateInfo.Scale_ = vsg::vec3(VoxelSize, VoxelSize, VoxelSize);
+                CubeCreateInfo.Shader_ = &BoxShader;
+
+                _Renderer->AddBox(&CubeCreateInfo);
+
+            }
+
+        }
+    }
+
+    // Now, Update and Unlock Scene When Done
+    _Renderer->UpdateScene();
+    _Renderer->UnlockScene();
+
+    return true;
 }
 
 

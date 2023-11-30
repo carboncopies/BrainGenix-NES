@@ -38,7 +38,6 @@
 
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <SliceGenerator/Structs/ScanRegion.h>
 
 
 namespace BG {
@@ -51,7 +50,6 @@ namespace Simulator {
  */
 struct MicroscopeParameters {
 
-    ScanRegion Region_; /**Defines the bounding box of the area we're scanning*/
 
     float VoxelResolution_um; /**Set the size of each voxel*/
 

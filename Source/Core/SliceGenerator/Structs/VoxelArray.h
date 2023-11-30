@@ -169,6 +169,20 @@ public:
      */
     int GetZ();
 
+    /**
+     * @brief Returns the resolution of the given object in micrometers.
+     * 
+     * @return float 
+     */
+    float GetResolution();
+
+    /**
+     * @brief Returns the bounding box of this voxel array (in simulation world space).
+     * 
+     * @return Geometries::BoundingBox 
+     */
+    Geometries::BoundingBox GetBoundingBox();
+
 
     /**
      * @brief Clears the given array to all 0s

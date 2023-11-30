@@ -94,7 +94,13 @@ int VoxelArray::GetZ() {
     return SizeZ_;
 }
 
+float VoxelArray::GetResolution() {
+    return VoxelScale_um;
+}
 
+Geometries::BoundingBox VoxelArray::GetBoundingBox() {
+    return BoundingBox_;
+}
 
 }; // Close Namespace Logger
 }; // Close Namespace Common

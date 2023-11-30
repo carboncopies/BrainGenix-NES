@@ -762,6 +762,10 @@ std::string Manager::Debug(std::string _JSONRequest) {
 
     // }
 
+    std::cout<<"This will break if you don't have at least one simulation. Trying to get sim with id 0\n";
+    Simulation* ThisSimulation = Simulations_[0].get();
+
+
     Geometries::BoundingBox BB = Geometries::BoundingBox();
     BB.bb_point1[0] = 0.;
     BB.bb_point1[1] = 0.;
@@ -774,9 +778,16 @@ std::string Manager::Debug(std::string _JSONRequest) {
     
     VoxelArray Arr(BB, 1);
 
-    
 
-    
+    MicroscopeParameters MParams;
+    MParams.VoxelResolution_um = 1.;
+
+
+    CreateVoxelArrayFromSimulation(Logger_, ThisSimulation, &MParams, &Arr);
+
+    for (unsigned int i = 0; i < Arr.GetZ(); i++) {
+        RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, i);
+    }
 
 
 

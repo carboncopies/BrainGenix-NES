@@ -43,6 +43,7 @@
 #include <SliceGenerator/Structs/VoxelArray.h>
 
 #include <BG/Renderer/Interface.h>
+#include <BG/Renderer/SceneGraph/Primitive/Cube.h>
 
 
 #include <BG/Common/Logger/Logger.h>
