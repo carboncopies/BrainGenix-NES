@@ -17,6 +17,7 @@
 #include <atomic>
 #include <thread>
 #include <chrono>
+#include <assert.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <nlohmann/json.hpp>
@@ -32,10 +33,14 @@
 #include <Simulator/Structs/PatchClampDAC.h>
 #include <Simulator/Structs/PatchClampADC.h>
 
+#include <VSDA/MeshBuilder.h>
+#include <BG/Renderer/Interface.h>
+
 #include <Simulator/EngineController.h>
 #include <Config/Config.h>
 #include <RPC/Manager.h>
 #include <Util/JSONHelpers.h>
+#include <BG/Common/Logger/Logger.h>
 
 
 namespace BG {
@@ -57,16 +62,22 @@ private:
     // Note: This simulation vector is not thread safe and will probably segfault if you try to multithread this
     // we will fix this later when we scale the system (DO NOT ALLOW RPC to use more than 1 thread unless this is fixed!)
 
+    BG::NES::Renderer::Interface* Renderer_ = nullptr; /**Pointer to instance of renderer*/
+    BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/
+
+
 public:
 
     /**
      * @brief Construct a new Manager object
      * Give this a pointer to an initialized configuration object.
      * 
+     * @param _Logger Pointer to logging interface
      * @param _Config 
      * @param _RPCManager
+     * @param _Renderer Instance of rendering system.
      */
-    Manager(Config::Config* _Config, API::Manager* _RPCManager);
+    Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, API::Manager* _RPCManager, BG::NES::Renderer::Interface* _Renderer);
 
 
     /**
@@ -88,6 +99,7 @@ public:
     std::string SimulationRecordAll(std::string _JSONRequest);
     std::string SimulationGetRecording(std::string _JSONRequest);
     std::string SimulationGetStatus(std::string _JSONRequest);
+    std::string SimulationBuildMesh(std::string _JSONRequest);
     std::string SphereCreate(std::string _JSONRequest);
     std::string CylinderCreate(std::string _JSONRequest);
     std::string BoxCreate(std::string _JSONRequest);
