@@ -34,6 +34,7 @@
 #include <Simulator/Structs/PatchClampADC.h>
 
 #include <VSDA/MeshBuilder.h>
+#include <SliceGenerator/SliceGenerator.h>
 #include <BG/Renderer/Interface.h>
 
 #include <Simulator/EngineController.h>

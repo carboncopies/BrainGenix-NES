@@ -38,6 +38,8 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     _RPCManager->AddRoute("Tool/PatchClampADC/SetSampleRate", [this](std::string RequestJSON){ return PatchClampADCSetSampleRate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampADC/GetRecordedData", [this](std::string RequestJSON){ return PatchClampADCGetRecordedData(RequestJSON);});
 
+    _RPCManager->AddRoute("Debug", [this](std::string RequestJSON){ return Debug(RequestJSON);});
+
     // Start SE Thread
     StopThreads_ = false;
 
@@ -756,9 +758,25 @@ std::string Manager::Debug(std::string _JSONRequest) {
     // Parse Request
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
 
-    if (Util::GetString(&RequestJSON, "Action") == "Render") {
+    // if (Util::GetString(&RequestJSON, "Action") == "Render") {
 
-    }
+    // }
+
+    Geometries::BoundingBox BB = Geometries::BoundingBox();
+    BB.bb_point1[0] = 0.;
+    BB.bb_point1[1] = 0.;
+    BB.bb_point1[2] = 0.;
+
+    BB.bb_point2[0] = 50.;
+    BB.bb_point2[1] = 50.;
+    BB.bb_point2[2] = 50.;
+
+    
+    VoxelArray Arr(BB, 1);
+
+    
+
+    
 
 
 
