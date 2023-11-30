@@ -64,6 +64,12 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/SliceGenerator/SliceGenerator.cpp
   ${SRC_DIR}/Core/SliceGenerator/SliceGenerator.h
 
+  ${SRC_DIR}/Core/SliceGenerator/Structs/MicroscopeParameters.cpp
+  ${SRC_DIR}/Core/SliceGenerator/Structs/MicroscopeParameters.h
+  ${SRC_DIR}/Core/SliceGenerator/Structs/ScanRegion.cpp
+  ${SRC_DIR}/Core/SliceGenerator/Structs/ScanRegion.h
+  ${SRC_DIR}/Core/SliceGenerator/Structs/VoxelArray.cpp
+  ${SRC_DIR}/Core/SliceGenerator/Structs/VoxelArray.h
 
   )
 
