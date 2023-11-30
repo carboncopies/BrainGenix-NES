@@ -33,12 +33,15 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <inttypes.h>
+#include <math.h>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Structs/Geometry.h>
+
 
 
 namespace BG {
@@ -68,6 +71,11 @@ private:
     int SizeY_; /**Number of voxels in y dimension*/
     int SizeZ_; /**Number of voxels in z dimension*/
 
+    float VoxelScale_um; /**Set the size of each voxel in micrometers*/
+
+    Shapes::BoundingBox BoundingBox_; /**Set the bounding box of this voxel array (relative to the simulation orign)*/
+
+
 
     /**
      * @brief Returns the flat index for the voxel at the given coords.
@@ -86,11 +94,10 @@ public:
     /**
      * @brief Construct a new Voxel Array object
      * 
-     * @param _SizeX X dimension (in voxels)
-     * @param _SizeY Y dimension (in voxels)
-     * @param _SizeZ Z dimension (in voxels)
+     * @param _BB Bounding box of the array, in world space
+     * @param _VoxelScale_um Scale of each voxel in micrometers
      */
-    VoxelArray(int _SizeX, int _SizeY, int _SizeZ);
+    VoxelArray(Shapes::BoundingBox _BB, float _VoxelScale_um);
 
     /**
      * @brief Destroy the Voxel Array object
@@ -128,9 +135,9 @@ public:
      * @param _X 
      * @param _Y 
      * @param _Z 
-     * @param _VoxelScale 
+     * @param _Value
      */
-    void SetVoxelAtPosition(float _X, float _Y, float _Z, float _VoxelScale, VoxelType _Value);
+    void SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Value);
 
     /**
      * @brief Get the size of the array, populate the int ptrs

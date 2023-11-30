@@ -9,15 +9,25 @@ namespace Simulator {
 
 
 
-VoxelArray::VoxelArray(int _SizeX, int _SizeY, int _SizeZ) {
+VoxelArray::VoxelArray(Shapes::BoundingBox _BB, float _VoxelScale_um) {
+
+    // Calculate Dimensions
+    float SizeX = abs(_BB.bb_point1[0] - _BB.bb_point2[0]);
+    float SizeY = abs(_BB.bb_point1[1] - _BB.bb_point2[1]);
+    float SizeZ = abs(_BB.bb_point1[2] - _BB.bb_point2[2]);
+    SizeX_ = SizeX/_VoxelScale_um;
+    SizeY_ = SizeY/_VoxelScale_um;
+    SizeZ_ = SizeZ/_VoxelScale_um;
+
+
+    // Store Parameters
+    BoundingBox_ = _BB;
+    VoxelScale_um = _VoxelScale_um;
+
 
     // Malloc array
-    Data_ = new VoxelType[_SizeX * _SizeY * _SizeZ];
+    Data_ = new VoxelType[SizeX_ * SizeY_ * SizeZ_];
 
-    // Setup Dimensions
-    SizeX_ = _SizeX;
-    SizeY_ = _SizeY;
-    SizeZ_ = _SizeZ;
 
 
     // Reset the array so we don't get a bunch of crap in it
@@ -56,11 +66,11 @@ void VoxelArray::SetVoxel(int _X, int _Y, int _Z, VoxelType _Value) {
     Data_[GetIndex(_X, _Y, _Z)] = _Value;
 }
 
-void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, float _VoxelScale, VoxelType _Value) {
+void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Value) {
 
-    int XIndex = _X/_VoxelScale;
-    int YIndex = _Y/_VoxelScale;
-    int ZIndex = _Z/_VoxelScale;
+    int XIndex = (_X - BoundingBox_.bb_point1[0])/VoxelScale_um;
+    int YIndex = (_Y - BoundingBox_.bb_point1[1])/VoxelScale_um;
+    int ZIndex = (_Z - BoundingBox_.bb_point1[2])/VoxelScale_um;
     SetVoxel(XIndex, YIndex, ZIndex, _Value);
 
 }

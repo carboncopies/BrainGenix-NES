@@ -8,8 +8,9 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
-bool FillBoundingBox(VoxelArray* _Array, Shapes::BoundingBox* _BB, float _VoxelScale) {
 
+
+bool FillBoundingBox(VoxelArray* _Array, Shapes::BoundingBox* _BB, float _VoxelScale) {
 
 
     for (float X = _BB->bb_point1[0]; X < _BB->bb_point2[0]; X+= _VoxelScale) {
@@ -20,6 +21,7 @@ bool FillBoundingBox(VoxelArray* _Array, Shapes::BoundingBox* _BB, float _VoxelS
         }
     }
 
+    return true;
 
 }
 
@@ -47,6 +49,8 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         }
 
     }
+
+    return true;
 
 }
 
