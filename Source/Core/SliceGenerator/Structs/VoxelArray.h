@@ -138,7 +138,7 @@ public:
      */
     void ClearArray();
 
-}
+};
 
 
 }; // Close Namespace Logger
