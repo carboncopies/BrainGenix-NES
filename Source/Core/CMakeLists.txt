@@ -54,6 +54,7 @@ set(MAIN_SOURCES
   
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.h
+  ${SRC_DIR}/Core/Simulator/Structs/BoundingBox.h
   ${SRC_DIR}/Core/Simulator/Structs/BS.cpp
   ${SRC_DIR}/Core/Simulator/Structs/BS.h
   ${SRC_DIR}/Core/Simulator/Structs/Staple.cpp
@@ -101,6 +102,15 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/MeshConversionHelpers.cpp
   ${SRC_DIR}/Core/VSDA/MeshConversionHelpers.h
 
+
+  ${SRC_DIR}/Core/SliceGenerator/SliceGenerator.cpp
+  ${SRC_DIR}/Core/SliceGenerator/SliceGenerator.h
+  ${SRC_DIR}/Core/SliceGenerator/Structs/MicroscopeParameters.cpp
+  ${SRC_DIR}/Core/SliceGenerator/Structs/MicroscopeParameters.h
+  ${SRC_DIR}/Core/SliceGenerator/Structs/ScanRegion.cpp
+  ${SRC_DIR}/Core/SliceGenerator/Structs/ScanRegion.h
+  ${SRC_DIR}/Core/SliceGenerator/Structs/VoxelArray.cpp
+  ${SRC_DIR}/Core/SliceGenerator/Structs/VoxelArray.h
 
 )
  

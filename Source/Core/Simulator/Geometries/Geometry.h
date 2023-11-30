@@ -14,11 +14,17 @@
 #include <string>
 
 #include <Simulator/Geometries/VecTools.h>
+#include <Simulator/Structs/BoundingBox.h>
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 namespace Geometries {
+
+struct BoundingBox {
+    float bb_point1[3];
+    float bb_point2[3];
+};
 
 
 /**
@@ -38,6 +44,10 @@ struct Geometry {
     
     //! Returns the volume of the object in micrometer^3.
     virtual float Volume_um3() = 0;
+
+    //! Gets the bounding box for the given shape
+    virtual BoundingBox GetBoundingBox() = 0;
+
 };
 
 }; // Close Namespace Geometries

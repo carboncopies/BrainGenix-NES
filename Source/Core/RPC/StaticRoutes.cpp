@@ -7,7 +7,7 @@ namespace NES {
 namespace API {
 
 std::string GetAPIVersion() {
-    return "2023.11.04";
+    return "2023.11.29";
 }
 
 std::string Echo(std::string _Data) {

@@ -51,6 +51,16 @@ float Cylinder::RAtPosition_um(float pos) {
     return this->End0Radius_um + pos * rDiff;
 };
 
+
+BoundingBox Cylinder::GetBoundingBox() {
+	BoundingBox bb;
+
+
+	return bb;
+}
+
+
+
 }; // namespace Geometries
 }; // namespace Simulator
 }; // namespace NES

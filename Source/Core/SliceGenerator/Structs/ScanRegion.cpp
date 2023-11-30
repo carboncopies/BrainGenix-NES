@@ -1,0 +1,1 @@
+#include <SliceGenerator/Structs/ScanRegion.h>

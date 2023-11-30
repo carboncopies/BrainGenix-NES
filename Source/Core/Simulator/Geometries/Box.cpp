@@ -59,6 +59,16 @@ std::vector<float> Box::Sides() {
     return sides;
 }
 
+
+
+BoundingBox Box::GetBoundingBox() {
+	BoundingBox bb;
+
+
+	return bb;
+}
+
+
 }; // namespace Geometries
 }; // namespace Simulator
 }; // namespace NES

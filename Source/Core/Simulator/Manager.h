@@ -111,6 +111,7 @@ public:
     std::string PatchClampADCCreate(std::string _JSONRequest);
     std::string PatchClampADCSetSampleRate(std::string _JSONRequest);
     std::string PatchClampADCGetRecordedData(std::string _JSONRequest);
+    std::string Debug(std::string _JSONRequest);
 
 
     // /**
