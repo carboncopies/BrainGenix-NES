@@ -41,7 +41,7 @@ struct Box: public Geometry {
 
 
     // Member Functions
-    BoundingBox GetBoundingBox();
+    virtual BoundingBox GetBoundingBox();
 
 };
 

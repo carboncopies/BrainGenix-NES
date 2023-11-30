@@ -42,7 +42,7 @@ struct Cylinder: public Geometry {
 
 
     // Member Functions
-    BoundingBox GetBoundingBox();
+    virtual BoundingBox GetBoundingBox();
 
 
 };

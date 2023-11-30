@@ -56,11 +56,35 @@ void VoxelArray::SetVoxel(int _X, int _Y, int _Z, VoxelType _Value) {
     Data_[GetIndex(_X, _Y, _Z)] = _Value;
 }
 
+void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, float _VoxelScale, VoxelType _Value) {
+
+    int XIndex = _X/_VoxelScale;
+    int YIndex = _Y/_VoxelScale;
+    int ZIndex = _Z/_VoxelScale;
+    SetVoxel(XIndex, YIndex, ZIndex, _Value);
+
+}
+
+
 void VoxelArray::GetSize(int* _X, int* _Y, int* _Z) {
     (*_X) = SizeX_;
     (*_Y) = SizeY_;
     (*_Z) = SizeZ_;
 }
+
+int VoxelArray::GetX() {
+    return SizeX_;
+}
+
+int VoxelArray::GetY() {
+    return SizeY_;
+}
+
+int VoxelArray::GetZ() {
+    return SizeZ_;
+}
+
+
 
 }; // Close Namespace Logger
 }; // Close Namespace Common

@@ -121,6 +121,16 @@ public:
      */
     void SetVoxel(int _X, int _Y, int _Z, VoxelType _Value);
 
+    /**
+     * @brief Set the Voxel At the given Position (using the given scale) to the given value.
+     * Converts the given float x,y,z um position to index, then calls setvoxel normally
+     * 
+     * @param _X 
+     * @param _Y 
+     * @param _Z 
+     * @param _VoxelScale 
+     */
+    void SetVoxelAtPosition(float _X, float _Y, float _Z, float _VoxelScale, VoxelType _Value);
 
     /**
      * @brief Get the size of the array, populate the int ptrs
@@ -130,6 +140,27 @@ public:
      * @param _Z 
      */
     void GetSize(int* _X, int* _Y, int* _Z);
+
+    /**
+     * @brief Get the x dimensions
+     * 
+     * @return int 
+     */
+    int GetX();
+
+    /**
+     * @brief Get the y dimensions
+     * 
+     * @return int 
+     */
+    int GetY();
+
+    /**
+     * @brief Get the Z dimensions
+     * 
+     * @return int 
+     */
+    int GetZ();
 
 
     /**
