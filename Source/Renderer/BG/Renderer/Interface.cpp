@@ -52,47 +52,47 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
     }
 
 
-    Shaders::Phong CubeShader;
-    CubeShader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
-    CubeShader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
-    CubeShader.Type_ = Shaders::SHADER_PHONG;
-    Primitive::Cube CreateInfo;
-    CreateInfo.Position_ = vsg::vec3(0.0f, -1.1f, 0.0f);
-    CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
-    CreateInfo.Scale_    = vsg::vec3(1.0f, 1.0f, 1.0f);
-    CreateInfo.Shader_ = &CubeShader;
-    AddBox(&CreateInfo);
+    // Shaders::Phong CubeShader;
+    // CubeShader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
+    // CubeShader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
+    // CubeShader.Type_ = Shaders::SHADER_PHONG;
+    // Primitive::Cube CreateInfo;
+    // CreateInfo.Position_ = vsg::vec3(0.0f, -1.1f, 0.0f);
+    // CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
+    // CreateInfo.Scale_    = vsg::vec3(1.0f, 1.0f, 1.0f);
+    // CreateInfo.Shader_ = &CubeShader;
+    // AddBox(&CreateInfo);
 
 
 
-    CreateInfo.Position_ = vsg::vec3(-1.1f, 0.0f, 0.0f);
-    CreateInfo.Rotation_ = vsg::vec3(45.0f, 0.0f, 0.0f);
-    CreateInfo.Scale_    = vsg::vec3(2.0f, 1.0f, 1.0f);
-    CubeShader.DiffuseColor_  = vsg::vec4(0.8f, 0.2f, 0.2f, 1.0f);
-    AddBox(&CreateInfo);
+    // CreateInfo.Position_ = vsg::vec3(-1.1f, 0.0f, 0.0f);
+    // CreateInfo.Rotation_ = vsg::vec3(45.0f, 0.0f, 0.0f);
+    // CreateInfo.Scale_    = vsg::vec3(2.0f, 1.0f, 1.0f);
+    // CubeShader.DiffuseColor_  = vsg::vec4(0.8f, 0.2f, 0.2f, 1.0f);
+    // AddBox(&CreateInfo);
 
-    CreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 0.0f);
-    CreateInfo.Rotation_ = vsg::vec3(0.0f, 45.0f, 0.0f);
-    CreateInfo.Scale_    = vsg::vec3(1.0f, 2.0f, 1.0f);
-    CubeShader.DiffuseColor_  = vsg::vec4(0.2f, 0.8f, 0.2f, 1.0f);
-    AddBox(&CreateInfo);
+    // CreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 0.0f);
+    // CreateInfo.Rotation_ = vsg::vec3(0.0f, 45.0f, 0.0f);
+    // CreateInfo.Scale_    = vsg::vec3(1.0f, 2.0f, 1.0f);
+    // CubeShader.DiffuseColor_  = vsg::vec4(0.2f, 0.8f, 0.2f, 1.0f);
+    // AddBox(&CreateInfo);
 
-    CreateInfo.Position_ = vsg::vec3(1.1f, 0.0f, 0.0f);
-    CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 45.0f);
-    CreateInfo.Scale_    = vsg::vec3(1.0f, 1.0f, 2.0f);
-    CubeShader.DiffuseColor_  = vsg::vec4(0.2f, 0.2f, 0.8f, 1.0f);
-    AddBox(&CreateInfo);
+    // CreateInfo.Position_ = vsg::vec3(1.1f, 0.0f, 0.0f);
+    // CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 45.0f);
+    // CreateInfo.Scale_    = vsg::vec3(1.0f, 1.0f, 2.0f);
+    // CubeShader.DiffuseColor_  = vsg::vec4(0.2f, 0.2f, 0.8f, 1.0f);
+    // AddBox(&CreateInfo);
 
 
-    Shaders::Phong SphereShader;
-    SphereShader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
-    SphereShader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
-    SphereShader.Type_ = Shaders::SHADER_PHONG;
-    Primitive::Sphere SphereCreateInfo;
-    SphereCreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 2.0f);
-    SphereCreateInfo.Radius_   = 1.0f;
-    SphereCreateInfo.Shader_ = &SphereShader;
-    AddSphere(&SphereCreateInfo);
+    // Shaders::Phong SphereShader;
+    // SphereShader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
+    // SphereShader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
+    // SphereShader.Type_ = Shaders::SHADER_PHONG;
+    // Primitive::Sphere SphereCreateInfo;
+    // SphereCreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 2.0f);
+    // SphereCreateInfo.Radius_   = 1.0f;
+    // SphereCreateInfo.Shader_ = &SphereShader;
+    // AddSphere(&SphereCreateInfo);
 
 
     Shaders::Phong CylinderShader;
@@ -149,6 +149,21 @@ bool Interface::AddCylinder(Primitive::Cylinder* _CreateInfo) {
     return GeometryBuilder_->CreateCylinder(RendererManager_->GetScene(), _CreateInfo);
 }
 
+bool Interface::UpdateScene() {
+    return RendererManager_->CompileScene();
+}
+
+void Interface::WaitUntilGPUDone() {
+    RendererManager_->WaitUntilGPUDone();
+    return;
+}
+void Interface::LockScene() {
+    RendererManager_->LockScene();
+}
+
+void Interface::UnlockScene() {
+    RendererManager_->UnlockScene();
+}
 
 }; // Close Namespace Logger
 }; // Close Namespace Common

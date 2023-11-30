@@ -99,6 +99,9 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/VSDA/MeshBuilder.cpp
   ${SRC_DIR}/Core/VSDA/MeshBuilder.h
+  ${SRC_DIR}/Core/VSDA/MeshConversionHelpers.cpp
+  ${SRC_DIR}/Core/VSDA/MeshConversionHelpers.h
+
 
   ${SRC_DIR}/Core/SliceGenerator/SliceGenerator.cpp
   ${SRC_DIR}/Core/SliceGenerator/SliceGenerator.h

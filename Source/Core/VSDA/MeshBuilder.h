@@ -20,6 +20,7 @@
 #include <BG/Renderer/Interface.h>
 #include <Simulator/Structs/Simulation.h>
 
+#include <VSDA/MeshConversionHelpers.h>
 
 
 

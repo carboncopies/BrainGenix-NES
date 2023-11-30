@@ -31,7 +31,9 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <iostream>
 #include <assert.h>
-
+#include <mutex>
+#include <chrono>
+#include <thread>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <vsg/all.h>
@@ -61,6 +63,8 @@ private:
 
     std::unique_ptr<State::RenderData> RenderData_; /**Instance of renderdata struct, stores vulkan scene graph state*/
     std::unique_ptr<State::Scene>      Scene_;      /**Instance of scene struct, stores the geometry for this scene*/
+
+    std::mutex                         SceneAccessLock_; /**Mutex to control access to the scene, so only one thread may use it at a time*/
 
     // todo:
     // migrate vsg argparser to function here
@@ -147,6 +151,25 @@ public:
      * @return false 
      */
     bool DrawFrame();
+
+
+    /**
+     * @brief Waits until the GPU is done doing stuff.
+     * 
+     */
+    void WaitUntilGPUDone();
+
+    /**
+     * @brief Locks the scene mutex, allowing other threads to access the scene.
+     * 
+     */
+    void LockScene();
+
+    /**
+     * @brief Unlocks the scene mutex, allowing other threads to access the scene.
+     * 
+     */
+    void UnlockScene();
 
 
 };
