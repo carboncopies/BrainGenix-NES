@@ -56,7 +56,7 @@ struct MicroscopeParameters {
     float VoxelResolution_um; /**Set the size of each voxel*/
 
 
-}
+};
 
 
 }; // Close Namespace Logger

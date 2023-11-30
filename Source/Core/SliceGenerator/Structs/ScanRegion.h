@@ -61,7 +61,7 @@ struct ScanRegion {
     float Point2Y_um;
     float Point2Z_um;
 
-}
+};
 
 
 }; // Close Namespace Logger
