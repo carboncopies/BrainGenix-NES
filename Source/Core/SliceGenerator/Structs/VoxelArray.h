@@ -60,13 +60,28 @@ enum VoxelState {
  */
 class VoxelArray {
 
-public:
+private:
 
-    VoxelType*** Data_;
+    VoxelType* Data_; /**Big blob of memory that holds all the voxels*/
 
     int SizeX_; /**Number of voxels in x dimension*/
     int SizeY_; /**Number of voxels in y dimension*/
     int SizeZ_; /**Number of voxels in z dimension*/
+
+
+    /**
+     * @brief Returns the flat index for the voxel at the given coords.
+     * 
+     * @param _X 
+     * @param _Y 
+     * @param _Z 
+     * @return int 
+     */
+    int GetIndex(int _X, int _Y, int _Z);
+
+
+
+public:
 
     /**
      * @brief Construct a new Voxel Array object
@@ -77,7 +92,51 @@ public:
      */
     VoxelArray(int _SizeX, int _SizeY, int _SizeZ);
 
+    /**
+     * @brief Destroy the Voxel Array object
+     * 
+     */
     ~VoxelArray();
+
+
+
+    /**
+     * @brief Returns the voxel at the given coordinates
+     * 
+     * @param _X 
+     * @param _Y 
+     * @param _Z 
+     * @return VoxelType 
+     */
+    VoxelType GetVoxel(int _X, int _Y, int _Z);
+
+
+    /**
+     * @brief Sets the voxel at the given coords to _Value.
+     * 
+     * @param _X 
+     * @param _Y 
+     * @param _Z 
+     * @param _Value 
+     */
+    void SetVoxel(int _X, int _Y, int _Z, VoxelType _Value);
+
+
+    /**
+     * @brief Get the size of the array, populate the int ptrs
+     * 
+     * @param _X 
+     * @param _Y 
+     * @param _Z 
+     */
+    void GetSize(int* _X, int* _Y, int* _Z);
+
+
+    /**
+     * @brief Clears the given array to all 0s
+     * 
+     */
+    void ClearArray();
 
 }
 
