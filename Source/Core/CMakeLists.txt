@@ -31,6 +31,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.h
   ${SRC_DIR}/Core/Simulator/Structs/Shapes.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Shapes.h
+  ${SRC_DIR}/Core/Simulator/Structs/Geometry.cpp
+  ${SRC_DIR}/Core/Simulator/Structs/Geometry.h
   ${SRC_DIR}/Core/Simulator/Structs/Sphere.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Sphere.h
   ${SRC_DIR}/Core/Simulator/Structs/Cylinder.cpp

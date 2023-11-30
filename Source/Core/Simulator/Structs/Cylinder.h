@@ -16,6 +16,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Structs/Geometry.h>
 
 
 namespace BG {
@@ -28,7 +29,7 @@ namespace Shapes {
  * @brief Name of the Cylinder
  * 
  */
-struct Cylinder {
+struct Cylinder: public Geometry {
 
     std::string Name; /**Name of the Cylinder*/
     int ID; /**ID of the Cylinder*/
@@ -37,6 +38,12 @@ struct Cylinder {
     float Point1Pos_nm[3]; /**Position of the first point of the Cylinder in nanometers (relative to origin)*/
     float Point2Radius_nm; /**Radius in nanometers of the second point of the cylinder*/
     float Point2Pos_nm[3]; /**Position of the second point of the Cylinder in nanometers (relative to origin)*/
+
+
+
+    // Member Functions
+    BoundingBox GetBoundingBox();
+
 
 };
 

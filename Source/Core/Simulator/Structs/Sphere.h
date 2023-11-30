@@ -16,7 +16,8 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Geometry>
+#include <Simulator/Structs/Geometry.h>
+
 
 namespace BG {
 namespace NES {
@@ -36,6 +37,8 @@ struct Sphere: public Geometry {
     float Radius_nm; /**Radius in nanometers of the sphere*/
     float Center_nm[3]; /**Position of the center of the sphere in nanometers (relative to origin)*/
 
+
+    // Member Functions
     BoundingBox GetBoundingBox();
 
 };

@@ -15,7 +15,7 @@ struct BoundingBox {
  * @brief This is inherited by all shapes.
  */
 struct Geometry {
-    BoundingBox GetBoundingBox() = 0;
+    BoundingBox GetBoundingBox();
 };
 
 }; // Close Namespace Shapes

@@ -16,6 +16,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Structs/Geometry.h>
 
 
 namespace BG {
@@ -28,7 +29,7 @@ namespace Shapes {
  * @brief Name of the Box
  * 
  */
-struct Box {
+struct Box: public Geometry {
 
     std::string Name; /**Name of the Box*/
     int ID; /**ID of the Box*/
@@ -36,6 +37,11 @@ struct Box {
     float CenterPos_nm[3]; /**Position of the center of the box*/
     float Scale_nm[3]; /**Scale of the box*/
     float Rotation_rad[3]; /**Rotation of the box (euler angles) in radians*/
+
+
+
+    // Member Functions
+    BoundingBox GetBoundingBox();
 
 };
 
