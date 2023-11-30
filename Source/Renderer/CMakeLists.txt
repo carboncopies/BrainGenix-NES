@@ -22,12 +22,15 @@ add_library(NESRenderer
     "BG/Renderer/Shader/ShaderCompiler.cpp"
     "BG/Renderer/Shader/ShaderHelpers.h"
     "BG/Renderer/Shader/ShaderHelpers.cpp"
+
+
+
 )
 
 target_link_libraries(NESRenderer
 
     bg-common-logger
-
+    
     vk-bootstrap::vk-bootstrap
     Vulkan::Vulkan
     $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>

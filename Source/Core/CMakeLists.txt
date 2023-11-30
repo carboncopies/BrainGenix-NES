@@ -61,6 +61,10 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Util/JSONHelpers.h
 
 
+  ${SRC_DIR}/Core/SliceGenerator/SliceGenerator.cpp
+  ${SRC_DIR}/Core/SliceGenerator/SliceGenerator.h
+
+
   )
 
 
