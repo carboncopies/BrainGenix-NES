@@ -766,7 +766,7 @@ std::string Manager::Debug(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[0].get();
 
 
-    Geometries::BoundingBox BB = Geometries::BoundingBox();
+    BoundingBox BB = BoundingBox();
     BB.bb_point1[0] = 0.;
     BB.bb_point1[1] = 0.;
     BB.bb_point1[2] = 0.;
@@ -783,11 +783,11 @@ std::string Manager::Debug(std::string _JSONRequest) {
     MParams.VoxelResolution_um = 1.;
 
 
-    // CreateVoxelArrayFromSimulation(Logger_, ThisSimulation, &MParams, &Arr);
+    CreateVoxelArrayFromSimulation(Logger_, ThisSimulation, &MParams, &Arr);
 
-    for (unsigned int i = 0; i < Arr.GetZ(); i++) {
-        Arr.SetVoxel(i, i, i, FILLED);
-    }
+    // for (unsigned int i = 0; i < Arr.GetZ(); i++) {
+    //     Arr.SetVoxel(i, i, i, FILLED);
+    // }
 
     for (unsigned int i = 0; i < Arr.GetZ(); i++) {
         RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, i);

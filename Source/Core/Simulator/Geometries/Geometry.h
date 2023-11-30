@@ -21,11 +21,6 @@ namespace NES {
 namespace Simulator {
 namespace Geometries {
 
-struct BoundingBox {
-    float bb_point1[3];
-    float bb_point2[3];
-};
-
 
 /**
  * @brief This abstract struct defines the general attributes of a geometrical shape. * 

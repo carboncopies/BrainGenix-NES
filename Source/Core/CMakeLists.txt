@@ -54,6 +54,7 @@ set(MAIN_SOURCES
   
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.h
+  ${SRC_DIR}/Core/Simulator/Structs/BoundingBox.cpp
   ${SRC_DIR}/Core/Simulator/Structs/BoundingBox.h
   ${SRC_DIR}/Core/Simulator/Structs/BS.cpp
   ${SRC_DIR}/Core/Simulator/Structs/BS.h

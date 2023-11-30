@@ -10,7 +10,7 @@ namespace Simulator {
 
 
 
-bool FillBoundingBox(VoxelArray* _Array, Geometries::BoundingBox* _BB, float _VoxelScale) {
+bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
 
 
     for (float X = _BB->bb_point1[0]; X < _BB->bb_point2[0]; X+= _VoxelScale) {
@@ -31,6 +31,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     assert(_Sim != nullptr);
     assert(_Logger != nullptr);
 
+    _Logger->Log(std::string("Building Voxel Array For Simulation '") + _Sim->Name + "'", 2);
 
     // Build Bounding Boxes For All Compartments
     for (unsigned int i = 0; i < _Sim->BSCompartments.size(); i++) {
@@ -40,7 +41,9 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
         if (std::holds_alternative<Geometries::Sphere>(ThisShape)) {
             Geometries::Sphere ThisSphere = std::get<Geometries::Sphere>(ThisShape);
-            Geometries::BoundingBox BB = ThisSphere.GetBoundingBox();
+            BoundingBox BB = ThisSphere.GetBoundingBox();
+
+            _Logger->Log(std::string("Adding Bounding Box For Sphere With Dimensions '") + BB.Dimensions() + "'", 2);
 
             FillBoundingBox(_Array, &BB, _Params->VoxelResolution_um);
 
@@ -54,6 +57,10 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 }
 
 bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, MicroscopeParameters* _Params, VoxelArray* _Array, int SliceNumber) {
+    assert(_Array != nullptr);
+    assert(_Params != nullptr);
+    assert(_Logger != nullptr);
+
 
     _Logger->Log(std::string("Rendering Slice '") + std::to_string(SliceNumber) + "'", 2);
 
@@ -64,7 +71,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
 
     // Setup Voxel Info
     float VoxelSize = _Array->GetResolution();
-    Geometries::BoundingBox VoxelBB = _Array->GetBoundingBox();
+    BoundingBox VoxelBB = _Array->GetBoundingBox();
     
     // Build Shaders for Use Later
     Renderer::Shaders::Phong BoxShader;

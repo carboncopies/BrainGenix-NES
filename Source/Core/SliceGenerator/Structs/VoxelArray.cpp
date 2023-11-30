@@ -9,7 +9,7 @@ namespace Simulator {
 
 
 
-VoxelArray::VoxelArray(Geometries::BoundingBox _BB, float _VoxelScale_um) {
+VoxelArray::VoxelArray(BoundingBox _BB, float _VoxelScale_um) {
 
     // Calculate Dimensions
     float SizeX = abs(_BB.bb_point1[0] - _BB.bb_point2[0]);
@@ -98,7 +98,7 @@ float VoxelArray::GetResolution() {
     return VoxelScale_um;
 }
 
-Geometries::BoundingBox VoxelArray::GetBoundingBox() {
+BoundingBox VoxelArray::GetBoundingBox() {
     return BoundingBox_;
 }
 

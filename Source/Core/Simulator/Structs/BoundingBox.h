@@ -26,6 +26,8 @@ namespace Simulator {
 struct BoundingBox {
     float bb_point1[3];
     float bb_point2[3];
+
+    std::string Dimensions();
 };
 
 

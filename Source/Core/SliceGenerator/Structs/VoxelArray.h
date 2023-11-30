@@ -73,7 +73,7 @@ private:
 
     float VoxelScale_um; /**Set the size of each voxel in micrometers*/
 
-    Geometries::BoundingBox BoundingBox_; /**Set the bounding box of this voxel array (relative to the simulation orign)*/
+    BoundingBox BoundingBox_; /**Set the bounding box of this voxel array (relative to the simulation orign)*/
 
 
 
@@ -97,7 +97,7 @@ public:
      * @param _BB Bounding box of the array, in world space
      * @param _VoxelScale_um Scale of each voxel in micrometers
      */
-    VoxelArray(Geometries::BoundingBox _BB, float _VoxelScale_um);
+    VoxelArray(BoundingBox _BB, float _VoxelScale_um);
 
     /**
      * @brief Destroy the Voxel Array object
@@ -179,9 +179,9 @@ public:
     /**
      * @brief Returns the bounding box of this voxel array (in simulation world space).
      * 
-     * @return Geometries::BoundingBox 
+     * @return BoundingBox 
      */
-    Geometries::BoundingBox GetBoundingBox();
+    BoundingBox GetBoundingBox();
 
 
     /**
