@@ -23,9 +23,9 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
-#include <Simulator/Structs/Sphere.h>
-#include <Simulator/Structs/Cylinder.h>
-#include <Simulator/Structs/Box.h>
+#include <Simulator/Geometries/Sphere.h>
+#include <Simulator/Geometries/Cylinder.h>
+#include <Simulator/Geometries/Box.h>
 #include <Simulator/Structs/BS.h>
 #include <Simulator/Structs/Staple.h>
 #include <Simulator/Structs/Receptor.h>

@@ -11,6 +11,9 @@ Debian_12_Build:
     paths:
       - Build/
       - Binaries/
+      - "**/*.log"
+    when: always
+    
   cache:
     - key:
       paths:

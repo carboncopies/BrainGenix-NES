@@ -2,20 +2,49 @@
 
 # This project is currently in development
 
-# What's BrainGenix-NES?
+# What is BrainGenix-NES?
 
-BrainGenix Neuron Emulation System (NES) aims to be a distributed biological neuron simulator designed for the emulation of human brains. The simulator uses Apache Zookeeper and other production-grade systems to ensure that it is both stable and fault-tolerant. It is designed with scalability in mind to run with one neuron or a hundred billion. NES will work in conjunction with other BrainGenix programs, including the management API.
+BrainGenix Neuron Emulation System (NES) aims to be a stable, fault-tolerant, and scalable distributed simulation platform for biologically realistic neuronal networks applicable to the emulation of human brains.
 
-## Key Features
- - NES runs with as many neurons as your simulation has, be it one or a billion.
- - Performance is also an issue with simulations, so NES supports almost every model. It's based on the popular Brian simulator, so any model that can be written as a differential equation is supported.
- - Based on Apache Zookeeper, NES uses the leader-follower system. Based on this system, even a fault with the leader node won't cause the system to crash.
- - NES has an extensive Simulation API that allows any other system to interact with the simulation that NES runs.
- - Management of the entire BrainGenix software suite can be acomplished via BrainGenix's unified CLI or GUI.
- - NES also interfaces with ERS and STS, the other parts of BrainGenix.
- 
-# Documentation
-Currently the best source of information about NES can be found within our technical specifications document below:
+BrainGenix-NES is presently being developed in close coordination with the [Virtual Brain Platform (VBP)](https://gitlab.braingenix.org/carboncopies/virtual-brain/vbp), an in-silico experimentation platform for neuroscientists for which it provides the computational backend.
+
+The primary application of BrainGenix-NES is as the computational backend for simulation efforts involved in the scientific exploration of whole brain emulation (WBE) and research and development of resulting methods for a) system identification and translation, b) validation metrics applied to an emulation, and c) effective implementation of a brain emulation.
+
+The BrainGenix-NES platform integrates and interoperates closely with:
+
+- [BrainGenix-STS](https://gitlab.braingenix.org/carboncopies/BrainGenix-STS): post-processing of acquired brain data.
+- [BrainGenix-ERS](https://gitlab.braingenix.org/carboncopies/BrainGenix-ERS): embodiment and environment.
+- [Virtual Brain Platform](https://gitlab.braingenix.org/carboncopies/virtual-brain/vbp): scientific exploration of system identification and translation to an emulation from brain data, and the validation of the emulation.
+
+
+## Distributed processing and multi-resolution models
+
+Distributed processing in BrainGenix-NES includes the distribution of tasks across multiple - potentially spatially separated - CPU architectures, as wells as GPUs. [Apache Zookeeper](https://zookeeper.apache.org/) and other production-grade systems are employed to ensure stability and fault-tolerance. Simulation tasks are expected to range from the simulation of detailed single-neuron models to brain architectures composed of billions of neurons.
+
+A special feature of BrainGenix-NES is that it is designed from the ground-up to enable simulation across multiple resolutions and for model components at those different resolutions to interact sensibly. This is a requirement for efficient brain emulation design, because some aspects of brain function require high resolution modeling (e.g. [dendritic computation](https://pubmed.ncbi.nlm.nih.gov/16033324/)) while others operate well at a much lower resolution of replication (e.g. [ephaptic coupling](https://en.wikipedia.org/wiki/Ephaptic_coupling)).
+
+## Working with BrainGenix-NES through the API
+
+The [BrainGenix-API](https://gitlab.braingenix.org/carboncopies/BrainGenix-API) is the management API through which client systems can request BrainGenix-NES capabilities, can build simulations and can run them. The NES backend is largely written in C++, while client frontends can use any language that supports the necessary API calls and can process results returned. E.g., the VBP is largely written in Python at this time.
+
+Many users or client front-ends can interact with BrainGenix-NES concurrently, running multiple simulations for which state is maintained.
+
+## Getting started
+
+- Source files documentation is processed and made available through [Doxygen in the Docs folder](https://gitlab.braingenix.org/carboncopies/BrainGenix-NES/-/tree/master/Docs/Doxygen).
+- To compile, install and run BrainGenix-NES, run cmake on the main folder.
+
+## Important folders
+
+- Further documentation is supplied in the [Docs](https://gitlab.braingenix.org/carboncopies/BrainGenix-NES/-/tree/master/Docs) folder.
+- Principal components of BrainGenix-NES reside in the [Core](https://gitlab.braingenix.org/carboncopies/BrainGenix-NES/-/tree/master/Source/Core) and [Renderer](https://gitlab.braingenix.org/carboncopies/BrainGenix-NES/-/tree/master/Source/Renderer) folders within the [Source](https://gitlab.braingenix.org/carboncopies/BrainGenix-NES/-/tree/master/Source) folder. The Renderer offers GPU-accelerated 3D rendering for the purpose of simulation and data display, as well as simulated data acquisition that is needed for the analysis of in-silico ground-truth models in the Virtual Brain Platform.
+
+## Supported platforms
+
+BrainGenix-NES compiles and runs on modern Linux distributions.
+
+## More information
+Currently the best source of information about NES can be found within our technical specifications document:
 https://docs.google.com/document/d/1tVIB7KQcSRKNU_df8oPVR3wyBHagjv2xvqaMy-oDg18/edit#
 
 You can also view our Trello Boards here: https://trello.com/braingenixdepartment

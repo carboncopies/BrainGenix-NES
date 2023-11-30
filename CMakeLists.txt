@@ -21,7 +21,10 @@ project(
 	"BrainGenix-NES"
 	VERSION "0.2.0"
 	LANGUAGES CXX
-	)
+)
+
+# Set project static library name
+set(PROJECT_LIBRARY_NAME "braingenix_nes")
 
 
 # Include Util CMake Scripts
@@ -58,24 +61,15 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(fetch_vk_bootstrap)
 
-message(STATUS "Setting Up SDL2 Library")
-find_package(SDL2 CONFIG REQUIRED)
 
 message(STATUS "Setting Up yaml-cpp Library")
 find_package(yaml-cpp CONFIG REQUIRED)
 
-message(STATUS "Setting Up glm Library")
-find_package(glm CONFIG REQUIRED)
+message(STATUS "Setting Up Vulkan Scene Graph Library")
+find_package(vsg CONFIG REQUIRED)
 
-message(STATUS "Setting Up shaderc Library")
-find_package(unofficial-shaderc CONFIG REQUIRED)
-
-message(STATUS "Setting Up vulkan-memory-allocator Library")
-find_package(VulkanMemoryAllocator CONFIG REQUIRED)
-
-
-
-
+message(STATUS "Setting Up vsgXchange Library")
+find_package(vsgXchange CONFIG REQUIRED)
 
 
 # Internal Deps
@@ -83,21 +77,23 @@ message(STATUS "Finding bg-common-logger Package")
 find_package(bg-common-logger CONFIG REQUIRED)
 
 
+# Enabling testing and finding GTest
+enable_testing()
+message(STATUS "Finding gtest Package")
+find_package(GTest CONFIG REQUIRED)
 
 # Ensure config is copied to bin
 file(COPY "${SRC_DIR}/Data/NES.cfg" DESTINATION "${BIN_DIR}")
+
+
 
 # Run Configuration Tools
 include(${CMAKE_SCRIPTS_DIR}/VersioningSystem/VersioningSystem.cmake)
 include(${CMAKE_SCRIPTS_DIR}/CompilePlatformInfo/CompilePlatformInfo.cmake)
 include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
-
-
-
 add_subdirectory(${SRC_DIR}/Core)
 add_subdirectory(${SRC_DIR}/Renderer)
-
 
 
 
@@ -120,12 +116,21 @@ install(FILES "${SRC_DIR}/Data/BrainGenix-NES.service"
     COMPONENT Release
 )
 
+# Include CTest for testing
+include(CTest)
+
+
+
 # TEMPORARY COPIES FOR SHADER CODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # file(COPY "${SRC_DIR}/Data/vert.spv" DESTINATION "${BIN_DIR}")
 # file(COPY "${SRC_DIR}/Data/frag.spv" DESTINATION "${BIN_DIR}")
 
 file(COPY "${SRC_DIR}/Data/" DESTINATION "${BIN_DIR}")
 
+
+
+# Include CTest for testing
+include(CTest)
 
 
 # CPack Information

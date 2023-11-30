@@ -6,18 +6,21 @@
     "bg-common-logger",
     "yaml-cpp",
     "boost-program-options",
+    "glm",
+    "gtest",
     "nlohmann-json",
     "rpclib",
     "vulkan",
-      "vk-bootstrap",
-        {
-          "name": "sdl2",
-          "features": [
-            "vulkan"
-          ]
-        },
-    "glm",
-    "shaderc",
-    "vulkan-memory-allocator"
+    "vk-bootstrap",
+    "vsg",
+    {
+      "name": "vsgxchange",
+      "features": [
+        "assimp",
+        "curl",
+        "freetype",
+        "openexr"
+      ]
+    }
   ]
 }

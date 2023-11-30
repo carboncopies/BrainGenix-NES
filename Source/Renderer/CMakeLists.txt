@@ -2,41 +2,38 @@ add_library(NESRenderer
 
     "BG/Renderer/Interface.h"
     "BG/Renderer/Interface.cpp"
-    "BG/Renderer/Manager.h"
-    "BG/Renderer/Manager.cpp"
-    "BG/Renderer/VulkanHelpers.h"
-    "BG/Renderer/VulkanHelpers.cpp"
 
-    "BG/Renderer/VulkanRenderer.h"
-    "BG/Renderer/VulkanRenderer.cpp"
-    "BG/Renderer/VulkanMemoryAllocator.h"
-    "BG/Renderer/VulkanMemoryAllocator.cpp"
-    "BG/Renderer/RenderData.h"
-    "BG/Renderer/RenderData.cpp"
-    "BG/Renderer/Allocation.h"
-    "BG/Renderer/Allocation.cpp"
+    "BG/Renderer/State/Scene.h"
+    "BG/Renderer/State/Scene.cpp"
+    "BG/Renderer/State/RenderData.h"
+    "BG/Renderer/State/RenderData.cpp"
 
-    "BG/Renderer/Shader/ShaderCompileObject.h"
-    "BG/Renderer/Shader/ShaderCompileObject.cpp"
-    "BG/Renderer/Shader/ShaderCompiler.h"
-    "BG/Renderer/Shader/ShaderCompiler.cpp"
-    "BG/Renderer/Shader/ShaderHelpers.h"
-    "BG/Renderer/Shader/ShaderHelpers.cpp"
+    "BG/Renderer/SceneGraph/Manager.h"
+    "BG/Renderer/SceneGraph/Manager.cpp"
+    "BG/Renderer/SceneGraph/GeometryBuilder.h"
+    "BG/Renderer/SceneGraph/GeometryBuilder.cpp"
 
+    "BG/Renderer/SceneGraph/Primitive/Cube.h"
+    "BG/Renderer/SceneGraph/Primitive/Cube.cpp"
+    "BG/Renderer/SceneGraph/Primitive/Sphere.h"
+    "BG/Renderer/SceneGraph/Primitive/Sphere.cpp"
+    "BG/Renderer/SceneGraph/Primitive/Cylinder.h"
+    "BG/Renderer/SceneGraph/Primitive/Cylinder.cpp"
 
+    "BG/Renderer/SceneGraph/Shader/Shader.h"
+    "BG/Renderer/SceneGraph/Shader/Shader.cpp"
+    "BG/Renderer/SceneGraph/Shader/Phong.h"
+    "BG/Renderer/SceneGraph/Shader/Phong.cpp"
+
+    "BG/Renderer/Math/MathHelpers.h"
+    "BG/Renderer/Math/MathHelpers.cpp"
 
 )
 
 target_link_libraries(NESRenderer
-
     bg-common-logger
-    
-    vk-bootstrap::vk-bootstrap
     Vulkan::Vulkan
-    $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
-    $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
-    glm::glm
-    unofficial::shaderc::shaderc
-    GPUOpen::VulkanMemoryAllocator
+    vsg::vsg
+    vsgXchange::vsgXchange
 )
 target_include_directories(NESRenderer PUBLIC ${SRC_DIR}/Renderer)

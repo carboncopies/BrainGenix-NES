@@ -10,37 +10,37 @@ stages:
   - Build
   - Package
   - Deploy
-  # - Test # Temp. disabled tests as they have not yet been implemented.
+  - Test # Temp. disabled tests as they have not yet been implemented.
 
 include: 
   # Update CI Containersers
   - '/CI/Images/Ubuntu2204/CI.yml'
-  - '/CI/Images/Ubuntu2004/CI.yml'
+  # - '/CI/Images/Ubuntu2004/CI.yml'
   - '/CI/Images/Doxygen/CI.yml'
   # - '/CI/Images/Drawio/CI.yml' Disabled for now since this uses Electron which is a pain in the ass.
-  - '/CI/Images/Debian11/CI.yml'
+  # - '/CI/Images/Debian11/CI.yml'
   - '/CI/Images/Debian12/CI.yml'
 
   # Executable Builders
   - '/CI/Build/Ubuntu2204/CI.yml'
-  - '/CI/Build/Ubuntu2004/CI.yml'
+  # - '/CI/Build/Ubuntu2004/CI.yml'
   - '/CI/Docs/Doxygen/CI.yml'
   # - '/CI/Docs/Drawio/CI.yml' Disabled for now since this uses Electron which is a pain in the ass.
-  - '/CI/Build/Debian11/CI.yml'
+  # - '/CI/Build/Debian11/CI.yml'
   - '/CI/Build/Debian12/CI.yml'
 
-  # # Tests
-  # - '/CI/Test/Ubuntu2204/CI.yml'
+  # Tests
+  - '/CI/Test/Ubuntu2204/CI.yml'
   # - '/CI/Test/Ubuntu2004/CI.yml'
   # - '/CI/Test/Debian11/CI.yml'
-  # - '/CI/Test/Debian12/CI.yml'
+  - '/CI/Test/Debian12/CI.yml' 
 
 
   # Package Stage
-  - '/CI/Package/Ubuntu2204/CI.yml'
-  # - '/CI/Package/Ubuntu2004/CI.yml'
-  - '/CI/Package/Debian11/CI.yml'
-  - '/CI/Package/Debian12/CI.yml'
+  # - '/CI/Package/Ubuntu2204/CI.yml'
+  # # - '/CI/Package/Ubuntu2004/CI.yml'
+  # # - '/CI/Package/Debian11/CI.yml'
+  # - '/CI/Package/Debian12/CI.yml'
 
 
 
@@ -53,4 +53,4 @@ include:
 
 
   # Deploy To Prod
-  - '/CI/Deploy/Prod.yml'
+  # - '/CI/Deploy/Prod.yml'

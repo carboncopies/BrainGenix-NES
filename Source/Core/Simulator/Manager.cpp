@@ -233,21 +233,19 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
     std::cout<<"[Info] Create Sphere Called, On Sim "<<SimulationID<<std::endl;
-    float Radius_nm  = Util::GetFloat(&RequestJSON, "Radius_nm");
-    float CenterPosX_nm = Util::GetFloat(&RequestJSON, "CenterPosX_nm");
-    float CenterPosY_nm = Util::GetFloat(&RequestJSON, "CenterPosY_nm");
-    float CenterPosZ_nm = Util::GetFloat(&RequestJSON, "CenterPosZ_nm");
+    float Radius_um  = Util::GetFloat(&RequestJSON, "Radius_um");
+    float CenterPosX_um = Util::GetFloat(&RequestJSON, "CenterPosX_um");
+    float CenterPosY_um = Util::GetFloat(&RequestJSON, "CenterPosY_um");
+    float CenterPosZ_um = Util::GetFloat(&RequestJSON, "CenterPosZ_um");
     std::string Name = Util::GetString(&RequestJSON, "Name");
 
-
-
     // Build New Sphere Object
-    Shapes::Sphere S;
+    Geometries::Sphere S;
     S.Name = Name;
-    S.Radius_nm = Radius_nm;
-    S.Center_nm[0] = CenterPosX_nm;
-    S.Center_nm[1] = CenterPosY_nm;
-    S.Center_nm[2] = CenterPosZ_nm;
+    S.Radius_um = Radius_um;
+    S.Center_um.x_um = CenterPosX_um;
+    S.Center_um.y_um = CenterPosY_um;
+    S.Center_um.z_um = CenterPosZ_um;
 
 
     // Add to Sim, Set ID
@@ -262,9 +260,9 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
         ResponseJSON["StatusCode"] = 4; // simulation is currently processing
         return ResponseJSON.dump();
     }
-    int SphereID = ThisSimulation->Shapes.Shapes.size();
+    int SphereID = ThisSimulation->Collection.Geometries.size();
     S.ID = SphereID;
-    ThisSimulation->Shapes.Shapes.push_back(S);
+    ThisSimulation->Collection.Geometries.push_back(S);
 
 
     // Return Status ID
@@ -280,28 +278,28 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
     std::cout<<"[Info] Create Cylinder Called, On Sim "<<SimulationID<<std::endl;
-    float P1Radius_nm  = Util::GetFloat(&RequestJSON, "Point1Radius_nm");
-    float P1X_nm = Util::GetFloat(&RequestJSON, "Point1PosX_nm");
-    float P1Y_nm = Util::GetFloat(&RequestJSON, "Point1PosY_nm");
-    float P1Z_nm = Util::GetFloat(&RequestJSON, "Point1PosZ_nm");
-    float P2Radius_nm  = Util::GetFloat(&RequestJSON, "Point2Radius_nm");
-    float P2X_nm = Util::GetFloat(&RequestJSON, "Point2PosX_nm");
-    float P2Y_nm = Util::GetFloat(&RequestJSON, "Point2PosY_nm");
-    float P2Z_nm = Util::GetFloat(&RequestJSON, "Point2PosZ_nm");
+    float E0Radius_um  = Util::GetFloat(&RequestJSON, "End0Radius_um");
+    float E0X_um = Util::GetFloat(&RequestJSON, "End0PosX_um");
+    float E0Y_um = Util::GetFloat(&RequestJSON, "End0PosY_um");
+    float E0Z_um = Util::GetFloat(&RequestJSON, "End0PosZ_um");
+    float E1Radius_um  = Util::GetFloat(&RequestJSON, "End1Radius_um");
+    float E1X_um = Util::GetFloat(&RequestJSON, "End1PosX_um");
+    float E1Y_um = Util::GetFloat(&RequestJSON, "End1PosY_um");
+    float E1Z_um = Util::GetFloat(&RequestJSON, "End1PosZ_um");
     std::string Name = Util::GetString(&RequestJSON, "Name");
 
 
     // Build New Cylinder Object
-    Shapes::Cylinder S;
+    Geometries::Cylinder S;
     S.Name = Name;
-    S.Point1Radius_nm = P1Radius_nm;
-    S.Point1Pos_nm[0] = P1X_nm;
-    S.Point1Pos_nm[1] = P1Y_nm;
-    S.Point1Pos_nm[2] = P1Z_nm;
-    S.Point2Radius_nm = P2Radius_nm;
-    S.Point2Pos_nm[0] = P2X_nm;
-    S.Point2Pos_nm[1] = P2Y_nm;
-    S.Point2Pos_nm[2] = P2Z_nm;
+    S.End0Radius_um = E0Radius_um;
+    S.End0Pos_um.x_um = E0X_um;
+    S.End0Pos_um.y_um = E0Y_um;
+    S.End0Pos_um.z_um = E0Z_um;
+    S.End1Radius_um = E1Radius_um;
+    S.End1Pos_um.x_um = E1X_um;
+    S.End1Pos_um.y_um = E1Y_um;
+    S.End1Pos_um.z_um = E1Z_um;
 
 
     // Add to Sim, Set ID
@@ -317,9 +315,9 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
         ResponseJSON["StatusCode"] = 4; // simulation is currently processing
         return ResponseJSON.dump();
     }
-    int ShapeID = ThisSimulation->Shapes.Shapes.size(); // we can do this since the shapes vector is a variant
+    int ShapeID = ThisSimulation->Collection.Geometries.size(); // we can do this since the shapes vector is a variant
     S.ID = ShapeID;
-    ThisSimulation->Shapes.Shapes.push_back(S);
+    ThisSimulation->Collection.Geometries.push_back(S);
 
 
     // Return Status ID
@@ -339,13 +337,11 @@ std::string Manager::BoxCreate(std::string _JSONRequest) {
 
 
     // Build New Box Object
-    Shapes::Box S;
-    S.Name = Util::GetString(&RequestJSON, "Name");;
-    Util::GetVec3(S.CenterPos_nm, &RequestJSON, "CenterPos");
-    Util::GetVec3(S.Scale_nm, &RequestJSON, "Scale");
-    Util::GetVec3(S.Rotation_rad, &RequestJSON, "Rotation", "rad");
-
-
+    Geometries::Box S;
+    S.Name = Util::GetString(&RequestJSON, "Name");
+    Util::GetVec3(S.Center_um, &RequestJSON, "Center");
+    Util::GetVec3(S.Dims_um, &RequestJSON, "Dims");
+    Util::GetVec3(S.Rotations_rad, &RequestJSON, "Rotations", "rad");
 
     // Add to Sim, Set ID
     if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
@@ -360,9 +356,9 @@ std::string Manager::BoxCreate(std::string _JSONRequest) {
         ResponseJSON["StatusCode"] = 4; // simulation is currently processing
         return ResponseJSON.dump();
     }
-    int ShapeID = ThisSimulation->Shapes.Shapes.size(); // we can do this since the shapes vector is a variant
+    int ShapeID = ThisSimulation->Collection.Geometries.size(); // we can do this since the shapes vector is a variant
     S.ID = ShapeID;
-    ThisSimulation->Shapes.Shapes.push_back(S);
+    ThisSimulation->Collection.Geometries.push_back(S);
 
 
     // Return Status ID
@@ -473,7 +469,7 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     C.DestinationCompartmentID = Util::GetInt(&RequestJSON, "DestinationCompartmentID");
     C.Conductance_nS = Util::GetFloat(&RequestJSON, "Conductance_nS");
     C.TimeConstant_ms  = Util::GetFloat(&RequestJSON, "TimeConstant_ms");
-    Util::GetVec3(C.ReceptorPos_nm, &RequestJSON, "ReceptorPos");    
+    Util::GetVec3(C.ReceptorPos_um, &RequestJSON, "ReceptorPos");    
 
 
     // Add to Sim, Set ID
@@ -515,7 +511,7 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
     T.Name = Util::GetString(&RequestJSON, "Name");
     T.DestinationCompartmentID = Util::GetInt(&RequestJSON, "DestinationCompartmentID");
     T.Timestep_ms = 0.0f;
-    Util::GetVec3(T.ClampPos_nm, &RequestJSON, "ClampPos");    
+    Util::GetVec3(T.ClampPos_um, &RequestJSON, "ClampPos");    
 
 
     // Add to Sim, Set ID
@@ -598,7 +594,7 @@ std::string Manager::PatchClampADCCreate(std::string _JSONRequest) {
     T.Name = Util::GetString(&RequestJSON, "Name");
     T.SourceCompartmentID = Util::GetInt(&RequestJSON, "SourceCompartmentID");
     T.Timestep_ms = 0.0f;
-    Util::GetVec3(T.ClampPos_nm, &RequestJSON, "ClampPos");    
+    Util::GetVec3(T.ClampPos_um, &RequestJSON, "ClampPos");    
 
 
     // Add to Sim, Set ID
