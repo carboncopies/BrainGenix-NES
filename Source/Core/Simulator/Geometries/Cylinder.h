@@ -54,6 +54,12 @@ struct Cylinder : Geometry {
     //! Returns the distance from the origin along cylinder axis at specified
     //! fraction of height distance from end 0.
     float RAtPosition_um(float position);
+
+
+    //! Returns the bounding box
+    virtual BoundingBox GetBoundingBox();
+
+
 };
 
 }; // namespace Geometries

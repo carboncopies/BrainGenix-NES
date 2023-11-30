@@ -25,6 +25,22 @@ float Sphere::Volume_um3() {
     ;
 };
 
+
+
+BoundingBox Sphere::GetBoundingBox() {
+	BoundingBox bb;
+
+	bb.bb_point1[0] = Center_um.x_um - Radius_um;
+	bb.bb_point1[1] = Center_um.y_um - Radius_um;
+	bb.bb_point1[2] = Center_um.z_um - Radius_um;
+
+	bb.bb_point1[0] = Center_um.x_um + Radius_um;
+	bb.bb_point1[1] = Center_um.y_um + Radius_um;
+	bb.bb_point1[2] = Center_um.z_um + Radius_um;
+
+	return bb;
+}
+
 }; // namespace Geometries
 }; // namespace Simulator
 }; // namespace NES

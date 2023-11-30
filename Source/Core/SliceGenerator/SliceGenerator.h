@@ -34,9 +34,6 @@
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <VkBootstrap.h>
-
-#include <vk_mem_alloc.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")

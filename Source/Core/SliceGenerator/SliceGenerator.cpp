@@ -10,7 +10,7 @@ namespace Simulator {
 
 
 
-bool FillBoundingBox(VoxelArray* _Array, Shapes::BoundingBox* _BB, float _VoxelScale) {
+bool FillBoundingBox(VoxelArray* _Array, Geometries::BoundingBox* _BB, float _VoxelScale) {
 
 
     for (float X = _BB->bb_point1[0]; X < _BB->bb_point2[0]; X+= _VoxelScale) {
@@ -36,12 +36,11 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     for (unsigned int i = 0; i < _Sim->BSCompartments.size(); i++) {
 
         Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
-        std::variant<Shapes::Sphere, Shapes::Cylinder, Shapes::Box> ThisShape = _Sim->Shapes.Shapes[ThisCompartment->ShapeID];
+        std::variant<Geometries::Sphere, Geometries::Cylinder, Geometries::Box> ThisShape = _Sim->Collection.Geometries[ThisCompartment->ShapeID];
 
-
-        if (std::holds_alternative<Shapes::Sphere>(ThisShape)) {
-            Shapes::Sphere ThisSphere = std::get<Shapes::Sphere>(ThisShape);
-            Shapes::BoundingBox BB = ThisSphere.GetBoundingBox();
+        if (std::holds_alternative<Geometries::Sphere>(ThisShape)) {
+            Geometries::Sphere ThisSphere = std::get<Geometries::Sphere>(ThisShape);
+            Geometries::BoundingBox BB = ThisSphere.GetBoundingBox();
 
             FillBoundingBox(_Array, &BB, _Params->VoxelResolution_um);
 

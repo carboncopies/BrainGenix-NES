@@ -40,7 +40,7 @@
 
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Simulator/Structs/Geometry.h>
+#include <Simulator/Geometries/Geometry.h>
 
 
 
@@ -73,7 +73,7 @@ private:
 
     float VoxelScale_um; /**Set the size of each voxel in micrometers*/
 
-    Shapes::BoundingBox BoundingBox_; /**Set the bounding box of this voxel array (relative to the simulation orign)*/
+    Geometries::BoundingBox BoundingBox_; /**Set the bounding box of this voxel array (relative to the simulation orign)*/
 
 
 
@@ -97,7 +97,7 @@ public:
      * @param _BB Bounding box of the array, in world space
      * @param _VoxelScale_um Scale of each voxel in micrometers
      */
-    VoxelArray(Shapes::BoundingBox _BB, float _VoxelScale_um);
+    VoxelArray(Geometries::BoundingBox _BB, float _VoxelScale_um);
 
     /**
      * @brief Destroy the Voxel Array object

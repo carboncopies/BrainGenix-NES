@@ -49,6 +49,11 @@ struct Box : Geometry {
 
     //! Returns a vector of dimensions of the Box.
     std::vector<float> Sides();
+
+
+    //! Returns the bounding box
+    virtual BoundingBox GetBoundingBox();
+
 };
 
 }; // namespace Geometries
