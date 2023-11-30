@@ -1,5 +1,4 @@
 #include <Simulator/Structs/Sphere.h>
-#include <Simulator/Structs/Geometry.h>
 
 namespace BG {
 namespace NES {
