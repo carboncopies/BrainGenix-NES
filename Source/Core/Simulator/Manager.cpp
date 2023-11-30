@@ -709,6 +709,24 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
+std::string Manager::Debug(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+
+    if (Util::GetString(&RequestJSON, "Action") == "Render") {
+
+    }
+
+
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    return ResponseJSON.dump();
+}
+
+
 
 bool Manager::IsSimulationBusy(Simulation* _Sim) {
     return _Sim->IsProcessing || _Sim->WorkRequested;
