@@ -43,6 +43,10 @@
 #include <Simulator/Structs/Simulation.h>
 
 #include <SliceGenerator/Structs/MicroscopeParameters.h>
+#include <SliceGenerator/Structs/VoxelArray.h>
+
+#include <BG/Renderer/Interface.h>
+
 
 #include <BG/Common/Logger/Logger.h>
 
@@ -70,7 +74,20 @@ namespace Simulator {
  * @return true On success
  * @return false On failure (eg: out of memory, out of bounds, etc.)
  */
-bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, ScanRegion* _Region, VoxelArray* _Array);
+bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array);
+
+/**
+ * @brief Render the given slice from an array to the renderer's screen
+ * 
+ * @param _Logger 
+ * @param _Renderer
+ * @param _Params 
+ * @param _Array 
+ * @param SliceNumber 
+ * @return true 
+ * @return false 
+ */
+bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, MicroscopeParameters* _Params, VoxelArray* _Array, int SliceNumber);
 
 
 }; // Close Namespace Logger
