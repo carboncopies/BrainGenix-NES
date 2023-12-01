@@ -124,10 +124,10 @@ bool Manager::SetupViewer() {
 
 
     // compute the bounds of the scene graph to help position the camera
-    vsg::ComputeBounds computeBounds;
-    Scene_->Group_->accept(computeBounds);
-    vsg::dvec3 centre = (computeBounds.bounds.min+computeBounds.bounds.max)*0.5;
-    double radius = vsg::length(computeBounds.bounds.max-computeBounds.bounds.min)*0.6;
+    // vsg::ComputeBounds computeBounds;
+    // Scene_->Group_->accept(computeBounds);
+    vsg::dvec3 centre(0., 0., 0.);//(computeBounds.bounds.min+computeBounds.bounds.max)*0.5;
+    double radius = 2.;//vsg::length(computeBounds.bounds.max-computeBounds.bounds.min)*0.6;
     double nearFarRatio = 0.0001;
 
     // set up the camera
