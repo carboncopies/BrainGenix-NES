@@ -29,14 +29,12 @@ bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
 
 bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, float _VoxelScale) {
 
-    // std::cout<<_BB->ToString()<<std::endl;
     BoundingBox BB = _Shape->GetBoundingBox();
+    // std::cout<<BB.ToString()<<std::endl;
 
     for (float X = BB.bb_point1[0]; X < BB.bb_point2[0]; X+= _VoxelScale) {
         for (float Y = BB.bb_point1[1]; Y < BB.bb_point2[1]; Y+= _VoxelScale) {
             for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _VoxelScale) {
-                // std::cout<<"Setting Voxel At "<<X<<" "<<Y<<" "<<Z<<"\n";
-
                 if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z))) {
                     _Array->SetVoxelAtPosition(X, Y, Z, FILLED);
                 }
@@ -65,14 +63,17 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
         if (std::holds_alternative<Geometries::Sphere>(ThisShape)) {
             Geometries::Sphere ThisSphere = std::get<Geometries::Sphere>(ThisShape);
+            _Logger->Log("Adding Sphere To Voxel Array", 0);
             FillShape(_Array, &ThisSphere, _Params->VoxelResolution_um);
         }
         else if (std::holds_alternative<Geometries::Box>(ThisShape)) {
             Geometries::Box ThisSphere = std::get<Geometries::Box>(ThisShape);
+            _Logger->Log("Adding Box To Voxel Array", 0);
             FillShape(_Array, &ThisSphere, _Params->VoxelResolution_um);
         }
         else if (std::holds_alternative<Geometries::Cylinder>(ThisShape)) {
             Geometries::Cylinder ThisSphere = std::get<Geometries::Cylinder>(ThisShape);
+            _Logger->Log("Adding Cylinder To Voxel Array", 0);
             FillShape(_Array, &ThisSphere, _Params->VoxelResolution_um);
         }
 

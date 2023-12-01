@@ -1,7 +1,7 @@
 #include <SliceGenerator/Structs/VoxelArray.h>
 
 
-
+#include <iostream>
 
 namespace BG {
 namespace NES {
@@ -68,9 +68,10 @@ void VoxelArray::SetVoxel(int _X, int _Y, int _Z, VoxelType _Value) {
 
 void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Value) {
 
-    int XIndex = (_X - BoundingBox_.bb_point1[0])/VoxelScale_um;
-    int YIndex = (_Y - BoundingBox_.bb_point1[1])/VoxelScale_um;
-    int ZIndex = (_Z - BoundingBox_.bb_point1[2])/VoxelScale_um;
+    // This is dangerous - there's a round call since this can lead to truncation errors
+    int XIndex = round((_X - BoundingBox_.bb_point1[0])/VoxelScale_um);
+    int YIndex = round((_Y - BoundingBox_.bb_point1[1])/VoxelScale_um);
+    int ZIndex = round((_Z - BoundingBox_.bb_point1[2])/VoxelScale_um);
     SetVoxel(XIndex, YIndex, ZIndex, _Value);
 
 }

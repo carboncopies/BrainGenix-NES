@@ -756,11 +756,13 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
 std::string Manager::Debug(std::string _JSONRequest) {
 
     // Parse Request
+    std::cout<<_JSONRequest<<std::endl;
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
 
     // if (Util::GetString(&RequestJSON, "Action") == "Render") {
 
     // }
+
 
     std::cout<<"This will break if you don't have at least one simulation. Trying to get sim with id 0\n";
     Simulation* ThisSimulation = Simulations_[0].get();
@@ -776,11 +778,12 @@ std::string Manager::Debug(std::string _JSONRequest) {
     BB.bb_point2[2] = 7.;
 
     
-    VoxelArray Arr(BB, 0.1);
+    float VoxelSize = atof(Util::GetString(&RequestJSON, "Query").c_str());
+    VoxelArray Arr(BB, VoxelSize);
 
 
     MicroscopeParameters MParams;
-    MParams.VoxelResolution_um = 0.1;
+    MParams.VoxelResolution_um = VoxelSize;
 
 
     CreateVoxelArrayFromSimulation(Logger_, ThisSimulation, &MParams, &Arr);

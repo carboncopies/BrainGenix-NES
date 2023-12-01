@@ -68,9 +68,9 @@ BoundingBox Box::GetBoundingBox() {
     BB.bb_point1[1] = Center_um.y_um - (Dims_um.y_um / 2);
     BB.bb_point1[2] = Center_um.z_um - (Dims_um.z_um / 2);
 
-    BB.bb_point1[0] = Center_um.x_um + (Dims_um.x_um / 2);
-    BB.bb_point1[1] = Center_um.y_um + (Dims_um.y_um / 2);
-    BB.bb_point1[2] = Center_um.z_um + (Dims_um.z_um / 2);
+    BB.bb_point2[0] = Center_um.x_um + (Dims_um.x_um / 2);
+    BB.bb_point2[1] = Center_um.y_um + (Dims_um.y_um / 2);
+    BB.bb_point2[2] = Center_um.z_um + (Dims_um.z_um / 2);
 
 	return BB;
 }
