@@ -132,8 +132,13 @@ bool Manager::SetupViewer() {
 
     // set up the camera
     double FOV = 80.f; // FOV In degrees
+
+    vsg::vec3 CameraPosition = vsg::vec3(0.0, 3.0, 0.0);
+    vsg::vec3 CameraTarget = vsg::vec3(0.0, 0.0, 0.0);
+
+    vsg::vec3 DirectionVector = vsg::normalize(CameraPosition - CameraTarget);
     
-    auto lookAt = vsg::LookAt::create(centre+vsg::dvec3(0.0, -radius*3.5, 0.0), centre, vsg::dvec3(0.0, 0.0, 1.0));
+    auto lookAt = vsg::LookAt::create(DirectionVector, centre, vsg::dvec3(0.0, 0.0, 1.0));
     vsg::ref_ptr<vsg::ProjectionMatrix> perspective;
     perspective = vsg::Perspective::create(FOV, static_cast<double>(RenderData_->Window_->extent2D().width) / static_cast<double>(RenderData_->Window_->extent2D().height), nearFarRatio*radius, radius * 4.5);
     Scene_->Camera_ = vsg::Camera::create(perspective, lookAt, vsg::ViewportState::create(RenderData_->Window_->extent2D()));
