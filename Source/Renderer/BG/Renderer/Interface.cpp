@@ -177,6 +177,23 @@ void Interface::ResetViewer() {
 
 void Interface::ResetScene() {
     RendererManager_->ClearScene();
+
+    LockScene();
+    WaitUntilGPUDone();
+    
+    // hacky
+    Shaders::Phong CubeShader;
+    CubeShader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 0.0f);
+    CubeShader.SpecularColor_ = vsg::vec4(0.f, 0.0f, 0.0f, 0.0f);
+    CubeShader.Type_ = Shaders::SHADER_PHONG;
+    Primitive::Cube CreateInfo;
+    CreateInfo.Position_ = vsg::vec3(0.0f, -1.1f, 0.0f);
+    CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
+    CreateInfo.Scale_    = vsg::vec3(4.1f, 4.1f, 4.1f);
+    CreateInfo.Shader_ = &CubeShader;
+    AddBox(&CreateInfo);
+
+    UnlockScene();
 }
 
 }; // Close Namespace Logger
