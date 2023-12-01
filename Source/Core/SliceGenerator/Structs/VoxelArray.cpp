@@ -81,6 +81,13 @@ void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Val
     int XIndex = round((_X - BoundingBox_.bb_point1[0])/VoxelScale_um);
     int YIndex = round((_Y - BoundingBox_.bb_point1[1])/VoxelScale_um);
     int ZIndex = round((_Z - BoundingBox_.bb_point1[2])/VoxelScale_um);
+
+    // Check Bounds (so if it's out of bounds, we print a warning and do nothing!)
+    if ((XIndex < 0 || XIndex > SizeX_) || (YIndex < 0 || YIndex > SizeY_) || (ZIndex < 0 || ZIndex > SizeZ_)) {
+        std::cout<<"Warning: Voxel at "<<_X<<" "<<_Y<<" "<<_Z<<" Is Out Of Bounds!\n";
+        return;
+    }
+
     SetVoxel(XIndex, YIndex, ZIndex, _Value);
 
 }
