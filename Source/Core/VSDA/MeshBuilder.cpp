@@ -23,7 +23,7 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
             Geometries::Box Box = std::get<Geometries::Box>(_Simulation->Collection.Geometries[ShapeID]);
             
             BG::NES::Renderer::Shaders::Phong Shader;
-            Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
+            Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 0.1f);
             Shader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
             Shader.Type_ = BG::NES::Renderer::Shaders::SHADER_PHONG;
 
@@ -39,7 +39,7 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
             Geometries::Sphere Sphere = std::get<Geometries::Sphere>(_Simulation->Collection.Geometries[ShapeID]);
             
             BG::NES::Renderer::Shaders::Phong Shader;
-            Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 0.5f);
+            Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 0.1f);
             Shader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
             Shader.Type_ = BG::NES::Renderer::Shaders::SHADER_PHONG;
 
@@ -53,7 +53,7 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
             Geometries::Cylinder Cylinder = std::get<Geometries::Cylinder>(_Simulation->Collection.Geometries[ShapeID]);
             
             BG::NES::Renderer::Shaders::Phong Shader;
-            Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
+            Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 0.1f);
             Shader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
             Shader.Type_ = BG::NES::Renderer::Shaders::SHADER_PHONG;
 
