@@ -767,20 +767,20 @@ std::string Manager::Debug(std::string _JSONRequest) {
 
 
     BoundingBox BB = BoundingBox();
-    BB.bb_point1[0] = 0.;
-    BB.bb_point1[1] = 0.;
-    BB.bb_point1[2] = 0.;
+    BB.bb_point1[0] = -1.;
+    BB.bb_point1[1] = -1.;
+    BB.bb_point1[2] = -1.;
 
-    BB.bb_point2[0] = 20.;
-    BB.bb_point2[1] = 20.;
-    BB.bb_point2[2] = 20.;
+    BB.bb_point2[0] = 7.;
+    BB.bb_point2[1] = 7.;
+    BB.bb_point2[2] = 7.;
 
     
-    VoxelArray Arr(BB, 1);
+    VoxelArray Arr(BB, 0.1);
 
 
     MicroscopeParameters MParams;
-    MParams.VoxelResolution_um = 1.;
+    MParams.VoxelResolution_um = 0.1;
 
 
     CreateVoxelArrayFromSimulation(Logger_, ThisSimulation, &MParams, &Arr);
@@ -789,9 +789,10 @@ std::string Manager::Debug(std::string _JSONRequest) {
     //     Arr.SetVoxel(i, i, i, FILLED);
     // }
 
-    for (unsigned int i = 0; i < Arr.GetZ(); i++) {
-        RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, i);
-    }
+    RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, 10);
+    // for (unsigned int i = 0; i < Arr.GetZ(); i++) {
+    //     RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, i);
+    // }
 
     // Renderer_->ResetViewer();
 
