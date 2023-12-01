@@ -175,6 +175,10 @@ void Interface::ResetViewer() {
     UnlockScene();
 }
 
+void Interface::ResetScene() {
+    RendererManager_->ClearScene();
+}
+
 }; // Close Namespace Logger
 }; // Close Namespace Common
 }; // Close Namespace BG

@@ -130,6 +130,14 @@ public:
     bool SetupViewer();
 
 
+    /**
+     * @brief Erases all objects in the current scene. Resets the scene to an empty state.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool ClearScene();
+
 
     /**
      * @brief Returns scene pointer.

@@ -173,6 +173,11 @@ public:
      */
     void ResetViewer();
 
+    /**
+     * @brief Clears the scene, resetting it to the default state.
+     * 
+     */
+    void ResetScene();
 
 };
 

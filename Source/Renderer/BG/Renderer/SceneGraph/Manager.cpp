@@ -77,6 +77,7 @@ bool Manager::SetupScene() {
     Logger_->Log("Setting Up Scene Structure", 1);
     Scene_->Group_ = vsg::Group::create();
 
+
     // read any vsg files from command line arguments
     // for (int i=1; i<_NumArgs; ++i)
     // {
@@ -162,6 +163,17 @@ bool Manager::CompileScene() {
     return true;
 }
 
+bool Manager::ClearScene() {
+
+    LockScene();
+    WaitUntilGPUDone();
+
+    Scene_->Group_.~ref_ptr();
+    Scene_->Group_ = vsg::Group::create();
+    
+    UnlockScene();
+
+}
 
 bool Manager::DrawFrame() {
 

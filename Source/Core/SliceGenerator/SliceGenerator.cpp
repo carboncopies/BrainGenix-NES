@@ -92,6 +92,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
 
     _Logger->Log(std::string("Rendering Slice '") + std::to_string(SliceNumber) + "'", 2);
 
+    _Renderer->ResetScene();
 
     // Ensure Scene Is Now Threadsafe
     _Renderer->LockScene();
