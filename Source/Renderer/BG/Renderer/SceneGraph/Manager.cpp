@@ -168,10 +168,17 @@ bool Manager::ClearScene() {
     LockScene();
     WaitUntilGPUDone();
 
-    Scene_->Group_.~ref_ptr();
+    // Scene_->Group_.~ref_ptr();
     Scene_->Group_ = vsg::Group::create();
     
+    // vsg::Visitor Visitor;
+    // Scene_->Group_->traverse(Visitor);
+    // Visitor.getValue()
+    // Scene_->Group_->removeObject("");
+
     UnlockScene();
+
+    return true;
 
 }
 
