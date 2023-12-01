@@ -11,6 +11,8 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::Common::Logger::LoggingSystem Logger(true); // NOTE THAT THIS IS TEMPORARY; IT NEEDS TO BE EVENTUALLY FED
     // CONFIGURATION INFO FROM THE CONFIG SUBSYS - CURRENTLY IT IS OPERATING IN UNIT-TEST MODE!!!!
 
+    Logger.SetKeepVectorLogs(false); // this causes a segfault for some reason
+
     // Setup API Server
     BG::NES::API::Manager APIManager(&SystemConfiguration);
 

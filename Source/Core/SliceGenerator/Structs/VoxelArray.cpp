@@ -26,7 +26,8 @@ VoxelArray::VoxelArray(BoundingBox _BB, float _VoxelScale_um) {
 
 
     // Malloc array
-    Data_ = new VoxelType[SizeX_ * SizeY_ * SizeZ_];
+    Data_ = std::make_unique<VoxelType[]>(SizeX_ * SizeY_ * SizeZ_);
+    // std::unique_ptr<VoxelType[]> Data_(new VoxelType[SizeX_ * SizeY_ * SizeZ_]);
 
 
 
@@ -38,7 +39,7 @@ VoxelArray::VoxelArray(BoundingBox _BB, float _VoxelScale_um) {
 
 VoxelArray::~VoxelArray() {
 
-    delete[] Data_;
+    // delete[] Data_;
 }
 
 
@@ -46,7 +47,7 @@ void VoxelArray::ClearArray() {
 
     // Reset everything to 0s
     for (uint64_t i = 0; i < SizeX_ * SizeY_ * SizeZ_; i++) {
-        Data_[i] = 0;
+        Data_.get()[i] = 0;
     }
 
 }
@@ -58,12 +59,12 @@ int VoxelArray::GetIndex(int _X, int _Y, int _Z) {
 VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
 
     // Hope this works
-    return Data_[GetIndex(_X, _Y, _Z)];
+    return Data_.get()[GetIndex(_X, _Y, _Z)];
 
 }
 
 void VoxelArray::SetVoxel(int _X, int _Y, int _Z, VoxelType _Value) {
-    Data_[GetIndex(_X, _Y, _Z)] = _Value;
+    Data_.get()[GetIndex(_X, _Y, _Z)] = _Value;
 }
 
 void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Value) {

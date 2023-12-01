@@ -34,6 +34,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <inttypes.h>
 #include <math.h>
+#include <memory>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -65,7 +66,7 @@ class VoxelArray {
 
 private:
 
-    VoxelType* Data_; /**Big blob of memory that holds all the voxels*/
+    std::unique_ptr<VoxelType[]> Data_; /**Big blob of memory that holds all the voxels*/
 
     int SizeX_; /**Number of voxels in x dimension*/
     int SizeY_; /**Number of voxels in y dimension*/

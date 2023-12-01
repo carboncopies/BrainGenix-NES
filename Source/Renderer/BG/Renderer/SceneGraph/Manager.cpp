@@ -169,6 +169,7 @@ bool Manager::ClearScene() {
     WaitUntilGPUDone();
 
     // Scene_->Group_.~ref_ptr();
+    std::cout<<"Clearing Scene!\n";
     Scene_->Group_ = vsg::Group::create();
     
     // vsg::Visitor Visitor;
