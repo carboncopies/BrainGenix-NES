@@ -60,7 +60,7 @@ std::vector<float> Box::Sides() {
 }
 
 
-
+// This can be bad - if it's rotated, the bounding box is wrong!
 BoundingBox Box::GetBoundingBox() {
 	BoundingBox BB;
 
@@ -75,8 +75,12 @@ BoundingBox Box::GetBoundingBox() {
 	return BB;
 }
 
+// Same here, we need to do this right.
 bool Box::IsPointInShape(Vec3D _Position_um) {
     
+
+    // https://stackoverflow.com/questions/52673935/check-if-3d-point-inside-a-box
+
     Vec3D Pos1 = Center_um - (Dims_um/2);
     Vec3D Pos2 = Center_um + (Dims_um/2);
 

@@ -51,7 +51,7 @@ float Cylinder::RAtPosition_um(float pos) {
     return this->End0Radius_um + pos * rDiff;
 };
 
-
+// I have no clude what I'm doing
 BoundingBox Cylinder::GetBoundingBox() {
 	BoundingBox bb;
 
@@ -59,6 +59,12 @@ BoundingBox Cylinder::GetBoundingBox() {
 	return bb;
 }
 
+//1. Create a for-loop that walks along the axis of a cylinder (as if it is not rotatedd)
+//2. At Every step, run through a loop that makes steps in a disk (or through a disk to fill the whole thing in) at the disk radius at that location (see start radius, end radius)
+//3. These become a collection of 3D points. Rotate these according to cylinder rotation.
+//4. Obtain Voxel indices (X,Y,Z) for each point.
+//5. Eliminate duplicate Voxels in the set.
+//6. Paint the voxels in the remaining set.
 bool Cylinder::IsPointInShape(Vec3D _Position_um) {
     return false;
 }
