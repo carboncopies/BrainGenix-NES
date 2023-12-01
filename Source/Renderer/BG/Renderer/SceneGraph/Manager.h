@@ -45,6 +45,8 @@
 #include <BG/Renderer/State/RenderData.h>
 #include <BG/Renderer/State/Scene.h>
 
+#include <BG/Renderer/SceneGraph/CameraHelpers.h>
+
 
 namespace BG {
 namespace NES {

@@ -3,6 +3,7 @@ add_library(NESRenderer
     "BG/Renderer/Interface.h"
     "BG/Renderer/Interface.cpp"
 
+
     "BG/Renderer/State/Scene.h"
     "BG/Renderer/State/Scene.cpp"
     "BG/Renderer/State/RenderData.h"
@@ -12,6 +13,8 @@ add_library(NESRenderer
     "BG/Renderer/SceneGraph/Manager.cpp"
     "BG/Renderer/SceneGraph/GeometryBuilder.h"
     "BG/Renderer/SceneGraph/GeometryBuilder.cpp"
+    "BG/Renderer/SceneGraph/CameraHelpers.h"
+    "BG/Renderer/SceneGraph/CameraHelpers.cpp"
 
     "BG/Renderer/SceneGraph/Primitive/Cube.h"
     "BG/Renderer/SceneGraph/Primitive/Cube.cpp"

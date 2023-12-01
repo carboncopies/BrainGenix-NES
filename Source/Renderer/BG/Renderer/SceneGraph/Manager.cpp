@@ -133,14 +133,14 @@ bool Manager::SetupViewer() {
     // set up the camera
     double FOV = 80.f; // FOV In degrees
 
-    vsg::vec3 CameraPosition = vsg::vec3(0.0, 3.0, 0.0);
-    vsg::vec3 CameraTarget = vsg::vec3(0.0, 0.0, 0.0);
+    vsg::dvec3 CameraPosition = vsg::dvec3(0.0, 3.0, 0.0); // Where the camera is located
+    vsg::dvec3 CameraTarget = vsg::dvec3(0.0, 0.0, 0.0); // Where the camera is looking towards
+    vsg::dvec3 cameraDirection = vsg::normalize(CameraPosition - CameraTarget); // Direction vector (line coming out front of camera, pointing towards where the camera is looking)
+    auto lookAt = vsg::LookAt::create(cameraDirection, CameraTarget, vsg::dvec3(0.0, 0.0, 1.0));
 
-    vsg::vec3 DirectionVector = vsg::normalize(CameraPosition - CameraTarget);
-    
-    auto lookAt = vsg::LookAt::create(DirectionVector, centre, vsg::dvec3(0.0, 0.0, 1.0));
-    vsg::ref_ptr<vsg::ProjectionMatrix> perspective;
-    perspective = vsg::Perspective::create(FOV, static_cast<double>(RenderData_->Window_->extent2D().width) / static_cast<double>(RenderData_->Window_->extent2D().height), nearFarRatio*radius, radius * 4.5);
+    double AspectRatio = static_cast<double>(RenderData_->Window_->extent2D().width) / static_cast<double>(RenderData_->Window_->extent2D().height); // Just the aspect ratio of the window
+    vsg::ref_ptr<vsg::ProjectionMatrix> perspective = CreatePerspectiveMatrix(FOV, AspectRatio, 0.1, 100.0);
+
     Scene_->Camera_ = vsg::Camera::create(perspective, lookAt, vsg::ViewportState::create(RenderData_->Window_->extent2D()));
 
 
