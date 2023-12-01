@@ -62,17 +62,20 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
         std::variant<Geometries::Sphere, Geometries::Cylinder, Geometries::Box> ThisShape = _Sim->Collection.Geometries[ThisCompartment->ShapeID];
 
+
         if (std::holds_alternative<Geometries::Sphere>(ThisShape)) {
             Geometries::Sphere ThisSphere = std::get<Geometries::Sphere>(ThisShape);
             FillShape(_Array, &ThisSphere, _Params->VoxelResolution_um);
-            // BoundingBox BB = ThisSphere.GetBoundingBox();
-
-            // _Logger->Log(std::string("Adding Bounding Box For Sphere With Dimensions '") + BB.Dimensions() + "'", 2);
-
-            // FillBoundingBox(_Array, &BB, _Params->VoxelResolution_um);
-
-
         }
+        else if (std::holds_alternative<Geometries::Box>(ThisShape)) {
+            Geometries::Box ThisSphere = std::get<Geometries::Box>(ThisShape);
+            FillShape(_Array, &ThisSphere, _Params->VoxelResolution_um);
+        }
+        else if (std::holds_alternative<Geometries::Cylinder>(ThisShape)) {
+            Geometries::Cylinder ThisSphere = std::get<Geometries::Cylinder>(ThisShape);
+            FillShape(_Array, &ThisSphere, _Params->VoxelResolution_um);
+        }
+
 
     }
 

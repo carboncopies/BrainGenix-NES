@@ -48,6 +48,13 @@ struct Vec3D {
     //! Vector != Vector
     bool operator!=(const Vec3D &other) const;
 
+    //! Vector <= Vector (all elements)
+    bool AllElementsLTE(const Vec3D &other) const;
+    
+    //! Vector >= Vector (all elements)
+    bool AllElementsGTE(const Vec3D &other) const;
+
+
     //! Distance between two vectors
     float Distance(const Vec3D &other) const;
 

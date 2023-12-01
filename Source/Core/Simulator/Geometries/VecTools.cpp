@@ -53,6 +53,19 @@ bool Vec3D::operator!=(const Vec3D &other) const {
            (this->z_um != other.z_um);
 };
 
+
+//! Vector <= Vector
+bool Vec3D::AllElementsLTE(const Vec3D &other) const {
+    return (this->x_um <= other.x_um) && (this->y_um <= other.y_um) && (this->z_um <= other.z_um);
+};
+
+//! Vector >= Vector
+bool Vec3D::AllElementsGTE(const Vec3D &other) const {
+    return (this->x_um >= other.x_um) && (this->y_um >= other.y_um) && (this->z_um >= other.z_um);
+};
+
+
+
 float Vec3D::Distance(const Vec3D &other) const {
     float distance = 0.0;
     Vec3D diff = *this - other;

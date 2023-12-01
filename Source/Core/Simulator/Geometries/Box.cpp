@@ -62,14 +62,26 @@ std::vector<float> Box::Sides() {
 
 
 BoundingBox Box::GetBoundingBox() {
-	BoundingBox bb;
+	BoundingBox BB;
 
+    BB.bb_point1[0] = Center_um.x_um - (Dims_um.x_um / 2);
+    BB.bb_point1[1] = Center_um.y_um - (Dims_um.y_um / 2);
+    BB.bb_point1[2] = Center_um.z_um - (Dims_um.z_um / 2);
 
-	return bb;
+    BB.bb_point1[0] = Center_um.x_um + (Dims_um.x_um / 2);
+    BB.bb_point1[1] = Center_um.y_um + (Dims_um.y_um / 2);
+    BB.bb_point1[2] = Center_um.z_um + (Dims_um.z_um / 2);
+
+	return BB;
 }
 
 bool Box::IsPointInShape(Vec3D _Position_um) {
-    return false;
+    
+    Vec3D Pos1 = Center_um - (Dims_um/2);
+    Vec3D Pos2 = Center_um + (Dims_um/2);
+
+    return _Position_um.AllElementsGTE(Pos1) && _Position_um.AllElementsLTE(Pos2);
+
 }
 
 
