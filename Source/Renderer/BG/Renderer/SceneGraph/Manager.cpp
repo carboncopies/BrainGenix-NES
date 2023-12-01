@@ -123,21 +123,12 @@ bool Manager::SetupViewer() {
     RenderData_->Viewer_->addWindow(RenderData_->Window_);
 
 
-    // compute the bounds of the scene graph to help position the camera
-    // vsg::ComputeBounds computeBounds;
-    // Scene_->Group_->accept(computeBounds);
-    vsg::dvec3 centre(0., 0., 0.);//(computeBounds.bounds.min+computeBounds.bounds.max)*0.5;
-    double radius = 2.;//vsg::length(computeBounds.bounds.max-computeBounds.bounds.min)*0.6;
-    double nearFarRatio = 0.0001;
-
-    // set up the camera
-    double FOV = 80.f; // FOV In degrees
-
-    vsg::dvec3 CameraPosition = vsg::dvec3(0.0, 3.0, 0.0); // Where the camera is located
+    // Setup Camera
+    vsg::dvec3 CameraPosition = vsg::dvec3(0.0, 0.0, -3.0); // Where the camera is located
     vsg::dvec3 CameraTarget = vsg::dvec3(0.0, 0.0, 0.0); // Where the camera is looking towards
-    vsg::dvec3 cameraDirection = vsg::normalize(CameraPosition - CameraTarget); // Direction vector (line coming out front of camera, pointing towards where the camera is looking)
-    auto lookAt = vsg::LookAt::create(cameraDirection, CameraTarget, vsg::dvec3(0.0, 0.0, 1.0));
+    auto lookAt = CreateLookAtMatrix(CameraPosition, CameraTarget, vsg::dvec3(0.0, 1.0, 0.0));
 
+    double FOV = 80.f; // FOV In degrees
     double AspectRatio = static_cast<double>(RenderData_->Window_->extent2D().width) / static_cast<double>(RenderData_->Window_->extent2D().height); // Just the aspect ratio of the window
     vsg::ref_ptr<vsg::ProjectionMatrix> perspective = CreatePerspectiveMatrix(FOV, AspectRatio, 0.1, 100.0);
 

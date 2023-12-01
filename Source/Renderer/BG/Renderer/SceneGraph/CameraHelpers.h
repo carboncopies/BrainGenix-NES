@@ -59,6 +59,18 @@ namespace Renderer {
  */
 vsg::ref_ptr<vsg::ProjectionMatrix> CreatePerspectiveMatrix(float _FOV, double _AspectRatio, double _NearClip = 0.1, double _FarClip = 100.0);
 
+/**
+ * @brief Helper function that creates the camera's LookAt matrix based on the given parameters.
+ * Do note that the up vector and position cannot be perfectly alligned (otherwise shit breaks).
+ * So, if your camera is looking perfectly down, don't make the up vector on the Z axis.
+ * 
+ * @param _Position Position of the camera, pretty self-explanitory
+ * @param _Target Point where the camera is looking at.
+ * @param _Up Describes what is 'up' for the camera.
+ * @return vsg::ref_ptr<vsg::LookAt> 
+ */
+vsg::ref_ptr<vsg::LookAt> CreateLookAtMatrix(vsg::dvec3 _Position, vsg::dvec3 _Target, vsg::dvec3 _Up);
+
 
 }; // Close Namespace Logger
 }; // Close Namespace Common
