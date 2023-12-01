@@ -41,6 +41,13 @@ BoundingBox Sphere::GetBoundingBox() {
 	return bb;
 }
 
+
+bool Sphere::IsPointInShape(Vec3D _Position_um) {
+	float Distance = Center_um.Distance(_Position_um);
+	return Distance <= Radius_um;
+}
+
+
 }; // namespace Geometries
 }; // namespace Simulator
 }; // namespace NES

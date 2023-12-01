@@ -68,6 +68,10 @@ BoundingBox Box::GetBoundingBox() {
 	return bb;
 }
 
+bool Box::IsPointInShape(Vec3D _Position_um) {
+    return false;
+}
+
 
 }; // namespace Geometries
 }; // namespace Simulator

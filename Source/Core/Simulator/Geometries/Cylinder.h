@@ -58,6 +58,7 @@ struct Cylinder : Geometry {
 
     //! Returns the bounding box
     virtual BoundingBox GetBoundingBox();
+    virtual bool IsPointInShape(Vec3D _Position_um);
 
 
 };

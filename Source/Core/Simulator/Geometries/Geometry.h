@@ -43,6 +43,17 @@ struct Geometry {
     //! Gets the bounding box for the given shape
     virtual BoundingBox GetBoundingBox() = 0;
 
+
+    /**
+     * @brief Checks if the given world space position is in this shape.
+     * 
+     * @param _Position_um Position (in world space) to check if is in this shape.
+     * @return true Is in shape
+     * @return false Is not in shape
+     */
+    virtual bool IsPointInShape(Vec3D _Position_um) = 0;
+
+
 };
 
 }; // Close Namespace Geometries

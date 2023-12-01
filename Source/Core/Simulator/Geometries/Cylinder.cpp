@@ -59,6 +59,9 @@ BoundingBox Cylinder::GetBoundingBox() {
 	return bb;
 }
 
+bool Cylinder::IsPointInShape(Vec3D _Position_um) {
+    return false;
+}
 
 
 }; // namespace Geometries

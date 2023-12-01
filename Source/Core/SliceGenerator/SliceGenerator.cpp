@@ -27,6 +27,27 @@ bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
 
 }
 
+bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, float _VoxelScale) {
+
+    // std::cout<<_BB->ToString()<<std::endl;
+    BoundingBox BB = _Shape->GetBoundingBox();
+
+    for (float X = BB.bb_point1[0]; X < BB.bb_point2[0]; X+= _VoxelScale) {
+        for (float Y = BB.bb_point1[1]; Y < BB.bb_point2[1]; Y+= _VoxelScale) {
+            for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _VoxelScale) {
+                // std::cout<<"Setting Voxel At "<<X<<" "<<Y<<" "<<Z<<"\n";
+
+                if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z))) {
+                    _Array->SetVoxelAtPosition(X, Y, Z, FILLED);
+                }
+            }
+        }
+    }
+
+    return true;
+
+}
+
 bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array) {
     assert(_Array != nullptr);
     assert(_Params != nullptr);
@@ -43,11 +64,12 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
         if (std::holds_alternative<Geometries::Sphere>(ThisShape)) {
             Geometries::Sphere ThisSphere = std::get<Geometries::Sphere>(ThisShape);
-            BoundingBox BB = ThisSphere.GetBoundingBox();
+            FillShape(_Array, &ThisSphere, _Params->VoxelResolution_um);
+            // BoundingBox BB = ThisSphere.GetBoundingBox();
 
-            _Logger->Log(std::string("Adding Bounding Box For Sphere With Dimensions '") + BB.Dimensions() + "'", 2);
+            // _Logger->Log(std::string("Adding Bounding Box For Sphere With Dimensions '") + BB.Dimensions() + "'", 2);
 
-            FillBoundingBox(_Array, &BB, _Params->VoxelResolution_um);
+            // FillBoundingBox(_Array, &BB, _Params->VoxelResolution_um);
 
 
         }
