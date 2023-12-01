@@ -27,6 +27,7 @@ VoxelArray::VoxelArray(BoundingBox _BB, float _VoxelScale_um) {
 
     // Malloc array
     Data_ = std::make_unique<VoxelType[]>(SizeX_ * SizeY_ * SizeZ_);
+    DataMaxLength_ = SizeX_ * SizeY_ * SizeZ_;
     // std::unique_ptr<VoxelType[]> Data_(new VoxelType[SizeX_ * SizeY_ * SizeZ_]);
 
 
@@ -64,7 +65,14 @@ VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
 }
 
 void VoxelArray::SetVoxel(int _X, int _Y, int _Z, VoxelType _Value) {
-    Data_.get()[GetIndex(_X, _Y, _Z)] = _Value;
+    int CurrentIndex = GetIndex(_X, _Y, _Z);
+    if (CurrentIndex < 0 || CurrentIndex >= DataMaxLength_) {
+        std::string ErrorMsg = std::string("E: Cannot Set Voxel At ") + std::to_string(_X);
+        ErrorMsg += std::string(" ") + std::to_string(_Y) + std::string(" ") + std::to_string(_Z);
+        ErrorMsg += std::string(" As This Would Be Out Of Range (index): ") + std::to_string(CurrentIndex) + "!";
+        throw std::out_of_range(ErrorMsg.c_str());
+    }
+    Data_.get()[CurrentIndex] = _Value;
 }
 
 void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Value) {

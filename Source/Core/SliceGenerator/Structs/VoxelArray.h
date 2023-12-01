@@ -67,6 +67,7 @@ class VoxelArray {
 private:
 
     std::unique_ptr<VoxelType[]> Data_; /**Big blob of memory that holds all the voxels*/
+    uint64_t DataMaxLength_ = 0;
 
     int SizeX_; /**Number of voxels in x dimension*/
     int SizeY_; /**Number of voxels in y dimension*/
