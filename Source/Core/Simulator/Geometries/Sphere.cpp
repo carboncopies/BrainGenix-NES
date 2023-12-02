@@ -25,20 +25,18 @@ float Sphere::Volume_um3() {
     ;
 };
 
-
-
 BoundingBox Sphere::GetBoundingBox() {
-	BoundingBox bb;
+    BoundingBox bb;
 
-	bb.bb_point1[0] = Center_um.x_um - Radius_um;
-	bb.bb_point1[1] = Center_um.y_um - Radius_um;
-	bb.bb_point1[2] = Center_um.z_um - Radius_um;
+    bb.bb_point1[0] = Center_um.x - Radius_um;
+    bb.bb_point1[1] = Center_um.y - Radius_um;
+    bb.bb_point1[2] = Center_um.z - Radius_um;
 
-	bb.bb_point1[0] = Center_um.x_um + Radius_um;
-	bb.bb_point1[1] = Center_um.y_um + Radius_um;
-	bb.bb_point1[2] = Center_um.z_um + Radius_um;
+    bb.bb_point1[0] = Center_um.x + Radius_um;
+    bb.bb_point1[1] = Center_um.y + Radius_um;
+    bb.bb_point1[2] = Center_um.z + Radius_um;
 
-	return bb;
+    return bb;
 }
 
 }; // namespace Geometries

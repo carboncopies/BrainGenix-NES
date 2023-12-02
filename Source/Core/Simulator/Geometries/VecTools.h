@@ -24,13 +24,13 @@ namespace Geometries {
  */
 struct Vec3D {
 
-    float x_um{}; //! X-coordinate in micrometers.
-    float y_um{}; //! Y-coordinate in micrometers.
-    float z_um{}; //! Z-coordinate in micrometers.
+    float x{}; //! X-coordinate.
+    float y{}; //! Y-coordinate.
+    float z{}; //! Z-coordinate.
 
     //! Constructors
     Vec3D();
-    Vec3D(float _x_um, float _y_um, float _z_um);
+    Vec3D(float _x, float _y, float _z);
 
     //! Operators
     //! Vector + Vector
@@ -53,6 +53,9 @@ struct Vec3D {
 
     //! Dot product of two vectors
     float Dot(const Vec3D &other) const;
+
+    //! Cross product of two vectors
+    Vec3D Cross(const Vec3D &other) const;
 
     //! Maximum coordinate value
     float Max() const;

@@ -25,7 +25,7 @@ void Box::Show() { return; };
 
 //! Returns the volume of the box in micrometer^3.
 float Box::Volume_um3() {
-    return this->Dims_um.x_um * this->Dims_um.y_um * this->Dims_um.z_um;
+    return this->Dims_um.x * this->Dims_um.y * this->Dims_um.z;
 };
 
 //! Returns 1 of n equally sliced subpartitions of the Box
@@ -37,16 +37,16 @@ std::vector<std::vector<float>> Box::EqualSliceBounds(int nSlices, int slice) {
 
     assert(slice <= nSlices);
 
-    pWidth = this->Dims_um.y_um / nSlices;
-    y0 = this->Center_um.y_um - this->Dims_um.y_um / 2.0;
+    pWidth = this->Dims_um.y / nSlices;
+    y0 = this->Center_um.y - this->Dims_um.y / 2.0;
 
-    topLeft[0] = this->Center_um.x_um - this->Dims_um.x_um / 2.0;
+    topLeft[0] = this->Center_um.x - this->Dims_um.x / 2.0;
     topLeft[1] = y0 + slice * pWidth;
-    topLeft[2] = this->Center_um.z_um - this->Dims_um.z_um / 2.0;
+    topLeft[2] = this->Center_um.z - this->Dims_um.z / 2.0;
 
-    bottomRight[0] = this->Center_um.x_um + this->Dims_um.x_um / 2.0;
+    bottomRight[0] = this->Center_um.x + this->Dims_um.x / 2.0;
     bottomRight[1] = y0 + (slice + 1.0) * pWidth;
-    bottomRight[2] = this->Center_um.z_um + this->Dims_um.z_um / 2.0;
+    bottomRight[2] = this->Center_um.z + this->Dims_um.z / 2.0;
 
     std::vector<std::vector<float>> bounds = {topLeft, bottomRight};
     return bounds;
@@ -54,8 +54,8 @@ std::vector<std::vector<float>> Box::EqualSliceBounds(int nSlices, int slice) {
 
 //! Returns a vector of dimensions of the Box.
 std::vector<float> Box::Sides() {
-    std::vector<float> sides = {this->Dims_um.x_um, this->Dims_um.y_um,
-                                this->Dims_um.z_um};
+    std::vector<float> sides = {this->Dims_um.x, this->Dims_um.y,
+                                this->Dims_um.z};
     return sides;
 }
 
