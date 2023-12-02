@@ -9,6 +9,34 @@ namespace NES {
 namespace Simulator {
 
 
+bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
+
+    // X Alligned Border
+    for (int X = 0; X < _Array->GetX(); X++) {
+        _Array->SetVoxel(X, 0, 0, BORDER);
+        _Array->SetVoxel(X, _Array->GetY()-1, 0, BORDER);
+        _Array->SetVoxel(X, 0, _Array->GetZ()-1, BORDER);
+        _Array->SetVoxel(X, _Array->GetY()-1, _Array->GetZ()-1, BORDER);
+    }
+
+    // Y Alligned Border
+    for (int Y = 0; Y < _Array->GetY(); Y++) {
+        _Array->SetVoxel(0, Y, 0, BORDER);
+        _Array->SetVoxel(_Array->GetX()-1, Y, 0, BORDER);
+        _Array->SetVoxel(0, Y, _Array->GetZ()-1, BORDER);
+        _Array->SetVoxel(_Array->GetX()-1, Y, _Array->GetZ()-1, BORDER);
+    }
+
+    // Z Alligned Border
+    for (int Z = 0; Z < _Array->GetZ(); Z++) {
+        _Array->SetVoxel(0, 0, Z, BORDER);
+        _Array->SetVoxel(_Array->GetX()-1, 0, Z, BORDER);
+        _Array->SetVoxel(0, _Array->GetY()-1, Z, BORDER);
+        _Array->SetVoxel(_Array->GetX()-1, _Array->GetY()-1, Z, BORDER);
+    }
+
+}
+
 
 bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
 
@@ -80,6 +108,8 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
     }
 
+    CreateVoxelArrayBorderFrame(_Array);
+
     return true;
 
 }
@@ -114,8 +144,14 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
 
                 // Build Shader with different color so we can tell each voxel apart
                 Renderer::Shaders::Phong BoxShader;
-                BoxShader.DiffuseColor_  = vsg::vec4(X/(float)_Array->GetX(), Y/(float)_Array->GetY(), 1.0, 1.0f);
-                BoxShader.SpecularColor_ = vsg::vec4(0.f, 0.f, 0.f, 0.0f);
+
+                if (ThisVoxel == FILLED) {
+                    BoxShader.DiffuseColor_  = vsg::vec4(X/(float)_Array->GetX(), Y/(float)_Array->GetY(), 1.0, 1.0f);
+                    BoxShader.SpecularColor_ = vsg::vec4(0.f, 0.f, 0.f, 0.0f);
+                } else if (ThisVoxel == BORDER) {
+                    BoxShader.DiffuseColor_  = vsg::vec4(1.0, 0.5, 0.3, 1.0f);
+                    BoxShader.SpecularColor_ = vsg::vec4(0.f, 0.f, 0.f, 0.0f);
+                }
                 BoxShader.Type_ = Renderer::Shaders::SHADER_PHONG;
 
 

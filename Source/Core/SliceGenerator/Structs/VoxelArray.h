@@ -54,7 +54,8 @@ typedef uint8_t VoxelType;
 
 enum VoxelState {
     EMPTY=0,
-    FILLED=1
+    FILLED=1,
+    BORDER=2
 };
 
 
