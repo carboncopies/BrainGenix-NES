@@ -755,15 +755,15 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
 
 
 std::string Manager::VSDAEMInitialize(std::string _JSONRequest) {
+
     // Parse Request
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    std::cout<<"[Info] VSDA EM Initialize Called On SimID "<<SimulationID<<std::endl;
-
+    Logger_->Log(std::string("VSDA EM Initialize Called On Simulation With ID ") + std::to_string(SimulationID), 4);
 
     // Check Sim ID
     if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        Logger_->Log(std::string("VSDA EM Initialize Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 1; // invalid simulation id
         return ResponseJSON.dump();
@@ -772,9 +772,12 @@ std::string Manager::VSDAEMInitialize(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     
 
+    int Status = !VSDAInitialize(Logger_, ThisSimulation);
+
+
     // Build Response
     nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0; // ok
+    ResponseJSON["StatusCode"] = Status;
     return ResponseJSON.dump();
 }
 std::string Manager::VSDAEMSetupMicroscope(std::string _JSONRequest) {

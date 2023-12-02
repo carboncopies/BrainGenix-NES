@@ -12,11 +12,20 @@ namespace Simulator {
 
 
 bool VSDAInitialize(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim) {
+
+    // Check Preconditions
     assert(_Logger != nullptr);
     assert(_Sim != nullptr);
+    if (_Sim->VSDAData_.State_ != VSDA_NOT_INITIALIZED) { // Check if the VSDA has already been initialized, if so - we don't touch it.
+        return false; 
+    }
+
+    // Initialize it
+    _Sim->VSDAData_.State_ = VSDA_INIT_BEGIN;
 
 
-
+    // That's all we have to do apparently...
+    return true;
 
 }
 

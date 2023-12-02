@@ -4,13 +4,13 @@
 //=================================//
 
 /*
-    Description: This file defines the scan region struct.
+    Description: This file defines the VSDA Scan data area
     Additional Notes: None
-    Date Created: 2023-11-29
-    Author(s): Thomas Liao, Randal Koene
+    Date Created: 2023-12-02
+    Author(s): Thomas Liao
 
 
-    Copyright (C) 2023  Thomas Liao, Randal Koene
+    Copyright (C) 2023  Thomas Liao
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -49,11 +49,11 @@ namespace Simulator {
 
 
 enum VSDAState {
-    NOT_INITIALIZED=0,
-    INIT_BEGIN=1,
-    INIT_DONE=2,
-    RENDER_READY=3,
-    RENDER_DONE=4
+    VSDA_NOT_INITIALIZED=0,
+    VSDA_INIT_BEGIN=1,
+    VSDA_INIT_DONE=2,
+    VSDA_RENDER_READY=3,
+    VSDA_RENDER_DONE=4
 };
 
 
@@ -65,7 +65,7 @@ enum VSDAState {
  */
 struct VSDAData {
 
-    VSDAState State_ = NOT_INITIALIZED; /**Enum indicating the current state of this instance of VSDAData, tells the processing system if we need to be rendered, etc.*/
+    VSDAState State_ = VSDA_NOT_INITIALIZED; /**Enum indicating the current state of this instance of VSDAData, tells the processing system if we need to be rendered, etc.*/
 
     std::unique_ptr<VoxelArray> Array_; /**Pointer to the voxel array instance - stores the stuff being scanned*/ 
     MicroscopeParameters        Params_; /**Defines the microscope parameters for the current scan area*/
