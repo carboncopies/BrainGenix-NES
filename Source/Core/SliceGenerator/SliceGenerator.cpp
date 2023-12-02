@@ -92,7 +92,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
 
     _Logger->Log(std::string("Rendering Slice '") + std::to_string(SliceNumber) + "'", 2);
 
-    // _Renderer->ResetScene();
+    _Renderer->ResetScene();
 
     // Ensure Scene Is Now Threadsafe
     _Renderer->LockScene();
@@ -114,7 +114,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
 
                 // Build Shader with different color so we can tell each voxel apart
                 Renderer::Shaders::Phong BoxShader;
-                BoxShader.DiffuseColor_  = vsg::vec4(X/(float)_Array->GetX(), Y/(float)_Array->GetY(), SliceNumber/(float)_Array->GetZ(), 1.0f);
+                BoxShader.DiffuseColor_  = vsg::vec4(X/(float)_Array->GetX(), Y/(float)_Array->GetY(), 1.0, 1.0f);
                 BoxShader.SpecularColor_ = vsg::vec4(0.f, 0.f, 0.f, 0.0f);
                 BoxShader.Type_ = Renderer::Shaders::SHADER_PHONG;
 

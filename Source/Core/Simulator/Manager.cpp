@@ -764,8 +764,9 @@ std::string Manager::Debug(std::string _JSONRequest) {
     // }
 
 
-    std::cout<<"This will break if you don't have at least one simulation. Trying to get sim with id 0\n";
-    Simulation* ThisSimulation = Simulations_[0].get();
+    std::cout<<"This will break if you don't have at least one simulation. Trying to get sim with id >0\n";
+
+    Simulation* ThisSimulation = Simulations_[Simulations_.size()-1].get();
 
 
     BoundingBox BB = BoundingBox();
@@ -798,7 +799,7 @@ std::string Manager::Debug(std::string _JSONRequest) {
     // RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, 10);
     for (unsigned int i = 0; i < Arr.GetZ(); i++) {
         RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, i);
-        std::this_thread::sleep_for(std::chrono::milliseconds(500)); // delay so our mutex is easier to get by another thread if needed
+        std::this_thread::sleep_for(std::chrono::milliseconds(100)); // delay so our mutex is easier to get by another thread if needed
     }
 
     // Renderer_->ResetViewer();
