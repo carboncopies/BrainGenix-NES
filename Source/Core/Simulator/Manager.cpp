@@ -774,9 +774,9 @@ std::string Manager::Debug(std::string _JSONRequest) {
     BB.bb_point1[1] = -1.;
     BB.bb_point1[2] = -1.;
 
-    BB.bb_point2[0] = 7.;
-    BB.bb_point2[1] = 7.;
-    BB.bb_point2[2] = 7.;
+    BB.bb_point2[0] = 9.;
+    BB.bb_point2[1] = 6.;
+    BB.bb_point2[2] = 6.;
 
     
     float VoxelSize = atof(Util::GetString(&RequestJSON, "Query").c_str());
