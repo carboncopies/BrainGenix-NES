@@ -163,12 +163,7 @@ bool Manager::ClearScene() {
 
     LockScene();
     WaitUntilGPUDone();
-
-    // Scene_->Group_.~ref_ptr();
-    std::cout<<"Clearing Scene!\n";
-    // Scene_->Group_ = vsg::Group::create();
-    Scene_->Group_->children.clear();
-    
+        Scene_->Group_->children.clear();
     UnlockScene();
 
     return true;
