@@ -807,11 +807,11 @@ std::string Manager::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     int ImageHeight_px               = Util::GetInt(&RequestJSON, "ImageHeight_px");
     float SliceThickness_nm          = Util::GetFloat(&RequestJSON, "SliceThickness_nm");
     float ScanRegionOverlap_percent  = Util::GetFloat(&RequestJSON, "ScanRegionOverlap_percent");
-    Logger_->Log(std::string("VSDA EM Initialize Called On Simulation With ID ") + std::to_string(SimulationID), 4);
+    Logger_->Log(std::string("VSDA EM SetupMicroscope Called On Simulation With ID ") + std::to_string(SimulationID), 4);
 
     // Check Sim ID
     if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        Logger_->Log(std::string("VSDA EM Initialize Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
+        Logger_->Log(std::string("VSDA EM SetupMicroscope Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 1; // invalid simulation id
         return ResponseJSON.dump();
