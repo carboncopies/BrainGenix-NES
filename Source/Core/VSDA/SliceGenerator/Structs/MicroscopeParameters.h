@@ -51,8 +51,12 @@ namespace Simulator {
 struct MicroscopeParameters {
 
 
-    float VoxelResolution_um; /**Set the size of each voxel*/
+    float VoxelResolution_um; /**Set the size of each voxel in micrometers*/
 
+    int ImageWidth_px; /**Width of the rendered image in pixels*/
+    int ImageHeight_px; /**Height of the rendered image in pixels*/
+    float ScanRegionOverlap_percent; /**Percentage of overlap between generated images*/
+    float SliceThickness_um; /**How thick each slice is in micrometers*/
 
 };
 

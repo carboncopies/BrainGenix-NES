@@ -66,10 +66,24 @@ namespace Simulator {
  * 
  * @param _Logger Pointer to logging system instance
  * @param _Sim Pointer to simulation struct that we can modify with this state
- * @return true 
- * @return false 
+ * @return true On Success
+ * @return false On Error
  */
 bool VSDAInitialize(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim);
+
+/**
+ * @brief Setup the virtual microscope on a given simulation with the given parameters.
+ * 
+ * @param _Logger Pointer to logging system instance.
+ * @param _Sim Pointer to simulation instance which we will modify with our new data.
+ * @param _Params Microscope parameter struct used to update the VSDAData_ struct in the sim.
+ * @return true On Success
+ * @return false On Error
+ */
+bool VSDASetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters _Params);
+
+
+
 
 /**
  * @brief Create a Voxel Array From Simulation object

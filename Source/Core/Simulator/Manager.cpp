@@ -38,6 +38,14 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     _RPCManager->AddRoute("Tool/PatchClampADC/SetSampleRate", [this](std::string RequestJSON){ return PatchClampADCSetSampleRate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampADC/GetRecordedData", [this](std::string RequestJSON){ return PatchClampADCGetRecordedData(RequestJSON);});
 
+    _RPCManager->AddRoute("VSDA/EM/Initialize", [this](std::string RequestJSON){ return VSDAEMInitialize(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/SetupMicroscope", [this](std::string RequestJSON){ return VSDAEMSetupMicroscope(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/DefineScanRegion", [this](std::string RequestJSON){ return VSDAEMDefineScanRegion(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/QueueRenderOperation", [this](std::string RequestJSON){ return VSDAEMQueueRenderOperation(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/GetRenderStatus", [this](std::string RequestJSON){ return VSDAEMGetRenderStatus(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/GetImageStack", [this](std::string RequestJSON){ return VSDAEMGetImageStack(RequestJSON);});
+
+
     _RPCManager->AddRoute("Debug", [this](std::string RequestJSON){ return Debug(RequestJSON);});
 
     // Start SE Thread
@@ -781,6 +789,50 @@ std::string Manager::VSDAEMInitialize(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 std::string Manager::VSDAEMSetupMicroscope(std::string _JSONRequest) {
+
+/**
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+- (float) `PixelResolution_nm` Number of nanometers of resolution for each pixel.  
+- (int) `ImageWidth_px` Set the width of the image in pixels.  
+- (int) `ImageHeight_px` Set the height of the image in pixels.  
+- (float) `SliceThickness_nm` Set the thickness of each slice in nanometers.  
+- (float) `ScanRegionOverlap_percent` Set the overlap for the resulting image stacks.  
+*/
+
+    // Parse Request, Get Parameters
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID                 = Util::GetInt(&RequestJSON, "SimulationID");
+    float PixelResolution_nm         = Util::GetFloat(&RequestJSON, "PixelResolution_nm");
+    int ImageWidth_px                = Util::GetInt(&RequestJSON, "ImageWidth_px");
+    int ImageHeight_px               = Util::GetInt(&RequestJSON, "ImageHeight_px");
+    float SliceThickness_nm          = Util::GetFloat(&RequestJSON, "SliceThickness_nm");
+    float ScanRegionOverlap_percent  = Util::GetFloat(&RequestJSON, "ScanRegionOverlap_percent");
+    Logger_->Log(std::string("VSDA EM Initialize Called On Simulation With ID ") + std::to_string(SimulationID), 4);
+
+    // Check Sim ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        Logger_->Log(std::string("VSDA EM Initialize Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        return ResponseJSON.dump();
+    }
+
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    
+
+    // Build Microscope Paremters Data
+    MicroscopeParameters Params;
+    Params.VoxelResolution_um = PixelResolution_nm*1000; // This is not right, and we'll need to tweak some of these conversions, but for now it's the best we've got.
+    Params.ImageWidth_px = ImageWidth_px;
+    Params.ImageHeight_px = ImageHeight_px;
+    Params.ScanRegionOverlap_percent = ScanRegionOverlap_percent;
+    Params.SliceThickness_um = SliceThickness_nm*1000;
+
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0;
+    return ResponseJSON.dump();
 
 }
 std::string Manager::VSDAEMDefineScanRegion(std::string _JSONRequest) {

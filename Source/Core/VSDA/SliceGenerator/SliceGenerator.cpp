@@ -29,7 +29,21 @@ bool VSDAInitialize(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim
 
 }
 
+bool VSDASetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters _Params) {
 
+    // Check Preconditions
+    assert(_Logger != nullptr);
+    assert(_Sim != nullptr);
+    if (_Sim->VSDAData_.State_ == VSDA_INIT_BEGIN) { // Check that the VSDA is during its init phase, and not yet done initializing.
+        return false; 
+    }
+
+    // Copy over the parameters
+    _Sim->VSDAData_.Params_ = _Params;
+
+    return true;
+
+}
 
 
 
