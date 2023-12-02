@@ -35,6 +35,8 @@ bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
         _Array->SetVoxel(_Array->GetX()-1, _Array->GetY()-1, Z, BORDER);
     }
 
+    return true;
+
 }
 
 
