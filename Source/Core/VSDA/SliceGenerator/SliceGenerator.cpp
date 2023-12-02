@@ -9,6 +9,21 @@ namespace NES {
 namespace Simulator {
 
 
+
+
+bool VSDAInitialize(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim) {
+    assert(_Logger != nullptr);
+    assert(_Sim != nullptr);
+
+
+
+
+}
+
+
+
+
+
 bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
 
     // X Alligned Border

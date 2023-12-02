@@ -60,6 +60,16 @@ namespace Simulator {
 // Then, we slice the voxel array one slice at a time, and build a mesh from it
 // Then the mesh is used to generate an image
 
+/**
+ * @brief Helper function for VSDA subsystem.
+ * Will initialize the VSDA struct within the simulation struct - for further use later.
+ * 
+ * @param _Logger Pointer to logging system instance
+ * @param _Sim Pointer to simulation struct that we can modify with this state
+ * @return true 
+ * @return false 
+ */
+bool VSDAInitialize(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim);
 
 /**
  * @brief Create a Voxel Array From Simulation object

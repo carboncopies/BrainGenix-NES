@@ -48,6 +48,15 @@ namespace NES {
 namespace Simulator {
 
 
+enum VSDAState {
+    NOT_INITIALIZED=0,
+    INIT_BEGIN=1,
+    INIT_DONE=2,
+    RENDER_READY=3,
+    RENDER_DONE=4
+};
+
+
 /**
  * @brief Struct which is useful for storing the status of all information used by the VSDA subsystem.
  * This contains things like microscope position, VoxelArray, etc.
@@ -56,14 +65,14 @@ namespace Simulator {
  */
 struct VSDAData {
 
-    bool InUse_ = false; /**Denotes if this struct has been initialized and is ready to do stuff*/
+    VSDAState State_ = NOT_INITIALIZED; /**Enum indicating the current state of this instance of VSDAData, tells the processing system if we need to be rendered, etc.*/
 
     std::unique_ptr<VoxelArray> Array_; /**Pointer to the voxel array instance - stores the stuff being scanned*/ 
-    MicroscopeParameters Params_; /**Defines the microscope parameters for the current scan area*/
-    ScanRegion Region_; /**Defines the scan region we're working on (for this microscope)*/
+    MicroscopeParameters        Params_; /**Defines the microscope parameters for the current scan area*/
+    ScanRegion                  Region_; /**Defines the scan region we're working on (for this microscope)*/
 
 
-}
+};
 
 }; // Close Namespace Logger
 }; // Close Namespace Common
