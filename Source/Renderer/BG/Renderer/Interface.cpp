@@ -178,8 +178,8 @@ void Interface::ResetViewer() {
 void Interface::ResetScene() {
     RendererManager_->ClearScene();
 
-    LockScene();
-    WaitUntilGPUDone();
+    // LockScene();
+    // WaitUntilGPUDone();
 
     // // hacky
     // Shaders::Phong CubeShader;
@@ -193,7 +193,7 @@ void Interface::ResetScene() {
     // CreateInfo.Shader_ = &CubeShader;
     // AddBox(&CreateInfo);
 
-    UnlockScene();
+    // UnlockScene();
 }
 
 }; // Close Namespace Logger

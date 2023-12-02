@@ -792,6 +792,9 @@ std::string Manager::Debug(std::string _JSONRequest) {
     //     Arr.SetVoxel(i, i, i, FILLED);
     // }
 
+    Renderer_->ResetScene();
+
+
     // RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, 10);
     for (unsigned int i = 0; i < Arr.GetZ(); i++) {
         RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, i);

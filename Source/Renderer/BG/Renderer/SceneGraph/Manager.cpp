@@ -166,13 +166,9 @@ bool Manager::ClearScene() {
 
     // Scene_->Group_.~ref_ptr();
     std::cout<<"Clearing Scene!\n";
-    Scene_->Group_ = vsg::Group::create();
+    // Scene_->Group_ = vsg::Group::create();
+    Scene_->Group_->children.clear();
     
-    // vsg::Visitor Visitor;
-    // Scene_->Group_->traverse(Visitor);
-    // Visitor.getValue()
-    // Scene_->Group_->removeObject("");
-
     UnlockScene();
 
     return true;
