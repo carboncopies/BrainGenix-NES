@@ -38,6 +38,10 @@ struct Sphere: Geometry {
     
     //! Returns the volume of the sphere in micrometer^3.
     float Volume_um3();
+
+    //! Returns the bounding box
+    virtual BoundingBox GetBoundingBox();
+
 };
 
 }; // Close Namespace Geometries

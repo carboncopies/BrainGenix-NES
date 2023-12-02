@@ -1,13 +1,16 @@
+
 //=================================//
 // This file is part of BrainGenix //
 //=================================//
 
 /*
-    Date Created: 2023-10-26
-    Author(s): Thomas Liao
+    Description: This file defines what is imaged and how it's imaged.
+    Additional Notes: None
+    Date Created: 2023-11-29
+    Author(s): Thomas Liao, Randal Koene
 
 
-    Copyright (C) 2023  Thomas Liao
+    Copyright (C) 2023  Thomas Liao, Randal Koene
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -29,48 +32,33 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <iostream>
-#include <assert.h>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <vsg/all.h>
-#include <vsgXchange/all.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <BG/Renderer/SceneGraph/Shader/Shader.h>
-
+#include <SliceGenerator/Structs/ScanRegion.h>
 
 
 namespace BG {
 namespace NES {
-namespace Renderer {
-namespace Primitive {
-
-
+namespace Simulator {
 
 /**
- * @brief This struct contains the data needed to create a cube.
- * It's intended to be populated by a calling function and then passed into a GeometryBuilder instance.
- * From there, it will create a cube with the defined values. 
+ * @brief Defines a set of parameters used to feed the renderer that specifies what and how to scan something.
  * 
  */
-struct Cube {
+struct MicroscopeParameters {
 
-    // Physical Attributes
-    vsg::vec3 Position_; /**Position of the cube from the origin of the world*/
-    vsg::vec3 Rotation_; /**Rotation of the cube from the origin in degrees*/
-    vsg::vec3 Scale_;    /**Dimensions of the cube*/
+    ScanRegion Region_; /**Defines the bounding box of the area we're scanning*/
 
-    Shaders::Shader* Shader_ = nullptr; /**Defines the info/type of shader to be used for this cube*/
+    float VoxelResolution_um; /**Set the size of each voxel*/
+
 
 };
 
 
-
-
-}; // Close Namespace State
 }; // Close Namespace Logger
 }; // Close Namespace Common
 }; // Close Namespace BG

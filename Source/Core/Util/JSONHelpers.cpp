@@ -9,7 +9,17 @@ int GetInt(nlohmann::json *_JSON, std::string _ParamName) {
 }
 
 float GetFloat(nlohmann::json *_JSON, std::string _ParamName) {
-    return (*_JSON)[_ParamName].template get<float>();
+    try {
+        return (*_JSON)[_ParamName].template get<float>();
+    } catch (nlohmann::json::type_error &Ex) {
+        std::cerr<<"Cannot Get JSON Param: "<<_ParamName<<std::endl;
+        std::cerr<<"ERR: JSON Float Type Error: "<<Ex.what()<<std::endl;
+        return -1;
+    } catch (nlohmann::json::parse_error &Ex) {
+        std::cerr<<"Cannot Get JSON Param: "<<_ParamName<<std::endl;
+        std::cerr<<"ERR: JSON Float Parsing Error: "<<Ex.what()<<std::endl;
+        return -1;
+    }
 }
 
 std::string GetString(nlohmann::json *_JSON, std::string _ParamName) {

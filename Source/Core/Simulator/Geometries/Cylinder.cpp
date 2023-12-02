@@ -104,6 +104,14 @@ std::tuple<float, float, float> Cylinder::GetRotation_rad() {
     return std::make_tuple(thetaX_rad, thetaY_rad, thetaZ_rad);
 };
 
+BoundingBox Cylinder::GetBoundingBox() {
+	BoundingBox bb;
+
+
+	return bb;
+}
+
+
 }; // namespace Geometries
 }; // namespace Simulator
 }; // namespace NES

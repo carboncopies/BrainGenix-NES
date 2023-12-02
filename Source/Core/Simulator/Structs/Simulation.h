@@ -23,6 +23,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/BallAndStick/BSAlignedBrainRegion.h>
 #include <Simulator/BallAndStick/BSAlignedNC.h>
 #include <Simulator/BrainRegion/BrainRegion.h>
 #include <Simulator/Geometries/Geometry.h>
@@ -61,48 +62,28 @@ struct Simulation {
     float StartRecordTime_ms = 0.0;
     float MaxRecordTime_ms = 0.0;
 
-    std::unordered_map<std::string, std::shared_ptr<BrainRegions::BrainRegion>>
-        Regions;
-    std::unordered_map<std::string, std::shared_ptr<CoreStructs::NeuralCircuit>>
-        NeuralCircuits;
+    std::unordered_map<std::string, std::shared_ptr<BrainRegions::BrainRegion>> Regions;
+    std::unordered_map<std::string, std::shared_ptr<CoreStructs::NeuralCircuit>> NeuralCircuits;
 
     std::vector<float> TInstruments_ms{};
     std::vector<float> TRecorded_ms{};
 
-    std::string RecordingBlob; /**Blob of json data that contains all recorded
-                                  states for each thing in the simulation*/
+    std::string RecordingBlob; /**Blob of json data that contains all recorded states for each thing in the simulation*/
 
-    std::atomic<bool> IsProcessing = false; /**Indicator if the simulation is
-                                               currently being modified or not*/
-    std::atomic<bool> WorkRequested =
-        false; /**Indicator if work is requested to be done on this simulation
-                  by a worker thread*/
-    float RunTimes_ms; /**Number of ms to be simulated next time runfor is
-                          called - if not, set to -1*/
-    SimulationActions CurrentTask; /**Current task to be processed on this
-                                      simulation, could be run for, or reset,
-                                      etc. See above enum for more info.*/
+    std::atomic<bool> IsProcessing = false; /**Indicator if the simulation is currently being modified or not*/
+    std::atomic<bool> WorkRequested = false; /**Indicator if work is requested to be done on this simulation by a worker thread*/
+    float RunTimes_ms; /**Number of ms to be simulated next time runfor is called - if not, set to -1*/
+    SimulationActions CurrentTask; /**Current task to be processed on this simulation, could be run for, or reset, etc. See above enum for more info.*/
 
-    Geometries::GeometryCollection
-        Collection; /**Instance of GeometryCollection struct containing all
-                       geometries in this simulation*/
+    Geometries::GeometryCollection Collection; /**Instance of GeometryCollection struct containing all geometries in this simulation*/
 
-    std::vector<Compartments::BS>
-        BSCompartments; /**This will need to be updated later to a std::variant
-                           type, but for now it stores the only type of
-                           supported compartments, BallStick type*/
+    std::vector<Compartments::BS> BSCompartments; /**This will need to be updated later to a std::variant type, but for now it stores the only type of supported compartments, BallStick type*/
 
-    std::vector<Connections::Staple>
-        Staples; /**List of staple connections, index is their id (also stored
-                    in struct)*/
-    std::vector<Connections::Receptor>
-        Receptors; /**List of receptor connections, index is their id (and it's
-                      also stored in the struct itself)*/
+    std::vector<Connections::Staple> Staples; /**List of staple connections, index is their id (also stored in struct)*/
+    std::vector<Connections::Receptor> Receptors; /**List of receptor connections, index is their id (and it's also stored in the struct itself)*/
 
-    std::vector<Tools::PatchClampDAC>
-        PatchClampDACs; /**List of patchclamp dacs, id is index*/
-    std::vector<Tools::PatchClampADC>
-        PatchClampADCs; /**List of patchclamp adcs, id is index*/
+    std::vector<Tools::PatchClampDAC> PatchClampDACs; /**List of patchclamp dacs, id is index*/
+    std::vector<Tools::PatchClampADC> PatchClampADCs; /**List of patchclamp adcs, id is index*/
 
     //! Constructors
     Simulation();

@@ -59,6 +59,9 @@ struct Cylinder : Geometry {
 
     //! Gets the rotation in radians with respect to the x, y and z axes
     std::tuple<float, float, float> GetRotation_rad();
+
+    //! Returns the bounding box
+    virtual BoundingBox GetBoundingBox();
 };
 
 }; // namespace Geometries

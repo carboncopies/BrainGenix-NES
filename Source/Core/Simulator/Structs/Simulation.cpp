@@ -11,12 +11,16 @@ Simulation::Simulation(std::string _Name) : Name(_Name){};
 void Simulation::AddCircuit(
     std::shared_ptr<CoreStructs::NeuralCircuit> circuit) {
     assert(circuit != nullptr);
-    this->NeuralCircuits[std::to_string(circuit->ID)] = circuit;
+    auto ID = std::to_string(circuit->ID);
+    this->NeuralCircuits[ID] = circuit;
 };
 
 void Simulation::AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region) {
-    assert(region != nullptr);
-    this->Regions[std::to_string(region->ID)] = region;
+    auto regionPtr =
+        std::dynamic_pointer_cast<BallAndStick::BSAlignedBrainRegion>(region);
+    assert(regionPtr != nullptr);
+    auto ID = std::to_string(regionPtr->ID);
+    this->Regions[ID] = regionPtr;
 };
 
 std::vector<std::shared_ptr<CoreStructs::Neuron>> Simulation::GetAllNeurons() {
