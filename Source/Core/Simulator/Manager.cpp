@@ -792,10 +792,11 @@ std::string Manager::Debug(std::string _JSONRequest) {
     //     Arr.SetVoxel(i, i, i, FILLED);
     // }
 
-    RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, 10);
-    // for (unsigned int i = 0; i < Arr.GetZ(); i++) {
-        // RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, i);
-    // }
+    // RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, 10);
+    for (unsigned int i = 0; i < Arr.GetZ(); i++) {
+        RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, i);
+        std::this_thread::sleep_for(std::chrono::milliseconds(500)); // delay so our mutex is easier to get by another thread if needed
+    }
 
     // Renderer_->ResetViewer();
 
