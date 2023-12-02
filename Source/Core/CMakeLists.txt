@@ -110,6 +110,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/ScanRegion.h
   ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/VoxelArray.cpp
   ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/VoxelArray.h
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/VSDAData.cpp
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/VSDAData.h
 
 )
  
