@@ -790,15 +790,6 @@ std::string Manager::VSDAEMInitialize(std::string _JSONRequest) {
 }
 std::string Manager::VSDAEMSetupMicroscope(std::string _JSONRequest) {
 
-/**
-- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
-- (float) `PixelResolution_nm` Number of nanometers of resolution for each pixel.  
-- (int) `ImageWidth_px` Set the width of the image in pixels.  
-- (int) `ImageHeight_px` Set the height of the image in pixels.  
-- (float) `SliceThickness_nm` Set the thickness of each slice in nanometers.  
-- (float) `ScanRegionOverlap_percent` Set the overlap for the resulting image stacks.  
-*/
-
     // Parse Request, Get Parameters
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID                 = Util::GetInt(&RequestJSON, "SimulationID");
@@ -828,10 +819,11 @@ std::string Manager::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     Params.ScanRegionOverlap_percent = ScanRegionOverlap_percent;
     Params.SliceThickness_um = SliceThickness_nm*1000;
 
+    int Status = !VSDASetupMicroscope(Logger_, ThisSimulation, Params);
 
     // Build Response
     nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0;
+    ResponseJSON["StatusCode"] = Status;
     return ResponseJSON.dump();
 
 }
