@@ -39,8 +39,8 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
-#include <SliceGenerator/Structs/MicroscopeParameters.h>
-#include <SliceGenerator/Structs/VoxelArray.h>
+#include <VSDA/SliceGenerator/Structs/MicroscopeParameters.h>
+#include <VSDA/SliceGenerator/Structs/VoxelArray.h>
 
 #include <BG/Renderer/Interface.h>
 #include <BG/Renderer/SceneGraph/Primitive/Cube.h>

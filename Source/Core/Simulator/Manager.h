@@ -33,8 +33,8 @@
 #include <Simulator/Structs/PatchClampDAC.h>
 #include <Simulator/Structs/PatchClampADC.h>
 
-#include <VSDA/MeshBuilder.h>
-#include <SliceGenerator/SliceGenerator.h>
+#include <VSDA/DebugHelpers/MeshBuilder.h>
+#include <VSDA/SliceGenerator/SliceGenerator.h>
 #include <BG/Renderer/Interface.h>
 
 #include <Simulator/EngineController.h>
@@ -112,6 +112,12 @@ public:
     std::string PatchClampADCCreate(std::string _JSONRequest);
     std::string PatchClampADCSetSampleRate(std::string _JSONRequest);
     std::string PatchClampADCGetRecordedData(std::string _JSONRequest);
+    std::string VSDAEMInitialize(std::string _JSONRequest);
+    std::string VSDAEMSetupMicroscope(std::string _JSONRequest);
+    std::string VSDAEMDefineScanRegion(std::string _JSONRequest);
+    std::string VSDAEMQueueRenderOperation(std::string _JSONRequest);
+    std::string VSDAEMGetRenderStatus(std::string _JSONRequest);
+    std::string VSDAEMGetImageStack(std::string _JSONRequest);
     std::string Debug(std::string _JSONRequest);
 
 

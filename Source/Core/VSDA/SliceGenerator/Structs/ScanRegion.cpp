@@ -1,0 +1,1 @@
+#include <VSDA/SliceGenerator/Structs/ScanRegion.h>

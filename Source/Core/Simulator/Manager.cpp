@@ -753,6 +753,46 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
+
+std::string Manager::VSDAEMInitialize(std::string _JSONRequest) {
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    std::cout<<"[Info] VSDA EM Initialize Called On SimID "<<SimulationID<<std::endl;
+
+
+    // Check Sim ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        return ResponseJSON.dump();
+    }
+
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    return ResponseJSON.dump();
+}
+std::string Manager::VSDAEMSetupMicroscope(std::string _JSONRequest) {
+
+}
+std::string Manager::VSDAEMDefineScanRegion(std::string _JSONRequest) {
+
+}
+std::string Manager::VSDAEMQueueRenderOperation(std::string _JSONRequest) {
+
+}
+std::string Manager::VSDAEMGetRenderStatus(std::string _JSONRequest) {
+
+}
+std::string Manager::VSDAEMGetImageStack(std::string _JSONRequest) {
+
+}
+
 std::string Manager::Debug(std::string _JSONRequest) {
 
     // Parse Request

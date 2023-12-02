@@ -98,20 +98,18 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h
 
-  ${SRC_DIR}/Core/VSDA/MeshBuilder.cpp
-  ${SRC_DIR}/Core/VSDA/MeshBuilder.h
-  ${SRC_DIR}/Core/VSDA/MeshConversionHelpers.cpp
-  ${SRC_DIR}/Core/VSDA/MeshConversionHelpers.h
-
-
-  ${SRC_DIR}/Core/SliceGenerator/SliceGenerator.cpp
-  ${SRC_DIR}/Core/SliceGenerator/SliceGenerator.h
-  ${SRC_DIR}/Core/SliceGenerator/Structs/MicroscopeParameters.cpp
-  ${SRC_DIR}/Core/SliceGenerator/Structs/MicroscopeParameters.h
-  ${SRC_DIR}/Core/SliceGenerator/Structs/ScanRegion.cpp
-  ${SRC_DIR}/Core/SliceGenerator/Structs/ScanRegion.h
-  ${SRC_DIR}/Core/SliceGenerator/Structs/VoxelArray.cpp
-  ${SRC_DIR}/Core/SliceGenerator/Structs/VoxelArray.h
+  ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshBuilder.cpp
+  ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshBuilder.h
+  ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshConversionHelpers.cpp
+  ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshConversionHelpers.h
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.cpp
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.h
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/MicroscopeParameters.cpp
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/MicroscopeParameters.h
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/ScanRegion.cpp
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/ScanRegion.h
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/VoxelArray.cpp
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/VoxelArray.h
 
 )
  

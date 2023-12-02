@@ -1,4 +1,4 @@
-#include <SliceGenerator/SliceGenerator.h>
+#include <VSDA/SliceGenerator/SliceGenerator.h>
 
 
 
@@ -39,15 +39,11 @@ bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
 
 }
 
-
 bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
-
-    // std::cout<<_BB->ToString()<<std::endl;
 
     for (float X = _BB->bb_point1[0]; X < _BB->bb_point2[0]; X+= _VoxelScale) {
         for (float Y = _BB->bb_point1[1]; Y < _BB->bb_point2[1]; Y+= _VoxelScale) {
             for (float Z = _BB->bb_point1[2]; Z < _BB->bb_point2[2]; Z+= _VoxelScale) {
-                // std::cout<<"Setting Voxel At "<<X<<" "<<Y<<" "<<Z<<"\n";
                 _Array->SetVoxelAtPosition(X, Y, Z, FILLED);
             }
         }

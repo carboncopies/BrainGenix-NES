@@ -16,18 +16,12 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger) {
     assert(_Logger != nullptr);
     Logger_ = _Logger;
 
-
-
-
-
 }
 
 Manager::~Manager() {
     assert(Logger_ != nullptr);
     Logger_->Log("Shutting Down Rendering Subsystem", 3);
 
-
-    
 }
 
 
@@ -133,7 +127,6 @@ bool Manager::SetupViewer() {
     vsg::ref_ptr<vsg::ProjectionMatrix> perspective = CreatePerspectiveMatrix(FOV, AspectRatio, 0.1, 100.0);
 
     Scene_->Camera_ = vsg::Camera::create(perspective, lookAt, vsg::ViewportState::create(RenderData_->Window_->extent2D()));
-
 
     // Split into event handler function (separate?) -------------------------------------------------------------------------------------
     // add close handler to respond to pressing the window's close window button and to pressing escape

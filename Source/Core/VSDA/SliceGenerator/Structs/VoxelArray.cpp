@@ -1,4 +1,4 @@
-#include <SliceGenerator/Structs/VoxelArray.h>
+#include <VSDA/SliceGenerator/Structs/VoxelArray.h>
 
 
 #include <iostream>
