@@ -104,8 +104,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Util/JSONHelpers.h
 
 
-  ${SRC_DIR}/Core/VSDA/SliceGenerator/RPCInterface.cpp
-  ${SRC_DIR}/Core/VSDA/SliceGenerator/RPCInterface.h
+  ${SRC_DIR}/Core/VSDA/RPCInterface.cpp
+  ${SRC_DIR}/Core/VSDA/RPCInterface.h
   ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.cpp
   ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.h
   ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/MicroscopeParameters.cpp

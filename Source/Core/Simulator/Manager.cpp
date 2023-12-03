@@ -827,6 +827,10 @@ bool Manager::IsSimulationBusy(Simulation* _Sim) {
     return _Sim->IsProcessing || _Sim->WorkRequested;
 }
 
+std::vector<std::unique_ptr<Simulation>>* Manager::GetSimulationVectorPtr() {
+    return &Simulations_;
+}
+
 }; // Close Namespace Simulator
 }; // Close Namespace NES
 }; // Close Namespace BG

@@ -1,4 +1,4 @@
-#include <VSDA/SliceGenerator/RPCInterface.h>
+#include <VSDA/RPCInterface.h>
 
 
 
@@ -11,6 +11,39 @@ namespace VSDA {
 
 
 
+RPCInterface::RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::Manager* _RPCManager, BG::NES::Renderer::Interface* _Renderer, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer) {
+
+    // Check Preconditions
+    assert(_Logger != nullptr);
+    assert(_RPCManager != nullptr);
+    assert(_Renderer != nullptr);
+    assert(_SimulationsVectorPointer != nullptr);
+
+    // Copy Parameters To Member Variables
+    Renderer_ = _Renderer;
+    Logger_ = _Logger;
+    SimulationsPtr_ = _SimulationsVectorPointer;
+
+
+    // Log Initialization
+    Logger_->Log("Initializing RPC Interface for VSDA Subsystem", 4);
+
+    // Register Callback For CreateSim
+    _RPCManager->AddRoute("VSDA/EM/Initialize", [this](std::string RequestJSON){ return VSDAEMInitialize(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/SetupMicroscope", [this](std::string RequestJSON){ return VSDAEMSetupMicroscope(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/DefineScanRegion", [this](std::string RequestJSON){ return VSDAEMDefineScanRegion(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/QueueRenderOperation", [this](std::string RequestJSON){ return VSDAEMQueueRenderOperation(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/GetRenderStatus", [this](std::string RequestJSON){ return VSDAEMGetRenderStatus(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/GetImageStack", [this](std::string RequestJSON){ return VSDAEMGetImageStack(RequestJSON);});
+
+
+}
+
+RPCInterface::~RPCInterface() {
+
+}
+
+
 std::string RPCInterface::VSDAEMInitialize(std::string _JSONRequest) {
 
     // Parse Request
@@ -19,14 +52,14 @@ std::string RPCInterface::VSDAEMInitialize(std::string _JSONRequest) {
     Logger_->Log(std::string("VSDA EM Initialize Called On Simulation With ID ") + std::to_string(SimulationID), 4);
 
     // Check Sim ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
         Logger_->Log(std::string("VSDA EM Initialize Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 1; // invalid simulation id
         return ResponseJSON.dump();
     }
 
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
     
 
     int Status = !VSDAInitialize(Logger_, ThisSimulation);
@@ -50,14 +83,14 @@ std::string RPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     Logger_->Log(std::string("VSDA EM SetupMicroscope Called On Simulation With ID ") + std::to_string(SimulationID), 4);
 
     // Check Sim ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
         Logger_->Log(std::string("VSDA EM SetupMicroscope Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 1; // invalid simulation id
         return ResponseJSON.dump();
     }
 
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
     
 
     // Build Microscope Paremters Data
@@ -78,42 +111,37 @@ std::string RPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
 }
 std::string RPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
 
-/**
-- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
-- (vec3) `Point1_um` (X,Y,Z) World space location of one corner of the rectangular prism enclosing the target scan region.  
-- (vec3) `Point2_um` (X,Y,Z) World space location of the other corner of the rectangular prism enclosing the target scan region.  
- */
-
     // Parse Request, Get Parameters
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID                 = Util::GetInt(&RequestJSON, "SimulationID");
-    float PixelResolution_nm         = Util::GetVec3(&RequestJSON, "PixelResolution_nm", );
-    int ImageWidth_px                = Util::GetInt(&RequestJSON, "ImageWidth_px");
-    int ImageHeight_px               = Util::GetInt(&RequestJSON, "ImageHeight_px");
-    float SliceThickness_nm          = Util::GetFloat(&RequestJSON, "SliceThickness_nm");
-    float ScanRegionOverlap_percent  = Util::GetFloat(&RequestJSON, "ScanRegionOverlap_percent");
+    Geometries::Vec3D Point1, Point2;
+    Util::GetVec3(Point1, &RequestJSON, "Point1");
+    Util::GetVec3(Point2, &RequestJSON, "Point1");
     Logger_->Log(std::string("VSDA EM SetupMicroscope Called On Simulation With ID ") + std::to_string(SimulationID), 4);
 
     // Check Sim ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
         Logger_->Log(std::string("VSDA EM SetupMicroscope Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 1; // invalid simulation id
         return ResponseJSON.dump();
     }
 
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
     
 
-    // Build Microscope Paremters Data
-    BoundingBox:: Params;
-    Params.VoxelResolution_um = PixelResolution_nm*1000; // This is not right, and we'll need to tweak some of these conversions, but for now it's the best we've got.
-    Params.ImageWidth_px = ImageWidth_px;
-    Params.ImageHeight_px = ImageHeight_px;
-    Params.ScanRegionOverlap_percent = ScanRegionOverlap_percent;
-    Params.SliceThickness_um = SliceThickness_nm*1000;
+    // Setup Requested Bounding Box
+    ScanRegion ScanRegion;
+    ScanRegion.Point1X_um = Point1.x_um;
+    ScanRegion.Point1Y_um = Point1.y_um;
+    ScanRegion.Point1Z_um = Point1.z_um;
 
-    int Status = !VSDADefineScanRegion(Logger_, ThisSimulation, Params);
+    ScanRegion.Point2X_um = Point2.x_um;
+    ScanRegion.Point2Y_um = Point2.y_um;
+    ScanRegion.Point2Z_um = Point2.z_um;
+
+    int Status = !VSDADefineScanRegion(Logger_, ThisSimulation, ScanRegion);
+
 
     // Build Response
     nlohmann::json ResponseJSON;

@@ -82,6 +82,18 @@ bool VSDAInitialize(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim
  */
 bool VSDASetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters _Params);
 
+/**
+ * @brief Defines the region that we'd like to scan with the current render operation.
+ * Currently, we only support rectangular regions defined by two points in space. That's it for now unfortunately.
+ * 
+ * @param _Logger Pointer to logging system interface.
+ * @param _Sim Pointer to simulation instance to be configured by this VSDA operation.
+ * @param _ScanRegion Instance of the BoundingBox struct with the needed values populated.
+ * @return true On Success
+ * @return false On Error
+ */
+bool VSDADefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, ScanRegion _ScanRegion);
+
 
 
 

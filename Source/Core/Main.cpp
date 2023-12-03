@@ -23,9 +23,9 @@ int main(int NumArguments, char** ArgumentValues) {
         return -1;
     }
 
-    // Setup Simulator
+    // Setup Simulator (Adding the routes here - will need a proper way to do this later on, but works for now)
     BG::NES::Simulator::Manager SimulationManager(&Logger, &SystemConfiguration, &APIManager, &RenderingInterface);
-
+    BG::NES::Simulator::VSDA::RPCInterface VSDA_RPCInterface(&Logger, &APIManager, &RenderingInterface, SimulationManager.GetSimulationVectorPtr());
 
 
 

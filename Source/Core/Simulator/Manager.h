@@ -34,7 +34,6 @@
 #include <Simulator/Structs/PatchClampADC.h>
 
 #include <VSDA/DebugHelpers/MeshBuilder.h>
-#include <VSDA/SliceGenerator/SliceGenerator.h>
 #include <BG/Renderer/Interface.h>
 
 #include <Simulator/EngineController.h>
@@ -131,6 +130,13 @@ public:
      * @return false 
      */
     bool IsSimulationBusy(Simulation* _Sim);
+
+    /**
+     * @brief Returns a pointer to the current simulation vector.
+     * 
+     * @return std::vector<std::unique_ptr<Simulation>>* 
+     */
+    std::vector<std::unique_ptr<Simulation>>* GetSimulationVectorPtr();
 
 };
 

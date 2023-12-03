@@ -3,7 +3,7 @@
 //=================================//
 
 /*
-    Description: This file defines the interface which connects the NES routes for VSDA/EM to the API.
+    Description: This file defines the interface which connects the NES routes for VSDA to the API.
     Additional Notes: None
     Date Created: 2023-12-02
     Author(s): Thomas Liao
@@ -31,30 +31,34 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-
+#include <vector>
+#include <memory>
+#include <iostream>
+#include <assert.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+#include <nlohmann/json.hpp>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
-#include <VSDA/SliceGenerator/Structs/MicroscopeParameters.h>
-#include <VSDA/SliceGenerator/Structs/VoxelArray.h>
+#include <VSDA/SliceGenerator/SliceGenerator.h>
 
 #include <BG/Renderer/Interface.h>
 #include <BG/Renderer/SceneGraph/Primitive/Cube.h>
 
-
 #include <BG/Common/Logger/Logger.h>
+#include <Util/JSONHelpers.h>
 
 #include <RPC/Manager.h>
+
 
 
 namespace BG {
 namespace NES {
 namespace Simulator {
-
+namespace VSDA {
 
 
 
@@ -80,7 +84,7 @@ public:
      * @param _Renderer Instance of rendering system.
      * @param _SimulationsPointerVector Pointer to vector which contains the other simulations. Allows us to access them and modify them as needed.
      */
-    RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::Manager* _RPCManager, BG::NES::Renderer::Interface* _Renderer,  std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer);
+    RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::Manager* _RPCManager, BG::NES::Renderer::Interface* _Renderer, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer);
 
 
     /**
@@ -150,7 +154,7 @@ public:
 };
 
 
-
-}; // Close Namespace Logger
-}; // Close Namespace Common
+}; // Close Namespace VSDA
+}; // Close Namespace Simulator
+}; // Close Namespace NES
 }; // Close Namespace BG

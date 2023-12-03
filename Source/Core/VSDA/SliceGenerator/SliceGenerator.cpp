@@ -17,6 +17,7 @@ bool VSDAInitialize(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim
     assert(_Logger != nullptr);
     assert(_Sim != nullptr);
     if (_Sim->VSDAData_.State_ != VSDA_NOT_INITIALIZED) { // Check if the VSDA has already been initialized, if so - we don't touch it.
+        _Logger->Log("VSDA EM Initialize Error, Cannot Reinit A Region Which Has Already Been Initialized", 6);
         return false; 
     }
 
@@ -35,11 +36,29 @@ bool VSDASetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulation*
     assert(_Logger != nullptr);
     assert(_Sim != nullptr);
     if (_Sim->VSDAData_.State_ == VSDA_INIT_BEGIN) { // Check that the VSDA is during its init phase, and not yet done initializing.
+        _Logger->Log("VSDA EM SetupMicroscope Error, Cannot Setup Microscope On Syatem With Unknown State", 6);
         return false; 
     }
 
     // Copy over the parameters
     _Sim->VSDAData_.Params_ = _Params;
+
+    return true;
+
+}
+
+bool VSDADefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, ScanRegion _ScanRegion) {
+
+    // Check Preconditions
+    assert(_Logger != nullptr);
+    assert(_Sim != nullptr);
+    if (_Sim->VSDAData_.State_ == VSDA_INIT_BEGIN) { // Check that the VSDA is during its init phase, and not yet done initializing.
+        _Logger->Log("VSDA EM DefineScanRegion Error, Cannot Define Microscope Scan Region On Syatem With Unknown State", 6);
+        return false; 
+    }
+
+    // Copy over the parameters
+    _Sim->VSDAData_.Region_ = _ScanRegion;
 
     return true;
 
