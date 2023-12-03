@@ -90,6 +90,8 @@ public:
 
     /**
      * @brief Various routes for API
+     * Note that since this file is getting to long, several RPC handlers are being setup - each taking over part of this.
+     * See the relevant file in RPCInterface.(cpp/h) in various directories. 
      * 
      * @param _JSONRequest 
      * @return std::string 
@@ -112,12 +114,6 @@ public:
     std::string PatchClampADCCreate(std::string _JSONRequest);
     std::string PatchClampADCSetSampleRate(std::string _JSONRequest);
     std::string PatchClampADCGetRecordedData(std::string _JSONRequest);
-    std::string VSDAEMInitialize(std::string _JSONRequest);
-    std::string VSDAEMSetupMicroscope(std::string _JSONRequest);
-    std::string VSDAEMDefineScanRegion(std::string _JSONRequest);
-    std::string VSDAEMQueueRenderOperation(std::string _JSONRequest);
-    std::string VSDAEMGetRenderStatus(std::string _JSONRequest);
-    std::string VSDAEMGetImageStack(std::string _JSONRequest);
     std::string Debug(std::string _JSONRequest);
 
 

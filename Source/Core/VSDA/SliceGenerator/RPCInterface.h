@@ -48,6 +48,8 @@
 
 #include <BG/Common/Logger/Logger.h>
 
+#include <RPC/Manager.h>
+
 
 namespace BG {
 namespace NES {
@@ -62,13 +64,7 @@ namespace Simulator {
 class RPCInterface {
 
 private:
-    Config::Config* Config_; /**Pointer to configuration struct owned by rest of system*/
-
-    // std::vector<std::thread> SimulationThreads_; /**Threads that enumerate simulations and checks for any tasks to be done.*/
-    // std::atomic<bool> StopThreads_; /**Indicates to workers to stop what they're doing*/
-    // std::vector<std::unique_ptr<Simulation>> Simulations_; /**Vector containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
-    // Note: This simulation vector is not thread safe and will probably segfault if you try to multithread this
-    // we will fix this later when we scale the system (DO NOT ALLOW RPC to use more than 1 thread unless this is fixed!)
+    std::vector<std::unique_ptr<Simulation>>* SimulationsPtr_; /**Vector pointer containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
 
     BG::NES::Renderer::Interface* Renderer_ = nullptr; /**Pointer to instance of renderer*/
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/
@@ -77,19 +73,18 @@ private:
 public:
 
     /**
-     * @brief Construct a new RPCInterface object
-     * Give this a pointer to an initialized configuration object.
+     * @brief Construct a new RPCInterface for VSDA Slice Generator object
      * 
      * @param _Logger Pointer to logging interface
-     * @param _Config 
-     * @param _RPCManager
+     * @param _RPCManager Pointer to instance of the RPC manager.
      * @param _Renderer Instance of rendering system.
+     * @param _SimulationsPointerVector Pointer to vector which contains the other simulations. Allows us to access them and modify them as needed.
      */
-    RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, API::Manager* _RPCManager, BG::NES::Renderer::Interface* _Renderer);
+    RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::Manager* _RPCManager, BG::NES::Renderer::Interface* _Renderer,  std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer);
 
 
     /**
-     * @brief Destroy the Manager object
+     * @brief Destroy the RPCInterface for VSDA Slice Generator object
      * 
      */
     ~RPCInterface();
