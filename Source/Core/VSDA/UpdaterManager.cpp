@@ -11,6 +11,13 @@ namespace VSDA {
 
 
 
+bool ExecuteRenderOperations(Simulation* _Simulation) {
+
+
+
+}
+
+
 // UpdaterManager::UpdaterManager(BG::Common::Logger::LoggingSystem* _Logger, API::Manager* _RPCManager, BG::NES::Renderer::Interface* _Renderer, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer) {
 
 //     // Check Preconditions

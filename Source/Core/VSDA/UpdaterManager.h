@@ -61,6 +61,14 @@ namespace Simulator {
 namespace VSDA {
 
 
+/**
+ * @brief Enumerates all simulations and checks for a render operation.
+ * 
+ * @return true Success
+ * @return false Fail
+ */
+bool ExecuteRenderOperations(Simulation* _Simulation);
+
 
 // /**
 //  * @brief This class provides the infrastructure to run simulations.

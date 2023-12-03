@@ -24,6 +24,7 @@
 #include <Simulator/Structs/Simulation.h>
 
 #include <Simulator/Engine.h>
+#include <VSDA/UpdaterManager.h>
 
 
 namespace BG {

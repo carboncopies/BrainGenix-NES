@@ -26,14 +26,17 @@ void SimulationEngineThread(Simulation* _Sim, std::atomic<bool>* _StopThreads) {
                 SE.Reset(_Sim);
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
-
             } else if (_Sim->CurrentTask == SIMULATION_RUNFOR) {
                 std::cout<<"[Info] Worker Performing Simulation RunFor For Simulation "<<_Sim->ID<<std::endl;
                 SE.RunFor(_Sim);
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
+            } else if (_Sim->CurrentTask == SIMULATION_VSDA) {
+                std::cout<<"[Info] Worker Performing Simulation VSDA Call For Simulation "<<_Sim->ID<<std::endl;
+                VSDA::ExecuteRenderOperations(_Sim);
+                _Sim->CurrentTask = SIMULATION_NONE;
+                _Sim->WorkRequested = false;
             }
-
             _Sim->IsProcessing = false;
         } else {
             std::this_thread::sleep_for(std::chrono::milliseconds(10)); // sleep for 10ms
