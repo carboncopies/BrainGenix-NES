@@ -67,7 +67,7 @@ namespace VSDA {
  * @return true Success
  * @return false Fail
  */
-bool ExecuteRenderOperations(Simulation* _Simulation);
+bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation);
 
 
 // /**

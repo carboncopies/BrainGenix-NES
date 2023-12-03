@@ -11,7 +11,7 @@ namespace VSDA {
 
 
 
-bool ExecuteRenderOperations(Simulation* _Simulation) {
+bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation) {
 
 
 

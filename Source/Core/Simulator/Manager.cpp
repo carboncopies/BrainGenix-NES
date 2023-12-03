@@ -74,7 +74,7 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     Sim->ID = SimID;
 
     // Start Thread
-    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Sim, &StopThreads_));
+    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, &StopThreads_));
 
 
     // Return Status ID
