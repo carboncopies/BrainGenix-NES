@@ -115,8 +115,8 @@ std::string RPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID                 = Util::GetInt(&RequestJSON, "SimulationID");
     Geometries::Vec3D Point1, Point2;
-    Util::GetVec3(Point1, &RequestJSON, "Point1");
-    Util::GetVec3(Point2, &RequestJSON, "Point1");
+    Util::GetArrVec3(Point1, &RequestJSON, "Point1_um");
+    Util::GetArrVec3(Point2, &RequestJSON, "Point2_um");
     Logger_->Log(std::string("VSDA EM DefineScanRegion Called On Simulation With ID ") + std::to_string(SimulationID), 4);
 
     // Check Sim ID
