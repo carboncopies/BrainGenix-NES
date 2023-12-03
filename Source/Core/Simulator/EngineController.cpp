@@ -19,6 +19,7 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
     while (!_StopThreads) {
 
         if (_Sim->WorkRequested) {
+            _Logger->Log("Simulation Work Requested, Identifiying Task", 2);
             _Sim->IsProcessing = true;
 
             if (_Sim->CurrentTask == SIMULATION_RESET) {
