@@ -34,6 +34,7 @@
 #include <Simulator/Structs/PatchClampADC.h>
 
 #include <VSDA/DebugHelpers/MeshBuilder.h>
+#include <VSDA/SliceGenerator/SliceGenerator.h> // Temporary for the debug route - remove this later
 #include <BG/Renderer/Interface.h>
 
 #include <Simulator/EngineController.h>

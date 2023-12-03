@@ -38,13 +38,6 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     _RPCManager->AddRoute("Tool/PatchClampADC/SetSampleRate", [this](std::string RequestJSON){ return PatchClampADCSetSampleRate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampADC/GetRecordedData", [this](std::string RequestJSON){ return PatchClampADCGetRecordedData(RequestJSON);});
 
-    _RPCManager->AddRoute("VSDA/EM/Initialize", [this](std::string RequestJSON){ return VSDAEMInitialize(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/SetupMicroscope", [this](std::string RequestJSON){ return VSDAEMSetupMicroscope(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/DefineScanRegion", [this](std::string RequestJSON){ return VSDAEMDefineScanRegion(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/QueueRenderOperation", [this](std::string RequestJSON){ return VSDAEMQueueRenderOperation(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/GetRenderStatus", [this](std::string RequestJSON){ return VSDAEMGetRenderStatus(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/GetImageStack", [this](std::string RequestJSON){ return VSDAEMGetImageStack(RequestJSON);});
-
 
     _RPCManager->AddRoute("Debug", [this](std::string RequestJSON){ return Debug(RequestJSON);});
 
