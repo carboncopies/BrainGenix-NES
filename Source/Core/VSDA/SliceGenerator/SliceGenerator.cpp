@@ -11,7 +11,7 @@ namespace Simulator {
 
 
 
-bool VSDAInitialize(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim) {
+bool VSDA_EM_Initialize(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim) {
 
     // Check Preconditions
     assert(_Logger != nullptr);
@@ -30,7 +30,7 @@ bool VSDAInitialize(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim
 
 }
 
-bool VSDASetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters _Params) {
+bool VSDA_EM_SetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters _Params) {
 
     // Check Preconditions
     assert(_Logger != nullptr);
@@ -47,7 +47,7 @@ bool VSDASetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulation*
 
 }
 
-bool VSDADefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, ScanRegion _ScanRegion) {
+bool VSDA_EM_DefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, ScanRegion _ScanRegion, int* _RegionID) {
 
     // Check Preconditions
     assert(_Logger != nullptr);
@@ -57,24 +57,30 @@ bool VSDADefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simulation
         return false; 
     }
 
-    // Copy over the parameters
-    _Sim->VSDAData_.Region_ = _ScanRegion;
+    // Copy over the parameters, update region ID
+    _Sim->VSDAData_.Regions_.push_back(_ScanRegion);
+    (*_RegionID) = _Sim->VSDAData_.Regions_.size()-1;
 
     return true;
 
 }
 
-bool VSDA_EM_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim) {
+bool VSDA_EM_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, int _RegionID) {
 
     // Check Preconditions
     assert(_Logger != nullptr);
     assert(_Sim != nullptr);
     if (_Sim->VSDAData_.State_ != VSDA_INIT_BEGIN) { // Check that the VSDA is during its init phase, and not yet done initializing.
-        _Logger->Log("VSDA EM DefineScanRegion Error, Cannot Queue Render Operation On Syatem With Unknown State", 6);
+        _Logger->Log("VSDA EM QueueRenderOperation Error, Cannot Queue Render Operation On Syatem With Unknown State", 6);
         return false; 
+    }
+    if (_RegionID < 0 || _RegionID >= _Sim->VSDAData_.Regions_.size()) { // the region ID is out of range
+        _Logger->Log("VSDA EM QueueRenderOperation Error, Region ID Is Out Of Range!", 6);
+        return false;    
     }
 
     // Copy over the parameters
+    _Sim->VSDAData_.ActiveRegionID_ = _RegionID;
     _Sim->VSDAData_.State_ = VSDA_RENDER_REQUESTED;
 
     return true;

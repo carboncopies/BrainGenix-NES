@@ -62,7 +62,7 @@ std::string RPCInterface::VSDAEMInitialize(std::string _JSONRequest) {
     Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
     
 
-    int Status = !VSDAInitialize(Logger_, ThisSimulation);
+    int Status = !VSDA_EM_Initialize(Logger_, ThisSimulation);
 
 
     // Build Response
@@ -101,7 +101,7 @@ std::string RPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     Params.ScanRegionOverlap_percent = ScanRegionOverlap_percent;
     Params.SliceThickness_um = SliceThickness_nm*1000;
 
-    int Status = !VSDASetupMicroscope(Logger_, ThisSimulation, Params);
+    int Status = !VSDA_EM_SetupMicroscope(Logger_, ThisSimulation, Params);
 
     // Build Response
     nlohmann::json ResponseJSON;
@@ -140,12 +140,14 @@ std::string RPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
     ScanRegion.Point2Y_um = Point2.y_um;
     ScanRegion.Point2Z_um = Point2.z_um;
 
-    int Status = !VSDADefineScanRegion(Logger_, ThisSimulation, ScanRegion);
+    int ID = -1;
+    int Status = !VSDA_EM_DefineScanRegion(Logger_, ThisSimulation, ScanRegion, &ID);
 
 
     // Build Response
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = Status;
+    ResponseJSON["ScanRegionID"] = ID;
     return ResponseJSON.dump();
 
 
@@ -155,6 +157,7 @@ std::string RPCInterface::VSDAEMQueueRenderOperation(std::string _JSONRequest) {
     // Parse Request, Get Parameters
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+    int ScanRegionID = Util::GetInt(&RequestJSON, "ScanRegionID");
     Logger_->Log(std::string("VSDA EM SetupMicroscope Called On Simulation With ID ") + std::to_string(SimulationID), 4);
 
     // Check Sim ID
@@ -166,7 +169,7 @@ std::string RPCInterface::VSDAEMQueueRenderOperation(std::string _JSONRequest) {
     }
 
     Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
-    int Status = !VSDA_EM_QueueRenderOperation(Logger_, ThisSimulation);
+    int Status = !VSDA_EM_QueueRenderOperation(Logger_, ThisSimulation, ScanRegionID);
 
     // Build Response
     nlohmann::json ResponseJSON;
