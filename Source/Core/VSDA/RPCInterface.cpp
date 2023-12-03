@@ -179,8 +179,6 @@ std::string RPCInterface::VSDAEMQueueRenderOperation(std::string _JSONRequest) {
 }
 std::string RPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
 
-// - (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
-// - (bgScanRegionID) `ScanRegionID` ID of the scan region to have it's status checked.  
 
     // Parse Request, Get Parameters
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
