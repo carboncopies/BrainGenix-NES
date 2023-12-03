@@ -44,6 +44,8 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
 
     }
 
+    // Log Shutdown Message
+    _Logger->Log("Simulation Engine Thread Exiting", 4);
 
 }
 
