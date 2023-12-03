@@ -64,6 +64,22 @@ bool VSDADefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simulation
 
 }
 
+bool VSDA_EM_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim) {
+
+    // Check Preconditions
+    assert(_Logger != nullptr);
+    assert(_Sim != nullptr);
+    if (_Sim->VSDAData_.State_ != VSDA_INIT_BEGIN) { // Check that the VSDA is during its init phase, and not yet done initializing.
+        _Logger->Log("VSDA EM DefineScanRegion Error, Cannot Queue Render Operation On Syatem With Unknown State", 6);
+        return false; 
+    }
+
+    // Copy over the parameters
+    _Sim->VSDAData_.State_ = VSDA_RENDER_REQUESTED;
+
+    return true;
+
+}
 
 
 bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {

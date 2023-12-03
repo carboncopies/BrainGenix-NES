@@ -152,6 +152,27 @@ std::string RPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
 }
 std::string RPCInterface::VSDAEMQueueRenderOperation(std::string _JSONRequest) {
 
+    // Parse Request, Get Parameters
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+    Logger_->Log(std::string("VSDA EM SetupMicroscope Called On Simulation With ID ") + std::to_string(SimulationID), 4);
+
+    // Check Sim ID
+    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
+        Logger_->Log(std::string("VSDA EM SetupMicroscope Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        return ResponseJSON.dump();
+    }
+
+    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+    int Status = !VSDA_EM_QueueRenderOperation(Logger_, ThisSimulation);
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = Status;
+    return ResponseJSON.dump();
+
 }
 std::string RPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
 

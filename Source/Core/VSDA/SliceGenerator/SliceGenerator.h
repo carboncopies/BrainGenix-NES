@@ -94,7 +94,18 @@ bool VSDASetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulation*
  */
 bool VSDADefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, ScanRegion _ScanRegion);
 
+/**
+ * @brief Sets the enum flag in the simulation that a render operation has been requested.
+ * Probably should also check to ensure that all needed data has been provided before queuing this operation but we can add that later.
+ * 
+ * @param _Logger Pointer to logging system interface.
+ * @param _Sim Pointer to simulation instance to be configured by this instance.
+ * @return true On Success
+ * @return false On Error
+ */
+bool VSDA_EM_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim) {
 
+}
 
 
 /**
