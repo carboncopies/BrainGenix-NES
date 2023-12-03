@@ -103,9 +103,8 @@ bool VSDADefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simulation
  * @return true On Success
  * @return false On Error
  */
-bool VSDA_EM_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim) {
+bool VSDA_EM_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim);
 
-}
 
 
 /**
