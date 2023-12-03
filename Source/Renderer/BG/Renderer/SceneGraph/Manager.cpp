@@ -167,27 +167,25 @@ bool Manager::DrawFrame() {
 
 
     // rendering main loop
-    while (true) {
 
-        LockScene(); // Control Thread Safety
+    LockScene(); // Control Thread Safety
 
-        bool Status = RenderData_->Viewer_->advanceToNextFrame();
-        if (!Status) {
-            break;
-        }
-
-        // pass any events into EventHandlers assigned to the Viewer
-        RenderData_->Viewer_->handleEvents();
-        RenderData_->Viewer_->update();
-        RenderData_->Viewer_->recordAndSubmit();
-        RenderData_->Viewer_->present();
-
-        UnlockScene();
-
-        std::this_thread::sleep_for(std::chrono::microseconds(750)); // delay so our mutex is easier to get by another thread if needed
+    bool Status = RenderData_->Viewer_->advanceToNextFrame();
+    if (!Status) {
+        return false;
     }
 
-    return false;
+    // pass any events into EventHandlers assigned to the Viewer
+    RenderData_->Viewer_->handleEvents();
+    RenderData_->Viewer_->update();
+    RenderData_->Viewer_->recordAndSubmit();
+    RenderData_->Viewer_->present();
+
+    UnlockScene();
+
+    std::this_thread::sleep_for(std::chrono::microseconds(750)); // delay so our mutex is easier to get by another thread if needed
+
+    return true;
 }
 
 

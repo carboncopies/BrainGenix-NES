@@ -79,9 +79,16 @@ bool VSDA_EM_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Si
         return false;    
     }
 
-    // Copy over the parameters
+    if (_Sim->WorkRequested || _Sim->CurrentTask != SIMULATION_NONE) { // Cannot start an operation, simulation is busy
+        _Logger->Log("VSDA EM QueueRenderOperation Error, Simulation Is Currently Running!", 6);
+        return false;    
+    }
+
+    // Setup Enums, Indicate that work is requested
     _Sim->VSDAData_.ActiveRegionID_ = _RegionID;
     _Sim->VSDAData_.State_ = VSDA_RENDER_REQUESTED;
+    _Sim->CurrentTask = SIMULATION_VSDA;
+    _Sim->WorkRequested = true;
 
     return true;
 
