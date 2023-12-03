@@ -88,6 +88,7 @@ bool VSDA_EM_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Si
 }
 
 
+
 bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
 
     // X Alligned Border
