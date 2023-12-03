@@ -179,6 +179,30 @@ std::string RPCInterface::VSDAEMQueueRenderOperation(std::string _JSONRequest) {
 }
 std::string RPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
 
+// - (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+// - (bgScanRegionID) `ScanRegionID` ID of the scan region to have it's status checked.  
+
+    // Parse Request, Get Parameters
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+    Logger_->Log(std::string("VSDA EM GetRenderStatus Called On Simulation With ID ") + std::to_string(SimulationID), 4);
+
+    // Check Sim ID
+    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
+        Logger_->Log(std::string("VSDA EM GetRenderStatus Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        return ResponseJSON.dump();
+    }
+
+    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0;
+    ResponseJSON["RenderStatus"] = ThisSimulation->VSDAData_.State_;
+    return ResponseJSON.dump();
+
 }
 std::string RPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
 
