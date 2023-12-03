@@ -16,7 +16,7 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
     Engine SE;
 
     // Enter into loop until thread should stop
-    while (!_StopThreads) {
+    while (!(*_StopThreads)) {
 
         if (_Sim->WorkRequested) {
             _Logger->Log("Simulation Work Requested, Identifiying Task", 2);
