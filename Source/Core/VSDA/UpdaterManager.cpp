@@ -42,6 +42,7 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
     // Create Voxel Array
     ScanRegion RequestedRegion = _Simulation->VSDAData_.Regions_[_Simulation->VSDAData_.ActiveRegionID_];
     _Simulation->VSDAData_.Array_ = std::make_unique<VoxelArray>(RequestedRegion, _Simulation->VSDAData_.Params_.VoxelResolution_um);
+    _Logger->Log(std::string("Created Voxel Array Of Size ") + _Simulation->VSDAData_.Array_->GetBoundingBox().Dimensions(), 2);
     CreateVoxelArrayFromSimulation(_Logger, _Simulation, &_Simulation->VSDAData_.Params_, _Simulation->VSDAData_.Array_.get());
 
     // for (unsigned int i = 0; i < Arr.GetZ(); i++) {
@@ -50,6 +51,7 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
 
 
     // Clear Scene In Preperation For Rendering
+    _Logger->Log("Starting Slice By Slice Render", 2);
     _Renderer->ResetScene();
     for (unsigned int i = 0; i < _Simulation->VSDAData_.Array_.get()->GetZ(); i++) {
         RenderSliceFromArray(_Logger, _Renderer, &_Simulation->VSDAData_.Params_, _Simulation->VSDAData_.Array_.get(), i);
