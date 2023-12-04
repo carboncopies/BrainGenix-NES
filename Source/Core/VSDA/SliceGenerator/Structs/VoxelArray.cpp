@@ -35,7 +35,20 @@ VoxelArray::VoxelArray(BoundingBox _BB, float _VoxelScale_um) {
     // Reset the array so we don't get a bunch of crap in it
     ClearArray();
 }
+VoxelArray::VoxelArray(ScanRegion _Region, float _VoxelScale_um) {
 
+    // Create Bounding Box From Region, Then Call Other Constructor
+    BoundingBox BB;
+    BB.bb_point1[0] = _Region.Point1X_um;
+    BB.bb_point1[0] = _Region.Point1Y_um;
+    BB.bb_point1[0] = _Region.Point1Z_um;
+
+    BB.bb_point2[0] = _Region.Point1X_um;
+    BB.bb_point2[0] = _Region.Point1Y_um;
+    BB.bb_point2[0] = _Region.Point1Z_um;
+
+    VoxelArray(BB, _VoxelScale_um);
+}
 
 
 VoxelArray::~VoxelArray() {

@@ -34,20 +34,23 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
     // VoxelArray Arr(BB, VoxelSize);
 
 
+
     // MicroscopeParameters MParams;
     // MParams.VoxelResolution_um = VoxelSize;
 
 
+    // Create Voxel Array
+    ScanRegion RequestedRegion = _Simulation->VSDAData_.Regions_[_Simulation->VSDAData_.ActiveRegionID_];
+    _Simulation->VSDAData_.Array_ = std::make_unique<VoxelArray>(RequestedRegion, _Simulation->VSDAData_.Params_.VoxelResolution_um);
     CreateVoxelArrayFromSimulation(_Logger, _Simulation, &_Simulation->VSDAData_.Params_, _Simulation->VSDAData_.Array_.get());
 
     // for (unsigned int i = 0; i < Arr.GetZ(); i++) {
     //     Arr.SetVoxel(i, i, i, FILLED);
     // }
 
+
+    // Clear Scene In Preperation For Rendering
     _Renderer->ResetScene();
-
-
-    // RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, 10);
     for (unsigned int i = 0; i < _Simulation->VSDAData_.Array_.get()->GetZ(); i++) {
         RenderSliceFromArray(_Logger, _Renderer, &_Simulation->VSDAData_.Params_, _Simulation->VSDAData_.Array_.get(), i);
         std::this_thread::sleep_for(std::chrono::milliseconds(100)); // delay so our mutex is easier to get by another thread if needed

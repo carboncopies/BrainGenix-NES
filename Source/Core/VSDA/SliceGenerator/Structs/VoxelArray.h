@@ -43,6 +43,8 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Geometries/Geometry.h>
 
+#include <VSDA/SliceGenerator/Structs/ScanRegion.h>
+
 
 
 namespace BG {
@@ -101,6 +103,7 @@ public:
      * @param _VoxelScale_um Scale of each voxel in micrometers
      */
     VoxelArray(BoundingBox _BB, float _VoxelScale_um);
+    VoxelArray(ScanRegion _Region, float _VoxelScale_um);
 
     /**
      * @brief Destroy the Voxel Array object
