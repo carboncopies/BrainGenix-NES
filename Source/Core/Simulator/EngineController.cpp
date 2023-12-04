@@ -7,7 +7,7 @@ namespace NES {
 namespace Simulator {
 
 
-void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, std::atomic<bool>* _StopThreads) {
+void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, BG::NES::Renderer::Interface* _Renderer, std::atomic<bool>* _StopThreads) {
 
     // Log Init message
     std::cout<<"[Info] Starting Simulation Updater Thread\n";
@@ -34,7 +34,7 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
                 _Sim->WorkRequested = false;
             } else if (_Sim->CurrentTask == SIMULATION_VSDA) {
                 std::cout<<"[Info] Worker Performing Simulation VSDA Call For Simulation "<<_Sim->ID<<std::endl;
-                VSDA::ExecuteRenderOperations(_Logger, _Sim);
+                VSDA::ExecuteRenderOperations(_Logger, _Sim, _Renderer);
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
             }

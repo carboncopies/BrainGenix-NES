@@ -11,9 +11,49 @@ namespace VSDA {
 
 
 
-bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation) {
+bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, BG::NES::Renderer::Interface* _Renderer) {
+
+    // Check that the simulation has been initialized and everything is ready to have work done
+    if (_Simulation->VSDAData_.State_ != VSDA_RENDER_REQUESTED) {
+        return false;
+    }
+
+    _Logger->Log("Executing Render Job For Requested Simulation", 4);
+
+    // BoundingBox BB = BoundingBox();
+    // BB.bb_point1[0] = -1.;
+    // BB.bb_point1[1] = -1.;
+    // BB.bb_point1[2] = -1.;
+
+    // BB.bb_point2[0] = 9.;
+    // BB.bb_point2[1] = 6.;
+    // BB.bb_point2[2] = 6.;
+
+    
+    // float VoxelSize = _Simulation->VSDAData_.Array_->GetResolution();
+    // VoxelArray Arr(BB, VoxelSize);
 
 
+    // MicroscopeParameters MParams;
+    // MParams.VoxelResolution_um = VoxelSize;
+
+
+    CreateVoxelArrayFromSimulation(_Logger, _Simulation, &_Simulation->VSDAData_.Params_, _Simulation->VSDAData_.Array_.get());
+
+    // for (unsigned int i = 0; i < Arr.GetZ(); i++) {
+    //     Arr.SetVoxel(i, i, i, FILLED);
+    // }
+
+    _Renderer->ResetScene();
+
+
+    // RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, 10);
+    for (unsigned int i = 0; i < _Simulation->VSDAData_.Array_.get()->GetZ(); i++) {
+        RenderSliceFromArray(_Logger, _Renderer, &_Simulation->VSDAData_.Params_, _Simulation->VSDAData_.Array_.get(), i);
+        std::this_thread::sleep_for(std::chrono::milliseconds(100)); // delay so our mutex is easier to get by another thread if needed
+    }
+
+    return true;
 
 }
 
