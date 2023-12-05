@@ -39,24 +39,24 @@ bool Manager::Initialize(int _NumArgs, char** _ArgValues) {
     RenderData_->WindowTraits_ = vsg::WindowTraits::create(); // TODO: Make this support headless as a config option
     RenderData_->WindowTraits_->windowTitle = "BrainGenix-NES";
 
-    // Initialize Default Values, Overwrite With Manually Specified Ones
-    vsg::CommandLine Arguments(&_NumArgs, _ArgValues);
-    RenderData_->WindowTraits_->debugLayer = Arguments.read({"--debug","-d"});
-    RenderData_->WindowTraits_->apiDumpLayer = Arguments.read({"--api","-a"});
-    if (Arguments.read({"--fullscreen", "--fs"})) {
-        RenderData_->WindowTraits_->fullscreen = true;
-    }
-    if (Arguments.read({"--window", "-w"}, RenderData_->WindowTraits_->width, RenderData_->WindowTraits_->height)) {
-        RenderData_->WindowTraits_->fullscreen = false;
-    }
-    // auto HorizonMountainHeight = Arguments.value(0.0, "--hmh");
-    Arguments.read("--screen", RenderData_->WindowTraits_->screenNum);
-    Arguments.read("--display", RenderData_->WindowTraits_->display);
+    // // Initialize Default Values, Overwrite With Manually Specified Ones
+    // vsg::CommandLine Arguments(&_NumArgs, _ArgValues);
+    // RenderData_->WindowTraits_->debugLayer = Arguments.read({"--debug","-d"});
+    // RenderData_->WindowTraits_->apiDumpLayer = Arguments.read({"--api","-a"});
+    // if (Arguments.read({"--fullscreen", "--fs"})) {
+    //     RenderData_->WindowTraits_->fullscreen = true;
+    // }
+    // if (Arguments.read({"--window", "-w"}, RenderData_->WindowTraits_->width, RenderData_->WindowTraits_->height)) {
+    //     RenderData_->WindowTraits_->fullscreen = false;
+    // }
+    // // auto HorizonMountainHeight = Arguments.value(0.0, "--hmh");
+    // Arguments.read("--screen", RenderData_->WindowTraits_->screenNum);
+    // Arguments.read("--display", RenderData_->WindowTraits_->display);
 
-    if (Arguments.errors()) {
-        Logger_->Log("Error Parsing Arguments For Renderer", 10);
-        return false;
-    }
+    // if (Arguments.errors()) {
+    //     Logger_->Log("Error Parsing Arguments For Renderer", 10);
+    //     return false;
+    // }
 
     // Support 3rd Party Format Through vsgXchange
     RenderData_->Options_->add(vsgXchange::all::create());
