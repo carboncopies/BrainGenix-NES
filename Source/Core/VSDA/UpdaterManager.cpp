@@ -11,7 +11,7 @@ namespace VSDA {
 
 void CreateDiagonalVoxelLine(VoxelArray* _Arr) {
     for (unsigned int i = 0; i < _Arr->GetZ(); i++) {
-        _Arr->SetVoxel(i, i, i, FILLED);
+        _Arr->SetVoxel(i, i, i, BORDER);
     }
 }
 
