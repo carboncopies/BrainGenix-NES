@@ -41,8 +41,8 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
 
     // Create Voxel Array
     ScanRegion RequestedRegion = _Simulation->VSDAData_.Regions_[_Simulation->VSDAData_.ActiveRegionID_];
+    _Logger->Log(std::string("Creating Voxel Array Of Size ") + RequestedRegion.Dimensions + std::string(" With Points ") + RequestedRegion.ToString(), 2);
     _Simulation->VSDAData_.Array_ = std::make_unique<VoxelArray>(RequestedRegion, _Simulation->VSDAData_.Params_.VoxelResolution_um);
-    _Logger->Log(std::string("Created Voxel Array Of Size ") + _Simulation->VSDAData_.Array_->GetBoundingBox().Dimensions(), 2);
     CreateVoxelArrayFromSimulation(_Logger, _Simulation, &_Simulation->VSDAData_.Params_, _Simulation->VSDAData_.Array_.get());
 
     // for (unsigned int i = 0; i < Arr.GetZ(); i++) {

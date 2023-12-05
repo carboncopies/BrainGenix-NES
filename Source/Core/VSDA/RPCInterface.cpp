@@ -128,10 +128,6 @@ std::string RPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
     }
 
     Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
-    std::cout<<_JSONRequest<<std::endl;
-
-    std::cout<<Point1.x_um<<" "<<Point1.y_um<<" "<<Point1.z_um<<"\n";
-    std::cout<<Point2.x_um<<" "<<Point2.y_um<<" "<<Point2.z_um<<"\n";
 
     // Setup Requested Bounding Box
     ScanRegion CreatedRegion;
@@ -143,7 +139,6 @@ std::string RPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
     CreatedRegion.Point2Y_um = Point2.y_um;
     CreatedRegion.Point2Z_um = Point2.z_um;
 
-    std::cout<<CreatedRegion.ToString()<<std::endl;
 
     int ID = -1;
     int Status = !VSDA_EM_DefineScanRegion(Logger_, ThisSimulation, CreatedRegion, &ID);

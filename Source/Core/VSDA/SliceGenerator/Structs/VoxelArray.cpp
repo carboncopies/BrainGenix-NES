@@ -40,12 +40,12 @@ VoxelArray::VoxelArray(ScanRegion _Region, float _VoxelScale_um) {
     // Create Bounding Box From Region, Then Call Other Constructor
     BoundingBox BB;
     BB.bb_point1[0] = _Region.Point1X_um;
-    BB.bb_point1[0] = _Region.Point1Y_um;
-    BB.bb_point1[0] = _Region.Point1Z_um;
+    BB.bb_point1[1] = _Region.Point1Y_um;
+    BB.bb_point1[2] = _Region.Point1Z_um;
 
-    BB.bb_point2[0] = _Region.Point1X_um;
-    BB.bb_point2[0] = _Region.Point1Y_um;
-    BB.bb_point2[0] = _Region.Point1Z_um;
+    BB.bb_point2[0] = _Region.Point2X_um;
+    BB.bb_point2[1] = _Region.Point2Y_um;
+    BB.bb_point2[2] = _Region.Point2Z_um;
 
     VoxelArray(BB, _VoxelScale_um);
 }
