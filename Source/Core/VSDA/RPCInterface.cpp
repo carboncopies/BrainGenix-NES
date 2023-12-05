@@ -95,11 +95,11 @@ std::string RPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
 
     // Build Microscope Paremters Data
     MicroscopeParameters Params;
-    Params.VoxelResolution_um = PixelResolution_nm*1000; // This is not right, and we'll need to tweak some of these conversions, but for now it's the best we've got.
+    Params.VoxelResolution_um = PixelResolution_nm; // This is not right, and we'll need to tweak some of these conversions, but for now it's the best we've got.
     Params.ImageWidth_px = ImageWidth_px;
     Params.ImageHeight_px = ImageHeight_px;
     Params.ScanRegionOverlap_percent = ScanRegionOverlap_percent;
-    Params.SliceThickness_um = SliceThickness_nm*1000;
+    Params.SliceThickness_um = SliceThickness_nm;
 
     int Status = !VSDA_EM_SetupMicroscope(Logger_, ThisSimulation, Params);
 
