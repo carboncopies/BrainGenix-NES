@@ -70,50 +70,6 @@ namespace VSDA {
 bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, BG::NES::Renderer::Interface* _Renderer);
 
 
-// /**
-//  * @brief This class provides the infrastructure to run simulations.
-//  */
-// class UpdaterManager {
-
-// private:
-//     std::vector<std::unique_ptr<Simulation>>* SimulationsPtr_; /**Vector pointer containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
-
-//     BG::NES::Renderer::Interface* Renderer_ = nullptr; /**Pointer to instance of renderer*/
-//     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/
-
-
-// public:
-
-//     /**
-//      * @brief Construct a new UpdaterManager for VSDA Slice Generator object
-//      * 
-//      * @param _Logger Pointer to logging interface
-//      * @param _RPCManager Pointer to instance of the RPC manager.
-//      * @param _Renderer Instance of rendering system.
-//      * @param _SimulationsPointerVector Pointer to vector which contains the other simulations. Allows us to access them and modify them as needed.
-//      */
-//     UpdaterManager(BG::Common::Logger::LoggingSystem* _Logger, API::Manager* _RPCManager, BG::NES::Renderer::Interface* _Renderer, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer);
-
-
-//     /**
-//      * @brief Destroy the UpdaterManager for VSDA Slice Generator object
-//      * 
-//      */
-//     ~UpdaterManager();
-
-
-
-
-//     /**
-//      * @brief Enumerates all simulations and checks for a render operation.
-//      * 
-//      * @return true Success
-//      * @return false Fail
-//      */
-//     bool ExecuteRenderOperations();
-
-
-// };
 
 
 }; // Close Namespace VSDA
