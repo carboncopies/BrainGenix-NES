@@ -58,6 +58,7 @@ bool VSDA_EM_DefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simula
     }
 
     // Copy over the parameters, update region ID
+    _Logger->Log(std::string("Adding Scan Region With Dimensions ") + _ScanRegion.Dimensions(), 2);
     _Sim->VSDAData_.Regions_.push_back(_ScanRegion);
     (*_RegionID) = _Sim->VSDAData_.Regions_.size()-1;
 
