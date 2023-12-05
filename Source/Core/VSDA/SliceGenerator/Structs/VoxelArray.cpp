@@ -28,9 +28,6 @@ VoxelArray::VoxelArray(BoundingBox _BB, float _VoxelScale_um) {
     // Malloc array
     Data_ = std::make_unique<VoxelType[]>(SizeX_ * SizeY_ * SizeZ_);
     DataMaxLength_ = SizeX_ * SizeY_ * SizeZ_;
-    // std::unique_ptr<VoxelType[]> Data_(new VoxelType[SizeX_ * SizeY_ * SizeZ_]);
-
-
 
     // Reset the array so we don't get a bunch of crap in it
     ClearArray();
@@ -47,7 +44,26 @@ VoxelArray::VoxelArray(ScanRegion _Region, float _VoxelScale_um) {
     BB.bb_point2[1] = _Region.Point2Y_um;
     BB.bb_point2[2] = _Region.Point2Z_um;
 
-    VoxelArray(BB, _VoxelScale_um);
+    // Calculate Dimensions
+    float SizeX = abs(BB.bb_point1[0] - BB.bb_point2[0]);
+    float SizeY = abs(BB.bb_point1[1] - BB.bb_point2[1]);
+    float SizeZ = abs(BB.bb_point1[2] - BB.bb_point2[2]);
+    SizeX_ = SizeX/_VoxelScale_um;
+    SizeY_ = SizeY/_VoxelScale_um;
+    SizeZ_ = SizeZ/_VoxelScale_um;
+
+
+    // Store Parameters
+    BoundingBox_ = BB;
+    VoxelScale_um = _VoxelScale_um;
+
+
+    // Malloc array
+    Data_ = std::make_unique<VoxelType[]>(SizeX_ * SizeY_ * SizeZ_);
+    DataMaxLength_ = SizeX_ * SizeY_ * SizeZ_;
+
+    // Reset the array so we don't get a bunch of crap in it
+    ClearArray();
 }
 
 

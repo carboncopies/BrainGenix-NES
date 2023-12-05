@@ -20,19 +20,6 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
 
     _Logger->Log("Executing Render Job For Requested Simulation", 4);
 
-    // BoundingBox BB = BoundingBox();
-    // BB.bb_point1[0] = -1.;
-    // BB.bb_point1[1] = -1.;
-    // BB.bb_point1[2] = -1.;
-
-    // BB.bb_point2[0] = 9.;
-    // BB.bb_point2[1] = 6.;
-    // BB.bb_point2[2] = 6.;
-
-    
-    // float VoxelSize = _Simulation->VSDAData_.Array_->GetResolution();
-    // VoxelArray Arr(BB, VoxelSize);
-
 
 
     // MicroscopeParameters MParams;
