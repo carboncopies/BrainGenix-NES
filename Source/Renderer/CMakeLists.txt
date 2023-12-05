@@ -15,6 +15,8 @@ add_library(NESRenderer
     "BG/Renderer/SceneGraph/GeometryBuilder.cpp"
     "BG/Renderer/SceneGraph/CameraHelpers.h"
     "BG/Renderer/SceneGraph/CameraHelpers.cpp"
+    "BG/Renderer/SceneGraph/OffscreenRenderHelpers.h"
+    "BG/Renderer/SceneGraph/OffscreenRenderHelpers.cpp"
 
     "BG/Renderer/SceneGraph/Primitive/Cube.h"
     "BG/Renderer/SceneGraph/Primitive/Cube.cpp"
