@@ -75,7 +75,9 @@ std::string RPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     // Parse Request, Get Parameters
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID                 = Util::GetInt(&RequestJSON, "SimulationID");
+    std::cout<<_JSONRequest<<std::endl;
     float PixelResolution_nm         = Util::GetFloat(&RequestJSON, "PixelResolution_nm");
+    std::cout<<PixelResolution_nm<<std::endl;
     int ImageWidth_px                = Util::GetInt(&RequestJSON, "ImageWidth_px");
     int ImageHeight_px               = Util::GetInt(&RequestJSON, "ImageHeight_px");
     float SliceThickness_nm          = Util::GetFloat(&RequestJSON, "SliceThickness_nm");
@@ -102,6 +104,7 @@ std::string RPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     Params.SliceThickness_um = SliceThickness_nm*1000;
 
     int Status = !VSDA_EM_SetupMicroscope(Logger_, ThisSimulation, Params);
+
 
     // Build Response
     nlohmann::json ResponseJSON;
