@@ -9,7 +9,11 @@ namespace NES {
 namespace Simulator {
 namespace VSDA {
 
-
+void CreateDiagonalVoxelLine(VoxelArray* _Arr) {
+    for (unsigned int i = 0; i < _Arr->GetZ(); i++) {
+        _Arr->SetVoxel(i, i, i, FILLED);
+    }
+}
 
 bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, BG::NES::Renderer::Interface* _Renderer) {
 
@@ -22,19 +26,14 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
 
 
 
-    // MicroscopeParameters MParams;
-    // MParams.VoxelResolution_um = VoxelSize;
-
-
     // Create Voxel Array
     ScanRegion RequestedRegion = _Simulation->VSDAData_.Regions_[_Simulation->VSDAData_.ActiveRegionID_];
     _Logger->Log(std::string("Creating Voxel Array Of Size ") + RequestedRegion.Dimensions() + std::string(" With Points ") + RequestedRegion.ToString(), 2);
     _Simulation->VSDAData_.Array_ = std::make_unique<VoxelArray>(RequestedRegion, _Simulation->VSDAData_.Params_.VoxelResolution_um);
     CreateVoxelArrayFromSimulation(_Logger, _Simulation, &_Simulation->VSDAData_.Params_, _Simulation->VSDAData_.Array_.get());
 
-    // for (unsigned int i = 0; i < Arr.GetZ(); i++) {
-    //     Arr.SetVoxel(i, i, i, FILLED);
-    // }
+
+    CreateDiagonalVoxelLine(_Simulation->VSDAData_.Array_.get());
 
 
     // Clear Scene In Preperation For Rendering
