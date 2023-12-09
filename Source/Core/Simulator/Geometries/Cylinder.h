@@ -55,6 +55,9 @@ struct Cylinder : Geometry {
     //! fraction of height distance from end 0.
     float RAtPosition_um(float position);
 
+    //! Returns a vector in spherical coordinates for the difference vector between the
+    //! two ends. This provides length and rotation values of the cylinder.
+    Vec3D Cylinder::difference_vector_spherical_coordinates();
 
     //! Returns the bounding box
     virtual BoundingBox GetBoundingBox();

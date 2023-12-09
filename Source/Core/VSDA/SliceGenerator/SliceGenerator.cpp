@@ -165,6 +165,23 @@ bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, float _VoxelSca
 
 }
 
+// NOTE: This needs a different FillShape function, because we will not be going through the bounding box and testing if in shape.
+//       Instead, we will be placing rotated points that are in the shape.
+bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, float _VoxelScale) {
+
+    assert(_VoxelScale != 0); // Will get stuck in infinite loop
+
+    // 1. Get rotated point cloud.
+    std::vector<Vec3D> point_cloud = _Cylinder->GetPointCloud(_VoxelScale);
+
+    // 2. Set corresponding voxels.
+    for (const Vec3D & p : point_cloud) {
+        _Array->SetVoxelAtPosition(p[0], p[1], p[2], FILLED);
+    }
+
+    return true;
+}
+
 bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array) {
     assert(_Array != nullptr);
     assert(_Params != nullptr);
@@ -190,9 +207,9 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
             FillShape(_Array, &ThisSphere, _Params->VoxelResolution_um);
         }
         else if (std::holds_alternative<Geometries::Cylinder>(ThisShape)) {
-            Geometries::Cylinder ThisSphere = std::get<Geometries::Cylinder>(ThisShape);
+            Geometries::Cylinder ThisCylinder = std::get<Geometries::Cylinder>(ThisShape);
             _Logger->Log("Adding Cylinder To Voxel Array", 0);
-            FillShape(_Array, &ThisSphere, _Params->VoxelResolution_um);
+            FillCylinder(_Array, &ThisCylinder, _Params->VoxelResolution_um);
         }
 
 
