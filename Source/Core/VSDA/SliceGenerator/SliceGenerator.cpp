@@ -182,6 +182,21 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, float _Vo
     return true;
 }
 
+bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, float _VoxelScale) {
+
+    assert(_VoxelScale != 0); // Will get stuck in infinite loop
+
+    // 1. Get rotated point cloud.
+    std::vector<Vec3D> point_cloud = _Box->GetPointCloud(_VoxelScale);
+
+    // 2. Set corresponding voxels.
+    for (const Vec3D & p : point_cloud) {
+        _Array->SetVoxelAtPosition(p[0], p[1], p[2], FILLED);
+    }
+
+    return true;
+}
+
 bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array) {
     assert(_Array != nullptr);
     assert(_Params != nullptr);
@@ -202,9 +217,9 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
             FillShape(_Array, &ThisSphere, _Params->VoxelResolution_um);
         }
         else if (std::holds_alternative<Geometries::Box>(ThisShape)) {
-            Geometries::Box ThisSphere = std::get<Geometries::Box>(ThisShape);
+            Geometries::Box ThisBox = std::get<Geometries::Box>(ThisShape);
             _Logger->Log("Adding Box To Voxel Array", 0);
-            FillShape(_Array, &ThisSphere, _Params->VoxelResolution_um);
+            FillBox(_Array, &ThisBox, _Params->VoxelResolution_um);
         }
         else if (std::holds_alternative<Geometries::Cylinder>(ThisShape)) {
             Geometries::Cylinder ThisCylinder = std::get<Geometries::Cylinder>(ThisShape);
