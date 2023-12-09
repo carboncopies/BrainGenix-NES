@@ -109,7 +109,7 @@ std::vector<Vec3D> Cylinder::GetPointCloud(float _VoxelScale) {
     // 0. Get rotation angles and length (r, theta, phi).
     Vec3D diff_spherical_coords = difference_vector_spherical_coordinates();
 
-    // 1. Imagine the cylinder lying flat and walk along its length.
+    // 1. Imagine the cylinder lying flat along x and at the origin and walk along its length.
     d = diff_spherical_coords[0];
     radius_difference = End1Radius_um - End0Radius_um;
     for (float x = 0.0; x <= d; x += _VoxelScale) {
@@ -121,13 +121,14 @@ std::vector<Vec3D> Cylinder::GetPointCloud(float _VoxelScale) {
 
     }
 
-    // 3. Rotate all points in the cloud to the cylinder rotation.
-    std::vector<Vec3D> rotated_point_cloud;
+    // 3. Rotate all points in the cloud according to the cylinder rotation
+    //    and translate to End0Pos_um.
+    std::vector<Vec3D> rotated_and_translated_point_cloud;
     for (const Vec3D & p : point_cloud) {
-        rotated_point_cloud.emplace_back(rotate_around_z_and_y(p, diff_spherical_coords[2], diff_spherical_coords[1]));
+        rotated_and_translated_point_cloud.emplace_back(End0Pos_um + rotate_around_z_and_y(p, diff_spherical_coords[2], diff_spherical_coords[1]));
     }
 
-    return rotated_point_cloud;
+    return rotated_and_translated_point_cloud;
 }
 
 bool Cylinder::IsPointInShape(Vec3D _Position_um) {
