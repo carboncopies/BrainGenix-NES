@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include <Simulator/Geometries/Cylinder.h>
 
 namespace BG {
@@ -52,17 +54,32 @@ float Cylinder::RAtPosition_um(float pos) {
 
 //! Returns a vector in spherical coordinates for the difference vector between the
 //! two ends. This provides length and rotation values of the cylinder.
+//! Returns (length, rot_x, rot_z).
+//  Note: Cartesian (1,0,0) becomes Spherical (1, 1.57, 0).
+//        Cartesian (0,1,0) becomes (1, 1.57, 1.57).
+//        Cartesian (0,0,1) becomes (1, 0, undefined).
+//        To get back to Cartesian, this is interpreted as
+//        starting with a vector at (length, 0, 0), then
+//        rotating rot_x around x and rot_z around z.
 Vec3D Cylinder::difference_vector_spherical_coordinates() {
-    float r = End1Pos_um.Distance(End0Pos_um);
-    if (r == 0.0) {
-        return Vec3D(0.0, 0.0, 0.0); // actually undefined
-    }
+    // float r = End1Pos_um.Distance(End0Pos_um);
+    // if (r == 0.0) {
+    //     return Vec3D(0.0, 0.0, 0.0); // actually undefined
+    // }
 
     Vec3D diff = End1Pos_um - End0Pos_um;
-    float theta = std::atan2(diff.y_um, diff.x_um); // BEWARE: There might be illegal values!
-    float phi = std::acos(diff.z_um / r);
 
-    return Vec3D(r, theta, phi);
+    return diff.cartesianToSpherical();
+
+    // // Phi is a rotation around x (from positive z axis).
+    // float phi = std::acos(diff.z_um / r);
+    // std::cout << "Phi (around x): " << phi << '\n';
+
+    // // Theta is a rotation around z (from positive x axis).
+    // float theta = std::atan2(diff.y_um, diff.x_um); // BEWARE: There might be illegal values!
+    // std::cout << "Theta (around z): " << theta << '\n';
+
+    // return Vec3D(r, phi, theta); // length, rot x, rot z
 }
 
 // I have no clude what I'm doing
@@ -73,61 +90,83 @@ BoundingBox Cylinder::GetBoundingBox() {
 	return bb;
 }
 
-//! Obtain points in a disk in the y-z plane at an x position.
-void add_disk_points(float _x, float _radius, float _VoxelScale, std::vector<Vec3D> & point_cloud) {
-    point_cloud.emplace_back(Vec3D(_x, 0.0, 0.0));
-    for (float r = _VoxelScale; r <= _radius; r += _VoxelScale) {
-        float circumpherence = 2.0*M_PI*r;
-        float steps_in_circle = circumpherence / _VoxelScale;
-        float radians_per_step = 2.0*M_PI / steps_in_circle;
+void add_disk_points(float _z, float _radius, float stepsize, std::vector<Vec3D> & point_cloud) {
+    point_cloud.emplace_back(Vec3D(0.0, 0.0, _z));
+    for (float r = stepsize; r <= _radius; r += stepsize) {
+        //float circumpherence = 2.0*M_PI*r;
+        //float steps_in_circle = circumpherence / stepsize;
+        //float radians_per_step = 2.0*M_PI / steps_in_circle;
+        float radians_per_step = stepsize / r;
         for (float theta = 0; theta < 2.0*M_PI; theta += radians_per_step) {
             float y = r*std::cos(theta);
-            float z = r*std::sin(theta);
-            point_cloud.emplace_back(_x, y, z);
+            float x = r*std::sin(theta);
+            point_cloud.emplace_back(x, y, _z);
         }
     }
 }
 
-//! Uses two concatenated rotation matrices to rotate a 3D point around the
-//! z-axis and the y-axis. Use difference_vector_spherical_coordinates() to
-//! obtain the angles.
-Vec3D rotate_around_z_and_y(const Vec3D & _point, float _zangle, float _yangle) {
-    float x_rotz = _point.x_um*std::cos(_zangle) - _point.y_um*std::sin(_zangle);
-    float y_rotz = _point.x_um*std::sin(_zangle) + _point.y_um*std::cos(_zangle);
-    float x_rotz_roty = x_rotz*std::cos(_yangle) + _point.z_um*std::sin(_yangle);
-    float z_roty = -x_rotz*std::sin(_yangle) + _point.z_um*std::cos(_yangle);
-    return Vec3D(x_rotz_roty, y_rotz, z_roty);
-}
-
 //! Returns a point cloud that can be used to fill voxels representing the cylinder.
+//! To use the spherical coordinates of the end-points difference
+//! vector, we have to create the cylinder around the z-axis, then
+//! use theta to rotate around the y-axis, then use phi to rotate
+//! around the z-axis.
+// for [0, 5, 0] => theta = pi/2, phi = pi/2
+// from length 5 along z: [0, 0, 5]
+// rotate around y by theta (pi/2): [5, 0, 0]
+// rotate around z by phi (pi/2): [0, 5, 0]
+// for [5, 0, 0] => theta = pi/2, phi = 0
+// from length 5 along z: [0, 0, 5]
+// rotate around y by theta (pi/2): [5, 0, 0]
+// rotate around z by phi (0): [5, 0, 0]
+// for [0, 0, 5] => theta = 0, phi = irrelevant
+// from length 5 along z: [0, 0, 5]
+// rotate around y by theta (0): [0, 0, 5]
+// rotate around z by phi (any angle): [0, 0, 5]
 std::vector<Vec3D> Cylinder::GetPointCloud(float _VoxelScale) {
+    //std::cout << "-----> Calling GetPointCloud for Cylinder!\n";
+    //std::cout << "-----> Cylinder end point 0: " << End0Pos_um.x_um << ',' << End0Pos_um.y_um << ',' << End0Pos_um.z_um << '\n';
+    //std::cout << "-----> Cylinder end point 1: " << End1Pos_um.str() << '\n';
+    std::cout << "----> Radius at point 0: " << End0Radius_um << '\n';
+    std::cout << "----> Radius at point 1: " << End1Radius_um << '\n';
     std::vector<Vec3D> point_cloud;
 
     // 0. Get rotation angles and length (r, theta, phi).
-    Vec3D diff_spherical_coords = difference_vector_spherical_coordinates();
-
-    //***TODO: We need to have 3 different steps 1 and 2 so that we can make
-    //         points clouds for cases where the cylinder is more aligned with
-    //         the x-axis, y-axis or z-axis... otherwise the result will be crappy.
+    Vec3D diff = End1Pos_um - End0Pos_um;
+    Vec3D diff_spherical_coords = diff.cartesianToSpherical();
+    float rot_y = diff_spherical_coords.theta();
+    float rot_z = diff_spherical_coords.phi();
+    //std::cout << "Rot y: " << rot_y << '\n';
+    //std::cout << "Rot z: " << rot_z << '\n';
 
     // 1. Imagine the cylinder lying flat along x and at the origin and walk along its length.
-    float distance = diff_spherical_coords.x_um;
+    float distance = diff_spherical_coords.r();
+    //std::cout << "----> Length of cylinder: " << distance << '\n';
+    //std::cout << "----> VoxelScale: " << _VoxelScale << '\n';
     float radius_difference = End1Radius_um - End0Radius_um;
-    for (float x = 0.0; x <= distance; x += _VoxelScale) {
-
+    float stepsize = 0.5*_VoxelScale;
+    for (float z = -distance/2.0; z <= distance/2.0; z += stepsize) {
         // 2. At each step, get points in a disk around the axis at the right radius.
-        float d_ratio = x / distance;
+        float d_ratio = z / distance;
         float radius = End0Radius_um + d_ratio*radius_difference; // Radius at this position on the axis.
-        add_disk_points(x, radius, _VoxelScale, point_cloud);
+        add_disk_points(z, radius, stepsize, point_cloud);
 
     }
+    std::cout << "---> Number of points in point cloud: " << point_cloud.size() << '\n';
 
     // 3. Rotate all points in the cloud according to the cylinder rotation
     //    and translate to End0Pos_um.
+    Vec3D spherical_halfdist_v(distance/2.0, rot_y, rot_z);
+    Vec3D cartesian_halfdist_v = spherical_halfdist_v.sphericalToCartesian();
+    //std::cout << "Cartesian half-distance: " << cartesian_halfdist_v.str() << '\n';
+    Vec3D translate = End0Pos_um + cartesian_halfdist_v;
+    //std::cout << "Translate: " << translate.str() << '\n';
     std::vector<Vec3D> rotated_and_translated_point_cloud;
-    for (const Vec3D & p : point_cloud) {
-        rotated_and_translated_point_cloud.emplace_back(End0Pos_um + rotate_around_z_and_y(p, diff_spherical_coords.z_um, diff_spherical_coords.y_um));
+    for (const Vec3D & p : point_cloud) { // Beware that the order of rotations is important!
+        Vec3D p_roty = p.rotate_around_y(rot_y);
+        rotated_and_translated_point_cloud.emplace_back(translate + p_roty.rotate_around_z(rot_z));
     }
+
+    std::cout << "---> Number of points in rotated and translated point cloud: " << rotated_and_translated_point_cloud.size() << '\n';
 
     return rotated_and_translated_point_cloud;
 }

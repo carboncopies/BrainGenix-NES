@@ -327,16 +327,20 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
     std::cout<<"[Info] Create Cylinder Called, On Sim "<<SimulationID<<std::endl;
-    float E0Radius_um  = Util::GetFloat(&RequestJSON, "End0Radius_um");
-    float E0X_um = Util::GetFloat(&RequestJSON, "End0PosX_um");
-    float E0Y_um = Util::GetFloat(&RequestJSON, "End0PosY_um");
-    float E0Z_um = Util::GetFloat(&RequestJSON, "End0PosZ_um");
-    float E1Radius_um  = Util::GetFloat(&RequestJSON, "End1Radius_um");
-    float E1X_um = Util::GetFloat(&RequestJSON, "End1PosX_um");
-    float E1Y_um = Util::GetFloat(&RequestJSON, "End1PosY_um");
-    float E1Z_um = Util::GetFloat(&RequestJSON, "End1PosZ_um");
+    float E0Radius_um  = Util::GetFloat(&RequestJSON, "Point1Radius_um");
+    float E0X_um = Util::GetFloat(&RequestJSON, "Point1PosX_um");
+    float E0Y_um = Util::GetFloat(&RequestJSON, "Point1PosY_um");
+    float E0Z_um = Util::GetFloat(&RequestJSON, "Point1PosZ_um");
+    float E1Radius_um  = Util::GetFloat(&RequestJSON, "Point2Radius_um");
+    float E1X_um = Util::GetFloat(&RequestJSON, "Point2PosX_um");
+    float E1Y_um = Util::GetFloat(&RequestJSON, "Point2PosY_um");
+    float E1Z_um = Util::GetFloat(&RequestJSON, "Point2PosZ_um");
     std::string Name = Util::GetString(&RequestJSON, "Name");
 
+    //std::cout << "E0:" << E0X_um << ',' << E0Y_um << ',' << E0Z_um << '\n';
+    //std::cout << "E1:" << E1X_um << ',' << E1Y_um << ',' << E1Z_um << '\n';
+    std::cout << "E0Radius_um: " << E0Radius_um << '\n';
+    std::cout << "E1Radius_um: " << E1Radius_um << '\n';
 
     // Build New Cylinder Object
     Geometries::Cylinder S;

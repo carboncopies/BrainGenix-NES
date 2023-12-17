@@ -29,8 +29,7 @@ namespace Geometries {
 struct Box : Geometry {
 
     Vec3D Dims_um{5.0, 10.0, 10.0}; //! Dimensions of the box.
-    Vec3D Rotations_rad{0.0, 0.0,
-                        0.0}; //! Rotation of the box (euler angles) in radians.
+    Vec3D Rotations_rad{0.0, 0.0, 0.0}; //! Rotation of the box (euler angles) in radians.
 
     //! Constructors
     Box();

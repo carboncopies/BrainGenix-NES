@@ -11,6 +11,7 @@
 
 #include <cassert>
 #include <cmath>
+#include <string>
 
 namespace BG {
 namespace NES {
@@ -66,6 +67,32 @@ struct Vec3D {
 
     //! Minimum coordinate value
     float Min() const;
+
+    //! Return string representation of vector.
+    std::string str(int precision=4) const;
+
+    //! Convert cartesian 3D vector to spherical coordinates.
+    //! Returns (r, theta, phi) where theta is rotation around x-axis
+    //! and phi is rotation around z-axis.
+    Vec3D cartesianToSpherical() const;
+
+    float r() const;
+    float theta() const;
+    float phi() const;
+
+    //! Convert spherical 3D vector to cartesian coordinates.
+    //! Returns (x, y, z) from (r, theta, phi).
+    Vec3D sphericalToCartesian() const;
+
+    Vec3D rotate_around_x(float _xangle) const;
+    Vec3D rotate_around_y(float _yangle) const;
+    Vec3D rotate_around_z(float _zangle) const;
+
+    Vec3D rotate_around_xyz(float _xangle, float _yangle, float _zangle) const;
+
+    //! Uses three concatenated rotation matrices to rotate a 3D point around the
+    //! x-axiz, y_axis and z-axis in cartesian coordinates.
+    Vec3D rotate_around_zyx(float _xangle, float _yangle, float _zangle) const;
 };
 
 }; // namespace Geometries

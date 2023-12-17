@@ -113,9 +113,11 @@ void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Val
 
     // Check Bounds (so if it's out of bounds, we print a warning and do nothing!)
     if ((XIndex < 0 || XIndex > SizeX_) || (YIndex < 0 || YIndex > SizeY_) || (ZIndex < 0 || ZIndex > SizeZ_)) {
-        std::cout<<"Warning: Voxel at "<<_X<<" "<<_Y<<" "<<_Z<<" Is Out Of Bounds!\n";
+        //std::cout<<"Warning: Voxel at "<<_X<<" "<<_Y<<" "<<_Z<<" Is Out Of Bounds!\n";
         return;
     }
+
+    //std::cout<<"Voxel at "<<XIndex<<" "<<YIndex<<" "<<ZIndex<<"\n";
 
     SetVoxel(XIndex, YIndex, ZIndex, _Value);
 
