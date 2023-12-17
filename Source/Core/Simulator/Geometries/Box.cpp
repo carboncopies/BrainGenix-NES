@@ -1,3 +1,5 @@
+#include <vector>
+
 #include <Simulator/Geometries/Box.h>
 
 namespace BG {
@@ -101,11 +103,11 @@ void add_rectangle_points(float _x, float _ylen, float _zlen, float _VoxelScale,
 
 //! Uses three concatenated rotation matrices to rotate a 3D point around the
 //! x-axiz, y_axis and z-axis.
-Vec3D rotate_around_xyz(cont Vec3D & _point, float _xangle, float _yangle, float _zangle) {
-    float x_rotz = _point[0]*std::cos(_zangle) - _point[1]*std::sin(_zangle);
-    float y_rotz = _point[0]*std::sin(_zangle) + _point[1]*std::cos(_zangle);
-    float x_rotz_roty = x_rotz*std::cos(_yangle) + point[2]*std::sin(_yangle);
-    float z_roty = -x_rotz*std::sin(_yangle) + point[2]*std::cos(_yangle);
+Vec3D rotate_around_xyz(const Vec3D & _point, float _xangle, float _yangle, float _zangle) {
+    float x_rotz = _point.x_um*std::cos(_zangle) - _point.y_um*std::sin(_zangle);
+    float y_rotz = _point.x_um*std::sin(_zangle) + _point.y_um*std::cos(_zangle);
+    float x_rotz_roty = x_rotz*std::cos(_yangle) + _point.z_um*std::sin(_yangle);
+    float z_roty = -x_rotz*std::sin(_yangle) + _point.z_um*std::cos(_yangle);
     float y_rotz_rotx = y_rotz*std::cos(_xangle) - z_roty*std::sin(_xangle);
     float z_roty_rotx = y_rotz*std::sin(_xangle) + z_roty*std::cos(_xangle);
     return Vec3D(x_rotz_roty, y_rotz_rotx, z_roty_rotx);
@@ -116,11 +118,11 @@ std::vector<Vec3D> Box::GetPointCloud(float _VoxelScale) {
     std::vector<Vec3D> point_cloud;
 
     // 1. Imagine the box lying flat along x and at the origin and walk along its length.
-    d = Dims_um[0];
+    float d = Dims_um.x_um;
     for (float x = 0.0; x <= d; x += _VoxelScale) {
 
         // 2. At each step, get points in a rectangle around the axis at the right side lengths.
-        add_rectangle_points(x, Dims_um[1], Dims_um[2], _VoxelScale, point_cloud);
+        add_rectangle_points(x, Dims_um.y_um, Dims_um.z_um, _VoxelScale, point_cloud);
 
     }
 
@@ -128,7 +130,7 @@ std::vector<Vec3D> Box::GetPointCloud(float _VoxelScale) {
     //    and translate to End0Pos_um.
     std::vector<Vec3D> rotated_and_translated_point_cloud;
     for (const Vec3D & p : point_cloud) {
-        rotated_and_translated_point_cloud.emplace_back(Center_um + rotate_around_xyz(p, Rotations_rad[0], Rotations_rad[1], Rotations_rad[2]));
+        rotated_and_translated_point_cloud.emplace_back(Center_um + rotate_around_xyz(p, Rotations_rad.x_um, Rotations_rad.y_um, Rotations_rad.z_um));
     }
 
     return rotated_and_translated_point_cloud;

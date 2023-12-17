@@ -1,3 +1,5 @@
+#include <vector>
+
 #include <VSDA/SliceGenerator/SliceGenerator.h>
 
 
@@ -172,11 +174,11 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, float _Vo
     assert(_VoxelScale != 0); // Will get stuck in infinite loop
 
     // 1. Get rotated point cloud.
-    std::vector<Vec3D> point_cloud = _Cylinder->GetPointCloud(_VoxelScale);
+    std::vector<Geometries::Vec3D> point_cloud = _Cylinder->GetPointCloud(_VoxelScale);
 
     // 2. Set corresponding voxels.
-    for (const Vec3D & p : point_cloud) {
-        _Array->SetVoxelAtPosition(p[0], p[1], p[2], FILLED);
+    for (const Geometries::Vec3D & p : point_cloud) {
+        _Array->SetVoxelAtPosition(p.x_um, p.y_um, p.z_um, FILLED);
     }
 
     return true;
@@ -187,11 +189,11 @@ bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, float _VoxelScale) {
     assert(_VoxelScale != 0); // Will get stuck in infinite loop
 
     // 1. Get rotated point cloud.
-    std::vector<Vec3D> point_cloud = _Box->GetPointCloud(_VoxelScale);
+    std::vector<Geometries::Vec3D> point_cloud = _Box->GetPointCloud(_VoxelScale);
 
     // 2. Set corresponding voxels.
-    for (const Vec3D & p : point_cloud) {
-        _Array->SetVoxelAtPosition(p[0], p[1], p[2], FILLED);
+    for (const Geometries::Vec3D & p : point_cloud) {
+        _Array->SetVoxelAtPosition(p.x_um, p.y_um, p.z_um, FILLED);
     }
 
     return true;

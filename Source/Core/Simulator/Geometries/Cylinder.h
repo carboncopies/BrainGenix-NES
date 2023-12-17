@@ -11,6 +11,7 @@
 #pragma once
 
 #include <cmath>
+#include <vector>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Geometries/Geometry.h>
@@ -57,7 +58,7 @@ struct Cylinder : Geometry {
 
     //! Returns a vector in spherical coordinates for the difference vector between the
     //! two ends. This provides length and rotation values of the cylinder.
-    Vec3D Cylinder::difference_vector_spherical_coordinates();
+    Vec3D difference_vector_spherical_coordinates();
 
     //! Returns the bounding box
     virtual BoundingBox GetBoundingBox();
