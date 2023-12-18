@@ -179,6 +179,7 @@ bool Manager::Windowed_CreateWindow() {
         return false;
     }
     RenderData_->Viewer_->addWindow(RenderData_->Window_);
+    RenderData_->Extent_ = VkExtent2D{RenderData_->Window_->extent2D().width, RenderData_->Window_->extent2D().height};
 
     return true;
 
