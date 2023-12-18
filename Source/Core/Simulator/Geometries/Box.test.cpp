@@ -35,8 +35,8 @@ struct BoxTest: testing::Test {
         testBox = std::make_unique<BG::NES::Simulator::Geometries::Box>(
                 Center_um, Dims_um, Rotations_rad);
 
-        minY = testBox->Center_um.y_um - testBox->Dims_um.y_um / 2.0;
-        maxY = testBox->Center_um.y_um + testBox->Dims_um.y_um / 2.0;
+        minY = testBox->Center_um.y - testBox->Dims_um.y / 2.0;
+        maxY = testBox->Center_um.y + testBox->Dims_um.y / 2.0;
     }
 
     void TearDown() {
@@ -64,7 +64,7 @@ TEST_F( BoxTest, test_EqualSliceBounds_default ) {
 TEST_F( BoxTest, test_Sides_default ) {
     std::vector<float> gotSides = testBox->Sides();
 
-    ASSERT_EQ(gotSides[0], testBox->Dims_um.x_um) << "Length = " << gotSides[0];
-    ASSERT_EQ(gotSides[1], testBox->Dims_um.y_um) <<  "Breadth = " << gotSides[1];
-    ASSERT_EQ(gotSides[2], testBox->Dims_um.z_um) <<  "Height = " << gotSides[2];
+    ASSERT_EQ(gotSides[0], testBox->Dims_um.x) << "Length = " << gotSides[0];
+    ASSERT_EQ(gotSides[1], testBox->Dims_um.y) <<  "Breadth = " << gotSides[1];
+    ASSERT_EQ(gotSides[2], testBox->Dims_um.z) <<  "Height = " << gotSides[2];
 }

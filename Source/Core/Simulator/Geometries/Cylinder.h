@@ -12,8 +12,10 @@
 
 #include <cmath>
 #include <vector>
+#include <tuple>
 
-// Internal Libraries (BG convention: use <> instead of "")
+#include <glm/mat3x3.hpp>
+
 #include <Simulator/Geometries/Geometry.h>
 #include <Simulator/Geometries/VecTools.h>
 
@@ -56,6 +58,7 @@ struct Cylinder : Geometry {
     //! fraction of height distance from end 0.
     float RAtPosition_um(float position);
 
+
     //! Returns a vector in spherical coordinates for the difference vector between the
     //! two ends. This provides length and rotation values of the cylinder.
     Vec3D difference_vector_spherical_coordinates();
@@ -66,6 +69,13 @@ struct Cylinder : Geometry {
 
     //! Returns a point cloud that can be used to fill voxels representing the cylinder.
     std::vector<Vec3D> GetPointCloud(float _VoxelScale);
+
+
+    //! Gets the rotation in radians with respect to the x, y and z axes
+    std::tuple<float, float, float> GetRotation_rad();
+
+    //! Returns the bounding box
+    virtual BoundingBox GetBoundingBox();
 
 };
 
