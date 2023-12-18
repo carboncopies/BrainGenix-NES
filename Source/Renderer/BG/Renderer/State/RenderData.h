@@ -67,6 +67,11 @@ struct RenderData {
     vsg::ref_ptr<vsg::WindowTraits> WindowTraits_; /**If a window is enabled, this will be setup with windowing information.*/
     vsg::ref_ptr<vsg::Window>       Window_;       /**Only initialized if a window is created, holds the vsg window state*/
 
+    int Width_ = 1024;
+    int Height_ = 1024;
+
+    bool Headless_ = false;
+
 };
 
 

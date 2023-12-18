@@ -133,6 +133,35 @@ public:
 
 
     /**
+     * @brief Creates and initializes the camera struct.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool SetupCamera();
+
+
+    /**
+     * @brief Runs only when in windowed mode, creates a window.
+     * When running headless, this is not needed.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Windowed_CreateWindow();
+
+    /**
+     * @brief Runs only when in windowed mode, creates the event handler for the trackball.
+     * Lets the user interact with the window and rotate stuff (in windowed mode).
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Windowed_SetupEventHandler();
+
+
+
+    /**
      * @brief Erases all objects in the current scene. Resets the scene to an empty state.
      * 
      * @return true 
