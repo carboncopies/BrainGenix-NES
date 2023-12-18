@@ -178,7 +178,7 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, float _Vo
 
     // 2. Set corresponding voxels.
     for (const Geometries::Vec3D & p : point_cloud) {
-        _Array->SetVoxelAtPosition(p.x_um, p.y_um, p.z_um, FILLED);
+        _Array->SetVoxelAtPosition(p.x, p.y, p.z, FILLED);
     }
 
     return true;
@@ -194,7 +194,7 @@ bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, float _VoxelScale) {
     // 2. Set corresponding voxels.
     for (const Geometries::Vec3D & p : point_cloud) {
         //std::cout << "Point: " << p.str() << '\n';
-        _Array->SetVoxelAtPosition(p.x_um, p.y_um, p.z_um, FILLED);
+        _Array->SetVoxelAtPosition(p.x, p.y, p.z, FILLED);
     }
 
     return true;

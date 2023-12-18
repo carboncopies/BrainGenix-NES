@@ -8,17 +8,18 @@ namespace Simulator {
 namespace Geometries {
 
 // Constructors
-Cylinder::Cylinder(){};
+Cylinder::Cylinder(){
 
-Cylinder::Cylinder(float _End0Radius_um,
-                   BG::NES::Simulator::Geometries::Vec3D _End0Pos_um,
-                   float _End1Radius_um,
-                   BG::NES::Simulator::Geometries::Vec3D _End1Pos_um)
-    : End0Radius_um(_End0Radius_um), End0Pos_um(_End0Pos_um),
-      End1Radius_um(_End1Radius_um), End1Pos_um(_End1Pos_um){};
+};
+
+Cylinder::Cylinder(float _End0Radius_um, BG::NES::Simulator::Geometries::Vec3D _End0Pos_um, float _End1Radius_um, BG::NES::Simulator::Geometries::Vec3D _End1Pos_um) : End0Radius_um(_End0Radius_um), End0Pos_um(_End0Pos_um), End1Radius_um(_End1Radius_um), End1Pos_um(_End1Pos_um) {
+
+};
 
 //! Renders the cylinder in 3D.
-void Cylinder::Show() { return; };
+void Cylinder::Show() {
+    return;
+};
 
 //! Returns the volume of the cylinder in micrometer^3.
 float Cylinder::Volume_um3() {
@@ -52,20 +53,7 @@ float Cylinder::RAtPosition_um(float pos) {
     return this->End0Radius_um + pos * rDiff;
 };
 
-//! Returns a vector in spherical coordinates for the difference vector between the
-//! two ends. This provides length and rotation values of the cylinder.
-//! Returns (length, rot_x, rot_z).
-//  Note: Cartesian (1,0,0) becomes Spherical (1, 1.57, 0).
-//        Cartesian (0,1,0) becomes (1, 1.57, 1.57).
-//        Cartesian (0,0,1) becomes (1, 0, undefined).
-//        To get back to Cartesian, this is interpreted as
-//        starting with a vector at (length, 0, 0), then
-//        rotating rot_x around x and rot_z around z.
-Vec3D Cylinder::difference_vector_spherical_coordinates() {
-    // float r = End1Pos_um.Distance(End0Pos_um);
-    // if (r == 0.0) {
-    //     return Vec3D(0.0, 0.0, 0.0); // actually undefined
-    // }
+
 
 //! Gets the rotation in radians with respect to the x, y and z axes
 std::tuple<float, float, float> Cylinder::GetRotation_rad() {
@@ -86,9 +74,7 @@ std::tuple<float, float, float> Cylinder::GetRotation_rad() {
     // the rotation must be made.
 
     // 1. The angle is found from the Dot product of the two vectors.
-    alpha_rad =
-        acos(axisVec.Dot(refAxisVec) /
-             (axisVec.Distance(originVec) * refAxisVec.Distance(originVec)));
+    alpha_rad = acos(axisVec.Dot(refAxisVec) / (axisVec.Distance(originVec) * refAxisVec.Distance(originVec)));
 
     // 2. The axis is found from the cross product of the two vectors.
     crossProdVec = refAxisVec.Cross(axisVec);
@@ -105,36 +91,19 @@ std::tuple<float, float, float> Cylinder::GetRotation_rad() {
     // 4. Calculate rotation matrix (using Rodrigues' rotation formula.)
     // Ref.:
     // https://math.stackexchange.com/questions/296267/how-to-find-eulers-angles
-    rotationMat =
-        glm::mat3(1.0f) + normalMat * static_cast<float>(sin(alpha_rad)) +
-        normalMat * normalMat * static_cast<float>(1.0 - cos(alpha_rad));
+    rotationMat = glm::mat3(1.0f) + normalMat * static_cast<float>(sin(alpha_rad)) + normalMat * normalMat * static_cast<float>(1.0 - cos(alpha_rad));
 
     // 5. Calculate Euler angles from rotation matrix. Ref:.
     // https://stackoverflow.com/questions/15022630/how-to-calculate-the-angle-from-rotation-matrix
     thetaX_rad = atan2(rotationMat[2][1], rotationMat[2][2]);
-    thetaY_rad =
-        atan2(-rotationMat[2][0], sqrt(rotationMat[2][2] * rotationMat[2][2] +
-                                       rotationMat[2][1] * rotationMat[2][1]));
+    thetaY_rad = atan2(-rotationMat[2][0], sqrt(rotationMat[2][2] * rotationMat[2][2] + rotationMat[2][1] * rotationMat[2][1]));
     thetaZ_rad = atan2(rotationMat[1][0], rotationMat[0][0]);
 
     return std::make_tuple(thetaX_rad, thetaY_rad, thetaZ_rad);
 };
 
 
-    Vec3D diff = End1Pos_um - End0Pos_um;
 
-    return diff.cartesianToSpherical();
-
-    // // Phi is a rotation around x (from positive z axis).
-    // float phi = std::acos(diff.z_um / r);
-    // std::cout << "Phi (around x): " << phi << '\n';
-
-    // // Theta is a rotation around z (from positive x axis).
-    // float theta = std::atan2(diff.y_um, diff.x_um); // BEWARE: There might be illegal values!
-    // std::cout << "Theta (around z): " << theta << '\n';
-
-    // return Vec3D(r, phi, theta); // length, rot x, rot z
-}
 
 // I have no clude what I'm doing
 BoundingBox Cylinder::GetBoundingBox() {
@@ -178,7 +147,7 @@ void add_disk_points(float _z, float _radius, float stepsize, std::vector<Vec3D>
 // rotate around z by phi (any angle): [0, 0, 5]
 std::vector<Vec3D> Cylinder::GetPointCloud(float _VoxelScale) {
     //std::cout << "-----> Calling GetPointCloud for Cylinder!\n";
-    //std::cout << "-----> Cylinder end point 0: " << End0Pos_um.x_um << ',' << End0Pos_um.y_um << ',' << End0Pos_um.z_um << '\n';
+    //std::cout << "-----> Cylinder end point 0: " << End0Pos_um.x << ',' << End0Pos_um.y << ',' << End0Pos_um.z << '\n';
     //std::cout << "-----> Cylinder end point 1: " << End1Pos_um.str() << '\n';
     std::cout << "----> Radius at point 0: " << End0Radius_um << '\n';
     std::cout << "----> Radius at point 1: " << End1Radius_um << '\n';

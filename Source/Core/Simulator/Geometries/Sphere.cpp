@@ -32,9 +32,9 @@ BoundingBox Sphere::GetBoundingBox() {
     bb.bb_point1[1] = Center_um.y - Radius_um;
     bb.bb_point1[2] = Center_um.z - Radius_um;
 
-	bb.bb_point2[0] = Center_um.x_um + Radius_um;
-	bb.bb_point2[1] = Center_um.y_um + Radius_um;
-	bb.bb_point2[2] = Center_um.z_um + Radius_um;
+	bb.bb_point2[0] = Center_um.x + Radius_um;
+	bb.bb_point2[1] = Center_um.y + Radius_um;
+	bb.bb_point2[2] = Center_um.z + Radius_um;
 
 
     return bb;

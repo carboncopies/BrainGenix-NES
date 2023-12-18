@@ -132,13 +132,13 @@ std::string RPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
 
     // Setup Requested Bounding Box
     ScanRegion CreatedRegion;
-    CreatedRegion.Point1X_um = Point1.x_um;
-    CreatedRegion.Point1Y_um = Point1.y_um;
-    CreatedRegion.Point1Z_um = Point1.z_um;
+    CreatedRegion.Point1X_um = Point1.x;
+    CreatedRegion.Point1Y_um = Point1.y;
+    CreatedRegion.Point1Z_um = Point1.z;
 
-    CreatedRegion.Point2X_um = Point2.x_um;
-    CreatedRegion.Point2Y_um = Point2.y_um;
-    CreatedRegion.Point2Z_um = Point2.z_um;
+    CreatedRegion.Point2X_um = Point2.x;
+    CreatedRegion.Point2Y_um = Point2.y;
+    CreatedRegion.Point2Z_um = Point2.z;
 
 
     int ID = -1;
