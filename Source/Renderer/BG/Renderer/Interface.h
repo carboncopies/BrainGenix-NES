@@ -79,7 +79,7 @@ public:
      * 
      * @param _Logger Pointer to instance of the bg logging system.
     */
-    Interface(BG::Common::Logger::LoggingSystem* _Logge);
+    Interface(BG::Common::Logger::LoggingSystem* _Logger);
 
     /**
      * @brief Destructor to the renderer, pretty self-explanitory.

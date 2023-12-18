@@ -67,10 +67,34 @@ struct RenderData {
     vsg::ref_ptr<vsg::WindowTraits> WindowTraits_; /**If a window is enabled, this will be setup with windowing information.*/
     vsg::ref_ptr<vsg::Window>       Window_;       /**Only initialized if a window is created, holds the vsg window state*/
 
+
+
+
     int Width_ = 1024;
     int Height_ = 1024;
 
     bool Headless_ = false;
+
+
+    vsg::ref_ptr<vsg::Device> Headless_Device_;
+
+
+
+    vsg::ref_ptr<vsg::Framebuffer> framebuffer;
+    vsg::ref_ptr<vsg::ImageView> colorImageView;
+    vsg::ref_ptr<vsg::ImageView> depthImageView;
+    vsg::ref_ptr<vsg::Commands> colorBufferCapture;
+    vsg::ref_ptr<vsg::Image> copiedColorBuffer;
+    vsg::ref_ptr<vsg::Commands> depthBufferCapture;
+    vsg::ref_ptr<vsg::Buffer> copiedDepthBuffer;
+
+
+    vsg::CommandGraphs CommandGraphs_;
+
+    VkExtent2D Extent_;
+
+    int QueueFamily_;
+
 
 };
 

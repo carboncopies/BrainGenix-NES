@@ -36,16 +36,102 @@ bool Manager::Initialize(int _NumArgs, char** _ArgValues) {
     // Setup Renderer
     Logger_->Log("Setting Up Configuration Options", 1);
     RenderData_->Options_ = vsg::Options::create();
-    RenderData_->WindowTraits_ = vsg::WindowTraits::create(); // TODO: Make this support headless as a config option
+    RenderData_->WindowTraits_ = vsg::WindowTraits::create();
     RenderData_->WindowTraits_->windowTitle = "BrainGenix-NES";
+
+
+    // Check if we're running windowed or not
+    RenderData_->Headless_ = true;
+    for (int i = 0; i < _NumArgs; i++) {
+        if (std::string(_ArgValues[i]) == "--Windowed") {
+            RenderData_->Headless_ = false;
+        }
+    }
 
     // Support 3rd Party Format Through vsgXchange
     RenderData_->Options_->add(vsgXchange::all::create());
 
 
+    // Setup Device If Not Windowed
+    if (RenderData_->Headless_) {
+        Headless_SetupDevice();
+    }
+    RenderData_->Extent_ = VkExtent2D{(unsigned int)RenderData_->Width_, (unsigned int)RenderData_->Height_};
+
+
+
+
     return true;
 }
 
+
+bool Manager::Headless_SetupDevice() {
+
+    // create instance
+    vsg::Names instanceExtensions;
+    vsg::Names requestedLayers;
+    bool debugLayer = true;
+    bool apiDumpLayer = true;
+    if (debugLayer || apiDumpLayer) {
+        instanceExtensions.push_back(VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_EXTENSION_NAME);
+        instanceExtensions.push_back(VK_EXT_DEBUG_REPORT_EXTENSION_NAME);
+        requestedLayers.push_back("VK_LAYER_KHRONOS_validation");
+        if (apiDumpLayer) requestedLayers.push_back("VK_LAYER_LUNARG_api_dump");
+    }
+
+    vsg::Names validatedNames = vsg::validateInstancelayerNames(requestedLayers);
+    uint32_t VulkanVersion = VK_API_VERSION_1_2;
+
+    auto instance = vsg::Instance::create(instanceExtensions, validatedNames, VulkanVersion);
+    auto [physicalDevice, queueFamily] = instance->getPhysicalDeviceAndQueueFamily(VK_QUEUE_GRAPHICS_BIT);
+    RenderData_->QueueFamily_ = queueFamily;
+    if (!physicalDevice || queueFamily < 0) {
+        std::cout << "Could not create PhysicalDevice" << std::endl;
+        return false;
+    }
+
+    vsg::Names deviceExtensions;
+    vsg::QueueSettings queueSettings{vsg::QueueSetting{queueFamily, {1.0}}};
+
+    auto deviceFeatures = vsg::DeviceFeatures::create();
+    deviceFeatures->get().samplerAnisotropy = VK_TRUE;
+    // deviceFeatures->get().geometryShader = enableGeometryShader;
+
+    RenderData_->Headless_Device_ = vsg::Device::create(physicalDevice, queueSettings, validatedNames, deviceExtensions, deviceFeatures);
+
+    return true;
+
+}
+
+bool Manager::Headless_CreateRenderingBuffers() {
+
+    VkFormat imageFormat = VK_FORMAT_R8G8B8A8_UNORM;
+    VkFormat depthFormat = VK_FORMAT_D32_SFLOAT;
+    VkSampleCountFlagBits samples = VK_SAMPLE_COUNT_1_BIT;
+
+    VkExtent2D Extent = RenderData_->Extent_;
+
+    RenderData_->colorImageView = createColorImageView(RenderData_->Headless_Device_, Extent, imageFormat, VK_SAMPLE_COUNT_1_BIT);
+    RenderData_->depthImageView = createDepthImageView(RenderData_->Headless_Device_, Extent, depthFormat, VK_SAMPLE_COUNT_1_BIT);
+    if (samples == VK_SAMPLE_COUNT_1_BIT) {
+        auto renderPass = vsg::createRenderPass(RenderData_->Headless_Device_, imageFormat, depthFormat, true);
+        RenderData_->framebuffer = vsg::Framebuffer::create(renderPass, vsg::ImageViews{RenderData_->colorImageView, RenderData_->depthImageView} , Extent.width, Extent.height, 1);
+    } else {
+        auto msaa_colorImageView = createColorImageView(RenderData_->Headless_Device_, Extent, imageFormat, samples);
+        auto msaa_depthImageView = createDepthImageView(RenderData_->Headless_Device_, Extent, depthFormat, samples);
+
+        auto renderPass = vsg::createMultisampledRenderPass(RenderData_->Headless_Device_, imageFormat, depthFormat, samples, true);
+        RenderData_->framebuffer = vsg::Framebuffer::create(renderPass, vsg::ImageViews{msaa_colorImageView, RenderData_->colorImageView, msaa_depthImageView, RenderData_->depthImageView}, Extent.width, Extent.height, 1);
+    }
+
+    // create support for copying the color buffer
+    std::tie(RenderData_->colorBufferCapture, RenderData_->copiedColorBuffer) = createColorCapture(RenderData_->Headless_Device_, Extent, RenderData_->colorImageView->image, imageFormat);
+    std::tie(RenderData_->depthBufferCapture, RenderData_->copiedDepthBuffer) = createDepthCapture(RenderData_->Headless_Device_, Extent, RenderData_->depthImageView->image, depthFormat);
+    
+
+    return true;
+
+}
 
 bool Manager::SetupScene() {
 
@@ -76,7 +162,7 @@ bool Manager::SetupCamera() {
     double AspectRatio = static_cast<double>(Width / (double)Height); // Just the aspect ratio of the window
     vsg::ref_ptr<vsg::ProjectionMatrix> perspective = CreatePerspectiveMatrix(FOV, AspectRatio, 0.1, 100.0);
 
-    Scene_->Camera_ = vsg::Camera::create(perspective, lookAt, vsg::ViewportState::create(RenderData_->Window_->extent2D()));
+    Scene_->Camera_ = vsg::Camera::create(perspective, lookAt, vsg::ViewportState::create(RenderData_->Extent_));
 
 
     return true;
@@ -110,6 +196,56 @@ bool Manager::Windowed_SetupEventHandler() {
 
 }
 
+bool Manager::Windowed_SetupCommandGraph() {
+
+    // create a command graph to render the scene on the specified window
+    auto commandGraph = vsg::createCommandGraphForView(RenderData_->Window_, Scene_->Camera_, Scene_->Group_);
+    RenderData_->Viewer_->assignRecordAndSubmitTaskAndPresentation({commandGraph});
+
+    return true;
+
+}
+
+
+bool Manager::Headless_SetupCommandGraph() {
+    auto renderGraph = vsg::RenderGraph::create();
+
+    renderGraph->framebuffer = RenderData_->framebuffer;
+    renderGraph->renderArea.offset = {0, 0};
+    renderGraph->renderArea.extent = RenderData_->Extent_;
+    renderGraph->setClearValues({{1.0f, 1.0f, 0.0f, 0.0f}}, VkClearDepthStencilValue{0.0f, 0});
+
+    auto view = vsg::View::create(Scene_->Camera_, Scene_->Group_);
+
+    // vsg::CommandGraphs commandGraphs;
+    // if (useExecuteCommands)
+    // {
+    //     auto secondaryCommandGraph = vsg::SecondaryCommandGraph::create(device, queueFamily);
+    //     secondaryCommandGraph->addChild(view);
+    //     secondaryCommandGraph->framebuffer = framebuffer;
+    //     commandGraphs.push_back(secondaryCommandGraph);
+
+    //     auto executeCommands = vsg::ExecuteCommands::create();
+    //     executeCommands->connect(secondaryCommandGraph);
+
+    //     renderGraph->contents = VK_SUBPASS_CONTENTS_SECONDARY_COMMAND_BUFFERS;
+    //     renderGraph->addChild(executeCommands);
+    // }
+    // else
+    renderGraph->addChild(view);
+
+    auto commandGraph = vsg::CommandGraph::create(RenderData_->Headless_Device_, RenderData_->QueueFamily_);
+    commandGraph->addChild(renderGraph);
+    RenderData_->CommandGraphs_.push_back(commandGraph);
+    if (RenderData_->colorBufferCapture) {
+        commandGraph->addChild(RenderData_->colorBufferCapture);
+    }
+    if (RenderData_->depthBufferCapture) {
+        commandGraph->addChild(RenderData_->depthBufferCapture);
+    }
+
+    return true;
+}
 
 
 bool Manager::SetupViewer() {
@@ -124,15 +260,38 @@ bool Manager::SetupViewer() {
     
     if (!RenderData_->Headless_) {
         Windowed_SetupEventHandler();
+    } else {
+        Headless_CreateRenderingBuffers();
     }
 
 
 
+    if (!RenderData_->Headless_) {
+        Windowed_SetupCommandGraph();
+    } else {
+        Headless_SetupCommandGraph();
+    }
 
 
-    // // create a command graph to render the scene on the specified window
-    auto commandGraph = vsg::createCommandGraphForView(RenderData_->Window_, Scene_->Camera_, Scene_->Group_);
-    RenderData_->Viewer_->assignRecordAndSubmitTaskAndPresentation({commandGraph});
+    if (RenderData_->Headless_) {
+        RenderData_->Viewer_ = vsg::Viewer::create();
+
+        // if (pathFilename)
+        // {
+        //     auto animationPath = vsg::read_cast<vsg::AnimationPath>(pathFilename, options);
+        //     if (!animationPath)
+        //     {
+        //         std::cout<<"Warning: unable to read animation path : "<<pathFilename<<std::endl;
+        //         return 1;
+        //     }
+        //     viewer->addEventHandler(vsg::AnimationPathHandler::create(camera, animationPath, viewer->start_point()));
+        // }
+
+        RenderData_->Viewer_->assignRecordAndSubmitTaskAndPresentation(RenderData_->CommandGraphs_);
+
+        // viewer->compile();
+    }
+
 
     // Compile Scene
     CompileScene();

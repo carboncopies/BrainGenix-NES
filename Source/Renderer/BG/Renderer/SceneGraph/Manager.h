@@ -45,6 +45,7 @@
 #include <BG/Renderer/State/RenderData.h>
 #include <BG/Renderer/State/Scene.h>
 
+#include <BG/Renderer/SceneGraph/OffscreenRenderHelpers.h>
 #include <BG/Renderer/SceneGraph/CameraHelpers.h>
 
 
@@ -159,6 +160,41 @@ public:
      */
     bool Windowed_SetupEventHandler();
 
+
+    /**
+     * @brief Creates the command graph for windowed mode.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Windowed_SetupCommandGraph();
+
+
+    /**
+     * @brief Creates the command graph on headless mode.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Headless_SetupCommandGraph();
+
+
+    /**
+     * @brief Only runs in headless mode, sets up the vulkan device stuff.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Headless_SetupDevice();
+
+    
+    /**
+     * @brief Run for headless mode, sets up a bunch of buffers for us to render into. (i guess?)
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Headless_CreateRenderingBuffers();
 
 
     /**
