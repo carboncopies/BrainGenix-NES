@@ -33,7 +33,7 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
     CreateVoxelArrayFromSimulation(_Logger, _Simulation, &_Simulation->VSDAData_.Params_, _Simulation->VSDAData_.Array_.get());
 
 
-    CreateDiagonalVoxelLine(_Simulation->VSDAData_.Array_.get());
+    // CreateDiagonalVoxelLine(_Simulation->VSDAData_.Array_.get());
 
 
     // Clear Scene In Preperation For Rendering
