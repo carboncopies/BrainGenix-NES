@@ -251,14 +251,14 @@ bool Manager::SetupScene() {
 
 
 
-    vsg::ref_ptr<vsg::Node> teapot = vsg::read_cast<vsg::Node>("teapot.vsgt", vsg::Options::create());
+    // vsg::ref_ptr<vsg::Node> teapot = vsg::read_cast<vsg::Node>("teapot.vsgt", vsg::Options::create());
     // Scene_->Group_->addChild(teapot);
 
 
     Scene_      = std::make_unique<State::Scene>();
 
     Scene_->Group_ = vsg::Group::create();
-    Scene_->Group_->addChild(teapot);
+    // Scene_->Group_->addChild(teapot);
 
 
     

@@ -53,7 +53,7 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
     // hacky
     Shaders::Phong CubeShader;
     CubeShader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
-    CubeShader.SpecularColor_ = vsg::vec4(0.f, 0.0f, 0.0f, 1.0f);
+    CubeShader.SpecularColor_ = vsg::vec4(1.f, 0.0f, 1.0f, 1.0f);
     CubeShader.Type_ = Shaders::SHADER_PHONG;
     Primitive::Cube CreateInfo;
     CreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 0.0f);
