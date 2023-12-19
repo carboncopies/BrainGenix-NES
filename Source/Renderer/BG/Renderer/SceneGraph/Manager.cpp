@@ -59,7 +59,8 @@ bool Manager::Initialize(int _NumArgs, char** _ArgValues) {
     RenderData_->Extent_ = VkExtent2D{(unsigned int)RenderData_->Width_, (unsigned int)RenderData_->Height_};
 
 
-    RenderData_->tmpscene =  vsg::read_cast<vsg::Node>("teapot.vsgt", vsg::Options::create());
+    vsg::ref_ptr<vsg::Node> teapot = vsg::read_cast<vsg::Node>("teapot.vsgt", vsg::Options::create());
+    Scene_->Group_->addChild(teapot);
 
 
     return true;
@@ -337,7 +338,7 @@ bool Manager::Headless_SetupCommandGraph() {
     renderGraph->renderArea.extent = RenderData_->Extent_;
     renderGraph->setClearValues({{1.0f, 1.0f, 0.0f, 0.0f}}, VkClearDepthStencilValue{0.0f, 0});
 
-    auto view = vsg::View::create(Scene_->Camera_, RenderData_->tmpscene);//, Scene_->Group_); ///---------------------------------------------------------------------- FIXME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+    auto view = vsg::View::create(Scene_->Camera_, Scene_->Group_);
 
     vsg::CommandGraphs commandGraphs;
     
