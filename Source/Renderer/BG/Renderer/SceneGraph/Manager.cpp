@@ -194,7 +194,7 @@ bool Manager::Headless_UpdateRenderingBuffers() {
 
 bool Manager::Headless_GetImage() {
 
-    std::string colorFilename = "test.png";
+    std::string colorFilename = "test.bmp";
 
     // wait for completion.
     uint64_t waitTimeout = 1999999999; // 2 seconds in nanoseconds.
@@ -234,7 +234,7 @@ bool Manager::Headless_GetImage() {
         // std::ofstream ofs ("/tmp/example.png", std::ofstream::out);
         // bool status = vsg::write(imageData, colorFilename);
         vsgXchange::all Instance;
-        bool status = Instance.write(imageData, "test.png");
+        bool status = Instance.write(imageData, colorFilename);
         std::cout<<"Wrote File "<<colorFilename<<std::endl;;
         if (!status) {
             std::cout<<"Error writing file!\n";
