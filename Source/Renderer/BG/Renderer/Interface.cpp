@@ -50,17 +50,17 @@ bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
     }
 
 
-    // hacky
-    Shaders::Phong CubeShader;
-    CubeShader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
-    CubeShader.SpecularColor_ = vsg::vec4(1.f, 0.0f, 1.0f, 1.0f);
-    CubeShader.Type_ = Shaders::SHADER_PHONG;
-    Primitive::Cube CreateInfo;
-    CreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 0.0f);
-    CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
-    CreateInfo.Scale_    = vsg::vec3(1.0f, 1.0f, 1.0f);
-    CreateInfo.Shader_ = &CubeShader;
-    AddBox(&CreateInfo);
+    // // hacky
+    // Shaders::Phong CubeShader;
+    // CubeShader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
+    // CubeShader.SpecularColor_ = vsg::vec4(1.f, 0.0f, 1.0f, 1.0f);
+    // CubeShader.Type_ = Shaders::SHADER_PHONG;
+    // Primitive::Cube CreateInfo;
+    // CreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 0.0f);
+    // CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
+    // CreateInfo.Scale_    = vsg::vec3(1.0f, 1.0f, 1.0f);
+    // CreateInfo.Shader_ = &CubeShader;
+    // AddBox(&CreateInfo);
 
     if (!RendererManager_->Initialize(_NumArgs, _ArgValues)) {
         return false;
