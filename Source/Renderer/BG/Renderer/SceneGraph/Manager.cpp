@@ -71,7 +71,7 @@ bool Manager::Headless_SetupDevice() {
     vsg::Names instanceExtensions;
     vsg::Names requestedLayers;
     bool debugLayer = true;
-    bool apiDumpLayer = true;
+    bool apiDumpLayer = false;
     if (debugLayer || apiDumpLayer) {
         instanceExtensions.push_back(VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_EXTENSION_NAME);
         instanceExtensions.push_back(VK_EXT_DEBUG_REPORT_EXTENSION_NAME);
@@ -80,7 +80,7 @@ bool Manager::Headless_SetupDevice() {
     }
 
     vsg::Names validatedNames = vsg::validateInstancelayerNames(requestedLayers);
-    uint32_t VulkanVersion = VK_API_VERSION_1_2;
+    uint32_t VulkanVersion = VK_API_VERSION_1_0;
 
     auto instance = vsg::Instance::create(instanceExtensions, validatedNames, VulkanVersion);
     auto [physicalDevice, queueFamily] = instance->getPhysicalDeviceAndQueueFamily(VK_QUEUE_GRAPHICS_BIT);
@@ -110,7 +110,9 @@ bool Manager::Headless_CreateRenderingBuffers() {
     VkExtent2D Extent = RenderData_->Extent_;
 
     RenderData_->colorImageView = createColorImageView(RenderData_->Headless_Device_, Extent, RenderData_->imageFormat, VK_SAMPLE_COUNT_1_BIT);
+    std::cout<<"Created Color Image Veiw "<<RenderData_->imageFormat<<std::endl;
     RenderData_->depthImageView = createDepthImageView(RenderData_->Headless_Device_, Extent, RenderData_->depthFormat, VK_SAMPLE_COUNT_1_BIT);
+    std::cout<<"Created depth Image Veiw "<<RenderData_->depthFormat<<std::endl;
     if (RenderData_->samples == VK_SAMPLE_COUNT_1_BIT) {
         auto renderPass = vsg::createRenderPass(RenderData_->Headless_Device_, RenderData_->imageFormat, RenderData_->depthFormat, true);
         RenderData_->framebuffer = vsg::Framebuffer::create(renderPass, vsg::ImageViews{RenderData_->colorImageView, RenderData_->depthImageView} , Extent.width, Extent.height, 1);
@@ -201,8 +203,8 @@ bool Manager::Headless_GetImage() {
 
     RenderData_->Viewer_->waitForFences(0, waitTimeout);
 
-    if (RenderData_->copiedColorBuffer)
-    {
+    if (RenderData_->copiedColorBuffer) {
+        
         VkImageSubresource subResource{VK_IMAGE_ASPECT_COLOR_BIT, 0, 0};
         VkSubresourceLayout subResourceLayout;
         vkGetImageSubresourceLayout(*RenderData_->Headless_Device_, RenderData_->copiedColorBuffer->vk(RenderData_->Headless_Device_->deviceID), &subResource, &subResourceLayout);
@@ -211,19 +213,17 @@ bool Manager::Headless_GetImage() {
 
         size_t destRowWidth = RenderData_->Extent_.width * sizeof(vsg::ubvec4);
         vsg::ref_ptr<vsg::Data> imageData;
-        if (destRowWidth == subResourceLayout.rowPitch)
-        {
+        if (destRowWidth == subResourceLayout.rowPitch) {
+            std::cout<<"1\n";
             // Map the buffer memory and assign as a vec4Array2D that will automatically unmap itself on destruction.
             imageData = vsg::MappedData<vsg::ubvec4Array2D>::create(deviceMemory, subResourceLayout.offset, 0, vsg::Data::Properties{RenderData_->imageFormat}, RenderData_->Extent_.width, RenderData_->Extent_.height);
-        }
-        else
-        {
+        } else {
+            std::cout<<"2\n";
             // Map the buffer memory and assign as a ubyteArray that will automatically unmap itself on destruction.
             // A ubyteArray is used as the graphics buffer memory is not contiguous like vsg::Array2D, so map to a flat buffer first then copy to Array2D.
             auto mappedData = vsg::MappedData<vsg::ubyteArray>::create(deviceMemory, subResourceLayout.offset, 0, vsg::Data::Properties{RenderData_->imageFormat}, subResourceLayout.rowPitch*RenderData_->Extent_.height);
             imageData = vsg::ubvec4Array2D::create(RenderData_->Extent_.width, RenderData_->Extent_.height, vsg::Data::Properties{RenderData_->imageFormat});
-            for (uint32_t row = 0; row < RenderData_->Extent_.height; ++row)
-            {
+            for (uint32_t row = 0; row < RenderData_->Extent_.height; ++row) {
                 std::memcpy(imageData->dataPointer(row*RenderData_->Extent_.width), mappedData->dataPointer(row * subResourceLayout.rowPitch), destRowWidth);
             }
         }
@@ -323,6 +323,12 @@ bool Manager::Windowed_SetupCommandGraph() {
 }
 
 bool Manager::Headless_SetupCommandGraph() {
+
+
+    bool useExecuteCommands = true;
+
+
+
     auto renderGraph = vsg::RenderGraph::create();
 
     renderGraph->framebuffer = RenderData_->framebuffer;
@@ -332,21 +338,22 @@ bool Manager::Headless_SetupCommandGraph() {
 
     auto view = vsg::View::create(Scene_->Camera_, Scene_->Group_);
 
-    // vsg::CommandGraphs commandGraphs;
-    // if (useExecuteCommands)
-    // {
-    //     auto secondaryCommandGraph = vsg::SecondaryCommandGraph::create(device, queueFamily);
-    //     secondaryCommandGraph->addChild(view);
-    //     secondaryCommandGraph->framebuffer = framebuffer;
-    //     commandGraphs.push_back(secondaryCommandGraph);
+    vsg::CommandGraphs commandGraphs;
+    
+    if (useExecuteCommands)
+    {
+        auto secondaryCommandGraph = vsg::SecondaryCommandGraph::create(RenderData_->Headless_Device_, RenderData_->QueueFamily_);
+        secondaryCommandGraph->addChild(view);
+        secondaryCommandGraph->framebuffer = RenderData_->framebuffer;
+        commandGraphs.push_back(secondaryCommandGraph);
 
-    //     auto executeCommands = vsg::ExecuteCommands::create();
-    //     executeCommands->connect(secondaryCommandGraph);
+        auto executeCommands = vsg::ExecuteCommands::create();
+        executeCommands->connect(secondaryCommandGraph);
 
-    //     renderGraph->contents = VK_SUBPASS_CONTENTS_SECONDARY_COMMAND_BUFFERS;
-    //     renderGraph->addChild(executeCommands);
-    // }
-    // else
+        renderGraph->contents = VK_SUBPASS_CONTENTS_SECONDARY_COMMAND_BUFFERS;
+        renderGraph->addChild(executeCommands);
+    }
+    else
     renderGraph->addChild(view);
 
     auto commandGraph = vsg::CommandGraph::create(RenderData_->Headless_Device_, RenderData_->QueueFamily_);
@@ -440,25 +447,29 @@ bool Manager::DrawFrame() {
 
     LockScene(); // Control Thread Safety
 
+    
+    // Called every frame
     bool Status = RenderData_->Viewer_->advanceToNextFrame();
     if (!Status) {
         return false;
     }
 
-    if (RenderData_->Headless_) {
-        Headless_UpdateRenderingBuffers();
-    }
+
+    // if (RenderData_->Headless_) { // only happens when we need to resize the buffer (which is never for now)
+    //     Headless_UpdateRenderingBuffers();
+    // }
 
 
     // pass any events into EventHandlers assigned to the Viewer
     RenderData_->Viewer_->handleEvents();
     RenderData_->Viewer_->update();
     RenderData_->Viewer_->recordAndSubmit();
-    RenderData_->Viewer_->present();
 
-    // If Headless, Save Image
+    // If Headless, Save Image, Otherwise Present To Window
     if (RenderData_->Headless_) {
         Headless_GetImage();
+    } else {
+        RenderData_->Viewer_->present();
     }
 
 
