@@ -40,7 +40,7 @@ bool Manager::Initialize(int _NumArgs, char** _ArgValues) {
 
 
     // Check if we're running windowed or not
-    RenderData_->Headless_ = true;
+    // RenderData_->Headless_ = true;
     for (int i = 0; i < _NumArgs; i++) {
         if (std::string(_ArgValues[i]) == "--Windowed") {
             RenderData_->Headless_ = false;
@@ -249,15 +249,19 @@ bool Manager::SetupScene() {
 
     Logger_->Log("Setting Up Scene Structure", 1);
 
+
+
+    vsg::ref_ptr<vsg::Node> teapot = vsg::read_cast<vsg::Node>("teapot.vsgt", vsg::Options::create());
+    // Scene_->Group_->addChild(teapot);
+
+
     Scene_      = std::make_unique<State::Scene>();
 
     Scene_->Group_ = vsg::Group::create();
+    Scene_->Group_->addChild(teapot);
 
 
-
-    // vsg::ref_ptr<vsg::Node> teapot = vsg::read_cast<vsg::Node>("teapot.vsgt", vsg::Options::create());
-    // Scene_->Group_->addChild(teapot);
-
+    
 
     return true;
 
