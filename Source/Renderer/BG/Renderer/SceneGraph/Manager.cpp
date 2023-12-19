@@ -212,11 +212,9 @@ bool Manager::Headless_GetImage() {
         size_t destRowWidth = RenderData_->Extent_.width * sizeof(vsg::ubvec4);
         vsg::ref_ptr<vsg::Data> imageData;
         if (destRowWidth == subResourceLayout.rowPitch) {
-            std::cout<<"1\n";
             // Map the buffer memory and assign as a vec4Array2D that will automatically unmap itself on destruction.
             imageData = vsg::MappedData<vsg::ubvec4Array2D>::create(deviceMemory, subResourceLayout.offset, 0, vsg::Data::Properties{RenderData_->imageFormat}, RenderData_->Extent_.width, RenderData_->Extent_.height);
         } else {
-            std::cout<<"2\n";
             // Map the buffer memory and assign as a ubyteArray that will automatically unmap itself on destruction.
             // A ubyteArray is used as the graphics buffer memory is not contiguous like vsg::Array2D, so map to a flat buffer first then copy to Array2D.
             auto mappedData = vsg::MappedData<vsg::ubyteArray>::create(deviceMemory, subResourceLayout.offset, 0, vsg::Data::Properties{RenderData_->imageFormat}, subResourceLayout.rowPitch*RenderData_->Extent_.height);
