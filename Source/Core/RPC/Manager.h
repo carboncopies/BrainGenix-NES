@@ -20,6 +20,8 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <RPC/StaticRoutes.h>
 
+#include <BG/Common/Logger/Logger.h>
+
 #include <Config/Config.h>
 
 
@@ -46,8 +48,9 @@ public:
      * Give this a pointer to an initialized configuration object.
      * 
      * @param _Config 
+     * @param _Logger
      */
-    Manager(Config::Config* _Config);
+    Manager(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger);
 
 
     /**
@@ -63,8 +66,9 @@ public:
      * @param _RouteName 
      * @param _CallbackFunction 
      */
-    template <typename F> void AddRoute(std::string _RouteName, F _CallbackFunction) {
-        std::cout<<"[INFO] Registering Callback For Route: "<<_RouteName<<std::endl;
+    template <typename F> void AddRoute(std::string _RouteName, BG::Common::Logger::LoggingSystem* _Logger, F _CallbackFunction) {
+        std::string LogMsg = "Registering Callback For Route " + _RouteName;
+        _Logger->Log(LogMsg, 2);
         RPCServer_->bind(_RouteName.c_str(), _CallbackFunction);
     }
 

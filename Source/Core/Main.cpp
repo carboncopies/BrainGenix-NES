@@ -14,7 +14,7 @@ int main(int NumArguments, char** ArgumentValues) {
     Logger.SetKeepVectorLogs(false); // this causes a segfault for some reason
 
     // Setup API Server
-    BG::NES::API::Manager APIManager(&SystemConfiguration);
+    BG::NES::API::Manager APIManager(&SystemConfiguration, &Logger);
 
     // Setup Renderer
     BG::NES::Renderer::Interface RenderingInterface(&Logger);

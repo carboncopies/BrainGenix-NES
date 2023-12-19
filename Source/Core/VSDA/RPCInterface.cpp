@@ -29,12 +29,12 @@ RPCInterface::RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::Mana
     Logger_->Log("Initializing RPC Interface for VSDA Subsystem", 4);
 
     // Register Callback For CreateSim
-    _RPCManager->AddRoute("VSDA/EM/Initialize", [this](std::string RequestJSON){ return VSDAEMInitialize(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/SetupMicroscope", [this](std::string RequestJSON){ return VSDAEMSetupMicroscope(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/DefineScanRegion", [this](std::string RequestJSON){ return VSDAEMDefineScanRegion(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/QueueRenderOperation", [this](std::string RequestJSON){ return VSDAEMQueueRenderOperation(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/GetRenderStatus", [this](std::string RequestJSON){ return VSDAEMGetRenderStatus(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/GetImageStack", [this](std::string RequestJSON){ return VSDAEMGetImageStack(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/Initialize", Logger_, [this](std::string RequestJSON){ return VSDAEMInitialize(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/SetupMicroscope", Logger_, [this](std::string RequestJSON){ return VSDAEMSetupMicroscope(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/DefineScanRegion", Logger_, [this](std::string RequestJSON){ return VSDAEMDefineScanRegion(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/QueueRenderOperation", Logger_, [this](std::string RequestJSON){ return VSDAEMQueueRenderOperation(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/GetRenderStatus", Logger_, [this](std::string RequestJSON){ return VSDAEMGetRenderStatus(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/GetImageStack", Logger_, [this](std::string RequestJSON){ return VSDAEMGetImageStack(RequestJSON);});
 
 
 }
