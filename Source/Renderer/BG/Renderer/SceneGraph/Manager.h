@@ -246,6 +246,16 @@ public:
 
 
     /**
+     * @brief Moves the camera to the given position.
+     * 
+     * @param Position_ 
+     * @return true 
+     * @return false 
+     */
+    bool UpdateCameraPosition(vsg::dvec3 Position_, double Height_ = 3.0);
+
+
+    /**
      * @brief Waits until the GPU is done doing stuff.
      * 
      */

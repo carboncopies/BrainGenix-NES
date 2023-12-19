@@ -271,7 +271,7 @@ bool Manager::SetupScene() {
 bool Manager::SetupCamera() {
 
     // Setup Camera
-    vsg::dvec3 CameraPosition = vsg::dvec3(0.0, 0.0, -3.0); // Where the camera is located
+    vsg::dvec3 CameraPosition = vsg::dvec3(0.0, 0.0, 3.0); // Where the camera is located
     vsg::dvec3 CameraTarget = vsg::dvec3(0.0, 0.0, 0.0); // Where the camera is looking towards
     auto lookAt = CreateLookAtMatrix(CameraPosition, CameraTarget, vsg::dvec3(0.0, 1.0, 0.0));
 
@@ -496,6 +496,14 @@ vsg::ref_ptr<vsg::Group> Manager::GetScene() {
     return Scene_->Group_;
 }
 
+bool Manager::UpdateCameraPosition(vsg::dvec3 Position_, double Height_) {
+
+    vsg::dvec3 CameraTarget = Position_ - vsg::dvec3(0.0f, 0.0f, Height_); // Where the camera is looking towards
+    auto lookAt = CreateLookAtMatrix(Position_, CameraTarget, vsg::dvec3(0.0, 1.0, 0.0));
+
+    Scene_->Camera_.get()->viewMatrix = 
+
+}
 
 void Manager::WaitUntilGPUDone() {
     RenderData_->Viewer_->deviceWaitIdle();
