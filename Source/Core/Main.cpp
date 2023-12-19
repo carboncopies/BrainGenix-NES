@@ -41,7 +41,7 @@ int main(int NumArguments, char** ArgumentValues) {
         if (!RenderingInterface.DrawFrame()) {
             break;
         }
-        break; // stop after one frame
+        // break; // stop after one frame
     }
 
     return 0;

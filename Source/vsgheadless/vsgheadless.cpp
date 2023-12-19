@@ -463,8 +463,8 @@ int main(int argc, char** argv)
 
 
     // set up the RenderGraph to manage the rendering
-    if (useDepthBuffer)
-    {
+    // if (useDepthBuffer)
+    // {
         colorImageView = createColorImageView(device, extent, imageFormat, VK_SAMPLE_COUNT_1_BIT);
         depthImageView = createDepthImageView(device, extent, depthFormat, VK_SAMPLE_COUNT_1_BIT);
         if (samples == VK_SAMPLE_COUNT_1_BIT)
@@ -484,26 +484,26 @@ int main(int argc, char** argv)
         // create support for copying the color buffer
         std::tie(colorBufferCapture, copiedColorBuffer) = createColorCapture(device, extent, colorImageView->image, imageFormat);
         std::tie(depthBufferCapture, copiedDepthBuffer) = createDepthCapture(device, extent, depthImageView->image, depthFormat);
-    }
-    else
-    {
-        colorImageView = createColorImageView(device, extent, imageFormat, VK_SAMPLE_COUNT_1_BIT);
-        if (samples == VK_SAMPLE_COUNT_1_BIT)
-        {
-            auto renderPass = vsg::createRenderPass(device, imageFormat);
-            framebuffer = vsg::Framebuffer::create(renderPass, vsg::ImageViews{colorImageView} , extent.width, extent.height, 1);
-        }
-        else
-        {
-            auto msaa_colorImageView = createColorImageView(device, extent, imageFormat, samples);
+    // }
+    // else
+    // {
+    //     colorImageView = createColorImageView(device, extent, imageFormat, VK_SAMPLE_COUNT_1_BIT);
+    //     if (samples == VK_SAMPLE_COUNT_1_BIT)
+    //     {
+    //         auto renderPass = vsg::createRenderPass(device, imageFormat);
+    //         framebuffer = vsg::Framebuffer::create(renderPass, vsg::ImageViews{colorImageView} , extent.width, extent.height, 1);
+    //     }
+    //     else
+    //     {
+    //         auto msaa_colorImageView = createColorImageView(device, extent, imageFormat, samples);
 
-            auto renderPass = vsg::createMultisampledRenderPass(device, imageFormat, samples);
-            framebuffer = vsg::Framebuffer::create(renderPass, vsg::ImageViews{msaa_colorImageView, colorImageView} , extent.width, extent.height, 1);
-        }
+    //         auto renderPass = vsg::createMultisampledRenderPass(device, imageFormat, samples);
+    //         framebuffer = vsg::Framebuffer::create(renderPass, vsg::ImageViews{msaa_colorImageView, colorImageView} , extent.width, extent.height, 1);
+    //     }
 
-        // create support for copying the color buffer
-        std::tie(colorBufferCapture, copiedColorBuffer) = createColorCapture(device, extent, colorImageView->image, imageFormat);
-    }
+    //     // create support for copying the color buffer
+    //     std::tie(colorBufferCapture, copiedColorBuffer) = createColorCapture(device, extent, colorImageView->image, imageFormat);
+    // }
 
 
 
