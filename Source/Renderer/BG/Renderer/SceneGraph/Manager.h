@@ -198,6 +198,23 @@ public:
 
 
     /**
+     * @brief Updates the rendering buffers between frames. Only used in headless mode.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Headless_UpdateRenderingBuffers();
+
+    /**
+     * @brief Gets the image that was rendered last frame.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Headless_GetImage();
+
+
+    /**
      * @brief Erases all objects in the current scene. Resets the scene to an empty state.
      * 
      * @return true 

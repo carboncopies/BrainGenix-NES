@@ -105,33 +105,147 @@ bool Manager::Headless_SetupDevice() {
 
 bool Manager::Headless_CreateRenderingBuffers() {
 
-    VkFormat imageFormat = VK_FORMAT_R8G8B8A8_UNORM;
-    VkFormat depthFormat = VK_FORMAT_D32_SFLOAT;
-    VkSampleCountFlagBits samples = VK_SAMPLE_COUNT_1_BIT;
+
 
     VkExtent2D Extent = RenderData_->Extent_;
 
-    RenderData_->colorImageView = createColorImageView(RenderData_->Headless_Device_, Extent, imageFormat, VK_SAMPLE_COUNT_1_BIT);
-    RenderData_->depthImageView = createDepthImageView(RenderData_->Headless_Device_, Extent, depthFormat, VK_SAMPLE_COUNT_1_BIT);
-    if (samples == VK_SAMPLE_COUNT_1_BIT) {
-        auto renderPass = vsg::createRenderPass(RenderData_->Headless_Device_, imageFormat, depthFormat, true);
+    RenderData_->colorImageView = createColorImageView(RenderData_->Headless_Device_, Extent, RenderData_->imageFormat, VK_SAMPLE_COUNT_1_BIT);
+    RenderData_->depthImageView = createDepthImageView(RenderData_->Headless_Device_, Extent, RenderData_->depthFormat, VK_SAMPLE_COUNT_1_BIT);
+    if (RenderData_->samples == VK_SAMPLE_COUNT_1_BIT) {
+        auto renderPass = vsg::createRenderPass(RenderData_->Headless_Device_, RenderData_->imageFormat, RenderData_->depthFormat, true);
         RenderData_->framebuffer = vsg::Framebuffer::create(renderPass, vsg::ImageViews{RenderData_->colorImageView, RenderData_->depthImageView} , Extent.width, Extent.height, 1);
     } else {
-        auto msaa_colorImageView = createColorImageView(RenderData_->Headless_Device_, Extent, imageFormat, samples);
-        auto msaa_depthImageView = createDepthImageView(RenderData_->Headless_Device_, Extent, depthFormat, samples);
+        auto msaa_colorImageView = createColorImageView(RenderData_->Headless_Device_, Extent, RenderData_->imageFormat, RenderData_->samples);
+        auto msaa_depthImageView = createDepthImageView(RenderData_->Headless_Device_, Extent, RenderData_->depthFormat, RenderData_->samples);
 
-        auto renderPass = vsg::createMultisampledRenderPass(RenderData_->Headless_Device_, imageFormat, depthFormat, samples, true);
+        auto renderPass = vsg::createMultisampledRenderPass(RenderData_->Headless_Device_, RenderData_->imageFormat, RenderData_->depthFormat, RenderData_->samples, true);
         RenderData_->framebuffer = vsg::Framebuffer::create(renderPass, vsg::ImageViews{msaa_colorImageView, RenderData_->colorImageView, msaa_depthImageView, RenderData_->depthImageView}, Extent.width, Extent.height, 1);
     }
 
     // create support for copying the color buffer
-    std::tie(RenderData_->colorBufferCapture, RenderData_->copiedColorBuffer) = createColorCapture(RenderData_->Headless_Device_, Extent, RenderData_->colorImageView->image, imageFormat);
-    std::tie(RenderData_->depthBufferCapture, RenderData_->copiedDepthBuffer) = createDepthCapture(RenderData_->Headless_Device_, Extent, RenderData_->depthImageView->image, depthFormat);
+    std::tie(RenderData_->colorBufferCapture, RenderData_->copiedColorBuffer) = createColorCapture(RenderData_->Headless_Device_, Extent, RenderData_->colorImageView->image, RenderData_->imageFormat);
+    std::tie(RenderData_->depthBufferCapture, RenderData_->copiedDepthBuffer) = createDepthCapture(RenderData_->Headless_Device_, Extent, RenderData_->depthImageView->image, RenderData_->depthFormat);
     
 
     return true;
 
 }
+
+bool Manager::Headless_UpdateRenderingBuffers() {
+
+
+    std::cout << "Frame " << RenderData_->Viewer_->getFrameStamp()->frameCount << std::endl;
+    int resizeCadence = 0;
+    if (resizeCadence && (RenderData_->Viewer_->getFrameStamp()->frameCount>0) && ((RenderData_->Viewer_->getFrameStamp()->frameCount) % resizeCadence == 0))
+    {
+        RenderData_->Viewer_->deviceWaitIdle();
+
+        RenderData_->Extent_.width /= 2;
+        RenderData_->Extent_.height /= 2;
+
+        if (RenderData_->Extent_.width < 1) RenderData_->Extent_.width = 1;
+        if (RenderData_->Extent_.height < 1) RenderData_->Extent_.height = 1;
+
+        std::cout << "Resized to " << RenderData_->Extent_.width << ", " << RenderData_->Extent_.height << std::endl;
+
+        auto replace_child = [](vsg::Group* group, vsg::ref_ptr<vsg::Node> previous, vsg::ref_ptr<vsg::Node> replacement) {
+            for (auto& child : group->children)
+            {
+                if (child == previous) child = replacement;
+            }
+        };
+
+        auto previous_colorBufferCapture = RenderData_->colorBufferCapture;
+        auto previous_depthBufferCapture = RenderData_->depthBufferCapture;
+
+        
+        RenderData_->colorImageView = createColorImageView(RenderData_->Headless_Device_, RenderData_->Extent_, RenderData_->imageFormat, VK_SAMPLE_COUNT_1_BIT);
+        RenderData_->depthImageView = createDepthImageView(RenderData_->Headless_Device_, RenderData_->Extent_, RenderData_->depthFormat, VK_SAMPLE_COUNT_1_BIT);
+        if (RenderData_->samples == VK_SAMPLE_COUNT_1_BIT)
+        {
+            auto renderPass = vsg::createRenderPass(RenderData_->Headless_Device_, RenderData_->imageFormat, RenderData_->depthFormat, true);
+            RenderData_->framebuffer = vsg::Framebuffer::create(renderPass, vsg::ImageViews{RenderData_->colorImageView, RenderData_->depthImageView} , RenderData_->Extent_.width, RenderData_->Extent_.height, 1);
+        }
+        else
+        {
+            auto msaa_colorImageView = createColorImageView(RenderData_->Headless_Device_, RenderData_->Extent_, RenderData_->imageFormat, RenderData_->samples);
+            auto msaa_depthImageView = createDepthImageView(RenderData_->Headless_Device_, RenderData_->Extent_, RenderData_->depthFormat, RenderData_->samples);
+
+            auto renderPass = vsg::createMultisampledRenderPass(RenderData_->Headless_Device_, RenderData_->imageFormat, RenderData_->depthFormat, RenderData_->samples, true);
+            RenderData_->framebuffer = vsg::Framebuffer::create(renderPass, vsg::ImageViews{msaa_colorImageView, RenderData_->colorImageView, msaa_depthImageView, RenderData_->depthImageView} , RenderData_->Extent_.width, RenderData_->Extent_.height, 1);
+        }
+
+
+        // create new copy subgraphs
+        std::tie( RenderData_->colorBufferCapture,  RenderData_->copiedColorBuffer) = createColorCapture(RenderData_->Headless_Device_, RenderData_->Extent_, RenderData_->colorImageView->image, RenderData_->imageFormat);
+        std::tie( RenderData_->depthBufferCapture,  RenderData_->copiedDepthBuffer) = createDepthCapture(RenderData_->Headless_Device_, RenderData_->Extent_, RenderData_->depthImageView->image, RenderData_->depthFormat);
+
+        replace_child(RenderData_->CommandGraph, previous_colorBufferCapture,  RenderData_->colorBufferCapture);
+        replace_child(RenderData_->CommandGraph, previous_depthBufferCapture,  RenderData_->depthBufferCapture);
+    
+
+
+
+    }
+
+    return true;
+
+}
+
+bool Manager::Headless_GetImage() {
+
+    std::string colorFilename = "test.png";
+
+    // wait for completion.
+    uint64_t waitTimeout = 1999999999; // 2 seconds in nanoseconds.
+
+    RenderData_->Viewer_->waitForFences(0, waitTimeout);
+
+    if (RenderData_->copiedColorBuffer)
+    {
+        VkImageSubresource subResource{VK_IMAGE_ASPECT_COLOR_BIT, 0, 0};
+        VkSubresourceLayout subResourceLayout;
+        vkGetImageSubresourceLayout(*RenderData_->Headless_Device_, RenderData_->copiedColorBuffer->vk(RenderData_->Headless_Device_->deviceID), &subResource, &subResourceLayout);
+
+        auto deviceMemory = RenderData_->copiedColorBuffer->getDeviceMemory(RenderData_->Headless_Device_->deviceID);
+
+        size_t destRowWidth = RenderData_->Extent_.width * sizeof(vsg::ubvec4);
+        vsg::ref_ptr<vsg::Data> imageData;
+        if (destRowWidth == subResourceLayout.rowPitch)
+        {
+            // Map the buffer memory and assign as a vec4Array2D that will automatically unmap itself on destruction.
+            imageData = vsg::MappedData<vsg::ubvec4Array2D>::create(deviceMemory, subResourceLayout.offset, 0, vsg::Data::Properties{RenderData_->imageFormat}, RenderData_->Extent_.width, RenderData_->Extent_.height);
+        }
+        else
+        {
+            // Map the buffer memory and assign as a ubyteArray that will automatically unmap itself on destruction.
+            // A ubyteArray is used as the graphics buffer memory is not contiguous like vsg::Array2D, so map to a flat buffer first then copy to Array2D.
+            auto mappedData = vsg::MappedData<vsg::ubyteArray>::create(deviceMemory, subResourceLayout.offset, 0, vsg::Data::Properties{RenderData_->imageFormat}, subResourceLayout.rowPitch*RenderData_->Extent_.height);
+            imageData = vsg::ubvec4Array2D::create(RenderData_->Extent_.width, RenderData_->Extent_.height, vsg::Data::Properties{RenderData_->imageFormat});
+            for (uint32_t row = 0; row < RenderData_->Extent_.height; ++row)
+            {
+                std::memcpy(imageData->dataPointer(row*RenderData_->Extent_.width), mappedData->dataPointer(row * subResourceLayout.rowPitch), destRowWidth);
+            }
+        }
+
+        // colorFilename = "screenshot.vsgb";
+        // std::cout<<imageData<<std::endl;
+        // std::cout<<imageData.get()->dataPointer()<<std::endl;
+        // std::ofstream ofs ("/tmp/example.png", std::ofstream::out);
+        // bool status = vsg::write(imageData, colorFilename);
+        vsgXchange::all Instance;
+        bool status = Instance.write(imageData, "test.png");
+        std::cout<<"Wrote File "<<colorFilename<<std::endl;;
+        if (!status) {
+            std::cout<<"Error writing file!\n";
+        }
+
+    }
+
+    return true;
+
+}
+
 
 bool Manager::SetupScene() {
 
@@ -201,12 +315,12 @@ bool Manager::Windowed_SetupCommandGraph() {
 
     // create a command graph to render the scene on the specified window
     auto commandGraph = vsg::createCommandGraphForView(RenderData_->Window_, Scene_->Camera_, Scene_->Group_);
+    RenderData_->CommandGraph = commandGraph;
     RenderData_->Viewer_->assignRecordAndSubmitTaskAndPresentation({commandGraph});
 
     return true;
 
 }
-
 
 bool Manager::Headless_SetupCommandGraph() {
     auto renderGraph = vsg::RenderGraph::create();
@@ -236,6 +350,7 @@ bool Manager::Headless_SetupCommandGraph() {
     renderGraph->addChild(view);
 
     auto commandGraph = vsg::CommandGraph::create(RenderData_->Headless_Device_, RenderData_->QueueFamily_);
+    RenderData_->CommandGraph = commandGraph;
     commandGraph->addChild(renderGraph);
     RenderData_->CommandGraphs_.push_back(commandGraph);
     if (RenderData_->colorBufferCapture) {
@@ -247,7 +362,6 @@ bool Manager::Headless_SetupCommandGraph() {
 
     return true;
 }
-
 
 bool Manager::SetupViewer() {
 
@@ -331,11 +445,22 @@ bool Manager::DrawFrame() {
         return false;
     }
 
+    if (RenderData_->Headless_) {
+        Headless_UpdateRenderingBuffers();
+    }
+
+
     // pass any events into EventHandlers assigned to the Viewer
     RenderData_->Viewer_->handleEvents();
     RenderData_->Viewer_->update();
     RenderData_->Viewer_->recordAndSubmit();
     RenderData_->Viewer_->present();
+
+    // If Headless, Save Image
+    if (RenderData_->Headless_) {
+        Headless_GetImage();
+    }
+
 
     UnlockScene();
 

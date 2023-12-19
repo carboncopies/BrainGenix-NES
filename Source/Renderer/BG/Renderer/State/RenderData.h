@@ -88,6 +88,12 @@ struct RenderData {
     vsg::ref_ptr<vsg::Commands> depthBufferCapture;
     vsg::ref_ptr<vsg::Buffer> copiedDepthBuffer;
 
+    vsg::ref_ptr<vsg::CommandGraph> CommandGraph;
+
+    VkFormat imageFormat = VK_FORMAT_R8G8B8A8_UNORM;
+    VkFormat depthFormat = VK_FORMAT_D32_SFLOAT;
+    VkSampleCountFlagBits samples = VK_SAMPLE_COUNT_1_BIT;
+
 
     vsg::CommandGraphs CommandGraphs_;
 
