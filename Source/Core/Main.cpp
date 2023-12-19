@@ -8,7 +8,7 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::NES::Config::Config& SystemConfiguration = ConfigManager.GetConfig();
 
     // Setup Logging System
-    BG::Common::Logger::LoggingSystem Logger(true); // NOTE THAT THIS IS TEMPORARY; IT NEEDS TO BE EVENTUALLY FED
+    BG::Common::Logger::LoggingSystem Logger(); // NOTE THAT THIS IS TEMPORARY; IT NEEDS TO BE EVENTUALLY FED
     // CONFIGURATION INFO FROM THE CONFIG SUBSYS - CURRENTLY IT IS OPERATING IN UNIT-TEST MODE!!!!
 
     Logger.SetKeepVectorLogs(false); // this causes a segfault for some reason
