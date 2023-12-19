@@ -232,6 +232,7 @@ bool Manager::Headless_GetImage() {
         // std::ofstream ofs ("/tmp/example.png", std::ofstream::out);
         // bool status = vsg::write(imageData, colorFilename);
         vsgXchange::all Instance;
+        colorFilename = RenderData_->framenumber++ + ".png";
         bool status = Instance.write(imageData, colorFilename);
         std::cout<<"Wrote File "<<colorFilename<<std::endl;;
         if (!status) {

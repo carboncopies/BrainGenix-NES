@@ -95,6 +95,7 @@ struct RenderData {
     VkSampleCountFlagBits samples = VK_SAMPLE_COUNT_1_BIT;
 
     vsg::ref_ptr<vsg::Node> tmpscene;
+    int framenumber = 0;
 
 
     vsg::CommandGraphs CommandGraphs_;
