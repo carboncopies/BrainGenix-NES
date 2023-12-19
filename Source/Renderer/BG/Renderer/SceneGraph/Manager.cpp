@@ -40,7 +40,7 @@ bool Manager::Initialize(int _NumArgs, char** _ArgValues) {
 
 
     // Check if we're running windowed or not
-    // RenderData_->Headless_ = true;
+    RenderData_->Headless_ = true;
     for (int i = 0; i < _NumArgs; i++) {
         if (std::string(_ArgValues[i]) == "--Windowed") {
             RenderData_->Headless_ = false;
