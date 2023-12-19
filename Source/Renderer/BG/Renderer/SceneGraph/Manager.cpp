@@ -59,6 +59,7 @@ bool Manager::Initialize(int _NumArgs, char** _ArgValues) {
     RenderData_->Extent_ = VkExtent2D{(unsigned int)RenderData_->Width_, (unsigned int)RenderData_->Height_};
 
 
+    RenderData_->tmpscene =  vsg::read_cast<vsg::Node>("teapot.vsgt", vsg::Options::create());
 
 
     return true;
@@ -325,7 +326,7 @@ bool Manager::Windowed_SetupCommandGraph() {
 bool Manager::Headless_SetupCommandGraph() {
 
 
-    bool useExecuteCommands = true;
+    // bool useExecuteCommands = true;
 
 
 
@@ -336,24 +337,24 @@ bool Manager::Headless_SetupCommandGraph() {
     renderGraph->renderArea.extent = RenderData_->Extent_;
     renderGraph->setClearValues({{1.0f, 1.0f, 0.0f, 0.0f}}, VkClearDepthStencilValue{0.0f, 0});
 
-    auto view = vsg::View::create(Scene_->Camera_, Scene_->Group_);
+    auto view = vsg::View::create(Scene_->Camera_, RenderData_->tmpscene);//, Scene_->Group_); ///---------------------------------------------------------------------- FIXME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
 
     vsg::CommandGraphs commandGraphs;
     
-    if (useExecuteCommands)
-    {
-        auto secondaryCommandGraph = vsg::SecondaryCommandGraph::create(RenderData_->Headless_Device_, RenderData_->QueueFamily_);
-        secondaryCommandGraph->addChild(view);
-        secondaryCommandGraph->framebuffer = RenderData_->framebuffer;
-        commandGraphs.push_back(secondaryCommandGraph);
+    // if (useExecuteCommands)
+    // {
+    //     auto secondaryCommandGraph = vsg::SecondaryCommandGraph::create(RenderData_->Headless_Device_, RenderData_->QueueFamily_);
+    //     secondaryCommandGraph->addChild(view);
+    //     secondaryCommandGraph->framebuffer = RenderData_->framebuffer;
+    //     commandGraphs.push_back(secondaryCommandGraph);
 
-        auto executeCommands = vsg::ExecuteCommands::create();
-        executeCommands->connect(secondaryCommandGraph);
+    //     auto executeCommands = vsg::ExecuteCommands::create();
+    //     executeCommands->connect(secondaryCommandGraph);
 
-        renderGraph->contents = VK_SUBPASS_CONTENTS_SECONDARY_COMMAND_BUFFERS;
-        renderGraph->addChild(executeCommands);
-    }
-    else
+    //     renderGraph->contents = VK_SUBPASS_CONTENTS_SECONDARY_COMMAND_BUFFERS;
+    //     renderGraph->addChild(executeCommands);
+    // }
+    // else
     renderGraph->addChild(view);
 
     auto commandGraph = vsg::CommandGraph::create(RenderData_->Headless_Device_, RenderData_->QueueFamily_);

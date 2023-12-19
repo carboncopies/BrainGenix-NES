@@ -386,6 +386,8 @@ int main(int argc, char** argv)
         return 1;
     }
 
+
+
     // create instance
     vsg::Names instanceExtensions;
     vsg::Names requestedLayers;
@@ -677,11 +679,14 @@ int main(int argc, char** argv)
                 vsg::ref_ptr<vsg::Data> imageData;
                 if (destRowWidth == subResourceLayout.rowPitch)
                 {
+
+                    std::cout<<"1\n";
                     // Map the buffer memory and assign as a vec4Array2D that will automatically unmap itself on destruction.
                     imageData = vsg::MappedData<vsg::ubvec4Array2D>::create(deviceMemory, subResourceLayout.offset, 0, vsg::Data::Properties{imageFormat}, extent.width, extent.height);
                 }
                 else
                 {
+                    std::cout<<"2\n";
                     // Map the buffer memory and assign as a ubyteArray that will automatically unmap itself on destruction.
                     // A ubyteArray is used as the graphics buffer memory is not contiguous like vsg::Array2D, so map to a flat buffer first then copy to Array2D.
                     auto mappedData = vsg::MappedData<vsg::ubyteArray>::create(deviceMemory, subResourceLayout.offset, 0, vsg::Data::Properties{imageFormat}, subResourceLayout.rowPitch*extent.height);

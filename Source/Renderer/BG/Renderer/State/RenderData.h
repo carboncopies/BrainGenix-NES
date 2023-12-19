@@ -94,6 +94,8 @@ struct RenderData {
     VkFormat depthFormat = VK_FORMAT_D32_SFLOAT;
     VkSampleCountFlagBits samples = VK_SAMPLE_COUNT_1_BIT;
 
+    vsg::ref_ptr<vsg::Node> tmpscene;
+
 
     vsg::CommandGraphs CommandGraphs_;
 
