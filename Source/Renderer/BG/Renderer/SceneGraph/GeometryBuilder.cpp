@@ -59,7 +59,7 @@ bool GeometryBuilder::CreateCube(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cub
 
     // Setup State Information
     vsg::StateInfo StateInfo;
-    StateInfo.lighting = true;
+    StateInfo.lighting = false;
     if (!ShaderHandler(_CubeCreateInfo->Shader_)) {
         return false;
     }
