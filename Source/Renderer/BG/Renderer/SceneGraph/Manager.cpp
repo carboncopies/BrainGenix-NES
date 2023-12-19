@@ -501,7 +501,7 @@ bool Manager::UpdateCameraPosition(vsg::dvec3 Position_, double Height_) {
     vsg::dvec3 CameraTarget = Position_ - vsg::dvec3(0.0f, 0.0f, Height_); // Where the camera is looking towards
     auto lookAt = CreateLookAtMatrix(Position_, CameraTarget, vsg::dvec3(0.0, 1.0, 0.0));
 
-    Scene_->Camera_.get()->viewMatrix = 
+    // Scene_->Camera_.get()->viewMatrix = // FIXME LATER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 }
 
