@@ -31,7 +31,6 @@ bool Manager::Initialize(int _NumArgs, char** _ArgValues) {
 
     // Iniitalize State Structs
     RenderData_ = std::make_unique<State::RenderData>();
-    Scene_      = std::make_unique<State::Scene>();
 
     // Setup Renderer
     Logger_->Log("Setting Up Configuration Options", 1);
@@ -58,9 +57,6 @@ bool Manager::Initialize(int _NumArgs, char** _ArgValues) {
     }
     RenderData_->Extent_ = VkExtent2D{(unsigned int)RenderData_->Width_, (unsigned int)RenderData_->Height_};
 
-
-    vsg::ref_ptr<vsg::Node> teapot = vsg::read_cast<vsg::Node>("teapot.vsgt", vsg::Options::create());
-    Scene_->Group_->addChild(teapot);
 
 
     return true;
@@ -252,7 +248,16 @@ bool Manager::Headless_GetImage() {
 bool Manager::SetupScene() {
 
     Logger_->Log("Setting Up Scene Structure", 1);
+
+    Scene_      = std::make_unique<State::Scene>();
+
     Scene_->Group_ = vsg::Group::create();
+
+
+
+    // vsg::ref_ptr<vsg::Node> teapot = vsg::read_cast<vsg::Node>("teapot.vsgt", vsg::Options::create());
+    // Scene_->Group_->addChild(teapot);
+
 
     return true;
 
