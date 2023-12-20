@@ -54,7 +54,9 @@ int main(int NumArguments, char** ArgumentValues) {
 
     
     // block forever while servers are running
-    while (true) {}
+    while (true) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    }
     
     // // Run the Renderer
     // while (true) {
