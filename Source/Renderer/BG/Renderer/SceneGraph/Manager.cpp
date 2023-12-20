@@ -254,7 +254,7 @@ bool Manager::SetupScene() {
 bool Manager::SetupCamera() {
 
     // Setup Camera
-    vsg::dvec3 CameraPosition = vsg::dvec3(0.0, 0.0, 3.0); // Where the camera is located
+    vsg::dvec3 CameraPosition = vsg::dvec3(0.0, 0.0, 6.0); // Where the camera is located
     vsg::dvec3 CameraTarget = vsg::dvec3(0.0, 0.0, 0.0); // Where the camera is looking towards
     auto lookAt = CreateLookAtMatrix(CameraPosition, CameraTarget, vsg::dvec3(0.0, 1.0, 0.0));
 
