@@ -248,6 +248,9 @@ bool Manager::SetupScene() {
     Scene_      = std::make_unique<State::Scene>();
     Scene_->Group_ = vsg::Group::create();
 
+
+
+
     return true;
 
 }
@@ -377,6 +380,16 @@ bool Manager::SetupViewer() {
 
         RenderData_->Viewer_->assignRecordAndSubmitTaskAndPresentation(RenderData_->CommandGraphs_);
 
+
+
+        // // Add Ambient Light
+        // auto AmbientLight = vsg::AmbientLight::create();
+        // AmbientLight->name = "test ambient lamp";
+        // AmbientLight->color.set(1.0, 1.0, 1.0);
+        // AmbientLight->intensity = 1.0;
+
+        // Scene_->Group_->addChild(AmbientLight);
+
     }
 
 
@@ -418,7 +431,9 @@ bool Manager::DrawFrame(std::string _FilePath) {
     // Lock the scene mutex to ensure we're the only ones accessing it right now
     LockScene();
 
-    
+    auto teapot = vsg::read_cast<vsg::Node>("teapot.vgst");
+    Scene_->Group_->addChild(teapot);
+
     // Called every frame
     bool Status = RenderData_->Viewer_->advanceToNextFrame();
     if (!Status) {
