@@ -108,9 +108,7 @@ bool Manager::Headless_CreateRenderingBuffers() {
     VkExtent2D Extent = RenderData_->Extent_;
 
     RenderData_->colorImageView = createColorImageView(RenderData_->Headless_Device_, Extent, RenderData_->imageFormat, VK_SAMPLE_COUNT_1_BIT);
-    std::cout<<"Created Color Image Veiw "<<RenderData_->imageFormat<<std::endl;
     RenderData_->depthImageView = createDepthImageView(RenderData_->Headless_Device_, Extent, RenderData_->depthFormat, VK_SAMPLE_COUNT_1_BIT);
-    std::cout<<"Created depth Image Veiw "<<RenderData_->depthFormat<<std::endl;
     if (RenderData_->samples == VK_SAMPLE_COUNT_1_BIT) {
         auto renderPass = vsg::createRenderPass(RenderData_->Headless_Device_, RenderData_->imageFormat, RenderData_->depthFormat, true);
         RenderData_->framebuffer = vsg::Framebuffer::create(renderPass, vsg::ImageViews{RenderData_->colorImageView, RenderData_->depthImageView} , Extent.width, Extent.height, 1);
