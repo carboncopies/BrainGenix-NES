@@ -30,17 +30,17 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
             _Sim->IsProcessing = true;
 
             if (_Sim->CurrentTask == SIMULATION_RESET) {
-                std::cout<<"[Info] Worker Performing Simulation Reset For Simulation "<<_Sim->ID<<std::endl;
+                _Logger->Log("Worker Performing Simulation Reset For Simulation " + std::to_string(_Sim->ID), 4);
                 SE.Reset(_Sim);
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
             } else if (_Sim->CurrentTask == SIMULATION_RUNFOR) {
-                std::cout<<"[Info] Worker Performing Simulation RunFor For Simulation "<<_Sim->ID<<std::endl;
+                _Logger->Log("Worker Performing Simulation RunFor For Simulation " + std::to_string(_Sim->ID), 4);
                 SE.RunFor(_Sim);
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
             } else if (_Sim->CurrentTask == SIMULATION_VSDA) {
-                std::cout<<"[Info] Worker Performing Simulation VSDA Call For Simulation "<<_Sim->ID<<std::endl;
+                _Logger->Log("Worker Performing Simulation VSDA Call For Simulation " + std::to_string(_Sim->ID), 4);
                 _Sim->IsRendering = true;
                 _RenderPool->QueueRenderOperation(_Sim);
 
