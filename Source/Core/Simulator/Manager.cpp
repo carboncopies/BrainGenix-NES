@@ -90,7 +90,7 @@ std::string Manager::SimulationReset(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    Logger_->Log("Simulation Reset Called, On Sim " + std::to_string(SimulationID), 4);
+    Logger_->Log("Simulation Reset Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Check Sim ID
