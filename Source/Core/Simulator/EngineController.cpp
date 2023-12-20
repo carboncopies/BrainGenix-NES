@@ -16,12 +16,6 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
     Engine SE;
 
 
-    // Setup Renderer
-    BG::NES::Renderer::Interface Renderer(_Logger);
-    if (!Renderer.Initialize()) { 
-        _Logger->Log("Error During Renderer Initialization, Aborting", 10);
-        return;
-    }
 
 
     // Enter into loop until thread should stop

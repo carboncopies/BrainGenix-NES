@@ -108,6 +108,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/RPCInterface.h
   ${SRC_DIR}/Core/VSDA/UpdaterManager.cpp
   ${SRC_DIR}/Core/VSDA/UpdaterManager.h
+  ${SRC_DIR}/Core/VSDA/RenderPool.cpp
+  ${SRC_DIR}/Core/VSDA/RenderPool.h
   ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.cpp
   ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.h
   ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/MicroscopeParameters.cpp
