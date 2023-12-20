@@ -211,7 +211,7 @@ std::string Manager::SimulationGetStatus(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Simulation GetStatus Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Simulation GetStatus Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Check Sim ID
