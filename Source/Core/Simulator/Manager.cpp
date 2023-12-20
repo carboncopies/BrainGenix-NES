@@ -64,7 +64,7 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     // Parse Request
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     std::string SimulationName = RequestJSON["Name"];
-    std::cout<<"[Info] Create Simulation Called, New sim has name "<<SimulationName<<std::endl;
+    Logger_->Log("Create Simulation Called, New Sim Has Name " + SimulationName, 3);
 
 
     // Build New Simulation Object
@@ -120,7 +120,7 @@ std::string Manager::SimulationRunFor(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Simulation RunFor Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Simulation RunFor Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Check Sim ID
