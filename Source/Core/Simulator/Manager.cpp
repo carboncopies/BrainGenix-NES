@@ -388,7 +388,7 @@ std::string Manager::BoxCreate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Create Box Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Create Box Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Build New Box Object
@@ -429,7 +429,8 @@ std::string Manager::BSCreate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Create BS Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Create BS Called, On Sim " + std::to_string(SimulationID), 3);
+
 
 
     // Build New BS Object
@@ -473,7 +474,7 @@ std::string Manager::StapleCreate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Create Staple Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Create Staple Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Build New Staple Object
@@ -514,7 +515,8 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Create Receptor Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Create Receptor Called, On Sim " + std::to_string(SimulationID), 3);
+
 
 
     // Build New Receptor Object
@@ -558,7 +560,7 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Create PatchClampDAC Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Create PatchClampDAC Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Build New DAC Object
@@ -600,7 +602,8 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] PatchClampDAC SetOutputList Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("PatchClampDAC SetOutputList Called, On Sim " + std::to_string(SimulationID), 3);
+
 
     // Check Sim ID
     if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
@@ -641,7 +644,7 @@ std::string Manager::PatchClampADCCreate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Create PatchClampADC Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Create PatchClampADC Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Build New ADC Object
@@ -683,7 +686,7 @@ std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] PatchClampADC SetSampleRate Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("PatchClampADC SetSampleRate Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Check Sim ID
@@ -725,7 +728,7 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] PatchClampADC GetRecordedData Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("PatchClampADC GetRecordedData Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Check Sim ID
