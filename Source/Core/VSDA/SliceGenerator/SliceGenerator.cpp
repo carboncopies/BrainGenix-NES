@@ -245,7 +245,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
     assert(_Logger != nullptr);
 
 
-    _Logger->Log(std::string("Rendering Slice '") + std::to_string(SliceNumber) + "'", 2);
+    _Logger->Log(std::string("Rendering Slice '") + std::to_string(SliceNumber) + "'", 1);
 
     _Renderer->ResetScene();
 
