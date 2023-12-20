@@ -151,7 +151,8 @@ std::string Manager::SimulationRecordAll(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Simulation RecordAll Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Simulation RecordAll Called, On Sim" + std::to_string(SimulationID), 3);
+
 
 
     // Check Sim ID
@@ -180,7 +181,7 @@ std::string Manager::SimulationGetRecording(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Simulation GetRecording Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Simulation GetRecording Called, On Sim" + std::to_string(SimulationID), 3);
 
 
     // Check Sim ID
