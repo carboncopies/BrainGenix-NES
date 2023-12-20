@@ -82,8 +82,8 @@ bool Interface::Initialize(bool _Windowed) {
 
 }
 
-bool Interface::DrawFrame() {
-    return RendererManager_->DrawFrame();
+bool Interface::DrawFrame(std::string _FramePath) {
+    return RendererManager_->DrawFrame(_FramePath);
 }
 
 

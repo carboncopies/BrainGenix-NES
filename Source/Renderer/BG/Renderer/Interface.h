@@ -107,10 +107,12 @@ public:
     /**
      * @brief Does what the name suggests - draws a frame on the window or offscreen if rendering headless.
      * 
+     * @param _FramePath Path to save this frame to if running headless.
+     * 
      * @return true 
      * @return false 
      */
-    bool DrawFrame();
+    bool DrawFrame(std::string _FramePath);
 
 
     /**

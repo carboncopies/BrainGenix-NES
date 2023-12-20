@@ -31,7 +31,7 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-
+#include <filesystem>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -133,11 +133,12 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
  * @param _Renderer
  * @param _Params 
  * @param _Array 
- * @param SliceNumber 
+ * @param _FilePrefix
+ * @param _SliceNumber 
  * @return true 
  * @return false 
  */
-bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, MicroscopeParameters* _Params, VoxelArray* _Array, int SliceNumber);
+bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, MicroscopeParameters* _Params, VoxelArray* _Array, std::string _FilePrefix, int SliceNumber);
 
 
 }; // Close Namespace Logger

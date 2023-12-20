@@ -191,9 +191,9 @@ bool Manager::Headless_UpdateRenderingBuffers() {
 
 }
 
-bool Manager::Headless_GetImage() {
+bool Manager::Headless_GetImage(std::string _FilePath) {
 
-    std::string colorFilename = "test.bmp";
+
 
     // wait for completion.
     uint64_t waitTimeout = 1999999999; // 2 seconds in nanoseconds.
@@ -223,11 +223,12 @@ bool Manager::Headless_GetImage() {
             }
         }
 
+
         vsgXchange::all Instance;
-        colorFilename = std::to_string(RenderData_->framenumber) + ".bmp";
-        RenderData_->framenumber+=1;
-        bool status = Instance.write(imageData, colorFilename);
-        std::cout<<"Wrote File "<<colorFilename<<std::endl;;
+        // colorFilename = std::to_string(RenderData_->framenumber) + ".bmp";
+        // RenderData_->framenumber+=1;
+        bool status = Instance.write(imageData, _FilePath);
+        std::cout<<"Wrote File "<<_FilePath<<std::endl;;
         if (!status) {
             std::cout<<"Error writing file!\n";
         }
@@ -406,7 +407,7 @@ bool Manager::ClearScene() {
 
 }
 
-bool Manager::DrawFrame() {
+bool Manager::DrawFrame(std::string _FilePath) {
 
     // Check that we're able to render, otherwise chuck an error
     if (!Initialized_) {
@@ -435,7 +436,7 @@ bool Manager::DrawFrame() {
 
     // If Headless, Save Image, Otherwise Present To Window
     if (RenderData_->Headless_) {
-        Headless_GetImage();
+        Headless_GetImage(_FilePath);
     } else {
         RenderData_->Viewer_->present();
     }

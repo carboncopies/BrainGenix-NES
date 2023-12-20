@@ -210,10 +210,12 @@ public:
     /**
      * @brief Gets the image that was rendered last frame.
      * 
+     * @param _FilePath Place to write the image we just captured.
+     * 
      * @return true 
      * @return false 
      */
-    bool Headless_GetImage();
+    bool Headless_GetImage(std::string _FilePath);
 
 
     /**
@@ -241,10 +243,12 @@ public:
      * @brief Does what it sounds like, this draws a frame on the renderer.
      * Returns true on success, false on failure.
      * 
+     * @param _FilePath Optional file path where this image is to be saved.
+     * 
      * @return true 
      * @return false 
      */
-    bool DrawFrame();
+    bool DrawFrame(std::string _FilePath = "/tmp/example.bmp");
 
 
     /**

@@ -239,7 +239,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 }
 
-bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, MicroscopeParameters* _Params, VoxelArray* _Array, int SliceNumber) {
+bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, MicroscopeParameters* _Params, VoxelArray* _Array, std::string _FilePrefix, int SliceNumber) {
     assert(_Array != nullptr);
     assert(_Params != nullptr);
     assert(_Logger != nullptr);
@@ -301,7 +301,14 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
     _Renderer->UpdateScene();
     _Renderer->UnlockScene();
 
-    _Renderer->DrawFrame();
+
+    // Check that the renderers dir exists
+    if (!std::filesystem::is_directory("Renders") || !std::filesystem::exists("Renders")) { // Check if Renders folder exists
+        std::filesystem::create_directory("Renders"); // create Renders folder
+    }
+
+    std::string FilePath = "Renders/" + _FilePrefix + "_Slice" + std::to_string(SliceNumber) + ".bmp";
+    _Renderer->DrawFrame(FilePath);
 
     return true;
 }
