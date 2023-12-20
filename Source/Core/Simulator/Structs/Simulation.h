@@ -73,8 +73,9 @@ struct Simulation {
 
     std::string RecordingBlob; /**Blob of json data that contains all recorded states for each thing in the simulation*/
 
-    std::atomic<bool> IsProcessing = false; /**Indicator if the simulation is currently being modified or not*/
+    std::atomic<bool> IsProcessing = false;  /**Indicator if the simulation is currently being modified or not*/
     std::atomic<bool> WorkRequested = false; /**Indicator if work is requested to be done on this simulation by a worker thread*/
+    std::atomic<bool> IsRendering = false;   /**Indicates if this simulation is being acted upon by a renderer or not*/
     float RunTimes_ms; /**Number of ms to be simulated next time runfor is called - if not, set to -1*/
     SimulationActions CurrentTask; /**Current task to be processed on this simulation, could be run for, or reset, etc. See above enum for more info.*/
 

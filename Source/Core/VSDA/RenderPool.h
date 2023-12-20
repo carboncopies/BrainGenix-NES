@@ -47,6 +47,8 @@
 
 #include <Simulator/Structs/Simulation.h>
 
+#include <VSDA/UpdaterManager.h>
+
 #include <BG/Renderer/Interface.h>
 
 
@@ -63,7 +65,8 @@ namespace VSDA {
 
 
 /**
- * @brief add doxygen later
+ * @brief This class creates a threadpool which owns all renderer instances.
+ * This allows (on supported systems) for multiple renderers to exist at the same time, and as such render multiple simulations simultaineously.
  * 
  */
 class RenderPool {
@@ -76,7 +79,9 @@ private:
     std::mutex QueueMutex_;                               /**Mutex used to lock access to the queue when it's being modified*/
     std::queue<Simulation*> Queue_;                       /**Queue that contains simulations that need to be rendered*/
 
-    std::vector<std::thread> RenderThreads_;                            /** We will support multiple threads in the future but that doesnt work for now so you only get one :(*/
+    std::vector<std::thread> RenderThreads_;              /**List of rendering threads - each one tries to dequeue stuff from the queue to work on.*/
+    std::atomic_bool ThreadControlFlag_;                  /**Bool that signals threads to exit*/
+
 
 
     /**
@@ -94,11 +99,14 @@ private:
     int GetQueueSize();
 
     /**
-     * @brief Thread safe get simulation* from queue function. Will return null if queue is empty.
+     * @brief Thread safe get simulation* from queue function. 
+     * Will return false if there is nothing to be dequeued.
+     * Otherwise will update the ptr given as a parameter.
      * 
-     * @return Simulation* 
+     * @return true
+     * @return false
      */
-    Simulation* DequeueSimulation();
+    bool DequeueSimulation(Simulation** _SimPtr);
 
 
 

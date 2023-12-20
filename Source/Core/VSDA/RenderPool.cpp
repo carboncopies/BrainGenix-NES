@@ -10,7 +10,11 @@ namespace Simulator {
 namespace VSDA {
 
 
+
+// Thread Main Function
 void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
+
+    Logger_->Log("Started RenderPool Thread " + std::to_string(_ThreadNumber), 0);
 
     // Setup Renderer
     BG::NES::Renderer::Interface Renderer(Logger_);
@@ -19,30 +23,117 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
         return;
     }
 
+    // Run until thread exit is requested - that is, this is set to false
+    while (ThreadControlFlag_) {
 
-    
+        // Step 1, Check For Work
+        Simulation* SimToProcess = nullptr;
+        if (DequeueSimulation(&SimToProcess)) {
+
+            // Okay, we got work, now render this simulation
+            Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering Simulation " + std::to_string(SimToProcess->ID), 2);
+            VSDA::ExecuteRenderOperations(Logger_, SimToProcess, &Renderer);
+            SimToProcess->IsRendering = false;
+
+        } else {
+
+            // We didn't get any work, just go to sleep for a few milliseconds so we don't rail the cpu
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        }
+
+    }
+
 
 
 
 }
 
 
-
+// Constructor, Destructor
 RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, int _NumThreads) {
     assert(_Logger != nullptr);
 
+
+    // Initialize Variables
     Logger_ = _Logger;
+    ThreadControlFlag_ = true;
+
 
     // Create Renderer Instances
-    // for (unsigned int i = 0; i < _NumThreads; i++) {
-
-    // }
-    RenderThread_ = std::thread(&RenderPool::RendererThreadMainFunction, this, 0);
+    Logger_->Log("Creating RenderPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
+    for (unsigned int i = 0; i < _NumThreads; i++) {
+        Logger_->Log("Starting RenderPool Thread " + std::to_string(i), 1);
+        RenderThreads_.push_back(std::thread(&RenderPool::RendererThreadMainFunction, this, i));
+    }
 
 
 }
 
+RenderPool::~RenderPool() {
 
+    // Send Stop Signal To Threads
+    Logger_->Log("Stopping RenderPool Threads", 2);
+    ThreadControlFlag_ = false;
+
+    // Join All Threads
+    Logger_->Log("Joining RenderPool Threads", 1);
+    for (unsigned int i = 0; i < RenderThreads_.size(); i++) {
+        Logger_->Log("Joining RenderPool Thread " + std::to_string(i), 0);
+        RenderThreads_[i].join();
+    }
+
+}
+
+
+// Queue Access Functions
+void RenderPool::EnqueueSimulation(Simulation* _Sim) {
+
+    // Firstly, Ensure Nobody Else Is Using The Queue
+    QueueMutex_.lock();
+
+    Queue_.emplace(_Sim);
+
+    // Now That We're Done, Unlock The Queue
+    QueueMutex_.unlock();
+
+}
+
+int RenderPool::GetQueueSize() {
+
+    // Firstly, Ensure Nobody Else Is Using The Queue
+    QueueMutex_.lock();
+
+    int QueueSize = Queue_.size();
+
+    // Now That We're Done, Unlock The Queue
+    QueueMutex_.unlock();
+
+    return QueueSize;
+
+}
+
+bool RenderPool::DequeueSimulation(Simulation** _SimPtr) {
+
+    // Firstly, Ensure Nobody Else Is Using The Queue
+    std::lock_guard<std::mutex> LockQueue(QueueMutex_);
+
+
+    // If the queue isn't empty, we grab the first element
+    if (Queue_.size() > 0) {
+        *_SimPtr = Queue_.front();
+        Queue_.pop();
+
+        return true;
+    }
+
+    return false;
+}
+
+
+// Public Enqueue Function
+void RenderPool::QueueRenderOperation(Simulation* _Sim) {
+    EnqueueSimulation(_Sim);
+}
 
 
 }; // Close Namespace VSDA

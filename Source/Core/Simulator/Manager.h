@@ -34,7 +34,7 @@
 #include <Simulator/Structs/PatchClampADC.h>
 
 #include <VSDA/DebugHelpers/MeshBuilder.h>
-#include <VSDA/SliceGenerator/SliceGenerator.h> // Temporary for the debug route - remove this later
+#include <VSDA/RenderPool.h>
 #include <BG/Renderer/Interface.h>
 
 #include <Simulator/EngineController.h>
@@ -64,7 +64,7 @@ private:
     // we will fix this later when we scale the system (DO NOT ALLOW RPC to use more than 1 thread unless this is fixed!)
 
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/
-
+    VSDA::RenderPool* RenderPool_;                        /**Pointer to an instance of the render threadpool class*/
 
 public:
 
@@ -77,7 +77,7 @@ public:
      * @param _RPCManager
      * @param _Renderer Instance of rendering system.
      */
-    Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, API::Manager* _RPCManager);
+    Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, API::Manager* _RPCManager);
 
 
     /**

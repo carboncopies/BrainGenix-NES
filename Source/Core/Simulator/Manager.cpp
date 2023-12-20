@@ -7,7 +7,7 @@ namespace NES {
 namespace Simulator {
 
 
-Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, API::Manager* _RPCManager) {
+Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, API::Manager* _RPCManager) {
     assert(_Logger != nullptr);
     assert(_Config != nullptr);
     assert(_RPCManager != nullptr);
@@ -73,7 +73,7 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     Sim->ID = SimID;
 
     // Start Thread
-    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, &StopThreads_));
+    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, RenderPool_, &StopThreads_));
 
 
     // Return Status ID

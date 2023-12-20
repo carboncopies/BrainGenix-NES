@@ -7,7 +7,7 @@ namespace NES {
 namespace Simulator {
 
 
-void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, std::atomic<bool>* _StopThreads) {
+void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, VSDA::RenderPool* _RenderPool, std::atomic<bool>* _StopThreads) {
 
     // Log Init message
     _Logger->Log("Starting Simulation Updater Thread", 3);
@@ -37,7 +37,17 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
                 _Sim->WorkRequested = false;
             } else if (_Sim->CurrentTask == SIMULATION_VSDA) {
                 std::cout<<"[Info] Worker Performing Simulation VSDA Call For Simulation "<<_Sim->ID<<std::endl;
-                VSDA::ExecuteRenderOperations(_Logger, _Sim, &Renderer);
+                _Sim->IsRendering = true;
+                _RenderPool->QueueRenderOperation(_Sim);
+
+                // Randal - I had no idea how to better do this, please fix this as you see fit
+                // The RenderPool main worker func (in RenderPool.cpp) will set isrendering to false when done, unlocking this.
+                // Probably a mutex is better but eh idk
+                while (_Sim->IsRendering) {
+                    std::this_thread::sleep_for(std::chrono::milliseconds(10)); // sleep for 10ms
+                }
+
+
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
             }
