@@ -18,7 +18,7 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
 
     // Setup Renderer
     BG::NES::Renderer::Interface Renderer(Logger_);
-    if (!Renderer.Initialize()) { 
+    if (!Renderer.Initialize(Windowed_)) { 
         Logger_->Log("Error During Renderer Initialization, Aborting", 10);
         return;
     }
@@ -50,13 +50,14 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
 
 
 // Constructor, Destructor
-RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, int _NumThreads) {
+RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed, int _NumThreads) {
     assert(_Logger != nullptr);
 
 
     // Initialize Variables
     Logger_ = _Logger;
     ThreadControlFlag_ = true;
+    Windowed_ = _Windowed;
 
 
     // Create Renderer Instances

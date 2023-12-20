@@ -41,7 +41,7 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::NES::API::Manager APIManager(&SystemConfiguration, &Logger);
 
     // Setup RenderPool
-    BG::NES::Simulator::VSDA::RenderPool RenderPool(&Logger);
+    BG::NES::Simulator::VSDA::RenderPool RenderPool(&Logger, true);
 
     // Setup Simulator (Adding the routes here - will need a proper way to do this later on, but works for now)
     BG::NES::Simulator::Manager SimulationManager(&Logger, &SystemConfiguration, &RenderPool, &APIManager);

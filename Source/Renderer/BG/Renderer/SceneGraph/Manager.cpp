@@ -16,6 +16,8 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger) {
     assert(_Logger != nullptr);
     Logger_ = _Logger;
 
+    Initialized_ = false;
+
 }
 
 Manager::~Manager() {
@@ -25,7 +27,7 @@ Manager::~Manager() {
 }
 
 
-bool Manager::Initialize() {
+bool Manager::Initialize(bool _Windowed) {
     assert(Logger_ != nullptr);
     Logger_->Log("Initializing NES Rendering Subsystem", 5);
 
@@ -40,7 +42,7 @@ bool Manager::Initialize() {
 
 
     // Check if we're running windowed or not
-    RenderData_->Headless_ = true;
+    RenderData_->Headless_ = !_Windowed;
     // for (int i = 0; i < _NumArgs; i++) {
     //     if (std::string(_ArgValues[i]) == "--Windowed") {
     //         RenderData_->Headless_ = false;
@@ -380,6 +382,9 @@ bool Manager::SetupViewer() {
     CompileScene();
 
 
+    // Set flag that we're now ready to render
+    Initialized_ = true;
+
     return true;
 }
 
@@ -403,15 +408,13 @@ bool Manager::ClearScene() {
 
 bool Manager::DrawFrame() {
 
+    // Check that we're able to render, otherwise chuck an error
+    if (!Initialized_) {
+        return false;
+    }
 
-    // // Check If There Is Something To Render Or Not
-    // if (RenderData_->NumFramesToRender_ < 1 || RenderData_->Headless_) {
-    //     return true; // Early Exit for renderer, nothing to do.
-    // }
-
-
-
-    LockScene(); // Control Thread Safety
+    // Lock the scene mutex to ensure we're the only ones accessing it right now
+    LockScene();
 
     
     // Called every frame
@@ -438,9 +441,9 @@ bool Manager::DrawFrame() {
     }
 
 
+    // Okay, we're done with the scene mutex now, it can be released
     UnlockScene();
 
-    std::this_thread::sleep_for(std::chrono::microseconds(750)); // delay so our mutex is easier to get by another thread if needed
 
     return true;
 }
@@ -460,6 +463,8 @@ bool Manager::UpdateCameraPosition(vsg::dvec3 Position_, double Height_) {
 
     // Now, update the camera's view matrix with our new lookat matrix (should be the same as viewmat)
     Scene_->Camera_.get()->viewMatrix = lookAt;
+
+    return true;
 
 }
 

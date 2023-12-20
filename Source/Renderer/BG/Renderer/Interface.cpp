@@ -22,6 +22,19 @@ namespace NES {
 namespace Renderer {
 
 
+// Hack to make windowed rendering work again lol
+void Interface::WindowedThread() {
+
+    while (!ThreadExit_) {
+        RendererManager_->DrawFrame();
+
+        // delay so the scene mutex is easier to get by another thread if needed
+        std::this_thread::sleep_for(std::chrono::microseconds(750)); 
+    }
+
+}
+
+
 Interface::Interface(BG::Common::Logger::LoggingSystem* _Logger) {
     assert(_Logger != nullptr);
     Logger_ = _Logger;
@@ -37,19 +50,30 @@ Interface::~Interface() {
     assert(Logger_ != nullptr);
     Logger_->Log("Shutting Down NES Rendering Subsystem", 3);
 
+    if (IsWindowed_) {
+        ThreadExit_ = true;
+        WindowedUpdaterThread_.join();
+    }
 
 }
 
 
-bool Interface::Initialize() {
+bool Interface::Initialize(bool _Windowed) {
     assert(Logger_ != nullptr);
+
+    IsWindowed_ = _Windowed;
+    ThreadExit_ = !_Windowed;
 
     if (!RendererManager_->SetupScene()) {
         return false;
     }
 
-    if (!RendererManager_->Initialize()) {
+    if (!RendererManager_->Initialize(_Windowed)) {
         return false;
+    }
+
+    if (IsWindowed_) {
+        WindowedUpdaterThread_ = std::thread(&Interface::WindowedThread, this);
     }
 
     RendererManager_->SetupViewer();

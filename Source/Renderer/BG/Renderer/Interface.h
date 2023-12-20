@@ -72,6 +72,12 @@ private:
     std::unique_ptr<Manager>         RendererManager_ = nullptr; /**Instance of the renderer manager, setup when the init call is made.*/
     std::unique_ptr<GeometryBuilder> GeometryBuilder_ = nullptr; /**Instance of the geometry builder, used to create various primitives in the scene*/
 
+    std::thread WindowedUpdaterThread_; /**This thread only exists in windowed mode and simply renders frames constantly.*/
+    bool ThreadExit_ = false;
+    bool IsWindowed_ = false;
+
+    void WindowedThread();
+
 public:
 
     /**
@@ -96,7 +102,7 @@ public:
      * These layers serve to provide debug information for the application developers.
      * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
     */
-    bool Initialize();
+    bool Initialize(bool _Windowed = false);
 
     /**
      * @brief Does what the name suggests - draws a frame on the window or offscreen if rendering headless.

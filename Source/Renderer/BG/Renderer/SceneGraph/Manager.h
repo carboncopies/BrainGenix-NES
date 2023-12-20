@@ -69,6 +69,8 @@ private:
 
     std::mutex                         SceneAccessLock_; /**Mutex to control access to the scene, so only one thread may use it at a time*/
 
+    bool Initialized_ = false;                       /**Boolean that indicates if the renderer has been fully setup yet or not*/
+
     // todo:
     // migrate vsg argparser to function here
     // implement state structures for the rest of the code
@@ -100,7 +102,7 @@ public:
      * These layers serve to provide debug information for the application developers.
      * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
     */
-    bool Initialize();
+    bool Initialize(bool _Windowed = false);
 
 
     /**

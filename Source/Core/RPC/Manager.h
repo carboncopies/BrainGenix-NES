@@ -68,7 +68,7 @@ public:
      */
     template <typename F> void AddRoute(std::string _RouteName, BG::Common::Logger::LoggingSystem* _Logger, F _CallbackFunction) {
         std::string LogMsg = "Registering Callback For Route " + _RouteName;
-        _Logger->Log(LogMsg, 2);
+        _Logger->Log(LogMsg, 0);
         RPCServer_->bind(_RouteName.c_str(), _CallbackFunction);
     }
 

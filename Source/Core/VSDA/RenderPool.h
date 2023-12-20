@@ -76,6 +76,8 @@ private:
 
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/
 
+    bool Windowed_ = false;                               /**Boolean indicating if we're making windowed or headless renderers*/
+
     std::mutex QueueMutex_;                               /**Mutex used to lock access to the queue when it's being modified*/
     std::queue<Simulation*> Queue_;                       /**Queue that contains simulations that need to be rendered*/
 
@@ -125,9 +127,10 @@ public:
      * Note that this may be subject to however many logical devices your vulkan hardware can support.
      * 
      * @param _Logger 
+     * @param _Windowed
      * @param _NumThreads 
      */
-    RenderPool(BG::Common::Logger::LoggingSystem* _Logger, int _NumThreads = 1);
+    RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed = false, int _NumThreads = 1);
 
     /**
      * @brief Destroys the render pool object.
