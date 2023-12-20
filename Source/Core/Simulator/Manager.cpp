@@ -330,7 +330,9 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Create Cylinder Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Create Cylinder Called, On Sim " + std::to_string(SimulationID), 3);
+
+
     float E0Radius_um  = Util::GetFloat(&RequestJSON, "Point1Radius_um");
     float E0X_um = Util::GetFloat(&RequestJSON, "Point1PosX_um");
     float E0Y_um = Util::GetFloat(&RequestJSON, "Point1PosY_um");
@@ -341,10 +343,6 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     float E1Z_um = Util::GetFloat(&RequestJSON, "Point2PosZ_um");
     std::string Name = Util::GetString(&RequestJSON, "Name");
 
-    //std::cout << "E0:" << E0X_um << ',' << E0Y_um << ',' << E0Z_um << '\n';
-    //std::cout << "E1:" << E1X_um << ',' << E1Y_um << ',' << E1Z_um << '\n';
-    std::cout << "E0Radius_um: " << E0Radius_um << '\n';
-    std::cout << "E1Radius_um: " << E1Radius_um << '\n';
 
     // Build New Cylinder Object
     Geometries::Cylinder S;
