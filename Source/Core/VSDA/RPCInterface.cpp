@@ -11,19 +11,16 @@ namespace VSDA {
 
 
 
-RPCInterface::RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::Manager* _RPCManager, BG::NES::Renderer::Interface* _Renderer, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer) {
+RPCInterface::RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::Manager* _RPCManager, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer) {
 
     // Check Preconditions
     assert(_Logger != nullptr);
     assert(_RPCManager != nullptr);
-    assert(_Renderer != nullptr);
     assert(_SimulationsVectorPointer != nullptr);
 
     // Copy Parameters To Member Variables
-    Renderer_ = _Renderer;
     Logger_ = _Logger;
     SimulationsPtr_ = _SimulationsVectorPointer;
-
 
     // Log Initialization
     Logger_->Log("Initializing RPC Interface for VSDA Subsystem", 4);

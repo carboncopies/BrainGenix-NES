@@ -301,6 +301,8 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
     _Renderer->UpdateScene();
     _Renderer->UnlockScene();
 
+    _Renderer->DrawFrame();
+
     return true;
 }
 

@@ -95,11 +95,8 @@ public:
      * EnableValidationLayers as the name implies, toggles on and off debug/validation layers.
      * These layers serve to provide debug information for the application developers.
      * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
-     * 
-     * @param _NumArgs Number of args gotten from the main func, known commonly as argc.
-     * @param _ArgValues Values of each of the arguments. Known from main commonly as argv.
     */
-    bool Initialize(int _NumArgs, char** _ArgValues);
+    bool Initialize();
 
     /**
      * @brief Does what the name suggests - draws a frame on the window or offscreen if rendering headless.

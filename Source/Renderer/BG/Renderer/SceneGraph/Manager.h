@@ -100,7 +100,7 @@ public:
      * These layers serve to provide debug information for the application developers.
      * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
     */
-    bool Initialize(int _NumArgs, char** _ArgValues);
+    bool Initialize();
 
 
     /**
@@ -261,6 +261,11 @@ public:
      */
     void WaitUntilGPUDone();
 
+
+
+
+    // Thread Access/Control Functions
+
     /**
      * @brief Locks the scene mutex, allowing other threads to access the scene.
      * 
@@ -272,6 +277,8 @@ public:
      * 
      */
     void UnlockScene();
+
+
 
 
 };

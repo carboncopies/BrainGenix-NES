@@ -41,95 +41,18 @@ Interface::~Interface() {
 }
 
 
-bool Interface::Initialize(int _NumArgs, char** _ArgValues) {
+bool Interface::Initialize() {
     assert(Logger_ != nullptr);
-
 
     if (!RendererManager_->SetupScene()) {
         return false;
     }
 
-
-    // // hacky
-    // Shaders::Phong CubeShader;
-    // CubeShader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
-    // CubeShader.SpecularColor_ = vsg::vec4(1.f, 0.0f, 1.0f, 1.0f);
-    // CubeShader.Type_ = Shaders::SHADER_PHONG;
-    // Primitive::Cube CreateInfo;
-    // CreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 0.0f);
-    // CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
-    // CreateInfo.Scale_    = vsg::vec3(1.0f, 1.0f, 1.0f);
-    // CreateInfo.Shader_ = &CubeShader;
-    // AddBox(&CreateInfo);
-
-    if (!RendererManager_->Initialize(_NumArgs, _ArgValues)) {
+    if (!RendererManager_->Initialize()) {
         return false;
     }
 
-
-
-
-
-
-    // CreateInfo.Position_ = vsg::vec3(-1.1f, 0.0f, 0.0f);
-    // CreateInfo.Rotation_ = vsg::vec3(45.0f, 0.0f, 0.0f);
-    // CreateInfo.Scale_    = vsg::vec3(2.0f, 1.0f, 1.0f);
-    // CubeShader.DiffuseColor_  = vsg::vec4(0.8f, 0.2f, 0.2f, 1.0f);
-    // AddBox(&CreateInfo);
-
-    // CreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 0.0f);
-    // CreateInfo.Rotation_ = vsg::vec3(0.0f, 45.0f, 0.0f);
-    // CreateInfo.Scale_    = vsg::vec3(1.0f, 2.0f, 1.0f);
-    // CubeShader.DiffuseColor_  = vsg::vec4(0.2f, 0.8f, 0.2f, 1.0f);
-    // AddBox(&CreateInfo);
-
-    // CreateInfo.Position_ = vsg::vec3(1.1f, 0.0f, 0.0f);
-    // CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 45.0f);
-    // CreateInfo.Scale_    = vsg::vec3(1.0f, 1.0f, 2.0f);
-    // CubeShader.DiffuseColor_  = vsg::vec4(0.2f, 0.2f, 0.8f, 1.0f);
-    // AddBox(&CreateInfo);
-
-
-    // Shaders::Phong SphereShader;
-    // SphereShader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
-    // SphereShader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
-    // SphereShader.Type_ = Shaders::SHADER_PHONG;
-    // Primitive::Sphere SphereCreateInfo;
-    // SphereCreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 2.0f);
-    // SphereCreateInfo.Radius_   = 1.0f;
-    // SphereCreateInfo.Shader_ = &SphereShader;
-    // AddSphere(&SphereCreateInfo);
-
-
-    // Shaders::Phong CylinderShader;
-    // CylinderShader.DiffuseColor_  = vsg::vec4(1.0f, 0.5f, 0.5f, 1.0f);
-    // CylinderShader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
-    // CylinderShader.Type_ = Shaders::SHADER_PHONG;
-    // Primitive::Cylinder CylinderCreateInfo;
-    // CylinderCreateInfo.Position_ = vsg::vec3(0.0f, 0.0f, 4.0f);
-    // CylinderCreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 2.0f);
-    // CylinderCreateInfo.Radius_   = 1.0f;
-    // CylinderCreateInfo.Height_   = 1.0f;
-    // CylinderCreateInfo.Shader_ = &CylinderShader;
-    // AddCylinder(&CylinderCreateInfo);
-
-
-
-    // CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
-
-    // for (int i = -20; i < 20; i++) {
-    //     for (int y = -20; y < 20; y++) {
-    //         for (int z = -20; z < 20; z++) {
-    //             CubeShader.DiffuseColor_  = vsg::vec4(0.05f*abs(i), 0.05f*abs(y), 0.05f*abs(z), 1.0f);
-    //             CreateInfo.Position_ = vsg::vec3(float(i) + 0.4f*i, float(y) + 0.4f*y, float(z) + 0.4f*z);
-    //             CreateInfo.Rotation_ = vsg::vec3(8.0f*i, 8.0f*y, 8.0f*z);
-    //             AddBox(&CreateInfo);
-    //         }
-    //     }
-    // }
-
     RendererManager_->SetupViewer();
-
 
     return RendererManager_->CompileScene();
 

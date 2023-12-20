@@ -40,16 +40,10 @@ int main(int NumArguments, char** ArgumentValues) {
     // Setup API Server
     BG::NES::API::Manager APIManager(&SystemConfiguration, &Logger);
 
-    // Setup Renderer
-    BG::NES::Renderer::Interface RenderingInterface(&Logger);
-    if (!RenderingInterface.Initialize(NumArguments,  ArgumentValues)) { 
-        Logger.Log("Error During Renderer Initialization, Aborting", 10);
-        return -1;
-    }
 
     // Setup Simulator (Adding the routes here - will need a proper way to do this later on, but works for now)
-    BG::NES::Simulator::Manager SimulationManager(&Logger, &SystemConfiguration, &APIManager, &RenderingInterface);
-    BG::NES::Simulator::VSDA::RPCInterface VSDA_RPCInterface(&Logger, &APIManager, &RenderingInterface, SimulationManager.GetSimulationVectorPtr());
+    BG::NES::Simulator::Manager SimulationManager(&Logger, &SystemConfiguration, &APIManager);
+    BG::NES::Simulator::VSDA::RPCInterface VSDA_RPCInterface(&Logger, &APIManager, SimulationManager.GetSimulationVectorPtr());
 
 
 
@@ -58,15 +52,15 @@ int main(int NumArguments, char** ArgumentValues) {
 
     
     // block forever while servers are running
-    // while (true) {}
+    while (true) {}
     
-    // Run the Renderer
-    while (true) {
-        if (!RenderingInterface.DrawFrame()) {
-            break;
-        }
-        // break; // stop after one frame
-    }
+    // // Run the Renderer
+    // while (true) {
+    //     if (!RenderingInterface.DrawFrame()) {
+    //         break;
+    //     }
+    //     // break; // stop after one frame
+    // }
 
     return 0;
 

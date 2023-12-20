@@ -68,6 +68,8 @@ struct RenderData {
     vsg::ref_ptr<vsg::Window>       Window_;       /**Only initialized if a window is created, holds the vsg window state*/
 
 
+    std::atomic<int> NumFramesToRender_ = 1;       /**In headless mode, specify the number of frames to render before stopping, has no effect in windowed mode.*/
+
 
 
     int Width_ = 1024;

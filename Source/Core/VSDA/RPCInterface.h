@@ -81,10 +81,9 @@ public:
      * 
      * @param _Logger Pointer to logging interface
      * @param _RPCManager Pointer to instance of the RPC manager.
-     * @param _Renderer Instance of rendering system.
      * @param _SimulationsPointerVector Pointer to vector which contains the other simulations. Allows us to access them and modify them as needed.
      */
-    RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::Manager* _RPCManager, BG::NES::Renderer::Interface* _Renderer, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer);
+    RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::Manager* _RPCManager, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer);
 
 
     /**

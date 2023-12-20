@@ -63,7 +63,6 @@ private:
     // Note: This simulation vector is not thread safe and will probably segfault if you try to multithread this
     // we will fix this later when we scale the system (DO NOT ALLOW RPC to use more than 1 thread unless this is fixed!)
 
-    BG::NES::Renderer::Interface* Renderer_ = nullptr; /**Pointer to instance of renderer*/
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/
 
 
@@ -78,7 +77,7 @@ public:
      * @param _RPCManager
      * @param _Renderer Instance of rendering system.
      */
-    Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, API::Manager* _RPCManager, BG::NES::Renderer::Interface* _Renderer);
+    Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, API::Manager* _RPCManager);
 
 
     /**

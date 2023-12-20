@@ -7,14 +7,13 @@ namespace NES {
 namespace Simulator {
 
 
-Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, API::Manager* _RPCManager, BG::NES::Renderer::Interface* _Renderer) {
+Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, API::Manager* _RPCManager) {
     assert(_Logger != nullptr);
     assert(_Config != nullptr);
     assert(_RPCManager != nullptr);
-    assert(_Renderer != nullptr);
+
 
     Config_ = _Config;
-    Renderer_ = _Renderer;
     Logger_ = _Logger;
 
 
@@ -74,7 +73,7 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     Sim->ID = SimID;
 
     // Start Thread
-    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, Renderer_, &StopThreads_));
+    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, &StopThreads_));
 
 
     // Return Status ID
@@ -260,12 +259,14 @@ std::string Manager::SimulationBuildMesh(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
 
-    if (!BuildMeshFromSimulation(Logger_, Renderer_, ThisSimulation)) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 999; // general failure
-        return ResponseJSON.dump();
-    }
+    // if (!BuildMeshFromSimulation(Logger_, Renderer_, ThisSimulation)) {
+    //     nlohmann::json ResponseJSON;
+    //     ResponseJSON["StatusCode"] = 999; // general failure
+    //     return ResponseJSON.dump();
+    // }
     
+    std::cout<<"WARNING THE SIMULATION BUILD MESH FUNCTION DOESNT DO AYNTHING!!!!\n";
+
 
     // Return JSON
     nlohmann::json ResponseJSON;
@@ -799,14 +800,14 @@ std::string Manager::Debug(std::string _JSONRequest) {
     //     Arr.SetVoxel(i, i, i, FILLED);
     // }
 
-    Renderer_->ResetScene();
+    // Renderer_->ResetScene();
 
 
-    // RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, 10);
-    for (unsigned int i = 0; i < Arr.GetZ(); i++) {
-        RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, i);
-        std::this_thread::sleep_for(std::chrono::milliseconds(100)); // delay so our mutex is easier to get by another thread if needed
-    }
+    // // RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, 10);
+    // for (unsigned int i = 0; i < Arr.GetZ(); i++) {
+    //     RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, i);
+    //     std::this_thread::sleep_for(std::chrono::milliseconds(100)); // delay so our mutex is easier to get by another thread if needed
+    // }
 
     // Renderer_->ResetViewer();
 

@@ -25,7 +25,7 @@ Manager::~Manager() {
 }
 
 
-bool Manager::Initialize(int _NumArgs, char** _ArgValues) {
+bool Manager::Initialize() {
     assert(Logger_ != nullptr);
     Logger_->Log("Initializing NES Rendering Subsystem", 5);
 
@@ -41,11 +41,11 @@ bool Manager::Initialize(int _NumArgs, char** _ArgValues) {
 
     // Check if we're running windowed or not
     RenderData_->Headless_ = true;
-    for (int i = 0; i < _NumArgs; i++) {
-        if (std::string(_ArgValues[i]) == "--Windowed") {
-            RenderData_->Headless_ = false;
-        }
-    }
+    // for (int i = 0; i < _NumArgs; i++) {
+    //     if (std::string(_ArgValues[i]) == "--Windowed") {
+    //         RenderData_->Headless_ = false;
+    //     }
+    // }
 
     // Support 3rd Party Format Through vsgXchange
     RenderData_->Options_->add(vsgXchange::all::create());
@@ -132,7 +132,6 @@ bool Manager::Headless_CreateRenderingBuffers() {
 bool Manager::Headless_UpdateRenderingBuffers() {
 
 
-    std::cout << "Frame " << RenderData_->Viewer_->getFrameStamp()->frameCount << std::endl;
     int resizeCadence = 0;
     if (resizeCadence && (RenderData_->Viewer_->getFrameStamp()->frameCount>0) && ((RenderData_->Viewer_->getFrameStamp()->frameCount) % resizeCadence == 0))
     {
@@ -222,11 +221,6 @@ bool Manager::Headless_GetImage() {
             }
         }
 
-        // colorFilename = "screenshot.vsgb";
-        // std::cout<<imageData<<std::endl;
-        // std::cout<<imageData.get()->dataPointer()<<std::endl;
-        // std::ofstream ofs ("/tmp/example.png", std::ofstream::out);
-        // bool status = vsg::write(imageData, colorFilename);
         vsgXchange::all Instance;
         colorFilename = std::to_string(RenderData_->framenumber) + ".bmp";
         RenderData_->framenumber+=1;
@@ -247,19 +241,8 @@ bool Manager::SetupScene() {
 
     Logger_->Log("Setting Up Scene Structure", 1);
 
-
-
-    // vsg::ref_ptr<vsg::Node> teapot = vsg::read_cast<vsg::Node>("teapot.vsgt", vsg::Options::create());
-    // Scene_->Group_->addChild(teapot);
-
-
     Scene_      = std::make_unique<State::Scene>();
-
     Scene_->Group_ = vsg::Group::create();
-    // Scene_->Group_->addChild(teapot);
-
-
-    
 
     return true;
 
@@ -333,11 +316,6 @@ bool Manager::Windowed_SetupCommandGraph() {
 
 bool Manager::Headless_SetupCommandGraph() {
 
-
-    // bool useExecuteCommands = true;
-
-
-
     auto renderGraph = vsg::RenderGraph::create();
 
     renderGraph->framebuffer = RenderData_->framebuffer;
@@ -349,20 +327,6 @@ bool Manager::Headless_SetupCommandGraph() {
 
     vsg::CommandGraphs commandGraphs;
     
-    // if (useExecuteCommands)
-    // {
-    //     auto secondaryCommandGraph = vsg::SecondaryCommandGraph::create(RenderData_->Headless_Device_, RenderData_->QueueFamily_);
-    //     secondaryCommandGraph->addChild(view);
-    //     secondaryCommandGraph->framebuffer = RenderData_->framebuffer;
-    //     commandGraphs.push_back(secondaryCommandGraph);
-
-    //     auto executeCommands = vsg::ExecuteCommands::create();
-    //     executeCommands->connect(secondaryCommandGraph);
-
-    //     renderGraph->contents = VK_SUBPASS_CONTENTS_SECONDARY_COMMAND_BUFFERS;
-    //     renderGraph->addChild(executeCommands);
-    // }
-    // else
     renderGraph->addChild(view);
 
     auto commandGraph = vsg::CommandGraph::create(RenderData_->Headless_Device_, RenderData_->QueueFamily_);
@@ -407,20 +371,8 @@ bool Manager::SetupViewer() {
     if (RenderData_->Headless_) {
         RenderData_->Viewer_ = vsg::Viewer::create();
 
-        // if (pathFilename)
-        // {
-        //     auto animationPath = vsg::read_cast<vsg::AnimationPath>(pathFilename, options);
-        //     if (!animationPath)
-        //     {
-        //         std::cout<<"Warning: unable to read animation path : "<<pathFilename<<std::endl;
-        //         return 1;
-        //     }
-        //     viewer->addEventHandler(vsg::AnimationPathHandler::create(camera, animationPath, viewer->start_point()));
-        // }
-
         RenderData_->Viewer_->assignRecordAndSubmitTaskAndPresentation(RenderData_->CommandGraphs_);
 
-        // viewer->compile();
     }
 
 
@@ -452,7 +404,12 @@ bool Manager::ClearScene() {
 bool Manager::DrawFrame() {
 
 
-    // rendering main loop
+    // // Check If There Is Something To Render Or Not
+    // if (RenderData_->NumFramesToRender_ < 1 || RenderData_->Headless_) {
+    //     return true; // Early Exit for renderer, nothing to do.
+    // }
+
+
 
     LockScene(); // Control Thread Safety
 
@@ -462,7 +419,6 @@ bool Manager::DrawFrame() {
     if (!Status) {
         return false;
     }
-
 
     // if (RenderData_->Headless_) { // only happens when we need to resize the buffer (which is never for now)
     //     Headless_UpdateRenderingBuffers();
@@ -512,6 +468,7 @@ void Manager::WaitUntilGPUDone() {
     return;
 }
 
+
 void Manager::LockScene() {
     SceneAccessLock_.lock();
 }
@@ -519,6 +476,8 @@ void Manager::LockScene() {
 void Manager::UnlockScene() {
     SceneAccessLock_.unlock();
 }
+
+
 
 }; // Close Namespace Logger
 }; // Close Namespace Common
