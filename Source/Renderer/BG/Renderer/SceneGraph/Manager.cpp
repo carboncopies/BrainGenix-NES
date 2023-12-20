@@ -228,7 +228,8 @@ bool Manager::Headless_GetImage(std::string _FilePath) {
         // colorFilename = std::to_string(RenderData_->framenumber) + ".bmp";
         // RenderData_->framenumber+=1;
         bool status = Instance.write(imageData, _FilePath);
-        std::cout<<"Wrote File "<<_FilePath<<std::endl;;
+        logger_ ->Log("Wrote file", 0);
+        //std::cout<<"Wrote File "<<_FilePath<<std::endl;;
         if (!status) {
             std::cout<<"Error writing file!\n";
         }
