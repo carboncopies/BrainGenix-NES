@@ -8,6 +8,10 @@ namespace Simulator {
 
 
 void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, VSDA::RenderPool* _RenderPool, std::atomic<bool>* _StopThreads) {
+    assert(_Logger != nullptr);
+    assert(_Sim != nullptr);
+    assert(_RenderPool != nullptr);
+    assert(_StopThreads != nullptr);
 
     // Log Init message
     _Logger->Log("Starting Simulation Updater Thread", 3);

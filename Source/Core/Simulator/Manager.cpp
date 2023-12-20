@@ -11,10 +11,12 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     assert(_Logger != nullptr);
     assert(_Config != nullptr);
     assert(_RPCManager != nullptr);
+    assert(_RenderPool != nullptr);
 
 
     Config_ = _Config;
     Logger_ = _Logger;
+    RenderPool_ = _RenderPool;
 
 
     // Register Callback For CreateSim

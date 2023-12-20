@@ -61,6 +61,9 @@ RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, int _NumThrea
 
     // Create Renderer Instances
     Logger_->Log("Creating RenderPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
+    if (_NumThreads > 1) {
+        std::cerr<<"Warning, creating multiple renderer threads currently breaks :(  VSG needs to be recompiled with a define changed!\n";
+    }
     for (unsigned int i = 0; i < _NumThreads; i++) {
         Logger_->Log("Starting RenderPool Thread " + std::to_string(i), 1);
         RenderThreads_.push_back(std::thread(&RenderPool::RendererThreadMainFunction, this, i));
@@ -89,24 +92,18 @@ RenderPool::~RenderPool() {
 void RenderPool::EnqueueSimulation(Simulation* _Sim) {
 
     // Firstly, Ensure Nobody Else Is Using The Queue
-    QueueMutex_.lock();
+    std::lock_guard<std::mutex> LockQueue(QueueMutex_);
 
     Queue_.emplace(_Sim);
-
-    // Now That We're Done, Unlock The Queue
-    QueueMutex_.unlock();
 
 }
 
 int RenderPool::GetQueueSize() {
 
     // Firstly, Ensure Nobody Else Is Using The Queue
-    QueueMutex_.lock();
+    std::lock_guard<std::mutex> LockQueue(QueueMutex_);
 
     int QueueSize = Queue_.size();
-
-    // Now That We're Done, Unlock The Queue
-    QueueMutex_.unlock();
 
     return QueueSize;
 
@@ -116,7 +113,6 @@ bool RenderPool::DequeueSimulation(Simulation** _SimPtr) {
 
     // Firstly, Ensure Nobody Else Is Using The Queue
     std::lock_guard<std::mutex> LockQueue(QueueMutex_);
-
 
     // If the queue isn't empty, we grab the first element
     if (Queue_.size() > 0) {
