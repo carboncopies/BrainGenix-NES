@@ -19,9 +19,6 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
     // Setup Simulation Engine
     Engine SE;
 
-
-
-
     // Enter into loop until thread should stop
     while (!(*_StopThreads)) {
 
@@ -51,7 +48,6 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
                     std::this_thread::sleep_for(std::chrono::milliseconds(10)); // sleep for 10ms
                 }
 
-
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
             }
@@ -66,7 +62,6 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
     _Logger->Log("Simulation Engine Thread Exiting", 4);
 
 }
-
 
 
 }; // Close Namespace Simulator
