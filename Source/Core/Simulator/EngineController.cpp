@@ -47,7 +47,7 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
                 while (_Sim->IsRendering) {
                     std::this_thread::sleep_for(std::chrono::milliseconds(10)); // sleep for 10ms
                 }
-
+                _Sim->VSDAData_.State_ = VSDA_RENDER_DONE;
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
             }
