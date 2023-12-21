@@ -255,7 +255,7 @@ std::string RPCInterface::VSDAEMGetImage(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
     std::string ImageHandle = Util::GetString(&RequestJSON, "ImageHandle");
-    Logger_->Log(std::string("VSDA EM GetImage Called On Simulation With ID ") + std::to_string(SimulationID) + " With Handle " + ImageHandle, 3);
+    Logger_->Log(std::string("VSDA EM GetImage Called On Simulation ") + std::to_string(SimulationID) + ", Handle " + ImageHandle, 3);
 
     // Check Sim ID
     if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
@@ -288,11 +288,12 @@ std::string RPCInterface::VSDAEMGetImage(std::string _JSONRequest) {
     if (ImageStream.good()) {
         ImageStream>>RawData;
         ImageStream.close();
+
+    } else {
+        Logger_->Log("An Invalid ImageHandle Was Provided", 6);
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 2; // error
         return ResponseJSON.dump();
-    } else {
-        Logger_->Log("An Invalid ImageHandle Was Provided", 6);
     }
 
 
