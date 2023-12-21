@@ -271,8 +271,8 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
                 Renderer::Shaders::Phong BoxShader;
 
                 if (ThisVoxel == FILLED) {
-                    BoxShader.DiffuseColor_  = vsg::vec4(X/(float)_Array->GetX(), Y/(float)_Array->GetY(), 1.0, 1.0f);
-                    BoxShader.SpecularColor_ = vsg::vec4(0.f, 0.f, 0.f, 0.0f);
+                    BoxShader.DiffuseColor_  = vsg::vec4(0.8f, 0.8f, 0.8f, 1.0f);//vsg::vec4(X/(float)_Array->GetX(), Y/(float)_Array->GetY(), 1.0, 1.0f);
+                    BoxShader.SpecularColor_ = vsg::vec4(0.0f, 0.0f, 0.0f, 0.0f);
                 } else if (ThisVoxel == BORDER) {
                     BoxShader.DiffuseColor_  = vsg::vec4(1.0, 0.5, 0.3, 1.0f);
                     BoxShader.SpecularColor_ = vsg::vec4(0.f, 0.f, 0.f, 0.0f);

@@ -1,9 +1,10 @@
 #include <BG/Renderer/SceneGraph/Manager.h>
 
-
+#include <dlfcn.h>
+#include "renderdoc_app.h"
 
 // TODO: Update Doxygen Docs!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+RENDERDOC_API_1_1_2 *rdoc_api = NULL;
 
 
 namespace BG {
@@ -17,6 +18,15 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger) {
     Logger_ = _Logger;
 
     Initialized_ = false;
+
+// At init, on linux/android.
+// For android replace librenderdoc.so with libVkLayer_GLES_RenderDoc.so
+if(void *mod = dlopen("librenderdoc.so", RTLD_NOW | RTLD_NOLOAD))
+{
+    pRENDERDOC_GetAPI RENDERDOC_GetAPI = (pRENDERDOC_GetAPI)dlsym(mod, "RENDERDOC_GetAPI");
+    int ret = RENDERDOC_GetAPI(eRENDERDOC_API_Version_1_1_2, (void **)&rdoc_api);
+    assert(ret == 1);
+}
 
 }
 
@@ -431,8 +441,40 @@ bool Manager::DrawFrame(std::string _FilePath) {
     // Lock the scene mutex to ensure we're the only ones accessing it right now
     LockScene();
 
-    auto teapot = vsg::read_cast<vsg::Node>("teapot.vgst");
-    Scene_->Group_->addChild(teapot);
+    // vsg::ref_ptr<vsg::Node> teapot = vsg::read_cast<vsg::Node>("teapot.vsgt");
+    // // assert(teapot);
+    // Scene_->Group_->addChild(teapot);
+
+
+    // auto pointLight = vsg::PointLight::create();
+    // pointLight->name = "point";
+    // pointLight->color.set(1.0, 1.0, 1.0);
+    // pointLight->intensity = 50;
+    // pointLight->position.set(0.0, 0.0, 6.0);
+
+    // // enable culling of the point light by decorating with a CullGroup
+    // auto cullGroup = vsg::CullGroup::create();
+    // cullGroup->bound.center = pointLight->position;
+    // cullGroup->bound.radius = 40;
+
+    // cullGroup->addChild(pointLight);
+
+    // Scene_->Group_->addChild(cullGroup);
+
+
+    auto directionalLight = vsg::DirectionalLight::create();
+    directionalLight->name = "directional";
+    directionalLight->color.set(1.0, 1.0, 1.0);
+    directionalLight->intensity = 1.0;
+    directionalLight->direction.set(0.0, 0.0, -1.0);
+    Scene_->Group_->addChild(directionalLight);
+
+
+
+if(rdoc_api) rdoc_api->StartFrameCapture(NULL, NULL);
+
+
+
 
     // Called every frame
     bool Status = RenderData_->Viewer_->advanceToNextFrame();
@@ -457,6 +499,9 @@ bool Manager::DrawFrame(std::string _FilePath) {
         RenderData_->Viewer_->present();
     }
 
+
+// stop the capture
+if(rdoc_api) rdoc_api->EndFrameCapture(NULL, NULL);
 
     // Okay, we're done with the scene mutex now, it can be released
     UnlockScene();
