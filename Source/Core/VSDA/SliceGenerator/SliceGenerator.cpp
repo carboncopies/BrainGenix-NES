@@ -239,7 +239,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 }
 
-bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, MicroscopeParameters* _Params, VoxelArray* _Array, std::string _FilePrefix, int SliceNumber) {
+bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, MicroscopeParameters* _Params, VoxelArray* _Array, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber) {
     assert(_Array != nullptr);
     assert(_Params != nullptr);
     assert(_Logger != nullptr);
@@ -309,6 +309,10 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
 
     std::string FilePath = "Renders/" + _FilePrefix + "_Slice" + std::to_string(SliceNumber) + ".bmp";
     _Renderer->DrawFrame(FilePath);
+    _FileNameArray->push_back(FilePath);
+
+    // TOOD: Make this render the whole slice at the requested resolution/height of camera.
+
 
     return true;
 }

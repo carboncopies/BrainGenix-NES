@@ -202,6 +202,30 @@ std::string RPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
 }
 std::string RPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
 
+    // Parse Request, Get Parameters
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+    Logger_->Log(std::string("VSDA EM GetImageStack Called On Simulation With ID ") + std::to_string(SimulationID), 4);
+
+    // Check Sim ID
+    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
+        Logger_->Log(std::string("VSDA EM GetImageStack Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        return ResponseJSON.dump();
+    }
+
+    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+
+    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
+    ResponseJSON["RenderedImages"] = ThisSimulation->RenderedImagePaths_;
+    
+    return ResponseJSON.dump();
+
+
 }
 
 
