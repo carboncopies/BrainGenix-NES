@@ -175,6 +175,8 @@ target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE
     CompilePlatformInfo
 )
 target_include_directories(${PROJECT_LIBRARY_NAME} PUBLIC ${SRC_DIR}/Core)
+target_include_directories(${PROJECT_LIBRARY_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
+
 
 # Create Main Executable
 add_executable(${PROJECT_NAME} ${MAIN_SOURCES})
@@ -193,6 +195,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     CompilePlatformInfo
 )
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
 
 # Configure testing.
 enable_testing()
@@ -208,5 +211,6 @@ target_link_libraries(${TEST_BINS} PRIVATE
     ${PROJECT_LIBRARY_NAME}
 )
 target_include_directories(${TEST_BINS} PUBLIC ${SRC_DIR}/Core)
+target_include_directories(${TEST_BINS} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
 
 gtest_discover_tests(${TEST_BINS})

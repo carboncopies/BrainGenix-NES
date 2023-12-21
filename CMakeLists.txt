@@ -45,6 +45,8 @@ find_package(rpclib CONFIG REQUIRED)
 message(STATUS "Finding system pthreads lib")
 find_package(Threads REQUIRED)
 
+find_path(CPP_BASE64_INCLUDE_DIRS "cpp-base64/base64.cpp")
+
 
 # Renderer Dependencies
 message(STATUS "Setting up Vulkan Library")

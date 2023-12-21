@@ -148,6 +148,14 @@ public:
      */
     std::string VSDAEMGetImageStack(std::string _JSONRequest);
 
+    /**
+     * @brief Will get an image that has been rendered and returned in the getstack function.
+     * Will return this as a base64 encoded string which can be then converted to an image file later on by the renderer.
+     * 
+     * @param _JSONRequest 
+     * @return std::string 
+     */
+    std::string VSDAEMGetImage(std::string _JSONRequest);
 
 
 

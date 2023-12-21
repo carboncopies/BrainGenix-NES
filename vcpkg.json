@@ -13,6 +13,7 @@
     "vulkan",
     "vk-bootstrap",
     "vsg",
+    "cpp-base64",
     {
       "name": "vsgxchange",
       "features": [
