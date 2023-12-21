@@ -40,8 +40,9 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
     _Logger->Log("Starting Slice By Slice Render", 2);
     _Renderer->ResetScene();
     for (unsigned int i = 0; i < _Simulation->VSDAData_.Array_.get()->GetZ(); i++) {
-        std::string FileNamePrefix = "Simulation" + std::to_string(_Simulation->ID);
-        RenderSliceFromArray(_Logger, _Renderer, &_Simulation->VSDAData_.Params_, _Simulation->VSDAData_.Array_.get(), &_Simulation->RenderedImagePaths_, FileNamePrefix, i);
+        std::string FileNamePrefix = "Simulation" + std::to_string(_Simulation->ID) + "_Region" + std::to_string(_Simulation->VSDAData_.ActiveRegionID_);
+        std::vector<std::string>* RegionSpecificFilePathList = &_Simulation->VSDAData_.RenderedImagePaths_[_Simulation->VSDAData_.ActiveRegionID_];
+        RenderSliceFromArray(_Logger, _Renderer, &_Simulation->VSDAData_.Params_, _Simulation->VSDAData_.Array_.get(), RegionSpecificFilePathList, FileNamePrefix, i);
         // std::this_thread::sleep_for(std::chrono::milliseconds(100)); // delay so our mutex is easier to get by another thread if needed
     }
 

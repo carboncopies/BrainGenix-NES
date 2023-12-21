@@ -205,6 +205,7 @@ std::string RPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
     // Parse Request, Get Parameters
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+    int ScanRegionID = Util::GetInt(&RequestJSON, "ScanRegionID");
     Logger_->Log(std::string("VSDA EM GetImageStack Called On Simulation With ID ") + std::to_string(SimulationID), 4);
 
     // Check Sim ID
@@ -217,11 +218,21 @@ std::string RPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
 
     Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
 
+
+    // Check Region ID
+    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_.RenderedImagePaths_.size()) {
+        Logger_->Log(std::string("VSDA EM GetImageStack Error, ScanRegion With ID ") + std::to_string(ScanRegionID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 3; // Error
+        return ResponseJSON.dump();
+    } 
+
+
     // Build Response
     nlohmann::json ResponseJSON;
 
     ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
-    ResponseJSON["RenderedImages"] = ThisSimulation->RenderedImagePaths_;
+    ResponseJSON["RenderedImages"] = ThisSimulation->VSDAData_.RenderedImagePaths_[ScanRegionID];
     
     return ResponseJSON.dump();
 

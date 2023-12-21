@@ -79,7 +79,6 @@ struct Simulation {
     float RunTimes_ms; /**Number of ms to be simulated next time runfor is called - if not, set to -1*/
     SimulationActions CurrentTask; /**Current task to be processed on this simulation, could be run for, or reset, etc. See above enum for more info.*/
 
-    std::vector<std::string> RenderedImagePaths_; /**List of paths to be populated as we render all the images for this simulation into a stack*/
 
 
     Geometries::GeometryCollection Collection; /**Instance of GeometryCollection struct containing all geometries in this simulation*/
