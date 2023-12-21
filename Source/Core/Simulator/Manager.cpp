@@ -73,6 +73,7 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     Simulation* Sim = Simulations_[SimID].get();
     Sim->Name = SimulationName;
     Sim->ID = SimID;
+    Sim->CurrentTask = SIMULATION_NONE;
 
     // Start Thread
     SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, RenderPool_, &StopThreads_));
