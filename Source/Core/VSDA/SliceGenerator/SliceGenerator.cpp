@@ -69,6 +69,9 @@ bool VSDA_EM_DefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simula
     _Sim->VSDAData_.Regions_.push_back(_ScanRegion);
     (*_RegionID) = _Sim->VSDAData_.Regions_.size()-1;
 
+    // Add New Vector To Store The Rendered Image Paths As We Create Them Later On
+    _Sim->VSDAData_.RenderedImagePaths_.push_back(std::vector<std::string>());
+
     return true;
 
 }
