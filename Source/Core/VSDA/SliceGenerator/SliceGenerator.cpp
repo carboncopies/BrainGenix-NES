@@ -106,21 +106,21 @@ bool VSDA_EM_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Si
 
 bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
 
-    // X Alligned Border
-    for (int X = 0; X < _Array->GetX(); X++) {
-        _Array->SetVoxel(X, 0, 0, BORDER);
-        _Array->SetVoxel(X, _Array->GetY()-1, 0, BORDER);
-        _Array->SetVoxel(X, 0, _Array->GetZ()-1, BORDER);
-        _Array->SetVoxel(X, _Array->GetY()-1, _Array->GetZ()-1, BORDER);
-    }
+    // // X Alligned Border
+    // for (int X = 0; X < _Array->GetX(); X++) {
+    //     _Array->SetVoxel(X, 0, 0, BORDER);
+    //     _Array->SetVoxel(X, _Array->GetY()-1, 0, BORDER);
+    //     _Array->SetVoxel(X, 0, _Array->GetZ()-1, BORDER);
+    //     _Array->SetVoxel(X, _Array->GetY()-1, _Array->GetZ()-1, BORDER);
+    // }
 
-    // Y Alligned Border
-    for (int Y = 0; Y < _Array->GetY(); Y++) {
-        _Array->SetVoxel(0, Y, 0, BORDER);
-        _Array->SetVoxel(_Array->GetX()-1, Y, 0, BORDER);
-        _Array->SetVoxel(0, Y, _Array->GetZ()-1, BORDER);
-        _Array->SetVoxel(_Array->GetX()-1, Y, _Array->GetZ()-1, BORDER);
-    }
+    // // Y Alligned Border
+    // for (int Y = 0; Y < _Array->GetY(); Y++) {
+    //     _Array->SetVoxel(0, Y, 0, BORDER);
+    //     _Array->SetVoxel(_Array->GetX()-1, Y, 0, BORDER);
+    //     _Array->SetVoxel(0, Y, _Array->GetZ()-1, BORDER);
+    //     _Array->SetVoxel(_Array->GetX()-1, Y, _Array->GetZ()-1, BORDER);
+    // }
 
     // Z Alligned Border
     for (int Z = 0; Z < _Array->GetZ(); Z++) {
