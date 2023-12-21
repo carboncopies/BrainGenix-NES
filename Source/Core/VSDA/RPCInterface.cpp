@@ -286,7 +286,10 @@ std::string RPCInterface::VSDAEMGetImage(std::string _JSONRequest) {
     std::ifstream ImageStream(SafeHandle.c_str(), std::ios::binary);
     std::string RawData;
     if (ImageStream.good()) {
-        ImageStream>>RawData;
+        std::stringstream Buffer;
+        Buffer << ImageStream.rdbuf();
+        RawData = Buffer.str();
+        // ImageStream>>RawData;
         ImageStream.close();
 
     } else {
@@ -296,16 +299,15 @@ std::string RPCInterface::VSDAEMGetImage(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
 
-
     // Now, Convert It To Base64
-    std::string Base64Data = base64_encode(RawData);
-    std::cout<<Base64Data<<std::endl;
+    std::string Base64Data = base64_encode(reinterpret_cast<const unsigned char*>(RawData.c_str()), RawData.length());
 
 
     // Build Response
     nlohmann::json ResponseJSON;
 
-    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
+    ResponseJSON["StatusCode"] = (int)(ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE);
+    ResponseJSON["ImageData"] = Base64Data;
 
     // nlohmann::json ImagePaths = ThisSimulation->VSDAData_.RenderedImagePaths_[ScanRegionID];
     // ResponseJSON["RenderedImages"] = ImagePaths;
