@@ -37,6 +37,9 @@
 #include <Simulator/Structs/Receptor.h>
 #include <Simulator/Structs/Staple.h>
 
+#include <VSDA/SliceGenerator/Structs/VSDAData.h>
+
+
 //! The value of tMax_ms at which recording will be done forever.
 #define _RECORD_FOREVER_TMAX_MS -1.0
 
@@ -44,7 +47,7 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
-enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR };
+enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA };
 
 /**
  * @brief Name of the simulation
@@ -84,6 +87,8 @@ struct Simulation {
 
     std::vector<Tools::PatchClampDAC> PatchClampDACs; /**List of patchclamp dacs, id is index*/
     std::vector<Tools::PatchClampADC> PatchClampADCs; /**List of patchclamp adcs, id is index*/
+
+    VSDAData VSDAData_; /**Instance of the simulator VSDA data - stores the state for the renderer to use*/
 
     //! Constructors
     Simulation();

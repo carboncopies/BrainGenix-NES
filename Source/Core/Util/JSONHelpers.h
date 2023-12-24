@@ -34,6 +34,15 @@ void SetVec3(Simulator::Geometries::Vec3D& _Vector, std::string _Input);
 
 void GetVec3(Simulator::Geometries::Vec3D& _Vector, nlohmann::json* _Input, std::string _Prefix, std::string _Units="um");
 
+/**
+ * @brief Attempts to get values from an array parameter, example: foo=[1,2,3]
+ * 
+ * @param _Vector Vector that we're going to populate with the result.
+ * @param _Input Input bit of json (pointer to).
+ * @param _Name Name of parameter we're trying to get.
+ */
+void GetArrVec3(Simulator::Geometries::Vec3D& _Vector, nlohmann::json* _Input, std::string _Name);
+
 void GetFloatVector(std::vector<float>* _Vector, nlohmann::json* _Input, std::string _JSONKey);
 
 

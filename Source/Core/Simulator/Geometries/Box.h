@@ -29,8 +29,7 @@ namespace Geometries {
 struct Box : Geometry {
 
     Vec3D Dims_um{5.0, 10.0, 10.0}; //! Dimensions of the box.
-    Vec3D Rotations_rad{0.0, 0.0,
-                        0.0}; //! Rotation of the box (euler angles) in radians.
+    Vec3D Rotations_rad{0.0, 0.0, 0.0}; //! Rotation of the box (euler angles) in radians.
 
     //! Constructors
     Box();
@@ -53,6 +52,10 @@ struct Box : Geometry {
 
     //! Returns the bounding box
     virtual BoundingBox GetBoundingBox();
+    virtual bool IsPointInShape(Vec3D _Position_um);
+
+    //! Returns a point cloud that can be used to fill voxels representing the cylinder.
+    std::vector<Vec3D> GetPointCloud(float _VoxelScale);
 
 };
 

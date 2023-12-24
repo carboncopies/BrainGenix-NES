@@ -33,7 +33,8 @@
 #include <Simulator/Structs/PatchClampDAC.h>
 #include <Simulator/Structs/PatchClampADC.h>
 
-#include <VSDA/MeshBuilder.h>
+#include <VSDA/DebugHelpers/MeshBuilder.h>
+#include <VSDA/SliceGenerator/SliceGenerator.h> // Temporary for the debug route - remove this later
 #include <BG/Renderer/Interface.h>
 
 #include <Simulator/EngineController.h>
@@ -89,6 +90,8 @@ public:
 
     /**
      * @brief Various routes for API
+     * Note that since this file is getting to long, several RPC handlers are being setup - each taking over part of this.
+     * See the relevant file in RPCInterface.(cpp/h) in various directories. 
      * 
      * @param _JSONRequest 
      * @return std::string 
@@ -128,6 +131,13 @@ public:
      * @return false 
      */
     bool IsSimulationBusy(Simulation* _Sim);
+
+    /**
+     * @brief Returns a pointer to the current simulation vector.
+     * 
+     * @return std::vector<std::unique_ptr<Simulation>>* 
+     */
+    std::vector<std::unique_ptr<Simulation>>* GetSimulationVectorPtr();
 
 };
 

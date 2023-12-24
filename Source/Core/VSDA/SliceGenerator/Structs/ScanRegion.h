@@ -32,7 +32,7 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-
+#include <string>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -60,6 +60,21 @@ struct ScanRegion {
     float Point2X_um;
     float Point2Y_um;
     float Point2Z_um;
+
+
+    /**
+     * @brief Helper function that returns the x,y,z size of this region.
+     * 
+     * @return std::string 
+     */
+    std::string Dimensions();
+
+    /**
+     * @brief Returns a string representation of the two points defining this region.
+     * 
+     * @return std::string 
+     */
+    std::string ToString();
 
 };
 

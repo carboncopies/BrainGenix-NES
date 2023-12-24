@@ -11,6 +11,8 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::Common::Logger::LoggingSystem Logger(true); // NOTE THAT THIS IS TEMPORARY; IT NEEDS TO BE EVENTUALLY FED
     // CONFIGURATION INFO FROM THE CONFIG SUBSYS - CURRENTLY IT IS OPERATING IN UNIT-TEST MODE!!!!
 
+    Logger.SetKeepVectorLogs(false); // this causes a segfault for some reason
+
     // Setup API Server
     BG::NES::API::Manager APIManager(&SystemConfiguration);
 
@@ -21,9 +23,9 @@ int main(int NumArguments, char** ArgumentValues) {
         return -1;
     }
 
-    // Setup Simulator
+    // Setup Simulator (Adding the routes here - will need a proper way to do this later on, but works for now)
     BG::NES::Simulator::Manager SimulationManager(&Logger, &SystemConfiguration, &APIManager, &RenderingInterface);
-
+    BG::NES::Simulator::VSDA::RPCInterface VSDA_RPCInterface(&Logger, &APIManager, &RenderingInterface, SimulationManager.GetSimulationVectorPtr());
 
 
 
@@ -34,9 +36,11 @@ int main(int NumArguments, char** ArgumentValues) {
     // block forever while servers are running
     // while (true) {}
     
-    // draw a thousand frames
-    for (unsigned int i = 0; i < 1000; i++) {
-        RenderingInterface.DrawFrame();
+    // Run the Renderer
+    while (true) {
+        if (!RenderingInterface.DrawFrame()) {
+            break;
+        }
     }
 
     return 0;

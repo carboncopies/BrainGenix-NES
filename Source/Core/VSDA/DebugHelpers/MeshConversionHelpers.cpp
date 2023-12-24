@@ -1,4 +1,4 @@
-#include <VSDA/MeshBuilder.h>
+#include <VSDA/DebugHelpers/MeshBuilder.h>
 
 namespace BG {
 namespace NES {

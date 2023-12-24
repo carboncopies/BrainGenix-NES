@@ -38,6 +38,9 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     _RPCManager->AddRoute("Tool/PatchClampADC/SetSampleRate", [this](std::string RequestJSON){ return PatchClampADCSetSampleRate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampADC/GetRecordedData", [this](std::string RequestJSON){ return PatchClampADCGetRecordedData(RequestJSON);});
 
+
+    _RPCManager->AddRoute("Debug", [this](std::string RequestJSON){ return Debug(RequestJSON);});
+
     // Start SE Thread
     StopThreads_ = false;
 
@@ -71,7 +74,7 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     Sim->ID = SimID;
 
     // Start Thread
-    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Sim, &StopThreads_));
+    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, Renderer_, &StopThreads_));
 
 
     // Return Status ID
@@ -324,16 +327,20 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
     std::cout<<"[Info] Create Cylinder Called, On Sim "<<SimulationID<<std::endl;
-    float E0Radius_um  = Util::GetFloat(&RequestJSON, "End0Radius_um");
-    float E0X_um = Util::GetFloat(&RequestJSON, "End0PosX_um");
-    float E0Y_um = Util::GetFloat(&RequestJSON, "End0PosY_um");
-    float E0Z_um = Util::GetFloat(&RequestJSON, "End0PosZ_um");
-    float E1Radius_um  = Util::GetFloat(&RequestJSON, "End1Radius_um");
-    float E1X_um = Util::GetFloat(&RequestJSON, "End1PosX_um");
-    float E1Y_um = Util::GetFloat(&RequestJSON, "End1PosY_um");
-    float E1Z_um = Util::GetFloat(&RequestJSON, "End1PosZ_um");
+    float E0Radius_um  = Util::GetFloat(&RequestJSON, "Point1Radius_um");
+    float E0X_um = Util::GetFloat(&RequestJSON, "Point1PosX_um");
+    float E0Y_um = Util::GetFloat(&RequestJSON, "Point1PosY_um");
+    float E0Z_um = Util::GetFloat(&RequestJSON, "Point1PosZ_um");
+    float E1Radius_um  = Util::GetFloat(&RequestJSON, "Point2Radius_um");
+    float E1X_um = Util::GetFloat(&RequestJSON, "Point2PosX_um");
+    float E1Y_um = Util::GetFloat(&RequestJSON, "Point2PosY_um");
+    float E1Z_um = Util::GetFloat(&RequestJSON, "Point2PosZ_um");
     std::string Name = Util::GetString(&RequestJSON, "Name");
 
+    //std::cout << "E0:" << E0X_um << ',' << E0Y_um << ',' << E0Z_um << '\n';
+    //std::cout << "E1:" << E1X_um << ',' << E1Y_um << ',' << E1Z_um << '\n';
+    std::cout << "E0Radius_um: " << E0Radius_um << '\n';
+    std::cout << "E1Radius_um: " << E1Radius_um << '\n';
 
     // Build New Cylinder Object
     Geometries::Cylinder S;
@@ -751,14 +758,57 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
+
 std::string Manager::Debug(std::string _JSONRequest) {
 
     // Parse Request
+    std::cout<<_JSONRequest<<std::endl;
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
 
-    if (Util::GetString(&RequestJSON, "Action") == "Render") {
+    // if (Util::GetString(&RequestJSON, "Action") == "Render") {
 
+    // }
+
+
+    std::cout<<"This will break if you don't have at least one simulation. Trying to get sim with id >0\n";
+
+    Simulation* ThisSimulation = Simulations_[Simulations_.size()-1].get();
+
+
+    BoundingBox BB = BoundingBox();
+    BB.bb_point1[0] = -1.;
+    BB.bb_point1[1] = -1.;
+    BB.bb_point1[2] = -1.;
+
+    BB.bb_point2[0] = 9.;
+    BB.bb_point2[1] = 6.;
+    BB.bb_point2[2] = 6.;
+
+    
+    float VoxelSize = atof(Util::GetString(&RequestJSON, "Query").c_str());
+    VoxelArray Arr(BB, VoxelSize);
+
+
+    MicroscopeParameters MParams;
+    MParams.VoxelResolution_um = VoxelSize;
+
+
+    CreateVoxelArrayFromSimulation(Logger_, ThisSimulation, &MParams, &Arr);
+
+    // for (unsigned int i = 0; i < Arr.GetZ(); i++) {
+    //     Arr.SetVoxel(i, i, i, FILLED);
+    // }
+
+    Renderer_->ResetScene();
+
+
+    // RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, 10);
+    for (unsigned int i = 0; i < Arr.GetZ(); i++) {
+        RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, i);
+        std::this_thread::sleep_for(std::chrono::milliseconds(100)); // delay so our mutex is easier to get by another thread if needed
     }
+
+    // Renderer_->ResetViewer();
 
 
 
@@ -772,6 +822,10 @@ std::string Manager::Debug(std::string _JSONRequest) {
 
 bool Manager::IsSimulationBusy(Simulation* _Sim) {
     return _Sim->IsProcessing || _Sim->WorkRequested;
+}
+
+std::vector<std::unique_ptr<Simulation>>* Manager::GetSimulationVectorPtr() {
+    return &Simulations_;
 }
 
 }; // Close Namespace Simulator

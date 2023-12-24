@@ -82,7 +82,7 @@ bool GeometryBuilder::CreateSphere(vsg::ref_ptr<vsg::Group> _Scene, Primitive::S
     Info.transform = Math::BuildTransformMatrix(
             _SphereCreateInfo->Position_,
             vsg::vec3(0.f, 0.f, 0.f),
-            vsg::vec3(_SphereCreateInfo->Radius_, _SphereCreateInfo->Radius_, _SphereCreateInfo->Radius_)
+            vsg::vec3(_SphereCreateInfo->Radius_*2, _SphereCreateInfo->Radius_*2, _SphereCreateInfo->Radius_*2)
         );
 
 

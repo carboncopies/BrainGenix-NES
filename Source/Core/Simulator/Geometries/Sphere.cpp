@@ -32,12 +32,20 @@ BoundingBox Sphere::GetBoundingBox() {
     bb.bb_point1[1] = Center_um.y - Radius_um;
     bb.bb_point1[2] = Center_um.z - Radius_um;
 
-    bb.bb_point1[0] = Center_um.x + Radius_um;
-    bb.bb_point1[1] = Center_um.y + Radius_um;
-    bb.bb_point1[2] = Center_um.z + Radius_um;
+	bb.bb_point2[0] = Center_um.x + Radius_um;
+	bb.bb_point2[1] = Center_um.y + Radius_um;
+	bb.bb_point2[2] = Center_um.z + Radius_um;
+
 
     return bb;
 }
+
+
+bool Sphere::IsPointInShape(Vec3D _Position_um) {
+	float Distance = Center_um.Distance(_Position_um);
+	return Distance <= Radius_um;
+}
+
 
 }; // namespace Geometries
 }; // namespace Simulator

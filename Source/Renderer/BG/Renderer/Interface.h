@@ -167,6 +167,17 @@ public:
      */
     void UnlockScene();
 
+    /**
+     * @brief Setup a default viewer position.
+     * 
+     */
+    void ResetViewer();
+
+    /**
+     * @brief Clears the scene, resetting it to the default state.
+     * 
+     */
+    void ResetScene();
 
 };
 

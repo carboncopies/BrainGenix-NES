@@ -1,1 +1,0 @@
-#include <SliceGenerator/Structs/MicroscopeParameters.h>

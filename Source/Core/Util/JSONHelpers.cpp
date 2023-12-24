@@ -48,6 +48,20 @@ void GetVec3(Simulator::Geometries::Vec3D& _Vector, nlohmann::json* _Input, std:
 }
 
 
+void GetArrVec3(Simulator::Geometries::Vec3D& _Vector, nlohmann::json* _Input, std::string _Name) {
+    std::vector<float> Values = (*_Input)[_Name].get<std::vector<float>>();
+
+    if (Values.size() != 3) {
+        std::cout<<"Error (Util::GetArrVec3), Cannot Get Vector Array From JSON, Size Is Not 3\n";
+    }
+
+    _Vector.x = Values[0];
+    _Vector.y = Values[1];
+    _Vector.z = Values[2];
+
+}
+
+
 void GetFloatVector(std::vector<float>* _Vector, nlohmann::json* _Input, std::string _JSONKey) {
     _Vector->clear();
     nlohmann::json Vector = (*_Input)[_JSONKey];

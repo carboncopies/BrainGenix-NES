@@ -1,3 +1,5 @@
+#include <vector>
+
 #include <Simulator/Geometries/Box.h>
 
 namespace BG {
@@ -60,14 +62,80 @@ std::vector<float> Box::Sides() {
 }
 
 
-
+// This can be bad - if it's rotated, the bounding box is wrong!
 BoundingBox Box::GetBoundingBox() {
-	BoundingBox bb;
+	BoundingBox BB;
 
+    BB.bb_point1[0] = Center_um.x - (Dims_um.x / 2);
+    BB.bb_point1[1] = Center_um.y - (Dims_um.y / 2);
+    BB.bb_point1[2] = Center_um.z - (Dims_um.z / 2);
 
-	return bb;
+    BB.bb_point2[0] = Center_um.x + (Dims_um.x / 2);
+    BB.bb_point2[1] = Center_um.y + (Dims_um.y / 2);
+    BB.bb_point2[2] = Center_um.z + (Dims_um.z / 2);
+
+	return BB;
 }
 
+// Same here, we need to do this right.
+bool Box::IsPointInShape(Vec3D _Position_um) {
+    
+
+    // https://stackoverflow.com/questions/52673935/check-if-3d-point-inside-a-box
+
+    Vec3D Pos1 = Center_um - (Dims_um/2);
+    Vec3D Pos2 = Center_um + (Dims_um/2);
+
+    return _Position_um.AllElementsGTE(Pos1) && _Position_um.AllElementsLTE(Pos2);
+
+}
+
+//! Obtain points in a rectangle in the y-z plane at an x position.
+void add_rectangle_points(float _x, float _ylen, float _zlen, float _VoxelScale, std::vector<Vec3D> & point_cloud) {
+    float half_ylen = _ylen / 2.0;
+    float half_zlen = _zlen / 2.0;
+    for (float y = -half_ylen; y <= half_ylen; y += _VoxelScale) {
+        for (float z = -half_zlen; z <= half_zlen; z += _VoxelScale) {
+            point_cloud.emplace_back(_x, y, z);
+        }
+    }
+}
+
+// //! Uses three concatenated rotation matrices to rotate a 3D point around the
+// //! x-axiz, y_axis and z-axis.
+// Vec3D rotate_around_xyz(const Vec3D & _point, float _xangle, float _yangle, float _zangle) {
+//     float x_rotz = _point.x*std::cos(_zangle) - _point.y*std::sin(_zangle);
+//     float y_rotz = _point.x*std::sin(_zangle) + _point.y*std::cos(_zangle);
+//     float x_rotz_roty = x_rotz*std::cos(_yangle) + _point.z*std::sin(_yangle);
+//     float z_roty = -x_rotz*std::sin(_yangle) + _point.z*std::cos(_yangle);
+//     float y_rotz_rotx = y_rotz*std::cos(_xangle) - z_roty*std::sin(_xangle);
+//     float z_roty_rotx = y_rotz*std::sin(_xangle) + z_roty*std::cos(_xangle);
+//     return Vec3D(x_rotz_roty, y_rotz_rotx, z_roty_rotx);
+// }
+
+//! Returns a point cloud that can be used to fill voxels representing the box.
+std::vector<Vec3D> Box::GetPointCloud(float _VoxelScale) {
+    std::vector<Vec3D> point_cloud;
+
+    // 1. Imagine the box lying flat along x and at the origin and walk along its length.
+    float d = Dims_um.x;
+    float stepsize = 0.5*_VoxelScale;
+    for (float x = 0.0; x <= d; x += stepsize) {
+
+        // 2. At each step, get points in a rectangle around the axis at the right side lengths.
+        add_rectangle_points(x, Dims_um.y, Dims_um.z, stepsize, point_cloud);
+
+    }
+
+    // 3. Rotate all points in the cloud according to the cylinder rotation
+    //    and translate to End0Pos_um.
+    std::vector<Vec3D> rotated_and_translated_point_cloud;
+    for (const Vec3D & p : point_cloud) {
+        rotated_and_translated_point_cloud.emplace_back(Center_um + p.rotate_around_xyz(Rotations_rad.x, Rotations_rad.y, Rotations_rad.z));
+    }
+
+    return rotated_and_translated_point_cloud;
+}
 
 }; // namespace Geometries
 }; // namespace Simulator

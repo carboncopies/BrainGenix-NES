@@ -28,6 +28,7 @@
 
 #include <RPC/Manager.h>
 #include <Simulator/Manager.h>
+#include <VSDA/RPCInterface.h>
 
 
 /**

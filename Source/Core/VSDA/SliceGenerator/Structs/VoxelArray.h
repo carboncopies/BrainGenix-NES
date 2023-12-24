@@ -34,6 +34,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <inttypes.h>
 #include <math.h>
+#include <memory>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -41,6 +42,8 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Geometries/Geometry.h>
+
+#include <VSDA/SliceGenerator/Structs/ScanRegion.h>
 
 
 
@@ -53,7 +56,8 @@ typedef uint8_t VoxelType;
 
 enum VoxelState {
     EMPTY=0,
-    FILLED=1
+    FILLED=1,
+    BORDER=2
 };
 
 
@@ -65,7 +69,8 @@ class VoxelArray {
 
 private:
 
-    VoxelType* Data_; /**Big blob of memory that holds all the voxels*/
+    std::unique_ptr<VoxelType[]> Data_; /**Big blob of memory that holds all the voxels*/
+    uint64_t DataMaxLength_ = 0;
 
     int SizeX_; /**Number of voxels in x dimension*/
     int SizeY_; /**Number of voxels in y dimension*/
@@ -73,7 +78,7 @@ private:
 
     float VoxelScale_um; /**Set the size of each voxel in micrometers*/
 
-    Geometries::BoundingBox BoundingBox_; /**Set the bounding box of this voxel array (relative to the simulation orign)*/
+    BoundingBox BoundingBox_; /**Set the bounding box of this voxel array (relative to the simulation orign)*/
 
 
 
@@ -97,7 +102,8 @@ public:
      * @param _BB Bounding box of the array, in world space
      * @param _VoxelScale_um Scale of each voxel in micrometers
      */
-    VoxelArray(Geometries::BoundingBox _BB, float _VoxelScale_um);
+    VoxelArray(BoundingBox _BB, float _VoxelScale_um);
+    VoxelArray(ScanRegion _Region, float _VoxelScale_um);
 
     /**
      * @brief Destroy the Voxel Array object
@@ -168,6 +174,20 @@ public:
      * @return int 
      */
     int GetZ();
+
+    /**
+     * @brief Returns the resolution of the given object in micrometers.
+     * 
+     * @return float 
+     */
+    float GetResolution();
+
+    /**
+     * @brief Returns the bounding box of this voxel array (in simulation world space).
+     * 
+     * @return BoundingBox 
+     */
+    BoundingBox GetBoundingBox();
 
 
     /**

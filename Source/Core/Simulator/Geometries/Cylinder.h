@@ -11,6 +11,7 @@
 #pragma once
 
 #include <cmath>
+#include <vector>
 #include <tuple>
 
 #include <glm/mat3x3.hpp>
@@ -30,22 +31,16 @@ namespace Geometries {
  */
 struct Cylinder : Geometry {
 
-    float End0Radius_um =
-        1.0; //! Radius in micrometers of the first end of the cylinder.
+    float End0Radius_um = 1.0; //! Radius in micrometers of the first end of the cylinder.
     Vec3D End0Pos_um; //! Position of the first end of the Cylinder in
                       //! micrometers (relative to origin).
-    float End1Radius_um =
-        1.0; //! Radius in micrometers of the second end of the cylinder.
-    Vec3D End1Pos_um{1.0, 0.0,
-                     0.0}; //! Position of the second end of the Cylinder in
-                           //! micrometers (relative to origin).
+    float End1Radius_um = 1.0; //! Radius in micrometers of the second end of the cylinder.
+    Vec3D End1Pos_um{1.0, 0.0, 0.0}; //! Position of the second end of the Cylinder in
+                                     //! micrometers (relative to origin).
 
     // Constructors
     Cylinder();
-    Cylinder(float _End0Radius_um,
-             BG::NES::Simulator::Geometries::Vec3D _End0Pos_um,
-             float _End1Radius_um,
-             BG::NES::Simulator::Geometries::Vec3D _End1Pos_um);
+    Cylinder(float _End0Radius_um, BG::NES::Simulator::Geometries::Vec3D _End0Pos_um, float _End1Radius_um, BG::NES::Simulator::Geometries::Vec3D _End1Pos_um);
 
     //! Renders the cylinder in 3D.
     void Show();
@@ -57,11 +52,19 @@ struct Cylinder : Geometry {
     //! fraction of height distance from end 0.
     float RAtPosition_um(float position);
 
-    //! Gets the rotation in radians with respect to the x, y and z axes
-    std::tuple<float, float, float> GetRotation_rad();
 
     //! Returns the bounding box
     virtual BoundingBox GetBoundingBox();
+    virtual bool IsPointInShape(Vec3D _Position_um);
+
+    //! Returns a point cloud that can be used to fill voxels representing the cylinder.
+    std::vector<Vec3D> GetPointCloud(float _VoxelScale);
+
+
+    //! Gets the rotation in radians with respect to the x, y and z axes
+    std::tuple<float, float, float> GetRotation_rad();
+
+
 };
 
 }; // namespace Geometries

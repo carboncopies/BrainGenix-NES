@@ -1,9 +1,11 @@
 # Configure Sources
 set(MAIN_SOURCES 
 
+
   ${SRC_DIR}/Core/Main.cpp
   ${SRC_DIR}/Core/Main.h
   
+
   ${SRC_DIR}/Core/Config/ConfigurationManager.cpp
   ${SRC_DIR}/Core/Config/ConfigurationManager.h
   ${SRC_DIR}/Core/Config/ArgumentParser.cpp
@@ -15,10 +17,12 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Config/ConfigDefaults.cpp
   ${SRC_DIR}/Core/Config/ConfigDefaults.h
 
+
   ${SRC_DIR}/Core/RPC/Manager.cpp
   ${SRC_DIR}/Core/RPC/Manager.h
   ${SRC_DIR}/Core/RPC/StaticRoutes.cpp
   ${SRC_DIR}/Core/RPC/StaticRoutes.h
+
 
   ${SRC_DIR}/Core/Simulator/Manager.cpp
   ${SRC_DIR}/Core/Simulator/Manager.h
@@ -54,6 +58,7 @@ set(MAIN_SOURCES
   
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.h
+  ${SRC_DIR}/Core/Simulator/Structs/BoundingBox.cpp
   ${SRC_DIR}/Core/Simulator/Structs/BoundingBox.h
   ${SRC_DIR}/Core/Simulator/Structs/BS.cpp
   ${SRC_DIR}/Core/Simulator/Structs/BS.h
@@ -94,23 +99,31 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.cpp
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.h
 
+
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h
 
-  ${SRC_DIR}/Core/VSDA/MeshBuilder.cpp
-  ${SRC_DIR}/Core/VSDA/MeshBuilder.h
-  ${SRC_DIR}/Core/VSDA/MeshConversionHelpers.cpp
-  ${SRC_DIR}/Core/VSDA/MeshConversionHelpers.h
 
+  ${SRC_DIR}/Core/VSDA/RPCInterface.cpp
+  ${SRC_DIR}/Core/VSDA/RPCInterface.h
+  ${SRC_DIR}/Core/VSDA/UpdaterManager.cpp
+  ${SRC_DIR}/Core/VSDA/UpdaterManager.h
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.cpp
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.h
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/MicroscopeParameters.cpp
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/MicroscopeParameters.h
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/ScanRegion.cpp
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/ScanRegion.h
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/VoxelArray.cpp
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/VoxelArray.h
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/VSDAData.cpp
+  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/VSDAData.h
 
-  ${SRC_DIR}/Core/SliceGenerator/SliceGenerator.cpp
-  ${SRC_DIR}/Core/SliceGenerator/SliceGenerator.h
-  ${SRC_DIR}/Core/SliceGenerator/Structs/MicroscopeParameters.cpp
-  ${SRC_DIR}/Core/SliceGenerator/Structs/MicroscopeParameters.h
-  ${SRC_DIR}/Core/SliceGenerator/Structs/ScanRegion.cpp
-  ${SRC_DIR}/Core/SliceGenerator/Structs/ScanRegion.h
-  ${SRC_DIR}/Core/SliceGenerator/Structs/VoxelArray.cpp
-  ${SRC_DIR}/Core/SliceGenerator/Structs/VoxelArray.h
+  ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshBuilder.cpp
+  ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshBuilder.h
+  ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshConversionHelpers.cpp
+  ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshConversionHelpers.h
+
 
 )
  
