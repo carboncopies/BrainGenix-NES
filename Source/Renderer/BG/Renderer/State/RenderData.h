@@ -72,8 +72,8 @@ struct RenderData {
 
 
 
-    int Width_ = 1024;
-    int Height_ = 1024;
+    int Width_ = 256;
+    int Height_ = 256;
 
     bool Headless_ = false;
 
