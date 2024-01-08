@@ -162,7 +162,6 @@ bool Manager::Headless_UpdateRenderingBuffers() {
         if (RenderData_->Extent_.width < 1) RenderData_->Extent_.width = 1;
         if (RenderData_->Extent_.height < 1) RenderData_->Extent_.height = 1;
 
-        std::cout << "Resized to " << RenderData_->Extent_.width << ", " << RenderData_->Extent_.height << std::endl;
 
         auto replace_child = [](vsg::Group* group, vsg::ref_ptr<vsg::Node> previous, vsg::ref_ptr<vsg::Node> replacement) {
             for (auto& child : group->children)
@@ -171,7 +170,6 @@ bool Manager::Headless_UpdateRenderingBuffers() {
             }
         };
 
-        std::cout<<"1\n";
 
         auto previous_colorBufferCapture = RenderData_->colorBufferCapture;
         auto previous_depthBufferCapture = RenderData_->depthBufferCapture;
@@ -195,16 +193,13 @@ bool Manager::Headless_UpdateRenderingBuffers() {
 
         RenderData_->RenderGraph_->framebuffer = RenderData_->framebuffer;
 
-        std::cout<<"2\n";
 
         // create new copy subgraphs
         std::tie( RenderData_->colorBufferCapture,  RenderData_->copiedColorBuffer) = createColorCapture(RenderData_->Headless_Device_, RenderData_->Extent_, RenderData_->colorImageView->image, RenderData_->imageFormat);
         std::tie( RenderData_->depthBufferCapture,  RenderData_->copiedDepthBuffer) = createDepthCapture(RenderData_->Headless_Device_, RenderData_->Extent_, RenderData_->depthImageView->image, RenderData_->depthFormat);
-        std::cout<<"3\n";
 
         replace_child(RenderData_->CommandGraph, previous_colorBufferCapture,  RenderData_->colorBufferCapture);
         replace_child(RenderData_->CommandGraph, previous_depthBufferCapture,  RenderData_->depthBufferCapture);
-        std::cout<<"4\n";
     
 
     }
