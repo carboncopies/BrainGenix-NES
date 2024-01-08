@@ -96,7 +96,6 @@ include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
 add_subdirectory(${SRC_DIR}/Core)
 add_subdirectory(${SRC_DIR}/Renderer)
-add_subdirectory(${SRC_DIR}/vsgheadless)
 
 
 
