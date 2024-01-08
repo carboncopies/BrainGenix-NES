@@ -143,19 +143,22 @@ bool Manager::Headless_CreateRenderingBuffers() {
 
 bool Manager::Headless_UpdateRenderingBuffers() {
 
+    // Check If We Need To Resize The Renderer Output Or Not
+    bool NeedsResize = ((RenderData_->Width_ != RenderData_->Extent_.width) || (RenderData_->Height_ != RenderData_->Extent_.height));
 
-    int resizeCadence = 0;
-    if (resizeCadence && (RenderData_->Viewer_->getFrameStamp()->frameCount>0) && ((RenderData_->Viewer_->getFrameStamp()->frameCount) % resizeCadence == 0))
-    {
+
+    // If We Need To Resize, Do So
+    if (NeedsResize && (RenderData_->Viewer_->getFrameStamp()->frameCount>0)) {
+        
+        // Wait Until The Device Is Finished
         RenderData_->Viewer_->deviceWaitIdle();
 
-        RenderData_->Extent_.width /= 2;
-        RenderData_->Extent_.height /= 2;
 
-        if (RenderData_->Extent_.width < 1) RenderData_->Extent_.width = 1;
-        if (RenderData_->Extent_.height < 1) RenderData_->Extent_.height = 1;
+        // Update Extend Width, Height
+        RenderData_->Extent_.width = RenderData_->Width_;
+        RenderData_->Extent_.height = RenderData_->Height_;
 
-        std::cout << "Resized to " << RenderData_->Extent_.width << ", " << RenderData_->Extent_.height << std::endl;
+
 
         auto replace_child = [](vsg::Group* group, vsg::ref_ptr<vsg::Node> previous, vsg::ref_ptr<vsg::Node> replacement) {
             for (auto& child : group->children)
@@ -167,7 +170,7 @@ bool Manager::Headless_UpdateRenderingBuffers() {
         auto previous_colorBufferCapture = RenderData_->colorBufferCapture;
         auto previous_depthBufferCapture = RenderData_->depthBufferCapture;
 
-        
+        // Now, Recreate Buffers With New Size
         RenderData_->colorImageView = createColorImageView(RenderData_->Headless_Device_, RenderData_->Extent_, RenderData_->imageFormat, VK_SAMPLE_COUNT_1_BIT);
         RenderData_->depthImageView = createDepthImageView(RenderData_->Headless_Device_, RenderData_->Extent_, RenderData_->depthFormat, VK_SAMPLE_COUNT_1_BIT);
         if (RenderData_->samples == VK_SAMPLE_COUNT_1_BIT)
@@ -192,8 +195,6 @@ bool Manager::Headless_UpdateRenderingBuffers() {
         replace_child(RenderData_->CommandGraph, previous_colorBufferCapture,  RenderData_->colorBufferCapture);
         replace_child(RenderData_->CommandGraph, previous_depthBufferCapture,  RenderData_->depthBufferCapture);
     
-
-
 
     }
 
@@ -482,9 +483,9 @@ if(rdoc_api) rdoc_api->StartFrameCapture(NULL, NULL);
         return false;
     }
 
-    // if (RenderData_->Headless_) { // only happens when we need to resize the buffer (which is never for now)
-    //     Headless_UpdateRenderingBuffers();
-    // }
+    if (RenderData_->Headless_) { // only happens when we need to resize the buffer, such as rendering from different microscopes of different resolution
+        Headless_UpdateRenderingBuffers();
+    }
 
 
     // pass any events into EventHandlers assigned to the Viewer
@@ -513,6 +514,18 @@ if(rdoc_api) rdoc_api->EndFrameCapture(NULL, NULL);
 
 vsg::ref_ptr<vsg::Group> Manager::GetScene() {
     return Scene_->Group_;
+}
+
+bool Manager::SetResolution(int _Width, int _Height) {
+    
+    if ((_Width < 1) || (_Height < 1)) {
+        return false;
+    }
+
+    RenderData_->Width_ = _Width;
+    RenderData_->Height_ = _Height;
+
+    return true;
 }
 
 bool Manager::UpdateCameraPosition(vsg::dvec3 Position_, double Height_) {

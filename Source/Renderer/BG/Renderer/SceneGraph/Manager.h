@@ -228,6 +228,19 @@ public:
 
 
     /**
+     * @brief Helper that sets the headless resolution for renders.
+     * Only has an effect when running headless, and will cause the next frame rendered to have the desired resolution.
+     * 
+     * @param _Width Desired width in pixels.
+     * @param _Height Desired height in pixels.
+     * @return true Success
+     * @return false Failure
+     */
+    bool SetResolution(int _Width, int _Height);
+
+
+
+    /**
      * @brief Returns scene pointer.
      * Assumes that the scene has been initialized at this point.
      * 

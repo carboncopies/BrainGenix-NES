@@ -106,6 +106,10 @@ bool Interface::UpdateScene() {
     return RendererManager_->CompileScene();
 }
 
+bool Interface::SetResolution(int _Width, int _Height) {
+    return RendererManager_->SetResolution(_Width, _Height);
+}
+
 void Interface::WaitUntilGPUDone() {
     RendererManager_->WaitUntilGPUDone();
     return;

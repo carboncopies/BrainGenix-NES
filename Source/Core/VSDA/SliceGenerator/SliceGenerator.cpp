@@ -305,6 +305,8 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
     _Renderer->UnlockScene();
 
 
+
+
     // Check that the renderers dir exists
     if (!std::filesystem::is_directory("Renders") || !std::filesystem::exists("Renders")) { // Check if Renders folder exists
         std::filesystem::create_directory("Renders"); // create Renders folder

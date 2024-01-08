@@ -146,6 +146,17 @@ public:
     bool AddCylinder(Primitive::Cylinder* _CreateInfo);
 
     /**
+     * @brief Helper that sets the headless resolution for renders.
+     * Only has an effect when running headless, and will cause the next frame rendered to have the desired resolution.
+     * 
+     * @param _Width Desired width in pixels.
+     * @param _Height Desired height in pixels.
+     * @return true Success
+     * @return false Failure
+     */
+    bool SetResolution(int _Width, int _Height);
+
+    /**
      * @brief Recompile scene graph. Call this after modifying the scene's geometry.
      * Returns true on succes, false otherwise.
      * 

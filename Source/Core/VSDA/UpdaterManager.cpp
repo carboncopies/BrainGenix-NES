@@ -36,6 +36,10 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
     // CreateDiagonalVoxelLine(_Simulation->VSDAData_.Array_.get());
 
 
+    // Set Image Size
+    _Renderer->SetResolution(_Simulation->VSDAData_.Params_.ImageWidth_px, _Simulation->VSDAData_.Params_.ImageHeight_px);
+
+
     // Clear Scene In Preperation For Rendering
     _Logger->Log("Starting Slice By Slice Render", 2);
     _Renderer->ResetScene();
