@@ -89,6 +89,7 @@ struct RenderData {
     vsg::ref_ptr<vsg::Image> copiedColorBuffer;
     vsg::ref_ptr<vsg::Commands> depthBufferCapture;
     vsg::ref_ptr<vsg::Buffer> copiedDepthBuffer;
+    vsg::ref_ptr<vsg::RenderGraph> RenderGraph_;
 
     vsg::ref_ptr<vsg::CommandGraph> CommandGraph;
 

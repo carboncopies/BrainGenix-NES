@@ -159,6 +159,10 @@ bool Manager::Headless_UpdateRenderingBuffers() {
         RenderData_->Extent_.height = RenderData_->Height_;
 
 
+        if (RenderData_->Extent_.width < 1) RenderData_->Extent_.width = 1;
+        if (RenderData_->Extent_.height < 1) RenderData_->Extent_.height = 1;
+
+        std::cout << "Resized to " << RenderData_->Extent_.width << ", " << RenderData_->Extent_.height << std::endl;
 
         auto replace_child = [](vsg::Group* group, vsg::ref_ptr<vsg::Node> previous, vsg::ref_ptr<vsg::Node> replacement) {
             for (auto& child : group->children)
@@ -166,6 +170,8 @@ bool Manager::Headless_UpdateRenderingBuffers() {
                 if (child == previous) child = replacement;
             }
         };
+
+        std::cout<<"1\n";
 
         auto previous_colorBufferCapture = RenderData_->colorBufferCapture;
         auto previous_depthBufferCapture = RenderData_->depthBufferCapture;
@@ -187,13 +193,18 @@ bool Manager::Headless_UpdateRenderingBuffers() {
             RenderData_->framebuffer = vsg::Framebuffer::create(renderPass, vsg::ImageViews{msaa_colorImageView, RenderData_->colorImageView, msaa_depthImageView, RenderData_->depthImageView} , RenderData_->Extent_.width, RenderData_->Extent_.height, 1);
         }
 
+        RenderData_->RenderGraph_->framebuffer = RenderData_->framebuffer;
+
+        std::cout<<"2\n";
 
         // create new copy subgraphs
         std::tie( RenderData_->colorBufferCapture,  RenderData_->copiedColorBuffer) = createColorCapture(RenderData_->Headless_Device_, RenderData_->Extent_, RenderData_->colorImageView->image, RenderData_->imageFormat);
         std::tie( RenderData_->depthBufferCapture,  RenderData_->copiedDepthBuffer) = createDepthCapture(RenderData_->Headless_Device_, RenderData_->Extent_, RenderData_->depthImageView->image, RenderData_->depthFormat);
+        std::cout<<"3\n";
 
         replace_child(RenderData_->CommandGraph, previous_colorBufferCapture,  RenderData_->colorBufferCapture);
         replace_child(RenderData_->CommandGraph, previous_depthBufferCapture,  RenderData_->depthBufferCapture);
+        std::cout<<"4\n";
     
 
     }
@@ -334,22 +345,22 @@ bool Manager::Windowed_SetupCommandGraph() {
 
 bool Manager::Headless_SetupCommandGraph() {
 
-    auto renderGraph = vsg::RenderGraph::create();
+    RenderData_->RenderGraph_ = vsg::RenderGraph::create();
 
-    renderGraph->framebuffer = RenderData_->framebuffer;
-    renderGraph->renderArea.offset = {0, 0};
-    renderGraph->renderArea.extent = RenderData_->Extent_;
-    renderGraph->setClearValues({{1.0f, 1.0f, 0.0f, 0.0f}}, VkClearDepthStencilValue{0.0f, 0});
+    RenderData_->RenderGraph_->framebuffer = RenderData_->framebuffer;
+    RenderData_->RenderGraph_->renderArea.offset = {0, 0};
+    RenderData_->RenderGraph_->renderArea.extent = RenderData_->Extent_;
+    RenderData_->RenderGraph_->setClearValues({{1.0f, 1.0f, 0.0f, 0.0f}}, VkClearDepthStencilValue{0.0f, 0});
 
     auto view = vsg::View::create(Scene_->Camera_, Scene_->Group_);
 
     vsg::CommandGraphs commandGraphs;
     
-    renderGraph->addChild(view);
+    RenderData_->RenderGraph_->addChild(view);
 
     auto commandGraph = vsg::CommandGraph::create(RenderData_->Headless_Device_, RenderData_->QueueFamily_);
     RenderData_->CommandGraph = commandGraph;
-    commandGraph->addChild(renderGraph);
+    commandGraph->addChild(RenderData_->RenderGraph_);
     RenderData_->CommandGraphs_.push_back(commandGraph);
     if (RenderData_->colorBufferCapture) {
         commandGraph->addChild(RenderData_->colorBufferCapture);
@@ -442,26 +453,6 @@ bool Manager::DrawFrame(std::string _FilePath) {
     // Lock the scene mutex to ensure we're the only ones accessing it right now
     LockScene();
 
-    // vsg::ref_ptr<vsg::Node> teapot = vsg::read_cast<vsg::Node>("teapot.vsgt");
-    // // assert(teapot);
-    // Scene_->Group_->addChild(teapot);
-
-
-    // auto pointLight = vsg::PointLight::create();
-    // pointLight->name = "point";
-    // pointLight->color.set(1.0, 1.0, 1.0);
-    // pointLight->intensity = 50;
-    // pointLight->position.set(0.0, 0.0, 6.0);
-
-    // // enable culling of the point light by decorating with a CullGroup
-    // auto cullGroup = vsg::CullGroup::create();
-    // cullGroup->bound.center = pointLight->position;
-    // cullGroup->bound.radius = 40;
-
-    // cullGroup->addChild(pointLight);
-
-    // Scene_->Group_->addChild(cullGroup);
-
 
     auto directionalLight = vsg::DirectionalLight::create();
     directionalLight->name = "directional";
@@ -471,13 +462,12 @@ bool Manager::DrawFrame(std::string _FilePath) {
     Scene_->Group_->addChild(directionalLight);
 
 
-
-if(rdoc_api) rdoc_api->StartFrameCapture(NULL, NULL);
-
-
+    // RenderDoc Debugging Capture Helper
+    if(rdoc_api) rdoc_api->StartFrameCapture(NULL, NULL);
 
 
-    // Called every frame
+
+
     bool Status = RenderData_->Viewer_->advanceToNextFrame();
     if (!Status) {
         return false;
