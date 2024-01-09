@@ -7,10 +7,14 @@ namespace NES {
 namespace Simulator {
 
 
-void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, BG::NES::Renderer::Interface* _Renderer, std::atomic<bool>* _StopThreads) {
+void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, VSDA::RenderPool* _RenderPool, std::atomic<bool>* _StopThreads) {
+    assert(_Logger != nullptr);
+    assert(_Sim != nullptr);
+    assert(_RenderPool != nullptr);
+    assert(_StopThreads != nullptr);
 
     // Log Init message
-    std::cout<<"[Info] Starting Simulation Updater Thread\n";
+    _Logger->Log("Starting Simulation Updater Thread", 3);
 
     // Setup Simulation Engine
     Engine SE;
@@ -23,18 +27,27 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
             _Sim->IsProcessing = true;
 
             if (_Sim->CurrentTask == SIMULATION_RESET) {
-                std::cout<<"[Info] Worker Performing Simulation Reset For Simulation "<<_Sim->ID<<std::endl;
+                _Logger->Log("Worker Performing Simulation Reset For Simulation " + std::to_string(_Sim->ID), 4);
                 SE.Reset(_Sim);
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
             } else if (_Sim->CurrentTask == SIMULATION_RUNFOR) {
-                std::cout<<"[Info] Worker Performing Simulation RunFor For Simulation "<<_Sim->ID<<std::endl;
+                _Logger->Log("Worker Performing Simulation RunFor For Simulation " + std::to_string(_Sim->ID), 4);
                 SE.RunFor(_Sim);
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
             } else if (_Sim->CurrentTask == SIMULATION_VSDA) {
-                std::cout<<"[Info] Worker Performing Simulation VSDA Call For Simulation "<<_Sim->ID<<std::endl;
-                VSDA::ExecuteRenderOperations(_Logger, _Sim, _Renderer);
+                _Logger->Log("Worker Performing Simulation VSDA Call For Simulation " + std::to_string(_Sim->ID), 4);
+                _Sim->IsRendering = true;
+                _RenderPool->QueueRenderOperation(_Sim);
+
+                // Randal - I had no idea how to better do this, please fix this as you see fit
+                // The RenderPool main worker func (in RenderPool.cpp) will set isrendering to false when done, unlocking this.
+                // Probably a mutex is better but eh idk
+                while (_Sim->IsRendering) {
+                    std::this_thread::sleep_for(std::chrono::milliseconds(10)); // sleep for 10ms
+                }
+                _Sim->VSDAData_.State_ = VSDA_RENDER_DONE;
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
             }
@@ -49,7 +62,6 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
     _Logger->Log("Simulation Engine Thread Exiting", 4);
 
 }
-
 
 
 }; // Close Namespace Simulator

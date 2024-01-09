@@ -1,3 +1,6 @@
+#include <fstream>
+#include <cpp-base64/base64.cpp>
+
 #include <VSDA/RPCInterface.h>
 
 
@@ -11,30 +14,28 @@ namespace VSDA {
 
 
 
-RPCInterface::RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::Manager* _RPCManager, BG::NES::Renderer::Interface* _Renderer, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer) {
+RPCInterface::RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::Manager* _RPCManager, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer) {
 
     // Check Preconditions
     assert(_Logger != nullptr);
     assert(_RPCManager != nullptr);
-    assert(_Renderer != nullptr);
     assert(_SimulationsVectorPointer != nullptr);
 
     // Copy Parameters To Member Variables
-    Renderer_ = _Renderer;
     Logger_ = _Logger;
     SimulationsPtr_ = _SimulationsVectorPointer;
-
 
     // Log Initialization
     Logger_->Log("Initializing RPC Interface for VSDA Subsystem", 4);
 
     // Register Callback For CreateSim
-    _RPCManager->AddRoute("VSDA/EM/Initialize", [this](std::string RequestJSON){ return VSDAEMInitialize(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/SetupMicroscope", [this](std::string RequestJSON){ return VSDAEMSetupMicroscope(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/DefineScanRegion", [this](std::string RequestJSON){ return VSDAEMDefineScanRegion(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/QueueRenderOperation", [this](std::string RequestJSON){ return VSDAEMQueueRenderOperation(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/GetRenderStatus", [this](std::string RequestJSON){ return VSDAEMGetRenderStatus(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/GetImageStack", [this](std::string RequestJSON){ return VSDAEMGetImageStack(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/Initialize", Logger_, [this](std::string RequestJSON){ return VSDAEMInitialize(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/SetupMicroscope", Logger_, [this](std::string RequestJSON){ return VSDAEMSetupMicroscope(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/DefineScanRegion", Logger_, [this](std::string RequestJSON){ return VSDAEMDefineScanRegion(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/QueueRenderOperation", Logger_, [this](std::string RequestJSON){ return VSDAEMQueueRenderOperation(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/GetRenderStatus", Logger_, [this](std::string RequestJSON){ return VSDAEMGetRenderStatus(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/GetImageStack", Logger_, [this](std::string RequestJSON){ return VSDAEMGetImageStack(RequestJSON);});
+    _RPCManager->AddRoute("VSDA/EM/GetImage", Logger_, [this](std::string RequestJSON){ return VSDAEMGetImage(RequestJSON);});
 
 
 }
@@ -204,6 +205,115 @@ std::string RPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
 
 }
 std::string RPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
+
+    // Parse Request, Get Parameters
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+    int ScanRegionID = Util::GetInt(&RequestJSON, "ScanRegionID");
+    Logger_->Log(std::string("VSDA EM GetImageStack Called On Simulation With ID ") + std::to_string(SimulationID), 4);
+
+    // Check Sim ID
+    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
+        Logger_->Log(std::string("VSDA EM GetImageStack Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        return ResponseJSON.dump();
+    }
+
+    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+
+
+    // Check Region ID
+    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_.RenderedImagePaths_.size()) {
+        Logger_->Log(std::string("VSDA EM GetImageStack Error, ScanRegion With ID ") + std::to_string(ScanRegionID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 3; // Error
+        return ResponseJSON.dump();
+    } 
+
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+
+    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
+
+    nlohmann::json ImagePaths = ThisSimulation->VSDAData_.RenderedImagePaths_[ScanRegionID];
+    ResponseJSON["RenderedImages"] = ImagePaths;
+
+
+    return ResponseJSON.dump();
+
+
+}
+
+
+
+std::string RPCInterface::VSDAEMGetImage(std::string _JSONRequest) {
+
+
+    // Parse Request, Get Parameters
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+    std::string ImageHandle = Util::GetString(&RequestJSON, "ImageHandle");
+    Logger_->Log(std::string("VSDA EM GetImage Called On Simulation ") + std::to_string(SimulationID) + ", Handle " + ImageHandle, 3);
+
+    // Check Sim ID
+    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
+        Logger_->Log(std::string("VSDA EM GetImage Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        return ResponseJSON.dump();
+    }
+
+    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+
+
+    // Minor security feature (probably still exploitable, so be warned!)
+    // We just remove .. from the incoming handle for the image, since they're just files right now
+    // as such, if we didnt strip that, then people could read any files on the server!
+    // Also, we prepend a '.' so people can't try and get to the root
+    std::string Pattern = "..";
+    std::string::size_type i = ImageHandle.find(Pattern);
+    while (i != std::string::npos) {
+        Logger_->Log("Detected '..' In ImageHandle, It's Possible That Someone Is Trying To Do Something Nasty", 8);
+        ImageHandle.erase(i, Pattern.length());
+        i = ImageHandle.find(Pattern, i);
+    }
+    std::string SafeHandle = "./" + ImageHandle;
+
+
+    // Now Check If The Handle Is Valid, If So, Load It
+    std::ifstream ImageStream(SafeHandle.c_str(), std::ios::binary);
+    std::string RawData;
+    if (ImageStream.good()) {
+        std::stringstream Buffer;
+        Buffer << ImageStream.rdbuf();
+        RawData = Buffer.str();
+        // ImageStream>>RawData;
+        ImageStream.close();
+
+    } else {
+        Logger_->Log("An Invalid ImageHandle Was Provided", 6);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2; // error
+        return ResponseJSON.dump();
+    }
+
+    // Now, Convert It To Base64
+    std::string Base64Data = base64_encode(reinterpret_cast<const unsigned char*>(RawData.c_str()), RawData.length());
+
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+
+    ResponseJSON["StatusCode"] = (int)(ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE);
+    ResponseJSON["ImageData"] = Base64Data;
+
+    // nlohmann::json ImagePaths = ThisSimulation->VSDAData_.RenderedImagePaths_[ScanRegionID];
+    // ResponseJSON["RenderedImages"] = ImagePaths;
+
+
+    return ResponseJSON.dump();
 
 }
 

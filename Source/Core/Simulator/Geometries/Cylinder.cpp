@@ -146,11 +146,6 @@ void add_disk_points(float _z, float _radius, float stepsize, std::vector<Vec3D>
 // rotate around y by theta (0): [0, 0, 5]
 // rotate around z by phi (any angle): [0, 0, 5]
 std::vector<Vec3D> Cylinder::GetPointCloud(float _VoxelScale) {
-    //std::cout << "-----> Calling GetPointCloud for Cylinder!\n";
-    //std::cout << "-----> Cylinder end point 0: " << End0Pos_um.x << ',' << End0Pos_um.y << ',' << End0Pos_um.z << '\n';
-    //std::cout << "-----> Cylinder end point 1: " << End1Pos_um.str() << '\n';
-    std::cout << "----> Radius at point 0: " << End0Radius_um << '\n';
-    std::cout << "----> Radius at point 1: " << End1Radius_um << '\n';
     std::vector<Vec3D> point_cloud;
 
     // 0. Get rotation angles and length (r, theta, phi).
@@ -163,8 +158,6 @@ std::vector<Vec3D> Cylinder::GetPointCloud(float _VoxelScale) {
 
     // 1. Imagine the cylinder lying flat along x and at the origin and walk along its length.
     float distance = diff_spherical_coords.r();
-    //std::cout << "----> Length of cylinder: " << distance << '\n';
-    //std::cout << "----> VoxelScale: " << _VoxelScale << '\n';
     float radius_difference = End1Radius_um - End0Radius_um;
     float stepsize = 0.5*_VoxelScale;
     for (float z = -distance/2.0; z <= distance/2.0; z += stepsize) {
@@ -174,7 +167,6 @@ std::vector<Vec3D> Cylinder::GetPointCloud(float _VoxelScale) {
         add_disk_points(z, radius, stepsize, point_cloud);
 
     }
-    std::cout << "---> Number of points in point cloud: " << point_cloud.size() << '\n';
 
     // 3. Rotate all points in the cloud according to the cylinder rotation
     //    and translate to End0Pos_um.
@@ -189,7 +181,6 @@ std::vector<Vec3D> Cylinder::GetPointCloud(float _VoxelScale) {
         rotated_and_translated_point_cloud.emplace_back(translate + p_roty.rotate_around_z(rot_z));
     }
 
-    std::cout << "---> Number of points in rotated and translated point cloud: " << rotated_and_translated_point_cloud.size() << '\n';
 
     return rotated_and_translated_point_cloud;
 }

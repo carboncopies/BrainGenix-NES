@@ -69,6 +69,9 @@ bool VSDA_EM_DefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simula
     _Sim->VSDAData_.Regions_.push_back(_ScanRegion);
     (*_RegionID) = _Sim->VSDAData_.Regions_.size()-1;
 
+    // Add New Vector To Store The Rendered Image Paths As We Create Them Later On
+    _Sim->VSDAData_.RenderedImagePaths_.push_back(std::vector<std::string>());
+
     return true;
 
 }
@@ -106,21 +109,21 @@ bool VSDA_EM_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Si
 
 bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
 
-    // X Alligned Border
-    for (int X = 0; X < _Array->GetX(); X++) {
-        _Array->SetVoxel(X, 0, 0, BORDER);
-        _Array->SetVoxel(X, _Array->GetY()-1, 0, BORDER);
-        _Array->SetVoxel(X, 0, _Array->GetZ()-1, BORDER);
-        _Array->SetVoxel(X, _Array->GetY()-1, _Array->GetZ()-1, BORDER);
-    }
+    // // X Alligned Border
+    // for (int X = 0; X < _Array->GetX(); X++) {
+    //     _Array->SetVoxel(X, 0, 0, BORDER);
+    //     _Array->SetVoxel(X, _Array->GetY()-1, 0, BORDER);
+    //     _Array->SetVoxel(X, 0, _Array->GetZ()-1, BORDER);
+    //     _Array->SetVoxel(X, _Array->GetY()-1, _Array->GetZ()-1, BORDER);
+    // }
 
-    // Y Alligned Border
-    for (int Y = 0; Y < _Array->GetY(); Y++) {
-        _Array->SetVoxel(0, Y, 0, BORDER);
-        _Array->SetVoxel(_Array->GetX()-1, Y, 0, BORDER);
-        _Array->SetVoxel(0, Y, _Array->GetZ()-1, BORDER);
-        _Array->SetVoxel(_Array->GetX()-1, Y, _Array->GetZ()-1, BORDER);
-    }
+    // // Y Alligned Border
+    // for (int Y = 0; Y < _Array->GetY(); Y++) {
+    //     _Array->SetVoxel(0, Y, 0, BORDER);
+    //     _Array->SetVoxel(_Array->GetX()-1, Y, 0, BORDER);
+    //     _Array->SetVoxel(0, Y, _Array->GetZ()-1, BORDER);
+    //     _Array->SetVoxel(_Array->GetX()-1, Y, _Array->GetZ()-1, BORDER);
+    // }
 
     // Z Alligned Border
     for (int Z = 0; Z < _Array->GetZ(); Z++) {
@@ -239,13 +242,13 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 }
 
-bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, MicroscopeParameters* _Params, VoxelArray* _Array, int SliceNumber) {
+bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, MicroscopeParameters* _Params, VoxelArray* _Array, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber) {
     assert(_Array != nullptr);
     assert(_Params != nullptr);
     assert(_Logger != nullptr);
 
 
-    _Logger->Log(std::string("Rendering Slice '") + std::to_string(SliceNumber) + "'", 2);
+    _Logger->Log(std::string("Rendering Slice '") + std::to_string(SliceNumber) + "'", 1);
 
     _Renderer->ResetScene();
 
@@ -271,8 +274,8 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
                 Renderer::Shaders::Phong BoxShader;
 
                 if (ThisVoxel == FILLED) {
-                    BoxShader.DiffuseColor_  = vsg::vec4(X/(float)_Array->GetX(), Y/(float)_Array->GetY(), 1.0, 1.0f);
-                    BoxShader.SpecularColor_ = vsg::vec4(0.f, 0.f, 0.f, 0.0f);
+                    BoxShader.DiffuseColor_  = vsg::vec4(0.8f, 0.8f, 0.8f, 1.0f);//vsg::vec4(X/(float)_Array->GetX(), Y/(float)_Array->GetY(), 1.0, 1.0f);
+                    BoxShader.SpecularColor_ = vsg::vec4(0.0f, 0.0f, 0.0f, 0.0f);
                 } else if (ThisVoxel == BORDER) {
                     BoxShader.DiffuseColor_  = vsg::vec4(1.0, 0.5, 0.3, 1.0f);
                     BoxShader.SpecularColor_ = vsg::vec4(0.f, 0.f, 0.f, 0.0f);
@@ -300,6 +303,21 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
     // Now, Update and Unlock Scene When Done
     _Renderer->UpdateScene();
     _Renderer->UnlockScene();
+
+
+
+
+    // Check that the renderers dir exists
+    if (!std::filesystem::is_directory("Renders") || !std::filesystem::exists("Renders")) { // Check if Renders folder exists
+        std::filesystem::create_directory("Renders"); // create Renders folder
+    }
+
+    std::string FilePath = "Renders/" + _FilePrefix + "_Slice" + std::to_string(SliceNumber) + ".bmp";
+    _Renderer->DrawFrame(FilePath);
+    _FileNameArray->push_back(FilePath);
+
+    // TOOD: Make this render the whole slice at the requested resolution/height of camera.
+
 
     return true;
 }

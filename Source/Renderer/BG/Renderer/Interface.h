@@ -72,6 +72,12 @@ private:
     std::unique_ptr<Manager>         RendererManager_ = nullptr; /**Instance of the renderer manager, setup when the init call is made.*/
     std::unique_ptr<GeometryBuilder> GeometryBuilder_ = nullptr; /**Instance of the geometry builder, used to create various primitives in the scene*/
 
+    std::thread WindowedUpdaterThread_; /**This thread only exists in windowed mode and simply renders frames constantly.*/
+    bool ThreadExit_ = false;
+    bool IsWindowed_ = false;
+
+    void WindowedThread();
+
 public:
 
     /**
@@ -79,7 +85,7 @@ public:
      * 
      * @param _Logger Pointer to instance of the bg logging system.
     */
-    Interface(BG::Common::Logger::LoggingSystem* _Logge);
+    Interface(BG::Common::Logger::LoggingSystem* _Logger);
 
     /**
      * @brief Destructor to the renderer, pretty self-explanitory.
@@ -95,19 +101,18 @@ public:
      * EnableValidationLayers as the name implies, toggles on and off debug/validation layers.
      * These layers serve to provide debug information for the application developers.
      * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
-     * 
-     * @param _NumArgs Number of args gotten from the main func, known commonly as argc.
-     * @param _ArgValues Values of each of the arguments. Known from main commonly as argv.
     */
-    bool Initialize(int _NumArgs, char** _ArgValues);
+    bool Initialize(bool _Windowed = false);
 
     /**
      * @brief Does what the name suggests - draws a frame on the window or offscreen if rendering headless.
      * 
+     * @param _FramePath Path to save this frame to if running headless.
+     * 
      * @return true 
      * @return false 
      */
-    bool DrawFrame();
+    bool DrawFrame(std::string _FramePath);
 
 
     /**
@@ -139,6 +144,17 @@ public:
      * @return false 
      */
     bool AddCylinder(Primitive::Cylinder* _CreateInfo);
+
+    /**
+     * @brief Helper that sets the headless resolution for renders.
+     * Only has an effect when running headless, and will cause the next frame rendered to have the desired resolution.
+     * 
+     * @param _Width Desired width in pixels.
+     * @param _Height Desired height in pixels.
+     * @return true Success
+     * @return false Failure
+     */
+    bool SetResolution(int _Width, int _Height);
 
     /**
      * @brief Recompile scene graph. Call this after modifying the scene's geometry.

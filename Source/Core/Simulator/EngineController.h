@@ -24,7 +24,8 @@
 #include <Simulator/Structs/Simulation.h>
 
 #include <Simulator/Engine.h>
-#include <VSDA/UpdaterManager.h>
+
+#include <VSDA/RenderPool.h>
 
 #include <BG/Renderer/Interface.h>
 
@@ -38,7 +39,7 @@ namespace Simulator {
  * @brief This function is what is the target of the new worker thread, and handles setting up a new engine for this simulation, as well as monitoring it and invoking the util functions as needed.
  * 
  */
-void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, BG::NES::Renderer::Interface* _Renderer, std::atomic<bool>* _StopThreads);
+void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, VSDA::RenderPool* _RenderPool, std::atomic<bool>* _StopThreads);
 
 
 

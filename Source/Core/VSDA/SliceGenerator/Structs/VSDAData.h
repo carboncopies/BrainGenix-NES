@@ -74,6 +74,10 @@ struct VSDAData {
     int                         ActiveRegionID_ =-1; /**Defines the region's index that we're working on right now*/
 
 
+    std::vector<std::vector<std::string>> RenderedImagePaths_; /**List of paths for each region to be populated as we render all the images for this simulation into a stack*/
+
+
+
 };
 
 }; // Close Namespace Logger

@@ -29,7 +29,7 @@
 #include <RPC/Manager.h>
 #include <Simulator/Manager.h>
 #include <VSDA/RPCInterface.h>
-
+#include <VSDA/RenderPool.h>
 
 /**
  * Main function.

@@ -45,6 +45,7 @@
 #include <BG/Renderer/State/RenderData.h>
 #include <BG/Renderer/State/Scene.h>
 
+#include <BG/Renderer/SceneGraph/OffscreenRenderHelpers.h>
 #include <BG/Renderer/SceneGraph/CameraHelpers.h>
 
 
@@ -67,6 +68,8 @@ private:
     std::unique_ptr<State::Scene>      Scene_;      /**Instance of scene struct, stores the geometry for this scene*/
 
     std::mutex                         SceneAccessLock_; /**Mutex to control access to the scene, so only one thread may use it at a time*/
+
+    bool Initialized_ = false;                       /**Boolean that indicates if the renderer has been fully setup yet or not*/
 
     // todo:
     // migrate vsg argparser to function here
@@ -99,7 +102,7 @@ public:
      * These layers serve to provide debug information for the application developers.
      * Only disable these after performing *extensive* testing, as bugs may not be noticed otherwise.
     */
-    bool Initialize(int _NumArgs, char** _ArgValues);
+    bool Initialize(bool _Windowed = false);
 
 
     /**
@@ -133,12 +136,108 @@ public:
 
 
     /**
+     * @brief Creates and initializes the camera struct.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool SetupCamera();
+
+
+    /**
+     * @brief Runs only when in windowed mode, creates a window.
+     * When running headless, this is not needed.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Windowed_CreateWindow();
+
+    /**
+     * @brief Runs only when in windowed mode, creates the event handler for the trackball.
+     * Lets the user interact with the window and rotate stuff (in windowed mode).
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Windowed_SetupEventHandler();
+
+
+    /**
+     * @brief Creates the command graph for windowed mode.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Windowed_SetupCommandGraph();
+
+
+    /**
+     * @brief Creates the command graph on headless mode.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Headless_SetupCommandGraph();
+
+
+    /**
+     * @brief Only runs in headless mode, sets up the vulkan device stuff.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Headless_SetupDevice();
+
+    
+    /**
+     * @brief Run for headless mode, sets up a bunch of buffers for us to render into. (i guess?)
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Headless_CreateRenderingBuffers();
+
+
+    /**
+     * @brief Updates the rendering buffers between frames. Only used in headless mode.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Headless_UpdateRenderingBuffers();
+
+    /**
+     * @brief Gets the image that was rendered last frame.
+     * 
+     * @param _FilePath Place to write the image we just captured.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool Headless_GetImage(std::string _FilePath);
+
+
+    /**
      * @brief Erases all objects in the current scene. Resets the scene to an empty state.
      * 
      * @return true 
      * @return false 
      */
     bool ClearScene();
+
+
+    /**
+     * @brief Helper that sets the headless resolution for renders.
+     * Only has an effect when running headless, and will cause the next frame rendered to have the desired resolution.
+     * 
+     * @param _Width Desired width in pixels.
+     * @param _Height Desired height in pixels.
+     * @return true Success
+     * @return false Failure
+     */
+    bool SetResolution(int _Width, int _Height);
+
 
 
     /**
@@ -157,10 +256,22 @@ public:
      * @brief Does what it sounds like, this draws a frame on the renderer.
      * Returns true on success, false on failure.
      * 
+     * @param _FilePath Optional file path where this image is to be saved.
+     * 
      * @return true 
      * @return false 
      */
-    bool DrawFrame();
+    bool DrawFrame(std::string _FilePath = "/tmp/example.bmp");
+
+
+    /**
+     * @brief Moves the camera to the given position.
+     * 
+     * @param Position_ 
+     * @return true 
+     * @return false 
+     */
+    bool UpdateCameraPosition(vsg::dvec3 Position_, double Height_ = 3.0);
 
 
     /**
@@ -168,6 +279,11 @@ public:
      * 
      */
     void WaitUntilGPUDone();
+
+
+
+
+    // Thread Access/Control Functions
 
     /**
      * @brief Locks the scene mutex, allowing other threads to access the scene.
@@ -180,6 +296,8 @@ public:
      * 
      */
     void UnlockScene();
+
+
 
 
 };

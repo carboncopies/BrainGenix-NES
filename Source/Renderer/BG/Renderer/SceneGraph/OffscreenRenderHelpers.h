@@ -31,11 +31,48 @@ namespace BG {
 namespace NES {
 namespace Renderer {
 
-
+/**
+ * @brief Helper function which creates a Vulkan ColorImageView object.
+ * 
+ * @param device 
+ * @param extent 
+ * @param imageFormat 
+ * @param samples 
+ * @return vsg::ref_ptr<vsg::ImageView> 
+ */
 vsg::ref_ptr<vsg::ImageView> createColorImageView(vsg::ref_ptr<vsg::Device> device, const VkExtent2D& extent, VkFormat imageFormat, VkSampleCountFlagBits samples);
+
+/**
+ * @brief Helper function which creates a DepthImageView object.
+ * 
+ * @param device 
+ * @param extent 
+ * @param depthFormat 
+ * @param samples 
+ * @return vsg::ref_ptr<vsg::ImageView> 
+ */
 vsg::ref_ptr<vsg::ImageView> createDepthImageView(vsg::ref_ptr<vsg::Device> device, const VkExtent2D& extent, VkFormat depthFormat, VkSampleCountFlagBits samples);
 
+/**
+ * @brief Helper function which creates a ColorCapture object.
+ * 
+ * @param device 
+ * @param extent 
+ * @param sourceImage 
+ * @param sourceImageFormat 
+ * @return std::pair<vsg::ref_ptr<vsg::Commands>, vsg::ref_ptr<vsg::Image>> 
+ */
 std::pair<vsg::ref_ptr<vsg::Commands>, vsg::ref_ptr<vsg::Image>> createColorCapture(vsg::ref_ptr<vsg::Device> device, const VkExtent2D& extent, vsg::ref_ptr<vsg::Image> sourceImage, VkFormat sourceImageFormat);
+
+/**
+ * @brief Helper function which creates a DepthCapture object.
+ * 
+ * @param device 
+ * @param extent 
+ * @param sourceImage 
+ * @param sourceImageFormat 
+ * @return std::pair<vsg::ref_ptr<vsg::Commands>, vsg::ref_ptr<vsg::Buffer>> 
+ */
 std::pair<vsg::ref_ptr<vsg::Commands>, vsg::ref_ptr<vsg::Buffer>> createDepthCapture(vsg::ref_ptr<vsg::Device> device, const VkExtent2D& extent, vsg::ref_ptr<vsg::Image> sourceImage, VkFormat sourceImageFormat);
 
 

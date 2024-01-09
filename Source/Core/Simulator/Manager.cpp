@@ -7,39 +7,40 @@ namespace NES {
 namespace Simulator {
 
 
-Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, API::Manager* _RPCManager, BG::NES::Renderer::Interface* _Renderer) {
+Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, API::Manager* _RPCManager) {
     assert(_Logger != nullptr);
     assert(_Config != nullptr);
     assert(_RPCManager != nullptr);
-    assert(_Renderer != nullptr);
+    assert(_RenderPool != nullptr);
+
 
     Config_ = _Config;
-    Renderer_ = _Renderer;
     Logger_ = _Logger;
+    RenderPool_ = _RenderPool;
 
 
     // Register Callback For CreateSim
-    _RPCManager->AddRoute("Simulation/Create", [this](std::string RequestJSON){ return SimulationCreate(RequestJSON);});
-    _RPCManager->AddRoute("Simulation/Reset", [this](std::string RequestJSON){ return SimulationReset(RequestJSON);});
-    _RPCManager->AddRoute("Simulation/RunFor", [this](std::string RequestJSON){ return SimulationRunFor(RequestJSON);});
-    _RPCManager->AddRoute("Simulation/RecordAll", [this](std::string RequestJSON){ return SimulationRecordAll(RequestJSON);});
-    _RPCManager->AddRoute("Simulation/GetRecording", [this](std::string RequestJSON){ return SimulationGetRecording(RequestJSON);});
-    _RPCManager->AddRoute("Simulation/GetStatus", [this](std::string RequestJSON){ return SimulationGetStatus(RequestJSON);});
-    _RPCManager->AddRoute("Simulation/BuildMesh", [this](std::string RequestJSON){ return SimulationBuildMesh(RequestJSON);});
-    _RPCManager->AddRoute("Geometry/Shape/Sphere/Create", [this](std::string RequestJSON){ return SphereCreate(RequestJSON);});
-    _RPCManager->AddRoute("Geometry/Shape/Cylinder/Create", [this](std::string RequestJSON){ return CylinderCreate(RequestJSON);});
-    _RPCManager->AddRoute("Geometry/Shape/Box/Create", [this](std::string RequestJSON){ return BoxCreate(RequestJSON);});
-    _RPCManager->AddRoute("Compartment/BS/Create", [this](std::string RequestJSON){ return BSCreate(RequestJSON);});
-    _RPCManager->AddRoute("Connection/Staple/Create", [this](std::string RequestJSON){ return StapleCreate(RequestJSON);});
-    _RPCManager->AddRoute("Connection/Receptor/Create", [this](std::string RequestJSON){ return ReceptorCreate(RequestJSON);});
-    _RPCManager->AddRoute("Tool/PatchClampDAC/Create", [this](std::string RequestJSON){ return PatchClampDACCreate(RequestJSON);});
-    _RPCManager->AddRoute("Tool/PatchClampDAC/SetOutputList", [this](std::string RequestJSON){ return PatchClampDACSetOutputList(RequestJSON);});
-    _RPCManager->AddRoute("Tool/PatchClampADC/Create", [this](std::string RequestJSON){ return PatchClampADCCreate(RequestJSON);});
-    _RPCManager->AddRoute("Tool/PatchClampADC/SetSampleRate", [this](std::string RequestJSON){ return PatchClampADCSetSampleRate(RequestJSON);});
-    _RPCManager->AddRoute("Tool/PatchClampADC/GetRecordedData", [this](std::string RequestJSON){ return PatchClampADCGetRecordedData(RequestJSON);});
+    _RPCManager->AddRoute("Simulation/Create", Logger_, [this](std::string RequestJSON){ return SimulationCreate(RequestJSON);});
+    _RPCManager->AddRoute("Simulation/Reset", Logger_, [this](std::string RequestJSON){ return SimulationReset(RequestJSON);});
+    _RPCManager->AddRoute("Simulation/RunFor", Logger_, [this](std::string RequestJSON){ return SimulationRunFor(RequestJSON);});
+    _RPCManager->AddRoute("Simulation/RecordAll", Logger_, [this](std::string RequestJSON){ return SimulationRecordAll(RequestJSON);});
+    _RPCManager->AddRoute("Simulation/GetRecording", Logger_, [this](std::string RequestJSON){ return SimulationGetRecording(RequestJSON);});
+    _RPCManager->AddRoute("Simulation/GetStatus", Logger_, [this](std::string RequestJSON){ return SimulationGetStatus(RequestJSON);});
+    _RPCManager->AddRoute("Simulation/BuildMesh", Logger_, [this](std::string RequestJSON){ return SimulationBuildMesh(RequestJSON);});
+    _RPCManager->AddRoute("Geometry/Shape/Sphere/Create", Logger_, [this](std::string RequestJSON){ return SphereCreate(RequestJSON);});
+    _RPCManager->AddRoute("Geometry/Shape/Cylinder/Create", Logger_, [this](std::string RequestJSON){ return CylinderCreate(RequestJSON);});
+    _RPCManager->AddRoute("Geometry/Shape/Box/Create", Logger_, [this](std::string RequestJSON){ return BoxCreate(RequestJSON);});
+    _RPCManager->AddRoute("Compartment/BS/Create", Logger_, [this](std::string RequestJSON){ return BSCreate(RequestJSON);});
+    _RPCManager->AddRoute("Connection/Staple/Create", Logger_, [this](std::string RequestJSON){ return StapleCreate(RequestJSON);});
+    _RPCManager->AddRoute("Connection/Receptor/Create", Logger_, [this](std::string RequestJSON){ return ReceptorCreate(RequestJSON);});
+    _RPCManager->AddRoute("Tool/PatchClampDAC/Create", Logger_, [this](std::string RequestJSON){ return PatchClampDACCreate(RequestJSON);});
+    _RPCManager->AddRoute("Tool/PatchClampDAC/SetOutputList", Logger_, [this](std::string RequestJSON){ return PatchClampDACSetOutputList(RequestJSON);});
+    _RPCManager->AddRoute("Tool/PatchClampADC/Create", Logger_, [this](std::string RequestJSON){ return PatchClampADCCreate(RequestJSON);});
+    _RPCManager->AddRoute("Tool/PatchClampADC/SetSampleRate", Logger_, [this](std::string RequestJSON){ return PatchClampADCSetSampleRate(RequestJSON);});
+    _RPCManager->AddRoute("Tool/PatchClampADC/GetRecordedData", Logger_, [this](std::string RequestJSON){ return PatchClampADCGetRecordedData(RequestJSON);});
 
 
-    _RPCManager->AddRoute("Debug", [this](std::string RequestJSON){ return Debug(RequestJSON);});
+    _RPCManager->AddRoute("Debug", Logger_, [this](std::string RequestJSON){ return Debug(RequestJSON);});
 
     // Start SE Thread
     StopThreads_ = false;
@@ -63,7 +64,7 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     // Parse Request
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     std::string SimulationName = RequestJSON["Name"];
-    std::cout<<"[Info] Create Simulation Called, New sim has name "<<SimulationName<<std::endl;
+    Logger_->Log("Create Simulation Called, New Sim Has Name " + SimulationName, 3);
 
 
     // Build New Simulation Object
@@ -72,9 +73,10 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     Simulation* Sim = Simulations_[SimID].get();
     Sim->Name = SimulationName;
     Sim->ID = SimID;
+    Sim->CurrentTask = SIMULATION_NONE;
 
     // Start Thread
-    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, Renderer_, &StopThreads_));
+    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, RenderPool_, &StopThreads_));
 
 
     // Return Status ID
@@ -89,7 +91,7 @@ std::string Manager::SimulationReset(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Simulation Reset Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Simulation Reset Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Check Sim ID
@@ -119,7 +121,7 @@ std::string Manager::SimulationRunFor(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Simulation RunFor Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Simulation RunFor Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Check Sim ID
@@ -150,7 +152,8 @@ std::string Manager::SimulationRecordAll(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Simulation RecordAll Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Simulation RecordAll Called, On Sim" + std::to_string(SimulationID), 3);
+
 
 
     // Check Sim ID
@@ -179,7 +182,7 @@ std::string Manager::SimulationGetRecording(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Simulation GetRecording Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Simulation GetRecording Called, On Sim" + std::to_string(SimulationID), 3);
 
 
     // Check Sim ID
@@ -209,7 +212,7 @@ std::string Manager::SimulationGetStatus(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Simulation GetStatus Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Simulation GetStatus Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Check Sim ID
@@ -260,12 +263,14 @@ std::string Manager::SimulationBuildMesh(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
 
-    if (!BuildMeshFromSimulation(Logger_, Renderer_, ThisSimulation)) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 999; // general failure
-        return ResponseJSON.dump();
-    }
+    // if (!BuildMeshFromSimulation(Logger_, Renderer_, ThisSimulation)) {
+    //     nlohmann::json ResponseJSON;
+    //     ResponseJSON["StatusCode"] = 999; // general failure
+    //     return ResponseJSON.dump();
+    // }
     
+    std::cout<<"WARNING THE SIMULATION BUILD MESH FUNCTION DOESNT DO AYNTHING!!!!\n";
+
 
     // Return JSON
     nlohmann::json ResponseJSON;
@@ -326,7 +331,9 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Create Cylinder Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Create Cylinder Called, On Sim " + std::to_string(SimulationID), 3);
+
+
     float E0Radius_um  = Util::GetFloat(&RequestJSON, "Point1Radius_um");
     float E0X_um = Util::GetFloat(&RequestJSON, "Point1PosX_um");
     float E0Y_um = Util::GetFloat(&RequestJSON, "Point1PosY_um");
@@ -337,10 +344,6 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     float E1Z_um = Util::GetFloat(&RequestJSON, "Point2PosZ_um");
     std::string Name = Util::GetString(&RequestJSON, "Name");
 
-    //std::cout << "E0:" << E0X_um << ',' << E0Y_um << ',' << E0Z_um << '\n';
-    //std::cout << "E1:" << E1X_um << ',' << E1Y_um << ',' << E1Z_um << '\n';
-    std::cout << "E0Radius_um: " << E0Radius_um << '\n';
-    std::cout << "E1Radius_um: " << E1Radius_um << '\n';
 
     // Build New Cylinder Object
     Geometries::Cylinder S;
@@ -386,7 +389,7 @@ std::string Manager::BoxCreate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Create Box Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Create Box Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Build New Box Object
@@ -427,7 +430,8 @@ std::string Manager::BSCreate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Create BS Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Create BS Called, On Sim " + std::to_string(SimulationID), 3);
+
 
 
     // Build New BS Object
@@ -471,7 +475,7 @@ std::string Manager::StapleCreate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Create Staple Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Create Staple Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Build New Staple Object
@@ -512,7 +516,8 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Create Receptor Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Create Receptor Called, On Sim " + std::to_string(SimulationID), 3);
+
 
 
     // Build New Receptor Object
@@ -556,7 +561,7 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Create PatchClampDAC Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Create PatchClampDAC Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Build New DAC Object
@@ -598,7 +603,8 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] PatchClampDAC SetOutputList Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("PatchClampDAC SetOutputList Called, On Sim " + std::to_string(SimulationID), 3);
+
 
     // Check Sim ID
     if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
@@ -639,7 +645,7 @@ std::string Manager::PatchClampADCCreate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] Create PatchClampADC Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("Create PatchClampADC Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Build New ADC Object
@@ -681,7 +687,7 @@ std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] PatchClampADC SetSampleRate Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("PatchClampADC SetSampleRate Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Check Sim ID
@@ -723,7 +729,7 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    std::cout<<"[Info] PatchClampADC GetRecordedData Called, On Sim "<<SimulationID<<std::endl;
+    Logger_->Log("PatchClampADC GetRecordedData Called, On Sim " + std::to_string(SimulationID), 3);
 
 
     // Check Sim ID
@@ -799,14 +805,14 @@ std::string Manager::Debug(std::string _JSONRequest) {
     //     Arr.SetVoxel(i, i, i, FILLED);
     // }
 
-    Renderer_->ResetScene();
+    // Renderer_->ResetScene();
 
 
-    // RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, 10);
-    for (unsigned int i = 0; i < Arr.GetZ(); i++) {
-        RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, i);
-        std::this_thread::sleep_for(std::chrono::milliseconds(100)); // delay so our mutex is easier to get by another thread if needed
-    }
+    // // RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, 10);
+    // for (unsigned int i = 0; i < Arr.GetZ(); i++) {
+    //     RenderSliceFromArray(Logger_, Renderer_, &MParams, &Arr, i);
+    //     std::this_thread::sleep_for(std::chrono::milliseconds(100)); // delay so our mutex is easier to get by another thread if needed
+    // }
 
     // Renderer_->ResetViewer();
 

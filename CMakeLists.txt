@@ -19,7 +19,7 @@ set(CMAKE_TOOLCHAIN_FILE ${LIB_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE
 # Define Project
 project(
 	"BrainGenix-NES"
-	VERSION "0.2.0"
+	VERSION "2024.01.08"
 	LANGUAGES CXX
 )
 
@@ -44,6 +44,8 @@ find_package(rpclib CONFIG REQUIRED)
 
 message(STATUS "Finding system pthreads lib")
 find_package(Threads REQUIRED)
+
+find_path(CPP_BASE64_INCLUDE_DIRS "cpp-base64/base64.cpp")
 
 
 # Renderer Dependencies

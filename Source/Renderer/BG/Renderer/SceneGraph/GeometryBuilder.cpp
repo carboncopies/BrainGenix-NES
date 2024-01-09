@@ -36,6 +36,7 @@ bool GeometryBuilder::ShaderHandler(Shaders::Shader* _Shader) {
 
         Material->value().diffuse = ShaderInfo->DiffuseColor_;
         Material->value().specular = ShaderInfo->SpecularColor_;
+        // Material->value().emissive = vsg::vec4(0.5, 0.5, 0.5, 0.5);
 
         MaterialBinding.data = Material;
         return true;
