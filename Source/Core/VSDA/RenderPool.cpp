@@ -40,12 +40,7 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
             // We didn't get any work, just go to sleep for a few milliseconds so we don't rail the cpu
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
-
     }
-
-
-
-
 }
 
 
@@ -69,8 +64,6 @@ RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowe
         Logger_->Log("Starting RenderPool Thread " + std::to_string(i), 1);
         RenderThreads_.push_back(std::thread(&RenderPool::RendererThreadMainFunction, this, i));
     }
-
-
 }
 
 RenderPool::~RenderPool() {
@@ -96,7 +89,6 @@ void RenderPool::EnqueueSimulation(Simulation* _Sim) {
     std::lock_guard<std::mutex> LockQueue(QueueMutex_);
 
     Queue_.emplace(_Sim);
-
 }
 
 int RenderPool::GetQueueSize() {
@@ -107,7 +99,6 @@ int RenderPool::GetQueueSize() {
     int QueueSize = Queue_.size();
 
     return QueueSize;
-
 }
 
 bool RenderPool::DequeueSimulation(Simulation** _SimPtr) {
