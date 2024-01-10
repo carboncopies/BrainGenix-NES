@@ -441,6 +441,8 @@ std::string Manager::BSCreate(std::string _JSONRequest) {
     C.MembranePotential_mV = Util::GetFloat(&RequestJSON, "MembranePotential_mV");
     C.SpikeThreshold_mV = Util::GetFloat(&RequestJSON, "SpikeThreshold_mV");
     C.DecayTime_ms = Util::GetFloat(&RequestJSON, "DecayTime_ms");
+    C.MembranePotential_mV = Util::GetFloat(&RequestJSON, "MembranePotential_mV");
+    C.AfterHyperpolarizationAmplitude_mV = Util::GetFloat(&RequestJSON, "AfterHyperpolarizationAmplitude_mV");
 
 
 

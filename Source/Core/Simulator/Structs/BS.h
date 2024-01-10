@@ -37,6 +37,8 @@ struct BS {
     float MembranePotential_mV; /**Membrane potential in millivolts*/
     float SpikeThreshold_mV; /**Action potential spike threshold voltage in millivolts*/
     float DecayTime_ms; /**After hyperpolarization time constant in ms, also known as tau_ahp*/
+    float MembranePotential_mV; /**Resting Potential in millivolts*/
+    float AfterHyperpolarizationAmplitude_mV; /**IDK Randal pls document this.*/
 
 };
 
