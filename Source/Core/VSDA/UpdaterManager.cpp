@@ -48,6 +48,7 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
         RenderSliceFromArray(_Logger, _Renderer, &_Simulation->VSDAData_.Params_, _Simulation->VSDAData_.Array_.get(), RegionSpecificFilePathList, FileNamePrefix, i);
         
         // Update Current Slice Information (Account for slice numbers not starting at 0)
+        _Simulation->VSDAData_.TotalSlices_ = _Simulation->VSDAData_.Array_.get()->GetZ();
         _Simulation->VSDAData_.CurrentSlice_ = i + 1;
     }
 
