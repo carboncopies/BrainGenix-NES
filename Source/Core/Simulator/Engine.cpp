@@ -41,6 +41,8 @@ void Engine::Reset(Simulation* _Sim) {
 void Engine::RunFor(Simulation* _Sim) {
     assert(_Sim != nullptr && "Engine::RunFor was passed a null _Sim (Simulation*) pointer!");
 
+    _Sim->RunFor(_Sim->RunTimes_ms);
+
 }
 
 
