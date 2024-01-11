@@ -201,6 +201,9 @@ std::string RPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0;
     ResponseJSON["RenderStatus"] = ThisSimulation->VSDAData_.State_;
+    ResponseJSON["CurrentSlice"] = ThisSimulation->VSDAData_.CurrentSlice_;
+    ResponseJSON["TotalSlices"] = ThisSimulation->VSDAData_.TotalSlices_;
+    
     return ResponseJSON.dump();
 
 }
