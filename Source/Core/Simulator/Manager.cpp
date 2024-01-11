@@ -103,7 +103,7 @@ std::string Manager::SimulationReset(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
     // ThisSimulation->CurrentTask = SIMULATION_RESET; // request a reset be done
@@ -135,7 +135,7 @@ std::string Manager::SimulationRunFor(std::string _JSONRequest) {
     std::cout<<"WorkRequested: "<<ThisSimulation->WorkRequested<<std::endl;
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
 
@@ -168,7 +168,7 @@ std::string Manager::SimulationRecordAll(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
     ThisSimulation->MaxRecordTime_ms = Util::GetFloat(&RequestJSON, "MaxRecordTime_ms");
@@ -197,7 +197,7 @@ std::string Manager::SimulationGetRecording(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
 
@@ -227,7 +227,7 @@ std::string Manager::SimulationGetStatus(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
 
@@ -262,7 +262,7 @@ std::string Manager::SimulationBuildMesh(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
 
@@ -314,7 +314,7 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
     int SphereID = ThisSimulation->Collection.Geometries.size();
@@ -371,7 +371,7 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
     int ShapeID = ThisSimulation->Collection.Geometries.size(); // we can do this since the shapes vector is a variant
@@ -412,7 +412,7 @@ std::string Manager::BoxCreate(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
     int ShapeID = ThisSimulation->Collection.Geometries.size(); // we can do this since the shapes vector is a variant
@@ -459,7 +459,7 @@ std::string Manager::BSCreate(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
     int CompartmentID = ThisSimulation->BSCompartments.size();
@@ -500,7 +500,7 @@ std::string Manager::StapleCreate(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
     int StapleID = ThisSimulation->Staples.size();
@@ -545,7 +545,7 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
     int ReceptorID = ThisSimulation->Receptors.size();
@@ -587,7 +587,7 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
     int PatchClampDACID = ThisSimulation->PatchClampDACs.size();
@@ -621,7 +621,7 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
 
@@ -671,7 +671,7 @@ std::string Manager::PatchClampADCCreate(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
     int PatchClampADCID = ThisSimulation->PatchClampADCs.size();
@@ -705,7 +705,7 @@ std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
 
@@ -747,7 +747,7 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 4; // simulation is currently processing
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
 
