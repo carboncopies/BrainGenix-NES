@@ -1,5 +1,7 @@
 #include <Simulator/Structs/Simulation.h>
 
+#include <iostream>
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -22,6 +24,13 @@ void Simulation::AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region) {
     auto ID = std::to_string(regionPtr->ID);
     this->Regions[ID] = regionPtr;
 };
+
+unsigned long Simulation::GetTotalNumberOfNeurons() {
+    unsigned long num_neurons = 0;
+    for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+        num_neurons += circuit->GetNumberOfNeurons();
+    }
+}
 
 std::vector<std::shared_ptr<CoreStructs::Neuron>> Simulation::GetAllNeurons() {
     std::vector<std::shared_ptr<CoreStructs::Neuron>> allNeurons{};
@@ -135,6 +144,9 @@ void Simulation::RunFor(float tRun_ms) {
         return;
 
     float tEnd_ms = this->T_ms + tRun_ms;
+
+    std::cout << "Simulation run includes " << << " circuits with a total of " << << " neurons.\n";
+    //Logger_->Log("Create BS Called, On Sim " + std::to_string(SimulationID), 3);
 
     while (this->T_ms < tEnd_ms) {
         bool recording = this->IsRecording();

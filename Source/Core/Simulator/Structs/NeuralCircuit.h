@@ -23,6 +23,21 @@ namespace NES {
 namespace Simulator {
 namespace CoreStructs {
 
+/*
+SOME NOTES ON THINGS TO FIX HERE (by Randal):
+
+- We want to be able to work with mixed types, so NeuralCircuit and the general
+  map of neurons of base class Neuron should be the holder of pointers to
+  neuron objects (not some derived class such as BSAlignedNC).
+- While the use of virtual member functions can allow duplicate member functions
+  for derived classes there should be no duplicate variables (e.g. the
+  Cells map). Push these as low as possible, i.e. towards the base class, except
+  where that does not make sense (e.g. where the variables are specific to one
+  derived class).
+
+Note that the above is also how the Python prototypes now work.
+*/
+
 /**
  * @brief This struct provides the base struct for all neural circuits.
  *
@@ -36,6 +51,9 @@ struct NeuralCircuit {
 
     //! Initializes the neurons in the neural circuit.
     virtual void InitCells(std::shared_ptr<Geometries::Geometry> domain) = 0;
+
+    //! Returns the number of neuron in the neural circuit.
+    virtual size_t GetNumberOfNeurons()
 
     //! Returns all neurons in the neural circuit.
     virtual std::vector<std::shared_ptr<Neuron>> GetNeurons() = 0;
