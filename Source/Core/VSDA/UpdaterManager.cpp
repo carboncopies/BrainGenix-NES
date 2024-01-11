@@ -26,7 +26,7 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
 
     // Setup Metadata For GetRenderStatus
     float TotalRegionThickness = abs(RequestedRegion.Point1Z_um - RequestedRegion.Point2Z_um);
-    _Simulation->VSDAData_.TotalSlices_ = TotalRegionThickness / _Simulation->VSDAData_.Params_.SliceThickness_um;
+    _Simulation->VSDAData_.TotalSlices_ = TotalRegionThickness / _Simulation->VSDAData_.Params_.VoxelResolution_um;
 
 
     // Create Voxel Array
