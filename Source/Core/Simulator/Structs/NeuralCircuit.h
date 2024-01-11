@@ -36,6 +36,23 @@ SOME NOTES ON THINGS TO FIX HERE (by Randal):
   derived class).
 
 Note that the above is also how the Python prototypes now work.
+
+- We also have a little bit of a confusing issue where a decision needs to be
+  made: In both the model code and the BG_API.py test, a DAC is set up to
+  put input into a compartment (e.g. a soma). But, running a simulation
+  depends entirely on carrying out updates on a circuit and from there
+  neurons and from there compartments. There is no way to reach compartments
+  directly for updates during a simulation. We need to decide: Do we keep it
+  that way and ensure that neurons and circuits are always created or do we
+  add a way to run compartments directly without caring about the higher
+  level descriptions. A couple of thoughts in favor of either: a) It is
+  highly likely that we will never create compartments without them belonging
+  to a neuron and a circuit. b) It could be that just updating compartments
+  is all that is needed for simulation runs and that higher level composites
+  can be ignored entirely.
+  For now, we should probably pick running from the circuit and neuron, because
+  update functions such as possible spontaneous activity are only defined at
+  the neuron and not the compartment in the Python prototypes.
 */
 
 /**
@@ -53,7 +70,7 @@ struct NeuralCircuit {
     virtual void InitCells(std::shared_ptr<Geometries::Geometry> domain) = 0;
 
     //! Returns the number of neuron in the neural circuit.
-    virtual size_t GetNumberOfNeurons()
+    virtual size_t GetNumberOfNeurons() { return Cells.size(); }
 
     //! Returns all neurons in the neural circuit.
     virtual std::vector<std::shared_ptr<Neuron>> GetNeurons() = 0;

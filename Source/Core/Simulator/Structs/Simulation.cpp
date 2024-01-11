@@ -8,7 +8,7 @@ namespace Simulator {
 
 //! Constructors
 Simulation::Simulation(){};
-Simulation::Simulation(std::string _Name) : Name(_Name){};
+Simulation::Simulation(std::string _Name, BG::Common::Logger::LoggingSystem* _Logger) : Name(_Name), Logger_(_Logger) {};
 
 void Simulation::AddCircuit(
     std::shared_ptr<CoreStructs::NeuralCircuit> circuit) {
@@ -25,11 +25,12 @@ void Simulation::AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region) {
     this->Regions[ID] = regionPtr;
 };
 
-unsigned long Simulation::GetTotalNumberOfNeurons() {
-    unsigned long num_neurons = 0;
+size_t Simulation::GetTotalNumberOfNeurons() {
+    size_t long num_neurons = 0;
     for (auto &[circuitID, circuit] : this->NeuralCircuits) {
         num_neurons += circuit->GetNumberOfNeurons();
     }
+    return num_neurons;
 }
 
 std::vector<std::shared_ptr<CoreStructs::Neuron>> Simulation::GetAllNeurons() {
@@ -145,8 +146,10 @@ void Simulation::RunFor(float tRun_ms) {
 
     float tEnd_ms = this->T_ms + tRun_ms;
 
-    std::cout << "Simulation run includes " << << " circuits with a total of " << << " neurons.\n";
-    //Logger_->Log("Create BS Called, On Sim " + std::to_string(SimulationID), 3);
+    Logger_->Log("Simulation run includes:", 3);
+    Logger_->Log(std::to_string(NeuralCircuits.size())+" circuits with a total of", 3);
+    Logger_->Log(std::to_string(GetTotalNumberOfNeurons())+" neurons and a total of", 3);
+    Logger_->Log(std::to_string(BSCompartments.size())+" compartments.", 3);
 
     while (this->T_ms < tEnd_ms) {
         bool recording = this->IsRecording();

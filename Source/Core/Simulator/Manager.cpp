@@ -33,6 +33,7 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     _RPCManager->AddRoute("Compartment/BS/Create", Logger_, [this](std::string RequestJSON){ return BSCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Staple/Create", Logger_, [this](std::string RequestJSON){ return StapleCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Receptor/Create", Logger_, [this](std::string RequestJSON){ return ReceptorCreate(RequestJSON);});
+    _RPCManager->AddRoute("Neuron/BS/Create", Logger_, [this](std::string RequestJSON){ return BSNeuronCreate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampDAC/Create", Logger_, [this](std::string RequestJSON){ return PatchClampDACCreate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampDAC/SetOutputList", Logger_, [this](std::string RequestJSON){ return PatchClampDACSetOutputList(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampADC/Create", Logger_, [this](std::string RequestJSON){ return PatchClampADCCreate(RequestJSON);});
@@ -550,6 +551,51 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     C.ID = ReceptorID;
     ThisSimulation->Receptors.push_back(C);
 
+
+    // Return Status ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    ResponseJSON["ReceptorID"] = ReceptorID;
+    return ResponseJSON.dump();
+}
+
+std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    Logger_->Log("Create BSNeuron Called, On Sim " + std::to_string(SimulationID), 3);
+
+    // Build New BSNeuron Object
+    Neuron::BS C;
+    C.Name = Util::GetString(&RequestJSON, "Name");
+    C.SomaID = Util::GetInt(&RequestJSON, "SomaID");
+    C.AxonID = Util::GetInt(&RequestJSON, "AxonID");
+    C.MembranePotential_mV = Util::GetFloat(&RequestJSON, "MembranePotential_mV");
+    C.RestingPotential_mV = Util::GetFloat(&RequestJSON, "RestingPotential_mV");
+    C.SpikeThreshold_mV = Util::GetFloat(&RequestJSON, "SpikeThreshold_mV");
+    C.DecayTime_ms = Util::GetFloat(&RequestJSON, "DecayTime_ms");
+    C.AfterHyperpolarizationAmplitude_mV = Util::GetFloat(&RequestJSON, "AfterHyperpolarizationAmplitude_mV");
+    C.PostsynapticPotentialRiseTime_ms = Util::GetFloat(&RequestJSON, "PostsynapticPotentialRiseTime_ms");
+    C.PostsynapticPotentialDecayTime_ms = Util::GetFloat(&RequestJSON, "PostsynapticPotentialDecayTime_ms");
+    C.PostsynapticPotentialAmplitude_mV = Util::GetFloat(&RequestJSON, "PostsynapticPotentialAmplitude_mV");
+
+    // Add to Sim, Set ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        ResponseJSON["ReceptorID"] = -1;
+        return ResponseJSON.dump();
+    }
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
+    int NeuronID = ThisSimulation->Neurons.size();
+    C.ID = NeuronID;
+    ThisSimulation->Neurons.push_back(C);
 
     // Return Status ID
     nlohmann::json ResponseJSON;
