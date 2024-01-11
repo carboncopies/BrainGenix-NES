@@ -52,6 +52,7 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
                 _Sim->WorkRequested = false;
             }
             _Sim->IsProcessing = false;
+            _Logger->Log("Worker Completed Work On Simulation " + std::to_string(_Sim->ID), 4);
         } else {
             std::this_thread::sleep_for(std::chrono::milliseconds(10)); // sleep for 10ms
         }

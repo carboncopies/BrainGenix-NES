@@ -131,8 +131,6 @@ std::string Manager::SimulationRunFor(std::string _JSONRequest) {
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    std::cout<<"CurrentTask: "<<ThisSimulation->CurrentTask<<std::endl;
-    std::cout<<"WorkRequested: "<<ThisSimulation->WorkRequested<<std::endl;
     if (IsSimulationBusy(ThisSimulation)) {
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 5; // simulation is currently processing
@@ -155,7 +153,7 @@ std::string Manager::SimulationRecordAll(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    Logger_->Log("Simulation RecordAll Called, On Sim" + std::to_string(SimulationID), 3);
+    Logger_->Log("Simulation RecordAll Called, On Sim " + std::to_string(SimulationID), 3);
 
 
 
