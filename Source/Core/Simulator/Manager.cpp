@@ -33,7 +33,7 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     _RPCManager->AddRoute("Compartment/BS/Create", Logger_, [this](std::string RequestJSON){ return BSCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Staple/Create", Logger_, [this](std::string RequestJSON){ return StapleCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Receptor/Create", Logger_, [this](std::string RequestJSON){ return ReceptorCreate(RequestJSON);});
-    _RPCManager->AddRoute("Neuron/BS/Create", Logger_, [this](std::string RequestJSON){ return BSNeuronCreate(RequestJSON);});
+    _RPCManager->AddRoute("Neuron/BSNeuron/Create", Logger_, [this](std::string RequestJSON){ return BSNeuronCreate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampDAC/Create", Logger_, [this](std::string RequestJSON){ return PatchClampDACCreate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampDAC/SetOutputList", Logger_, [this](std::string RequestJSON){ return PatchClampDACSetOutputList(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampADC/Create", Logger_, [this](std::string RequestJSON){ return PatchClampADCCreate(RequestJSON);});

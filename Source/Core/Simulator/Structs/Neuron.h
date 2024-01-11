@@ -28,6 +28,7 @@ namespace CoreStructs {
  */
 struct Neuron {
 
+    std::string Name; /**Name of the Neuron*/
     int ID; /**ID of the Neuron */
 
     //! Returns the time since the action potential threshold was
@@ -48,6 +49,23 @@ typedef std::tuple<std::shared_ptr<CoreStructs::Neuron>, float> ReceptorData;
 //! NeuronRecording is an unordered map containing data from simulation in a
 //! neuron.
 typedef std::unordered_map<std::string, std::vector<float>> NeuronRecording;
+
+struct BSNeuron: Neuron {
+
+    int SomaShapeID;
+    int AxonShapeID;
+
+    float MembranePotential_mV;
+    float RestingPotential_mV;
+    float SpikeThreshold_mV;
+    float DecayTime_ms;
+    float AfterHyperpolarizationAmplitude_mV;
+    float PostsynapticPotentialRiseTime_ms;
+    float PostsynapticPotentialRiseTime_ms;
+    float PostsynapticPotentialDecayTime_ms;
+    float PostsynapticPotentialAmplitude_mV;
+
+}
 
 }; // namespace CoreStructs
 }; // namespace Simulator
