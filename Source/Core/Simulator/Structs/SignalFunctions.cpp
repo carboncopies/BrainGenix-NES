@@ -17,8 +17,7 @@ float DoubleExponentExpr(float amp, float tauRise, float tauDecay,
 }
 
 // One-dimensional convolution.
-std::vector<float> Convolve1D(std::vector<float> signal,
-                              std::vector<float> kernel) {
+std::vector<float> Convolve1D(std::vector<float> signal, std::vector<float> kernel) {
     std::vector<float> result{};
 
     std::reverse(kernel.begin(), kernel.end());

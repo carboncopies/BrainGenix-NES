@@ -105,8 +105,7 @@ struct Simulation {
     GetNeuronsByIDs(std::vector<size_t> IDList);
     Geometries::Vec3D GetGeoCenter();
     void AttachDirectStim(std::vector<std::tuple<float, size_t>> listOfStims);
-    void SetSpontaneousActivity(
-        std::vector<std::tuple<float, float, size_t>> spontSpikeSettings);
+    void SetSpontaneousActivity(std::vector<std::tuple<float, float, size_t>> spontSpikeSettings);
 
     //! Record all dynamically calculated values for a maximum of tMax_ms
     //! milliseconds. Setting t_max_ms=0 effectively turns off recording.

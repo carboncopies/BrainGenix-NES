@@ -29,8 +29,7 @@ namespace SignalFunctions {
 //! contributions.
 float DoubleExponentExpr(float amp, float tauRise, float tauDecay, float tDiff);
 //! One-dimensional convolution.
-std::vector<float> Convolve1D(std::vector<float> signal,
-                              std::vector<float> kernel);
+std::vector<float> Convolve1D(std::vector<float> signal, std::vector<float> kernel);
 
 }; // namespace SignalFunctions
 }; // namespace Simulator

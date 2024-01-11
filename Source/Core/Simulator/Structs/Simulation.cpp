@@ -141,8 +141,7 @@ void Simulation::RunFor(float tRun_ms) {
         if (recording)
             this->TRecorded_ms.emplace_back(this->T_ms);
         for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-            auto circuitPtr =
-                std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
+            auto circuitPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
             assert(circuitPtr);
             circuitPtr->Update(this->T_ms, recording);
         }
