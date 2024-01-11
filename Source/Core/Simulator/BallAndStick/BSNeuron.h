@@ -62,8 +62,7 @@ struct BSNeuron : CoreStructs::Neuron {
     float TauPSPd_ms = 25.0; //! PostSynaptic Potential decay time constant
     float VPSP_mV = 20.0;    //! PostSynaptic Potential amplitude
 
-    std::tuple<float, float> TauSpontMeanStdev_ms = {
-        0.0, 0.0}; //! 0 means no spontaneous activity
+    std::tuple<float, float> TauSpontMeanStdev_ms = {0.0, 0.0}; //! 0 means no spontaneous activity
 
     float T_ms = 0.0;
     float TSpontNext_ms = _T_SPONT_NEXT_mS_INIT;
