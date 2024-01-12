@@ -39,8 +39,7 @@ struct RecordingElectrodeTest : testing::Test {
         testNC = std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(4000, 2);
         auto testBSAlignedNC = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSAlignedNC>(testNC);
         testRegion = std::make_shared<
-            BG::NES::Simulator::BallAndStick::BSAlignedBrainRegion>(
-            3000,
+            BG::NES::Simulator::BallAndStick::BSAlignedBrainRegion>(3000,
             std::make_shared<BG::NES::Simulator::Geometries::Box>(
                 BG::NES::Simulator::Geometries::Vec3D(0.0, 0.0, 0.0),
                 BG::NES::Simulator::Geometries::Vec3D(20.0, 20.0, 20.0)),
