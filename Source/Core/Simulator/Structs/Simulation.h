@@ -99,8 +99,7 @@ struct Simulation {
     VSDAData VSDAData_; /**Instance of the simulator VSDA data - stores the state for the renderer to use*/
 
     //! Constructors
-    Simulation();
-    Simulation(std::string _Name, BG::Common::Logger::LoggingSystem* _Logger);
+    Simulation(BG::Common::Logger::LoggingSystem* _Logger);
 
     void AddCircuit(std::shared_ptr<CoreStructs::NeuralCircuit> circuit);
     void AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region);

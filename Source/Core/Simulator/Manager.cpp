@@ -69,7 +69,7 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
 
 
     // Build New Simulation Object
-    Simulations_.push_back(std::make_unique<Simulation>());
+    Simulations_.push_back(std::make_unique<Simulation>(Logger_));
     int SimID = Simulations_.size()-1;
     Simulation* Sim = Simulations_[SimID].get();
     Sim->Name = SimulationName;

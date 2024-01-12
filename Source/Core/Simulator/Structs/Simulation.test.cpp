@@ -30,13 +30,11 @@ struct SimulationTest : testing::Test {
     float tol = 1e-3;
 
     void SetUp() {
-        testSimulation = std::make_unique<BG::NES::Simulator::Simulation>();
+        testSimulation = std::make_unique<BG::NES::Simulator::Simulation>(nullptr); // this will fail an assert when we try and use the logger fyi
     }
 
     void InitNCAndBrainRegion() {
-        std::shared_ptr<BG::NES::Simulator::CoreStructs::NeuralCircuit> testNC =
-            std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(
-                4000);
+        std::shared_ptr<BG::NES::Simulator::CoreStructs::NeuralCircuit> testNC = std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(4000);
 
         auto testBSAlignedNC = std::dynamic_pointer_cast<
             BG::NES::Simulator::BallAndStick::BSAlignedNC>(testNC);

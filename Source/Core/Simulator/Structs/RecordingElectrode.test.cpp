@@ -27,22 +27,17 @@
  */
 
 struct RecordingElectrodeTest : testing::Test {
-    std::unique_ptr<BG::NES::Simulator::Tools::RecordingElectrode>
-        testElectrode{};
+    std::unique_ptr<BG::NES::Simulator::Tools::RecordingElectrode> testElectrode{};
     std::shared_ptr<BG::NES::Simulator::CoreStructs::NeuralCircuit> testNC{};
-    std::shared_ptr<BG::NES::Simulator::BallAndStick::BSAlignedBrainRegion>
-        testRegion{};
+    std::shared_ptr<BG::NES::Simulator::BallAndStick::BSAlignedBrainRegion> testRegion{};
     std::shared_ptr<BG::NES::Simulator::Simulation> testSim{};
 
     float tol = 1e-3;
 
     void SetUp() {
-        testSim = std::make_shared<BG::NES::Simulator::Simulation>();
-        testNC =
-            std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(
-                4000, 2);
-        auto testBSAlignedNC = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSAlignedNC>(testNC);
+        testSim = std::make_shared<BG::NES::Simulator::Simulation>(nullptr);  // this will fail an assert when we try and use the logger fyi
+        testNC = std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(4000, 2);
+        auto testBSAlignedNC = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSAlignedNC>(testNC);
         testRegion = std::make_shared<
             BG::NES::Simulator::BallAndStick::BSAlignedBrainRegion>(
             3000,
@@ -54,9 +49,7 @@ struct RecordingElectrodeTest : testing::Test {
         testSim->AddCircuit(testNC);
         testSim->AddRegion(testRegion);
 
-        testElectrode =
-            std::make_unique<BG::NES::Simulator::Tools::RecordingElectrode>(
-                testSim);
+        testElectrode = std::make_unique<BG::NES::Simulator::Tools::RecordingElectrode>(testSim);
     }
 
     void TearDown() { return; }

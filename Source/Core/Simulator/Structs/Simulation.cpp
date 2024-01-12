@@ -7,8 +7,7 @@ namespace NES {
 namespace Simulator {
 
 //! Constructors
-Simulation::Simulation(){};
-Simulation::Simulation(std::string _Name, BG::Common::Logger::LoggingSystem* _Logger) : Name(_Name), Logger_(_Logger) {};
+Simulation::Simulation(BG::Common::Logger::LoggingSystem* _Logger) : Logger_(_Logger) {};
 
 void Simulation::AddCircuit(
     std::shared_ptr<CoreStructs::NeuralCircuit> circuit) {
@@ -141,6 +140,8 @@ Simulation::GetRecording() {
 };
 
 void Simulation::RunFor(float tRun_ms) {
+    assert(Logger_ != nullptr);
+    
     if (!(tRun_ms >= 0.0))
         return;
 
