@@ -334,13 +334,12 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
 
     // Now we start a for loop which renders each image for each step within the slice
     // This is based on the FOV of the camera, height of the camera, and size of the voxels
-
-    // For now, FOV is set to 80 (hardcoded here and in the renderer), maybe make this an API param
-    double FOV_deg = 80.; // In degrees
+    double FOV_deg = _Params->MicroscopeFOV_deg;
+    int PixelsPerVoxel = _Params->NumPixelsPerVoxel_px;
 
     // Calculate the camera distance based on the given microscope params
     // res_in_voxels = image_width_px / pixels_per_voxel
-    int ResolutionInVoxels = _Params->ImageWidth_px / 16; // FIXME- HARDCODED VALUE, MAKE THIS AN API PARAMETER (PROLLY FOR MICROSCOPE PARAMS)
+    int ResolutionInVoxels = _Params->ImageWidth_px / 16; 
     // height_um = res_in_voxels * voxel_size_um / tan(FOV_deg / 2)
     double CameraDistance = ResolutionInVoxels * _Params->VoxelResolution_um / tan(FOV_deg * 0.5 * (M_PI / 180.));
 
