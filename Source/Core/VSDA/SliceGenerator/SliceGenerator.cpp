@@ -336,7 +336,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
     // This is based on the FOV of the camera, height of the camera, and size of the voxels
 
     // For now, FOV is set to 80 (hardcoded here and in the renderer), maybe make this an API param
-    double FOV_deg = 40.; // In degrees
+    double FOV_deg = 80.; // In degrees
 
     // Calculate the camera distance based on the given microscope params
     // res_in_voxels = image_width_px / pixels_per_voxel

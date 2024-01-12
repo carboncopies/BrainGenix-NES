@@ -280,7 +280,7 @@ bool Manager::SetupCamera() {
     vsg::dvec3 CameraTarget = vsg::dvec3(4.0, 4.0, 0.0); // Where the camera is looking towards
     auto lookAt = CreateLookAtMatrix(CameraPosition, CameraTarget, vsg::dvec3(0.0, 1.0, 0.0));
 
-    double FOV = 40.f; // FOV In degrees
+    double FOV = 80.f; // FOV In degrees
     int Width, Height;
     if (RenderData_->Headless_) {
         Width = RenderData_->Width_;
