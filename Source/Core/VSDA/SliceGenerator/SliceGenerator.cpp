@@ -258,10 +258,14 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 }
 
-bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, MicroscopeParameters* _Params, VoxelArray* _Array, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber) {
-    assert(_Array != nullptr);
-    assert(_Params != nullptr);
+bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VSDAData* _VSDAData, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber) {
+    assert(_VSDAData != nullptr);
     assert(_Logger != nullptr);
+
+
+    // Get Params and Array From VSDAData
+    MicroscopeParameters* Params = &_VSDAData->Params_;
+    VoxelArray* Array = _VSDAData->Array_.get();
 
 
     _Logger->Log(std::string("Rendering Slice '") + std::to_string(SliceNumber) + "'", 1);
@@ -273,18 +277,18 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
     _Renderer->WaitUntilGPUDone();
 
     // Setup Voxel Info
-    float VoxelSize = _Array->GetResolution();
-    BoundingBox VoxelBB = _Array->GetBoundingBox();
+    float VoxelSize = Array->GetResolution();
+    BoundingBox VoxelBB = Array->GetBoundingBox();
     
     _Renderer->UpdateCameraPosition(vsg::dvec3(4., 4., 5));
 
 
     // Enumerate Slice, Build Cubes Where Needed
-    for (unsigned int X = 0; X < _Array->GetX(); X++) {
-        for (unsigned int Y = 0; Y < _Array->GetY(); Y++) {
+    for (unsigned int X = 0; X < Array->GetX(); X++) {
+        for (unsigned int Y = 0; Y < Array->GetY(); Y++) {
 
             // Get Voxel At The Specified Position
-            VoxelType ThisVoxel = _Array->GetVoxel(X, Y, SliceNumber);
+            VoxelType ThisVoxel = Array->GetVoxel(X, Y, SliceNumber);
             if (ThisVoxel != EMPTY) {
 
 
@@ -292,7 +296,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
                 Renderer::Shaders::Phong BoxShader;
 
                 if (ThisVoxel == FILLED) {
-                    BoxShader.DiffuseColor_  = vsg::vec4(0.8f, 0.8f, 0.8f, 1.0f);//vsg::vec4(X/(float)_Array->GetX(), Y/(float)_Array->GetY(), 1.0, 1.0f);
+                    BoxShader.DiffuseColor_  = vsg::vec4(0.8f, 0.8f, 0.8f, 1.0f);//vsg::vec4(X/(float)Array->GetX(), Y/(float)Array->GetY(), 1.0, 1.0f);
                     BoxShader.SpecularColor_ = vsg::vec4(0.0f, 0.0f, 0.0f, 0.0f);
                 } else if (ThisVoxel == BORDER) {
                     BoxShader.DiffuseColor_  = vsg::vec4(1.0, 0.5, 0.3, 1.0f);
@@ -334,27 +338,30 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
 
     // Now we start a for loop which renders each image for each step within the slice
     // This is based on the FOV of the camera, height of the camera, and size of the voxels
-    double FOV_deg = _Params->MicroscopeFOV_deg;
-    int PixelsPerVoxel = _Params->NumPixelsPerVoxel_px;
+    double FOV_deg = Params->MicroscopeFOV_deg;
+    int PixelsPerVoxel = Params->NumPixelsPerVoxel_px;
 
     // Calculate the camera distance based on the given microscope params
     // res_in_voxels = image_width_px / pixels_per_voxel
-    int ResolutionInVoxels = _Params->ImageWidth_px / 16; 
+    int ResolutionInVoxels = Params->ImageWidth_px / 16; 
     // height_um = res_in_voxels * voxel_size_um / tan(FOV_deg / 2)
-    double CameraDistance = ResolutionInVoxels * _Params->VoxelResolution_um / tan(FOV_deg * 0.5 * (M_PI / 180.));
+    double CameraDistance = ResolutionInVoxels * Params->VoxelResolution_um / tan(FOV_deg * 0.5 * (M_PI / 180.));
 
 
 
     // To do this, we need to identify the total number of x,y steps
     double CameraFrustumHeight_um = CalculateFrustumHeight_um(CameraDistance, FOV_deg); 
-    double CameraFrustumWidth_um = CalculateFrustumWidth_um(CameraDistance, FOV_deg, (double)_Params->ImageWidth_px / (double)_Params->ImageHeight_px);
-    double CameraYStep_um = CalculateCameraMovementStep_um(CameraFrustumHeight_um, _Params->ScanRegionOverlap_percent);
-    double CameraXStep_um = CalculateCameraMovementStep_um(CameraFrustumWidth_um, _Params->ScanRegionOverlap_percent);
+    double CameraFrustumWidth_um = CalculateFrustumWidth_um(CameraDistance, FOV_deg, (double)Params->ImageWidth_px / (double)Params->ImageHeight_px);
+    double CameraYStep_um = CalculateCameraMovementStep_um(CameraFrustumHeight_um, Params->ScanRegionOverlap_percent);
+    double CameraXStep_um = CalculateCameraMovementStep_um(CameraFrustumWidth_um, Params->ScanRegionOverlap_percent);
 
-    double TotalSliceWidth = abs((double)_Array->GetBoundingBox().bb_point1[0] - (double)_Array->GetBoundingBox().bb_point2[0]);
-    double TotalSliceHeight = abs((double)_Array->GetBoundingBox().bb_point1[1] - (double)_Array->GetBoundingBox().bb_point2[1]);
+    double TotalSliceWidth = abs((double)Array->GetBoundingBox().bb_point1[0] - (double)Array->GetBoundingBox().bb_point2[0]);
+    double TotalSliceHeight = abs((double)Array->GetBoundingBox().bb_point1[1] - (double)Array->GetBoundingBox().bb_point2[1]);
     int TotalXSteps = ceil(TotalSliceWidth / CameraXStep_um);
     int TotalYSteps = ceil(TotalSliceHeight / CameraYStep_um);
+
+    // Update Stats With Total Number Of Images
+    _VSDAData->TotalSliceImages_ = TotalXSteps * TotalYSteps;
 
     // Now, we enumerate through all the steps needed, one at a time until we reach the end
     for (int XStep = 0; XStep < TotalXSteps; XStep++) {
@@ -377,6 +384,9 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
             FilePath += ".bmp";
             _Renderer->DrawFrame(FilePath);
             _FileNameArray->push_back(FilePath);
+
+            // Update The API Status Info With The Current Slice Number
+            _VSDAData->CurrentSliceImage_ = (XStep * TotalYSteps) + YStep + 1;
 
         }
     }
