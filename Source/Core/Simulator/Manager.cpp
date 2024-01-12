@@ -567,10 +567,10 @@ std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
     Logger_->Log("Create BSNeuron Called, On Sim " + std::to_string(SimulationID), 3);
 
     // Build New BSNeuron Object
-    Neuron::BS C;
+    CoreStructs::BSNeuron C;
     C.Name = Util::GetString(&RequestJSON, "Name");
-    C.SomaID = Util::GetInt(&RequestJSON, "SomaID");
-    C.AxonID = Util::GetInt(&RequestJSON, "AxonID");
+    C.SomaShapeID = Util::GetInt(&RequestJSON, "SomaID");
+    C.AxonShapeID = Util::GetInt(&RequestJSON, "AxonID");
     C.MembranePotential_mV = Util::GetFloat(&RequestJSON, "MembranePotential_mV");
     C.RestingPotential_mV = Util::GetFloat(&RequestJSON, "RestingPotential_mV");
     C.SpikeThreshold_mV = Util::GetFloat(&RequestJSON, "SpikeThreshold_mV");
@@ -584,7 +584,7 @@ std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
     if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        ResponseJSON["ReceptorID"] = -1;
+        ResponseJSON["NeuronID"] = -1;
         return ResponseJSON.dump();
     }
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
@@ -600,7 +600,7 @@ std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
     // Return Status ID
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
-    ResponseJSON["ReceptorID"] = ReceptorID;
+    ResponseJSON["NeuronID"] = NeuronID;
     return ResponseJSON.dump();
 }
 
