@@ -16,7 +16,8 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
     if (_Simulation->VSDAData_.State_ != VSDA_RENDER_REQUESTED) {
         return false;
     }
-
+    _Simulation->VSDAData_.State_ = VSDA_RENDER_IN_PROGRESS;
+    
     _Logger->Log("Executing Render Job For Requested Simulation", 4);
 
 
