@@ -11,6 +11,22 @@ namespace NES {
 namespace Simulator {
 
 
+// FrustumHeight = 2. * Distance * math.tan(FOV * 0.5 * (math.pi/180))
+// FrustumWidth = FrustumHeight * Aspect
+
+
+double CalculateFrustumHeight_um(double _Distance, double _FOV) {
+    return 2. * _Distance * tan(_FOV * 0.5 * (M_PI / 180.));
+}
+
+double CalculateFrustumWidth_um(double _Distance, double _FOV, double _AspectRatio) {
+    return CalculateFrustumHeight_um(_Distance, _FOV) * _AspectRatio;
+}
+
+double CalculateCameraMovementStep_um(double _FrustumValue_um, double _Overlap_Percent) {
+    return _FrustumValue_um * (1. - (_Overlap_Percent / 100.));
+}
+
 
 
 bool VSDA_EM_Initialize(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim) {
@@ -260,7 +276,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
     float VoxelSize = _Array->GetResolution();
     BoundingBox VoxelBB = _Array->GetBoundingBox();
     
-    _Renderer->UpdateCameraPosition(vsg::dvec3(4., 4., 6.5));
+    _Renderer->UpdateCameraPosition(vsg::dvec3(4., 4., 5));
 
 
     // Enumerate Slice, Build Cubes Where Needed
@@ -314,11 +330,49 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
         std::filesystem::create_directory("Renders"); // create Renders folder
     }
 
-    std::string FilePath = "Renders/" + _FilePrefix + "_Slice" + std::to_string(SliceNumber) + ".bmp";
-    _Renderer->DrawFrame(FilePath);
-    _FileNameArray->push_back(FilePath);
 
-    // TOOD: Make this render the whole slice at the requested resolution/height of camera.
+
+    // Now we start a for loop which renders each image for each step within the slice
+    // This is based on the FOV of the camera, height of the camera, and size of the voxels
+
+    double CameraDistance = 6.5;
+
+    // To do this, we need to identify the total number of x,y steps
+    double CameraFrustumHeight_um = CalculateFrustumHeight_um(CameraDistance, 80.); // For now, FOV is set to 80
+    double CameraFrustumWidth_um = CalculateFrustumWidth_um(CameraDistance, 80., (double)_Params->ImageWidth_px/(double)_Params->ImageHeight_px);
+    double CameraYStep_um = CalculateCameraMovementStep_um(CameraFrustumHeight_um, _Params->ScanRegionOverlap_percent);
+    double CameraXStep_um = CalculateCameraMovementStep_um(CameraFrustumWidth_um, _Params->ScanRegionOverlap_percent);
+
+    double TotalSliceWidth = _Array->GetX() / _Params->VoxelResolution_um;
+    double TotalSliceHeight = _Array->GetY() / _Params->VoxelResolution_um;
+    int TotalXSteps = ceil(TotalSliceWidth / CameraXStep_um);
+    int TotalYSteps = ceil(TotalSliceHeight / CameraYStep_um);
+
+    // Now, we enumerate through all the steps needed, one at a time until we reach the end
+    for (int XStep = 0; XStep < TotalXSteps; XStep++) {
+        for (int YStep = 0; YStep < TotalYSteps; YStep++) {
+
+            // Then, calculate the camera's position at this step
+            // We do it here over doing it in the for loop (with a double) due to floating-point errors
+            double CameraX = CameraXStep_um * XStep;
+            double CameraY = CameraYStep_um * YStep;
+
+            // Now, reposition the camera, and take the picture
+            vsg::dvec3 NewPosition(CameraX, CameraY, CameraDistance);
+            _Renderer->UpdateCameraPosition(NewPosition);
+
+            // Finally, actually render the frame, and save it to disk
+            std::string FilePath = "Renders/" + _FilePrefix + "_Slice" + std::to_string(SliceNumber);
+            FilePath += "_X" + std::to_string(CameraX);
+            FilePath += "_Y" + std::to_string(CameraY);
+            FilePath += ".bmp";
+            _Renderer->DrawFrame(FilePath);
+            _FileNameArray->push_back(FilePath);
+
+        }
+    }
+
+
 
 
     return true;
