@@ -257,7 +257,6 @@ bool Manager::Headless_GetImage(std::string _FilePath) {
 
 }
 
-
 bool Manager::SetupScene() {
 
     Logger_->Log("Setting Up Scene Structure", 1);
@@ -271,7 +270,6 @@ bool Manager::SetupScene() {
     return true;
 
 }
-
 
 bool Manager::SetupCamera() {
 
@@ -297,6 +295,24 @@ bool Manager::SetupCamera() {
 
     return true;
 
+}
+
+bool Manager::SetCameraFOV(double _FOV) {
+
+    int Width, Height;
+
+    if (RenderData_->Headless_) {
+        Width = RenderData_->Width_;
+        Height = RenderData_->Height_;
+    } else {
+        Width = RenderData_->Window_->extent2D().width;
+        Height = RenderData_->Window_->extent2D().height;
+    }
+
+    double AspectRatio = static_cast<double>(Width / (double)Height);
+    Scene_->Camera_->projectionMatrix = CreatePerspectiveMatrix(_FOV, AspectRatio, 0.1, 100.0);
+
+    return true;
 }
 
 bool Manager::Windowed_CreateWindow() {

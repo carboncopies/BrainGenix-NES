@@ -369,6 +369,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
             // Now, reposition the camera, and take the picture
             vsg::dvec3 NewPosition(CameraX, CameraY, CameraDistance);
             _Renderer->UpdateCameraPosition(NewPosition);
+            _Renderer->SetCameraFOV(FOV_deg);
 
             // Finally, actually render the frame, and save it to disk
             std::string FilePath = "Renders/" + _FilePrefix + "_Slice" + std::to_string(SliceNumber);

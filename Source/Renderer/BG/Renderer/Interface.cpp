@@ -160,6 +160,14 @@ bool Interface::UpdateCameraPosition(vsg::dvec3 Position_) {
 
 }
 
+bool Interface::SetCameraFOV(double _FOV) {
+
+    return RendererManager_->SetCameraFOV(_FOV);
+
+}
+
+
+
 }; // Close Namespace Logger
 }; // Close Namespace Common
 }; // Close Namespace BG

@@ -206,6 +206,15 @@ public:
      */
     bool UpdateCameraPosition(vsg::dvec3 Position_);
 
+    /**
+     * @brief Update the camera FOV.
+     * 
+     * @param _FOV 
+     * @return true 
+     * @return false 
+     */
+    bool SetCameraFOV(double _FOV);
+
 };
 
 
