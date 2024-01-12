@@ -271,7 +271,17 @@ public:
      * @return true 
      * @return false 
      */
-    bool UpdateCameraPosition(vsg::dvec3 Position_, double Height_ = 3.0);
+    bool UpdateCameraPosition(vsg::dvec3 Position_);
+
+    /**
+     * @brief Set the Camera's field of view
+     * 
+     * @param _FOV Field of view in degrees
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool SetCameraFOV(double _FOV_deg);
 
 
     /**

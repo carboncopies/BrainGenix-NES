@@ -57,6 +57,8 @@ struct MicroscopeParameters {
     int ImageHeight_px; /**Height of the rendered image in pixels*/
     float ScanRegionOverlap_percent; /**Percentage of overlap between generated images*/
     float SliceThickness_um; /**How thick each slice is in micrometers*/
+    float MicroscopeFOV_deg; /**Field of view of the microscope camera in degrees, we autoposition the height so this doesn't change anything other than the perspective effects.*/
+    int NumPixelsPerVoxel_px; /**Sets the size of each voxel in pixels in the fully rendered image (approximately).*/
 
 };
 

@@ -16,7 +16,8 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
     if (_Simulation->VSDAData_.State_ != VSDA_RENDER_REQUESTED) {
         return false;
     }
-
+    _Simulation->VSDAData_.State_ = VSDA_RENDER_IN_PROGRESS;
+    
     _Logger->Log("Executing Render Job For Requested Simulation", 4);
 
 
@@ -37,6 +38,7 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
 
     // Set Image Size
     _Renderer->SetResolution(_Simulation->VSDAData_.Params_.ImageWidth_px, _Simulation->VSDAData_.Params_.ImageHeight_px);
+    _Renderer->DrawFrame("/dev/null");
 
 
     // Clear Scene In Preperation For Rendering
@@ -45,7 +47,7 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
     for (unsigned int i = 0; i < _Simulation->VSDAData_.Array_.get()->GetZ(); i++) {
         std::string FileNamePrefix = "Simulation" + std::to_string(_Simulation->ID) + "_Region" + std::to_string(_Simulation->VSDAData_.ActiveRegionID_);
         std::vector<std::string>* RegionSpecificFilePathList = &_Simulation->VSDAData_.RenderedImagePaths_[_Simulation->VSDAData_.ActiveRegionID_];
-        RenderSliceFromArray(_Logger, _Renderer, &_Simulation->VSDAData_.Params_, _Simulation->VSDAData_.Array_.get(), RegionSpecificFilePathList, FileNamePrefix, i);
+        RenderSliceFromArray(_Logger, _Renderer, &_Simulation->VSDAData_, RegionSpecificFilePathList, FileNamePrefix, i);
         
         // Update Current Slice Information (Account for slice numbers not starting at 0)
         _Simulation->VSDAData_.TotalSlices_ = _Simulation->VSDAData_.Array_.get()->GetZ();

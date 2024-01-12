@@ -53,7 +53,7 @@ enum VSDAState {
     VSDA_INIT_BEGIN=1,
     VSDA_INIT_DONE=2,
     VSDA_RENDER_REQUESTED=3,
-    VSDA_RENDER_READY=4,
+    VSDA_RENDER_IN_PROGRESS=4,
     VSDA_RENDER_DONE=5
 };
 
@@ -72,9 +72,12 @@ struct VSDAData {
     MicroscopeParameters        Params_;             /**Defines the microscope parameters for the current scan area*/
     std::vector<ScanRegion>     Regions_;            /**Defines the list of scan region we're working on (for this microscope) Use ActiveRegionID to get the current region*/
     int                         ActiveRegionID_ =-1; /**Defines the region's index that we're working on right now*/
+   
+    // Status Info For API To Query
     int                         TotalSlices_ = 0;        /**Defines the total number of slices to be rendered (is populated once the renderer begins)*/
-    int                         CurrentSlice_ = -1;       /**Defines the current slice that is being rendered. (also is set by the renderer once initialization starts)*/
-
+    int                         CurrentSlice_ = -1;      /**Defines the current slice that is being rendered. (also is set by the renderer once initialization starts)*/
+    int                         TotalSliceImages_ = -1;   /**Defines the total number of images for this slice*/
+    int                         CurrentSliceImage_ = -1;  /**Defines the current image being worked on for this slice*/
 
     std::vector<std::vector<std::string>> RenderedImagePaths_; /**List of paths for each region to be populated as we render all the images for this simulation into a stack*/
 

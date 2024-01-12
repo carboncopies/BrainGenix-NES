@@ -81,6 +81,8 @@ std::string RPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     int ImageHeight_px               = Util::GetInt(&RequestJSON, "ImageHeight_px");
     float SliceThickness_nm          = Util::GetFloat(&RequestJSON, "SliceThickness_nm");
     float ScanRegionOverlap_percent  = Util::GetFloat(&RequestJSON, "ScanRegionOverlap_percent");
+    float MicroscopeFOV_deg          = Util::GetFloat(&RequestJSON, "MicroscopeFOV_deg");
+    int NumPixelsPerVoxel_px         = Util::GetInt(&RequestJSON, "NumPixelsPerVoxel_px");
     Logger_->Log(std::string("VSDA EM SetupMicroscope Called On Simulation With ID ") + std::to_string(SimulationID), 4);
 
     // Check Sim ID
@@ -101,6 +103,8 @@ std::string RPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     Params.ImageHeight_px = ImageHeight_px;
     Params.ScanRegionOverlap_percent = ScanRegionOverlap_percent;
     Params.SliceThickness_um = SliceThickness_nm;
+    Params.MicroscopeFOV_deg = MicroscopeFOV_deg;
+    Params.NumPixelsPerVoxel_px = NumPixelsPerVoxel_px;
 
     int Status = !VSDA_EM_SetupMicroscope(Logger_, ThisSimulation, Params);
 
@@ -203,6 +207,8 @@ std::string RPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
     ResponseJSON["RenderStatus"] = ThisSimulation->VSDAData_.State_;
     ResponseJSON["CurrentSlice"] = ThisSimulation->VSDAData_.CurrentSlice_;
     ResponseJSON["TotalSlices"] = ThisSimulation->VSDAData_.TotalSlices_;
+    ResponseJSON["CurrentSliceImage"] = ThisSimulation->VSDAData_.CurrentSliceImage_;
+    ResponseJSON["TotalSliceImages"] = ThisSimulation->VSDAData_.TotalSliceImages_;
     
     return ResponseJSON.dump();
 
