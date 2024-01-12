@@ -280,7 +280,7 @@ bool Manager::SetupCamera() {
     vsg::dvec3 CameraTarget = vsg::dvec3(4.0, 4.0, 0.0); // Where the camera is looking towards
     auto lookAt = CreateLookAtMatrix(CameraPosition, CameraTarget, vsg::dvec3(0.0, 1.0, 0.0));
 
-    double FOV = 80.f; // FOV In degrees
+    double FOV = 50.f; // FOV In degrees
     int Width, Height;
     if (RenderData_->Headless_) {
         Width = RenderData_->Width_;
@@ -513,12 +513,12 @@ bool Manager::SetResolution(int _Width, int _Height) {
     return true;
 }
 
-bool Manager::UpdateCameraPosition(vsg::dvec3 Position_, double Height_) {
+bool Manager::UpdateCameraPosition(vsg::dvec3 Position_) {
 
 
     // Set the position of the camera such that it would look towards the stage
     // The stage will be located under the camera (microscope) with a distance of `Height_`
-    vsg::dvec3 CameraTarget = Position_ - vsg::dvec3(0.0f, 0.0f, Height_);
+    vsg::dvec3 CameraTarget = Position_ - vsg::dvec3(0.0f, 0.0f, Position_[2]);
     auto lookAt = CreateLookAtMatrix(Position_, CameraTarget, vsg::dvec3(0.0, 1.0, 0.0));
 
     // Now, update the camera's view matrix with our new lookat matrix (should be the same as viewmat)

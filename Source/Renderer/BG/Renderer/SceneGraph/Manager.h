@@ -271,7 +271,7 @@ public:
      * @return true 
      * @return false 
      */
-    bool UpdateCameraPosition(vsg::dvec3 Position_, double Height_ = 3.0);
+    bool UpdateCameraPosition(vsg::dvec3 Position_);
 
 
     /**

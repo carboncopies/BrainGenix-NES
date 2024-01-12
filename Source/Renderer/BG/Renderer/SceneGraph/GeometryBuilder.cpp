@@ -80,11 +80,7 @@ bool GeometryBuilder::CreateSphere(vsg::ref_ptr<vsg::Group> _Scene, Primitive::S
 
     // Setup Geom Info
     vsg::GeometryInfo Info;
-    Info.transform = Math::BuildTransformMatrix(
-            _SphereCreateInfo->Position_,
-            vsg::vec3(0.f, 0.f, 0.f),
-            vsg::vec3(_SphereCreateInfo->Radius_*2, _SphereCreateInfo->Radius_*2, _SphereCreateInfo->Radius_*2)
-        );
+    Info.transform = Math::BuildTransformMatrix(_SphereCreateInfo->Position_, vsg::vec3(0.f, 0.f, 0.f), vsg::vec3(_SphereCreateInfo->Radius_*2, _SphereCreateInfo->Radius_*2, _SphereCreateInfo->Radius_*2));
 
 
     // Setup State Information
@@ -109,11 +105,7 @@ bool GeometryBuilder::CreateCylinder(vsg::ref_ptr<vsg::Group> _Scene, Primitive:
 
     // Setup Geom Info
     vsg::GeometryInfo Info;
-    Info.transform = Math::BuildTransformMatrix(
-            _CylinderCreateInfo->Position_,
-            _CylinderCreateInfo->Rotation_,
-            vsg::vec3(_CylinderCreateInfo->Radius_, _CylinderCreateInfo->Radius_, _CylinderCreateInfo->Height_)
-        );
+    Info.transform = Math::BuildTransformMatrix(_CylinderCreateInfo->Position_, _CylinderCreateInfo->Rotation_, vsg::vec3(_CylinderCreateInfo->Radius_, _CylinderCreateInfo->Radius_, _CylinderCreateInfo->Height_));
 
 
     // Setup State Information

@@ -152,6 +152,14 @@ void Interface::ResetScene() {
     // UnlockScene();
 }
 
+
+
+bool Interface::UpdateCameraPosition(vsg::dvec3 Position_) {
+
+    return RendererManager_->UpdateCameraPosition(Position_);
+
+}
+
 }; // Close Namespace Logger
 }; // Close Namespace Common
 }; // Close Namespace BG

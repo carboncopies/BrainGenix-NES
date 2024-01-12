@@ -195,6 +195,17 @@ public:
      */
     void ResetScene();
 
+
+
+    /**
+     * @brief Moves the camera to the given position.
+     * 
+     * @param Position_ 
+     * @return true 
+     * @return false 
+     */
+    bool UpdateCameraPosition(vsg::dvec3 Position_);
+
 };
 
 
