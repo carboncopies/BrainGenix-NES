@@ -338,13 +338,13 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
     double CameraDistance = 6.5;
 
     // To do this, we need to identify the total number of x,y steps
-    double CameraFrustumHeight_um = CalculateFrustumHeight_um(CameraDistance, 80.); // For now, FOV is set to 80
+    double CameraFrustumHeight_um = CalculateFrustumHeight_um(CameraDistance, 80.); // For now, FOV is set to 80 (hardcoded here and in the renderer)
     double CameraFrustumWidth_um = CalculateFrustumWidth_um(CameraDistance, 80., (double)_Params->ImageWidth_px/(double)_Params->ImageHeight_px);
     double CameraYStep_um = CalculateCameraMovementStep_um(CameraFrustumHeight_um, _Params->ScanRegionOverlap_percent);
     double CameraXStep_um = CalculateCameraMovementStep_um(CameraFrustumWidth_um, _Params->ScanRegionOverlap_percent);
 
-    double TotalSliceWidth = _Array->GetX() / _Params->VoxelResolution_um;
-    double TotalSliceHeight = _Array->GetY() / _Params->VoxelResolution_um;
+    double TotalSliceWidth = (double)_Array->GetX() / (double)_Params->VoxelResolution_um;
+    double TotalSliceHeight = (double)_Array->GetY() / (double)_Params->VoxelResolution_um;
     int TotalXSteps = ceil(TotalSliceWidth / CameraXStep_um);
     int TotalYSteps = ceil(TotalSliceHeight / CameraYStep_um);
 
@@ -353,7 +353,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
         for (int YStep = 0; YStep < TotalYSteps; YStep++) {
 
             // Then, calculate the camera's position at this step
-            // We do it here over doing it in the for loop (with a double) due to floating-point errors
+            // We do it here over doing it in the for loop (with a double) due to floating-point error accumulation
             double CameraX = CameraXStep_um * XStep;
             double CameraY = CameraYStep_um * YStep;
 
