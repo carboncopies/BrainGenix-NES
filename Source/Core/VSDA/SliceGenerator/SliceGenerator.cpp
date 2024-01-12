@@ -335,16 +335,25 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
     // Now we start a for loop which renders each image for each step within the slice
     // This is based on the FOV of the camera, height of the camera, and size of the voxels
 
-    double CameraDistance = 6.5;
+    // For now, FOV is set to 80 (hardcoded here and in the renderer), maybe make this an API param
+    double FOV_deg = 40.; // In degrees
+
+    // Calculate the camera distance based on the given microscope params
+    // res_in_voxels = image_width_px / pixels_per_voxel
+    int ResolutionInVoxels = _Params->ImageWidth_px / 16; // FIXME- HARDCODED VALUE, MAKE THIS AN API PARAMETER (PROLLY FOR MICROSCOPE PARAMS)
+    // height_um = res_in_voxels * voxel_size_um / tan(FOV_deg / 2)
+    double CameraDistance = ResolutionInVoxels * _Params->VoxelResolution_um / tan(FOV_deg * 0.5 * (M_PI / 180.));
+
+
 
     // To do this, we need to identify the total number of x,y steps
-    double CameraFrustumHeight_um = CalculateFrustumHeight_um(CameraDistance, 80.); // For now, FOV is set to 80 (hardcoded here and in the renderer)
-    double CameraFrustumWidth_um = CalculateFrustumWidth_um(CameraDistance, 80., (double)_Params->ImageWidth_px/(double)_Params->ImageHeight_px);
+    double CameraFrustumHeight_um = CalculateFrustumHeight_um(CameraDistance, FOV_deg); 
+    double CameraFrustumWidth_um = CalculateFrustumWidth_um(CameraDistance, FOV_deg, (double)_Params->ImageWidth_px / (double)_Params->ImageHeight_px);
     double CameraYStep_um = CalculateCameraMovementStep_um(CameraFrustumHeight_um, _Params->ScanRegionOverlap_percent);
     double CameraXStep_um = CalculateCameraMovementStep_um(CameraFrustumWidth_um, _Params->ScanRegionOverlap_percent);
 
-    double TotalSliceWidth = (double)_Array->GetX() / (double)_Params->VoxelResolution_um;
-    double TotalSliceHeight = (double)_Array->GetY() / (double)_Params->VoxelResolution_um;
+    double TotalSliceWidth = abs((double)_Array->GetBoundingBox().bb_point1[0] - (double)_Array->GetBoundingBox().bb_point2[0]);
+    double TotalSliceHeight = abs((double)_Array->GetBoundingBox().bb_point1[1] - (double)_Array->GetBoundingBox().bb_point2[1]);
     int TotalXSteps = ceil(TotalSliceWidth / CameraXStep_um);
     int TotalYSteps = ceil(TotalSliceHeight / CameraYStep_um);
 

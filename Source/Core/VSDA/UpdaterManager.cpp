@@ -37,6 +37,7 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
 
     // Set Image Size
     _Renderer->SetResolution(_Simulation->VSDAData_.Params_.ImageWidth_px, _Simulation->VSDAData_.Params_.ImageHeight_px);
+    _Renderer->DrawFrame("/dev/null");
 
 
     // Clear Scene In Preperation For Rendering
