@@ -310,7 +310,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
                 CubeCreateInfo.Position_ = vsg::vec3(X*VoxelSize + VoxelBB.bb_point1[0], Y*VoxelSize + VoxelBB.bb_point1[1], 0);//SliceNumber*VoxelSize + VoxelBB.bb_point1[2]);
                 // CubeCreateInfo.Position_ /= 10.f;
                 CubeCreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
-                CubeCreateInfo.Scale_ = vsg::vec3(VoxelSize / 1.5, VoxelSize / 1.5, VoxelSize / 1.5);
+                CubeCreateInfo.Scale_ = vsg::vec3(VoxelSize, VoxelSize, VoxelSize);
                 // CubeCreateInfo.Scale_ /= 10.f;
                 CubeCreateInfo.Shader_ = &BoxShader;
 
