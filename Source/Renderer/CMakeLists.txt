@@ -40,8 +40,7 @@ target_link_libraries(NESRenderer
     Vulkan::Vulkan
     vsg::vsg
     vsgXchange::vsgXchange
-    # freeimage::FreeImage
-    # freeimage::FreeImagePlus
+    OpenImageIO::OpenImageIO
 
 )
 target_include_directories(NESRenderer PUBLIC ${SRC_DIR}/Renderer)

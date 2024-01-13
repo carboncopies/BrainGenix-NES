@@ -241,15 +241,30 @@ bool Manager::Headless_GetImage(std::string _FilePath) {
         }
 
 
-        vsgXchange::all Instance;
-        // colorFilename = std::to_string(RenderData_->framenumber) + ".bmp";
-        // RenderData_->framenumber+=1;
-        bool status = Instance.write(imageData, _FilePath);
-        Logger_ ->Log("Wrote File '" + _FilePath + "'", 0);
-        //std::cout<<"Wrote File "<<_FilePath<<std::endl;
-        if (!status) {
-            std::cout<<"Error writing file!\n";
-        }
+        
+
+        int xres = RenderData_->Width_;
+        int yres = RenderData_->Height_;
+        int channels = 4;
+        unsigned char* pixels = (unsigned char*)imageData.get()->dataPointer();
+
+        std::unique_ptr<OIIO::ImageOutput> out = OIIO::ImageOutput::create(_FilePath);
+        if (!out)
+            std::cout<<"Cannot open image! will prolly crash now\n";
+        OIIO::ImageSpec spec(xres, yres, channels, OIIO::TypeDesc::UINT8);
+        out->open(_FilePath, spec);
+        out->write_image(OIIO::TypeDesc::UINT8, pixels);
+        out->close();
+
+        // vsgXchange::all Instance;
+        // // colorFilename = std::to_string(RenderData_->framenumber) + ".bmp";
+        // // RenderData_->framenumber+=1;
+        // bool status = Instance.write(imageData, _FilePath);
+        // Logger_ ->Log("Wrote File '" + _FilePath + "'", 0);
+        // //std::cout<<"Wrote File "<<_FilePath<<std::endl;
+        // if (!status) {
+        //     std::cout<<"Error writing file!\n";
+        // }
 
     }
 

@@ -37,7 +37,8 @@
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <vsg/all.h>
-#include <vsgXchange/all.h>
+// #include <vsgXchange/all.h>
+#include <OpenImageIO/imageio.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>

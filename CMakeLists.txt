@@ -73,7 +73,8 @@ find_package(vsg CONFIG REQUIRED)
 message(STATUS "Setting Up vsgXchange Library")
 find_package(vsgXchange CONFIG REQUIRED)
 
-# find_package(freeimage CONFIG REQUIRED)
+message(STATUS "Setting Up OpenImageIO Library")
+find_package(OpenImageIO CONFIG REQUIRED)
 
 # Internal Deps
 message(STATUS "Finding bg-common-logger Package")
