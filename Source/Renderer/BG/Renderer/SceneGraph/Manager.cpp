@@ -1,7 +1,14 @@
 #include <BG/Renderer/SceneGraph/Manager.h>
 
+
 #include <dlfcn.h>
 #include "renderdoc_app.h"
+
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include <stb_image_write.h>
+
 
 // TODO: Update Doxygen Docs!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 RENDERDOC_API_1_1_2 *rdoc_api = NULL;
@@ -240,7 +247,6 @@ bool Manager::Headless_GetImage(std::string _FilePath) {
             }
         }
 
-
         
 
         int xres = RenderData_->Width_;
@@ -248,13 +254,17 @@ bool Manager::Headless_GetImage(std::string _FilePath) {
         int channels = 4;
         unsigned char* pixels = (unsigned char*)imageData.get()->dataPointer();
 
-        std::unique_ptr<OIIO::ImageOutput> out = OIIO::ImageOutput::create(_FilePath);
-        if (!out)
-            std::cout<<"Cannot open image! will prolly crash now\n";
-        OIIO::ImageSpec spec(xres, yres, channels, OIIO::TypeDesc::UINT8);
-        out->open(_FilePath, spec);
-        out->write_image(OIIO::TypeDesc::UINT8, pixels);
-        out->close();
+        stbi_write_png(_FilePath.c_str(), xres, yres, channels, pixels, xres * channels);
+
+        // SourceImage.save(_FilePath);
+
+        // std::unique_ptr<OIIO::ImageOutput> out = OIIO::ImageOutput::create(_FilePath);
+        // if (!out)
+        //     std::cout<<"Cannot open image! will prolly crash now\n";
+        // OIIO::ImageSpec spec(xres, yres, channels, OIIO::TypeDesc::UINT8);
+        // out->open(_FilePath, spec);
+        // out->write_image(OIIO::TypeDesc::UINT8, pixels);
+        // out->close();
 
         // vsgXchange::all Instance;
         // // colorFilename = std::to_string(RenderData_->framenumber) + ".bmp";
@@ -271,6 +281,10 @@ bool Manager::Headless_GetImage(std::string _FilePath) {
     return true;
 
 }
+
+
+
+
 
 bool Manager::SetupScene() {
 
@@ -492,10 +506,7 @@ bool Manager::DrawFrame(std::string _FilePath) {
     if(rdoc_api) rdoc_api->StartFrameCapture(NULL, NULL);
 
 
-
-
-    bool Status = RenderData_->Viewer_->advanceToNextFrame();
-    if (!Status) {
+    if (!RenderData_->Viewer_->advanceToNextFrame()) {
         return false;
     }
 

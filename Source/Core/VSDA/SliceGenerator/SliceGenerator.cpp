@@ -381,7 +381,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
             std::string FilePath = "Renders/" + _FilePrefix + "_Slice" + std::to_string(SliceNumber);
             FilePath += "_X" + std::to_string(CameraX);
             FilePath += "_Y" + std::to_string(CameraY);
-            FilePath += ".bmp";
+            FilePath += ".png";
             _Renderer->DrawFrame(FilePath);
             _FileNameArray->push_back(FilePath);
 

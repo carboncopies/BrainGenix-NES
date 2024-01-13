@@ -49,19 +49,19 @@ find_path(CPP_BASE64_INCLUDE_DIRS "cpp-base64/base64.cpp")
 
 
 # Renderer Dependencies
-message(STATUS "Setting up Vulkan Library")
-find_package(Vulkan REQUIRED)
+# message(STATUS "Setting up Vulkan Library")
+# find_package(Vulkan REQUIRED)
 
-message(STATUS "Setting Up vk-bootstrap Library")
-# find_package(vk-bootstrap CONFIG REQUIRED) # Will eventually use this when vcpkg sorts out their build issues
-# in the meantime, this works:
-include(FetchContent)
-FetchContent_Declare(
-    fetch_vk_bootstrap
-    GIT_REPOSITORY https://github.com/charles-lunarg/vk-bootstrap
-    GIT_TAG        v0.7 #suggest using a tag so the library doesn't update whenever new commits are pushed to a branch
-)
-FetchContent_MakeAvailable(fetch_vk_bootstrap)
+# message(STATUS "Setting Up vk-bootstrap Library")
+# # find_package(vk-bootstrap CONFIG REQUIRED) # Will eventually use this when vcpkg sorts out their build issues
+# # in the meantime, this works:
+# include(FetchContent)
+# FetchContent_Declare(
+#     fetch_vk_bootstrap
+#     GIT_REPOSITORY https://github.com/charles-lunarg/vk-bootstrap
+#     GIT_TAG        v0.7 #suggest using a tag so the library doesn't update whenever new commits are pushed to a branch
+# )
+# FetchContent_MakeAvailable(fetch_vk_bootstrap)
 
 
 message(STATUS "Setting Up yaml-cpp Library")
@@ -73,8 +73,8 @@ find_package(vsg CONFIG REQUIRED)
 # message(STATUS "Setting Up vsgXchange Library")
 # find_package(vsgXchange CONFIG REQUIRED)
 
-message(STATUS "Setting Up OpenImageIO Library")
-find_package(OpenImageIO CONFIG REQUIRED)
+message(STATUS "Setting Up STB Library")
+find_package(Stb REQUIRED)
 
 # Internal Deps
 message(STATUS "Finding bg-common-logger Package")

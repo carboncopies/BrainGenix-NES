@@ -38,9 +38,9 @@ target_link_libraries(NESRenderer
     bg-common-logger
     Vulkan::Vulkan
     vsg::vsg
-    # vsgXchange::vsgXchange
-    OpenImageIO::OpenImageIO OpenImageIO::OpenImageIO_Util
 
 
 )
 target_include_directories(NESRenderer PUBLIC ${SRC_DIR}/Renderer)
+
+target_include_directories(NESRenderer PRIVATE ${Stb_INCLUDE_DIR})

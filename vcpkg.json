@@ -9,10 +9,8 @@
     "gtest",
     "nlohmann-json",
     "rpclib",
-    "vulkan",
-    "vk-bootstrap",
     "vsg",
     "cpp-base64",
-    "openimageio"
+    "stb"
   ]
 }
