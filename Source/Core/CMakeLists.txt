@@ -110,6 +110,10 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/UpdaterManager.h
   ${SRC_DIR}/Core/VSDA/RenderPool.cpp
   ${SRC_DIR}/Core/VSDA/RenderPool.h
+  ${SRC_DIR}/Core/VSDA/EncoderPool/Image.cpp
+  ${SRC_DIR}/Core/VSDA/EncoderPool/Image.h
+  ${SRC_DIR}/Core/VSDA/EncoderPool/EncoderPool.cpp
+  ${SRC_DIR}/Core/VSDA/EncoderPool/EncoderPool.h
   ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.cpp
   ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.h
   ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/MicroscopeParameters.cpp
