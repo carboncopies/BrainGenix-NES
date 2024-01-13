@@ -14,7 +14,6 @@
     "vk-bootstrap",
     "vsg",
     "cpp-base64",
-    "freeimage",
     {
       "name": "vsgxchange",
       "features": [
