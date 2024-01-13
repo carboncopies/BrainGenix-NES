@@ -39,7 +39,7 @@ target_link_libraries(NESRenderer
     Vulkan::Vulkan
     vsg::vsg
     # vsgXchange::vsgXchange
-    OpenImageIO::OpenImageIO
+    OpenImageIO::OpenImageIO OpenImageIO::OpenImageIO_Util
 
 
 )
