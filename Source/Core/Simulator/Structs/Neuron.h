@@ -52,7 +52,7 @@ typedef std::tuple<std::shared_ptr<CoreStructs::Neuron>, float> ReceptorData;
 //! neuron.
 typedef std::unordered_map<std::string, std::vector<float>> NeuronRecording;
 
-struct BSNeuron: Neuron {
+struct BSNeuronStruct: Neuron {
 
     int SomaShapeID;
     int AxonShapeID;

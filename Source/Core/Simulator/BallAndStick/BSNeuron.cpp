@@ -13,6 +13,20 @@ BSNeuron::BSNeuron(int ID, std::shared_ptr<Geometries::Sphere> soma,
     this->Morphology["axon"] = axon;
 };
 
+BSNeuron::BSNeuron(const BSNeuronStruct & bsneuronstruct) {
+    ID = bsneuronstruct.ID;
+    Morphology["soma"] = sim.find_shape_ptr(bsneuronstruct.SomaShapeID);
+    Morphology["axon"] = sim.find_shape_ptr(bsneuronstruct.AxonShapeID);
+    Vm_mV = bsneuronstruct.MembranePotential_mV;
+    VRest_mV = bsneuronstruct.RestingPotential_mV;
+    VAct_mV = bsneuronstruct.SpikeThreshold_mV;
+    VAHP_mV = AfterHyperpolarizationAmplitude_mV;
+    TauAHP_ms = bsneuronstruct.DecayTime_ms;
+    TauPSPr_ms = PostsynapticPotentialRiseTime_ms;
+    TauPSPd_ms = PostsynapticPotentialDecayTime_ms;
+    VPSP_mV = PostsynapticPotentialAmplitude_mV;
+}
+
 //! Returns the geometric center of the neuron.
 Geometries::Vec3D &BSNeuron::GetCellCenter() {
     return this->Morphology["soma"]->Center_um;

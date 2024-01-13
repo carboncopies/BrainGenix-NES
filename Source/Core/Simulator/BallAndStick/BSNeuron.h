@@ -85,6 +85,7 @@ struct BSNeuron : CoreStructs::Neuron {
     //! Constructors
     BSNeuron(int ID, std::shared_ptr<Geometries::Sphere> soma,
              std::shared_ptr<Geometries::Cylinder> axon);
+    BSNeuron(const BSNeuronStruct & bsneuronstruct);
 
     //! Returns the geometric center of the neuron.
     Geometries::Vec3D &GetCellCenter();

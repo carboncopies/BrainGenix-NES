@@ -91,7 +91,7 @@ struct Simulation {
     std::vector<Connections::Staple> Staples; /**List of staple connections, index is their id (also stored in struct)*/
     std::vector<Connections::Receptor> Receptors; /**List of receptor connections, index is their id (and it's also stored in the struct itself)*/
 
-    std::vector<CoreStructs::Neuron> Neurons; /** List of neurons, index is their id. Notice that this takes a Neuron base class object (not BSNeuron and other derivatives). */
+    std::vector<std::shared_ptr<CoreStructs::Neuron>> Neurons; /** List of neurons, index is their id. Notice that this takes a Neuron base class object (not BSNeuron and other derivatives). */
 
     std::vector<Tools::PatchClampDAC> PatchClampDACs; /**List of patchclamp dacs, id is index*/
     std::vector<Tools::PatchClampADC> PatchClampADCs; /**List of patchclamp adcs, id is index*/

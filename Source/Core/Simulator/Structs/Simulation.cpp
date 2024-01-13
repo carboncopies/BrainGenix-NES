@@ -139,6 +139,12 @@ Simulation::GetRecording() {
     return recording;
 };
 
+enum sim_methods {
+    simmethod_list_of_neurons,
+    simmethod_circuits,
+    NUMsimmethods,
+};
+
 void Simulation::RunFor(float tRun_ms) {
     assert(Logger_ != nullptr);
     
@@ -149,17 +155,34 @@ void Simulation::RunFor(float tRun_ms) {
 
     Logger_->Log("Simulation run includes:", 3);
     Logger_->Log(std::to_string(NeuralCircuits.size())+" circuits with a total of", 3);
-    Logger_->Log(std::to_string(GetTotalNumberOfNeurons())+" neurons and a total of", 3);
+    Logger_->Log(std::to_string(Neurons.size())+" neurons drafted in Neurons vector and a total of", 3);
+    Logger_->Log(std::to_string(GetTotalNumberOfNeurons())+" neurons residing in defined circuits and a total of", 3);
     Logger_->Log(std::to_string(BSCompartments.size())+" compartments.", 3);
+
+    // *** TODO: obtain this from an API call...
+    sim_methods simmethod = simmethod_list_of_neurons;
 
     while (this->T_ms < tEnd_ms) {
         bool recording = this->IsRecording();
         if (recording)
             this->TRecorded_ms.emplace_back(this->T_ms);
-        for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-            auto circuitPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
-            assert(circuitPtr);
-            circuitPtr->Update(this->T_ms, recording);
+        switch (simmethod) {
+            case simmethod_list_of_neurons: {
+                for (auto & neuron_ptr : this->Neurons) {
+                    if (neuron_ptr) {
+                        neuron_ptr->Update(this->T_ms, recording);
+                    }
+                }
+                break;
+            }
+            case simmethod_circuits: {
+                for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+                    auto circuitPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
+                    assert(circuitPtr);
+                    circuitPtr->Update(this->T_ms, recording);
+                }
+                break;
+            }
         }
         this->T_ms += this->Dt_ms;
     }

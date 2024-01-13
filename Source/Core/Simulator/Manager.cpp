@@ -1,5 +1,5 @@
 #include <Simulator/Manager.h>
-
+#include <Simulator/BallAndStick/BSNeuron.h>
 
 
 namespace BG {
@@ -559,6 +559,18 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
+/*
+As of 2024-01-12 the method to add a neuron that will be run in a
+simulation is:
+
+1. Create the soma and axon shapes for the neuron (remember their IDs).
+2. Create a BSNeuron (which creates compartments using the shapes provided).
+3. Add the BSNeuron to a NeuralCircuit.
+OR
+1. Create a NeuralCircuit.
+2. Tell the NeuralCircuit to create a neuron.
+*/
+
 std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
     // Parse Request
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
@@ -567,7 +579,7 @@ std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
     Logger_->Log("Create BSNeuron Called, On Sim " + std::to_string(SimulationID), 3);
 
     // Build New BSNeuron Object
-    CoreStructs::BSNeuron C;
+    CoreStructs::BSNeuronStruct C;
     C.Name = Util::GetString(&RequestJSON, "Name");
     C.SomaShapeID = Util::GetInt(&RequestJSON, "SomaID");
     C.AxonShapeID = Util::GetInt(&RequestJSON, "AxonID");
@@ -595,7 +607,9 @@ std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
     }
     int NeuronID = ThisSimulation->Neurons.size();
     C.ID = NeuronID;
-    ThisSimulation->Neurons.push_back(C);
+    // NOTE: At this time, we're keeping both a list of these data structs (in the Neurons list)
+    //       and a list of functional neuron objects. For more info, see Log 202401121525.
+    ThisSimulation->Neurons.push_back(std::make_shared<BallAndStick::BSNeuron>(C));
 
     // Return Status ID
     nlohmann::json ResponseJSON;
