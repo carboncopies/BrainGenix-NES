@@ -87,7 +87,7 @@ message(STATUS "Finding gtest Package")
 find_package(GTest CONFIG REQUIRED)
 
 # Ensure config is copied to bin
-file(COPY "${SRC_DIR}/Data/NES.cfg" DESTINATION "${BIN_DIR}")
+file(COPY "${SRC_DIR}/Data/NES.yaml" DESTINATION "${BIN_DIR}")
 
 
 
@@ -110,7 +110,7 @@ install(TARGETS ${PROJECT_NAME}
     LIBRARY DESTINATION ${INSTALL_PREFIX}
     DESTINATION ${INSTALL_PREFIX}
 )
-install(FILES "${SRC_DIR}/Data/NES.cfg"
+install(FILES "${SRC_DIR}/Data/NES.yaml"
     DESTINATION ${INSTALL_PREFIX}
     COMPONENT Release
 )
