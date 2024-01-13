@@ -45,7 +45,7 @@ VCPKG_DEPS="curl zip unzip tar pkg-config autoconf flex bison"
 
 # Vulkan Dependencies
 if [ "$DISTRO" = "arch" ]; then
-    VULKAN_DEPS="vulkan-devel"
+    VULKAN_DEPS="vulkan-devel libxi-dev libgl1-mesa-dev libglu1-mesa-dev mesa-common-dev libxrandr-dev libxxf86vm-dev"
 else
     VULKAN_DEPS="libvulkan-dev vulkan-validationlayers-dev vulkan-tools libxcb-xfixes0-dev"  
 fi
