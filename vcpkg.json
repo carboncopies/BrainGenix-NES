@@ -5,7 +5,6 @@
   "dependencies": [
     "bg-common-logger",
     "yaml-cpp",
-    "boost-program-options",
     "glm",
     "gtest",
     "nlohmann-json",
@@ -14,15 +13,6 @@
     "vk-bootstrap",
     "vsg",
     "cpp-base64",
-    "openimageio",
-    {
-      "name": "vsgxchange",
-      "features": [
-        "assimp",
-        "curl",
-        "freetype",
-        "openexr"
-      ]
-    }
+    "openimageio"
   ]
 }

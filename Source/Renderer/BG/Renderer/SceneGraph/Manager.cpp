@@ -60,7 +60,7 @@ bool Manager::Initialize(bool _Windowed) {
     // }
 
     // Support 3rd Party Format Through vsgXchange
-    RenderData_->Options_->add(vsgXchange::all::create());
+    // RenderData_->Options_->add(vsgXchange::all::create());
 
 
     // Setup Device If Not Windowed

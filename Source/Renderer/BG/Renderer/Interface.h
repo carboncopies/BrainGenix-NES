@@ -41,7 +41,6 @@
 // #include <SDL_vulkan.h>
 
 #include <vsg/all.h>
-#include <vsgXchange/all.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")

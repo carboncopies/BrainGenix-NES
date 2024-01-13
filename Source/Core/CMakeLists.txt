@@ -165,7 +165,7 @@ target_compile_features(${PROJECT_LIBRARY_NAME} PRIVATE cxx_std_17)
 
 target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE 
     nlohmann_json::nlohmann_json
-    Boost::program_options
+    # Boost::program_options
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
 
@@ -185,7 +185,7 @@ target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE 
     nlohmann_json::nlohmann_json
-    Boost::program_options
+    # Boost::program_options
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
 

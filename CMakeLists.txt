@@ -35,9 +35,9 @@ include(${CMAKE_UTIL_DIR}/SetBinaryDir.cmake)
 message(STATUS "Finding nlohmann_json Package")
 find_package(nlohmann_json CONFIG REQUIRED)
 
-message(STATUS "Finding boost Package")
-set(Boost_NO_WARN_NEW_VERSIONS 1)
-find_package(Boost REQUIRED COMPONENTS program_options)
+# message(STATUS "Finding boost Package")
+# set(Boost_NO_WARN_NEW_VERSIONS 1)
+# find_package(Boost REQUIRED COMPONENTS program_options)
 
 message(STATUS "Finding rpclib Package")
 find_package(rpclib CONFIG REQUIRED)
@@ -70,8 +70,8 @@ find_package(yaml-cpp CONFIG REQUIRED)
 message(STATUS "Setting Up Vulkan Scene Graph Library")
 find_package(vsg CONFIG REQUIRED)
 
-message(STATUS "Setting Up vsgXchange Library")
-find_package(vsgXchange CONFIG REQUIRED)
+# message(STATUS "Setting Up vsgXchange Library")
+# find_package(vsgXchange CONFIG REQUIRED)
 
 message(STATUS "Setting Up OpenImageIO Library")
 find_package(OpenImageIO CONFIG REQUIRED)

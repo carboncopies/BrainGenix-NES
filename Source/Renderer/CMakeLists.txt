@@ -34,13 +34,13 @@ add_library(NESRenderer
     "BG/Renderer/Math/MathHelpers.cpp"
 
 )
-
 target_link_libraries(NESRenderer
     bg-common-logger
     Vulkan::Vulkan
     vsg::vsg
-    vsgXchange::vsgXchange
+    # vsgXchange::vsgXchange
     OpenImageIO::OpenImageIO
+
 
 )
 target_include_directories(NESRenderer PUBLIC ${SRC_DIR}/Renderer)

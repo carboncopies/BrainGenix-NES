@@ -35,7 +35,6 @@
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <vsg/all.h>
-#include <vsgXchange/all.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
