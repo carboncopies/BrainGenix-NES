@@ -1,6 +1,8 @@
 #include <BG/Renderer/SceneGraph/Manager.h>
 
 
+#include <chrono>
+
 #include <dlfcn.h>
 #include "renderdoc_app.h"
 
@@ -254,9 +256,13 @@ bool Manager::Headless_GetImage(std::string _FilePath) {
         int channels = 4;
         unsigned char* pixels = (unsigned char*)imageData.get()->dataPointer();
 
+        std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
+
         stbi_write_png(_FilePath.c_str(), xres, yres, channels, pixels, xres * channels);
 
-        // SourceImage.save(_FilePath);
+        double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
+        Logger_ ->Log("Wrote File '" + _FilePath + "' In " + std::to_string(Duration_ms) + "ms", 0);
+
 
         // std::unique_ptr<OIIO::ImageOutput> out = OIIO::ImageOutput::create(_FilePath);
         // if (!out)
@@ -270,7 +276,7 @@ bool Manager::Headless_GetImage(std::string _FilePath) {
         // // colorFilename = std::to_string(RenderData_->framenumber) + ".bmp";
         // // RenderData_->framenumber+=1;
         // bool status = Instance.write(imageData, _FilePath);
-        // Logger_ ->Log("Wrote File '" + _FilePath + "'", 0);
+        
         // //std::cout<<"Wrote File "<<_FilePath<<std::endl;
         // if (!status) {
         //     std::cout<<"Error writing file!\n";
