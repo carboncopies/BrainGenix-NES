@@ -17,6 +17,8 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
     for (unsigned int i = 0; i < _Config.ConfigFilePaths.size(); i++) {
         try {
             Config = YAML::LoadFile(_Config.ConfigFilePaths[i]);
+            HasConfigFile = true;
+            break;
         } catch(const YAML::BadFile& e) {
         } catch(const YAML::ParserException& e) {
         }
