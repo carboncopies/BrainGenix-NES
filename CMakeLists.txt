@@ -73,6 +73,8 @@ find_package(vsg CONFIG REQUIRED)
 message(STATUS "Setting Up vsgXchange Library")
 find_package(vsgXchange CONFIG REQUIRED)
 
+find_package(freeimage CONFIG REQUIRED)
+target_link_libraries(main PRIVATE freeimage::FreeImage freeimage::FreeImagePlus)
 
 # Internal Deps
 message(STATUS "Finding bg-common-logger Package")
