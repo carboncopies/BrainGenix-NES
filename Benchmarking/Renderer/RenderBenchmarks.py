@@ -16,7 +16,7 @@ def ExecuteRenderBenchmarks():
     TableResults:str = "Render Benchmarks\n|Test | Resulting Time|\n|--------------|--------------|\n"
     TableResults += FormatResult(Test1.GetTime(), "Test 1")    
     TableResults += FormatResult(Test2.GetTime(), "Test 2")    
-    TableResults += FormatResult(Test2.GetTime(), "Test 2")    
+    TableResults += FormatResult(Test3.GetTime(), "Test 3")    
     return TableResults
 
 
