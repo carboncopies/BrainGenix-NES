@@ -258,7 +258,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 }
 
-bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VSDAData* _VSDAData, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber) {
+bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VSDAData* _VSDAData, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber, BG::NES::Renderer::EncoderPool* _EncoderPool) {
     assert(_VSDAData != nullptr);
     assert(_Logger != nullptr);
 
@@ -378,12 +378,20 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::
             _Renderer->SetCameraFOV(FOV_deg);
 
             // Finally, actually render the frame, and save it to disk
+            _VSDAData->Images_.push_back(std::make_unique<BG::NES::Renderer::Image>());
+            BG::NES::Renderer::Image* Image = _VSDAData->Images_[_VSDAData->Images_.size() - 1].get();
+
             std::string FilePath = "Renders/" + _FilePrefix + "_Slice" + std::to_string(SliceNumber);
             FilePath += "_X" + std::to_string(CameraX);
             FilePath += "_Y" + std::to_string(CameraY);
             FilePath += ".png";
-            _Renderer->DrawFrame(FilePath);
+
             _FileNameArray->push_back(FilePath);
+            Image->TargetFileName_ = FilePath;
+
+            _Renderer->RenderImage(Image);
+
+            _EncoderPool->QueueEncodeOperation(Image);
 
             // Update The API Status Info With The Current Slice Number
             _VSDAData->CurrentSliceImage_ = (XStep * TotalYSteps) + YStep + 1;

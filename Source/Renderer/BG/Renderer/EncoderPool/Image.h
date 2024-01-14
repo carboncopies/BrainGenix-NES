@@ -45,7 +45,7 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
+namespace Renderer {
 
 
 enum ImageState {

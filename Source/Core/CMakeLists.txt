@@ -110,10 +110,6 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/UpdaterManager.h
   ${SRC_DIR}/Core/VSDA/RenderPool.cpp
   ${SRC_DIR}/Core/VSDA/RenderPool.h
-  ${SRC_DIR}/Core/VSDA/EncoderPool/Image.cpp
-  ${SRC_DIR}/Core/VSDA/EncoderPool/Image.h
-  ${SRC_DIR}/Core/VSDA/EncoderPool/EncoderPool.cpp
-  ${SRC_DIR}/Core/VSDA/EncoderPool/EncoderPool.h
   ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.cpp
   ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.h
   ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/MicroscopeParameters.cpp
@@ -210,6 +206,7 @@ add_executable(${TEST_BINS} ${UNITTEST_SOURCES})
 target_compile_features(${TEST_BINS} PRIVATE cxx_std_17)
 
 target_link_libraries(${TEST_BINS} PRIVATE 
+    NESRenderer
     GTest::gtest 
     GTest::gtest_main
     ${PROJECT_LIBRARY_NAME}

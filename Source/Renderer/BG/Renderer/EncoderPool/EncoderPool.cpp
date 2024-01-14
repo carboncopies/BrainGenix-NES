@@ -1,4 +1,4 @@
-#include <VSDA/EncoderPool/EncoderPool.h>
+#include <BG/Renderer/EncoderPool/EncoderPool.h>
 
 #include <chrono>
 
@@ -11,7 +11,7 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
+namespace Renderer {
 
 
 

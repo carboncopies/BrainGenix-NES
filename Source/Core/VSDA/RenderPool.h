@@ -49,6 +49,8 @@
 
 #include <VSDA/UpdaterManager.h>
 
+#include <BG/Renderer/EncoderPool/Image.h>
+#include <BG/Renderer/EncoderPool/EncoderPool.h>
 #include <BG/Renderer/Interface.h>
 
 
@@ -75,6 +77,8 @@ class RenderPool {
 private:
 
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/
+
+    std::unique_ptr<Renderer::EncoderPool> EncoderPool_;  /**Instance of the encoderpool, which saves all required images to disk*/
 
     bool Windowed_ = false;                               /**Boolean indicating if we're making windowed or headless renderers*/
 

@@ -9,6 +9,11 @@ add_library(NESRenderer
     "BG/Renderer/State/RenderData.h"
     "BG/Renderer/State/RenderData.cpp"
 
+    "BG/Renderer/EncoderPool/Image.h"
+    "BG/Renderer/EncoderPool/Image.cpp"
+    "BG/Renderer/EncoderPool/EncoderPool.h"
+    "BG/Renderer/EncoderPool/EncoderPool.cpp"
+
     "BG/Renderer/SceneGraph/Manager.h"
     "BG/Renderer/SceneGraph/Manager.cpp"
     "BG/Renderer/SceneGraph/GeometryBuilder.h"

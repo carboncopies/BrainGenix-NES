@@ -45,14 +45,14 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
-#include <VSDA/EncoderPool/Image.h>
+#include <BG/Renderer/EncoderPool/Image.h>
 
 
 
 
 namespace BG {
 namespace NES {
-namespace Simulator {
+namespace Renderer {
 
 
 

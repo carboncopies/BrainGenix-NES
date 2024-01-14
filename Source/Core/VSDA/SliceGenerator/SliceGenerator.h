@@ -44,7 +44,8 @@
 
 #include <BG/Renderer/Interface.h>
 #include <BG/Renderer/SceneGraph/Primitive/Cube.h>
-
+#include <BG/Renderer/EncoderPool/Image.h>
+#include <BG/Renderer/EncoderPool/EncoderPool.h>
 
 #include <BG/Common/Logger/Logger.h>
 
@@ -138,7 +139,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
  * @return true 
  * @return false 
  */
-bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VSDAData* _VSDAData, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber);
+bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VSDAData* _VSDAData, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber, BG::NES::Renderer::EncoderPool* _EncoderPool);
 
 
 }; // Close Namespace Logger

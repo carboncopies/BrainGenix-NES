@@ -6,10 +6,10 @@
 #include <dlfcn.h>
 #include "renderdoc_app.h"
 
-#define STB_IMAGE_IMPLEMENTATION
-#include <stb_image.h>
-#define STB_IMAGE_WRITE_IMPLEMENTATION
-#include <stb_image_write.h>
+// #define STB_IMAGE_IMPLEMENTATION
+// #include <stb_image.h>
+// #define STB_IMAGE_WRITE_IMPLEMENTATION
+// #include <stb_image_write.h>
 
 
 // TODO: Update Doxygen Docs!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -217,8 +217,8 @@ bool Manager::Headless_UpdateRenderingBuffers() {
 
 }
 
-bool Manager::Headless_GetImage(std::string _FilePath) {
-
+bool Manager::Headless_GetImage(Image* _Image) {
+    assert(_Image != nullptr);
 
 
     // wait for completion.
@@ -249,19 +249,31 @@ bool Manager::Headless_GetImage(std::string _FilePath) {
             }
         }
 
-        
 
-        int xres = RenderData_->Width_;
-        int yres = RenderData_->Height_;
-        int channels = 4;
-        unsigned char* pixels = (unsigned char*)imageData.get()->dataPointer();
+        // Populate Image Struct With Data
+        _Image->Width_px = RenderData_->Width_;
+        _Image->Height_px = RenderData_->Height_;
+        _Image->NumChannels_ = 4;
+        size_t ImageSize = _Image->Width_px * _Image->Height_px * _Image->NumChannels_; // this assumes that each pixel is a char, a bit scuffed
+        unsigned char* NewBuffer = new unsigned char[ImageSize]; 
+        unsigned char* PixelData = (unsigned char*)imageData.get()->dataPointer();
+        std::copy(PixelData, PixelData + ImageSize, NewBuffer); 
+        _Image->Data_ = std::unique_ptr<unsigned char>(NewBuffer);
+        // imageData.release_nodelete();
 
-        std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
 
-        stbi_write_png(_FilePath.c_str(), xres, yres, channels, pixels, xres * channels);
 
-        double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
-        Logger_ ->Log("Wrote File '" + _FilePath + "' In " + std::to_string(Duration_ms) + "ms", 0);
+        // int xres = RenderData_->Width_;
+        // int yres = RenderData_->Height_;
+        // int channels = 4;
+        // unsigned char* pixels = (unsigned char*)imageData.get()->dataPointer();
+
+        // std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
+
+        // stbi_write_png(_FilePath.c_str(), xres, yres, channels, pixels, xres * channels);
+
+        // double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
+        // Logger_ ->Log("Wrote File '" + _FilePath + "' In " + std::to_string(Duration_ms) + "ms", 0);
 
 
         // std::unique_ptr<OIIO::ImageOutput> out = OIIO::ImageOutput::create(_FilePath);
@@ -489,7 +501,18 @@ bool Manager::ClearScene() {
 
 }
 
-bool Manager::DrawFrame(std::string _FilePath) {
+bool Manager::RenderImage(Image* _Image) {
+    assert(_Image != nullptr);
+
+    // Firstly, Draw The Frame
+    DrawFrame();
+
+    // Then, Get The Image
+    return Headless_GetImage(_Image);
+
+}
+
+bool Manager::DrawFrame() {
 
     // Check that we're able to render, otherwise chuck an error
     if (!Initialized_) {
@@ -526,10 +549,8 @@ bool Manager::DrawFrame(std::string _FilePath) {
     RenderData_->Viewer_->update();
     RenderData_->Viewer_->recordAndSubmit();
 
-    // If Headless, Save Image, Otherwise Present To Window
-    if (RenderData_->Headless_) {
-        Headless_GetImage(_FilePath);
-    } else {
+    // If Not Headless, Present To Window
+    if (!RenderData_->Headless_) {
         RenderData_->Viewer_->present();
     }
 
