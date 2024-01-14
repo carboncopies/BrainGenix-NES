@@ -26,8 +26,8 @@ VoxelArray::VoxelArray(BoundingBox _BB, float _VoxelScale_um) {
 
 
     // Malloc array
-    Data_ = std::make_unique<VoxelType[]>(SizeX_ * SizeY_ * SizeZ_);
-    DataMaxLength_ = SizeX_ * SizeY_ * SizeZ_;
+    DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
+    Data_ = std::vector<VoxelType>(DataMaxLength_);
 
     // Reset the array so we don't get a bunch of crap in it
     ClearArray();
@@ -59,8 +59,8 @@ VoxelArray::VoxelArray(ScanRegion _Region, float _VoxelScale_um) {
 
 
     // Malloc array
-    Data_ = std::make_unique<VoxelType[]>(SizeX_ * SizeY_ * SizeZ_);
-    DataMaxLength_ = SizeX_ * SizeY_ * SizeZ_;
+    DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
+    Data_ = std::vector<VoxelType>(DataMaxLength_);
 
     // Reset the array so we don't get a bunch of crap in it
     ClearArray();
@@ -76,20 +76,20 @@ VoxelArray::~VoxelArray() {
 void VoxelArray::ClearArray() {
 
     // Reset everything to 0s
-    for (uint64_t i = 0; i < SizeX_ * SizeY_ * SizeZ_; i++) {
-        Data_.get()[i] = 0;
+    for (uint64_t i = 0; i < DataMaxLength_; i++) {
+        Data_[i] = 0;
     }
 
 }
 
-int VoxelArray::GetIndex(int _X, int _Y, int _Z) {
+uint64_t VoxelArray::GetIndex(int _X, int _Y, int _Z) {
     return _X*(SizeY_*SizeZ_) + _Y*SizeZ_ + _Z;
 }
 
 VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
 
     // Hope this works
-    return Data_.get()[GetIndex(_X, _Y, _Z)];
+    return Data_[GetIndex(_X, _Y, _Z)];
 
 }
 
@@ -101,7 +101,7 @@ void VoxelArray::SetVoxel(int _X, int _Y, int _Z, VoxelType _Value) {
         ErrorMsg += std::string(" As This Would Be Out Of Range (index): ") + std::to_string(CurrentIndex) + "!";
         throw std::out_of_range(ErrorMsg.c_str());
     }
-    Data_.get()[CurrentIndex] = _Value;
+    Data_[CurrentIndex] = _Value;
 }
 
 void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Value) {
