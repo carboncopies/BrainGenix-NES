@@ -130,10 +130,11 @@ def main():
 
 if __name__ == "__main__":
 
-
+    print("----------------------------")
     Start = time.time()
 
     main()
 
     End = time.time()
-    print(f"Test1: {End - Start}s")
+    print(f"Benchmark - Renderer - 1: {End - Start}s")
+    print("----------------------------")
