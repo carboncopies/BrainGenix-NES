@@ -311,7 +311,12 @@ bool Manager::SetupScene() {
     Scene_      = std::make_unique<State::Scene>();
     Scene_->Group_ = vsg::Group::create();
 
-
+    auto directionalLight = vsg::DirectionalLight::create();
+    directionalLight->name = "directional";
+    directionalLight->color.set(1.0, 1.0, 1.0);
+    directionalLight->intensity = 1.0;
+    directionalLight->direction.set(0.0, 0.0, -1.0);
+    Scene_->Group_->addChild(directionalLight);
 
 
     return true;
@@ -523,12 +528,7 @@ bool Manager::DrawFrame() {
     LockScene();
 
 
-    auto directionalLight = vsg::DirectionalLight::create();
-    directionalLight->name = "directional";
-    directionalLight->color.set(1.0, 1.0, 1.0);
-    directionalLight->intensity = 1.0;
-    directionalLight->direction.set(0.0, 0.0, -1.0);
-    Scene_->Group_->addChild(directionalLight);
+
 
 
     // RenderDoc Debugging Capture Helper

@@ -3,6 +3,7 @@
 # Simple Test Example For BG
 import time
 import base64
+import os
 
 import BrainGenix.NES as NES
 
@@ -133,6 +134,7 @@ def GetTime():
 
     End = time.time()
     print(f"Benchmark - Renderer - 2: {End - Start}s")
+    os.system("rm -rf *.png")
     return End - Start
 
 if __name__ == "__main__":

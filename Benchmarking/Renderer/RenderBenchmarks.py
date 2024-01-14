@@ -3,8 +3,8 @@
 import Test1
 import Test2
 import Test3
+import Test4
 
-import os
 
 
 
@@ -17,6 +17,7 @@ def ExecuteRenderBenchmarks():
     TableResults += FormatResult(Test1.GetTime(), "Test 1")    
     TableResults += FormatResult(Test2.GetTime(), "Test 2")    
     TableResults += FormatResult(Test3.GetTime(), "Test 3")    
+    TableResults += FormatResult(Test4.GetTime(), "Test 4")    
     return TableResults
 
 
@@ -24,7 +25,6 @@ def ExecuteRenderBenchmarks():
 def Main():
 
     print(ExecuteRenderBenchmarks())
-    os.system("rm -rf *.png")
 
 
 

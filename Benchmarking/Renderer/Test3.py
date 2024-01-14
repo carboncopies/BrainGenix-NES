@@ -3,6 +3,7 @@
 # Simple Test Example For BG
 import time
 import base64
+import os
 
 import BrainGenix.NES as NES
 
@@ -149,7 +150,7 @@ def main():
 
     # Setup VSDA Renderer
     EMConfig = NES.VSDA.EM.Configuration()
-    EMConfig.PixelResolution_nm = 0.05
+    EMConfig.PixelResolution_nm = 0.15
     EMConfig.ImageWidth_px = 512
     EMConfig.ImageHeight_px = 512
     EMConfig.SliceThickness_nm = 100
@@ -172,6 +173,7 @@ def GetTime():
 
     End = time.time()
     print(f"Benchmark - Renderer - 3: {End - Start}s")
+    os.system("rm -rf *.png")
     return End - Start
 
 if __name__ == "__main__":
