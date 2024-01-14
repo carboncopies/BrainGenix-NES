@@ -27,7 +27,7 @@ VoxelArray::VoxelArray(BoundingBox _BB, float _VoxelScale_um) {
 
     // Malloc array
     DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
-    Data_ = std::vector<VoxelType>(DataMaxLength_);
+    Data_ = std::make_unique<VoxelType[]>(DataMaxLength_);
 
     // Reset the array so we don't get a bunch of crap in it
     ClearArray();
@@ -60,7 +60,7 @@ VoxelArray::VoxelArray(ScanRegion _Region, float _VoxelScale_um) {
 
     // Malloc array
     DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
-    Data_ = std::vector<VoxelType>(DataMaxLength_);
+    Data_ = std::make_unique<VoxelType[]>(DataMaxLength_);
 
     // Reset the array so we don't get a bunch of crap in it
     ClearArray();
@@ -77,19 +77,19 @@ void VoxelArray::ClearArray() {
 
     // Reset everything to 0s
     for (uint64_t i = 0; i < DataMaxLength_; i++) {
-        Data_[i] = 0;
+        Data_.get()[i] = 0;
     }
 
 }
 
 uint64_t VoxelArray::GetIndex(int _X, int _Y, int _Z) {
-    return _X*(SizeY_*SizeZ_) + _Y*SizeZ_ + _Z;
+    return uint64_t(_X)*(SizeY_*SizeZ_) + uint64_t(_Y)*SizeZ_ + uint64_t(_Z);
 }
 
 VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
 
     // Hope this works
-    return Data_[GetIndex(_X, _Y, _Z)];
+    return Data_.get()[GetIndex(_X, _Y, _Z)];
 
 }
 
@@ -125,9 +125,9 @@ void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Val
 
 
 void VoxelArray::GetSize(int* _X, int* _Y, int* _Z) {
-    (*_X) = SizeX_;
-    (*_Y) = SizeY_;
-    (*_Z) = SizeZ_;
+    (*_X) = int(SizeX_);
+    (*_Y) = int(SizeY_);
+    (*_Z) = int(SizeZ_);
 }
 
 int VoxelArray::GetX() {
