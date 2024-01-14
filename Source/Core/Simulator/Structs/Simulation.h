@@ -24,7 +24,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/BallAndStick/BSAlignedBrainRegion.h>
-#include <Simulator/BallAndStick/BSAlignedNC.h>
+//#include <Simulator/BallAndStick/BSAlignedNC.h>
 #include <Simulator/BrainRegion/BrainRegion.h>
 #include <Simulator/Geometries/Geometry.h>
 #include <Simulator/Geometries/GeometryCollection.h>

@@ -49,12 +49,12 @@ struct BSAlignedNCRandomUniform : BSAlignedNC {
     size_t Seed = 42; //! Seed of the random number generator.
 
     //! Constructors
-    BSAlignedNCRandomUniform(int _ID);
-    BSAlignedNCRandomUniform(int _ID, int _NumCells);
-    BSAlignedNCRandomUniform(int _ID, int _NumCells, size_t _Seed);
+    BSAlignedNCRandomUniform(int _ID, Geometries::GeometryCollection * _Collection_ptr);
+    BSAlignedNCRandomUniform(int _ID, int _NumCells, Geometries::GeometryCollection * _Collection_ptr);
+    BSAlignedNCRandomUniform(int _ID, int _NumCells, size_t _Seed, Geometries::GeometryCollection * _Collection_ptr);
 
     //! Initializes the neurons in the neural circuit.
-    void InitCells(std::shared_ptr<Geometries::Geometry> domain) override;
+    void InitCells(Geometries::Box * domain) override;
 };
 
 }; // namespace BallAndStick

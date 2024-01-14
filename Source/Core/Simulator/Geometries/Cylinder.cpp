@@ -9,11 +9,11 @@ namespace Geometries {
 
 // Constructors
 Cylinder::Cylinder(){
-
+    GeometryShape = GeometryCylinder;
 };
 
-Cylinder::Cylinder(float _End0Radius_um, BG::NES::Simulator::Geometries::Vec3D _End0Pos_um, float _End1Radius_um, BG::NES::Simulator::Geometries::Vec3D _End1Pos_um) : End0Radius_um(_End0Radius_um), End0Pos_um(_End0Pos_um), End1Radius_um(_End1Radius_um), End1Pos_um(_End1Pos_um) {
-
+Cylinder::Cylinder(float _End0Radius_um, const Vec3D & _End0Pos_um, float _End1Radius_um, const Vec3D & _End1Pos_um) : End0Radius_um(_End0Radius_um), End0Pos_um(_End0Pos_um), End1Radius_um(_End1Radius_um), End1Pos_um(_End1Pos_um) {
+    GeometryShape = GeometryCylinder;
 };
 
 //! Renders the cylinder in 3D.

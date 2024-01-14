@@ -44,7 +44,84 @@ struct GeometryCollection {
     // std::vector<Box> Boxes; /**Vector of Boxes owned by the simulation*/
 
     std::vector<std::variant<Sphere, Cylinder, Box>> Geometries; //! Vector of variants, each being a geometry, note that the type order here MUST match the above enum.
+    //std::vector<Geometry> Geometries_; // We could instead hold them in here and make use of inheritance and static_cast... (comment by Randal)
 
+    void append(Geometry & geom) {
+        //Geometries_.push_back(geom);
+        switch (geom.GeometryShape) {
+        case GeometrySphere: {
+            Geometries.push_back(*static_cast<Sphere*>(&geom));
+            break;
+        }
+        case GeometryCylinder:  {
+            Geometries.push_back(*static_cast<Cylinder*>(&geom));
+            break;
+        }
+        case GeometryBox:  {
+            Geometries.push_back(*static_cast<Box*>(&geom));
+            break;
+        }
+        }
+    }
+
+    size_t NextAvailableID() { return Geometries.size(); }
+
+    Sphere & AddSphere(const Vec3D & _Center_um, float _Radius_um) {
+        Geometries::Sphere S(_Center_um, _Radius_um);
+        S.ID = NextAvailableID();
+        Geometries.push_back(S);
+        return GetSphere(S.ID);
+    }
+    Cylinder & AddCylinder(float _End0Radius_um, const Vec3D & _End0Pos_um, float _End1Radius_um, const Vec3D & _End1Pos_um) {
+        Geometries::Cylinder C(_End0Radius_um, _End0Pos_um, _End1Radius_um, _End1Pos_um);
+        C.ID = NextAvailableID();
+        Geometries.push_back(C);
+        return GetCylinder(C.ID);
+    }
+    Box & AddBox(const Vec3D & _Center_um, const Vec3D & _Dims_um, const Vec3D & _Rotations_rad) {
+        Geometries::Box B(_Center_um, _Dims_um, _Rotations_rad);
+        B.ID = NextAvailableID();
+        Geometries.push_back(B);
+        return GetBox(B.ID);
+    }
+    Box & AddBox(const Vec3D & _Center_um, const Vec3D & _Dims_um) {
+        Geometries::Box B(_Center_um, _Dims_um);
+        B.ID = NextAvailableID();
+        Geometries.push_back(B);
+        return GetBox(B.ID);
+    }
+    Box & AddBox() {
+        Geometries::Box B;
+        B.ID = NextAvailableID();
+        Geometries.push_back(B);
+        return GetBox(B.ID);
+    }
+
+    GeometryShapeEnum GetShapeType(size_t idx) {
+        return std::visit([](auto&& arg){ return arg.GeometryShape; }, Geometries.at(idx));
+    }
+    bool IsSphere(size_t idx) { return GetShapeType(idx) == GeometrySphere; }
+    bool IsCylinder(size_t idx) { return GetShapeType(idx) == GeometryCylinder; }
+    bool IsBox(size_t idx) { return GetShapeType(idx) == GeometryBox; }
+
+    Box & GetBox(size_t idx) {
+        return std::get<Box>(Geometries.at(idx));
+    }
+    Sphere & GetSphere(size_t idx) {
+        return std::get<Sphere>(Geometries.at(idx));
+    }
+    Cylinder & GetCylinder(size_t idx) {
+        return std::get<Cylinder>(Geometries.at(idx));
+    }
+
+    Geometry * GetGeometry(size_t idx) {
+        if (idx >= Geometries.size()) return nullptr;
+
+        if (IsSphere(idx)) return &GetSphere(idx);
+        if (IsCylinder(idx)) return &GetCylinder(idx);
+        if (IsBox(idx)) return &GetBox(idx);
+        return nullptr;
+    }
 };
 
 }; // Close Namespace Geometries

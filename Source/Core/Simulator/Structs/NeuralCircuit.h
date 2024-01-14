@@ -16,6 +16,7 @@
 #include <vector>
 
 #include <Simulator/Geometries/Geometry.h>
+#include <Simulator/Geometries/GeometryCollection.h>
 #include <Simulator/Structs/Neuron.h>
 
 namespace BG {
@@ -63,11 +64,13 @@ struct NeuralCircuit {
 
     int ID; /**ID of the neural circuit */
 
+    Geometries::GeometryCollection * Collection_ptr = nullptr; // Obtained from Simulation.
+
     //! Neurons in the neural circuit.
     std::unordered_map<std::string, std::shared_ptr<Neuron>> Cells;
 
     //! Initializes the neurons in the neural circuit.
-    virtual void InitCells(std::shared_ptr<Geometries::Geometry> domain) = 0;
+    virtual void InitCells(Geometries::Box * domain) = 0;
 
     //! Returns the number of neuron in the neural circuit.
     virtual size_t GetNumberOfNeurons() { return Cells.size(); }
@@ -78,6 +81,8 @@ struct NeuralCircuit {
     //! Returns all neurons in the neural circuit with specified IDs.
     virtual std::vector<std::shared_ptr<Neuron>>
     GetNeuronsByIDs(std::vector<size_t> IDList) = 0;
+
+    NeuralCircuit(Geometries::GeometryCollection * _Collection_ptr): Collection_ptr(_Collection_ptr) {}
 };
 
 //! CircuitRecording is an unordered map containing data from simulation from

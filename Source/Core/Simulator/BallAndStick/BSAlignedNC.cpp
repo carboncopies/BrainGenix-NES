@@ -6,27 +6,29 @@ namespace Simulator {
 namespace BallAndStick {
 
 //! Constructors
-BSAlignedNC::BSAlignedNC(int _ID) { this->ID = _ID; };
+BSAlignedNC::BSAlignedNC(int _ID, Geometries::GeometryCollection * _Collection_ptr): NeuralCircuit(_Collection_ptr) {
+    this->ID = _ID;
+};
 
-BSAlignedNC::BSAlignedNC(int _ID, int _NumCells) : NumCells(_NumCells) {
+BSAlignedNC::BSAlignedNC(int _ID, int _NumCells, Geometries::GeometryCollection * _Collection_ptr) : NeuralCircuit(_Collection_ptr), NumCells(_NumCells) {
     this->ID = _ID;
 };
 
 //! Initializes the neurons in the neural circuit.
-void BSAlignedNC::InitCells(std::shared_ptr<Geometries::Geometry> domain) {
+void BSAlignedNC::InitCells(Geometries::Box * domain) {
     std::vector<std::vector<float>> domainBounds;
-    std::shared_ptr<Geometries::Sphere> soma = nullptr;
-    std::shared_ptr<Geometries::Cylinder> axon = nullptr;
-    auto boxDomain = std::dynamic_pointer_cast<Geometries::Box>(domain);
+    Geometries::Sphere * soma_ptr = nullptr; // Regular pointers, because the objects are maintained in Simulation.Collection.
+    Geometries::Cylinder * axon_ptr = nullptr; // Regular pointers, because the objects are maintained in Simulation.Collection.
+    //auto boxDomain = std::dynamic_pointer_cast<Geometries::Box>(domain);
 
-    assert(boxDomain);
+    //assert(boxDomain);
+    assert(domain);
 
     for (size_t i = 0; i < this->NumCells; ++i) {
-        domainBounds = boxDomain->EqualSliceBounds(this->NumCells, i);
-        soma = CreateBSSoma(domainBounds, Align::ALIGN_LEFT);
-        axon = CreateBSAxon(domainBounds, Align::ALIGN_RIGHT, soma->Radius_um);
-        this->Cells[std::to_string(i)] =
-            std::make_shared<BSNeuron>(i, soma, axon);
+        domainBounds = domain->EqualSliceBounds(this->NumCells, i);
+        soma_ptr = &CreateBSSoma(*Collection_ptr, domainBounds, Align::ALIGN_LEFT);
+        axon_ptr = &CreateBSAxon(*Collection_ptr, domainBounds, Align::ALIGN_RIGHT, soma_ptr->Radius_um);
+        this->Cells[std::to_string(i)] = std::make_shared<BSNeuron>(i, soma_ptr, axon_ptr);
     }
 };
 
@@ -73,15 +75,15 @@ void BSAlignedNC::SetWeight(size_t from, size_t to, SetWeightMethod method) {
         throw std::invalid_argument("Unknown source cell.");
 
     switch (method) {
-    case SetWeightMethod::BINARY:
+    case SetWeightMethod::BINARY: {
         targetCell = std::dynamic_pointer_cast<BSNeuron>(itTo->second);
         sourceCell = std::dynamic_pointer_cast<BSNeuron>(itFrom->second);
 
         // source and weight
         targetCell->ReceptorDataVec.push_back(std::make_tuple(sourceCell, 1.0));
-        targetCell->Morphology["receptor"] =
-            CreateBSReceptor(sourceCell->Morphology["soma"]->Center_um);
+        targetCell->Morphology["receptor"] = &CreateBSReceptor(*Collection_ptr, sourceCell->Morphology.at("soma")->Center_um);
         break;
+    }
     default:
         break;
     }

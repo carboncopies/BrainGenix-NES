@@ -14,6 +14,7 @@
 #include <tuple>
 #include <unordered_map>
 #include <vector>
+#include <memory>
 
 #include <Simulator/Geometries/VecTools.h>
 
@@ -35,13 +36,15 @@ struct Neuron {
 
     //! Returns the time since the action potential threshold was
     //! crossed last.
-    virtual float DtAct_ms(float t_ms) { return 0.0; }; // *** FIX THIS!
+    virtual float DtAct_ms(float t_ms); // *** FIX THIS!
 
     //! Tells if the action potential threshold has been crossed.
-    virtual bool HasSpiked() { return false; } // *** FIX THIS!
+    virtual bool HasSpiked(); // *** FIX THIS!
 
     //! Returns the geometric center of the neuron.
-    virtual Geometries::Vec3D &GetCellCenter() { return cell_center; } // *** FIX THIS!
+    virtual Geometries::Vec3D &GetCellCenter(); // *** FIX THIS!
+
+    virtual void Update(float t_ms, bool recording);
 };
 
 //! ReceptorData is a tuple containing a pointer to the source (pre-synaptic)
@@ -52,7 +55,10 @@ typedef std::tuple<std::shared_ptr<CoreStructs::Neuron>, float> ReceptorData;
 //! neuron.
 typedef std::unordered_map<std::string, std::vector<float>> NeuronRecording;
 
-struct BSNeuronStruct: Neuron {
+struct BSNeuronStruct {
+    
+    std::string Name; /**Name of the Neuron*/
+    int ID; /**ID of the Neuron */
 
     int SomaShapeID;
     int AxonShapeID;
@@ -65,12 +71,6 @@ struct BSNeuronStruct: Neuron {
     float PostsynapticPotentialRiseTime_ms;
     float PostsynapticPotentialDecayTime_ms;
     float PostsynapticPotentialAmplitude_mV;
-
-    virtual float DtAct_ms(float t_ms) { return 0.0; }; // *** FIX THIS!
-
-    virtual bool HasSpiked() { return false; } // *** FIX THIS!
-
-    virtual Geometries::Vec3D &GetCellCenter() { return cell_center; } // *** FIX THIS!
 
 };
 

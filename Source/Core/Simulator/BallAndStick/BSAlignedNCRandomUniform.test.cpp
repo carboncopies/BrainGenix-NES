@@ -21,20 +21,19 @@
  */
 
 struct BSAlignedNCRandomUniformTest : testing::Test {
-    std::unique_ptr<BG::NES::Simulator::BallAndStick::BSAlignedNCRandomUniform>
-        testNC = nullptr;
+    BG::NES::Simulator::Geometries::GeometryCollection Collection;
+
+    std::unique_ptr<BG::NES::Simulator::BallAndStick::BSAlignedNCRandomUniform> testNC = nullptr;
 
     float tol = 1e-3;
 
     void SetUp() {
-        testNC = std::make_unique<
-            BG::NES::Simulator::BallAndStick::BSAlignedNCRandomUniform>(100);
+        testNC = std::make_unique<BG::NES::Simulator::BallAndStick::BSAlignedNCRandomUniform>(100, &Collection);
     }
 
     // Initialize cells in the neural circuit.
     void InitCells() {
-        std::shared_ptr<BG::NES::Simulator::Geometries::Box> domain =
-            std::make_shared<BG::NES::Simulator::Geometries::Box>();
+        BG::NES::Simulator::Geometries::Box * domain = &Collection.AddBox();
         testNC->InitCells(domain);
     }
 

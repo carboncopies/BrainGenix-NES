@@ -215,20 +215,21 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     for (unsigned int i = 0; i < _Sim->BSCompartments.size(); i++) {
 
         Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
-        std::variant<Geometries::Sphere, Geometries::Cylinder, Geometries::Box> ThisShape = _Sim->Collection.Geometries[ThisCompartment->ShapeID];
+        size_t ShapeID = ThisCompartment->ShapeID;
+        //std::variant<Geometries::Sphere, Geometries::Cylinder, Geometries::Box> ThisShape = _Sim->Collection.Geometries[ThisCompartment->ShapeID];
 
-        if (std::holds_alternative<Geometries::Sphere>(ThisShape)) {
-            Geometries::Sphere ThisSphere = std::get<Geometries::Sphere>(ThisShape);
+        if (_Sim->Collection.IsSphere(ShapeID)) { // (std::holds_alternative<Geometries::Sphere>(ThisShape)) {
+            Geometries::Sphere & ThisSphere = _Sim->Collection.GetSphere(ShapeID); // std::get<Geometries::Sphere>(ThisShape);
             _Logger->Log("Adding Sphere To Voxel Array", 0);
             FillShape(_Array, &ThisSphere, _Params->VoxelResolution_um);
         }
-        else if (std::holds_alternative<Geometries::Box>(ThisShape)) {
-            Geometries::Box ThisBox = std::get<Geometries::Box>(ThisShape);
+        else if (_Sim->Collection.IsBox(ShapeID)) { // (std::holds_alternative<Geometries::Box>(ThisShape)) {
+            Geometries::Box & ThisBox = _Sim->Collection.GetBox(ShapeID); // std::get<Geometries::Box>(ThisShape);
             _Logger->Log("Adding Box To Voxel Array", 0);
             FillBox(_Array, &ThisBox, _Params->VoxelResolution_um);
         }
-        else if (std::holds_alternative<Geometries::Cylinder>(ThisShape)) {
-            Geometries::Cylinder ThisCylinder = std::get<Geometries::Cylinder>(ThisShape);
+        else if (_Sim->Collection.IsCylinder(ShapeID)) { // (std::holds_alternative<Geometries::Cylinder>(ThisShape)) {
+            Geometries::Cylinder & ThisCylinder = _Sim->Collection.GetCylinder(ShapeID); // std::get<Geometries::Cylinder>(ThisShape);
             _Logger->Log("Adding Cylinder To Voxel Array", 0);
             FillCylinder(_Array, &ThisCylinder, _Params->VoxelResolution_um);
         }

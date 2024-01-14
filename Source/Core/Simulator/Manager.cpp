@@ -319,6 +319,7 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
     int SphereID = ThisSimulation->Collection.Geometries.size();
     S.ID = SphereID;
     ThisSimulation->Collection.Geometries.push_back(S);
+    //ThisSimulation->Collection.append(S);
 
 
     // Return Status ID
@@ -376,6 +377,7 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     int ShapeID = ThisSimulation->Collection.Geometries.size(); // we can do this since the shapes vector is a variant
     S.ID = ShapeID;
     ThisSimulation->Collection.Geometries.push_back(S);
+    //ThisSimulation->Collection.append(S);
 
 
     // Return Status ID
@@ -417,6 +419,7 @@ std::string Manager::BoxCreate(std::string _JSONRequest) {
     int ShapeID = ThisSimulation->Collection.Geometries.size(); // we can do this since the shapes vector is a variant
     S.ID = ShapeID;
     ThisSimulation->Collection.Geometries.push_back(S);
+    //ThisSimulation->Collection.append(S);
 
 
     // Return Status ID
@@ -609,7 +612,15 @@ std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
     C.ID = NeuronID;
     // NOTE: At this time, we're keeping both a list of these data structs (in the Neurons list)
     //       and a list of functional neuron objects. For more info, see Log 202401121525.
-    ThisSimulation->Neurons.push_back(std::make_shared<BallAndStick::BSNeuron>(C));
+    Geometries::Geometry * soma_ptr = ThisSimulation->Collection.GetGeometry(C.SomaShapeID);
+    Geometries::Geometry * axon_ptr = ThisSimulation->Collection.GetGeometry(C.AxonShapeID);
+    if ((!axon_ptr) || (!soma_ptr)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2; // invalid shape id
+        ResponseJSON["NeuronID"] = -1;
+        return ResponseJSON.dump();
+    }
+    ThisSimulation->Neurons.push_back(std::make_shared<BallAndStick::BSNeuron>(C, soma_ptr, axon_ptr));
 
     // Return Status ID
     nlohmann::json ResponseJSON;

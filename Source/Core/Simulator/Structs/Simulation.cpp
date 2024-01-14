@@ -162,6 +162,7 @@ void Simulation::RunFor(float tRun_ms) {
     // *** TODO: obtain this from an API call...
     sim_methods simmethod = simmethod_list_of_neurons;
 
+    unsigned long num_updates_called = 0;
     while (this->T_ms < tEnd_ms) {
         bool recording = this->IsRecording();
         if (recording)
@@ -171,6 +172,7 @@ void Simulation::RunFor(float tRun_ms) {
                 for (auto & neuron_ptr : this->Neurons) {
                     if (neuron_ptr) {
                         neuron_ptr->Update(this->T_ms, recording);
+                        num_updates_called++;
                     }
                 }
                 break;
@@ -180,12 +182,14 @@ void Simulation::RunFor(float tRun_ms) {
                     auto circuitPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
                     assert(circuitPtr);
                     circuitPtr->Update(this->T_ms, recording);
+                    num_updates_called++;
                 }
                 break;
             }
         }
         this->T_ms += this->Dt_ms;
     }
+    Logger_->Log("Number of top-level Update() calls: "+std::to_string(num_updates_called), 3);
 };
 
 void Simulation::Show() { return; };

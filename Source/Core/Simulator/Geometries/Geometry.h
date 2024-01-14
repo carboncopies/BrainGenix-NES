@@ -21,6 +21,13 @@ namespace NES {
 namespace Simulator {
 namespace Geometries {
 
+enum GeometryShapeEnum {
+    GeometryUnspecified = 0,
+    GeometrySphere,
+    GeometryCylinder,
+    GeometryBox,
+    NUMshapes
+};
 
 /**
  * @brief This abstract struct defines the general attributes of a geometrical shape. * 
@@ -30,6 +37,7 @@ namespace Geometries {
 struct Geometry {
     std::string Name;   //! Name of the Geometry
     int ID;             //! ID of the Geometry
+    GeometryShapeEnum GeometryShape = GeometryUnspecified; //! Shape of the derived class instantiation that inherits Geometry.
 
     Vec3D Center_um; //! Center of the geometry in micrometers.
 
@@ -52,7 +60,6 @@ struct Geometry {
      * @return false Is not in shape
      */
     virtual bool IsPointInShape(Vec3D _Position_um) = 0;
-
 
 };
 

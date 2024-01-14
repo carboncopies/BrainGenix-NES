@@ -26,6 +26,8 @@
  */
 
 struct RecordingElectrodeTest : testing::Test {
+    BG::NES::Simulator::Geometries::GeometryCollection Collection;
+
     std::unique_ptr<BG::NES::Simulator::Tools::RecordingElectrode> testElectrode{};
     std::shared_ptr<BG::NES::Simulator::CoreStructs::NeuralCircuit> testNC{};
     std::shared_ptr<BG::NES::Simulator::BallAndStick::BSAlignedBrainRegion> testRegion{};
@@ -35,9 +37,9 @@ struct RecordingElectrodeTest : testing::Test {
 
     void SetUp() {
         testSim = std::make_shared<BG::NES::Simulator::Simulation>(nullptr);  // this will fail an assert when we try and use the logger fyi
-        testNC = std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(4000, 2);
+        testNC = std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(4000, 2, &Collection);
         auto testBSAlignedNC = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSAlignedNC>(testNC);
-        testRegion = std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedBrainRegion>(3000, std::make_shared<BG::NES::Simulator::Geometries::Box>(BG::NES::Simulator::Geometries::Vec3D(0.0, 0.0, 0.0), BG::NES::Simulator::Geometries::Vec3D(20.0, 20.0, 20.0)), testBSAlignedNC);
+        testRegion = std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedBrainRegion>(3000, &Collection.AddBox(BG::NES::Simulator::Geometries::Vec3D(0.0, 0.0, 0.0), BG::NES::Simulator::Geometries::Vec3D(20.0, 20.0, 20.0)), testBSAlignedNC);
 
         testSim->AddCircuit(testNC);
         testSim->AddRegion(testRegion);
