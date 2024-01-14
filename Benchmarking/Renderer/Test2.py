@@ -71,6 +71,43 @@ def main():
     MyBoxCompartment = MySim.AddBSCompartment(Cfg)
 
 
+    BoxCfg = NES.Shapes.Box.Configuration()
+    BoxCfg.Name = "My Box"
+    BoxCfg.CenterPosition_um = [13, 21, -1]
+    BoxCfg.Dimensions_um = [20, 25, 15]
+    BoxCfg.Rotation_rad = [0, 0.785398, 0.785398]
+    MyBox = MySim.AddBox(BoxCfg)
+
+    Cfg = NES.Models.Compartments.BS.Configuration()
+    Cfg.Name = "My Compartment 2"
+    Cfg.SpikeThreshold_mV = 0.0
+    Cfg.DecayTime_ms = 0.0
+    Cfg.MembranePotential_mV = 0.0
+    Cfg.RestingPotential_mV = 0.0
+    Cfg.AfterHyperpolarizationAmplitude_mV = 0.0
+    Cfg.Shape = MyBox
+    MyBoxCompartment = MySim.AddBSCompartment(Cfg)
+
+
+
+    BoxCfg = NES.Shapes.Box.Configuration()
+    BoxCfg.Name = "My Box"
+    BoxCfg.CenterPosition_um = [18, 25, -1]
+    BoxCfg.Dimensions_um = [20, 25, 15]
+    BoxCfg.Rotation_rad = [1.2, 0.785398, 0]
+    MyBox = MySim.AddBox(BoxCfg)
+
+    Cfg = NES.Models.Compartments.BS.Configuration()
+    Cfg.Name = "My Compartment 2"
+    Cfg.SpikeThreshold_mV = 0.0
+    Cfg.DecayTime_ms = 0.0
+    Cfg.MembranePotential_mV = 0.0
+    Cfg.RestingPotential_mV = 0.0
+    Cfg.AfterHyperpolarizationAmplitude_mV = 0.0
+    Cfg.Shape = MyBox
+    MyBoxCompartment = MySim.AddBSCompartment(Cfg)
+
+
     # Setup VSDA Renderer
     EMConfig = NES.VSDA.EM.Configuration()
     EMConfig.PixelResolution_nm = 0.2
@@ -82,7 +119,7 @@ def main():
     EMConfig.NumPixelsPerVoxel_px = 32
     VSDAEMInstance = MySim.AddVSDAEM(EMConfig)
 
-    VSDAEMInstance.DefineScanRegion([-11,-11,-1], [25,25,8])
+    VSDAEMInstance.DefineScanRegion([-11,-11,-1], [45,45,15])
     
     VSDAEMInstance.QueueRenderOperation()
 
@@ -99,5 +136,5 @@ if __name__ == "__main__":
     main()
 
     End = time.time()
-    print(f"Benchmark - Renderer - 1: {End - Start}s")
+    print(f"Benchmark - Renderer - 2: {End - Start}s")
     print("----------------------------")
