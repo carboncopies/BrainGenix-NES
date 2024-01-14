@@ -96,6 +96,7 @@ def GetTime():
     main()
 
     End = time.time()
+    print(f"Benchmark - Renderer - 1: {End - Start}s")
     return End - Start
 
 

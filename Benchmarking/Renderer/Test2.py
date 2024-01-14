@@ -132,6 +132,7 @@ def GetTime():
     main()
 
     End = time.time()
+    print(f"Benchmark - Renderer - 2: {End - Start}s")
     return End - Start
 
 if __name__ == "__main__":
