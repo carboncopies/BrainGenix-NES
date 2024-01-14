@@ -38,7 +38,7 @@ void EncoderPool::EncoderThreadMainFunction(int _ThreadNumber) {
             std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
             stbi_write_png(ImgToProcess->TargetFileName_.c_str(), xres, yres, channels, pixels, xres * channels);
             double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
-            Logger_ ->Log("EncoderPool Thread " + std::to_string(_ThreadNumber) + "Encoded Image '" + ImgToProcess->TargetFileName_ + "' In " + std::to_string(Duration_ms) + "ms", 0);
+            Logger_ ->Log("EncoderPool Thread '" + std::to_string(_ThreadNumber) + "' Encoded Image '" + ImgToProcess->TargetFileName_ + "' In " + std::to_string(Duration_ms) + "ms", 0);
 
             // Update Image Status
             ImgToProcess->ImageState_ = IMAGE_PROCESSED;
