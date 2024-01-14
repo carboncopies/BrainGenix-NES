@@ -34,7 +34,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <inttypes.h>
 #include <math.h>
-#include <memory>
+#include <vector>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -69,12 +69,12 @@ class VoxelArray {
 
 private:
 
-    std::unique_ptr<VoxelType[]> Data_; /**Big blob of memory that holds all the voxels*/
+    std::vector<VoxelType> Data_; /**Big blob of memory that holds all the voxels*/
     uint64_t DataMaxLength_ = 0;
 
-    int SizeX_; /**Number of voxels in x dimension*/
-    int SizeY_; /**Number of voxels in y dimension*/
-    int SizeZ_; /**Number of voxels in z dimension*/
+    uint64_t SizeX_; /**Number of voxels in x dimension*/
+    uint64_t SizeY_; /**Number of voxels in y dimension*/
+    uint64_t SizeZ_; /**Number of voxels in z dimension*/
 
     float VoxelScale_um; /**Set the size of each voxel in micrometers*/
 
@@ -88,9 +88,9 @@ private:
      * @param _X 
      * @param _Y 
      * @param _Z 
-     * @return int 
+     * @return uint64_t 
      */
-    int GetIndex(int _X, int _Y, int _Z);
+    uint64_t GetIndex(int _X, int _Y, int _Z);
 
 
 
