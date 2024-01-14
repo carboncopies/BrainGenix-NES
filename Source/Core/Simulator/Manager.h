@@ -30,6 +30,7 @@
 #include <Simulator/Structs/BS.h>
 #include <Simulator/Structs/Staple.h>
 #include <Simulator/Structs/Receptor.h>
+#include <Simulator/Structs/Neuron.h>
 #include <Simulator/Structs/PatchClampDAC.h>
 #include <Simulator/Structs/PatchClampADC.h>
 
@@ -108,6 +109,7 @@ public:
     std::string BSCreate(std::string _JSONRequest);
     std::string StapleCreate(std::string _JSONRequest);
     std::string ReceptorCreate(std::string _JSONRequest);
+    std::string BSNeuronCreate(std::string _JSONRequest);
     std::string PatchClampDACCreate(std::string _JSONRequest);
     std::string PatchClampDACSetOutputList(std::string _JSONRequest);
     std::string PatchClampADCCreate(std::string _JSONRequest);

@@ -7,11 +7,16 @@ namespace Simulator {
 namespace Geometries {
 
 //! Constructors
-Sphere::Sphere(){};
+Sphere::Sphere(){
+    GeometryShape = GeometrySphere;
+};
 
-Sphere::Sphere(float _Radius_um) : Radius_um(_Radius_um){};
+Sphere::Sphere(float _Radius_um) : Radius_um(_Radius_um){
+    GeometryShape = GeometrySphere;
+};
 
-Sphere::Sphere(Vec3D _Center_um, float _Radius_um) {
+Sphere::Sphere(const Vec3D & _Center_um, float _Radius_um) {
+    GeometryShape = GeometrySphere;
     this->Center_um = _Center_um;
     this->Radius_um = _Radius_um;
 };

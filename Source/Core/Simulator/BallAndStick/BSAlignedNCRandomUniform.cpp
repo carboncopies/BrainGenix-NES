@@ -61,42 +61,38 @@ static size_t findNearestIdx(size_t idx, std::vector<int> axonsTo,
 }
 
 //! Constructors
-BSAlignedNCRandomUniform::BSAlignedNCRandomUniform(int _ID)
-    : BSAlignedNC(_ID){};
+BSAlignedNCRandomUniform::BSAlignedNCRandomUniform(int _ID, Geometries::GeometryCollection * _Collection_ptr)
+    : BSAlignedNC(_ID, _Collection_ptr){};
 
-BSAlignedNCRandomUniform::BSAlignedNCRandomUniform(int _ID, int _NumCells)
-    : BSAlignedNC(_ID, _NumCells){};
+BSAlignedNCRandomUniform::BSAlignedNCRandomUniform(int _ID, int _NumCells, Geometries::GeometryCollection * _Collection_ptr)
+    : BSAlignedNC(_ID, _NumCells, _Collection_ptr){};
 
-BSAlignedNCRandomUniform::BSAlignedNCRandomUniform(int _ID, int _NumCells,
-                                                   size_t _Seed)
-    : BSAlignedNC(_ID, _NumCells) {
+BSAlignedNCRandomUniform::BSAlignedNCRandomUniform(int _ID, int _NumCells, size_t _Seed, Geometries::GeometryCollection * _Collection_ptr)
+    : BSAlignedNC(_ID, _NumCells, _Collection_ptr) {
     this->Seed = _Seed;
 };
 
 //! Initializes the neurons in the neural circuit.
-void BSAlignedNCRandomUniform::InitCells(
-    std::shared_ptr<Geometries::Geometry> domain) {
-    auto boxDomain = std::dynamic_pointer_cast<Geometries::Box>(domain);
+void BSAlignedNCRandomUniform::InitCells(Geometries::Box * domain) {
+    //auto boxDomain = std::dynamic_pointer_cast<Geometries::Box>(domain);
 
-    assert(boxDomain);
+    assert(domain);
 
     float somaRadius_um = _DEFAULT_SOMA_RADIUS_um;
     float end0Radius_um = _DEFAULT_END0_RADIUS_um;
     float end1Radius_um = _DEFAULT_END0_RADIUS_um;
     float distThreshold = 2 * somaRadius_um;
     std::vector<Geometries::Vec3D> somaPositions{};
-    std::vector<std::shared_ptr<Geometries::Sphere>> somas{};
+    std::vector<Geometries::Sphere *> somas{};  // Regular pointers, because the objects are maintained in Simulation.Collection.
     std::vector<int> axonsTo{};
 
     for (size_t i = 0; i < this->NumCells; ++i) {
         // Pick a random location
-        auto coord =
-            findSomaPosition(somaPositions, boxDomain->Center_um,
-                             boxDomain->Dims_um, distThreshold, this->Seed);
+        auto coord = findSomaPosition(somaPositions, domain->Center_um, domain->Dims_um, distThreshold, this->Seed);
 
         // Create and place a soma
-        auto soma = std::make_shared<Geometries::Sphere>(coord, somaRadius_um);
-        somas.emplace_back(soma);
+        Geometries::Sphere * soma_ptr = &Collection_ptr->AddSphere(coord, somaRadius_um);
+        somas.emplace_back(soma_ptr);
 
         // Initialize axonsTo
         axonsTo.emplace_back(-1);
@@ -104,8 +100,7 @@ void BSAlignedNCRandomUniform::InitCells(
 
     for (size_t i = 0; i < this->NumCells; ++i) {
         // Create an axon and direct it.
-        size_t idxTo =
-            findNearestIdx(i, axonsTo, somaPositions, boxDomain->Dims_um);
+        size_t idxTo = findNearestIdx(i, axonsTo, somaPositions, domain->Dims_um);
         axonsTo[i] = idxTo;
 
         auto dvAxon = somaPositions[idxTo] - somaPositions[i];
@@ -114,12 +109,10 @@ void BSAlignedNCRandomUniform::InitCells(
         dvAxon = dvAxon / mag;
         auto end0 = somaPositions[i] + dvAxon * somaRadius_um;
         auto end1 = somaPositions[idxTo] - dvAxon * somaRadius_um;
-        auto axon = std::make_shared<Geometries::Cylinder>(end0Radius_um, end0,
-                                                           end1Radius_um, end1);
+        Geometries::Cylinder * axon_ptr = &Collection_ptr->AddCylinder(end0Radius_um, end0, end1Radius_um, end1);
 
         // Create neuron
-        this->Cells[std::to_string(i)] =
-            std::make_shared<BSNeuron>(i, somas[i], axon);
+        this->Cells[std::to_string(i)] = std::make_shared<BSNeuron>(i, somas[i], axon_ptr);
     }
 };
 

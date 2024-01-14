@@ -6,12 +6,25 @@ namespace Simulator {
 namespace BallAndStick {
 
 //! Constructors
-BSNeuron::BSNeuron(int ID, std::shared_ptr<Geometries::Sphere> soma,
-                   std::shared_ptr<Geometries::Cylinder> axon) {
+BSNeuron::BSNeuron(int ID, Geometries::Geometry* soma, Geometries::Geometry* axon) {
     this->ID = ID;
     this->Morphology["soma"] = soma;
     this->Morphology["axon"] = axon;
 };
+
+BSNeuron::BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct, Geometries::Geometry* soma, Geometries::Geometry* axon) {
+    ID = bsneuronstruct.ID;
+    Morphology["soma"] = soma;
+    Morphology["axon"] = axon;
+    Vm_mV = bsneuronstruct.MembranePotential_mV;
+    VRest_mV = bsneuronstruct.RestingPotential_mV;
+    VAct_mV = bsneuronstruct.SpikeThreshold_mV;
+    VAHP_mV = bsneuronstruct.AfterHyperpolarizationAmplitude_mV;
+    TauAHP_ms = bsneuronstruct.DecayTime_ms;
+    TauPSPr_ms = bsneuronstruct.PostsynapticPotentialRiseTime_ms;
+    TauPSPd_ms = bsneuronstruct.PostsynapticPotentialDecayTime_ms;
+    VPSP_mV = bsneuronstruct.PostsynapticPotentialAmplitude_mV;
+}
 
 //! Returns the geometric center of the neuron.
 Geometries::Vec3D &BSNeuron::GetCellCenter() {

@@ -33,14 +33,13 @@ namespace BallAndStick {
  */
 class BSAlignedBrainRegion : public BrainRegions::BrainRegion {
   public:
-    size_t ID;
-    std::shared_ptr<Geometries::Box> Shape{};
-    std::shared_ptr<BallAndStick::BSAlignedNC> Content{};
+    // size_t ID; // *** Already in BrainRegion
+    // std::shared_ptr<Geometries::Box> Shape{};
+    // std::shared_ptr<BallAndStick::BSAlignedNC> Content{};
 
     //! Constructors
     BSAlignedBrainRegion();
-    BSAlignedBrainRegion(size_t _ID, std::shared_ptr<Geometries::Box> _Shape,
-                         std::shared_ptr<BallAndStick::BSAlignedNC> _Content);
+    BSAlignedBrainRegion(size_t _ID, Geometries::Box * _Shape, std::shared_ptr<BallAndStick::BSAlignedNC> _Content);
 
     void Show(float lineWidth);
 };

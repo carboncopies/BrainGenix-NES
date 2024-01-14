@@ -55,11 +55,11 @@ struct BSAlignedNC : CoreStructs::NeuralCircuit {
     int NumCells = 2; //! Number of cells
 
     //! Constructors
-    BSAlignedNC(int _ID);
-    BSAlignedNC(int _ID, int _NumCells);
+    BSAlignedNC(int _ID, Geometries::GeometryCollection * _Collection_ptr);
+    BSAlignedNC(int _ID, int _NumCells, Geometries::GeometryCollection * _Collection_ptr);
 
     //! Initializes the neurons in the neural circuit.
-    void InitCells(std::shared_ptr<Geometries::Geometry> domain) override;
+    void InitCells(Geometries::Box * domain) override;
 
     //! Returns all neurons in the neural circuit.
     std::vector<std::shared_ptr<CoreStructs::Neuron>> GetNeurons() override;

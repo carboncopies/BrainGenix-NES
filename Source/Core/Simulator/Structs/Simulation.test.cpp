@@ -12,6 +12,7 @@
 
 #include <gtest/gtest.h>
 
+#include <BG/Common/Logger/Logger.h>
 #include <Simulator/BallAndStick/BSAlignedBrainRegion.h>
 #include <Simulator/BallAndStick/BSAlignedNC.h>
 #include <Simulator/Distributions/TruncNorm.h>
@@ -23,29 +24,24 @@
  */
 
 struct SimulationTest : testing::Test {
+    BG::Common::Logger::LoggingSystem Logger;
+    //Logger.SetKeepVectorLogs(false);
+
     std::unique_ptr<BG::NES::Simulator::Simulation> testSimulation{};
-    std::shared_ptr<BG::NES::Simulator::BallAndStick::BSAlignedBrainRegion>
-        testRegion{};
+    std::shared_ptr<BG::NES::Simulator::BallAndStick::BSAlignedBrainRegion> testRegion{};
 
     float tol = 1e-3;
 
     void SetUp() {
-        testSimulation = std::make_unique<BG::NES::Simulator::Simulation>();
+        testSimulation = std::make_unique<BG::NES::Simulator::Simulation>(&Logger);
     }
 
     void InitNCAndBrainRegion() {
-        std::shared_ptr<BG::NES::Simulator::CoreStructs::NeuralCircuit> testNC =
-            std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(
-                4000);
+        std::shared_ptr<BG::NES::Simulator::CoreStructs::NeuralCircuit> testNC = std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(4000, &testSimulation->Collection);
 
-        auto testBSAlignedNC = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSAlignedNC>(testNC);
-        std::shared_ptr<BG::NES::Simulator::Geometries::Box> testBox =
-            std::make_shared<BG::NES::Simulator::Geometries::Box>();
-        std::shared_ptr<BG::NES::Simulator::BrainRegions::BrainRegion>
-            testRegion = std::make_shared<
-                BG::NES::Simulator::BallAndStick::BSAlignedBrainRegion>(
-                3000, testBox, testBSAlignedNC);
+        auto testBSAlignedNC = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSAlignedNC>(testNC);
+        BG::NES::Simulator::Geometries::Box * testBox = &testSimulation->Collection.AddBox();
+        std::shared_ptr<BG::NES::Simulator::BrainRegions::BrainRegion> testRegion = std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedBrainRegion>(3000, testBox, testBSAlignedNC);
 
         testBSAlignedNC->InitCells(testBox);
 
@@ -57,26 +53,18 @@ struct SimulationTest : testing::Test {
 };
 
 TEST_F(SimulationTest, test_AddCircuit_default) {
-    auto testNC =
-        std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(4000,
-                                                                        2);
+    auto testNC = std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(4000, 2, &testSimulation->Collection);
     testSimulation->AddCircuit(testNC);
 
-    ASSERT_EQ(testSimulation->NeuralCircuits.at(std::to_string(testNC->ID)),
-              testNC);
+    ASSERT_EQ(testSimulation->NeuralCircuits.at(std::to_string(testNC->ID)), testNC);
 }
 
 TEST_F(SimulationTest, test_AddRegion_default) {
-    auto testNC =
-        std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(4000,
-                                                                        2);
-    auto testBox = std::make_shared<BG::NES::Simulator::Geometries::Box>(
+    auto testNC = std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(4000, 2, &testSimulation->Collection);
+    auto testBox = &testSimulation->Collection.AddBox(
         BG::NES::Simulator::Geometries::Vec3D(1.0, -1.0, 1.0),
         BG::NES::Simulator::Geometries::Vec3D(20.0, 20.0, 20.0));
-    std::shared_ptr<BG::NES::Simulator::BrainRegions::BrainRegion> testRegion =
-        std::make_shared<
-            BG::NES::Simulator::BallAndStick::BSAlignedBrainRegion>(
-            3000, testBox, testNC);
+    std::shared_ptr<BG::NES::Simulator::BrainRegions::BrainRegion> testRegion = std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedBrainRegion>(3000, testBox, testNC);
 
     testNC->InitCells(testBox);
     testSimulation->AddCircuit(testNC);
@@ -88,8 +76,7 @@ TEST_F(SimulationTest, test_AddRegion_default) {
 TEST_F(SimulationTest, test_GetAllNeurons_default) {
     InitNCAndBrainRegion();
 
-    std::vector<std::shared_ptr<BG::NES::Simulator::CoreStructs::Neuron>>
-        expectedNeurons{};
+    std::vector<std::shared_ptr<BG::NES::Simulator::CoreStructs::Neuron>> expectedNeurons{};
     auto allNeurons = testSimulation->GetAllNeurons();
 
     for (auto &[circuitID, circuit] : testSimulation->NeuralCircuits) {
@@ -130,8 +117,7 @@ TEST_F(SimulationTest, test_GetAllNeuronIDs_default) {
 TEST_F(SimulationTest, test_GetNeuronsByIDs_default) {
     InitNCAndBrainRegion();
 
-    std::vector<std::shared_ptr<BG::NES::Simulator::CoreStructs::Neuron>>
-        listedNeurons{}, expectedNeurons{};
+    std::vector<std::shared_ptr<BG::NES::Simulator::CoreStructs::Neuron>> listedNeurons{}, expectedNeurons{};
     std::vector<size_t> IDs{};
 
     // Case 1: Empty list of IDs
@@ -174,12 +160,9 @@ TEST_F(SimulationTest, test_GetNeuronsByIDs_default) {
 TEST_F(SimulationTest, test_GetGeoCenter_default) {
     InitNCAndBrainRegion();
 
-    std::shared_ptr<BG::NES::Simulator::CoreStructs::NeuralCircuit> testNC =
-        std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(5000);
-    auto testBSAlignedNC = std::dynamic_pointer_cast<
-        BG::NES::Simulator::BallAndStick::BSAlignedNC>(testNC);
-    std::shared_ptr<BG::NES::Simulator::Geometries::Box> testBox =
-        std::make_shared<BG::NES::Simulator::Geometries::Box>(
+    std::shared_ptr<BG::NES::Simulator::CoreStructs::NeuralCircuit> testNC = std::make_shared<BG::NES::Simulator::BallAndStick::BSAlignedNC>(5000, &testSimulation->Collection);
+    auto testBSAlignedNC = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSAlignedNC>(testNC);
+    BG::NES::Simulator::Geometries::Box * testBox = &testSimulation->Collection.AddBox(
             BG::NES::Simulator::Geometries::Vec3D(1.0, -1.0, 1.0),
             BG::NES::Simulator::Geometries::Vec3D(5.0, 10.0, 10.0));
 
@@ -199,11 +182,9 @@ TEST_F(SimulationTest, test_AttachDirectStim_default) {
     // Case 1: An empty list of stimuli
     testSimulation->AttachDirectStim(listOfStims);
     for (auto &[circuitId, circuit] : testSimulation->NeuralCircuits) {
-        auto circuitPtr = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
+        auto circuitPtr = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
         for (auto &[cellID, cell] : circuit->Cells) {
-            auto cellPtr = std::dynamic_pointer_cast<
-                BG::NES::Simulator::BallAndStick::BSNeuron>(cell);
+            auto cellPtr = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSNeuron>(cell);
             ASSERT_TRUE(cellPtr->TDirectStim_ms.empty());
         }
     }
@@ -225,12 +206,10 @@ TEST_F(SimulationTest, test_AttachDirectStim_default) {
 
     for (auto &[circuitID, circuit] : testSimulation->NeuralCircuits) {
 
-        auto circuitPtr = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
+        auto circuitPtr = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
         for (auto &[cellID, cell] : circuitPtr->Cells) {
 
-            auto cellPtr = std::dynamic_pointer_cast<
-                BG::NES::Simulator::BallAndStick::BSNeuron>(cell);
+            auto cellPtr = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSNeuron>(cell);
             ASSERT_EQ(cellPtr->TDirectStim_ms.back(), 0.1f);
         }
     }
@@ -244,11 +223,9 @@ TEST_F(SimulationTest, test_SetSpontaneousActivity_default) {
     // Case 1: An empty list is provided
     testSimulation->SetSpontaneousActivity(spontSpikeSettings);
     for (auto &[circuitID, circuit] : testSimulation->NeuralCircuits) {
-        auto circuitPtr = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
+        auto circuitPtr = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
         for (auto &[cellID, cell] : circuitPtr->Cells) {
-            auto cellPtr = std::dynamic_pointer_cast<
-                BG::NES::Simulator::BallAndStick::BSNeuron>(cell);
+            auto cellPtr = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSNeuron>(cell);
             ASSERT_EQ(cellPtr->DtSpontDist, nullptr);
         }
     }
@@ -268,14 +245,10 @@ TEST_F(SimulationTest, test_SetSpontaneousActivity_default) {
     spontSpikeSettings.emplace_back(std::make_tuple(280.0f, 140.0f, 0u));
     testSimulation->SetSpontaneousActivity(spontSpikeSettings);
     for (auto &[circuitID, circuit] : testSimulation->NeuralCircuits) {
-        auto circuitPtr = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
+        auto circuitPtr = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
         float mu = 280.0, sigma = 140.0;
-        auto testDist = BG::NES::Simulator::Distributions::TruncNorm(
-            -mu / sigma, mu / sigma, mu, sigma);
-        auto cell = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSNeuron>(
-            circuitPtr->Cells.at("0"));
+        auto testDist = BG::NES::Simulator::Distributions::TruncNorm(-mu / sigma, mu / sigma, mu, sigma);
+        auto cell = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSNeuron>(circuitPtr->Cells.at("0"));
         auto gotStats = cell->DtSpontDist->Stats();
         auto expectedStats = testDist.Stats();
 
@@ -289,16 +262,13 @@ TEST_F(SimulationTest, test_SetRecordAll_default) {
 
     // Case 1: Record forever
     testSimulation->SetRecordAll(_RECORD_FOREVER_TMAX_MS);
-    ASSERT_EQ(testSimulation->InstrumentsMaxRecordTime_ms,
-              _RECORD_FOREVER_TMAX_MS);
-    ASSERT_EQ(testSimulation->InstrumentsStartRecordTime_ms,
-              testSimulation->T_ms);
+    ASSERT_EQ(testSimulation->InstrumentsMaxRecordTime_ms,_RECORD_FOREVER_TMAX_MS);
+    ASSERT_EQ(testSimulation->InstrumentsStartRecordTime_ms, testSimulation->T_ms);
 
     // Case 2: Record for a finite time
     testSimulation->SetRecordAll(100.0);
     ASSERT_EQ(testSimulation->InstrumentsMaxRecordTime_ms, 100.0);
-    ASSERT_EQ(testSimulation->InstrumentsStartRecordTime_ms,
-              testSimulation->T_ms);
+    ASSERT_EQ(testSimulation->InstrumentsStartRecordTime_ms, testSimulation->T_ms);
 
     // Case 3: Record for zero time
     testSimulation->SetRecordAll(0.0);
@@ -333,8 +303,7 @@ TEST_F(SimulationTest, test_GetRecording_default) {
         ASSERT_NE(it, data.end());
         auto circuitData = data.at(circuitID);
 
-        auto circuitPtr = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
+        auto circuitPtr = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
         for (auto &[cellID, cell] : circuitPtr->Cells) {
             auto it2 = circuitData.find(cellID);
             ASSERT_NE(it2, circuitData.end());
@@ -354,8 +323,7 @@ TEST_F(SimulationTest, test_GetRecording_default) {
         ASSERT_NE(it, data.end());
         auto circuitData = data.at(circuitID);
 
-        auto circuitPtr = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
+        auto circuitPtr = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
         for (auto &[cellID, cell] : circuitPtr->Cells) {
             auto it2 = circuitData.find(cellID);
             ASSERT_NE(it2, circuitData.end());
@@ -374,8 +342,7 @@ TEST_F(SimulationTest, test_RunFor_default) {
     auto data = testSimulation->GetRecording();
     ASSERT_TRUE(testSimulation->TRecorded_ms.empty());
     for (auto &[circuitID, circuit] : testSimulation->NeuralCircuits) {
-        auto circuitPtr = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
+        auto circuitPtr = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
         auto circuitData = data.at(circuitID);
         for (auto &[cellID, cell] : circuitPtr->Cells)
             ASSERT_TRUE(((circuitData.at(cellID)).at("Vm_mV")).empty());
@@ -386,8 +353,7 @@ TEST_F(SimulationTest, test_RunFor_default) {
     data = testSimulation->GetRecording();
     ASSERT_TRUE(testSimulation->TRecorded_ms.empty());
     for (auto &[circuitID, circuit] : testSimulation->NeuralCircuits) {
-        auto circuitPtr = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
+        auto circuitPtr = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
         auto circuitData = data.at(circuitID);
         for (auto &[cellID, cell] : circuitPtr->Cells)
             ASSERT_TRUE(((circuitData.at(cellID)).at("Vm_mV")).empty());
@@ -398,8 +364,7 @@ TEST_F(SimulationTest, test_RunFor_default) {
     data = testSimulation->GetRecording();
     ASSERT_FALSE(testSimulation->TRecorded_ms.empty());
     for (auto &[circuitID, circuit] : testSimulation->NeuralCircuits) {
-        auto circuitPtr = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
+        auto circuitPtr = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
         auto circuitData = data.at(circuitID);
         for (auto &[cellID, cell] : circuitPtr->Cells)
             ASSERT_FALSE(((circuitData.at(cellID)).at("Vm_mV")).empty());

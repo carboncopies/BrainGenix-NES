@@ -1,5 +1,5 @@
 #include <Simulator/Manager.h>
-
+#include <Simulator/BallAndStick/BSNeuron.h>
 
 
 namespace BG {
@@ -33,6 +33,7 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     _RPCManager->AddRoute("Compartment/BS/Create", Logger_, [this](std::string RequestJSON){ return BSCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Staple/Create", Logger_, [this](std::string RequestJSON){ return StapleCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Receptor/Create", Logger_, [this](std::string RequestJSON){ return ReceptorCreate(RequestJSON);});
+    _RPCManager->AddRoute("Neuron/BSNeuron/Create", Logger_, [this](std::string RequestJSON){ return BSNeuronCreate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampDAC/Create", Logger_, [this](std::string RequestJSON){ return PatchClampDACCreate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampDAC/SetOutputList", Logger_, [this](std::string RequestJSON){ return PatchClampDACSetOutputList(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampADC/Create", Logger_, [this](std::string RequestJSON){ return PatchClampADCCreate(RequestJSON);});
@@ -68,7 +69,7 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
 
 
     // Build New Simulation Object
-    Simulations_.push_back(std::make_unique<Simulation>());
+    Simulations_.push_back(std::make_unique<Simulation>(Logger_));
     int SimID = Simulations_.size()-1;
     Simulation* Sim = Simulations_[SimID].get();
     Sim->Name = SimulationName;
@@ -318,6 +319,7 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
     int SphereID = ThisSimulation->Collection.Geometries.size();
     S.ID = SphereID;
     ThisSimulation->Collection.Geometries.push_back(S);
+    //ThisSimulation->Collection.append(S);
 
 
     // Return Status ID
@@ -375,6 +377,7 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     int ShapeID = ThisSimulation->Collection.Geometries.size(); // we can do this since the shapes vector is a variant
     S.ID = ShapeID;
     ThisSimulation->Collection.Geometries.push_back(S);
+    //ThisSimulation->Collection.append(S);
 
 
     // Return Status ID
@@ -416,6 +419,7 @@ std::string Manager::BoxCreate(std::string _JSONRequest) {
     int ShapeID = ThisSimulation->Collection.Geometries.size(); // we can do this since the shapes vector is a variant
     S.ID = ShapeID;
     ThisSimulation->Collection.Geometries.push_back(S);
+    //ThisSimulation->Collection.append(S);
 
 
     // Return Status ID
@@ -555,6 +559,73 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["ReceptorID"] = ReceptorID;
+    return ResponseJSON.dump();
+}
+
+/*
+As of 2024-01-12 the method to add a neuron that will be run in a
+simulation is:
+
+1. Create the soma and axon shapes for the neuron (remember their IDs).
+2. Create a BSNeuron (which creates compartments using the shapes provided).
+3. Add the BSNeuron to a NeuralCircuit.
+OR
+1. Create a NeuralCircuit.
+2. Tell the NeuralCircuit to create a neuron.
+*/
+
+std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    Logger_->Log("Create BSNeuron Called, On Sim " + std::to_string(SimulationID), 3);
+
+    // Build New BSNeuron Object
+    CoreStructs::BSNeuronStruct C;
+    C.Name = Util::GetString(&RequestJSON, "Name");
+    C.SomaShapeID = Util::GetInt(&RequestJSON, "SomaID");
+    C.AxonShapeID = Util::GetInt(&RequestJSON, "AxonID");
+    C.MembranePotential_mV = Util::GetFloat(&RequestJSON, "MembranePotential_mV");
+    C.RestingPotential_mV = Util::GetFloat(&RequestJSON, "RestingPotential_mV");
+    C.SpikeThreshold_mV = Util::GetFloat(&RequestJSON, "SpikeThreshold_mV");
+    C.DecayTime_ms = Util::GetFloat(&RequestJSON, "DecayTime_ms");
+    C.AfterHyperpolarizationAmplitude_mV = Util::GetFloat(&RequestJSON, "AfterHyperpolarizationAmplitude_mV");
+    C.PostsynapticPotentialRiseTime_ms = Util::GetFloat(&RequestJSON, "PostsynapticPotentialRiseTime_ms");
+    C.PostsynapticPotentialDecayTime_ms = Util::GetFloat(&RequestJSON, "PostsynapticPotentialDecayTime_ms");
+    C.PostsynapticPotentialAmplitude_mV = Util::GetFloat(&RequestJSON, "PostsynapticPotentialAmplitude_mV");
+
+    // Add to Sim, Set ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        ResponseJSON["NeuronID"] = -1;
+        return ResponseJSON.dump();
+    }
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
+        return ResponseJSON.dump();
+    }
+    int NeuronID = ThisSimulation->Neurons.size();
+    C.ID = NeuronID;
+    // NOTE: At this time, we're keeping both a list of these data structs (in the Neurons list)
+    //       and a list of functional neuron objects. For more info, see Log 202401121525.
+    Geometries::Geometry * soma_ptr = ThisSimulation->Collection.GetGeometry(C.SomaShapeID);
+    Geometries::Geometry * axon_ptr = ThisSimulation->Collection.GetGeometry(C.AxonShapeID);
+    if ((!axon_ptr) || (!soma_ptr)) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2; // invalid shape id
+        ResponseJSON["NeuronID"] = -1;
+        return ResponseJSON.dump();
+    }
+    ThisSimulation->Neurons.push_back(std::make_shared<BallAndStick::BSNeuron>(C, soma_ptr, axon_ptr));
+
+    // Return Status ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    ResponseJSON["NeuronID"] = NeuronID;
     return ResponseJSON.dump();
 }
 

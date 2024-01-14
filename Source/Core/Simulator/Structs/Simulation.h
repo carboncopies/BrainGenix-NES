@@ -24,7 +24,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/BallAndStick/BSAlignedBrainRegion.h>
-#include <Simulator/BallAndStick/BSAlignedNC.h>
+//#include <Simulator/BallAndStick/BSAlignedNC.h>
 #include <Simulator/BrainRegion/BrainRegion.h>
 #include <Simulator/Geometries/Geometry.h>
 #include <Simulator/Geometries/GeometryCollection.h>
@@ -36,6 +36,7 @@
 #include <Simulator/Structs/PatchClampDAC.h>
 #include <Simulator/Structs/Receptor.h>
 #include <Simulator/Structs/Staple.h>
+#include <BG/Common/Logger/Logger.h>
 
 #include <VSDA/SliceGenerator/Structs/VSDAData.h>
 
@@ -54,6 +55,8 @@ enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, S
  *
  */
 struct Simulation {
+
+    BG::Common::Logger::LoggingSystem* Logger_ = nullptr;
 
     std::string Name; /**Name of the simulation*/
     int ID;           /**ID of the simulation*/
@@ -88,17 +91,19 @@ struct Simulation {
     std::vector<Connections::Staple> Staples; /**List of staple connections, index is their id (also stored in struct)*/
     std::vector<Connections::Receptor> Receptors; /**List of receptor connections, index is their id (and it's also stored in the struct itself)*/
 
+    std::vector<std::shared_ptr<CoreStructs::Neuron>> Neurons; /** List of neurons, index is their id. Notice that this takes a Neuron base class object (not BSNeuron and other derivatives). */
+
     std::vector<Tools::PatchClampDAC> PatchClampDACs; /**List of patchclamp dacs, id is index*/
     std::vector<Tools::PatchClampADC> PatchClampADCs; /**List of patchclamp adcs, id is index*/
 
     VSDAData VSDAData_; /**Instance of the simulator VSDA data - stores the state for the renderer to use*/
 
     //! Constructors
-    Simulation();
-    Simulation(std::string _Name);
+    Simulation(BG::Common::Logger::LoggingSystem* _Logger);
 
     void AddCircuit(std::shared_ptr<CoreStructs::NeuralCircuit> circuit);
     void AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region);
+    size_t GetTotalNumberOfNeurons();
     std::vector<std::shared_ptr<CoreStructs::Neuron>> GetAllNeurons();
     std::vector<size_t> GetAllNeuronIDs();
     std::vector<std::shared_ptr<CoreStructs::Neuron>>

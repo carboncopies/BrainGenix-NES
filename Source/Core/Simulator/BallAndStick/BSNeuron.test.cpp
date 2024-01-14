@@ -18,6 +18,7 @@
 #include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/Distributions/TruncNorm.h>
 #include <Simulator/Structs/SignalFunctions.h>
+#include <Simulator/Geometries/GeometryCollection.h>
 
 /**
  * @brief Test class for unit tests for struct BSNeuron.
@@ -25,28 +26,25 @@
  */
 
 struct BSNeuronTest : testing::Test {
-    std::unique_ptr<BG::NES::Simulator::BallAndStick::BSNeuron> testBSNeuron =
-        nullptr;
+    BG::NES::Simulator::Geometries::GeometryCollection Collection;
+
+    std::unique_ptr<BG::NES::Simulator::BallAndStick::BSNeuron> testBSNeuron = nullptr;
 
     float axonRadius_um = 0.5;
     float somaRadius_um = 0.5;
-    std::vector<float> times_ms = {0.1, 1.5, 0.2, 0.3,
-                                   1.6}; //! Time values used for simulation
+    std::vector<float> times_ms = {0.1, 1.5, 0.2, 0.3, 1.6}; //! Time values used for simulation
 
+    BG::NES::Simulator::Geometries::Vec3D spherecenter_um{0.0, 0.0, 0.0};
     BG::NES::Simulator::Geometries::Vec3D axonEnd0_um{0.0, 0.0, 0.0};
     BG::NES::Simulator::Geometries::Vec3D axonEnd1_um{0.0, 10.0, 0.0};
 
-    std::shared_ptr<BG::NES::Simulator::Geometries::Sphere> testSoma =
-        std::make_shared<BG::NES::Simulator::Geometries::Sphere>(somaRadius_um);
-    std::shared_ptr<BG::NES::Simulator::Geometries::Cylinder> testAxon =
-        std::make_shared<BG::NES::Simulator::Geometries::Cylinder>(
-            axonRadius_um, axonEnd0_um, axonRadius_um, axonEnd1_um);
+    BG::NES::Simulator::Geometries::Sphere * testSoma = &Collection.AddSphere(spherecenter_um, somaRadius_um);
+    BG::NES::Simulator::Geometries::Cylinder * testAxon = &Collection.AddCylinder(axonRadius_um, axonEnd0_um, axonRadius_um, axonEnd1_um);
+
     float tol = 1e-3;
 
     void SetUp() {
-        testBSNeuron =
-            std::make_unique<BG::NES::Simulator::BallAndStick::BSNeuron>(
-                200, testSoma, testAxon);
+        testBSNeuron = std::make_unique<BG::NES::Simulator::BallAndStick::BSNeuron>(200, testSoma, testAxon);
     }
 
     void Simulate() {

@@ -25,9 +25,9 @@ namespace Geometries {
  */
 struct Vec3D {
 
-    float x{}; //! X-coordinate.
-    float y{}; //! Y-coordinate.
-    float z{}; //! Z-coordinate.
+    float x{0}; //! X-coordinate.
+    float y{0}; //! Y-coordinate.
+    float z{0}; //! Z-coordinate.
 
     //! Constructors
     Vec3D();

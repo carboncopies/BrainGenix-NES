@@ -9,14 +9,18 @@ namespace Geometries {
 
 // Constructors
 
-Box::Box(){};
+Box::Box(){
+    GeometryShape = GeometryBox;
+};
 
-Box::Box(Vec3D _Center_um, Vec3D _Dims_um) {
+Box::Box(const Vec3D & _Center_um, const Vec3D & _Dims_um) {
+    GeometryShape = GeometryBox;
     this->Center_um = _Center_um;
     this->Dims_um = _Dims_um;
 };
 
-Box::Box(Vec3D _Center_um, Vec3D _Dims_um, Vec3D _Rotations_rad) {
+Box::Box(const Vec3D & _Center_um, const Vec3D & _Dims_um, const Vec3D & _Rotations_rad) {
+    GeometryShape = GeometryBox;
     this->Center_um = _Center_um;
     this->Dims_um = _Dims_um;
     this->Rotations_rad = _Rotations_rad;

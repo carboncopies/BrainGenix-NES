@@ -19,8 +19,8 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
     for (unsigned int i = 0; i < _Simulation->BSCompartments.size(); i++) {
         int ShapeID = _Simulation->BSCompartments[i].ShapeID;
 
-        if (std::holds_alternative<Geometries::Box>(_Simulation->Collection.Geometries[ShapeID])) {
-            Geometries::Box Box = std::get<Geometries::Box>(_Simulation->Collection.Geometries[ShapeID]);
+        if (_Simulation->Collection.IsBox(ShapeID)) { // (std::holds_alternative<Geometries::Box>(_Simulation->Collection.Geometries[ShapeID])) {
+            const Geometries::Box & Box = _Simulation->Collection.GetBox(ShapeID); // Geometries::Box Box = std::get<Geometries::Box>(_Simulation->Collection.Geometries[ShapeID]);
             
             BG::NES::Renderer::Shaders::Phong Shader;
             Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 0.1f);
@@ -35,8 +35,8 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
 
             _Renderer->AddBox(&CreateInfo);
 
-        } else if (std::holds_alternative<Geometries::Sphere>(_Simulation->Collection.Geometries[ShapeID])) {
-            Geometries::Sphere Sphere = std::get<Geometries::Sphere>(_Simulation->Collection.Geometries[ShapeID]);
+        } else if (_Simulation->Collection.IsSphere(ShapeID)) { // (std::holds_alternative<Geometries::Sphere>(_Simulation->Collection.Geometries[ShapeID])) {
+            const Geometries::Sphere & Sphere = _Simulation->Collection.GetSphere(ShapeID); // Geometries::Sphere Sphere = std::get<Geometries::Sphere>(_Simulation->Collection.Geometries[ShapeID]);
             
             BG::NES::Renderer::Shaders::Phong Shader;
             Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 0.1f);
@@ -49,8 +49,8 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
             CreateInfo.Shader_ = &Shader;
 
             _Renderer->AddSphere(&CreateInfo); 
-        } else if (std::holds_alternative<Geometries::Cylinder>(_Simulation->Collection.Geometries[ShapeID])) {
-            Geometries::Cylinder Cylinder = std::get<Geometries::Cylinder>(_Simulation->Collection.Geometries[ShapeID]);
+        } else if (_Simulation->Collection.IsCylinder(ShapeID)) { // (std::holds_alternative<Geometries::Cylinder>(_Simulation->Collection.Geometries[ShapeID])) {
+            const Geometries::Cylinder & Cylinder = _Simulation->Collection.GetCylinder(ShapeID); // Geometries::Cylinder Cylinder = std::get<Geometries::Cylinder>(_Simulation->Collection.Geometries[ShapeID]);
             
             BG::NES::Renderer::Shaders::Phong Shader;
             Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 0.1f);

@@ -8,9 +8,7 @@ namespace BallAndStick {
 //! Constructors
 BSAlignedBrainRegion::BSAlignedBrainRegion(){};
 
-BSAlignedBrainRegion::BSAlignedBrainRegion(
-    size_t _ID, std::shared_ptr<Geometries::Box> _Shape,
-    std::shared_ptr<BallAndStick::BSAlignedNC> _Content) {
+BSAlignedBrainRegion::BSAlignedBrainRegion(size_t _ID, Geometries::Box * _Shape, std::shared_ptr<BallAndStick::BSAlignedNC> _Content) {
     this->ID = _ID;
     this->Shape = _Shape;
     _Content->InitCells(_Shape);

@@ -19,21 +19,19 @@
  */
 
 struct BSAlignedNCTest : testing::Test {
-    std::unique_ptr<BG::NES::Simulator::BallAndStick::BSAlignedNC>
-        testBSAlignedNC = nullptr;
+    BG::NES::Simulator::Geometries::GeometryCollection Collection;
+
+    std::unique_ptr<BG::NES::Simulator::BallAndStick::BSAlignedNC> testBSAlignedNC = nullptr;
 
     float tol = 1e-3;
 
     void SetUp() {
-        testBSAlignedNC =
-            std::make_unique<BG::NES::Simulator::BallAndStick::BSAlignedNC>(
-                100);
+        testBSAlignedNC = std::make_unique<BG::NES::Simulator::BallAndStick::BSAlignedNC>(100, &Collection);
     }
 
     // Initialize cells in the neural circuit.
     void InitCells() {
-        std::shared_ptr<BG::NES::Simulator::Geometries::Box> domain =
-            std::make_shared<BG::NES::Simulator::Geometries::Box>();
+        BG::NES::Simulator::Geometries::Box * domain = &Collection.AddBox();
         testBSAlignedNC->InitCells(domain);
     }
 
@@ -62,10 +60,8 @@ TEST_F(BSAlignedNCTest, test_GetCellCenters_default) {
 
 TEST_F(BSAlignedNCTest, test_SetWeight_default) {
     size_t from, to;
-    auto method =
-        BG::NES::Simulator::BallAndStick::BSAlignedNC::SetWeightMethod::BINARY;
-    std::shared_ptr<BG::NES::Simulator::BallAndStick::BSNeuron> sourceCell{},
-        targetCell{};
+    auto method = BG::NES::Simulator::BallAndStick::BSAlignedNC::SetWeightMethod::BINARY;
+    std::shared_ptr<BG::NES::Simulator::BallAndStick::BSNeuron> sourceCell{}, targetCell{};
 
     InitCells();
 

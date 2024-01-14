@@ -1,12 +1,13 @@
 #include <Simulator/Structs/Simulation.h>
 
+#include <iostream>
+
 namespace BG {
 namespace NES {
 namespace Simulator {
 
 //! Constructors
-Simulation::Simulation(){};
-Simulation::Simulation(std::string _Name) : Name(_Name){};
+Simulation::Simulation(BG::Common::Logger::LoggingSystem* _Logger) : Logger_(_Logger) {};
 
 void Simulation::AddCircuit(
     std::shared_ptr<CoreStructs::NeuralCircuit> circuit) {
@@ -22,6 +23,14 @@ void Simulation::AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region) {
     auto ID = std::to_string(regionPtr->ID);
     this->Regions[ID] = regionPtr;
 };
+
+size_t Simulation::GetTotalNumberOfNeurons() {
+    size_t long num_neurons = 0;
+    for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+        num_neurons += circuit->GetNumberOfNeurons();
+    }
+    return num_neurons;
+}
 
 std::vector<std::shared_ptr<CoreStructs::Neuron>> Simulation::GetAllNeurons() {
     std::vector<std::shared_ptr<CoreStructs::Neuron>> allNeurons{};
@@ -130,23 +139,57 @@ Simulation::GetRecording() {
     return recording;
 };
 
+enum sim_methods {
+    simmethod_list_of_neurons,
+    simmethod_circuits,
+    NUMsimmethods,
+};
+
 void Simulation::RunFor(float tRun_ms) {
+    assert(Logger_ != nullptr);
+    
     if (!(tRun_ms >= 0.0))
         return;
 
     float tEnd_ms = this->T_ms + tRun_ms;
 
+    Logger_->Log("Simulation run includes:", 3);
+    Logger_->Log(std::to_string(NeuralCircuits.size())+" circuits with a total of", 3);
+    Logger_->Log(std::to_string(Neurons.size())+" neurons drafted in Neurons vector and a total of", 3);
+    Logger_->Log(std::to_string(GetTotalNumberOfNeurons())+" neurons residing in defined circuits and a total of", 3);
+    Logger_->Log(std::to_string(BSCompartments.size())+" compartments.", 3);
+
+    // *** TODO: obtain this from an API call...
+    sim_methods simmethod = simmethod_list_of_neurons;
+
+    unsigned long num_updates_called = 0;
     while (this->T_ms < tEnd_ms) {
         bool recording = this->IsRecording();
         if (recording)
             this->TRecorded_ms.emplace_back(this->T_ms);
-        for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-            auto circuitPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
-            assert(circuitPtr);
-            circuitPtr->Update(this->T_ms, recording);
+        switch (simmethod) {
+            case simmethod_list_of_neurons: {
+                for (auto & neuron_ptr : this->Neurons) {
+                    if (neuron_ptr) {
+                        neuron_ptr->Update(this->T_ms, recording);
+                        num_updates_called++;
+                    }
+                }
+                break;
+            }
+            case simmethod_circuits: {
+                for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+                    auto circuitPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
+                    assert(circuitPtr);
+                    circuitPtr->Update(this->T_ms, recording);
+                    num_updates_called++;
+                }
+                break;
+            }
         }
         this->T_ms += this->Dt_ms;
     }
+    Logger_->Log("Number of top-level Update() calls: "+std::to_string(num_updates_called), 3);
 };
 
 void Simulation::Show() { return; };

@@ -21,6 +21,8 @@ Description: This file provides functions that use geometric structs to
 #include <Simulator/Geometries/Cylinder.h>
 #include <Simulator/Geometries/Sphere.h>
 #include <Simulator/Geometries/VecTools.h>
+#include <Simulator/Geometries/GeometryCollection.h>
+//#include <Simulator/Structs/Simulation.h>
 
 //! Default dimension of receptor box (represented as a cube).
 #define _DEFAULT_RECEPTOR_DIM_um 0.1f
@@ -34,19 +36,20 @@ namespace BallAndStick {
 enum Align { ALIGN_LEFT = 0, ALIGN_RIGHT, ALIGN_CENTER };
 
 //! Create the soma of a neuron in the shape of a sphere.
-std::shared_ptr<Geometries::Sphere>
-CreateBSSoma(std::vector<std::vector<float>> domainBounds, Align align,
+Geometries::Sphere &
+CreateBSSoma(Geometries::GeometryCollection & Collection, std::vector<std::vector<float>> domainBounds, Align align,
              float radius_um = 0.5);
 
 //! Create the axon of a neuron in the shape of a cylinder.
-std::shared_ptr<Geometries::Cylinder>
-CreateBSAxon(std::vector<std::vector<float>> domainBounds, Align align,
+Geometries::Cylinder &
+CreateBSAxon(Geometries::GeometryCollection & Collection, std::vector<std::vector<float>> domainBounds, Align align,
              float somaRadius_um = 0.5, float end0Radius_um = 0.1,
              float end1Radius_um = 0.1);
 
 //! Create a receptor in the form of a box.
-std::shared_ptr<Geometries::Box>
-CreateBSReceptor(Geometries::Vec3D receptorLocation_um);
+//std::shared_ptr<Geometries::Box>
+Geometries::Box &
+CreateBSReceptor(Geometries::GeometryCollection & Collection, Geometries::Vec3D receptorLocation_um);
 
 }; // namespace BallAndStick
 }; // namespace Simulator

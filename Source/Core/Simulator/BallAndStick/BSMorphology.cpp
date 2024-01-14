@@ -1,14 +1,21 @@
 #include <Simulator/BallAndStick/BSMorphology.h>
+//#include <Simulator/Structs/Simulation.h>
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 namespace BallAndStick {
 
+/** (Randal)
+ *  These must work with a Simulation to create new shapes, because all
+ *  shape objects should be maintained and tracked in Simulation.Collection.
+ *  Consequently, the functions here return only references to those
+ *  objects.
+ */
+
 //! Create the soma of a neuron in the shape of a sphere.
-std::shared_ptr<Geometries::Sphere>
-CreateBSSoma(std::vector<std::vector<float>> domainBounds, Align align,
-             float radius_um) {
+Geometries::Sphere &
+CreateBSSoma(Geometries::GeometryCollection & Collection, std::vector<std::vector<float>> domainBounds, Align align, float radius_um) {
     assert(radius_um > 0.0);
 
     Geometries::Vec3D center_um;
@@ -36,13 +43,12 @@ CreateBSSoma(std::vector<std::vector<float>> domainBounds, Align align,
         break;
     }
 
-    return std::make_shared<Geometries::Sphere>(center_um, radius_um);
+    return Collection.AddSphere(center_um, radius_um);
 };
 
 //! Create the axon of a neuron in the shape of a cylinder.
-std::shared_ptr<Geometries::Cylinder>
-CreateBSAxon(std::vector<std::vector<float>> domainBounds, Align align,
-             float somaRadius_um, float end0Radius_um, float end1Radius_um) {
+Geometries::Cylinder &
+CreateBSAxon(Geometries::GeometryCollection & Collection, std::vector<std::vector<float>> domainBounds, Align align, float somaRadius_um, float end0Radius_um, float end1Radius_um) {
     Geometries::Vec3D End0Pos_um, End1Pos_um;
     switch (align) {
     case Align::ALIGN_LEFT:
@@ -69,17 +75,19 @@ CreateBSAxon(std::vector<std::vector<float>> domainBounds, Align align,
         break;
     };
 
-    return std::make_shared<Geometries::Cylinder>(end0Radius_um, End0Pos_um,
-                                                  end1Radius_um, End1Pos_um);
+    return Collection.AddCylinder(end0Radius_um, End0Pos_um, end1Radius_um, End1Pos_um);
 };
 
 //! Create a receptor in the form of a box.
-std::shared_ptr<Geometries::Box>
-CreateBSReceptor(Geometries::Vec3D receptorLocation_um) {
-    return std::make_shared<Geometries::Box>(
-        receptorLocation_um,
-        Geometries::Vec3D(_DEFAULT_RECEPTOR_DIM_um, _DEFAULT_RECEPTOR_DIM_um,
-                          _DEFAULT_RECEPTOR_DIM_um));
+//std::shared_ptr<Geometries::Box>
+Geometries::Box &
+CreateBSReceptor(Geometries::GeometryCollection & Collection, Geometries::Vec3D receptorLocation_um) {
+    //return std::make_shared<Geometries::Box>(
+    return Collection.AddBox(receptorLocation_um, Geometries::Vec3D(_DEFAULT_RECEPTOR_DIM_um, _DEFAULT_RECEPTOR_DIM_um, _DEFAULT_RECEPTOR_DIM_um));
+    // return Geometries::Box(
+    //     receptorLocation_um,
+    //     Geometries::Vec3D(_DEFAULT_RECEPTOR_DIM_um, _DEFAULT_RECEPTOR_DIM_um,
+    //                       _DEFAULT_RECEPTOR_DIM_um));
 };
 
 }; // namespace BallAndStick

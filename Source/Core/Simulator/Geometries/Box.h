@@ -33,8 +33,8 @@ struct Box : Geometry {
 
     //! Constructors
     Box();
-    Box(Vec3D _Center_um, Vec3D _Dims_um);
-    Box(Vec3D _Center_um, Vec3D _Dims_um, Vec3D _Rotations_rad);
+    Box(const Vec3D & _Center_um, const Vec3D & _Dims_um);
+    Box(const Vec3D & _Center_um, const Vec3D & _Dims_um, const Vec3D & _Rotations_rad);
 
     //! Renders the box in 3D.
     void Show();

@@ -31,7 +31,7 @@ namespace BrainRegions {
 class BrainRegion {
   public:
     size_t ID;
-    std::shared_ptr<Geometries::Geometry> Shape{};
+    Geometries::Geometry * Shape{nullptr}; // Regular pointers, because the objects are maintained in Simulation.Collection.
     std::shared_ptr<CoreStructs::NeuralCircuit> Content{};
 
     virtual void Show(float lineWidth) = 0;

@@ -26,6 +26,8 @@
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/Neuron.h>
 #include <Simulator/Structs/SignalFunctions.h>
+#include <Simulator/Structs/Neuron.h>
+//#include <Simulator/Structs/Simulation.h>
 
 //! DtAct_ms to return when there has not been any spike.
 #define _NO_SPIKE_DT_mS -1.0
@@ -48,8 +50,8 @@ namespace BallAndStick {
  */
 struct BSNeuron : CoreStructs::Neuron {
 
-    std::unordered_map<std::string, std::shared_ptr<Geometries::Geometry>>
-        Morphology;
+    //std::unordered_map<std::string, std::shared_ptr<Geometries::Geometry>> Morphology;
+    std::unordered_map<std::string, Geometries::Geometry*> Morphology; // Regular pointers, because the objects are maintained in Simulation.Collection.
 
     float Vm_mV = -60.0;    //! Membrane potential
     float VRest_mV = -60.0; //! Resting membrane potential
@@ -62,8 +64,7 @@ struct BSNeuron : CoreStructs::Neuron {
     float TauPSPd_ms = 25.0; //! PostSynaptic Potential decay time constant
     float VPSP_mV = 20.0;    //! PostSynaptic Potential amplitude
 
-    std::tuple<float, float> TauSpontMeanStdev_ms = {
-        0.0, 0.0}; //! 0 means no spontaneous activity
+    std::tuple<float, float> TauSpontMeanStdev_ms = {0.0, 0.0}; //! 0 means no spontaneous activity
 
     float T_ms = 0.0;
     float TSpontNext_ms = _T_SPONT_NEXT_mS_INIT;
@@ -84,8 +85,9 @@ struct BSNeuron : CoreStructs::Neuron {
                        //! (time changed since last spontaneous activity).
 
     //! Constructors
-    BSNeuron(int ID, std::shared_ptr<Geometries::Sphere> soma,
-             std::shared_ptr<Geometries::Cylinder> axon);
+    BSNeuron(int ID, Geometries::Geometry* soma, Geometries::Geometry* axon); // Geometries, as soma and axon may not be Sphere/Cylinder in future. //std::shared_ptr<Geometries::Geometry> soma, std::shared_ptr<Geometries::Geometry> axon);
+    BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct, Geometries::Geometry* soma, Geometries::Geometry* axon);
+    //BSNeuron(Simulation & sim, const CoreStructs::BSNeuronStruct & bsneuronstruct);
 
     //! Returns the geometric center of the neuron.
     Geometries::Vec3D &GetCellCenter();
