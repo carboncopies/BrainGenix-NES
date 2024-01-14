@@ -90,6 +90,14 @@ def main():
     VSDAEMInstance.SaveImageStack()
 
 
+def GetTime():
+    Start = time.time()
+
+    main()
+
+    End = time.time()
+    return End - Start
+
 
 if __name__ == "__main__":
 

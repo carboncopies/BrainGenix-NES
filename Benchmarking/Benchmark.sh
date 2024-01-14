@@ -7,6 +7,6 @@ echo "Please compare against your local machine times, as this is very much base
 echo "----------------------------"
 
 cd Renderer
-./RenderBenchmarks.sh
+./RenderBenchmarks.py
 cd ..
 
