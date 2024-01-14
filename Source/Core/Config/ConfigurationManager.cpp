@@ -9,9 +9,9 @@ namespace Config {
 
 Manager::Manager(int _NumArgs, char** _Args) {
 
-    // Parse Arguments
-    ArgumentParser ArgParser(Config_, _NumArgs, _Args);
-    ArgParser.~ArgumentParser();
+    // // Parse Arguments
+    // ArgumentParser ArgParser(Config_, _NumArgs, _Args);
+    // ArgParser.~ArgumentParser();
 
     // Now Load Configuration File
     ConfigFileParser ConfigParser(Config_);

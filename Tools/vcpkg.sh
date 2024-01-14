@@ -1,0 +1,2 @@
+cd ../ThirdParty/vcpkg
+./vcpkg "$@"

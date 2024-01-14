@@ -82,10 +82,13 @@ bool Interface::Initialize(bool _Windowed) {
 
 }
 
-bool Interface::DrawFrame(std::string _FramePath) {
-    return RendererManager_->DrawFrame(_FramePath);
+bool Interface::DrawFrame() {
+    return RendererManager_->DrawFrame();
 }
 
+bool Interface::RenderImage(Image* _Image) {
+    return RendererManager_->RenderImage(_Image);
+}
 
 bool Interface::AddBox(Primitive::Cube* _CreateInfo) {
     assert(_CreateInfo != nullptr);

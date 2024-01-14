@@ -41,7 +41,6 @@
 // #include <SDL_vulkan.h>
 
 #include <vsg/all.h>
-#include <vsgXchange/all.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
@@ -51,6 +50,7 @@
 
 #include <BG/Renderer/SceneGraph/GeometryBuilder.h>
 #include <BG/Renderer/SceneGraph/Primitive/Cube.h>
+#include <BG/Renderer/EncoderPool/Image.h>
 
 
 
@@ -107,12 +107,20 @@ public:
     /**
      * @brief Does what the name suggests - draws a frame on the window or offscreen if rendering headless.
      * 
-     * @param _FramePath Path to save this frame to if running headless.
      * 
      * @return true 
      * @return false 
      */
-    bool DrawFrame(std::string _FramePath);
+    bool DrawFrame();
+
+    /**
+     * @brief Render into the given image struct.
+     * 
+     * @param _Image Valid instance of struct to render image to.
+     * @return true 
+     * @return false 
+     */
+    bool RenderImage(Image* _Image);
 
 
     /**

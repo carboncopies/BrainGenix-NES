@@ -37,7 +37,11 @@
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <vsg/all.h>
-#include <vsgXchange/all.h>
+
+
+// #include <vsgXchange/all.h>
+// #include <OpenImageIO/imageio.h>
+
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
@@ -47,6 +51,8 @@
 
 #include <BG/Renderer/SceneGraph/OffscreenRenderHelpers.h>
 #include <BG/Renderer/SceneGraph/CameraHelpers.h>
+
+#include <BG/Renderer/EncoderPool/Image.h>
 
 
 namespace BG {
@@ -210,12 +216,12 @@ public:
     /**
      * @brief Gets the image that was rendered last frame.
      * 
-     * @param _FilePath Place to write the image we just captured.
+     * @param _Image Place to write the image we just captured.
      * 
      * @return true 
      * @return false 
      */
-    bool Headless_GetImage(std::string _FilePath);
+    bool Headless_GetImage(Image* _Image);
 
 
     /**
@@ -256,12 +262,21 @@ public:
      * @brief Does what it sounds like, this draws a frame on the renderer.
      * Returns true on success, false on failure.
      * 
-     * @param _FilePath Optional file path where this image is to be saved.
      * 
      * @return true 
      * @return false 
      */
-    bool DrawFrame(std::string _FilePath = "/tmp/example.bmp");
+    bool DrawFrame();
+
+
+    /**
+     * @brief Render into the given image struct.
+     * 
+     * @param _Image 
+     * @return true 
+     * @return false 
+     */
+    bool RenderImage(Image* _Image);
 
 
     /**

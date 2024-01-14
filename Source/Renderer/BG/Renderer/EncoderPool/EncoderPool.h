@@ -3,13 +3,13 @@
 //=================================//
 
 /*
-    Description: This file contains the NES Rendering system interface code.
+    Description: This file creates a multithreaded image compression helper.
     Additional Notes: None
-    Date Created: 2023-12-19
-    Author(s): Thomas Liao, Randal Koene
+    Date Created: 2024-01-13
+    Author(s): Thomas Liao
 
 
-    Copyright (C) 2023  Thomas Liao, Randal Koene
+    Copyright (C) 2024  Thomas Liao
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -45,21 +45,14 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
-#include <Simulator/Structs/Simulation.h>
-
-#include <VSDA/UpdaterManager.h>
-
 #include <BG/Renderer/EncoderPool/Image.h>
-#include <BG/Renderer/EncoderPool/EncoderPool.h>
-#include <BG/Renderer/Interface.h>
 
 
 
 
 namespace BG {
 namespace NES {
-namespace Simulator {
-namespace VSDA {
+namespace Renderer {
 
 
 
@@ -67,25 +60,20 @@ namespace VSDA {
 
 
 /**
- * @brief This class creates a threadpool which owns all renderer instances.
- * This allows (on supported systems) for multiple renderers to exist at the same time, and as such render multiple simulations simultaineously.
+ * @brief This class creates a threadpool which compresses and saves images.
  * 
  */
-class RenderPool {
+class EncoderPool {
 
 
 private:
 
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/
 
-    std::unique_ptr<Renderer::EncoderPool> EncoderPool_;  /**Instance of the encoderpool, which saves all required images to disk*/
-
-    bool Windowed_ = false;                               /**Boolean indicating if we're making windowed or headless renderers*/
-
     std::mutex QueueMutex_;                               /**Mutex used to lock access to the queue when it's being modified*/
-    std::queue<Simulation*> Queue_;                       /**Queue that contains simulations that need to be rendered*/
+    std::queue<Image*> Queue_;                            /**Queue that contains images to be compressed*/
 
-    std::vector<std::thread> RenderThreads_;              /**List of rendering threads - each one tries to dequeue stuff from the queue to work on.*/
+    std::vector<std::thread> EncoderThreads_;             /**List of encoding threads - each one tries to dequeue stuff from the queue to work on.*/
     std::atomic_bool ThreadControlFlag_;                  /**Bool that signals threads to exit*/
 
 
@@ -93,9 +81,9 @@ private:
     /**
      * @brief Thread safe enqueue function.
      * 
-     * @param _Sim 
+     * @param _Image 
      */
-    void EnqueueSimulation(Simulation* _Sim);
+    void EnqueueImage(Image* _Image);
 
     /**
      * @brief Thread safe getSize function.
@@ -105,14 +93,14 @@ private:
     int GetQueueSize();
 
     /**
-     * @brief Thread safe get simulation* from queue function. 
+     * @brief Thread safe get Image* from queue function. 
      * Will return false if there is nothing to be dequeued.
      * Otherwise will update the ptr given as a parameter.
      * 
      * @return true
      * @return false
      */
-    bool DequeueSimulation(Simulation** _SimPtr);
+    bool DequeueImage(Image** _ImagePtr);
 
 
 
@@ -121,41 +109,38 @@ private:
      * 
      * @brief _ThreadNumber ID of this thread
      */
-    void RendererThreadMainFunction(int _ThreadNumber);
+    void EncoderThreadMainFunction(int _ThreadNumber);
 
 
 public:
 
     /**
-     * @brief Initializes the renderpool with the given number of threads requested.
-     * Note that this may be subject to however many logical devices your vulkan hardware can support.
+     * @brief Initializes the encoderpool with the given number of threads requested.
      * 
      * @param _Logger 
-     * @param _Windowed
      * @param _NumThreads 
      */
-    RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed = false, int _NumThreads = 1);
+    EncoderPool(BG::Common::Logger::LoggingSystem* _Logger, int _NumThreads = 24);
 
     /**
      * @brief Destroys the render pool object.
      * 
      */
-    ~RenderPool();
+    ~EncoderPool();
 
 
     /**
-     * @brief Places the simulation struct into the queue to be picked up by an available renderer thread.
+     * @brief Places the Image struct into the queue to be picked up by an available worker thread.
      * 
-     * @param _Simulation 
+     * @param _Image 
      */
-    void QueueRenderOperation(Simulation* _Simulation);
+    void QueueEncodeOperation(Image* _Image);
 
 
 };
 
 
 
-}; // Close Namespace VSDA
 }; // Close Namespace Simulator
 }; // Close Namespace NES
 }; // Close Namespace BG

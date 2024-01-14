@@ -33,6 +33,7 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <vector>
+#include <memory>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -41,6 +42,9 @@
 #include <VSDA/SliceGenerator/Structs/VoxelArray.h>
 #include <VSDA/SliceGenerator/Structs/ScanRegion.h>
 #include <VSDA/SliceGenerator/Structs/MicroscopeParameters.h>
+
+#include <BG/Renderer/EncoderPool/Image.h>
+
 
 
 namespace BG {
@@ -80,6 +84,7 @@ struct VSDAData {
     int                         CurrentSliceImage_ = -1;  /**Defines the current image being worked on for this slice*/
 
     std::vector<std::vector<std::string>> RenderedImagePaths_; /**List of paths for each region to be populated as we render all the images for this simulation into a stack*/
+    std::vector<std::unique_ptr<BG::NES::Renderer::Image>> Images_; /**List of images that have been created for this system*/
 
 
 

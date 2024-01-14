@@ -5,23 +5,12 @@
   "dependencies": [
     "bg-common-logger",
     "yaml-cpp",
-    "boost-program-options",
     "glm",
     "gtest",
     "nlohmann-json",
     "rpclib",
-    "vulkan",
-    "vk-bootstrap",
     "vsg",
     "cpp-base64",
-    {
-      "name": "vsgxchange",
-      "features": [
-        "assimp",
-        "curl",
-        "freetype",
-        "openexr"
-      ]
-    }
+    "stb"
   ]
 }

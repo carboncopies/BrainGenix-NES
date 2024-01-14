@@ -39,7 +39,6 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include <vsg/all.h>
-#include <vsgXchange/all.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")

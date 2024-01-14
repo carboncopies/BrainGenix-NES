@@ -35,9 +35,9 @@ include(${CMAKE_UTIL_DIR}/SetBinaryDir.cmake)
 message(STATUS "Finding nlohmann_json Package")
 find_package(nlohmann_json CONFIG REQUIRED)
 
-message(STATUS "Finding boost Package")
-set(Boost_NO_WARN_NEW_VERSIONS 1)
-find_package(Boost REQUIRED COMPONENTS program_options)
+# message(STATUS "Finding boost Package")
+# set(Boost_NO_WARN_NEW_VERSIONS 1)
+# find_package(Boost REQUIRED COMPONENTS program_options)
 
 message(STATUS "Finding rpclib Package")
 find_package(rpclib CONFIG REQUIRED)
@@ -49,19 +49,19 @@ find_path(CPP_BASE64_INCLUDE_DIRS "cpp-base64/base64.cpp")
 
 
 # Renderer Dependencies
-message(STATUS "Setting up Vulkan Library")
-find_package(Vulkan REQUIRED)
+# message(STATUS "Setting up Vulkan Library")
+# find_package(Vulkan REQUIRED)
 
-message(STATUS "Setting Up vk-bootstrap Library")
-# find_package(vk-bootstrap CONFIG REQUIRED) # Will eventually use this when vcpkg sorts out their build issues
-# in the meantime, this works:
-include(FetchContent)
-FetchContent_Declare(
-    fetch_vk_bootstrap
-    GIT_REPOSITORY https://github.com/charles-lunarg/vk-bootstrap
-    GIT_TAG        v0.7 #suggest using a tag so the library doesn't update whenever new commits are pushed to a branch
-)
-FetchContent_MakeAvailable(fetch_vk_bootstrap)
+# message(STATUS "Setting Up vk-bootstrap Library")
+# # find_package(vk-bootstrap CONFIG REQUIRED) # Will eventually use this when vcpkg sorts out their build issues
+# # in the meantime, this works:
+# include(FetchContent)
+# FetchContent_Declare(
+#     fetch_vk_bootstrap
+#     GIT_REPOSITORY https://github.com/charles-lunarg/vk-bootstrap
+#     GIT_TAG        v0.7 #suggest using a tag so the library doesn't update whenever new commits are pushed to a branch
+# )
+# FetchContent_MakeAvailable(fetch_vk_bootstrap)
 
 
 message(STATUS "Setting Up yaml-cpp Library")
@@ -70,9 +70,11 @@ find_package(yaml-cpp CONFIG REQUIRED)
 message(STATUS "Setting Up Vulkan Scene Graph Library")
 find_package(vsg CONFIG REQUIRED)
 
-message(STATUS "Setting Up vsgXchange Library")
-find_package(vsgXchange CONFIG REQUIRED)
+# message(STATUS "Setting Up vsgXchange Library")
+# find_package(vsgXchange CONFIG REQUIRED)
 
+message(STATUS "Setting Up STB Library")
+find_package(Stb REQUIRED)
 
 # Internal Deps
 message(STATUS "Finding bg-common-logger Package")
@@ -85,7 +87,7 @@ message(STATUS "Finding gtest Package")
 find_package(GTest CONFIG REQUIRED)
 
 # Ensure config is copied to bin
-file(COPY "${SRC_DIR}/Data/NES.cfg" DESTINATION "${BIN_DIR}")
+file(COPY "${SRC_DIR}/Data/NES.yaml" DESTINATION "${BIN_DIR}")
 
 
 
@@ -108,7 +110,7 @@ install(TARGETS ${PROJECT_NAME}
     LIBRARY DESTINATION ${INSTALL_PREFIX}
     DESTINATION ${INSTALL_PREFIX}
 )
-install(FILES "${SRC_DIR}/Data/NES.cfg"
+install(FILES "${SRC_DIR}/Data/NES.yaml"
     DESTINATION ${INSTALL_PREFIX}
     COMPONENT Release
 )

@@ -32,7 +32,7 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
 
             // Okay, we got work, now render this simulation
             Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering Simulation " + std::to_string(SimToProcess->ID), 2);
-            VSDA::ExecuteRenderOperations(Logger_, SimToProcess, &Renderer);
+            VSDA::ExecuteRenderOperations(Logger_, SimToProcess, &Renderer, EncoderPool_.get());
             SimToProcess->IsRendering = false;
 
         } else {
@@ -53,6 +53,11 @@ RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowe
     Logger_ = _Logger;
     ThreadControlFlag_ = true;
     Windowed_ = _Windowed;
+
+
+    // Create Encoderpool Instance
+    int NumEncoderThreads = 24;
+    EncoderPool_ = std::make_unique<Renderer::EncoderPool>(Logger_, NumEncoderThreads);
 
 
     // Create Renderer Instances

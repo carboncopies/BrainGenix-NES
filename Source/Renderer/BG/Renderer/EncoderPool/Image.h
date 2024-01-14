@@ -1,13 +1,16 @@
+
 //=================================//
 // This file is part of BrainGenix //
 //=================================//
 
 /*
-    Date Created: 2023-10-31
+    Description: This file defines the image struct, used to provide work to the encoder pool.
+    Additional Notes: None
+    Date Created: 2024-01-13
     Author(s): Thomas Liao
 
 
-    Copyright (C) 2023  Thomas Liao
+    Copyright (C) 2024  Thomas Liao
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -29,48 +32,47 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <iostream>
-#include <assert.h>
-
+#include <vector>
+#include <memory>
+#include <atomic>
+#include <string>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <vsg/all.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <BG/Renderer/SceneGraph/Shader/Shader.h>
-
 
 
 namespace BG {
 namespace NES {
 namespace Renderer {
-namespace Primitive {
 
 
-
-/**
- * @brief This struct contains the data needed to create a Cylinder.
- * It's intended to be populated by a calling function and then passed into a GeometryBuilder instance.
- * From there, it will create a Cylinder with the defined values. 
- * 
- */
-struct Cylinder {
-
-    // Physical Attributes
-    vsg::vec3 Position_; /**Position of the Cylinder from the origin of the world*/
-    vsg::vec3 Rotation_; /**Rotation of the Cylinder in degrees*/
-    float Radius_;       /**Radius of the Cylinder*/
-    float Height_;       /**Height of the cylinder*/
-
-    Shaders::Shader* Shader_ = nullptr; /**Defines the info/type of shader to be used for this cube*/
-
+enum ImageState {
+    IMAGE_NOT_PROCESSED=0,
+    IMAGE_PROCESSED=1
 };
 
 
+/**
+ * @brief Struct containing image data which is used by the encoder to compress and save the image.
+ * This is done with as much concurrency as possible by the EncoderPool.
+ * 
+ */
+struct Image {
+
+    int         Width_px;        /**Width of this image in pixels*/
+    int         Height_px;       /**Height of this image in pixels*/
+    int         NumChannels_;    /**Number of channels for this image*/
+    std::string TargetFileName_; /**Filename that this image is to be written to*/
+
+    std::unique_ptr<unsigned char> Data_; /**Pointer to image data to be saved*/
+
+    std::atomic<ImageState> ImageState_ = IMAGE_NOT_PROCESSED; /**State of the image (saved or not yet saved)*/
 
 
-}; // Close Namespace State
+};
+
 }; // Close Namespace Logger
 }; // Close Namespace Common
 }; // Close Namespace BG

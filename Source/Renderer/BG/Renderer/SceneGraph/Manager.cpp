@@ -1,7 +1,16 @@
 #include <BG/Renderer/SceneGraph/Manager.h>
 
+
+#include <chrono>
+
 #include <dlfcn.h>
 #include "renderdoc_app.h"
+
+// #define STB_IMAGE_IMPLEMENTATION
+// #include <stb_image.h>
+// #define STB_IMAGE_WRITE_IMPLEMENTATION
+// #include <stb_image_write.h>
+
 
 // TODO: Update Doxygen Docs!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 RENDERDOC_API_1_1_2 *rdoc_api = NULL;
@@ -60,7 +69,7 @@ bool Manager::Initialize(bool _Windowed) {
     // }
 
     // Support 3rd Party Format Through vsgXchange
-    RenderData_->Options_->add(vsgXchange::all::create());
+    // RenderData_->Options_->add(vsgXchange::all::create());
 
 
     // Setup Device If Not Windowed
@@ -208,8 +217,8 @@ bool Manager::Headless_UpdateRenderingBuffers() {
 
 }
 
-bool Manager::Headless_GetImage(std::string _FilePath) {
-
+bool Manager::Headless_GetImage(Image* _Image) {
+    assert(_Image != nullptr);
 
 
     // wait for completion.
@@ -241,21 +250,59 @@ bool Manager::Headless_GetImage(std::string _FilePath) {
         }
 
 
-        vsgXchange::all Instance;
-        // colorFilename = std::to_string(RenderData_->framenumber) + ".bmp";
-        // RenderData_->framenumber+=1;
-        bool status = Instance.write(imageData, _FilePath);
-        Logger_ ->Log("Wrote File '" + _FilePath + "'", 0);
-        //std::cout<<"Wrote File "<<_FilePath<<std::endl;
-        if (!status) {
-            std::cout<<"Error writing file!\n";
-        }
+        // Populate Image Struct With Data
+        _Image->Width_px = RenderData_->Width_;
+        _Image->Height_px = RenderData_->Height_;
+        _Image->NumChannels_ = 4;
+        size_t ImageSize = _Image->Width_px * _Image->Height_px * _Image->NumChannels_; // this assumes that each pixel is a char, a bit scuffed
+        unsigned char* NewBuffer = new unsigned char[ImageSize]; 
+        unsigned char* PixelData = (unsigned char*)imageData.get()->dataPointer();
+        std::copy(PixelData, PixelData + ImageSize, NewBuffer); 
+        _Image->Data_ = std::unique_ptr<unsigned char>(NewBuffer);
+        // imageData.release_nodelete();
+
+
+
+        // int xres = RenderData_->Width_;
+        // int yres = RenderData_->Height_;
+        // int channels = 4;
+        // unsigned char* pixels = (unsigned char*)imageData.get()->dataPointer();
+
+        // std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
+
+        // stbi_write_png(_FilePath.c_str(), xres, yres, channels, pixels, xres * channels);
+
+        // double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
+        // Logger_ ->Log("Wrote File '" + _FilePath + "' In " + std::to_string(Duration_ms) + "ms", 0);
+
+
+        // std::unique_ptr<OIIO::ImageOutput> out = OIIO::ImageOutput::create(_FilePath);
+        // if (!out)
+        //     std::cout<<"Cannot open image! will prolly crash now\n";
+        // OIIO::ImageSpec spec(xres, yres, channels, OIIO::TypeDesc::UINT8);
+        // out->open(_FilePath, spec);
+        // out->write_image(OIIO::TypeDesc::UINT8, pixels);
+        // out->close();
+
+        // vsgXchange::all Instance;
+        // // colorFilename = std::to_string(RenderData_->framenumber) + ".bmp";
+        // // RenderData_->framenumber+=1;
+        // bool status = Instance.write(imageData, _FilePath);
+        
+        // //std::cout<<"Wrote File "<<_FilePath<<std::endl;
+        // if (!status) {
+        //     std::cout<<"Error writing file!\n";
+        // }
 
     }
 
     return true;
 
 }
+
+
+
+
 
 bool Manager::SetupScene() {
 
@@ -454,7 +501,18 @@ bool Manager::ClearScene() {
 
 }
 
-bool Manager::DrawFrame(std::string _FilePath) {
+bool Manager::RenderImage(Image* _Image) {
+    assert(_Image != nullptr);
+
+    // Firstly, Draw The Frame
+    DrawFrame();
+
+    // Then, Get The Image
+    return Headless_GetImage(_Image);
+
+}
+
+bool Manager::DrawFrame() {
 
     // Check that we're able to render, otherwise chuck an error
     if (!Initialized_) {
@@ -477,10 +535,7 @@ bool Manager::DrawFrame(std::string _FilePath) {
     if(rdoc_api) rdoc_api->StartFrameCapture(NULL, NULL);
 
 
-
-
-    bool Status = RenderData_->Viewer_->advanceToNextFrame();
-    if (!Status) {
+    if (!RenderData_->Viewer_->advanceToNextFrame()) {
         return false;
     }
 
@@ -494,10 +549,8 @@ bool Manager::DrawFrame(std::string _FilePath) {
     RenderData_->Viewer_->update();
     RenderData_->Viewer_->recordAndSubmit();
 
-    // If Headless, Save Image, Otherwise Present To Window
-    if (RenderData_->Headless_) {
-        Headless_GetImage(_FilePath);
-    } else {
+    // If Not Headless, Present To Window
+    if (!RenderData_->Headless_) {
         RenderData_->Viewer_->present();
     }
 

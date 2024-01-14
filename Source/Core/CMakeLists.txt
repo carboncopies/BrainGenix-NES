@@ -8,8 +8,8 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/Config/ConfigurationManager.cpp
   ${SRC_DIR}/Core/Config/ConfigurationManager.h
-  ${SRC_DIR}/Core/Config/ArgumentParser.cpp
-  ${SRC_DIR}/Core/Config/ArgumentParser.h
+  # ${SRC_DIR}/Core/Config/ArgumentParser.cpp
+  # ${SRC_DIR}/Core/Config/ArgumentParser.h
   ${SRC_DIR}/Core/Config/ConfigFileParser.cpp
   ${SRC_DIR}/Core/Config/ConfigFileParser.h
   ${SRC_DIR}/Core/Config/Config.cpp
@@ -165,7 +165,7 @@ target_compile_features(${PROJECT_LIBRARY_NAME} PRIVATE cxx_std_17)
 
 target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE 
     nlohmann_json::nlohmann_json
-    Boost::program_options
+    # Boost::program_options
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
 
@@ -185,7 +185,7 @@ target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE 
     nlohmann_json::nlohmann_json
-    Boost::program_options
+    # Boost::program_options
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
 
@@ -206,6 +206,7 @@ add_executable(${TEST_BINS} ${UNITTEST_SOURCES})
 target_compile_features(${TEST_BINS} PRIVATE cxx_std_17)
 
 target_link_libraries(${TEST_BINS} PRIVATE 
+    NESRenderer
     GTest::gtest 
     GTest::gtest_main
     ${PROJECT_LIBRARY_NAME}
