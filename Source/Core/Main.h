@@ -3,9 +3,15 @@
 //=================================================================//
 
 /*
-    Description: This is the main file of the system.
-    Additional Notes: None
-    Date Created: 2023-06-24
+    Description: 
+        This header file serves as the main entry point for the BrainGenix-NES Neuron Emulation System.
+        It includes essential libraries and sets up the main function for the system.
+
+    Additional Notes: 
+        None
+
+    Date Created: 
+        2023-06-24
 */
 
 #pragma once
@@ -19,26 +25,22 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
-
 #include <BG/Renderer/Interface.h>
-
-
 #include <Config/ConfigurationManager.h>
 #include <Config/Config.h>
-
 #include <RPC/Manager.h>
-
 #include <Simulator/Manager.h>
-
 #include <VSDA/RPCInterface.h>
 #include <VSDA/RenderPool.h>
-
 #include <Util/LogLogo.h>
 
-
-
-
 /**
- * @brief Main function.
-*/
+ * @brief The main entry point for the BrainGenix-NES Neuron Emulation System.
+ * 
+ * This function initializes the system, sets up essential components, and starts the main loop.
+ * 
+ * @param NumArguments The number of command-line arguments.
+ * @param ArgumentValues An array containing the command-line arguments.
+ * @return int The exit code of the program.
+ */
 int main(int NumArguments, char** ArgumentValues);
