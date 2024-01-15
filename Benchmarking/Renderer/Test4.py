@@ -150,7 +150,7 @@ def main():
 
     # Setup VSDA Renderer
     EMConfig = NES.VSDA.EM.Configuration()
-    EMConfig.PixelResolution_nm = 0.05
+    EMConfig.PixelResolution_nm = 0.1
     EMConfig.ImageWidth_px = 512
     EMConfig.ImageHeight_px = 512
     EMConfig.SliceThickness_nm = 100
