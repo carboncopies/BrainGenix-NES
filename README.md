@@ -2,6 +2,23 @@
 
 # This project is currently in development
 
+
+# Roadmap
+
+We'd like to finish the Ball and Stick implementation by the end of January - as this would give us time to make the first iteration of the standardized challenge by end of Febuary.
+
+To do so, the following will need to be done:
+
+[ ] Implement new API routes to finalize simulator integration. (~3-4 hours, assigned to Deb)
+[ ] Implement new API routes for calcium imaging. (~1-2 hours, assigned to Deb)
+[ ] Add NES RPC handlers for the above routes. (~4-5 hours, assigned to Deb)
+
+[ ] Add backend logic for simulator routes. (~10-20 hours, assigned to Randal)
+[ ] Add backend logic for caclium imaging routes. (~5-8 hours, assigned to Thomas)
+[ ] Implement VSDA slice->mesh/texture generator for renderer. (~10-20 hours, assigned to Thomas)
+
+
+
 # What is BrainGenix-NES?
 
 BrainGenix Neuron Emulation System (NES) aims to be a stable, fault-tolerant, and scalable distributed simulation platform for biologically realistic neuronal networks applicable to the emulation of human brains.
