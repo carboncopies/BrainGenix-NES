@@ -33,7 +33,7 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
     }
 
 
-    // If we couldn't find any config files, chuck an error and give up
+    // If we couldn't find any config files, log an error and exit
     if (!HasConfigFile) {
         std::cerr<<"[FATAL], Failed To Open Config File, Attempted To Load Files From:\n";
         for(size_t i = 0; i < _Config.ConfigFilePaths.size(); i++){
@@ -51,7 +51,8 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
 
 
 ConfigFileParser::~ConfigFileParser() {
-
+    // Destructor
+    // No explicit cleanup needed as ConfigFileParser doesn't dynamically allocate memory
 }
 
 
