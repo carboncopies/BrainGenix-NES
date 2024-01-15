@@ -27,9 +27,11 @@ namespace Config {
 
 /**
  * @brief This struct stores a decoded and parsed representation of the config.yaml file.
- * This struct is then passed around to the rest of the system for use when setting up things.
- * This struct is populated by the ConfigFileParser, which loads the data from the yaml config file.
- * 
+ *
+ * The Config struct is responsible for holding the decoded and parsed configuration settings
+ * retrieved from the config.yaml file. Instances of this struct are then passed around the system
+ * for use in setting up various components. The data in this struct is populated by the ConfigFileParser,
+ * which loads the information from the yaml config file.
  */
 struct Config {
     
