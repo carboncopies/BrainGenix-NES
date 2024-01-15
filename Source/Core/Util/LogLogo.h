@@ -42,9 +42,13 @@ namespace Util {
 
 
 
+
 /**
- * @brief Prints the BrainGenix ASCIIart logo to the terminal.
- * 
+ * @brief Prints the BrainGenix ASCII art logo to the terminal.
+ *
+ * The LogLogo function is responsible for displaying the BrainGenix ASCII art logo in the terminal.
+ * It takes a pointer to the logging system instance to log the logo.
+ *
  * @param _Logger Pointer to the logging system instance.
  */
 void LogLogo(BG::Common::Logger::LoggingSystem* _Logger);
