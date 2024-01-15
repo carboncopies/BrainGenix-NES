@@ -16,10 +16,8 @@
 #include <iterator>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-// #include <boost/program_options.hpp>
 
 // Internal Libraries (BG convention: use <> instead of "")
-// #include <Config/ArgumentParser.h>
 #include <Config/ConfigFileParser.h>
 #include <Config/Config.h>
 
@@ -30,10 +28,10 @@ namespace NES {
 namespace Config {
 
 /**
- * @brief Configuration Manager Class - Provides program configuration capabillities to the NES server.
- * 
- * @details This class manages the argument and config file parsers, which each generate a config struct 
- * which is given to the rest of the system. This class manages creating and owning that config struct.
+ * @brief Configuration Manager Class - Provides program configuration capabilities to the NES service.
+ *
+ * The Manager class is responsible for managing the configuration file parser, which generates a config struct.
+ * This struct is then provided to the rest of the system for configuration purposes.
  */
 class Manager {
 
@@ -44,24 +42,25 @@ private:
 public:
 
     /**
-     * @brief Construct a new Manager object
-     * You need to pass this class the command line data so it can parse the arguments.
-     * 
-     * @param _NumArgs 
-     * @param _Args 
+     * @brief Constructor for the Manager class.
+     *
+     * Initializes a Manager instance, parsing command line data and loading the configuration file to configure the program.
+     *
+     * @param _NumArgs Number of command line arguments.
+     * @param _Args Array of command line arguments.
      */
     Manager(int _NumArgs, char** _Args);
 
     /**
-     * @brief Destroy the Manager object
+     * @brief Destructor for the Manager class.
      * 
      */
     ~Manager();
 
     /**
      * @brief Returns a reference to the configuration struct.
-     * 
-     * @return Config& 
+     *
+     * @return Config& Reference to the configuration struct.
      */
     Config& GetConfig();
 

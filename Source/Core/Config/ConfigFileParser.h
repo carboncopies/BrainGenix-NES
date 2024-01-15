@@ -16,7 +16,6 @@
 #include <iterator>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-// #include <boost/program_options.hpp>
 #include <yaml-cpp/yaml.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
@@ -25,18 +24,20 @@
 
 
 
+
 namespace BG {
 namespace NES {
 namespace Config {
 
+
+
 /**
  * @brief The configuration file parser loads and parses all parameters saved in the configuration file.
- * The config file can be set either by default to "NES.cfg", or manually to any path set in the command line options.
- * 
- * @details This class is called after the argumentparser class and loads the config file at the given param.
- * On failure to load, the program will exit here and print an error to console. (If file doesn't exist, can't be read, etc.)
- * Normally, users would configure the file not set cli args, but those are provided for some options if needed.
- * 
+ *
+ * The ConfigFileParser class is responsible for loading and parsing parameters from a configuration file.
+ * The default configuration file is set to "NES.yaml," but users can manually specify a path using command-line options.
+ * If the parser fails to load the file (due to non-existence or unreadability), the program will exit with an error message.
+ * Users typically configure the file without setting command-line arguments.
  */
 class ConfigFileParser {
 
@@ -44,17 +45,17 @@ class ConfigFileParser {
 public:
 
     /**
-     * @brief Construct a new Config File Parser object
-     * You give this a reference to the configuration struct, where it loads the file at the "ConfigFilePath" attribute.
-     * Then, it will load in any other config options.
-     * 
-     * @param _Config 
+     * @brief Construct a new Config File Parser object.
+     *
+     * Initializes a ConfigFileParser instance, taking a reference to the configuration struct.
+     * The parser loads the file specified in the "ConfigFilePath" attribute and populates the configuration struct.
+     *
+     * @param _Config Reference to the configuration struct.
      */
     ConfigFileParser(Config &_Config);
 
     /**
-     * @brief Destroy the Manager object
-     * 
+     * @brief Destroy the ConfigFileParser class instance.
      */
     ~ConfigFileParser();
 

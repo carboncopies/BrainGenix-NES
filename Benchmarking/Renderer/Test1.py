@@ -2,8 +2,6 @@
 
 # Simple Test Example For BG
 import time
-import base64
-import os
 
 import BrainGenix.NES as NES
 
@@ -88,7 +86,7 @@ def main():
     VSDAEMInstance.QueueRenderOperation()
 
     VSDAEMInstance.WaitForRender()
-    VSDAEMInstance.SaveImageStack()
+    VSDAEMInstance.SaveImageStack(".Test1")
 
 
 def GetTime():
@@ -98,7 +96,6 @@ def GetTime():
 
     End = time.time()
     print(f"Benchmark - Renderer - 1: {End - Start}s")
-    os.system("rm -rf *.png")
 
     return End - Start
 

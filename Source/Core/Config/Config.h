@@ -20,15 +20,21 @@
 #include <Config/ConfigDefaults.h>
 
 
+
 namespace BG {
 namespace NES {
 namespace Config {
 
 /**
- * @brief The configuration class stores the actual config data. Pretty self explanitory.
- * 
+ * @brief This struct stores a decoded and parsed representation of the config.yaml file.
+ *
+ * The Config struct is responsible for holding the decoded and parsed configuration settings
+ * retrieved from the config.yaml file. Instances of this struct are then passed around the system
+ * for use in setting up various components. The data in this struct is populated by the ConfigFileParser,
+ * which loads the information from the yaml config file.
  */
 struct Config {
+    
     std::vector<std::string> ConfigFilePaths = {
         CONFIG_DEFAULT_CFG_FILE_PATH1,
         CONFIG_DEFAULT_CFG_FILE_PATH2
