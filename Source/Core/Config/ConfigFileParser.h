@@ -25,15 +25,17 @@
 
 
 
+
 namespace BG {
 namespace NES {
 namespace Config {
 
+
 /**
  * @brief The configuration file parser loads and parses all parameters saved in the configuration file.
- * The config file can be set either by default to "NES.cfg", or manually to any path set in the command line options.
+ * The config file can be set either by default to "NES.yaml", or manually to any path set in the command line options.
  * 
- * @details This class is called after the argumentparser class and loads the config file at the given param.
+ * @details This class attempts to open the given configuration file, and populates the configuration struct with that data.
  * On failure to load, the program will exit here and print an error to console. (If file doesn't exist, can't be read, etc.)
  * Normally, users would configure the file not set cli args, but those are provided for some options if needed.
  * 
@@ -53,7 +55,7 @@ public:
     ConfigFileParser(Config &_Config);
 
     /**
-     * @brief Destroy the Manager object
+     * @brief Destroy the ConfigFileParser class instance.
      * 
      */
     ~ConfigFileParser();
