@@ -27,11 +27,18 @@
 #include <Config/Config.h>
 
 #include <RPC/Manager.h>
+
 #include <Simulator/Manager.h>
+
 #include <VSDA/RPCInterface.h>
 #include <VSDA/RenderPool.h>
 
+#include <Util/LogLogo.h>
+
+
+
+
 /**
- * Main function.
+ * @brief Main function.
 */
 int main(int NumArguments, char** ArgumentValues);

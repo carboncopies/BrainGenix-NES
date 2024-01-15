@@ -103,7 +103,8 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h
-
+  ${SRC_DIR}/Core/Util/LogLogo.cpp
+  ${SRC_DIR}/Core/Util/LogLogo.h
 
   ${SRC_DIR}/Core/VSDA/RPCInterface.cpp
   ${SRC_DIR}/Core/VSDA/RPCInterface.h

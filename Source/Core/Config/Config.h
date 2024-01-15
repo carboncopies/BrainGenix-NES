@@ -32,6 +32,7 @@ namespace Config {
  * 
  */
 struct Config {
+    
     std::vector<std::string> ConfigFilePaths = {
         CONFIG_DEFAULT_CFG_FILE_PATH1,
         CONFIG_DEFAULT_CFG_FILE_PATH2
