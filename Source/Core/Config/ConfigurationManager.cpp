@@ -20,7 +20,8 @@ Manager::Manager(int _NumArgs, char** _Args) {
 }
 
 Manager::~Manager() {
-
+    // Destructor
+    // No explicit cleanup needed as no dynamic memory is allocated.
 }
 
 

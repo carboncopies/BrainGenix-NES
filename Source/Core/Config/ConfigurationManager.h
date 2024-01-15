@@ -28,10 +28,10 @@ namespace NES {
 namespace Config {
 
 /**
- * @brief Configuration Manager Class - Provides program configuration capabillities to the NES service.
- * 
- * @details This class manages the config file parser, which generates a config struct 
- * which is given to the rest of the system. This class manages creating and populating that config struct.
+ * @brief Configuration Manager Class - Provides program configuration capabilities to the NES service.
+ *
+ * The Manager class is responsible for managing the configuration file parser, which generates a config struct.
+ * This struct is then provided to the rest of the system for configuration purposes.
  */
 class Manager {
 
@@ -43,10 +43,11 @@ public:
 
     /**
      * @brief Constructor for the Manager class.
-     * You need to pass this class the command line data so it can parse the arguments.
-     * 
-     * @param _NumArgs 
-     * @param _Args 
+     *
+     * Initializes a Manager instance, parsing command line data and loading the configuration file to configure the program.
+     *
+     * @param _NumArgs Number of command line arguments.
+     * @param _Args Array of command line arguments.
      */
     Manager(int _NumArgs, char** _Args);
 
@@ -58,8 +59,8 @@ public:
 
     /**
      * @brief Returns a reference to the configuration struct.
-     * 
-     * @return Config& 
+     *
+     * @return Config& Reference to the configuration struct.
      */
     Config& GetConfig();
 
