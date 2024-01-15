@@ -4,10 +4,10 @@
 
 /*
     Date Created: 2024-01-15
-    Author(s): Thomas Liao
+    Author(s): Thomas Liao, Jacob Morrison
 
 
-    Copyright (C) 2023  Thomas Liao
+    Copyright (C) 2024  Thomas Liao
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -33,10 +33,21 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <BG/Common/Logger/Logger.h>
+
 
 namespace BG {
 namespace NES {
 namespace Util {
+
+
+
+/**
+ * @brief Prints the BrainGenix ASCIIart logo to the terminal.
+ * 
+ * @param _Logger Pointer to the logging system instance.
+ */
+void LogLogo(BG::Common::Logger::LoggingSystem* _Logger);
 
 
 
