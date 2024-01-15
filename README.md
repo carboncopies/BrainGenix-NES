@@ -59,11 +59,3 @@ Many users or client front-ends can interact with BrainGenix-NES concurrently, r
 ## Supported platforms
 
 BrainGenix-NES compiles and runs on modern Linux distributions.
-
-## More information
-Currently the best source of information about NES can be found within our technical specifications document:
-https://docs.google.com/document/d/1tVIB7KQcSRKNU_df8oPVR3wyBHagjv2xvqaMy-oDg18/edit#
-
-You can also view our Trello Boards here: https://trello.com/braingenixdepartment
-
-
