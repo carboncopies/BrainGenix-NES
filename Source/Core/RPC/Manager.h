@@ -25,14 +25,18 @@
 #include <Config/Config.h>
 
 
+
 namespace BG {
 namespace NES {
 namespace API {
 
 
+
 /**
- * @brief This class manages the NES RPC Server instance as well as adding/removing/etc routes on said RPC server.
- * 
+ * @brief Manages the NES remote procedure call (RPC) host.
+ *
+ * The Manager class owns the RPC server and handles its initialization and destruction at the end of the program's run.
+ * It also takes a copy of the systemwide configuration struct to configure the RPC server (e.g., host and port).
  */
 class Manager {
 
@@ -46,6 +50,7 @@ public:
     /**
      * @brief Construct a new Manager object
      * Give this a pointer to an initialized configuration object.
+     * Also it takes a pointer to the logging system instance.
      * 
      * @param _Config 
      * @param _Logger
@@ -61,10 +66,13 @@ public:
 
 
     /**
-     * @brief Registers a callback to the api service. Assume your callback function may be accessed from any thread.
-     * 
-     * @param _RouteName 
-     * @param _CallbackFunction 
+     * @brief Registers a callback to the API service.
+     *
+     * Registers a callback function for a specific route. Assumes the callback function may be accessed from any thread.
+     *
+     * @param _RouteName Name of the route to register.
+     * @param _Logger Pointer to the logging system instance.
+     * @param _CallbackFunction Callback function to be registered.
      */
     template <typename F> void AddRoute(std::string _RouteName, BG::Common::Logger::LoggingSystem* _Logger, F _CallbackFunction) {
         std::string LogMsg = "Registering Callback For Route " + _RouteName;

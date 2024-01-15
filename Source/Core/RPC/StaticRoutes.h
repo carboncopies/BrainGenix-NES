@@ -23,6 +23,7 @@ namespace BG {
 namespace NES {
 namespace API {
 
+
 /**
  * @brief Static RPC function used to get the current version of the API Spec and return it.
  * 
