@@ -56,7 +56,7 @@ namespace Simulator {
 class Manager {
 
 private:
-    Config::Config* Config_; /**Pointer to configuration struct owned by rest of system*/
+    Config::Config* Config_; /**Pointer to configuration struct owned by the rest of the system*/
 
     std::vector<std::thread> SimulationThreads_; /**Threads that enumerate simulations and checks for any tasks to be done.*/
     std::atomic<bool> StopThreads_; /**Indicates to workers to stop what they're doing*/
@@ -64,7 +64,7 @@ private:
     // Note: This simulation vector is not thread safe and will probably segfault if you try to multithread this
     // we will fix this later when we scale the system (DO NOT ALLOW RPC to use more than 1 thread unless this is fixed!)
 
-    BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/
+    BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to the instance of the logging system*/
     VSDA::RenderPool* RenderPool_;                        /**Pointer to an instance of the render threadpool class*/
 
 public:
@@ -73,13 +73,12 @@ public:
      * @brief Construct a new Manager object
      * Give this a pointer to an initialized configuration object.
      * 
-     * @param _Logger Pointer to logging interface
+     * @param _Logger Pointer to the logging interface
      * @param _Config 
      * @param _RPCManager
-     * @param _Renderer Instance of rendering system.
+     * @param _Renderer Instance of the rendering system.
      */
     Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, API::Manager* _RPCManager);
-
 
     /**
      * @brief Destroy the Manager object
@@ -87,10 +86,9 @@ public:
      */
     ~Manager();
 
-
     /**
      * @brief Various routes for API
-     * Note that since this file is getting to long, several RPC handlers are being setup - each taking over part of this.
+     * Note that since this file is getting too long, several RPC handlers are being set up - each taking over part of this.
      * See the relevant file in RPCInterface.(cpp/h) in various directories. 
      * 
      * @param _JSONRequest 
@@ -116,13 +114,6 @@ public:
     std::string PatchClampADCSetSampleRate(std::string _JSONRequest);
     std::string PatchClampADCGetRecordedData(std::string _JSONRequest);
     std::string Debug(std::string _JSONRequest);
-
-
-    // /**
-    //  * @brief Function for thread to run, checks for new updates in each simulation.
-    //  * 
-    //  */
-    // void SimulationEngineThread(Simulation* _Sim);
 
     /**
      * @brief Returns true if the simulation is being worked on by another thread.

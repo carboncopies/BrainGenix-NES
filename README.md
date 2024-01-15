@@ -2,6 +2,22 @@
 
 # This project is currently in development
 
+
+# Roadmap
+
+We'd like to finish the Ball and Stick implementation by the end of January - as this would give us time to make the first iteration of the standardized challenge by end of Febuary.
+
+To do so, the following will need to be done:
+
+[ ] Implement new API routes to finalize simulator integration
+[ ] Implement new API routes for calcium imaging
+[ ] Add NES RPC handlers for the above routes
+[ ] Add backend logic for simulator routes
+[ ] Add backend logic for caclium imaging routes
+[ ] Implement VSDA slice->mesh/texture generator for renderer
+
+
+
 # What is BrainGenix-NES?
 
 BrainGenix Neuron Emulation System (NES) aims to be a stable, fault-tolerant, and scalable distributed simulation platform for biologically realistic neuronal networks applicable to the emulation of human brains.
@@ -43,10 +59,5 @@ Many users or client front-ends can interact with BrainGenix-NES concurrently, r
 
 BrainGenix-NES compiles and runs on modern Linux distributions.
 
-## More information
-Currently the best source of information about NES can be found within our technical specifications document:
-https://docs.google.com/document/d/1tVIB7KQcSRKNU_df8oPVR3wyBHagjv2xvqaMy-oDg18/edit#
-
-You can also view our Trello Boards here: https://trello.com/braingenixdepartment
 
 
