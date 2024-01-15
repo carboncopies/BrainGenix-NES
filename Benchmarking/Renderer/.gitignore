@@ -3,5 +3,3 @@
 *.jpg
 *.tiff
 *.jpeg
-
-__pycache__/*
