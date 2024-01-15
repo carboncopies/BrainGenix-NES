@@ -500,6 +500,15 @@ bool Manager::ClearScene() {
     LockScene();
     WaitUntilGPUDone();
         Scene_->Group_->children.clear();
+
+        auto directionalLight = vsg::DirectionalLight::create();
+        directionalLight->name = "directional";
+        directionalLight->color.set(1.0, 1.0, 1.0);
+        directionalLight->intensity = 1.0;
+        directionalLight->direction.set(0.0, 0.0, -1.0);
+        Scene_->Group_->addChild(directionalLight);
+
+
     UnlockScene();
 
     return true;

@@ -8,3 +8,7 @@ The test machine has the following specs:
 
 Below is a table for the times of each test, and it's result.  
 | Test | Resulting Time |
+
+
+Well, it never finished running since I had to move on, but the result is slow. I'll work on improving this during the week.
+![Slow.png](Slow.png)
