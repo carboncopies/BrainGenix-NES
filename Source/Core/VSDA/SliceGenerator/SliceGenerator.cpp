@@ -53,7 +53,7 @@ bool VSDA_EM_SetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulat
     // Check Preconditions
     assert(_Logger != nullptr);
     assert(_Sim != nullptr);
-    if ((_Sim->VSDAData_.State_ != VSDA_INIT_BEGIN) || (_Sim->VSDAData_.State_ != VSDA_RENDER_DONE)) { // Check that the VSDA is during its init phase, and not yet done initializing.
+    if ((_Sim->VSDAData_.State_ != VSDA_INIT_BEGIN) && (_Sim->VSDAData_.State_ != VSDA_RENDER_DONE)) { // Check that the VSDA is during its init phase, and not yet done initializing.
         _Logger->Log("VSDA EM SetupMicroscope Error, Cannot Setup Microscope On System With Unknown State", 6);
         return false; 
     }
@@ -75,7 +75,7 @@ bool VSDA_EM_DefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simula
     // Check Preconditions
     assert(_Logger != nullptr);
     assert(_Sim != nullptr);
-    if ((_Sim->VSDAData_.State_ != VSDA_INIT_BEGIN) || (_Sim->VSDAData_.State_ != VSDA_RENDER_DONE)) { // Check that the VSDA is during its init phase, and not yet done initializing.
+    if ((_Sim->VSDAData_.State_ != VSDA_INIT_BEGIN) && (_Sim->VSDAData_.State_ != VSDA_RENDER_DONE)) { // Check that the VSDA is during its init phase, and not yet done initializing.
         _Logger->Log("VSDA EM DefineScanRegion Error, Cannot Define Microscope Scan Region On System With Unknown State", 6);
         return false; 
     }
@@ -97,7 +97,7 @@ bool VSDA_EM_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Si
     // Check Preconditions
     assert(_Logger != nullptr);
     assert(_Sim != nullptr);
-    if ((_Sim->VSDAData_.State_ != VSDA_INIT_BEGIN) || (_Sim->VSDAData_.State_ != VSDA_RENDER_DONE)) { // Check that the VSDA is during its init phase, and not yet done initializing.
+    if ((_Sim->VSDAData_.State_ != VSDA_INIT_BEGIN) && (_Sim->VSDAData_.State_ != VSDA_RENDER_DONE)) { // Check that the VSDA is during its init phase, and not yet done initializing.
         _Logger->Log("VSDA EM QueueRenderOperation Error, Cannot Queue Render Operation On System With Unknown State", 6);
         return false; 
     }
