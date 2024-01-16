@@ -413,7 +413,7 @@ bool Manager::Headless_SetupCommandGraph() {
     RenderData_->RenderGraph_->framebuffer = RenderData_->framebuffer;
     RenderData_->RenderGraph_->renderArea.offset = {0, 0};
     RenderData_->RenderGraph_->renderArea.extent = RenderData_->Extent_;
-    RenderData_->RenderGraph_->setClearValues({{0.75f, 0.75f, 0.75f, 0.0f}}, VkClearDepthStencilValue{0.0f, 0});
+    RenderData_->RenderGraph_->setClearValues({{0.15f, 0.15f, 0.15f, 0.0f}}, VkClearDepthStencilValue{0.0f, 0});
 
     auto view = vsg::View::create(Scene_->Camera_, Scene_->Group_);
 
