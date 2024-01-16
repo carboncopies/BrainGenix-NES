@@ -61,6 +61,9 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
         while (Image->ImageState_ != BG::NES::Renderer::IMAGE_PROCESSED) {}
     }
 
+
+    _Simulation->VSDAData_.State_ = VSDA_RENDER_DONE;
+
     return true;
 
 }
