@@ -71,6 +71,23 @@ struct Image {
     std::atomic<ImageState> ImageState_ = IMAGE_NOT_PROCESSED; /**State of the image (saved or not yet saved)*/
 
 
+    /**
+     * @brief Construct a new Image object. You'll have to set the data ptr yourself.
+     * 
+     */
+    Image();
+
+    /**
+     * @brief Construct a new Image object of specified size.
+     * Note - this will *not* initialize the data at the given place.
+     * 
+     * @param _Width 
+     * @param _Height 
+     * @param _Channels 
+     */
+    Image(int _Width, int _Height, int _Channels);
+
+
 };
 
 }; // Close Namespace Logger

@@ -287,10 +287,10 @@ bool Manager::Headless_GetImage(Image* _Image) {
         // vsgXchange::all Instance;
         // // colorFilename = std::to_string(RenderData_->framenumber) + ".bmp";
         // // RenderData_->framenumber+=1;
-        // bool status = Instance.write(imageData, _FilePath);
+        // bool Result = Instance.write(imageData, _FilePath);
         
         // //std::cout<<"Wrote File "<<_FilePath<<std::endl;
-        // if (!status) {
+        // if (!Result) {
         //     std::cout<<"Error writing file!\n";
         // }
 

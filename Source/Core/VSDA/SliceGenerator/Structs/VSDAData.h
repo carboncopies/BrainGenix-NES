@@ -63,7 +63,7 @@ enum VSDAState {
 
 
 /**
- * @brief Struct which is useful for storing the status of all information used by the VSDA subsystem.
+ * @brief Struct which is useful for storing the Result of all information used by the VSDA subsystem.
  * This contains things like microscope position, VoxelArray, etc.
  * Is owned by all simulations.
  * 
@@ -77,7 +77,7 @@ struct VSDAData {
     std::vector<ScanRegion>     Regions_;            /**Defines the list of scan region we're working on (for this microscope) Use ActiveRegionID to get the current region*/
     int                         ActiveRegionID_ =-1; /**Defines the region's index that we're working on right now*/
    
-    // Status Info For API To Query
+    // Result Info For API To Query
     int                         TotalSlices_ = 0;        /**Defines the total number of slices to be rendered (is populated once the renderer begins)*/
     int                         CurrentSlice_ = -1;      /**Defines the current slice that is being rendered. (also is set by the renderer once initialization starts)*/
     int                         TotalSliceImages_ = -1;   /**Defines the total number of images for this slice*/

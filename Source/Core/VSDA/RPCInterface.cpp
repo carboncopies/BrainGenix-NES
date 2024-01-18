@@ -63,12 +63,12 @@ std::string RPCInterface::VSDAEMInitialize(std::string _JSONRequest) {
     Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
     
 
-    int Status = !VSDA_EM_Initialize(Logger_, ThisSimulation);
+    int Result = !VSDA_EM_Initialize(Logger_, ThisSimulation);
 
 
     // Build Response
     nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = Status;
+    ResponseJSON["StatusCode"] = Result;
     return ResponseJSON.dump();
 }
 std::string RPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
@@ -106,12 +106,12 @@ std::string RPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     Params.MicroscopeFOV_deg = MicroscopeFOV_deg;
     Params.NumPixelsPerVoxel_px = NumPixelsPerVoxel_px;
 
-    int Status = !VSDA_EM_SetupMicroscope(Logger_, ThisSimulation, Params);
+    int Result = !VSDA_EM_SetupMicroscope(Logger_, ThisSimulation, Params);
 
 
     // Build Response
     nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = Status;
+    ResponseJSON["StatusCode"] = Result;
     return ResponseJSON.dump();
 
 }
@@ -147,12 +147,12 @@ std::string RPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
 
 
     int ID = -1;
-    int Status = !VSDA_EM_DefineScanRegion(Logger_, ThisSimulation, CreatedRegion, &ID);
+    int Result = !VSDA_EM_DefineScanRegion(Logger_, ThisSimulation, CreatedRegion, &ID);
 
 
     // Build Response
     nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = Status;
+    ResponseJSON["StatusCode"] = Result;
     ResponseJSON["ScanRegionID"] = ID;
     return ResponseJSON.dump();
 
@@ -175,11 +175,11 @@ std::string RPCInterface::VSDAEMQueueRenderOperation(std::string _JSONRequest) {
     }
 
     Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
-    int Status = !VSDA_EM_QueueRenderOperation(Logger_, ThisSimulation, ScanRegionID);
+    int Result = !VSDA_EM_QueueRenderOperation(Logger_, ThisSimulation, ScanRegionID);
 
     // Build Response
     nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = Status;
+    ResponseJSON["StatusCode"] = Result;
     return ResponseJSON.dump();
 
 }

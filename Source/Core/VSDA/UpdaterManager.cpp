@@ -48,7 +48,7 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
     for (unsigned int i = 0; i < _Simulation->VSDAData_.Array_.get()->GetZ(); i++) {
         std::string FileNamePrefix = "Simulation" + std::to_string(_Simulation->ID) + "_Region" + std::to_string(_Simulation->VSDAData_.ActiveRegionID_);
         std::vector<std::string>* RegionSpecificFilePathList = &_Simulation->VSDAData_.RenderedImagePaths_[_Simulation->VSDAData_.ActiveRegionID_];
-        RenderSliceFromArray(_Logger, _Renderer, &_Simulation->VSDAData_, RegionSpecificFilePathList, FileNamePrefix, i, _EncoderPool);
+        RenderSliceFromArray(_Logger, &_Simulation->VSDAData_, RegionSpecificFilePathList, FileNamePrefix, i, _EncoderPool);
         
         // Update Current Slice Information (Account for slice numbers not starting at 0)
         _Simulation->VSDAData_.TotalSlices_ = _Simulation->VSDAData_.Array_.get()->GetZ();

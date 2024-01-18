@@ -35,7 +35,6 @@
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
-
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
@@ -92,7 +91,7 @@ bool VSDA_EM_SetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulat
  * @param _Logger Pointer to logging system interface.
  * @param _Sim Pointer to simulation instance to be configured by this VSDA operation.
  * @param _ScanRegion Instance of the BoundingBox struct with the needed values populated.
- * @param _RegionID Pointer to int, which will contain the scan region id returned, if any. Check bool status to indicate if this will be set or not.
+ * @param _RegionID Pointer to int, which will contain the scan region id returned, if any. Check bool Result to indicate if this will be set or not.
  * 
  * @return true On Success
  * @return false On Error

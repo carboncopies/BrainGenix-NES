@@ -279,6 +279,49 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* 
 
 
 
+    
+    // TODO: Add proper total x steps, total y steps
+    int TotalXSteps = 5;
+    int TotalYSteps = 5;
+
+
+    // Now, we enumerate through all the steps needed, one at a time until we reach the end
+    for (int XStep = 0; XStep < TotalXSteps; XStep++) {
+        for (int YStep = 0; YStep < TotalYSteps; YStep++) {
+
+
+            // Calculate Desired Image Size
+            // We will just set one pixel and if needing many pixels per voxel, upsample the image to fit accordingly
+            int TargetImageWidth_px = ceil(_VSDAData->Params_.ImageWidth_px / _VSDAData->Params_.NumPixelsPerVoxel_px);
+            int TargetImageHeight_px = ceil(_VSDAData->Params_.ImageHeight_px / _VSDAData->Params_.NumPixelsPerVoxel_px);
+            int NumChannels = 3;
+            float CameraStepSizeX_um = TargetImageWidth_px * _VSDAData->Params_.VoxelResolution_um;
+            float CameraStepSizeY_um = TargetImageHeight_px * _VSDAData->Params_.VoxelResolution_um;
+
+
+            // Finally, actually render the frame, and save it to disk
+            _VSDAData->Images_.push_back(std::make_unique<BG::NES::Renderer::Image>(TargetImageWidth_px, TargetImageHeight_px, NumChannels));
+            BG::NES::Renderer::Image* Image = _VSDAData->Images_[_VSDAData->Images_.size() - 1].get();
+
+            std::string FilePath = "Renders/" + _FilePrefix + "_Slice" + std::to_string(SliceNumber);
+            FilePath += "_X" + std::to_string(CameraStepSizeX_um * XStep);
+            FilePath += "_Y" + std::to_string(CameraStepSizeY_um * YStep);
+            FilePath += ".png";
+
+            // _FileNameArray->push_back(FilePath);
+            // Image->TargetFileName_ = FilePath;
+
+
+            _EncoderPool->QueueEncodeOperation(Image);
+
+            // Update The API Result Info With The Current Slice Number
+            _VSDAData->CurrentSliceImage_ = (XStep * TotalYSteps) + YStep + 1;
+
+        }
+    }
+
+
+
     // // Enumerate Slice, Build Cubes Where Needed
     // for (unsigned int X = 0; X < Array->GetX(); X++) {
     //     for (unsigned int Y = 0; Y < Array->GetY(); Y++) {
@@ -381,7 +424,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* 
 
     //         _EncoderPool->QueueEncodeOperation(Image);
 
-    //         // Update The API Status Info With The Current Slice Number
+    //         // Update The API Result Info With The Current Slice Number
     //         _VSDAData->CurrentSliceImage_ = (XStep * TotalYSteps) + YStep + 1;
 
     //     }
@@ -528,7 +571,7 @@ bool VulkanRenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Rend
 
             _EncoderPool->QueueEncodeOperation(Image);
 
-            // Update The API Status Info With The Current Slice Number
+            // Update The API Result Info With The Current Slice Number
             _VSDAData->CurrentSliceImage_ = (XStep * TotalYSteps) + YStep + 1;
 
         }

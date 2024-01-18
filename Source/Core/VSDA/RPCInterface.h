@@ -130,7 +130,7 @@ public:
     std::string VSDAEMQueueRenderOperation(std::string _JSONRequest);
 
     /**
-     * @brief Checks the status of a given render operation.
+     * @brief Checks the Result of a given render operation.
      * Will return if it's busy or doing other things.
      * 
      * @param _JSONRequest 

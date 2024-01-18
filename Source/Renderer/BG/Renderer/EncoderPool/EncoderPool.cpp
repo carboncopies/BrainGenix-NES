@@ -40,7 +40,7 @@ void EncoderPool::EncoderThreadMainFunction(int _ThreadNumber) {
             double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
             Logger_ ->Log("EncoderPool Thread '" + std::to_string(_ThreadNumber) + "' Encoded Image '" + ImgToProcess->TargetFileName_ + "' In " + std::to_string(Duration_ms) + "ms", 0);
 
-            // Update Image Status
+            // Update Image Result
             ImgToProcess->ImageState_ = IMAGE_PROCESSED;
 
         } else {

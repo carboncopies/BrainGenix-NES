@@ -80,7 +80,7 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, RenderPool_, &StopThreads_));
 
 
-    // Return Status ID
+    // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["SimulationID"] = SimID;
     return ResponseJSON.dump();
@@ -110,7 +110,7 @@ std::string Manager::SimulationReset(std::string _JSONRequest) {
     // ThisSimulation->CurrentTask = SIMULATION_RESET; // request a reset be done
     // ThisSimulation->WorkRequested = true;
 
-    // Return Status ID
+    // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     return ResponseJSON.dump();
@@ -142,7 +142,7 @@ std::string Manager::SimulationRunFor(std::string _JSONRequest) {
     ThisSimulation->CurrentTask = SIMULATION_RUNFOR; // request work be done
     ThisSimulation->WorkRequested = true;
 
-    // Return Status ID
+    // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     return ResponseJSON.dump();
@@ -172,7 +172,7 @@ std::string Manager::SimulationRecordAll(std::string _JSONRequest) {
     }
     ThisSimulation->MaxRecordTime_ms = Util::GetFloat(&RequestJSON, "MaxRecordTime_ms");
 
-    // Return Status ID
+    // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     return ResponseJSON.dump();
@@ -322,7 +322,7 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
     //ThisSimulation->Collection.append(S);
 
 
-    // Return Status ID
+    // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["ShapeID"] = SphereID;
     return ResponseJSON.dump();
@@ -380,7 +380,7 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     //ThisSimulation->Collection.append(S);
 
 
-    // Return Status ID
+    // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["ShapeID"] = ShapeID;
@@ -422,7 +422,7 @@ std::string Manager::BoxCreate(std::string _JSONRequest) {
     //ThisSimulation->Collection.append(S);
 
 
-    // Return Status ID
+    // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["ShapeID"] = ShapeID;
@@ -469,7 +469,7 @@ std::string Manager::BSCreate(std::string _JSONRequest) {
     ThisSimulation->BSCompartments.push_back(C);
 
 
-    // Return Status ID
+    // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["CompartmentID"] = CompartmentID;
@@ -510,7 +510,7 @@ std::string Manager::StapleCreate(std::string _JSONRequest) {
     ThisSimulation->Staples.push_back(C);
 
 
-    // Return Status ID
+    // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["StapleID"] = StapleID;
@@ -555,7 +555,7 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     ThisSimulation->Receptors.push_back(C);
 
 
-    // Return Status ID
+    // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["ReceptorID"] = ReceptorID;
@@ -622,7 +622,7 @@ std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
     }
     ThisSimulation->Neurons.push_back(std::make_shared<BallAndStick::BSNeuron>(C, soma_ptr, axon_ptr));
 
-    // Return Status ID
+    // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["NeuronID"] = NeuronID;
@@ -664,7 +664,7 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
     ThisSimulation->PatchClampDACs.push_back(T);
 
 
-    // Return Status ID
+    // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["PatchClampDACID"] = PatchClampDACID;
@@ -707,7 +707,7 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
     ThisDAC->Timestep_ms = Util::GetFloat(&RequestJSON, "Timestep_ms");
     Util::GetFloatVector(&ThisDAC->DACVoltages_mV, &RequestJSON, "DDACVoltages_mV");
 
-    // Return Status ID
+    // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     return ResponseJSON.dump();
@@ -748,7 +748,7 @@ std::string Manager::PatchClampADCCreate(std::string _JSONRequest) {
     ThisSimulation->PatchClampADCs.push_back(T);
 
 
-    // Return Status ID
+    // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["PatchClampADCID"] = PatchClampADCID;
@@ -791,7 +791,7 @@ std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest) {
     ThisADC->Timestep_ms = Util::GetFloat(&RequestJSON, "Timestep_ms");
     ThisADC->RecordedData_mV.clear(); // clear recorded data as it is now invalid (the timestep is not the same anymore)
 
-    // Return Status ID
+    // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     return ResponseJSON.dump();
