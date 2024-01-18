@@ -308,8 +308,8 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* 
             FilePath += "_Y" + std::to_string(CameraStepSizeY_um * YStep);
             FilePath += ".png";
 
-            // _FileNameArray->push_back(FilePath);
-            // Image->TargetFileName_ = FilePath;
+            _FileNameArray->push_back(FilePath);
+            Image->TargetFileName_ = FilePath;
 
 
             _EncoderPool->QueueEncodeOperation(Image);
