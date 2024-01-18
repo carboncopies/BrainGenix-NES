@@ -88,6 +88,18 @@ struct Image {
     Image(int _Width, int _Height, int _Channels);
 
 
+    /**
+     * @brief Set the pixel at the given pocation to the given RGB value (0-255)
+     * 
+     * @param _X X position
+     * @param _Y Y position
+     * @param _R value from 0-255
+     * @param _G value from 0-255
+     * @param _B value from 0-255
+     */
+    void SetPixel(int _X, int _Y, int _R, int _G, int _B);
+
+
 };
 
 }; // Close Namespace Logger
