@@ -22,7 +22,7 @@ Image::Image(int _Width, int _Height, int _Channels) {
 
 void Image::SetPixel(int _X, int _Y, int _R, int _G, int _B) {
 
-    size_t Position = (_X * ((Width_px) * _Y) * NumChannels_);
+    size_t Position = ((_X  + ((Width_px) * _Y)) * NumChannels_);
 
     Data_.get()[Position + 0] = (unsigned char)_R;
     Data_.get()[Position + 1] = (unsigned char)_G;
