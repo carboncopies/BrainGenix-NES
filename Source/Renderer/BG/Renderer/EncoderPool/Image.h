@@ -63,6 +63,8 @@ struct Image {
 
     int         Width_px;        /**Width of this image in pixels*/
     int         Height_px;       /**Height of this image in pixels*/
+    int         TargetWidth_px;  /**Specify the target width of the image in pixels*/
+    int         TargetHeight_px; /**Specify the target height of the image in pixels*/
     int         NumChannels_;    /**Number of channels for this image*/
     std::string TargetFileName_; /**Filename that this image is to be written to*/
 

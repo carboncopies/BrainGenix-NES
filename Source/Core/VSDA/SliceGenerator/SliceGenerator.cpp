@@ -292,8 +292,8 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* 
 
             // Calculate Desired Image Size
             // We will just set one pixel and if needing many pixels per voxel, upsample the image to fit accordingly
-            int TargetImageWidth_px = 512;//ceil(_VSDAData->Params_.ImageWidth_px / _VSDAData->Params_.NumPixelsPerVoxel_px);
-            int TargetImageHeight_px = 512;//ceil(_VSDAData->Params_.ImageHeight_px / _VSDAData->Params_.NumPixelsPerVoxel_px);
+            int TargetImageWidth_px = ceil(_VSDAData->Params_.ImageWidth_px / _VSDAData->Params_.NumPixelsPerVoxel_px);
+            int TargetImageHeight_px = ceil(_VSDAData->Params_.ImageHeight_px / _VSDAData->Params_.NumPixelsPerVoxel_px);
             int NumChannels = 3;
             float CameraStepSizeX_um = TargetImageWidth_px * _VSDAData->Params_.VoxelResolution_um;
             float CameraStepSizeY_um = TargetImageHeight_px * _VSDAData->Params_.VoxelResolution_um;
@@ -302,6 +302,8 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* 
             // Next, setup the image and get it ready to be drawn to
             _VSDAData->Images_.push_back(std::make_unique<BG::NES::Renderer::Image>(TargetImageWidth_px, TargetImageHeight_px, NumChannels));
             BG::NES::Renderer::Image* Image = _VSDAData->Images_[_VSDAData->Images_.size() - 1].get();
+            Image->TargetHeight_px = _VSDAData->Params_.ImageWidth_px;
+            Image->TargetWidth_px = _VSDAData->Params_.ImageHeight_px;
 
             std::string FilePath = "Renders/" + _FilePrefix + "_Slice" + std::to_string(SliceNumber);
             FilePath += "_X" + std::to_string(CameraStepSizeX_um * XStep);
