@@ -48,7 +48,7 @@ def main():
     VSDAEMInstance.QueueRenderOperation()
 
     VSDAEMInstance.WaitForRender()
-    VSDAEMInstance.SaveImageStack(".Test0")
+    VSDAEMInstance.ThreadedSaveImageStack(".Test0", 5)
 
 
 def GetTime():
