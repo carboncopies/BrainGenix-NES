@@ -1,5 +1,6 @@
 #!/bin/python3
 
+import Test0
 import Test1
 import Test2
 import Test3
@@ -14,6 +15,7 @@ def FormatResult(_Time:float, _Name:str):
 
 def ExecuteRenderBenchmarks():
     TableResults:str = "Render Benchmarks\n|Test | Resulting Time|\n|--------------|--------------|\n"
+    TableResults += FormatResult(Test0.GetTime(), "Test 0")    
     TableResults += FormatResult(Test1.GetTime(), "Test 1")    
     TableResults += FormatResult(Test2.GetTime(), "Test 2")    
     TableResults += FormatResult(Test3.GetTime(), "Test 3")    
