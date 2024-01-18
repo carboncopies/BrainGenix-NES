@@ -131,6 +131,19 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
  * @brief Render the given slice from an array to the renderer's screen
  * 
  * @param _Logger 
+ * @param _VSDAData 
+ * @param _FileNameArray
+ * @param _FilePrefix
+ * @param _SliceNumber 
+ * @return true 
+ * @return false 
+ */
+bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber, BG::NES::Renderer::EncoderPool* _EncoderPool);
+
+/**
+ * @brief Render the given slice from an array to the renderer's screen. Uses vulkan to do so.
+ * 
+ * @param _Logger 
  * @param _Renderer
  * @param _VSDAData 
  * @param _FileNameArray
@@ -139,7 +152,8 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
  * @return true 
  * @return false 
  */
-bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VSDAData* _VSDAData, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber, BG::NES::Renderer::EncoderPool* _EncoderPool);
+bool VulkanRenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VSDAData* _VSDAData, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber, BG::NES::Renderer::EncoderPool* _EncoderPool);
+
 
 
 }; // Close Namespace Logger

@@ -427,7 +427,7 @@ bool Manager::Headless_SetupCommandGraph() {
     RenderData_->CommandGraphs_.push_back(commandGraph);
     if (RenderData_->colorBufferCapture) {
         commandGraph->addChild(RenderData_->colorBufferCapture);
-    }
+}
     if (RenderData_->depthBufferCapture) {
         commandGraph->addChild(RenderData_->depthBufferCapture);
     }
