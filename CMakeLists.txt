@@ -19,7 +19,7 @@ set(CMAKE_TOOLCHAIN_FILE ${LIB_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE
 # Define Project
 project(
 	"BrainGenix-NES"
-	VERSION "2024.01.14"
+	VERSION "2024.01.17"
 	LANGUAGES CXX
 )
 
