@@ -115,7 +115,7 @@ def main():
     EMConfig.SliceThickness_nm = 100
     EMConfig.ScanRegionOverlap_percent = 0
     EMConfig.MicroscopeFOV_deg = 50
-    EMConfig.NumPixelsPerVoxel_px = 32
+    EMConfig.NumPixelsPerVoxel_px = 4
     VSDAEMInstance = MySim.AddVSDAEM(EMConfig)
 
     VSDAEMInstance.DefineScanRegion([-11,-11,-1], [45,45,15])
