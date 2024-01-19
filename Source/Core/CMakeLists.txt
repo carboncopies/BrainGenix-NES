@@ -8,8 +8,6 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/Config/ConfigurationManager.cpp
   ${SRC_DIR}/Core/Config/ConfigurationManager.h
-  # ${SRC_DIR}/Core/Config/ArgumentParser.cpp
-  # ${SRC_DIR}/Core/Config/ArgumentParser.h
   ${SRC_DIR}/Core/Config/ConfigFileParser.cpp
   ${SRC_DIR}/Core/Config/ConfigFileParser.h
   ${SRC_DIR}/Core/Config/Config.cpp
@@ -112,6 +110,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/UpdaterManager.h
   ${SRC_DIR}/Core/VSDA/RenderPool.cpp
   ${SRC_DIR}/Core/VSDA/RenderPool.h
+  ${SRC_DIR}/Core/VSDA/RPCRoutes/EM.cpp
+  ${SRC_DIR}/Core/VSDA/RPCRoutes/EM.h
   ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.cpp
   ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.h
   ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/MicroscopeParameters.cpp

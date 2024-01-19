@@ -55,63 +55,6 @@ namespace Simulator {
 
 
 
-// Target Process: Simulation -> Voxels -> Meshes -> Images
-// Firstly, we take a simulation pointer, build a voxel array from it
-// Then, we slice the voxel array one slice at a time, and build a mesh from it
-// Then the mesh is used to generate an image
-
-/**
- * @brief Helper function for VSDA subsystem.
- * Will initialize the VSDA struct within the simulation struct - for further use later.
- * 
- * @param _Logger Pointer to logging system instance
- * @param _Sim Pointer to simulation struct that we can modify with this state
- * 
- * @return true On Success
- * @return false On Error
- */
-bool VSDA_EM_Initialize(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim);
-
-/**
- * @brief Setup the virtual microscope on a given simulation with the given parameters.
- * 
- * @param _Logger Pointer to logging system instance.
- * @param _Sim Pointer to simulation instance which we will modify with our new data.
- * @param _Params Microscope parameter struct used to update the VSDAData_ struct in the sim.
- * 
- * @return true On Success
- * @return false On Error
- */
-bool VSDA_EM_SetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters _Params);
-
-/**
- * @brief Defines the region that we'd like to scan with the current render operation.
- * Currently, we only support rectangular regions defined by two points in space. That's it for now unfortunately.
- * 
- * @param _Logger Pointer to logging system interface.
- * @param _Sim Pointer to simulation instance to be configured by this VSDA operation.
- * @param _ScanRegion Instance of the BoundingBox struct with the needed values populated.
- * @param _RegionID Pointer to int, which will contain the scan region id returned, if any. Check bool Result to indicate if this will be set or not.
- * 
- * @return true On Success
- * @return false On Error
- */
-bool VSDA_EM_DefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, ScanRegion _ScanRegion, int* _RegionID);
-
-/**
- * @brief Sets the enum flag in the simulation that a render operation has been requested.
- * Probably should also check to ensure that all needed data has been provided before queuing this operation but we can add that later.
- * 
- * @param _Logger Pointer to logging system interface.
- * @param _Sim Pointer to simulation instance to be configured by this instance.
- * @param _RegionID Valid index of region to be rendered in this call.
- * 
- * @return true On Success
- * @return false On Error
- */
-bool VSDA_EM_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, int _RegionID);
-
-
 
 /**
  * @brief Create a Voxel Array From Simulation object
