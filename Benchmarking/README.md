@@ -7,8 +7,12 @@ The test machine has the following specs:
  - GPU: 1X NVIDIA GEFORCE RTX 3080
 
 Below is a table for the times of each test, and it's result.  
-| Test | Resulting Time |
-
+|Test | Resulting Time|  
+|--------------|--------------|  
+|Test 0|537.0604424476624|  
+|Test 1|42.07401394844055|  
+|Test 2|165.1279900074005|  
+|Test 3|383.94018626213074|  
 
 Well, it never finished running since I had to move on, but the result is slow. I'll work on improving this during the week.
 ![Slow.png](Slow.png)
