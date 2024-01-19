@@ -1,25 +1,36 @@
-#include <BG/Renderer/EncoderPool/EncoderPool.h>
+//=================================//
+// This file is part of BrainGenix //
+//=================================//
 
+
+// Standard Libraries (BG convention: use <> instead of "")
+#include <vector>
 #include <chrono>
 
-// #define STB_IMAGE_IMPLEMENTATION
+// Third-Party Libraries (BG convention: use <> instead of "")
+#define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
-// #define STB_IMAGE_WRITE_IMPLEMENTATION
+#define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <stb_image_write.h>
-// #define STB_IMAGE_RESIZE_IMPLEMENTATION
+#define STB_IMAGE_RESIZE_IMPLEMENTATION
 #include <stb_image_resize.h>
+
+
+// Internal Libraries (BG convention: use <> instead of "")
+#include <VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
+
 
 
 namespace BG {
 namespace NES {
-namespace Renderer {
+namespace Simulator {
 
 
 
 // Thread Main Function
-void EncoderPool::EncoderThreadMainFunction(int _ThreadNumber) {
+void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
-    Logger_->Log("Started EncoderPool Thread " + std::to_string(_ThreadNumber), 0);
+    Logger_->Log("Started ImageProcessorPool Thread " + std::to_string(_ThreadNumber), 0);
 
 
     // Run until thread exit is requested - that is, this is set to false
@@ -50,7 +61,7 @@ void EncoderPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
             // Measure Time
             double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
-            Logger_ ->Log("EncoderPool Thread '" + std::to_string(_ThreadNumber) + "' Processed Image '" + ImgToProcess->TargetFileName_ + "' In " + std::to_string(Duration_ms) + "ms", 0);
+            Logger_ ->Log("ImageProcessorPool Thread '" + std::to_string(_ThreadNumber) + "' Processed Image '" + ImgToProcess->TargetFileName_ + "' In " + std::to_string(Duration_ms) + "ms", 0);
 
             // Update Image Result
             ImgToProcess->ImageState_ = IMAGE_PROCESSED;
@@ -65,7 +76,7 @@ void EncoderPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
 
 // Constructor, Destructor
-EncoderPool::EncoderPool(BG::Common::Logger::LoggingSystem* _Logger, int _NumThreads) {
+ImageProcessorPool::ImageProcessorPool(BG::Common::Logger::LoggingSystem* _Logger, int _NumThreads) {
     assert(_Logger != nullptr);
 
 
@@ -75,23 +86,23 @@ EncoderPool::EncoderPool(BG::Common::Logger::LoggingSystem* _Logger, int _NumThr
 
 
     // Create Renderer Instances
-    Logger_->Log("Creating EncoderPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
+    Logger_->Log("Creating ImageProcessorPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
     for (unsigned int i = 0; i < _NumThreads; i++) {
-        Logger_->Log("Starting EncoderPool Thread " + std::to_string(i), 1);
-        EncoderThreads_.push_back(std::thread(&EncoderPool::EncoderThreadMainFunction, this, i));
+        Logger_->Log("Starting ImageProcessorPool Thread " + std::to_string(i), 1);
+        EncoderThreads_.push_back(std::thread(&ImageProcessorPool::EncoderThreadMainFunction, this, i));
     }
 }
 
-EncoderPool::~EncoderPool() {
+ImageProcessorPool::~ImageProcessorPool() {
 
     // Send Stop Signal To Threads
-    Logger_->Log("Stopping EncoderPool Threads", 2);
+    Logger_->Log("Stopping ImageProcessorPool Threads", 2);
     ThreadControlFlag_ = false;
 
     // Join All Threads
-    Logger_->Log("Joining EncoderPool Threads", 1);
+    Logger_->Log("Joining ImageProcessorPool Threads", 1);
     for (unsigned int i = 0; i < EncoderThreads_.size(); i++) {
-        Logger_->Log("Joining EncoderPool Thread " + std::to_string(i), 0);
+        Logger_->Log("Joining ImageProcessorPool Thread " + std::to_string(i), 0);
         EncoderThreads_[i].join();
     }
 
@@ -99,7 +110,7 @@ EncoderPool::~EncoderPool() {
 
 
 // Queue Access Functions
-void EncoderPool::EnqueueImage(Image* _Img) {
+void ImageProcessorPool::EnqueueImage(Image* _Img) {
 
     // Firstly, Ensure Nobody Else Is Using The Queue
     std::lock_guard<std::mutex> LockQueue(QueueMutex_);
@@ -107,7 +118,7 @@ void EncoderPool::EnqueueImage(Image* _Img) {
     Queue_.emplace(_Img);
 }
 
-int EncoderPool::GetQueueSize() {
+int ImageProcessorPool::GetQueueSize() {
 
     // Firstly, Ensure Nobody Else Is Using The Queue
     std::lock_guard<std::mutex> LockQueue(QueueMutex_);
@@ -117,7 +128,7 @@ int EncoderPool::GetQueueSize() {
     return QueueSize;
 }
 
-bool EncoderPool::DequeueImage(Image** _ImgPtr) {
+bool ImageProcessorPool::DequeueImage(Image** _ImgPtr) {
 
     // Firstly, Ensure Nobody Else Is Using The Queue
     std::lock_guard<std::mutex> LockQueue(QueueMutex_);
@@ -135,7 +146,7 @@ bool EncoderPool::DequeueImage(Image** _ImgPtr) {
 
 
 // Public Enqueue Function
-void EncoderPool::QueueEncodeOperation(Image* _Img) {
+void ImageProcessorPool::QueueEncodeOperation(Image* _Img) {
     EnqueueImage(_Img);
 }
 
