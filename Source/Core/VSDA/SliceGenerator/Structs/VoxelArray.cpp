@@ -88,6 +88,11 @@ uint64_t VoxelArray::GetIndex(int _X, int _Y, int _Z) {
 
 VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
 
+    // Check Bounds
+    if ((_X < 0 || _X >= SizeX_) || (_Y < 0 || _Y >= SizeY_) || (_Z < 0 || _Z >= SizeZ_)) {
+        return OUT_OF_RANGE;
+    }
+
     // Hope this works (please work dear god don't segfault)
     uint64_t Index = GetIndex(_X, _Y, _Z);
     if (Index < DataMaxLength_) {
@@ -117,11 +122,8 @@ void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Val
 
     // Check Bounds (so if it's out of bounds, we print a warning and do nothing!)
     if ((XIndex < 0 || XIndex >= SizeX_) || (YIndex < 0 || YIndex >= SizeY_) || (ZIndex < 0 || ZIndex >= SizeZ_)) {
-        //std::cout<<"Warning: Voxel at "<<_X<<" "<<_Y<<" "<<_Z<<" Is Out Of Bounds!\n";
         return;
     }
-
-    //std::cout<<"Voxel at "<<XIndex<<" "<<YIndex<<" "<<ZIndex<<"\n";
 
     SetVoxel(XIndex, YIndex, ZIndex, _Value);
 
