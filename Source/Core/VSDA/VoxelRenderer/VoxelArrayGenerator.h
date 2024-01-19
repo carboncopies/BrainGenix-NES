@@ -5,7 +5,7 @@
 /*
     Description: This file defines the interface for the slice generator, which creates voxel representations of a given simulation.
     Additional Notes: None
-    Date Created: 2023-11-29
+    Date Created: 2024-01-19
     Author(s): Thomas Liao, Randal Koene
 
 
@@ -31,7 +31,6 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <filesystem>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -41,10 +40,6 @@
 #include <VSDA/VoxelRenderer/Structs/MicroscopeParameters.h>
 #include <VSDA/VoxelRenderer/Structs/VoxelArray.h>
 
-#include <BG/Renderer/Interface.h>
-#include <BG/Renderer/SceneGraph/Primitive/Cube.h>
-#include <BG/Renderer/EncoderPool/Image.h>
-#include <BG/Renderer/EncoderPool/EncoderPool.h>
 
 #include <BG/Common/Logger/Logger.h>
 
@@ -68,19 +63,6 @@ namespace Simulator {
  * @return false On failure (eg: out of memory, out of bounds, etc.)
  */
 bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array);
-
-/**
- * @brief Render the given slice from an array to the renderer's screen
- * 
- * @param _Logger 
- * @param _VSDAData 
- * @param _FileNameArray
- * @param _FilePrefix
- * @param _SliceNumber 
- * @return true 
- * @return false 
- */
-bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber, BG::NES::Renderer::EncoderPool* _EncoderPool);
 
 
 

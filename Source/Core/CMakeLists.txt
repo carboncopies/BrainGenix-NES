@@ -112,8 +112,10 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/RenderPool.h
   ${SRC_DIR}/Core/VSDA/RPCRoutes/EM.cpp
   ${SRC_DIR}/Core/VSDA/RPCRoutes/EM.h
-  ${SRC_DIR}/Core/VSDA/VoxelRenderer/SliceGenerator.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelRenderer/SliceGenerator.h
+  ${SRC_DIR}/Core/VSDA/VoxelRenderer/VoxelArrayGenerator.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelRenderer/VoxelArrayGenerator.h
+  ${SRC_DIR}/Core/VSDA/VoxelRenderer/VoxelArrayRenderer.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelRenderer/VoxelArrayRenderer.h
   ${SRC_DIR}/Core/VSDA/VoxelRenderer/LegacySliceGenerator.cpp
   ${SRC_DIR}/Core/VSDA/VoxelRenderer/LegacySliceGenerator.h
   ${SRC_DIR}/Core/VSDA/VoxelRenderer/Structs/MicroscopeParameters.cpp
