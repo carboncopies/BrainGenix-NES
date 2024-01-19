@@ -88,8 +88,12 @@ uint64_t VoxelArray::GetIndex(int _X, int _Y, int _Z) {
 
 VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
 
-    // Hope this works
-    return Data_.get()[GetIndex(_X, _Y, _Z)];
+    // Hope this works (please work dear god don't segfault)
+    uint64_t Index = GetIndex(_X, _Y, _Z);
+    if (Index < DataMaxLength_) {
+        return Data_.get()[Index];
+    }
+    return OUT_OF_RANGE;
 
 }
 

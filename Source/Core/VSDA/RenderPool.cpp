@@ -56,7 +56,7 @@ RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowe
 
 
     // Create Encoderpool Instance
-    int NumEncoderThreads = 24;
+    int NumEncoderThreads = std::thread::hardware_concurrency();
     EncoderPool_ = std::make_unique<Renderer::EncoderPool>(Logger_, NumEncoderThreads);
 
 

@@ -302,7 +302,7 @@ std::string RPCInterface::VSDAEMGetImage(std::string _JSONRequest) {
         ImageStream.close();
 
     } else {
-        Logger_->Log("An Invalid ImageHandle Was Provided", 6);
+        Logger_->Log("An Invalid ImageHandle Was Provided " + SafeHandle, 6);
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 2; // error
         return ResponseJSON.dump();

@@ -55,9 +55,10 @@ namespace Simulator {
 typedef uint8_t VoxelType;
 
 enum VoxelState {
-    EMPTY=0,
-    FILLED=1,
-    BORDER=2
+    EMPTY,
+    OUT_OF_RANGE,
+    FILLED,
+    BORDER
 };
 
 
