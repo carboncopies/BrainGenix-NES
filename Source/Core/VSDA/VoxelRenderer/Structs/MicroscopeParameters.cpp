@@ -1,1 +1,0 @@
-#include <VSDA/VoxelRenderer/Structs/MicroscopeParameters.h>

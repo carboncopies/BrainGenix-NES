@@ -10,7 +10,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <VSDA/VoxelRenderer/VoxelArrayRenderer.h>
+#include <VSDA/VoxelSubsystem/VoxelArrayRenderer.h>
 
 
 

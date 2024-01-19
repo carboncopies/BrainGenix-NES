@@ -43,8 +43,8 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
-#include <VSDA/VoxelRenderer/VoxelArrayGenerator.h>
-#include <VSDA/VoxelRenderer/VoxelArrayRenderer.h>
+#include <VSDA/VoxelSubsystem/VoxelArrayGenerator.h>
+#include <VSDA/VoxelSubsystem/VoxelArrayRenderer.h>
 
 
 #include <BG/Renderer/Interface.h>

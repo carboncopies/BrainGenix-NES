@@ -39,9 +39,9 @@
 
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <VSDA/VoxelRenderer/Structs/VoxelArray.h>
-#include <VSDA/VoxelRenderer/Structs/ScanRegion.h>
-#include <VSDA/VoxelRenderer/Structs/MicroscopeParameters.h>
+#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
+#include <VSDA/VoxelSubsystem/Structs/ScanRegion.h>
+#include <VSDA/VoxelSubsystem/Structs/MicroscopeParameters.h>
 
 #include <BG/Renderer/EncoderPool/Image.h>
 

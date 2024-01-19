@@ -37,8 +37,8 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
-#include <VSDA/VoxelRenderer/Structs/MicroscopeParameters.h>
-#include <VSDA/VoxelRenderer/Structs/VoxelArray.h>
+#include <VSDA/VoxelSubsystem/Structs/MicroscopeParameters.h>
+#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
 
 #include <BG/Common/Logger/Logger.h>
 

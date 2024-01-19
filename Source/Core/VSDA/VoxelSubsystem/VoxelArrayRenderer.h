@@ -31,15 +31,14 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <filesystem>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
-#include <VSDA/VoxelRenderer/Structs/MicroscopeParameters.h>
-#include <VSDA/VoxelRenderer/Structs/VoxelArray.h>
+#include <VSDA/VoxelSubsystem/Structs/MicroscopeParameters.h>
+#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
 
 #include <BG/Renderer/Interface.h>
 #include <BG/Renderer/SceneGraph/Primitive/Cube.h>
@@ -57,10 +56,22 @@ namespace Simulator {
 
 
 /**
- * @brief Render the given slice from an array to the renderer's screen. Uses vulkan to do so.
+ * @brief Create a Voxel Array From Simulation object
+ * Generates a voxel array at pointer _Array, within the region defined in _Region, from the simulation _Sim.
+ * 
+ * @param _Logger Pointer to logging system instance
+ * @param _Sim Pointer to simulation that data is to be generated from
+ * @param _Region Pointer to region in that simulation where we'll be generating an array
+ * @param _Array Pointer to array to be populated.
+ * @return true On success
+ * @return false On failure (eg: out of memory, out of bounds, etc.)
+ */
+bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array);
+
+/**
+ * @brief Render the given slice from an array to the renderer's screen
  * 
  * @param _Logger 
- * @param _Renderer
  * @param _VSDAData 
  * @param _FileNameArray
  * @param _FilePrefix
@@ -68,7 +79,8 @@ namespace Simulator {
  * @return true 
  * @return false 
  */
-bool VulkanRenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VSDAData* _VSDAData, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber, BG::NES::Renderer::EncoderPool* _EncoderPool);
+bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber, BG::NES::Renderer::EncoderPool* _EncoderPool);
+
 
 
 
