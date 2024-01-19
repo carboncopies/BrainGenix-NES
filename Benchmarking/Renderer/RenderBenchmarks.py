@@ -19,7 +19,7 @@ def ExecuteRenderBenchmarks():
     TableResults += FormatResult(Test1.GetTime(), "Test 1")    
     TableResults += FormatResult(Test2.GetTime(), "Test 2")    
     TableResults += FormatResult(Test3.GetTime(), "Test 3")    
-    # TableResults += FormatResult(Test4.GetTime(), "Test 4")    
+    TableResults += FormatResult(Test4.GetTime(), "Test 4")    
     return TableResults
 
 
