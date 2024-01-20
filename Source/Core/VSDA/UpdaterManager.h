@@ -45,11 +45,11 @@
 
 #include <VSDA/VoxelSubsystem/VoxelArrayGenerator.h>
 #include <VSDA/VoxelSubsystem/VoxelArrayRenderer.h>
+#include <VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
 
 
 #include <BG/Renderer/Interface.h>
 #include <BG/Renderer/SceneGraph/Primitive/Cube.h>
-#include <BG/Renderer/EncoderPool/EncoderPool.h>
 
 #include <BG/Common/Logger/Logger.h>
 #include <Util/JSONHelpers.h>
@@ -70,7 +70,7 @@ namespace VSDA {
  * @return true Success
  * @return false Fail
  */
-bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, BG::NES::Renderer::Interface* _Renderer, BG::NES::Renderer::EncoderPool* _EncoderPool);
+bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, BG::NES::Renderer::Interface* _Renderer, ImageProcessorPool* _ImageProcessorPool);
 
 
 

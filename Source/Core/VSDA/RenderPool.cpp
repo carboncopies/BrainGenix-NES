@@ -32,7 +32,7 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
 
             // Okay, we got work, now render this simulation
             Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering Simulation " + std::to_string(SimToProcess->ID), 2);
-            VSDA::ExecuteRenderOperations(Logger_, SimToProcess, &Renderer, EncoderPool_.get());
+            VSDA::ExecuteRenderOperations(Logger_, SimToProcess, &Renderer, ImageProcessorPool_.get());
             SimToProcess->IsRendering = false;
 
         } else {
@@ -55,9 +55,9 @@ RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowe
     Windowed_ = _Windowed;
 
 
-    // Create Encoderpool Instance
+    // Create ImageProcessorPool Instance
     int NumEncoderThreads = std::thread::hardware_concurrency();
-    EncoderPool_ = std::make_unique<Renderer::EncoderPool>(Logger_, NumEncoderThreads);
+    ImageProcessorPool_ = std::make_unique<ImageProcessorPool>(Logger_, NumEncoderThreads);
 
 
     // Create Renderer Instances

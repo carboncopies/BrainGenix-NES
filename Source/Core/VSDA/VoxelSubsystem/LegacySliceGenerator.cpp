@@ -154,20 +154,20 @@ bool VulkanRenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Rend
             _Renderer->SetCameraFOV(FOV_deg);
 
             // Finally, actually render the frame, and save it to disk
-            _VSDAData->Images_.push_back(std::make_unique<BG::NES::Renderer::Image>());
-            BG::NES::Renderer::Image* Image = _VSDAData->Images_[_VSDAData->Images_.size() - 1].get();
+            // _VSDAData->Images_.push_back(std::make_unique<BG::NES::Renderer::Image>());
+            // BG::NES::Renderer::Image* Image = _VSDAData->Images_[_VSDAData->Images_.size() - 1].get();
 
             std::string FilePath = "Renders/" + _FilePrefix + "_Slice" + std::to_string(SliceNumber);
             FilePath += "_X" + std::to_string(CameraX);
             FilePath += "_Y" + std::to_string(CameraY);
             FilePath += ".png";
 
-            _FileNameArray->push_back(FilePath);
-            Image->TargetFileName_ = FilePath;
+            // _FileNameArray->push_back(FilePath);
+            // Image->TargetFileName_ = FilePath;
 
-            _Renderer->RenderImage(Image);
+            // _Renderer->RenderImage(Image);
 
-            _EncoderPool->QueueEncodeOperation(Image);
+            // _EncoderPool->QueueEncodeOperation(Image);
 
             // Update The API Result Info With The Current Slice Number
             _VSDAData->CurrentSliceImage_ = (XStep * TotalYSteps) + YStep + 1;

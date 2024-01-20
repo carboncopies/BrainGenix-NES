@@ -4,7 +4,6 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <vector>
 #include <filesystem>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -12,6 +11,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/VoxelSubsystem/VoxelArrayRenderer.h>
 
+#include <VSDA/VoxelSubsystem/ImageProcessorPool/Image.h>
 
 
 
@@ -23,7 +23,7 @@ namespace Simulator {
 
 
 
-bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber, BG::NES::Renderer::EncoderPool* _EncoderPool) {
+std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::string _FilePrefix, int SliceNumber, ImageProcessorPool* _ImageProcessorPool) {
     assert(_VSDAData != nullptr);
     assert(_Logger != nullptr);
 
@@ -31,21 +31,15 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* 
     // Get Params and Array From VSDAData
     MicroscopeParameters* Params = &_VSDAData->Params_;
     VoxelArray* Array = _VSDAData->Array_.get();
-
+    float VoxelSize = Array->GetResolution();
+    BoundingBox VoxelBB = Array->GetBoundingBox();
 
     _Logger->Log(std::string("Rendering Slice '") + std::to_string(SliceNumber) + "'", 1);
 
 
-    // Setup Voxel Info
-    float VoxelSize = Array->GetResolution();
-    BoundingBox VoxelBB = Array->GetBoundingBox();
-    
-
-
+    std::vector<std::string> Filenames;
 
     
-    // TODO: Add proper total x steps, total y steps
-
     // Calculate Desired Image Size
     // In order for us to deal with multiple different pixel/voxel setting, we create an image of start size where one pixel = 1 voxel
     // then later on, we resample it to be the right size (for the target image)
@@ -75,8 +69,8 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* 
             FilePath += "_X" + std::to_string(CameraStepSizeX_um * XStep) + "_Y" + std::to_string(CameraStepSizeY_um * YStep) + ".png";
 
             // Next, setup the image and get it ready to be drawn to
-            _VSDAData->Images_.push_back(std::make_unique<BG::NES::Renderer::Image>(VoxelsPerStepX, VoxelsPerStepY, NumChannels));
-            BG::NES::Renderer::Image* Image = _VSDAData->Images_[_VSDAData->Images_.size() - 1].get();
+            _VSDAData->Images_.push_back(std::make_unique<Image>(VoxelsPerStepX, VoxelsPerStepY, NumChannels));
+            Image* Image = _VSDAData->Images_[_VSDAData->Images_.size() - 1].get();
             Image->TargetHeight_px = _VSDAData->Params_.ImageWidth_px;
             Image->TargetWidth_px = _VSDAData->Params_.ImageHeight_px;
             Image->TargetFileName_ = FilePath;
@@ -106,8 +100,8 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* 
                 }
             }
 
-            _EncoderPool->QueueEncodeOperation(Image);
-            _FileNameArray->push_back(FilePath);
+            _ImageProcessorPool->QueueEncodeOperation(Image);
+            Filenames.push_back(FilePath);
 
             // Update The API Result Info With The Current Slice Number
             _VSDAData->CurrentSliceImage_ = (XStep * TotalYSteps) + YStep + 1;
@@ -117,7 +111,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* 
 
 
 
-    return true;
+    return Filenames;
 }
 
 
