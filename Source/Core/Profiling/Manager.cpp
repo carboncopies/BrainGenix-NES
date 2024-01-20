@@ -14,14 +14,14 @@
 #include <Simulator/Manager.h>
 #include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/Structs/Simulation.h>
-
+#include <Simulator/EngineController.h>
 
 namespace BG {
 namespace NES {
 namespace Profiling {
 
 
-int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, Simulator::Manager* _SimManager, API::Manager* _RPCManager) {
+int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, Simulator::Manager* _SimManager, Simulator::VSDA::RenderPool* _RenderPool, API::Manager* _RPCManager) {
     assert(_Logger != nullptr);
     assert(_Config != nullptr);
 
@@ -41,8 +41,13 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         Sim->ID = SimID;
         Sim->CurrentTask = Simulator::SIMULATION_NONE;
 
+        // Start Thread
+        std::atomic_bool StopThreads = false;
+        std::thread SimThread(&Simulator::SimulationEngineThread, _Logger, Sim, _RenderPool, &StopThreads);
+
+
         // Create 1k spheres
-        for (unsigned int i = 0; i < 1000; i++) {
+        for (unsigned int i = 0; i < 10000; i++) {
 
             std::string Name = "Sphere " + std::to_string(i);
             float Radius_um = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/5.));
@@ -69,7 +74,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             C.ID  = ThisSimulation->BSCompartments.size();
             ThisSimulation->BSCompartments.push_back(C);
 
-            _Logger->Log("Created Sphere" + std::to_string(i), 3);
+            // _Logger->Log("Created Sphere " + std::to_string(i), 3);
 
 
         }

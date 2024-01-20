@@ -27,7 +27,7 @@
 
 #include <Config/Config.h>
 #include <BG/Common/Logger/Logger.h>
-
+#include <VSDA/RenderPool.h>
 
 namespace BG {
 namespace NES {
@@ -43,7 +43,7 @@ namespace Profiling {
  * @param _SimManager 
  * @param _RPCManager 
  */
-int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, Simulator::Manager* _SimManager, API::Manager* _RPCManager);
+int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, Simulator::Manager* _SimManager, Simulator::VSDA::RenderPool* _RenderPool, API::Manager* _RPCManager);
 
 
 }; // Close Namespace Profiling
