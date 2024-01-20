@@ -43,7 +43,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Geometries/Geometry.h>
 
-#include <VSDA/SliceGenerator/Structs/ScanRegion.h>
+#include <VSDA/VoxelSubsystem/Structs/ScanRegion.h>
 
 
 
@@ -55,9 +55,10 @@ namespace Simulator {
 typedef uint8_t VoxelType;
 
 enum VoxelState {
-    EMPTY=0,
-    FILLED=1,
-    BORDER=2
+    EMPTY,
+    OUT_OF_RANGE,
+    FILLED,
+    BORDER
 };
 
 

@@ -1,9 +1,19 @@
-#include <BG/Renderer/EncoderPool/Image.h>
+//=================================//
+// This file is part of BrainGenix //
+//=================================//
+
+
+// Standard Libraries (BG convention: use <> instead of "")
+
+// Third-Party Libraries (BG convention: use <> instead of "")
+
+// Internal Libraries (BG convention: use <> instead of "")
+#include <VSDA/VoxelSubsystem/ImageProcessorPool/Image.h>
 
 
 namespace BG {
 namespace NES {
-namespace Renderer {
+namespace Simulator {
 
 
 Image::Image() {

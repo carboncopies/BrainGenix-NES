@@ -38,7 +38,7 @@
 #include <Simulator/Structs/Staple.h>
 #include <BG/Common/Logger/Logger.h>
 
-#include <VSDA/SliceGenerator/Structs/VSDAData.h>
+#include <VSDA/VoxelSubsystem/Structs/VSDAData.h>
 
 
 //! The value of tMax_ms at which recording will be done forever.

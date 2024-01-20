@@ -1,4 +1,4 @@
-#include <VSDA/SliceGenerator/Structs/ScanRegion.h>
+#include <VSDA/VoxelSubsystem/Structs/ScanRegion.h>
 
 
 

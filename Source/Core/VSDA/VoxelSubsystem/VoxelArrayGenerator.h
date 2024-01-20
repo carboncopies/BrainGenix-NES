@@ -3,13 +3,13 @@
 //=================================//
 
 /*
-    Description: This file defines the interface which connects the NES routes for VSDA to the API.
+    Description: This file defines the interface for the slice generator, which creates voxel representations of a given simulation.
     Additional Notes: None
-    Date Created: 2023-12-02
-    Author(s): Thomas Liao
+    Date Created: 2024-01-19
+    Author(s): Thomas Liao, Randal Koene
 
 
-    Copyright (C) 2023  Thomas Liao
+    Copyright (C) 2023  Thomas Liao, Randal Koene
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -31,49 +31,42 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <vector>
-#include <memory>
-#include <iostream>
-#include <assert.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <nlohmann/json.hpp>
-
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
-#include <VSDA/SliceGenerator/SliceGenerator.h>
+#include <VSDA/VoxelSubsystem/Structs/MicroscopeParameters.h>
+#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
 
-#include <BG/Renderer/Interface.h>
-#include <BG/Renderer/SceneGraph/Primitive/Cube.h>
-#include <BG/Renderer/EncoderPool/EncoderPool.h>
 
 #include <BG/Common/Logger/Logger.h>
-#include <Util/JSONHelpers.h>
-
-#include <RPC/Manager.h>
-
 
 
 namespace BG {
 namespace NES {
 namespace Simulator {
-namespace VSDA {
+
+
 
 
 /**
- * @brief Enumerates all simulations and checks for a render operation.
+ * @brief Create a Voxel Array From Simulation object
+ * Generates a voxel array at pointer _Array, within the region defined in _Region, from the simulation _Sim.
  * 
- * @return true Success
- * @return false Fail
+ * @param _Logger Pointer to logging system instance
+ * @param _Sim Pointer to simulation that data is to be generated from
+ * @param _Region Pointer to region in that simulation where we'll be generating an array
+ * @param _Array Pointer to array to be populated.
+ * @return true On success
+ * @return false On failure (eg: out of memory, out of bounds, etc.)
  */
-bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, BG::NES::Renderer::Interface* _Renderer, BG::NES::Renderer::EncoderPool* _EncoderPool);
+bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array);
 
 
 
 
-}; // Close Namespace VSDA
-}; // Close Namespace Simulator
-}; // Close Namespace NES
+}; // Close Namespace Logger
+}; // Close Namespace Common
 }; // Close Namespace BG

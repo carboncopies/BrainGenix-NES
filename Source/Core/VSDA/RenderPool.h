@@ -47,10 +47,10 @@
 
 #include <Simulator/Structs/Simulation.h>
 
-#include <VSDA/UpdaterManager.h>
+#include <VSDA/EMRenderer.h>
 
-#include <BG/Renderer/EncoderPool/Image.h>
-#include <BG/Renderer/EncoderPool/EncoderPool.h>
+#include <VSDA/VoxelSubsystem/ImageProcessorPool/Image.h>
+#include <VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
 #include <BG/Renderer/Interface.h>
 
 
@@ -76,17 +76,17 @@ class RenderPool {
 
 private:
 
-    BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/
+    BG::Common::Logger::LoggingSystem* Logger_ = nullptr;    /**Pointer to instance of logging system*/
 
-    std::unique_ptr<Renderer::EncoderPool> EncoderPool_;  /**Instance of the encoderpool, which saves all required images to disk*/
+    std::unique_ptr<ImageProcessorPool> ImageProcessorPool_; /**Instance of the ImageProcessorPool, which saves all required images to disk*/
 
-    bool Windowed_ = false;                               /**Boolean indicating if we're making windowed or headless renderers*/
+    bool Windowed_ = false;                                  /**Boolean indicating if we're making windowed or headless renderers*/
 
-    std::mutex QueueMutex_;                               /**Mutex used to lock access to the queue when it's being modified*/
-    std::queue<Simulation*> Queue_;                       /**Queue that contains simulations that need to be rendered*/
+    std::mutex QueueMutex_;                                  /**Mutex used to lock access to the queue when it's being modified*/
+    std::queue<Simulation*> Queue_;                          /**Queue that contains simulations that need to be rendered*/
 
-    std::vector<std::thread> RenderThreads_;              /**List of rendering threads - each one tries to dequeue stuff from the queue to work on.*/
-    std::atomic_bool ThreadControlFlag_;                  /**Bool that signals threads to exit*/
+    std::vector<std::thread> RenderThreads_;                 /**List of rendering threads - each one tries to dequeue stuff from the queue to work on.*/
+    std::atomic_bool ThreadControlFlag_;                     /**Bool that signals threads to exit*/
 
 
 

@@ -2,11 +2,12 @@
 
 #include <chrono>
 
-#define STB_IMAGE_IMPLEMENTATION
+// #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
-#define STB_IMAGE_WRITE_IMPLEMENTATION
+// #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <stb_image_write.h>
-
+// #define STB_IMAGE_RESIZE_IMPLEMENTATION
+#include <stb_image_resize.h>
 
 
 namespace BG {
@@ -28,19 +29,30 @@ void EncoderPool::EncoderThreadMainFunction(int _ThreadNumber) {
         Image* ImgToProcess = nullptr;
         if (DequeueImage(&ImgToProcess)) {
 
+            // Start Timer
+            std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
+
+
             // Get Image Properties
-            int xres = ImgToProcess->Width_px;
-            int yres = ImgToProcess->Height_px;
-            int channels = ImgToProcess->NumChannels_;
-            unsigned char* pixels = ImgToProcess->Data_.get();
+            int SourceX = ImgToProcess->Width_px;
+            int SourceY = ImgToProcess->Height_px;
+            int Channels = ImgToProcess->NumChannels_;
+            unsigned char* SourcePixels = ImgToProcess->Data_.get();
+
+            // Resize Image
+            int TargetX = ImgToProcess->TargetWidth_px;
+            int TargetY = ImgToProcess->TargetHeight_px;
+            std::unique_ptr<unsigned char> ResizedPixels = std::unique_ptr<unsigned char>(new unsigned char[TargetX * TargetY * Channels]());
+            stbir_resize_uint8(SourcePixels, SourceX, SourceY, SourceX * Channels, ResizedPixels.get(), TargetX, TargetY, TargetX * Channels, Channels);
 
             // Write Image
-            std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
-            stbi_write_png(ImgToProcess->TargetFileName_.c_str(), xres, yres, channels, pixels, xres * channels);
-            double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
-            Logger_ ->Log("EncoderPool Thread '" + std::to_string(_ThreadNumber) + "' Encoded Image '" + ImgToProcess->TargetFileName_ + "' In " + std::to_string(Duration_ms) + "ms", 0);
+            stbi_write_png(ImgToProcess->TargetFileName_.c_str(), TargetX, TargetY, Channels, ResizedPixels.get(), TargetX * Channels);
 
-            // Update Image Status
+            // Measure Time
+            double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
+            Logger_ ->Log("EncoderPool Thread '" + std::to_string(_ThreadNumber) + "' Processed Image '" + ImgToProcess->TargetFileName_ + "' In " + std::to_string(Duration_ms) + "ms", 0);
+
+            // Update Image Result
             ImgToProcess->ImageState_ = IMAGE_PROCESSED;
 
         } else {

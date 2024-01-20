@@ -45,7 +45,7 @@
 
 namespace BG {
 namespace NES {
-namespace Renderer {
+namespace Simulator {
 
 
 enum ImageState {
@@ -56,7 +56,7 @@ enum ImageState {
 
 /**
  * @brief Struct containing image data which is used by the encoder to compress and save the image.
- * This is done with as much concurrency as possible by the EncoderPool.
+ * This is done with as much concurrency as possible by the ImageProcessorPool.
  * 
  */
 struct Image {

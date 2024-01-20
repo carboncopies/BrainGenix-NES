@@ -1,4 +1,4 @@
-#include <VSDA/SliceGenerator/Structs/VoxelArray.h>
+#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
 
 
 #include <iostream>
@@ -88,13 +88,22 @@ uint64_t VoxelArray::GetIndex(int _X, int _Y, int _Z) {
 
 VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
 
-    // Hope this works
-    return Data_.get()[GetIndex(_X, _Y, _Z)];
+    // Check Bounds
+    if ((_X < 0 || _X >= SizeX_) || (_Y < 0 || _Y >= SizeY_) || (_Z < 0 || _Z >= SizeZ_)) {
+        return OUT_OF_RANGE;
+    }
+
+    // Hope this works (please work dear god don't segfault)
+    uint64_t Index = GetIndex(_X, _Y, _Z);
+    if (Index < DataMaxLength_) {
+        return Data_.get()[Index];
+    }
+    return OUT_OF_RANGE;
 
 }
 
 void VoxelArray::SetVoxel(int _X, int _Y, int _Z, VoxelType _Value) {
-    int CurrentIndex = GetIndex(_X, _Y, _Z);
+    uint64_t CurrentIndex = GetIndex(_X, _Y, _Z);
     if (CurrentIndex < 0 || CurrentIndex >= DataMaxLength_) {
         std::string ErrorMsg = std::string("E: Cannot Set Voxel At ") + std::to_string(_X);
         ErrorMsg += std::string(" ") + std::to_string(_Y) + std::string(" ") + std::to_string(_Z);
@@ -113,11 +122,8 @@ void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Val
 
     // Check Bounds (so if it's out of bounds, we print a warning and do nothing!)
     if ((XIndex < 0 || XIndex >= SizeX_) || (YIndex < 0 || YIndex >= SizeY_) || (ZIndex < 0 || ZIndex >= SizeZ_)) {
-        //std::cout<<"Warning: Voxel at "<<_X<<" "<<_Y<<" "<<_Z<<" Is Out Of Bounds!\n";
         return;
     }
-
-    //std::cout<<"Voxel at "<<XIndex<<" "<<YIndex<<" "<<ZIndex<<"\n";
 
     SetVoxel(XIndex, YIndex, ZIndex, _Value);
 

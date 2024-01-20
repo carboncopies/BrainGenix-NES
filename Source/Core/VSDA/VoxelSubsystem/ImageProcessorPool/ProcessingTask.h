@@ -6,7 +6,7 @@
 /*
     Description: This file defines the image struct, used to provide work to the encoder pool.
     Additional Notes: None
-    Date Created: 2024-01-13
+    Date Created: 2024-01-19
     Author(s): Thomas Liao
 
 
@@ -41,65 +41,36 @@
 
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
 
 
 namespace BG {
 namespace NES {
-namespace Renderer {
-
-
-enum ImageState {
-    IMAGE_NOT_PROCESSED=0,
-    IMAGE_PROCESSED=1
-};
+namespace Simulator {
 
 
 /**
- * @brief Struct containing image data which is used by the encoder to compress and save the image.
- * This is done with as much concurrency as possible by the EncoderPool.
+ * @brief Structure that defines the work to be completed. This involves taking a pointer to the voxel array in question,
+ * reading the voxels specified, and generating an image with some extra parameters. This is done with multiple threads, 
+ * but since we're just reading from the voxelarray, no sync is needed for accessing this data. 
  * 
  */
-struct Image {
+struct ProcessingTask {
 
     int         Width_px;        /**Width of this image in pixels*/
     int         Height_px;       /**Height of this image in pixels*/
-    int         TargetWidth_px;  /**Specify the target width of the image in pixels*/
-    int         TargetHeight_px; /**Specify the target height of the image in pixels*/
-    int         NumChannels_;    /**Number of channels for this image*/
+    int         VoxelStartingX;  /**Specify starting x index of the region*/
+    int         VoxelStartingY;  /**Specify starting y index of the region*/
+    int         VoxelEndingX;    /**Specify the ending x index of the region*/
+    int         VoxelEndingY;    /**Specify the ending y index of the region*/
+    int         VoxelZ;          /**Specify the slice number that we're going for*/
+
+    std::atomic_bool IsDone_ = false; /**Indicates if this task has been processed or not*/
+
     std::string TargetFileName_; /**Filename that this image is to be written to*/
 
-    std::unique_ptr<unsigned char> Data_; /**Pointer to image data to be saved*/
+    VoxelArray* Array_;          /**Pointer to the voxel array that we're rendering from*/
 
-    std::atomic<ImageState> ImageState_ = IMAGE_NOT_PROCESSED; /**State of the image (saved or not yet saved)*/
-
-
-    /**
-     * @brief Construct a new Image object. You'll have to set the data ptr yourself.
-     * 
-     */
-    Image();
-
-    /**
-     * @brief Construct a new Image object of specified size.
-     * Note - this will *not* initialize the data at the given place.
-     * 
-     * @param _Width 
-     * @param _Height 
-     * @param _Channels 
-     */
-    Image(int _Width, int _Height, int _Channels);
-
-
-    /**
-     * @brief Set the pixel at the given pocation to the given RGB value (0-255)
-     * 
-     * @param _X X position
-     * @param _Y Y position
-     * @param _R value from 0-255
-     * @param _G value from 0-255
-     * @param _B value from 0-255
-     */
-    void SetPixel(int _X, int _Y, int _R, int _G, int _B);
 
 
 };

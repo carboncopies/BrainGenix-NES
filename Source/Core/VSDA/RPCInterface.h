@@ -43,7 +43,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
-#include <VSDA/SliceGenerator/SliceGenerator.h>
+#include <VSDA/RPCRoutes/EM.h>
 
 #include <BG/Renderer/Interface.h>
 #include <BG/Renderer/SceneGraph/Primitive/Cube.h>
@@ -130,7 +130,7 @@ public:
     std::string VSDAEMQueueRenderOperation(std::string _JSONRequest);
 
     /**
-     * @brief Checks the status of a given render operation.
+     * @brief Checks the Result of a given render operation.
      * Will return if it's busy or doing other things.
      * 
      * @param _JSONRequest 

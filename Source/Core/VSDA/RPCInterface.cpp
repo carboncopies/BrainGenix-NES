@@ -63,12 +63,12 @@ std::string RPCInterface::VSDAEMInitialize(std::string _JSONRequest) {
     Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
     
 
-    int Status = !VSDA_EM_Initialize(Logger_, ThisSimulation);
+    int Result = !VSDA_EM_Initialize(Logger_, ThisSimulation);
 
 
     // Build Response
     nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = Status;
+    ResponseJSON["StatusCode"] = Result;
     return ResponseJSON.dump();
 }
 std::string RPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
@@ -106,12 +106,12 @@ std::string RPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     Params.MicroscopeFOV_deg = MicroscopeFOV_deg;
     Params.NumPixelsPerVoxel_px = NumPixelsPerVoxel_px;
 
-    int Status = !VSDA_EM_SetupMicroscope(Logger_, ThisSimulation, Params);
+    int Result = !VSDA_EM_SetupMicroscope(Logger_, ThisSimulation, Params);
 
 
     // Build Response
     nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = Status;
+    ResponseJSON["StatusCode"] = Result;
     return ResponseJSON.dump();
 
 }
@@ -147,12 +147,12 @@ std::string RPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
 
 
     int ID = -1;
-    int Status = !VSDA_EM_DefineScanRegion(Logger_, ThisSimulation, CreatedRegion, &ID);
+    int Result = !VSDA_EM_DefineScanRegion(Logger_, ThisSimulation, CreatedRegion, &ID);
 
 
     // Build Response
     nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = Status;
+    ResponseJSON["StatusCode"] = Result;
     ResponseJSON["ScanRegionID"] = ID;
     return ResponseJSON.dump();
 
@@ -175,11 +175,11 @@ std::string RPCInterface::VSDAEMQueueRenderOperation(std::string _JSONRequest) {
     }
 
     Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
-    int Status = !VSDA_EM_QueueRenderOperation(Logger_, ThisSimulation, ScanRegionID);
+    int Result = !VSDA_EM_QueueRenderOperation(Logger_, ThisSimulation, ScanRegionID);
 
     // Build Response
     nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = Status;
+    ResponseJSON["StatusCode"] = Result;
     return ResponseJSON.dump();
 
 }
@@ -189,7 +189,7 @@ std::string RPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
     // Parse Request, Get Parameters
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-    Logger_->Log(std::string("VSDA EM GetRenderStatus Called On Simulation With ID ") + std::to_string(SimulationID), 4);
+    // Logger_->Log(std::string("VSDA EM GetRenderStatus Called On Simulation With ID ") + std::to_string(SimulationID), 0);
 
     // Check Sim ID
     if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
@@ -219,7 +219,6 @@ std::string RPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
     int ScanRegionID = Util::GetInt(&RequestJSON, "ScanRegionID");
-    Logger_->Log(std::string("VSDA EM GetImageStack Called On Simulation With ID ") + std::to_string(SimulationID), 4);
 
     // Check Sim ID
     if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
@@ -247,6 +246,7 @@ std::string RPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
     ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
 
     nlohmann::json ImagePaths = ThisSimulation->VSDAData_.RenderedImagePaths_[ScanRegionID];
+    Logger_->Log(std::string("VSDA EM GetImageStack Called On Simulation With ID ") + std::to_string(SimulationID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
     ResponseJSON["RenderedImages"] = ImagePaths;
 
 
@@ -264,7 +264,7 @@ std::string RPCInterface::VSDAEMGetImage(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
     std::string ImageHandle = Util::GetString(&RequestJSON, "ImageHandle");
-    Logger_->Log(std::string("VSDA EM GetImage Called On Simulation ") + std::to_string(SimulationID) + ", Handle " + ImageHandle, 3);
+    // Logger_->Log(std::string("VSDA EM GetImage Called On Simulation ") + std::to_string(SimulationID) + ", Handle " + ImageHandle, 0);
 
     // Check Sim ID
     if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
@@ -302,7 +302,7 @@ std::string RPCInterface::VSDAEMGetImage(std::string _JSONRequest) {
         ImageStream.close();
 
     } else {
-        Logger_->Log("An Invalid ImageHandle Was Provided", 6);
+        Logger_->Log("An Invalid ImageHandle Was Provided " + SafeHandle, 6);
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 2; // error
         return ResponseJSON.dump();

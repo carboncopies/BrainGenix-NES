@@ -76,6 +76,7 @@ find_package(vsg CONFIG REQUIRED)
 message(STATUS "Setting Up STB Library")
 find_package(Stb REQUIRED)
 
+
 # Internal Deps
 message(STATUS "Finding bg-common-logger Package")
 find_package(bg-common-logger CONFIG REQUIRED)

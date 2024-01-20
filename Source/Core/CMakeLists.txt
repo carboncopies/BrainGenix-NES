@@ -8,8 +8,6 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/Config/ConfigurationManager.cpp
   ${SRC_DIR}/Core/Config/ConfigurationManager.h
-  # ${SRC_DIR}/Core/Config/ArgumentParser.cpp
-  # ${SRC_DIR}/Core/Config/ArgumentParser.h
   ${SRC_DIR}/Core/Config/ConfigFileParser.cpp
   ${SRC_DIR}/Core/Config/ConfigFileParser.h
   ${SRC_DIR}/Core/Config/Config.cpp
@@ -108,20 +106,32 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/VSDA/RPCInterface.cpp
   ${SRC_DIR}/Core/VSDA/RPCInterface.h
-  ${SRC_DIR}/Core/VSDA/UpdaterManager.cpp
-  ${SRC_DIR}/Core/VSDA/UpdaterManager.h
+  ${SRC_DIR}/Core/VSDA/EMRenderer.cpp
+  ${SRC_DIR}/Core/VSDA/EMRenderer.h
   ${SRC_DIR}/Core/VSDA/RenderPool.cpp
   ${SRC_DIR}/Core/VSDA/RenderPool.h
-  ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.cpp
-  ${SRC_DIR}/Core/VSDA/SliceGenerator/SliceGenerator.h
-  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/MicroscopeParameters.cpp
-  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/MicroscopeParameters.h
-  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/ScanRegion.cpp
-  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/ScanRegion.h
-  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/VoxelArray.cpp
-  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/VoxelArray.h
-  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/VSDAData.cpp
-  ${SRC_DIR}/Core/VSDA/SliceGenerator/Structs/VSDAData.h
+  ${SRC_DIR}/Core/VSDA/RPCRoutes/EM.cpp
+  ${SRC_DIR}/Core/VSDA/RPCRoutes/EM.h
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/VoxelArrayGenerator.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/VoxelArrayGenerator.h
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/VoxelArrayRenderer.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/VoxelArrayRenderer.h
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/LegacySliceGenerator.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/LegacySliceGenerator.h
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/MicroscopeParameters.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/MicroscopeParameters.h
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/ScanRegion.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/ScanRegion.h
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VoxelArray.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VoxelArray.h
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VSDAData.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VSDAData.h
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/Image.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/Image.h
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h
 
   ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshBuilder.cpp
   ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshBuilder.h
