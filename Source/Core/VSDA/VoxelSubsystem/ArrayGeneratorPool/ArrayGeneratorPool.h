@@ -140,6 +140,14 @@ public:
      */
     void QueueWorkOperation(Task* _Task);
 
+    /**
+     * @brief Waits until the queue is empty.
+     * NOTE: this does not guarentee everything is done, that would involve us having to ensure all threads completed the work too.
+     * We're just waiting until the queue is empty, those threads could still be doing stuff. 
+     * 
+     */
+    void BlockUntilQueueEmpty(bool _LogOutput = true);
+
 
 };
 

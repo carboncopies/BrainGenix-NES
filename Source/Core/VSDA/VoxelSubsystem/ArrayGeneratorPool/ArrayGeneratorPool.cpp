@@ -25,10 +25,24 @@ namespace VoxelArrayGenerator {
 
 
 
+// Simple little helper that just calculates the average of a double vector
+double GetAverage(std::vector<double>* _Vec) {
+    double Total = 0;
+    for (size_t i = 0; i < _Vec->size(); i++) {
+        Total += (*_Vec)[i];
+    }
+    return Total / _Vec->size();
+}
+
+
 // Thread Main Function
 void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
 
     Logger_->Log("Started ArrayGeneratorPool Thread " + std::to_string(_ThreadNumber), 0);
+
+    // Initialize Metrics
+    int SamplesBeforeUpdate = 25;
+    std::vector<double> Times;
 
     // Run until thread exit is requested - that is, this is set to false
     while (ThreadControlFlag_) {
@@ -71,13 +85,21 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
                 FillCylinder(Array, &ThisCylinder, VoxelResolution_um);
             }
             
+            // Update Task Result
+            ThisTask->IsDone_ = true;
+
+
 
             // Measure Time
             double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
-            Logger_ ->Log("ArrayGeneratorPool Thread '" + std::to_string(_ThreadNumber) + "' Processed Shape '" + ShapeName + " (" + std::to_string(ShapeID) + ")' In " + std::to_string(Duration_ms) + "ms", 0);
+            Times.push_back(Duration_ms);
+            if (Times.size() > SamplesBeforeUpdate) {
+                double AverageTime = GetAverage(&Times);
+                Logger_ ->Log("ArrayGeneratorPool Thread Info '" + std::to_string(_ThreadNumber) + "' Processed Most Recent Shape '" + ShapeName + " (" + std::to_string(ShapeID) + ")', Averaging " + std::to_string(AverageTime) + "ms / Shape", 0);
+                Times.clear();
+            }
 
-            // Update Task Result
-            ThisTask->IsDone_ = true;
+
 
         } else {
 
@@ -163,6 +185,32 @@ void ArrayGeneratorPool::QueueWorkOperation(Task* _Task) {
     EnqueueTask(_Task);
 }
 
+// Public Blocking/Info Function
+void ArrayGeneratorPool::BlockUntilQueueEmpty(bool _LogOutput) {
+
+    // Get some var to keep track of the queue length, we're going to be updating this later, but it's fine for now
+    int QueueLength = 1;
+
+    while (QueueLength > 0) {
+
+        // We're doing another set of curly brackets to make the mutex go out of scope otherwise it will block forever
+        {
+            // Firstly, Ensure Nobody Else Is Using The Queue, then update the queue size
+            std::lock_guard<std::mutex> LockQueue(QueueMutex_);
+
+            QueueLength = Queue_.size();
+        }
+
+
+        // Wait for a bit
+        std::this_thread::sleep_for(std::chrono::milliseconds(250));
+
+        // Log Queue Size
+        Logger_->Log("ArrayGeneratorPool Queue Length '" + std::to_string(QueueLength) + "'", 1, _LogOutput);
+
+    }
+
+}
 
 }; // Close Namespace VoxelArrayGenerator
 }; // Close Namespace Simulator

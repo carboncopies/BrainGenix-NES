@@ -64,6 +64,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 
     // Okay, now we just go through the list of tasks and make sure they're all done
+    _GeneratorPool->BlockUntilQueueEmpty(true);
     for (size_t i = 0; i < Tasks.size(); i++) {
         while (Tasks[i]->IsDone_ != true) {
             std::this_thread::sleep_for(std::chrono::milliseconds(5));
