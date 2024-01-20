@@ -1,6 +1,9 @@
 #include <Simulator/Manager.h>
 #include <Simulator/BallAndStick/BSNeuron.h>
 
+// temporary until we move profiling to it's own thingy
+#include <VSDA/RPCRoutes/EM.h>
+
 
 namespace BG {
 namespace NES {
@@ -17,6 +20,82 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     Config_ = _Config;
     Logger_ = _Logger;
     RenderPool_ = _RenderPool;
+
+
+
+    // Profiling Stuff
+    if (_Config->ProfilingStatus_ == Config::PROFILE_VOXEL_ARRAY_GENERATOR_1K_SPHERES) {
+
+        // Create A Simulation
+        Simulations_.push_back(std::make_unique<Simulation>(Logger_));
+        int SimID = Simulations_.size()-1;
+        Simulation* Sim = Simulations_[SimID].get();
+        Sim->Name = "Profiling Sim";
+        Sim->ID = SimID;
+        Sim->CurrentTask = SIMULATION_NONE;
+
+        // Create 1k spheres
+        for (unsigned int i = 0; i < 1000; i++) {
+
+            std::string Name = "Sphere " + std::to_string(i);
+            float Radius_um = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/5.));
+            float CenterPosX = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/200));
+            float CenterPosY = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/200));
+            float CenterPosZ = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/200));
+
+
+            // -- Create Sphere -- //
+            Geometries::Sphere S;
+            S.Name = Name;
+            S.Radius_um = Radius_um;
+            S.Center_um.x = CenterPosX;
+            S.Center_um.y = CenterPosY;
+            S.Center_um.z = CenterPosZ;
+            Simulation* ThisSimulation = Simulations_[0].get();
+            S.ID = ThisSimulation->Collection.Geometries.size();
+            ThisSimulation->Collection.Geometries.push_back(S);
+
+
+            // -- Create Compartments -- //
+            Compartments::BS C;
+            C.ShapeID = ThisSimulation->Collection.Geometries.size();
+            C.ID  = ThisSimulation->BSCompartments.size();
+            ThisSimulation->BSCompartments.push_back(C);
+
+
+        }
+
+
+        // -- Setup Rendering Operation -- //
+        MicroscopeParameters Params;
+        Params.VoxelResolution_um = 0.1;
+        Params.ImageWidth_px = 512;
+        Params.ImageHeight_px = 512;
+        Params.ScanRegionOverlap_percent = 0;
+        Params.SliceThickness_um = 0.1;
+        Params.NumPixelsPerVoxel_px = 2;
+        
+        ScanRegion Region;
+        Region.Point1X_um = 0;
+        Region.Point1Y_um = 0;
+        Region.Point1Z_um = 0;
+        Region.Point2X_um = 200;
+        Region.Point2Y_um = 200;
+        Region.Point2Z_um = 200;
+        int RegionID;
+
+        VSDA_EM_Initialize(Logger_, Sim);
+        VSDA_EM_SetupMicroscope(Logger_, Sim, Params);
+        VSDA_EM_DefineScanRegion(Logger_, Sim, Region, &RegionID);
+        VSDA_EM_QueueRenderOperation(Logger_, Sim, RegionID);
+
+        while (Sim->VSDAData_.CurrentSlice_ != VSDA_RENDER_DONE) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        }
+
+        exit(0);
+
+    }
 
 
     // Register Callback For CreateSim
