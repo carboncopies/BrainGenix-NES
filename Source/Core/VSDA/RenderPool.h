@@ -47,7 +47,7 @@
 
 #include <Simulator/Structs/Simulation.h>
 
-#include <VSDA/UpdaterManager.h>
+#include <VSDA/EMRenderer.h>
 
 #include <VSDA/VoxelSubsystem/ImageProcessorPool/Image.h>
 #include <VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>

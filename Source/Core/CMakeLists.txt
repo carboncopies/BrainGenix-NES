@@ -106,8 +106,8 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/VSDA/RPCInterface.cpp
   ${SRC_DIR}/Core/VSDA/RPCInterface.h
-  ${SRC_DIR}/Core/VSDA/UpdaterManager.cpp
-  ${SRC_DIR}/Core/VSDA/UpdaterManager.h
+  ${SRC_DIR}/Core/VSDA/EMRenderer.cpp
+  ${SRC_DIR}/Core/VSDA/EMRenderer.h
   ${SRC_DIR}/Core/VSDA/RenderPool.cpp
   ${SRC_DIR}/Core/VSDA/RenderPool.h
   ${SRC_DIR}/Core/VSDA/RPCRoutes/EM.cpp
