@@ -89,21 +89,17 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
 
 
 // Constructor, Destructor
-ArrayGeneratorPool::ArrayGeneratorPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed, int _NumThreads) {
+ArrayGeneratorPool::ArrayGeneratorPool(BG::Common::Logger::LoggingSystem* _Logger, int _NumThreads) {
     assert(_Logger != nullptr);
 
 
     // Initialize Variables
     Logger_ = _Logger;
     ThreadControlFlag_ = true;
-    Windowed_ = _Windowed;
 
 
     // Create Renderer Instances
     Logger_->Log("Creating ArrayGeneratorPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
-    if (_NumThreads > 1) {
-        std::cerr<<"Warning, creating multiple renderer threads currently breaks :(  VSG needs to be recompiled with a define changed!\n";
-    }
     for (unsigned int i = 0; i < _NumThreads; i++) {
         Logger_->Log("Starting ArrayGeneratorPool Thread " + std::to_string(i), 1);
         RenderThreads_.push_back(std::thread(&ArrayGeneratorPool::RendererThreadMainFunction, this, i));

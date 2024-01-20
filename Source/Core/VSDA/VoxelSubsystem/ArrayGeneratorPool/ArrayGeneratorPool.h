@@ -3,7 +3,7 @@
 //=================================//
 
 /*
-    Description: This file contains the NES Rendering system interface code.
+    Description: This file contains the NES voxel array rasterization threadpool code.
     Additional Notes: None
     Date Created: 2024-01-20
     Author(s): Thomas Liao
@@ -74,8 +74,6 @@ private:
 
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr;    /**Pointer to instance of logging system*/
 
-    bool Windowed_ = false;                                  /**Boolean indicating if we're making windowed or headless renderers*/
-
     std::mutex QueueMutex_;                                  /**Mutex used to lock access to the queue when it's being modified*/
     std::queue<Task*> Queue_;                                /**Queue that contains tasks that need to be rendered*/
 
@@ -124,10 +122,9 @@ public:
      * @brief Initializes the arraygeneratorpool with the given number of threads requested.
      * 
      * @param _Logger 
-     * @param _Windowed
      * @param _NumThreads 
      */
-    ArrayGeneratorPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed = false, int _NumThreads = 1);
+    ArrayGeneratorPool(BG::Common::Logger::LoggingSystem* _Logger, int _NumThreads = 1);
 
     /**
      * @brief Destroys the render pool object.
