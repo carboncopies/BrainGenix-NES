@@ -20,10 +20,13 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
+// TODO: Make renderslicefromarray use the imageprocessorpool to do the enumeration of the voxel array (the pixel population part) using threads (so that nested for loop goes away, and this therad just positions the cameras)
+// Then, if needed, we can move renderslicefromarray inside the threadedrendervoxelarray if that still isn't fast enough.
 
-std::vector<std::vector<std::string>> ThreadedRenderVoxelArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::string _FilePrefix, ImageProcessorPool* _ImageProcessorPool) {
 
-}
+// std::vector<std::vector<std::string>> ThreadedRenderVoxelArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::string _FilePrefix, ImageProcessorPool* _ImageProcessorPool) {
+
+// }
 
 
 std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::string _FilePrefix, int SliceNumber, ImageProcessorPool* _ImageProcessorPool) {
@@ -67,51 +70,34 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
     for (int XStep = 0; XStep < TotalXSteps; XStep++) {
         for (int YStep = 0; YStep < TotalYSteps; YStep++) {
 
-            // Calculate the filename of the image to be generated
+            // Calculate the filename of the image to be generated, add to list of generated images
             std::string FilePath = "Renders/" + _FilePrefix + "_Slice" + std::to_string(SliceNumber);
             FilePath += "_X" + std::to_string(CameraStepSizeX_um * XStep) + "_Y" + std::to_string(CameraStepSizeY_um * YStep) + ".png";
 
-            // Next, setup the image and get it ready to be drawn to
-            _VSDAData->Images_.push_back(std::make_unique<Image>(VoxelsPerStepX, VoxelsPerStepY, NumChannels));
-            Image* Image = _VSDAData->Images_[_VSDAData->Images_.size() - 1].get();
-            Image->TargetHeight_px = _VSDAData->Params_.ImageWidth_px;
-            Image->TargetWidth_px = _VSDAData->Params_.ImageHeight_px;
-            Image->TargetFileName_ = FilePath;
-
-            // Now enumerate the voxel array and populate the image with the desired pixels (for the subregion we're on)
-            int XStartingPosition = VoxelsPerStepX * XStep;
-            int YStartingPosition = VoxelsPerStepY * YStep;
-            for (unsigned int XVoxelIndex = XStartingPosition; XVoxelIndex < XStartingPosition + VoxelsPerStepX; XVoxelIndex++) {
-                for (unsigned int YVoxelIndex = YStartingPosition; YVoxelIndex < YStartingPosition + VoxelsPerStepY; YVoxelIndex++) {
-
-                    // Get Voxel At Position
-                    VoxelType ThisVoxel = Array->GetVoxel(XVoxelIndex, YVoxelIndex, SliceNumber);
-
-                    // Now Set The Pixel
-                    int ThisPixelX = XVoxelIndex - XStartingPosition;
-                    int ThisPixelY = YVoxelIndex - YStartingPosition;
-                    if (ThisVoxel == FILLED) {
-                        Image->SetPixel(ThisPixelX, ThisPixelY, 220, 220, 220);
-                    } else if (ThisVoxel == BORDER) {
-                        Image->SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
-                    } else if (ThisVoxel == OUT_OF_RANGE) {
-                        Image->SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
-                    } else {
-                        Image->SetPixel(ThisPixelX, ThisPixelY, 80, 80, 80);
-                    }
-
-                }
-            }
-
-            _ImageProcessorPool->QueueEncodeOperation(Image);
             Filenames.push_back(FilePath);
+
+
+            // Setup and submit task to queue for rendering
+            std::unique_ptr<ProcessingTask> ThisTask = std::make_unique<ProcessingTask>();
+            ThisTask->Array_ = _VSDAData->Array_.get();
+            ThisTask->Width_px = _VSDAData->Params_.ImageWidth_px;
+            ThisTask->Height_px = _VSDAData->Params_.ImageHeight_px;
+            ThisTask->VoxelStartingX = VoxelsPerStepX * XStep;
+            ThisTask->VoxelStartingY = VoxelsPerStepY * YStep;
+            ThisTask->VoxelEndingX = ThisTask->VoxelStartingX + VoxelsPerStepX;
+            ThisTask->VoxelEndingY = ThisTask->VoxelStartingY + VoxelsPerStepY;
+            ThisTask->VoxelZ = SliceNumber;
+            ThisTask->TargetFileName_ = FilePath;
+
+            _ImageProcessorPool->QueueEncodeOperation(ThisTask.get());
+            _VSDAData->Tasks_.push_back(std::move(ThisTask));
+
 
             // Update The API Result Info With The Current Slice Number
             _VSDAData->CurrentSliceImage_ = (XStep * TotalYSteps) + YStep + 1;
 
         }
     }
-
 
 
     return Filenames;

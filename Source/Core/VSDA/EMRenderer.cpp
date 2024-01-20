@@ -49,19 +49,22 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
         std::string FileNamePrefix = "Simulation" + std::to_string(_Simulation->ID) + "_Region" + std::to_string(_Simulation->VSDAData_.ActiveRegionID_);
 
         std::vector<std::string> Files = RenderSliceFromArray(_Logger, &_Simulation->VSDAData_, FileNamePrefix, i, _ImageProcessorPool);
-        _Simulation->VSDAData_.RenderedImagePaths_.push_back(Files);
+        for (size_t i = 0; i < Files.size(); i++) {
+            _Simulation->VSDAData_.RenderedImagePaths_[_Simulation->VSDAData_.ActiveRegionID_].push_back(Files[i]);
+        }
 
         // Update Current Slice Information (Account for slice numbers not starting at 0)
         _Simulation->VSDAData_.TotalSlices_ = _Simulation->VSDAData_.Array_.get()->GetZ();
         _Simulation->VSDAData_.CurrentSlice_ = i + 1;
     }
 
-    // Ensure All Images Were Saved
-    for (unsigned int i = 0; i < _Simulation->VSDAData_.Images_.size(); i++) {
-        Image* Image = _Simulation->VSDAData_.Images_[i].get();
-        while (Image->ImageState_ != IMAGE_PROCESSED) {}
-    }
 
+
+    // Ensure All Tasks Are Finished
+    for (unsigned int i = 0; i < _Simulation->VSDAData_.Tasks_.size(); i++) {
+        ProcessingTask* Task = _Simulation->VSDAData_.Tasks_[i].get();
+        while (Task->IsDone_ != true) {}
+    }
 
     _Simulation->VSDAData_.State_ = VSDA_RENDER_DONE;
 

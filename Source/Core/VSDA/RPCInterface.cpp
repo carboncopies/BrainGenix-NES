@@ -219,7 +219,6 @@ std::string RPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
     int ScanRegionID = Util::GetInt(&RequestJSON, "ScanRegionID");
-    Logger_->Log(std::string("VSDA EM GetImageStack Called On Simulation With ID ") + std::to_string(SimulationID), 4);
 
     // Check Sim ID
     if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
@@ -247,6 +246,7 @@ std::string RPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
     ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
 
     nlohmann::json ImagePaths = ThisSimulation->VSDAData_.RenderedImagePaths_[ScanRegionID];
+    Logger_->Log(std::string("VSDA EM GetImageStack Called On Simulation With ID ") + std::to_string(SimulationID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
     ResponseJSON["RenderedImages"] = ImagePaths;
 
 

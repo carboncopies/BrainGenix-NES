@@ -37,34 +37,77 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
     while (ThreadControlFlag_) {
 
         // Step 1, Check For Work
-        Image* ImgToProcess = nullptr;
-        if (DequeueImage(&ImgToProcess)) {
+        ProcessingTask* Task = nullptr;
+        if (DequeueTask(&Task)) {
 
             // Start Timer
             std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
 
 
+            // -- Phase 1 -- //
+
+            // First, setup the 1:1 voxel array image base and get it ready to be drawn to
+            // If the user wants for example, 8 pixels per voxel (8x8), then we make an image 1/8 the dimensions as desired
+            // then we set each pixel here based on the voxel in the map
+            // next, we resize it up to the target image, thus saving a lot of compute time
+            int VoxelsPerStepX = Task->VoxelEndingX - Task->VoxelStartingX;
+            int VoxelsPerStepY = Task->VoxelEndingY - Task->VoxelStartingY;
+            int NumChannels = 3;
+
+            Image OneToOneVoxelImage(VoxelsPerStepX, VoxelsPerStepY, NumChannels);
+            OneToOneVoxelImage.TargetFileName_ = Task->TargetFileName_;
+
+            // Now enumerate the voxel array and populate the image with the desired pixels (for the subregion we're on)
+            for (unsigned int XVoxelIndex = Task->VoxelStartingX; XVoxelIndex < Task->VoxelEndingX; XVoxelIndex++) {
+                for (unsigned int YVoxelIndex = Task->VoxelStartingY; YVoxelIndex < Task->VoxelEndingY; YVoxelIndex++) {
+
+                    // Get Voxel At Position
+                    VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, Task->VoxelZ);
+
+                    // Now Set The Pixel
+                    int ThisPixelX = XVoxelIndex - Task->VoxelStartingX;
+                    int ThisPixelY = YVoxelIndex - Task->VoxelStartingY;
+                    if (ThisVoxel == FILLED) {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 220, 220, 220);
+                    } else if (ThisVoxel == BORDER) {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
+                    } else if (ThisVoxel == OUT_OF_RANGE) {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
+                    } else {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 80, 80, 80);
+                    }
+
+                }
+            }
+
+            // Note, when we do image processing (for like noise and that stuff, we should do it here!) (or after resizing depending on what is needed)
+            // so then this will be phase two, and phase 3 is saving after processing
+
+
+            // -- Phase 2 -- //
+
+            // Now, we resize the image to the desired output resolution
             // Get Image Properties
-            int SourceX = ImgToProcess->Width_px;
-            int SourceY = ImgToProcess->Height_px;
-            int Channels = ImgToProcess->NumChannels_;
-            unsigned char* SourcePixels = ImgToProcess->Data_.get();
+            int SourceX = OneToOneVoxelImage.Width_px;
+            int SourceY = OneToOneVoxelImage.Height_px;
+            int Channels = OneToOneVoxelImage.NumChannels_;
+            unsigned char* SourcePixels = OneToOneVoxelImage.Data_.get();
 
             // Resize Image
-            int TargetX = ImgToProcess->TargetWidth_px;
-            int TargetY = ImgToProcess->TargetHeight_px;
+            int TargetX = Task->Width_px;
+            int TargetY = Task->Height_px;
             std::unique_ptr<unsigned char> ResizedPixels = std::unique_ptr<unsigned char>(new unsigned char[TargetX * TargetY * Channels]());
             stbir_resize_uint8(SourcePixels, SourceX, SourceY, SourceX * Channels, ResizedPixels.get(), TargetX, TargetY, TargetX * Channels, Channels);
 
             // Write Image
-            stbi_write_png(ImgToProcess->TargetFileName_.c_str(), TargetX, TargetY, Channels, ResizedPixels.get(), TargetX * Channels);
+            stbi_write_png(Task->TargetFileName_.c_str(), TargetX, TargetY, Channels, ResizedPixels.get(), TargetX * Channels);
 
             // Measure Time
             double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
-            Logger_ ->Log("ImageProcessorPool Thread '" + std::to_string(_ThreadNumber) + "' Processed Image '" + ImgToProcess->TargetFileName_ + "' In " + std::to_string(Duration_ms) + "ms", 0);
+            Logger_ ->Log("ImageProcessorPool Thread '" + std::to_string(_ThreadNumber) + "' Processed Image '" + Task->TargetFileName_ + "' In " + std::to_string(Duration_ms) + "ms", 0);
 
-            // Update Image Result
-            ImgToProcess->ImageState_ = IMAGE_PROCESSED;
+            // Update Task Result
+            Task->IsDone_ = true;
 
         } else {
 
@@ -110,12 +153,12 @@ ImageProcessorPool::~ImageProcessorPool() {
 
 
 // Queue Access Functions
-void ImageProcessorPool::EnqueueImage(Image* _Img) {
+void ImageProcessorPool::EnqueueTask(ProcessingTask* _Task) {
 
     // Firstly, Ensure Nobody Else Is Using The Queue
     std::lock_guard<std::mutex> LockQueue(QueueMutex_);
 
-    Queue_.emplace(_Img);
+    Queue_.emplace(_Task);
 }
 
 int ImageProcessorPool::GetQueueSize() {
@@ -128,14 +171,14 @@ int ImageProcessorPool::GetQueueSize() {
     return QueueSize;
 }
 
-bool ImageProcessorPool::DequeueImage(Image** _ImgPtr) {
+bool ImageProcessorPool::DequeueTask(ProcessingTask** _Task) {
 
     // Firstly, Ensure Nobody Else Is Using The Queue
     std::lock_guard<std::mutex> LockQueue(QueueMutex_);
 
     // If the queue isn't empty, we grab the first element
     if (Queue_.size() > 0) {
-        *_ImgPtr = Queue_.front();
+        *_Task = Queue_.front();
         Queue_.pop();
 
         return true;
@@ -146,8 +189,8 @@ bool ImageProcessorPool::DequeueImage(Image** _ImgPtr) {
 
 
 // Public Enqueue Function
-void ImageProcessorPool::QueueEncodeOperation(Image* _Img) {
-    EnqueueImage(_Img);
+void ImageProcessorPool::QueueEncodeOperation(ProcessingTask* _Task) {
+    EnqueueTask(_Task);
 }
 
 

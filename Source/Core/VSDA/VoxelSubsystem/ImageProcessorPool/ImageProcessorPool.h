@@ -46,6 +46,7 @@
 #include <BG/Common/Logger/Logger.h>
 
 #include <VSDA/VoxelSubsystem/ImageProcessorPool/Image.h>
+#include <VSDA/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h>
 
 
 
@@ -71,7 +72,7 @@ private:
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/
 
     std::mutex QueueMutex_;                               /**Mutex used to lock access to the queue when it's being modified*/
-    std::queue<Image*> Queue_;                            /**Queue that contains images to be compressed*/
+    std::queue<ProcessingTask*> Queue_;                            /**Queue that contains tasks to be compressed*/
 
     std::vector<std::thread> EncoderThreads_;             /**List of encoding threads - each one tries to dequeue stuff from the queue to work on.*/
     std::atomic_bool ThreadControlFlag_;                  /**Bool that signals threads to exit*/
@@ -81,9 +82,9 @@ private:
     /**
      * @brief Thread safe enqueue function.
      * 
-     * @param _Image 
+     * @param _Task 
      */
-    void EnqueueImage(Image* _Image);
+    void EnqueueTask(ProcessingTask* _Task);
 
     /**
      * @brief Thread safe getSize function.
@@ -93,14 +94,14 @@ private:
     int GetQueueSize();
 
     /**
-     * @brief Thread safe get Image* from queue function. 
+     * @brief Thread safe get ProcessingTask* from queue function. 
      * Will return false if there is nothing to be dequeued.
      * Otherwise will update the ptr given as a parameter.
      * 
      * @return true
      * @return false
      */
-    bool DequeueImage(Image** _ImagePtr);
+    bool DequeueTask(ProcessingTask** _TaskPtr);
 
 
 
@@ -130,11 +131,11 @@ public:
 
 
     /**
-     * @brief Places the Image struct into the queue to be picked up by an available worker thread.
+     * @brief Places the ProcessingTask struct into the queue to be picked up by an available worker thread.
      * 
-     * @param _Image 
+     * @param _ProcessingTask 
      */
-    void QueueEncodeOperation(Image* _Image);
+    void QueueEncodeOperation(ProcessingTask* _Task);
 
 
 };

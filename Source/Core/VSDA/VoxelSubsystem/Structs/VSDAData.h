@@ -43,7 +43,7 @@
 #include <VSDA/VoxelSubsystem/Structs/ScanRegion.h>
 #include <VSDA/VoxelSubsystem/Structs/MicroscopeParameters.h>
 
-#include <VSDA/VoxelSubsystem/ImageProcessorPool/Image.h>
+#include <VSDA/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h>
 
 
 
@@ -84,7 +84,7 @@ struct VSDAData {
     int                         CurrentSliceImage_ = -1;  /**Defines the current image being worked on for this slice*/
 
     std::vector<std::vector<std::string>> RenderedImagePaths_; /**List of paths for each region to be populated as we render all the images for this simulation into a stack*/
-    std::vector<std::unique_ptr<Image>> Images_; /**List of images that have been created for this system*/
+    std::vector<std::unique_ptr<ProcessingTask>> Tasks_; /**List of tasks that have been created for this render operation, we check that they're all done before finishing our render operation*/
 
 
 
