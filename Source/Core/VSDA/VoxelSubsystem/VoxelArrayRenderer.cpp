@@ -21,6 +21,9 @@ namespace NES {
 namespace Simulator {
 
 
+std::vector<std::vector<std::string>> ThreadedRenderVoxelArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::string _FilePrefix, ImageProcessorPool* _ImageProcessorPool) {
+
+}
 
 
 std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::string _FilePrefix, int SliceNumber, ImageProcessorPool* _ImageProcessorPool) {

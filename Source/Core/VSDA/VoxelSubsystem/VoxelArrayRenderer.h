@@ -51,6 +51,18 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
+/**
+ * @brief Render the entire voxel array with the parameters defined in the various config structs.
+ * Set the maximum number of simultaneous threads to the maxthreads argument.
+ * 
+ * @param _Logger 
+ * @param _VSDAData 
+ * @param _FilePrefix 
+ * @param _ImageProcessorPool 
+ * @param _MaxThreads 
+ * @return std::vector<std::vector<std::string>> 
+ */
+std::vector<std::vector<std::string>> ThreadedRenderVoxelArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::string _FilePrefix, ImageProcessorPool* _ImageProcessorPool, int _MaxThreads=20);
 
 
 /**
