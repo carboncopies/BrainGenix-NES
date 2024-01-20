@@ -1,9 +1,6 @@
 #include <Simulator/Manager.h>
 #include <Simulator/BallAndStick/BSNeuron.h>
 
-// temporary until we move profiling to it's own thingy
-#include <VSDA/RPCRoutes/EM.h>
-
 
 namespace BG {
 namespace NES {

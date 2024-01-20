@@ -31,6 +31,8 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
     // Profiling Stuff
     if (_Config->ProfilingStatus_ == Config::PROFILE_VOXEL_ARRAY_GENERATOR_1K_SPHERES) {
 
+        _Logger->Log("Running 1K Sphere Profiling Test", 6);
+
         // Create A Simulation
         Simulations->push_back(std::make_unique<Simulator::Simulation>(_Logger));
         int SimID = Simulations->size()-1;
@@ -63,11 +65,11 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
             // -- Create Compartments -- //
             Simulator::Compartments::BS C;
-            C.ShapeID = ThisSimulation->Collection.Geometries.size();
+            C.ShapeID = S.ID;
             C.ID  = ThisSimulation->BSCompartments.size();
             ThisSimulation->BSCompartments.push_back(C);
 
-            std::cout<<"Created Sphere "<<i<<std::endl;
+            _Logger->Log("Created Sphere" + std::to_string(i), 3);
 
 
         }
@@ -100,11 +102,11 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
 
-        return 0;
 
     }
 
 
+    return 0;
 
 }
 

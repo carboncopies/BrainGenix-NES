@@ -38,6 +38,9 @@ double GetAverage(std::vector<double>* _Vec) {
 // Thread Main Function
 void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
 
+    // Set thread Name
+    pthread_setname_np(pthread_self(), std::string("Array Generator Pool Thread " + std::to_string(_ThreadNumber)).c_str());
+
     Logger_->Log("Started ArrayGeneratorPool Thread " + std::to_string(_ThreadNumber), 0);
 
     // Initialize Metrics

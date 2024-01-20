@@ -40,6 +40,9 @@ double GetAverage(std::vector<double>* _Vec) {
 // Thread Main Function
 void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
+    // Set thread Name
+    pthread_setname_np(pthread_self(), std::string("Image Processor Pool Thread " + std::to_string(_ThreadNumber)).c_str());
+
     Logger_->Log("Started ImageProcessorPool Thread " + std::to_string(_ThreadNumber), 0);
 
     // Initialize Metrics
