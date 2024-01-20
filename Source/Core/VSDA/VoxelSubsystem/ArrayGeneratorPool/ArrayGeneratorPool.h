@@ -106,6 +106,17 @@ private:
      */
     bool DequeueTask(Task** _SimPtr);
 
+    /**
+     * @brief Decode many tasks at once, can help if threads are underutillized.
+     * Does not guarentee the number of tasks returned will be equal to the number requested.
+     * We only guarentee that it will not *exceed* the value specified.
+     * 
+     * For example, if the queue only has one thing in it, and three are requested, only one will be returned.
+     * 
+     * @param _NumTasks 
+     * @return std::vector<Task*> 
+     */
+    std::vector<Task*> DequeueTasks(int _NumTasks=3);
 
 
     /**

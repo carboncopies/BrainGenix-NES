@@ -42,64 +42,70 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
 
     // Initialize Metrics
     int SamplesBeforeUpdate = 25;
+    int TaskBatchSize = 3;
     std::vector<double> Times;
 
     // Run until thread exit is requested - that is, this is set to false
     while (ThreadControlFlag_) {
 
         // Step 1, Check For Work
-        Task* ThisTask = nullptr;
-        if (DequeueTask(&ThisTask)) {
+        if (GetQueueSize() > 0) {
 
-            // Start Timer
-            std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
+            std::vector<Task*> Tasks = DequeueTasks(TaskBatchSize);
 
-            // -- Phase 1 -- //
-            // Firstly, we get some important pointers out of the struct for more clear access
-            size_t ShapeID = ThisTask->ShapeID_;
-            float VoxelResolution_um = ThisTask->VoxelResolution_um_;
-            VoxelArray* Array = ThisTask->Array_;
-            std::string ShapeName = "";
-            Geometries::GeometryCollection* GeometryCollection = ThisTask->GeometryCollection_;
+            for (size_t i = 0; i < Tasks.size(); i++) {
+
+                Task* ThisTask = Tasks[i];
+
+                // Start Timer
+                std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
+
+                // -- Phase 1 -- //
+                // Firstly, we get some important pointers out of the struct for more clear access
+                size_t ShapeID = ThisTask->ShapeID_;
+                float VoxelResolution_um = ThisTask->VoxelResolution_um_;
+                VoxelArray* Array = ThisTask->Array_;
+                std::string ShapeName = "";
+                Geometries::GeometryCollection* GeometryCollection = ThisTask->GeometryCollection_;
 
 
-            // -- Phase 2 -- //
-            // Now, we just use the data we got from the struct and use it to call the right function
-            // This sets the relevant voxels in the array
-            // Note: We're not worried about synchronization here since it's okay if voxels overlap, and the voxelarray is of a static size
-            // If we were to use something like a std::vector, that would be dangerous - but since we're using a static size raw array, 
-            // we can allow all threads to write the array at the same time (it feels wrong, but should be okay in this specific case)
-            if (GeometryCollection->IsSphere(ShapeID)) {
-                Geometries::Sphere & ThisSphere = GeometryCollection->GetSphere(ShapeID);
-                ShapeName = "Sphere";
-                FillShape(Array, &ThisSphere, VoxelResolution_um);
+                // -- Phase 2 -- //
+                // Now, we just use the data we got from the struct and use it to call the right function
+                // This sets the relevant voxels in the array
+                // Note: We're not worried about synchronization here since it's okay if voxels overlap, and the voxelarray is of a static size
+                // If we were to use something like a std::vector, that would be dangerous - but since we're using a static size raw array, 
+                // we can allow all threads to write the array at the same time (it feels wrong, but should be okay in this specific case)
+                if (GeometryCollection->IsSphere(ShapeID)) {
+                    Geometries::Sphere & ThisSphere = GeometryCollection->GetSphere(ShapeID);
+                    ShapeName = "Sphere";
+                    FillShape(Array, &ThisSphere, VoxelResolution_um);
+                }
+                else if (GeometryCollection->IsBox(ShapeID)) {
+                    Geometries::Box & ThisBox = GeometryCollection->GetBox(ShapeID); 
+                    ShapeName = "Box";
+                    FillBox(Array, &ThisBox, VoxelResolution_um);
+                }
+                else if (GeometryCollection->IsCylinder(ShapeID)) {
+                    Geometries::Cylinder & ThisCylinder = GeometryCollection->GetCylinder(ShapeID);
+                    ShapeName = "Cylinder";
+                    FillCylinder(Array, &ThisCylinder, VoxelResolution_um);
+                }
+                
+                // Update Task Result
+                ThisTask->IsDone_ = true;
+
+
+
+                // Measure Time
+                double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
+                Times.push_back(Duration_ms);
+                if (Times.size() > SamplesBeforeUpdate) {
+                    double AverageTime = GetAverage(&Times);
+                    Logger_ ->Log("ArrayGeneratorPool Thread Info '" + std::to_string(_ThreadNumber) + "' Processed Most Recent Shape '" + ShapeName + " (" + std::to_string(ShapeID) + ")', Averaging " + std::to_string(AverageTime) + "ms / Shape", 0);
+                    Times.clear();
+                }
+
             }
-            else if (GeometryCollection->IsBox(ShapeID)) {
-                Geometries::Box & ThisBox = GeometryCollection->GetBox(ShapeID); 
-                ShapeName = "Box";
-                FillBox(Array, &ThisBox, VoxelResolution_um);
-            }
-            else if (GeometryCollection->IsCylinder(ShapeID)) {
-                Geometries::Cylinder & ThisCylinder = GeometryCollection->GetCylinder(ShapeID);
-                ShapeName = "Cylinder";
-                FillCylinder(Array, &ThisCylinder, VoxelResolution_um);
-            }
-            
-            // Update Task Result
-            ThisTask->IsDone_ = true;
-
-
-
-            // Measure Time
-            double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
-            Times.push_back(Duration_ms);
-            if (Times.size() > SamplesBeforeUpdate) {
-                double AverageTime = GetAverage(&Times);
-                Logger_ ->Log("ArrayGeneratorPool Thread Info '" + std::to_string(_ThreadNumber) + "' Processed Most Recent Shape '" + ShapeName + " (" + std::to_string(ShapeID) + ")', Averaging " + std::to_string(AverageTime) + "ms / Shape", 0);
-                Times.clear();
-            }
-
-
 
         } else {
 
@@ -177,6 +183,23 @@ bool ArrayGeneratorPool::DequeueTask(Task** _TaskPtr) {
     }
 
     return false;
+}
+
+
+std::vector<Task*> ArrayGeneratorPool::DequeueTasks(int _NumTasks) {
+
+    // Firstly, Ensure Nobody Else Is Using The Queue
+    std::lock_guard<std::mutex> LockQueue(QueueMutex_);
+
+    // If the queue isn't empty, we grab the first element
+    std::vector<Task*> Tasks;
+    for (unsigned int i = 0; i < _NumTasks; i++) {
+        if (Queue_.size() > 0) {
+            Tasks.push_back(Queue_.front());
+            Queue_.pop();
+        }
+    }
+    return Tasks;
 }
 
 
