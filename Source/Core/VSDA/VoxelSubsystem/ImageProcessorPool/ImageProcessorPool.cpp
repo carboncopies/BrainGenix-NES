@@ -46,6 +46,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
     int SamplesBeforeUpdate = 25;
     std::vector<double> Times;
 
+
     // Run until thread exit is requested - that is, this is set to false
     while (ThreadControlFlag_) {
 
