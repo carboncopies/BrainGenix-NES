@@ -103,7 +103,7 @@ VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
 }
 
 void VoxelArray::SetVoxel(int _X, int _Y, int _Z, VoxelType _Value) {
-    int CurrentIndex = GetIndex(_X, _Y, _Z);
+    uint64_t CurrentIndex = GetIndex(_X, _Y, _Z);
     if (CurrentIndex < 0 || CurrentIndex >= DataMaxLength_) {
         std::string ErrorMsg = std::string("E: Cannot Set Voxel At ") + std::to_string(_X);
         ErrorMsg += std::string(" ") + std::to_string(_Y) + std::string(" ") + std::to_string(_Z);
