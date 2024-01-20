@@ -35,6 +35,11 @@ int main(int NumArguments, char** ArgumentValues) {
     // Print ASCII BrainGenix Logo To Console
     BG::NES::Util::LogLogo(&Logger);
 
+    // Check if we have profiling enabled, if so do that then quit
+    if (SystemConfiguration.ProfilingStatus_ != BG::NES::Config::PROFILE_NONE) {
+        return BG::NES::Profiling::Manager(&Logger, &SystemConfiguration, &SimulationManager, &APIManager);
+    }
+
     // Block forever while servers are running
     while (true) {
         std::this_thread::sleep_for(std::chrono::milliseconds(10));

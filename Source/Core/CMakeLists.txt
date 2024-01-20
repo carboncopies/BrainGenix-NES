@@ -104,6 +104,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Util/LogLogo.cpp
   ${SRC_DIR}/Core/Util/LogLogo.h
 
+  ${SRC_DIR}/Core/Profiling/Manager.cpp
+  ${SRC_DIR}/Core/Profiling/Manager.h
+
   ${SRC_DIR}/Core/VSDA/RPCInterface.cpp
   ${SRC_DIR}/Core/VSDA/RPCInterface.h
   ${SRC_DIR}/Core/VSDA/EMRenderer.cpp
