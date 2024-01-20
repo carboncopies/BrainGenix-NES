@@ -126,12 +126,21 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VoxelArray.h
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VSDAData.cpp
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VSDAData.h
+
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/Image.cpp
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/Image.h
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h
+
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ArrayGeneratorPool/Task.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ArrayGeneratorPool/Task.h
+
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h
 
   ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshBuilder.cpp
   ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshBuilder.h

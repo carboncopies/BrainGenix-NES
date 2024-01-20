@@ -40,6 +40,7 @@
 #include <VSDA/VoxelSubsystem/Structs/MicroscopeParameters.h>
 #include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
 
+#include <VSDA/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
 
 #include <BG/Common/Logger/Logger.h>
 
@@ -63,6 +64,7 @@ namespace Simulator {
  * @return false On failure (eg: out of memory, out of bounds, etc.)
  */
 bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array);
+bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
 
 
 
