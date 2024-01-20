@@ -22,7 +22,7 @@ namespace Simulator {
 namespace VSDA {
 
 
-bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, BG::NES::Renderer::Interface* _Renderer, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
+bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
 
     // Check that the simulation has been initialized and everything is ready to have work done
     if (_Simulation->VSDAData_.State_ != VSDA_RENDER_REQUESTED) {
@@ -49,14 +49,14 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
 
 
     // Set Image Size
-    _Renderer->SetResolution(_Simulation->VSDAData_.Params_.ImageWidth_px, _Simulation->VSDAData_.Params_.ImageHeight_px);
-    _Renderer->DrawFrame();
+    // _Renderer->SetResolution(_Simulation->VSDAData_.Params_.ImageWidth_px, _Simulation->VSDAData_.Params_.ImageHeight_px);
+    // _Renderer->DrawFrame();
 
 
 
     // Clear Scene In Preperation For Rendering
     _Logger->Log("Starting Slice By Slice Render", 2);
-    _Renderer->ResetScene();
+    // _Renderer->ResetScene();
     for (unsigned int i = 0; i < _Simulation->VSDAData_.Array_.get()->GetZ(); i++) {
         std::string FileNamePrefix = "Simulation" + std::to_string(_Simulation->ID) + "_Region" + std::to_string(_Simulation->VSDAData_.ActiveRegionID_);
 

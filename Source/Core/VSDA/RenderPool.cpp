@@ -26,12 +26,12 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
 
     Logger_->Log("Started RenderPool Thread " + std::to_string(_ThreadNumber), 0);
 
-    // Setup Renderer
-    BG::NES::Renderer::Interface Renderer(Logger_);
-    if (!Renderer.Initialize(Windowed_)) { 
-        Logger_->Log("Error During Renderer Initialization, Aborting", 10);
-        return;
-    }
+    // // Setup Renderer
+    // BG::NES::Renderer::Interface Renderer(Logger_);
+    // if (!Renderer.Initialize(Windowed_)) { 
+    //     Logger_->Log("Error During Renderer Initialization, Aborting", 10);
+    //     return;
+    // }
 
     // Run until thread exit is requested - that is, this is set to false
     while (ThreadControlFlag_) {
@@ -42,7 +42,7 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
 
             // Okay, we got work, now render this simulation
             Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering Simulation " + std::to_string(SimToProcess->ID), 2);
-            VSDA::ExecuteRenderOperations(Logger_, SimToProcess, &Renderer, ImageProcessorPool_.get(), ArrayGeneratorPool_.get());
+            VSDA::ExecuteRenderOperations(Logger_, SimToProcess, ImageProcessorPool_.get(), ArrayGeneratorPool_.get());
             SimToProcess->IsRendering = false;
 
         } else {
