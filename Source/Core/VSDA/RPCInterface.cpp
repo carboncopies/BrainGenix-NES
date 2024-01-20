@@ -189,7 +189,7 @@ std::string RPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
     // Parse Request, Get Parameters
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-    Logger_->Log(std::string("VSDA EM GetRenderStatus Called On Simulation With ID ") + std::to_string(SimulationID), 0);
+    // Logger_->Log(std::string("VSDA EM GetRenderStatus Called On Simulation With ID ") + std::to_string(SimulationID), 0);
 
     // Check Sim ID
     if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
