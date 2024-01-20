@@ -66,7 +66,8 @@ RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowe
 
 
     // Create VoxelArrayGenerator Instance
-    int NumArrayGeneratorThreads = std::thread::hardware_concurrency();
+    // We have 1.5x more threads since there is typically some overhead getting tasks, and thus utilization isn't perfect
+    int NumArrayGeneratorThreads = int((float)std::thread::hardware_concurrency() * 1.5);
     ArrayGeneratorPool_ = std::make_unique<VoxelArrayGenerator::ArrayGeneratorPool>(Logger_, NumArrayGeneratorThreads);
 
 
