@@ -35,7 +35,7 @@ int main(int NumArguments, char** ArgumentValues) {
     // Print ASCII BrainGenix Logo To Console
     BG::NES::Util::LogLogo(&Logger);
 
-    SystemConfiguration.ProfilingStatus_ = BG::NES::Config::PROFILE_VOXEL_ARRAY_GENERATOR_10K_SPHERES;
+
     // Check if we have profiling enabled, if so do that then quit
     if (SystemConfiguration.ProfilingStatus_ != BG::NES::Config::PROFILE_NONE) {
         BG::NES::Profiling::Manager(&Logger, &SystemConfiguration, &SimulationManager, &RenderPool, &APIManager);
