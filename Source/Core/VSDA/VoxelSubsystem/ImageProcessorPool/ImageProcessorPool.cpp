@@ -27,10 +27,27 @@ namespace Simulator {
 
 
 
+// Simple little helper that just calculates the average of a double vector
+double GetAverage(std::vector<double>* _Vec) {
+    double Total = 0;
+    for (size_t i = 0; i < _Vec->size(); i++) {
+        Total += (*_Vec)[i];
+    }
+    return Total / _Vec->size();
+}
+
+
 // Thread Main Function
 void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
+    // Set thread Name
+    pthread_setname_np(pthread_self(), std::string("Image Processor Pool Thread " + std::to_string(_ThreadNumber)).c_str());
+
     Logger_->Log("Started ImageProcessorPool Thread " + std::to_string(_ThreadNumber), 0);
+
+    // Initialize Metrics
+    int SamplesBeforeUpdate = 25;
+    std::vector<double> Times;
 
 
     // Run until thread exit is requested - that is, this is set to false
@@ -102,12 +119,18 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             // Write Image
             stbi_write_png(Task->TargetFileName_.c_str(), TargetX, TargetY, Channels, ResizedPixels.get(), TargetX * Channels);
 
-            // Measure Time
-            double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
-            Logger_ ->Log("ImageProcessorPool Thread '" + std::to_string(_ThreadNumber) + "' Processed Image '" + Task->TargetFileName_ + "' In " + std::to_string(Duration_ms) + "ms", 0);
-
             // Update Task Result
             Task->IsDone_ = true;
+
+            // Measure Time
+            double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
+            Times.push_back(Duration_ms);
+            if (Times.size() > SamplesBeforeUpdate) {
+                double AverageTime = GetAverage(&Times);
+                Logger_ ->Log("ImageProcessorPool Thread Info '" + std::to_string(_ThreadNumber) + "' Processed Most Recent Image '" + Task->TargetFileName_ + "',  Averaging " + std::to_string(AverageTime) + "ms / Image", 0);
+                Times.clear();
+            }
+
 
         } else {
 

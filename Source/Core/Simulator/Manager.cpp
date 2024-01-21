@@ -19,6 +19,7 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     RenderPool_ = _RenderPool;
 
 
+
     // Register Callback For CreateSim
     _RPCManager->AddRoute("Simulation/Create", Logger_, [this](std::string RequestJSON){ return SimulationCreate(RequestJSON);});
     _RPCManager->AddRoute("Simulation/Reset", Logger_, [this](std::string RequestJSON){ return SimulationReset(RequestJSON);});

@@ -17,6 +17,11 @@ Manager::Manager(int _NumArgs, char** _Args) {
     ConfigFileParser ConfigParser(Config_);
     ConfigParser.~ConfigFileParser();
 
+    if (_NumArgs > 1) {
+        std::cout<<"Detected that you're specifying a profiling argument, NES isn't intended to take arguments normally, so if you didn't expect this, use the config file instead!\n";
+        Config_.ProfilingStatus_ = (ProfilingStatus)atoi(_Args[1]);
+    }
+
 }
 
 Manager::~Manager() {

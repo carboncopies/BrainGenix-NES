@@ -13,6 +13,9 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
     assert(_RenderPool != nullptr);
     assert(_StopThreads != nullptr);
 
+    // Set thread Name
+    pthread_setname_np(pthread_self(), std::string("Simulation Engine Thread " + std::to_string(_Sim->ID)).c_str());
+
     // Log Init message
     _Logger->Log("Starting Simulation Updater Thread", 3);
 

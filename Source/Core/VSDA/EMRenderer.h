@@ -46,7 +46,7 @@
 #include <VSDA/VoxelSubsystem/VoxelArrayGenerator.h>
 #include <VSDA/VoxelSubsystem/VoxelArrayRenderer.h>
 #include <VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
-
+#include <VSDA/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
 
 #include <BG/Renderer/Interface.h>
 #include <BG/Renderer/SceneGraph/Primitive/Cube.h>
@@ -70,7 +70,7 @@ namespace VSDA {
  * @return true Success
  * @return false Fail
  */
-bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, BG::NES::Renderer::Interface* _Renderer, ImageProcessorPool* _ImageProcessorPool);
+bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
 
 
 

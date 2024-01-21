@@ -8,6 +8,7 @@ set(BIN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Binaries")
 set(CMAKE_UTIL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake/Utils")
 set(CMAKE_SCRIPTS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake/CompileInfo")
 set(PROJECT_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR})
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/CMake/Utils)
 
 set(INSTALL_PREFIX "/etc/BrainGenix/NES")
 
@@ -77,9 +78,19 @@ message(STATUS "Setting Up STB Library")
 find_package(Stb REQUIRED)
 
 
+# Compiler optimizations
+find_package(AVX)
+if (${AVX_FOUND})
+    message(STATUS "Found AVX Extensions")
+else()
+    message(STATUS "Did Not Find AVX Extensions")
+endif()
+
+
 # Internal Deps
 message(STATUS "Finding bg-common-logger Package")
 find_package(bg-common-logger CONFIG REQUIRED)
+
 
 
 # Enabling testing and finding GTest
@@ -97,6 +108,34 @@ include(${CMAKE_SCRIPTS_DIR}/VersioningSystem/VersioningSystem.cmake)
 include(${CMAKE_SCRIPTS_DIR}/CompilePlatformInfo/CompilePlatformInfo.cmake)
 include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
+
+
+# Options
+# option(WITH_AVX "Compile With AVX Instructions" ${AVX_FOUND})
+option(WITH_DEBUG_SYMBOLS "Enable or disable debug symbols" ON)
+set(WITH_AVX ${AVX_FOUND})
+
+
+
+# Apply Options
+if (WITH_AVX)
+    message(STATUS "AVX2 Extensions Will Be Used")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${AVX_FLAGS}")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${AVX_FLAGS}")
+else()
+    message(STATUS "AVX2 Extensions Will Not Be Enabled")
+endif()
+
+if (WITH_DEBUG_SYMBOLS)
+    message(STATUS "Enabling Debug Symbols")
+    SET(CMAKE_CXX_FLAGS "-g")
+else()
+    message(STATUS "Not Enabling Debug Symbols")
+endif()
+
+
+
+# Add Source Subdirs
 add_subdirectory(${SRC_DIR}/Core)
 add_subdirectory(${SRC_DIR}/Renderer)
 

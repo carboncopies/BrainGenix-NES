@@ -26,6 +26,18 @@ namespace NES {
 namespace Config {
 
 /**
+ * @brief Simple enum which causes the program to run a certain set of preprogrammed profiling activities, enabling easier profiling.
+ * Ignore these for basically everything else. (They're set by a command line flag (Ex. `./NES 1` would run the voxel array generator 1k spheres.) 
+ * 
+ */
+enum ProfilingStatus {
+    PROFILE_NONE=0,
+    PROFILE_VOXEL_ARRAY_GENERATOR_10K_SPHERES,
+    PROFILE_VOXEL_ARRAY_GENERATOR_10K_CYLINDERS,
+    PROFILE_VOXEL_ARRAY_GENERATOR_10K_BOXES
+};
+
+/**
  * @brief This struct stores a decoded and parsed representation of the config.yaml file.
  *
  * The Config struct is responsible for holding the decoded and parsed configuration settings
@@ -42,6 +54,9 @@ struct Config {
 
     int PortNumber = CONFIG_DEFAULT_PORT_NUMBER;                /**Sets the port number that the service is running on.*/
     std::string Host = CONFIG_DEFAULT_HOST;                     /**Sets the host that the service binds to*/
+
+    ProfilingStatus ProfilingStatus_ = PROFILE_NONE;            /**Enum with some preconfigured profiling charastics for us to test when needed*/
+
 
 };
 

@@ -1,6 +1,15 @@
+//=================================//
+// This file is part of BrainGenix //
+//=================================//
+
+
+// Standard Libraries (BG convention: use <> instead of "")
 #include <fstream>
+
+// Third-Party Libraries (BG convention: use <> instead of "")
 #include <cpp-base64/base64.cpp>
 
+// Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/RPCInterface.h>
 
 
