@@ -86,7 +86,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
         // -- Setup Rendering Operation -- //
         Simulator::MicroscopeParameters Params;
-        Params.VoxelResolution_um = 0.4;
+        Params.VoxelResolution_um = 0.8;
         Params.ImageWidth_px = 512;
         Params.ImageHeight_px = 512;
         Params.ScanRegionOverlap_percent = 0;
@@ -111,6 +111,9 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
 
+        // Join Threads
+        StopThreads = true;
+        SimThread.join();
 
     }
 
@@ -195,6 +198,10 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         }
 
 
+        // Join Threads
+        StopThreads = true;
+        SimThread.join();
+
     }
 
 
@@ -276,17 +283,18 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         }
 
 
+        // Join Threads
+        StopThreads = true;
+        SimThread.join();
+
+
     }
 
 
     // Mesure Time, Exit
     double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
-    _Logger->Log("Done Profiling, Test Completed In " + std::to_string(Duration_ms), 7);
+    _Logger->Log("Done Profiling, Test Completed In " + std::to_string(Duration_ms) + "ms", 5);
 
-
-
-
-    exit(0);
 
 
     return 0;
