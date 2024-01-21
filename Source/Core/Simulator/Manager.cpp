@@ -343,12 +343,19 @@ std::string Manager::BulkSphereCreate(std::string _JSONRequest) {
     std::vector<float> CenterXList_um;
     std::vector<float> CenterYList_um;
     std::vector<float> CenterZList_um;
-    std::vector<std::string> NameList;;
+    std::vector<std::string> NameList;
     Util::GetFloatVector(&RadiusList_um, &RequestJSON, "RadiusList_um");
     Util::GetFloatVector(&CenterXList_um, &RequestJSON, "CenterXList_um");
     Util::GetFloatVector(&CenterYList_um, &RequestJSON, "CenterYList_um");
     Util::GetFloatVector(&CenterZList_um, &RequestJSON, "CenterZList_um");
     Util::GetStringVector(&NameList, &RequestJSON, "NameList");
+
+    size_t Length = RadiusList_um.size();
+    assert(CenterXList_um.size() == Length);
+    assert(CenterYList_um.size() == Length);
+    assert(CenterZList_um.size() == Length);
+    assert(NameList.size() == Length);
+    
 
 
     // Setup Output ID List
