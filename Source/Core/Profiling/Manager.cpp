@@ -26,6 +26,10 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
     assert(_Config != nullptr);
 
 
+    // Start Timer
+    std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
+
+
     std::vector<std::unique_ptr<Simulator::Simulation>>* Simulations = _SimManager->GetSimulationVectorPtr();
 
     // Profiling Stuff
@@ -47,7 +51,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
 
         // Create 1k spheres
-        for (unsigned int i = 0; i < 100000; i++) {
+        for (unsigned int i = 0; i < 1000; i++) {
 
             std::string Name = "Sphere " + std::to_string(i);
             float Radius_um = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/8.));
@@ -82,7 +86,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
         // -- Setup Rendering Operation -- //
         Simulator::MicroscopeParameters Params;
-        Params.VoxelResolution_um = 0.1;
+        Params.VoxelResolution_um = 0.4;
         Params.ImageWidth_px = 512;
         Params.ImageHeight_px = 512;
         Params.ScanRegionOverlap_percent = 0;
@@ -103,7 +107,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         VSDA_EM_DefineScanRegion(_Logger, Sim, Region, &RegionID);
         VSDA_EM_QueueRenderOperation(_Logger, Sim, RegionID);
 
-        while (Sim->VSDAData_.CurrentSlice_ != Simulator::VSDA_RENDER_DONE) {
+        while (Sim->VSDAData_.State_ != Simulator::VSDA_RENDER_DONE) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
 
@@ -186,7 +190,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         VSDA_EM_DefineScanRegion(_Logger, Sim, Region, &RegionID);
         VSDA_EM_QueueRenderOperation(_Logger, Sim, RegionID);
 
-        while (Sim->VSDAData_.CurrentSlice_ != Simulator::VSDA_RENDER_DONE) {
+        while (Sim->VSDAData_.State_ != Simulator::VSDA_RENDER_DONE) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
 
@@ -267,7 +271,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         VSDA_EM_DefineScanRegion(_Logger, Sim, Region, &RegionID);
         VSDA_EM_QueueRenderOperation(_Logger, Sim, RegionID);
 
-        while (Sim->VSDAData_.CurrentSlice_ != Simulator::VSDA_RENDER_DONE) {
+        while (Sim->VSDAData_.State_ != Simulator::VSDA_RENDER_DONE) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
 
@@ -275,6 +279,9 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
     }
 
 
+    // Mesure Time, Exit
+    double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
+    _Logger->Log("Done Profiling, Test Completed In " + std::to_string(Duration_ms), 7);
 
 
 
