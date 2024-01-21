@@ -35,7 +35,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
     // Profiling Stuff
     if (_Config->ProfilingStatus_ == Config::PROFILE_VOXEL_ARRAY_GENERATOR_10K_SPHERES) {
 
-        _Logger->Log("Running 10K Sphere Profiling Test", 6);
+        _Logger->Log("Running 100K Sphere Profiling Test", 6);
 
         // Create A Simulation
         Simulations->push_back(std::make_unique<Simulator::Simulation>(_Logger));
@@ -51,7 +51,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
 
         // Create 1k spheres
-        for (unsigned int i = 0; i < 1000; i++) {
+        for (unsigned int i = 0; i < 100000; i++) {
 
             std::string Name = "Sphere " + std::to_string(i);
             float Radius_um = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/8.));
@@ -86,7 +86,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
         // -- Setup Rendering Operation -- //
         Simulator::MicroscopeParameters Params;
-        Params.VoxelResolution_um = 0.8;
+        Params.VoxelResolution_um = 0.1;
         Params.ImageWidth_px = 512;
         Params.ImageHeight_px = 512;
         Params.ScanRegionOverlap_percent = 0;
