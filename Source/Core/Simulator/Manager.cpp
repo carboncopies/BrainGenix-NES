@@ -29,6 +29,7 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     _RPCManager->AddRoute("Simulation/GetStatus", Logger_, [this](std::string RequestJSON){ return SimulationGetStatus(RequestJSON);});
     _RPCManager->AddRoute("Simulation/BuildMesh", Logger_, [this](std::string RequestJSON){ return SimulationBuildMesh(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Sphere/Create", Logger_, [this](std::string RequestJSON){ return SphereCreate(RequestJSON);});
+    _RPCManager->AddRoute("Geometry/Shape/Sphere/BulkCreate", Logger_, [this](std::string RequestJSON){ return BulkSphereCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Cylinder/Create", Logger_, [this](std::string RequestJSON){ return CylinderCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Box/Create", Logger_, [this](std::string RequestJSON){ return BoxCreate(RequestJSON);});
     _RPCManager->AddRoute("Compartment/BS/Create", Logger_, [this](std::string RequestJSON){ return BSCreate(RequestJSON);});
@@ -328,6 +329,69 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
     ResponseJSON["ShapeID"] = SphereID;
     return ResponseJSON.dump();
 }
+
+std::string Manager::BulkSphereCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    Logger_->Log("Simulation Bulk Create Sphere Called, On Sim " + std::to_string(SimulationID), 1);
+    
+    // Get Parameters
+    std::vector<float> RadiusList_um;
+    std::vector<float> CenterXList_um;
+    std::vector<float> CenterYList_um;
+    std::vector<float> CenterZList_um;
+    std::vector<std::string> NameList;;
+    Util::GetFloatVector(&RadiusList_um, &RequestJSON, "RadiusList_um");
+    Util::GetFloatVector(&CenterXList_um, &RequestJSON, "CenterXList_um");
+    Util::GetFloatVector(&CenterYList_um, &RequestJSON, "CenterYList_um");
+    Util::GetFloatVector(&CenterZList_um, &RequestJSON, "CenterZList_um");
+    Util::GetStringVector(&NameList, &RequestJSON, "NameList");
+
+
+    // Setup Output ID List
+    std::vector<size_t> ShapeIDs;
+
+    // Now enumerate and build them
+    for (size_t i = 0; i < RadiusList_um.size(); i++) {
+
+        // Build New Sphere Object
+        Geometries::Sphere S;
+        S.Name = NameList[i];
+        S.Radius_um = RadiusList_um[i];
+        S.Center_um.x = CenterXList_um[i];
+        S.Center_um.y = CenterYList_um[i];
+        S.Center_um.z = CenterZList_um[i];
+
+
+        // Add to Sim, Set ID
+        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+            nlohmann::json ResponseJSON;
+            ResponseJSON["ShapeID"] = -1;
+            return ResponseJSON.dump();
+        }
+        Simulation* ThisSimulation = Simulations_[SimulationID].get();
+        if (IsSimulationBusy(ThisSimulation)) {
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 5; // simulation is currently processing
+            return ResponseJSON.dump();
+        }
+        int SphereID = ThisSimulation->Collection.Geometries.size();
+        S.ID = SphereID;
+        ThisSimulation->Collection.Geometries.push_back(S);
+
+        ShapeIDs.push_back(S.ID);
+
+    }
+
+    // Return Result ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["ShapeIDs"] = ShapeIDs;
+    return ResponseJSON.dump();
+}
+
 
 std::string Manager::CylinderCreate(std::string _JSONRequest) {
 

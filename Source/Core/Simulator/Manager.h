@@ -102,6 +102,7 @@ public:
     std::string SimulationGetStatus(std::string _JSONRequest);
     std::string SimulationBuildMesh(std::string _JSONRequest);
     std::string SphereCreate(std::string _JSONRequest);
+    std::string BulkSphereCreate(std::string _JSONRequest);
     std::string CylinderCreate(std::string _JSONRequest);
     std::string BoxCreate(std::string _JSONRequest);
     std::string BSCreate(std::string _JSONRequest);

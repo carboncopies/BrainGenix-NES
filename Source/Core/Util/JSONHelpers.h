@@ -108,6 +108,16 @@ void GetArrVec3(Simulator::Geometries::Vec3D& _Vector, nlohmann::json* _Input, s
  */
 void GetFloatVector(std::vector<float>* _Vector, nlohmann::json* _Input, std::string _JSONKey);
 
+/**
+ * @brief Simple helper that will populate a vector given the _Input data and the JSONKey input.
+ *
+ * @param _Vector Pointer to the vector to be populated.
+ * @param _Input Pointer to the JSON object.
+ * @param _JSONKey The key in the JSON object.
+ */
+void GetStringVector(std::vector<std::string>* _Vector, nlohmann::json* _Input, std::string _JSONKey);
+
+
 
 }; // Close Namespace Util
 }; // Close Namespace NES
