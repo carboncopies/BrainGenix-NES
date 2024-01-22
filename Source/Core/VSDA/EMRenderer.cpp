@@ -93,13 +93,15 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
         // Update Current Slice Information (Account for slice numbers not starting at 0)
         _Simulation->VSDAData_.TotalSlices_ = _Simulation->VSDAData_.Array_.get()->GetZ();
         _Simulation->VSDAData_.CurrentSlice_ = _Simulation->VSDAData_.Array_.get()->GetZ() - ceil((float)_ImageProcessorPool->GetQueueSize() / ImagesPerSlice);
-
-
-        // Update The API Result Info With The Current Slice Number
+        _Simulation->VSDAData_.TotalSliceImages_ = ImagesPerSlice;
         _Simulation->VSDAData_.CurrentSliceImage_ = _ImageProcessorPool->GetQueueSize() % ImagesPerSlice;
 
         // Log Queue Size
         _Logger->Log("ImageProcessorPool Queue Length '" + std::to_string(_ImageProcessorPool->GetQueueSize()) + "'", 1);
+
+
+        // Now wait a while so we don't spam the console
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
 
     }
