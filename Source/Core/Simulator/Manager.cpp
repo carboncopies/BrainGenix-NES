@@ -29,9 +29,13 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     _RPCManager->AddRoute("Simulation/GetStatus", Logger_, [this](std::string RequestJSON){ return SimulationGetStatus(RequestJSON);});
     _RPCManager->AddRoute("Simulation/BuildMesh", Logger_, [this](std::string RequestJSON){ return SimulationBuildMesh(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Sphere/Create", Logger_, [this](std::string RequestJSON){ return SphereCreate(RequestJSON);});
+    _RPCManager->AddRoute("Geometry/Shape/Sphere/BulkCreate", Logger_, [this](std::string RequestJSON){ return BulkSphereCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Cylinder/Create", Logger_, [this](std::string RequestJSON){ return CylinderCreate(RequestJSON);});
+    _RPCManager->AddRoute("Geometry/Shape/Cylinder/BulkCreate", Logger_, [this](std::string RequestJSON){ return BulkCylinderCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Box/Create", Logger_, [this](std::string RequestJSON){ return BoxCreate(RequestJSON);});
+    _RPCManager->AddRoute("Geometry/Shape/Box/BulkCreate", Logger_, [this](std::string RequestJSON){ return BulkBoxCreate(RequestJSON);});
     _RPCManager->AddRoute("Compartment/BS/Create", Logger_, [this](std::string RequestJSON){ return BSCreate(RequestJSON);});
+    _RPCManager->AddRoute("Compartment/BS/BulkCreate", Logger_, [this](std::string RequestJSON){ return BulkBSCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Staple/Create", Logger_, [this](std::string RequestJSON){ return StapleCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Receptor/Create", Logger_, [this](std::string RequestJSON){ return ReceptorCreate(RequestJSON);});
     _RPCManager->AddRoute("Neuron/BSNeuron/Create", Logger_, [this](std::string RequestJSON){ return BSNeuronCreate(RequestJSON);});
@@ -329,6 +333,86 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
+std::string Manager::BulkSphereCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    Logger_->Log("Simulation Bulk Create Sphere Called, On Sim " + std::to_string(SimulationID), 1);
+    
+    // Get Parameters
+    std::vector<float> RadiusList_um;
+    std::vector<float> CenterXList_um;
+    std::vector<float> CenterYList_um;
+    std::vector<float> CenterZList_um;
+    std::vector<std::string> NameList;
+    Util::GetFloatVector(&RadiusList_um, &RequestJSON, "RadiusList_um");
+    Util::GetFloatVector(&CenterXList_um, &RequestJSON, "CenterXList_um");
+    Util::GetFloatVector(&CenterYList_um, &RequestJSON, "CenterYList_um");
+    Util::GetFloatVector(&CenterZList_um, &RequestJSON, "CenterZList_um");
+    Util::GetStringVector(&NameList, &RequestJSON, "NameList");
+
+    // Check List Lengths Are Equal, Exit If Not
+    bool LengthsEqual = true;
+    size_t Length = RadiusList_um.size();
+    LengthsEqual &= (CenterXList_um.size() == Length);
+    LengthsEqual &= (CenterYList_um.size() == Length);
+    LengthsEqual &= (CenterZList_um.size() == Length);
+    LengthsEqual &= (NameList.size() == Length);
+    if (!LengthsEqual) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2;
+        ResponseJSON["ShapeIDs"] = "[]";
+        return ResponseJSON.dump();
+    }
+    
+
+
+    // Setup Output ID List
+    std::vector<size_t> ShapeIDs;
+
+    // Now enumerate and build them
+    Logger_->Log("Adding " + std::to_string(Length) + " Spheres", 2);
+    for (size_t i = 0; i < Length; i++) {
+
+        // Build New Sphere Object
+        Geometries::Sphere S;
+        S.Name = NameList[i];
+        S.Radius_um = RadiusList_um[i];
+        S.Center_um.x = CenterXList_um[i];
+        S.Center_um.y = CenterYList_um[i];
+        S.Center_um.z = CenterZList_um[i];
+
+
+        // Add to Sim, Set ID
+        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 2;
+            ResponseJSON["ShapeIDs"] = "[]";
+            return ResponseJSON.dump();
+        }
+        Simulation* ThisSimulation = Simulations_[SimulationID].get();
+        if (IsSimulationBusy(ThisSimulation)) {
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 5; // simulation is currently processing
+            return ResponseJSON.dump();
+        }
+        int SphereID = ThisSimulation->Collection.Geometries.size();
+        S.ID = SphereID;
+        ThisSimulation->Collection.Geometries.push_back(S);
+
+        ShapeIDs.push_back(S.ID);
+
+    }
+
+    // Return Result ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["ShapeIDs"] = ShapeIDs;
+    return ResponseJSON.dump();
+}
+
+
 std::string Manager::CylinderCreate(std::string _JSONRequest) {
 
     // Parse Request
@@ -388,6 +472,101 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
+std::string Manager::BulkCylinderCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    Logger_->Log("Simulation Bulk Create Cylinder Called, On Sim " + std::to_string(SimulationID), 1);
+    
+    // Get Parameters
+    std::vector<float> Point1RadiusList_um;
+    std::vector<float> Point2RadiusList_um;
+    std::vector<float> Point1XList_um;
+    std::vector<float> Point1YList_um;
+    std::vector<float> Point1ZList_um;
+    std::vector<float> Point2XList_um;
+    std::vector<float> Point2YList_um;
+    std::vector<float> Point2ZList_um;
+    std::vector<std::string> NameList;
+    Util::GetFloatVector(&Point1RadiusList_um, &RequestJSON, "Point1RadiusList_um");
+    Util::GetFloatVector(&Point2RadiusList_um, &RequestJSON, "Point2RadiusList_um");
+    Util::GetFloatVector(&Point1XList_um, &RequestJSON, "Point1XList_um");
+    Util::GetFloatVector(&Point1YList_um, &RequestJSON, "Point1YList_um");
+    Util::GetFloatVector(&Point1ZList_um, &RequestJSON, "Point1ZList_um");
+    Util::GetFloatVector(&Point2XList_um, &RequestJSON, "Point2XList_um");
+    Util::GetFloatVector(&Point2YList_um, &RequestJSON, "Point2YList_um");
+    Util::GetFloatVector(&Point2ZList_um, &RequestJSON, "Point2ZList_um");
+    Util::GetStringVector(&NameList, &RequestJSON, "NameList");
+
+    // Check List Lengths Are Equal, Exit If Not
+    bool LengthsEqual = true;
+    size_t Length = Point1RadiusList_um.size();
+    LengthsEqual &= (Point2RadiusList_um.size() == Length);
+    LengthsEqual &= (Point1XList_um.size() == Length);
+    LengthsEqual &= (Point1YList_um.size() == Length);
+    LengthsEqual &= (Point1ZList_um.size() == Length);
+    LengthsEqual &= (Point2XList_um.size() == Length);
+    LengthsEqual &= (Point2YList_um.size() == Length);
+    LengthsEqual &= (Point2ZList_um.size() == Length);
+    LengthsEqual &= (NameList.size() == Length);
+    if (!LengthsEqual) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2;
+        ResponseJSON["ShapeIDs"] = "[]";
+        return ResponseJSON.dump();
+    }
+    
+
+
+    // Setup Output ID List
+    std::vector<size_t> ShapeIDs;
+
+    // Now enumerate and build them
+    Logger_->Log("Adding " + std::to_string(Length) + " Cylinders", 2);
+    for (size_t i = 0; i < Length; i++) {
+
+        // Build New Cylinder Object
+        Geometries::Cylinder S;
+        S.Name = NameList[i];
+        S.End0Radius_um = Point1RadiusList_um[i];
+        S.End1Radius_um = Point2RadiusList_um[i];
+        S.End0Pos_um.x = Point1XList_um[i];
+        S.End0Pos_um.y = Point1YList_um[i];
+        S.End0Pos_um.z = Point1ZList_um[i];
+        S.End1Pos_um.x = Point2XList_um[i];
+        S.End1Pos_um.y = Point2YList_um[i];
+        S.End1Pos_um.z = Point2ZList_um[i];
+
+        // Add to Sim, Set ID
+        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 2;
+            ResponseJSON["ShapeIDs"] = "[]";
+            return ResponseJSON.dump();
+        }
+        Simulation* ThisSimulation = Simulations_[SimulationID].get();
+        if (IsSimulationBusy(ThisSimulation)) {
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 5; // simulation is currently processing
+            return ResponseJSON.dump();
+        }
+        int CylinderID = ThisSimulation->Collection.Geometries.size();
+        S.ID = CylinderID;
+        ThisSimulation->Collection.Geometries.push_back(S);
+
+        ShapeIDs.push_back(S.ID);
+
+    }
+
+    // Return Result ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["ShapeIDs"] = ShapeIDs;
+    return ResponseJSON.dump();
+}
+
+
 std::string Manager::BoxCreate(std::string _JSONRequest) {
 
     // Parse Request
@@ -429,6 +608,105 @@ std::string Manager::BoxCreate(std::string _JSONRequest) {
     ResponseJSON["ShapeID"] = ShapeID;
     return ResponseJSON.dump();
 }
+
+std::string Manager::BulkBoxCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    Logger_->Log("Simulation Bulk Create Box Called, On Sim " + std::to_string(SimulationID), 1);
+    
+    // Get Parameters
+    std::vector<float> CenterXList_um;
+    std::vector<float> CenterYList_um;
+    std::vector<float> CenterZList_um;
+    std::vector<float> DimensionsXList_um;
+    std::vector<float> DimensionsYList_um;
+    std::vector<float> DimensionsZList_um;
+    std::vector<float> RotationXList_rad;
+    std::vector<float> RotationYList_rad;
+    std::vector<float> RotationZList_rad;
+    std::vector<std::string> NameList;
+    Util::GetFloatVector(&CenterXList_um, &RequestJSON, "CenterXList_um");
+    Util::GetFloatVector(&CenterYList_um, &RequestJSON, "CenterYList_um");
+    Util::GetFloatVector(&CenterZList_um, &RequestJSON, "CenterZList_um");
+    Util::GetFloatVector(&DimensionsXList_um, &RequestJSON, "DimensionsXList_um");
+    Util::GetFloatVector(&DimensionsYList_um, &RequestJSON, "DimensionsYList_um");
+    Util::GetFloatVector(&DimensionsZList_um, &RequestJSON, "DimensionsZList_um");
+    Util::GetFloatVector(&RotationXList_rad, &RequestJSON, "RotationXList_rad");
+    Util::GetFloatVector(&RotationYList_rad, &RequestJSON, "RotationYList_rad");
+    Util::GetFloatVector(&RotationZList_rad, &RequestJSON, "RotationZList_rad");
+    Util::GetStringVector(&NameList, &RequestJSON, "NameList");
+
+    // Check List Lengths Are Equal, Exit If Not
+    bool LengthsEqual = true;
+    size_t Length = NameList.size();
+    LengthsEqual &= (CenterXList_um.size() == Length);
+    LengthsEqual &= (CenterYList_um.size() == Length);
+    LengthsEqual &= (CenterZList_um.size() == Length);
+    LengthsEqual &= (DimensionsXList_um.size() == Length);
+    LengthsEqual &= (DimensionsYList_um.size() == Length);
+    LengthsEqual &= (DimensionsZList_um.size() == Length);
+    LengthsEqual &= (RotationXList_rad.size() == Length);
+    LengthsEqual &= (RotationYList_rad.size() == Length);
+    LengthsEqual &= (RotationZList_rad.size() == Length);
+    if (!LengthsEqual) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2;
+        ResponseJSON["ShapeIDs"] = "[]";
+        return ResponseJSON.dump();
+    }
+    
+
+
+    // Setup Output ID List
+    std::vector<size_t> ShapeIDs;
+
+    // Now enumerate and build them
+    Logger_->Log("Adding " + std::to_string(Length) + " Boxes", 2);
+    for (size_t i = 0; i < Length; i++) {
+
+        // Build New Box Object
+        Geometries::Box S;
+        S.Name = NameList[i];
+        S.Center_um.x = CenterXList_um[i];
+        S.Center_um.y = CenterYList_um[i];
+        S.Center_um.z = CenterZList_um[i];
+        S.Dims_um.x = DimensionsXList_um[i];
+        S.Dims_um.y = DimensionsYList_um[i];
+        S.Dims_um.z = DimensionsZList_um[i];
+        S.Rotations_rad.x = RotationXList_rad[i];
+        S.Rotations_rad.y = RotationYList_rad[i];
+        S.Rotations_rad.z = RotationZList_rad[i];
+
+        // Add to Sim, Set ID
+        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 2;
+            ResponseJSON["ShapeIDs"] = "[]";
+            return ResponseJSON.dump();
+        }
+        Simulation* ThisSimulation = Simulations_[SimulationID].get();
+        if (IsSimulationBusy(ThisSimulation)) {
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 5; // simulation is currently processing
+            return ResponseJSON.dump();
+        }
+        int BoxID = ThisSimulation->Collection.Geometries.size();
+        S.ID = BoxID;
+        ThisSimulation->Collection.Geometries.push_back(S);
+
+        ShapeIDs.push_back(S.ID);
+
+    }
+
+    // Return Result ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["ShapeIDs"] = ShapeIDs;
+    return ResponseJSON.dump();
+}
+
 
 std::string Manager::BSCreate(std::string _JSONRequest) {
 
@@ -474,6 +752,93 @@ std::string Manager::BSCreate(std::string _JSONRequest) {
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["CompartmentID"] = CompartmentID;
+    return ResponseJSON.dump();
+}
+
+std::string Manager::BulkBSCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    Logger_->Log("Simulation Bulk Create BS Called, On Sim " + std::to_string(SimulationID), 1);
+    
+    // Get Parameters
+    std::vector<float> MembranePotentialList_mV;
+    std::vector<float> SpikeThresholdList_mV;
+    std::vector<float> DecayTimeList_ms;
+    std::vector<float> RestingPotentialList_mV;
+    std::vector<float> AfterHyperpolarizationAmplitudeList_mV;
+    std::vector<std::string> NameList;
+    std::vector<int> ShapeIDList;
+    Util::GetFloatVector(&MembranePotentialList_mV, &RequestJSON, "MembranePotentialList_mV");
+    Util::GetFloatVector(&SpikeThresholdList_mV, &RequestJSON, "SpikeThresholdList_mV");
+    Util::GetFloatVector(&DecayTimeList_ms, &RequestJSON, "DecayTimeList_ms");
+    Util::GetFloatVector(&RestingPotentialList_mV, &RequestJSON, "RestingPotentialList_mV");
+    Util::GetFloatVector(&AfterHyperpolarizationAmplitudeList_mV, &RequestJSON, "AfterHyperpolarizationAmplitudeList_mV");
+    Util::GetStringVector(&NameList, &RequestJSON, "NameList");
+    Util::GetIntVector(&ShapeIDList, &RequestJSON, "ShapeIDList");
+
+    // Check List Lengths Are Equal, Exit If Not
+    bool LengthsEqual = true;
+    size_t Length = NameList.size();
+    LengthsEqual &= (ShapeIDList.size() == Length);
+    LengthsEqual &= (MembranePotentialList_mV.size() == Length);
+    LengthsEqual &= (SpikeThresholdList_mV.size() == Length);
+    LengthsEqual &= (DecayTimeList_ms.size() == Length);
+    LengthsEqual &= (RestingPotentialList_mV.size() == Length);
+    LengthsEqual &= (AfterHyperpolarizationAmplitudeList_mV.size() == Length);
+    if (!LengthsEqual) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2;
+        ResponseJSON["ShapeIDs"] = "[]";
+        return ResponseJSON.dump();
+    }
+    
+
+
+    // Setup Output ID List
+    std::vector<size_t> CompartmentIDs;
+
+    // Now enumerate and build them
+    Logger_->Log("Adding " + std::to_string(Length) + " BS Compartments", 2);
+    for (size_t i = 0; i < Length; i++) {
+
+        // Build New Box Object
+        Compartments::BS S;
+        S.Name = NameList[i];
+        S.AfterHyperpolarizationAmplitude_mV = AfterHyperpolarizationAmplitudeList_mV[i];
+        S.DecayTime_ms = DecayTimeList_ms[i];
+        S.ShapeID = ShapeIDList[i];
+        S.MembranePotential_mV = MembranePotentialList_mV[i];
+        S.RestingPotential_mV = RestingPotentialList_mV[i];
+        S.SpikeThreshold_mV = SpikeThresholdList_mV[i];
+
+        // Add to Sim, Set ID
+        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 2;
+            ResponseJSON["ShapeIDs"] = "[]";
+            return ResponseJSON.dump();
+        }
+        Simulation* ThisSimulation = Simulations_[SimulationID].get();
+        if (IsSimulationBusy(ThisSimulation)) {
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 5; // simulation is currently processing
+            return ResponseJSON.dump();
+        }
+        int CompartmentID = ThisSimulation->BSCompartments.size();
+        S.ID = CompartmentID;
+        ThisSimulation->BSCompartments.push_back(S);
+
+
+        CompartmentIDs.push_back(S.ID);
+
+    }
+
+    // Return Result ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["CompartmentIDs"] = CompartmentIDs;
     return ResponseJSON.dump();
 }
 
