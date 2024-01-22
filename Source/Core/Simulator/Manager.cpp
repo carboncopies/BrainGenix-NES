@@ -373,6 +373,7 @@ std::string Manager::BulkSphereCreate(std::string _JSONRequest) {
     std::vector<size_t> ShapeIDs;
 
     // Now enumerate and build them
+    Logger_->Log("Adding " + std::to_string(Length) + " Spheres", 2);
     for (size_t i = 0; i < Length; i++) {
 
         // Build New Sphere Object
@@ -523,6 +524,7 @@ std::string Manager::BulkCylinderCreate(std::string _JSONRequest) {
     std::vector<size_t> ShapeIDs;
 
     // Now enumerate and build them
+    Logger_->Log("Adding " + std::to_string(Length) + " Cylinders", 2);
     for (size_t i = 0; i < Length; i++) {
 
         // Build New Cylinder Object
@@ -662,6 +664,7 @@ std::string Manager::BulkBoxCreate(std::string _JSONRequest) {
     std::vector<size_t> ShapeIDs;
 
     // Now enumerate and build them
+    Logger_->Log("Adding " + std::to_string(Length) + " Boxes", 2);
     for (size_t i = 0; i < Length; i++) {
 
         // Build New Box Object
@@ -761,20 +764,20 @@ std::string Manager::BulkBSCreate(std::string _JSONRequest) {
     Logger_->Log("Simulation Bulk Create BS Called, On Sim " + std::to_string(SimulationID), 1);
     
     // Get Parameters
-    std::vector<int> ShapeIDList;
     std::vector<float> MembranePotentialList_mV;
     std::vector<float> SpikeThresholdList_mV;
     std::vector<float> DecayTimeList_ms;
     std::vector<float> RestingPotentialList_mV;
     std::vector<float> AfterHyperpolarizationAmplitudeList_mV;
     std::vector<std::string> NameList;
-    Util::GetIntVector(&ShapeIDList, &RequestJSON, "ShapeIDList");
+    std::vector<int> ShapeIDList;
     Util::GetFloatVector(&MembranePotentialList_mV, &RequestJSON, "MembranePotentialList_mV");
     Util::GetFloatVector(&SpikeThresholdList_mV, &RequestJSON, "SpikeThresholdList_mV");
     Util::GetFloatVector(&DecayTimeList_ms, &RequestJSON, "DecayTimeList_ms");
     Util::GetFloatVector(&RestingPotentialList_mV, &RequestJSON, "RestingPotentialList_mV");
     Util::GetFloatVector(&AfterHyperpolarizationAmplitudeList_mV, &RequestJSON, "AfterHyperpolarizationAmplitudeList_mV");
     Util::GetStringVector(&NameList, &RequestJSON, "NameList");
+    Util::GetIntVector(&ShapeIDList, &RequestJSON, "ShapeIDList");
 
     // Check List Lengths Are Equal, Exit If Not
     bool LengthsEqual = true;
@@ -798,6 +801,7 @@ std::string Manager::BulkBSCreate(std::string _JSONRequest) {
     std::vector<size_t> CompartmentIDs;
 
     // Now enumerate and build them
+    Logger_->Log("Adding " + std::to_string(Length) + " BS Compartments", 2);
     for (size_t i = 0; i < Length; i++) {
 
         // Build New Box Object
