@@ -76,6 +76,16 @@ struct ScanRegion {
      */
     std::string ToString();
 
+
+    /**
+     * @brief Size helper functions, returns the size in the indicated dimension
+     * 
+     * @return double 
+     */
+    double SizeX();
+    double SizeY();
+    double SizeZ();
+
 };
 
 

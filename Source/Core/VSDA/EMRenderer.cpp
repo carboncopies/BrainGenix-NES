@@ -6,6 +6,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <vector>
 #include <chrono>
+#include <algorithm>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -34,20 +35,67 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     _Logger->Log("Executing Render Job For Requested Simulation", 4);
 
 
+    // Unpack Variables For Easier Access
+    MicroscopeParameters* Params = &_Simulation->VSDAData_.Params_;
+    ScanRegion* BaseRegion = &_Simulation->VSDAData_.Regions_[_Simulation->VSDAData_.ActiveRegionID_];
+
+
     // -- Phase 1 --
     // We're going to now generate a list of regions which can then be rendered on this machine
     // to do so, we're going to use a configurable max_voxel_array_dimension to find our max size at this resolution, and then calculate the bounding box based on that
-    std::vector<SubRegion> Regions;
+    size_t MaxVoxelArrayAxisSize = 1000; // Hard-coded for now, will eventually do this based on hardware limitations
+
+    // Now, we're going to calculate the max size of the voxel array in microns on axis given this max voxel count and our VSDAData voxel size parameter
+    double SubRegionStepSize_um = (double)MaxVoxelArrayAxisSize * Params->VoxelResolution_um;
+    
+    // Next, we identify the number of regions needed in each direction
+    int NumXSteps = ceil(BaseRegion->SizeX() / SubRegionStepSize_um);
+    int NumYSteps = ceil(BaseRegion->SizeY() / SubRegionStepSize_um);
+    int NumZSteps = ceil(BaseRegion->SizeZ() / SubRegionStepSize_um);
+
+    // Finally, we create the SubRegion array and fill it up with this info
+    std::vector<SubRegion> SubRegions;
+    for (int XStep = 0; XStep < NumXSteps; XStep++) {
+        for (int YStep = 0; YStep < NumYSteps; YStep++) {
+            for (int ZStep = 0; ZStep < NumZSteps; ZStep++) {
+
+                // Calculate offsets/points for this region
+                double OffsetX_um = XStep * SubRegionStepSize_um;
+                double OffsetY_um = YStep * SubRegionStepSize_um;
+                double OffsetZ_um = ZStep * SubRegionStepSize_um;
+                int LayerOffset = ZStep * MaxVoxelArrayAxisSize;
+
+                // Now we fill in the region with the parameters for this part
+                ScanRegion ThisRegion;
+                ThisRegion.Point1X_um = OffsetX_um + BaseRegion->Point1X_um;
+                ThisRegion.Point1Y_um = OffsetY_um + BaseRegion->Point1Y_um;
+                ThisRegion.Point1Z_um = OffsetZ_um + BaseRegion->Point1Z_um;
+                ThisRegion.Point2X_um = std::min(OffsetX_um + SubRegionStepSize_um, (double)BaseRegion->Point2X_um);
+                ThisRegion.Point2Y_um = std::min(OffsetY_um + SubRegionStepSize_um, (double)BaseRegion->Point2Y_um);
+                ThisRegion.Point2Z_um = std::min(OffsetZ_um + SubRegionStepSize_um, (double)BaseRegion->Point2Z_um);
+
+                SubRegion ThisSubRegion;
+                ThisSubRegion.Sim = _Simulation;
+                ThisSubRegion.RegionOffsetX_um = XStep * SubRegionStepSize_um;
+                ThisSubRegion.RegionOffsetY_um = YStep * SubRegionStepSize_um;
+                ThisSubRegion.LayerOffset = ZStep * MaxVoxelArrayAxisSize;
+                ThisSubRegion.Region = ThisRegion;
+
+                SubRegions.push_back(ThisSubRegion);
+
+            }
+        }
+    }
 
 
+    // -- Phase 2 -- 
+    // Now, we're just going to go and render each of the different regions
+    // This is done through simply running a for loop, and calling the rendersubregion code on each
+    _Logger->Log("Rendering " + std::to_string(SubRegions.size()) + " SubRegions", 5);
+    for (size_t i = 0; i < SubRegions.size(); i++) {
+        EMRenderSubRegion(_Logger, &SubRegions[i], _ImageProcessorPool, _GeneratorPool);
+    }
 
-    SubRegion ThisRegion;
-    ThisRegion.LayerOffset = 0;
-    ThisRegion.RegionOffsetX_um = 0.;
-    ThisRegion.RegionOffsetY_um = 0.;
-    ThisRegion.Sim = _Simulation;
-    ThisRegion.Region = _Simulation->VSDAData_.Regions_[_Simulation->VSDAData_.ActiveRegionID_];
-    EMRenderSubRegion(_Logger, &ThisRegion, _ImageProcessorPool, _GeneratorPool);    
 
 
     _Simulation->VSDAData_.State_ = VSDA_RENDER_DONE;

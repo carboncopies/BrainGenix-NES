@@ -31,7 +31,17 @@ std::string ScanRegion::ToString() {
     return Out;
 }
 
+double ScanRegion::SizeX() {
+    return abs(Point1X_um - Point2X_um);
+}
 
+double ScanRegion::SizeY() {
+    return abs(Point1Y_um - Point2Y_um);
+}
+
+double ScanRegion::SizeZ() {
+    return abs(Point1Z_um - Point2Z_um);
+}
 
 }; // Close Namespace Logger
 }; // Close Namespace Common
