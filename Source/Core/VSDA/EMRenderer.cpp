@@ -12,6 +12,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EMRenderer.h>
 
+#include <VSDA/VoxelSubsystem/EMSubRegion.h>
 
 
 
@@ -20,6 +21,33 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 namespace VSDA {
+
+
+bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
+
+    // Check that the simulation has been initialized and everything is ready to have work done
+    if (_Simulation->VSDAData_.State_ != VSDA_RENDER_REQUESTED) {
+        return false;
+    }
+    _Simulation->VSDAData_.State_ = VSDA_RENDER_IN_PROGRESS;
+    
+    _Logger->Log("Executing Render Job For Requested Simulation", 4);
+
+
+    SubRegion ThisRegion;
+    ThisRegion.LayerOffset = 0;
+    ThisRegion.RegionOffsetX_um = 0.;
+    ThisRegion.RegionOffsetY_um = 0.;
+    ThisRegion.Sim = _Simulation;
+    ThisRegion.Region = _Simulation->VSDAData_.Regions_[_Simulation->VSDAData_.ActiveRegionID_];
+    EMRenderSubRegion(_Logger, &ThisRegion, _ImageProcessorPool, _GeneratorPool);    
+
+
+    _Simulation->VSDAData_.State_ = VSDA_RENDER_DONE;
+
+    return true;
+
+}
 
 
 bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
@@ -47,10 +75,6 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
     _Simulation->VSDAData_.Array_ = std::make_unique<VoxelArray>(RequestedRegion, _Simulation->VSDAData_.Params_.VoxelResolution_um);
     CreateVoxelArrayFromSimulation(_Logger, _Simulation, &_Simulation->VSDAData_.Params_, _Simulation->VSDAData_.Array_.get(), _GeneratorPool);
 
-
-    // Set Image Size
-    // _Renderer->SetResolution(_Simulation->VSDAData_.Params_.ImageWidth_px, _Simulation->VSDAData_.Params_.ImageHeight_px);
-    // _Renderer->DrawFrame();
 
 
 

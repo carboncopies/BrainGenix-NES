@@ -115,6 +115,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/RenderPool.h
   ${SRC_DIR}/Core/VSDA/RPCRoutes/EM.cpp
   ${SRC_DIR}/Core/VSDA/RPCRoutes/EM.h
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/EMSubRegion.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/EMSubRegion.h
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/VoxelArrayGenerator.cpp
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/VoxelArrayGenerator.h
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/VoxelArrayRenderer.cpp
@@ -129,6 +131,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VoxelArray.h
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VSDAData.cpp
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VSDAData.h
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/SubRegion.cpp
+  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/SubRegion.h
 
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h

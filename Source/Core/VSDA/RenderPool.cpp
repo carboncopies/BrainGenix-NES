@@ -42,7 +42,7 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
 
             // Okay, we got work, now render this simulation
             Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering Simulation " + std::to_string(SimToProcess->ID), 2);
-            VSDA::ExecuteRenderOperations(Logger_, SimToProcess, ImageProcessorPool_.get(), ArrayGeneratorPool_.get());
+            VSDA::ExecuteSubRenderOperations(Logger_, SimToProcess, ImageProcessorPool_.get(), ArrayGeneratorPool_.get());
             SimToProcess->IsRendering = false;
 
         } else {

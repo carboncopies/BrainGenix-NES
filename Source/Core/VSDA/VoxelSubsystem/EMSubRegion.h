@@ -47,14 +47,10 @@
 #include <VSDA/VoxelSubsystem/VoxelArrayRenderer.h>
 #include <VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
 #include <VSDA/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
-
-#include <BG/Renderer/Interface.h>
-#include <BG/Renderer/SceneGraph/Primitive/Cube.h>
+#include <VSDA/VoxelSubsystem/Structs/SubRegion.h>
 
 #include <BG/Common/Logger/Logger.h>
-#include <Util/JSONHelpers.h>
 
-#include <RPC/Manager.h>
 
 
 
@@ -65,13 +61,17 @@ namespace VSDA {
 
 
 /**
- * @brief Enumerates all simulations and checks for a render operation.
+ * @brief Renders an EM subregion component.
+ * Takes a pointer to the region in question which needs rendering.
  * 
- * @return true Success
- * @return false Fail
+ * @param _Logger 
+ * @param _SubRegion 
+ * @param _ImageProcessorPool 
+ * @param _GeneratorPool 
+ * @return true 
+ * @return false 
  */
-bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
-bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
+bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _SubRegion, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
 
 
 
