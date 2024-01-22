@@ -1,3 +1,15 @@
+//=================================//
+// This file is part of BrainGenix //
+//=================================//
+
+
+// Standard Libraries (BG convention: use <> instead of "")
+#include <thread>
+
+// Third-Party Libraries (BG convention: use <> instead of "")
+
+// Internal Libraries (BG convention: use <> instead of "")
+
 #include <RPC/Manager.h>
 
 
@@ -21,8 +33,11 @@ Manager::Manager(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Lo
     AddRoute("GetAPIVersion", _Logger, &GetAPIVersion);
     AddRoute("Echo", _Logger, &Echo);
     
-    int ThreadCount = 1;
 
+
+    int ThreadCount = std::thread::hardware_concurrency();
+    _Logger->Log("Starting RPC Server With '" + std::to_string(ThreadCount) + "' Threads", 5);
+    
     // Start the RPC server asynchronously with the specified thread count
     RPCServer_->async_run(ThreadCount);
 }

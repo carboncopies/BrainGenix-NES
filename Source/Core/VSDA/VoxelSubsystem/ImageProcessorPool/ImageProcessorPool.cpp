@@ -110,14 +110,24 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             int Channels = OneToOneVoxelImage.NumChannels_;
             unsigned char* SourcePixels = OneToOneVoxelImage.Data_.get();
 
+
             // Resize Image
             int TargetX = Task->Width_px;
             int TargetY = Task->Height_px;
-            std::unique_ptr<unsigned char> ResizedPixels = std::unique_ptr<unsigned char>(new unsigned char[TargetX * TargetY * Channels]());
-            stbir_resize_uint8(SourcePixels, SourceX, SourceY, SourceX * Channels, ResizedPixels.get(), TargetX, TargetY, TargetX * Channels, Channels);
+            bool ResizeImage = (SourceX != TargetX) || (SourceY != TargetY);
+            std::unique_ptr<unsigned char> ResizedPixels;
+            if (ResizeImage) {
+                ResizedPixels = std::unique_ptr<unsigned char>(new unsigned char[TargetX * TargetY * Channels]());
+                stbir_resize_uint8(SourcePixels, SourceX, SourceY, SourceX * Channels, ResizedPixels.get(), TargetX, TargetY, TargetX * Channels, Channels);
+            }
 
             // Write Image
-            stbi_write_png(Task->TargetFileName_.c_str(), TargetX, TargetY, Channels, ResizedPixels.get(), TargetX * Channels);
+            unsigned char* OutPixels = SourcePixels;
+            if (ResizeImage) {
+                OutPixels = ResizedPixels.get();
+            }
+            
+            stbi_write_png(Task->TargetFileName_.c_str(), TargetX, TargetY, Channels, OutPixels, TargetX * Channels);
 
             // Update Task Result
             Task->IsDone_ = true;
