@@ -61,11 +61,6 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
     int TotalYSteps = ceil(TotalSliceHeight / CameraStepSizeY_um);
 
 
-    // Update Stats With Total Number Of Images
-    // _VSDAData->TotalSliceImages_ = TotalXSteps * TotalYSteps;
-    // _Logger->Log("Image Stack Will Have " + std::to_string(TotalXSteps) + " X Steps, " + std::to_string(TotalYSteps) + " Y Steps", 4);
-
-
     // Now, we enumerate through all the steps needed, one at a time until we reach the end
     for (int XStep = 0; XStep < TotalXSteps; XStep++) {
         for (int YStep = 0; YStep < TotalYSteps; YStep++) {
