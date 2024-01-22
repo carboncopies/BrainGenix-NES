@@ -62,6 +62,14 @@ void GetArrVec3(Simulator::Geometries::Vec3D& _Vector, nlohmann::json* _Input, s
 }
 
 
+void GetIntVector(std::vector<int>* _Vector, nlohmann::json* _Input, std::string _JSONKey) {
+    _Vector->clear();
+    nlohmann::json Vector = (*_Input)[_JSONKey];
+    for (nlohmann::json::iterator it = Vector.begin(); it != Vector.end(); it++) {
+        _Vector->push_back(it.value());
+    }    
+}
+
 void GetFloatVector(std::vector<float>* _Vector, nlohmann::json* _Input, std::string _JSONKey) {
     _Vector->clear();
     nlohmann::json Vector = (*_Input)[_JSONKey];

@@ -31,8 +31,11 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     _RPCManager->AddRoute("Geometry/Shape/Sphere/Create", Logger_, [this](std::string RequestJSON){ return SphereCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Sphere/BulkCreate", Logger_, [this](std::string RequestJSON){ return BulkSphereCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Cylinder/Create", Logger_, [this](std::string RequestJSON){ return CylinderCreate(RequestJSON);});
+    _RPCManager->AddRoute("Geometry/Shape/Cylinder/BulkCreate", Logger_, [this](std::string RequestJSON){ return BulkCylinderCreate(RequestJSON);});
     _RPCManager->AddRoute("Geometry/Shape/Box/Create", Logger_, [this](std::string RequestJSON){ return BoxCreate(RequestJSON);});
+    _RPCManager->AddRoute("Geometry/Shape/Box/BulkCreate", Logger_, [this](std::string RequestJSON){ return BulkBoxCreate(RequestJSON);});
     _RPCManager->AddRoute("Compartment/BS/Create", Logger_, [this](std::string RequestJSON){ return BSCreate(RequestJSON);});
+    _RPCManager->AddRoute("Compartment/BS/BulkCreate", Logger_, [this](std::string RequestJSON){ return BulkBSCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Staple/Create", Logger_, [this](std::string RequestJSON){ return StapleCreate(RequestJSON);});
     _RPCManager->AddRoute("Connection/Receptor/Create", Logger_, [this](std::string RequestJSON){ return ReceptorCreate(RequestJSON);});
     _RPCManager->AddRoute("Neuron/BSNeuron/Create", Logger_, [this](std::string RequestJSON){ return BSNeuronCreate(RequestJSON);});
@@ -746,6 +749,92 @@ std::string Manager::BSCreate(std::string _JSONRequest) {
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["CompartmentID"] = CompartmentID;
+    return ResponseJSON.dump();
+}
+
+std::string Manager::BulkBSCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    Logger_->Log("Simulation Bulk Create BS Called, On Sim " + std::to_string(SimulationID), 1);
+    
+    // Get Parameters
+    std::vector<int> ShapeIDList;
+    std::vector<float> MembranePotentialList_mV;
+    std::vector<float> SpikeThresholdList_mV;
+    std::vector<float> DecayTimeList_ms;
+    std::vector<float> RestingPotentialList_mV;
+    std::vector<float> AfterHyperpolarizationAmplitudeList_mV;
+    std::vector<std::string> NameList;
+    Util::GetIntVector(&ShapeIDList, &RequestJSON, "ShapeIDList");
+    Util::GetFloatVector(&MembranePotentialList_mV, &RequestJSON, "MembranePotentialList_mV");
+    Util::GetFloatVector(&SpikeThresholdList_mV, &RequestJSON, "SpikeThresholdList_mV");
+    Util::GetFloatVector(&DecayTimeList_ms, &RequestJSON, "DecayTimeList_ms");
+    Util::GetFloatVector(&RestingPotentialList_mV, &RequestJSON, "RestingPotentialList_mV");
+    Util::GetFloatVector(&AfterHyperpolarizationAmplitudeList_mV, &RequestJSON, "AfterHyperpolarizationAmplitudeList_mV");
+    Util::GetStringVector(&NameList, &RequestJSON, "NameList");
+
+    // Check List Lengths Are Equal, Exit If Not
+    bool LengthsEqual = true;
+    size_t Length = NameList.size();
+    LengthsEqual &= (ShapeIDList.size() == Length);
+    LengthsEqual &= (MembranePotentialList_mV.size() == Length);
+    LengthsEqual &= (SpikeThresholdList_mV.size() == Length);
+    LengthsEqual &= (DecayTimeList_ms.size() == Length);
+    LengthsEqual &= (RestingPotentialList_mV.size() == Length);
+    LengthsEqual &= (AfterHyperpolarizationAmplitudeList_mV.size() == Length);
+    if (!LengthsEqual) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2;
+        ResponseJSON["ShapeIDs"] = "[]";
+        return ResponseJSON.dump();
+    }
+    
+
+
+    // Setup Output ID List
+    std::vector<size_t> CompartmentIDs;
+
+    // Now enumerate and build them
+    for (size_t i = 0; i < Length; i++) {
+
+        // Build New Box Object
+        Compartments::BS S;
+        S.Name = NameList[i];
+        S.AfterHyperpolarizationAmplitude_mV = AfterHyperpolarizationAmplitudeList_mV[i];
+        S.DecayTime_ms = DecayTimeList_ms[i];
+        S.ShapeID = ShapeIDList[i];
+        S.MembranePotential_mV = MembranePotentialList_mV[i];
+        S.RestingPotential_mV = RestingPotentialList_mV[i];
+        S.SpikeThreshold_mV = SpikeThresholdList_mV[i];
+
+        // Add to Sim, Set ID
+        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 2;
+            ResponseJSON["ShapeIDs"] = "[]";
+            return ResponseJSON.dump();
+        }
+        Simulation* ThisSimulation = Simulations_[SimulationID].get();
+        if (IsSimulationBusy(ThisSimulation)) {
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 5; // simulation is currently processing
+            return ResponseJSON.dump();
+        }
+        int CompartmentID = ThisSimulation->BSCompartments.size();
+        S.ID = CompartmentID;
+        ThisSimulation->BSCompartments.push_back(S);
+
+
+        CompartmentIDs.push_back(S.ID);
+
+    }
+
+    // Return Result ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["CompartmentIDs"] = CompartmentIDs;
     return ResponseJSON.dump();
 }
 
