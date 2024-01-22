@@ -86,12 +86,6 @@ private:
      */
     void EnqueueTask(ProcessingTask* _Task);
 
-    /**
-     * @brief Thread safe getSize function.
-     * 
-     * @return int 
-     */
-    int GetQueueSize();
 
     /**
      * @brief Thread safe get ProcessingTask* from queue function. 
@@ -136,6 +130,13 @@ public:
      * @param _ProcessingTask 
      */
     void QueueEncodeOperation(ProcessingTask* _Task);
+
+    /**
+     * @brief Thread safe getSize function.
+     * 
+     * @return int 
+     */
+    int GetQueueSize();
 
 
 };

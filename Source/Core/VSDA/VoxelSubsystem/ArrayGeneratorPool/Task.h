@@ -62,7 +62,7 @@ struct Task {
     float                           VoxelResolution_um_; /**Set the resolution size of each voxel on axis in microns.*/
     Geometries::GeometryCollection* GeometryCollection_; /**Pointer to instance of the simulation's geometry collection.*/ 
     std::atomic_bool                IsDone_ = false;     /**Indicates if this task has been processed or not.*/
-    VoxelArray*                     Array_;              /**Pointer to the voxel array that we're writing to.*/
+    VoxelArray*                     Array_ = nullptr;    /**Pointer to the voxel array that we're writing to.*/
 
 };
 
