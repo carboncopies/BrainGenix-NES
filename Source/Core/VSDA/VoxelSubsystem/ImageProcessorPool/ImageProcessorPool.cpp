@@ -124,7 +124,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             // Write Image
             unsigned char* OutPixels = SourcePixels;
             if (ResizeImage) {
-                OutPixels = ResizeImage.get();
+                OutPixels = ResizedPixels.get();
             }
             
             stbi_write_png(Task->TargetFileName_.c_str(), TargetX, TargetY, Channels, OutPixels, TargetX * Channels);
