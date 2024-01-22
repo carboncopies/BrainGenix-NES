@@ -65,14 +65,41 @@ bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulat
             _Simulation->VSDAData_.RenderedImagePaths_[_Simulation->VSDAData_.ActiveRegionID_].push_back(Files[i]);
         }
 
-        // Update Current Slice Information (Account for slice numbers not starting at 0)
-        _Simulation->VSDAData_.TotalSlices_ = _Simulation->VSDAData_.Array_.get()->GetZ();
-        _Simulation->VSDAData_.CurrentSlice_ = i + 1;
+        
     }
 
 
 
     // Ensure All Tasks Are Finished
+    while (_ImageProcessorPool->GetQueueSize() > 0) {
+
+        // Calculate Desired Image Size
+        // In order for us to deal with multiple different pixel/voxel setting, we create an image of start size where one pixel = 1 voxel
+        // then later on, we resample it to be the right size (for the target image)
+        int VoxelsPerStepX = ceil(_Simulation->VSDAData_.Params_.ImageWidth_px / _Simulation->VSDAData_.Params_.NumPixelsPerVoxel_px);
+        int VoxelsPerStepY = ceil(_Simulation->VSDAData_.Params_.ImageHeight_px / _Simulation->VSDAData_.Params_.NumPixelsPerVoxel_px);
+        int NumChannels = 3;
+        float CameraStepSizeX_um = VoxelsPerStepX * _Simulation->VSDAData_.Params_.VoxelResolution_um;
+        float CameraStepSizeY_um = VoxelsPerStepY * _Simulation->VSDAData_.Params_.VoxelResolution_um;
+
+        double TotalSliceWidth = abs((double)_Simulation->VSDAData_.Array_->GetBoundingBox().bb_point1[0] - (double)_Simulation->VSDAData_.Array_->GetBoundingBox().bb_point2[0]);
+        double TotalSliceHeight = abs((double)_Simulation->VSDAData_.Array_->GetBoundingBox().bb_point1[1] - (double)_Simulation->VSDAData_.Array_->GetBoundingBox().bb_point2[1]);
+        int TotalXSteps = ceil(TotalSliceWidth / CameraStepSizeX_um);
+        int TotalYSteps = ceil(TotalSliceHeight / CameraStepSizeY_um);
+
+        int ImagesPerSlice = TotalXSteps * TotalYSteps;
+
+
+        // Update Current Slice Information (Account for slice numbers not starting at 0)
+        _Simulation->VSDAData_.TotalSlices_ = _Simulation->VSDAData_.Array_.get()->GetZ();
+        _Simulation->VSDAData_.CurrentSlice_ = ceil((float)_ImageProcessorPool->GetQueueSize() / ImagesPerSlice);
+
+
+        // Update The API Result Info With The Current Slice Number
+        _Simulation->VSDAData_.CurrentSliceImage_ = _ImageProcessorPool->GetQueueSize() % ImagesPerSlice;
+
+
+    }
     for (unsigned int i = 0; i < _Simulation->VSDAData_.Tasks_.size(); i++) {
         ProcessingTask* Task = _Simulation->VSDAData_.Tasks_[i].get();
         while (Task->IsDone_ != true) {

@@ -40,7 +40,7 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
     float VoxelSize = Array->GetResolution();
     BoundingBox VoxelBB = Array->GetBoundingBox();
 
-    _Logger->Log(std::string("Rendering Slice '") + std::to_string(SliceNumber) + "'", 1);
+    // _Logger->Log(std::string("Rendering Slice '") + std::to_string(SliceNumber) + "'", 1);
 
 
     std::vector<std::string> Filenames;
@@ -62,8 +62,8 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
 
 
     // Update Stats With Total Number Of Images
-    _VSDAData->TotalSliceImages_ = TotalXSteps * TotalYSteps;
-    _Logger->Log("Image Stack Will Have " + std::to_string(TotalXSteps) + " X Steps, " + std::to_string(TotalYSteps) + " Y Steps", 4);
+    // _VSDAData->TotalSliceImages_ = TotalXSteps * TotalYSteps;
+    // _Logger->Log("Image Stack Will Have " + std::to_string(TotalXSteps) + " X Steps, " + std::to_string(TotalYSteps) + " Y Steps", 4);
 
 
     // Now, we enumerate through all the steps needed, one at a time until we reach the end
@@ -93,8 +93,7 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
             _VSDAData->Tasks_.push_back(std::move(ThisTask));
 
 
-            // Update The API Result Info With The Current Slice Number
-            _VSDAData->CurrentSliceImage_ = (XStep * TotalYSteps) + YStep + 1;
+
 
         }
     }

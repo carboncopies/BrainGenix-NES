@@ -92,7 +92,6 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             ThisTask->IsDone_ = true;
 
 
-
             // Measure Time
             double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
             Times.push_back(Duration_ms);
