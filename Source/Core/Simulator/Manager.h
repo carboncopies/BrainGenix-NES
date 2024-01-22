@@ -104,8 +104,11 @@ public:
     std::string SphereCreate(std::string _JSONRequest);
     std::string BulkSphereCreate(std::string _JSONRequest);
     std::string CylinderCreate(std::string _JSONRequest);
+    std::string BulkCylinderCreate(std::string _JSONRequest);
     std::string BoxCreate(std::string _JSONRequest);
+    std::string BulkBoxCreate(std::string _JSONRequest);
     std::string BSCreate(std::string _JSONRequest);
+    std::string BulkBSCreate(std::string _JSONRequest);
     std::string StapleCreate(std::string _JSONRequest);
     std::string ReceptorCreate(std::string _JSONRequest);
     std::string BSNeuronCreate(std::string _JSONRequest);
