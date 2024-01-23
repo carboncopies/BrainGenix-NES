@@ -43,7 +43,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     // -- Phase 1 --
     // We're going to now generate a list of regions which can then be rendered on this machine
     // to do so, we're going to use a configurable max_voxel_array_dimension to find our max size at this resolution, and then calculate the bounding box based on that
-    size_t MaxVoxelArrayAxisSize = 1000; // Hard-coded for now, will eventually do this based on hardware limitations
+    size_t MaxVoxelArrayAxisSize = 1500; // Hard-coded for now, will eventually do this based on hardware limitations
 
     // Now, we're going to calculate the max size of the voxel array in microns on axis given this max voxel count and our VSDAData voxel size parameter
     double SubRegionStepSize_um = (double)MaxVoxelArrayAxisSize * Params->VoxelResolution_um;

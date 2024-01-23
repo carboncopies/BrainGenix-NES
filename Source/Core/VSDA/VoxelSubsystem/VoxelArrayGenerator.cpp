@@ -69,8 +69,8 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 
     // Build Bounding Boxes For All Compartments
-    size_t AddedShapes;
-    size_t TotalShapes;
+    int AddedShapes = 0;
+    int TotalShapes = 0;
     for (unsigned int i = 0; i < _Sim->BSCompartments.size(); i++) {
 
         Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
@@ -101,8 +101,8 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 
     // Log some info for the ratio of added shapes
-    double RatioAdded = (double)AddedShapes / (double)TotalShapes;
-    _Logger->Log("Added " + std::to_string(RatioAdded * 100.) + "% Of Compartments To This Subregion", 4);
+    double RatioAdded = ((double)AddedShapes / (double)TotalShapes) * 100.;
+    _Logger->Log("Added " + std::to_string(RatioAdded) + "% Of Compartments To This Subregion", 4);
 
 
     // Add our border frame while we wait
