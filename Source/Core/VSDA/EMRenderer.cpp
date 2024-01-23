@@ -81,6 +81,9 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
                 ThisSubRegion.LayerOffset = ZStep * MaxVoxelArrayAxisSize;
                 ThisSubRegion.Region = ThisRegion;
 
+
+                _Logger->Log("Created SubRegion At Location " + ThisRegion.ToString(), 3);
+
                 SubRegions.push_back(ThisSubRegion);
 
             }
@@ -91,7 +94,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     // -- Phase 2 -- 
     // Now, we're just going to go and render each of the different regions
     // This is done through simply running a for loop, and calling the rendersubregion code on each
-    _Logger->Log("Rendering " + std::to_string(SubRegions.size()) + " SubRegions", 5);
+    _Logger->Log("Rendering " + std::to_string(SubRegions.size()) + " Sub Regions", 4);
     for (size_t i = 0; i < SubRegions.size(); i++) {
         EMRenderSubRegion(_Logger, &SubRegions[i], _ImageProcessorPool, _GeneratorPool);
     }

@@ -27,7 +27,6 @@ void Sphere::Show() { return; };
 //! Returns the volume of the sphere in micrometer^3.
 float Sphere::Volume_um3() {
     return 4.0 / 3.0 * M_PI * pow(this->Radius_um, 3.0);
-    ;
 };
 
 BoundingBox Sphere::GetBoundingBox() {

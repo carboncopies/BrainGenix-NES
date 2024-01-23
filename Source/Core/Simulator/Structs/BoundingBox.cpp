@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <iostream>
 
 #include <Simulator/Structs/BoundingBox.h>
 
