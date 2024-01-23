@@ -310,7 +310,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
 
         // Create 1k spheres
-        for (unsigned int i = 0; i < 300000; i++) {
+        for (unsigned int i = 0; i < 400000; i++) {
 
             std::string Name = "Sphere " + std::to_string(i);
             float Radius_um = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/8.));
@@ -342,39 +342,39 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
 
 
-        // Create 100k cylinders
-        for (unsigned int i = 0; i < 100000; i++) {
+        // // Create 100k cylinders
+        // for (unsigned int i = 0; i < 100000; i++) {
 
-            std::string Name = "Cylinder " + std::to_string(i);
-            float Radius_um = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/2.));
-            float Radius2_um = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/2.));
-            float CenterPosX = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/1000));
-            float CenterPosY = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/1000));
-            float CenterPosZ = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/1000));
-            float CenterPos2X = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/1000));
-            float CenterPos2Y = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/1000));
-            float CenterPos2Z = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/1000));
+        //     std::string Name = "Cylinder " + std::to_string(i);
+        //     float Radius_um = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/2.));
+        //     float Radius2_um = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/2.));
+        //     float CenterPosX = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/1000));
+        //     float CenterPosY = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/1000));
+        //     float CenterPosZ = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/1000));
+        //     float CenterPos2X = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/1000));
+        //     float CenterPos2Y = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/1000));
+        //     float CenterPos2Z = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/1000));
 
-            // -- Create Sphere -- //
-            Simulator::Geometries::Cylinder S;
-            S.Name = Name;
-            S.End0Radius_um = Radius_um;
-            S.End1Radius_um = Radius_um;
-            S.End0Pos_um = Simulator::Geometries::Vec3D(CenterPosX, CenterPosY, CenterPosZ);
-            S.End1Pos_um = Simulator::Geometries::Vec3D(CenterPos2X, CenterPos2Y, CenterPos2Z);
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
-            S.ID = ThisSimulation->Collection.Geometries.size();
-            ThisSimulation->Collection.Geometries.push_back(S);
-
-
-            // -- Create Compartments -- //
-            Simulator::Compartments::BS C;
-            C.ShapeID = S.ID;
-            C.ID  = ThisSimulation->BSCompartments.size();
-            ThisSimulation->BSCompartments.push_back(C);
+        //     // -- Create Sphere -- //
+        //     Simulator::Geometries::Cylinder S;
+        //     S.Name = Name;
+        //     S.End0Radius_um = Radius_um;
+        //     S.End1Radius_um = Radius_um;
+        //     S.End0Pos_um = Simulator::Geometries::Vec3D(CenterPosX, CenterPosY, CenterPosZ);
+        //     S.End1Pos_um = Simulator::Geometries::Vec3D(CenterPos2X, CenterPos2Y, CenterPos2Z);
+        //     Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+        //     S.ID = ThisSimulation->Collection.Geometries.size();
+        //     ThisSimulation->Collection.Geometries.push_back(S);
 
 
-        }
+        //     // -- Create Compartments -- //
+        //     Simulator::Compartments::BS C;
+        //     C.ShapeID = S.ID;
+        //     C.ID  = ThisSimulation->BSCompartments.size();
+        //     ThisSimulation->BSCompartments.push_back(C);
+
+
+        // }
 
 
 
