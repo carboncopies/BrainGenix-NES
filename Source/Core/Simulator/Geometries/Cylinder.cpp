@@ -189,6 +189,21 @@ bool Cylinder::IsPointInShape(Vec3D _Position_um) {
     return false;
 }
 
+bool Cylinder::IsInsideRegion(BoundingBox _Region) {
+    // We're going to make this a really conservative bounding box
+    // This bounding box probably extends past what is reasonable
+    BoundingBox MyBB;
+    MyBB.bb_point1[0] = End0Pos_um.x - End0Radius_um;
+    MyBB.bb_point1[1] = End0Pos_um.y - End0Radius_um;
+    MyBB.bb_point1[2] = End0Pos_um.z - End0Radius_um;
+    MyBB.bb_point2[0] = End1Pos_um.x + End1Radius_um;
+    MyBB.bb_point2[1] = End1Pos_um.y + End1Radius_um;
+    MyBB.bb_point2[2] = End1Pos_um.z + End1Radius_um;
+    return MyBB.IsIntersecting(_Region);
+}
+
+
+
 }; // namespace Geometries
 }; // namespace Simulator
 }; // namespace NES

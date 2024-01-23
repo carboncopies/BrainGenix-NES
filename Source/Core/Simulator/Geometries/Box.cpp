@@ -141,6 +141,21 @@ std::vector<Vec3D> Box::GetPointCloud(float _VoxelScale) {
     return rotated_and_translated_point_cloud;
 }
 
+bool Box::IsInsideRegion(BoundingBox _Region) {
+    
+    // We're going to make this a really conservative bounding box
+    // This bounding box probably extends past what is reasonable
+    BoundingBox MyBB;
+    MyBB.bb_point1[0] = Center_um.x - Dims_um.x;
+    MyBB.bb_point1[1] = Center_um.y - Dims_um.y;
+    MyBB.bb_point1[2] = Center_um.z - Dims_um.z;
+    MyBB.bb_point2[0] = Center_um.x + Dims_um.x;
+    MyBB.bb_point2[1] = Center_um.y + Dims_um.y;
+    MyBB.bb_point2[2] = Center_um.z + Dims_um.z;
+    return MyBB.IsIntersecting(_Region);
+}
+
+
 }; // namespace Geometries
 }; // namespace Simulator
 }; // namespace NES

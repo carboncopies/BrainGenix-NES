@@ -52,6 +52,12 @@ bool Sphere::IsPointInShape(Vec3D _Position_um) {
 }
 
 
+bool Sphere::IsInsideRegion(BoundingBox _Region) {
+    return GetBoundingBox().IsIntersecting(_Region);
+}
+
+
+
 }; // namespace Geometries
 }; // namespace Simulator
 }; // namespace NES

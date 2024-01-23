@@ -25,6 +25,26 @@ namespace NES {
 namespace Simulator {
 
 
+bool IsShapeInsideRegion(Simulation* _Sim, size_t _ShapeID, BoundingBox _Region) {
+
+    bool IsInside = false;
+    Geometries::GeometryCollection* GeometryCollection = &_Sim->Collection;
+    if (GeometryCollection->IsSphere(_ShapeID)) {
+        Geometries::Sphere& ThisSphere = GeometryCollection->GetSphere(_ShapeID);
+        IsInside = ThisSphere.IsInsideRegion(_Region);
+    }
+    else if (GeometryCollection->IsBox(_ShapeID)) {
+        Geometries::Box& ThisBox = GeometryCollection->GetBox(_ShapeID); 
+        IsInside = ThisBox.IsInsideRegion(_Region);
+    }
+    else if (GeometryCollection->IsCylinder(_ShapeID)) {
+        Geometries::Cylinder& ThisCylinder = GeometryCollection->GetCylinder(_ShapeID);
+        IsInside = ThisCylinder.IsInsideRegion(_Region);
+    }
+
+    return IsInside;
+
+}
 
 bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
     assert(_Array != nullptr);
@@ -38,11 +58,22 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     // Create Vector to store list of tasks so we can check if they all got done at the end before returning
     std::vector<std::unique_ptr<VoxelArrayGenerator::Task>> Tasks;
 
+    // Convert to bounding box so we can optimize out extra shapes
+    ScanRegion ThisRegion = _Sim->VSDAData_.Regions_[_Sim->VSDAData_.ActiveRegionID_];
+    BoundingBox RegionBoundingBox;
+    RegionBoundingBox.bb_point1[0] = ThisRegion.Point1X_um;
+    RegionBoundingBox.bb_point1[1] = ThisRegion.Point1Y_um;
+    RegionBoundingBox.bb_point1[2] = ThisRegion.Point1Z_um;
+    RegionBoundingBox.bb_point2[0] = ThisRegion.Point2X_um;
+    RegionBoundingBox.bb_point2[1] = ThisRegion.Point2Y_um;
+    RegionBoundingBox.bb_point2[2] = ThisRegion.Point2Z_um;
+
 
     // Build Bounding Boxes For All Compartments
     for (unsigned int i = 0; i < _Sim->BSCompartments.size(); i++) {
 
         Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
+
 
         // Create a working task for the generatorpool to complete
         std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
@@ -52,11 +83,15 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         Task->VoxelResolution_um_ = _Params->VoxelResolution_um;
 
 
-        // Now submit to render queue
-        _GeneratorPool->QueueWorkOperation(Task.get());
+        // Now submit to render queue if it's inside the region, otherwise skip it
+        if (IsShapeInsideRegion(_Sim, ThisCompartment->ShapeID, RegionBoundingBox)) {
+            
+            _GeneratorPool->QueueWorkOperation(Task.get());
 
-        // Then move it to the list so we can keep track of it
-        Tasks.push_back(std::move(Task));
+            // Then move it to the list so we can keep track of it
+            Tasks.push_back(std::move(Task));
+
+        }
     }
 
     // Add our border frame while we wait
