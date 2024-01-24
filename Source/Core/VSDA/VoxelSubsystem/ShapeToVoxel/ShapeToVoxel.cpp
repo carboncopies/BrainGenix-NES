@@ -88,7 +88,8 @@ bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, float _VoxelScale) {
     assert(_VoxelScale != 0); // Will get stuck in infinite loop
 
     // 1. Get rotated point cloud.
-    std::vector<Geometries::Vec3D> point_cloud = _Box->GetPointCloud(_VoxelScale);
+    std::vector<Geometries::Vec3D> point_cloud;
+    _Box->GetPointCloudFast(_VoxelScale, &point_cloud);
 
     // 2. Set corresponding voxels.
     for (const Geometries::Vec3D & p : point_cloud) {

@@ -58,6 +58,28 @@ struct Box : Geometry {
     //! Returns a point cloud that can be used to fill voxels representing the cylinder.
     std::vector<Vec3D> GetPointCloud(float _VoxelScale);
 
+
+
+
+    /**
+     * @brief Generates a point cloud and writes it into the array given.
+     * Note that the array is expected to be allocated to a length of GetNumPointsInCloud size.
+     * 
+     * @param _VoxelScale 
+     * @param _Vector 
+     */
+    void GetPointCloudFast(float _VoxelScale, Vec3D* _Array);
+
+    /**
+     * @brief Returns the number of points in the cloud at the given scale.
+     * We use this for the getpointcloud fast function in order to allocate an array of the correct size.
+     * 
+     * @param _VoxelScale 
+     * @return uint64_t 
+     */
+    uint64_t GetNumPointsInCloud(float _VoxelScale);
+
+
 };
 
 }; // namespace Geometries

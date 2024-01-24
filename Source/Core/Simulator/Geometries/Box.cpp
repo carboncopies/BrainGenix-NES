@@ -117,6 +117,46 @@ void add_rectangle_points(float _x, float _ylen, float _zlen, float _VoxelScale,
 //     return Vec3D(x_rotz_roty, y_rotz_rotx, z_roty_rotx);
 // }
 
+
+uint64_t Box::GetNumPointsInCloud(float _VoxelScale) {
+
+    // Calculate how big our vector is going to need to be
+    float StepSize = 0.5 * _VoxelScale;
+    uint64_t StepsX = uint64_t(Dims_um.x / StepSize);
+    uint64_t StepsY = uint64_t(Dims_um.y / StepSize);
+    uint64_t StepsZ = uint64_t(Dims_um.z / StepSize);
+    uint64_t VectorSize = StepsX * StepsY * StepsZ;
+
+    return VectorSize;
+
+}
+
+void Box::GetPointCloudFast(float _VoxelScale, Vec3D* _Vector) {
+    assert(_Vector != nullptr);
+
+
+    // Now fill it (based on the algorithm in GetPointCloud)
+    uint64_t Index = 0;
+    float d = Dims_um.x;
+    float stepsize = 0.5*_VoxelScale;
+    for (float x = 0.0; x <= d; x += stepsize) {
+
+
+        float half_ylen = Dims_um.y / 2.0;
+        float half_zlen = Dims_um.z / 2.0;
+        for (float y = -half_ylen; y <= half_ylen; y += stepsize) {
+            for (float z = -half_zlen; z <= half_zlen; z += stepsize) {
+                Vec3D NewPoint(x, y, z);
+                _Vector[Index] = NewPoint.rotate_around_xyz(Rotations_rad.x, Rotations_rad.y, Rotations_rad.z);
+                Index++;
+            }
+        }
+
+
+    }
+    
+}
+
 //! Returns a point cloud that can be used to fill voxels representing the box.
 std::vector<Vec3D> Box::GetPointCloud(float _VoxelScale) {
     std::vector<Vec3D> point_cloud;
