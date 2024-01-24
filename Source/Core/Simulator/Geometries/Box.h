@@ -17,6 +17,9 @@
 #include <Simulator/Geometries/Geometry.h>
 #include <Simulator/Geometries/VecTools.h>
 
+#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
+
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -61,23 +64,15 @@ struct Box : Geometry {
 
 
 
-    /**
-     * @brief Generates a point cloud and writes it into the array given.
-     * Note that the array is expected to be allocated to a length of GetNumPointsInCloud size.
-     * 
-     * @param _VoxelScale 
-     * @param _Vector 
-     */
-    void GetPointCloudFast(float _VoxelScale, Vec3D* _Array);
+
 
     /**
-     * @brief Returns the number of points in the cloud at the given scale.
-     * We use this for the getpointcloud fast function in order to allocate an array of the correct size.
+     * @brief Writes the shape at the current size into the voxel array.
      * 
      * @param _VoxelScale 
-     * @return uint64_t 
+     * @param _Array 
      */
-    uint64_t GetNumPointsInCloud(float _VoxelScale);
+    void WriteToVoxelArray(float _VoxelScale, VoxelArray* _Array);
 
 
 };

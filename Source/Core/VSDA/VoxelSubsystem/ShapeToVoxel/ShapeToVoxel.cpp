@@ -84,21 +84,26 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, float _Vo
 }
 
 bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, float _VoxelScale) {
-
+    assert(_Array != nullptr);
+    assert(_Box != nullptr);
     assert(_VoxelScale != 0); // Will get stuck in infinite loop
 
-    // 1. Get rotated point cloud.
-    std::vector<Geometries::Vec3D> point_cloud;
-    _Box->GetPointCloudFast(_VoxelScale, &point_cloud);
 
-    // 2. Set corresponding voxels.
-    for (const Geometries::Vec3D & p : point_cloud) {
-        //std::cout << "Point: " << p.str() << '\n';
-        _Array->SetVoxelAtPosition(p.x, p.y, p.z, FILLED);
-    }
+    _Box->WriteToVoxelArray(_VoxelScale, _Array);
+
+    // // 1. Get rotated point cloud.
+    // std::vector<Geometries::Vec3D> point_cloud;
+    // _Box->GetPointCloudFast(_VoxelScale, &point_cloud);
+
+    // // 2. Set corresponding voxels.
+    // for (const Geometries::Vec3D & p : point_cloud) {
+    //     //std::cout << "Point: " << p.str() << '\n';
+    //     _Array->SetVoxelAtPosition(p.x, p.y, p.z, FILLED);
+    // }
 
     return true;
 }
+
 
 
 }; // Close Namespace VoxelArrayGenerator
