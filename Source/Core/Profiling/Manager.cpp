@@ -87,8 +87,8 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         // -- Setup Rendering Operation -- //
         Simulator::MicroscopeParameters Params;
         Params.VoxelResolution_um = 0.1;
-        Params.ImageWidth_px = 512;
-        Params.ImageHeight_px = 512;
+        Params.ImageWidth_px = 1500;
+        Params.ImageHeight_px = 1500;
         Params.ScanRegionOverlap_percent = 0;
         Params.SliceThickness_um = 0.1;
         Params.NumPixelsPerVoxel_px = 2;
@@ -173,8 +173,8 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         // -- Setup Rendering Operation -- //
         Simulator::MicroscopeParameters Params;
         Params.VoxelResolution_um = 0.1;
-        Params.ImageWidth_px = 512;
-        Params.ImageHeight_px = 512;
+        Params.ImageWidth_px = 1500;
+        Params.ImageHeight_px = 1500;
         Params.ScanRegionOverlap_percent = 0;
         Params.SliceThickness_um = 0.1;
         Params.NumPixelsPerVoxel_px = 2;
@@ -258,8 +258,8 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         // -- Setup Rendering Operation -- //
         Simulator::MicroscopeParameters Params;
         Params.VoxelResolution_um = 0.1;
-        Params.ImageWidth_px = 512;
-        Params.ImageHeight_px = 512;
+        Params.ImageWidth_px = 1500;
+        Params.ImageHeight_px = 1500;
         Params.ScanRegionOverlap_percent = 0;
         Params.SliceThickness_um = 0.1;
         Params.NumPixelsPerVoxel_px = 2;
@@ -414,8 +414,8 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         // -- Setup Rendering Operation -- //
         Simulator::MicroscopeParameters Params;
         Params.VoxelResolution_um = 0.1;
-        Params.ImageWidth_px = 1024;
-        Params.ImageHeight_px = 1024;
+        Params.ImageWidth_px = 1500;
+        Params.ImageHeight_px = 1500;
         Params.ScanRegionOverlap_percent = 0;
         Params.SliceThickness_um = 0.1;
         Params.NumPixelsPerVoxel_px = 1;
@@ -530,8 +530,8 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         // -- Setup Rendering Operation -- //
         Simulator::MicroscopeParameters Params;
         Params.VoxelResolution_um = 0.05;
-        Params.ImageWidth_px = 1024;
-        Params.ImageHeight_px = 1024;
+        Params.ImageWidth_px = 1500;
+        Params.ImageHeight_px = 1500;
         Params.ScanRegionOverlap_percent = 0;
         Params.SliceThickness_um = 0.1;
         Params.NumPixelsPerVoxel_px = 1;

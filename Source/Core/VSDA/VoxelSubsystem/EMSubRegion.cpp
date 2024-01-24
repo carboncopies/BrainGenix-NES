@@ -50,7 +50,7 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
     // Clear Scene In Preperation For Rendering
     for (unsigned int i = 0; i < Array.get()->GetZ(); i++) {
-        std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "_Region" + std::to_string(VSDAData_->ActiveRegionID_);
+        std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "/Region" + std::to_string(VSDAData_->ActiveRegionID_);
 
         std::vector<std::string> Files = RenderSliceFromArray(_Logger, &Sim->VSDAData_, Array.get(), FileNamePrefix, i, _ImageProcessorPool, XOffset, YOffset, SliceOffset);
         for (size_t i = 0; i < Files.size(); i++) {
