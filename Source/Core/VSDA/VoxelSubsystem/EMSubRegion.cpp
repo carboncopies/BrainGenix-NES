@@ -48,7 +48,9 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
         _Logger->Log("Voxel Array Does Not Exist Yet Or Is Wrong Size, (Re)Creating Now", 2);
         VSDAData_->Array_ = std::make_unique<VoxelArray>(RequestedRegion, VSDAData_->Params_.VoxelResolution_um);
     } else {
-        VSDAData_->Array_->ClearArray();
+        _Logger->Log("Reusing Existing Voxel Array, Clearing Data", 2);
+        VSDAData_->Array_->ClearArrayThreaded(std::thread::hardware_concurrency());
+        VSDAData_->Array_->SetBB(RequestedRegion);
     }
     CreateVoxelArrayFromSimulation(_Logger, Sim, &VSDAData_->Params_, VSDAData_->Array_.get(), RequestedRegion, _GeneratorPool);
 

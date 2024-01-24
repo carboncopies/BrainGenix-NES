@@ -156,6 +156,16 @@ public:
     void GetSize(int* _X, int* _Y, int* _Z);
 
     /**
+     * @brief Update the given bounding box with the new size.
+     * 
+     * @param _NewBoundingBox 
+     * @return true 
+     * @return false 
+     */
+    bool SetBB(BoundingBox _NewBoundingBox);
+    bool SetBB(ScanRegion _NewBoundingBox);
+
+    /**
      * @brief Get the x dimensions
      * 
      * @return int 
@@ -196,7 +206,7 @@ public:
      * 
      */
     void ClearArray();
-
+    void ClearArrayThreaded(int _NumThreads=10);
 
     /**
      * @brief Returns the size of the array.

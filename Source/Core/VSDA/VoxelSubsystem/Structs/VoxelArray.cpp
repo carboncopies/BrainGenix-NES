@@ -1,9 +1,11 @@
+#include <iostream>
 #include <cstring>
+#include <future>
+#include <vector>
 
 #include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
 
 
-#include <iostream>
 
 namespace BG {
 namespace NES {
@@ -86,6 +88,53 @@ void VoxelArray::ClearArray() {
     //     Data_.get()[i] = 0;
     // }
 
+}
+
+void VoxelArray::ClearArrayThreaded(int _NumThreads) {
+
+    // Calculate Start Ptr, StepSize
+    uint64_t StepSize = DataMaxLength_ / _NumThreads;
+    VoxelType* StartAddress = Data_.get();
+
+    // Create a bunch of memset tasks
+    std::vector<std::future<int>> AsyncTasks;
+    for (size_t i = 0; i < _NumThreads; i++) {
+        VoxelType* ThreadStartAddress = StartAddress + (StepSize * i);
+        assert(ThreadStartAddress + StepSize <= StartAddress + DataMaxLength_);
+        AsyncTasks.push_back(std::async(std::launch::async, [ThreadStartAddress, StepSize]{
+            std::memset(ThreadStartAddress, 0, StepSize);
+            return 0;
+        }));
+    }
+
+    // Now, wait for this to finish
+    for (size_t i = 0; i < AsyncTasks.size(); i++) {
+        AsyncTasks[i].get();
+    }
+
+}
+
+bool VoxelArray::SetBB(BoundingBox _NewBoundingBox) {
+    assert(_NewBoundingBox.GetVoxelSize(VoxelScale_um) != DataMaxLength_);
+    BoundingBox_ = _NewBoundingBox;
+    return true;
+}
+
+bool VoxelArray::SetBB(ScanRegion _NewBoundingBox) {
+
+    // Create Bounding Box From Region, Then Call Other Constructor
+    BoundingBox BB;
+    BB.bb_point1[0] = _NewBoundingBox.Point1X_um;
+    BB.bb_point1[1] = _NewBoundingBox.Point1Y_um;
+    BB.bb_point1[2] = _NewBoundingBox.Point1Z_um;
+
+    BB.bb_point2[0] = _NewBoundingBox.Point2X_um;
+    BB.bb_point2[1] = _NewBoundingBox.Point2Y_um;
+    BB.bb_point2[2] = _NewBoundingBox.Point2Z_um;
+
+    assert(BB.GetVoxelSize(VoxelScale_um) != DataMaxLength_);
+    BoundingBox_ = BB;
+    return true;
 }
 
 uint64_t VoxelArray::GetIndex(int _X, int _Y, int _Z) {
