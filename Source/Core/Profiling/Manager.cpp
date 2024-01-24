@@ -310,7 +310,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
 
         // Create 1k spheres
-        for (unsigned int i = 0; i < 400000; i++) {
+        for (unsigned int i = 0; i < 250000; i++) {
 
             std::string Name = "Sphere " + std::to_string(i);
             float Radius_um = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/8.));
@@ -379,7 +379,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
 
         // Create 100k Box
-        for (unsigned int i = 0; i < 100000; i++) {
+        for (unsigned int i = 0; i < 250000; i++) {
 
             std::string Name = "Box " + std::to_string(i);
             float Radius_um = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/2.));
@@ -414,8 +414,8 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         // -- Setup Rendering Operation -- //
         Simulator::MicroscopeParameters Params;
         Params.VoxelResolution_um = 0.1;
-        Params.ImageWidth_px = 1024;
-        Params.ImageHeight_px = 1024;
+        Params.ImageWidth_px = 2048;
+        Params.ImageHeight_px = 2048;
         Params.ScanRegionOverlap_percent = 0;
         Params.SliceThickness_um = 0.1;
         Params.NumPixelsPerVoxel_px = 1;
