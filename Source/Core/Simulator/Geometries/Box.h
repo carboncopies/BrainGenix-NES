@@ -17,6 +17,9 @@
 #include <Simulator/Geometries/Geometry.h>
 #include <Simulator/Geometries/VecTools.h>
 
+#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
+
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -53,9 +56,24 @@ struct Box : Geometry {
     //! Returns the bounding box
     virtual BoundingBox GetBoundingBox();
     virtual bool IsPointInShape(Vec3D _Position_um);
+    virtual bool IsInsideRegion(BoundingBox _Region);
 
     //! Returns a point cloud that can be used to fill voxels representing the cylinder.
     std::vector<Vec3D> GetPointCloud(float _VoxelScale);
+
+
+
+
+
+
+    /**
+     * @brief Writes the shape at the current size into the voxel array.
+     * 
+     * @param _VoxelScale 
+     * @param _Array 
+     */
+    void WriteToVoxelArray(float _VoxelScale, VoxelArray* _Array);
+
 
 };
 
