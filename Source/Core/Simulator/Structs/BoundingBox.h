@@ -40,6 +40,15 @@ struct BoundingBox {
      * @return std::string 
      */
     std::string ToString();
+
+    /**
+     * @brief Helper that checks if this box intersects with another.
+     * 
+     * @param _Box 
+     * @return true 
+     * @return false 
+     */
+    bool IsIntersecting(BoundingBox _Box);
 };
 
 

@@ -51,6 +51,15 @@ struct Geometry {
     //! Gets the bounding box for the given shape
     virtual BoundingBox GetBoundingBox() = 0;
 
+    /**
+     * @brief Determines if this shape is intersecting with the given region.
+     * May sometimes give false positives, but we just need it to be really quick and dirty.
+     * 
+     * @param _Region 
+     * @return true 
+     * @return false 
+     */
+    virtual bool IsInsideRegion(BoundingBox _Region) = 0;
 
     /**
      * @brief Checks if the given world space position is in this shape.

@@ -27,7 +27,6 @@ void Sphere::Show() { return; };
 //! Returns the volume of the sphere in micrometer^3.
 float Sphere::Volume_um3() {
     return 4.0 / 3.0 * M_PI * pow(this->Radius_um, 3.0);
-    ;
 };
 
 BoundingBox Sphere::GetBoundingBox() {
@@ -50,6 +49,12 @@ bool Sphere::IsPointInShape(Vec3D _Position_um) {
 	float Distance = Center_um.Distance(_Position_um);
 	return Distance <= Radius_um;
 }
+
+
+bool Sphere::IsInsideRegion(BoundingBox _Region) {
+    return GetBoundingBox().IsIntersecting(_Region);
+}
+
 
 
 }; // namespace Geometries

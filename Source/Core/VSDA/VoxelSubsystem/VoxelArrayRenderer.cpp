@@ -29,14 +29,14 @@ namespace Simulator {
 // }
 
 
-std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::string _FilePrefix, int SliceNumber, ImageProcessorPool* _ImageProcessorPool) {
+std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int SliceNumber, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, int _SliceOffset) {
     assert(_VSDAData != nullptr);
     assert(_Logger != nullptr);
 
 
     // Get Params and Array From VSDAData
     MicroscopeParameters* Params = &_VSDAData->Params_;
-    VoxelArray* Array = _VSDAData->Array_.get();
+    VoxelArray* Array = _Array;
     float VoxelSize = Array->GetResolution();
     BoundingBox VoxelBB = Array->GetBoundingBox();
 
@@ -66,15 +66,15 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
         for (int YStep = 0; YStep < TotalYSteps; YStep++) {
 
             // Calculate the filename of the image to be generated, add to list of generated images
-            std::string FilePath = "Renders/" + _FilePrefix + "_Slice" + std::to_string(SliceNumber);
-            FilePath += "_X" + std::to_string(CameraStepSizeX_um * XStep) + "_Y" + std::to_string(CameraStepSizeY_um * YStep) + ".png";
+            std::string FilePath = "Renders/" + _FilePrefix + "_Slice" + std::to_string(SliceNumber + _SliceOffset);
+            FilePath += "_X" + std::to_string((CameraStepSizeX_um * XStep) + _OffsetX) + "_Y" + std::to_string((CameraStepSizeY_um * YStep) + _OffsetY) + ".png";
 
             Filenames.push_back(FilePath);
 
 
             // Setup and submit task to queue for rendering
             std::unique_ptr<ProcessingTask> ThisTask = std::make_unique<ProcessingTask>();
-            ThisTask->Array_ = _VSDAData->Array_.get();
+            ThisTask->Array_ = _Array;
             ThisTask->Width_px = _VSDAData->Params_.ImageWidth_px;
             ThisTask->Height_px = _VSDAData->Params_.ImageHeight_px;
             ThisTask->VoxelStartingX = VoxelsPerStepX * XStep;

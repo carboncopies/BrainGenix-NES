@@ -42,6 +42,7 @@ struct Sphere: Geometry {
     //! Returns the bounding box
     virtual BoundingBox GetBoundingBox();
     virtual bool IsPointInShape(Vec3D _Position_um);
+    virtual bool IsInsideRegion(BoundingBox _Region);
 
 };
 
