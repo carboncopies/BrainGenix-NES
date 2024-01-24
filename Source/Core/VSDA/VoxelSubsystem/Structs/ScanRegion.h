@@ -86,6 +86,15 @@ struct ScanRegion {
     double SizeY();
     double SizeZ();
 
+
+    /**
+     * @brief Returns the length of the voxel array needed to store this scan region.
+     * 
+     * @param _VoxelScale 
+     * @return uint64_t 
+     */
+    uint64_t GetVoxelSize(float _VoxelScale_um);
+
 };
 
 

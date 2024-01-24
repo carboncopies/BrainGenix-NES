@@ -72,7 +72,7 @@ struct VSDAData {
 
     VSDAState State_ = VSDA_NOT_INITIALIZED; /**Enum indicating the current state of this instance of VSDAData, tells the processing system if we need to be rendered, etc.*/
 
-    // std::unique_ptr<VoxelArray> Array_;              /**Pointer to the voxel array instance - stores the stuff being scanned*/ 
+    std::unique_ptr<VoxelArray> Array_;              /**Pointer to the voxel array instance - stores the stuff being scanned*/ 
     MicroscopeParameters        Params_;             /**Defines the microscope parameters for the current scan area*/
     std::vector<ScanRegion>     Regions_;            /**Defines the list of scan region we're working on (for this microscope) Use ActiveRegionID to get the current region*/
     int                         ActiveRegionID_ =-1; /**Defines the region's index that we're working on right now*/

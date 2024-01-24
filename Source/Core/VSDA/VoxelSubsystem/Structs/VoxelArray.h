@@ -197,6 +197,14 @@ public:
      */
     void ClearArray();
 
+
+    /**
+     * @brief Returns the size of the array.
+     * 
+     * @return uint64_t 
+     */
+    uint64_t GetSize();
+
 };
 
 

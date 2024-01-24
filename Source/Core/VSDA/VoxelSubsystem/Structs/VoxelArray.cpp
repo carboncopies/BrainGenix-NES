@@ -1,3 +1,5 @@
+#include <cstring>
+
 #include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
 
 
@@ -29,8 +31,9 @@ VoxelArray::VoxelArray(BoundingBox _BB, float _VoxelScale_um) {
     DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
     Data_ = std::make_unique<VoxelType[]>(DataMaxLength_);
 
+    // We don't need to clear this because make unique does it for us
     // Reset the array so we don't get a bunch of crap in it
-    ClearArray();
+    // ClearArray();
 }
 VoxelArray::VoxelArray(ScanRegion _Region, float _VoxelScale_um) {
 
@@ -62,8 +65,9 @@ VoxelArray::VoxelArray(ScanRegion _Region, float _VoxelScale_um) {
     DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
     Data_ = std::make_unique<VoxelType[]>(DataMaxLength_);
 
+    // make unique already clears memory, so we're doing it twice.
     // Reset the array so we don't get a bunch of crap in it
-    ClearArray();
+    // ClearArray();
 }
 
 
@@ -75,10 +79,12 @@ VoxelArray::~VoxelArray() {
 
 void VoxelArray::ClearArray() {
 
-    // Reset everything to 0s
-    for (uint64_t i = 0; i < DataMaxLength_; i++) {
-        Data_.get()[i] = 0;
-    }
+    std::memset(Data_.get(), 0, DataMaxLength_*sizeof(VoxelType));
+
+    // // Reset everything to 0s
+    // for (uint64_t i = 0; i < DataMaxLength_; i++) {
+    //     Data_.get()[i] = 0;
+    // }
 
 }
 
@@ -134,6 +140,10 @@ void VoxelArray::GetSize(int* _X, int* _Y, int* _Z) {
     (*_X) = int(SizeX_);
     (*_Y) = int(SizeY_);
     (*_Z) = int(SizeZ_);
+}
+
+uint64_t VoxelArray::GetSize() {
+    return DataMaxLength_;
 }
 
 int VoxelArray::GetX() {
