@@ -51,6 +51,8 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
     // then later on, we resample it to be the right size (for the target image)
     int VoxelsPerStepX = ceil(_VSDAData->Params_.ImageWidth_px * (1. - (_VSDAData->Params_.ScanRegionOverlap_percent / 100.)) / _VSDAData->Params_.NumPixelsPerVoxel_px);
     int VoxelsPerStepY = ceil(_VSDAData->Params_.ImageHeight_px * (1. - (_VSDAData->Params_.ScanRegionOverlap_percent / 100.)) / _VSDAData->Params_.NumPixelsPerVoxel_px);
+    int VoxelsOverlapX = ceil(_VSDAData->Params_.ImageWidth_px * (_VSDAData->Params_.ScanRegionOverlap_percent / 100.) / _VSDAData->Params_.NumPixelsPerVoxel_px);
+    int VoxelsOverlapY = ceil(_VSDAData->Params_.ImageHeight_px * (_VSDAData->Params_.ScanRegionOverlap_percent / 100.) / _VSDAData->Params_.NumPixelsPerVoxel_px);
     int NumChannels = 3;
     float CameraStepSizeX_um = VoxelsPerStepX * _VSDAData->Params_.VoxelResolution_um;
     float CameraStepSizeY_um = VoxelsPerStepY * _VSDAData->Params_.VoxelResolution_um;
@@ -79,8 +81,9 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
             ThisTask->Height_px = _VSDAData->Params_.ImageHeight_px;
             ThisTask->VoxelStartingX = VoxelsPerStepX * XStep;
             ThisTask->VoxelStartingY = VoxelsPerStepY * YStep;
-            ThisTask->VoxelEndingX = ThisTask->VoxelStartingX + VoxelsPerStepX;
-            ThisTask->VoxelEndingY = ThisTask->VoxelStartingY + VoxelsPerStepY;
+            ThisTask->VoxelEndingX = ThisTask->VoxelStartingX + VoxelsPerStepX + VoxelsOverlapX;
+            ThisTask->VoxelEndingY = ThisTask->VoxelStartingY + VoxelsPerStepY + VoxelsOverlapY;
+            std::cout<<"StartX:"<<ThisTask->VoxelStartingX<<" StartY:"<<ThisTask->VoxelStartingY<<" EndX:"<<ThisTask->VoxelEndingX<<" EndY:"<<ThisTask->VoxelEndingY<<std::endl;
             ThisTask->VoxelZ = SliceNumber;
             ThisTask->TargetFileName_ = FilePath;
             ThisTask->TargetDirectory_ = DirectoryPath;
