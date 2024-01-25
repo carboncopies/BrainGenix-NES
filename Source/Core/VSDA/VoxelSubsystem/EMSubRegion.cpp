@@ -43,16 +43,24 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
     // Create Voxel Array
     _Logger->Log(std::string("Creating Voxel Array Of Size ") + RequestedRegion.Dimensions() + std::string(" With Points ") + RequestedRegion.ToString(), 2);
-    std::unique_ptr<VoxelArray> Array = std::make_unique<VoxelArray>(RequestedRegion, VSDAData_->Params_.VoxelResolution_um);
-    CreateVoxelArrayFromSimulation(_Logger, Sim, &VSDAData_->Params_, Array.get(), RequestedRegion, _GeneratorPool);
+    uint64_t TargetArraySize = RequestedRegion.GetVoxelSize(VSDAData_->Params_.VoxelResolution_um);
+    if (VSDAData_->Array_.get() == nullptr || VSDAData_->Array_->GetSize() != TargetArraySize) {
+        _Logger->Log("Voxel Array Does Not Exist Yet Or Is Wrong Size, (Re)Creating Now", 2);
+        VSDAData_->Array_ = std::make_unique<VoxelArray>(RequestedRegion, VSDAData_->Params_.VoxelResolution_um);
+    } else {
+        _Logger->Log("Reusing Existing Voxel Array, Clearing Data", 2);
+        VSDAData_->Array_->ClearArrayThreaded(std::thread::hardware_concurrency());
+        VSDAData_->Array_->SetBB(RequestedRegion);
+    }
+    CreateVoxelArrayFromSimulation(_Logger, Sim, &VSDAData_->Params_, VSDAData_->Array_.get(), RequestedRegion, _GeneratorPool);
 
 
 
     // Clear Scene In Preperation For Rendering
-    for (unsigned int i = 0; i < Array.get()->GetZ(); i++) {
-        std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "_Region" + std::to_string(VSDAData_->ActiveRegionID_);
+    for (unsigned int i = 0; i < VSDAData_->Array_.get()->GetZ(); i++) {
+        std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "/Region" + std::to_string(VSDAData_->ActiveRegionID_);
 
-        std::vector<std::string> Files = RenderSliceFromArray(_Logger, &Sim->VSDAData_, Array.get(), FileNamePrefix, i, _ImageProcessorPool, XOffset, YOffset, SliceOffset);
+        std::vector<std::string> Files = RenderSliceFromArray(_Logger, &Sim->VSDAData_, VSDAData_->Array_.get(), FileNamePrefix, i, _ImageProcessorPool, XOffset, YOffset, SliceOffset);
         for (size_t i = 0; i < Files.size(); i++) {
             VSDAData_->RenderedImagePaths_[VSDAData_->ActiveRegionID_].push_back(Files[i]);
         }
@@ -74,8 +82,8 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
         float CameraStepSizeX_um = VoxelsPerStepX * VSDAData_->Params_.VoxelResolution_um;
         float CameraStepSizeY_um = VoxelsPerStepY * VSDAData_->Params_.VoxelResolution_um;
 
-        double TotalSliceWidth = abs((double)Array->GetBoundingBox().bb_point1[0] - (double)Array->GetBoundingBox().bb_point2[0]);
-        double TotalSliceHeight = abs((double)Array->GetBoundingBox().bb_point1[1] - (double)Array->GetBoundingBox().bb_point2[1]);
+        double TotalSliceWidth = abs((double)VSDAData_->Array_->GetBoundingBox().bb_point1[0] - (double)VSDAData_->Array_->GetBoundingBox().bb_point2[0]);
+        double TotalSliceHeight = abs((double)VSDAData_->Array_->GetBoundingBox().bb_point1[1] - (double)VSDAData_->Array_->GetBoundingBox().bb_point2[1]);
         int TotalXSteps = ceil(TotalSliceWidth / CameraStepSizeX_um);
         int TotalYSteps = ceil(TotalSliceHeight / CameraStepSizeY_um);
 
@@ -83,8 +91,8 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
 
         // Update Current Slice Information (Account for slice numbers not starting at 0)
-        VSDAData_->TotalSlices_ = Array.get()->GetZ();
-        VSDAData_->CurrentSlice_ = Array.get()->GetZ() - ceil((float)_ImageProcessorPool->GetQueueSize() / ImagesPerSlice);
+        VSDAData_->TotalSlices_ = VSDAData_->Array_.get()->GetZ();
+        VSDAData_->CurrentSlice_ = VSDAData_->Array_.get()->GetZ() - ceil((float)_ImageProcessorPool->GetQueueSize() / ImagesPerSlice);
         VSDAData_->TotalSliceImages_ = ImagesPerSlice;
         VSDAData_->CurrentSliceImage_ = _ImageProcessorPool->GetQueueSize() % ImagesPerSlice;
 

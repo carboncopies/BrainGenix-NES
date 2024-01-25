@@ -66,10 +66,10 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
         for (int YStep = 0; YStep < TotalYSteps; YStep++) {
 
             // Calculate the filename of the image to be generated, add to list of generated images
-            std::string FilePath = "Renders/" + _FilePrefix + "_Slice" + std::to_string(SliceNumber + _SliceOffset);
-            FilePath += "_X" + std::to_string((CameraStepSizeX_um * XStep) + _OffsetX) + "_Y" + std::to_string((CameraStepSizeY_um * YStep) + _OffsetY) + ".png";
+            std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(SliceNumber + _SliceOffset) + "/";
+            std::string FilePath = "X" + std::to_string((CameraStepSizeX_um * XStep) + _OffsetX) + "_Y" + std::to_string((CameraStepSizeY_um * YStep) + _OffsetY) + ".png";
 
-            Filenames.push_back(FilePath);
+            Filenames.push_back(DirectoryPath + FilePath);
 
 
             // Setup and submit task to queue for rendering
@@ -83,6 +83,7 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
             ThisTask->VoxelEndingY = ThisTask->VoxelStartingY + VoxelsPerStepY;
             ThisTask->VoxelZ = SliceNumber;
             ThisTask->TargetFileName_ = FilePath;
+            ThisTask->TargetDirectory_ = DirectoryPath;
 
             _ImageProcessorPool->QueueEncodeOperation(ThisTask.get());
             _VSDAData->Tasks_.push_back(std::move(ThisTask));

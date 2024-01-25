@@ -1,7 +1,11 @@
+#include <iostream>
+#include <cstring>
+#include <future>
+#include <vector>
+
 #include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
 
 
-#include <iostream>
 
 namespace BG {
 namespace NES {
@@ -29,8 +33,9 @@ VoxelArray::VoxelArray(BoundingBox _BB, float _VoxelScale_um) {
     DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
     Data_ = std::make_unique<VoxelType[]>(DataMaxLength_);
 
+    // We don't need to clear this because make unique does it for us
     // Reset the array so we don't get a bunch of crap in it
-    ClearArray();
+    // ClearArray();
 }
 VoxelArray::VoxelArray(ScanRegion _Region, float _VoxelScale_um) {
 
@@ -62,8 +67,9 @@ VoxelArray::VoxelArray(ScanRegion _Region, float _VoxelScale_um) {
     DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
     Data_ = std::make_unique<VoxelType[]>(DataMaxLength_);
 
+    // make unique already clears memory, so we're doing it twice.
     // Reset the array so we don't get a bunch of crap in it
-    ClearArray();
+    // ClearArray();
 }
 
 
@@ -75,11 +81,60 @@ VoxelArray::~VoxelArray() {
 
 void VoxelArray::ClearArray() {
 
-    // Reset everything to 0s
-    for (uint64_t i = 0; i < DataMaxLength_; i++) {
-        Data_.get()[i] = 0;
+    std::memset(Data_.get(), 0, DataMaxLength_*sizeof(VoxelType));
+
+    // // Reset everything to 0s
+    // for (uint64_t i = 0; i < DataMaxLength_; i++) {
+    //     Data_.get()[i] = 0;
+    // }
+
+}
+
+void VoxelArray::ClearArrayThreaded(int _NumThreads) {
+
+    // Calculate Start Ptr, StepSize
+    uint64_t StepSize = DataMaxLength_ / _NumThreads;
+    VoxelType* StartAddress = Data_.get();
+
+    // Create a bunch of memset tasks
+    std::vector<std::future<int>> AsyncTasks;
+    for (size_t i = 0; i < _NumThreads; i++) {
+        VoxelType* ThreadStartAddress = StartAddress + (StepSize * i);
+        assert(ThreadStartAddress + StepSize <= StartAddress + DataMaxLength_);
+        AsyncTasks.push_back(std::async(std::launch::async, [ThreadStartAddress, StepSize]{
+            std::memset(ThreadStartAddress, 0, StepSize);
+            return 0;
+        }));
     }
 
+    // Now, wait for this to finish
+    for (size_t i = 0; i < AsyncTasks.size(); i++) {
+        AsyncTasks[i].get();
+    }
+
+}
+
+bool VoxelArray::SetBB(BoundingBox _NewBoundingBox) {
+    assert(_NewBoundingBox.GetVoxelSize(VoxelScale_um) != DataMaxLength_);
+    BoundingBox_ = _NewBoundingBox;
+    return true;
+}
+
+bool VoxelArray::SetBB(ScanRegion _NewBoundingBox) {
+
+    // Create Bounding Box From Region, Then Call Other Constructor
+    BoundingBox BB;
+    BB.bb_point1[0] = _NewBoundingBox.Point1X_um;
+    BB.bb_point1[1] = _NewBoundingBox.Point1Y_um;
+    BB.bb_point1[2] = _NewBoundingBox.Point1Z_um;
+
+    BB.bb_point2[0] = _NewBoundingBox.Point2X_um;
+    BB.bb_point2[1] = _NewBoundingBox.Point2Y_um;
+    BB.bb_point2[2] = _NewBoundingBox.Point2Z_um;
+
+    assert(BB.GetVoxelSize(VoxelScale_um) != DataMaxLength_);
+    BoundingBox_ = BB;
+    return true;
 }
 
 uint64_t VoxelArray::GetIndex(int _X, int _Y, int _Z) {
@@ -134,6 +189,10 @@ void VoxelArray::GetSize(int* _X, int* _Y, int* _Z) {
     (*_X) = int(SizeX_);
     (*_Y) = int(SizeY_);
     (*_Z) = int(SizeZ_);
+}
+
+uint64_t VoxelArray::GetSize() {
+    return DataMaxLength_;
 }
 
 int VoxelArray::GetX() {

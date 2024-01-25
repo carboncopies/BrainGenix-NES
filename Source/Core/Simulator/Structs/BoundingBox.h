@@ -49,6 +49,9 @@ struct BoundingBox {
      * @return false 
      */
     bool IsIntersecting(BoundingBox _Box);
+
+
+    uint64_t GetVoxelSize(float _VoxelScale_um);
 };
 
 

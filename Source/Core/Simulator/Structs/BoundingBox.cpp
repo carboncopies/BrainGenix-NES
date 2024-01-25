@@ -61,6 +61,18 @@ bool BoundingBox::IsIntersecting(BoundingBox _Box) {
 
 }
 
+uint64_t BoundingBox::GetVoxelSize(float _VoxelScale_um) {
+
+    float SizeX = abs(bb_point1[0] - bb_point2[0]);
+    float SizeY = abs(bb_point1[1] - bb_point2[1]);
+    float SizeZ = abs(bb_point1[2] - bb_point2[2]);
+    uint64_t SizeX_ = SizeX/_VoxelScale_um;
+    uint64_t SizeY_ = SizeY/_VoxelScale_um;
+    uint64_t SizeZ_ = SizeZ/_VoxelScale_um;
+
+    return (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
+}
+
 
 }; // Close Namespace Simulator
 }; // Close Namespace NES

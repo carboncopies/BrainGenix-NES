@@ -43,6 +43,19 @@ double ScanRegion::SizeZ() {
     return abs(Point1Z_um - Point2Z_um);
 }
 
+
+uint64_t ScanRegion::GetVoxelSize(float _VoxelScale_um) {
+    float SizeX = abs(Point1X_um - Point2X_um);
+    float SizeY = abs(Point1Y_um - Point2Y_um);
+    float SizeZ = abs(Point1Z_um - Point2Z_um);
+    uint64_t SizeX_ = SizeX/_VoxelScale_um;
+    uint64_t SizeY_ = SizeY/_VoxelScale_um;
+    uint64_t SizeZ_ = SizeZ/_VoxelScale_um;
+
+    return (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
+}
+
+
 }; // Close Namespace Logger
 }; // Close Namespace Common
 }; // Close Namespace BG

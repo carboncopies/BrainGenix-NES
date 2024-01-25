@@ -67,7 +67,8 @@ struct ProcessingTask {
 
     std::atomic_bool IsDone_ = false; /**Indicates if this task has been processed or not*/
 
-    std::string TargetFileName_; /**Filename that this image is to be written to*/
+    std::string TargetFileName_;  /**Filename that this image is to be written to*/
+    std::string TargetDirectory_; /**Directory path where the image is to be written to*/
 
     VoxelArray* Array_;          /**Pointer to the voxel array that we're rendering from*/
 

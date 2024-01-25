@@ -6,6 +6,8 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <vector>
 #include <chrono>
+#include <filesystem>
+
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #define STB_IMAGE_IMPLEMENTATION
@@ -24,6 +26,29 @@
 namespace BG {
 namespace NES {
 namespace Simulator {
+
+
+
+
+// Returns:
+//   true upon success.
+//   false upon failure, and set the std::error_code & err accordingly.
+// https://stackoverflow.com/questions/71658440/c17-create-directories-automatically-given-a-file-path
+bool CreateDirectoryRecursive(std::string const & dirName, std::error_code & err)
+{
+    err.clear();
+    if (!std::filesystem::create_directories(dirName, err))
+    {
+        if (std::filesystem::exists(dirName))
+        {
+            // The folder already exists:
+            err.clear();
+            return true;    
+        }
+        return false;
+    }
+    return true;
+}
 
 
 
@@ -121,13 +146,24 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 stbir_resize_uint8(SourcePixels, SourceX, SourceY, SourceX * Channels, ResizedPixels.get(), TargetX, TargetY, TargetX * Channels, Channels);
             }
 
+
+
+            // -- Phase 3 -- //
+            // Now, we check that the image has a place to go, and write it to disk.
+
+            // Ensure Path Exists
+            std::error_code Code;
+            if (!CreateDirectoryRecursive(Task->TargetDirectory_, Code)) {
+                Logger_ ->Log("Failed To Create Directory, Error '" + Code.message() + "'", 7);
+            }
+
             // Write Image
             unsigned char* OutPixels = SourcePixels;
             if (ResizeImage) {
                 OutPixels = ResizedPixels.get();
             }
             
-            stbi_write_png(Task->TargetFileName_.c_str(), TargetX, TargetY, Channels, OutPixels, TargetX * Channels);
+            stbi_write_png((Task->TargetDirectory_ + Task->TargetFileName_).c_str(), TargetX, TargetY, Channels, OutPixels, TargetX * Channels);
 
             // Update Task Result
             Task->IsDone_ = true;
