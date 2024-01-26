@@ -53,6 +53,8 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     int NumYSteps = ceil(BaseRegion->SizeY() / SubRegionStepSize_um);
     int NumZSteps = ceil(BaseRegion->SizeZ() / SubRegionStepSize_um);
 
+    _Simulation->VSDAData_.TotalRegions_ = NumXSteps * NumYSteps * NumZSteps;
+
     // Finally, we create the SubRegion array and fill it up with this info
     std::vector<SubRegion> SubRegions;
     for (int XStep = 0; XStep < NumXSteps; XStep++) {
@@ -97,6 +99,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     _Logger->Log("Rendering " + std::to_string(SubRegions.size()) + " Sub Regions", 4);
     for (size_t i = 0; i < SubRegions.size(); i++) {
         EMRenderSubRegion(_Logger, &SubRegions[i], _ImageProcessorPool, _GeneratorPool);
+        _Simulation->VSDAData_.CurrentRegion_ = i;
     }
 
 

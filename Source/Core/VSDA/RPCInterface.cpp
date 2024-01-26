@@ -218,7 +218,9 @@ std::string RPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
     ResponseJSON["TotalSlices"] = ThisSimulation->VSDAData_.TotalSlices_;
     ResponseJSON["CurrentSliceImage"] = ThisSimulation->VSDAData_.CurrentSliceImage_;
     ResponseJSON["TotalSliceImages"] = ThisSimulation->VSDAData_.TotalSliceImages_;
-    
+    ResponseJSON["CurrentRegion"] = ThisSimulation->VSDAData_.CurrentRegion_;
+    ResponseJSON["TotalRegions"] = ThisSimulation->VSDAData_.TotalRegions_;
+
     return ResponseJSON.dump();
 
 }
