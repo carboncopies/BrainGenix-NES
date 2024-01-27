@@ -49,6 +49,9 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
     // Calculate Desired Image Size
     // In order for us to deal with multiple different pixel/voxel setting, we create an image of start size where one pixel = 1 voxel
     // then later on, we resample it to be the right size (for the target image)
+    // The number of voxels we move per step depends on image size and overlap percentage:
+    int ImageWidth_vox = ceil(_VSDAData->Params_.ImageWidth_px / _VSDAData->Params_.NumPixelsPerVoxel_px);
+    int ImageHeight_vox = ceil(_VSDAData->Params_.ImageHeight_px / _VSDAData->Params_.NumPixelsPerVoxel_px);
     int VoxelsPerStepX = ceil(_VSDAData->Params_.ImageWidth_px * (1. - (_VSDAData->Params_.ScanRegionOverlap_percent / 100.)) / _VSDAData->Params_.NumPixelsPerVoxel_px);
     int VoxelsPerStepY = ceil(_VSDAData->Params_.ImageHeight_px * (1. - (_VSDAData->Params_.ScanRegionOverlap_percent / 100.)) / _VSDAData->Params_.NumPixelsPerVoxel_px);
     int VoxelsOverlapX = ceil(_VSDAData->Params_.ImageWidth_px * (_VSDAData->Params_.ScanRegionOverlap_percent / 100.) / _VSDAData->Params_.NumPixelsPerVoxel_px);
@@ -59,6 +62,7 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
 
     double TotalSliceWidth = abs((double)Array->GetBoundingBox().bb_point1[0] - (double)Array->GetBoundingBox().bb_point2[0]);
     double TotalSliceHeight = abs((double)Array->GetBoundingBox().bb_point1[1] - (double)Array->GetBoundingBox().bb_point2[1]);
+    // Number of X*Y images to take to cover the whole slice:
     int TotalXSteps = ceil(TotalSliceWidth / CameraStepSizeX_um);
     int TotalYSteps = ceil(TotalSliceHeight / CameraStepSizeY_um);
 
@@ -81,8 +85,8 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
             ThisTask->Height_px = _VSDAData->Params_.ImageHeight_px;
             ThisTask->VoxelStartingX = VoxelsPerStepX * XStep;
             ThisTask->VoxelStartingY = VoxelsPerStepY * YStep;
-            ThisTask->VoxelEndingX = ThisTask->VoxelStartingX + VoxelsPerStepX + VoxelsOverlapX;
-            ThisTask->VoxelEndingY = ThisTask->VoxelStartingY + VoxelsPerStepY + VoxelsOverlapY;
+            ThisTask->VoxelEndingX = ThisTask->VoxelStartingX + ImageWidth_vox;
+            ThisTask->VoxelEndingY = ThisTask->VoxelStartingY + ImageHeight_vox;
             std::cout<<"StartX:"<<ThisTask->VoxelStartingX<<" StartY:"<<ThisTask->VoxelStartingY<<" EndX:"<<ThisTask->VoxelEndingX<<" EndY:"<<ThisTask->VoxelEndingY<<std::endl;
             ThisTask->VoxelZ = SliceNumber;
             ThisTask->TargetFileName_ = FilePath;
