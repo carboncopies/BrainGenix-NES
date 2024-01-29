@@ -185,6 +185,66 @@ std::vector<Vec3D> Cylinder::GetPointCloud(float _VoxelScale) {
     return rotated_and_translated_point_cloud;
 }
 
+
+
+
+Vec3D RotateAroundYZ(Vec3D _Vec, float _RY, float _RZ) {
+    return _Vec.rotate_around_y(_RY).rotate_around_z(_RZ);
+}
+
+Vec3D RotatedVec(float _X, float _Y, float _Z, float _RY, float _RZ, Vec3D _Translate) {
+    Vec3D NewVec(_X, _Y, _Z);
+    return _Translate + RotateAroundYZ(NewVec, _RY, _RZ);
+}
+
+
+
+
+
+void Cylinder::WriteToVoxelArray(float _VoxelScale, VoxelArray* _Array) {
+    assert(_Array != nullptr);
+    assert(_VoxelScale != 0.);
+
+    // 0. Get rotation angles and length (r, theta, phi).
+    Vec3D diff = End1Pos_um - End0Pos_um;
+    Vec3D diff_spherical_coords = diff.cartesianToSpherical();
+    float rot_y = diff_spherical_coords.theta();
+    float rot_z = diff_spherical_coords.phi();
+
+    float distance = diff_spherical_coords.r();
+    float radius_difference = End1Radius_um - End0Radius_um;
+    float stepsize = 0.5*_VoxelScale;
+
+    Vec3D spherical_halfdist_v(distance/2.0, rot_y, rot_z);
+    Vec3D cartesian_halfdist_v = spherical_halfdist_v.sphericalToCartesian();
+    Vec3D translate = End0Pos_um + cartesian_halfdist_v;
+
+
+    // Calculate all the points and stuff them intot he array
+    for (float z = -distance/2.0; z <= distance/2.0; z += stepsize) {
+        // 2. At each step, get points in a disk around the axis at the right radius.
+        float d_ratio = z / distance;
+        float radius = End0Radius_um + d_ratio*radius_difference; // Radius at this position on the axis.
+
+        Vec3D RotatedPoint = RotatedVec(0.0, 0.0, z, rot_y, rot_z, translate);
+        _Array->SetVoxelAtPosition(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FILLED);
+
+        for (float r = stepsize; r <= radius; r += stepsize) {
+            float radians_per_step = stepsize / r;
+            for (float theta = 0; theta < 2.0*M_PI; theta += radians_per_step) {
+                float y = r*std::cos(theta);
+                float x = r*std::sin(theta);
+                Vec3D RotatedPoint = RotatedVec(x, y, z, rot_y, rot_z, translate);
+                _Array->SetVoxelAtPosition(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FILLED);
+            }
+        }
+
+    }
+
+
+}
+
+
 bool Cylinder::IsPointInShape(Vec3D _Position_um) {
     return false;
 }
