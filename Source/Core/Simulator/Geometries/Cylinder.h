@@ -19,6 +19,9 @@
 #include <Simulator/Geometries/Geometry.h>
 #include <Simulator/Geometries/VecTools.h>
 
+#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
+
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -65,6 +68,14 @@ struct Cylinder : Geometry {
     //! Gets the rotation in radians with respect to the x, y and z axes
     std::tuple<float, float, float> GetRotation_rad();
 
+
+    /**
+     * @brief Writes the shape at the current size into the voxel array.
+     * 
+     * @param _VoxelScale 
+     * @param _Array 
+     */
+    void WriteToVoxelArray(float _VoxelScale, VoxelArray* _Array);
 
 };
 
