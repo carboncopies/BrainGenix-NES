@@ -60,29 +60,29 @@ def main():
         MySphereCompartment = MySim.AddBSCompartment(Cfg)
 
 
-#     for i in range(1000):
-#
-#         Position1:list = NeuronLocations[random.randint(0, len(NeuronLocations)-1)]
-#         Position2:list = NeuronLocations[random.randint(0, len(NeuronLocations)-1)]
-#
-#         # Create Cylinder
-#         CylinderCfg = NES.Shapes.Cylinder.Configuration()
-#         CylinderCfg.Name = "Connection"
-#         CylinderCfg.Point1Position_um = Position1
-#         CylinderCfg.Point2Position_um = Position2
-#         CylinderCfg.Point1Radius_um = random.randint(2,12)/10
-#         CylinderCfg.Point2Radius_um = random.randint(2,12)/10
-#         MyCylinder = MySim.AddCylinder(CylinderCfg)
-#
-#         Cfg = NES.Models.Compartments.BS.Configuration()
-#         Cfg.Name = "My Compartment 5"
-#         Cfg.SpikeThreshold_mV = 0.0
-#         Cfg.DecayTime_ms = 0.0
-#         Cfg.MembranePotential_mV = 0.0
-#         Cfg.RestingPotential_mV = 0.0
-#         Cfg.AfterHyperpolarizationAmplitude_mV = 0.0
-#         Cfg.Shape = MyCylinder
-#         MyCylinderCompartment = MySim.AddBSCompartment(Cfg)
+    for i in range(1000):
+
+        Position1:list = NeuronLocations[random.randint(0, len(NeuronLocations)-1)]
+        Position2:list = NeuronLocations[random.randint(0, len(NeuronLocations)-1)]
+
+        # Create Cylinder
+        CylinderCfg = NES.Shapes.Cylinder.Configuration()
+        CylinderCfg.Name = "Connection"
+        CylinderCfg.Point1Position_um = Position1
+        CylinderCfg.Point2Position_um = Position2
+        CylinderCfg.Point1Radius_um = random.randint(2,12)/10
+        CylinderCfg.Point2Radius_um = random.randint(2,12)/10
+        MyCylinder = MySim.AddCylinder(CylinderCfg)
+
+        Cfg = NES.Models.Compartments.BS.Configuration()
+        Cfg.Name = "My Compartment 5"
+        Cfg.SpikeThreshold_mV = 0.0
+        Cfg.DecayTime_ms = 0.0
+        Cfg.MembranePotential_mV = 0.0
+        Cfg.RestingPotential_mV = 0.0
+        Cfg.AfterHyperpolarizationAmplitude_mV = 0.0
+        Cfg.Shape = MyCylinder
+        MyCylinderCompartment = MySim.AddBSCompartment(Cfg)
 
 
     # Setup VSDA Renderer
