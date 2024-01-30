@@ -9,6 +9,19 @@ The test machine has the following specs:
 Below is a table for the times of each test, and it's result.  
 
 Best:
+
+(2024-01-30)
+|Test | Resulting Time|
+|--------------|--------------|
+|Test 0|1.5489952564239502|
+|Test 1|1.4872243404388428|
+|Test 2|3.3702552318573|
+|Test 3|2.9481899738311768|
+|Test 4|57.226759910583496|
+|Test 5|40.67776370048523|
+|Test 6|13.226645708084106|
+
+
 (2024-01-30)
 |Test | Resulting Time|
 |--------------|--------------|
@@ -38,9 +51,6 @@ Best:
 |Test 1|42.07401394844055|  
 |Test 2|165.1279900074005|  
 |Test 3|383.94018626213074|  
-
-
-
 
 Well, it never finished running since I had to move on, but the result is slow. I'll work on improving this during the week.
 ![Slow.png](Slow.png)
