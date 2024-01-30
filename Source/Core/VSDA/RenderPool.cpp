@@ -77,9 +77,6 @@ RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowe
 
     // Create Renderer Instances
     Logger_->Log("Creating RenderPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
-    if (_NumThreads > 1) {
-        std::cerr<<"Warning, creating multiple renderer threads currently breaks :(  VSG needs to be recompiled with a define changed!\n";
-    }
     for (unsigned int i = 0; i < _NumThreads; i++) {
         Logger_->Log("Starting RenderPool Thread " + std::to_string(i), 1);
         RenderThreads_.push_back(std::thread(&RenderPool::RendererThreadMainFunction, this, i));
