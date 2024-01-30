@@ -9,6 +9,18 @@ The test machine has the following specs:
 Below is a table for the times of each test, and it's result.  
 
 Best:
+(2024-01-30)
+|Test | Resulting Time|
+|--------------|--------------|
+|Test 0|1.46994948387146|
+|Test 1|1.387807846069336|
+|Test 2|3.4752273559570312|
+|Test 3|2.856602668762207|
+|Test 4|57.484683990478516|
+|Test 5|172.44664859771729|
+|Test 6|6.462730407714844|
+
+
 (2024-01-19)  
 |Test | Resulting Time|
 |--------------|--------------|
