@@ -89,8 +89,8 @@ def main():
     EMConfig = NES.VSDA.EM.Configuration()
     # actually microns
     EMConfig.PixelResolution_nm = 0.65
-    EMConfig.ImageWidth_px = 1024
-    EMConfig.ImageHeight_px = 1024
+    EMConfig.ImageWidth_px = 1500
+    EMConfig.ImageHeight_px = 1500
     EMConfig.SliceThickness_nm = 100
     EMConfig.ScanRegionOverlap_percent = 0
     EMConfig.MicroscopeFOV_deg = 50
@@ -103,7 +103,7 @@ def main():
     VSDAEMInstance.SaveImageStack(".Test6")
 
 
-    BrainGenix.Tools.StackStitcher.StackStitcher(".Test6", ".ReconstructedImages6")
+    # BrainGenix.Tools.StackStitcher.StackStitcher(".Test6", ".ReconstructedImages6")
 
 
 

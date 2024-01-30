@@ -35,12 +35,12 @@ def main():
     # Setup VSDA Renderer
     EMConfig = NES.VSDA.EM.Configuration()
     EMConfig.PixelResolution_nm = 0.2
-    EMConfig.ImageWidth_px = 512
-    EMConfig.ImageHeight_px = 512
+    EMConfig.ImageWidth_px = 1024
+    EMConfig.ImageHeight_px = 1024
     EMConfig.SliceThickness_nm = 100
     EMConfig.ScanRegionOverlap_percent = 0
     EMConfig.MicroscopeFOV_deg = 50
-    EMConfig.NumPixelsPerVoxel_px = 8
+    EMConfig.NumPixelsPerVoxel_px = 2
     VSDAEMInstance = MySim.AddVSDAEM(EMConfig)
 
     VSDAEMInstance.DefineScanRegion([0,0,0], [90,60,20])
