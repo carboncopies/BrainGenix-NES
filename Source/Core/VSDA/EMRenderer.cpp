@@ -69,12 +69,16 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     double SubRegionStepSizeY_um = ImagesPerSubRegionY * ImageStepSizeY_um;
     double SubRegionStepSizeZ_um = MaxVoxelArrayAxisSize * Params->VoxelResolution_um;
     std::cout<<"StepSizeX: "<<SubRegionStepSizeX_um<<std::endl;
+    std::cout<<"StepSizeY: "<<SubRegionStepSizeY_um<<std::endl;
     
 
     // Okay, now that we know how big each step for our subregion should be at maximum, we can now calculate the amount they need to overlap in each direction.
     // Note that Z is omitted since we don't overlap slices, just on the x,y axis not z.
     double SubRegionOverlapX_um = (Params->ImageWidth_px / Params->NumPixelsPerVoxel_px) * Params->VoxelResolution_um * (double(Params->ScanRegionOverlap_percent) / 100.);
     double SubRegionOverlapY_um = (Params->ImageHeight_px / Params->NumPixelsPerVoxel_px) * Params->VoxelResolution_um * (double(Params->ScanRegionOverlap_percent) / 100.);
+    std::cout<<"OverlapX: "<<SubRegionOverlapX_um<<std::endl;
+    std::cout<<"OverlapY: "<<SubRegionOverlapY_um<<std::endl;
+
 
     // Next, we can calculate the number of regions in each dimension
     // Then we will enumerate them later on and calculate the bottom left and top right point for each
@@ -107,6 +111,10 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
                 double SubRegionStartX_um = (XStep * SubRegionStepSizeX_um) + BaseRegionOffsetX_um;
                 double SubRegionStartY_um = (YStep * SubRegionStepSizeY_um) + BaseRegionOffsetY_um;
                 double SubRegionStartZ_um = (ZStep * SubRegionStepSizeZ_um) + BaseRegionOffsetZ_um;
+
+                // It seems overlap is pushing us into another image
+                // instead of adding it, we should subtract it from both the start and end points when it's not the first slice in the x or y direction
+                // otherwise don't apply it for that direction
 
                 // And this is the top right coordinate for the subregion
                 // The std::min stuff is to ensure that if we're on the edge of the base region, we don't exceed the user-defined limit
