@@ -29,16 +29,13 @@
 
 #pragma once
 
-
-
 // Standard Libraries (BG convention: use <> instead of "")
+#include <cstdint>
 #include <string>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
-
 // Internal Libraries (BG convention: use <> instead of "")
-
 
 namespace BG {
 namespace NES {
@@ -46,7 +43,7 @@ namespace Simulator {
 
 /**
  * @brief Defines a bounding box using two points where we wish to scan with the microscope.
- * 
+ *
  */
 struct ScanRegion {
 
@@ -55,49 +52,43 @@ struct ScanRegion {
     float Point1Y_um;
     float Point1Z_um;
 
-
     /** Point 2*/
     float Point2X_um;
     float Point2Y_um;
     float Point2Z_um;
 
-
     /**
      * @brief Helper function that returns the x,y,z size of this region.
-     * 
-     * @return std::string 
+     *
+     * @return std::string
      */
     std::string Dimensions();
 
     /**
      * @brief Returns a string representation of the two points defining this region.
-     * 
-     * @return std::string 
+     *
+     * @return std::string
      */
     std::string ToString();
 
-
     /**
      * @brief Size helper functions, returns the size in the indicated dimension
-     * 
-     * @return double 
+     *
+     * @return double
      */
     double SizeX();
     double SizeY();
     double SizeZ();
 
-
     /**
      * @brief Returns the length of the voxel array needed to store this scan region.
-     * 
-     * @param _VoxelScale 
-     * @return uint64_t 
+     *
+     * @param _VoxelScale
+     * @return uint64_t
      */
     uint64_t GetVoxelSize(float _VoxelScale_um);
-
 };
 
-
-}; // Close Namespace Logger
-}; // Close Namespace Common
-}; // Close Namespace BG
+}; // namespace Simulator
+}; // namespace NES
+}; // namespace BG
