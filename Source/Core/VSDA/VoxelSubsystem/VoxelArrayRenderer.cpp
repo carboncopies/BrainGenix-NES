@@ -29,7 +29,7 @@ namespace Simulator {
 // }
 
 
-std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int SliceNumber, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, int _SliceOffset) {
+std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int SliceNumber, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, int _SliceOffset) {
     assert(_VSDAData != nullptr);
     assert(_Logger != nullptr);
 
@@ -62,9 +62,14 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
 
     double TotalSliceWidth = abs((double)Array->GetBoundingBox().bb_point1[0] - (double)Array->GetBoundingBox().bb_point2[0]);
     double TotalSliceHeight = abs((double)Array->GetBoundingBox().bb_point1[1] - (double)Array->GetBoundingBox().bb_point2[1]);
+
     // Number of X*Y images to take to cover the whole slice:
     int TotalXSteps = ceil(TotalSliceWidth / CameraStepSizeX_um);
     int TotalYSteps = ceil(TotalSliceHeight / CameraStepSizeY_um);
+
+    // Limit the total steps to those defined in the task
+    TotalXSteps = std::min(TotalXSteps, MaxImagesX);
+    TotalYSteps = std::min(TotalYSteps, MaxImagesY);
 
 
     // Now, we enumerate through all the steps needed, one at a time until we reach the end

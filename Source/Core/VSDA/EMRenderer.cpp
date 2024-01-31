@@ -62,22 +62,15 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     double MaxVoxelArraySize_um = MaxVoxelArrayAxisSize_vox * Params->VoxelResolution_um;
     int ImagesPerSubRegionX = floor(MaxVoxelArraySize_um / ImageStepSizeX_um);
     int ImagesPerSubRegionY = floor(MaxVoxelArraySize_um / ImageStepSizeY_um);
-    std::cout<<"--------------------------------\n";
-    std::cout<<"ImgsX: "<<ImagesPerSubRegionX<<std::endl;
-    std::cout<<"ImgsY: "<<ImagesPerSubRegionY<<std::endl;
     double SubRegionStepSizeX_um = ImagesPerSubRegionX * ImageStepSizeX_um;
     double SubRegionStepSizeY_um = ImagesPerSubRegionY * ImageStepSizeY_um;
     double SubRegionStepSizeZ_um = MaxVoxelArrayAxisSize * Params->VoxelResolution_um;
-    std::cout<<"StepSizeX: "<<SubRegionStepSizeX_um<<std::endl;
-    std::cout<<"StepSizeY: "<<SubRegionStepSizeY_um<<std::endl;
     
 
     // Okay, now that we know how big each step for our subregion should be at maximum, we can now calculate the amount they need to overlap in each direction.
     // Note that Z is omitted since we don't overlap slices, just on the x,y axis not z.
     double SubRegionOverlapX_um = (Params->ImageWidth_px / Params->NumPixelsPerVoxel_px) * Params->VoxelResolution_um * (double(Params->ScanRegionOverlap_percent) / 100.);
     double SubRegionOverlapY_um = (Params->ImageHeight_px / Params->NumPixelsPerVoxel_px) * Params->VoxelResolution_um * (double(Params->ScanRegionOverlap_percent) / 100.);
-    std::cout<<"OverlapX: "<<SubRegionOverlapX_um<<std::endl;
-    std::cout<<"OverlapY: "<<SubRegionOverlapY_um<<std::endl;
 
 
     // Next, we can calculate the number of regions in each dimension
@@ -116,18 +109,11 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
                 // And this is the top right coordinate for the subregion
                 // The std::min stuff is to ensure that if we're on the edge of the base region, we don't exceed the user-defined limit
                 // In other words, the std::min is to account for the ceil we took earlier with the NumSubRegionsInDim 
-                double SubRegionEndX_um = std::min((XStep + 1) * SubRegionStepSizeX_um, (double)BaseRegion->Point2X_um);
-                double SubRegionEndY_um = std::min((YStep + 1) * SubRegionStepSizeY_um, (double)BaseRegion->Point2Y_um);
+                // Also, we add the step of voxelresolution to ensure there are no rounding errors that cause a blue line to occur.
+                double SubRegionEndX_um = std::min((XStep + 1) * SubRegionStepSizeX_um + SubRegionOverlapX_um + Params->VoxelResolution_um, (double)BaseRegion->Point2X_um);
+                double SubRegionEndY_um = std::min((YStep + 1) * SubRegionStepSizeY_um + SubRegionOverlapY_um + Params->VoxelResolution_um, (double)BaseRegion->Point2Y_um);
                 double SubRegionEndZ_um = std::min((ZStep + 1) * SubRegionStepSizeZ_um, (double)BaseRegion->Point2Z_um);
 
-                // If we only applied the overlap to one part of the region, we could accidentally wind up with multiple images instead of just one
-                // To avoid this, on the second image and after in each direction, we shift the whole region over by the offset amount
-                if (XStep != 0) {
-                    SubRegionStartX_um -= SubRegionOverlapX_um;
-                    SubRegionStartY_um -= SubRegionOverlapY_um;
-                    SubRegionEndX_um -= SubRegionOverlapX_um;
-                    SubRegionEndY_um -= SubRegionOverlapY_um;
-                }
 
 
                 // Now we can just fill in the structs for this subregion as shown, and append it to the list of subregions to be rendered
@@ -143,6 +129,8 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
                 ThisSubRegion.Sim = _Simulation;
                 ThisSubRegion.RegionOffsetX_um = SubRegionStartX_um; // We should get rid of these
                 ThisSubRegion.RegionOffsetY_um = SubRegionStartY_um; // We should get rid of these
+                ThisSubRegion.MaxImagesX = ImagesPerSubRegionX;
+                ThisSubRegion.MaxImagesY = ImagesPerSubRegionY;                
                 ThisSubRegion.LayerOffset = ZStep * MaxVoxelArrayAxisSize;
                 ThisSubRegion.Region = ThisRegion;
 

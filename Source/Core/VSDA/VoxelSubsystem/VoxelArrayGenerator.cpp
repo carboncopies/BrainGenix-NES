@@ -20,6 +20,7 @@
 
 
 
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -106,7 +107,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 
     // Add our border frame while we wait
-    // VoxelArrayGenerator::CreateVoxelArrayBorderFrame(_Array);
+    VoxelArrayGenerator::CreateVoxelArrayBorderFrame(_Array);
 
 
     // Okay, now we just go through the list of tasks and make sure they're all done
