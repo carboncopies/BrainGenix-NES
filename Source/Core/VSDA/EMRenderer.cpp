@@ -60,8 +60,10 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     // Nextly, we're going to figure out the step size information for the subregions.
     // This will enable us to create subregions that exactly are multiples of the image step sizes, removing any overlap (unless it's on the border, then it may overshoot slightly)
     double MaxVoxelArraySize_um = MaxVoxelArrayAxisSize_vox * Params->VoxelResolution_um;
-    double SubRegionStepSizeX_um = floor(MaxVoxelArraySize_um / ImageStepSizeX_um) * ImageStepSizeX_um;
-    double SubRegionStepSizeY_um = floor(MaxVoxelArraySize_um / ImageStepSizeY_um) * ImageStepSizeY_um;
+    int ImagesPerSubRegionX = floor(MaxVoxelArraySize_um / ImageStepSizeX_um);
+    int ImagesPerSubRegionY = floor(MaxVoxelArraySize_um / ImageStepSizeY_um);
+    double SubRegionStepSizeX_um = ImagesPerSubRegionX * ImageStepSizeX_um;
+    double SubRegionStepSizeY_um = ImagesPerSubRegionY * ImageStepSizeY_um;
     double SubRegionStepSizeZ_um = MaxVoxelArrayAxisSize * Params->VoxelResolution_um;
     
 
