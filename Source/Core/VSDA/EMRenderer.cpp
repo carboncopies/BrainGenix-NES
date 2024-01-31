@@ -112,16 +112,22 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
                 double SubRegionStartY_um = (YStep * SubRegionStepSizeY_um) + BaseRegionOffsetY_um;
                 double SubRegionStartZ_um = (ZStep * SubRegionStepSizeZ_um) + BaseRegionOffsetZ_um;
 
-                // It seems overlap is pushing us into another image
-                // instead of adding it, we should subtract it from both the start and end points when it's not the first slice in the x or y direction
-                // otherwise don't apply it for that direction
 
                 // And this is the top right coordinate for the subregion
                 // The std::min stuff is to ensure that if we're on the edge of the base region, we don't exceed the user-defined limit
                 // In other words, the std::min is to account for the ceil we took earlier with the NumSubRegionsInDim 
-                double SubRegionEndX_um = std::min((XStep + 1) * SubRegionStepSizeX_um + SubRegionOverlapX_um, (double)BaseRegion->Point2X_um);
-                double SubRegionEndY_um = std::min((YStep + 1) * SubRegionStepSizeY_um + SubRegionOverlapY_um, (double)BaseRegion->Point2Y_um);
+                double SubRegionEndX_um = std::min((XStep + 1) * SubRegionStepSizeX_um, (double)BaseRegion->Point2X_um);
+                double SubRegionEndY_um = std::min((YStep + 1) * SubRegionStepSizeY_um, (double)BaseRegion->Point2Y_um);
                 double SubRegionEndZ_um = std::min((ZStep + 1) * SubRegionStepSizeZ_um, (double)BaseRegion->Point2Z_um);
+
+                // If we only applied the overlap to one part of the region, we could accidentally wind up with multiple images instead of just one
+                // To avoid this, on the second image and after in each direction, we shift the whole region over by the offset amount
+                if (XStep != 0) {
+                    SubRegionStartX_um -= SubRegionOverlapX_um;
+                    SubRegionStartY_um -= SubRegionOverlapY_um;
+                    SubRegionEndX_um -= SubRegionOverlapX_um;
+                    SubRegionEndY_um -= SubRegionOverlapY_um;
+                }
 
 
                 // Now we can just fill in the structs for this subregion as shown, and append it to the list of subregions to be rendered
