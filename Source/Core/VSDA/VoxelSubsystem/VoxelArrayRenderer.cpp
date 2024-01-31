@@ -87,7 +87,7 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
             ThisTask->VoxelStartingY = VoxelsPerStepY * YStep;
             ThisTask->VoxelEndingX = ThisTask->VoxelStartingX + ImageWidth_vox;
             ThisTask->VoxelEndingY = ThisTask->VoxelStartingY + ImageHeight_vox;
-            std::cout<<"StartX:"<<ThisTask->VoxelStartingX<<" StartY:"<<ThisTask->VoxelStartingY<<" EndX:"<<ThisTask->VoxelEndingX<<" EndY:"<<ThisTask->VoxelEndingY<<std::endl;
+            // std::cout<<"StartX:"<<ThisTask->VoxelStartingX<<" StartY:"<<ThisTask->VoxelStartingY<<" EndX:"<<ThisTask->VoxelEndingX<<" EndY:"<<ThisTask->VoxelEndingY<<std::endl;
             ThisTask->VoxelZ = SliceNumber;
             ThisTask->TargetFileName_ = FilePath;
             ThisTask->TargetDirectory_ = DirectoryPath;

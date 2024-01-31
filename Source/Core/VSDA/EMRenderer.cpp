@@ -62,9 +62,13 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     double MaxVoxelArraySize_um = MaxVoxelArrayAxisSize_vox * Params->VoxelResolution_um;
     int ImagesPerSubRegionX = floor(MaxVoxelArraySize_um / ImageStepSizeX_um);
     int ImagesPerSubRegionY = floor(MaxVoxelArraySize_um / ImageStepSizeY_um);
+    std::cout<<"--------------------------------\n";
+    std::cout<<"ImgsX: "<<ImagesPerSubRegionX<<std::endl;
+    std::cout<<"ImgsY: "<<ImagesPerSubRegionY<<std::endl;
     double SubRegionStepSizeX_um = ImagesPerSubRegionX * ImageStepSizeX_um;
     double SubRegionStepSizeY_um = ImagesPerSubRegionY * ImageStepSizeY_um;
     double SubRegionStepSizeZ_um = MaxVoxelArrayAxisSize * Params->VoxelResolution_um;
+    std::cout<<"StepSizeX: "<<SubRegionStepSizeX_um<<std::endl;
     
 
     // Okay, now that we know how big each step for our subregion should be at maximum, we can now calculate the amount they need to overlap in each direction.
