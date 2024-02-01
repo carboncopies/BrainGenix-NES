@@ -61,7 +61,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
 
     // With this scaling factor, we assume that this is the max portion of the system ram we can use
     // That way, we don't gobble more than say 60% of it in one alloc
-    double ScalingFactor = 0.2;
+    double ScalingFactor = 0.4;
 
 
     // Now, calculate the maximum number of voxels in system ram
