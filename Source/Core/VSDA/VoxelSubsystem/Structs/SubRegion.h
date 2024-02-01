@@ -62,6 +62,8 @@ struct SubRegion {
     double RegionOffsetX_um; /**Offset from origin in the x axis in microns*/
     double RegionOffsetY_um; /**Offset from origin in the y axis in microns*/
     // double RegionOffsetZ_um; /**Offset from origin in the z axis in microns*/
+    int MaxImagesX;          /**Set a limit on the number of images in the x direction, useful for fixing subregion rounding errors*/
+    int MaxImagesY;          /**Set a limit on the number of images in the y direction, useful for fixing subregion rounding errors*/
     size_t LayerOffset;      /**Layer offset from bottom of the image stack in microns*/
 
 

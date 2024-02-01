@@ -29,7 +29,7 @@ namespace Simulator {
 // }
 
 
-std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int SliceNumber, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, int _SliceOffset) {
+std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int SliceNumber, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, int _SliceOffset) {
     assert(_VSDAData != nullptr);
     assert(_Logger != nullptr);
 
@@ -62,9 +62,14 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
 
     double TotalSliceWidth = abs((double)Array->GetBoundingBox().bb_point1[0] - (double)Array->GetBoundingBox().bb_point2[0]);
     double TotalSliceHeight = abs((double)Array->GetBoundingBox().bb_point1[1] - (double)Array->GetBoundingBox().bb_point2[1]);
+
     // Number of X*Y images to take to cover the whole slice:
     int TotalXSteps = ceil(TotalSliceWidth / CameraStepSizeX_um);
     int TotalYSteps = ceil(TotalSliceHeight / CameraStepSizeY_um);
+
+    // Limit the total steps to those defined in the task
+    TotalXSteps = std::min(TotalXSteps, MaxImagesX);
+    TotalYSteps = std::min(TotalYSteps, MaxImagesY);
 
 
     // Now, we enumerate through all the steps needed, one at a time until we reach the end
@@ -73,7 +78,9 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
 
             // Calculate the filename of the image to be generated, add to list of generated images
             std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(SliceNumber + _SliceOffset) + "/";
-            std::string FilePath = "X" + std::to_string((CameraStepSizeX_um * XStep) + _OffsetX) + "_Y" + std::to_string((CameraStepSizeY_um * YStep) + _OffsetY) + ".png";
+            double RoundedXCoord = std::ceil(((CameraStepSizeX_um * XStep) + _OffsetX) * 100.0) / 100.0;
+            double RoundedYCoord = std::ceil(((CameraStepSizeY_um * YStep) + _OffsetY) * 100.0) / 100.0;
+            std::string FilePath = "X" + std::to_string(RoundedXCoord) + "_Y" + std::to_string(RoundedYCoord) + ".png";
 
             Filenames.push_back(DirectoryPath + FilePath);
 
@@ -87,7 +94,7 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
             ThisTask->VoxelStartingY = VoxelsPerStepY * YStep;
             ThisTask->VoxelEndingX = ThisTask->VoxelStartingX + ImageWidth_vox;
             ThisTask->VoxelEndingY = ThisTask->VoxelStartingY + ImageHeight_vox;
-            std::cout<<"StartX:"<<ThisTask->VoxelStartingX<<" StartY:"<<ThisTask->VoxelStartingY<<" EndX:"<<ThisTask->VoxelEndingX<<" EndY:"<<ThisTask->VoxelEndingY<<std::endl;
+            // std::cout<<"StartX:"<<ThisTask->VoxelStartingX<<" StartY:"<<ThisTask->VoxelStartingY<<" EndX:"<<ThisTask->VoxelEndingX<<" EndY:"<<ThisTask->VoxelEndingY<<std::endl;
             ThisTask->VoxelZ = SliceNumber;
             ThisTask->TargetFileName_ = FilePath;
             ThisTask->TargetDirectory_ = DirectoryPath;

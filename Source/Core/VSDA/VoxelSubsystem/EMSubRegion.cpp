@@ -60,7 +60,7 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     for (unsigned int i = 0; i < VSDAData_->Array_.get()->GetZ(); i++) {
         std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "/Region" + std::to_string(VSDAData_->ActiveRegionID_);
 
-        std::vector<std::string> Files = RenderSliceFromArray(_Logger, &Sim->VSDAData_, VSDAData_->Array_.get(), FileNamePrefix, i, _ImageProcessorPool, XOffset, YOffset, SliceOffset);
+        std::vector<std::string> Files = RenderSliceFromArray(_Logger, _SubRegion->MaxImagesX, _SubRegion->MaxImagesY, &Sim->VSDAData_, VSDAData_->Array_.get(), FileNamePrefix, i, _ImageProcessorPool, XOffset, YOffset, SliceOffset);
         for (size_t i = 0; i < Files.size(); i++) {
             VSDAData_->RenderedImagePaths_[VSDAData_->ActiveRegionID_].push_back(Files[i]);
         }
