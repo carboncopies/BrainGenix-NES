@@ -8,6 +8,8 @@
 #include <chrono>
 #include <algorithm>
 
+#include <unistd.h>
+
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
@@ -18,10 +20,20 @@
 
 
 
+// https://stackoverflow.com/questions/2513505/how-to-get-available-memory-c-g
+unsigned long long getTotalSystemMemory() {
+    long pages = sysconf(_SC_PHYS_PAGES);
+    long page_size = sysconf(_SC_PAGE_SIZE);
+    return pages * page_size;
+}
+
+
+
 namespace BG {
 namespace NES {
 namespace Simulator {
 namespace VSDA {
+
 
 
 bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
@@ -40,11 +52,35 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     ScanRegion* BaseRegion = &_Simulation->VSDAData_.Regions_[_Simulation->VSDAData_.ActiveRegionID_];
 
 
+    // -- Phase 0 --
+    // Here, we detect how much memory this machine has and then use that to make an educated guess as to the max size of the voxel array.
+    // This will of course go badly if you're using a lot of ram at the moment, and needs to be improved in the future.
+
+    // Maximum permitted size, we cannot exceed this even if we have more RAM.
+    size_t MaxVoxelSizeLimit = 4100; 
+
+    // With this scaling factor, we assume that this is the max portion of the system ram we can use
+    // That way, we don't gobble more than say 60% of it in one alloc
+    double ScalingFactor = 0.6;
+
+
+    // Now, calculate the maximum number of voxels in system ram
+    uint64_t MaxVoxels = uint64_t(double(getTotalSystemMemory()) * ScalingFactor) / sizeof(VoxelType);
+    size_t MaxVoxelArraySizeOnAxisInRAM = std::cbrt(MaxVoxels);
+
+    size_t MaxVoxelArrayAxisSize_vox = std::min(MaxVoxelSizeLimit, MaxVoxelArraySizeOnAxisInRAM);
+
+
+    // Make Log Message about memory consumption figures
+    double MemorySize_MB = ((MaxVoxelArrayAxisSize_vox * MaxVoxelArrayAxisSize_vox * MaxVoxelArrayAxisSize_vox) * sizeof(VoxelType)) / 1024. / 1024;
+    std::string LogMessage = "Using Maximum Voxel Array Dimensions Of '" + std::to_string(MaxVoxelArrayAxisSize_vox) + "', This May Use Up To " + std::to_string(MemorySize_MB) + "MiB";
+
+
+
+
     // -- Phase 1 --
     // We're going to now generate a list of regions which can then be rendered on this machine
     // to do so, we're going to use a configurable max_voxel_array_dimension to find our max size at this resolution, and then calculate the bounding box based on that
-    size_t MaxVoxelArrayAxisSize = 4100; // Hard-coded for now, will eventually do this based on hardware limitations
-    size_t MaxVoxelArrayAxisSize_vox = MaxVoxelArrayAxisSize;
 
     // Calculate Subregion Coordinates that allign with the image step size, that way we don't have any issues where there are gaps in the middle of the image stack.
     // Please note that we're currently assuming images are square, and will probably break if they're not.
@@ -64,7 +100,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     int ImagesPerSubRegionY = floor(MaxVoxelArraySize_um / ImageStepSizeY_um);
     double SubRegionStepSizeX_um = ImagesPerSubRegionX * ImageStepSizeX_um;
     double SubRegionStepSizeY_um = ImagesPerSubRegionY * ImageStepSizeY_um;
-    double SubRegionStepSizeZ_um = MaxVoxelArrayAxisSize * Params->VoxelResolution_um;
+    double SubRegionStepSizeZ_um = MaxVoxelArrayAxisSize_vox * Params->VoxelResolution_um;
     
 
     // Okay, now that we know how big each step for our subregion should be at maximum, we can now calculate the amount they need to overlap in each direction.
