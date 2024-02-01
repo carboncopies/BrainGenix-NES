@@ -74,7 +74,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     // Make Log Message about memory consumption figures
     double MemorySize_MB = ((MaxVoxelArrayAxisSize_vox * MaxVoxelArrayAxisSize_vox * MaxVoxelArrayAxisSize_vox) * sizeof(VoxelType)) / 1024. / 1024;
     std::string LogMessage = "Using Maximum Voxel Array Dimensions Of '" + std::to_string(MaxVoxelArrayAxisSize_vox) + "', This May Use Up To " + std::to_string(MemorySize_MB) + "MiB";
-
+    _Logger->Log(LogMessage, 5);
 
 
 
@@ -132,7 +132,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
                 double BaseRegionOffsetX_um = BaseRegion->Point1X_um;
                 double BaseRegionOffsetY_um = BaseRegion->Point1Y_um;
                 double BaseRegionOffsetZ_um = BaseRegion->Point1Z_um;
-                int LayerOffset = ZStep * MaxVoxelArrayAxisSize;
+                int LayerOffset = ZStep * MaxVoxelArrayAxisSize_vox;
 
                 
                 // Next, we're going to calculate the subregion start and ending boxes
@@ -167,7 +167,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
                 ThisSubRegion.RegionOffsetY_um = SubRegionStartY_um; // We should get rid of these
                 ThisSubRegion.MaxImagesX = ImagesPerSubRegionX;
                 ThisSubRegion.MaxImagesY = ImagesPerSubRegionY;                
-                ThisSubRegion.LayerOffset = ZStep * MaxVoxelArrayAxisSize;
+                ThisSubRegion.LayerOffset = ZStep * MaxVoxelArrayAxisSize_vox;
                 ThisSubRegion.Region = ThisRegion;
 
 
