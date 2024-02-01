@@ -74,9 +74,9 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     // Make Log Message about memory consumption figures
     double MemorySize_MB = ((MaxVoxelArrayAxisSize_vox * MaxVoxelArrayAxisSize_vox * MaxVoxelArrayAxisSize_vox) * sizeof(VoxelType)) / 1024. / 1024;
     double SystemRAM_MB = double(getTotalSystemMemory()) / 1024. / 1024.; 
-    std::string LogMessage = "Using Maximum Voxel Array Dimensions Of '" + std::to_string(MaxVoxelArrayAxisSize_vox) + "', This May Use Up To " + std::to_string(MemorySize_MB) + "MiB";
-    LogMessage += " (" + std::to_string(ScalingFactor*100) + "% of " + std::to_string(SystemRAM_MB) + "MiB System Memory)";
-    _Logger->Log(LogMessage, 5);
+    std::string LogMessage = "Using Maximum Voxel Array Dimensions Of '" + std::to_string(MaxVoxelArrayAxisSize_vox) + "', This May Use Up To ~" + std::to_string(round(MemorySize_MB)) + "MiB";
+    LogMessage += " (" + std::to_string(ScalingFactor*100) + "% of ~" + std::to_string(round(SystemRAM_MB)) + "MiB System Memory)";
+    _Logger->Log(LogMessage, 4);
 
 
 
