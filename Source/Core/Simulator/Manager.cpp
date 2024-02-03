@@ -899,7 +899,8 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     C.SourceCompartmentID = Util::GetInt(&RequestJSON, "SourceCompartmentID");
     C.DestinationCompartmentID = Util::GetInt(&RequestJSON, "DestinationCompartmentID");
     C.Conductance_nS = Util::GetFloat(&RequestJSON, "Conductance_nS");
-    C.TimeConstant_ms  = Util::GetFloat(&RequestJSON, "TimeConstant_ms");
+    C.TimeConstantRise_ms  = Util::GetFloat(&RequestJSON, "TimeConstantRise_ms");
+    C.TimeConstantDecay_ms  = Util::GetFloat(&RequestJSON, "TimeConstantDecay_ms");
     Util::GetVec3(C.ReceptorPos_um, &RequestJSON, "ReceptorPos");    
 
 
@@ -919,6 +920,10 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     int ReceptorID = ThisSimulation->Receptors.size();
     C.ID = ReceptorID;
     ThisSimulation->Receptors.push_back(C);
+    // *** TODO: Are these receptor structs that are kept in the list here actually
+    //           used anywhere? Do they create a functional receptor object? Are
+    //           they checked during Neuron updates?
+    //           This might be where a functional object has to be created.
 
 
     // Return Result ID

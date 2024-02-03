@@ -39,8 +39,8 @@ struct Receptor {
 
     float Conductance_nS;  /**Conductance from source to destination in
                               nanoSiemens.*/
-    float TimeConstant_ms; /**Postsynaptic potential time constant in
-                              milliseconds*/
+    float TimeConstantRise_ms; /**Postsynaptic potential rise time constant in milliseconds*/
+    float TimeConstantDecay_ms; /**Postsynaptic potential decay time constant in milliseconds*/
     Geometries::Vec3D ReceptorPos_um; /**Position of the receptor in world
                                          space, in micrometers*/
 };
