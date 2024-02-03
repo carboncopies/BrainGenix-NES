@@ -1211,34 +1211,50 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
-typedef bool NESRequest_func_t(Simulation*, const nlohmann::json&);
+// *** NOTE: By passing JSON objects/components as strings and then having to
+//           parse them into JSON objects again, the handlers above are doing
+//           a bunch of unnecessary extra work - you can just pass references
+//           to components of a JSON object as a JSON object.
+//           E.g. call AddBSNeuron(ReqParams) where ReqParams is as obtained
+//           in NESRequest() below.
+
+//typedef bool NESRequest_func_t(Simulation*, const nlohmann::json&);
+typedef std::string NESRequest_func_t(Manager&, const nlohmann::json&);
 typedef std::map<std::string, NESRequest_func_t*> NESRequest_map_t;
 
-bool SphereCreateHandler(Simulation* Sim, const nlohmann::json& NESRequest) {
-
+std::string PatchClampDACSetOutputListHandler(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.PatchClampDACSetOutputList(ReqParams.dump());
 }
 
 const NESRequest_map_t NES_Request_handlers = {
-    {"SphereCreate", SphereCreateHandler},
-    {"CylinderCreate", CylinderCreateHandler},
-    {"BoxCreate", BoxCreateHandler},
-    {"StapleCreate", StapleCreateHandler},
-    {"ReceptorCreate", ReceptorCreateHandler},
-    {"BSNeuronCreate", BSNeuronCreateHandler},
-    {"PatchClampDACCreate", PatchClampDACCreateHandler},
-    {"PatchClampADCCreate", PatchClampADCCreateHandler},
+    //{"SphereCreate", SphereCreateHandler},
+    //{"CylinderCreate", CylinderCreateHandler},
+    //{"BoxCreate", BoxCreateHandler},
+    //{"StapleCreate", StapleCreateHandler},
+    //{"ReceptorCreate", ReceptorCreateHandler},
+    //{"BSNeuronCreate", BSNeuronCreateHandler},
+    //{"PatchClampDACCreate", PatchClampDACCreateHandler},
+    //{"PatchClampADCCreate", PatchClampADCCreateHandler},
     {"PatchClampDACSetOutputList", PatchClampDACSetOutputListHandler},
-    {"PatchClampADCSetSampleRate", PatchClampADCSetSampleRateHandler},
-    {"PatchClampADCGetRecordedData", PatchClampADCGetRecordedDataHandler},
+    //{"PatchClampADCSetSampleRate", PatchClampADCSetSampleRateHandler},
+    //{"PatchClampADCGetRecordedData", PatchClampADCGetRecordedDataHandler},
 };
+
+bool Manager::BadReqID(int ReqID) {
+    // *** TODO: Add some rules here for ReqIDs that should be refused.
+    //           For example, keep track of the largest ReqID received
+    //           and reject if ReqID is smaller than that. This is
+    //           useful if ReqIDs are made using clock time or something.
+    return false;
+}
 
 /**
  * This expects requests of the following format:
  * [
  *   {
  *     "ReqID": <request-id>,
- *     "SimID": <SimID>,
  *     "AddBSNeuron": {
+ *       "SimulationID": <SimID>, // Logically, this could belong outside AddBSNeuron, but we wish to reuse backward compatible functions. 
  *       "Name": <name>,
  *       "SomaID": <soma-id>,
  *       "AxonID": <axon-id>,
@@ -1255,56 +1271,71 @@ std::string Manager::NESRequest(std::string _JSONRequest) { // Generic JSON-base
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
 
     // Build Response
-    nlohmann::json ResponseJSON;
-    // *** TODO: Below... build the response for each request as an element of the response JSON array.
+    nlohmann::json ResponseJSON = nlohmann::json::array(); // Create empty array for the list of responses.
 
     // For each request in the JSON list:
-
     for (const auto & req : RequestJSON) {
+
         int ReqID = -1;
         int SimulationID = -1;
         std::string ReqFunc;
         nlohmann::json ReqParams;
+        std::string Response;
+
+        // Get the mandatory components of a request:
         for (const auto & [req_key, req_value]: req.items()) {
             if (req_key == "ReqID") {
                 ReqID = req_value.template get<int>();
-            } else if (req_key == "SimID") {
-                SimulationID = req_value.template get<int>();
+            //} else if (req_key == "SimID") {
+            //    SimulationID = req_value.template get<int>();
             } else {
                 ReqFunc = req_key;
                 ReqParams = req_value;
             }
         }
 
-        // Check Sim ID
-        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-            // *** TODO: This failure should end up in a response JSON for that element of the response array.
-            ResponseJSON["StatusCode"] = 1; // invalid simulation id
-            return ResponseJSON.dump();
-        }
-        Simulation* ThisSimulation = Simulations_[SimulationID].get();
+        // // Check Sim ID
+        // if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        //     // *** TODO: This failure should end up in a response JSON for that element of the response array.
+        //     nlohmann::json ReqResponseJSON;
+        //     ReqResponseJSON["ReqID"] = ReqID;
+        //     ReqResponseJSON["StatusCode"] = 1; // invalid simulation id
+        //     Response = ReqResponseJSON.dump();
+        // }
+        // Simulation* ThisSimulation = Simulations_[SimulationID].get();
 
-        // *** TODO: We should probably check the Request ID as well...
-
-        // Typically would call a specific handler from here, but let's just keep parsing.
-        auto it = NES_Request_handlers.find(ReqFunc);
-        if (it == NES_Request_handlers.end()) {
-            // *** TODO: This failure should end up in a response JSON for that element of the response array.
-            ResponseJSON["StatusCode"] = 1; // unknown request *** TODO: use the right code
-            return ResponseJSON.dump();
-        }
-        if (!it->second(ThisSimulation, ReqParams)) { // Calls the handler.
-            // *** TODO: This failure should end up in a response JSON for that element of the response array.
-            ResponseJSON["StatusCode"] = 1; // failed request *** TODO: use the right code
-            return ResponseJSON.dump();
+        if (BadReqID(ReqID)) { // e.g. < highest request ID already handled
+            nlohmann::json ReqResponseJSON;
+            ReqResponseJSON["ReqID"] = ReqID;
+            ReqResponseJSON["StatusCode"] = 1; // bad request id
+            Response = ReqResponseJSON.dump();
         } else {
-            // *** TODO: Build the successful response element for this request.
+
+            // Typically would call a specific handler from here, but let's just keep parsing.
+            auto it = NES_Request_handlers.find(ReqFunc);
+            if (it == NES_Request_handlers.end()) {
+                nlohmann::json ReqResponseJSON;
+                ReqResponseJSON["ReqID"] = ReqID;
+                ReqResponseJSON["StatusCode"] = 1; // unknown request *** TODO: use the right code
+                Response = ReqResponseJSON.dump();
+            } else {
+                Response = it->second(*this, ReqParams); // Calls the handler.
+                // *** TODO: Either:
+                //     a) Convert handlers to return nlohmann::json objects so that we
+                //        can easily add ReqResponseJSON["ReqID"] = ReqID here, or,
+                //     b) Convert Response back to a ReqResponseJSON here in order to
+                //        add that... (This is more work, lower performance...)
+                //     Right now, we do b) (sadly...)
+                nlohmann::json ReqResponseJSON = nlohmann::json::parse(Response);
+                ReqResponseJSON["ReqID"] = ReqID;
+                Response = ReqResponseJSON.dump();
+            }
+
         }
+        ResponseJSON.push_back(Response);
 
     }
 
-    //ResponseJSON["ReqID"] = ReqID;
-    //ResponseJSON["StatusCode"] = 0; // ok
     return ResponseJSON.dump();
 }
 

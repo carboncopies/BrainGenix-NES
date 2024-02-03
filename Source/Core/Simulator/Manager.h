@@ -86,6 +86,8 @@ public:
      */
     ~Manager();
 
+    bool BadReqID(int ReqID);
+
     /**
      * @brief Various routes for API
      * Note that since this file is getting too long, several RPC handlers are being set up - each taking over part of this.
