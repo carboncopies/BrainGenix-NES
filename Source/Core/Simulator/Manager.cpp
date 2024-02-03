@@ -1,6 +1,7 @@
 #include <Simulator/Manager.h>
 #include <Simulator/BallAndStick/BSNeuron.h>
 
+#include <iostream>
 
 namespace BG {
 namespace NES {
@@ -44,6 +45,7 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     _RPCManager->AddRoute("Tool/PatchClampADC/Create", Logger_, [this](std::string RequestJSON){ return PatchClampADCCreate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampADC/SetSampleRate", Logger_, [this](std::string RequestJSON){ return PatchClampADCSetSampleRate(RequestJSON);});
     _RPCManager->AddRoute("Tool/PatchClampADC/GetRecordedData", Logger_, [this](std::string RequestJSON){ return PatchClampADCGetRecordedData(RequestJSON);});
+    _RPCManager->AddRoute("NES", Logger_, [this](std::string RequestJSON){ return NESRequest(RequestJSON);});
 
 
     _RPCManager->AddRoute("Debug", Logger_, [this](std::string RequestJSON){ return Debug(RequestJSON);});
@@ -1209,6 +1211,102 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
+typedef bool NESRequest_func_t(Simulation*, const nlohmann::json&);
+typedef std::map<std::string, NESRequest_func_t*> NESRequest_map_t;
+
+bool SphereCreateHandler(Simulation* Sim, const nlohmann::json& NESRequest) {
+
+}
+
+const NESRequest_map_t NES_Request_handlers = {
+    {"SphereCreate", SphereCreateHandler},
+    {"CylinderCreate", CylinderCreateHandler},
+    {"BoxCreate", BoxCreateHandler},
+    {"StapleCreate", StapleCreateHandler},
+    {"ReceptorCreate", ReceptorCreateHandler},
+    {"BSNeuronCreate", BSNeuronCreateHandler},
+    {"PatchClampDACCreate", PatchClampDACCreateHandler},
+    {"PatchClampADCCreate", PatchClampADCCreateHandler},
+    {"PatchClampDACSetOutputList", PatchClampDACSetOutputListHandler},
+    {"PatchClampADCSetSampleRate", PatchClampADCSetSampleRateHandler},
+    {"PatchClampADCGetRecordedData", PatchClampADCGetRecordedDataHandler},
+};
+
+/**
+ * This expects requests of the following format:
+ * [
+ *   {
+ *     "ReqID": <request-id>,
+ *     "SimID": <SimID>,
+ *     "AddBSNeuron": {
+ *       "Name": <name>,
+ *       "SomaID": <soma-id>,
+ *       "AxonID": <axon-id>,
+ *       <etc... all parameters>
+ *     }
+ *   },
+ *   <more requests>
+ * ]
+ */
+std::string Manager::NESRequest(std::string _JSONRequest) { // Generic JSON-based NES requests.
+
+    // Parse Request
+    Logger_->Log(_JSONRequest, 3);
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+    // *** TODO: Below... build the response for each request as an element of the response JSON array.
+
+    // For each request in the JSON list:
+
+    for (const auto & req : RequestJSON) {
+        int ReqID = -1;
+        int SimulationID = -1;
+        std::string ReqFunc;
+        nlohmann::json ReqParams;
+        for (const auto & [req_key, req_value]: req.items()) {
+            if (req_key == "ReqID") {
+                ReqID = req_value.template get<int>();
+            } else if (req_key == "SimID") {
+                SimulationID = req_value.template get<int>();
+            } else {
+                ReqFunc = req_key;
+                ReqParams = req_value;
+            }
+        }
+
+        // Check Sim ID
+        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+            // *** TODO: This failure should end up in a response JSON for that element of the response array.
+            ResponseJSON["StatusCode"] = 1; // invalid simulation id
+            return ResponseJSON.dump();
+        }
+        Simulation* ThisSimulation = Simulations_[SimulationID].get();
+
+        // *** TODO: We should probably check the Request ID as well...
+
+        // Typically would call a specific handler from here, but let's just keep parsing.
+        auto it = NES_Request_handlers.find(ReqFunc);
+        if (it == NES_Request_handlers.end()) {
+            // *** TODO: This failure should end up in a response JSON for that element of the response array.
+            ResponseJSON["StatusCode"] = 1; // unknown request *** TODO: use the right code
+            return ResponseJSON.dump();
+        }
+        if (!it->second(ThisSimulation, ReqParams)) { // Calls the handler.
+            // *** TODO: This failure should end up in a response JSON for that element of the response array.
+            ResponseJSON["StatusCode"] = 1; // failed request *** TODO: use the right code
+            return ResponseJSON.dump();
+        } else {
+            // *** TODO: Build the successful response element for this request.
+        }
+
+    }
+
+    //ResponseJSON["ReqID"] = ReqID;
+    //ResponseJSON["StatusCode"] = 0; // ok
+    return ResponseJSON.dump();
+}
 
 std::string Manager::Debug(std::string _JSONRequest) {
 
