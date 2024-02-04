@@ -1044,6 +1044,14 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
+// *** TODO: We should use an enum for response codes so that we don't
+//           have to remember which number means what.
+std::string ErrResponse(int ErrStatusCode) {
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = ErrStatusCode;
+    return ResponseJSON.dump();
+}
+
 std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
 
     // *** TODO: This needs to be modified so that it pulls out a
@@ -1058,43 +1066,31 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
 
     // Check Sim ID
     if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        return ResponseJSON.dump();
+        return ErrResponse(1); // invalid simulation id
     }
 
     Simulation* ThisSimulation = Simulations_[SimulationID].get();
     if (IsSimulationBusy(ThisSimulation)) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-        return ResponseJSON.dump();
+        return ErrResponse(5); // simulation is currently processing
     }
     // ----------------------------------------------------------------------------------
 
     // Get/Check PatchClampdDACID
     int PatchClampDACID = Util::GetInt(&RequestJSON, "PatchClampDACID");
     if (PatchClampDACID >= ThisSimulation->PatchClampDACs.size() || PatchClampDACID < 0) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 2; // invalid ID
-        return ResponseJSON.dump();
+        return ErrResponse(2); // invalid ID
     }
     Tools::PatchClampDAC* ThisDAC = &ThisSimulation->PatchClampDACs[PatchClampDACID];
     
     // Set Params
-    // ThisDAC->Timestep_ms = Util::GetFloat(&RequestJSON, "Timestep_ms");
-    // Util::GetFloatVector(&ThisDAC->DACVoltages_mV, &RequestJSON, "DDACVoltages_mV");
     ThisDAC->ControlData.clear();
     const auto & ControlDataJSON = RequestJSON.find("ControlData");
     if (ControlDataJSON == RequestJSON.end()) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 2; // invalid data *** TODO: use the right code here
-        return ResponseJSON.dump();
+        return ErrResponse(2); // invalid data *** TODO: use the right code here
     }
     for (const auto & value_pair: ControlDataJSON.value()) {
         if (value_pair.size() < 2) {
-            nlohmann::json ResponseJSON;
-            ResponseJSON["StatusCode"] = 2; // invalid data *** TODO: use the right code here
-            return ResponseJSON.dump();
+            return ErrResponse(2); // invalid data *** TODO: use the right code here
         }
         float t_ms = value_pair[0].template get<float>();
         float v_mV = value_pair[1].template get<float>();
@@ -1102,9 +1098,7 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
     }
 
     // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0; // ok
-    return ResponseJSON.dump();
+    return ErrResponse(0); // ok
 }
 
 std::string Manager::PatchClampADCCreate(std::string _JSONRequest) {
