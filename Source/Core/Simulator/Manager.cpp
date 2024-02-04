@@ -1015,7 +1015,7 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
     Tools::PatchClampDAC T;
     T.Name = Util::GetString(&RequestJSON, "Name");
     T.DestinationCompartmentID = Util::GetInt(&RequestJSON, "DestinationCompartmentID");
-    T.Timestep_ms = 0.0f;
+    //T.Timestep_ms = 0.0f;
     Util::GetVec3(T.ClampPos_um, &RequestJSON, "ClampPos");    
 
 
@@ -1081,8 +1081,25 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
     Tools::PatchClampDAC* ThisDAC = &ThisSimulation->PatchClampDACs[PatchClampDACID];
     
     // Set Params
-    ThisDAC->Timestep_ms = Util::GetFloat(&RequestJSON, "Timestep_ms");
-    Util::GetFloatVector(&ThisDAC->DACVoltages_mV, &RequestJSON, "DDACVoltages_mV");
+    // ThisDAC->Timestep_ms = Util::GetFloat(&RequestJSON, "Timestep_ms");
+    // Util::GetFloatVector(&ThisDAC->DACVoltages_mV, &RequestJSON, "DDACVoltages_mV");
+    ThisDAC->ControlData.clear();
+    const auto & ControlDataJSON = RequestJSON.find("ControlData");
+    if (ControlDataJSON == RequestJSON.end()) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2; // invalid data *** TODO: use the right code here
+        return ResponseJSON.dump();
+    }
+    for (const auto & value_pair: ControlDataJSON.value()) {
+        if (value_pair.size() < 2) {
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 2; // invalid data *** TODO: use the right code here
+            return ResponseJSON.dump();
+        }
+        float t_ms = value_pair[0].template get<float>();
+        float v_mV = value_pair[1].template get<float>();
+        ThisDAC->ControlData.emplace_back(t_ms, v_mV);
+    }
 
     // Return Result ID
     nlohmann::json ResponseJSON;
