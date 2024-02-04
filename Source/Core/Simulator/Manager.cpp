@@ -1222,22 +1222,52 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
 typedef std::string NESRequest_func_t(Manager&, const nlohmann::json&);
 typedef std::map<std::string, NESRequest_func_t*> NESRequest_map_t;
 
+std::string SphereCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.SphereCreate(ReqParams.dump());
+}
+std::string CylinderCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.CylinderCreate(ReqParams.dump());
+}
+std::string BoxCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.BoxCreate(ReqParams.dump());
+}
+std::string StapleCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.StapleCreate(ReqParams.dump());
+}
+std::string ReceptorCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.ReceptorCreate(ReqParams.dump());
+}
+std::string BSNeuronCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.BSNeuronCreate(ReqParams.dump());
+}
+std::string PatchClampDACCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.PatchClampDACCreate(ReqParams.dump());
+}
+std::string PatchClampADCCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.PatchClampADCCreate(ReqParams.dump());
+}
 std::string PatchClampDACSetOutputListHandler(Manager& Man, const nlohmann::json& ReqParams) {
     return Man.PatchClampDACSetOutputList(ReqParams.dump());
 }
+std::string PatchClampADCSetSampleRateHandler(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.PatchClampADCSetSampleRate(ReqParams.dump());
+}
+std::string PatchClampADCGetRecordedDataHandler(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.PatchClampADCGetRecordedData(ReqParams.dump());
+}
 
 const NESRequest_map_t NES_Request_handlers = {
-    //{"SphereCreate", SphereCreateHandler},
-    //{"CylinderCreate", CylinderCreateHandler},
-    //{"BoxCreate", BoxCreateHandler},
-    //{"StapleCreate", StapleCreateHandler},
-    //{"ReceptorCreate", ReceptorCreateHandler},
-    //{"BSNeuronCreate", BSNeuronCreateHandler},
-    //{"PatchClampDACCreate", PatchClampDACCreateHandler},
-    //{"PatchClampADCCreate", PatchClampADCCreateHandler},
+    {"SphereCreate", SphereCreateHandler},
+    {"CylinderCreate", CylinderCreateHandler},
+    {"BoxCreate", BoxCreateHandler},
+    {"StapleCreate", StapleCreateHandler},
+    {"ReceptorCreate", ReceptorCreateHandler},
+    {"BSNeuronCreate", BSNeuronCreateHandler},
+    {"PatchClampDACCreate", PatchClampDACCreateHandler},
+    {"PatchClampADCCreate", PatchClampADCCreateHandler},
     {"PatchClampDACSetOutputList", PatchClampDACSetOutputListHandler},
-    //{"PatchClampADCSetSampleRate", PatchClampADCSetSampleRateHandler},
-    //{"PatchClampADCGetRecordedData", PatchClampADCGetRecordedDataHandler},
+    {"PatchClampADCSetSampleRate", PatchClampADCSetSampleRateHandler},
+    {"PatchClampADCGetRecordedData", PatchClampADCGetRecordedDataHandler},
 };
 
 bool Manager::BadReqID(int ReqID) {
