@@ -1052,6 +1052,17 @@ std::string ErrResponse(int ErrStatusCode) {
     return ResponseJSON.dump();
 }
 
+/**
+ * Expects _JSONRequest:
+ * {
+ *   "SimulationID": <SimID>,
+ *   "PatchClampDACID": <DAC-ID>,
+ *   "ControlData": [
+ *      [ <t_ms>, <v_mV> ],
+ *      (more pairs)
+ *   ]
+ * }
+ */
 std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
 
     // *** TODO: This needs to be modified so that it pulls out a
