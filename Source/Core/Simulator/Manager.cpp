@@ -1046,12 +1046,15 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
 
 std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
 
+    // *** TODO: This needs to be modified so that it pulls out a
+    //           list of pairs, where each pair holds a time and a voltage.
+
+    // ----- Begin standard part (we should make a shared helper function for this) -----
     // Parse Request
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
     Logger_->Log("PatchClampDAC SetOutputList Called, On Sim " + std::to_string(SimulationID), 3);
-
 
     // Check Sim ID
     if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
@@ -1066,6 +1069,7 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
         ResponseJSON["StatusCode"] = 5; // simulation is currently processing
         return ResponseJSON.dump();
     }
+    // ----------------------------------------------------------------------------------
 
     // Get/Check PatchClampdDACID
     int PatchClampDACID = Util::GetInt(&RequestJSON, "PatchClampDACID");
