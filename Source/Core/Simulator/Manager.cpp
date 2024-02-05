@@ -90,6 +90,7 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     // Return Result ID
     nlohmann::json ResponseJSON;
     ResponseJSON["SimulationID"] = SimID;
+    ResponseJSON["StatusCode"] = 0; // ok
     return ResponseJSON.dump();
 }
 
@@ -1151,6 +1152,7 @@ std::string Manager::PatchClampADCCreate(std::string _JSONRequest) {
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["PatchClampADCID"] = PatchClampADCID;
+    //Logger_->Log("Responding: "+ResponseJSON.dump(), 3); // For DEBUG
     return ResponseJSON.dump();
 }
 
@@ -1336,7 +1338,8 @@ std::string Manager::NESRequest(std::string _JSONRequest) { // Generic JSON-base
         int SimulationID = -1;
         std::string ReqFunc;
         nlohmann::json ReqParams;
-        std::string Response;
+        nlohmann::json ReqResponseJSON;
+        //std::string Response;
 
         // Get the mandatory components of a request:
         for (const auto & [req_key, req_value]: req.items()) {
@@ -1361,37 +1364,36 @@ std::string Manager::NESRequest(std::string _JSONRequest) { // Generic JSON-base
         // Simulation* ThisSimulation = Simulations_[SimulationID].get();
 
         if (BadReqID(ReqID)) { // e.g. < highest request ID already handled
-            nlohmann::json ReqResponseJSON;
             ReqResponseJSON["ReqID"] = ReqID;
             ReqResponseJSON["StatusCode"] = 1; // bad request id
-            Response = ReqResponseJSON.dump();
+            //Response = ReqResponseJSON.dump();
         } else {
 
             // Typically would call a specific handler from here, but let's just keep parsing.
             auto it = NES_Request_handlers.find(ReqFunc);
             if (it == NES_Request_handlers.end()) {
-                nlohmann::json ReqResponseJSON;
                 ReqResponseJSON["ReqID"] = ReqID;
                 ReqResponseJSON["StatusCode"] = 1; // unknown request *** TODO: use the right code
-                Response = ReqResponseJSON.dump();
+                //Response = ReqResponseJSON.dump();
             } else {
-                Response = it->second(*this, ReqParams); // Calls the handler.
+                std::string Response = it->second(*this, ReqParams); // Calls the handler.
                 // *** TODO: Either:
                 //     a) Convert handlers to return nlohmann::json objects so that we
                 //        can easily add ReqResponseJSON["ReqID"] = ReqID here, or,
                 //     b) Convert Response back to a ReqResponseJSON here in order to
                 //        add that... (This is more work, lower performance...)
                 //     Right now, we do b) (sadly...)
-                nlohmann::json ReqResponseJSON = nlohmann::json::parse(Response);
+                ReqResponseJSON = nlohmann::json::parse(Response);
                 ReqResponseJSON["ReqID"] = ReqID;
-                Response = ReqResponseJSON.dump();
+                //Response = ReqResponseJSON.dump();
             }
 
         }
-        ResponseJSON.push_back(Response);
+        ResponseJSON.push_back(ReqResponseJSON);
 
     }
 
+    Logger_->Log("Responding: "+ResponseJSON.dump(), 3); // For DEBUG
     return ResponseJSON.dump();
 }
 
