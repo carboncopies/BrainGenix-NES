@@ -141,6 +141,9 @@ public:
      */
     std::vector<std::unique_ptr<Simulation>>* GetSimulationVectorPtr();
 
+    // This allows use of the Manager Logger.
+    BG::Common::Logger::LoggingSystem * Logger() const { return Logger_; }
+
 };
 
 }; // Close Namespace Simulator

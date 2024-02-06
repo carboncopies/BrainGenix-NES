@@ -1,5 +1,6 @@
 #include <Simulator/Manager.h>
 #include <Simulator/BallAndStick/BSNeuron.h>
+#include <Simulator/bgStatusCode.h>
 
 #include <iostream>
 
@@ -7,6 +8,125 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
+// Handy class for standard handler data.
+class HandlerData {
+protected:
+    Manager & Man;
+    std::vector<std::unique_ptr<Simulation>>* SimVec = nullptr;
+
+    nlohmann::json RequestJSON;
+    API::bgStatusCode Status = API::bgStatusCode::bgStatusSuccess;
+
+    int SimulationID = -1;
+    Simulation * ThisSimulation = nullptr;
+
+public:
+    HandlerData(Manager* _Man, const std::string & _JSONRequest, const std::string & Source, bool PermitBusy = false): Man(*_Man) {
+        SimVec = Man.GetSimulationVectorPtr();
+        RequestJSON = nlohmann::json::parse(_JSONRequest);
+        if (!GetParInt("SimulationID", SimulationID)) {
+            return;
+        }
+        if (SimulationID >= SimVec->size() || SimulationID < 0) {
+            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
+            return;
+        }
+        ThisSimulation = SimVec->at(SimulationID).get();
+        if (PermitBusy) {
+            return;
+        }
+        if (Man.IsSimulationBusy(ThisSimulation)) {
+            Status = API::bgStatusCode::bgStatusSimulationBusy;
+            return;
+        }
+        Man.Logger()->Log(Source+" called, on Sim " + SimIDStr(), 3);
+    }
+
+    bool HasError() const { return (Status != API::bgStatusCode::bgStatusSuccess); }
+
+    std::string ErrResponse(int _Status) {
+        Status = API::bgStatusCode(_Status);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = _Status;
+        return ResponseJSON.dump();
+    }
+    std::string ErrResponse(API::bgStatusCode _Status) { return ErrResponse(int(_Status)); }
+    std::string ErrResponse() { return ErrResponse(int(Status)); }
+    std::string ResponseWithID(const std::string & IDName, int IDValue) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = int(Status);
+        ResponseJSON[IDName] = IDValue;
+        return ResponseJSON.dump();
+    }
+
+    int SimID() const { return SimulationID; }
+    std::string SimIDStr() const { return std::to_string(SimulationID); }
+
+    Simulation * Sim() const { return ThisSimulation; }
+
+    const nlohmann::json & ReqJSON() const { return RequestJSON; }
+
+    bool FindPar(const std::string & ParName, nlohmann::json::iterator & Iterator) {
+        Iterator = RequestJSON.find(ParName);
+        if (Iterator == RequestJSON.end()) {
+            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
+            return false;
+        }
+        return true;
+    }
+
+    bool GetParInt(const std::string & ParName, int & Value) {
+        nlohmann::json::iterator it;
+        if (!FindPar(ParName, it)) {
+            return false;
+        }
+        if (!it.value().is_number()) {
+            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
+            return false;
+        }
+        Value = it.value().template get<int>();
+        return true;
+    }
+
+    bool GetParFloat(const std::string & ParName, float & Value) {
+        nlohmann::json::iterator it;
+        if (!FindPar(ParName, it)) {
+            return false;
+        }
+        if (!it.value().is_number()) {
+            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
+            return false;
+        }
+        Value = it.value().template get<float>();
+        return true;
+    }
+
+    bool GetParString(const std::string & ParName, std::string & Value) {
+        nlohmann::json::iterator it;
+        if (!FindPar(ParName, it)) {
+            return false;
+        }
+        if (!it.value().is_string()) {
+            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
+            return false;
+        }
+        Value = it.value().template get<std::string>();
+        return true;
+    }
+
+    bool GetParVec3(const std::string & ParName, Vec3D & Value, const std::sting & Units = "um") {
+        if (!GetParFloat(ParName+"X_"+Units, Value.x)) {
+            return false;
+        }
+        if (!GetParFloat(ParName+"Y_"+Units, Value.y)) {
+            return false;
+        }
+        if (!GetParFloat(ParName+"Z_"+Units, Value.z)) {
+            return false;
+        }
+        return true;
+    }
+};
 
 Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, API::Manager* _RPCManager) {
     assert(_Logger != nullptr);
@@ -66,7 +186,6 @@ Manager::~Manager() {
     }
 }
 
-
 std::string Manager::SimulationCreate(std::string _JSONRequest) {
 
     // Parse Request
@@ -88,161 +207,85 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
 
 
     // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["SimulationID"] = SimID;
-    ResponseJSON["StatusCode"] = 0; // ok
-    return ResponseJSON.dump();
+    return Handle.ResponseWithID("SimulationID", SimID);
 }
 
 std::string Manager::SimulationReset(std::string _JSONRequest) {
 
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Simulation Reset Called, On Sim " + std::to_string(SimulationID), 3);
-
-
-    // Check Sim ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid sim id
-        return ResponseJSON.dump();
+    HandlerData Handle(this, _JSONRequest, "SimulationReset");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    if (IsSimulationBusy(ThisSimulation)) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-        return ResponseJSON.dump();
-    }
-    // ThisSimulation->CurrentTask = SIMULATION_RESET; // request a reset be done
-    // ThisSimulation->WorkRequested = true;
+
+    // Handle.Sim()->CurrentTask = SIMULATION_RESET; // request a reset be done
+    // Handle.Sim()->WorkRequested = true;
 
     // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0; // ok
-    return ResponseJSON.dump();
+    return Handle.ErrResponse(); // ok
 }
+
 
 std::string Manager::SimulationRunFor(std::string _JSONRequest) {
 
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Simulation RunFor Called, On Sim " + std::to_string(SimulationID), 3);
-
-
-    // Check Sim ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid sim id
-        return ResponseJSON.dump();
-    }
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    if (IsSimulationBusy(ThisSimulation)) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-        return ResponseJSON.dump();
+    HandlerData Handle(this, _JSONRequest, "SimulationRunFor");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
 
-    ThisSimulation->RunTimes_ms = Util::GetFloat(&RequestJSON, "Runtime_ms"); // set requested runtime
-    ThisSimulation->CurrentTask = SIMULATION_RUNFOR; // request work be done
-    ThisSimulation->WorkRequested = true;
+    float RunTime = -1.0;
+    if (!Handle.GetParFloat("Runtime_ms", RunTime)) {
+        return Handle.ErrResponse();
+    }
+    Handle.Sim()->RunTimes_ms = RunTime;
+    Handle.Sim()->CurrentTask = SIMULATION_RUNFOR; // request work be done
+    Handle.Sim()->WorkRequested = true;
 
     // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0; // ok
-    return ResponseJSON.dump();
+    return Handle.ErrResponse(); // ok
 }
 
 std::string Manager::SimulationRecordAll(std::string _JSONRequest) {
 
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Simulation RecordAll Called, On Sim " + std::to_string(SimulationID), 3);
-
-
-
-    // Check Sim ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid sim id
-        return ResponseJSON.dump();
+    HandlerData Handle(this, _JSONRequest, "SimulationRecordAll");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    if (IsSimulationBusy(ThisSimulation)) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-        return ResponseJSON.dump();
+
+    float MaxRecordTime = -1.0;
+    if (!Handle.GetParFloat("MaxRecordTime_ms", MaxRecordTime)) {
+        return Handle.ErrResponse();
     }
-    ThisSimulation->MaxRecordTime_ms = Util::GetFloat(&RequestJSON, "MaxRecordTime_ms");
+    Handle.Sim()->MaxRecordTime_ms = MaxRecordTime;
 
     // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0; // ok
-    return ResponseJSON.dump();
+    return Handle.ErrResponse(); // ok
 }
 
 std::string Manager::SimulationGetRecording(std::string _JSONRequest) {
 
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Simulation GetRecording Called, On Sim" + std::to_string(SimulationID), 3);
-
-
-    // Check Sim ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid sim id
-        return ResponseJSON.dump();
+    HandlerData Handle(this, _JSONRequest, "SimulationGetRecording");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    if (IsSimulationBusy(ThisSimulation)) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-        return ResponseJSON.dump();
-    }
-
 
     // Return JSON
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
-    ResponseJSON["Recording"] = ThisSimulation->RecordingBlob;
+    ResponseJSON["Recording"] = Handle.Sim()->RecordingBlob;
     return ResponseJSON.dump();
 }
 
 std::string Manager::SimulationGetStatus(std::string _JSONRequest) {
 
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Simulation GetStatus Called, On Sim " + std::to_string(SimulationID), 3);
-
-
-    // Check Sim ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid sim id
-        return ResponseJSON.dump();
+    HandlerData Handle(this, _JSONRequest, "SimulationGetStatus", true);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    if (IsSimulationBusy(ThisSimulation)) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-        return ResponseJSON.dump();
-    }
-
 
     // Return JSON
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
-    ResponseJSON["IsSimulating"] = (bool)ThisSimulation->IsProcessing; /////////////////////////////////////////////////////////////////HARD CODED STUFF HERE - FIXME!!!!
+    ResponseJSON["IsSimulating"] = (bool)Handle.Sim()->IsProcessing;
     ResponseJSON["RealWorldTimeRemaining_ms"] = 0.0;
     ResponseJSON["RealWorldTimeElapsed_ms"] = 0.0;
     ResponseJSON["InSimulationTime_ms"] = 0.0;
@@ -253,687 +296,171 @@ std::string Manager::SimulationGetStatus(std::string _JSONRequest) {
 
 std::string Manager::SimulationBuildMesh(std::string _JSONRequest) {
 
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Simulation BuildMesh Called, On Sim " + std::to_string(SimulationID), 1);
-
-
-    // Check Sim ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid sim id
-        return ResponseJSON.dump();
-    }
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    if (IsSimulationBusy(ThisSimulation)) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-        return ResponseJSON.dump();
+    HandlerData Handle(this, _JSONRequest, "SimulationBuildMesh");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
 
-    // if (!BuildMeshFromSimulation(Logger_, Renderer_, ThisSimulation)) {
-    //     nlohmann::json ResponseJSON;
-    //     ResponseJSON["StatusCode"] = 999; // general failure
-    //     return ResponseJSON.dump();
+    // if (!BuildMeshFromSimulation(Logger_, Renderer_, Handle.Sim())) {
+    //     return Handle.ErrResponse(999); // general failure
     // }
-    
     std::cout<<"WARNING THE SIMULATION BUILD MESH FUNCTION DOESNT DO AYNTHING!!!!\n";
 
 
-    // Return JSON
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0; // ok
-    return ResponseJSON.dump();
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
 }
 
 
 std::string Manager::SphereCreate(std::string _JSONRequest) {
 
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Simulation Create Sphere Called, On Sim " + std::to_string(SimulationID), 1);
+    HandlerData Handle(this, _JSONRequest, "SphereCreate");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
     
-    float Radius_um  = Util::GetFloat(&RequestJSON, "Radius_um");
-    float CenterPosX_um = Util::GetFloat(&RequestJSON, "CenterPosX_um");
-    float CenterPosY_um = Util::GetFloat(&RequestJSON, "CenterPosY_um");
-    float CenterPosZ_um = Util::GetFloat(&RequestJSON, "CenterPosZ_um");
-    std::string Name = Util::GetString(&RequestJSON, "Name");
-
     // Build New Sphere Object
     Geometries::Sphere S;
-    S.Name = Name;
-    S.Radius_um = Radius_um;
-    S.Center_um.x = CenterPosX_um;
-    S.Center_um.y = CenterPosY_um;
-    S.Center_um.z = CenterPosZ_um;
-
-
-    // Add to Sim, Set ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        nlohmann::json ResponseJSON;
-        ResponseJSON["ShapeID"] = -1;
-        return ResponseJSON.dump();
+    if ((!Handle.GetParFloat("Radius_um", S.Radius_um))
+        || (!Handle.GetParVec3("CenterPos", S.Center_um))
+        || (!Handle.GetParString("Name", S.Name))) {
+        return Handle.ErrResponse();
     }
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    if (IsSimulationBusy(ThisSimulation)) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-        return ResponseJSON.dump();
-    }
-    int SphereID = ThisSimulation->Collection.Geometries.size();
-    S.ID = SphereID;
-    ThisSimulation->Collection.Geometries.push_back(S);
-    //ThisSimulation->Collection.append(S);
 
+    S.ID = Handle.Sim()->Collection.Geometries.size();
+    Handle.Sim()->Collection.Geometries.push_back(S);
+    //Handle.Sim()->Collection.append(S);
 
     // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["ShapeID"] = SphereID;
-    return ResponseJSON.dump();
+    return Handle.ResponseWithID("ShapeID", S.ID);
 }
-
-std::string Manager::BulkSphereCreate(std::string _JSONRequest) {
-
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Simulation Bulk Create Sphere Called, On Sim " + std::to_string(SimulationID), 1);
-    
-    // Get Parameters
-    std::vector<float> RadiusList_um;
-    std::vector<float> CenterXList_um;
-    std::vector<float> CenterYList_um;
-    std::vector<float> CenterZList_um;
-    std::vector<std::string> NameList;
-    Util::GetFloatVector(&RadiusList_um, &RequestJSON, "RadiusList_um");
-    Util::GetFloatVector(&CenterXList_um, &RequestJSON, "CenterXList_um");
-    Util::GetFloatVector(&CenterYList_um, &RequestJSON, "CenterYList_um");
-    Util::GetFloatVector(&CenterZList_um, &RequestJSON, "CenterZList_um");
-    Util::GetStringVector(&NameList, &RequestJSON, "NameList");
-
-    // Check List Lengths Are Equal, Exit If Not
-    bool LengthsEqual = true;
-    size_t Length = RadiusList_um.size();
-    LengthsEqual &= (CenterXList_um.size() == Length);
-    LengthsEqual &= (CenterYList_um.size() == Length);
-    LengthsEqual &= (CenterZList_um.size() == Length);
-    LengthsEqual &= (NameList.size() == Length);
-    if (!LengthsEqual) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 2;
-        ResponseJSON["ShapeIDs"] = "[]";
-        return ResponseJSON.dump();
-    }
-    
-
-
-    // Setup Output ID List
-    std::vector<size_t> ShapeIDs;
-
-    // Now enumerate and build them
-    Logger_->Log("Adding " + std::to_string(Length) + " Spheres", 2);
-    for (size_t i = 0; i < Length; i++) {
-
-        // Build New Sphere Object
-        Geometries::Sphere S;
-        S.Name = NameList[i];
-        S.Radius_um = RadiusList_um[i];
-        S.Center_um.x = CenterXList_um[i];
-        S.Center_um.y = CenterYList_um[i];
-        S.Center_um.z = CenterZList_um[i];
-
-
-        // Add to Sim, Set ID
-        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-            nlohmann::json ResponseJSON;
-            ResponseJSON["StatusCode"] = 2;
-            ResponseJSON["ShapeIDs"] = "[]";
-            return ResponseJSON.dump();
-        }
-        Simulation* ThisSimulation = Simulations_[SimulationID].get();
-        if (IsSimulationBusy(ThisSimulation)) {
-            nlohmann::json ResponseJSON;
-            ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-            return ResponseJSON.dump();
-        }
-        int SphereID = ThisSimulation->Collection.Geometries.size();
-        S.ID = SphereID;
-        ThisSimulation->Collection.Geometries.push_back(S);
-
-        ShapeIDs.push_back(S.ID);
-
-    }
-
-    // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["ShapeIDs"] = ShapeIDs;
-    return ResponseJSON.dump();
-}
-
 
 std::string Manager::CylinderCreate(std::string _JSONRequest) {
 
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Create Cylinder Called, On Sim " + std::to_string(SimulationID), 3);
-
-
-    float E0Radius_um  = Util::GetFloat(&RequestJSON, "Point1Radius_um");
-    float E0X_um = Util::GetFloat(&RequestJSON, "Point1PosX_um");
-    float E0Y_um = Util::GetFloat(&RequestJSON, "Point1PosY_um");
-    float E0Z_um = Util::GetFloat(&RequestJSON, "Point1PosZ_um");
-    float E1Radius_um  = Util::GetFloat(&RequestJSON, "Point2Radius_um");
-    float E1X_um = Util::GetFloat(&RequestJSON, "Point2PosX_um");
-    float E1Y_um = Util::GetFloat(&RequestJSON, "Point2PosY_um");
-    float E1Z_um = Util::GetFloat(&RequestJSON, "Point2PosZ_um");
-    std::string Name = Util::GetString(&RequestJSON, "Name");
-
+    HandlerData Handle(this, _JSONRequest, "CylinderCreate");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
     // Build New Cylinder Object
     Geometries::Cylinder S;
-    S.Name = Name;
-    S.End0Radius_um = E0Radius_um;
-    S.End0Pos_um.x = E0X_um;
-    S.End0Pos_um.y = E0Y_um;
-    S.End0Pos_um.z = E0Z_um;
-    S.End1Radius_um = E1Radius_um;
-    S.End1Pos_um.x = E1X_um;
-    S.End1Pos_um.y = E1Y_um;
-    S.End1Pos_um.z = E1Z_um;
-
-
-    // Add to Sim, Set ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        ResponseJSON["ShapeID"] = -1;
-        return ResponseJSON.dump();
+    if ((!Handle.GetParFloat("Point1Radius_um", S.End0Radius_um))
+        || (!Handle.GetParVec3("Point1Pos", S.End0Pos_um))
+        || (!Handle.GetParFloat("Point2Radius_um", S.End1Radius_um))
+        || (!Handle.GetParVec3("Point2Pos", S.End1Pos_um))
+        || (!Handle.GetParString("Name", S.Name))) {
+        return Handle.ErrResponse();
     }
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    if (IsSimulationBusy(ThisSimulation)) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-        return ResponseJSON.dump();
-    }
-    int ShapeID = ThisSimulation->Collection.Geometries.size(); // we can do this since the shapes vector is a variant
-    S.ID = ShapeID;
-    ThisSimulation->Collection.Geometries.push_back(S);
-    //ThisSimulation->Collection.append(S);
 
+    S.ID = Handle.Sim()->Collection.Geometries.size(); // we can do this since the shapes vector is a variant
+    Handle.Sim()->Collection.Geometries.push_back(S);
+    //Handle.Sim()->Collection.append(S);
 
     // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0; // ok
-    ResponseJSON["ShapeID"] = ShapeID;
-    return ResponseJSON.dump();
+    return Handle.ResponseWithID("ShapeID", S.ID);
 }
-
-std::string Manager::BulkCylinderCreate(std::string _JSONRequest) {
-
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Simulation Bulk Create Cylinder Called, On Sim " + std::to_string(SimulationID), 1);
-    
-    // Get Parameters
-    std::vector<float> Point1RadiusList_um;
-    std::vector<float> Point2RadiusList_um;
-    std::vector<float> Point1XList_um;
-    std::vector<float> Point1YList_um;
-    std::vector<float> Point1ZList_um;
-    std::vector<float> Point2XList_um;
-    std::vector<float> Point2YList_um;
-    std::vector<float> Point2ZList_um;
-    std::vector<std::string> NameList;
-    Util::GetFloatVector(&Point1RadiusList_um, &RequestJSON, "Point1RadiusList_um");
-    Util::GetFloatVector(&Point2RadiusList_um, &RequestJSON, "Point2RadiusList_um");
-    Util::GetFloatVector(&Point1XList_um, &RequestJSON, "Point1XList_um");
-    Util::GetFloatVector(&Point1YList_um, &RequestJSON, "Point1YList_um");
-    Util::GetFloatVector(&Point1ZList_um, &RequestJSON, "Point1ZList_um");
-    Util::GetFloatVector(&Point2XList_um, &RequestJSON, "Point2XList_um");
-    Util::GetFloatVector(&Point2YList_um, &RequestJSON, "Point2YList_um");
-    Util::GetFloatVector(&Point2ZList_um, &RequestJSON, "Point2ZList_um");
-    Util::GetStringVector(&NameList, &RequestJSON, "NameList");
-
-    // Check List Lengths Are Equal, Exit If Not
-    bool LengthsEqual = true;
-    size_t Length = Point1RadiusList_um.size();
-    LengthsEqual &= (Point2RadiusList_um.size() == Length);
-    LengthsEqual &= (Point1XList_um.size() == Length);
-    LengthsEqual &= (Point1YList_um.size() == Length);
-    LengthsEqual &= (Point1ZList_um.size() == Length);
-    LengthsEqual &= (Point2XList_um.size() == Length);
-    LengthsEqual &= (Point2YList_um.size() == Length);
-    LengthsEqual &= (Point2ZList_um.size() == Length);
-    LengthsEqual &= (NameList.size() == Length);
-    if (!LengthsEqual) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 2;
-        ResponseJSON["ShapeIDs"] = "[]";
-        return ResponseJSON.dump();
-    }
-    
-
-
-    // Setup Output ID List
-    std::vector<size_t> ShapeIDs;
-
-    // Now enumerate and build them
-    Logger_->Log("Adding " + std::to_string(Length) + " Cylinders", 2);
-    for (size_t i = 0; i < Length; i++) {
-
-        // Build New Cylinder Object
-        Geometries::Cylinder S;
-        S.Name = NameList[i];
-        S.End0Radius_um = Point1RadiusList_um[i];
-        S.End1Radius_um = Point2RadiusList_um[i];
-        S.End0Pos_um.x = Point1XList_um[i];
-        S.End0Pos_um.y = Point1YList_um[i];
-        S.End0Pos_um.z = Point1ZList_um[i];
-        S.End1Pos_um.x = Point2XList_um[i];
-        S.End1Pos_um.y = Point2YList_um[i];
-        S.End1Pos_um.z = Point2ZList_um[i];
-
-        // Add to Sim, Set ID
-        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-            nlohmann::json ResponseJSON;
-            ResponseJSON["StatusCode"] = 2;
-            ResponseJSON["ShapeIDs"] = "[]";
-            return ResponseJSON.dump();
-        }
-        Simulation* ThisSimulation = Simulations_[SimulationID].get();
-        if (IsSimulationBusy(ThisSimulation)) {
-            nlohmann::json ResponseJSON;
-            ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-            return ResponseJSON.dump();
-        }
-        int CylinderID = ThisSimulation->Collection.Geometries.size();
-        S.ID = CylinderID;
-        ThisSimulation->Collection.Geometries.push_back(S);
-
-        ShapeIDs.push_back(S.ID);
-
-    }
-
-    // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["ShapeIDs"] = ShapeIDs;
-    return ResponseJSON.dump();
-}
-
 
 std::string Manager::BoxCreate(std::string _JSONRequest) {
 
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Create Box Called, On Sim " + std::to_string(SimulationID), 3);
-
+    HandlerData Handle(this, _JSONRequest, "BoxCreate");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
     // Build New Box Object
     Geometries::Box S;
-    S.Name = Util::GetString(&RequestJSON, "Name");
-    Util::GetVec3(S.Center_um, &RequestJSON, "CenterPos");
-    Util::GetVec3(S.Dims_um, &RequestJSON, "Scale");
-    Util::GetVec3(S.Rotations_rad, &RequestJSON, "Rotation", "rad");
-
-    // Add to Sim, Set ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        ResponseJSON["ShapeID"] = -1;
-        return ResponseJSON.dump();
+    if ((!Handle.GetParVec3("CenterPos", S.Center_um))
+        || (!Handle.GetParVec3("Scale", S.Dims_um))
+        || (!Handle.GetParVec3("Rotation", S.Rotations_rad, "rad"))
+        || (!Handle.GetParString("Name", S.Name))) {
+        return Handle.ErrResponse();
     }
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    if (IsSimulationBusy(ThisSimulation)) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-        return ResponseJSON.dump();
-    }
-    int ShapeID = ThisSimulation->Collection.Geometries.size(); // we can do this since the shapes vector is a variant
-    S.ID = ShapeID;
-    ThisSimulation->Collection.Geometries.push_back(S);
-    //ThisSimulation->Collection.append(S);
 
+    S.ID = Handle.Sim()->Collection.Geometries.size(); // we can do this since the shapes vector is a variant
+    Handle.Sim()->Collection.Geometries.push_back(S);
+    //Handle.Sim()->Collection.append(S);
 
     // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0; // ok
-    ResponseJSON["ShapeID"] = ShapeID;
-    return ResponseJSON.dump();
+    return Handle.ResponseWithID("ShapeID", S.ID);
 }
-
-std::string Manager::BulkBoxCreate(std::string _JSONRequest) {
-
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Simulation Bulk Create Box Called, On Sim " + std::to_string(SimulationID), 1);
-    
-    // Get Parameters
-    std::vector<float> CenterXList_um;
-    std::vector<float> CenterYList_um;
-    std::vector<float> CenterZList_um;
-    std::vector<float> DimensionsXList_um;
-    std::vector<float> DimensionsYList_um;
-    std::vector<float> DimensionsZList_um;
-    std::vector<float> RotationXList_rad;
-    std::vector<float> RotationYList_rad;
-    std::vector<float> RotationZList_rad;
-    std::vector<std::string> NameList;
-    Util::GetFloatVector(&CenterXList_um, &RequestJSON, "CenterXList_um");
-    Util::GetFloatVector(&CenterYList_um, &RequestJSON, "CenterYList_um");
-    Util::GetFloatVector(&CenterZList_um, &RequestJSON, "CenterZList_um");
-    Util::GetFloatVector(&DimensionsXList_um, &RequestJSON, "DimensionsXList_um");
-    Util::GetFloatVector(&DimensionsYList_um, &RequestJSON, "DimensionsYList_um");
-    Util::GetFloatVector(&DimensionsZList_um, &RequestJSON, "DimensionsZList_um");
-    Util::GetFloatVector(&RotationXList_rad, &RequestJSON, "RotationXList_rad");
-    Util::GetFloatVector(&RotationYList_rad, &RequestJSON, "RotationYList_rad");
-    Util::GetFloatVector(&RotationZList_rad, &RequestJSON, "RotationZList_rad");
-    Util::GetStringVector(&NameList, &RequestJSON, "NameList");
-
-    // Check List Lengths Are Equal, Exit If Not
-    bool LengthsEqual = true;
-    size_t Length = NameList.size();
-    LengthsEqual &= (CenterXList_um.size() == Length);
-    LengthsEqual &= (CenterYList_um.size() == Length);
-    LengthsEqual &= (CenterZList_um.size() == Length);
-    LengthsEqual &= (DimensionsXList_um.size() == Length);
-    LengthsEqual &= (DimensionsYList_um.size() == Length);
-    LengthsEqual &= (DimensionsZList_um.size() == Length);
-    LengthsEqual &= (RotationXList_rad.size() == Length);
-    LengthsEqual &= (RotationYList_rad.size() == Length);
-    LengthsEqual &= (RotationZList_rad.size() == Length);
-    if (!LengthsEqual) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 2;
-        ResponseJSON["ShapeIDs"] = "[]";
-        return ResponseJSON.dump();
-    }
-    
-
-
-    // Setup Output ID List
-    std::vector<size_t> ShapeIDs;
-
-    // Now enumerate and build them
-    Logger_->Log("Adding " + std::to_string(Length) + " Boxes", 2);
-    for (size_t i = 0; i < Length; i++) {
-
-        // Build New Box Object
-        Geometries::Box S;
-        S.Name = NameList[i];
-        S.Center_um.x = CenterXList_um[i];
-        S.Center_um.y = CenterYList_um[i];
-        S.Center_um.z = CenterZList_um[i];
-        S.Dims_um.x = DimensionsXList_um[i];
-        S.Dims_um.y = DimensionsYList_um[i];
-        S.Dims_um.z = DimensionsZList_um[i];
-        S.Rotations_rad.x = RotationXList_rad[i];
-        S.Rotations_rad.y = RotationYList_rad[i];
-        S.Rotations_rad.z = RotationZList_rad[i];
-
-        // Add to Sim, Set ID
-        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-            nlohmann::json ResponseJSON;
-            ResponseJSON["StatusCode"] = 2;
-            ResponseJSON["ShapeIDs"] = "[]";
-            return ResponseJSON.dump();
-        }
-        Simulation* ThisSimulation = Simulations_[SimulationID].get();
-        if (IsSimulationBusy(ThisSimulation)) {
-            nlohmann::json ResponseJSON;
-            ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-            return ResponseJSON.dump();
-        }
-        int BoxID = ThisSimulation->Collection.Geometries.size();
-        S.ID = BoxID;
-        ThisSimulation->Collection.Geometries.push_back(S);
-
-        ShapeIDs.push_back(S.ID);
-
-    }
-
-    // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["ShapeIDs"] = ShapeIDs;
-    return ResponseJSON.dump();
-}
-
 
 std::string Manager::BSCreate(std::string _JSONRequest) {
 
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Create BS Called, On Sim " + std::to_string(SimulationID), 3);
-
-
+    HandlerData Handle(this, _JSONRequest, "BSCreate");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
     // Build New BS Object
     Compartments::BS C;
-    C.Name = Util::GetString(&RequestJSON, "Name");
-    C.ShapeID = Util::GetInt(&RequestJSON, "ShapeID");
-    C.MembranePotential_mV = Util::GetFloat(&RequestJSON, "MembranePotential_mV");
-    C.SpikeThreshold_mV = Util::GetFloat(&RequestJSON, "SpikeThreshold_mV");
-    C.DecayTime_ms = Util::GetFloat(&RequestJSON, "DecayTime_ms");
-    C.RestingPotential_mV = Util::GetFloat(&RequestJSON, "RestingPotential_mV");
-    C.AfterHyperpolarizationAmplitude_mV = Util::GetFloat(&RequestJSON, "AfterHyperpolarizationAmplitude_mV");
-
-
-
-    // Add to Sim, Set ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        ResponseJSON["CompartmentID"] = -1;
-        return ResponseJSON.dump();
+    if ((!Handle.GetParInt("ShapeID", C.ShapeID))
+        || (!Handle.GetParFloat("MembranePotential_mV", C.MembranePotential_mV))
+        || (!Handle.GetParFloat("SpikeThreshold_mV", C.SpikeThreshold_mV))
+        || (!Handle.GetParFloat("DecayTime_ms", C.DecayTime_ms))
+        || (!Handle.GetParFloat("RestingPotential_mV", C.RestingPotential_mV))
+        || (!Handle.GetParFloat("AfterHyperpolarizationAmplitude_mV", C.AfterHyperpolarizationAmplitude_mV))
+        || (!Handle.GetParString("Name", C.Name))) {
+        return Handle.ErrResponse();
     }
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    if (IsSimulationBusy(ThisSimulation)) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-        return ResponseJSON.dump();
-    }
-    int CompartmentID = ThisSimulation->BSCompartments.size();
-    C.ID = CompartmentID;
-    ThisSimulation->BSCompartments.push_back(C);
 
+    C.ID = Handle.Sim()->BSCompartments.size();
+    Handle.Sim()->BSCompartments.push_back(C);
 
     // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0; // ok
-    ResponseJSON["CompartmentID"] = CompartmentID;
-    return ResponseJSON.dump();
-}
-
-std::string Manager::BulkBSCreate(std::string _JSONRequest) {
-
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Simulation Bulk Create BS Called, On Sim " + std::to_string(SimulationID), 1);
-    
-    // Get Parameters
-    std::vector<float> MembranePotentialList_mV;
-    std::vector<float> SpikeThresholdList_mV;
-    std::vector<float> DecayTimeList_ms;
-    std::vector<float> RestingPotentialList_mV;
-    std::vector<float> AfterHyperpolarizationAmplitudeList_mV;
-    std::vector<std::string> NameList;
-    std::vector<int> ShapeIDList;
-    Util::GetFloatVector(&MembranePotentialList_mV, &RequestJSON, "MembranePotentialList_mV");
-    Util::GetFloatVector(&SpikeThresholdList_mV, &RequestJSON, "SpikeThresholdList_mV");
-    Util::GetFloatVector(&DecayTimeList_ms, &RequestJSON, "DecayTimeList_ms");
-    Util::GetFloatVector(&RestingPotentialList_mV, &RequestJSON, "RestingPotentialList_mV");
-    Util::GetFloatVector(&AfterHyperpolarizationAmplitudeList_mV, &RequestJSON, "AfterHyperpolarizationAmplitudeList_mV");
-    Util::GetStringVector(&NameList, &RequestJSON, "NameList");
-    Util::GetIntVector(&ShapeIDList, &RequestJSON, "ShapeIDList");
-
-    // Check List Lengths Are Equal, Exit If Not
-    bool LengthsEqual = true;
-    size_t Length = NameList.size();
-    LengthsEqual &= (ShapeIDList.size() == Length);
-    LengthsEqual &= (MembranePotentialList_mV.size() == Length);
-    LengthsEqual &= (SpikeThresholdList_mV.size() == Length);
-    LengthsEqual &= (DecayTimeList_ms.size() == Length);
-    LengthsEqual &= (RestingPotentialList_mV.size() == Length);
-    LengthsEqual &= (AfterHyperpolarizationAmplitudeList_mV.size() == Length);
-    if (!LengthsEqual) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 2;
-        ResponseJSON["ShapeIDs"] = "[]";
-        return ResponseJSON.dump();
-    }
-    
-
-
-    // Setup Output ID List
-    std::vector<size_t> CompartmentIDs;
-
-    // Now enumerate and build them
-    Logger_->Log("Adding " + std::to_string(Length) + " BS Compartments", 2);
-    for (size_t i = 0; i < Length; i++) {
-
-        // Build New Box Object
-        Compartments::BS S;
-        S.Name = NameList[i];
-        S.AfterHyperpolarizationAmplitude_mV = AfterHyperpolarizationAmplitudeList_mV[i];
-        S.DecayTime_ms = DecayTimeList_ms[i];
-        S.ShapeID = ShapeIDList[i];
-        S.MembranePotential_mV = MembranePotentialList_mV[i];
-        S.RestingPotential_mV = RestingPotentialList_mV[i];
-        S.SpikeThreshold_mV = SpikeThresholdList_mV[i];
-
-        // Add to Sim, Set ID
-        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-            nlohmann::json ResponseJSON;
-            ResponseJSON["StatusCode"] = 2;
-            ResponseJSON["ShapeIDs"] = "[]";
-            return ResponseJSON.dump();
-        }
-        Simulation* ThisSimulation = Simulations_[SimulationID].get();
-        if (IsSimulationBusy(ThisSimulation)) {
-            nlohmann::json ResponseJSON;
-            ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-            return ResponseJSON.dump();
-        }
-        int CompartmentID = ThisSimulation->BSCompartments.size();
-        S.ID = CompartmentID;
-        ThisSimulation->BSCompartments.push_back(S);
-
-
-        CompartmentIDs.push_back(S.ID);
-
-    }
-
-    // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["CompartmentIDs"] = CompartmentIDs;
-    return ResponseJSON.dump();
+    return Handle.ResponseWithID("CompartmentID", C.ID);
 }
 
 std::string Manager::StapleCreate(std::string _JSONRequest) {
 
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Create Staple Called, On Sim " + std::to_string(SimulationID), 3);
-
+    HandlerData Handle(this, _JSONRequest, "StapleCreate");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
     // Build New Staple Object
     Connections::Staple C;
-    C.Name = Util::GetString(&RequestJSON, "Name");
-    C.SourceCompartmentID = Util::GetInt(&RequestJSON, "SourceCompartmentID");
-    C.DestinationCompartmentID = Util::GetInt(&RequestJSON, "DestinationCompartmentID");
-
-
-    // Add to Sim, Set ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        ResponseJSON["StapleID"] = -1;
-        return ResponseJSON.dump();
+    if ((!Handle.GetParInt("SourceCompartmentID", C.SourceCompartmentID))
+        || (!Handle.GetParInt("DestinationCompartmentID", C.DestinationCompartmentID))
+        || (!Handle.GetParString("Name", C.Name))) {
+        return Handle.ErrResponse();
     }
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    if (IsSimulationBusy(ThisSimulation)) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-        return ResponseJSON.dump();
-    }
-    int StapleID = ThisSimulation->Staples.size();
-    C.ID = StapleID;
-    ThisSimulation->Staples.push_back(C);
 
+    C.ID = Handle.Sim()->Staples.size();
+    Handle.Sim()->Staples.push_back(C);
 
     // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0; // ok
-    ResponseJSON["StapleID"] = StapleID;
-    return ResponseJSON.dump();
+    return Handle.ResponseWithID("StapleID", C.ID);
 }
 
 std::string Manager::ReceptorCreate(std::string _JSONRequest) {
 
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Create Receptor Called, On Sim " + std::to_string(SimulationID), 3);
-
-
+    HandlerData Handle(this, _JSONRequest, "ReceptorCreate");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
     // Build New Receptor Object
     Connections::Receptor C;
-    C.Name = Util::GetString(&RequestJSON, "Name");
-    C.SourceCompartmentID = Util::GetInt(&RequestJSON, "SourceCompartmentID");
-    C.DestinationCompartmentID = Util::GetInt(&RequestJSON, "DestinationCompartmentID");
-    C.Conductance_nS = Util::GetFloat(&RequestJSON, "Conductance_nS");
-    C.TimeConstantRise_ms  = Util::GetFloat(&RequestJSON, "TimeConstantRise_ms");
-    C.TimeConstantDecay_ms  = Util::GetFloat(&RequestJSON, "TimeConstantDecay_ms");
-    Util::GetVec3(C.ReceptorPos_um, &RequestJSON, "ReceptorPos");    
-
-
-    // Add to Sim, Set ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        ResponseJSON["ReceptorID"] = -1;
-        return ResponseJSON.dump();
+    if ((!Handle.GetParInt("SourceCompartmentID", C.SourceCompartmentID))
+        || (!Handle.GetParInt("DestinationCompartmentID", C.DestinationCompartmentID))
+        || (!Handle.GetParFloat("Conductance_nS", C.Conductance_nS))
+        || (!Handle.GetParFloat("TimeConstantRise_ms", C.TimeConstantRise_ms))
+        || (!Handle.GetParFloat("TimeConstantDecay_ms", C.TimeConstantDecay_ms))
+        || (!Handle.GetParVec3("ReceptorPos", C.ReceptorPos_um))
+        || (!Handle.GetParString("Name", C.Name))) {
+        return Handle.ErrResponse();
     }
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    if (IsSimulationBusy(ThisSimulation)) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 5; // simulation is currently processing
-        return ResponseJSON.dump();
-    }
-    int ReceptorID = ThisSimulation->Receptors.size();
-    C.ID = ReceptorID;
-    ThisSimulation->Receptors.push_back(C);
+
+    C.ID = Handle.Sim()->Receptors.size();
+    Handle.Sim()->Receptors.push_back(C);
+
     // *** TODO: Are these receptor structs that are kept in the list here actually
     //           used anywhere? Do they create a functional receptor object? Are
     //           they checked during Neuron updates?
     //           This might be where a functional object has to be created.
 
-
     // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0; // ok
-    ResponseJSON["ReceptorID"] = ReceptorID;
-    return ResponseJSON.dump();
+    return Handle.ResponseWithID("ReceptorID", C.ID);
 }
 
 /*
@@ -1045,14 +572,6 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
-// *** TODO: We should use an enum for response codes so that we don't
-//           have to remember which number means what.
-std::string ErrResponse(int ErrStatusCode) {
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = ErrStatusCode;
-    return ResponseJSON.dump();
-}
-
 /**
  * Expects _JSONRequest:
  * {
@@ -1066,40 +585,35 @@ std::string ErrResponse(int ErrStatusCode) {
  */
 std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
 
-    // ----- Begin standard part (we should make a shared helper function for this) -----
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("PatchClampDAC SetOutputList Called, On Sim " + std::to_string(SimulationID), 3);
-
-    // Check Sim ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        return ErrResponse(1); // invalid simulation id
+    HandlerData Handle(this, _JSONRequest, "PatchClampDACSetOutputList");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
-
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    if (IsSimulationBusy(ThisSimulation)) {
-        return ErrResponse(5); // simulation is currently processing
-    }
-    // ----------------------------------------------------------------------------------
 
     // Get/Check PatchClampdDACID
-    int PatchClampDACID = Util::GetInt(&RequestJSON, "PatchClampDACID");
-    if (PatchClampDACID >= ThisSimulation->PatchClampDACs.size() || PatchClampDACID < 0) {
-        return ErrResponse(2); // invalid ID
+    int PatchClampDACID = -1;
+    if (!Handle.GetParInt("PatchClampDACID", PatchClampDACID)) {
+        return Handle.ErrResponse();
     }
-    Tools::PatchClampDAC* ThisDAC = &ThisSimulation->PatchClampDACs[PatchClampDACID];
-    
+
+    if (PatchClampDACID >= Handle.Sim()->PatchClampDACs.size() || PatchClampDACID < 0) {
+        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+    }
+    Tools::PatchClampDAC* ThisDAC = &Handle.Sim()->PatchClampDACs[PatchClampDACID];
+
     // Set Params
-    ThisDAC->ControlData.clear();
-    const auto & ControlDataJSON = RequestJSON.find("ControlData");
-    if (ControlDataJSON == RequestJSON.end()) {
-        return ErrResponse(2); // invalid data *** TODO: use the right code here
+    nlohmann::json::iterator ControlDataJSON_it;
+    if (!Handle.FindPar("ControlData", ControlDataJSON_it)) {
+        return Handle.ErrResponse();
     }
-    for (const auto & value_pair: ControlDataJSON.value()) {
+
+    ThisDAC->ControlData.clear();
+    for (const auto & value_pair: ControlDataJSON_it.value()) {
         if (value_pair.size() < 2) {
-            return ErrResponse(2); // invalid data *** TODO: use the right code here
+            return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+        }
+        if ((!value_pair[0].is_number()) || (!value_pair[1].is_number())) {
+            return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
         }
         float t_ms = value_pair[0].template get<float>();
         float v_mV = value_pair[1].template get<float>();
@@ -1107,7 +621,7 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
     }
 
     // Return Result ID
-    return ErrResponse(0); // ok
+    return Handle.ErrResponse(); // ok
 }
 
 std::string Manager::PatchClampADCCreate(std::string _JSONRequest) {
@@ -1248,47 +762,34 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
  */
 std::string Manager::SetSpecificAPTimes(std::string _JSONRequest) {
 
-    // ----- Begin standard part (we should make a shared helper function for this) -----
-    // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-
-    Logger_->Log("Neuron SetSpecificAPTimes Called, On Sim " + std::to_string(SimulationID), 3);
-
-    // Check Sim ID
-    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
-        return ErrResponse(1); // invalid simulation id
+    HandlerData Handle(this, _JSONRequest, "SetSpecificAPTimes");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
-
-    Simulation* ThisSimulation = Simulations_[SimulationID].get();
-    if (IsSimulationBusy(ThisSimulation)) {
-        return ErrResponse(5); // simulation is currently processing
-    }
-    // ----------------------------------------------------------------------------------
-    
+  
     // Set Params
-    const auto & TimeNeuronPairJSON = RequestJSON.find("TimeNeuronPairs");
-    if (TimeNeuronPairJSON == RequestJSON.end()) {
-        return ErrResponse(2); // invalid data *** TODO: use the right code here
+    nlohmann::json::iterator TimeNeuronPairJSON_it;
+    if (!Handle.FindPar("TimeNeuronPairs", TimeNeuronPairJSON_it)) {
+        return Handle.ErrResponse();
     }
-    for (const auto & time_neuron_pair: TimeNeuronPairJSON.value()) {
+    for (const auto & time_neuron_pair: TimeNeuronPairJSON_it.value()) {
         if (time_neuron_pair.size() < 2) {
-            return ErrResponse(2); // invalid data *** TODO: use the right code here
+            return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
         }
         if ((!time_neuron_pair[0].is_number()) || (!time_neuron_pair[1].is_number())) {
-            return ErrResponse(2); // invalid data *** TODO: use the right code here
+            return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
         }
         float t_ms = time_neuron_pair[0].template get<float>();
         unsigned int NeuronID = time_neuron_pair[1].template get<unsigned int>();
-        if (NeuronID >= ThisSimulation->Neurons.size()) {
-            return ErrResponse(2); // invalid data *** TODO: use the right code here
+        if (NeuronID >= Handle.Sim()->Neurons.size()) {
+            return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
         }
 
-        ThisSimulation->Neurons.at(NeuronID)->AddSpecificAPTime(t_ms);
+        Handle.Sim()->Neurons.at(NeuronID)->AddSpecificAPTime(t_ms);
     }
 
     // Return Result ID
-    return ErrResponse(0); // ok
+    return Handle.ErrResponse(); // ok
 }
 
 // *** NOTE: By passing JSON objects/components as strings and then having to
@@ -1512,8 +1013,6 @@ std::string Manager::Debug(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
-
-
 bool Manager::IsSimulationBusy(Simulation* _Sim) {
     return _Sim->IsProcessing || _Sim->WorkRequested;
 }
@@ -1521,6 +1020,368 @@ bool Manager::IsSimulationBusy(Simulation* _Sim) {
 std::vector<std::unique_ptr<Simulation>>* Manager::GetSimulationVectorPtr() {
     return &Simulations_;
 }
+
+// ------------ Are we keeping the following "Bulk" routes? --------
+
+std::string Manager::BulkSphereCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    Logger_->Log("Simulation Bulk Create Sphere Called, On Sim " + std::to_string(SimulationID), 1);
+    
+    // Get Parameters
+    std::vector<float> RadiusList_um;
+    std::vector<float> CenterXList_um;
+    std::vector<float> CenterYList_um;
+    std::vector<float> CenterZList_um;
+    std::vector<std::string> NameList;
+    Util::GetFloatVector(&RadiusList_um, &RequestJSON, "RadiusList_um");
+    Util::GetFloatVector(&CenterXList_um, &RequestJSON, "CenterXList_um");
+    Util::GetFloatVector(&CenterYList_um, &RequestJSON, "CenterYList_um");
+    Util::GetFloatVector(&CenterZList_um, &RequestJSON, "CenterZList_um");
+    Util::GetStringVector(&NameList, &RequestJSON, "NameList");
+
+    // Check List Lengths Are Equal, Exit If Not
+    bool LengthsEqual = true;
+    size_t Length = RadiusList_um.size();
+    LengthsEqual &= (CenterXList_um.size() == Length);
+    LengthsEqual &= (CenterYList_um.size() == Length);
+    LengthsEqual &= (CenterZList_um.size() == Length);
+    LengthsEqual &= (NameList.size() == Length);
+    if (!LengthsEqual) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2;
+        ResponseJSON["ShapeIDs"] = "[]";
+        return ResponseJSON.dump();
+    }
+    
+
+
+    // Setup Output ID List
+    std::vector<size_t> ShapeIDs;
+
+    // Now enumerate and build them
+    Logger_->Log("Adding " + std::to_string(Length) + " Spheres", 2);
+    for (size_t i = 0; i < Length; i++) {
+
+        // Build New Sphere Object
+        Geometries::Sphere S;
+        S.Name = NameList[i];
+        S.Radius_um = RadiusList_um[i];
+        S.Center_um.x = CenterXList_um[i];
+        S.Center_um.y = CenterYList_um[i];
+        S.Center_um.z = CenterZList_um[i];
+
+
+        // Add to Sim, Set ID
+        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 2;
+            ResponseJSON["ShapeIDs"] = "[]";
+            return ResponseJSON.dump();
+        }
+        Simulation* ThisSimulation = Simulations_[SimulationID].get();
+        if (IsSimulationBusy(ThisSimulation)) {
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 5; // simulation is currently processing
+            return ResponseJSON.dump();
+        }
+        int SphereID = ThisSimulation->Collection.Geometries.size();
+        S.ID = SphereID;
+        ThisSimulation->Collection.Geometries.push_back(S);
+
+        ShapeIDs.push_back(S.ID);
+
+    }
+
+    // Return Result ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["ShapeIDs"] = ShapeIDs;
+    return ResponseJSON.dump();
+}
+
+std::string Manager::BulkCylinderCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    Logger_->Log("Simulation Bulk Create Cylinder Called, On Sim " + std::to_string(SimulationID), 1);
+    
+    // Get Parameters
+    std::vector<float> Point1RadiusList_um;
+    std::vector<float> Point2RadiusList_um;
+    std::vector<float> Point1XList_um;
+    std::vector<float> Point1YList_um;
+    std::vector<float> Point1ZList_um;
+    std::vector<float> Point2XList_um;
+    std::vector<float> Point2YList_um;
+    std::vector<float> Point2ZList_um;
+    std::vector<std::string> NameList;
+    Util::GetFloatVector(&Point1RadiusList_um, &RequestJSON, "Point1RadiusList_um");
+    Util::GetFloatVector(&Point2RadiusList_um, &RequestJSON, "Point2RadiusList_um");
+    Util::GetFloatVector(&Point1XList_um, &RequestJSON, "Point1XList_um");
+    Util::GetFloatVector(&Point1YList_um, &RequestJSON, "Point1YList_um");
+    Util::GetFloatVector(&Point1ZList_um, &RequestJSON, "Point1ZList_um");
+    Util::GetFloatVector(&Point2XList_um, &RequestJSON, "Point2XList_um");
+    Util::GetFloatVector(&Point2YList_um, &RequestJSON, "Point2YList_um");
+    Util::GetFloatVector(&Point2ZList_um, &RequestJSON, "Point2ZList_um");
+    Util::GetStringVector(&NameList, &RequestJSON, "NameList");
+
+    // Check List Lengths Are Equal, Exit If Not
+    bool LengthsEqual = true;
+    size_t Length = Point1RadiusList_um.size();
+    LengthsEqual &= (Point2RadiusList_um.size() == Length);
+    LengthsEqual &= (Point1XList_um.size() == Length);
+    LengthsEqual &= (Point1YList_um.size() == Length);
+    LengthsEqual &= (Point1ZList_um.size() == Length);
+    LengthsEqual &= (Point2XList_um.size() == Length);
+    LengthsEqual &= (Point2YList_um.size() == Length);
+    LengthsEqual &= (Point2ZList_um.size() == Length);
+    LengthsEqual &= (NameList.size() == Length);
+    if (!LengthsEqual) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2;
+        ResponseJSON["ShapeIDs"] = "[]";
+        return ResponseJSON.dump();
+    }
+    
+
+
+    // Setup Output ID List
+    std::vector<size_t> ShapeIDs;
+
+    // Now enumerate and build them
+    Logger_->Log("Adding " + std::to_string(Length) + " Cylinders", 2);
+    for (size_t i = 0; i < Length; i++) {
+
+        // Build New Cylinder Object
+        Geometries::Cylinder S;
+        S.Name = NameList[i];
+        S.End0Radius_um = Point1RadiusList_um[i];
+        S.End1Radius_um = Point2RadiusList_um[i];
+        S.End0Pos_um.x = Point1XList_um[i];
+        S.End0Pos_um.y = Point1YList_um[i];
+        S.End0Pos_um.z = Point1ZList_um[i];
+        S.End1Pos_um.x = Point2XList_um[i];
+        S.End1Pos_um.y = Point2YList_um[i];
+        S.End1Pos_um.z = Point2ZList_um[i];
+
+        // Add to Sim, Set ID
+        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 2;
+            ResponseJSON["ShapeIDs"] = "[]";
+            return ResponseJSON.dump();
+        }
+        Simulation* ThisSimulation = Simulations_[SimulationID].get();
+        if (IsSimulationBusy(ThisSimulation)) {
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 5; // simulation is currently processing
+            return ResponseJSON.dump();
+        }
+        int CylinderID = ThisSimulation->Collection.Geometries.size();
+        S.ID = CylinderID;
+        ThisSimulation->Collection.Geometries.push_back(S);
+
+        ShapeIDs.push_back(S.ID);
+
+    }
+
+    // Return Result ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["ShapeIDs"] = ShapeIDs;
+    return ResponseJSON.dump();
+}
+
+std::string Manager::BulkBoxCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    Logger_->Log("Simulation Bulk Create Box Called, On Sim " + std::to_string(SimulationID), 1);
+    
+    // Get Parameters
+    std::vector<float> CenterXList_um;
+    std::vector<float> CenterYList_um;
+    std::vector<float> CenterZList_um;
+    std::vector<float> DimensionsXList_um;
+    std::vector<float> DimensionsYList_um;
+    std::vector<float> DimensionsZList_um;
+    std::vector<float> RotationXList_rad;
+    std::vector<float> RotationYList_rad;
+    std::vector<float> RotationZList_rad;
+    std::vector<std::string> NameList;
+    Util::GetFloatVector(&CenterXList_um, &RequestJSON, "CenterXList_um");
+    Util::GetFloatVector(&CenterYList_um, &RequestJSON, "CenterYList_um");
+    Util::GetFloatVector(&CenterZList_um, &RequestJSON, "CenterZList_um");
+    Util::GetFloatVector(&DimensionsXList_um, &RequestJSON, "DimensionsXList_um");
+    Util::GetFloatVector(&DimensionsYList_um, &RequestJSON, "DimensionsYList_um");
+    Util::GetFloatVector(&DimensionsZList_um, &RequestJSON, "DimensionsZList_um");
+    Util::GetFloatVector(&RotationXList_rad, &RequestJSON, "RotationXList_rad");
+    Util::GetFloatVector(&RotationYList_rad, &RequestJSON, "RotationYList_rad");
+    Util::GetFloatVector(&RotationZList_rad, &RequestJSON, "RotationZList_rad");
+    Util::GetStringVector(&NameList, &RequestJSON, "NameList");
+
+    // Check List Lengths Are Equal, Exit If Not
+    bool LengthsEqual = true;
+    size_t Length = NameList.size();
+    LengthsEqual &= (CenterXList_um.size() == Length);
+    LengthsEqual &= (CenterYList_um.size() == Length);
+    LengthsEqual &= (CenterZList_um.size() == Length);
+    LengthsEqual &= (DimensionsXList_um.size() == Length);
+    LengthsEqual &= (DimensionsYList_um.size() == Length);
+    LengthsEqual &= (DimensionsZList_um.size() == Length);
+    LengthsEqual &= (RotationXList_rad.size() == Length);
+    LengthsEqual &= (RotationYList_rad.size() == Length);
+    LengthsEqual &= (RotationZList_rad.size() == Length);
+    if (!LengthsEqual) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2;
+        ResponseJSON["ShapeIDs"] = "[]";
+        return ResponseJSON.dump();
+    }
+    
+
+
+    // Setup Output ID List
+    std::vector<size_t> ShapeIDs;
+
+    // Now enumerate and build them
+    Logger_->Log("Adding " + std::to_string(Length) + " Boxes", 2);
+    for (size_t i = 0; i < Length; i++) {
+
+        // Build New Box Object
+        Geometries::Box S;
+        S.Name = NameList[i];
+        S.Center_um.x = CenterXList_um[i];
+        S.Center_um.y = CenterYList_um[i];
+        S.Center_um.z = CenterZList_um[i];
+        S.Dims_um.x = DimensionsXList_um[i];
+        S.Dims_um.y = DimensionsYList_um[i];
+        S.Dims_um.z = DimensionsZList_um[i];
+        S.Rotations_rad.x = RotationXList_rad[i];
+        S.Rotations_rad.y = RotationYList_rad[i];
+        S.Rotations_rad.z = RotationZList_rad[i];
+
+        // Add to Sim, Set ID
+        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 2;
+            ResponseJSON["ShapeIDs"] = "[]";
+            return ResponseJSON.dump();
+        }
+        Simulation* ThisSimulation = Simulations_[SimulationID].get();
+        if (IsSimulationBusy(ThisSimulation)) {
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 5; // simulation is currently processing
+            return ResponseJSON.dump();
+        }
+        int BoxID = ThisSimulation->Collection.Geometries.size();
+        S.ID = BoxID;
+        ThisSimulation->Collection.Geometries.push_back(S);
+
+        ShapeIDs.push_back(S.ID);
+
+    }
+
+    // Return Result ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["ShapeIDs"] = ShapeIDs;
+    return ResponseJSON.dump();
+}
+
+std::string Manager::BulkBSCreate(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    Logger_->Log("Simulation Bulk Create BS Called, On Sim " + std::to_string(SimulationID), 1);
+    
+    // Get Parameters
+    std::vector<float> MembranePotentialList_mV;
+    std::vector<float> SpikeThresholdList_mV;
+    std::vector<float> DecayTimeList_ms;
+    std::vector<float> RestingPotentialList_mV;
+    std::vector<float> AfterHyperpolarizationAmplitudeList_mV;
+    std::vector<std::string> NameList;
+    std::vector<int> ShapeIDList;
+    Util::GetFloatVector(&MembranePotentialList_mV, &RequestJSON, "MembranePotentialList_mV");
+    Util::GetFloatVector(&SpikeThresholdList_mV, &RequestJSON, "SpikeThresholdList_mV");
+    Util::GetFloatVector(&DecayTimeList_ms, &RequestJSON, "DecayTimeList_ms");
+    Util::GetFloatVector(&RestingPotentialList_mV, &RequestJSON, "RestingPotentialList_mV");
+    Util::GetFloatVector(&AfterHyperpolarizationAmplitudeList_mV, &RequestJSON, "AfterHyperpolarizationAmplitudeList_mV");
+    Util::GetStringVector(&NameList, &RequestJSON, "NameList");
+    Util::GetIntVector(&ShapeIDList, &RequestJSON, "ShapeIDList");
+
+    // Check List Lengths Are Equal, Exit If Not
+    bool LengthsEqual = true;
+    size_t Length = NameList.size();
+    LengthsEqual &= (ShapeIDList.size() == Length);
+    LengthsEqual &= (MembranePotentialList_mV.size() == Length);
+    LengthsEqual &= (SpikeThresholdList_mV.size() == Length);
+    LengthsEqual &= (DecayTimeList_ms.size() == Length);
+    LengthsEqual &= (RestingPotentialList_mV.size() == Length);
+    LengthsEqual &= (AfterHyperpolarizationAmplitudeList_mV.size() == Length);
+    if (!LengthsEqual) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2;
+        ResponseJSON["ShapeIDs"] = "[]";
+        return ResponseJSON.dump();
+    }
+    
+
+
+    // Setup Output ID List
+    std::vector<size_t> CompartmentIDs;
+
+    // Now enumerate and build them
+    Logger_->Log("Adding " + std::to_string(Length) + " BS Compartments", 2);
+    for (size_t i = 0; i < Length; i++) {
+
+        // Build New Box Object
+        Compartments::BS S;
+        S.Name = NameList[i];
+        S.AfterHyperpolarizationAmplitude_mV = AfterHyperpolarizationAmplitudeList_mV[i];
+        S.DecayTime_ms = DecayTimeList_ms[i];
+        S.ShapeID = ShapeIDList[i];
+        S.MembranePotential_mV = MembranePotentialList_mV[i];
+        S.RestingPotential_mV = RestingPotentialList_mV[i];
+        S.SpikeThreshold_mV = SpikeThresholdList_mV[i];
+
+        // Add to Sim, Set ID
+        if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 2;
+            ResponseJSON["ShapeIDs"] = "[]";
+            return ResponseJSON.dump();
+        }
+        Simulation* ThisSimulation = Simulations_[SimulationID].get();
+        if (IsSimulationBusy(ThisSimulation)) {
+            nlohmann::json ResponseJSON;
+            ResponseJSON["StatusCode"] = 5; // simulation is currently processing
+            return ResponseJSON.dump();
+        }
+        int CompartmentID = ThisSimulation->BSCompartments.size();
+        S.ID = CompartmentID;
+        ThisSimulation->BSCompartments.push_back(S);
+
+
+        CompartmentIDs.push_back(S.ID);
+
+    }
+
+    // Return Result ID
+    nlohmann::json ResponseJSON;
+    ResponseJSON["CompartmentIDs"] = CompartmentIDs;
+    return ResponseJSON.dump();
+}
+
+// -----------------------------------------------------------------
 
 }; // Close Namespace Simulator
 }; // Close Namespace NES
