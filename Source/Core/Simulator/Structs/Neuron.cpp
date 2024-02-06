@@ -31,7 +31,7 @@ Geometries::Vec3D &Neuron::GetCellCenter() {
     return cell_center; // Placeholder.
 }
 
-void AddSpecificAPTime(float t_ms) {
+void Neuron::AddSpecificAPTime(float t_ms) {
     AP_times_ms.emplace_back(t_ms);
 }
 
