@@ -15,6 +15,7 @@
 #include <unordered_map>
 #include <vector>
 #include <memory>
+#include <deque>
 
 #include <Simulator/Geometries/VecTools.h>
 
@@ -34,6 +35,8 @@ struct Neuron {
 
     Geometries::Vec3D cell_center; // *** FIX THIS!
 
+    std::deque<float> AP_times_ms; // Preset specific spike times (not randomized spontaneous).
+
     //! Returns the time since the action potential threshold was
     //! crossed last.
     virtual float DtAct_ms(float t_ms); // *** FIX THIS!
@@ -43,6 +46,8 @@ struct Neuron {
 
     //! Returns the geometric center of the neuron.
     virtual Geometries::Vec3D &GetCellCenter(); // *** FIX THIS!
+
+    virtual void AddSpecificAPTime(float t_ms);
 
     virtual void Update(float t_ms, bool recording);
 };

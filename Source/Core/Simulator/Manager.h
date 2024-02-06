@@ -119,6 +119,7 @@ public:
     std::string PatchClampADCCreate(std::string _JSONRequest);
     std::string PatchClampADCSetSampleRate(std::string _JSONRequest);
     std::string PatchClampADCGetRecordedData(std::string _JSONRequest);
+    std::string SetSpecificAPTimes(std::string _JSONRequest);
 
     std::string NESRequest(std::string _JSONRequest); // Generic JSON-based NES requests.
 

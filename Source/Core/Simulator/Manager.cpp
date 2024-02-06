@@ -1066,9 +1066,6 @@ std::string ErrResponse(int ErrStatusCode) {
  */
 std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
 
-    // *** TODO: This needs to be modified so that it pulls out a
-    //           list of pairs, where each pair holds a time and a voltage.
-
     // ----- Begin standard part (we should make a shared helper function for this) -----
     // Parse Request
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
@@ -1239,6 +1236,58 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
     return ResponseJSON.dump();
 }
 
+/**
+ * Expects _JSONRequest:
+ * {
+ *   "SimulationID": <SimID>,
+ *   "TimeNeuronPairs": [
+ *      [ <t_ms>, <neuron-id> ],
+ *      (more pairs)
+ *   ]
+ * }
+ */
+std::string Manager::SetSpecificAPTimes(std::string _JSONRequest) {
+
+    // ----- Begin standard part (we should make a shared helper function for this) -----
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+
+    Logger_->Log("PatchClampDAC SetOutputList Called, On Sim " + std::to_string(SimulationID), 3);
+
+    // Check Sim ID
+    if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
+        return ErrResponse(1); // invalid simulation id
+    }
+
+    Simulation* ThisSimulation = Simulations_[SimulationID].get();
+    if (IsSimulationBusy(ThisSimulation)) {
+        return ErrResponse(5); // simulation is currently processing
+    }
+    // ----------------------------------------------------------------------------------
+    
+    // Set Params
+    const auto & TimeNeuronPairJSON = RequestJSON.find("TimeNeuronPairs");
+    if (TimeNeuronPairJSON == RequestJSON.end()) {
+        return ErrResponse(2); // invalid data *** TODO: use the right code here
+    }
+    for (const auto & time_neuron_pair: TimeNeuronPairJSON.value()) {
+        if (time_neuron_pair.size() < 2) {
+            return ErrResponse(2); // invalid data *** TODO: use the right code here
+        }
+        float t_ms = time_neuron_pair[0].template get<float>();
+        unsigned int NeuronID = time_neuron_pair[1].template get<unsigned int>();
+        if (NeuronID >= ThisSimulation->Neurons.size()) {
+            return ErrResponse(2); // invalid data *** TODO: use the right code here
+        }
+
+        ThisSimulation->Neurons.at(NeuronID)->AddSpecificAPTime(t_ms);
+    }
+
+    // Return Result ID
+    return ErrResponse(0); // ok
+}
+
 // *** NOTE: By passing JSON objects/components as strings and then having to
 //           parse them into JSON objects again, the handlers above are doing
 //           a bunch of unnecessary extra work - you can just pass references
@@ -1283,6 +1332,9 @@ std::string PatchClampADCSetSampleRateHandler(Manager& Man, const nlohmann::json
 std::string PatchClampADCGetRecordedDataHandler(Manager& Man, const nlohmann::json& ReqParams) {
     return Man.PatchClampADCGetRecordedData(ReqParams.dump());
 }
+std::string SetSpecificAPTimesHandler(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.SetSpecificAPTimes(ReqParams.dump());
+}
 
 const NESRequest_map_t NES_Request_handlers = {
     {"SphereCreate", SphereCreateHandler},
@@ -1296,6 +1348,7 @@ const NESRequest_map_t NES_Request_handlers = {
     {"PatchClampDACSetOutputList", PatchClampDACSetOutputListHandler},
     {"PatchClampADCSetSampleRate", PatchClampADCSetSampleRateHandler},
     {"PatchClampADCGetRecordedData", PatchClampADCGetRecordedDataHandler},
+    {"SetSpecificAPTimes", SetSpecificAPTimesHandler},
 };
 
 bool Manager::BadReqID(int ReqID) {
