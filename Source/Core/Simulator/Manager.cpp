@@ -1253,7 +1253,7 @@ std::string Manager::SetSpecificAPTimes(std::string _JSONRequest) {
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
 
-    Logger_->Log("PatchClampDAC SetOutputList Called, On Sim " + std::to_string(SimulationID), 3);
+    Logger_->Log("Neuron SetSpecificAPTimes Called, On Sim " + std::to_string(SimulationID), 3);
 
     // Check Sim ID
     if (SimulationID >= Simulations_.size() || SimulationID < 0) { // invlaid id
@@ -1273,6 +1273,9 @@ std::string Manager::SetSpecificAPTimes(std::string _JSONRequest) {
     }
     for (const auto & time_neuron_pair: TimeNeuronPairJSON.value()) {
         if (time_neuron_pair.size() < 2) {
+            return ErrResponse(2); // invalid data *** TODO: use the right code here
+        }
+        if ((!time_neuron_pair[0].is_number()) || (!time_neuron_pair[1].is_number())) {
             return ErrResponse(2); // invalid data *** TODO: use the right code here
         }
         float t_ms = time_neuron_pair[0].template get<float>();
