@@ -20,8 +20,10 @@
 #include <BG/Renderer/Interface.h>
 #include <Simulator/Structs/Simulation.h>
 
-#include <VSDA/DebugHelpers/MeshConversionHelpers.h>
 
+#include <Visualizer/MeshRenderer.h>
+#include <Visualizer/MeshBuilder.h>
+#include <Visualizer/VisualizerParameters.h>
 
 
 
@@ -29,22 +31,6 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
-/**
- * @brief This struct defines a bunch of parameters to be used by the VisualizeSimulation function.
- * It's just there to make it easier to call that function so we don't have a million params.
- * 
- */
-struct VisualizerParameters {
-
-    float FOV_deg; /**The desired field of view in degrees*/
-
-    vsg::vec3 CameraPosition_um; /**Location of the camera in world-space coordinates*/
-    vsg::vec3 CameraLookAtPosition_um; /**Location of where the camera is looking towards in world-space coordinates*/
-
-    int ImageWidth_px; /**Target image width in pixels*/
-    int ImageHeight_px; /**Target image height in pixels*/
-
-}
 
 
 /**

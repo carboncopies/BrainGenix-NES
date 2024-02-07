@@ -15,12 +15,20 @@ bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
     _Logger->Log("Rendering Visualization For Simulation " + _Simulation->Name, 5);
    
 
-
+    // -- Process Description --
     // This is going to have a few steps, firstly, we're just going to build the mesh of the simulation
     // this involves enumerating all the BS compartments in the simulation in order to create them on vulkan
     // Next, we'll then render this all on the GPU with a call to MeshRenderer 
 
 
+
+    // -- Stage 1 --
+    // Here, we're going to build the mesh using the meshrenderer
+    BuildMeshFromSimulation(_Logger, _Renderer, _Simulation);
+
+
+    // -- Stage 2 --
+    // Now, we're just going to render it to a file, and get that path back.
 
 
 

@@ -29,6 +29,7 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
+
 /**
  * @brief Will Build a scene containing a 3d representation of the simulation in the renderer instance provided.
  * Logs output via the Logger pointer, and returns true/false based on success/failure.
@@ -40,6 +41,7 @@ namespace Simulator {
  * @return false 
  */
 bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, Simulation* _Simulation);
+
 
 }; // Close Namespace Simulator
 }; // Close Namespace NES

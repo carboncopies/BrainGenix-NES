@@ -162,6 +162,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Visualizer/MeshRenderer.h
   ${SRC_DIR}/Core/Visualizer/MeshBuilder.cpp
   ${SRC_DIR}/Core/Visualizer/MeshBuilder.h
+  ${SRC_DIR}/Core/Visualizer/VisualizerParameters.cpp
+  ${SRC_DIR}/Core/Visualizer/VisualizerParameters.h
+
 
 )
  

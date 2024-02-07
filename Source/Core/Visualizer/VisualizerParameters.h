@@ -3,13 +3,13 @@
 //=================================//
 
 /*
-    Description: This file defines the interface for the slice generator, which creates voxel representations of a given simulation.
+    Description: This file defines paremters for the visualizer.
     Additional Notes: None
-    Date Created: 2023-11-29
-    Author(s): Thomas Liao, Randal Koene
+    Date Created: 2024-02-07
+    Author(s): Thomas Liao
 
 
-    Copyright (C) 2023  Thomas Liao, Randal Koene
+    Copyright (C) 2023  Thomas Liao
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -31,25 +31,11 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <filesystem>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+#include <vsg/maths/vec3.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Simulator/Structs/Simulation.h>
-
-#include <VSDA/VoxelSubsystem/Structs/MicroscopeParameters.h>
-#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
-
-#include <BG/Renderer/Interface.h>
-#include <BG/Renderer/SceneGraph/Primitive/Cube.h>
-#include <BG/Renderer/EncoderPool/Image.h>
-#include <BG/Renderer/EncoderPool/EncoderPool.h>
-
-#include <BG/Common/Logger/Logger.h>
-
-#include <Visualizer/VisualizerParameters.h>
-
 
 
 namespace BG {
@@ -57,19 +43,22 @@ namespace NES {
 namespace Simulator {
 
 
-
-
 /**
- * @brief Renders the built scene in vulkan to disk with the given parameters.
- * Used for generating images for visualizing what's going on in this simulation.
+ * @brief This struct defines a bunch of parameters to be used by the VisualizeSimulation function.
+ * It's just there to make it easier to call that function so we don't have a million params.
  * 
- * @param _Logger 
- * @param _Renderer
- * @param _Params
- * @return true 
- * @return false 
  */
-bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VisualizerParameters* _Params);
+struct VisualizerParameters {
+
+    float FOV_deg; /**The desired field of view in degrees*/
+
+    vsg::dvec3 CameraPosition_um; /**Location of the camera in world-space coordinates*/
+    vsg::dvec3 CameraLookAtPosition_um; /**Location of where the camera is looking towards in world-space coordinates*/
+
+    int ImageWidth_px; /**Target image width in pixels*/
+    int ImageHeight_px; /**Target image height in pixels*/
+
+}
 
 
 

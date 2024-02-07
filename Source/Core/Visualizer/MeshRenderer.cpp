@@ -21,6 +21,28 @@ namespace Simulator {
 
 
 
+
+bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VisualizerParameters* _Params) {
+    assert(_Logger != nullptr && "You've passed an invalid pointer to _Logger");
+    assert(_Renderer != nullptr && "You've passed an invalid pointer to _Renderer");
+    assert(_Params != nullptr && "You've passed an invalid pointer to _Params");
+
+    
+    // Ensure Scene Is Now Threadsafe
+    _Renderer->LockScene();
+    _Renderer->WaitUntilGPUDone();
+
+    // Get Parameters from _Params, ensure renderer is properly setup for them.
+    _Renderer->SetCameraFOV(_Params->FOV_deg);
+    _Renderer->SetResolution(_Params->ImageWidth_px, _Params->ImageHeight_px);
+    _Renderer->UpdateCameraPosition(_Params->CameraPosition_um);
+
+
+}
+
+
+
+
 // double CalculateFrustumHeight_um(double _Distance, double _FOV) {
 //     return 2. * _Distance * tan(_FOV * 0.5 * (M_PI / 180.));
 // }
