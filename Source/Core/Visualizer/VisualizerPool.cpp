@@ -9,6 +9,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Visualizer/Visualizer.h>
+#include <Visualizer/VisualizerPool.h>
 
 
 
@@ -17,14 +18,13 @@
 namespace BG {
 namespace NES {
 namespace Simulator {
-namespace VSDA {
 
 
 
 // Thread Main Function
-void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
+void VisualizerPool::RendererThreadMainFunction(int _ThreadNumber) {
 
-    Logger_->Log("Started RenderPool Thread " + std::to_string(_ThreadNumber), 0);
+    Logger_->Log("Started VisualizerPool Thread " + std::to_string(_ThreadNumber), 0);
 
     // Setup Renderer
     BG::NES::Renderer::Interface Renderer(Logger_);
@@ -41,7 +41,7 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
         if (DequeueSimulation(&SimToProcess)) {
 
             // Okay, we got work, now render this simulation
-            Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering Simulation " + std::to_string(SimToProcess->ID), 2);
+            Logger_->Log("VisualizerPool Thread " + std::to_string(_ThreadNumber) + " Rendering Simulation " + std::to_string(SimToProcess->ID), 2);
             VisualizeSimulation(Logger_, &Renderer, SimToProcess);
             SimToProcess->IsRendering = false;
 
@@ -55,7 +55,7 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
 
 
 // Constructor, Destructor
-RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed, int _NumThreads) {
+VisualizerPool::VisualizerPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed, int _NumThreads) {
     assert(_Logger != nullptr);
 
 
@@ -76,26 +76,26 @@ RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowe
 
 
     // Create Renderer Instances
-    Logger_->Log("Creating RenderPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
+    Logger_->Log("Creating VisualizerPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
     if (_NumThreads > 1) {
         Logger_->Log("Can't do more than 1 thread due to VSG limitations - will fix this later, sorry.", 10);
     }
     for (unsigned int i = 0; i < _NumThreads; i++) {
-        Logger_->Log("Starting RenderPool Thread " + std::to_string(i), 1);
-        RenderThreads_.push_back(std::thread(&RenderPool::RendererThreadMainFunction, this, i));
+        Logger_->Log("Starting VisualizerPool Thread " + std::to_string(i), 1);
+        RenderThreads_.push_back(std::thread(&VisualizerPool::RendererThreadMainFunction, this, i));
     }
 }
 
-RenderPool::~RenderPool() {
+VisualizerPool::~VisualizerPool() {
 
     // Send Stop Signal To Threads
-    Logger_->Log("Stopping RenderPool Threads", 2);
+    Logger_->Log("Stopping VisualizerPool Threads", 2);
     ThreadControlFlag_ = false;
 
     // Join All Threads
-    Logger_->Log("Joining RenderPool Threads", 1);
+    Logger_->Log("Joining VisualizerPool Threads", 1);
     for (unsigned int i = 0; i < RenderThreads_.size(); i++) {
-        Logger_->Log("Joining RenderPool Thread " + std::to_string(i), 0);
+        Logger_->Log("Joining VisualizerPool Thread " + std::to_string(i), 0);
         RenderThreads_[i].join();
     }
 
@@ -103,7 +103,7 @@ RenderPool::~RenderPool() {
 
 
 // Queue Access Functions
-void RenderPool::EnqueueSimulation(Simulation* _Sim) {
+void VisualizerPool::EnqueueSimulation(Simulation* _Sim) {
 
     // Firstly, Ensure Nobody Else Is Using The Queue
     std::lock_guard<std::mutex> LockQueue(QueueMutex_);
@@ -111,7 +111,7 @@ void RenderPool::EnqueueSimulation(Simulation* _Sim) {
     Queue_.emplace(_Sim);
 }
 
-int RenderPool::GetQueueSize() {
+int VisualizerPool::GetQueueSize() {
 
     // Firstly, Ensure Nobody Else Is Using The Queue
     std::lock_guard<std::mutex> LockQueue(QueueMutex_);
@@ -121,7 +121,7 @@ int RenderPool::GetQueueSize() {
     return QueueSize;
 }
 
-bool RenderPool::DequeueSimulation(Simulation** _SimPtr) {
+bool VisualizerPool::DequeueSimulation(Simulation** _SimPtr) {
 
     // Firstly, Ensure Nobody Else Is Using The Queue
     std::lock_guard<std::mutex> LockQueue(QueueMutex_);
@@ -139,12 +139,11 @@ bool RenderPool::DequeueSimulation(Simulation** _SimPtr) {
 
 
 // Public Enqueue Function
-void RenderPool::QueueRenderOperation(Simulation* _Sim) {
+void VisualizerPool::QueueRenderOperation(Simulation* _Sim) {
     EnqueueSimulation(_Sim);
 }
 
 
-}; // Close Namespace VSDA
 }; // Close Namespace Simulator
 }; // Close Namespace NES
 }; // Close Namespace BG

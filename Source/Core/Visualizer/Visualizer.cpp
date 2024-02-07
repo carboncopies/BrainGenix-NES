@@ -14,7 +14,7 @@ namespace Simulator {
 //   true upon success.
 //   false upon failure, and set the std::error_code & err accordingly.
 // https://stackoverflow.com/questions/71658440/c17-create-directories-automatically-given-a-file-path
-bool CreateDirectoryRecursive(std::string const & dirName, std::error_code & err) {
+bool VSCreateDirectoryRecursive(std::string const & dirName, std::error_code & err) {
     err.clear();
     if (!std::filesystem::create_directories(dirName, err))
     {
@@ -54,13 +54,13 @@ bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
 
     // -- Stage 2 --
     // Now, we're just going to render it to a file, and get that path back.
-    std::string TargetDirectory = "Visualizations/" + std::to_string(_Simulation->ID) + "/"
+    std::string TargetDirectory = "Visualizations/" + std::to_string(_Simulation->ID) + "/";
     std::error_code Code;
-    if (!CreateDirectoryRecursive(TargetDirectory, Code)) {
-        Logger_ ->Log("Failed To Create Directory, Error '" + Code.message() + "'", 7);
+    if (!VSCreateDirectoryRecursive(TargetDirectory, Code)) {
+        _Logger->Log("Failed To Create Directory, Error '" + Code.message() + "'", 7);
     }
     std::string Filepath = TargetDirectory + std::to_string(rand()) + ".png";
-    RenderVisualization(_Logger, _Renderer, _Simulation->VisualizerParams, Filepath);
+    RenderVisualization(_Logger, _Renderer, &_Simulation->VisualizerParams, Filepath);
 
 
     return true;

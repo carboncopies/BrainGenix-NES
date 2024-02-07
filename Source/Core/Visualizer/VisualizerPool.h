@@ -71,7 +71,7 @@ namespace Simulator {
  * This allows (on supported systems) for multiple renderers to exist at the same time, and as such render multiple simulations simultaineously.
  * 
  */
-class RenderPool {
+class VisualizerPool {
 
 
 private:
@@ -128,20 +128,20 @@ private:
 public:
 
     /**
-     * @brief Initializes the renderpool with the given number of threads requested.
+     * @brief Initializes the visualizerpool with the given number of threads requested.
      * Note that this may be subject to however many logical devices your vulkan hardware can support.
      * 
      * @param _Logger 
      * @param _Windowed
      * @param _NumThreads 
      */
-    RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed = false, int _NumThreads = 1);
+    VisualizerPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed = false, int _NumThreads = 1);
 
     /**
      * @brief Destroys the render pool object.
      * 
      */
-    ~RenderPool();
+    ~VisualizerPool();
 
 
     /**
