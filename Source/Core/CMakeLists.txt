@@ -164,6 +164,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Visualizer/MeshBuilder.h
   ${SRC_DIR}/Core/Visualizer/VisualizerParameters.cpp
   ${SRC_DIR}/Core/Visualizer/VisualizerParameters.h
+  ${SRC_DIR}/Core/Visualizer/VisualizerPool.cpp
+  ${SRC_DIR}/Core/Visualizer/VisualizerPool.h
 
 
 )

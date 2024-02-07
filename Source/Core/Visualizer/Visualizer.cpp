@@ -32,7 +32,7 @@ bool CreateDirectoryRecursive(std::string const & dirName, std::error_code & err
 
 
 
-bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, Simulation* _Simulation, std::string* _OutputPath, VisualizerParameters* _Params) {
+bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, Simulation* _Simulation) {
     assert(_Logger != nullptr && "You have passed a nullptr to the logger parameter, bad!");
     assert(_Renderer != nullptr && "You have passed a nullptr to the renderer parameter, bad!");
     assert(_Simulation != nullptr && "You have passed a nullptr to the simulation parameter, bad!");
@@ -60,7 +60,7 @@ bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
         Logger_ ->Log("Failed To Create Directory, Error '" + Code.message() + "'", 7);
     }
     std::string Filepath = TargetDirectory + std::to_string(rand()) + ".png";
-    RenderVisualization(_Logger, _Renderer, _Params, Filepath);
+    RenderVisualization(_Logger, _Renderer, _Simulation->VisualizerParams, Filepath);
 
 
     return true;

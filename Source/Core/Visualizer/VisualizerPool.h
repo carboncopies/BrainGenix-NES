@@ -5,11 +5,11 @@
 /*
     Description: This file contains the NES Rendering system interface code.
     Additional Notes: None
-    Date Created: 2023-12-19
-    Author(s): Thomas Liao, Randal Koene
+    Date Created: 2024-02-07
+    Author(s): Thomas Liao
 
 
-    Copyright (C) 2023  Thomas Liao, Randal Koene
+    Copyright (C) 2023  Thomas Liao
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -47,11 +47,11 @@
 
 #include <Simulator/Structs/Simulation.h>
 
-#include <VSDA/EMRenderer.h>
+// #include <VSDA/EMRenderer.h>
 
-#include <VSDA/VoxelSubsystem/ImageProcessorPool/Image.h>
-#include <VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
-#include <VSDA/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
+// #include <VSDA/VoxelSubsystem/ImageProcessorPool/Image.h>
+// #include <VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
+// #include <VSDA/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
 #include <BG/Renderer/Interface.h>
 
 
@@ -60,7 +60,6 @@
 namespace BG {
 namespace NES {
 namespace Simulator {
-namespace VSDA {
 
 
 
@@ -79,8 +78,8 @@ private:
 
     BG::Common::Logger::LoggingSystem*                        Logger_ = nullptr;   /**Pointer to instance of logging system*/
 
-    std::unique_ptr<ImageProcessorPool>                       ImageProcessorPool_; /**Instance of the ImageProcessorPool, which saves all required images to disk*/
-    std::unique_ptr<VoxelArrayGenerator::ArrayGeneratorPool>  ArrayGeneratorPool_; /**Instance of the ArrayGeneratorPool, used to parallelize rasterizing shapes into the voxel array with many threads*/
+    // std::unique_ptr<ImageProcessorPool>                       ImageProcessorPool_; /**Instance of the ImageProcessorPool, which saves all required images to disk*/
+    // std::unique_ptr<VoxelArrayGenerator::ArrayGeneratorPool>  ArrayGeneratorPool_; /**Instance of the ArrayGeneratorPool, used to parallelize rasterizing shapes into the voxel array with many threads*/
 
     bool                                                      Windowed_ = false;   /**Boolean indicating if we're making windowed or headless renderers*/
 
@@ -157,7 +156,6 @@ public:
 
 
 
-}; // Close Namespace VSDA
 }; // Close Namespace Simulator
 }; // Close Namespace NES
 }; // Close Namespace BG

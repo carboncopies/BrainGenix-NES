@@ -8,7 +8,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <VSDA/RenderPool.h>
+#include <Visualizer/Visualizer.h>
 
 
 
@@ -26,12 +26,12 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
 
     Logger_->Log("Started RenderPool Thread " + std::to_string(_ThreadNumber), 0);
 
-    // // Setup Renderer
-    // BG::NES::Renderer::Interface Renderer(Logger_);
-    // if (!Renderer.Initialize(Windowed_)) { 
-    //     Logger_->Log("Error During Renderer Initialization, Aborting", 10);
-    //     return;
-    // }
+    // Setup Renderer
+    BG::NES::Renderer::Interface Renderer(Logger_);
+    if (!Renderer.Initialize(Windowed_)) { 
+        Logger_->Log("Error During Renderer Initialization, Aborting", 10);
+        return;
+    }
 
     // Run until thread exit is requested - that is, this is set to false
     while (ThreadControlFlag_) {
@@ -42,7 +42,7 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
 
             // Okay, we got work, now render this simulation
             Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering Simulation " + std::to_string(SimToProcess->ID), 2);
-            VSDA::ExecuteSubRenderOperations(Logger_, SimToProcess, ImageProcessorPool_.get(), ArrayGeneratorPool_.get());
+            VisualizeSimulation(Logger_, &Renderer, SimToProcess);
             SimToProcess->IsRendering = false;
 
         } else {
@@ -65,18 +65,21 @@ RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowe
     Windowed_ = _Windowed;
 
 
-    // Create VoxelArrayGenerator Instance
-    int NumArrayGeneratorThreads = std::thread::hardware_concurrency();
-    ArrayGeneratorPool_ = std::make_unique<VoxelArrayGenerator::ArrayGeneratorPool>(Logger_, NumArrayGeneratorThreads);
+    // // Create VoxelArrayGenerator Instance
+    // int NumArrayGeneratorThreads = std::thread::hardware_concurrency();
+    // ArrayGeneratorPool_ = std::make_unique<VoxelArrayGenerator::ArrayGeneratorPool>(Logger_, NumArrayGeneratorThreads);
 
 
-    // Create ImageProcessorPool Instance
-    int NumEncoderThreads = std::thread::hardware_concurrency();
-    ImageProcessorPool_ = std::make_unique<ImageProcessorPool>(Logger_, NumEncoderThreads);
+    // // Create ImageProcessorPool Instance
+    // int NumEncoderThreads = std::thread::hardware_concurrency();
+    // ImageProcessorPool_ = std::make_unique<ImageProcessorPool>(Logger_, NumEncoderThreads);
 
 
     // Create Renderer Instances
     Logger_->Log("Creating RenderPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
+    if (_NumThreads > 1) {
+        Logger_->Log("Can't do more than 1 thread due to VSG limitations - will fix this later, sorry.", 10);
+    }
     for (unsigned int i = 0; i < _NumThreads; i++) {
         Logger_->Log("Starting RenderPool Thread " + std::to_string(i), 1);
         RenderThreads_.push_back(std::thread(&RenderPool::RendererThreadMainFunction, this, i));
