@@ -33,6 +33,51 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
     std::vector<std::unique_ptr<Simulator::Simulation>>* Simulations = _SimManager->GetSimulationVectorPtr();
 
     // Profiling Stuff
+
+    if (_Config->ProfilingStatus_ == Config::PROFILE_NEW_API_TEST) {
+        _Logger->Log("Running New API Test", 6);
+
+        // Parse Request
+        std::string _JSONRequest(R"(
+  [
+    {
+      "ReqID": 237654,
+      "SimID": 3,
+      "AddBSNeuron": {
+        "Name": "1",
+        "SomaID": 12,
+        "AxonID": 14
+      }
+    }
+  ]
+)");
+        _Logger->Log(_JSONRequest, 3);
+        nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+
+        _Logger->Log("DEBUG ---> Testing how to pull out lower level components of a JSON object...", 3);
+
+        // For each request in the JSON list:
+
+        int ReqID = -1;
+        int SimID = -1;
+        for (const auto & req : RequestJSON) {
+            for (const auto & [req_key, req_value]: req.items()) {
+                if (req_key == "ReqID") {
+                    ReqID = req_value.template get<int>();
+                } else if (req_key == "SimID") {
+                    SimID = req_value.template get<int>();
+                } else {
+                    std::string ReqFunc = req_key;
+                    // Typically would call a specific handler from here, but let's just keep parsing.
+                    std::cout << "Request function found: " << ReqFunc << '\n';
+                    for (const auto & [key, value]: req_value.items()) {
+                        std::cout << "Found parameter: " << key << " with value: " << value << '\n';
+                    }
+                }
+            }
+        }
+    }
+
     if (_Config->ProfilingStatus_ == Config::PROFILE_VOXEL_ARRAY_GENERATOR_10K_SPHERES) {
 
         _Logger->Log("Running 100K Sphere Profiling Test", 6);

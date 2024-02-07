@@ -72,6 +72,7 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/SignalFunctions.h
   ${SRC_DIR}/Core/Simulator/Structs/Neuron.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Neuron.h
+  ${SRC_DIR}/Core/Simulator/Structs/NeuralCircuit.cpp
   ${SRC_DIR}/Core/Simulator/Structs/NeuralCircuit.h
   ${SRC_DIR}/Core/Simulator/Structs/RecordingElectrode.h
   ${SRC_DIR}/Core/Simulator/Structs/RecordingElectrode.cpp

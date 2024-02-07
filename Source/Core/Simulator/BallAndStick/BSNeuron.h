@@ -30,11 +30,11 @@
 //#include <Simulator/Structs/Simulation.h>
 
 //! DtAct_ms to return when there has not been any spike.
-#define _NO_SPIKE_DT_mS -1.0
+#define _NO_SPIKE_DT_ms -1.0
 //! Spike potential in mV within absolute refractory period
 #define _VSPIKE_ABS_REF_mV 60.0
 //! Time span of absolute refractory period in ms
-#define _TAU_ABS_mS 1.0
+#define _TAU_ABS_ms 1.0
 //! Initial value of TSpontNext_ms before any spontaneous activity.
 #define _T_SPONT_NEXT_mS_INIT -99.0
 
@@ -69,8 +69,12 @@ struct BSNeuron : CoreStructs::Neuron {
     float T_ms = 0.0;
     float TSpontNext_ms = _T_SPONT_NEXT_mS_INIT;
 
-    std::vector<float> TAct_ms{};
-    std::vector<float> TDirectStim_ms{};
+    bool _has_spiked = false;
+    bool in_absref = false;
+    float _dt_act_ms = 0.0;
+
+    // Moved to Neuron.h: std::vector<float> TAct_ms{};
+    // Moved to Neuron.h: std::vector<float> TDirectStim_ms{}; // Or should this be a deque?
     std::vector<float> CaSamples{};
     std::vector<float> TCaSamples_ms{};
 
@@ -105,13 +109,14 @@ struct BSNeuron : CoreStructs::Neuron {
 
     //! Returns the recorded membrane potentials.
     CoreStructs::NeuronRecording GetRecording();
+    nlohmann::json GetRecordingJSON() const;
 
     //! Tells if the action potential threshold has been crossed.
     bool HasSpiked();
 
     //! Tells if the time since the latest spike is within the
     //! absolute refractory period threshold.
-    bool InAbsRef(float dtAct_ms);
+    //bool InAbsRef(float dtAct_ms);
 
     //! Returns the time since the action potential threshold was
     //! crossed last.

@@ -15,8 +15,12 @@
 #include <unordered_map>
 #include <vector>
 #include <memory>
+#include <deque>
 
 #include <Simulator/Geometries/VecTools.h>
+
+// Third-Party Libraries (BG convention: use <> instead of "")
+#include <nlohmann/json.hpp>
 
 namespace BG {
 namespace NES {
@@ -34,6 +38,9 @@ struct Neuron {
 
     Geometries::Vec3D cell_center; // *** FIX THIS!
 
+    std::vector<float> TAct_ms{};
+    std::deque<float> TDirectStim_ms{};
+
     //! Returns the time since the action potential threshold was
     //! crossed last.
     virtual float DtAct_ms(float t_ms); // *** FIX THIS!
@@ -44,7 +51,13 @@ struct Neuron {
     //! Returns the geometric center of the neuron.
     virtual Geometries::Vec3D &GetCellCenter(); // *** FIX THIS!
 
+    virtual void AddSpecificAPTime(float t_ms);
+
+    unsigned long NumSpikes() const { return TAct_ms.size(); }
+
     virtual void Update(float t_ms, bool recording);
+
+    virtual nlohmann::json GetRecordingJSON() const;
 };
 
 //! ReceptorData is a tuple containing a pointer to the source (pre-synaptic)

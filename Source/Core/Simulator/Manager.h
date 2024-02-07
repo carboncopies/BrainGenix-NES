@@ -86,6 +86,8 @@ public:
      */
     ~Manager();
 
+    bool BadReqID(int ReqID);
+
     /**
      * @brief Various routes for API
      * Note that since this file is getting too long, several RPC handlers are being set up - each taking over part of this.
@@ -117,6 +119,10 @@ public:
     std::string PatchClampADCCreate(std::string _JSONRequest);
     std::string PatchClampADCSetSampleRate(std::string _JSONRequest);
     std::string PatchClampADCGetRecordedData(std::string _JSONRequest);
+    std::string SetSpecificAPTimes(std::string _JSONRequest);
+
+    std::string NESRequest(std::string _JSONRequest); // Generic JSON-based NES requests.
+
     std::string Debug(std::string _JSONRequest);
 
     /**
@@ -134,6 +140,9 @@ public:
      * @return std::vector<std::unique_ptr<Simulation>>* 
      */
     std::vector<std::unique_ptr<Simulation>>* GetSimulationVectorPtr();
+
+    // This allows use of the Manager Logger.
+    BG::Common::Logger::LoggingSystem * Logger() const { return Logger_; }
 
 };
 

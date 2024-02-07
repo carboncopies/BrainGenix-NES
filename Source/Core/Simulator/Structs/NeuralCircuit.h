@@ -19,6 +19,9 @@
 #include <Simulator/Geometries/GeometryCollection.h>
 #include <Simulator/Structs/Neuron.h>
 
+// Third-Party Libraries (BG convention: use <> instead of "")
+#include <nlohmann/json.hpp>
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -81,6 +84,8 @@ struct NeuralCircuit {
     //! Returns all neurons in the neural circuit with specified IDs.
     virtual std::vector<std::shared_ptr<Neuron>>
     GetNeuronsByIDs(std::vector<size_t> IDList) = 0;
+
+    virtual nlohmann::json GetRecordingJSON() const;
 
     NeuralCircuit(Geometries::GeometryCollection * _Collection_ptr): Collection_ptr(_Collection_ptr) {}
 };
