@@ -106,6 +106,14 @@ void Simulation::SetSpontaneousActivity(
     }
 };
 
+unsigned long Simulation::TotalSpikes() const {
+    unsigned long NumSpikes = 0;
+    for (auto & neuron_ptr : this->Neurons) {
+        NumSpikes += neuron_ptr->NumSpikes();
+    }
+    return NumSpikes;
+}
+
 //! Record all dynamically calculated values for a maximum of tMax_ms
 //! milliseconds. Setting t_max_ms=0 effectively turns off recording.
 //! Setting t_max_ms to -1 means record forever.
@@ -120,24 +128,50 @@ void Simulation::SetRecordAll(float tMax_ms) {
 
 bool Simulation::IsRecording() {
 
-    if (this->InstrumentsMaxRecordTime_ms < 0)
-        return true;
+    if (this->InstrumentsMaxRecordTime_ms < 0) return true;
+
     return this->T_ms < (this->InstrumentsStartRecordTime_ms +
                          this->InstrumentsMaxRecordTime_ms);
 };
 
-std::unordered_map<std::string, CoreStructs::CircuitRecording>
-Simulation::GetRecording() {
+std::unordered_map<std::string, CoreStructs::CircuitRecording> Simulation::GetRecording() {
     std::unordered_map<std::string, CoreStructs::CircuitRecording> recording;
     for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-        auto circuitPtr =
-            std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
+        auto circuitPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
         assert(circuitPtr);
         recording[circuitID] = circuitPtr->GetRecording();
     }
 
     return recording;
 };
+
+nlohmann::json Simulation::GetRecordingJSON() const {
+    nlohmann::json recording;
+
+    recording["t_ms"] = nlohmann::json(this->TRecorded_ms);
+
+    if (!this->NeuralCircuits.empty()) {
+        // If there are circuits then obtain the recording from each circuit.
+        recording["circuits"] = nlohmann::json::object(); // = {}
+        nlohmann::json & circuit_recordings = recording.at("circuits");
+        for (const auto &[circuitID, circuit_ptr] : this->NeuralCircuits) {
+            assert(circuit_ptr);
+            circuit_recordings[circuitID] = circuit_ptr->GetRecordingJSON();
+        }
+
+    } else {
+        // Otherwise, obtain recordings directly from the list of neurons.
+        recording["neurons"] = nlohmann::json::object(); // = {}
+        nlohmann::json & neuron_recordings = recording.at("neurons");
+        for (const auto & neuron_ptr : this->Neurons) {
+            assert(neuron_ptr);
+            neuron_recordings[std::to_string(neuron_ptr->ID)] = neuron_ptr->GetRecordingJSON();
+        }
+
+    }
+    
+    return recording;
+}
 
 enum sim_methods {
     simmethod_list_of_neurons,
@@ -159,22 +193,30 @@ void Simulation::RunFor(float tRun_ms) {
     Logger_->Log(std::to_string(GetTotalNumberOfNeurons())+" neurons residing in defined circuits and a total of", 3);
     Logger_->Log(std::to_string(BSCompartments.size())+" compartments.", 3);
 
+    // *** TODO: add making circuits and brain regions
+    //           to be able to use the other method
+
     // *** TODO: obtain this from an API call...
     sim_methods simmethod = simmethod_list_of_neurons;
 
     unsigned long num_updates_called = 0;
     while (this->T_ms < tEnd_ms) {
         bool recording = this->IsRecording();
-        if (recording)
+        if (recording) {
+            //std::cout << 'R'; std::cout.flush();
             this->TRecorded_ms.emplace_back(this->T_ms);
+        }
         switch (simmethod) {
             case simmethod_list_of_neurons: {
+                //std::cout << "DEBUG --> "; std::cout.flush();
                 for (auto & neuron_ptr : this->Neurons) {
                     if (neuron_ptr) {
+                        //std::cout << "."; std::cout.flush();
                         neuron_ptr->Update(this->T_ms, recording);
                         num_updates_called++;
                     }
                 }
+                //std::cout << '\n'; std::cout.flush();
                 break;
             }
             case simmethod_circuits: {
@@ -190,6 +232,7 @@ void Simulation::RunFor(float tRun_ms) {
         this->T_ms += this->Dt_ms;
     }
     Logger_->Log("Number of top-level Update() calls: "+std::to_string(num_updates_called), 3);
+    Logger_->Log("Total number of spikes on all neurons: "+std::to_string(TotalSpikes()), 3);
 };
 
 void Simulation::Show() { return; };

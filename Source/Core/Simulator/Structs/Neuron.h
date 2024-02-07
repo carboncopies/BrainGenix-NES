@@ -19,6 +19,9 @@
 
 #include <Simulator/Geometries/VecTools.h>
 
+// Third-Party Libraries (BG convention: use <> instead of "")
+#include <nlohmann/json.hpp>
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -35,7 +38,8 @@ struct Neuron {
 
     Geometries::Vec3D cell_center; // *** FIX THIS!
 
-    std::deque<float> AP_times_ms; // Preset specific spike times (not randomized spontaneous).
+    std::vector<float> TAct_ms{};
+    std::deque<float> TDirectStim_ms{};
 
     //! Returns the time since the action potential threshold was
     //! crossed last.
@@ -49,7 +53,11 @@ struct Neuron {
 
     virtual void AddSpecificAPTime(float t_ms);
 
+    unsigned long NumSpikes() const { return TAct_ms.size(); }
+
     virtual void Update(float t_ms, bool recording);
+
+    virtual nlohmann::json GetRecordingJSON() const;
 };
 
 //! ReceptorData is a tuple containing a pointer to the source (pre-synaptic)

@@ -69,8 +69,8 @@ struct BSNeuron : CoreStructs::Neuron {
     float T_ms = 0.0;
     float TSpontNext_ms = _T_SPONT_NEXT_mS_INIT;
 
-    std::vector<float> TAct_ms{};
-    std::vector<float> TDirectStim_ms{};
+    // Moved to Neuron.h: std::vector<float> TAct_ms{};
+    // Moved to Neuron.h: std::vector<float> TDirectStim_ms{}; // Or should this be a deque?
     std::vector<float> CaSamples{};
     std::vector<float> TCaSamples_ms{};
 
@@ -105,6 +105,7 @@ struct BSNeuron : CoreStructs::Neuron {
 
     //! Returns the recorded membrane potentials.
     CoreStructs::NeuronRecording GetRecording();
+    nlohmann::json GetRecordingJSON() const;
 
     //! Tells if the action potential threshold has been crossed.
     bool HasSpiked();

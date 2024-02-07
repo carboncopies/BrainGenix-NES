@@ -268,7 +268,8 @@ std::string Manager::SimulationRecordAll(std::string _JSONRequest) {
     if (!Handle.GetParFloat("MaxRecordTime_ms", MaxRecordTime)) {
         return Handle.ErrResponse();
     }
-    Handle.Sim()->MaxRecordTime_ms = MaxRecordTime;
+    //Handle.Sim()->MaxRecordTime_ms = MaxRecordTime;
+    Handle.Sim()->SetRecordAll(MaxRecordTime);
 
     // Return Result ID
     return Handle.ErrResponse(); // ok
@@ -284,7 +285,7 @@ std::string Manager::SimulationGetRecording(std::string _JSONRequest) {
     // Return JSON
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
-    ResponseJSON["Recording"] = Handle.Sim()->RecordingBlob;
+    ResponseJSON["Recording"] = Handle.Sim()->GetRecordingJSON(); //Handle.Sim()->RecordingBlob;
     return ResponseJSON.dump();
 }
 

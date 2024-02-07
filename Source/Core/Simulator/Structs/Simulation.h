@@ -21,6 +21,7 @@
 #include <vector>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+#include <nlohmann/json.hpp>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/BallAndStick/BSAlignedBrainRegion.h>
@@ -112,13 +113,15 @@ struct Simulation {
     void AttachDirectStim(std::vector<std::tuple<float, size_t>> listOfStims);
     void SetSpontaneousActivity(std::vector<std::tuple<float, float, size_t>> spontSpikeSettings);
 
+    unsigned long TotalSpikes() const;
+
     //! Record all dynamically calculated values for a maximum of tMax_ms
     //! milliseconds. Setting t_max_ms=0 effectively turns off recording.
     //! Setting t_max_ms to -1 means record forever.
     void SetRecordAll(float tMax_ms = _RECORD_FOREVER_TMAX_MS);
     bool IsRecording();
-    std::unordered_map<std::string, CoreStructs::CircuitRecording>
-    GetRecording();
+    std::unordered_map<std::string, CoreStructs::CircuitRecording> GetRecording();
+    nlohmann::json GetRecordingJSON() const;
     void RunFor(float tRun_ms);
     void Show();
 };

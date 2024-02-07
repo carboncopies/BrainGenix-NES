@@ -1,5 +1,7 @@
 #include <Simulator/BallAndStick/BSNeuron.h>
 
+#include <iostream>
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -33,6 +35,7 @@ Geometries::Vec3D &BSNeuron::GetCellCenter() {
 
 //! Records the time of direct stimulation for every occurrence
 //! of a direct stimulation.
+// *** WARNING: This does the same as AddSpecificAPTime(), probably delete this one.
 void BSNeuron::AttachDirectStim(float t_ms) {
     assert(t_ms >= 0.0);
     this->TDirectStim_ms.push_back(t_ms);
@@ -59,6 +62,13 @@ CoreStructs::NeuronRecording BSNeuron::GetRecording() {
     recording["Vm_mV"] = this->VmRecorded_mV;
     return recording;
 };
+
+nlohmann::json BSNeuron::GetRecordingJSON() const {
+    nlohmann::json recording;
+    //std::cout << "DEBUG --> Getting recording of " << this->VmRecorded_mV.size() << " Vm points\n"; std::cout.flush();
+    recording["Vm_mV"] = nlohmann::json(this->VmRecorded_mV);
+    return recording;
+}
 
 //! Tells if the action potential threshold has been crossed.
 bool BSNeuron::HasSpiked() { return this->TAct_ms.size() > 0; };
@@ -198,12 +208,14 @@ void BSNeuron::Update(float t_ms, bool recording) {
     if (tDiff_ms < 0)
         return;
 
+    //std::cout << "DEBUG --> BSNeuron::Update()\n"; std::cout.flush();
     // 1. Has there been a directed stimulation?
     if (!(this->TDirectStim_ms.empty())) {
         float tFire_ms = this->TDirectStim_ms.front();
         if (tFire_ms <= t_ms) {
             this->TAct_ms.push_back(tFire_ms);
-            this->TDirectStim_ms.erase(this->TDirectStim_ms.begin());
+            //this->TDirectStim_ms.erase(this->TDirectStim_ms.begin());
+            this->TDirectStim_ms.pop_front();
         }
     }
 
