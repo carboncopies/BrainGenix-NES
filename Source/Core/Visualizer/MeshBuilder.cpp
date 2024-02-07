@@ -37,7 +37,7 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
 
         } else if (_Simulation->Collection.IsSphere(ShapeID)) { // (std::holds_alternative<Geometries::Sphere>(_Simulation->Collection.Geometries[ShapeID])) {
             const Geometries::Sphere & Sphere = _Simulation->Collection.GetSphere(ShapeID); // Geometries::Sphere Sphere = std::get<Geometries::Sphere>(_Simulation->Collection.Geometries[ShapeID]);
-            
+
             BG::NES::Renderer::Shaders::Phong Shader;
             Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 0.1f);
             Shader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
@@ -70,6 +70,7 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
 
     }
 
+    _Logger->Log("Done Building 3D Mesh For Simulation " + _Simulation->Name, 3);
 
     _Renderer->UpdateScene();
     _Renderer->UnlockScene();

@@ -34,10 +34,13 @@ bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
     assert(_Renderer != nullptr && "You've passed an invalid pointer to _Renderer");
     assert(_Params != nullptr && "You've passed an invalid pointer to _Params");
 
+
+
+    _Logger->Log("Rendering Simulation Visualization", 3);
+
     
-    // Ensure Scene Is Now Threadsafe
-    _Renderer->LockScene();
-    _Renderer->WaitUntilGPUDone();
+
+
 
     // Get Parameters from _Params, ensure renderer is properly setup for them.
     _Renderer->SetCameraFOV(_Params->FOV_deg);
@@ -51,10 +54,6 @@ bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
     _Renderer->RenderImage(&RenderedImage);
 
 
-    // Now, Update and Unlock Scene When Done
-    _Renderer->UpdateScene();
-    _Renderer->UnlockScene();
-
 
 
     // Get Image Properties, Write
@@ -63,6 +62,7 @@ bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
     int Channels = RenderedImage.NumChannels_;
     unsigned char* SourcePixels = RenderedImage.Data_.get();
     stbi_write_png(RenderedImage.TargetFileName_.c_str(), SourceX, SourceY, Channels, SourcePixels, SourceX * Channels);
+    _Logger->Log("Wrote Visualization Image To File '" + RenderedImage.TargetFileName_ + "'", 4);
 
 
     return true;

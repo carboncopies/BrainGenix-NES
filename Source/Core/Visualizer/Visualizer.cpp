@@ -37,7 +37,7 @@ bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
     assert(_Renderer != nullptr && "You have passed a nullptr to the renderer parameter, bad!");
     assert(_Simulation != nullptr && "You have passed a nullptr to the simulation parameter, bad!");
 
-    _Logger->Log("Rendering Visualization For Simulation " + _Simulation->Name, 5);
+    _Logger->Log("Rendering Visualization For Simulation '" + _Simulation->Name + "'", 5);
    
 
     // -- Process Description --
