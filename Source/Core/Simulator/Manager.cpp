@@ -850,6 +850,9 @@ std::string PatchClampADCGetRecordedDataHandler(Manager& Man, const nlohmann::js
 std::string SetSpecificAPTimesHandler(Manager& Man, const nlohmann::json& ReqParams) {
     return Man.SetSpecificAPTimes(ReqParams.dump());
 }
+std::string VisualizerGenerateImage(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.VisualizerGenerateImage(ReqParams.dump());
+}
 
 const NESRequest_map_t NES_Request_handlers = {
     {"SimulationCreate", SimulationCreateHandler},
