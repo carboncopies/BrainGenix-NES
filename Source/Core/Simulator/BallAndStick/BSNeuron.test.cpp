@@ -129,7 +129,7 @@ TEST_F(BSNeuronTest, test_DtAct_ms_default) {
     float dtAct_ms = testBSNeuron->DtAct_ms(0.1);
 
     // Immediately after startup, no spike event has been recorded.
-    ASSERT_EQ(dtAct_ms, _NO_SPIKE_DT_mS);
+    ASSERT_EQ(dtAct_ms, _NO_SPIKE_DT_ms);
 
     // Simulate
     Simulate();
@@ -215,17 +215,17 @@ TEST_F(BSNeuronTest, test_GetRecording_default) {
 
 TEST_F(BSNeuronTest, test_InAbsRef_default) {
     float dtAct_ms = testBSNeuron->DtAct_ms(0.1);
-    bool inAbsRef = testBSNeuron->InAbsRef(dtAct_ms);
+    bool inAbsRef = testBSNeuron->in_absref;
 
     // No spike has occurred immediately after set up
-    ASSERT_EQ(dtAct_ms, _NO_SPIKE_DT_mS);
+    ASSERT_EQ(dtAct_ms, _NO_SPIKE_DT_ms);
     ASSERT_TRUE(!inAbsRef);
 
     // Simulate
     Simulate();
 
     dtAct_ms = testBSNeuron->DtAct_ms(times_ms.back());
-    inAbsRef = testBSNeuron->InAbsRef(dtAct_ms);
+    inAbsRef = testBSNeuron->in_absref;
 
     ASSERT_TRUE(dtAct_ms >= 0);
     ASSERT_TRUE(inAbsRef);
