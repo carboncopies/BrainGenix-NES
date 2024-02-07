@@ -58,7 +58,7 @@ struct VisualizerParameters {
     int ImageWidth_px; /**Target image width in pixels*/
     int ImageHeight_px; /**Target image height in pixels*/
 
-}
+};
 
 
 

@@ -591,13 +591,14 @@ bool Manager::SetResolution(int _Width, int _Height) {
     return true;
 }
 
-bool Manager::UpdateCameraPosition(vsg::dvec3 Position_) {
+bool Manager::UpdateCameraPosition(vsg::dvec3 _Position, vsg::dvec3 _LookAtPosition) {
 
 
     // Set the position of the camera such that it would look towards the stage
     // The stage will be located under the camera (microscope) with a distance of `Height_`
-    vsg::dvec3 CameraTarget = Position_ - vsg::dvec3(0.0f, 0.0f, Position_[2]);
-    auto lookAt = CreateLookAtMatrix(Position_, CameraTarget, vsg::dvec3(0.0, 1.0, 0.0));
+    // vsg::dvec3 CameraTarget = Position_ - vsg::dvec3(0.0f, 0.0f, Position_[2]);
+    vsg::dvec3 CameraTarget = _LookAtPosition;
+    auto lookAt = CreateLookAtMatrix(_Position, CameraTarget, vsg::dvec3(0.0, 1.0, 0.0));
 
     // Now, update the camera's view matrix with our new lookat matrix (should be the same as viewmat)
     Scene_->Camera_.get()->viewMatrix = lookAt;

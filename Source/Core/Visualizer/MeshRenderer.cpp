@@ -35,7 +35,7 @@ bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
     // Get Parameters from _Params, ensure renderer is properly setup for them.
     _Renderer->SetCameraFOV(_Params->FOV_deg);
     _Renderer->SetResolution(_Params->ImageWidth_px, _Params->ImageHeight_px);
-    _Renderer->UpdateCameraPosition(_Params->CameraPosition_um);
+    _Renderer->UpdateCameraPosition(_Params->CameraPosition_um, _Params->CameraLookAtPosition_um);
 
 
 }

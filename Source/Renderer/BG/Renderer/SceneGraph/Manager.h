@@ -282,11 +282,12 @@ public:
     /**
      * @brief Moves the camera to the given position.
      * 
-     * @param Position_ 
+     * @param _Position
+     * @param _LookAtPosition
      * @return true 
      * @return false 
      */
-    bool UpdateCameraPosition(vsg::dvec3 Position_);
+    bool UpdateCameraPosition(vsg::dvec3 _Position, vsg::dvec3 _LookAtPosition);
 
     /**
      * @brief Set the Camera's field of view

@@ -157,9 +157,9 @@ void Interface::ResetScene() {
 
 
 
-bool Interface::UpdateCameraPosition(vsg::dvec3 Position_) {
+bool Interface::UpdateCameraPosition(vsg::dvec3 _Position, vsg::dvec3 _LookAtPosition) {
 
-    return RendererManager_->UpdateCameraPosition(Position_);
+    return RendererManager_->UpdateCameraPosition(_Position, _LookAtPosition);
 
 }
 
