@@ -129,16 +129,18 @@ public:
     }
 };
 
-Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, API::Manager* _RPCManager) {
+Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, VisualizerPool* _VisualizerPool, API::Manager* _RPCManager) {
     assert(_Logger != nullptr);
     assert(_Config != nullptr);
     assert(_RPCManager != nullptr);
     assert(_RenderPool != nullptr);
+    assert(_VisualizerPool != nullptr);
 
 
     Config_ = _Config;
     Logger_ = _Logger;
     RenderPool_ = _RenderPool;
+    VisualizerPool_ = _VisualizerPool;
 
 
 
@@ -718,6 +720,65 @@ std::string Manager::SetSpecificAPTimes(std::string _JSONRequest) {
     return Handle.ErrResponse(); // ok
 }
 
+
+
+/**
+ * Expects _JSONRequest:
+ * {
+ *   "SimulationID": <SimID>,
+ *   "CameraPositionX_um": float,
+ *   "CameraPositionY_um": float,
+ *   "CameraPositionz_um": float,
+ *   "CameraLookAtPositionX_um": float,
+ *   "CameraLookAtPositionY_um": float,
+ *   "CameraLookAtPositionz_um": float,
+ *   "CameraFOV_deg": float,
+ *   "ImageWidth_px": unsigned int,
+ *   "ImageHeight_px": unsigned int
+ * }
+ */
+std::string Manager::SetSpecificAPTimes(std::string _JSONRequest) {
+
+    HandlerData Handle(this, _JSONRequest, "VisualizerGenerateImage");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+  
+    // Create and Populate Parameters From Request
+    VisualizerParameters Params;
+    
+    Geometries::Vec3D Position;
+    Handle.GetParVec3("CameraPosition", Position);
+    Params.CameraPosition_um = vsg::dvec3(Position.x, Position.y, Position.z);
+    Geometries::Vec3D LookAtPosition;
+    Handle.GetParVec3("CameraLookAtPosition", Position);
+    Params.CameraLookAtPosition_um = vsg::dvec3(LookAtPosition.x, LookAtPosition.y, LookAtPosition.z);
+    Handle.GetParFloat("CameraFOV_deg", Params.FOV_deg);
+    Handle.GetParInt("ImageWidth_px", Params.ImageWidth_px);
+    Handle.GetParInt("ImageHeight_px", Params.ImageHeight_px);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    Handle.Sim()->WorkRequested = true;
+    Handle.Sim()->IsRendering = true;
+    Handle.Sim()->VisualizerParams = Params;
+
+    VisualizerPool_->QueueRenderOperation(Handle.Sim());
+
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
+
+
+
+
+
+
+
+
 // *** NOTE: By passing JSON objects/components as strings and then having to
 //           parse them into JSON objects again, the handlers above are doing
 //           a bunch of unnecessary extra work - you can just pass references
@@ -811,6 +872,7 @@ const NESRequest_map_t NES_Request_handlers = {
     {"PatchClampADCSetSampleRate", PatchClampADCSetSampleRateHandler},
     {"PatchClampADCGetRecordedData", PatchClampADCGetRecordedDataHandler},
     {"SetSpecificAPTimes", SetSpecificAPTimesHandler},
+    {"Visualizer/GenerateImage", VisualizerGenerateImage}
 };
 
 bool Manager::BadReqID(int ReqID) {

@@ -25,8 +25,9 @@ int main(int NumArguments, char** ArgumentValues) {
     // Setup API Server
     BG::NES::API::Manager APIManager(&SystemConfiguration, &Logger);
 
-    // Setup RenderPool
+    // Setup RenderPools
     BG::NES::Simulator::VSDA::RenderPool RenderPool(&Logger, false, 5);
+    BG::NES::Simulator::VisualizerPool VisualizerPool(&Logger, false, 1);
 
     // Setup Simulator (Adding the routes here)
     BG::NES::Simulator::Manager SimulationManager(&Logger, &SystemConfiguration, &RenderPool, &APIManager);

@@ -32,6 +32,7 @@
 #include <Simulator/Manager.h>
 #include <VSDA/RPCInterface.h>
 #include <VSDA/RenderPool.h>
+#include <Visualizer/VisualizerPool.h>
 #include <Util/LogLogo.h>
 #include <Profiling/Manager.h>
 
