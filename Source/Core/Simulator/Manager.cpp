@@ -737,7 +737,7 @@ std::string Manager::SetSpecificAPTimes(std::string _JSONRequest) {
  *   "ImageHeight_px": unsigned int
  * }
  */
-std::string Manager::SetSpecificAPTimes(std::string _JSONRequest) {
+std::string Manager::VisualizerGenerateImage(std::string _JSONRequest) {
 
     HandlerData Handle(this, _JSONRequest, "VisualizerGenerateImage");
     if (Handle.HasError()) {
