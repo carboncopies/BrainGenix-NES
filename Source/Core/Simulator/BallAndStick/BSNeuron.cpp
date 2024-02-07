@@ -64,7 +64,6 @@ CoreStructs::NeuronRecording BSNeuron::GetRecording() {
 
 nlohmann::json BSNeuron::GetRecordingJSON() const {
     nlohmann::json recording;
-    //std::cout << "DEBUG --> Getting recording of " << this->VmRecorded_mV.size() << " Vm points\n"; std::cout.flush();
     recording["Vm_mV"] = nlohmann::json(this->VmRecorded_mV);
     return recording;
 }
@@ -104,7 +103,7 @@ float BSNeuron::VSpikeT_mV(float t_ms) {
     assert(t_ms >= 0.0);
 
     // If a spike has not occurred return 0.0
-    if (this->_has_spiked) return 0.0;
+    if (!this->_has_spiked) return 0.0;
 
     // Update whether the Neuron is in its absolute refractory period.
     this->in_absref = (this->_dt_act_ms <= _TAU_ABS_ms);
@@ -112,6 +111,10 @@ float BSNeuron::VSpikeT_mV(float t_ms) {
     // if within absolute refractory period, return
     // the spike potential during absolute refractory period.
     return this->in_absref ? _VSPIKE_ABS_REF_mV : 0.0;
+    // if (this->in_absref) {
+    //     return _VSPIKE_ABS_REF_mV;
+    // }
+    // return 0.0;
 };
 
 //! Updates V_AHP_t.
@@ -121,7 +124,9 @@ float BSNeuron::VAHPT_mV(float t_ms) {
     if (!this->_has_spiked) return 0.0;
     if (this->in_absref) return 0.0;
 
-    return this->VAHP_mV * exp(-this->_dt_act_ms / this->TauAHP_ms);
+    float vAHPt = this->VAHP_mV * exp(-this->_dt_act_ms / this->TauAHP_ms);
+
+    return vAHPt;
 };
 
 //! Updates V_PSP_t.
@@ -206,10 +211,8 @@ void BSNeuron::Update(float t_ms, bool recording) {
     assert(t_ms >= 0.0);
 
     float tDiff_ms = t_ms - this->T_ms;
-    if (tDiff_ms < 0)
-        return;
+    if (tDiff_ms < 0) return;
 
-    //std::cout << "DEBUG --> BSNeuron::Update()\n"; std::cout.flush();
     // 1. Has there been a directed stimulation?
     if (!(this->TDirectStim_ms.empty())) {
         float tFire_ms = this->TDirectStim_ms.front();
