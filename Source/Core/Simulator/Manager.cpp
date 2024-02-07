@@ -216,7 +216,7 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     Sim->CurrentTask = SIMULATION_NONE;
 
     // Start Thread
-    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, RenderPool_, &StopThreads_));
+    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, RenderPool_, VisualizerPool_, &StopThreads_));
 
     // Return Result ID
     nlohmann::json ResponseJSON;
@@ -763,9 +763,13 @@ std::string Manager::VisualizerGenerateImage(std::string _JSONRequest) {
 
     Handle.Sim()->WorkRequested = true;
     Handle.Sim()->IsRendering = true;
+    Handle.Sim()->CurrentTask = SIMULATION_VISUALIZATION;
     Handle.Sim()->VisualizerParams = Params;
 
-    VisualizerPool_->QueueRenderOperation(Handle.Sim());
+    // VisualizerPool_->QueueRenderOperation(Handle.Sim());
+
+
+    
 
 
     // Return Result ID
@@ -875,7 +879,7 @@ const NESRequest_map_t NES_Request_handlers = {
     {"PatchClampADCSetSampleRate", PatchClampADCSetSampleRateHandler},
     {"PatchClampADCGetRecordedData", PatchClampADCGetRecordedDataHandler},
     {"SetSpecificAPTimes", SetSpecificAPTimesHandler},
-    {"Visualizer/GenerateImage", VisualizerGenerateImage}
+    {"VisualizerGenerateImage", VisualizerGenerateImage}
 };
 
 bool Manager::BadReqID(int ReqID) {

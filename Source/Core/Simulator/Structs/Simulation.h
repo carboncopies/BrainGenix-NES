@@ -51,7 +51,7 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
-enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA };
+enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA, SIMULATION_VISUALIZATION };
 
 /**
  * @brief Name of the simulation

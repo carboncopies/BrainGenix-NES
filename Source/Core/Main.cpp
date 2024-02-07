@@ -39,7 +39,7 @@ int main(int NumArguments, char** ArgumentValues) {
 
     // Check if we have profiling enabled, if so do that then quit
     if (SystemConfiguration.ProfilingStatus_ != BG::NES::Config::PROFILE_NONE) {
-        BG::NES::Profiling::Manager(&Logger, &SystemConfiguration, &SimulationManager, &RenderPool, &APIManager);
+        BG::NES::Profiling::Manager(&Logger, &SystemConfiguration, &SimulationManager, &RenderPool, &VisualizerPool, &APIManager);
         return 0;
     }
 
