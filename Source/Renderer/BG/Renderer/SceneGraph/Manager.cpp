@@ -343,7 +343,7 @@ bool Manager::SetupCamera() {
         Height = RenderData_->Window_->extent2D().height;
     }
     double AspectRatio = static_cast<double>(Width / (double)Height); // Just the aspect ratio of the window
-    vsg::ref_ptr<vsg::ProjectionMatrix> perspective = CreatePerspectiveMatrix(FOV, AspectRatio, 0.1, 100.0);
+    vsg::ref_ptr<vsg::ProjectionMatrix> perspective = CreatePerspectiveMatrix(FOV, AspectRatio, 0.1, 99999.0);
 
     Scene_->Camera_ = vsg::Camera::create(perspective, lookAt, vsg::ViewportState::create(RenderData_->Extent_));
 
@@ -365,7 +365,7 @@ bool Manager::SetCameraFOV(double _FOV) {
     }
 
     double AspectRatio = static_cast<double>(Width / (double)Height);
-    Scene_->Camera_->projectionMatrix = CreatePerspectiveMatrix(_FOV, AspectRatio, 0.1, 100.0);
+    Scene_->Camera_->projectionMatrix = CreatePerspectiveMatrix(_FOV, AspectRatio, 0.1, 99999.0);
 
     return true;
 }
