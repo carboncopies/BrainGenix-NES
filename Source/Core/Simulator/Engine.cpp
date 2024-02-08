@@ -28,7 +28,7 @@ void Engine::Reset(Simulation* _Sim) {
 
     // Reset Connections
     for (unsigned int i = 0; i < _Sim->Receptors.size(); i++) {
-        Updater::ReceptorReset(&_Sim->Receptors[i], _Sim);
+        Updater::ReceptorReset(_Sim->Receptors.at(i).get(), _Sim);
     }
     for (unsigned int i = 0; i < _Sim->Staples.size(); i++) {
         Updater::StapleReset(&_Sim->Staples[i], _Sim);

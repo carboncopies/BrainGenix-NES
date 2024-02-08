@@ -96,7 +96,7 @@ struct BSNeuronStruct {
     float AfterHyperpolarizationAmplitude_mV;
     float PostsynapticPotentialRiseTime_ms;
     float PostsynapticPotentialDecayTime_ms;
-    float PostsynapticPotentialAmplitude_mV;
+    float PostsynapticPotentialAmplitude_nA;
 
     // Direct access caches:
     Compartments::BS* SomaCompartmentPtr = nullptr;

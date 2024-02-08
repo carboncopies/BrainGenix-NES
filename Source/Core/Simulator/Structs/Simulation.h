@@ -91,7 +91,10 @@ struct Simulation {
     std::map<int, int> NeuronByCompartment; // Fast look-up map built while creating neurons.
 
     std::vector<Connections::Staple> Staples; /**List of staple connections, index is their id (also stored in struct)*/
-    std::vector<Connections::Receptor> Receptors; /**List of receptor connections, index is their id (and it's also stored in the struct itself)*/
+    // The following must contain smart pointers, because content will be
+    // moved as the vector is expanded and remapped, and InputReceptorAdded delivers
+    // a static pointer:
+    std::vector<std::unique_ptr<Connections::Receptor>> Receptors; /**List of receptor connections, index is their id (and it's also stored in the struct itself)*/
 
     std::vector<std::shared_ptr<CoreStructs::Neuron>> Neurons; /** List of neurons, index is their id. Notice that this takes a Neuron base class object (not BSNeuron and other derivatives). */
 

@@ -25,7 +25,7 @@ BSNeuron::BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct) {
     TauAHP_ms = bsneuronstruct.DecayTime_ms;
     TauPSPr_ms = bsneuronstruct.PostsynapticPotentialRiseTime_ms;
     TauPSPd_ms = bsneuronstruct.PostsynapticPotentialDecayTime_ms;
-    VPSP_mV = bsneuronstruct.PostsynapticPotentialAmplitude_mV;
+    IPSP_nA = bsneuronstruct.PostsynapticPotentialAmplitude_nA;
 
     Morphology["soma"] = build_data.SomaCompartmentPtr->ShapePtr;
     Morphology["axon"] = build_data.AxonCompartmentPtr->ShapePtr;
@@ -135,6 +135,7 @@ float BSNeuron::VAHPT_mV(float t_ms) {
 //! Updates V_PSP_t.
 // Note on conventions: Using small letters (e.g. v) for variables and
 // capital letter (e.g. V) for constants, as in the papers.
+// (See description of magnitudes involved in flat ground-truth example script.)
 float BSNeuron::VPSPT_mV(float t_ms) {
     assert(t_ms >= 0.0);
     float vPSPt_mV = 0.0;
@@ -143,11 +144,12 @@ float BSNeuron::VPSPT_mV(float t_ms) {
         auto srcCell = receptorData.SrcNeuronPtr;
         if (!srcCell->HasSpiked()) continue;
 
-        float weight = receptorData.ReceptorPtr->Conductance_nS; // *** may need to multiply/convert to get a weight to multiply with VPSP_mV
         float dtPSP_ms = srcCell->DtAct_ms(t_ms);
+        float amp = this->IPSP_nA / receptorData.ReceptorPtr->Conductance_nS;
+        //if (ID == 1) std::cout << "IPSP_nA=" << this->IPSP_nA << " Cond nS = " << receptorData.ReceptorPtr->Conductance_nS << " amp = " << amp << '\n';
 
         vPSPt_mV += SignalFunctions::DoubleExponentExpr(
-            weight * this->VPSP_mV, 
+            amp, 
             receptorData.ReceptorPtr->TimeConstantRise_ms, //this->TauPSPr_ms, 
             receptorData.ReceptorPtr->TimeConstantDecay_ms, //this->TauPSPd_ms,
             dtPSP_ms);
@@ -274,6 +276,7 @@ void BSNeuron::UpdateConvolvedFIFO(std::vector<float> kernel) {
 
 void BSNeuron::InputReceptorAdded(CoreStructs::ReceptorData RData) {
     ReceptorDataVec.emplace_back(RData);
+
 }
 
 }; // namespace BallAndStick

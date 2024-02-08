@@ -29,20 +29,20 @@ namespace Connections {
  */
 struct Receptor {
 
-    std::string Name; /**Name of the Staple connection*/
-    int ID;           /**ID of the Staple connection*/
+    std::string Name;                  /**Name of the Staple connection*/
+    int ID = -1;                       /**ID of the Staple connection*/
 
-    int SourceCompartmentID; /**ID of the compartment whos data will be copied
-                                to the destination.*/
-    int DestinationCompartmentID; /**ID of the compartment whos data will be
-                                     overwritten with the source.*/
+    int SourceCompartmentID = -1;      /**ID of the compartment whos data will be copied
+                                          to the destination.*/
+    int DestinationCompartmentID = -1; /**ID of the compartment whos data will be
+                                          overwritten with the source.*/
 
-    float Conductance_nS;  /**Conductance from source to destination in
-                              nanoSiemens.*/
-    float TimeConstantRise_ms; /**Postsynaptic potential rise time constant in milliseconds*/
-    float TimeConstantDecay_ms; /**Postsynaptic potential decay time constant in milliseconds*/
-    Geometries::Vec3D ReceptorPos_um; /**Position of the receptor in world
-                                         space, in micrometers*/
+    float Conductance_nS = 0.0;        /**Conductance from source to destination in
+                                          nanoSiemens.*/
+    float TimeConstantRise_ms = 1.0;   /**Postsynaptic potential rise time constant in milliseconds*/
+    float TimeConstantDecay_ms = 1.0;  /**Postsynaptic potential decay time constant in milliseconds*/
+    Geometries::Vec3D ReceptorPos_um;  /**Position of the receptor in world
+                                          space, in micrometers*/
 };
 
 }; // namespace Connections

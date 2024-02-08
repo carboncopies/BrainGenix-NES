@@ -494,7 +494,7 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     }
 
     C.ID = Handle.Sim()->Receptors.size();
-    Handle.Sim()->Receptors.push_back(C);
+    Handle.Sim()->Receptors.push_back(std::make_unique<Connections::Receptor>(C));
 
     // Inform destination neuron of its new input receptor.
     CoreStructs::Neuron * SrcNeuronPtr = Handle.Sim()->FindNeuronByCompartment(C.SourceCompartmentID);
@@ -502,7 +502,7 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     if ((SrcNeuronPtr==nullptr) || (DstNeuronPtr==nullptr)) {
         return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
     }
-    CoreStructs::ReceptorData RData(C.ID, &(Handle.Sim()->Receptors.back()), SrcNeuronPtr);
+    CoreStructs::ReceptorData RData(C.ID, Handle.Sim()->Receptors.back().get(), SrcNeuronPtr);
     DstNeuronPtr->InputReceptorAdded(RData);
 
     // Return Result ID
@@ -539,7 +539,7 @@ std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
         || (!Handle.GetParFloat("AfterHyperpolarizationAmplitude_mV", C.AfterHyperpolarizationAmplitude_mV))
         || (!Handle.GetParFloat("PostsynapticPotentialRiseTime_ms", C.PostsynapticPotentialRiseTime_ms))
         || (!Handle.GetParFloat("PostsynapticPotentialDecayTime_ms", C.PostsynapticPotentialDecayTime_ms))
-        || (!Handle.GetParFloat("PostsynapticPotentialAmplitude_mV", C.PostsynapticPotentialAmplitude_mV))
+        || (!Handle.GetParFloat("PostsynapticPotentialAmplitude_nA", C.PostsynapticPotentialAmplitude_nA))
         || (!Handle.GetParString("Name", C.Name))) {
         return Handle.ErrResponse();
     }
