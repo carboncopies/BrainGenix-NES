@@ -40,17 +40,16 @@ bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
     _Logger->Log("Rendering Visualization For Simulation '" + _Simulation->Name + "'", 5);
    
 
-    // -- moved to visualizer pool
-    // // -- Process Description --
-    // // This is going to have a few steps, firstly, we're just going to build the mesh of the simulation
-    // // this involves enumerating all the BS compartments in the simulation in order to create them on vulkan
-    // // Next, we'll then render this all on the GPU with a call to MeshRenderer 
+    // -- Process Description --
+    // This is going to have a few steps, firstly, we're just going to build the mesh of the simulation
+    // this involves enumerating all the BS compartments in the simulation in order to create them on vulkan
+    // Next, we'll then render this all on the GPU with a call to MeshRenderer 
 
-    // _Renderer->ResetScene();
+    _Renderer->ResetScene();
 
-    // // -- Stage 1 --
-    // // Here, we're going to build the mesh using the meshrenderer
-    // BuildMeshFromSimulation(_Logger, _Renderer, _Simulation);
+    // -- Stage 1 --
+    // Here, we're going to build the mesh using the meshrenderer
+    BuildMeshFromSimulation(_Logger, _Renderer, _Simulation);
 
 
     // -- Stage 2 --
@@ -60,7 +59,7 @@ bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
     if (!VSCreateDirectoryRecursive(TargetDirectory, Code)) {
         _Logger->Log("Failed To Create Directory, Error '" + Code.message() + "'", 7);
     }
-    std::string Filepath = TargetDirectory + std::to_string(_Simulation->VisualizerParams.LastImageNumber++) + ".png";
+    std::string Filepath = TargetDirectory;
     RenderVisualization(_Logger, _Renderer, &_Simulation->VisualizerParams, Filepath);
 
 

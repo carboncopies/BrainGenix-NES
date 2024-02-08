@@ -35,36 +35,46 @@ bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
     assert(_Params != nullptr && "You've passed an invalid pointer to _Params");
 
 
-
     _Logger->Log("Rendering Simulation Visualization", 3);
 
-    
+
+    _Params->FileHandles.clear();
 
 
-
-    // Get Parameters from _Params, ensure renderer is properly setup for them.
-    _Renderer->SetCameraFOV(_Params->FOV_deg);
-    _Renderer->SetResolution(_Params->ImageWidth_px, _Params->ImageHeight_px);
-    _Renderer->UpdateCameraPosition(_Params->CameraPosition_um, _Params->CameraLookAtPosition_um);
-
-
-    // Now Render The Thing
+    // Render Once To Fix Image Resolution Issue
     BG::NES::Renderer::Image RenderedImage;
     RenderedImage.TargetFileName_ = _Filepath;
     _Renderer->RenderImage(&RenderedImage);
-    // _Renderer->RenderImage(&RenderedImage);
 
 
 
 
-    // Get Image Properties, Write
-    int SourceX = RenderedImage.Width_px;
-    int SourceY = RenderedImage.Height_px;
-    int Channels = RenderedImage.NumChannels_;
-    unsigned char* SourcePixels = RenderedImage.Data_.get();
-    stbi_write_png(RenderedImage.TargetFileName_.c_str(), SourceX, SourceY, Channels, SourcePixels, SourceX * Channels);
-    _Logger->Log("Wrote Visualization Image To File '" + RenderedImage.TargetFileName_ + "'", 4);
+    // Iterate through all items of the vector and render them
+    for (size_t i = 0; i < _Params->CameraPositionList_um.size(); i++) {
 
+        // Get Parameters from _Params, ensure renderer is properly setup for them.
+        _Renderer->SetCameraFOV(_Params->FOVList_deg[i]);
+        _Renderer->SetResolution(_Params->ImageWidth_px, _Params->ImageHeight_px);
+        _Renderer->UpdateCameraPosition(_Params->CameraPositionList_um[i], _Params->CameraLookAtPositionList_um[i]);
+
+
+        // Now Render The Thing
+        BG::NES::Renderer::Image RenderedImage;
+        RenderedImage.TargetFileName_ = _Filepath + std::to_string(_Params->LastImageNumber++) + ".png";
+        _Renderer->RenderImage(&RenderedImage);
+
+
+        // Get Image Properties, Write
+        int SourceX = RenderedImage.Width_px;
+        int SourceY = RenderedImage.Height_px;
+        int Channels = RenderedImage.NumChannels_;
+        unsigned char* SourcePixels = RenderedImage.Data_.get();
+        stbi_write_png(RenderedImage.TargetFileName_.c_str(), SourceX, SourceY, Channels, SourcePixels, SourceX * Channels);
+        _Logger->Log("Wrote Visualization Image To File '" + RenderedImage.TargetFileName_ + "'", 4);
+
+        _Params->FileHandles.push_back(RenderedImage.TargetFileName_);
+
+    }
 
     return true;
 

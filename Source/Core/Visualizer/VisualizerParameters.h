@@ -31,6 +31,7 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
+#include <vector>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <vsg/maths/vec3.h>
@@ -42,6 +43,13 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
+enum VisualizerState {
+    VISUALIZER_NONE,
+    VISUALIZER_REQUESTED,
+    VISUALIZER_WORKING,
+    VISUALIZER_DONE
+};
+
 
 /**
  * @brief This struct defines a bunch of parameters to be used by the VisualizeSimulation function.
@@ -50,15 +58,23 @@ namespace Simulator {
  */
 struct VisualizerParameters {
 
-    float FOV_deg; /**The desired field of view in degrees*/
+    // Note that these should be the same length
 
-    vsg::dvec3 CameraPosition_um; /**Location of the camera in world-space coordinates*/
-    vsg::dvec3 CameraLookAtPosition_um; /**Location of where the camera is looking towards in world-space coordinates*/
+    std::vector<float> FOVList_deg; /**The desired field of view in degrees in a list for all requsted images*/
+
+    std::vector<vsg::dvec3> CameraPositionList_um; /**List of locations of the camera in world-space coordinates*/
+    std::vector<vsg::dvec3> CameraLookAtPositionList_um; /**List of locations of where the camera is looking towards in world-space coordinates*/
 
     int ImageWidth_px; /**Target image width in pixels*/
     int ImageHeight_px; /**Target image height in pixels*/
 
     int LastImageNumber = 0; /**Number of last image - to number files*/
+
+
+    VisualizerState State = VISUALIZER_NONE; /**Sets the state of this visualizer task*/
+
+
+    std::vector<std::string> FileHandles; /**List of file handles for completed images*/
 
 };
 

@@ -3,6 +3,10 @@
 #include <Simulator/bgStatusCode.h>
 #include <Simulator/Geometries/VecTools.h>
 
+
+// Third-Party Libraries (BG convention: use <> instead of "")
+#include <cpp-base64/base64.h>
+
 #include <iostream>
 
 namespace BG {
@@ -59,6 +63,12 @@ public:
         ResponseJSON[IDName] = IDValue;
         return ResponseJSON.dump();
     }
+    std::string StringResponse(std::string _Key, std::string _Value) {
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = int(Status);
+        ResponseJSON[_Key] = _Value;
+        return ResponseJSON.dump();
+    }
 
     int SimID() const { return SimulationID; }
     std::string SimIDStr() const { return std::to_string(SimulationID); }
@@ -76,9 +86,31 @@ public:
         return true;
     }
 
+    bool FindPar(const std::string & ParName, nlohmann::json::iterator & Iterator, nlohmann::json& _JSON) {
+        Iterator = _JSON.find(ParName);
+        if (Iterator == _JSON.end()) {
+            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
+            return false;
+        }
+        return true;
+    }
+
     bool GetParInt(const std::string & ParName, int & Value) {
         nlohmann::json::iterator it;
         if (!FindPar(ParName, it)) {
+            return false;
+        }
+        if (!it.value().is_number()) {
+            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
+            return false;
+        }
+        Value = it.value().template get<int>();
+        return true;
+    }
+
+    bool GetParInt(const std::string & ParName, int & Value, nlohmann::json& _JSON) {
+        nlohmann::json::iterator it;
+        if (!FindPar(ParName, it, _JSON)) {
             return false;
         }
         if (!it.value().is_number()) {
@@ -102,6 +134,20 @@ public:
         return true;
     }
 
+    bool GetParFloat(const std::string & ParName, float & Value, nlohmann::json& _JSON) {
+        nlohmann::json::iterator it;
+        if (!FindPar(ParName, it, _JSON)) {
+            return false;
+        }
+        if (!it.value().is_number()) {
+            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
+            return false;
+        }
+        Value = it.value().template get<float>();
+        return true;
+    }
+
+
     bool GetParString(const std::string & ParName, std::string & Value) {
         nlohmann::json::iterator it;
         if (!FindPar(ParName, it)) {
@@ -115,6 +161,20 @@ public:
         return true;
     }
 
+    bool GetParString(const std::string & ParName, std::string & Value, nlohmann::json& _JSON) {
+        nlohmann::json::iterator it;
+        if (!FindPar(ParName, it, _JSON)) {
+            return false;
+        }
+        if (!it.value().is_string()) {
+            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
+            return false;
+        }
+        Value = it.value().template get<std::string>();
+        return true;
+    }
+
+
     bool GetParVec3(const std::string & ParName, Geometries::Vec3D & Value, const std::string & Units = "um") {
         if (!GetParFloat(ParName+"X_"+Units, Value.x)) {
             return false;
@@ -127,6 +187,20 @@ public:
         }
         return true;
     }
+
+    bool GetParVec3FromJSON(const std::string & ParName, Geometries::Vec3D & Value, nlohmann::json& _JSON, const std::string & Units = "um") {
+        if (!GetParFloat(ParName+"X_"+Units, Value.x, _JSON)) {
+            return false;
+        }
+        if (!GetParFloat(ParName+"Y_"+Units, Value.y, _JSON)) {
+            return false;
+        }
+        if (!GetParFloat(ParName+"Z_"+Units, Value.z, _JSON)) {
+            return false;
+        }
+        return true;
+    }
+
 };
 
 Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, VisualizerPool* _VisualizerPool, API::Manager* _RPCManager) {
@@ -726,13 +800,20 @@ std::string Manager::SetSpecificAPTimes(std::string _JSONRequest) {
  * Expects _JSONRequest:
  * {
  *   "SimulationID": <SimID>,
- *   "CameraPositionX_um": float,
- *   "CameraPositionY_um": float,
- *   "CameraPositionz_um": float,
- *   "CameraLookAtPositionX_um": float,
- *   "CameraLookAtPositionY_um": float,
- *   "CameraLookAtPositionz_um": float,
- *   "CameraFOV_deg": float,
+ *   "Locations": [
+ *     {
+ *          "CameraPositionX_um": float,
+ *          "CameraPositionY_um": float,
+ *          "CameraPositionz_um": float,
+ *          "CameraLookAtPositionX_um": float,
+ *          "CameraLookAtPositionY_um": float,
+ *          "CameraLookAtPositionz_um": float,
+ *          "CameraFOV_deg": float
+ *      },
+ *      ...
+ *      ]
+ *   "ImageWidth_px": unsigned int,
+ *   "ImageHeight_px": unsigned int
  * }
  */
 std::string Manager::VisualizerGenerateImage(std::string _JSONRequest) {
@@ -743,19 +824,35 @@ std::string Manager::VisualizerGenerateImage(std::string _JSONRequest) {
     }
   
     // Create and Populate Parameters From Request
-    Geometries::Vec3D Position;
-    Handle.GetParVec3("CameraPosition", Position);
-    Handle.Sim()->VisualizerParams.CameraPosition_um = vsg::dvec3(Position.x, Position.y, Position.z);
-    Geometries::Vec3D LookAtPosition;
-    Handle.GetParVec3("CameraLookAtPosition", Position);
-    Handle.Sim()->VisualizerParams.CameraLookAtPosition_um = vsg::dvec3(LookAtPosition.x, LookAtPosition.y, LookAtPosition.z);
-    Handle.GetParFloat("CameraFOV_deg", Handle.Sim()->VisualizerParams.FOV_deg);
+    nlohmann::json::iterator LocationIterator;
+    if (!Handle.FindPar("Locations", LocationIterator)) {
+        return Handle.ErrResponse();
+    }
+
+    for (auto& ThisLocation: LocationIterator.value()) {
+        Geometries::Vec3D Position;
+        Handle.GetParVec3FromJSON("CameraPosition", Position, ThisLocation);
+        Handle.Sim()->VisualizerParams.CameraPositionList_um.push_back(vsg::dvec3(Position.x, Position.y, Position.z));
+
+        Geometries::Vec3D LookAtPosition;
+        Handle.GetParVec3FromJSON("CameraLookAtPosition", Position, ThisLocation);
+        Handle.Sim()->VisualizerParams.CameraLookAtPositionList_um.push_back(vsg::dvec3(LookAtPosition.x, LookAtPosition.y, LookAtPosition.z));
+
+        float FOV_deg;
+        Handle.GetParFloat("CameraFOV_deg", FOV_deg, ThisLocation);
+        Handle.Sim()->VisualizerParams.FOVList_deg.push_back(FOV_deg);
+    }
+
+    Handle.GetParInt("ImageWidth_px", Handle.Sim()->VisualizerParams.ImageWidth_px);
+    Handle.GetParInt("ImageHeight_px", Handle.Sim()->VisualizerParams.ImageHeight_px);
+
 
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
 
-    Handle.Sim()->CurrentTask = SIMULATION_VISUALIZATION_DRAW_IMAGE;
+    Handle.Sim()->CurrentTask = SIMULATION_VISUALIZATION;
+    Handle.Sim()->VisualizerParams.State = VISUALIZER_REQUESTED;
     Handle.Sim()->WorkRequested = true;
 
 
@@ -768,33 +865,100 @@ std::string Manager::VisualizerGenerateImage(std::string _JSONRequest) {
  * Expects _JSONRequest:
  * {
  *   "SimulationID": <SimID>,
- *   "ImageWidth_px": unsigned int,
- *   "ImageHeight_px": unsigned int
  * }
  */
-std::string Manager::VisualizerBuildMesh(std::string _JSONRequest) {
+std::string Manager::VisualizerGetStatus(std::string _JSONRequest) {
 
-    HandlerData Handle(this, _JSONRequest, "VisualizerBuildMesh");
+    HandlerData Handle(this, _JSONRequest, "VisualizerGetStatus");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Return Result ID
+    return Handle.ResponseWithID("VisualizerStatus", Handle.Sim()->VisualizerParams.State); // ok
+}
+
+
+
+/**
+ * Expects _JSONRequest:
+ * {
+ *   "SimulationID": <SimID>,
+ * }
+ */
+std::string Manager::VisualizerGetImageHandles(std::string _JSONRequest) {
+
+    HandlerData Handle(this, _JSONRequest, "VisualizerGetImageHandles");
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
   
-    // Create and Populate Parameters From Request
-    Geometries::Vec3D Position;
-    Handle.GetParInt("ImageWidth_px", Handle.Sim()->VisualizerParams.ImageWidth_px);
-    Handle.GetParInt("ImageHeight_px", Handle.Sim()->VisualizerParams.ImageHeight_px);
+    // Return Result ID
+    std::string ImageHandleStrings = nlohmann::json(Handle.Sim()->VisualizerParams.FileHandles).dump();
+    return Handle.StringResponse("ImageHandles", ImageHandleStrings); // ok
+}
 
+
+/**
+ * Expects _JSONRequest:
+ * {
+ *   "SimulationID": <SimID>,
+ *   "ImageHandle": <str>
+ * }
+ */
+std::string Manager::VisualizerGetImage(std::string _JSONRequest) {
+
+    HandlerData Handle(this, _JSONRequest, "VisualizerGetImage");
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
 
-    Handle.Sim()->CurrentTask = SIMULATION_VISUALIZATION_BUILD_MESH;
-    Handle.Sim()->WorkRequested = true;
+    std::string ImageHandle;
+    Handle.GetParString("ImageHandle", ImageHandle);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+
+    // Minor security feature (probably still exploitable, so be warned!)
+    // We just remove .. from the incoming handle for the image, since they're just files right now
+    // as such, if we didnt strip that, then people could read any files on the server!
+    // Also, we prepend a '.' so people can't try and get to the root
+    std::string Pattern = "..";
+    std::string::size_type i = ImageHandle.find(Pattern);
+    while (i != std::string::npos) {
+        Logger_->Log("Detected '..' In ImageHandle, It's Possible That Someone Is Trying To Do Something Nasty", 8);
+        ImageHandle.erase(i, Pattern.length());
+        i = ImageHandle.find(Pattern, i);
+    }
+    std::string SafeHandle = "./" + ImageHandle;
+
+
+    // Now Check If The Handle Is Valid, If So, Load It
+    std::ifstream ImageStream(SafeHandle.c_str(), std::ios::binary);
+    std::string RawData;
+    if (ImageStream.good()) {
+        std::stringstream Buffer;
+        Buffer << ImageStream.rdbuf();
+        RawData = Buffer.str();
+        // ImageStream>>RawData;
+        ImageStream.close();
+
+    } else {
+        Logger_->Log("An Invalid ImageHandle Was Provided " + SafeHandle, 6);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2; // error
+        return ResponseJSON.dump();
+    }
+
+    // Now, Convert It To Base64
+    std::string Base64Data = base64_encode(reinterpret_cast<const unsigned char*>(RawData.c_str()), RawData.length());
 
 
     // Return Result ID
-    return Handle.ErrResponse(); // ok
+    return Handle.StringResponse("ImageData", Base64Data); // ok
 }
+
 
 
 
@@ -875,9 +1039,16 @@ std::string SetSpecificAPTimesHandler(Manager& Man, const nlohmann::json& ReqPar
 std::string VisualizerGenerateImage(Manager& Man, const nlohmann::json& ReqParams) {
     return Man.VisualizerGenerateImage(ReqParams.dump());
 }
-std::string VisualizerBuildMesh(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.VisualizerBuildMesh(ReqParams.dump());
+std::string VisualizerGetImageHandles(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.VisualizerGetImageHandles(ReqParams.dump());
 }
+std::string VisualizerGetStatus(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.VisualizerGetStatus(ReqParams.dump());
+}
+std::string VisualizerGetImage(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.VisualizerGetImage(ReqParams.dump());
+}
+
 
 const NESRequest_map_t NES_Request_handlers = {
     {"SimulationCreate", SimulationCreateHandler},
@@ -901,7 +1072,9 @@ const NESRequest_map_t NES_Request_handlers = {
     {"PatchClampADCGetRecordedData", PatchClampADCGetRecordedDataHandler},
     {"SetSpecificAPTimes", SetSpecificAPTimesHandler},
     {"VisualizerGenerateImage", VisualizerGenerateImage},
-    {"VisualizerBuildMesh", VisualizerBuildMesh}
+    {"VisualizerGetImageHandles", VisualizerGetImageHandles},
+    {"VisualizerGetImage", VisualizerGetImage},
+    {"VisualizerGetStatus", VisualizerGetStatus}
 };
 
 bool Manager::BadReqID(int ReqID) {
