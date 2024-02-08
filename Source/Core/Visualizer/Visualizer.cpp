@@ -60,7 +60,7 @@ bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
     if (!VSCreateDirectoryRecursive(TargetDirectory, Code)) {
         _Logger->Log("Failed To Create Directory, Error '" + Code.message() + "'", 7);
     }
-    std::string Filepath = TargetDirectory + std::to_string(rand()) + ".png";
+    std::string Filepath = TargetDirectory + std::to_string(_Simulation->VisualizerParams.LastImageNumber++) + ".png";
     RenderVisualization(_Logger, _Renderer, &_Simulation->VisualizerParams, Filepath);
 
 

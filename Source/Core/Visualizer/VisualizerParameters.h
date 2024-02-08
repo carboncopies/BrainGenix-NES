@@ -58,6 +58,8 @@ struct VisualizerParameters {
     int ImageWidth_px; /**Target image width in pixels*/
     int ImageHeight_px; /**Target image height in pixels*/
 
+    int LastImageNumber = 0; /**Number of last image - to number files*/
+
 };
 
 
