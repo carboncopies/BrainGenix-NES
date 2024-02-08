@@ -40,10 +40,36 @@ void VisualizerPool::RendererThreadMainFunction(int _ThreadNumber) {
         Simulation* SimToProcess = nullptr;
         if (DequeueSimulation(&SimToProcess)) {
 
-            // Okay, we got work, now render this simulation
-            Logger_->Log("VisualizerPool Thread " + std::to_string(_ThreadNumber) + " Rendering Simulation " + std::to_string(SimToProcess->ID), 2);
-            VisualizeSimulation(Logger_, &Renderer, SimToProcess);
+            if (SimToProcess->CurrentTask == SIMULATION_VISUALIZATION_BUILD_MESH) {
+                // -- Process Description --
+                // This is going to have a few steps, firstly, we're just going to build the mesh of the simulation
+                // this involves enumerating all the BS compartments in the simulation in order to create them on vulkan
+                // Next, we'll then render this all on the GPU with a call to MeshRenderer 
+
+                Logger_->Log("VisualizerPool Thread " + std::to_string(_ThreadNumber) + " Building Mesh For Simulation " + std::to_string(SimToProcess->ID), 2);
+                Renderer.ResetScene();
+
+                // -- Stage 1 --
+                // Here, we're going to build the mesh using the meshrenderer
+                BuildMeshFromSimulation(Logger_, &Renderer, SimToProcess);
+
+                // Render an image to flush the buffers, so they resize to our target size
+                BG::NES::Renderer::Image RenderedImage;
+                RenderedImage.TargetFileName_ = "";
+                Renderer.RenderImage(&RenderedImage);
+
+            } else {
+
+                // Okay, we got work, now render this simulation
+                Logger_->Log("VisualizerPool Thread " + std::to_string(_ThreadNumber) + " Rendering Simulation " + std::to_string(SimToProcess->ID), 2);
+                VisualizeSimulation(Logger_, &Renderer, SimToProcess);
+            
+            }
+
+
             SimToProcess->IsRendering = false;
+
+
 
         } else {
 

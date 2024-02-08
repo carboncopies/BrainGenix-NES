@@ -52,7 +52,7 @@ bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
     BG::NES::Renderer::Image RenderedImage;
     RenderedImage.TargetFileName_ = _Filepath;
     _Renderer->RenderImage(&RenderedImage);
-    _Renderer->RenderImage(&RenderedImage);
+    // _Renderer->RenderImage(&RenderedImage);
 
 
 

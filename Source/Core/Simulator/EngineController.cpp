@@ -49,7 +49,7 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
                 _Sim->VSDAData_.State_ = VSDA_RENDER_DONE;
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
-            } else if (_Sim->CurrentTask == SIMULATION_VISUALIZATION) {
+            } else if (_Sim->CurrentTask == SIMULATION_VISUALIZATION_BUILD_MESH || _Sim->CurrentTask == SIMULATION_VISUALIZATION_DRAW_IMAGE) {
                 _Logger->Log("Worker Performing Simulation Visualization Call For Simulation " + std::to_string(_Sim->ID), 4);
                 _Sim->IsRendering = true;
                 _VisualizerPool->QueueRenderOperation(_Sim);

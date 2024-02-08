@@ -301,7 +301,7 @@ std::string Manager::SimulationGetStatus(std::string _JSONRequest) {
     // Return JSON
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
-    ResponseJSON["IsSimulating"] = (bool)Handle.Sim()->IsProcessing;
+    ResponseJSON["IsSimulating"] = (bool)(Handle.Sim()->IsProcessing || Handle.Sim()->WorkRequested || Handle.Sim()->IsRendering);
     ResponseJSON["RealWorldTimeRemaining_ms"] = 0.0;
     ResponseJSON["RealWorldTimeElapsed_ms"] = 0.0;
     ResponseJSON["InSimulationTime_ms"] = 0.0;
@@ -733,8 +733,6 @@ std::string Manager::SetSpecificAPTimes(std::string _JSONRequest) {
  *   "CameraLookAtPositionY_um": float,
  *   "CameraLookAtPositionz_um": float,
  *   "CameraFOV_deg": float,
- *   "ImageWidth_px": unsigned int,
- *   "ImageHeight_px": unsigned int
  * }
  */
 std::string Manager::VisualizerGenerateImage(std::string _JSONRequest) {
@@ -745,31 +743,20 @@ std::string Manager::VisualizerGenerateImage(std::string _JSONRequest) {
     }
   
     // Create and Populate Parameters From Request
-    VisualizerParameters Params;
-    
     Geometries::Vec3D Position;
     Handle.GetParVec3("CameraPosition", Position);
-    Params.CameraPosition_um = vsg::dvec3(Position.x, Position.y, Position.z);
+    Handle.Sim()->VisualizerParams.CameraPosition_um = vsg::dvec3(Position.x, Position.y, Position.z);
     Geometries::Vec3D LookAtPosition;
     Handle.GetParVec3("CameraLookAtPosition", Position);
-    Params.CameraLookAtPosition_um = vsg::dvec3(LookAtPosition.x, LookAtPosition.y, LookAtPosition.z);
-    Handle.GetParFloat("CameraFOV_deg", Params.FOV_deg);
-    Handle.GetParInt("ImageWidth_px", Params.ImageWidth_px);
-    Handle.GetParInt("ImageHeight_px", Params.ImageHeight_px);
+    Handle.Sim()->VisualizerParams.CameraLookAtPosition_um = vsg::dvec3(LookAtPosition.x, LookAtPosition.y, LookAtPosition.z);
+    Handle.GetParFloat("CameraFOV_deg", Handle.Sim()->VisualizerParams.FOV_deg);
 
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
 
+    Handle.Sim()->CurrentTask = SIMULATION_VISUALIZATION_DRAW_IMAGE;
     Handle.Sim()->WorkRequested = true;
-    Handle.Sim()->IsRendering = true;
-    Handle.Sim()->CurrentTask = SIMULATION_VISUALIZATION;
-    Handle.Sim()->VisualizerParams = Params;
-
-    // VisualizerPool_->QueueRenderOperation(Handle.Sim());
-
-
-    
 
 
     // Return Result ID
@@ -777,6 +764,37 @@ std::string Manager::VisualizerGenerateImage(std::string _JSONRequest) {
 }
 
 
+/**
+ * Expects _JSONRequest:
+ * {
+ *   "SimulationID": <SimID>,
+ *   "ImageWidth_px": unsigned int,
+ *   "ImageHeight_px": unsigned int
+ * }
+ */
+std::string Manager::VisualizerBuildMesh(std::string _JSONRequest) {
+
+    HandlerData Handle(this, _JSONRequest, "VisualizerBuildMesh");
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+  
+    // Create and Populate Parameters From Request
+    Geometries::Vec3D Position;
+    Handle.GetParInt("ImageWidth_px", Handle.Sim()->VisualizerParams.ImageWidth_px);
+    Handle.GetParInt("ImageHeight_px", Handle.Sim()->VisualizerParams.ImageHeight_px);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    Handle.Sim()->CurrentTask = SIMULATION_VISUALIZATION_BUILD_MESH;
+    Handle.Sim()->WorkRequested = true;
+
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
 
 
 
@@ -857,6 +875,9 @@ std::string SetSpecificAPTimesHandler(Manager& Man, const nlohmann::json& ReqPar
 std::string VisualizerGenerateImage(Manager& Man, const nlohmann::json& ReqParams) {
     return Man.VisualizerGenerateImage(ReqParams.dump());
 }
+std::string VisualizerBuildMesh(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.VisualizerBuildMesh(ReqParams.dump());
+}
 
 const NESRequest_map_t NES_Request_handlers = {
     {"SimulationCreate", SimulationCreateHandler},
@@ -879,7 +900,8 @@ const NESRequest_map_t NES_Request_handlers = {
     {"PatchClampADCSetSampleRate", PatchClampADCSetSampleRateHandler},
     {"PatchClampADCGetRecordedData", PatchClampADCGetRecordedDataHandler},
     {"SetSpecificAPTimes", SetSpecificAPTimesHandler},
-    {"VisualizerGenerateImage", VisualizerGenerateImage}
+    {"VisualizerGenerateImage", VisualizerGenerateImage},
+    {"VisualizerBuildMesh", VisualizerBuildMesh}
 };
 
 bool Manager::BadReqID(int ReqID) {
