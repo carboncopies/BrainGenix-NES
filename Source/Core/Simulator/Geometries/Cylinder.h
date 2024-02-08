@@ -66,7 +66,7 @@ struct Cylinder : Geometry {
 
 
     //! Gets the rotation in radians with respect to the x, y and z axes
-    std::tuple<float, float, float> GetRotation_rad();
+    Vec3D GetRotation_rad() const;
 
 
     /**

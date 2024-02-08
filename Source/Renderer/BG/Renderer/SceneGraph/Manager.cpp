@@ -235,18 +235,6 @@ bool Manager::Headless_GetImage(Image* _Image) {
         auto deviceMemory = RenderData_->copiedColorBuffer->getDeviceMemory(RenderData_->Headless_Device_->deviceID);
 
 
-
-
-        // Populate Image Struct With Data
-        _Image->Width_px = RenderData_->Width_;
-        _Image->Height_px = RenderData_->Height_;
-        _Image->NumChannels_ = 4;
-        size_t ImageSize = _Image->Width_px * _Image->Height_px * _Image->NumChannels_; // this assumes that each pixel is a char, a bit scuffed
-        unsigned char* NewBuffer = new unsigned char[ImageSize]; 
-        // unsigned char* PixelData = (unsigned char*)imageData.get()->dataPointer();
-
-
-
         size_t destRowWidth = RenderData_->Extent_.width * sizeof(vsg::ubvec4);
         vsg::ref_ptr<vsg::Data> imageData;
         if (destRowWidth == subResourceLayout.rowPitch) {
@@ -256,14 +244,23 @@ bool Manager::Headless_GetImage(Image* _Image) {
             // Map the buffer memory and assign as a ubyteArray that will automatically unmap itself on destruction.
             // A ubyteArray is used as the graphics buffer memory is not contiguous like vsg::Array2D, so map to a flat buffer first then copy to Array2D.
             auto mappedData = vsg::MappedData<vsg::ubyteArray>::create(deviceMemory, subResourceLayout.offset, 0, vsg::Data::Properties{RenderData_->imageFormat}, subResourceLayout.rowPitch*RenderData_->Extent_.height);
-            // imageData = vsg::ubvec4Array2D::create(RenderData_->Extent_.width, RenderData_->Extent_.height, vsg::Data::Properties{RenderData_->imageFormat});
+            imageData = vsg::ubvec4Array2D::create(RenderData_->Extent_.width, RenderData_->Extent_.height, vsg::Data::Properties{RenderData_->imageFormat});
             for (uint32_t row = 0; row < RenderData_->Extent_.height; ++row) {
-                std::memcpy(NewBuffer + row*RenderData_->Extent_.width, mappedData->dataPointer(row * subResourceLayout.rowPitch), destRowWidth);
+                std::memcpy(imageData->dataPointer(row*RenderData_->Extent_.width), mappedData->dataPointer(row * subResourceLayout.rowPitch), destRowWidth);
             }
         }
 
 
-
+        // Populate Image Struct With Data
+        _Image->Width_px = RenderData_->Width_;
+        _Image->Height_px = RenderData_->Height_;
+        _Image->NumChannels_ = 4;
+        size_t ImageSize = imageData->dataSize(); // this assumes that each pixel is a char, a bit scuffed
+        
+        unsigned char* NewBuffer = new unsigned char[ImageSize]; 
+        unsigned char* PixelData = (unsigned char*)imageData.get()->dataPointer();
+        // std::copy(PixelData, PixelData + ImageSize, NewBuffer); 
+        std::memcpy(NewBuffer, PixelData, ImageSize);
         _Image->Data_ = std::unique_ptr<unsigned char>(NewBuffer);
         // imageData.release_nodelete();
 
@@ -419,7 +416,7 @@ bool Manager::Headless_SetupCommandGraph() {
     RenderData_->RenderGraph_->framebuffer = RenderData_->framebuffer;
     RenderData_->RenderGraph_->renderArea.offset = {0, 0};
     RenderData_->RenderGraph_->renderArea.extent = RenderData_->Extent_;
-    RenderData_->RenderGraph_->setClearValues({{0.25f, 0.25f, 0.25f, 1.0f}}, VkClearDepthStencilValue{0.0f, 0});
+    RenderData_->RenderGraph_->setClearValues({{0.1f, 0.1f, 0.1f, 0.0}}, VkClearDepthStencilValue{0.0f, 0});
 
     auto view = vsg::View::create(Scene_->Camera_, Scene_->Group_);
 
@@ -541,7 +538,6 @@ bool Manager::DrawFrame() {
 
     // Lock the scene mutex to ensure we're the only ones accessing it right now
     LockScene();
-
 
 
 

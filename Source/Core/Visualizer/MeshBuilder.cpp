@@ -23,8 +23,8 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
             const Geometries::Box & Box = _Simulation->Collection.GetBox(ShapeID); // Geometries::Box Box = std::get<Geometries::Box>(_Simulation->Collection.Geometries[ShapeID]);
             
             BG::NES::Renderer::Shaders::Phong Shader;
-            Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 0.1f);
-            Shader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
+            Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
+            Shader.SpecularColor_ = vsg::vec4(0.1f, 0.1f, 0.1f, 1.0f);
             Shader.Type_ = BG::NES::Renderer::Shaders::SHADER_PHONG;
 
             BG::NES::Renderer::Primitive::Cube CreateInfo;
@@ -39,8 +39,8 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
             const Geometries::Sphere & Sphere = _Simulation->Collection.GetSphere(ShapeID); // Geometries::Sphere Sphere = std::get<Geometries::Sphere>(_Simulation->Collection.Geometries[ShapeID]);
 
             BG::NES::Renderer::Shaders::Phong Shader;
-            Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 0.1f);
-            Shader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
+            Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
+            Shader.SpecularColor_ = vsg::vec4(0.1f, 0.1f, 0.1f, 1.0f);
             Shader.Type_ = BG::NES::Renderer::Shaders::SHADER_PHONG;
 
             BG::NES::Renderer::Primitive::Sphere CreateInfo;
@@ -53,16 +53,17 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
             const Geometries::Cylinder & Cylinder = _Simulation->Collection.GetCylinder(ShapeID); // Geometries::Cylinder Cylinder = std::get<Geometries::Cylinder>(_Simulation->Collection.Geometries[ShapeID]);
             
             BG::NES::Renderer::Shaders::Phong Shader;
-            Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 0.1f);
-            Shader.SpecularColor_ = vsg::vec4(1.f, 0.1f, 0.1f, 1.0f);
+            Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
+            Shader.SpecularColor_ = vsg::vec4(0.1f, 0.1f, 0.1f, 1.0f);
             Shader.Type_ = BG::NES::Renderer::Shaders::SHADER_PHONG;
 
             BG::NES::Renderer::Primitive::Cylinder CreateInfo;
-            CreateInfo.Position_ = ConvertVector(Cylinder.Center_um);
-            _Logger->Log("Warning: Renderer does not yet support Variable Width Cylinders!", 8); // FIXME! FIXME! FIXME! FIXME! FIXME! FIXME! FIXME! FIXME! FIXME! FIXME! FIXME! 
-            CreateInfo.Rotation_ = vsg::vec3(0.0f, 0.0f, 0.0f);
+            Geometries::Vec3D CylinderCenter = (Cylinder.End0Pos_um + Cylinder.End1Pos_um) / 2.;
+            CreateInfo.Position_ = ConvertVector(CylinderCenter);
+            CreateInfo.Rotation_ = RadsToDeg(ConvertVector(Cylinder.GetRotation_rad()));
+            
             CreateInfo.Height_ = 1.0f;
-            CreateInfo.Radius_   = Cylinder.End0Radius_um;
+            CreateInfo.Radius_   = (Cylinder.End0Radius_um + Cylinder.End1Radius_um) / 2.;
             CreateInfo.Shader_ = &Shader;
 
             _Renderer->AddCylinder(&CreateInfo); 

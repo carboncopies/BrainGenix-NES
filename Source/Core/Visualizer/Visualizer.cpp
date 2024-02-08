@@ -45,7 +45,7 @@ bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
     // this involves enumerating all the BS compartments in the simulation in order to create them on vulkan
     // Next, we'll then render this all on the GPU with a call to MeshRenderer 
 
-
+    _Renderer->ResetScene();
 
     // -- Stage 1 --
     // Here, we're going to build the mesh using the meshrenderer

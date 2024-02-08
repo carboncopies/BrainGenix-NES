@@ -140,10 +140,10 @@ void Interface::ResetScene() {
     // LockScene();
     // WaitUntilGPUDone();
 
-    // // hacky
+    // hacky
     // Shaders::Phong CubeShader;
-    // CubeShader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 0.0f);
-    // CubeShader.SpecularColor_ = vsg::vec4(0.f, 0.0f, 0.0f, 0.0f);
+    // CubeShader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
+    // CubeShader.SpecularColor_ = vsg::vec4(0.f, 0.0f, 0.0f, 1.0f);
     // CubeShader.Type_ = Shaders::SHADER_PHONG;
     // Primitive::Cube CreateInfo;
     // CreateInfo.Position_ = vsg::vec3(0.0f, -1.1f, 0.0f);
