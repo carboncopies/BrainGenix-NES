@@ -28,8 +28,13 @@ namespace SignalFunctions {
 //! Double exponential expression used in calculation of post-synaptic potential
 //! contributions.
 float DoubleExponentExpr(float amp, float tauRise, float tauDecay, float tDiff);
+
 //! One-dimensional convolution.
-std::vector<float> Convolve1D(std::vector<float> signal, std::vector<float> kernel);
+//! For the sake of efficiency, the convolved vector must already have been
+//! prepared to the size: signal.size()+kernel.size()-1.
+//! Also, for the sake of efficiency, we store and provide the already reversed
+//! kernel instead of reversing it here each time.
+bool Convolve1D(const std::vector<float> & signal, const std::vector<float> & reversed_kernel, std::vector<float> & convolved);
 
 }; // namespace SignalFunctions
 }; // namespace Simulator

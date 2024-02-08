@@ -82,7 +82,7 @@ struct BSNeuron : CoreStructs::Neuron {
 
     std::vector<float> TRecorded_ms{};
     std::vector<float> VmRecorded_mV{};
-    std::vector<float> FIFO{};
+    std::deque<float> FIFO{};
     std::vector<float> ConvolvedFIFO{};
     std::vector<CoreStructs::ReceptorData> ReceptorDataVec{};
 
@@ -147,14 +147,19 @@ struct BSNeuron : CoreStructs::Neuron {
     //! and the time of update.
     void Update(float t_ms, bool recording);
 
-    //! We have to flip the signal FIFO, because the most recent is in [0].
-    //! We need this, because the kernel has a specific time order.
-    //! Alternatively, when we prepare the kernel we can flip it and
-    //! remember to view [0] as most recent in the convolution result.
-    void UpdateConvolvedFIFO(std::vector<float> kernel);
+    //! NOTE: SetFIFO must be called first, otherwise the FIFO is not
+    //!       updated in UpdateVm.
+    //! NOTE: We flip signal FIFO, because most recent is in [0] and kernel
+    //!       has specific time-order.
+    //!       (Alternatively, we could flip the prepared kernel and take
+    //!       care to view [0] as most recent in covolution result.)
+    //! NOTE: For efficiency (see Convolve1D), we provide a reversed kernel
+    //!       that was reversed and stored during initialization.
+    void UpdateConvolvedFIFO(const std::vector<float> & reversed_kernel);
 
-    //! Sets the initial value of the FIFO.
-    void SetFIFO(float FIFO_ms, float dt_ms);
+    //! Sets the initial value of the FIFO and prepares a buffer for convolvedFIFO.
+    //! FIFO_dt_ms == 0.0 means used a FIFO of size 1.
+    void SetFIFO(float FIFO_ms, float FIFO_dt_ms, const std::vector<float> & reversed_kernel);
 
     virtual void InputReceptorAdded(CoreStructs::ReceptorData RData);
 };

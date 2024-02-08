@@ -302,7 +302,7 @@ std::string Manager::SimulationGetStatus(std::string _JSONRequest) {
     ResponseJSON["IsSimulating"] = (bool)Handle.Sim()->IsProcessing;
     ResponseJSON["RealWorldTimeRemaining_ms"] = 0.0;
     ResponseJSON["RealWorldTimeElapsed_ms"] = 0.0;
-    ResponseJSON["InSimulationTime_ms"] = 0.0;
+    ResponseJSON["InSimulationTime_ms"] = Handle.Sim()->T_ms;
     ResponseJSON["InSimulationTimeRemaining_ms"] = 0.0;
     ResponseJSON["PercentComplete"] = 0.0;
     return ResponseJSON.dump();
