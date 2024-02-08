@@ -6,6 +6,11 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
+
+float RandFloatBetween0And1() {
+    return (float)(rand()) / (float)(RAND_MAX);
+}
+
 bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, Simulation* _Simulation) {
     assert(_Logger != nullptr && "You have passed a nullptr to the logger parameter, bad!");
     assert(_Renderer != nullptr && "You have passed a nullptr to the renderer parameter, bad!");
@@ -23,7 +28,7 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
             const Geometries::Box & Box = _Simulation->Collection.GetBox(ShapeID); // Geometries::Box Box = std::get<Geometries::Box>(_Simulation->Collection.Geometries[ShapeID]);
             
             BG::NES::Renderer::Shaders::Phong Shader;
-            Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
+            Shader.DiffuseColor_  = vsg::vec4(RandFloatBetween0And1(), RandFloatBetween0And1(), RandFloatBetween0And1(), 1.0f);
             Shader.SpecularColor_ = vsg::vec4(0.1f, 0.1f, 0.1f, 1.0f);
             Shader.Type_ = BG::NES::Renderer::Shaders::SHADER_PHONG;
 
@@ -39,7 +44,7 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
             const Geometries::Sphere & Sphere = _Simulation->Collection.GetSphere(ShapeID); // Geometries::Sphere Sphere = std::get<Geometries::Sphere>(_Simulation->Collection.Geometries[ShapeID]);
 
             BG::NES::Renderer::Shaders::Phong Shader;
-            Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
+            Shader.DiffuseColor_  = vsg::vec4(RandFloatBetween0And1(), RandFloatBetween0And1(), RandFloatBetween0And1(), 1.0f);
             Shader.SpecularColor_ = vsg::vec4(0.1f, 0.1f, 0.1f, 1.0f);
             Shader.Type_ = BG::NES::Renderer::Shaders::SHADER_PHONG;
 
@@ -53,7 +58,7 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
             const Geometries::Cylinder & Cylinder = _Simulation->Collection.GetCylinder(ShapeID); // Geometries::Cylinder Cylinder = std::get<Geometries::Cylinder>(_Simulation->Collection.Geometries[ShapeID]);
             
             BG::NES::Renderer::Shaders::Phong Shader;
-            Shader.DiffuseColor_  = vsg::vec4(0.5f, 0.5f, 0.5f, 1.0f);
+            Shader.DiffuseColor_  = vsg::vec4(RandFloatBetween0And1(), RandFloatBetween0And1(), RandFloatBetween0And1(), 1.0f);
             Shader.SpecularColor_ = vsg::vec4(0.1f, 0.1f, 0.1f, 1.0f);
             Shader.Type_ = BG::NES::Renderer::Shaders::SHADER_PHONG;
 
