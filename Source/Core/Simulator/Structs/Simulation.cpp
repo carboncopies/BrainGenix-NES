@@ -237,6 +237,26 @@ void Simulation::RunFor(float tRun_ms) {
 
 void Simulation::Show() { return; };
 
+Compartments::BS * Simulation::FindCompartmentByID(int CompartmentID) {
+    if (CompartmentID >= BSCompartments.size()) {
+        return nullptr;
+    }
+
+    return &(BSCompartments.at(CompartmentID));
+}
+
+CoreStructs::Neuron * Simulation::FindNeuronByCompartment(int CompartmentID) const {
+    auto it = NeuronByCompartment.find(CompartmentID);
+    if (it == NeuronByCompartment.end()) {
+        return nullptr;
+    }
+    int neuron_id = it->second;
+    if ((neuron_id < 0) || (neuron_id >= Neurons.size())) {
+        return nullptr;
+    }
+    return Neurons.at(neuron_id).get();
+}
+
 }; // namespace Simulator
 }; // namespace NES
 }; // namespace BG

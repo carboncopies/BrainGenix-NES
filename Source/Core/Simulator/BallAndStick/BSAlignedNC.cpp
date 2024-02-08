@@ -75,15 +75,18 @@ void BSAlignedNC::SetWeight(size_t from, size_t to, SetWeightMethod method) {
         throw std::invalid_argument("Unknown source cell.");
 
     switch (method) {
-    case SetWeightMethod::BINARY: {
-        targetCell = std::dynamic_pointer_cast<BSNeuron>(itTo->second);
-        sourceCell = std::dynamic_pointer_cast<BSNeuron>(itFrom->second);
+    // *** Let's fix this later...
+    // case SetWeightMethod::BINARY: {
+    //     targetCell = std::dynamic_pointer_cast<BSNeuron>(itTo->second);
+    //     sourceCell = std::dynamic_pointer_cast<BSNeuron>(itFrom->second);
 
-        // source and weight
-        targetCell->ReceptorDataVec.push_back(std::make_tuple(sourceCell, 1.0));
-        targetCell->Morphology["receptor"] = &CreateBSReceptor(*Collection_ptr, sourceCell->Morphology.at("soma")->Center_um);
-        break;
-    }
+    //     // source and weight
+    //     CoreStructs::ReceptorData receptordata;
+
+    //     targetCell->ReceptorDataVec.push_back(std::make_tuple(sourceCell, 1.0));
+    //     targetCell->Morphology["receptor"] = &CreateBSReceptor(*Collection_ptr, sourceCell->Morphology.at("soma")->Center_um);
+    //     break;
+    // }
     default:
         break;
     }

@@ -26,7 +26,7 @@
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/Neuron.h>
 #include <Simulator/Structs/SignalFunctions.h>
-#include <Simulator/Structs/Neuron.h>
+//#include <Simulator/Structs/Receptor.h>
 //#include <Simulator/Structs/Simulation.h>
 
 //! DtAct_ms to return when there has not been any spike.
@@ -49,6 +49,8 @@ namespace BallAndStick {
  *
  */
 struct BSNeuron : CoreStructs::Neuron {
+
+    CoreStructs::BSNeuronStruct build_data; // Copy of the struct that was used to build this neuron.
 
     //std::unordered_map<std::string, std::shared_ptr<Geometries::Geometry>> Morphology;
     std::unordered_map<std::string, Geometries::Geometry*> Morphology; // Regular pointers, because the objects are maintained in Simulation.Collection.
@@ -90,7 +92,7 @@ struct BSNeuron : CoreStructs::Neuron {
 
     //! Constructors
     BSNeuron(int ID, Geometries::Geometry* soma, Geometries::Geometry* axon); // Geometries, as soma and axon may not be Sphere/Cylinder in future. //std::shared_ptr<Geometries::Geometry> soma, std::shared_ptr<Geometries::Geometry> axon);
-    BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct, Geometries::Geometry* soma, Geometries::Geometry* axon);
+    BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct);
     //BSNeuron(Simulation & sim, const CoreStructs::BSNeuronStruct & bsneuronstruct);
 
     //! Returns the geometric center of the neuron.
@@ -153,6 +155,8 @@ struct BSNeuron : CoreStructs::Neuron {
 
     //! Sets the initial value of the FIFO.
     void SetFIFO(float FIFO_ms, float dt_ms);
+
+    virtual void InputReceptorAdded(CoreStructs::ReceptorData RData);
 };
 
 }; // namespace BallAndStick

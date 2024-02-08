@@ -398,6 +398,11 @@ std::string Manager::BoxCreate(std::string _JSONRequest) {
     return Handle.ResponseWithID("ShapeID", S.ID);
 }
 
+/**
+ * Creates a BS Compartment with form and function.
+ * Form: A shape.
+ * Function: Some parameters.
+ */
 std::string Manager::BSCreate(std::string _JSONRequest) {
 
     HandlerData Handle(this, _JSONRequest, "BSCreate");
@@ -415,6 +420,13 @@ std::string Manager::BSCreate(std::string _JSONRequest) {
         || (!Handle.GetParFloat("AfterHyperpolarizationAmplitude_mV", C.AfterHyperpolarizationAmplitude_mV))
         || (!Handle.GetParString("Name", C.Name))) {
         return Handle.ErrResponse();
+    }
+
+    // We cache the pointer to the shape in the compartment data, so that it
+    // does not need to reach back to the Simulation to search for it.
+    C.ShapePtr = Handle.Sim()->Collection.GetGeometry(C.ShapeID);
+    if (!C.ShapePtr) {
+        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
     }
 
     C.ID = Handle.Sim()->BSCompartments.size();
@@ -446,6 +458,22 @@ std::string Manager::StapleCreate(std::string _JSONRequest) {
     return Handle.ResponseWithID("StapleID", C.ID);
 }
 
+/**
+ * This receptor create handler creates an object that contains information
+ * about source and destination compartments and the physical location of
+ * the receptor, as well as receptor paramters.
+ * (*** TODO: This does not yet link to the shape of the receptor!!)
+ * 
+ * The receptor object is maintained in a list at the Simulation level,
+ * and the target neuron is found (via the destination compartment), and
+ * is informed of its new receptor.
+ * 
+ * How that is handled by the neuron depends on the neuron type.
+ * In the case of the simplest BSNeuron, connections are treated as in
+ * simple integrate and fire spiking neurons. The BSNeuron uses the
+ * source neuron information (found via the source compartment) to
+ * set up input connections to watch.
+ */
 std::string Manager::ReceptorCreate(std::string _JSONRequest) {
 
     HandlerData Handle(this, _JSONRequest, "ReceptorCreate");
@@ -468,10 +496,14 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest) {
     C.ID = Handle.Sim()->Receptors.size();
     Handle.Sim()->Receptors.push_back(C);
 
-    // *** TODO: Are these receptor structs that are kept in the list here actually
-    //           used anywhere? Do they create a functional receptor object? Are
-    //           they checked during Neuron updates?
-    //           This might be where a functional object has to be created.
+    // Inform destination neuron of its new input receptor.
+    CoreStructs::Neuron * SrcNeuronPtr = Handle.Sim()->FindNeuronByCompartment(C.SourceCompartmentID);
+    CoreStructs::Neuron * DstNeuronPtr = Handle.Sim()->FindNeuronByCompartment(C.DestinationCompartmentID);
+    if ((SrcNeuronPtr==nullptr) || (DstNeuronPtr==nullptr)) {
+        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+    }
+    CoreStructs::ReceptorData RData(C.ID, &(Handle.Sim()->Receptors.back()), SrcNeuronPtr);
+    DstNeuronPtr->InputReceptorAdded(RData);
 
     // Return Result ID
     return Handle.ResponseWithID("ReceptorID", C.ID);
@@ -498,8 +530,8 @@ std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
 
     // Build New BSNeuron Object
     CoreStructs::BSNeuronStruct C;
-    if ((!Handle.GetParInt("SomaID", C.SomaShapeID))
-        || (!Handle.GetParInt("AxonID", C.AxonShapeID))
+    if ((!Handle.GetParInt("SomaID", C.SomaCompartmentID))
+        || (!Handle.GetParInt("AxonID", C.AxonCompartmentID))
         || (!Handle.GetParFloat("MembranePotential_mV", C.MembranePotential_mV))
         || (!Handle.GetParFloat("RestingPotential_mV", C.RestingPotential_mV))
         || (!Handle.GetParFloat("SpikeThreshold_mV", C.SpikeThreshold_mV))
@@ -512,15 +544,19 @@ std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    C.ID = Handle.Sim()->Neurons.size();
-    // NOTE: At this time, we're keeping both a list of these data structs (in the Neurons list)
-    //       and a list of functional neuron objects. For more info, see Log 202401121525.
-    Geometries::Geometry * soma_ptr = Handle.Sim()->Collection.GetGeometry(C.SomaShapeID);
-    Geometries::Geometry * axon_ptr = Handle.Sim()->Collection.GetGeometry(C.AxonShapeID);
-    if ((!axon_ptr) || (!soma_ptr)) {
+    // We cache the pointers to the compartments in the neuron data, so that it
+    // does not need to reach back to the Simulation to search for it.
+    C.SomaCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.SomaCompartmentID);
+    C.AxonCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.AxonCompartmentID);
+    if ((!C.SomaCompartmentPtr) || (!C.AxonCompartmentPtr)) {
         return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
     }
-    Handle.Sim()->Neurons.push_back(std::make_shared<BallAndStick::BSNeuron>(C, soma_ptr, axon_ptr));
+
+    C.ID = Handle.Sim()->Neurons.size();
+    
+    Handle.Sim()->Neurons.push_back(std::make_shared<BallAndStick::BSNeuron>(C));
+    Handle.Sim()->NeuronByCompartment.emplace(C.SomaCompartmentID, C.ID);
+    Handle.Sim()->NeuronByCompartment.emplace(C.AxonCompartmentID, C.ID);
 
     // Return Result ID
     return Handle.ResponseWithID("NeuronID", C.ID);

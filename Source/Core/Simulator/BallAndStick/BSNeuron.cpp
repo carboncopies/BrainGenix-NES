@@ -14,10 +14,10 @@ BSNeuron::BSNeuron(int ID, Geometries::Geometry* soma, Geometries::Geometry* axo
     this->Morphology["axon"] = axon;
 };
 
-BSNeuron::BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct, Geometries::Geometry* soma, Geometries::Geometry* axon) {
+BSNeuron::BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct) {
+    build_data = bsneuronstruct;
+
     ID = bsneuronstruct.ID;
-    Morphology["soma"] = soma;
-    Morphology["axon"] = axon;
     Vm_mV = bsneuronstruct.MembranePotential_mV;
     VRest_mV = bsneuronstruct.RestingPotential_mV;
     VAct_mV = bsneuronstruct.SpikeThreshold_mV;
@@ -26,6 +26,9 @@ BSNeuron::BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct, Geometrie
     TauPSPr_ms = bsneuronstruct.PostsynapticPotentialRiseTime_ms;
     TauPSPd_ms = bsneuronstruct.PostsynapticPotentialDecayTime_ms;
     VPSP_mV = bsneuronstruct.PostsynapticPotentialAmplitude_mV;
+
+    Morphology["soma"] = build_data.SomaCompartmentPtr->ShapePtr;
+    Morphology["axon"] = build_data.AxonCompartmentPtr->ShapePtr;
 }
 
 //! Returns the geometric center of the neuron.
@@ -137,13 +140,17 @@ float BSNeuron::VPSPT_mV(float t_ms) {
     float vPSPt_mV = 0.0;
 
     for (auto receptorData : this->ReceptorDataVec) {
-        auto srcCell = std::get<0>(receptorData);
+        auto srcCell = receptorData.SrcNeuronPtr;
         if (!srcCell->HasSpiked()) continue;
 
-        float weight = std::get<1>(receptorData);
+        float weight = receptorData.ReceptorPtr->Conductance_nS; // *** may need to multiply/convert to get a weight to multiply with VPSP_mV
         float dtPSP_ms = srcCell->DtAct_ms(t_ms);
 
-        vPSPt_mV += SignalFunctions::DoubleExponentExpr(weight * this->VPSP_mV, this->TauPSPr_ms, this->TauPSPd_ms, dtPSP_ms);
+        vPSPt_mV += SignalFunctions::DoubleExponentExpr(
+            weight * this->VPSP_mV, 
+            receptorData.ReceptorPtr->TimeConstantRise_ms, //this->TauPSPr_ms, 
+            receptorData.ReceptorPtr->TimeConstantDecay_ms, //this->TauPSPd_ms,
+            dtPSP_ms);
     }
     return vPSPt_mV;
 };
@@ -264,6 +271,10 @@ void BSNeuron::UpdateConvolvedFIFO(std::vector<float> kernel) {
     this->CaSamples.emplace_back(this->ConvolvedFIFO.back() + 1.0);
     this->TCaSamples_ms.emplace_back(this->T_ms);
 };
+
+void BSNeuron::InputReceptorAdded(CoreStructs::ReceptorData RData) {
+    ReceptorDataVec.emplace_back(RData);
+}
 
 }; // namespace BallAndStick
 }; // namespace Simulator

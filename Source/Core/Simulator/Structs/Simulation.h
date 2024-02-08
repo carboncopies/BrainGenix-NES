@@ -88,6 +88,7 @@ struct Simulation {
     Geometries::GeometryCollection Collection; /**Instance of GeometryCollection struct containing all geometries in this simulation*/
 
     std::vector<Compartments::BS> BSCompartments; /**This will need to be updated later to a std::variant type, but for now it stores the only type of supported compartments, BallStick type*/
+    std::map<int, int> NeuronByCompartment; // Fast look-up map built while creating neurons.
 
     std::vector<Connections::Staple> Staples; /**List of staple connections, index is their id (also stored in struct)*/
     std::vector<Connections::Receptor> Receptors; /**List of receptor connections, index is their id (and it's also stored in the struct itself)*/
@@ -124,6 +125,9 @@ struct Simulation {
     nlohmann::json GetRecordingJSON() const;
     void RunFor(float tRun_ms);
     void Show();
+
+    Compartments::BS * FindCompartmentByID(int CompartmentID);
+    CoreStructs::Neuron * FindNeuronByCompartment(int CompartmentID) const;
 };
 
 }; // namespace Simulator

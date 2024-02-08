@@ -18,6 +18,8 @@
 #include <deque>
 
 #include <Simulator/Geometries/VecTools.h>
+#include <Simulator/Structs/Receptor.h>
+#include <Simulator/Structs/BS.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <nlohmann/json.hpp>
@@ -26,6 +28,19 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 namespace CoreStructs {
+
+// Forward declarations:
+struct Neuron;
+
+//! The neuron maintains informaition about receptors that were created.
+struct ReceptorData {
+    int ReceptorID = -1;
+    Connections::Receptor * ReceptorPtr = nullptr;
+    Neuron * SrcNeuronPtr = nullptr;
+
+    ReceptorData(int _RID, Connections::Receptor * _RPtr, Neuron * _SNPtr): ReceptorID(_RID), ReceptorPtr(_RPtr), SrcNeuronPtr(_SNPtr) {}
+};
+//typedef std::tuple<std::shared_ptr<CoreStructs::Neuron>, float> ReceptorData;
 
 /**
  * @brief This struct provides the base struct for all neurons.
@@ -58,11 +73,9 @@ struct Neuron {
     virtual void Update(float t_ms, bool recording);
 
     virtual nlohmann::json GetRecordingJSON() const;
-};
 
-//! ReceptorData is a tuple containing a pointer to the source (pre-synaptic)
-//! neuron of a connection and its weight.
-typedef std::tuple<std::shared_ptr<CoreStructs::Neuron>, float> ReceptorData;
+    virtual void InputReceptorAdded(ReceptorData RData);
+};
 
 //! NeuronRecording is an unordered map containing data from simulation in a
 //! neuron.
@@ -71,10 +84,10 @@ typedef std::unordered_map<std::string, std::vector<float>> NeuronRecording;
 struct BSNeuronStruct {
     
     std::string Name; /**Name of the Neuron*/
-    int ID; /**ID of the Neuron */
+    int ID = -1; /**ID of the Neuron */
 
-    int SomaShapeID;
-    int AxonShapeID;
+    int SomaCompartmentID;
+    int AxonCompartmentID;
 
     float MembranePotential_mV;
     float RestingPotential_mV;
@@ -84,6 +97,10 @@ struct BSNeuronStruct {
     float PostsynapticPotentialRiseTime_ms;
     float PostsynapticPotentialDecayTime_ms;
     float PostsynapticPotentialAmplitude_mV;
+
+    // Direct access caches:
+    Compartments::BS* SomaCompartmentPtr = nullptr;
+    Compartments::BS* AxonCompartmentPtr = nullptr;
 
 };
 

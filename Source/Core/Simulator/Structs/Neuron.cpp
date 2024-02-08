@@ -57,6 +57,10 @@ nlohmann::json Neuron::GetRecordingJSON() const {
     return recording;
 }
 
+void Neuron::InputReceptorAdded(ReceptorData RData) {
+    WARNWRONGOOPLEVEL();
+}
+
 }; // namespace CoreStructs
 }; // namespace Simulator
 }; // namespace NES
