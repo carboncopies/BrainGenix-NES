@@ -62,7 +62,12 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
             CreateInfo.Position_ = ConvertVector(CylinderCenter);
             CreateInfo.Rotation_ = RadsToDeg(ConvertVector(Cylinder.GetRotation_rad()));
             
-            CreateInfo.Height_ = 1.0f;
+
+            Geometries::Vec3D P1 = Cylinder.End0Pos_um;
+            Geometries::Vec3D P2 = Cylinder.End1Pos_um;
+            double CylinderLength = pow((pow((P2.x - P1.x), 2) + pow((P2.y - P1.y), 2) + pow((P2.z - P1.z), 2)), 0.5);
+
+            CreateInfo.Height_ = CylinderLength;
             CreateInfo.Radius_   = (Cylinder.End0Radius_um + Cylinder.End1Radius_um) / 2.;
             CreateInfo.Shader_ = &Shader;
 
