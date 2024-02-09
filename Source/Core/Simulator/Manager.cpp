@@ -20,7 +20,7 @@ namespace Simulator {
 //           E.g. call AddBSNeuron(ReqParams) where ReqParams is as obtained
 //           in NESRequest() below.
 
-typedef std::string NESRequest_func_t(Manager&, const nlohmann::json&);
+typedef std::string NESRequest_func_t(Manager&, const nlohmann::json&, ManagerTaskData*);
 
 struct RouteAndHandler {
     std::string Route;
@@ -32,74 +32,74 @@ struct RouteAndHandler {
 //typedef std::map<std::string, NESRequest_func_t*> NESRequest_map_t;
 typedef std::map<std::string, RouteAndHandler> NESRequest_map_t;
 
-std::string SimulationCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.SimulationCreate(ReqParams.dump());
+std::string SimulationCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.SimulationCreate(ReqParams.dump(), called_by_manager_task);
 }
-std::string SimulationResetHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.SimulationReset(ReqParams.dump());
+std::string SimulationResetHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.SimulationReset(ReqParams.dump(), called_by_manager_task);
 }
-std::string SimulationRunForHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.SimulationRunFor(ReqParams.dump());
+std::string SimulationRunForHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.SimulationRunFor(ReqParams.dump(), called_by_manager_task);
 }
-std::string SimulationRecordAllHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.SimulationRecordAll(ReqParams.dump());
+std::string SimulationRecordAllHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.SimulationRecordAll(ReqParams.dump(), called_by_manager_task);
 }
-std::string SimulationGetRecordingHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.SimulationGetRecording(ReqParams.dump());
+std::string SimulationGetRecordingHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.SimulationGetRecording(ReqParams.dump(), called_by_manager_task);
 }
-std::string SimulationGetStatusHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.SimulationGetStatus(ReqParams.dump());
+std::string SimulationGetStatusHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.SimulationGetStatus(ReqParams.dump(), called_by_manager_task);
 }
-std::string SimulationBuildMeshHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.SimulationBuildMesh(ReqParams.dump());
+std::string SimulationBuildMeshHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.SimulationBuildMesh(ReqParams.dump(), called_by_manager_task);
 }
-std::string SimulationSaveHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.SimulationSave(ReqParams.dump());
+std::string SimulationSaveHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.SimulationSave(ReqParams.dump(), called_by_manager_task);
 }
-std::string SimulationLoadHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.SimulationLoad(ReqParams.dump());
+std::string SimulationLoadHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.SimulationLoad(ReqParams.dump(), called_by_manager_task);
 }
-std::string SphereCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.SphereCreate(ReqParams.dump());
+std::string SphereCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.SphereCreate(ReqParams.dump(), called_by_manager_task);
 }
-std::string CylinderCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.CylinderCreate(ReqParams.dump());
+std::string CylinderCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.CylinderCreate(ReqParams.dump(), called_by_manager_task);
 }
-std::string BoxCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.BoxCreate(ReqParams.dump());
+std::string BoxCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.BoxCreate(ReqParams.dump(), called_by_manager_task);
 }
-std::string BSCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.BSCreate(ReqParams.dump());
+std::string BSCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.BSCreate(ReqParams.dump(), called_by_manager_task);
 }
-std::string StapleCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.StapleCreate(ReqParams.dump());
+std::string StapleCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.StapleCreate(ReqParams.dump(), called_by_manager_task);
 }
-std::string ReceptorCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.ReceptorCreate(ReqParams.dump());
+std::string ReceptorCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.ReceptorCreate(ReqParams.dump(), called_by_manager_task);
 }
-std::string BSNeuronCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.BSNeuronCreate(ReqParams.dump());
+std::string BSNeuronCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.BSNeuronCreate(ReqParams.dump(), called_by_manager_task);
 }
-std::string PatchClampDACCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.PatchClampDACCreate(ReqParams.dump());
+std::string PatchClampDACCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.PatchClampDACCreate(ReqParams.dump(), called_by_manager_task);
 }
-std::string PatchClampADCCreateHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.PatchClampADCCreate(ReqParams.dump());
+std::string PatchClampADCCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.PatchClampADCCreate(ReqParams.dump(), called_by_manager_task);
 }
-std::string PatchClampDACSetOutputListHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.PatchClampDACSetOutputList(ReqParams.dump());
+std::string PatchClampDACSetOutputListHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.PatchClampDACSetOutputList(ReqParams.dump(), called_by_manager_task);
 }
-std::string PatchClampADCSetSampleRateHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.PatchClampADCSetSampleRate(ReqParams.dump());
+std::string PatchClampADCSetSampleRateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.PatchClampADCSetSampleRate(ReqParams.dump(), called_by_manager_task);
 }
-std::string PatchClampADCGetRecordedDataHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.PatchClampADCGetRecordedData(ReqParams.dump());
+std::string PatchClampADCGetRecordedDataHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.PatchClampADCGetRecordedData(ReqParams.dump(), called_by_manager_task);
 }
-std::string SetSpecificAPTimesHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.SetSpecificAPTimes(ReqParams.dump());
+std::string SetSpecificAPTimesHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.SetSpecificAPTimes(ReqParams.dump(), called_by_manager_task);
 }
-std::string ManTaskStatusHandler(Manager& Man, const nlohmann::json& ReqParams) {
-    return Man.ManTaskStatus(ReqParams.dump());
+std::string ManTaskStatusHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.ManTaskStatus(ReqParams.dump(), called_by_manager_task);
 }
 
 const NESRequest_map_t NES_Request_handlers = {
@@ -147,6 +147,7 @@ class HandlerData {
 protected:
     Manager & Man;
     std::string Source;
+    ManagerTaskData * ManTaskData;
     std::vector<std::unique_ptr<Simulation>>* SimVec = nullptr;
 
     std::string JSONRequestStr;
@@ -157,21 +158,29 @@ protected:
     Simulation* ThisSimulation = nullptr;
 
 public:
-    HandlerData(Manager* _Man, const std::string & _JSONRequest, const std::string & _Source, bool PermitBusy = false, bool NoSimulation = false): Man(*_Man), Source(_Source), JSONRequestStr(_JSONRequest) {
+    HandlerData(
+        Manager* _Man,
+        const std::string & _JSONRequest,
+        const std::string & _Source,
+        ManagerTaskData * called_by_manager_task,
+        bool PermitBusy = false,
+        bool NoSimulation = false
+    ): Man(*_Man), Source(_Source), ManTaskData(called_by_manager_task), JSONRequestStr(_JSONRequest) {
+
         SimVec = Man.GetSimulationVectorPtr();
         RequestJSON = nlohmann::json::parse(_JSONRequest);
 
-        bool isloadingsim = Man.IsLoadingSim();
-        if (isloadingsim && (_Source == "SimulationLoad")) {
+        bool isloadingsim = (ManTaskData != nullptr); // Man.IsLoadingSim();
+        if (isloadingsim && (_Source == "SimulationLoad")) { // *** PERHAPS WE CAN ALLOW THIS (AS WE USE LOCAL PARAMS NOW)?
             Man.Logger()->Log("Recursive SimulationLoad attempted.", 8);
             Status = API::bgStatusCode::bgStatusGeneralFailure;
             return; // Prevents recursion.
         }
 
-        // If loading and a Simulation was not created yet then only
-        // allow requests that do not need one ("NoSimulation"), such
+        // If this Handler was called while loading and a Simulation was not created
+        // yet then only allow requests that do not need one ("NoSimulation"), such
         // as "SimulationCreate" and "NESRequest".
-        if (isloadingsim && (Man.SimReplaceIDMissing()) && (!NoSimulation)) {
+        if (isloadingsim && (!ManTaskData->HasReplacementSimID()) && (!NoSimulation)) {
             Man.Logger()->Log(Source+" needs a Sim, but we are still Loading and have not come across SimulationCreate yet.", 8);
             Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
             return; // When loading, the first valid request must be SimulationCreate.
@@ -182,7 +191,7 @@ public:
         }
 
         if (isloadingsim) {
-            SimulationID = Man.GetSimReplaceID();
+            SimulationID = ManTaskData->ReplaceSimulationID;
         } else {
             if (!GetParInt("SimulationID", SimulationID)) {
                 return;
@@ -419,37 +428,46 @@ int Manager::AddManagerTask(std::unique_ptr<ManagerTaskData> & TaskData) {
     return TaskID;
 }
 
+// *** WE CAN PROBABLY DO WITHOUT THIS CONSTRAINT NOW (AS WE USE LOCAL PARAMS)!
 // Only one thread at a time, others wait for lock release.
-void Manager::LoadingSimSetter(bool SetTo) {
-    std::lock_guard<std::mutex> guard(LoadingSimSetterMutex);
-    LoadingSim = SetTo;
-}
-
+// void Manager::LoadingSimSetter(bool SetTo) {
+//     std::lock_guard<std::mutex> guard(LoadingSimSetterMutex);
+//     LoadingSim = SetTo;
+// }
+//
 // We can run only one loading task at a time, because we are using some Manager-global
 // flags and variables to modify the behavior of NESRequest and HandleData, namely to
 // establish the new Simulation ID and to replace loaded SimIDs with that.
 // Before proceeding, we wait for other loading tasks in the queue to finish.
+// void Manager::SimLoadingTask(ManagerTaskData & TaskData) {
+//     // Wait for any concurrent loading tasks that happen to be running to finish:
+//     // unsigned long timeout_ms = 10000;
+//     while (LoadingSim) {
+//         timeout_ms--;
+//         if (timeout_ms==0) {
+//             Logger_->Log("SimLoadingTask timed out waiting for other loading taks to finish!", 8);
+//             TaskData.SetStatus(ManagerTaskStatus::TimeOut);
+//             return;
+//         }
+//         std::this_thread::sleep_for(std::chrono::milliseconds(1));
+//     }
+//     LoadingSimSetter(true);  // Elicits special behavior in NESRequest to replace SimID, etc.
+//     LoadingSimReplaceID = -1;
+//     // *** Not sure if we should prepend with "std::string loadresponse = " to keep the full
+//     //     record of the loading requests in the task output JSON.
+//     NESRequest(TaskData.InputData, called_by_manager_task=&TaskData);
+//     TaskData.OutputData["SimulationID"] = ManagerTaskData.ReplaceSimulationID;
+//     //TaskData.NewSimulationID = GetSimReplaceID();
+//     TaskData.SetStatus(ManagerTaskStatus::Success);
+//     LoadingSimSetter(false);
+// }
+
 void Manager::SimLoadingTask(ManagerTaskData & TaskData) {
-    // Wait for any concurrent loading tasks that happen to be running to finish:
-    unsigned long timeout_ms = 10000;
-    while (LoadingSim) {
-        timeout_ms--;
-        if (timeout_ms==0) {
-            Logger_->Log("SimLoadingTask timed out waiting for other loading taks to finish!", 8);
-            TaskData.SetStatus(ManagerTaskStatus::TimeOut);
-            return;
-        }
-        std::this_thread::sleep_for(std::chrono::milliseconds(1));
-    }
-    LoadingSimSetter(true);  // Elicits special behavior in NESRequest to replace SimID, etc.
-    LoadingSimReplaceID = -1;
     // *** Not sure if we should prepend with "std::string loadresponse = " to keep the full
     //     record of the loading requests in the task output JSON.
-    NESRequest(TaskData.InputData);
-    TaskData.OutputData["SimulationID"] = GetSimReplaceID();
-    //TaskData.NewSimulationID = GetSimReplaceID();
+    NESRequest(TaskData.InputData, &TaskData);
+    TaskData.OutputData["SimulationID"] = TaskData.ReplaceSimulationID;
     TaskData.SetStatus(ManagerTaskStatus::Success);
-    LoadingSimSetter(false);
 }
 
 void SimLoadingTaskThread(ManagerTaskData* TaskData) {
@@ -464,9 +482,9 @@ Simulation* Manager::MakeSimulation() {
     return Simulations_.at(SimID).get();
 }
 
-std::string Manager::SimulationCreate(std::string _JSONRequest) {
+std::string Manager::SimulationCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
 
-    HandlerData Handle(this, _JSONRequest, "SimulationCreate", true, true);
+    HandlerData Handle(this, _JSONRequest, "SimulationCreate", called_by_manager_task, true, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -487,17 +505,17 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     // Start Thread
     SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, RenderPool_, &StopThreads_));
 
-    if (IsLoadingSim()) {
-        LoadingSimReplaceID = Sim->ID;
+    if (called_by_manager_task != nullptr) {
+        called_by_manager_task->ReplaceSimulationID = Sim->ID;
     }
 
     // Return Result ID
     return Handle.ResponseWithID("SimulationID", Sim->ID);
 }
 
-std::string Manager::SimulationReset(std::string _JSONRequest) {
+std::string Manager::SimulationReset(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
 
-    HandlerData Handle(this, _JSONRequest, "SimulationReset");
+    HandlerData Handle(this, _JSONRequest, "SimulationReset", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -510,9 +528,9 @@ std::string Manager::SimulationReset(std::string _JSONRequest) {
 }
 
 // This request starts at Simulation Task.
-std::string Manager::SimulationRunFor(std::string _JSONRequest) {
+std::string Manager::SimulationRunFor(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
 
-    HandlerData Handle(this, _JSONRequest, "SimulationRunFor");
+    HandlerData Handle(this, _JSONRequest, "SimulationRunFor", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -529,9 +547,9 @@ std::string Manager::SimulationRunFor(std::string _JSONRequest) {
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::SimulationRecordAll(std::string _JSONRequest) {
+std::string Manager::SimulationRecordAll(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "SimulationRecordAll");
+    HandlerData Handle(this, _JSONRequest, "SimulationRecordAll", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -547,9 +565,9 @@ std::string Manager::SimulationRecordAll(std::string _JSONRequest) {
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::SimulationGetRecording(std::string _JSONRequest) {
+std::string Manager::SimulationGetRecording(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "SimulationGetRecording");
+    HandlerData Handle(this, _JSONRequest, "SimulationGetRecording", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -561,9 +579,9 @@ std::string Manager::SimulationGetRecording(std::string _JSONRequest) {
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-std::string Manager::SimulationGetStatus(std::string _JSONRequest) {
+std::string Manager::SimulationGetStatus(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "SimulationGetStatus", true);
+    HandlerData Handle(this, _JSONRequest, "SimulationGetStatus", called_by_manager_task, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -580,9 +598,9 @@ std::string Manager::SimulationGetStatus(std::string _JSONRequest) {
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-std::string Manager::SimulationBuildMesh(std::string _JSONRequest) {
+std::string Manager::SimulationBuildMesh(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "SimulationBuildMesh");
+    HandlerData Handle(this, _JSONRequest, "SimulationBuildMesh", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -596,9 +614,9 @@ std::string Manager::SimulationBuildMesh(std::string _JSONRequest) {
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::SimulationSave(std::string _JSONRequest) {
+std::string Manager::SimulationSave(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
 
-    HandlerData Handle(this, _JSONRequest, "SimulationSave");
+    HandlerData Handle(this, _JSONRequest, "SimulationSave", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -625,21 +643,11 @@ std::string Manager::SimulationSave(std::string _JSONRequest) {
  * Do the actual loading within a task, here just launch the task and
  * return the response that it was launched, and return the task ID.
  * 
- * *** PROBLEM:
- *     Right now, if there are other requests that come in while loading is happening
- *     then HandleData will replace their SimID or disallow their running, because it
- *     is global.
- *     Really, we need to change the arguments expected by handlers, so that they take
- *     a second argument "called_by_loading". Use that local parameter to determine
- *     what HandleData does, not a Manager-global parameter.
- *     Once that is arranged, we can probably also ease up on the one-loading-at-a-time
- *     rule.
- * 
  */
 // This request starts a Manager Task.
-std::string Manager::SimulationLoad(std::string _JSONRequest) {
+std::string Manager::SimulationLoad(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
 
-    HandlerData Handle(this, _JSONRequest, "SimulationCreate", true, true);
+    HandlerData Handle(this, _JSONRequest, "SimulationCreate", called_by_manager_task, true, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -674,9 +682,9 @@ std::string Manager::SimulationLoad(std::string _JSONRequest) {
     return Handle.ResponseWithID("TaskID", TaskID);
 }
 
-std::string Manager::SphereCreate(std::string _JSONRequest) {
+std::string Manager::SphereCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "SphereCreate");
+    HandlerData Handle(this, _JSONRequest, "SphereCreate", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -697,9 +705,9 @@ std::string Manager::SphereCreate(std::string _JSONRequest) {
     return Handle.ResponseWithID("ShapeID", S.ID);
 }
 
-std::string Manager::CylinderCreate(std::string _JSONRequest) {
+std::string Manager::CylinderCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "CylinderCreate");
+    HandlerData Handle(this, _JSONRequest, "CylinderCreate", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -722,9 +730,9 @@ std::string Manager::CylinderCreate(std::string _JSONRequest) {
     return Handle.ResponseWithID("ShapeID", S.ID);
 }
 
-std::string Manager::BoxCreate(std::string _JSONRequest) {
+std::string Manager::BoxCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "BoxCreate");
+    HandlerData Handle(this, _JSONRequest, "BoxCreate", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -751,9 +759,9 @@ std::string Manager::BoxCreate(std::string _JSONRequest) {
  * Form: A shape.
  * Function: Some parameters.
  */
-std::string Manager::BSCreate(std::string _JSONRequest) {
+std::string Manager::BSCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "BSCreate");
+    HandlerData Handle(this, _JSONRequest, "BSCreate", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -784,9 +792,9 @@ std::string Manager::BSCreate(std::string _JSONRequest) {
     return Handle.ResponseWithID("CompartmentID", C.ID);
 }
 
-std::string Manager::StapleCreate(std::string _JSONRequest) {
+std::string Manager::StapleCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "StapleCreate");
+    HandlerData Handle(this, _JSONRequest, "StapleCreate", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -822,9 +830,9 @@ std::string Manager::StapleCreate(std::string _JSONRequest) {
  * source neuron information (found via the source compartment) to
  * set up input connections to watch.
  */
-std::string Manager::ReceptorCreate(std::string _JSONRequest) {
+std::string Manager::ReceptorCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "ReceptorCreate");
+    HandlerData Handle(this, _JSONRequest, "ReceptorCreate", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -869,9 +877,9 @@ OR
 2. Tell the NeuralCircuit to create a neuron.
 */
 
-std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
+std::string Manager::BSNeuronCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "BSNeuronCreate");
+    HandlerData Handle(this, _JSONRequest, "BSNeuronCreate", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -910,9 +918,9 @@ std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
     return Handle.ResponseWithID("NeuronID", C.ID);
 }
 
-std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
+std::string Manager::PatchClampDACCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "PatchClampDACCreate");
+    HandlerData Handle(this, _JSONRequest, "PatchClampDACCreate", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -944,9 +952,9 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
  *   ]
  * }
  */
-std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
+std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "PatchClampDACSetOutputList");
+    HandlerData Handle(this, _JSONRequest, "PatchClampDACSetOutputList", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -985,9 +993,9 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::PatchClampADCCreate(std::string _JSONRequest) {
+std::string Manager::PatchClampADCCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "PatchClampADCCreate");
+    HandlerData Handle(this, _JSONRequest, "PatchClampADCCreate", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1008,9 +1016,9 @@ std::string Manager::PatchClampADCCreate(std::string _JSONRequest) {
     return Handle.ResponseWithID("PatchClampADCID", T.ID);
 }
 
-std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest) {
+std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "PatchClampADCSetSampleRate");
+    HandlerData Handle(this, _JSONRequest, "PatchClampADCSetSampleRate", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1035,9 +1043,9 @@ std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest) {
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
+std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "PatchClampADCGetRecordedData");
+    HandlerData Handle(this, _JSONRequest, "PatchClampADCGetRecordedData", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1070,9 +1078,9 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
  *   ]
  * }
  */
-std::string Manager::SetSpecificAPTimes(std::string _JSONRequest) {
+std::string Manager::SetSpecificAPTimes(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "SetSpecificAPTimes");
+    HandlerData Handle(this, _JSONRequest, "SetSpecificAPTimes", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1114,9 +1122,9 @@ std::string Manager::SetSpecificAPTimes(std::string _JSONRequest) {
  *   "TaskStatus": <task-status-code>
  * }
  */
-std::string Manager::ManTaskStatus(std::string _JSONRequest) {
+std::string Manager::ManTaskStatus(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
-    HandlerData Handle(this, _JSONRequest, "ManTaskStatus", true, true);
+    HandlerData Handle(this, _JSONRequest, "ManTaskStatus", called_by_manager_task, true, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1167,11 +1175,11 @@ bool Manager::BadReqID(int ReqID) {
  *   <more requests>
  * ]
  */
-std::string Manager::NESRequest(std::string _JSONRequest) { // Generic JSON-based NES requests.
+std::string Manager::NESRequest(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) { // Generic JSON-based NES requests.
 
     // Parse Request
     //Logger_->Log(_JSONRequest, 3);
-    HandlerData Handle(this, _JSONRequest, "NESRequest", true, true);
+    HandlerData Handle(this, _JSONRequest, "NESRequest", called_by_manager_task, true, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1222,7 +1230,7 @@ std::string Manager::NESRequest(std::string _JSONRequest) { // Generic JSON-base
                     ReqResponseJSON["ReqID"] = ReqID;
                     ReqResponseJSON["StatusCode"] = 1; // not a valid NES request *** TODO: use the right code
                 } else {
-                    std::string Response = it->second.Handler(*this, ReqParams); // Calls the handler.
+                    std::string Response = it->second.Handler(*this, ReqParams, called_by_manager_task); // Calls the handler.
                     // *** TODO: Either:
                     //     a) Convert handlers to return nlohmann::json objects so that we
                     //        can easily add ReqResponseJSON["ReqID"] = ReqID here, or,
@@ -1246,7 +1254,7 @@ std::string Manager::NESRequest(std::string _JSONRequest) { // Generic JSON-base
     return Handle.ResponseAndStoreRequest(ResponseJSON, false); // See comments at ResponseAndStoreRequest().
 }
 
-std::string Manager::Debug(std::string _JSONRequest) {
+std::string Manager::Debug(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
  
     // Parse Request
     std::cout<<_JSONRequest<<std::endl;
@@ -1315,9 +1323,9 @@ std::vector<std::unique_ptr<Simulation>>* Manager::GetSimulationVectorPtr() {
 
 // ------------ Are we keeping the following "Bulk" routes? --------
 
-std::string Manager::BulkSphereCreate(std::string _JSONRequest) {
+std::string Manager::BulkSphereCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
 
-    HandlerData Handle(this, _JSONRequest, "BulkSphereCreate");
+    HandlerData Handle(this, _JSONRequest, "BulkSphereCreate", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1376,9 +1384,9 @@ std::string Manager::BulkSphereCreate(std::string _JSONRequest) {
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-std::string Manager::BulkCylinderCreate(std::string _JSONRequest) {
+std::string Manager::BulkCylinderCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
 
-    HandlerData Handle(this, _JSONRequest, "BulkCylinderCreate");
+    HandlerData Handle(this, _JSONRequest, "BulkCylinderCreate", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1453,9 +1461,9 @@ std::string Manager::BulkCylinderCreate(std::string _JSONRequest) {
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-std::string Manager::BulkBoxCreate(std::string _JSONRequest) {
+std::string Manager::BulkBoxCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
 
-    HandlerData Handle(this, _JSONRequest, "BulkBoxCreate");
+    HandlerData Handle(this, _JSONRequest, "BulkBoxCreate", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1533,9 +1541,9 @@ std::string Manager::BulkBoxCreate(std::string _JSONRequest) {
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-std::string Manager::BulkBSCreate(std::string _JSONRequest) {
+std::string Manager::BulkBSCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
 
-    HandlerData Handle(this, _JSONRequest, "BulkBSCreate");
+    HandlerData Handle(this, _JSONRequest, "BulkBSCreate", called_by_manager_task);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }

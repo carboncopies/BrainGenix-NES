@@ -82,13 +82,15 @@ struct ManagerTaskData {
     // Results set by the Task thread:
     ManagerTaskStatus Status = ManagerTaskStatus::Active;
     nlohmann::json OutputData;
-    //int NewSimulationID = -1;
+    int ReplaceSimulationID = -1;
 
     ManagerTaskData(Manager & _Man): Man(_Man) {}
 
     void SetStatus(ManagerTaskStatus _status) { Status = _status; }
 
     void IncludeStatusInOutputData() { OutputData["TaskStatus"] = int(Status); }
+
+    bool HasReplacementSimID() { return ReplaceSimulationID >= 0; }
 };
 
 /**
@@ -111,9 +113,9 @@ private:
     int NextManTaskID = 0; /**Use this, because we use a map not a vector, so that we can expire some to shed old cached stuff*/
     std::map<int, std::unique_ptr<ManagerTaskData>> ManagerTasks; /**Status data of launched tasks by Task ID*/
 
-    bool LoadingSim = false;
-    int LoadingSimReplaceID = -1;
-    std::mutex LoadingSimSetterMutex;
+    //bool LoadingSim = false;
+    //int LoadingSimReplaceID = -1;
+    //std::mutex LoadingSimSetterMutex;
 
 public:
 
@@ -140,7 +142,7 @@ public:
 
     int AddManagerTask(std::unique_ptr<ManagerTaskData> & TaskData);
 
-    void LoadingSimSetter(bool SetTo);
+    //void LoadingSimSetter(bool SetTo);
     void SimLoadingTask(ManagerTaskData & TaskData);
 
     /**
@@ -151,45 +153,45 @@ public:
      * @param _JSONRequest 
      * @return std::string 
      */
-    std::string SimulationCreate(std::string _JSONRequest);
-    std::string SimulationReset(std::string _JSONRequest);
-    std::string SimulationRunFor(std::string _JSONRequest);
-    std::string SimulationRecordAll(std::string _JSONRequest);
-    std::string SimulationGetRecording(std::string _JSONRequest);
-    std::string SimulationGetStatus(std::string _JSONRequest);
-    std::string SimulationBuildMesh(std::string _JSONRequest);
-    std::string SimulationSave(std::string _JSONRequest);
-    std::string SimulationLoad(std::string _JSONRequest);
+    std::string SimulationCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string SimulationReset(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string SimulationRunFor(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string SimulationRecordAll(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string SimulationGetRecording(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string SimulationGetStatus(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string SimulationBuildMesh(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string SimulationSave(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string SimulationLoad(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
 
-    std::string SphereCreate(std::string _JSONRequest);
-    std::string BulkSphereCreate(std::string _JSONRequest);
-    std::string CylinderCreate(std::string _JSONRequest);
-    std::string BulkCylinderCreate(std::string _JSONRequest);
-    std::string BoxCreate(std::string _JSONRequest);
-    std::string BulkBoxCreate(std::string _JSONRequest);
+    std::string SphereCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string BulkSphereCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string CylinderCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string BulkCylinderCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string BoxCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string BulkBoxCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
 
-    std::string BSCreate(std::string _JSONRequest);
-    std::string BulkBSCreate(std::string _JSONRequest);
+    std::string BSCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string BulkBSCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
 
-    std::string StapleCreate(std::string _JSONRequest);
-    std::string ReceptorCreate(std::string _JSONRequest);
+    std::string StapleCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string ReceptorCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
 
-    std::string BSNeuronCreate(std::string _JSONRequest);
+    std::string BSNeuronCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
 
-    std::string PatchClampDACCreate(std::string _JSONRequest);
-    std::string PatchClampDACSetOutputList(std::string _JSONRequest);
+    std::string PatchClampDACCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string PatchClampDACSetOutputList(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
 
-    std::string PatchClampADCCreate(std::string _JSONRequest);
-    std::string PatchClampADCSetSampleRate(std::string _JSONRequest);
-    std::string PatchClampADCGetRecordedData(std::string _JSONRequest);
+    std::string PatchClampADCCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string PatchClampADCSetSampleRate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string PatchClampADCGetRecordedData(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
 
-    std::string SetSpecificAPTimes(std::string _JSONRequest);
+    std::string SetSpecificAPTimes(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
 
-    std::string ManTaskStatus(std::string _JSONRequest);
+    std::string ManTaskStatus(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
 
-    std::string NESRequest(std::string _JSONRequest); // Generic JSON-based NES requests.
+    std::string NESRequest(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr); // Generic JSON-based NES requests.
 
-    std::string Debug(std::string _JSONRequest);
+    std::string Debug(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
 
     /**
      * @brief Returns true if the simulation is being worked on by another thread.
@@ -200,11 +202,11 @@ public:
      */
     bool IsSimulationBusy(Simulation* _Sim);
 
-    bool IsLoadingSim() const { return LoadingSim; }
+    //bool IsLoadingSim() const { return LoadingSim; }
 
-    bool SimReplaceIDMissing() const { return LoadingSimReplaceID < 0; }
+    //bool SimReplaceIDMissing() const { return LoadingSimReplaceID < 0; }
 
-    int GetSimReplaceID() const { return LoadingSimReplaceID; }
+    //int GetSimReplaceID() const { return LoadingSimReplaceID; }
 
     /**
      * @brief Returns a pointer to the current simulation vector.
