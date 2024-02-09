@@ -869,7 +869,7 @@ std::string Manager::VisualizerGenerateImage(std::string _JSONRequest) {
  */
 std::string Manager::VisualizerGetStatus(std::string _JSONRequest) {
 
-    HandlerData Handle(this, _JSONRequest, "VisualizerGetStatus");
+    HandlerData Handle(this, _JSONRequest, "VisualizerGetStatus", true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
