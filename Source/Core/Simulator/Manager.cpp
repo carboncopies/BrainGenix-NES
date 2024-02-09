@@ -393,6 +393,70 @@ Manager::~Manager() {
     }
 }
 
+bool LoadFileIntoString(const std::string & FilePath, std::string & FileContents) {
+    std::ifstream LoadFile(FilePath);
+    if (!LoadFile.is_open()) return false;
+
+    // Reserve all the necessary space in the string up-front.
+    LoadFile.seekg(0, std::ios::end);   
+    FileContents.reserve(LoadFile.tellg());
+    LoadFile.seekg(0, std::ios::beg);
+
+    FileContents.assign((std::istreambuf_iterator<char>(LoadFile)), std::istreambuf_iterator<char>());
+    return true;    
+}
+
+// A ManagerTaskData struct must have been prepared and the thread already launched.
+int Manager::AddManagerTask(std::unique_ptr<ManagerTaskData> & TaskData) {
+    // Get Task ID
+    int TaskID = NextManTaskID;
+    NextManTaskID++;
+    TaskData->ID = TaskID;
+
+    // Place task data into ManagerTasks
+    ManagerTasks[TaskID].reset(TaskData.release()); // Release task data object pointer into unique pointer in map.
+
+    return TaskID;
+}
+
+// Only one thread at a time, others wait for lock release.
+void Manager::LoadingSimSetter(bool SetTo) {
+    std::lock_guard<std::mutex> guard(LoadingSimSetterMutex);
+    LoadingSim = SetTo;
+}
+
+// We can run only one loading task at a time, because we are using some Manager-global
+// flags and variables to modify the behavior of NESRequest and HandleData, namely to
+// establish the new Simulation ID and to replace loaded SimIDs with that.
+// Before proceeding, we wait for other loading tasks in the queue to finish.
+void Manager::SimLoadingTask(ManagerTaskData & TaskData) {
+    // Wait for any concurrent loading tasks that happen to be running to finish:
+    unsigned long timeout_ms = 10000;
+    while (LoadingSim) {
+        timeout_ms--;
+        if (timeout_ms==0) {
+            Logger_->Log("SimLoadingTask timed out waiting for other loading taks to finish!", 8);
+            TaskData.SetStatus(ManagerTaskStatus::TimeOut);
+            return;
+        }
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    }
+    LoadingSimSetter(true);  // Elicits special behavior in NESRequest to replace SimID, etc.
+    LoadingSimReplaceID = -1;
+    // *** Not sure if we should prepend with "std::string loadresponse = " to keep the full
+    //     record of the loading requests in the task output JSON.
+    NESRequest(TaskData.InputData);
+    TaskData.OutputData["SimulationID"] = GetSimReplaceID();
+    //TaskData.NewSimulationID = GetSimReplaceID();
+    TaskData.SetStatus(ManagerTaskStatus::Success);
+    LoadingSimSetter(false);
+}
+
+void SimLoadingTaskThread(ManagerTaskData* TaskData) {
+    if (!TaskData) return;
+    TaskData->Man.SimLoadingTask(*TaskData); // Run the rest back in the Manager for full context.
+}
+
 // Mostly, this is called through HandlerData::NewSimulation().
 Simulation* Manager::MakeSimulation() {
     Simulations_.push_back(std::make_unique<Simulation>(Logger_));
@@ -552,92 +616,14 @@ std::string Manager::SimulationSave(std::string _JSONRequest) {
     return Handle.ResponseWithID("SavedSimName", SavedSimName);
 }
 
-bool LoadFileIntoString(const std::string & FilePath, std::string & FileContents) {
-    std::ifstream LoadFile(FilePath);
-    if (!LoadFile.is_open()) return false;
-
-    // Reserve all the necessary space in the string up-front.
-    LoadFile.seekg(0, std::ios::end);   
-    FileContents.reserve(LoadFile.tellg());
-    LoadFile.seekg(0, std::ios::beg);
-
-    FileContents.assign((std::istreambuf_iterator<char>(LoadFile)), std::istreambuf_iterator<char>());
-    return true;    
-}
-
-// A ManagerTaskData struct must have been prepared and the thread already launched.
-int Manager::AddManagerTask(std::unique_ptr<ManagerTaskData> & TaskData) {
-    // Get Task ID
-    int TaskID = NextManTaskID;
-    NextManTaskID++;
-    TaskData->ID = TaskID;
-
-    // Place task data into ManagerTasks
-    ManagerTasks.emplace_back(TaskID, TaskData); // Release task data object pointer into unique pointer in map.
-
-    return TaskID;
-}
-
-// Only one thread at a time, others wait for lock release.
-void Manager::LoadingSimSetter(bool SetTo) {
-    std::lock_guard<std::mutex> guard(LoadingSimSetterMutex);
-    LoadingSim = SetTo;
-}
-
-// We can run only one loading task at a time, because we are using some Manager-global
-// flags and variables to modify the behavior of NESRequest and HandleData, namely to
-// establish the new Simulation ID and to replace loaded SimIDs with that.
-// Before proceeding, we wait for other loading tasks in the queue to finish.
-void Manager::SimLoadingTask(ManagerTaskData & TaskData) {
-    // Wait for any concurrent loading tasks that happen to be running to finish:
-    unsigned long timeout_ms = 10000;
-    while (LoadingSim) {
-        timeout_ms--;
-        if (timeout_ms==0) {
-            Logger_->Log("SimLoadingTask timed out waiting for other loading taks to finish!", 8);
-            TaskData.SetStatus(ManagerTaskStatus::TimeOut);
-            return;
-        }
-        std::this_thread::sleep_for(std::chrono::milliseconds(1));
-    }
-    LoadingSimSetter(true);  // Elicits special behavior in NESRequest to replace SimID, etc.
-    LoadingSimReplaceID = -1;
-    // *** Not sure if we should prepend with "std::string loadresponse = " to keep the full
-    //     record of the loading requests in the task output JSON.
-    NESRequest(TaskData.InputData);
-    TaskData.NewSimulationID = GetSimReplaceID();
-    TaskData.SetStatus(ManagerTaskStatus::Success);
-    LoadingSimSetter(false);
-}
-
-void SimLoadingTaskThread(ManagerTaskData* TaskData) {
-    if (!TaskData) return;
-    TaskData->Man.SimLoadingTask(*TaskData); // Run the rest back in the Manager for full context.
-}
 
 /**
- * INSTRUCTIONS:
- * 
  * This can be a long task (from a computer's perspective) and can lead to
  * connection closing without a response if the handler response does not
  * come for a while.
  * 
  * Do the actual loading within a task, here just launch the task and
  * return the response that it was launched, and return the task ID.
- * 
- * (((In HandlerData, permit handling even if "busy" when "task==loading".)))
- * ((Update the GetStatus data while loading. Include the task ID in
- * the GetStatus data.))
- * 
- * - Once a task is done successfully, the status will also contain a result.
- * - That result is the result of the loading task, which contains the new simulation ID.
- * 
- * In the front-end, after starting the loading task:
- * - remember the task ID
- * - regularly check task status with that ID
- * - when task is no longer busy, check the final task status and get the result
- * - Use the ID from that to replace the temporary one that was put into the Simulation
- *   object by the BG_API loading function.
  * 
  * *** PROBLEM:
  *     Right now, if there are other requests that come in while loading is happening
@@ -1137,7 +1123,7 @@ std::string Manager::ManTaskStatus(std::string _JSONRequest) {
   
     // Set Params
     int ManTaskID = -1;
-    if (!Handle.GetIntPar("TaskID", ManTaskID)) {
+    if (!Handle.GetParInt("TaskID", ManTaskID)) {
         return Handle.ErrResponse();
     }
 
@@ -1151,10 +1137,10 @@ std::string Manager::ManTaskStatus(std::string _JSONRequest) {
         return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
     }
 
-    // *** Perhaps we want to return a lot more information here...
+    taskdata_ptr->IncludeStatusInOutputData();
 
     // Return Result ID
-    return Handle.ResponseWithID("TaskStatus", int(taskdata_ptr->Status)); // ok
+    return Handle.ResponseAndStoreRequest(taskdata_ptr->OutputData);
 }
 
 bool Manager::BadReqID(int ReqID) {

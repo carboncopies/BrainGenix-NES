@@ -50,6 +50,9 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
+// Forward declarations:
+class Manager;
+
 enum ManagerTaskStatus {
     Success = 0, // Completed successfully.
     Active = 1,  // Freshly created and/or actively operating.
@@ -79,11 +82,13 @@ struct ManagerTaskData {
     // Results set by the Task thread:
     ManagerTaskStatus Status = ManagerTaskStatus::Active;
     nlohmann::json OutputData;
-    int NewSimulationID = -1;
+    //int NewSimulationID = -1;
 
     ManagerTaskData(Manager & _Man): Man(_Man) {}
 
-    void SetStatus(ManagerTaskStatus _status) { Status = _status }
+    void SetStatus(ManagerTaskStatus _status) { Status = _status; }
+
+    void IncludeStatusInOutputData() { OutputData["TaskStatus"] = int(Status); }
 };
 
 /**
@@ -133,6 +138,11 @@ public:
 
     bool BadReqID(int ReqID);
 
+    int AddManagerTask(std::unique_ptr<ManagerTaskData> & TaskData);
+
+    void LoadingSimSetter(bool SetTo);
+    void SimLoadingTask(ManagerTaskData & TaskData);
+
     /**
      * @brief Various routes for API
      * Note that since this file is getting too long, several RPC handlers are being set up - each taking over part of this.
@@ -174,6 +184,8 @@ public:
     std::string PatchClampADCGetRecordedData(std::string _JSONRequest);
 
     std::string SetSpecificAPTimes(std::string _JSONRequest);
+
+    std::string ManTaskStatus(std::string _JSONRequest);
 
     std::string NESRequest(std::string _JSONRequest); // Generic JSON-based NES requests.
 
