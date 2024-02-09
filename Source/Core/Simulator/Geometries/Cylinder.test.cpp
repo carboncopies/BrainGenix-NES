@@ -76,10 +76,8 @@ TEST_F(CylinderTest, test_RAtPosition_um_default) {
 }
 
 TEST_F(CylinderTest, test_GetRotation_rad_default) {
-    std::tuple<float, float, float> expectedRot_rad =
-        std::make_tuple(-M_PI / 2.0, 0.0, 0.0);
-    std::tuple<float, float, float> gotRot_rad =
-        testCylinder->GetRotation_rad();
+    BG::NES::Simulator::Geometries::Vec3D expectedRot_rad = BG::NES::Simulator::Geometries::Vec3D(-M_PI / 2.0, 0.0, 0.0);
+    BG::NES::Simulator::Geometries::Vec3D gotRot_rad = testCylinder->GetRotation_rad();
 
     ASSERT_EQ(expectedRot_rad, gotRot_rad);
 }

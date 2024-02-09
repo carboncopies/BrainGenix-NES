@@ -38,6 +38,8 @@
 #include <VSDA/RenderPool.h>
 #include <BG/Renderer/Interface.h>
 
+#include <Visualizer/VisualizerPool.h>
+
 #include <Simulator/EngineController.h>
 #include <Config/Config.h>
 #include <RPC/Manager.h>
@@ -66,6 +68,7 @@ private:
 
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to the instance of the logging system*/
     VSDA::RenderPool* RenderPool_;                        /**Pointer to an instance of the render threadpool class*/
+    VisualizerPool* VisualizerPool_;                      /**Pointer to instance of the vizualizerpool class*/
 
 public:
 
@@ -78,7 +81,7 @@ public:
      * @param _RPCManager
      * @param _Renderer Instance of the rendering system.
      */
-    Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, API::Manager* _RPCManager);
+    Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, VisualizerPool* _VisualizerPool, API::Manager* _RPCManager);
 
     /**
      * @brief Destroy the Manager object
@@ -120,6 +123,10 @@ public:
     std::string PatchClampADCSetSampleRate(std::string _JSONRequest);
     std::string PatchClampADCGetRecordedData(std::string _JSONRequest);
     std::string SetSpecificAPTimes(std::string _JSONRequest);
+    std::string VisualizerGetImage(std::string _JSONRequest);
+    std::string VisualizerGetImageHandles(std::string _JSONRequest);
+    std::string VisualizerGetStatus(std::string _JSONRequest);
+    std::string VisualizerGenerateImage(std::string _JSONRequest);
 
     std::string NESRequest(std::string _JSONRequest); // Generic JSON-based NES requests.
 

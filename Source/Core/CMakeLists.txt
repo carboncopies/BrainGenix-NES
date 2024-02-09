@@ -156,6 +156,18 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshConversionHelpers.h
 
 
+  ${SRC_DIR}/Core/Visualizer/Visualizer.cpp
+  ${SRC_DIR}/Core/Visualizer/Visualizer.h
+  ${SRC_DIR}/Core/Visualizer/MeshRenderer.cpp
+  ${SRC_DIR}/Core/Visualizer/MeshRenderer.h
+  ${SRC_DIR}/Core/Visualizer/MeshBuilder.cpp
+  ${SRC_DIR}/Core/Visualizer/MeshBuilder.h
+  ${SRC_DIR}/Core/Visualizer/VisualizerParameters.cpp
+  ${SRC_DIR}/Core/Visualizer/VisualizerParameters.h
+  ${SRC_DIR}/Core/Visualizer/VisualizerPool.cpp
+  ${SRC_DIR}/Core/Visualizer/VisualizerPool.h
+
+
 )
  
 set(UNITTEST_SOURCES

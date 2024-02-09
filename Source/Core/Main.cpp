@@ -25,11 +25,12 @@ int main(int NumArguments, char** ArgumentValues) {
     // Setup API Server
     BG::NES::API::Manager APIManager(&SystemConfiguration, &Logger);
 
-    // Setup RenderPool
+    // Setup RenderPools
     BG::NES::Simulator::VSDA::RenderPool RenderPool(&Logger, false, 5);
+    BG::NES::Simulator::VisualizerPool VisualizerPool(&Logger, false, 1);
 
     // Setup Simulator (Adding the routes here)
-    BG::NES::Simulator::Manager SimulationManager(&Logger, &SystemConfiguration, &RenderPool, &APIManager);
+    BG::NES::Simulator::Manager SimulationManager(&Logger, &SystemConfiguration, &RenderPool, &VisualizerPool, &APIManager);
     BG::NES::Simulator::VSDA::RPCInterface VSDA_RPCInterface(&Logger, &APIManager, SimulationManager.GetSimulationVectorPtr());
 
     // Print ASCII BrainGenix Logo To Console
@@ -38,7 +39,7 @@ int main(int NumArguments, char** ArgumentValues) {
 
     // Check if we have profiling enabled, if so do that then quit
     if (SystemConfiguration.ProfilingStatus_ != BG::NES::Config::PROFILE_NONE) {
-        BG::NES::Profiling::Manager(&Logger, &SystemConfiguration, &SimulationManager, &RenderPool, &APIManager);
+        BG::NES::Profiling::Manager(&Logger, &SystemConfiguration, &SimulationManager, &RenderPool, &VisualizerPool, &APIManager);
         return 0;
     }
 

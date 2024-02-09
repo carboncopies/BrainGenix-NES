@@ -39,6 +39,8 @@
 #include <Simulator/Structs/Staple.h>
 #include <BG/Common/Logger/Logger.h>
 
+#include <Visualizer/VisualizerParameters.h>
+
 #include <VSDA/VoxelSubsystem/Structs/VSDAData.h>
 
 
@@ -49,7 +51,7 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
-enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA };
+enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA, SIMULATION_VISUALIZATION};
 
 /**
  * @brief Name of the simulation
@@ -83,7 +85,7 @@ struct Simulation {
     float RunTimes_ms; /**Number of ms to be simulated next time runfor is called - if not, set to -1*/
     SimulationActions CurrentTask; /**Current task to be processed on this simulation, could be run for, or reset, etc. See above enum for more info.*/
 
-
+    
 
     Geometries::GeometryCollection Collection; /**Instance of GeometryCollection struct containing all geometries in this simulation*/
 
@@ -98,6 +100,9 @@ struct Simulation {
     std::vector<Tools::PatchClampADC> PatchClampADCs; /**List of patchclamp adcs, id is index*/
 
     VSDAData VSDAData_; /**Instance of the simulator VSDA data - stores the state for the renderer to use*/
+
+    VisualizerParameters VisualizerParams; /**Instance of visualizer parameters, used to generate visualizations in vulkan*/
+
 
     //! Constructors
     Simulation(BG::Common::Logger::LoggingSystem* _Logger);

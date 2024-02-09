@@ -36,7 +36,7 @@ bool GeometryBuilder::ShaderHandler(Shaders::Shader* _Shader) {
 
         Material->value().diffuse = ShaderInfo->DiffuseColor_;
         Material->value().specular = ShaderInfo->SpecularColor_;
-        // Material->value().emissive = vsg::vec4(0.5, 0.5, 0.5, 0.5);
+        // Material->value().emissive = vsg::vec4(0.0, 1.0, 0.0, 1.0);
 
         MaterialBinding.data = Material;
         return true;
@@ -51,6 +51,9 @@ bool GeometryBuilder::ShaderHandler(Shaders::Shader* _Shader) {
 bool GeometryBuilder::CreateCube(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cube* _CubeCreateInfo) {
     assert(_CubeCreateInfo != nullptr && "_CubeCreateInfo is a nullptr");
     assert(_CubeCreateInfo->Shader_ != nullptr && "_CubeCreateInfo->Shader_ is null");
+
+
+    Logger_->Log("Creating Cube Mesh", 0);
 
 
     // Setup Geom Info
@@ -78,6 +81,9 @@ bool GeometryBuilder::CreateSphere(vsg::ref_ptr<vsg::Group> _Scene, Primitive::S
     assert(_SphereCreateInfo->Shader_ != nullptr && "_SphereCreateInfo->Shader_ is null");
 
 
+    Logger_->Log("Creating Sphere Mesh", 0);
+
+
     // Setup Geom Info
     vsg::GeometryInfo Info;
     Info.transform = Math::BuildTransformMatrix(_SphereCreateInfo->Position_, vsg::vec3(0.f, 0.f, 0.f), vsg::vec3(_SphereCreateInfo->Radius_*2, _SphereCreateInfo->Radius_*2, _SphereCreateInfo->Radius_*2));
@@ -101,6 +107,9 @@ bool GeometryBuilder::CreateSphere(vsg::ref_ptr<vsg::Group> _Scene, Primitive::S
 bool GeometryBuilder::CreateCylinder(vsg::ref_ptr<vsg::Group> _Scene, Primitive::Cylinder* _CylinderCreateInfo) {
     assert(_CylinderCreateInfo != nullptr && "_CylinderCreateInfo is a nullptr");
     assert(_CylinderCreateInfo->Shader_ != nullptr && "_CylinderCreateInfo->Shader_ is null");
+
+
+    Logger_->Log("Creating Cylinder Mesh", 0);
 
 
     // Setup Geom Info

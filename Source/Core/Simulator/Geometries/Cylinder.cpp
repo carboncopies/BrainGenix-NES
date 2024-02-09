@@ -56,7 +56,7 @@ float Cylinder::RAtPosition_um(float pos) {
 
 
 //! Gets the rotation in radians with respect to the x, y and z axes
-std::tuple<float, float, float> Cylinder::GetRotation_rad() {
+Vec3D Cylinder::GetRotation_rad() const {
     // Assuming initial orientation of the cylinder is such that the
     // axis is along the direction (0, 0, 1), i.e. the Z-axis
 
@@ -99,7 +99,7 @@ std::tuple<float, float, float> Cylinder::GetRotation_rad() {
     thetaY_rad = atan2(-rotationMat[2][0], sqrt(rotationMat[2][2] * rotationMat[2][2] + rotationMat[2][1] * rotationMat[2][1]));
     thetaZ_rad = atan2(rotationMat[1][0], rotationMat[0][0]);
 
-    return std::make_tuple(thetaX_rad, thetaY_rad, thetaZ_rad);
+    return Vec3D(thetaX_rad, thetaY_rad, thetaZ_rad);
 };
 
 

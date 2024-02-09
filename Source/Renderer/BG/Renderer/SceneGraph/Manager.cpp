@@ -234,6 +234,7 @@ bool Manager::Headless_GetImage(Image* _Image) {
 
         auto deviceMemory = RenderData_->copiedColorBuffer->getDeviceMemory(RenderData_->Headless_Device_->deviceID);
 
+
         size_t destRowWidth = RenderData_->Extent_.width * sizeof(vsg::ubvec4);
         vsg::ref_ptr<vsg::Data> imageData;
         if (destRowWidth == subResourceLayout.rowPitch) {
@@ -254,10 +255,12 @@ bool Manager::Headless_GetImage(Image* _Image) {
         _Image->Width_px = RenderData_->Width_;
         _Image->Height_px = RenderData_->Height_;
         _Image->NumChannels_ = 4;
-        size_t ImageSize = _Image->Width_px * _Image->Height_px * _Image->NumChannels_; // this assumes that each pixel is a char, a bit scuffed
+        size_t ImageSize = imageData->dataSize(); // this assumes that each pixel is a char, a bit scuffed
+        
         unsigned char* NewBuffer = new unsigned char[ImageSize]; 
         unsigned char* PixelData = (unsigned char*)imageData.get()->dataPointer();
-        std::copy(PixelData, PixelData + ImageSize, NewBuffer); 
+        // std::copy(PixelData, PixelData + ImageSize, NewBuffer); 
+        std::memcpy(NewBuffer, PixelData, ImageSize);
         _Image->Data_ = std::unique_ptr<unsigned char>(NewBuffer);
         // imageData.release_nodelete();
 
@@ -328,7 +331,7 @@ bool Manager::SetupCamera() {
     // Setup Camera
     vsg::dvec3 CameraPosition = vsg::dvec3(4.0, 4.0, 6.5); // Where the camera is located
     vsg::dvec3 CameraTarget = vsg::dvec3(4.0, 4.0, 0.0); // Where the camera is looking towards
-    auto lookAt = CreateLookAtMatrix(CameraPosition, CameraTarget, vsg::dvec3(0.0, 1.0, 0.0));
+    auto lookAt = CreateLookAtMatrix(CameraPosition, CameraTarget, vsg::dvec3(0.0, 0.0, 1.0));
 
     double FOV = 80.f; // FOV In degrees
     int Width, Height;
@@ -340,7 +343,7 @@ bool Manager::SetupCamera() {
         Height = RenderData_->Window_->extent2D().height;
     }
     double AspectRatio = static_cast<double>(Width / (double)Height); // Just the aspect ratio of the window
-    vsg::ref_ptr<vsg::ProjectionMatrix> perspective = CreatePerspectiveMatrix(FOV, AspectRatio, 0.1, 100.0);
+    vsg::ref_ptr<vsg::ProjectionMatrix> perspective = CreatePerspectiveMatrix(FOV, AspectRatio, 0.1, 99999.0);
 
     Scene_->Camera_ = vsg::Camera::create(perspective, lookAt, vsg::ViewportState::create(RenderData_->Extent_));
 
@@ -362,7 +365,7 @@ bool Manager::SetCameraFOV(double _FOV) {
     }
 
     double AspectRatio = static_cast<double>(Width / (double)Height);
-    Scene_->Camera_->projectionMatrix = CreatePerspectiveMatrix(_FOV, AspectRatio, 0.1, 100.0);
+    Scene_->Camera_->projectionMatrix = CreatePerspectiveMatrix(_FOV, AspectRatio, 0.1, 99999.0);
 
     return true;
 }
@@ -413,7 +416,7 @@ bool Manager::Headless_SetupCommandGraph() {
     RenderData_->RenderGraph_->framebuffer = RenderData_->framebuffer;
     RenderData_->RenderGraph_->renderArea.offset = {0, 0};
     RenderData_->RenderGraph_->renderArea.extent = RenderData_->Extent_;
-    RenderData_->RenderGraph_->setClearValues({{0.25f, 0.25f, 0.25f, 1.0f}}, VkClearDepthStencilValue{0.0f, 0});
+    RenderData_->RenderGraph_->setClearValues({{0.1f, 0.1f, 0.1f, 0.0}}, VkClearDepthStencilValue{0.0f, 0});
 
     auto view = vsg::View::create(Scene_->Camera_, Scene_->Group_);
 
@@ -539,7 +542,6 @@ bool Manager::DrawFrame() {
 
 
 
-
     // RenderDoc Debugging Capture Helper
     if(rdoc_api) rdoc_api->StartFrameCapture(NULL, NULL);
 
@@ -591,13 +593,14 @@ bool Manager::SetResolution(int _Width, int _Height) {
     return true;
 }
 
-bool Manager::UpdateCameraPosition(vsg::dvec3 Position_) {
+bool Manager::UpdateCameraPosition(vsg::dvec3 _Position, vsg::dvec3 _LookAtPosition) {
 
 
     // Set the position of the camera such that it would look towards the stage
     // The stage will be located under the camera (microscope) with a distance of `Height_`
-    vsg::dvec3 CameraTarget = Position_ - vsg::dvec3(0.0f, 0.0f, Position_[2]);
-    auto lookAt = CreateLookAtMatrix(Position_, CameraTarget, vsg::dvec3(0.0, 1.0, 0.0));
+    // vsg::dvec3 CameraTarget = Position_ - vsg::dvec3(0.0f, 0.0f, Position_[2]);
+    vsg::dvec3 CameraTarget = _LookAtPosition;
+    auto lookAt = CreateLookAtMatrix(_Position, CameraTarget, vsg::dvec3(0.0, 0.0, 1.0));
 
     // Now, update the camera's view matrix with our new lookat matrix (should be the same as viewmat)
     Scene_->Camera_.get()->viewMatrix = lookAt;

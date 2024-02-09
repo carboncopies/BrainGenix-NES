@@ -21,7 +21,7 @@ namespace NES {
 namespace Profiling {
 
 
-int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, Simulator::Manager* _SimManager, Simulator::VSDA::RenderPool* _RenderPool, API::Manager* _RPCManager) {
+int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, Simulator::Manager* _SimManager, Simulator::VSDA::RenderPool* _RenderPool, Simulator::VisualizerPool* _VisualizerPool, API::Manager* _RPCManager) {
     assert(_Logger != nullptr);
     assert(_Config != nullptr);
 
@@ -92,7 +92,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
         // Start Thread
         std::atomic_bool StopThreads = false;
-        std::thread SimThread(&Simulator::SimulationEngineThread, _Logger, Sim, _RenderPool, &StopThreads);
+        std::thread SimThread(&Simulator::SimulationEngineThread, _Logger, Sim, _RenderPool, _VisualizerPool, &StopThreads);
 
 
         // Create 1k spheres
@@ -177,7 +177,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
         // Start Thread
         std::atomic_bool StopThreads = false;
-        std::thread SimThread(&Simulator::SimulationEngineThread, _Logger, Sim, _RenderPool, &StopThreads);
+        std::thread SimThread(&Simulator::SimulationEngineThread, _Logger, Sim, _RenderPool, _VisualizerPool, &StopThreads);
 
 
         // Create 10k cylinders
@@ -264,7 +264,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
         // Start Thread
         std::atomic_bool StopThreads = false;
-        std::thread SimThread(&Simulator::SimulationEngineThread, _Logger, Sim, _RenderPool, &StopThreads);
+        std::thread SimThread(&Simulator::SimulationEngineThread, _Logger, Sim, _RenderPool, _VisualizerPool, &StopThreads);
 
 
         // Create 10k Box
@@ -351,7 +351,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
         // Start Thread
         std::atomic_bool StopThreads = false;
-        std::thread SimThread(&Simulator::SimulationEngineThread, _Logger, Sim, _RenderPool, &StopThreads);
+        std::thread SimThread(&Simulator::SimulationEngineThread, _Logger, Sim, _RenderPool, _VisualizerPool, &StopThreads);
 
 
         // Create 1k spheres
@@ -504,7 +504,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
         // Start Thread
         std::atomic_bool StopThreads = false;
-        std::thread SimThread(&Simulator::SimulationEngineThread, _Logger, Sim, _RenderPool, &StopThreads);
+        std::thread SimThread(&Simulator::SimulationEngineThread, _Logger, Sim, _RenderPool, _VisualizerPool, &StopThreads);
 
 
         // Create 100k Boxes
