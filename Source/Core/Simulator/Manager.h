@@ -208,6 +208,8 @@ public:
 
     //int GetSimReplaceID() const { return LoadingSimReplaceID; }
 
+    size_t GetNumberOfSimulations() const { return Simulations_.size(); }
+
     /**
      * @brief Returns a pointer to the current simulation vector.
      * 

@@ -223,6 +223,8 @@ public:
 
     bool HasError() const { return (Status != API::bgStatusCode::bgStatusSuccess); }
 
+    API::bgStatusCode GetStatus() const { return Status; }
+
     // Note: This is purposely NOT const nlohmann::json &, because we do NOT
     //       want to permit calls with rvalues that default-construct a
     //       nlohmann::json, as that is a way to accidentally a JSON object
@@ -468,6 +470,7 @@ void Manager::SimLoadingTask(ManagerTaskData & TaskData) {
     NESRequest(TaskData.InputData, &TaskData);
     TaskData.OutputData["SimulationID"] = TaskData.ReplaceSimulationID;
     TaskData.SetStatus(ManagerTaskStatus::Success);
+    Logger_->Log("Loading Simulation " + std::to_string(TaskData.ReplaceSimulationID) + " Completed", 2);
 }
 
 void SimLoadingTaskThread(ManagerTaskData* TaskData) {
@@ -479,7 +482,9 @@ void SimLoadingTaskThread(ManagerTaskData* TaskData) {
 Simulation* Manager::MakeSimulation() {
     Simulations_.push_back(std::make_unique<Simulation>(Logger_));
     int SimID = Simulations_.size()-1;
-    return Simulations_.at(SimID).get();
+    Simulation* TheNewSimulation = Simulations_.at(SimID).get();
+    TheNewSimulation->ID = SimID;
+    return TheNewSimulation;
 }
 
 std::string Manager::SimulationCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
@@ -1145,6 +1150,7 @@ std::string Manager::ManTaskStatus(std::string _JSONRequest, ManagerTaskData* ca
         return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
     }
 
+    taskdata_ptr->OutputData["StatusCode"] = int(Handle.GetStatus());
     taskdata_ptr->IncludeStatusInOutputData();
 
     // Return Result ID
