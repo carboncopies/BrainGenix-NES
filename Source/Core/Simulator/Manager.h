@@ -120,12 +120,6 @@ private:
     //int LoadingSimReplaceID = -1;
     //std::mutex LoadingSimSetterMutex;
 
-    int NextManTaskID = 0; /**Use this, because we use a map not a vector, so that we can expire some to shed old cached stuff*/
-    std::map<int, std::unique_ptr<ManagerTaskData>> ManagerTasks; /**Status data of launched tasks by Task ID*/
-
-    //bool LoadingSim = false;
-    //int LoadingSimReplaceID = -1;
-    //std::mutex LoadingSimSetterMutex;
 
 public:
 
@@ -198,10 +192,10 @@ public:
     std::string SetSpecificAPTimes(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
 
     std::string ManTaskStatus(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string VisualizerGetImage(std::string _JSONRequest);
-    std::string VisualizerGetImageHandles(std::string _JSONRequest);
-    std::string VisualizerGetStatus(std::string _JSONRequest);
-    std::string VisualizerGenerateImage(std::string _JSONRequest);
+    std::string VisualizerGetImage(std::string _JSONRequest, ManagerTaskData* _CalledByManagerTask = nullptr);
+    std::string VisualizerGetImageHandles(std::string _JSONRequest, ManagerTaskData* _CalledByManagerTask = nullptr);
+    std::string VisualizerGetStatus(std::string _JSONRequest, ManagerTaskData* _CalledByManagerTask = nullptr);
+    std::string VisualizerGenerateImage(std::string _JSONRequest, ManagerTaskData* _CalledByManagerTask = nullptr);
 
     std::string NESRequest(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr); // Generic JSON-based NES requests.
 
