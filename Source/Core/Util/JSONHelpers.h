@@ -35,7 +35,7 @@ namespace Util {
  * @param _ParamName Name of the parameter to retrieve.
  * @return int The integer value retrieved from the JSON object.
  */
-int GetInt(nlohmann::json *_JSON, std::string _ParamName);
+int GetInt(const nlohmann::json *_JSON, std::string _ParamName);
 
 
 /**
@@ -45,7 +45,7 @@ int GetInt(nlohmann::json *_JSON, std::string _ParamName);
  * @param _ParamName Name of the parameter to retrieve.
  * @return float The float value retrieved from the JSON object.
  */
-float GetFloat(nlohmann::json *_JSON, std::string _ParamName);
+float GetFloat(const nlohmann::json *_JSON, std::string _ParamName);
 
 
 /**
@@ -55,7 +55,7 @@ float GetFloat(nlohmann::json *_JSON, std::string _ParamName);
  * @param _ParamName Name of the parameter to retrieve.
  * @return std::string The string value retrieved from the JSON object.
  */
-std::string GetString(nlohmann::json *_JSON, std::string _ParamName);
+std::string GetString(const nlohmann::json *_JSON, std::string _ParamName);
 
 
 /**
@@ -86,7 +86,7 @@ void SetVec3(Simulator::Geometries::Vec3D& _Vector, std::string _Input);
  * @param _Prefix The prefix to search for in the JSON.
  * @param _Units The units for the vector (default is "um").
  */
-void GetVec3(Simulator::Geometries::Vec3D& _Vector, nlohmann::json* _Input, std::string _Prefix, std::string _Units="um");
+void GetVec3(Simulator::Geometries::Vec3D& _Vector, const nlohmann::json* _Input, std::string _Prefix, std::string _Units="um");
 
 
 /**
@@ -96,7 +96,7 @@ void GetVec3(Simulator::Geometries::Vec3D& _Vector, nlohmann::json* _Input, std:
  * @param _Input Pointer to the JSON array object.
  * @param _Name Name of the parameter to retrieve.
  */
-void GetArrVec3(Simulator::Geometries::Vec3D& _Vector, nlohmann::json* _Input, std::string _Name);
+void GetArrVec3(Simulator::Geometries::Vec3D& _Vector, const nlohmann::json* _Input, std::string _Name);
 
 
 /**
@@ -106,7 +106,7 @@ void GetArrVec3(Simulator::Geometries::Vec3D& _Vector, nlohmann::json* _Input, s
  * @param _Input Pointer to the JSON object.
  * @param _JSONKey The key in the JSON object.
  */
-void GetIntVector(std::vector<int>* _Vector, nlohmann::json* _Input, std::string _JSONKey);
+void GetIntVector(std::vector<int>* _Vector, const nlohmann::json* _Input, std::string _JSONKey);
 
 
 /**
@@ -116,7 +116,7 @@ void GetIntVector(std::vector<int>* _Vector, nlohmann::json* _Input, std::string
  * @param _Input Pointer to the JSON object.
  * @param _JSONKey The key in the JSON object.
  */
-void GetFloatVector(std::vector<float>* _Vector, nlohmann::json* _Input, std::string _JSONKey);
+void GetFloatVector(std::vector<float>* _Vector, const nlohmann::json* _Input, std::string _JSONKey);
 
 /**
  * @brief Simple helper that will populate a vector given the _Input data and the JSONKey input.
@@ -125,7 +125,7 @@ void GetFloatVector(std::vector<float>* _Vector, nlohmann::json* _Input, std::st
  * @param _Input Pointer to the JSON object.
  * @param _JSONKey The key in the JSON object.
  */
-void GetStringVector(std::vector<std::string>* _Vector, nlohmann::json* _Input, std::string _JSONKey);
+void GetStringVector(std::vector<std::string>* _Vector, const nlohmann::json* _Input, std::string _JSONKey);
 
 
 

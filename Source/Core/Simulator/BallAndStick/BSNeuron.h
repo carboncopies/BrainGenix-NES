@@ -26,7 +26,7 @@
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/Neuron.h>
 #include <Simulator/Structs/SignalFunctions.h>
-#include <Simulator/Structs/Neuron.h>
+//#include <Simulator/Structs/Receptor.h>
 //#include <Simulator/Structs/Simulation.h>
 
 //! DtAct_ms to return when there has not been any spike.
@@ -50,6 +50,8 @@ namespace BallAndStick {
  */
 struct BSNeuron : CoreStructs::Neuron {
 
+    CoreStructs::BSNeuronStruct build_data; // Copy of the struct that was used to build this neuron.
+
     //std::unordered_map<std::string, std::shared_ptr<Geometries::Geometry>> Morphology;
     std::unordered_map<std::string, Geometries::Geometry*> Morphology; // Regular pointers, because the objects are maintained in Simulation.Collection.
 
@@ -62,7 +64,7 @@ struct BSNeuron : CoreStructs::Neuron {
 
     float TauPSPr_ms = 5.0;  //! PostSynaptic Potential rise time constant
     float TauPSPd_ms = 25.0; //! PostSynaptic Potential decay time constant
-    float VPSP_mV = 20.0;    //! PostSynaptic Potential amplitude
+    float IPSP_nA = 870.0;   //! PostSynaptic Potential current amplitude (at vPSP peak)
 
     std::tuple<float, float> TauSpontMeanStdev_ms = {0.0, 0.0}; //! 0 means no spontaneous activity
 
@@ -80,7 +82,7 @@ struct BSNeuron : CoreStructs::Neuron {
 
     std::vector<float> TRecorded_ms{};
     std::vector<float> VmRecorded_mV{};
-    std::vector<float> FIFO{};
+    std::deque<float> FIFO{};
     std::vector<float> ConvolvedFIFO{};
     std::vector<CoreStructs::ReceptorData> ReceptorDataVec{};
 
@@ -90,7 +92,7 @@ struct BSNeuron : CoreStructs::Neuron {
 
     //! Constructors
     BSNeuron(int ID, Geometries::Geometry* soma, Geometries::Geometry* axon); // Geometries, as soma and axon may not be Sphere/Cylinder in future. //std::shared_ptr<Geometries::Geometry> soma, std::shared_ptr<Geometries::Geometry> axon);
-    BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct, Geometries::Geometry* soma, Geometries::Geometry* axon);
+    BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct);
     //BSNeuron(Simulation & sim, const CoreStructs::BSNeuronStruct & bsneuronstruct);
 
     //! Returns the geometric center of the neuron.
@@ -145,14 +147,21 @@ struct BSNeuron : CoreStructs::Neuron {
     //! and the time of update.
     void Update(float t_ms, bool recording);
 
-    //! We have to flip the signal FIFO, because the most recent is in [0].
-    //! We need this, because the kernel has a specific time order.
-    //! Alternatively, when we prepare the kernel we can flip it and
-    //! remember to view [0] as most recent in the convolution result.
-    void UpdateConvolvedFIFO(std::vector<float> kernel);
+    //! NOTE: SetFIFO must be called first, otherwise the FIFO is not
+    //!       updated in UpdateVm.
+    //! NOTE: We flip signal FIFO, because most recent is in [0] and kernel
+    //!       has specific time-order.
+    //!       (Alternatively, we could flip the prepared kernel and take
+    //!       care to view [0] as most recent in covolution result.)
+    //! NOTE: For efficiency (see Convolve1D), we provide a reversed kernel
+    //!       that was reversed and stored during initialization.
+    void UpdateConvolvedFIFO(const std::vector<float> & reversed_kernel);
 
-    //! Sets the initial value of the FIFO.
-    void SetFIFO(float FIFO_ms, float dt_ms);
+    //! Sets the initial value of the FIFO and prepares a buffer for convolvedFIFO.
+    //! FIFO_dt_ms == 0.0 means used a FIFO of size 1.
+    void SetFIFO(float FIFO_ms, float FIFO_dt_ms, const std::vector<float> & reversed_kernel);
+
+    virtual void InputReceptorAdded(CoreStructs::ReceptorData RData);
 };
 
 }; // namespace BallAndStick

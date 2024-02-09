@@ -30,8 +30,6 @@ namespace BG {
 namespace NES {
 namespace API {
 
-
-
 /**
  * @brief Manages the NES remote procedure call (RPC) host.
  *
@@ -79,7 +77,6 @@ public:
         _Logger->Log(LogMsg, 0);
         RPCServer_->bind(_RouteName.c_str(), _CallbackFunction);
     }
-
 
 };
 

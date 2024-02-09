@@ -16,7 +16,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-
+#include <Simulator/Geometries/Geometry.h>
 
 namespace BG {
 namespace NES {
@@ -30,7 +30,7 @@ namespace Compartments {
 struct BS {
 
     std::string Name; /**Name of the BS Compartment*/
-    int ID; /**ID of the BS compartment*/
+    int ID = -1; /**ID of the BS compartment*/
 
     int ShapeID; /**ID of the associated shape of this compartment*/
 
@@ -39,6 +39,9 @@ struct BS {
     float DecayTime_ms; /**After hyperpolarization time constant in ms, also known as tau_ahp*/
     float RestingPotential_mV; /**Resting Potential in millivolts*/
     float AfterHyperpolarizationAmplitude_mV; /**AfterHyperpolarization Amplitude in millivolts*/
+
+    // Direct access caches:
+    Geometries::Geometry* ShapePtr = nullptr;
 
 };
 

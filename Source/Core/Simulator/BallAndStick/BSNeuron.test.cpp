@@ -12,6 +12,7 @@
 #include <cmath>
 #include <memory>
 #include <vector>
+#include <deque>
 
 #include <gtest/gtest.h>
 
@@ -48,7 +49,8 @@ struct BSNeuronTest : testing::Test {
     }
 
     void Simulate() {
-        testBSNeuron->SetFIFO(1.1, 0.1);
+        std::vector<float> reversed_kernel(10, 0.0);
+        testBSNeuron->SetFIFO(1.1, 0.1, reversed_kernel);
         testBSNeuron->SetSpontaneousActivity(0.5, 5.0);
 
         for (float val : times_ms)
@@ -266,23 +268,23 @@ TEST_F(BSNeuronTest, test_SetFIFO_default) {
     float FIFO_ms = 1.1, dt_ms = 0.1;
     size_t expectedFIFOSize = FIFO_ms / dt_ms + 1;
 
-    testBSNeuron->SetFIFO(1.1, 0.1);
+    std::vector<float> reversed_kernel(10, 0.0);
+    testBSNeuron->SetFIFO(1.1, 0.1, reversed_kernel);
 
     ASSERT_EQ(testBSNeuron->FIFO.size(), expectedFIFOSize);
 }
 
 TEST_F(BSNeuronTest, test_UpdateConvolvedFIFO_default) {
-    std::vector<float> kernel = {-1.0, 0.0, 1.0};
+    std::vector<float> reversed_kernel = {1.0, 0.0, -1.0};
     std::vector<float> expectedConvolvedFIFO{};
     std::vector<float> FIFO{};
 
     // Simulate
     Simulate();
 
-    testBSNeuron->UpdateConvolvedFIFO(kernel);
+    testBSNeuron->UpdateConvolvedFIFO(reversed_kernel);
 
-    FIFO = std::vector<float>(testBSNeuron->FIFO);
-    std::reverse(FIFO.begin(), FIFO.end());
+    std::reverse_copy(testBSNeuron->FIFO.begin(), testBSNeuron->FIFO.end(), FIFO.begin());
 
     for (size_t i = 0; i < FIFO.size(); ++i) {
         FIFO[i] *= -1.0;
@@ -290,8 +292,9 @@ TEST_F(BSNeuronTest, test_UpdateConvolvedFIFO_default) {
             FIFO[i] = 0.0;
     }
 
-    expectedConvolvedFIFO =
-        BG::NES::Simulator::SignalFunctions::Convolve1D(FIFO, kernel);
+    expectedConvolvedFIFO.resize(FIFO.size(), 0.0);
+
+    BG::NES::Simulator::SignalFunctions::Convolve1D(FIFO, reversed_kernel, expectedConvolvedFIFO);
 
     ASSERT_EQ(testBSNeuron->ConvolvedFIFO.size(), expectedConvolvedFIFO.size());
     for (size_t i = 0; i < testBSNeuron->ConvolvedFIFO.size(); ++i)

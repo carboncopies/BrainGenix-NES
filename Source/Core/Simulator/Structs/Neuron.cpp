@@ -26,11 +26,13 @@ namespace CoreStructs {
 //! Returns the time since the action potential threshold was
 //! crossed last.
 float Neuron::DtAct_ms(float t_ms) {
+    WARNWRONGOOPLEVEL();
     return 0.0; // Placeholder.
 };
 
 //! Tells if the action potential threshold has been crossed.
 bool Neuron::HasSpiked() {
+    WARNWRONGOOPLEVEL();
     return false; // Placeholder.
 }
 
@@ -53,6 +55,10 @@ nlohmann::json Neuron::GetRecordingJSON() const {
     nlohmann::json recording;
     WARNWRONGOOPLEVEL();
     return recording;
+}
+
+void Neuron::InputReceptorAdded(ReceptorData RData) {
+    WARNWRONGOOPLEVEL();
 }
 
 }; // namespace CoreStructs

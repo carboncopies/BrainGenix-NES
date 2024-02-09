@@ -1,5 +1,6 @@
 #include <Simulator/BallAndStick/BSNeuron.h>
 
+#include <algorithm>
 #include <iostream>
 
 namespace BG {
@@ -14,10 +15,10 @@ BSNeuron::BSNeuron(int ID, Geometries::Geometry* soma, Geometries::Geometry* axo
     this->Morphology["axon"] = axon;
 };
 
-BSNeuron::BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct, Geometries::Geometry* soma, Geometries::Geometry* axon) {
+BSNeuron::BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct) {
+    build_data = bsneuronstruct;
+
     ID = bsneuronstruct.ID;
-    Morphology["soma"] = soma;
-    Morphology["axon"] = axon;
     Vm_mV = bsneuronstruct.MembranePotential_mV;
     VRest_mV = bsneuronstruct.RestingPotential_mV;
     VAct_mV = bsneuronstruct.SpikeThreshold_mV;
@@ -25,7 +26,10 @@ BSNeuron::BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct, Geometrie
     TauAHP_ms = bsneuronstruct.DecayTime_ms;
     TauPSPr_ms = bsneuronstruct.PostsynapticPotentialRiseTime_ms;
     TauPSPd_ms = bsneuronstruct.PostsynapticPotentialDecayTime_ms;
-    VPSP_mV = bsneuronstruct.PostsynapticPotentialAmplitude_mV;
+    IPSP_nA = bsneuronstruct.PostsynapticPotentialAmplitude_nA;
+
+    Morphology["soma"] = build_data.SomaCompartmentPtr->ShapePtr;
+    Morphology["axon"] = build_data.AxonCompartmentPtr->ShapePtr;
 }
 
 //! Returns the geometric center of the neuron.
@@ -64,7 +68,6 @@ CoreStructs::NeuronRecording BSNeuron::GetRecording() {
 
 nlohmann::json BSNeuron::GetRecordingJSON() const {
     nlohmann::json recording;
-    //std::cout << "DEBUG --> Getting recording of " << this->VmRecorded_mV.size() << " Vm points\n"; std::cout.flush();
     recording["Vm_mV"] = nlohmann::json(this->VmRecorded_mV);
     return recording;
 }
@@ -104,7 +107,7 @@ float BSNeuron::VSpikeT_mV(float t_ms) {
     assert(t_ms >= 0.0);
 
     // If a spike has not occurred return 0.0
-    if (this->_has_spiked) return 0.0;
+    if (!this->_has_spiked) return 0.0;
 
     // Update whether the Neuron is in its absolute refractory period.
     this->in_absref = (this->_dt_act_ms <= _TAU_ABS_ms);
@@ -112,6 +115,10 @@ float BSNeuron::VSpikeT_mV(float t_ms) {
     // if within absolute refractory period, return
     // the spike potential during absolute refractory period.
     return this->in_absref ? _VSPIKE_ABS_REF_mV : 0.0;
+    // if (this->in_absref) {
+    //     return _VSPIKE_ABS_REF_mV;
+    // }
+    // return 0.0;
 };
 
 //! Updates V_AHP_t.
@@ -121,24 +128,32 @@ float BSNeuron::VAHPT_mV(float t_ms) {
     if (!this->_has_spiked) return 0.0;
     if (this->in_absref) return 0.0;
 
-    return this->VAHP_mV * exp(-this->_dt_act_ms / this->TauAHP_ms);
+    float vAHPt = this->VAHP_mV * exp(-this->_dt_act_ms / this->TauAHP_ms);
+
+    return vAHPt;
 };
 
 //! Updates V_PSP_t.
 // Note on conventions: Using small letters (e.g. v) for variables and
 // capital letter (e.g. V) for constants, as in the papers.
+// (See description of magnitudes involved in flat ground-truth example script.)
 float BSNeuron::VPSPT_mV(float t_ms) {
     assert(t_ms >= 0.0);
     float vPSPt_mV = 0.0;
 
     for (auto receptorData : this->ReceptorDataVec) {
-        auto srcCell = std::get<0>(receptorData);
+        auto srcCell = receptorData.SrcNeuronPtr;
         if (!srcCell->HasSpiked()) continue;
 
-        float weight = std::get<1>(receptorData);
         float dtPSP_ms = srcCell->DtAct_ms(t_ms);
+        float amp = this->IPSP_nA / receptorData.ReceptorPtr->Conductance_nS;
+        //if (ID == 1) std::cout << "IPSP_nA=" << this->IPSP_nA << " Cond nS = " << receptorData.ReceptorPtr->Conductance_nS << " amp = " << amp << '\n';
 
-        vPSPt_mV += SignalFunctions::DoubleExponentExpr(weight * this->VPSP_mV, this->TauPSPr_ms, this->TauPSPd_ms, dtPSP_ms);
+        vPSPt_mV += SignalFunctions::DoubleExponentExpr(
+            amp, 
+            receptorData.ReceptorPtr->TimeConstantRise_ms, //this->TauPSPr_ms, 
+            receptorData.ReceptorPtr->TimeConstantDecay_ms, //this->TauPSPd_ms,
+            dtPSP_ms);
     }
     return vPSPt_mV;
 };
@@ -163,11 +178,13 @@ void BSNeuron::UpdateVm(float t_ms, bool recording) {
     // 3. Calculate membrane potential
     this->Vm_mV = this->VRest_mV + VSpikeT_mV + VAHPT_mV + VPSPT_mV;
 
-    // *** WARNING: THIS MAY BE WRONG! The Python prototype rolled out the tail
-    //     and inserted at the head ([0]). This could be easy to do with a deque.
+    // 4. Add voltage elevation to FIFO buffer for phospherecence convolution
     if (!this->FIFO.empty()) {
-        this->FIFO.erase(this->FIFO.begin());
-        this->FIFO.push_back(this->Vm_mV - this->VRest_mV);
+        // We replace [0], i.e. drop the one at the end and push to front.
+        this->FIFO.pop_back();
+        this->FIFO.push_front(this->Vm_mV - this->VRest_mV);
+        //this->FIFO.erase(this->FIFO.begin());
+        //this->FIFO.push_back(this->Vm_mV - this->VRest_mV);
     }
 
     if (recording)
@@ -206,10 +223,8 @@ void BSNeuron::Update(float t_ms, bool recording) {
     assert(t_ms >= 0.0);
 
     float tDiff_ms = t_ms - this->T_ms;
-    if (tDiff_ms < 0)
-        return;
+    if (tDiff_ms < 0) return;
 
-    //std::cout << "DEBUG --> BSNeuron::Update()\n"; std::cout.flush();
     // 1. Has there been a directed stimulation?
     if (!(this->TDirectStim_ms.empty())) {
         float tFire_ms = this->TDirectStim_ms.front();
@@ -229,38 +244,52 @@ void BSNeuron::Update(float t_ms, bool recording) {
     this->T_ms = t_ms;
 };
 
-//! Sets the initial value of the FIFO.
-void BSNeuron::SetFIFO(float FIFO_ms, float dt_ms) {
-    assert(FIFO_ms >= 0.0 && dt_ms >= 0.0);
+//! Sets the initial value of the FIFO and prepares a buffer for convolvedFIFO.
+//! FIFO_dt_ms == 0.0 means used a FIFO of size 1.
+void BSNeuron::SetFIFO(float FIFO_ms, float FIFO_dt_ms, const std::vector<float> & reversed_kernel) {
+    assert(FIFO_ms >= 0.0 && FIFO_dt_ms >= 0.0);
 
-    size_t fifoSize = dt_ms == 0.0 ? 1 : FIFO_ms / dt_ms + 1;
+    size_t fifoSize = FIFO_dt_ms == 0.0 ? 1 : FIFO_ms / FIFO_dt_ms + 1;
 
-    for (size_t i = 0; i < fifoSize; ++i)
-        this->FIFO.emplace_back(0.0);
+    for (size_t i = 0; i < fifoSize; ++i) this->FIFO.emplace_back(0.0);
+
+    size_t convolvedFIFO_size = this->FIFO.size() + reversed_kernel.size() - 1;
+    this->ConvolvedFIFO.resize(convolvedFIFO_size, 0.0);
 };
 
-//! We have to flip the signal FIFO, because the most recent is in [0].
-//! We need this, because the kernel has a specific time order.
-//! Alternatively, when we prepare the kernel we can flip it and
-//! remember to view [0] as most recent in the convolution result.
-void BSNeuron::UpdateConvolvedFIFO(std::vector<float> kernel) {
-    assert(!kernel.empty());
+//! NOTE: SetFIFO must be called first, otherwise the FIFO is not
+//!       updated in UpdateVm.
+//! NOTE: We flip signal FIFO, because most recent is in [0] and kernel
+//!       has specific time-order.
+//!       (Alternatively, we could flip the prepared kernel and take
+//!       care to view [0] as most recent in covolution result.)
+//! NOTE: For efficiency (see Convolve1D), we provide a reversed kernel
+//!       that was reversed and stored during initialization.
+void BSNeuron::UpdateConvolvedFIFO(const std::vector<float> & reversed_kernel) {
+    assert(!reversed_kernel.empty());
 
-    std::vector<float> CaSignal = std::vector<float>(this->FIFO);
+    // Reverse signal FIFO:
+    std::vector<float> CaSignal(this->FIFO.size(), 0.0);
+    std::reverse_copy(this->FIFO.begin(), this->FIFO.end(), CaSignal.begin());
 
-    std::reverse(CaSignal.begin(), CaSignal.end());
-
-    for (size_t i = 0; i < CaSignal.size(); ++i) {
-        CaSignal[i] *= -1.0;
-        if (CaSignal[i] < 0.0)
-            CaSignal[i] = 0.0;
+    // Clip at zero and flip sign:
+    for (auto & CaSignalValue : CaSignal) {
+        CaSignalValue = (CaSignalValue < 0.0) ? 0.0 : (-CaSignalValue);
     }
 
-    this->ConvolvedFIFO = SignalFunctions::Convolve1D(CaSignal, kernel);
+    // Convolve with kernel:
+    if (SignalFunctions::Convolve1D(CaSignal, reversed_kernel, this->ConvolvedFIFO)) {
 
-    this->CaSamples.emplace_back(this->ConvolvedFIFO.back() + 1.0);
-    this->TCaSamples_ms.emplace_back(this->T_ms);
+        // Record Ca value with offset and record time-point:
+        this->CaSamples.emplace_back(this->ConvolvedFIFO.back() + 1.0);
+        this->TCaSamples_ms.emplace_back(this->T_ms);
+    }
 };
+
+void BSNeuron::InputReceptorAdded(CoreStructs::ReceptorData RData) {
+    ReceptorDataVec.emplace_back(RData);
+
+}
 
 }; // namespace BallAndStick
 }; // namespace Simulator

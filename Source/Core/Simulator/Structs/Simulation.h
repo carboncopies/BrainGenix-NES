@@ -53,12 +53,24 @@ namespace Simulator {
 
 enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA, SIMULATION_VISUALIZATION};
 
+struct StoredRequest {
+    std::string Route;
+    std::string RequestJSON;
+
+    StoredRequest(const std::string & _Route, const std::string & _RequestJSON): Route(_Route), RequestJSON(_RequestJSON) {}
+    std::string Str() const { return "{ \"" + Route + "\": " + RequestJSON + " }"; }
+};
+
 /**
  * @brief Name of the simulation
  *
  */
 struct Simulation {
+protected:
+    std::vector<StoredRequest> StoredRequests;
+    int StoredReqID = 0; // Used to create request IDs for stored NESRequests.
 
+public:
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr;
 
     std::string Name; /**Name of the simulation*/
@@ -90,9 +102,13 @@ struct Simulation {
     Geometries::GeometryCollection Collection; /**Instance of GeometryCollection struct containing all geometries in this simulation*/
 
     std::vector<Compartments::BS> BSCompartments; /**This will need to be updated later to a std::variant type, but for now it stores the only type of supported compartments, BallStick type*/
+    std::map<int, int> NeuronByCompartment; // Fast look-up map built while creating neurons.
 
     std::vector<Connections::Staple> Staples; /**List of staple connections, index is their id (also stored in struct)*/
-    std::vector<Connections::Receptor> Receptors; /**List of receptor connections, index is their id (and it's also stored in the struct itself)*/
+    // The following must contain smart pointers, because content will be
+    // moved as the vector is expanded and remapped, and InputReceptorAdded delivers
+    // a static pointer:
+    std::vector<std::unique_ptr<Connections::Receptor>> Receptors; /**List of receptor connections, index is their id (and it's also stored in the struct itself)*/
 
     std::vector<std::shared_ptr<CoreStructs::Neuron>> Neurons; /** List of neurons, index is their id. Notice that this takes a Neuron base class object (not BSNeuron and other derivatives). */
 
@@ -129,6 +145,17 @@ struct Simulation {
     nlohmann::json GetRecordingJSON() const;
     void RunFor(float tRun_ms);
     void Show();
+
+    Compartments::BS * FindCompartmentByID(int CompartmentID);
+    CoreStructs::Neuron * FindNeuronByCompartment(int CompartmentID) const;
+
+    std::string WrapAsNESRequest(const std::string & ReqFunc, const std::string & _RequestJSON);
+    void StoreRequestHandled(const std::string & ReqFunc, const std::string & _Route, const std::string & _RequestJSON);
+    size_t NumStoredRequests() const { return StoredRequests.size(); }
+    std::string StoredRequestsToString() const;
+    std::string StoredRequestsToNESRequestArray() const;
+    std::string StoredRequestsSave() const;
+    void ClearStoredRequests() { StoredRequests.clear(); }
 };
 
 }; // namespace Simulator
