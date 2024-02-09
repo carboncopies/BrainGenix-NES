@@ -5,6 +5,9 @@
 
 #include <iostream>
 #include <fstream>
+#include <thread>
+#include <mutex>
+#include <chrono>
 
 namespace BG {
 namespace NES {
@@ -95,6 +98,9 @@ std::string PatchClampADCGetRecordedDataHandler(Manager& Man, const nlohmann::js
 std::string SetSpecificAPTimesHandler(Manager& Man, const nlohmann::json& ReqParams) {
     return Man.SetSpecificAPTimes(ReqParams.dump());
 }
+std::string ManTaskStatusHandler(Manager& Man, const nlohmann::json& ReqParams) {
+    return Man.ManTaskStatus(ReqParams.dump());
+}
 
 const NESRequest_map_t NES_Request_handlers = {
     {"SimulationCreate", {"Simulation/Create", SimulationCreateHandler} },
@@ -106,24 +112,34 @@ const NESRequest_map_t NES_Request_handlers = {
     {"SimulationBuildMesh", {"Simulation/BuildMesh", SimulationBuildMeshHandler} },
     {"SimulationSave", {"Simulation/Save", SimulationSaveHandler} },
     {"SimulationLoad", {"Simulation/Load", SimulationLoadHandler} },
+
     {"SphereCreate", {"Geometry/Shape/Sphere/Create", SphereCreateHandler} },
     {"BulkSphereCreate", {"Geometry/Shape/Sphere/BulkCreate", nullptr} },
     {"CylinderCreate", {"Geometry/Shape/Cylinder/Create", CylinderCreateHandler} },
     {"BulkCylinderCreate", {"Geometry/Shape/Cylinder/BulkCreate", nullptr} },
     {"BoxCreate", {"Geometry/Shape/Box/Create", BoxCreateHandler} },
     {"BulkBoxCreate", {"Geometry/Shape/Box/BulkCreate", nullptr}},
+
     {"BSCreate", {"Compartment/BS/Create", BSCreateHandler} },
     {"BulkBSCreate", {"Compartment/BS/BulkCreate", nullptr}},
+
     {"StapleCreate", {"Connection/Staple/Create", StapleCreateHandler} },
     {"ReceptorCreate", {"Connection/Receptor/Create", ReceptorCreateHandler} },
+
     {"BSNeuronCreate", {"Neuron/BSNeuron/Create", BSNeuronCreateHandler} },
+
     {"PatchClampDACCreate", {"Tool/PatchClampDAC/Create", PatchClampDACCreateHandler} },
-    {"PatchClampADCCreate", {"Tool/PatchClampADC/Create", PatchClampADCCreateHandler} },
     {"PatchClampDACSetOutputList", {"Tool/PatchClampDAC/SetOutputList", PatchClampDACSetOutputListHandler} },
+
+    {"PatchClampADCCreate", {"Tool/PatchClampADC/Create", PatchClampADCCreateHandler} },
     {"PatchClampADCSetSampleRate", {"Tool/PatchClampADC/SetSampleRate", PatchClampADCSetSampleRateHandler} },
     {"PatchClampADCGetRecordedData", {"Tool/PatchClampADC/GetRecordedData", PatchClampADCGetRecordedDataHandler} },
+
     {"SetSpecificAPTimes", {"", SetSpecificAPTimesHandler} },
+
     {"NESRequest", {"NES", nullptr}},
+
+    {"ManTaskStatus", {"ManTaskStatus", ManTaskStatusHandler}},
 };
 
 // Handy class for standard handler data.
@@ -357,6 +373,8 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
 
     _RPCManager->AddRoute(NES_Request_handlers.at("NESRequest").Route, Logger_, [this](std::string RequestJSON){ return NESRequest(RequestJSON);});
 
+    _RPCManager->AddRoute(NES_Request_handlers.at("ManTaskStatus").Route, Logger_, [this](std::string RequestJSON){ return ManTaskStatus(RequestJSON);});
+
     _RPCManager->AddRoute("Debug", Logger_, [this](std::string RequestJSON){ return Debug(RequestJSON);});
 
     // Start SE Thread
@@ -427,7 +445,7 @@ std::string Manager::SimulationReset(std::string _JSONRequest) {
     return Handle.ErrResponse(); // ok
 }
 
-
+// This request starts at Simulation Task.
 std::string Manager::SimulationRunFor(std::string _JSONRequest) {
 
     HandlerData Handle(this, _JSONRequest, "SimulationRunFor");
@@ -547,6 +565,92 @@ bool LoadFileIntoString(const std::string & FilePath, std::string & FileContents
     return true;    
 }
 
+// A ManagerTaskData struct must have been prepared and the thread already launched.
+int Manager::AddManagerTask(std::unique_ptr<ManagerTaskData> & TaskData) {
+    // Get Task ID
+    int TaskID = NextManTaskID;
+    NextManTaskID++;
+    TaskData->ID = TaskID;
+
+    // Place task data into ManagerTasks
+    ManagerTasks.emplace_back(TaskID, TaskData); // Release task data object pointer into unique pointer in map.
+
+    return TaskID;
+}
+
+// Only one thread at a time, others wait for lock release.
+void Manager::LoadingSimSetter(bool SetTo) {
+    std::lock_guard<std::mutex> guard(LoadingSimSetterMutex);
+    LoadingSim = SetTo;
+}
+
+// We can run only one loading task at a time, because we are using some Manager-global
+// flags and variables to modify the behavior of NESRequest and HandleData, namely to
+// establish the new Simulation ID and to replace loaded SimIDs with that.
+// Before proceeding, we wait for other loading tasks in the queue to finish.
+void Manager::SimLoadingTask(ManagerTaskData & TaskData) {
+    // Wait for any concurrent loading tasks that happen to be running to finish:
+    unsigned long timeout_ms = 10000;
+    while (LoadingSim) {
+        timeout_ms--;
+        if (timeout_ms==0) {
+            Logger_->Log("SimLoadingTask timed out waiting for other loading taks to finish!", 8);
+            TaskData.SetStatus(ManagerTaskStatus::TimeOut);
+            return;
+        }
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    }
+    LoadingSimSetter(true);  // Elicits special behavior in NESRequest to replace SimID, etc.
+    LoadingSimReplaceID = -1;
+    // *** Not sure if we should prepend with "std::string loadresponse = " to keep the full
+    //     record of the loading requests in the task output JSON.
+    NESRequest(TaskData.InputData);
+    TaskData.NewSimulationID = GetSimReplaceID();
+    TaskData.SetStatus(ManagerTaskStatus::Success);
+    LoadingSimSetter(false);
+}
+
+void SimLoadingTaskThread(ManagerTaskData* TaskData) {
+    if (!TaskData) return;
+    TaskData->Man.SimLoadingTask(*TaskData); // Run the rest back in the Manager for full context.
+}
+
+/**
+ * INSTRUCTIONS:
+ * 
+ * This can be a long task (from a computer's perspective) and can lead to
+ * connection closing without a response if the handler response does not
+ * come for a while.
+ * 
+ * Do the actual loading within a task, here just launch the task and
+ * return the response that it was launched, and return the task ID.
+ * 
+ * (((In HandlerData, permit handling even if "busy" when "task==loading".)))
+ * ((Update the GetStatus data while loading. Include the task ID in
+ * the GetStatus data.))
+ * 
+ * - Once a task is done successfully, the status will also contain a result.
+ * - That result is the result of the loading task, which contains the new simulation ID.
+ * 
+ * In the front-end, after starting the loading task:
+ * - remember the task ID
+ * - regularly check task status with that ID
+ * - when task is no longer busy, check the final task status and get the result
+ * - Use the ID from that to replace the temporary one that was put into the Simulation
+ *   object by the BG_API loading function.
+ * 
+ * *** PROBLEM:
+ *     Right now, if there are other requests that come in while loading is happening
+ *     then HandleData will replace their SimID or disallow their running, because it
+ *     is global.
+ *     Really, we need to change the arguments expected by handlers, so that they take
+ *     a second argument "called_by_loading". Use that local parameter to determine
+ *     what HandleData does, not a Manager-global parameter.
+ *     Once that is arranged, we can probably also ease up on the one-loading-at-a-time
+ *     rule.
+ * 
+ */
+// This request starts a Manager Task.
 std::string Manager::SimulationLoad(std::string _JSONRequest) {
 
     HandlerData Handle(this, _JSONRequest, "SimulationCreate", true, true);
@@ -561,28 +665,27 @@ std::string Manager::SimulationLoad(std::string _JSONRequest) {
     }
     Logger_->Log("Loading Saved Simulation " + SavedSimName, 2);
 
-    // Check if it exists and load its contents
-    std::string SimFileContent;
-    if (!LoadFileIntoString("SavedSimulations/"+SavedSimName+".NES", SimFileContent)) {
+    // Prepare data structure to run the actual Simulation loading in a task
+    std::unique_ptr<ManagerTaskData> LoadTaskData = std::make_unique<ManagerTaskData>(*this);
+
+    // Check if save file exists and load its request contents into the task data
+    if (!LoadFileIntoString("SavedSimulations/"+SavedSimName+".NES", LoadTaskData->InputData)) {
         Logger_->Log("Unable to Read Simulation Save File " + SavedSimName, 8);
         return Handle.ErrResponse(API::bgStatusCode::bgStatusGeneralFailure);
     }
 
-    //std::cout << SimFileContent << '\n'; std::cout.flush();
+    // Launch loading task thread
+    LoadTaskData->Task = std::make_unique<std::thread>(SimLoadingTaskThread, LoadTaskData.get());
 
-    // Run all the requests to build it, but replace the SimulationID with the new one
-    //nlohmann::json LoadedRequestsJSONArray = nlohmann::json::parse(SimFileContent);
-
-    //Logger_->Log("Saved Simulation contains " + std::to_string(LoadedRequestsJSONArray.size()) + " requests.", 3);
-
-    LoadingSimReplaceID = -1; // -1 signals that SimulationCreate has not yet been loaded.
-    LoadingSim = true;  // Elicits special behavior in NESRequest to replace SimID, etc.
-    //std::string loadresponse = NESRequest(LoadedRequestsJSONArray);
-    std::string loadresponse = NESRequest(SimFileContent);
-    LoadingSim = false;
+    // Add task with fresh task status and get task ID to be returned to requestor
+    int TaskID = AddManagerTask(LoadTaskData);
+    if (TaskID<0) {
+        Logger_->Log("Unable to launch Loading Task", 8);
+        return Handle.ErrResponse(API::bgStatusCode::bgStatusGeneralFailure);
+    }
 
     // Return Result ID
-    return Handle.ResponseWithID("SimulationID", GetSimReplaceID());
+    return Handle.ResponseWithID("TaskID", TaskID);
 }
 
 std::string Manager::SphereCreate(std::string _JSONRequest) {
@@ -1013,6 +1116,46 @@ std::string Manager::SetSpecificAPTimes(std::string _JSONRequest) {
     return Handle.ErrResponse(); // ok
 }
 
+/**
+ * Expects _JSONRequest:
+ * {
+ *   "TaskID": <Manager-Task-ID>
+ * }
+ * 
+ * Responds:
+ * {
+ *   "StatusCode": <status-code>,
+ *   "TaskStatus": <task-status-code>
+ * }
+ */
+std::string Manager::ManTaskStatus(std::string _JSONRequest) {
+ 
+    HandlerData Handle(this, _JSONRequest, "ManTaskStatus", true, true);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+  
+    // Set Params
+    int ManTaskID = -1;
+    if (!Handle.GetIntPar("TaskID", ManTaskID)) {
+        return Handle.ErrResponse();
+    }
+
+    // Get Manager Task Data
+    auto it = ManagerTasks.find(ManTaskID);
+    if (it == ManagerTasks.end()) {
+        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+    }
+    ManagerTaskData * taskdata_ptr = it->second.get();
+    if (!taskdata_ptr) {
+        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+    }
+
+    // *** Perhaps we want to return a lot more information here...
+
+    // Return Result ID
+    return Handle.ResponseWithID("TaskStatus", int(taskdata_ptr->Status)); // ok
+}
 
 bool Manager::BadReqID(int ReqID) {
     // *** TODO: Add some rules here for ReqIDs that should be refused.
@@ -1057,8 +1200,6 @@ std::string Manager::NESRequest(std::string _JSONRequest) { // Generic JSON-base
 
     // For each request in the JSON list:
     for (const auto & req : Handle.ReqJSON()) {
-
-        std::cout << "REQ "; std::cout.flush();
 
         int ReqID = -1;
         //int SimulationID = -1;
@@ -1112,7 +1253,10 @@ std::string Manager::NESRequest(std::string _JSONRequest) { // Generic JSON-base
 
     }
 
-    //Logger_->Log("DEBUG --> Responding: "+ResponseJSON.dump(), 3); // For DEBUG
+    // if (!IsLoadingSim()) {
+    //     std::cout << "DEBUG ---> Responding: " << ResponseJSON.dump() << '\n'; std::cout.flush();
+    // }
+
     return Handle.ResponseAndStoreRequest(ResponseJSON, false); // See comments at ResponseAndStoreRequest().
 }
 
