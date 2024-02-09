@@ -147,11 +147,16 @@ public:
 
         bool isloadingsim = Man.IsLoadingSim();
         if (isloadingsim && (_Source == "SimulationLoad")) {
+            Man.Logger()->Log("Recursive SimulationLoad attempted.", 8);
             Status = API::bgStatusCode::bgStatusGeneralFailure;
             return; // Prevents recursion.
         }
 
-        if (isloadingsim && (Man.SimReplaceIDMissing()) && (_Source != "SimulationCreate")) {
+        // If loading and a Simulation was not created yet then only
+        // allow requests that do not need one ("NoSimulation"), such
+        // as "SimulationCreate" and "NESRequest".
+        if (isloadingsim && (Man.SimReplaceIDMissing()) && (!NoSimulation)) {
+            Man.Logger()->Log(Source+" needs a Sim, but we are still Loading and have not come across SimulationCreate yet.", 8);
             Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
             return; // When loading, the first valid request must be SimulationCreate.
         }
@@ -543,6 +548,7 @@ bool LoadFileIntoString(const std::string & FilePath, std::string & FileContents
 }
 
 std::string Manager::SimulationLoad(std::string _JSONRequest) {
+
     HandlerData Handle(this, _JSONRequest, "SimulationCreate", true, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
@@ -553,6 +559,7 @@ std::string Manager::SimulationLoad(std::string _JSONRequest) {
     if (!Handle.GetParString("SavedSimName", SavedSimName)) {
         return Handle.ErrResponse();
     }
+    Logger_->Log("Loading Saved Simulation " + SavedSimName, 2);
 
     // Check if it exists and load its contents
     std::string SimFileContent;
@@ -561,13 +568,17 @@ std::string Manager::SimulationLoad(std::string _JSONRequest) {
         return Handle.ErrResponse(API::bgStatusCode::bgStatusGeneralFailure);
     }
 
+    //std::cout << SimFileContent << '\n'; std::cout.flush();
+
     // Run all the requests to build it, but replace the SimulationID with the new one
-    nlohmann::json LoadedRequestsJSONArray = nlohmann::json::parse(SimFileContent);
-    Logger_->Log("Saved Simulation contains " + std::to_string(LoadedRequestsJSONArray.size()) + " requests.", 3);
+    //nlohmann::json LoadedRequestsJSONArray = nlohmann::json::parse(SimFileContent);
+
+    //Logger_->Log("Saved Simulation contains " + std::to_string(LoadedRequestsJSONArray.size()) + " requests.", 3);
 
     LoadingSimReplaceID = -1; // -1 signals that SimulationCreate has not yet been loaded.
     LoadingSim = true;  // Elicits special behavior in NESRequest to replace SimID, etc.
-    std::string loadresponse = NESRequest(LoadedRequestsJSONArray);
+    //std::string loadresponse = NESRequest(LoadedRequestsJSONArray);
+    std::string loadresponse = NESRequest(SimFileContent);
     LoadingSim = false;
 
     // Return Result ID
@@ -1028,7 +1039,7 @@ bool Manager::BadReqID(int ReqID) {
  * ]
  */
 std::string Manager::NESRequest(std::string _JSONRequest) { // Generic JSON-based NES requests.
- 
+
     // Parse Request
     //Logger_->Log(_JSONRequest, 3);
     HandlerData Handle(this, _JSONRequest, "NESRequest", true, true);
@@ -1046,6 +1057,8 @@ std::string Manager::NESRequest(std::string _JSONRequest) { // Generic JSON-base
 
     // For each request in the JSON list:
     for (const auto & req : Handle.ReqJSON()) {
+
+        std::cout << "REQ "; std::cout.flush();
 
         int ReqID = -1;
         //int SimulationID = -1;
