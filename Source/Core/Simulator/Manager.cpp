@@ -1160,8 +1160,13 @@ std::string Manager::NESRequest(std::string _JSONRequest) { // Generic JSON-base
 
     }
 
-    Logger_->Log("DEBUG --> Responding: "+ResponseJSON.dump(), 3); // For DEBUG
-    return ResponseJSON.dump();
+    std::string Response = ResponseJSON.dump();
+    if (Response.length() < 1024) { 
+        Logger_->Log("DEBUG --> Responding: " + Response, 0); // For DEBUG
+    } else {
+        Logger_->Log("DEBUG --> Response Omitted Due To Length", 0); // For DEBUG
+    }
+    return Response;
 }
 
 std::string Manager::Debug(std::string _JSONRequest) {
