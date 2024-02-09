@@ -51,12 +51,24 @@ namespace Simulator {
 
 enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA };
 
+struct StoredRequest {
+    std::string Route;
+    std::string RequestJSON;
+
+    StoredRequest(const std::string & _Route, const std::string & _RequestJSON): Route(_Route), RequestJSON(_RequestJSON) {}
+    std::string Str() const { return "{ \"" + Route + "\": " + RequestJSON + " }"; }
+};
+
 /**
  * @brief Name of the simulation
  *
  */
 struct Simulation {
+protected:
+    std::vector<StoredRequest> StoredRequests;
+    int StoredReqID = 0; // Used to create request IDs for stored NESRequests.
 
+public:
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr;
 
     std::string Name; /**Name of the simulation*/
@@ -131,6 +143,14 @@ struct Simulation {
 
     Compartments::BS * FindCompartmentByID(int CompartmentID);
     CoreStructs::Neuron * FindNeuronByCompartment(int CompartmentID) const;
+
+    std::string WrapAsNESRequest(const std::string & ReqFunc, const std::string & _RequestJSON);
+    void StoreRequestHandled(const std::string & ReqFunc, const std::string & _Route, const std::string & _RequestJSON);
+    size_t NumStoredRequests() const { return StoredRequests.size(); }
+    std::string StoredRequestsToString() const;
+    std::string StoredRequestsToNESRequestArray() const;
+    std::string StoredRequestsSave() const;
+    void ClearStoredRequests() { StoredRequests.clear(); }
 };
 
 }; // namespace Simulator

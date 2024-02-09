@@ -1,6 +1,11 @@
 #include <Simulator/Structs/Simulation.h>
 
 #include <iostream>
+#include <sstream>
+#include <filesystem>
+#include <ctime>
+#include <iomanip>
+#include <fstream>
 
 namespace BG {
 namespace NES {
@@ -255,6 +260,111 @@ CoreStructs::Neuron * Simulation::FindNeuronByCompartment(int CompartmentID) con
         return nullptr;
     }
     return Neurons.at(neuron_id).get();
+}
+
+// std::string Simulation::WrapAsNESRequest(const std::string & ReqFunc, const std::string & _RequestJSON) {
+//     std::string wrapped("[ { \"ReqID\": ");
+//     wrapped += std::to_string(StoredReqID) + ", \"";
+//     wrapped += ReqFunc +"\": ";
+//     wrapped += _RequestJSON + " } ]";
+//     StoredReqID++;
+//     return wrapped;
+// }
+
+std::string Simulation::WrapAsNESRequest(const std::string & ReqFunc, const std::string & _RequestJSON) {
+    std::string wrapped("{ \"ReqID\": ");
+    wrapped += std::to_string(StoredReqID) + ", \"";
+    wrapped += ReqFunc +"\": ";
+    wrapped += _RequestJSON + " }";
+    StoredReqID++;
+    return wrapped;
+}
+
+// void Simulation::StoreRequestHandled(const std::string & ReqFunc, const std::string & _Route, const std::string & _RequestJSON) {
+//     if (_Route.empty()) {
+//         // Store it as an NESRequest instead:
+//         StoredRequests.emplace_back("NES", WrapAsNESRequest(ReqFunc, _RequestJSON));
+
+//     } else {
+//         StoredRequests.emplace_back(_Route, _RequestJSON);
+//     }
+//     //Logger_->Log("DEBUGGING --> Number of stored requests: "+std::to_string(StoredRequests.size()), 1);
+// }
+
+void Simulation::StoreRequestHandled(const std::string & ReqFunc, const std::string & _Route, const std::string & _RequestJSON) {
+    // We store everything as a Request within a NESRequest block:
+    StoredRequests.emplace_back(_Route, WrapAsNESRequest(ReqFunc, _RequestJSON));
+}
+
+std::string Simulation::StoredRequestsToString() const {
+    std::stringstream ss;
+    for (const auto & storedreq: StoredRequests) {
+        ss << storedreq.Str() << '\n';
+    }
+    return ss.str();
+}
+
+std::string Simulation::StoredRequestsToNESRequestArray() const {
+    std::stringstream ss;
+    ss << "[\n";
+    for (size_t i = 0; i < StoredRequests.size(); i++) {
+        ss << StoredRequests.at(i).RequestJSON;
+        if (i == (StoredRequests.size()-1)) {
+            ss << '\n';
+        } else {
+            ss << ",\n";
+        }
+    }
+    ss << "]\n";
+    return ss.str();
+}
+
+bool MkDirRecursive(std::string const & dirName, std::error_code & err, bool must_be_new = false) {
+    err.clear();
+    if (!std::filesystem::create_directories(dirName, err)) {
+        if (std::filesystem::exists(dirName)) {
+            // The folder already exists:
+            if (must_be_new) {
+                return false;
+            }
+            err.clear();
+            return true;    
+        }
+        return false;
+    }
+    return true;
+}
+
+std::string TimeStamp() {
+    std::stringstream ss;
+    std::time_t t = std::time(nullptr);
+    ss << std::put_time(std::localtime(&t), "%F_%T");
+    return ss.str();
+}
+
+std::string Simulation::StoredRequestsSave() const {
+    // Make sure the directory exists.
+    std::error_code err;
+    if (!MkDirRecursive("SavedSimulations/", err)) {
+        return "";
+    }
+
+    // Make unique filename.
+    std::string FileName = TimeStamp()+'-';
+    if (Name.empty()) {
+        FileName += "UnNamed";
+    } else {
+        FileName += Name;
+    }
+
+    std::ofstream SaveFile("SavedSimulations/"+FileName+".NES");
+    if (!SaveFile.is_open()) {
+        return "";
+    }
+    SaveFile << StoredRequestsToNESRequestArray();
+    SaveFile.close();
+
+    return FileName;
 }
 
 }; // namespace Simulator

@@ -4,13 +4,13 @@ namespace BG {
 namespace NES {
 namespace Util {
 
-int GetInt(nlohmann::json *_JSON, std::string _ParamName) {
-    return (*_JSON)[_ParamName].template get<int>();
+int GetInt(const nlohmann::json *_JSON, std::string _ParamName) {
+    return (*_JSON).at(_ParamName).template get<int>();
 }
 
-float GetFloat(nlohmann::json *_JSON, std::string _ParamName) {
+float GetFloat(const nlohmann::json *_JSON, std::string _ParamName) {
     try {
-        return (*_JSON)[_ParamName].template get<float>();
+        return (*_JSON).at(_ParamName).template get<float>();
     } catch (nlohmann::json::type_error &Ex) {
         std::cerr<<"Cannot Get JSON Param: "<<_ParamName<<std::endl;
         std::cerr<<"ERR: JSON Float Type Error: "<<Ex.what()<<std::endl;
@@ -22,8 +22,8 @@ float GetFloat(nlohmann::json *_JSON, std::string _ParamName) {
     }
 }
 
-std::string GetString(nlohmann::json *_JSON, std::string _ParamName) {
-    return (*_JSON)[_ParamName].template get<std::string>();
+std::string GetString(const nlohmann::json *_JSON, std::string _ParamName) {
+    return (*_JSON).at(_ParamName).template get<std::string>();
 }
 
 
@@ -41,15 +41,15 @@ void SetVec3(Simulator::Geometries::Vec3D& _Vector, std::string _Input) {
     _Vector.z = Vec3[2].template get<float>();
 }
 
-void GetVec3(Simulator::Geometries::Vec3D& _Vector, nlohmann::json* _Input, std::string _Prefix, std::string _Units) {
+void GetVec3(Simulator::Geometries::Vec3D& _Vector, const nlohmann::json* _Input, std::string _Prefix, std::string _Units) {
     _Vector.x = Util::GetFloat(_Input, _Prefix + "X_" + _Units);
     _Vector.y = Util::GetFloat(_Input, _Prefix + "Y_" + _Units);
     _Vector.z = Util::GetFloat(_Input, _Prefix + "Z_" + _Units);
 }
 
 
-void GetArrVec3(Simulator::Geometries::Vec3D& _Vector, nlohmann::json* _Input, std::string _Name) {
-    std::vector<float> Values = (*_Input)[_Name].get<std::vector<float>>();
+void GetArrVec3(Simulator::Geometries::Vec3D& _Vector, const nlohmann::json* _Input, std::string _Name) {
+    std::vector<float> Values = (*_Input).at(_Name).get<std::vector<float>>();
 
     if (Values.size() != 3) {
         std::cout<<"Error (Util::GetArrVec3), Cannot Get Vector Array From JSON, Size Is Not 3\n";
@@ -62,25 +62,25 @@ void GetArrVec3(Simulator::Geometries::Vec3D& _Vector, nlohmann::json* _Input, s
 }
 
 
-void GetIntVector(std::vector<int>* _Vector, nlohmann::json* _Input, std::string _JSONKey) {
+void GetIntVector(std::vector<int>* _Vector, const nlohmann::json* _Input, std::string _JSONKey) {
     _Vector->clear();
-    nlohmann::json Vector = (*_Input)[_JSONKey];
+    nlohmann::json Vector = (*_Input).at(_JSONKey);
     for (nlohmann::json::iterator it = Vector.begin(); it != Vector.end(); it++) {
         _Vector->push_back(it.value());
     }    
 }
 
-void GetFloatVector(std::vector<float>* _Vector, nlohmann::json* _Input, std::string _JSONKey) {
+void GetFloatVector(std::vector<float>* _Vector, const nlohmann::json* _Input, std::string _JSONKey) {
     _Vector->clear();
-    nlohmann::json Vector = (*_Input)[_JSONKey];
+    nlohmann::json Vector = (*_Input).at(_JSONKey);
     for (nlohmann::json::iterator it = Vector.begin(); it != Vector.end(); it++) {
         _Vector->push_back(it.value());
     }    
 }
 
-void GetStringVector(std::vector<std::string>* _Vector, nlohmann::json* _Input, std::string _JSONKey) {
+void GetStringVector(std::vector<std::string>* _Vector, const nlohmann::json* _Input, std::string _JSONKey) {
     _Vector->clear();
-    nlohmann::json Vector = (*_Input)[_JSONKey];
+    nlohmann::json Vector = (*_Input).at(_JSONKey);
     for (nlohmann::json::iterator it = Vector.begin(); it != Vector.end(); it++) {
         _Vector->push_back(it.value());
     }    

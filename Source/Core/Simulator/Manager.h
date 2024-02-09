@@ -49,7 +49,6 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
-
 /**
  * @brief This class provides the infrastructure to run simulations.
  */
@@ -66,6 +65,9 @@ private:
 
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to the instance of the logging system*/
     VSDA::RenderPool* RenderPool_;                        /**Pointer to an instance of the render threadpool class*/
+
+    bool LoadingSim = false;
+    int LoadingSimReplaceID = -1;
 
 public:
 
@@ -86,6 +88,8 @@ public:
      */
     ~Manager();
 
+    Simulation* MakeSimulation();
+
     bool BadReqID(int ReqID);
 
     /**
@@ -103,22 +107,31 @@ public:
     std::string SimulationGetRecording(std::string _JSONRequest);
     std::string SimulationGetStatus(std::string _JSONRequest);
     std::string SimulationBuildMesh(std::string _JSONRequest);
+    std::string SimulationSave(std::string _JSONRequest);
+    std::string SimulationLoad(std::string _JSONRequest);
+
     std::string SphereCreate(std::string _JSONRequest);
     std::string BulkSphereCreate(std::string _JSONRequest);
     std::string CylinderCreate(std::string _JSONRequest);
     std::string BulkCylinderCreate(std::string _JSONRequest);
     std::string BoxCreate(std::string _JSONRequest);
     std::string BulkBoxCreate(std::string _JSONRequest);
+
     std::string BSCreate(std::string _JSONRequest);
     std::string BulkBSCreate(std::string _JSONRequest);
+
     std::string StapleCreate(std::string _JSONRequest);
     std::string ReceptorCreate(std::string _JSONRequest);
+
     std::string BSNeuronCreate(std::string _JSONRequest);
+
     std::string PatchClampDACCreate(std::string _JSONRequest);
     std::string PatchClampDACSetOutputList(std::string _JSONRequest);
+
     std::string PatchClampADCCreate(std::string _JSONRequest);
     std::string PatchClampADCSetSampleRate(std::string _JSONRequest);
     std::string PatchClampADCGetRecordedData(std::string _JSONRequest);
+
     std::string SetSpecificAPTimes(std::string _JSONRequest);
 
     std::string NESRequest(std::string _JSONRequest); // Generic JSON-based NES requests.
@@ -133,6 +146,12 @@ public:
      * @return false 
      */
     bool IsSimulationBusy(Simulation* _Sim);
+
+    bool IsLoadingSim() const { return LoadingSim; }
+
+    bool SimReplaceIDMissing() const { return LoadingSimReplaceID < 0; }
+
+    int GetSimReplaceID() const { return LoadingSimReplaceID; }
 
     /**
      * @brief Returns a pointer to the current simulation vector.
