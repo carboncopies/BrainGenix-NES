@@ -102,6 +102,9 @@ std::string PatchClampADCGetRecordedDataHandler(Manager& Man, const nlohmann::js
 std::string SetSpecificAPTimesHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
     return Man.SetSpecificAPTimes(ReqParams.dump(), called_by_manager_task);
 }
+std::string SetSpontaneousActivityHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.SetSpontaneousActivity(ReqParams.dump(), called_by_manager_task);
+}
 std::string ManTaskStatusHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
     return Man.ManTaskStatus(ReqParams.dump(), called_by_manager_task);
 }
@@ -152,6 +155,7 @@ const NESRequest_map_t NES_Request_handlers = {
     {"PatchClampADCGetRecordedData", {"Tool/PatchClampADC/GetRecordedData", PatchClampADCGetRecordedDataHandler} },
 
     {"SetSpecificAPTimes", {"", SetSpecificAPTimesHandler} },
+    {"SetSpontaneousActivity", {"", SetSpontaneousActivityHandler} },
 
     {"NESRequest", {"NES", nullptr}},
 
@@ -1208,7 +1212,55 @@ std::string Manager::SetSpecificAPTimes(std::string _JSONRequest, ManagerTaskDat
     return Handle.ErrResponse(); // ok
 }
 
+/**
+ * Expects _JSONRequest:
+ * {
+ *   "SimulationID": <SimID>,
+ *   "TimeNeuronPairs": [
+ *      [ <t_ms>, <neuron-id> ],
+ *      (more pairs)
+ *   ]
+ * }
+ * Responds:
+ * {
+ *   "StatusCode": <status-code>,
+ *   "TaskStatus": <task-status-code>
+ * }
+ */
+std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+ 
+    HandlerData Handle(this, _JSONRequest, "SetSpontaneousActivity", called_by_manager_task);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+  
+    // Set Params
+    bool Active = false;
+    if (!Handle.GetParBool("Active", Active)) {
+        return Handle.ErrResponse();
+    }
+    float SpikeIntervalMean_ms = -1.0;
+    if (!Handle.GetParFloat("SpikeIntervalMean_ms", SpikeIntervalMean_ms)) {
+        return Handle.ErrResponse();
+    }
+    float SpikeIntervalStDev_ms = -1.0;
+    if (!Handle.GetParFloat("SpikeIntervalStDev_ms", SpikeIntervalStDev_ms)) {
+        return Handle.ErrResponse();
+    }
+    if ((SpikeIntervalMean_ms <= 0.0) || (SpikeIntervalStDev_ms < 0.0)) {
+        return Handle.ErrResponse(API.bgStatusCode::bgStatusInvalidParametersPassed);
+    }
+    std::vector<int> NeuronIDs; // Empty list means all neurons.
+    if (!Handle.GetParVecInt("NeuronIDs", NeuronIDs)) {
+        return Handle.ErrResponse();
+    }
 
+    // Modify spontaneous activity settings of specified neurons
+    // *** TODO... continue here.
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
 
 /**
  * Expects _JSONRequest:
