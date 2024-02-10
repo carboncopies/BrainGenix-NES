@@ -43,7 +43,7 @@ std::string Histogram(std::vector<float> samples, unsigned int numbins = 9) {
     }
     std::string hist("Histogram (min="+std::to_string(min)+", max="+std::to_string(max)+"):\n");
     for (auto count : bins) {
-        hist += std::to_string(count) << ' ';
+        hist += std::to_string(count) + ' ';
     }
     hist += '\n';
     return hist;
@@ -56,11 +56,13 @@ TruncNorm::TruncNorm(float _a, float _b, float _loc, float _scale) {
     this->loc = _loc;
     this->scale = _scale;
     // * DEBUGGING:
-    std::normal_distribution<float> _stdNormalDist;
-    std::vector<float> testnorm;
-    for (int =0; i < 200; i++) testnorm.emplace_back(_stdNormalDist(this->_Gen));
-    std::cout << Histogram(testnorm);
-    std::normal_distribution<float> _stdNormalDist();
+    std::normal_distribution<float> _stdNormalDistA;
+    std::vector<float> testnormA;
+    for (int =0; i < 200; i++) testnormA.emplace_back(_stdNormalDistA(this->_Gen));
+    std::cout << Histogram(testnormA);
+    std::normal_distribution<float> _stdNormalDistB(_loc, _scale);
+    std::vector<float> testnormB;
+    std::cout << Histogram(testnormB);
     //_stdNormalDist(this->_Gen)
 };
 
