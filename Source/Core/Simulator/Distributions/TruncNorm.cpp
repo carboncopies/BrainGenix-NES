@@ -1,5 +1,7 @@
 #include <Simulator/Distributions/TruncNorm.h>
 
+#include <iostream>
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -58,7 +60,7 @@ TruncNorm::TruncNorm(float _a, float _b, float _loc, float _scale) {
     // * DEBUGGING:
     std::normal_distribution<float> _stdNormalDistA;
     std::vector<float> testnormA;
-    for (int =0; i < 200; i++) testnormA.emplace_back(_stdNormalDistA(this->_Gen));
+    for (int i=0; i < 200; i++) testnormA.emplace_back(_stdNormalDistA(this->_Gen));
     std::cout << Histogram(testnormA);
     std::normal_distribution<float> _stdNormalDistB(_loc, _scale);
     std::vector<float> testnormB;
