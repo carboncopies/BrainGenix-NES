@@ -305,15 +305,6 @@ public:
 
     const nlohmann::json & ReqJSON() const { return RequestJSON; }
 
-    bool FindPar(const std::string & ParName, nlohmann::json::iterator & Iterator) {
-        Iterator = RequestJSON.find(ParName);
-        if (Iterator == RequestJSON.end()) {
-            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-            return false;
-        }
-        return true;
-    }
-
     bool FindPar(const std::string & ParName, nlohmann::json::iterator & Iterator, nlohmann::json& _JSON) {
         Iterator = _JSON.find(ParName);
         if (Iterator == _JSON.end()) {
@@ -323,17 +314,25 @@ public:
         return true;
     }
 
-    bool GetParInt(const std::string & ParName, int & Value) {
+    bool FindPar(const std::string & ParName, nlohmann::json::iterator & Iterator) {
+        return FindPar(ParName, Iterator, RequestJSON);
+    }
+
+    bool GetParBool(const std::string & ParName, bool & Value, nlohmann::json& _JSON) {
         nlohmann::json::iterator it;
-        if (!FindPar(ParName, it)) {
+        if (!FindPar(ParName, it, _JSON)) {
             return false;
         }
-        if (!it.value().is_number()) {
+        if (!it.value().is_boolean()) {
             Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
             return false;
         }
-        Value = it.value().template get<int>();
+        Value = it.value().template get<bool>();
         return true;
+    }
+
+    bool GetParBool(const std::string & ParName, bool & Value) {
+        return GetParBool(ParName, Value, RequestJSON);
     }
 
     bool GetParInt(const std::string & ParName, int & Value, nlohmann::json& _JSON) {
@@ -349,17 +348,8 @@ public:
         return true;
     }
 
-    bool GetParFloat(const std::string & ParName, float & Value) {
-        nlohmann::json::iterator it;
-        if (!FindPar(ParName, it)) {
-            return false;
-        }
-        if (!it.value().is_number()) {
-            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-            return false;
-        }
-        Value = it.value().template get<float>();
-        return true;
+    bool GetParInt(const std::string & ParName, int & Value) {
+        return GetParInt(ParName, Value, RequestJSON);
     }
 
     bool GetParFloat(const std::string & ParName, float & Value, nlohmann::json& _JSON) {
@@ -375,18 +365,8 @@ public:
         return true;
     }
 
-
-    bool GetParString(const std::string & ParName, std::string & Value) {
-        nlohmann::json::iterator it;
-        if (!FindPar(ParName, it)) {
-            return false;
-        }
-        if (!it.value().is_string()) {
-            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-            return false;
-        }
-        Value = it.value().template get<std::string>();
-        return true;
+    bool GetParFloat(const std::string & ParName, float & Value) {
+        return GetParFloat(ParName, Value, RequestJSON);
     }
 
     bool GetParString(const std::string & ParName, std::string & Value, nlohmann::json& _JSON) {
@@ -402,18 +382,8 @@ public:
         return true;
     }
 
-
-    bool GetParVec3(const std::string & ParName, Geometries::Vec3D & Value, const std::string & Units = "um") {
-        if (!GetParFloat(ParName+"X_"+Units, Value.x)) {
-            return false;
-        }
-        if (!GetParFloat(ParName+"Y_"+Units, Value.y)) {
-            return false;
-        }
-        if (!GetParFloat(ParName+"Z_"+Units, Value.z)) {
-            return false;
-        }
-        return true;
+    bool GetParString(const std::string & ParName, std::string & Value) {
+        return GetParString(ParName, Value, RequestJSON);
     }
 
     bool GetParVec3FromJSON(const std::string & ParName, Geometries::Vec3D & Value, nlohmann::json& _JSON, const std::string & Units = "um") {
@@ -427,6 +397,33 @@ public:
             return false;
         }
         return true;
+    }
+
+    bool GetParVec3(const std::string & ParName, Geometries::Vec3D & Value, const std::string & Units = "um") {
+        return GetParVec3FromJSON(ParName, Value, RequestJSON, Units);
+    }
+
+    bool GetParVecInt(const std::string & ParName, std::vector<int> & Value, nlohmann::json& _JSON) {
+        nlohmann::json::iterator it;
+        if (!FindPar(ParName, it, _JSON)) {
+            return false;
+        }
+        if (!it.value().is_array()) {
+            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
+            return false;
+        }
+        for (auto & element : it.value()) {
+            if (!element.is_number()) {
+                Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
+                return false;
+            }
+            Value.emplace_back(element.template get<int>());
+        }
+        return true;
+    }
+
+    bool GetParVecInt(const std::string & ParName, std::vector<int> & Value) {
+        return GetParVecInt(ParName, Value, RequestJSON);
     }
 
 };
@@ -1216,15 +1213,18 @@ std::string Manager::SetSpecificAPTimes(std::string _JSONRequest, ManagerTaskDat
  * Expects _JSONRequest:
  * {
  *   "SimulationID": <SimID>,
- *   "TimeNeuronPairs": [
- *      [ <t_ms>, <neuron-id> ],
- *      (more pairs)
+ *   "SpikeIntervalMean_ms": <float>,
+ *   "SpikeIntervalStDev_ms": <float>,
+ *   "NeuronIDs": [
+ *      (neuron-id,)
  *   ]
  * }
+ * Notes:
+ * - Zero neuron_ids means all Neurons.
+ * - SpikeIntervalStDev_ms 0 means no spontaneous activity.
  * Responds:
  * {
  *   "StatusCode": <status-code>,
- *   "TaskStatus": <task-status-code>
  * }
  */
 std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
@@ -1236,9 +1236,6 @@ std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, ManagerTas
   
     // Set Params
     bool Active = false;
-    if (!Handle.GetParBool("Active", Active)) {
-        return Handle.ErrResponse();
-    }
     float SpikeIntervalMean_ms = -1.0;
     if (!Handle.GetParFloat("SpikeIntervalMean_ms", SpikeIntervalMean_ms)) {
         return Handle.ErrResponse();
@@ -1248,7 +1245,7 @@ std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, ManagerTas
         return Handle.ErrResponse();
     }
     if ((SpikeIntervalMean_ms <= 0.0) || (SpikeIntervalStDev_ms < 0.0)) {
-        return Handle.ErrResponse(API.bgStatusCode::bgStatusInvalidParametersPassed);
+        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
     }
     std::vector<int> NeuronIDs; // Empty list means all neurons.
     if (!Handle.GetParVecInt("NeuronIDs", NeuronIDs)) {
@@ -1256,7 +1253,15 @@ std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, ManagerTas
     }
 
     // Modify spontaneous activity settings of specified neurons
-    // *** TODO... continue here.
+    if (NeuronIDs.empty()) {
+        for (auto & neuron : Handle.Sim()->Neurons) {
+            neuron->SetSpontaneousActivity(SpikeIntervalMean_ms, SpikeIntervalStDev_ms);
+        }
+    } else {
+        for (const auto & neuron_id : NeuronIDs) {
+            Handle.Sim()->Neurons.at(neuron_id)->SetSpontaneousActivity(SpikeIntervalMean_ms, SpikeIntervalStDev_ms);
+        }
+    }
 
     // Return Result ID
     return Handle.ErrResponse(); // ok

@@ -74,6 +74,8 @@ struct Neuron {
 
     virtual nlohmann::json GetRecordingJSON() const;
 
+    virtual void SetSpontaneousActivity(float mean, float stdev);
+
     virtual void InputReceptorAdded(ReceptorData RData);
 };
 

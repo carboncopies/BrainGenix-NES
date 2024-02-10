@@ -43,6 +43,11 @@ namespace NES {
 namespace Simulator {
 namespace BallAndStick {
 
+struct SpontaneousActivityPars {
+    float mean = 0.0;
+    float stdev = 0.0; // 0.0 means no spontaneous activity
+};
+
 /**
  * @brief This struct provides the structure representing a basic building block
  * for a ball-and-stick neural circuit.
@@ -66,7 +71,7 @@ struct BSNeuron : CoreStructs::Neuron {
     float TauPSPd_ms = 25.0; //! PostSynaptic Potential decay time constant
     float IPSP_nA = 870.0;   //! PostSynaptic Potential current amplitude (at vPSP peak)
 
-    std::tuple<float, float> TauSpontMeanStdev_ms = {0.0, 0.0}; //! 0 means no spontaneous activity
+    SpontaneousActivityPars TauSpont_ms;
 
     float T_ms = 0.0;
     float TSpontNext_ms = _T_SPONT_NEXT_mS_INIT;
@@ -86,9 +91,7 @@ struct BSNeuron : CoreStructs::Neuron {
     std::vector<float> ConvolvedFIFO{};
     std::vector<CoreStructs::ReceptorData> ReceptorDataVec{};
 
-    std::shared_ptr<Distributions::Distribution>
-        DtSpontDist{}; //! Distribution for delta t spontaneous
-                       //! (time changed since last spontaneous activity).
+    std::shared_ptr<Distributions::Distribution> DtSpontDist{}; //! Distribution for delta t spontaneous (time changed since last spontaneous activity).
 
     //! Constructors
     BSNeuron(int ID, Geometries::Geometry* soma, Geometries::Geometry* axon); // Geometries, as soma and axon may not be Sphere/Cylinder in future. //std::shared_ptr<Geometries::Geometry> soma, std::shared_ptr<Geometries::Geometry> axon);
@@ -104,7 +107,8 @@ struct BSNeuron : CoreStructs::Neuron {
 
     //! Set the distribution for delta t spontaneous (time changed
     //! since last spontaneous activity).
-    void SetSpontaneousActivity(float mean, float stdev);
+    //! A stdev==0 means the Neuron does not experience spontaneous activity.
+    virtual void SetSpontaneousActivity(float mean, float stdev);
 
     //! Keeps track of the membrane potential and the time of update.
     void Record(float t_ms);

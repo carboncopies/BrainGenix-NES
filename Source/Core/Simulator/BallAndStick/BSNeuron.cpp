@@ -8,6 +8,9 @@ namespace NES {
 namespace Simulator {
 namespace BallAndStick {
 
+// *** TODO: We could clean up all of these this-> pointers. The virtual functions
+//           should still work the same way.
+
 //! Constructors
 BSNeuron::BSNeuron(int ID, Geometries::Geometry* soma, Geometries::Geometry* axon) {
     this->ID = ID;
@@ -48,8 +51,11 @@ void BSNeuron::AttachDirectStim(float t_ms) {
 //! Set the distribution for delta t spontaneous (time changed
 //! since last spontaneous activity).
 void BSNeuron::SetSpontaneousActivity(float mean, float stdev) {
-    this->TauSpontMeanStdev_ms = std::make_tuple(mean, stdev);
-    this->DtSpontDist = std::make_shared<Distributions::TruncNorm>(-mean / stdev, mean / stdev, mean, stdev);
+    this->TauSpont_ms.mean = mean;
+    this->TauSpont_ms.stdev = stdev;
+    float a = 0.0;
+    float b = 2.0*mean;
+    this->DtSpontDist = std::make_shared<Distributions::TruncNorm>((a-mean) / stdev, (b-mean) / stdev, mean, stdev);
 };
 
 //! Keeps track of the membrane potential and the time of update.
@@ -208,11 +214,46 @@ void BSNeuron::SpontaneousActivity(float t_ms) {
     assert(t_ms >= 0.0);
 
     if (this->in_absref) return;
-    if (std::get<0>(this->TauSpontMeanStdev_ms) == 0) return;
+    if (this->TauSpont_ms.stdev == 0) return;
 
+    // Have we passed the next scheduled spontaneous event?
     if (t_ms >= this->TSpontNext_ms) {
+
+        // Register a spike threshold crossing and the start of an action potential.
         if (this->TSpontNext_ms >= 0) this->TAct_ms.push_back(t_ms);
-        float dt_spont = this->DtSpontDist->RandomSample(1)[0];
+
+        // *** DEBUGGING:
+        if ((ID==0) && (t_ms < 2.0)) {
+            auto samples = this->DtSpontDist->RandomSample(100);
+            float min = 10000.0;
+            float max = -10000.0;
+            for (auto x : samples) {
+                if (x < min) min = x;
+                if (x > max) max = x;
+            }
+            std::cout << "Min=" << min;
+            std::cout << " Max=" << max << '\n';
+            float range = max - min;
+            float dx = range / 9;
+            std::vector<unsigned int> bins(9, 0);
+            for (auto x : samples) {
+                float v = x - min;
+                v /= dx;
+                if (v < 0) v = 0;
+                if (v > 8) v = 8;
+                unsigned int v_idx = (unsigned int) v;
+                bins[v_idx]++;
+            }
+            std::cout << "Histogram / Curve:\n";
+            for (auto count : bins) {
+                std::cout << count << ' ';
+            }
+            std::cout << '\n';
+        }
+
+        // Obtain interval to the next spontaneous event from the distribution.
+        float dt_spont = this->DtSpontDist->RandomSample(1)[0]; // Generate 1 random sample in a vector, take the 0th element.
+        //if (ID==0) std::cout << "dt_spont=" << dt_spont << ' '; std::cout.flush();
         this->TSpontNext_ms = t_ms + dt_spont;
     }
 };

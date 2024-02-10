@@ -24,18 +24,50 @@ TruncNorm::TruncNorm(float _a, float _b) {
     this->b = _b;
 };
 
+// Use this to test a distribution without assuming anything.
+std::string Histogram(std::vector<float> samples, unsigned int numbins = 9) {
+    float min = 10000.0;
+    float max = -10000.0;
+    for (auto x : samples) {
+        if (x < min) min = x;
+        if (x > max) max = x;
+    }
+    float range = max - min;
+    float dx = range / numbins;
+    std::vector<unsigned int> bins(numbins, 0);
+    for (auto x : samples) {
+        float v = (x - min) / dx;
+        if (v < 0) v = 0;
+        if (v > (numbins-1)) v = numbins - 1;
+        bins[(unsigned int) v]++;
+    }
+    std::string hist("Histogram (min="+std::to_string(min)+", max="+std::to_string(max)+"):\n");
+    for (auto count : bins) {
+        hist += std::to_string(count) << ' ';
+    }
+    hist += '\n';
+    return hist;
+}
+
 TruncNorm::TruncNorm(float _a, float _b, float _loc, float _scale) {
     assert(_b > _a);
     this->a = _a;
     this->b = _b;
     this->loc = _loc;
     this->scale = _scale;
+    // * DEBUGGING:
+    std::normal_distribution<float> _stdNormalDist;
+    std::vector<float> testnorm;
+    for (int =0; i < 200; i++) testnorm.emplace_back(_stdNormalDist(this->_Gen));
+    std::cout << Histogram(testnorm);
+    std::normal_distribution<float> _stdNormalDist();
+    //_stdNormalDist(this->_Gen)
 };
 
 //! Generates a random sample from the distribution of size numSamples.
 std::vector<float> TruncNorm::RandomSample(size_t numSamples) {
     // Standard normal distribution
-    static std::normal_distribution<float> _stdNormalDist;
+    static std::normal_distribution<float> _stdNormalDist; // Note this is static! Created only once, initialized only on first call.
     std::vector<float> randomSample;
 
     while (randomSample.size() < numSamples) {

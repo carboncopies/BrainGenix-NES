@@ -83,7 +83,8 @@ TEST_F(BSNeuronTest, test_AttachDirectStim_default) {
 TEST_F(BSNeuronTest, test_SetSpontaneousActivity_default) {
     float testMu = 0.1;
     float testStd = 0.5;
-    std::tuple<float, float> gotTauSpontMeanStdev_ms;
+    float mean_ms;
+    float stdev_ms;
     std::tuple<float, float> expectedDistStats, gotDistStats;
 
     std::unique_ptr<BG::NES::Simulator::Distributions::Distribution>
@@ -94,12 +95,13 @@ TEST_F(BSNeuronTest, test_SetSpontaneousActivity_default) {
 
     testBSNeuron->SetSpontaneousActivity(testMu, testStd);
 
-    gotTauSpontMeanStdev_ms = testBSNeuron->TauSpontMeanStdev_ms;
+    mean_ms = testBSNeuron->TauSpont_ms.mean;
+    stdev_ms = testBSNeuron->TauSpont_ms.stdev;
     gotDistStats = testBSNeuron->DtSpontDist->Stats();
 
     // TauSpontMeanStdev_ms must be equal to the mu and sigma values supplied
-    ASSERT_NEAR(std::get<0>(gotTauSpontMeanStdev_ms), testMu, tol);
-    ASSERT_NEAR(std::get<1>(gotTauSpontMeanStdev_ms), testStd, tol);
+    ASSERT_NEAR(mean_ms, testMu, tol);
+    ASSERT_NEAR(stdev_ms, testStd, tol);
 
     // Statistics for the spontaneous Dt distribution must match the
     // statistics of the expected distribution.
