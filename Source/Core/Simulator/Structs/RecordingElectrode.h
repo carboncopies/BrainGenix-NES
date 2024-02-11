@@ -71,8 +71,7 @@ struct RecordingElectrode {
     //! 1. Get a vector from tip to end.
     //! 2. Multiply vector coordinates
     //! 3. Add the resulting vector to the tip position.
-    Geometries::Vec3D
-    CoordsElectrodeToSystem(Geometries::Vec3D eLocRatio);
+    Geometries::Vec3D CoordsElectrodeToSystem(Geometries::Vec3D eLocRatio);
 
     void InitSystemCoordSiteLocations();
     void InitNeuronReferencesAndDistances();
@@ -83,8 +82,8 @@ struct RecordingElectrode {
     //! a combination of the effects of nearby neurons.
     float ElectricFieldPotential(size_t siteIdx);
     void Record(float t_ms);
-    std::unordered_map<std::string, std::vector<std::vector<float>>>
-    GetRecording();
+    std::unordered_map<std::string, std::vector<std::vector<float>>> GetRecording();
+    nlohmann::json GetRecordingJSON() const;
 };
 
 }; // namespace Tools

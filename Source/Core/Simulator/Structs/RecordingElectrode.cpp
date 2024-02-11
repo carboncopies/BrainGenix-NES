@@ -125,6 +125,17 @@ RecordingElectrode::GetRecording() {
     return data;
 };
 
+nlohmann::json RecordingElectrode::GetRecordingJSON() const {
+    nlohmann::json data;
+
+    data["E_mV"] = nlohmann::json::array();
+    for (unsigned int i = 0; i < this->E_mV.size(); i++) {
+        data["E_mV"][i] = this->E_mV[i];
+    }
+
+    return data;
+}
+
 }; // namespace Tools
 }; // namespace Simulator
 }; // namespace NES

@@ -115,6 +115,9 @@ std::string AttachRecordingElectrodesHandler(Manager& Man, const nlohmann::json&
 std::string SetRecordInstrumentsHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
     return Man.SetRecordInstruments(ReqParams.dump(), called_by_manager_task);
 }
+std::string GetInstrumentRecordingsHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.GetInstrumentRecordings(ReqParams.dump(), called_by_manager_task);
+}
 std::string ManTaskStatusHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
     return Man.ManTaskStatus(ReqParams.dump(), called_by_manager_task);
 }
@@ -170,6 +173,7 @@ const NESRequest_map_t NES_Request_handlers = {
 
     {"AttachRecordingElectrodes", {"", AttachRecordingElectrodesHandler} },
     {"SetRecordInstruments", {"", SetRecordInstrumentsHandler} },
+    {"GetInstrumentRecordings", {"", GetInstrumentRecordingsHandler} },
 
     {"NESRequest", {"NES", nullptr}},
 
@@ -1443,6 +1447,26 @@ std::string Manager::SetRecordInstruments(std::string _JSONRequest, ManagerTaskD
 
     // Return Result ID
     return Handle.ErrResponse(); // ok
+}
+
+std::string Manager::GetInstrumentRecordings(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+ 
+    HandlerData Handle(this, _JSONRequest, "GetInstrumentRecordings", called_by_manager_task);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Return JSON
+    nlohmann::json ResponseJSON;
+    if (!Handle.Sim()->RecordingElectrodes.empty()) {
+        ResponseJSON["Electrodes"] = nlohmann::json::object();
+        for (const auto & Electrode : Handle.Sim()->RecordingElectrodes) {
+            ResponseJSON["Electrodes"][Electrode->Name] = Electrode->GetRecordingJSON();
+        }
+    }
+
+    ResponseJSON["StatusCode"] = 0; // ok
+    return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
 /**
