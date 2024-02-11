@@ -166,6 +166,7 @@ public:
     std::string SimulationBuildMesh(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
     std::string SimulationSave(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
     std::string SimulationLoad(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string SimulationGetGeoCenter(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
 
     std::string SphereCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
     std::string BulkSphereCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);

@@ -71,22 +71,26 @@ Simulation::GetNeuronsByIDs(std::vector<size_t> IDList) {
     return foundNeurons;
 };
 
-Geometries::Vec3D Simulation::GetGeoCenter() {
+Geometries::Vec3D Simulation::GetGeoCenter() const {
     Geometries::Vec3D geoCenter_um{};
-    size_t numCells = 0;
+    // size_t numCells = 0;
 
-    for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-        auto circuitPtr = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
-        assert(circuitPtr);
+    // for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+    //     auto circuitPtr = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
+    //     assert(circuitPtr);
 
-        auto circuitCellCenters = circuitPtr->GetCellCenters();
+    //     auto circuitCellCenters = circuitPtr->GetCellCenters();
 
-        for (auto cellCenter : circuitCellCenters)
-            geoCenter_um = geoCenter_um + cellCenter;
-        numCells += circuitCellCenters.size();
+    //     for (auto cellCenter : circuitCellCenters) geoCenter_um = geoCenter_um + cellCenter;
+    //     numCells += circuitCellCenters.size();
+    // }
+    // geoCenter_um = geoCenter_um / static_cast<double>(numCells);
+
+    for (const auto & neuron : Neurons) {
+        geoCenter_um = geoCenter_um + neuron->GetCellCenter();
     }
-    geoCenter_um = geoCenter_um / static_cast<double>(numCells);
+    geoCenter_um = geoCenter_um / float(Neurons.size());
+
     return geoCenter_um;
 };
 

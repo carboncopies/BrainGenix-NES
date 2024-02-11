@@ -130,7 +130,7 @@ public:
     std::vector<size_t> GetAllNeuronIDs();
     std::vector<std::shared_ptr<CoreStructs::Neuron>>
     GetNeuronsByIDs(std::vector<size_t> IDList);
-    Geometries::Vec3D GetGeoCenter();
+    Geometries::Vec3D GetGeoCenter() const;
     void AttachDirectStim(std::vector<std::tuple<float, size_t>> listOfStims);
     void SetSpontaneousActivity(std::vector<std::tuple<float, float, size_t>> spontSpikeSettings);
 

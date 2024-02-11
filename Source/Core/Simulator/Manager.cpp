@@ -63,6 +63,9 @@ std::string SimulationSaveHandler(Manager& Man, const nlohmann::json& ReqParams,
 std::string SimulationLoadHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
     return Man.SimulationLoad(ReqParams.dump(), called_by_manager_task);
 }
+std::string SimulationGetGeoCenterHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.SimulationGetGeoCenter(ReqParams.dump(), called_by_manager_task);
+}
 std::string SphereCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
     return Man.SphereCreate(ReqParams.dump(), called_by_manager_task);
 }
@@ -131,6 +134,7 @@ const NESRequest_map_t NES_Request_handlers = {
     {"SimulationBuildMesh", {"Simulation/BuildMesh", SimulationBuildMeshHandler} },
     {"SimulationSave", {"Simulation/Save", SimulationSaveHandler} },
     {"SimulationLoad", {"Simulation/Load", SimulationLoadHandler} },
+    {"SimulationGetGeoCenter", {"", SimulationGetGeoCenterHandler} },
 
     {"SphereCreate", {"Geometry/Shape/Sphere/Create", SphereCreateHandler} },
     {"BulkSphereCreate", {"Geometry/Shape/Sphere/BulkCreate", nullptr} },
@@ -779,6 +783,22 @@ std::string Manager::SimulationLoad(std::string _JSONRequest, ManagerTaskData* c
 
     // Return Result ID
     return Handle.ResponseWithID("TaskID", TaskID);
+}
+
+std::string Manager::SimulationGetGeoCenter(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+ 
+    HandlerData Handle(this, _JSONRequest, "SimulationGetGeoCenter", called_by_manager_task);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+    
+    Geometries::Vec3D GeoCenter_um = Handle.Sim()->GetGeoCenter();
+
+    // Return GeoCenter vector
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0;
+    Util::SetVec3(ResponseJSON, GeoCenter_um, "GeoCenter");
+    return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
 std::string Manager::SphereCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {

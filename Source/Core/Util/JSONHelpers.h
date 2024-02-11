@@ -77,6 +77,15 @@ void SetVec3(nlohmann::json* _Target, std::string _Input, std::string _Prefix, s
  */
 void SetVec3(Simulator::Geometries::Vec3D& _Vector, std::string _Input);
 
+/**
+ * @brief Set the JSON target from a 3D vector.
+ *
+ * @param _Target Reference to the target JSON object.
+ * @param _Input The input 3D vector.
+ * @param _Prefix The prefix to search for in the input.
+ * @param _Units The units for the vector (default is "um").
+ */
+void SetVec3(nlohmann::json & _Target, const Simulator::Geometries::Vec3D& _Input, const std::string & _Prefix, const std::string & _Units="um");
 
 /**
  * @brief Helper function that sets the given vector given a pointer to some JSON, and a prefix and units to search for.

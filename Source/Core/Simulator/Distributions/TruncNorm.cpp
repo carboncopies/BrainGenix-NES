@@ -57,15 +57,6 @@ TruncNorm::TruncNorm(float _a, float _b, float _loc, float _scale) {
     this->b = _b;
     this->loc = _loc;
     this->scale = _scale;
-    // * DEBUGGING:
-    std::normal_distribution<float> _stdNormalDistA;
-    std::vector<float> testnormA;
-    for (int i=0; i < 200; i++) testnormA.emplace_back(_stdNormalDistA(this->_Gen));
-    std::cout << Histogram(testnormA);
-    std::normal_distribution<float> _stdNormalDistB(_loc, _scale);
-    std::vector<float> testnormB;
-    std::cout << Histogram(testnormB);
-    //_stdNormalDist(this->_Gen)
 };
 
 //! Generates a random sample from the distribution of size numSamples.

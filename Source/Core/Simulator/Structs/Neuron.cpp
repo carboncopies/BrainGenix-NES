@@ -38,6 +38,7 @@ bool Neuron::HasSpiked() {
 
 //! Returns the geometric center of the neuron.
 Geometries::Vec3D &Neuron::GetCellCenter() {
+    WARNWRONGOOPLEVEL();
     return cell_center; // Placeholder.
 }
 

@@ -99,7 +99,7 @@ struct BSNeuron : CoreStructs::Neuron {
     //BSNeuron(Simulation & sim, const CoreStructs::BSNeuronStruct & bsneuronstruct);
 
     //! Returns the geometric center of the neuron.
-    Geometries::Vec3D &GetCellCenter();
+    virtual Geometries::Vec3D &GetCellCenter();
 
     //! Records the time of direct stimulation for every occurrence
     //! of a direct stimulation.

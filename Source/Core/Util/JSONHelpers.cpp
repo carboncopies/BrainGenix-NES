@@ -26,7 +26,7 @@ std::string GetString(const nlohmann::json *_JSON, std::string _ParamName) {
     return (*_JSON).at(_ParamName).template get<std::string>();
 }
 
-
+// From stringified JSON to JSON.
 void SetVec3(nlohmann::json* _Target, std::string _Input, std::string _Prefix, std::string _Units) {
     nlohmann::json Vec3 = nlohmann::json::parse(_Input);
     (*_Target)[_Prefix + "X_" + _Units] = Vec3[0].template get<float>();
@@ -34,11 +34,19 @@ void SetVec3(nlohmann::json* _Target, std::string _Input, std::string _Prefix, s
     (*_Target)[_Prefix + "Z_" + _Units] = Vec3[2].template get<float>();
 }
 
+// From stringified JSON to Vec3.
 void SetVec3(Simulator::Geometries::Vec3D& _Vector, std::string _Input) {
     nlohmann::json Vec3 = nlohmann::json::parse(_Input);
     _Vector.x = Vec3[0].template get<float>();
     _Vector.y = Vec3[1].template get<float>();
     _Vector.z = Vec3[2].template get<float>();
+}
+
+// From Vec3 to JSON..
+void SetVec3(nlohmann::json & _Target, const Simulator::Geometries::Vec3D& _Input, const std::string & _Prefix, const std::string & _Units) {
+    _Target[_Prefix + "X_" + _Units] = _Input.x;
+    _Target[_Prefix + "Y_" + _Units] = _Input.y;
+    _Target[_Prefix + "Z_" + _Units] = _Input.z;
 }
 
 void GetVec3(Simulator::Geometries::Vec3D& _Vector, const nlohmann::json* _Input, std::string _Prefix, std::string _Units) {
