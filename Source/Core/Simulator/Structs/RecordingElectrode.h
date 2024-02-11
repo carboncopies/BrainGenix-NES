@@ -28,6 +28,10 @@
 namespace BG {
 namespace NES {
 namespace Simulator {
+
+// Forward declarations:
+struct Simulation;
+
 namespace Tools {
 
 /**
@@ -47,7 +51,7 @@ struct RecordingElectrode {
     float NoiseLevel = 1.0;
     float SensitivityDampening = 2.0;
 
-    std::shared_ptr<Simulator::Simulation> Sim;
+    Simulator::Simulation* Sim;
     std::vector<Geometries::Vec3D> SiteLocations{}; //! In Simulation coordinate system
     std::vector<std::shared_ptr<CoreStructs::Neuron>> Neurons{};
     std::vector<std::vector<float>> NeuronSomaToSiteDistances_um2{}; //!  [ (d_s1n1, d_s1n2, ...), (d_s2n1, d_s2n2, ...), ...]
@@ -55,20 +59,20 @@ struct RecordingElectrode {
     std::vector<std::vector<float>> E_mV{}; //! [ [E1(t0), E1(t1), ...], [E2(t0), E2(t1), ...], ...]
 
     //! Constructors
-    RecordingElectrode(std::shared_ptr<Simulator::Simulation> _Sim);
+    RecordingElectrode(Simulator::Simulation* _Sim);
     RecordingElectrode(
         int _ID,
         Geometries::Vec3D _TipPosition_um,
         Geometries::Vec3D _EndPosition_um,
         std::vector<Geometries::Vec3D> _Sites,
         float _NoiseLevel, float _SensitivityDampening,
-        std::shared_ptr<Simulator::Simulation> _Sim);
+        Simulator::Simulation* _Sim);
 
     //! 1. Get a vector from tip to end.
     //! 2. Multiply vector coordinates
     //! 3. Add the resulting vector to the tip position.
     Geometries::Vec3D
-    CoordsElectrodeToSystem(std::tuple<float, float, float> eLocRatio);
+    CoordsElectrodeToSystem(Geometries::Vec3D eLocRatio);
 
     void InitSystemCoordSiteLocations();
     void InitNeuronReferencesAndDistances();

@@ -35,10 +35,9 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Simulator/Structs/Simulation.h>
 
 #include <VSDA/VoxelSubsystem/Structs/MicroscopeParameters.h>
-#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
+#include <VSDA/VoxelSubsystem/Structs/ScanRegion.h>
 
 #include <BG/Common/Logger/Logger.h>
 
@@ -47,7 +46,8 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
-
+// Forward declaration:
+struct Simulation;
 
 // Target Process: Simulation -> Voxels -> Meshes -> Images
 // Firstly, we take a simulation pointer, build a voxel array from it

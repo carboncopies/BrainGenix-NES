@@ -6,23 +6,26 @@ namespace Simulator {
 namespace Tools {
 
 //! Constructors
-RecordingElectrode::RecordingElectrode(
-    std::shared_ptr<Simulator::Simulation> _Sim)
-    : Sim(_Sim) {
-    this->Sites.emplace_back(firstSite);
+RecordingElectrode::RecordingElectrode(Simulator::Simulation* _Sim): Sim(_Sim) {
+    assert(_Sim != nullptr);
+    //this->Sites.emplace_back(firstSite);
     this->InitSystemCoordSiteLocations();
     this->InitNeuronReferencesAndDistances();
     this->InitRecords();
 };
 
 RecordingElectrode::RecordingElectrode(
-    int _ID, Geometries::Vec3D _TipPosition_um,
+    int _ID,
+    Geometries::Vec3D _TipPosition_um,
     Geometries::Vec3D _EndPosition_um,
-    std::vector<std::tuple<float, float, float>> _Sites, float _NoiseLevel,
-    float _SensitivityDampening, std::shared_ptr<Simulator::Simulation> _Sim)
-    : ID(_ID), TipPosition_um(_TipPosition_um), EndPosition_um(_EndPosition_um),
-      Sites(_Sites), NoiseLevel(_NoiseLevel),
-      SensitivityDampening(_SensitivityDampening), Sim(_Sim) {
+    std::vector<Geometries::Vec3D> _Sites,
+    float _NoiseLevel,
+    float _SensitivityDampening,
+    Simulator::Simulation* _Sim
+    ): ID(_ID), TipPosition_um(_TipPosition_um), EndPosition_um(_EndPosition_um),
+       Sites(_Sites), NoiseLevel(_NoiseLevel),
+       SensitivityDampening(_SensitivityDampening), Sim(_Sim) {
+    assert(_Sim != nullptr);
     this->InitSystemCoordSiteLocations();
     this->InitNeuronReferencesAndDistances();
     this->InitRecords();
@@ -31,10 +34,12 @@ RecordingElectrode::RecordingElectrode(
 //! 1. Get a vector from tip to end.
 //! 2. Multiply vector coordinates with the ratios given in eloc_ratio.
 //! 3. Add the resulting vector to the tip position.
-Geometries::Vec3D RecordingElectrode::CoordsElectrodeToSystem(
-    std::tuple<float, float, float> eLocRatio) {
-    auto toAdd =
-        (this->TipPosition_um - this->EndPosition_um) * std::get<2>(eLocRatio);
+// *** TODO: Fix this to properly use the width dimension of the electrode
+//       as well and produce a proper conversion.
+//       At present, this is using only the z-coord of eloc_ratio as
+//       a position along the center line of the vector between tip and end.
+Geometries::Vec3D RecordingElectrode::CoordsElectrodeToSystem(Geometries::Vec3D eLocRatio) {
+    auto toAdd = (this->TipPosition_um - this->EndPosition_um) * eLocRatio.z;
     return this->TipPosition_um + toAdd;
 };
 

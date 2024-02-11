@@ -1,5 +1,7 @@
 #include <Simulator/Structs/Simulation.h>
 
+#include <Simulator/Structs/RecordingElectrode.h>
+
 #include <iostream>
 #include <sstream>
 #include <filesystem>
@@ -245,7 +247,7 @@ void Simulation::RunFor(float tRun_ms) {
 
         // Carry out simulated instrument recordings
         if (InstrumentsAreRecording()) {
-            this->TInstruments_ms.append(this->T_ms);
+            this->TInstruments_ms.emplace_back(this->T_ms);
 
             // Electrodes
             for (auto & Electrode : RecordingElectrodes) {

@@ -38,12 +38,10 @@
 #include <Simulator/Structs/Receptor.h>
 #include <Simulator/Structs/Staple.h>
 #include <BG/Common/Logger/Logger.h>
-#include <Simulator/Structs/RecordingElectrode.h>
 
 #include <Visualizer/VisualizerParameters.h>
 
 #include <VSDA/VoxelSubsystem/Structs/VSDAData.h>
-
 
 //! The value of tMax_ms at which recording will be done forever.
 #define _RECORD_FOREVER_TMAX_MS -1.0
@@ -51,6 +49,11 @@
 namespace BG {
 namespace NES {
 namespace Simulator {
+
+// For forward declarations
+namespace Tools {
+    struct RecordingElectrode;
+}
 
 enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA, SIMULATION_VISUALIZATION};
 

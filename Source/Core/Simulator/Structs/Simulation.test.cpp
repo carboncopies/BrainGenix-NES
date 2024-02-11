@@ -17,6 +17,8 @@
 #include <Simulator/BallAndStick/BSAlignedNC.h>
 #include <Simulator/Distributions/TruncNorm.h>
 #include <Simulator/Structs/Simulation.h>
+#include <Simulator/Structs/RecordingElectrode.h>
+
 
 /**
  * @brief Test class for unit tests for the Simulation struct.

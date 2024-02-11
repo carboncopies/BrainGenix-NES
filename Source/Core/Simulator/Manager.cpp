@@ -2,6 +2,7 @@
 #include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/bgStatusCode.h>
 #include <Simulator/Geometries/VecTools.h>
+#include <Simulator/Structs/RecordingElectrode.h>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -164,7 +165,7 @@ const NESRequest_map_t NES_Request_handlers = {
     {"SetSpecificAPTimes", {"", SetSpecificAPTimesHandler} },
     {"SetSpontaneousActivity", {"", SetSpontaneousActivityHandler} },
 
-    {"AttachRecordingElectrodes", {"", AttachRecordingElectrodes} },
+    {"AttachRecordingElectrodes", {"", AttachRecordingElectrodesHandler} },
 
     {"NESRequest", {"NES", nullptr}},
 
@@ -437,7 +438,7 @@ public:
 
     // If Parname="" then _JSON.is_array() must be true.
     bool GetParVecFloat(const std::string & ParName, std::vector<float> & Value, nlohmann::json& _JSON) {
-        if (ParName.isempty()) {
+        if (ParName.empty()) {
             if (!_JSON.is_array()) {
                 Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
                 return false;
@@ -1332,19 +1333,21 @@ std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, ManagerTas
 
 /**
  * Expects _JSONRequest:
- * [
- *   {
- *     "name": <electrode-name>,
- *     "tip_position": <3D-vector>,
- *     "end_position": <3D-vector>,
- *     "sites": [
- *       [<x-ratio>, <y-ratio>, <z-ratio>],
- *       (more site xyz ratios)
- *     ]
- *     "noise_level": <float>,
- *   },
- *   (more electrode specs)
- * ]
+ * {
+ *   "SimulationID": <SimID>,
+ *   "ElectrodeSpecs": [
+ *     {
+ *       "name": <electrode-name>,
+ *       "tip_position": <3D-vector>,
+ *       "end_position": <3D-vector>,
+ *       "sites": [
+ *         [<x-ratio>, <y-ratio>, <z-ratio>],
+ *         (more site xyz ratios)
+ *       ]
+ *       "noise_level": <float>,
+ *     },
+ *     (more electrode specs)
+ *   ]
  * Responds:
  * {
  *   "StatusCode": <status-code>,
@@ -1360,14 +1363,18 @@ std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, Manager
 
     std::vector<int> ElectrodeIDs;
 
-    auto ElectrodeList = Handle.ReqJSON();
+    nlohmann::json::iterator ElectrodeSpecsIterator;
+    if (!Handle.FindPar("ElectrodeSpecs", ElectrodeSpecsIterator, const_cast<nlohmann::json&>(Handle.ReqJSON()))) {
+        Handle.ErrResponse();
+    }
+    auto ElectrodeList = ElectrodeSpecsIterator.value();
     if (!ElectrodeList.is_array()) {
         Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
     }
-    for (const auto & ElectodeData : ElectrodeList) {
+    for (auto & ElectodeData : ElectrodeList) {
 
         // Collect electrode parameters and make electrode
-        Tools::RecordingElectrode E;
+        Tools::RecordingElectrode E(Handle.Sim());
         if (!Handle.GetParString("name", E.Name, ElectodeData)) {
             Handle.ErrResponse();
         }
@@ -1388,7 +1395,7 @@ std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, Manager
             Handle.ErrResponse();
         }
         nlohmann::json::iterator SitesIterator;
-        if (!FindPar("sites", SitesIterator, ElectodeData)) {
+        if (!Handle.FindPar("sites", SitesIterator, ElectodeData)) {
             Handle.ErrResponse();
         }
         if (!SitesIterator.value().is_array()) {

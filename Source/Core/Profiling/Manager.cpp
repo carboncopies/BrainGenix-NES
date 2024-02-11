@@ -15,6 +15,7 @@
 #include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/Structs/Simulation.h>
 #include <Simulator/EngineController.h>
+#include <Simulator/Structs/RecordingElectrode.h>
 
 namespace BG {
 namespace NES {

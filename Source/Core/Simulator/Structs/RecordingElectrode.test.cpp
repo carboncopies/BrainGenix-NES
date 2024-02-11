@@ -44,7 +44,7 @@ struct RecordingElectrodeTest : testing::Test {
         testSim->AddCircuit(testNC);
         testSim->AddRegion(testRegion);
 
-        testElectrode = std::make_unique<BG::NES::Simulator::Tools::RecordingElectrode>(testSim);
+        testElectrode = std::make_unique<BG::NES::Simulator::Tools::RecordingElectrode>(testSim.get());
     }
 
     void TearDown() { return; }
@@ -53,8 +53,8 @@ struct RecordingElectrodeTest : testing::Test {
 //  std::unordered_map<std::string, std::vector<float>> GetRecording();
 
 TEST_F(RecordingElectrodeTest, test_CoordsElectrodeToSystem_default) {
-    auto eLocRatio = std::make_tuple(0.0, 0.5, 0.2);
-    auto toAdd = (testElectrode->TipPosition_um - testElectrode->EndPosition_um) * std::get<2>(eLocRatio);
+    BG::NES::Simulator::Geometries::Vec3D eLocRatio(0.0, 0.5, 0.2);
+    auto toAdd = (testElectrode->TipPosition_um - testElectrode->EndPosition_um) * eLocRatio.z;
     auto expectedSysLoc_um = testElectrode->TipPosition_um + toAdd;
 
     ASSERT_TRUE(testElectrode->CoordsElectrodeToSystem(eLocRatio) == expectedSysLoc_um);

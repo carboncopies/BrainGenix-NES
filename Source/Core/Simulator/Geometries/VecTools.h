@@ -12,6 +12,7 @@
 #include <cassert>
 #include <cmath>
 #include <string>
+#include <vector>
 
 namespace BG {
 namespace NES {
