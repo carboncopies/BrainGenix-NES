@@ -12,6 +12,7 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <assert.h>
+#include <cstdint>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -20,33 +21,26 @@
 #include <BG/Renderer/Interface.h>
 #include <Simulator/Structs/Simulation.h>
 
-
-#include <Visualizer/MeshRenderer.h>
 #include <Visualizer/MeshBuilder.h>
+#include <Visualizer/MeshRenderer.h>
 #include <Visualizer/VisualizerParameters.h>
-
-
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 
-
-
 /**
- * @brief Function that renders a simulation for the user. 
+ * @brief Function that renders a simulation for the user.
  * Takes a pointer to the simulation, along with some other parameters and renders what they've asked for to a file, which the path is returned to the _OutputPath parameter.
- * 
+ *
  * @param _Logger Pointer to logging instance.
  * @param _Renderer Pointer to renderer instance.
  * @param _Simulation Pointer to simulation insance.
- * @return true 
- * @return false 
+ * @return true
+ * @return false
  */
-bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, Simulation* _Simulation);
+bool VisualizeSimulation(BG::Common::Logger::LoggingSystem *_Logger, Renderer::Interface *_Renderer, Simulation *_Simulation);
 
-
-
-}; // Close Namespace Simulator
-}; // Close Namespace NES
-}; // Close Namespace BG
+}; // namespace Simulator
+}; // namespace NES
+}; // namespace BG

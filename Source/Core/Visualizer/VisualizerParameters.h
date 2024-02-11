@@ -28,9 +28,8 @@
 
 #pragma once
 
-
-
 // Standard Libraries (BG convention: use <> instead of "")
+#include <cstdint>
 #include <vector>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -38,23 +37,16 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 
-
 namespace BG {
 namespace NES {
 namespace Simulator {
 
-enum VisualizerState {
-    VISUALIZER_NONE,
-    VISUALIZER_REQUESTED,
-    VISUALIZER_WORKING,
-    VISUALIZER_DONE
-};
-
+enum VisualizerState { VISUALIZER_NONE, VISUALIZER_REQUESTED, VISUALIZER_WORKING, VISUALIZER_DONE };
 
 /**
  * @brief This struct defines a bunch of parameters to be used by the VisualizeSimulation function.
  * It's just there to make it easier to call that function so we don't have a million params.
- * 
+ *
  */
 struct VisualizerParameters {
 
@@ -62,24 +54,19 @@ struct VisualizerParameters {
 
     std::vector<float> FOVList_deg; /**The desired field of view in degrees in a list for all requsted images*/
 
-    std::vector<vsg::dvec3> CameraPositionList_um; /**List of locations of the camera in world-space coordinates*/
+    std::vector<vsg::dvec3> CameraPositionList_um;       /**List of locations of the camera in world-space coordinates*/
     std::vector<vsg::dvec3> CameraLookAtPositionList_um; /**List of locations of where the camera is looking towards in world-space coordinates*/
 
-    int ImageWidth_px; /**Target image width in pixels*/
+    int ImageWidth_px;  /**Target image width in pixels*/
     int ImageHeight_px; /**Target image height in pixels*/
 
     int LastImageNumber = 0; /**Number of last image - to number files*/
 
-
     VisualizerState State = VISUALIZER_NONE; /**Sets the state of this visualizer task*/
 
-
     std::vector<std::string> FileHandles; /**List of file handles for completed images*/
-
 };
 
-
-
-}; // Close Namespace Logger
-}; // Close Namespace Common
-}; // Close Namespace BG
+}; // namespace Simulator
+}; // namespace NES
+}; // namespace BG
