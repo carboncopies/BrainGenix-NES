@@ -108,6 +108,9 @@ std::string SetSpecificAPTimesHandler(Manager& Man, const nlohmann::json& ReqPar
 std::string SetSpontaneousActivityHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
     return Man.SetSpontaneousActivity(ReqParams.dump(), called_by_manager_task);
 }
+std::string AttachRecordingElectrodesHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.AttachRecordingElectrodes(ReqParams.dump(), called_by_manager_task);
+}
 std::string ManTaskStatusHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
     return Man.ManTaskStatus(ReqParams.dump(), called_by_manager_task);
 }
@@ -160,6 +163,8 @@ const NESRequest_map_t NES_Request_handlers = {
 
     {"SetSpecificAPTimes", {"", SetSpecificAPTimesHandler} },
     {"SetSpontaneousActivity", {"", SetSpontaneousActivityHandler} },
+
+    {"AttachRecordingElectrodes", {"", AttachRecordingElectrodes} },
 
     {"NESRequest", {"NES", nullptr}},
 
@@ -1255,7 +1260,6 @@ std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, ManagerTas
     }
   
     // Set Params
-    bool Active = false;
     float SpikeIntervalMean_ms = -1.0;
     if (!Handle.GetParFloat("SpikeIntervalMean_ms", SpikeIntervalMean_ms)) {
         return Handle.ErrResponse();
@@ -1286,6 +1290,42 @@ std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, ManagerTas
     // Return Result ID
     return Handle.ErrResponse(); // ok
 }
+
+/**
+ * Expects _JSONRequest:
+ * [
+ *   {
+ *     "name": <electrode-name>,
+ *     "tip_position": <3D-vector>,
+ *     "end_position": <3D-vector>,
+ *     "sites": [
+ *       [<x-ratio>, <y-ratio>, <z-ratio>],
+ *       (more site xyz ratios)
+ *     ]
+ *     "noise_level": <float>,
+ *   },
+ *   (more electrode specs)
+ * ]
+ * Responds:
+ * {
+ *   "StatusCode": <status-code>,
+ *   "ElectrodeIDs": [ <id>, (more IDs) ]
+ * }
+ */
+std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+ 
+    HandlerData Handle(this, _JSONRequest, "AttachRecordingElectrodes", called_by_manager_task);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+  
+    // Set Params
+    // *** Continue here!
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
+
 
 /**
  * Expects _JSONRequest:

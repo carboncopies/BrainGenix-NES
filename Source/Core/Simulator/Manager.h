@@ -193,6 +193,8 @@ public:
     std::string SetSpecificAPTimes(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
     std::string SetSpontaneousActivity(std::string _JSONRequest, ManagerTaskData* called_by_manager_task);
 
+    std::string AttachRecordingElectrodes(std::string _JSONRequest, ManagerTaskData* called_by_manager_task);
+
     std::string ManTaskStatus(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
     std::string VisualizerGetImage(std::string _JSONRequest, ManagerTaskData* _CalledByManagerTask = nullptr);
     std::string VisualizerGetImageHandles(std::string _JSONRequest, ManagerTaskData* _CalledByManagerTask = nullptr);
