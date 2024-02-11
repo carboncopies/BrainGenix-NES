@@ -41,30 +41,28 @@ struct RecordingElectrode {
 
     Geometries::Vec3D TipPosition_um{0.0, 0.0, 0.0};
     Geometries::Vec3D EndPosition_um{0.0, 0.0, 5.0f};
+    std::vector<Geometries::Vec3D> Sites{};
     std::vector<Geometries::Vec3D> SiteLocations_um{};
-    std::vector<std::tuple<float, float, float>> Sites = {};
 
     float NoiseLevel = 1.0;
     float SensitivityDampening = 2.0;
 
     std::shared_ptr<Simulator::Simulation> Sim;
-    std::vector<Geometries::Vec3D>
-        SiteLocations{}; //! In Simulation coordinate system
+    std::vector<Geometries::Vec3D> SiteLocations{}; //! In Simulation coordinate system
     std::vector<std::shared_ptr<CoreStructs::Neuron>> Neurons{};
-    std::vector<std::vector<float>>
-        NeuronSomaToSiteDistances_um2{}; //!  [ (d_s1n1, d_s1n2, ...), (d_s2n1,
-                                         //!  d_s2n2, ...), ...]
+    std::vector<std::vector<float>> NeuronSomaToSiteDistances_um2{}; //!  [ (d_s1n1, d_s1n2, ...), (d_s2n1, d_s2n2, ...), ...]
     std::vector<float> TRecorded_ms{};   //! [ t0, t1, ... ]
-    std::vector<std::vector<float>>
-        E_mV{}; //! [ [E1(t0), E1(t1), ...], [E2(t0), E2(t1), ...], ...]
+    std::vector<std::vector<float>> E_mV{}; //! [ [E1(t0), E1(t1), ...], [E2(t0), E2(t1), ...], ...]
 
     //! Constructors
     RecordingElectrode(std::shared_ptr<Simulator::Simulation> _Sim);
-    RecordingElectrode(int _ID, Geometries::Vec3D _TipPosition_um,
-                       Geometries::Vec3D _EndPosition_um,
-                       std::vector<std::tuple<float, float, float>> _Sites,
-                       float _NoiseLevel, float _SensitivityDampening,
-                       std::shared_ptr<Simulator::Simulation> _Sim);
+    RecordingElectrode(
+        int _ID,
+        Geometries::Vec3D _TipPosition_um,
+        Geometries::Vec3D _EndPosition_um,
+        std::vector<Geometries::Vec3D> _Sites,
+        float _NoiseLevel, float _SensitivityDampening,
+        std::shared_ptr<Simulator::Simulation> _Sim);
 
     //! 1. Get a vector from tip to end.
     //! 2. Multiply vector coordinates

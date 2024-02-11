@@ -9,7 +9,6 @@ namespace Tools {
 RecordingElectrode::RecordingElectrode(
     std::shared_ptr<Simulator::Simulation> _Sim)
     : Sim(_Sim) {
-    auto firstSite = std::make_tuple(0.0, 0.0, 0.0);
     this->Sites.emplace_back(firstSite);
     this->InitSystemCoordSiteLocations();
     this->InitNeuronReferencesAndDistances();

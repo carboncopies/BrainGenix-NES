@@ -32,6 +32,7 @@ struct Vec3D {
     //! Constructors
     Vec3D();
     Vec3D(float _x, float _y, float _z);
+    Vec3D(const std::vector<float> & vec);
 
     //! Operators
     //! Vector + Vector

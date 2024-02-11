@@ -435,6 +435,45 @@ public:
         return GetParVecInt(ParName, Value, RequestJSON);
     }
 
+    // If Parname="" then _JSON.is_array() must be true.
+    bool GetParVecFloat(const std::string & ParName, std::vector<float> & Value, nlohmann::json& _JSON) {
+        if (ParName.isempty()) {
+            if (!_JSON.is_array()) {
+                Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
+                return false;
+            }
+            for (auto & element : _JSON) {
+                if (!element.is_number()) {
+                    Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
+                    return false;
+                }
+                Value.emplace_back(element.template get<float>());
+            }
+            return true;
+        } else {
+            nlohmann::json::iterator it;
+            if (!FindPar(ParName, it, _JSON)) {
+                return false;
+            }
+            if (!it.value().is_array()) {
+                Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
+                return false;
+            }
+            for (auto & element : it.value()) {
+                if (!element.is_number()) {
+                    Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
+                    return false;
+                }
+                Value.emplace_back(element.template get<float>());
+            }
+            return true;
+        }
+    }
+
+    bool GetParVecFloat(const std::string & ParName, std::vector<float> & Value) {
+        return GetParVecFloat(ParName, Value, RequestJSON);
+    }
+
 };
 
 Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, VisualizerPool* _VisualizerPool, API::Manager* _RPCManager) {
@@ -1318,12 +1357,65 @@ std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, Manager
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
-  
-    // Set Params
-    // *** Continue here!
+
+    std::vector<int> ElectrodeIDs;
+
+    auto ElectrodeList = Handle.ReqJSON();
+    if (!ElectrodeList.is_array()) {
+        Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+    }
+    for (const auto & ElectodeData : ElectrodeList) {
+
+        // Collect electrode parameters and make electrode
+        Tools::RecordingElectrode E;
+        if (!Handle.GetParString("name", E.Name, ElectodeData)) {
+            Handle.ErrResponse();
+        }
+        std::vector<float> TipPosition;
+        if (!Handle.GetParVecFloat("tip_position", TipPosition, ElectodeData)) {
+            Handle.ErrResponse();
+        }
+        std::vector<float> EndPosition;
+        if (!Handle.GetParVecFloat("end_position", EndPosition, ElectodeData)) {
+            Handle.ErrResponse();
+        }
+        if ((TipPosition.size()<3) | (EndPosition.size()<3)) {
+            Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+        }
+        E.TipPosition_um = TipPosition;
+        E.EndPosition_um = EndPosition;
+        if (!Handle.GetParFloat("noise_level", E.NoiseLevel, ElectodeData)) {
+            Handle.ErrResponse();
+        }
+        nlohmann::json::iterator SitesIterator;
+        if (!FindPar("sites", SitesIterator, ElectodeData)) {
+            Handle.ErrResponse();
+        }
+        if (!SitesIterator.value().is_array()) {
+            Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+        }
+        for (auto & SiteData : SitesIterator.value()) {
+            std::vector<float> SitePosition;
+            if (!Handle.GetParVecFloat("", SitePosition, SiteData)) {
+                Handle.ErrResponse();
+            }
+            if (SitePosition.size()<3) {
+                Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+            }
+            E.Sites.emplace_back(SitePosition);
+        }
+
+        E.ID = Handle.Sim()->RecordingElectrodes.size();
+        Handle.Sim()->RecordingElectrodes.push_back(std::make_unique<Tools::RecordingElectrode>(E));
+
+        ElectrodeIDs.emplace_back(E.ID);
+    }
 
     // Return Result ID
-    return Handle.ErrResponse(); // ok
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    ResponseJSON["ElectrodeIDs"] = ElectrodeIDs;
+    return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
 

@@ -10,6 +10,7 @@ namespace Geometries {
 //! Constructors
 Vec3D::Vec3D(){};
 Vec3D::Vec3D(float _x, float _y, float _z) : x(_x), y(_y), z(_z){};
+Vec3D::Vec3D(const std::vector<float> & vec) : x(vec.at(0)), y(vec.at(1)), z(vec.at(2)) {};
 
 //! Operators
 //! Vector + Vector

@@ -38,6 +38,7 @@
 #include <Simulator/Structs/Receptor.h>
 #include <Simulator/Structs/Staple.h>
 #include <BG/Common/Logger/Logger.h>
+#include <Simulator/Structs/RecordingElectrode.h>
 
 #include <Visualizer/VisualizerParameters.h>
 
@@ -78,18 +79,7 @@ public:
 
     float T_ms = 0.0;
     float Dt_ms = 1.0;
-    float InstrumentsStartRecordTime_ms = 0.0;
-    float InstrumentsMaxRecordTime_ms = 0.0;
-    float StartRecordTime_ms = 0.0;
-    float MaxRecordTime_ms = 0.0;
-
-    std::unordered_map<std::string, std::shared_ptr<BrainRegions::BrainRegion>> Regions;
-    std::unordered_map<std::string, std::shared_ptr<CoreStructs::NeuralCircuit>> NeuralCircuits;
-
-    std::vector<float> TInstruments_ms{};
     std::vector<float> TRecorded_ms{};
-
-    std::string RecordingBlob; /**Blob of json data that contains all recorded states for each thing in the simulation*/
 
     std::atomic<bool> IsProcessing = false;  /**Indicator if the simulation is currently being modified or not*/
     std::atomic<bool> WorkRequested = false; /**Indicator if work is requested to be done on this simulation by a worker thread*/
@@ -97,20 +87,31 @@ public:
     float RunTimes_ms; /**Number of ms to be simulated next time runfor is called - if not, set to -1*/
     SimulationActions CurrentTask; /**Current task to be processed on this simulation, could be run for, or reset, etc. See above enum for more info.*/
 
-    
+    std::vector<float> TInstruments_ms{};
+    std::vector<std::unique_ptr<Tools::RecordingElectrode>> RecordingElectrodes;
+    //std::unique_ptr<CalciumImaging> CaImaging;
+
+    float InstrumentsStartRecordTime_ms = 0.0;
+    float InstrumentsMaxRecordTime_ms = 0.0;
+
+    float StartRecordTime_ms = 0.0;
+    float MaxRecordTime_ms = 0.0;
+
+    std::unordered_map<std::string, std::shared_ptr<BrainRegions::BrainRegion>> Regions;
+    std::unordered_map<std::string, std::shared_ptr<CoreStructs::NeuralCircuit>> NeuralCircuits;
 
     Geometries::GeometryCollection Collection; /**Instance of GeometryCollection struct containing all geometries in this simulation*/
 
     std::vector<Compartments::BS> BSCompartments; /**This will need to be updated later to a std::variant type, but for now it stores the only type of supported compartments, BallStick type*/
     std::map<int, int> NeuronByCompartment; // Fast look-up map built while creating neurons.
 
+    std::vector<std::shared_ptr<CoreStructs::Neuron>> Neurons; /** List of neurons, index is their id. Notice that this takes a Neuron base class object (not BSNeuron and other derivatives). */
+
     std::vector<Connections::Staple> Staples; /**List of staple connections, index is their id (also stored in struct)*/
     // The following must contain smart pointers, because content will be
     // moved as the vector is expanded and remapped, and InputReceptorAdded delivers
     // a static pointer:
     std::vector<std::unique_ptr<Connections::Receptor>> Receptors; /**List of receptor connections, index is their id (and it's also stored in the struct itself)*/
-
-    std::vector<std::shared_ptr<CoreStructs::Neuron>> Neurons; /** List of neurons, index is their id. Notice that this takes a Neuron base class object (not BSNeuron and other derivatives). */
 
     std::vector<Tools::PatchClampDAC> PatchClampDACs; /**List of patchclamp dacs, id is index*/
     std::vector<Tools::PatchClampADC> PatchClampADCs; /**List of patchclamp adcs, id is index*/
@@ -123,14 +124,19 @@ public:
     //! Constructors
     Simulation(BG::Common::Logger::LoggingSystem* _Logger);
 
+    Geometries::Vec3D GetGeoCenter() const;
+
     void AddCircuit(std::shared_ptr<CoreStructs::NeuralCircuit> circuit);
     void AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region);
+
     size_t GetTotalNumberOfNeurons();
     std::vector<std::shared_ptr<CoreStructs::Neuron>> GetAllNeurons();
     std::vector<size_t> GetAllNeuronIDs();
-    std::vector<std::shared_ptr<CoreStructs::Neuron>>
-    GetNeuronsByIDs(std::vector<size_t> IDList);
-    Geometries::Vec3D GetGeoCenter() const;
+    std::vector<std::shared_ptr<CoreStructs::Neuron>> GetNeuronsByIDs(std::vector<size_t> IDList);
+
+    Compartments::BS * FindCompartmentByID(int CompartmentID);
+    CoreStructs::Neuron * FindNeuronByCompartment(int CompartmentID) const;
+
     void AttachDirectStim(std::vector<std::tuple<float, size_t>> listOfStims);
     void SetSpontaneousActivity(std::vector<std::tuple<float, float, size_t>> spontSpikeSettings);
 
@@ -143,11 +149,15 @@ public:
     bool IsRecording();
     std::unordered_map<std::string, CoreStructs::CircuitRecording> GetRecording();
     nlohmann::json GetRecordingJSON() const;
-    void RunFor(float tRun_ms);
-    void Show();
 
-    Compartments::BS * FindCompartmentByID(int CompartmentID);
-    CoreStructs::Neuron * FindNeuronByCompartment(int CompartmentID) const;
+    bool InstrumentsAreRecording() const {
+        if (InstrumentsMaxRecordTime_ms < 0 ) return true; // -1 means record forever
+        return T_ms < (InstrumentsStartRecordTime_ms + InstrumentsMaxRecordTime_ms);
+    }
+
+    void RunFor(float tRun_ms);
+
+    void Show();
 
     std::string WrapAsNESRequest(const std::string & ReqFunc, const std::string & _RequestJSON);
     void StoreRequestHandled(const std::string & ReqFunc, const std::string & _Route, const std::string & _RequestJSON);

@@ -210,11 +210,15 @@ void Simulation::RunFor(float tRun_ms) {
 
     unsigned long num_updates_called = 0;
     while (this->T_ms < tEnd_ms) {
+
+        // Track time-points for God's eye recording
         bool recording = this->IsRecording();
         if (recording) {
             //std::cout << 'R'; std::cout.flush();
             this->TRecorded_ms.emplace_back(this->T_ms);
         }
+
+        // Call update in circuits (neurons, etc)
         switch (simmethod) {
             case simmethod_list_of_neurons: {
                 //std::cout << "DEBUG --> "; std::cout.flush();
@@ -238,6 +242,22 @@ void Simulation::RunFor(float tRun_ms) {
                 break;
             }
         }
+
+        // Carry out simulated instrument recordings
+        if (InstrumentsAreRecording()) {
+            this->TInstruments_ms.append(this->T_ms);
+
+            // Electrodes
+            for (auto & Electrode : RecordingElectrodes) {
+                Electrode->Record(this->T_ms);
+            }
+
+            // Calcium Imaging
+            // if (CaImaging) {
+            //     CaImaging->Record(this->T_ms);
+            // }
+        }
+
         this->T_ms += this->Dt_ms;
     }
     Logger_->Log("Number of top-level Update() calls: "+std::to_string(num_updates_called), 3);
