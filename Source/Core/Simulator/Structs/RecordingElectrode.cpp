@@ -6,6 +6,17 @@ namespace Simulator {
 namespace Tools {
 
 //! Constructors
+RecordingElectrode::RecordingElectrode(RecordingElectrode & _Electrode
+    ): ID(_Electrode.ID), TipPosition_um(_Electrode.TipPosition_um),
+       EndPosition_um(_Electrode.EndPosition_um),
+       Sites(_Electrode.Sites), NoiseLevel(_Electrode.NoiseLevel),
+       SensitivityDampening(_Electrode.SensitivityDampening), Sim(_Electrode.Sim) {
+    assert(Sim != nullptr);
+    this->InitSystemCoordSiteLocations();
+    this->InitNeuronReferencesAndDistances();
+    this->InitRecords();
+}
+
 RecordingElectrode::RecordingElectrode(Simulator::Simulation* _Sim): Sim(_Sim) {
     assert(_Sim != nullptr);
     //this->Sites.emplace_back(firstSite);

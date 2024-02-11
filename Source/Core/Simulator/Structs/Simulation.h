@@ -155,6 +155,7 @@ public:
 
     void SetRecordInstruments(float tMax_ms = _RECORD_FOREVER_TMAX_MS);
     bool InstrumentsAreRecording() const;
+    nlohmann::json GetInstrumentsRecordingJSON() const;
 
     void RunFor(float tRun_ms);
 

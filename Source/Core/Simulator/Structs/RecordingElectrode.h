@@ -59,6 +59,7 @@ struct RecordingElectrode {
     std::vector<std::vector<float>> E_mV{}; //! [ [E1(t0), E1(t1), ...], [E2(t0), E2(t1), ...], ...]
 
     //! Constructors
+    RecordingElectrode(RecordingElectrode & _Electrode);
     RecordingElectrode(Simulator::Simulation* _Sim);
     RecordingElectrode(
         int _ID,

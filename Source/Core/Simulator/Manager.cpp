@@ -1457,14 +1457,7 @@ std::string Manager::GetInstrumentRecordings(std::string _JSONRequest, ManagerTa
     }
 
     // Return JSON
-    nlohmann::json ResponseJSON;
-    if (!Handle.Sim()->RecordingElectrodes.empty()) {
-        ResponseJSON["Electrodes"] = nlohmann::json::object();
-        for (const auto & Electrode : Handle.Sim()->RecordingElectrodes) {
-            ResponseJSON["Electrodes"][Electrode->Name] = Electrode->GetRecordingJSON();
-        }
-    }
-
+    nlohmann::json ResponseJSON = Handle.Sim()->GetInstrumentsRecordingJSON();
     ResponseJSON["StatusCode"] = 0; // ok
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }

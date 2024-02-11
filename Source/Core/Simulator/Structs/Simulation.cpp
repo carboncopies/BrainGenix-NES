@@ -200,6 +200,23 @@ bool Simulation::InstrumentsAreRecording() const {
     return T_ms < (InstrumentsStartRecordTime_ms + InstrumentsMaxRecordTime_ms);
 }
 
+nlohmann::json Simulation::GetInstrumentsRecordingJSON() const {
+    nlohmann::json recording;
+
+    recording["t_ms"] = nlohmann::json(this->TInstruments_ms);
+
+    if (!RecordingElectrodes.empty()) {
+        recording["Electrodes"] = nlohmann::json::object();
+        for (const auto & Electrode : RecordingElectrodes) {
+            recording["Electrodes"][Electrode->Name] = Electrode->GetRecordingJSON();
+        }
+    }
+
+    // *** Put Calcium Imaging recording collection here.
+    
+    return recording;
+}
+
 enum sim_methods {
     simmethod_list_of_neurons,
     simmethod_circuits,
