@@ -264,18 +264,18 @@ TEST_F(SimulationTest, test_SetRecordAll_default) {
 
     // Case 1: Record forever
     testSimulation->SetRecordAll(_RECORD_FOREVER_TMAX_MS);
-    ASSERT_EQ(testSimulation->InstrumentsMaxRecordTime_ms,_RECORD_FOREVER_TMAX_MS);
-    ASSERT_EQ(testSimulation->InstrumentsStartRecordTime_ms, testSimulation->T_ms);
+    ASSERT_EQ(testSimulation->MaxRecordTime_ms,_RECORD_FOREVER_TMAX_MS);
+    ASSERT_EQ(testSimulation->StartRecordTime_ms, testSimulation->T_ms);
 
     // Case 2: Record for a finite time
     testSimulation->SetRecordAll(100.0);
-    ASSERT_EQ(testSimulation->InstrumentsMaxRecordTime_ms, 100.0);
-    ASSERT_EQ(testSimulation->InstrumentsStartRecordTime_ms, testSimulation->T_ms);
+    ASSERT_EQ(testSimulation->MaxRecordTime_ms, 100.0);
+    ASSERT_EQ(testSimulation->StartRecordTime_ms, testSimulation->T_ms);
 
     // Case 3: Record for zero time
     testSimulation->SetRecordAll(0.0);
-    ASSERT_EQ(testSimulation->InstrumentsMaxRecordTime_ms, 0.0);
-    ASSERT_EQ(testSimulation->InstrumentsStartRecordTime_ms, 0.0);
+    ASSERT_EQ(testSimulation->MaxRecordTime_ms, 0.0);
+    ASSERT_EQ(testSimulation->StartRecordTime_ms, 0.0);
 }
 
 TEST_F(SimulationTest, test_IsRecording_default) {

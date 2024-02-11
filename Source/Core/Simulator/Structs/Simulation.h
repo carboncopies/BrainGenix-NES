@@ -149,14 +149,12 @@ public:
     //! milliseconds. Setting t_max_ms=0 effectively turns off recording.
     //! Setting t_max_ms to -1 means record forever.
     void SetRecordAll(float tMax_ms = _RECORD_FOREVER_TMAX_MS);
-    bool IsRecording();
+    bool IsRecording() const;
     std::unordered_map<std::string, CoreStructs::CircuitRecording> GetRecording();
     nlohmann::json GetRecordingJSON() const;
 
-    bool InstrumentsAreRecording() const {
-        if (InstrumentsMaxRecordTime_ms < 0 ) return true; // -1 means record forever
-        return T_ms < (InstrumentsStartRecordTime_ms + InstrumentsMaxRecordTime_ms);
-    }
+    void SetRecordInstruments(float tMax_ms = _RECORD_FOREVER_TMAX_MS);
+    bool InstrumentsAreRecording() const;
 
     void RunFor(float tRun_ms);
 

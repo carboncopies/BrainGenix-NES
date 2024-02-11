@@ -131,18 +131,18 @@ unsigned long Simulation::TotalSpikes() const {
 void Simulation::SetRecordAll(float tMax_ms) {
     assert(tMax_ms == _RECORD_FOREVER_TMAX_MS || tMax_ms >= 0.0);
 
-    bool recordingOff = this->InstrumentsMaxRecordTime_ms == 0.0;
-    this->InstrumentsMaxRecordTime_ms = tMax_ms;
-    if (!recordingOff)
-        this->InstrumentsStartRecordTime_ms = this->T_ms;
+    bool recordingWasOff = this->MaxRecordTime_ms == 0.0;
+
+    this->MaxRecordTime_ms = tMax_ms;
+    if (this->MaxRecordTime_ms != 0) {
+        if (!recordingWasOff) this->StartRecordTime_ms = this->T_ms;
+    }
 };
 
-bool Simulation::IsRecording() {
+bool Simulation::IsRecording() const {
+    if (this->MaxRecordTime_ms < 0) return true;
 
-    if (this->InstrumentsMaxRecordTime_ms < 0) return true;
-
-    return this->T_ms < (this->InstrumentsStartRecordTime_ms +
-                         this->InstrumentsMaxRecordTime_ms);
+    return this->T_ms < (this->StartRecordTime_ms + this->MaxRecordTime_ms);
 };
 
 std::unordered_map<std::string, CoreStructs::CircuitRecording> Simulation::GetRecording() {
@@ -182,6 +182,22 @@ nlohmann::json Simulation::GetRecordingJSON() const {
     }
     
     return recording;
+}
+
+void Simulation::SetRecordInstruments(float tMax_ms) {
+    assert(tMax_ms == _RECORD_FOREVER_TMAX_MS || tMax_ms >= 0.0);
+
+    bool recordingWasOff = this->InstrumentsMaxRecordTime_ms == 0.0;
+
+    this->InstrumentsMaxRecordTime_ms = tMax_ms;
+    if (this->InstrumentsMaxRecordTime_ms != 0) {
+        if (!recordingWasOff) this->InstrumentsStartRecordTime_ms = this->T_ms;
+    }
+}
+
+bool Simulation::InstrumentsAreRecording() const {
+    if (InstrumentsMaxRecordTime_ms < 0 ) return true; // -1 means record forever
+    return T_ms < (InstrumentsStartRecordTime_ms + InstrumentsMaxRecordTime_ms);
 }
 
 enum sim_methods {

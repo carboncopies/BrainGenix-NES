@@ -112,6 +112,9 @@ std::string SetSpontaneousActivityHandler(Manager& Man, const nlohmann::json& Re
 std::string AttachRecordingElectrodesHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
     return Man.AttachRecordingElectrodes(ReqParams.dump(), called_by_manager_task);
 }
+std::string SetRecordInstrumentsHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.SetRecordInstruments(ReqParams.dump(), called_by_manager_task);
+}
 std::string ManTaskStatusHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
     return Man.ManTaskStatus(ReqParams.dump(), called_by_manager_task);
 }
@@ -166,6 +169,7 @@ const NESRequest_map_t NES_Request_handlers = {
     {"SetSpontaneousActivity", {"", SetSpontaneousActivityHandler} },
 
     {"AttachRecordingElectrodes", {"", AttachRecordingElectrodesHandler} },
+    {"SetRecordInstruments", {"", SetRecordInstrumentsHandler} },
 
     {"NESRequest", {"NES", nullptr}},
 
@@ -706,7 +710,6 @@ std::string Manager::SimulationRecordAll(std::string _JSONRequest, ManagerTaskDa
     if (!Handle.GetParFloat("MaxRecordTime_ms", MaxRecordTime)) {
         return Handle.ErrResponse();
     }
-    //Handle.Sim()->MaxRecordTime_ms = MaxRecordTime;
     Handle.Sim()->SetRecordAll(MaxRecordTime);
 
     // Return Result ID
@@ -1425,6 +1428,22 @@ std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, Manager
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
+std::string Manager::SetRecordInstruments(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+ 
+    HandlerData Handle(this, _JSONRequest, "SetRecordInstruments", called_by_manager_task);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    float MaxRecordTime = -1.0;
+    if (!Handle.GetParFloat("MaxRecordTime_ms", MaxRecordTime)) {
+        return Handle.ErrResponse();
+    }
+    Handle.Sim()->SetRecordInstruments(MaxRecordTime);
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
 
 /**
  * Expects _JSONRequest:
