@@ -65,7 +65,7 @@ echo "[BG BUILD HELPER] - Building, Please Wait. This may take some time"
 cmake --build . -j $1
 
 # Return status code of build (0=success, else=fail)
-exit $?
+# exit $?
 
 # Return to Tools directory
 cd ../Tools
