@@ -32,45 +32,60 @@ void Simulation::AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region) {
 };
 
 size_t Simulation::GetTotalNumberOfNeurons() {
-    size_t long num_neurons = 0;
-    for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-        num_neurons += circuit->GetNumberOfNeurons();
-    }
-    return num_neurons;
+    return Neurons.size();
+    // size_t long num_neurons = 0;
+    // for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+    //     num_neurons += circuit->GetNumberOfNeurons();
+    // }
+    // return num_neurons;
 }
 
 std::vector<std::shared_ptr<CoreStructs::Neuron>> Simulation::GetAllNeurons() {
     std::vector<std::shared_ptr<CoreStructs::Neuron>> allNeurons{};
-
-    for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-        auto neurons = circuit->GetNeurons();
-        for (auto neuron : neurons)
-            allNeurons.emplace_back(neuron);
+    for (auto & neuron : Neurons) {
+        allNeurons.emplace_back(neuron);
     }
     return allNeurons;
+
+    // for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+    //     auto neurons = circuit->GetNeurons();
+    //     for (auto neuron : neurons)
+    //         allNeurons.emplace_back(neuron);
+    // }
+    // return allNeurons;
 };
 
 std::vector<size_t> Simulation::GetAllNeuronIDs() {
     std::vector<size_t> allNeuronIDs{};
-
-    for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-        auto neurons = circuit->GetNeurons();
-        for (auto neuron : neurons)
-            allNeuronIDs.emplace_back(neuron->ID);
+    for (auto & neuron : Neurons) {
+        allNeuronIDs.emplace_back(neuron->ID);
     }
     return allNeuronIDs;
+
+    // for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+    //     auto neurons = circuit->GetNeurons();
+    //     for (auto neuron : neurons)
+    //         allNeuronIDs.emplace_back(neuron->ID);
+    // }
+    // return allNeuronIDs;
 };
 
 std::vector<std::shared_ptr<CoreStructs::Neuron>>
 Simulation::GetNeuronsByIDs(std::vector<size_t> IDList) {
     std::vector<std::shared_ptr<CoreStructs::Neuron>> foundNeurons{};
-
-    for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-        auto neurons = circuit->GetNeuronsByIDs(IDList);
-        for (auto neuron : neurons)
-            foundNeurons.emplace_back(neuron);
+    for (auto & neuron_id : IDList) {
+        if (neuron_id < Neurons.size()) {
+            foundNeurons.emplace_back(Neurons.at(neuron_id));
+        }
     }
     return foundNeurons;
+
+    // for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+    //     auto neurons = circuit->GetNeuronsByIDs(IDList);
+    //     for (auto neuron : neurons)
+    //         foundNeurons.emplace_back(neuron);
+    // }
+    // return foundNeurons;
 };
 
 Geometries::Vec3D Simulation::GetGeoCenter() const {

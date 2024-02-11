@@ -66,8 +66,7 @@ void RecordingElectrode::InitNeuronReferencesAndDistances() {
     for (const auto &siteLocation_um : this->SiteLocations_um) {
         std::vector<float> siteDistancesSq_um2{};
         for (const auto neuronPtr : this->Neurons) {
-            auto neuron =
-                std::dynamic_pointer_cast<BallAndStick::BSNeuron>(neuronPtr);
+            auto neuron = std::dynamic_pointer_cast<BallAndStick::BSNeuron>(neuronPtr);
             assert(neuron);
 
             auto somaCoord_um = neuron->GetCellCenter();
@@ -85,7 +84,7 @@ void RecordingElectrode::InitRecords() {
 };
 
 float RecordingElectrode::AddNoise() {
-    return this->NoiseLevel * (rand() % 100 / 100.0 - 0.5);
+    return this->NoiseLevel * ((rand() % 100) / 100.0 - 0.5);
 };
 
 //! Calculate the electric field potential at the electrode site as
@@ -97,21 +96,15 @@ float RecordingElectrode::ElectricFieldPotential(size_t siteIdx) {
     if (siteIdx >= this->NeuronSomaToSiteDistances_um2.size())
         throw std::out_of_range("Out of bounds. (siteIdx)");
 
-    float Ei_mV{};
+    float Ei_mV = 0.0;
     auto siteDistances_um = this->NeuronSomaToSiteDistances_um2[siteIdx];
 
     for (size_t i = 0; i < this->Neurons.size(); ++i) {
-        float Vm_mV =
-            std::dynamic_pointer_cast<
-                BG::NES::Simulator::BallAndStick::BSNeuron>(this->Neurons[i])
-                ->Vm_mV;
+        float Vm_mV = std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSNeuron>
+            (this->Neurons[i])->Vm_mV;
 
-        if (siteDistances_um[i] <= 1.0)
-            Ei_mV = Vm_mV;
-        else {
-            Ei_mV = Vm_mV / siteDistances_um[i];
-            Ei_mV += (Ei_mV / this->SensitivityDampening);
-        }
+        float Ei_n_mV = (siteDistances_um[i] <= 1.0) ? Vm_mV : Vm_mV / siteDistances_um[i];
+        Ei_mV += (Ei_n_mV / this->SensitivityDampening);
     }
 
     Ei_mV += this->AddNoise();
