@@ -16,6 +16,7 @@
 #include <Simulator/Structs/Simulation.h>
 #include <Simulator/EngineController.h>
 #include <Simulator/Structs/RecordingElectrode.h>
+#include <Simulator/Structs/CalciumImaging.h>
 
 namespace BG {
 namespace NES {

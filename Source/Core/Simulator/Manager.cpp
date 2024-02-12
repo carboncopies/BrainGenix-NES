@@ -3,7 +3,7 @@
 #include <Simulator/bgStatusCode.h>
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/RecordingElectrode.h>
-
+#include <Simulator/Structs/CalciumImaging.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <cpp-base64/base64.h>
@@ -1541,9 +1541,9 @@ std::string Manager::CalciumImagingAttach(std::string _JSONRequest, ManagerTaskD
     C.Dz = Dz;
 
     C.ID = 0;
-    Handle.Sim()->CalciumImaging = std::make_unique<Tools::CalciumImaging>(C);
+    Handle.Sim()->CaImaging = std::make_unique<Tools::CalciumImaging>(C);
 
-    return return Handle.ErrResponse(); // ok
+    return Handle.ErrResponse(); // ok
 }
 
 std::string Manager::CalciumImagingShowVoxels(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {

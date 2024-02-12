@@ -18,6 +18,7 @@
 #include <Simulator/Distributions/TruncNorm.h>
 #include <Simulator/Structs/Simulation.h>
 #include <Simulator/Structs/RecordingElectrode.h>
+#include <Simulator/Structs/CalciumImaging.h>
 
 
 /**

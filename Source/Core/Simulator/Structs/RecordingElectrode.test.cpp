@@ -12,6 +12,7 @@
 #include <Simulator/Geometries/Box.h>
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/RecordingElectrode.h>
+#include <Simulator/Structs/CalciumImaging.h>
 #include <Simulator/Structs/Simulation.h>
 #include <gtest/gtest.h>
 

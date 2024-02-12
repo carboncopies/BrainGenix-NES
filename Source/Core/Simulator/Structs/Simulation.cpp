@@ -1,6 +1,7 @@
 #include <Simulator/Structs/Simulation.h>
 
 #include <Simulator/Structs/RecordingElectrode.h>
+#include <Simulator/Structs/CalciumImaging.h>
 
 #include <iostream>
 #include <sstream>
@@ -200,11 +201,12 @@ nlohmann::json Simulation::GetRecordingJSON() const {
 }
 
 nlohmann::json Simulation::GetCaImagingVoxelsJSON() {
-
+    nlohmann::json voxels;
+    return voxels;
 }
 
 void Simulation::CalciumImagingRecordAposteriori() {
-    
+
 }
 
 void Simulation::SetRecordInstruments(float tMax_ms) {

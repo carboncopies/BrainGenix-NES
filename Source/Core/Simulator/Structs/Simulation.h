@@ -53,6 +53,7 @@ namespace Simulator {
 // For forward declarations
 namespace Tools {
     struct RecordingElectrode;
+    struct CalciumImaging;
 }
 
 enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA, SIMULATION_VISUALIZATION};
@@ -92,7 +93,7 @@ public:
 
     std::vector<float> TInstruments_ms{};
     std::vector<std::unique_ptr<Tools::RecordingElectrode>> RecordingElectrodes;
-    //std::unique_ptr<CalciumImaging> CaImaging;
+    std::unique_ptr<Tools::CalciumImaging> CaImaging;
 
     float InstrumentsStartRecordTime_ms = 0.0;
     float InstrumentsMaxRecordTime_ms = 0.0;
