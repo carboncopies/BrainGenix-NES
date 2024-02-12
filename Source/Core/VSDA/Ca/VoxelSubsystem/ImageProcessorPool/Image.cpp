@@ -13,7 +13,8 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
+namespace VSDA {
+namespace Calcium {
 
 
 Image::Image() {
@@ -41,6 +42,7 @@ void Image::SetPixel(int _X, int _Y, int _R, int _G, int _B) {
 }
 
 
-}; // Close Namespace Logger
+}; // Close Namespace Calcium
+}; // Close Namespace VSDA
 }; // Close Namespace Common
 }; // Close Namespace BG

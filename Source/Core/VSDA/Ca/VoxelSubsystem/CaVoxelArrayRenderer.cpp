@@ -18,15 +18,8 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
-
-// TODO: Make renderslicefromarray use the imageprocessorpool to do the enumeration of the voxel array (the pixel population part) using threads (so that nested for loop goes away, and this therad just positions the cameras)
-// Then, if needed, we can move renderslicefromarray inside the threadedrendervoxelarray if that still isn't fast enough.
-
-
-// std::vector<std::vector<std::string>> ThreadedRenderVoxelArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::string _FilePrefix, ImageProcessorPool* _ImageProcessorPool) {
-
-// }
+namespace VSDA {
+namespace Calcium {
 
 
 std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int SliceNumber, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, int _SliceOffset) {
@@ -115,7 +108,7 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
 
 
 
-
-}; // Close Namespace Logger
+}; // Close Namespace Calcium
+}; // Close Namespace VSDA
 }; // Close Namespace Common
 }; // Close Namespace BG

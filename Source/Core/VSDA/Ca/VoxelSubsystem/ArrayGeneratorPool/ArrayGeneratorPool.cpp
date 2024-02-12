@@ -20,7 +20,8 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
+namespace VSDA {
+namespace Calcium {
 namespace VoxelArrayGenerator {
 
 
@@ -232,6 +233,7 @@ void ArrayGeneratorPool::BlockUntilQueueEmpty(bool _LogOutput) {
 }
 
 }; // Close Namespace VoxelArrayGenerator
-}; // Close Namespace Simulator
+}; // Close Namespace Calcium
+}; // Close Namespace VSDA
 }; // Close Namespace NES
 }; // Close Namespace BG

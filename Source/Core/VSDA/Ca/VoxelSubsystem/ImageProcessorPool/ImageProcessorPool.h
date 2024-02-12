@@ -53,7 +53,8 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
+namespace VSDA {
+namespace Calcium {
 
 
 
@@ -143,6 +144,7 @@ public:
 
 
 
-}; // Close Namespace Simulator
+}; // Close Namespace Calcium
+}; // Close Namespace VSDA
 }; // Close Namespace NES
 }; // Close Namespace BG

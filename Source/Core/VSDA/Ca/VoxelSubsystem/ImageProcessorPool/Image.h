@@ -45,7 +45,8 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
+namespace VSDA {
+namespace Calcium {
 
 
 enum ImageState {
@@ -104,6 +105,10 @@ struct Image {
 
 };
 
-}; // Close Namespace Logger
+
+
+
+}; // Close Namespace Calcium
+}; // Close Namespace VSDA
 }; // Close Namespace Common
 }; // Close Namespace BG

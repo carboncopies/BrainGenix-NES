@@ -13,9 +13,11 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
+namespace VSDA {
+namespace Calcium {
 
 
-}; // Close Namespace Logger
+}; // Close Namespace Calcium
+}; // Close Namespace VSDA
 }; // Close Namespace Common
 }; // Close Namespace BG

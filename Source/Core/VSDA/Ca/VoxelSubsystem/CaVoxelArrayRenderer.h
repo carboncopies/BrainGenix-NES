@@ -5,7 +5,7 @@
 /*
     Description: This file defines the interface for the slice generator, which creates voxel representations of a given simulation.
     Additional Notes: None
-    Date Created: 2023-11-29
+    Date Created: 2024-02-12
     Author(s): Thomas Liao, Randal Koene
 
 
@@ -49,20 +49,8 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
-
-/**
- * @brief Render the entire voxel array with the parameters defined in the various config structs.
- * Set the maximum number of simultaneous threads to the maxthreads argument.
- * 
- * @param _Logger 
- * @param _VSDAData 
- * @param _FilePrefix 
- * @param _ImageProcessorPool 
- * @param _MaxThreads 
- * @return std::vector<std::vector<std::string>> 
- */
-std::vector<std::vector<std::string>> ThreadedRenderVoxelArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::string _FilePrefix, ImageProcessorPool* _ImageProcessorPool, int _MaxThreads=20);
+namespace VSDA {
+namespace Calcium {
 
 
 /**
@@ -79,6 +67,7 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
 
 
 
-}; // Close Namespace Logger
+}; // Close Namespace Calcium
+}; // Close Namespace VSDA
 }; // Close Namespace Common
 }; // Close Namespace BG

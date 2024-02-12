@@ -50,9 +50,8 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
 namespace VSDA {
-
+namespace Calcium {
 
 /**
  * @brief Renders an Ca subregion component.
@@ -70,7 +69,7 @@ bool CaRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
 
 
+}; // Close Namespace Calcium
 }; // Close Namespace VSDA
-}; // Close Namespace Simulator
 }; // Close Namespace NES
 }; // Close Namespace BG

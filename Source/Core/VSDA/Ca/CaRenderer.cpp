@@ -35,8 +35,8 @@ unsigned long long getTotalSystemMemory() {
 
 namespace BG {
 namespace NES {
-namespace Simulator {
 namespace VSDA {
+namespace Calcium {
 
 
 
@@ -207,7 +207,7 @@ bool ExecuteCaSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Si
 }
 
 
+}; // Close Namespace Calcium
 }; // Close Namespace VSDA
-}; // Close Namespace Simulator
 }; // Close Namespace NES
 }; // Close Namespace BG

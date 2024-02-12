@@ -42,7 +42,8 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
+namespace VSDA {
+namespace Calcium {
 
 /**
  * @brief Defines a set of parameters used to feed the renderer that specifies what and how to scan something.
@@ -63,6 +64,7 @@ struct CaMicroscopeParameters {
 };
 
 
-}; // Close Namespace Logger
+}; // Close Namespace Calcium
+}; // Close Namespace VSDA
 }; // Close Namespace Common
 }; // Close Namespace BG

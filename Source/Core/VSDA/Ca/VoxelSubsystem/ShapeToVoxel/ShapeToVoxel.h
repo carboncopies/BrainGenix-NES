@@ -44,7 +44,8 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
+namespace VSDA {
+namespace Calcium {
 namespace VoxelArrayGenerator {
 
 
@@ -105,6 +106,7 @@ bool CreateVoxelArrayBorderFrame(VoxelArray* _Array);
 
 
 }; // Close Namespace VoxelArrayGenerator
-}; // Close Namespace Logger
+}; // Close Namespace Calcium
+}; // Close Namespace VSDA
 }; // Close Namespace Common
 }; // Close Namespace BG
