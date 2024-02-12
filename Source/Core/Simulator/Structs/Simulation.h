@@ -122,7 +122,7 @@ public:
     std::vector<Tools::PatchClampADC> PatchClampADCs; /**List of patchclamp adcs, id is index*/
 
     VSDAData VSDAData_; /**Instance of the simulator VSDA data - stores the state for the renderer to use*/
-    CaData CaData_; /**Instance of CA Data - stores state info about calcium imaging*/
+    VSDA::Calcium::CalciumImagingData CaData_; /**Instance of CA Data - stores state info about calcium imaging*/
 
     VisualizerParameters VisualizerParams; /**Instance of visualizer parameters, used to generate visualizations in vulkan*/
 

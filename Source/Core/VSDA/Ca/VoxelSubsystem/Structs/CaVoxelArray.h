@@ -79,7 +79,7 @@ private:
 
     float VoxelScale_um; /**Set the size of each voxel in micrometers*/
 
-    BoundingBox BoundingBox_; /**Set the bounding box of this voxel array (relative to the simulation orign)*/
+    Simulator::BoundingBox BoundingBox_; /**Set the bounding box of this voxel array (relative to the simulation orign)*/
 
 
 
@@ -103,8 +103,8 @@ public:
      * @param _BB Bounding box of the array, in world space
      * @param _VoxelScale_um Scale of each voxel in micrometers
      */
-    VoxelArray(BoundingBox _BB, float _VoxelScale_um);
-    VoxelArray(ScanRegion _Region, float _VoxelScale_um);
+    VoxelArray(Simulator::BoundingBox _BB, float _VoxelScale_um);
+    VoxelArray(Simulator::ScanRegion _Region, float _VoxelScale_um);
 
     /**
      * @brief Destroy the Voxel Array object
@@ -162,8 +162,8 @@ public:
      * @return true 
      * @return false 
      */
-    bool SetBB(BoundingBox _NewBoundingBox);
-    bool SetBB(ScanRegion _NewBoundingBox);
+    bool SetBB(Simulator::BoundingBox _NewBoundingBox);
+    bool SetBB(Simulator::ScanRegion _NewBoundingBox);
 
     /**
      * @brief Get the x dimensions
@@ -198,7 +198,7 @@ public:
      * 
      * @return BoundingBox 
      */
-    BoundingBox GetBoundingBox();
+    Simulator::BoundingBox GetBoundingBox();
 
 
     /**

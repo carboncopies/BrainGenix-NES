@@ -13,7 +13,7 @@ namespace VSDA {
 namespace Calcium {
 
 
-VoxelArray::VoxelArray(BoundingBox _BB, float _VoxelScale_um) {
+VoxelArray::VoxelArray(Simulator::BoundingBox _BB, float _VoxelScale_um) {
 
     // Calculate Dimensions
     float SizeX = abs(_BB.bb_point1[0] - _BB.bb_point2[0]);
@@ -37,10 +37,10 @@ VoxelArray::VoxelArray(BoundingBox _BB, float _VoxelScale_um) {
     // Reset the array so we don't get a bunch of crap in it
     // ClearArray();
 }
-VoxelArray::VoxelArray(ScanRegion _Region, float _VoxelScale_um) {
+VoxelArray::VoxelArray(Simulator::ScanRegion _Region, float _VoxelScale_um) {
 
     // Create Bounding Box From Region, Then Call Other Constructor
-    BoundingBox BB;
+    Simulator::BoundingBox BB;
     BB.bb_point1[0] = _Region.Point1X_um;
     BB.bb_point1[1] = _Region.Point1Y_um;
     BB.bb_point1[2] = _Region.Point1Z_um;
@@ -114,16 +114,16 @@ void VoxelArray::ClearArrayThreaded(int _NumThreads) {
 
 }
 
-bool VoxelArray::SetBB(BoundingBox _NewBoundingBox) {
+bool VoxelArray::SetBB(Simulator::BoundingBox _NewBoundingBox) {
     assert(_NewBoundingBox.GetVoxelSize(VoxelScale_um) != DataMaxLength_);
     BoundingBox_ = _NewBoundingBox;
     return true;
 }
 
-bool VoxelArray::SetBB(ScanRegion _NewBoundingBox) {
+bool VoxelArray::SetBB(Simulator::ScanRegion _NewBoundingBox) {
 
     // Create Bounding Box From Region, Then Call Other Constructor
-    BoundingBox BB;
+    Simulator::BoundingBox BB;
     BB.bb_point1[0] = _NewBoundingBox.Point1X_um;
     BB.bb_point1[1] = _NewBoundingBox.Point1Y_um;
     BB.bb_point1[2] = _NewBoundingBox.Point1Z_um;
@@ -211,7 +211,7 @@ float VoxelArray::GetResolution() {
     return VoxelScale_um;
 }
 
-BoundingBox VoxelArray::GetBoundingBox() {
+Simulator::BoundingBox VoxelArray::GetBoundingBox() {
     return BoundingBox_;
 }
 
