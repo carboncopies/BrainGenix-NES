@@ -157,6 +157,39 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshConversionHelpers.h
 
 
+
+  ${SRC_DIR}/Core/VSDA/Ca/CaRenderer.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/CaRenderer.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/EMSubRegion.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/EMSubRegion.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/VoxelArrayGenerator.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/VoxelArrayGenerator.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/VoxelArrayRenderer.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/VoxelArrayRenderer.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/MicroscopeParameters.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/MicroscopeParameters.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/ScanRegion.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/ScanRegion.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/VoxelArray.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/VoxelArray.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/VSDAData.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/VSDAData.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/SubRegion.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/SubRegion.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/Image.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/Image.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/Task.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/Task.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h
+
+
   ${SRC_DIR}/Core/Visualizer/Visualizer.cpp
   ${SRC_DIR}/Core/Visualizer/Visualizer.h
   ${SRC_DIR}/Core/Visualizer/MeshRenderer.cpp

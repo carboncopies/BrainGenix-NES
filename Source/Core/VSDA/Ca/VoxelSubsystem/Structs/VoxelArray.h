@@ -43,7 +43,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Geometries/Geometry.h>
 
-#include <VSDA/VoxelSubsystem/Structs/ScanRegion.h>
+#include <VSDA/CalciumImaging/VoxelSubsystem/Structs/ScanRegion.h>
 
 
 
@@ -51,14 +51,11 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
+struct VoxelType {
 
-typedef uint8_t VoxelType;
+    bool IsFilled_ = false;
+    size_t CompartmentID_ = 0;
 
-enum VoxelState {
-    EMPTY,
-    OUT_OF_RANGE,
-    FILLED,
-    BORDER
 };
 
 
