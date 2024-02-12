@@ -55,7 +55,7 @@ namespace Calcium {
  * @return true Success
  * @return false Fail
  */
-bool ExecuteCaSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
+bool ExecuteCaSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulator::Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
 
 
 

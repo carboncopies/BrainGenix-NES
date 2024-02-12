@@ -40,20 +40,20 @@ namespace Calcium {
 
 
 
-bool ExecuteCaSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
+bool ExecuteCaSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulator::Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
 
     // Check that the simulation has been initialized and everything is ready to have work done
-    if (_Simulation->VSDAData_.State_ != VSDA_RENDER_REQUESTED) {
+    if (_Simulation->CaData_.State_ != CA_RENDER_REQUESTED) {
         return false;
     }
-    _Simulation->VSDAData_.State_ = VSDA_RENDER_IN_PROGRESS;
+    _Simulation->CaData_.State_ = CA_RENDER_IN_PROGRESS;
     
     _Logger->Log("Executing Calcium Render Job For Requested Simulation", 4);
 
 
     // Unpack Variables For Easier Access
-    MicroscopeParameters* Params = &_Simulation->VSDAData_.Params_;
-    ScanRegion* BaseRegion = &_Simulation->VSDAData_.Regions_[_Simulation->VSDAData_.ActiveRegionID_];
+    CaMicroscopeParameters* Params = &_Simulation->CaData_.Params_;
+    Simulator::ScanRegion* BaseRegion = &_Simulation->CaData_.Regions_[_Simulation->CaData_.ActiveRegionID_];
 
 
     // -- Phase 0 --
@@ -186,7 +186,7 @@ bool ExecuteCaSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Si
     }
 
 
-    _Simulation->VSDAData_.TotalRegions_ = SubRegions.size();
+    _Simulation->CaData_.TotalRegions_ = SubRegions.size();
 
 
     // -- Phase 3 -- 
@@ -195,12 +195,12 @@ bool ExecuteCaSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Si
     _Logger->Log("Rendering " + std::to_string(SubRegions.size()) + " Calcium Sub Regions", 4);
     for (size_t i = 0; i < SubRegions.size(); i++) {
         CaRenderSubRegion(_Logger, &SubRegions[i], _ImageProcessorPool, _GeneratorPool);
-        _Simulation->VSDAData_.CurrentRegion_ = i + 1;
+        _Simulation->CaData_.CurrentRegion_ = i + 1;
     }
 
 
 
-    _Simulation->VSDAData_.State_ = VSDA_RENDER_DONE;
+    _Simulation->CaData_.State_ = CA_RENDER_DONE;
 
     return true;
 

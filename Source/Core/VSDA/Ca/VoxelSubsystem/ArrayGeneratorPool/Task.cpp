@@ -8,7 +8,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <VSDA/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h>
+#include <VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h>
 
 
 namespace BG {

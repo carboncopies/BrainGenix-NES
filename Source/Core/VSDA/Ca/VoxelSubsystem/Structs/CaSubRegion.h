@@ -40,7 +40,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 // #include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
-#include <VSDA/VoxelSubsystem/Structs/ScanRegion.h>
+#include <VSDA/Common/Structs/ScanRegion.h>
 
 #include <Simulator/Structs/Simulation.h>
 
@@ -70,8 +70,8 @@ struct SubRegion {
 
 
     // Working Data Params
-    ScanRegion Region;                       /**Region that we're going to perform the rendering on*/
-    Simulation* Sim;                         /**Simulation that we're rendering*/
+    Simulator::ScanRegion Region;                       /**Region that we're going to perform the rendering on*/
+    Simulator::Simulation* Sim;                         /**Simulation that we're rendering*/
     // std::unique_ptr<VoxelArray> RegionArray; /**Array for this region, which we deallocate when we're done with*/
     
 

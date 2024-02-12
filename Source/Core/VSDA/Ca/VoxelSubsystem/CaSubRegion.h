@@ -41,7 +41,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
 #include <VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
-#include <VSDA/Ca/VoxelSubsystem/Structs/SubRegion.h>
+#include <VSDA/Ca/VoxelSubsystem/Structs/CaSubRegion.h>
 
 #include <BG/Common/Logger/Logger.h>
 

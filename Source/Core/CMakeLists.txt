@@ -172,8 +172,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/CaData.cpp
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/CaData.h
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/SubRegion.cpp
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/SubRegion.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/CaSubRegion.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/CaSubRegion.h
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/Image.cpp

@@ -41,7 +41,7 @@
 
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
+#include <VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h>
 #include <Simulator/Geometries/GeometryCollection.h>
 
 
@@ -61,7 +61,7 @@ struct Task {
 
     size_t                          ShapeID_;            /**Index of the relevant shape from the shapes array of the simulation.*/
     float                           VoxelResolution_um_; /**Set the resolution size of each voxel on axis in microns.*/
-    Geometries::GeometryCollection* GeometryCollection_; /**Pointer to instance of the simulation's geometry collection.*/ 
+    Simulator::Geometries::GeometryCollection* GeometryCollection_; /**Pointer to instance of the simulation's geometry collection.*/ 
     std::atomic_bool                IsDone_ = false;     /**Indicates if this task has been processed or not.*/
     VoxelArray*                     Array_ = nullptr;    /**Pointer to the voxel array that we're writing to.*/
 

@@ -49,7 +49,7 @@ bool IsShapeInsideRegion(Simulation* _Sim, size_t _ShapeID, BoundingBox _Region)
 
 }
 
-bool CaCreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array, ScanRegion _Region, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
+bool CaCreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulator::Simulation* _Sim, CaMicroscopeParameters* _Params, VoxelArray* _Array, Simulator::ScanRegion _Region, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
     assert(_Array != nullptr);
     assert(_Params != nullptr);
     assert(_Sim != nullptr);
