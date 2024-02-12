@@ -1478,7 +1478,7 @@ std::string Manager::CalciumImagingAttach(std::string _JSONRequest, ManagerTaskD
         return Handle.ErrResponse();
     }
 
-    Tools::CalciumImaging C;
+    Tools::CalciumImaging C(Handle.Sim());
     if (!Handle.GetParString("name", C.Name)) {
         Handle.ErrResponse();
     }
@@ -1497,6 +1497,7 @@ std::string Manager::CalciumImagingAttach(std::string _JSONRequest, ManagerTaskD
     if (!Handle.GetParFloat("indicator_interval_ms", C.IndicatorInterval_ms)) {
         Handle.ErrResponse();
     }
+    C.ImagingInterval_ms = C.IndicatorInterval_ms+10.0; // *** TODO: Could make this independently settable!
     if (!Handle.GetParInt("voxelspace_side_px", C.VoxelSpaceSide_px)) {
         Handle.ErrResponse();
     }
@@ -1542,6 +1543,7 @@ std::string Manager::CalciumImagingAttach(std::string _JSONRequest, ManagerTaskD
 
     C.ID = 0;
     Handle.Sim()->CaImaging = std::make_unique<Tools::CalciumImaging>(C);
+    //Handle.Sim()->CaImaging->Init(); // automatically called by the explicit copy constructor
 
     return Handle.ErrResponse(); // ok
 }
