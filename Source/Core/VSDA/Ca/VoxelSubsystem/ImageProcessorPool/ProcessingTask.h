@@ -41,7 +41,7 @@
 
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
+#include <VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h>
 
 
 namespace BG {

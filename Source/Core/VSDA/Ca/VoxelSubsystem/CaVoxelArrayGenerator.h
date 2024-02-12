@@ -63,7 +63,7 @@ namespace Calcium {
  * @return true On success
  * @return false On failure (eg: out of memory, out of bounds, etc.)
  */
-bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulator::Simulation* _Sim, CaMicroscopeParameters* _Params, VoxelArray* _Array, Simulator::ScanRegion _Region, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
+bool CaCreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulator::Simulation* _Sim, CaMicroscopeParameters* _Params, VoxelArray* _Array, Simulator::ScanRegion _Region, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
 
 
 

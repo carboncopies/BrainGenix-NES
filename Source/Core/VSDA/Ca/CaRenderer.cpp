@@ -18,7 +18,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/Ca/CaRenderer.h>
 
-#include <VSDA/Ca/VoxelSubsystem/CaSubRegion.h>
+#include <VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h>
 
 #include <VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.h>
 #include <VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h>
@@ -159,7 +159,7 @@ bool ExecuteCaSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Si
 
 
                 // Now we can just fill in the structs for this subregion as shown, and append it to the list of subregions to be rendered
-                ScanRegion ThisRegion;
+                Simulator::ScanRegion ThisRegion;
                 ThisRegion.Point1X_um = SubRegionStartX_um;
                 ThisRegion.Point1Y_um = SubRegionStartY_um;
                 ThisRegion.Point1Z_um = SubRegionStartZ_um;

@@ -160,8 +160,8 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/VSDA/Ca/CaRenderer.cpp
   ${SRC_DIR}/Core/VSDA/Ca/CaRenderer.h
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/CaSubRegion.cpp
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/CaSubRegion.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.cpp
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.h
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.cpp

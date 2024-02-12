@@ -22,13 +22,13 @@ namespace VSDA {
 namespace Calcium {
 
 
-std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int SliceNumber, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, int _SliceOffset) {
-    assert(_VSDAData != nullptr);
+std::vector<std::string> CaRenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, CalciumImagingData* _CaData, VoxelArray* _Array, std::string _FilePrefix, int SliceNumber, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, int _SliceOffset) {
+    assert(_CaData != nullptr);
     assert(_Logger != nullptr);
 
 
     // Get Params and Array From VSDAData
-    MicroscopeParameters* Params = &_VSDAData->Params_;
+    MicroscopeParameters* Params = &_CaData->Params_;
     VoxelArray* Array = _Array;
     float VoxelSize = Array->GetResolution();
     BoundingBox VoxelBB = Array->GetBoundingBox();
@@ -43,15 +43,15 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
     // In order for us to deal with multiple different pixel/voxel setting, we create an image of start size where one pixel = 1 voxel
     // then later on, we resample it to be the right size (for the target image)
     // The number of voxels we move per step depends on image size and overlap percentage:
-    int ImageWidth_vox = ceil(_VSDAData->Params_.ImageWidth_px / _VSDAData->Params_.NumPixelsPerVoxel_px);
-    int ImageHeight_vox = ceil(_VSDAData->Params_.ImageHeight_px / _VSDAData->Params_.NumPixelsPerVoxel_px);
-    int VoxelsPerStepX = ceil(_VSDAData->Params_.ImageWidth_px * (1. - (_VSDAData->Params_.ScanRegionOverlap_percent / 100.)) / _VSDAData->Params_.NumPixelsPerVoxel_px);
-    int VoxelsPerStepY = ceil(_VSDAData->Params_.ImageHeight_px * (1. - (_VSDAData->Params_.ScanRegionOverlap_percent / 100.)) / _VSDAData->Params_.NumPixelsPerVoxel_px);
-    int VoxelsOverlapX = ceil(_VSDAData->Params_.ImageWidth_px * (_VSDAData->Params_.ScanRegionOverlap_percent / 100.) / _VSDAData->Params_.NumPixelsPerVoxel_px);
-    int VoxelsOverlapY = ceil(_VSDAData->Params_.ImageHeight_px * (_VSDAData->Params_.ScanRegionOverlap_percent / 100.) / _VSDAData->Params_.NumPixelsPerVoxel_px);
+    int ImageWidth_vox = ceil(_CaData->Params_.ImageWidth_px / _CaData->Params_.NumPixelsPerVoxel_px);
+    int ImageHeight_vox = ceil(_CaData->Params_.ImageHeight_px / _CaData->Params_.NumPixelsPerVoxel_px);
+    int VoxelsPerStepX = ceil(_CaData->Params_.ImageWidth_px * (1. - (_CaData->Params_.ScanRegionOverlap_percent / 100.)) / _CaData->Params_.NumPixelsPerVoxel_px);
+    int VoxelsPerStepY = ceil(_CaData->Params_.ImageHeight_px * (1. - (_CaData->Params_.ScanRegionOverlap_percent / 100.)) / _CaData->Params_.NumPixelsPerVoxel_px);
+    int VoxelsOverlapX = ceil(_CaData->Params_.ImageWidth_px * (_CaData->Params_.ScanRegionOverlap_percent / 100.) / _CaData->Params_.NumPixelsPerVoxel_px);
+    int VoxelsOverlapY = ceil(_CaData->Params_.ImageHeight_px * (_CaData->Params_.ScanRegionOverlap_percent / 100.) / _CaData->Params_.NumPixelsPerVoxel_px);
     int NumChannels = 3;
-    float CameraStepSizeX_um = VoxelsPerStepX * _VSDAData->Params_.VoxelResolution_um;
-    float CameraStepSizeY_um = VoxelsPerStepY * _VSDAData->Params_.VoxelResolution_um;
+    float CameraStepSizeX_um = VoxelsPerStepX * _CaData->Params_.VoxelResolution_um;
+    float CameraStepSizeY_um = VoxelsPerStepY * _CaData->Params_.VoxelResolution_um;
 
     double TotalSliceWidth = abs((double)Array->GetBoundingBox().bb_point1[0] - (double)Array->GetBoundingBox().bb_point2[0]);
     double TotalSliceHeight = abs((double)Array->GetBoundingBox().bb_point1[1] - (double)Array->GetBoundingBox().bb_point2[1]);
@@ -81,8 +81,8 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
             // Setup and submit task to queue for rendering
             std::unique_ptr<ProcessingTask> ThisTask = std::make_unique<ProcessingTask>();
             ThisTask->Array_ = _Array;
-            ThisTask->Width_px = _VSDAData->Params_.ImageWidth_px;
-            ThisTask->Height_px = _VSDAData->Params_.ImageHeight_px;
+            ThisTask->Width_px = _CaData->Params_.ImageWidth_px;
+            ThisTask->Height_px = _CaData->Params_.ImageHeight_px;
             ThisTask->VoxelStartingX = VoxelsPerStepX * XStep;
             ThisTask->VoxelStartingY = VoxelsPerStepY * YStep;
             ThisTask->VoxelEndingX = ThisTask->VoxelStartingX + ImageWidth_vox;
@@ -93,7 +93,7 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
             ThisTask->TargetDirectory_ = DirectoryPath;
 
             _ImageProcessorPool->QueueEncodeOperation(ThisTask.get());
-            _VSDAData->Tasks_.push_back(std::move(ThisTask));
+            _CaData->Tasks_.push_back(std::move(ThisTask));
 
 
 

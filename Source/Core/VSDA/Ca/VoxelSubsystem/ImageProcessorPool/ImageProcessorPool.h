@@ -45,8 +45,8 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
-#include <VSDA/VoxelSubsystem/ImageProcessorPool/Image.h>
-#include <VSDA/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h>
+#include <VSDA/Ca/VoxelSubsystem/ImageProcessorPool/Image.h>
+#include <VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h>
 
 
 

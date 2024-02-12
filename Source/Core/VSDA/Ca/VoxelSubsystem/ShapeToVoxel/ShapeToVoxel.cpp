@@ -8,7 +8,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <VSDA/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h>
+#include <VSDA/Ca/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h>
 
 
 namespace BG {
@@ -34,7 +34,7 @@ bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
 
 }
 
-bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
+bool FillBoundingBox(VoxelArray* _Array, Simulator::BoundingBox* _BB, float _VoxelScale) {
 
     for (float X = _BB->bb_point1[0]; X < _BB->bb_point2[0]; X+= _VoxelScale) {
         for (float Y = _BB->bb_point1[1]; Y < _BB->bb_point2[1]; Y+= _VoxelScale) {
@@ -48,15 +48,15 @@ bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
 
 }
 
-bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, float _VoxelScale) {
+bool FillShape(VoxelArray* _Array, Simulator::Geometries::Geometry* _Shape, float _VoxelScale) {
 
     assert(_VoxelScale != 0); // Will get stuck in infinite loop
-    BoundingBox BB = _Shape->GetBoundingBox();
+    Simulator::BoundingBox BB = _Shape->GetBoundingBox();
 
     for (float X = BB.bb_point1[0]; X < BB.bb_point2[0]; X+= _VoxelScale) {
         for (float Y = BB.bb_point1[1]; Y < BB.bb_point2[1]; Y+= _VoxelScale) {
             for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _VoxelScale) {
-                if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z))) {
+                if (_Shape->IsPointInShape(Simulator::Geometries::Vec3D(X, Y, Z))) {
                     _Array->SetVoxelAtPosition(X, Y, Z, FILLED);
                 }
             }
@@ -69,7 +69,7 @@ bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, float _VoxelSca
 
 // NOTE: This needs a different FillShape function, because we will not be going through the bounding box and testing if in shape.
 //       Instead, we will be placing rotated points that are in the shape.
-bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, float _VoxelScale) {
+bool FillCylinder(VoxelArray* _Array, Simulator::Geometries::Cylinder* _Cylinder, float _VoxelScale) {
 
     assert(_VoxelScale != 0); // Will get stuck in infinite loop
 
@@ -86,7 +86,7 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, float _Vo
     return true;
 }
 
-bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, float _VoxelScale) {
+bool FillBox(VoxelArray* _Array, Simulator::Geometries::Box* _Box, float _VoxelScale) {
     assert(_Array != nullptr);
     assert(_Box != nullptr);
     assert(_VoxelScale != 0); // Will get stuck in infinite loop
