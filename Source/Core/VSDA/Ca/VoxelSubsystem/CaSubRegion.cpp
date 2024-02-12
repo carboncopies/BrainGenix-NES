@@ -10,9 +10,11 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <VSDA/VoxelSubsystem/EMSubRegion.h>
+#include <VSDA/Ca/VoxelSubsystem/CaSubRegion.h>
+#include <VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.h>
+#include <VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h>
 
-
+#include <Simulator/Structs/Simulation.h>
 
 
 
@@ -23,8 +25,8 @@ namespace VSDA {
 
 
 
-bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _SubRegion, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
-    _Logger->Log("Executing SubRegion Render For Region Starting At " + std::to_string(_SubRegion->RegionOffsetX_um) + "X, " + std::to_string(_SubRegion->RegionOffsetY_um) + "Y, Layer " + std::to_string(_SubRegion->LayerOffset), 4);
+bool CaRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _SubRegion, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
+    _Logger->Log("Executing Calcium SubRegion Render For Region Starting At " + std::to_string(_SubRegion->RegionOffsetX_um) + "X, " + std::to_string(_SubRegion->RegionOffsetY_um) + "Y, Layer " + std::to_string(_SubRegion->LayerOffset), 4);
 
 
     // Get Local Variables
@@ -42,17 +44,17 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
 
     // Create Voxel Array
-    _Logger->Log(std::string("Creating Voxel Array Of Size ") + RequestedRegion.Dimensions() + std::string(" With Points ") + RequestedRegion.ToString(), 2);
+    _Logger->Log(std::string("Creating Calcium Voxel Array Of Size ") + RequestedRegion.Dimensions() + std::string(" With Points ") + RequestedRegion.ToString(), 2);
     uint64_t TargetArraySize = RequestedRegion.GetVoxelSize(VSDAData_->Params_.VoxelResolution_um);
     if (VSDAData_->Array_.get() == nullptr || VSDAData_->Array_->GetSize() != TargetArraySize) {
-        _Logger->Log("Voxel Array Does Not Exist Yet Or Is Wrong Size, (Re)Creating Now", 2);
+        _Logger->Log("Calcium Voxel Array Does Not Exist Yet Or Is Wrong Size, (Re)Creating Now", 2);
         VSDAData_->Array_ = std::make_unique<VoxelArray>(RequestedRegion, VSDAData_->Params_.VoxelResolution_um);
     } else {
-        _Logger->Log("Reusing Existing Voxel Array, Clearing Data", 2);
+        _Logger->Log("Reusing Existing Calcium Voxel Array, Clearing Data", 2);
         VSDAData_->Array_->ClearArrayThreaded(std::thread::hardware_concurrency());
         VSDAData_->Array_->SetBB(RequestedRegion);
     }
-    CreateVoxelArrayFromSimulation(_Logger, Sim, &VSDAData_->Params_, VSDAData_->Array_.get(), RequestedRegion, _GeneratorPool);
+    CreateCaVoxelArrayFromSimulation(_Logger, Sim, &VSDAData_->Params_, VSDAData_->Array_.get(), RequestedRegion, _GeneratorPool);
 
 
 
@@ -60,7 +62,7 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     for (unsigned int i = 0; i < VSDAData_->Array_.get()->GetZ(); i++) {
         std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "/Region" + std::to_string(VSDAData_->ActiveRegionID_);
 
-        std::vector<std::string> Files = RenderSliceFromArray(_Logger, _SubRegion->MaxImagesX, _SubRegion->MaxImagesY, &Sim->VSDAData_, VSDAData_->Array_.get(), FileNamePrefix, i, _ImageProcessorPool, XOffset, YOffset, SliceOffset);
+        std::vector<std::string> Files = RenderCaSliceFromArray(_Logger, _SubRegion->MaxImagesX, _SubRegion->MaxImagesY, &Sim->VSDAData_, VSDAData_->Array_.get(), FileNamePrefix, i, _ImageProcessorPool, XOffset, YOffset, SliceOffset);
         for (size_t i = 0; i < Files.size(); i++) {
             VSDAData_->RenderedImagePaths_[VSDAData_->ActiveRegionID_].push_back(Files[i]);
         }

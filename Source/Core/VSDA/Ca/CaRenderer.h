@@ -5,11 +5,11 @@
 /*
     Description: This file defines the interface which connects the NES routes for VSDA to the API.
     Additional Notes: None
-    Date Created: 2023-12-02
+    Date Created: 2024-02-12
     Author(s): Thomas Liao
 
 
-    Copyright (C) 2023  Thomas Liao
+    Copyright (C) 2024  Thomas Liao
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -31,30 +31,17 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <vector>
-#include <memory>
-#include <iostream>
-#include <assert.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <nlohmann/json.hpp>
-
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
-#include <VSDA/VoxelSubsystem/VoxelArrayGenerator.h>
-#include <VSDA/VoxelSubsystem/VoxelArrayRenderer.h>
-#include <VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
-#include <VSDA/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
 
-#include <BG/Renderer/Interface.h>
-#include <BG/Renderer/SceneGraph/Primitive/Cube.h>
+#include <VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
+#include <VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
 
 #include <BG/Common/Logger/Logger.h>
-#include <Util/JSONHelpers.h>
-
-#include <RPC/Manager.h>
 
 
 
@@ -65,13 +52,12 @@ namespace VSDA {
 
 
 /**
- * @brief Enumerates all simulations and checks for a render operation.
+ * @brief Run the requested calcium rendering operation on the given simulation.
  * 
  * @return true Success
  * @return false Fail
  */
-bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
-bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
+bool ExecuteCaSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
 
 
 

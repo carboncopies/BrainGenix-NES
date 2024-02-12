@@ -7,17 +7,21 @@
 #include <vector>
 #include <chrono>
 #include <algorithm>
-
 #include <unistd.h>
+#include <memory>
+#include <iostream>
+#include <assert.h>
+
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <VSDA/EMRenderer.h>
+#include <VSDA/Ca/CaRenderer.h>
 
-#include <VSDA/VoxelSubsystem/EMSubRegion.h>
+#include <VSDA/Ca/VoxelSubsystem/EMSubRegion.h>
 
-
+#include <VSDA/Ca/VoxelSubsystem/VoxelArrayGenerator.h>
+#include <VSDA/Ca/VoxelSubsystem/VoxelArrayRenderer.h>
 
 
 // https://stackoverflow.com/questions/2513505/how-to-get-available-memory-c-g
@@ -36,7 +40,7 @@ namespace VSDA {
 
 
 
-bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
+bool ExecuteCaSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
 
     // Check that the simulation has been initialized and everything is ready to have work done
     if (_Simulation->VSDAData_.State_ != VSDA_RENDER_REQUESTED) {
@@ -44,7 +48,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     }
     _Simulation->VSDAData_.State_ = VSDA_RENDER_IN_PROGRESS;
     
-    _Logger->Log("Executing Render Job For Requested Simulation", 4);
+    _Logger->Log("Executing Calcium Render Job For Requested Simulation", 4);
 
 
     // Unpack Variables For Easier Access
@@ -74,7 +78,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     // Make Log Message about memory consumption figures
     double MemorySize_MB = ((MaxVoxelArrayAxisSize_vox * MaxVoxelArrayAxisSize_vox * MaxVoxelArrayAxisSize_vox) * sizeof(VoxelType)) / 1024. / 1024;
     double SystemRAM_MB = double(getTotalSystemMemory()) / 1024. / 1024.; 
-    std::string LogMessage = "Using Maximum Voxel Array Dimensions Of '" + std::to_string(MaxVoxelArrayAxisSize_vox) + "', This May Use Up To ~" + std::to_string(round(MemorySize_MB)) + "MiB";
+    std::string LogMessage = "Using Maximum Calcium Voxel Array Dimensions Of '" + std::to_string(MaxVoxelArrayAxisSize_vox) + "', This May Use Up To ~" + std::to_string(round(MemorySize_MB)) + "MiB";
     LogMessage += " (" + std::to_string(ScalingFactor*100) + "% of ~" + std::to_string(round(SystemRAM_MB)) + "MiB System Memory)";
     _Logger->Log(LogMessage, 3);
 
@@ -173,7 +177,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
                 ThisSubRegion.Region = ThisRegion;
 
 
-                _Logger->Log("Created SubRegion At Location " + ThisRegion.ToString(), 3);
+                _Logger->Log("Created Calcium SubRegion At Location " + ThisRegion.ToString(), 3);
 
                 SubRegions.push_back(ThisSubRegion);
 
@@ -188,9 +192,9 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     // -- Phase 3 -- 
     // Now, we're just going to go and render each of the different regions
     // This is done through simply running a for loop, and calling the rendersubregion code on each
-    _Logger->Log("Rendering " + std::to_string(SubRegions.size()) + " Sub Regions", 4);
+    _Logger->Log("Rendering " + std::to_string(SubRegions.size()) + " Calcium Sub Regions", 4);
     for (size_t i = 0; i < SubRegions.size(); i++) {
-        EMRenderSubRegion(_Logger, &SubRegions[i], _ImageProcessorPool, _GeneratorPool);
+        CaRenderSubRegion(_Logger, &SubRegions[i], _ImageProcessorPool, _GeneratorPool);
         _Simulation->VSDAData_.CurrentRegion_ = i + 1;
     }
 
@@ -201,100 +205,6 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     return true;
 
 }
-
-
-// bool ExecuteRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
-
-//     // Check that the simulation has been initialized and everything is ready to have work done
-//     if (_Simulation->VSDAData_.State_ != VSDA_RENDER_REQUESTED) {
-//         return false;
-//     }
-//     _Simulation->VSDAData_.State_ = VSDA_RENDER_IN_PROGRESS;
-    
-//     _Logger->Log("Executing Render Job For Requested Simulation", 4);
-
-
-//     // Get Requested Region
-//     ScanRegion RequestedRegion = _Simulation->VSDAData_.Regions_[_Simulation->VSDAData_.ActiveRegionID_];
-
-
-//     // Setup Metadata For GetRenderStatus
-//     float TotalRegionThickness = abs(RequestedRegion.Point1Z_um - RequestedRegion.Point2Z_um);
-//     _Simulation->VSDAData_.TotalSlices_ = TotalRegionThickness / _Simulation->VSDAData_.Params_.VoxelResolution_um;
-
-
-//     // Create Voxel Array
-//     _Logger->Log(std::string("Creating Voxel Array Of Size ") + RequestedRegion.Dimensions() + std::string(" With Points ") + RequestedRegion.ToString(), 2);
-//     _Simulation->VSDAData_.Array_ = std::make_unique<VoxelArray>(RequestedRegion, _Simulation->VSDAData_.Params_.VoxelResolution_um);
-//     CreateVoxelArrayFromSimulation(_Logger, _Simulation, &_Simulation->VSDAData_.Params_, _Simulation->VSDAData_.Array_.get(), _GeneratorPool);
-
-
-
-
-//     // Clear Scene In Preperation For Rendering
-//     _Logger->Log("Starting Slice By Slice Render", 2);
-//     // _Renderer->ResetScene();
-//     for (unsigned int i = 0; i < _Simulation->VSDAData_.Array_.get()->GetZ(); i++) {
-//         std::string FileNamePrefix = "Simulation" + std::to_string(_Simulation->ID) + "_Region" + std::to_string(_Simulation->VSDAData_.ActiveRegionID_);
-
-//         std::vector<std::string> Files = RenderSliceFromArray(_Logger, &_Simulation->VSDAData_, FileNamePrefix, i, _ImageProcessorPool);
-//         for (size_t i = 0; i < Files.size(); i++) {
-//             _Simulation->VSDAData_.RenderedImagePaths_[_Simulation->VSDAData_.ActiveRegionID_].push_back(Files[i]);
-//         }
-
-        
-//     }
-
-
-
-//     // Ensure All Tasks Are Finished
-//     while (_ImageProcessorPool->GetQueueSize() > 0) {
-
-//         // Calculate Desired Image Size
-//         // In order for us to deal with multiple different pixel/voxel setting, we create an image of start size where one pixel = 1 voxel
-//         // then later on, we resample it to be the right size (for the target image)
-//         int VoxelsPerStepX = ceil(_Simulation->VSDAData_.Params_.ImageWidth_px / _Simulation->VSDAData_.Params_.NumPixelsPerVoxel_px);
-//         int VoxelsPerStepY = ceil(_Simulation->VSDAData_.Params_.ImageHeight_px / _Simulation->VSDAData_.Params_.NumPixelsPerVoxel_px);
-//         int NumChannels = 3;
-//         float CameraStepSizeX_um = VoxelsPerStepX * _Simulation->VSDAData_.Params_.VoxelResolution_um;
-//         float CameraStepSizeY_um = VoxelsPerStepY * _Simulation->VSDAData_.Params_.VoxelResolution_um;
-
-//         double TotalSliceWidth = abs((double)_Simulation->VSDAData_.Array_->GetBoundingBox().bb_point1[0] - (double)_Simulation->VSDAData_.Array_->GetBoundingBox().bb_point2[0]);
-//         double TotalSliceHeight = abs((double)_Simulation->VSDAData_.Array_->GetBoundingBox().bb_point1[1] - (double)_Simulation->VSDAData_.Array_->GetBoundingBox().bb_point2[1]);
-//         int TotalXSteps = ceil(TotalSliceWidth / CameraStepSizeX_um);
-//         int TotalYSteps = ceil(TotalSliceHeight / CameraStepSizeY_um);
-
-//         int ImagesPerSlice = TotalXSteps * TotalYSteps;
-
-
-//         // Update Current Slice Information (Account for slice numbers not starting at 0)
-//         _Simulation->VSDAData_.TotalSlices_ = _Simulation->VSDAData_.Array_.get()->GetZ();
-//         _Simulation->VSDAData_.CurrentSlice_ = _Simulation->VSDAData_.Array_.get()->GetZ() - ceil((float)_ImageProcessorPool->GetQueueSize() / ImagesPerSlice);
-//         _Simulation->VSDAData_.TotalSliceImages_ = ImagesPerSlice;
-//         _Simulation->VSDAData_.CurrentSliceImage_ = _ImageProcessorPool->GetQueueSize() % ImagesPerSlice;
-
-//         // Log Queue Size
-//         _Logger->Log("ImageProcessorPool Queue Length '" + std::to_string(_ImageProcessorPool->GetQueueSize()) + "'", 1);
-
-
-//         // Now wait a while so we don't spam the console
-//         std::this_thread::sleep_for(std::chrono::milliseconds(100));
-
-
-//     }
-//     for (unsigned int i = 0; i < _Simulation->VSDAData_.Tasks_.size(); i++) {
-//         ProcessingTask* Task = _Simulation->VSDAData_.Tasks_[i].get();
-//         while (Task->IsDone_ != true) {
-//             std::this_thread::sleep_for(std::chrono::milliseconds(5));
-//         }
-//     }
-
-//     _Simulation->VSDAData_.State_ = VSDA_RENDER_DONE;
-
-//     return true;
-
-// }
-
 
 
 }; // Close Namespace VSDA

@@ -5,11 +5,11 @@
 /*
     Description: This file defines the interface for the slice generator, which creates voxel representations of a given simulation.
     Additional Notes: None
-    Date Created: 2024-01-19
+    Date Created: 2024-02-12
     Author(s): Thomas Liao, Randal Koene
 
 
-    Copyright (C) 2023  Thomas Liao, Randal Koene
+    Copyright (C) 2024  Thomas Liao, Randal Koene
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -37,11 +37,9 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
-#include <VSDA/VoxelSubsystem/Structs/MicroscopeParameters.h>
-#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
-
-
-#include <VSDA/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
+#include <VSDA/Ca/VoxelSubsystem/Structs/MicroscopeParameters.h>
+#include <VSDA/Ca/VoxelSubsystem/Structs/VoxelArray.h>
+#include <VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
 
 #include <BG/Common/Logger/Logger.h>
 
@@ -64,7 +62,6 @@ namespace Simulator {
  * @return true On success
  * @return false On failure (eg: out of memory, out of bounds, etc.)
  */
-bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array);
 bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array, ScanRegion _Region, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
 
 
