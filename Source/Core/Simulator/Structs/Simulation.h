@@ -153,6 +153,9 @@ public:
     std::unordered_map<std::string, CoreStructs::CircuitRecording> GetRecording();
     nlohmann::json GetRecordingJSON() const;
 
+    nlohmann::json GetCaImagingVoxelsJSON();
+    void CalciumImagingRecordAposteriori();
+
     void SetRecordInstruments(float tMax_ms = _RECORD_FOREVER_TMAX_MS);
     bool InstrumentsAreRecording() const;
     nlohmann::json GetInstrumentsRecordingJSON() const;

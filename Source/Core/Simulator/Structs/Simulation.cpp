@@ -199,6 +199,14 @@ nlohmann::json Simulation::GetRecordingJSON() const {
     return recording;
 }
 
+nlohmann::json Simulation::GetCaImagingVoxelsJSON() {
+
+}
+
+void Simulation::CalciumImagingRecordAposteriori() {
+    
+}
+
 void Simulation::SetRecordInstruments(float tMax_ms) {
     assert(tMax_ms == _RECORD_FOREVER_TMAX_MS || tMax_ms >= 0.0);
 

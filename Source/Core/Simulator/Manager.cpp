@@ -112,6 +112,15 @@ std::string SetSpontaneousActivityHandler(Manager& Man, const nlohmann::json& Re
 std::string AttachRecordingElectrodesHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
     return Man.AttachRecordingElectrodes(ReqParams.dump(), called_by_manager_task);
 }
+std::string CalciumImagingAttachHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.CalciumImagingAttach(ReqParams.dump(), called_by_manager_task);
+}
+std::string CalciumImagingShowVoxelsHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.CalciumImagingShowVoxels(ReqParams.dump(), called_by_manager_task);
+}
+std::string CalciumImagingRecordAposterioriHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
+    return Man.CalciumImagingRecordAposteriori(ReqParams.dump(), called_by_manager_task);
+}
 std::string SetRecordInstrumentsHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
     return Man.SetRecordInstruments(ReqParams.dump(), called_by_manager_task);
 }
@@ -172,6 +181,9 @@ const NESRequest_map_t NES_Request_handlers = {
     {"SetSpontaneousActivity", {"", SetSpontaneousActivityHandler} },
 
     {"AttachRecordingElectrodes", {"", AttachRecordingElectrodesHandler} },
+    {"CalciumImagingAttach", {"", CalciumImagingAttachHandler} },
+    {"CalciumImagingShowVoxels", {"", CalciumImagingShowVoxelsHandler} },
+    {"CalciumImagingRecordAposteriori", {"", CalciumImagingRecordAposterioriHandler} },
     {"SetRecordInstruments", {"", SetRecordInstrumentsHandler} },
     {"GetInstrumentRecordings", {"", GetInstrumentRecordingsHandler} },
 
@@ -1355,6 +1367,7 @@ std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, ManagerTas
  *     },
  *     (more electrode specs)
  *   ]
+ * }
  * Responds:
  * {
  *   "StatusCode": <status-code>,
@@ -1393,7 +1406,7 @@ std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, Manager
         if (!Handle.GetParVecFloat("end_position", EndPosition, ElectodeData)) {
             Handle.ErrResponse();
         }
-        if ((TipPosition.size()<3) | (EndPosition.size()<3)) {
+        if ((TipPosition.size()<3) || (EndPosition.size()<3)) {
             Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
         }
         E.TipPosition_um = TipPosition;
@@ -1430,6 +1443,132 @@ std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, Manager
     ResponseJSON["StatusCode"] = 0; // ok
     ResponseJSON["ElectrodeIDs"] = ElectrodeIDs;
     return Handle.ResponseAndStoreRequest(ResponseJSON);
+}
+
+/**
+ * Expects _JSONRequest:
+ * {
+ *   "SimulationID": <SimID>,
+ *   "name": <Ca-imaging-name>,
+ *   "fluorescing_neurons": [ <neuron-id>... ], -- Empty means all.
+ *   "calcium_indicator": <indicator-type>,
+ *   "indicator_rise_ms": <float>,
+ *   "indicator_decay_ms": <float>,
+ *   "indicator_interval_ms": <float>, -- Determines max trackable spike rate.
+ *   "voxelspace_side_px": <num-pixels>,
+ *   "imaged_subvolume": {
+ *     "center": <3D-vector>,
+ *     "half": <3D-vector>,
+ *     "dx": <3D-vector>,
+ *     "dy": <3D-vector>,
+ *     "dz": <3D-vector>, -- Positive dz indicates most visible top surface.
+ *   },
+ *   "generate_during_sim": <bool>
+ * }
+ * Note: Possibly add "microscope_lensfront_position_um": <3D-vector>, "microscope_rear_position_um": <3D-vector>,
+ * Responds:
+ * {
+ *   "StatusCode": <status-code>,
+ * }
+ */
+std::string Manager::CalciumImagingAttach(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+ 
+    HandlerData Handle(this, _JSONRequest, "CalciumImagingAttach", called_by_manager_task);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    Tools::CalciumImaging C;
+    if (!Handle.GetParString("name", C.Name)) {
+        Handle.ErrResponse();
+    }
+    if (!Handle.GetParVecInt("fluorescing_neurons", C.FluorescingNeurons)) {
+        Handle.ErrResponse();
+    }
+    if (!Handle.GetParString("calcium_indicator", C.CalciumIndicator)) {
+        Handle.ErrResponse();
+    }
+    if (!Handle.GetParFloat("indicator_rise_ms", C.IndicatorRise_ms)) {
+        Handle.ErrResponse();
+    }
+    if (!Handle.GetParFloat("indicator_decay_ms", C.IndicatorDecay_ms)) {
+        Handle.ErrResponse();
+    }
+    if (!Handle.GetParFloat("indicator_interval_ms", C.IndicatorInterval_ms)) {
+        Handle.ErrResponse();
+    }
+    if (!Handle.GetParInt("voxelspace_side_px", C.VoxelSpaceSide_px)) {
+        Handle.ErrResponse();
+    }
+    if (!Handle.GetParBool("generate_during_sim", C.GenerateDuringSim)) {
+        Handle.ErrResponse();
+    }
+    nlohmann::json::iterator SubVolumeIterator;
+    if (!Handle.FindPar("imaged_subvolume", SubVolumeIterator)) {
+        Handle.ErrResponse();
+    }
+    auto SubVolume = SubVolumeIterator.value();
+    if (!SubVolume.is_object()) {
+        Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+    }
+    std::vector<float> Center;
+    if (!Handle.GetParVecFloat("center", Center, SubVolume)) {
+        Handle.ErrResponse();
+    }
+    std::vector<float> Half;
+    if (!Handle.GetParVecFloat("half", Half, SubVolume)) {
+        Handle.ErrResponse();
+    }
+    std::vector<float> Dx;
+    if (!Handle.GetParVecFloat("dx", Dx, SubVolume)) {
+        Handle.ErrResponse();
+    }
+    std::vector<float> Dy;
+    if (!Handle.GetParVecFloat("dy", Dy, SubVolume)) {
+        Handle.ErrResponse();
+    }
+    std::vector<float> Dz;
+    if (!Handle.GetParVecFloat("dz", Dz, SubVolume)) {
+        Handle.ErrResponse();
+    }
+    if ((Center.size()<3) || (Half.size()<3) || (Dx.size()<3) || (Dy.size()<3) || (Dz.size()<3)) {
+        Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+    }
+    C.Center_um = Center;
+    C.Half_um = Half;
+    C.Dx = Dx;
+    C.Dy = Dy;
+    C.Dz = Dz;
+
+    C.ID = 0;
+    Handle.Sim()->CalciumImaging = std::make_unique<Tools::CalciumImaging>(C);
+
+    return return Handle.ErrResponse(); // ok
+}
+
+std::string Manager::CalciumImagingShowVoxels(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+ 
+    HandlerData Handle(this, _JSONRequest, "CalciumImagingShowVoxels", called_by_manager_task);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Return JSON
+    nlohmann::json ResponseJSON = Handle.Sim()->GetCaImagingVoxelsJSON();
+    ResponseJSON["StatusCode"] = 0; // ok
+    return Handle.ResponseAndStoreRequest(ResponseJSON);
+}
+
+std::string Manager::CalciumImagingRecordAposteriori(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+ 
+    HandlerData Handle(this, _JSONRequest, "CalciumImagingRecordAposteriori", called_by_manager_task);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    Handle.Sim()->CalciumImagingRecordAposteriori();
+
+    return Handle.ErrResponse(); // ok
 }
 
 std::string Manager::SetRecordInstruments(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {

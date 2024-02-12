@@ -194,6 +194,9 @@ public:
     std::string SetSpontaneousActivity(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
 
     std::string AttachRecordingElectrodes(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string CalciumImagingAttach(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string CalciumImagingShowVoxels(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string CalciumImagingRecordAposteriori(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
     std::string SetRecordInstruments(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
     std::string GetInstrumentRecordings(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
 
