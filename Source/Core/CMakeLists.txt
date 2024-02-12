@@ -127,8 +127,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/LegacySliceGenerator.h
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/MicroscopeParameters.cpp
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/MicroscopeParameters.h
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/ScanRegion.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/ScanRegion.h
+  ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.cpp
+  ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.h
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VoxelArray.cpp
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VoxelArray.h
   ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VSDAData.cpp
@@ -160,20 +160,18 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/VSDA/Ca/CaRenderer.cpp
   ${SRC_DIR}/Core/VSDA/Ca/CaRenderer.h
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/EMSubRegion.cpp
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/EMSubRegion.h
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/VoxelArrayGenerator.cpp
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/VoxelArrayGenerator.h
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/VoxelArrayRenderer.cpp
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/VoxelArrayRenderer.h
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/MicroscopeParameters.cpp
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/MicroscopeParameters.h
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/ScanRegion.cpp
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/ScanRegion.h
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/VoxelArray.cpp
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/VoxelArray.h
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/VSDAData.cpp
-  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/VSDAData.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/CaSubRegion.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/CaSubRegion.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/CaData.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/CaData.h
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/SubRegion.cpp
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/Structs/SubRegion.h
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp

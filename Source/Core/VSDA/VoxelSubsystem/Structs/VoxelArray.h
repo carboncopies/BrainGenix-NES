@@ -43,7 +43,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Geometries/Geometry.h>
 
-#include <VSDA/VoxelSubsystem/Structs/ScanRegion.h>
+#include <VSDA/Common/Structs/ScanRegion.h>
 
 
 

@@ -1,1 +1,0 @@
-#include <VSDA/Ca/VoxelSubsystem/Structs/CalciumImagingData.h>

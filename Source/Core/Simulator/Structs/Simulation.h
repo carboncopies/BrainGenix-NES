@@ -42,6 +42,7 @@
 #include <Visualizer/VisualizerParameters.h>
 
 #include <VSDA/VoxelSubsystem/Structs/VSDAData.h>
+#include <VSDA/Ca/VoxelSubsystem/Structs/CaData.h>
 
 //! The value of tMax_ms at which recording will be done forever.
 #define _RECORD_FOREVER_TMAX_MS -1.0
@@ -121,6 +122,7 @@ public:
     std::vector<Tools::PatchClampADC> PatchClampADCs; /**List of patchclamp adcs, id is index*/
 
     VSDAData VSDAData_; /**Instance of the simulator VSDA data - stores the state for the renderer to use*/
+    CaData CaData_; /**Instance of CA Data - stores state info about calcium imaging*/
 
     VisualizerParameters VisualizerParams; /**Instance of visualizer parameters, used to generate visualizations in vulkan*/
 
