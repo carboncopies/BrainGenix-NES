@@ -1,4 +1,4 @@
-#include <VSDA/VoxelSubsystem/Structs/ScanRegion.h>
+#include <VSDA/Common/Structs/ScanRegion.h>
 
 
 

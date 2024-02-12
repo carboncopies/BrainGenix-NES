@@ -37,7 +37,6 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
-
 #include <VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
 #include <VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
 

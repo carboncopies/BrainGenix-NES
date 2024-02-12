@@ -14,7 +14,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/Task.h>
 #include <VSDA/Ca/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h>
-#include <VSDA/Ca/VoxelSubsystem/VoxelArrayGenerator.h>
+#include <VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.h>
 
 
 

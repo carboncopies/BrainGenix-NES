@@ -6,11 +6,11 @@
 /*
     Description: This file defines the VSDA Scan data area
     Additional Notes: None
-    Date Created: 2023-12-02
+    Date Created: 2024-02-12
     Author(s): Thomas Liao
 
 
-    Copyright (C) 2023  Thomas Liao
+    Copyright (C) 2024  Thomas Liao
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -39,11 +39,11 @@
 
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
-#include <VSDA/VoxelSubsystem/Structs/ScanRegion.h>
-#include <VSDA/VoxelSubsystem/Structs/MicroscopeParameters.h>
+#include <VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h>
+#include <VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.h>
+#include <VSDA/Common/Structs/ScanRegion.h>
 
-#include <VSDA/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h>
+#include <VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h>
 
 
 
@@ -52,13 +52,13 @@ namespace NES {
 namespace Simulator {
 
 
-enum VSDAState {
-    VSDA_NOT_INITIALIZED=0,
-    VSDA_INIT_BEGIN=1,
-    VSDA_INIT_DONE=2,
-    VSDA_RENDER_REQUESTED=3,
-    VSDA_RENDER_IN_PROGRESS=4,
-    VSDA_RENDER_DONE=5
+enum CaState {
+    CA_NOT_INITIALIZED=0,
+    CA_INIT_BEGIN=1,
+    CA_INIT_DONE=2,
+    CA_RENDER_REQUESTED=3,
+    CA_RENDER_IN_PROGRESS=4,
+    CA_RENDER_DONE=5
 };
 
 
@@ -68,12 +68,12 @@ enum VSDAState {
  * Is owned by all simulations.
  * 
  */
-struct VSDAData {
+struct CalciumImagingData {
 
-    VSDAState State_ = VSDA_NOT_INITIALIZED; /**Enum indicating the current state of this instance of VSDAData, tells the processing system if we need to be rendered, etc.*/
+    CaState                     State_ = CA_NOT_INITIALIZED; /**Enum indicating the current state of this instance of VSDAData, tells the processing system if we need to be rendered, etc.*/
 
     std::unique_ptr<VoxelArray> Array_;              /**Pointer to the voxel array instance - stores the stuff being scanned*/ 
-    MicroscopeParameters        Params_;             /**Defines the microscope parameters for the current scan area*/
+    CaMicroscopeParameters        Params_;             /**Defines the microscope parameters for the current scan area*/
     std::vector<ScanRegion>     Regions_;            /**Defines the list of scan region we're working on (for this microscope) Use ActiveRegionID to get the current region*/
     int                         ActiveRegionID_ =-1; /**Defines the region's index that we're working on right now*/
    

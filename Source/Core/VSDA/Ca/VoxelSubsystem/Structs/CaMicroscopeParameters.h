@@ -48,7 +48,7 @@ namespace Simulator {
  * @brief Defines a set of parameters used to feed the renderer that specifies what and how to scan something.
  * 
  */
-struct MicroscopeParameters {
+struct CaMicroscopeParameters {
 
 
     float VoxelResolution_um; /**Set the size of each voxel in micrometers*/

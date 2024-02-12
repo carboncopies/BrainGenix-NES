@@ -18,10 +18,10 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/Ca/CaRenderer.h>
 
-#include <VSDA/Ca/VoxelSubsystem/EMSubRegion.h>
+#include <VSDA/Ca/VoxelSubsystem/CaSubRegion.h>
 
-#include <VSDA/Ca/VoxelSubsystem/VoxelArrayGenerator.h>
-#include <VSDA/Ca/VoxelSubsystem/VoxelArrayRenderer.h>
+#include <VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.h>
+#include <VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h>
 
 
 // https://stackoverflow.com/questions/2513505/how-to-get-available-memory-c-g
