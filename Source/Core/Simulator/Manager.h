@@ -55,45 +55,7 @@ namespace Simulator {
 // Forward declarations:
 class Manager;
 
-enum ManagerTaskStatus {
-    Success = 0, // Completed successfully.
-    Active = 1,  // Freshly created and/or actively operating.
-    TimeOut = 2, // Failed due to time-out.
-    GeneralFailure = 3,
-    NUMManagerTaskStatus
-};
 
-/**
- * Process:
- * 1. Prepare the data that the Task will need.
- * 2. Launch the specific Task function within a std::thread, giving it a pointer to this struct.
- * 3. Call AddManagerTask with this struct.
- * 4. Use the Task ID to refer to the status and results of the Task, as stored in this struct.
- */
-struct ManagerTaskData {
-    // Must be set before launching Task:
-    Manager & Man;
-    std::string InputData;
-
-    // Must be set before calling AddManagerTask:
-    std::unique_ptr<std::thread> Task;
-
-    // Is set within AddManagerTask:
-    int ID = -1; 
-
-    // Results set by the Task thread:
-    ManagerTaskStatus Status = ManagerTaskStatus::Active;
-    nlohmann::json OutputData;
-    int ReplaceSimulationID = -1;
-
-    ManagerTaskData(Manager & _Man): Man(_Man) {}
-
-    void SetStatus(ManagerTaskStatus _status) { Status = _status; }
-
-    void IncludeStatusInOutputData() { OutputData["TaskStatus"] = int(Status); }
-
-    bool HasReplacementSimID() { return ReplaceSimulationID >= 0; }
-};
 
 /**
  * @brief This class provides the infrastructure to run simulations.
@@ -116,9 +78,6 @@ private:
     int NextManTaskID = 0; /**Use this, because we use a map not a vector, so that we can expire some to shed old cached stuff*/
     std::map<int, std::unique_ptr<ManagerTaskData>> ManagerTasks; /**Status data of launched tasks by Task ID*/
 
-    //bool LoadingSim = false;
-    //int LoadingSimReplaceID = -1;
-    //std::mutex LoadingSimSetterMutex;
 
 
 public:

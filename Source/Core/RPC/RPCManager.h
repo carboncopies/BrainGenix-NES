@@ -33,10 +33,10 @@ namespace API {
 /**
  * @brief Manages the NES remote procedure call (RPC) host.
  *
- * The Manager class owns the RPC server and handles its initialization and destruction at the end of the program's run.
+ * The RPCManager class owns the RPC server and handles its initialization and destruction at the end of the program's run.
  * It also takes a copy of the systemwide configuration struct to configure the RPC server (e.g., host and port).
  */
-class Manager {
+class RPCManager {
 
 private:
 
@@ -46,21 +46,21 @@ private:
 public:
 
     /**
-     * @brief Construct a new Manager object
+     * @brief Construct a new RPCManager object
      * Give this a pointer to an initialized configuration object.
      * Also it takes a pointer to the logging system instance.
      * 
      * @param _Config 
      * @param _Logger
      */
-    Manager(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger);
+    RPCManager(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger);
 
 
     /**
-     * @brief Destroy the Manager object
+     * @brief Destroy the RPCManager object
      * 
      */
-    ~Manager();
+    ~RPCManager();
 
 
     /**

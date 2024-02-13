@@ -19,7 +19,7 @@ namespace NES {
 namespace API {
 
 
-Manager::Manager(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger) {
+RPCManager::RPCManager(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger) {
 
     // Initialize Server
     std::string ServerHost = _Config->Host;
@@ -42,7 +42,7 @@ Manager::Manager(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Lo
     RPCServer_->async_run(ThreadCount);
 }
 
-Manager::~Manager() {
+RPCManager::~RPCManager() {
     // Destructor
     // No explicit cleanup needed as smart pointers manage the RPC server's memory
 }

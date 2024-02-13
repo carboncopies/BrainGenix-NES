@@ -20,6 +20,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/RPC/RPCManager.h
   ${SRC_DIR}/Core/RPC/RPCHandlerHelper.cpp
   ${SRC_DIR}/Core/RPC/RPCHandlerHelper.h
+  ${SRC_DIR}/Core/RPC/APIStatusCode.cpp
+  ${SRC_DIR}/Core/RPC/APIStatusCode.h
   ${SRC_DIR}/Core/RPC/StaticRoutes.cpp
   ${SRC_DIR}/Core/RPC/StaticRoutes.h
 

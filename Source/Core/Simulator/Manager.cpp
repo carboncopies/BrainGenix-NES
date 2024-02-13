@@ -18,24 +18,7 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
-// *** NOTE: By passing JSON objects/components as strings and then having to
-//           parse them into JSON objects again, the handlers above are doing
-//           a bunch of unnecessary extra work - you can just pass references
-//           to components of a JSON object as a JSON object.
-//           E.g. call AddBSNeuron(ReqParams) where ReqParams is as obtained
-//           in NESRequest() below.
 
-typedef std::string NESRequest_func_t(Manager&, const nlohmann::json&, ManagerTaskData*);
-
-struct RouteAndHandler {
-    std::string Route;
-    NESRequest_func_t* Handler;
-
-    RouteAndHandler(const std::string & _Route, NESRequest_func_t* _Handler): Route(_Route), Handler(_Handler) {}
-};
-
-//typedef std::map<std::string, NESRequest_func_t*> NESRequest_map_t;
-typedef std::map<std::string, RouteAndHandler> NESRequest_map_t;
 
 std::string SimulationCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
     return Man.SimulationCreate(ReqParams.dump(), called_by_manager_task);
@@ -143,7 +126,7 @@ std::string VisualizerGetImage(Manager& Man, const nlohmann::json& ReqParams, Ma
     return Man.VisualizerGetImage(ReqParams.dump(), called_by_manager_task);
 }
 
-const NESRequest_map_t NES_Request_handlers = {
+const API::NESRequest_map_t NES_Request_handlers = {
     {"SimulationCreate", {"Simulation/Create", SimulationCreateHandler} },
     {"SimulationReset", {"Simulation/Reset", SimulationResetHandler} },
     {"SimulationRunFor", {"Simulation/RunFor", SimulationRunForHandler} },
@@ -199,303 +182,6 @@ const NESRequest_map_t NES_Request_handlers = {
 
 };
 
-// Handy class for standard handler data.
-class HandlerData {
-protected:
-    Manager & Man;
-    std::string Source;
-    ManagerTaskData * ManTaskData;
-    std::vector<std::unique_ptr<Simulation>>* SimVec = nullptr;
-
-    std::string JSONRequestStr;
-    nlohmann::json RequestJSON;
-    API::bgStatusCode Status = API::bgStatusCode::bgStatusSuccess;
-
-    int SimulationID = -1;
-    Simulation* ThisSimulation = nullptr;
-
-public:
-    HandlerData(
-        Manager* _Man,
-        const std::string & _JSONRequest,
-        const std::string & _Source,
-        ManagerTaskData * called_by_manager_task,
-        bool PermitBusy = false,
-        bool NoSimulation = false
-    ): Man(*_Man), Source(_Source), ManTaskData(called_by_manager_task), JSONRequestStr(_JSONRequest) {
-
-        SimVec = Man.GetSimulationVectorPtr();
-        RequestJSON = nlohmann::json::parse(_JSONRequest);
-
-        bool isloadingsim = (ManTaskData != nullptr); // Man.IsLoadingSim();
-        if (isloadingsim && (_Source == "SimulationLoad")) { // *** PERHAPS WE CAN ALLOW THIS (AS WE USE LOCAL PARAMS NOW)?
-            Man.Logger()->Log("Recursive SimulationLoad attempted.", 8);
-            Status = API::bgStatusCode::bgStatusGeneralFailure;
-            return; // Prevents recursion.
-        }
-
-        // If this Handler was called while loading and a Simulation was not created
-        // yet then only allow requests that do not need one ("NoSimulation"), such
-        // as "SimulationCreate" and "NESRequest".
-        if (isloadingsim && (!ManTaskData->HasReplacementSimID()) && (!NoSimulation)) {
-            Man.Logger()->Log(Source+" needs a Sim, but we are still Loading and have not come across SimulationCreate yet.", 8);
-            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-            return; // When loading, the first valid request must be SimulationCreate.
-        }
-
-        if (NoSimulation) {
-            return;
-        }
-
-        if (isloadingsim) {
-            SimulationID = ManTaskData->ReplaceSimulationID;
-        } else {
-            if (!GetParInt("SimulationID", SimulationID)) {
-                return;
-            }
-        }
-        if (SimulationID >= SimVec->size() || SimulationID < 0) {
-            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-            return;
-        }
-        ThisSimulation = SimVec->at(SimulationID).get();
-
-        if (PermitBusy) {
-            return;
-        }
-        if (Man.IsSimulationBusy(ThisSimulation)) {
-            Status = API::bgStatusCode::bgStatusSimulationBusy;
-            return;
-        }
-        Man.Logger()->Log(Source+" called, on Sim " + SimIDStr(), 3);
-    }
-
-    // See how this is used in Manager::SimulationCreate().
-    Simulation* NewSimulation() {
-        ThisSimulation = Man.MakeSimulation();
-        SimulationID = ThisSimulation->ID;
-        Man.Logger()->Log("New Sim " + SimIDStr(), 3);
-        return ThisSimulation;
-    }
-
-    bool HasError() const { return (Status != API::bgStatusCode::bgStatusSuccess); }
-
-    API::bgStatusCode GetStatus() const { return Status; }
-
-    // Note: This is purposely NOT const nlohmann::json &, because we do NOT
-    //       want to permit calls with rvalues that default-construct a
-    //       nlohmann::json, as that is a way to accidentally a JSON object
-    //       into JSON containing a single string, e.g. by accidentally
-    //       passing ResponseJSON.dump() instead of ResponseJSON.
-    // Note: Calling this from NESRequest uses store==false, because we only
-    //       want to store the calls from their actual handlers, not from the
-    //       NESRequest batch handler. We don't want to double-count the calls,
-    //       and we want to store the individual ones, because they may be
-    //       intended for different simulations (dependeing on their SimulationID).
-    std::string ResponseAndStoreRequest(nlohmann::json & ResponseJSON, bool store = true) {
-        if (store && (Status == API::bgStatusCode::bgStatusSuccess)) {
-            if (ThisSimulation != nullptr) {
-                ThisSimulation->StoreRequestHandled(Source, NES_Request_handlers.at(Source).Route, JSONRequestStr);
-            }
-        }
-        return ResponseJSON.dump();
-    }
-    std::string ErrResponse(int _Status) {
-        Status = API::bgStatusCode(_Status);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = _Status;
-        return ResponseAndStoreRequest(ResponseJSON);
-    }
-    std::string ErrResponse(API::bgStatusCode _Status) { return ErrResponse(int(_Status)); }
-    std::string ErrResponse() { return ErrResponse(int(Status)); }
-
-    std::string ResponseWithID(const std::string & IDName, int IDValue) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = int(Status);
-        ResponseJSON[IDName] = IDValue;
-        return ResponseAndStoreRequest(ResponseJSON);
-    }
-    std::string ResponseWithID(const std::string & IDName, const std::string & IDValue) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = int(Status);
-        ResponseJSON[IDName] = IDValue;
-        return ResponseAndStoreRequest(ResponseJSON);
-    }
-    std::string StringResponse(std::string _Key, std::string _Value) {
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = int(Status);
-        ResponseJSON[_Key] = _Value;
-        return ResponseJSON.dump();
-    }
-
-    int SimID() const { return SimulationID; }
-    std::string SimIDStr() const { return std::to_string(SimulationID); }
-
-    Simulation * Sim() const { return ThisSimulation; }
-
-    const nlohmann::json & ReqJSON() const { return RequestJSON; }
-
-    bool FindPar(const std::string & ParName, nlohmann::json::iterator & Iterator, nlohmann::json& _JSON) {
-        Iterator = _JSON.find(ParName);
-        if (Iterator == _JSON.end()) {
-            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-            return false;
-        }
-        return true;
-    }
-
-    bool FindPar(const std::string & ParName, nlohmann::json::iterator & Iterator) {
-        return FindPar(ParName, Iterator, RequestJSON);
-    }
-
-    bool GetParBool(const std::string & ParName, bool & Value, nlohmann::json& _JSON) {
-        nlohmann::json::iterator it;
-        if (!FindPar(ParName, it, _JSON)) {
-            return false;
-        }
-        if (!it.value().is_boolean()) {
-            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-            return false;
-        }
-        Value = it.value().template get<bool>();
-        return true;
-    }
-
-    bool GetParBool(const std::string & ParName, bool & Value) {
-        return GetParBool(ParName, Value, RequestJSON);
-    }
-
-    bool GetParInt(const std::string & ParName, int & Value, nlohmann::json& _JSON) {
-        nlohmann::json::iterator it;
-        if (!FindPar(ParName, it, _JSON)) {
-            return false;
-        }
-        if (!it.value().is_number()) {
-            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-            return false;
-        }
-        Value = it.value().template get<int>();
-        return true;
-    }
-
-    bool GetParInt(const std::string & ParName, int & Value) {
-        return GetParInt(ParName, Value, RequestJSON);
-    }
-
-    bool GetParFloat(const std::string & ParName, float & Value, nlohmann::json& _JSON) {
-        nlohmann::json::iterator it;
-        if (!FindPar(ParName, it, _JSON)) {
-            return false;
-        }
-        if (!it.value().is_number()) {
-            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-            return false;
-        }
-        Value = it.value().template get<float>();
-        return true;
-    }
-
-    bool GetParFloat(const std::string & ParName, float & Value) {
-        return GetParFloat(ParName, Value, RequestJSON);
-    }
-
-    bool GetParString(const std::string & ParName, std::string & Value, nlohmann::json& _JSON) {
-        nlohmann::json::iterator it;
-        if (!FindPar(ParName, it, _JSON)) {
-            return false;
-        }
-        if (!it.value().is_string()) {
-            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-            return false;
-        }
-        Value = it.value().template get<std::string>();
-        return true;
-    }
-
-    bool GetParString(const std::string & ParName, std::string & Value) {
-        return GetParString(ParName, Value, RequestJSON);
-    }
-
-    bool GetParVec3FromJSON(const std::string & ParName, Geometries::Vec3D & Value, nlohmann::json& _JSON, const std::string & Units = "um") {
-        if (!GetParFloat(ParName+"X_"+Units, Value.x, _JSON)) {
-            return false;
-        }
-        if (!GetParFloat(ParName+"Y_"+Units, Value.y, _JSON)) {
-            return false;
-        }
-        if (!GetParFloat(ParName+"Z_"+Units, Value.z, _JSON)) {
-            return false;
-        }
-        return true;
-    }
-
-    bool GetParVec3(const std::string & ParName, Geometries::Vec3D & Value, const std::string & Units = "um") {
-        return GetParVec3FromJSON(ParName, Value, RequestJSON, Units);
-    }
-
-    bool GetParVecInt(const std::string & ParName, std::vector<int> & Value, nlohmann::json& _JSON) {
-        nlohmann::json::iterator it;
-        if (!FindPar(ParName, it, _JSON)) {
-            return false;
-        }
-        if (!it.value().is_array()) {
-            Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-            return false;
-        }
-        for (auto & element : it.value()) {
-            if (!element.is_number()) {
-                Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-                return false;
-            }
-            Value.emplace_back(element.template get<int>());
-        }
-        return true;
-    }
-
-    bool GetParVecInt(const std::string & ParName, std::vector<int> & Value) {
-        return GetParVecInt(ParName, Value, RequestJSON);
-    }
-
-    // If Parname="" then _JSON.is_array() must be true.
-    bool GetParVecFloat(const std::string & ParName, std::vector<float> & Value, nlohmann::json& _JSON) {
-        if (ParName.empty()) {
-            if (!_JSON.is_array()) {
-                Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-                return false;
-            }
-            for (auto & element : _JSON) {
-                if (!element.is_number()) {
-                    Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-                    return false;
-                }
-                Value.emplace_back(element.template get<float>());
-            }
-            return true;
-        } else {
-            nlohmann::json::iterator it;
-            if (!FindPar(ParName, it, _JSON)) {
-                return false;
-            }
-            if (!it.value().is_array()) {
-                Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-                return false;
-            }
-            for (auto & element : it.value()) {
-                if (!element.is_number()) {
-                    Status = API::bgStatusCode::bgStatusInvalidParametersPassed;
-                    return false;
-                }
-                Value.emplace_back(element.template get<float>());
-            }
-            return true;
-        }
-    }
-
-    bool GetParVecFloat(const std::string & ParName, std::vector<float> & Value) {
-        return GetParVecFloat(ParName, Value, RequestJSON);
-    }
-
-};
 
 Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, VisualizerPool* _VisualizerPool, API::Manager* _RPCManager) {
     assert(_Logger != nullptr);
@@ -567,7 +253,7 @@ Manager::~Manager() {
     }
 }
 
-bool LoadFileIntoString(const std::string & FilePath, std::string & FileContents) {
+bool LoadFileIntoString(const std::string& FilePath, std::string& FileContents) {
     std::ifstream LoadFile(FilePath);
     if (!LoadFile.is_open()) return false;
 
@@ -581,7 +267,7 @@ bool LoadFileIntoString(const std::string & FilePath, std::string & FileContents
 }
 
 // A ManagerTaskData struct must have been prepared and the thread already launched.
-int Manager::AddManagerTask(std::unique_ptr<ManagerTaskData> & TaskData) {
+int Manager::AddManagerTask(std::unique_ptr<ManagerTaskData>& TaskData) {
     // Get Task ID
     int TaskID = NextManTaskID;
     NextManTaskID++;
@@ -604,7 +290,7 @@ int Manager::AddManagerTask(std::unique_ptr<ManagerTaskData> & TaskData) {
 // flags and variables to modify the behavior of NESRequest and HandleData, namely to
 // establish the new Simulation ID and to replace loaded SimIDs with that.
 // Before proceeding, we wait for other loading tasks in the queue to finish.
-// void Manager::SimLoadingTask(ManagerTaskData & TaskData) {
+// void Manager::SimLoadingTask(ManagerTaskData& TaskData) {
 //     // Wait for any concurrent loading tasks that happen to be running to finish:
 //     // unsigned long timeout_ms = 10000;
 //     while (LoadingSim) {
@@ -627,7 +313,7 @@ int Manager::AddManagerTask(std::unique_ptr<ManagerTaskData> & TaskData) {
 //     LoadingSimSetter(false);
 // }
 
-void Manager::SimLoadingTask(ManagerTaskData & TaskData) {
+void Manager::SimLoadingTask(ManagerTaskData& TaskData) {
     // *** Not sure if we should prepend with "std::string loadresponse = " to keep the full
     //     record of the loading requests in the task output JSON.
     NESRequest(TaskData.InputData, &TaskData);
@@ -1036,8 +722,8 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest, ManagerTaskData* c
     Handle.Sim()->Receptors.push_back(std::make_unique<Connections::Receptor>(C));
 
     // Inform destination neuron of its new input receptor.
-    CoreStructs::Neuron * SrcNeuronPtr = Handle.Sim()->FindNeuronByCompartment(C.SourceCompartmentID);
-    CoreStructs::Neuron * DstNeuronPtr = Handle.Sim()->FindNeuronByCompartment(C.DestinationCompartmentID);
+    CoreStructs::Neuron* SrcNeuronPtr = Handle.Sim()->FindNeuronByCompartment(C.SourceCompartmentID);
+    CoreStructs::Neuron* DstNeuronPtr = Handle.Sim()->FindNeuronByCompartment(C.DestinationCompartmentID);
     if ((SrcNeuronPtr==nullptr) || (DstNeuronPtr==nullptr)) {
         return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
     }
@@ -1160,7 +846,7 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest, Manage
     }
 
     ThisDAC->ControlData.clear();
-    for (const auto & value_pair: ControlDataJSON_it.value()) {
+    for (const auto& value_pair: ControlDataJSON_it.value()) {
         if (value_pair.size() < 2) {
             return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
         }
@@ -1273,7 +959,7 @@ std::string Manager::SetSpecificAPTimes(std::string _JSONRequest, ManagerTaskDat
     if (!Handle.FindPar("TimeNeuronPairs", TimeNeuronPairJSON_it)) {
         return Handle.ErrResponse();
     }
-    for (const auto & time_neuron_pair: TimeNeuronPairJSON_it.value()) {
+    for (const auto& time_neuron_pair: TimeNeuronPairJSON_it.value()) {
         if (time_neuron_pair.size() < 2) {
             return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
         }
@@ -1337,11 +1023,11 @@ std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, ManagerTas
 
     // Modify spontaneous activity settings of specified neurons
     if (NeuronIDs.empty()) {
-        for (auto & neuron : Handle.Sim()->Neurons) {
+        for (auto& neuron : Handle.Sim()->Neurons) {
             neuron->SetSpontaneousActivity(SpikeIntervalMean_ms, SpikeIntervalStDev_ms);
         }
     } else {
-        for (const auto & neuron_id : NeuronIDs) {
+        for (const auto& neuron_id : NeuronIDs) {
             Handle.Sim()->Neurons.at(neuron_id)->SetSpontaneousActivity(SpikeIntervalMean_ms, SpikeIntervalStDev_ms);
         }
     }
@@ -1391,7 +1077,7 @@ std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, Manager
     if (!ElectrodeList.is_array()) {
         Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
     }
-    for (auto & ElectodeData : ElectrodeList) {
+    for (auto& ElectodeData : ElectrodeList) {
 
         // Collect electrode parameters and make electrode
         Tools::RecordingElectrode E(Handle.Sim());
@@ -1421,7 +1107,7 @@ std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, Manager
         if (!SitesIterator.value().is_array()) {
             Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
         }
-        for (auto & SiteData : SitesIterator.value()) {
+        for (auto& SiteData : SitesIterator.value()) {
             std::vector<float> SitePosition;
             if (!Handle.GetParVecFloat("", SitePosition, SiteData)) {
                 Handle.ErrResponse();
@@ -1641,7 +1327,7 @@ std::string Manager::ManTaskStatus(std::string _JSONRequest, ManagerTaskData* ca
     if (it == ManagerTasks.end()) {
         return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
     }
-    ManagerTaskData * taskdata_ptr = it->second.get();
+    ManagerTaskData* taskdata_ptr = it->second.get();
     if (!taskdata_ptr) {
         return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
     }
@@ -1864,7 +1550,7 @@ std::string Manager::NESRequest(std::string _JSONRequest, ManagerTaskData* calle
     nlohmann::json ResponseJSON = nlohmann::json::array(); // Create empty array for the list of responses.
 
     // For each request in the JSON list:
-    for (const auto & req : Handle.ReqJSON()) {
+    for (const auto& req : Handle.ReqJSON()) {
 
         int ReqID = -1;
         //int SimulationID = -1;
@@ -1874,7 +1560,7 @@ std::string Manager::NESRequest(std::string _JSONRequest, ManagerTaskData* calle
         //std::string Response;
 
         // Get the mandatory components of a request:
-        for (const auto & [req_key, req_value]: req.items()) {
+        for (const auto& [req_key, req_value]: req.items()) {
             if (req_key == "ReqID") {
                 ReqID = req_value.template get<int>();
             //} else if (req_key == "SimID") {
