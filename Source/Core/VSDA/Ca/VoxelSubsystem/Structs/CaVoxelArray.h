@@ -62,6 +62,17 @@ struct VoxelType {
 };
 
 
+enum VoxelState {
+    EMPTY,
+    OUT_OF_RANGE,
+    FILLED,
+    BORDER
+};
+
+
+
+
+
 /**
  * @brief Defines the voxel array.
  * 

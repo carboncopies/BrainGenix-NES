@@ -28,10 +28,10 @@ std::vector<std::string> CaRenderSliceFromArray(BG::Common::Logger::LoggingSyste
 
 
     // Get Params and Array From VSDAData
-    MicroscopeParameters* Params = &_CaData->Params_;
+    CaMicroscopeParameters* Params = &_CaData->Params_;
     VoxelArray* Array = _Array;
     float VoxelSize = Array->GetResolution();
-    BoundingBox VoxelBB = Array->GetBoundingBox();
+    Simulator::BoundingBox VoxelBB = Array->GetBoundingBox();
 
     // _Logger->Log(std::string("Rendering Slice '") + std::to_string(SliceNumber) + "'", 1);
 

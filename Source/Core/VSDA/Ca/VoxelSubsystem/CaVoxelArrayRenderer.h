@@ -37,11 +37,11 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <VSDA/VoxelSubsystem/Structs/MicroscopeParameters.h>
-#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
-#include <VSDA/VoxelSubsystem/Structs/VSDAData.h>
+#include <VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.h>
+#include <VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h>
+#include <VSDA/Ca/VoxelSubsystem/Structs/CaData.h>
 
-#include <VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
+#include <VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
 
 
 #include <BG/Common/Logger/Logger.h>

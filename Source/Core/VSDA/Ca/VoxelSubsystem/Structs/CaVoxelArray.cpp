@@ -3,7 +3,7 @@
 #include <future>
 #include <vector>
 
-#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
+#include <VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h>
 
 
 

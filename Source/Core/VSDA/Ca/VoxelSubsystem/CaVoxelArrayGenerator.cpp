@@ -28,20 +28,20 @@ namespace Calcium {
 
 
 
-bool IsShapeInsideRegion(Simulation* _Sim, size_t _ShapeID, BoundingBox _Region) {
+bool IsShapeInsideRegion(Simulator::Simulation* _Sim, size_t _ShapeID, Simulator::BoundingBox _Region) {
 
     bool IsInside = false;
-    Geometries::GeometryCollection* GeometryCollection = &_Sim->Collection;
+    Simulator::Geometries::GeometryCollection* GeometryCollection = &_Sim->Collection;
     if (GeometryCollection->IsSphere(_ShapeID)) {
-        Geometries::Sphere& ThisSphere = GeometryCollection->GetSphere(_ShapeID);
+        Simulator::Geometries::Sphere& ThisSphere = GeometryCollection->GetSphere(_ShapeID);
         IsInside = ThisSphere.IsInsideRegion(_Region);
     }
     else if (GeometryCollection->IsBox(_ShapeID)) {
-        Geometries::Box& ThisBox = GeometryCollection->GetBox(_ShapeID); 
+        Simulator::Geometries::Box& ThisBox = GeometryCollection->GetBox(_ShapeID); 
         IsInside = ThisBox.IsInsideRegion(_Region);
     }
     else if (GeometryCollection->IsCylinder(_ShapeID)) {
-        Geometries::Cylinder& ThisCylinder = GeometryCollection->GetCylinder(_ShapeID);
+        Simulator::Geometries::Cylinder& ThisCylinder = GeometryCollection->GetCylinder(_ShapeID);
         IsInside = ThisCylinder.IsInsideRegion(_Region);
     }
 
@@ -62,7 +62,7 @@ bool CaCreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger
     std::vector<std::unique_ptr<VoxelArrayGenerator::Task>> Tasks;
 
     // Convert to bounding box so we can optimize out extra shapes
-    BoundingBox RegionBoundingBox;
+    Simulator::BoundingBox RegionBoundingBox;
     RegionBoundingBox.bb_point1[0] = _Region.Point1X_um;
     RegionBoundingBox.bb_point1[1] = _Region.Point1Y_um;
     RegionBoundingBox.bb_point1[2] = _Region.Point1Z_um;
@@ -76,7 +76,7 @@ bool CaCreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger
     int TotalShapes = 0;
     for (unsigned int i = 0; i < _Sim->BSCompartments.size(); i++) {
 
-        Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
+        Simulator::Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
 
         TotalShapes++;
 
