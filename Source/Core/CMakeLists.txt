@@ -111,45 +111,49 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/VSDA/RPCInterface.cpp
   ${SRC_DIR}/Core/VSDA/RPCInterface.h
-  ${SRC_DIR}/Core/VSDA/EMRenderer.cpp
-  ${SRC_DIR}/Core/VSDA/EMRenderer.h
+
   ${SRC_DIR}/Core/VSDA/RenderPool.cpp
   ${SRC_DIR}/Core/VSDA/RenderPool.h
   ${SRC_DIR}/Core/VSDA/RPCRoutes/EM.cpp
   ${SRC_DIR}/Core/VSDA/RPCRoutes/EM.h
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/EMSubRegion.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/EMSubRegion.h
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/VoxelArrayGenerator.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/VoxelArrayGenerator.h
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/VoxelArrayRenderer.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/VoxelArrayRenderer.h
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/LegacySliceGenerator.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/LegacySliceGenerator.h
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/MicroscopeParameters.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/MicroscopeParameters.h
+  ${SRC_DIR}/Core/VSDA/RPCRoutes/Ca.cpp
+  ${SRC_DIR}/Core/VSDA/RPCRoutes/Ca.h
+
+  ${SRC_DIR}/Core/VSDA/EM/EMRenderer.cpp
+  ${SRC_DIR}/Core/VSDA/EM/EMRenderer.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/EMSubRegion.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/EMSubRegion.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/Structs/VSDAData.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/Structs/VSDAData.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/Structs/SubRegion.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/Structs/SubRegion.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/Task.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/Task.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h
+
+
   ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.cpp
   ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.h
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VoxelArray.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VoxelArray.h
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VSDAData.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/VSDAData.h
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/SubRegion.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/Structs/SubRegion.h
 
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/Image.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/Image.h
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h
-
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ArrayGeneratorPool/Task.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ArrayGeneratorPool/Task.h
-
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp
-  ${SRC_DIR}/Core/VSDA/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h
 
   ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshBuilder.cpp
   ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshBuilder.h
@@ -186,6 +190,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/Task.h
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.cpp
+  ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.h
 
 
   ${SRC_DIR}/Core/Visualizer/Visualizer.cpp

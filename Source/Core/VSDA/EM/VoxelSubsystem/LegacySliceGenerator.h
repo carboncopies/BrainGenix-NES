@@ -38,15 +38,15 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
+#include <VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h>
+#include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
+
 #include <BG/Renderer/Interface.h>
 #include <BG/Renderer/SceneGraph/Primitive/Cube.h>
 #include <BG/Renderer/EncoderPool/Image.h>
 #include <BG/Renderer/EncoderPool/EncoderPool.h>
 
 #include <BG/Common/Logger/Logger.h>
-
-#include <Visualizer/VisualizerParameters.h>
-
 
 
 namespace BG {
@@ -57,16 +57,18 @@ namespace Simulator {
 
 
 /**
- * @brief Renders the built scene in vulkan to disk with the given parameters.
- * Used for generating images for visualizing what's going on in this simulation.
+ * @brief Render the given slice from an array to the renderer's screen. Uses vulkan to do so.
  * 
  * @param _Logger 
  * @param _Renderer
- * @param _Params
+ * @param _VSDAData 
+ * @param _FileNameArray
+ * @param _FilePrefix
+ * @param _SliceNumber 
  * @return true 
  * @return false 
  */
-bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VisualizerParameters* _Params, std::string _Filepath);
+bool VulkanRenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VSDAData* _VSDAData, std::vector<std::string>* _FileNameArray, std::string _FilePrefix, int SliceNumber, BG::NES::Renderer::EncoderPool* _EncoderPool);
 
 
 

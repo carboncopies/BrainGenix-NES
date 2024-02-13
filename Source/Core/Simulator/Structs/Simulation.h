@@ -41,7 +41,7 @@
 
 #include <Visualizer/VisualizerParameters.h>
 
-#include <VSDA/VoxelSubsystem/Structs/VSDAData.h>
+#include <VSDA/EM/VoxelSubsystem/Structs/VSDAData.h>
 #include <VSDA/Ca/VoxelSubsystem/Structs/CaData.h>
 
 //! The value of tMax_ms at which recording will be done forever.
@@ -57,7 +57,7 @@ namespace Tools {
     struct CalciumImaging;
 }
 
-enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA, SIMULATION_VISUALIZATION};
+enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA, SIMULATION_CALCIUM, SIMULATION_VISUALIZATION};
 
 struct StoredRequest {
     std::string Route;

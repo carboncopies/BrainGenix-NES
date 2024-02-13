@@ -5,11 +5,11 @@
 /*
     Description: This file defines the interface for the slice generator, which creates voxel representations of a given simulation.
     Additional Notes: None
-    Date Created: 2024-01-19
+    Date Created: 2024-02-12
     Author(s): Thomas Liao
 
 
-    Copyright (C) 2023  Thomas Liao
+    Copyright (C) 2024  Thomas Liao
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -36,8 +36,8 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 
-
-#include <VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h>
+#include <VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.h>
+#include <Simulator/Structs/Simulation.h>
 #include <VSDA/Common/Structs/ScanRegion.h>
 
 #include <BG/Common/Logger/Logger.h>
@@ -45,15 +45,12 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
+namespace VSDA {
+namespace Calcium {
 
 // Forward declaration:
 struct Simulation;
 
-// Target Process: Simulation -> Voxels -> Meshes -> Images
-// Firstly, we take a simulation pointer, build a voxel array from it
-// Then, we slice the voxel array one slice at a time, and build a mesh from it
-// Then the mesh is used to generate an image
 
 /**
  * @brief Helper function for VSDA subsystem.
@@ -65,7 +62,7 @@ struct Simulation;
  * @return true On Success
  * @return false On Error
  */
-bool VSDA_EM_Initialize(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim);
+bool VSDA_CA_Initialize(BG::Common::Logger::LoggingSystem* _Logger, Simulator::Simulation* _Sim);
 
 /**
  * @brief Setup the virtual microscope on a given simulation with the given parameters.
@@ -77,7 +74,7 @@ bool VSDA_EM_Initialize(BG::Common::Logger::LoggingSystem* _Logger, Simulation* 
  * @return true On Success
  * @return false On Error
  */
-bool VSDA_EM_SetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters _Params);
+bool VSDA_CA_SetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulator::Simulation* _Sim, CaMicroscopeParameters _Params);
 
 /**
  * @brief Defines the region that we'd like to scan with the current render operation.
@@ -91,7 +88,7 @@ bool VSDA_EM_SetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulat
  * @return true On Success
  * @return false On Error
  */
-bool VSDA_EM_DefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, ScanRegion _ScanRegion, int* _RegionID);
+bool VSDA_CA_DefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simulator::Simulation* _Sim, Simulator::ScanRegion _ScanRegion, int* _RegionID);
 
 /**
  * @brief Sets the enum flag in the simulation that a render operation has been requested.
@@ -104,11 +101,12 @@ bool VSDA_EM_DefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simula
  * @return true On Success
  * @return false On Error
  */
-bool VSDA_EM_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, int _RegionID);
+bool VSDA_CA_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Simulator::Simulation* _Sim, int _RegionID);
 
 
 
 
-}; // Close Namespace Logger
+}; // Close Namespace Calcium
+}; // Close Namespace VSDA
 }; // Close Namespace Common
 }; // Close Namespace BG

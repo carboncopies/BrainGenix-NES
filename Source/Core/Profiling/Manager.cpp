@@ -11,6 +11,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/RPCRoutes/EM.h>
+#include <VSDA/RPCRoutes/Ca.h>
 #include <Simulator/Manager.h>
 #include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/Structs/Simulation.h>
@@ -35,8 +36,92 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
     std::vector<std::unique_ptr<Simulator::Simulation>>* Simulations = _SimManager->GetSimulationVectorPtr();
 
     // Profiling Stuff
+    if (_Config->ProfilingStatus_ == Config::PROFILE_CALCIUM_END_TO_END_TEST_1) {
 
-    if (_Config->ProfilingStatus_ == Config::PROFILE_NEW_API_TEST) {
+        _Logger->Log("Running Calcium Imaging Profiling Test", 6);
+
+        // Create A Simulation
+        Simulations->push_back(std::make_unique<Simulator::Simulation>(_Logger));
+        int SimID = Simulations->size()-1;
+        Simulator::Simulation* Sim = (*Simulations)[SimID].get();
+        Sim->Name = "Profiling Sim";
+        Sim->ID = SimID;
+        Sim->CurrentTask = Simulator::SIMULATION_NONE;
+
+        // Start Thread
+        std::atomic_bool StopThreads = false;
+        std::thread SimThread(&Simulator::SimulationEngineThread, _Logger, Sim, _RenderPool, _VisualizerPool, &StopThreads);
+
+
+        // Create 1k spheres
+        for (unsigned int i = 0; i < 100000; i++) {
+
+            std::string Name = "Sphere " + std::to_string(i);
+            float Radius_um = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/8.));
+            float CenterPosX = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/200));
+            float CenterPosY = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/200));
+            float CenterPosZ = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/200));
+
+
+            // -- Create Sphere -- //
+            Simulator::Geometries::Sphere S;
+            S.Name = Name;
+            S.Radius_um = Radius_um;
+            S.Center_um.x = CenterPosX;
+            S.Center_um.y = CenterPosY;
+            S.Center_um.z = CenterPosZ;
+            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            S.ID = ThisSimulation->Collection.Geometries.size();
+            ThisSimulation->Collection.Geometries.push_back(S);
+
+
+            // -- Create Compartments -- //
+            Simulator::Compartments::BS C;
+            C.ShapeID = S.ID;
+            C.ID  = ThisSimulation->BSCompartments.size();
+            ThisSimulation->BSCompartments.push_back(C);
+
+            // _Logger->Log("Created Sphere " + std::to_string(i), 3);
+
+
+        }
+
+
+        // -- Setup Rendering Operation -- //
+        ::BG::NES::VSDA::Calcium::CaMicroscopeParameters Params;
+        Params.VoxelResolution_um = 0.1;
+        Params.ImageWidth_px = 1500;
+        Params.ImageHeight_px = 1500;
+        Params.ScanRegionOverlap_percent = 0;
+        Params.SliceThickness_um = 0.1;
+        Params.NumPixelsPerVoxel_px = 2;
+        
+        Simulator::ScanRegion Region;
+        Region.Point1X_um = 0;
+        Region.Point1Y_um = 0;
+        Region.Point1Z_um = 0;
+        Region.Point2X_um = 200;
+        Region.Point2Y_um = 200;
+        Region.Point2Z_um = 200;
+        int RegionID;
+
+        ::BG::NES::VSDA::Calcium::VSDA_CA_Initialize(_Logger, Sim);
+        ::BG::NES::VSDA::Calcium::VSDA_CA_SetupMicroscope(_Logger, Sim, Params);
+        ::BG::NES::VSDA::Calcium::VSDA_CA_DefineScanRegion(_Logger, Sim, Region, &RegionID);
+        ::BG::NES::VSDA::Calcium::VSDA_CA_QueueRenderOperation(_Logger, Sim, RegionID);
+
+        while (Sim->CaData_.State_ != ::BG::NES::VSDA::Calcium::CA_RENDER_DONE) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        }
+
+        // Join Threads
+        StopThreads = true;
+        SimThread.join();
+
+    }
+
+
+    else if (_Config->ProfilingStatus_ == Config::PROFILE_NEW_API_TEST) {
         _Logger->Log("Running New API Test", 6);
 
         // Parse Request

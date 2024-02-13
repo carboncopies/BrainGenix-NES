@@ -31,42 +31,51 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <filesystem>
+#include <vector>
+#include <string>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Simulator/Structs/Simulation.h>
+#include <VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h>
+#include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
+#include <VSDA/EM/VoxelSubsystem/Structs/VSDAData.h>
 
-#include <BG/Renderer/Interface.h>
-#include <BG/Renderer/SceneGraph/Primitive/Cube.h>
-#include <BG/Renderer/EncoderPool/Image.h>
-#include <BG/Renderer/EncoderPool/EncoderPool.h>
+#include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
+
 
 #include <BG/Common/Logger/Logger.h>
-
-#include <Visualizer/VisualizerParameters.h>
-
 
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 
-
+/**
+ * @brief Render the entire voxel array with the parameters defined in the various config structs.
+ * Set the maximum number of simultaneous threads to the maxthreads argument.
+ * 
+ * @param _Logger 
+ * @param _VSDAData 
+ * @param _FilePrefix 
+ * @param _ImageProcessorPool 
+ * @param _MaxThreads 
+ * @return std::vector<std::vector<std::string>> 
+ */
+std::vector<std::vector<std::string>> ThreadedRenderVoxelArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::string _FilePrefix, ImageProcessorPool* _ImageProcessorPool, int _MaxThreads=20);
 
 
 /**
- * @brief Renders the built scene in vulkan to disk with the given parameters.
- * Used for generating images for visualizing what's going on in this simulation.
+ * @brief Render the given slice from an array to the renderer's screen
  * 
  * @param _Logger 
- * @param _Renderer
- * @param _Params
- * @return true 
- * @return false 
+ * @param _VSDAData 
+ * @param _FilePrefix
+ * @param _SliceNumber 
+ * @return std::vector<std::string> 
  */
-bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VisualizerParameters* _Params, std::string _Filepath);
+std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int SliceNumber, ImageProcessorPool* _ImageProcessorPool, double _OffsetX=0., double _OffsetY=0., int _SliceOffset=0);
+
 
 
 

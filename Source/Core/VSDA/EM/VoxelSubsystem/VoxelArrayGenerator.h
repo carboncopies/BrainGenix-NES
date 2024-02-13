@@ -5,7 +5,7 @@
 /*
     Description: This file defines the interface for the slice generator, which creates voxel representations of a given simulation.
     Additional Notes: None
-    Date Created: 2023-11-29
+    Date Created: 2024-01-19
     Author(s): Thomas Liao, Randal Koene
 
 
@@ -31,22 +31,19 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <filesystem>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
-#include <BG/Renderer/Interface.h>
-#include <BG/Renderer/SceneGraph/Primitive/Cube.h>
-#include <BG/Renderer/EncoderPool/Image.h>
-#include <BG/Renderer/EncoderPool/EncoderPool.h>
+#include <VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h>
+#include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
+
+
+#include <VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
 
 #include <BG/Common/Logger/Logger.h>
-
-#include <Visualizer/VisualizerParameters.h>
-
 
 
 namespace BG {
@@ -57,16 +54,19 @@ namespace Simulator {
 
 
 /**
- * @brief Renders the built scene in vulkan to disk with the given parameters.
- * Used for generating images for visualizing what's going on in this simulation.
+ * @brief Create a Voxel Array From Simulation object
+ * Generates a voxel array at pointer _Array, within the region defined in _Region, from the simulation _Sim.
  * 
- * @param _Logger 
- * @param _Renderer
- * @param _Params
- * @return true 
- * @return false 
+ * @param _Logger Pointer to logging system instance
+ * @param _Sim Pointer to simulation that data is to be generated from
+ * @param _Region Pointer to region in that simulation where we'll be generating an array
+ * @param _Array Pointer to array to be populated.
+ * @return true On success
+ * @return false On failure (eg: out of memory, out of bounds, etc.)
  */
-bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VisualizerParameters* _Params, std::string _Filepath);
+bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array);
+bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array, ScanRegion _Region, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
+
 
 
 

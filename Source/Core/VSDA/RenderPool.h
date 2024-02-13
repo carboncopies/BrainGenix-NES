@@ -47,15 +47,13 @@
 
 #include <Simulator/Structs/Simulation.h>
 
-#include <VSDA/EMRenderer.h>
+#include <VSDA/EM/EMRenderer.h>
+#include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
+#include <VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
 
-#include <VSDA/VoxelSubsystem/ImageProcessorPool/Image.h>
-#include <VSDA/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
-#include <VSDA/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
-
+#include <VSDA/Ca/CaRenderer.h>
 #include <VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
 #include <VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
-#include <VSDA/Ca/CaRenderer.h>
 
 #include <BG/Renderer/Interface.h>
 
@@ -84,8 +82,8 @@ private:
 
     BG::Common::Logger::LoggingSystem*                        Logger_ = nullptr;   /**Pointer to instance of logging system*/
 
-    std::unique_ptr<ImageProcessorPool>                       ImageProcessorPool_; /**Instance of the ImageProcessorPool, which saves all required images to disk*/
-    std::unique_ptr<VoxelArrayGenerator::ArrayGeneratorPool>  ArrayGeneratorPool_; /**Instance of the ArrayGeneratorPool, used to parallelize rasterizing shapes into the voxel array with many threads*/
+    std::unique_ptr<ImageProcessorPool>                       EMImageProcessorPool_; /**Instance of the ImageProcessorPool, which saves all required images to disk*/
+    std::unique_ptr<VoxelArrayGenerator::ArrayGeneratorPool>  EMArrayGeneratorPool_; /**Instance of the ArrayGeneratorPool, used to parallelize rasterizing shapes into the voxel array with many threads*/
 
     std::unique_ptr<::BG::NES::VSDA::Calcium::ImageProcessorPool>                       CalciumImageProcessorPool_; /**Instance of the ImageProcessorPool, which saves all required images to disk*/
     std::unique_ptr<::BG::NES::VSDA::Calcium::VoxelArrayGenerator::ArrayGeneratorPool>  CalciumArrayGeneratorPool_; /**Instance of the ArrayGeneratorPool, used to parallelize rasterizing shapes into the voxel array with many threads*/

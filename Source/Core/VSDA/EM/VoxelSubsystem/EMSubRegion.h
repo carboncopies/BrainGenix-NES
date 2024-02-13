@@ -3,13 +3,13 @@
 //=================================//
 
 /*
-    Description: This file defines the interface for the slice generator, which creates voxel representations of a given simulation.
+    Description: This file defines the interface which connects the NES routes for VSDA to the API.
     Additional Notes: None
-    Date Created: 2023-11-29
-    Author(s): Thomas Liao, Randal Koene
+    Date Created: 2023-12-02
+    Author(s): Thomas Liao
 
 
-    Copyright (C) 2023  Thomas Liao, Randal Koene
+    Copyright (C) 2023  Thomas Liao
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -31,45 +31,52 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <filesystem>
+#include <vector>
+#include <memory>
+#include <iostream>
+#include <assert.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+#include <nlohmann/json.hpp>
+
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
-#include <BG/Renderer/Interface.h>
-#include <BG/Renderer/SceneGraph/Primitive/Cube.h>
-#include <BG/Renderer/EncoderPool/Image.h>
-#include <BG/Renderer/EncoderPool/EncoderPool.h>
+#include <VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h>
+#include <VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.h>
+#include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
+#include <VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
+#include <VSDA/EM/VoxelSubsystem/Structs/SubRegion.h>
 
 #include <BG/Common/Logger/Logger.h>
 
-#include <Visualizer/VisualizerParameters.h>
 
 
 
 namespace BG {
 namespace NES {
 namespace Simulator {
-
-
+namespace VSDA {
 
 
 /**
- * @brief Renders the built scene in vulkan to disk with the given parameters.
- * Used for generating images for visualizing what's going on in this simulation.
+ * @brief Renders an EM subregion component.
+ * Takes a pointer to the region in question which needs rendering.
  * 
  * @param _Logger 
- * @param _Renderer
- * @param _Params
+ * @param _SubRegion 
+ * @param _ImageProcessorPool 
+ * @param _GeneratorPool 
  * @return true 
  * @return false 
  */
-bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VisualizerParameters* _Params, std::string _Filepath);
+bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _SubRegion, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
 
 
 
-}; // Close Namespace Logger
-}; // Close Namespace Common
+
+}; // Close Namespace VSDA
+}; // Close Namespace Simulator
+}; // Close Namespace NES
 }; // Close Namespace BG

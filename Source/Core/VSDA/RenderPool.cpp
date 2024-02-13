@@ -26,13 +26,6 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
 
     Logger_->Log("Started RenderPool Thread " + std::to_string(_ThreadNumber), 0);
 
-    // // Setup Renderer
-    // BG::NES::Renderer::Interface Renderer(Logger_);
-    // if (!Renderer.Initialize(Windowed_)) { 
-    //     Logger_->Log("Error During Renderer Initialization, Aborting", 10);
-    //     return;
-    // }
-
     // Run until thread exit is requested - that is, this is set to false
     while (ThreadControlFlag_) {
 
@@ -44,7 +37,7 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
             Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Detecting Work For Simulation " + std::to_string(SimToProcess->ID), 2);
             if (SimToProcess->VSDAData_.State_ == VSDA_RENDER_REQUESTED) {
                 Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering EM Stack For Simulation " + std::to_string(SimToProcess->ID), 2);
-                VSDA::ExecuteSubRenderOperations(Logger_, SimToProcess, ImageProcessorPool_.get(), ArrayGeneratorPool_.get());
+                VSDA::ExecuteSubRenderOperations(Logger_, SimToProcess, EMImageProcessorPool_.get(), EMArrayGeneratorPool_.get());
             } else if (SimToProcess->CaData_.State_ == ::BG::NES::VSDA::Calcium::CA_RENDER_REQUESTED) {
                 Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering Calcium Stack For Simulation " + std::to_string(SimToProcess->ID), 2);
                 ::BG::NES::VSDA::Calcium::ExecuteCaSubRenderOperations(Logger_, SimToProcess, CalciumImageProcessorPool_.get(), CalciumArrayGeneratorPool_.get());
@@ -73,12 +66,14 @@ RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowe
 
     // Create VoxelArrayGenerator Instance
     int NumArrayGeneratorThreads = std::thread::hardware_concurrency();
-    ArrayGeneratorPool_ = std::make_unique<VoxelArrayGenerator::ArrayGeneratorPool>(Logger_, NumArrayGeneratorThreads);
+    EMArrayGeneratorPool_ = std::make_unique<VoxelArrayGenerator::ArrayGeneratorPool>(Logger_, NumArrayGeneratorThreads);
+    CalciumArrayGeneratorPool_ = std::make_unique<::BG::NES::VSDA::Calcium::VoxelArrayGenerator::ArrayGeneratorPool>(Logger_, NumArrayGeneratorThreads);
 
 
     // Create ImageProcessorPool Instance
     int NumEncoderThreads = std::thread::hardware_concurrency();
-    ImageProcessorPool_ = std::make_unique<ImageProcessorPool>(Logger_, NumEncoderThreads);
+    EMImageProcessorPool_ = std::make_unique<ImageProcessorPool>(Logger_, NumEncoderThreads);
+    CalciumImageProcessorPool_ = std::make_unique<::BG::NES::VSDA::Calcium::ImageProcessorPool>(Logger_, NumEncoderThreads);
 
 
     // Create Renderer Instances
