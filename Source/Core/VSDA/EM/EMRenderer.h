@@ -54,7 +54,7 @@
 #include <BG/Common/Logger/Logger.h>
 #include <Util/JSONHelpers.h>
 
-#include <RPC/Manager.h>
+#include <RPC/RPCManager.h>
 
 
 

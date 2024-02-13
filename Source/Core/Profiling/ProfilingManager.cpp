@@ -19,6 +19,8 @@
 #include <Simulator/Structs/RecordingElectrode.h>
 #include <Simulator/Structs/CalciumImaging.h>
 
+#include <Profiling/ProfilingManager.h>
+
 namespace BG {
 namespace NES {
 namespace Profiling {

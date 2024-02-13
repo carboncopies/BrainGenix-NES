@@ -16,8 +16,10 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Config/ConfigDefaults.h
 
 
-  ${SRC_DIR}/Core/RPC/Manager.cpp
-  ${SRC_DIR}/Core/RPC/Manager.h
+  ${SRC_DIR}/Core/RPC/RPCManager.cpp
+  ${SRC_DIR}/Core/RPC/RPCManager.h
+  ${SRC_DIR}/Core/RPC/RPCHandlerHelper.cpp
+  ${SRC_DIR}/Core/RPC/RPCHandlerHelper.h
   ${SRC_DIR}/Core/RPC/StaticRoutes.cpp
   ${SRC_DIR}/Core/RPC/StaticRoutes.h
 
@@ -107,8 +109,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Util/LogLogo.cpp
   ${SRC_DIR}/Core/Util/LogLogo.h
 
-  ${SRC_DIR}/Core/Profiling/Manager.cpp
-  ${SRC_DIR}/Core/Profiling/Manager.h
+  ${SRC_DIR}/Core/Profiling/ProfilingManager.cpp
+  ${SRC_DIR}/Core/Profiling/ProfilingManager.h
 
   ${SRC_DIR}/Core/VSDA/RPCInterface.cpp
   ${SRC_DIR}/Core/VSDA/RPCInterface.h

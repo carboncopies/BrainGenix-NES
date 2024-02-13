@@ -43,7 +43,7 @@
 
 #include <Simulator/EngineController.h>
 #include <Config/Config.h>
-#include <RPC/Manager.h>
+#include <RPC/RPCManager.h>
 #include <Util/JSONHelpers.h>
 #include <BG/Common/Logger/Logger.h>
 

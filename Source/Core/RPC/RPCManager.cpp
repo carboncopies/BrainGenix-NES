@@ -10,7 +10,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 
-#include <RPC/Manager.h>
+#include <RPC/RPCManager.h>
 
 
 
