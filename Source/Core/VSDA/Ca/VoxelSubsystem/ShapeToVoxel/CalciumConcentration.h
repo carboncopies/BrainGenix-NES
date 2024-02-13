@@ -66,12 +66,24 @@ namespace VoxelArrayGenerator {
  * In essence, this should return a list of list of concentrations where the index in that first list of lists can be matched with the CompartmentID to which it corresponds.
  * 
  * @param _Logger Pointer to logging system instance.
- * @param _Simulation Poitner to simulation instance.
+ * @param _Simulation Pointer to simulation instance.
  * @param _Data Pointer to vector of vectors for recorded concentrations.
  * @return true Success
  * @return false Failure
  */
 bool CalculateCalciumConcentrations(BG::Common::Logger::LoggingSystem *_Logger, Simulator::Simulation* _Simulation, std::vector<std::vector<float>>* _Data);
+
+/**
+ * @brief Alternative method by which to obtain Calcium concentration of a particular component
+ *        for a particular sample index (corresponding to a specific sampling time).
+ * 
+ * @param _Simulation Pointer to simulatin instance.
+ * @param _ComponentID ID of the component. Must be a valid component ID. (*** Could add a test if it seems necessary.)
+ * @param _SampleIdx Index of the sample (corresponding to a Ca sample time).
+ * 
+ * @return The Calcium concentration.
+ */
+float ComponentSampledCalciumConcentration(Simulator::Simulation* _Simulation, int _ComponentID, size_t _SampleIdx);
 
 /**
  * @brief Return the timestep of the recorded calcium concentrations. A pair function that goes along with CalculateCalciumConcentrations.
