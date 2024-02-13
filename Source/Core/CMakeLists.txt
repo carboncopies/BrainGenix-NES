@@ -77,6 +77,7 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/RecordingElectrode.h
   ${SRC_DIR}/Core/Simulator/Structs/RecordingElectrode.cpp
   ${SRC_DIR}/Core/Simulator/Structs/CalciumImaging.h
+  ${SRC_DIR}/Core/Simulator/Structs/CalciumImaging.cpp
   ${SRC_DIR}/Core/Simulator/Structs/SynTrQuantalRelease.h
   ${SRC_DIR}/Core/Simulator/Structs/SynTrQuantalRelease.cpp
   

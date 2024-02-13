@@ -50,7 +50,7 @@ struct BSNeuronTest : testing::Test {
 
     void Simulate() {
         std::vector<float> reversed_kernel(10, 0.0);
-        testBSNeuron->SetFIFO(1.1, 0.1, reversed_kernel);
+        testBSNeuron->SetFIFO(1.1, 0.1, reversed_kernel.size());
         testBSNeuron->SetSpontaneousActivity(0.5, 5.0);
 
         for (float val : times_ms)
@@ -271,7 +271,7 @@ TEST_F(BSNeuronTest, test_SetFIFO_default) {
     size_t expectedFIFOSize = FIFO_ms / dt_ms + 1;
 
     std::vector<float> reversed_kernel(10, 0.0);
-    testBSNeuron->SetFIFO(1.1, 0.1, reversed_kernel);
+    testBSNeuron->SetFIFO(1.1, 0.1, reversed_kernel.size());
 
     ASSERT_EQ(testBSNeuron->FIFO.size(), expectedFIFOSize);
 }

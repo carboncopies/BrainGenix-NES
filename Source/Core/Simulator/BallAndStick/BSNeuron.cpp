@@ -257,14 +257,14 @@ void BSNeuron::Update(float t_ms, bool recording) {
 
 //! Sets the initial value of the FIFO and prepares a buffer for convolvedFIFO.
 //! FIFO_dt_ms == 0.0 means used a FIFO of size 1.
-void BSNeuron::SetFIFO(float FIFO_ms, float FIFO_dt_ms, const std::vector<float> & reversed_kernel) {
+void BSNeuron::SetFIFO(float FIFO_ms, float FIFO_dt_ms, size_t reversed_kernel_size) {
     assert(FIFO_ms >= 0.0 && FIFO_dt_ms >= 0.0);
 
     size_t fifoSize = FIFO_dt_ms == 0.0 ? 1 : FIFO_ms / FIFO_dt_ms + 1;
 
     for (size_t i = 0; i < fifoSize; ++i) this->FIFO.emplace_back(0.0);
 
-    size_t convolvedFIFO_size = this->FIFO.size() + reversed_kernel.size() - 1;
+    size_t convolvedFIFO_size = this->FIFO.size() + reversed_kernel_size - 1;
     this->ConvolvedFIFO.resize(convolvedFIFO_size, 0.0);
 };
 
