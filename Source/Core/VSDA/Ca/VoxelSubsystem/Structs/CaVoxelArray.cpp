@@ -145,7 +145,7 @@ VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
 
     // Check Bounds
     if ((_X < 0 || _X >= SizeX_) || (_Y < 0 || _Y >= SizeY_) || (_Z < 0 || _Z >= SizeZ_)) {
-        return OUT_OF_RANGE;
+        return VoxelType();
     }
 
     // Hope this works (please work dear god don't segfault)
@@ -153,7 +153,7 @@ VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
     if (Index < DataMaxLength_) {
         return Data_.get()[Index];
     }
-    return OUT_OF_RANGE;
+    return VoxelType();
 
 }
 

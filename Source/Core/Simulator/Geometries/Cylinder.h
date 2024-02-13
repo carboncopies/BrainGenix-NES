@@ -20,6 +20,7 @@
 #include <Simulator/Geometries/VecTools.h>
 
 #include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
+#include <VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h>
 
 
 namespace BG {
@@ -76,6 +77,7 @@ struct Cylinder : Geometry {
      * @param _Array 
      */
     void WriteToVoxelArray(float _VoxelScale, VoxelArray* _Array);
+    void WriteToVoxelArray(float _VoxelScale, VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo);
 
 };
 

@@ -58,15 +58,8 @@ struct VoxelType {
 
     bool IsFilled_ = false;
     size_t CompartmentID_ = 0;
+    bool IsBorder_ = false;
 
-};
-
-
-enum VoxelState {
-    EMPTY,
-    OUT_OF_RANGE,
-    FILLED,
-    BORDER
 };
 
 

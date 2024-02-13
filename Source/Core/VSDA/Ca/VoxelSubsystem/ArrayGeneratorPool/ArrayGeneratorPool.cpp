@@ -64,7 +64,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             float VoxelResolution_um = ThisTask->VoxelResolution_um_;
             VoxelArray* Array = ThisTask->Array_;
             std::string ShapeName = "";
-            Geometries::GeometryCollection* GeometryCollection = ThisTask->GeometryCollection_;
+            Simulator::Geometries::GeometryCollection* GeometryCollection = ThisTask->GeometryCollection_;
 
 
             // -- Phase 2 -- //
@@ -74,19 +74,19 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             // If we were to use something like a std::vector, that would be dangerous - but since we're using a static size raw array, 
             // we can allow all threads to write the array at the same time (it feels wrong, but should be okay in this specific case)
             if (GeometryCollection->IsSphere(ShapeID)) {
-                Geometries::Sphere & ThisSphere = GeometryCollection->GetSphere(ShapeID);
+                Simulator::Geometries::Sphere& ThisSphere = GeometryCollection->GetSphere(ShapeID);
                 ShapeName = "Sphere";
-                FillShape(Array, &ThisSphere, VoxelResolution_um);
+                FillShape(Array, &ThisSphere, VoxelResolution_um, ThisTask->CompartmentID_);
             }
             else if (GeometryCollection->IsBox(ShapeID)) {
-                Geometries::Box & ThisBox = GeometryCollection->GetBox(ShapeID); 
+                Simulator::Geometries::Box& ThisBox = GeometryCollection->GetBox(ShapeID); 
                 ShapeName = "Box";
-                FillBox(Array, &ThisBox, VoxelResolution_um);
+                FillBox(Array, &ThisBox, VoxelResolution_um, ThisTask->CompartmentID_);
             }
             else if (GeometryCollection->IsCylinder(ShapeID)) {
-                Geometries::Cylinder & ThisCylinder = GeometryCollection->GetCylinder(ShapeID);
+                Simulator::Geometries::Cylinder& ThisCylinder = GeometryCollection->GetCylinder(ShapeID);
                 ShapeName = "Cylinder";
-                FillCylinder(Array, &ThisCylinder, VoxelResolution_um);
+                FillCylinder(Array, &ThisCylinder, VoxelResolution_um, ThisTask->CompartmentID_);
             }
             
             // Update Task Result

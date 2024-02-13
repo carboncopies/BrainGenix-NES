@@ -146,6 +146,36 @@ void Box::WriteToVoxelArray(float _VoxelScale, VoxelArray* _Array) {
 }
 
 
+void Box::WriteToVoxelArray(float _VoxelScale, VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo) {
+    assert(_Array != nullptr);
+    assert(_VoxelScale != 0.);
+
+
+    // Now fill it (based on the algorithm in GetPointCloud)
+    float d = Dims_um.x;
+    float stepsize = 0.5*_VoxelScale;
+    for (float x = 0.0; x <= d; x += stepsize) {
+
+        float half_ylen = Dims_um.y / 2.0;
+        float half_zlen = Dims_um.z / 2.0;
+        for (float y = -half_ylen; y <= half_ylen; y += stepsize) {
+            for (float z = -half_zlen; z <= half_zlen; z += stepsize) {
+                Vec3D Point(x, y, z);
+                Point = Point.rotate_around_xyz(Rotations_rad.x, Rotations_rad.y, Rotations_rad.z);
+
+                // Rather than making a point cloud like before, we just write it directly into the array
+                _Array->SetVoxelAtPosition(Point.x, Point.y, Point.z, _VoxelInfo);
+
+            }
+        }
+    }
+
+}
+
+
+
+
+
 
 //! Returns a point cloud that can be used to fill voxels representing the box.
 std::vector<Vec3D> Box::GetPointCloud(float _VoxelScale) {

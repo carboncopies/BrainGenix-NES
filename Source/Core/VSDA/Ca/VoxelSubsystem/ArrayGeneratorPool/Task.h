@@ -60,6 +60,7 @@ namespace VoxelArrayGenerator {
 struct Task {
 
     size_t                          ShapeID_;            /**Index of the relevant shape from the shapes array of the simulation.*/
+    size_t                          CompartmentID_;      /**ID of the compartment that this shape belongs to (for calcium generation)*/
     float                           VoxelResolution_um_; /**Set the resolution size of each voxel on axis in microns.*/
     Simulator::Geometries::GeometryCollection* GeometryCollection_; /**Pointer to instance of the simulation's geometry collection.*/ 
     std::atomic_bool                IsDone_ = false;     /**Indicates if this task has been processed or not.*/

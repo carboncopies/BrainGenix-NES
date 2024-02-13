@@ -81,12 +81,15 @@ bool CaCreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger
         TotalShapes++;
 
         // Create a working task for the generatorpool to complete
+        // Note that for calcium imaging, we need to keep track of the index of ths compartment which created this voxel
+        // That way, we can query the calcium concentration later on down the line
+        // Which consequently enalbes us to calc the luminescance of the corresponding voxel and thus the pixel color (after summing depth wise through the slice)
         std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
         Task->Array_ = _Array;
         Task->GeometryCollection_ = &_Sim->Collection;
         Task->ShapeID_ = ThisCompartment->ShapeID;
         Task->VoxelResolution_um_ = _Params->VoxelResolution_um;
-
+        Task->CompartmentID_ = ThisCompartment->ID;
 
         // Now submit to render queue if it's inside the region, otherwise skip it
         if (IsShapeInsideRegion(_Sim, ThisCompartment->ShapeID, RegionBoundingBox)) {
