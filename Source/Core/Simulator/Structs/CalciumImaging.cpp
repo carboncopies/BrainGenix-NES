@@ -1,4 +1,6 @@
 #include <Simulator/Structs/CalciumImaging.h>
+#include <Simulator/Structs/Simulation.h>
+#include <Simulator/BallAndStick/BSNeuron.h>
 
 namespace BG {
 namespace NES {
@@ -9,7 +11,7 @@ CalciumImaging::CalciumImaging(Simulator::Simulation* _Sim): Sim(_Sim) {
     assert(_Sim != nullptr);
 };
 
-CalciumImaging(CalciumImaging & CaImg):
+CalciumImaging::CalciumImaging(CalciumImaging & CaImg):
     Sim(CaImg.Sim), Name(CaImg.Name), ID(CaImg.ID),
     FluorescingNeurons(CaImg.FluorescingNeurons),
     CalciumIndicator(CaImg.CalciumIndicator),
@@ -29,8 +31,8 @@ CalciumImaging(CalciumImaging & CaImg):
 }
 
 void CalciumImaging::Init() {
-    Voxel_um = GetVoxelSize_um();
-    IncludeComponents = GetVisibleComponentsList();
+    // *** Voxel_um = GetVoxelSize_um();
+    // *** IncludeComponents = GetVisibleComponentsList();
     SetImageSize();
     InstantiateVoxelSpace();
     InitializeDepthDimming();
@@ -81,13 +83,13 @@ void CalciumImaging::InitializeFluorescingNeuronFIFOs() {
     if (FluorescingNeurons.empty()) {
         // All neurons.
         for (auto & neuron_ptr : Sim->Neurons) {
-            neuron_ptr->SetFIFO(FIFO_ms, FIFO_dt_ms, FluorescenceKernel.size());
+            static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get())->SetFIFO(FIFO_ms, FIFO_dt_ms, FluorescenceKernel.size());
         }
 
     } else {
         // Specified neurons subset.
         for (auto & neuron_id : FluorescingNeurons) if (neuron_id < Sim->Neurons.size()) {
-            Sim->Neurons.at(neuron_id)->SetFIFO(FIFO_ms, FIFO_dt_ms, FluorescenceKernel.size());
+            static_cast<BallAndStick::BSNeuron*>(Sim->Neurons.at(neuron_id).get())->SetFIFO(FIFO_ms, FIFO_dt_ms, FluorescenceKernel.size());
         }
     }
 }
@@ -105,13 +107,13 @@ void CalciumImaging::Record(float t_ms) {
     if (FluorescingNeurons.empty()) {
         // All neurons fluoresce.
         for (auto & neuron_ptr : Sim->Neurons) {
-            neuron_ptr->UpdateConvolvedFIFO(FluorescenceKernel);
+            static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get())->UpdateConvolvedFIFO(FluorescenceKernel);
         }
 
     } else {
         // For specified fluorescing neurons set.
         for (auto & neuron_id : FluorescingNeurons) if (neuron_id < Sim->Neurons.size()) {
-            Sim->Neurons.at(neuron_id)->UpdateConvolvedFIFO(FluorescenceKernel);
+            static_cast<BallAndStick::BSNeuron*>(Sim->Neurons.at(neuron_id).get())->UpdateConvolvedFIFO(FluorescenceKernel);
         }
     }
 

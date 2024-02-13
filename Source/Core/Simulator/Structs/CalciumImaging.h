@@ -57,8 +57,8 @@ struct CalciumImaging {
     std::vector<float> ReversedFluorescenceKernel;
     float max_pixel_contributions = 0.0;
     std::vector<float> image_dims_px; // *** or unsigned int?
-    ??? image_t; // Image taken at time t.
-    std::vector<???> images;
+    //??? image_t; // Image taken at time t.
+    //std::vector<???> images;
 
     std::vector<int> IncludeComponents;
 

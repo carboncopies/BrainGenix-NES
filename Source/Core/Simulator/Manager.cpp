@@ -1536,7 +1536,7 @@ std::string Manager::CalciumImagingAttach(std::string _JSONRequest, ManagerTaskD
         Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
     }
     C.Center_um = Center;
-    C.Half_um = Half;
+    C.Half = Half;
     C.Dx = Dx;
     C.Dy = Dy;
     C.Dz = Dz;
