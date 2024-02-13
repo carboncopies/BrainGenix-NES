@@ -8,7 +8,10 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.h>
 #include <VSDA/Ca/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h>
+#include <Simulator/BallAndStick/BSNeuron.h>
+#include <Simulator/Structs/CalciumImaging.h>
 
 
 namespace BG {
@@ -34,17 +37,17 @@ namespace VoxelArrayGenerator {
  */
 bool CalculateCalciumConcentrations(BG::Common::Logger::LoggingSystem *_Logger, Simulator::Simulation* _Simulation, std::vector<std::vector<float>>* _Data) {
 	// Walking through the list of components as stored in Simulation:
-	for (unsigned int component_id = 0; i < _Simulation->BSCompartments.size(); i++) {
+	for (unsigned int component_id = 0; component_id < _Simulation->BSCompartments.size(); component_id++) {
 		// Getting the corresponding neuron by component ID:
 		auto neuron_ptr = _Simulation->FindNeuronByCompartment(component_id);
 		// Get the list of Calcium concentrations cached at that neuron and copy it into the vector of vectors:
-		(*_Data).emplace_back(neuron_ptr->CaSamples);
+		(*_Data).emplace_back(static_cast<Simulator::BallAndStick::BSNeuron*>(neuron_ptr)->CaSamples);
 	}
 	return true;
 }
 
 float ComponentSampledCalciumConcentration(Simulator::Simulation* _Simulation, int _ComponentID, size_t _SampleIdx) {
-	return _Simulation->FindNeuronByCompartment(_ComponentID)->CaSamples[_SampleIdx];
+	return static_cast<Simulator::BallAndStick::BSNeuron*>(_Simulation->FindNeuronByCompartment(_ComponentID))->CaSamples[_SampleIdx];
 }
 
 /**
@@ -57,6 +60,7 @@ float ComponentSampledCalciumConcentration(Simulator::Simulation* _Simulation, i
  */
 bool GetCalciumConcentrationTimesteps(BG::Common::Logger::LoggingSystem *_Logger, Simulator::Simulation* _Simulation, float* _Timestep){
 	// *** Don't know how to make this, please see alternative function below where I make some assumptions about what was intended!
+	return true;
 }
 
 float SampledCalciumConcentrationTime_ms(Simulator::Simulation* _Simulation, size_t _SampleIdx) {
