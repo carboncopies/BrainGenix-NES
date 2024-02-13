@@ -10,11 +10,8 @@
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
-#define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <stb_image_write.h>
-#define STB_IMAGE_RESIZE_IMPLEMENTATION
 #include <stb_image_resize.h>
 
 
@@ -105,17 +102,20 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 for (unsigned int YVoxelIndex = Task->VoxelStartingY; YVoxelIndex < Task->VoxelEndingY; YVoxelIndex++) {
 
                     // Get Voxel At Position
-                    VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, Task->VoxelZ);
+                    bool Status = false;
+                    VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, Task->VoxelZ, &Status);
 
                     // Now Set The Pixel
                     int ThisPixelX = XVoxelIndex - Task->VoxelStartingX;
                     int ThisPixelY = YVoxelIndex - Task->VoxelStartingY;
-                    if (ThisVoxel == FILLED) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 220, 220, 220);
-                    } else if (ThisVoxel == BORDER) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
-                    } else if (ThisVoxel == OUT_OF_RANGE) {
+
+
+                    if (!Status) {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
+                    } else if (ThisVoxel.IsBorder_) {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
+                    } else if (ThisVoxel.IsFilled_) {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 220, 220, 220);
                     } else {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 80, 80, 80);
                     }

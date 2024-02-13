@@ -126,7 +126,7 @@ public:
      * @param _Z 
      * @return VoxelType 
      */
-    VoxelType GetVoxel(int _X, int _Y, int _Z);
+    VoxelType GetVoxel(int _X, int _Y, int _Z, bool* _Status = nullptr);
 
 
     /**

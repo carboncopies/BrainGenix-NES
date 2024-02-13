@@ -24,6 +24,14 @@
 #include <VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h>
 
 
+
+
+namespace BG {
+namespace NES {
+namespace VSDA {
+namespace Calcium {
+
+
 // https://stackoverflow.com/questions/2513505/how-to-get-available-memory-c-g
 unsigned long long getTotalSystemMemory() {
     long pages = sysconf(_SC_PHYS_PAGES);
@@ -31,12 +39,6 @@ unsigned long long getTotalSystemMemory() {
     return pages * page_size;
 }
 
-
-
-namespace BG {
-namespace NES {
-namespace VSDA {
-namespace Calcium {
 
 
 

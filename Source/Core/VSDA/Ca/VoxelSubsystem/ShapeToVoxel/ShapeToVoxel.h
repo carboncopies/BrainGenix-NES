@@ -58,7 +58,7 @@ namespace VoxelArrayGenerator {
  * @return true 
  * @return false 
  */
-bool FillBox(VoxelArray* _Array, Simulator::Geometries::Box* _Box, float _VoxelScale);
+bool FillBox(VoxelArray* _Array, Simulator::Geometries::Box* _Box, float _VoxelScale, size_t _CompartmentID);
 
 /**
  * @brief Rasterize the given cylinder struct, and writes it into the given voxelarray at the given scale.
@@ -69,7 +69,7 @@ bool FillBox(VoxelArray* _Array, Simulator::Geometries::Box* _Box, float _VoxelS
  * @return true 
  * @return false 
  */
-bool FillCylinder(VoxelArray* _Array, Simulator::Geometries::Cylinder* _Cylinder, float _VoxelScale);
+bool FillCylinder(VoxelArray* _Array, Simulator::Geometries::Cylinder* _Cylinder, float _VoxelScale, size_t _CompartmentID);
 
 /**
  * @brief Uses a generic ispointinshape function to write an object into the voxelarray.
@@ -81,7 +81,7 @@ bool FillCylinder(VoxelArray* _Array, Simulator::Geometries::Cylinder* _Cylinder
  * @return true 
  * @return false 
  */
-bool FillShape(VoxelArray* _Array, Simulator::Geometries::Geometry* _Shape, float _VoxelScale);
+bool FillShape(VoxelArray* _Array, Simulator::Geometries::Geometry* _Shape, float _VoxelScale, size_t _CompartmentID);
 
 /**
  * @brief Simply fills everything in the bounding box.

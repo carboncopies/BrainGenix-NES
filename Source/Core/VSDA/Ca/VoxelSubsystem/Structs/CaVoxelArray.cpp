@@ -141,17 +141,26 @@ uint64_t VoxelArray::GetIndex(int _X, int _Y, int _Z) {
     return uint64_t(_X)*(SizeY_*SizeZ_) + uint64_t(_Y)*SizeZ_ + uint64_t(_Z);
 }
 
-VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
+VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z, bool* _Status) {
 
     // Check Bounds
     if ((_X < 0 || _X >= SizeX_) || (_Y < 0 || _Y >= SizeY_) || (_Z < 0 || _Z >= SizeZ_)) {
+        if (_Status != nullptr) {
+            (*_Status) = false;
+        }
         return VoxelType();
     }
 
     // Hope this works (please work dear god don't segfault)
     uint64_t Index = GetIndex(_X, _Y, _Z);
     if (Index < DataMaxLength_) {
+        if (_Status != nullptr) {
+            (*_Status) = true;
+        }
         return Data_.get()[Index];
+    }
+    if (_Status != nullptr) {
+        (*_Status) = false;
     }
     return VoxelType();
 

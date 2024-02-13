@@ -41,8 +41,14 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
         if (DequeueSimulation(&SimToProcess)) {
 
             // Okay, we got work, now render this simulation
-            Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering Simulation " + std::to_string(SimToProcess->ID), 2);
-            VSDA::ExecuteSubRenderOperations(Logger_, SimToProcess, ImageProcessorPool_.get(), ArrayGeneratorPool_.get());
+            Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Detecting Work For Simulation " + std::to_string(SimToProcess->ID), 2);
+            if (SimToProcess->VSDAData_.State_ == VSDA_RENDER_REQUESTED) {
+                Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering EM Stack For Simulation " + std::to_string(SimToProcess->ID), 2);
+                VSDA::ExecuteSubRenderOperations(Logger_, SimToProcess, ImageProcessorPool_.get(), ArrayGeneratorPool_.get());
+            } else if (SimToProcess->CaData_.State_ == ::BG::NES::VSDA::Calcium::CA_RENDER_REQUESTED) {
+                Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering Calcium Stack For Simulation " + std::to_string(SimToProcess->ID), 2);
+                ::BG::NES::VSDA::Calcium::ExecuteCaSubRenderOperations(Logger_, SimToProcess, CalciumImageProcessorPool_.get(), CalciumArrayGeneratorPool_.get());
+            }
             SimToProcess->IsRendering = false;
 
         } else {
