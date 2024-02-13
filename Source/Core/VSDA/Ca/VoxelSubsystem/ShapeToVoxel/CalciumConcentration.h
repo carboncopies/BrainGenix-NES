@@ -96,6 +96,16 @@ float ComponentSampledCalciumConcentration(Simulator::Simulation* _Simulation, i
  */
 bool GetCalciumConcentrationTimesteps(BG::Common::Logger::LoggingSystem *_Logger, Simulator::Simulation* _Simulation, float* _Timestep);
 
+/**
+ * @brief Alternative method to obtain the simulation time for a sample by sample index.
+ *        (See comments in .cpp file for the reasons why.)
+ * 
+ * @param _Simulation Pointer to simulatin instance.
+ * @param _SampleIdx Index of the sample (corresponding to a Ca sample time).
+ * 
+ * @return The corresponding simulation time in milliseconds.
+ */
+float SampledCalciumConcentrationTime_ms(Simulator::Simulation* _Simulation, size_t _SampleIdx);
 
 }; // Close Namespace VoxelArrayGenerator
 }; // Close Namespace Calcium
