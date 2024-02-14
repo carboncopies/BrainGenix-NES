@@ -29,7 +29,7 @@ ModelRPCInterface::ModelRPCInterface(BG::Common::Logger::LoggingSystem* _Logger,
     _RPCManager->AddRoute("Simulation/Receptor/Create",               std::bind(&ModelRPCInterface::StapleCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Neuron/BS/Create",              std::bind(&ModelRPCInterface::BSNeuronCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/PatchClampDAC/Create",          std::bind(&ModelRPCInterface::PatchClampDACCreate, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/PatchClampDAC/SetOutputList",   std::bind(&ModelRPCInterface::PatchClampDACSetOutputList this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/PatchClampDAC/SetOutputList",   std::bind(&ModelRPCInterface::PatchClampDACSetOutputList, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/PatchClampADC/Create",          std::bind(&ModelRPCInterface::PatchClampADCCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/PatchClampADC/SetSampleRate",   std::bind(&ModelRPCInterface::PatchClampADCSetSampleRate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/PatchClampADC/GetRecordedData", std::bind(&ModelRPCInterface::PatchClampADCGetRecordedData, this, std::placeholders::_1));
