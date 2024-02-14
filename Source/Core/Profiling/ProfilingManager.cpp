@@ -91,11 +91,11 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
 
         // -- Setup Rendering Operation -- //
         ::BG::NES::VSDA::Calcium::CaMicroscopeParameters Params;
-        Params.VoxelResolution_um = 0.5;
+        Params.VoxelResolution_um = 0.3;
         Params.ImageWidth_px = 1500;
         Params.ImageHeight_px = 1500;
         Params.ScanRegionOverlap_percent = 0;
-        Params.SliceThickness_um = 0.1;
+        Params.NumVoxelsPerSlice = 4;
         Params.NumPixelsPerVoxel_px = 2;
         
         Simulator::ScanRegion Region;
