@@ -37,14 +37,10 @@ namespace API {
 typedef std::string NESRequest_func_t(const nlohmann::json&);
 
 struct RouteAndHandler {
-    std::string Route;
-    NESRequest_func_t* Handler;
-
-    RouteAndHandler(const std::string& _Route, NESRequest_func_t* _Handler): Route(_Route), Handler(_Handler) {}
+    std::string Route_;
+    NESRequest_func_t* Handler_;
 };
 
-
-typedef std::map<std::string, RouteAndHandler> NESRequest_map_t;
 
 
 

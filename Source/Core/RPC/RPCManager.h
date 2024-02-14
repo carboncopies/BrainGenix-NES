@@ -49,7 +49,7 @@ private:
 
 
 
-    NESRequest_map_t NES_Request_handlers = {
+    std::map<std::string, RouteAndHandler> RequestHandlers_;// = {
         // {"SimulationCreate", {"Simulation/Create", SimulationCreateHandler} },
         // {"SimulationReset", {"Simulation/Reset", SimulationResetHandler} },
         // {"SimulationRunFor", {"Simulation/RunFor", SimulationRunForHandler} },
@@ -103,7 +103,17 @@ private:
         // {"VisualizerGetStatus", {"VisualizerGetStatus", VisualizerGetStatus}}
 
 
-    };
+    //};
+
+
+   /**
+     * @brief Adds the given route 
+     * 
+     * @param _RouteName
+     * @param _Handler 
+     */
+    void AddRequestHandler(std::string _RouteName, RouteAndHandler _Handler);
+
 
 
 public:
@@ -125,6 +135,16 @@ public:
      */
     ~RPCManager();
 
+
+
+ 
+    /**
+     * @brief Adds a route to the NES RPC Handler.
+     * 
+     * @param _RouteHandle 
+     * @param _Function 
+     */
+    void AddRoute(std::string _RouteHandle, NESRequest_func_t _Function);
 
 
 
