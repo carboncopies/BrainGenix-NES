@@ -13,3 +13,12 @@ We use JSON requests, so the route and example requests are listed below:
         Name: str
     ]
 ```
+
+### Simulation - Reset
+ - Name: `Simulation/Reset`  
+ - JSONFormat: 
+```json
+    [
+        SimulationID: int
+    ]
+```
