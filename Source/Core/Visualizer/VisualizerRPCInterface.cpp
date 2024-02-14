@@ -1,4 +1,4 @@
-#include <Simulator/RPC/VisualizerRPCInterface.h>
+#include <Visualizer/VisualizerRPCInterface.h>
 #include <RPC/APIStatusCode.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
