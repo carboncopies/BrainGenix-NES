@@ -8,8 +8,8 @@ We use JSON requests, so the route and example requests are listed below:
 ### Simulation - Create
  - Name: `Simulation/Create`  
  - JSONFormat: 
-;;;
+```json
     [
         Name: str
     ]
-;;;
+```
