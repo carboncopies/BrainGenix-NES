@@ -26,7 +26,7 @@ ModelRPCInterface::ModelRPCInterface(BG::Common::Logger::LoggingSystem* _Logger,
     // Register Callbacks
     _RPCManager->AddRoute("Simulation/Compartments/BS/Create",        std::bind(&ModelRPCInterface::BSCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Staple/Create",                 std::bind(&ModelRPCInterface::StapleCreate, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/Receptor/Create",               std::bind(&ModelRPCInterface::StapleCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Receptor/Create",               std::bind(&ModelRPCInterface::ReceptorCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Neuron/BS/Create",              std::bind(&ModelRPCInterface::BSNeuronCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/PatchClampDAC/Create",          std::bind(&ModelRPCInterface::PatchClampDACCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/PatchClampDAC/SetOutputList",   std::bind(&ModelRPCInterface::PatchClampDACSetOutputList, this, std::placeholders::_1));

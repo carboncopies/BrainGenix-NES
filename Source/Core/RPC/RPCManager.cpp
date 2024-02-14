@@ -148,6 +148,7 @@ std::string RPCManager::NESRequest(std::string _JSONRequest) { // Generic JSON-b
                 Logger_->Log("Error, Handler Is Null For Call " + ReqFunc + ", Continuing Anyway", 7);
                 // ReqResponseJSON["StatusCode"] = 1; // not a valid NES request *** TODO: use the right code
             } else {
+                Logger_->Log("DEBUG -> Got Request For '" + ReqFunc + "'", 0);
                 std::string Response = it->second(ReqParams.dump()); // Calls the handler.
                 // *** TODO: Either:
                 //     a) Convert handlers to return nlohmann::json objects so that we
