@@ -83,7 +83,7 @@ public:
      * @param _RPCManager Pointer to instance of the RPC manager.
      * @param _SimulationsPointerVector Pointer to vector which contains the other simulations. Allows us to access them and modify them as needed.
      */
-    RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::Manager* _RPCManager, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer);
+    RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::RPCManager* _RPCManager, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer);
 
 
     /**

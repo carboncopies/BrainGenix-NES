@@ -23,7 +23,7 @@ int main(int NumArguments, char** ArgumentValues) {
     Logger.SetKeepVectorLogs(false);
 
     // Setup API Server
-    BG::NES::API::Manager APIManager(&SystemConfiguration, &Logger);
+    BG::NES::API::RPCManager APIManager(&SystemConfiguration, &Logger);
 
     // Setup RenderPools
     BG::NES::Simulator::VSDA::RenderPool RenderPool(&Logger, false, 5);

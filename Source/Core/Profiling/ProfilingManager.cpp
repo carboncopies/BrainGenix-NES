@@ -26,7 +26,7 @@ namespace NES {
 namespace Profiling {
 
 
-int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, Simulator::Manager* _SimManager, Simulator::VSDA::RenderPool* _RenderPool, Simulator::VisualizerPool* _VisualizerPool, API::Manager* _RPCManager) {
+int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, Simulator::Manager* _SimManager, Simulator::VSDA::RenderPool* _RenderPool, Simulator::VisualizerPool* _VisualizerPool, API::RPCManager* _RPCManager) {
     assert(_Logger != nullptr);
     assert(_Config != nullptr);
 

@@ -1,6 +1,6 @@
 #include <Simulator/Manager.h>
 #include <Simulator/BallAndStick/BSNeuron.h>
-#include <Simulator/bgStatusCode.h>
+#include <RPC/APIStatusCode.h>
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/RecordingElectrode.h>
 #include <Simulator/Structs/CalciumImaging.h>
@@ -20,170 +20,116 @@ namespace Simulator {
 
 
 
-std::string SimulationCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.SimulationCreate(ReqParams.dump(), called_by_manager_task);
-}
-std::string SimulationResetHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.SimulationReset(ReqParams.dump(), called_by_manager_task);
-}
-std::string SimulationRunForHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.SimulationRunFor(ReqParams.dump(), called_by_manager_task);
-}
-std::string SimulationRecordAllHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.SimulationRecordAll(ReqParams.dump(), called_by_manager_task);
-}
-std::string SimulationGetRecordingHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.SimulationGetRecording(ReqParams.dump(), called_by_manager_task);
-}
-std::string SimulationGetStatusHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.SimulationGetStatus(ReqParams.dump(), called_by_manager_task);
-}
-std::string SimulationBuildMeshHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.SimulationBuildMesh(ReqParams.dump(), called_by_manager_task);
-}
-std::string SimulationSaveHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.SimulationSave(ReqParams.dump(), called_by_manager_task);
-}
-std::string SimulationLoadHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.SimulationLoad(ReqParams.dump(), called_by_manager_task);
-}
-std::string SimulationGetGeoCenterHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.SimulationGetGeoCenter(ReqParams.dump(), called_by_manager_task);
-}
-std::string SphereCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.SphereCreate(ReqParams.dump(), called_by_manager_task);
-}
-std::string CylinderCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.CylinderCreate(ReqParams.dump(), called_by_manager_task);
-}
-std::string BoxCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.BoxCreate(ReqParams.dump(), called_by_manager_task);
-}
-std::string BSCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.BSCreate(ReqParams.dump(), called_by_manager_task);
-}
-std::string StapleCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.StapleCreate(ReqParams.dump(), called_by_manager_task);
-}
-std::string ReceptorCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.ReceptorCreate(ReqParams.dump(), called_by_manager_task);
-}
-std::string BSNeuronCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.BSNeuronCreate(ReqParams.dump(), called_by_manager_task);
-}
-std::string PatchClampDACCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.PatchClampDACCreate(ReqParams.dump(), called_by_manager_task);
-}
-std::string PatchClampADCCreateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.PatchClampADCCreate(ReqParams.dump(), called_by_manager_task);
-}
-std::string PatchClampDACSetOutputListHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.PatchClampDACSetOutputList(ReqParams.dump(), called_by_manager_task);
-}
-std::string PatchClampADCSetSampleRateHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.PatchClampADCSetSampleRate(ReqParams.dump(), called_by_manager_task);
-}
-std::string PatchClampADCGetRecordedDataHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.PatchClampADCGetRecordedData(ReqParams.dump(), called_by_manager_task);
-}
-std::string SetSpecificAPTimesHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.SetSpecificAPTimes(ReqParams.dump(), called_by_manager_task);
-}
-std::string SetSpontaneousActivityHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.SetSpontaneousActivity(ReqParams.dump(), called_by_manager_task);
-}
-std::string AttachRecordingElectrodesHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.AttachRecordingElectrodes(ReqParams.dump(), called_by_manager_task);
-}
-std::string CalciumImagingAttachHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.CalciumImagingAttach(ReqParams.dump(), called_by_manager_task);
-}
-std::string CalciumImagingShowVoxelsHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.CalciumImagingShowVoxels(ReqParams.dump(), called_by_manager_task);
-}
-std::string CalciumImagingRecordAposterioriHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.CalciumImagingRecordAposteriori(ReqParams.dump(), called_by_manager_task);
-}
-std::string SetRecordInstrumentsHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.SetRecordInstruments(ReqParams.dump(), called_by_manager_task);
-}
-std::string GetInstrumentRecordingsHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.GetInstrumentRecordings(ReqParams.dump(), called_by_manager_task);
-}
-std::string ManTaskStatusHandler(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.ManTaskStatus(ReqParams.dump(), called_by_manager_task);
-}
-std::string VisualizerGenerateImage(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.VisualizerGenerateImage(ReqParams.dump(), called_by_manager_task);
-}
-std::string VisualizerGetImageHandles(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.VisualizerGetImageHandles(ReqParams.dump(), called_by_manager_task);
-}
-std::string VisualizerGetStatus(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.VisualizerGetStatus(ReqParams.dump(), called_by_manager_task);
-}
-std::string VisualizerGetImage(Manager& Man, const nlohmann::json& ReqParams, ManagerTaskData* called_by_manager_task) {
-    return Man.VisualizerGetImage(ReqParams.dump(), called_by_manager_task);
-}
-
-const API::NESRequest_map_t NES_Request_handlers = {
-    {"SimulationCreate", {"Simulation/Create", SimulationCreateHandler} },
-    {"SimulationReset", {"Simulation/Reset", SimulationResetHandler} },
-    {"SimulationRunFor", {"Simulation/RunFor", SimulationRunForHandler} },
-    {"SimulationRecordAll", {"Simulation/RecordAll", SimulationRecordAllHandler} },
-    {"SimulationGetRecording", {"Simulation/GetRecording", SimulationGetRecordingHandler} },
-    {"SimulationGetStatus", {"Simulation/GetStatus", SimulationGetStatusHandler} },
-    {"SimulationBuildMesh", {"Simulation/BuildMesh", SimulationBuildMeshHandler} },
-    {"SimulationSave", {"Simulation/Save", SimulationSaveHandler} },
-    {"SimulationLoad", {"Simulation/Load", SimulationLoadHandler} },
-    {"SimulationGetGeoCenter", {"", SimulationGetGeoCenterHandler} },
-
-    {"SphereCreate", {"Geometry/Shape/Sphere/Create", SphereCreateHandler} },
-    {"BulkSphereCreate", {"Geometry/Shape/Sphere/BulkCreate", nullptr} },
-    {"CylinderCreate", {"Geometry/Shape/Cylinder/Create", CylinderCreateHandler} },
-    {"BulkCylinderCreate", {"Geometry/Shape/Cylinder/BulkCreate", nullptr} },
-    {"BoxCreate", {"Geometry/Shape/Box/Create", BoxCreateHandler} },
-    {"BulkBoxCreate", {"Geometry/Shape/Box/BulkCreate", nullptr}},
-
-    {"BSCreate", {"Compartment/BS/Create", BSCreateHandler} },
-    {"BulkBSCreate", {"Compartment/BS/BulkCreate", nullptr}},
-
-    {"StapleCreate", {"Connection/Staple/Create", StapleCreateHandler} },
-    {"ReceptorCreate", {"Connection/Receptor/Create", ReceptorCreateHandler} },
-
-    {"BSNeuronCreate", {"Neuron/BSNeuron/Create", BSNeuronCreateHandler} },
-
-    {"PatchClampDACCreate", {"Tool/PatchClampDAC/Create", PatchClampDACCreateHandler} },
-    {"PatchClampDACSetOutputList", {"Tool/PatchClampDAC/SetOutputList", PatchClampDACSetOutputListHandler} },
-
-    {"PatchClampADCCreate", {"Tool/PatchClampADC/Create", PatchClampADCCreateHandler} },
-    {"PatchClampADCSetSampleRate", {"Tool/PatchClampADC/SetSampleRate", PatchClampADCSetSampleRateHandler} },
-    {"PatchClampADCGetRecordedData", {"Tool/PatchClampADC/GetRecordedData", PatchClampADCGetRecordedDataHandler} },
-
-    {"SetSpecificAPTimes", {"", SetSpecificAPTimesHandler} },
-    {"SetSpontaneousActivity", {"", SetSpontaneousActivityHandler} },
-
-    {"AttachRecordingElectrodes", {"", AttachRecordingElectrodesHandler} },
-    {"CalciumImagingAttach", {"", CalciumImagingAttachHandler} },
-    {"CalciumImagingShowVoxels", {"", CalciumImagingShowVoxelsHandler} },
-    {"CalciumImagingRecordAposteriori", {"", CalciumImagingRecordAposterioriHandler} },
-    {"SetRecordInstruments", {"", SetRecordInstrumentsHandler} },
-    {"GetInstrumentRecordings", {"", GetInstrumentRecordingsHandler} },
-
-    {"NESRequest", {"NES", nullptr}},
-
-    {"ManTaskStatus", {"ManTaskStatus", ManTaskStatusHandler}},
-
-    {"VisualizerGenerateImage", {"VisualizerGenerateImage", VisualizerGenerateImage}},
-    {"VisualizerGetImageHandles", {"VisualizerGetImageHandles",VisualizerGetImageHandles}},
-    {"VisualizerGetImage", {"VisualizerGetImage", VisualizerGetImage}},
-    {"VisualizerGetStatus", {"VisualizerGetStatus", VisualizerGetStatus}}
+// std::string SimulationCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.SimulationCreate(ReqParams.dump(), _Simulations);
+// }
+// std::string SimulationResetHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.SimulationReset(ReqParams.dump(), _Simulations);
+// }
+// std::string SimulationRunForHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.SimulationRunFor(ReqParams.dump(), _Simulations);
+// }
+// std::string SimulationRecordAllHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.SimulationRecordAll(ReqParams.dump(), _Simulations);
+// }
+// std::string SimulationGetRecordingHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.SimulationGetRecording(ReqParams.dump(), _Simulations);
+// }
+// std::string SimulationGetStatusHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.SimulationGetStatus(ReqParams.dump(), _Simulations);
+// }
+// std::string SimulationBuildMeshHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.SimulationBuildMesh(ReqParams.dump(), _Simulations);
+// }
+// std::string SimulationSaveHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.SimulationSave(ReqParams.dump(), _Simulations);
+// }
+// std::string SimulationLoadHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.SimulationLoad(ReqParams.dump(), _Simulations);
+// }
+// std::string SimulationGetGeoCenterHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.SimulationGetGeoCenter(ReqParams.dump(), _Simulations);
+// }
+// std::string SphereCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.SphereCreate(ReqParams.dump(), _Simulations);
+// }
+// std::string CylinderCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.CylinderCreate(ReqParams.dump(), _Simulations);
+// }
+// std::string BoxCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.BoxCreate(ReqParams.dump(), _Simulations);
+// }
+// std::string BSCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.BSCreate(ReqParams.dump(), _Simulations);
+// }
+// std::string StapleCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.StapleCreate(ReqParams.dump(), _Simulations);
+// }
+// std::string ReceptorCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.ReceptorCreate(ReqParams.dump(), _Simulations);
+// }
+// std::string BSNeuronCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.BSNeuronCreate(ReqParams.dump(), _Simulations);
+// }
+// std::string PatchClampDACCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.PatchClampDACCreate(ReqParams.dump(), _Simulations);
+// }
+// std::string PatchClampADCCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.PatchClampADCCreate(ReqParams.dump(), _Simulations);
+// }
+// std::string PatchClampDACSetOutputListHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.PatchClampDACSetOutputList(ReqParams.dump(), _Simulations);
+// }
+// std::string PatchClampADCSetSampleRateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.PatchClampADCSetSampleRate(ReqParams.dump(), _Simulations);
+// }
+// std::string PatchClampADCGetRecordedDataHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.PatchClampADCGetRecordedData(ReqParams.dump(), _Simulations);
+// }
+// std::string SetSpecificAPTimesHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.SetSpecificAPTimes(ReqParams.dump(), _Simulations);
+// }
+// std::string SetSpontaneousActivityHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.SetSpontaneousActivity(ReqParams.dump(), _Simulations);
+// }
+// std::string AttachRecordingElectrodesHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.AttachRecordingElectrodes(ReqParams.dump(), _Simulations);
+// }
+// std::string CalciumImagingAttachHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.CalciumImagingAttach(ReqParams.dump(), _Simulations);
+// }
+// std::string CalciumImagingShowVoxelsHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.CalciumImagingShowVoxels(ReqParams.dump(), _Simulations);
+// }
+// std::string CalciumImagingRecordAposterioriHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.CalciumImagingRecordAposteriori(ReqParams.dump(), _Simulations);
+// }
+// std::string SetRecordInstrumentsHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.SetRecordInstruments(ReqParams.dump(), _Simulations);
+// }
+// std::string GetInstrumentRecordingsHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.GetInstrumentRecordings(ReqParams.dump(), _Simulations);
+// }
+// std::string ManTaskStatusHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.ManTaskStatus(ReqParams.dump(), _Simulations);
+// }
+// std::string VisualizerGenerateImage(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.VisualizerGenerateImage(ReqParams.dump(), _Simulations);
+// }
+// std::string VisualizerGetImageHandles(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.VisualizerGetImageHandles(ReqParams.dump(), _Simulations);
+// }
+// std::string VisualizerGetStatus(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.VisualizerGetStatus(ReqParams.dump(), _Simulations);
+// }
+// std::string VisualizerGetImage(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
+//     return Man.VisualizerGetImage(ReqParams.dump(), _Simulations);
+// }
 
 
-};
 
 
-Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, VisualizerPool* _VisualizerPool, API::Manager* _RPCManager) {
+Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, VisualizerPool* _VisualizerPool, API::RPCManager* _RPCManager) {
     assert(_Logger != nullptr);
     assert(_Config != nullptr);
     assert(_RPCManager != nullptr);
@@ -199,43 +145,42 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
 
 
     // Register Callback For CreateSim
-    _RPCManager->AddRoute(NES_Request_handlers.at("SimulationCreate").Route, Logger_, [this](std::string RequestJSON){ return SimulationCreate(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("SimulationReset").Route, Logger_, [this](std::string RequestJSON){ return SimulationReset(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("SimulationRunFor").Route, Logger_, [this](std::string RequestJSON){ return SimulationRunFor(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("SimulationRecordAll").Route, Logger_, [this](std::string RequestJSON){ return SimulationRecordAll(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("SimulationGetRecording").Route, Logger_, [this](std::string RequestJSON){ return SimulationGetRecording(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("SimulationGetStatus").Route, Logger_, [this](std::string RequestJSON){ return SimulationGetStatus(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("SimulationBuildMesh").Route, Logger_, [this](std::string RequestJSON){ return SimulationBuildMesh(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("SimulationSave").Route, Logger_, [this](std::string RequestJSON){ return SimulationSave(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("SimulationLoad").Route, Logger_, [this](std::string RequestJSON){ return SimulationLoad(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationCreate").Route, Logger_, [this](std::string RequestJSON){ return SimulationCreate(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationReset").Route, Logger_, [this](std::string RequestJSON){ return SimulationReset(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationRunFor").Route, Logger_, [this](std::string RequestJSON){ return SimulationRunFor(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationRecordAll").Route, Logger_, [this](std::string RequestJSON){ return SimulationRecordAll(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationGetRecording").Route, Logger_, [this](std::string RequestJSON){ return SimulationGetRecording(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationGetStatus").Route, Logger_, [this](std::string RequestJSON){ return SimulationGetStatus(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationBuildMesh").Route, Logger_, [this](std::string RequestJSON){ return SimulationBuildMesh(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationSave").Route, Logger_, [this](std::string RequestJSON){ return SimulationSave(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationLoad").Route, Logger_, [this](std::string RequestJSON){ return SimulationLoad(RequestJSON);});
 
-    _RPCManager->AddRoute(NES_Request_handlers.at("SphereCreate").Route, Logger_, [this](std::string RequestJSON){ return SphereCreate(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("BulkSphereCreate").Route, Logger_, [this](std::string RequestJSON){ return BulkSphereCreate(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("CylinderCreate").Route, Logger_, [this](std::string RequestJSON){ return CylinderCreate(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("BulkCylinderCreate").Route, Logger_, [this](std::string RequestJSON){ return BulkCylinderCreate(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("BoxCreate").Route, Logger_, [this](std::string RequestJSON){ return BoxCreate(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("BulkBoxCreate").Route, Logger_, [this](std::string RequestJSON){ return BulkBoxCreate(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("SphereCreate").Route, Logger_, [this](std::string RequestJSON){ return SphereCreate(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("BulkSphereCreate").Route, Logger_, [this](std::string RequestJSON){ return BulkSphereCreate(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("CylinderCreate").Route, Logger_, [this](std::string RequestJSON){ return CylinderCreate(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("BulkCylinderCreate").Route, Logger_, [this](std::string RequestJSON){ return BulkCylinderCreate(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("BoxCreate").Route, Logger_, [this](std::string RequestJSON){ return BoxCreate(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("BulkBoxCreate").Route, Logger_, [this](std::string RequestJSON){ return BulkBoxCreate(RequestJSON);});
 
-    _RPCManager->AddRoute(NES_Request_handlers.at("BSCreate").Route, Logger_, [this](std::string RequestJSON){ return BSCreate(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("BulkBSCreate").Route, Logger_, [this](std::string RequestJSON){ return BulkBSCreate(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("BSCreate").Route, Logger_, [this](std::string RequestJSON){ return BSCreate(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("BulkBSCreate").Route, Logger_, [this](std::string RequestJSON){ return BulkBSCreate(RequestJSON);});
 
-    _RPCManager->AddRoute(NES_Request_handlers.at("StapleCreate").Route, Logger_, [this](std::string RequestJSON){ return StapleCreate(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("ReceptorCreate").Route, Logger_, [this](std::string RequestJSON){ return ReceptorCreate(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("StapleCreate").Route, Logger_, [this](std::string RequestJSON){ return StapleCreate(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("ReceptorCreate").Route, Logger_, [this](std::string RequestJSON){ return ReceptorCreate(RequestJSON);});
 
-    _RPCManager->AddRoute(NES_Request_handlers.at("BSNeuronCreate").Route, Logger_, [this](std::string RequestJSON){ return BSNeuronCreate(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("BSNeuronCreate").Route, Logger_, [this](std::string RequestJSON){ return BSNeuronCreate(RequestJSON);});
 
-    _RPCManager->AddRoute(NES_Request_handlers.at("PatchClampDACCreate").Route, Logger_, [this](std::string RequestJSON){ return PatchClampDACCreate(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("PatchClampDACSetOutputList").Route, Logger_, [this](std::string RequestJSON){ return PatchClampDACSetOutputList(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("PatchClampDACCreate").Route, Logger_, [this](std::string RequestJSON){ return PatchClampDACCreate(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("PatchClampDACSetOutputList").Route, Logger_, [this](std::string RequestJSON){ return PatchClampDACSetOutputList(RequestJSON);});
 
-    _RPCManager->AddRoute(NES_Request_handlers.at("PatchClampADCCreate").Route, Logger_, [this](std::string RequestJSON){ return PatchClampADCCreate(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("PatchClampADCSetSampleRate").Route, Logger_, [this](std::string RequestJSON){ return PatchClampADCSetSampleRate(RequestJSON);});
-    _RPCManager->AddRoute(NES_Request_handlers.at("PatchClampADCGetRecordedData").Route, Logger_, [this](std::string RequestJSON){ return PatchClampADCGetRecordedData(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("PatchClampADCCreate").Route, Logger_, [this](std::string RequestJSON){ return PatchClampADCCreate(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("PatchClampADCSetSampleRate").Route, Logger_, [this](std::string RequestJSON){ return PatchClampADCSetSampleRate(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("PatchClampADCGetRecordedData").Route, Logger_, [this](std::string RequestJSON){ return PatchClampADCGetRecordedData(RequestJSON);});
 
-    _RPCManager->AddRoute(NES_Request_handlers.at("NESRequest").Route, Logger_, [this](std::string RequestJSON){ return NESRequest(RequestJSON);});
 
-    _RPCManager->AddRoute(NES_Request_handlers.at("ManTaskStatus").Route, Logger_, [this](std::string RequestJSON){ return ManTaskStatus(RequestJSON);});
+    // _RPCManager->AddRoute(NES_Request_handlers.at("ManTaskStatus").Route, Logger_, [this](std::string RequestJSON){ return ManTaskStatus(RequestJSON);});
 
-    _RPCManager->AddRoute("Debug", Logger_, [this](std::string RequestJSON){ return Debug(RequestJSON);});
+    // _RPCManager->AddRoute("Debug", Logger_, [this](std::string RequestJSON){ return Debug(RequestJSON);});
 
     // Start SE Thread
     StopThreads_ = false;
@@ -266,18 +211,18 @@ bool LoadFileIntoString(const std::string& FilePath, std::string& FileContents) 
     return true;    
 }
 
-// A ManagerTaskData struct must have been prepared and the thread already launched.
-int Manager::AddManagerTask(std::unique_ptr<ManagerTaskData>& TaskData) {
-    // Get Task ID
-    int TaskID = NextManTaskID;
-    NextManTaskID++;
-    TaskData->ID = TaskID;
+// // A API::ManagerTaskData struct must have been prepared and the thread already launched.
+// int Manager::AddManagerTask(std::unique_ptr<API::ManagerTaskData>& TaskData) {
+//     // Get Task ID
+//     int TaskID = NextManTaskID;
+//     NextManTaskID++;
+//     TaskData->ID = TaskID;
 
-    // Place task data into ManagerTasks
-    ManagerTasks[TaskID].reset(TaskData.release()); // Release task data object pointer into unique pointer in map.
+//     // Place task data into ManagerTasks
+//     ManagerTasks[TaskID].reset(TaskData.release()); // Release task data object pointer into unique pointer in map.
 
-    return TaskID;
-}
+//     return TaskID;
+// }
 
 // *** WE CAN PROBABLY DO WITHOUT THIS CONSTRAINT NOW (AS WE USE LOCAL PARAMS)!
 // Only one thread at a time, others wait for lock release.
@@ -290,14 +235,14 @@ int Manager::AddManagerTask(std::unique_ptr<ManagerTaskData>& TaskData) {
 // flags and variables to modify the behavior of NESRequest and HandleData, namely to
 // establish the new Simulation ID and to replace loaded SimIDs with that.
 // Before proceeding, we wait for other loading tasks in the queue to finish.
-// void Manager::SimLoadingTask(ManagerTaskData& TaskData) {
+// void Manager::SimLoadingTask(API::ManagerTaskData& TaskData) {
 //     // Wait for any concurrent loading tasks that happen to be running to finish:
 //     // unsigned long timeout_ms = 10000;
 //     while (LoadingSim) {
 //         timeout_ms--;
 //         if (timeout_ms==0) {
 //             Logger_->Log("SimLoadingTask timed out waiting for other loading taks to finish!", 8);
-//             TaskData.SetStatus(ManagerTaskStatus::TimeOut);
+//             TaskData.SetStatus(API::ManagerTaskStatus::TimeOut);
 //             return;
 //         }
 //         std::this_thread::sleep_for(std::chrono::milliseconds(1));
@@ -306,39 +251,39 @@ int Manager::AddManagerTask(std::unique_ptr<ManagerTaskData>& TaskData) {
 //     LoadingSimReplaceID = -1;
 //     // *** Not sure if we should prepend with "std::string loadresponse = " to keep the full
 //     //     record of the loading requests in the task output JSON.
-//     NESRequest(TaskData.InputData, called_by_manager_task=&TaskData);
-//     TaskData.OutputData["SimulationID"] = ManagerTaskData.ReplaceSimulationID;
+//     NESRequest(TaskData.InputData, _Simulations=&TaskData);
+//     TaskData.OutputData["SimulationID"] = API::ManagerTaskData.ReplaceSimulationID;
 //     //TaskData.NewSimulationID = GetSimReplaceID();
-//     TaskData.SetStatus(ManagerTaskStatus::Success);
+//     TaskData.SetStatus(API::ManagerTaskStatus::Success);
 //     LoadingSimSetter(false);
 // }
 
-void Manager::SimLoadingTask(ManagerTaskData& TaskData) {
-    // *** Not sure if we should prepend with "std::string loadresponse = " to keep the full
-    //     record of the loading requests in the task output JSON.
-    NESRequest(TaskData.InputData, &TaskData);
-    TaskData.OutputData["SimulationID"] = TaskData.ReplaceSimulationID;
-    TaskData.SetStatus(ManagerTaskStatus::Success);
-    Logger_->Log("Loading Simulation " + std::to_string(TaskData.ReplaceSimulationID) + " Completed", 2);
-}
+// void Manager::SimLoadingTask(API::ManagerTaskData& TaskData) {
+//     // *** Not sure if we should prepend with "std::string loadresponse = " to keep the full
+//     //     record of the loading requests in the task output JSON.
+//     NESRequest(TaskData.InputData, &TaskData);
+//     TaskData.OutputData["SimulationID"] = TaskData.ReplaceSimulationID;
+//     TaskData.SetStatus(API::ManagerTaskStatus::Success);
+//     Logger_->Log("Loading Simulation " + std::to_string(TaskData.ReplaceSimulationID) + " Completed", 2);
+// }
 
-void SimLoadingTaskThread(ManagerTaskData* TaskData) {
-    if (!TaskData) return;
-    TaskData->Man.SimLoadingTask(*TaskData); // Run the rest back in the Manager for full context.
-}
+// void SimLoadingTaskThread(API::ManagerTaskData* TaskData) {
+//     if (!TaskData) return;
+//     // TaskData->Man.SimLoadingTask(*TaskData); // Run the rest back in the Manager for full context.
+// }
 
-// Mostly, this is called through HandlerData::NewSimulation().
-Simulation* Manager::MakeSimulation() {
-    Simulations_.push_back(std::make_unique<Simulation>(Logger_));
-    int SimID = Simulations_.size()-1;
-    Simulation* TheNewSimulation = Simulations_.at(SimID).get();
-    TheNewSimulation->ID = SimID;
-    return TheNewSimulation;
-}
+// // Mostly, this is called through API::HandlerData::NewSimulation().
+// Simulation* Manager::MakeSimulation() {
+//     Simulations_.push_back(std::make_unique<Simulation>(Logger_));
+//     int SimID = Simulations_.size()-1;
+//     Simulation* TheNewSimulation = Simulations_.at(SimID).get();
+//     TheNewSimulation->ID = SimID;
+//     return TheNewSimulation;
+// }
 
-std::string Manager::SimulationCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::SimulationCreate(std::string _JSONRequest, API::Simulations _Simulations) {
 
-    HandlerData Handle(this, _JSONRequest, "SimulationCreate", called_by_manager_task, true, true);
+    API::HandlerData Handle(_JSONRequest, "SimulationCreate", _Simulations, true, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -351,25 +296,23 @@ std::string Manager::SimulationCreate(std::string _JSONRequest, ManagerTaskData*
     Logger_->Log("New Sim Has Name " + SimulationName, 3);
 
     // Build New Simulation Object
-    Simulation* Sim = Handle.NewSimulation();
+    Simulations_.push_back(std::make_unique<Simulation>(Logger_));
+    Simulation* Sim = Simulations_[Simulations_.size() - 1].get();
     assert(Sim != nullptr);
     Sim->Name = SimulationName;
     Sim->CurrentTask = SIMULATION_NONE;
+    Sim->ID = Simulations_.size() - 1;
 
     // Start Thread
     SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, RenderPool_, VisualizerPool_, &StopThreads_));
-
-    if (called_by_manager_task != nullptr) {
-        called_by_manager_task->ReplaceSimulationID = Sim->ID;
-    }
 
     // Return Result ID
     return Handle.ResponseWithID("SimulationID", Sim->ID);
 }
 
-std::string Manager::SimulationReset(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::SimulationReset(std::string _JSONRequest, API::Simulations _Simulations) {
 
-    HandlerData Handle(this, _JSONRequest, "SimulationReset", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "SimulationReset", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -382,9 +325,9 @@ std::string Manager::SimulationReset(std::string _JSONRequest, ManagerTaskData* 
 }
 
 // This request starts at Simulation Task.
-std::string Manager::SimulationRunFor(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::SimulationRunFor(std::string _JSONRequest, API::Simulations _Simulations) {
 
-    HandlerData Handle(this, _JSONRequest, "SimulationRunFor", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "SimulationRunFor", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -401,9 +344,9 @@ std::string Manager::SimulationRunFor(std::string _JSONRequest, ManagerTaskData*
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::SimulationRecordAll(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::SimulationRecordAll(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "SimulationRecordAll", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "SimulationRecordAll", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -418,9 +361,9 @@ std::string Manager::SimulationRecordAll(std::string _JSONRequest, ManagerTaskDa
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::SimulationGetRecording(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::SimulationGetRecording(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "SimulationGetRecording", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "SimulationGetRecording", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -432,9 +375,9 @@ std::string Manager::SimulationGetRecording(std::string _JSONRequest, ManagerTas
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-std::string Manager::SimulationGetStatus(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::SimulationGetStatus(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "SimulationGetStatus", called_by_manager_task, true);
+    API::HandlerData Handle(_JSONRequest, "SimulationGetStatus", _Simulations, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -451,9 +394,9 @@ std::string Manager::SimulationGetStatus(std::string _JSONRequest, ManagerTaskDa
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-std::string Manager::SimulationBuildMesh(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::SimulationBuildMesh(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "SimulationBuildMesh", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "SimulationBuildMesh", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -467,25 +410,25 @@ std::string Manager::SimulationBuildMesh(std::string _JSONRequest, ManagerTaskDa
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::SimulationSave(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+// std::string Manager::SimulationSave(std::string _JSONRequest, API::Simulations _Simulations) {
 
-    HandlerData Handle(this, _JSONRequest, "SimulationSave", called_by_manager_task);
-    if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
+//     API::HandlerData Handle(_JSONRequest, "SimulationSave", _Simulations);
+//     if (Handle.HasError()) {
+//         return Handle.ErrResponse();
+//     }
 
-    //std::cout << "Number of stored requests: " << Handle.Sim()->NumStoredRequests() << "\n\n";
-    //std::cout << Handle.Sim()->StoredRequestsToString() << '\n';
+//     //std::cout << "Number of stored requests: " << Handle.Sim()->NumStoredRequests() << "\n\n";
+//     //std::cout << Handle.Sim()->StoredRequestsToString() << '\n';
 
-    std::string SavedSimName = Handle.Sim()->StoredRequestsSave();
-    if (SavedSimName.empty()) {
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusGeneralFailure);
-    }
-    Logger_->Log("Saved Simulation with "+std::to_string(Handle.Sim()->NumStoredRequests())+" stored requets to "+SavedSimName, 3);
+//     std::string SavedSimName = Handle.Sim()->StoredRequestsSave();
+//     if (SavedSimName.empty()) {
+//         return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+//     }
+//     Logger_->Log("Saved Simulation with "+std::to_string(Handle.Sim()->NumStoredRequests())+" stored requets to "+SavedSimName, 3);
 
-    // Return Saved File Name
-    return Handle.ResponseWithID("SavedSimName", SavedSimName);
-}
+//     // Return Saved File Name
+//     return Handle.ResponseWithID("SavedSimName", SavedSimName);
+// }
 
 
 /**
@@ -497,47 +440,47 @@ std::string Manager::SimulationSave(std::string _JSONRequest, ManagerTaskData* c
  * return the response that it was launched, and return the task ID.
  * 
  */
-// This request starts a Manager Task.
-std::string Manager::SimulationLoad(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+// // This request starts a Manager Task.
+// std::string Manager::SimulationLoad(std::string _JSONRequest, API::Simulations _Simulations) {
 
-    HandlerData Handle(this, _JSONRequest, "SimulationCreate", called_by_manager_task, true, true);
-    if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
+//     API::HandlerData Handle(_JSONRequest, "SimulationCreate", _Simulations, true, true);
+//     if (Handle.HasError()) {
+//         return Handle.ErrResponse();
+//     }
 
-    // Get the Simulation File Name
-    std::string SavedSimName;
-    if (!Handle.GetParString("SavedSimName", SavedSimName)) {
-        return Handle.ErrResponse();
-    }
-    Logger_->Log("Loading Saved Simulation " + SavedSimName, 2);
+//     // Get the Simulation File Name
+//     std::string SavedSimName;
+//     if (!Handle.GetParString("SavedSimName", SavedSimName)) {
+//         return Handle.ErrResponse();
+//     }
+//     Logger_->Log("Loading Saved Simulation " + SavedSimName, 2);
 
-    // Prepare data structure to run the actual Simulation loading in a task
-    std::unique_ptr<ManagerTaskData> LoadTaskData = std::make_unique<ManagerTaskData>(*this);
+//     // Prepare data structure to run the actual Simulation loading in a task
+//     std::unique_ptr<API::ManagerTaskData> LoadTaskData = std::make_unique<API::ManagerTaskData>(*this);
 
-    // Check if save file exists and load its request contents into the task data
-    if (!LoadFileIntoString("SavedSimulations/"+SavedSimName+".NES", LoadTaskData->InputData)) {
-        Logger_->Log("Unable to Read Simulation Save File " + SavedSimName, 8);
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusGeneralFailure);
-    }
+//     // Check if save file exists and load its request contents into the task data
+//     if (!LoadFileIntoString("SavedSimulations/"+SavedSimName+".NES", LoadTaskData->InputData)) {
+//         Logger_->Log("Unable to Read Simulation Save File " + SavedSimName, 8);
+//         return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+//     }
 
-    // Launch loading task thread
-    LoadTaskData->Task = std::make_unique<std::thread>(SimLoadingTaskThread, LoadTaskData.get());
+//     // Launch loading task thread
+//     LoadTaskData->Task = std::make_unique<std::thread>(SimLoadingTaskThread, LoadTaskData.get());
 
-    // Add task with fresh task status and get task ID to be returned to requestor
-    int TaskID = AddManagerTask(LoadTaskData);
-    if (TaskID<0) {
-        Logger_->Log("Unable to launch Loading Task", 8);
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusGeneralFailure);
-    }
+//     // Add task with fresh task status and get task ID to be returned to requestor
+//     int TaskID = AddManagerTask(LoadTaskData);
+//     if (TaskID<0) {
+//         Logger_->Log("Unable to launch Loading Task", 8);
+//         return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+//     }
 
-    // Return Result ID
-    return Handle.ResponseWithID("TaskID", TaskID);
-}
+//     // Return Result ID
+//     return Handle.ResponseWithID("TaskID", TaskID);
+// }
 
-std::string Manager::SimulationGetGeoCenter(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::SimulationGetGeoCenter(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "SimulationGetGeoCenter", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "SimulationGetGeoCenter", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -551,9 +494,9 @@ std::string Manager::SimulationGetGeoCenter(std::string _JSONRequest, ManagerTas
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-std::string Manager::SphereCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::SphereCreate(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "SphereCreate", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "SphereCreate", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -574,9 +517,9 @@ std::string Manager::SphereCreate(std::string _JSONRequest, ManagerTaskData* cal
     return Handle.ResponseWithID("ShapeID", S.ID);
 }
 
-std::string Manager::CylinderCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::CylinderCreate(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "CylinderCreate", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "CylinderCreate", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -599,9 +542,9 @@ std::string Manager::CylinderCreate(std::string _JSONRequest, ManagerTaskData* c
     return Handle.ResponseWithID("ShapeID", S.ID);
 }
 
-std::string Manager::BoxCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::BoxCreate(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "BoxCreate", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "BoxCreate", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -628,9 +571,9 @@ std::string Manager::BoxCreate(std::string _JSONRequest, ManagerTaskData* called
  * Form: A shape.
  * Function: Some parameters.
  */
-std::string Manager::BSCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::BSCreate(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "BSCreate", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "BSCreate", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -651,7 +594,7 @@ std::string Manager::BSCreate(std::string _JSONRequest, ManagerTaskData* called_
     // does not need to reach back to the Simulation to search for it.
     C.ShapePtr = Handle.Sim()->Collection.GetGeometry(C.ShapeID);
     if (!C.ShapePtr) {
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
 
     C.ID = Handle.Sim()->BSCompartments.size();
@@ -661,9 +604,9 @@ std::string Manager::BSCreate(std::string _JSONRequest, ManagerTaskData* called_
     return Handle.ResponseWithID("CompartmentID", C.ID);
 }
 
-std::string Manager::StapleCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::StapleCreate(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "StapleCreate", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "StapleCreate", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -699,9 +642,9 @@ std::string Manager::StapleCreate(std::string _JSONRequest, ManagerTaskData* cal
  * source neuron information (found via the source compartment) to
  * set up input connections to watch.
  */
-std::string Manager::ReceptorCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::ReceptorCreate(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "ReceptorCreate", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "ReceptorCreate", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -725,7 +668,7 @@ std::string Manager::ReceptorCreate(std::string _JSONRequest, ManagerTaskData* c
     CoreStructs::Neuron* SrcNeuronPtr = Handle.Sim()->FindNeuronByCompartment(C.SourceCompartmentID);
     CoreStructs::Neuron* DstNeuronPtr = Handle.Sim()->FindNeuronByCompartment(C.DestinationCompartmentID);
     if ((SrcNeuronPtr==nullptr) || (DstNeuronPtr==nullptr)) {
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
     CoreStructs::ReceptorData RData(C.ID, Handle.Sim()->Receptors.back().get(), SrcNeuronPtr);
     DstNeuronPtr->InputReceptorAdded(RData);
@@ -746,9 +689,9 @@ OR
 2. Tell the NeuralCircuit to create a neuron.
 */
 
-std::string Manager::BSNeuronCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::BSNeuronCreate(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "BSNeuronCreate", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "BSNeuronCreate", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -774,7 +717,7 @@ std::string Manager::BSNeuronCreate(std::string _JSONRequest, ManagerTaskData* c
     C.SomaCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.SomaCompartmentID);
     C.AxonCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.AxonCompartmentID);
     if ((!C.SomaCompartmentPtr) || (!C.AxonCompartmentPtr)) {
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
 
     C.ID = Handle.Sim()->Neurons.size();
@@ -787,9 +730,9 @@ std::string Manager::BSNeuronCreate(std::string _JSONRequest, ManagerTaskData* c
     return Handle.ResponseWithID("NeuronID", C.ID);
 }
 
-std::string Manager::PatchClampDACCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::PatchClampDACCreate(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "PatchClampDACCreate", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "PatchClampDACCreate", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -821,9 +764,9 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest, ManagerTaskDa
  *   ]
  * }
  */
-std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "PatchClampDACSetOutputList", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "PatchClampDACSetOutputList", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -835,7 +778,7 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest, Manage
     }
 
     if (PatchClampDACID >= Handle.Sim()->PatchClampDACs.size() || PatchClampDACID < 0) {
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
     Tools::PatchClampDAC* ThisDAC = &Handle.Sim()->PatchClampDACs[PatchClampDACID];
 
@@ -848,10 +791,10 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest, Manage
     ThisDAC->ControlData.clear();
     for (const auto& value_pair: ControlDataJSON_it.value()) {
         if (value_pair.size() < 2) {
-            return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+            return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
         }
         if ((!value_pair[0].is_number()) || (!value_pair[1].is_number())) {
-            return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+            return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
         }
         float t_ms = value_pair[0].template get<float>();
         float v_mV = value_pair[1].template get<float>();
@@ -862,9 +805,9 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest, Manage
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::PatchClampADCCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::PatchClampADCCreate(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "PatchClampADCCreate", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "PatchClampADCCreate", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -885,9 +828,9 @@ std::string Manager::PatchClampADCCreate(std::string _JSONRequest, ManagerTaskDa
     return Handle.ResponseWithID("PatchClampADCID", T.ID);
 }
 
-std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "PatchClampADCSetSampleRate", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "PatchClampADCSetSampleRate", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -898,7 +841,7 @@ std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest, Manage
         return Handle.ErrResponse();
     }
     if (PatchClampADCID >= Handle.Sim()->PatchClampADCs.size() || PatchClampADCID < 0) {
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
     Tools::PatchClampADC* ThisADC = &Handle.Sim()->PatchClampADCs[PatchClampADCID];
     
@@ -912,9 +855,9 @@ std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest, Manage
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "PatchClampADCGetRecordedData", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "PatchClampADCGetRecordedData", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -925,7 +868,7 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest, Mana
         return Handle.ErrResponse();
     }
     if (PatchClampADCID >= Handle.Sim()->PatchClampADCs.size() || PatchClampADCID < 0) {
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
     Tools::PatchClampADC* ThisADC = &Handle.Sim()->PatchClampADCs[PatchClampADCID];
     
@@ -947,9 +890,9 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest, Mana
  *   ]
  * }
  */
-std::string Manager::SetSpecificAPTimes(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::SetSpecificAPTimes(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "SetSpecificAPTimes", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "SetSpecificAPTimes", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -961,15 +904,15 @@ std::string Manager::SetSpecificAPTimes(std::string _JSONRequest, ManagerTaskDat
     }
     for (const auto& time_neuron_pair: TimeNeuronPairJSON_it.value()) {
         if (time_neuron_pair.size() < 2) {
-            return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+            return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
         }
         if ((!time_neuron_pair[0].is_number()) || (!time_neuron_pair[1].is_number())) {
-            return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+            return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
         }
         float t_ms = time_neuron_pair[0].template get<float>();
         unsigned int NeuronID = time_neuron_pair[1].template get<unsigned int>();
         if (NeuronID >= Handle.Sim()->Neurons.size()) {
-            return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+            return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
         }
 
         Handle.Sim()->Neurons.at(NeuronID)->AddSpecificAPTime(t_ms);
@@ -997,9 +940,9 @@ std::string Manager::SetSpecificAPTimes(std::string _JSONRequest, ManagerTaskDat
  *   "StatusCode": <status-code>,
  * }
  */
-std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "SetSpontaneousActivity", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "SetSpontaneousActivity", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1014,7 +957,7 @@ std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, ManagerTas
         return Handle.ErrResponse();
     }
     if ((SpikeIntervalMean_ms <= 0.0) || (SpikeIntervalStDev_ms < 0.0)) {
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
     std::vector<int> NeuronIDs; // Empty list means all neurons.
     if (!Handle.GetParVecInt("NeuronIDs", NeuronIDs)) {
@@ -1060,9 +1003,9 @@ std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, ManagerTas
  *   "ElectrodeIDs": [ <id>, (more IDs) ]
  * }
  */
-std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "AttachRecordingElectrodes", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "AttachRecordingElectrodes", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1075,7 +1018,7 @@ std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, Manager
     }
     auto ElectrodeList = ElectrodeSpecsIterator.value();
     if (!ElectrodeList.is_array()) {
-        Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+        Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
     for (auto& ElectodeData : ElectrodeList) {
 
@@ -1093,7 +1036,7 @@ std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, Manager
             Handle.ErrResponse();
         }
         if ((TipPosition.size()<3) || (EndPosition.size()<3)) {
-            Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+            Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
         }
         E.TipPosition_um = TipPosition;
         E.EndPosition_um = EndPosition;
@@ -1105,7 +1048,7 @@ std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, Manager
             Handle.ErrResponse();
         }
         if (!SitesIterator.value().is_array()) {
-            Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+            Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
         }
         for (auto& SiteData : SitesIterator.value()) {
             std::vector<float> SitePosition;
@@ -1113,7 +1056,7 @@ std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, Manager
                 Handle.ErrResponse();
             }
             if (SitePosition.size()<3) {
-                Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+                Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
             }
             E.Sites.emplace_back(SitePosition);
         }
@@ -1157,9 +1100,9 @@ std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, Manager
  *   "StatusCode": <status-code>,
  * }
  */
-std::string Manager::CalciumImagingAttach(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::CalciumImagingAttach(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "CalciumImagingAttach", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "CalciumImagingAttach", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1196,7 +1139,7 @@ std::string Manager::CalciumImagingAttach(std::string _JSONRequest, ManagerTaskD
     }
     auto SubVolume = SubVolumeIterator.value();
     if (!SubVolume.is_object()) {
-        Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+        Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
     std::vector<float> Center;
     if (!Handle.GetParVecFloat("center", Center, SubVolume)) {
@@ -1219,7 +1162,7 @@ std::string Manager::CalciumImagingAttach(std::string _JSONRequest, ManagerTaskD
         Handle.ErrResponse();
     }
     if ((Center.size()<3) || (Half.size()<3) || (Dx.size()<3) || (Dy.size()<3) || (Dz.size()<3)) {
-        Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+        Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
     C.Center_um = Center;
     C.Half = Half;
@@ -1234,9 +1177,9 @@ std::string Manager::CalciumImagingAttach(std::string _JSONRequest, ManagerTaskD
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::CalciumImagingShowVoxels(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::CalciumImagingShowVoxels(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "CalciumImagingShowVoxels", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "CalciumImagingShowVoxels", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1247,9 +1190,9 @@ std::string Manager::CalciumImagingShowVoxels(std::string _JSONRequest, ManagerT
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-std::string Manager::CalciumImagingRecordAposteriori(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::CalciumImagingRecordAposteriori(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "CalciumImagingRecordAposteriori", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "CalciumImagingRecordAposteriori", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1259,9 +1202,9 @@ std::string Manager::CalciumImagingRecordAposteriori(std::string _JSONRequest, M
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::SetRecordInstruments(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::SetRecordInstruments(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "SetRecordInstruments", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "SetRecordInstruments", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1276,9 +1219,9 @@ std::string Manager::SetRecordInstruments(std::string _JSONRequest, ManagerTaskD
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::GetInstrumentRecordings(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::GetInstrumentRecordings(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "GetInstrumentRecordings", called_by_manager_task);
+    API::HandlerData Handle(_JSONRequest, "GetInstrumentRecordings", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1301,9 +1244,9 @@ std::string Manager::GetInstrumentRecordings(std::string _JSONRequest, ManagerTa
  *   "TaskStatus": <task-status-code>
  * }
  */
-std::string Manager::ManTaskStatus(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::ManTaskStatus(std::string _JSONRequest, API::Simulations _Simulations) {
  
-    HandlerData Handle(this, _JSONRequest, "ManTaskStatus", called_by_manager_task, true, true);
+    API::HandlerData Handle(_JSONRequest, "ManTaskStatus", _Simulations, true, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1325,11 +1268,11 @@ std::string Manager::ManTaskStatus(std::string _JSONRequest, ManagerTaskData* ca
     // Get Manager Task Data
     auto it = ManagerTasks.find(ManTaskID);
     if (it == ManagerTasks.end()) {
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
-    ManagerTaskData* taskdata_ptr = it->second.get();
+    API::ManagerTaskData* taskdata_ptr = it->second.get();
     if (!taskdata_ptr) {
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
 
 
@@ -1363,9 +1306,9 @@ std::string Manager::ManTaskStatus(std::string _JSONRequest, ManagerTaskData* ca
  *   "ImageHeight_px": unsigned int
  * }
  */
-std::string Manager::VisualizerGenerateImage(std::string _JSONRequest, ManagerTaskData* _CalledByManagerTask) {
+std::string Manager::VisualizerGenerateImage(std::string _JSONRequest, API::Simulations _Simulations) {
 
-    HandlerData Handle(this, _JSONRequest, "VisualizerGenerateImage", _CalledByManagerTask);
+    API::HandlerData Handle(_JSONRequest, "VisualizerGenerateImage", _Simulations);
 
   
     // Create and Populate Parameters From Request
@@ -1412,9 +1355,9 @@ std::string Manager::VisualizerGenerateImage(std::string _JSONRequest, ManagerTa
  *   "SimulationID": <SimID>,
  * }
  */
-std::string Manager::VisualizerGetStatus(std::string _JSONRequest, ManagerTaskData* _CalledByManagerTask) {
+std::string Manager::VisualizerGetStatus(std::string _JSONRequest, API::Simulations _Simulations) {
 
-    HandlerData Handle(this, _JSONRequest, "VisualizerGetStatus", _CalledByManagerTask, true);
+    API::HandlerData Handle(_JSONRequest, "VisualizerGetStatus", _Simulations, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1431,9 +1374,9 @@ std::string Manager::VisualizerGetStatus(std::string _JSONRequest, ManagerTaskDa
  *   "SimulationID": <SimID>,
  * }
  */
-std::string Manager::VisualizerGetImageHandles(std::string _JSONRequest, ManagerTaskData* _CalledByManagerTask) {
+std::string Manager::VisualizerGetImageHandles(std::string _JSONRequest, API::Simulations _Simulations) {
 
-    HandlerData Handle(this, _JSONRequest, "VisualizerGetImageHandles", _CalledByManagerTask);
+    API::HandlerData Handle(_JSONRequest, "VisualizerGetImageHandles", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1451,9 +1394,9 @@ std::string Manager::VisualizerGetImageHandles(std::string _JSONRequest, Manager
  *   "ImageHandle": <str>
  * }
  */
-std::string Manager::VisualizerGetImage(std::string _JSONRequest, ManagerTaskData* _CalledByManagerTask) {
+std::string Manager::VisualizerGetImage(std::string _JSONRequest, API::Simulations _Simulations) {
 
-    HandlerData Handle(this, _JSONRequest, "VisualizerGetImage", _CalledByManagerTask);
+    API::HandlerData Handle(_JSONRequest, "VisualizerGetImage", _Simulations);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1508,116 +1451,8 @@ std::string Manager::VisualizerGetImage(std::string _JSONRequest, ManagerTaskDat
 
 
 
-bool Manager::BadReqID(int ReqID) {
-    // *** TODO: Add some rules here for ReqIDs that should be refused.
-    //           For example, keep track of the largest ReqID received
-    //           and reject if ReqID is smaller than that. This is
-    //           useful if ReqIDs are made using clock time or something.
-    return false;
-}
 
-/**
- * This expects requests of the following format:
- * [
- *   {
- *     "ReqID": <request-id>,
- *     "AddBSNeuron": {
- *       "SimulationID": <SimID>, // Logically, this could belong outside AddBSNeuron, but we wish to reuse backward compatible functions. 
- *       "Name": <name>,
- *       "SomaID": <soma-id>,
- *       "AxonID": <axon-id>,
- *       <etc... all parameters>
- *     }
- *   },
- *   <more requests>
- * ]
- */
-std::string Manager::NESRequest(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) { // Generic JSON-based NES requests.
-
-    // Parse Request
-    //Logger_->Log(_JSONRequest, 3);
-    HandlerData Handle(this, _JSONRequest, "NESRequest", called_by_manager_task, true, true);
-    if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
-
-    if (!Handle.ReqJSON().is_array()) {
-        Logger_->Log("Bad format. Must be array of requests.", 8);
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);       
-    }
-
-    // Build Response
-    nlohmann::json ResponseJSON = nlohmann::json::array(); // Create empty array for the list of responses.
-
-    // For each request in the JSON list:
-    for (const auto& req : Handle.ReqJSON()) {
-
-        int ReqID = -1;
-        //int SimulationID = -1;
-        std::string ReqFunc;
-        nlohmann::json ReqParams;
-        nlohmann::json ReqResponseJSON;
-        //std::string Response;
-
-        // Get the mandatory components of a request:
-        for (const auto& [req_key, req_value]: req.items()) {
-            if (req_key == "ReqID") {
-                ReqID = req_value.template get<int>();
-            //} else if (req_key == "SimID") {
-            //    SimulationID = req_value.template get<int>();
-            } else {
-                ReqFunc = req_key;
-                ReqParams = req_value;
-            }
-        }
-
-        if (BadReqID(ReqID)) { // e.g. < highest request ID already handled
-            ReqResponseJSON["ReqID"] = ReqID;
-            ReqResponseJSON["StatusCode"] = 1; // bad request id
-        } else {
-
-            // Typically would call a specific handler from here, but let's just keep parsing.
-            auto it = NES_Request_handlers.find(ReqFunc);
-            if (it == NES_Request_handlers.end()) {
-                ReqResponseJSON["ReqID"] = ReqID;
-                ReqResponseJSON["StatusCode"] = 1; // unknown request *** TODO: use the right code
-                //Response = ReqResponseJSON.dump();
-            } else {
-                if (it->second.Handler == nullptr) {
-                    ReqResponseJSON["ReqID"] = ReqID;
-                    ReqResponseJSON["StatusCode"] = 1; // not a valid NES request *** TODO: use the right code
-                } else {
-                    std::string Response = it->second.Handler(*this, ReqParams, called_by_manager_task); // Calls the handler.
-                    // *** TODO: Either:
-                    //     a) Convert handlers to return nlohmann::json objects so that we
-                    //        can easily add ReqResponseJSON["ReqID"] = ReqID here, or,
-                    //     b) Convert Response back to a ReqResponseJSON here in order to
-                    //        add that... (This is more work, lower performance...)
-                    //     Right now, we do b) (sadly...)
-                    ReqResponseJSON = nlohmann::json::parse(Response);
-                    ReqResponseJSON["ReqID"] = ReqID;
-                }
-            }
-
-        }
-        ResponseJSON.push_back(ReqResponseJSON);
-
-    }
-
-    std::string Response = ResponseJSON.dump();
-    if (Response.length() < 1024) { 
-        Logger_->Log("DEBUG --> Responding: " + Response, 0); // For DEBUG
-    } else {
-        Logger_->Log("DEBUG --> Response Omitted Due To Length", 0); // For DEBUG
-    }
-    // if (!IsLoadingSim()) {
-    //     std::cout << "DEBUG ---> Responding: " << ResponseJSON.dump() << '\n'; std::cout.flush();
-    // }
-
-    return Handle.ResponseAndStoreRequest(ResponseJSON, false); // See comments at ResponseAndStoreRequest().
-}
-
-std::string Manager::Debug(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
+std::string Manager::Debug(std::string _JSONRequest, API::Simulations _Simulations) {
  
     // Parse Request
     std::cout<<_JSONRequest<<std::endl;
@@ -1676,304 +1511,14 @@ std::string Manager::Debug(std::string _JSONRequest, ManagerTaskData* called_by_
     return ResponseJSON.dump();
 }
 
-bool Manager::IsSimulationBusy(Simulation* _Sim) {
-    return _Sim->IsProcessing || _Sim->WorkRequested;
-}
+// bool Manager::IsSimulationBusy(Simulation* _Sim) {
+//     return _Sim->IsProcessing || _Sim->WorkRequested;
+// }
 
 std::vector<std::unique_ptr<Simulation>>* Manager::GetSimulationVectorPtr() {
     return &Simulations_;
 }
 
-// ------------ Are we keeping the following "Bulk" routes? --------
-
-std::string Manager::BulkSphereCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
-
-    HandlerData Handle(this, _JSONRequest, "BulkSphereCreate", called_by_manager_task);
-    if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
-     
-    // Get Parameters
-    std::vector<float> RadiusList_um;
-    std::vector<float> CenterXList_um;
-    std::vector<float> CenterYList_um;
-    std::vector<float> CenterZList_um;
-    std::vector<std::string> NameList;
-    Util::GetFloatVector(&RadiusList_um, &(Handle.ReqJSON()), "RadiusList_um");
-    Util::GetFloatVector(&CenterXList_um, &(Handle.ReqJSON()), "CenterXList_um");
-    Util::GetFloatVector(&CenterYList_um, &(Handle.ReqJSON()), "CenterYList_um");
-    Util::GetFloatVector(&CenterZList_um, &(Handle.ReqJSON()), "CenterZList_um");
-    Util::GetStringVector(&NameList, &(Handle.ReqJSON()), "NameList");
-
-    // Check List Lengths Are Equal, Exit If Not
-    bool LengthsEqual = true;
-    size_t Length = RadiusList_um.size();
-    LengthsEqual &= (CenterXList_um.size() == Length);
-    LengthsEqual &= (CenterYList_um.size() == Length);
-    LengthsEqual &= (CenterZList_um.size() == Length);
-    LengthsEqual &= (NameList.size() == Length);
-    if (!LengthsEqual) {
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
-    }
-    
-    // Setup Output ID List
-    std::vector<size_t> ShapeIDs;
-
-    // Now enumerate and build them
-    Logger_->Log("Adding " + std::to_string(Length) + " Spheres", 2);
-    for (size_t i = 0; i < Length; i++) {
-
-        // Build New Sphere Object
-        Geometries::Sphere S;
-        S.Name = NameList[i];
-        S.Radius_um = RadiusList_um[i];
-        S.Center_um.x = CenterXList_um[i];
-        S.Center_um.y = CenterYList_um[i];
-        S.Center_um.z = CenterZList_um[i];
-
-        // Add to Sim, Set ID
-        int SphereID = Handle.Sim()->Collection.Geometries.size();
-        S.ID = SphereID;
-        Handle.Sim()->Collection.Geometries.push_back(S);
-
-        ShapeIDs.push_back(S.ID);
-
-    }
-
-    // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0;
-    ResponseJSON["ShapeIDs"] = ShapeIDs;
-    return Handle.ResponseAndStoreRequest(ResponseJSON);
-}
-
-std::string Manager::BulkCylinderCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
-
-    HandlerData Handle(this, _JSONRequest, "BulkCylinderCreate", called_by_manager_task);
-    if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
-     
-    // Get Parameters
-    std::vector<float> Point1RadiusList_um;
-    std::vector<float> Point2RadiusList_um;
-    std::vector<float> Point1XList_um;
-    std::vector<float> Point1YList_um;
-    std::vector<float> Point1ZList_um;
-    std::vector<float> Point2XList_um;
-    std::vector<float> Point2YList_um;
-    std::vector<float> Point2ZList_um;
-    std::vector<std::string> NameList;
-    Util::GetFloatVector(&Point1RadiusList_um, &(Handle.ReqJSON()), "Point1RadiusList_um");
-    Util::GetFloatVector(&Point2RadiusList_um, &(Handle.ReqJSON()), "Point2RadiusList_um");
-    Util::GetFloatVector(&Point1XList_um, &(Handle.ReqJSON()), "Point1XList_um");
-    Util::GetFloatVector(&Point1YList_um, &(Handle.ReqJSON()), "Point1YList_um");
-    Util::GetFloatVector(&Point1ZList_um, &(Handle.ReqJSON()), "Point1ZList_um");
-    Util::GetFloatVector(&Point2XList_um, &(Handle.ReqJSON()), "Point2XList_um");
-    Util::GetFloatVector(&Point2YList_um, &(Handle.ReqJSON()), "Point2YList_um");
-    Util::GetFloatVector(&Point2ZList_um, &(Handle.ReqJSON()), "Point2ZList_um");
-    Util::GetStringVector(&NameList, &(Handle.ReqJSON()), "NameList");
-
-    // Check List Lengths Are Equal, Exit If Not
-    bool LengthsEqual = true;
-    size_t Length = Point1RadiusList_um.size();
-    LengthsEqual &= (Point2RadiusList_um.size() == Length);
-    LengthsEqual &= (Point1XList_um.size() == Length);
-    LengthsEqual &= (Point1YList_um.size() == Length);
-    LengthsEqual &= (Point1ZList_um.size() == Length);
-    LengthsEqual &= (Point2XList_um.size() == Length);
-    LengthsEqual &= (Point2YList_um.size() == Length);
-    LengthsEqual &= (Point2ZList_um.size() == Length);
-    LengthsEqual &= (NameList.size() == Length);
-    if (!LengthsEqual) {
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
-    }
-
-    // Setup Output ID List
-    std::vector<size_t> ShapeIDs;
-
-    // Now enumerate and build them
-    Logger_->Log("Adding " + std::to_string(Length) + " Cylinders", 2);
-    for (size_t i = 0; i < Length; i++) {
-
-        // Build New Cylinder Object
-        Geometries::Cylinder S;
-        S.Name = NameList[i];
-        S.End0Radius_um = Point1RadiusList_um[i];
-        S.End1Radius_um = Point2RadiusList_um[i];
-        S.End0Pos_um.x = Point1XList_um[i];
-        S.End0Pos_um.y = Point1YList_um[i];
-        S.End0Pos_um.z = Point1ZList_um[i];
-        S.End1Pos_um.x = Point2XList_um[i];
-        S.End1Pos_um.y = Point2YList_um[i];
-        S.End1Pos_um.z = Point2ZList_um[i];
-
-        // Add to Sim, Set ID
-        int CylinderID = Handle.Sim()->Collection.Geometries.size();
-        S.ID = CylinderID;
-        Handle.Sim()->Collection.Geometries.push_back(S);
-
-        ShapeIDs.push_back(S.ID);
-
-    }
-
-    // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0;
-    ResponseJSON["ShapeIDs"] = ShapeIDs;
-    return Handle.ResponseAndStoreRequest(ResponseJSON);
-}
-
-std::string Manager::BulkBoxCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
-
-    HandlerData Handle(this, _JSONRequest, "BulkBoxCreate", called_by_manager_task);
-    if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
- 
-    // Get Parameters
-    std::vector<float> CenterXList_um;
-    std::vector<float> CenterYList_um;
-    std::vector<float> CenterZList_um;
-    std::vector<float> DimensionsXList_um;
-    std::vector<float> DimensionsYList_um;
-    std::vector<float> DimensionsZList_um;
-    std::vector<float> RotationXList_rad;
-    std::vector<float> RotationYList_rad;
-    std::vector<float> RotationZList_rad;
-    std::vector<std::string> NameList;
-    Util::GetFloatVector(&CenterXList_um, &(Handle.ReqJSON()), "CenterXList_um");
-    Util::GetFloatVector(&CenterYList_um, &(Handle.ReqJSON()), "CenterYList_um");
-    Util::GetFloatVector(&CenterZList_um, &(Handle.ReqJSON()), "CenterZList_um");
-    Util::GetFloatVector(&DimensionsXList_um, &(Handle.ReqJSON()), "DimensionsXList_um");
-    Util::GetFloatVector(&DimensionsYList_um, &(Handle.ReqJSON()), "DimensionsYList_um");
-    Util::GetFloatVector(&DimensionsZList_um, &(Handle.ReqJSON()), "DimensionsZList_um");
-    Util::GetFloatVector(&RotationXList_rad, &(Handle.ReqJSON()), "RotationXList_rad");
-    Util::GetFloatVector(&RotationYList_rad, &(Handle.ReqJSON()), "RotationYList_rad");
-    Util::GetFloatVector(&RotationZList_rad, &(Handle.ReqJSON()), "RotationZList_rad");
-    Util::GetStringVector(&NameList, &(Handle.ReqJSON()), "NameList");
-
-    // Check List Lengths Are Equal, Exit If Not
-    bool LengthsEqual = true;
-    size_t Length = NameList.size();
-    LengthsEqual &= (CenterXList_um.size() == Length);
-    LengthsEqual &= (CenterYList_um.size() == Length);
-    LengthsEqual &= (CenterZList_um.size() == Length);
-    LengthsEqual &= (DimensionsXList_um.size() == Length);
-    LengthsEqual &= (DimensionsYList_um.size() == Length);
-    LengthsEqual &= (DimensionsZList_um.size() == Length);
-    LengthsEqual &= (RotationXList_rad.size() == Length);
-    LengthsEqual &= (RotationYList_rad.size() == Length);
-    LengthsEqual &= (RotationZList_rad.size() == Length);
-    if (!LengthsEqual) {
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
-    }
-
-    // Setup Output ID List
-    std::vector<size_t> ShapeIDs;
-
-    // Now enumerate and build them
-    Logger_->Log("Adding " + std::to_string(Length) + " Boxes", 2);
-    for (size_t i = 0; i < Length; i++) {
-
-        // Build New Box Object
-        Geometries::Box S;
-        S.Name = NameList[i];
-        S.Center_um.x = CenterXList_um[i];
-        S.Center_um.y = CenterYList_um[i];
-        S.Center_um.z = CenterZList_um[i];
-        S.Dims_um.x = DimensionsXList_um[i];
-        S.Dims_um.y = DimensionsYList_um[i];
-        S.Dims_um.z = DimensionsZList_um[i];
-        S.Rotations_rad.x = RotationXList_rad[i];
-        S.Rotations_rad.y = RotationYList_rad[i];
-        S.Rotations_rad.z = RotationZList_rad[i];
-
-        int BoxID = Handle.Sim()->Collection.Geometries.size();
-        S.ID = BoxID;
-        Handle.Sim()->Collection.Geometries.push_back(S);
-
-        ShapeIDs.push_back(S.ID);
-
-    }
-
-    // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0;
-    ResponseJSON["ShapeIDs"] = ShapeIDs;
-    return Handle.ResponseAndStoreRequest(ResponseJSON);
-}
-
-std::string Manager::BulkBSCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task) {
-
-    HandlerData Handle(this, _JSONRequest, "BulkBSCreate", called_by_manager_task);
-    if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
-
-    // Get Parameters
-    std::vector<float> MembranePotentialList_mV;
-    std::vector<float> SpikeThresholdList_mV;
-    std::vector<float> DecayTimeList_ms;
-    std::vector<float> RestingPotentialList_mV;
-    std::vector<float> AfterHyperpolarizationAmplitudeList_mV;
-    std::vector<std::string> NameList;
-    std::vector<int> ShapeIDList;
-    Util::GetFloatVector(&MembranePotentialList_mV, &(Handle.ReqJSON()), "MembranePotentialList_mV");
-    Util::GetFloatVector(&SpikeThresholdList_mV, &(Handle.ReqJSON()), "SpikeThresholdList_mV");
-    Util::GetFloatVector(&DecayTimeList_ms, &(Handle.ReqJSON()), "DecayTimeList_ms");
-    Util::GetFloatVector(&RestingPotentialList_mV, &(Handle.ReqJSON()), "RestingPotentialList_mV");
-    Util::GetFloatVector(&AfterHyperpolarizationAmplitudeList_mV, &(Handle.ReqJSON()), "AfterHyperpolarizationAmplitudeList_mV");
-    Util::GetStringVector(&NameList, &(Handle.ReqJSON()), "NameList");
-    Util::GetIntVector(&ShapeIDList, &(Handle.ReqJSON()), "ShapeIDList");
-
-    // Check List Lengths Are Equal, Exit If Not
-    bool LengthsEqual = true;
-    size_t Length = NameList.size();
-    LengthsEqual &= (ShapeIDList.size() == Length);
-    LengthsEqual &= (MembranePotentialList_mV.size() == Length);
-    LengthsEqual &= (SpikeThresholdList_mV.size() == Length);
-    LengthsEqual &= (DecayTimeList_ms.size() == Length);
-    LengthsEqual &= (RestingPotentialList_mV.size() == Length);
-    LengthsEqual &= (AfterHyperpolarizationAmplitudeList_mV.size() == Length);
-    if (!LengthsEqual) {
-        return Handle.ErrResponse(API::bgStatusCode::bgStatusInvalidParametersPassed);
-    }
-
-    // Setup Output ID List
-    std::vector<size_t> CompartmentIDs;
-
-    // Now enumerate and build them
-    Logger_->Log("Adding " + std::to_string(Length) + " BS Compartments", 2);
-    for (size_t i = 0; i < Length; i++) {
-
-        // Build New Box Object
-        Compartments::BS S;
-        S.Name = NameList[i];
-        S.AfterHyperpolarizationAmplitude_mV = AfterHyperpolarizationAmplitudeList_mV[i];
-        S.DecayTime_ms = DecayTimeList_ms[i];
-        S.ShapeID = ShapeIDList[i];
-        S.MembranePotential_mV = MembranePotentialList_mV[i];
-        S.RestingPotential_mV = RestingPotentialList_mV[i];
-        S.SpikeThreshold_mV = SpikeThresholdList_mV[i];
-
-        // Add to Sim, Set ID
-        int CompartmentID = Handle.Sim()->BSCompartments.size();
-        S.ID = CompartmentID;
-        Handle.Sim()->BSCompartments.push_back(S);
-
-        CompartmentIDs.push_back(S.ID);
-
-    }
-
-    // Return Result ID
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0;
-    ResponseJSON["CompartmentIDs"] = CompartmentIDs;
-    return Handle.ResponseAndStoreRequest(ResponseJSON);
-}
-
-// -----------------------------------------------------------------
 
 }; // Close Namespace Simulator
 }; // Close Namespace NES

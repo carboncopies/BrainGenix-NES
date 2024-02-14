@@ -41,9 +41,13 @@
 
 #include <Visualizer/VisualizerPool.h>
 
+#include <RPC/RPCManager.h>
+#include <RPC/ManagerTaskData.h>
+#include <RPC/RPCHandlerHelper.h>
+#include <RPC/RouteAndHandler.h>
+
 #include <Simulator/EngineController.h>
 #include <Config/Config.h>
-#include <RPC/RPCManager.h>
 #include <Util/JSONHelpers.h>
 #include <BG/Common/Logger/Logger.h>
 
@@ -76,7 +80,7 @@ private:
     VisualizerPool* VisualizerPool_;                      /**Pointer to instance of the vizualizerpool class*/
 
     int NextManTaskID = 0; /**Use this, because we use a map not a vector, so that we can expire some to shed old cached stuff*/
-    std::map<int, std::unique_ptr<ManagerTaskData>> ManagerTasks; /**Status data of launched tasks by Task ID*/
+    std::map<int, std::unique_ptr<API::ManagerTaskData>> ManagerTasks; /**Status data of launched tasks by Task ID*/
 
 
 
@@ -91,7 +95,7 @@ public:
      * @param _RPCManager
      * @param _Renderer Instance of the rendering system.
      */
-    Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, VisualizerPool* _VisualizerPool, API::Manager* _RPCManager);
+    Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, VisualizerPool* _VisualizerPool, API::RPCManager* _RPCManager);
 
     /**
      * @brief Destroy the Manager object
@@ -99,14 +103,14 @@ public:
      */
     ~Manager();
 
-    Simulation* MakeSimulation();
+    // Simulation* MakeSimulation();
 
-    bool BadReqID(int ReqID);
+    // bool BadReqID(int ReqID);
 
-    int AddManagerTask(std::unique_ptr<ManagerTaskData> & TaskData);
+    // int AddManagerTask(std::unique_ptr<API::ManagerTaskData> & TaskData);
 
     //void LoadingSimSetter(bool SetTo);
-    void SimLoadingTask(ManagerTaskData & TaskData);
+    // void SimLoadingTask(API::ManagerTaskData & TaskData);
 
     /**
      * @brief Various routes for API
@@ -116,58 +120,57 @@ public:
      * @param _JSONRequest 
      * @return std::string 
      */
-    std::string SimulationCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string SimulationReset(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string SimulationRunFor(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string SimulationRecordAll(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string SimulationGetRecording(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string SimulationGetStatus(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string SimulationBuildMesh(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string SimulationSave(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string SimulationLoad(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string SimulationGetGeoCenter(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string SimulationCreate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string SimulationReset(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string SimulationRunFor(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string SimulationRecordAll(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string SimulationGetRecording(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string SimulationGetStatus(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string SimulationBuildMesh(std::string _JSONRequest, API::Simulations _Simulations);
+    // std::string SimulationSave(std::string _JSONRequest, API::Simulations _Simulations);
+    // std::string SimulationLoad(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string SimulationGetGeoCenter(std::string _JSONRequest, API::Simulations _Simulations);
 
-    std::string SphereCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string BulkSphereCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string CylinderCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string BulkCylinderCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string BoxCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string BulkBoxCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string SphereCreate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string BulkSphereCreate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string CylinderCreate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string BulkCylinderCreate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string BoxCreate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string BulkBoxCreate(std::string _JSONRequest, API::Simulations _Simulations);
 
-    std::string BSCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string BulkBSCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string BSCreate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string BulkBSCreate(std::string _JSONRequest, API::Simulations _Simulations);
 
-    std::string StapleCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string ReceptorCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string StapleCreate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string ReceptorCreate(std::string _JSONRequest, API::Simulations _Simulations);
 
-    std::string BSNeuronCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string BSNeuronCreate(std::string _JSONRequest, API::Simulations _Simulations);
 
-    std::string PatchClampDACCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string PatchClampDACSetOutputList(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string PatchClampDACCreate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string PatchClampDACSetOutputList(std::string _JSONRequest, API::Simulations _Simulations);
 
-    std::string PatchClampADCCreate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string PatchClampADCSetSampleRate(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string PatchClampADCGetRecordedData(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string PatchClampADCCreate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string PatchClampADCSetSampleRate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string PatchClampADCGetRecordedData(std::string _JSONRequest, API::Simulations _Simulations);
 
-    std::string SetSpecificAPTimes(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string SetSpontaneousActivity(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string SetSpecificAPTimes(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string SetSpontaneousActivity(std::string _JSONRequest, API::Simulations _Simulations);
 
-    std::string AttachRecordingElectrodes(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string CalciumImagingAttach(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string CalciumImagingShowVoxels(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string CalciumImagingRecordAposteriori(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string SetRecordInstruments(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string GetInstrumentRecordings(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string AttachRecordingElectrodes(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string CalciumImagingAttach(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string CalciumImagingShowVoxels(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string CalciumImagingRecordAposteriori(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string SetRecordInstruments(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string GetInstrumentRecordings(std::string _JSONRequest, API::Simulations _Simulations);
 
-    std::string ManTaskStatus(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
-    std::string VisualizerGetImage(std::string _JSONRequest, ManagerTaskData* _CalledByManagerTask = nullptr);
-    std::string VisualizerGetImageHandles(std::string _JSONRequest, ManagerTaskData* _CalledByManagerTask = nullptr);
-    std::string VisualizerGetStatus(std::string _JSONRequest, ManagerTaskData* _CalledByManagerTask = nullptr);
-    std::string VisualizerGenerateImage(std::string _JSONRequest, ManagerTaskData* _CalledByManagerTask = nullptr);
+    std::string ManTaskStatus(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string VisualizerGetImage(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string VisualizerGetImageHandles(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string VisualizerGetStatus(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string VisualizerGenerateImage(std::string _JSONRequest, API::Simulations _Simulations);
 
-    std::string NESRequest(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr); // Generic JSON-based NES requests.
 
-    std::string Debug(std::string _JSONRequest, ManagerTaskData* called_by_manager_task = nullptr);
+    std::string Debug(std::string _JSONRequest, API::Simulations _Simulations);
 
     /**
      * @brief Returns true if the simulation is being worked on by another thread.

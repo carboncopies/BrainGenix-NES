@@ -21,67 +21,64 @@ namespace API {
 
 
 // Handy class for standard handler data.
-HandlerData::HandlerData(Simulator::Manager* _Man, const std::string& _JSONRequest, const std::string& _Source, ManagerTaskData* called_by_manager_task, bool PermitBusy, bool NoSimulation): Man(*_Man) {
+HandlerData::HandlerData(const std::string& _JSONRequest, const std::string& _Source, Simulations _Simulations, bool PermitBusy, bool NoSimulation) {
 
     Source = _Source;
-    ManTaskData = called_by_manager_task;
+    // ManTaskData = called_by_manager_task;
     JSONRequestStr = _JSONRequest;
 
 
-    SimVec = Man.GetSimulationVectorPtr();
+    SimVec = _Simulations;
     RequestJSON = nlohmann::json::parse(_JSONRequest);
 
-    bool isloadingsim = (ManTaskData != nullptr); // Man.IsLoadingSim();
-    if (isloadingsim && (_Source == "SimulationLoad")) { // *** PERHAPS WE CAN ALLOW THIS (AS WE USE LOCAL PARAMS NOW)?
-        Man.Logger()->Log("Recursive SimulationLoad attempted.", 8);
-        Status = BGStatusCode::BGStatusGeneralFailure;
-        return; // Prevents recursion.
-    }
+    // bool isloadingsim = (ManTaskData != nullptr); // Man.IsLoadingSim();
+    // if (isloadingsim && (_Source == "SimulationLoad")) { // *** PERHAPS WE CAN ALLOW THIS (AS WE USE LOCAL PARAMS NOW)?
+    //     Man.Logger()->Log("Recursive SimulationLoad attempted.", 8);
+    //     Status = BGStatusCode::BGStatusGeneralFailure;
+    //     return; // Prevents recursion.
+    // }
 
-    // If this Handler was called while loading and a Simulation was not created
-    // yet then only allow requests that do not need one ("NoSimulation"), such
-    // as "SimulationCreate" and "NESRequest".
-    if (isloadingsim && (!ManTaskData->HasReplacementSimID()) && (!NoSimulation)) {
-        Man.Logger()->Log(Source+" needs a Sim, but we are still Loading and have not come across SimulationCreate yet.", 8);
-        Status = BGStatusCode::BGStatusInvalidParametersPassed;
-        return; // When loading, the first valid request must be SimulationCreate.
-    }
+    // // If this Handler was called while loading and a Simulation was not created
+    // // yet then only allow requests that do not need one ("NoSimulation"), such
+    // // as "SimulationCreate" and "NESRequest".
+    // if (isloadingsim && (!ManTaskData->HasReplacementSimID()) && (!NoSimulation)) {
+    //     Man.Logger()->Log(Source+" needs a Sim, but we are still Loading and have not come across SimulationCreate yet.", 8);
+    //     Status = BGStatusCode::BGStatusInvalidParametersPassed;
+    //     return; // When loading, the first valid request must be SimulationCreate.
+    // }
 
     if (NoSimulation) {
         return;
     }
 
-    if (isloadingsim) {
-        SimulationID = ManTaskData->ReplaceSimulationID;
-    } else {
+    // if (isloadingsim) {
+    //     SimulationID = ManTaskData->ReplaceSimulationID;
+    // } else {
         if (!GetParInt("SimulationID", SimulationID)) {
             return;
         }
-    }
+    // }
     if (SimulationID >= SimVec->size() || SimulationID < 0) {
         Status = BGStatusCode::BGStatusInvalidParametersPassed;
         return;
     }
     ThisSimulation = SimVec->at(SimulationID).get();
 
-    if (PermitBusy) {
-        return;
-    }
-    if (Man.IsSimulationBusy(ThisSimulation)) {
+    if (!PermitBusy && (ThisSimulation->IsProcessing || ThisSimulation->WorkRequested)) {
         Status = BGStatusCode::BGStatusSimulationBusy;
         return;
     }
-    Man.Logger()->Log(Source+" called, on Sim " + SimIDStr(), 3);
+    // Man.Logger()->Log(Source+" called, on Sim " + SimIDStr(), 3);
 }
 
 
-// See how this is used in Manager::SimulationCreate().
-Simulator::Simulation* HandlerData::NewSimulation() {
-    ThisSimulation = Man.MakeSimulation();
-    SimulationID = ThisSimulation->ID;
-    Man.Logger()->Log("New Sim " + SimIDStr(), 3);
-    return ThisSimulation;
-}
+// // See how this is used in Manager::SimulationCreate().
+// Simulator::Simulation* HandlerData::NewSimulation() {
+//     ThisSimulation = Man.MakeSimulation();
+//     SimulationID = ThisSimulation->ID;
+//     Man.Logger()->Log("New Sim " + SimIDStr(), 3);
+//     return ThisSimulation;
+// }
 
 bool HandlerData::HasError() const {
     return (Status != BGStatusCode::BGStatusSuccess);
@@ -101,19 +98,19 @@ BGStatusCode HandlerData::GetStatus() const {
 //       NESRequest batch handler. We don't want to double-count the calls,
 //       and we want to store the individual ones, because they may be
 //       intended for different simulations (dependeing on their SimulationID).
-std::string HandlerData::ResponseAndStoreRequest(nlohmann::json& ResponseJSON, NESRequest_map_t _RH, bool store) {
-    if (store && (Status == BGStatusCode::BGStatusSuccess)) {
-        if (ThisSimulation != nullptr) {
-            ThisSimulation->StoreRequestHandled(Source, _RH.at(Source).Route, JSONRequestStr);
-        }
-    }
+std::string HandlerData::ResponseAndStoreRequest(nlohmann::json& ResponseJSON,  bool store) {
+    // if (store && (Status == BGStatusCode::BGStatusSuccess)) {
+    //     if (ThisSimulation != nullptr) {
+    //         ThisSimulation->StoreRequestHandled(Source, _RH.at(Source).Route, JSONRequestStr);
+    //     }
+    // }
     return ResponseJSON.dump();
 }
-std::string HandlerData::ErrResponse(int _Status, NESRequest_map_t _RH) {
+std::string HandlerData::ErrResponse(int _Status) {
     Status = BGStatusCode(_Status);
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = _Status;
-    return ResponseAndStoreRequest(ResponseJSON, _RH);
+    return ResponseAndStoreRequest(ResponseJSON);
 }
 std::string HandlerData::ErrResponse(BGStatusCode _Status) {
     return ErrResponse(int(_Status));
@@ -122,17 +119,17 @@ std::string HandlerData::ErrResponse() {
     return ErrResponse(int(Status));
 }
 
-std::string HandlerData::ResponseWithID(const std::string& IDName, int IDValue, NESRequest_map_t _RH) {
+std::string HandlerData::ResponseWithID(const std::string& IDName, int IDValue) {
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = int(Status);
     ResponseJSON[IDName] = IDValue;
-    return ResponseAndStoreRequest(ResponseJSON, _RH);
+    return ResponseAndStoreRequest(ResponseJSON);
 }
-std::string HandlerData::ResponseWithID(const std::string& IDName, const std::string& IDValue, NESRequest_map_t _RH) {
+std::string HandlerData::ResponseWithID(const std::string& IDName, const std::string& IDValue) {
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = int(Status);
     ResponseJSON[IDName] = IDValue;
-    return ResponseAndStoreRequest(ResponseJSON, _RH);
+    return ResponseAndStoreRequest(ResponseJSON);
 }
 std::string HandlerData::StringResponse(std::string _Key, std::string _Value) {
     nlohmann::json ResponseJSON;

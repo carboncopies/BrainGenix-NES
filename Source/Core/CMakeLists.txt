@@ -16,14 +16,7 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Config/ConfigDefaults.h
 
 
-  ${SRC_DIR}/Core/RPC/RPCManager.cpp
-  ${SRC_DIR}/Core/RPC/RPCManager.h
-  ${SRC_DIR}/Core/RPC/RPCHandlerHelper.cpp
-  ${SRC_DIR}/Core/RPC/RPCHandlerHelper.h
-  ${SRC_DIR}/Core/RPC/APIStatusCode.cpp
-  ${SRC_DIR}/Core/RPC/APIStatusCode.h
-  ${SRC_DIR}/Core/RPC/StaticRoutes.cpp
-  ${SRC_DIR}/Core/RPC/StaticRoutes.h
+
 
 
   ${SRC_DIR}/Core/Simulator/Manager.cpp
@@ -32,6 +25,19 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Engine.h
   ${SRC_DIR}/Core/Simulator/EngineController.cpp
   ${SRC_DIR}/Core/Simulator/EngineController.h
+
+
+  ${SRC_DIR}/Core/RPC/RPCManager.cpp
+  ${SRC_DIR}/Core/RPC/RPCManager.h
+  ${SRC_DIR}/Core/RPC/RPCHandlerHelper.cpp
+  ${SRC_DIR}/Core/RPC/RPCHandlerHelper.h
+  ${SRC_DIR}/Core/RPC/APIStatusCode.cpp
+  ${SRC_DIR}/Core/RPC/APIStatusCode.h
+  ${SRC_DIR}/Core/RPC/StaticRoutes.cpp
+  ${SRC_DIR}/Core/RPC/StaticRoutes.h
+  ${SRC_DIR}/Core/RPC/ManagerTaskData.cpp
+  ${SRC_DIR}/Core/RPC/ManagerTaskData.h
+
 
   ${SRC_DIR}/Core/Simulator/Geometries/Geometry.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Geometry.h

@@ -12,6 +12,8 @@
 
 #include <RPC/RPCManager.h>
 
+#include <RPC/RPCHandlerHelper.h>
+#include <RPC/APIStatusCode.h>
 
 
 namespace BG {
@@ -20,6 +22,8 @@ namespace API {
 
 
 RPCManager::RPCManager(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger) {
+
+    Logger_ = _Logger;
 
     // Initialize Server
     std::string ServerHost = _Config->Host;
@@ -32,6 +36,7 @@ RPCManager::RPCManager(Config::Config* _Config, BG::Common::Logger::LoggingSyste
     // Add predefined routes to the RPC server
     AddRoute("GetAPIVersion", _Logger, &GetAPIVersion);
     AddRoute("Echo", _Logger, &Echo);
+    AddRoute("NES", Logger_, [this](std::string RequestJSON){ return NESRequest(RequestJSON);});
     
 
 
@@ -46,6 +51,122 @@ RPCManager::~RPCManager() {
     // Destructor
     // No explicit cleanup needed as smart pointers manage the RPC server's memory
 }
+
+
+
+
+
+bool BadReqID(int ReqID) {
+    // *** TODO: Add some rules here for ReqIDs that should be refused.
+    //           For example, keep track of the largest ReqID received
+    //           and reject if ReqID is smaller than that. This is
+    //           useful if ReqIDs are made using clock time or something.
+    return false;
+}
+
+
+
+/**
+ * This expects requests of the following format:
+ * [
+ *   {
+ *     "ReqID": <request-id>,
+ *     "AddBSNeuron": {
+ *       "SimulationID": <SimID>, // Logically, this could belong outside AddBSNeuron, but we wish to reuse backward compatible functions. 
+ *       "Name": <name>,
+ *       "SomaID": <soma-id>,
+ *       "AxonID": <axon-id>,
+ *       <etc... all parameters>
+ *     }
+ *   },
+ *   <more requests>
+ * ]
+ */
+std::string RPCManager::NESRequest(std::string _JSONRequest) { // Generic JSON-based NES requests.
+
+    // Parse Request
+    //Logger_->Log(_JSONRequest, 3);
+    API::HandlerData Handle(_JSONRequest, "NESRequest", nullptr, true, true);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    if (!Handle.ReqJSON().is_array()) {
+        Logger_->Log("Bad format. Must be array of requests.", 8);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);       
+    }
+
+    // Build Response
+    nlohmann::json ResponseJSON = nlohmann::json::array(); // Create empty array for the list of responses.
+
+    // For each request in the JSON list:
+    for (const auto& req : Handle.ReqJSON()) {
+
+        int ReqID = -1;
+        //int SimulationID = -1;
+        std::string ReqFunc;
+        nlohmann::json ReqParams;
+        nlohmann::json ReqResponseJSON;
+        //std::string Response;
+
+        // Get the mandatory components of a request:
+        for (const auto& [req_key, req_value]: req.items()) {
+            if (req_key == "ReqID") {
+                ReqID = req_value.template get<int>();
+            //} else if (req_key == "SimID") {
+            //    SimulationID = req_value.template get<int>();
+            } else {
+                ReqFunc = req_key;
+                ReqParams = req_value;
+            }
+        }
+
+        if (BadReqID(ReqID)) { // e.g. < highest request ID already handled
+            ReqResponseJSON["ReqID"] = ReqID;
+            ReqResponseJSON["StatusCode"] = 1; // bad request id
+        } else {
+
+            // Typically would call a specific handler from here, but let's just keep parsing.
+            auto it = NES_Request_handlers.find(ReqFunc);
+            if (it == NES_Request_handlers.end()) {
+                ReqResponseJSON["ReqID"] = ReqID;
+                ReqResponseJSON["StatusCode"] = 1; // unknown request *** TODO: use the right code
+                //Response = ReqResponseJSON.dump();
+            } else {
+                if (it->second.Handler == nullptr) {
+                    ReqResponseJSON["ReqID"] = ReqID;
+                    ReqResponseJSON["StatusCode"] = 1; // not a valid NES request *** TODO: use the right code
+                } else {
+                    std::string Response = it->second.Handler(ReqParams); // Calls the handler.
+                    // *** TODO: Either:
+                    //     a) Convert handlers to return nlohmann::json objects so that we
+                    //        can easily add ReqResponseJSON["ReqID"] = ReqID here, or,
+                    //     b) Convert Response back to a ReqResponseJSON here in order to
+                    //        add that... (This is more work, lower performance...)
+                    //     Right now, we do b) (sadly...)
+                    ReqResponseJSON = nlohmann::json::parse(Response);
+                    ReqResponseJSON["ReqID"] = ReqID;
+                }
+            }
+
+        }
+        ResponseJSON.push_back(ReqResponseJSON);
+
+    }
+
+    std::string Response = ResponseJSON.dump();
+    if (Response.length() < 1024) { 
+        Logger_->Log("DEBUG --> Responding: " + Response, 0); // For DEBUG
+    } else {
+        Logger_->Log("DEBUG --> Response Omitted Due To Length", 0); // For DEBUG
+    }
+    // if (!IsLoadingSim()) {
+    //     std::cout << "DEBUG ---> Responding: " << ResponseJSON.dump() << '\n'; std::cout.flush();
+    // }
+
+    return Handle.ResponseAndStoreRequest(ResponseJSON, false); // See comments at ResponseAndStoreRequest().
+}
+
 
 
 }; // Close Namespace API
