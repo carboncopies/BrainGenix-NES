@@ -121,56 +121,56 @@ public:
      * @return std::string 
      */
     std::string SimulationCreate(std::string _JSONRequest);
-    std::string SimulationReset(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string SimulationRunFor(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string SimulationRecordAll(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string SimulationGetRecording(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string SimulationGetStatus(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string SimulationBuildMesh(std::string _JSONRequest, API::Simulations _Simulations);
-    // std::string SimulationSave(std::string _JSONRequest, API::Simulations _Simulations);
-    // std::string SimulationLoad(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string SimulationGetGeoCenter(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string SimulationReset(std::string _JSONRequest);
+    std::string SimulationRunFor(std::string _JSONRequest);
+    std::string SimulationRecordAll(std::string _JSONRequest);
+    std::string SimulationGetRecording(std::string _JSONRequest);
+    std::string SimulationGetStatus(std::string _JSONRequest);
+    std::string SimulationBuildMesh(std::string _JSONRequest);
+    // std::string SimulationSave(std::string _JSONRequest);
+    // std::string SimulationLoad(std::string _JSONRequest);
+    std::string SimulationGetGeoCenter(std::string _JSONRequest);
 
-    std::string SphereCreate(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string BulkSphereCreate(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string CylinderCreate(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string BulkCylinderCreate(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string BoxCreate(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string BulkBoxCreate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string SphereCreate(std::string _JSONRequest);
+    std::string BulkSphereCreate(std::string _JSONRequest);
+    std::string CylinderCreate(std::string _JSONRequest);
+    std::string BulkCylinderCreate(std::string _JSONRequest);
+    std::string BoxCreate(std::string _JSONRequest);
+    std::string BulkBoxCreate(std::string _JSONRequest);
 
-    std::string BSCreate(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string BulkBSCreate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string BSCreate(std::string _JSONRequest);
+    std::string BulkBSCreate(std::string _JSONRequest);
 
-    std::string StapleCreate(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string ReceptorCreate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string StapleCreate(std::string _JSONRequest);
+    std::string ReceptorCreate(std::string _JSONRequest);
 
-    std::string BSNeuronCreate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string BSNeuronCreate(std::string _JSONRequest);
 
-    std::string PatchClampDACCreate(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string PatchClampDACSetOutputList(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string PatchClampDACCreate(std::string _JSONRequest);
+    std::string PatchClampDACSetOutputList(std::string _JSONRequest);
 
-    std::string PatchClampADCCreate(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string PatchClampADCSetSampleRate(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string PatchClampADCGetRecordedData(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string PatchClampADCCreate(std::string _JSONRequest);
+    std::string PatchClampADCSetSampleRate(std::string _JSONRequest);
+    std::string PatchClampADCGetRecordedData(std::string _JSONRequest);
 
-    std::string SetSpecificAPTimes(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string SetSpontaneousActivity(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string SetSpecificAPTimes(std::string _JSONRequest);
+    std::string SetSpontaneousActivity(std::string _JSONRequest);
 
-    std::string AttachRecordingElectrodes(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string CalciumImagingAttach(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string CalciumImagingShowVoxels(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string CalciumImagingRecordAposteriori(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string SetRecordInstruments(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string GetInstrumentRecordings(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string AttachRecordingElectrodes(std::string _JSONRequest);
+    std::string CalciumImagingAttach(std::string _JSONRequest);
+    std::string CalciumImagingShowVoxels(std::string _JSONRequest);
+    std::string CalciumImagingRecordAposteriori(std::string _JSONRequest);
+    std::string SetRecordInstruments(std::string _JSONRequest);
+    std::string GetInstrumentRecordings(std::string _JSONRequest);
 
-    std::string ManTaskStatus(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string VisualizerGetImage(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string VisualizerGetImageHandles(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string VisualizerGetStatus(std::string _JSONRequest, API::Simulations _Simulations);
-    std::string VisualizerGenerateImage(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string ManTaskStatus(std::string _JSONRequest);
+    std::string VisualizerGetImage(std::string _JSONRequest);
+    std::string VisualizerGetImageHandles(std::string _JSONRequest);
+    std::string VisualizerGetStatus(std::string _JSONRequest);
+    std::string VisualizerGenerateImage(std::string _JSONRequest);
 
 
-    std::string Debug(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string Debug(std::string _JSONRequest);
 
     /**
      * @brief Returns true if the simulation is being worked on by another thread.

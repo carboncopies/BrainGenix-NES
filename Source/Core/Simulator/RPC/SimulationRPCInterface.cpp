@@ -20,111 +20,6 @@ namespace Simulator {
 
 
 
-// std::string SimulationCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.SimulationCreate(ReqParams.dump(), _Simulations);
-// }
-// std::string SimulationResetHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.SimulationReset(ReqParams.dump(), _Simulations);
-// }
-// std::string SimulationRunForHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.SimulationRunFor(ReqParams.dump(), _Simulations);
-// }
-// std::string SimulationRecordAllHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.SimulationRecordAll(ReqParams.dump(), _Simulations);
-// }
-// std::string SimulationGetRecordingHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.SimulationGetRecording(ReqParams.dump(), _Simulations);
-// }
-// std::string SimulationGetStatusHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.SimulationGetStatus(ReqParams.dump(), _Simulations);
-// }
-// std::string SimulationBuildMeshHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.SimulationBuildMesh(ReqParams.dump(), _Simulations);
-// }
-// std::string SimulationSaveHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.SimulationSave(ReqParams.dump(), _Simulations);
-// }
-// std::string SimulationLoadHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.SimulationLoad(ReqParams.dump(), _Simulations);
-// }
-// std::string SimulationGetGeoCenterHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.SimulationGetGeoCenter(ReqParams.dump(), _Simulations);
-// }
-// std::string SphereCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.SphereCreate(ReqParams.dump(), _Simulations);
-// }
-// std::string CylinderCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.CylinderCreate(ReqParams.dump(), _Simulations);
-// }
-// std::string BoxCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.BoxCreate(ReqParams.dump(), _Simulations);
-// }
-// std::string BSCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.BSCreate(ReqParams.dump(), _Simulations);
-// }
-// std::string StapleCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.StapleCreate(ReqParams.dump(), _Simulations);
-// }
-// std::string ReceptorCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.ReceptorCreate(ReqParams.dump(), _Simulations);
-// }
-// std::string BSNeuronCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.BSNeuronCreate(ReqParams.dump(), _Simulations);
-// }
-// std::string PatchClampDACCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.PatchClampDACCreate(ReqParams.dump(), _Simulations);
-// }
-// std::string PatchClampADCCreateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.PatchClampADCCreate(ReqParams.dump(), _Simulations);
-// }
-// std::string PatchClampDACSetOutputListHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.PatchClampDACSetOutputList(ReqParams.dump(), _Simulations);
-// }
-// std::string PatchClampADCSetSampleRateHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.PatchClampADCSetSampleRate(ReqParams.dump(), _Simulations);
-// }
-// std::string PatchClampADCGetRecordedDataHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.PatchClampADCGetRecordedData(ReqParams.dump(), _Simulations);
-// }
-// std::string SetSpecificAPTimesHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.SetSpecificAPTimes(ReqParams.dump(), _Simulations);
-// }
-// std::string SetSpontaneousActivityHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.SetSpontaneousActivity(ReqParams.dump(), _Simulations);
-// }
-// std::string AttachRecordingElectrodesHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.AttachRecordingElectrodes(ReqParams.dump(), _Simulations);
-// }
-// std::string CalciumImagingAttachHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.CalciumImagingAttach(ReqParams.dump(), _Simulations);
-// }
-// std::string CalciumImagingShowVoxelsHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.CalciumImagingShowVoxels(ReqParams.dump(), _Simulations);
-// }
-// std::string CalciumImagingRecordAposterioriHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.CalciumImagingRecordAposteriori(ReqParams.dump(), _Simulations);
-// }
-// std::string SetRecordInstrumentsHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.SetRecordInstruments(ReqParams.dump(), _Simulations);
-// }
-// std::string GetInstrumentRecordingsHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.GetInstrumentRecordings(ReqParams.dump(), _Simulations);
-// }
-// std::string ManTaskStatusHandler(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.ManTaskStatus(ReqParams.dump(), _Simulations);
-// }
-// std::string VisualizerGenerateImage(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.VisualizerGenerateImage(ReqParams.dump(), _Simulations);
-// }
-// std::string VisualizerGetImageHandles(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.VisualizerGetImageHandles(ReqParams.dump(), _Simulations);
-// }
-// std::string VisualizerGetStatus(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.VisualizerGetStatus(ReqParams.dump(), _Simulations);
-// }
-// std::string VisualizerGetImage(Manager& Man, const nlohmann::json& ReqParams, API::Simulations _Simulations) {
-//     return Man.VisualizerGetImage(ReqParams.dump(), _Simulations);
-// }
 
 
 
@@ -182,8 +77,15 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
 
     // _RPCManager->AddRoute("Debug", Logger_, [this](std::string RequestJSON){ return Debug(RequestJSON);});
 
-    // std::function<std::string(std::string _Request)> myFunc = std::bind(&Manager::SimulationCreate, this, std::placeholders::_1);
-    _RPCManager->AddRoute("SimulationCreate", std::bind(&Manager::SimulationCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Create",       std::bind(&Manager::SimulationCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Reset",        std::bind(&Manager::SimulationReset, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/RunFor",       std::bind(&Manager::SimulationRunFor, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/RecordAll",    std::bind(&Manager::SimulationRecordAll, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetRecording", std::bind(&Manager::SimulationGetRecording, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetStatus",    std::bind(&Manager::SimulationGetStatus, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/BuildMesh",    std::bind(&Manager::SimulationBuildMesh, this, std::placeholders::_1));
+    // _RPCManager->AddRoute("SimulationSave",         std::bind(&Manager::SimulationSave, this, std::placeholders::_1));
+    // _RPCManager->AddRoute("SimulationLoad",         std::bind(&Manager::SimulationLoad, this, std::placeholders::_1));
 
     // Start SE Thread
     StopThreads_ = false;
@@ -192,10 +94,10 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
 
 Manager::~Manager() {
 
-    std::cout<<"[Info] Signaling To Worker Threads To Stop\n";
+    Logger_->Log("Signaling To Worker Threads To Stop", 1);
     StopThreads_ = true;
 
-    std::cout<<"[Info] Joining Simulation Worker Threads\n";
+    Logger_->Log("Joining Simulation Worker Threads", 2);
     for (unsigned int i = 0; i < SimulationThreads_.size(); i++) {
         SimulationThreads_[i].join();
     }
@@ -254,7 +156,7 @@ bool LoadFileIntoString(const std::string& FilePath, std::string& FileContents) 
 //     LoadingSimReplaceID = -1;
 //     // *** Not sure if we should prepend with "std::string loadresponse = " to keep the full
 //     //     record of the loading requests in the task output JSON.
-//     NESRequest(TaskData.InputData, _Simulations=&TaskData);
+//     NESRequest(TaskData.InputData, &Simulations_=&TaskData);
 //     TaskData.OutputData["SimulationID"] = API::ManagerTaskData.ReplaceSimulationID;
 //     //TaskData.NewSimulationID = GetSimReplaceID();
 //     TaskData.SetStatus(API::ManagerTaskStatus::Success);
@@ -283,6 +185,7 @@ bool LoadFileIntoString(const std::string& FilePath, std::string& FileContents) 
 //     TheNewSimulation->ID = SimID;
 //     return TheNewSimulation;
 // }
+
 
 std::string Manager::SimulationCreate(std::string _JSONRequest) {
 
@@ -313,9 +216,9 @@ std::string Manager::SimulationCreate(std::string _JSONRequest) {
     return Handle.ResponseWithID("SimulationID", Sim->ID);
 }
 
-std::string Manager::SimulationReset(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::SimulationReset(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, "SimulationReset", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "SimulationReset", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -328,9 +231,9 @@ std::string Manager::SimulationReset(std::string _JSONRequest, API::Simulations 
 }
 
 // This request starts at Simulation Task.
-std::string Manager::SimulationRunFor(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::SimulationRunFor(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, "SimulationRunFor", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "SimulationRunFor", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -347,9 +250,9 @@ std::string Manager::SimulationRunFor(std::string _JSONRequest, API::Simulations
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::SimulationRecordAll(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::SimulationRecordAll(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SimulationRecordAll", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "SimulationRecordAll", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -364,9 +267,9 @@ std::string Manager::SimulationRecordAll(std::string _JSONRequest, API::Simulati
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::SimulationGetRecording(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::SimulationGetRecording(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SimulationGetRecording", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "SimulationGetRecording", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -378,9 +281,9 @@ std::string Manager::SimulationGetRecording(std::string _JSONRequest, API::Simul
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-std::string Manager::SimulationGetStatus(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::SimulationGetStatus(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SimulationGetStatus", _Simulations, true);
+    API::HandlerData Handle(_JSONRequest, "SimulationGetStatus", &Simulations_, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -397,9 +300,9 @@ std::string Manager::SimulationGetStatus(std::string _JSONRequest, API::Simulati
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-std::string Manager::SimulationBuildMesh(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::SimulationBuildMesh(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SimulationBuildMesh", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "SimulationBuildMesh", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -413,9 +316,9 @@ std::string Manager::SimulationBuildMesh(std::string _JSONRequest, API::Simulati
     return Handle.ErrResponse(); // ok
 }
 
-// std::string Manager::SimulationSave(std::string _JSONRequest, API::Simulations _Simulations) {
+// std::string Manager::SimulationSave(std::string _JSONRequest) {
 
-//     API::HandlerData Handle(_JSONRequest, "SimulationSave", _Simulations);
+//     API::HandlerData Handle(_JSONRequest, "SimulationSave", &Simulations_);
 //     if (Handle.HasError()) {
 //         return Handle.ErrResponse();
 //     }
@@ -444,9 +347,9 @@ std::string Manager::SimulationBuildMesh(std::string _JSONRequest, API::Simulati
  * 
  */
 // // This request starts a Manager Task.
-// std::string Manager::SimulationLoad(std::string _JSONRequest, API::Simulations _Simulations) {
+// std::string Manager::SimulationLoad(std::string _JSONRequest) {
 
-//     API::HandlerData Handle(_JSONRequest, "SimulationCreate", _Simulations, true, true);
+//     API::HandlerData Handle(_JSONRequest, "SimulationCreate", &Simulations_, true, true);
 //     if (Handle.HasError()) {
 //         return Handle.ErrResponse();
 //     }
@@ -481,9 +384,9 @@ std::string Manager::SimulationBuildMesh(std::string _JSONRequest, API::Simulati
 //     return Handle.ResponseWithID("TaskID", TaskID);
 // }
 
-std::string Manager::SimulationGetGeoCenter(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::SimulationGetGeoCenter(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SimulationGetGeoCenter", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "SimulationGetGeoCenter", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -497,9 +400,9 @@ std::string Manager::SimulationGetGeoCenter(std::string _JSONRequest, API::Simul
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-std::string Manager::SphereCreate(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::SphereCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SphereCreate", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "SphereCreate", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -520,9 +423,9 @@ std::string Manager::SphereCreate(std::string _JSONRequest, API::Simulations _Si
     return Handle.ResponseWithID("ShapeID", S.ID);
 }
 
-std::string Manager::CylinderCreate(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::CylinderCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "CylinderCreate", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "CylinderCreate", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -545,9 +448,9 @@ std::string Manager::CylinderCreate(std::string _JSONRequest, API::Simulations _
     return Handle.ResponseWithID("ShapeID", S.ID);
 }
 
-std::string Manager::BoxCreate(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::BoxCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "BoxCreate", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "BoxCreate", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -574,9 +477,9 @@ std::string Manager::BoxCreate(std::string _JSONRequest, API::Simulations _Simul
  * Form: A shape.
  * Function: Some parameters.
  */
-std::string Manager::BSCreate(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::BSCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "BSCreate", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "BSCreate", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -607,9 +510,9 @@ std::string Manager::BSCreate(std::string _JSONRequest, API::Simulations _Simula
     return Handle.ResponseWithID("CompartmentID", C.ID);
 }
 
-std::string Manager::StapleCreate(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::StapleCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "StapleCreate", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "StapleCreate", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -645,9 +548,9 @@ std::string Manager::StapleCreate(std::string _JSONRequest, API::Simulations _Si
  * source neuron information (found via the source compartment) to
  * set up input connections to watch.
  */
-std::string Manager::ReceptorCreate(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::ReceptorCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "ReceptorCreate", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "ReceptorCreate", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -692,9 +595,9 @@ OR
 2. Tell the NeuralCircuit to create a neuron.
 */
 
-std::string Manager::BSNeuronCreate(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::BSNeuronCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "BSNeuronCreate", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "BSNeuronCreate", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -733,9 +636,9 @@ std::string Manager::BSNeuronCreate(std::string _JSONRequest, API::Simulations _
     return Handle.ResponseWithID("NeuronID", C.ID);
 }
 
-std::string Manager::PatchClampDACCreate(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::PatchClampDACCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "PatchClampDACCreate", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "PatchClampDACCreate", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -767,9 +670,9 @@ std::string Manager::PatchClampDACCreate(std::string _JSONRequest, API::Simulati
  *   ]
  * }
  */
-std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "PatchClampDACSetOutputList", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "PatchClampDACSetOutputList", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -808,9 +711,9 @@ std::string Manager::PatchClampDACSetOutputList(std::string _JSONRequest, API::S
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::PatchClampADCCreate(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::PatchClampADCCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "PatchClampADCCreate", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "PatchClampADCCreate", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -831,9 +734,9 @@ std::string Manager::PatchClampADCCreate(std::string _JSONRequest, API::Simulati
     return Handle.ResponseWithID("PatchClampADCID", T.ID);
 }
 
-std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "PatchClampADCSetSampleRate", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "PatchClampADCSetSampleRate", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -858,9 +761,9 @@ std::string Manager::PatchClampADCSetSampleRate(std::string _JSONRequest, API::S
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "PatchClampADCGetRecordedData", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "PatchClampADCGetRecordedData", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -893,9 +796,9 @@ std::string Manager::PatchClampADCGetRecordedData(std::string _JSONRequest, API:
  *   ]
  * }
  */
-std::string Manager::SetSpecificAPTimes(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::SetSpecificAPTimes(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SetSpecificAPTimes", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "SetSpecificAPTimes", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -943,9 +846,9 @@ std::string Manager::SetSpecificAPTimes(std::string _JSONRequest, API::Simulatio
  *   "StatusCode": <status-code>,
  * }
  */
-std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::SetSpontaneousActivity(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SetSpontaneousActivity", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "SetSpontaneousActivity", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1006,9 +909,9 @@ std::string Manager::SetSpontaneousActivity(std::string _JSONRequest, API::Simul
  *   "ElectrodeIDs": [ <id>, (more IDs) ]
  * }
  */
-std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "AttachRecordingElectrodes", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "AttachRecordingElectrodes", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1103,9 +1006,9 @@ std::string Manager::AttachRecordingElectrodes(std::string _JSONRequest, API::Si
  *   "StatusCode": <status-code>,
  * }
  */
-std::string Manager::CalciumImagingAttach(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::CalciumImagingAttach(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "CalciumImagingAttach", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "CalciumImagingAttach", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1180,9 +1083,9 @@ std::string Manager::CalciumImagingAttach(std::string _JSONRequest, API::Simulat
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::CalciumImagingShowVoxels(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::CalciumImagingShowVoxels(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "CalciumImagingShowVoxels", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "CalciumImagingShowVoxels", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1193,9 +1096,9 @@ std::string Manager::CalciumImagingShowVoxels(std::string _JSONRequest, API::Sim
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-std::string Manager::CalciumImagingRecordAposteriori(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::CalciumImagingRecordAposteriori(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "CalciumImagingRecordAposteriori", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "CalciumImagingRecordAposteriori", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1205,9 +1108,9 @@ std::string Manager::CalciumImagingRecordAposteriori(std::string _JSONRequest, A
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::SetRecordInstruments(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::SetRecordInstruments(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SetRecordInstruments", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "SetRecordInstruments", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1222,9 +1125,9 @@ std::string Manager::SetRecordInstruments(std::string _JSONRequest, API::Simulat
     return Handle.ErrResponse(); // ok
 }
 
-std::string Manager::GetInstrumentRecordings(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::GetInstrumentRecordings(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "GetInstrumentRecordings", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "GetInstrumentRecordings", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1247,9 +1150,9 @@ std::string Manager::GetInstrumentRecordings(std::string _JSONRequest, API::Simu
  *   "TaskStatus": <task-status-code>
  * }
  */
-std::string Manager::ManTaskStatus(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::ManTaskStatus(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "ManTaskStatus", _Simulations, true, true);
+    API::HandlerData Handle(_JSONRequest, "ManTaskStatus", &Simulations_, true, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1309,9 +1212,9 @@ std::string Manager::ManTaskStatus(std::string _JSONRequest, API::Simulations _S
  *   "ImageHeight_px": unsigned int
  * }
  */
-std::string Manager::VisualizerGenerateImage(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::VisualizerGenerateImage(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, "VisualizerGenerateImage", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "VisualizerGenerateImage", &Simulations_);
 
   
     // Create and Populate Parameters From Request
@@ -1358,9 +1261,9 @@ std::string Manager::VisualizerGenerateImage(std::string _JSONRequest, API::Simu
  *   "SimulationID": <SimID>,
  * }
  */
-std::string Manager::VisualizerGetStatus(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::VisualizerGetStatus(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, "VisualizerGetStatus", _Simulations, true);
+    API::HandlerData Handle(_JSONRequest, "VisualizerGetStatus", &Simulations_, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1377,9 +1280,9 @@ std::string Manager::VisualizerGetStatus(std::string _JSONRequest, API::Simulati
  *   "SimulationID": <SimID>,
  * }
  */
-std::string Manager::VisualizerGetImageHandles(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::VisualizerGetImageHandles(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, "VisualizerGetImageHandles", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "VisualizerGetImageHandles", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1397,9 +1300,9 @@ std::string Manager::VisualizerGetImageHandles(std::string _JSONRequest, API::Si
  *   "ImageHandle": <str>
  * }
  */
-std::string Manager::VisualizerGetImage(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::VisualizerGetImage(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, "VisualizerGetImage", _Simulations);
+    API::HandlerData Handle(_JSONRequest, "VisualizerGetImage", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -1455,7 +1358,7 @@ std::string Manager::VisualizerGetImage(std::string _JSONRequest, API::Simulatio
 
 
 
-std::string Manager::Debug(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::Debug(std::string _JSONRequest) {
  
     // Parse Request
     std::cout<<_JSONRequest<<std::endl;
