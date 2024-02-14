@@ -1,7 +1,3 @@
-#include <Visualizer/VisualizerRPCInterface.h>
-#include <RPC/APIStatusCode.h>
-
-// Third-Party Libraries (BG convention: use <> instead of "")
 
 #include <iostream>
 #include <fstream>
@@ -9,6 +5,13 @@
 #include <mutex>
 #include <chrono>
 
+// Third-Party Libraries (BG convention: use <> instead of "")
+#include <cpp-base64/base64.h>
+
+
+
+#include <Visualizer/VisualizerRPCInterface.h>
+#include <RPC/APIStatusCode.h>
 
 
 namespace BG {
