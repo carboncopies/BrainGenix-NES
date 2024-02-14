@@ -40,16 +40,6 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
 
 
     // Register Callback For CreateSim
-    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationCreate").Route, Logger_, [this](std::string RequestJSON){ return SimulationCreate(RequestJSON);});
-    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationReset").Route, Logger_, [this](std::string RequestJSON){ return SimulationReset(RequestJSON);});
-    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationRunFor").Route, Logger_, [this](std::string RequestJSON){ return SimulationRunFor(RequestJSON);});
-    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationRecordAll").Route, Logger_, [this](std::string RequestJSON){ return SimulationRecordAll(RequestJSON);});
-    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationGetRecording").Route, Logger_, [this](std::string RequestJSON){ return SimulationGetRecording(RequestJSON);});
-    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationGetStatus").Route, Logger_, [this](std::string RequestJSON){ return SimulationGetStatus(RequestJSON);});
-    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationBuildMesh").Route, Logger_, [this](std::string RequestJSON){ return SimulationBuildMesh(RequestJSON);});
-    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationSave").Route, Logger_, [this](std::string RequestJSON){ return SimulationSave(RequestJSON);});
-    // _RPCManager->AddRoute(NES_Request_handlers.at("SimulationLoad").Route, Logger_, [this](std::string RequestJSON){ return SimulationLoad(RequestJSON);});
-
     // _RPCManager->AddRoute(NES_Request_handlers.at("SphereCreate").Route, Logger_, [this](std::string RequestJSON){ return SphereCreate(RequestJSON);});
     // _RPCManager->AddRoute(NES_Request_handlers.at("BulkSphereCreate").Route, Logger_, [this](std::string RequestJSON){ return BulkSphereCreate(RequestJSON);});
     // _RPCManager->AddRoute(NES_Request_handlers.at("CylinderCreate").Route, Logger_, [this](std::string RequestJSON){ return CylinderCreate(RequestJSON);});
@@ -75,7 +65,6 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
 
     // _RPCManager->AddRoute(NES_Request_handlers.at("ManTaskStatus").Route, Logger_, [this](std::string RequestJSON){ return ManTaskStatus(RequestJSON);});
 
-    // _RPCManager->AddRoute("Debug", Logger_, [this](std::string RequestJSON){ return Debug(RequestJSON);});
 
     _RPCManager->AddRoute("Simulation/Create",       std::bind(&Manager::SimulationCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Reset",        std::bind(&Manager::SimulationReset, this, std::placeholders::_1));
@@ -83,7 +72,6 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     _RPCManager->AddRoute("Simulation/RecordAll",    std::bind(&Manager::SimulationRecordAll, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetRecording", std::bind(&Manager::SimulationGetRecording, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetStatus",    std::bind(&Manager::SimulationGetStatus, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/BuildMesh",    std::bind(&Manager::SimulationBuildMesh, this, std::placeholders::_1));
     // _RPCManager->AddRoute("SimulationSave",         std::bind(&Manager::SimulationSave, this, std::placeholders::_1));
     // _RPCManager->AddRoute("SimulationLoad",         std::bind(&Manager::SimulationLoad, this, std::placeholders::_1));
 
@@ -300,21 +288,6 @@ std::string Manager::SimulationGetStatus(std::string _JSONRequest) {
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-std::string Manager::SimulationBuildMesh(std::string _JSONRequest) {
- 
-    API::HandlerData Handle(_JSONRequest, "SimulationBuildMesh", &Simulations_);
-    if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
-
-    // if (!BuildMeshFromSimulation(Logger_, Renderer_, Handle.Sim())) {
-    //     return Handle.ErrResponse(999); // general failure
-    // }
-    std::cout<<"WARNING THE SIMULATION BUILD MESH FUNCTION DOESNT DO AYNTHING!!!!\n";
-
-    // Return Result ID
-    return Handle.ErrResponse(); // ok
-}
 
 // std::string Manager::SimulationSave(std::string _JSONRequest) {
 

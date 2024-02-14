@@ -99,9 +99,17 @@ We use JSON requests, so the route and example requests are listed below:
         StatusCode: ENUM_STATUS_CODE,
         IsSimulating: bool,
         RealWorldTimeRemaining_ms: float,
-        RealWorldTimeElapsed:ms: float,
-        InSimulationTime_ms:float,
-        InSimulationTimeRemaining:float,
-        PercentComplete:float
+        RealWorldTimeElapsed_ms: float,
+        InSimulationTime_ms: float,
+        InSimulationTimeRemaining: float,
+        PercentComplete: float
     ]
 ```
+
+
+### Simulation - Save
+Broken right now.
+
+### Simulation - Load
+Broken right now.
+
