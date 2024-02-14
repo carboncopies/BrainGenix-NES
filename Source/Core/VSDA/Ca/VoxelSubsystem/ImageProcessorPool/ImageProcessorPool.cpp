@@ -111,7 +111,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
 
                     if (!Status) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 0, 0);
                     } else if (ThisVoxel.IsBorder_) {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
                     } else if (ThisVoxel.IsFilled_) {
