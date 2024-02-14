@@ -120,7 +120,7 @@ public:
      * @param _JSONRequest 
      * @return std::string 
      */
-    std::string SimulationCreate(std::string _JSONRequest, API::Simulations _Simulations);
+    std::string SimulationCreate(std::string _JSONRequest);
     std::string SimulationReset(std::string _JSONRequest, API::Simulations _Simulations);
     std::string SimulationRunFor(std::string _JSONRequest, API::Simulations _Simulations);
     std::string SimulationRecordAll(std::string _JSONRequest, API::Simulations _Simulations);

@@ -39,7 +39,6 @@ RPCManager::RPCManager(Config::Config* _Config, BG::Common::Logger::LoggingSyste
     AddRoute("NES", Logger_, [this](std::string RequestJSON){ return NESRequest(RequestJSON);});
     
 
-
     int ThreadCount = std::thread::hardware_concurrency();
     _Logger->Log("Starting RPC Server With '" + std::to_string(ThreadCount) + "' Threads", 5);
     
@@ -53,18 +52,17 @@ RPCManager::~RPCManager() {
 }
 
 
-void RPCManager::AddRequestHandler(std::string _RouteName, RouteAndHandler _Handler) {
-    RequestHandlers_.insert(std::pair<std::string, RouteAndHandler>(_RouteName, _Handler));
+// void RPCManager::AddRequestHandler(std::string _RouteName, RouteAndHandler _Handler) {
+    // RequestHandlers_.insert(std::pair<std::string, std::function<std::string>&>(_RouteName, _Handler));
+// }
+
+void RPCManager::AddRoute(std::string _RouteHandle, std::function<std::string(std::string _JSONRequest)> _Function) {
+    RequestHandlers_.insert(std::pair<std::string, std::function<std::string(std::string _JSONRequest)>>(_RouteHandle, _Function));
+    // RouteAndHandler Handler;
+    // Handler.Route_ = _RouteHandle;
+    // Handler.Handler_ = _Function;
+    // AddRequestHandler(_RouteHandle, Handler);
 }
-
-void RPCManager::AddRoute(std::string _RouteHandle, NESRequest_func_t _Function) {
-    RouteAndHandler Handler;
-    Handler.Route_ = _RouteHandle;
-    Handler.Handler_ = _Function;
-    AddRequestHandler(_RouteHandle, Handler);
-}
-
-
 
 
 bool BadReqID(int ReqID) {
@@ -146,12 +144,12 @@ std::string RPCManager::NESRequest(std::string _JSONRequest) { // Generic JSON-b
                 ReqResponseJSON["StatusCode"] = 1; // unknown request *** TODO: use the right code
                 //Response = ReqResponseJSON.dump();
             } else {
-                if (it->second.Handler_ == nullptr) {
+                if (it->second) {
                     ReqResponseJSON["ReqID"] = ReqID;
                     Logger_->Log("Error, Handler Is Null For Call " + ReqFunc + ", Continuing Anyway", 7);
                     // ReqResponseJSON["StatusCode"] = 1; // not a valid NES request *** TODO: use the right code
                 } else {
-                    std::string Response = it->second.Handler_(ReqParams); // Calls the handler.
+                    std::string Response = it->second(ReqParams); // Calls the handler.
                     // *** TODO: Either:
                     //     a) Convert handlers to return nlohmann::json objects so that we
                     //        can easily add ReqResponseJSON["ReqID"] = ReqID here, or,

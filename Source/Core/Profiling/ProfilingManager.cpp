@@ -12,7 +12,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/RPCRoutes/EM.h>
 #include <VSDA/RPCRoutes/Ca.h>
-#include <Simulator/Manager.h>
+#include <Simulator/RPC/SimulationRPCInterface.h>
 #include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/Structs/Simulation.h>
 #include <Simulator/EngineController.h>

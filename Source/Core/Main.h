@@ -29,7 +29,7 @@
 #include <Config/ConfigurationManager.h>
 #include <Config/Config.h>
 #include <RPC/RPCManager.h>
-#include <Simulator/Manager.h>
+#include <Simulator/RPC/SimulationRPCInterface.h>
 #include <VSDA/RPCInterface.h>
 #include <VSDA/RenderPool.h>
 #include <Visualizer/VisualizerPool.h>

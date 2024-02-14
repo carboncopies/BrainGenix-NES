@@ -1,4 +1,4 @@
-#include <Simulator/Manager.h>
+#include <Simulator/RPC/SimulationRPCInterface.h>
 #include <Simulator/BallAndStick/BSNeuron.h>
 #include <RPC/APIStatusCode.h>
 #include <Simulator/Geometries/VecTools.h>
@@ -182,6 +182,9 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
 
     // _RPCManager->AddRoute("Debug", Logger_, [this](std::string RequestJSON){ return Debug(RequestJSON);});
 
+    // std::function<std::string(std::string _Request)> myFunc = std::bind(&Manager::SimulationCreate, this, std::placeholders::_1);
+    _RPCManager->AddRoute("SimulationCreate", std::bind(&Manager::SimulationCreate, this, std::placeholders::_1));
+
     // Start SE Thread
     StopThreads_ = false;
 
@@ -281,9 +284,9 @@ bool LoadFileIntoString(const std::string& FilePath, std::string& FileContents) 
 //     return TheNewSimulation;
 // }
 
-std::string Manager::SimulationCreate(std::string _JSONRequest, API::Simulations _Simulations) {
+std::string Manager::SimulationCreate(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, "SimulationCreate", _Simulations, true, true);
+    API::HandlerData Handle(_JSONRequest, "SimulationCreate", &Simulations_, true, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }

@@ -49,7 +49,7 @@ private:
 
 
 
-    std::map<std::string, RouteAndHandler> RequestHandlers_;// = {
+    std::map<std::string, std::function<std::string(std::string _JSONRequest)>> RequestHandlers_;// = {
         // {"SimulationCreate", {"Simulation/Create", SimulationCreateHandler} },
         // {"SimulationReset", {"Simulation/Reset", SimulationResetHandler} },
         // {"SimulationRunFor", {"Simulation/RunFor", SimulationRunForHandler} },
@@ -144,8 +144,9 @@ public:
      * @param _RouteHandle 
      * @param _Function 
      */
-    void AddRoute(std::string _RouteHandle, NESRequest_func_t _Function);
+    void AddRoute(std::string _RouteHandle, std::function<std::string(std::string _JSONRequest)> _Function);
 
+    
 
 
     std::string NESRequest(std::string _JSONRequest); // Generic JSON-based NES requests.

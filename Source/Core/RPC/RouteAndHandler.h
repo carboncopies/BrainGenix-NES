@@ -12,8 +12,9 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <string>
-#include <memory>
-#include <map>
+#include <functional>
+// #include <memory>
+// #include <map>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -34,11 +35,11 @@ namespace API {
 //           E.g. call AddBSNeuron(ReqParams) where ReqParams is as obtained
 //           in NESRequest() below.
 
-typedef std::string NESRequest_func_t(const nlohmann::json&);
+// typedef std::string NESRequest_func_t(const nlohmann::json&);
 
 struct RouteAndHandler {
     std::string Route_;
-    NESRequest_func_t* Handler_;
+    std::function<std::string>& Handler_;
 };
 
 

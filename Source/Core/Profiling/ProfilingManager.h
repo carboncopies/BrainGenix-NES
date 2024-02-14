@@ -23,7 +23,7 @@
 #include <nlohmann/json.hpp>
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Simulator/Manager.h>
+#include <Simulator/RPC/SimulationRPCInterface.h>
 
 #include <Config/Config.h>
 #include <BG/Common/Logger/Logger.h>

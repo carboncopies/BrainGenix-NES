@@ -19,8 +19,8 @@ set(MAIN_SOURCES
 
 
 
-  ${SRC_DIR}/Core/Simulator/Manager.cpp
-  ${SRC_DIR}/Core/Simulator/Manager.h
+  ${SRC_DIR}/Core/Simulator/RPC/SimulationRPCInterface.cpp
+  ${SRC_DIR}/Core/Simulator/RPC/SimulationRPCInterface.h
   ${SRC_DIR}/Core/Simulator/Engine.cpp
   ${SRC_DIR}/Core/Simulator/Engine.h
   ${SRC_DIR}/Core/Simulator/EngineController.cpp
