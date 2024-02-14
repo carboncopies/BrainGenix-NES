@@ -130,9 +130,9 @@ public:
 
 
     std::string AttachRecordingElectrodes(std::string _JSONRequest);
-    std::string CalciumImagingAttach(std::string _JSONRequest);
-    std::string CalciumImagingShowVoxels(std::string _JSONRequest);
-    std::string CalciumImagingRecordAposteriori(std::string _JSONRequest);
+    // std::string CalciumImagingAttach(std::string _JSONRequest);
+    // std::string CalciumImagingShowVoxels(std::string _JSONRequest);
+    // std::string CalciumImagingRecordAposteriori(std::string _JSONRequest);
     std::string SetRecordInstruments(std::string _JSONRequest);
     std::string GetInstrumentRecordings(std::string _JSONRequest);
 
@@ -162,8 +162,6 @@ public:
      */
     std::vector<std::unique_ptr<Simulation>>* GetSimulationVectorPtr();
 
-    // This allows use of the Manager Logger.
-    BG::Common::Logger::LoggingSystem * Logger() const { return Logger_; }
 
 };
 

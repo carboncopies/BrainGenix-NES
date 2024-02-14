@@ -33,7 +33,7 @@
 #include <Simulator/RPC/SimulationRPCInterface.h>
 #include <Simulator/RPC/GeometryRPCInterface.h>
 #include <Simulator/RPC/ModelRPCInterface.h>
-#include <VSDA/RPCInterface.h>
+#include <VSDA/VSDARPCInterface.h>
 #include <Visualizer/VisualizerRPCInterface.h>
 
 #include <VSDA/RenderPool.h>

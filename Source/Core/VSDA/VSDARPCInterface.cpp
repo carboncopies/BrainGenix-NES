@@ -10,7 +10,7 @@
 #include <cpp-base64/base64.cpp>
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <VSDA/RPCInterface.h>
+#include <VSDA/VSDARPCInterface.h>
 
 
 
@@ -23,7 +23,7 @@ namespace VSDA {
 
 
 
-RPCInterface::RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::RPCManager* _RPCManager, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer) {
+VSDARPCInterface::VSDARPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::RPCManager* _RPCManager, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer) {
 
     // Check Preconditions
     assert(_Logger != nullptr);
@@ -38,23 +38,21 @@ RPCInterface::RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::RPCM
     Logger_->Log("Initializing RPC Interface for VSDA Subsystem", 4);
 
     // Register Callback For CreateSim
-    _RPCManager->AddRoute("VSDA/EM/Initialize", Logger_, [this](std::string RequestJSON){ return VSDAEMInitialize(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/SetupMicroscope", Logger_, [this](std::string RequestJSON){ return VSDAEMSetupMicroscope(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/DefineScanRegion", Logger_, [this](std::string RequestJSON){ return VSDAEMDefineScanRegion(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/QueueRenderOperation", Logger_, [this](std::string RequestJSON){ return VSDAEMQueueRenderOperation(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/GetRenderStatus", Logger_, [this](std::string RequestJSON){ return VSDAEMGetRenderStatus(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/GetImageStack", Logger_, [this](std::string RequestJSON){ return VSDAEMGetImageStack(RequestJSON);});
-    _RPCManager->AddRoute("VSDA/EM/GetImage", Logger_, [this](std::string RequestJSON){ return VSDAEMGetImage(RequestJSON);});
-
-
-}
-
-RPCInterface::~RPCInterface() {
+    _RPCManager->AddRoute("VSDA/EM/Initialize",           std::bind(&VSDARPCInterface::VSDAEMInitialize, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/SetupMicroscope",      std::bind(&VSDARPCInterface::VSDAEMSetupMicroscope, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/DefineScanRegion",     std::bind(&VSDARPCInterface::VSDAEMDefineScanRegion, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/QueueRenderOperation", std::bind(&VSDARPCInterface::VSDAEMQueueRenderOperation, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/GetRenderStatus",      std::bind(&VSDARPCInterface::VSDAEMGetRenderStatus, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/GetImageStack",        std::bind(&VSDARPCInterface::VSDAEMGetImageStack, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/GetImage",             std::bind(&VSDARPCInterface::VSDAEMGetImage, this, std::placeholders::_1));
 
 }
 
+VSDARPCInterface::~VSDARPCInterface() {
 
-std::string RPCInterface::VSDAEMInitialize(std::string _JSONRequest) {
+}
+
+std::string VSDARPCInterface::VSDAEMInitialize(std::string _JSONRequest) {
 
     // Parse Request
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
@@ -80,7 +78,7 @@ std::string RPCInterface::VSDAEMInitialize(std::string _JSONRequest) {
     ResponseJSON["StatusCode"] = Result;
     return ResponseJSON.dump();
 }
-std::string RPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
+std::string VSDARPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
 
     // Parse Request, Get Parameters
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
@@ -124,7 +122,7 @@ std::string RPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     return ResponseJSON.dump();
 
 }
-std::string RPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
+std::string VSDARPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
 
     // Parse Request, Get Parameters
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
@@ -167,7 +165,7 @@ std::string RPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
 
 
 }
-std::string RPCInterface::VSDAEMQueueRenderOperation(std::string _JSONRequest) {
+std::string VSDARPCInterface::VSDAEMQueueRenderOperation(std::string _JSONRequest) {
 
     // Parse Request, Get Parameters
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
@@ -192,7 +190,7 @@ std::string RPCInterface::VSDAEMQueueRenderOperation(std::string _JSONRequest) {
     return ResponseJSON.dump();
 
 }
-std::string RPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
+std::string VSDARPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
 
 
     // Parse Request, Get Parameters
@@ -224,7 +222,7 @@ std::string RPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
     return ResponseJSON.dump();
 
 }
-std::string RPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
+std::string VSDARPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
 
     // Parse Request, Get Parameters
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
@@ -265,10 +263,7 @@ std::string RPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
 
 
 }
-
-
-
-std::string RPCInterface::VSDAEMGetImage(std::string _JSONRequest) {
+std::string VSDARPCInterface::VSDAEMGetImage(std::string _JSONRequest) {
 
 
     // Parse Request, Get Parameters
@@ -336,10 +331,6 @@ std::string RPCInterface::VSDAEMGetImage(std::string _JSONRequest) {
     return ResponseJSON.dump();
 
 }
-
-
-
-
 
 
 }; // Close Namespace VSDA

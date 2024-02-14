@@ -125,8 +125,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Profiling/ProfilingManager.cpp
   ${SRC_DIR}/Core/Profiling/ProfilingManager.h
 
-  ${SRC_DIR}/Core/VSDA/RPCInterface.cpp
-  ${SRC_DIR}/Core/VSDA/RPCInterface.h
+  ${SRC_DIR}/Core/VSDA/VSDARPCInterface.cpp
+  ${SRC_DIR}/Core/VSDA/VSDARPCInterface.h
 
   ${SRC_DIR}/Core/VSDA/RenderPool.cpp
   ${SRC_DIR}/Core/VSDA/RenderPool.h

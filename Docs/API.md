@@ -500,5 +500,137 @@ Broken right now.
     ]
 ```
 
+
+### VSDA - EM - Initialize
+ - Name: `VSDA/EM/Initialize`  
+ - Query: 
+```json
+    [
+        SimulationID: int
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+    ]
+```
+
+### VSDA - EM - SetupMicroscope
+ - Name: `VSDA/EM/SetupMicroscope`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        PixelResolution_nm: float,
+        ImageWidth_px: int,
+        ImageHeight_px: int,
+        SliceThickness_nm: float,
+        ScanRegionOverlap_percent: float,
+        MicroscopeFOV_deg: int,
+        NumPixelsPerVoxel_px: int
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+    ]
+```
+
+### VSDA - EM - DefineScanRegion
+ - Name: `VSDA/EM/DefineScanRegion`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        Point1X_um: float,
+        Point1Y_um: float,
+        Point1Z_um: float,
+        Point2X_um: float,
+        Point2Y_um: float,
+        Point2Z_um: float
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        ScanRegionID: int
+    ]
+```
+
+### VSDA - EM - QueueRenderOperation
+ - Name: `VSDA/EM/QueueRenderOperation`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        ScanRegionID: int
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+    ]
+```
+
+### VSDA - EM - VSDAEMGetRenderStatus
+ - Name: `VSDA/EM/VSDAEMGetRenderStatus`  
+ - Query: 
+```json
+    [
+        SimulationID: int
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        RenderStatus: ENUM_VSDA_EM_STATUS_CODE,
+        CurrentSlice: int,
+        TotalSlices: int,
+        CurrentSliceImage: int,
+        TotalSliceImages: int,
+        CurrentRegion: int,
+        TotalRegions: int,
+    ]
+```
+
+### VSDA - EM - VSDAEMGetImageStack
+ - Name: `VSDA/EM/VSDAEMGetImageStack`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        ScanRegionID: int
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        RenderedImages: list<string>
+    ]
+```
+
+### VSDA - EM - GetImage
+ - Name: `VSDA/EM/GetImage`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        ImageHandle: str
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        ImageData: base64 encoded binary string of image data
+    ]
+```
+
 Todo: Add other routes here.
 
