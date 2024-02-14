@@ -24,9 +24,9 @@ GeometryRPCInterface::GeometryRPCInterface(BG::Common::Logger::LoggingSystem* _L
     Simulations_ = _Simulations;
 
     // Register Callbacks
-    _RPCManager->AddRoute("Sphere/Create",   std::bind(&GeometryRPCInterface::SphereCreate, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Cylinder/Create", std::bind(&GeometryRPCInterface::CylinderCreate, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Box/Create",      std::bind(&GeometryRPCInterface::BoxCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Geometry/Sphere/Create",   std::bind(&GeometryRPCInterface::SphereCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Geometry/Cylinder/Create", std::bind(&GeometryRPCInterface::CylinderCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Geometry/Box/Create",      std::bind(&GeometryRPCInterface::BoxCreate, this, std::placeholders::_1));
 
 
 }
