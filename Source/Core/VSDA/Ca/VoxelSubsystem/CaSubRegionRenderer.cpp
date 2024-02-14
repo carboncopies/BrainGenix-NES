@@ -60,7 +60,7 @@ bool CaRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
     // Clear Scene In Preperation For Rendering
     for (unsigned int i = 0; i < CaData_->Array_.get()->GetZ(); i++) {
-        std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "/Region" + std::to_string(CaData_->ActiveRegionID_);
+        std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "/Calcium/Region" + std::to_string(CaData_->ActiveRegionID_);
 
         std::vector<std::string> Files = CaRenderSliceFromArray(_Logger, _SubRegion->MaxImagesX, _SubRegion->MaxImagesY, &Sim->CaData_, CaData_->Array_.get(), FileNamePrefix, i, _ImageProcessorPool, XOffset, YOffset, SliceOffset);
         for (size_t i = 0; i < Files.size(); i++) {
