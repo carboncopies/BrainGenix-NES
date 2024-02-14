@@ -40,8 +40,17 @@ bool CalculateCalciumConcentrations(BG::Common::Logger::LoggingSystem *_Logger, 
 	for (unsigned int component_id = 0; component_id < _Simulation->BSCompartments.size(); component_id++) {
 		// Getting the corresponding neuron by component ID:
 		auto neuron_ptr = _Simulation->FindNeuronByCompartment(component_id);
+
+		// Ensure that the pointer isn't null and explodes
+		if (neuron_ptr == nullptr) {
+			_Logger->Log("Failed To Find Neuron For Compartment '" + std::to_string(component_id) + "'", 6);
+			_Data->push_back(std::vector<float>());
+			continue;
+		}
+
 		// Get the list of Calcium concentrations cached at that neuron and copy it into the vector of vectors:
-		(*_Data).emplace_back(static_cast<Simulator::BallAndStick::BSNeuron*>(neuron_ptr)->CaSamples);
+		std::vector<float> CASamples = static_cast<Simulator::BallAndStick::BSNeuron*>(neuron_ptr)->CaSamples;
+		_Data->push_back(CASamples);
 	}
 	return true;
 }

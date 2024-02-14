@@ -54,7 +54,22 @@ bool CaRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
     CaData_->CalciumConcentrationByIndex_ = &CalciumIndexes;
     CaData_->CalciumConcentrationTimestep_ms = CalciumTimestep;
-    
+
+
+    // Now We Check That The Calcium Concentrations Are Generated Right
+    size_t BaseSize = 0;
+    if (CaData_->CalciumConcentrationByIndex_->size() > 0) {
+        BaseSize = (*CaData_->CalciumConcentrationByIndex_)[0].size();
+    } else {
+        _Logger->Log("Error, No Calcium Concentration Generated (Have You Simulated Yet?)", 8);
+        return false;
+    }
+    for (size_t i = 0; i < CaData_->CalciumConcentrationByIndex_->size(); i++) {
+        if (BaseSize != (*CaData_->CalciumConcentrationByIndex_)[i].size()) {
+            _Logger->Log("Error, Calcium Concentration Lists Are Not Same Size", 8);
+            return false;
+        }
+    }
 
     // Create Voxel Array
     _Logger->Log(std::string("Creating Calcium Voxel Array Of Size ") + RequestedRegion.Dimensions() + std::string(" With Points ") + RequestedRegion.ToString(), 2);
