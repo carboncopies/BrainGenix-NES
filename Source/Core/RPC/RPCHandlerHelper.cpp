@@ -21,11 +21,12 @@ namespace API {
 
 
 // Handy class for standard handler data.
-HandlerData::HandlerData(const std::string& _JSONRequest, BG::Common::Logger::LoggingSystem* _Logger, Simulations _Simulations, bool PermitBusy, bool NoSimulation) {
+HandlerData::HandlerData(const std::string& _JSONRequest, BG::Common::Logger::LoggingSystem* _Logger, std::string _RoutePath, Simulations _Simulations, bool PermitBusy, bool NoSimulation) {
 
     // ManTaskData = called_by_manager_task;
     JSONRequestStr = _JSONRequest;
     Logger_ = _Logger;
+    RoutePath_ = _RoutePath;
 
     SimVec = _Simulations;
     RequestJSON = nlohmann::json::parse(_JSONRequest);
@@ -105,6 +106,10 @@ std::string HandlerData::ResponseAndStoreRequest(nlohmann::json& ResponseJSON,  
     //         ThisSimulation->StoreRequestHandled(Source, _RH.at(Source).Route, JSONRequestStr);
     //     }
     // }
+    if (ThisSimulation != nullptr) {
+        ThisSimulation->StoreRequestHandled(RoutePath_, JSONRequestStr);
+    }
+
     return ResponseJSON.dump();
 }
 std::string HandlerData::ErrResponse(int _Status) {

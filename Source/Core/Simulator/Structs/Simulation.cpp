@@ -356,10 +356,10 @@ CoreStructs::Neuron * Simulation::FindNeuronByCompartment(int CompartmentID) con
 //     return wrapped;
 // }
 
-std::string Simulation::WrapAsNESRequest(const std::string & ReqFunc, const std::string & _RequestJSON) {
+std::string Simulation::WrapAsNESRequest( const std::string & _RequestJSON, const std::string & _Route) {
     std::string wrapped("{ \"ReqID\": ");
     wrapped += std::to_string(StoredReqID) + ", \"";
-    wrapped += ReqFunc +"\": ";
+    wrapped += _Route + "\": ";
     wrapped += _RequestJSON + " }";
     StoredReqID++;
     return wrapped;
@@ -376,9 +376,9 @@ std::string Simulation::WrapAsNESRequest(const std::string & ReqFunc, const std:
 //     //Logger_->Log("DEBUGGING --> Number of stored requests: "+std::to_string(StoredRequests.size()), 1);
 // }
 
-void Simulation::StoreRequestHandled(const std::string & ReqFunc, const std::string & _Route, const std::string & _RequestJSON) {
+void Simulation::StoreRequestHandled(const std::string & _Route, const std::string & _RequestJSON) {
     // We store everything as a Request within a NESRequest block:
-    StoredRequests.emplace_back(_Route, WrapAsNESRequest(ReqFunc, _RequestJSON));
+    StoredRequests.emplace_back(_Route, WrapAsNESRequest(_RequestJSON, _Route));
 }
 
 std::string Simulation::StoredRequestsToString() const {

@@ -65,6 +65,8 @@ class SimulationRPCInterface {
 private:
     Config::Config* Config_; /**Pointer to configuration struct owned by the rest of the system*/
 
+    API::RPCManager* RPCManager_;
+
     std::vector<std::thread> SimulationThreads_; /**Threads that enumerate simulations and checks for any tasks to be done.*/
     std::atomic<bool> StopThreads_; /**Indicates to workers to stop what they're doing*/
     std::vector<std::unique_ptr<Simulation>> Simulations_; /**Vector containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
@@ -103,10 +105,10 @@ public:
 
     // bool BadReqID(int ReqID);
 
-    // int AddManagerTask(std::unique_ptr<API::ManagerTaskData> & TaskData);
+    int AddManagerTask(std::unique_ptr<API::ManagerTaskData> & TaskData);
 
-    //void LoadingSimSetter(bool SetTo);
-    // void SimLoadingTask(API::ManagerTaskData & TaskData);
+    void LoadingSimSetter(bool SetTo);
+    void SimLoadingTask(API::ManagerTaskData & TaskData);
 
     /**
      * @brief Various routes for API
@@ -122,8 +124,8 @@ public:
     std::string SimulationRecordAll(std::string _JSONRequest);
     std::string SimulationGetRecording(std::string _JSONRequest);
     std::string SimulationGetStatus(std::string _JSONRequest);
-    // std::string SimulationSave(std::string _JSONRequest);
-    // std::string SimulationLoad(std::string _JSONRequest);
+    std::string SimulationSave(std::string _JSONRequest);
+    std::string SimulationLoad(std::string _JSONRequest);
     std::string SimulationGetGeoCenter(std::string _JSONRequest);
 
     std::string ManTaskStatus(std::string _JSONRequest);

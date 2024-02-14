@@ -167,8 +167,8 @@ public:
 
     void Show();
 
-    std::string WrapAsNESRequest(const std::string & ReqFunc, const std::string & _RequestJSON);
-    void StoreRequestHandled(const std::string & ReqFunc, const std::string & _Route, const std::string & _RequestJSON);
+    std::string WrapAsNESRequest(const std::string & _RequestJSON, const std::string & _Route);
+    void StoreRequestHandled(const std::string & _Route, const std::string & _RequestJSON);
     size_t NumStoredRequests() const { return StoredRequests.size(); }
     std::string StoredRequestsToString() const;
     std::string StoredRequestsToNESRequestArray() const;

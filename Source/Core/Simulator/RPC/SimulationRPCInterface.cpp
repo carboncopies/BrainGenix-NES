@@ -36,28 +36,31 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
     Logger_ = _Logger;
     RenderPool_ = _RenderPool;
     VisualizerPool_ = _VisualizerPool;
+    RPCManager_ = _RPCManager;
 
 
 
     // Register Callback For CreateSim
     // _RPCManager->AddRoute(NES_Request_handlers.at("ManTaskStatus").Route, Logger_, [this](std::string RequestJSON){ return ManTaskStatus(RequestJSON);});
 
-    _RPCManager->AddRoute("Simulation/Create",       std::bind(&SimulationRPCInterface::SimulationCreate, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/Reset",        std::bind(&SimulationRPCInterface::SimulationReset, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/RunFor",       std::bind(&SimulationRPCInterface::SimulationRunFor, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/RecordAll",    std::bind(&SimulationRPCInterface::SimulationRecordAll, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/GetRecording", std::bind(&SimulationRPCInterface::SimulationGetRecording, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/GetStatus",    std::bind(&SimulationRPCInterface::SimulationGetStatus, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/GetGeoCenter", std::bind(&SimulationRPCInterface::SimulationGetGeoCenter, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Create",                    std::bind(&SimulationRPCInterface::SimulationCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Reset",                     std::bind(&SimulationRPCInterface::SimulationReset, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/RunFor",                    std::bind(&SimulationRPCInterface::SimulationRunFor, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/RecordAll",                 std::bind(&SimulationRPCInterface::SimulationRecordAll, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetRecording",              std::bind(&SimulationRPCInterface::SimulationGetRecording, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetStatus",                 std::bind(&SimulationRPCInterface::SimulationGetStatus, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetGeoCenter",              std::bind(&SimulationRPCInterface::SimulationGetGeoCenter, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/AttachRecordingElectrodes", std::bind(&SimulationRPCInterface::AttachRecordingElectrodes, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/SetRecordInstruments", std::bind(&SimulationRPCInterface::SetRecordInstruments, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/GetInstrumentRecordings", std::bind(&SimulationRPCInterface::GetInstrumentRecordings, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/SetRecordInstruments",      std::bind(&SimulationRPCInterface::SetRecordInstruments, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetInstrumentRecordings",   std::bind(&SimulationRPCInterface::GetInstrumentRecordings, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Save",                      std::bind(&SimulationRPCInterface::SimulationSave, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Load",                      std::bind(&SimulationRPCInterface::SimulationLoad, this, std::placeholders::_1));
+
+    _RPCManager->AddRoute("ManTaskStatus",                      std::bind(&SimulationRPCInterface::ManTaskStatus, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("CalciumImagingAttach", std::bind(&SimulationRPCInterface::CalciumImagingAttach, this, std::placeholders::_1));
     _RPCManager->AddRoute("CalciumImagingShowVoxels", std::bind(&SimulationRPCInterface::CalciumImagingShowVoxels, this, std::placeholders::_1));
     _RPCManager->AddRoute("CalciumImagingRecordAposteriori", std::bind(&SimulationRPCInterface::CalciumImagingRecordAposteriori, this, std::placeholders::_1));
-    // _RPCManager->AddRoute("SimulationSave",         std::bind(&SimulationRPCInterface::SimulationSave, this, std::placeholders::_1));
-    // _RPCManager->AddRoute("SimulationLoad",         std::bind(&SimulationRPCInterface::SimulationLoad, this, std::placeholders::_1));
 
     // Start SE Thread
     StopThreads_ = false;
@@ -76,6 +79,7 @@ SimulationRPCInterface::~SimulationRPCInterface() {
 }
 
 bool LoadFileIntoString(const std::string& FilePath, std::string& FileContents) {
+
     std::ifstream LoadFile(FilePath);
     if (!LoadFile.is_open()) return false;
 
@@ -88,30 +92,30 @@ bool LoadFileIntoString(const std::string& FilePath, std::string& FileContents) 
     return true;    
 }
 
-// // A API::ManagerTaskData struct must have been prepared and the thread already launched.
-// int SimulationRPCInterface::AddManagerTask(std::unique_ptr<API::ManagerTaskData>& TaskData) {
-//     // Get Task ID
-//     int TaskID = NextManTaskID;
-//     NextManTaskID++;
-//     TaskData->ID = TaskID;
+// A API::ManagerTaskData struct must have been prepared and the thread already launched.
+int SimulationRPCInterface::AddManagerTask(std::unique_ptr<API::ManagerTaskData>& TaskData) {
+    // Get Task ID
+    int TaskID = NextManTaskID;
+    NextManTaskID++;
+    TaskData->ID = TaskID;
 
-//     // Place task data into ManagerTasks
-//     ManagerTasks[TaskID].reset(TaskData.release()); // Release task data object pointer into unique pointer in map.
+    // Place task data into ManagerTasks
+    ManagerTasks[TaskID].reset(TaskData.release()); // Release task data object pointer into unique pointer in map.
 
-//     return TaskID;
-// }
+    return TaskID;
+}
 
-// *** WE CAN PROBABLY DO WITHOUT THIS CONSTRAINT NOW (AS WE USE LOCAL PARAMS)!
-// Only one thread at a time, others wait for lock release.
+// // *** WE CAN PROBABLY DO WITHOUT THIS CONSTRAINT NOW (AS WE USE LOCAL PARAMS)!
+// // Only one thread at a time, others wait for lock release.
 // void SimulationRPCInterface::LoadingSimSetter(bool SetTo) {
 //     std::lock_guard<std::mutex> guard(LoadingSimSetterMutex);
 //     LoadingSim = SetTo;
 // }
-//
-// We can run only one loading task at a time, because we are using some Manager-global
-// flags and variables to modify the behavior of NESRequest and HandleData, namely to
-// establish the new Simulation ID and to replace loaded SimIDs with that.
-// Before proceeding, we wait for other loading tasks in the queue to finish.
+
+// // We can run only one loading task at a time, because we are using some Manager-global
+// // flags and variables to modify the behavior of NESRequest and HandleData, namely to
+// // establish the new Simulation ID and to replace loaded SimIDs with that.
+// // Before proceeding, we wait for other loading tasks in the queue to finish.
 // void SimulationRPCInterface::SimLoadingTask(API::ManagerTaskData& TaskData) {
 //     // Wait for any concurrent loading tasks that happen to be running to finish:
 //     // unsigned long timeout_ms = 10000;
@@ -135,19 +139,36 @@ bool LoadFileIntoString(const std::string& FilePath, std::string& FileContents) 
 //     LoadingSimSetter(false);
 // }
 
-// void SimulationRPCInterface::SimLoadingTask(API::ManagerTaskData& TaskData) {
-//     // *** Not sure if we should prepend with "std::string loadresponse = " to keep the full
-//     //     record of the loading requests in the task output JSON.
-//     NESRequest(TaskData.InputData, &TaskData);
-//     TaskData.OutputData["SimulationID"] = TaskData.ReplaceSimulationID;
-//     TaskData.SetStatus(API::ManagerTaskStatus::Success);
-//     Logger_->Log("Loading Simulation " + std::to_string(TaskData.ReplaceSimulationID) + " Completed", 2);
-// }
+void SimulationRPCInterface::SimLoadingTask(API::ManagerTaskData& TaskData) {
+    // *** Not sure if we should prepend with "std::string loadresponse = " to keep the full
+    //     record of the loading requests in the task output JSON.
 
-// void SimLoadingTaskThread(API::ManagerTaskData* TaskData) {
-//     if (!TaskData) return;
-//     // TaskData->Man.SimLoadingTask(*TaskData); // Run the rest back in the Manager for full context.
-// }
+    // Build New Simulation Object
+    Simulations_.push_back(std::make_unique<Simulation>(Logger_));
+    Simulation* Sim = Simulations_[Simulations_.size() - 1].get();
+    assert(Sim != nullptr);
+    Sim->Name = "Loaded Simulation";
+    Sim->CurrentTask = SIMULATION_NONE;
+    Sim->ID = Simulations_.size() - 1;
+
+    // Start Thread
+    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, RenderPool_, VisualizerPool_, &StopThreads_));
+
+
+    // Get New SimID
+    size_t NewSimID = Sim->ID;
+    TaskData.ReplaceSimulationID = NewSimID;
+
+    RPCManager_->NESRequest(TaskData.InputData, NewSimID);
+    TaskData.OutputData["SimulationID"] = TaskData.ReplaceSimulationID;
+    TaskData.SetStatus(API::ManagerTaskStatus::Success);
+    Logger_->Log("Loading Simulation " + std::to_string(TaskData.ReplaceSimulationID) + " Completed", 2);
+}
+
+void SimLoadingTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskData* TaskData) {
+    if (!TaskData) return;
+    _Manager->SimLoadingTask(*TaskData); // Run the rest back in the Manager for full context.
+}
 
 // // Mostly, this is called through API::HandlerData::NewSimulation().
 // Simulation* SimulationRPCInterface::MakeSimulation() {
@@ -161,7 +182,7 @@ bool LoadFileIntoString(const std::string& FilePath, std::string& FileContents) 
 
 std::string SimulationRPCInterface::SimulationCreate(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_, true, true);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Create", &Simulations_, true, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -190,7 +211,7 @@ std::string SimulationRPCInterface::SimulationCreate(std::string _JSONRequest) {
 
 std::string SimulationRPCInterface::SimulationReset(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Reset", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -205,7 +226,7 @@ std::string SimulationRPCInterface::SimulationReset(std::string _JSONRequest) {
 // This request starts at Simulation Task.
 std::string SimulationRPCInterface::SimulationRunFor(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/RunFor", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -224,7 +245,7 @@ std::string SimulationRPCInterface::SimulationRunFor(std::string _JSONRequest) {
 
 std::string SimulationRPCInterface::SimulationRecordAll(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/RecordAll", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -241,7 +262,7 @@ std::string SimulationRPCInterface::SimulationRecordAll(std::string _JSONRequest
 
 std::string SimulationRPCInterface::SimulationGetRecording(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetRecording", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -255,7 +276,7 @@ std::string SimulationRPCInterface::SimulationGetRecording(std::string _JSONRequ
 
 std::string SimulationRPCInterface::SimulationGetStatus(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_, true);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetStatus", &Simulations_, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -273,25 +294,25 @@ std::string SimulationRPCInterface::SimulationGetStatus(std::string _JSONRequest
 }
 
 
-// std::string SimulationRPCInterface::SimulationSave(std::string _JSONRequest) {
+std::string SimulationRPCInterface::SimulationSave(std::string _JSONRequest) {
 
-//     API::HandlerData Handle(_JSONRequest, "SimulationSave", &Simulations_);
-//     if (Handle.HasError()) {
-//         return Handle.ErrResponse();
-//     }
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Save", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
-//     //std::cout << "Number of stored requests: " << Handle.Sim()->NumStoredRequests() << "\n\n";
-//     //std::cout << Handle.Sim()->StoredRequestsToString() << '\n';
+    //std::cout << "Number of stored requests: " << Handle.Sim()->NumStoredRequests() << "\n\n";
+    //std::cout << Handle.Sim()->StoredRequestsToString() << '\n';
 
-//     std::string SavedSimName = Handle.Sim()->StoredRequestsSave();
-//     if (SavedSimName.empty()) {
-//         return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
-//     }
-//     Logger_->Log("Saved Simulation with "+std::to_string(Handle.Sim()->NumStoredRequests())+" stored requets to "+SavedSimName, 3);
+    std::string SavedSimName = Handle.Sim()->StoredRequestsSave();
+    if (SavedSimName.empty()) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+    }
+    Logger_->Log("Saved Simulation with "+std::to_string(Handle.Sim()->NumStoredRequests())+" stored requets to "+SavedSimName, 3);
 
-//     // Return Saved File Name
-//     return Handle.ResponseWithID("SavedSimName", SavedSimName);
-// }
+    // Return Saved File Name
+    return Handle.ResponseWithID("SavedSimName", SavedSimName);
+}
 
 
 /**
@@ -303,47 +324,47 @@ std::string SimulationRPCInterface::SimulationGetStatus(std::string _JSONRequest
  * return the response that it was launched, and return the task ID.
  * 
  */
-// // This request starts a Manager Task.
-// std::string SimulationRPCInterface::SimulationLoad(std::string _JSONRequest) {
+// This request starts a Manager Task.
+std::string SimulationRPCInterface::SimulationLoad(std::string _JSONRequest) {
 
-//     API::HandlerData Handle(_JSONRequest, "SimulationCreate", &Simulations_, true, true);
-//     if (Handle.HasError()) {
-//         return Handle.ErrResponse();
-//     }
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Load", &Simulations_, true, true);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
-//     // Get the Simulation File Name
-//     std::string SavedSimName;
-//     if (!Handle.GetParString("SavedSimName", SavedSimName)) {
-//         return Handle.ErrResponse();
-//     }
-//     Logger_->Log("Loading Saved Simulation " + SavedSimName, 2);
+    // Get the Simulation File Name
+    std::string SavedSimName;
+    if (!Handle.GetParString("SavedSimName", SavedSimName)) {
+        return Handle.ErrResponse();
+    }
+    Logger_->Log("Loading Saved Simulation " + SavedSimName, 2);
 
-//     // Prepare data structure to run the actual Simulation loading in a task
-//     std::unique_ptr<API::ManagerTaskData> LoadTaskData = std::make_unique<API::ManagerTaskData>(*this);
+    // Prepare data structure to run the actual Simulation loading in a task
+    std::unique_ptr<API::ManagerTaskData> LoadTaskData = std::make_unique<API::ManagerTaskData>();
 
-//     // Check if save file exists and load its request contents into the task data
-//     if (!LoadFileIntoString("SavedSimulations/"+SavedSimName+".NES", LoadTaskData->InputData)) {
-//         Logger_->Log("Unable to Read Simulation Save File " + SavedSimName, 8);
-//         return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
-//     }
+    // Check if save file exists and load its request contents into the task data
+    if (!LoadFileIntoString("SavedSimulations/"+SavedSimName+".NES", LoadTaskData->InputData)) {
+        Logger_->Log("Unable to Read Simulation Save File " + SavedSimName, 8);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+    }
 
-//     // Launch loading task thread
-//     LoadTaskData->Task = std::make_unique<std::thread>(SimLoadingTaskThread, LoadTaskData.get());
+    // Launch loading task thread
+    LoadTaskData->Task = std::make_unique<std::thread>(SimLoadingTaskThread, this, LoadTaskData.get());
 
-//     // Add task with fresh task status and get task ID to be returned to requestor
-//     int TaskID = AddManagerTask(LoadTaskData);
-//     if (TaskID<0) {
-//         Logger_->Log("Unable to launch Loading Task", 8);
-//         return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
-//     }
+    // Add task with fresh task status and get task ID to be returned to requestor
+    int TaskID = AddManagerTask(LoadTaskData);
+    if (TaskID<0) {
+        Logger_->Log("Unable to launch Loading Task", 8);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+    }
 
-//     // Return Result ID
-//     return Handle.ResponseWithID("TaskID", TaskID);
-// }
+    // Return Result ID
+    return Handle.ResponseWithID("TaskID", TaskID);
+}
 
 std::string SimulationRPCInterface::SimulationGetGeoCenter(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetGeoCenter", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -385,7 +406,7 @@ std::string SimulationRPCInterface::SimulationGetGeoCenter(std::string _JSONRequ
  */
 std::string SimulationRPCInterface::AttachRecordingElectrodes(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/AttachRecordingElectrodes", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -482,7 +503,7 @@ std::string SimulationRPCInterface::AttachRecordingElectrodes(std::string _JSONR
  */
 std::string SimulationRPCInterface::CalciumImagingAttach(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "CalciumImagingAttach",  &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -559,7 +580,7 @@ std::string SimulationRPCInterface::CalciumImagingAttach(std::string _JSONReques
 
 std::string SimulationRPCInterface::CalciumImagingShowVoxels(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "CalciumImagingShowVoxels", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -572,7 +593,7 @@ std::string SimulationRPCInterface::CalciumImagingShowVoxels(std::string _JSONRe
 
 std::string SimulationRPCInterface::CalciumImagingRecordAposteriori(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "CalciumImagingRecordAposteriori", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -584,7 +605,7 @@ std::string SimulationRPCInterface::CalciumImagingRecordAposteriori(std::string 
 
 std::string SimulationRPCInterface::SetRecordInstruments(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/SetRecordInstruments", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -601,7 +622,7 @@ std::string SimulationRPCInterface::SetRecordInstruments(std::string _JSONReques
 
 std::string SimulationRPCInterface::GetInstrumentRecordings(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetInstrumentRecordings", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -626,7 +647,7 @@ std::string SimulationRPCInterface::GetInstrumentRecordings(std::string _JSONReq
  */
 std::string SimulationRPCInterface::ManTaskStatus(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_, true, true);
+    API::HandlerData Handle(_JSONRequest, Logger_, "ManTaskStatus", &Simulations_, true, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
