@@ -422,4 +422,83 @@ Broken right now.
 ```
 
 
+### Visualizer - GetStatus
+ - Name: `Visualizer/GetStatus`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        VisualizerStatus: ENUM_VISUALIZER_STATUS
+    ]
+```
+
+### Visualizer - GetImageHandles
+ - Name: `Visualizer/GetImageHandles`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        ImageHandles: list<string>
+    ]
+```
+
+### Visualizer - GetImage
+ - Name: `Visualizer/GetImage`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        ImageHandle: string
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        ImageData: base64 encoded string of binary image data
+    ]
+```
+
+### Visualizer - GenerateImages
+ - Name: `Visualizer/GenerateImages`  
+ - Query: 
+```json
+    [
+        "SimulationID": <SimID>,
+        "Locations": [
+          {
+               "CameraPositionX_um": float,
+               "CameraPositionY_um": float,
+               "CameraPositionz_um": float,
+               "CameraLookAtPositionX_um": float,
+               "CameraLookAtPositionY_um": float,
+               "CameraLookAtPositionz_um": float,
+               "CameraFOV_deg": float
+           },
+           ...
+           ]
+        "ImageWidth_px": unsigned int,
+        "ImageHeight_px": unsigned int
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+    ]
+```
+
 Todo: Add other routes here.
+

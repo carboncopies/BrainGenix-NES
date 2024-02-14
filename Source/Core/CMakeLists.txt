@@ -210,6 +210,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.h
 
 
+
+  ${SRC_DIR}/Core/Visualizer/VisualizerRPCInterface.cpp
+  ${SRC_DIR}/Core/Visualizer/VisualizerRPCInterface.h
   ${SRC_DIR}/Core/Visualizer/Visualizer.cpp
   ${SRC_DIR}/Core/Visualizer/Visualizer.h
   ${SRC_DIR}/Core/Visualizer/MeshRenderer.cpp

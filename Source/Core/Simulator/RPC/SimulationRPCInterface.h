@@ -136,13 +136,7 @@ public:
     std::string SetRecordInstruments(std::string _JSONRequest);
     std::string GetInstrumentRecordings(std::string _JSONRequest);
 
-    std::string VisualizerGetImage(std::string _JSONRequest);
-    std::string VisualizerGetImageHandles(std::string _JSONRequest);
-    std::string VisualizerGetStatus(std::string _JSONRequest);
-    std::string VisualizerGenerateImage(std::string _JSONRequest);
 
-
-    std::string Debug(std::string _JSONRequest);
 
     /**
      * @brief Returns true if the simulation is being worked on by another thread.
