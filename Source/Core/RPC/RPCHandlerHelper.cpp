@@ -21,12 +21,11 @@ namespace API {
 
 
 // Handy class for standard handler data.
-HandlerData::HandlerData(const std::string& _JSONRequest, const std::string& _Source, Simulations _Simulations, bool PermitBusy, bool NoSimulation) {
+HandlerData::HandlerData(const std::string& _JSONRequest, BG::Common::Logger::LoggingSystem* _Logger, Simulations _Simulations, bool PermitBusy, bool NoSimulation) {
 
-    Source = _Source;
     // ManTaskData = called_by_manager_task;
     JSONRequestStr = _JSONRequest;
-
+    Logger_ = _Logger;
 
     SimVec = _Simulations;
     RequestJSON = nlohmann::json::parse(_JSONRequest);
@@ -59,12 +58,14 @@ HandlerData::HandlerData(const std::string& _JSONRequest, const std::string& _So
         }
     // }
     if (SimulationID >= SimVec->size() || SimulationID < 0) {
+        Logger_->Log("Simulation ID Out Of Range", 8);
         Status = BGStatusCode::BGStatusInvalidParametersPassed;
         return;
     }
     ThisSimulation = SimVec->at(SimulationID).get();
 
     if (!PermitBusy && (ThisSimulation->IsProcessing || ThisSimulation->WorkRequested)) {
+        Logger_->Log("Simulation Is Currently Busy, And Route Is Not Allowed To Run While Busy", 8);
         Status = BGStatusCode::BGStatusSimulationBusy;
         return;
     }
@@ -156,6 +157,7 @@ const nlohmann::json& HandlerData::ReqJSON() const {
 bool HandlerData::FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, nlohmann::json& _JSON) {
     Iterator = _JSON.find(ParName);
     if (Iterator == _JSON.end()) {
+        Logger_->Log("Error Finding Parameter '" + ParName + "', Request Is: " + _JSON.dump(), 7);
         Status = BGStatusCode::BGStatusInvalidParametersPassed;
         return false;
     }

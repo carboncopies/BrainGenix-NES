@@ -48,6 +48,14 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
     _RPCManager->AddRoute("Simulation/RecordAll",    std::bind(&SimulationRPCInterface::SimulationRecordAll, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetRecording", std::bind(&SimulationRPCInterface::SimulationGetRecording, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetStatus",    std::bind(&SimulationRPCInterface::SimulationGetStatus, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetGeoCenter", std::bind(&SimulationRPCInterface::SimulationGetGeoCenter, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/AttachRecordingElectrodes", std::bind(&SimulationRPCInterface::AttachRecordingElectrodes, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/SetRecordInstruments", std::bind(&SimulationRPCInterface::SetRecordInstruments, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetInstrumentRecordings", std::bind(&SimulationRPCInterface::GetInstrumentRecordings, this, std::placeholders::_1));
+
+    _RPCManager->AddRoute("CalciumImagingAttach", std::bind(&SimulationRPCInterface::CalciumImagingAttach, this, std::placeholders::_1));
+    _RPCManager->AddRoute("CalciumImagingShowVoxels", std::bind(&SimulationRPCInterface::CalciumImagingShowVoxels, this, std::placeholders::_1));
+    _RPCManager->AddRoute("CalciumImagingRecordAposteriori", std::bind(&SimulationRPCInterface::CalciumImagingRecordAposteriori, this, std::placeholders::_1));
     // _RPCManager->AddRoute("SimulationSave",         std::bind(&SimulationRPCInterface::SimulationSave, this, std::placeholders::_1));
     // _RPCManager->AddRoute("SimulationLoad",         std::bind(&SimulationRPCInterface::SimulationLoad, this, std::placeholders::_1));
 
@@ -153,7 +161,7 @@ bool LoadFileIntoString(const std::string& FilePath, std::string& FileContents) 
 
 std::string SimulationRPCInterface::SimulationCreate(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, "SimulationCreate", &Simulations_, true, true);
+    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_, true, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -182,7 +190,7 @@ std::string SimulationRPCInterface::SimulationCreate(std::string _JSONRequest) {
 
 std::string SimulationRPCInterface::SimulationReset(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, "SimulationReset", &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -197,7 +205,7 @@ std::string SimulationRPCInterface::SimulationReset(std::string _JSONRequest) {
 // This request starts at Simulation Task.
 std::string SimulationRPCInterface::SimulationRunFor(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, "SimulationRunFor", &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -215,8 +223,8 @@ std::string SimulationRPCInterface::SimulationRunFor(std::string _JSONRequest) {
 }
 
 std::string SimulationRPCInterface::SimulationRecordAll(std::string _JSONRequest) {
- 
-    API::HandlerData Handle(_JSONRequest, "SimulationRecordAll", &Simulations_);
+
+    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -233,7 +241,7 @@ std::string SimulationRPCInterface::SimulationRecordAll(std::string _JSONRequest
 
 std::string SimulationRPCInterface::SimulationGetRecording(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SimulationGetRecording", &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -247,7 +255,7 @@ std::string SimulationRPCInterface::SimulationGetRecording(std::string _JSONRequ
 
 std::string SimulationRPCInterface::SimulationGetStatus(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SimulationGetStatus", &Simulations_, true);
+    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -335,7 +343,7 @@ std::string SimulationRPCInterface::SimulationGetStatus(std::string _JSONRequest
 
 std::string SimulationRPCInterface::SimulationGetGeoCenter(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SimulationGetGeoCenter", &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -377,7 +385,7 @@ std::string SimulationRPCInterface::SimulationGetGeoCenter(std::string _JSONRequ
  */
 std::string SimulationRPCInterface::AttachRecordingElectrodes(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "AttachRecordingElectrodes", &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -446,137 +454,137 @@ std::string SimulationRPCInterface::AttachRecordingElectrodes(std::string _JSONR
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-// /**
-//  * Expects _JSONRequest:
-//  * {
-//  *   "SimulationID": <SimID>,
-//  *   "name": <Ca-imaging-name>,
-//  *   "fluorescing_neurons": [ <neuron-id>... ], -- Empty means all.
-//  *   "calcium_indicator": <indicator-type>,
-//  *   "indicator_rise_ms": <float>,
-//  *   "indicator_decay_ms": <float>,
-//  *   "indicator_interval_ms": <float>, -- Determines max trackable spike rate.
-//  *   "voxelspace_side_px": <num-pixels>,
-//  *   "imaged_subvolume": {
-//  *     "center": <3D-vector>,
-//  *     "half": <3D-vector>,
-//  *     "dx": <3D-vector>,
-//  *     "dy": <3D-vector>,
-//  *     "dz": <3D-vector>, -- Positive dz indicates most visible top surface.
-//  *   },
-//  *   "generate_during_sim": <bool>
-//  * }
-//  * Note: Possibly add "microscope_lensfront_position_um": <3D-vector>, "microscope_rear_position_um": <3D-vector>,
-//  * Responds:
-//  * {
-//  *   "StatusCode": <status-code>,
-//  * }
-//  */
-// std::string SimulationRPCInterface::CalciumImagingAttach(std::string _JSONRequest) {
+/**
+ * Expects _JSONRequest:
+ * {
+ *   "SimulationID": <SimID>,
+ *   "name": <Ca-imaging-name>,
+ *   "fluorescing_neurons": [ <neuron-id>... ], -- Empty means all.
+ *   "calcium_indicator": <indicator-type>,
+ *   "indicator_rise_ms": <float>,
+ *   "indicator_decay_ms": <float>,
+ *   "indicator_interval_ms": <float>, -- Determines max trackable spike rate.
+ *   "voxelspace_side_px": <num-pixels>,
+ *   "imaged_subvolume": {
+ *     "center": <3D-vector>,
+ *     "half": <3D-vector>,
+ *     "dx": <3D-vector>,
+ *     "dy": <3D-vector>,
+ *     "dz": <3D-vector>, -- Positive dz indicates most visible top surface.
+ *   },
+ *   "generate_during_sim": <bool>
+ * }
+ * Note: Possibly add "microscope_lensfront_position_um": <3D-vector>, "microscope_rear_position_um": <3D-vector>,
+ * Responds:
+ * {
+ *   "StatusCode": <status-code>,
+ * }
+ */
+std::string SimulationRPCInterface::CalciumImagingAttach(std::string _JSONRequest) {
  
-//     API::HandlerData Handle(_JSONRequest, "CalciumImagingAttach", &Simulations_);
-//     if (Handle.HasError()) {
-//         return Handle.ErrResponse();
-//     }
+    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
-//     Tools::CalciumImaging C(Handle.Sim());
-//     if (!Handle.GetParString("name", C.Name)) {
-//         Handle.ErrResponse();
-//     }
-//     if (!Handle.GetParVecInt("fluorescing_neurons", C.FluorescingNeurons)) {
-//         Handle.ErrResponse();
-//     }
-//     if (!Handle.GetParString("calcium_indicator", C.CalciumIndicator)) {
-//         Handle.ErrResponse();
-//     }
-//     if (!Handle.GetParFloat("indicator_rise_ms", C.IndicatorRise_ms)) {
-//         Handle.ErrResponse();
-//     }
-//     if (!Handle.GetParFloat("indicator_decay_ms", C.IndicatorDecay_ms)) {
-//         Handle.ErrResponse();
-//     }
-//     if (!Handle.GetParFloat("indicator_interval_ms", C.IndicatorInterval_ms)) {
-//         Handle.ErrResponse();
-//     }
-//     C.ImagingInterval_ms = C.IndicatorInterval_ms+10.0; // *** TODO: Could make this independently settable!
-//     if (!Handle.GetParInt("voxelspace_side_px", C.VoxelSpaceSide_px)) {
-//         Handle.ErrResponse();
-//     }
-//     if (!Handle.GetParBool("generate_during_sim", C.GenerateDuringSim)) {
-//         Handle.ErrResponse();
-//     }
-//     nlohmann::json::iterator SubVolumeIterator;
-//     if (!Handle.FindPar("imaged_subvolume", SubVolumeIterator)) {
-//         Handle.ErrResponse();
-//     }
-//     auto SubVolume = SubVolumeIterator.value();
-//     if (!SubVolume.is_object()) {
-//         Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
-//     }
-//     std::vector<float> Center;
-//     if (!Handle.GetParVecFloat("center", Center, SubVolume)) {
-//         Handle.ErrResponse();
-//     }
-//     std::vector<float> Half;
-//     if (!Handle.GetParVecFloat("half", Half, SubVolume)) {
-//         Handle.ErrResponse();
-//     }
-//     std::vector<float> Dx;
-//     if (!Handle.GetParVecFloat("dx", Dx, SubVolume)) {
-//         Handle.ErrResponse();
-//     }
-//     std::vector<float> Dy;
-//     if (!Handle.GetParVecFloat("dy", Dy, SubVolume)) {
-//         Handle.ErrResponse();
-//     }
-//     std::vector<float> Dz;
-//     if (!Handle.GetParVecFloat("dz", Dz, SubVolume)) {
-//         Handle.ErrResponse();
-//     }
-//     if ((Center.size()<3) || (Half.size()<3) || (Dx.size()<3) || (Dy.size()<3) || (Dz.size()<3)) {
-//         Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
-//     }
-//     C.Center_um = Center;
-//     C.Half = Half;
-//     C.Dx = Dx;
-//     C.Dy = Dy;
-//     C.Dz = Dz;
+    Tools::CalciumImaging C(Handle.Sim());
+    if (!Handle.GetParString("name", C.Name)) {
+        Handle.ErrResponse();
+    }
+    if (!Handle.GetParVecInt("fluorescing_neurons", C.FluorescingNeurons)) {
+        Handle.ErrResponse();
+    }
+    if (!Handle.GetParString("calcium_indicator", C.CalciumIndicator)) {
+        Handle.ErrResponse();
+    }
+    if (!Handle.GetParFloat("indicator_rise_ms", C.IndicatorRise_ms)) {
+        Handle.ErrResponse();
+    }
+    if (!Handle.GetParFloat("indicator_decay_ms", C.IndicatorDecay_ms)) {
+        Handle.ErrResponse();
+    }
+    if (!Handle.GetParFloat("indicator_interval_ms", C.IndicatorInterval_ms)) {
+        Handle.ErrResponse();
+    }
+    C.ImagingInterval_ms = C.IndicatorInterval_ms+10.0; // *** TODO: Could make this independently settable!
+    if (!Handle.GetParInt("voxelspace_side_px", C.VoxelSpaceSide_px)) {
+        Handle.ErrResponse();
+    }
+    if (!Handle.GetParBool("generate_during_sim", C.GenerateDuringSim)) {
+        Handle.ErrResponse();
+    }
+    nlohmann::json::iterator SubVolumeIterator;
+    if (!Handle.FindPar("imaged_subvolume", SubVolumeIterator)) {
+        Handle.ErrResponse();
+    }
+    auto SubVolume = SubVolumeIterator.value();
+    if (!SubVolume.is_object()) {
+        Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+    std::vector<float> Center;
+    if (!Handle.GetParVecFloat("center", Center, SubVolume)) {
+        Handle.ErrResponse();
+    }
+    std::vector<float> Half;
+    if (!Handle.GetParVecFloat("half", Half, SubVolume)) {
+        Handle.ErrResponse();
+    }
+    std::vector<float> Dx;
+    if (!Handle.GetParVecFloat("dx", Dx, SubVolume)) {
+        Handle.ErrResponse();
+    }
+    std::vector<float> Dy;
+    if (!Handle.GetParVecFloat("dy", Dy, SubVolume)) {
+        Handle.ErrResponse();
+    }
+    std::vector<float> Dz;
+    if (!Handle.GetParVecFloat("dz", Dz, SubVolume)) {
+        Handle.ErrResponse();
+    }
+    if ((Center.size()<3) || (Half.size()<3) || (Dx.size()<3) || (Dy.size()<3) || (Dz.size()<3)) {
+        Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+    C.Center_um = Center;
+    C.Half = Half;
+    C.Dx = Dx;
+    C.Dy = Dy;
+    C.Dz = Dz;
 
-//     C.ID = 0;
-//     Handle.Sim()->CaImaging = std::make_unique<Tools::CalciumImaging>(C);
-//     //Handle.Sim()->CaImaging->Init(); // automatically called by the explicit copy constructor
+    C.ID = 0;
+    Handle.Sim()->CaImaging = std::make_unique<Tools::CalciumImaging>(C);
+    //Handle.Sim()->CaImaging->Init(); // automatically called by the explicit copy constructor
 
-//     return Handle.ErrResponse(); // ok
-// }
+    return Handle.ErrResponse(); // ok
+}
 
-// std::string SimulationRPCInterface::CalciumImagingShowVoxels(std::string _JSONRequest) {
+std::string SimulationRPCInterface::CalciumImagingShowVoxels(std::string _JSONRequest) {
  
-//     API::HandlerData Handle(_JSONRequest, "CalciumImagingShowVoxels", &Simulations_);
-//     if (Handle.HasError()) {
-//         return Handle.ErrResponse();
-//     }
+    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
-//     // Return JSON
-//     nlohmann::json ResponseJSON = Handle.Sim()->GetCaImagingVoxelsJSON();
-//     ResponseJSON["StatusCode"] = 0; // ok
-//     return Handle.ResponseAndStoreRequest(ResponseJSON);
-// }
+    // Return JSON
+    nlohmann::json ResponseJSON = Handle.Sim()->GetCaImagingVoxelsJSON();
+    ResponseJSON["StatusCode"] = 0; // ok
+    return Handle.ResponseAndStoreRequest(ResponseJSON);
+}
 
-// std::string SimulationRPCInterface::CalciumImagingRecordAposteriori(std::string _JSONRequest) {
+std::string SimulationRPCInterface::CalciumImagingRecordAposteriori(std::string _JSONRequest) {
  
-//     API::HandlerData Handle(_JSONRequest, "CalciumImagingRecordAposteriori", &Simulations_);
-//     if (Handle.HasError()) {
-//         return Handle.ErrResponse();
-//     }
+    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
-//     Handle.Sim()->CalciumImagingRecordAposteriori();
+    Handle.Sim()->CalciumImagingRecordAposteriori();
 
-//     return Handle.ErrResponse(); // ok
-// }
+    return Handle.ErrResponse(); // ok
+}
 
 std::string SimulationRPCInterface::SetRecordInstruments(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SetRecordInstruments", &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -593,7 +601,7 @@ std::string SimulationRPCInterface::SetRecordInstruments(std::string _JSONReques
 
 std::string SimulationRPCInterface::GetInstrumentRecordings(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "GetInstrumentRecordings", &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -618,7 +626,7 @@ std::string SimulationRPCInterface::GetInstrumentRecordings(std::string _JSONReq
  */
 std::string SimulationRPCInterface::ManTaskStatus(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "ManTaskStatus", &Simulations_, true, true);
+    API::HandlerData Handle(_JSONRequest, Logger_, &Simulations_, true, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }

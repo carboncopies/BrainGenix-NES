@@ -96,7 +96,7 @@ std::string RPCManager::NESRequest(std::string _JSONRequest) { // Generic JSON-b
 
     // Parse Request
     //Logger_->Log(_JSONRequest, 3);
-    API::HandlerData Handle(_JSONRequest, "NESRequest", nullptr, true, true);
+    API::HandlerData Handle(_JSONRequest, Logger_, nullptr, true, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
