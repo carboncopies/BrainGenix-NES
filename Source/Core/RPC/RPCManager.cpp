@@ -130,37 +130,37 @@ std::string RPCManager::NESRequest(std::string _JSONRequest) { // Generic JSON-b
                 ReqParams = req_value;
             }
         }
-        if (BadReqID(ReqID)) { // e.g. < highest request ID already handled
+        // if (BadReqID(ReqID)) { // e.g. < highest request ID already handled
+        //     ReqResponseJSON["ReqID"] = ReqID;
+        //     ReqResponseJSON["StatusCode"] = 1; // bad request id
+        // } else {
+
+        // Typically would call a specific handler from here, but let's just keep parsing.
+        auto it = RequestHandlers_.find(ReqFunc);
+        if (it == RequestHandlers_.end()) {
+            Logger_->Log("Error, No Handler Exists For Call " + ReqFunc, 7);
             ReqResponseJSON["ReqID"] = ReqID;
-            ReqResponseJSON["StatusCode"] = 1; // bad request id
+            ReqResponseJSON["StatusCode"] = 1; // unknown request *** TODO: use the right code
+            //Response = ReqResponseJSON.dump();
         } else {
-
-            // Typically would call a specific handler from here, but let's just keep parsing.
-            auto it = RequestHandlers_.find(ReqFunc);
-            if (it == RequestHandlers_.end()) {
-                Logger_->Log("Error, No Handler Exists For Call " + ReqFunc, 7);
+            if (!it->second) {
                 ReqResponseJSON["ReqID"] = ReqID;
-                ReqResponseJSON["StatusCode"] = 1; // unknown request *** TODO: use the right code
-                //Response = ReqResponseJSON.dump();
+                Logger_->Log("Error, Handler Is Null For Call " + ReqFunc + ", Continuing Anyway", 7);
+                // ReqResponseJSON["StatusCode"] = 1; // not a valid NES request *** TODO: use the right code
             } else {
-                if (!it->second) {
-                    ReqResponseJSON["ReqID"] = ReqID;
-                    Logger_->Log("Error, Handler Is Null For Call " + ReqFunc + ", Continuing Anyway", 7);
-                    // ReqResponseJSON["StatusCode"] = 1; // not a valid NES request *** TODO: use the right code
-                } else {
-                    std::string Response = it->second(ReqParams); // Calls the handler.
-                    // *** TODO: Either:
-                    //     a) Convert handlers to return nlohmann::json objects so that we
-                    //        can easily add ReqResponseJSON["ReqID"] = ReqID here, or,
-                    //     b) Convert Response back to a ReqResponseJSON here in order to
-                    //        add that... (This is more work, lower performance...)
-                    //     Right now, we do b) (sadly...)
-                    ReqResponseJSON = nlohmann::json::parse(Response);
-                    ReqResponseJSON["ReqID"] = ReqID;
-                }
+                std::string Response = it->second(ReqParams.dump()); // Calls the handler.
+                // *** TODO: Either:
+                //     a) Convert handlers to return nlohmann::json objects so that we
+                //        can easily add ReqResponseJSON["ReqID"] = ReqID here, or,
+                //     b) Convert Response back to a ReqResponseJSON here in order to
+                //        add that... (This is more work, lower performance...)
+                //     Right now, we do b) (sadly...)
+                ReqResponseJSON = nlohmann::json::parse(Response);
+                ReqResponseJSON["ReqID"] = ReqID;
             }
-
         }
+
+        // }
         ResponseJSON.push_back(ReqResponseJSON);
 
     }

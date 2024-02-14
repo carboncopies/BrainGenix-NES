@@ -126,30 +126,8 @@ public:
     // std::string SimulationLoad(std::string _JSONRequest);
     std::string SimulationGetGeoCenter(std::string _JSONRequest);
 
-    std::string SphereCreate(std::string _JSONRequest);
-    std::string BulkSphereCreate(std::string _JSONRequest);
-    std::string CylinderCreate(std::string _JSONRequest);
-    std::string BulkCylinderCreate(std::string _JSONRequest);
-    std::string BoxCreate(std::string _JSONRequest);
-    std::string BulkBoxCreate(std::string _JSONRequest);
+    std::string ManTaskStatus(std::string _JSONRequest);
 
-    std::string BSCreate(std::string _JSONRequest);
-    std::string BulkBSCreate(std::string _JSONRequest);
-
-    std::string StapleCreate(std::string _JSONRequest);
-    std::string ReceptorCreate(std::string _JSONRequest);
-
-    std::string BSNeuronCreate(std::string _JSONRequest);
-
-    std::string PatchClampDACCreate(std::string _JSONRequest);
-    std::string PatchClampDACSetOutputList(std::string _JSONRequest);
-
-    std::string PatchClampADCCreate(std::string _JSONRequest);
-    std::string PatchClampADCSetSampleRate(std::string _JSONRequest);
-    std::string PatchClampADCGetRecordedData(std::string _JSONRequest);
-
-    std::string SetSpecificAPTimes(std::string _JSONRequest);
-    std::string SetSpontaneousActivity(std::string _JSONRequest);
 
     std::string AttachRecordingElectrodes(std::string _JSONRequest);
     std::string CalciumImagingAttach(std::string _JSONRequest);
@@ -158,7 +136,6 @@ public:
     std::string SetRecordInstruments(std::string _JSONRequest);
     std::string GetInstrumentRecordings(std::string _JSONRequest);
 
-    std::string ManTaskStatus(std::string _JSONRequest);
     std::string VisualizerGetImage(std::string _JSONRequest);
     std::string VisualizerGetImageHandles(std::string _JSONRequest);
     std::string VisualizerGetStatus(std::string _JSONRequest);

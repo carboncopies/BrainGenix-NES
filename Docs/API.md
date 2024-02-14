@@ -115,7 +115,7 @@ Broken right now.
 
 
 
-### Geometry - Sphere - Create
+### Simulation - Geometry - Sphere - Create
  - Name: `Simulation/Geometry/Sphere/Create`  
  - Query: 
 ```json
@@ -136,7 +136,7 @@ Broken right now.
     ]
 ```
 
-### Geometry - Cylinder - Create
+### Simulation - Geometry - Cylinder - Create
  - Name: `Simulation/Geometry/Cylinder/Create`  
  - Query: 
 ```json
@@ -161,7 +161,7 @@ Broken right now.
     ]
 ```
 
-### Geometry - Box - Create
+### Simulation - Geometry - Box - Create
  - Name: `Simulation/Geometry/Box/Create`  
  - Query: 
 ```json
@@ -186,3 +186,240 @@ Broken right now.
         ShapeID: int
     ]
 ```
+
+### Simulation - Compartments - BS - Create
+ - Name: `Simulation/Compartments/BS/Create`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        ShapeID: int,
+        MembranePotential_mV: float,
+        SpikeThreshold_mV: float,
+        DecayTime_ms: float,
+        RestingPotential_mV: float,
+        AfterHyperpolarizationAmplitude_mV: float,
+        Name: str
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        CompartmentID: int
+    ]
+```
+
+### Simulation - Staple - Create
+ - Name: `Simulation/Staple/Create`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        SourceCompartmentID: int,
+        DestinationCompartmentID: int,
+        Name: str
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        StapleID: int
+    ]
+```
+
+### Simulation - Receptor - Create
+ - Name: `Simulation/Receptor/Create`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        SourceCompartmentID: int,
+        DestinationCompartmentID: int,
+        Conductance_nS: float,
+        TimeConstantRise_ms: float,
+        TimeConstantDecay_ms: float,
+        ReceptorPosX_um: float,
+        ReceptorPosY_um: float,
+        ReceptorPosZ_um: float,
+        Name: str
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        ReceptorID: int
+    ]
+```
+
+### Simulation - Neuron - BS - Create
+ - Name: `Simulation/Neuron/BS/Create`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        SomaID: int,
+        AxonID: int,
+        MembranePotential_mV: float,
+        RestingPotential_mV: float,
+        SpikeThreshold_mV: float,
+        DecayTime_ms: float,
+        AfterHyperpolarizationAmplitude_mV: float,
+        PostsynapticPotentialRiseTime_ms: float,
+        PostsynapticPotentialDecayTime_ms: float,
+        PostsynapticPotentialAmplitude_nA: float,
+        Name: str
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        NeuronID: int
+    ]
+```
+
+### Simulation - PatchClampDAC - Create
+ - Name: `Simulation/PatchClampDAC/Create`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        DestinationCompartmentID: int,
+        ClampPosX_um: float,
+        ClampPosY_um: float,
+        ClampPosZ_um: float,
+        Name: str
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        PatchClampDACID: int
+    ]
+```
+
+### Simulation - PatchClampDAC - SetOutputList
+ - Name: `Simulation/PatchClampDAC/SetOutputList`  
+ - Query: 
+```json
+    [
+        "SimulationID": int,
+        "PatchClampDACID": int,
+        "ControlData": [
+        [ <t_ms> (float), <v_mV> (float) ],
+        ...
+        (more pairs)
+        ]
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+    ]
+```
+
+
+### Simulation - PatchClampADC - Create
+ - Name: `Simulation/PatchClampADC/Create`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        SourceCompartmentID: int,
+        ClampPosX_um: float,
+        ClampPosY_um: float,
+        ClampPosZ_um: float,
+        Name: str
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        PatchClampADCID: int
+    ]
+```
+
+
+
+### Simulation - PatchClampADC - SetSampleRate
+ - Name: `Simulation/PatchClampADC/Create`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        PatchClampADCID: int,
+        Timestep_ms: float
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+    ]
+```
+
+### Simulation - PatchClampADC - GetRecordedData
+ - Name: `Simulation/PatchClampADC/GetRecordedData`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        PatchClampADCID: int,
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        Timestep_ms: float,
+        RecordedData_mV: list<float>
+    ]
+```
+
+### Simulation - SetSpecificAPTimes
+ - Name: `Simulation/PatchClampADC`  
+ - Query: 
+```json
+    [
+        "SimulationID": <SimID>,
+        "TimeNeuronPairs": [
+            [ <t_ms>, <neuron-id> ],
+            (more pairs)
+        ]
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+    ]
+```
+
+### Simulation - SetSpontaneousActivity
+ - Name: `Simulation/SetSpontaneousActivity`  
+ - Query: 
+```json
+    [
+        "SimulationID": <SimID>,
+        "SpikeIntervalMean_ms": <float>,
+        "SpikeIntervalStDev_ms": <float>,
+        "NeuronIDs": [
+            (neuron-id,)
+        ]
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+    ]
+```
+
+
+Todo: Add other routes here.
