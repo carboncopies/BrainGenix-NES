@@ -94,8 +94,6 @@ bool BadReqID(int ReqID) {
  */
 std::string RPCManager::NESRequest(std::string _JSONRequest) { // Generic JSON-based NES requests.
 
-    std::cout<<"GOT REQUEST\n";
-
     // Parse Request
     //Logger_->Log(_JSONRequest, 3);
     API::HandlerData Handle(_JSONRequest, "NESRequest", nullptr, true, true);
@@ -145,7 +143,7 @@ std::string RPCManager::NESRequest(std::string _JSONRequest) { // Generic JSON-b
                 ReqResponseJSON["StatusCode"] = 1; // unknown request *** TODO: use the right code
                 //Response = ReqResponseJSON.dump();
             } else {
-                if (it->second) {
+                if (!it->second) {
                     ReqResponseJSON["ReqID"] = ReqID;
                     Logger_->Log("Error, Handler Is Null For Call " + ReqFunc + ", Continuing Anyway", 7);
                     // ReqResponseJSON["StatusCode"] = 1; // not a valid NES request *** TODO: use the right code
