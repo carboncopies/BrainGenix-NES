@@ -31,6 +31,7 @@
 #include <RPC/RPCManager.h>
 #include <Simulator/RPC/SimulationRPCInterface.h>
 #include <Simulator/RPC/GeometryRPCInterface.h>
+#include <Simulator/RPC/ModelRPCInterface.h>
 #include <VSDA/RPCInterface.h>
 #include <VSDA/RenderPool.h>
 #include <Visualizer/VisualizerPool.h>

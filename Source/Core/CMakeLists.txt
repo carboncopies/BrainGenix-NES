@@ -23,6 +23,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/RPC/SimulationRPCInterface.h
   ${SRC_DIR}/Core/Simulator/RPC/GeometryRPCInterface.cpp
   ${SRC_DIR}/Core/Simulator/RPC/GeometryRPCInterface.h
+  ${SRC_DIR}/Core/Simulator/RPC/ModelRPCInterface.cpp
+  ${SRC_DIR}/Core/Simulator/RPC/ModelRPCInterface.h
 
   ${SRC_DIR}/Core/Simulator/Engine.cpp
   ${SRC_DIR}/Core/Simulator/Engine.h
