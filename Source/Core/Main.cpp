@@ -30,7 +30,8 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::NES::Simulator::VisualizerPool VisualizerPool(&Logger, false, 1);
 
     // Setup Simulator (Adding the routes here)
-    BG::NES::Simulator::Manager SimulationManager(&Logger, &SystemConfiguration, &RenderPool, &VisualizerPool, &APIManager);
+    BG::NES::Simulator::SimulationRPCInterface SimulationManager(&Logger, &SystemConfiguration, &RenderPool, &VisualizerPool, &APIManager);
+    BG::NES::Simulator::GeometryRPCInterface GeometryManager(&Logger, SimulationManager.GetSimulationVectorPtr(), &APIManager);
     BG::NES::Simulator::VSDA::RPCInterface VSDA_RPCInterface(&Logger, &APIManager, SimulationManager.GetSimulationVectorPtr());
 
     // Print ASCII BrainGenix Logo To Console

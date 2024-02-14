@@ -57,6 +57,7 @@ RPCManager::~RPCManager() {
 // }
 
 void RPCManager::AddRoute(std::string _RouteHandle, std::function<std::string(std::string _JSONRequest)> _Function) {
+    Logger_->Log("Registering Callback For Route '" + _RouteHandle + "'", 4);
     RequestHandlers_.insert(std::pair<std::string, std::function<std::string(std::string _JSONRequest)>>(_RouteHandle, _Function));
     // RouteAndHandler Handler;
     // Handler.Route_ = _RouteHandle;

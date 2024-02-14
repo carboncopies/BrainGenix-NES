@@ -56,15 +56,11 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
-// Forward declarations:
-class Manager;
-
-
 
 /**
  * @brief This class provides the infrastructure to run simulations.
  */
-class Manager {
+class SimulationRPCInterface {
 
 private:
     Config::Config* Config_; /**Pointer to configuration struct owned by the rest of the system*/
@@ -95,13 +91,13 @@ public:
      * @param _RPCManager
      * @param _Renderer Instance of the rendering system.
      */
-    Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, VisualizerPool* _VisualizerPool, API::RPCManager* _RPCManager);
+    SimulationRPCInterface(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, VisualizerPool* _VisualizerPool, API::RPCManager* _RPCManager);
 
     /**
-     * @brief Destroy the Manager object
+     * @brief Destroy the SimulationRPCInterface object
      * 
      */
-    ~Manager();
+    ~SimulationRPCInterface();
 
     // Simulation* MakeSimulation();
 
