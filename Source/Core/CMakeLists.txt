@@ -16,20 +16,33 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Config/ConfigDefaults.h
 
 
-  ${SRC_DIR}/Core/RPC/RPCManager.cpp
-  ${SRC_DIR}/Core/RPC/RPCManager.h
-  ${SRC_DIR}/Core/RPC/RPCHandlerHelper.cpp
-  ${SRC_DIR}/Core/RPC/RPCHandlerHelper.h
-  ${SRC_DIR}/Core/RPC/StaticRoutes.cpp
-  ${SRC_DIR}/Core/RPC/StaticRoutes.h
 
 
-  ${SRC_DIR}/Core/Simulator/Manager.cpp
-  ${SRC_DIR}/Core/Simulator/Manager.h
+
+  ${SRC_DIR}/Core/Simulator/RPC/SimulationRPCInterface.cpp
+  ${SRC_DIR}/Core/Simulator/RPC/SimulationRPCInterface.h
+  ${SRC_DIR}/Core/Simulator/RPC/GeometryRPCInterface.cpp
+  ${SRC_DIR}/Core/Simulator/RPC/GeometryRPCInterface.h
+  ${SRC_DIR}/Core/Simulator/RPC/ModelRPCInterface.cpp
+  ${SRC_DIR}/Core/Simulator/RPC/ModelRPCInterface.h
+
   ${SRC_DIR}/Core/Simulator/Engine.cpp
   ${SRC_DIR}/Core/Simulator/Engine.h
   ${SRC_DIR}/Core/Simulator/EngineController.cpp
   ${SRC_DIR}/Core/Simulator/EngineController.h
+
+
+  ${SRC_DIR}/Core/RPC/RPCManager.cpp
+  ${SRC_DIR}/Core/RPC/RPCManager.h
+  ${SRC_DIR}/Core/RPC/RPCHandlerHelper.cpp
+  ${SRC_DIR}/Core/RPC/RPCHandlerHelper.h
+  ${SRC_DIR}/Core/RPC/APIStatusCode.cpp
+  ${SRC_DIR}/Core/RPC/APIStatusCode.h
+  ${SRC_DIR}/Core/RPC/StaticRoutes.cpp
+  ${SRC_DIR}/Core/RPC/StaticRoutes.h
+  ${SRC_DIR}/Core/RPC/ManagerTaskData.cpp
+  ${SRC_DIR}/Core/RPC/ManagerTaskData.h
+
 
   ${SRC_DIR}/Core/Simulator/Geometries/Geometry.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Geometry.h
@@ -112,8 +125,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Profiling/ProfilingManager.cpp
   ${SRC_DIR}/Core/Profiling/ProfilingManager.h
 
-  ${SRC_DIR}/Core/VSDA/RPCInterface.cpp
-  ${SRC_DIR}/Core/VSDA/RPCInterface.h
+  ${SRC_DIR}/Core/VSDA/VSDARPCInterface.cpp
+  ${SRC_DIR}/Core/VSDA/VSDARPCInterface.h
 
   ${SRC_DIR}/Core/VSDA/RenderPool.cpp
   ${SRC_DIR}/Core/VSDA/RenderPool.h
@@ -197,6 +210,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.h
 
 
+
+  ${SRC_DIR}/Core/Visualizer/VisualizerRPCInterface.cpp
+  ${SRC_DIR}/Core/Visualizer/VisualizerRPCInterface.h
   ${SRC_DIR}/Core/Visualizer/Visualizer.cpp
   ${SRC_DIR}/Core/Visualizer/Visualizer.h
   ${SRC_DIR}/Core/Visualizer/MeshRenderer.cpp

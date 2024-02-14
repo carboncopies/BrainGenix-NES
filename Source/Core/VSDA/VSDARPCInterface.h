@@ -65,7 +65,7 @@ namespace VSDA {
 /**
  * @brief This class provides the infrastructure to run simulations.
  */
-class RPCInterface {
+class VSDARPCInterface {
 
 private:
     std::vector<std::unique_ptr<Simulation>>* SimulationsPtr_; /**Vector pointer containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
@@ -77,20 +77,20 @@ private:
 public:
 
     /**
-     * @brief Construct a new RPCInterface for VSDA Slice Generator object
+     * @brief Construct a new VSDARPCInterface for VSDA Slice Generator object
      * 
      * @param _Logger Pointer to logging interface
      * @param _RPCManager Pointer to instance of the RPC manager.
      * @param _SimulationsPointerVector Pointer to vector which contains the other simulations. Allows us to access them and modify them as needed.
      */
-    RPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::Manager* _RPCManager, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer);
+    VSDARPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::RPCManager* _RPCManager, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer);
 
 
     /**
-     * @brief Destroy the RPCInterface for VSDA Slice Generator object
+     * @brief Destroy the VSDARPCInterface for VSDA Slice Generator object
      * 
      */
-    ~RPCInterface();
+    ~VSDARPCInterface();
 
 
     /**

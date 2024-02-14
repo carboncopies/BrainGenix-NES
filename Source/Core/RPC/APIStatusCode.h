@@ -20,14 +20,14 @@ namespace BG {
 namespace NES {
 namespace API {
 
-enum bgStatusCode {
-    bgStatusSuccess = 0,
-    bgStatusGeneralFailure = 1,
-    bgStatusInvalidParametersPassed = 2,
-    bgStatusUpstreamGatewayUnavailable = 3,
-    bgStatusUnauthorizedInvalidNoToken = 4,
-    bgStatusSimulationBusy = 5,
-    NUMbgStatusCode
+enum BGStatusCode {
+    BGStatusSuccess = 0,
+    BGStatusGeneralFailure = 1,
+    BGStatusInvalidParametersPassed = 2,
+    BGStatusUpstreamGatewayUnavailable = 3,
+    BGStatusUnauthorizedInvalidNoToken = 4,
+    BGStatusSimulationBusy = 5,
+    NUMBGStatusCode
 };
 
 }; // Close Namespace API

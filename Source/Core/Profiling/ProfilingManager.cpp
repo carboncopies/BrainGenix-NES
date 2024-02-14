@@ -12,7 +12,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/RPCRoutes/EM.h>
 #include <VSDA/RPCRoutes/Ca.h>
-#include <Simulator/Manager.h>
+#include <Simulator/RPC/SimulationRPCInterface.h>
 #include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/Structs/Simulation.h>
 #include <Simulator/EngineController.h>
@@ -26,7 +26,7 @@ namespace NES {
 namespace Profiling {
 
 
-int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, Simulator::Manager* _SimManager, Simulator::VSDA::RenderPool* _RenderPool, Simulator::VisualizerPool* _VisualizerPool, API::Manager* _RPCManager) {
+int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, Simulator::SimulationRPCInterface* _SimManager, Simulator::VSDA::RenderPool* _RenderPool, Simulator::VisualizerPool* _VisualizerPool, API::RPCManager* _RPCManager) {
     assert(_Logger != nullptr);
     assert(_Config != nullptr);
 
