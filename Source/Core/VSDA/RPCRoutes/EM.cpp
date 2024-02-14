@@ -12,7 +12,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/RPCRoutes/EM.h>
 #include <Simulator/Structs/Simulation.h>
-#include <VSDA/VoxelSubsystem/Structs/VoxelArray.h>
+#include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
 
 namespace BG {
 namespace NES {

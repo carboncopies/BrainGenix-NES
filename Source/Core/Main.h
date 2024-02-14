@@ -28,13 +28,18 @@
 #include <BG/Renderer/Interface.h>
 #include <Config/ConfigurationManager.h>
 #include <Config/Config.h>
-#include <RPC/Manager.h>
-#include <Simulator/Manager.h>
-#include <VSDA/RPCInterface.h>
+#include <RPC/RPCManager.h>
+
+#include <Simulator/RPC/SimulationRPCInterface.h>
+#include <Simulator/RPC/GeometryRPCInterface.h>
+#include <Simulator/RPC/ModelRPCInterface.h>
+#include <VSDA/VSDARPCInterface.h>
+#include <Visualizer/VisualizerRPCInterface.h>
+
 #include <VSDA/RenderPool.h>
 #include <Visualizer/VisualizerPool.h>
 #include <Util/LogLogo.h>
-#include <Profiling/Manager.h>
+#include <Profiling/ProfilingManager.h>
 
 /**
  * @brief The main entry point for the BrainGenix-NES Neuron Emulation System.

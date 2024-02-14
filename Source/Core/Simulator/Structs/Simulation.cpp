@@ -3,6 +3,7 @@
 #include <Simulator/Structs/RecordingElectrode.h>
 #include <Simulator/Structs/CalciumImaging.h>
 
+
 #include <iostream>
 #include <sstream>
 #include <filesystem>
@@ -313,9 +314,9 @@ void Simulation::RunFor(float tRun_ms) {
             }
 
             // Calcium Imaging
-            // if (CaImaging) {
-            //     CaImaging->Record(this->T_ms);
-            // }
+            if (CaImaging) {
+                CaImaging->Record(this->T_ms);
+            }
         }
 
         this->T_ms += this->Dt_ms;

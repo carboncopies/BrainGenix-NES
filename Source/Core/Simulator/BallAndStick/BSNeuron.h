@@ -163,7 +163,7 @@ struct BSNeuron : CoreStructs::Neuron {
 
     //! Sets the initial value of the FIFO and prepares a buffer for convolvedFIFO.
     //! FIFO_dt_ms == 0.0 means used a FIFO of size 1.
-    void SetFIFO(float FIFO_ms, float FIFO_dt_ms, const std::vector<float> & reversed_kernel);
+    void SetFIFO(float FIFO_ms, float FIFO_dt_ms, size_t reversed_kernel_size);
 
     virtual void InputReceptorAdded(CoreStructs::ReceptorData RData);
 };

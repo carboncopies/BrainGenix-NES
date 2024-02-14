@@ -41,7 +41,8 @@
 
 #include <Visualizer/VisualizerParameters.h>
 
-#include <VSDA/VoxelSubsystem/Structs/VSDAData.h>
+#include <VSDA/EM/VoxelSubsystem/Structs/VSDAData.h>
+#include <VSDA/Ca/VoxelSubsystem/Structs/CaData.h>
 
 //! The value of tMax_ms at which recording will be done forever.
 #define _RECORD_FOREVER_TMAX_MS -1.0
@@ -56,7 +57,7 @@ namespace Tools {
     struct CalciumImaging;
 }
 
-enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA, SIMULATION_VISUALIZATION};
+enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA, SIMULATION_CALCIUM, SIMULATION_VISUALIZATION};
 
 struct StoredRequest {
     std::string Route;
@@ -121,6 +122,7 @@ public:
     std::vector<Tools::PatchClampADC> PatchClampADCs; /**List of patchclamp adcs, id is index*/
 
     VSDAData VSDAData_; /**Instance of the simulator VSDA data - stores the state for the renderer to use*/
+    VSDA::Calcium::CalciumImagingData CaData_; /**Instance of CA Data - stores state info about calcium imaging*/
 
     VisualizerParameters VisualizerParams; /**Instance of visualizer parameters, used to generate visualizations in vulkan*/
 
