@@ -14,6 +14,8 @@
 #include <VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.h>
 #include <VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h>
 
+#include <VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.h>
+
 #include <Simulator/Structs/Simulation.h>
 
 
@@ -42,6 +44,17 @@ bool CaRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     float TotalRegionThickness = abs(RequestedRegion.Point1Z_um - RequestedRegion.Point2Z_um);
     CaData_->TotalSlices_ = TotalRegionThickness / CaData_->Params_.VoxelResolution_um;
 
+
+    std::vector<std::vector<float>> CalciumIndexes;
+    float CalciumTimestep = 50.; // Randal - this is done since we want to know how much time passes between each step
+    // That's why I had the GetCalciumConcentrationTimestep
+    VoxelArrayGenerator::CalculateCalciumConcentrations(_Logger, Sim, &CalciumIndexes);
+    // get timestep here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+    CaData_->CalciumConcentrationByIndex_ = &CalciumIndexes;
+    CaData_->CalciumConcentrationTimestep_ms = CalciumTimestep;
+    
 
     // Create Voxel Array
     _Logger->Log(std::string("Creating Calcium Voxel Array Of Size ") + RequestedRegion.Dimensions() + std::string(" With Points ") + RequestedRegion.ToString(), 2);

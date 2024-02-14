@@ -65,42 +65,49 @@ std::vector<std::string> CaRenderSliceFromArray(BG::Common::Logger::LoggingSyste
     TotalYSteps = std::min(TotalYSteps, MaxImagesY);
 
 
-    // Now, we enumerate through all the steps needed, one at a time until we reach the end
-    for (int XStep = 0; XStep < TotalXSteps; XStep++) {
-        for (int YStep = 0; YStep < TotalYSteps; YStep++) {
+    // Make sure we render this slice at all timesteps
+    for (int CalciumConcentrationIndex = 0; CalciumConcentrationIndex < _CaData->CalciumConcentrationByIndex_->size(); CalciumConcentrationIndex++) {
 
-            // Calculate the filename of the image to be generated, add to list of generated images
-            std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(SliceNumber + _SliceOffset) + "/";
-            double RoundedXCoord = std::ceil(((CameraStepSizeX_um * XStep) + _OffsetX) * 100.0) / 100.0;
-            double RoundedYCoord = std::ceil(((CameraStepSizeY_um * YStep) + _OffsetY) * 100.0) / 100.0;
-            std::string FilePath = "X" + std::to_string(RoundedXCoord) + "_Y" + std::to_string(RoundedYCoord) + ".png";
+        // Now, we enumerate through all the steps needed, one at a time until we reach the end
+        for (int XStep = 0; XStep < TotalXSteps; XStep++) {
+            for (int YStep = 0; YStep < TotalYSteps; YStep++) {
 
-            Filenames.push_back(DirectoryPath + FilePath);
+                // Calculate the filename of the image to be generated, add to list of generated images
+                std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(SliceNumber + _SliceOffset) + "/";
+                DirectoryPath += "Timestep" + std::to_string(_CaData->CalciumConcentrationTimestep_ms * CalciumConcentrationIndex) + "/";
+                double RoundedXCoord = std::ceil(((CameraStepSizeX_um * XStep) + _OffsetX) * 100.0) / 100.0;
+                double RoundedYCoord = std::ceil(((CameraStepSizeY_um * YStep) + _OffsetY) * 100.0) / 100.0;
+                std::string FilePath = "X" + std::to_string(RoundedXCoord) + "_Y" + std::to_string(RoundedYCoord) + ".png";
 
-
-            // Setup and submit task to queue for rendering
-            std::unique_ptr<ProcessingTask> ThisTask = std::make_unique<ProcessingTask>();
-            ThisTask->Array_ = _Array;
-            ThisTask->Width_px = _CaData->Params_.ImageWidth_px;
-            ThisTask->Height_px = _CaData->Params_.ImageHeight_px;
-            ThisTask->VoxelStartingX = VoxelsPerStepX * XStep;
-            ThisTask->VoxelStartingY = VoxelsPerStepY * YStep;
-            ThisTask->VoxelEndingX = ThisTask->VoxelStartingX + ImageWidth_vox;
-            ThisTask->VoxelEndingY = ThisTask->VoxelStartingY + ImageHeight_vox;
-            // std::cout<<"StartX:"<<ThisTask->VoxelStartingX<<" StartY:"<<ThisTask->VoxelStartingY<<" EndX:"<<ThisTask->VoxelEndingX<<" EndY:"<<ThisTask->VoxelEndingY<<std::endl;
-            ThisTask->VoxelZ = SliceNumber;
-            ThisTask->TargetFileName_ = FilePath;
-            ThisTask->TargetDirectory_ = DirectoryPath;
-
-            _ImageProcessorPool->QueueEncodeOperation(ThisTask.get());
-            _CaData->Tasks_.push_back(std::move(ThisTask));
+                Filenames.push_back(DirectoryPath + FilePath);
 
 
+                // Setup and submit task to queue for rendering
+                std::unique_ptr<ProcessingTask> ThisTask = std::make_unique<ProcessingTask>();
+                ThisTask->Array_ = _Array;
+                ThisTask->Width_px = _CaData->Params_.ImageWidth_px;
+                ThisTask->Height_px = _CaData->Params_.ImageHeight_px;
+                ThisTask->VoxelStartingX = VoxelsPerStepX * XStep;
+                ThisTask->VoxelStartingY = VoxelsPerStepY * YStep;
+                ThisTask->VoxelEndingX = ThisTask->VoxelStartingX + ImageWidth_vox;
+                ThisTask->VoxelEndingY = ThisTask->VoxelStartingY + ImageHeight_vox;
+                // std::cout<<"StartX:"<<ThisTask->VoxelStartingX<<" StartY:"<<ThisTask->VoxelStartingY<<" EndX:"<<ThisTask->VoxelEndingX<<" EndY:"<<ThisTask->VoxelEndingY<<std::endl;
+                ThisTask->VoxelZ = SliceNumber;
+                ThisTask->TargetFileName_ = FilePath;
+                ThisTask->TargetDirectory_ = DirectoryPath;
+                ThisTask->CurrentTimestepIndex_ = CalciumConcentrationIndex;
+                ThisTask->CalciumConcentrationByIndex_ = _CaData->CalciumConcentrationByIndex_;
+
+                _ImageProcessorPool->QueueEncodeOperation(ThisTask.get());
+                _CaData->Tasks_.push_back(std::move(ThisTask));
 
 
+
+
+            }
         }
-    }
 
+    }
 
     return Filenames;
 }

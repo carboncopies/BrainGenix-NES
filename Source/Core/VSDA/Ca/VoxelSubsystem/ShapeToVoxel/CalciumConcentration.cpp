@@ -58,7 +58,7 @@ float ComponentSampledCalciumConcentration(Simulator::Simulation* _Simulation, i
  * - Hence, I will modify this function a little bit in an alternative below where I assume that what you
  *   meant was that you wanted to know the simulation time-point of a specific Ca sample by its _SampleIdx.
  */
-bool GetCalciumConcentrationTimesteps(BG::Common::Logger::LoggingSystem *_Logger, Simulator::Simulation* _Simulation, float* _Timestep){
+bool GetCalciumConcentrationTimestep(BG::Common::Logger::LoggingSystem *_Logger, Simulator::Simulation* _Simulation, float* _Timestep){
 	// *** Don't know how to make this, please see alternative function below where I make some assumptions about what was intended!
 	return true;
 }

@@ -97,6 +97,9 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             Image OneToOneVoxelImage(VoxelsPerStepX, VoxelsPerStepY, NumChannels);
             OneToOneVoxelImage.TargetFileName_ = Task->TargetFileName_;
 
+            std::vector<std::vector<float>>* ConcentrationsByComartmentAtTimestepIndex = Task->CalciumConcentrationByIndex_;
+            int CurrentTimestepIndex = Task->CurrentTimestepIndex_;
+
             // Now enumerate the voxel array and populate the image with the desired pixels (for the subregion we're on)
             for (unsigned int XVoxelIndex = Task->VoxelStartingX; XVoxelIndex < Task->VoxelEndingX; XVoxelIndex++) {
                 for (unsigned int YVoxelIndex = Task->VoxelStartingY; YVoxelIndex < Task->VoxelEndingY; YVoxelIndex++) {
@@ -115,9 +118,10 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     } else if (ThisVoxel.IsBorder_) {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
                     } else if (ThisVoxel.IsFilled_) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 220, 220, 220);
+                        int Color = (*ConcentrationsByComartmentAtTimestepIndex)[ThisVoxel.CompartmentID_][CurrentTimestepIndex] * 10.;
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, Color, Color, 220);
                     } else {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 80, 80, 80);
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 0);
                     }
 
                 }

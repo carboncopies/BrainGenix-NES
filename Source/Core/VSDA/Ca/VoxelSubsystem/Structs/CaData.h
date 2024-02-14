@@ -89,7 +89,8 @@ struct CalciumImagingData {
     std::vector<std::vector<std::string>> RenderedImagePaths_; /**List of paths for each region to be populated as we render all the images for this simulation into a stack*/
     std::vector<std::unique_ptr<ProcessingTask>> Tasks_; /**List of tasks that have been created for this render operation, we check that they're all done before finishing our render operation*/
 
-
+    std::vector<std::vector<float>>* CalciumConcentrationByIndex_; /**Pointer to vector containing all the calcium concentrations*/
+    float CalciumConcentrationTimestep_ms; /**Timestep of each index in the calcium concentrations*/
 
 };
 

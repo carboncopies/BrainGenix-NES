@@ -94,7 +94,7 @@ float ComponentSampledCalciumConcentration(Simulator::Simulation* _Simulation, i
  * @return true 
  * @return false 
  */
-bool GetCalciumConcentrationTimesteps(BG::Common::Logger::LoggingSystem *_Logger, Simulator::Simulation* _Simulation, float* _Timestep);
+bool GetCalciumConcentrationTimestep(BG::Common::Logger::LoggingSystem *_Logger, Simulator::Simulation* _Simulation, float* _Timestep);
 
 /**
  * @brief Alternative method to obtain the simulation time for a sample by sample index.

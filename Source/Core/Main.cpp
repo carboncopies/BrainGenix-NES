@@ -41,6 +41,7 @@ int main(int NumArguments, char** ArgumentValues) {
 
 
     // Check if we have profiling enabled, if so do that then quit
+    SystemConfiguration.ProfilingStatus_ = BG::NES::Config::PROFILE_CALCIUM_END_TO_END_TEST_1;
     if (SystemConfiguration.ProfilingStatus_ != BG::NES::Config::PROFILE_NONE) {
         BG::NES::Profiling::Manager(&Logger, &SystemConfiguration, &SimulationRPCInterface, &RenderPool, &VisualizerPool, &APIManager);
         return 0;

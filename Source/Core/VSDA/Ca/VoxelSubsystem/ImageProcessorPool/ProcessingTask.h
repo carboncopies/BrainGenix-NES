@@ -73,6 +73,9 @@ struct ProcessingTask {
 
     VoxelArray* Array_;          /**Pointer to the voxel array that we're rendering from*/
 
+    std::vector<std::vector<float>>* CalciumConcentrationByIndex_; /**Pointer to vector containing all the calcium concentrations*/
+    int CurrentTimestepIndex_; /**Index of the current timestep that we're on*/
+
 
 
 };
