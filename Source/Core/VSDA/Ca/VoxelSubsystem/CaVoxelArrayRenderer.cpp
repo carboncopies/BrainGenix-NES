@@ -66,7 +66,7 @@ std::vector<std::string> CaRenderSliceFromArray(BG::Common::Logger::LoggingSyste
 
 
     // Make sure we render this slice at all timesteps
-    for (int CalciumConcentrationIndex = 0; CalciumConcentrationIndex < _CaData->CalciumConcentrationByIndex_->size(); CalciumConcentrationIndex++) {
+    for (int CalciumConcentrationIndex = 0; CalciumConcentrationIndex < _CaData->(*CalciumConcentrationByIndex_)[0]->size(); CalciumConcentrationIndex++) {
 
         // Now, we enumerate through all the steps needed, one at a time until we reach the end
         for (int XStep = 0; XStep < TotalXSteps; XStep++) {
