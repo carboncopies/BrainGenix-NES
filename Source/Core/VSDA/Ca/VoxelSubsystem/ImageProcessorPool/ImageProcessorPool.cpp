@@ -118,8 +118,8 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     } else if (ThisVoxel.IsBorder_) {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
                     } else if (ThisVoxel.IsFilled_) {
-                        int Color = (*ConcentrationsByComartmentAtTimestepIndex)[ThisVoxel.CompartmentID_][CurrentTimestepIndex] * 100.;
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, Color, Color, 220);
+                        int Color = (*ConcentrationsByComartmentAtTimestepIndex)[ThisVoxel.CompartmentID_][CurrentTimestepIndex] * 200.;
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 30, Color, 30);
                     } else {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 0);
                     }

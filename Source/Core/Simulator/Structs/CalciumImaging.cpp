@@ -42,21 +42,21 @@ void CalciumImaging::Init(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopePara
     ImagingInterval_ms = _Params.IndicatorDecayTime_ms + 10.0;
 }
 
-void CalciumImaging::SetImageSize() {
-    // *** Do we need this, or is it taken care of by voxel code?
-}
+// void CalciumImaging::SetImageSize() {
+//     // *** Do we need this, or is it taken care of by voxel code?
+// }
 
-void CalciumImaging::InstantiateVoxelSpace() {
-    // *** Do we need this, or is it taken care of by voxel code?
-}
+// void CalciumImaging::InstantiateVoxelSpace() {
+//     // *** Do we need this, or is it taken care of by voxel code?
+// }
 
-void CalciumImaging::InitializeDepthDimming() {
-    // *** Do we need this, or is it taken care of by voxel code?
-}
+// void CalciumImaging::InitializeDepthDimming() {
+//     // *** Do we need this, or is it taken care of by voxel code?
+// }
 
-void CalciumImaging::InitializeProjectionCircles() {
-    // *** Do we need this, or is it taken care of by voxel code?
-}
+// void CalciumImaging::InitializeProjectionCircles() {
+//     // *** Do we need this, or is it taken care of by voxel code?
+// }
 
 float DelayedPulse(float amp, float tau_delay, float tau_pulse, float tdiff) {
     if (tdiff < tau_delay) return 0.0;
@@ -118,7 +118,7 @@ void CalciumImaging::Record(float t_ms, Simulation* Sim, NES::VSDA::Calcium::CaM
         }
     }
 
-    num_samples++;
+    // num_samples++;
 
     // Note: Unlike the prototype code, we don't implement generating during sim at this time.
 }
