@@ -118,6 +118,13 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     } else if (ThisVoxel.IsBorder_) {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
                     } else if (ThisVoxel.IsFilled_) {
+                        // *** TODO:
+                        // - check the steps in prototype voxel luminosity (see document & code)
+                        // - determine what the max concentration is expressed as in a compartment (is it [0.0-1.0]?)
+                        // - figure out how to index the voxels further from the surface imaged
+                        // - apply distance dimming to those voxels
+                        // - add the light emitted by the stack of voxels
+                        // - make sure the brightest possible output == 255.
                         int Color = (*ConcentrationsByComartmentAtTimestepIndex)[ThisVoxel.CompartmentID_][CurrentTimestepIndex] * 100.;
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, Color, Color, 220);
                     } else {
