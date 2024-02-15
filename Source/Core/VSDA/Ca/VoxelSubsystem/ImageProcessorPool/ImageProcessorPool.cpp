@@ -7,6 +7,7 @@
 #include <vector>
 #include <chrono>
 #include <filesystem>
+#include <iostream>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -100,6 +101,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             std::vector<std::vector<float>>* ConcentrationsByComartmentAtTimestepIndex = Task->CalciumConcentrationByIndex_;
             int CurrentTimestepIndex = Task->CurrentTimestepIndex_;
 
+            int debug_max_lumen = 0;
             // Now enumerate the voxel array and populate the image with the desired pixels (for the subregion we're on)
             for (unsigned int XVoxelIndex = Task->VoxelStartingX; XVoxelIndex < Task->VoxelEndingX; XVoxelIndex++) {
                 for (unsigned int YVoxelIndex = Task->VoxelStartingY; YVoxelIndex < Task->VoxelEndingY; YVoxelIndex++) {
@@ -126,13 +128,16 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                         // - add the light emitted by the stack of voxels
                         // - make sure the brightest possible output == 255.
                         int Color = (*ConcentrationsByComartmentAtTimestepIndex)[ThisVoxel.CompartmentID_][CurrentTimestepIndex] * 100.;
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, Color, Color, 220);
+                        if (Color > 255) Color = 255.0;
+                        if (Color > debug_max_lumen) debug_max_lumen = Color;
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, Color, 0);
                     } else {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 0);
                     }
 
                 }
             }
+            std::cout << "Max lumen = " << debug_max_lumen << '\n';
 
             // Note, when we do image processing (for like noise and that stuff, we should do it here!) (or after resizing depending on what is needed)
             // so then this will be phase two, and phase 3 is saving after processing
