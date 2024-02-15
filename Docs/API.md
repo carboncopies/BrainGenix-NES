@@ -662,7 +662,12 @@ Broken right now.
         ImageHeight_px: int,
         NumVoxelsPerSlice: int,
         ScanRegionOverlap_percent: float,
-        NumPixelsPerVoxel_px: int
+        NumPixelsPerVoxel_px: int,
+        "FlourescingNeuronIDs": list<NeuronID:int>,
+        "CalciumIndicator": string,
+        "IndicatorRiseTime_ms": float,
+        "IndicatorDecayTime_ms": float,
+        "IndicatorInterval_ms": float
     ]
 ```
  - Response:

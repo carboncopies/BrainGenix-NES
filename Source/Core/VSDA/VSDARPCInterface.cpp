@@ -10,6 +10,8 @@
 #include <cpp-base64/base64.cpp>
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <RPC/RPCHandlerHelper.h>
+
 #include <VSDA/VSDARPCInterface.h>
 
 
@@ -367,45 +369,32 @@ std::string VSDARPCInterface::VSDACAInitialize(std::string _JSONRequest) {
 }
 std::string VSDARPCInterface::VSDACASetupMicroscope(std::string _JSONRequest) {
 
-    // Parse Request, Get Parameters
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID                 = Util::GetInt(&RequestJSON, "SimulationID");
-    float PixelResolution_nm         = Util::GetFloat(&RequestJSON, "PixelResolution_nm");
-    int ImageWidth_px                = Util::GetInt(&RequestJSON, "ImageWidth_px");
-    int ImageHeight_px               = Util::GetInt(&RequestJSON, "ImageHeight_px");
-    int NumVoxelsPerSlice            = Util::GetInt(&RequestJSON, "NumVoxelsPerSlice");
-    float ScanRegionOverlap_percent  = Util::GetFloat(&RequestJSON, "ScanRegionOverlap_percent");
-    int NumPixelsPerVoxel_px         = Util::GetInt(&RequestJSON, "NumPixelsPerVoxel_px");
-    Logger_->Log(std::string("VSDA Ca SetupMicroscope Called On Simulation With ID ") + std::to_string(SimulationID), 4);
 
-    // Check Sim ID
-    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
-        Logger_->Log(std::string("VSDA Ca SetupMicroscope Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        return ResponseJSON.dump();
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/Ca/SetupMicroscope", SimulationsPtr_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
-
-    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
-    
 
     // Build Microscope Paremters Data
     NES::VSDA::Calcium::CaMicroscopeParameters Params;
-    Params.VoxelResolution_um = PixelResolution_nm; // This is not right, and we'll need to tweak some of these conversions, but for now it's the best we've got.
-    Params.ImageWidth_px = ImageWidth_px;
-    Params.ImageHeight_px = ImageHeight_px;
-    Params.ScanRegionOverlap_percent = ScanRegionOverlap_percent;
-    Params.NumVoxelsPerSlice = NumVoxelsPerSlice;
-    Params.NumPixelsPerVoxel_px = NumPixelsPerVoxel_px;
+    Handle.GetParVecInt("FlourescingNeuronIDs", Params.FlourescingNeuronIDs_);
+    Handle.GetParString("CalciumIndicator", Params.CalciumIndicator_);
+    Handle.GetParFloat("IndicatorRiseTime_ms", Params.IndicatorRiseTime_ms);
+    Handle.GetParFloat("IndicatorDecayTime_ms", Params.IndicatorDecayTime_ms);
+    Handle.GetParFloat("IndiciatorInterval_ms", Params.IndiciatorInterval_ms);
+    Handle.GetParFloat("VoxelResolution_nm", Params.VoxelResolution_um);
+    Handle.GetParFloat("ScanRegionOverlap_percent", Params.ScanRegionOverlap_percent);
+    Handle.GetParInt("ImageWidth_px", Params.ImageWidth_px);
+    Handle.GetParInt("ImageHeight_px", Params.ImageHeight_px);
+    Handle.GetParInt("NumVoxelsPerSlice", Params.NumVoxelsPerSlice);
+    Handle.GetParInt("NumPixelsPerVoxel_px", Params.NumPixelsPerVoxel_px);
 
 
-    int Result = !NES::VSDA::Calcium::VSDA_CA_SetupMicroscope(Logger_, ThisSimulation, Params);
+    int Result = !NES::VSDA::Calcium::VSDA_CA_SetupMicroscope(Logger_, Handle.Sim(), Params);
 
 
     // Build Response
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = Result;
-    return ResponseJSON.dump();
+    return Handle.ErrResponse();
 
 }
 std::string VSDARPCInterface::VSDACADefineScanRegion(std::string _JSONRequest) {
