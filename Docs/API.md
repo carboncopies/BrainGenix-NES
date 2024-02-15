@@ -657,7 +657,7 @@ Broken right now.
 ```json
     [
         SimulationID: int,
-        PixelResolution_nm: float,
+        VoxelResolution_nm: float,
         ImageWidth_px: int,
         ImageHeight_px: int,
         NumVoxelsPerSlice: int,
