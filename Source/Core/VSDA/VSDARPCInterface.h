@@ -44,6 +44,7 @@
 #include <Simulator/Structs/Simulation.h>
 
 #include <VSDA/RPCRoutes/EM.h>
+#include <VSDA/RPCRoutes/Ca.h>
 
 #include <BG/Renderer/Interface.h>
 #include <BG/Renderer/SceneGraph/Primitive/Cube.h>
@@ -155,13 +156,15 @@ public:
      * @param _JSONRequest 
      * @return std::string 
      */
-    std::string VSDAEMGetImage(std::string _JSONRequest);
+    std::string VSDAGetImage(std::string _JSONRequest);
 
 
     std::string VSDACAInitialize(std::string _JSONRequest);
     std::string VSDACASetupMicroscope(std::string _JSONRequest);
     std::string VSDACADefineScanRegion(std::string _JSONRequest);
     std::string VSDACAQueueRenderOperation(std::string _JSONRequest);
+    std::string VSDACAGetRenderStatus(std::string _JSONRequest);
+    std::string VSDACAGetImageStack(std::string _JSONRequest);
     
 
 

@@ -615,8 +615,8 @@ Broken right now.
     ]
 ```
 
-### VSDA - EM - GetImage
- - Name: `VSDA/EM/GetImage`  
+### VSDA - GetImage
+ - Name: `VSDA/GetImage`  
  - Query: 
 ```json
     [
@@ -631,6 +631,128 @@ Broken right now.
         ImageData: base64 encoded binary string of image data
     ]
 ```
+
+
+
+
+
+### VSDA - Ca - Initialize
+ - Name: `VSDA/Ca/Initialize`  
+ - Query: 
+```json
+    [
+        "SimulationID": int
+    ]
+```
+ - Response:
+```json
+    [
+        "StatusCode": ENUM_STATUS_CODE
+    ]
+```
+
+### VSDA - Ca - SetupMicroscope
+ - Name: `VSDA/Ca/SetupMicroscope`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        PixelResolution_nm: float,
+        ImageWidth_px: int,
+        ImageHeight_px: int,
+        NumSlicesPerVoxel: int,
+        ScanRegionOverlap_percent: float,
+        NumPixelsPerVoxel_px: int
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+    ]
+```
+
+### VSDA - Ca - DefineScanRegion
+ - Name: `VSDA/Ca/DefineScanRegion`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        Point1X_um: float,
+        Point1Y_um: float,
+        Point1Z_um: float,
+        Point2X_um: float,
+        Point2Y_um: float,
+        Point2Z_um: float
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        ScanRegionID: int
+    ]
+```
+
+### VSDA - Ca - QueueRenderOperation
+ - Name: `VSDA/Ca/QueueRenderOperation`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        ScanRegionID: int
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+    ]
+```
+
+### VSDA - Ca - VSDAEMGetRenderStatus
+ - Name: `VSDA/Ca/VSDAEMGetRenderStatus`  
+ - Query: 
+```json
+    [
+        SimulationID: int
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        RenderStatus: ENUM_VSDA_CA_STATUS_CODE,
+        CurrentSlice: int,
+        TotalSlices: int,
+        CurrentSliceImage: int,
+        TotalSliceImages: int,
+        CurrentRegion: int,
+        TotalRegions: int,
+    ]
+```
+
+### VSDA - Ca - VSDAEMGetImageStack
+ - Name: `VSDA/Ca/VSDAEMGetImageStack`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        ScanRegionID: int
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        RenderedImages: list<string>
+    ]
+```
+
+
+
+
+
 
 Todo: Add other routes here.
 

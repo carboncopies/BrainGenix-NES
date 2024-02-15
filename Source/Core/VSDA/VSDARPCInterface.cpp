@@ -44,11 +44,12 @@ VSDARPCInterface::VSDARPCInterface(BG::Common::Logger::LoggingSystem* _Logger, A
     _RPCManager->AddRoute("VSDA/EM/QueueRenderOperation", std::bind(&VSDARPCInterface::VSDAEMQueueRenderOperation, this, std::placeholders::_1));
     _RPCManager->AddRoute("VSDA/EM/GetRenderStatus",      std::bind(&VSDARPCInterface::VSDAEMGetRenderStatus, this, std::placeholders::_1));
     _RPCManager->AddRoute("VSDA/EM/GetImageStack",        std::bind(&VSDARPCInterface::VSDAEMGetImageStack, this, std::placeholders::_1));
-    _RPCManager->AddRoute("VSDA/EM/GetImage",             std::bind(&VSDARPCInterface::VSDAEMGetImage, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/GetImage",                std::bind(&VSDARPCInterface::VSDAGetImage, this, std::placeholders::_1));
     _RPCManager->AddRoute("VSDA/Ca/Initialize",           std::bind(&VSDARPCInterface::VSDACAInitialize, this, std::placeholders::_1));
     _RPCManager->AddRoute("VSDA/Ca/SetupMicroscope",      std::bind(&VSDARPCInterface::VSDACASetupMicroscope, this, std::placeholders::_1));
     _RPCManager->AddRoute("VSDA/Ca/DefineScanRegion",     std::bind(&VSDARPCInterface::VSDACADefineScanRegion, this, std::placeholders::_1));
     _RPCManager->AddRoute("VSDA/Ca/QueueRenderOperation", std::bind(&VSDARPCInterface::VSDACAQueueRenderOperation, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/Ca/GetRenderStatus",      std::bind(&VSDARPCInterface::VSDACAGetRenderStatus, this, std::placeholders::_1));
 
 }
 
@@ -267,7 +268,7 @@ std::string VSDARPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
 
 
 }
-std::string VSDARPCInterface::VSDAEMGetImage(std::string _JSONRequest) {
+std::string VSDARPCInterface::VSDAGetImage(std::string _JSONRequest) {
 
 
     // Parse Request, Get Parameters
@@ -333,6 +334,219 @@ std::string VSDARPCInterface::VSDAEMGetImage(std::string _JSONRequest) {
 
 
     return ResponseJSON.dump();
+
+}
+
+
+
+std::string VSDARPCInterface::VSDACAInitialize(std::string _JSONRequest) {
+
+    // Parse Request
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+    Logger_->Log(std::string("VSDA CA Initialize Called On Simulation With ID ") + std::to_string(SimulationID), 4);
+
+    // Check Sim ID
+    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
+        Logger_->Log(std::string("VSDA CA Initialize Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        return ResponseJSON.dump();
+    }
+
+    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+    
+
+    int Result = !NES::VSDA::Calcium::VSDA_CA_Initialize(Logger_, ThisSimulation);
+
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = Result;
+    return ResponseJSON.dump();
+}
+std::string VSDARPCInterface::VSDACASetupMicroscope(std::string _JSONRequest) {
+
+    // Parse Request, Get Parameters
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID                 = Util::GetInt(&RequestJSON, "SimulationID");
+    float PixelResolution_nm         = Util::GetFloat(&RequestJSON, "PixelResolution_nm");
+    int ImageWidth_px                = Util::GetInt(&RequestJSON, "ImageWidth_px");
+    int ImageHeight_px               = Util::GetInt(&RequestJSON, "ImageHeight_px");
+    int NumVoxelsPerSlice          = Util::GetFloat(&RequestJSON, "SliceThickness_nm");
+    float ScanRegionOverlap_percent  = Util::GetFloat(&RequestJSON, "ScanRegionOverlap_percent");
+    int NumPixelsPerVoxel_px         = Util::GetInt(&RequestJSON, "NumPixelsPerVoxel_px");
+    Logger_->Log(std::string("VSDA Ca SetupMicroscope Called On Simulation With ID ") + std::to_string(SimulationID), 4);
+
+    // Check Sim ID
+    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
+        Logger_->Log(std::string("VSDA Ca SetupMicroscope Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        return ResponseJSON.dump();
+    }
+
+    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+    
+
+    // Build Microscope Paremters Data
+    NES::VSDA::Calcium::CaMicroscopeParameters Params;
+    Params.VoxelResolution_um = PixelResolution_nm; // This is not right, and we'll need to tweak some of these conversions, but for now it's the best we've got.
+    Params.ImageWidth_px = ImageWidth_px;
+    Params.ImageHeight_px = ImageHeight_px;
+    Params.ScanRegionOverlap_percent = ScanRegionOverlap_percent;
+    Params.NumVoxelsPerSlice = NumVoxelsPerSlice;
+    Params.NumPixelsPerVoxel_px = NumPixelsPerVoxel_px;
+
+
+    int Result = !NES::VSDA::Calcium::VSDA_CA_SetupMicroscope(Logger_, ThisSimulation, Params);
+
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = Result;
+    return ResponseJSON.dump();
+
+}
+std::string VSDARPCInterface::VSDACADefineScanRegion(std::string _JSONRequest) {
+
+    // Parse Request, Get Parameters
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID                 = Util::GetInt(&RequestJSON, "SimulationID");
+    Geometries::Vec3D Point1, Point2;
+    Util::GetArrVec3(Point1, &RequestJSON, "Point1_um");
+    Util::GetArrVec3(Point2, &RequestJSON, "Point2_um");
+    Logger_->Log(std::string("VSDA Ca DefineScanRegion Called On Simulation With ID ") + std::to_string(SimulationID), 4);
+
+    // Check Sim ID
+    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
+        Logger_->Log(std::string("VSDA Ca DefineScanRegion Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        return ResponseJSON.dump();
+    }
+
+    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+
+    // Setup Requested Bounding Box
+    ScanRegion CreatedRegion;
+    CreatedRegion.Point1X_um = Point1.x;
+    CreatedRegion.Point1Y_um = Point1.y;
+    CreatedRegion.Point1Z_um = Point1.z;
+
+    CreatedRegion.Point2X_um = Point2.x;
+    CreatedRegion.Point2Y_um = Point2.y;
+    CreatedRegion.Point2Z_um = Point2.z;
+
+
+    int ID = -1;
+    int Result = !NES::VSDA::Calcium::VSDA_CA_DefineScanRegion(Logger_, ThisSimulation, CreatedRegion, &ID);
+
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = Result;
+    ResponseJSON["ScanRegionID"] = ID;
+    return ResponseJSON.dump();
+
+
+}
+std::string VSDARPCInterface::VSDACAQueueRenderOperation(std::string _JSONRequest) {
+
+    // Parse Request, Get Parameters
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+    int ScanRegionID = Util::GetInt(&RequestJSON, "ScanRegionID");
+    Logger_->Log(std::string("VSDA Ca QueueRenderOperation Called On Simulation With ID ") + std::to_string(SimulationID), 4);
+
+    // Check Sim ID
+    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
+        Logger_->Log(std::string("VSDA Ca QueueRenderOperation Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        return ResponseJSON.dump();
+    }
+
+    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+    int Result = !NES::VSDA::Calcium::VSDA_CA_QueueRenderOperation(Logger_, ThisSimulation, ScanRegionID);
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = Result;
+    return ResponseJSON.dump();
+
+}
+std::string VSDARPCInterface::VSDACAGetRenderStatus(std::string _JSONRequest) {
+
+
+    // Parse Request, Get Parameters
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+    // Logger_->Log(std::string("VSDA EM GetRenderStatus Called On Simulation With ID ") + std::to_string(SimulationID), 0);
+
+    // Check Sim ID
+    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
+        Logger_->Log(std::string("VSDA Ca GetRenderStatus Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        return ResponseJSON.dump();
+    }
+
+    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0;
+    ResponseJSON["RenderStatus"] = ThisSimulation->CaData_.State_;
+    ResponseJSON["CurrentSlice"] = ThisSimulation->CaData_.CurrentSlice_;
+    ResponseJSON["TotalSlices"] = ThisSimulation->CaData_.TotalSlices_;
+    ResponseJSON["CurrentSliceImage"] = ThisSimulation->CaData_.CurrentSliceImage_;
+    ResponseJSON["TotalSliceImages"] = ThisSimulation->CaData_.TotalSliceImages_;
+    ResponseJSON["CurrentRegion"] = ThisSimulation->CaData_.CurrentRegion_;
+    ResponseJSON["TotalRegions"] = ThisSimulation->CaData_.TotalRegions_;
+
+    return ResponseJSON.dump();
+
+}
+std::string VSDARPCInterface::VSDACAGetImageStack(std::string _JSONRequest) {
+
+    // Parse Request, Get Parameters
+    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
+    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
+    int ScanRegionID = Util::GetInt(&RequestJSON, "ScanRegionID");
+
+    // Check Sim ID
+    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
+        Logger_->Log(std::string("VSDA Ca GetImageStack Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 1; // invalid simulation id
+        return ResponseJSON.dump();
+    }
+
+    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+
+
+    // Check Region ID
+    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->CaData_.RenderedImagePaths_.size()) {
+        Logger_->Log(std::string("VSDA Ca GetImageStack Error, ScanRegion With ID ") + std::to_string(ScanRegionID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 3; // Error
+        return ResponseJSON.dump();
+    } 
+
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+
+    ResponseJSON["StatusCode"] = ThisSimulation->CaData_.State_ != NES::VSDA::Calcium::CA_RENDER_DONE;
+
+    nlohmann::json ImagePaths = ThisSimulation->CaData_.RenderedImagePaths_[ScanRegionID];
+    Logger_->Log(std::string("VSDA Ca GetImageStack Called On Simulation With ID ") + std::to_string(SimulationID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
+    ResponseJSON["RenderedImages"] = ImagePaths;
+
+
+    return ResponseJSON.dump();
+
 
 }
 
