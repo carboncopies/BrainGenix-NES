@@ -75,6 +75,10 @@ void CalciumImaging::InitializeFluorescenceKernel(Simulation* _Sim, NES::VSDA::C
         FluorescenceKernel.emplace_back(k);
         t += _Sim->Dt_ms;
     }
+    // *** We should check if we actually still need this:
+    // Reverse the kernel:
+    ReversedFluorescenceKernel.resize(this->FluorescenceKernel.size(), 0.0);
+    std::reverse_copy(FluorescenceKernel.begin(), FluorescenceKernel.end(), ReversedFluorescenceKernel.begin());
 }
 
 void CalciumImaging::InitializeFluorescingNeuronFIFOs(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params) {
@@ -108,13 +112,13 @@ void CalciumImaging::Record(float t_ms, Simulation* Sim, NES::VSDA::Calcium::CaM
     if (_Params.FlourescingNeuronIDs_.empty()) {
         // All neurons fluoresce.
         for (auto & neuron_ptr : Sim->Neurons) {
-            static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get())->UpdateConvolvedFIFO(FluorescenceKernel);
+            static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get())->UpdateConvolvedFIFO(ReversedFluorescenceKernel);
         }
 
     } else {
         // For specified fluorescing neurons set.
         for (auto & neuron_id : _Params.FlourescingNeuronIDs_) if (neuron_id < Sim->Neurons.size()) {
-            static_cast<BallAndStick::BSNeuron*>(Sim->Neurons.at(neuron_id).get())->UpdateConvolvedFIFO(FluorescenceKernel);
+            static_cast<BallAndStick::BSNeuron*>(Sim->Neurons.at(neuron_id).get())->UpdateConvolvedFIFO(ReversedFluorescenceKernel);
         }
     }
 
