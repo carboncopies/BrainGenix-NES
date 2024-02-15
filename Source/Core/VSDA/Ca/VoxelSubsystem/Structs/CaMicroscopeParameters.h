@@ -64,7 +64,7 @@ struct CaMicroscopeParameters {
     std::string CalciumIndicator_;          /**Name of the calcium indicator currently being used*/
     float IndicatorRiseTime_ms;             /**Rise time of the indicator in milliseconds (how long before it sarts glowing)*/
     float IndicatorDecayTime_ms;            /**Decay of the time of the indicator in milliseconds (how long before it stops glowing)*/
-    float IndiciatorInterval_ms;            /**Interval of update for the indicator in milliseconds*/
+    float IndicatorInterval_ms;            /**Interval of update for the indicator in milliseconds*/
 
 };
 

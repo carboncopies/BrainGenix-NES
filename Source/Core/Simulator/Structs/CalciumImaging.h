@@ -38,20 +38,20 @@ struct CalciumImaging {
     std::string Name;
     int ID;
 
-    std::vector<int> FluorescingNeurons;
-    std::string CalciumIndicator;
-    float IndicatorRise_ms = 30.0;
-    float IndicatorDecay_ms = 80.0;
-    float IndicatorInterval_ms = 80.0;
+    //std::vector<int> FluorescingNeurons;
+    //std::string CalciumIndicator;
+    //float IndicatorRise_ms = 30.0;
+    //float IndicatorDecay_ms = 80.0;
+    //float IndicatorInterval_ms = 80.0;
     float ImagingInterval_ms = 90.0;
-    int VoxelSpaceSide_px = 2;
-    float Voxel_um = 0.0;
-    bool GenerateDuringSim = false;
-    Geometries::Vec3D Center_um{0.0, 0.0, 0.0};
-    Geometries::Vec3D Half{10.0, 10.0, 2.0};
-    Geometries::Vec3D Dx{1.0, 0.0, 0.0};
-    Geometries::Vec3D Dy{0.0, 1.0, 0.0};
-    Geometries::Vec3D Dz{0.0, 0.0, 1.0}; // Positive dz indicates most visible top surface.
+    //int VoxelSpaceSide_px = 2;
+    //float Voxel_um = 0.0;
+    //bool GenerateDuringSim = false;
+    //Geometries::Vec3D Center_um{0.0, 0.0, 0.0};
+    //Geometries::Vec3D Half{10.0, 10.0, 2.0};
+    //Geometries::Vec3D Dx{1.0, 0.0, 0.0};
+    //Geometries::Vec3D Dy{0.0, 1.0, 0.0};
+    //Geometries::Vec3D Dz{0.0, 0.0, 1.0}; // Positive dz indicates most visible top surface.
 
     std::vector<float> FluorescenceKernel;
     std::vector<float> ReversedFluorescenceKernel;
@@ -71,15 +71,15 @@ struct CalciumImaging {
     //CalciumImaging(CalciumImaging & CaImg);
     //CalciumImaging(Simulator::Simulation* _Sim);
 
-    void Init(Simulation* _Sim);
+    void Init(Simulation* _Sim, CaMicroscopeParameters & _Params);
 
     void SetImageSize();
     void InstantiateVoxelSpace();
     void InitializeDepthDimming();
     void InitializeProjectionCircles();
 
-    void InitializeFluorescenceKernel(Simulation* _Sim);
-    void InitializeFluorescingNeuronFIFOs(Simulation* _Sim);
+    void InitializeFluorescenceKernel(Simulation* _Sim, CaMicroscopeParameters & _Params);
+    void InitializeFluorescingNeuronFIFOs(Simulation* _Sim, CaMicroscopeParameters & _Params);
 
     void Record(float t_ms, Simulation* Sim);
 

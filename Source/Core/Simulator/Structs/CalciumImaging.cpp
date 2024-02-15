@@ -30,15 +30,16 @@ namespace Tools {
 
 // }
 
-void CalciumImaging::Init(Simulation* _Sim) {
+void CalciumImaging::Init(Simulation* _Sim, CaMicroscopeParameters & _Params) {
     // *** Voxel_um = GetVoxelSize_um();
     // *** IncludeComponents = GetVisibleComponentsList();
     // SetImageSize();
     // InstantiateVoxelSpace();
     // InitializeDepthDimming();
     // InitializeProjectionCircles();
-    InitializeFluorescenceKernel(_Sim);
-    InitializeFluorescingNeuronFIFOs(_Sim);
+    InitializeFluorescenceKernel(_Sim, _Params);
+    InitializeFluorescingNeuronFIFOs(_Sim, _Params);
+    ImagingInterval_ms = _Params.IndicatorDecay_ms + 10.0;
 }
 
 void CalciumImaging::SetImageSize() {
@@ -63,22 +64,22 @@ float DelayedPulse(float amp, float tau_delay, float tau_pulse, float tdiff) {
     return 0.0;
 }
 
-void CalciumImaging::InitializeFluorescenceKernel(Simulation* _Sim) {
+void CalciumImaging::InitializeFluorescenceKernel(Simulation* _Sim, CaMicroscopeParameters & _Params) {
     FluorescenceKernel.clear();
     float t = 0.0;
-    float kernel_ms = 2.0 * (IndicatorRise_ms + IndicatorDecay_ms);
-    float pulse_samples = IndicatorDecay_ms;
+    float kernel_ms = 2.0 * (_Params.IndicatorRiseTime_ms + _Params.IndicatorDecayTime_ms);
+    float pulse_samples = _Params.IndicatorDecayTime_ms;
     float amp = 1.0 / pulse_samples;
     while (t < kernel_ms) {
-        float k = DelayedPulse(amp, IndicatorRise_ms, IndicatorDecay_ms, t);
+        float k = DelayedPulse(amp, _Params.IndicatorRiseTime_ms, _Params.IndicatorDecayTime_ms, t);
         FluorescenceKernel.emplace_back(k);
         t += _Sim->Dt_ms;
     }
 }
 
-void CalciumImaging::InitializeFluorescingNeuronFIFOs(Simulation* _Sim) {
+void CalciumImaging::InitializeFluorescingNeuronFIFOs(Simulation* _Sim, CaMicroscopeParameters & _Params) {
     // *** TODO: Set different FIFO sizes for different GCaMP types.
-    float FIFO_ms = 4.0 * (IndicatorRise_ms + IndicatorDecay_ms);
+    float FIFO_ms = 4.0 * (_Params.IndicatorRiseTime_ms + _Params.IndicatorDecayTime_ms);
     float FIFO_dt_ms = _Sim->Dt_ms;
     if (FluorescingNeurons.empty()) {
         // All neurons.
@@ -104,7 +105,7 @@ void CalciumImaging::Record(float t_ms, Simulation* Sim) {
     // Make a recording:
     TRecorded_ms.emplace_back(t_ms);
 
-    if (FluorescingNeurons.empty()) {
+    if (FlourescingNeuronIDs_.empty()) {
         // All neurons fluoresce.
         for (auto & neuron_ptr : Sim->Neurons) {
             static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get())->UpdateConvolvedFIFO(FluorescenceKernel);
@@ -112,7 +113,7 @@ void CalciumImaging::Record(float t_ms, Simulation* Sim) {
 
     } else {
         // For specified fluorescing neurons set.
-        for (auto & neuron_id : FluorescingNeurons) if (neuron_id < Sim->Neurons.size()) {
+        for (auto & neuron_id : FlourescingNeuronIDs_) if (neuron_id < Sim->Neurons.size()) {
             static_cast<BallAndStick::BSNeuron*>(Sim->Neurons.at(neuron_id).get())->UpdateConvolvedFIFO(FluorescenceKernel);
         }
     }
