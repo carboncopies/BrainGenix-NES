@@ -158,6 +158,13 @@ public:
     std::string VSDAEMGetImage(std::string _JSONRequest);
 
 
+    std::string VSDACAInitialize(std::string _JSONRequest);
+    std::string VSDACASetupMicroscope(std::string _JSONRequest);
+    std::string VSDACADefineScanRegion(std::string _JSONRequest);
+    std::string VSDACAQueueRenderOperation(std::string _JSONRequest);
+    
+
+
 
 };
 

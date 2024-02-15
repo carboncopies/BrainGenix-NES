@@ -26,7 +26,7 @@ bool VSDA_CA_Initialize(BG::Common::Logger::LoggingSystem* _Logger, Simulator::S
     assert(_Logger != nullptr);
     assert(_Sim != nullptr);
     if (_Sim->CaData_.State_ != CA_NOT_INITIALIZED) { // Check if the VSDA has already been initialized, if so - we don't touch it.
-        _Logger->Log("VSDA EM Initialize Error, Cannot Reinit A Region Which Has Already Been Initialized", 6);
+        _Logger->Log("VSDA Ca Initialize Error, Cannot Reinit A Region Which Has Already Been Initialized", 6);
         return false; 
     }
 
@@ -45,7 +45,7 @@ bool VSDA_CA_SetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulat
     assert(_Logger != nullptr);
     assert(_Sim != nullptr);
     if ((_Sim->CaData_.State_ != CA_INIT_BEGIN) && (_Sim->CaData_.State_ != CA_RENDER_DONE)) { // Check that the VSDA is during its init phase, and not yet done initializing.
-        _Logger->Log("VSDA EM SetupMicroscope Error, Cannot Setup Microscope On System With Unknown State", 6);
+        _Logger->Log("VSDA Ca SetupMicroscope Error, Cannot Setup Microscope On System With Unknown State", 6);
         return false; 
     }
 
@@ -67,7 +67,7 @@ bool VSDA_CA_DefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simula
     assert(_Logger != nullptr);
     assert(_Sim != nullptr);
     if ((_Sim->CaData_.State_ != CA_INIT_BEGIN) && (_Sim->CaData_.State_ != CA_RENDER_DONE)) { // Check that the VSDA is during its init phase, and not yet done initializing.
-        _Logger->Log("VSDA EM DefineScanRegion Error, Cannot Define Microscope Scan Region On System With Unknown State", 6);
+        _Logger->Log("VSDA Ca DefineScanRegion Error, Cannot Define Microscope Scan Region On System With Unknown State", 6);
         return false; 
     }
 
@@ -89,16 +89,16 @@ bool VSDA_CA_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Si
     assert(_Logger != nullptr);
     assert(_Sim != nullptr);
     if ((_Sim->CaData_.State_ != CA_INIT_BEGIN) && (_Sim->CaData_.State_ != CA_RENDER_DONE)) { // Check that the VSDA is during its init phase, and not yet done initializing.
-        _Logger->Log("VSDA EM QueueRenderOperation Error, Cannot Queue Render Operation On System With Unknown State", 6);
+        _Logger->Log("VSDA Ca QueueRenderOperation Error, Cannot Queue Render Operation On System With Unknown State", 6);
         return false; 
     }
     if (_RegionID < 0 || _RegionID >= _Sim->CaData_.Regions_.size()) { // the region ID is out of range
-        _Logger->Log("VSDA EM QueueRenderOperation Error, Region ID Is Out Of Range!", 6);
+        _Logger->Log("VSDA Ca QueueRenderOperation Error, Region ID Is Out Of Range!", 6);
         return false;    
     }
 
     if (_Sim->WorkRequested || _Sim->CurrentTask != Simulator::SIMULATION_NONE) { // Cannot start an operation, simulation is busy
-        _Logger->Log("VSDA EM QueueRenderOperation Error, Simulation Is Currently Running!", 6);
+        _Logger->Log("VSDA Ca QueueRenderOperation Error, Simulation Is Currently Running!", 6);
         return false;    
     }
 
