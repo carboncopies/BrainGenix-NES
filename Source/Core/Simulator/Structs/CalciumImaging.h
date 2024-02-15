@@ -33,7 +33,7 @@ namespace Tools {
  */
 struct CalciumImaging {
 
-    Simulator::Simulation* Sim;
+    // Simulator::Simulation* Sim;
 
     std::string Name;
     int ID;
@@ -79,7 +79,7 @@ struct CalciumImaging {
     void InitializeProjectionCircles();
 
     void InitializeFluorescenceKernel(Simulation* _Sim);
-    void InitializeFluorescingNeuronFIFOs();
+    void InitializeFluorescingNeuronFIFOs(Simulation* _Sim);
 
     void Record(float t_ms, Simulation* Sim);
 

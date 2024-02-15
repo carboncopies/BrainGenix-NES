@@ -73,7 +73,7 @@ bool GetCalciumConcentrationTimestep(BG::Common::Logger::LoggingSystem *_Logger,
 }
 
 float SampledCalciumConcentrationTime_ms(Simulator::Simulation* _Simulation, size_t _SampleIdx) {
-	return _Simulation->CaImaging->TRecorded_ms.at(_SampleIdx);
+	return _Simulation->CaData_.CaImaging.TRecorded_ms.at(_SampleIdx);
 }
 
 }; // Close Namespace VoxelArrayGenerator

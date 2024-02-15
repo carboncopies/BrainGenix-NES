@@ -502,80 +502,80 @@ std::string SimulationRPCInterface::AttachRecordingElectrodes(std::string _JSONR
  * }
  */
 std::string SimulationRPCInterface::CalciumImagingAttach(std::string _JSONRequest) {
- 
-    API::HandlerData Handle(_JSONRequest, Logger_, "CalciumImagingAttach",  &Simulations_);
-    if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
+    return "";
+    // API::HandlerData Handle(_JSONRequest, Logger_, "CalciumImagingAttach",  &Simulations_);
+    // if (Handle.HasError()) {
+    //     return Handle.ErrResponse();
+    // }
 
-    Tools::CalciumImaging C(Handle.Sim());
-    if (!Handle.GetParString("name", C.Name)) {
-        Handle.ErrResponse();
-    }
-    if (!Handle.GetParVecInt("fluorescing_neurons", C.FluorescingNeurons)) {
-        Handle.ErrResponse();
-    }
-    if (!Handle.GetParString("calcium_indicator", C.CalciumIndicator)) {
-        Handle.ErrResponse();
-    }
-    if (!Handle.GetParFloat("indicator_rise_ms", C.IndicatorRise_ms)) {
-        Handle.ErrResponse();
-    }
-    if (!Handle.GetParFloat("indicator_decay_ms", C.IndicatorDecay_ms)) {
-        Handle.ErrResponse();
-    }
-    if (!Handle.GetParFloat("indicator_interval_ms", C.IndicatorInterval_ms)) {
-        Handle.ErrResponse();
-    }
-    C.ImagingInterval_ms = C.IndicatorInterval_ms+10.0; // *** TODO: Could make this independently settable!
-    if (!Handle.GetParInt("voxelspace_side_px", C.VoxelSpaceSide_px)) {
-        Handle.ErrResponse();
-    }
-    if (!Handle.GetParBool("generate_during_sim", C.GenerateDuringSim)) {
-        Handle.ErrResponse();
-    }
-    nlohmann::json::iterator SubVolumeIterator;
-    if (!Handle.FindPar("imaged_subvolume", SubVolumeIterator)) {
-        Handle.ErrResponse();
-    }
-    auto SubVolume = SubVolumeIterator.value();
-    if (!SubVolume.is_object()) {
-        Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
-    }
-    std::vector<float> Center;
-    if (!Handle.GetParVecFloat("center", Center, SubVolume)) {
-        Handle.ErrResponse();
-    }
-    std::vector<float> Half;
-    if (!Handle.GetParVecFloat("half", Half, SubVolume)) {
-        Handle.ErrResponse();
-    }
-    std::vector<float> Dx;
-    if (!Handle.GetParVecFloat("dx", Dx, SubVolume)) {
-        Handle.ErrResponse();
-    }
-    std::vector<float> Dy;
-    if (!Handle.GetParVecFloat("dy", Dy, SubVolume)) {
-        Handle.ErrResponse();
-    }
-    std::vector<float> Dz;
-    if (!Handle.GetParVecFloat("dz", Dz, SubVolume)) {
-        Handle.ErrResponse();
-    }
-    if ((Center.size()<3) || (Half.size()<3) || (Dx.size()<3) || (Dy.size()<3) || (Dz.size()<3)) {
-        Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
-    }
-    C.Center_um = Center;
-    C.Half = Half;
-    C.Dx = Dx;
-    C.Dy = Dy;
-    C.Dz = Dz;
+    // Tools::CalciumImaging C(Handle.Sim());
+    // if (!Handle.GetParString("name", C.Name)) {
+    //     Handle.ErrResponse();
+    // }
+    // if (!Handle.GetParVecInt("fluorescing_neurons", C.FluorescingNeurons)) {
+    //     Handle.ErrResponse();
+    // }
+    // if (!Handle.GetParString("calcium_indicator", C.CalciumIndicator)) {
+    //     Handle.ErrResponse();
+    // }
+    // if (!Handle.GetParFloat("indicator_rise_ms", C.IndicatorRise_ms)) {
+    //     Handle.ErrResponse();
+    // }
+    // if (!Handle.GetParFloat("indicator_decay_ms", C.IndicatorDecay_ms)) {
+    //     Handle.ErrResponse();
+    // }
+    // if (!Handle.GetParFloat("indicator_interval_ms", C.IndicatorInterval_ms)) {
+    //     Handle.ErrResponse();
+    // }
+    // C.ImagingInterval_ms = C.IndicatorInterval_ms+10.0; // *** TODO: Could make this independently settable!
+    // if (!Handle.GetParInt("voxelspace_side_px", C.VoxelSpaceSide_px)) {
+    //     Handle.ErrResponse();
+    // }
+    // if (!Handle.GetParBool("generate_during_sim", C.GenerateDuringSim)) {
+    //     Handle.ErrResponse();
+    // }
+    // nlohmann::json::iterator SubVolumeIterator;
+    // if (!Handle.FindPar("imaged_subvolume", SubVolumeIterator)) {
+    //     Handle.ErrResponse();
+    // }
+    // auto SubVolume = SubVolumeIterator.value();
+    // if (!SubVolume.is_object()) {
+    //     Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    // }
+    // std::vector<float> Center;
+    // if (!Handle.GetParVecFloat("center", Center, SubVolume)) {
+    //     Handle.ErrResponse();
+    // }
+    // std::vector<float> Half;
+    // if (!Handle.GetParVecFloat("half", Half, SubVolume)) {
+    //     Handle.ErrResponse();
+    // }
+    // std::vector<float> Dx;
+    // if (!Handle.GetParVecFloat("dx", Dx, SubVolume)) {
+    //     Handle.ErrResponse();
+    // }
+    // std::vector<float> Dy;
+    // if (!Handle.GetParVecFloat("dy", Dy, SubVolume)) {
+    //     Handle.ErrResponse();
+    // }
+    // std::vector<float> Dz;
+    // if (!Handle.GetParVecFloat("dz", Dz, SubVolume)) {
+    //     Handle.ErrResponse();
+    // }
+    // if ((Center.size()<3) || (Half.size()<3) || (Dx.size()<3) || (Dy.size()<3) || (Dz.size()<3)) {
+    //     Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    // }
+    // C.Center_um = Center;
+    // C.Half = Half;
+    // C.Dx = Dx;
+    // C.Dy = Dy;
+    // C.Dz = Dz;
 
-    C.ID = 0;
-    Handle.Sim()->CaImaging = std::make_unique<Tools::CalciumImaging>(C);
-    //Handle.Sim()->CaImaging->Init(); // automatically called by the explicit copy constructor
+    // C.ID = 0;
+    // Handle.Sim()->CaImaging = std::make_unique<Tools::CalciumImaging>(C);
+    // //Handle.Sim()->CaImaging->Init(); // automatically called by the explicit copy constructor
 
-    return Handle.ErrResponse(); // ok
+    // return Handle.ErrResponse(); // ok
 }
 
 std::string SimulationRPCInterface::CalciumImagingShowVoxels(std::string _JSONRequest) {

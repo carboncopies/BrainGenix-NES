@@ -7,38 +7,38 @@ namespace NES {
 namespace Simulator {
 namespace Tools {
 
-CalciumImaging::CalciumImaging(Simulator::Simulation* _Sim): Sim(_Sim) {
-    assert(_Sim != nullptr);
-};
+// CalciumImaging::CalciumImaging(Simulator::Simulation* _Sim): Sim(_Sim) {
+//     assert(_Sim != nullptr);
+// };
 
-CalciumImaging::CalciumImaging(CalciumImaging & CaImg):
-    Sim(CaImg.Sim), Name(CaImg.Name), ID(CaImg.ID),
-    FluorescingNeurons(CaImg.FluorescingNeurons),
-    CalciumIndicator(CaImg.CalciumIndicator),
-    IndicatorRise_ms(CaImg.IndicatorRise_ms),
-    IndicatorDecay_ms(CaImg.IndicatorDecay_ms),
-    IndicatorInterval_ms(CaImg.IndicatorInterval_ms),
-    ImagingInterval_ms(CaImg.ImagingInterval_ms), 
-    VoxelSpaceSide_px(CaImg.VoxelSpaceSide_px),
-    GenerateDuringSim(CaImg.GenerateDuringSim),
-    Center_um(CaImg.Center_um),
-    Half(CaImg.Half),
-    Dx(CaImg.Dx), Dy(CaImg.Dy), Dz(CaImg.Dz)
-{
+// CalciumImaging::CalciumImaging(CalciumImaging & CaImg):
+//     Sim(CaImg.Sim), Name(CaImg.Name), ID(CaImg.ID),
+//     FluorescingNeurons(CaImg.FluorescingNeurons),
+//     CalciumIndicator(CaImg.CalciumIndicator),
+//     IndicatorRise_ms(CaImg.IndicatorRise_ms),
+//     IndicatorDecay_ms(CaImg.IndicatorDecay_ms),
+//     IndicatorInterval_ms(CaImg.IndicatorInterval_ms),
+//     ImagingInterval_ms(CaImg.ImagingInterval_ms), 
+//     VoxelSpaceSide_px(CaImg.VoxelSpaceSide_px),
+//     GenerateDuringSim(CaImg.GenerateDuringSim),
+//     Center_um(CaImg.Center_um),
+//     Half(CaImg.Half),
+//     Dx(CaImg.Dx), Dy(CaImg.Dy), Dz(CaImg.Dz)
+// {
 
-    Init();
+//     Init();
 
-}
+// }
 
 void CalciumImaging::Init(Simulation* _Sim) {
     // *** Voxel_um = GetVoxelSize_um();
     // *** IncludeComponents = GetVisibleComponentsList();
-    SetImageSize();
-    InstantiateVoxelSpace();
-    InitializeDepthDimming();
-    InitializeProjectionCircles();
+    // SetImageSize();
+    // InstantiateVoxelSpace();
+    // InitializeDepthDimming();
+    // InitializeProjectionCircles();
     InitializeFluorescenceKernel(_Sim);
-    InitializeFluorescingNeuronFIFOs();
+    InitializeFluorescingNeuronFIFOs(_Sim);
 }
 
 void CalciumImaging::SetImageSize() {
@@ -72,24 +72,24 @@ void CalciumImaging::InitializeFluorescenceKernel(Simulation* _Sim) {
     while (t < kernel_ms) {
         float k = DelayedPulse(amp, IndicatorRise_ms, IndicatorDecay_ms, t);
         FluorescenceKernel.emplace_back(k);
-        t += Sim->Dt_ms;
+        t += _Sim->Dt_ms;
     }
 }
 
-void CalciumImaging::InitializeFluorescingNeuronFIFOs() {
+void CalciumImaging::InitializeFluorescingNeuronFIFOs(Simulation* _Sim) {
     // *** TODO: Set different FIFO sizes for different GCaMP types.
     float FIFO_ms = 4.0 * (IndicatorRise_ms + IndicatorDecay_ms);
-    float FIFO_dt_ms = Sim->Dt_ms;
+    float FIFO_dt_ms = _Sim->Dt_ms;
     if (FluorescingNeurons.empty()) {
         // All neurons.
-        for (auto & neuron_ptr : Sim->Neurons) {
+        for (auto & neuron_ptr : _Sim->Neurons) {
             static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get())->SetFIFO(FIFO_ms, FIFO_dt_ms, FluorescenceKernel.size());
         }
 
     } else {
         // Specified neurons subset.
-        for (auto & neuron_id : FluorescingNeurons) if (neuron_id < Sim->Neurons.size()) {
-            static_cast<BallAndStick::BSNeuron*>(Sim->Neurons.at(neuron_id).get())->SetFIFO(FIFO_ms, FIFO_dt_ms, FluorescenceKernel.size());
+        for (auto & neuron_id : FluorescingNeurons) if (neuron_id < _Sim->Neurons.size()) {
+            static_cast<BallAndStick::BSNeuron*>(_Sim->Neurons.at(neuron_id).get())->SetFIFO(FIFO_ms, FIFO_dt_ms, FluorescenceKernel.size());
         }
     }
 }
