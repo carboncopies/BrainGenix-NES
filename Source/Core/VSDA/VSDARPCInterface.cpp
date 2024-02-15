@@ -373,7 +373,7 @@ std::string VSDARPCInterface::VSDACASetupMicroscope(std::string _JSONRequest) {
     float PixelResolution_nm         = Util::GetFloat(&RequestJSON, "PixelResolution_nm");
     int ImageWidth_px                = Util::GetInt(&RequestJSON, "ImageWidth_px");
     int ImageHeight_px               = Util::GetInt(&RequestJSON, "ImageHeight_px");
-    int NumVoxelsPerSlice          = Util::GetFloat(&RequestJSON, "SliceThickness_nm");
+    int NumVoxelsPerSlice            = Util::GetInt(&RequestJSON, "NumVoxelsPerSlice");
     float ScanRegionOverlap_percent  = Util::GetFloat(&RequestJSON, "ScanRegionOverlap_percent");
     int NumPixelsPerVoxel_px         = Util::GetInt(&RequestJSON, "NumPixelsPerVoxel_px");
     Logger_->Log(std::string("VSDA Ca SetupMicroscope Called On Simulation With ID ") + std::to_string(SimulationID), 4);

@@ -660,7 +660,7 @@ Broken right now.
         PixelResolution_nm: float,
         ImageWidth_px: int,
         ImageHeight_px: int,
-        NumSlicesPerVoxel: int,
+        NumVoxelsPerSlice: int,
         ScanRegionOverlap_percent: float,
         NumPixelsPerVoxel_px: int
     ]
