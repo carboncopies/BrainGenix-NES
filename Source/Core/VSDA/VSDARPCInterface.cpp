@@ -51,6 +51,7 @@ VSDARPCInterface::VSDARPCInterface(BG::Common::Logger::LoggingSystem* _Logger, A
     _RPCManager->AddRoute("VSDA/Ca/SetupMicroscope",      std::bind(&VSDARPCInterface::VSDACASetupMicroscope, this, std::placeholders::_1));
     _RPCManager->AddRoute("VSDA/Ca/DefineScanRegion",     std::bind(&VSDARPCInterface::VSDACADefineScanRegion, this, std::placeholders::_1));
     _RPCManager->AddRoute("VSDA/Ca/QueueRenderOperation", std::bind(&VSDARPCInterface::VSDACAQueueRenderOperation, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/Ca/GetRenderStatus",      std::bind(&VSDARPCInterface::VSDACAGetRenderStatus, this, std::placeholders::_1));
     _RPCManager->AddRoute("VSDA/Ca/GetImageStack",        std::bind(&VSDARPCInterface::VSDACAGetRenderStatus, this, std::placeholders::_1));
 
 }
