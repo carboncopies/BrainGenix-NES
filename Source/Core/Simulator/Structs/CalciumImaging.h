@@ -68,20 +68,20 @@ struct CalciumImaging {
     size_t num_samples = 0;
 
     //! Constructors
-    CalciumImaging(CalciumImaging & CaImg);
-    CalciumImaging(Simulator::Simulation* _Sim);
+    //CalciumImaging(CalciumImaging & CaImg);
+    //CalciumImaging(Simulator::Simulation* _Sim);
 
-    void Init();
+    void Init(Simulation* _Sim);
 
     void SetImageSize();
     void InstantiateVoxelSpace();
     void InitializeDepthDimming();
     void InitializeProjectionCircles();
 
-    void InitializeFluorescenceKernel();
+    void InitializeFluorescenceKernel(Simulation* _Sim);
     void InitializeFluorescingNeuronFIFOs();
 
-    void Record(float t_ms);
+    void Record(float t_ms, Simulation* Sim);
 
 };
 

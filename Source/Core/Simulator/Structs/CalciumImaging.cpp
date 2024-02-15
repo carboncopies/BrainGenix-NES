@@ -30,14 +30,14 @@ CalciumImaging::CalciumImaging(CalciumImaging & CaImg):
 
 }
 
-void CalciumImaging::Init() {
+void CalciumImaging::Init(Simulation* _Sim) {
     // *** Voxel_um = GetVoxelSize_um();
     // *** IncludeComponents = GetVisibleComponentsList();
     SetImageSize();
     InstantiateVoxelSpace();
     InitializeDepthDimming();
     InitializeProjectionCircles();
-    InitializeFluorescenceKernel();
+    InitializeFluorescenceKernel(_Sim);
     InitializeFluorescingNeuronFIFOs();
 }
 
@@ -63,7 +63,7 @@ float DelayedPulse(float amp, float tau_delay, float tau_pulse, float tdiff) {
     return 0.0;
 }
 
-void CalciumImaging::InitializeFluorescenceKernel() {
+void CalciumImaging::InitializeFluorescenceKernel(Simulation* _Sim) {
     FluorescenceKernel.clear();
     float t = 0.0;
     float kernel_ms = 2.0 * (IndicatorRise_ms + IndicatorDecay_ms);
@@ -94,7 +94,7 @@ void CalciumImaging::InitializeFluorescingNeuronFIFOs() {
     }
 }
 
-void CalciumImaging::Record(float t_ms) {
+void CalciumImaging::Record(float t_ms, Simulation* Sim) {
     assert(t_ms >= 0.0);
     // Check if we have reached the next sample time:
     if (!TRecorded_ms.empty()) {

@@ -314,7 +314,7 @@ void Simulation::RunFor(float tRun_ms) {
             }
 
             // Calcium Imaging
-            if (CaImaging) {
+            if (CaData_.State_ != BG::NES::VSDA::CA_NOT_INITIALIZED) {
                 CaImaging->Record(this->T_ms);
             }
         }

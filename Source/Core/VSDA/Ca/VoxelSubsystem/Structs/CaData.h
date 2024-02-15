@@ -44,7 +44,7 @@
 #include <VSDA/Common/Structs/ScanRegion.h>
 
 #include <VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h>
-
+#include <Simulator/Structs/CalciumImaging.h>
 
 
 namespace BG {
@@ -93,6 +93,9 @@ struct CalciumImagingData {
 
     std::vector<std::vector<float>>* CalciumConcentrationByIndex_; /**Pointer to vector containing all the calcium concentrations*/
     float CalciumConcentrationTimestep_ms; /**Timestep of each index in the calcium concentrations*/
+
+
+    Simulator::Tools::CalciumImaging CaImaging;
 
 };
 

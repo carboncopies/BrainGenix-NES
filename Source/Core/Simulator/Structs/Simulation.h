@@ -94,7 +94,7 @@ public:
 
     std::vector<float> TInstruments_ms{};
     std::vector<std::unique_ptr<Tools::RecordingElectrode>> RecordingElectrodes;
-    std::unique_ptr<Tools::CalciumImaging> CaImaging;
+    //std::unique_ptr<Tools::CalciumImaging> CaImaging; --- Replaced by Calcium below.
 
     float InstrumentsStartRecordTime_ms = 0.0;
     float InstrumentsMaxRecordTime_ms = 0.0;
