@@ -48,7 +48,10 @@ bool CaRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     std::vector<std::vector<float>> CalciumIndexes;
     float CalciumTimestep = 50.; // Randal - this is done since we want to know how much time passes between each step
     // That's why I had the GetCalciumConcentrationTimestep
-    VoxelArrayGenerator::CalculateCalciumConcentrations(_Logger, Sim, &CalciumIndexes);
+    bool Status = VoxelArrayGenerator::CalculateCalciumConcentrations(_Logger, Sim, &CalciumIndexes);
+    if (!Status) {
+        return false;
+    }
     // get timestep here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
@@ -87,7 +90,9 @@ bool CaRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
 
     // Clear Scene In Preperation For Rendering
-    for (unsigned int i = 0; i < CaData_->Array_.get()->GetZ() / CaData_->Params_.NumVoxelsPerSlice; i++) {
+    unsigned int NumSlices = CaData_->Array_.get()->GetZ() / CaData_->Params_.NumVoxelsPerSlice;
+    _Logger->Log("Calcium Renderer Will Render '" + std::to_string(NumSlices) + "' Slices", 3);
+    for (unsigned int i = 0; i < NumSlices; i++) {
         std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "/Calcium/Region" + std::to_string(CaData_->ActiveRegionID_);
 
         unsigned int CurrentSlice = i * CaData_->Params_.NumVoxelsPerSlice;

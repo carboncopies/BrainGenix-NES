@@ -67,7 +67,12 @@ std::vector<std::string> CaRenderSliceFromArray(BG::Common::Logger::LoggingSyste
 
     // Make sure we render this slice at all timesteps
     if (_CaData->CalciumConcentrationByIndex_->size() <= 0) {
-        _Logger->Log("No Calcium Timesteps Recorded, Skipping Generation", 6);
+        _Logger->Log("Invalid Number Of Calcium Concentratiosn For Compartments, Aborting Render", 6);
+        return std::vector<std::string>();
+    }
+    if ((*_CaData->CalciumConcentrationByIndex_)[0].size() <= 0) {
+        _Logger->Log("No Calcium Timesteps Recorded, Skipping Generation, Aborting Render", 6);
+        return std::vector<std::string>();
     }
     for (int CalciumConcentrationIndex = 0; CalciumConcentrationIndex < (*_CaData->CalciumConcentrationByIndex_)[0].size(); CalciumConcentrationIndex++) {
 
@@ -77,7 +82,7 @@ std::vector<std::string> CaRenderSliceFromArray(BG::Common::Logger::LoggingSyste
 
                 // Calculate the filename of the image to be generated, add to list of generated images
                 std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(SliceNumber + _SliceOffset) + "/";
-                DirectoryPath += "Timestep" + std::to_string(_CaData->CalciumConcentrationTimestep_ms * CalciumConcentrationIndex) + "/";
+                DirectoryPath += "Timestep" + std::to_string(_CaData->CalciumConcentrationTimestep_ms * CalciumConcentrationIndex) + "/"; // fixme - make this done by a list of timesteps instead of a hard-coded single timestep
                 double RoundedXCoord = std::ceil(((CameraStepSizeX_um * XStep) + _OffsetX) * 100.0) / 100.0;
                 double RoundedYCoord = std::ceil(((CameraStepSizeY_um * YStep) + _OffsetY) * 100.0) / 100.0;
                 std::string FilePath = "X" + std::to_string(RoundedXCoord) + "_Y" + std::to_string(RoundedYCoord) + ".png";

@@ -50,7 +50,14 @@ bool CalculateCalciumConcentrations(BG::Common::Logger::LoggingSystem *_Logger, 
 
 		// Get the list of Calcium concentrations cached at that neuron and copy it into the vector of vectors:
 		std::vector<float> CASamples = static_cast<Simulator::BallAndStick::BSNeuron*>(neuron_ptr)->CaSamples;
-		_Data->push_back(CASamples);
+		_Data->emplace_back(CASamples);
+	}
+	// Ensure that all timestep lists by compartment index have at least one sample in them, otherwise we failed.
+	for (size_t i = 0; i < _Data->size(); i++) {
+		if ((*_Data)[i].size() < 1) {
+			_Logger->Log("Failed To Get Calcium Concentrations For Neuron With ID '" + std::to_string(i) + "', Has No Timesteps", 7);
+			return false;
+		}
 	}
 	return true;
 }

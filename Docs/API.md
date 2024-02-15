@@ -715,8 +715,8 @@ Broken right now.
     ]
 ```
 
-### VSDA - Ca - VSDAEMGetRenderStatus
- - Name: `VSDA/Ca/VSDAEMGetRenderStatus`  
+### VSDA - Ca - GetRenderStatus
+ - Name: `VSDA/Ca/GetRenderStatus`  
  - Query: 
 ```json
     [
@@ -737,8 +737,8 @@ Broken right now.
     ]
 ```
 
-### VSDA - Ca - VSDAEMGetImageStack
- - Name: `VSDA/Ca/VSDAEMGetImageStack`  
+### VSDA - Ca - GetImageStack
+ - Name: `VSDA/Ca/GetImageStack`  
  - Query: 
 ```json
     [
