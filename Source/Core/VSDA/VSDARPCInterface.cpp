@@ -392,7 +392,7 @@ std::string VSDARPCInterface::VSDACASetupMicroscope(std::string _JSONRequest) {
 
     int Result = !NES::VSDA::Calcium::VSDA_CA_SetupMicroscope(Logger_, Handle.Sim(), Params);
 
-    Handle.Sim()->CaData_.CaImaging.Init(Handle.Sim());
+    Handle.Sim()->CaData_.CaImaging.Init(Handle.Sim(), Handle.Sim()->CaData_.Params_);
 
     // Build Response
     return Handle.ErrResponse();

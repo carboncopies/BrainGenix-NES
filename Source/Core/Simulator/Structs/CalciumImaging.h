@@ -18,6 +18,8 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Geometries/VecTools.h>
 
+#include <VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.h>
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -71,17 +73,17 @@ struct CalciumImaging {
     //CalciumImaging(CalciumImaging & CaImg);
     //CalciumImaging(Simulator::Simulation* _Sim);
 
-    void Init(Simulation* _Sim, CaMicroscopeParameters & _Params);
+    void Init(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params);
 
     void SetImageSize();
     void InstantiateVoxelSpace();
     void InitializeDepthDimming();
     void InitializeProjectionCircles();
 
-    void InitializeFluorescenceKernel(Simulation* _Sim, CaMicroscopeParameters & _Params);
-    void InitializeFluorescingNeuronFIFOs(Simulation* _Sim, CaMicroscopeParameters & _Params);
+    void InitializeFluorescenceKernel(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params);
+    void InitializeFluorescingNeuronFIFOs(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params);
 
-    void Record(float t_ms, Simulation* Sim);
+    void Record(float t_ms, Simulation* Sim, NES::VSDA::Calcium::CaMicroscopeParameters& _Params);
 
 };
 
