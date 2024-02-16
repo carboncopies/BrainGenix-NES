@@ -231,6 +231,7 @@ nlohmann::json Simulation::GetInstrumentsRecordingJSON() const {
 
     recording["t_ms"] = nlohmann::json(this->TInstruments_ms);
 
+    // Virtual experimental functional data from recording electrodes
     if (!RecordingElectrodes.empty()) {
         recording["Electrodes"] = nlohmann::json::object();
         for (const auto & Electrode : RecordingElectrodes) {
@@ -238,7 +239,25 @@ nlohmann::json Simulation::GetInstrumentsRecordingJSON() const {
         }
     }
 
-    // *** Put Calcium Imaging recording collection here.
+    // God's eye functional data about neuron calcium concentrations
+    if (CaData_.State_ != BG::NES::VSDA::Calcium::CA_NOT_INITIALIZED) {
+        recording["Calcium"] = nlohmann::json::object();
+        recording["Calcium"]["Ca_t_ms"] = CaData_.CaImaging.TRecorded_ms;
+        if (CaData_.Params_.FlourescingNeuronIDs_.empty()) {
+            // All neurons fluoresce.
+            for (auto & neuron_ptr : Neurons) {
+                BallAndStick::BSNeuron* bsneuron_ptr = static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get());
+                recording["Calcium"][std::to_string(bsneuron_ptr->ID)] = bsneuron_ptr->CaSamples;
+            }
+
+        } else {
+            // For specified fluorescing neurons set.
+            for (auto & neuron_id : CaData_.Params_.FlourescingNeuronIDs_) if (neuron_id < Neurons.size()) {
+                BallAndStick::BSNeuron* bsneuron_ptr = static_cast<BallAndStick::BSNeuron*>(Neurons.at(neuron_id).get());
+                recording["Calcium"][std::to_string(bsneuron_ptr->ID)] = bsneuron_ptr->CaSamples;
+            }
+        }
+    }
     
     return recording;
 }
