@@ -65,7 +65,8 @@ float ImageProcessorPool::GetDepthVoxelContribution(ProcessingTask* Task, long T
     bool Status = false;
     VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, ZVoxelIndex+Depth, &Status);
     if (Status && ThisVoxel.IsFilled_) {
-        float DepthDimming = 0.8; // *** WHERE DO WE GET THIS FROM?? (IT DEPENDS ON VOXEL SIZE)
+        float DepthDimming = (1.0 - (Depth*0.15)); // *** WHERE DO WE GET THIS FROM?? (IT DEPENDS ON VOXEL SIZE)
+        if (DepthDimming <= 0.0) return 0.0;
         return DepthDimming*CbCaTI[ThisVoxel.CompartmentID_][TIndex];
     }
     return 0.0;
