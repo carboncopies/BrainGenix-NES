@@ -58,6 +58,11 @@ bool CaRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     CaData_->CalciumConcentrationByIndex_ = &CalciumIndexes;
     CaData_->CalciumConcentrationTimestep_ms = CalciumTimestep;
 
+    std::cout<<"-------------------------------------------------------\n\n";
+    for (unsigned int i =0; i < (*CaData_->CalciumConcentrationByIndex_)[0].size(); i++) {
+        std::cout<<(*CaData_->CalciumConcentrationByIndex_)[0][i]<<", ";
+    }
+    std::cout<<"\n";
 
     // Now We Check That The Calcium Concentrations Are Generated Right
     size_t BaseSize = 0;

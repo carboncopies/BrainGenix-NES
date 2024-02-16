@@ -37,8 +37,8 @@ struct CalciumImaging {
 
     // Simulator::Simulation* Sim;
 
-    std::string Name;
-    int ID;
+    // std::string Name;
+    // int ID;
 
     //std::vector<int> FluorescingNeurons;
     //std::string CalciumIndicator;
@@ -58,7 +58,7 @@ struct CalciumImaging {
     std::vector<float> FluorescenceKernel;
     std::vector<float> ReversedFluorescenceKernel;
     float max_pixel_contributions = 0.0;
-    std::vector<float> image_dims_px; // *** or unsigned int?
+    // std::vector<float> image_dims_px; // *** or unsigned int?
     //??? image_t; // Image taken at time t.
     //std::vector<???> images;
 
@@ -67,7 +67,7 @@ struct CalciumImaging {
     // *** (in prototype:) voxelspace = []
 
     std::vector<float> TRecorded_ms{};
-    size_t num_samples = 0;
+    // size_t num_samples = 0;
 
     //! Constructors
     //CalciumImaging(CalciumImaging & CaImg);
@@ -75,10 +75,10 @@ struct CalciumImaging {
 
     void Init(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params);
 
-    void SetImageSize();
-    void InstantiateVoxelSpace();
-    void InitializeDepthDimming();
-    void InitializeProjectionCircles();
+    // void SetImageSize();
+    // void InstantiateVoxelSpace();
+    // void InitializeDepthDimming();
+    // void InitializeProjectionCircles();
 
     void InitializeFluorescenceKernel(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params);
     void InitializeFluorescingNeuronFIFOs(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params);
