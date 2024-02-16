@@ -285,7 +285,7 @@ void BSNeuron::UpdateConvolvedFIFO(const std::vector<float> & reversed_kernel) {
 
     // Clip at zero and flip sign:
     for (auto & CaSignalValue : CaSignal) {
-        CaSignalValue = (CaSignalValue < 0.0) ? 0.0 : (-CaSignalValue);
+        CaSignalValue = (CaSignalValue > 0.0) ? 0.0 : (-CaSignalValue);
     }
 
     // Convolve with kernel:

@@ -70,7 +70,9 @@ void CalciumImaging::InitializeFluorescenceKernel(Simulation* _Sim, NES::VSDA::C
     float kernel_ms = 2.0 * (_Params.IndicatorRiseTime_ms + _Params.IndicatorDecayTime_ms);
     float pulse_samples = _Params.IndicatorDecayTime_ms;
     float amp = 1.0 / pulse_samples;
+std::cout << "DEBUG --> Kernel pulse amplitude: " << amp << '\n';
     while (t < kernel_ms) {
+        // for a period of length rise time + decay time, produce a pulse of fixed height amp
         float k = DelayedPulse(amp, _Params.IndicatorRiseTime_ms, _Params.IndicatorDecayTime_ms, t);
         FluorescenceKernel.emplace_back(k);
         t += _Sim->Dt_ms;
@@ -79,6 +81,12 @@ void CalciumImaging::InitializeFluorescenceKernel(Simulation* _Sim, NES::VSDA::C
     // Reverse the kernel:
     ReversedFluorescenceKernel.resize(this->FluorescenceKernel.size(), 0.0);
     std::reverse_copy(FluorescenceKernel.begin(), FluorescenceKernel.end(), ReversedFluorescenceKernel.begin());
+
+std::cout << "DEBUG --> Initial values of FIFO: ";
+for (const auto & kernelval : ReversedFluorescenceKernel) {
+    std::cout << kernelval << ' ';
+}
+std::cout << '\n';
 }
 
 void CalciumImaging::InitializeFluorescingNeuronFIFOs(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params) {
@@ -97,6 +105,7 @@ void CalciumImaging::InitializeFluorescingNeuronFIFOs(Simulation* _Sim, NES::VSD
             static_cast<BallAndStick::BSNeuron*>(_Sim->Neurons.at(neuron_id).get())->SetFIFO(FIFO_ms, FIFO_dt_ms, FluorescenceKernel.size());
         }
     }
+
 }
 
 void CalciumImaging::Record(float t_ms, Simulation* Sim, NES::VSDA::Calcium::CaMicroscopeParameters& _Params) {
