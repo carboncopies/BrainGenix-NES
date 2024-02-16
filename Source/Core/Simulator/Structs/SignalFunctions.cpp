@@ -20,7 +20,7 @@ float DoubleExponentExpr(float amp, float tauRise, float tauDecay, float tDiff) 
 // prepared to the size: signal.size()+kernel.size()-1.
 // Also, for the sake of efficiency, we store and provide the already reversed
 // kernel instead of reversing it here each time.
-bool Convolve1D(const std::vector<float> & signal, const std::vector<float> & reversed_kernel, std::vector<float> & convolved) {
+bool Convolve1D(const std::deque<float> & signal, const std::vector<float> & reversed_kernel, std::vector<float> & convolved) {
     //std::reverse(kernel.begin(), kernel.end());
 
     int start = 1 - static_cast<int>(reversed_kernel.size());

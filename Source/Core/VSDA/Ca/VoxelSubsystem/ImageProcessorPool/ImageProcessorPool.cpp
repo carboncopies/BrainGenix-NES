@@ -61,6 +61,16 @@ double GetAverage(std::vector<double>* _Vec) {
 }
 
 
+float ImageProcessorPool::GetDepthVoxelContribution(ProcessingTask* Task, long TIndex, unsigned int XVoxelIndex, unsigned int YVoxelIndex, unsigned int ZVoxelIndex, unsigned int Depth, std::vector<std::vector<float>>& CbCaTI) {
+    bool Status = false;
+    VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, ZVoxelIndex+Depth, &Status);
+    if (Status && ThisVoxel.IsFilled_) {
+        float DepthDimming = 0.8; // *** WHERE DO WE GET THIS FROM?? (IT DEPENDS ON VOXEL SIZE)
+        return DepthDimming*CbCaTI[ThisVoxel.CompartmentID_][TIndex];
+    }
+    return 0.0;
+}
+
 // Thread Main Function
 void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
@@ -72,6 +82,9 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
     // Initialize Metrics
     int SamplesBeforeUpdate = 25;
     std::vector<double> Times;
+
+    float BrightnessAmplification = 10.0; // *** WE SHOULD SET THIS FROM SOMEWHERE!
+    unsigned int CaVoxelsDeep = 4; // *** WHERE DO WE GET THIS FROM??
 
 
     // Run until thread exit is requested - that is, this is set to false
@@ -120,17 +133,20 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     } else if (ThisVoxel.IsBorder_) {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
                     } else if (ThisVoxel.IsFilled_) {
-                        // *** TODO:
-                        // - check the steps in prototype voxel luminosity (see document & code)
-                        // - determine what the max concentration is expressed as in a compartment (is it [0.0-1.0]?)
-                        // - figure out how to index the voxels further from the surface imaged
-                        // - apply distance dimming to those voxels
-                        // - add the light emitted by the stack of voxels
-                        // - make sure the brightest possible output == 255.
-                        int Color = (*ConcentrationsByComartmentAtTimestepIndex)[ThisVoxel.CompartmentID_][CurrentTimestepIndex] * 100.;
-                        if (Color > 255) Color = 255.0;
-                        if (Color > debug_max_lumen) debug_max_lumen = Color;
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, Color, 0);
+                        // Note: The range of Ca concentration values depends on multiple
+                        //       factors, and the resulting luminosity of fluorescence depends
+                        //       on that as well as the combination of values from multiple
+                        //       voxels at different depths. Consequently, maximum output
+                        //       brightness is complicated to predict, though easily tuned
+                        //       with a 'BrightnessAmplification' factor.
+                        float Color = (*ConcentrationsByComartmentAtTimestepIndex)[ThisVoxel.CompartmentID_][CurrentTimestepIndex];
+                        for (unsigned int Depth = 1; Depth < CaVoxelsDeep; Depth++) {
+                            Color += GetDepthVoxelContribution(Task, CurrentTimestepIndex, XVoxelIndex, YVoxelIndex, Task->VoxelZ, Depth, *ConcentrationsByComartmentAtTimestepIndex);
+                        }
+                        int PixelColor = Color*BrightnessAmplification*255.0;
+                        if (PixelColor > 255) PixelColor = 255;
+                        if (PixelColor > debug_max_lumen) debug_max_lumen = PixelColor;
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, PixelColor, 0);
                     } else {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 0);
                     }
@@ -162,8 +178,6 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 ResizedPixels = std::unique_ptr<unsigned char>(new unsigned char[TargetX * TargetY * Channels]());
                 stbir_resize_uint8(SourcePixels, SourceX, SourceY, SourceX * Channels, ResizedPixels.get(), TargetX, TargetY, TargetX * Channels, Channels);
             }
-
-
 
             // -- Phase 3 -- //
             // Now, we check that the image has a place to go, and write it to disk.

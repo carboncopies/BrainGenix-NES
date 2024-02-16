@@ -279,7 +279,7 @@ TEST_F(BSNeuronTest, test_SetFIFO_default) {
 TEST_F(BSNeuronTest, test_UpdateConvolvedFIFO_default) {
     std::vector<float> reversed_kernel = {1.0, 0.0, -1.0};
     std::vector<float> expectedConvolvedFIFO{};
-    std::vector<float> FIFO{};
+    std::deque<float> FIFO{};
 
     // Simulate
     Simulate();

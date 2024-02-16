@@ -1,6 +1,7 @@
 #include <Simulator/Structs/CalciumImaging.h>
 #include <Simulator/Structs/Simulation.h>
 #include <Simulator/BallAndStick/BSNeuron.h>
+#include <Simulator/Structs/SignalFunctions.h>
 
 namespace BG {
 namespace NES {
@@ -64,29 +65,43 @@ float DelayedPulse(float amp, float tau_delay, float tau_pulse, float tdiff) {
     return 0.0;
 }
 
+/**
+ * See the example in VBP SignalFunctions.py about the following steps:
+ * 1. Prepare a kernel using the kernel shape chosen (e.g. double exponential, rectangle pulse).
+ * 2. Scale the kernel so that its convolution effect on an action potential is approximately normalized.
+ * 3. Reverse the kernel (which would otherwise be the first step of every convolution).
+ */
 void CalciumImaging::InitializeFluorescenceKernel(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params) {
     FluorescenceKernel.clear();
     float t = 0.0;
     float kernel_ms = 2.0 * (_Params.IndicatorRiseTime_ms + _Params.IndicatorDecayTime_ms);
-    float pulse_samples = _Params.IndicatorDecayTime_ms;
-    float amp = 1.0 / pulse_samples;
-std::cout << "DEBUG --> Kernel pulse amplitude: " << amp << '\n';
+    //float pulse_samples = _Params.IndicatorDecayTime_ms;
+    //float amp = 1.0 / pulse_samples;
+    bool use_dblexp_kernel = true; // *** Could make this selectable.
+    float v_sum = 0.0;
     while (t < kernel_ms) {
         // for a period of length rise time + decay time, produce a pulse of fixed height amp
-        float k = DelayedPulse(amp, _Params.IndicatorRiseTime_ms, _Params.IndicatorDecayTime_ms, t);
+        float k;
+        if (use_dblexp_kernel) {
+            k = SignalFunctions::DoubleExponentExpr(1.0, _Params.IndicatorRiseTime_ms, _Params.IndicatorDecayTime_ms, t);
+        } else {
+            k = DelayedPulse(1.0, _Params.IndicatorRiseTime_ms, _Params.IndicatorDecayTime_ms, t);
+        }
         FluorescenceKernel.emplace_back(k);
+        v_sum += k;
         t += _Sim->Dt_ms;
     }
-    // *** We should check if we actually still need this:
-    // Reverse the kernel:
-    ReversedFluorescenceKernel.resize(this->FluorescenceKernel.size(), 0.0);
-    std::reverse_copy(FluorescenceKernel.begin(), FluorescenceKernel.end(), ReversedFluorescenceKernel.begin());
+    // Scale and reverse the kernel:
+    size_t kernelsize = FluorescenceKernel.size();
+    ReversedFluorescenceKernel.resize(kernelsize, 0.0);
+    // for (size_t i; i < kernelsize; i++) {
+    //     ReversedFluorescenceKernel[i] = FluorescenceKernel[(kernelsize-i)-1]/v_sum;
+    // }
+    // *** TESTING WITHOUT REVERSAL (see SignalFunctions.py)
+    for (size_t i  = 0; i < kernelsize; i++) {
+        ReversedFluorescenceKernel[i] = FluorescenceKernel[i]/v_sum;
+    }
 
-std::cout << "DEBUG --> Initial values of FIFO: ";
-for (const auto & kernelval : ReversedFluorescenceKernel) {
-    std::cout << kernelval << ' ';
-}
-std::cout << '\n';
 }
 
 void CalciumImaging::InitializeFluorescingNeuronFIFOs(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params) {

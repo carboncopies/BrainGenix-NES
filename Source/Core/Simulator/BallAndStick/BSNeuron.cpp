@@ -187,10 +187,14 @@ void BSNeuron::UpdateVm(float t_ms, bool recording) {
     // 4. Add voltage elevation to FIFO buffer for phospherecence convolution
     if (!this->FIFO.empty()) {
         // We replace [0], i.e. drop the one at the end and push to front.
-        this->FIFO.pop_back();
-        this->FIFO.push_front(this->Vm_mV - this->VRest_mV);
-        //this->FIFO.erase(this->FIFO.begin());
-        //this->FIFO.push_back(this->Vm_mV - this->VRest_mV);
+        // this->FIFO.pop_back();
+        // this->FIFO.push_front(this->Vm_mV - this->VRest_mV);
+        // *** TESTING: Newest at back of FIFO (as in SignalFunctions.py demo)
+        this->FIFO.pop_front();
+        // Flipping sign of Vdiff, clipping at 0, scaling by V_AHP (see SignalFunctions.py demo)
+        float v = this->VRest_mV - this->Vm_mV;
+        v = v < 0.0 ? 0.0 : v / (-this->VAHP_mV);
+        this->FIFO.push_back(v);
     }
 
     if (recording)
@@ -276,23 +280,38 @@ void BSNeuron::SetFIFO(float FIFO_ms, float FIFO_dt_ms, size_t reversed_kernel_s
 //!       care to view [0] as most recent in covolution result.)
 //! NOTE: For efficiency (see Convolve1D), we provide a reversed kernel
 //!       that was reversed and stored during initialization.
+//! The FIFO buffer contains a record of the difference between Vm and Vrest
+//! at current and preceding time points.
 void BSNeuron::UpdateConvolvedFIFO(const std::vector<float> & reversed_kernel) {
     assert(!reversed_kernel.empty());
 
+    // *** TESTING non-reversal of anything (see SignalFuctions.py)
     // Reverse signal FIFO:
-    std::vector<float> CaSignal(this->FIFO.size(), 0.0);
-    std::reverse_copy(this->FIFO.begin(), this->FIFO.end(), CaSignal.begin());
-
-    // Clip at zero and flip sign:
-    for (auto & CaSignalValue : CaSignal) {
-        CaSignalValue = (CaSignalValue > 0.0) ? 0.0 : (-CaSignalValue);
-    }
+    // std::vector<float> CaSignal(this->FIFO.size(), 0.0);
+    // std::reverse_copy(this->FIFO.begin(), this->FIFO.end(), CaSignal.begin());
 
     // Convolve with kernel:
-    if (SignalFunctions::Convolve1D(CaSignal, reversed_kernel, this->ConvolvedFIFO)) {
+    if (SignalFunctions::Convolve1D(FIFO, reversed_kernel, this->ConvolvedFIFO)) {
 
         // Record Ca value with offset and record time-point:
-        this->CaSamples.emplace_back(this->ConvolvedFIFO.back() + 1.0);
+        // Convolution results applicable to recent Vdiff are at end of ConvolvedFIFO (see SignalFunctions.py)
+        this->CaSamples.emplace_back(ConvolvedFIFO[ConvolvedFIFO.size()-10]); //+1.0);
+// if (ID==0) {
+//     std::cout << "DEBUG --> New Convolved value: " << this->CaSamples.back() << '\n';
+//     std::cout << "Kernel: ";
+//     for (auto & v : reversed_kernel) {
+//         std::cout << v << ' ';
+//     }
+//     std::cout << "\nFIFO: ";
+//     for (auto & v : FIFO) {
+//         std::cout << v << ' ';
+//     }
+//     std::cout << "\nConvolved: ";
+//     for (auto & v : ConvolvedFIFO) {
+//         std::cout << v << ' ';
+//     }
+//     std::cout << '\n';
+// }
         this->TCaSamples_ms.emplace_back(this->T_ms);
     }
 };
