@@ -65,6 +65,7 @@ struct CaMicroscopeParameters {
     float IndicatorRiseTime_ms;             /**Rise time of the indicator in milliseconds (how long before it sarts glowing)*/
     float IndicatorDecayTime_ms;            /**Decay of the time of the indicator in milliseconds (how long before it stops glowing)*/
     float IndicatorInterval_ms;             /**Interval of update for the indicator in milliseconds*/
+    float ImagingInterval_ms;               /**Interval at which Ca images are produced, typically on the same order as IndicatorDecayTime_ms*/
     float AttenuationPerUm;                 /** something*/
 
     float BrightnessAmplification;          /**This tunes the output amplification for fluorescence imaging*/

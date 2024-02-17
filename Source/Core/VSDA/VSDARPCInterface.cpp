@@ -383,6 +383,7 @@ std::string VSDARPCInterface::VSDACASetupMicroscope(std::string _JSONRequest) {
     Handle.GetParFloat("IndicatorRiseTime_ms", Params.IndicatorRiseTime_ms);
     Handle.GetParFloat("IndicatorDecayTime_ms", Params.IndicatorDecayTime_ms);
     Handle.GetParFloat("IndicatorInterval_ms", Params.IndicatorInterval_ms);
+    Handle.GetParFloat("ImagingInterval_ms", Params.ImagingInterval_ms);
     Handle.GetParFloat("VoxelResolution_nm", Params.VoxelResolution_um);
     Handle.GetParFloat("ScanRegionOverlap_percent", Params.ScanRegionOverlap_percent);
     Handle.GetParInt("ImageWidth_px", Params.ImageWidth_px);

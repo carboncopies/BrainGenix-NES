@@ -38,10 +38,9 @@ void CalciumImaging::Init(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopePara
     // InstantiateVoxelSpace();
     // InitializeDepthDimming();
     // InitializeProjectionCircles();
-std::cout << "I AM IN INIT!!!!!!!\n";
     InitializeFluorescenceKernel(_Sim, _Params);
     InitializeFluorescingNeuronFIFOs(_Sim, _Params);
-    ImagingInterval_ms = _Params.IndicatorDecayTime_ms + 10.0;
+    ImagingInterval_ms = _Params.ImagingInterval_ms;
 }
 
 // void CalciumImaging::SetImageSize() {
