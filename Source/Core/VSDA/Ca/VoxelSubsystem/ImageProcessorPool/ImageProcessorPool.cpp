@@ -61,9 +61,16 @@ double GetAverage(std::vector<double>* _Vec) {
 }
 
 
+/**
+ * Adding voxel contributions within a slice that is being imaged.
+ * Higher Z indices are CLOSER to the imaging microscope.
+ * Hence, subtract depth, make sure we don't go below 0.
+ */
 float ImageProcessorPool::GetDepthVoxelContribution(ProcessingTask* Task, long TIndex, unsigned int XVoxelIndex, unsigned int YVoxelIndex, unsigned int ZVoxelIndex, unsigned int Depth, float VoxelResolution_um, std::vector<std::vector<float>>& CbCaTI) {
     bool Status = false;
-    VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, ZVoxelIndex+Depth, &Status);
+    int VoxelZ = ZVoxelIndex-Depth;
+    if (VoxelZ < 0) return 0.0;
+    VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, ZVoxelIndex-Depth, &Status);
     if (Status && ThisVoxel.IsFilled_) {
         // Let's say that every um dims the fluorescence by 0.15, so
         // 1 voxel down with VoxelResolution_um==0.5 um is dimming by 0.15*0.5,
