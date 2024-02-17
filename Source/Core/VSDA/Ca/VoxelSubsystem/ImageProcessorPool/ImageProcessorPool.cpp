@@ -66,7 +66,7 @@ double GetAverage(std::vector<double>* _Vec) {
  * Higher Z indices are CLOSER to the imaging microscope.
  * Hence, subtract depth, make sure we don't go below 0.
  */
-float ImageProcessorPool::GetDepthVoxelContribution(ProcessingTask* Task, long TIndex, unsigned int XVoxelIndex, unsigned int YVoxelIndex, unsigned int ZVoxelIndex, unsigned int Depth, float VoxelResolution_um, std::vector<std::vector<float>>& CbCaTI) {
+float ImageProcessorPool::GetDepthVoxelContribution(ProcessingTask* Task, long TIndex, unsigned int XVoxelIndex, unsigned int YVoxelIndex, unsigned int ZVoxelIndex, unsigned int Depth, float VoxelResolution_um, float AttenuationPerUm, std::vector<std::vector<float>>& CbCaTI) {
     bool Status = false;
     int VoxelZ = ZVoxelIndex-Depth;
     if (VoxelZ < 0) return 0.0;
@@ -76,7 +76,7 @@ float ImageProcessorPool::GetDepthVoxelContribution(ProcessingTask* Task, long T
         // 1 voxel down with VoxelResolution_um==0.5 um is dimming by 0.15*0.5,
         // 2 voxels down is 2*0.15*0.5. If it's actually non-linear we could put
         // a more fancy function here.
-        float DepthDimming = (1.0 - (Depth*0.15*VoxelResolution_um));
+        float DepthDimming = (1.0 - (Depth*AttenuationPerUm*VoxelResolution_um));
         if (DepthDimming <= 0.0) return 0.0;
         return DepthDimming*CbCaTI[ThisVoxel.CompartmentID_][TIndex];
     }
@@ -120,6 +120,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             float BrightnessAmplification = Task->BrightnessAmplification;
             unsigned int CaVoxelsDeep = Task->NumVoxelsPerSlice;
             float VoxelResolution_um = Task->VoxelResolution_um;
+            float AttenuationPerUm = Task->AttenuationPerUm;
 
             Image OneToOneVoxelImage(VoxelsPerStepX, VoxelsPerStepY, NumChannels);
             OneToOneVoxelImage.TargetFileName_ = Task->TargetFileName_;
@@ -154,7 +155,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                         //       with a 'BrightnessAmplification' factor.
                         float Color = (*ConcentrationsByComartmentAtTimestepIndex)[ThisVoxel.CompartmentID_][CurrentTimestepIndex];
                         for (unsigned int Depth = 1; Depth < CaVoxelsDeep; Depth++) {
-                            Color += GetDepthVoxelContribution(Task, CurrentTimestepIndex, XVoxelIndex, YVoxelIndex, Task->VoxelZ, Depth, VoxelResolution_um, *ConcentrationsByComartmentAtTimestepIndex);
+                            Color += GetDepthVoxelContribution(Task, CurrentTimestepIndex, XVoxelIndex, YVoxelIndex, Task->VoxelZ, Depth, VoxelResolution_um, AttenuationPerUm, *ConcentrationsByComartmentAtTimestepIndex);
                         }
                         int PixelColor = Color*BrightnessAmplification*255.0;
                         if (PixelColor > 255) PixelColor = 255;

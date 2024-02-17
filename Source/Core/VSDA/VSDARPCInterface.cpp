@@ -390,12 +390,10 @@ std::string VSDARPCInterface::VSDACASetupMicroscope(std::string _JSONRequest) {
     Handle.GetParInt("NumVoxelsPerSlice", Params.NumVoxelsPerSlice);
     Handle.GetParInt("NumPixelsPerVoxel_px", Params.NumPixelsPerVoxel_px);
     Handle.GetParFloat("BrightnessAmplification", Params.BrightnessAmplification);
-std::cout << "AT  ERROR HANDLER!! WHEEE!\n";
+    Handle.GetParFloat("AttenuationPerUm", Params.AttenuationPerUm);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
-
-std::cout << "AM ABOUT TO MAKE A MICROSCOPE!! WHEEE!\n";
 
     int Result = !NES::VSDA::Calcium::VSDA_CA_SetupMicroscope(Logger_, Handle.Sim(), Params);
 

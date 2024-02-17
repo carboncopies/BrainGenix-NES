@@ -77,6 +77,7 @@ struct ProcessingTask {
     int CurrentTimestepIndex_; /**Index of the current timestep that we're on*/
 
     float BrightnessAmplification;
+    float AttenuationPerUm;
     float VoxelResolution_um;
     int NumVoxelsPerSlice;
 
