@@ -399,8 +399,6 @@ std::cout << "AM ABOUT TO MAKE A MICROSCOPE!! WHEEE!\n";
 
     int Result = !NES::VSDA::Calcium::VSDA_CA_SetupMicroscope(Logger_, Handle.Sim(), Params);
 
-std::cout << "MADE A MICROSCOPE!! WHEEE!\n";
-
     Handle.Sim()->CaData_.CaImaging.Init(Handle.Sim(), Handle.Sim()->CaData_.Params_);
 
     // Build Response
