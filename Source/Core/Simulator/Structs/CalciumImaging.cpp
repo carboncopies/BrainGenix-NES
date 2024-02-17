@@ -135,8 +135,10 @@ void CalciumImaging::Record(float t_ms, Simulation* Sim, NES::VSDA::Calcium::CaM
 
     if (_Params.FlourescingNeuronIDs_.empty()) {
         // All neurons fluoresce.
-        for (auto & neuron_ptr : Sim->Neurons) {
-            static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get())->UpdateConvolvedFIFO(ReversedFluorescenceKernel);
+        for (size_t i = 0; i < Sim->Neurons.size(); i++) {
+            std::shared_ptr<Simulator::CoreStructs::Neuron> ThisNeuron = Sim->Neurons[i];
+            assert(ThisNeuron != nullptr);
+            static_cast<BallAndStick::BSNeuron*>(ThisNeuron.get())->UpdateConvolvedFIFO(ReversedFluorescenceKernel);
         }
 
     } else {
