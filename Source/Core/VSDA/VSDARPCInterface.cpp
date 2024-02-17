@@ -389,7 +389,10 @@ std::string VSDARPCInterface::VSDACASetupMicroscope(std::string _JSONRequest) {
     Handle.GetParInt("ImageHeight_px", Params.ImageHeight_px);
     Handle.GetParInt("NumVoxelsPerSlice", Params.NumVoxelsPerSlice);
     Handle.GetParInt("NumPixelsPerVoxel_px", Params.NumPixelsPerVoxel_px);
-
+    Handle.GetParFloat("BrightnessAmplification", Params.BrightnessAmplification);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
     int Result = !NES::VSDA::Calcium::VSDA_CA_SetupMicroscope(Logger_, Handle.Sim(), Params);
 

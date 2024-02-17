@@ -61,11 +61,15 @@ double GetAverage(std::vector<double>* _Vec) {
 }
 
 
-float ImageProcessorPool::GetDepthVoxelContribution(ProcessingTask* Task, long TIndex, unsigned int XVoxelIndex, unsigned int YVoxelIndex, unsigned int ZVoxelIndex, unsigned int Depth, std::vector<std::vector<float>>& CbCaTI) {
+float ImageProcessorPool::GetDepthVoxelContribution(ProcessingTask* Task, long TIndex, unsigned int XVoxelIndex, unsigned int YVoxelIndex, unsigned int ZVoxelIndex, unsigned int Depth, float VoxelResolution_um, std::vector<std::vector<float>>& CbCaTI) {
     bool Status = false;
     VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, ZVoxelIndex+Depth, &Status);
     if (Status && ThisVoxel.IsFilled_) {
-        float DepthDimming = (1.0 - (Depth*0.15)); // *** WHERE DO WE GET THIS FROM?? (IT DEPENDS ON VOXEL SIZE)
+        // Let's say that every um dims the fluorescence by 0.15, so
+        // 1 voxel down with VoxelResolution_um==0.5 um is dimming by 0.15*0.5,
+        // 2 voxels down is 2*0.15*0.5. If it's actually non-linear we could put
+        // a more fancy function here.
+        float DepthDimming = (1.0 - (Depth*0.15*VoxelResolution_um));
         if (DepthDimming <= 0.0) return 0.0;
         return DepthDimming*CbCaTI[ThisVoxel.CompartmentID_][TIndex];
     }
@@ -83,9 +87,6 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
     // Initialize Metrics
     int SamplesBeforeUpdate = 25;
     std::vector<double> Times;
-
-    float BrightnessAmplification = 10.0; // *** WE SHOULD SET THIS FROM SOMEWHERE!
-    unsigned int CaVoxelsDeep = 4; // *** WHERE DO WE GET THIS FROM??
 
 
     // Run until thread exit is requested - that is, this is set to false
@@ -108,6 +109,10 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             int VoxelsPerStepX = Task->VoxelEndingX - Task->VoxelStartingX;
             int VoxelsPerStepY = Task->VoxelEndingY - Task->VoxelStartingY;
             int NumChannels = 3;
+
+            float BrightnessAmplification = Task->BrightnessAmplification;
+            unsigned int CaVoxelsDeep = Task->NumVoxelsPerSlice;
+            float VoxelResolution_um = Task->VoxelResolution_um;
 
             Image OneToOneVoxelImage(VoxelsPerStepX, VoxelsPerStepY, NumChannels);
             OneToOneVoxelImage.TargetFileName_ = Task->TargetFileName_;
@@ -142,7 +147,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                         //       with a 'BrightnessAmplification' factor.
                         float Color = (*ConcentrationsByComartmentAtTimestepIndex)[ThisVoxel.CompartmentID_][CurrentTimestepIndex];
                         for (unsigned int Depth = 1; Depth < CaVoxelsDeep; Depth++) {
-                            Color += GetDepthVoxelContribution(Task, CurrentTimestepIndex, XVoxelIndex, YVoxelIndex, Task->VoxelZ, Depth, *ConcentrationsByComartmentAtTimestepIndex);
+                            Color += GetDepthVoxelContribution(Task, CurrentTimestepIndex, XVoxelIndex, YVoxelIndex, Task->VoxelZ, Depth, VoxelResolution_um, *ConcentrationsByComartmentAtTimestepIndex);
                         }
                         int PixelColor = Color*BrightnessAmplification*255.0;
                         if (PixelColor > 255) PixelColor = 255;

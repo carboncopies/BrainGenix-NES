@@ -76,7 +76,9 @@ struct ProcessingTask {
     std::vector<std::vector<float>>* CalciumConcentrationByIndex_; /**Pointer to vector containing all the calcium concentrations*/
     int CurrentTimestepIndex_; /**Index of the current timestep that we're on*/
 
-
+    float BrightnessAmplification;
+    float VoxelResolution_um;
+    int NumVoxelsPerSlice;
 
 };
 

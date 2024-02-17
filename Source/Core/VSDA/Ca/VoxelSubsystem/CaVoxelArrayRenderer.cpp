@@ -105,6 +105,9 @@ std::vector<std::string> CaRenderSliceFromArray(BG::Common::Logger::LoggingSyste
                 ThisTask->TargetDirectory_ = DirectoryPath;
                 ThisTask->CurrentTimestepIndex_ = CalciumConcentrationIndex;
                 ThisTask->CalciumConcentrationByIndex_ = _CaData->CalciumConcentrationByIndex_;
+                ThisTask->BrightnessAmplification = _CaData->Params_.BrightnessAmplification;
+                ThisTask->VoxelResolution_um = _CaData->Params_.VoxelResolution_um;
+                ThisTask->NumVoxelsPerSlice = _CaData->Params_.NumVoxelsPerSlice;
 
                 _ImageProcessorPool->QueueEncodeOperation(ThisTask.get());
                 _CaData->Tasks_.push_back(std::move(ThisTask));
