@@ -4,3 +4,4 @@
 - Fewer namespaces, avoid nested namespaces.
 - Properly isolate unrelated code.
 - All structs should have identifiable default values to simplify knowing if they were not given actual values.
+- Once asserts are removed in the release build we need to make sure that parameters are actually tested once as they come in through the interface
