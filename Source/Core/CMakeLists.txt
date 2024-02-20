@@ -169,7 +169,8 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.cpp
   ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.h
-
+  ${SRC_DIR}/Core/VSDA/Common/Structs/WorldInfo.cpp
+  ${SRC_DIR}/Core/VSDA/Common/Structs/WorldInfo.h
 
   ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshBuilder.cpp
   ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshBuilder.h

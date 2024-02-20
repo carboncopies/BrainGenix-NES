@@ -61,7 +61,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             // -- Phase 1 -- //
             // Firstly, we get some important pointers out of the struct for more clear access
             size_t ShapeID = ThisTask->ShapeID_;
-            float VoxelResolution_um = ThisTask->VoxelResolution_um_;
+            float VoxelResolution_um = ThisTask->WorldInfo_.VoxelScale_um;
             VoxelArray* Array = ThisTask->Array_;
             std::string ShapeName = "";
             Simulator::Geometries::GeometryCollection* GeometryCollection = ThisTask->GeometryCollection_;
@@ -74,17 +74,17 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             // If we were to use something like a std::vector, that would be dangerous - but since we're using a static size raw array, 
             // we can allow all threads to write the array at the same time (it feels wrong, but should be okay in this specific case)
             if (GeometryCollection->IsSphere(ShapeID)) {
-                Simulator::Geometries::Sphere& ThisSphere = GeometryCollection->GetSphere(ShapeID);
+                Simulator::Geometries::Sphere & ThisSphere = GeometryCollection->GetSphere(ShapeID);
                 ShapeName = "Sphere";
-                FillShape(Array, &ThisSphere, VoxelResolution_um, ThisTask->CompartmentID_);
+                FillShape(Array, &ThisSphere, ThisTask->CompartmentID_, ThisTask->WorldInfo_);
             }
             else if (GeometryCollection->IsBox(ShapeID)) {
-                Simulator::Geometries::Box& ThisBox = GeometryCollection->GetBox(ShapeID); 
+                Simulator::Geometries::Box & ThisBox = GeometryCollection->GetBox(ShapeID); 
                 ShapeName = "Box";
-                FillBox(Array, &ThisBox, VoxelResolution_um, ThisTask->CompartmentID_);
+                FillBox(Array, &ThisBox, ThisTask->CompartmentID_, ThisTask->WorldInfo_);
             }
             else if (GeometryCollection->IsCylinder(ShapeID)) {
-                Simulator::Geometries::Cylinder& ThisCylinder = GeometryCollection->GetCylinder(ShapeID);
+                Simulator::Geometries::Cylinder & ThisCylinder = GeometryCollection->GetCylinder(ShapeID);
                 ShapeName = "Cylinder";
                 FillCylinder(Array, &ThisCylinder, VoxelResolution_um, ThisTask->CompartmentID_);
             }

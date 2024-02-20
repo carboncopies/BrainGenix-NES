@@ -14,6 +14,9 @@
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Geometries/Geometry.h>
 
+#include <VSDA/Common/Structs/WorldInfo.h>
+
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -40,9 +43,9 @@ struct Sphere: Geometry {
     float Volume_um3();
 
     //! Returns the bounding box
-    virtual BoundingBox GetBoundingBox();
-    virtual bool IsPointInShape(Vec3D _Position_um);
-    virtual bool IsInsideRegion(BoundingBox _Region);
+    virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo);
+    virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo);
+    virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo);
 
 };
 

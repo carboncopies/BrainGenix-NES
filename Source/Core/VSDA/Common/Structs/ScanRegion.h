@@ -44,6 +44,8 @@ namespace Simulator {
 /**
  * @brief Defines a bounding box using two points where we wish to scan with the microscope.
  *
+ * Note: For purposes of translation, Rotation of the scanregion means rotation of the stage or sample.
+ * 
  */
 struct ScanRegion {
 
@@ -56,6 +58,13 @@ struct ScanRegion {
     float Point2X_um;
     float Point2Y_um;
     float Point2Z_um;
+
+    /** Sample Rotation */
+    float SampleRotationX_rad;
+    float SampleRotationY_rad;
+    float SampleRotationZ_rad;
+
+
 
     /**
      * @brief Helper function that returns the x,y,z size of this region.

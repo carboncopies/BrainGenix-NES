@@ -106,7 +106,7 @@ Vec3D Cylinder::GetRotation_rad() const {
 
 
 // I have no clude what I'm doing
-BoundingBox Cylinder::GetBoundingBox() {
+BoundingBox Cylinder::GetBoundingBox(VSDA::WorldInfo& _WorldInfo) {
 	BoundingBox bb;
 
 
@@ -292,20 +292,24 @@ void Cylinder::WriteToVoxelArray(float _VoxelScale, VSDA::Calcium::VoxelArray* _
 
 
 
-bool Cylinder::IsPointInShape(Vec3D _Position_um) {
+bool Cylinder::IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo) {
     return false;
 }
 
-bool Cylinder::IsInsideRegion(BoundingBox _Region) {
+bool Cylinder::IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) {
     // We're going to make this a really conservative bounding box
     // This bounding box probably extends past what is reasonable
     BoundingBox MyBB;
-    MyBB.bb_point1[0] = End0Pos_um.x - End0Radius_um;
-    MyBB.bb_point1[1] = End0Pos_um.y - End0Radius_um;
-    MyBB.bb_point1[2] = End0Pos_um.z - End0Radius_um;
-    MyBB.bb_point2[0] = End1Pos_um.x + End1Radius_um;
-    MyBB.bb_point2[1] = End1Pos_um.y + End1Radius_um;
-    MyBB.bb_point2[2] = End1Pos_um.z + End1Radius_um;
+
+    Geometries::Vec3D End0Rot = End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+    Geometries::Vec3D End1Rot = End1Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+
+    MyBB.bb_point1[0] = End0Rot.x - End0Radius_um;
+    MyBB.bb_point1[1] = End0Rot.y - End0Radius_um;
+    MyBB.bb_point1[2] = End0Rot.z - End0Radius_um;
+    MyBB.bb_point2[0] = End1Rot.x + End1Radius_um;
+    MyBB.bb_point2[1] = End1Rot.y + End1Radius_um;
+    MyBB.bb_point2[2] = End1Rot.z + End1Radius_um;
     return MyBB.IsIntersecting(_Region);
 }
 

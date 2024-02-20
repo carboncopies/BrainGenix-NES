@@ -28,21 +28,21 @@ namespace Calcium {
 
 
 
-bool IsShapeInsideRegion(Simulator::Simulation* _Sim, size_t _ShapeID, Simulator::BoundingBox _Region) {
+bool IsShapeInsideRegion(Simulator::Simulation* _Sim, size_t _ShapeID, Simulator::BoundingBox _Region, WorldInfo _WorldInfo) {
 
     bool IsInside = false;
     Simulator::Geometries::GeometryCollection* GeometryCollection = &_Sim->Collection;
     if (GeometryCollection->IsSphere(_ShapeID)) {
         Simulator::Geometries::Sphere& ThisSphere = GeometryCollection->GetSphere(_ShapeID);
-        IsInside = ThisSphere.IsInsideRegion(_Region);
+        IsInside = ThisSphere.IsInsideRegion(_Region, _WorldInfo);
     }
     else if (GeometryCollection->IsBox(_ShapeID)) {
         Simulator::Geometries::Box& ThisBox = GeometryCollection->GetBox(_ShapeID); 
-        IsInside = ThisBox.IsInsideRegion(_Region);
+        IsInside = ThisBox.IsInsideRegion(_Region, _WorldInfo);
     }
     else if (GeometryCollection->IsCylinder(_ShapeID)) {
         Simulator::Geometries::Cylinder& ThisCylinder = GeometryCollection->GetCylinder(_ShapeID);
-        IsInside = ThisCylinder.IsInsideRegion(_Region);
+        IsInside = ThisCylinder.IsInsideRegion(_Region, _WorldInfo);
     }
 
     return IsInside;
@@ -71,6 +71,14 @@ bool CaCreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger
     RegionBoundingBox.bb_point2[2] = _Region.Point2Z_um;
 
 
+
+    VSDA::WorldInfo Info;
+    Info.VoxelScale_um = _Params->VoxelResolution_um;
+    Info.WorldRotationOffsetX_rad = _Region.SampleRotationX_rad;
+    Info.WorldRotationOffsetY_rad = _Region.SampleRotationY_rad;
+    Info.WorldRotationOffsetZ_rad = _Region.SampleRotationZ_rad;
+
+
     // Build Bounding Boxes For All Compartments
     int AddedShapes = 0;
     int TotalShapes = 0;
@@ -88,11 +96,11 @@ bool CaCreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger
         Task->Array_ = _Array;
         Task->GeometryCollection_ = &_Sim->Collection;
         Task->ShapeID_ = ThisCompartment->ShapeID;
-        Task->VoxelResolution_um_ = _Params->VoxelResolution_um;
+        Task->WorldInfo_ = Info;
         Task->CompartmentID_ = ThisCompartment->ID;
 
         // Now submit to render queue if it's inside the region, otherwise skip it
-        if (IsShapeInsideRegion(_Sim, ThisCompartment->ShapeID, RegionBoundingBox)) {
+        if (IsShapeInsideRegion(_Sim, ThisCompartment->ShapeID, RegionBoundingBox, Info)) {
             
             AddedShapes++;
 

@@ -16,6 +16,9 @@
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/BoundingBox.h>
 
+#include <VSDA/Common/Structs/WorldInfo.h>
+
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -49,7 +52,7 @@ struct Geometry {
     virtual float Volume_um3() = 0;
 
     //! Gets the bounding box for the given shape
-    virtual BoundingBox GetBoundingBox() = 0;
+    virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo) = 0;
 
     /**
      * @brief Determines if this shape is intersecting with the given region.
@@ -59,7 +62,7 @@ struct Geometry {
      * @return true 
      * @return false 
      */
-    virtual bool IsInsideRegion(BoundingBox _Region) = 0;
+    virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) = 0;
 
     /**
      * @brief Checks if the given world space position is in this shape.
@@ -68,7 +71,7 @@ struct Geometry {
      * @return true Is in shape
      * @return false Is not in shape
      */
-    virtual bool IsPointInShape(Vec3D _Position_um) = 0;
+    virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo) = 0;
 
 };
 
