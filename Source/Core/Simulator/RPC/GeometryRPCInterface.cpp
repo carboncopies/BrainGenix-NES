@@ -28,7 +28,6 @@ GeometryRPCInterface::GeometryRPCInterface(BG::Common::Logger::LoggingSystem* _L
     _RPCManager->AddRoute("Simulation/Geometry/Cylinder/Create", std::bind(&GeometryRPCInterface::CylinderCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Geometry/Box/Create",      std::bind(&GeometryRPCInterface::BoxCreate, this, std::placeholders::_1));
 
-
 }
 
 GeometryRPCInterface::~GeometryRPCInterface() {
@@ -37,7 +36,7 @@ GeometryRPCInterface::~GeometryRPCInterface() {
 
 std::string GeometryRPCInterface::SphereCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SphereCreate", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Geometry/Sphere/Create", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -59,7 +58,7 @@ std::string GeometryRPCInterface::SphereCreate(std::string _JSONRequest) {
 
 std::string GeometryRPCInterface::CylinderCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "CylinderCreate", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Geometry/Cylinder/Create", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -83,7 +82,7 @@ std::string GeometryRPCInterface::CylinderCreate(std::string _JSONRequest) {
 
 std::string GeometryRPCInterface::BoxCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "BoxCreate", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Geometry/Box/Create", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }

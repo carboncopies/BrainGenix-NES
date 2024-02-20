@@ -47,7 +47,7 @@ VisualizerRPCInterface::~VisualizerRPCInterface() {
  */
 std::string VisualizerRPCInterface::VisualizerGetStatus(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, "VisualizerGetStatus", Simulations_, true);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Visualizer/GetStatus", Simulations_, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -65,7 +65,7 @@ std::string VisualizerRPCInterface::VisualizerGetStatus(std::string _JSONRequest
  */
 std::string VisualizerRPCInterface::VisualizerGetImageHandles(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, "VisualizerGetImageHandles", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Visualizer/GetImageHandles", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -85,7 +85,7 @@ std::string VisualizerRPCInterface::VisualizerGetImageHandles(std::string _JSONR
  */
 std::string VisualizerRPCInterface::VisualizerGetImage(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, "VisualizerGetImage", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Visualizer/GetImage", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -158,7 +158,7 @@ std::string VisualizerRPCInterface::VisualizerGetImage(std::string _JSONRequest)
  */
 std::string VisualizerRPCInterface::VisualizerGenerateImages(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, "VisualizerGenerateImage", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Visualizer/GenerateImages", Simulations_);
 
   
     // Create and Populate Parameters From Request

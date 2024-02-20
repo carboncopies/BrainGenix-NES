@@ -39,11 +39,13 @@ typedef std::vector<std::unique_ptr<Simulator::Simulation>>* Simulations;
 class HandlerData {
 
 protected:
-    std::string Source;
     // ManagerTaskData* ManTaskData;
     Simulations SimVec = nullptr;
 
+    BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to the instance of the logging system*/
+
     std::string JSONRequestStr;
+    std::string RoutePath_; /**Path that is this route*/
     nlohmann::json RequestJSON;
     BGStatusCode Status = BGStatusSuccess;
 
@@ -51,7 +53,7 @@ protected:
     Simulator::Simulation* ThisSimulation = nullptr;
 
 public:
-    HandlerData(const std::string& _JSONRequest, const std::string& _Source, Simulations _Simulations, bool PermitBusy = false, bool NoSimulation = false);
+    HandlerData(const std::string& _JSONRequest, BG::Common::Logger::LoggingSystem* _Logger, std::string _RoutePath, Simulations _Simulations, bool PermitBusy = false, bool NoSimulation = false);
 
     // See how this is used in Manager::SimulationCreate().
     // Simulator::Simulation* NewSimulation();

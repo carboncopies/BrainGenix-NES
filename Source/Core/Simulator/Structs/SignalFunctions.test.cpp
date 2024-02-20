@@ -51,7 +51,7 @@ TEST_F(SignalFunctionsTest, test_DoubleExponentExpr_default) {
 }
 
 TEST_F(SignalFunctionsTest, test_Convolve1D_default) {
-    std::vector<float> signal = {0.1, 2.0, 1.2, 2.3, 0.5,
+    std::deque<float> signal = {0.1, 2.0, 1.2, 2.3, 0.5,
                                  0.7, 3.0, 0.2, 0.9, 2.1};
     std::vector<float> reversed_kernel = {-1.5, -1.0, 0.5, 1.0};
     std::vector<float> expected = {0.1,   2.05,  2.1,  0.75,  -2.55,

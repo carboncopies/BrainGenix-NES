@@ -32,7 +32,8 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-
+#include <vector>
+#include <string>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -52,14 +53,22 @@ namespace Calcium {
 struct CaMicroscopeParameters {
 
 
-    float VoxelResolution_um; /**Set the size of each voxel in micrometers*/
+    float VoxelResolution_um;               /**Set the size of each voxel in micrometers*/
+    int ImageWidth_px;                      /**Width of the rendered image in pixels*/
+    int ImageHeight_px;                     /**Height of the rendered image in pixels*/
+    float ScanRegionOverlap_percent;        /**Percentage of overlap between generated images*/
+    int NumPixelsPerVoxel_px;               /**Sets the size of each voxel in pixels in the fully rendered image (approximately).*/
+    int NumVoxelsPerSlice;                  /**Number of voxels deep we're scanning*/
+    
+    std::vector<int> FlourescingNeuronIDs_; /**List of neuron IDs that flouresce, all others are ignored*/
+    std::string CalciumIndicator_;          /**Name of the calcium indicator currently being used*/
+    float IndicatorRiseTime_ms;             /**Rise time of the indicator in milliseconds (how long before it sarts glowing)*/
+    float IndicatorDecayTime_ms;            /**Decay of the time of the indicator in milliseconds (how long before it stops glowing)*/
+    float IndicatorInterval_ms;             /**Interval of update for the indicator in milliseconds*/
+    float ImagingInterval_ms;               /**Interval at which Ca images are produced, typically on the same order as IndicatorDecayTime_ms*/
+    float AttenuationPerUm;                 /** something*/
 
-    int ImageWidth_px; /**Width of the rendered image in pixels*/
-    int ImageHeight_px; /**Height of the rendered image in pixels*/
-    float ScanRegionOverlap_percent; /**Percentage of overlap between generated images*/
-    float SliceThickness_um; /**How thick each slice is in micrometers*/
-    float MicroscopeFOV_deg; /**Field of view of the microscope camera in degrees, we autoposition the height so this doesn't change anything other than the perspective effects.*/
-    int NumPixelsPerVoxel_px; /**Sets the size of each voxel in pixels in the fully rendered image (approximately).*/
+    float BrightnessAmplification;          /**This tunes the output amplification for fluorescence imaging*/
 
 };
 

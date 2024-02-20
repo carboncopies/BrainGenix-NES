@@ -26,7 +26,7 @@ ModelRPCInterface::ModelRPCInterface(BG::Common::Logger::LoggingSystem* _Logger,
     // Register Callbacks
     _RPCManager->AddRoute("Simulation/Compartments/BS/Create",        std::bind(&ModelRPCInterface::BSCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Staple/Create",                 std::bind(&ModelRPCInterface::StapleCreate, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/Receptor/Create",               std::bind(&ModelRPCInterface::StapleCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Receptor/Create",               std::bind(&ModelRPCInterface::ReceptorCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Neuron/BS/Create",              std::bind(&ModelRPCInterface::BSNeuronCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/PatchClampDAC/Create",          std::bind(&ModelRPCInterface::PatchClampDACCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/PatchClampDAC/SetOutputList",   std::bind(&ModelRPCInterface::PatchClampDACSetOutputList, this, std::placeholders::_1));
@@ -49,7 +49,7 @@ ModelRPCInterface::~ModelRPCInterface() {
  */
 std::string ModelRPCInterface::BSCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "BSCreate", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Compartments/BS/Create", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -82,7 +82,7 @@ std::string ModelRPCInterface::BSCreate(std::string _JSONRequest) {
 
 std::string ModelRPCInterface::StapleCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "StapleCreate", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Staple/Create", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -120,7 +120,7 @@ std::string ModelRPCInterface::StapleCreate(std::string _JSONRequest) {
  */
 std::string ModelRPCInterface::ReceptorCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "ReceptorCreate", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Receptor/Create", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -166,7 +166,7 @@ OR
 */
 std::string ModelRPCInterface::BSNeuronCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "BSNeuronCreate", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Neuron/BS/Create", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -207,7 +207,7 @@ std::string ModelRPCInterface::BSNeuronCreate(std::string _JSONRequest) {
 
 std::string ModelRPCInterface::PatchClampDACCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "PatchClampDACCreate", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/OatchClampDAC/Create", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -241,7 +241,7 @@ std::string ModelRPCInterface::PatchClampDACCreate(std::string _JSONRequest) {
  */
 std::string ModelRPCInterface::PatchClampDACSetOutputList(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "PatchClampDACSetOutputList", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/PatchClampDAC/SetOutputList", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -282,7 +282,7 @@ std::string ModelRPCInterface::PatchClampDACSetOutputList(std::string _JSONReque
 
 std::string ModelRPCInterface::PatchClampADCCreate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "PatchClampADCCreate", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/PatchClampADC/Create", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -305,7 +305,7 @@ std::string ModelRPCInterface::PatchClampADCCreate(std::string _JSONRequest) {
 
 std::string ModelRPCInterface::PatchClampADCSetSampleRate(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "PatchClampADCSetSampleRate", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/PatchClampADC/SetSampleRate", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -332,7 +332,7 @@ std::string ModelRPCInterface::PatchClampADCSetSampleRate(std::string _JSONReque
 
 std::string ModelRPCInterface::PatchClampADCGetRecordedData(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "PatchClampADCGetRecordedData", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/PatchClampADC/GetRecordedData", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -367,7 +367,7 @@ std::string ModelRPCInterface::PatchClampADCGetRecordedData(std::string _JSONReq
  */
 std::string ModelRPCInterface::SetSpecificAPTimes(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SetSpecificAPTimes", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/SetSpecificAPTimes", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -417,7 +417,7 @@ std::string ModelRPCInterface::SetSpecificAPTimes(std::string _JSONRequest) {
  */
 std::string ModelRPCInterface::SetSpontaneousActivity(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, "SetSpontaneousActivity", Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/SetSpontaneousActivity", Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }

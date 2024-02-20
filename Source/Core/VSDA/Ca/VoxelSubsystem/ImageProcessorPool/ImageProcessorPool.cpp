@@ -7,6 +7,7 @@
 #include <vector>
 #include <chrono>
 #include <filesystem>
+#include <iostream>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -60,6 +61,28 @@ double GetAverage(std::vector<double>* _Vec) {
 }
 
 
+/**
+ * Adding voxel contributions within a slice that is being imaged.
+ * Higher Z indices are CLOSER to the imaging microscope.
+ * Hence, subtract depth, make sure we don't go below 0.
+ */
+float ImageProcessorPool::GetDepthVoxelContribution(ProcessingTask* Task, long TIndex, unsigned int XVoxelIndex, unsigned int YVoxelIndex, unsigned int ZVoxelIndex, unsigned int Depth, float VoxelResolution_um, float AttenuationPerUm, std::vector<std::vector<float>>& CbCaTI) {
+    bool Status = false;
+    int VoxelZ = ZVoxelIndex-Depth;
+    if (VoxelZ < 0) return 0.0;
+    VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, ZVoxelIndex-Depth, &Status);
+    if (Status && ThisVoxel.IsFilled_) {
+        // Let's say that every um dims the fluorescence by 0.15, so
+        // 1 voxel down with VoxelResolution_um==0.5 um is dimming by 0.15*0.5,
+        // 2 voxels down is 2*0.15*0.5. If it's actually non-linear we could put
+        // a more fancy function here.
+        float DepthDimming = (1.0 - (Depth*AttenuationPerUm*VoxelResolution_um));
+        if (DepthDimming <= 0.0) return 0.0;
+        return DepthDimming*CbCaTI[ThisVoxel.CompartmentID_][TIndex];
+    }
+    return 0.0;
+}
+
 // Thread Main Function
 void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
@@ -94,9 +117,18 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             int VoxelsPerStepY = Task->VoxelEndingY - Task->VoxelStartingY;
             int NumChannels = 3;
 
+            float BrightnessAmplification = Task->BrightnessAmplification;
+            unsigned int CaVoxelsDeep = Task->NumVoxelsPerSlice;
+            float VoxelResolution_um = Task->VoxelResolution_um;
+            float AttenuationPerUm = Task->AttenuationPerUm;
+
             Image OneToOneVoxelImage(VoxelsPerStepX, VoxelsPerStepY, NumChannels);
             OneToOneVoxelImage.TargetFileName_ = Task->TargetFileName_;
 
+            std::vector<std::vector<float>>* ConcentrationsByComartmentAtTimestepIndex = Task->CalciumConcentrationByIndex_;
+            int CurrentTimestepIndex = Task->CurrentTimestepIndex_;
+
+            int debug_max_lumen = 0;
             // Now enumerate the voxel array and populate the image with the desired pixels (for the subregion we're on)
             for (unsigned int XVoxelIndex = Task->VoxelStartingX; XVoxelIndex < Task->VoxelEndingX; XVoxelIndex++) {
                 for (unsigned int YVoxelIndex = Task->VoxelStartingY; YVoxelIndex < Task->VoxelEndingY; YVoxelIndex++) {
@@ -111,17 +143,31 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
 
                     if (!Status) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 0, 0);
                     } else if (ThisVoxel.IsBorder_) {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
                     } else if (ThisVoxel.IsFilled_) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 220, 220, 220);
+                        // Note: The range of Ca concentration values depends on multiple
+                        //       factors, and the resulting luminosity of fluorescence depends
+                        //       on that as well as the combination of values from multiple
+                        //       voxels at different depths. Consequently, maximum output
+                        //       brightness is complicated to predict, though easily tuned
+                        //       with a 'BrightnessAmplification' factor.
+                        float Color = (*ConcentrationsByComartmentAtTimestepIndex)[ThisVoxel.CompartmentID_][CurrentTimestepIndex];
+                        for (unsigned int Depth = 1; Depth < CaVoxelsDeep; Depth++) {
+                            Color += GetDepthVoxelContribution(Task, CurrentTimestepIndex, XVoxelIndex, YVoxelIndex, Task->VoxelZ, Depth, VoxelResolution_um, AttenuationPerUm, *ConcentrationsByComartmentAtTimestepIndex);
+                        }
+                        int PixelColor = Color*BrightnessAmplification*255.0;
+                        if (PixelColor > 255) PixelColor = 255;
+                        if (PixelColor > debug_max_lumen) debug_max_lumen = PixelColor;
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, PixelColor, 0);
                     } else {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 80, 80, 80);
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 0);
                     }
 
                 }
             }
+            std::cout << "Max lumen = " << debug_max_lumen << '\n';
 
             // Note, when we do image processing (for like noise and that stuff, we should do it here!) (or after resizing depending on what is needed)
             // so then this will be phase two, and phase 3 is saving after processing
@@ -146,8 +192,6 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 ResizedPixels = std::unique_ptr<unsigned char>(new unsigned char[TargetX * TargetY * Channels]());
                 stbir_resize_uint8(SourcePixels, SourceX, SourceY, SourceX * Channels, ResizedPixels.get(), TargetX, TargetY, TargetX * Channels, Channels);
             }
-
-
 
             // -- Phase 3 -- //
             // Now, we check that the image has a place to go, and write it to disk.

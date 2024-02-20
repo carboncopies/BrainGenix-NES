@@ -149,7 +149,7 @@ public:
     
 
 
-    std::string NESRequest(std::string _JSONRequest); // Generic JSON-based NES requests.
+    std::string NESRequest(std::string _JSONRequest, int _SimulationIDOverride = -1); // Generic JSON-based NES requests.
 
 
     /**

@@ -98,7 +98,7 @@ private:
      */
     bool DequeueTask(ProcessingTask** _TaskPtr);
 
-
+    float GetDepthVoxelContribution(ProcessingTask* Task, long TIndex, unsigned int XVoxelIndex, unsigned int YVoxelIndex, unsigned int ZVoxelIndex, unsigned int Depth, float VoxelResolution_um, float AttenuationPerUm, std::vector<std::vector<float>>& CbCaTI);
 
     /**
      * @brief Entry point for renderer threads.

@@ -44,7 +44,7 @@
 #include <VSDA/Common/Structs/ScanRegion.h>
 
 #include <VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h>
-
+#include <Simulator/Structs/CalciumImaging.h>
 
 
 namespace BG {
@@ -86,10 +86,16 @@ struct CalciumImagingData {
     int                         TotalRegions_ = 0;       /**Defines the total number of subregions that must be rendered*/
     int                         CurrentRegion_ = 0;      /**Defines the current region being rendered by the system right now.*/
 
+
+
     std::vector<std::vector<std::string>> RenderedImagePaths_; /**List of paths for each region to be populated as we render all the images for this simulation into a stack*/
     std::vector<std::unique_ptr<ProcessingTask>> Tasks_; /**List of tasks that have been created for this render operation, we check that they're all done before finishing our render operation*/
 
+    std::vector<std::vector<float>>* CalciumConcentrationByIndex_; /**Pointer to vector containing all the calcium concentrations*/
+    float CalciumConcentrationTimestep_ms; /**Timestep of each index in the calcium concentrations*/
 
+
+    Simulator::Tools::CalciumImaging CaImaging;
 
 };
 

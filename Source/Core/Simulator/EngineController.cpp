@@ -40,7 +40,7 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
             } else if (_Sim->CurrentTask == SIMULATION_VSDA) {
-                _Logger->Log("Worker Performing Simulation VSDA Call For Simulation " + std::to_string(_Sim->ID), 4);
+                _Logger->Log("Worker Performing Simulation VSDA EM Call For Simulation " + std::to_string(_Sim->ID), 4);
                 _Sim->IsRendering = true;
                 _RenderPool->QueueRenderOperation(_Sim);
                 while (_Sim->IsRendering) {
@@ -59,6 +59,18 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
                 _Sim->VisualizerParams.State = VISUALIZER_DONE;
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
+            } else if (_Sim->CurrentTask == SIMULATION_CALCIUM) {
+                _Logger->Log("Worker Performing Simulation VSDA Calcium Call For Simulation " + std::to_string(_Sim->ID), 4);
+                _Sim->IsRendering = true;
+                _RenderPool->QueueRenderOperation(_Sim);
+                while (_Sim->IsRendering) {
+                    std::this_thread::sleep_for(std::chrono::milliseconds(10)); // sleep for 10ms
+                }
+                _Sim->VSDAData_.State_ = VSDA_RENDER_DONE;
+                _Sim->CurrentTask = SIMULATION_NONE;
+                _Sim->WorkRequested = false;
+            } else {
+                _Logger->Log("Unknown Simulation Work Task Enum, Did You Add Something And Forget To Put It Into The EngineController.cpp?", 10);
             }
 
             _Sim->IsProcessing = false;

@@ -18,6 +18,8 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Geometries/VecTools.h>
 
+#include <VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.h>
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -33,30 +35,30 @@ namespace Tools {
  */
 struct CalciumImaging {
 
-    Simulator::Simulation* Sim;
+    // Simulator::Simulation* Sim;
 
-    std::string Name;
-    int ID;
+    // std::string Name;
+    // int ID;
 
-    std::vector<int> FluorescingNeurons;
-    std::string CalciumIndicator;
-    float IndicatorRise_ms = 30.0;
-    float IndicatorDecay_ms = 80.0;
-    float IndicatorInterval_ms = 80.0;
+    //std::vector<int> FluorescingNeurons;
+    //std::string CalciumIndicator;
+    //float IndicatorRise_ms = 30.0;
+    //float IndicatorDecay_ms = 80.0;
+    //float IndicatorInterval_ms = 80.0;
     float ImagingInterval_ms = 90.0;
-    int VoxelSpaceSide_px = 2;
-    float Voxel_um = 0.0;
-    bool GenerateDuringSim = false;
-    Geometries::Vec3D Center_um{0.0, 0.0, 0.0};
-    Geometries::Vec3D Half{10.0, 10.0, 2.0};
-    Geometries::Vec3D Dx{1.0, 0.0, 0.0};
-    Geometries::Vec3D Dy{0.0, 1.0, 0.0};
-    Geometries::Vec3D Dz{0.0, 0.0, 1.0}; // Positive dz indicates most visible top surface.
+    //int VoxelSpaceSide_px = 2;
+    //float Voxel_um = 0.0;
+    //bool GenerateDuringSim = false;
+    //Geometries::Vec3D Center_um{0.0, 0.0, 0.0};
+    //Geometries::Vec3D Half{10.0, 10.0, 2.0};
+    //Geometries::Vec3D Dx{1.0, 0.0, 0.0};
+    //Geometries::Vec3D Dy{0.0, 1.0, 0.0};
+    //Geometries::Vec3D Dz{0.0, 0.0, 1.0}; // Positive dz indicates most visible top surface.
 
     std::vector<float> FluorescenceKernel;
     std::vector<float> ReversedFluorescenceKernel;
     float max_pixel_contributions = 0.0;
-    std::vector<float> image_dims_px; // *** or unsigned int?
+    // std::vector<float> image_dims_px; // *** or unsigned int?
     //??? image_t; // Image taken at time t.
     //std::vector<???> images;
 
@@ -65,23 +67,23 @@ struct CalciumImaging {
     // *** (in prototype:) voxelspace = []
 
     std::vector<float> TRecorded_ms{};
-    size_t num_samples = 0;
+    // size_t num_samples = 0;
 
     //! Constructors
-    CalciumImaging(CalciumImaging & CaImg);
-    CalciumImaging(Simulator::Simulation* _Sim);
+    //CalciumImaging(CalciumImaging & CaImg);
+    //CalciumImaging(Simulator::Simulation* _Sim);
 
-    void Init();
+    void Init(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params);
 
-    void SetImageSize();
-    void InstantiateVoxelSpace();
-    void InitializeDepthDimming();
-    void InitializeProjectionCircles();
+    // void SetImageSize();
+    // void InstantiateVoxelSpace();
+    // void InitializeDepthDimming();
+    // void InitializeProjectionCircles();
 
-    void InitializeFluorescenceKernel();
-    void InitializeFluorescingNeuronFIFOs();
+    void InitializeFluorescenceKernel(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params);
+    void InitializeFluorescingNeuronFIFOs(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params);
 
-    void Record(float t_ms);
+    void Record(float t_ms, Simulation* Sim, NES::VSDA::Calcium::CaMicroscopeParameters& _Params);
 
 };
 

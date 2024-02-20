@@ -231,6 +231,7 @@ nlohmann::json Simulation::GetInstrumentsRecordingJSON() const {
 
     recording["t_ms"] = nlohmann::json(this->TInstruments_ms);
 
+    // Virtual experimental functional data from recording electrodes
     if (!RecordingElectrodes.empty()) {
         recording["Electrodes"] = nlohmann::json::object();
         for (const auto & Electrode : RecordingElectrodes) {
@@ -238,7 +239,25 @@ nlohmann::json Simulation::GetInstrumentsRecordingJSON() const {
         }
     }
 
-    // *** Put Calcium Imaging recording collection here.
+    // God's eye functional data about neuron calcium concentrations
+    if (CaData_.State_ != BG::NES::VSDA::Calcium::CA_NOT_INITIALIZED) {
+        recording["Calcium"] = nlohmann::json::object();
+        recording["Calcium"]["Ca_t_ms"] = CaData_.CaImaging.TRecorded_ms;
+        if (CaData_.Params_.FlourescingNeuronIDs_.empty()) {
+            // All neurons fluoresce.
+            for (auto & neuron_ptr : Neurons) {
+                BallAndStick::BSNeuron* bsneuron_ptr = static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get());
+                recording["Calcium"][std::to_string(bsneuron_ptr->ID)] = bsneuron_ptr->CaSamples;
+            }
+
+        } else {
+            // For specified fluorescing neurons set.
+            for (auto & neuron_id : CaData_.Params_.FlourescingNeuronIDs_) if (neuron_id < Neurons.size()) {
+                BallAndStick::BSNeuron* bsneuron_ptr = static_cast<BallAndStick::BSNeuron*>(Neurons.at(neuron_id).get());
+                recording["Calcium"][std::to_string(bsneuron_ptr->ID)] = bsneuron_ptr->CaSamples;
+            }
+        }
+    }
     
     return recording;
 }
@@ -314,8 +333,8 @@ void Simulation::RunFor(float tRun_ms) {
             }
 
             // Calcium Imaging
-            if (CaImaging) {
-                CaImaging->Record(this->T_ms);
+            if (CaData_.State_ != BG::NES::VSDA::Calcium::CA_NOT_INITIALIZED) {
+                CaData_.CaImaging.Record(this->T_ms, this, CaData_.Params_); // flatten this later please
             }
         }
 
@@ -356,10 +375,10 @@ CoreStructs::Neuron * Simulation::FindNeuronByCompartment(int CompartmentID) con
 //     return wrapped;
 // }
 
-std::string Simulation::WrapAsNESRequest(const std::string & ReqFunc, const std::string & _RequestJSON) {
+std::string Simulation::WrapAsNESRequest( const std::string & _RequestJSON, const std::string & _Route) {
     std::string wrapped("{ \"ReqID\": ");
     wrapped += std::to_string(StoredReqID) + ", \"";
-    wrapped += ReqFunc +"\": ";
+    wrapped += _Route + "\": ";
     wrapped += _RequestJSON + " }";
     StoredReqID++;
     return wrapped;
@@ -376,9 +395,9 @@ std::string Simulation::WrapAsNESRequest(const std::string & ReqFunc, const std:
 //     //Logger_->Log("DEBUGGING --> Number of stored requests: "+std::to_string(StoredRequests.size()), 1);
 // }
 
-void Simulation::StoreRequestHandled(const std::string & ReqFunc, const std::string & _Route, const std::string & _RequestJSON) {
+void Simulation::StoreRequestHandled(const std::string & _Route, const std::string & _RequestJSON) {
     // We store everything as a Request within a NESRequest block:
-    StoredRequests.emplace_back(_Route, WrapAsNESRequest(ReqFunc, _RequestJSON));
+    StoredRequests.emplace_back(_Route, WrapAsNESRequest(_RequestJSON, _Route));
 }
 
 std::string Simulation::StoredRequestsToString() const {

@@ -40,8 +40,24 @@ bool CalculateCalciumConcentrations(BG::Common::Logger::LoggingSystem *_Logger, 
 	for (unsigned int component_id = 0; component_id < _Simulation->BSCompartments.size(); component_id++) {
 		// Getting the corresponding neuron by component ID:
 		auto neuron_ptr = _Simulation->FindNeuronByCompartment(component_id);
+
+		// Ensure that the pointer isn't null and explodes
+		if (neuron_ptr == nullptr) {
+			_Logger->Log("Failed To Find Neuron For Compartment '" + std::to_string(component_id) + "'", 6);
+			_Data->push_back(std::vector<float>());
+			continue;
+		}
+
 		// Get the list of Calcium concentrations cached at that neuron and copy it into the vector of vectors:
-		(*_Data).emplace_back(static_cast<Simulator::BallAndStick::BSNeuron*>(neuron_ptr)->CaSamples);
+		std::vector<float> CASamples = static_cast<Simulator::BallAndStick::BSNeuron*>(neuron_ptr)->CaSamples;
+		_Data->emplace_back(CASamples);
+	}
+	// Ensure that all timestep lists by compartment index have at least one sample in them, otherwise we failed.
+	for (size_t i = 0; i < _Data->size(); i++) {
+		if ((*_Data)[i].size() < 1) {
+			_Logger->Log("Failed To Get Calcium Concentrations For Neuron With ID '" + std::to_string(i) + "', Has No Timesteps", 7);
+			return false;
+		}
 	}
 	return true;
 }
@@ -58,13 +74,13 @@ float ComponentSampledCalciumConcentration(Simulator::Simulation* _Simulation, i
  * - Hence, I will modify this function a little bit in an alternative below where I assume that what you
  *   meant was that you wanted to know the simulation time-point of a specific Ca sample by its _SampleIdx.
  */
-bool GetCalciumConcentrationTimesteps(BG::Common::Logger::LoggingSystem *_Logger, Simulator::Simulation* _Simulation, float* _Timestep){
+bool GetCalciumConcentrationTimestep(BG::Common::Logger::LoggingSystem *_Logger, Simulator::Simulation* _Simulation, float* _Timestep){
 	// *** Don't know how to make this, please see alternative function below where I make some assumptions about what was intended!
 	return true;
 }
 
 float SampledCalciumConcentrationTime_ms(Simulator::Simulation* _Simulation, size_t _SampleIdx) {
-	return _Simulation->CaImaging->TRecorded_ms.at(_SampleIdx);
+	return _Simulation->CaData_.CaImaging.TRecorded_ms.at(_SampleIdx);
 }
 
 }; // Close Namespace VoxelArrayGenerator

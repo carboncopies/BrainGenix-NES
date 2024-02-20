@@ -21,12 +21,12 @@ namespace API {
 
 
 // Handy class for standard handler data.
-HandlerData::HandlerData(const std::string& _JSONRequest, const std::string& _Source, Simulations _Simulations, bool PermitBusy, bool NoSimulation) {
+HandlerData::HandlerData(const std::string& _JSONRequest, BG::Common::Logger::LoggingSystem* _Logger, std::string _RoutePath, Simulations _Simulations, bool PermitBusy, bool NoSimulation) {
 
-    Source = _Source;
     // ManTaskData = called_by_manager_task;
     JSONRequestStr = _JSONRequest;
-
+    Logger_ = _Logger;
+    RoutePath_ = _RoutePath;
 
     SimVec = _Simulations;
     RequestJSON = nlohmann::json::parse(_JSONRequest);
@@ -59,12 +59,14 @@ HandlerData::HandlerData(const std::string& _JSONRequest, const std::string& _So
         }
     // }
     if (SimulationID >= SimVec->size() || SimulationID < 0) {
+        Logger_->Log("Simulation ID Out Of Range", 8);
         Status = BGStatusCode::BGStatusInvalidParametersPassed;
         return;
     }
     ThisSimulation = SimVec->at(SimulationID).get();
 
     if (!PermitBusy && (ThisSimulation->IsProcessing || ThisSimulation->WorkRequested)) {
+        Logger_->Log("Simulation Is Currently Busy, And Route Is Not Allowed To Run While Busy", 8);
         Status = BGStatusCode::BGStatusSimulationBusy;
         return;
     }
@@ -104,6 +106,10 @@ std::string HandlerData::ResponseAndStoreRequest(nlohmann::json& ResponseJSON,  
     //         ThisSimulation->StoreRequestHandled(Source, _RH.at(Source).Route, JSONRequestStr);
     //     }
     // }
+    if (ThisSimulation != nullptr) {
+        ThisSimulation->StoreRequestHandled(RoutePath_, JSONRequestStr);
+    }
+
     return ResponseJSON.dump();
 }
 std::string HandlerData::ErrResponse(int _Status) {
@@ -156,6 +162,7 @@ const nlohmann::json& HandlerData::ReqJSON() const {
 bool HandlerData::FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, nlohmann::json& _JSON) {
     Iterator = _JSON.find(ParName);
     if (Iterator == _JSON.end()) {
+        Logger_->Log("Error Finding Parameter '" + ParName + "', Request Is: " + _JSON.dump(), 7);
         Status = BGStatusCode::BGStatusInvalidParametersPassed;
         return false;
     }
@@ -172,6 +179,7 @@ bool HandlerData::GetParBool(const std::string& ParName, bool& Value, nlohmann::
         return false;
     }
     if (!it.value().is_boolean()) {
+        Logger_->Log("Error Parameter '" + ParName + "', Wrong Type (expected bool) Request Is: " + _JSON.dump(), 7);
         Status = BGStatusCode::BGStatusInvalidParametersPassed;
         return false;
     }
@@ -189,6 +197,7 @@ bool HandlerData::GetParInt(const std::string& ParName, int& Value, nlohmann::js
         return false;
     }
     if (!it.value().is_number()) {
+        Logger_->Log("Error Parameter '" + ParName + "', Wrong Type (expected number) Request Is: " + _JSON.dump(), 7);
         Status = BGStatusCode::BGStatusInvalidParametersPassed;
         return false;
     }
@@ -206,6 +215,7 @@ bool HandlerData::GetParFloat(const std::string& ParName, float& Value, nlohmann
         return false;
     }
     if (!it.value().is_number()) {
+        Logger_->Log("Error Parameter '" + ParName + "', Wrong Type (expected number) Request Is: " + _JSON.dump(), 7);
         Status = BGStatusCode::BGStatusInvalidParametersPassed;
         return false;
     }
@@ -223,6 +233,7 @@ bool HandlerData::GetParString(const std::string& ParName, std::string& Value, n
         return false;
     }
     if (!it.value().is_string()) {
+        Logger_->Log("Error Parameter '" + ParName + "', Wrong Type (expected string) Request Is: " + _JSON.dump(), 7);
         Status = BGStatusCode::BGStatusInvalidParametersPassed;
         return false;
     }
@@ -257,11 +268,13 @@ bool HandlerData::GetParVecInt(const std::string& ParName, std::vector<int>& Val
         return false;
     }
     if (!it.value().is_array()) {
+        Logger_->Log("Error Parameter '" + ParName + "', Wrong Type (expected array) Request Is: " + _JSON.dump(), 7);
         Status = BGStatusCode::BGStatusInvalidParametersPassed;
         return false;
     }
     for (auto& element : it.value()) {
         if (!element.is_number()) {
+            Logger_->Log("Error Parameter '" + ParName + "', Wrong Type (expected int) Request Is: " + _JSON.dump(), 7);
             Status = BGStatusCode::BGStatusInvalidParametersPassed;
             return false;
         }
@@ -278,11 +291,13 @@ bool HandlerData::GetParVecInt(const std::string& ParName, std::vector<int>& Val
 bool HandlerData::GetParVecFloat(const std::string& ParName, std::vector<float>& Value, nlohmann::json& _JSON) {
     if (ParName.empty()) {
         if (!_JSON.is_array()) {
+            Logger_->Log("Error Parameter '" + ParName + "', Wrong Type (expected array) Request Is: " + _JSON.dump(), 7);
             Status = BGStatusCode::BGStatusInvalidParametersPassed;
             return false;
         }
         for (auto& element : _JSON) {
             if (!element.is_number()) {
+                Logger_->Log("Error Parameter '" + ParName + "', Wrong Type (expected float) Request Is: " + _JSON.dump(), 7);
                 Status = BGStatusCode::BGStatusInvalidParametersPassed;
                 return false;
             }
@@ -295,11 +310,13 @@ bool HandlerData::GetParVecFloat(const std::string& ParName, std::vector<float>&
             return false;
         }
         if (!it.value().is_array()) {
+            Logger_->Log("Error Parameter '" + ParName + "', Wrong Type (expected array) Request Is: " + _JSON.dump(), 7);
             Status = BGStatusCode::BGStatusInvalidParametersPassed;
             return false;
         }
         for (auto& element : it.value()) {
             if (!element.is_number()) {
+                Logger_->Log("Error Parameter '" + ParName + "', Wrong Type (expected float) Request Is: " + _JSON.dump(), 7);
                 Status = BGStatusCode::BGStatusInvalidParametersPassed;
                 return false;
             }
