@@ -135,9 +135,10 @@ std::string VSDARPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
     // Parse Request, Get Parameters
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID                 = Util::GetInt(&RequestJSON, "SimulationID");
-    Geometries::Vec3D Point1, Point2;
+    Geometries::Vec3D Point1, Point2, SampleRotation;
     Util::GetArrVec3(Point1, &RequestJSON, "Point1_um");
     Util::GetArrVec3(Point2, &RequestJSON, "Point2_um");
+    Util::GetArrVec3(SampleRotation, &RequestJSON, "SampleRotation_rad");
     Logger_->Log(std::string("VSDA EM DefineScanRegion Called On Simulation With ID ") + std::to_string(SimulationID), 4);
 
     // Check Sim ID
@@ -159,6 +160,10 @@ std::string VSDARPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
     CreatedRegion.Point2X_um = Point2.x;
     CreatedRegion.Point2Y_um = Point2.y;
     CreatedRegion.Point2Z_um = Point2.z;
+
+    CreatedRegion.SampleRotationX_rad = SampleRotation.x;
+    CreatedRegion.SampleRotationY_rad = SampleRotation.y;
+    CreatedRegion.SampleRotationZ_rad = SampleRotation.z;
 
 
     int ID = -1;
@@ -409,9 +414,10 @@ std::string VSDARPCInterface::VSDACADefineScanRegion(std::string _JSONRequest) {
     // Parse Request, Get Parameters
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
     int SimulationID                 = Util::GetInt(&RequestJSON, "SimulationID");
-    Geometries::Vec3D Point1, Point2;
+    Geometries::Vec3D Point1, Point2, SampleRotation;
     Util::GetArrVec3(Point1, &RequestJSON, "Point1_um");
     Util::GetArrVec3(Point2, &RequestJSON, "Point2_um");
+    Util::GetArrVec3(SampleRotation, &RequestJSON, "SampleRotation_rad");
     Logger_->Log(std::string("VSDA Ca DefineScanRegion Called On Simulation With ID ") + std::to_string(SimulationID), 4);
 
     // Check Sim ID
@@ -433,6 +439,11 @@ std::string VSDARPCInterface::VSDACADefineScanRegion(std::string _JSONRequest) {
     CreatedRegion.Point2X_um = Point2.x;
     CreatedRegion.Point2Y_um = Point2.y;
     CreatedRegion.Point2Z_um = Point2.z;
+
+    CreatedRegion.SampleRotationX_rad = SampleRotation.x;
+    CreatedRegion.SampleRotationY_rad = SampleRotation.y;
+    CreatedRegion.SampleRotationZ_rad = SampleRotation.z;
+
 
 
     int ID = -1;

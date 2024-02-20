@@ -60,7 +60,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             // -- Phase 1 -- //
             // Firstly, we get some important pointers out of the struct for more clear access
             size_t ShapeID = ThisTask->ShapeID_;
-            float VoxelResolution_um = ThisTask->VoxelResolution_um_;
+            float VoxelResolution_um = ThisTask->WorldInfo_.VoxelScale_um;
             VoxelArray* Array = ThisTask->Array_;
             std::string ShapeName = "";
             Geometries::GeometryCollection* GeometryCollection = ThisTask->GeometryCollection_;
@@ -75,17 +75,17 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             if (GeometryCollection->IsSphere(ShapeID)) {
                 Geometries::Sphere & ThisSphere = GeometryCollection->GetSphere(ShapeID);
                 ShapeName = "Sphere";
-                FillShape(Array, &ThisSphere, VoxelResolution_um);
+                FillShape(Array, &ThisSphere, ThisTask->WorldInfo_);
             }
             else if (GeometryCollection->IsBox(ShapeID)) {
                 Geometries::Box & ThisBox = GeometryCollection->GetBox(ShapeID); 
                 ShapeName = "Box";
-                FillBox(Array, &ThisBox, VoxelResolution_um);
+                FillBox(Array, &ThisBox, ThisTask->WorldInfo_);
             }
             else if (GeometryCollection->IsCylinder(ShapeID)) {
                 Geometries::Cylinder & ThisCylinder = GeometryCollection->GetCylinder(ShapeID);
                 ShapeName = "Cylinder";
-                FillCylinder(Array, &ThisCylinder, VoxelResolution_um);
+                FillCylinder(Array, &ThisCylinder, ThisTask->WorldInfo_);
             }
             
             // Update Task Result

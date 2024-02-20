@@ -1,3 +1,4 @@
+#include <iostream>
 #include <vector>
 
 #include <Simulator/Geometries/Box.h>
@@ -67,22 +68,25 @@ std::vector<float> Box::Sides() {
 
 
 // This can be bad - if it's rotated, the bounding box is wrong!
-BoundingBox Box::GetBoundingBox() {
+BoundingBox Box::GetBoundingBox(VSDA::WorldInfo& _WorldInfo) {
 	BoundingBox BB;
 
-    BB.bb_point1[0] = Center_um.x - (Dims_um.x / 2);
-    BB.bb_point1[1] = Center_um.y - (Dims_um.y / 2);
-    BB.bb_point1[2] = Center_um.z - (Dims_um.z / 2);
+    Geometries::Vec3D RotatedCenter = Center_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
-    BB.bb_point2[0] = Center_um.x + (Dims_um.x / 2);
-    BB.bb_point2[1] = Center_um.y + (Dims_um.y / 2);
-    BB.bb_point2[2] = Center_um.z + (Dims_um.z / 2);
+
+    BB.bb_point1[0] = RotatedCenter.x - (Dims_um.x / 2);
+    BB.bb_point1[1] = RotatedCenter.y - (Dims_um.y / 2);
+    BB.bb_point1[2] = RotatedCenter.z - (Dims_um.z / 2);
+
+    BB.bb_point2[0] = RotatedCenter.x + (Dims_um.x / 2);
+    BB.bb_point2[1] = RotatedCenter.y + (Dims_um.y / 2);
+    BB.bb_point2[2] = RotatedCenter.z + (Dims_um.z / 2);
 
 	return BB;
 }
 
 // Same here, we need to do this right.
-bool Box::IsPointInShape(Vec3D _Position_um) {
+bool Box::IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo) {
     
 
     // https://stackoverflow.com/questions/52673935/check-if-3d-point-inside-a-box
@@ -105,36 +109,31 @@ void add_rectangle_points(float _x, float _ylen, float _zlen, float _VoxelScale,
     }
 }
 
-// //! Uses three concatenated rotation matrices to rotate a 3D point around the
-// //! x-axiz, y_axis and z-axis.
-// Vec3D rotate_around_xyz(const Vec3D & _point, float _xangle, float _yangle, float _zangle) {
-//     float x_rotz = _point.x*std::cos(_zangle) - _point.y*std::sin(_zangle);
-//     float y_rotz = _point.x*std::sin(_zangle) + _point.y*std::cos(_zangle);
-//     float x_rotz_roty = x_rotz*std::cos(_yangle) + _point.z*std::sin(_yangle);
-//     float z_roty = -x_rotz*std::sin(_yangle) + _point.z*std::cos(_yangle);
-//     float y_rotz_rotx = y_rotz*std::cos(_xangle) - z_roty*std::sin(_xangle);
-//     float z_roty_rotx = y_rotz*std::sin(_xangle) + z_roty*std::cos(_xangle);
-//     return Vec3D(x_rotz_roty, y_rotz_rotx, z_roty_rotx);
-// }
 
 
-
-void Box::WriteToVoxelArray(float _VoxelScale, VoxelArray* _Array) {
+void Box::WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo) {
     assert(_Array != nullptr);
-    assert(_VoxelScale != 0.);
+    assert(_WorldInfo.VoxelScale_um != 0.);
 
 
     // Now fill it (based on the algorithm in GetPointCloud)
-    float d = Dims_um.x;
-    float stepsize = 0.5*_VoxelScale;
-    for (float x = 0.0; x <= d; x += stepsize) {
+    float stepsize = 0.5*_WorldInfo.VoxelScale_um;
 
-        float half_ylen = Dims_um.y / 2.0;
-        float half_zlen = Dims_um.z / 2.0;
+    float half_xlen = Dims_um.x / 2.0;
+    float half_ylen = Dims_um.y / 2.0;
+    float half_zlen = Dims_um.z / 2.0;
+
+    for (float x = -half_xlen; x <= half_xlen; x += stepsize) {
         for (float y = -half_ylen; y <= half_ylen; y += stepsize) {
             for (float z = -half_zlen; z <= half_zlen; z += stepsize) {
+
+                // Firstly, we create and rotate the local-space points (around object center)
                 Vec3D Point(x, y, z);
                 Point = Point.rotate_around_xyz(Rotations_rad.x, Rotations_rad.y, Rotations_rad.z);
+
+                // Now we transform and rotate around world origin
+                Point = Point + Center_um;
+                Point = Point.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
                 // Rather than making a point cloud like before, we just write it directly into the array
                 _Array->SetVoxelAtPosition(Point.x, Point.y, Point.z, FILLED);
@@ -145,23 +144,29 @@ void Box::WriteToVoxelArray(float _VoxelScale, VoxelArray* _Array) {
 
 }
 
-
-void Box::WriteToVoxelArray(float _VoxelScale, VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo) {
+void Box::WriteToVoxelArray(VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo, VSDA::WorldInfo& _WorldInfo) {
     assert(_Array != nullptr);
-    assert(_VoxelScale != 0.);
+    assert(_WorldInfo.VoxelScale_um != 0.);
 
 
     // Now fill it (based on the algorithm in GetPointCloud)
-    float d = Dims_um.x;
-    float stepsize = 0.5*_VoxelScale;
-    for (float x = 0.0; x <= d; x += stepsize) {
+    float stepsize = 0.5*_WorldInfo.VoxelScale_um;
 
-        float half_ylen = Dims_um.y / 2.0;
-        float half_zlen = Dims_um.z / 2.0;
+    float half_xlen = Dims_um.x / 2.0;
+    float half_ylen = Dims_um.y / 2.0;
+    float half_zlen = Dims_um.z / 2.0;
+
+    for (float x = -half_xlen; x <= half_xlen; x += stepsize) {
         for (float y = -half_ylen; y <= half_ylen; y += stepsize) {
             for (float z = -half_zlen; z <= half_zlen; z += stepsize) {
+
+                // Firstly, we create and rotate the local-space points (around object center)
                 Vec3D Point(x, y, z);
                 Point = Point.rotate_around_xyz(Rotations_rad.x, Rotations_rad.y, Rotations_rad.z);
+
+                // Now we transform and rotate around world origin
+                Point = Point + Center_um;
+                Point = Point.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
                 // Rather than making a point cloud like before, we just write it directly into the array
                 _Array->SetVoxelAtPosition(Point.x, Point.y, Point.z, _VoxelInfo);
@@ -201,17 +206,20 @@ std::vector<Vec3D> Box::GetPointCloud(float _VoxelScale) {
     return rotated_and_translated_point_cloud;
 }
 
-bool Box::IsInsideRegion(BoundingBox _Region) {
+bool Box::IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) {
     
     // We're going to make this a really conservative bounding box
     // This bounding box probably extends past what is reasonable
     BoundingBox MyBB;
-    MyBB.bb_point1[0] = Center_um.x - Dims_um.x;
-    MyBB.bb_point1[1] = Center_um.y - Dims_um.y;
-    MyBB.bb_point1[2] = Center_um.z - Dims_um.z;
-    MyBB.bb_point2[0] = Center_um.x + Dims_um.x;
-    MyBB.bb_point2[1] = Center_um.y + Dims_um.y;
-    MyBB.bb_point2[2] = Center_um.z + Dims_um.z;
+    
+    Geometries::Vec3D RotatedCenter = Center_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+
+    MyBB.bb_point1[0] = RotatedCenter.x - Dims_um.x;
+    MyBB.bb_point1[1] = RotatedCenter.y - Dims_um.y;
+    MyBB.bb_point1[2] = RotatedCenter.z - Dims_um.z;
+    MyBB.bb_point2[0] = RotatedCenter.x + Dims_um.x;
+    MyBB.bb_point2[1] = RotatedCenter.y + Dims_um.y;
+    MyBB.bb_point2[2] = RotatedCenter.z + Dims_um.z;
     return MyBB.IsIntersecting(_Region);
 }
 

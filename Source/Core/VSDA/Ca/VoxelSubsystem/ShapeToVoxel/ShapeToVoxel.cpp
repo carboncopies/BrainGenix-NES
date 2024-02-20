@@ -38,15 +38,14 @@ bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
 }
 
 
-bool FillShape(VoxelArray* _Array, Simulator::Geometries::Geometry* _Shape, float _VoxelScale, size_t _CompartmentID) {
+bool FillShape(VoxelArray* _Array, Simulator::Geometries::Geometry* _Shape, size_t _CompartmentID, WorldInfo& _WorldInfo) {
+    assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
+    Simulator::BoundingBox BB = _Shape->GetBoundingBox(_WorldInfo);
 
-    assert(_VoxelScale != 0); // Will get stuck in infinite loop
-    Simulator::BoundingBox BB = _Shape->GetBoundingBox();
-
-    for (float X = BB.bb_point1[0]; X < BB.bb_point2[0]; X+= _VoxelScale) {
-        for (float Y = BB.bb_point1[1]; Y < BB.bb_point2[1]; Y+= _VoxelScale) {
-            for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _VoxelScale) {
-                if (_Shape->IsPointInShape(Simulator::Geometries::Vec3D(X, Y, Z))) {
+    for (float X = BB.bb_point1[0]; X < BB.bb_point2[0]; X+= _WorldInfo.VoxelScale_um) {
+        for (float Y = BB.bb_point1[1]; Y < BB.bb_point2[1]; Y+= _WorldInfo.VoxelScale_um) {
+            for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _WorldInfo.VoxelScale_um) {
+                if (_Shape->IsPointInShape(Simulator::Geometries::Vec3D(X, Y, Z), _WorldInfo)) {
                     VoxelType ThisVoxel;
                     ThisVoxel.IsFilled_ = true;
                     ThisVoxel.CompartmentID_ = _CompartmentID;
@@ -62,9 +61,9 @@ bool FillShape(VoxelArray* _Array, Simulator::Geometries::Geometry* _Shape, floa
 
 // NOTE: This needs a different FillShape function, because we will not be going through the bounding box and testing if in shape.
 //       Instead, we will be placing rotated points that are in the shape.
-bool FillCylinder(VoxelArray* _Array, Simulator::Geometries::Cylinder* _Cylinder, float _VoxelScale, size_t _CompartmentID) {
+bool FillCylinder(VoxelArray* _Array, Simulator::Geometries::Cylinder* _Cylinder, size_t _CompartmentID, WorldInfo& _WorldInfo) {
 
-    assert(_VoxelScale != 0); // Will get stuck in infinite loop
+    assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
 
     // Setup this voxel so we know what to fill
     VoxelType ThisVoxel;
@@ -72,15 +71,15 @@ bool FillCylinder(VoxelArray* _Array, Simulator::Geometries::Cylinder* _Cylinder
     ThisVoxel.CompartmentID_ = _CompartmentID;
 
     // Now Go And Fill It
-    _Cylinder->WriteToVoxelArray(_VoxelScale, _Array, ThisVoxel);
+    _Cylinder->WriteToVoxelArray(_Array, ThisVoxel, _WorldInfo);
 
     return true;
 }
 
-bool FillBox(VoxelArray* _Array, Simulator::Geometries::Box* _Box, float _VoxelScale, size_t _CompartmentID) {
+bool FillBox(VoxelArray* _Array, Simulator::Geometries::Box* _Box, size_t _CompartmentID, WorldInfo& _WorldInfo) {
     assert(_Array != nullptr);
     assert(_Box != nullptr);
-    assert(_VoxelScale != 0); // Will get stuck in infinite loop
+    assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
 
     // Setup this voxel so we know what to fill
     VoxelType ThisVoxel;
@@ -88,7 +87,7 @@ bool FillBox(VoxelArray* _Array, Simulator::Geometries::Box* _Box, float _VoxelS
     ThisVoxel.CompartmentID_ = _CompartmentID;
 
     // Now Go And Fill It
-    _Box->WriteToVoxelArray(_VoxelScale, _Array, ThisVoxel);
+    _Box->WriteToVoxelArray(_Array, ThisVoxel, _WorldInfo);
 
 
     return true;

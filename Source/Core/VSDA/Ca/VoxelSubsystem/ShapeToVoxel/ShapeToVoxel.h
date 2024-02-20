@@ -49,6 +49,7 @@ namespace Calcium {
 namespace VoxelArrayGenerator {
 
 
+
 /**
  * @brief Rasterizes the given box struct, writes it into the voxelarray in question given the scale set.
  * 
@@ -58,7 +59,7 @@ namespace VoxelArrayGenerator {
  * @return true 
  * @return false 
  */
-bool FillBox(VoxelArray* _Array, Simulator::Geometries::Box* _Box, float _VoxelScale, size_t _CompartmentID);
+bool FillBox(VoxelArray* _Array, Simulator::Geometries::Box* _Box, size_t _CompartmentID, WorldInfo& _WorldInfo);
 
 /**
  * @brief Rasterize the given cylinder struct, and writes it into the given voxelarray at the given scale.
@@ -69,7 +70,7 @@ bool FillBox(VoxelArray* _Array, Simulator::Geometries::Box* _Box, float _VoxelS
  * @return true 
  * @return false 
  */
-bool FillCylinder(VoxelArray* _Array, Simulator::Geometries::Cylinder* _Cylinder, float _VoxelScale, size_t _CompartmentID);
+bool FillCylinder(VoxelArray* _Array, Simulator::Geometries::Cylinder* _Cylinder, size_t _CompartmentID, WorldInfo& _WorldInfo);
 
 /**
  * @brief Uses a generic ispointinshape function to write an object into the voxelarray.
@@ -81,7 +82,7 @@ bool FillCylinder(VoxelArray* _Array, Simulator::Geometries::Cylinder* _Cylinder
  * @return true 
  * @return false 
  */
-bool FillShape(VoxelArray* _Array, Simulator::Geometries::Geometry* _Shape, float _VoxelScale, size_t _CompartmentID);
+bool FillShape(VoxelArray* _Array, Simulator::Geometries::Geometry* _Shape, size_t _CompartmentID, WorldInfo& _WorldInfo);
 
 /**
  * @brief Simply fills everything in the bounding box.
@@ -102,6 +103,7 @@ bool FillBoundingBox(VoxelArray* _Array, Simulator::BoundingBox* _BB, float _Vox
  * @return false 
  */
 bool CreateVoxelArrayBorderFrame(VoxelArray* _Array);
+
 
 
 

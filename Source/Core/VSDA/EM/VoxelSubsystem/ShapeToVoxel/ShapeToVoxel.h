@@ -41,6 +41,8 @@
 #include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
 #include <Simulator/Geometries/GeometryCollection.h>
 
+#include <VSDA/Common/Structs/WorldInfo.h>
+
 
 namespace BG {
 namespace NES {
@@ -57,7 +59,7 @@ namespace VoxelArrayGenerator {
  * @return true 
  * @return false 
  */
-bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, float _VoxelScale);
+bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, VSDA::WorldInfo& _WorldInfo);
 
 /**
  * @brief Rasterize the given cylinder struct, and writes it into the given voxelarray at the given scale.
@@ -68,7 +70,7 @@ bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, float _VoxelScale);
  * @return true 
  * @return false 
  */
-bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, float _VoxelScale);
+bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo);
 
 /**
  * @brief Uses a generic ispointinshape function to write an object into the voxelarray.
@@ -80,7 +82,7 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, float _Vo
  * @return true 
  * @return false 
  */
-bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, float _VoxelScale);
+bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo& _WorldInfo);
 
 /**
  * @brief Simply fills everything in the bounding box.

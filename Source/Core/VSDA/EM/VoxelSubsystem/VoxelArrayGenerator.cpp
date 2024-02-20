@@ -26,21 +26,21 @@ namespace NES {
 namespace Simulator {
 
 
-bool IsShapeInsideRegion(Simulation* _Sim, size_t _ShapeID, BoundingBox _Region) {
+bool IsShapeInsideRegion(Simulation* _Sim, size_t _ShapeID, BoundingBox _Region, VSDA::WorldInfo _WorldInfo) {
 
     bool IsInside = false;
     Geometries::GeometryCollection* GeometryCollection = &_Sim->Collection;
     if (GeometryCollection->IsSphere(_ShapeID)) {
         Geometries::Sphere& ThisSphere = GeometryCollection->GetSphere(_ShapeID);
-        IsInside = ThisSphere.IsInsideRegion(_Region);
+        IsInside = ThisSphere.IsInsideRegion(_Region, _WorldInfo);
     }
     else if (GeometryCollection->IsBox(_ShapeID)) {
         Geometries::Box& ThisBox = GeometryCollection->GetBox(_ShapeID); 
-        IsInside = ThisBox.IsInsideRegion(_Region);
+        IsInside = ThisBox.IsInsideRegion(_Region, _WorldInfo);
     }
     else if (GeometryCollection->IsCylinder(_ShapeID)) {
         Geometries::Cylinder& ThisCylinder = GeometryCollection->GetCylinder(_ShapeID);
-        IsInside = ThisCylinder.IsInsideRegion(_Region);
+        IsInside = ThisCylinder.IsInsideRegion(_Region, _WorldInfo);
     }
 
     return IsInside;
@@ -69,6 +69,13 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     RegionBoundingBox.bb_point2[2] = _Region.Point2Z_um;
 
 
+    VSDA::WorldInfo Info;
+    Info.VoxelScale_um = _Params->VoxelResolution_um;
+    Info.WorldRotationOffsetX_rad = _Region.SampleRotationX_rad;
+    Info.WorldRotationOffsetY_rad = _Region.SampleRotationY_rad;
+    Info.WorldRotationOffsetZ_rad = _Region.SampleRotationZ_rad;
+
+
     // Build Bounding Boxes For All Compartments
     int AddedShapes = 0;
     int TotalShapes = 0;
@@ -83,11 +90,11 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         Task->Array_ = _Array;
         Task->GeometryCollection_ = &_Sim->Collection;
         Task->ShapeID_ = ThisCompartment->ShapeID;
-        Task->VoxelResolution_um_ = _Params->VoxelResolution_um;
+        Task->WorldInfo_ = Info;
 
 
         // Now submit to render queue if it's inside the region, otherwise skip it
-        if (IsShapeInsideRegion(_Sim, ThisCompartment->ShapeID, RegionBoundingBox)) {
+        if (IsShapeInsideRegion(_Sim, ThisCompartment->ShapeID, RegionBoundingBox, Info)) {
             
             AddedShapes++;
 
@@ -117,47 +124,6 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
             std::this_thread::sleep_for(std::chrono::milliseconds(5));
         }
     }
-
-    return true;
-
-}
-
-
-bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array) {
-    assert(_Array != nullptr);
-    assert(_Params != nullptr);
-    assert(_Sim != nullptr);
-    assert(_Logger != nullptr);
-
-    _Logger->Log(std::string("Building Voxel Array For Simulation '") + _Sim->Name + "'", 2);
-
-    // Build Bounding Boxes For All Compartments
-    for (unsigned int i = 0; i < _Sim->BSCompartments.size(); i++) {
-
-        Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
-        size_t ShapeID = ThisCompartment->ShapeID;
-        //std::variant<Geometries::Sphere, Geometries::Cylinder, Geometries::Box> ThisShape = _Sim->Collection.Geometries[ThisCompartment->ShapeID];
-
-        if (_Sim->Collection.IsSphere(ShapeID)) { // (std::holds_alternative<Geometries::Sphere>(ThisShape)) {
-            Geometries::Sphere & ThisSphere = _Sim->Collection.GetSphere(ShapeID); // std::get<Geometries::Sphere>(ThisShape);
-            _Logger->Log("Adding Sphere To Voxel Array", 0);
-            VoxelArrayGenerator::FillShape(_Array, &ThisSphere, _Params->VoxelResolution_um);
-        }
-        else if (_Sim->Collection.IsBox(ShapeID)) { // (std::holds_alternative<Geometries::Box>(ThisShape)) {
-            Geometries::Box & ThisBox = _Sim->Collection.GetBox(ShapeID); // std::get<Geometries::Box>(ThisShape);
-            _Logger->Log("Adding Box To Voxel Array", 0);
-            VoxelArrayGenerator::FillBox(_Array, &ThisBox, _Params->VoxelResolution_um);
-        }
-        else if (_Sim->Collection.IsCylinder(ShapeID)) { // (std::holds_alternative<Geometries::Cylinder>(ThisShape)) {
-            Geometries::Cylinder & ThisCylinder = _Sim->Collection.GetCylinder(ShapeID); // std::get<Geometries::Cylinder>(ThisShape);
-            _Logger->Log("Adding Cylinder To Voxel Array", 0);
-            VoxelArrayGenerator::FillCylinder(_Array, &ThisCylinder, _Params->VoxelResolution_um);
-        }
-
-
-    }
-
-    VoxelArrayGenerator::CreateVoxelArrayBorderFrame(_Array);
 
     return true;
 
