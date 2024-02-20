@@ -26,7 +26,7 @@ namespace NES {
 namespace Simulator {
 
 
-bool IsShapeInsideRegion(Simulation* _Sim, size_t _ShapeID, BoundingBox _Region, WorldInfo _WorldInfo) {
+bool IsShapeInsideRegion(Simulation* _Sim, size_t _ShapeID, BoundingBox _Region, VSDA::WorldInfo _WorldInfo) {
 
     bool IsInside = false;
     Geometries::GeometryCollection* GeometryCollection = &_Sim->Collection;
@@ -69,7 +69,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     RegionBoundingBox.bb_point2[2] = _Region.Point2Z_um;
 
 
-    WorldInfo Info;
+    VSDA::WorldInfo Info;
     Info.VoxelScale_um = _Params->VoxelResolution_um;
     Info.WorldRotationOffsetX_rad = _Region.SampleRotationX_rad;
     Info.WorldRotationOffsetY_rad = _Region.SampleRotationY_rad;

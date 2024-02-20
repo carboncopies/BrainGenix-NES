@@ -4,7 +4,7 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
+namespace VSDA {
 
 
 }; // Close Namespace Logger

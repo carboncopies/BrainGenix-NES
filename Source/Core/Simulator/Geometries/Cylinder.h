@@ -60,9 +60,9 @@ struct Cylinder : Geometry {
 
 
     //! Returns the bounding box
-    virtual BoundingBox GetBoundingBox(WorldInfo& _WorldInfo);
-    virtual bool IsPointInShape(Vec3D _Position_um, WorldInfo& _WorldInfo);
-    virtual bool IsInsideRegion(BoundingBox _Region, WorldInfo& _WorldInfo);
+    virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo);
+    virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo);
+    virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo);
 
     //! Returns a point cloud that can be used to fill voxels representing the cylinder.
     std::vector<Vec3D> GetPointCloud(float _VoxelScale);

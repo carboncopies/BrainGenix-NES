@@ -59,7 +59,7 @@ namespace VoxelArrayGenerator {
  * @return true 
  * @return false 
  */
-bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, WorldInfo& _WorldInfo);
+bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, VSDA::WorldInfo& _WorldInfo);
 
 /**
  * @brief Rasterize the given cylinder struct, and writes it into the given voxelarray at the given scale.
@@ -82,7 +82,7 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, float _Vo
  * @return true 
  * @return false 
  */
-bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, WorldInfo& _WorldInfo);
+bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo& _WorldInfo);
 
 /**
  * @brief Simply fills everything in the bounding box.

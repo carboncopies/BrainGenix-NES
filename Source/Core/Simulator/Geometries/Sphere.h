@@ -43,9 +43,9 @@ struct Sphere: Geometry {
     float Volume_um3();
 
     //! Returns the bounding box
-    virtual BoundingBox GetBoundingBox(WorldInfo& _WorldInfo);
-    virtual bool IsPointInShape(Vec3D _Position_um, WorldInfo& _WorldInfo);
-    virtual bool IsInsideRegion(BoundingBox _Region, WorldInfo& _WorldInfo);
+    virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo);
+    virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo);
+    virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo);
 
 };
 

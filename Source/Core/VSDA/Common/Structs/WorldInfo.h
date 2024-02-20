@@ -39,7 +39,7 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
+namespace VSDA {
 
 /**
  * @brief Simple helper struct that provides some information about the world to functions used for rasterization.

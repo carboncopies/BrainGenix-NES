@@ -47,7 +47,7 @@ bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
 
 }
 
-bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, WorldInfo& _WorldInfo) {
+bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo& _WorldInfo) {
 
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
     BoundingBox BB = _Shape->GetBoundingBox(_WorldInfo);
@@ -85,7 +85,7 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, float _Vo
     return true;
 }
 
-bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, WorldInfo& _WorldInfo) {
+bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, VSDA::WorldInfo& _WorldInfo) {
     assert(_Array != nullptr);
     assert(_Box != nullptr);
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop

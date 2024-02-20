@@ -57,9 +57,9 @@ struct Box : Geometry {
 
 
     //! Returns the bounding box
-    virtual BoundingBox GetBoundingBox(WorldInfo& _WorldInfo);
-    virtual bool IsPointInShape(Vec3D _Position_um, WorldInfo& _WorldInfo); // not used - bad don't use this it does not do rotation or work at all!!!
-    virtual bool IsInsideRegion(BoundingBox _Region, WorldInfo& _WorldInfo);
+    virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo);
+    virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo); // not used - bad don't use this it does not do rotation or work at all!!!
+    virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo);
 
     //! Returns a point cloud that can be used to fill voxels representing the cylinder.
     std::vector<Vec3D> GetPointCloud(float _VoxelScale);
@@ -75,8 +75,8 @@ struct Box : Geometry {
      * @param _VoxelScale 
      * @param _Array 
      */
-    void WriteToVoxelArray(VoxelArray* _Array, WorldInfo& _WorldInfo);
-    void WriteToVoxelArray(VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo, WorldInfo& _WorldInfo);
+    void WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo);
+    void WriteToVoxelArray(VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo, VSDA::WorldInfo& _WorldInfo);
 
 
 };

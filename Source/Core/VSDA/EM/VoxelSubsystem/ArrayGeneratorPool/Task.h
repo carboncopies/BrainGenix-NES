@@ -63,7 +63,7 @@ struct Task {
 
     size_t                          ShapeID_;            /**Index of the relevant shape from the shapes array of the simulation.*/
     // float                           VoxelResolution_um_; /**Set the resolution size of each voxel on axis in microns.*/
-    WorldInfo                       WorldInfo_;          /**World info data used for offsetting rotations, setting voxel scale, etc.*/
+    VSDA::WorldInfo                 WorldInfo_;          /**World info data used for offsetting rotations, setting voxel scale, etc.*/
     Geometries::GeometryCollection* GeometryCollection_; /**Pointer to instance of the simulation's geometry collection.*/ 
     std::atomic_bool                IsDone_ = false;     /**Indicates if this task has been processed or not.*/
     VoxelArray*                     Array_ = nullptr;    /**Pointer to the voxel array that we're writing to.*/

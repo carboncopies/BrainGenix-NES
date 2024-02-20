@@ -106,7 +106,7 @@ Vec3D Cylinder::GetRotation_rad() const {
 
 
 // I have no clude what I'm doing
-BoundingBox Cylinder::GetBoundingBox(WorldInfo& _WorldInfo) {
+BoundingBox Cylinder::GetBoundingBox(VSDA::WorldInfo& _WorldInfo) {
 	BoundingBox bb;
 
 
@@ -292,11 +292,11 @@ void Cylinder::WriteToVoxelArray(float _VoxelScale, VSDA::Calcium::VoxelArray* _
 
 
 
-bool Cylinder::IsPointInShape(Vec3D _Position_um, WorldInfo& _WorldInfo) {
+bool Cylinder::IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo) {
     return false;
 }
 
-bool Cylinder::IsInsideRegion(BoundingBox _Region, WorldInfo& _WorldInfo) {
+bool Cylinder::IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) {
     // We're going to make this a really conservative bounding box
     // This bounding box probably extends past what is reasonable
     BoundingBox MyBB;
