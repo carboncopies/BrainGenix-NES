@@ -126,12 +126,14 @@ void Box::WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo) {
     for (float x = -half_xlen; x <= half_xlen; x += stepsize) {
         for (float y = -half_ylen; y <= half_ylen; y += stepsize) {
             for (float z = -half_zlen; z <= half_zlen; z += stepsize) {
-                //Vec3D Point(x + Center_um.x, y + Center_um.y, z + Center_um.z);
-                Vec3D Point(x , y, z);
-                //std::cout<<_WorldInfo.WorldRotationOffsetX_rad<<"|"<<_WorldInfo.WorldRotationOffsetY_rad<<"|"<<_WorldInfo.WorldRotationOffsetZ_rad<<"\n";
-                //std::cout<<Rotations_rad.x<<"|"<<Rotations_rad.y<<"|"<<Rotations_rad.z<<"\n";
-                Point = Point.rotate_around_xyz(Rotations_rad.x , Rotations_rad.y , Rotations_rad.z );
+
+                // Firstly, we create and rotate the local-space points (around object center)
+                Vec3D Point(x, y, z);
+                Point = Point.rotate_around_xyz(Rotations_rad.x, Rotations_rad.y, Rotations_rad.z);
+
+                // Now we transform and rotate around world origin
                 Point = Point + Center_um;
+                Point = Point.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
                 // Rather than making a point cloud like before, we just write it directly into the array
                 _Array->SetVoxelAtPosition(Point.x, Point.y, Point.z, FILLED);
@@ -157,8 +159,14 @@ void Box::WriteToVoxelArray(VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::Vo
     for (float x = -half_xlen; x <= half_xlen; x += stepsize) {
         for (float y = -half_ylen; y <= half_ylen; y += stepsize) {
             for (float z = -half_zlen; z <= half_zlen; z += stepsize) {
-                Vec3D Point(x + Center_um.x, y + Center_um.y, z + Center_um.z);
-                Point = Point.rotate_around_xyz(Rotations_rad.x + _WorldInfo.WorldRotationOffsetX_rad, Rotations_rad.y + _WorldInfo.WorldRotationOffsetY_rad, Rotations_rad.z + _WorldInfo.WorldRotationOffsetZ_rad);
+
+                // Firstly, we create and rotate the local-space points (around object center)
+                Vec3D Point(x, y, z);
+                Point = Point.rotate_around_xyz(Rotations_rad.x, Rotations_rad.y, Rotations_rad.z);
+
+                // Now we transform and rotate around world origin
+                Point = Point + Center_um;
+                Point = Point.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
                 // Rather than making a point cloud like before, we just write it directly into the array
                 _Array->SetVoxelAtPosition(Point.x, Point.y, Point.z, _VoxelInfo);

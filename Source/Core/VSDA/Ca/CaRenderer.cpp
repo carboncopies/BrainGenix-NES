@@ -168,6 +168,9 @@ bool ExecuteCaSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Si
                 ThisRegion.Point2X_um = SubRegionEndX_um;
                 ThisRegion.Point2Y_um = SubRegionEndY_um;
                 ThisRegion.Point2Z_um = SubRegionEndZ_um;
+                ThisRegion.SampleRotationX_rad = BaseRegion->SampleRotationX_rad;
+                ThisRegion.SampleRotationY_rad = BaseRegion->SampleRotationY_rad;
+                ThisRegion.SampleRotationZ_rad = BaseRegion->SampleRotationZ_rad;
 
                 SubRegion ThisSubRegion;
                 ThisSubRegion.Sim = _Simulation;

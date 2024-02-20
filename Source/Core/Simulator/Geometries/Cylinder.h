@@ -78,8 +78,8 @@ struct Cylinder : Geometry {
      * @param _VoxelScale 
      * @param _Array 
      */
-    void WriteToVoxelArray(float _VoxelScale, VoxelArray* _Array);
-    void WriteToVoxelArray(float _VoxelScale, VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo);
+    void WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo);
+    void WriteToVoxelArray(VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo, VSDA::WorldInfo& _WorldInfo);
 
 };
 

@@ -70,7 +70,7 @@ bool FillBox(VoxelArray* _Array, Simulator::Geometries::Box* _Box, size_t _Compa
  * @return true 
  * @return false 
  */
-bool FillCylinder(VoxelArray* _Array, Simulator::Geometries::Cylinder* _Cylinder, float _VoxelScale, size_t _CompartmentID);
+bool FillCylinder(VoxelArray* _Array, Simulator::Geometries::Cylinder* _Cylinder, size_t _CompartmentID, WorldInfo& _WorldInfo);
 
 /**
  * @brief Uses a generic ispointinshape function to write an object into the voxelarray.
