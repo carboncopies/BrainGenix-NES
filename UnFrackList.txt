@@ -1,0 +1,5 @@
+- VDSA should use HandleData functions.
+- Remove duplicate functions, use templates where that helps.
+- Flatten the calcium structs.
+- Fewer namespaces, avoid nested namespaces.
+- Properly isolate unrelated code.
