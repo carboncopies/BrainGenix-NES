@@ -29,30 +29,35 @@ float Sphere::Volume_um3() {
     return 4.0 / 3.0 * M_PI * pow(this->Radius_um, 3.0);
 };
 
-BoundingBox Sphere::GetBoundingBox() {
+BoundingBox Sphere::GetBoundingBox(WorldInfo& _WorldInfo) {
     BoundingBox bb;
 
-    bb.bb_point1[0] = Center_um.x - Radius_um;
-    bb.bb_point1[1] = Center_um.y - Radius_um;
-    bb.bb_point1[2] = Center_um.z - Radius_um;
+    Geometries::Vec3D RotatedCenter = Center_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
-	bb.bb_point2[0] = Center_um.x + Radius_um;
-	bb.bb_point2[1] = Center_um.y + Radius_um;
-	bb.bb_point2[2] = Center_um.z + Radius_um;
+    bb.bb_point1[0] = RotatedCenter.x - Radius_um;
+    bb.bb_point1[1] = RotatedCenter.y - Radius_um;
+    bb.bb_point1[2] = RotatedCenter.z - Radius_um;
+
+	bb.bb_point2[0] = RotatedCenter.x + Radius_um;
+	bb.bb_point2[1] = RotatedCenter.y + Radius_um;
+	bb.bb_point2[2] = RotatedCenter.z + Radius_um;
 
 
     return bb;
 }
 
 
-bool Sphere::IsPointInShape(Vec3D _Position_um) {
-	float Distance = Center_um.Distance(_Position_um);
+bool Sphere::IsPointInShape(Vec3D _Position_um, WorldInfo& _WorldInfo) {
+
+    Geometries::Vec3D RotatedCenter = Center_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+
+	float Distance = RotatedCenter.Distance(_Position_um);
 	return Distance <= Radius_um;
 }
 
 
-bool Sphere::IsInsideRegion(BoundingBox _Region) {
-    return GetBoundingBox().IsIntersecting(_Region);
+bool Sphere::IsInsideRegion(BoundingBox _Region, WorldInfo& _WorldInfo) {
+    return GetBoundingBox(_WorldInfo).IsIntersecting(_Region);
 }
 
 

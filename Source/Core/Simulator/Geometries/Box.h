@@ -20,6 +20,8 @@
 #include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
 #include <VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h>
 
+#include <VSDA/Common/Structs/WorldInfo.h>
+
 
 namespace BG {
 namespace NES {
@@ -55,9 +57,9 @@ struct Box : Geometry {
 
 
     //! Returns the bounding box
-    virtual BoundingBox GetBoundingBox();
-    virtual bool IsPointInShape(Vec3D _Position_um);
-    virtual bool IsInsideRegion(BoundingBox _Region);
+    virtual BoundingBox GetBoundingBox(WorldInfo& _WorldInfo);
+    virtual bool IsPointInShape(Vec3D _Position_um, WorldInfo& _WorldInfo); // not used - bad don't use this it does not do rotation or work at all!!!
+    virtual bool IsInsideRegion(BoundingBox _Region, WorldInfo& _WorldInfo);
 
     //! Returns a point cloud that can be used to fill voxels representing the cylinder.
     std::vector<Vec3D> GetPointCloud(float _VoxelScale);
@@ -73,8 +75,8 @@ struct Box : Geometry {
      * @param _VoxelScale 
      * @param _Array 
      */
-    void WriteToVoxelArray(float _VoxelScale, VoxelArray* _Array);
-    void WriteToVoxelArray(float _VoxelScale, VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo);
+    void WriteToVoxelArray(VoxelArray* _Array, WorldInfo& _WorldInfo);
+    void WriteToVoxelArray(VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo, WorldInfo& _WorldInfo);
 
 
 };
