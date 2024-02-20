@@ -201,23 +201,27 @@ Vec3D RotatedVec(float _X, float _Y, float _Z, float _RY, float _RZ, Vec3D _Tran
 
 
 
-void Cylinder::WriteToVoxelArray(float _VoxelScale, VoxelArray* _Array) {
+void Cylinder::WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo) {
     assert(_Array != nullptr);
-    assert(_VoxelScale != 0.);
+    assert(_WorldInfo.VoxelScale_um != 0.);
+
+    // Rotate The Endpoints Around World Origin By Amount Set In World Info
+    Geometries::Vec3D RotatedEnd0 = End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+    Geometries::Vec3D RotatedEnd1 = End1Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
     // 0. Get rotation angles and length (r, theta, phi).
-    Vec3D diff = End1Pos_um - End0Pos_um;
+    Vec3D diff = RotatedEnd1 - RotatedEnd0;
     Vec3D diff_spherical_coords = diff.cartesianToSpherical();
     float rot_y = diff_spherical_coords.theta();
     float rot_z = diff_spherical_coords.phi();
 
     float distance = diff_spherical_coords.r();
     float radius_difference = End1Radius_um - End0Radius_um;
-    float stepsize = 0.5*_VoxelScale;
+    float stepsize = 0.5*_WorldInfo.VoxelScale_um;
 
     Vec3D spherical_halfdist_v(distance/2.0, rot_y, rot_z);
     Vec3D cartesian_halfdist_v = spherical_halfdist_v.sphericalToCartesian();
-    Vec3D translate = End0Pos_um + cartesian_halfdist_v;
+    Vec3D translate = RotatedEnd0 + cartesian_halfdist_v;
 
 
     // Calculate all the points and stuff them intot he array
@@ -246,23 +250,28 @@ void Cylinder::WriteToVoxelArray(float _VoxelScale, VoxelArray* _Array) {
 
 
 
-void Cylinder::WriteToVoxelArray(float _VoxelScale, VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo) {
+void Cylinder::WriteToVoxelArray(VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo, VSDA::WorldInfo& _WorldInfo) {
     assert(_Array != nullptr);
-    assert(_VoxelScale != 0.);
+    assert(_WorldInfo.VoxelScale_um != 0.);
+
+    // Rotate The Endpoints Around World Origin By Amount Set In World Info
+    Geometries::Vec3D RotatedEnd0 = End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+    Geometries::Vec3D RotatedEnd1 = End1Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+
 
     // 0. Get rotation angles and length (r, theta, phi).
-    Vec3D diff = End1Pos_um - End0Pos_um;
+    Vec3D diff = RotatedEnd1 - RotatedEnd0;
     Vec3D diff_spherical_coords = diff.cartesianToSpherical();
     float rot_y = diff_spherical_coords.theta();
     float rot_z = diff_spherical_coords.phi();
 
     float distance = diff_spherical_coords.r();
     float radius_difference = End1Radius_um - End0Radius_um;
-    float stepsize = 0.5*_VoxelScale;
+    float stepsize = 0.5*_WorldInfo.VoxelScale_um;
 
     Vec3D spherical_halfdist_v(distance/2.0, rot_y, rot_z);
     Vec3D cartesian_halfdist_v = spherical_halfdist_v.sphericalToCartesian();
-    Vec3D translate = End0Pos_um + cartesian_halfdist_v;
+    Vec3D translate = RotatedEnd0 + cartesian_halfdist_v;
 
 
     // Calculate all the points and stuff them intot he array

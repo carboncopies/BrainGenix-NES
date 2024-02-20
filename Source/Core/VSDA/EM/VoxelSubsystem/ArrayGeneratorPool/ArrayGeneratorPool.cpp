@@ -85,7 +85,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             else if (GeometryCollection->IsCylinder(ShapeID)) {
                 Geometries::Cylinder & ThisCylinder = GeometryCollection->GetCylinder(ShapeID);
                 ShapeName = "Cylinder";
-                FillCylinder(Array, &ThisCylinder, VoxelResolution_um);
+                FillCylinder(Array, &ThisCylinder, ThisTask->WorldInfo_);
             }
             
             // Update Task Result
