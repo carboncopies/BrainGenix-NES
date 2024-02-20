@@ -3,3 +3,4 @@
 - Flatten the calcium structs.
 - Fewer namespaces, avoid nested namespaces.
 - Properly isolate unrelated code.
+- All structs should have identifiable default values to simplify knowing if they were not given actual values.
