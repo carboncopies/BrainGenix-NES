@@ -140,7 +140,7 @@ void BSAlignedNC::SetSpontaneousActivity(
             throw std::invalid_argument("Cell not found.");
 
         auto cellPtr = std::dynamic_pointer_cast<BSNeuron>(cellIt->second);
-        cellPtr->SetSpontaneousActivity(mean, std);
+        cellPtr->SetSpontaneousActivity(mean, std, 0); // *** Watch out, if we use this then get the seed from the Master generator
     }
 };
 

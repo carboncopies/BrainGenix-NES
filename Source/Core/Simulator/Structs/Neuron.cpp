@@ -58,7 +58,7 @@ nlohmann::json Neuron::GetRecordingJSON() const {
     return recording;
 }
 
-void Neuron::SetSpontaneousActivity(float mean, float stdev) {
+void Neuron::SetSpontaneousActivity(float mean, float stdev, int Seed) {
     WARNWRONGOOPLEVEL();
 }
 

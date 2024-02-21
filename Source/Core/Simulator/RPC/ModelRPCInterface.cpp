@@ -1,4 +1,5 @@
 #include <Simulator/RPC/ModelRPCInterface.h>
+#include <Simulator/Distributions/Generic.h>
 #include <RPC/APIStatusCode.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -442,11 +443,11 @@ std::string ModelRPCInterface::SetSpontaneousActivity(std::string _JSONRequest) 
     // Modify spontaneous activity settings of specified neurons
     if (NeuronIDs.empty()) {
         for (auto& neuron : Handle.Sim()->Neurons) {
-            neuron->SetSpontaneousActivity(SpikeIntervalMean_ms, SpikeIntervalStDev_ms);
+            neuron->SetSpontaneousActivity(SpikeIntervalMean_ms, SpikeIntervalStDev_ms, Handle.Sim()->MasterRandom_->UniformRandomInt());
         }
     } else {
         for (const auto& neuron_id : NeuronIDs) {
-            Handle.Sim()->Neurons.at(neuron_id)->SetSpontaneousActivity(SpikeIntervalMean_ms, SpikeIntervalStDev_ms);
+            Handle.Sim()->Neurons.at(neuron_id)->SetSpontaneousActivity(SpikeIntervalMean_ms, SpikeIntervalStDev_ms, Handle.Sim()->MasterRandom_->UniformRandomInt());
         }
     }
 

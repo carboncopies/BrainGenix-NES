@@ -179,7 +179,9 @@ void SimLoadingTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskData
 //     return TheNewSimulation;
 // }
 
-
+/**
+ * Expects "Name" and "Seed" parameters.
+ */
 std::string SimulationRPCInterface::SimulationCreate(std::string _JSONRequest) {
 
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Create", &Simulations_, true, true);
@@ -194,11 +196,17 @@ std::string SimulationRPCInterface::SimulationCreate(std::string _JSONRequest) {
     }
     Logger_->Log("New Sim Has Name " + SimulationName, 3);
 
+    int RandomSeed;
+    if (!Handle.GetParInt("Seed", RandomSeed)) {
+        return Handle.ErrResponse();
+    }
+
     // Build New Simulation Object
     Simulations_.push_back(std::make_unique<Simulation>(Logger_));
     Simulation* Sim = Simulations_[Simulations_.size() - 1].get();
     assert(Sim != nullptr);
     Sim->Name = SimulationName;
+    Sim->SetRandomSeed(RandomSeed);
     Sim->CurrentTask = SIMULATION_NONE;
     Sim->ID = Simulations_.size() - 1;
 

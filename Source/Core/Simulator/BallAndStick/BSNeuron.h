@@ -108,7 +108,7 @@ struct BSNeuron : CoreStructs::Neuron {
     //! Set the distribution for delta t spontaneous (time changed
     //! since last spontaneous activity).
     //! A stdev==0 means the Neuron does not experience spontaneous activity.
-    virtual void SetSpontaneousActivity(float mean, float stdev);
+    virtual void SetSpontaneousActivity(float mean, float stdev, int Seed);
 
     //! Keeps track of the membrane potential and the time of update.
     void Record(float t_ms);
