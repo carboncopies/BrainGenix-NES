@@ -61,6 +61,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.h
   ${SRC_DIR}/Core/Simulator/Distributions/Distribution.cpp
   ${SRC_DIR}/Core/Simulator/Distributions/Distribution.h
+  ${SRC_DIR}/Core/Simulator/Distributions/Generic.cpp
+  ${SRC_DIR}/Core/Simulator/Distributions/Generic.h
 
   ${SRC_DIR}/Core/Simulator/Receptors/Receptor.cpp
   ${SRC_DIR}/Core/Simulator/Receptors/Receptor.h

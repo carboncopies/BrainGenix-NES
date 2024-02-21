@@ -51,7 +51,7 @@ struct BSNeuronTest : testing::Test {
     void Simulate() {
         std::vector<float> reversed_kernel(10, 0.0);
         testBSNeuron->SetFIFO(1.1, 0.1, reversed_kernel.size());
-        testBSNeuron->SetSpontaneousActivity(0.5, 5.0);
+        testBSNeuron->SetSpontaneousActivity(0.5, 5.0, 0);
 
         for (float val : times_ms)
             testBSNeuron->Update(val, true);
@@ -93,7 +93,7 @@ TEST_F(BSNeuronTest, test_SetSpontaneousActivity_default) {
                 -testMu / testStd, testMu / testStd, testMu, testStd);
     expectedDistStats = expectedDtSpontDist->Stats();
 
-    testBSNeuron->SetSpontaneousActivity(testMu, testStd);
+    testBSNeuron->SetSpontaneousActivity(testMu, testStd, 0);
 
     mean_ms = testBSNeuron->TauSpont_ms.mean;
     stdev_ms = testBSNeuron->TauSpont_ms.stdev;
@@ -239,7 +239,7 @@ TEST_F(BSNeuronTest, test_SpontaneousActivity_default) {
     // No spontaneous activity immediately after setup
     ASSERT_NEAR(testBSNeuron->TSpontNext_ms, _T_SPONT_NEXT_mS_INIT, tol);
 
-    testBSNeuron->SetSpontaneousActivity(0.5, 5.0);
+    testBSNeuron->SetSpontaneousActivity(0.5, 5.0, 0);
     testBSNeuron->SpontaneousActivity(0.1);
     testBSNeuron->SpontaneousActivity(1.5);
 
@@ -252,7 +252,7 @@ TEST_F(BSNeuronTest, test_Update_default) {
     size_t oldLenTimesteps = testBSNeuron->TRecorded_ms.size();
     size_t oldLenVmRecorded = testBSNeuron->VmRecorded_mV.size();
 
-    testBSNeuron->SetSpontaneousActivity(0.5, 5.0);
+    testBSNeuron->SetSpontaneousActivity(0.5, 5.0, 0);
     testBSNeuron->Update(0.1, true);
     testBSNeuron->Update(1.5, true);
 

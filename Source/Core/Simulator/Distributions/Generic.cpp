@@ -1,6 +1,6 @@
-#include <Simulator/Distributions/TruncNorm.h>
+#include <Simulator/Distributions/Generic.h>
 
-#include <iostream>
+
 
 namespace BG {
 namespace NES {
