@@ -27,6 +27,14 @@ namespace Distributions {
  *
  */
 class Generic {
+
+  private:
+
+    std::uniform_int_distribution<int> UniformDistInt_;      /**Instance of uniform dist, returns int*/
+    std::uniform_real_distribution<float> UniformDistFloat_; /**Instance of uniform dist, returns float*/
+    std::normal_distribution<float> NormalDistFloat_;        /**Instance of normal dist, returns float*/
+
+
   protected:
     std::mt19937 Gen_; //! Random number generator.
 
