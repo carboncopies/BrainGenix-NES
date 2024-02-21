@@ -7,6 +7,10 @@ namespace NES {
 namespace Simulator {
 namespace Distributions {
 
+Generic::Generic(uint32_t _Seed) {
+    Gen_.seed(_Seed);
+}
+
 int Generic::UniformRandomInt() {
     // Uniform distribution between 0 and postive max int.
     return UniformDistInt_(Gen_);

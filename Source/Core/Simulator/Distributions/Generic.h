@@ -40,8 +40,14 @@ class Generic {
 
   public:
     //! Constructors
-    Generic(uint32_t Seed) { Gen_.seed(Seed); }
+    Generic(uint32_t Seed);
 
+
+    /**
+     * @brief Generates a random integer in a uniform distribution.
+     * 
+     * @return int 
+     */
     int UniformRandomInt();
 
     /**
