@@ -151,6 +151,7 @@ void SimulationRPCInterface::SimLoadingTask(API::ManagerTaskData& TaskData) {
     Sim->Name = "Loaded Simulation";
     Sim->CurrentTask = SIMULATION_NONE;
     Sim->ID = Simulations_.size() - 1;
+    Sim->SetRandomSeed(0);
 
     // Start Thread
     SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, RenderPool_, VisualizerPool_, &StopThreads_));
