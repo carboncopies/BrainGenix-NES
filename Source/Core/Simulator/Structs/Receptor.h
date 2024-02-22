@@ -42,8 +42,8 @@ struct Receptor {
                                           nanoSiemens.*/
     float TimeConstantRise_ms = 1.0;   /**Postsynaptic potential rise time constant in milliseconds*/
     float TimeConstantDecay_ms = 1.0;  /**Postsynaptic potential decay time constant in milliseconds*/
-    Geometries::Vec3D ReceptorPos_um;  /**Position of the receptor in world
-                                          space, in micrometers*/
+    //Geometries::Vec3D ReceptorPos_um;  /**Position of the receptor in world
+    //                                      space, in micrometers*/
 };
 
 }; // namespace Connections
