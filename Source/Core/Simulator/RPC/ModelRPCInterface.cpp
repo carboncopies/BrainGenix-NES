@@ -133,7 +133,8 @@ std::string ModelRPCInterface::ReceptorCreate(std::string _JSONRequest) {
         || (!Handle.GetParFloat("Conductance_nS", C.Conductance_nS))
         || (!Handle.GetParFloat("TimeConstantRise_ms", C.TimeConstantRise_ms))
         || (!Handle.GetParFloat("TimeConstantDecay_ms", C.TimeConstantDecay_ms))
-        || (!Handle.GetParVec3("ReceptorPos", C.ReceptorPos_um))
+        || (!Handle.GetParInt("ReceptorMorphology", C.ShapeID))
+        //|| (!Handle.GetParVec3("ReceptorPos", C.ReceptorPos_um))
         || (!Handle.GetParString("Name", C.Name))) {
         return Handle.ErrResponse();
     }
