@@ -31,7 +31,8 @@ struct Receptor {
 
     std::string Name;                  /**Name of the Staple connection*/
     int ID = -1;                       /**ID of the Staple connection*/
-
+    int ShapeID = -1;                  /**ID of the shape that represents this receptor*/
+    
     int SourceCompartmentID = -1;      /**ID of the compartment whos data will be copied
                                           to the destination.*/
     int DestinationCompartmentID = -1; /**ID of the compartment whos data will be
