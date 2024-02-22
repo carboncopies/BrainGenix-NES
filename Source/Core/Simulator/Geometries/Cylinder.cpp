@@ -231,7 +231,7 @@ void Cylinder::WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo
         float radius = End0Radius_um + d_ratio*radius_difference; // Radius at this position on the axis.
 
         Vec3D RotatedPoint = RotatedVec(0.0, 0.0, z, rot_y, rot_z, translate);
-        _Array->SetVoxelAtPosition(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FILLED);
+        _Array->SetVoxelAtPosition(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, 255);
 
         for (float r = stepsize; r <= radius; r += stepsize) {
             float radians_per_step = stepsize / r;
@@ -239,7 +239,7 @@ void Cylinder::WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo
                 float y = r*std::cos(theta);
                 float x = r*std::sin(theta);
                 Vec3D RotatedPoint = RotatedVec(x, y, z, rot_y, rot_z, translate);
-                _Array->SetVoxelAtPosition(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FILLED);
+                _Array->SetVoxelAtPosition(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, 255);
             }
         }
 
