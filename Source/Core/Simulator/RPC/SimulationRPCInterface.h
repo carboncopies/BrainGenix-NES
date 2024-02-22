@@ -120,6 +120,7 @@ public:
      */
     std::string SimulationCreate(std::string _JSONRequest);
     std::string SimulationReset(std::string _JSONRequest);
+    std::string SimulationSetSeed(std::string _JSONRequest);
     std::string SimulationRunFor(std::string _JSONRequest);
     std::string SimulationRecordAll(std::string _JSONRequest);
     std::string SimulationGetRecording(std::string _JSONRequest);

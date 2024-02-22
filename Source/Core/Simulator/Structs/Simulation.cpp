@@ -18,6 +18,15 @@ namespace Simulator {
 //! Constructors
 Simulation::Simulation(BG::Common::Logger::LoggingSystem* _Logger) : Logger_(_Logger) {};
 
+/**
+ * Takes a fresh random seed and creates a new random generator with that
+ * seed. This will be the master random generator for this simulation.
+ */
+void Simulation::SetRandomSeed(int Seed) {
+    RandomSeed = Seed;
+    MasterRandom_ = std::make_unique<Distributions::Generic>(Seed);
+}
+
 void Simulation::AddCircuit(
     std::shared_ptr<CoreStructs::NeuralCircuit> circuit) {
     assert(circuit != nullptr);

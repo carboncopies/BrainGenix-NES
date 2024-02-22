@@ -50,12 +50,13 @@ void BSNeuron::AttachDirectStim(float t_ms) {
 
 //! Set the distribution for delta t spontaneous (time changed
 //! since last spontaneous activity).
-void BSNeuron::SetSpontaneousActivity(float mean, float stdev) {
+void BSNeuron::SetSpontaneousActivity(float mean, float stdev, int Seed) {
     this->TauSpont_ms.mean = mean;
     this->TauSpont_ms.stdev = stdev;
     float a = 0.0;
     float b = 2.0*mean;
     this->DtSpontDist = std::make_shared<Distributions::TruncNorm>(a, b, mean, stdev);
+    this->DtSpontDist->SetSeed(Seed);
 };
 
 //! Keeps track of the membrane potential and the time of update.

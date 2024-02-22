@@ -37,6 +37,7 @@
 #include <Simulator/Structs/PatchClampDAC.h>
 #include <Simulator/Structs/Receptor.h>
 #include <Simulator/Structs/Staple.h>
+#include <Simulator/Distributions/Generic.h>
 #include <BG/Common/Logger/Logger.h>
 
 #include <Visualizer/VisualizerParameters.h>
@@ -81,6 +82,9 @@ public:
 
     std::string Name; /**Name of the simulation*/
     int ID;           /**ID of the simulation*/
+
+    int RandomSeed = 0; /** Master random seed for this simulation. */
+    std::unique_ptr<Distributions::Generic> MasterRandom_;
 
     float T_ms = 0.0;
     float Dt_ms = 1.0;
@@ -129,6 +133,12 @@ public:
 
     //! Constructors
     Simulation(BG::Common::Logger::LoggingSystem* _Logger);
+
+    /**
+     * Takes a fresh random seed and creates a new random generator with that
+     * seed. This will be the master random generator for this simulation.
+     */
+    void SetRandomSeed(int Seed);
 
     Geometries::Vec3D GetGeoCenter() const;
 

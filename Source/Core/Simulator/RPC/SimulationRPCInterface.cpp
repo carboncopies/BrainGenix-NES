@@ -45,6 +45,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
 
     _RPCManager->AddRoute("Simulation/Create",                    std::bind(&SimulationRPCInterface::SimulationCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Reset",                     std::bind(&SimulationRPCInterface::SimulationReset, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/SetRandomSeed",             std::bind(&SimulationRPCInterface::SimulationSetSeed, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/RunFor",                    std::bind(&SimulationRPCInterface::SimulationRunFor, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/RecordAll",                 std::bind(&SimulationRPCInterface::SimulationRecordAll, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetRecording",              std::bind(&SimulationRPCInterface::SimulationGetRecording, this, std::placeholders::_1));
@@ -56,11 +57,11 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
     _RPCManager->AddRoute("Simulation/Save",                      std::bind(&SimulationRPCInterface::SimulationSave, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Load",                      std::bind(&SimulationRPCInterface::SimulationLoad, this, std::placeholders::_1));
 
-    _RPCManager->AddRoute("ManTaskStatus",                      std::bind(&SimulationRPCInterface::ManTaskStatus, this, std::placeholders::_1));
+    _RPCManager->AddRoute("ManTaskStatus",                        std::bind(&SimulationRPCInterface::ManTaskStatus, this, std::placeholders::_1));
 
-    _RPCManager->AddRoute("CalciumImagingAttach", std::bind(&SimulationRPCInterface::CalciumImagingAttach, this, std::placeholders::_1));
-    _RPCManager->AddRoute("CalciumImagingShowVoxels", std::bind(&SimulationRPCInterface::CalciumImagingShowVoxels, this, std::placeholders::_1));
-    _RPCManager->AddRoute("CalciumImagingRecordAposteriori", std::bind(&SimulationRPCInterface::CalciumImagingRecordAposteriori, this, std::placeholders::_1));
+    // _RPCManager->AddRoute("CalciumImagingAttach", std::bind(&SimulationRPCInterface::CalciumImagingAttach, this, std::placeholders::_1));
+    // _RPCManager->AddRoute("CalciumImagingShowVoxels", std::bind(&SimulationRPCInterface::CalciumImagingShowVoxels, this, std::placeholders::_1));
+    // _RPCManager->AddRoute("CalciumImagingRecordAposteriori", std::bind(&SimulationRPCInterface::CalciumImagingRecordAposteriori, this, std::placeholders::_1));
 
     // Start SE Thread
     StopThreads_ = false;
@@ -150,6 +151,7 @@ void SimulationRPCInterface::SimLoadingTask(API::ManagerTaskData& TaskData) {
     Sim->Name = "Loaded Simulation";
     Sim->CurrentTask = SIMULATION_NONE;
     Sim->ID = Simulations_.size() - 1;
+    Sim->SetRandomSeed(0);
 
     // Start Thread
     SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, RenderPool_, VisualizerPool_, &StopThreads_));
@@ -179,7 +181,9 @@ void SimLoadingTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskData
 //     return TheNewSimulation;
 // }
 
-
+/**
+ * Expects "Name" and "Seed" parameters.
+ */
 std::string SimulationRPCInterface::SimulationCreate(std::string _JSONRequest) {
 
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Create", &Simulations_, true, true);
@@ -194,11 +198,13 @@ std::string SimulationRPCInterface::SimulationCreate(std::string _JSONRequest) {
     }
     Logger_->Log("New Sim Has Name " + SimulationName, 3);
 
+
     // Build New Simulation Object
     Simulations_.push_back(std::make_unique<Simulation>(Logger_));
     Simulation* Sim = Simulations_[Simulations_.size() - 1].get();
     assert(Sim != nullptr);
     Sim->Name = SimulationName;
+    Sim->SetRandomSeed(0);
     Sim->CurrentTask = SIMULATION_NONE;
     Sim->ID = Simulations_.size() - 1;
 
@@ -216,12 +222,34 @@ std::string SimulationRPCInterface::SimulationReset(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    // Handle.Sim()->CurrentTask = SIMULATION_RESET; // request a reset be done
-    // Handle.Sim()->WorkRequested = true;
+    Handle.Sim()->CurrentTask = SIMULATION_RESET; // request a reset be done
+    Handle.Sim()->WorkRequested = true;
 
     // Return Result ID
     return Handle.ErrResponse(); // ok
 }
+
+
+std::string SimulationRPCInterface::SimulationSetSeed(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/SetRandomSeed", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    int Seed;
+    Handle.GetParInt("Seed", Seed);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    Handle.Sim()->SetRandomSeed(Seed);
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
+
 
 // This request starts at Simulation Task.
 std::string SimulationRPCInterface::SimulationRunFor(std::string _JSONRequest) {

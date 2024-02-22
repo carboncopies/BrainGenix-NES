@@ -7,3 +7,4 @@
 - Once asserts are removed in the release build we need to make sure that parameters are actually tested once as they come in through the interface
 - Progress bars should crash or exit if the backend has crashed.
 - Errors should send back error messages, can't expect people to be able to see NES command line window.
+- Comments that should show up in doxygen need to be in the .h.
