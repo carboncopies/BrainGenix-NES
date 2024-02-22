@@ -51,14 +51,16 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
-
+// We reserve the first 0-127 values for our own enum uses, the remaining 128-255 is used for intensity
 typedef uint8_t VoxelType;
 
+// Do not exceed 127 here, this is the max value before we start using it for intensity of each voxel
 enum VoxelState {
     EMPTY,
     OUT_OF_RANGE,
     FILLED,
-    BORDER
+    BORDER,
+    VOXELSTATE_MAX_VALUE=127
 };
 
 
@@ -145,6 +147,16 @@ public:
      * @param _Value
      */
     void SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Value);
+
+    /**
+     * @brief Sets the voxel if the one currently there is not darker.
+     * 
+     * @param _X 
+     * @param _Y 
+     * @param _Z 
+     * @param _Value 
+     */
+    void SetVoxelIfNotDarker(float _X, float _Y, float _Z, VoxelType _Value);
 
     /**
      * @brief Get the size of the array, populate the int ptrs

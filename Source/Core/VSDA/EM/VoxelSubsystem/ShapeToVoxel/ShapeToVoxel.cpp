@@ -56,7 +56,7 @@ bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo
         for (float Y = BB.bb_point1[1]; Y < BB.bb_point2[1]; Y+= _WorldInfo.VoxelScale_um) {
             for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _WorldInfo.VoxelScale_um) {
                 if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z), _WorldInfo)) {
-                    _Array->SetVoxelAtPosition(X, Y, Z, FILLED);
+                    _Array->SetVoxelIfNotDarker(X, Y, Z, 255);
                 }
             }
         }

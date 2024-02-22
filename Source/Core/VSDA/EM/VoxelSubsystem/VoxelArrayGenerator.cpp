@@ -107,6 +107,35 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
     }
 
+    // Now Do It For Receptors
+    for (unsigned int i = 0; i < _Sim->Receptors.size(); i++) {
+
+        Connections::Receptor* ThisReceptor = _Sim->Receptors[i].get();
+
+        TotalShapes++;
+
+        // Create a working task for the generatorpool to complete
+        std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
+        Task->Array_ = _Array;
+        Task->GeometryCollection_ = &_Sim->Collection;
+        Task->ShapeID_ = ThisReceptor->ShapeID;
+        Task->WorldInfo_ = Info;
+
+
+        // Now submit to render queue if it's inside the region, otherwise skip it
+        if (IsShapeInsideRegion(_Sim, ThisReceptor->ShapeID, RegionBoundingBox, Info)) {
+            
+            AddedShapes++;
+
+            _GeneratorPool->QueueWorkOperation(Task.get());
+
+            // Then move it to the list so we can keep track of it
+            Tasks.push_back(std::move(Task));
+
+        }
+
+    }
+
 
     // Log some info for the ratio of added shapes
     double RatioAdded = ((double)AddedShapes / (double)TotalShapes) * 100.;

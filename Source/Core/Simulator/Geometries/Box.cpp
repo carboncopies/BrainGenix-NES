@@ -136,7 +136,7 @@ void Box::WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo) {
                 Point = Point.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
                 // Rather than making a point cloud like before, we just write it directly into the array
-                _Array->SetVoxelAtPosition(Point.x, Point.y, Point.z, FILLED);
+                _Array->SetVoxelIfNotDarker(Point.x, Point.y, Point.z, 145);
 
             }
         }

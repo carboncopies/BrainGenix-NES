@@ -109,14 +109,20 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     // Now Set The Pixel
                     int ThisPixelX = XVoxelIndex - Task->VoxelStartingX;
                     int ThisPixelY = YVoxelIndex - Task->VoxelStartingY;
-                    if (ThisVoxel == FILLED) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 220, 220, 220);
-                    } else if (ThisVoxel == BORDER) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
-                    } else if (ThisVoxel == OUT_OF_RANGE) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
+
+                    // Check if the voxel is in the enum reserved range, otherwise it's a color value from 128-255
+                    if (ThisVoxel <= VOXELSTATE_MAX_VALUE) {
+                        if (ThisVoxel == BORDER) {
+                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
+                        } else if (ThisVoxel == OUT_OF_RANGE) {
+                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
+                        } else {
+                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 100, 100, 100);
+                        }
                     } else {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 80, 80, 80);
+                        // Then we scale it so we get the full grey color range
+                        int ScaledColorValue = (ThisVoxel - 128) * 2;
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, ScaledColorValue, ScaledColorValue, ScaledColorValue);
                     }
 
                 }
