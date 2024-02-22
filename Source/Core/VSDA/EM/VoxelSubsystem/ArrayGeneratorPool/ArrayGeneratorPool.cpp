@@ -75,7 +75,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             if (GeometryCollection->IsSphere(ShapeID)) {
                 Geometries::Sphere & ThisSphere = GeometryCollection->GetSphere(ShapeID);
                 ShapeName = "Sphere";
-                // FillShape(Array, &ThisSphere, ThisTask->WorldInfo_);
+                FillShape(Array, &ThisSphere, ThisTask->WorldInfo_);
             }
             else if (GeometryCollection->IsBox(ShapeID)) {
                 Geometries::Box & ThisBox = GeometryCollection->GetBox(ShapeID); 
@@ -85,7 +85,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             else if (GeometryCollection->IsCylinder(ShapeID)) {
                 Geometries::Cylinder & ThisCylinder = GeometryCollection->GetCylinder(ShapeID);
                 ShapeName = "Cylinder";
-                // FillCylinder(Array, &ThisCylinder, ThisTask->WorldInfo_);
+                FillCylinder(Array, &ThisCylinder, ThisTask->WorldInfo_);
             }
             
             // Update Task Result
