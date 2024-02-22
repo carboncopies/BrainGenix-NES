@@ -110,7 +110,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     // Now Do It For Receptors
     for (unsigned int i = 0; i < _Sim->Receptors.size(); i++) {
 
-        Connections::Receptor* ThisReceptor = &_Sim->Receptors[i];
+        Connections::Receptor* ThisReceptor = _Sim->Receptors[i].get();
 
         TotalShapes++;
 
