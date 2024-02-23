@@ -131,37 +131,6 @@ void VoxelArray::ClearArrayThreaded(int _NumThreads) {
     }
 
 
-
-    // // Calculate Start Ptr, StepSize
-    // uint64_t ArraySizeInBytes = (DataMaxLength_ * sizeof(VoxelType));
-    // uint64_t StepSize = ArraySizeInBytes / _NumThreads;
-    // VoxelType* StartAddress = Data_.get();
-    // std::cout<<"Start Addr: "<<StartAddress<<"| MaxSize: "<<(DataMaxLength_*sizeof(VoxelType))<<" | (EndAddr): "<<StartAddress + (DataMaxLength_*sizeof(VoxelType))<<std::endl;
-
-    // // Create a bunch of memset tasks
-    // std::vector<std::future<int>> AsyncTasks;
-    // for (size_t i = 0; i < _NumThreads; i++) {
-    //     VoxelType* ThreadStartAddress = StartAddress + (StepSize * i);
-    //     uint64_t ThreadStepSize = StepSize - 1; // Stop one byte before end
-
-    //     if (ThreadStartAddress + ThreadStepSize >= StartAddress + ArraySizeInBytes) {
-    //         Logger_->Log("Critical Error During Array Clear, Buffer Overrun", 10);
-    //         exit(999);
-    //     }
-    //     std::cout<<ThreadStartAddress + ThreadStepSize<<"|"<<StartAddress + ArraySizeInBytes<<"\n";
-
-    //     AsyncTasks.push_back(std::async(std::launch::async, [ThreadStartAddress, ThreadStepSize]{
-    //         std::cout<<ThreadStartAddress<<"|"<<ThreadStartAddress+ThreadStepSize<<std::endl<<std::flush;
-    //         std::memset(ThreadStartAddress, 0, ThreadStepSize);
-    //         return 0;
-    //     }));
-    // }
-
-    // // Now, wait for this to finish
-    // for (size_t i = 0; i < AsyncTasks.size(); i++) {
-    //     AsyncTasks[i].get();
-    // }
-
 }
 
 bool VoxelArray::SetBB(BoundingBox _NewBoundingBox) {
