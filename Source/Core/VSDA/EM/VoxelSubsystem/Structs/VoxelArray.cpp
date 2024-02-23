@@ -14,6 +14,7 @@ namespace Simulator {
 
 
 VoxelArray::VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, BoundingBox _BB, float _VoxelScale_um) {
+    Logger_ = _Logger;
 
     // Calculate Dimensions
     float SizeX = abs(_BB.bb_point1[0] - _BB.bb_point2[0]);
@@ -40,6 +41,7 @@ VoxelArray::VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, BoundingBox _
     // ClearArray();
 }
 VoxelArray::VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, ScanRegion _Region, float _VoxelScale_um) {
+    Logger_ = _Logger;
 
     // Create Bounding Box From Region, Then Call Other Constructor
     BoundingBox BB;
@@ -219,6 +221,38 @@ void VoxelArray::GetSize(int* _X, int* _Y, int* _Z) {
     (*_X) = int(SizeX_);
     (*_Y) = int(SizeY_);
     (*_Z) = int(SizeZ_);
+}
+
+bool VoxelArray::SetSize(int _X, int _Y, int _Z) {
+
+    uint64_t ProposedSize = uint64_t(_X) * uint64_t(_Y) * uint64_t(_Z);
+    
+    if (ProposedSize < DataMaxLength_) {
+
+        std::string ResizePercent = std::to_string((double(ProposedSize) / double(DataMaxLength_)) * 100.);
+        Logger_->Log("Resizing Voxel Array To " + std::to_string(_X) + "XVox, " + std::to_string(_Y) + "YVox, " + std::to_string(_Z) + "ZVox, ~" + ResizePercent + "% of Allocated Size", 4);
+
+        SizeX_ = _X;
+        SizeY_ = _Y;
+        SizeZ_ = _Z;
+
+        return true;
+    } else {
+        Logger_->Log("Cannot Resize Voxel Array To Requested Size, It Exceeds Currently Allocated Size", 10);
+    }
+
+    return false;
+}
+
+bool VoxelArray::SetSize(ScanRegion _TargetSize, float _VoxelScale_um) {
+    
+    // Calc size in voxels for x, y, z
+    int VoxelSizeX = _TargetSize.SizeX() / _VoxelScale_um;
+    int VoxelSizeY = _TargetSize.SizeY() / _VoxelScale_um;
+    int VoxelSizeZ = _TargetSize.SizeZ() / _VoxelScale_um;
+
+    return SetSize(VoxelSizeX, VoxelSizeY, VoxelSizeZ);
+
 }
 
 uint64_t VoxelArray::GetSize() {

@@ -92,6 +92,7 @@ private:
 
     BoundingBox BoundingBox_; /**Set the bounding box of this voxel array (relative to the simulation orign)*/
 
+    BG::Common::Logger::LoggingSystem* Logger_; /**Instance of logging system*/
 
 
     /**
@@ -175,6 +176,16 @@ public:
      * @param _Z 
      */
     void GetSize(int* _X, int* _Y, int* _Z);
+
+    /**
+     * @brief Attempt to set the size of the current array, if it's less than or equal to the max array size.
+     * 
+     * @param _X Dimension In Voxels
+     * @param _Y Dimension In Voxels
+     * @param _Z Dimension In Voxels
+     */
+    bool SetSize(int _X, int _Y, int _Z);
+    bool SetSize(ScanRegion _TargetSize, float _VoxelScale_um);
 
     /**
      * @brief Update the given bounding box with the new size.
