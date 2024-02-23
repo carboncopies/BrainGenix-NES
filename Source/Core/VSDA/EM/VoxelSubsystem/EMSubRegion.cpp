@@ -41,6 +41,13 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     VSDAData_->TotalSlices_ = TotalRegionThickness / VSDAData_->Params_.VoxelResolution_um;
 
 
+    // Initialize Stats
+    VSDAData_->TotalSlices_ = VSDAData_->Array_.get()->GetZ();
+    VSDAData_->CurrentSlice_ = 0;
+    VSDAData_->TotalSliceImages_ = 0;
+    VSDAData_->CurrentSliceImage_ = 0;
+
+
     // Create Voxel Array
     _Logger->Log(std::string("Creating Voxel Array Of Size ") + RequestedRegion.Dimensions() + std::string(" With Points ") + RequestedRegion.ToString(), 2);
     uint64_t TargetArraySize = RequestedRegion.GetVoxelSize(VSDAData_->Params_.VoxelResolution_um);
@@ -92,7 +99,7 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
         // Update Current Slice Information (Account for slice numbers not starting at 0)
         VSDAData_->TotalSlices_ = VSDAData_->Array_.get()->GetZ();
-        VSDAData_->CurrentSlice_ = VSDAData_->Array_.get()->GetZ() - ceil((float)_ImageProcessorPool->GetQueueSize() / ImagesPerSlice);
+        VSDAData_->CurrentSlice_ = std::max(VSDAData_->Array_.get()->GetZ() - ceil((double)_ImageProcessorPool->GetQueueSize() / ImagesPerSlice), 0.);
         VSDAData_->TotalSliceImages_ = ImagesPerSlice;
         VSDAData_->CurrentSliceImage_ = _ImageProcessorPool->GetQueueSize() % ImagesPerSlice;
 
