@@ -28,7 +28,7 @@ Geometries::Vec3D RotatedVec(float _X, float _Y, float _Z, float _RY, float _RZ,
     return _Translate + RotateAroundYZ(NewVec, _RY, _RZ);
 }
 
-int GenerateVoxelColor(float _X_um, float _Y_um, float _Z_um, MicroscopeParameters* _Params, noise::module::Perlin* _Generator, int _Offset=0) {
+VoxelType GenerateVoxelColor(float _X_um, float _Y_um, float _Z_um, MicroscopeParameters* _Params, noise::module::Perlin* _Generator, int _Offset=0) {
 
     // Now, generate the color based on some noise constraints, Clamp it between 0 and 1, then scale based on parameters
     float SpatialScale = _Params->SpatialScale_;
@@ -42,9 +42,10 @@ int GenerateVoxelColor(float _X_um, float _Y_um, float _Z_um, MicroscopeParamete
     VoxelColorValue = std::max(0., VoxelColorValue);
 
 
-    // Now, limit this to 128-255, and scale accordingly
-    int FinalVoxelValue = (VoxelColorValue / 2.) + 128;
-    assert(FinalVoxelValue > VOXELSTATE_MAX_VALUE && FinalVoxelValue <= 255);
+    VoxelType FinalVoxelValue;
+    FinalVoxelValue.Intensity_ = VoxelColorValue;
+    FinalVoxelValue.State_ = VOXELSTATE_INTENSITY;
+
 
     return FinalVoxelValue;
 
@@ -53,12 +54,17 @@ int GenerateVoxelColor(float _X_um, float _Y_um, float _Z_um, MicroscopeParamete
 
 bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
 
+    VoxelType FinalVoxelValue;
+    FinalVoxelValue.Intensity_ = 0;
+    FinalVoxelValue.State_ = BORDER;
+
+    
     // Z Alligned Border
     for (int Z = 0; Z < _Array->GetZ(); Z++) {
-        _Array->SetVoxel(0, 0, Z, BORDER);
-        _Array->SetVoxel(_Array->GetX()-1, 0, Z, BORDER);
-        _Array->SetVoxel(0, _Array->GetY()-1, Z, BORDER);
-        _Array->SetVoxel(_Array->GetX()-1, _Array->GetY()-1, Z, BORDER);
+        _Array->SetVoxel(0, 0, Z, FinalVoxelValue);
+        _Array->SetVoxel(_Array->GetX()-1, 0, Z, FinalVoxelValue);
+        _Array->SetVoxel(0, _Array->GetY()-1, Z, FinalVoxelValue);
+        _Array->SetVoxel(_Array->GetX()-1, _Array->GetY()-1, Z, FinalVoxelValue);
     }
 
     return true;
@@ -70,7 +76,11 @@ bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
     for (float X = _BB->bb_point1[0]; X < _BB->bb_point2[0]; X+= _VoxelScale) {
         for (float Y = _BB->bb_point1[1]; Y < _BB->bb_point2[1]; Y+= _VoxelScale) {
             for (float Z = _BB->bb_point1[2]; Z < _BB->bb_point2[2]; Z+= _VoxelScale) {
-                _Array->SetVoxelAtPosition(X, Y, Z, FILLED);
+                
+                VoxelType FinalVoxelValue;
+                FinalVoxelValue.Intensity_ = 0;
+                FinalVoxelValue.State_ = BORDER;
+                _Array->SetVoxelAtPosition(X, Y, Z, FinalVoxelValue);
             }
         }
     }
@@ -90,7 +100,7 @@ bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo
         for (float Y = BB.bb_point1[1]; Y < BB.bb_point2[1]; Y+= _WorldInfo.VoxelScale_um) {
             for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _WorldInfo.VoxelScale_um) {
                 if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z), _WorldInfo)) {
-                    int FinalVoxelValue = GenerateVoxelColor(X, Y, Z, _Params, _Generator);
+                    VoxelType FinalVoxelValue = GenerateVoxelColor(X, Y, Z, _Params, _Generator);
                     _Array->SetVoxelIfNotDarker(X, Y, Z, FinalVoxelValue);
                 }
             }
@@ -131,7 +141,7 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::Wor
         float radius = _Cylinder->End0Radius_um + d_ratio*radius_difference; // Radius at this position on the axis.
 
         Geometries::Vec3D RotatedPoint = RotatedVec(0.0, 0.0, z, rot_y, rot_z, translate);
-        int FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
+        VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
         _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
 
         for (float r = stepsize; r <= radius; r += stepsize) {
@@ -140,7 +150,7 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::Wor
                 float y = r*std::cos(theta);
                 float x = r*std::sin(theta);
                 Geometries::Vec3D RotatedPoint = RotatedVec(x, y, z, rot_y, rot_z, translate);
-                int FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
+                VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
                 _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
             }
         }
@@ -180,7 +190,7 @@ bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, VSDA::WorldInfo& _WorldI
                 Point = Point.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
                 // Rather than making a point cloud like before, we just write it directly into the array
-                int FinalVoxelValue = GenerateVoxelColor(Point.x, Point.y, Point.z, _Params, _Generator, -100);
+                VoxelType FinalVoxelValue = GenerateVoxelColor(Point.x, Point.y, Point.z, _Params, _Generator, -180);
                 _Array->SetVoxelIfNotDarker(Point.x, Point.y, Point.z, FinalVoxelValue);
 
             }

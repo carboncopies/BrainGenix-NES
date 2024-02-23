@@ -45,22 +45,31 @@
 
 #include <VSDA/Common/Structs/ScanRegion.h>
 
+#include <BG/Common/Logger/Logger.h>
 
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 
-// We reserve the first 0-127 values for our own enum uses, the remaining 128-255 is used for intensity
-typedef uint8_t VoxelType;
 
-// Do not exceed 127 here, this is the max value before we start using it for intensity of each voxel
+
+
 enum VoxelState {
     EMPTY,
     OUT_OF_RANGE,
-    FILLED,
     BORDER,
-    VOXELSTATE_MAX_VALUE=127
+    VOXELSTATE_INTENSITY, /**Use the intensity map from the voxel struct*/
+    VOXELSTATE_RED, /**Override with 255, 0, 0 */
+    VOXELSTATE_GREEN, /**Override with 0, 255, 0 */
+    VOXELSTATE_BLUE /**Override with 0, 0, 255*/
+};
+
+struct VoxelType {
+
+    uint8_t Intensity_; /**Value from 0-255 representing the intensity (brightness) of this voxel*/
+    VoxelState State_; /**Enum which contains other info about the voxel*/
+
 };
 
 
@@ -105,8 +114,8 @@ public:
      * @param _BB Bounding box of the array, in world space
      * @param _VoxelScale_um Scale of each voxel in micrometers
      */
-    VoxelArray(BoundingBox _BB, float _VoxelScale_um);
-    VoxelArray(ScanRegion _Region, float _VoxelScale_um);
+    VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, BoundingBox _BB, float _VoxelScale_um);
+    VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, ScanRegion _Region, float _VoxelScale_um);
 
     /**
      * @brief Destroy the Voxel Array object

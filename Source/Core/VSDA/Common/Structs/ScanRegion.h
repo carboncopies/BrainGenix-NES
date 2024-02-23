@@ -81,6 +81,15 @@ struct ScanRegion {
     std::string ToString();
 
     /**
+     * @brief Print the voxel size in voxels.
+     * 
+     * @param _VoxelScale_um 
+     * @return std::string 
+     */
+    std::string GetDimensionsInVoxels(float _VoxelScale_um);
+
+
+    /**
      * @brief Size helper functions, returns the size in the indicated dimension
      *
      * @return double

@@ -31,6 +31,23 @@ std::string ScanRegion::ToString() {
     return Out;
 }
 
+std::string ScanRegion::GetDimensionsInVoxels(float _VoxelScale_um) {
+    float SizeX = abs(Point1X_um - Point2X_um);
+    float SizeY = abs(Point1Y_um - Point2Y_um);
+    float SizeZ = abs(Point1Z_um - Point2Z_um);
+    uint64_t SizeX_ = SizeX/_VoxelScale_um;
+    uint64_t SizeY_ = SizeY/_VoxelScale_um;
+    uint64_t SizeZ_ = SizeZ/_VoxelScale_um;
+
+    std::string Out = "";
+    Out += std::to_string(SizeX_) + "XVox, ";
+    Out += std::to_string(SizeY_) + "YVox, ";
+    Out += std::to_string(SizeZ_) + "ZVox";
+
+    return Out;
+
+}
+
 double ScanRegion::SizeX() {
     return abs(Point1X_um - Point2X_um);
 }
