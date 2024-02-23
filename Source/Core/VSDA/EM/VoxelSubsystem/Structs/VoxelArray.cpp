@@ -13,7 +13,7 @@ namespace Simulator {
 
 
 
-VoxelArray::VoxelArray(BoundingBox _BB, float _VoxelScale_um) {
+VoxelArray::VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, BoundingBox _BB, float _VoxelScale_um) {
 
     // Calculate Dimensions
     float SizeX = abs(_BB.bb_point1[0] - _BB.bb_point2[0]);
@@ -31,13 +31,15 @@ VoxelArray::VoxelArray(BoundingBox _BB, float _VoxelScale_um) {
 
     // Malloc array
     DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
+    float SizeMiB = (sizeof(VoxelType) * DataMaxLength_) / 1024. / 1024.;
+    _Logger->Log("Allocating Array Of Size " + std::to_string(SizeMiB) + "MiB In System RAM", 2);
     Data_ = std::make_unique<VoxelType[]>(DataMaxLength_);
 
     // We don't need to clear this because make unique does it for us
     // Reset the array so we don't get a bunch of crap in it
     // ClearArray();
 }
-VoxelArray::VoxelArray(ScanRegion _Region, float _VoxelScale_um) {
+VoxelArray::VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, ScanRegion _Region, float _VoxelScale_um) {
 
     // Create Bounding Box From Region, Then Call Other Constructor
     BoundingBox BB;
@@ -65,6 +67,8 @@ VoxelArray::VoxelArray(ScanRegion _Region, float _VoxelScale_um) {
 
     // Malloc array
     DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
+    float SizeMiB = (sizeof(VoxelType) * DataMaxLength_) / 1024. / 1024.;
+    _Logger->Log("Allocating Array Of Size " + std::to_string(SizeMiB) + "MiB In System RAM", 2);
     Data_ = std::make_unique<VoxelType[]>(DataMaxLength_);
 
     // make unique already clears memory, so we're doing it twice.

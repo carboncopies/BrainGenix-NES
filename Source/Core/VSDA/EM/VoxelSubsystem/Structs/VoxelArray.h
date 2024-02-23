@@ -45,6 +45,7 @@
 
 #include <VSDA/Common/Structs/ScanRegion.h>
 
+#include <BG/Common/Logger/Logger.h>
 
 
 namespace BG {
@@ -113,8 +114,8 @@ public:
      * @param _BB Bounding box of the array, in world space
      * @param _VoxelScale_um Scale of each voxel in micrometers
      */
-    VoxelArray(BoundingBox _BB, float _VoxelScale_um);
-    VoxelArray(ScanRegion _Region, float _VoxelScale_um);
+    VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, BoundingBox _BB, float _VoxelScale_um);
+    VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, ScanRegion _Region, float _VoxelScale_um);
 
     /**
      * @brief Destroy the Voxel Array object
