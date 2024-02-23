@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include <future>
+#include <cstdlib>
 #include <vector>
 
 #include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
@@ -71,8 +72,10 @@ VoxelArray::VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, ScanRegion _R
     DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
     float SizeMiB = (sizeof(VoxelType) * DataMaxLength_) / 1024. / 1024.;
     _Logger->Log("Allocating Array Of Size " + std::to_string(SizeMiB) + "MiB In System RAM", 2);
-    Data_ = std::make_unique<VoxelType[]>(DataMaxLength_);
+    VoxelType* VoxelArrayPtr = (VoxelType*)std::malloc(DataMaxLength_ * sizeof(VoxelType));
+    Data_ = std::unique_ptr<VoxelType[]>(VoxelArrayPtr);
 
+    ClearArrayThreaded(std::thread::hardware_concurrency());
     // make unique already clears memory, so we're doing it twice.
     // Reset the array so we don't get a bunch of crap in it
     // ClearArray();
@@ -84,7 +87,6 @@ VoxelArray::~VoxelArray() {
     // delete[] Data_;
 }
 
-// this works
 void VoxelArray::ClearArray() {
 
     std::memset(Data_.get(), 0, DataMaxLength_*sizeof(VoxelType));
@@ -97,20 +99,29 @@ void VoxelArray::ClearArray() {
 }
 
 
-// this doesn't - why? fix tomorrow.
 void VoxelArray::ClearArrayThreaded(int _NumThreads) {
 
-    // Calculate Start Ptr, StepSize
-    uint64_t StepSize = DataMaxLength_ / _NumThreads;
-    VoxelType* StartAddress = Data_.get();
+    uint64_t ElementStepSize = DataMaxLength_ / _NumThreads;
+    // VoxelType* StartAddress = Data_.get();
+
+    // Initializer
+    VoxelType Empty;
+    Empty.Intensity_ = 0;
+    Empty.State_ = EMPTY;
 
     // Create a bunch of memset tasks
     std::vector<std::future<int>> AsyncTasks;
     for (size_t i = 0; i < _NumThreads; i++) {
-        VoxelType* ThreadStartAddress = StartAddress + (StepSize * i);
-        assert(ThreadStartAddress + StepSize <= StartAddress + DataMaxLength_);
-        AsyncTasks.push_back(std::async(std::launch::async, [ThreadStartAddress, StepSize]{
-            std::memset(ThreadStartAddress, 0, StepSize);
+        // VoxelType* ThreadStartAddress = StartAddress + (ElementStepSize * i);
+        uint64_t ThreadStartIndex = (ElementStepSize * i);
+        uint64_t ThreadEndIndex = (ElementStepSize * i) + ElementStepSize;
+        VoxelType* Array = Data_.get();
+
+        AsyncTasks.push_back(std::async(std::launch::async, [Array, ThreadStartIndex, ThreadEndIndex, Empty]{
+            std::cout<<ThreadStartIndex<<"|"<<ThreadEndIndex<<std::endl<<std::flush;
+            for (uint64_t i = ThreadStartIndex; i < ThreadEndIndex; i++) {
+                Array[i] = Empty;
+            }
             return 0;
         }));
     }
@@ -119,6 +130,38 @@ void VoxelArray::ClearArrayThreaded(int _NumThreads) {
     for (size_t i = 0; i < AsyncTasks.size(); i++) {
         AsyncTasks[i].get();
     }
+
+
+
+    // // Calculate Start Ptr, StepSize
+    // uint64_t ArraySizeInBytes = (DataMaxLength_ * sizeof(VoxelType));
+    // uint64_t StepSize = ArraySizeInBytes / _NumThreads;
+    // VoxelType* StartAddress = Data_.get();
+    // std::cout<<"Start Addr: "<<StartAddress<<"| MaxSize: "<<(DataMaxLength_*sizeof(VoxelType))<<" | (EndAddr): "<<StartAddress + (DataMaxLength_*sizeof(VoxelType))<<std::endl;
+
+    // // Create a bunch of memset tasks
+    // std::vector<std::future<int>> AsyncTasks;
+    // for (size_t i = 0; i < _NumThreads; i++) {
+    //     VoxelType* ThreadStartAddress = StartAddress + (StepSize * i);
+    //     uint64_t ThreadStepSize = StepSize - 1; // Stop one byte before end
+
+    //     if (ThreadStartAddress + ThreadStepSize >= StartAddress + ArraySizeInBytes) {
+    //         Logger_->Log("Critical Error During Array Clear, Buffer Overrun", 10);
+    //         exit(999);
+    //     }
+    //     std::cout<<ThreadStartAddress + ThreadStepSize<<"|"<<StartAddress + ArraySizeInBytes<<"\n";
+
+    //     AsyncTasks.push_back(std::async(std::launch::async, [ThreadStartAddress, ThreadStepSize]{
+    //         std::cout<<ThreadStartAddress<<"|"<<ThreadStartAddress+ThreadStepSize<<std::endl<<std::flush;
+    //         std::memset(ThreadStartAddress, 0, ThreadStepSize);
+    //         return 0;
+    //     }));
+    // }
+
+    // // Now, wait for this to finish
+    // for (size_t i = 0; i < AsyncTasks.size(); i++) {
+    //     AsyncTasks[i].get();
+    // }
 
 }
 
