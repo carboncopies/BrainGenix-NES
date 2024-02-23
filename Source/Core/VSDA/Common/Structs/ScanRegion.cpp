@@ -40,9 +40,9 @@ std::string ScanRegion::GetDimensionsInVoxels(float _VoxelScale_um) {
     uint64_t SizeZ_ = SizeZ/_VoxelScale_um;
 
     std::string Out = "";
-    Out += std::to_string(SizeX) + "XVox, ";
-    Out += std::to_string(SizeY) + "YVox, ";
-    Out += std::to_string(SizeZ) + "ZVox";
+    Out += std::to_string(SizeX_) + "XVox, ";
+    Out += std::to_string(SizeY_) + "YVox, ";
+    Out += std::to_string(SizeZ_) + "ZVox";
 
     return Out;
 
