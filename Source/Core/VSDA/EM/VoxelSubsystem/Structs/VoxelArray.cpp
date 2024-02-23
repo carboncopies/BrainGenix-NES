@@ -118,7 +118,6 @@ void VoxelArray::ClearArrayThreaded(int _NumThreads) {
         VoxelType* Array = Data_.get();
 
         AsyncTasks.push_back(std::async(std::launch::async, [Array, ThreadStartIndex, ThreadEndIndex, Empty]{
-            std::cout<<ThreadStartIndex<<"|"<<ThreadEndIndex<<std::endl<<std::flush;
             for (uint64_t i = ThreadStartIndex; i < ThreadEndIndex; i++) {
                 Array[i] = Empty;
             }
