@@ -198,7 +198,15 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     }
 
 
-    _Simulation->VSDAData_.Array_ = std::make_unique<VoxelArray>();
+    // Now, release memory by creating an empty array, which will cause the unique_ptr for the previous array to be destroyed
+    ScanRegion Empty;
+    Empty.Point1X_um = 0.;
+    Empty.Point1Y_um = 0.;
+    Empty.Point1Z_um = 0.;
+    Empty.Point2X_um = 0.;
+    Empty.Point2Y_um = 0.;
+    Empty.Point2Z_um = 0.;
+    _Simulation->VSDAData_.Array_ = std::make_unique<VoxelArray>(_Logger, Empty, 999.);
     _Simulation->VSDAData_.State_ = VSDA_RENDER_DONE;
 
     return true;
