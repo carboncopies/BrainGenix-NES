@@ -59,19 +59,20 @@ bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo
             for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _WorldInfo.VoxelScale_um) {
                 if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z), _WorldInfo)) {
 
-                    // Now, generate the color based on some noise constraints
+                    // Now, generate the color based on some noise constraints, Clamp it between 0 and 1, then scale based on parameters
                     float SpatialScale = _Params->SpatialScale_;
                     double NoiseValue = _Generator->GetValue(X * SpatialScale, Y * SpatialScale, Z * SpatialScale);
                     NoiseValue = (NoiseValue / 2.) + 0.5;
                     NoiseValue *= _Params->NoiseIntensity_;
 
                     double VoxelColorValue = _Params->DefaultIntensity_ - NoiseValue;
+                    VoxelColorValue = std::min(255., VoxelColorValue);
+                    VoxelColorValue = std::max(0., VoxelColorValue);
 
 
                     // Now, limit this to 128-255, and scale accordingly
                     int FinalVoxelValue = (VoxelColorValue / 2.) + 128;
-                    assert(FinalVoxelValue > VOXELSTATE_MAX_VALUE);
-                    assert(FinalVoxelValue < 256);
+                    assert(FinalVoxelValue > VOXELSTATE_MAX_VALUE && FinalVoxelValue <= 255);
                     _Array->SetVoxelIfNotDarker(X, Y, Z, FinalVoxelValue);
                 }
             }
