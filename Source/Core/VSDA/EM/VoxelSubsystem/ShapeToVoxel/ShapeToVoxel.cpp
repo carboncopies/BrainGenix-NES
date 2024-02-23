@@ -100,18 +100,9 @@ bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo
 
 }
 
-// NOTE: This needs a different FillShape function, because we will not be going through the bounding box and testing if in shape.
-//       Instead, we will be placing rotated points that are in the shape.
 bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
-
-    assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
-
-    // _Cylinder->WriteToVoxelArray(_Array, _WorldInfo);
-
-
-
     assert(_Array != nullptr);
-    assert(_WorldInfo.VoxelScale_um != 0.);
+    assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
 
     // Rotate The Endpoints Around World Origin By Amount Set In World Info
     Geometries::Vec3D RotatedEnd0 = _Cylinder->End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
@@ -168,7 +159,31 @@ bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, VSDA::WorldInfo& _WorldI
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
 
 
-    _Box->WriteToVoxelArray(_Array, _WorldInfo);
+    // Now fill it (based on the algorithm in GetPointCloud)
+    float stepsize = 0.5*_WorldInfo.VoxelScale_um;
+
+    float half_xlen = _Box->Dims_um.x / 2.0;
+    float half_ylen = _Box->Dims_um.y / 2.0;
+    float half_zlen = _Box->Dims_um.z / 2.0;
+
+    for (float x = -half_xlen; x <= half_xlen; x += stepsize) {
+        for (float y = -half_ylen; y <= half_ylen; y += stepsize) {
+            for (float z = -half_zlen; z <= half_zlen; z += stepsize) {
+
+                // Firstly, we create and rotate the local-space points (around object center)
+                Geometries::Vec3D Point(x, y, z);
+                Point = Point.rotate_around_xyz(_Box->Rotations_rad.x, _Box->Rotations_rad.y, _Box->Rotations_rad.z);
+
+                // Now we transform and rotate around world origin
+                Point = Point + _Box->Center_um;
+                Point = Point.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+
+                // Rather than making a point cloud like before, we just write it directly into the array
+                _Array->SetVoxelIfNotDarker(Point.x, Point.y, Point.z, 145);
+
+            }
+        }
+    }
 
 
 
