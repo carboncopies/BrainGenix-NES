@@ -84,7 +84,7 @@ VoxelArray::~VoxelArray() {
     // delete[] Data_;
 }
 
-
+// this works
 void VoxelArray::ClearArray() {
 
     std::memset(Data_.get(), 0, DataMaxLength_*sizeof(VoxelType));
@@ -96,6 +96,8 @@ void VoxelArray::ClearArray() {
 
 }
 
+
+// this doesn't - why? fix tomorrow.
 void VoxelArray::ClearArrayThreaded(int _NumThreads) {
 
     // Calculate Start Ptr, StepSize
