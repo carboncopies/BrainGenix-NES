@@ -62,7 +62,7 @@ struct Box : Geometry {
     virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo);
 
     //! Returns a point cloud that can be used to fill voxels representing the cylinder.
-    std::vector<Vec3D> GetPointCloud(float _VoxelScale);
+    // std::vector<Vec3D> GetPointCloud(float _VoxelScale);
 
 
 
@@ -75,7 +75,7 @@ struct Box : Geometry {
      * @param _VoxelScale 
      * @param _Array 
      */
-    void WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo);
+    // void WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo);
     void WriteToVoxelArray(VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo, VSDA::WorldInfo& _WorldInfo);
 
 

@@ -28,7 +28,7 @@ Geometries::Vec3D RotatedVec(float _X, float _Y, float _Z, float _RY, float _RZ,
     return _Translate + RotateAroundYZ(NewVec, _RY, _RZ);
 }
 
-int GenerateVoxelColor(float _X_um, float _Y_um, float _Z_um, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
+int GenerateVoxelColor(float _X_um, float _Y_um, float _Z_um, MicroscopeParameters* _Params, noise::module::Perlin* _Generator, int _Offset=0) {
 
     // Now, generate the color based on some noise constraints, Clamp it between 0 and 1, then scale based on parameters
     float SpatialScale = _Params->SpatialScale_;
@@ -37,6 +37,7 @@ int GenerateVoxelColor(float _X_um, float _Y_um, float _Z_um, MicroscopeParamete
     NoiseValue *= _Params->NoiseIntensity_;
 
     double VoxelColorValue = _Params->DefaultIntensity_ - NoiseValue;
+    VoxelColorValue += _Offset;
     VoxelColorValue = std::min(255., VoxelColorValue);
     VoxelColorValue = std::max(0., VoxelColorValue);
 
@@ -153,7 +154,7 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::Wor
     return true;
 }
 
-bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, VSDA::WorldInfo& _WorldInfo) {
+bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_Array != nullptr);
     assert(_Box != nullptr);
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
@@ -179,7 +180,8 @@ bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, VSDA::WorldInfo& _WorldI
                 Point = Point.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
                 // Rather than making a point cloud like before, we just write it directly into the array
-                _Array->SetVoxelIfNotDarker(Point.x, Point.y, Point.z, 145);
+                int FinalVoxelValue = GenerateVoxelColor(Point.x, Point.y, Point.z, _Params, _Generator, -100);
+                _Array->SetVoxelIfNotDarker(Point.x, Point.y, Point.z, FinalVoxelValue);
 
             }
         }

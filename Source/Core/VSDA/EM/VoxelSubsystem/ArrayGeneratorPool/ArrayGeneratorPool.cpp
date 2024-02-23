@@ -86,7 +86,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             else if (GeometryCollection->IsBox(ShapeID)) {
                 Geometries::Box & ThisBox = GeometryCollection->GetBox(ShapeID); 
                 ShapeName = "Box";
-                FillBox(Array, &ThisBox, ThisTask->WorldInfo_);
+                FillBox(Array, &ThisBox, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
             }
             else if (GeometryCollection->IsCylinder(ShapeID)) {
                 Geometries::Cylinder & ThisCylinder = GeometryCollection->GetCylinder(ShapeID);
