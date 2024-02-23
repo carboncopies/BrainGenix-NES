@@ -198,7 +198,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     }
 
 
-
+    _Simulation->VSDAData_.Array_ = std::make_unique<VoxelArray>();
     _Simulation->VSDAData_.State_ = VSDA_RENDER_DONE;
 
     return true;
