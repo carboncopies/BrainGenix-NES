@@ -176,7 +176,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
                 ThisSubRegion.Region = ThisRegion;
 
 
-                _Logger->Log("Created SubRegion At Location " + ThisRegion.ToString() + " Of Size " + ThisRegion.GetVoxelSize(Params->VoxelResolution_um), 3);
+                _Logger->Log("Created SubRegion At Location " + ThisRegion.ToString() + " Of Size " + ThisRegion.GetDimensionsInVoxels(Params->VoxelResolution_um), 3);
 
                 SubRegions.push_back(ThisSubRegion);
 
