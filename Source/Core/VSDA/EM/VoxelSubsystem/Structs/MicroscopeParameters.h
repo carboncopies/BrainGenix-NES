@@ -62,9 +62,9 @@ struct MicroscopeParameters {
 
 
     bool  GeneratePerlinNoise_ = true; /**Enable or disable perlin noise inside compartments, this is used to simulate cell guts basically*/
-    float NoiseIntensity_ = 100; /**How much we scale the noise by*/
+    float NoiseIntensity_ = 150; /**How much we scale the noise by*/
     float DefaultIntensity_ = 255; /**What the default color of each compartment is without noise (0-255)*/
-    float SpatialScale_ = 4.; /**Set the multiplier for which the x,y,z steps are multiplied by*/
+    float SpatialScale_ = 10.; /**Set the multiplier for which the x,y,z steps are multiplied by*/
 
 };
 
