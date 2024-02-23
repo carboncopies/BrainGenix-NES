@@ -35,13 +35,15 @@
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-
+#include <noise/noise.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
 #include <Simulator/Geometries/GeometryCollection.h>
 
 #include <VSDA/Common/Structs/WorldInfo.h>
+
+#include <VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h>
 
 
 namespace BG {
@@ -82,7 +84,7 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::Wor
  * @return true 
  * @return false 
  */
-bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo& _WorldInfo);
+bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);
 
 /**
  * @brief Simply fills everything in the bounding box.

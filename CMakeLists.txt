@@ -77,6 +77,8 @@ find_package(vsg CONFIG REQUIRED)
 message(STATUS "Setting Up STB Library")
 find_package(Stb REQUIRED)
 
+message(STATUS "Setting Up LibNoies Library")
+find_package(unofficial-noise CONFIG REQUIRED)
 
 # Compiler optimizations
 find_package(AVX)
@@ -90,6 +92,7 @@ endif()
 # Internal Deps
 message(STATUS "Finding bg-common-logger Package")
 find_package(bg-common-logger CONFIG REQUIRED)
+
 
 
 

@@ -269,6 +269,7 @@ target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE
     # Boost::program_options
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
+    unofficial::noise::noise-static
 
     NESRenderer
     VersioningSystem
@@ -289,6 +290,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     # Boost::program_options
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
+    unofficial::noise::noise-static
 
     NESRenderer
     VersioningSystem

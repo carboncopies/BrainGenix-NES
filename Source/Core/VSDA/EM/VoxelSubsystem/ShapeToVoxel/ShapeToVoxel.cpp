@@ -47,16 +47,25 @@ bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
 
 }
 
-bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo& _WorldInfo) {
-
+bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
+    assert(_Params != nullptr);
+    assert(_Generator != nullptr);
+
     BoundingBox BB = _Shape->GetBoundingBox(_WorldInfo);
 
     for (float X = BB.bb_point1[0]; X < BB.bb_point2[0]; X+= _WorldInfo.VoxelScale_um) {
         for (float Y = BB.bb_point1[1]; Y < BB.bb_point2[1]; Y+= _WorldInfo.VoxelScale_um) {
             for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _WorldInfo.VoxelScale_um) {
                 if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z), _WorldInfo)) {
-                    _Array->SetVoxelIfNotDarker(X, Y, Z, 255);
+
+                    // Now, generate the color based on some noise constraints
+                    double NoiseValue = _Generator->GetValue(X, Y, Z);
+                    NoiseValue *= _Params->NoiseIntensity_;
+
+                    double VoxelColorValue = _Params->DefaultIntensity_ - NoiseValue;
+
+                    _Array->SetVoxelIfNotDarker(X, Y, Z, VoxelColorValue);
                 }
             }
         }

@@ -47,6 +47,8 @@
 
 #include <VSDA/Common/Structs/WorldInfo.h>
 
+#include <VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h>
+
 
 namespace BG {
 namespace NES {
@@ -61,12 +63,12 @@ namespace VoxelArrayGenerator {
  */
 struct Task {
 
-    size_t                          ShapeID_;            /**Index of the relevant shape from the shapes array of the simulation.*/
-    // float                           VoxelResolution_um_; /**Set the resolution size of each voxel on axis in microns.*/
-    VSDA::WorldInfo                 WorldInfo_;          /**World info data used for offsetting rotations, setting voxel scale, etc.*/
-    Geometries::GeometryCollection* GeometryCollection_; /**Pointer to instance of the simulation's geometry collection.*/ 
-    std::atomic_bool                IsDone_ = false;     /**Indicates if this task has been processed or not.*/
-    VoxelArray*                     Array_ = nullptr;    /**Pointer to the voxel array that we're writing to.*/
+    size_t                          ShapeID_;              /**Index of the relevant shape from the shapes array of the simulation.*/
+    VSDA::WorldInfo                 WorldInfo_;            /**World info data used for offsetting rotations, setting voxel scale, etc.*/
+    Geometries::GeometryCollection* GeometryCollection_;   /**Pointer to instance of the simulation's geometry collection.*/ 
+    std::atomic_bool                IsDone_ = false;       /**Indicates if this task has been processed or not.*/
+    VoxelArray*                     Array_ = nullptr;      /**Pointer to the voxel array that we're writing to.*/
+    MicroscopeParameters*           Parameters_ = nullptr; /**Pointer to instance of the microscope parameters struct, used to get info about noise params, etc.*/
 
 };
 

@@ -120,6 +120,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         Task->GeometryCollection_ = &_Sim->Collection;
         Task->ShapeID_ = ThisReceptor->ShapeID;
         Task->WorldInfo_ = Info;
+        Task->Parameters_ = _Params;
 
 
         // Now submit to render queue if it's inside the region, otherwise skip it

@@ -60,6 +60,11 @@ struct MicroscopeParameters {
     float MicroscopeFOV_deg; /**Field of view of the microscope camera in degrees, we autoposition the height so this doesn't change anything other than the perspective effects.*/
     int NumPixelsPerVoxel_px; /**Sets the size of each voxel in pixels in the fully rendered image (approximately).*/
 
+
+    bool  GeneratePerlinNoise_ = true; /**Enable or disable perlin noise inside compartments, this is used to simulate cell guts basically*/
+    float NoiseIntensity_ = 50; /**How much we scale the noise by*/
+    float DefaultIntensity_ = 255; /**What the default color of each compartment is without noise (0-255)*/
+
 };
 
 

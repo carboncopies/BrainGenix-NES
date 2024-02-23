@@ -11,6 +11,7 @@
     "rpclib",
     "vsg",
     "cpp-base64",
-    "stb"
+    "stb",
+    "libnoise"
   ]
 }
