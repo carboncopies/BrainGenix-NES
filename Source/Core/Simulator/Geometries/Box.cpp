@@ -111,38 +111,38 @@ void add_rectangle_points(float _x, float _ylen, float _zlen, float _VoxelScale,
 
 
 
-void Box::WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo) {
-    assert(_Array != nullptr);
-    assert(_WorldInfo.VoxelScale_um != 0.);
+// void Box::WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo) {
+//     assert(_Array != nullptr);
+//     assert(_WorldInfo.VoxelScale_um != 0.);
 
 
-    // Now fill it (based on the algorithm in GetPointCloud)
-    float stepsize = 0.5*_WorldInfo.VoxelScale_um;
+//     // Now fill it (based on the algorithm in GetPointCloud)
+//     float stepsize = 0.5*_WorldInfo.VoxelScale_um;
 
-    float half_xlen = Dims_um.x / 2.0;
-    float half_ylen = Dims_um.y / 2.0;
-    float half_zlen = Dims_um.z / 2.0;
+//     float half_xlen = Dims_um.x / 2.0;
+//     float half_ylen = Dims_um.y / 2.0;
+//     float half_zlen = Dims_um.z / 2.0;
 
-    for (float x = -half_xlen; x <= half_xlen; x += stepsize) {
-        for (float y = -half_ylen; y <= half_ylen; y += stepsize) {
-            for (float z = -half_zlen; z <= half_zlen; z += stepsize) {
+//     for (float x = -half_xlen; x <= half_xlen; x += stepsize) {
+//         for (float y = -half_ylen; y <= half_ylen; y += stepsize) {
+//             for (float z = -half_zlen; z <= half_zlen; z += stepsize) {
 
-                // Firstly, we create and rotate the local-space points (around object center)
-                Vec3D Point(x, y, z);
-                Point = Point.rotate_around_xyz(Rotations_rad.x, Rotations_rad.y, Rotations_rad.z);
+//                 // Firstly, we create and rotate the local-space points (around object center)
+//                 Vec3D Point(x, y, z);
+//                 Point = Point.rotate_around_xyz(Rotations_rad.x, Rotations_rad.y, Rotations_rad.z);
 
-                // Now we transform and rotate around world origin
-                Point = Point + Center_um;
-                Point = Point.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+//                 // Now we transform and rotate around world origin
+//                 Point = Point + Center_um;
+//                 Point = Point.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
-                // Rather than making a point cloud like before, we just write it directly into the array
-                _Array->SetVoxelIfNotDarker(Point.x, Point.y, Point.z, 145);
+//                 // Rather than making a point cloud like before, we just write it directly into the array
+//                 _Array->SetVoxelIfNotDarker(Point.x, Point.y, Point.z, 145);
 
-            }
-        }
-    }
+//             }
+//         }
+//     }
 
-}
+// }
 
 void Box::WriteToVoxelArray(VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo, VSDA::WorldInfo& _WorldInfo) {
     assert(_Array != nullptr);
@@ -182,29 +182,29 @@ void Box::WriteToVoxelArray(VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::Vo
 
 
 
-//! Returns a point cloud that can be used to fill voxels representing the box.
-std::vector<Vec3D> Box::GetPointCloud(float _VoxelScale) {
-    std::vector<Vec3D> point_cloud;
+// //! Returns a point cloud that can be used to fill voxels representing the box.
+// std::vector<Vec3D> Box::GetPointCloud(float _VoxelScale) {
+//     std::vector<Vec3D> point_cloud;
 
-    // 1. Imagine the box lying flat along x and at the origin and walk along its length.
-    float d = Dims_um.x;
-    float stepsize = 0.5*_VoxelScale;
-    for (float x = 0.0; x <= d; x += stepsize) {
+//     // 1. Imagine the box lying flat along x and at the origin and walk along its length.
+//     float d = Dims_um.x;
+//     float stepsize = 0.5*_VoxelScale;
+//     for (float x = 0.0; x <= d; x += stepsize) {
 
-        // 2. At each step, get points in a rectangle around the axis at the right side lengths.
-        add_rectangle_points(x, Dims_um.y, Dims_um.z, stepsize, point_cloud);
+//         // 2. At each step, get points in a rectangle around the axis at the right side lengths.
+//         add_rectangle_points(x, Dims_um.y, Dims_um.z, stepsize, point_cloud);
 
-    }
+//     }
 
-    // 3. Rotate all points in the cloud according to the cylinder rotation
-    //    and translate to End0Pos_um.
-    std::vector<Vec3D> rotated_and_translated_point_cloud;
-    for (const Vec3D & p : point_cloud) {
-        rotated_and_translated_point_cloud.emplace_back(Center_um + p.rotate_around_xyz(Rotations_rad.x, Rotations_rad.y, Rotations_rad.z));
-    }
+//     // 3. Rotate all points in the cloud according to the cylinder rotation
+//     //    and translate to End0Pos_um.
+//     std::vector<Vec3D> rotated_and_translated_point_cloud;
+//     for (const Vec3D & p : point_cloud) {
+//         rotated_and_translated_point_cloud.emplace_back(Center_um + p.rotate_around_xyz(Rotations_rad.x, Rotations_rad.y, Rotations_rad.z));
+//     }
 
-    return rotated_and_translated_point_cloud;
-}
+//     return rotated_and_translated_point_cloud;
+// }
 
 bool Box::IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) {
     

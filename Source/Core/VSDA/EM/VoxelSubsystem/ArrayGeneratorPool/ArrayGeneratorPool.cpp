@@ -9,6 +9,7 @@
 #include <string>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+#include <noise/noise.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h>
@@ -43,6 +44,10 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
 
     Logger_->Log("Started ArrayGeneratorPool Thread " + std::to_string(_ThreadNumber), 0);
 
+
+    // Setup Noise Generator
+    noise::module::Perlin PerlinGenerator;
+
     // Initialize Metrics
     int SamplesBeforeUpdate = 25;
     std::vector<double> Times;
@@ -64,6 +69,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             VoxelArray* Array = ThisTask->Array_;
             std::string ShapeName = "";
             Geometries::GeometryCollection* GeometryCollection = ThisTask->GeometryCollection_;
+            assert(ThisTask->Parameters_ != nullptr);
 
 
             // -- Phase 2 -- //
@@ -75,17 +81,17 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             if (GeometryCollection->IsSphere(ShapeID)) {
                 Geometries::Sphere & ThisSphere = GeometryCollection->GetSphere(ShapeID);
                 ShapeName = "Sphere";
-                FillShape(Array, &ThisSphere, ThisTask->WorldInfo_);
+                FillShape(Array, &ThisSphere, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
             }
             else if (GeometryCollection->IsBox(ShapeID)) {
                 Geometries::Box & ThisBox = GeometryCollection->GetBox(ShapeID); 
                 ShapeName = "Box";
-                FillBox(Array, &ThisBox, ThisTask->WorldInfo_);
+                FillBox(Array, &ThisBox, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
             }
             else if (GeometryCollection->IsCylinder(ShapeID)) {
                 Geometries::Cylinder & ThisCylinder = GeometryCollection->GetCylinder(ShapeID);
                 ShapeName = "Cylinder";
-                FillCylinder(Array, &ThisCylinder, ThisTask->WorldInfo_);
+                FillCylinder(Array, &ThisCylinder, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
             }
             
             // Update Task Result

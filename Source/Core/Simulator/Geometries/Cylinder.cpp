@@ -128,62 +128,62 @@ void add_disk_points(float _z, float _radius, float stepsize, std::vector<Vec3D>
     }
 }
 
-//! Returns a point cloud that can be used to fill voxels representing the cylinder.
-//! To use the spherical coordinates of the end-points difference
-//! vector, we have to create the cylinder around the z-axis, then
-//! use theta to rotate around the y-axis, then use phi to rotate
-//! around the z-axis.
-// for [0, 5, 0] => theta = pi/2, phi = pi/2
-// from length 5 along z: [0, 0, 5]
-// rotate around y by theta (pi/2): [5, 0, 0]
-// rotate around z by phi (pi/2): [0, 5, 0]
-// for [5, 0, 0] => theta = pi/2, phi = 0
-// from length 5 along z: [0, 0, 5]
-// rotate around y by theta (pi/2): [5, 0, 0]
-// rotate around z by phi (0): [5, 0, 0]
-// for [0, 0, 5] => theta = 0, phi = irrelevant
-// from length 5 along z: [0, 0, 5]
-// rotate around y by theta (0): [0, 0, 5]
-// rotate around z by phi (any angle): [0, 0, 5]
-std::vector<Vec3D> Cylinder::GetPointCloud(float _VoxelScale) {
-    std::vector<Vec3D> point_cloud;
+// //! Returns a point cloud that can be used to fill voxels representing the cylinder.
+// //! To use the spherical coordinates of the end-points difference
+// //! vector, we have to create the cylinder around the z-axis, then
+// //! use theta to rotate around the y-axis, then use phi to rotate
+// //! around the z-axis.
+// // for [0, 5, 0] => theta = pi/2, phi = pi/2
+// // from length 5 along z: [0, 0, 5]
+// // rotate around y by theta (pi/2): [5, 0, 0]
+// // rotate around z by phi (pi/2): [0, 5, 0]
+// // for [5, 0, 0] => theta = pi/2, phi = 0
+// // from length 5 along z: [0, 0, 5]
+// // rotate around y by theta (pi/2): [5, 0, 0]
+// // rotate around z by phi (0): [5, 0, 0]
+// // for [0, 0, 5] => theta = 0, phi = irrelevant
+// // from length 5 along z: [0, 0, 5]
+// // rotate around y by theta (0): [0, 0, 5]
+// // rotate around z by phi (any angle): [0, 0, 5]
+// std::vector<Vec3D> Cylinder::GetPointCloud(float _VoxelScale) {
+//     std::vector<Vec3D> point_cloud;
 
-    // 0. Get rotation angles and length (r, theta, phi).
-    Vec3D diff = End1Pos_um - End0Pos_um;
-    Vec3D diff_spherical_coords = diff.cartesianToSpherical();
-    float rot_y = diff_spherical_coords.theta();
-    float rot_z = diff_spherical_coords.phi();
-    //std::cout << "Rot y: " << rot_y << '\n';
-    //std::cout << "Rot z: " << rot_z << '\n';
+//     // 0. Get rotation angles and length (r, theta, phi).
+//     Vec3D diff = End1Pos_um - End0Pos_um;
+//     Vec3D diff_spherical_coords = diff.cartesianToSpherical();
+//     float rot_y = diff_spherical_coords.theta();
+//     float rot_z = diff_spherical_coords.phi();
+//     //std::cout << "Rot y: " << rot_y << '\n';
+//     //std::cout << "Rot z: " << rot_z << '\n';
 
-    // 1. Imagine the cylinder lying flat along x and at the origin and walk along its length.
-    float distance = diff_spherical_coords.r();
-    float radius_difference = End1Radius_um - End0Radius_um;
-    float stepsize = 0.5*_VoxelScale;
-    for (float z = -distance/2.0; z <= distance/2.0; z += stepsize) {
-        // 2. At each step, get points in a disk around the axis at the right radius.
-        float d_ratio = z / distance;
-        float radius = End0Radius_um + d_ratio*radius_difference; // Radius at this position on the axis.
-        add_disk_points(z, radius, stepsize, point_cloud);
+//     // 1. Imagine the cylinder lying flat along x and at the origin and walk along its length.
+//     float distance = diff_spherical_coords.r();
+//     float radius_difference = End1Radius_um - End0Radius_um;
+//     float stepsize = 0.5*_VoxelScale;
+//     for (float z = -distance/2.0; z <= distance/2.0; z += stepsize) {
+//         // 2. At each step, get points in a disk around the axis at the right radius.
+//         float d_ratio = z / distance;
+//         float radius = End0Radius_um + d_ratio*radius_difference; // Radius at this position on the axis.
+//         add_disk_points(z, radius, stepsize, point_cloud);
 
-    }
+//     }
 
-    // 3. Rotate all points in the cloud according to the cylinder rotation
-    //    and translate to End0Pos_um.
-    Vec3D spherical_halfdist_v(distance/2.0, rot_y, rot_z);
-    Vec3D cartesian_halfdist_v = spherical_halfdist_v.sphericalToCartesian();
-    //std::cout << "Cartesian half-distance: " << cartesian_halfdist_v.str() << '\n';
-    Vec3D translate = End0Pos_um + cartesian_halfdist_v;
-    //std::cout << "Translate: " << translate.str() << '\n';
-    std::vector<Vec3D> rotated_and_translated_point_cloud;
-    for (const Vec3D & p : point_cloud) { // Beware that the order of rotations is important!
-        Vec3D p_roty = p.rotate_around_y(rot_y);
-        rotated_and_translated_point_cloud.emplace_back(translate + p_roty.rotate_around_z(rot_z));
-    }
+//     // 3. Rotate all points in the cloud according to the cylinder rotation
+//     //    and translate to End0Pos_um.
+//     Vec3D spherical_halfdist_v(distance/2.0, rot_y, rot_z);
+//     Vec3D cartesian_halfdist_v = spherical_halfdist_v.sphericalToCartesian();
+//     //std::cout << "Cartesian half-distance: " << cartesian_halfdist_v.str() << '\n';
+//     Vec3D translate = End0Pos_um + cartesian_halfdist_v;
+//     //std::cout << "Translate: " << translate.str() << '\n';
+//     std::vector<Vec3D> rotated_and_translated_point_cloud;
+//     for (const Vec3D & p : point_cloud) { // Beware that the order of rotations is important!
+//         Vec3D p_roty = p.rotate_around_y(rot_y);
+//         rotated_and_translated_point_cloud.emplace_back(translate + p_roty.rotate_around_z(rot_z));
+//     }
 
 
-    return rotated_and_translated_point_cloud;
-}
+//     return rotated_and_translated_point_cloud;
+// }
 
 
 
@@ -201,52 +201,52 @@ Vec3D RotatedVec(float _X, float _Y, float _Z, float _RY, float _RZ, Vec3D _Tran
 
 
 
-void Cylinder::WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo) {
-    assert(_Array != nullptr);
-    assert(_WorldInfo.VoxelScale_um != 0.);
+// void Cylinder::WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo) {
+//     assert(_Array != nullptr);
+//     assert(_WorldInfo.VoxelScale_um != 0.);
 
-    // Rotate The Endpoints Around World Origin By Amount Set In World Info
-    Geometries::Vec3D RotatedEnd0 = End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
-    Geometries::Vec3D RotatedEnd1 = End1Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+//     // Rotate The Endpoints Around World Origin By Amount Set In World Info
+//     Geometries::Vec3D RotatedEnd0 = End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+//     Geometries::Vec3D RotatedEnd1 = End1Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
-    // 0. Get rotation angles and length (r, theta, phi).
-    Vec3D diff = RotatedEnd1 - RotatedEnd0;
-    Vec3D diff_spherical_coords = diff.cartesianToSpherical();
-    float rot_y = diff_spherical_coords.theta();
-    float rot_z = diff_spherical_coords.phi();
+//     // 0. Get rotation angles and length (r, theta, phi).
+//     Vec3D diff = RotatedEnd1 - RotatedEnd0;
+//     Vec3D diff_spherical_coords = diff.cartesianToSpherical();
+//     float rot_y = diff_spherical_coords.theta();
+//     float rot_z = diff_spherical_coords.phi();
 
-    float distance = diff_spherical_coords.r();
-    float radius_difference = End1Radius_um - End0Radius_um;
-    float stepsize = 0.5*_WorldInfo.VoxelScale_um;
+//     float distance = diff_spherical_coords.r();
+//     float radius_difference = End1Radius_um - End0Radius_um;
+//     float stepsize = 0.5*_WorldInfo.VoxelScale_um;
 
-    Vec3D spherical_halfdist_v(distance/2.0, rot_y, rot_z);
-    Vec3D cartesian_halfdist_v = spherical_halfdist_v.sphericalToCartesian();
-    Vec3D translate = RotatedEnd0 + cartesian_halfdist_v;
-
-
-    // Calculate all the points and stuff them intot he array
-    for (float z = -distance/2.0; z <= distance/2.0; z += stepsize) {
-        // 2. At each step, get points in a disk around the axis at the right radius.
-        float d_ratio = z / distance;
-        float radius = End0Radius_um + d_ratio*radius_difference; // Radius at this position on the axis.
-
-        Vec3D RotatedPoint = RotatedVec(0.0, 0.0, z, rot_y, rot_z, translate);
-        _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, 255);
-
-        for (float r = stepsize; r <= radius; r += stepsize) {
-            float radians_per_step = stepsize / r;
-            for (float theta = 0; theta < 2.0*M_PI; theta += radians_per_step) {
-                float y = r*std::cos(theta);
-                float x = r*std::sin(theta);
-                Vec3D RotatedPoint = RotatedVec(x, y, z, rot_y, rot_z, translate);
-                _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, 255);
-            }
-        }
-
-    }
+//     Vec3D spherical_halfdist_v(distance/2.0, rot_y, rot_z);
+//     Vec3D cartesian_halfdist_v = spherical_halfdist_v.sphericalToCartesian();
+//     Vec3D translate = RotatedEnd0 + cartesian_halfdist_v;
 
 
-}
+//     // Calculate all the points and stuff them intot he array
+//     for (float z = -distance/2.0; z <= distance/2.0; z += stepsize) {
+//         // 2. At each step, get points in a disk around the axis at the right radius.
+//         float d_ratio = z / distance;
+//         float radius = End0Radius_um + d_ratio*radius_difference; // Radius at this position on the axis.
+
+//         Vec3D RotatedPoint = RotatedVec(0.0, 0.0, z, rot_y, rot_z, translate);
+//         _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, 255);
+
+//         for (float r = stepsize; r <= radius; r += stepsize) {
+//             float radians_per_step = stepsize / r;
+//             for (float theta = 0; theta < 2.0*M_PI; theta += radians_per_step) {
+//                 float y = r*std::cos(theta);
+//                 float x = r*std::sin(theta);
+//                 Vec3D RotatedPoint = RotatedVec(x, y, z, rot_y, rot_z, translate);
+//                 _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, 255);
+//             }
+//         }
+
+//     }
+
+
+// }
 
 
 
