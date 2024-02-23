@@ -103,6 +103,8 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
         double TotalSliceHeight = abs((double)VSDAData_->Array_->GetBoundingBox().bb_point1[1] - (double)VSDAData_->Array_->GetBoundingBox().bb_point2[1]);
         int TotalXSteps = ceil(TotalSliceWidth / CameraStepSizeX_um);
         int TotalYSteps = ceil(TotalSliceHeight / CameraStepSizeY_um);
+        TotalXSteps = std::min(TotalXSteps, _SubRegion->MaxImagesX);
+        TotalYSteps = std::min(TotalYSteps, _SubRegion->MaxImagesY);
 
         int ImagesPerSlice = TotalXSteps * TotalYSteps;
 
