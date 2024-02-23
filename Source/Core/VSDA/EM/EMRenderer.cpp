@@ -148,9 +148,9 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
                 // The std::min stuff is to ensure that if we're on the edge of the base region, we don't exceed the user-defined limit
                 // In other words, the std::min is to account for the ceil we took earlier with the NumSubRegionsInDim 
                 // Also, we add the step of voxelresolution to ensure there are no rounding errors that cause a blue line to occur.
-                double SubRegionEndX_um = std::min((XStep + 1) * SubRegionStepSizeX_um + BaseRegionOffsetX_um + SubRegionOverlapX_um + Params->VoxelResolution_um, (double)BaseRegion->Point2X_um);
-                double SubRegionEndY_um = std::min((YStep + 1) * SubRegionStepSizeY_um + BaseRegionOffsetY_um + SubRegionOverlapY_um + Params->VoxelResolution_um, (double)BaseRegion->Point2Y_um);
-                double SubRegionEndZ_um = std::min((ZStep + 1) * SubRegionStepSizeZ_um + BaseRegionOffsetZ_um, (double)BaseRegion->Point2Z_um);
+                double SubRegionEndX_um = std::min(BaseRegionOffsetX_um + ((XStep + 1) * SubRegionStepSizeX_um) + SubRegionOverlapX_um + Params->VoxelResolution_um, (double)BaseRegion->Point2X_um);
+                double SubRegionEndY_um = std::min(BaseRegionOffsetY_um + ((YStep + 1) * SubRegionStepSizeY_um) + SubRegionOverlapY_um + Params->VoxelResolution_um, (double)BaseRegion->Point2Y_um);
+                double SubRegionEndZ_um = std::min(BaseRegionOffsetZ_um + ((ZStep + 1) * SubRegionStepSizeZ_um), (double)BaseRegion->Point2Z_um);
 
 
 
