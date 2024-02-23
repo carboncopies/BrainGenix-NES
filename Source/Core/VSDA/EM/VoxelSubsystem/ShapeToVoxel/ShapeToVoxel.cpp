@@ -91,13 +91,7 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::Wor
 
     _Cylinder->WriteToVoxelArray(_Array, _WorldInfo);
 
-    // // 1. Get rotated point cloud.
-    // std::vector<Geometries::Vec3D> point_cloud = _Cylinder->GetPointCloud(_VoxelScale);
 
-    // // 2. Set corresponding voxels.
-    // for (const Geometries::Vec3D & p : point_cloud) {
-    //     _Array->SetVoxelAtPosition(p.x, p.y, p.z, FILLED);
-    // }
 
     return true;
 }
@@ -110,15 +104,7 @@ bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, VSDA::WorldInfo& _WorldI
 
     _Box->WriteToVoxelArray(_Array, _WorldInfo);
 
-    // // 1. Get rotated point cloud.
-    // std::vector<Geometries::Vec3D> point_cloud;
-    // _Box->GetPointCloudFast(_VoxelScale, &point_cloud);
 
-    // // 2. Set corresponding voxels.
-    // for (const Geometries::Vec3D & p : point_cloud) {
-    //     //std::cout << "Point: " << p.str() << '\n';
-    //     _Array->SetVoxelAtPosition(p.x, p.y, p.z, FILLED);
-    // }
 
     return true;
 }
