@@ -145,7 +145,9 @@ VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
 
     // Check Bounds
     if ((_X < 0 || _X >= SizeX_) || (_Y < 0 || _Y >= SizeY_) || (_Z < 0 || _Z >= SizeZ_)) {
-        return OUT_OF_RANGE;
+        VoxelType Ret;
+        Ret.State_ = OUT_OF_RANGE;
+        return Ret;
     }
 
     // Hope this works (please work dear god don't segfault)
@@ -153,7 +155,9 @@ VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
     if (Index < DataMaxLength_) {
         return Data_.get()[Index];
     }
-    return OUT_OF_RANGE;
+    VoxelType Ret;
+    Ret.State_ = OUT_OF_RANGE;
+    return Ret;
 
 }
 
@@ -200,7 +204,7 @@ void VoxelArray::SetVoxelIfNotDarker(float _X, float _Y, float _Z, VoxelType _Va
     VoxelType ThisVoxel = GetVoxel(XIndex, YIndex, ZIndex);
 
     // Only set the color if it's not in the enum range, and it's darker than the current value (except if it's empty)
-    if ((ThisVoxel == EMPTY) || (ThisVoxel > VOXELSTATE_MAX_VALUE && ThisVoxel > _Value)) {
+    if ((ThisVoxel.State_ == EMPTY) || (ThisVoxel.State_ == VOXELSTATE_INTENSITY) && (ThisVoxel.Intensity_ > _Value.Intensity_)) {
         SetVoxel(XIndex, YIndex, ZIndex, _Value);
     }
 

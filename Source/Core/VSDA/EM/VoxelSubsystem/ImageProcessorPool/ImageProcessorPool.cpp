@@ -111,18 +111,23 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     int ThisPixelY = YVoxelIndex - Task->VoxelStartingY;
 
                     // Check if the voxel is in the enum reserved range, otherwise it's a color value from 128-255
-                    if (ThisVoxel <= VOXELSTATE_MAX_VALUE) {
-                        if (ThisVoxel == BORDER) {
+                    if (ThisVoxel.State_ == VOXELSTATE_INTENSITY) {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, ThisVoxel.Intensity_, ThisVoxel.Intensity_, ThisVoxel.Intensity_);
+                        
+                    } else {
+                        if (ThisVoxel.State_ == BORDER) {
                             OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
-                        } else if (ThisVoxel == OUT_OF_RANGE) {
+                        } else if (ThisVoxel.State_ == OUT_OF_RANGE) {
+                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
+                        } else if (ThisVoxel.State_ == VOXELSTATE_RED) {
+                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 0, 0);
+                        } else if (ThisVoxel.State_ == VOXELSTATE_GREEN) {
+                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 255, 0);
+                        } else if (ThisVoxel.State_ == VOXELSTATE_BLUE) {
                             OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
                         } else {
                             OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 100, 100, 100);
                         }
-                    } else {
-                        // Then we scale it so we get the full grey color range
-                        int ScaledColorValue = (ThisVoxel - 128) * 2;
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, ScaledColorValue, ScaledColorValue, ScaledColorValue);
                     }
 
                 }
