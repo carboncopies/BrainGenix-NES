@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include <future>
+#include <cstdlib>
 #include <vector>
 
 #include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
@@ -14,6 +15,7 @@ namespace Simulator {
 
 
 VoxelArray::VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, BoundingBox _BB, float _VoxelScale_um) {
+    Logger_ = _Logger;
 
     // Calculate Dimensions
     float SizeX = abs(_BB.bb_point1[0] - _BB.bb_point2[0]);
@@ -40,6 +42,7 @@ VoxelArray::VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, BoundingBox _
     // ClearArray();
 }
 VoxelArray::VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, ScanRegion _Region, float _VoxelScale_um) {
+    Logger_ = _Logger;
 
     // Create Bounding Box From Region, Then Call Other Constructor
     BoundingBox BB;
@@ -69,8 +72,10 @@ VoxelArray::VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, ScanRegion _R
     DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
     float SizeMiB = (sizeof(VoxelType) * DataMaxLength_) / 1024. / 1024.;
     _Logger->Log("Allocating Array Of Size " + std::to_string(SizeMiB) + "MiB In System RAM", 2);
-    Data_ = std::make_unique<VoxelType[]>(DataMaxLength_);
+    VoxelType* VoxelArrayPtr = (VoxelType*)std::malloc(DataMaxLength_ * sizeof(VoxelType));
+    Data_ = std::unique_ptr<VoxelType[]>(VoxelArrayPtr);
 
+    ClearArrayThreaded(std::thread::hardware_concurrency());
     // make unique already clears memory, so we're doing it twice.
     // Reset the array so we don't get a bunch of crap in it
     // ClearArray();
@@ -81,7 +86,6 @@ VoxelArray::~VoxelArray() {
 
     // delete[] Data_;
 }
-
 
 void VoxelArray::ClearArray() {
 
@@ -94,19 +98,29 @@ void VoxelArray::ClearArray() {
 
 }
 
+
 void VoxelArray::ClearArrayThreaded(int _NumThreads) {
 
-    // Calculate Start Ptr, StepSize
-    uint64_t StepSize = DataMaxLength_ / _NumThreads;
-    VoxelType* StartAddress = Data_.get();
+    uint64_t ElementStepSize = DataMaxLength_ / _NumThreads;
+    // VoxelType* StartAddress = Data_.get();
+
+    // Initializer
+    VoxelType Empty;
+    Empty.Intensity_ = 0;
+    Empty.State_ = EMPTY;
 
     // Create a bunch of memset tasks
     std::vector<std::future<int>> AsyncTasks;
     for (size_t i = 0; i < _NumThreads; i++) {
-        VoxelType* ThreadStartAddress = StartAddress + (StepSize * i);
-        assert(ThreadStartAddress + StepSize <= StartAddress + DataMaxLength_);
-        AsyncTasks.push_back(std::async(std::launch::async, [ThreadStartAddress, StepSize]{
-            std::memset(ThreadStartAddress, 0, StepSize);
+        // VoxelType* ThreadStartAddress = StartAddress + (ElementStepSize * i);
+        uint64_t ThreadStartIndex = (ElementStepSize * i);
+        uint64_t ThreadEndIndex = (ElementStepSize * i) + ElementStepSize;
+        VoxelType* Array = Data_.get();
+
+        AsyncTasks.push_back(std::async(std::launch::async, [Array, ThreadStartIndex, ThreadEndIndex, Empty]{
+            for (uint64_t i = ThreadStartIndex; i < ThreadEndIndex; i++) {
+                Array[i] = Empty;
+            }
             return 0;
         }));
     }
@@ -115,6 +129,7 @@ void VoxelArray::ClearArrayThreaded(int _NumThreads) {
     for (size_t i = 0; i < AsyncTasks.size(); i++) {
         AsyncTasks[i].get();
     }
+
 
 }
 
@@ -219,6 +234,38 @@ void VoxelArray::GetSize(int* _X, int* _Y, int* _Z) {
     (*_X) = int(SizeX_);
     (*_Y) = int(SizeY_);
     (*_Z) = int(SizeZ_);
+}
+
+bool VoxelArray::SetSize(int _X, int _Y, int _Z) {
+
+    uint64_t ProposedSize = uint64_t(_X) * uint64_t(_Y) * uint64_t(_Z);
+    
+    if (ProposedSize < DataMaxLength_) {
+
+        std::string ResizePercent = std::to_string((double(ProposedSize) / double(DataMaxLength_)) * 100.);
+        Logger_->Log("Resizing Voxel Array To " + std::to_string(_X) + "XVox, " + std::to_string(_Y) + "YVox, " + std::to_string(_Z) + "ZVox, ~" + ResizePercent + "% of Allocated Size", 4);
+
+        SizeX_ = _X;
+        SizeY_ = _Y;
+        SizeZ_ = _Z;
+
+        return true;
+    } else {
+        Logger_->Log("Cannot Resize Voxel Array To Requested Size, It Exceeds Currently Allocated Size", 10);
+    }
+
+    return false;
+}
+
+bool VoxelArray::SetSize(ScanRegion _TargetSize, float _VoxelScale_um) {
+    
+    // Calc size in voxels for x, y, z
+    int VoxelSizeX = _TargetSize.SizeX() / _VoxelScale_um;
+    int VoxelSizeY = _TargetSize.SizeY() / _VoxelScale_um;
+    int VoxelSizeZ = _TargetSize.SizeZ() / _VoxelScale_um;
+
+    return SetSize(VoxelSizeX, VoxelSizeY, VoxelSizeZ);
+
 }
 
 uint64_t VoxelArray::GetSize() {

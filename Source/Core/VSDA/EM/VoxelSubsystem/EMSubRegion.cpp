@@ -41,6 +41,27 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     VSDAData_->TotalSlices_ = TotalRegionThickness / VSDAData_->Params_.VoxelResolution_um;
 
 
+    // todo: fix array claring not working for some reason? (also move back create voxel array from simulation call to other place)
+
+    // Create Voxel Array
+    _Logger->Log(std::string("Creating Voxel Array Of Size ") + RequestedRegion.Dimensions() + std::string(" With Points ") + RequestedRegion.ToString(), 2);
+    uint64_t TargetArraySize = RequestedRegion.GetVoxelSize(VSDAData_->Params_.VoxelResolution_um);
+    if (VSDAData_->Array_.get() == nullptr || VSDAData_->Array_->GetSize() <= TargetArraySize) {
+        _Logger->Log("Voxel Array Does Not Exist Yet Or Is Wrong Size, (Re)Creating Now", 2);
+        VSDAData_->Array_ = std::make_unique<VoxelArray>(_Logger, RequestedRegion, VSDAData_->Params_.VoxelResolution_um);
+    } else {
+        _Logger->Log("Reusing Existing Voxel Array, Clearing Data", 2);
+        bool Status = VSDAData_->Array_->SetSize(RequestedRegion, VSDAData_->Params_.VoxelResolution_um);
+        if (!Status) {
+            _Logger->Log("Critical Internal Error, Failed to Set Size Of Voxel Array! This Should NEVER HAPPEN", 10);
+            exit(999);
+        }
+        VSDAData_->Array_->ClearArrayThreaded(std::thread::hardware_concurrency());
+        // VSDAData_->Array_->ClearArray();
+        VSDAData_->Array_->SetBB(RequestedRegion);
+    }
+
+
     // Initialize Stats
     VSDAData_->TotalSlices_ = VSDAData_->Array_.get()->GetZ();
     VSDAData_->CurrentSlice_ = 0;
@@ -48,18 +69,8 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     VSDAData_->CurrentSliceImage_ = 0;
 
 
-    // Create Voxel Array
-    _Logger->Log(std::string("Creating Voxel Array Of Size ") + RequestedRegion.Dimensions() + std::string(" With Points ") + RequestedRegion.ToString(), 2);
-    uint64_t TargetArraySize = RequestedRegion.GetVoxelSize(VSDAData_->Params_.VoxelResolution_um);
-    if (VSDAData_->Array_.get() == nullptr || VSDAData_->Array_->GetSize() != TargetArraySize) {
-        _Logger->Log("Voxel Array Does Not Exist Yet Or Is Wrong Size, (Re)Creating Now", 2);
-        VSDAData_->Array_ = std::make_unique<VoxelArray>(_Logger, RequestedRegion, VSDAData_->Params_.VoxelResolution_um);
-    } else {
-        _Logger->Log("Reusing Existing Voxel Array, Clearing Data", 2);
-        VSDAData_->Array_->ClearArrayThreaded(std::thread::hardware_concurrency());
-        VSDAData_->Array_->SetBB(RequestedRegion);
-    }
     CreateVoxelArrayFromSimulation(_Logger, Sim, &VSDAData_->Params_, VSDAData_->Array_.get(), RequestedRegion, _GeneratorPool);
+
 
 
 
@@ -93,6 +104,8 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
         double TotalSliceHeight = abs((double)VSDAData_->Array_->GetBoundingBox().bb_point1[1] - (double)VSDAData_->Array_->GetBoundingBox().bb_point2[1]);
         int TotalXSteps = ceil(TotalSliceWidth / CameraStepSizeX_um);
         int TotalYSteps = ceil(TotalSliceHeight / CameraStepSizeY_um);
+        TotalXSteps = std::min(TotalXSteps, _SubRegion->MaxImagesX);
+        TotalYSteps = std::min(TotalYSteps, _SubRegion->MaxImagesY);
 
         int ImagesPerSlice = TotalXSteps * TotalYSteps;
 
