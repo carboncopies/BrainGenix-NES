@@ -231,6 +231,8 @@ std::string VSDARPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
     ResponseJSON["TotalSliceImages"] = ThisSimulation->VSDAData_.TotalSliceImages_;
     ResponseJSON["CurrentRegion"] = ThisSimulation->VSDAData_.CurrentRegion_;
     ResponseJSON["TotalRegions"] = ThisSimulation->VSDAData_.TotalRegions_;
+    ResponseJSON["TotalImagesX"] = ThisSimulation->VSDAData_.TotalImagesX_;
+    ResponseJSON["TotalImagesY"] = ThisSimulation->VSDAData_.TotalImagesY_;
 
     return ResponseJSON.dump();
 
