@@ -103,6 +103,11 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     double MaxVoxelArraySize_um = MaxVoxelArrayAxisSize_vox * Params->VoxelResolution_um;
     int ImagesPerSubRegionX = floor(MaxVoxelArraySize_um / ImageStepSizeX_um);
     int ImagesPerSubRegionY = floor(MaxVoxelArraySize_um / ImageStepSizeY_um);
+    if (ImagesPerSubRegionX == 0 || ImagesPerSubRegionY == 0) {
+        _Logger->Log("Error, You Don't Have Enough Memory To Render Images At " + std::to_string(Params->ImageWidth_px) + " by " + std::to_string(Params->ImageHeight_px) + " Try Reducing The Image Resolution", 8);
+        _Logger->Log("Render Aborted", 9);
+        return false;
+    }
     double SubRegionStepSizeX_um = ImagesPerSubRegionX * ImageStepSizeX_um;
     double SubRegionStepSizeY_um = ImagesPerSubRegionY * ImageStepSizeY_um;
     double SubRegionStepSizeZ_um = MaxVoxelArrayAxisSize_vox * Params->VoxelResolution_um;
