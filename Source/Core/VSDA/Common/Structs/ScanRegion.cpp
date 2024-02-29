@@ -14,9 +14,9 @@ namespace Simulator {
 std::string ScanRegion::Dimensions() {
 
     std::string Out = "";
-    Out += std::to_string(Point1X_um - Point2X_um) + "X, ";
-    Out += std::to_string(Point1Y_um - Point2Y_um) + "Y, ";
-    Out += std::to_string(Point1Z_um - Point2Z_um) + "Z";
+    Out += std::to_string(fabs(Point1X_um - Point2X_um)) + "X, ";
+    Out += std::to_string(fabs(Point1Y_um - Point2Y_um)) + "Y, ";
+    Out += std::to_string(fabs(Point1Z_um - Point2Z_um)) + "Z";
 
     return Out;
 }

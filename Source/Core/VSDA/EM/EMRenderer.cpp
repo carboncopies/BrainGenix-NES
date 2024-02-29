@@ -96,6 +96,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     int NumImagesInYDimension_img = ceil(BaseRegion->SizeX() / ImageStepSizeY_um);
     _Simulation->VSDAData_.TotalImagesX_ = NumImagesInXDimension_img;
     _Simulation->VSDAData_.TotalImagesY_ = NumImagesInXDimension_img;
+    _Logger->Log("Identified The Total Number Of Images To Be '" + std::to_string(NumImagesInXDimension_img) + "'X, '" + std::to_string(NumImagesInYDimension_img) + "'Y", 4);
 
     // Nextly, we're going to figure out the step size information for the subregions.
     // This will enable us to create subregions that exactly are multiples of the image step sizes, removing any overlap (unless it's on the border, then it may overshoot slightly)
@@ -105,7 +106,9 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     double SubRegionStepSizeX_um = ImagesPerSubRegionX * ImageStepSizeX_um;
     double SubRegionStepSizeY_um = ImagesPerSubRegionY * ImageStepSizeY_um;
     double SubRegionStepSizeZ_um = MaxVoxelArrayAxisSize_vox * Params->VoxelResolution_um;
-    
+    std::string LogMsg = "Calculated Step Size For Subregions To Be '" + std::to_string(SubRegionStepSizeX_um);
+    LogMsg += "'X_um, '" + std::to_string(SubRegionStepSizeY_um) + "'Y_um, '" + std::to_string(SubRegionStepSizeZ_um) + "'Z_um";
+    _Logger->Log(LogMsg, 4);
 
     // Okay, now that we know how big each step for our subregion should be at maximum, we can now calculate the amount they need to overlap in each direction.
     // Note that Z is omitted since we don't overlap slices, just on the x,y axis not z.
@@ -118,6 +121,9 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     int NumSubRegionsInXDim = ceil(BaseRegion->SizeX() / SubRegionStepSizeX_um);
     int NumSubRegionsInYDim = ceil(BaseRegion->SizeY() / SubRegionStepSizeY_um);
     int NumSubRegionsInZDim = ceil(BaseRegion->SizeZ() / SubRegionStepSizeZ_um);
+    _Logger->Log("Calculated '" + std::to_string(NumSubRegionsInXDim) + "'X Subregions", 3);
+    _Logger->Log("Calculated '" + std::to_string(NumSubRegionsInYDim) + "'Y Subregions", 3);
+    _Logger->Log("Calculated '" + std::to_string(NumSubRegionsInZDim) + "'Z Subregions", 3);
 
 
     // Now, we go through all of the steps in each direction that we identified, and calculate the bounding boxes for each
