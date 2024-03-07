@@ -144,6 +144,11 @@ float BSNeuron::VAHPT_mV(float t_ms) {
 // Note on conventions: Using small letters (e.g. v) for variables and
 // capital letter (e.g. V) for constants, as in the papers.
 // (See description of magnitudes involved in flat ground-truth example script.)
+/**
+ * This postsynaptic update function cares only about information stored
+ * in the list of receptorData for this neuron.
+ * Morphology information is not inspected.
+ */
 float BSNeuron::VPSPT_mV(float t_ms) {
     assert(t_ms >= 0.0);
     float vPSPt_mV = 0.0;
