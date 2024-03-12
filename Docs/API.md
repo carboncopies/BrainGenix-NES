@@ -280,6 +280,33 @@ Broken right now.
         NeuronID: int
     ]
 ```
+### Simulation - Neuron - SC - Create
+ - Name: `Simulation/Neuron/SC/Create`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        SomaIDs: list,
+        AxonIDs: list,
+        DendriteIDs: list,
+        MembranePotential_mV: float,
+        RestingPotential_mV: float,
+        SpikeThreshold_mV: float,
+        DecayTime_ms: float,
+        AfterHyperpolarizationAmplitude_mV: float,
+        PostsynapticPotentialRiseTime_ms: float,
+        PostsynapticPotentialDecayTime_ms: float,
+        PostsynapticPotentialAmplitude_nA: float,
+        Name: str
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        NeuronID: int
+    ]
+```
 
 ### Simulation - PatchClampDAC - Create
  - Name: `Simulation/PatchClampDAC/Create`  
