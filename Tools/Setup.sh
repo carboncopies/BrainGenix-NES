@@ -28,8 +28,8 @@ esac
 
 # Setup, update package registry
 echo "Setting Up Packages Needed For Compilation"
-# $SUDO_PREFIX $PACKAGE_MANAGER_UPDATE_CMD || exit 1
-$SUDO_PREFIX $PACKAGE_MANAGER_UPDATE_CMD
+# $SUDO_PREFIX "$PACKAGE_MANAGER_UPDATE_CMD" || exit 1
+$SUDO_PREFIX "$PACKAGE_MANAGER_UPDATE_CMD"
 
 
 # Install Compiler Tools
@@ -47,7 +47,7 @@ VCPKG_DEPS="curl zip unzip tar pkg-config autoconf flex bison"
 # Vulkan Dependencies
 if [ "$DISTRO" = "arch" ]; then
     VULKAN_DEPS="vulkan-devel"
-else if [ "$DISTRO" = "fedora" ]; then
+elif [ "$DISTRO" = "fedora" ]; then
     VULKAN_DEPS="libvulkan-dev vulkan-validationlayers-dev vulkan-tools libxcb-xfixes0-dev libx11-dev libxrandr-dev"  
 else
     VULKAN_DEPS="libvulkan-dev vulkan-validationlayers-dev vulkan-tools libxcb-xfixes0-dev libx11-dev libxrandr-dev"  
