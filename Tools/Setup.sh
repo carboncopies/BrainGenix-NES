@@ -61,7 +61,7 @@ $INSTALL_COMMAND
 
 # Update Submodules
 echo "Updating Submodules"
-git submodule update --init
+git submodule update --init --recursive
 
 # Bootstrap vcpkg
 echo "Setting Up vcpkg"
