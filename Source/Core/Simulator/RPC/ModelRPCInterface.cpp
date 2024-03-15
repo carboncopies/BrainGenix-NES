@@ -1,6 +1,8 @@
 #include <Simulator/RPC/ModelRPCInterface.h>
 #include <Simulator/Distributions/Generic.h>
 #include <RPC/APIStatusCode.h>
+#include <Simulator/SimpleCompartmental/SCNeuron.h>
+
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -286,7 +288,7 @@ std::string ModelRPCInterface::SCNeuronCreate(std::string _JSONRequest) {
 
     C.ID = Handle.Sim()->Neurons.size();
     
-    Handle.Sim()->Neurons.push_back(std::make_shared<SimpleCompartmental::SCNeuron>(C));
+    Handle.Sim()->Neurons.push_back(std::make_shared<SCNeuron>(C, *(Handle.Sim())));
     for (const auto & SomaID : C.SomaCompartmentIDs) {
         Handle.Sim()->NeuronByCompartment.emplace(SomaID, C.ID);
     }

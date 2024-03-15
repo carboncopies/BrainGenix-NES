@@ -120,6 +120,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.cpp
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.h
 
+  ${SRC_DIR}/Core/Simulator/SimpleCompartmental/SCNeuron.h
+  ${SRC_DIR}/Core/Simulator/SimpleCompartmental/SCNeuron.cpp
 
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h

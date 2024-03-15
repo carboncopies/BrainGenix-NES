@@ -375,6 +375,14 @@ CoreStructs::Neuron * Simulation::FindNeuronByCompartment(int CompartmentID) con
     return Neurons.at(neuron_id).get();
 }
 
+Geometries::Geometry* Simulation::FindShapeByID(int ShapeID) {
+    if (ShapeID >= Collection.Size()) {
+        return nullptr;
+    }
+
+    return Collection.GetGeometry(ShapeID);
+}
+
 // std::string Simulation::WrapAsNESRequest(const std::string & ReqFunc, const std::string & _RequestJSON) {
 //     std::string wrapped("[ { \"ReqID\": ");
 //     wrapped += std::to_string(StoredReqID) + ", \"";
