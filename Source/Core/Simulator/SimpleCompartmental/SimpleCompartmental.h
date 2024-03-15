@@ -12,6 +12,8 @@
 
 #pragma once
 
+#include <Simulator/BallAndStick/BSNeuron.h>
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -22,7 +24,11 @@ namespace Simulator {
  */
 class SimpleCompartmental: BallAndStick::BSNeuron {
 public:
+    CoreStructs::SCNeuronStruct build_data; // Copy of the struct that was used to build this neuron.
+
+public:
     SimpleCompartmental(int ID, std::unordered_map<std::string, Geometries::Geometry*> & morphology);
+    SimpleCompartmental(const CoreStructs::SCNeuronStruct & scneuronstruct);
 };
 
 } // Simulator

@@ -106,6 +106,30 @@ struct BSNeuronStruct {
 
 };
 
+struct SCNeuronStruct {
+    
+    std::string Name; /**Name of the Neuron*/
+    int ID = -1; /**ID of the Neuron */
+
+    int SomaCompartmentID;
+    int AxonCompartmentID;
+
+    float MembranePotential_mV;
+    float RestingPotential_mV;
+    float SpikeThreshold_mV;
+    float DecayTime_ms;
+    float AfterHyperpolarizationAmplitude_mV;
+    float PostsynapticPotentialRiseTime_ms;
+    float PostsynapticPotentialDecayTime_ms;
+    float PostsynapticPotentialAmplitude_nA;
+
+    // Direct access caches:
+    std::vector<Compartments::SC*> SomaCompartmentIDs;
+    std::vector<Compartments::SC*> DendriteCompartmentIDs;
+    std::vector<Compartments::SC*> AxonCompartmentIDs;
+
+};
+
 }; // namespace CoreStructs
 }; // namespace Simulator
 }; // namespace NES

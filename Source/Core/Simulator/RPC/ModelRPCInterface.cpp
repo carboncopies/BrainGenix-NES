@@ -226,7 +226,7 @@ std::string ModelRPCInterface::SCCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    // Build New BS Object
+    // Build New SC Object
     Compartments::SC C;
     if ((!Handle.GetParInt("ShapeID", C.ShapeID))
         || (!Handle.GetParFloat("MembranePotential_mV", C.MembranePotential_mV))

@@ -77,6 +77,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/BoundingBox.h
   ${SRC_DIR}/Core/Simulator/Structs/BS.cpp
   ${SRC_DIR}/Core/Simulator/Structs/BS.h
+  ${SRC_DIR}/Core/Simulator/Structs/SC.cpp
+  ${SRC_DIR}/Core/Simulator/Structs/SC.h
   ${SRC_DIR}/Core/Simulator/Structs/Staple.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Staple.h
   ${SRC_DIR}/Core/Simulator/Structs/Receptor.cpp
