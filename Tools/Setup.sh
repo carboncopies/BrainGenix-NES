@@ -53,8 +53,11 @@ else
     VULKAN_DEPS="libvulkan-dev vulkan-validationlayers-dev vulkan-tools libxcb-xfixes0-dev libx11-dev libxrandr-dev"  
 fi
 
+# Libsonata dependencies
+LIBSONATA_DEPS="hdf5 hdf5-devel"
+
 # Install Everything
-INSTALL_COMMAND="$SUDO_PREFIX $PACKAGE_MANAGER_INSTALL_CMD $VCPKG_DEPS $COMPILER_DEPS $VULKAN_DEPS"
+INSTALL_COMMAND="$SUDO_PREFIX $PACKAGE_MANAGER_INSTALL_CMD $VCPKG_DEPS $COMPILER_DEPS $VULKAN_DEPS $LIBSONATA_DEPS"
 echo "Running Install Command: $INSTALL_COMMAND"
 # $INSTALL_COMMAND || exit 1
 $INSTALL_COMMAND
