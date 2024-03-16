@@ -48,7 +48,7 @@ VCPKG_DEPS="curl zip unzip tar pkg-config autoconf flex bison"
 if [ "$DISTRO" = "arch" ]; then
     VULKAN_DEPS="vulkan-devel"
 elif [ "$DISTRO" = "fedora" ]; then
-    VULKAN_DEPS="libvulkan-dev vulkan-validationlayers-dev vulkan-tools libxcb-xfixes0-dev libx11-dev libxrandr-dev"  
+    VULKAN_DEPS="libvulkan-dev vulkan-validationlayers-dev vulkan-tools libxcb-xfixes0-dev libX11-dev libxrandr-dev"  
 else
     VULKAN_DEPS="libvulkan-dev vulkan-validationlayers-dev vulkan-tools libxcb-xfixes0-dev libx11-dev libxrandr-dev"  
 fi
@@ -66,4 +66,12 @@ git submodule update --init --recursive
 # Bootstrap vcpkg
 echo "Setting Up vcpkg"
 ./../ThirdParty/vcpkg/bootstrap-vcpkg.sh -disableMetrics
+
+# Build and install libsonata
+cd ../ThirdParty/libsonata
+mkdir build && cd build
+cmake -DCMAKE_BUILD_TYPE=Release -DEXTLIB_FROM_SUBMODULES=ON -DCMAKE_CXX_STANDARD={14,17} ..
+make -j
+
+cd ../../../Tools
 echo "Done, you can now run Build.sh"
