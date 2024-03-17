@@ -43,3 +43,6 @@
 *.app
 example.cpp
 example_headless.cpp
+
+# VIM Swap files
+*.swp
