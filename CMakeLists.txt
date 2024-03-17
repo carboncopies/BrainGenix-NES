@@ -80,6 +80,9 @@ find_package(Stb REQUIRED)
 message(STATUS "Setting Up LibNoies Library")
 find_package(unofficial-noise CONFIG REQUIRED)
 
+message(STATUS "Setting Up HDF5 Library for libsonata")
+find_package(HDF5 REQUIRED)
+
 # Compiler optimizations
 find_package(AVX)
 if (${AVX_FOUND})
@@ -141,8 +144,6 @@ endif()
 # Add Source Subdirs
 add_subdirectory(${SRC_DIR}/Core)
 add_subdirectory(${SRC_DIR}/Renderer)
-
-
 
 # Set Install Targets
 message(STATUS "Install Prefix Set To '${INSTALL_PREFIX}'")

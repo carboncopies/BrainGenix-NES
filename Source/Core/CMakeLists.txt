@@ -16,9 +16,6 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Config/ConfigDefaults.h
 
 
-
-
-
   ${SRC_DIR}/Core/Simulator/RPC/SimulationRPCInterface.cpp
   ${SRC_DIR}/Core/Simulator/RPC/SimulationRPCInterface.h
   ${SRC_DIR}/Core/Simulator/RPC/GeometryRPCInterface.cpp
@@ -226,8 +223,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Visualizer/VisualizerParameters.h
   ${SRC_DIR}/Core/Visualizer/VisualizerPool.cpp
   ${SRC_DIR}/Core/Visualizer/VisualizerPool.h
-
-
+    
+  ${SRC_DIR}/Core/IO/SonataLoader.h
+  ${SRC_DIR}/Core/IO/SonataLoader.cpp
 )
  
 set(UNITTEST_SOURCES
@@ -254,6 +252,13 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp
 )
 
+# Include directories for libsonata
+set(SONATA_INCLUDE_DIRS 
+    ${SRC_DIR}/../ThirdParty/libsonata/include
+    ${SRC_DIR}/../ThirdParty/libsonata/extlib/HighFive/include
+    /usr/include
+)
+
 # Configure test binaries
 set(TEST_BINS
 
@@ -264,41 +269,47 @@ set(TEST_BINS
 add_library(${PROJECT_LIBRARY_NAME} STATIC ${MAIN_SOURCES})
 target_compile_features(${PROJECT_LIBRARY_NAME} PRIVATE cxx_std_17)
 
+target_include_directories(${PROJECT_LIBRARY_NAME} PUBLIC ${SRC_DIR}/Core)
+target_include_directories(${PROJECT_LIBRARY_NAME} PRIVATE ${SONATA_INCLUDE_DIRS})
+target_include_directories(${PROJECT_LIBRARY_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
+
 target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE 
     nlohmann_json::nlohmann_json
     # Boost::program_options
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
     unofficial::noise::noise-static
+    ${SRC_DIR}/../ThirdParty/libsonata/build/libsonata.a
+    HDF5::HDF5
 
     NESRenderer
     VersioningSystem
     CompileTimeStamp
     CompilePlatformInfo
 )
-target_include_directories(${PROJECT_LIBRARY_NAME} PUBLIC ${SRC_DIR}/Core)
-target_include_directories(${PROJECT_LIBRARY_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
 
 
 # Create Main Executable
 add_executable(${PROJECT_NAME} ${MAIN_SOURCES})
 set(EXECUTABLE_TYPE "Binary")
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
-
+target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
+target_include_directories(${PROJECT_NAME} PRIVATE ${SONATA_INCLUDE_DIRS})
+target_include_directories(${PROJECT_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} PRIVATE 
     nlohmann_json::nlohmann_json
     # Boost::program_options
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
     unofficial::noise::noise-static
+    ${SRC_DIR}/../ThirdParty/libsonata/build/libsonata.a
+    HDF5::HDF5
 
     NESRenderer
     VersioningSystem
     CompileTimeStamp
     CompilePlatformInfo
 )
-target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
-target_include_directories(${PROJECT_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
 
 # Configure testing.
 enable_testing()
