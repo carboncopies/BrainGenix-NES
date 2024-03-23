@@ -3,4 +3,4 @@
     url = https://github.com/Microsoft/vcpkg.git
 [submodule "ThirdParty/libsonata"]
 	path = ThirdParty/libsonata
-	url = git@github.com:BlueBrain/libsonata.git
+	url = https://github.com/BlueBrain/libsonata.git
