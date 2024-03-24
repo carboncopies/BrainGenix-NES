@@ -6,6 +6,8 @@
 
 /.vscode/
 
+# Ignore test files
+TestFiles/
 
 ## C++ Gitignore template from github
 
