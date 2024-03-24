@@ -72,6 +72,7 @@ echo "Setting Up vcpkg"
 
 # Build and install libsonata
 cd ../ThirdParty/libsonata
+rm -rf build
 mkdir build && cd build
 cmake -DCMAKE_BUILD_TYPE=Release -DEXTLIB_FROM_SUBMODULES=ON -DCMAKE_CXX_STANDARD={14,17} ..
 make -j
