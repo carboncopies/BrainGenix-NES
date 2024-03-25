@@ -51,6 +51,12 @@ bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
     // Here, we're going to build the mesh using the meshrenderer
     BuildMeshFromSimulation(_Logger, _Renderer, _Simulation);
 
+    // Now, build the electrode mesh if enabled
+    if (_Simulation->VisualizerParams.VisualizeElectrodes) {
+        BuildMeshFromElectrodes(_Logger, _Renderer, _Simulation);
+    }
+
+
 
     // -- Stage 2 --
     // Now, we're just going to render it to a file, and get that path back.
