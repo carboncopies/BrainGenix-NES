@@ -42,6 +42,17 @@ namespace Simulator {
  */
 bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, Simulation* _Simulation);
 
+/**
+ * @brief Will add visual representations of electrodes to the scene.
+ * 
+ * @param _Logger Pointer to logger instance
+ * @param _Renderer Pointer to instance of NES renderer instance
+ * @param _Simulation Pointer to valid simulation struct where data is read out of.
+ * @return true 
+ * @return false 
+ */
+bool BuildMeshFromElectrodes(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, Simulation* _Simulation);
+
 
 }; // Close Namespace Simulator
 }; // Close Namespace NES
