@@ -163,9 +163,8 @@ bool BuildMeshFromElectrodes(BG::Common::Logger::LoggingSystem* _Logger, Rendere
 
         // Now Setup The Dimensions So We Can See It
         Dimensions_um.z = Length_um;
-        Dimensions_um.x = 5;
-        Dimensions_um.y = 10;
-
+        Dimensions_um.x = 4;
+        Dimensions_um.y = 12;
 
         // Finally, add it to the scene
         BG::NES::Renderer::Shaders::Phong Shader;
