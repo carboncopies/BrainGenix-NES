@@ -15,7 +15,10 @@
 #pragma once
 
 // Standard Libraries (BG convention: use <> instead of "")
+#include <map>
 #include <string>
+#include <tuple>
+#include <vector>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <bbp/sonata/edges.h>
