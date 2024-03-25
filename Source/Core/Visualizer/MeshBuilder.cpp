@@ -144,6 +144,10 @@ bool BuildMeshFromElectrodes(BG::Common::Logger::LoggingSystem* _Logger, Rendere
     _Renderer->LockScene();
     _Renderer->WaitUntilGPUDone();
 
+
+    float MaxElectrodeLength_um = 100;
+
+
     // Enumerate Simulation Primitives
     for (unsigned int i = 0; i < _Simulation->RecordingElectrodes.size(); i++) {
         BG::NES::Simulator::Tools::RecordingElectrode* ThisElectrode = _Simulation->RecordingElectrodes[i].get();
@@ -151,6 +155,14 @@ bool BuildMeshFromElectrodes(BG::Common::Logger::LoggingSystem* _Logger, Rendere
         // Get Data from Vector
         Geometries::Vec3D End1Pos_um = ThisElectrode->TipPosition_um;
         Geometries::Vec3D End2Pos_um = ThisElectrode->EndPosition_um;
+
+        // Ensure that it's not too long to render
+        float Length = End1Pos_um.Distance(End2Pos_um);
+        if (Length > MaxElectrodeLength_um) {
+            Geometries::Vec3D DirectionVec = End1Pos_um - End2Pos_um;
+            Geometries::Vec3D TruncatedVec = DirectionVec * (MaxElectrodeLength_um / Length);
+            End1Pos_um = End2Pos_um + TruncatedVec;
+        }
 
         // Setup and Get CenterPoint Info
         float Length_um = -1;
