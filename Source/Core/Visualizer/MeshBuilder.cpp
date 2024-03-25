@@ -159,6 +159,9 @@ bool BuildMeshFromElectrodes(BG::Common::Logger::LoggingSystem* _Logger, Rendere
         Geometries::Vec3D Dimensions_um;
         CenterPoint_um = (End1Pos_um + End2Pos_um) / 2.;
         GetRotationInfo(End1Pos_um, End2Pos_um, &Rotation_rad, &Length_um);
+        float Rotation_z = Rotation_rad.z;
+        Rotation_rad.z = Rotation_rad.y;
+        Rotation_rad.y = Rotation_z;
 
 
         // Now Setup The Dimensions So We Can See It
