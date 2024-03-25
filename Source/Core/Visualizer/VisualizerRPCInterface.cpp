@@ -181,6 +181,8 @@ std::string VisualizerRPCInterface::VisualizerGenerateImages(std::string _JSONRe
         Handle.Sim()->VisualizerParams.FOVList_deg.push_back(FOV_deg);
     }
 
+    Handle.Sim()->VisualizerParams.VisualizeElectrodes = true;          // Force the electrodes to be visualized for now -------------------------------------------
+
     Handle.GetParInt("ImageWidth_px", Handle.Sim()->VisualizerParams.ImageWidth_px);
     Handle.GetParInt("ImageHeight_px", Handle.Sim()->VisualizerParams.ImageHeight_px);
 

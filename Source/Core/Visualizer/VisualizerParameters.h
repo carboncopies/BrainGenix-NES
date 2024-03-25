@@ -64,6 +64,8 @@ struct VisualizerParameters {
 
     VisualizerState State = VISUALIZER_NONE; /**Sets the state of this visualizer task*/
 
+    bool VisualizeElectrodes = false; /**Enable or disable rendering of any placed electrodes in the sample*/
+
     std::vector<std::string> FileHandles; /**List of file handles for completed images*/
 };
 
