@@ -3,6 +3,8 @@
 #include <Simulator/Structs/RecordingElectrode.h>
 
 
+#include <iostream>
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -159,9 +161,9 @@ bool BuildMeshFromElectrodes(BG::Common::Logger::LoggingSystem* _Logger, Rendere
         // Ensure that it's not too long to render
         float Length = End1Pos_um.Distance(End2Pos_um);
         if (Length > MaxElectrodeLength_um) {
-            Geometries::Vec3D DirectionVec = End1Pos_um - End2Pos_um;
+            Geometries::Vec3D DirectionVec = End2Pos_um - End1Pos_um;
             Geometries::Vec3D TruncatedVec = DirectionVec * (MaxElectrodeLength_um / Length);
-            End1Pos_um = End2Pos_um + TruncatedVec;
+            End2Pos_um = End1Pos_um + TruncatedVec;
         }
 
         // Setup and Get CenterPoint Info
@@ -171,15 +173,16 @@ bool BuildMeshFromElectrodes(BG::Common::Logger::LoggingSystem* _Logger, Rendere
         Geometries::Vec3D Dimensions_um;
         CenterPoint_um = (End1Pos_um + End2Pos_um) / 2.;
         GetRotationInfo(End1Pos_um, End2Pos_um, &Rotation_rad, &Length_um);
-        float Rotation_z = Rotation_rad.z;
-        Rotation_rad.z = Rotation_rad.y;
-        Rotation_rad.y = Rotation_z;
+std::cout << "Rotation of Electrode: " << Rotation_rad.str() << '\n';
+        //float Rotation_y = Rotation_rad.y;
+        //Rotation_rad.y = Rotation_rad.x;
+        //Rotation_rad.x = Rotation_y;
 
 
         // Now Setup The Dimensions So We Can See It
-        Dimensions_um.z = Length_um;
+        Dimensions_um.z = 12;
         Dimensions_um.x = 4;
-        Dimensions_um.y = 12;
+        Dimensions_um.y = Length_um;
 
         // Finally, add it to the scene
         BG::NES::Renderer::Shaders::Phong Shader;
