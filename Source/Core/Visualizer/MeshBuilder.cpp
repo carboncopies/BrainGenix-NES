@@ -186,8 +186,9 @@ std::cout << "Rotation of Electrode: " << Rotation_rad.str() << '\n';
 
         // Finally, add it to the scene
         BG::NES::Renderer::Shaders::Phong Shader;
-        Shader.DiffuseColor_  = vsg::vec4(1., 0., 0., 1.0f);
-        Shader.SpecularColor_ = vsg::vec4(0.1f, 0.1f, 0.1f, 1.0f);
+        Shader.DiffuseColor_  = vsg::vec4(1., 0., 0., 1.0);
+        Shader.SpecularColor_ = vsg::vec4(0.1f, 0.1f, 0.1f, 1.0);
+        Shader.EmissiveColor_ = vsg::vec4(1., 0.0, 0.0, 1.0);
         Shader.Type_ = BG::NES::Renderer::Shaders::SHADER_PHONG;
 
         BG::NES::Renderer::Primitive::Cube CreateInfo;
