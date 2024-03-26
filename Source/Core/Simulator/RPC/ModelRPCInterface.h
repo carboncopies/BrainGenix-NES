@@ -80,12 +80,14 @@ public:
      * @param _JSONRequest 
      * @return std::string 
      */
-    std::string BSCreate(std::string _JSONRequest);
-
     std::string StapleCreate(std::string _JSONRequest);
     std::string ReceptorCreate(std::string _JSONRequest);
 
+    std::string BSCreate(std::string _JSONRequest);
     std::string BSNeuronCreate(std::string _JSONRequest);
+
+    std::string SCCreate(std::string _JSONRequest);
+    std::string SCNeuronCreate(std::string _JSONRequest);
 
     std::string PatchClampDACCreate(std::string _JSONRequest);
     std::string PatchClampDACSetOutputList(std::string _JSONRequest);

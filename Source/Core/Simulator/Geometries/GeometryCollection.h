@@ -64,6 +64,8 @@ struct GeometryCollection {
         }
     }
 
+    size_t Size() const { return Geometries.size(); }
+
     size_t NextAvailableID() { return Geometries.size(); }
 
     Sphere & AddSphere(const Vec3D & _Center_um, float _Radius_um) {
@@ -97,12 +99,12 @@ struct GeometryCollection {
         return GetBox(B.ID);
     }
 
-    GeometryShapeEnum GetShapeType(size_t idx) {
+    GeometryShapeEnum GetShapeType(size_t idx) const {
         return std::visit([](auto&& arg){ return arg.GeometryShape; }, Geometries.at(idx));
     }
-    bool IsSphere(size_t idx) { return GetShapeType(idx) == GeometrySphere; }
-    bool IsCylinder(size_t idx) { return GetShapeType(idx) == GeometryCylinder; }
-    bool IsBox(size_t idx) { return GetShapeType(idx) == GeometryBox; }
+    bool IsSphere(size_t idx) const { return GetShapeType(idx) == GeometrySphere; }
+    bool IsCylinder(size_t idx) const { return GetShapeType(idx) == GeometryCylinder; }
+    bool IsBox(size_t idx) const { return GetShapeType(idx) == GeometryBox; }
 
     Box & GetBox(size_t idx) {
         return std::get<Box>(Geometries.at(idx));

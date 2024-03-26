@@ -153,6 +153,8 @@ public:
     Compartments::BS * FindCompartmentByID(int CompartmentID);
     CoreStructs::Neuron * FindNeuronByCompartment(int CompartmentID) const;
 
+    Geometries::Geometry* FindShapeByID(int ShapeID);
+
     void AttachDirectStim(std::vector<std::tuple<float, size_t>> listOfStims);
     void SetSpontaneousActivity(std::vector<std::tuple<float, float, size_t>> spontSpikeSettings);
 
