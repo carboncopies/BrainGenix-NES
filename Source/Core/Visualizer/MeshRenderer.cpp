@@ -64,6 +64,7 @@ bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
         Tasks.push_back(std::make_unique<Visualizer::ProcessingTask>());
         Visualizer::ProcessingTask* Task = Tasks[Tasks.size()-1].get();
         Task->Image_.TargetFileName_ = _Filepath + std::to_string(_Params->LastImageNumber++) + ".png";
+        Task->TargetFileName_ = Task->Image_.TargetFileName_;
         _Renderer->RenderImage(&Task->Image_);
         _Params->FileHandles.push_back(Task->Image_.TargetFileName_);
 

@@ -99,11 +99,15 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             int SourceY = RenderedImage->Height_px;
             int Channels = RenderedImage->NumChannels_;
             unsigned char* SourcePixels = RenderedImage->Data_.get();
-            stbi_write_png(Task->TargetFileName_.c_str(), SourceX, SourceY, Channels, SourcePixels, SourceX * Channels);
+            int Result = stbi_write_png(Task->TargetFileName_.c_str(), SourceX, SourceY, Channels, SourcePixels, SourceX * Channels);
 
             // Log Metrics
             double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
-            Logger_->Log("VisualizerImageEncoderPool Wrote Image In '" + std::to_string(Duration_ms) + "'ms", 4);
+            if (Result != 0) {
+                Logger_->Log("VisualizerImageEncoderPool Wrote Image '" + Task->TargetFileName_ + "' In " + std::to_string(Duration_ms) + "ms", 4);
+            } else {
+                Logger_->Log("VisualizerImageEncoderPool Failed to Write Image '" + Task->TargetFileName_ + "' In " + std::to_string(Duration_ms) + "ms", 9);
+            }
 
             Task->IsDone_ = true;
 
