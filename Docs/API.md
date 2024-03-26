@@ -108,7 +108,19 @@ We use JSON requests, so the route and example requests are listed below:
 
 
 ### Simulation - Save
-Broken right now.
+ - Name: `Simulation/Save`  
+ - Query: 
+```json
+    [
+        SimulationID: int
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+    ]
+```
 
 ### Simulation - Get Save
  - Name: `Simulation/GetSave`  
@@ -127,8 +139,20 @@ Broken right now.
 ```
 
 ### Simulation - Load
-Broken right now.
-
+ - Name: `Simulation/Load`  
+ - Query: 
+```json
+    [
+        SavedSimName: `str`
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        TaskID: int
+    ]
+```
 
 
 ### Simulation - Geometry - Sphere - Create
