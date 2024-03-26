@@ -60,7 +60,7 @@ struct ProcessingTask {
     std::atomic_bool IsDone_ = false; /**Indicates if this task has been processed or not*/
 
     std::string TargetFileName_;  /**Filename that this image is to be written to*/
-    std::string TargetDirectory_; /**Directory path where the image is to be written to*/
+    // std::string TargetDirectory_; /**Directory path where the image is to be written to*/
 
     BG::NES::Renderer::Image Image_; /**Image to be saved*/
 
