@@ -32,13 +32,13 @@ bool VSCreateDirectoryRecursive(std::string const & dirName, std::error_code & e
 
 
 
-bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, Simulation* _Simulation) {
+bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, Simulation* _Simulation, Visualizer::ImageProcessorPool* _ImageProcessorPool) {
     assert(_Logger != nullptr && "You have passed a nullptr to the logger parameter, bad!");
     assert(_Renderer != nullptr && "You have passed a nullptr to the renderer parameter, bad!");
     assert(_Simulation != nullptr && "You have passed a nullptr to the simulation parameter, bad!");
 
     _Logger->Log("Rendering Visualization For Simulation '" + _Simulation->Name + "'", 5);
-   
+
 
     // -- Process Description --
     // This is going to have a few steps, firstly, we're just going to build the mesh of the simulation
@@ -66,7 +66,7 @@ bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
         _Logger->Log("Failed To Create Directory, Error '" + Code.message() + "'", 7);
     }
     std::string Filepath = TargetDirectory;
-    RenderVisualization(_Logger, _Renderer, &_Simulation->VisualizerParams, Filepath);
+    RenderVisualization(_Logger, _Renderer, &_Simulation->VisualizerParams, Filepath, _ImageProcessorPool);
 
 
     return true;

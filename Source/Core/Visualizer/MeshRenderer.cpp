@@ -17,6 +17,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Visualizer/MeshRenderer.h>
 
+#include <Visualizer/ImageProcessorPool/ProcessingTask.h>
 
 
 
@@ -29,7 +30,7 @@ namespace Simulator {
 
 
 
-bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VisualizerParameters* _Params, std::string _Filepath) {
+bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VisualizerParameters* _Params, std::string _Filepath, Visualizer::ImageProcessorPool* _ImageProcessorPool) {
     assert(_Logger != nullptr && "You've passed an invalid pointer to _Logger");
     assert(_Renderer != nullptr && "You've passed an invalid pointer to _Renderer");
     assert(_Params != nullptr && "You've passed an invalid pointer to _Params");
@@ -42,14 +43,15 @@ bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
 
 
     // Render Once To Fix Image Resolution Issue
-    BG::NES::Renderer::Image RenderedImage;
-    RenderedImage.TargetFileName_ = _Filepath;
-    _Renderer->RenderImage(&RenderedImage);
+    BG::NES::Renderer::Image TmpImg;
+    TmpImg.TargetFileName_ = _Filepath;
+    _Renderer->RenderImage(&TmpImg);
 
 
 
 
     // Iterate through all items of the vector and render them
+    std::vector<std::unique_ptr<Visualizer::ProcessingTask>> Tasks;
     for (size_t i = 0; i < _Params->CameraPositionList_um.size(); i++) {
 
         // Get Parameters from _Params, ensure renderer is properly setup for them.
@@ -59,22 +61,26 @@ bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
 
 
         // Now Render The Thing
-        BG::NES::Renderer::Image RenderedImage;
-        RenderedImage.TargetFileName_ = _Filepath + std::to_string(_Params->LastImageNumber++) + ".png";
-        _Renderer->RenderImage(&RenderedImage);
+        Tasks.push_back(std::make_unique<Visualizer::ProcessingTask>());
+        Visualizer::ProcessingTask* Task = Tasks[Tasks.size()-1].get();
+        Task->Image_.TargetFileName_ = _Filepath + std::to_string(_Params->LastImageNumber++) + ".png";
+        Task->TargetFileName_ = Task->Image_.TargetFileName_;
+        _Renderer->RenderImage(&Task->Image_);
+        _Params->FileHandles.push_back(Task->Image_.TargetFileName_);
 
+        _ImageProcessorPool->QueueEncodeOperation(Task);
+        _Logger->Log("Enqueued Visualization Image To File '" + Task->Image_.TargetFileName_ + "'", 4);
 
-        // Get Image Properties, Write
-        int SourceX = RenderedImage.Width_px;
-        int SourceY = RenderedImage.Height_px;
-        int Channels = RenderedImage.NumChannels_;
-        unsigned char* SourcePixels = RenderedImage.Data_.get();
-        stbi_write_png(RenderedImage.TargetFileName_.c_str(), SourceX, SourceY, Channels, SourcePixels, SourceX * Channels);
-        _Logger->Log("Wrote Visualization Image To File '" + RenderedImage.TargetFileName_ + "'", 4);
-
-        _Params->FileHandles.push_back(RenderedImage.TargetFileName_);
 
     }
+
+    // Now Ensure That All Images Are Flushed To Disk
+    for (size_t i = 0; i < Tasks.size(); i++) {
+        while (Tasks[i]->IsDone_ != true) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        }
+    }
+
 
     return true;
 

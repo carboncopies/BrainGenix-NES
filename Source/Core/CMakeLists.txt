@@ -230,7 +230,12 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Visualizer/VisualizerParameters.h
   ${SRC_DIR}/Core/Visualizer/VisualizerPool.cpp
   ${SRC_DIR}/Core/Visualizer/VisualizerPool.h
-
+  ${SRC_DIR}/Core/Visualizer/ImageProcessorPool/Image.h
+  ${SRC_DIR}/Core/Visualizer/ImageProcessorPool/Image.cpp
+  ${SRC_DIR}/Core/Visualizer/ImageProcessorPool/ImageProcessorPool.h
+  ${SRC_DIR}/Core/Visualizer/ImageProcessorPool/ImageProcessorPool.cpp
+  ${SRC_DIR}/Core/Visualizer/ImageProcessorPool/ProcessingTask.h
+  ${SRC_DIR}/Core/Visualizer/ImageProcessorPool/ProcessingTask.cpp
 
 )
  

@@ -46,7 +46,7 @@
 #include <BG/Common/Logger/Logger.h>
 
 #include <Visualizer/VisualizerParameters.h>
-
+#include <Visualizer/ImageProcessorPool/ImageProcessorPool.h>
 
 
 namespace BG {
@@ -66,7 +66,7 @@ namespace Simulator {
  * @return true 
  * @return false 
  */
-bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VisualizerParameters* _Params, std::string _Filepath);
+bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, VisualizerParameters* _Params, std::string _Filepath, Visualizer::ImageProcessorPool* _ImageProcessorPool);
 
 
 
