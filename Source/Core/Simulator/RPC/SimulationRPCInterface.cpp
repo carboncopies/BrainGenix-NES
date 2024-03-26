@@ -55,7 +55,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
     _RPCManager->AddRoute("Simulation/SetRecordInstruments",      std::bind(&SimulationRPCInterface::SetRecordInstruments, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetInstrumentRecordings",   std::bind(&SimulationRPCInterface::GetInstrumentRecordings, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Save",                      std::bind(&SimulationRPCInterface::SimulationSave, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/GetSave",                   std::bind(&SimulationRPCInterface::SimulationSave, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetSave",                   std::bind(&SimulationRPCInterface::SimulationGetSave, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Load",                      std::bind(&SimulationRPCInterface::SimulationLoad, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("ManTaskStatus",                        std::bind(&SimulationRPCInterface::ManTaskStatus, this, std::placeholders::_1));
@@ -367,7 +367,7 @@ std::string SimulationRPCInterface::SimulationGetSave(std::string _JSONRequest) 
         SaveName.erase(i, Pattern.length());
         i = SaveName.find(Pattern, i);
     }
-    std::string SafeHandle = "./" + SaveName;
+    std::string SafeHandle = "SavedSimulations/" + SaveName + ".NES";
 
 
     // Now Check If The Handle Is Valid, If So, Load It

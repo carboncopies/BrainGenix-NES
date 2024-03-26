@@ -46,7 +46,6 @@ HandlerData::HandlerData(const std::string& _JSONRequest, BG::Common::Logger::Lo
     //     Status = BGStatusCode::BGStatusInvalidParametersPassed;
     //     return; // When loading, the first valid request must be SimulationCreate.
     // }
-
     if (NoSimulation) {
         return;
     }
