@@ -173,7 +173,6 @@ bool BuildMeshFromElectrodes(BG::Common::Logger::LoggingSystem* _Logger, Rendere
         Geometries::Vec3D Dimensions_um;
         CenterPoint_um = (End1Pos_um + End2Pos_um) / 2.;
         GetRotationInfo(End1Pos_um, End2Pos_um, &Rotation_rad, &Length_um);
-std::cout << "Rotation of Electrode: " << Rotation_rad.str() << '\n';
         //float Rotation_y = Rotation_rad.y;
         //Rotation_rad.y = Rotation_rad.x;
         //Rotation_rad.x = Rotation_y;
