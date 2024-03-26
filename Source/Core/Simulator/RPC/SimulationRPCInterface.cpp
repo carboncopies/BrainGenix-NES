@@ -55,6 +55,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
     _RPCManager->AddRoute("Simulation/SetRecordInstruments",      std::bind(&SimulationRPCInterface::SetRecordInstruments, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetInstrumentRecordings",   std::bind(&SimulationRPCInterface::GetInstrumentRecordings, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Save",                      std::bind(&SimulationRPCInterface::SimulationSave, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetSave",                   std::bind(&SimulationRPCInterface::SimulationGetSave, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Load",                      std::bind(&SimulationRPCInterface::SimulationLoad, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("ManTaskStatus",                        std::bind(&SimulationRPCInterface::ManTaskStatus, this, std::placeholders::_1));
@@ -341,6 +342,60 @@ std::string SimulationRPCInterface::SimulationSave(std::string _JSONRequest) {
     // Return Saved File Name
     return Handle.ResponseWithID("SavedSimName", SavedSimName);
 }
+
+std::string SimulationRPCInterface::SimulationGetSave(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetSave", &Simulations_, true, true);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    //std::cout << "Number of stored requests: " << Handle.Sim()->NumStoredRequests() << "\n\n";
+    //std::cout << Handle.Sim()->StoredRequestsToString() << '\n';
+
+    std::string SaveName;
+    Handle.GetParString("SaveHandle", SaveName);
+
+    // Minor security feature (probably still exploitable, so be warned!)
+    // We just remove .. from the incoming handle for the image, since they're just files right now
+    // as such, if we didnt strip that, then people could read any files on the server!
+    // Also, we prepend a '.' so people can't try and get to the root
+    std::string Pattern = "..";
+    std::string::size_type i = SaveName.find(Pattern);
+    while (i != std::string::npos) {
+        Logger_->Log("Detected '..' In SaveName, It's Possible That Someone Is Trying To Do Something Nasty", 8);
+        SaveName.erase(i, Pattern.length());
+        i = SaveName.find(Pattern, i);
+    }
+    std::string SafeHandle = "SavedSimulations/" + SaveName + ".NES";
+
+
+    // Now Check If The Handle Is Valid, If So, Load It
+    std::ifstream DataStream(SafeHandle.c_str(), std::ios::binary);
+    std::string RawData;
+    if (DataStream.good()) {
+        std::stringstream Buffer;
+        Buffer << DataStream.rdbuf();
+        RawData = Buffer.str();
+        DataStream.close();
+
+    } else {
+        Logger_->Log("An Invalid SaveHandle Was Provided " + SafeHandle, 6);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 2; // error
+        return ResponseJSON.dump();
+    }
+
+    // Now, Convert It To Base64
+    std::string Base64Data = base64_encode(reinterpret_cast<const unsigned char*>(RawData.c_str()), RawData.length());
+
+
+    return Handle.StringResponse("SaveData", Base64Data);
+
+    
+
+}
+
 
 
 /**
