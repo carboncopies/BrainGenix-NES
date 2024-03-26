@@ -66,9 +66,9 @@ double GetAverage(std::vector<double>* _Vec) {
 void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
     // Set thread Name
-    pthread_setname_np(pthread_self(), std::string("Image Processor Pool Thread " + std::to_string(_ThreadNumber)).c_str());
+    pthread_setname_np(pthread_self(), std::string("Visualizer Image Processor Pool Thread " + std::to_string(_ThreadNumber)).c_str());
 
-    Logger_->Log("Started ImageProcessorPool Thread " + std::to_string(_ThreadNumber), 0);
+    Logger_->Log("Started VisualizerImageProcessorPool Thread " + std::to_string(_ThreadNumber), 0);
 
     // Initialize Metrics
     int SamplesBeforeUpdate = 25;
@@ -86,11 +86,11 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
 
 
-            // Ensure Path Exists
-            std::error_code Code;
-            if (!CreateDirectoryRecursive(Task->TargetDirectory_, Code)) {
-                Logger_ ->Log("Failed To Create Directory, Error '" + Code.message() + "'", 7);
-            }
+            // // Ensure Path Exists
+            // std::error_code Code;
+            // if (!CreateDirectoryRecursive(Task->TargetDirectory_, Code)) {
+            //     Logger_ ->Log("Failed To Create Directory, Error '" + Code.message() + "'", 7);
+            // }
 
 
             // Get Image Properties, Write
@@ -129,9 +129,9 @@ ImageProcessorPool::ImageProcessorPool(BG::Common::Logger::LoggingSystem* _Logge
 
 
     // Create Renderer Instances
-    Logger_->Log("Creating ImageProcessorPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
+    Logger_->Log("Creating VisualizerImageProcessorPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
     for (unsigned int i = 0; i < _NumThreads; i++) {
-        Logger_->Log("Starting ImageProcessorPool Thread " + std::to_string(i), 1);
+        Logger_->Log("Starting VisualizerImageProcessorPool Thread " + std::to_string(i), 1);
         EncoderThreads_.push_back(std::thread(&ImageProcessorPool::EncoderThreadMainFunction, this, i));
     }
 }
@@ -139,13 +139,13 @@ ImageProcessorPool::ImageProcessorPool(BG::Common::Logger::LoggingSystem* _Logge
 ImageProcessorPool::~ImageProcessorPool() {
 
     // Send Stop Signal To Threads
-    Logger_->Log("Stopping ImageProcessorPool Threads", 2);
+    Logger_->Log("Stopping VisualizerImageProcessorPool Threads", 2);
     ThreadControlFlag_ = false;
 
     // Join All Threads
-    Logger_->Log("Joining ImageProcessorPool Threads", 1);
+    Logger_->Log("Joining VisualizerImageProcessorPool Threads", 1);
     for (unsigned int i = 0; i < EncoderThreads_.size(); i++) {
-        Logger_->Log("Joining ImageProcessorPool Thread " + std::to_string(i), 0);
+        Logger_->Log("Joining VisualizerImageProcessorPool Thread " + std::to_string(i), 0);
         EncoderThreads_[i].join();
     }
 
@@ -157,7 +157,6 @@ void ImageProcessorPool::EnqueueTask(ProcessingTask* _Task) {
 
     // Firstly, Ensure Nobody Else Is Using The Queue
     std::lock_guard<std::mutex> LockQueue(QueueMutex_);
-
     Queue_.emplace(_Task);
 }
 
