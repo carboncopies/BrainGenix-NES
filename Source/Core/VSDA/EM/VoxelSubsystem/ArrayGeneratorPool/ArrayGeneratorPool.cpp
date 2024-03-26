@@ -40,9 +40,9 @@ double GetAverage(std::vector<double>* _Vec) {
 void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
 
     // Set thread Name
-    pthread_setname_np(pthread_self(), std::string("Array Generator Pool Thread " + std::to_string(_ThreadNumber)).c_str());
+    pthread_setname_np(pthread_self(), std::string("EM Array Generator Pool Thread " + std::to_string(_ThreadNumber)).c_str());
 
-    Logger_->Log("Started ArrayGeneratorPool Thread " + std::to_string(_ThreadNumber), 0);
+    Logger_->Log("Started EMArrayGeneratorPool Thread " + std::to_string(_ThreadNumber), 0);
 
 
     // Setup Noise Generator
@@ -103,7 +103,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             Times.push_back(Duration_ms);
             if (Times.size() > SamplesBeforeUpdate) {
                 double AverageTime = GetAverage(&Times);
-                Logger_ ->Log("ArrayGeneratorPool Thread Info '" + std::to_string(_ThreadNumber) + "' Processed Most Recent Shape '" + ShapeName + " (" + std::to_string(ShapeID) + ")', Averaging " + std::to_string(AverageTime) + "ms / Shape", 0);
+                Logger_ ->Log("EMArrayGeneratorPool Thread Info '" + std::to_string(_ThreadNumber) + "' Processed Most Recent Shape '" + ShapeName + " (" + std::to_string(ShapeID) + ")', Averaging " + std::to_string(AverageTime) + "ms / Shape", 0);
                 Times.clear();
             }
 
@@ -129,9 +129,9 @@ ArrayGeneratorPool::ArrayGeneratorPool(BG::Common::Logger::LoggingSystem* _Logge
 
 
     // Create Renderer Instances
-    Logger_->Log("Creating ArrayGeneratorPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
+    Logger_->Log("Creating EMArrayGeneratorPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
     for (unsigned int i = 0; i < _NumThreads; i++) {
-        Logger_->Log("Starting ArrayGeneratorPool Thread " + std::to_string(i), 1);
+        Logger_->Log("Starting EMArrayGeneratorPool Thread " + std::to_string(i), 1);
         RenderThreads_.push_back(std::thread(&ArrayGeneratorPool::RendererThreadMainFunction, this, i));
     }
 }
@@ -139,13 +139,13 @@ ArrayGeneratorPool::ArrayGeneratorPool(BG::Common::Logger::LoggingSystem* _Logge
 ArrayGeneratorPool::~ArrayGeneratorPool() {
 
     // Send Stop Signal To Threads
-    Logger_->Log("Stopping ArrayGeneratorPool Threads", 2);
+    Logger_->Log("Stopping EMArrayGeneratorPool Threads", 2);
     ThreadControlFlag_ = false;
 
     // Join All Threads
-    Logger_->Log("Joining ArrayGeneratorPool Threads", 1);
+    Logger_->Log("Joining EMArrayGeneratorPool Threads", 1);
     for (unsigned int i = 0; i < RenderThreads_.size(); i++) {
-        Logger_->Log("Joining ArrayGeneratorPool Thread " + std::to_string(i), 0);
+        Logger_->Log("Joining EMArrayGeneratorPool Thread " + std::to_string(i), 0);
         RenderThreads_[i].join();
     }
 
@@ -231,7 +231,7 @@ void ArrayGeneratorPool::BlockUntilQueueEmpty(bool _LogOutput) {
         std::this_thread::sleep_for(std::chrono::milliseconds(250));
 
         // Log Queue Size
-        Logger_->Log("ArrayGeneratorPool Queue Length '" + std::to_string(QueueLength) + "'", 1, _LogOutput);
+        Logger_->Log("EMArrayGeneratorPool Queue Length '" + std::to_string(QueueLength) + "'", 1, _LogOutput);
 
     }
 
