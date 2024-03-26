@@ -65,10 +65,11 @@ bool RenderVisualization(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
         Visualizer::ProcessingTask* Task = Tasks[Tasks.size()-1].get();
         Task->Image_.TargetFileName_ = _Filepath + std::to_string(_Params->LastImageNumber++) + ".png";
         _Renderer->RenderImage(&Task->Image_);
+        _Params->FileHandles.push_back(Task->Image_.TargetFileName_);
+
         _ImageProcessorPool->QueueEncodeOperation(Task);
         _Logger->Log("Enqueued Visualization Image To File '" + Task->Image_.TargetFileName_ + "'", 4);
 
-        _Params->FileHandles.push_back(Task->Image_.TargetFileName_);
 
     }
 

@@ -101,12 +101,11 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             unsigned char* SourcePixels = RenderedImage->Data_.get();
             stbi_write_png(Task->TargetFileName_.c_str(), SourceX, SourceY, Channels, SourcePixels, SourceX * Channels);
 
-            Task->IsDone_ = true;
-           
-
             // Log Metrics
             double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
             Logger_->Log("VisualizerImageEncoderPool Wrote Image '" + Task->TargetFileName_ + "' In '" + std::to_string(Duration_ms) + "'ms", 4);
+
+            Task->IsDone_ = true;
 
 
         } else {
