@@ -110,6 +110,22 @@ We use JSON requests, so the route and example requests are listed below:
 ### Simulation - Save
 Broken right now.
 
+### Simulation - Get Save
+ - Name: `Simulation/GetSave`  
+ - Query: 
+```json
+    [
+        SaveHandle: `str`
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        SaveData: Base64EncodedString
+    ]
+```
+
 ### Simulation - Load
 Broken right now.
 
