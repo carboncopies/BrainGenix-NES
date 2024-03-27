@@ -29,7 +29,7 @@ namespace Simulator {
 // }
 
 
-std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int SliceNumber, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, int _SliceOffset) {
+std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int _SliceNumber, int _SliceThickness, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, int _SliceOffset) {
     assert(_VSDAData != nullptr);
     assert(_Logger != nullptr);
 
@@ -77,7 +77,7 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
         for (int YStep = 0; YStep < TotalYSteps; YStep++) {
 
             // Calculate the filename of the image to be generated, add to list of generated images
-            std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(SliceNumber + _SliceOffset) + "/";
+            std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(_SliceNumber + _SliceOffset) + "/";
             double RoundedXCoord = std::ceil(((CameraStepSizeX_um * XStep) + _OffsetX) * 100.0) / 100.0;
             double RoundedYCoord = std::ceil(((CameraStepSizeY_um * YStep) + _OffsetY) * 100.0) / 100.0;
             std::string FilePath = "X" + std::to_string(RoundedXCoord) + "_Y" + std::to_string(RoundedYCoord) + ".png";
@@ -95,7 +95,8 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
             ThisTask->VoxelEndingX = ThisTask->VoxelStartingX + ImageWidth_vox;
             ThisTask->VoxelEndingY = ThisTask->VoxelStartingY + ImageHeight_vox;
             // std::cout<<"StartX:"<<ThisTask->VoxelStartingX<<" StartY:"<<ThisTask->VoxelStartingY<<" EndX:"<<ThisTask->VoxelEndingX<<" EndY:"<<ThisTask->VoxelEndingY<<std::endl;
-            ThisTask->VoxelZ = SliceNumber;
+            ThisTask->VoxelZ = _SliceNumber;
+            ThisTask->SliceThickness_vox = _SliceThickness;
             ThisTask->TargetFileName_ = FilePath;
             ThisTask->TargetDirectory_ = DirectoryPath;
 
