@@ -103,30 +103,59 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             for (unsigned int XVoxelIndex = Task->VoxelStartingX; XVoxelIndex < Task->VoxelEndingX; XVoxelIndex++) {
                 for (unsigned int YVoxelIndex = Task->VoxelStartingY; YVoxelIndex < Task->VoxelEndingY; YVoxelIndex++) {
 
-                    // Get Voxel At Position
-                    VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, Task->VoxelZ);
+                    // -- Compositor Rules -- //
+                    // In order for us to have some way that the system can repeatibly handle information, we define these rules
+                    // They specify what will show up from a multilayer voxel array
+                    // Firstly, we render from bottom to top - that is, from a lower Z height to a higher Z Height.
+                    // Any debug colors (from bottom to top, whichever is encountered earlier), will overwrite any color in the pixels
+                    // This will also terminate the continuation of enumerating up the Z height
+                    // Other than those enums, we will pick the darkest color currently <--- NO WE DON'T WE JUST PICK THE TOP ONE!
+                    // This isn't super realistic and needs to be fixed later, (such as with a focal distance, and blurring), but it works for now
+
+
+                    // Enumerate Depth, Compose based on rules defined above
+                    VoxelType PresentingVoxel;
+                    uint8_t DarkestVoxel = __UINT8_MAX__;
+                    for (size_t ZIndex = Task->VoxelZ; ZIndex < Task->VoxelZ + Task->SliceThickness_vox; ZIndex++) {
+
+                        // Get Voxel At Position
+                        VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, ZIndex);
+                        if (ThisVoxel.State_ == VOXELSTATE_INTENSITY) {
+                            // if (ThisVoxel.Intensity_ < DarkestVoxel) {
+                                PresentingVoxel = ThisVoxel;
+                                DarkestVoxel = ThisVoxel.Intensity_;
+                            // }
+                        // Else, we have a special debug voxel, set this to be the one shown, and exit.
+                        } else {
+                            PresentingVoxel = ThisVoxel;
+                            break;
+                        }
+
+                    }
+
+
 
                     // Now Set The Pixel
                     int ThisPixelX = XVoxelIndex - Task->VoxelStartingX;
                     int ThisPixelY = YVoxelIndex - Task->VoxelStartingY;
 
                     // Check if the voxel is in the enum reserved range, otherwise it's a color value from 128-255
-                    if (ThisVoxel.State_ == VOXELSTATE_INTENSITY) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, ThisVoxel.Intensity_, ThisVoxel.Intensity_, ThisVoxel.Intensity_);
+                    if (PresentingVoxel.State_ == VOXELSTATE_INTENSITY) {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, PresentingVoxel.Intensity_, PresentingVoxel.Intensity_, PresentingVoxel.Intensity_);
                         
                     } else {
-                        if (ThisVoxel.State_ == BORDER) {
+                        if (PresentingVoxel.State_ == BORDER) {
                             OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
-                        } else if (ThisVoxel.State_ == OUT_OF_RANGE) {
+                        } else if (PresentingVoxel.State_ == OUT_OF_RANGE) {
                             OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
-                        } else if (ThisVoxel.State_ == VOXELSTATE_RED) {
+                        } else if (PresentingVoxel.State_ == VOXELSTATE_RED) {
                             OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 0, 0);
-                        } else if (ThisVoxel.State_ == VOXELSTATE_GREEN) {
+                        } else if (PresentingVoxel.State_ == VOXELSTATE_GREEN) {
                             OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 255, 0);
-                        } else if (ThisVoxel.State_ == VOXELSTATE_BLUE) {
+                        } else if (PresentingVoxel.State_ == VOXELSTATE_BLUE) {
                             OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
                         } else {
-                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 100, 100, 100);
+                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 200, 200, 200);
                         }
                     }
 

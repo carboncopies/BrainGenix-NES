@@ -57,13 +57,14 @@ namespace Simulator {
  */
 struct ProcessingTask {
 
-    int         Width_px;        /**Width of this image in pixels*/
-    int         Height_px;       /**Height of this image in pixels*/
-    int         VoxelStartingX;  /**Specify starting x index of the region*/
-    int         VoxelStartingY;  /**Specify starting y index of the region*/
-    int         VoxelEndingX;    /**Specify the ending x index of the region*/
-    int         VoxelEndingY;    /**Specify the ending y index of the region*/
-    int         VoxelZ;          /**Specify the slice number that we're going for*/
+    int         Width_px;           /**Width of this image in pixels*/
+    int         Height_px;          /**Height of this image in pixels*/
+    int         VoxelStartingX;     /**Specify starting x index of the region*/
+    int         VoxelStartingY;     /**Specify starting y index of the region*/
+    int         VoxelEndingX;       /**Specify the ending x index of the region*/
+    int         VoxelEndingY;       /**Specify the ending y index of the region*/
+    int         VoxelZ;             /**Specify the slice number that we're going for*/
+    int         SliceThickness_vox; /**Specify the thickness of the slice in voxels*/
 
     std::atomic_bool IsDone_ = false; /**Indicates if this task has been processed or not*/
 
