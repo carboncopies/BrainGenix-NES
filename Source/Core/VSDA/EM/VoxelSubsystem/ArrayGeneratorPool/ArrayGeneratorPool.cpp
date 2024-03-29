@@ -112,7 +112,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
 
             // Measure Time
             double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
-            if (Duration_ms > 4500) {
+            if (Duration_ms > 2000) {
                 Logger_ ->Log("EMArrayGeneratorPool Slow Shape " + std::to_string(Duration_ms) + "ms For Shape " + ShapeInfo + " (" + std::to_string(ShapeID) + ")'", 7);
 
             }
