@@ -47,6 +47,37 @@ bool IsShapeInsideRegion(Simulation* _Sim, size_t _ShapeID, BoundingBox _Region,
 
 }
 
+
+std::vector<Geometries::Vec3D> SubdivideLine(Geometries::Vec3D Point1, Geometries::Vec3D Point2, int NumPoints) {
+    std::vector<Geometries::Vec3D> segments;
+
+    float deltaX = Point2.x - Point1.x;
+    float deltaY = Point2.y - Point1.y;
+    float deltaZ = Point2.z - Point1.z;
+
+    float segmentLength = sqrt(deltaX * deltaX * deltaX + deltaY * deltaZ);
+
+    float step = segmentLength / NumPoints;
+
+    float x = Point1.x;
+    float y = Point1.y;
+    float z = Point1.z;
+
+    for (int i = 0; i < NumPoints; i++) {
+
+        Geometries::Vec3D segment;
+        segment.x = x + (i / NumPoints * deltaX);
+        segment.y = y + (i / NumPoints * deltaY);
+        segment.z = z + (i / NumPoints * deltaZ);
+        segments.push_back(segment);
+
+    }
+
+    return segments;
+}
+
+
+
 bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Sim, MicroscopeParameters* _Params, VoxelArray* _Array, ScanRegion _Region, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
     assert(_Array != nullptr);
     assert(_Params != nullptr);
@@ -92,6 +123,66 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         Task->ShapeID_ = ThisCompartment->ShapeID;
         Task->WorldInfo_ = Info;
         Task->Parameters_ = _Params;
+
+        // Check Volume of Shape if it's a cylinder, (for optional subdivision)
+        uint64_t SubdivisionThreshold_vox = 1000000; 
+        if (_Sim->Collection.IsCylinder(ThisCompartment->ShapeID)) {
+
+            // Calculate size of the cylinder in question
+            Geometries::Cylinder& ThisCylinder = _Sim->Collection.GetCylinder(ThisCompartment->ShapeID);
+
+            double AverageRadius_um = (ThisCylinder.End0Radius_um + ThisCylinder.End1Radius_um) / 2.;
+            double Distance_um = ThisCylinder.End0Pos_um.Distance(ThisCylinder.End1Pos_um);
+            double Volume_um3 = pow(AverageRadius_um * 3.14159, 2) * Distance_um;
+
+            double Voxel_um3 = pow(_Params->VoxelResolution_um, 3);
+
+            uint64_t EstimatedSize_vox = Volume_um3 / Voxel_um3;
+            
+
+            // Now, if the cylinder is too big to fit properly, we're going to subdivide it
+            if (EstimatedSize_vox > SubdivisionThreshold_vox) {
+
+                // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
+                int NumSegments = ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox));
+                _Logger->Log("Detected Cylinder of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
+                std::vector<Geometries::Vec3D> PointList = SubdivideLine(ThisCylinder.End0Pos_um, ThisCylinder.End1Pos_um, NumSegments);
+
+                // now, create a task for each of these
+                // note that we assume the PointList has at least two segments in it, else it will crash
+                for (unsigned int i = 0; i < NumSegments - 1; i++) {
+
+                    std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
+                    Task->Array_ = _Array;
+                    Task->GeometryCollection_ = &_Sim->Collection;
+                    Task->ShapeID_ = -1;
+                    Task->CustomShape_ = true;
+                    Task->WorldInfo_ = Info;
+                    Task->Parameters_ = _Params;
+
+                    Task->CustomCylinder_.End0Pos_um = PointList[i];
+                    Task->CustomCylinder_.End0Radius_um = ThisCylinder.End0Radius_um; // this is wrong, we need to interpolate it - fix later!
+                    Task->CustomCylinder_.End1Pos_um = PointList[i+1];
+                    Task->CustomCylinder_.End1Radius_um = ThisCylinder.End1Radius_um; // this is also wrong, we need to interpolate it - fix later!
+
+                    // Now, enqueue it
+                    _GeneratorPool->QueueWorkOperation(Task.get());
+
+                    // Then move it to the list so we can keep track of it
+                    Tasks.push_back(std::move(Task));
+
+
+                }
+                
+                AddedShapes++;
+
+
+                // skip the rest of this loop - we don't want to add the shape we just subdividied
+                continue;
+
+            }
+            
+        }
 
 
         // Now submit to render queue if it's inside the region, otherwise skip it

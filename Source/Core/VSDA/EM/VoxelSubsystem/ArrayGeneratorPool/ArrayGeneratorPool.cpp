@@ -78,20 +78,25 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             // Note: We're not worried about synchronization here since it's okay if voxels overlap, and the voxelarray is of a static size
             // If we were to use something like a std::vector, that would be dangerous - but since we're using a static size raw array, 
             // we can allow all threads to write the array at the same time (it feels wrong, but should be okay in this specific case)
-            if (GeometryCollection->IsSphere(ShapeID)) {
-                Geometries::Sphere & ThisSphere = GeometryCollection->GetSphere(ShapeID);
-                ShapeName = "Sphere";
-                FillShape(Array, &ThisSphere, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
-            }
-            else if (GeometryCollection->IsBox(ShapeID)) {
-                Geometries::Box & ThisBox = GeometryCollection->GetBox(ShapeID); 
-                ShapeName = "Box";
-                FillBox(Array, &ThisBox, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
-            }
-            else if (GeometryCollection->IsCylinder(ShapeID)) {
-                Geometries::Cylinder & ThisCylinder = GeometryCollection->GetCylinder(ShapeID);
+            if (!ThisTask->CustomShape_) {
+                if (GeometryCollection->IsSphere(ShapeID)) {
+                    Geometries::Sphere & ThisSphere = GeometryCollection->GetSphere(ShapeID);
+                    ShapeName = "Sphere";
+                    FillShape(Array, &ThisSphere, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
+                }
+                else if (GeometryCollection->IsBox(ShapeID)) {
+                    Geometries::Box & ThisBox = GeometryCollection->GetBox(ShapeID); 
+                    ShapeName = "Box";
+                    FillBox(Array, &ThisBox, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
+                }
+                else if (GeometryCollection->IsCylinder(ShapeID)) {
+                    Geometries::Cylinder & ThisCylinder = GeometryCollection->GetCylinder(ShapeID);
+                    ShapeName = "Cylinder";
+                    FillCylinder(Array, &ThisCylinder, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
+                }
+            } else {
                 ShapeName = "Cylinder";
-                FillCylinder(Array, &ThisCylinder, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
+                FillCylinder(Array, &ThisTask->CustomCylinder_, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
             }
             
             // Update Task Result
@@ -100,6 +105,11 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
 
             // Measure Time
             double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
+            if (Duration_ms > 2500) {
+                std::string ShapeInfo = "[" + ShapeName + "]";
+                Logger_ ->Log("EMArrayGeneratorPool Slow Shape " + std::to_string(Duration_ms) + "ms For Shape " + ShapeInfo + " (" + std::to_string(ShapeID) + ")'", 7);
+
+            }
             Times.push_back(Duration_ms);
             if (Times.size() > SamplesBeforeUpdate) {
                 double AverageTime = GetAverage(&Times);

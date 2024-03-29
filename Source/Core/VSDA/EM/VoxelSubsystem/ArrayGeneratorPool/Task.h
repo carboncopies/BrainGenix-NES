@@ -43,6 +43,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
 #include <Simulator/Geometries/GeometryCollection.h>
+#include <Simulator/Geometries/Cylinder.h>
 
 
 #include <VSDA/Common/Structs/WorldInfo.h>
@@ -69,6 +70,8 @@ struct Task {
     std::atomic_bool                IsDone_ = false;       /**Indicates if this task has been processed or not.*/
     VoxelArray*                     Array_ = nullptr;      /**Pointer to the voxel array that we're writing to.*/
     MicroscopeParameters*           Parameters_ = nullptr; /**Pointer to instance of the microscope parameters struct, used to get info about noise params, etc.*/
+    bool                            CustomShape_ = false;  /**Optionally, use a custom shape defined here instead of the one from a geometry collection*/
+    Geometries::Cylinder            CustomCylinder_;       /**Custom cylinder, used when we are subdividing shapes*/
 
 };
 
