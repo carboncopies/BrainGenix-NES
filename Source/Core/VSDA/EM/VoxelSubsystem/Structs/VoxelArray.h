@@ -198,6 +198,33 @@ public:
     bool SetBB(ScanRegion _NewBoundingBox);
 
     /**
+     * @brief Checks if the given x value is in the x range.
+     * 
+     * @param _X 
+     * @return true 
+     * @return false 
+     */
+    bool IsInRangeX(float _X);
+
+    /**
+     * @brief Checks if the given y value is in the y range.
+     * 
+     * @param _y 
+     * @return true 
+     * @return false 
+     */
+    bool IsInRangeY(float _Y);
+
+    /**
+     * @brief Checks if the given z value is in the z range.
+     * 
+     * @param _Z 
+     * @return true 
+     * @return false 
+     */
+    bool IsInRangeZ(float _Z);
+
+    /**
      * @brief Get the x dimensions
      * 
      * @return int 

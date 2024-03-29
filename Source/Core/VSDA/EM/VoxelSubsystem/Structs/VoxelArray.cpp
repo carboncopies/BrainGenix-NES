@@ -292,6 +292,19 @@ BoundingBox VoxelArray::GetBoundingBox() {
     return BoundingBox_;
 }
 
+bool VoxelArray::IsInRangeX(float _X) {
+    return _X >= BoundingBox_.bb_point1[0] && _X <= BoundingBox_.bb_point2[0];
+}
+
+bool VoxelArray::IsInRangeY(float _Y) {
+    return _Y >= BoundingBox_.bb_point1[1] && _Y <= BoundingBox_.bb_point2[1];
+}
+
+bool VoxelArray::IsInRangeZ(float _Z) {
+    return _Z >= BoundingBox_.bb_point1[2] && _Z <= BoundingBox_.bb_point2[2];
+}
+
+
 }; // Close Namespace Logger
 }; // Close Namespace Common
 }; // Close Namespace BG
