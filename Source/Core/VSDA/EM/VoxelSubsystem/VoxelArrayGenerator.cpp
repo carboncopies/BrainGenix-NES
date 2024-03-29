@@ -132,7 +132,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
             // Check if we need to render this in parts
 
             // Check Volume of Shape if it's a cylinder, (for optional subdivision)
-            uint64_t SubdivisionThreshold_vox = 1000000; 
+            uint64_t SubdivisionThreshold_vox = 500000; 
             if (_Sim->Collection.IsSphere(ThisCompartment->ShapeID)) {
 
                 // Calculate Size in voxels of the shape
