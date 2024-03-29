@@ -57,6 +57,13 @@ namespace Simulator {
 namespace VoxelArrayGenerator {
 
 
+enum CustomShape {
+    CUSTOM_NONE,
+    CUSTOM_CYLINDER,
+    CUSTOM_SPHERE
+};
+
+
 /**
  * @brief Structure that defines the work to be completed. This involves taking a pointer to the voxel array in question,
  * calculating a point cloud for the shape we've been given, and then writing that into the voxel array.
@@ -70,8 +77,11 @@ struct Task {
     std::atomic_bool                IsDone_ = false;       /**Indicates if this task has been processed or not.*/
     VoxelArray*                     Array_ = nullptr;      /**Pointer to the voxel array that we're writing to.*/
     MicroscopeParameters*           Parameters_ = nullptr; /**Pointer to instance of the microscope parameters struct, used to get info about noise params, etc.*/
-    bool                            CustomShape_ = false;  /**Optionally, use a custom shape defined here instead of the one from a geometry collection*/
+    CustomShape                     CustomShape_;          /**Optionally, use a custom shape defined here instead of the one from a geometry collection*/
     Geometries::Cylinder            CustomCylinder_;       /**Custom cylinder, used when we are subdividing shapes*/
+    Geometries::Sphere              CustomSphere_;         /**Custom sphere, used to define the sphere*/
+    int CustomThisComponent = 0;
+    int CustomTotalComponents = 0;
 
 };
 

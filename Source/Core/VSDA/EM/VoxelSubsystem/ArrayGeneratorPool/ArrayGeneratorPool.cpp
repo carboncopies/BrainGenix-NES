@@ -79,7 +79,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             // If we were to use something like a std::vector, that would be dangerous - but since we're using a static size raw array, 
             // we can allow all threads to write the array at the same time (it feels wrong, but should be okay in this specific case)
             std::string ShapeInfo;
-            if (!ThisTask->CustomShape_) {
+            if (!ThisTask->CustomShape_ != CUSTOM_NONE) {
                 if (GeometryCollection->IsSphere(ShapeID)) {
                     Geometries::Sphere & ThisSphere = GeometryCollection->GetSphere(ShapeID);
                     ShapeInfo += "Radius: " + std::to_string(ThisSphere.Radius_um);
@@ -100,8 +100,15 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
                     FillCylinder(Array, &ThisCylinder, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
                 }
             } else {
-                ShapeName = "Cylinder";
-                FillCylinder(Array, &ThisTask->CustomCylinder_, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
+
+                if (ThisTask->CustomShape_ == CUSTOM_CYLINDER) {
+                    ShapeName = "Cylinder";
+                    FillCylinder(Array, &ThisTask->CustomCylinder_, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
+                } else if (ThisTask->CustomShape_ == CUSTOM_SPHERE) {
+                    ShapeName = "Sphere";
+                    FillShapePart(ThisTask->CustomTotalComponents, ThisTask->CustomThisComponent, Array, &ThisTask->CustomSphere_, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
+
+                }
             }
             
             ShapeInfo = "[Type: " + ShapeName + ", " + ShapeInfo + "]";
