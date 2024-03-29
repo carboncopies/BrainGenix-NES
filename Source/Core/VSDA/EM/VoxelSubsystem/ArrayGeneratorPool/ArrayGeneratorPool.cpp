@@ -104,7 +104,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
                 FillCylinder(Array, &ThisTask->CustomCylinder_, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
             }
             
-            ShapeInfo = "[ Type: " + ShapeName + ", " + ShapeInfo + "]";
+            ShapeInfo = "[Type: " + ShapeName + ", " + ShapeInfo + "]";
 
             // Update Task Result
             ThisTask->IsDone_ = true;
