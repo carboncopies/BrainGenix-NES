@@ -111,6 +111,29 @@ bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo
 
 }
 
+bool FillShapePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
+    assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
+    assert(_Params != nullptr);
+    assert(_Generator != nullptr);
+
+    BoundingBox BB = _Shape->GetBoundingBox(_WorldInfo);
+
+    for (float X = BB.bb_point1[0] + (_ThisThread * _WorldInfo.VoxelScale_um); X < BB.bb_point2[0]; X+= (_TotalThreads * _WorldInfo.VoxelScale_um)) {
+        for (float Y = BB.bb_point1[1]; Y < BB.bb_point2[1]; Y+= _WorldInfo.VoxelScale_um) {
+            for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _WorldInfo.VoxelScale_um) {
+                if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z), _WorldInfo)) {
+                    VoxelType FinalVoxelValue = GenerateVoxelColor(X, Y, Z, _Params, _Generator);
+                    _Array->SetVoxelIfNotDarker(X, Y, Z, FinalVoxelValue);
+                }
+            }
+        }
+    }
+
+    return true;
+
+}
+
+
 bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_Array != nullptr);
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
