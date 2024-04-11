@@ -63,19 +63,11 @@ VSDARPCInterface::~VSDARPCInterface() {
 std::string VSDARPCInterface::VSDAEMInitialize(std::string _JSONRequest) {
 
     // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-    Logger_->Log(std::string("VSDA EM Initialize Called On Simulation With ID ") + std::to_string(SimulationID), 4);
-
-    // Check Sim ID
-    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
-        Logger_->Log(std::string("VSDA EM Initialize Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        return ResponseJSON.dump();
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/EM/Initialize", SimulationsPtr_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
-
-    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+    Simulation* ThisSimulation = Handle.Sim();
     
 
     int Result = !VSDA_EM_Initialize(Logger_, ThisSimulation);
@@ -89,37 +81,26 @@ std::string VSDARPCInterface::VSDAEMInitialize(std::string _JSONRequest) {
 std::string VSDARPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
 
     // Parse Request, Get Parameters
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID                 = Util::GetInt(&RequestJSON, "SimulationID");
-    float PixelResolution_nm         = Util::GetFloat(&RequestJSON, "PixelResolution_nm");
-    int ImageWidth_px                = Util::GetInt(&RequestJSON, "ImageWidth_px");
-    int ImageHeight_px               = Util::GetInt(&RequestJSON, "ImageHeight_px");
-    float SliceThickness_nm          = Util::GetFloat(&RequestJSON, "SliceThickness_nm");
-    float ScanRegionOverlap_percent  = Util::GetFloat(&RequestJSON, "ScanRegionOverlap_percent");
-    float MicroscopeFOV_deg          = Util::GetFloat(&RequestJSON, "MicroscopeFOV_deg");
-    int NumPixelsPerVoxel_px         = Util::GetInt(&RequestJSON, "NumPixelsPerVoxel_px");
-    Logger_->Log(std::string("VSDA EM SetupMicroscope Called On Simulation With ID ") + std::to_string(SimulationID), 4);
-
-    // Check Sim ID
-    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
-        Logger_->Log(std::string("VSDA EM SetupMicroscope Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        return ResponseJSON.dump();
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/EM/SetupMicroscope", SimulationsPtr_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
-
-    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
-    
+    Simulation* ThisSimulation = Handle.Sim();
+    Logger_->Log(std::string("VSDA EM SetupMicroscope Called On Simulation With ID ") + std::to_string(ThisSimulation->ID), 4);
 
     // Build Microscope Paremters Data
     MicroscopeParameters Params;
-    Params.VoxelResolution_um = PixelResolution_nm; // This is not right, and we'll need to tweak some of these conversions, but for now it's the best we've got.
-    Params.ImageWidth_px = ImageWidth_px;
-    Params.ImageHeight_px = ImageHeight_px;
-    Params.ScanRegionOverlap_percent = ScanRegionOverlap_percent;
-    Params.SliceThickness_um = SliceThickness_nm;
-    Params.MicroscopeFOV_deg = MicroscopeFOV_deg;
-    Params.NumPixelsPerVoxel_px = NumPixelsPerVoxel_px;
+    Handle.GetParFloat("PixelResolution_nm", Params.VoxelResolution_um);// This is not right, and we'll need to tweak some of these conversions, but for now it's the best we've got.
+    Handle.GetParInt("ImageWidth_px", Params.ImageWidth_px);
+    Handle.GetParInt("ImageHeight_px", Params.ImageHeight_px);
+    Handle.GetParFloat("ScanRegionOverlap_percent", Params.ScanRegionOverlap_percent);
+    Handle.GetParFloat("SliceThickness_nm", Params.SliceThickness_um);
+    Handle.GetParFloat("MicroscopeFOV_deg", Params.MicroscopeFOV_deg);
+    Handle.GetParInt("NumPixelsPerVoxel_px", Params.NumPixelsPerVoxel_px);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
     int Result = !VSDA_EM_SetupMicroscope(Logger_, ThisSimulation, Params);
 
@@ -133,37 +114,38 @@ std::string VSDARPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
 std::string VSDARPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
 
     // Parse Request, Get Parameters
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID                 = Util::GetInt(&RequestJSON, "SimulationID");
-    Geometries::Vec3D Point1, Point2, SampleRotation;
-    Util::GetArrVec3(Point1, &RequestJSON, "Point1_um");
-    Util::GetArrVec3(Point2, &RequestJSON, "Point2_um");
-    Util::GetArrVec3(SampleRotation, &RequestJSON, "SampleRotation_rad");
-    Logger_->Log(std::string("VSDA EM DefineScanRegion Called On Simulation With ID ") + std::to_string(SimulationID), 4);
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/EM/DefineScanRegion", SimulationsPtr_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+    Simulation* ThisSimulation = Handle.Sim();
+    std::vector<float> Point1, Point2, Rotation_rad;
+    Handle.GetParVecFloat("Point1_um", Point1);
+    Handle.GetParVecFloat("Point2_um", Point2);
+    Handle.GetParVecFloat("SampleRotation_rad", Rotation_rad);
+    Logger_->Log(std::string("VSDA EM DefineScanRegion Called On Simulation With ID ") + std::to_string(ThisSimulation->ID), 4);
 
-    // Check Sim ID
-    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
-        Logger_->Log(std::string("VSDA EM DefineScanRegion Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        return ResponseJSON.dump();
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
 
-    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+    if ((Point1.size() != 3) || (Point2.size() != 3) || (Rotation_rad.size() != 3)) {
+        return Handle.ErrResponse();
+    }
 
     // Setup Requested Bounding Box
     ScanRegion CreatedRegion;
-    CreatedRegion.Point1X_um = Point1.x;
-    CreatedRegion.Point1Y_um = Point1.y;
-    CreatedRegion.Point1Z_um = Point1.z;
+    CreatedRegion.Point1X_um = Point1[0];
+    CreatedRegion.Point1Y_um = Point1[1];
+    CreatedRegion.Point1Z_um = Point1[2];
 
-    CreatedRegion.Point2X_um = Point2.x;
-    CreatedRegion.Point2Y_um = Point2.y;
-    CreatedRegion.Point2Z_um = Point2.z;
+    CreatedRegion.Point2X_um = Point2[0];
+    CreatedRegion.Point2Y_um = Point2[1];
+    CreatedRegion.Point2Z_um = Point2[2];
 
-    CreatedRegion.SampleRotationX_rad = SampleRotation.x;
-    CreatedRegion.SampleRotationY_rad = SampleRotation.y;
-    CreatedRegion.SampleRotationZ_rad = SampleRotation.z;
+    CreatedRegion.SampleRotationX_rad = Rotation_rad[0];
+    CreatedRegion.SampleRotationY_rad = Rotation_rad[1];
+    CreatedRegion.SampleRotationZ_rad = Rotation_rad[2];
 
 
     int ID = -1;
@@ -181,20 +163,29 @@ std::string VSDARPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
 std::string VSDARPCInterface::VSDAEMQueueRenderOperation(std::string _JSONRequest) {
 
     // Parse Request, Get Parameters
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-    int ScanRegionID = Util::GetInt(&RequestJSON, "ScanRegionID");
-    Logger_->Log(std::string("VSDA EM QueueRenderOperation Called On Simulation With ID ") + std::to_string(SimulationID), 4);
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/EM/QueueRenderOperation", SimulationsPtr_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+    Simulation* ThisSimulation = Handle.Sim();
+    int ScanRegionID;
+    Handle.GetParInt("ScanRegionID", ScanRegionID);
+    Logger_->Log(std::string("VSDA EM QueueRenderOperation Called On Simulation With ID ") + std::to_string(ThisSimulation->ID), 4);
 
-    // Check Sim ID
-    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
-        Logger_->Log(std::string("VSDA EM QueueRenderOperation Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        return ResponseJSON.dump();
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
 
-    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+
+    // Check Region ID
+    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_.RenderedImagePaths_.size()) {
+        Logger_->Log(std::string("VSDA EM GetImageStack Error, ScanRegion With ID ") + std::to_string(ScanRegionID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 3; // Error
+        return ResponseJSON.dump();
+    } 
+
+
     int Result = !VSDA_EM_QueueRenderOperation(Logger_, ThisSimulation, ScanRegionID);
 
     // Build Response
@@ -207,19 +198,12 @@ std::string VSDARPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
 
 
     // Parse Request, Get Parameters
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-    // Logger_->Log(std::string("VSDA EM GetRenderStatus Called On Simulation With ID ") + std::to_string(SimulationID), 0);
-
-    // Check Sim ID
-    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
-        Logger_->Log(std::string("VSDA EM GetRenderStatus Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        return ResponseJSON.dump();
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/EM/GetRenderStatus", SimulationsPtr_, true);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
+    Simulation* ThisSimulation = Handle.Sim();
 
-    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
 
     // Build Response
     nlohmann::json ResponseJSON;
@@ -239,20 +223,18 @@ std::string VSDARPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
 }
 std::string VSDARPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
 
-    // Parse Request, Get Parameters
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-    int ScanRegionID = Util::GetInt(&RequestJSON, "ScanRegionID");
-
-    // Check Sim ID
-    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
-        Logger_->Log(std::string("VSDA EM GetImageStack Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        return ResponseJSON.dump();
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/EM/GetImageStack", SimulationsPtr_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
+    Simulation* ThisSimulation = Handle.Sim();
+    int ScanRegionID;
+    Handle.GetParInt("ScanRegionID", ScanRegionID);
+    Logger_->Log(std::string("VSDA EM QueueRenderOperation Called On Simulation With ID ") + std::to_string(ThisSimulation->ID), 4);
 
-    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
 
     // Check Region ID
@@ -270,7 +252,7 @@ std::string VSDARPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
     ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
 
     nlohmann::json ImagePaths = ThisSimulation->VSDAData_.RenderedImagePaths_[ScanRegionID];
-    Logger_->Log(std::string("VSDA EM GetImageStack Called On Simulation With ID ") + std::to_string(SimulationID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
+    Logger_->Log(std::string("VSDA EM GetImageStack Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
     ResponseJSON["RenderedImages"] = ImagePaths;
 
 
@@ -282,20 +264,17 @@ std::string VSDARPCInterface::VSDAGetImage(std::string _JSONRequest) {
 
 
     // Parse Request, Get Parameters
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-    std::string ImageHandle = Util::GetString(&RequestJSON, "ImageHandle");
-    // Logger_->Log(std::string("VSDA EM GetImage Called On Simulation ") + std::to_string(SimulationID) + ", Handle " + ImageHandle, 0);
-
-    // Check Sim ID
-    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
-        Logger_->Log(std::string("VSDA EM GetImage Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        return ResponseJSON.dump();
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/GetImage", SimulationsPtr_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+    Simulation* ThisSimulation = Handle.Sim();
+    std::string ImageHandle;
+    Handle.GetParString("ImageHandle", ImageHandle);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
 
-    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
 
 
     // Minor security feature (probably still exploitable, so be warned!)
@@ -352,19 +331,11 @@ std::string VSDARPCInterface::VSDAGetImage(std::string _JSONRequest) {
 std::string VSDARPCInterface::VSDACAInitialize(std::string _JSONRequest) {
 
     // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-    Logger_->Log(std::string("VSDA CA Initialize Called On Simulation With ID ") + std::to_string(SimulationID), 4);
-
-    // Check Sim ID
-    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
-        Logger_->Log(std::string("VSDA CA Initialize Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        return ResponseJSON.dump();
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/CA/Initialize", SimulationsPtr_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
-
-    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+    Simulation* ThisSimulation = Handle.Sim();
     
 
     int Result = !NES::VSDA::Calcium::VSDA_CA_Initialize(Logger_, ThisSimulation);
@@ -414,37 +385,40 @@ std::string VSDARPCInterface::VSDACASetupMicroscope(std::string _JSONRequest) {
 std::string VSDARPCInterface::VSDACADefineScanRegion(std::string _JSONRequest) {
 
     // Parse Request, Get Parameters
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID                 = Util::GetInt(&RequestJSON, "SimulationID");
-    Geometries::Vec3D Point1, Point2, SampleRotation;
-    Util::GetArrVec3(Point1, &RequestJSON, "Point1_um");
-    Util::GetArrVec3(Point2, &RequestJSON, "Point2_um");
-    Util::GetArrVec3(SampleRotation, &RequestJSON, "SampleRotation_rad");
-    Logger_->Log(std::string("VSDA Ca DefineScanRegion Called On Simulation With ID ") + std::to_string(SimulationID), 4);
+    // Parse Request, Get Parameters
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/CA/DefineScanRegion", SimulationsPtr_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+    Simulation* ThisSimulation = Handle.Sim();
+    // Geometries::Vec3D Point1, Point2, SampleRotation;
+    std::vector<float> Point1, Point2, Rotation_rad;
+    Handle.GetParVecFloat("Point1_um", Point1);
+    Handle.GetParVecFloat("Point2_um", Point2);
+    Handle.GetParVecFloat("SampleRotation_rad", Rotation_rad);
+    Logger_->Log(std::string("VSDA CA DefineScanRegion Called On Simulation With ID ") + std::to_string(ThisSimulation->ID), 4);
 
-    // Check Sim ID
-    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
-        Logger_->Log(std::string("VSDA Ca DefineScanRegion Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        return ResponseJSON.dump();
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
 
-    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+    if ((Point1.size() != 3) || (Point2.size() != 3) || (Rotation_rad.size() != 3)) {
+        return Handle.ErrResponse();
+    }
 
     // Setup Requested Bounding Box
     ScanRegion CreatedRegion;
-    CreatedRegion.Point1X_um = Point1.x;
-    CreatedRegion.Point1Y_um = Point1.y;
-    CreatedRegion.Point1Z_um = Point1.z;
+    CreatedRegion.Point1X_um = Point1[0];
+    CreatedRegion.Point1Y_um = Point1[1];
+    CreatedRegion.Point1Z_um = Point1[2];
 
-    CreatedRegion.Point2X_um = Point2.x;
-    CreatedRegion.Point2Y_um = Point2.y;
-    CreatedRegion.Point2Z_um = Point2.z;
+    CreatedRegion.Point2X_um = Point2[0];
+    CreatedRegion.Point2Y_um = Point2[1];
+    CreatedRegion.Point2Z_um = Point2[2];
 
-    CreatedRegion.SampleRotationX_rad = SampleRotation.x;
-    CreatedRegion.SampleRotationY_rad = SampleRotation.y;
-    CreatedRegion.SampleRotationZ_rad = SampleRotation.z;
+    CreatedRegion.SampleRotationX_rad = Rotation_rad[0];
+    CreatedRegion.SampleRotationY_rad = Rotation_rad[1];
+    CreatedRegion.SampleRotationZ_rad = Rotation_rad[2];
 
 
 
@@ -463,20 +437,19 @@ std::string VSDARPCInterface::VSDACADefineScanRegion(std::string _JSONRequest) {
 std::string VSDARPCInterface::VSDACAQueueRenderOperation(std::string _JSONRequest) {
 
     // Parse Request, Get Parameters
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-    int ScanRegionID = Util::GetInt(&RequestJSON, "ScanRegionID");
-    Logger_->Log(std::string("VSDA Ca QueueRenderOperation Called On Simulation With ID ") + std::to_string(SimulationID), 4);
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/CA/QueueRenderOperation", SimulationsPtr_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+    Simulation* ThisSimulation = Handle.Sim();
+    int ScanRegionID;
+    Handle.GetParInt("ScanRegionID", ScanRegionID);
+    Logger_->Log(std::string("VSDA CA QueueRenderOperation Called On Simulation With ID ") + std::to_string(ThisSimulation->ID), 4);
 
-    // Check Sim ID
-    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
-        Logger_->Log(std::string("VSDA Ca QueueRenderOperation Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        return ResponseJSON.dump();
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
 
-    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
     int Result = !NES::VSDA::Calcium::VSDA_CA_QueueRenderOperation(Logger_, ThisSimulation, ScanRegionID);
 
     // Build Response
@@ -488,20 +461,12 @@ std::string VSDARPCInterface::VSDACAQueueRenderOperation(std::string _JSONReques
 std::string VSDARPCInterface::VSDACAGetRenderStatus(std::string _JSONRequest) {
 
 
-    // Parse Request, Get Parameters
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-    // Logger_->Log(std::string("VSDA EM GetRenderStatus Called On Simulation With ID ") + std::to_string(SimulationID), 0);
-
-    // Check Sim ID
-    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
-        Logger_->Log(std::string("VSDA Ca GetRenderStatus Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        return ResponseJSON.dump();
+   // Parse Request, Get Parameters
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/CA/GetRenderStatus", SimulationsPtr_, true);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
-
-    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+    Simulation* ThisSimulation = Handle.Sim();
 
     // Build Response
     nlohmann::json ResponseJSON;
@@ -519,20 +484,18 @@ std::string VSDARPCInterface::VSDACAGetRenderStatus(std::string _JSONRequest) {
 }
 std::string VSDARPCInterface::VSDACAGetImageStack(std::string _JSONRequest) {
 
-    // Parse Request, Get Parameters
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-    int ScanRegionID = Util::GetInt(&RequestJSON, "ScanRegionID");
-
-    // Check Sim ID
-    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
-        Logger_->Log(std::string("VSDA Ca GetImageStack Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        return ResponseJSON.dump();
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/CA/GetImageStack", SimulationsPtr_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
+    Simulation* ThisSimulation = Handle.Sim();
+    int ScanRegionID;
+    Handle.GetParInt("ScanRegionID", ScanRegionID);
+    Logger_->Log(std::string("VSDA EM QueueRenderOperation Called On Simulation With ID ") + std::to_string(ThisSimulation->ID), 4);
 
-    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
 
     // Check Region ID
@@ -550,7 +513,7 @@ std::string VSDARPCInterface::VSDACAGetImageStack(std::string _JSONRequest) {
     ResponseJSON["StatusCode"] = ThisSimulation->CaData_.State_ != NES::VSDA::Calcium::CA_RENDER_DONE;
 
     nlohmann::json ImagePaths = ThisSimulation->CaData_.RenderedImagePaths_[ScanRegionID];
-    Logger_->Log(std::string("VSDA Ca GetImageStack Called On Simulation With ID ") + std::to_string(SimulationID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
+    Logger_->Log(std::string("VSDA Ca GetImageStack Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
     ResponseJSON["RenderedImages"] = ImagePaths;
 
 
