@@ -63,19 +63,11 @@ VSDARPCInterface::~VSDARPCInterface() {
 std::string VSDARPCInterface::VSDAEMInitialize(std::string _JSONRequest) {
 
     // Parse Request
-    nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID = Util::GetInt(&RequestJSON, "SimulationID");
-    Logger_->Log(std::string("VSDA EM Initialize Called On Simulation With ID ") + std::to_string(SimulationID), 4);
-
-    // Check Sim ID
-    if (SimulationID >= SimulationsPtr_->size() || SimulationID < 0) { // invlaid id
-        Logger_->Log(std::string("VSDA EM Initialize Error, Simulation With ID ") + std::to_string(SimulationID) + " Does Not Exist", 7);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 1; // invalid simulation id
-        return ResponseJSON.dump();
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/EM/Initialize", SimulationsPtr_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
     }
-
-    Simulation* ThisSimulation = (*SimulationsPtr_)[SimulationID].get();
+    Simulation* ThisSimulation = Handle.Sim();
     
 
     int Result = !VSDA_EM_Initialize(Logger_, ThisSimulation);
@@ -134,7 +126,7 @@ std::string VSDARPCInterface::VSDAEMDefineScanRegion(std::string _JSONRequest) {
 
     // Parse Request, Get Parameters
     nlohmann::json RequestJSON = nlohmann::json::parse(_JSONRequest);
-    int SimulationID                 = Util::GetInt(&RequestJSON, "SimulationID");
+    int SimulationID            = Util::GetInt(&RequestJSON, "SimulationID");
     Geometries::Vec3D Point1, Point2, SampleRotation;
     Util::GetArrVec3(Point1, &RequestJSON, "Point1_um");
     Util::GetArrVec3(Point2, &RequestJSON, "Point2_um");
