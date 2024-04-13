@@ -74,7 +74,7 @@ bool ThreadedRenderVoxelArray(BG::Common::Logger::LoggingSystem* _Logger, VSDADa
  * @param _SliceNumber 
  * @return std::vector<std::string> 
  */
-bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int _SliceNumber, int _SliceThickness_vox, ImageProcessorPool* _ImageProcessorPool, double _OffsetX=0., double _OffsetY=0., int _SliceOffset=0);
+bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int _SliceNumber, int _SliceThickness_vox, ImageProcessorPool* _ImageProcessorPool, double _OffsetX=0., double _OffsetY=0., double _RegionOffsetX=0., double _RegionOffsetY=0., int _SliceOffset=0);
 
 
 

@@ -29,7 +29,7 @@ namespace Simulator {
 // }
 
 
-bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int _SliceNumber, int _SliceThickness, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, int _SliceOffset) {
+bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int _SliceNumber, int _SliceThickness, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, double _RegionOffsetX, double _RegionOffsetY, int _SliceOffset) {
     assert(_VSDAData != nullptr);
     assert(_Logger != nullptr);
 
@@ -104,8 +104,8 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxIma
 
 
             // Setup Stats Info About Each Region
-            int VoxelOffsetX = (_OffsetX / Params->VoxelResolution_um);
-            int VoxelOffsetY = (_OffsetY / Params->VoxelResolution_um);
+            int VoxelOffsetX = ((_OffsetX + _RegionOffsetX) / Params->VoxelResolution_um);
+            int VoxelOffsetY = ((_OffsetY + _RegionOffsetY) / Params->VoxelResolution_um);
 
 
             VoxelIndexInfo Info;

@@ -57,7 +57,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     // This will of course go badly if you're using a lot of ram at the moment, and needs to be improved in the future.
 
     // Maximum permitted size, we cannot exceed this even if we have more RAM.
-    size_t MaxVoxelSizeLimit = 4100; 
+    size_t MaxVoxelSizeLimit = 10000; 
 
     // With this scaling factor, we assume that this is the max portion of the system ram we can use
     // That way, we don't gobble more than say 60% of it in one alloc
@@ -196,6 +196,8 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
                 ThisSubRegion.Sim = _Simulation;
                 ThisSubRegion.RegionOffsetX_um = SubRegionStartX_um; // We should get rid of these
                 ThisSubRegion.RegionOffsetY_um = SubRegionStartY_um; // We should get rid of these
+                ThisSubRegion.MasterRegionOffsetX_um = -BaseRegion->Point1X_um;
+                ThisSubRegion.MasterRegionOffsetY_um = -BaseRegion->Point1Y_um;
                 ThisSubRegion.MaxImagesX = ImagesPerSubRegionX;
                 ThisSubRegion.MaxImagesY = ImagesPerSubRegionY;                
                 ThisSubRegion.LayerOffset = ZStep * MaxVoxelArrayAxisSize_vox;
