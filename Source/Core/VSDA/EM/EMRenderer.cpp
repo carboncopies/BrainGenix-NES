@@ -131,6 +131,19 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     _Logger->Log("Calculated '" + std::to_string(NumSubRegionsInZDim) + "'Z Subregions", 3);
 
 
+    // An intermediary step - we're going to calculate the total region's effective index size, to make plugging this data into neuroglancer easier if desired
+    int NumVoxelsPerSlice = Params->SliceThickness_um / Params->VoxelResolution_um;
+    VoxelIndexInfo Info;
+    Info.StartX = 0;
+    Info.StartY = 0;
+    Info.StartZ = 0;
+    Info.EndX = abs(BaseRegion->Point1X_um - BaseRegion->Point2X_um) / Params->VoxelResolution_um;
+    Info.EndY = abs(BaseRegion->Point1Y_um - BaseRegion->Point2Y_um) / Params->VoxelResolution_um;
+    Info.EndX = abs(BaseRegion->Point1Z_um - BaseRegion->Point2Z_um) / (Params->VoxelResolution_um * NumVoxelsPerSlice);
+    BaseRegion->RegionIndexInfo_ = Info;
+
+
+
     // Now, we go through all of the steps in each direction that we identified, and calculate the bounding boxes for each
     std::vector<SubRegion> SubRegions;
     for (int XStep = 0; XStep < NumSubRegionsInXDim; XStep++) {
@@ -187,7 +200,6 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
                 ThisSubRegion.MaxImagesY = ImagesPerSubRegionY;                
                 ThisSubRegion.LayerOffset = ZStep * MaxVoxelArrayAxisSize_vox;
                 ThisSubRegion.Region = ThisRegion;
-
 
                 _Logger->Log("Created SubRegion At Location " + ThisRegion.ToString() + " Of Size " + ThisRegion.GetDimensionsInVoxels(Params->VoxelResolution_um), 3);
 

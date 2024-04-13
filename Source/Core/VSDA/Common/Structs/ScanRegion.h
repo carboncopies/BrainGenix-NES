@@ -32,6 +32,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <cstdint>
 #include <string>
+#include <vector>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -40,6 +41,19 @@
 namespace BG {
 namespace NES {
 namespace Simulator {
+
+/**
+ * @brief Simple helper to store information for each image indicating what voxel it covers
+ * 
+ */
+struct VoxelIndexInfo {
+    int StartX; /**Starting index covered by this shape (inclusive)*/
+    int EndX; /**Ending index covered by this shape (not inclusive)*/
+    int StartY; /**Starting index covered by this shape (inclusive)*/
+    int EndY; /**Ending index covered by this shape (not inclusive)*/
+    int StartZ; /**Starting index covered by this shape (inclusive)*/
+    int EndZ; /**Ending index covered by this shape (not inclusive)*/
+};
 
 /**
  * @brief Defines a bounding box using two points where we wish to scan with the microscope.
@@ -65,6 +79,9 @@ struct ScanRegion {
     float SampleRotationZ_rad;
 
 
+    std::vector<std::string> ImageFilenames_; /**List of image filenames to be used*/
+    std::vector<VoxelIndexInfo> ImageVoxelIndexes_; /**List of indexes for each image*/
+    VoxelIndexInfo RegionIndexInfo_; /**Information about the whole rendered region*/
 
     /**
      * @brief Helper function that returns the x,y,z size of this region.

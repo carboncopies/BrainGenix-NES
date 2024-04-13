@@ -46,6 +46,7 @@ VSDARPCInterface::VSDARPCInterface(BG::Common::Logger::LoggingSystem* _Logger, A
     _RPCManager->AddRoute("VSDA/EM/QueueRenderOperation", std::bind(&VSDARPCInterface::VSDAEMQueueRenderOperation, this, std::placeholders::_1));
     _RPCManager->AddRoute("VSDA/EM/GetRenderStatus",      std::bind(&VSDARPCInterface::VSDAEMGetRenderStatus, this, std::placeholders::_1));
     _RPCManager->AddRoute("VSDA/EM/GetImageStack",        std::bind(&VSDARPCInterface::VSDAEMGetImageStack, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/GetIndexData",         std::bind(&VSDARPCInterface::VSDAEMGetIndexData, this, std::placeholders::_1));
     _RPCManager->AddRoute("VSDA/GetImage",                std::bind(&VSDARPCInterface::VSDAGetImage, this, std::placeholders::_1));
     _RPCManager->AddRoute("VSDA/Ca/Initialize",           std::bind(&VSDARPCInterface::VSDACAInitialize, this, std::placeholders::_1));
     _RPCManager->AddRoute("VSDA/Ca/SetupMicroscope",      std::bind(&VSDARPCInterface::VSDACASetupMicroscope, this, std::placeholders::_1));
@@ -230,7 +231,7 @@ std::string VSDARPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
     Simulation* ThisSimulation = Handle.Sim();
     int ScanRegionID;
     Handle.GetParInt("ScanRegionID", ScanRegionID);
-    Logger_->Log(std::string("VSDA EM QueueRenderOperation Called On Simulation With ID ") + std::to_string(ThisSimulation->ID), 4);
+    Logger_->Log(std::string("VSDA EM GetImageStack Called On Simulation With ID ") + std::to_string(ThisSimulation->ID), 4);
 
     if (Handle.HasError()) {
         return Handle.ErrResponse();
@@ -251,9 +252,78 @@ std::string VSDARPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
 
     ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
 
-    nlohmann::json ImagePaths = ThisSimulation->VSDAData_.RenderedImagePaths_[ScanRegionID];
+    nlohmann::json ImagePaths = ThisSimulation->VSDAData_.Regions_[ScanRegionID].ImageFilenames_;
     Logger_->Log(std::string("VSDA EM GetImageStack Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
     ResponseJSON["RenderedImages"] = ImagePaths;
+
+
+    return ResponseJSON.dump();
+
+
+}
+std::string VSDARPCInterface::VSDAEMGetIndexData(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/EM/VSDAEMGetIndexData", SimulationsPtr_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+    Simulation* ThisSimulation = Handle.Sim();
+    int ScanRegionID;
+    Handle.GetParInt("ScanRegionID", ScanRegionID);
+    Logger_->Log(std::string("VSDA EM GetIndexData Called On Simulation With ID ") + std::to_string(ThisSimulation->ID), 4);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+
+    // Check Region ID
+    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_.RenderedImagePaths_.size()) {
+        Logger_->Log(std::string("VSDA EM GetIndexData Error, ScanRegion With ID ") + std::to_string(ScanRegionID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 3; // Error
+        return ResponseJSON.dump();
+    } 
+
+    ScanRegion* Region = &ThisSimulation->VSDAData_.Regions_[ScanRegionID];
+
+    // Sanity check
+    if (Region->ImageFilenames_.size() != Region->ImageVoxelIndexes_.size()) {
+        Logger_->Log(std::string("VSDA EM GetIndexData Sanity Check Failed - Something Is Really Wrong: HELP!"), 10);
+        return "{\"StatusCode\":\"Help\"}";
+    }
+
+    // Build list of all image properties for every image in the rendered dataset
+    std::vector<nlohmann::json> ImageProperties;
+    for (size_t i = 0; i < Region->ImageVoxelIndexes_.size(); i++) {
+        nlohmann::json ThisImageProperties;
+        ThisImageProperties["Handle"] = Region->ImageFilenames_[i];
+        ThisImageProperties["StartXIndex"] = Region->ImageVoxelIndexes_[i].StartX;
+        ThisImageProperties["StartYIndex"] = Region->ImageVoxelIndexes_[i].StartY;
+        ThisImageProperties["StartZIndex"] = Region->ImageVoxelIndexes_[i].StartZ;
+        ThisImageProperties["EndXIndex"] = Region->ImageVoxelIndexes_[i].EndX;
+        ThisImageProperties["EndYIndex"] = Region->ImageVoxelIndexes_[i].EndY;
+        ThisImageProperties["EndZIndex"] = Region->ImageVoxelIndexes_[i].EndZ;
+    }
+
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+
+
+
+    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
+
+    ResponseJSON["RegionStartXIndex"] = Region->RegionIndexInfo_.StartX;
+    ResponseJSON["RegionStartYIndex"] = Region->RegionIndexInfo_.StartY;
+    ResponseJSON["RegionStartZIndex"] = Region->RegionIndexInfo_.StartZ;
+    ResponseJSON["RegionEndXIndex"] = Region->RegionIndexInfo_.EndX;
+    ResponseJSON["RegionEndYIndex"] = Region->RegionIndexInfo_.EndY;
+    ResponseJSON["RegionEndZIndex"] = Region->RegionIndexInfo_.EndZ;
+
+    nlohmann::json ImagePropertiesJSON = ImageProperties;
+    Logger_->Log(std::string("VSDA EM GetIndexData Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
+    ResponseJSON["ImageProperties"] = ImagePropertiesJSON;
 
 
     return ResponseJSON.dump();

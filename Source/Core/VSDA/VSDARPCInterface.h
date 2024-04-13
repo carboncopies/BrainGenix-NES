@@ -148,6 +148,7 @@ public:
      * @return std::string 
      */
     std::string VSDAEMGetImageStack(std::string _JSONRequest);
+    std::string VSDAEMGetIndexData(std::string _JSONRequest);
 
     /**
      * @brief Will get an image that has been rendered and returned in the getstack function.
