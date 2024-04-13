@@ -3,15 +3,12 @@
 namespace BG {
 namespace NES {
 namespace IO {
-SonataLoader::SonataLoader(const std::string &_nodeFilePath,
-                           const std::string &_edgeFilePath) {
+SonataLoader::SonataLoader(const std::string &_nodeFilePath, const std::string &_edgeFilePath) {
     nodes = std::make_shared<bbp::sonata::NodeStorage>(_nodeFilePath);
     edges = std::make_shared<bbp::sonata::EdgeStorage>(_edgeFilePath);
 
-    std::map<std::string, std::shared_ptr<bbp::sonata::NodePopulation>>
-        allNodes;
-    std::map<std::string, std::shared_ptr<bbp::sonata::EdgePopulation>>
-        allEdges;
+    std::map<std::string, std::shared_ptr<bbp::sonata::NodePopulation>> allNodes;
+    std::map<std::string, std::shared_ptr<bbp::sonata::EdgePopulation>> allEdges;
     std::vector<std::tuple<size_t, size_t>> allNodePairs;
     std::vector<size_t> allNodeIds;
 
@@ -37,8 +34,7 @@ SonataLoader::SonataLoader(const std::string &_nodeFilePath,
 
         auto allSelectedNodes = v->selectAll().flatten();
 
-        allNodeIds.insert(allNodeIds.end(), allSelectedNodes.begin(),
-                          allSelectedNodes.end());
+        allNodeIds.insert(allNodeIds.end(), allSelectedNodes.begin(), allSelectedNodes.end());
 
         // for (const auto &val : allSelectedNodes)
         //     std::cout << val << " ";
@@ -57,11 +53,15 @@ SonataLoader::SonataLoader(const std::string &_nodeFilePath,
         auto tgtNodeIDs = v->targetNodeIDs(allSelected);
 
         for (size_t i = 0; i < srcNodeIDs.size(); ++i) {
-            allNodePairs.emplace_back(
-                std::make_tuple(srcNodeIDs[i], tgtNodeIDs[i]));
+            allNodePairs.emplace_back(std::make_tuple(srcNodeIDs[i], tgtNodeIDs[i]));
             // std::cout << srcNodeIDs[i] << " " << tgtNodeIDs[i] << "\n";
         }
     }
+}
+
+std::vector<std::shared_ptr<Simulator::CoreStructs::Neuron>> SonataLoader::GetAllNeurons() {
+    std::vector<std::shared_ptr<Simulator::CoreStructs::Neuron>> allNeurons;
+    return allNeurons;
 }
 } // namespace IO
 } // namespace NES

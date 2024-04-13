@@ -16,6 +16,7 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <map>
+#include <memory>
 #include <string>
 #include <tuple>
 #include <vector>
@@ -25,6 +26,7 @@
 #include <bbp/sonata/nodes.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Structs/Neuron.h>
 
 namespace BG {
 namespace NES {
@@ -37,8 +39,10 @@ class SonataLoader {
     std::shared_ptr<bbp::sonata::EdgeStorage> edges;
 
     //! Constructor
-    SonataLoader(const std::string &_nodeFilePath,
-                 const std::string &_edgeFilePath);
+    SonataLoader(const std::string &_nodeFilePath, const std::string &_edgeFilePath);
+
+    //! Get all neurons
+    std::vector<std::shared_ptr<Simulator::CoreStructs::Neuron>> GetAllNeurons();
 };
 } // namespace IO
 } // namespace NES
