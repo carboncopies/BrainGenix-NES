@@ -126,6 +126,7 @@ public:
     std::string SimulationGetRecording(std::string _JSONRequest);
     std::string SimulationGetStatus(std::string _JSONRequest);
     std::string SimulationSave(std::string _JSONRequest);
+    std::string SimulationGetSave(std::string _JSONRequest);
     std::string SimulationLoad(std::string _JSONRequest);
     std::string SimulationGetGeoCenter(std::string _JSONRequest);
 

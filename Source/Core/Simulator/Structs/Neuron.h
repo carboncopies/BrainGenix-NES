@@ -20,6 +20,7 @@
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/Receptor.h>
 #include <Simulator/Structs/BS.h>
+#include <Simulator/Structs/SC.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <nlohmann/json.hpp>
@@ -103,6 +104,31 @@ struct BSNeuronStruct {
     // Direct access caches:
     Compartments::BS* SomaCompartmentPtr = nullptr;
     Compartments::BS* AxonCompartmentPtr = nullptr;
+
+};
+
+struct SCNeuronStruct {
+    
+    std::string Name; /**Name of the Neuron*/
+    int ID = -1; /**ID of the Neuron */
+
+    std::vector<int> SomaCompartmentIDs;
+    std::vector<int> DendriteCompartmentIDs;
+    std::vector<int> AxonCompartmentIDs;
+
+    float MembranePotential_mV;
+    float RestingPotential_mV;
+    float SpikeThreshold_mV;
+    float DecayTime_ms;
+    float AfterHyperpolarizationAmplitude_mV;
+    float PostsynapticPotentialRiseTime_ms;
+    float PostsynapticPotentialDecayTime_ms;
+    float PostsynapticPotentialAmplitude_nA;
+
+    // Direct access caches:
+    // std::vector<Compartments::SC*> SomaCompartmentPtr;
+    // std::vector<Compartments::SC*> DendriteCompartmentPtr;
+    // std::vector<Compartments::SC*> AxonCompartmentPtr;
 
 };
 

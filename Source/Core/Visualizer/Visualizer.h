@@ -24,6 +24,8 @@
 #include <Visualizer/MeshBuilder.h>
 #include <Visualizer/MeshRenderer.h>
 #include <Visualizer/VisualizerParameters.h>
+#include <Visualizer/ImageProcessorPool/ImageProcessorPool.h>
+
 
 namespace BG {
 namespace NES {
@@ -39,7 +41,7 @@ namespace Simulator {
  * @return true
  * @return false
  */
-bool VisualizeSimulation(BG::Common::Logger::LoggingSystem *_Logger, Renderer::Interface *_Renderer, Simulation *_Simulation);
+bool VisualizeSimulation(BG::Common::Logger::LoggingSystem *_Logger, Renderer::Interface *_Renderer, Simulation *_Simulation, Visualizer::ImageProcessorPool* _ImageProcessorPool);
 
 }; // namespace Simulator
 }; // namespace NES

@@ -45,7 +45,7 @@ void VisualizerPool::RendererThreadMainFunction(int _ThreadNumber) {
             // Okay, we got work, now render this simulation
             Logger_->Log("VisualizerPool Thread " + std::to_string(_ThreadNumber) + " Rendering Simulation " + std::to_string(SimToProcess->ID), 2);
             Renderer.ResetScene();
-            VisualizeSimulation(Logger_, &Renderer, SimToProcess);
+            VisualizeSimulation(Logger_, &Renderer, SimToProcess, ImageProcessorPool_.get());
         
 
 
@@ -78,9 +78,9 @@ VisualizerPool::VisualizerPool(BG::Common::Logger::LoggingSystem* _Logger, bool 
     // ArrayGeneratorPool_ = std::make_unique<VoxelArrayGenerator::ArrayGeneratorPool>(Logger_, NumArrayGeneratorThreads);
 
 
-    // // Create ImageProcessorPool Instance
-    // int NumEncoderThreads = std::thread::hardware_concurrency();
-    // ImageProcessorPool_ = std::make_unique<ImageProcessorPool>(Logger_, NumEncoderThreads);
+    // Create ImageProcessorPool Instance
+    int NumEncoderThreads = std::thread::hardware_concurrency();
+    ImageProcessorPool_ = std::make_unique<Visualizer::ImageProcessorPool>(Logger_, NumEncoderThreads);
 
 
     // Create Renderer Instances

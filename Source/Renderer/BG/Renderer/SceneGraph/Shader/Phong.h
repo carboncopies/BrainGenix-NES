@@ -59,6 +59,7 @@ struct Phong: public Shader {
     // Phong Info
     vsg::vec4 DiffuseColor_; /**Sets the diffuse color of the shader (main color)*/
     vsg::vec4 SpecularColor_; /**Sets the specular color of the shader (reflection)*/
+    vsg::vec4 EmissiveColor_; /**Set the color for any emissive light (glow)*/
 
 };
 

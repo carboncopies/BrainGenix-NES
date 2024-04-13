@@ -53,8 +53,8 @@ struct SpontaneousActivityPars {
  * for a ball-and-stick neural circuit.
  *
  */
-struct BSNeuron : CoreStructs::Neuron {
-
+class BSNeuron : public CoreStructs::Neuron {
+public:
     CoreStructs::BSNeuronStruct build_data; // Copy of the struct that was used to build this neuron.
 
     //std::unordered_map<std::string, std::shared_ptr<Geometries::Geometry>> Morphology;
@@ -93,6 +93,10 @@ struct BSNeuron : CoreStructs::Neuron {
 
     std::shared_ptr<Distributions::Distribution> DtSpontDist{}; //! Distribution for delta t spontaneous (time changed since last spontaneous activity).
 
+protected:
+    BSNeuron(int _ID) { ID = _ID; } // Only used by derived classes that inherit this, e.g. SCNeuron. 
+
+public:
     //! Constructors
     BSNeuron(int ID, Geometries::Geometry* soma, Geometries::Geometry* axon); // Geometries, as soma and axon may not be Sphere/Cylinder in future. //std::shared_ptr<Geometries::Geometry> soma, std::shared_ptr<Geometries::Geometry> axon);
     BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct);

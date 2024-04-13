@@ -108,11 +108,51 @@ We use JSON requests, so the route and example requests are listed below:
 
 
 ### Simulation - Save
-Broken right now.
+ - Name: `Simulation/Save`  
+ - Query: 
+```json
+    [
+        SimulationID: int
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+    ]
+```
+
+### Simulation - Get Save
+ - Name: `Simulation/GetSave`  
+ - Query: 
+```json
+    [
+        SaveHandle: `str`
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        SaveData: Base64EncodedString
+    ]
+```
 
 ### Simulation - Load
-Broken right now.
-
+ - Name: `Simulation/Load`  
+ - Query: 
+```json
+    [
+        SavedSimName: `str`
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        TaskID: int
+    ]
+```
 
 
 ### Simulation - Geometry - Sphere - Create
@@ -262,6 +302,33 @@ Broken right now.
         SimulationID: int,
         SomaID: int,
         AxonID: int,
+        MembranePotential_mV: float,
+        RestingPotential_mV: float,
+        SpikeThreshold_mV: float,
+        DecayTime_ms: float,
+        AfterHyperpolarizationAmplitude_mV: float,
+        PostsynapticPotentialRiseTime_ms: float,
+        PostsynapticPotentialDecayTime_ms: float,
+        PostsynapticPotentialAmplitude_nA: float,
+        Name: str
+    ]
+```
+ - Response:
+```json
+    [
+        StatusCode: ENUM_STATUS_CODE,
+        NeuronID: int
+    ]
+```
+### Simulation - Neuron - SC - Create
+ - Name: `Simulation/Neuron/SC/Create`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        SomaIDs: list,
+        AxonIDs: list,
+        DendriteIDs: list,
         MembranePotential_mV: float,
         RestingPotential_mV: float,
         SpikeThreshold_mV: float,

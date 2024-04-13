@@ -66,9 +66,9 @@ double GetAverage(std::vector<double>* _Vec) {
 void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
     // Set thread Name
-    pthread_setname_np(pthread_self(), std::string("Image Processor Pool Thread " + std::to_string(_ThreadNumber)).c_str());
+    pthread_setname_np(pthread_self(), std::string("EM Image Processor Pool Thread " + std::to_string(_ThreadNumber)).c_str());
 
-    Logger_->Log("Started ImageProcessorPool Thread " + std::to_string(_ThreadNumber), 0);
+    Logger_->Log("Started EMImageProcessorPool Thread " + std::to_string(_ThreadNumber), 0);
 
     // Initialize Metrics
     int SamplesBeforeUpdate = 25;
@@ -103,30 +103,59 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             for (unsigned int XVoxelIndex = Task->VoxelStartingX; XVoxelIndex < Task->VoxelEndingX; XVoxelIndex++) {
                 for (unsigned int YVoxelIndex = Task->VoxelStartingY; YVoxelIndex < Task->VoxelEndingY; YVoxelIndex++) {
 
-                    // Get Voxel At Position
-                    VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, Task->VoxelZ);
+                    // -- Compositor Rules -- //
+                    // In order for us to have some way that the system can repeatibly handle information, we define these rules
+                    // They specify what will show up from a multilayer voxel array
+                    // Firstly, we render from bottom to top - that is, from a lower Z height to a higher Z Height.
+                    // Any debug colors (from bottom to top, whichever is encountered earlier), will overwrite any color in the pixels
+                    // This will also terminate the continuation of enumerating up the Z height
+                    // Other than those enums, we will pick the darkest color currently <--- NO WE DON'T WE JUST PICK THE TOP ONE!
+                    // This isn't super realistic and needs to be fixed later, (such as with a focal distance, and blurring), but it works for now
+
+
+                    // Enumerate Depth, Compose based on rules defined above
+                    VoxelType PresentingVoxel;
+                    uint8_t DarkestVoxel = __UINT8_MAX__;
+                    for (size_t ZIndex = Task->VoxelZ; ZIndex < Task->VoxelZ + Task->SliceThickness_vox; ZIndex++) {
+
+                        // Get Voxel At Position
+                        VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, ZIndex);
+                        if (ThisVoxel.State_ == VOXELSTATE_INTENSITY) {
+                            // if (ThisVoxel.Intensity_ < DarkestVoxel) {
+                                PresentingVoxel = ThisVoxel;
+                                DarkestVoxel = ThisVoxel.Intensity_;
+                            // }
+                        // Else, we have a special debug voxel, set this to be the one shown, and exit.
+                        } else {
+                            PresentingVoxel = ThisVoxel;
+                            break;
+                        }
+
+                    }
+
+
 
                     // Now Set The Pixel
                     int ThisPixelX = XVoxelIndex - Task->VoxelStartingX;
                     int ThisPixelY = YVoxelIndex - Task->VoxelStartingY;
 
                     // Check if the voxel is in the enum reserved range, otherwise it's a color value from 128-255
-                    if (ThisVoxel.State_ == VOXELSTATE_INTENSITY) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, ThisVoxel.Intensity_, ThisVoxel.Intensity_, ThisVoxel.Intensity_);
+                    if (PresentingVoxel.State_ == VOXELSTATE_INTENSITY) {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, PresentingVoxel.Intensity_, PresentingVoxel.Intensity_, PresentingVoxel.Intensity_);
                         
                     } else {
-                        if (ThisVoxel.State_ == BORDER) {
+                        if (PresentingVoxel.State_ == BORDER) {
                             OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
-                        } else if (ThisVoxel.State_ == OUT_OF_RANGE) {
+                        } else if (PresentingVoxel.State_ == OUT_OF_RANGE) {
                             OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
-                        } else if (ThisVoxel.State_ == VOXELSTATE_RED) {
+                        } else if (PresentingVoxel.State_ == VOXELSTATE_RED) {
                             OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 0, 0);
-                        } else if (ThisVoxel.State_ == VOXELSTATE_GREEN) {
+                        } else if (PresentingVoxel.State_ == VOXELSTATE_GREEN) {
                             OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 255, 0);
-                        } else if (ThisVoxel.State_ == VOXELSTATE_BLUE) {
+                        } else if (PresentingVoxel.State_ == VOXELSTATE_BLUE) {
                             OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
                         } else {
-                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 100, 100, 100);
+                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 200, 200, 200);
                         }
                     }
 
@@ -184,7 +213,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             Times.push_back(Duration_ms);
             if (Times.size() > SamplesBeforeUpdate) {
                 double AverageTime = GetAverage(&Times);
-                Logger_ ->Log("ImageProcessorPool Thread Info '" + std::to_string(_ThreadNumber) + "' Processed Most Recent Image '" + Task->TargetFileName_ + "',  Averaging " + std::to_string(AverageTime) + "ms / Image", 0);
+                Logger_ ->Log("EMImageProcessorPool Thread Info '" + std::to_string(_ThreadNumber) + "' Processed Most Recent Image '" + Task->TargetFileName_ + "',  Averaging " + std::to_string(AverageTime) + "ms / Image", 0);
                 Times.clear();
             }
 
@@ -209,9 +238,9 @@ ImageProcessorPool::ImageProcessorPool(BG::Common::Logger::LoggingSystem* _Logge
 
 
     // Create Renderer Instances
-    Logger_->Log("Creating ImageProcessorPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
+    Logger_->Log("Creating EMImageProcessorPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
     for (unsigned int i = 0; i < _NumThreads; i++) {
-        Logger_->Log("Starting ImageProcessorPool Thread " + std::to_string(i), 1);
+        Logger_->Log("Starting EMImageProcessorPool Thread " + std::to_string(i), 1);
         EncoderThreads_.push_back(std::thread(&ImageProcessorPool::EncoderThreadMainFunction, this, i));
     }
 }
@@ -219,13 +248,13 @@ ImageProcessorPool::ImageProcessorPool(BG::Common::Logger::LoggingSystem* _Logge
 ImageProcessorPool::~ImageProcessorPool() {
 
     // Send Stop Signal To Threads
-    Logger_->Log("Stopping ImageProcessorPool Threads", 2);
+    Logger_->Log("Stopping EMImageProcessorPool Threads", 2);
     ThreadControlFlag_ = false;
 
     // Join All Threads
-    Logger_->Log("Joining ImageProcessorPool Threads", 1);
+    Logger_->Log("Joining EMImageProcessorPool Threads", 1);
     for (unsigned int i = 0; i < EncoderThreads_.size(); i++) {
-        Logger_->Log("Joining ImageProcessorPool Thread " + std::to_string(i), 0);
+        Logger_->Log("Joining EMImageProcessorPool Thread " + std::to_string(i), 0);
         EncoderThreads_[i].join();
     }
 

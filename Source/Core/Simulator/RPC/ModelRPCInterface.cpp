@@ -1,6 +1,8 @@
 #include <Simulator/RPC/ModelRPCInterface.h>
 #include <Simulator/Distributions/Generic.h>
 #include <RPC/APIStatusCode.h>
+#include <Simulator/SimpleCompartmental/SCNeuron.h>
+
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -25,15 +27,21 @@ ModelRPCInterface::ModelRPCInterface(BG::Common::Logger::LoggingSystem* _Logger,
     Simulations_ = _Simulations;
 
     // Register Callbacks
-    _RPCManager->AddRoute("Simulation/Compartments/BS/Create",        std::bind(&ModelRPCInterface::BSCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Staple/Create",                 std::bind(&ModelRPCInterface::StapleCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Receptor/Create",               std::bind(&ModelRPCInterface::ReceptorCreate, this, std::placeholders::_1));
+
     _RPCManager->AddRoute("Simulation/Neuron/BS/Create",              std::bind(&ModelRPCInterface::BSNeuronCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Compartments/BS/Create",        std::bind(&ModelRPCInterface::BSCreate, this, std::placeholders::_1));
+   
+    _RPCManager->AddRoute("Simulation/Neuron/SC/Create",              std::bind(&ModelRPCInterface::SCNeuronCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Compartments/SC/Create",        std::bind(&ModelRPCInterface::SCCreate, this, std::placeholders::_1));
+
     _RPCManager->AddRoute("Simulation/PatchClampDAC/Create",          std::bind(&ModelRPCInterface::PatchClampDACCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/PatchClampDAC/SetOutputList",   std::bind(&ModelRPCInterface::PatchClampDACSetOutputList, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/PatchClampADC/Create",          std::bind(&ModelRPCInterface::PatchClampADCCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/PatchClampADC/SetSampleRate",   std::bind(&ModelRPCInterface::PatchClampADCSetSampleRate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/PatchClampADC/GetRecordedData", std::bind(&ModelRPCInterface::PatchClampADCGetRecordedData, this, std::placeholders::_1));
+
     _RPCManager->AddRoute("Simulation/SetSpecificAPTimes",            std::bind(&ModelRPCInterface::SetSpecificAPTimes, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/SetSpontaneousActivity",        std::bind(&ModelRPCInterface::SetSpontaneousActivity, this, std::placeholders::_1));
 
@@ -42,43 +50,6 @@ ModelRPCInterface::ModelRPCInterface(BG::Common::Logger::LoggingSystem* _Logger,
 
 ModelRPCInterface::~ModelRPCInterface() {
 
-}
-/**
- * Creates a BS Compartment with form and function.
- * Form: A shape.
- * Function: Some parameters.
- */
-std::string ModelRPCInterface::BSCreate(std::string _JSONRequest) {
- 
-    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Compartments/BS/Create", Simulations_);
-    if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
-
-    // Build New BS Object
-    Compartments::BS C;
-    if ((!Handle.GetParInt("ShapeID", C.ShapeID))
-        || (!Handle.GetParFloat("MembranePotential_mV", C.MembranePotential_mV))
-        || (!Handle.GetParFloat("SpikeThreshold_mV", C.SpikeThreshold_mV))
-        || (!Handle.GetParFloat("DecayTime_ms", C.DecayTime_ms))
-        || (!Handle.GetParFloat("RestingPotential_mV", C.RestingPotential_mV))
-        || (!Handle.GetParFloat("AfterHyperpolarizationAmplitude_mV", C.AfterHyperpolarizationAmplitude_mV))
-        || (!Handle.GetParString("Name", C.Name))) {
-        return Handle.ErrResponse();
-    }
-
-    // We cache the pointer to the shape in the compartment data, so that it
-    // does not need to reach back to the Simulation to search for it.
-    C.ShapePtr = Handle.Sim()->Collection.GetGeometry(C.ShapeID);
-    if (!C.ShapePtr) {
-        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
-    }
-
-    C.ID = Handle.Sim()->BSCompartments.size();
-    Handle.Sim()->BSCompartments.push_back(C);
-
-    // Return Result ID
-    return Handle.ResponseWithID("CompartmentID", C.ID);
 }
 
 std::string ModelRPCInterface::StapleCreate(std::string _JSONRequest) {
@@ -155,6 +126,44 @@ std::string ModelRPCInterface::ReceptorCreate(std::string _JSONRequest) {
     return Handle.ResponseWithID("ReceptorID", C.ID);
 }
 
+/**
+ * Creates a BS Compartment with form and function.
+ * Form: A shape.
+ * Function: Some parameters.
+ */
+std::string ModelRPCInterface::BSCreate(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Compartments/BS/Create", Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Build New BS Object
+    Compartments::BS C;
+    if ((!Handle.GetParInt("ShapeID", C.ShapeID))
+        || (!Handle.GetParFloat("MembranePotential_mV", C.MembranePotential_mV))
+        || (!Handle.GetParFloat("SpikeThreshold_mV", C.SpikeThreshold_mV))
+        || (!Handle.GetParFloat("DecayTime_ms", C.DecayTime_ms))
+        || (!Handle.GetParFloat("RestingPotential_mV", C.RestingPotential_mV))
+        || (!Handle.GetParFloat("AfterHyperpolarizationAmplitude_mV", C.AfterHyperpolarizationAmplitude_mV))
+        || (!Handle.GetParString("Name", C.Name))) {
+        return Handle.ErrResponse();
+    }
+
+    // We cache the pointer to the shape in the compartment data, so that it
+    // does not need to reach back to the Simulation to search for it.
+    C.ShapePtr = Handle.Sim()->Collection.GetGeometry(C.ShapeID);
+    if (!C.ShapePtr) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    C.ID = Handle.Sim()->BSCompartments.size();
+    Handle.Sim()->BSCompartments.push_back(C);
+
+    // Return Result ID
+    return Handle.ResponseWithID("CompartmentID", C.ID);
+}
+
 /*
 As of 2024-01-12 the method to add a neuron that will be run in a
 simulation is:
@@ -202,6 +211,93 @@ std::string ModelRPCInterface::BSNeuronCreate(std::string _JSONRequest) {
     Handle.Sim()->Neurons.push_back(std::make_shared<BallAndStick::BSNeuron>(C));
     Handle.Sim()->NeuronByCompartment.emplace(C.SomaCompartmentID, C.ID);
     Handle.Sim()->NeuronByCompartment.emplace(C.AxonCompartmentID, C.ID);
+
+    // Return Result ID
+    return Handle.ResponseWithID("NeuronID", C.ID);
+}
+
+/**
+ * Creates a SC Compartment with form and function.
+ * Form: A shape.
+ * Function: Some parameters.
+ */
+std::string ModelRPCInterface::SCCreate(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Compartments/SC/Create", Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Build New SC Object
+    Compartments::SC C;
+    if ((!Handle.GetParInt("ShapeID", C.ShapeID))
+        || (!Handle.GetParFloat("MembranePotential_mV", C.MembranePotential_mV))
+        || (!Handle.GetParFloat("SpikeThreshold_mV", C.SpikeThreshold_mV))
+        || (!Handle.GetParFloat("DecayTime_ms", C.DecayTime_ms))
+        || (!Handle.GetParFloat("RestingPotential_mV", C.RestingPotential_mV))
+        || (!Handle.GetParFloat("AfterHyperpolarizationAmplitude_mV", C.AfterHyperpolarizationAmplitude_mV))
+        || (!Handle.GetParString("Name", C.Name))) {
+        return Handle.ErrResponse();
+    }
+
+    // We cache the pointer to the shape in the compartment data, so that it
+    // does not need to reach back to the Simulation to search for it.
+    C.ShapePtr = Handle.Sim()->Collection.GetGeometry(C.ShapeID);
+    if (!C.ShapePtr) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    C.ID = Handle.Sim()->BSCompartments.size();
+    Handle.Sim()->BSCompartments.push_back(C);
+
+    // Return Result ID
+    return Handle.ResponseWithID("CompartmentID", C.ID);
+}
+
+std::string ModelRPCInterface::SCNeuronCreate(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Neuron/SC/Create", Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Build New SCNeuron Object
+    CoreStructs::SCNeuronStruct C;
+    if ((!Handle.GetParVecInt("SomaIDs", C.SomaCompartmentIDs))
+        || (!Handle.GetParVecInt("DendriteIDs", C.DendriteCompartmentIDs))
+        || (!Handle.GetParVecInt("AxonIDs", C.AxonCompartmentIDs))
+        || (!Handle.GetParFloat("MembranePotential_mV", C.MembranePotential_mV))
+        || (!Handle.GetParFloat("RestingPotential_mV", C.RestingPotential_mV))
+        || (!Handle.GetParFloat("SpikeThreshold_mV", C.SpikeThreshold_mV))
+        || (!Handle.GetParFloat("DecayTime_ms", C.DecayTime_ms))
+        || (!Handle.GetParFloat("AfterHyperpolarizationAmplitude_mV", C.AfterHyperpolarizationAmplitude_mV))
+        || (!Handle.GetParFloat("PostsynapticPotentialRiseTime_ms", C.PostsynapticPotentialRiseTime_ms))
+        || (!Handle.GetParFloat("PostsynapticPotentialDecayTime_ms", C.PostsynapticPotentialDecayTime_ms))
+        || (!Handle.GetParFloat("PostsynapticPotentialAmplitude_nA", C.PostsynapticPotentialAmplitude_nA))
+        || (!Handle.GetParString("Name", C.Name))) {
+        return Handle.ErrResponse();
+    }
+
+    // // We cache the pointers to the compartments in the neuron data, so that it
+    // // does not need to reach back to the Simulation to search for it.
+    // C.SomaCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.SomaCompartmentID);
+    // C.AxonCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.AxonCompartmentID);
+    // if ((!C.SomaCompartmentPtr) || (!C.AxonCompartmentPtr)) {
+    //     return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    // }
+
+    C.ID = Handle.Sim()->Neurons.size();
+    
+    Handle.Sim()->Neurons.push_back(std::make_shared<SCNeuron>(C, *(Handle.Sim())));
+    for (const auto & SomaID : C.SomaCompartmentIDs) {
+        Handle.Sim()->NeuronByCompartment.emplace(SomaID, C.ID);
+    }
+    for (const auto & DendriteID : C.DendriteCompartmentIDs) {
+        Handle.Sim()->NeuronByCompartment.emplace(DendriteID, C.ID);
+    }
+    for (const auto & AxonID : C.AxonCompartmentIDs) {
+        Handle.Sim()->NeuronByCompartment.emplace(AxonID, C.ID);
+    }
 
     // Return Result ID
     return Handle.ResponseWithID("NeuronID", C.ID);

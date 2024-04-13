@@ -148,6 +148,12 @@ float BSNeuron::VAHPT_mV(float t_ms) {
  * This postsynaptic update function cares only about information stored
  * in the list of receptorData for this neuron.
  * Morphology information is not inspected.
+ * 
+ * The double exponential multiplied with the constant IPSP_nA is an
+ * approximation of the changing current flow through synaptic ion
+ * channels during spike propagation. This is modulated by the
+ * inverted conductance that represents the strength of the synaptic
+ * connection.
  */
 float BSNeuron::VPSPT_mV(float t_ms) {
     assert(t_ms >= 0.0);

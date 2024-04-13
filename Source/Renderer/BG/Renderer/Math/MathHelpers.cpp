@@ -51,6 +51,7 @@ vsg::mat4 BuildTransformMatrix(vsg::vec3 _Position, vsg::vec3 _Rotation, vsg::ve
     glm::vec3 Pos = Vec3_VSGToGLM(_Position);
     glm::vec3 Rot = Vec3_VSGToGLM(_Rotation);
     glm::vec3 Scale = Vec3_VSGToGLM(_Scale);
+    
     return Mat4_GLMToVSG(BuildTransformMatrix(Pos, Rot, Scale));
 }
 

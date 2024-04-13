@@ -74,17 +74,26 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
 
 
+    // Calculate Number Of Steps For The Z Value
+    int NumVoxelsPerSlice = VSDAData_->Params_.SliceThickness_um / VSDAData_->Params_.VoxelResolution_um;
+    int NumZSlices = ceil((float)VSDAData_->Array_.get()->GetZ() / (float)NumVoxelsPerSlice);
+
+    _Logger->Log("This EM Render Operation Desires " + std::to_string(VSDAData_->Params_.SliceThickness_um) + "um Slice Thickness", 5);
+    _Logger->Log("Therefore, we are using " + std::to_string(NumVoxelsPerSlice) + "vox per slice at " + std::to_string(VSDAData_->Params_.VoxelResolution_um) + "um per vox", 5);
+    _Logger->Log("We Will Render A Total Of " + std::to_string(NumZSlices) + " Slices", 5);
+    
+
 
     // Clear Scene In Preperation For Rendering
-    for (unsigned int i = 0; i < VSDAData_->Array_.get()->GetZ(); i++) {
+    for (unsigned int i = 0; i < NumZSlices; i++) {
+        int CurrentSliceIndex = i * NumVoxelsPerSlice;
         std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "/Region" + std::to_string(VSDAData_->ActiveRegionID_);
 
-        std::vector<std::string> Files = RenderSliceFromArray(_Logger, _SubRegion->MaxImagesX, _SubRegion->MaxImagesY, &Sim->VSDAData_, VSDAData_->Array_.get(), FileNamePrefix, i, _ImageProcessorPool, XOffset, YOffset, SliceOffset);
-        for (size_t i = 0; i < Files.size(); i++) {
-            VSDAData_->RenderedImagePaths_[VSDAData_->ActiveRegionID_].push_back(Files[i]);
+        std::vector<std::string> Files = RenderSliceFromArray(_Logger, _SubRegion->MaxImagesX, _SubRegion->MaxImagesY, &Sim->VSDAData_, VSDAData_->Array_.get(), FileNamePrefix, CurrentSliceIndex, NumVoxelsPerSlice, _ImageProcessorPool, XOffset, YOffset, SliceOffset);
+        for (size_t x = 0; x < Files.size(); x++) {
+            VSDAData_->RenderedImagePaths_[VSDAData_->ActiveRegionID_].push_back(Files[x]);
         }
 
-        
     }
 
 
@@ -112,8 +121,8 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
 
         // Update Current Slice Information (Account for slice numbers not starting at 0)
-        VSDAData_->TotalSlices_ = VSDAData_->Array_.get()->GetZ();
-        VSDAData_->CurrentSlice_ = std::max(VSDAData_->Array_.get()->GetZ() - ceil((double)_ImageProcessorPool->GetQueueSize() / ImagesPerSlice), 0.);
+        VSDAData_->TotalSlices_ = NumZSlices;
+        VSDAData_->CurrentSlice_ = std::max(NumZSlices - ceil((double)_ImageProcessorPool->GetQueueSize() / ImagesPerSlice), 0.);
         VSDAData_->TotalSliceImages_ = ImagesPerSlice;
         VSDAData_->CurrentSliceImage_ = _ImageProcessorPool->GetQueueSize() % ImagesPerSlice;
 

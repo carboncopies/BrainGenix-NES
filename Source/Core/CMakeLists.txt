@@ -74,6 +74,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/BoundingBox.h
   ${SRC_DIR}/Core/Simulator/Structs/BS.cpp
   ${SRC_DIR}/Core/Simulator/Structs/BS.h
+  ${SRC_DIR}/Core/Simulator/Structs/SC.cpp
+  ${SRC_DIR}/Core/Simulator/Structs/SC.h
   ${SRC_DIR}/Core/Simulator/Structs/Staple.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Staple.h
   ${SRC_DIR}/Core/Simulator/Structs/Receptor.cpp
@@ -115,6 +117,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.cpp
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.h
 
+  ${SRC_DIR}/Core/Simulator/SimpleCompartmental/SCNeuron.h
+  ${SRC_DIR}/Core/Simulator/SimpleCompartmental/SCNeuron.cpp
 
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h
@@ -226,6 +230,14 @@ set(MAIN_SOURCES
     
   ${SRC_DIR}/Core/IO/SonataLoader.h
   ${SRC_DIR}/Core/IO/SonataLoader.cpp
+
+  ${SRC_DIR}/Core/Visualizer/ImageProcessorPool/Image.h
+  ${SRC_DIR}/Core/Visualizer/ImageProcessorPool/Image.cpp
+  ${SRC_DIR}/Core/Visualizer/ImageProcessorPool/ImageProcessorPool.h
+  ${SRC_DIR}/Core/Visualizer/ImageProcessorPool/ImageProcessorPool.cpp
+  ${SRC_DIR}/Core/Visualizer/ImageProcessorPool/ProcessingTask.h
+  ${SRC_DIR}/Core/Visualizer/ImageProcessorPool/ProcessingTask.cpp
+
 )
  
 set(UNITTEST_SOURCES

@@ -41,12 +41,12 @@
 
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
+#include <BG/Renderer/EncoderPool/Image.h>
 
 
 namespace BG {
 namespace NES {
-namespace Simulator {
+namespace Visualizer {
 
 
 /**
@@ -57,26 +57,17 @@ namespace Simulator {
  */
 struct ProcessingTask {
 
-    int         Width_px;           /**Width of this image in pixels*/
-    int         Height_px;          /**Height of this image in pixels*/
-    int         VoxelStartingX;     /**Specify starting x index of the region*/
-    int         VoxelStartingY;     /**Specify starting y index of the region*/
-    int         VoxelEndingX;       /**Specify the ending x index of the region*/
-    int         VoxelEndingY;       /**Specify the ending y index of the region*/
-    int         VoxelZ;             /**Specify the slice number that we're going for*/
-    int         SliceThickness_vox; /**Specify the thickness of the slice in voxels*/
-
     std::atomic_bool IsDone_ = false; /**Indicates if this task has been processed or not*/
 
     std::string TargetFileName_;  /**Filename that this image is to be written to*/
-    std::string TargetDirectory_; /**Directory path where the image is to be written to*/
+    // std::string TargetDirectory_; /**Directory path where the image is to be written to*/
 
-    VoxelArray* Array_;          /**Pointer to the voxel array that we're rendering from*/
-
+    BG::NES::Renderer::Image Image_; /**Image to be saved*/
 
 
 };
 
-}; // Close Namespace Logger
+
+}; // Close Namespace VSDA
 }; // Close Namespace Common
 }; // Close Namespace BG

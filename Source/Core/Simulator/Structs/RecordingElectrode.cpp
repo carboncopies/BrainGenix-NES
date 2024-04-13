@@ -7,9 +7,9 @@ namespace Tools {
 
 //! Constructors
 RecordingElectrode::RecordingElectrode(RecordingElectrode & _Electrode
-    ): ID(_Electrode.ID), TipPosition_um(_Electrode.TipPosition_um),
+    ): Name(_Electrode.Name), ID(_Electrode.ID), TipPosition_um(_Electrode.TipPosition_um),
        EndPosition_um(_Electrode.EndPosition_um),
-       Sites(_Electrode.Sites), NoiseLevel(_Electrode.NoiseLevel),
+       Sites(_Electrode.Sites), SiteLocations_um(_Electrode.SiteLocations_um), NoiseLevel(_Electrode.NoiseLevel),
        SensitivityDampening(_Electrode.SensitivityDampening), Sim(_Electrode.Sim) {
     assert(Sim != nullptr);
     this->InitSystemCoordSiteLocations();
