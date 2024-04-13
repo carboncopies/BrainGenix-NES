@@ -75,8 +75,12 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxIma
     for (int XStep = 0; XStep < TotalXSteps; XStep++) {
         for (int YStep = 0; YStep < TotalYSteps; YStep++) {
 
+            // we have to calculate an 'adjusted' slice number since we might skip over z slices to simulate more thickness for each slice
+            // so to keep our slices sequential, we just divide the current 'true' slice number by the number of slices skipped so they're once again sequential
+            int AdjustedSliceNumber = (_SliceNumber + _SliceOffset) / (_VSDAData->Params_.SliceThickness_um / _VSDAData->Params_.VoxelResolution_um);
+
             // Calculate the filename of the image to be generated, add to list of generated images
-            std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(_SliceNumber + _SliceOffset) + "/";
+            std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(AdjustedSliceNumber) + "/";
             double RoundedXCoord = std::ceil(((CameraStepSizeX_um * XStep) + _OffsetX) * 100.0) / 100.0;
             double RoundedYCoord = std::ceil(((CameraStepSizeY_um * YStep) + _OffsetY) * 100.0) / 100.0;
             std::string FilePath = "X" + std::to_string(RoundedXCoord) + "_Y" + std::to_string(RoundedYCoord) + ".png";
@@ -100,14 +104,18 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxIma
 
 
             // Setup Stats Info About Each Region
+            int VoxelOffsetX = (_OffsetX / Params->VoxelResolution_um);
+            int VoxelOffsetY = (_OffsetY / Params->VoxelResolution_um);
+
+
             VoxelIndexInfo Info;
-            Info.StartX = ThisTask->VoxelStartingX;
-            Info.EndX = ThisTask->VoxelEndingX;
-            Info.StartY = ThisTask->VoxelStartingY;
-            Info.EndY = ThisTask->VoxelEndingY;
-            Info.StartZ = _SliceNumber;
-            Info.EndZ = _SliceNumber + 1;
-            
+            Info.StartX = ThisTask->VoxelStartingX + VoxelOffsetX;
+            Info.EndX = ThisTask->VoxelEndingX + VoxelOffsetX;
+            Info.StartY = ThisTask->VoxelStartingY + VoxelOffsetY;
+            Info.EndY = ThisTask->VoxelEndingY + VoxelOffsetY;
+            Info.StartZ = AdjustedSliceNumber;
+            Info.EndZ = AdjustedSliceNumber + 1;
+
             ThisScanRegion->ImageFilenames_.push_back(DirectoryPath + FilePath);
             ThisScanRegion->ImageVoxelIndexes_.push_back(Info);
 
