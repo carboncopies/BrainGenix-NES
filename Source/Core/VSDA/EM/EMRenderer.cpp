@@ -139,7 +139,7 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     Info.StartZ = 0;
     Info.EndX = abs(BaseRegion->Point1X_um - BaseRegion->Point2X_um) / Params->VoxelResolution_um;
     Info.EndY = abs(BaseRegion->Point1Y_um - BaseRegion->Point2Y_um) / Params->VoxelResolution_um;
-    Info.EndX = abs(BaseRegion->Point1Z_um - BaseRegion->Point2Z_um) / (Params->VoxelResolution_um * NumVoxelsPerSlice);
+    Info.EndZ = abs(BaseRegion->Point1Z_um - BaseRegion->Point2Z_um) / (Params->VoxelResolution_um * NumVoxelsPerSlice);
     BaseRegion->RegionIndexInfo_ = Info;
 
 

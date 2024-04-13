@@ -296,6 +296,7 @@ std::string VSDARPCInterface::VSDAEMGetIndexData(std::string _JSONRequest) {
     // Build list of all image properties for every image in the rendered dataset
     std::vector<nlohmann::json> ImageProperties;
     for (size_t i = 0; i < Region->ImageVoxelIndexes_.size(); i++) {
+
         nlohmann::json ThisImageProperties;
         ThisImageProperties["Handle"] = Region->ImageFilenames_[i];
         ThisImageProperties["StartXIndex"] = Region->ImageVoxelIndexes_[i].StartX;
@@ -304,6 +305,8 @@ std::string VSDARPCInterface::VSDAEMGetIndexData(std::string _JSONRequest) {
         ThisImageProperties["EndXIndex"] = Region->ImageVoxelIndexes_[i].EndX;
         ThisImageProperties["EndYIndex"] = Region->ImageVoxelIndexes_[i].EndY;
         ThisImageProperties["EndZIndex"] = Region->ImageVoxelIndexes_[i].EndZ;
+
+        ImageProperties.push_back(ThisImageProperties);
     }
 
 
