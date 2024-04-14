@@ -25,6 +25,8 @@
 
 #include <BG/Common/Logger/Logger.h>
 
+#include <RPC/SafeClient.h>
+
 #include <Config/Config.h>
 
 
@@ -48,62 +50,9 @@ private:
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to the instance of the logging system*/
 
 
+    std::unique_ptr<SafeClient> APIClient_; /**Instance of the smartclient, allows us to talk back to the API's RPC server */
 
-    std::map<std::string, std::function<std::string(std::string _JSONRequest)>> RequestHandlers_;// = {
-        // {"SimulationCreate", {"Simulation/Create", SimulationCreateHandler} },
-        // {"SimulationReset", {"Simulation/Reset", SimulationResetHandler} },
-        // {"SimulationRunFor", {"Simulation/RunFor", SimulationRunForHandler} },
-        // {"SimulationRecordAll", {"Simulation/RecordAll", SimulationRecordAllHandler} },
-        // {"SimulationGetRecording", {"Simulation/GetRecording", SimulationGetRecordingHandler} },
-        // {"SimulationGetStatus", {"Simulation/GetStatus", SimulationGetStatusHandler} },
-        // {"SimulationBuildMesh", {"Simulation/BuildMesh", SimulationBuildMeshHandler} },
-        // {"SimulationSave", {"Simulation/Save", SimulationSaveHandler} },
-        // {"SimulationLoad", {"Simulation/Load", SimulationLoadHandler} },
-        // {"SimulationGetGeoCenter", {"", SimulationGetGeoCenterHandler} },
-
-        // {"SphereCreate", {"Geometry/Shape/Sphere/Create", SphereCreateHandler} },
-        // {"BulkSphereCreate", {"Geometry/Shape/Sphere/BulkCreate", nullptr} },
-        // {"CylinderCreate", {"Geometry/Shape/Cylinder/Create", CylinderCreateHandler} },
-        // {"BulkCylinderCreate", {"Geometry/Shape/Cylinder/BulkCreate", nullptr} },
-        // {"BoxCreate", {"Geometry/Shape/Box/Create", BoxCreateHandler} },
-        // {"BulkBoxCreate", {"Geometry/Shape/Box/BulkCreate", nullptr}},
-
-        // {"BSCreate", {"Compartment/BS/Create", BSCreateHandler} },
-        // {"BulkBSCreate", {"Compartment/BS/BulkCreate", nullptr}},
-
-        // {"StapleCreate", {"Connection/Staple/Create", StapleCreateHandler} },
-        // {"ReceptorCreate", {"Connection/Receptor/Create", ReceptorCreateHandler} },
-
-        // {"BSNeuronCreate", {"Neuron/BSNeuron/Create", BSNeuronCreateHandler} },
-
-        // {"PatchClampDACCreate", {"Tool/PatchClampDAC/Create", PatchClampDACCreateHandler} },
-        // {"PatchClampDACSetOutputList", {"Tool/PatchClampDAC/SetOutputList", PatchClampDACSetOutputListHandler} },
-
-        // {"PatchClampADCCreate", {"Tool/PatchClampADC/Create", PatchClampADCCreateHandler} },
-        // {"PatchClampADCSetSampleRate", {"Tool/PatchClampADC/SetSampleRate", PatchClampADCSetSampleRateHandler} },
-        // {"PatchClampADCGetRecordedData", {"Tool/PatchClampADC/GetRecordedData", PatchClampADCGetRecordedDataHandler} },
-
-        // {"SetSpecificAPTimes", {"", SetSpecificAPTimesHandler} },
-        // {"SetSpontaneousActivity", {"", SetSpontaneousActivityHandler} },
-
-        // {"AttachRecordingElectrodes", {"", AttachRecordingElectrodesHandler} },
-        // {"CalciumImagingAttach", {"", CalciumImagingAttachHandler} },
-        // {"CalciumImagingShowVoxels", {"", CalciumImagingShowVoxelsHandler} },
-        // {"CalciumImagingRecordAposteriori", {"", CalciumImagingRecordAposterioriHandler} },
-        // {"SetRecordInstruments", {"", SetRecordInstrumentsHandler} },
-        // {"GetInstrumentRecordings", {"", GetInstrumentRecordingsHandler} },
-
-        // {"NESRequest", {"NES", nullptr}},
-
-        // {"ManTaskStatus", {"ManTaskStatus", ManTaskStatusHandler}},
-
-        // {"VisualizerGenerateImage", {"VisualizerGenerateImage", VisualizerGenerateImage}},
-        // {"VisualizerGetImageHandles", {"VisualizerGetImageHandles",VisualizerGetImageHandles}},
-        // {"VisualizerGetImage", {"VisualizerGetImage", VisualizerGetImage}},
-        // {"VisualizerGetStatus", {"VisualizerGetStatus", VisualizerGetStatus}}
-
-
-    //};
+    std::map<std::string, std::function<std::string(std::string _JSONRequest)>> RequestHandlers_;
 
 
    /**
@@ -136,6 +85,10 @@ public:
     ~RPCManager();
 
 
+    /**
+     * @brief Called by the API service shortly after initialization, and allows the system to talk back to the API and request other calls.
+    */
+    std::string SetupCallback(std::string _RouteHandle);
 
  
     /**
