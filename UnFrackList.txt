@@ -1,3 +1,4 @@
+- Neuroglancer integration: switch from restbed to better framework
 - VDSA should use HandleData functions.
 - Remove duplicate functions, use templates where that helps.
 - Flatten the calcium structs.
