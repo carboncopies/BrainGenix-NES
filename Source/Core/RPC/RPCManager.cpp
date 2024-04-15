@@ -201,8 +201,18 @@ std::string RPCManager::SetupCallback(std::string _JSONRequest) {
     return "{\"StatusCode\": 0}";
 }
 
+bool RPCManager::MakeAPIQuery(std::string _Path, std::string _QueryJSONString, std::string* _Result) {
+    
+    // Ensure client is valid
+    if (!APIClient_) {
+        return false;
+    }
 
+    // Make Query
+    APIClient_->MakeJSONQuery(_Path, _QueryJSONString, _Result);
+    return true;
 
+}
 
 }; // Close Namespace API
 }; // Close Namespace NES

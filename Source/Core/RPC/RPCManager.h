@@ -49,8 +49,8 @@ private:
     std::unique_ptr<rpc::server> RPCServer_; /**Instance of RPC Server from rpclib*/
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to the instance of the logging system*/
 
-
     std::unique_ptr<SafeClient> APIClient_; /**Instance of the smartclient, allows us to talk back to the API's RPC server */
+
 
     std::map<std::string, std::function<std::string(std::string _JSONRequest)>> RequestHandlers_;
 
@@ -66,6 +66,8 @@ private:
 
 
 public:
+
+
 
     /**
      * @brief Construct a new RPCManager object
@@ -99,7 +101,15 @@ public:
      */
     void AddRoute(std::string _RouteHandle, std::function<std::string(std::string _JSONRequest)> _Function);
 
-    
+
+    /**
+     * @brief Makes a query to the upstream API Service
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool MakeAPIQuery(std::string _Path, std::string _QueryJSONString, std::string* _Result);
+
 
 
     std::string NESRequest(std::string _JSONRequest, int _SimulationIDOverride = -1); // Generic JSON-based NES requests.

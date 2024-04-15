@@ -35,25 +35,29 @@ VSDARPCInterface::VSDARPCInterface(BG::Common::Logger::LoggingSystem* _Logger, A
     // Copy Parameters To Member Variables
     Logger_ = _Logger;
     SimulationsPtr_ = _SimulationsVectorPointer;
+    RPCManager_ = _RPCManager;
 
     // Log Initialization
     Logger_->Log("Initializing RPC Interface for VSDA Subsystem", 4);
 
     // Register Callback For CreateSim
-    _RPCManager->AddRoute("VSDA/EM/Initialize",           std::bind(&VSDARPCInterface::VSDAEMInitialize, this, std::placeholders::_1));
-    _RPCManager->AddRoute("VSDA/EM/SetupMicroscope",      std::bind(&VSDARPCInterface::VSDAEMSetupMicroscope, this, std::placeholders::_1));
-    _RPCManager->AddRoute("VSDA/EM/DefineScanRegion",     std::bind(&VSDARPCInterface::VSDAEMDefineScanRegion, this, std::placeholders::_1));
-    _RPCManager->AddRoute("VSDA/EM/QueueRenderOperation", std::bind(&VSDARPCInterface::VSDAEMQueueRenderOperation, this, std::placeholders::_1));
-    _RPCManager->AddRoute("VSDA/EM/GetRenderStatus",      std::bind(&VSDARPCInterface::VSDAEMGetRenderStatus, this, std::placeholders::_1));
-    _RPCManager->AddRoute("VSDA/EM/GetImageStack",        std::bind(&VSDARPCInterface::VSDAEMGetImageStack, this, std::placeholders::_1));
-    _RPCManager->AddRoute("VSDA/EM/GetIndexData",         std::bind(&VSDARPCInterface::VSDAEMGetIndexData, this, std::placeholders::_1));
-    _RPCManager->AddRoute("VSDA/GetImage",                std::bind(&VSDARPCInterface::VSDAGetImage, this, std::placeholders::_1));
-    _RPCManager->AddRoute("VSDA/Ca/Initialize",           std::bind(&VSDARPCInterface::VSDACAInitialize, this, std::placeholders::_1));
-    _RPCManager->AddRoute("VSDA/Ca/SetupMicroscope",      std::bind(&VSDARPCInterface::VSDACASetupMicroscope, this, std::placeholders::_1));
-    _RPCManager->AddRoute("VSDA/Ca/DefineScanRegion",     std::bind(&VSDARPCInterface::VSDACADefineScanRegion, this, std::placeholders::_1));
-    _RPCManager->AddRoute("VSDA/Ca/QueueRenderOperation", std::bind(&VSDARPCInterface::VSDACAQueueRenderOperation, this, std::placeholders::_1));
-    _RPCManager->AddRoute("VSDA/Ca/GetRenderStatus",      std::bind(&VSDARPCInterface::VSDACAGetRenderStatus, this, std::placeholders::_1));
-    _RPCManager->AddRoute("VSDA/Ca/GetImageStack",        std::bind(&VSDARPCInterface::VSDACAGetImageStack, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/Initialize",                 std::bind(&VSDARPCInterface::VSDAEMInitialize, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/SetupMicroscope",            std::bind(&VSDARPCInterface::VSDAEMSetupMicroscope, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/DefineScanRegion",           std::bind(&VSDARPCInterface::VSDAEMDefineScanRegion, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/QueueRenderOperation",       std::bind(&VSDARPCInterface::VSDAEMQueueRenderOperation, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/GetRenderStatus",            std::bind(&VSDARPCInterface::VSDAEMGetRenderStatus, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/GetImageStack",              std::bind(&VSDARPCInterface::VSDAEMGetImageStack, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/GetIndexData",               std::bind(&VSDARPCInterface::VSDAEMGetIndexData, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/PrepareNeuroglancerDataset", std::bind(&VSDARPCInterface::VSDAEMPrepareNeuroglancerDataset, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/GetDatasetHandle",           std::bind(&VSDARPCInterface::VSDAEMGetDatasetHandle, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/EM/GetNeuroglancerDatasetURL",  std::bind(&VSDARPCInterface::VSDAEMGetNeuroglancerDatasetURL, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/GetImage",                      std::bind(&VSDARPCInterface::VSDAGetImage, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/Ca/Initialize",                 std::bind(&VSDARPCInterface::VSDACAInitialize, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/Ca/SetupMicroscope",            std::bind(&VSDARPCInterface::VSDACASetupMicroscope, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/Ca/DefineScanRegion",           std::bind(&VSDARPCInterface::VSDACADefineScanRegion, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/Ca/QueueRenderOperation",       std::bind(&VSDARPCInterface::VSDACAQueueRenderOperation, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/Ca/GetRenderStatus",            std::bind(&VSDARPCInterface::VSDACAGetRenderStatus, this, std::placeholders::_1));
+    _RPCManager->AddRoute("VSDA/Ca/GetImageStack",              std::bind(&VSDARPCInterface::VSDACAGetImageStack, this, std::placeholders::_1));
 
 }
 
@@ -333,15 +337,181 @@ std::string VSDARPCInterface::VSDAEMGetIndexData(std::string _JSONRequest) {
 
 
 }
-std::string VSDARPCInterface::VSDAGetImage(std::string _JSONRequest) {
+std::string VSDARPCInterface::VSDAEMPrepareNeuroglancerDataset(std::string _JSONRequest) {
 
-
-    // Parse Request, Get Parameters
-    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/GetImage", SimulationsPtr_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/EM/PrepareNeuroglancerDataset", SimulationsPtr_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
     Simulation* ThisSimulation = Handle.Sim();
+    int ScanRegionID;
+    Handle.GetParInt("ScanRegionID", ScanRegionID);
+    Logger_->Log(std::string("VSDA EM PrepareNeuroglancerDataset Called On Simulation With ID ") + std::to_string(ThisSimulation->ID), 4);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+
+    // Check Region ID
+    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_.RenderedImagePaths_.size()) {
+        Logger_->Log(std::string("VSDA EM PrepareNeuroglancerDataset Error, ScanRegion With ID ") + std::to_string(ScanRegionID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 3; // Error
+        return ResponseJSON.dump();
+    } 
+
+    ScanRegion* Region = &ThisSimulation->VSDAData_.Regions_[ScanRegionID];
+
+    // Sanity check
+    if (Region->ImageFilenames_.size() != Region->ImageVoxelIndexes_.size()) {
+        Logger_->Log(std::string("VSDA EM PrepareNeuroglancerDataset Sanity Check Failed - Something Is Really Wrong: HELP!"), 10);
+        return "{\"StatusCode\":\"Help\"}";
+    }
+
+    if (ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE) {
+        Logger_->Log(std::string("VSDA EM Called On Simulation Not Yet Rendered"), 7);
+        return Handle.ErrResponse();
+    }
+
+
+    // Setup Enums, Indicate that work is requested
+    ThisSimulation->VSDAData_.ActiveRegionID_ = ScanRegionID;
+    ThisSimulation->VSDAData_.State_ = VSDA_CONVERSION_REQUESTED;
+    ThisSimulation->CurrentTask = SIMULATION_VSDA;
+    ThisSimulation->WorkRequested = true;
+
+   
+    // Build Response
+    nlohmann::json ResponseJSON;
+
+
+
+    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
+
+    Logger_->Log(std::string("VSDA EM PrepareNeuroglancerDataset Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
+
+
+    return ResponseJSON.dump();
+
+
+}
+std::string VSDARPCInterface::VSDAEMGetDatasetHandle(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/EM/GetDatasetHandle", SimulationsPtr_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+    Simulation* ThisSimulation = Handle.Sim();
+    int ScanRegionID;
+    Handle.GetParInt("ScanRegionID", ScanRegionID);
+    Logger_->Log(std::string("VSDA EM GetDatasetHandle Called On Simulation With ID ") + std::to_string(ThisSimulation->ID), 4);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+
+    // Check Region ID
+    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_.RenderedImagePaths_.size()) {
+        Logger_->Log(std::string("VSDA EM GetDatasetHandle Error, ScanRegion With ID ") + std::to_string(ScanRegionID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 3; // Error
+        return ResponseJSON.dump();
+    } 
+
+    ScanRegion* Region = &ThisSimulation->VSDAData_.Regions_[ScanRegionID];
+
+    // Sanity check
+    if (Region->ImageFilenames_.size() != Region->ImageVoxelIndexes_.size()) {
+        Logger_->Log(std::string("VSDA EM GetDatasetHandle Sanity Check Failed - Something Is Really Wrong: HELP!"), 10);
+        return "{\"StatusCode\":\"Help\"}";
+    }
+
+    if (ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE) {
+        Logger_->Log(std::string("VSDA EM Called On Simulation Not Yet Rendered"), 7);
+        return Handle.ErrResponse();
+    }
+
+
+
+
+   
+    // Build Response
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
+    ResponseJSON["DatasetHandle"] = Region->NeuroglancerDatasetHandle_;
+
+    Logger_->Log(std::string("VSDA EM GetDatasetHandle Called On Simulation With ID ") + std::to_string(ThisSimulation->ID), 4);
+
+
+    return ResponseJSON.dump();
+
+
+}
+std::string VSDARPCInterface::VSDAEMGetNeuroglancerDatasetURL(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/EM/GetNeuroglancerDatasetURL", SimulationsPtr_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+    Simulation* ThisSimulation = Handle.Sim();
+    int ScanRegionID;
+    Handle.GetParInt("ScanRegionID", ScanRegionID);
+    Logger_->Log(std::string("VSDA EM GetNeuroglancerDatasetURL Called On Simulation With ID ") + std::to_string(ThisSimulation->ID), 4);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+
+    // Check Region ID
+    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_.RenderedImagePaths_.size()) {
+        Logger_->Log(std::string("VSDA EM GetNeuroglancerDatasetURL Error, ScanRegion With ID ") + std::to_string(ScanRegionID) + " Does Not Exist", 7);
+        nlohmann::json ResponseJSON;
+        ResponseJSON["StatusCode"] = 3; // Error
+        return ResponseJSON.dump();
+    } 
+
+    ScanRegion* Region = &ThisSimulation->VSDAData_.Regions_[ScanRegionID];
+
+    // Sanity check
+    if (Region->ImageFilenames_.size() != Region->ImageVoxelIndexes_.size()) {
+        Logger_->Log(std::string("VSDA EM GetNeuroglancerDatasetURL Sanity Check Failed - Something Is Really Wrong: HELP!"), 10);
+        return "{\"StatusCode\":\"Help\"}";
+    }
+
+
+    // Make Query To Generate Link For Dataset
+    nlohmann::json Query;
+    Query["NeuroglancerDataset"] = Region->NeuroglancerDatasetHandle_;
+    std::string QueryResult;
+    bool Status = RPCManager_->MakeAPIQuery("API/GenerateNeuroglancerLink", Query.dump(), &QueryResult);
+    if (!Status) {
+        return Handle.ErrResponse();
+    }
+    nlohmann::json Result = nlohmann::json::parse(QueryResult);
+
+   
+    // Build Response
+    Logger_->Log(std::string("VSDA EM GetNeuroglancerDatasetURL Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
+    ResponseJSON["NeuroglancerURL"] = Result["NeuroglancerURL"];
+
+    return ResponseJSON.dump();
+
+
+}
+std::string VSDARPCInterface::VSDAGetImage(std::string _JSONRequest) {
+
+
+    // Parse Request, Get Parameters
+    API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/GetImage", SimulationsPtr_, true, true);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+    // Simulation* ThisSimulation = Handle.Sim();
     std::string ImageHandle;
     Handle.GetParString("ImageHandle", ImageHandle);
     if (Handle.HasError()) {
@@ -388,7 +558,7 @@ std::string VSDARPCInterface::VSDAGetImage(std::string _JSONRequest) {
     // Build Response
     nlohmann::json ResponseJSON;
 
-    ResponseJSON["StatusCode"] = (int)(ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE);
+    ResponseJSON["StatusCode"] = (int)(0);
     ResponseJSON["ImageData"] = Base64Data;
 
     // nlohmann::json ImagePaths = ThisSimulation->VSDAData_.RenderedImagePaths_[ScanRegionID];

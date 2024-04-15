@@ -83,6 +83,9 @@ struct ScanRegion {
     std::vector<VoxelIndexInfo> ImageVoxelIndexes_; /**List of indexes for each image*/
     VoxelIndexInfo RegionIndexInfo_; /**Information about the whole rendered region*/
 
+    std::string NeuroglancerDatasetHandle_; /**String that represents the neuroglancer handle, if generated*/
+
+
     /**
      * @brief Helper function that returns the x,y,z size of this region.
      *
