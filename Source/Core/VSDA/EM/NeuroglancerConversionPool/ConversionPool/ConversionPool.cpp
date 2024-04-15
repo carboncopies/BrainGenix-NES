@@ -105,6 +105,7 @@ void ConversionPool::EncoderThreadMainFunction(int _ThreadNumber) {
             // Now write it as a jpeg
             stbi_write_jpg(TargetFilename.c_str(), Width, Height, Channels, Image, 100);
 
+            stbi_image_free(Image);
             
             // Update Task Result
             Task->IsDone_ = true;

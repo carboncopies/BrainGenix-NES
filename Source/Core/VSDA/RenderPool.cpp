@@ -71,7 +71,7 @@ RenderPool::RenderPool(Config::Config* _Config, BG::Common::Logger::LoggingSyste
 
 
     // Setup ConversionPool
-    int NumThreads = std::thread::hardware_concurrency();
+    int NumThreads = float(std::thread::hardware_concurrency()) * 1.5;
     EMImageConversionPool_ = std::make_unique<ConversionPool::ConversionPool>(Logger_, NumThreads);
 
 
