@@ -114,6 +114,10 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxIma
             Info.StartY = ThisTask->VoxelStartingY + VoxelOffsetY;
             Info.EndY = ThisTask->VoxelEndingY + VoxelOffsetY;
             Info.StartZ = AdjustedSliceNumber;
+            Info.StartX *= Params->NumPixelsPerVoxel_px;
+            Info.EndX *= Params->NumPixelsPerVoxel_px;
+            Info.StartY *= Params->NumPixelsPerVoxel_px;
+            Info.EndY *= Params->NumPixelsPerVoxel_px;
             Info.EndZ = AdjustedSliceNumber + 1;
 
             ThisScanRegion->ImageFilenames_.push_back(DirectoryPath + FilePath);
