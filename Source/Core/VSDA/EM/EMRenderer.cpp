@@ -36,7 +36,7 @@ namespace VSDA {
 
 
 
-bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
+bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
 
     // Check that the simulation has been initialized and everything is ready to have work done
     if (_Simulation->VSDAData_.State_ != VSDA_RENDER_REQUESTED) {
@@ -57,11 +57,11 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     // This will of course go badly if you're using a lot of ram at the moment, and needs to be improved in the future.
 
     // Maximum permitted size, we cannot exceed this even if we have more RAM.
-    size_t MaxVoxelSizeLimit = 10000; 
+    size_t MaxVoxelSizeLimit = _Config->MaxVoxelArraySize_; 
 
     // With this scaling factor, we assume that this is the max portion of the system ram we can use
     // That way, we don't gobble more than say 60% of it in one alloc
-    double ScalingFactor = 0.5;
+    double ScalingFactor = _Config->VoxelArrayPercentOfSystemMemory_ / 100.;
 
 
     // Now, calculate the maximum number of voxels in system ram
