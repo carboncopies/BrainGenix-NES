@@ -37,7 +37,7 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
             Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Detecting Work For Simulation " + std::to_string(SimToProcess->ID), 5);
             if (SimToProcess->VSDAData_.State_ == VSDA_RENDER_REQUESTED) {
                 Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering EM Stack For Simulation " + std::to_string(SimToProcess->ID), 5);
-                VSDA::ExecuteSubRenderOperations(Logger_, SimToProcess, EMImageProcessorPool_.get(), EMArrayGeneratorPool_.get());
+                VSDA::ExecuteSubRenderOperations(Config_, Logger_, SimToProcess, EMImageProcessorPool_.get(), EMArrayGeneratorPool_.get());
             } else if (SimToProcess->CaData_.State_ == ::BG::NES::VSDA::Calcium::CA_RENDER_REQUESTED) {
                 Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering Calcium Stack For Simulation " + std::to_string(SimToProcess->ID), 5);
                 ::BG::NES::VSDA::Calcium::ExecuteCaSubRenderOperations(Logger_, SimToProcess, CalciumImageProcessorPool_.get(), CalciumArrayGeneratorPool_.get());
@@ -57,8 +57,10 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
 
 
 // Constructor, Destructor
-RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed, int _NumThreads) {
+RenderPool::RenderPool(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed, int _NumThreads) {
     assert(_Logger != nullptr);
+    assert(_Config != nullptr);
+    Config_ = _Config;
 
 
     // Initialize Variables

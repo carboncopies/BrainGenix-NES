@@ -60,6 +60,7 @@
 
 #include <BG/Renderer/Interface.h>
 
+#include <Config/Config.h>
 
 
 
@@ -82,7 +83,7 @@ class RenderPool {
 
 
 private:
-
+    Config::Config* Config_; /**Pointer to config struct*/
     BG::Common::Logger::LoggingSystem*                        Logger_ = nullptr;   /**Pointer to instance of logging system*/
 
     std::unique_ptr<ImageProcessorPool>                       EMImageProcessorPool_; /**Instance of the ImageProcessorPool, which saves all required images to disk*/
@@ -148,7 +149,7 @@ public:
      * @param _Windowed
      * @param _NumThreads 
      */
-    RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed = false, int _NumThreads = 1);
+    RenderPool(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed = false, int _NumThreads = 1);
 
     /**
      * @brief Destroys the render pool object.

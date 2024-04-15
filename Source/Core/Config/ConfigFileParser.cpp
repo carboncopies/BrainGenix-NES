@@ -47,6 +47,9 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
     _Config.PortNumber = Config["Network_NES_API_Port"].as<int>();
     _Config.Host = Config["Network_NES_API_Host"].as<std::string>();
 
+    _Config.MaxVoxelArraySize_ = Config["VSDA_EM_MaxVoxelArraySize"].as<int>();
+    _Config.VoxelArrayPercentOfSystemMemory_ = Config["VSDA_EM_PercentOfSysteMemoryLimit"].as<int>();
+
 }
 
 

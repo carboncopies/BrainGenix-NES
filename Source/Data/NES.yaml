@@ -1,2 +1,5 @@
 Network_NES_API_Port: 8001
 Network_NES_API_Host: 0.0.0.0
+
+VSDA_EM_PercentOfSysteMemoryLimit: 45
+VSDA_EM_MaxVoxelArraySize: 5000
