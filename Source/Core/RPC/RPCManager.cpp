@@ -32,11 +32,14 @@ RPCManager::RPCManager(Config::Config* _Config, BG::Common::Logger::LoggingSyste
     // Create a unique pointer to the RPC server and initialize it with the provided port number
     RPCServer_ = std::make_unique<rpc::server>(ServerPort);
 
+    APIClient_ = std::make_unique<SafeClient>(_Logger);
+
     // Register Basic Routes
     // Add predefined routes to the RPC server
     AddRoute("GetAPIVersion", _Logger, &GetAPIVersion);
     AddRoute("Echo", _Logger, &Echo);
     AddRoute("NES", Logger_, [this](std::string RequestJSON){ return NESRequest(RequestJSON);});
+    AddRoute("SetCallback", Logger_, [this](std::string RequestJSON){ return SetupCallback(RequestJSON);});
     
 
     int ThreadCount = std::thread::hardware_concurrency();
@@ -183,6 +186,33 @@ std::string RPCManager::NESRequest(std::string _JSONRequest, int _SimulationIDOv
 }
 
 
+std::string RPCManager::SetupCallback(std::string _JSONRequest) {
+
+    nlohmann::json Params = nlohmann::json::parse(_JSONRequest);
+    std::string Host = Params["CallbackHost"];
+    int Port = Params["CallbackPort"];
+
+    APIClient_->SetHostPort(Host, Port);
+    APIClient_->SetTimeout(2500);
+    APIClient_->Reconnect();
+
+    Logger_->Log("System Callback To API Service Registered To '" + Host + ":" + std::to_string(Port) + "'", 5);
+
+    return "{\"StatusCode\": 0}";
+}
+
+bool RPCManager::MakeAPIQuery(std::string _Path, std::string _QueryJSONString, std::string* _Result) {
+    
+    // Ensure client is valid
+    if (!APIClient_) {
+        return false;
+    }
+
+    // Make Query
+    APIClient_->MakeJSONQuery(_Path, _QueryJSONString, _Result);
+    return true;
+
+}
 
 }; // Close Namespace API
 }; // Close Namespace NES

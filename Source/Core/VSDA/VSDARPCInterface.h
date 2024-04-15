@@ -73,7 +73,7 @@ private:
 
     BG::NES::Renderer::Interface* Renderer_ = nullptr; /**Pointer to instance of renderer*/
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/
-
+    API::RPCManager* RPCManager_; /**Pointer to RPC Manager instance*/
 
 public:
 
@@ -148,6 +148,10 @@ public:
      * @return std::string 
      */
     std::string VSDAEMGetImageStack(std::string _JSONRequest);
+    std::string VSDAEMGetIndexData(std::string _JSONRequest);
+    std::string VSDAEMPrepareNeuroglancerDataset(std::string _JSONRequest);
+    std::string VSDAEMGetDatasetHandle(std::string _JSONRequest);
+    std::string VSDAEMGetNeuroglancerDatasetURL(std::string _JSONRequest);
 
     /**
      * @brief Will get an image that has been rendered and returned in the getstack function.

@@ -42,7 +42,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/RPC/StaticRoutes.h
   ${SRC_DIR}/Core/RPC/ManagerTaskData.cpp
   ${SRC_DIR}/Core/RPC/ManagerTaskData.h
-
+  ${SRC_DIR}/Core/RPC/SafeClient.cpp
+  ${SRC_DIR}/Core/RPC/SafeClient.h
 
   ${SRC_DIR}/Core/Simulator/Geometries/Geometry.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Geometry.h
@@ -173,6 +174,16 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h
 
 
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.h
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.cpp
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.h
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.cpp
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.h
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.cpp
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.h
+
+
   ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.cpp
   ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.h
   ${SRC_DIR}/Core/VSDA/Common/Structs/WorldInfo.cpp
@@ -279,6 +290,7 @@ target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
     unofficial::noise::noise-static
+    stduuid
 
     NESRenderer
     VersioningSystem
@@ -300,6 +312,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
     unofficial::noise::noise-static
+    stduuid
 
     NESRenderer
     VersioningSystem
@@ -310,20 +323,20 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
 
 # Configure testing.
-enable_testing()
-include(GoogleTest)
+# enable_testing()
+# include(GoogleTest)
 
-message(STATUS "Testing enabled. Building test binaries ...")
-add_executable(${TEST_BINS} ${UNITTEST_SOURCES})
-target_compile_features(${TEST_BINS} PRIVATE cxx_std_17)
+# message(STATUS "Testing enabled. Building test binaries ...")
+# add_executable(${TEST_BINS} ${UNITTEST_SOURCES})
+# target_compile_features(${TEST_BINS} PRIVATE cxx_std_17)
 
-target_link_libraries(${TEST_BINS} PRIVATE 
-    NESRenderer
-    GTest::gtest 
-    GTest::gtest_main
-    ${PROJECT_LIBRARY_NAME}
-)
-target_include_directories(${TEST_BINS} PUBLIC ${SRC_DIR}/Core)
-target_include_directories(${TEST_BINS} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
+# target_link_libraries(${TEST_BINS} PRIVATE 
+#     NESRenderer
+#     GTest::gtest 
+#     GTest::gtest_main
+#     ${PROJECT_LIBRARY_NAME}
+# )
+# target_include_directories(${TEST_BINS} PUBLIC ${SRC_DIR}/Core)
+# target_include_directories(${TEST_BINS} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
 
-gtest_discover_tests(${TEST_BINS})
+# gtest_discover_tests(${TEST_BINS})

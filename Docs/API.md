@@ -682,12 +682,99 @@ We use JSON requests, so the route and example requests are listed below:
     ]
 ```
 
+### VSDA - EM - VSDAEMGetIndexData
+ - Name: `VSDA/EM/VSDAEMGetIndexData`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        ScanRegionID: int
+    ]
+```
+ - Response:
+```json
+    [
+        "StatusCode": ENUM_STATUS_CODE,
+        "RegionStartXIndex": <int>,
+        "RegionEndXIndex": <int>,
+        "RegionStartYIndex": <int>,
+        "RegionEndYIndex": <int>,
+        "RegionStartZIndex": <int>,
+        "RegionEndZIndex": <int>,
+        
+        "ImageProperties": [
+            {
+                "Handle": <str>,
+                "StartXIndex": <int>,
+                "EndXIndex": <int>,
+                "StartYIndex": <int>,
+                "EndYIndex": <int>,
+                "StartZIndex": <int>,
+                "EndZIndex": <int>
+            },
+            ...
+        ]
+    ]
+```
+
+### VSDA - EM - PrepareNeuroglancerDataset
+ - Name: `VSDA/EM/PrepareNeuroglancerDataset`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        ScanRegionID: int
+    ]
+```
+ - Response:
+```json
+    [
+        "StatusCode": ENUM_STATUS_CODE
+    ]
+```
+
+### VSDA - EM - GetDatasetHandle
+ - Name: `VSDA/EM/GetDatasetHandle`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        ScanRegionID: int
+    ]
+```
+ - Response:
+```json
+    [
+        "StatusCode": ENUM_STATUS_CODE,
+        "DatasetHandle": <str>
+    ]
+```
+
+### VSDA - EM - GetNeuroglancerDatasetURL
+ - Name: `VSDA/EM/GetNeuroglancerDatasetURL`  
+ - Query: 
+```json
+    [
+        SimulationID: int,
+        ScanRegionID: int
+    ]
+```
+ - Response:
+```json
+    [
+        "StatusCode": ENUM_STATUS_CODE,
+        "NeuroglancerURL": <str>
+    ]
+```
+
+
+
 ### VSDA - GetImage
  - Name: `VSDA/GetImage`  
  - Query: 
 ```json
     [
-        SimulationID: int,
+        // SimulationID: int,
         ImageHandle: str
     ]
 ```

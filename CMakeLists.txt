@@ -80,6 +80,10 @@ find_package(Stb REQUIRED)
 message(STATUS "Setting Up LibNoies Library")
 find_package(unofficial-noise CONFIG REQUIRED)
 
+message(STATUS "Setting Up UUID Library")
+find_package(stduuid CONFIG REQUIRED)
+
+
 # Compiler optimizations
 find_package(AVX)
 if (${AVX_FOUND})

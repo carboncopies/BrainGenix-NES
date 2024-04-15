@@ -61,6 +61,10 @@ struct SubRegion {
     // Set Offset Parameters, added to the resulting image filenames
     double RegionOffsetX_um; /**Offset from origin in the x axis in microns*/
     double RegionOffsetY_um; /**Offset from origin in the y axis in microns*/
+
+    double MasterRegionOffsetX_um; /**Used to center the bottom left corner of the indices for this system*/
+    double MasterRegionOffsetY_um; /**Used to center the bottom left corner of the indices for this system*/
+    
     // double RegionOffsetZ_um; /**Offset from origin in the z axis in microns*/
     int MaxImagesX;          /**Set a limit on the number of images in the x direction, useful for fixing subregion rounding errors*/
     int MaxImagesY;          /**Set a limit on the number of images in the y direction, useful for fixing subregion rounding errors*/

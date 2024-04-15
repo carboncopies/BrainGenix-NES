@@ -12,6 +12,12 @@
     "vsg",
     "cpp-base64",
     "stb",
-    "libnoise"
+    "libnoise",
+    {
+      "name": "stduuid",
+      "features": [
+        "system-gen"
+      ]
+    }
   ]
 }
