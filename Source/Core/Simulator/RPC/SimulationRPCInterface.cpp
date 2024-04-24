@@ -420,6 +420,7 @@ std::string SimulationRPCInterface::SimulationLoad(std::string _JSONRequest) {
     if (!Handle.GetParString("SavedSimName", SavedSimName)) {
         return Handle.ErrResponse();
     }
+
     Logger_->Log("Loading Saved Simulation " + SavedSimName, 2);
 
     // Prepare data structure to run the actual Simulation loading in a task

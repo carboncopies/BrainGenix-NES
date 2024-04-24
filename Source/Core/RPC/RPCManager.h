@@ -54,6 +54,8 @@ private:
 
     std::map<std::string, std::function<std::string(std::string _JSONRequest)>> RequestHandlers_;
 
+    long BgRequestID = 0; // The next ID to use for a background request.
+    std::map<long, nlohmann::json*> BgStatusResultMap;
 
    /**
      * @brief Adds the given route 
@@ -86,6 +88,22 @@ public:
      */
     ~RPCManager();
 
+
+    /**
+     * @brief Get the next background request ID and genereate a new one.
+     */
+    long GetBgRequestID();
+
+    /**
+     * @brief Register the Status/Result object maintained for a background API request.
+     */
+    void RegisterBgAPIProcess(long _BGRequestID, nlohmann::json* _BgStatusResult);
+
+    /**
+     * @brief Un-register the Status/Result object of a background API request that is
+     *        ending (either successfully or not).
+     */
+    bool UnRegisterBgAPIProcess(long _BGRequestID);
 
     /**
      * @brief Called by the API service shortly after initialization, and allows the system to talk back to the API and request other calls.
