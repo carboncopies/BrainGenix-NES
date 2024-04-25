@@ -140,6 +140,7 @@ public:
     std::string SetRecordInstruments(std::string _JSONRequest);
     std::string GetInstrumentRecordings(std::string _JSONRequest);
 
+    std::string GetSomaPositions(std::string _JSONRequest);
 
 
     /**

@@ -73,6 +73,9 @@ struct Vec3D {
     //! Minimum coordinate value
     float Min() const;
 
+    //! Return as vector of float.
+    std::vector<flost> AsFloatVector() const;
+
     //! Return string representation of vector.
     std::string str(int precision=4) const;
 

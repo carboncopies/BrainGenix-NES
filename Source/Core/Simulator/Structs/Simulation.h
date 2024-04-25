@@ -175,6 +175,8 @@ public:
     bool InstrumentsAreRecording() const;
     nlohmann::json GetInstrumentsRecordingJSON() const;
 
+    nlohmann::json GetSomaPositionsJSON() const;
+
     void RunFor(float tRun_ms);
 
     void Show();
