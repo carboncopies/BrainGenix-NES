@@ -74,7 +74,7 @@ struct Vec3D {
     float Min() const;
 
     //! Return as vector of float.
-    std::vector<flost> AsFloatVector() const;
+    std::vector<float> AsFloatVector() const;
 
     //! Return string representation of vector.
     std::string str(int precision=4) const;

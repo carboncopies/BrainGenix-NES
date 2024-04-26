@@ -104,7 +104,7 @@ float Vec3D::Min() const {
     return min;
 }
 
-std::vector<flost> AsFloatVector() const {
+std::vector<float> AsFloatVector() const {
     std::vector<float> vec(3);
     vec[0] = x;
     vec[1] = y;
