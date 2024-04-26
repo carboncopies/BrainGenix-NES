@@ -61,11 +61,11 @@ long RPCManager::GetBgRequestID() {
     return BgId;
 }
 
-void RegisterBgAPIProcess(long _BGRequestID, nlohmann::json* _BgStatusResult) {
+void RPCManager::RegisterBgAPIProcess(long _BGRequestID, nlohmann::json* _BgStatusResult) {
     BgStatusResultMap[_BGRequestID] = _BgStatusResult;
 }
 
-bool UnRegisterBgAPIProcess(long _BGRequestID) {
+bool RPCManager::UnRegisterBgAPIProcess(long _BGRequestID) {
     if (BgStatusResultMap.find(_BGRequestID) == BgStatusResultMap.end()) {
         return false;
     }

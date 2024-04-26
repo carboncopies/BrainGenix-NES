@@ -174,7 +174,6 @@ public:
 
     virtual void OutputTransmitterAdded(CoreStructs::ReceptorData RData);
 
-}
 };
 
 }; // namespace BallAndStick
