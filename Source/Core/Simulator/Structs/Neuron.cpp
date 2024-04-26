@@ -23,6 +23,17 @@ namespace CoreStructs {
     std::cout << "DEBUG --> Wrong OOP level: " << __func__ << '\n'; std::cout.flush();\
 }
 
+//! Update the assumed neuron type based on its neurotransmitters.
+void Neuron::UpdateType(const std::string & neurotransmitter) {
+    // Only do this if it is still "unknown".
+    if (Type_==UnknownNeuron) {
+        auto it = Neurotransmitter2NeuronType.find(neurotransmitter);
+        if (it != Neurotransmitter2NeuronType.end()) {
+            Type_ = it->second;
+        }
+    }
+}
+
 //! Returns the time since the action potential threshold was
 //! crossed last.
 float Neuron::DtAct_ms(float t_ms) {
@@ -63,6 +74,10 @@ void Neuron::SetSpontaneousActivity(float mean, float stdev, int Seed) {
 }
 
 void Neuron::InputReceptorAdded(ReceptorData RData) {
+    WARNWRONGOOPLEVEL();
+}
+
+void Neuron::OutputTransmitterAdded(ReceptorData RData) {
     WARNWRONGOOPLEVEL();
 }
 

@@ -273,11 +273,18 @@ nlohmann::json Simulation::GetInstrumentsRecordingJSON() const {
 
 nlohmann::json Simulation::GetSomaPositionsJSON() const {
     nlohmann::json somapositions;
-    somapositions["SomaPositions"] = nlohmann::json::array();
-    nlohmann::json& list(somapositions["SomaPositions"]);
+    somapositions["SomaCenters"] = nlohmann::json::array();
+    nlohmann::json& list(somapositions["SomaCenters"]);
 
     for (auto& neuron_ptr : Neurons) {
         list.push_back(nlohmann::json.array(neuron_ptr->GetCellCenter().AsFloatVector()));
+    }
+
+    somapositions["SomaTypes"] = nlohmann::json::array();
+    nlohmann::json& typeslist(somapositions["SomaTypes"]);
+
+    for (auto& neuron_ptr : Neurons) {
+        typeslist.pushh_back(int(neuron_ptr->Type_));
     }
 
     return somapositions;

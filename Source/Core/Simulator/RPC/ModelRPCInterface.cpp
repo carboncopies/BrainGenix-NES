@@ -89,6 +89,12 @@ std::string ModelRPCInterface::StapleCreate(std::string _JSONRequest) {
  * simple integrate and fire spiking neurons. The BSNeuron uses the
  * source neuron information (found via the source compartment) to
  * set up input connections to watch.
+ * 
+ * *** TODO:
+ * 1. Add receptor type information to the Receptor class and receive that (stored in list of receptors).
+ * 2. Add the DstNeuronPtr to RData.
+ * 3. Connect RData with the SrcNeuronPtr as well.
+ * 4. Update the SrcNeuron type by receptor type.
  */
 std::string ModelRPCInterface::ReceptorCreate(std::string _JSONRequest) {
  
@@ -104,6 +110,7 @@ std::string ModelRPCInterface::ReceptorCreate(std::string _JSONRequest) {
         || (!Handle.GetParFloat("Conductance_nS", C.Conductance_nS))
         || (!Handle.GetParFloat("TimeConstantRise_ms", C.TimeConstantRise_ms))
         || (!Handle.GetParFloat("TimeConstantDecay_ms", C.TimeConstantDecay_ms))
+        || (!Handle.GetParString("Neurotransmitter", C.Neurotransmitter))
         || (!Handle.GetParInt("ReceptorMorphology", C.ShapeID))
         //|| (!Handle.GetParVec3("ReceptorPos", C.ReceptorPos_um))
         || (!Handle.GetParString("Name", C.Name))) {
@@ -119,8 +126,10 @@ std::string ModelRPCInterface::ReceptorCreate(std::string _JSONRequest) {
     if ((SrcNeuronPtr==nullptr) || (DstNeuronPtr==nullptr)) {
         return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
-    CoreStructs::ReceptorData RData(C.ID, Handle.Sim()->Receptors.back().get(), SrcNeuronPtr);
+    CoreStructs::ReceptorData RData(C.ID, Handle.Sim()->Receptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
+    SrcNeuronPtr->OutputTransmitterAdded(RData);
     DstNeuronPtr->InputReceptorAdded(RData);
+    SrcNeuronPtr->UpdateType(C.Neurotransmitter);
 
     // Return Result ID
     return Handle.ResponseWithID("ReceptorID", C.ID);

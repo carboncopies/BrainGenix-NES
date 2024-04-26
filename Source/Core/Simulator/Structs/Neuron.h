@@ -38,10 +38,23 @@ struct ReceptorData {
     int ReceptorID = -1;
     Connections::Receptor * ReceptorPtr = nullptr;
     Neuron * SrcNeuronPtr = nullptr;
+    Neuron * DstNeuronPtr = nullptr;
 
-    ReceptorData(int _RID, Connections::Receptor * _RPtr, Neuron * _SNPtr): ReceptorID(_RID), ReceptorPtr(_RPtr), SrcNeuronPtr(_SNPtr) {}
+    ReceptorData(int _RID, Connections::Receptor * _RPtr, Neuron * _SNPtr, Neuron * _DNPtr): ReceptorID(_RID), ReceptorPtr(_RPtr), SrcNeuronPtr(_SNPtr), DstNeuronPtr(_DNPtr) {}
 };
 //typedef std::tuple<std::shared_ptr<CoreStructs::Neuron>, float> ReceptorData;
+
+enum NeuronType: int {
+    UnknownNeuron = 0,
+    GenericPrincipalNeuron = 1,
+    GenericInterneuron = 2,
+    NUMNeuronType
+};
+
+const std::map<std::string, NeuronType> Neurotransmitter2NeuronType = {
+    { "AMPA", GenericPrincipalNeuron },
+    { "GABA", GenericInterneuron },
+};
 
 /**
  * @brief This struct provides the base struct for all neurons.
@@ -52,10 +65,15 @@ struct Neuron {
     std::string Name; /**Name of the Neuron*/
     int ID; /**ID of the Neuron */
 
+    NeuronType Type_ = UnknownNeuron;
+
     Geometries::Vec3D cell_center; // *** FIX THIS!
 
     std::vector<float> TAct_ms{};
     std::deque<float> TDirectStim_ms{};
+
+    //! Update the assumed neuron "type" based on its neurotransmitters.
+    virtual void UpdateType(const std::string & neurotransmitter);
 
     //! Returns the time since the action potential threshold was
     //! crossed last.
@@ -78,6 +96,8 @@ struct Neuron {
     virtual void SetSpontaneousActivity(float mean, float stdev, int Seed);
 
     virtual void InputReceptorAdded(ReceptorData RData);
+
+    virtual void OutputTransmitterAdded(ReceptorData RData);
 };
 
 //! NeuronRecording is an unordered map containing data from simulation in a

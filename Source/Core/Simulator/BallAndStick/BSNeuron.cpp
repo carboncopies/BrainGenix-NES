@@ -333,6 +333,11 @@ void BSNeuron::InputReceptorAdded(CoreStructs::ReceptorData RData) {
 
 }
 
+void BSNeuron::OutputTransmitterAdded(CoreStructs::ReceptorData RData) {
+    TransmitterDataVec.emplace_back(RData);
+
+}
+
 }; // namespace BallAndStick
 }; // namespace Simulator
 }; // namespace NES
