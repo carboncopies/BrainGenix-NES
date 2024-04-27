@@ -290,6 +290,26 @@ nlohmann::json Simulation::GetSomaPositionsJSON() const {
     return somapositions;
 }
 
+nlohmann::json GetConnectomeJSON() const {
+    nlohmann::json connectome;
+    connectome["ConnectionTargets"] = nlohmann::json::array();
+    nlohmann::json& targetslist(connectome["ConnectionTargets"]);
+
+    for (auto& neuron_ptr : Neurons) {
+        BallAndStick::BSNeuron* bsneuron_ptr = static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get());
+        list.push_back(nlohmann::json.array(neuron_ptr->GetCellCenter().AsFloatVector()));
+    }
+
+    somapositions["SomaTypes"] = nlohmann::json::array();
+    nlohmann::json& typeslist(somapositions["SomaTypes"]);
+
+    for (auto& neuron_ptr : Neurons) {
+        typeslist.pushh_back(int(neuron_ptr->Type_));
+    }
+
+    return connectome;
+}
+
 enum sim_methods {
     simmethod_list_of_neurons,
     simmethod_circuits,
