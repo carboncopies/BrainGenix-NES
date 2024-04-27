@@ -23,6 +23,10 @@ namespace CoreStructs {
     std::cout << "DEBUG --> Wrong OOP level: " << __func__ << '\n'; std::cout.flush();\
 }
 
+ReceptorData::ReceptorData(int _RID, Connections::Receptor * _RPtr, Neuron * _SNPtr, Neuron * _DNPtr):
+        ReceptorID(_RID), SrcNeuronID(_SNPtr->ID), DstNeuronID(_DNPtr->ID), ReceptorPtr(_RPtr), SrcNeuronPtr(_SNPtr), DstNeuronPtr(_DNPtr) {
+}
+
 //! Update the assumed neuron type based on its neurotransmitters.
 void Neuron::UpdateType(const std::string & neurotransmitter) {
     // Only do this if it is still "unknown".

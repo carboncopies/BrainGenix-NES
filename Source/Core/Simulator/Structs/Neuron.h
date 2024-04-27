@@ -42,8 +42,7 @@ struct ReceptorData {
     Neuron * SrcNeuronPtr = nullptr; // *** May want to get away from using these pointere and just use the Neuron IDs instead.
     Neuron * DstNeuronPtr = nullptr;
 
-    ReceptorData(int _RID, Connections::Receptor * _RPtr, Neuron * _SNPtr, Neuron * _DNPtr):
-        ReceptorID(_RID), SrcNeuronID(SrcNeuronPtr->ID), DstNeuronID(DstNeuronPtr->ID), ReceptorPtr(_RPtr), SrcNeuronPtr(_SNPtr), DstNeuronPtr(_DNPtr) {}
+    ReceptorData(int _RID, Connections::Receptor * _RPtr, Neuron * _SNPtr, Neuron * _DNPtr);
 };
 //typedef std::tuple<std::shared_ptr<CoreStructs::Neuron>, float> ReceptorData;
 

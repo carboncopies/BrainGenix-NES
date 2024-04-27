@@ -301,7 +301,7 @@ int GetConnectionType(const std::string& neurotransmitter) {
     return it->second;
 }
 
-nlohmann::json GetConnectomeJSON() const {
+nlohmann::json Simulation::GetConnectomeJSON() const {
     nlohmann::json connectome;
     connectome["ConnectionTargets"] = nlohmann::json::array();
     nlohmann::json& targetslist(connectome["ConnectionTargets"]);
