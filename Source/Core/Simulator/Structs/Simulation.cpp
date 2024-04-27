@@ -274,41 +274,56 @@ nlohmann::json Simulation::GetInstrumentsRecordingJSON() const {
 nlohmann::json Simulation::GetSomaPositionsJSON() const {
     nlohmann::json somapositions;
     somapositions["SomaCenters"] = nlohmann::json::array();
-    nlohmann::json& list(somapositions["SomaCenters"]);
+    nlohmann::json& positionslist(somapositions["SomaCenters"]);
+    somapositions["SomaTypes"] = nlohmann::json::array();
+    nlohmann::json& typeslist(somapositions["SomaTypes"]);
 
     for (auto& neuron_ptr : Neurons) {
         nlohmann::json vec(nlohmann::json::value_t::array);
         for (auto & element : neuron_ptr->GetCellCenter().AsFloatVector()) {
             vec.push_back(element);
         }
-        list.push_back(vec);
-    }
-
-    somapositions["SomaTypes"] = nlohmann::json::array();
-    nlohmann::json& typeslist(somapositions["SomaTypes"]);
-
-    for (auto& neuron_ptr : Neurons) {
+        positionslist.push_back(vec);
         typeslist.push_back(int(neuron_ptr->Type_));
     }
 
     return somapositions;
 }
 
+const std::map<std::string, int> Neurotransmitter2ConnectionType = {
+    { "AMPA", 1 },
+    { "GABA", 2 },
+};
+
+int GetConnectionType(const std::string& neurotransmitter) {
+    auto it = Neurotransmitter2ConnectionType.find(neurotransmitter);
+    if (it == Neurotransmitter2ConnectionType.end()) return 0; // Unknown type.
+    return it->second;
+}
+
 nlohmann::json GetConnectomeJSON() const {
     nlohmann::json connectome;
     connectome["ConnectionTargets"] = nlohmann::json::array();
     nlohmann::json& targetslist(connectome["ConnectionTargets"]);
+    connectome["ConnectionTypes"] = nlohmann::json::array();
+    nlohmann::json& typeslist(connectome["ConnectionTypes"]);
+    connectome["ConnectionWeights"] = nlohmann::json::array();
+    nlohmann::json& weightslist(connectome["ConnectionWeights"]);
 
     for (auto& neuron_ptr : Neurons) {
         BallAndStick::BSNeuron* bsneuron_ptr = static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get());
-        list.push_back(nlohmann::json.array(neuron_ptr->GetCellCenter().AsFloatVector()));
-    }
-
-    somapositions["SomaTypes"] = nlohmann::json::array();
-    nlohmann::json& typeslist(somapositions["SomaTypes"]);
-
-    for (auto& neuron_ptr : Neurons) {
-        typeslist.pushh_back(int(neuron_ptr->Type_));
+        nlohmann::json targetvec(nlohmann::json::value_t::array);
+        nlohmann::json typevec(nlohmann::json::value_t::array);
+        nlohmann::json weightvec(nlohmann::json::value_t::array);
+        for (auto & rdata : bsneuron_ptr->TransmitterDataVec) {
+            targetvec.push_back(rdata.DstNeuronID);
+            auto ReceptorPtr = rdata.ReceptorPtr;
+            typevec.push_back(GetConnectionType(ReceptorPtr->Neurotransmitter));
+            weightvec.push_back(ReceptorPtr->Conductance_nS); // *** A better "weight" might by conductance times peak or under-curve area of PSP double-exp.
+        }
+        targetslist.push_back(targetvec);
+        typeslist.push_back(typevec);
+        weightslist.push_back(weightvec);
     }
 
     return connectome;
