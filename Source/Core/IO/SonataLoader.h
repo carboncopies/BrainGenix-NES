@@ -26,8 +26,9 @@
 #include <bbp/sonata/nodes.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Simulator/BallAndStick/BSNeuron.h>
+#include <Simulator/SimpleCompartmental/SCNeuron.h>
 #include <Simulator/Structs/Neuron.h>
+#include <Simulator/Structs/Simulation.h>
 
 namespace BG {
 namespace NES {
@@ -47,7 +48,7 @@ class SonataLoader {
     SonataLoader(const std::string &_nodeFilePath, const std::string &_edgeFilePath);
 
     //! Get all neurons
-    std::vector<std::shared_ptr<Simulator::CoreStructs::Neuron>> GetAllNeurons();
+    std::vector<std::shared_ptr<Simulator::CoreStructs::Neuron>> GetAllNeurons(Simulator::Simulation &_Sim);
 };
 } // namespace IO
 } // namespace NES
