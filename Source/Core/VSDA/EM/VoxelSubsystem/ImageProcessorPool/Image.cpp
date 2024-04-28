@@ -41,6 +41,15 @@ void Image::SetPixel(int _X, int _Y, int _R, int _G, int _B) {
 }
 
 
+void Image::SetPixel(int _X, int _Y, int _Intensity) {
+
+    size_t Position = ((_X  + ((Width_px) * _Y)) * NumChannels_);
+
+    Data_.get()[Position ] = (unsigned char)_Intensity;
+
+
+}
+
 }; // Close Namespace Logger
 }; // Close Namespace Common
 }; // Close Namespace BG

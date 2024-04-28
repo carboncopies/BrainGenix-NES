@@ -44,7 +44,6 @@ VoxelType GenerateVoxelColor(float _X_um, float _Y_um, float _Z_um, MicroscopePa
 
     VoxelType FinalVoxelValue;
     FinalVoxelValue.Intensity_ = VoxelColorValue;
-    FinalVoxelValue.State_ = VOXELSTATE_INTENSITY;
 
 
     return FinalVoxelValue;
@@ -56,7 +55,6 @@ bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
 
     VoxelType FinalVoxelValue;
     FinalVoxelValue.Intensity_ = 0;
-    FinalVoxelValue.State_ = BORDER;
 
     
     // Z Alligned Border
@@ -79,7 +77,6 @@ bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
                 
                 VoxelType FinalVoxelValue;
                 FinalVoxelValue.Intensity_ = 0;
-                FinalVoxelValue.State_ = BORDER;
                 _Array->SetVoxelAtPosition(X, Y, Z, FinalVoxelValue);
             }
         }
@@ -116,6 +113,7 @@ bool FillShapePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geome
     assert(_Params != nullptr);
     assert(_Generator != nullptr);
 
+    
     BoundingBox BB = _Shape->GetBoundingBox(_WorldInfo);
 
     for (float X = BB.bb_point1[0] + (_ThisThread * _WorldInfo.VoxelScale_um); X < BB.bb_point2[0]; X+= (_TotalThreads * _WorldInfo.VoxelScale_um)) {
