@@ -26,12 +26,17 @@
 #include <bbp/sonata/nodes.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/Structs/Neuron.h>
 
 namespace BG {
 namespace NES {
 namespace IO {
 class SonataLoader {
+  private:
+    std::map<std::string, std::shared_ptr<bbp::sonata::NodePopulation>> _allNodes;
+    std::map<std::string, std::shared_ptr<bbp::sonata::EdgePopulation>> _allEdges;
+
   public:
     //! Nodes loaded from a H5 file containing node population information.
     std::shared_ptr<bbp::sonata::NodeStorage> nodes;

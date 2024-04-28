@@ -7,25 +7,23 @@ SonataLoader::SonataLoader(const std::string &_nodeFilePath, const std::string &
     nodes = std::make_shared<bbp::sonata::NodeStorage>(_nodeFilePath);
     edges = std::make_shared<bbp::sonata::EdgeStorage>(_edgeFilePath);
 
-    std::map<std::string, std::shared_ptr<bbp::sonata::NodePopulation>> allNodes;
-    std::map<std::string, std::shared_ptr<bbp::sonata::EdgePopulation>> allEdges;
     std::vector<std::tuple<size_t, size_t>> allNodePairs;
     std::vector<size_t> allNodeIds;
 
     std::cout << "Node populations:\n";
     for (const auto &name : nodes->populationNames()) {
-        allNodes[name] = nodes->openPopulation(name);
-        std::cout << name << ": " << allNodes[name]->size() << "\n";
+        _allNodes[name] = nodes->openPopulation(name);
+        std::cout << name << ": " << _allNodes[name]->size() << "\n";
     }
 
     std::cout << "Edge populations:\n";
     for (const auto &name : edges->populationNames()) {
-        allEdges[name] = edges->openPopulation(name);
-        std::cout << name << ": " << allEdges[name]->size() << "\n";
+        _allEdges[name] = edges->openPopulation(name);
+        std::cout << name << ": " << _allEdges[name]->size() << "\n";
     }
 
     std::cout << "Node attribute names:\n";
-    for (const auto &[k, v] : allNodes) {
+    for (const auto &[k, v] : _allNodes) {
         std::cout << k << ": ";
         for (const auto &attr : v->attributeNames()) {
             std::cout << attr << " ";
@@ -42,7 +40,7 @@ SonataLoader::SonataLoader(const std::string &_nodeFilePath, const std::string &
     }
 
     std::cout << "Edge attribute names:\n";
-    for (const auto &[k, v] : allEdges) {
+    for (const auto &[k, v] : _allEdges) {
         std::cout << k << ": ";
         for (const auto &attr : v->attributeNames()) {
             std::cout << attr << " ";
@@ -61,6 +59,11 @@ SonataLoader::SonataLoader(const std::string &_nodeFilePath, const std::string &
 
 std::vector<std::shared_ptr<Simulator::CoreStructs::Neuron>> SonataLoader::GetAllNeurons() {
     std::vector<std::shared_ptr<Simulator::CoreStructs::Neuron>> allNeurons;
+    for (const auto &[k, v] : _allNodes) {
+        auto allSelectedNodes = v->selectAll().flatten();
+        for (auto it = allSelectedNodes.begin(); it != allSelectedNodes.end(); ++it)
+            allNeurons.emplace_back(std::make_shared<Simulator::BallAndStick::BSNeuron>(*it, nullptr, nullptr));
+    }
     return allNeurons;
 }
 } // namespace IO
