@@ -38,6 +38,8 @@ struct Receptor {
     int DestinationCompartmentID = -1; /**ID of the compartment whos data will be
                                           overwritten with the source.*/
 
+    std::string Neurotransmitter;      /**Neurotransmitter type, e.g. AMPA, GABA*/
+
     float Conductance_nS = 0.0;        /**Conductance from source to destination in
                                           nanoSiemens.*/
     float TimeConstantRise_ms = 1.0;   /**Postsynaptic potential rise time constant in milliseconds*/

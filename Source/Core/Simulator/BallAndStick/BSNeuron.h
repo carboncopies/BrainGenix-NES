@@ -90,6 +90,7 @@ public:
     std::deque<float> FIFO{};
     std::vector<float> ConvolvedFIFO{};
     std::vector<CoreStructs::ReceptorData> ReceptorDataVec{};
+    std::vector<CoreStructs::ReceptorData> TransmitterDataVec{};
 
     std::shared_ptr<Distributions::Distribution> DtSpontDist{}; //! Distribution for delta t spontaneous (time changed since last spontaneous activity).
 
@@ -170,6 +171,9 @@ public:
     void SetFIFO(float FIFO_ms, float FIFO_dt_ms, size_t reversed_kernel_size);
 
     virtual void InputReceptorAdded(CoreStructs::ReceptorData RData);
+
+    virtual void OutputTransmitterAdded(CoreStructs::ReceptorData RData);
+
 };
 
 }; // namespace BallAndStick

@@ -55,6 +55,25 @@ RPCManager::~RPCManager() {
 }
 
 
+long RPCManager::GetBgRequestID() {
+    long BgId = BgRequestID;
+    BgRequestID++;
+    return BgId;
+}
+
+void RPCManager::RegisterBgAPIProcess(long _BGRequestID, nlohmann::json* _BgStatusResult) {
+    BgStatusResultMap[_BGRequestID] = _BgStatusResult;
+}
+
+bool RPCManager::UnRegisterBgAPIProcess(long _BGRequestID) {
+    if (BgStatusResultMap.find(_BGRequestID) == BgStatusResultMap.end()) {
+        return false;
+    }
+
+    BgStatusResultMap.erase(_BGRequestID);
+    return true;
+}
+
 // void RPCManager::AddRequestHandler(std::string _RouteName, RouteAndHandler _Handler) {
     // RequestHandlers_.insert(std::pair<std::string, std::function<std::string>&>(_RouteName, _Handler));
 // }

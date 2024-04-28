@@ -58,6 +58,9 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
     _RPCManager->AddRoute("Simulation/GetSave",                   std::bind(&SimulationRPCInterface::SimulationGetSave, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Load",                      std::bind(&SimulationRPCInterface::SimulationLoad, this, std::placeholders::_1));
 
+    _RPCManager->AddRoute("Simulation/GetSomaPositions",          std::bind(&SimulationRPCInterface::GetSomaPositions, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetConnectome",          std::bind(&SimulationRPCInterface::GetConnectome, this, std::placeholders::_1));
+
     _RPCManager->AddRoute("ManTaskStatus",                        std::bind(&SimulationRPCInterface::ManTaskStatus, this, std::placeholders::_1));
 
     // _RPCManager->AddRoute("CalciumImagingAttach", std::bind(&SimulationRPCInterface::CalciumImagingAttach, this, std::placeholders::_1));
@@ -420,6 +423,7 @@ std::string SimulationRPCInterface::SimulationLoad(std::string _JSONRequest) {
     if (!Handle.GetParString("SavedSimName", SavedSimName)) {
         return Handle.ErrResponse();
     }
+
     Logger_->Log("Loading Saved Simulation " + SavedSimName, 2);
 
     // Prepare data structure to run the actual Simulation loading in a task
@@ -712,6 +716,32 @@ std::string SimulationRPCInterface::GetInstrumentRecordings(std::string _JSONReq
 
     // Return JSON
     nlohmann::json ResponseJSON = Handle.Sim()->GetInstrumentsRecordingJSON();
+    ResponseJSON["StatusCode"] = 0; // ok
+    return Handle.ResponseAndStoreRequest(ResponseJSON);
+}
+
+std::string SimulationRPCInterface::GetSomaPositions(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetSomaPositions", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Return JSON
+    nlohmann::json ResponseJSON = Handle.Sim()->GetSomaPositionsJSON();
+    ResponseJSON["StatusCode"] = 0; // ok
+    return Handle.ResponseAndStoreRequest(ResponseJSON);
+}
+
+std::string SimulationRPCInterface::GetConnectome(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetConnectome", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Return JSON
+    nlohmann::json ResponseJSON = Handle.Sim()->GetConnectomeJSON();
     ResponseJSON["StatusCode"] = 0; // ok
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
