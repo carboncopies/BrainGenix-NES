@@ -55,20 +55,9 @@ namespace Simulator {
 
 
 
-enum VoxelState {
-    EMPTY,
-    OUT_OF_RANGE,
-    BORDER,
-    VOXELSTATE_INTENSITY, /**Use the intensity map from the voxel struct*/
-    VOXELSTATE_RED, /**Override with 255, 0, 0 */
-    VOXELSTATE_GREEN, /**Override with 0, 255, 0 */
-    VOXELSTATE_BLUE /**Override with 0, 0, 255*/
-};
-
 struct VoxelType {
 
     uint8_t Intensity_; /**Value from 0-255 representing the intensity (brightness) of this voxel*/
-    VoxelState State_; /**Enum which contains other info about the voxel*/
 
 };
 

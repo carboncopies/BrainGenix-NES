@@ -106,8 +106,8 @@ void VoxelArray::ClearArrayThreaded(int _NumThreads) {
 
     // Initializer
     VoxelType Empty;
-    Empty.Intensity_ = 0;
-    Empty.State_ = EMPTY;
+    Empty.Intensity_ = 240;
+    // Empty.State_ = EMPTY;
 
     // Create a bunch of memset tasks
     std::vector<std::future<int>> AsyncTasks;
@@ -165,7 +165,8 @@ VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
     // Check Bounds
     if ((_X < 0 || _X >= SizeX_) || (_Y < 0 || _Y >= SizeY_) || (_Z < 0 || _Z >= SizeZ_)) {
         VoxelType Ret;
-        Ret.State_ = OUT_OF_RANGE;
+        Ret.Intensity_ = 0;
+        // Ret.State_ = OUT_OF_RANGE;
         return Ret;
     }
 
@@ -175,7 +176,8 @@ VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
         return Data_.get()[Index];
     }
     VoxelType Ret;
-    Ret.State_ = OUT_OF_RANGE;
+    Ret.Intensity_ = 0;
+    // Ret.State_ = OUT_OF_RANGE;
     return Ret;
 
 }
@@ -223,7 +225,7 @@ void VoxelArray::SetVoxelIfNotDarker(float _X, float _Y, float _Z, VoxelType _Va
     VoxelType ThisVoxel = GetVoxel(XIndex, YIndex, ZIndex);
 
     // Only set the color if it's not in the enum range, and it's darker than the current value (except if it's empty)
-    if ((ThisVoxel.State_ == EMPTY) || (ThisVoxel.State_ == VOXELSTATE_INTENSITY) && (ThisVoxel.Intensity_ > _Value.Intensity_)) {
+    if (ThisVoxel.Intensity_ > _Value.Intensity_) {
         SetVoxel(XIndex, YIndex, ZIndex, _Value);
     }
 

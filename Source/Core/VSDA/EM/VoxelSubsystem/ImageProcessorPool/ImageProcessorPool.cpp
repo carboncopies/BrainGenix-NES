@@ -94,7 +94,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             // next, we resize it up to the target image, thus saving a lot of compute time
             int VoxelsPerStepX = Task->VoxelEndingX - Task->VoxelStartingX;
             int VoxelsPerStepY = Task->VoxelEndingY - Task->VoxelStartingY;
-            int NumChannels = 3;
+            int NumChannels = 1;
 
             Image OneToOneVoxelImage(VoxelsPerStepX, VoxelsPerStepY, NumChannels);
             OneToOneVoxelImage.TargetFileName_ = Task->TargetFileName_;
@@ -120,16 +120,16 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
                         // Get Voxel At Position
                         VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, ZIndex);
-                        if (ThisVoxel.State_ == VOXELSTATE_INTENSITY) {
+                        // if (ThisVoxel.State_ == VOXELSTATE_INTENSITY) {
                             // if (ThisVoxel.Intensity_ < DarkestVoxel) {
-                                PresentingVoxel = ThisVoxel;
-                                DarkestVoxel = ThisVoxel.Intensity_;
+                        PresentingVoxel = ThisVoxel;
+                        DarkestVoxel = ThisVoxel.Intensity_;
                             // }
                         // Else, we have a special debug voxel, set this to be the one shown, and exit.
-                        } else {
-                            PresentingVoxel = ThisVoxel;
-                            break;
-                        }
+                        // } else {
+                        //     PresentingVoxel = ThisVoxel;
+                        //     break;
+                        // }
 
                     }
 
@@ -140,24 +140,24 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     int ThisPixelY = YVoxelIndex - Task->VoxelStartingY;
 
                     // Check if the voxel is in the enum reserved range, otherwise it's a color value from 128-255
-                    if (PresentingVoxel.State_ == VOXELSTATE_INTENSITY) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, PresentingVoxel.Intensity_, PresentingVoxel.Intensity_, PresentingVoxel.Intensity_);
+                    // if (PresentingVoxel.State_ == VOXELSTATE_INTENSITY) {
+                    OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, PresentingVoxel.Intensity_);
                         
-                    } else {
-                        if (PresentingVoxel.State_ == BORDER) {
-                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
-                        } else if (PresentingVoxel.State_ == OUT_OF_RANGE) {
-                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
-                        } else if (PresentingVoxel.State_ == VOXELSTATE_RED) {
-                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 0, 0);
-                        } else if (PresentingVoxel.State_ == VOXELSTATE_GREEN) {
-                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 255, 0);
-                        } else if (PresentingVoxel.State_ == VOXELSTATE_BLUE) {
-                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
-                        } else {
-                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 200, 200, 200);
-                        }
-                    }
+                    // } else {
+                    //     if (PresentingVoxel.State_ == BORDER) {
+                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
+                    //     } else if (PresentingVoxel.State_ == OUT_OF_RANGE) {
+                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
+                    //     } else if (PresentingVoxel.State_ == VOXELSTATE_RED) {
+                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 0, 0);
+                    //     } else if (PresentingVoxel.State_ == VOXELSTATE_GREEN) {
+                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 255, 0);
+                    //     } else if (PresentingVoxel.State_ == VOXELSTATE_BLUE) {
+                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
+                    //     } else {
+                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 200, 200, 200);
+                    //     }
+                    // }
 
                 }
             }

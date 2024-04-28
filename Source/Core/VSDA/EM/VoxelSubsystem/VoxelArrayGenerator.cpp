@@ -148,7 +148,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
                     // now, create a task for each of these
                     // note that we assume the PointList has at least two segments in it, else it will crash
-                    for (unsigned int i = 0; i < NumSegments - 1; i++) {
+                    for (unsigned int i = 0; i < NumSegments; i++) {
 
                         std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
                         Task->Array_ = _Array;
