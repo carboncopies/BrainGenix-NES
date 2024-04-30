@@ -101,6 +101,13 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxIma
             ThisTask->SliceThickness_vox = _SliceThickness;
             ThisTask->TargetFileName_ = FilePath;
             ThisTask->TargetDirectory_ = DirectoryPath;
+            ThisTask->EnableImageNoise = Params->GenerateImageNoise;
+            ThisTask->ImageNoiseAmount = Params->ImageNoiseIntensity;
+            ThisTask->PreBlurNoisePasses = Params->PreBlurNoisePasses;
+            ThisTask->PostBlurNoisePasses = Params->PostBlurNoisePasses;
+            ThisTask->EnableGaussianBlur = Params->EnableGaussianBlur;
+            ThisTask->GaussianBlurSigma = Params->GaussianBlurSigma;
+
 
 
             // Setup Stats Info About Each Region

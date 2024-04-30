@@ -102,6 +102,8 @@ struct Image {
     void SetPixel(int _X, int _Y, int _R, int _G, int _B);
     void SetPixel(int _X, int _Y, int _Intensity);
 
+    int GetPixel(int _X, int _Y);
+
 };
 
 }; // Close Namespace Logger

@@ -68,7 +68,16 @@ struct MicroscopeParameters {
 
     bool RenderBorders = true; /**Enable or disable border rendering*/
     int BorderEdgeIntensity = 75; /**Set the intensity of the edge of the border*/
-    float BorderThickness_um = 0.0125; /**Set the thickness of a border line*/
+    float BorderThickness_um = 0.02; /**Set the thickness of a border line*/
+
+    bool GenerateImageNoise = true; /**Enable or disable the generation of ImageNoise*/
+    int ImageNoiseIntensity = 110; /**Arbitrary intensity level*/
+    int PreBlurNoisePasses = 1; /**Set the number of times to add noise pre blurring*/
+    int PostBlurNoisePasses = 2; /**Set the number of times to add noise pre blurring*/
+
+    bool EnableGaussianBlur = true;  /**Enable or disables gaussian blurring of images*/
+    float GaussianBlurSigma = 1.15;   /**Sigma value for amount of blur*/
+
 
 };
 

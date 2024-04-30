@@ -7,6 +7,9 @@
 #include <vector>
 #include <chrono>
 #include <filesystem>
+#include <cstdlib>
+#include <random>
+#include <algorithm>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -17,6 +20,8 @@
 #define STB_IMAGE_RESIZE_IMPLEMENTATION
 #include <stb_image_resize.h>
 
+#define IIR_GAUSS_BLUR_IMPLEMENTATION
+#include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/iir_gauss_blur.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
@@ -74,6 +79,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
     int SamplesBeforeUpdate = 25;
     std::vector<double> Times;
 
+    std::mt19937 RandomGenerator(rand());
 
     // Run until thread exit is requested - that is, this is set to false
     while (ThreadControlFlag_) {
@@ -133,7 +139,12 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
                     }
 
-
+                    // Add Noise, Intensity Based On Noise Amount
+                    int Intensity = PresentingVoxel.Intensity_;
+                    // if (Task->EnableImageNoise) {
+                    //     Intensity += (RandomGenerator() % Task->ImageNoiseAmount) - int(Task->ImageNoiseAmount/2);
+                    //     Intensity = std::clamp(Intensity, 0, 255);
+                    // }
 
                     // Now Set The Pixel
                     int ThisPixelX = XVoxelIndex - Task->VoxelStartingX;
@@ -141,7 +152,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
                     // Check if the voxel is in the enum reserved range, otherwise it's a color value from 128-255
                     // if (PresentingVoxel.State_ == VOXELSTATE_INTENSITY) {
-                    OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, PresentingVoxel.Intensity_);
+                    OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, Intensity);
                         
                     // } else {
                     //     if (PresentingVoxel.State_ == BORDER) {
@@ -164,6 +175,45 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
             // Note, when we do image processing (for like noise and that stuff, we should do it here!) (or after resizing depending on what is needed)
             // so then this will be phase two, and phase 3 is saving after processing
+
+            // Pre-Blur Noise Pass
+            if (Task->EnableImageNoise) {
+                for (unsigned int i = 0; i < Task->PreBlurNoisePasses; i++) {
+                    for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
+                        for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
+
+                            int Color = OneToOneVoxelImage.GetPixel(X, Y);
+                            Color += (RandomGenerator() % Task->ImageNoiseAmount) - int(Task->ImageNoiseAmount/2);
+                            Color = std::clamp(Color, 0, 255);
+                            OneToOneVoxelImage.SetPixel(X, Y, Color);
+
+                        }
+                    }
+                }
+            }
+
+            // Perform Gaussian Blurring Step
+            if (Task->EnableGaussianBlur) {
+                iir_gauss_blur(OneToOneVoxelImage.Width_px, OneToOneVoxelImage.Height_px, 1, OneToOneVoxelImage.Data_.get(), Task->GaussianBlurSigma);
+            }
+
+
+            // Post-Blur Noise Pass
+            if (Task->EnableImageNoise) {
+                for (unsigned int i = 0; i < Task->PostBlurNoisePasses; i++) {
+                    for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
+                        for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
+
+                            int Color = OneToOneVoxelImage.GetPixel(X, Y);
+                            Color += (RandomGenerator() % Task->ImageNoiseAmount) - int(Task->ImageNoiseAmount/2);
+                            Color = std::clamp(Color, 0, 255);
+                            OneToOneVoxelImage.SetPixel(X, Y, Color);
+
+                        }
+                    }
+                }
+            }
+
 
 
             // -- Phase 2 -- //
