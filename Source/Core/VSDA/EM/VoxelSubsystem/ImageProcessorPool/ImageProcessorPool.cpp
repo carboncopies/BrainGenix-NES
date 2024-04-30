@@ -182,9 +182,14 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
                     for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
 
+                        float YAxisWobbleIntensity = 0.03f;
+                        Task->InterferencePatternWobble = 8.0f;
+
                         int Color = OneToOneVoxelImage.GetPixel(X, Y);
                         float PositionX = (Task->VoxelStartingX + X) * Task->VoxelScale_um;
-                        Color += sin(Task->InterferencePatternXScale_um * PositionX) * Task->InterferencePatternAmplitude + Task->InterferencePatternBias;
+                        float PositionY = (Task->VoxelStartingY + Y) * Task->VoxelScale_um;
+                        float ScaledPositionX = PositionX + (cos(PositionY * Task->InterferencePatternWobble) * YAxisWobbleIntensity); 
+                        Color += sin(Task->InterferencePatternXScale_um * ScaledPositionX) * Task->InterferencePatternAmplitude + Task->InterferencePatternBias;
                         Color = std::clamp(Color, 0, 255);
                         OneToOneVoxelImage.SetPixel(X, Y, Color);
 

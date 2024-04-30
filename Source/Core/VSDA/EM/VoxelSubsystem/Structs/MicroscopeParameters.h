@@ -82,6 +82,7 @@ struct MicroscopeParameters {
     float InterferencePatternXScale_um = 17.75; /**Set the interference pattern x scale*/
     float InterferencePatternAmplitude = 30.; /**Set the amplitude for the interference pattern*/
     float InterferencePatternBias = -15; /**Set an offset for the patterns generated in terms of color*/
+    float InterferencePatternWobble = 0.5; /**Set the y-axis wobble for the interference pattern*/
 
 
 };
