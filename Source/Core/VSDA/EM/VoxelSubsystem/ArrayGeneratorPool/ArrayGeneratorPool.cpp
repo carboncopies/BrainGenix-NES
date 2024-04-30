@@ -87,7 +87,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
                     ShapeInfo += ", Y: " + std::to_string(ThisSphere.Center_um.y);
                     ShapeInfo += ", Z: " + std::to_string(ThisSphere.Center_um.z);
                     ShapeName = "Sphere";
-                    FillShape(Array, &ThisSphere, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
+                    FillSphere(Array, &ThisSphere, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
                 }
                 else if (GeometryCollection->IsBox(ShapeID)) {
                     Geometries::Box & ThisBox = GeometryCollection->GetBox(ShapeID); 
@@ -106,7 +106,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
                     FillCylinder(Array, &ThisTask->CustomCylinder_, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
                 } else if (ThisTask->CustomShape_ == CUSTOM_SPHERE) {
                     ShapeName = "Sphere";
-                    FillShapePart(ThisTask->CustomTotalComponents, ThisTask->CustomThisComponent, Array, &ThisTask->CustomSphere_, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
+                    FillSpherePart(ThisTask->CustomTotalComponents, ThisTask->CustomThisComponent, Array, &ThisTask->CustomSphere_, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
 
                 }
             }

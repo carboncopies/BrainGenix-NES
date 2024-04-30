@@ -44,6 +44,7 @@ VoxelType GenerateVoxelColor(float _X_um, float _Y_um, float _Z_um, MicroscopePa
 
     VoxelType FinalVoxelValue;
     FinalVoxelValue.Intensity_ = VoxelColorValue;
+    FinalVoxelValue.State_ = VoxelState_INTERIOR;
 
 
     return FinalVoxelValue;
@@ -86,7 +87,24 @@ bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
 
 }
 
-bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
+float LinearInterpolate(float _X, float _Val1, float _Val2) {
+    return _Val1 + _X * (_Val2 - _Val1);
+}
+
+VoxelType CalculateBorderColor(VoxelType _Source, float _DistanceFromEdge, MicroscopeParameters* _Params) {
+
+    if (_DistanceFromEdge < _Params->BorderThickness_um) {
+        _Source.State_ = VoxelState_BORDER;
+
+        float NormalizedDistanceFromEdge = 1.0f - (_DistanceFromEdge / _Params->BorderThickness_um);
+        _Source.Intensity_ = LinearInterpolate(NormalizedDistanceFromEdge, _Source.Intensity_, _Params->BorderEdgeIntensity);
+    }
+
+    return _Source;
+
+}
+
+bool FillSphere(VoxelArray* _Array, Geometries::Sphere* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
     assert(_Params != nullptr);
     assert(_Generator != nullptr);
@@ -98,6 +116,10 @@ bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo
             for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _WorldInfo.VoxelScale_um) {
                 if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z), _WorldInfo)) {
                     VoxelType FinalVoxelValue = GenerateVoxelColor(X, Y, Z, _Params, _Generator);
+                    if (_Params->RenderBorders) {
+                        float DistanceToEdge = _Shape->Radius_um - Geometries::Vec3D(X, Y, Z).Distance(_Shape->Center_um);
+                        FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
+                    }
                     _Array->SetVoxelIfNotDarker(X, Y, Z, FinalVoxelValue);
                 }
             }
@@ -108,7 +130,7 @@ bool FillShape(VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo
 
 }
 
-bool FillShapePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geometries::Geometry* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
+bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geometries::Sphere*_Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
     assert(_Params != nullptr);
     assert(_Generator != nullptr);
@@ -121,6 +143,11 @@ bool FillShapePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geome
             for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _WorldInfo.VoxelScale_um) {
                 if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z), _WorldInfo)) {
                     VoxelType FinalVoxelValue = GenerateVoxelColor(X, Y, Z, _Params, _Generator);
+
+                    if (_Params->RenderBorders) {
+                        float DistanceToEdge = _Shape->Radius_um - Geometries::Vec3D(X, Y, Z).Distance(_Shape->Center_um);
+                        FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
+                    }
                     _Array->SetVoxelIfNotDarker(X, Y, Z, FinalVoxelValue);
                 }
             }
@@ -172,6 +199,12 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::Wor
                 float x = r*std::sin(theta);
                 Geometries::Vec3D RotatedPoint = RotatedVec(x, y, z, rot_y, rot_z, translate);
                 VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
+
+                if (_Params->RenderBorders) {
+                    float DistanceToEdge = radius - r;
+                    FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
+                }
+
                 _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
             }
         }
