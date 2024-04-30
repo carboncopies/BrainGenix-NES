@@ -595,7 +595,20 @@ We use JSON requests, so the route and example requests are listed below:
         SliceThickness_nm: float,
         ScanRegionOverlap_percent: float,
         MicroscopeFOV_deg: int,
-        NumPixelsPerVoxel_px: int
+        NumPixelsPerVoxel_px: int,
+        GeneratePerlinNoise: bool,
+        NoiseIntensity: float,
+        DefaultIntensity: float,
+        SpatialScale: float,
+        RenderBorders: bool,
+        BorderEdgeIntensity: int,
+        BorderThickness_um: float,
+        GenerateImageNoise: bool,
+        ImageNoiseIntensity: int,
+        PreBlurNoisePasses: int,
+        PostBlurNoisePasses: int,
+        EnableGaussianBlur: bool,
+        GuassianBlurSigma: float
     ]
 ```
  - Response:
