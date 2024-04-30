@@ -116,6 +116,8 @@ std::string VSDARPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     Handle.GetParInt("PostBlurNoisePasses", Params.PostBlurNoisePasses);
     Handle.GetParBool("EnableGaussianBlur", Params.EnableGaussianBlur);
     Handle.GetParFloat("GuassianBlurSigma", Params.GaussianBlurSigma);
+    // Handle.GetParBool("EnableInterferencePattern", Params.EnableInterferencePattern);
+    // Handle.GetParFloat("InterferencePatternXScale_um", Params.InterferencePatternXScale_um);
 
     if (Handle.HasError()) {
         return Handle.ErrResponse();

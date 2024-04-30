@@ -74,6 +74,9 @@ struct ProcessingTask {
     bool        EnableGaussianBlur;  /**Enable or disables gaussian blurring of images*/
     float       GaussianBlurSigma;   /**Sigma value for amount of blur*/
 
+    bool EnableInterferencePattern = true; /**Enable or disable interference patterns*/
+    float InterferencePatternXScale_um = 1.45; /**Set the interference pattern x scale*/
+
     std::atomic_bool IsDone_ = false; /**Indicates if this task has been processed or not*/
 
     std::string TargetFileName_;  /**Filename that this image is to be written to*/
