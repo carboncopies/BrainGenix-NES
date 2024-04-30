@@ -103,6 +103,20 @@ std::string VSDARPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     Handle.GetParFloat("MicroscopeFOV_deg", Params.MicroscopeFOV_deg);
     Handle.GetParInt("NumPixelsPerVoxel_px", Params.NumPixelsPerVoxel_px);
 
+    Handle.GetParBool("GeneratePerlinNoise", Params.GeneratePerlinNoise_);
+    Handle.GetParFloat("NoiseIntensity", Params.NoiseIntensity_);
+    Handle.GetParFloat("DefaultIntensity", Params.DefaultIntensity_);
+    Handle.GetParFloat("SpatialScale", Params.SpatialScale_);
+    Handle.GetParBool("RenderBorders", Params.RenderBorders);
+    Handle.GetParInt("BorderEdgeIntensity", Params.BorderEdgeIntensity);
+    Handle.GetParFloat("BorderThickness_um", Params.BorderThickness_um);
+    Handle.GetParBool("GenerateImageNoise", Params.GenerateImageNoise);
+    Handle.GetParInt("ImageNoiseIntensity", Params.ImageNoiseIntensity);
+    Handle.GetParInt("PreBlurNoisePasses", Params.PreBlurNoisePasses);
+    Handle.GetParInt("PostBlurNoisePasses", Params.PostBlurNoisePasses);
+    Handle.GetParBool("EnableGaussianBlur", Params.EnableGaussianBlur);
+    Handle.GetParFloat("GuassianBlurSigma", Params.GaussianBlurSigma);
+
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
