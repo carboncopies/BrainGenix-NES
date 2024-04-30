@@ -65,6 +65,7 @@ struct ProcessingTask {
     int         VoxelEndingY;        /**Specify the ending y index of the region*/
     int         VoxelZ;              /**Specify the slice number that we're going for*/
     int         SliceThickness_vox;  /**Specify the thickness of the slice in voxels*/
+    float       VoxelScale_um;       /**Specifies the size of each voxel in microns*/
 
     bool        EnableImageNoise;    /**Enable or disable image noise*/
     int         ImageNoiseAmount;    /**Arbitrary amount of image noise to add*/
@@ -73,6 +74,11 @@ struct ProcessingTask {
 
     bool        EnableGaussianBlur;  /**Enable or disables gaussian blurring of images*/
     float       GaussianBlurSigma;   /**Sigma value for amount of blur*/
+
+    bool EnableInterferencePattern = true; /**Enable or disable interference patterns*/
+    float InterferencePatternXScale_um = 1.45; /**Set the interference pattern x scale*/
+    float InterferencePatternAmplitude = 40.; /**Set the amplitude for the interference pattern*/
+    float InterferencePatternBias = -15; /**Set an offset for the patterns generated in terms of color*/
 
     std::atomic_bool IsDone_ = false; /**Indicates if this task has been processed or not*/
 

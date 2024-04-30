@@ -78,6 +78,11 @@ struct MicroscopeParameters {
     bool EnableGaussianBlur = true;  /**Enable or disables gaussian blurring of images*/
     float GaussianBlurSigma = 1.15;   /**Sigma value for amount of blur*/
 
+    bool EnableInterferencePattern = true; /**Enable or disable interference patterns*/
+    float InterferencePatternXScale_um = 17.75; /**Set the interference pattern x scale*/
+    float InterferencePatternAmplitude = 30.; /**Set the amplitude for the interference pattern*/
+    float InterferencePatternBias = -15; /**Set an offset for the patterns generated in terms of color*/
+
 
 };
 

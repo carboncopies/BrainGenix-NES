@@ -107,6 +107,11 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxIma
             ThisTask->PostBlurNoisePasses = Params->PostBlurNoisePasses;
             ThisTask->EnableGaussianBlur = Params->EnableGaussianBlur;
             ThisTask->GaussianBlurSigma = Params->GaussianBlurSigma;
+            ThisTask->VoxelScale_um = Params->VoxelResolution_um;
+            ThisTask->EnableInterferencePattern = Params->EnableInterferencePattern;
+            ThisTask->InterferencePatternXScale_um = Params->InterferencePatternXScale_um;
+            ThisTask->InterferencePatternAmplitude = Params->InterferencePatternAmplitude;
+            ThisTask->InterferencePatternBias = Params->InterferencePatternBias;
 
 
 
