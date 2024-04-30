@@ -182,8 +182,8 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
                     for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
 
-                        float YAxisWobbleIntensity = 0.03f;
-                        Task->InterferencePatternWobble = 8.0f;
+                        float YAxisWobbleIntensity = 0.02f;
+                        Task->InterferencePatternWobble = 3.0f;
 
                         int Color = OneToOneVoxelImage.GetPixel(X, Y);
                         float PositionX = (Task->VoxelStartingX + X) * Task->VoxelScale_um;
