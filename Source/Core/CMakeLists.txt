@@ -162,6 +162,7 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/Structs/SubRegion.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/iir_gauss_blur.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.cpp
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp

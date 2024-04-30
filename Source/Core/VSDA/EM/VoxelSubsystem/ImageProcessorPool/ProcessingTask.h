@@ -71,6 +71,9 @@ struct ProcessingTask {
     int         PreBlurNoisePasses;  /**Number of times to add noise prior to blurring*/
     int         PostBlurNoisePasses; /**Number of times to add noise after blurring*/
 
+    bool        EnableGaussianBlur;  /**Enable or disables gaussian blurring of images*/
+    float       GaussianBlurSigma;   /**Sigma value for amount of blur*/
+
     std::atomic_bool IsDone_ = false; /**Indicates if this task has been processed or not*/
 
     std::string TargetFileName_;  /**Filename that this image is to be written to*/

@@ -105,6 +105,9 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxIma
             ThisTask->ImageNoiseAmount = Params->ImageNoiseIntensity;
             ThisTask->PreBlurNoisePasses = Params->PreBlurNoisePasses;
             ThisTask->PostBlurNoisePasses = Params->PostBlurNoisePasses;
+            ThisTask->EnableGaussianBlur = Params->EnableGaussianBlur;
+            ThisTask->GaussianBlurSigma = Params->GaussianBlurSigma;
+
 
 
             // Setup Stats Info About Each Region

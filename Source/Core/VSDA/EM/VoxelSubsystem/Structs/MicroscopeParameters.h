@@ -75,6 +75,10 @@ struct MicroscopeParameters {
     int PreBlurNoisePasses = 1; /**Set the number of times to add noise pre blurring*/
     int PostBlurNoisePasses = 1; /**Set the number of times to add noise pre blurring*/
 
+    bool EnableGaussianBlur = true;  /**Enable or disables gaussian blurring of images*/
+    float GaussianBlurSigma = 1.15;   /**Sigma value for amount of blur*/
+
+
 };
 
 

@@ -20,6 +20,8 @@
 #define STB_IMAGE_RESIZE_IMPLEMENTATION
 #include <stb_image_resize.h>
 
+#define IIR_GAUSS_BLUR_IMPLEMENTATION
+#include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/iir_gauss_blur.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
@@ -190,7 +192,10 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 }
             }
 
-
+            // Perform Gaussian Blurring Step
+            if (Task->EnableGaussianBlur) {
+                iir_gauss_blur(OneToOneVoxelImage.Width_px, OneToOneVoxelImage.Height_px, 1, OneToOneVoxelImage.Data_.get(), Task->GaussianBlurSigma);
+            }
 
 
             // Post-Blur Noise Pass
