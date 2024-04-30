@@ -70,6 +70,11 @@ struct MicroscopeParameters {
     int BorderEdgeIntensity = 75; /**Set the intensity of the edge of the border*/
     float BorderThickness_um = 0.0125; /**Set the thickness of a border line*/
 
+    bool GenerateImageNoise = true; /**Enable or disable the generation of ImageNoise*/
+    int ImageNoiseIntensity = 110; /**Arbitrary intensity level*/
+    int PreBlurNoisePasses = 1; /**Set the number of times to add noise pre blurring*/
+    int PostBlurNoisePasses = 1; /**Set the number of times to add noise pre blurring*/
+
 };
 
 
