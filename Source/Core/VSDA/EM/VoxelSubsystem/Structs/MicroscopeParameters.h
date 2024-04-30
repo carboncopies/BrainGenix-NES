@@ -66,6 +66,10 @@ struct MicroscopeParameters {
     float DefaultIntensity_ = 255; /**What the default color of each compartment is without noise (0-255)*/
     float SpatialScale_ = 10.; /**Set the multiplier for which the x,y,z steps are multiplied by*/
 
+    bool RenderBorders = true; /**Enable or disable border rendering*/
+    int BorderEdgeIntensity = 75; /**Set the intensity of the edge of the border*/
+    float BorderThickness_um = 0.0125; /**Set the thickness of a border line*/
+
 };
 
 

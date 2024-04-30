@@ -107,6 +107,7 @@ void VoxelArray::ClearArrayThreaded(int _NumThreads) {
     // Initializer
     VoxelType Empty;
     Empty.Intensity_ = 240;
+    Empty.State_ = VoxelState_EMPTY;
     // Empty.State_ = EMPTY;
 
     // Create a bunch of memset tasks
@@ -225,10 +226,15 @@ void VoxelArray::SetVoxelIfNotDarker(float _X, float _Y, float _Z, VoxelType _Va
     VoxelType ThisVoxel = GetVoxel(XIndex, YIndex, ZIndex);
 
     // Only set the color if it's not in the enum range, and it's darker than the current value (except if it's empty)
-    if (ThisVoxel.Intensity_ > _Value.Intensity_) {
-        SetVoxel(XIndex, YIndex, ZIndex, _Value);
+    if (_Value.State_ == VoxelState_INTERIOR) {
+        if ((ThisVoxel.Intensity_ > _Value.Intensity_) || (ThisVoxel.State_ == VoxelState_BORDER)) {
+            SetVoxel(XIndex, YIndex, ZIndex, _Value);
+        }
+    } else if (_Value.State_ == VoxelState_BORDER) {
+        if ((ThisVoxel.State_ != VoxelState_INTERIOR) && (ThisVoxel.Intensity_ > _Value.Intensity_)) {
+            SetVoxel(XIndex, YIndex, ZIndex, _Value);
+        }
     }
-
 
 }
 
