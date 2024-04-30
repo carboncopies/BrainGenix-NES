@@ -80,6 +80,7 @@ struct MicroscopeParameters {
 
     bool EnableInterferencePattern = true; /**Enable or disable interference patterns*/
     float InterferencePatternXScale_um = 1.45; /**Set the interference pattern x scale*/
+    float InterferencePatternAmplitude = 40.; /**Set the amplitude for the interference pattern*/
 
 
 };

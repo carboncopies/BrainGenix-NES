@@ -10,6 +10,7 @@
 #include <cstdlib>
 #include <random>
 #include <algorithm>
+#include <math.h>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -175,6 +176,22 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
             // Note, when we do image processing (for like noise and that stuff, we should do it here!) (or after resizing depending on what is needed)
             // so then this will be phase two, and phase 3 is saving after processing
+
+            // Add Interference pattern
+            if (Task->EnableInterferencePattern) {
+                for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
+                    for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
+
+                        int Color = OneToOneVoxelImage.GetPixel(X, Y);
+                        float PositionX = (Task->VoxelStartingX + X) * Task->VoxelScale_um;
+                        Color += sin(Task->InterferencePatternXScale_um * PositionX) * Task->InterferencePatternAmplitude;
+                        Color = std::clamp(Color, 0, 255);
+                        OneToOneVoxelImage.SetPixel(X, Y, Color);
+
+                    }
+                }
+            }
+
 
             // Pre-Blur Noise Pass
             if (Task->EnableImageNoise) {
