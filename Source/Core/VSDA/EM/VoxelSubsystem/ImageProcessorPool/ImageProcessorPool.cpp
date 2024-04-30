@@ -184,7 +184,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
                         int Color = OneToOneVoxelImage.GetPixel(X, Y);
                         float PositionX = (Task->VoxelStartingX + X) * Task->VoxelScale_um;
-                        Color += sin(Task->InterferencePatternXScale_um * PositionX) * Task->InterferencePatternAmplitude;
+                        Color += sin(Task->InterferencePatternXScale_um * PositionX) * Task->InterferencePatternAmplitude + Task->InterferencePatternBias;
                         Color = std::clamp(Color, 0, 255);
                         OneToOneVoxelImage.SetPixel(X, Y, Color);
 

@@ -78,6 +78,7 @@ struct ProcessingTask {
     bool EnableInterferencePattern = true; /**Enable or disable interference patterns*/
     float InterferencePatternXScale_um = 1.45; /**Set the interference pattern x scale*/
     float InterferencePatternAmplitude = 40.; /**Set the amplitude for the interference pattern*/
+    float InterferencePatternBias = -15; /**Set an offset for the patterns generated in terms of color*/
 
     std::atomic_bool IsDone_ = false; /**Indicates if this task has been processed or not*/
 
