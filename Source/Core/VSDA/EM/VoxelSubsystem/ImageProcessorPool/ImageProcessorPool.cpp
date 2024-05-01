@@ -179,7 +179,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
 
             float YAxisWobbleIntensity = 0.02f;
-            float StrengthVariation = 0.2;
+            float StrengthVariation = 0.12;
             float ZAxisShiftAmount = 999;
 
 
@@ -188,6 +188,10 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
                 // We need to calculate the random amount for this image
                 float ThisImageAmplitude = (1. + (StrengthVariation * -1+2*((float)rand())/RAND_MAX)) * Task->InterferencePatternAmplitude;
+
+                // Randomize the interference patterns between layers (so they don't line up between layers evenly)
+                std::mt19937 ZIndexOffset(Task->VoxelZ);
+                float ZOffset = (ZIndexOffset() % 5000000) / 500000;
 
 
                 for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
@@ -198,7 +202,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                         int Color = OneToOneVoxelImage.GetPixel(X, Y);
                         float PositionX = (Task->VoxelStartingX + X) * Task->VoxelScale_um;
                         float PositionY = (Task->VoxelStartingY + Y) * Task->VoxelScale_um;
-                        float ScaledPositionX = (PositionX + (Task->VoxelZ * ZAxisShiftAmount)) + (sin(PositionY * Task->InterferencePatternWobbleFrequency) * YAxisWobbleIntensity); 
+                        float ScaledPositionX = (PositionX + (ZOffset)) + (sin(PositionY * Task->InterferencePatternWobbleFrequency) * YAxisWobbleIntensity); 
                         Color += sin(Task->InterferencePatternXScale_um * ScaledPositionX) * ThisImageAmplitude + Task->InterferencePatternBias;
                         Color = std::clamp(Color, 0, 255);
                         OneToOneVoxelImage.SetPixel(X, Y, Color);
