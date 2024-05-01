@@ -182,6 +182,31 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             float StrengthVariation = 0.12;
             float ZAxisShiftAmount = 999;
 
+            bool AdjustContrast = true; /**Enable or disable the adjustment of contrast*/
+            float Contrast = 0.5; /**Values above 1 increase it, values below 1 decrease it*/
+            float Brightness = 0; /**Do not change the brightness*/
+            float ContrastRandomAmount = 0.1; /**Change the contrast plus or minus this amount*/
+            float BrightnessRandomAmount = 0.1; /**Change the brightness per image plus or minus this amount*/
+
+
+            // Contrast/Brightness Adjustments
+            if (AdjustContrast) {
+                
+                // Calculate the contrast/brightness for this image
+                float ThisContrast = Contrast + ((-1+2*((float)rand())/RAND_MAX) * ContrastRandomAmount);
+                float ThisBrightness = Brightness + ((-1+2*((float)rand())/RAND_MAX) * BrightnessRandomAmount);
+
+                for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
+                    for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
+
+                        int Color = OneToOneVoxelImage.GetPixel(X, Y);
+                        Color = (ThisContrast * ((float)Color - 128)) + 128 + ThisBrightness;
+                        Color = std::clamp(Color, 0, 255);
+                        OneToOneVoxelImage.SetPixel(X, Y, Color);
+
+                    }
+                }
+            }
 
             // Add Interference pattern
             if (Task->EnableInterferencePattern) {
@@ -193,11 +218,8 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 std::mt19937 ZIndexOffset(Task->VoxelZ);
                 float ZOffset = (ZIndexOffset() % 5000000) / 500000;
 
-
                 for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
                     for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
-
-
 
                         int Color = OneToOneVoxelImage.GetPixel(X, Y);
                         float PositionX = (Task->VoxelStartingX + X) * Task->VoxelScale_um;
