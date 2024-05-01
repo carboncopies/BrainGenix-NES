@@ -79,7 +79,7 @@ struct ProcessingTask {
     float InterferencePatternXScale_um = 1.45; /**Set the interference pattern x scale*/
     float InterferencePatternAmplitude = 40.; /**Set the amplitude for the interference pattern*/
     float InterferencePatternBias = -15; /**Set an offset for the patterns generated in terms of color*/
-    float InterferencePatternWobble = 0.5; /**Set the y-axis wobble for the interference pattern*/
+    float InterferencePatternWobbleFrequency = 0.5; /**Set the y-axis wobble for the interference pattern*/
 
     std::atomic_bool IsDone_ = false; /**Indicates if this task has been processed or not*/
 
