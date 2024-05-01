@@ -211,12 +211,69 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::Wor
 
     }
 
-
-
-
-
     return true;
 }
+
+bool FillLine(VoxelArray* _Array, int P1X, int P1Y, int P1Thickness, int P2X, int P2Y, int P2Thickness, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
+
+    // IDK fix this later!
+
+    
+
+    // assert(_Array != nullptr);
+    // assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
+
+    // // Rotate The Endpoints Around World Origin By Amount Set In World Info
+    // Geometries::Vec3D RotatedEnd0 = _Cylinder->End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+    // Geometries::Vec3D RotatedEnd1 = _Cylinder->End1Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+
+    // // 0. Get rotation angles and length (r, theta, phi).
+    // Geometries::Vec3D diff = RotatedEnd1 - RotatedEnd0;
+    // Geometries::Vec3D diff_spherical_coords = diff.cartesianToSpherical();
+    // float rot_y = diff_spherical_coords.theta();
+    // float rot_z = diff_spherical_coords.phi();
+
+    // float distance = diff_spherical_coords.r();
+    // float radius_difference = _Cylinder->End1Radius_um - _Cylinder->End0Radius_um;
+    // float stepsize = 0.5*_WorldInfo.VoxelScale_um;
+
+    // Geometries::Vec3D spherical_halfdist_v(distance/2.0, rot_y, rot_z);
+    // Geometries::Vec3D cartesian_halfdist_v = spherical_halfdist_v.sphericalToCartesian();
+    // Geometries::Vec3D translate = RotatedEnd0 + cartesian_halfdist_v;
+
+
+    // // Calculate all the points and stuff them intot he array
+    // for (float z = -distance/2.0; z <= distance/2.0; z += stepsize) {
+    //     // 2. At each step, get points in a disk around the axis at the right radius.
+    //     float d_ratio = z / distance;
+    //     float radius = _Cylinder->End0Radius_um + d_ratio*radius_difference; // Radius at this position on the axis.
+
+    //     Geometries::Vec3D RotatedPoint = RotatedVec(0.0, 0.0, z, rot_y, rot_z, translate);
+    //     VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
+    //     _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
+
+    //     for (float r = stepsize; r <= radius; r += stepsize) {
+    //         float radians_per_step = stepsize / r;
+    //         for (float theta = 0; theta < 2.0*M_PI; theta += radians_per_step) {
+    //             float y = r*std::cos(theta);
+    //             float x = r*std::sin(theta);
+    //             Geometries::Vec3D RotatedPoint = RotatedVec(x, y, z, rot_y, rot_z, translate);
+    //             VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
+
+    //             if (_Params->RenderBorders) {
+    //                 float DistanceToEdge = radius - r;
+    //                 FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
+    //             }
+
+    //             _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
+    //         }
+    //     }
+
+    // }
+
+    // return true;
+}
+
 
 bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_Array != nullptr);

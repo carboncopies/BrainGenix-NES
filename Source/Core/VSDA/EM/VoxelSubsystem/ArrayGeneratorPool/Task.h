@@ -83,6 +83,17 @@ struct Task {
     int CustomThisComponent = 0;
     int CustomTotalComponents = 0;
 
+    bool IsLineTask = false; /**Different task from the rest of them*/
+    int LineTaskZIndex = 0;
+    int LineTaskP1XIndex = 0;
+    int LineTaskP1YIndex = 0;
+    int LineTaskP2XIndex = 0;
+    int LineTaskP2YIndex = 0;
+    int LineTaskP1Thickness = 0;
+    int LineTaskP2Thickness = 0;
+    
+
+
 };
 
 }; // Close Namespace VoxelArrayGenerator
