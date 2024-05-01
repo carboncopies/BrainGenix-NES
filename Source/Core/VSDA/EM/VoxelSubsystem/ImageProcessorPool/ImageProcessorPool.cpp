@@ -177,14 +177,50 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             // Note, when we do image processing (for like noise and that stuff, we should do it here!) (or after resizing depending on what is needed)
             // so then this will be phase two, and phase 3 is saving after processing
 
+
+
+
+
+            // Contrast/Brightness Adjustments
+            if (Task->AdjustContrast) {
+                
+                // Calculate the contrast/brightness for this image
+                float ThisContrast = Task->Contrast + ((-1+2*((float)rand())/RAND_MAX) * Task->ContrastRandomAmount);
+                float ThisBrightness = Task->Brightness + ((-1+2*((float)rand())/RAND_MAX) * Task->BrightnessRandomAmount);
+
+                for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
+                    for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
+
+                        int Color = OneToOneVoxelImage.GetPixel(X, Y);
+                        Color = (ThisContrast * ((float)Color - 128.)) + 128 + ThisBrightness;
+                        Color = std::clamp(Color, 0, 255);
+                        OneToOneVoxelImage.SetPixel(X, Y, Color);
+
+                    }
+                }
+            }
+
             // Add Interference pattern
             if (Task->EnableInterferencePattern) {
+
+                // We need to calculate the random amount for this image
+                float ThisImageAmplitude = (1. + (Task->InterferencePatternStrengthVariation * -1+2*((float)rand())/RAND_MAX)) * Task->InterferencePatternAmplitude;
+
+                // Randomize the interference patterns between layers (so they don't line up between layers evenly)
+                std::mt19937 ZIndexOffset(Task->VoxelZ);
+                float ZOffset = (ZIndexOffset() % 5000000) / 500000;
+                if (!Task->InterferencePatternZOffsetShift) {
+                    ZOffset = 0;
+                }
+
                 for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
                     for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
 
                         int Color = OneToOneVoxelImage.GetPixel(X, Y);
                         float PositionX = (Task->VoxelStartingX + X) * Task->VoxelScale_um;
-                        Color += sin(Task->InterferencePatternXScale_um * PositionX) * Task->InterferencePatternAmplitude + Task->InterferencePatternBias;
+                        float PositionY = (Task->VoxelStartingY + Y) * Task->VoxelScale_um;
+                        float ScaledPositionX = (PositionX + ZOffset) + (sin(PositionY * Task->InterferencePatternWobbleFrequency) * Task->InterferencePatternYAxisWobbleIntensity); 
+                        Color += sin(Task->InterferencePatternXScale_um * ScaledPositionX) * ThisImageAmplitude + Task->InterferencePatternBias;
                         Color = std::clamp(Color, 0, 255);
                         OneToOneVoxelImage.SetPixel(X, Y, Color);
 

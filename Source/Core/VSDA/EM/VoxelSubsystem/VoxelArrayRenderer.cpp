@@ -112,6 +112,15 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxIma
             ThisTask->InterferencePatternXScale_um = Params->InterferencePatternXScale_um;
             ThisTask->InterferencePatternAmplitude = Params->InterferencePatternAmplitude;
             ThisTask->InterferencePatternBias = Params->InterferencePatternBias;
+            ThisTask->InterferencePatternWobbleFrequency = Params->InterferencePatternWobbleFrequency;
+            ThisTask->InterferencePatternYAxisWobbleIntensity = Params->InterferencePatternYAxisWobbleIntensity;
+            ThisTask->InterferencePatternStrengthVariation = Params->InterferencePatternStrengthVariation;
+            ThisTask->InterferencePatternZOffsetShift = Params->InterferencePatternZOffsetShift;
+            ThisTask->AdjustContrast = Params->AdjustContrast;
+            ThisTask->Contrast = Params->Contrast;
+            ThisTask->Brightness = Params->Brightness;
+            ThisTask->ContrastRandomAmount = Params->ContrastRandomAmount;
+            ThisTask->BrightnessRandomAmount = Params->BrightnessRandomAmount;
 
 
 

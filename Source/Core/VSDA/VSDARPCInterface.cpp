@@ -102,7 +102,6 @@ std::string VSDARPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     Handle.GetParFloat("SliceThickness_nm", Params.SliceThickness_um);
     Handle.GetParFloat("MicroscopeFOV_deg", Params.MicroscopeFOV_deg);
     Handle.GetParInt("NumPixelsPerVoxel_px", Params.NumPixelsPerVoxel_px);
-
     Handle.GetParBool("GeneratePerlinNoise", Params.GeneratePerlinNoise_);
     Handle.GetParFloat("NoiseIntensity", Params.NoiseIntensity_);
     Handle.GetParFloat("DefaultIntensity", Params.DefaultIntensity_);
@@ -120,6 +119,15 @@ std::string VSDARPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     Handle.GetParFloat("InterferencePatternXScale_um", Params.InterferencePatternXScale_um);
     Handle.GetParFloat("InterferencePatternAmplitude", Params.InterferencePatternAmplitude);
     Handle.GetParFloat("InterferencePatternBias", Params.InterferencePatternBias);
+    Handle.GetParFloat("InterferencePatternWobbleFrequency", Params.InterferencePatternWobbleFrequency);
+    Handle.GetParFloat("InterferencePatternYAxisWobbleIntensity", Params.InterferencePatternYAxisWobbleIntensity);
+    Handle.GetParFloat("InterferencePatternStrengthVariation", Params.InterferencePatternStrengthVariation);
+    Handle.GetParBool("InterferencePatternZOffsetShift", Params.InterferencePatternZOffsetShift);
+    Handle.GetParBool("AdjustContrast", Params.AdjustContrast);
+    Handle.GetParFloat("Contrast", Params.Contrast);
+    Handle.GetParFloat("Brightness", Params.Brightness);
+    Handle.GetParFloat("ContrastRandomAmount", Params.ContrastRandomAmount);
+    Handle.GetParFloat("BrightnessRandomAmount", Params.BrightnessRandomAmount);
 
     if (Handle.HasError()) {
         return Handle.ErrResponse();
