@@ -79,7 +79,16 @@ struct ProcessingTask {
     float InterferencePatternXScale_um = 1.45; /**Set the interference pattern x scale*/
     float InterferencePatternAmplitude = 40.; /**Set the amplitude for the interference pattern*/
     float InterferencePatternBias = -15; /**Set an offset for the patterns generated in terms of color*/
-    float InterferencePatternWobbleFrequency = 0.5; /**Set the y-axis wobble for the interference pattern*/
+    float InterferencePatternWobbleFrequency = 3.0f; /**Set the y-axis wobble for the interference pattern*/
+    float InterferencePatternYAxisWobbleIntensity = 0.02f; /**Frequency of the interference patterns wobble on the y axis*/
+    float InterferencePatternStrengthVariation = 0.12; /**Strength of the wobbles*/
+    bool InterferencePatternZOffsetShift = true; /**Enable or disable shifting the interference patterns around between layers*/
+
+    bool AdjustContrast = true; /**Enable or disable the adjustment of contrast*/
+    float Contrast = 0.5; /**Values above 1 increase it, values below 1 decrease it*/
+    float Brightness = 0; /**Do not change the brightness*/
+    float ContrastRandomAmount = 0.1; /**Change the contrast plus or minus this amount*/
+    float BrightnessRandomAmount = 0.1; /**Change the brightness per image plus or minus this amount*/
 
     std::atomic_bool IsDone_ = false; /**Indicates if this task has been processed or not*/
 

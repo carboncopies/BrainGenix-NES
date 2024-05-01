@@ -121,6 +121,16 @@ std::string VSDARPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     Handle.GetParFloat("InterferencePatternAmplitude", Params.InterferencePatternAmplitude);
     Handle.GetParFloat("InterferencePatternBias", Params.InterferencePatternBias);
 
+    Handle.GetParFloat("InterferencePatternWobbleFrequency", Params.InterferencePatternWobbleFrequency);
+    Handle.GetParFloat("InterferencePatternYAxisWobbleIntensity", Params.InterferencePatternYAxisWobbleIntensity);
+    Handle.GetParFloat("InterferencePatternStrengthVariation", Params.InterferencePatternStrengthVariation);
+    Handle.GetParBool("InterferencePatternZOffsetShift", Params.InterferencePatternZOffsetShift);
+    Handle.GetParBool("AdjustContrast", Params.AdjustContrast);
+    Handle.GetParFloat("Contrast", Params.Contrast);
+    Handle.GetParFloat("Brightness", Params.Brightness);
+    Handle.GetParFloat("ContrastRandomAmount", Params.ContrastRandomAmount);
+    Handle.GetParFloat("BrightnessRandomAmount", Params.BrightnessRandomAmount);
+
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
