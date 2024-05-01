@@ -192,7 +192,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
 
                         int Color = OneToOneVoxelImage.GetPixel(X, Y);
-                        Color = (ThisContrast * ((float)Color - 128)) + 128 + ThisBrightness;
+                        Color = (ThisContrast * ((float)Color - 128.)) + 128 + ThisBrightness;
                         Color = std::clamp(Color, 0, 255);
                         OneToOneVoxelImage.SetPixel(X, Y, Color);
 
