@@ -351,12 +351,12 @@ bool FillWedge(VoxelArray* _Array, Geometries::Wedge* _Wedge, VSDA::WorldInfo& _
 
                 // Set voxel at the point.
                 VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
-                if (_Params->RenderBorders) {
-                    float DistanceToWidthEdge = (0.5*width_at_z) - fabs(x);
-                    float DistanceToHeightEdge = (0.5*height_at_z) - fabs(y);
-                    float DistanceToEdge = DistanceToWidthEdge < DistanceToHeightEdge ? DistanceToWidthEdge : DistanceToHeightEdge;
-                    FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
-                }
+                // if (_Params->RenderBorders) {
+                //     float DistanceToWidthEdge = (0.5*width_at_z) - fabs(x);
+                //     float DistanceToHeightEdge = (0.5*height_at_z) - fabs(y);
+                //     float DistanceToEdge = DistanceToWidthEdge < DistanceToHeightEdge ? DistanceToWidthEdge : DistanceToHeightEdge;
+                //     FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
+                // }
                 _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
 
             }

@@ -46,13 +46,13 @@ Point2D GeneratePoint(std::mt19937& _Generator, std::uniform_int_distribution<>&
 
 void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::unique_ptr<VoxelArrayGenerator::Task>>& _TaskList, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool, ScanRegion _Region, MicroscopeParameters* _Params, VoxelArray* _Array, VSDA::WorldInfo _Info, int _ZHeight, int _Seed) {
 
-    int NumSegments = 4;
+    int NumSegments = 6;
     int MaxSegmentLength = 1000;
     int MinSegmentLength = 100;
-    int PointJitterXMax = 1;
-    int PointJitterXMin = -1;
-    int PointJitterYMax = 1;
-    int PointJitterYMin = -1;
+    int PointJitterXMax = 50;
+    int PointJitterXMin = -50;
+    int PointJitterYMax = 50;
+    int PointJitterYMin = -50;
 
 
 
@@ -116,7 +116,7 @@ void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::u
         End1.y = _Region.Point1Y_um + (Points[i].Y * _Info.VoxelScale_um);
         End1.z = _Region.Point1Z_um + (_ZHeight * _Info.VoxelScale_um);
 
-        std::cout<<"    -P1: "<<End0.str()<<" |P2: "<<End1.str()<<std::endl;
+        // std::cout<<"    -P1: "<<End0.str()<<" |P2: "<<End1.str()<<std::endl;
 
 
         Geometries::Wedge& ThisWedge = ThisTask->ThisWedge;
@@ -124,8 +124,8 @@ void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::u
         ThisWedge.End1Pos_um = End1;
         ThisWedge.End0Height_um = 0.1;//_Info.VoxelScale_um;
         ThisWedge.End1Height_um = 0.05;//_Info.VoxelScale_um;
-        ThisWedge.End0Width_um = _Info.VoxelScale_um;
-        ThisWedge.End1Width_um = _Info.VoxelScale_um;
+        ThisWedge.End0Width_um = _Info.VoxelScale_um*1.2;
+        ThisWedge.End1Width_um = _Info.VoxelScale_um*1.2;
 
 
         _GeneratorPool->QueueWorkOperation(ThisTask);
