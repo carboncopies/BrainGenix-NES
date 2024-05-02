@@ -31,10 +31,13 @@ Geometries::Vec3D RotatedVec(float _X, float _Y, float _Z, float _RY, float _RZ,
 VoxelType GenerateVoxelColor(float _X_um, float _Y_um, float _Z_um, MicroscopeParameters* _Params, noise::module::Perlin* _Generator, int _Offset=0) {
 
     // Now, generate the color based on some noise constraints, Clamp it between 0 and 1, then scale based on parameters
-    float SpatialScale = _Params->SpatialScale_;
-    double NoiseValue = _Generator->GetValue(_X_um * SpatialScale, _Y_um * SpatialScale, _Z_um * SpatialScale);
-    NoiseValue = (NoiseValue / 2.) + 0.5;
-    NoiseValue *= _Params->NoiseIntensity_;
+    double NoiseValue;
+    if (_Params->GeneratePerlinNoise_) {
+        float SpatialScale = _Params->SpatialScale_;
+        NoiseValue = _Generator->GetValue(_X_um * SpatialScale, _Y_um * SpatialScale, _Z_um * SpatialScale);
+        NoiseValue = (NoiseValue / 2.) + 0.5;
+        NoiseValue *= _Params->NoiseIntensity_;
+    }
 
     double VoxelColorValue = _Params->DefaultIntensity_ - NoiseValue;
     VoxelColorValue += _Offset;
