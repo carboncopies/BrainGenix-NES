@@ -295,7 +295,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
             // Now, generate the tears
             for (int i = 0; i < NumTearsThisSlice; i++) {
 
-                GenerateTear(_Logger, Tasks, _GeneratorPool, _Params, _Array, Info, z, Generator());
+                GenerateTear(_Logger, Tasks, _GeneratorPool, _Region, _Params, _Array, Info, z, Generator());
 
 
             }

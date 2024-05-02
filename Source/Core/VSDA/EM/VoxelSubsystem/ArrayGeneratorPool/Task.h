@@ -43,6 +43,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
 #include <Simulator/Geometries/GeometryCollection.h>
+#include <Simulator/Geometries/Wedge.h>
 #include <Simulator/Geometries/Cylinder.h>
 
 
@@ -60,7 +61,8 @@ namespace VoxelArrayGenerator {
 enum CustomShape {
     CUSTOM_NONE,
     CUSTOM_CYLINDER,
-    CUSTOM_SPHERE
+    CUSTOM_SPHERE,
+    CUSTOM_WEDGE
 };
 
 
@@ -83,14 +85,14 @@ struct Task {
     int CustomThisComponent = 0;
     int CustomTotalComponents = 0;
 
-    bool IsLineTask = false; /**Different task from the rest of them*/
-    int LineTaskZIndex = 0;
-    int LineTaskP1XIndex = 0;
-    int LineTaskP1YIndex = 0;
-    int LineTaskP2XIndex = 0;
-    int LineTaskP2YIndex = 0;
-    int LineTaskP1Thickness = 0;
-    int LineTaskP2Thickness = 0;
+    Geometries::Wedge ThisWedge; /**cheesy hack*/
+    // int LineTaskZIndex = 0;
+    // int LineTaskP1XIndex = 0;
+    // int LineTaskP1YIndex = 0;
+    // int LineTaskP2XIndex = 0;
+    // int LineTaskP2YIndex = 0;
+    // int LineTaskP1Thickness = 0;
+    // int LineTaskP2Thickness = 0;
     
 
 
