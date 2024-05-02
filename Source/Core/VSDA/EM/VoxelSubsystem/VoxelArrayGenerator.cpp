@@ -295,12 +295,8 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
             // Now, generate the tears
             for (int i = 0; i < NumTearsThisSlice; i++) {
 
-                std::vector<VoxelArrayGenerator::Task> TearTasks = GenerateTear(_Logger, _Params, _Array, Info, z, Generator());
+                GenerateTear(_Logger, Tasks, _GeneratorPool, _Params, _Array, Info, z, Generator());
 
-                for (int y = 0; y < TearTasks.size(); y++) {
-                    Tasks.push_back(std::make_unique<VoxelArrayGenerator::Task>(TearTasks[y]));
-                    _GeneratorPool->QueueWorkOperation(Tasks[Tasks.size() - 1].get());
-                }
 
             }
 

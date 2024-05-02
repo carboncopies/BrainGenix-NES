@@ -44,7 +44,7 @@ Point2D GeneratePoint(std::mt19937& _Generator, std::uniform_int_distribution<>&
     return P;
 }
 
-std::vector<VoxelArrayGenerator::Task> GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, MicroscopeParameters* _Params, VoxelArray* _Array, VSDA::WorldInfo _Info, int _ZHeight, int _Seed) {
+void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::unique_ptr<VoxelArrayGenerator::Task>>& _TaskList, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool, MicroscopeParameters* _Params, VoxelArray* _Array, VSDA::WorldInfo _Info, int _ZHeight, int _Seed) {
 
     int NumSegments = 5;
     int MaxSegmentLength = 1000;
@@ -93,26 +93,28 @@ std::vector<VoxelArrayGenerator::Task> GenerateTear(BG::Common::Logger::LoggingS
 
 
     // Now, create the tasks
-    std::vector<VoxelArrayGenerator::Task> Tasks;
     for (unsigned int i = 1; i < Points.size(); i++) {
 
-        VoxelArrayGenerator::Task ThisTask;
-        ThisTask.Array_ = _Array;
-        ThisTask.Parameters_ = _Params;
-        ThisTask.WorldInfo_ = _Info;
-        ThisTask.IsLineTask = true;
-        ThisTask.LineTaskZIndex = _ZHeight;
-        ThisTask.LineTaskP1XIndex = Points[i - 1].X;
-        ThisTask.LineTaskP1YIndex = Points[i - 1].Y;
-        ThisTask.LineTaskP2XIndex = Points[i].X;
-        ThisTask.LineTaskP2YIndex = Points[i].Y;
-        ThisTask.LineTaskP1Thickness = 50;
-        ThisTask.LineTaskP2Thickness = 20;
+        _TaskList.push_back(std::make_unique<VoxelArrayGenerator::Task>());
 
-        Tasks.push_back(ThisTask);
+
+        VoxelArrayGenerator::Task* ThisTask = _TaskList[_TaskList.size() - 1].get();
+        ThisTask->Array_ = _Array;
+        ThisTask->Parameters_ = _Params;
+        ThisTask->WorldInfo_ = _Info;
+        ThisTask->IsLineTask = true;
+        ThisTask->LineTaskZIndex = _ZHeight;
+        ThisTask->LineTaskP1XIndex = Points[i - 1].X;
+        ThisTask->LineTaskP1YIndex = Points[i - 1].Y;
+        ThisTask->LineTaskP2XIndex = Points[i].X;
+        ThisTask->LineTaskP2YIndex = Points[i].Y;
+        ThisTask->LineTaskP1Thickness = 50;
+        ThisTask->LineTaskP2Thickness = 20;
+
+        _GeneratorPool->QueueWorkOperation(ThisTask);
+
     }
 
-    return Tasks;
 
 }
 
