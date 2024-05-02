@@ -51,7 +51,7 @@ struct Wedge : Geometry {
     Wedge(const Vec3D & _End0Pos_um, const Vec3D & _End1Pos_um, float _End0Width_um, float _End0Height_um, float _End1Width_um, float _End1Height_um);
 
     //! Renders the wedge in 3D.
-    void Show();
+    //void Show();
 
     //! Returns the volume of the wedge in micrometer^3.
     float Volume_um3() { return 0.0; } // *** FIX THIS!
