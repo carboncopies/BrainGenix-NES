@@ -94,8 +94,8 @@ struct MicroscopeParameters {
     float BrightnessRandomAmount = 0.1; /**Change the brightness per image plus or minus this amount*/
 
     bool TearingEnabled = true; /**Enables or disables sample tearing*/
-    int TearingNumPerSlice = 10; /**Set the number of tears on average*/
-    int TearingNumVariation = 5; /**Set the amount the number of tears varies*/
+    int TearingNumPerSlice = 2; /**Set the number of tears on average*/
+    int TearingNumVariation = 0; /**Set the amount the number of tears varies*/
 
 
 };

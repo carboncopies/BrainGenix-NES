@@ -46,13 +46,13 @@ Point2D GeneratePoint(std::mt19937& _Generator, std::uniform_int_distribution<>&
 
 void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::unique_ptr<VoxelArrayGenerator::Task>>& _TaskList, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool, ScanRegion _Region, MicroscopeParameters* _Params, VoxelArray* _Array, VSDA::WorldInfo _Info, int _ZHeight, int _Seed) {
 
-    int NumSegments = 5;
+    int NumSegments = 2;
     int MaxSegmentLength = 1000;
     int MinSegmentLength = 100;
-    int PointJitterXMax = 100;
-    int PointJitterXMin = -100;
-    int PointJitterYMax = 100;
-    int PointJitterYMin = -100;
+    int PointJitterXMax = 1;
+    int PointJitterXMin = -1;
+    int PointJitterYMax = 1;
+    int PointJitterYMin = -1;
 
 
 
@@ -93,6 +93,7 @@ void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::u
 
 
     // Now, create the tasks
+    std::cout<<"Layer: "<<_ZHeight<<std::endl;
     for (unsigned int i = 1; i < Points.size(); i++) {
 
         _TaskList.push_back(std::make_unique<VoxelArrayGenerator::Task>());
@@ -106,23 +107,25 @@ void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::u
 
 
         Geometries::Vec3D End0;
-        End0.x = _Region.Point1X_um + (Points[i - 1].X / _Info.VoxelScale_um);
-        End0.y = _Region.Point1Y_um + (Points[i - 1].Y / _Info.VoxelScale_um);
-        End0.z = _Region.Point1Z_um + (_ZHeight / _Info.VoxelScale_um);
+        End0.x = _Region.Point1X_um + (Points[i - 1].X * _Info.VoxelScale_um);
+        End0.y = _Region.Point1Y_um + (Points[i - 1].Y * _Info.VoxelScale_um);
+        End0.z = _Region.Point1Z_um + (_ZHeight * _Info.VoxelScale_um);
 
         Geometries::Vec3D End1;
-        End1.x = _Region.Point1X_um + (Points[i].X / _Info.VoxelScale_um);
-        End1.y = _Region.Point1Y_um + (Points[i].Y / _Info.VoxelScale_um);
-        End1.z = _Region.Point1Z_um + (_ZHeight / _Info.VoxelScale_um);
+        End1.x = _Region.Point1X_um + (Points[i].X * _Info.VoxelScale_um);
+        End1.y = _Region.Point1Y_um + (Points[i].Y * _Info.VoxelScale_um);
+        End1.z = _Region.Point1Z_um + (_ZHeight * _Info.VoxelScale_um);
+
+        std::cout<<"    -P1: "<<End0.str()<<" |P2: "<<End1.str()<<std::endl;
 
 
         Geometries::Wedge& ThisWedge = ThisTask->ThisWedge;
         ThisWedge.End0Pos_um = End0;
         ThisWedge.End1Pos_um = End1;
-        ThisWedge.End0Height_um = _Info.VoxelScale_um;
-        ThisWedge.End1Height_um = _Info.VoxelScale_um;
-        ThisWedge.End0Width_um = 1;
-        ThisWedge.End1Width_um = 0.5;
+        ThisWedge.End0Height_um = 0.1;//_Info.VoxelScale_um;
+        ThisWedge.End1Height_um = 0.05;//_Info.VoxelScale_um;
+        ThisWedge.End0Width_um = _Info.VoxelScale_um;
+        ThisWedge.End1Width_um = _Info.VoxelScale_um;
 
 
         _GeneratorPool->QueueWorkOperation(ThisTask);
