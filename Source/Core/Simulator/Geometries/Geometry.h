@@ -29,6 +29,7 @@ enum GeometryShapeEnum {
     GeometrySphere,
     GeometryCylinder,
     GeometryBox,
+    GeometryWedge,
     NUMshapes
 };
 
