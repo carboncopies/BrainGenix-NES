@@ -58,13 +58,13 @@ struct Wedge : Geometry {
 
     //! Returns the distance from the origin along wedge axis at specified
     //! fraction of height distance from end 0.
-    float RAtPosition_um(float position) ( return 0.0 ) // *** FIX THIS!
+    float RAtPosition_um(float position) { return 0.0; } // *** FIX THIS!
 
 
     //! Returns the bounding box
     virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo) { return BoundingBox(); } // ** FIX THIS!
-    virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo) { return false; } // ***FIX THIS!
-    virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) { return false; } // ***FIX THIS!
+    virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo) { return true; } // ***FIX THIS!
+    virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) { return true; } // ***FIX THIS!
 
     //! Returns a point cloud that can be used to fill voxels representing the cylinder.
     // std::vector<Vec3D> GetPointCloud(float _VoxelScale);
