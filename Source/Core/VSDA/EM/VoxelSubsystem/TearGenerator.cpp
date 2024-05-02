@@ -46,7 +46,7 @@ Point2D GeneratePoint(std::mt19937& _Generator, std::uniform_int_distribution<>&
 
 void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::unique_ptr<VoxelArrayGenerator::Task>>& _TaskList, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool, ScanRegion _Region, MicroscopeParameters* _Params, VoxelArray* _Array, VSDA::WorldInfo _Info, int _ZHeight, int _Seed) {
 
-    int NumSegments = 2;
+    int NumSegments = 4;
     int MaxSegmentLength = 1000;
     int MinSegmentLength = 100;
     int PointJitterXMax = 1;
@@ -75,7 +75,7 @@ void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::u
 
     int DeltaX = (EndPoint.X - StartPoint.X) / NumSegments;
     int DeltaY = (EndPoint.Y - StartPoint.Y) / NumSegments;
-    for (unsigned int i = 0; i < NumSegments; i++) {
+    for (unsigned int i = 0; i <= NumSegments; i++) {
         Point2D ThisPoint = StartPoint;
         ThisPoint.X += i * DeltaX;
         ThisPoint.Y += i * DeltaY;
