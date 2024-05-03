@@ -44,12 +44,6 @@ Point2D GeneratePoint(std::mt19937& _Generator, std::uniform_int_distribution<>&
     return P;
 }
 
-// float GetSlope(Point2D _A, Point2D _B) {
-//     float DeltaY = _A.Y - _B.Y;
-//     float DeltaX = _A.X - _B.X;
-//     return DeltaY / DeltaX;
-// }
-
 enum TearOrigin {
     TEAR_TOP,
     TEAR_BOTTOM
@@ -58,14 +52,11 @@ enum TearOrigin {
 void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::unique_ptr<VoxelArrayGenerator::Task>>& _TaskList, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool, ScanRegion _Region, MicroscopeParameters* _Params, VoxelArray* _Array, VSDA::WorldInfo _Info, int _ZHeight, int _Seed) {
 
     int NumSegments = 15;
-    // int MaxSegmentLength = 1000;
     int MinSegmentLength = 200;
     int PointJitterXMax = 8;
     int PointJitterXMin = -8;
     int PointJitterYMax = 8;
     int PointJitterYMin = -8;
-    // float MinSlope = 100;
-    // float MaxSlope = 9999;
     float StartSize = 0.15;
     float EndSize = 0;
 
