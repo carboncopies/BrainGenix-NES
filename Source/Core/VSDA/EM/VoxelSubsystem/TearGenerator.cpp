@@ -44,16 +44,33 @@ Point2D GeneratePoint(std::mt19937& _Generator, std::uniform_int_distribution<>&
     return P;
 }
 
+// float GetSlope(Point2D _A, Point2D _B) {
+//     float DeltaY = _A.Y - _B.Y;
+//     float DeltaX = _A.X - _B.X;
+//     return DeltaY / DeltaX;
+// }
+
+enum TearOrigin {
+    TEAR_TOP,
+    TEAR_BOTTOM
+};
+
 void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::unique_ptr<VoxelArrayGenerator::Task>>& _TaskList, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool, ScanRegion _Region, MicroscopeParameters* _Params, VoxelArray* _Array, VSDA::WorldInfo _Info, int _ZHeight, int _Seed) {
 
-    int NumSegments = 6;
-    int MaxSegmentLength = 1000;
-    int MinSegmentLength = 100;
-    int PointJitterXMax = 50;
-    int PointJitterXMin = -50;
-    int PointJitterYMax = 50;
-    int PointJitterYMin = -50;
+    int NumSegments = 15;
+    // int MaxSegmentLength = 1000;
+    int MinSegmentLength = 200;
+    int PointJitterXMax = 8;
+    int PointJitterXMin = -8;
+    int PointJitterYMax = 8;
+    int PointJitterYMin = -8;
+    // float MinSlope = 100;
+    // float MaxSlope = 9999;
+    float StartSize = 0.15;
+    float EndSize = 0;
 
+    int MaxDeltaY = 1000;
+    int MaxDeltaX = 200;
 
 
     // Set Random Number Generator For This Tear
@@ -61,18 +78,29 @@ void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::u
     std::uniform_int_distribution<> XVoxelDistribution(0, _Array->GetX());
     std::uniform_int_distribution<> YVoxelDistribution(0, _Array->GetY());
 
+    // Pick if this tear starts at the top or bottom of the slice
+    TearOrigin Origin = TearOrigin(PointGenerator() % 2);
+
+
     // Generate Start/End Point
     Point2D StartPoint = GeneratePoint(PointGenerator, XVoxelDistribution, YVoxelDistribution);
     Point2D EndPoint = GeneratePoint(PointGenerator, XVoxelDistribution, YVoxelDistribution);
 
-    while ((PointDistance(StartPoint, EndPoint) > MaxSegmentLength) || (PointDistance(StartPoint, EndPoint) < MinSegmentLength)) {
+    // Set the originating point to top or bottom of the sample
+    if (Origin == TEAR_TOP) {
+        StartPoint.Y = -100;
+    } else {
+        StartPoint.Y = _Array->GetY() + 100;
+    }
+
+    while ((abs(EndPoint.X - StartPoint.X) > MaxDeltaX) || (PointDistance(StartPoint, EndPoint) < MinSegmentLength) || (abs(EndPoint.Y - StartPoint.Y) > MaxDeltaY)) {
         EndPoint = GeneratePoint(PointGenerator, XVoxelDistribution, YVoxelDistribution);
     }
 
 
     // Now that we have the start/end points, we will add intermediate points
     std::vector<Point2D> Points;
-
+    std::vector<float> Sizes;
     int DeltaX = (EndPoint.X - StartPoint.X) / NumSegments;
     int DeltaY = (EndPoint.Y - StartPoint.Y) / NumSegments;
     for (unsigned int i = 0; i <= NumSegments; i++) {
@@ -86,14 +114,15 @@ void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::u
     // Now, move each point randomly
     std::uniform_int_distribution<> XJitter(PointJitterXMin, PointJitterXMax);
     std::uniform_int_distribution<> YJitter(PointJitterYMin, PointJitterYMax);
+    float WidthStepSize = (EndSize - StartSize) / Points.size();
     for (unsigned int i = 0; i < Points.size(); i++) {
         Points[i].X += XJitter(PointGenerator);
         Points[i].Y += YJitter(PointGenerator);
+        Sizes.push_back(StartSize + i*WidthStepSize);
     }
 
 
     // Now, create the tasks
-    std::cout<<"Layer: "<<_ZHeight<<std::endl;
     for (unsigned int i = 1; i < Points.size(); i++) {
 
         _TaskList.push_back(std::make_unique<VoxelArrayGenerator::Task>());
@@ -116,14 +145,12 @@ void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::u
         End1.y = _Region.Point1Y_um + (Points[i].Y * _Info.VoxelScale_um);
         End1.z = _Region.Point1Z_um + (_ZHeight * _Info.VoxelScale_um);
 
-        // std::cout<<"    -P1: "<<End0.str()<<" |P2: "<<End1.str()<<std::endl;
-
 
         Geometries::Wedge& ThisWedge = ThisTask->ThisWedge;
         ThisWedge.End0Pos_um = End0;
         ThisWedge.End1Pos_um = End1;
-        ThisWedge.End0Height_um = 0.1;//_Info.VoxelScale_um;
-        ThisWedge.End1Height_um = 0.05;//_Info.VoxelScale_um;
+        ThisWedge.End0Height_um = Sizes[i - 1];//_Info.VoxelScale_um;
+        ThisWedge.End1Height_um = Sizes[i];//_Info.VoxelScale_um;
         ThisWedge.End0Width_um = _Info.VoxelScale_um*1.2;
         ThisWedge.End1Width_um = _Info.VoxelScale_um*1.2;
 
