@@ -292,44 +292,6 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
             std::uniform_int_distribution<> Distribution(_Params->TearNumPerSlice - _Params->TearNumVariation, _Params->TearNumPerSlice + _Params->TearNumVariation);
             int NumTearsThisSlice = Distribution(Generator);
 
-
-                
-            // if (z % 10 == 0) {
-
-            //     Tasks.push_back(std::make_unique<VoxelArrayGenerator::Task>());
-
-            //     VoxelArrayGenerator::Task* ThisTask = Tasks[Tasks.size() - 1].get();
-            //     ThisTask->Array_ = _Array;
-            //     ThisTask->Parameters_ = _Params;
-            //     ThisTask->WorldInfo_ = Info;
-            //     ThisTask->CustomShape_ = VoxelArrayGenerator::CUSTOM_WEDGE;
-
-
-            //     Geometries::Vec3D End0;
-            //     End0.x = _Region.Point1X_um + 1.;
-            //     End0.y = _Region.Point1Y_um + 1.;
-            //     End0.z = _Region.Point1Z_um + (z * Info.VoxelScale_um);
-            //     Geometries::Vec3D End1;
-            //     End1.x = _Region.Point1X_um + 2.;
-            //     End1.y = _Region.Point1Y_um + 1.;
-            //     End1.z = _Region.Point1Z_um + (z * Info.VoxelScale_um);
-
-            //     std::cout<<"    -P1: "<<End0.str()<<" |P2: "<<End1.str()<<std::endl;
-
-
-            //     Geometries::Wedge& ThisWedge = ThisTask->ThisWedge;
-            //     ThisWedge.End0Pos_um = End0;
-            //     ThisWedge.End1Pos_um = End1;
-            //     ThisWedge.End0Height_um = 0.15;//_Info.VoxelScale_um;
-            //     ThisWedge.End1Height_um = 0.03;//_Info.VoxelScale_um;
-            //     ThisWedge.End0Width_um = Info.VoxelScale_um*2;
-            //     ThisWedge.End1Width_um = Info.VoxelScale_um*2;
-
-
-            //     _GeneratorPool->QueueWorkOperation(ThisTask);
-
-            // }
-
             // Now, generate the tears
             for (int i = 0; i < NumTearsThisSlice; i++) {
                 GenerateTear(_Logger, Tasks, _GeneratorPool, _Region, _Params, _Array, Info, z, Generator());

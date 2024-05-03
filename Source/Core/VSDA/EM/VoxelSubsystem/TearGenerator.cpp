@@ -141,8 +141,8 @@ void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::u
         ThisWedge.End1Pos_um = End1;
         ThisWedge.End0Height_um = Sizes[i - 1];//_Info.VoxelScale_um;
         ThisWedge.End1Height_um = Sizes[i];//_Info.VoxelScale_um;
-        ThisWedge.End0Width_um = _Info.VoxelScale_um*1.2;
-        ThisWedge.End1Width_um = _Info.VoxelScale_um*1.2;
+        ThisWedge.End0Width_um = _Info.VoxelScale_um*1.1;
+        ThisWedge.End1Width_um = _Info.VoxelScale_um*1.1;
 
 
         _GeneratorPool->QueueWorkOperation(ThisTask);
