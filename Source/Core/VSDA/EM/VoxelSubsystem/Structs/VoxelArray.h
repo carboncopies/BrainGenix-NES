@@ -162,6 +162,7 @@ public:
      * @param _Value 
      */
     void SetVoxelIfNotDarker(float _X, float _Y, float _Z, VoxelType _Value);
+    void SetVoxelIfNotDarkerAtIndex(int _X, int _Y, int _Z, VoxelType _Value);
 
     /**
      * @brief Get the size of the array, populate the int ptrs

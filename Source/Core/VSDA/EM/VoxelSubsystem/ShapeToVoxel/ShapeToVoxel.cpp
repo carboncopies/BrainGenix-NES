@@ -315,49 +315,58 @@ bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Ge
     float rot_z = diff_spherical_coords.phi();
 
     float cyl_length = diff_spherical_coords.r();
+    int CylinderLength_vox = diff_spherical_coords.r() / _Params->VoxelResolution_um;
 
     // Use this to know the extent to which to gradually change the radius as you move along the length of the cylinder.
     float radius_difference = _Cylinder->End1Radius_um - _Cylinder->End0Radius_um;
+    double RadiusDifference_vox = (_Cylinder->End1Radius_um - _Cylinder->End0Radius_um) / _Params->VoxelResolution_um;
     float midpoint_radius_um = _Cylinder->End0Radius_um + (0.5*radius_difference);
+    double MidpointRadius_vox = (_Cylinder->End0Radius_um + (0.5*radius_difference)) / _Params->VoxelResolution_um;
 
     // Stepping at half voxel size ensures finding voxels without gaps.
-    float stepsize = 0.5*_WorldInfo.VoxelScale_um;
+    float stepsize = _WorldInfo.VoxelScale_um;
+    int StepSize_vox = 1;
 
     Geometries::Vec3D spherical_halfdist_v(cyl_length/2.0, rot_y, rot_z); // mid point vector (from 0,0,0)
     Geometries::Vec3D cartesian_halfdist_v = spherical_halfdist_v.sphericalToCartesian();
     Geometries::Vec3D translate = RotatedEnd0 + cartesian_halfdist_v; // actual mid point
+    Geometries::Vec3D Translate_vox = translate / _Params->VoxelResolution_um;
 
     //for (float X = BB.bb_point1[0] + (_ThisThread * _WorldInfo.VoxelScale_um); X < BB.bb_point2[0]; X+= (_TotalThreads * _WorldInfo.VoxelScale_um)) {
 
     // Calculate all the points and stuff them into the array
-    for (float z = -0.5*cyl_length; z <= 0.5*cyl_length; z += stepsize) {
+    for (int z = -0.5*CylinderLength_vox; z <= 0.5*CylinderLength_vox; z += StepSize_vox) {
         // 2. At each step, get points in a disk around the axis at the right radius.
-        float d_ratio = z / cyl_length; // This goes from -0.5 to 0.5 as we move along the length of the cylinder.
-        float radius_at_z = midpoint_radius_um + d_ratio*radius_difference; // Radius at this position on the axis.
+        float DRatio_Vox = double(z) / double(CylinderLength_vox); // This goes from -0.5 to 0.5 as we move along the length of the cylinder.
+        // float radius_at_z = midpoint_radius_um + d_ratio*radius_difference; // Radius at this position on the axis.
+        int RadiusAtZ_Vox = MidpointRadius_vox + DRatio_Vox*RadiusDifference_vox;
 
-        // Next disc center point along cylinder midline.
-        Geometries::Vec3D RotatedPoint = RotatedVec(0.0, 0.0, z, rot_y, rot_z, translate);
+        // // Next disc center point along cylinder midline.
+        // Geometries::Vec3D RotatedPoint = RotatedVec(0.0, 0.0, z*_Params->VoxelResolution_um, rot_y, rot_z, translate);
 
-        // Set voxel for midline point.
-        VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
-        _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
+        // // Set voxel for midline point.
+        // VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
+        // _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
 
         // Find points on circles around the midline up to the radius at this point along the cylinder.
-        for (float r = stepsize + (_ThisThread * stepsize); r <= radius_at_z; r += (_TotalThreads * stepsize)) {
+        for (int R = (_ThisThread * StepSize_vox); R <= RadiusAtZ_Vox; R += (_TotalThreads * StepSize_vox)) {
             // Circumpherence is 2*pi*r, number of voxels that fit along the circumpherence is 2*pi*r/stepsize.
             // So, in a whole 2*pi rotation, for each step the angle change is 2*pi/(2*pi*r/stepsize) = stepsize/r.
-            float radians_per_step = stepsize / r;
+            float radians_per_step = stepsize / (R*_Params->VoxelResolution_um);
             for (float theta = 0; theta < 2.0*M_PI; theta += radians_per_step) {
 
                 // Next point on circumpherence at radius r.
-                float y = r*std::cos(theta);
-                float x = r*std::sin(theta);
-                Geometries::Vec3D RotatedPoint = RotatedVec(x, y, z, rot_y, rot_z, translate);
-
+                // float y = (R*_Params->VoxelResolution_um)*std::cos(theta);
+                // float x = (R*_Params->VoxelResolution_um)*std::sin(theta);
+                int Y_vox = R * std::cos(theta);
+                int X_vox = R * std::sin(theta);
+                Geometries::Vec3D RotatedPoint = RotatedVec(X_vox, Y_vox, z, rot_y, rot_z, Translate_vox);
+                RotatedPoint = RotatedPoint * _Params->VoxelResolution_um;
+    
                 // Set voxel at the point.
                 VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
                 if (_Params->RenderBorders) {
-                    float DistanceToEdge = radius_at_z - r;
+                    float DistanceToEdge = (RadiusAtZ_Vox*_Params->VoxelResolution_um) - (R*_Params->VoxelResolution_um);
                     FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
                 }
                 _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);

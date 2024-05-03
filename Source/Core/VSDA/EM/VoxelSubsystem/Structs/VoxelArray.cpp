@@ -238,6 +238,35 @@ void VoxelArray::SetVoxelIfNotDarker(float _X, float _Y, float _Z, VoxelType _Va
 
 }
 
+
+void VoxelArray::SetVoxelIfNotDarkerAtIndex(int _X, int _Y, int _Z, VoxelType _Value) {
+
+    // This is dangerous - there's a round call since this can lead to truncation errors
+    int XIndex = _X;
+    int YIndex = _Y;
+    int ZIndex = _Z;
+
+    // Check Bounds (so if it's out of bounds, we print a warning and do nothing!)
+    if ((XIndex < 0 || XIndex >= SizeX_) || (YIndex < 0 || YIndex >= SizeY_) || (ZIndex < 0 || ZIndex >= SizeZ_)) {
+        return;
+    }
+
+    // Get Voxel At Index, Check That It's Not Darker, Then Set, Otherwise Don't Set
+    VoxelType ThisVoxel = GetVoxel(XIndex, YIndex, ZIndex);
+
+    // Only set the color if it's not in the enum range, and it's darker than the current value (except if it's empty)
+    if (_Value.State_ == VoxelState_INTERIOR) {
+        if ((ThisVoxel.Intensity_ > _Value.Intensity_) || (ThisVoxel.State_ == VoxelState_BORDER)) {
+            SetVoxel(XIndex, YIndex, ZIndex, _Value);
+        }
+    } else if (_Value.State_ == VoxelState_BORDER) {
+        if ((ThisVoxel.State_ != VoxelState_INTERIOR) && (ThisVoxel.Intensity_ > _Value.Intensity_)) {
+            SetVoxel(XIndex, YIndex, ZIndex, _Value);
+        }
+    }
+
+}
+
 void VoxelArray::GetSize(int* _X, int* _Y, int* _Z) {
     (*_X) = int(SizeX_);
     (*_Y) = int(SizeY_);
