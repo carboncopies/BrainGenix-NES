@@ -129,6 +129,20 @@ std::string VSDARPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     Handle.GetParFloat("ContrastRandomAmount", Params.ContrastRandomAmount);
     Handle.GetParFloat("BrightnessRandomAmount", Params.BrightnessRandomAmount);
 
+    Handle.GetParBool("TearingEnabled", Params.TearingEnabled);
+    Handle.GetParInt("TearNumPerSlice", Params.TearNumPerSlice);
+    Handle.GetParInt("TearNumVariation", Params.TearNumVariation);
+    Handle.GetParInt("TearNumSegments", Params.TearNumSegments);
+    Handle.GetParFloat("TearMinimumLength_um", Params.TearMinimumLength_um);
+    Handle.GetParFloat("TearMaxDeltaY_um", Params.TearMaxDeltaY_um);
+    Handle.GetParFloat("TearMaxDeltaX_um", Params.TearMaxDeltaX_um);
+    Handle.GetParFloat("TearPointJitterXMax_um", Params.TearPointJitterXMax_um);
+    Handle.GetParFloat("TearPointJitterXMin_um", Params.TearPointJitterXMin_um);
+    Handle.GetParFloat("TearPointJitterYMax_um", Params.TearPointJitterYMax_um);
+    Handle.GetParFloat("TearPointJitterYMin_um", Params.TearPointJitterYMin_um);
+    Handle.GetParFloat("TearStartSize_um", Params.TearStartSize_um);
+    Handle.GetParFloat("TearEndSize_um", Params.TearEndSize_um);
+
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }

@@ -97,9 +97,9 @@ struct MicroscopeParameters {
     int TearNumPerSlice = 0; /**Set the number of tears on average*/
     int TearNumVariation = 1; /**Set the amount the number of tears varies*/
     int TearNumSegments = 15; /**Number of subdivisions to add variation to the tear*/
-    int TearMinimumLength_um = 0.4; /**Minimum length of the segment in microns*/
-    int TearMaxDeltaY_um = 5; /**Maximum change in y for the tear in microns*/
-    int TearMaxDeltaX_um = 1; /**Max change in x for the tear in microns*/
+    float TearMinimumLength_um = 0.4; /**Minimum length of the segment in microns*/
+    float TearMaxDeltaY_um = 5; /**Maximum change in y for the tear in microns*/
+    float TearMaxDeltaX_um = 1; /**Max change in x for the tear in microns*/
     float TearPointJitterXMax_um = 0.1; /**Max x jitter in microns*/
     float TearPointJitterXMin_um = -0.1; /**Min x jitter in microns*/
     float TearPointJitterYMax_um = 0.1; /**Max y jitter in microns*/
