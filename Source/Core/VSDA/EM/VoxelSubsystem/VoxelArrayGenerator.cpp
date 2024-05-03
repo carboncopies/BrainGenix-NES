@@ -289,7 +289,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
             // Generate the number of tears per slice
             std::random_device Device;
             std::mt19937 Generator(Device());
-            std::uniform_int_distribution<> Distribution(_Params->TearingNumPerSlice - _Params->TearingNumVariation, _Params->TearingNumPerSlice + _Params->TearingNumVariation);
+            std::uniform_int_distribution<> Distribution(_Params->TearNumPerSlice - _Params->TearNumVariation, _Params->TearNumPerSlice + _Params->TearNumVariation);
             int NumTearsThisSlice = Distribution(Generator);
 
 

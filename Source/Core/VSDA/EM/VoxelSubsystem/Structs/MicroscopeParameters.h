@@ -94,8 +94,8 @@ struct MicroscopeParameters {
     float BrightnessRandomAmount = 0.1; /**Change the brightness per image plus or minus this amount*/
 
     bool TearingEnabled = true; /**Enables or disables sample tearing*/
-    int TearingNumPerSlice = 2; /**Set the number of tears on average*/
-    int TearingNumVariation = 0; /**Set the amount the number of tears varies*/
+    int TearNumPerSlice = 2; /**Set the number of tears on average*/
+    int TearNumVariation = 0; /**Set the amount the number of tears varies*/
     int TearNumSegments = 15; /**Number of subdivisions to add variation to the tear*/
     int TearMinimumLength_um = 0.4; /**Minimum length of the segment in microns*/
     int TearMaxDeltaY_um = 5; /**Maximum change in y for the tear in microns*/
