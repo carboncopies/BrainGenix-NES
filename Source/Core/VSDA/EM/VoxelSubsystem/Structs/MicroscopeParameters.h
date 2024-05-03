@@ -100,10 +100,10 @@ struct MicroscopeParameters {
     int TearMinimumLength_um = 0.4; /**Minimum length of the segment in microns*/
     int TearMaxDeltaY_um = 5; /**Maximum change in y for the tear in microns*/
     int TearMaxDeltaX_um = 1; /**Max change in x for the tear in microns*/
-    int TearPointJitterXMax_um = 0.2; /**Max x jitter in microns*/
-    int TearPointJitterXMin_um = -0.2; /**Min x jitter in microns*/
-    int TearPointJitterYMax_um = 0.2; /**Max y jitter in microns*/
-    int TearPointJitterYMin_um = -0.2; /**min y jitter in microns*/
+    float TearPointJitterXMax_um = 0.1; /**Max x jitter in microns*/
+    float TearPointJitterXMin_um = -0.1; /**Min x jitter in microns*/
+    float TearPointJitterYMax_um = 0.1; /**Max y jitter in microns*/
+    float TearPointJitterYMin_um = -0.1; /**min y jitter in microns*/
     float TearStartSize_um = 0.15; /**Size in microns of tear start*/
     float TearEndSize_um = 0; /**Size in microns of tear end*/
 
