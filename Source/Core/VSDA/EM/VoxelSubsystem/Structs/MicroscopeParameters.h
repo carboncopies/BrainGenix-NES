@@ -93,6 +93,19 @@ struct MicroscopeParameters {
     float ContrastRandomAmount = 0.1; /**Change the contrast plus or minus this amount*/
     float BrightnessRandomAmount = 0.1; /**Change the brightness per image plus or minus this amount*/
 
+    bool TearingEnabled = true; /**Enables or disables sample tearing*/
+    int TearNumPerSlice = 0; /**Set the number of tears on average*/
+    int TearNumVariation = 1; /**Set the amount the number of tears varies*/
+    int TearNumSegments = 15; /**Number of subdivisions to add variation to the tear*/
+    float TearMinimumLength_um = 0.4; /**Minimum length of the segment in microns*/
+    float TearMaxDeltaY_um = 5; /**Maximum change in y for the tear in microns*/
+    float TearMaxDeltaX_um = 1; /**Max change in x for the tear in microns*/
+    float TearPointJitterXMax_um = 0.1; /**Max x jitter in microns*/
+    float TearPointJitterXMin_um = -0.1; /**Min x jitter in microns*/
+    float TearPointJitterYMax_um = 0.1; /**Max y jitter in microns*/
+    float TearPointJitterYMin_um = -0.1; /**min y jitter in microns*/
+    float TearStartSize_um = 0.15; /**Size in microns of tear start*/
+    float TearEndSize_um = 0; /**Size in microns of tear end*/
 
 };
 

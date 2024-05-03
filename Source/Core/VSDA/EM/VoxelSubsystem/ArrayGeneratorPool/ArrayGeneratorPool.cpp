@@ -79,7 +79,10 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
             // If we were to use something like a std::vector, that would be dangerous - but since we're using a static size raw array, 
             // we can allow all threads to write the array at the same time (it feels wrong, but should be okay in this specific case)
             std::string ShapeInfo;
-            if (!ThisTask->CustomShape_ != CUSTOM_NONE) {
+            if (ThisTask->CustomShape_ == CUSTOM_WEDGE) {
+                FillWedge(Array, &ThisTask->ThisWedge, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
+                ShapeName = "Wedge";
+            } else if (!ThisTask->CustomShape_ != CUSTOM_NONE) {
                 if (GeometryCollection->IsSphere(ShapeID)) {
                     Geometries::Sphere & ThisSphere = GeometryCollection->GetSphere(ShapeID);
                     ShapeInfo += "Radius: " + std::to_string(ThisSphere.Radius_um);

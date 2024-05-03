@@ -180,7 +180,6 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
 
 
-
             // Contrast/Brightness Adjustments
             if (Task->AdjustContrast) {
                 

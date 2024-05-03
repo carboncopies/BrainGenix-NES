@@ -55,6 +55,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Geometries/Box.h
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.h
+  ${SRC_DIR}/Core/Simulator/Geometries/Wedge.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/Wedge.h
 
   ${SRC_DIR}/Core/Simulator/BrainRegion/BrainRegion.h
 
@@ -148,6 +150,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/EMSubRegion.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/TearGenerator.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.cpp
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.cpp

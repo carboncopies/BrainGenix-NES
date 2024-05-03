@@ -40,6 +40,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
 #include <Simulator/Geometries/GeometryCollection.h>
+#include <Simulator/Geometries/Wedge.h>
 
 #include <VSDA/Common/Structs/WorldInfo.h>
 
@@ -86,6 +87,10 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::Wor
  */
 bool FillSphere(VoxelArray* _Array, Geometries::Sphere* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);
 bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geometries::Sphere* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);
+
+//bool FillLine(VoxelArray* _Array, int P1X, int P1Y, int P1Thickness, int P2X, int P2Y, int P2Thickness, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);
+bool FillWedge(VoxelArray* _Array, Geometries::Wedge* _Wedge, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);
+
 /**
  * @brief Simply fills everything in the bounding box.
  * 

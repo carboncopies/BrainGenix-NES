@@ -16,6 +16,7 @@
 #include <VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h>
 #include <VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h>
 
+#include <VSDA/EM/VoxelSubsystem/TearGenerator.h>
 
 
 
@@ -279,6 +280,24 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
         }
 
+    }
+
+    // Now Add Tears
+    if (_Params->TearingEnabled) {
+        for (size_t z = 0; z < _Array->GetZ(); z++) {
+
+            // Generate the number of tears per slice
+            std::random_device Device;
+            std::mt19937 Generator(Device());
+            std::uniform_int_distribution<> Distribution(_Params->TearNumPerSlice - _Params->TearNumVariation, _Params->TearNumPerSlice + _Params->TearNumVariation);
+            int NumTearsThisSlice = Distribution(Generator);
+
+            // Now, generate the tears
+            for (int i = 0; i < NumTearsThisSlice; i++) {
+                GenerateTear(_Logger, Tasks, _GeneratorPool, _Region, _Params, _Array, Info, z, Generator());
+            }
+
+        }
     }
 
 
