@@ -51,17 +51,16 @@ enum TearOrigin {
 
 void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::unique_ptr<VoxelArrayGenerator::Task>>& _TaskList, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool, ScanRegion _Region, MicroscopeParameters* _Params, VoxelArray* _Array, VSDA::WorldInfo _Info, int _ZHeight, int _Seed) {
 
-    int NumSegments = 15;
-    int MinSegmentLength = 200;
-    int PointJitterXMax = 8;
-    int PointJitterXMin = -8;
-    int PointJitterYMax = 8;
-    int PointJitterYMin = -8;
-    float StartSize = 0.15;
-    float EndSize = 0;
-
-    int MaxDeltaY = 1000;
-    int MaxDeltaX = 200;
+    int NumSegments = _Params->TearNumSegments;
+    int MinSegmentLength = _Params->TearMinimumLength_um / _Params->VoxelResolution_um;
+    int PointJitterXMax = _Params->TearPointJitterXMax_um / _Params->VoxelResolution_um;
+    int PointJitterXMin = _Params->TearPointJitterXMin_um / _Params->VoxelResolution_um;
+    int PointJitterYMax = _Params->TearPointJitterYMax_um / _Params->VoxelResolution_um;
+    int PointJitterYMin = _Params->TearPointJitterYMin_um / _Params->VoxelResolution_um;
+    float StartSize = _Params->TearStartSize_um;
+    float EndSize = _Params->TearEndSize_um;
+    int MaxDeltaY = _Params->TearMaxDeltaY_um / _Params->VoxelResolution_um;
+    int MaxDeltaX = _Params->TearMaxDeltaX_um / _Params->VoxelResolution_um;
 
 
     // Set Random Number Generator For This Tear
