@@ -133,7 +133,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
             // Check if we need to render this in parts
 
             // Check Volume of Shape if it's a cylinder, (for optional subdivision)
-            uint64_t SubdivisionThreshold_vox = 250000; 
+            uint64_t SubdivisionThreshold_vox = 75000; 
             if (_Sim->Collection.IsSphere(ThisCompartment->ShapeID)) {
 
                 // Calculate Size in voxels of the shape
@@ -182,63 +182,70 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 }
 
             } 
-            // else if (_Sim->Collection.IsCylinder(ThisCompartment->ShapeID)) {
+            else if (_Sim->Collection.IsCylinder(ThisCompartment->ShapeID)) {
 
-            //     // Calculate size of the cylinder in question
-            //     Geometries::Cylinder& ThisCylinder = _Sim->Collection.GetCylinder(ThisCompartment->ShapeID);
+                // Calculate size of the cylinder in question
+                Geometries::Cylinder& ThisCylinder = _Sim->Collection.GetCylinder(ThisCompartment->ShapeID);
 
-            //     double AverageRadius_um = (ThisCylinder.End0Radius_um + ThisCylinder.End1Radius_um) / 2.;
-            //     double Distance_um = ThisCylinder.End0Pos_um.Distance(ThisCylinder.End1Pos_um);
-            //     double Volume_um3 = pow(AverageRadius_um * 3.14159, 2) * Distance_um;
+                double AverageRadius_um = (ThisCylinder.End0Radius_um + ThisCylinder.End1Radius_um) / 2.;
+                double Distance_um = ThisCylinder.End0Pos_um.Distance(ThisCylinder.End1Pos_um);
+                double Volume_um3 = pow(AverageRadius_um * 3.14159, 2) * Distance_um;
 
-            //     double Voxel_um3 = pow(_Params->VoxelResolution_um, 3);
+                double Voxel_um3 = pow(_Params->VoxelResolution_um, 3);
 
-            //     uint64_t EstimatedSize_vox = Volume_um3 / Voxel_um3;
+                uint64_t EstimatedSize_vox = Volume_um3 / Voxel_um3;
                 
 
-            //     // Now, if the cylinder is too big to fit properly, we're going to subdivide it
-            //     if (EstimatedSize_vox > SubdivisionThreshold_vox) {
+                // Now, if the cylinder is too big to fit properly, we're going to subdivide it
+                if (EstimatedSize_vox > SubdivisionThreshold_vox) {
 
-            //         // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
-            //         int NumSegments = ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox));
-            //         _Logger->Log("Detected Cylinder of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
-            //         std::vector<Geometries::Vec3D> PointList = SubdivideLine(ThisCylinder.End0Pos_um, ThisCylinder.End1Pos_um, NumSegments);
+                    // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
+                    int NumSegments = ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox));
+                    _Logger->Log("Detected Cylinder of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
+                    // std::vector<Geometries::Vec3D> PointList = SubdivideLine(ThisCylinder.End0Pos_um, ThisCylinder.End1Pos_um, NumSegments);
 
-            //         // now, create a task for each of these
-            //         // note that we assume the PointList has at least two segments in it, else it will crash
-            //         for (unsigned int i = 0; i < NumSegments - 1; i++) {
+                    // now, create a task for each of these
+                    // note that we assume the PointList has at least two segments in it, else it will crash
+                    for (unsigned int i = 0; i < NumSegments - 1; i++) {
 
-            //             std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
-            //             Task->Array_ = _Array;
-            //             Task->GeometryCollection_ = &_Sim->Collection;
-            //             Task->ShapeID_ = -1;
-            //             Task->CustomShape_ = VoxelArrayGenerator::CUSTOM_CYLINDER;
-            //             Task->WorldInfo_ = Info;
-            //             Task->Parameters_ = _Params;
+                        std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
+                        Task->Array_ = _Array;
+                        Task->GeometryCollection_ = &_Sim->Collection;
+                        Task->ShapeID_ = -1;
+                        Task->CustomShape_ = VoxelArrayGenerator::CUSTOM_CYLINDER;
+                        Task->WorldInfo_ = Info;
+                        Task->Parameters_ = _Params;
 
-            //             Task->CustomCylinder_.End0Pos_um = PointList[i];
-            //             Task->CustomCylinder_.End0Radius_um = ThisCylinder.End0Radius_um; // this is wrong, we need to interpolate it - fix later!
-            //             Task->CustomCylinder_.End1Pos_um = PointList[i+1];
-            //             Task->CustomCylinder_.End1Radius_um = ThisCylinder.End1Radius_um; // this is also wrong, we need to interpolate it - fix later!
+                        Task->CustomThisComponent = i;
+                        Task->CustomTotalComponents = NumSegments;
 
-            //             // Now, enqueue it
-            //             _GeneratorPool->QueueWorkOperation(Task.get());
+                        Task->CustomCylinder_.End0Pos_um = ThisCylinder.End0Pos_um;
+                        Task->CustomCylinder_.End0Radius_um = ThisCylinder.End0Radius_um;
+                        Task->CustomCylinder_.End1Pos_um = ThisCylinder.End1Pos_um;
+                        Task->CustomCylinder_.End1Radius_um = ThisCylinder.End1Radius_um;
 
-            //             // Then move it to the list so we can keep track of it
-            //             Tasks.push_back(std::move(Task));
+                        Task->CustomThisComponent = i;
+                        Task->CustomTotalComponents = NumSegments;
 
 
-            //         }
+                        // Now, enqueue it
+                        _GeneratorPool->QueueWorkOperation(Task.get());
+
+                        // Then move it to the list so we can keep track of it
+                        Tasks.push_back(std::move(Task));
+
+
+                    }
                     
-            //         AddedShapes++;
+                    AddedShapes++;
 
 
-            //         // skip the rest of this loop - we don't want to add the shape we just subdividied
-            //         continue;
+                    // skip the rest of this loop - we don't want to add the shape we just subdividied
+                    continue;
 
-            //     }
+                }
                 
-            // }
+            }
 
 
             AddedShapes++;

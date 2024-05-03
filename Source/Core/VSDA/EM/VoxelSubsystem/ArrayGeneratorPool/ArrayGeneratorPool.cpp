@@ -106,7 +106,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
 
                 if (ThisTask->CustomShape_ == CUSTOM_CYLINDER) {
                     ShapeName = "Cylinder";
-                    FillCylinder(Array, &ThisTask->CustomCylinder_, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
+                    FillCylinderPart(ThisTask->CustomTotalComponents, ThisTask->CustomThisComponent, Array, &ThisTask->CustomCylinder_, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
                 } else if (ThisTask->CustomShape_ == CUSTOM_SPHERE) {
                     ShapeName = "Sphere";
                     FillSpherePart(ThisTask->CustomTotalComponents, ThisTask->CustomThisComponent, Array, &ThisTask->CustomSphere_, ThisTask->WorldInfo_, ThisTask->Parameters_, &PerlinGenerator);
