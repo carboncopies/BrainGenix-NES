@@ -48,6 +48,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
     _RPCManager->AddRoute("Simulation/SetRandomSeed",             std::bind(&SimulationRPCInterface::SimulationSetSeed, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/RunFor",                    std::bind(&SimulationRPCInterface::SimulationRunFor, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/RecordAll",                 std::bind(&SimulationRPCInterface::SimulationRecordAll, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetSpikeTimes",             std::bind(&SimulationRPCInterface::SimulationGetSpikeTimes, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetRecording",              std::bind(&SimulationRPCInterface::SimulationGetRecording, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetStatus",                 std::bind(&SimulationRPCInterface::SimulationGetStatus, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetGeoCenter",              std::bind(&SimulationRPCInterface::SimulationGetGeoCenter, this, std::placeholders::_1));
@@ -59,7 +60,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
     _RPCManager->AddRoute("Simulation/Load",                      std::bind(&SimulationRPCInterface::SimulationLoad, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/GetSomaPositions",          std::bind(&SimulationRPCInterface::GetSomaPositions, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/GetConnectome",          std::bind(&SimulationRPCInterface::GetConnectome, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetConnectome",             std::bind(&SimulationRPCInterface::GetConnectome, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("ManTaskStatus",                        std::bind(&SimulationRPCInterface::ManTaskStatus, this, std::placeholders::_1));
 
@@ -290,6 +291,20 @@ std::string SimulationRPCInterface::SimulationRecordAll(std::string _JSONRequest
 
     // Return Result ID
     return Handle.ErrResponse(); // ok
+}
+
+std::string SimulationRPCInterface::SimulationGetSpikeTimes(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetSpikeTimes", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Return JSON
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    ResponseJSON["SpikeTimes"] = Handle.Sim()->GetSpikeTimesJSON();
+    return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
 std::string SimulationRPCInterface::SimulationGetRecording(std::string _JSONRequest) {

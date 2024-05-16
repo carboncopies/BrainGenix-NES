@@ -166,6 +166,7 @@ public:
     void SetRecordAll(float tMax_ms = _RECORD_FOREVER_TMAX_MS);
     bool IsRecording() const;
     std::unordered_map<std::string, CoreStructs::CircuitRecording> GetRecording();
+    nlohmann::json GetSpikeTimesJSON() const;
     nlohmann::json GetRecordingJSON() const;
 
     nlohmann::json GetCaImagingVoxelsJSON();

@@ -93,6 +93,8 @@ struct Neuron {
 
     virtual void Update(float t_ms, bool recording);
 
+    virtual nlohmann::json GetSpikeTimesJSON() const;
+
     virtual nlohmann::json GetRecordingJSON() const;
 
     virtual void SetSpontaneousActivity(float mean, float stdev, int Seed);

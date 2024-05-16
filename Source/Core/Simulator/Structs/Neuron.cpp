@@ -66,6 +66,12 @@ void Neuron::Update(float t_ms, bool recording) {
     WARNWRONGOOPLEVEL();
 }
 
+nlohmann::json Neuron::GetSpikeTimesJSON() const {
+    nlohmann::json spiketimes;
+    spiketimes["tSpike_ms"] = nlohmann::json(this->TAct_ms);
+    return spiketimes;
+}
+
 nlohmann::json Neuron::GetRecordingJSON() const {
     // Placeholder.
     nlohmann::json recording;

@@ -182,6 +182,17 @@ std::unordered_map<std::string, CoreStructs::CircuitRecording> Simulation::GetRe
     return recording;
 };
 
+nlohmann::json Simulation::GetSpikeTimesJSON() const {
+    nlohmann::json spiketimes;
+
+    for (const auto & neuron_ptr : this->Neurons) {
+        assert(neuron_ptr);
+        spiketimes[std::to_string(neuron_ptr->ID)] = neuron_ptr->GetSpikeTimesJSON();
+    }
+    
+    return spiketimes;
+}
+
 nlohmann::json Simulation::GetRecordingJSON() const {
     nlohmann::json recording;
 
