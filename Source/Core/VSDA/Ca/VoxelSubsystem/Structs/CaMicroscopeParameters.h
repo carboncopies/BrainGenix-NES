@@ -62,12 +62,12 @@ struct CaMicroscopeParameters {
 
 
     bool GenerateImageNoise = true; /**Enable or disable the generation of ImageNoise*/
-    int ImageNoiseIntensity = 110; /**Arbitrary intensity level*/
+    int ImageNoiseIntensity = 70; /**Arbitrary intensity level*/
     int PreBlurNoisePasses = 1; /**Set the number of times to add noise pre blurring*/
-    int PostBlurNoisePasses = 2; /**Set the number of times to add noise pre blurring*/
+    int PostBlurNoisePasses = 1; /**Set the number of times to add noise pre blurring*/
 
     bool EnableGaussianBlur = true;  /**Enable or disables gaussian blurring of images*/
-    float GaussianBlurSigma = 1.15;   /**Sigma value for amount of blur*/
+    float GaussianBlurSigma = 2.25;   /**Sigma value for amount of blur*/
 
 
     std::vector<int> FlourescingNeuronIDs_; /**List of neuron IDs that flouresce, all others are ignored*/
