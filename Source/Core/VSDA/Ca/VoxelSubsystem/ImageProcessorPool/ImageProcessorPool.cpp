@@ -7,13 +7,17 @@
 #include <vector>
 #include <chrono>
 #include <filesystem>
-#include <iostream>
-
+#include <cstdlib>
+#include <random>
+#include <algorithm>
+#include <math.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <stb_image.h>
 #include <stb_image_write.h>
 #include <stb_image_resize.h>
+
+#include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/iir_gauss_blur.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
@@ -96,6 +100,8 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
     std::vector<double> Times;
 
 
+    std::mt19937 RandomGenerator(rand());
+
     // Run until thread exit is requested - that is, this is set to false
     while (ThreadControlFlag_) {
 
@@ -115,7 +121,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             // next, we resize it up to the target image, thus saving a lot of compute time
             int VoxelsPerStepX = Task->VoxelEndingX - Task->VoxelStartingX;
             int VoxelsPerStepY = Task->VoxelEndingY - Task->VoxelStartingY;
-            int NumChannels = 3;
+            int NumChannels = 1;
 
             float BrightnessAmplification = Task->BrightnessAmplification;
             unsigned int CaVoxelsDeep = Task->NumVoxelsPerSlice;
@@ -143,9 +149,9 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
 
                     if (!Status) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 0, 0);
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 128);
                     } else if (ThisVoxel.IsBorder_) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255);
                     } else if (ThisVoxel.IsFilled_) {
                         // Note: The range of Ca concentration values depends on multiple
                         //       factors, and the resulting luminosity of fluorescence depends
@@ -160,17 +166,56 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                         int PixelColor = Color*BrightnessAmplification*255.0;
                         if (PixelColor > 255) PixelColor = 255;
                         if (PixelColor > debug_max_lumen) debug_max_lumen = PixelColor;
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, PixelColor, 0);
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, PixelColor);
                     } else {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 0);
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0);
                     }
 
                 }
             }
-            // std::cout << "Max lumen = " << debug_max_lumen << '\n';
 
-            // Note, when we do image processing (for like noise and that stuff, we should do it here!) (or after resizing depending on what is needed)
-            // so then this will be phase two, and phase 3 is saving after processing
+            // Pre-Blur Noise Pass
+            if (Task->EnableImageNoise) {
+                for (unsigned int i = 0; i < Task->PreBlurNoisePasses; i++) {
+                    for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
+                        for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
+
+                            int Color = OneToOneVoxelImage.GetPixel(X, Y);
+                            Color += (RandomGenerator() % Task->ImageNoiseAmount) - int(Task->ImageNoiseAmount/2);
+                            Color = std::clamp(Color, 0, 255);
+                            OneToOneVoxelImage.SetPixel(X, Y, Color);
+
+                        }
+                    }
+                }
+            }
+
+            // Perform Gaussian Blurring Step
+            if (Task->EnableGaussianBlur) {
+                iir_gauss_blur(OneToOneVoxelImage.Width_px, OneToOneVoxelImage.Height_px, 1, OneToOneVoxelImage.Data_.get(), Task->GaussianBlurSigma);
+            }
+
+
+            // Post-Blur Noise Pass
+            if (Task->EnableImageNoise) {
+                for (unsigned int i = 0; i < Task->PostBlurNoisePasses; i++) {
+                    for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
+                        for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
+
+                            int Color = OneToOneVoxelImage.GetPixel(X, Y);
+                            Color += (RandomGenerator() % Task->ImageNoiseAmount) - int(Task->ImageNoiseAmount/2);
+                            Color = std::clamp(Color, 0, 255);
+                            OneToOneVoxelImage.SetPixel(X, Y, Color);
+
+                        }
+                    }
+                }
+            }
+
+
+
+
+
 
 
             // -- Phase 2 -- //

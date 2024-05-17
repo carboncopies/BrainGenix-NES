@@ -109,6 +109,15 @@ std::vector<std::string> CaRenderSliceFromArray(BG::Common::Logger::LoggingSyste
                 ThisTask->AttenuationPerUm = _CaData->Params_.AttenuationPerUm;
                 ThisTask->VoxelResolution_um = _CaData->Params_.VoxelResolution_um;
                 ThisTask->NumVoxelsPerSlice = _CaData->Params_.NumVoxelsPerSlice;
+                ThisTask->TargetFileName_ = FilePath;
+                ThisTask->TargetDirectory_ = DirectoryPath;
+                ThisTask->EnableImageNoise = Params->GenerateImageNoise;
+                ThisTask->ImageNoiseAmount = Params->ImageNoiseIntensity;
+                ThisTask->PreBlurNoisePasses = Params->PreBlurNoisePasses;
+                ThisTask->PostBlurNoisePasses = Params->PostBlurNoisePasses;
+                ThisTask->EnableGaussianBlur = Params->EnableGaussianBlur;
+                ThisTask->GaussianBlurSigma = Params->GaussianBlurSigma;
+                ThisTask->VoxelScale_um = Params->VoxelResolution_um;
 
                 _ImageProcessorPool->QueueEncodeOperation(ThisTask.get());
                 _CaData->Tasks_.push_back(std::move(ThisTask));

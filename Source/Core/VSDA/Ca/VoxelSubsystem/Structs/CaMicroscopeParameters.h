@@ -59,7 +59,17 @@ struct CaMicroscopeParameters {
     float ScanRegionOverlap_percent;        /**Percentage of overlap between generated images*/
     int NumPixelsPerVoxel_px;               /**Sets the size of each voxel in pixels in the fully rendered image (approximately).*/
     int NumVoxelsPerSlice;                  /**Number of voxels deep we're scanning*/
-    
+
+
+    bool GenerateImageNoise = true; /**Enable or disable the generation of ImageNoise*/
+    int ImageNoiseIntensity = 110; /**Arbitrary intensity level*/
+    int PreBlurNoisePasses = 1; /**Set the number of times to add noise pre blurring*/
+    int PostBlurNoisePasses = 2; /**Set the number of times to add noise pre blurring*/
+
+    bool EnableGaussianBlur = true;  /**Enable or disables gaussian blurring of images*/
+    float GaussianBlurSigma = 1.15;   /**Sigma value for amount of blur*/
+
+
     std::vector<int> FlourescingNeuronIDs_; /**List of neuron IDs that flouresce, all others are ignored*/
     std::string CalciumIndicator_;          /**Name of the calcium indicator currently being used*/
     float IndicatorRiseTime_ms;             /**Rise time of the indicator in milliseconds (how long before it sarts glowing)*/
