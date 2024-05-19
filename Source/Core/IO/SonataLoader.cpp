@@ -61,6 +61,36 @@ std::vector<std::shared_ptr<Simulator::CoreStructs::Neuron>> SonataLoader::GetAl
     for (const auto &[k, v] : _allNodes) {
         auto allSelectedNodes = v->selectAll().flatten();
         for (auto it = allSelectedNodes.begin(); it != allSelectedNodes.end(); ++it) {
+
+            // Create Soma Geometry
+            Simulator::Geometries::Sphere NeuronSoma;
+            NeuronSoma.Center_um = Simulator::Geometries::Vec3(0.0f, 0.0f, 0.0f); // Put a proper value in here for the center of the soma's compartment
+            NeuronSoma.Radius_um = 1.0f; // Now, put the radius of the soma compartment here (or an approximaton of it).
+            _Sim.Collection.append(NeuronSoma);
+            int SomaShapeComartmentID = _Sim.Collection.Size() - 1;
+
+
+            // Create SC Comartment For Soma
+            // Create comartment here
+            // SomaCompartment.ShapeID = SomaShapeComartmentID
+            // Append compartment to list of compartments in the simulator, get the index and use that as the ID for the Neuron struct's SomaComartmentIDs
+
+
+            /**
+             * for dendrite in sonata.dendrites:
+             *      create cylinder geometry for dendrite
+             *      create sc compartment for dendrite using shape index as id
+             * 
+             */
+
+            /**
+             * for axon in sonata.axons:
+             *      create cylinder geometry for axon
+             *      create sc compartment for axon using shape index as id
+             * 
+             */
+
+
             auto neuronStruct = Simulator::CoreStructs::SCNeuronStruct{
                 Name : "dummy",
                 ID : (int)*it,
