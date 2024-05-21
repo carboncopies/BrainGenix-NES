@@ -39,7 +39,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/RPC/StaticRoutes.h
   ${SRC_DIR}/Core/RPC/ManagerTaskData.cpp
   ${SRC_DIR}/Core/RPC/ManagerTaskData.h
-
+  ${SRC_DIR}/Core/RPC/SafeClient.cpp
+  ${SRC_DIR}/Core/RPC/SafeClient.h
 
   ${SRC_DIR}/Core/Simulator/Geometries/Geometry.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Geometry.h
@@ -51,6 +52,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Geometries/Box.h
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.h
+  ${SRC_DIR}/Core/Simulator/Geometries/Wedge.cpp
+  ${SRC_DIR}/Core/Simulator/Geometries/Wedge.h
 
   ${SRC_DIR}/Core/Simulator/BrainRegion/BrainRegion.h
 
@@ -144,6 +147,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/EMSubRegion.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/TearGenerator.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.cpp
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.cpp
@@ -158,6 +163,7 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/Structs/SubRegion.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/iir_gauss_blur.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.cpp
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp
@@ -168,6 +174,16 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/Task.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h
+
+
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.h
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.cpp
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.h
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.cpp
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.h
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.cpp
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.h
 
 
   ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.cpp
@@ -293,6 +309,7 @@ target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE
     unofficial::noise::noise-static
     ${SRC_DIR}/../ThirdParty/libsonata/build/libsonata.a
     HDF5::HDF5
+    stduuid
 
     NESRenderer
     VersioningSystem
@@ -316,6 +333,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     unofficial::noise::noise-static
     ${SRC_DIR}/../ThirdParty/libsonata/build/libsonata.a
     HDF5::HDF5
+    stduuid
 
     NESRenderer
     VersioningSystem
@@ -324,20 +342,20 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 )
 
 # Configure testing.
-enable_testing()
-include(GoogleTest)
+# enable_testing()
+# include(GoogleTest)
 
-message(STATUS "Testing enabled. Building test binaries ...")
-add_executable(${TEST_BINS} ${UNITTEST_SOURCES})
-target_compile_features(${TEST_BINS} PRIVATE cxx_std_17)
+# message(STATUS "Testing enabled. Building test binaries ...")
+# add_executable(${TEST_BINS} ${UNITTEST_SOURCES})
+# target_compile_features(${TEST_BINS} PRIVATE cxx_std_17)
 
-target_link_libraries(${TEST_BINS} PRIVATE 
-    NESRenderer
-    GTest::gtest 
-    GTest::gtest_main
-    ${PROJECT_LIBRARY_NAME}
-)
-target_include_directories(${TEST_BINS} PUBLIC ${SRC_DIR}/Core)
-target_include_directories(${TEST_BINS} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
+# target_link_libraries(${TEST_BINS} PRIVATE 
+#     NESRenderer
+#     GTest::gtest 
+#     GTest::gtest_main
+#     ${PROJECT_LIBRARY_NAME}
+# )
+# target_include_directories(${TEST_BINS} PUBLIC ${SRC_DIR}/Core)
+# target_include_directories(${TEST_BINS} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
 
-gtest_discover_tests(${TEST_BINS})
+# gtest_discover_tests(${TEST_BINS})

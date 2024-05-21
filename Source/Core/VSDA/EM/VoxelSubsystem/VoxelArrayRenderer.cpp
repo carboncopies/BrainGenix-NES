@@ -29,7 +29,7 @@ namespace Simulator {
 // }
 
 
-std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int _SliceNumber, int _SliceThickness, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, int _SliceOffset) {
+bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int _SliceNumber, int _SliceThickness, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, double _RegionOffsetX, double _RegionOffsetY, int _SliceOffset) {
     assert(_VSDAData != nullptr);
     assert(_Logger != nullptr);
 
@@ -42,8 +42,7 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
 
     // _Logger->Log(std::string("Rendering Slice '") + std::to_string(SliceNumber) + "'", 1);
 
-
-    std::vector<std::string> Filenames;
+    ScanRegion* ThisScanRegion = &_VSDAData->Regions_[_VSDAData->ActiveRegionID_];
 
     
     // Calculate Desired Image Size
@@ -76,13 +75,17 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
     for (int XStep = 0; XStep < TotalXSteps; XStep++) {
         for (int YStep = 0; YStep < TotalYSteps; YStep++) {
 
+            // we have to calculate an 'adjusted' slice number since we might skip over z slices to simulate more thickness for each slice
+            // so to keep our slices sequential, we just divide the current 'true' slice number by the number of slices skipped so they're once again sequential
+            int AdjustedSliceNumber = (_SliceNumber + _SliceOffset) / (_VSDAData->Params_.SliceThickness_um / _VSDAData->Params_.VoxelResolution_um);
+
             // Calculate the filename of the image to be generated, add to list of generated images
-            std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(_SliceNumber + _SliceOffset) + "/";
+            std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(AdjustedSliceNumber) + "/";
             double RoundedXCoord = std::ceil(((CameraStepSizeX_um * XStep) + _OffsetX) * 100.0) / 100.0;
             double RoundedYCoord = std::ceil(((CameraStepSizeY_um * YStep) + _OffsetY) * 100.0) / 100.0;
             std::string FilePath = "X" + std::to_string(RoundedXCoord) + "_Y" + std::to_string(RoundedYCoord) + ".png";
 
-            Filenames.push_back(DirectoryPath + FilePath);
+
 
 
             // Setup and submit task to queue for rendering
@@ -94,12 +97,55 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
             ThisTask->VoxelStartingY = VoxelsPerStepY * YStep;
             ThisTask->VoxelEndingX = ThisTask->VoxelStartingX + ImageWidth_vox;
             ThisTask->VoxelEndingY = ThisTask->VoxelStartingY + ImageHeight_vox;
-            // std::cout<<"StartX:"<<ThisTask->VoxelStartingX<<" StartY:"<<ThisTask->VoxelStartingY<<" EndX:"<<ThisTask->VoxelEndingX<<" EndY:"<<ThisTask->VoxelEndingY<<std::endl;
             ThisTask->VoxelZ = _SliceNumber;
             ThisTask->SliceThickness_vox = _SliceThickness;
             ThisTask->TargetFileName_ = FilePath;
             ThisTask->TargetDirectory_ = DirectoryPath;
+            ThisTask->EnableImageNoise = Params->GenerateImageNoise;
+            ThisTask->ImageNoiseAmount = Params->ImageNoiseIntensity;
+            ThisTask->PreBlurNoisePasses = Params->PreBlurNoisePasses;
+            ThisTask->PostBlurNoisePasses = Params->PostBlurNoisePasses;
+            ThisTask->EnableGaussianBlur = Params->EnableGaussianBlur;
+            ThisTask->GaussianBlurSigma = Params->GaussianBlurSigma;
+            ThisTask->VoxelScale_um = Params->VoxelResolution_um;
+            ThisTask->EnableInterferencePattern = Params->EnableInterferencePattern;
+            ThisTask->InterferencePatternXScale_um = Params->InterferencePatternXScale_um;
+            ThisTask->InterferencePatternAmplitude = Params->InterferencePatternAmplitude;
+            ThisTask->InterferencePatternBias = Params->InterferencePatternBias;
+            ThisTask->InterferencePatternWobbleFrequency = Params->InterferencePatternWobbleFrequency;
+            ThisTask->InterferencePatternYAxisWobbleIntensity = Params->InterferencePatternYAxisWobbleIntensity;
+            ThisTask->InterferencePatternStrengthVariation = Params->InterferencePatternStrengthVariation;
+            ThisTask->InterferencePatternZOffsetShift = Params->InterferencePatternZOffsetShift;
+            ThisTask->AdjustContrast = Params->AdjustContrast;
+            ThisTask->Contrast = Params->Contrast;
+            ThisTask->Brightness = Params->Brightness;
+            ThisTask->ContrastRandomAmount = Params->ContrastRandomAmount;
+            ThisTask->BrightnessRandomAmount = Params->BrightnessRandomAmount;
 
+
+
+            // Setup Stats Info About Each Region
+            int VoxelOffsetX = ((_OffsetX + _RegionOffsetX) / Params->VoxelResolution_um);
+            int VoxelOffsetY = ((_OffsetY + _RegionOffsetY) / Params->VoxelResolution_um);
+
+
+            VoxelIndexInfo Info;
+            Info.StartX = ThisTask->VoxelStartingX + VoxelOffsetX;
+            Info.EndX = ThisTask->VoxelEndingX + VoxelOffsetX;
+            Info.StartY = ThisTask->VoxelStartingY + VoxelOffsetY;
+            Info.EndY = ThisTask->VoxelEndingY + VoxelOffsetY;
+            Info.StartZ = AdjustedSliceNumber;
+            Info.StartX *= Params->NumPixelsPerVoxel_px;
+            Info.EndX *= Params->NumPixelsPerVoxel_px;
+            Info.StartY *= Params->NumPixelsPerVoxel_px;
+            Info.EndY *= Params->NumPixelsPerVoxel_px;
+            Info.EndZ = AdjustedSliceNumber + 1;
+
+            ThisScanRegion->ImageFilenames_.push_back(DirectoryPath + FilePath);
+            ThisScanRegion->ImageVoxelIndexes_.push_back(Info);
+
+
+            // Enqueue Work Operation
             _ImageProcessorPool->QueueEncodeOperation(ThisTask.get());
             _VSDAData->Tasks_.push_back(std::move(ThisTask));
 
@@ -109,8 +155,7 @@ std::vector<std::string> RenderSliceFromArray(BG::Common::Logger::LoggingSystem*
         }
     }
 
-
-    return Filenames;
+    return true;
 }
 
 

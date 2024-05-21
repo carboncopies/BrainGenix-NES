@@ -45,7 +45,7 @@
 
 namespace BG {
 namespace NES {
-namespace Simulator {
+namespace ConversionPool {
 
 
 enum ImageState {
@@ -87,7 +87,7 @@ struct Image {
      * @param _Height 
      * @param _Channels 
      */
-    Image(int _Width, int _Height, int _Channels = 1);
+    Image(int _Width, int _Height, int _Channels);
 
 
     /**
@@ -100,9 +100,7 @@ struct Image {
      * @param _B value from 0-255
      */
     void SetPixel(int _X, int _Y, int _R, int _G, int _B);
-    void SetPixel(int _X, int _Y, int _Intensity);
 
-    int GetPixel(int _X, int _Y);
 
 };
 

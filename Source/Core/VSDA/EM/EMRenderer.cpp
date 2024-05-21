@@ -36,7 +36,7 @@ namespace VSDA {
 
 
 
-bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
+bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
 
     // Check that the simulation has been initialized and everything is ready to have work done
     if (_Simulation->VSDAData_.State_ != VSDA_RENDER_REQUESTED) {
@@ -57,11 +57,11 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     // This will of course go badly if you're using a lot of ram at the moment, and needs to be improved in the future.
 
     // Maximum permitted size, we cannot exceed this even if we have more RAM.
-    size_t MaxVoxelSizeLimit = 4100; 
+    size_t MaxVoxelSizeLimit = _Config->MaxVoxelArraySize_; 
 
     // With this scaling factor, we assume that this is the max portion of the system ram we can use
     // That way, we don't gobble more than say 60% of it in one alloc
-    double ScalingFactor = 0.5;
+    double ScalingFactor = _Config->VoxelArrayPercentOfSystemMemory_ / 100.;
 
 
     // Now, calculate the maximum number of voxels in system ram
@@ -131,6 +131,19 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
     _Logger->Log("Calculated '" + std::to_string(NumSubRegionsInZDim) + "'Z Subregions", 3);
 
 
+    // An intermediary step - we're going to calculate the total region's effective index size, to make plugging this data into neuroglancer easier if desired
+    int NumVoxelsPerSlice = Params->SliceThickness_um / Params->VoxelResolution_um;
+    VoxelIndexInfo Info;
+    Info.StartX = 0;
+    Info.StartY = 0;
+    Info.StartZ = 0;
+    Info.EndX = abs(BaseRegion->Point1X_um - BaseRegion->Point2X_um) / Params->VoxelResolution_um;
+    Info.EndY = abs(BaseRegion->Point1Y_um - BaseRegion->Point2Y_um) / Params->VoxelResolution_um;
+    Info.EndZ = abs(BaseRegion->Point1Z_um - BaseRegion->Point2Z_um) / (Params->VoxelResolution_um * NumVoxelsPerSlice);
+    BaseRegion->RegionIndexInfo_ = Info;
+
+
+
     // Now, we go through all of the steps in each direction that we identified, and calculate the bounding boxes for each
     std::vector<SubRegion> SubRegions;
     for (int XStep = 0; XStep < NumSubRegionsInXDim; XStep++) {
@@ -183,11 +196,12 @@ bool ExecuteSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Simu
                 ThisSubRegion.Sim = _Simulation;
                 ThisSubRegion.RegionOffsetX_um = SubRegionStartX_um; // We should get rid of these
                 ThisSubRegion.RegionOffsetY_um = SubRegionStartY_um; // We should get rid of these
+                ThisSubRegion.MasterRegionOffsetX_um = -BaseRegion->Point1X_um;
+                ThisSubRegion.MasterRegionOffsetY_um = -BaseRegion->Point1Y_um;
                 ThisSubRegion.MaxImagesX = ImagesPerSubRegionX;
                 ThisSubRegion.MaxImagesY = ImagesPerSubRegionY;                
                 ThisSubRegion.LayerOffset = ZStep * MaxVoxelArrayAxisSize_vox;
                 ThisSubRegion.Region = ThisRegion;
-
 
                 _Logger->Log("Created SubRegion At Location " + ThisRegion.ToString() + " Of Size " + ThisRegion.GetDimensionsInVoxels(Params->VoxelResolution_um), 3);
 

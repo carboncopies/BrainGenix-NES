@@ -66,6 +66,47 @@ struct MicroscopeParameters {
     float DefaultIntensity_ = 255; /**What the default color of each compartment is without noise (0-255)*/
     float SpatialScale_ = 10.; /**Set the multiplier for which the x,y,z steps are multiplied by*/
 
+    bool RenderBorders = true; /**Enable or disable border rendering*/
+    int BorderEdgeIntensity = 75; /**Set the intensity of the edge of the border*/
+    float BorderThickness_um = 0.02; /**Set the thickness of a border line*/
+
+    bool GenerateImageNoise = true; /**Enable or disable the generation of ImageNoise*/
+    int ImageNoiseIntensity = 110; /**Arbitrary intensity level*/
+    int PreBlurNoisePasses = 1; /**Set the number of times to add noise pre blurring*/
+    int PostBlurNoisePasses = 2; /**Set the number of times to add noise pre blurring*/
+
+    bool EnableGaussianBlur = true;  /**Enable or disables gaussian blurring of images*/
+    float GaussianBlurSigma = 1.15;   /**Sigma value for amount of blur*/
+
+    bool EnableInterferencePattern = true; /**Enable or disable interference patterns*/
+    float InterferencePatternXScale_um = 17.75; /**Set the interference pattern x scale*/
+    float InterferencePatternAmplitude = 30.; /**Set the amplitude for the interference pattern*/
+    float InterferencePatternBias = -15; /**Set an offset for the patterns generated in terms of color*/
+    float InterferencePatternWobbleFrequency = 3.0f; /**Set the y-axis wobble for the interference pattern*/
+    float InterferencePatternYAxisWobbleIntensity = 0.02f; /**Frequency of the interference patterns wobble on the y axis*/
+    float InterferencePatternStrengthVariation = 0.12; /**Strength of the wobbles*/
+    bool InterferencePatternZOffsetShift = true; /**Enable or disable shifting the interference patterns around between layers*/
+
+    bool AdjustContrast = true; /**Enable or disable the adjustment of contrast*/
+    float Contrast = 0.5; /**Values above 1 increase it, values below 1 decrease it*/
+    float Brightness = 0; /**Do not change the brightness*/
+    float ContrastRandomAmount = 0.1; /**Change the contrast plus or minus this amount*/
+    float BrightnessRandomAmount = 0.1; /**Change the brightness per image plus or minus this amount*/
+
+    bool TearingEnabled = true; /**Enables or disables sample tearing*/
+    int TearNumPerSlice = 0; /**Set the number of tears on average*/
+    int TearNumVariation = 1; /**Set the amount the number of tears varies*/
+    int TearNumSegments = 15; /**Number of subdivisions to add variation to the tear*/
+    float TearMinimumLength_um = 0.4; /**Minimum length of the segment in microns*/
+    float TearMaxDeltaY_um = 5; /**Maximum change in y for the tear in microns*/
+    float TearMaxDeltaX_um = 1; /**Max change in x for the tear in microns*/
+    float TearPointJitterXMax_um = 0.1; /**Max x jitter in microns*/
+    float TearPointJitterXMin_um = -0.1; /**Min x jitter in microns*/
+    float TearPointJitterYMax_um = 0.1; /**Max y jitter in microns*/
+    float TearPointJitterYMin_um = -0.1; /**min y jitter in microns*/
+    float TearStartSize_um = 0.15; /**Size in microns of tear start*/
+    float TearEndSize_um = 0; /**Size in microns of tear end*/
+
 };
 
 

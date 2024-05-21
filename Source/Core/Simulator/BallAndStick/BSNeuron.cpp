@@ -196,7 +196,7 @@ void BSNeuron::UpdateVm(float t_ms, bool recording) {
     // 3. Calculate membrane potential
     this->Vm_mV = this->VRest_mV + VSpikeT_mV + VAHPT_mV + VPSPT_mV;
 
-    // 4. Add voltage elevation to FIFO buffer for phospherecence convolution
+    // 4. Add voltage elevation to FIFO buffer for phospherescence convolution
     if (!this->FIFO.empty()) {
         // We replace [0], i.e. drop the one at the end and push to front.
         // this->FIFO.pop_back();
@@ -330,6 +330,11 @@ void BSNeuron::UpdateConvolvedFIFO(const std::vector<float> & reversed_kernel) {
 
 void BSNeuron::InputReceptorAdded(CoreStructs::ReceptorData RData) {
     ReceptorDataVec.emplace_back(RData);
+
+}
+
+void BSNeuron::OutputTransmitterAdded(CoreStructs::ReceptorData RData) {
+    TransmitterDataVec.emplace_back(RData);
 
 }
 

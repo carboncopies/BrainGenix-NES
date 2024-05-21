@@ -34,13 +34,16 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
         if (DequeueSimulation(&SimToProcess)) {
 
             // Okay, we got work, now render this simulation
-            Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Detecting Work For Simulation " + std::to_string(SimToProcess->ID), 2);
+            Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Detecting Work For Simulation " + std::to_string(SimToProcess->ID), 5);
             if (SimToProcess->VSDAData_.State_ == VSDA_RENDER_REQUESTED) {
-                Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering EM Stack For Simulation " + std::to_string(SimToProcess->ID), 2);
-                VSDA::ExecuteSubRenderOperations(Logger_, SimToProcess, EMImageProcessorPool_.get(), EMArrayGeneratorPool_.get());
+                Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering EM Stack For Simulation " + std::to_string(SimToProcess->ID), 5);
+                VSDA::ExecuteSubRenderOperations(Config_, Logger_, SimToProcess, EMImageProcessorPool_.get(), EMArrayGeneratorPool_.get());
             } else if (SimToProcess->CaData_.State_ == ::BG::NES::VSDA::Calcium::CA_RENDER_REQUESTED) {
-                Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering Calcium Stack For Simulation " + std::to_string(SimToProcess->ID), 2);
+                Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering Calcium Stack For Simulation " + std::to_string(SimToProcess->ID), 5);
                 ::BG::NES::VSDA::Calcium::ExecuteCaSubRenderOperations(Logger_, SimToProcess, CalciumImageProcessorPool_.get(), CalciumArrayGeneratorPool_.get());
+            } else if (SimToProcess->VSDAData_.State_ == VSDA_CONVERSION_REQUESTED) {
+                Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Converting EM Stack To Neuroglancer Precomputed Format For Simulation " + std::to_string(SimToProcess->ID), 5);
+                ExecuteConversionOperation(Logger_, SimToProcess, EMImageConversionPool_.get());
             }
             SimToProcess->IsRendering = false;
 
@@ -54,14 +57,22 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
 
 
 // Constructor, Destructor
-RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed, int _NumThreads) {
+RenderPool::RenderPool(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed, int _NumThreads) {
     assert(_Logger != nullptr);
+    assert(_Config != nullptr);
+    Config_ = _Config;
 
 
     // Initialize Variables
     Logger_ = _Logger;
     ThreadControlFlag_ = true;
     Windowed_ = _Windowed;
+
+
+
+    // Setup ConversionPool
+    int NumThreads = float(std::thread::hardware_concurrency()) * 1.5;
+    EMImageConversionPool_ = std::make_unique<ConversionPool::ConversionPool>(Logger_, NumThreads);
 
 
     // Create VoxelArrayGenerator Instance
@@ -74,6 +85,7 @@ RenderPool::RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowe
     int NumEncoderThreads = std::thread::hardware_concurrency();
     EMImageProcessorPool_ = std::make_unique<ImageProcessorPool>(Logger_, NumEncoderThreads);
     CalciumImageProcessorPool_ = std::make_unique<::BG::NES::VSDA::Calcium::ImageProcessorPool>(Logger_, NumEncoderThreads);
+
 
 
     // Create Renderer Instances

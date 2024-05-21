@@ -20,7 +20,7 @@ set(CMAKE_TOOLCHAIN_FILE ${LIB_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE
 # Define Project
 project(
 	"BrainGenix-NES"
-	VERSION "2024.02.02"
+	VERSION "2024.04.10"
 	LANGUAGES CXX
 )
 
@@ -82,6 +82,9 @@ find_package(unofficial-noise CONFIG REQUIRED)
 
 message(STATUS "Setting Up HDF5 Library for libsonata")
 find_package(HDF5 REQUIRED)
+
+message(STATUS "Setting Up UUID Library")
+find_package(stduuid CONFIG REQUIRED)
 
 # Compiler optimizations
 find_package(AVX)

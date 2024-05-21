@@ -7,6 +7,10 @@
 #include <vector>
 #include <chrono>
 #include <filesystem>
+#include <cstdlib>
+#include <random>
+#include <algorithm>
+#include <math.h>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -17,6 +21,8 @@
 #define STB_IMAGE_RESIZE_IMPLEMENTATION
 #include <stb_image_resize.h>
 
+#define IIR_GAUSS_BLUR_IMPLEMENTATION
+#include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/iir_gauss_blur.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
@@ -74,6 +80,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
     int SamplesBeforeUpdate = 25;
     std::vector<double> Times;
 
+    std::mt19937 RandomGenerator(rand());
 
     // Run until thread exit is requested - that is, this is set to false
     while (ThreadControlFlag_) {
@@ -94,7 +101,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             // next, we resize it up to the target image, thus saving a lot of compute time
             int VoxelsPerStepX = Task->VoxelEndingX - Task->VoxelStartingX;
             int VoxelsPerStepY = Task->VoxelEndingY - Task->VoxelStartingY;
-            int NumChannels = 3;
+            int NumChannels = 1;
 
             Image OneToOneVoxelImage(VoxelsPerStepX, VoxelsPerStepY, NumChannels);
             OneToOneVoxelImage.TargetFileName_ = Task->TargetFileName_;
@@ -120,50 +127,145 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
                         // Get Voxel At Position
                         VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, ZIndex);
-                        if (ThisVoxel.State_ == VOXELSTATE_INTENSITY) {
+                        // if (ThisVoxel.State_ == VOXELSTATE_INTENSITY) {
                             // if (ThisVoxel.Intensity_ < DarkestVoxel) {
-                                PresentingVoxel = ThisVoxel;
-                                DarkestVoxel = ThisVoxel.Intensity_;
+                        PresentingVoxel = ThisVoxel;
+                        DarkestVoxel = ThisVoxel.Intensity_;
                             // }
                         // Else, we have a special debug voxel, set this to be the one shown, and exit.
-                        } else {
-                            PresentingVoxel = ThisVoxel;
-                            break;
-                        }
+                        // } else {
+                        //     PresentingVoxel = ThisVoxel;
+                        //     break;
+                        // }
 
                     }
 
-
+                    // Add Noise, Intensity Based On Noise Amount
+                    int Intensity = PresentingVoxel.Intensity_;
+                    // if (Task->EnableImageNoise) {
+                    //     Intensity += (RandomGenerator() % Task->ImageNoiseAmount) - int(Task->ImageNoiseAmount/2);
+                    //     Intensity = std::clamp(Intensity, 0, 255);
+                    // }
 
                     // Now Set The Pixel
                     int ThisPixelX = XVoxelIndex - Task->VoxelStartingX;
                     int ThisPixelY = YVoxelIndex - Task->VoxelStartingY;
 
                     // Check if the voxel is in the enum reserved range, otherwise it's a color value from 128-255
-                    if (PresentingVoxel.State_ == VOXELSTATE_INTENSITY) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, PresentingVoxel.Intensity_, PresentingVoxel.Intensity_, PresentingVoxel.Intensity_);
+                    // if (PresentingVoxel.State_ == VOXELSTATE_INTENSITY) {
+                    OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, Intensity);
                         
-                    } else {
-                        if (PresentingVoxel.State_ == BORDER) {
-                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
-                        } else if (PresentingVoxel.State_ == OUT_OF_RANGE) {
-                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
-                        } else if (PresentingVoxel.State_ == VOXELSTATE_RED) {
-                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 0, 0);
-                        } else if (PresentingVoxel.State_ == VOXELSTATE_GREEN) {
-                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 255, 0);
-                        } else if (PresentingVoxel.State_ == VOXELSTATE_BLUE) {
-                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
-                        } else {
-                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 200, 200, 200);
-                        }
-                    }
+                    // } else {
+                    //     if (PresentingVoxel.State_ == BORDER) {
+                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
+                    //     } else if (PresentingVoxel.State_ == OUT_OF_RANGE) {
+                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
+                    //     } else if (PresentingVoxel.State_ == VOXELSTATE_RED) {
+                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 0, 0);
+                    //     } else if (PresentingVoxel.State_ == VOXELSTATE_GREEN) {
+                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 255, 0);
+                    //     } else if (PresentingVoxel.State_ == VOXELSTATE_BLUE) {
+                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
+                    //     } else {
+                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 200, 200, 200);
+                    //     }
+                    // }
 
                 }
             }
 
             // Note, when we do image processing (for like noise and that stuff, we should do it here!) (or after resizing depending on what is needed)
             // so then this will be phase two, and phase 3 is saving after processing
+
+
+
+
+            // Contrast/Brightness Adjustments
+            if (Task->AdjustContrast) {
+                
+                // Calculate the contrast/brightness for this image
+                float ThisContrast = Task->Contrast + ((-1+2*((float)rand())/RAND_MAX) * Task->ContrastRandomAmount);
+                float ThisBrightness = Task->Brightness + ((-1+2*((float)rand())/RAND_MAX) * Task->BrightnessRandomAmount);
+
+                for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
+                    for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
+
+                        int Color = OneToOneVoxelImage.GetPixel(X, Y);
+                        Color = (ThisContrast * ((float)Color - 128.)) + 128 + ThisBrightness;
+                        Color = std::clamp(Color, 0, 255);
+                        OneToOneVoxelImage.SetPixel(X, Y, Color);
+
+                    }
+                }
+            }
+
+            // Add Interference pattern
+            if (Task->EnableInterferencePattern) {
+
+                // We need to calculate the random amount for this image
+                float ThisImageAmplitude = (1. + (Task->InterferencePatternStrengthVariation * -1+2*((float)rand())/RAND_MAX)) * Task->InterferencePatternAmplitude;
+
+                // Randomize the interference patterns between layers (so they don't line up between layers evenly)
+                std::mt19937 ZIndexOffset(Task->VoxelZ);
+                float ZOffset = (ZIndexOffset() % 5000000) / 500000;
+                if (!Task->InterferencePatternZOffsetShift) {
+                    ZOffset = 0;
+                }
+
+                for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
+                    for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
+
+                        int Color = OneToOneVoxelImage.GetPixel(X, Y);
+                        float PositionX = (Task->VoxelStartingX + X) * Task->VoxelScale_um;
+                        float PositionY = (Task->VoxelStartingY + Y) * Task->VoxelScale_um;
+                        float ScaledPositionX = (PositionX + ZOffset) + (sin(PositionY * Task->InterferencePatternWobbleFrequency) * Task->InterferencePatternYAxisWobbleIntensity); 
+                        Color += sin(Task->InterferencePatternXScale_um * ScaledPositionX) * ThisImageAmplitude + Task->InterferencePatternBias;
+                        Color = std::clamp(Color, 0, 255);
+                        OneToOneVoxelImage.SetPixel(X, Y, Color);
+
+                    }
+                }
+            }
+
+
+            // Pre-Blur Noise Pass
+            if (Task->EnableImageNoise) {
+                for (unsigned int i = 0; i < Task->PreBlurNoisePasses; i++) {
+                    for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
+                        for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
+
+                            int Color = OneToOneVoxelImage.GetPixel(X, Y);
+                            Color += (RandomGenerator() % Task->ImageNoiseAmount) - int(Task->ImageNoiseAmount/2);
+                            Color = std::clamp(Color, 0, 255);
+                            OneToOneVoxelImage.SetPixel(X, Y, Color);
+
+                        }
+                    }
+                }
+            }
+
+            // Perform Gaussian Blurring Step
+            if (Task->EnableGaussianBlur) {
+                iir_gauss_blur(OneToOneVoxelImage.Width_px, OneToOneVoxelImage.Height_px, 1, OneToOneVoxelImage.Data_.get(), Task->GaussianBlurSigma);
+            }
+
+
+            // Post-Blur Noise Pass
+            if (Task->EnableImageNoise) {
+                for (unsigned int i = 0; i < Task->PostBlurNoisePasses; i++) {
+                    for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
+                        for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
+
+                            int Color = OneToOneVoxelImage.GetPixel(X, Y);
+                            Color += (RandomGenerator() % Task->ImageNoiseAmount) - int(Task->ImageNoiseAmount/2);
+                            Color = std::clamp(Color, 0, 255);
+                            OneToOneVoxelImage.SetPixel(X, Y, Color);
+
+                        }
+                    }
+                }
+            }
+
 
 
             // -- Phase 2 -- //

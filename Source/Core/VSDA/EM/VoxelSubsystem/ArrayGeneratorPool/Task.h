@@ -43,6 +43,8 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
 #include <Simulator/Geometries/GeometryCollection.h>
+#include <Simulator/Geometries/Wedge.h>
+#include <Simulator/Geometries/Cylinder.h>
 
 
 #include <VSDA/Common/Structs/WorldInfo.h>
@@ -54,6 +56,14 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 namespace VoxelArrayGenerator {
+
+
+enum CustomShape {
+    CUSTOM_NONE,
+    CUSTOM_CYLINDER,
+    CUSTOM_SPHERE,
+    CUSTOM_WEDGE
+};
 
 
 /**
@@ -69,6 +79,22 @@ struct Task {
     std::atomic_bool                IsDone_ = false;       /**Indicates if this task has been processed or not.*/
     VoxelArray*                     Array_ = nullptr;      /**Pointer to the voxel array that we're writing to.*/
     MicroscopeParameters*           Parameters_ = nullptr; /**Pointer to instance of the microscope parameters struct, used to get info about noise params, etc.*/
+    CustomShape                     CustomShape_;          /**Optionally, use a custom shape defined here instead of the one from a geometry collection*/
+    Geometries::Cylinder            CustomCylinder_;       /**Custom cylinder, used when we are subdividing shapes*/
+    Geometries::Sphere              CustomSphere_;         /**Custom sphere, used to define the sphere*/
+    int CustomThisComponent = 0;
+    int CustomTotalComponents = 0;
+
+    Geometries::Wedge ThisWedge; /**cheesy hack*/
+    // int LineTaskZIndex = 0;
+    // int LineTaskP1XIndex = 0;
+    // int LineTaskP1YIndex = 0;
+    // int LineTaskP2XIndex = 0;
+    // int LineTaskP2YIndex = 0;
+    // int LineTaskP1Thickness = 0;
+    // int LineTaskP2Thickness = 0;
+    
+
 
 };
 

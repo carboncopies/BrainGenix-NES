@@ -61,6 +61,8 @@ struct Config {
 
     ProfilingStatus ProfilingStatus_ = PROFILE_NONE;            /**Enum with some preconfigured profiling charastics for us to test when needed*/
 
+    int MaxVoxelArraySize_; /**Sets the maximum size of each voxel array even if enough memory exists*/
+    float VoxelArrayPercentOfSystemMemory_; /**Set the amount of system memory we allow*/
 
 };
 

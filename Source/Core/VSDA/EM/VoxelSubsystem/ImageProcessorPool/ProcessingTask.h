@@ -57,14 +57,38 @@ namespace Simulator {
  */
 struct ProcessingTask {
 
-    int         Width_px;           /**Width of this image in pixels*/
-    int         Height_px;          /**Height of this image in pixels*/
-    int         VoxelStartingX;     /**Specify starting x index of the region*/
-    int         VoxelStartingY;     /**Specify starting y index of the region*/
-    int         VoxelEndingX;       /**Specify the ending x index of the region*/
-    int         VoxelEndingY;       /**Specify the ending y index of the region*/
-    int         VoxelZ;             /**Specify the slice number that we're going for*/
-    int         SliceThickness_vox; /**Specify the thickness of the slice in voxels*/
+    int         Width_px;            /**Width of this image in pixels*/
+    int         Height_px;           /**Height of this image in pixels*/
+    int         VoxelStartingX;      /**Specify starting x index of the region*/
+    int         VoxelStartingY;      /**Specify starting y index of the region*/
+    int         VoxelEndingX;        /**Specify the ending x index of the region*/
+    int         VoxelEndingY;        /**Specify the ending y index of the region*/
+    int         VoxelZ;              /**Specify the slice number that we're going for*/
+    int         SliceThickness_vox;  /**Specify the thickness of the slice in voxels*/
+    float       VoxelScale_um;       /**Specifies the size of each voxel in microns*/
+
+    bool        EnableImageNoise;    /**Enable or disable image noise*/
+    int         ImageNoiseAmount;    /**Arbitrary amount of image noise to add*/
+    int         PreBlurNoisePasses;  /**Number of times to add noise prior to blurring*/
+    int         PostBlurNoisePasses; /**Number of times to add noise after blurring*/
+
+    bool        EnableGaussianBlur;  /**Enable or disables gaussian blurring of images*/
+    float       GaussianBlurSigma;   /**Sigma value for amount of blur*/
+
+    bool EnableInterferencePattern = true; /**Enable or disable interference patterns*/
+    float InterferencePatternXScale_um = 1.45; /**Set the interference pattern x scale*/
+    float InterferencePatternAmplitude = 40.; /**Set the amplitude for the interference pattern*/
+    float InterferencePatternBias = -15; /**Set an offset for the patterns generated in terms of color*/
+    float InterferencePatternWobbleFrequency = 3.0f; /**Set the y-axis wobble for the interference pattern*/
+    float InterferencePatternYAxisWobbleIntensity = 0.02f; /**Frequency of the interference patterns wobble on the y axis*/
+    float InterferencePatternStrengthVariation = 0.12; /**Strength of the wobbles*/
+    bool InterferencePatternZOffsetShift = true; /**Enable or disable shifting the interference patterns around between layers*/
+
+    bool AdjustContrast = true; /**Enable or disable the adjustment of contrast*/
+    float Contrast = 0.5; /**Values above 1 increase it, values below 1 decrease it*/
+    float Brightness = 0; /**Do not change the brightness*/
+    float ContrastRandomAmount = 0.1; /**Change the contrast plus or minus this amount*/
+    float BrightnessRandomAmount = 0.1; /**Change the brightness per image plus or minus this amount*/
 
     std::atomic_bool IsDone_ = false; /**Indicates if this task has been processed or not*/
 

@@ -43,20 +43,12 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
 
-#include <VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h>
-#include <VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.h>
-#include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
-#include <VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
-
-#include <BG/Renderer/Interface.h>
-#include <BG/Renderer/SceneGraph/Primitive/Cube.h>
-
 #include <BG/Common/Logger/Logger.h>
 #include <Util/JSONHelpers.h>
 
-#include <RPC/RPCManager.h>
+#include <VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.h>
+// #include <RPC/RPCManager.h>
 
-#include <Config/Config.h>
 
 
 namespace BG {
@@ -71,8 +63,7 @@ namespace VSDA {
  * @return true Success
  * @return false Fail
  */
-// bool ExecuteRenderOperations(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
-bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool);
+bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ConversionPool::ConversionPool* _ConversionPool);
 
 
 

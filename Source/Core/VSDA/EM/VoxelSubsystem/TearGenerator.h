@@ -5,7 +5,7 @@
 /*
     Description: This file defines the interface for the slice generator, which creates voxel representations of a given simulation.
     Additional Notes: None
-    Date Created: 2023-11-29
+    Date Created: 2024-01-19
     Author(s): Thomas Liao, Randal Koene
 
 
@@ -31,18 +31,17 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <vector>
-#include <string>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Structs/Simulation.h>
+
 #include <VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h>
 #include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
-#include <VSDA/EM/VoxelSubsystem/Structs/VSDAData.h>
 
-#include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
 
+#include <VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
 
 #include <BG/Common/Logger/Logger.h>
 
@@ -51,30 +50,20 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
-/**
- * @brief Render the entire voxel array with the parameters defined in the various config structs.
- * Set the maximum number of simultaneous threads to the maxthreads argument.
- * 
- * @param _Logger 
- * @param _VSDAData 
- * @param _FilePrefix 
- * @param _ImageProcessorPool 
- * @param _MaxThreads 
- * @return std::vector<std::vector<std::string>> 
- */
-bool ThreadedRenderVoxelArray(BG::Common::Logger::LoggingSystem* _Logger, VSDAData* _VSDAData, std::string _FilePrefix, ImageProcessorPool* _ImageProcessorPool, int _MaxThreads=20);
+
 
 
 /**
- * @brief Render the given slice from an array to the renderer's screen
+ * @brief Generate a sample tear on the given array, at the given ZHeight.
  * 
  * @param _Logger 
- * @param _VSDAData 
- * @param _FilePrefix
- * @param _SliceNumber 
- * @return std::vector<std::string> 
+ * @param _Params 
+ * @param _Array 
+ * @param _ZHeight 
+ * @return true 
+ * @return false 
  */
-bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int _SliceNumber, int _SliceThickness_vox, ImageProcessorPool* _ImageProcessorPool, double _OffsetX=0., double _OffsetY=0., double _RegionOffsetX=0., double _RegionOffsetY=0., int _SliceOffset=0);
+void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::unique_ptr<VoxelArrayGenerator::Task>>& _TaskList, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool, ScanRegion _Region, MicroscopeParameters* _Params, VoxelArray* _Array, VSDA::WorldInfo _Info, int _ZHeight, int _Seed);
 
 
 

@@ -104,6 +104,14 @@ float Vec3D::Min() const {
     return min;
 }
 
+std::vector<float> Vec3D::AsFloatVector() const {
+    std::vector<float> vec(3);
+    vec[0] = x;
+    vec[1] = y;
+    vec[2] = z;
+    return vec;
+}
+
 //! Return string representation of vector.
 //! TODO: Add in the precision code.
 std::string Vec3D::str(int precision) const {

@@ -51,12 +51,16 @@
 #include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
 #include <VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
 
+#include <VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.h>
+#include <VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.h>
+
 #include <VSDA/Ca/CaRenderer.h>
 #include <VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h>
 #include <VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
 
 #include <BG/Renderer/Interface.h>
 
+#include <Config/Config.h>
 
 
 
@@ -79,11 +83,14 @@ class RenderPool {
 
 
 private:
-
+    Config::Config* Config_; /**Pointer to config struct*/
     BG::Common::Logger::LoggingSystem*                        Logger_ = nullptr;   /**Pointer to instance of logging system*/
 
     std::unique_ptr<ImageProcessorPool>                       EMImageProcessorPool_; /**Instance of the ImageProcessorPool, which saves all required images to disk*/
     std::unique_ptr<VoxelArrayGenerator::ArrayGeneratorPool>  EMArrayGeneratorPool_; /**Instance of the ArrayGeneratorPool, used to parallelize rasterizing shapes into the voxel array with many threads*/
+
+    std::unique_ptr<ConversionPool::ConversionPool>           EMImageConversionPool_; /**Instance of the ConversionPool, which helps with creating the neuroglancer precomputed format*/
+
 
     std::unique_ptr<::BG::NES::VSDA::Calcium::ImageProcessorPool>                       CalciumImageProcessorPool_; /**Instance of the ImageProcessorPool, which saves all required images to disk*/
     std::unique_ptr<::BG::NES::VSDA::Calcium::VoxelArrayGenerator::ArrayGeneratorPool>  CalciumArrayGeneratorPool_; /**Instance of the ArrayGeneratorPool, used to parallelize rasterizing shapes into the voxel array with many threads*/
@@ -142,7 +149,7 @@ public:
      * @param _Windowed
      * @param _NumThreads 
      */
-    RenderPool(BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed = false, int _NumThreads = 1);
+    RenderPool(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed = false, int _NumThreads = 1);
 
     /**
      * @brief Destroys the render pool object.

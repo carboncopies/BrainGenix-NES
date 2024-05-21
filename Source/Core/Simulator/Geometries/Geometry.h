@@ -29,6 +29,7 @@ enum GeometryShapeEnum {
     GeometrySphere,
     GeometryCylinder,
     GeometryBox,
+    GeometryWedge,
     NUMshapes
 };
 
@@ -46,7 +47,7 @@ struct Geometry {
 
    
     //! Renders the object in 3D.
-    virtual void Show() = 0; 
+    //virtual void Show() = 0; 
     
     //! Returns the volume of the object in micrometer^3.
     virtual float Volume_um3() = 0;

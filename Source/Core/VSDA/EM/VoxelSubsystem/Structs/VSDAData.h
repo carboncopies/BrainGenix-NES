@@ -44,6 +44,7 @@
 #include <VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h>
 
 #include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h>
+#include <VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.h>
 
 
 
@@ -58,7 +59,9 @@ enum VSDAState {
     VSDA_INIT_DONE=2,
     VSDA_RENDER_REQUESTED=3,
     VSDA_RENDER_IN_PROGRESS=4,
-    VSDA_RENDER_DONE=5
+    VSDA_RENDER_DONE=5,
+    VSDA_CONVERSION_REQUESTED=6, // note that for vsda conversions, it will retunr to render done when finished
+    VSDA_CONVERSION_IN_PROGRESS=7
 };
 
 
@@ -90,7 +93,7 @@ struct VSDAData {
 
     std::vector<std::vector<std::string>> RenderedImagePaths_; /**List of paths for each region to be populated as we render all the images for this simulation into a stack*/
     std::vector<std::unique_ptr<ProcessingTask>> Tasks_; /**List of tasks that have been created for this render operation, we check that they're all done before finishing our render operation*/
-
+    std::vector<std::unique_ptr<ConversionPool::ProcessingTask>> ConversionTasks_; /**List of conversion tasks*/
 
 
 };

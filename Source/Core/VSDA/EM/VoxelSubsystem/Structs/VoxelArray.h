@@ -53,22 +53,17 @@ namespace NES {
 namespace Simulator {
 
 
-
-
 enum VoxelState {
-    EMPTY,
-    OUT_OF_RANGE,
-    BORDER,
-    VOXELSTATE_INTENSITY, /**Use the intensity map from the voxel struct*/
-    VOXELSTATE_RED, /**Override with 255, 0, 0 */
-    VOXELSTATE_GREEN, /**Override with 0, 255, 0 */
-    VOXELSTATE_BLUE /**Override with 0, 0, 255*/
+    VoxelState_EMPTY=0,
+    VoxelState_INTERIOR=1,
+    VoxelState_BORDER=2
 };
+
 
 struct VoxelType {
 
     uint8_t Intensity_; /**Value from 0-255 representing the intensity (brightness) of this voxel*/
-    VoxelState State_; /**Enum which contains other info about the voxel*/
+    VoxelState State_; /**Determine if this voxel is near the edge of a shape or not*/
 
 };
 
@@ -196,6 +191,33 @@ public:
      */
     bool SetBB(BoundingBox _NewBoundingBox);
     bool SetBB(ScanRegion _NewBoundingBox);
+
+    /**
+     * @brief Checks if the given x value is in the x range.
+     * 
+     * @param _X 
+     * @return true 
+     * @return false 
+     */
+    bool IsInRangeX(float _X);
+
+    /**
+     * @brief Checks if the given y value is in the y range.
+     * 
+     * @param _y 
+     * @return true 
+     * @return false 
+     */
+    bool IsInRangeY(float _Y);
+
+    /**
+     * @brief Checks if the given z value is in the z range.
+     * 
+     * @param _Z 
+     * @return true 
+     * @return false 
+     */
+    bool IsInRangeZ(float _Z);
 
     /**
      * @brief Get the x dimensions
