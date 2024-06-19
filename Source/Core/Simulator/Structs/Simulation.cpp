@@ -433,6 +433,19 @@ CoreStructs::Neuron * Simulation::FindNeuronByCompartment(int CompartmentID) con
     return Neurons.at(neuron_id).get();
 }
 
+int Simulation::GetNeuronIndexByCompartment(int CompartmentID) const {
+    auto it = NeuronByCompartment.find(CompartmentID);
+    if (it == NeuronByCompartment.end()) {
+        return -1;
+    }
+    int neuron_id = it->second;
+    if ((neuron_id < 0) || (neuron_id >= Neurons.size())) {
+        return -1;
+    }
+    return neuron_id;
+}
+
+
 Geometries::Geometry* Simulation::FindShapeByID(int ShapeID) {
     if (ShapeID >= Collection.Size()) {
         return nullptr;
