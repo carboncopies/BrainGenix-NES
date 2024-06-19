@@ -537,8 +537,8 @@ std::string SimulationRPCInterface::SimulationGetBoundingBox(std::string _JSONRe
     // Return GeoCenter vector
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0;
-    Util::SetVec3(ResponseJSON, BottomLeft_um, "BottomLeft_um");
-    Util::SetVec3(ResponseJSON, TopRight_um, "TopRight_um");
+    Util::SetVec3(ResponseJSON, BottomLeft_um, "BottomLeft");
+    Util::SetVec3(ResponseJSON, TopRight_um, "TopRight");
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
