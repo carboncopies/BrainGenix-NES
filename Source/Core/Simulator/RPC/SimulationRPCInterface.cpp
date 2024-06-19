@@ -51,6 +51,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
     _RPCManager->AddRoute("Simulation/GetRecording",              std::bind(&SimulationRPCInterface::SimulationGetRecording, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetStatus",                 std::bind(&SimulationRPCInterface::SimulationGetStatus, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetGeoCenter",              std::bind(&SimulationRPCInterface::SimulationGetGeoCenter, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetBoundingBox",            std::bind(&SimulationRPCInterface::SimulationGetBoundingBox, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/AttachRecordingElectrodes", std::bind(&SimulationRPCInterface::AttachRecordingElectrodes, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/SetRecordInstruments",      std::bind(&SimulationRPCInterface::SetRecordInstruments, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetInstrumentRecordings",   std::bind(&SimulationRPCInterface::GetInstrumentRecordings, this, std::placeholders::_1));
