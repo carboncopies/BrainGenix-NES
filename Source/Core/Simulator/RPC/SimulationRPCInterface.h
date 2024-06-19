@@ -129,6 +129,7 @@ public:
     std::string SimulationGetSave(std::string _JSONRequest);
     std::string SimulationLoad(std::string _JSONRequest);
     std::string SimulationGetGeoCenter(std::string _JSONRequest);
+    std::string SimulationGetBoundingBox(std::string _JSONRequest);
 
     std::string ManTaskStatus(std::string _JSONRequest);
 
