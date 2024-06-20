@@ -123,6 +123,7 @@ public:
     std::string SimulationSetSeed(std::string _JSONRequest);
     std::string SimulationRunFor(std::string _JSONRequest);
     std::string SimulationRecordAll(std::string _JSONRequest);
+    std::string SimulationGetSpikeTimes(std::string _JSONRequest);
     std::string SimulationGetRecording(std::string _JSONRequest);
     std::string SimulationGetStatus(std::string _JSONRequest);
     std::string SimulationSave(std::string _JSONRequest);
