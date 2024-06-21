@@ -158,18 +158,20 @@ const nlohmann::json& HandlerData::ReqJSON() const {
     return RequestJSON;
 }
 
-bool HandlerData::FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, nlohmann::json& _JSON) {
+bool HandlerData::FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, nlohmann::json& _JSON, bool _Optional) {
     Iterator = _JSON.find(ParName);
     if (Iterator == _JSON.end()) {
         Logger_->Log("Error Finding Parameter '" + ParName + "', Request Is: " + _JSON.dump(), 7);
-        Status = BGStatusCode::BGStatusInvalidParametersPassed;
+        if (!_Optional) {
+            Status = BGStatusCode::BGStatusInvalidParametersPassed;
+        }
         return false;
     }
     return true;
 }
 
-bool HandlerData::FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator) {
-    return FindPar(ParName, Iterator, RequestJSON);
+bool HandlerData::FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, bool _Optional) {
+    return FindPar(ParName, Iterator, RequestJSON, _Optional);
 }
 
 bool HandlerData::GetParBool(const std::string& ParName, bool& Value, nlohmann::json& _JSON) {
@@ -261,7 +263,7 @@ bool HandlerData::GetParVec3(const std::string& ParName, Simulator::Geometries::
     return GetParVec3FromJSON(ParName, Value, RequestJSON, Units);
 }
 
-bool HandlerData::GetParVecInt(const std::string& ParName, std::vector<int>& Value, nlohmann::json& _JSON) {
+bool HandlerData::GetParVecInt(const std::string& ParName, std::vector<int>& Value, nlohmann::json& _JSON, bool _Optional) {
     nlohmann::json::iterator it;
     if (!FindPar(ParName, it, _JSON)) {
         return false;
@@ -282,8 +284,8 @@ bool HandlerData::GetParVecInt(const std::string& ParName, std::vector<int>& Val
     return true;
 }
 
-bool HandlerData::GetParVecInt(const std::string& ParName, std::vector<int>& Value) {
-    return GetParVecInt(ParName, Value, RequestJSON);
+bool HandlerData::GetParVecInt(const std::string& ParName, std::vector<int>& Value, bool _Optional) {
+    return GetParVecInt(ParName, Value, RequestJSON, _Optional);
 }
 
 // If Parname="" then _JSON.is_array() must be true.

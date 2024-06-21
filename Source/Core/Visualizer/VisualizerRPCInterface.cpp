@@ -11,6 +11,7 @@
 
 
 #include <Visualizer/VisualizerRPCInterface.h>
+#include <Visualizer/Visualizer.h>
 #include <RPC/APIStatusCode.h>
 
 
@@ -160,7 +161,7 @@ std::string VisualizerRPCInterface::VisualizerGenerateImages(std::string _JSONRe
 
     API::HandlerData Handle(_JSONRequest, Logger_, "Visualizer/GenerateImages", Simulations_);
 
-  
+
     // Create and Populate Parameters From Request
     nlohmann::json::iterator LocationIterator;
     if (!Handle.FindPar("Locations", LocationIterator)) {
@@ -187,9 +188,14 @@ std::string VisualizerRPCInterface::VisualizerGenerateImages(std::string _JSONRe
     Handle.GetParInt("ImageHeight_px", Handle.Sim()->VisualizerParams.ImageHeight_px);
 
 
+    // Get Optional Params
+    Handle.GetParVecInt("Optional_VisibleNeuronIDs", Handle.Sim()->VisualizerParams.Optional_VisibleNeuronIDs, true);
+
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
+
+    
 
     Handle.Sim()->CurrentTask = SIMULATION_VISUALIZATION;
     Handle.Sim()->VisualizerParams.State = VISUALIZER_REQUESTED;

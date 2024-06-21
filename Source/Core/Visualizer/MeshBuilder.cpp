@@ -1,5 +1,6 @@
 #include <random>
 #include <iostream>
+#include <algorithm>
 
 #include <Visualizer/MeshBuilder.h>
 #include <Simulator/Structs/RecordingElectrode.h>
@@ -81,6 +82,8 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
         int ShapeID = _Simulation->BSCompartments[i].ShapeID;
         int CompartmentID = _Simulation->BSCompartments[i].ID;
         int AssocNeuronID = _Simulation->GetNeuronIndexByCompartment(CompartmentID);
+        
+        bool DrawThisNeuron = std::find(_Simulation->VisualizerParams.Optional_VisibleNeuronIDs.begin(), _Simulation->VisualizerParams.Optional_VisibleNeuronIDs.end(), AssocNeuronID) != _Simulation->VisualizerParams.Optional_VisibleNeuronIDs.end();
 
         if (_Simulation->Collection.IsBox(ShapeID)) { // (std::holds_alternative<Geometries::Box>(_Simulation->Collection.Geometries[ShapeID])) {
             const Geometries::Box & Box = _Simulation->Collection.GetBox(ShapeID); // Geometries::Box Box = std::get<Geometries::Box>(_Simulation->Collection.Geometries[ShapeID]);
@@ -115,6 +118,11 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
         } else if (_Simulation->Collection.IsCylinder(ShapeID)) { // (std::holds_alternative<Geometries::Cylinder>(_Simulation->Collection.Geometries[ShapeID])) {
             const Geometries::Cylinder & Cylinder = _Simulation->Collection.GetCylinder(ShapeID); // Geometries::Cylinder Cylinder = std::get<Geometries::Cylinder>(_Simulation->Collection.Geometries[ShapeID]);
             
+            // If both the optional filter list is provided, AND this neuron isn't in the list, don't draw the compartments.
+            if ((_Simulation->VisualizerParams.Optional_VisibleNeuronIDs.size() != 0) && (!DrawThisNeuron)) {
+                continue;
+            }
+
             BG::NES::Renderer::Shaders::Phong Shader;
             Shader.DiffuseColor_  = GenerateSeededRandomVector(AssocNeuronID);
             Shader.SpecularColor_ = vsg::vec4(0.1f, 0.1f, 0.1f, 1.0f);
