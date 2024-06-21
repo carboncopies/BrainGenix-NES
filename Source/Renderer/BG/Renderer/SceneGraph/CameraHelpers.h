@@ -57,7 +57,7 @@ namespace Renderer {
  * @param _FarClip Maximum distance stuff can be from the camera before we don't draw it anymore. (anything farther will be omitted).
  * @return vsg::ref_ptr<vsg::ProjectionMatrix> 
  */
-vsg::ref_ptr<vsg::ProjectionMatrix> CreatePerspectiveMatrix(float _FOV, double _AspectRatio, double _NearClip = 0.1, double _FarClip = 100.0);
+vsg::ref_ptr<vsg::ProjectionMatrix> CreatePerspectiveMatrix(float _FOV, double _AspectRatio, double _NearClip = 0.1, double _FarClip = 10000.0);
 
 /**
  * @brief Helper function that creates the camera's LookAt matrix based on the given parameters.

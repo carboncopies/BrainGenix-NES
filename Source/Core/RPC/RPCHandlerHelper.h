@@ -88,8 +88,8 @@ public:
 
     const nlohmann::json& ReqJSON() const;
 
-    bool FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, nlohmann::json& _JSON);
-    bool FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator);
+    bool FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, nlohmann::json& _JSON, bool _Optional = false);
+    bool FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, bool _Optional = false);
 
     bool GetParBool(const std::string& ParName, bool& Value, nlohmann::json& _JSON);
     bool GetParBool(const std::string& ParName, bool& Value);
@@ -107,8 +107,8 @@ public:
 
     bool GetParVec3(const std::string& ParName, Simulator::Geometries::Vec3D& Value, const std::string& Units = "um");
 
-    bool GetParVecInt(const std::string& ParName, std::vector<int>& Value, nlohmann::json& _JSON);
-    bool GetParVecInt(const std::string& ParName, std::vector<int>& Value);
+    bool GetParVecInt(const std::string& ParName, std::vector<int>& Value, nlohmann::json& _JSON, bool _Optional = false);
+    bool GetParVecInt(const std::string& ParName, std::vector<int>& Value, bool _Optional = false);
 
 
     bool GetParVecFloat(const std::string& ParName, std::vector<float>& Value, nlohmann::json& _JSON);

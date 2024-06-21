@@ -67,6 +67,10 @@ struct VisualizerParameters {
     bool VisualizeElectrodes = false; /**Enable or disable rendering of any placed electrodes in the sample*/
 
     std::vector<std::string> FileHandles; /**List of file handles for completed images*/
+
+    std::vector<int> Optional_VisibleNeuronIDs; /**If not empty, we will only show these neuron ids, otherwise all neurons are visible (the soma stays visible)*/
+
+
 };
 
 }; // namespace Simulator

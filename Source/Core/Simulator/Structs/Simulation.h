@@ -152,6 +152,7 @@ public:
 
     Compartments::BS * FindCompartmentByID(int CompartmentID);
     CoreStructs::Neuron * FindNeuronByCompartment(int CompartmentID) const;
+    int GetNeuronIndexByCompartment(int CompartmentID) const;
 
     Geometries::Geometry* FindShapeByID(int ShapeID);
 
