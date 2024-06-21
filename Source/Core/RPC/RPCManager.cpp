@@ -170,7 +170,7 @@ std::string RPCManager::NESRequest(std::string _JSONRequest, int _SimulationIDOv
                 Logger_->Log("Error, Handler Is Null For Call " + ReqFunc + ", Continuing Anyway", 7);
                 // ReqResponseJSON["StatusCode"] = 1; // not a valid NES request *** TODO: use the right code
             } else {
-                Logger_->Log("DEBUG -> Got Request For '" + ReqFunc + "'", 0);
+                // Logger_->Log("DEBUG -> Got Request For '" + ReqFunc + "'", 0);
                 if (_SimulationIDOverride != -1) {
                     ReqParams["SimulationID"] = _SimulationIDOverride;
                 }
@@ -192,11 +192,11 @@ std::string RPCManager::NESRequest(std::string _JSONRequest, int _SimulationIDOv
     }
 
     std::string Response = ResponseJSON.dump();
-    if (Response.length() < 1024) { 
-        Logger_->Log("DEBUG --> Responding: " + Response, 0); // For DEBUG
-    } else {
-        Logger_->Log("DEBUG --> Response Omitted Due To Length", 0); // For DEBUG
-    }
+    // if (Response.length() < 1024) { 
+    //     Logger_->Log("DEBUG --> Responding: " + Response, 0); // For DEBUG
+    // } else {
+    //     Logger_->Log("DEBUG --> Response Omitted Due To Length", 0); // For DEBUG
+    // }
     // if (!IsLoadingSim()) {
     //     std::cout << "DEBUG ---> Responding: " << ResponseJSON.dump() << '\n'; std::cout.flush();
     // }
