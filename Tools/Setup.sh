@@ -26,6 +26,11 @@ case $DISTRO in
        PACKAGE_MANAGER_UPDATE_CMD="apt update -y";;
 esac
 
+# Detect version
+Var=$(lsb_release -r)
+NumOnly=$(cut -f2 <<< "$Var")
+
+
 # Setup, update package registry
 echo "Setting Up Packages Needed For Compilation"
 # $SUDO_PREFIX $PACKAGE_MANAGER_UPDATE_CMD || exit 1
@@ -50,7 +55,12 @@ if [ "$DISTRO" = "arch" ]; then
 elif [ "$DISTRO" = "fedora" ]; then
     VULKAN_DEPS="libvulkan-dev vulkan-validationlayers-dev vulkan-tools libxcb-xfixes0-dev libx11-dev libxrandr-dev"  
 else
-    VULKAN_DEPS="libvulkan-dev vulkan-validationlayers-dev vulkan-tools libxcb-xfixes0-dev libx11-dev libxrandr-dev"  
+    # Check if it's ubuntu 24.04 since they did some dumb shit and changed the library name
+    if [ "$NumOnly" = "24.04" ]; then
+        VULKAN_DEPS="libvulkan-dev vulkan-utility-libraries-dev vulkan-tools libxcb-xfixes0-dev libx11-dev libxrandr-dev"  
+    else
+        VULKAN_DEPS="libvulkan-dev vulkan-validationlayers-dev vulkan-tools libxcb-xfixes0-dev libx11-dev libxrandr-dev"  
+    fi
 fi
 
 # Install Everything
