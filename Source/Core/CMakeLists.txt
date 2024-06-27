@@ -301,6 +301,8 @@ target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE
     VersioningSystem
     CompileTimeStamp
     CompilePlatformInfo
+
+    NetmorphCMake
 )
 target_include_directories(${PROJECT_LIBRARY_NAME} PUBLIC ${SRC_DIR}/Core)
 target_include_directories(${PROJECT_LIBRARY_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
@@ -323,6 +325,8 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     VersioningSystem
     CompileTimeStamp
     CompilePlatformInfo
+
+    NetmorphCMake
 )
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
