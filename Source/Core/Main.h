@@ -41,6 +41,7 @@
 #include <Util/LogLogo.h>
 #include <Profiling/ProfilingManager.h>
 
+#include <Include/Netmorph.h>
 
 /**
  * @brief The main entry point for the BrainGenix-NES Neuron Emulation System.
