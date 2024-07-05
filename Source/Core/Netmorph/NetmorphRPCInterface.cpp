@@ -82,6 +82,7 @@ std::string NetmorphRPCInterface::NetmorphStartSimulation(std::string _JSONReque
     int Status = 0;
     if (Handle.Sim()->NetmorphParams.State != Netmorph_WORKING && Handle.Sim()->NetmorphParams.State != Netmorph_REQUESTED) {
         Handle.Sim()->NetmorphParams.State = Netmorph_REQUESTED;
+        Handle.Sim()->NetmorphParams.Progress_percent = 0;
     } else {
         Status = 3; // Something is broken
     }
