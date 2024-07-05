@@ -106,7 +106,22 @@ std::string NetmorphRPCInterface::NetmorphGetStatus(std::string _JSONRequest) {
     }
 
     // Return Result ID
-    return Handle.ResponseWithID("Progress_percent", Handle.Sim()->NetmorphParams.Progress_percent);
+    std::string Status = "None";
+    if (Handle.Sim()->NetmorphParams.State == Netmorph_REQUESTED) {
+        Status = "Requested";
+    } else if (Handle.Sim()->NetmorphParams.State == Netmorph_WORKING) {
+        Status = "Working";
+    } else if (Handle.Sim()->NetmorphParams.State == Netmorph_DONE) {
+        Status = "Done";
+    }
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0;
+    ResponseJSON["Progress_percent"] = Handle.Sim()->NetmorphParams.Progress_percent;
+    ResponseJSON["NetmorphStatus"] = Status;
+    return ResponseJSON.dump();
+
 }
 
 
