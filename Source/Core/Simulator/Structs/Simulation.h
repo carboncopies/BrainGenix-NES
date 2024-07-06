@@ -17,6 +17,7 @@
 #include <stdexcept>
 #include <string>
 #include <tuple>
+#include <thread>
 #include <unordered_map>
 #include <vector>
 
@@ -131,7 +132,7 @@ public:
 
     VisualizerParameters VisualizerParams; /**Instance of visualizer parameters, used to generate visualizations in vulkan*/
     NetmorphParameters NetmorphParams; /**Instance of the netmorph parameters, used to configure netmorph's neuron culture simulation*/
-    
+
     std::thread NetmorphWorkerThread; /**Thread that when exists, runs the netmorph simulation.*/
 
 
