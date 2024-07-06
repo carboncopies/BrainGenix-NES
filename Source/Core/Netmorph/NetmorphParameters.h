@@ -52,7 +52,10 @@ enum NetmorphState { Netmorph_NONE, Netmorph_REQUESTED, Netmorph_WORKING, Netmor
  */
 struct NetmorphParameters {
 
-    std::string ModelFile; /**String containing the magic modelfile that netmorph needs to do stuff. See the netmorph manual for how to do that, cause IDK*/
+    // *** We don't really need this, because we can give the model content directly.
+    //std::string ModelFile; /**String containing the magic modelfile that netmorph needs to do stuff. See the netmorph manual for how to do that, cause IDK*/
+
+    std::string ModelContent; /**String containing the Netmorph model.*/
 
     int Progress_percent; /**Netmorph status percent*/
 
