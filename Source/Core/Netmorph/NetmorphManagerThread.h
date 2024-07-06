@@ -5,7 +5,7 @@
 /*
     Description: This file defines paremters for the Netmorph.
     Additional Notes: None
-    Date Created: 2024-02-07
+    Date Created: 2024-07-05
     Author(s): Thomas Liao
 
 
@@ -33,36 +33,29 @@
 #include <vector>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <vsg/maths/vec3.h>
-
-#include <Include/Netmorph.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Netmorph/NetmorphParameters.h>
+
+#include <BG/Common/Logger/Logger.h>
+
+
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 
-
-enum NetmorphState { Netmorph_NONE, Netmorph_REQUESTED, Netmorph_WORKING, Netmorph_DONE };
-
-
 /**
- * @brief Struct containing various operation parameters used for netmorph.
- * A worker thread monitors the state attribute of this struct.
+ * @brief This function is intended to be run as a separate thread by the RPC call to start netmorph.
+ * It will use the given params to run a netmorph sim, and then put the result in the _Params struct.
+ * After once done, it will exit, and thus terminate the thread.
  * 
+ * @param _Logger
+ * @param _Params 
+ * @return int 
  */
-struct NetmorphParameters {
+int ExecuteNetmorphOperation(BG::Common::Logger::LoggingSystem* _Logger, NetmorphParameters* _Params);
 
-    std::string ModelFile; /**String containing the magic modelfile that netmorph needs to do stuff. See the netmorph manual for how to do that, cause IDK*/
-
-    int Progress_percent; /**Netmorph status percent*/
-
-    NetmorphResult Result; /**Output provided by netmorph written to this struct*/
-
-    NetmorphState State = Netmorph_NONE; /**Sets the state of this Netmorph task*/
-
-};
 
 }; // namespace Simulator
 }; // namespace NES

@@ -129,6 +129,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Netmorph/NetmorphParameters.h
   ${SRC_DIR}/Core/Netmorph/NetmorphRPCInterface.cpp
   ${SRC_DIR}/Core/Netmorph/NetmorphRPCInterface.h
+  ${SRC_DIR}/Core/Netmorph/NetmorphManagerThread.cpp
+  ${SRC_DIR}/Core/Netmorph/NetmorphManagerThread.h
 
 
   ${SRC_DIR}/Core/VSDA/VSDARPCInterface.cpp

@@ -131,7 +131,8 @@ public:
 
     VisualizerParameters VisualizerParams; /**Instance of visualizer parameters, used to generate visualizations in vulkan*/
     NetmorphParameters NetmorphParams; /**Instance of the netmorph parameters, used to configure netmorph's neuron culture simulation*/
-
+    
+    std::thread NetmorphWorkerThread; /**Thread that when exists, runs the netmorph simulation.*/
 
 
     //! Constructors
