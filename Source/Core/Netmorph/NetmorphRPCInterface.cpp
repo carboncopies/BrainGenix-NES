@@ -36,6 +36,7 @@ NetmorphRPCInterface::~NetmorphRPCInterface() {
 
 
 /**
+ * UNNECESSARY API CALL! LET'S GET RID OF THIS! :-)
  * Expects _JSONRequest:
  * {
  *   "SimulationID": <SimID>,
@@ -77,6 +78,11 @@ std::string NetmorphRPCInterface::NetmorphStartSimulation(std::string _JSONReque
         return Handle.ErrResponse();
     }
 
+    std::string ModelContentString; // <-- THIS NEEDS TO BE MADE AVAILABLE WHEN CALLING NETMORPH
+    Handle.GetParString("ModelContent", ModelContentString);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
     // Now Populate Modelfile
     int Status = 0;
