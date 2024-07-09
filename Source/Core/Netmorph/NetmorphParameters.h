@@ -38,6 +38,7 @@
 #include <Include/Netmorph.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Simulator/Structs/Simulation.h>
 
 namespace BG {
 namespace NES {
