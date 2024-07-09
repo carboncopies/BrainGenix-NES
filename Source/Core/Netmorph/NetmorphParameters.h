@@ -54,6 +54,8 @@ enum NetmorphState { Netmorph_NONE, Netmorph_REQUESTED, Netmorph_WORKING, Netmor
  */
 struct NetmorphParameters {
 
+    Simulation* Sim = nullptr; /**So that BuildFromNetmorphNetwork() can call Simulation build functions.*/
+
     std::string ModelFile; /**String containing the magic modelfile that netmorph needs to do stuff. See the netmorph manual for how to do that, cause IDK*/
 
     int Progress_percent; /**Netmorph status percent*/

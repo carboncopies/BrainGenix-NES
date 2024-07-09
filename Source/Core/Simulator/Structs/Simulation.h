@@ -150,6 +150,12 @@ public:
     void AddCircuit(std::shared_ptr<CoreStructs::NeuralCircuit> circuit);
     void AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region);
 
+    //! Direct builder functions
+    //!   Call these from various '..Create' functions to ensure identical
+    //!   and up-to-date requirements are fulfilled.
+    int AddSphere(Geometries::Sphere& _S);
+    int AddSCCompartment(Compartments::BS& _C);
+
     size_t GetTotalNumberOfNeurons();
     std::vector<std::shared_ptr<CoreStructs::Neuron>> GetAllNeurons();
     std::vector<size_t> GetAllNeuronIDs();

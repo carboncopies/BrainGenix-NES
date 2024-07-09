@@ -49,8 +49,7 @@ std::string GeometryRPCInterface::SphereCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    S.ID = Handle.Sim()->Collection.Geometries.size();
-    Handle.Sim()->Collection.Geometries.push_back(S);
+    S.ID = Handle.Sim()->AddSphere(S);
 
     // Return Result ID
     return Handle.ResponseWithID("ShapeID", S.ID);

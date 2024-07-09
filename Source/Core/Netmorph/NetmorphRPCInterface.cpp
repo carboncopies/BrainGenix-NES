@@ -90,9 +90,9 @@ std::string NetmorphRPCInterface::NetmorphStartSimulation(std::string _JSONReque
     }
 
     // Start Worker Thread
+    Handle.Sim()->NetmorphParams.Sim = Handle.Sim();
     Logger_->Log("Starting Netmorph Worker Thread", 4);
     Handle.Sim()->NetmorphWorkerThread = std::thread(ExecuteNetmorphOperation, Logger_, &Handle.Sim()->NetmorphParams);
-
 
     // Return Result ID
     return Handle.ResponseWithID("NetmorphStatus", Status);

@@ -159,15 +159,7 @@ std::string ModelRPCInterface::BSCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    // We cache the pointer to the shape in the compartment data, so that it
-    // does not need to reach back to the Simulation to search for it.
-    C.ShapePtr = Handle.Sim()->Collection.GetGeometry(C.ShapeID);
-    if (!C.ShapePtr) {
-        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
-    }
-
-    C.ID = Handle.Sim()->BSCompartments.size();
-    Handle.Sim()->BSCompartments.push_back(C);
+    C.ID = Handle.Sim()->AddSCCompartment(C);
 
     // Return Result ID
     return Handle.ResponseWithID("CompartmentID", C.ID);

@@ -42,6 +42,27 @@ void Simulation::AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region) {
     this->Regions[ID] = regionPtr;
 };
 
+int Simulation::AddSphere(Geometries::Sphere& _S) {
+    _S.ID = Collection.Geometries.size();
+    Collection.Geometries.push_back(_S);
+    return _S.ID;
+}
+
+/**
+ * Note: We cache the pointer to the shape in the compartment data, so that it
+ *       does not need to reach back to the Simulation to search for it.
+ */
+int Simulation::AddSCCompartment(Compartments::BS& _C) {
+    _C.ShapePtr = Collection.GetGeometry(_C.ShapeID);
+    if (!_C.ShapePtr) {
+        return -1;
+    }
+
+    _C.ID = BSCompartments.size();
+    BSCompartments.push_back(_C);
+    return _C.ID;
+}
+
 size_t Simulation::GetTotalNumberOfNeurons() {
     return Neurons.size();
     // size_t long num_neurons = 0;
