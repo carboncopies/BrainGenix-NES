@@ -68,7 +68,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
     float neuron_tau_PSPd = 25.0;
     float neuron_IPSP = 870.0 // nA
 
-    std::size_t nnum = 0;
+    int nnum = 0;
     PLL_LOOP_FORWARD(neuron, PLLRoot<neuron>::head(), 1) {
         // 1. Build soma spheres.
         Geometries::Sphere S;
@@ -96,6 +96,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         nnum++;
     }
 
+    return true;
 }
 // ---
     
