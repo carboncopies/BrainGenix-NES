@@ -287,18 +287,7 @@ std::string ModelRPCInterface::SCNeuronCreate(std::string _JSONRequest) {
     //     return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     // }
 
-    C.ID = Handle.Sim()->Neurons.size();
-    
-    Handle.Sim()->Neurons.push_back(std::make_shared<SCNeuron>(C, *(Handle.Sim())));
-    for (const auto & SomaID : C.SomaCompartmentIDs) {
-        Handle.Sim()->NeuronByCompartment.emplace(SomaID, C.ID);
-    }
-    for (const auto & DendriteID : C.DendriteCompartmentIDs) {
-        Handle.Sim()->NeuronByCompartment.emplace(DendriteID, C.ID);
-    }
-    for (const auto & AxonID : C.AxonCompartmentIDs) {
-        Handle.Sim()->NeuronByCompartment.emplace(AxonID, C.ID);
-    }
+    C.ID = Handle.Sim()->AddSCNeuron(C);
 
     // Return Result ID
     return Handle.ResponseWithID("NeuronID", C.ID);

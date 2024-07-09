@@ -98,21 +98,21 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         }
 
         // Build neurons.
-        CoreStructs::SCNeuronStruct C;
-        C.SomaCompartmentIDs.emplace_back(C.ID);
-        //C.DendriteCompartmentIDs = ;
-        //C.AxonCompartmentIDs = ;
-        C.MembranePotential_mV = neuron_Vm_mV;
-        C.RestingPotential_mV = neuron_Vrest_mV;
-        C.SpikeThreshold_mV = neuron_Vact_mV;
-        C.DecayTime_ms = neuron_tau_AHP_ms;
-        C.AfterHyperpolarizationAmplitude_mV = neuron_Vahp_mV;
-        C.PostsynapticPotentialRiseTime_ms = neuron_tau_PSPr;
-        C.PostsynapticPotentialDecayTime_ms = neuron_tau_PSPd;
-        C.PostsynapticPotentialAmplitude_nA = neuron_IPSP;
-        C.Name = nlabel;
-        if (_Params.Sim->AddSCNeuron(C)<0) {
-            _Params.Sim->Logger_->Log("BuildFromNetmorphNetwork failed: Missing ??? for neuron build.", 7);
+        CoreStructs::SCNeuronStruct N;
+        N.SomaCompartmentIDs.emplace_back(C.ID);
+        //N.DendriteCompartmentIDs = ;
+        //N.AxonCompartmentIDs = ;
+        N.MembranePotential_mV = neuron_Vm_mV;
+        N.RestingPotential_mV = neuron_Vrest_mV;
+        N.SpikeThreshold_mV = neuron_Vact_mV;
+        N.DecayTime_ms = neuron_tau_AHP_ms;
+        N.AfterHyperpolarizationAmplitude_mV = neuron_Vahp_mV;
+        N.PostsynapticPotentialRiseTime_ms = neuron_tau_PSPr;
+        N.PostsynapticPotentialDecayTime_ms = neuron_tau_PSPd;
+        N.PostsynapticPotentialAmplitude_nA = neuron_IPSP;
+        N.Name = nlabel;
+        if (_Params.Sim->AddSCNeuron(N)<0) {
+            _Params.Sim->Logger_->Log("BuildFromNetmorphNetwork failed: Missing soma compartment for neuron build.", 7);
             return false;
         }
 

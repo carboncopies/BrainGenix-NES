@@ -155,6 +155,7 @@ public:
     //!   and up-to-date requirements are fulfilled.
     int AddSphere(Geometries::Sphere& _S);
     int AddSCCompartment(Compartments::BS& _C);
+    int AddSCNeuron(CoreStructs::SCNeuronStruct& _N);
 
     size_t GetTotalNumberOfNeurons();
     std::vector<std::shared_ptr<CoreStructs::Neuron>> GetAllNeurons();

@@ -63,6 +63,25 @@ int Simulation::AddSCCompartment(Compartments::BS& _C) {
     return _C.ID;
 }
 
+int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
+    if (_N.SomaCompartmentIDs.size()<1) return -1;
+
+    _N.ID = Neurons.size();
+    
+    Neurons.push_back(std::make_shared<SCNeuron>(_N, *this));
+    for (const auto & SomaID : _N.SomaCompartmentIDs) {
+        NeuronByCompartment.emplace(SomaID, _N.ID);
+    }
+    for (const auto & DendriteID : _N.DendriteCompartmentIDs) {
+        NeuronByCompartment.emplace(DendriteID, _N.ID);
+    }
+    for (const auto & AxonID : _N.AxonCompartmentIDs) {
+        NeuronByCompartment.emplace(AxonID, _N.ID);
+    }
+
+    return _N.ID;
+}
+
 size_t Simulation::GetTotalNumberOfNeurons() {
     return Neurons.size();
     // size_t long num_neurons = 0;
