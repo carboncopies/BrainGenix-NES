@@ -52,6 +52,18 @@ public:
 // #define PLL_LOOP_FORWARD_NESTED(PLLType,Init_El,Extra_Test,RefVar) \
 //     for (PLLType * RefVar = Init_El; ((RefVar) && (Extra_Test)); RefVar = RefVar->Next())
 
+#define NETMORPH_PARAMS_FAIL(msg) { \
+        _Params.Sim->Logger_->Log(msg, 7); \
+        _Params.Result.Status = false; \
+        _Params.Progress_percent = 100; \
+    }
+
+#define NETMORPH_PARAMS_SUCCESS(msg) { \
+        _Params.Sim->Logger_->Log(msg, 5); \
+        _Params.Result.Status = true; \
+        _Params.Progress_percent = 100; \
+    }
+
 // If NetmorphParams.Status==true then the NetmorphParams.net unique_ptr now owns the
 // generated Netmorph network object. We can now use this to build our model in the
 // simulation referenced by Handle.Sim().
@@ -93,7 +105,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         C.DecayTime_ms = neuron_tau_AHP_ms;
         C.Name = "compartment-"+nlabel;
         if (_Params.Sim->AddSCCompartment(C)<0) {
-            _Params.Sim->Logger_->Log("BuildFromNetmorphNetwork failed: Missing Sphere for soma compartment build.", 7);
+            NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Missing Sphere for soma compartment build.");
             return false;
         }
 
@@ -112,13 +124,14 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         N.PostsynapticPotentialAmplitude_nA = neuron_IPSP;
         N.Name = nlabel;
         if (_Params.Sim->AddSCNeuron(N)<0) {
-            _Params.Sim->Logger_->Log("BuildFromNetmorphNetwork failed: Missing soma compartment for neuron build.", 7);
+            NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Missing soma compartment for neuron build.");
             return false;
         }
 
         nnum++;
     }
 
+    NETMORPH_PARAMS_SUCCESS("Build NES model based on Netmorph output.");
     return true;
 }
 // ---
@@ -132,6 +145,10 @@ int ExecuteNetmorphOperation(BG::Common::Logger::LoggingSystem* _Logger, Netmorp
     _Logger->Log("Starting Netmorph Simulation", 5);
     _Params->Result = Netmorph(&_Params->Progress_percent, _Params->ModelFile);
     _Logger->Log("Netmorph Simulation Finished", 5);
+
+    if (_Params->Result.Status) {
+        BuildFromNetmorphNetwork(*_Params);
+    }
 
     _Params->State = Netmorph_DONE;
 
