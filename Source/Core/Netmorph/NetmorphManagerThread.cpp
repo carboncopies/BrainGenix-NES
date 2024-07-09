@@ -72,9 +72,9 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         // 1. Build soma spheres.
         Geometries::Sphere S;
         S.Radius_um = e->Radius();
-        S.Center_um.x = e->P.x;
-        S.Center_um.y = e->P.y;
-        S.Center_um.z = e->P.z;
+        S.Center_um.x = e->Pos().X();
+        S.Center_um.y = e->Pos().Y();
+        S.Center_um.z = e->Pos().Z();
         S.Name = "sphere-"+std::to_string(uint64_t(e));
         _Params.Sim->AddSphere(S);
 
