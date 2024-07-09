@@ -38,12 +38,14 @@
 #include <Include/Netmorph.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Simulator/Structs/Simulation.h>
+//#include <Simulator/Structs/Simulation.h>
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 
+// forward declaration:
+struct Simulation;
 
 enum NetmorphState { Netmorph_NONE, Netmorph_REQUESTED, Netmorph_WORKING, Netmorph_DONE };
 
