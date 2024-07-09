@@ -2,6 +2,8 @@
 
 #include <Simulator/Structs/RecordingElectrode.h>
 #include <Simulator/Structs/CalciumImaging.h>
+#include <Simulator/SimpleCompartmental/SCNeuron.h>
+
 
 
 #include <iostream>
