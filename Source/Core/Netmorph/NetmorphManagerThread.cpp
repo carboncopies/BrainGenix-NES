@@ -16,6 +16,7 @@
 #include <Netmorph/NetmorphManagerThread.h>
 #include <Simulator/Geometries/Sphere.h>
 #include <Simulator/Structs/BS.h>
+#include <Simulator/Structs/Neuron.h>
 #include <Simulator/Structs/Simulation.h>
 
 
@@ -71,13 +72,15 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
 
     size_t nnum = 0;
     PLL_LOOP_FORWARD(neuron, Net.PLLRoot<neuron>::head(), 1) {
+        std::string nlabel(std::to_string(uint64_t(e)));
+
         // 1. Build soma spheres.
         Geometries::Sphere S;
         S.Radius_um = e->Radius();
         S.Center_um.x = e->Pos().X();
         S.Center_um.y = e->Pos().Y();
         S.Center_um.z = e->Pos().Z();
-        S.Name = "sphere-"+std::to_string(uint64_t(e));
+        S.Name = "sphere-"+nlabel;
         _Params.Sim->AddSphere(S);
 
         // 2. Build soma compartments.
@@ -88,9 +91,28 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         C.SpikeThreshold_mV = neuron_Vact_mV;
         C.AfterHyperpolarizationAmplitude_mV = neuron_Vahp_mV;
         C.DecayTime_ms = neuron_tau_AHP_ms;
-        C.Name = "compartment-"+std::to_string(uint64_t(e));
+        C.Name = "compartment-"+nlabel;
         if (_Params.Sim->AddSCCompartment(C)<0) {
             _Params.Sim->Logger_->Log("BuildFromNetmorphNetwork failed: Missing Sphere for soma compartment build.", 7);
+            return false;
+        }
+
+        // Build neurons.
+        CoreStructs::SCNeuronStruct C;
+        C.SomaCompartmentIDs.emplace_back(C.ID);
+        //C.DendriteCompartmentIDs = ;
+        //C.AxonCompartmentIDs = ;
+        C.MembranePotential_mV = neuron_Vm_mV;
+        C.RestingPotential_mV = neuron_Vrest_mV;
+        C.SpikeThreshold_mV = neuron_Vact_mV;
+        C.DecayTime_ms = neuron_tau_AHP_ms;
+        C.AfterHyperpolarizationAmplitude_mV = neuron_Vahp_mV;
+        C.PostsynapticPotentialRiseTime_ms = neuron_tau_PSPr;
+        C.PostsynapticPotentialDecayTime_ms = neuron_tau_PSPd;
+        C.PostsynapticPotentialAmplitude_nA = neuron_IPSP;
+        C.Name = nlabel;
+        if (_Params.Sim->AddSCNeuron(C)<0) {
+            _Params.Sim->Logger_->Log("BuildFromNetmorphNetwork failed: Missing ??? for neuron build.", 7);
             return false;
         }
 
