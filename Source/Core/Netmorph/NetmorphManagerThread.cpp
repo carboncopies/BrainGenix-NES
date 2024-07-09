@@ -6,7 +6,6 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <vector>
 #include <memory>
-#include <cstddef>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <Include/Netmorph.h>
@@ -66,9 +65,9 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
     float neuron_tau_AHP_ms = 30.0;
     float neuron_tau_PSPr = 5.0;
     float neuron_tau_PSPd = 25.0;
-    float neuron_IPSP = 870.0 // nA
+    float neuron_IPSP = 870.0; // nA
 
-    int nnum = 0;
+    size_t nnum = 0;
     PLL_LOOP_FORWARD(neuron, PLLRoot<neuron>::head(), 1) {
         // 1. Build soma spheres.
         Geometries::Sphere S;
