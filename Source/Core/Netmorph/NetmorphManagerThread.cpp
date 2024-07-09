@@ -6,6 +6,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <vector>
 #include <memory>
+#include <cstddef>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <Include/Netmorph.h>
