@@ -17,6 +17,7 @@
 #include <Netmorph/NetmorphManagerThread.h>
 #include <Simulator/Geometries/Sphere.h>
 #include <Simulator/Structs/BS.h>
+#include <Simulator/Structs/Simulation.h>
 
 
 namespace BG {
