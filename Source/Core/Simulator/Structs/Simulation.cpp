@@ -116,7 +116,7 @@ protected:
     std::vector<Compartments::BS>* RefToCompartments;
 
 public:
-    Saver(const std::string& _Name) Name_(_Name) {}
+    Saver(const std::string& _Name): Name_(_Name) {}
 
     void AddSphere(Geometries::Sphere& S) {
         SGMap.emplace_back(Geometries::GeometrySphere, SphereReferences.size());
@@ -169,7 +169,7 @@ protected:
     std::unique_ptr<Geometries::Box[]> BoxData;
 
 public:
-    Loader(const std::string& _Name) Name_(_Name) {}
+    Loader(const std::string& _Name): Name_(_Name) {}
 
     bool Load() {
         auto LoadFile = std::fstream(Name_, std::ios::in | std::ios::binary);
@@ -236,7 +236,7 @@ bool Simulation::LoadModel(const std::string& Name) {
 
     // Reset and instantiate shapes.
     Collection.Geometries.clear();
-    
+
     int ID;
     for (size_t i = 0; i < _Loader._SaverInfo.SGMapSize) {
         auto& sgm = _Loader.SGMap.get()[i];
