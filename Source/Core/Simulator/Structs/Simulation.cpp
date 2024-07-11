@@ -108,6 +108,7 @@ struct SaverInfo {
     size_t CylinderReferencesSize = 0;
     size_t BoxReferencesSize = 0;
     size_t BSSCCompartmentsSize = 0;
+    size_t NeuronsSize = 0;
 };
 
 struct SaverGeometry {
@@ -126,6 +127,7 @@ protected:
     std::vector<Geometries::Cylinder*> CylinderReferences;
     std::vector<Geometries::Box*> BoxReferences;
     std::vector<Compartments::BS>* RefToCompartments;
+    std::vector<std::shared_ptr<CoreStructs::Neuron>>* RefToSCNeurons;
 
 public:
     Saver(const std::string& _Name): Name_(_Name) {}
@@ -145,6 +147,10 @@ public:
     void AddBSSCCompartments(std::vector<Compartments::BS>& _RefToCompartments) {
         RefToCompartments = &_RefToCompartments;
     }
+    //! Warning: This assumes all neurons are of SCNeuron type.
+    void AddNeurons(std::vector<std::shared_ptr<CoreStructs::Neuron>>& _RefToSCNeurons) {
+        RefToSCNeurons = &_RefToSCNeurons;
+    }
 
     bool Save() {
         auto SaveFile = std::fstream(Name_, std::ios::out | std::ios::binary);
@@ -153,6 +159,7 @@ public:
         _SaverInfo.CylinderReferencesSize = CylinderReferences.size();
         _SaverInfo.BoxReferencesSize = BoxReferences.size();
         _SaverInfo.BSSCCompartmentsSize = RefToCompartments->size();
+        _SaverInfo.NeuronsSize = RefToNeurons->size();
 
         SaveFile.write((char*)&_SaverInfo, sizeof(_SaverInfo));
         SaveFile.write((char*)SGMap.data(), sizeof(SaverGeometry)*SGMap.size());
@@ -173,6 +180,14 @@ public:
         for (auto& ref : (*RefToCompartments)) {
             Compartments::BSBaseData& basedataref = ref;
             SaveFile.write((char*)&basedataref, sizeof(Compartments::BSBaseData));
+        }
+
+        // Save fixed-size base data of neurons and flattened variable
+        // size crucial data.
+        for (auto& ref : (*RefToNeurons)) { // from a list of shared pointers to SCNeuron objects
+            std::unique_ptr<std::vector<uint8_t>> flatdata = static_cast<SCNeuron*>(ref.get())->build_data.GetFlat();
+            CoreStructs::SCNeuronStructFlatHeader* header_ptr = (CoreStructs::SCNeuronStructFlatHeader*) flatdata.data();
+            SaveFile.write((char*)flatdata.data(), header_ptr->FlatBufSize);
         }
 
         SaveFile.close();
@@ -245,6 +260,7 @@ bool Simulation::SaveModel(const std::string& Name) {
     // Prepare to save compartments.
     _Saver.AddBSSCCompartments(BSCompartments);
     // Save neurons.
+    _Saver.AddNeurons(Neurons);
     // Save synapses.
     return _Saver.Save();
 }

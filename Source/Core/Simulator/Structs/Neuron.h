@@ -131,14 +131,12 @@ struct BSNeuronStruct {
 
 };
 
-struct SCNeuronStruct {
-    
-    std::string Name; /**Name of the Neuron*/
+/**
+ * @brief Crucial fixed-size data of a neuron. This is saved in neuronal
+ * circuit model saves. Does not include name and cached data.
+ */
+struct SCNeuronBase {
     int ID = -1; /**ID of the Neuron */
-
-    std::vector<int> SomaCompartmentIDs;
-    std::vector<int> DendriteCompartmentIDs;
-    std::vector<int> AxonCompartmentIDs;
 
     float MembranePotential_mV;
     float RestingPotential_mV;
@@ -148,11 +146,35 @@ struct SCNeuronStruct {
     float PostsynapticPotentialRiseTime_ms;
     float PostsynapticPotentialDecayTime_ms;
     float PostsynapticPotentialAmplitude_nA;
+};
+
+struct SCNeuronStructFlatHeader {
+    uint32_t FlatBufSize = 0;
+    uint32_t NameSize = 0;
+    uint32_t NameOffset = 0;
+    uint32_t SomaCompartmentIDsSize = 0;
+    uint32_t SomaCompartmentIDsOffset = 0;
+    uint32_t DendriteCompartmentIDsSize = 0;
+    uint32_t DendriteCompartmentIDsOffset = 0;
+    uint32_t AxonCompartmentIDsSize = 0;
+    uint32_t AxonCompartmentIDsOffset = 0;
+    SCNeuronBase Base;
+};
+
+struct SCNeuronStruct: public SCNeuronBase {
+    
+    std::string Name; /**Name of the Neuron*/
+
+    std::vector<int> SomaCompartmentIDs;
+    std::vector<int> DendriteCompartmentIDs;
+    std::vector<int> AxonCompartmentIDs;
 
     // Direct access caches:
     // std::vector<Compartments::SC*> SomaCompartmentPtr;
     // std::vector<Compartments::SC*> DendriteCompartmentPtr;
     // std::vector<Compartments::SC*> AxonCompartmentPtr;
+
+    std::unique_ptr<std::vector<uint8_t>> GetFlat() const;
 
 };
 

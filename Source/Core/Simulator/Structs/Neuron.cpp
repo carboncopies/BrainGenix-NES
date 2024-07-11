@@ -91,6 +91,44 @@ void Neuron::OutputTransmitterAdded(ReceptorData RData) {
     WARNWRONGOOPLEVEL();
 }
 
+/**
+ * Return a flattened struct describing name and compartment indices of
+ * the SCNeuron. This is useful for storage, among other things.
+ */
+std::unique_ptr<std::vector<uint8_t>> SCNeuronStruct::GetFlat() const {
+    SCNeuronStructFlatHeader header;
+
+    header.Base = ::SCNeuronBase;
+
+    header.NameSize = Name.size()+1; // for c_str()
+    header.NameOffset = sizeof(header);
+    size_t NameSizeOf = sizeof(decltype(Name)::value_type)*header.NameSize;
+
+    header.SomaCompartmentIDsSize = SomaCompartmentIDs.size();
+    header.SomaCompartmentIDsOffset = header.NameOffset + NameSizeOf;
+    size_t SomaCompartmentIDsSizeOf = sizeof(decltype(SomaCompartmentIDs)::value_type)*header.SomaCompartmentIDsSize;
+
+    header.DendriteCompartmentIDsSize = DendriteCompartmentIDs.size();
+    header.DendriteCompartmentIDsOffset = header.SomaCompartmentIDsOffset + SomaCompartmentIDsSizeOf;
+    size_t DendriteCompartmentIDsSizeOf = sizeof(decltype(DendriteCompartmentIDs)::value_type)*header.DendriteCompartmentIDsSize;
+
+    header.AxonCompartmentIDsSize = AxonCompartmentIDs.size();
+    header.AxonCompartmentIDsOffset = header.DendriteCompartmentIDsOffset + DendriteCompartmentIDsSizeOf;
+    size_t AxonCompartmentIDsSizeOf = sizeof(decltype(AxonCompartmentIDs)::value_type)*header.AxonCompartmentIDsSize);
+    
+    header.FlatBufSize = sizeof(header)+SomaCompartmentIDsSizeOf+DendriteCompartmentIDsSizeOf+AxonCompartmentIDsSizeOf;
+
+    std::unique_ptr<std::vector<uint8_t>> flatbuf = std::make_unique<std::vector<uint8_t>>(header.FlatBufSize);
+
+    memcpy(flatbuf.data(), &header, sizeof(header));
+    memcpy(flatbuf.data()+header.NameOffset, Name.c_str(), header.NameSize);
+    memcpy(flatbuf.data()+header.SomaCompartmentIDsOffset, SomaCompartmentIDs.data(), SomaCompartmentIDsSizeOf);
+    memcpy(flatbuf.data()+header.DendriteCompartmentIDsOffset, DendriteCompartmentIDs.data(), DendriteCompartmentIDsSizeOf);
+    memcpy(flatbuf.data()+header.AxonCompartmentIDsOffset, AxonCompartmentIDs.data(), AxonCompartmentIDsSizeOf);
+
+    return flatbuf;
+}
+
 }; // namespace CoreStructs
 }; // namespace Simulator
 }; // namespace NES
