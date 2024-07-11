@@ -200,7 +200,7 @@ public:
             std::unique_ptr<uint8_t[]> flatdata = static_cast<SCNeuron*>(ref.get())->build_data.GetFlat();
             CoreStructs::SCNeuronStructFlatHeader* header_ptr = (CoreStructs::SCNeuronStructFlatHeader*) flatdata.get();
             flatdata_sizes.push_back(header_ptr->FlatBufSize);
-            flatdata_list.push_back(flatdata.release());
+            flatdata_list.emplace_back(flatdata.release());
         }
         SaveFile.write((char*)flatdata_sizes.data(), sizeof(uint32_t)*flatdata_sizes.size());
         for (size_t i = 0; i < flatdata_list.size(); i++) {
