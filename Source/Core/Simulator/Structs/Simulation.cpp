@@ -159,7 +159,7 @@ public:
         _SaverInfo.CylinderReferencesSize = CylinderReferences.size();
         _SaverInfo.BoxReferencesSize = BoxReferences.size();
         _SaverInfo.BSSCCompartmentsSize = RefToCompartments->size();
-        _SaverInfo.NeuronsSize = RefToNeurons->size();
+        _SaverInfo.NeuronsSize = RefToSCNeurons->size();
 
         SaveFile.write((char*)&_SaverInfo, sizeof(_SaverInfo));
         SaveFile.write((char*)SGMap.data(), sizeof(SaverGeometry)*SGMap.size());
@@ -184,10 +184,10 @@ public:
 
         // Save fixed-size base data of neurons and flattened variable
         // size crucial data.
-        for (auto& ref : (*RefToNeurons)) { // from a list of shared pointers to SCNeuron objects
+        for (auto& ref : (*RefToSCNeurons)) { // from a list of shared pointers to SCNeuron objects
             std::unique_ptr<std::vector<uint8_t>> flatdata = static_cast<SCNeuron*>(ref.get())->build_data.GetFlat();
-            CoreStructs::SCNeuronStructFlatHeader* header_ptr = (CoreStructs::SCNeuronStructFlatHeader*) flatdata.data();
-            SaveFile.write((char*)flatdata.data(), header_ptr->FlatBufSize);
+            CoreStructs::SCNeuronStructFlatHeader* header_ptr = (CoreStructs::SCNeuronStructFlatHeader*) flatdata->data();
+            SaveFile.write((char*)flatdata->data(), header_ptr->FlatBufSize);
         }
 
         SaveFile.close();

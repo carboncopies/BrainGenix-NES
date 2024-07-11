@@ -120,11 +120,11 @@ std::unique_ptr<std::vector<uint8_t>> SCNeuronStruct::GetFlat() const {
 
     std::unique_ptr<std::vector<uint8_t>> flatbuf = std::make_unique<std::vector<uint8_t>>(header.FlatBufSize);
 
-    memcpy(flatbuf.data(), &header, sizeof(header));
-    memcpy(flatbuf.data()+header.NameOffset, Name.c_str(), header.NameSize);
-    memcpy(flatbuf.data()+header.SomaCompartmentIDsOffset, SomaCompartmentIDs.data(), SomaCompartmentIDsSizeOf);
-    memcpy(flatbuf.data()+header.DendriteCompartmentIDsOffset, DendriteCompartmentIDs.data(), DendriteCompartmentIDsSizeOf);
-    memcpy(flatbuf.data()+header.AxonCompartmentIDsOffset, AxonCompartmentIDs.data(), AxonCompartmentIDsSizeOf);
+    memcpy(flatbuf->data(), &header, sizeof(header));
+    memcpy(flatbuf->data()+header.NameOffset, Name.c_str(), header.NameSize);
+    memcpy(flatbuf->data()+header.SomaCompartmentIDsOffset, SomaCompartmentIDs.data(), SomaCompartmentIDsSizeOf);
+    memcpy(flatbuf->data()+header.DendriteCompartmentIDsOffset, DendriteCompartmentIDs.data(), DendriteCompartmentIDsSizeOf);
+    memcpy(flatbuf->data()+header.AxonCompartmentIDsOffset, AxonCompartmentIDs.data(), AxonCompartmentIDsSizeOf);
 
     return flatbuf;
 }
