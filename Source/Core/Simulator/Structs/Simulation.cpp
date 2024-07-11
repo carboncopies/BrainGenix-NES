@@ -153,6 +153,16 @@ public:
     }
 
     bool Save() {
+        /** Save file structure is:
+         *  1. SaverInfo
+         *  2. SaverGeometry[] (SaverInfo.SGMapSize elements)
+         *  3. Geometries::SphereBase[] (SaverInfo.SphereReferencesSize elements)
+         *  4. Geometries::CylinderBase[] (SaverInfo.CylinderReferencesSize elements)
+         *  5. Geometries::BoxBase[] (SaverInfo.BoxReferencesSize elements)
+         *  6. Compartments::BSBaseData[] (SaverInfo.BSSCCompartmentsSize elements)
+         *  7. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
+         *  8. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
+         */
         auto SaveFile = std::fstream(Name_, std::ios::out | std::ios::binary);
         _SaverInfo.SGMapSize = SGMap.size();
         _SaverInfo.SphereReferencesSize = SphereReferences.size();
@@ -184,10 +194,17 @@ public:
 
         // Save fixed-size base data of neurons and flattened variable
         // size crucial data.
+        std::vector<std::unique_ptr<uint8_t[]>> flatdata_list;
+        std::vector<uint32_t> flatdata_sizes; 
         for (auto& ref : (*RefToSCNeurons)) { // from a list of shared pointers to SCNeuron objects
-            std::unique_ptr<std::vector<uint8_t>> flatdata = static_cast<SCNeuron*>(ref.get())->build_data.GetFlat();
+            std::unique_ptr<uint8_t[]> flatdata = static_cast<SCNeuron*>(ref.get())->build_data.GetFlat();
             CoreStructs::SCNeuronStructFlatHeader* header_ptr = (CoreStructs::SCNeuronStructFlatHeader*) flatdata->data();
-            SaveFile.write((char*)flatdata->data(), header_ptr->FlatBufSize);
+            flatdata_sizes.push_back(header_ptr->FlatBufSize)
+            flatdata_list.push_back(flatdata);
+        }
+        SaveFile.write((char*)flatdata_sizes.data(), sizeof(uint32_t)*flatdata_sizes.size());
+        for (size_t i = 0; i < flatdata_list.size(); i++) {
+            SaveFile.write((char*)flatdata_list.at(i).get(), flatdata_sizes.at(i));
         }
 
         SaveFile.close();
@@ -204,25 +221,42 @@ public:
     std::unique_ptr<Geometries::CylinderBase[]> CylinderData;
     std::unique_ptr<Geometries::BoxBase[]> BoxData;
     std::unique_ptr<Compartments::BSBaseData[]> CompartmentData;
+    std::unique_ptr<uint32_t[]> flatdata_sizes;
+    std::unique_ptr<uint8_t[]> all_flatdata;
 
 public:
     Loader(const std::string& _Name): Name_(_Name) {}
 
     bool Load() {
         auto LoadFile = std::fstream(Name_, std::ios::in | std::ios::binary);
+        // 1. SaverInfo
         LoadFile.read((char*)&_SaverInfo, sizeof(_SaverInfo));
 
+        // 2. SaverGeometry[] (SaverInfo.SGMapSize elements)
         SGMap = std::make_unique<SaverGeometry[]>(_SaverInfo.SGMapSize);
         LoadFile.read((char*)SGMap.get(), sizeof(SaverGeometry)*_SaverInfo.SGMapSize);
+        // 3. Geometries::SphereBase[] (SaverInfo.SphereReferencesSize elements)
         SphereData = std::make_unique<Geometries::SphereBase[]>(_SaverInfo.SphereReferencesSize);
         LoadFile.read((char*)SphereData.get(), sizeof(Geometries::SphereBase)*_SaverInfo.SphereReferencesSize);
+        // 4. Geometries::CylinderBase[] (SaverInfo.CylinderReferencesSize elements)
         CylinderData = std::make_unique<Geometries::CylinderBase[]>(_SaverInfo.CylinderReferencesSize);
         LoadFile.read((char*)CylinderData.get(), sizeof(Geometries::CylinderBase)*_SaverInfo.CylinderReferencesSize);
+        // 5. Geometries::BoxBase[] (SaverInfo.BoxReferencesSize elements)
         BoxData = std::make_unique<Geometries::BoxBase[]>(_SaverInfo.BoxReferencesSize);
         LoadFile.read((char*)BoxData.get(), sizeof(Geometries::BoxBase)*_SaverInfo.BoxReferencesSize);
 
+        // 6. Compartments::BSBaseData[] (SaverInfo.BSSCCompartmentsSize elements)
         CompartmentData = std::make_unique<Compartments::BSBaseData[]>(_SaverInfo.BSSCCompartmentsSize);
         LoadFile.read((char*)CompartmentData.get(), sizeof(Compartments::BSBaseData)*_SaverInfo.BSSCCompartmentsSize);
+
+        // 7. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
+        flatdata_sizes = std::make_unique<uint32_t[]>(_SaverInfo.NeuronsSize);
+        LoadFile.read((char*)flatdata_sizes.get(), sizeof(uint32_t)*_SaverInfo.NeuronsSize);
+        // 8. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
+        size_t totsize = 0;
+        for (size_t i = 0; i < _SaverInfo.NeuronsSize; i++) totsize += flatdata_sizes.get()[i];
+        all_flatdata = std::make_unique<uint8_t[]>(totsize);
+        LoadFile.read((char*)all_flatdata.get(), totsize);
 
         return LoadFile.good();
     }
@@ -311,6 +345,17 @@ bool Simulation::LoadModel(const std::string& Name) {
         Compartments::BS _C(_Loader.CompartmentData.get()[i]);
         _C.Name = "compartment-"+std::to_string(i);
         ID = AddSCCompartment(_C);
+    }
+
+    // Reset and instantiate SCNeurons.
+    Neurons.clear();
+
+    size_t offset = 0;
+    for (size_t i = 0; i < _Loader._SaverInfo.NeuronsSize; i++) {
+        CoreStructs::SCNeuronStruct _N;
+        _N.FromFlat((CoreStructs::SCNeuronStructFlatHeader*) (_Loader.all_flatdata.get()+offset));
+        ID = AddSCNeuron(_N);
+        offset += _Loader.flatdata_sizes.get()[i];
     }
 
     return true;

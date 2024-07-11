@@ -95,7 +95,7 @@ void Neuron::OutputTransmitterAdded(ReceptorData RData) {
  * Return a flattened struct describing name and compartment indices of
  * the SCNeuron. This is useful for storage, among other things.
  */
-std::unique_ptr<std::vector<uint8_t>> SCNeuronStruct::GetFlat() const {
+std::unique_ptr<uint8_t[]> SCNeuronStruct::GetFlat() const {
     SCNeuronStructFlatHeader header;
 
     header.Base = *this;
@@ -118,15 +118,36 @@ std::unique_ptr<std::vector<uint8_t>> SCNeuronStruct::GetFlat() const {
     
     header.FlatBufSize = sizeof(header)+SomaCompartmentIDsSizeOf+DendriteCompartmentIDsSizeOf+AxonCompartmentIDsSizeOf;
 
-    std::unique_ptr<std::vector<uint8_t>> flatbuf = std::make_unique<std::vector<uint8_t>>(header.FlatBufSize);
+    std::unique_ptr<uint8_t[]> flatbuf = std::make_unique<uint8_t[]>(header.FlatBufSize);
 
-    memcpy(flatbuf->data(), &header, sizeof(header));
-    memcpy(flatbuf->data()+header.NameOffset, Name.c_str(), header.NameSize);
-    memcpy(flatbuf->data()+header.SomaCompartmentIDsOffset, SomaCompartmentIDs.data(), SomaCompartmentIDsSizeOf);
-    memcpy(flatbuf->data()+header.DendriteCompartmentIDsOffset, DendriteCompartmentIDs.data(), DendriteCompartmentIDsSizeOf);
-    memcpy(flatbuf->data()+header.AxonCompartmentIDsOffset, AxonCompartmentIDs.data(), AxonCompartmentIDsSizeOf);
+    memcpy(flatbuf.get(), &header, sizeof(header));
+    memcpy(flatbuf.get()+header.NameOffset, Name.c_str(), header.NameSize);
+    memcpy(flatbuf.get()+header.SomaCompartmentIDsOffset, SomaCompartmentIDs.data(), SomaCompartmentIDsSizeOf);
+    memcpy(flatbuf.get()+header.DendriteCompartmentIDsOffset, DendriteCompartmentIDs.data(), DendriteCompartmentIDsSizeOf);
+    memcpy(flatbuf.get()+header.AxonCompartmentIDsOffset, AxonCompartmentIDs.data(), AxonCompartmentIDsSizeOf);
 
     return flatbuf;
+}
+
+/**
+ * (Re)instantiate this object from a flat representation, e.g. from
+ * storage.
+ */
+bool SCNeuronStruct::FromFlat(SCNeuronStructFlatHeader* header) {
+    *this = header->Base;
+
+    Name = (const char*) (header+header->NameOffset);
+
+    SomaCompartmentIDs.resize(header->SomaCompartmentIDsSize);
+    memcpy(SomaCompartmentIDs.data(), header->SomaCompartmentIDsOffset, header->DendriteCompartmentIDsOffset - header->SomaCompartmentIDsOffset);
+
+    DendriteCompartmentIDs.resize(header->DendriteCompartmentIDsSize);
+    memcpy(DendriteCompartmentIDs.data(), header->DendriteCompartmentIDsOffset, header->AxonCompartmentIDsOffset - header->DendriteCompartmentIDsOffset);
+
+    AxonCompartmentIDs.resize(header->AxonCompartmentIDsSize);
+    memcpy(AxonCompartmentIDs.data(), header->AxonCompartmentIDsOffset, header->FlatBufSize - header->AxonCompartmentIDsOffset);
+
+    return true;
 }
 
 }; // namespace CoreStructs

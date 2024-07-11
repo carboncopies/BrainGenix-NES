@@ -174,7 +174,7 @@ struct SCNeuronStruct: public SCNeuronBase {
     // std::vector<Compartments::SC*> DendriteCompartmentPtr;
     // std::vector<Compartments::SC*> AxonCompartmentPtr;
 
-    std::unique_ptr<std::vector<uint8_t>> GetFlat() const;
+    std::unique_ptr<uint8_t[]> GetFlat() const;
 
 };
 
