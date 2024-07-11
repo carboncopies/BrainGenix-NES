@@ -12,6 +12,7 @@
 #include <ctime>
 #include <iomanip>
 #include <fstream>
+#include <memory>
 
 namespace BG {
 namespace NES {
