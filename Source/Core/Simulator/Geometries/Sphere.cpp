@@ -26,11 +26,11 @@ Sphere::Sphere(const Vec3D & _Center_um, float _Radius_um) {
 void Sphere::Show() { return; };
 
 //! Returns the volume of the sphere in micrometer^3.
-float Sphere::Volume_um3() {
+float SphereBase::Volume_um3() {
     return 4.0 / 3.0 * M_PI * pow(Radius_um, 3.0);
 };
 
-BoundingBox Sphere::GetBoundingBox(VSDA::WorldInfo& _WorldInfo) {
+BoundingBox SphereBase::GetBoundingBox(VSDA::WorldInfo& _WorldInfo) {
     BoundingBox bb;
 
     Geometries::Vec3D RotatedCenter = Center_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
@@ -48,7 +48,7 @@ BoundingBox Sphere::GetBoundingBox(VSDA::WorldInfo& _WorldInfo) {
 }
 
 
-bool Sphere::IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo) {
+bool SphereBase::IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo) {
 
     Geometries::Vec3D RotatedCenter = Center_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
@@ -57,7 +57,7 @@ bool Sphere::IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo) {
 }
 
 
-bool Sphere::IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) {
+bool SphereBase::IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) {
     return GetBoundingBox(_WorldInfo).IsIntersecting(_Region);
 }
 

@@ -34,6 +34,15 @@ namespace Geometries {
 struct BoxBase: Geometry {
     Vec3D Dims_um{5.0, 10.0, 10.0}; //! Dimensions of the box.
     Vec3D Rotations_rad{0.0, 0.0, 0.0}; //! Rotation of the box (euler angles) in radians.
+
+    //! --- The folllwing is here due to pure virtual functions in Geometry.
+    //! Returns the volume of the box in micrometer^3.
+    float Volume_um3();
+
+    //! Returns the bounding box
+    virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo);
+    virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo); // not used - bad don't use this it does not do rotation or work at all!!!
+    virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo);
 };
 
 /**
@@ -53,21 +62,12 @@ struct Box : BoxBase {
     //! Renders the box in 3D.
     void Show();
 
-    //! Returns the volume of the box in micrometer^3.
-    float Volume_um3();
-
     //! Returns 1 of n equally sliced subpartitions of the Box
     //! shape, when lined up from left to right along the width.
     std::vector<std::vector<float>> EqualSliceBounds(int nSlices, int slice);
 
     //! Returns a vector of dimensions of the Box.
     std::vector<float> Sides();
-
-
-    //! Returns the bounding box
-    virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo);
-    virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo); // not used - bad don't use this it does not do rotation or work at all!!!
-    virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo);
 
     //! Returns a point cloud that can be used to fill voxels representing the cylinder.
     // std::vector<Vec3D> GetPointCloud(float _VoxelScale);

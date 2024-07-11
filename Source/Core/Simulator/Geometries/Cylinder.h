@@ -40,6 +40,15 @@ struct CylinderBase: Geometry {
     float End1Radius_um = 1.0; //! Radius in micrometers of the second end of the cylinder.
     Vec3D End1Pos_um{1.0, 0.0, 0.0}; //! Position of the second end of the Cylinder in
                                      //! micrometers (relative to origin).
+
+    //! --- The folllwing is here due to pure virtual functions in Geometry.
+    //! Returns the volume of the cylinder in micrometer^3.
+    float Volume_um3();
+
+    //! Returns the bounding box
+    virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo);
+    virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo);
+    virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo);
 };
 
 /**
@@ -59,18 +68,9 @@ struct Cylinder : CylinderBase {
     //! Renders the cylinder in 3D.
     void Show();
 
-    //! Returns the volume of the cylinder in micrometer^3.
-    float Volume_um3();
-
     //! Returns the distance from the origin along cylinder axis at specified
     //! fraction of height distance from end 0.
     float RAtPosition_um(float position);
-
-
-    //! Returns the bounding box
-    virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo);
-    virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo);
-    virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo);
 
     //! Returns a point cloud that can be used to fill voxels representing the cylinder.
     // std::vector<Vec3D> GetPointCloud(float _VoxelScale);

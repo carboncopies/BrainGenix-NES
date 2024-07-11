@@ -27,7 +27,17 @@ namespace Geometries {
  * Just the easily storable fixed-size data.
  */
 struct SphereBase: Geometry {
-    float Radius_um; //! Radius in micrometers of the sphere.  
+    float Radius_um; //! Radius in micrometers of the sphere.
+
+
+    //! --- The folllwing is here due to pure virtual functions in Geometry.
+    //! Returns the volume of the sphere in micrometer^3.
+    float Volume_um3();
+
+    //! Returns the bounding box
+    virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo);
+    virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo);
+    virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo);
 };
 
 /**
@@ -46,14 +56,6 @@ struct Sphere: SphereBase {
 
     //! Renders the sphere in 3D.
     void Show(); 
-    
-    //! Returns the volume of the sphere in micrometer^3.
-    float Volume_um3();
-
-    //! Returns the bounding box
-    virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo);
-    virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo);
-    virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo);
 
 };
 
