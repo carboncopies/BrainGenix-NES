@@ -56,6 +56,18 @@ int Simulation::AddSphere(Geometries::Sphere& _S) {
     return _S.ID;
 }
 
+int Simulation::AddCylinder(Geometries::Cylinder& _S) {
+    _S.ID = Collection.Geometries.size();
+    Collection.Geometries.push_back(_S);
+    return _S.ID;
+}
+
+int Simulation::AddBox(Geometries::Box& _S){
+    _S.ID = Collection.Geometries.size();
+    Collection.Geometries.push_back(_S);
+    return _S.ID;
+}
+
 /**
  * Note: We cache the pointer to the shape in the compartment data, so that it
  *       does not need to reach back to the Simulation to search for it.
@@ -238,7 +250,7 @@ bool Simulation::LoadModel(const std::string& Name) {
     Collection.Geometries.clear();
 
     int ID;
-    for (size_t i = 0; i < _Loader._SaverInfo.SGMapSize) {
+    for (size_t i = 0; i < _Loader._SaverInfo.SGMapSize; i++) {
         auto& sgm = _Loader.SGMap.get()[i];
         switch (sgm.Type) {
         case Geometries::GeometrySphere: {

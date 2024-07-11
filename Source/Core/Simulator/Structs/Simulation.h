@@ -154,6 +154,8 @@ public:
     //!   Call these from various '..Create' functions to ensure identical
     //!   and up-to-date requirements are fulfilled.
     int AddSphere(Geometries::Sphere& _S);
+    int AddCylinder(Geometries::Cylinder& _S);
+    int AddBox(Geometries::Box& _S);
     int AddSCCompartment(Compartments::BS& _C);
     int AddSCNeuron(CoreStructs::SCNeuronStruct& _N);
 

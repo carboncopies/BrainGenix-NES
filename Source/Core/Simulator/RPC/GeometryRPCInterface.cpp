@@ -72,8 +72,7 @@ std::string GeometryRPCInterface::CylinderCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    S.ID = Handle.Sim()->Collection.Geometries.size(); // we can do this since the shapes vector is a variant
-    Handle.Sim()->Collection.Geometries.push_back(S);
+    S.ID = Handle.Sim()->AddCylinder(S);
 
     // Return Result ID
     return Handle.ResponseWithID("ShapeID", S.ID);
@@ -95,8 +94,7 @@ std::string GeometryRPCInterface::BoxCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    S.ID = Handle.Sim()->Collection.Geometries.size(); // we can do this since the shapes vector is a variant
-    Handle.Sim()->Collection.Geometries.push_back(S);
+    S.ID = Handle.Sim()->AddBox(S);
 
     // Return Result ID
     return Handle.ResponseWithID("ShapeID", S.ID);
