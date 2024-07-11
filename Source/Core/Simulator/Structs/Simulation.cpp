@@ -4,6 +4,7 @@
 #include <Simulator/Structs/CalciumImaging.h>
 #include <Simulator/SimpleCompartmental/SCNeuron.h>
 #include <Simulator/Geometries/GeometryCollection.h>
+#include <Simulator/Geometries/Geometry.h>
 #include <Simulator/Geometries/Sphere.h>
 #include <Simulator/Geometries/Cylinder.h>
 #include <Simulator/Geometries/Box.h>
@@ -98,10 +99,10 @@ struct SaverInfo {
 };
 
 struct SaverGeometry {
-    GeometryShapeEnum Type; // Sphere, Cylinder or Box
+    Geometries::GeometryShapeEnum Type; // Sphere, Cylinder or Box
     size_t Idx;             // Index within the type-specific list
     SaverGeometry() {}
-    SaverGeometry(GeometryShapeEnum _Type, size_t _Idx): Type(_Type), Idx(_Idx) {}
+    SaverGeometry(Geometries::GeometryShapeEnum _Type, size_t _Idx): Type(_Type), Idx(_Idx) {}
 };
 
 class Saver {
@@ -109,24 +110,24 @@ protected:
     std::string Name_;
     SaverInfo _SaverInfo;
     std::vector<SaverGeometry> SGMap; // Vector indices follow those in Collection.Geometries.
-    std::vector<Sphere&> SphereReferences;
-    std::vector<Cylinder&> CylinderReferences;
-    std::vector<Box&> BoxReferences;
+    std::vector<Geometries::Sphere&> SphereReferences;
+    std::vector<Geometries::Cylinder&> CylinderReferences;
+    std::vector<Geometries::Box&> BoxReferences;
     std::vector<Compartments::BS>& RefToCompartments;
 
 public:
     Saver(const std::string& _Name) Name_(_Name) {}
 
-    void AddSphere(Sphere& S) {
-        SGMap.emplace_back(GeometrySphere, SphereReferences.size());
+    void AddSphere(Geometries::Sphere& S) {
+        SGMap.emplace_back(Geometries::GeometrySphere, SphereReferences.size());
         SphereReferences.emplace_back(S);
     }
-    void AddCylinder(Cylinder& C) {
-        SGMap.emplace_back(GeometryCylinder, CylinderReferences.size());
+    void AddCylinder(Geometries::Cylinder& C) {
+        SGMap.emplace_back(Geometries::GeometryCylinder, CylinderReferences.size());
         CylinderReferences.emplace_back(C);
     }
-    void AddBox(Box& B) {
-        SGMap.emplace_back(GeometryBox, BoxReferences.size());
+    void AddBox(Geometries::Box& B) {
+        SGMap.emplace_back(Geometries::GeometryBox, BoxReferences.size());
         BoxReferences.emplace_back(B);
     }
     void AddBSSCCompartments(std::vector<Compartments::BS>& _RefToCompartments) {
@@ -143,9 +144,9 @@ public:
 
         SaveFile.write((char*)&_SaverInfo, sizeof(_SaverInfo));
         SaveFile.write((char*)SGMap.data(), sizeof(SaverGeometry)*SGMap.size());
-        for (auto& ref : SphereReferences) SaveFile.write((char*)&ref, sizeof(Sphere));
-        for (auto& ref : CylinderReferences) SaveFile.write((char*)&ref, sizeof(Cylinder));
-        for (auto& ref : BoxReferences) SaveFile.write((char*)&ref, sizeof(Box));
+        for (auto& ref : SphereReferences) SaveFile.write((char*)&ref, sizeof(Geometries::Sphere));
+        for (auto& ref : CylinderReferences) SaveFile.write((char*)&ref, sizeof(Geometries::Cylinder));
+        for (auto& ref : BoxReferences) SaveFile.write((char*)&ref, sizeof(Geometries::Box));
 
         // Save fixed-size base data of compartments.
         for (auto& ref : RefToCompartments) {
@@ -163,9 +164,9 @@ protected:
     std::string Name_;
     SaverInfo _SaverInfo;
     std::unique_ptr<SaverGeometry[]> SGMap;
-    std::unique_ptr<Sphere[]> SphereData;
-    std::unique_ptr<Cylinder[]> CylinderData;
-    std::unique_ptr<Box[]> BoxData;
+    std::unique_ptr<Geometries::Sphere[]> SphereData;
+    std::unique_ptr<Geometries::Cylinder[]> CylinderData;
+    std::unique_ptr<Geometries::Box[]> BoxData;
 
 public:
     Loader(const std::string& _Name) Name_(_Name) {}
@@ -176,12 +177,12 @@ public:
 
         SGMap = std::make_unique<SaverGeometry[]>(_SaverInfo.SGMapSize);
         LoadFile.read((char*)SGMap.get(), sizeof(SaverGeometry)*_SaverInfo.SGMapSize);
-        SphereData = std::make_unique<Sphere[]>(_SaverInfo.SphereReferencesSize);
-        LoadFile.read((char*)SphereData.get(), sizeof(Sphere)*_SaverInfo.SphereReferencesSize);
-        CylinderData = std::make_unique<Cylinder[]>(_SaverInfo.CylinderReferencesSize);
-        LoadFile.read((char*)CylinderData.get(), sizeof(Cylinder)*_SaverInfo.CylinderReferencesSize);
-        BoxData = std::make_unique<Box[]>(_SaverInfo.BoxReferencesSize);
-        LoadFile.read((char*)BoxData.get(), sizeof(Box)*_SaverInfo.BoxReferencesSize);
+        SphereData = std::make_unique<Geometries::Sphere[]>(_SaverInfo.SphereReferencesSize);
+        LoadFile.read((char*)SphereData.get(), sizeof(Geometries::Sphere)*_SaverInfo.SphereReferencesSize);
+        CylinderData = std::make_unique<Geometries::Cylinder[]>(_SaverInfo.CylinderReferencesSize);
+        LoadFile.read((char*)CylinderData.get(), sizeof(Geometries::Cylinder)*_SaverInfo.CylinderReferencesSize);
+        BoxData = std::make_unique<Geometries::Box[]>(_SaverInfo.BoxReferencesSize);
+        LoadFile.read((char*)BoxData.get(), sizeof(Geometries::Box)*_SaverInfo.BoxReferencesSize);
 
 
 
@@ -197,17 +198,17 @@ bool Simulation::SaveModel(const std::string& Name) {
     // Prepare to save shapes.
     for (size_t i = 0; i < Collection.Geometries.Size(); i++) {
         switch (GetShapeType(i)) {
-        case GeometrySphere: {
+        case Geometries::GeometrySphere: {
             auto& S = Collection.GetSphere(i);
             _Saver.AddSphere(S);
             break;
         }
-        case GeometryCylinder: {
+        case Geometries::GeometryCylinder: {
             auto& C = Collection.GetCylinder(i);
             _Saver.AddCylinder(C);
             break;
         }
-        case GeometryBox: {
+        case Geometries::GeometryBox: {
             auto& B = Collection.GetBox(i);
             _Saver.AddBox(B);
             break;
@@ -239,15 +240,15 @@ bool Simulation::LoadModel(const std::string& Name) {
     for (size_t i = 0; i < _Loader._SaverInfo.SGMapSize) {
         auto& sgm = _Loader.SGMap.get()[i];
         switch (sgm.Type) {
-        case GeometrySphere: {
+        case Geometries::GeometrySphere: {
             ID = AddSphere(SphereData.get()[sgm.Idx]);
             break;
         }
-        case GeometryCylinder: {
+        case Geometries::GeometryCylinder: {
             ID = AddCylinder(CylinderData.get()[sgm.Idx]);
             break;
         }
-        case GeometryBox: {
+        case Geometries::GeometryBox: {
             ID = AddBox(BoxData.get()[sgm.Idx]);
             break;
         }
