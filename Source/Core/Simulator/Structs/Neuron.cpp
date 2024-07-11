@@ -134,7 +134,7 @@ std::unique_ptr<uint8_t[]> SCNeuronStruct::GetFlat() const {
  * storage.
  */
 bool SCNeuronStruct::FromFlat(SCNeuronStructFlatHeader* header) {
-    *this = header->Base;
+    SCNeuronBase::operator=(header->Base);
 
     Name = (const char*) (header+header->NameOffset);
 
