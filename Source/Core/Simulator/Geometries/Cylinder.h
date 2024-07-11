@@ -31,18 +31,25 @@ namespace Simulator {
 namespace Geometries {
 
 /**
- * @brief This struct defines a cylinder geometry used in creation of components
- * of simple ball-and-stick neural circuits.
- *
+ * Just the easily storable fixed-size data.
  */
-struct Cylinder : Geometry {
-
+struct CylinderBase: Geometry {
     float End0Radius_um = 1.0; //! Radius in micrometers of the first end of the cylinder.
     Vec3D End0Pos_um; //! Position of the first end of the Cylinder in
                       //! micrometers (relative to origin).
     float End1Radius_um = 1.0; //! Radius in micrometers of the second end of the cylinder.
     Vec3D End1Pos_um{1.0, 0.0, 0.0}; //! Position of the second end of the Cylinder in
                                      //! micrometers (relative to origin).
+};
+
+/**
+ * @brief This struct defines a cylinder geometry used in creation of components
+ * of simple ball-and-stick neural circuits.
+ *
+ */
+struct Cylinder : CylinderBase {
+
+    std::string Name;
 
     // Constructors
     Cylinder();

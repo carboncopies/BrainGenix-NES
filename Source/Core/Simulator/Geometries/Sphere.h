@@ -24,12 +24,19 @@ namespace Geometries {
 
 
 /**
+ * Just the easily storable fixed-size data.
+ */
+struct SphereBase: Geometry {
+    float Radius_um; //! Radius in micrometers of the sphere.  
+};
+
+/**
  * @brief This struct defines a sphere geometry used in creation of components of a simple ball-and-stick neural circuit.
  * 
  */
-struct Sphere: Geometry {
-    
-    float Radius_um; //! Radius in micrometers of the sphere.
+struct Sphere: SphereBase {
+
+    std::string Name;
 
     //! Constructors
     Sphere();

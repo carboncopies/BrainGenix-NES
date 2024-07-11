@@ -39,7 +39,6 @@ enum GeometryShapeEnum {
  */
 
 struct Geometry {
-    std::string Name;   //! Name of the Geometry
     int ID;             //! ID of the Geometry
     GeometryShapeEnum GeometryShape = GeometryUnspecified; //! Shape of the derived class instantiation that inherits Geometry.
 

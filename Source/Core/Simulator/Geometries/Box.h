@@ -29,13 +29,20 @@ namespace Simulator {
 namespace Geometries {
 
 /**
+ * Just the easily storable fixed-size data.
+ */
+struct BoxBase: Geometry {
+    Vec3D Dims_um{5.0, 10.0, 10.0}; //! Dimensions of the box.
+    Vec3D Rotations_rad{0.0, 0.0, 0.0}; //! Rotation of the box (euler angles) in radians.
+};
+
+/**
  * @brief Struct representing a cuboidal box geometry.
  *
  */
-struct Box : Geometry {
+struct Box : BoxBase {
 
-    Vec3D Dims_um{5.0, 10.0, 10.0}; //! Dimensions of the box.
-    Vec3D Rotations_rad{0.0, 0.0, 0.0}; //! Rotation of the box (euler angles) in radians.
+    std::string Name;
 
     //! Constructors
     Box();
