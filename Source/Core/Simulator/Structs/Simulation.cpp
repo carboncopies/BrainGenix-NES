@@ -198,7 +198,7 @@ public:
         std::vector<uint32_t> flatdata_sizes; 
         for (auto& ref : (*RefToSCNeurons)) { // from a list of shared pointers to SCNeuron objects
             std::unique_ptr<uint8_t[]> flatdata = static_cast<SCNeuron*>(ref.get())->build_data.GetFlat();
-            CoreStructs::SCNeuronStructFlatHeader* header_ptr = (CoreStructs::SCNeuronStructFlatHeader*) flatdata->data();
+            CoreStructs::SCNeuronStructFlatHeader* header_ptr = (CoreStructs::SCNeuronStructFlatHeader*) flatdata;
             flatdata_sizes.push_back(header_ptr->FlatBufSize)
             flatdata_list.push_back(flatdata);
         }
