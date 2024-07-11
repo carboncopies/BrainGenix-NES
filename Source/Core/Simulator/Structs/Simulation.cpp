@@ -140,7 +140,7 @@ public:
         _SaverInfo.SphereReferencesSize = SphereReferences.size();
         _SaverInfo.CylinderReferencesSize = CylinderReferences.size();
         _SaverInfo.BoxReferencesSize = BoxReferences.size();
-        _SaverInfo.BSSCCompartmentsSize = RefToCompartments.size();
+        _SaverInfo.BSSCCompartmentsSize = RefToCompartments->size();
 
         SaveFile.write((char*)&_SaverInfo, sizeof(_SaverInfo));
         SaveFile.write((char*)SGMap.data(), sizeof(SaverGeometry)*SGMap.size());
@@ -160,7 +160,7 @@ public:
 };
 
 class Loader {
-protected:
+public:
     std::string Name_;
     SaverInfo _SaverInfo;
     std::unique_ptr<SaverGeometry[]> SGMap;
@@ -196,8 +196,8 @@ public:
 bool Simulation::SaveModel(const std::string& Name) {
     Saver _Saver(Name);
     // Prepare to save shapes.
-    for (size_t i = 0; i < Collection.Geometries.Size(); i++) {
-        switch (GetShapeType(i)) {
+    for (size_t i = 0; i < Collection.Size(); i++) {
+        switch (Collection.GetShapeType(i)) {
         case Geometries::GeometrySphere: {
             auto& S = Collection.GetSphere(i);
             _Saver.AddSphere(S);
@@ -223,7 +223,7 @@ bool Simulation::SaveModel(const std::string& Name) {
     _Saver.AddBSSCCompartments(BSCompartments);
     // Save neurons.
     // Save synapses.
-    return Saver.Save();
+    return _Saver.Save();
 }
 
 /**
@@ -242,15 +242,15 @@ bool Simulation::LoadModel(const std::string& Name) {
         auto& sgm = _Loader.SGMap.get()[i];
         switch (sgm.Type) {
         case Geometries::GeometrySphere: {
-            ID = AddSphere(SphereData.get()[sgm.Idx]);
+            ID = AddSphere(_Loader.SphereData.get()[sgm.Idx]);
             break;
         }
         case Geometries::GeometryCylinder: {
-            ID = AddCylinder(CylinderData.get()[sgm.Idx]);
+            ID = AddCylinder(_Loader.CylinderData.get()[sgm.Idx]);
             break;
         }
         case Geometries::GeometryBox: {
-            ID = AddBox(BoxData.get()[sgm.Idx]);
+            ID = AddBox(_Loader.BoxData.get()[sgm.Idx]);
             break;
         }
         default: {
