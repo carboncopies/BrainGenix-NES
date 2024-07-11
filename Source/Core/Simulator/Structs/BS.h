@@ -24,12 +24,10 @@ namespace Simulator {
 namespace Compartments {
 
 /**
- * @brief This struct provides the data storage for each of the compartments
- * 
+ * @brief Crucial fixed-size data of a component. This is saved in neuronal
+ * circuit model saves. Does not include name and cached data.
  */
-struct BS {
-
-    std::string Name; /**Name of the BS Compartment*/
+struct BSBaseData {
     int ID = -1; /**ID of the BS compartment*/
 
     int ShapeID; /**ID of the associated shape of this compartment*/
@@ -39,6 +37,15 @@ struct BS {
     float DecayTime_ms; /**After hyperpolarization time constant in ms, also known as tau_ahp*/
     float RestingPotential_mV; /**Resting Potential in millivolts*/
     float AfterHyperpolarizationAmplitude_mV; /**AfterHyperpolarization Amplitude in millivolts*/
+};
+
+/**
+ * @brief This struct provides the data storage for each of the compartments
+ * 
+ */
+struct BS: public BSBaseData {
+
+    std::string Name; /**Name of the BS Compartment*/
 
     // Direct access caches:
     Geometries::Geometry* ShapePtr = nullptr;

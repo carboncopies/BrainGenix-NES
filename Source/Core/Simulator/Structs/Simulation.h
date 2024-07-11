@@ -157,6 +157,9 @@ public:
     int AddSCCompartment(Compartments::BS& _C);
     int AddSCNeuron(CoreStructs::SCNeuronStruct& _N);
 
+    bool SaveModel(const std::string& Name);
+    bool LoadModel(const std::string& Name);
+
     size_t GetTotalNumberOfNeurons();
     std::vector<std::shared_ptr<CoreStructs::Neuron>> GetAllNeurons();
     std::vector<size_t> GetAllNeuronIDs();

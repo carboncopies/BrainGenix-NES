@@ -84,6 +84,176 @@ int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
     return _N.ID;
 }
 
+struct SaverInfo {
+    size_t SGMapSize = 0;
+    size_t SphereReferencesSize = 0;
+    size_t CylinderReferencesSize = 0;
+    size_t BoxReferencesSize = 0;
+    size_t BSSCCompartmentsSize = 0;
+};
+
+struct SaverGeometry {
+    GeometryShapeEnum Type; // Sphere, Cylinder or Box
+    size_t Idx;             // Index within the type-specific list
+    SaverGeometry() {}
+    SaverGeometry(GeometryShapeEnum _Type, size_t _Idx): Type(_Type), Idx(_Idx) {}
+};
+
+class Saver {
+protected:
+    std::string Name_;
+    SaverInfo _SaverInfo;
+    std::vector<SaverGeometry> SGMap; // Vector indices follow those in Collection.Geometries.
+    std::vector<Sphere&> SphereReferences;
+    std::vector<Cylinder&> CylinderReferences;
+    std::vector<Box&> BoxReferences;
+    std::vector<Compartments::BS>& RefToCompartments;
+
+public:
+    Saver(const std::string& _Name) Name_(_Name) {}
+
+    void AddSphere(Sphere& S) {
+        SGMap.emplace_back(GeometrySphere, SphereReferences.size());
+        SphereReferences.emplace_back(S);
+    }
+    void AddCylinder(Cylinder& C) {
+        SGMap.emplace_back(GeometryCylinder, CylinderReferences.size());
+        CylinderReferences.emplace_back(C);
+    }
+    void AddBox(Box& B) {
+        SGMap.emplace_back(GeometryBox, BoxReferences.size());
+        BoxReferences.emplace_back(B);
+    }
+    void AddBSSCCompartments(std::vector<Compartments::BS>& _RefToCompartments) {
+        RefToCompartments = _RefToCompartments;
+    }
+
+    bool Save() {
+        auto SaveFile = std::fstream(Name_, std::ios::out | std::ios::binary);
+        _SaverInfo.SGMapSize = SGMap.size();
+        _SaverInfo.SphereReferencesSize = SphereReferences.size();
+        _SaverInfo.CylinderReferencesSize = CylinderReferences.size();
+        _SaverInfo.BoxReferencesSize = BoxReferences.size();
+        _SaverInfo.BSSCCompartmentsSize = RefToCompartments.size();
+
+        SaveFile.write((char*)&_SaverInfo, sizeof(_SaverInfo));
+        SaveFile.write((char*)SGMap.data(), sizeof(SaverGeometry)*SGMap.size());
+        for (auto& ref : SphereReferences) SaveFile.write((char*)&ref, sizeof(Sphere));
+        for (auto& ref : CylinderReferences) SaveFile.write((char*)&ref, sizeof(Cylinder));
+        for (auto& ref : BoxReferences) SaveFile.write((char*)&ref, sizeof(Box));
+
+        // Save fixed-size base data of compartments.
+        for (auto& ref : RefToCompartments) {
+            Compartments::BSBaseData& basedataref = ref;
+            SaveFile.write((char*)&basedataref, sizeof(Compartments::BSBaseData));
+        }
+
+        SaveFile.close();
+        return SaveFile.good();
+    }
+};
+
+class Loader {
+protected:
+    std::string Name_;
+    SaverInfo _SaverInfo;
+    std::unique_ptr<SaverGeometry[]> SGMap;
+    std::unique_ptr<Sphere[]> SphereData;
+    std::unique_ptr<Cylinder[]> CylinderData;
+    std::unique_ptr<Box[]> BoxData;
+
+public:
+    Loader(const std::string& _Name) Name_(_Name) {}
+
+    bool Load() {
+        auto LoadFile = std::fstream(Name_, std::ios::in | std::ios::binary);
+        LoadFile.read((char*)&_SaverInfo, sizeof(_SaverInfo));
+
+        SGMap = std::make_unique<SaverGeometry[]>(_SaverInfo.SGMapSize);
+        LoadFile.read((char*)SGMap.get(), sizeof(SaverGeometry)*_SaverInfo.SGMapSize);
+        SphereData = std::make_unique<Sphere[]>(_SaverInfo.SphereReferencesSize);
+        LoadFile.read((char*)SphereData.get(), sizeof(Sphere)*_SaverInfo.SphereReferencesSize);
+        CylinderData = std::make_unique<Cylinder[]>(_SaverInfo.CylinderReferencesSize);
+        LoadFile.read((char*)CylinderData.get(), sizeof(Cylinder)*_SaverInfo.CylinderReferencesSize);
+        BoxData = std::make_unique<Box[]>(_SaverInfo.BoxReferencesSize);
+        LoadFile.read((char*)BoxData.get(), sizeof(Box)*_SaverInfo.BoxReferencesSize);
+
+
+
+        return LoadFile.good();
+    }
+};
+
+/**
+ * Save neuronal circuit specifications to file.
+ */
+bool Simulation::SaveModel(const std::string& Name) {
+    Saver _Saver(Name);
+    // Prepare to save shapes.
+    for (size_t i = 0; i < Collection.Geometries.Size(); i++) {
+        switch (GetShapeType(i)) {
+        case GeometrySphere: {
+            auto& S = Collection.GetSphere(i);
+            _Saver.AddSphere(S);
+            break;
+        }
+        case GeometryCylinder: {
+            auto& C = Collection.GetCylinder(i);
+            _Saver.AddCylinder(C);
+            break;
+        }
+        case GeometryBox: {
+            auto& B = Collection.GetBox(i);
+            _Saver.AddBox(B);
+            break;
+        }
+        default: {
+            Logger_->Log("Encountered a geometric shape for which model saving is not implemented!", 7);
+            return false;
+        }
+        }
+    }
+    // Prepare to save compartments.
+    _Saver.AddBSSCCompartments(BSCompartments);
+    // Save neurons.
+    // Save synapses.
+    return Saver.Save();
+}
+
+/**
+ * Load neuronal circuit specifications from file, replacing any
+ * previous specifications in this simulation object.
+ */
+bool Simulation::LoadModel(const std::string& Name) {
+    Loader _Loader(Name);
+    if (!_Loader.Load()) return false;
+
+    // Reset and instantiate shapes.
+    Collection.Geometries.clear();
+    int ID;
+    for (size_t i = 0; i < _Loader._SaverInfo.SGMapSize) {
+        auto& sgm = _Loader.SGMap.get()[i];
+        switch (sgm.Type) {
+        case GeometrySphere: {
+            ID = AddSphere(SphereData.get()[sgm.Idx]);
+            break;
+        }
+        case GeometryCylinder: {
+            ID = AddCylinder(CylinderData.get()[sgm.Idx]);
+            break;
+        }
+        case GeometryBox: {
+            ID = AddBox(BoxData.get()[sgm.Idx]);
+            break;
+        }
+        default: {
+            Logger_->Log("Loaded unknown shape type.", 7);
+        }
+        }
+    }
+    return true;
+}
+
 size_t Simulation::GetTotalNumberOfNeurons() {
     return Neurons.size();
     // size_t long num_neurons = 0;
