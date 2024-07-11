@@ -40,6 +40,7 @@ struct Sphere: SphereBase {
 
     //! Constructors
     Sphere();
+    Sphere(const SphereBase& _Base): SphereBase(_Base) {}
     Sphere(float _Radius_um);
     Sphere(const Vec3D & _Center_um, float _Radius_um);
 

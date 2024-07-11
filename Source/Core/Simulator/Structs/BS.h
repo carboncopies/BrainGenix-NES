@@ -50,6 +50,9 @@ struct BS: public BSBaseData {
     // Direct access caches:
     Geometries::Geometry* ShapePtr = nullptr;
 
+    BS() {}
+    BS(const BSBaseData& _Base): BSBaseData(_Base) {}
+
 };
 
 }; // Close Namespace Compartments

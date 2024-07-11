@@ -156,9 +156,18 @@ public:
 
         SaveFile.write((char*)&_SaverInfo, sizeof(_SaverInfo));
         SaveFile.write((char*)SGMap.data(), sizeof(SaverGeometry)*SGMap.size());
-        for (auto& ptr : SphereReferences) SaveFile.write((char*)ptr, sizeof(Geometries::Sphere));
-        for (auto& ptr : CylinderReferences) SaveFile.write((char*)ptr, sizeof(Geometries::Cylinder));
-        for (auto& ptr : BoxReferences) SaveFile.write((char*)ptr, sizeof(Geometries::Box));
+        for (auto& ptr : SphereReferences) {
+            Geometries::SphereBase& basedataref = *ptr;
+            SaveFile.write((char*)&basedataref, sizeof(Geometries::SphereBase));
+        }
+        for (auto& ptr : CylinderReferences) {
+            Geometries::CylinderBase& basedataref = *ptr;
+            SaveFile.write((char*)&basedataref, sizeof(Geometries::CylinderBase));
+        }
+        for (auto& ptr : BoxReferences) {
+            Geometries::BoxBase& basedataref = *ptr;
+            SaveFile.write((char*)&basedataref, sizeof(Geometries::BoxBase));
+        }
 
         // Save fixed-size base data of compartments.
         for (auto& ref : (*RefToCompartments)) {
@@ -176,9 +185,10 @@ public:
     std::string Name_;
     SaverInfo _SaverInfo;
     std::unique_ptr<SaverGeometry[]> SGMap;
-    std::unique_ptr<Geometries::Sphere[]> SphereData;
-    std::unique_ptr<Geometries::Cylinder[]> CylinderData;
-    std::unique_ptr<Geometries::Box[]> BoxData;
+    std::unique_ptr<Geometries::SphereBase[]> SphereData;
+    std::unique_ptr<Geometries::CylinderBase[]> CylinderData;
+    std::unique_ptr<Geometries::BoxBase[]> BoxData;
+    std::unique_ptr<Compartments::BSBaseData[]> CompartmentData;
 
 public:
     Loader(const std::string& _Name): Name_(_Name) {}
@@ -189,14 +199,15 @@ public:
 
         SGMap = std::make_unique<SaverGeometry[]>(_SaverInfo.SGMapSize);
         LoadFile.read((char*)SGMap.get(), sizeof(SaverGeometry)*_SaverInfo.SGMapSize);
-        SphereData = std::make_unique<Geometries::Sphere[]>(_SaverInfo.SphereReferencesSize);
-        LoadFile.read((char*)SphereData.get(), sizeof(Geometries::Sphere)*_SaverInfo.SphereReferencesSize);
-        CylinderData = std::make_unique<Geometries::Cylinder[]>(_SaverInfo.CylinderReferencesSize);
-        LoadFile.read((char*)CylinderData.get(), sizeof(Geometries::Cylinder)*_SaverInfo.CylinderReferencesSize);
-        BoxData = std::make_unique<Geometries::Box[]>(_SaverInfo.BoxReferencesSize);
-        LoadFile.read((char*)BoxData.get(), sizeof(Geometries::Box)*_SaverInfo.BoxReferencesSize);
+        SphereData = std::make_unique<Geometries::SphereBase[]>(_SaverInfo.SphereReferencesSize);
+        LoadFile.read((char*)SphereData.get(), sizeof(Geometries::SphereBase)*_SaverInfo.SphereReferencesSize);
+        CylinderData = std::make_unique<Geometries::CylinderBase[]>(_SaverInfo.CylinderReferencesSize);
+        LoadFile.read((char*)CylinderData.get(), sizeof(Geometries::CylinderBase)*_SaverInfo.CylinderReferencesSize);
+        BoxData = std::make_unique<Geometries::BoxBase[]>(_SaverInfo.BoxReferencesSize);
+        LoadFile.read((char*)BoxData.get(), sizeof(Geometries::BoxBase)*_SaverInfo.BoxReferencesSize);
 
-
+        CompartmentData = std::make_unique<Compartments::BSBaseData[]>(_SaverInfo.BSSCCompartmentsSize);
+        LoadFile.read((char*)CompartmentData.get(), sizeof(Compartments::BSBaseData)*_SaverInfo.BSSCCompartmentsSize);
 
         return LoadFile.good();
     }
@@ -254,15 +265,21 @@ bool Simulation::LoadModel(const std::string& Name) {
         auto& sgm = _Loader.SGMap.get()[i];
         switch (sgm.Type) {
         case Geometries::GeometrySphere: {
-            ID = AddSphere(_Loader.SphereData.get()[sgm.Idx]);
+            Geometries::Sphere _S(_Loader.SphereData.get()[sgm.Idx]);
+            _S.Name = "sphere-"+std::to_string(i);
+            ID = AddSphere(_S);
             break;
         }
         case Geometries::GeometryCylinder: {
-            ID = AddCylinder(_Loader.CylinderData.get()[sgm.Idx]);
+            Geometries::Cylinder _S(_Loader.CylinderData.get()[sgm.Idx]);
+            _S.Name = "cylinder-"+std::to_string(i);
+            ID = AddCylinder(_S);
             break;
         }
         case Geometries::GeometryBox: {
-            ID = AddBox(_Loader.BoxData.get()[sgm.Idx]);
+            Geometries::Box _S(_Loader.BoxData.get()[sgm.Idx]);
+            _S.Name = "box-"+std::to_string(i);
+            ID = AddBox(_S);
             break;
         }
         default: {
@@ -270,6 +287,16 @@ bool Simulation::LoadModel(const std::string& Name) {
         }
         }
     }
+
+    // Reset and instantiate compartments.
+    BSCompartments.clear();
+
+    for (size_t i = 0; i < _Loader._SaverInfo.BSSCCompartmentsSize; i++) {
+        Compartments::BS _C(_Loader.CompartmentData.get()[i]);
+        _C.Name = "compartment-"+std::to_string(i);
+        ID = AddSCCompartment(_C);
+    }
+
     return true;
 }
 

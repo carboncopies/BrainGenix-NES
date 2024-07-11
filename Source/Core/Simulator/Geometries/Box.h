@@ -46,6 +46,7 @@ struct Box : BoxBase {
 
     //! Constructors
     Box();
+    Box(const BoxBase& _Base): BoxBase(_Base) {}
     Box(const Vec3D & _Center_um, const Vec3D & _Dims_um);
     Box(const Vec3D & _Center_um, const Vec3D & _Dims_um, const Vec3D & _Rotations_rad);
 

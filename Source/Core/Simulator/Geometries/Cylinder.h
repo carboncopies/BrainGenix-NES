@@ -53,6 +53,7 @@ struct Cylinder : CylinderBase {
 
     // Constructors
     Cylinder();
+    Cylinder(const CylinderBase& _Base): CylinderBase(_Base) {}
     Cylinder(float _End0Radius_um, const Vec3D & _End0Pos_um, float _End1Radius_um, const Vec3D & _End1Pos_um);
 
     //! Renders the cylinder in 3D.
