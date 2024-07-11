@@ -114,7 +114,7 @@ std::unique_ptr<uint8_t[]> SCNeuronStruct::GetFlat() const {
 
     header.AxonCompartmentIDsSize = AxonCompartmentIDs.size();
     header.AxonCompartmentIDsOffset = header.DendriteCompartmentIDsOffset + DendriteCompartmentIDsSizeOf;
-    size_t AxonCompartmentIDsSizeOf = sizeof(decltype(AxonCompartmentIDs)::value_type)*header.AxonCompartmentIDsSize);
+    size_t AxonCompartmentIDsSizeOf = sizeof(decltype(AxonCompartmentIDs)::value_type)*header.AxonCompartmentIDsSize;
     
     header.FlatBufSize = sizeof(header)+SomaCompartmentIDsSizeOf+DendriteCompartmentIDsSizeOf+AxonCompartmentIDsSizeOf;
 
