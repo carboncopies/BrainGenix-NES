@@ -3,6 +3,10 @@
 #include <Simulator/Structs/RecordingElectrode.h>
 #include <Simulator/Structs/CalciumImaging.h>
 #include <Simulator/SimpleCompartmental/SCNeuron.h>
+#include <Simulator/Geometries/GeometryCollection.h>
+#include <Simulator/Geometries/Sphere.h>
+#include <Simulator/Geometries/Cylinder.h>
+#include <Simulator/Geometries/Box.h>
 
 
 
