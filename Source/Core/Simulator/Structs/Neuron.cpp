@@ -98,7 +98,7 @@ void Neuron::OutputTransmitterAdded(ReceptorData RData) {
 std::unique_ptr<std::vector<uint8_t>> SCNeuronStruct::GetFlat() const {
     SCNeuronStructFlatHeader header;
 
-    header.Base = ::SCNeuronBase;
+    header.Base = *this;
 
     header.NameSize = Name.size()+1; // for c_str()
     header.NameOffset = sizeof(header);
