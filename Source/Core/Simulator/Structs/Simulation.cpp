@@ -110,28 +110,28 @@ protected:
     std::string Name_;
     SaverInfo _SaverInfo;
     std::vector<SaverGeometry> SGMap; // Vector indices follow those in Collection.Geometries.
-    std::vector<Geometries::Sphere&> SphereReferences;
-    std::vector<Geometries::Cylinder&> CylinderReferences;
-    std::vector<Geometries::Box&> BoxReferences;
-    std::vector<Compartments::BS>& RefToCompartments;
+    std::vector<Geometries::Sphere*> SphereReferences;
+    std::vector<Geometries::Cylinder*> CylinderReferences;
+    std::vector<Geometries::Box*> BoxReferences;
+    std::vector<Compartments::BS>* RefToCompartments;
 
 public:
     Saver(const std::string& _Name) Name_(_Name) {}
 
     void AddSphere(Geometries::Sphere& S) {
         SGMap.emplace_back(Geometries::GeometrySphere, SphereReferences.size());
-        SphereReferences.emplace_back(S);
+        SphereReferences.emplace_back(&S);
     }
     void AddCylinder(Geometries::Cylinder& C) {
         SGMap.emplace_back(Geometries::GeometryCylinder, CylinderReferences.size());
-        CylinderReferences.emplace_back(C);
+        CylinderReferences.emplace_back(&C);
     }
     void AddBox(Geometries::Box& B) {
         SGMap.emplace_back(Geometries::GeometryBox, BoxReferences.size());
-        BoxReferences.emplace_back(B);
+        BoxReferences.emplace_back(&B);
     }
     void AddBSSCCompartments(std::vector<Compartments::BS>& _RefToCompartments) {
-        RefToCompartments = _RefToCompartments;
+        RefToCompartments = &_RefToCompartments;
     }
 
     bool Save() {
@@ -144,12 +144,12 @@ public:
 
         SaveFile.write((char*)&_SaverInfo, sizeof(_SaverInfo));
         SaveFile.write((char*)SGMap.data(), sizeof(SaverGeometry)*SGMap.size());
-        for (auto& ref : SphereReferences) SaveFile.write((char*)&ref, sizeof(Geometries::Sphere));
-        for (auto& ref : CylinderReferences) SaveFile.write((char*)&ref, sizeof(Geometries::Cylinder));
-        for (auto& ref : BoxReferences) SaveFile.write((char*)&ref, sizeof(Geometries::Box));
+        for (auto& ptr : SphereReferences) SaveFile.write((char*)ptr, sizeof(Geometries::Sphere));
+        for (auto& ptr : CylinderReferences) SaveFile.write((char*)ptr, sizeof(Geometries::Cylinder));
+        for (auto& ptr : BoxReferences) SaveFile.write((char*)ptr, sizeof(Geometries::Box));
 
         // Save fixed-size base data of compartments.
-        for (auto& ref : RefToCompartments) {
+        for (auto& ref : (*RefToCompartments)) {
             Compartments::BSBaseData& basedataref = ref;
             SaveFile.write((char*)&basedataref, sizeof(Compartments::BSBaseData));
         }
@@ -236,6 +236,7 @@ bool Simulation::LoadModel(const std::string& Name) {
 
     // Reset and instantiate shapes.
     Collection.Geometries.clear();
+    
     int ID;
     for (size_t i = 0; i < _Loader._SaverInfo.SGMapSize) {
         auto& sgm = _Loader.SGMap.get()[i];
