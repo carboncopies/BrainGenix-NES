@@ -208,7 +208,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         //        parentage dependencies of compartments, wherer there are
         //        terminal segments (and growth cones), etc.
         parsing_fs_type = dendrite_fs;
-        PLL_LOOP_FORWARD_NESTED(fibre_structure, e->InputStructure->head(), 1, dptr) {
+        PLL_LOOP_FORWARD_NESTED(fibre_structure, e->InputStructure()->head(), 1, dptr) {
             if (!RecursiveNeuriteBuild(false, _Params, N, dptr)) {
                 NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in dendrite build.");
                 return false;
@@ -217,7 +217,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
 
         // 4. Build axons.
         parsing_fs_type = axon_fs;
-        PLL_LOOP_FORWARD_NESTED(fibre_structure, e->OutputStructure->head(), 1, aptr) {
+        PLL_LOOP_FORWARD_NESTED(fibre_structure, e->OutputStructure()->head(), 1, aptr) {
             if (!RecursiveNeuriteBuild(true, _Params, N, aptr)) {
                 NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in axon build.");
                 return false;
