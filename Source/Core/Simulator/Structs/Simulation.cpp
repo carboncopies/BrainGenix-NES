@@ -406,14 +406,35 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
 
     ptr += sizeof(SaverInfo);
     SaverGeometry* sgptr = (SaverGeometry*) ptr;
-    std::cout << "Geometry Shapes Map: ";
+    std::cout << "Geometry Shapes Map:\n";
     for (size_t i = 0; i < siptr->SGMapSize; i++) std::cout << sgptr[i].str();
     std::cout << '\n';
 
     ptr += siptr->SGMapSize * sizeof(SaverGeometry);
     Geometries::SphereBase* sbptr = (Geometries::SphereBase*) ptr;
-    std::cout << "Sphere Base Data: ";
+    std::cout << "Sphere Base Data:\n";
     for (size_t i = 0; i < siptr->SphereReferencesSize; i++) std::cout << sbptr[i].str();
+
+    ptr += siptr->SphereReferencesSize * sizeof(Geometries::SphereBase);
+    Geometries::CylinderBase* cbptr = (Geometries::CylinderBase*) ptr;
+    std::cout << "Cylinder Base Data:\n";
+    for (size_t i = 0; i < siptr->CylinderReferencesSize; i++) std::cout << cbptr[i].str();
+
+    ptr += siptr->CylinderReferencesSize * sizeof(Geometries::CylinderBase);
+    Geometries::BoxBase* bbptr = (Geometries::BoxBase*) ptr;
+    std::cout << "Box Base Data:\n";
+    for (size_t i = 0; i < siptr->BoxReferencesSize; i++) std::cout << bbptr[i].str();
+
+    ptr += siptr->BoxReferencesSize * sizeof(Geometries::BoxBase);
+    Compartments::BSBaseData* cpbptr = (Compartments::BSBaseData*) ptr;
+    std::cout << "Compartments Base Data:\n";
+    for (size_t i = 0; i < siptr->BSSCCompartmentsSize; i++) std::cout << cpbptr[i].str();
+
+    ptr += siptr->BSSCCompartmentsSize * sizeof(Compartments::BSBaseData);
+    uint32_t* fdsptr = (uint32_t*) ptr;
+    std::cout << "SC Neurons Flat Data Sizes:\n";
+    for (size_t i = 0; i < siptr->NeuronsSize; i++) std::cout << fdsptr[i] << ' ';
+    std::cout << '\n';
 
 }
 

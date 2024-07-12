@@ -12,6 +12,7 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <string>
+#include <sstream>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -37,6 +38,18 @@ struct BSBaseData {
     float DecayTime_ms; /**After hyperpolarization time constant in ms, also known as tau_ahp*/
     float RestingPotential_mV; /**Resting Potential in millivolts*/
     float AfterHyperpolarizationAmplitude_mV; /**AfterHyperpolarization Amplitude in millivolts*/
+
+    std::string str() const {
+        std::stringstream ss;
+        ss << "ID: " << ID;
+        ss << "\nShapeID: " << ShapeID;
+        ss << "\nMembranePotential_mV: " << MembranePotential_mV;
+        ss << "\nSpikeThreshold_mV: " << SpikeThreshold_mV;
+        ss << "\nDecayTime_ms: " << DecayTime_ms;
+        ss << "\nRestingPotential_mV: " << RestingPotential_mV;
+        ss << "\nAfterHyperpolarizationAmplitude_mV: " << AfterHyperpolarizationAmplitude_mV << '\n';
+        return ss.str();
+    }
 };
 
 /**
