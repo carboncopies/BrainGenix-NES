@@ -11,6 +11,7 @@
 #pragma once
 
 #include <string>
+#include <sstream>
 #include <tuple>
 #include <unordered_map>
 #include <vector>
@@ -146,6 +147,20 @@ struct SCNeuronBase {
     float PostsynapticPotentialRiseTime_ms;
     float PostsynapticPotentialDecayTime_ms;
     float PostsynapticPotentialAmplitude_nA;
+
+    std::string str() const {
+        std::stringstream ss;
+        ss << "ID: " << ID;
+        ss << "\nMembranePotential_mV: " << MembranePotential_mV;
+        ss << "\nRestingPotential_mV: " << RestingPotential_mV;
+        ss << "\nSpikeThreshold_mV: " << SpikeThreshold_mV;
+        ss << "\nDecayTime_ms: " << DecayTime_ms;
+        ss << "\nAfterHyperpolarizationAmplitude_mV: " << AfterHyperpolarizationAmplitude_mV;
+        ss << "\nPostsynapticPotentialRiseTime_ms: " << PostsynapticPotentialRiseTime_ms;
+        ss << "\nPostsynapticPotentialDecayTime_ms: " << PostsynapticPotentialDecayTime_ms;
+        ss << "\nPostsynapticPotentialAmplitude_nA: " << PostsynapticPotentialAmplitude_nA << '\n';
+        return ss.str();
+    }
 };
 
 struct SCNeuronStructFlatHeader {
@@ -159,6 +174,21 @@ struct SCNeuronStructFlatHeader {
     uint32_t AxonCompartmentIDsSize = 0;
     uint32_t AxonCompartmentIDsOffset = 0;
     SCNeuronBase Base;
+
+    std::string str() const {
+        std::stringstream ss;
+        ss << "FlatBufSize: " << FlatBufSize;
+        ss << "\nNameSize: " << NameSize;
+        ss << "\nNameOffset: " << NameOffset;
+        ss << "\nSomaCompartmentIDsSize: " << SomaCompartmentIDsSize;
+        ss << "\nSomaCompartmentIDsOffset: " << SomaCompartmentIDsOffset;
+        ss << "\nDendriteCompartmentIDsSize: " << DendriteCompartmentIDsSize;
+        ss << "\nDendriteCompartmentIDsOffset: " << DendriteCompartmentIDsOffset;
+        ss << "\nAxonCompartmentIDsSize: " << AxonCompartmentIDsSize;
+        ss << "\nAxonCompartmentIDsOffset: " << AxonCompartmentIDsOffset << '\n';
+        ss << Base.str();
+        return ss.str();
+    }
 };
 
 struct SCNeuronStruct: public SCNeuronBase {
