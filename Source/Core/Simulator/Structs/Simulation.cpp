@@ -375,7 +375,7 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
     std::filesystem::path savedmodel = Name;
     size_t fsize = std::filesystem::file_size(savedmodel);
     std::cout << "File size: " << fsize << '\n';
-    std::vector<uint3_t> data(fsize); 
+    std::vector<uint8_t> data(fsize); 
     auto LoadFile = std::fstream(Name, std::ios::in | std::ios::binary);
     LoadFile.read((char*)data.data(), fsize);
     LoadFile.close();
