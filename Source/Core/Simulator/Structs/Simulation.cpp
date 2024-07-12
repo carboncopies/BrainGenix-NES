@@ -371,7 +371,7 @@ bool Simulation::LoadModel(const std::string& Name) {
  * This uses a different approach to load a saved model file and to
  * inspect its contents. It is meant as a sanity test.
  */
-Simulation::InspectSavedModel(const std::string& Name) const {
+void Simulation::InspectSavedModel(const std::string& Name) const {
     std::filesystem::path savedmodel = Name;
     size_t fsize = std::filesystem::file_size(savedmodel);
     std::cout << "File size: " << fsize << '\n';
