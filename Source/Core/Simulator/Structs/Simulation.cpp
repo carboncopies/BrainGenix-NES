@@ -843,7 +843,7 @@ void Simulation::Show() {
     simreport += "\n\nLocations of neuron somas:\n";
     for (auto& nptr : Neurons) {
         auto& ref = nptr->GetCellCenter();
-        //simreport += ref.str() + '\n';
+        simreport += ref.str() + '\n';
     }
     Logger_->Log(simreport, 3);
     return;

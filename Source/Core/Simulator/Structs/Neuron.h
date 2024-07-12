@@ -202,8 +202,8 @@ struct SCNeuronStructFlatHeader {
     std::string scid_str() const {
         std::stringstream ss;
         int* scidptr = (int*) ADD_BYTES_TO_POINTER(this, SomaCompartmentIDsOffset);
-        ss << "flat header address = " << uint64_t(this) << '\n';
-        ss << "scidptr = " << uint64_t(scidptr) << '\n';
+        //ss << "flat header address = " << uint64_t(this) << '\n';
+        //ss << "scidptr = " << uint64_t(scidptr) << '\n';
         ss << "SomaCompartmentIDs: ";
         for (size_t idx = 0; idx < SomaCompartmentIDsSize; idx++) {
             ss << scidptr[idx] << ' ';
