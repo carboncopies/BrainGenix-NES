@@ -394,7 +394,7 @@ bool Simulation::LoadModel(const std::string& Name) {
 void Simulation::InspectSavedModel(const std::string& Name) const {
     std::filesystem::path savedmodel = Name;
     size_t fsize = std::filesystem::file_size(savedmodel);
-    std::cout << "File size: " << fsize << '\n';
+    std::cout << ">-- File size: " << fsize << '\n';
     std::vector<uint8_t> data(fsize); 
     auto LoadFile = std::fstream(Name, std::ios::in | std::ios::binary);
     LoadFile.read((char*)data.data(), fsize);
@@ -406,33 +406,33 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
 
     ptr += sizeof(SaverInfo);
     SaverGeometry* sgptr = (SaverGeometry*) ptr;
-    std::cout << "Geometry Shapes Map:\n";
+    std::cout << ">-- Geometry Shapes Map:\n";
     for (size_t i = 0; i < siptr->SGMapSize; i++) std::cout << sgptr[i].str();
     std::cout << '\n';
 
     ptr += siptr->SGMapSize * sizeof(SaverGeometry);
     Geometries::SphereBase* sbptr = (Geometries::SphereBase*) ptr;
-    std::cout << "Sphere Base Data:\n";
+    std::cout << ">-- Sphere Base Data:\n";
     for (size_t i = 0; i < siptr->SphereReferencesSize; i++) std::cout << sbptr[i].str();
 
     ptr += siptr->SphereReferencesSize * sizeof(Geometries::SphereBase);
     Geometries::CylinderBase* cbptr = (Geometries::CylinderBase*) ptr;
-    std::cout << "Cylinder Base Data:\n";
+    std::cout << ">-- Cylinder Base Data:\n";
     for (size_t i = 0; i < siptr->CylinderReferencesSize; i++) std::cout << cbptr[i].str();
 
     ptr += siptr->CylinderReferencesSize * sizeof(Geometries::CylinderBase);
     Geometries::BoxBase* bbptr = (Geometries::BoxBase*) ptr;
-    std::cout << "Box Base Data:\n";
+    std::cout << ">-- Box Base Data:\n";
     for (size_t i = 0; i < siptr->BoxReferencesSize; i++) std::cout << bbptr[i].str();
 
     ptr += siptr->BoxReferencesSize * sizeof(Geometries::BoxBase);
     Compartments::BSBaseData* cpbptr = (Compartments::BSBaseData*) ptr;
-    std::cout << "Compartments Base Data:\n";
+    std::cout << ">-- Compartments Base Data:\n";
     for (size_t i = 0; i < siptr->BSSCCompartmentsSize; i++) std::cout << cpbptr[i].str();
 
     ptr += siptr->BSSCCompartmentsSize * sizeof(Compartments::BSBaseData);
     uint32_t* fdsptr = (uint32_t*) ptr;
-    std::cout << "SC Neurons Flat Data Sizes:\n";
+    std::cout << ">-- SC Neurons Flat Data Sizes:\n";
     for (size_t i = 0; i < siptr->NeuronsSize; i++) std::cout << fdsptr[i] << ' ';
     std::cout << '\n';
 
@@ -440,6 +440,7 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
     for (size_t i = 0; i < siptr->NeuronsSize; i++) {
         CoreStructs::SCNeuronStructFlatHeader* scfhptr = (CoreStructs::SCNeuronStructFlatHeader*) ptr;
 
+        std::cout << ">-- SC Neuron Flat Data:\n"
         std::cout << scfhptr->str();
         std::cout << scfhptr->name_str();
         std::cout << scfhptr->scid_str();
