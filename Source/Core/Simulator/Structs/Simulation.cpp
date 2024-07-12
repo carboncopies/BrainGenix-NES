@@ -440,7 +440,7 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
     for (size_t i = 0; i < siptr->NeuronsSize; i++) {
         CoreStructs::SCNeuronStructFlatHeader* scfhptr = (CoreStructs::SCNeuronStructFlatHeader*) ptr;
 
-        std::cout << ">-- SC Neuron Flat Data:\n"
+        std::cout << ">-- SC Neuron Flat Data:\n";
         std::cout << scfhptr->str();
         std::cout << scfhptr->name_str();
         std::cout << scfhptr->scid_str();
