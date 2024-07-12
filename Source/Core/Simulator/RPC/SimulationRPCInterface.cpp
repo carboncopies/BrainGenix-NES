@@ -499,7 +499,7 @@ std::string SimulationRPCInterface::SimulationSaveModel(std::string _JSONRequest
         return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
     }
 
-    Logger_->Log("Saved neuronal circuit model with to "+SavedModelName, 3);
+    Logger_->Log("Saved neuronal circuit model to "+SavedModelName, 3);
     return Handle.ErrResponse(); // ok
 }
 

@@ -19,6 +19,8 @@
 #include <fstream>
 #include <memory>
 
+#include <iostream>
+
 namespace BG {
 namespace NES {
 namespace Simulator {
