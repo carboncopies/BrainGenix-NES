@@ -360,6 +360,7 @@ bool Simulation::LoadModel(const std::string& Name) {
         offset += _Loader.flatdata_sizes.get()[i];
     }
 
+    Show();
     return true;
 }
 
@@ -743,7 +744,21 @@ void Simulation::RunFor(float tRun_ms) {
     Logger_->Log("Total number of spikes on all neurons: "+std::to_string(TotalSpikes()), 3);
 };
 
-void Simulation::Show() { return; };
+/**
+ * Text overview of the state of the current simulation.
+ */
+void Simulation::Show() {
+    std::string simreport("Simulation ID="+std::to_string(ID)+" Name="+Name+" Status Report:\n");
+    simreport += "\nNumber of neurons: "+std::to_string(Neurons.size());
+    simreport += "\nNumber of compartments: "+std::to_string(BSCompartments.size());
+    simreport += "\nNumber of geometric shapes: "+std::to_string(Collection.Geometries.size());
+    simreport += "\n\nLocations of neuron somas:\n";
+    for (auto& nptr : Neurons) {
+        simreport += nptr->GetCellCenter().str() + '\n';
+    }
+    Logger_->Log(simreport, 3);
+    return;
+};
 
 Compartments::BS * Simulation::FindCompartmentByID(int CompartmentID) {
     if (CompartmentID >= BSCompartments.size()) {
