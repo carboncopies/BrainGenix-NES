@@ -754,7 +754,8 @@ void Simulation::Show() {
     simreport += "\nNumber of geometric shapes: "+std::to_string(Collection.Geometries.size());
     simreport += "\n\nLocations of neuron somas:\n";
     for (auto& nptr : Neurons) {
-        simreport += nptr->GetCellCenter().str() + '\n';
+        auto& ref = nptr->GetCellCenter();
+        //simreport += ref.str() + '\n';
     }
     Logger_->Log(simreport, 3);
     return;
