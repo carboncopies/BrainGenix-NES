@@ -111,6 +111,18 @@ struct SaverInfo {
     size_t BoxReferencesSize = 0;
     size_t BSSCCompartmentsSize = 0;
     size_t NeuronsSize = 0;
+
+    std::string str() const {
+        std::string s;
+        s += "SGMapSize: " + std::to_string(SGMapSize);
+        s += "\nSphereReferencesSize: " + std::to_string(SphereReferencesSize);
+        s += "\nCylinderReferencesSize: " + std::to_string(CylinderReferencesSize);
+        s += "\nBoxReferencesSize: " + std::to_string(BoxReferencesSize);
+        s += "\nBSSCCompartmentsSize: " + std::to_string(BSSCCompartmentsSize);
+        s += "\nNeuronsSize: " + std::to_string(NeuronsSize);
+        s += '\n';
+        return s;
+    }
 };
 
 struct SaverGeometry {
@@ -379,9 +391,10 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
     auto LoadFile = std::fstream(Name, std::ios::in | std::ios::binary);
     LoadFile.read((char*)data.data(), fsize);
     LoadFile.close();
-    std::cout << "Raw content: ";
-    for (auto& c : data) std::cout << c;
-    std::cout << '\n';
+
+    SaverInfo* siptr = (SaverInfo*) data.data();
+    std::cout << siptr->str();
+
 }
 
 size_t Simulation::GetTotalNumberOfNeurons() {
