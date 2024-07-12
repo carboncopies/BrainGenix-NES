@@ -400,13 +400,20 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
     LoadFile.read((char*)data.data(), fsize);
     LoadFile.close();
 
-    SaverInfo* siptr = (SaverInfo*) data.data();
+    uint8_t* ptr = data.data();
+    SaverInfo* siptr = (SaverInfo*) ptr;
     std::cout << siptr->str();
 
-    SaverGeometry* sgptr = (SaverGeometry*) data.data()+sizeof(SaverInfo);
+    ptr += sizeof(SaverInfo);
+    SaverGeometry* sgptr = (SaverGeometry*) ptr;
     std::cout << "Geometry Shapes Map: ";
-    for (size_t i = 0; i < siptr->SGMapSize; i++) sgptr[i].str();
+    for (size_t i = 0; i < siptr->SGMapSize; i++) std::cout << sgptr[i].str();
     std::cout << '\n';
+
+    ptr += siptr->SGMapSize * sizeof(SaverGeometry);
+    Geometries::SphereBase* sbptr = (Geometries::SphereBase*) ptr;
+    std::cout << "Sphere Base Data: ";
+    for (size_t i = 0; i < siptr->SphereReferencesSize; i++) std::cout << sbptr[i].str();
 
 }
 

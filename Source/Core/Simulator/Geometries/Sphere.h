@@ -10,6 +10,8 @@
 
 #pragma once
 
+#include <sstream>
+
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Geometries/Geometry.h>
@@ -38,6 +40,13 @@ struct SphereBase: Geometry {
     virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo);
     virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo);
     virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo);
+
+    std::string str() const {
+        std::stringstream ss;
+        ss << Geometry::str();
+        ss << "Radius_um: " << Radius_um << '\n';
+        return ss.str();
+    }
 };
 
 /**
