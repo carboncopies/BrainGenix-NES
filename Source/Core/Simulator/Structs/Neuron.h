@@ -163,6 +163,9 @@ struct SCNeuronBase {
     }
 };
 
+#define ADD_BYTES_TO_POINTER(theptr, numbytes) \
+    (((uint8_t*)theptr)+numbytes)
+
 struct SCNeuronStructFlatHeader {
     uint32_t FlatBufSize = 0;
     uint32_t NameSize = 0;
@@ -192,13 +195,13 @@ struct SCNeuronStructFlatHeader {
 
     std::string name_str() const {
         std::stringstream ss;
-        ss << "Name: " << (const char*) (uint8_t*(this)+NameOffset) << '\n';
+        ss << "Name: " << (const char*) ADD_BYTES_TO_POINTER(this, NameOffset) << '\n';
         return ss.str();
     }
 
     std::string scid_str() const {
         std::stringstream ss;
-        int* scidptr = (int*) (uint8_t*(this)+SomaCompartmentIDsOffset);
+        int* scidptr = (int*) ADD_BYTES_TO_POINTER(this, SomaCompartmentIDsOffset);
         ss << "flat header address = " << uint64_t(this) << '\n';
         ss << "scidptr = " << uint64_t(scidptr) << '\n';
         ss << "SomaCompartmentIDs: ";
@@ -211,7 +214,7 @@ struct SCNeuronStructFlatHeader {
 
     std::string dcid_str() const {
         std::stringstream ss;
-        int* dcidptr = (int*) (uint8_t*(this)+DendriteCompartmentIDsOffset);
+        int* dcidptr = (int*) ADD_BYTES_TO_POINTER(this, DendriteCompartmentIDsOffset);
         ss << "DendriteCompartmentIDs: ";
         for (size_t idx = 0; idx < DendriteCompartmentIDsSize; idx++) {
             ss << dcidptr[idx] << ' ';
@@ -222,7 +225,7 @@ struct SCNeuronStructFlatHeader {
 
     std::string acid_str() const {
         std::stringstream ss;
-        int* acidptr = (int*) (uint8_t*(this)+AxonCompartmentIDsOffset);
+        int* acidptr = (int*) ADD_BYTES_TO_POINTER(this, AxonCompartmentIDsOffset);
         ss << "AxonCompartmentIDs: ";
         for (size_t idx = 0; idx < AxonCompartmentIDsSize; idx++) {
             ss << acidptr[idx] << ' ';
