@@ -438,9 +438,11 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
 
     ptr += siptr->NeuronsSize * sizeof(uint32_t);
     for (size_t i = 0; i < siptr->NeuronsSize; i++) {
-        SCNeuronStruct::SCNeuronStructFlatHeader* scfhptr = (SCNeuronStruct::SCNeuronStructFlatHeader*) ptr;
+        CoreStructs::SCNeuronStructFlatHeader* scfhptr = (CoreStructs::SCNeuronStructFlatHeader*) ptr;
 
         std::cout << scfhptr->str();
+
+        std::cout << "Name: " << (const char*) (ptr+scfhptr->NameOffset) << '\n';
 
         ptr += scfhptr->FlatBufSize;
     }
