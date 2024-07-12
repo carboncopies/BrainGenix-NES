@@ -130,6 +130,14 @@ struct SaverGeometry {
     size_t Idx;             // Index within the type-specific list
     SaverGeometry() {}
     SaverGeometry(Geometries::GeometryShapeEnum _Type, size_t _Idx): Type(_Type), Idx(_Idx) {}
+
+    std::string str() const {
+        std::string s;
+        s += "(Typ: "+std::to_string((int) Type);
+        s += ",Idx: "+std::to_string(Idx);
+        s += ") ";
+        return s;
+    }
 };
 
 class Saver {
@@ -394,6 +402,11 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
 
     SaverInfo* siptr = (SaverInfo*) data.data();
     std::cout << siptr->str();
+
+    SaverGeometry* sgptr = (SaverGeometry*) data.data()+sizeof(SaverInfo);
+    std::cout << "Geometry Shapes Map: ";
+    for (size_t i = 0; i < siptr->SGMapSize; i++) sgptr[i].str();
+    std::cout << '\n';
 
 }
 
