@@ -189,6 +189,45 @@ struct SCNeuronStructFlatHeader {
         ss << Base.str();
         return ss.str();
     }
+
+    std::string name_str() const {
+        std::stringstream ss;
+        ss << "Name: " << (const char*) (this+scfhptr->NameOffset) << '\n';
+        return ss.str();
+    }
+
+    std::string scid_str() const {
+        std::stringstream ss;
+        int* scidptr = (int*) (ptr+scfhptr->SomaCompartmentIDsOffset);
+        ss << "SomaCompartmentIDs: ";
+        for (size_t idx = 0; idx < scfhptr->SomaCompartmentIDsSize; idx++) {
+            ss << scidptr[idx] << ' ';
+        }
+        ss << '\n';
+        return ss.str();
+    }
+
+    std::string dcid_str() const {
+        std::stringstream ss;
+        int* dcidptr = (int*) (ptr+scfhptr->DendriteCompartmentIDsOffset);
+        ss << "DendriteCompartmentIDs: ";
+        for (size_t idx = 0; idx < scfhptr->DendriteCompartmentIDsSize; idx++) {
+            ss << dcidptr[idx] << ' ';
+        }
+        ss << '\n';
+        return ss.str();
+    }
+
+    std::string acid_str() const {
+        std::stringstream ss;
+        int* acidptr = (int*) (ptr+scfhptr->AxonCompartmentIDsOffset);
+        ss << "AxonCompartmentIDs: ";
+        for (size_t idx = 0; idx < scfhptr->AxonCompartmentIDsSize; idx++) {
+            ss << acidptr[idx] << ' ';
+        }
+        ss << '\n';
+        return ss.str();
+    }
 };
 
 struct SCNeuronStruct: public SCNeuronBase {

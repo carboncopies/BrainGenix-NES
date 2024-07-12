@@ -441,8 +441,10 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
         CoreStructs::SCNeuronStructFlatHeader* scfhptr = (CoreStructs::SCNeuronStructFlatHeader*) ptr;
 
         std::cout << scfhptr->str();
-
-        std::cout << "Name: " << (const char*) (ptr+scfhptr->NameOffset) << '\n';
+        std::cout << scfhptr->name_str();
+        std::cout << scfhptr->scid_str();
+        std::cout << scfhptr->dcid_str();
+        std::cout << scfhptr->acid_str();
 
         ptr += scfhptr->FlatBufSize;
     }
