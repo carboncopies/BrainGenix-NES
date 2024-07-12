@@ -37,6 +37,7 @@ SCNeuron::SCNeuron(const CoreStructs::SCNeuronStruct & scneuronstruct, Simulatio
 Geometries::Vec3D &SCNeuron::GetCellCenter() {
     Geometries::Vec3D geoCenter_um{};
     for (const auto & CompID : build_data.SomaCompartmentIDs) {
+std::cout << "CompID = " << CompID << '\n'; std::cout.flush();
         auto CompPtr = Sim.FindCompartmentByID(CompID);
         assert(CompPtr != nullptr);
         auto ShapeID = CompPtr->ShapeID;
