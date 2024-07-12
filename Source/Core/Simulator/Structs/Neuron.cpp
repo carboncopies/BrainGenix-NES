@@ -140,16 +140,16 @@ std::unique_ptr<uint8_t[]> SCNeuronStruct::GetFlat() const {
 bool SCNeuronStruct::FromFlat(SCNeuronStructFlatHeader* header) {
     SCNeuronBase::operator=(header->Base);
 
-    Name = (const char*) (header+header->NameOffset);
+    Name = (const char*) ADD_BYTES_TO_POINTER(header, header->NameOffset);
 
     SomaCompartmentIDs.resize(header->SomaCompartmentIDsSize);
-    memcpy(SomaCompartmentIDs.data(), header + header->SomaCompartmentIDsOffset, header->DendriteCompartmentIDsOffset - header->SomaCompartmentIDsOffset);
+    memcpy(SomaCompartmentIDs.data(), ADD_BYTES_TO_POINTER(header, header->SomaCompartmentIDsOffset), header->DendriteCompartmentIDsOffset - header->SomaCompartmentIDsOffset);
 
     DendriteCompartmentIDs.resize(header->DendriteCompartmentIDsSize);
-    memcpy(DendriteCompartmentIDs.data(), header + header->DendriteCompartmentIDsOffset, header->AxonCompartmentIDsOffset - header->DendriteCompartmentIDsOffset);
+    memcpy(DendriteCompartmentIDs.data(), ADD_BYTES_TO_POINTER(header, header->DendriteCompartmentIDsOffset), header->AxonCompartmentIDsOffset - header->DendriteCompartmentIDsOffset);
 
     AxonCompartmentIDs.resize(header->AxonCompartmentIDsSize);
-    memcpy(AxonCompartmentIDs.data(), header + header->AxonCompartmentIDsOffset, header->FlatBufSize - header->AxonCompartmentIDsOffset);
+    memcpy(AxonCompartmentIDs.data(), ADD_BYTES_TO_POINTER(header, header->AxonCompartmentIDsOffset), header->FlatBufSize - header->AxonCompartmentIDsOffset);
 
     return true;
 }

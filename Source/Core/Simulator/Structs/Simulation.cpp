@@ -380,8 +380,8 @@ bool Simulation::LoadModel(const std::string& Name) {
         offset += _Loader.flatdata_sizes.get()[i];
     }
 
-    //Show();
-    InspectSavedModel(Name);
+    Show();
+    //InspectSavedModel(Name);
     return true;
 }
 
