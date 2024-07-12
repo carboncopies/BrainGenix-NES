@@ -360,8 +360,28 @@ bool Simulation::LoadModel(const std::string& Name) {
         offset += _Loader.flatdata_sizes.get()[i];
     }
 
-    Show();
+    //Show();
+    InspectSavedModel(Name);
     return true;
+}
+
+/**
+ * We can remove this or put it somewhere else as a stand-alone tool.
+ * 
+ * This uses a different approach to load a saved model file and to
+ * inspect its contents. It is meant as a sanity test.
+ */
+Simulation::InspectSavedModel(const std::string& Name) const {
+    std::filesystem::path savedmodel = Name;
+    size_t fsize = std::filesystem::file_size(savedmodel);
+    std::cout << "File size: " << fsize << '\n';
+    std::vector<uint3_t> data(fsize); 
+    auto LoadFile = std::fstream(Name, std::ios::in | std::ios::binary);
+    LoadFile.read((char*)data.data(), fsize);
+    LoadFile.close();
+    std::cout << "Raw content: ";
+    for (auto& c : data) std::cout << c;
+    std::cout << '\n';
 }
 
 size_t Simulation::GetTotalNumberOfNeurons() {
