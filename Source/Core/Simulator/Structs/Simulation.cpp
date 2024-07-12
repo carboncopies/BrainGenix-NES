@@ -318,6 +318,7 @@ bool Simulation::SaveModel(const std::string& Name) {
     // Save neurons.
     _Saver.AddNeurons(Neurons);
     // Save synapses.
+    
     return _Saver.Save();
 }
 
