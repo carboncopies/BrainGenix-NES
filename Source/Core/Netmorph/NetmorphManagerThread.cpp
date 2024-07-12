@@ -126,18 +126,18 @@ bool RecursiveNeuriteBuild(bool IsAxon, NetmorphParameters& _Params, CoreStructs
         N.DendriteCompartmentIDs.emplace_back(C.ID);
     }
 
-    if ((!Branch1()) && (!Branch2())) {
+    if ((!fsptr->Branch1()) && (!fsptr->Branch2())) {
         return true; // This is a terminal branch.
     }
 
     //bool EndIsBifurcation = (Branch1() && Branch2()); // *** We may find this useful to know later.
 
-    if (Branch1()) if (!RecursiveNeuriteBuild(IsAxon, _Params, N, Branch1())) {
+    if (fsptr->Branch1()) if (!RecursiveNeuriteBuild(IsAxon, _Params, N, fsptr->Branch1())) {
         NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed on Branch1.");
         return false;
     }
 
-    if (Branch2()) if (!RecursiveNeuriteBuild(IsAxon, _Params, N, Branch2())) {
+    if (fsptr->Branch2()) if (!RecursiveNeuriteBuild(IsAxon, _Params, N, fsptr->Branch2())) {
         NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed on Branch2.");
         return false;
     }
@@ -208,7 +208,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         //        parentage dependencies of compartments, wherer there are
         //        terminal segments (and growth cones), etc.
         parsing_fs_type = dendrite_fs;
-        PLL_LOOP_FORWARD_NESTED(fibre_structure, inputstructure.head(), 1, dptr) {
+        PLL_LOOP_FORWARD_NESTED(fibre_structure, e->InputStructure->head(), 1, dptr) {
             if (!RecursiveNeuriteBuild(false, _Params, N, dptr)) {
                 NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in dendrite build.");
                 return false;
@@ -217,7 +217,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
 
         // 4. Build axons.
         parsing_fs_type = axon_fs;
-        PLL_LOOP_FORWARD_NESTED(fibre_structure, outputstructure.head(), 1, aptr) {
+        PLL_LOOP_FORWARD_NESTED(fibre_structure, e->OutputStructure->head(), 1, aptr) {
             if (!RecursiveNeuriteBuild(true, _Params, N, aptr)) {
                 NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in axon build.");
                 return false;
