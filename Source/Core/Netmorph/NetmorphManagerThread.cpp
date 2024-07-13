@@ -7,6 +7,7 @@
 #include <cmath>
 #include <vector>
 #include <memory>
+#include <cstring>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <Include/Netmorph.h>
@@ -210,7 +211,10 @@ bool SynapsesBuild(NetmorphParameters& _Params, const std::map<fibre_segment*, i
     //     tuning.
     float connection_data_weight = 1.0; // *** E.g. right here!
 
-    C.Neurotransmitter = synapse_type_name[syn.type_ID()];
+    // *** We may have to do a mapping from Netmorph types to NES types so
+    //     that the Neuron::UpdateType() function works correctly, and
+    //     so that GetConnectionType() works correctly.
+    C.safeset_Neurotransmitter(synapse_type_name[syn.type_ID()]);
 
     float conductance = conductances_nS.at(syn.type_ID());
     float receptor_conductance = conductance / connection_data_weight; // Divided by weight to avoid counter-intuitive weight interpretation.

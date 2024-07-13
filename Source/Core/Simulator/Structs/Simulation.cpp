@@ -131,6 +131,7 @@ struct SaverInfo {
     size_t CylinderReferencesSize = 0;
     size_t BoxReferencesSize = 0;
     size_t BSSCCompartmentsSize = 0;
+    size_t ReceptorsSize = 0;
     size_t NeuronsSize = 0;
 
     std::string str() const {
@@ -140,6 +141,7 @@ struct SaverInfo {
         s += "\nCylinderReferencesSize: " + std::to_string(CylinderReferencesSize);
         s += "\nBoxReferencesSize: " + std::to_string(BoxReferencesSize);
         s += "\nBSSCCompartmentsSize: " + std::to_string(BSSCCompartmentsSize);
+        s += "\nReceptorsSize: " + std::to_string(ReceptorsSize);
         s += "\nNeuronsSize: " + std::to_string(NeuronsSize);
         s += '\n';
         return s;
@@ -207,9 +209,9 @@ public:
          *  4. Geometries::CylinderBase[] (SaverInfo.CylinderReferencesSize elements)
          *  5. Geometries::BoxBase[] (SaverInfo.BoxReferencesSize elements)
          *  6. Compartments::BSBaseData[] (SaverInfo.BSSCCompartmentsSize elements)
-         *  7. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
-         *  8. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
-         *  9. ... receptor stuff...
+         *  7. Connections::ReceptorBase[] (SaverInfo.ReceptorsSize elements)
+         *  8. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
+         *  9. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
          */
         auto SaveFile = std::fstream(Name_, std::ios::out | std::ios::binary);
         _SaverInfo.SGMapSize = SGMap.size();
@@ -217,6 +219,7 @@ public:
         _SaverInfo.CylinderReferencesSize = CylinderReferences.size();
         _SaverInfo.BoxReferencesSize = BoxReferences.size();
         _SaverInfo.BSSCCompartmentsSize = RefToCompartments->size();
+        _SaverInfo.ReceptorsSize = RefToReceptors->size();
         _SaverInfo.NeuronsSize = RefToSCNeurons->size();
 
         SaveFile.write((char*)&_SaverInfo, sizeof(_SaverInfo));
@@ -240,6 +243,12 @@ public:
             SaveFile.write((char*)&basedataref, sizeof(Compartments::BSBaseData));
         }
 
+        // Save fixed-size base data of receptors.
+        for (auto& ref : (*RefToReceptors)) {
+            Connections::ReceptorBase& basedataref = ref;
+            SaveFile.write((char*)&basedataref, sizeof(Connections::ReceptorBase));
+        }
+
         // Save fixed-size base data of neurons and flattened variable
         // size crucial data.
         std::vector<std::unique_ptr<uint8_t[]>> flatdata_list;
@@ -255,8 +264,6 @@ public:
             SaveFile.write((char*)flatdata_list.at(i).get(), flatdata_sizes.at(i));
         }
 
-        
-
         SaveFile.close();
         return SaveFile.good();
     }
@@ -271,6 +278,7 @@ public:
     std::unique_ptr<Geometries::CylinderBase[]> CylinderData;
     std::unique_ptr<Geometries::BoxBase[]> BoxData;
     std::unique_ptr<Compartments::BSBaseData[]> CompartmentData;
+    std::unique_ptr<Connections::ReceptorBase[]> ReceptorData;
     std::unique_ptr<uint32_t[]> flatdata_sizes;
     std::unique_ptr<uint8_t[]> all_flatdata;
 
@@ -299,10 +307,14 @@ public:
         CompartmentData = std::make_unique<Compartments::BSBaseData[]>(_SaverInfo.BSSCCompartmentsSize);
         LoadFile.read((char*)CompartmentData.get(), sizeof(Compartments::BSBaseData)*_SaverInfo.BSSCCompartmentsSize);
 
-        // 7. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
+        // 7. Connections::ReceptorBase[] (SaverInfo.ReceptorsSize elements)
+        ReceptorData = std::make_unique<Connections::ReceptorBase[]>(_SaverInfo.ReceptorsSize);
+        LoadFile.read((char*)ReceptorData.get(), sizeof(Connections::ReceptorBase)*_SaverInfo.ReceptorsSize);
+
+        // 8. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
         flatdata_sizes = std::make_unique<uint32_t[]>(_SaverInfo.NeuronsSize);
         LoadFile.read((char*)flatdata_sizes.get(), sizeof(uint32_t)*_SaverInfo.NeuronsSize);
-        // 8. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
+        // 9. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
         size_t totsize = 0;
         for (size_t i = 0; i < _SaverInfo.NeuronsSize; i++) totsize += flatdata_sizes.get()[i];
         all_flatdata = std::make_unique<uint8_t[]>(totsize);
@@ -410,6 +422,15 @@ bool Simulation::LoadModel(const std::string& Name) {
         offset += _Loader.flatdata_sizes.get()[i];
     }
 
+    // Reset and instantiate receptors.
+    Receptors.clear();
+
+    for (size_t i = 0; i < _Loader._SaverInfo.ReceptorsSize; i++) {
+        Connections::Receptor _R(_Loader.ReceptorData.get()[i]);
+        _R.Name = "syn-"+std::to_string(i);
+        ID = AddReceptor(_R);
+    }
+
     Show();
     //InspectSavedModel(Name);
     return true;
@@ -461,6 +482,11 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
     for (size_t i = 0; i < siptr->BSSCCompartmentsSize; i++) std::cout << cpbptr[i].str();
 
     ptr += siptr->BSSCCompartmentsSize * sizeof(Compartments::BSBaseData);
+    Connections::ReceptorBase* rbptr = (Connections::ReceptorBase*) ptr;
+    std::cout << ">-- Receptors Base Data:\n";
+    for (size_t i = 0; i < siptr->ReceptorsSize; i++) std::cout << rbptr[i].str();
+
+    ptr += siptr->ReceptorsSize * sizeof(Connections::ReceptorBase);
     uint32_t* fdsptr = (uint32_t*) ptr;
     std::cout << ">-- SC Neurons Flat Data Sizes:\n";
     for (size_t i = 0; i < siptr->NeuronsSize; i++) std::cout << fdsptr[i] << ' ';

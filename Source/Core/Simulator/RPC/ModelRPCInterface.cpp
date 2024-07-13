@@ -105,17 +105,19 @@ std::string ModelRPCInterface::ReceptorCreate(std::string _JSONRequest) {
 
     // Build New Receptor Object
     Connections::Receptor C;
+    std::string neurotransmitter_cache;
     if ((!Handle.GetParInt("SourceCompartmentID", C.SourceCompartmentID))
         || (!Handle.GetParInt("DestinationCompartmentID", C.DestinationCompartmentID))
         || (!Handle.GetParFloat("Conductance_nS", C.Conductance_nS))
         || (!Handle.GetParFloat("TimeConstantRise_ms", C.TimeConstantRise_ms))
         || (!Handle.GetParFloat("TimeConstantDecay_ms", C.TimeConstantDecay_ms))
-        || (!Handle.GetParString("Neurotransmitter", C.Neurotransmitter))
+        || (!Handle.GetParString("Neurotransmitter", neurotransmitter_cache))
         || (!Handle.GetParInt("ReceptorMorphology", C.ShapeID))
         //|| (!Handle.GetParVec3("ReceptorPos", C.ReceptorPos_um))
         || (!Handle.GetParString("Name", C.Name))) {
         return Handle.ErrResponse();
     }
+    C.safeset_Neurotransmitter(neurotransmitter_cache.c_str());
 
     C.ID = Handle.Sim()->AddReceptor(C);
     if (C.ID<0) {
