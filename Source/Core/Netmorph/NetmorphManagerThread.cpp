@@ -259,7 +259,6 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
     // soma morphology.
     std::map<fibre_segment*, int> SegmentIDMap;
 
-    size_t nnum = 0;
     PLL_LOOP_FORWARD(neuron, Net.PLLRoot<neuron>::head(), 1) {
 
         // 0. Prepare neuron scaffold with lists.
@@ -327,7 +326,14 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
             return false;
         }
 
-        // 8. Build synapse receptors.
+    }
+
+    /**
+     * 8. Build synapse receptors.
+     * Synapses need to be processed in a separate loop, after the full
+     * SegmentIDMap has been collected.
+     */
+    PLL_LOOP_FORWARD(neuron, Net.PLLRoot<neuron>::head(), 1) {
         if (e->OutputConnections()->head()) {
             PLL_LOOP_FORWARD_NESTED(connection, e->OutputConnections()->head(), 1, conn) {
                 PLL_LOOP_FORWARD_NESTED(synapse, conn->Synapses()->head(), 1, syn) {
@@ -338,8 +344,6 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
                 }
             }
         }
-
-        nnum++;
     }
 
     NETMORPH_PARAMS_SUCCESS("Build NES model based on Netmorph output.");
