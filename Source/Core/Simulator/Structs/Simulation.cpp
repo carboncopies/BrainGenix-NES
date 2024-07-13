@@ -245,7 +245,7 @@ public:
 
         // Save fixed-size base data of receptors.
         for (auto& ref : (*RefToReceptors)) {
-            Connections::ReceptorBase& basedataref = ref;
+            Connections::ReceptorBase& basedataref = *ref;
             SaveFile.write((char*)&basedataref, sizeof(Connections::ReceptorBase));
         }
 
