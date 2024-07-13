@@ -272,7 +272,7 @@ public:
             num_unparsed++;
         }
     }
-    void str() const {
+    void log() const {
         if (num_unparsed>0) {
             _Params.Sim->Logger_->Log("Number of unparsed segments: "+std::to_string(num_unparsed), 7);
         }
@@ -304,6 +304,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
 
     CountUnParsedSegments unparsed_pre(_Params);
     Net.tree_op(unparsed_pre);
+    unparsed_pre.log();
 
     // // The SegmentIDMap is used to map Netmorph neurite fibre segments to
     // // NES compartment IDs. This is needed when building synapse receptor objects.
@@ -383,6 +384,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
 
     CountUnParsedSegments unparsed_post(_Params);
     Net.tree_op(unparsed_post);
+    unparsed_post.log();
 
     // FindUnParsedSegments findunparsed(_Params);
     // Net.tree_op(findunparsed);
