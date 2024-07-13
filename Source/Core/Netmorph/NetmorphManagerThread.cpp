@@ -324,8 +324,8 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         }
 
         // 8. Build synapse receptors.
-        if (e->outputconnections.head()) {
-            PLL_LOOP_FORWARD_NESTED(connection, e->OutputConnections().head(), 1, conn) {
+        if (e->OutputConnections()->head()) {
+            PLL_LOOP_FORWARD_NESTED(connection, e->OutputConnections()->head(), 1, conn) {
                 PLL_LOOP_FORWARD_NESTED(synapse, conn->Synapses()->head(), 1, syn) {
                     if (!SynapsesBuild(_Params, SegmentIDMap, N, conn, syn)) {
                         NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in synapse build.");
