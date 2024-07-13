@@ -159,6 +159,11 @@ const std::map<synapse_type, float> conductances_nS = {
     { syntype_mGluR, 40.0 },
 };
 
+struct PSPTiming {
+    float neuron_tau_PSPr = 5.0;
+    float neuron_tau_PSPd = 25.0;
+};
+
 /**
  * In Netmorph, after growth, candidate synapse identification, synapse selectin, and
  * receptor type specification, a logical connection between two neurons ('connection')
@@ -166,7 +171,7 @@ const std::map<synapse_type, float> conductances_nS = {
  * 'PreSynaptic()' and 'PostSynaptic()' neurons. Each 'synapse' stores a 'synapse_type',
  * as well as morphological information in a 'synapse_structure'.
  */
-bool SynapsesBuild(NetmorphParameters& _Params, const std::map<fibre_segment*, int>& SegmentIDMap, CoreStructs::SCNeuronStruct& N, connection& conn, synapse& syn) {
+bool SynapsesBuild(NetmorphParameters& _Params, const std::map<fibre_segment*, int>& SegmentIDMap, const PSPTiming& psp_timing,, connection& conn, synapse& syn) {
 
     // Morphology shape.
     Geometries::Box S;
@@ -220,8 +225,8 @@ bool SynapsesBuild(NetmorphParameters& _Params, const std::map<fibre_segment*, i
     float receptor_conductance = conductance / connection_data_weight; // Divided by weight to avoid counter-intuitive weight interpretation.
     C.Conductance_nS = receptor_conductance;
 
-    C.TimeConstantRise_ms = N.PostsynapticPotentialRiseTime_ms;
-    C.TimeConstantDecay_ms = N.PostsynapticPotentialDecayTime_ms;
+    C.TimeConstantRise_ms = psp_timing.neuron_tau_PSPr;
+    C.TimeConstantDecay_ms = psp_timing.neuron_tau_PSPd;
 
     C.Name = "syn-"+N.Name;
 
@@ -246,9 +251,8 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
     float neuron_Vact_mV = -50.0;
     float neuron_Vahp_mV = -20.0;
     float neuron_tau_AHP_ms = 30.0;
-    float neuron_tau_PSPr = 5.0;
-    float neuron_tau_PSPd = 25.0;
     float neuron_IPSP = 870.0; // nA
+    PSPTiming psp_timing;
 
     network& Net = *(_Params.Result.net);
 
@@ -269,8 +273,8 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         N.SpikeThreshold_mV = neuron_Vact_mV;
         N.DecayTime_ms = neuron_tau_AHP_ms;
         N.AfterHyperpolarizationAmplitude_mV = neuron_Vahp_mV;
-        N.PostsynapticPotentialRiseTime_ms = neuron_tau_PSPr;
-        N.PostsynapticPotentialDecayTime_ms = neuron_tau_PSPd;
+        N.PostsynapticPotentialRiseTime_ms = psp_timing.neuron_tau_PSPr;
+        N.PostsynapticPotentialDecayTime_ms = psp_timing.neuron_tau_PSPd;
         N.PostsynapticPotentialAmplitude_nA = neuron_IPSP;
 
         // 1. Build soma spheres.
@@ -337,7 +341,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         if (e->OutputConnections()->head()) {
             PLL_LOOP_FORWARD_NESTED(connection, e->OutputConnections()->head(), 1, conn) {
                 PLL_LOOP_FORWARD_NESTED(synapse, conn->Synapses()->head(), 1, syn) {
-                    if (!SynapsesBuild(_Params, SegmentIDMap, N, *conn, *syn)) {
+                    if (!SynapsesBuild(_Params, SegmentIDMap, psp_timing, *conn, *syn)) {
                         NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in synapse build.");
                         return false;
                     }
