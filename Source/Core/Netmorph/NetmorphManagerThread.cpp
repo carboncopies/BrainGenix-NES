@@ -172,7 +172,7 @@ struct PSPTiming {
  * 'PreSynaptic()' and 'PostSynaptic()' neurons. Each 'synapse' stores a 'synapse_type',
  * as well as morphological information in a 'synapse_structure'.
  */
-bool SynapsesBuild(NetmorphParameters& _Params, const PSPTiming& psp_timing, connection& conn, synapse& syn) {
+bool SynapsesBuild(NetmorphParameters& _Params, const PSPTiming& psp_timing, synapse& syn) {
 
     // Morphology shape.
     Geometries::Box S;
@@ -250,6 +250,17 @@ bool SynapsesBuild(NetmorphParameters& _Params, const PSPTiming& psp_timing, con
 
     return true;
 }
+
+class FindUnParsedSegments: public fibre_tree_op {
+public:
+    NetmorphParameters& _Params;
+    FindUnParsedSegments(NetmorphParameters& Params): _Params(Params) {}
+    virtual void op(fibre_segment* fs) {
+        if (fs->cache.i<0) {
+            _Params.Sim->Logger_->Log("Unparsed segment: "+std::to_string(uint64_t(fs)), 7);
+        }
+    }
+};
 
 // If NetmorphParams.Status==true then the NetmorphParams.net unique_ptr now owns the
 // generated Netmorph network object. We can now use this to build our model in the
@@ -350,6 +361,9 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
 
     }
 
+    FindUnParsedSegments findunparsed(_Params);
+    Net.tree_op(findunparsed);
+
     /**
      * 8. Build synapse receptors.
      * Synapses need to be processed in a separate loop, after the full
@@ -359,7 +373,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         if (e->OutputConnections()->head()) {
             PLL_LOOP_FORWARD_NESTED(connection, e->OutputConnections()->head(), 1, conn) {
                 PLL_LOOP_FORWARD_NESTED(synapse, conn->Synapses()->head(), 1, syn) {
-                    if (!SynapsesBuild(_Params, psp_timing, *conn, *syn)) {
+                    if (!SynapsesBuild(_Params, psp_timing, *syn)) {
                         NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in synapse build.");
                         return false;
                     }
