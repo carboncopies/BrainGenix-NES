@@ -171,7 +171,7 @@ struct PSPTiming {
  * 'PreSynaptic()' and 'PostSynaptic()' neurons. Each 'synapse' stores a 'synapse_type',
  * as well as morphological information in a 'synapse_structure'.
  */
-bool SynapsesBuild(NetmorphParameters& _Params, const std::map<fibre_segment*, int>& SegmentIDMap, const PSPTiming& psp_timing,, connection& conn, synapse& syn) {
+bool SynapsesBuild(NetmorphParameters& _Params, const std::map<fibre_segment*, int>& SegmentIDMap, const PSPTiming& psp_timing, connection& conn, synapse& syn) {
 
     // Morphology shape.
     Geometries::Box S;
@@ -190,7 +190,7 @@ bool SynapsesBuild(NetmorphParameters& _Params, const std::map<fibre_segment*, i
     S.Dims_um.y = y_absdiff;
     S.Dims_um.z = z_absdiff;
     // S.Rotations_rad = ...;
-    S.Name = "box-"+N.Name;
+    S.Name = "synbox";
 
     S.ID = _Params.Sim->AddBox(S);
 
