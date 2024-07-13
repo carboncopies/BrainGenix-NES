@@ -266,7 +266,7 @@ class CountUnParsedSegments: public fibre_tree_op {
 public:
     NetmorphParameters& _Params;
     size_t num_unparsed = 0;
-    FindUnParsedSegments(NetmorphParameters& Params): _Params(Params) {}
+    CountUnParsedSegments(NetmorphParameters& Params): _Params(Params) {}
     virtual void op(fibre_segment* fs) {
         if (fs->cache.i<0) {
             num_unparsed++;
