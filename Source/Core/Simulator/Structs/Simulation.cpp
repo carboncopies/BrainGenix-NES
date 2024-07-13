@@ -104,6 +104,27 @@ int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
     return _N.ID;
 }
 
+int Simulation::AddReceptor(Connections::Receptor& _C) {
+
+    _C.ID = Receptors.size();
+
+    Receptors.push_back(std::make_unique<Connections::Receptor>(_C));
+
+    // Inform destination neuron of its new input receptor.
+    CoreStructs::Neuron* SrcNeuronPtr = FindNeuronByCompartment(_C.SourceCompartmentID);
+    CoreStructs::Neuron* DstNeuronPtr = FindNeuronByCompartment(_C.DestinationCompartmentID);
+    if ((SrcNeuronPtr==nullptr) || (DstNeuronPtr==nullptr)) {
+        return -1;
+    }
+
+    CoreStructs::ReceptorData RData(_C.ID, Receptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
+    SrcNeuronPtr->OutputTransmitterAdded(RData);
+    DstNeuronPtr->InputReceptorAdded(RData);
+    SrcNeuronPtr->UpdateType(_C.Neurotransmitter);
+
+    return _C.ID;
+}
+
 struct SaverInfo {
     size_t SGMapSize = 0;
     size_t SphereReferencesSize = 0;
@@ -318,7 +339,7 @@ bool Simulation::SaveModel(const std::string& Name) {
     // Save neurons.
     _Saver.AddNeurons(Neurons);
     // Save synapses.
-    
+
     return _Saver.Save();
 }
 

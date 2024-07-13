@@ -158,6 +158,7 @@ public:
     int AddBox(Geometries::Box& _S);
     int AddSCCompartment(Compartments::BS& _C);
     int AddSCNeuron(CoreStructs::SCNeuronStruct& _N);
+    int AddReceptor(Connections::Receptor& _C);
 
     bool SaveModel(const std::string& Name);
     bool LoadModel(const std::string& Name);

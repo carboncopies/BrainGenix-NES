@@ -117,19 +117,10 @@ std::string ModelRPCInterface::ReceptorCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    C.ID = Handle.Sim()->Receptors.size();
-    Handle.Sim()->Receptors.push_back(std::make_unique<Connections::Receptor>(C));
-
-    // Inform destination neuron of its new input receptor.
-    CoreStructs::Neuron* SrcNeuronPtr = Handle.Sim()->FindNeuronByCompartment(C.SourceCompartmentID);
-    CoreStructs::Neuron* DstNeuronPtr = Handle.Sim()->FindNeuronByCompartment(C.DestinationCompartmentID);
-    if ((SrcNeuronPtr==nullptr) || (DstNeuronPtr==nullptr)) {
+    C.ID = Handle.Sim()->AddReceptor(C);
+    if (C.ID<0) {
         return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
-    CoreStructs::ReceptorData RData(C.ID, Handle.Sim()->Receptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
-    SrcNeuronPtr->OutputTransmitterAdded(RData);
-    DstNeuronPtr->InputReceptorAdded(RData);
-    SrcNeuronPtr->UpdateType(C.Neurotransmitter);
 
     // Return Result ID
     return Handle.ResponseWithID("ReceptorID", C.ID);

@@ -4,6 +4,7 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
+#include <cmath>
 #include <vector>
 #include <memory>
 
@@ -79,7 +80,7 @@ public:
  *    a) If a segment is a root segment then R0=R1=diameter.
  *    b) Otherwise, R0=parent->diameter, R1=diameter.
  */
-bool RecursiveNeuriteBuild(bool IsAxon, NetmorphParameters& _Params, CoreStructs::SCNeuronStruct& N, fibre_segment* fsptr) {
+bool RecursiveNeuriteBuild(bool IsAxon, NetmorphParameters& _Params, std::map<fibre_segment*, int>& SegmentIDMap, CoreStructs::SCNeuronStruct& N, fibre_segment* fsptr) {
 
     //*** MAYBE FIX REPEATED NAMES
 
@@ -130,6 +131,8 @@ bool RecursiveNeuriteBuild(bool IsAxon, NetmorphParameters& _Params, CoreStructs
         return true; // This is a terminal branch.
     }
 
+    SegmentIDMap.emplace(fsptr, C.ID);
+
     //bool EndIsBifurcation = (Branch1() && Branch2()); // *** We may find this useful to know later.
 
     if (fsptr->Branch1()) if (!RecursiveNeuriteBuild(IsAxon, _Params, N, fsptr->Branch1())) {
@@ -141,6 +144,94 @@ bool RecursiveNeuriteBuild(bool IsAxon, NetmorphParameters& _Params, CoreStructs
         NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed on Branch2.");
         return false;
     }
+    return true;
+}
+
+const std::map<synapse_type, float> conductances_nS = {
+    { syntype_AMPAR, 40.0 },
+    { syntype_NMDAR, 60.0 },
+    { syntype_GABAR, -40.0 },
+    { syntype_candidate, 0.0 },
+    { syntype_GluR, 40.0 },
+    { syntype_iGluR, 40.0 },
+    { syntype_mGluR, 40.0 },
+};
+
+conductances_nS = {
+    'AMPAR': 40.0,
+    'NMDAR': 60.0,
+    'GABAR': -40.0,
+}
+
+/**
+ * In Netmorph, after growth, candidate synapse identification, synapse selectin, and
+ * receptor type specification, a logical connection between two neurons ('connection')
+ * has a linked list of synapses ('synapse'). The 'connection' specifies the
+ * 'PreSynaptic()' and 'PostSynaptic()' neurons. Each 'synapse' stores a 'synapse_type',
+ * as well as morphological information in a 'synapse_structure'.
+ */
+bool SynapsesBuild(NetmorphParameters& _Params, const std::map<fibre_segment*, int>& SegmentIDMap, CoreStructs::SCNeuronStruct& N, connection& conn, synapse& syn) {
+
+    // Morphology shape.
+    Geometries::Box S;
+    // *** This needs better detailing to take what are clearly pre-
+    //     and postsynaptic locations and to transform them into a
+    //     morphology for synapses, with spines, terminals and receptors.
+
+    auto center = (syn.Structure().P0 + syn.Structure().P1)/2.0;
+    double x_absdiff = fabs(syn.Structure().P0.X() - syn.Structure().P1.X());
+    double y_absdiff = fabs(syn.Structure().P0.Y() - syn.Structure().P1.Y());
+    double z_absdiff = fabs(syn.Structure().P0.Z() - syn.Structure().P1.Z());
+    S.Center_um.x = center.X();
+    S.Center_um.y = center.Y();
+    S.Center_um.z = center.Z();
+    S.Dims_um.x = x_absdiff;
+    S.Dims_um.y = y_absdiff;
+    S.Dims_um_z = z_absdiff;
+    // S.Rotations_rad = ...;
+    S.Name = "box-"+N.Name;
+
+    S.ID = _Params.Sim->AddBox(S);
+
+    // Morphology compartment.
+    Connections::Receptor C;
+    auto it_presegment = SegmentIDMap.find(syn.Structure()->AxonSegment());
+    if (it_presegment==SegmentIDMap.end()) {
+        NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Presynaptic neurite segment not found.");
+        return false;
+    }
+    C.SourceCompartmentID  = it_presegment->second;
+    auto it_postsegment = SegmentIDMap.find(syn.Structure()->AxonSegment());
+    if (it_postsegment==SegmentIDMap.end()) {
+        NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Postsynaptic neurite segment not found.");
+        return false;
+    }
+    C.DestinationCompartmentID = it_postsegment->second;
+
+    C.ShapeID = S.ID
+
+    // Dynamics compartment.
+    // *** This should probably set in accordance with receptor types and
+    //     tuning.
+    float connection_data_weight = 1.0; // *** E.g. right here!
+
+    C.Neurotransmitter = synapse_type_name[syn.type_ID()];
+
+    float conductance = conductances_nS.at(syn.type_ID());
+    float receptor_conductance = conductance / connection_data_weight; // Divided by weight to avoid counter-intuitive weight interpretation.
+    C.Conductance_nS = receptor_conductance;
+
+    C.TimeConstantRise_ms = N.PostsynapticPotentialRiseTime_ms;
+    C.TimeConstantDecay_ms = N.PostsynapticPotentialDecayTime_ms;
+
+    C.Name = "syn-"+N.Name;
+
+    C.ID = _Params.Sim->AddReceptor(C);
+    if (C.ID<0) {
+        NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Source neuron or destination neuron not found.");
+        return false;
+    }
+
     return true;
 }
 
@@ -161,6 +252,13 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
     float neuron_IPSP = 870.0; // nA
 
     network& Net = *(_Params.Result.net);
+
+    // The SegmentIDMap is used to map Netmorph neurite fibre segments to
+    // NES compartment IDs. This is needed when building synapse receptor objects.
+    // Note that there are no segments mapped to soma compartment IDs, because
+    // Netmorph is exclusively involved with neurite outgrowth and does not define
+    // soma morphology.
+    std::map<fibre_segment*, int> SegmentIDMap;
 
     size_t nnum = 0;
     PLL_LOOP_FORWARD(neuron, Net.PLLRoot<neuron>::head(), 1) {
@@ -209,7 +307,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         //        terminal segments (and growth cones), etc.
         parsing_fs_type = dendrite_fs;
         PLL_LOOP_FORWARD_NESTED(fibre_structure, e->InputStructure()->head(), 1, dptr) {
-            if (!RecursiveNeuriteBuild(false, _Params, N, dptr)) {
+            if (!RecursiveNeuriteBuild(false, _Params, SegmentIDMap, N, dptr)) {
                 NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in dendrite build.");
                 return false;
             }
@@ -218,7 +316,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         // 4. Build axons.
         parsing_fs_type = axon_fs;
         PLL_LOOP_FORWARD_NESTED(fibre_structure, e->OutputStructure()->head(), 1, aptr) {
-            if (!RecursiveNeuriteBuild(true, _Params, N, aptr)) {
+            if (!RecursiveNeuriteBuild(true, _Params, SegmentIDMap, N, aptr)) {
                 NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in axon build.");
                 return false;
             }
@@ -231,6 +329,16 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         }
 
         // 8. Build synapse receptors.
+        if (e->outputconnections.head()) {
+            PLL_LOOP_FORWARD_NESTED(connection, e->OutputConnections().head(), 1, conn) {
+                PLL_LOOP_FORWARD_NESTED(synapse, conn->Synapses()->head(), 1, syn) {
+                    if (!SynapsesBuild(_Params, SegmentIDMap, N, conn, syn)) {
+                        NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in synapse build.");
+                        return false;
+                    }
+                }
+            }
+        }
 
         nnum++;
     }
