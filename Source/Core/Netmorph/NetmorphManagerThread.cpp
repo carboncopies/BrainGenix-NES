@@ -12,6 +12,7 @@
 #include <Include/Netmorph.h>
 #include <Include/Embeddable.h>
 #include <network.hh>
+#include <synapse_structure.hh>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Netmorph/NetmorphManagerThread.h>

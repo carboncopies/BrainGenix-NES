@@ -171,6 +171,7 @@ protected:
     std::vector<Geometries::Box*> BoxReferences;
     std::vector<Compartments::BS>* RefToCompartments;
     std::vector<std::shared_ptr<CoreStructs::Neuron>>* RefToSCNeurons;
+    std::vector<std::unique_ptr<Connections::Receptor>>* RefToReceptors;
 
 public:
     Saver(const std::string& _Name): Name_(_Name) {}
@@ -194,6 +195,9 @@ public:
     void AddNeurons(std::vector<std::shared_ptr<CoreStructs::Neuron>>& _RefToSCNeurons) {
         RefToSCNeurons = &_RefToSCNeurons;
     }
+    void AddReceptors(std::vector<std::unique_ptr<Connections::Receptor>>& _RefToReceptors) {
+        RefToReceptors = &_RefToReceptors;
+    }
 
     bool Save() {
         /** Save file structure is:
@@ -205,6 +209,7 @@ public:
          *  6. Compartments::BSBaseData[] (SaverInfo.BSSCCompartmentsSize elements)
          *  7. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
          *  8. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
+         *  9. ... receptor stuff...
          */
         auto SaveFile = std::fstream(Name_, std::ios::out | std::ios::binary);
         _SaverInfo.SGMapSize = SGMap.size();
@@ -249,6 +254,8 @@ public:
         for (size_t i = 0; i < flatdata_list.size(); i++) {
             SaveFile.write((char*)flatdata_list.at(i).get(), flatdata_sizes.at(i));
         }
+
+        
 
         SaveFile.close();
         return SaveFile.good();
@@ -339,6 +346,7 @@ bool Simulation::SaveModel(const std::string& Name) {
     // Save neurons.
     _Saver.AddNeurons(Neurons);
     // Save synapses.
+    _Saver.AddReceptors(Receptors);
 
     return _Saver.Save();
 }
