@@ -82,73 +82,135 @@ public:
  *    a) If a segment is a root segment then R0=R1=diameter.
  *    b) Otherwise, R0=parent->diameter, R1=diameter.
  */
-bool RecursiveNeuriteBuild(bool IsAxon, NetmorphParameters& _Params, CoreStructs::SCNeuronStruct& N, fibre_segment* fsptr) {
+class NeuriteBuild: public fibre_tree_op {
+public:
+    bool IsAxon;
+    NetmorphParameters& _Params;
+    CoreStructs::SCNeuronStruct& N;
+    size_t num_errors = 0;
+    NeuriteBuild(bool _IsAxon, NetmorphParameters& Params, CoreStructs::SCNeuronStruct& _N): IsAxon(_IsAxon), _Params(Params), N(_N) {}
+    virtual void op(fibre_segment* fs) {
+        //*** MAYBE FIX REPEATED NAMES
 
-    //*** MAYBE FIX REPEATED NAMES
+        // Build neurite cylinder.
+        Geometries::Cylinder S;
+        S.End1Radius_um = fs->Diameter() <= 0.0 ? 1.0 : fs->Diameter();
+        if (!fs->Parent()) {
+            S.End0Radius_um = S.End1Radius_um;
+        } else {
+            S.End0Radius_um = fs->Parent()->Diameter();
+            if (S.End0Radius_um <= 0.0) S.End0Radius_um = S.End1Radius_um;
+        }
+        S.End0Pos_um.x = fs->P0.X();
+        S.End0Pos_um.y = fs->P0.Y();
+        S.End0Pos_um.z = fs->P0.Z();
+        S.End1Pos_um.x = fs->P1.X();
+        S.End1Pos_um.y = fs->P1.Y();
+        S.End1Pos_um.z = fs->P1.Z();
+        S.Name = "cyl-"+N.Name;
 
-    // Build neurite cylinder.
-    Geometries::Cylinder S;
-    S.End1Radius_um = fsptr->Diameter() <= 0.0 ? 1.0 : fsptr->Diameter();
-    if (!fsptr->Parent()) {
-        S.End0Radius_um = S.End1Radius_um;
-    } else {
-        S.End0Radius_um = fsptr->Parent()->Diameter();
-        if (S.End0Radius_um <= 0.0) S.End0Radius_um = S.End1Radius_um;
+        S.ID = _Params.Sim->AddCylinder(S);
+
+        // Build neurite compartment.
+        Compartments::BS C;
+        C.ShapeID = S.ID;
+        C.MembranePotential_mV = N.MembranePotential_mV;
+        C.RestingPotential_mV = N.RestingPotential_mV;
+        C.SpikeThreshold_mV = N.SpikeThreshold_mV;
+        C.AfterHyperpolarizationAmplitude_mV = N.AfterHyperpolarizationAmplitude_mV;
+        C.DecayTime_ms = N.DecayTime_ms;
+        if (IsAxon) {
+            C.Name = "axon-"+N.Name;
+        } else {
+            C.Name = "dendrite-"+N.Name;
+        }
+        if (_Params.Sim->AddSCCompartment(C)<0) { // invalid C.ID
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed: Missing Cylinder for neurite compartment build.");
+        } else { // valid C.ID
+            if (IsAxon) {
+                N.AxonCompartmentIDs.emplace_back(C.ID);
+            } else {
+                N.DendriteCompartmentIDs.emplace_back(C.ID);
+            }
+            fs->cache.i = C.ID;
+        }
+
     }
-    S.End0Pos_um.x = fsptr->P0.X();
-    S.End0Pos_um.y = fsptr->P0.Y();
-    S.End0Pos_um.z = fsptr->P0.Z();
-    S.End1Pos_um.x = fsptr->P1.X();
-    S.End1Pos_um.y = fsptr->P1.Y();
-    S.End1Pos_um.z = fsptr->P1.Z();
-    S.Name = "cyl-"+N.Name;
-
-    S.ID = _Params.Sim->AddCylinder(S);
-
-    // Build neurite compartment.
-    Compartments::BS C;
-    C.ShapeID = S.ID;
-    C.MembranePotential_mV = N.MembranePotential_mV;
-    C.RestingPotential_mV = N.RestingPotential_mV;
-    C.SpikeThreshold_mV = N.SpikeThreshold_mV;
-    C.AfterHyperpolarizationAmplitude_mV = N.AfterHyperpolarizationAmplitude_mV;
-    C.DecayTime_ms = N.DecayTime_ms;
-    if (IsAxon) {
-        C.Name = "axon-"+N.Name;
-    } else {
-        C.Name = "dendcomp-"+N.Name;
+    void logerrors() const {
+        if (num_errors>0) {
+            _Params.Sim->_Logger->Log("NeuriteBuild: Number of errors: "+std::to_string(num_errors), 7);
+        }
     }
-    if (_Params.Sim->AddSCCompartment(C)<0) {
-        NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed: Missing Cylinder for neurite compartment build.");
-        return false;
-    }
+};
 
-    if (IsAxon) {
-        N.AxonCompartmentIDs.emplace_back(C.ID);
-    } else {
-        N.DendriteCompartmentIDs.emplace_back(C.ID);
-    }
+// bool RecursiveNeuriteBuild(bool IsAxon, NetmorphParameters& _Params, CoreStructs::SCNeuronStruct& N, fibre_segment* fsptr) {
 
-    if ((!fsptr->Branch1()) && (!fsptr->Branch2())) {
-        return true; // This is a terminal branch.
-    }
+//     //*** MAYBE FIX REPEATED NAMES
 
-    //SegmentIDMap.emplace(fsptr, C.ID);
-    fsptr->cache.i = C.ID;
+//     // Build neurite cylinder.
+//     Geometries::Cylinder S;
+//     S.End1Radius_um = fsptr->Diameter() <= 0.0 ? 1.0 : fsptr->Diameter();
+//     if (!fsptr->Parent()) {
+//         S.End0Radius_um = S.End1Radius_um;
+//     } else {
+//         S.End0Radius_um = fsptr->Parent()->Diameter();
+//         if (S.End0Radius_um <= 0.0) S.End0Radius_um = S.End1Radius_um;
+//     }
+//     S.End0Pos_um.x = fsptr->P0.X();
+//     S.End0Pos_um.y = fsptr->P0.Y();
+//     S.End0Pos_um.z = fsptr->P0.Z();
+//     S.End1Pos_um.x = fsptr->P1.X();
+//     S.End1Pos_um.y = fsptr->P1.Y();
+//     S.End1Pos_um.z = fsptr->P1.Z();
+//     S.Name = "cyl-"+N.Name;
 
-    //bool EndIsBifurcation = (Branch1() && Branch2()); // *** We may find this useful to know later.
+//     S.ID = _Params.Sim->AddCylinder(S);
 
-    if (fsptr->Branch1()) if (!RecursiveNeuriteBuild(IsAxon, _Params, N, fsptr->Branch1())) {
-        NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed on Branch1.");
-        return false;
-    }
+//     // Build neurite compartment.
+//     Compartments::BS C;
+//     C.ShapeID = S.ID;
+//     C.MembranePotential_mV = N.MembranePotential_mV;
+//     C.RestingPotential_mV = N.RestingPotential_mV;
+//     C.SpikeThreshold_mV = N.SpikeThreshold_mV;
+//     C.AfterHyperpolarizationAmplitude_mV = N.AfterHyperpolarizationAmplitude_mV;
+//     C.DecayTime_ms = N.DecayTime_ms;
+//     if (IsAxon) {
+//         C.Name = "axon-"+N.Name;
+//     } else {
+//         C.Name = "dendcomp-"+N.Name;
+//     }
+//     if (_Params.Sim->AddSCCompartment(C)<0) {
+//         NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed: Missing Cylinder for neurite compartment build.");
+//         return false;
+//     }
 
-    if (fsptr->Branch2()) if (!RecursiveNeuriteBuild(IsAxon, _Params, N, fsptr->Branch2())) {
-        NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed on Branch2.");
-        return false;
-    }
-    return true;
-}
+//     if (IsAxon) {
+//         N.AxonCompartmentIDs.emplace_back(C.ID);
+//     } else {
+//         N.DendriteCompartmentIDs.emplace_back(C.ID);
+//     }
+
+//     if ((!fsptr->Branch1()) && (!fsptr->Branch2())) {
+//         return true; // This is a terminal branch.
+//     }
+
+//     //SegmentIDMap.emplace(fsptr, C.ID);
+//     fsptr->cache.i = C.ID;
+
+//     //bool EndIsBifurcation = (Branch1() && Branch2()); // *** We may find this useful to know later.
+
+//     if (fsptr->Branch1()) if (!RecursiveNeuriteBuild(IsAxon, _Params, N, fsptr->Branch1())) {
+//         NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed on Branch1.");
+//         return false;
+//     }
+
+//     if (fsptr->Branch2()) if (!RecursiveNeuriteBuild(IsAxon, _Params, N, fsptr->Branch2())) {
+//         NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed on Branch2.");
+//         return false;
+//     }
+//     return true;
+// }
 
 const std::map<synapse_type, float> conductances_nS = {
     { syntype_AMPAR, 40.0 },
@@ -358,21 +420,27 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         //        parentage dependencies of compartments, wherer there are
         //        terminal segments (and growth cones), etc.
         parsing_fs_type = dendrite_fs;
-        PLL_LOOP_FORWARD_NESTED(fibre_structure, e->InputStructure()->head(), 1, dptr) {
-            if (!RecursiveNeuriteBuild(false, _Params, N, dptr)) {
-                NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in dendrite build.");
-                return false;
-            }
-        }
+        NeuriteBuild dendrites_build(false, _Params, N);
+        e->tree_op(dendrites_build);
+        dendrites_build.logerrors();
+        // PLL_LOOP_FORWARD_NESTED(fibre_structure, e->InputStructure()->head(), 1, dptr) {
+        //     if (!RecursiveNeuriteBuild(false, _Params, N, dptr)) {
+        //         NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in dendrite build.");
+        //         return false;
+        //     }
+        // }
 
         // 4. Build axons.
         parsing_fs_type = axon_fs;
-        PLL_LOOP_FORWARD_NESTED(fibre_structure, e->OutputStructure()->head(), 1, aptr) {
-            if (!RecursiveNeuriteBuild(true, _Params, N, aptr)) {
-                NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in axon build.");
-                return false;
-            }
-        }
+        NeuriteBuild axons_build(true, _Params, N);
+        e->tree_op(axons_build);
+        axons_build.logerrors();
+        // PLL_LOOP_FORWARD_NESTED(fibre_structure, e->OutputStructure()->head(), 1, aptr) {
+        //     if (!RecursiveNeuriteBuild(true, _Params, N, aptr)) {
+        //         NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in axon build.");
+        //         return false;
+        //     }
+        // }
 
         // 5. Build neurons.
         if (_Params.Sim->AddSCNeuron(N)<0) {
