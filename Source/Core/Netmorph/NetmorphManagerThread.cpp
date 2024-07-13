@@ -228,7 +228,7 @@ bool SynapsesBuild(NetmorphParameters& _Params, const std::map<fibre_segment*, i
     C.TimeConstantRise_ms = psp_timing.neuron_tau_PSPr;
     C.TimeConstantDecay_ms = psp_timing.neuron_tau_PSPd;
 
-    C.Name = "syn-"+N.Name;
+    C.Name = "synapse";
 
     C.ID = _Params.Sim->AddReceptor(C);
     if (C.ID<0) {
