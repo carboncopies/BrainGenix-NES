@@ -146,6 +146,16 @@ const std::map<synapse_type, float> conductances_nS = {
     { syntype_mGluR, 40.0 },
 };
 
+// *** We may want to obtain these from somewhere else:
+struct DynamicPars {
+    float neuron_Vm_mV = -60.0;
+    float neuron_Vrest_mV = -60.0;
+    float neuron_Vact_mV = -50.0;
+    float neuron_Vahp_mV = -20.0;
+    float neuron_tau_AHP_ms = 30.0;
+    float neuron_IPSP = 870.0; // nA
+};
+
 struct PSPTiming {
     float neuron_tau_PSPr = 5.0;
     float neuron_tau_PSPd = 25.0;
@@ -158,71 +168,149 @@ struct PSPTiming {
  * 'PreSynaptic()' and 'PostSynaptic()' neurons. Each 'synapse' stores a 'synapse_type',
  * as well as morphological information in a 'synapse_structure'.
  */
-bool SynapsesBuild(NetmorphParameters& _Params, const PSPTiming& psp_timing, synapse& syn) {
+class SynapseBuild: public synapse_tree_op {
+public:
+    NetmorphParameters& _Params;
+    const PSPTiming& psp_timing;
+    size_t num_errors = 0;
+    SynapseBuild(NetmorphParameters& Params, const PSPTiming& _psp_timing): _Params(Params), psp_timing(_psp_timing) {}
+    virtual void op(synapse* s) {
+        // Morphology shape.
+        Geometries::Box S;
+        // *** This needs better detailing to take what are clearly pre-
+        //     and postsynaptic locations and to transform them into a
+        //     morphology for synapses, with spines, terminals and receptors.
 
-    // Morphology shape.
-    Geometries::Box S;
-    // *** This needs better detailing to take what are clearly pre-
-    //     and postsynaptic locations and to transform them into a
-    //     morphology for synapses, with spines, terminals and receptors.
+        auto center = (s->Structure()->P0 + s->Structure()->P1)/2.0;
+        double x_absdiff = fabs(s->Structure()->P0.X() - s->Structure()->P1.X());
+        double y_absdiff = fabs(s->Structure()->P0.Y() - s->Structure()->P1.Y());
+        double z_absdiff = fabs(s->Structure()->P0.Z() - s->Structure()->P1.Z());
+        S.Center_um.x = center.X();
+        S.Center_um.y = center.Y();
+        S.Center_um.z = center.Z();
+        S.Dims_um.x = x_absdiff;
+        S.Dims_um.y = y_absdiff;
+        S.Dims_um.z = z_absdiff;
+        // S.Rotations_rad = ...;
+        S.Name = "synbox";
 
-    auto center = (syn.Structure()->P0 + syn.Structure()->P1)/2.0;
-    double x_absdiff = fabs(syn.Structure()->P0.X() - syn.Structure()->P1.X());
-    double y_absdiff = fabs(syn.Structure()->P0.Y() - syn.Structure()->P1.Y());
-    double z_absdiff = fabs(syn.Structure()->P0.Z() - syn.Structure()->P1.Z());
-    S.Center_um.x = center.X();
-    S.Center_um.y = center.Y();
-    S.Center_um.z = center.Z();
-    S.Dims_um.x = x_absdiff;
-    S.Dims_um.y = y_absdiff;
-    S.Dims_um.z = z_absdiff;
-    // S.Rotations_rad = ...;
-    S.Name = "synbox";
+        S.ID = _Params.Sim->AddBox(S);
 
-    S.ID = _Params.Sim->AddBox(S);
+        // Morphology compartment.
+        Connections::Receptor C;
+        C.SourceCompartmentID = s->Structure()->AxonSegment()->cache.i;
+        C.DestinationCompartmentID = s->Structure()->DendriteSegment()->cache.i;
+        if (C.SourceCompartmentID<0) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Presynaptic neurite segment not found.");
+            return;
+        }
+        if (C.DestinationCompartmentID<0) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Postsynaptic neurite segment not found.");
+            return;
+        }
 
-    // Morphology compartment.
-    Connections::Receptor C;
-    C.SourceCompartmentID = syn.Structure()->AxonSegment()->cache.i;
-    C.DestinationCompartmentID = syn.Structure()->DendriteSegment()->cache.i;
-    if (C.SourceCompartmentID<0) {
-        NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Presynaptic neurite segment not found.");
-        return false;
+        C.ShapeID = S.ID;
+
+        // Dynamics compartment.
+        // *** This should probably set in accordance with receptor types and
+        //     tuning.
+        float connection_data_weight = 1.0; // *** E.g. right here!
+
+        // *** We may have to do a mapping from Netmorph types to NES types so
+        //     that the Neuron::UpdateType() function works correctly, and
+        //     so that GetConnectionType() works correctly.
+        C.safeset_Neurotransmitter(synapse_type_name[s->type_ID()]);
+
+        float conductance = conductances_nS.at(s->type_ID());
+        float receptor_conductance = conductance / connection_data_weight; // Divided by weight to avoid counter-intuitive weight interpretation.
+        C.Conductance_nS = receptor_conductance;
+
+        C.TimeConstantRise_ms = psp_timing.neuron_tau_PSPr;
+        C.TimeConstantDecay_ms = psp_timing.neuron_tau_PSPd;
+
+        C.Name = "synapse";
+
+        C.ID = _Params.Sim->AddReceptor(C);
+        if (C.ID<0) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Source neuron or destination neuron not found.");
+            return;
+        }
+
     }
-    if (C.DestinationCompartmentID<0) {
-        NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Postsynaptic neurite segment not found.");
-        return false;
+    void logerrors() const {
+        if (num_errors>0) {
+            _Params.Sim->Logger_->Log("SynapseBuild: Number of errors: "+std::to_string(num_errors), 7);
+        }
     }
+};
+// bool SynapsesBuild(NetmorphParameters& _Params, const PSPTiming& psp_timing, synapse& syn) {
 
-    C.ShapeID = S.ID;
+//     // Morphology shape.
+//     Geometries::Box S;
+//     // *** This needs better detailing to take what are clearly pre-
+//     //     and postsynaptic locations and to transform them into a
+//     //     morphology for synapses, with spines, terminals and receptors.
 
-    // Dynamics compartment.
-    // *** This should probably set in accordance with receptor types and
-    //     tuning.
-    float connection_data_weight = 1.0; // *** E.g. right here!
+//     auto center = (syn.Structure()->P0 + syn.Structure()->P1)/2.0;
+//     double x_absdiff = fabs(syn.Structure()->P0.X() - syn.Structure()->P1.X());
+//     double y_absdiff = fabs(syn.Structure()->P0.Y() - syn.Structure()->P1.Y());
+//     double z_absdiff = fabs(syn.Structure()->P0.Z() - syn.Structure()->P1.Z());
+//     S.Center_um.x = center.X();
+//     S.Center_um.y = center.Y();
+//     S.Center_um.z = center.Z();
+//     S.Dims_um.x = x_absdiff;
+//     S.Dims_um.y = y_absdiff;
+//     S.Dims_um.z = z_absdiff;
+//     // S.Rotations_rad = ...;
+//     S.Name = "synbox";
 
-    // *** We may have to do a mapping from Netmorph types to NES types so
-    //     that the Neuron::UpdateType() function works correctly, and
-    //     so that GetConnectionType() works correctly.
-    C.safeset_Neurotransmitter(synapse_type_name[syn.type_ID()]);
+//     S.ID = _Params.Sim->AddBox(S);
 
-    float conductance = conductances_nS.at(syn.type_ID());
-    float receptor_conductance = conductance / connection_data_weight; // Divided by weight to avoid counter-intuitive weight interpretation.
-    C.Conductance_nS = receptor_conductance;
+//     // Morphology compartment.
+//     Connections::Receptor C;
+//     C.SourceCompartmentID = syn.Structure()->AxonSegment()->cache.i;
+//     C.DestinationCompartmentID = syn.Structure()->DendriteSegment()->cache.i;
+//     if (C.SourceCompartmentID<0) {
+//         NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Presynaptic neurite segment not found.");
+//         return false;
+//     }
+//     if (C.DestinationCompartmentID<0) {
+//         NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Postsynaptic neurite segment not found.");
+//         return false;
+//     }
 
-    C.TimeConstantRise_ms = psp_timing.neuron_tau_PSPr;
-    C.TimeConstantDecay_ms = psp_timing.neuron_tau_PSPd;
+//     C.ShapeID = S.ID;
 
-    C.Name = "synapse";
+//     // Dynamics compartment.
+//     // *** This should probably set in accordance with receptor types and
+//     //     tuning.
+//     float connection_data_weight = 1.0; // *** E.g. right here!
 
-    C.ID = _Params.Sim->AddReceptor(C);
-    if (C.ID<0) {
-        NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Source neuron or destination neuron not found.");
-        return false;
-    }
+//     // *** We may have to do a mapping from Netmorph types to NES types so
+//     //     that the Neuron::UpdateType() function works correctly, and
+//     //     so that GetConnectionType() works correctly.
+//     C.safeset_Neurotransmitter(synapse_type_name[syn.type_ID()]);
 
-    return true;
-}
+//     float conductance = conductances_nS.at(syn.type_ID());
+//     float receptor_conductance = conductance / connection_data_weight; // Divided by weight to avoid counter-intuitive weight interpretation.
+//     C.Conductance_nS = receptor_conductance;
+
+//     C.TimeConstantRise_ms = psp_timing.neuron_tau_PSPr;
+//     C.TimeConstantDecay_ms = psp_timing.neuron_tau_PSPd;
+
+//     C.Name = "synapse";
+
+//     C.ID = _Params.Sim->AddReceptor(C);
+//     if (C.ID<0) {
+//         NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Source neuron or destination neuron not found.");
+//         return false;
+//     }
+
+//     return true;
+// }
 
 class FindUnParsedSegments: public fibre_tree_op {
 public:
@@ -252,19 +340,91 @@ public:
     }
 };
 
+class NeuronBuild: public neuron_list_op {
+public:
+    NetmorphParameters& _Params;
+    const DynamicPars& dynpars;
+    const PSPTiming& psp_timing;
+    size_t num_errors = 0;
+    NeuronBuild(NetmorphParameters& Params, const DynamicPars& _dynpars, const PSPTiming& _psp_timing): _Params(Params), dynpars(_dynpars), psp_timing(_psp_timing) {}
+    virtual void op(neuron* n) {
+
+        // 0. Prepare neuron scaffold with lists.
+        CoreStructs::SCNeuronStruct N;
+        N.Name = std::to_string(uint64_t(n));
+        N.MembranePotential_mV = dynpars.neuron_Vm_mV;
+        N.RestingPotential_mV = dynpars.neuron_Vrest_mV;
+        N.SpikeThreshold_mV = dynpars.neuron_Vact_mV;
+        N.DecayTime_ms = dynpars.neuron_tau_AHP_ms;
+        N.AfterHyperpolarizationAmplitude_mV = dynpars.neuron_Vahp_mV;
+        N.PostsynapticPotentialRiseTime_ms = psp_timing.neuron_tau_PSPr;
+        N.PostsynapticPotentialDecayTime_ms = psp_timing.neuron_tau_PSPd;
+        N.PostsynapticPotentialAmplitude_nA = dynpars.neuron_IPSP;
+
+        // 1. Build soma spheres.
+        Geometries::Sphere S;
+        S.Radius_um = n->Radius();
+        S.Center_um.x = n->Pos().X();
+        S.Center_um.y = n->Pos().Y();
+        S.Center_um.z = n->Pos().Z();
+        S.Name = "sphere-"+N.Name;
+        _Params.Sim->AddSphere(S);
+
+        // 2. Build soma compartments.
+        Compartments::BS C;
+        C.ShapeID = S.ID;
+        C.MembranePotential_mV = N.MembranePotential_mV;
+        C.RestingPotential_mV = N.RestingPotential_mV;
+        C.SpikeThreshold_mV = N.SpikeThreshold_mV;
+        C.AfterHyperpolarizationAmplitude_mV = N.AfterHyperpolarizationAmplitude_mV;
+        C.DecayTime_ms = N.DecayTime_ms;
+        C.Name = "somacomp-"+N.Name;
+        if (_Params.Sim->AddSCCompartment(C)<0) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("NeuronBuild failed: Missing Sphere for soma compartment build.");
+            return;
+        }
+
+        N.SomaCompartmentIDs.emplace_back(C.ID);
+
+        // 3. Build dendrites.
+        //    *** Note: Because Netmorph almost makes all the nodes available
+        //        we could quite easily also store information about the
+        //        parentage dependencies of compartments, wherer there are
+        //        terminal segments (and growth cones), etc.
+        parsing_fs_type = dendrite_fs;
+        NeuriteBuild dendrites_build(false, _Params, N);
+        n->tree_op(dendrites_build);
+        dendrites_build.logerrors();
+
+        // 4. Build axons.
+        parsing_fs_type = axon_fs;
+        NeuriteBuild axons_build(true, _Params, N);
+        n->tree_op(axons_build);
+        axons_build.logerrors();
+
+        // 5. Build neurons.
+        if (_Params.Sim->AddSCNeuron(N)<0) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("NeuronBuild failed: Missing soma compartment for neuron build.");
+            return;
+        }
+
+    }
+    void logerrors() const {
+        if (num_errors>0) {
+            _Params.Sim->Logger_->Log("BuildFromNetmorphNetwork: Number of errors: "+std::to_string(num_errors), 7);
+        }
+    }
+};
+
 // If NetmorphParams.Status==true then the NetmorphParams.net unique_ptr now owns the
 // generated Netmorph network object. We can now use this to build our model in the
 // simulation referenced by Handle.Sim().
 bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
     assert(_Params.Sim != nullptr);
 
-    // *** We may want to obtain these from somewhere else:
-    float neuron_Vm_mV = -60.0;
-    float neuron_Vrest_mV = -60.0;
-    float neuron_Vact_mV = -50.0;
-    float neuron_Vahp_mV = -20.0;
-    float neuron_tau_AHP_ms = 30.0;
-    float neuron_IPSP = 870.0; // nA
+    DynamicPars dynpars;
     PSPTiming psp_timing;
 
     network& Net = *(_Params.Result.net);
@@ -279,68 +439,72 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
     Net.tree_op(unparsed_pre);
     unparsed_pre.log();
 
-    PLL_LOOP_FORWARD(neuron, Net.PLLRoot<neuron>::head(), 1) {
+    NeuronBuild neuron_build(_Params, dynpars, psp_timing);
+    Net.neuron_op(neuron_build);
+    neuron_build.logerrors();
 
-        // 0. Prepare neuron scaffold with lists.
-        CoreStructs::SCNeuronStruct N;
-        N.Name = std::to_string(uint64_t(e));
-        N.MembranePotential_mV = neuron_Vm_mV;
-        N.RestingPotential_mV = neuron_Vrest_mV;
-        N.SpikeThreshold_mV = neuron_Vact_mV;
-        N.DecayTime_ms = neuron_tau_AHP_ms;
-        N.AfterHyperpolarizationAmplitude_mV = neuron_Vahp_mV;
-        N.PostsynapticPotentialRiseTime_ms = psp_timing.neuron_tau_PSPr;
-        N.PostsynapticPotentialDecayTime_ms = psp_timing.neuron_tau_PSPd;
-        N.PostsynapticPotentialAmplitude_nA = neuron_IPSP;
+    // PLL_LOOP_FORWARD(neuron, Net.PLLRoot<neuron>::head(), 1) {
 
-        // 1. Build soma spheres.
-        Geometries::Sphere S;
-        S.Radius_um = e->Radius();
-        S.Center_um.x = e->Pos().X();
-        S.Center_um.y = e->Pos().Y();
-        S.Center_um.z = e->Pos().Z();
-        S.Name = "sphere-"+N.Name;
-        _Params.Sim->AddSphere(S);
+    //     // 0. Prepare neuron scaffold with lists.
+    //     CoreStructs::SCNeuronStruct N;
+    //     N.Name = std::to_string(uint64_t(e));
+    //     N.MembranePotential_mV = neuron_Vm_mV;
+    //     N.RestingPotential_mV = neuron_Vrest_mV;
+    //     N.SpikeThreshold_mV = neuron_Vact_mV;
+    //     N.DecayTime_ms = neuron_tau_AHP_ms;
+    //     N.AfterHyperpolarizationAmplitude_mV = neuron_Vahp_mV;
+    //     N.PostsynapticPotentialRiseTime_ms = psp_timing.neuron_tau_PSPr;
+    //     N.PostsynapticPotentialDecayTime_ms = psp_timing.neuron_tau_PSPd;
+    //     N.PostsynapticPotentialAmplitude_nA = neuron_IPSP;
 
-        // 2. Build soma compartments.
-        Compartments::BS C;
-        C.ShapeID = S.ID;
-        C.MembranePotential_mV = N.MembranePotential_mV;
-        C.RestingPotential_mV = N.RestingPotential_mV;
-        C.SpikeThreshold_mV = N.SpikeThreshold_mV;
-        C.AfterHyperpolarizationAmplitude_mV = N.AfterHyperpolarizationAmplitude_mV;
-        C.DecayTime_ms = N.DecayTime_ms;
-        C.Name = "somacomp-"+N.Name;
-        if (_Params.Sim->AddSCCompartment(C)<0) {
-            NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Missing Sphere for soma compartment build.");
-            return false;
-        }
+    //     // 1. Build soma spheres.
+    //     Geometries::Sphere S;
+    //     S.Radius_um = e->Radius();
+    //     S.Center_um.x = e->Pos().X();
+    //     S.Center_um.y = e->Pos().Y();
+    //     S.Center_um.z = e->Pos().Z();
+    //     S.Name = "sphere-"+N.Name;
+    //     _Params.Sim->AddSphere(S);
 
-        N.SomaCompartmentIDs.emplace_back(C.ID);
+    //     // 2. Build soma compartments.
+    //     Compartments::BS C;
+    //     C.ShapeID = S.ID;
+    //     C.MembranePotential_mV = N.MembranePotential_mV;
+    //     C.RestingPotential_mV = N.RestingPotential_mV;
+    //     C.SpikeThreshold_mV = N.SpikeThreshold_mV;
+    //     C.AfterHyperpolarizationAmplitude_mV = N.AfterHyperpolarizationAmplitude_mV;
+    //     C.DecayTime_ms = N.DecayTime_ms;
+    //     C.Name = "somacomp-"+N.Name;
+    //     if (_Params.Sim->AddSCCompartment(C)<0) {
+    //         NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Missing Sphere for soma compartment build.");
+    //         return false;
+    //     }
 
-        // 3. Build dendrites.
-        //    *** Note: Because Netmorph almost makes all the nodes available
-        //        we could quite easily also store information about the
-        //        parentage dependencies of compartments, wherer there are
-        //        terminal segments (and growth cones), etc.
-        parsing_fs_type = dendrite_fs;
-        NeuriteBuild dendrites_build(false, _Params, N);
-        e->tree_op(dendrites_build);
-        dendrites_build.logerrors();
+    //     N.SomaCompartmentIDs.emplace_back(C.ID);
 
-        // 4. Build axons.
-        parsing_fs_type = axon_fs;
-        NeuriteBuild axons_build(true, _Params, N);
-        e->tree_op(axons_build);
-        axons_build.logerrors();
+    //     // 3. Build dendrites.
+    //     //    *** Note: Because Netmorph almost makes all the nodes available
+    //     //        we could quite easily also store information about the
+    //     //        parentage dependencies of compartments, wherer there are
+    //     //        terminal segments (and growth cones), etc.
+    //     parsing_fs_type = dendrite_fs;
+    //     NeuriteBuild dendrites_build(false, _Params, N);
+    //     e->tree_op(dendrites_build);
+    //     dendrites_build.logerrors();
 
-        // 5. Build neurons.
-        if (_Params.Sim->AddSCNeuron(N)<0) {
-            NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Missing soma compartment for neuron build.");
-            return false;
-        }
+    //     // 4. Build axons.
+    //     parsing_fs_type = axon_fs;
+    //     NeuriteBuild axons_build(true, _Params, N);
+    //     e->tree_op(axons_build);
+    //     axons_build.logerrors();
 
-    }
+    //     // 5. Build neurons.
+    //     if (_Params.Sim->AddSCNeuron(N)<0) {
+    //         NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Missing soma compartment for neuron build.");
+    //         return false;
+    //     }
+
+    // }
 
     CountUnParsedSegments unparsed_post(_Params);
     Net.tree_op(unparsed_post);
@@ -354,18 +518,21 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
      * Synapses need to be processed in a separate loop, after the full
      * SegmentIDMap has been collected.
      */
-    PLL_LOOP_FORWARD(neuron, Net.PLLRoot<neuron>::head(), 1) {
-        if (e->OutputConnections()->head()) {
-            PLL_LOOP_FORWARD_NESTED(connection, e->OutputConnections()->head(), 1, conn) {
-                PLL_LOOP_FORWARD_NESTED(synapse, conn->Synapses()->head(), 1, syn) {
-                    if (!SynapsesBuild(_Params, psp_timing, *syn)) {
-                        NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in synapse build.");
-                        return false;
-                    }
-                }
-            }
-        }
-    }
+    SynapseBuild synapse_build(_Params, psp_timing);
+    Net.synapse_op(synapse_build);
+    synapse_build.logerrors();
+    // PLL_LOOP_FORWARD(neuron, Net.PLLRoot<neuron>::head(), 1) {
+    //     if (e->OutputConnections()->head()) {
+    //         PLL_LOOP_FORWARD_NESTED(connection, e->OutputConnections()->head(), 1, conn) {
+    //             PLL_LOOP_FORWARD_NESTED(synapse, conn->Synapses()->head(), 1, syn) {
+    //                 if (!SynapsesBuild(_Params, psp_timing, *syn)) {
+    //                     NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in synapse build.");
+    //                     return false;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 
     NETMORPH_PARAMS_SUCCESS("Build NES model based on Netmorph output.");
     return true;
