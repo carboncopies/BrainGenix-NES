@@ -136,12 +136,12 @@ bool RecursiveNeuriteBuild(bool IsAxon, NetmorphParameters& _Params, std::map<fi
 
     //bool EndIsBifurcation = (Branch1() && Branch2()); // *** We may find this useful to know later.
 
-    if (fsptr->Branch1()) if (!RecursiveNeuriteBuild(IsAxon, _Params, N, fsptr->Branch1())) {
+    if (fsptr->Branch1()) if (!RecursiveNeuriteBuild(IsAxon, _Params, SegmentIDMap, N, fsptr->Branch1())) {
         NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed on Branch1.");
         return false;
     }
 
-    if (fsptr->Branch2()) if (!RecursiveNeuriteBuild(IsAxon, _Params, N, fsptr->Branch2())) {
+    if (fsptr->Branch2()) if (!RecursiveNeuriteBuild(IsAxon, _Params, SegmentIDMap, N, fsptr->Branch2())) {
         NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed on Branch2.");
         return false;
     }
@@ -173,16 +173,16 @@ bool SynapsesBuild(NetmorphParameters& _Params, const std::map<fibre_segment*, i
     //     and postsynaptic locations and to transform them into a
     //     morphology for synapses, with spines, terminals and receptors.
 
-    auto center = (syn.Structure().P0 + syn.Structure().P1)/2.0;
-    double x_absdiff = fabs(syn.Structure().P0.X() - syn.Structure().P1.X());
-    double y_absdiff = fabs(syn.Structure().P0.Y() - syn.Structure().P1.Y());
-    double z_absdiff = fabs(syn.Structure().P0.Z() - syn.Structure().P1.Z());
+    auto center = (syn.Structure()->P0 + syn.Structure()->P1)/2.0;
+    double x_absdiff = fabs(syn.Structure()->P0.X() - syn.Structure()->P1.X());
+    double y_absdiff = fabs(syn.Structure()->P0.Y() - syn.Structure()->P1.Y());
+    double z_absdiff = fabs(syn.Structure()->P0.Z() - syn.Structure()->P1.Z());
     S.Center_um.x = center.X();
     S.Center_um.y = center.Y();
     S.Center_um.z = center.Z();
     S.Dims_um.x = x_absdiff;
     S.Dims_um.y = y_absdiff;
-    S.Dims_um_z = z_absdiff;
+    S.Dims_um.z = z_absdiff;
     // S.Rotations_rad = ...;
     S.Name = "box-"+N.Name;
 
@@ -203,7 +203,7 @@ bool SynapsesBuild(NetmorphParameters& _Params, const std::map<fibre_segment*, i
     }
     C.DestinationCompartmentID = it_postsegment->second;
 
-    C.ShapeID = S.ID
+    C.ShapeID = S.ID;
 
     // Dynamics compartment.
     // *** This should probably set in accordance with receptor types and
