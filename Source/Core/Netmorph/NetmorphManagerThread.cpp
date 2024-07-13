@@ -157,12 +157,6 @@ const std::map<synapse_type, float> conductances_nS = {
     { syntype_mGluR, 40.0 },
 };
 
-conductances_nS = {
-    'AMPAR': 40.0,
-    'NMDAR': 60.0,
-    'GABAR': -40.0,
-}
-
 /**
  * In Netmorph, after growth, candidate synapse identification, synapse selectin, and
  * receptor type specification, a logical connection between two neurons ('connection')
