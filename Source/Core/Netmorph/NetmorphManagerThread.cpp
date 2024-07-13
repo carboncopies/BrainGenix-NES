@@ -82,7 +82,7 @@ public:
  *    a) If a segment is a root segment then R0=R1=diameter.
  *    b) Otherwise, R0=parent->diameter, R1=diameter.
  */
-bool RecursiveNeuriteBuild(bool IsAxon, NetmorphParameters& _Params, std::map<fibre_segment*, int>& SegmentIDMap, CoreStructs::SCNeuronStruct& N, fibre_segment* fsptr) {
+bool RecursiveNeuriteBuild(bool IsAxon, NetmorphParameters& _Params, CoreStructs::SCNeuronStruct& N, fibre_segment* fsptr) {
 
     //*** MAYBE FIX REPEATED NAMES
 
@@ -133,16 +133,17 @@ bool RecursiveNeuriteBuild(bool IsAxon, NetmorphParameters& _Params, std::map<fi
         return true; // This is a terminal branch.
     }
 
-    SegmentIDMap.emplace(fsptr, C.ID);
+    //SegmentIDMap.emplace(fsptr, C.ID);
+    fsptr->cache.i = C.ID;
 
     //bool EndIsBifurcation = (Branch1() && Branch2()); // *** We may find this useful to know later.
 
-    if (fsptr->Branch1()) if (!RecursiveNeuriteBuild(IsAxon, _Params, SegmentIDMap, N, fsptr->Branch1())) {
+    if (fsptr->Branch1()) if (!RecursiveNeuriteBuild(IsAxon, _Params, N, fsptr->Branch1())) {
         NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed on Branch1.");
         return false;
     }
 
-    if (fsptr->Branch2()) if (!RecursiveNeuriteBuild(IsAxon, _Params, SegmentIDMap, N, fsptr->Branch2())) {
+    if (fsptr->Branch2()) if (!RecursiveNeuriteBuild(IsAxon, _Params, N, fsptr->Branch2())) {
         NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed on Branch2.");
         return false;
     }
@@ -171,7 +172,7 @@ struct PSPTiming {
  * 'PreSynaptic()' and 'PostSynaptic()' neurons. Each 'synapse' stores a 'synapse_type',
  * as well as morphological information in a 'synapse_structure'.
  */
-bool SynapsesBuild(NetmorphParameters& _Params, const std::map<fibre_segment*, int>& SegmentIDMap, const PSPTiming& psp_timing, connection& conn, synapse& syn) {
+bool SynapsesBuild(NetmorphParameters& _Params, const PSPTiming& psp_timing, connection& conn, synapse& syn) {
 
     // Morphology shape.
     Geometries::Box S;
@@ -196,18 +197,29 @@ bool SynapsesBuild(NetmorphParameters& _Params, const std::map<fibre_segment*, i
 
     // Morphology compartment.
     Connections::Receptor C;
-    auto it_presegment = SegmentIDMap.find(syn.Structure()->AxonSegment());
-    if (it_presegment==SegmentIDMap.end()) {
+    C.SourceCompartmentID = syn.Structure()->AxonSegment()->cache.i;
+    C.DestinationCompartmentID = syn.Structure()->DendriteSegment()->cache.i;
+    if (C.SourceCompartmentID<0) {
         NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Presynaptic neurite segment not found.");
         return false;
     }
-    C.SourceCompartmentID  = it_presegment->second;
-    auto it_postsegment = SegmentIDMap.find(syn.Structure()->AxonSegment());
-    if (it_postsegment==SegmentIDMap.end()) {
+    if (C.DestinationCompartmentID<0) {
         NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Postsynaptic neurite segment not found.");
         return false;
     }
-    C.DestinationCompartmentID = it_postsegment->second;
+
+    // auto it_presegment = SegmentIDMap.find(syn.Structure()->AxonSegment());
+    // if (it_presegment==SegmentIDMap.end()) {
+    //     NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Presynaptic neurite segment not found.");
+    //     return false;
+    // }
+    // C.SourceCompartmentID  = it_presegment->second;
+    // auto it_postsegment = SegmentIDMap.find(syn.Structure()->DendriteSegment());
+    // if (it_postsegment==SegmentIDMap.end()) {
+    //     NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Postsynaptic neurite segment not found.");
+    //     return false;
+    // }
+    // C.DestinationCompartmentID = it_postsegment->second;
 
     C.ShapeID = S.ID;
 
@@ -256,12 +268,18 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
 
     network& Net = *(_Params.Result.net);
 
-    // The SegmentIDMap is used to map Netmorph neurite fibre segments to
-    // NES compartment IDs. This is needed when building synapse receptor objects.
-    // Note that there are no segments mapped to soma compartment IDs, because
-    // Netmorph is exclusively involved with neurite outgrowth and does not define
-    // soma morphology.
-    std::map<fibre_segment*, int> SegmentIDMap;
+    // Make sure the common cache integer valus of all fiber segments are
+    // initialized to -1.
+    set_cache_int op;
+    op.value = -1;
+    Net->tree_op(set_cache_int);
+
+    // // The SegmentIDMap is used to map Netmorph neurite fibre segments to
+    // // NES compartment IDs. This is needed when building synapse receptor objects.
+    // // Note that there are no segments mapped to soma compartment IDs, because
+    // // Netmorph is exclusively involved with neurite outgrowth and does not define
+    // // soma morphology.
+    // std::map<fibre_segment*, int> SegmentIDMap;
 
     PLL_LOOP_FORWARD(neuron, Net.PLLRoot<neuron>::head(), 1) {
 
@@ -309,7 +327,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         //        terminal segments (and growth cones), etc.
         parsing_fs_type = dendrite_fs;
         PLL_LOOP_FORWARD_NESTED(fibre_structure, e->InputStructure()->head(), 1, dptr) {
-            if (!RecursiveNeuriteBuild(false, _Params, SegmentIDMap, N, dptr)) {
+            if (!RecursiveNeuriteBuild(false, _Params, N, dptr)) {
                 NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in dendrite build.");
                 return false;
             }
@@ -318,7 +336,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         // 4. Build axons.
         parsing_fs_type = axon_fs;
         PLL_LOOP_FORWARD_NESTED(fibre_structure, e->OutputStructure()->head(), 1, aptr) {
-            if (!RecursiveNeuriteBuild(true, _Params, SegmentIDMap, N, aptr)) {
+            if (!RecursiveNeuriteBuild(true, _Params, N, aptr)) {
                 NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in axon build.");
                 return false;
             }
@@ -341,7 +359,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
         if (e->OutputConnections()->head()) {
             PLL_LOOP_FORWARD_NESTED(connection, e->OutputConnections()->head(), 1, conn) {
                 PLL_LOOP_FORWARD_NESTED(synapse, conn->Synapses()->head(), 1, syn) {
-                    if (!SynapsesBuild(_Params, SegmentIDMap, psp_timing, *conn, *syn)) {
+                    if (!SynapsesBuild(_Params, psp_timing, *conn, *syn)) {
                         NETMORPH_PARAMS_FAIL("BuildFromNetmorphNetwork failed: Error in synapse build.");
                         return false;
                     }
