@@ -262,6 +262,23 @@ public:
     }
 };
 
+class CountUnParsedSegments: public fibre_tree_op {
+public:
+    NetmorphParameters& _Params;
+    size_t num_unparsed = 0;
+    FindUnParsedSegments(NetmorphParameters& Params): _Params(Params) {}
+    virtual void op(fibre_segment* fs) {
+        if (fs->cache.i<0) {
+            num_unparsed++;
+        }
+    }
+    void str() const {
+        if (num_unparsed>0) {
+            _Params.Sim->Logger_->Log("Number of unparsed segments: "+std::to_string(num_unparsed), 7);
+        }
+    }
+};
+
 // If NetmorphParams.Status==true then the NetmorphParams.net unique_ptr now owns the
 // generated Netmorph network object. We can now use this to build our model in the
 // simulation referenced by Handle.Sim().
@@ -284,6 +301,9 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
     set_cache_int op;
     op.value = -1;
     Net.tree_op(op);
+
+    CountUnParsedSegments unparsed_pre(_Params);
+    Net.tree_op(unparsed_pre);
 
     // // The SegmentIDMap is used to map Netmorph neurite fibre segments to
     // // NES compartment IDs. This is needed when building synapse receptor objects.
@@ -361,8 +381,11 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
 
     }
 
-    FindUnParsedSegments findunparsed(_Params);
-    Net.tree_op(findunparsed);
+    CountUnParsedSegments unparsed_post(_Params);
+    Net.tree_op(unparsed_post);
+
+    // FindUnParsedSegments findunparsed(_Params);
+    // Net.tree_op(findunparsed);
 
     /**
      * 8. Build synapse receptors.
