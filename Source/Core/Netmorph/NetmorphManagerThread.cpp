@@ -139,7 +139,7 @@ public:
     }
     void logerrors() const {
         if (num_errors>0) {
-            _Params.Sim->_Logger->Log("NeuriteBuild: Number of errors: "+std::to_string(num_errors), 7);
+            _Params.Sim->Logger_->Log("NeuriteBuild: Number of errors: "+std::to_string(num_errors), 7);
         }
     }
 };
