@@ -272,7 +272,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
     // initialized to -1.
     set_cache_int op;
     op.value = -1;
-    Net.tree_op(set_cache_int);
+    Net.tree_op(op);
 
     // // The SegmentIDMap is used to map Netmorph neurite fibre segments to
     // // NES compartment IDs. This is needed when building synapse receptor objects.
