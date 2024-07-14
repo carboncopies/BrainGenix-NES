@@ -558,12 +558,12 @@ std::string SimulationRPCInterface::SimulationGetBoundingBox(std::string _JSONRe
     }
     
     // Setup floats to store max/min values
-    float BottomLeftX_um;
-    float BottomLeftY_um;
-    float BottomLeftZ_um;
-    float TopRightX_um;
-    float TopRightY_um;
-    float TopRightZ_um;
+    float BottomLeftX_um = 0.0;
+    float BottomLeftY_um = 0.0;
+    float BottomLeftZ_um = 0.0;
+    float TopRightX_um = 0.0;
+    float TopRightY_um = 0.0;
+    float TopRightZ_um = 0.0;
     
     // Iterate all shapes and create a bounding box that encompasses them all
     for (size_t ShapeID = 0; ShapeID < Handle.Sim()->Collection.Size(); ShapeID++) {
