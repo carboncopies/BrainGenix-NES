@@ -274,6 +274,18 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         Task->WorldInfo_ = Info;
         Task->Parameters_ = _Params;
 
+        // Calculate size of receptor box and make warning if it's huge
+        if (_Sim->Collection.IsBox(Task->ShapeID_)) {
+            Geometries::Box& ThisBox = _Sim->Collection.GetBox(Task->ShapeID_);
+            float Volume_um3 = ThisBox.Volume_um3();
+            float VoxelSize_um3 = _Params->VoxelResolution_um * _Params->VoxelResolution_um * _Params->VoxelResolution_um;
+            uint64_t TotalVoxels = (float)Volume_um3 / (float)VoxelSize_um3;
+
+            if (TotalVoxels > 10000) {
+                _Logger->Log(std::string("Detected that shape '") + std::to_string(Task->ShapeID_) + "' has too many voxels of ~'" + std::to_string(TotalVoxels) + "'", 7);
+            }
+
+        }
 
         // Now submit to render queue if it's inside the region, otherwise skip it
         if (IsShapeInsideRegion(_Sim, ThisReceptor->ShapeID, RegionBoundingBox, Info)) {
