@@ -402,7 +402,7 @@ int ExecuteNetmorphOperation(BG::Common::Logger::LoggingSystem* _Logger, Netmorp
     embedlog = std::make_unique<Nm2NESLogging>(*_Logger);
 
     _Logger->Log("Starting Netmorph Simulation", 5);
-    _Params->Result = Netmorph(&_Params->Progress_percent, _Params->ModelFile);
+    _Params->Result = Netmorph(&_Params->Progress_percent, _Params->ModelContent);
     _Logger->Log("Netmorph Simulation Finished", 5);
 
     if (_Params->Result.Status) {
