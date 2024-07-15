@@ -84,10 +84,10 @@ struct VSDAData {
     std::string                 CurrentOperation_ = "";    /**String that defines what the current processing step is. I.e: rasterization or image processing*/
     int                         VoxelQueueLength_ = 0;     /**Number of items left to be processed in the queue for rasterization*/
     int                         TotalVoxelQueueLength_= 0; /**Specify the number of total items in the rasterization queue*/
-    int                         TotalSlices_ = 0;          /**Defines the total number of slices to be rendered (is populated once the renderer begins)*/
-    int                         CurrentSlice_ = 0;         /**Defines the current slice that is being rendered. (also is set by the renderer once initialization starts)*/
-    int                         TotalSliceImages_ = 0;     /**Defines the total number of images for this slice*/
-    int                         CurrentSliceImage_ = 0;    /**Defines the current image being worked on for this slice*/
+    int                         TotalSlices_ = 0;          /**(ACTUALLY IMAGES) Defines the total number of slices to be rendered (is populated once the renderer begins)*/
+    int                         CurrentSlice_ = 0;         /**(ACTUALLY IMAGES) Defines the current slice that is being rendered. (also is set by the renderer once initialization starts)*/
+    int                         TotalSliceImages_ = 0;     /**(DOES NOTHING) Defines the total number of images for this slice*/
+    int                         CurrentSliceImage_ = 0;    /**(DOES NOTHING) Defines the current image being worked on for this slice*/
     int                         TotalRegions_ = 0;         /**Defines the total number of subregions that must be rendered*/
     int                         CurrentRegion_ = 0;        /**Defines the current region being rendered by the system right now.*/
     int                         TotalImagesX_ = 0;         /**Defines the total number of images per slice in the x dimension*/
