@@ -2,6 +2,13 @@
 
 #include <Simulator/Structs/RecordingElectrode.h>
 #include <Simulator/Structs/CalciumImaging.h>
+#include <Simulator/SimpleCompartmental/SCNeuron.h>
+#include <Simulator/Geometries/GeometryCollection.h>
+#include <Simulator/Geometries/Geometry.h>
+#include <Simulator/Geometries/Sphere.h>
+#include <Simulator/Geometries/Cylinder.h>
+#include <Simulator/Geometries/Box.h>
+
 
 
 #include <iostream>
@@ -10,6 +17,9 @@
 #include <ctime>
 #include <iomanip>
 #include <fstream>
+#include <memory>
+
+#include <iostream>
 
 namespace BG {
 namespace NES {
@@ -41,6 +51,462 @@ void Simulation::AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region) {
     auto ID = std::to_string(regionPtr->ID);
     this->Regions[ID] = regionPtr;
 };
+
+int Simulation::AddSphere(Geometries::Sphere& _S) {
+    _S.ID = Collection.Geometries.size();
+    Collection.Geometries.push_back(_S);
+    return _S.ID;
+}
+
+int Simulation::AddCylinder(Geometries::Cylinder& _S) {
+    _S.ID = Collection.Geometries.size();
+    Collection.Geometries.push_back(_S);
+    return _S.ID;
+}
+
+int Simulation::AddBox(Geometries::Box& _S){
+    _S.ID = Collection.Geometries.size();
+    Collection.Geometries.push_back(_S);
+    return _S.ID;
+}
+
+/**
+ * Note: We cache the pointer to the shape in the compartment data, so that it
+ *       does not need to reach back to the Simulation to search for it.
+ */
+int Simulation::AddSCCompartment(Compartments::BS& _C) {
+    _C.ShapePtr = Collection.GetGeometry(_C.ShapeID);
+    if (!_C.ShapePtr) {
+        return -1;
+    }
+
+    _C.ID = BSCompartments.size();
+    BSCompartments.push_back(_C);
+    return _C.ID;
+}
+
+int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
+    if (_N.SomaCompartmentIDs.size()<1) return -1;
+
+    _N.ID = Neurons.size();
+    
+    Neurons.push_back(std::make_shared<SCNeuron>(_N, *this));
+    for (const auto & SomaID : _N.SomaCompartmentIDs) {
+        NeuronByCompartment.emplace(SomaID, _N.ID);
+    }
+    for (const auto & DendriteID : _N.DendriteCompartmentIDs) {
+        NeuronByCompartment.emplace(DendriteID, _N.ID);
+    }
+    for (const auto & AxonID : _N.AxonCompartmentIDs) {
+        NeuronByCompartment.emplace(AxonID, _N.ID);
+    }
+
+    return _N.ID;
+}
+
+int Simulation::AddReceptor(Connections::Receptor& _C) {
+
+    _C.ID = Receptors.size();
+
+    Receptors.push_back(std::make_unique<Connections::Receptor>(_C));
+
+    // Inform destination neuron of its new input receptor.
+    CoreStructs::Neuron* SrcNeuronPtr = FindNeuronByCompartment(_C.SourceCompartmentID);
+    CoreStructs::Neuron* DstNeuronPtr = FindNeuronByCompartment(_C.DestinationCompartmentID);
+    if ((SrcNeuronPtr==nullptr) || (DstNeuronPtr==nullptr)) {
+        return -1;
+    }
+
+    CoreStructs::ReceptorData RData(_C.ID, Receptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
+    SrcNeuronPtr->OutputTransmitterAdded(RData);
+    DstNeuronPtr->InputReceptorAdded(RData);
+    SrcNeuronPtr->UpdateType(_C.Neurotransmitter);
+
+    return _C.ID;
+}
+
+struct SaverInfo {
+    size_t SGMapSize = 0;
+    size_t SphereReferencesSize = 0;
+    size_t CylinderReferencesSize = 0;
+    size_t BoxReferencesSize = 0;
+    size_t BSSCCompartmentsSize = 0;
+    size_t ReceptorsSize = 0;
+    size_t NeuronsSize = 0;
+
+    std::string str() const {
+        std::string s;
+        s += "SGMapSize: " + std::to_string(SGMapSize);
+        s += "\nSphereReferencesSize: " + std::to_string(SphereReferencesSize);
+        s += "\nCylinderReferencesSize: " + std::to_string(CylinderReferencesSize);
+        s += "\nBoxReferencesSize: " + std::to_string(BoxReferencesSize);
+        s += "\nBSSCCompartmentsSize: " + std::to_string(BSSCCompartmentsSize);
+        s += "\nReceptorsSize: " + std::to_string(ReceptorsSize);
+        s += "\nNeuronsSize: " + std::to_string(NeuronsSize);
+        s += '\n';
+        return s;
+    }
+};
+
+struct SaverGeometry {
+    Geometries::GeometryShapeEnum Type; // Sphere, Cylinder or Box
+    size_t Idx;             // Index within the type-specific list
+    SaverGeometry() {}
+    SaverGeometry(Geometries::GeometryShapeEnum _Type, size_t _Idx): Type(_Type), Idx(_Idx) {}
+
+    std::string str() const {
+        std::string s;
+        s += "(Typ: "+std::to_string((int) Type);
+        s += ",Idx: "+std::to_string(Idx);
+        s += ") ";
+        return s;
+    }
+};
+
+class Saver {
+protected:
+    std::string Name_;
+    SaverInfo _SaverInfo;
+    std::vector<SaverGeometry> SGMap; // Vector indices follow those in Collection.Geometries.
+    std::vector<Geometries::Sphere*> SphereReferences;
+    std::vector<Geometries::Cylinder*> CylinderReferences;
+    std::vector<Geometries::Box*> BoxReferences;
+    std::vector<Compartments::BS>* RefToCompartments;
+    std::vector<std::shared_ptr<CoreStructs::Neuron>>* RefToSCNeurons;
+    std::vector<std::unique_ptr<Connections::Receptor>>* RefToReceptors;
+
+public:
+    Saver(const std::string& _Name): Name_(_Name) {}
+
+    void AddSphere(Geometries::Sphere& S) {
+        SGMap.emplace_back(Geometries::GeometrySphere, SphereReferences.size());
+        SphereReferences.emplace_back(&S);
+    }
+    void AddCylinder(Geometries::Cylinder& C) {
+        SGMap.emplace_back(Geometries::GeometryCylinder, CylinderReferences.size());
+        CylinderReferences.emplace_back(&C);
+    }
+    void AddBox(Geometries::Box& B) {
+        SGMap.emplace_back(Geometries::GeometryBox, BoxReferences.size());
+        BoxReferences.emplace_back(&B);
+    }
+    void AddBSSCCompartments(std::vector<Compartments::BS>& _RefToCompartments) {
+        RefToCompartments = &_RefToCompartments;
+    }
+    //! Warning: This assumes all neurons are of SCNeuron type.
+    void AddNeurons(std::vector<std::shared_ptr<CoreStructs::Neuron>>& _RefToSCNeurons) {
+        RefToSCNeurons = &_RefToSCNeurons;
+    }
+    void AddReceptors(std::vector<std::unique_ptr<Connections::Receptor>>& _RefToReceptors) {
+        RefToReceptors = &_RefToReceptors;
+    }
+
+    bool Save() {
+        /** Save file structure is:
+         *  1. SaverInfo
+         *  2. SaverGeometry[] (SaverInfo.SGMapSize elements)
+         *  3. Geometries::SphereBase[] (SaverInfo.SphereReferencesSize elements)
+         *  4. Geometries::CylinderBase[] (SaverInfo.CylinderReferencesSize elements)
+         *  5. Geometries::BoxBase[] (SaverInfo.BoxReferencesSize elements)
+         *  6. Compartments::BSBaseData[] (SaverInfo.BSSCCompartmentsSize elements)
+         *  7. Connections::ReceptorBase[] (SaverInfo.ReceptorsSize elements)
+         *  8. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
+         *  9. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
+         */
+        auto SaveFile = std::fstream(Name_, std::ios::out | std::ios::binary);
+        _SaverInfo.SGMapSize = SGMap.size();
+        _SaverInfo.SphereReferencesSize = SphereReferences.size();
+        _SaverInfo.CylinderReferencesSize = CylinderReferences.size();
+        _SaverInfo.BoxReferencesSize = BoxReferences.size();
+        _SaverInfo.BSSCCompartmentsSize = RefToCompartments->size();
+        _SaverInfo.ReceptorsSize = RefToReceptors->size();
+        _SaverInfo.NeuronsSize = RefToSCNeurons->size();
+
+        SaveFile.write((char*)&_SaverInfo, sizeof(_SaverInfo));
+        SaveFile.write((char*)SGMap.data(), sizeof(SaverGeometry)*SGMap.size());
+        for (auto& ptr : SphereReferences) {
+            Geometries::SphereBase& basedataref = *ptr;
+            SaveFile.write((char*)&basedataref, sizeof(Geometries::SphereBase));
+        }
+        for (auto& ptr : CylinderReferences) {
+            Geometries::CylinderBase& basedataref = *ptr;
+            SaveFile.write((char*)&basedataref, sizeof(Geometries::CylinderBase));
+        }
+        for (auto& ptr : BoxReferences) {
+            Geometries::BoxBase& basedataref = *ptr;
+            SaveFile.write((char*)&basedataref, sizeof(Geometries::BoxBase));
+        }
+
+        // Save fixed-size base data of compartments.
+        for (auto& ref : (*RefToCompartments)) {
+            Compartments::BSBaseData& basedataref = ref;
+            SaveFile.write((char*)&basedataref, sizeof(Compartments::BSBaseData));
+        }
+
+        // Save fixed-size base data of receptors.
+        for (auto& ref : (*RefToReceptors)) {
+            Connections::ReceptorBase& basedataref = *ref;
+            SaveFile.write((char*)&basedataref, sizeof(Connections::ReceptorBase));
+        }
+
+        // Save fixed-size base data of neurons and flattened variable
+        // size crucial data.
+        std::vector<std::unique_ptr<uint8_t[]>> flatdata_list;
+        std::vector<uint32_t> flatdata_sizes; 
+        for (auto& ref : (*RefToSCNeurons)) { // from a list of shared pointers to SCNeuron objects
+            std::unique_ptr<uint8_t[]> flatdata = static_cast<SCNeuron*>(ref.get())->build_data.GetFlat();
+            CoreStructs::SCNeuronStructFlatHeader* header_ptr = (CoreStructs::SCNeuronStructFlatHeader*) flatdata.get();
+            flatdata_sizes.push_back(header_ptr->FlatBufSize);
+            flatdata_list.emplace_back(flatdata.release());
+        }
+        SaveFile.write((char*)flatdata_sizes.data(), sizeof(uint32_t)*flatdata_sizes.size());
+        for (size_t i = 0; i < flatdata_list.size(); i++) {
+            SaveFile.write((char*)flatdata_list.at(i).get(), flatdata_sizes.at(i));
+        }
+
+        SaveFile.close();
+        return SaveFile.good();
+    }
+};
+
+class Loader {
+public:
+    std::string Name_;
+    SaverInfo _SaverInfo;
+    std::unique_ptr<SaverGeometry[]> SGMap;
+    std::unique_ptr<Geometries::SphereBase[]> SphereData;
+    std::unique_ptr<Geometries::CylinderBase[]> CylinderData;
+    std::unique_ptr<Geometries::BoxBase[]> BoxData;
+    std::unique_ptr<Compartments::BSBaseData[]> CompartmentData;
+    std::unique_ptr<Connections::ReceptorBase[]> ReceptorData;
+    std::unique_ptr<uint32_t[]> flatdata_sizes;
+    std::unique_ptr<uint8_t[]> all_flatdata;
+
+public:
+    Loader(const std::string& _Name): Name_(_Name) {}
+
+    bool Load() {
+        auto LoadFile = std::fstream(Name_, std::ios::in | std::ios::binary);
+        // 1. SaverInfo
+        LoadFile.read((char*)&_SaverInfo, sizeof(_SaverInfo));
+
+        // 2. SaverGeometry[] (SaverInfo.SGMapSize elements)
+        SGMap = std::make_unique<SaverGeometry[]>(_SaverInfo.SGMapSize);
+        LoadFile.read((char*)SGMap.get(), sizeof(SaverGeometry)*_SaverInfo.SGMapSize);
+        // 3. Geometries::SphereBase[] (SaverInfo.SphereReferencesSize elements)
+        SphereData = std::make_unique<Geometries::SphereBase[]>(_SaverInfo.SphereReferencesSize);
+        LoadFile.read((char*)SphereData.get(), sizeof(Geometries::SphereBase)*_SaverInfo.SphereReferencesSize);
+        // 4. Geometries::CylinderBase[] (SaverInfo.CylinderReferencesSize elements)
+        CylinderData = std::make_unique<Geometries::CylinderBase[]>(_SaverInfo.CylinderReferencesSize);
+        LoadFile.read((char*)CylinderData.get(), sizeof(Geometries::CylinderBase)*_SaverInfo.CylinderReferencesSize);
+        // 5. Geometries::BoxBase[] (SaverInfo.BoxReferencesSize elements)
+        BoxData = std::make_unique<Geometries::BoxBase[]>(_SaverInfo.BoxReferencesSize);
+        LoadFile.read((char*)BoxData.get(), sizeof(Geometries::BoxBase)*_SaverInfo.BoxReferencesSize);
+
+        // 6. Compartments::BSBaseData[] (SaverInfo.BSSCCompartmentsSize elements)
+        CompartmentData = std::make_unique<Compartments::BSBaseData[]>(_SaverInfo.BSSCCompartmentsSize);
+        LoadFile.read((char*)CompartmentData.get(), sizeof(Compartments::BSBaseData)*_SaverInfo.BSSCCompartmentsSize);
+
+        // 7. Connections::ReceptorBase[] (SaverInfo.ReceptorsSize elements)
+        ReceptorData = std::make_unique<Connections::ReceptorBase[]>(_SaverInfo.ReceptorsSize);
+        LoadFile.read((char*)ReceptorData.get(), sizeof(Connections::ReceptorBase)*_SaverInfo.ReceptorsSize);
+
+        // 8. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
+        flatdata_sizes = std::make_unique<uint32_t[]>(_SaverInfo.NeuronsSize);
+        LoadFile.read((char*)flatdata_sizes.get(), sizeof(uint32_t)*_SaverInfo.NeuronsSize);
+        // 9. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
+        size_t totsize = 0;
+        for (size_t i = 0; i < _SaverInfo.NeuronsSize; i++) totsize += flatdata_sizes.get()[i];
+        all_flatdata = std::make_unique<uint8_t[]>(totsize);
+        LoadFile.read((char*)all_flatdata.get(), totsize);
+
+        return LoadFile.good();
+    }
+};
+
+/**
+ * Save neuronal circuit specifications to file.
+ */
+bool Simulation::SaveModel(const std::string& Name) {
+    Saver _Saver(Name);
+    // Prepare to save shapes.
+    for (size_t i = 0; i < Collection.Size(); i++) {
+        switch (Collection.GetShapeType(i)) {
+        case Geometries::GeometrySphere: {
+            auto& S = Collection.GetSphere(i);
+            _Saver.AddSphere(S);
+            break;
+        }
+        case Geometries::GeometryCylinder: {
+            auto& C = Collection.GetCylinder(i);
+            _Saver.AddCylinder(C);
+            break;
+        }
+        case Geometries::GeometryBox: {
+            auto& B = Collection.GetBox(i);
+            _Saver.AddBox(B);
+            break;
+        }
+        default: {
+            Logger_->Log("Encountered a geometric shape for which model saving is not implemented!", 7);
+            return false;
+        }
+        }
+    }
+    // Prepare to save compartments.
+    _Saver.AddBSSCCompartments(BSCompartments);
+    // Save neurons.
+    _Saver.AddNeurons(Neurons);
+    // Save synapses.
+    _Saver.AddReceptors(Receptors);
+
+    return _Saver.Save();
+}
+
+/**
+ * Load neuronal circuit specifications from file, replacing any
+ * previous specifications in this simulation object.
+ */
+bool Simulation::LoadModel(const std::string& Name) {
+    Loader _Loader(Name);
+    if (!_Loader.Load()) return false;
+
+    // Reset and instantiate shapes.
+    Collection.Geometries.clear();
+
+    int ID;
+    for (size_t i = 0; i < _Loader._SaverInfo.SGMapSize; i++) {
+        auto& sgm = _Loader.SGMap.get()[i];
+        switch (sgm.Type) {
+        case Geometries::GeometrySphere: {
+            Geometries::Sphere _S(_Loader.SphereData.get()[sgm.Idx]);
+            _S.Name = "sphere-"+std::to_string(i);
+            ID = AddSphere(_S);
+            break;
+        }
+        case Geometries::GeometryCylinder: {
+            Geometries::Cylinder _S(_Loader.CylinderData.get()[sgm.Idx]);
+            _S.Name = "cylinder-"+std::to_string(i);
+            ID = AddCylinder(_S);
+            break;
+        }
+        case Geometries::GeometryBox: {
+            Geometries::Box _S(_Loader.BoxData.get()[sgm.Idx]);
+            _S.Name = "box-"+std::to_string(i);
+            ID = AddBox(_S);
+            break;
+        }
+        default: {
+            Logger_->Log("Loaded unknown shape type.", 7);
+        }
+        }
+    }
+
+    // Reset and instantiate compartments.
+    BSCompartments.clear();
+
+    for (size_t i = 0; i < _Loader._SaverInfo.BSSCCompartmentsSize; i++) {
+        Compartments::BS _C(_Loader.CompartmentData.get()[i]);
+        _C.Name = "compartment-"+std::to_string(i);
+        ID = AddSCCompartment(_C);
+    }
+
+    // Reset and instantiate SCNeurons.
+    Neurons.clear();
+
+    size_t offset = 0;
+    for (size_t i = 0; i < _Loader._SaverInfo.NeuronsSize; i++) {
+        CoreStructs::SCNeuronStruct _N;
+        _N.FromFlat((CoreStructs::SCNeuronStructFlatHeader*) (_Loader.all_flatdata.get()+offset));
+        ID = AddSCNeuron(_N);
+        offset += _Loader.flatdata_sizes.get()[i];
+    }
+
+    // Reset and instantiate receptors.
+    Receptors.clear();
+
+    for (size_t i = 0; i < _Loader._SaverInfo.ReceptorsSize; i++) {
+        Connections::Receptor _R(_Loader.ReceptorData.get()[i]);
+        _R.Name = "syn-"+std::to_string(i);
+        ID = AddReceptor(_R);
+    }
+
+    Show();
+    //InspectSavedModel(Name);
+    return true;
+}
+
+/**
+ * We can remove this or put it somewhere else as a stand-alone tool.
+ * 
+ * This uses a different approach to load a saved model file and to
+ * inspect its contents. It is meant as a sanity test.
+ */
+void Simulation::InspectSavedModel(const std::string& Name) const {
+    std::filesystem::path savedmodel = Name;
+    size_t fsize = std::filesystem::file_size(savedmodel);
+    std::cout << ">-- File size: " << fsize << '\n';
+    std::vector<uint8_t> data(fsize); 
+    auto LoadFile = std::fstream(Name, std::ios::in | std::ios::binary);
+    LoadFile.read((char*)data.data(), fsize);
+    LoadFile.close();
+
+    uint8_t* ptr = data.data();
+    SaverInfo* siptr = (SaverInfo*) ptr;
+    std::cout << siptr->str();
+
+    ptr += sizeof(SaverInfo);
+    SaverGeometry* sgptr = (SaverGeometry*) ptr;
+    std::cout << ">-- Geometry Shapes Map:\n";
+    for (size_t i = 0; i < siptr->SGMapSize; i++) std::cout << sgptr[i].str();
+    std::cout << '\n';
+
+    ptr += siptr->SGMapSize * sizeof(SaverGeometry);
+    Geometries::SphereBase* sbptr = (Geometries::SphereBase*) ptr;
+    std::cout << ">-- Sphere Base Data:\n";
+    for (size_t i = 0; i < siptr->SphereReferencesSize; i++) std::cout << sbptr[i].str();
+
+    ptr += siptr->SphereReferencesSize * sizeof(Geometries::SphereBase);
+    Geometries::CylinderBase* cbptr = (Geometries::CylinderBase*) ptr;
+    std::cout << ">-- Cylinder Base Data:\n";
+    for (size_t i = 0; i < siptr->CylinderReferencesSize; i++) std::cout << cbptr[i].str();
+
+    ptr += siptr->CylinderReferencesSize * sizeof(Geometries::CylinderBase);
+    Geometries::BoxBase* bbptr = (Geometries::BoxBase*) ptr;
+    std::cout << ">-- Box Base Data:\n";
+    for (size_t i = 0; i < siptr->BoxReferencesSize; i++) std::cout << bbptr[i].str();
+
+    ptr += siptr->BoxReferencesSize * sizeof(Geometries::BoxBase);
+    Compartments::BSBaseData* cpbptr = (Compartments::BSBaseData*) ptr;
+    std::cout << ">-- Compartments Base Data:\n";
+    for (size_t i = 0; i < siptr->BSSCCompartmentsSize; i++) std::cout << cpbptr[i].str();
+
+    ptr += siptr->BSSCCompartmentsSize * sizeof(Compartments::BSBaseData);
+    Connections::ReceptorBase* rbptr = (Connections::ReceptorBase*) ptr;
+    std::cout << ">-- Receptors Base Data:\n";
+    for (size_t i = 0; i < siptr->ReceptorsSize; i++) std::cout << rbptr[i].str();
+
+    ptr += siptr->ReceptorsSize * sizeof(Connections::ReceptorBase);
+    uint32_t* fdsptr = (uint32_t*) ptr;
+    std::cout << ">-- SC Neurons Flat Data Sizes:\n";
+    for (size_t i = 0; i < siptr->NeuronsSize; i++) std::cout << fdsptr[i] << ' ';
+    std::cout << '\n';
+
+    ptr += siptr->NeuronsSize * sizeof(uint32_t);
+    for (size_t i = 0; i < siptr->NeuronsSize; i++) {
+        CoreStructs::SCNeuronStructFlatHeader* scfhptr = (CoreStructs::SCNeuronStructFlatHeader*) ptr;
+
+        std::cout << ">-- SC Neuron Flat Data:\n";
+        std::cout << scfhptr->str();
+        std::cout << scfhptr->name_str();
+        std::cout << scfhptr->scid_str();
+        std::cout << scfhptr->dcid_str();
+        std::cout << scfhptr->acid_str();
+
+        ptr += scfhptr->FlatBufSize;
+    }
+
+}
 
 size_t Simulation::GetTotalNumberOfNeurons() {
     return Neurons.size();
@@ -422,7 +888,22 @@ void Simulation::RunFor(float tRun_ms) {
     Logger_->Log("Total number of spikes on all neurons: "+std::to_string(TotalSpikes()), 3);
 };
 
-void Simulation::Show() { return; };
+/**
+ * Text overview of the state of the current simulation.
+ */
+void Simulation::Show() {
+    std::string simreport("Simulation ID="+std::to_string(ID)+" Name="+Name+" Status Report:\n");
+    simreport += "\nNumber of neurons: "+std::to_string(Neurons.size());
+    simreport += "\nNumber of compartments: "+std::to_string(BSCompartments.size());
+    simreport += "\nNumber of geometric shapes: "+std::to_string(Collection.Geometries.size());
+    simreport += "\n\nLocations of neuron somas:\n";
+    for (auto& nptr : Neurons) {
+        auto& ref = nptr->GetCellCenter();
+        simreport += ref.str() + '\n';
+    }
+    Logger_->Log(simreport, 3);
+    return;
+};
 
 Compartments::BS * Simulation::FindCompartmentByID(int CompartmentID) {
     if (CompartmentID >= BSCompartments.size()) {

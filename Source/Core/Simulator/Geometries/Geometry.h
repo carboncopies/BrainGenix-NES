@@ -12,6 +12,7 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <string>
+#include <sstream>
 
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/BoundingBox.h>
@@ -39,7 +40,6 @@ enum GeometryShapeEnum {
  */
 
 struct Geometry {
-    std::string Name;   //! Name of the Geometry
     int ID;             //! ID of the Geometry
     GeometryShapeEnum GeometryShape = GeometryUnspecified; //! Shape of the derived class instantiation that inherits Geometry.
 
@@ -73,6 +73,14 @@ struct Geometry {
      * @return false Is not in shape
      */
     virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo) = 0;
+
+    std::string str() const {
+        std::stringstream ss;
+        ss << "ID: " << ID;
+        ss << "\nGeometryShape: " << (int) GeometryShape;
+        ss << "\nCenter_um: " << Center_um.str() << '\n';
+        return ss.str();
+    }
 
 };
 

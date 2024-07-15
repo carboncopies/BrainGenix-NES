@@ -17,6 +17,7 @@
 #include <stdexcept>
 #include <string>
 #include <tuple>
+#include <thread>
 #include <unordered_map>
 #include <vector>
 
@@ -132,6 +133,7 @@ public:
     VisualizerParameters VisualizerParams; /**Instance of visualizer parameters, used to generate visualizations in vulkan*/
     NetmorphParameters NetmorphParams; /**Instance of the netmorph parameters, used to configure netmorph's neuron culture simulation*/
 
+    std::thread NetmorphWorkerThread; /**Thread that when exists, runs the netmorph simulation.*/
 
 
     //! Constructors
@@ -147,6 +149,20 @@ public:
 
     void AddCircuit(std::shared_ptr<CoreStructs::NeuralCircuit> circuit);
     void AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region);
+
+    //! Direct builder functions
+    //!   Call these from various '..Create' functions to ensure identical
+    //!   and up-to-date requirements are fulfilled.
+    int AddSphere(Geometries::Sphere& _S);
+    int AddCylinder(Geometries::Cylinder& _S);
+    int AddBox(Geometries::Box& _S);
+    int AddSCCompartment(Compartments::BS& _C);
+    int AddSCNeuron(CoreStructs::SCNeuronStruct& _N);
+    int AddReceptor(Connections::Receptor& _C);
+
+    bool SaveModel(const std::string& Name);
+    bool LoadModel(const std::string& Name);
+    void InspectSavedModel(const std::string& Name) const;
 
     size_t GetTotalNumberOfNeurons();
     std::vector<std::shared_ptr<CoreStructs::Neuron>> GetAllNeurons();

@@ -45,20 +45,28 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
 
     _RPCManager->AddRoute("Simulation/Create",                    std::bind(&SimulationRPCInterface::SimulationCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Reset",                     std::bind(&SimulationRPCInterface::SimulationReset, this, std::placeholders::_1));
+
     _RPCManager->AddRoute("Simulation/SetRandomSeed",             std::bind(&SimulationRPCInterface::SimulationSetSeed, this, std::placeholders::_1));
+
     _RPCManager->AddRoute("Simulation/RunFor",                    std::bind(&SimulationRPCInterface::SimulationRunFor, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/RecordAll",                 std::bind(&SimulationRPCInterface::SimulationRecordAll, this, std::placeholders::_1));
+
     _RPCManager->AddRoute("Simulation/GetSpikeTimes",             std::bind(&SimulationRPCInterface::SimulationGetSpikeTimes, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetRecording",              std::bind(&SimulationRPCInterface::SimulationGetRecording, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetStatus",                 std::bind(&SimulationRPCInterface::SimulationGetStatus, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetGeoCenter",              std::bind(&SimulationRPCInterface::SimulationGetGeoCenter, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetBoundingBox",            std::bind(&SimulationRPCInterface::SimulationGetBoundingBox, this, std::placeholders::_1));
+
     _RPCManager->AddRoute("Simulation/AttachRecordingElectrodes", std::bind(&SimulationRPCInterface::AttachRecordingElectrodes, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/SetRecordInstruments",      std::bind(&SimulationRPCInterface::SetRecordInstruments, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetInstrumentRecordings",   std::bind(&SimulationRPCInterface::GetInstrumentRecordings, this, std::placeholders::_1));
+
     _RPCManager->AddRoute("Simulation/Save",                      std::bind(&SimulationRPCInterface::SimulationSave, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetSave",                   std::bind(&SimulationRPCInterface::SimulationGetSave, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Load",                      std::bind(&SimulationRPCInterface::SimulationLoad, this, std::placeholders::_1));
+
+    _RPCManager->AddRoute("Simulation/SaveModel",                 std::bind(&SimulationRPCInterface::SimulationSaveModel, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/LoadModel",                 std::bind(&SimulationRPCInterface::SimulationLoadModel, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/GetSomaPositions",          std::bind(&SimulationRPCInterface::GetSomaPositions, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetConnectome",             std::bind(&SimulationRPCInterface::GetConnectome, this, std::placeholders::_1));
@@ -465,6 +473,65 @@ std::string SimulationRPCInterface::SimulationLoad(std::string _JSONRequest) {
     return Handle.ResponseWithID("TaskID", TaskID);
 }
 
+/**
+ * This saves aspects of a Simulation that define the neuronal circuit model,
+ * i.e. neurons, compartments, shapes, synapses, and a few other necessary
+ * parameter values.
+ */
+std::string SimulationRPCInterface::SimulationSaveModel(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/SaveModel", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Get the Model File Name
+    std::string SavedModelName;
+    if (!Handle.GetParString("Name", SavedModelName)) {
+        return Handle.ErrResponse();
+    }
+
+    Logger_->Log("Saving Neuronal Circuit Model " + SavedModelName, 2);
+
+    // *** This may need to be a task with its own thread as well, like simulation load.
+    if (!Handle.Sim()->SaveModel(SavedModelName)) {
+        Logger_->Log("Failed to save neuronal circuit model as "+SavedModelName, 8);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+    }
+
+    Logger_->Log("Saved neuronal circuit model to "+SavedModelName, 3);
+    return Handle.ErrResponse(); // ok
+}
+
+/**
+ * This loads and replaces aspects of a Simulation that define the neuronal circuit model,
+ * i.e. neurons, compartments, shapes, synapses, and a few other necessary parameter values.
+ */
+std::string SimulationRPCInterface::SimulationLoadModel(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/LoadModel", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Get the Model File Name
+    std::string SavedModelName;
+    if (!Handle.GetParString("Name", SavedModelName)) {
+        return Handle.ErrResponse();
+    }
+
+    Logger_->Log("Loading Neuronal Circuit Model " + SavedModelName, 2);
+
+    // *** This may need to be a task with its own thread as well, like simulation load.
+    if (!Handle.Sim()->LoadModel(SavedModelName)) {
+        Logger_->Log("Failed to load neuronal circuit model "+SavedModelName, 8);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+    }
+
+    Logger_->Log("Loaded neuronal circuit model "+SavedModelName, 3);
+    return Handle.ErrResponse(); // ok
+}
+
 std::string SimulationRPCInterface::SimulationGetGeoCenter(std::string _JSONRequest) {
  
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetGeoCenter", &Simulations_);
@@ -491,12 +558,12 @@ std::string SimulationRPCInterface::SimulationGetBoundingBox(std::string _JSONRe
     }
     
     // Setup floats to store max/min values
-    float BottomLeftX_um;
-    float BottomLeftY_um;
-    float BottomLeftZ_um;
-    float TopRightX_um;
-    float TopRightY_um;
-    float TopRightZ_um;
+    float BottomLeftX_um = 0.0;
+    float BottomLeftY_um = 0.0;
+    float BottomLeftZ_um = 0.0;
+    float TopRightX_um = 0.0;
+    float TopRightY_um = 0.0;
+    float TopRightZ_um = 0.0;
     
     // Iterate all shapes and create a bounding box that encompasses them all
     for (size_t ShapeID = 0; ShapeID < Handle.Sim()->Collection.Size(); ShapeID++) {
