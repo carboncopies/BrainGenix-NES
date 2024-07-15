@@ -36,6 +36,7 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     double YOffset = _SubRegion->RegionOffsetY_um;
 
 
+
     // Setup Metadata For GetRenderStatus
     float TotalRegionThickness = abs(RequestedRegion.Point1Z_um - RequestedRegion.Point2Z_um);
     VSDAData_->TotalSlices_ = TotalRegionThickness / VSDAData_->Params_.VoxelResolution_um;
@@ -43,6 +44,13 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
     // todo: fix array claring not working for some reason? (also move back create voxel array from simulation call to other place)
 
+    // Update Status
+    VSDAData_->CurrentOperation_ = "Allocating Voxel Array";
+    VSDAData_->TotalSliceImages_ = 0;
+    VSDAData_->CurrentSliceImage_ = 0;
+    VSDAData_->VoxelQueueLength_ = 0;
+    VSDAData_->TotalVoxelQueueLength_ = 0;
+    
     // Create Voxel Array
     _Logger->Log(std::string("Creating Voxel Array Of Size ") + RequestedRegion.Dimensions() + std::string(" With Points ") + RequestedRegion.ToString(), 2);
     uint64_t TargetArraySize = RequestedRegion.GetVoxelSize(VSDAData_->Params_.VoxelResolution_um);
@@ -66,9 +74,9 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     // Initialize Stats
     VSDAData_->TotalSlices_ = VSDAData_->Array_.get()->GetZ();
     VSDAData_->CurrentSlice_ = 0;
+    VSDAData_->CurrentOperation_ = "Rasterization Preprocessing";
     VSDAData_->TotalSliceImages_ = 0;
     VSDAData_->CurrentSliceImage_ = 0;
-    VSDAData_->CurrentOperation_ = "Rasterization";
     VSDAData_->VoxelQueueLength_ = 0;
     VSDAData_->TotalVoxelQueueLength_ = 0;
 
@@ -90,7 +98,10 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
     // Update Status Bar
     VSDAData_->CurrentOperation_ = "Image Processing";
-
+    VSDAData_->TotalSliceImages_ = 0;
+    VSDAData_->CurrentSliceImage_ = 0;
+    VSDAData_->VoxelQueueLength_ = 0;
+    VSDAData_->TotalVoxelQueueLength_ = 0;
 
 
     // Clear Scene In Preperation For Rendering

@@ -111,6 +111,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     // Build Bounding Boxes For All Compartments
     int AddedShapes = 0;
     int TotalShapes = 0;
+    _Sim->VSDAData_.TotalVoxelQueueLength_ = 0;
     for (unsigned int i = 0; i < _Sim->BSCompartments.size(); i++) {
 
         Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
@@ -163,6 +164,9 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
                         Task->CustomThisComponent = i;
                         Task->CustomTotalComponents = NumSegments;
+
+                        // Update Total Queue Length Statistics
+                        _Sim->VSDAData_.TotalVoxelQueueLength_++;
 
                         // Now, enqueue it
                         _GeneratorPool->QueueWorkOperation(Task.get());
@@ -228,6 +232,11 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                         Task->CustomTotalComponents = NumSegments;
 
 
+
+                        // Update Total Queue Length Statistics
+                        _Sim->VSDAData_.TotalVoxelQueueLength_++;
+
+
                         // Now, enqueue it
                         _GeneratorPool->QueueWorkOperation(Task.get());
 
@@ -250,6 +259,11 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
             AddedShapes++;
 
+
+            // Update Total Queue Length Statistics
+            _Sim->VSDAData_.TotalVoxelQueueLength_++;
+
+
             _GeneratorPool->QueueWorkOperation(Task.get());
 
             // Then move it to the list so we can keep track of it
@@ -263,8 +277,6 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     for (unsigned int i = 0; i < _Sim->Receptors.size(); i++) {
 
         Connections::Receptor* ThisReceptor = _Sim->Receptors[i].get();
-
-        TotalShapes++;
 
         // Create a working task for the generatorpool to complete
         std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
@@ -292,6 +304,9 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
             
             AddedShapes++;
 
+            // Update Total Queue Length Statistics
+            _Sim->VSDAData_.TotalVoxelQueueLength_++;
+
             _GeneratorPool->QueueWorkOperation(Task.get());
 
             // Then move it to the list so we can keep track of it
@@ -313,7 +328,9 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
             // Now, generate the tears
             for (int i = 0; i < NumTearsThisSlice; i++) {
-                GenerateTear(_Logger, Tasks, _GeneratorPool, _Region, _Params, _Array, Info, z, Generator());
+                int NumShapes = GenerateTear(_Logger, Tasks, _GeneratorPool, _Region, _Params, _Array, Info, z, Generator());
+                AddedShapes += NumShapes;
+                _Sim->VSDAData_.TotalVoxelQueueLength_ += NumShapes;
             }
 
         }
@@ -324,9 +341,6 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     double RatioAdded = ((double)AddedShapes / (double)TotalShapes) * 100.;
     _Logger->Log("Added " + std::to_string(RatioAdded) + "% Of Compartments To This Subregion", 4);
 
-    // Update Statistics
-    _Sim->VSDAData_.TotalVoxelQueueLength_ = AddedShapes;
-
 
     // Add our border frame while we wait
     VoxelArrayGenerator::CreateVoxelArrayBorderFrame(_Array);
@@ -335,8 +349,8 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     // Okay, now we just go through the list of tasks and make sure they're all done
     while (_GeneratorPool->GetQueueSize() != 0) {
 
-    
         // Update Progress Bar
+        _Sim->VSDAData_.CurrentOperation_ = "Rasterization";
         _Sim->VSDAData_.VoxelQueueLength_ = _GeneratorPool->GetQueueSize();
 
         // Wait for a bit
