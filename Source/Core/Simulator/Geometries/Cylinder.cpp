@@ -12,7 +12,11 @@ Cylinder::Cylinder(){
     GeometryShape = GeometryCylinder;
 };
 
-Cylinder::Cylinder(float _End0Radius_um, const Vec3D & _End0Pos_um, float _End1Radius_um, const Vec3D & _End1Pos_um) : End0Radius_um(_End0Radius_um), End0Pos_um(_End0Pos_um), End1Radius_um(_End1Radius_um), End1Pos_um(_End1Pos_um) {
+Cylinder::Cylinder(float _End0Radius_um, const Vec3D & _End0Pos_um, float _End1Radius_um, const Vec3D & _End1Pos_um) {
+    End0Radius_um = _End0Radius_um;
+    End0Pos_um = _End0Pos_um;
+    End1Radius_um = _End1Radius_um;
+    End1Pos_um = _End1Pos_um; 
     GeometryShape = GeometryCylinder;
 };
 
@@ -22,7 +26,7 @@ void Cylinder::Show() {
 };
 
 //! Returns the volume of the cylinder in micrometer^3.
-float Cylinder::Volume_um3() {
+float CylinderBase::Volume_um3() {
     float height_um = 0.0;
     float volume_um3 = 0.0;
 
@@ -106,7 +110,7 @@ Vec3D Cylinder::GetRotation_rad() const {
 
 
 // I have no clude what I'm doing
-BoundingBox Cylinder::GetBoundingBox(VSDA::WorldInfo& _WorldInfo) {
+BoundingBox CylinderBase::GetBoundingBox(VSDA::WorldInfo& _WorldInfo) {
 	BoundingBox bb;
 
 
@@ -301,11 +305,11 @@ void Cylinder::WriteToVoxelArray(VSDA::Calcium::VoxelArray* _Array, VSDA::Calciu
 
 
 
-bool Cylinder::IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo) {
+bool CylinderBase::IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo) {
     return false;
 }
 
-bool Cylinder::IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) {
+bool CylinderBase::IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) {
     // We're going to make this a really conservative bounding box
     // This bounding box probably extends past what is reasonable
     BoundingBox MyBB;

@@ -66,6 +66,31 @@ struct GeometryCollection {
 
     size_t Size() const { return Geometries.size(); }
 
+    size_t SizeOf() const {
+        size_t totsize = 0;
+        for (size_t idx = 0; idx < Size(); idx++) {
+            switch (GetShapeType(idx)) {
+            case GeometrySphere: {
+                totsize += sizeof(Sphere);
+                break;
+            }
+            case GeometryCylinder: {
+                totsize += sizeof(Cylinder);
+                break;
+            }
+            case GeometryBox: {
+                totsize == sizeof(Box);
+                break;
+            }
+            default: {
+                totsize += 0;
+                break;
+            }
+            }
+        }
+        return totsize;
+    }
+
     size_t NextAvailableID() { return Geometries.size(); }
 
     Sphere & AddSphere(const Vec3D & _Center_um, float _Radius_um) {

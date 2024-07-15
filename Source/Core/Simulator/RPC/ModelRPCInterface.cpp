@@ -105,31 +105,24 @@ std::string ModelRPCInterface::ReceptorCreate(std::string _JSONRequest) {
 
     // Build New Receptor Object
     Connections::Receptor C;
+    std::string neurotransmitter_cache;
     if ((!Handle.GetParInt("SourceCompartmentID", C.SourceCompartmentID))
         || (!Handle.GetParInt("DestinationCompartmentID", C.DestinationCompartmentID))
         || (!Handle.GetParFloat("Conductance_nS", C.Conductance_nS))
         || (!Handle.GetParFloat("TimeConstantRise_ms", C.TimeConstantRise_ms))
         || (!Handle.GetParFloat("TimeConstantDecay_ms", C.TimeConstantDecay_ms))
-        || (!Handle.GetParString("Neurotransmitter", C.Neurotransmitter))
+        || (!Handle.GetParString("Neurotransmitter", neurotransmitter_cache))
         || (!Handle.GetParInt("ReceptorMorphology", C.ShapeID))
         //|| (!Handle.GetParVec3("ReceptorPos", C.ReceptorPos_um))
         || (!Handle.GetParString("Name", C.Name))) {
         return Handle.ErrResponse();
     }
+    C.safeset_Neurotransmitter(neurotransmitter_cache.c_str());
 
-    C.ID = Handle.Sim()->Receptors.size();
-    Handle.Sim()->Receptors.push_back(std::make_unique<Connections::Receptor>(C));
-
-    // Inform destination neuron of its new input receptor.
-    CoreStructs::Neuron* SrcNeuronPtr = Handle.Sim()->FindNeuronByCompartment(C.SourceCompartmentID);
-    CoreStructs::Neuron* DstNeuronPtr = Handle.Sim()->FindNeuronByCompartment(C.DestinationCompartmentID);
-    if ((SrcNeuronPtr==nullptr) || (DstNeuronPtr==nullptr)) {
+    C.ID = Handle.Sim()->AddReceptor(C);
+    if (C.ID<0) {
         return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
-    CoreStructs::ReceptorData RData(C.ID, Handle.Sim()->Receptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
-    SrcNeuronPtr->OutputTransmitterAdded(RData);
-    DstNeuronPtr->InputReceptorAdded(RData);
-    SrcNeuronPtr->UpdateType(C.Neurotransmitter);
 
     // Return Result ID
     return Handle.ResponseWithID("ReceptorID", C.ID);
@@ -159,15 +152,7 @@ std::string ModelRPCInterface::BSCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    // We cache the pointer to the shape in the compartment data, so that it
-    // does not need to reach back to the Simulation to search for it.
-    C.ShapePtr = Handle.Sim()->Collection.GetGeometry(C.ShapeID);
-    if (!C.ShapePtr) {
-        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
-    }
-
-    C.ID = Handle.Sim()->BSCompartments.size();
-    Handle.Sim()->BSCompartments.push_back(C);
+    C.ID = Handle.Sim()->AddSCCompartment(C);
 
     // Return Result ID
     return Handle.ResponseWithID("CompartmentID", C.ID);
@@ -295,18 +280,7 @@ std::string ModelRPCInterface::SCNeuronCreate(std::string _JSONRequest) {
     //     return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     // }
 
-    C.ID = Handle.Sim()->Neurons.size();
-    
-    Handle.Sim()->Neurons.push_back(std::make_shared<SCNeuron>(C, *(Handle.Sim())));
-    for (const auto & SomaID : C.SomaCompartmentIDs) {
-        Handle.Sim()->NeuronByCompartment.emplace(SomaID, C.ID);
-    }
-    for (const auto & DendriteID : C.DendriteCompartmentIDs) {
-        Handle.Sim()->NeuronByCompartment.emplace(DendriteID, C.ID);
-    }
-    for (const auto & AxonID : C.AxonCompartmentIDs) {
-        Handle.Sim()->NeuronByCompartment.emplace(AxonID, C.ID);
-    }
+    C.ID = Handle.Sim()->AddSCNeuron(C);
 
     // Return Result ID
     return Handle.ResponseWithID("NeuronID", C.ID);

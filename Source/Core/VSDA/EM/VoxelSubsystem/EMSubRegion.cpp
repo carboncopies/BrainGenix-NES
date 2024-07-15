@@ -76,6 +76,9 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
     // Calculate Number Of Steps For The Z Value
     int NumVoxelsPerSlice = VSDAData_->Params_.SliceThickness_um / VSDAData_->Params_.VoxelResolution_um;
+    if (NumVoxelsPerSlice < 1) {
+        NumVoxelsPerSlice = 1; // Ensure that there is at least one voxel per slice, otherwise the numzslices calc breaks
+    }
     int NumZSlices = ceil((float)VSDAData_->Array_.get()->GetZ() / (float)NumVoxelsPerSlice);
 
     _Logger->Log("This EM Render Operation Desires " + std::to_string(VSDAData_->Params_.SliceThickness_um) + "um Slice Thickness", 5);
@@ -85,7 +88,7 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
 
     // Clear Scene In Preperation For Rendering
-    for (unsigned int i = 0; i < NumZSlices; i++) {
+    for (int i = 0; i < NumZSlices; i++) {
         int CurrentSliceIndex = i * NumVoxelsPerSlice;
         std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "/Region" + std::to_string(VSDAData_->ActiveRegionID_);
 
