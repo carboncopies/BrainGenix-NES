@@ -68,7 +68,9 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     VSDAData_->CurrentSlice_ = 0;
     VSDAData_->TotalSliceImages_ = 0;
     VSDAData_->CurrentSliceImage_ = 0;
-
+    VSDAData_->CurrentOperation_ = "Rasterization";
+    VSDAData_->VoxelQueueLength_ = 0;
+    VSDAData_->TotalVoxelQueueLength_ = 0;
 
     CreateVoxelArrayFromSimulation(_Logger, Sim, &VSDAData_->Params_, VSDAData_->Array_.get(), RequestedRegion, _GeneratorPool);
 
@@ -82,6 +84,10 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     _Logger->Log("Therefore, we are using " + std::to_string(NumVoxelsPerSlice) + "vox per slice at " + std::to_string(VSDAData_->Params_.VoxelResolution_um) + "um per vox", 5);
     _Logger->Log("We Will Render A Total Of " + std::to_string(NumZSlices) + " Slices", 5);
     
+
+    // Update Status Bar
+    VSDAData_->CurrentOperation_ = "Image Processing";
+
 
 
     // Clear Scene In Preperation For Rendering

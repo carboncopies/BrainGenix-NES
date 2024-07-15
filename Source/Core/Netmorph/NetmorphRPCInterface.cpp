@@ -36,32 +36,31 @@ NetmorphRPCInterface::~NetmorphRPCInterface() {
 
 
 /**
- * UNNECESSARY API CALL! LET'S GET RID OF THIS! :-)
  * Expects _JSONRequest:
  * {
  *   "SimulationID": <SimID>,
  *   "ModelFile": <string of model file>
  * }
  */
-// std::string NetmorphRPCInterface::NetmorphSetModelfile(std::string _JSONRequest) {
+std::string NetmorphRPCInterface::NetmorphSetModelfile(std::string _JSONRequest) {
 
-//     API::HandlerData Handle(_JSONRequest, Logger_, "Netmorph/SetModelfile", Simulations_, true);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Netmorph/SetModelfile", Simulations_, true);
 
-//     std::string ModelFileString;
-//     Handle.GetParString("ModelFile", ModelFileString);
+    std::string ModelFileString;
+    Handle.GetParString("ModelContent", ModelFileString);
     
-//     if (Handle.HasError()) {
-//         return Handle.ErrResponse();
-//     }
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
 
 
-//     // Now Populate Modelfile
-//     Handle.Sim()->NetmorphParams.ModelFile = ModelFileString;
+    // Now Populate Modelfile
+    Handle.Sim()->NetmorphParams.ModelContent = ModelFileString;
 
 
-//     // Return Result ID
-//     return Handle.ResponseWithID("NetmorphStatus", 0); // ok
-// }
+    // Return Result ID
+    return Handle.ResponseWithID("NetmorphStatus", 0); // ok
+}
 
 /**
  * Expects _JSONRequest:
@@ -77,7 +76,7 @@ std::string NetmorphRPCInterface::NetmorphStartSimulation(std::string _JSONReque
         return Handle.ErrResponse();
     }
 
-    Handle.GetParString("ModelContent", Handle.Sim()->NetmorphParams.Modelfile);
+    Handle.GetParString("ModelContent", Handle.Sim()->NetmorphParams.ModelContent);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }

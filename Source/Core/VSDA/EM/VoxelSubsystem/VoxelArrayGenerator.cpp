@@ -312,13 +312,30 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     double RatioAdded = ((double)AddedShapes / (double)TotalShapes) * 100.;
     _Logger->Log("Added " + std::to_string(RatioAdded) + "% Of Compartments To This Subregion", 4);
 
+    // Update Statistics
+    _Sim->VSDAData_.TotalVoxelQueueLength_ = AddedShapes;
+
 
     // Add our border frame while we wait
     VoxelArrayGenerator::CreateVoxelArrayBorderFrame(_Array);
 
 
     // Okay, now we just go through the list of tasks and make sure they're all done
-    _GeneratorPool->BlockUntilQueueEmpty(true);
+    while (_GeneratorPool->GetQueueSize() != 0) {
+
+    
+        // Update Progress Bar
+        _Sim->VSDAData_.VoxelQueueLength_ = _GeneratorPool->GetQueueSize();
+
+        // Wait for a bit
+        std::this_thread::sleep_for(std::chrono::milliseconds(250));
+
+        // Log Queue Size
+        _Logger->Log("EMArrayGeneratorPool Queue Length '" + std::to_string((int)_GeneratorPool->GetQueueSize()) + "'", 1);
+    }
+
+
+    // _GeneratorPool->BlockUntilQueueEmpty(true);
     for (size_t i = 0; i < Tasks.size(); i++) {
         while (Tasks[i]->IsDone_ != true) {
             std::this_thread::sleep_for(std::chrono::milliseconds(5));
