@@ -97,6 +97,9 @@ endif()
 message(STATUS "Finding bg-common-logger Package")
 find_package(bg-common-logger CONFIG REQUIRED)
 
+# Add Netmorph as subdir
+set(BUILD_NETMORPH_AS_LIB ON CACHE BOOL "enable library version of cmake")
+add_subdirectory(${LIB_DIR}/NetmorphCMake)
 
 
 

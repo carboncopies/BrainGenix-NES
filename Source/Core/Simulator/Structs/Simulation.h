@@ -41,6 +41,7 @@
 #include <BG/Common/Logger/Logger.h>
 
 #include <Visualizer/VisualizerParameters.h>
+#include <Netmorph/NetmorphParameters.h>
 
 #include <VSDA/EM/VoxelSubsystem/Structs/VSDAData.h>
 #include <VSDA/Ca/VoxelSubsystem/Structs/CaData.h>
@@ -129,6 +130,8 @@ public:
     VSDA::Calcium::CalciumImagingData CaData_; /**Instance of CA Data - stores state info about calcium imaging*/
 
     VisualizerParameters VisualizerParams; /**Instance of visualizer parameters, used to generate visualizations in vulkan*/
+    NetmorphParameters NetmorphParams; /**Instance of the netmorph parameters, used to configure netmorph's neuron culture simulation*/
+
 
 
     //! Constructors

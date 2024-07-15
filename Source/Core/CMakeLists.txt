@@ -16,22 +16,6 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Config/ConfigDefaults.h
 
 
-
-
-
-  ${SRC_DIR}/Core/Simulator/RPC/SimulationRPCInterface.cpp
-  ${SRC_DIR}/Core/Simulator/RPC/SimulationRPCInterface.h
-  ${SRC_DIR}/Core/Simulator/RPC/GeometryRPCInterface.cpp
-  ${SRC_DIR}/Core/Simulator/RPC/GeometryRPCInterface.h
-  ${SRC_DIR}/Core/Simulator/RPC/ModelRPCInterface.cpp
-  ${SRC_DIR}/Core/Simulator/RPC/ModelRPCInterface.h
-
-  ${SRC_DIR}/Core/Simulator/Engine.cpp
-  ${SRC_DIR}/Core/Simulator/Engine.h
-  ${SRC_DIR}/Core/Simulator/EngineController.cpp
-  ${SRC_DIR}/Core/Simulator/EngineController.h
-
-
   ${SRC_DIR}/Core/RPC/RPCManager.cpp
   ${SRC_DIR}/Core/RPC/RPCManager.h
   ${SRC_DIR}/Core/RPC/RPCHandlerHelper.cpp
@@ -45,6 +29,17 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/RPC/SafeClient.cpp
   ${SRC_DIR}/Core/RPC/SafeClient.h
 
+
+  ${SRC_DIR}/Core/Simulator/RPC/SimulationRPCInterface.cpp
+  ${SRC_DIR}/Core/Simulator/RPC/SimulationRPCInterface.h
+  ${SRC_DIR}/Core/Simulator/RPC/GeometryRPCInterface.cpp
+  ${SRC_DIR}/Core/Simulator/RPC/GeometryRPCInterface.h
+  ${SRC_DIR}/Core/Simulator/RPC/ModelRPCInterface.cpp
+  ${SRC_DIR}/Core/Simulator/RPC/ModelRPCInterface.h
+  ${SRC_DIR}/Core/Simulator/Engine.cpp
+  ${SRC_DIR}/Core/Simulator/Engine.h
+  ${SRC_DIR}/Core/Simulator/EngineController.cpp
+  ${SRC_DIR}/Core/Simulator/EngineController.h
   ${SRC_DIR}/Core/Simulator/Geometries/Geometry.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Geometry.h
   ${SRC_DIR}/Core/Simulator/Geometries/Sphere.cpp
@@ -57,23 +52,19 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.h
   ${SRC_DIR}/Core/Simulator/Geometries/Wedge.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Wedge.h
-
   ${SRC_DIR}/Core/Simulator/BrainRegion/BrainRegion.h
-
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.cpp
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.h
   ${SRC_DIR}/Core/Simulator/Distributions/Distribution.cpp
   ${SRC_DIR}/Core/Simulator/Distributions/Distribution.h
   ${SRC_DIR}/Core/Simulator/Distributions/Generic.cpp
   ${SRC_DIR}/Core/Simulator/Distributions/Generic.h
-
   ${SRC_DIR}/Core/Simulator/Receptors/Receptor.cpp
   ${SRC_DIR}/Core/Simulator/Receptors/Receptor.h
   ${SRC_DIR}/Core/Simulator/Receptors/AMPAReceptor.cpp
   ${SRC_DIR}/Core/Simulator/Receptors/AMPAReceptor.h
   ${SRC_DIR}/Core/Simulator/Receptors/NMDAReceptor.cpp
   ${SRC_DIR}/Core/Simulator/Receptors/NMDAReceptor.h
-  
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.h
   ${SRC_DIR}/Core/Simulator/Structs/BoundingBox.cpp
@@ -102,7 +93,6 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/CalciumImaging.cpp
   ${SRC_DIR}/Core/Simulator/Structs/SynTrQuantalRelease.h
   ${SRC_DIR}/Core/Simulator/Structs/SynTrQuantalRelease.cpp
-  
   ${SRC_DIR}/Core/Simulator/Updaters/Staple.cpp
   ${SRC_DIR}/Core/Simulator/Updaters/Staple.h
   ${SRC_DIR}/Core/Simulator/Updaters/Receptor.cpp
@@ -111,7 +101,6 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Updaters/PatchClampDAC.h
   ${SRC_DIR}/Core/Simulator/Updaters/PatchClampADC.cpp
   ${SRC_DIR}/Core/Simulator/Updaters/PatchClampADC.h
-
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.h
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.cpp
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.h
@@ -122,28 +111,34 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedBrainRegion.h
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.cpp
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.h
-
   ${SRC_DIR}/Core/Simulator/SimpleCompartmental/SCNeuron.h
   ${SRC_DIR}/Core/Simulator/SimpleCompartmental/SCNeuron.cpp
+
 
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h
   ${SRC_DIR}/Core/Util/LogLogo.cpp
   ${SRC_DIR}/Core/Util/LogLogo.h
 
+
   ${SRC_DIR}/Core/Profiling/ProfilingManager.cpp
   ${SRC_DIR}/Core/Profiling/ProfilingManager.h
 
+
+  ${SRC_DIR}/Core/Netmorph/NetmorphParameters.cpp
+  ${SRC_DIR}/Core/Netmorph/NetmorphParameters.h
+  ${SRC_DIR}/Core/Netmorph/NetmorphRPCInterface.cpp
+  ${SRC_DIR}/Core/Netmorph/NetmorphRPCInterface.h
+
+
   ${SRC_DIR}/Core/VSDA/VSDARPCInterface.cpp
   ${SRC_DIR}/Core/VSDA/VSDARPCInterface.h
-
   ${SRC_DIR}/Core/VSDA/RenderPool.cpp
   ${SRC_DIR}/Core/VSDA/RenderPool.h
   ${SRC_DIR}/Core/VSDA/RPCRoutes/EM.cpp
   ${SRC_DIR}/Core/VSDA/RPCRoutes/EM.h
   ${SRC_DIR}/Core/VSDA/RPCRoutes/Ca.cpp
   ${SRC_DIR}/Core/VSDA/RPCRoutes/Ca.h
-
   ${SRC_DIR}/Core/VSDA/EM/EMRenderer.cpp
   ${SRC_DIR}/Core/VSDA/EM/EMRenderer.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/EMSubRegion.cpp
@@ -177,8 +172,6 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/Task.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h
-
-
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.h
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.cpp
@@ -187,20 +180,14 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.h
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.cpp
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.h
-
-
   ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.cpp
   ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.h
   ${SRC_DIR}/Core/VSDA/Common/Structs/WorldInfo.cpp
   ${SRC_DIR}/Core/VSDA/Common/Structs/WorldInfo.h
-
   ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshBuilder.cpp
   ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshBuilder.h
   ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshConversionHelpers.cpp
   ${SRC_DIR}/Core/VSDA/DebugHelpers/MeshConversionHelpers.h
-
-
-
   ${SRC_DIR}/Core/VSDA/Ca/CaRenderer.cpp
   ${SRC_DIR}/Core/VSDA/Ca/CaRenderer.h
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.cpp
@@ -301,6 +288,8 @@ target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE
     VersioningSystem
     CompileTimeStamp
     CompilePlatformInfo
+
+    NetmorphCMake
 )
 target_include_directories(${PROJECT_LIBRARY_NAME} PUBLIC ${SRC_DIR}/Core)
 target_include_directories(${PROJECT_LIBRARY_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
@@ -323,6 +312,8 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     VersioningSystem
     CompileTimeStamp
     CompilePlatformInfo
+
+    NetmorphCMake
 )
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
