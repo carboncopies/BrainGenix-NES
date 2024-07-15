@@ -60,6 +60,10 @@ struct NetmorphParameters {
     // *** We don't really need this, because we can give the model content directly.
     //std::string ModelFile; /**String containing the magic modelfile that netmorph needs to do stuff. See the netmorph manual for how to do that, cause IDK*/
 
+    // BAD BAD BAD BAD
+    Simulation* Sim; // This is terrible and we should NEVER EVER DO THIS AGAIN!!!!!!
+    // This struct is included in simulation, and we include simulation in here - BAD!!!
+
     std::string ModelContent; /**String containing the Netmorph model.*/
 
     int Progress_percent; /**Netmorph status percent*/

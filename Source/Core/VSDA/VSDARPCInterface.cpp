@@ -262,6 +262,9 @@ std::string VSDARPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
     ResponseJSON["TotalRegions"] = ThisSimulation->VSDAData_.TotalRegions_;
     ResponseJSON["TotalImagesX"] = ThisSimulation->VSDAData_.TotalImagesX_;
     ResponseJSON["TotalImagesY"] = ThisSimulation->VSDAData_.TotalImagesY_;
+    ResponseJSON["CurrentOperation"] = ThisSimulation->VSDAData_.CurrentOperation_;
+    ResponseJSON["VoxelQueueLength"] = ThisSimulation->VSDAData_.VoxelQueueLength_;
+    ResponseJSON["TotalVoxelQueueLength"] = ThisSimulation->VSDAData_.TotalVoxelQueueLength_;
 
     return ResponseJSON.dump();
 

@@ -29,10 +29,12 @@ namespace Simulator {
 // }
 
 
-bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int _SliceNumber, int _SliceThickness, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, double _RegionOffsetX, double _RegionOffsetY, int _SliceOffset) {
+int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int _SliceNumber, int _SliceThickness, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, double _RegionOffsetX, double _RegionOffsetY, int _SliceOffset) {
     assert(_VSDAData != nullptr);
     assert(_Logger != nullptr);
 
+    // Setup counter for total images we're making, so we can keep track
+    int TotalImages = 0;
 
     // Get Params and Array From VSDAData
     MicroscopeParameters* Params = &_VSDAData->Params_;
@@ -144,6 +146,8 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxIma
             ThisScanRegion->ImageFilenames_.push_back(DirectoryPath + FilePath);
             ThisScanRegion->ImageVoxelIndexes_.push_back(Info);
 
+            // Incriment the total images counter
+            TotalImages++;
 
             // Enqueue Work Operation
             _ImageProcessorPool->QueueEncodeOperation(ThisTask.get());
@@ -155,7 +159,7 @@ bool RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxIma
         }
     }
 
-    return true;
+    return TotalImages;
 }
 
 
