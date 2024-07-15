@@ -12,6 +12,7 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <string>
+#include <sstream>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -24,12 +25,10 @@ namespace Simulator {
 namespace Compartments {
 
 /**
- * @brief This struct provides the data storage for each of the compartments
- * 
+ * @brief Crucial fixed-size data of a component. This is saved in neuronal
+ * circuit model saves. Does not include name and cached data.
  */
-struct BS {
-
-    std::string Name; /**Name of the BS Compartment*/
+struct BSBaseData {
     int ID = -1; /**ID of the BS compartment*/
 
     int ShapeID; /**ID of the associated shape of this compartment*/
@@ -40,8 +39,32 @@ struct BS {
     float RestingPotential_mV; /**Resting Potential in millivolts*/
     float AfterHyperpolarizationAmplitude_mV; /**AfterHyperpolarization Amplitude in millivolts*/
 
+    std::string str() const {
+        std::stringstream ss;
+        ss << "ID: " << ID;
+        ss << "\nShapeID: " << ShapeID;
+        ss << "\nMembranePotential_mV: " << MembranePotential_mV;
+        ss << "\nSpikeThreshold_mV: " << SpikeThreshold_mV;
+        ss << "\nDecayTime_ms: " << DecayTime_ms;
+        ss << "\nRestingPotential_mV: " << RestingPotential_mV;
+        ss << "\nAfterHyperpolarizationAmplitude_mV: " << AfterHyperpolarizationAmplitude_mV << '\n';
+        return ss.str();
+    }
+};
+
+/**
+ * @brief This struct provides the data storage for each of the compartments
+ * 
+ */
+struct BS: public BSBaseData {
+
+    std::string Name; /**Name of the BS Compartment*/
+
     // Direct access caches:
     Geometries::Geometry* ShapePtr = nullptr;
+
+    BS() {}
+    BS(const BSBaseData& _Base): BSBaseData(_Base) {}
 
 };
 

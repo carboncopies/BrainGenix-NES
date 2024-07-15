@@ -8,6 +8,8 @@
 #include <Netmorph/NetmorphRPCInterface.h>
 #include <RPC/APIStatusCode.h>
 
+#include <Netmorph/NetmorphManagerThread.h>
+
 
 namespace BG {
 namespace NES {
@@ -91,9 +93,15 @@ std::string NetmorphRPCInterface::NetmorphStartSimulation(std::string _JSONReque
         Status = 3; // Something is broken
     }
 
+    // Start Worker Thread
+    Handle.Sim()->NetmorphParams.Sim = Handle.Sim();
+    Logger_->Log("Starting Netmorph Worker Thread", 4);
+    Handle.Sim()->NetmorphWorkerThread = std::thread(ExecuteNetmorphOperation, Logger_, &Handle.Sim()->NetmorphParams);
+
     // Return Result ID
     return Handle.ResponseWithID("NetmorphStatus", Status);
 }
+
 
 
 /**
