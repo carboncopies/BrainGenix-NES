@@ -132,7 +132,7 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
 
 
     // An intermediary step - we're going to calculate the total region's effective index size, to make plugging this data into neuroglancer easier if desired
-    int NumVoxelsPerSlice = std::max(int(Params->SliceThickness_um / Params->VoxelResolution_um), 1);
+    double NumVoxelsPerSlice = Params->SliceThickness_um / Params->VoxelResolution_um;
     VoxelIndexInfo Info;
     Info.StartX = 0;
     Info.StartY = 0;
