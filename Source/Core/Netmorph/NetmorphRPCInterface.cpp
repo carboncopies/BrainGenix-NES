@@ -174,8 +174,8 @@ std::string NetmorphRPCInterface::NetmorphGetFile(std::string _JSONRequest) {
     }
 
     std::stringstream RawData;
-    RawData << ImageStream.rdbuf();
-    ImageStream.close();
+    RawData << NetmorphFile.rdbuf();
+    NetmorphFile.close();
 
     // Base64 encode the data.
     std::string Base64Data = base64_encode(reinterpret_cast<const unsigned char*>(RawData.str().c_str()), RawData.str().size());
