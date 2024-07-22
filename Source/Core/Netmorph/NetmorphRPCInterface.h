@@ -80,6 +80,7 @@ public:
     std::string NetmorphSetModelfile(std::string _JSONRequest);
     std::string NetmorphStartSimulation(std::string _JSONRequest);
     std::string NetmorphGetStatus(std::string _JSONRequest);
+    std::string NetmorphGetFile(std::string _JSONRequest);
 
 
 };
