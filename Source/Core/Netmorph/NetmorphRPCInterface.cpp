@@ -7,6 +7,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <Netmorph/NetmorphRPCInterface.h>
 #include <RPC/APIStatusCode.h>
+#include <cpp-base64/base64.cpp>
 
 #include <Netmorph/NetmorphManagerThread.h>
 
@@ -27,7 +28,7 @@ NetmorphRPCInterface::NetmorphRPCInterface(BG::Common::Logger::LoggingSystem* _L
     _RPCManager->AddRoute("Netmorph/SetModelfile",     std::bind(&NetmorphRPCInterface::NetmorphSetModelfile, this, std::placeholders::_1));
     _RPCManager->AddRoute("Netmorph/StartSimulation",  std::bind(&NetmorphRPCInterface::NetmorphStartSimulation, this, std::placeholders::_1));
     _RPCManager->AddRoute("Netmorph/GetStatus",        std::bind(&NetmorphRPCInterface::NetmorphGetStatus, this, std::placeholders::_1));
-
+    _RPCManager->AddRoute("Netmorph/GetFile",          std::bind(&NetmorphRPCInterface::NetmorphGetFile, this, std::placeholders::_1));
 
 }
 
@@ -136,7 +137,52 @@ std::string NetmorphRPCInterface::NetmorphGetStatus(std::string _JSONRequest) {
 
 }
 
+/**
+ * Expects _JSONRequest:
+ * {
+ *   "SimulationID": <SimID>,
+ *   "FileID": <FileID>
+ * }
+ * 
+ * Returns:
+ * {
+ *   "StatusCode": <StatusCode>,
+ *   "FileData": <base64-encoded-data>
+ * }
+ */
+std::string NetmorphRPCInterface::NetmorphGetFile(std::string _JSONRequest) {
 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Netmorph/GetFile", Simulations_, true);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    std::string FileID;
+    Handle.GetParString("FileID", FileID);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    std::string NetmorphOutputDirectory(Handle.Sim()->NetmorphParams.Result.net->get_outputdirectory().chars());
+    std::string FilePath(NetmorphOutputDirectory+FileID);
+
+    // Open the file, see if it is valid.
+    std::ifstream NetmorphFile(FilePath.c_str(), std::ios::binary);
+    if (!NetmorphFile.good()) {
+        Logger_->Log("Invalid file "+FilePath, 6);
+        return Handle.ErrResponse(API::BGStatusInvalidParametersPassed);
+    }
+
+    std::stringstream RawData;
+    RawData << ImageStream.rdbuf();
+    ImageStream.close();
+
+    // Base64 encode the data.
+    std::string Base64Data = base64_encode(reinterpret_cast<const unsigned char*>(RawData.str().c_str()), RawData.str().size());
+
+    return Handle.StringResponse("FileData", Base64Data); // ok, with data
+
+}
 
 }; // Close Namespace Simulator
 }; // Close Namespace NES
