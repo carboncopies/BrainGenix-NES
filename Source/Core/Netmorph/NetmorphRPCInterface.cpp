@@ -7,7 +7,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <Netmorph/NetmorphRPCInterface.h>
 #include <RPC/APIStatusCode.h>
-#include <cpp-base64/base64.cpp>
+#include <cpp-base64/base64.h>
 
 #include <Netmorph/NetmorphManagerThread.h>
 
