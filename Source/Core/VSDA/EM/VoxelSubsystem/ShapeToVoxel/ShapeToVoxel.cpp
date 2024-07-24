@@ -73,22 +73,7 @@ bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
 
 }
 
-// bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
 
-//     for (float X = _BB->bb_point1[0]; X < _BB->bb_point2[0]; X+= _VoxelScale) {
-//         for (float Y = _BB->bb_point1[1]; Y < _BB->bb_point2[1]; Y+= _VoxelScale) {
-//             for (float Z = _BB->bb_point1[2]; Z < _BB->bb_point2[2]; Z+= _VoxelScale) {
-                
-//                 VoxelType FinalVoxelValue;
-//                 FinalVoxelValue.Intensity_ = 0;
-//                 _Array->SetVoxelAtPosition(X, Y, Z, FinalVoxelValue);
-//             }
-//         }
-//     }
-
-//     return true;
-
-// }
 
 float LinearInterpolate(float _X, float _Val1, float _Val2) {
     return _Val1 + _X * (_Val2 - _Val1);
@@ -162,69 +147,6 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
 }
 
 
-// BACKUP!
-// bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
-//     assert(_Array != nullptr);
-//     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
-
-//     // Rotate The Endpoints Around World Origin By Amount Set In World Info
-//     //   This deals with the rotation of the whole model
-//     Geometries::Vec3D RotatedEnd0 = _Cylinder->End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
-//     Geometries::Vec3D RotatedEnd1 = _Cylinder->End1Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
-
-//     // Get rotation angles and length (r, theta, phi).
-//     //   Moving the midline of the cylinder to (0,0,0) then switching to spherical coords
-//     //   allows us to find angles to rotate around Y and Z axes.
-//     Geometries::Vec3D diff = RotatedEnd1 - RotatedEnd0;
-//     Geometries::Vec3D diff_spherical_coords = diff.cartesianToSpherical();
-//     float rot_y = diff_spherical_coords.theta();
-//     float rot_z = diff_spherical_coords.phi();
-
-//     float distance = diff_spherical_coords.r();
-
-//     // Use this to know the extent to which to gradually change the radius as you move along the length of the cylinder.
-//     float radius_difference = _Cylinder->End1Radius_um - _Cylinder->End0Radius_um;
-
-//     // Stepping at half voxel size ensures finding voxels without gaps.
-//     float stepsize = 0.5*_WorldInfo.VoxelScale_um;
-
-//     Geometries::Vec3D spherical_halfdist_v(distance/2.0, rot_y, rot_z); // mid point vector (from 0,0,0)
-//     Geometries::Vec3D cartesian_halfdist_v = spherical_halfdist_v.sphericalToCartesian();
-//     Geometries::Vec3D translate = RotatedEnd0 + cartesian_halfdist_v; // actual mid point
-
-
-//     // Calculate all the points and stuff them into the array
-//     for (float z = -distance/2.0; z <= distance/2.0; z += stepsize) {
-//         // 2. At each step, get points in a disk around the axis at the right radius.
-//         float d_ratio = z / distance;
-//         float radius = _Cylinder->End0Radius_um + d_ratio*radius_difference; // Radius at this position on the axis.
-
-//         Geometries::Vec3D RotatedPoint = RotatedVec(0.0, 0.0, z, rot_y, rot_z, translate);
-//         VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
-//         _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
-
-//         for (float r = stepsize; r <= radius; r += stepsize) {
-//             float radians_per_step = stepsize / r;
-//             for (float theta = 0; theta < 2.0*M_PI; theta += radians_per_step) {
-//                 float y = r*std::cos(theta);
-//                 float x = r*std::sin(theta);
-//                 Geometries::Vec3D RotatedPoint = RotatedVec(x, y, z, rot_y, rot_z, translate);
-
-//                 VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
-
-//                 if (_Params->RenderBorders) {
-//                     float DistanceToEdge = radius - r;
-//                     FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
-//                 }
-
-//                 _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
-//             }
-//         }
-
-//     }
-
-//     return true;
-// }
 
 bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_Array != nullptr);

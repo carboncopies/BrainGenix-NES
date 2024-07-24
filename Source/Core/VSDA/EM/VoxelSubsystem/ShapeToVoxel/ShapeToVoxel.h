@@ -93,17 +93,6 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
 bool FillWedge(VoxelArray* _Array, Geometries::Wedge* _Wedge, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);
 
 /**
- * @brief Simply fills everything in the bounding box.
- * 
- * @param _Array 
- * @param _BB 
- * @param _VoxelScale 
- * @return true 
- * @return false 
- */
-// bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale);
-
-/**
  * @brief Generates a border frame around the region.
  * 
  * @param _Array 
