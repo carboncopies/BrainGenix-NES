@@ -1,3 +1,6 @@
 [submodule "ThirdParty/vcpkg"]
 	path = ThirdParty/vcpkg
 	url = https://github.com/Microsoft/vcpkg.git
+[submodule "ThirdParty/NetmorphCMake"]
+	path = ThirdParty/NetmorphCMake
+	url = https://gitlab.braingenix.org/carboncopies/BrainGenix/NetmorphCMake

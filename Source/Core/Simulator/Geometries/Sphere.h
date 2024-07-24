@@ -10,6 +10,8 @@
 
 #pragma once
 
+#include <sstream>
+
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Geometries/Geometry.h>
@@ -24,21 +26,13 @@ namespace Geometries {
 
 
 /**
- * @brief This struct defines a sphere geometry used in creation of components of a simple ball-and-stick neural circuit.
- * 
+ * Just the easily storable fixed-size data.
  */
-struct Sphere: Geometry {
-    
+struct SphereBase: Geometry {
     float Radius_um; //! Radius in micrometers of the sphere.
 
-    //! Constructors
-    Sphere();
-    Sphere(float _Radius_um);
-    Sphere(const Vec3D & _Center_um, float _Radius_um);
 
-    //! Renders the sphere in 3D.
-    void Show(); 
-    
+    //! --- The folllwing is here due to pure virtual functions in Geometry.
     //! Returns the volume of the sphere in micrometer^3.
     float Volume_um3();
 
@@ -46,6 +40,31 @@ struct Sphere: Geometry {
     virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo);
     virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo);
     virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo);
+
+    std::string str() const {
+        std::stringstream ss;
+        ss << Geometry::str();
+        ss << "Radius_um: " << Radius_um << '\n';
+        return ss.str();
+    }
+};
+
+/**
+ * @brief This struct defines a sphere geometry used in creation of components of a simple ball-and-stick neural circuit.
+ * 
+ */
+struct Sphere: SphereBase {
+
+    std::string Name;
+
+    //! Constructors
+    Sphere();
+    Sphere(const SphereBase& _Base): SphereBase(_Base) {}
+    Sphere(float _Radius_um);
+    Sphere(const Vec3D & _Center_um, float _Radius_um);
+
+    //! Renders the sphere in 3D.
+    void Show(); 
 
 };
 

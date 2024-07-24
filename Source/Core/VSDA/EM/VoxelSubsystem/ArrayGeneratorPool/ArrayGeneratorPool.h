@@ -89,12 +89,7 @@ private:
      */
     void EnqueueTask(Task* _Sim);
 
-    /**
-     * @brief Thread safe getSize function.
-     * 
-     * @return int 
-     */
-    int GetQueueSize();
+
 
     /**
      * @brief Thread safe get task* from queue function. 
@@ -158,6 +153,13 @@ public:
      * 
      */
     void BlockUntilQueueEmpty(bool _LogOutput = true);
+
+    /**
+     * @brief Thread safe getSize function.
+     * 
+     * @return int 
+     */
+    int GetQueueSize();
 
 
 };

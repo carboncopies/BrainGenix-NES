@@ -31,12 +31,9 @@ namespace Simulator {
 namespace Geometries {
 
 /**
- * @brief This struct defines a cylinder geometry used in creation of components
- * of simple ball-and-stick neural circuits.
- *
+ * Just the easily storable fixed-size data.
  */
-struct Cylinder : Geometry {
-
+struct CylinderBase: Geometry {
     float End0Radius_um = 1.0; //! Radius in micrometers of the first end of the cylinder.
     Vec3D End0Pos_um; //! Position of the first end of the Cylinder in
                       //! micrometers (relative to origin).
@@ -44,25 +41,36 @@ struct Cylinder : Geometry {
     Vec3D End1Pos_um{1.0, 0.0, 0.0}; //! Position of the second end of the Cylinder in
                                      //! micrometers (relative to origin).
 
-    // Constructors
-    Cylinder();
-    Cylinder(float _End0Radius_um, const Vec3D & _End0Pos_um, float _End1Radius_um, const Vec3D & _End1Pos_um);
-
-    //! Renders the cylinder in 3D.
-    void Show();
-
+    //! --- The folllwing is here due to pure virtual functions in Geometry.
     //! Returns the volume of the cylinder in micrometer^3.
     float Volume_um3();
-
-    //! Returns the distance from the origin along cylinder axis at specified
-    //! fraction of height distance from end 0.
-    float RAtPosition_um(float position);
-
 
     //! Returns the bounding box
     virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo);
     virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo);
     virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo);
+};
+
+/**
+ * @brief This struct defines a cylinder geometry used in creation of components
+ * of simple ball-and-stick neural circuits.
+ *
+ */
+struct Cylinder : CylinderBase {
+
+    std::string Name;
+
+    // Constructors
+    Cylinder();
+    Cylinder(const CylinderBase& _Base): CylinderBase(_Base) {}
+    Cylinder(float _End0Radius_um, const Vec3D & _End0Pos_um, float _End1Radius_um, const Vec3D & _End1Pos_um);
+
+    //! Renders the cylinder in 3D.
+    void Show();
+
+    //! Returns the distance from the origin along cylinder axis at specified
+    //! fraction of height distance from end 0.
+    float RAtPosition_um(float position);
 
     //! Returns a point cloud that can be used to fill voxels representing the cylinder.
     // std::vector<Vec3D> GetPointCloud(float _VoxelScale);

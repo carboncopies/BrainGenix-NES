@@ -44,7 +44,6 @@ target_link_libraries(NESRenderer
     Vulkan::Vulkan
     vsg::vsg
 
-
 )
 target_include_directories(NESRenderer PUBLIC ${SRC_DIR}/Renderer)
 

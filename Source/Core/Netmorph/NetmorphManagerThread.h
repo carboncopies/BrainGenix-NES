@@ -3,13 +3,13 @@
 //=================================//
 
 /*
-    Description: This file defines the interface for the slice generator, which creates voxel representations of a given simulation.
+    Description: This file defines paremters for the Netmorph.
     Additional Notes: None
-    Date Created: 2024-01-19
-    Author(s): Thomas Liao, Randal Koene
+    Date Created: 2024-07-05
+    Author(s): Thomas Liao
 
 
-    Copyright (C) 2023  Thomas Liao, Randal Koene
+    Copyright (C) 2023  Thomas Liao
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -28,46 +28,35 @@
 
 #pragma once
 
-
-
 // Standard Libraries (BG convention: use <> instead of "")
+#include <cstdint>
+#include <vector>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Simulator/Structs/Simulation.h>
-
-#include <VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h>
-#include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
-
-
-#include <VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h>
+#include <Netmorph/NetmorphParameters.h>
 
 #include <BG/Common/Logger/Logger.h>
+
 
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 
-
-
-
 /**
- * @brief Generate a sample tear on the given array, at the given ZHeight.
+ * @brief This function is intended to be run as a separate thread by the RPC call to start netmorph.
+ * It will use the given params to run a netmorph sim, and then put the result in the _Params struct.
+ * After once done, it will exit, and thus terminate the thread.
  * 
- * @param _Logger 
+ * @param _Logger
  * @param _Params 
- * @param _Array 
- * @param _ZHeight 
- * @return true 
- * @return false 
+ * @return int 
  */
-int GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::unique_ptr<VoxelArrayGenerator::Task>>& _TaskList, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool, ScanRegion _Region, MicroscopeParameters* _Params, VoxelArray* _Array, VSDA::WorldInfo _Info, int _ZHeight, int _Seed);
+int ExecuteNetmorphOperation(BG::Common::Logger::LoggingSystem* _Logger, NetmorphParameters* _Params);
 
 
-
-
-}; // Close Namespace Logger
-}; // Close Namespace Common
-}; // Close Namespace BG
+}; // namespace Simulator
+}; // namespace NES
+}; // namespace BG

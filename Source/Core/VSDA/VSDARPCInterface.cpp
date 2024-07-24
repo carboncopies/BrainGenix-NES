@@ -143,6 +143,12 @@ std::string VSDARPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     Handle.GetParFloat("TearStartSize_um", Params.TearStartSize_um);
     Handle.GetParFloat("TearEndSize_um", Params.TearEndSize_um);
 
+    // Sanity Check
+    if (Params.SliceThickness_um < Params.VoxelResolution_um) {
+        Params.SliceThickness_um = Params.VoxelResolution_um;
+        Logger_->Log("Warning, User has provided a slice thickness that is less than the voxel thickness, overriding this!", 8);
+    }
+
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
@@ -262,6 +268,9 @@ std::string VSDARPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
     ResponseJSON["TotalRegions"] = ThisSimulation->VSDAData_.TotalRegions_;
     ResponseJSON["TotalImagesX"] = ThisSimulation->VSDAData_.TotalImagesX_;
     ResponseJSON["TotalImagesY"] = ThisSimulation->VSDAData_.TotalImagesY_;
+    ResponseJSON["CurrentOperation"] = ThisSimulation->VSDAData_.CurrentOperation_;
+    ResponseJSON["VoxelQueueLength"] = ThisSimulation->VSDAData_.VoxelQueueLength_;
+    ResponseJSON["TotalVoxelQueueLength"] = ThisSimulation->VSDAData_.TotalVoxelQueueLength_;
 
     return ResponseJSON.dump();
 

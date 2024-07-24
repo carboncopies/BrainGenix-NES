@@ -17,6 +17,7 @@
 #include <stdexcept>
 #include <string>
 #include <tuple>
+#include <thread>
 #include <unordered_map>
 #include <vector>
 
@@ -41,6 +42,7 @@
 #include <BG/Common/Logger/Logger.h>
 
 #include <Visualizer/VisualizerParameters.h>
+#include <Netmorph/NetmorphParameters.h>
 
 #include <VSDA/EM/VoxelSubsystem/Structs/VSDAData.h>
 #include <VSDA/Ca/VoxelSubsystem/Structs/CaData.h>
@@ -129,6 +131,9 @@ public:
     VSDA::Calcium::CalciumImagingData CaData_; /**Instance of CA Data - stores state info about calcium imaging*/
 
     VisualizerParameters VisualizerParams; /**Instance of visualizer parameters, used to generate visualizations in vulkan*/
+    NetmorphParameters NetmorphParams; /**Instance of the netmorph parameters, used to configure netmorph's neuron culture simulation*/
+
+    std::thread NetmorphWorkerThread; /**Thread that when exists, runs the netmorph simulation.*/
 
 
     //! Constructors
@@ -145,6 +150,20 @@ public:
     void AddCircuit(std::shared_ptr<CoreStructs::NeuralCircuit> circuit);
     void AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region);
 
+    //! Direct builder functions
+    //!   Call these from various '..Create' functions to ensure identical
+    //!   and up-to-date requirements are fulfilled.
+    int AddSphere(Geometries::Sphere& _S);
+    int AddCylinder(Geometries::Cylinder& _S);
+    int AddBox(Geometries::Box& _S);
+    int AddSCCompartment(Compartments::BS& _C);
+    int AddSCNeuron(CoreStructs::SCNeuronStruct& _N);
+    int AddReceptor(Connections::Receptor& _C);
+
+    bool SaveModel(const std::string& Name);
+    bool LoadModel(const std::string& Name);
+    void InspectSavedModel(const std::string& Name) const;
+
     size_t GetTotalNumberOfNeurons();
     std::vector<std::shared_ptr<CoreStructs::Neuron>> GetAllNeurons();
     std::vector<size_t> GetAllNeuronIDs();
@@ -152,6 +171,7 @@ public:
 
     Compartments::BS * FindCompartmentByID(int CompartmentID);
     CoreStructs::Neuron * FindNeuronByCompartment(int CompartmentID) const;
+    int GetNeuronIndexByCompartment(int CompartmentID) const;
 
     Geometries::Geometry* FindShapeByID(int ShapeID);
 
@@ -166,6 +186,7 @@ public:
     void SetRecordAll(float tMax_ms = _RECORD_FOREVER_TMAX_MS);
     bool IsRecording() const;
     std::unordered_map<std::string, CoreStructs::CircuitRecording> GetRecording();
+    nlohmann::json GetSpikeTimesJSON() const;
     nlohmann::json GetRecordingJSON() const;
 
     nlohmann::json GetCaImagingVoxelsJSON();

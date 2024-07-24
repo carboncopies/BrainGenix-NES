@@ -35,11 +35,13 @@
 #include <Simulator/RPC/ModelRPCInterface.h>
 #include <VSDA/VSDARPCInterface.h>
 #include <Visualizer/VisualizerRPCInterface.h>
+#include <Netmorph/NetmorphRPCInterface.h>
 
 #include <VSDA/RenderPool.h>
 #include <Visualizer/VisualizerPool.h>
 #include <Util/LogLogo.h>
 #include <Profiling/ProfilingManager.h>
+
 
 /**
  * @brief The main entry point for the BrainGenix-NES Neuron Emulation System.

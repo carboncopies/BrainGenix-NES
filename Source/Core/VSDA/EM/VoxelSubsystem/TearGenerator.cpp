@@ -49,7 +49,7 @@ enum TearOrigin {
     TEAR_BOTTOM
 };
 
-void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::unique_ptr<VoxelArrayGenerator::Task>>& _TaskList, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool, ScanRegion _Region, MicroscopeParameters* _Params, VoxelArray* _Array, VSDA::WorldInfo _Info, int _ZHeight, int _Seed) {
+int GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::unique_ptr<VoxelArrayGenerator::Task>>& _TaskList, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool, ScanRegion _Region, MicroscopeParameters* _Params, VoxelArray* _Array, VSDA::WorldInfo _Info, int _ZHeight, int _Seed) {
 
     int NumSegments = _Params->TearNumSegments;
     int MinSegmentLength = _Params->TearMinimumLength_um / _Params->VoxelResolution_um;
@@ -113,10 +113,11 @@ void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::u
 
 
     // Now, create the tasks
+    int NumShapes = 0;
     for (unsigned int i = 1; i < Points.size(); i++) {
 
         _TaskList.push_back(std::make_unique<VoxelArrayGenerator::Task>());
-
+        NumShapes++;
 
         VoxelArrayGenerator::Task* ThisTask = _TaskList[_TaskList.size() - 1].get();
         ThisTask->Array_ = _Array;
@@ -149,6 +150,8 @@ void GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::u
 
     }
 
+
+    return NumShapes;
 
 }
 

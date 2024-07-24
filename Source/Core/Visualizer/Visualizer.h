@@ -31,6 +31,7 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
+
 /**
  * @brief Function that renders a simulation for the user.
  * Takes a pointer to the simulation, along with some other parameters and renders what they've asked for to a file, which the path is returned to the _OutputPath parameter.

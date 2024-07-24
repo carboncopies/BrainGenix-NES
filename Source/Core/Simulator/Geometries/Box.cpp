@@ -31,7 +31,7 @@ Box::Box(const Vec3D & _Center_um, const Vec3D & _Dims_um, const Vec3D & _Rotati
 void Box::Show() { return; };
 
 //! Returns the volume of the box in micrometer^3.
-float Box::Volume_um3() {
+float BoxBase::Volume_um3() {
     return this->Dims_um.x * this->Dims_um.y * this->Dims_um.z;
 };
 
@@ -68,7 +68,7 @@ std::vector<float> Box::Sides() {
 
 
 // This can be bad - if it's rotated, the bounding box is wrong!
-BoundingBox Box::GetBoundingBox(VSDA::WorldInfo& _WorldInfo) {
+BoundingBox BoxBase::GetBoundingBox(VSDA::WorldInfo& _WorldInfo) {
 	BoundingBox BB;
 
     Geometries::Vec3D RotatedCenter = Center_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
@@ -86,7 +86,7 @@ BoundingBox Box::GetBoundingBox(VSDA::WorldInfo& _WorldInfo) {
 }
 
 // Same here, we need to do this right.
-bool Box::IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo) {
+bool BoxBase::IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo) {
     
 
     // https://stackoverflow.com/questions/52673935/check-if-3d-point-inside-a-box
@@ -206,7 +206,7 @@ void Box::WriteToVoxelArray(VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::Vo
 //     return rotated_and_translated_point_cloud;
 // }
 
-bool Box::IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) {
+bool BoxBase::IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) {
     
     // We're going to make this a really conservative bounding box
     // This bounding box probably extends past what is reasonable

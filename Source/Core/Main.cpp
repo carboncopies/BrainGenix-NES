@@ -35,6 +35,7 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::NES::Simulator::ModelRPCInterface      ModelRPCInterface(&Logger, SimulationRPCInterface.GetSimulationVectorPtr(), &APIManager);
     BG::NES::Simulator::VisualizerRPCInterface VisualizerRPCInterface(&Logger, SimulationRPCInterface.GetSimulationVectorPtr(), &APIManager);
     BG::NES::Simulator::VSDA::VSDARPCInterface VSDARPCInterface(&Logger, &APIManager, SimulationRPCInterface.GetSimulationVectorPtr());
+    BG::NES::Simulator::NetmorphRPCInterface   NetmorphRPCInterface(&Logger, SimulationRPCInterface.GetSimulationVectorPtr(), &APIManager);
 
     // Print ASCII BrainGenix Logo To Console
     BG::NES::Util::LogLogo(&Logger);

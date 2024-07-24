@@ -1,9 +1,11 @@
-#include <Visualizer/MeshBuilder.h>
+#include <random>
+#include <iostream>
+#include <algorithm>
 
+#include <Visualizer/MeshBuilder.h>
 #include <Simulator/Structs/RecordingElectrode.h>
 
 
-#include <iostream>
 
 namespace BG {
 namespace NES {
@@ -54,6 +56,17 @@ void GetRotationInfo(Geometries::Vec3D _Point1_um, Geometries::Vec3D _Point2_um,
   *_Length_um = sqrt((_Point2_um.x - _Point1_um.x)*(_Point2_um.x - _Point1_um.x) + (_Point2_um.y - _Point1_um.y)*(_Point2_um.y - _Point1_um.y) + (_Point2_um.z - _Point1_um.z)*(_Point2_um.z - _Point1_um.z));
 }
 
+vsg::vec4 GenerateSeededRandomVector(int _Seed) {
+
+    std::mt19937 Generator(_Seed);
+    std::uniform_int_distribution<std::mt19937::result_type> X(0,1000);
+    std::uniform_int_distribution<std::mt19937::result_type> Y(0,1000);
+    std::uniform_int_distribution<std::mt19937::result_type> Z(0,1000);
+
+    return vsg::vec4(X(Generator) / 1000., Y(Generator) / 1000., Z(Generator) / 1000., 1.0f);
+
+}
+
 
 bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::Interface* _Renderer, Simulation* _Simulation) {
     assert(_Logger != nullptr && "You have passed a nullptr to the logger parameter, bad!");
@@ -67,12 +80,16 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
     // Enumerate Simulation Primitives
     for (unsigned int i = 0; i < _Simulation->BSCompartments.size(); i++) {
         int ShapeID = _Simulation->BSCompartments[i].ShapeID;
+        int CompartmentID = _Simulation->BSCompartments[i].ID;
+        int AssocNeuronID = _Simulation->GetNeuronIndexByCompartment(CompartmentID);
+        
+        bool DrawThisNeuron = std::find(_Simulation->VisualizerParams.Optional_VisibleNeuronIDs.begin(), _Simulation->VisualizerParams.Optional_VisibleNeuronIDs.end(), AssocNeuronID) != _Simulation->VisualizerParams.Optional_VisibleNeuronIDs.end();
 
         if (_Simulation->Collection.IsBox(ShapeID)) { // (std::holds_alternative<Geometries::Box>(_Simulation->Collection.Geometries[ShapeID])) {
             const Geometries::Box & Box = _Simulation->Collection.GetBox(ShapeID); // Geometries::Box Box = std::get<Geometries::Box>(_Simulation->Collection.Geometries[ShapeID]);
             
             BG::NES::Renderer::Shaders::Phong Shader;
-            Shader.DiffuseColor_  = vsg::vec4(RandFloatBetween0And1(), RandFloatBetween0And1(), RandFloatBetween0And1(), 1.0f);
+            Shader.DiffuseColor_  = GenerateSeededRandomVector(AssocNeuronID);
             Shader.SpecularColor_ = vsg::vec4(0.1f, 0.1f, 0.1f, 1.0f);
             Shader.Type_ = BG::NES::Renderer::Shaders::SHADER_PHONG;
 
@@ -88,7 +105,7 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
             const Geometries::Sphere & Sphere = _Simulation->Collection.GetSphere(ShapeID); // Geometries::Sphere Sphere = std::get<Geometries::Sphere>(_Simulation->Collection.Geometries[ShapeID]);
 
             BG::NES::Renderer::Shaders::Phong Shader;
-            Shader.DiffuseColor_  = vsg::vec4(RandFloatBetween0And1(), RandFloatBetween0And1(), RandFloatBetween0And1(), 1.0f);
+            Shader.DiffuseColor_  = GenerateSeededRandomVector(AssocNeuronID);
             Shader.SpecularColor_ = vsg::vec4(0.1f, 0.1f, 0.1f, 1.0f);
             Shader.Type_ = BG::NES::Renderer::Shaders::SHADER_PHONG;
 
@@ -101,8 +118,13 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
         } else if (_Simulation->Collection.IsCylinder(ShapeID)) { // (std::holds_alternative<Geometries::Cylinder>(_Simulation->Collection.Geometries[ShapeID])) {
             const Geometries::Cylinder & Cylinder = _Simulation->Collection.GetCylinder(ShapeID); // Geometries::Cylinder Cylinder = std::get<Geometries::Cylinder>(_Simulation->Collection.Geometries[ShapeID]);
             
+            // If both the optional filter list is provided, AND this neuron isn't in the list, don't draw the compartments.
+            if ((_Simulation->VisualizerParams.Optional_VisibleNeuronIDs.size() != 0) && (!DrawThisNeuron)) {
+                continue;
+            }
+
             BG::NES::Renderer::Shaders::Phong Shader;
-            Shader.DiffuseColor_  = vsg::vec4(RandFloatBetween0And1(), RandFloatBetween0And1(), RandFloatBetween0And1(), 1.0f);
+            Shader.DiffuseColor_  = GenerateSeededRandomVector(AssocNeuronID);
             Shader.SpecularColor_ = vsg::vec4(0.1f, 0.1f, 0.1f, 1.0f);
             Shader.Type_ = BG::NES::Renderer::Shaders::SHADER_PHONG;
 
