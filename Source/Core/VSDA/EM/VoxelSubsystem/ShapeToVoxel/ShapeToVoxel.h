@@ -101,7 +101,7 @@ bool FillWedge(VoxelArray* _Array, Geometries::Wedge* _Wedge, VSDA::WorldInfo& _
  * @return true 
  * @return false 
  */
-bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale);
+// bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale);
 
 /**
  * @brief Generates a border frame around the region.

@@ -73,22 +73,22 @@ bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
 
 }
 
-bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
+// bool FillBoundingBox(VoxelArray* _Array, BoundingBox* _BB, float _VoxelScale) {
 
-    for (float X = _BB->bb_point1[0]; X < _BB->bb_point2[0]; X+= _VoxelScale) {
-        for (float Y = _BB->bb_point1[1]; Y < _BB->bb_point2[1]; Y+= _VoxelScale) {
-            for (float Z = _BB->bb_point1[2]; Z < _BB->bb_point2[2]; Z+= _VoxelScale) {
+//     for (float X = _BB->bb_point1[0]; X < _BB->bb_point2[0]; X+= _VoxelScale) {
+//         for (float Y = _BB->bb_point1[1]; Y < _BB->bb_point2[1]; Y+= _VoxelScale) {
+//             for (float Z = _BB->bb_point1[2]; Z < _BB->bb_point2[2]; Z+= _VoxelScale) {
                 
-                VoxelType FinalVoxelValue;
-                FinalVoxelValue.Intensity_ = 0;
-                _Array->SetVoxelAtPosition(X, Y, Z, FinalVoxelValue);
-            }
-        }
-    }
+//                 VoxelType FinalVoxelValue;
+//                 FinalVoxelValue.Intensity_ = 0;
+//                 _Array->SetVoxelAtPosition(X, Y, Z, FinalVoxelValue);
+//             }
+//         }
+//     }
 
-    return true;
+//     return true;
 
-}
+// }
 
 float LinearInterpolate(float _X, float _Val1, float _Val2) {
     return _Val1 + _X * (_Val2 - _Val1);
