@@ -113,6 +113,7 @@ bool FillSphere(VoxelArray* _Array, Geometries::Sphere* _Shape, VSDA::WorldInfo&
     assert(_Params != nullptr);
     assert(_Generator != nullptr);
 
+    return true;
     BoundingBox BB = _Shape->GetBoundingBox(_WorldInfo);
 
     for (float X = BB.bb_point1[0]; X < BB.bb_point2[0]; X+= _WorldInfo.VoxelScale_um) {
@@ -139,7 +140,7 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
     assert(_Params != nullptr);
     assert(_Generator != nullptr);
 
-    
+    return true;
     BoundingBox BB = _Shape->GetBoundingBox(_WorldInfo);
 
     for (float X = BB.bb_point1[0] + (_ThisThread * _WorldInfo.VoxelScale_um); X < BB.bb_point2[0]; X+= (_TotalThreads * _WorldInfo.VoxelScale_um)) {
@@ -238,6 +239,60 @@ bool isPointInCylinder(const Geometries::Vec3D& rA, const Geometries::Vec3D& rB,
     return d <= R;
 }
 
+bool isPointInCylinderSingle(const Geometries::Vec3D& rA, const Geometries::Vec3D& rB, double R, const Geometries::Vec3D& rP) {
+    Geometries::Vec3D e = rB - rA;
+    Geometries::Vec3D m = rA.Cross(rB);
+
+    // Calculate the distance from the point to the line
+    Geometries::Vec3D d_vec = m + e.Cross(rP);
+    double d = d_vec.Norm() / e.Norm();
+
+    if (d > R) {
+        return false;
+    }
+
+    // Calculate the closest point on the line to the point
+    Geometries::Vec3D rQ = rP + e.Cross(m + e.Cross(rP)) / (e.Norm() * e.Norm());
+
+    // Calculate barycentric coordinates
+    double wA = (rQ.Cross(rB)).Norm() / m.Norm();
+    double wB = (rQ.Cross(rA)).Norm() / m.Norm();
+
+    // Check if the closest point lies between A and B
+    bool inside = (wA >= 0) && (wA <= 1) && (wB >= 0) && (wB <= 1);
+
+    return inside;
+}
+
+bool isPointInCylinder2(const Geometries::Vec3D& rA, const Geometries::Vec3D& rB, double RA, double RB, const Geometries::Vec3D& rP) {
+    Geometries::Vec3D e = rB - rA;
+    double e_norm = e.Norm();
+    Geometries::Vec3D e_normalized = e.Normalize();
+
+    // Calculate the distance from the point to the line
+    Geometries::Vec3D rAP = rP - rA;
+    Geometries::Vec3D rAP_cross_e = rAP.Cross(e_normalized);
+    double d = rAP_cross_e.Norm();
+
+    // Calculate the closest point on the line to the point
+    double t = rAP.Dot(e_normalized) / e_norm;
+    Geometries::Vec3D rQ = rA + e_normalized * (t * e_norm);
+
+    // Check if the closest point lies between A and B
+    bool inside = (t >= 0) && (t <= 1);
+
+    if (!inside) {
+        return false;
+    }
+
+    // Calculate the radius at the closest point
+    double R = RA + t * (RB - RA);
+
+    // Check if the point is within the radius at the closest point
+    return d <= R;
+}
+
+
 
 bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
@@ -290,6 +345,8 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldI
 
     
     // Now enumerate the entire cylinder one z layer at a time, and test voxels in a square (of size r) at that layer
+    int total = 0;
+    int suc = 0;
     for (int CurrentZIndex = StartZ; CurrentZIndex < EndZ; CurrentZIndex++) {
 
         Geometries::Vec3D CylinderMidpointAtCurrentLayer_um = ShiftedEnd0_um + (ScaledUnitVector_um * CurrentZIndex);
@@ -305,8 +362,9 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldI
 
                 Geometries::Vec3D CurrentWorldSpacePosition_um = _Array->GetPositionAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex);
 
-                if (isPointInCylinder(RotatedEnd0_um, RotatedEnd1_um, _Shape->End0Radius_um, _Shape->End1Radius_um, CylinderMidpointAtCurrentLayer_um)) {
-
+                total ++;
+                if (isPointInCylinder2(RotatedEnd0_um, RotatedEnd1_um, _Shape->End0Radius_um, _Shape->End1Radius_um, CurrentWorldSpacePosition_um)) {
+                    suc++;
                     VoxelType FinalVoxelValue = GenerateVoxelColor(CurrentWorldSpacePosition_um.x, CurrentWorldSpacePosition_um.y, CurrentWorldSpacePosition_um.z, _Params, _Generator);
                     if (_Params->RenderBorders) {
                         float DistanceToEdge = CurrentWorldSpacePosition_um.Distance(CylinderMidpointAtCurrentLayer_um);
@@ -322,6 +380,8 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldI
 
 
     }
+
+    std::cout<<"Percent: "<<(float(suc)/float(total))*100.<<std::endl;
 
 
     // for (float z = -0.5*cyl_length; z <= 0.5*cyl_length; z += stepsize) {
@@ -439,7 +499,7 @@ bool TEST_FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA
 bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_Array != nullptr);
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
-
+    return true;
     // Rotate The Endpoints Around World Origin By Amount Set In World Info
     //   This deals with the rotation of the whole model
     Geometries::Vec3D RotatedEnd0 = _Cylinder->End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);

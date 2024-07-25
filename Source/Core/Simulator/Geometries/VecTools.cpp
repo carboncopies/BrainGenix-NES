@@ -65,6 +65,10 @@ float Vec3D::Norm() const {
     return sqrt(norm2);
 }
 
+Vec3D Vec3D::Normalize() const {
+    return *this / Norm();
+}
+
 float Vec3D::Distance(const Vec3D &other) const {
     float distance = 0.0;
     Vec3D diff = *this - other;

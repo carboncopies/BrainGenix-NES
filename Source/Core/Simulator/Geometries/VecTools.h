@@ -60,6 +60,8 @@ struct Vec3D {
     //! Norm (size) of vector
     float Norm() const;
 
+    Vec3D Normalize() const;
+
     //! Distance between two vectors
     float Distance(const Vec3D &other) const;
 
