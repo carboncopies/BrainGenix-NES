@@ -85,7 +85,7 @@ private:
 
     float VoxelScale_um; /**Set the size of each voxel in micrometers*/
 
-    BoundingBox BoundingBox_; /**Set the bounding box of this voxel array (relative to the simulation orign)*/
+    BoundingBox BoundingBox_; /**Set the bounding box of this voxel array (relative to the simulation orign), used by subregions*/
 
     BG::Common::Logger::LoggingSystem* Logger_; /**Instance of logging system*/
 
@@ -152,6 +152,15 @@ public:
      * @param _Value
      */
     void SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Value);
+
+
+
+    /**
+     * Returns the position at the current indexes.
+     */
+    Geometries::Vec3D GetPositionAtIndex(int _XIndex, int _YIndex, int _ZIndex);
+
+
 
     /**
      * @brief Sets the voxel if the one currently there is not darker.
@@ -227,6 +236,8 @@ public:
      */
     int GetX();
 
+    int GetXIndexAtPosition(float _X_Worldspace_um);
+
     /**
      * @brief Get the y dimensions
      * 
@@ -234,12 +245,18 @@ public:
      */
     int GetY();
 
+    int GetYIndexAtPosition(float _X_Worldspace_um);
+
+
     /**
      * @brief Get the Z dimensions
      * 
      * @return int 
      */
     int GetZ();
+
+    int GetZIndexAtPosition(float _X_Worldspace_um);
+
 
     /**
      * @brief Returns the resolution of the given object in micrometers.

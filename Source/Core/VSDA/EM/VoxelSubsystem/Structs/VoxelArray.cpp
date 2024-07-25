@@ -210,6 +210,16 @@ void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Val
 
 }
 
+int VoxelArray::GetXIndexAtPosition(float _X_Worldspace_um) {
+    return round((_X_Worldspace_um - BoundingBox_.bb_point1[0])/VoxelScale_um);
+}
+int VoxelArray::GetYIndexAtPosition(float _Y_Worldspace_um) {
+    return round((_Y_Worldspace_um - BoundingBox_.bb_point1[1])/VoxelScale_um);
+}
+int VoxelArray::GetZIndexAtPosition(float _Z_Worldspace_um) {
+    return round((_Z_Worldspace_um - BoundingBox_.bb_point1[2])/VoxelScale_um);
+}
+
 void VoxelArray::SetVoxelIfNotDarker(float _X, float _Y, float _Z, VoxelType _Value) {
 
     // This is dangerous - there's a round call since this can lead to truncation errors
