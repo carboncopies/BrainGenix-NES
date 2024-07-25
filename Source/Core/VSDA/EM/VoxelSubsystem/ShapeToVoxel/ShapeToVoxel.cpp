@@ -113,7 +113,6 @@ bool FillSphere(VoxelArray* _Array, Geometries::Sphere* _Shape, VSDA::WorldInfo&
     assert(_Params != nullptr);
     assert(_Generator != nullptr);
 
-    return true;
     BoundingBox BB = _Shape->GetBoundingBox(_WorldInfo);
 
     for (float X = BB.bb_point1[0]; X < BB.bb_point2[0]; X+= _WorldInfo.VoxelScale_um) {
@@ -140,7 +139,6 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
     assert(_Params != nullptr);
     assert(_Generator != nullptr);
 
-    return true;
     BoundingBox BB = _Shape->GetBoundingBox(_WorldInfo);
 
     for (float X = BB.bb_point1[0] + (_ThisThread * _WorldInfo.VoxelScale_um); X < BB.bb_point2[0]; X+= (_TotalThreads * _WorldInfo.VoxelScale_um)) {
@@ -162,135 +160,6 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
     return true;
 
 }
-
-
-
-
-// #include <iostream>
-// #include <cmath>
-
-// Define a 3D vector structure
-// struct Vector3 {
-//     double x, y, z;
-
-//     Vector3 operator-(const Vector3& other) const {
-//         return {x - other.x, y - other.y, z - other.z};
-//     }
-
-//     Vector3 operator+(const Vector3& other) const {
-//         return {x + other.x, y + other.y, z + other.z};
-//     }
-
-//     Vector3 operator*(double scalar) const {
-//         return {x * scalar, y * scalar, z * scalar};
-//     }
-
-//     Vector3 operator/(double scalar) const {
-//         return {x / scalar, y / scalar, z / scalar};
-//     }
-
-
-//     Vector3 cross(const Vector3& other) const {
-//         return {y * other.z - z * other.y, z * other.x - x * other.z, x * other.y - y * other.x};
-//     }
-
-//     double dot(const Vector3& other) const {
-//         return x * other.x + y * other.y + z * other.z;
-//     }
-
-//     double norm() const {
-//         return std::sqrt(x * x + y * y + z * z);
-//     }
-
-//     Vector3 normalize() const {
-//         double len = norm();
-//         return {x / len, y / len, z / len};
-//     }
-// };
-
-// // Function to check if a point is inside a cylinder with varying radii
-// bool isPointInCylinder(const Geometries::Vec3D& rA, const Geometries::Vec3D& rB, double RA, double RB, const Geometries::Vec3D& rP) {
-//     Geometries::Vec3D e = rB - rA;
-//     Geometries::Vec3D m = rA.Cross(rB);
-
-//     // Calculate the distance from the point to the line
-//     Geometries::Vec3D d_vec = m + e.Cross(rP);
-//     double d = d_vec.Norm() / e.Norm();
-
-//     // Calculate the closest point on the line to the point
-//     Geometries::Vec3D rQ = rP + e.Cross(m + e.Cross(rP)) / (e.Norm() * e.Norm());
-
-//     // Calculate barycentric coordinates
-//     double wA = (rQ.Cross(rB)).Norm() / m.Norm();
-//     double wB = (rQ.Cross(rA)).Norm() / m.Norm();
-
-//     // Check if the closest point lies between A and B
-//     bool inside = (wA >= 0) && (wA <= 1) && (wB >= 0) && (wB <= 1);
-
-//     if (!inside) {
-//         return false;
-//     }
-
-//     // Calculate the radius at the closest point
-//     double t = (rQ - rA).Dot(e) / e.Dot(e);
-//     double R = RA + t * (RB - RA);
-
-//     // Check if the point is within the radius at the closest point
-//     return d <= R;
-// }
-
-// bool isPointInCylinderSingle(const Geometries::Vec3D& rA, const Geometries::Vec3D& rB, double R, const Geometries::Vec3D& rP) {
-//     Geometries::Vec3D e = rB - rA;
-//     Geometries::Vec3D m = rA.Cross(rB);
-
-//     // Calculate the distance from the point to the line
-//     Geometries::Vec3D d_vec = m + e.Cross(rP);
-//     double d = d_vec.Norm() / e.Norm();
-
-//     if (d > R) {
-//         return false;
-//     }
-
-//     // Calculate the closest point on the line to the point
-//     Geometries::Vec3D rQ = rP + e.Cross(m + e.Cross(rP)) / (e.Norm() * e.Norm());
-
-//     // Calculate barycentric coordinates
-//     double wA = (rQ.Cross(rB)).Norm() / m.Norm();
-//     double wB = (rQ.Cross(rA)).Norm() / m.Norm();
-
-//     // Check if the closest point lies between A and B
-//     bool inside = (wA >= 0) && (wA <= 1) && (wB >= 0) && (wB <= 1);
-
-//     return inside;
-// }
-
-// bool isPointInCylinder2(const Geometries::Vec3D& rA, const Geometries::Vec3D& rB, double RA, double RB, const Geometries::Vec3D& rP) {
-//     Geometries::Vec3D e = rB - rA;
-//     double e_norm = e.Norm();
-//     Geometries::Vec3D e_normalized = e.Normalize();
-
-//     // Calculate the distance from the point to the line
-//     Geometries::Vec3D rAP = rP - rA;
-//     Geometries::Vec3D rAP_cross_e = rAP.Cross(e_normalized);
-//     double d = rAP_cross_e.Norm();
-
-//     // Calculate the closest point on the line to the point
-//     double t = rAP.Dot(e_normalized) / e_norm;
-//     Geometries::Vec3D rQ = rA + e_normalized * (t * e_norm);
-
-//     // Check if the closest point lies between A and B
-//     bool inside = (t >= 0) && (t <= 1);
-
-//     if (!inside) {
-//         return false;
-//     }
-
-//     // Calculate the radius at the closest point
-//     double R = RA + t * (RB - RA);
-
-//     // Check if the point is within the radius at the closest point
-//     return d <= R;
-// }
 
 int isPointInCylinder(const Geometries::Vec3D& P1, const Geometries::Vec3D& P2, double r1, double r2, const Geometries::Vec3D& point) {
 	// Vector from P1 to P2
@@ -340,27 +209,6 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldI
     //   This deals with the rotation of the whole model
     Geometries::Vec3D RotatedEnd0_um = _Shape->End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
     Geometries::Vec3D RotatedEnd1_um = _Shape->End1Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
-
-    // float x_min = RotatedEnd0_um.x < RotatedEnd1_um.x ? RotatedEnd0_um.x : RotatedEnd1_um.x;
-    // float y_min = RotatedEnd0_um.y < RotatedEnd1_um.y ? RotatedEnd0_um.y : RotatedEnd1_um.y;
-    // float z_min = RotatedEnd0_um.z < RotatedEnd1_um.z ? RotatedEnd0_um.z : RotatedEnd1_um.z;
-    // float x_max = RotatedEnd0_um.x > RotatedEnd1_um.x ? RotatedEnd0_um.x : RotatedEnd1_um.x;
-    // float y_max = RotatedEnd0_um.y > RotatedEnd1_um.y ? RotatedEnd0_um.y : RotatedEnd1_um.y;
-    // float z_max = RotatedEnd0_um.z > RotatedEnd1_um.z ? RotatedEnd0_um.z : RotatedEnd1_um.z;
-
-    // for (float x = x_min; x <= x_max; x += _WorldInfo.VoxelScale_um) {
-    //     for (float y = y_min; x <= y_max; y += _WorldInfo.VoxelScale_um) {
-    //         for (float z = z_min; z <= z_max; z += _WorldInfo.VoxelScale_um) {
-    //             Geometries::Vec3D p(x, y, z);
-    //             if (isPointInCylinder(RotatedEnd0_um, RotatedEnd1_um, _Shape->End0Radius_um, _Shape->End1Radius_um, p)) {
-    //                 VoxelType FinalVoxelValue = GenerateVoxelColor(p.x, p.y, p.z, _Params, _Generator);
-    //                 _Array->SetVoxelAtPosition(p.x, p.y, p.z, FinalVoxelValue);
-    //             }
-    //         }
-    //     }
-    // }
-
-    // return true;
 
     /**
      * New method:
@@ -440,11 +288,11 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldI
 
     }
 
-    if (tot<1) {
-        std::cout << "StartZ == EndZ!\n";
-    } else {
-        std::cout << "tot: " << tot << " within: " << within << " above: " << above << " below: " << below << " toofar: " << toofar << '\n';
-    }
+    // if (tot<1) {
+    //     std::cout << "StartZ == EndZ!\n";
+    // } else {
+    //     std::cout << "tot: " << tot << " within: " << within << " above: " << above << " below: " << below << " toofar: " << toofar << '\n';
+    // }
 
     return true;
 
@@ -524,7 +372,7 @@ bool TEST_FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA
 bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_Array != nullptr);
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
-    return true;
+
     // Rotate The Endpoints Around World Origin By Amount Set In World Info
     //   This deals with the rotation of the whole model
     Geometries::Vec3D RotatedEnd0 = _Cylinder->End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
