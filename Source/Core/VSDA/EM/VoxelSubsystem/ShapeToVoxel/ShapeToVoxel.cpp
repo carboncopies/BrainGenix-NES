@@ -199,91 +199,95 @@ int isPointInCylinder(const Geometries::Vec3D& P1, const Geometries::Vec3D& P2, 
     return 3;
 }
 
+// THIS ONE IS RIDDLED WITH BUGS! USE FillCylinderPart()!!!!!
 // Note that _WorldInfo.VoxelScale_um == _Params->VoxelResolution_um.
-bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
-    assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
-    assert(_Params != nullptr);
-    assert(_Generator != nullptr);
+// bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
+//     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
+//     assert(_Params != nullptr);
+//     assert(_Generator != nullptr);
 
-    // Rotate The Endpoints Around World Origin By Amount Set In World Info
-    //   This deals with the rotation of the whole model
-    Geometries::Vec3D RotatedEnd0_um = _Shape->End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
-    Geometries::Vec3D RotatedEnd1_um = _Shape->End1Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+//     // Rotate The Endpoints Around World Origin By Amount Set In World Info
+//     //   This deals with the rotation of the whole model
+//     Geometries::Vec3D RotatedEnd0_um = _Shape->End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+//     Geometries::Vec3D RotatedEnd1_um = _Shape->End1Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
-    /**
-     * New method:
-     * 1) Walk along integer Z steps of the 3D Voxel space (layers).
-     * 2) For each Z step, we know where that is in 3D float space.
-     * 3) We know a point in 3D float space (x,y,z) on the cylinder mid-line.
-     * 4) We find a 2D bounding box around that point expressed in Voxel space X,Y voxels.
-     * 5) We test each point in that voxel space to see if it is in the cylinder.
-     */
-    // Calculate all the points and stuff them into the array
+//     /**
+//      * New method:
+//      * 1) Walk along integer Z steps of the 3D Voxel space (layers).
+//      * 2) For each Z step, we know where that is in 3D float space.
+//      * 3) We know a point in 3D float space (x,y,z) on the cylinder mid-line.
+//      * 4) We find a 2D bounding box around that point expressed in Voxel space X,Y voxels.
+//      * 5) We test each point in that voxel space to see if it is in the cylinder.
+//      */
+//     // Calculate all the points and stuff them into the array
 
-    // Firstly calculate the Z height of the start and end points on the cylinder
+//     // Firstly calculate the Z height of the start and end points on the cylinder
 
-    Geometries::Vec3D DifferenceVector = RotatedEnd1_um - RotatedEnd0_um;
-    Geometries::Vec3D UnitVector = DifferenceVector / RotatedEnd1_um.Distance(RotatedEnd0_um);
-    Geometries::Vec3D ScaledUnitVector_um = UnitVector * _Params->VoxelResolution_um;
+//     Geometries::Vec3D DifferenceVector = RotatedEnd1_um - RotatedEnd0_um;
+//     Geometries::Vec3D UnitVector = DifferenceVector / RotatedEnd1_um.Distance(RotatedEnd0_um);
+//     Geometries::Vec3D ScaledUnitVector_um = UnitVector * _Params->VoxelResolution_um;
 
-    float MaxRadius_um = std::max(_Shape->End0Radius_um, _Shape->End1Radius_um);
-    Geometries::Vec3D Offset_um = UnitVector * MaxRadius_um;
+//     float MaxRadius_um = std::max(_Shape->End0Radius_um, _Shape->End1Radius_um);
+//     Geometries::Vec3D Offset_um = UnitVector * MaxRadius_um;
 
-    Geometries::Vec3D ShiftedEnd0_um = RotatedEnd0_um - Offset_um;
-    Geometries::Vec3D ShiftedEnd1_um = RotatedEnd1_um + Offset_um;
+//     Geometries::Vec3D ShiftedEnd0_um = RotatedEnd0_um - Offset_um;
+//     Geometries::Vec3D ShiftedEnd1_um = RotatedEnd1_um + Offset_um;
 
-    int StartZ = _Array->GetZIndexAtPosition(std::min(ShiftedEnd0_um.z, ShiftedEnd1_um.z));
-    int EndZ = _Array->GetZIndexAtPosition(std::max(ShiftedEnd0_um.z, RotatedEnd1_um.z));
+//     int StartZ = _Array->GetZIndexAtPosition(std::min(ShiftedEnd0_um.z, ShiftedEnd1_um.z));
+//     int EndZ = _Array->GetZIndexAtPosition(std::max(ShiftedEnd0_um.z, RotatedEnd1_um.z));
 
     
-    // Now enumerate the entire cylinder one z layer at a time, and test voxels in a square (of size r) at that layer
-    // Notice that this loop does not count from 0 but from StartZ! Beware of this when mapping back to world coordinates!
-    for (int CurrentZIndex = StartZ; CurrentZIndex < EndZ; CurrentZIndex++) {
+//     // Now enumerate the entire cylinder one z layer at a time, and test voxels in a square (of size r) at that layer
+//     // Notice that this loop does not count from 0 but from StartZ! Beware of this when mapping back to world coordinates!
+//     for (int CurrentZIndex = StartZ; CurrentZIndex < EndZ; CurrentZIndex++) {
 
-        Geometries::Vec3D CylinderMidpointAtCurrentLayer_um = ShiftedEnd0_um + (ScaledUnitVector_um * (CurrentZIndex - StartZ ));
+//         Geometries::Vec3D CylinderMidpointAtCurrentLayer_um = ShiftedEnd0_um + (ScaledUnitVector_um * (CurrentZIndex - StartZ ));
 
-        // Now create a square at the midpoint here, and then test all points in that square
-        int XTestSpaceMin = _Array->GetXIndexAtPosition(CylinderMidpointAtCurrentLayer_um.x - MaxRadius_um);
-        int XTestSpaceMax = _Array->GetXIndexAtPosition(CylinderMidpointAtCurrentLayer_um.x + MaxRadius_um);
-        int YTestSpaceMin = _Array->GetYIndexAtPosition(CylinderMidpointAtCurrentLayer_um.y - MaxRadius_um);
-        int YTestSpaceMax = _Array->GetYIndexAtPosition(CylinderMidpointAtCurrentLayer_um.y + MaxRadius_um);
+//         // Now create a square at the midpoint here, and then test all points in that square
+//         int XTestSpaceMin = _Array->GetXIndexAtPosition(CylinderMidpointAtCurrentLayer_um.x - MaxRadius_um);
+//         int XTestSpaceMax = _Array->GetXIndexAtPosition(CylinderMidpointAtCurrentLayer_um.x + MaxRadius_um);
+//         int YTestSpaceMin = _Array->GetYIndexAtPosition(CylinderMidpointAtCurrentLayer_um.y - MaxRadius_um);
+//         int YTestSpaceMax = _Array->GetYIndexAtPosition(CylinderMidpointAtCurrentLayer_um.y + MaxRadius_um);
 
-        for (int CurrentYIndex = YTestSpaceMin; CurrentYIndex <= YTestSpaceMax; CurrentYIndex++) {
-            for (int CurrentXIndex = XTestSpaceMin; CurrentXIndex <= XTestSpaceMax; CurrentXIndex++) {
-
-
-                Geometries::Vec3D CurrentWorldSpacePosition_um = _Array->GetPositionAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex);
-
-                int res = isPointInCylinder(RotatedEnd0_um, RotatedEnd1_um, _Shape->End0Radius_um, _Shape->End1Radius_um, CurrentWorldSpacePosition_um);
-                if (res==0) {
+//         for (int CurrentYIndex = YTestSpaceMin; CurrentYIndex <= YTestSpaceMax; CurrentYIndex++) {
+//             for (int CurrentXIndex = XTestSpaceMin; CurrentXIndex <= XTestSpaceMax; CurrentXIndex++) {
 
 
-                    VoxelType FinalVoxelValue = GenerateVoxelColor(CurrentWorldSpacePosition_um.x, CurrentWorldSpacePosition_um.y, CurrentWorldSpacePosition_um.z, _Params, _Generator);
-                    if (_Params->RenderBorders) {
-                        float DistanceToEdge = CurrentWorldSpacePosition_um.Distance(CylinderMidpointAtCurrentLayer_um);
-                        FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
-                    }
+//                 Geometries::Vec3D CurrentWorldSpacePosition_um = _Array->GetPositionAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex);
 
-                    _Array->SetVoxelAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex, FinalVoxelValue);
-
-                }
-
-            }
-        }
+//                 int res = isPointInCylinder(RotatedEnd0_um, RotatedEnd1_um, _Shape->End0Radius_um, _Shape->End1Radius_um, CurrentWorldSpacePosition_um);
+//                 if (res==0) {
 
 
-    }
+//                     VoxelType FinalVoxelValue = GenerateVoxelColor(CurrentWorldSpacePosition_um.x, CurrentWorldSpacePosition_um.y, CurrentWorldSpacePosition_um.z, _Params, _Generator);
+//                     if (_Params->RenderBorders) {
+//                         float DistanceToEdge = CurrentWorldSpacePosition_um.Distance(CylinderMidpointAtCurrentLayer_um);
+//                         FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
+//                     }
 
-    // if (tot<1) {
-    //     std::cout << "StartZ == EndZ!\n";
-    // } else {
-    //     std::cout << "tot: " << tot << " within: " << within << " above: " << above << " below: " << below << " toofar: " << toofar << '\n';
-    // }
+//                     _Array->SetVoxelAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex, FinalVoxelValue);
 
-    return true;
+//                 }
 
-}
+//             }
+//         }
 
+
+//     }
+
+//     // if (tot<1) {
+//     //     std::cout << "StartZ == EndZ!\n";
+//     // } else {
+//     //     std::cout << "tot: " << tot << " within: " << within << " above: " << above << " below: " << below << " toofar: " << toofar << '\n';
+//     // }
+
+//     return true;
+
+// }
+
+/**
+ * This is the older version. It would be interesting to do an actual head-to-head speed comparison between old and new versions.
+ */
 bool TEST_FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_Array != nullptr);
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
@@ -356,7 +360,7 @@ bool TEST_FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA
 }
 
 bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
-        assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
+    assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
     assert(_Params != nullptr);
     assert(_Generator != nullptr);
 
@@ -377,8 +381,9 @@ bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Ge
 
     // Firstly calculate the Z height of the start and end points on the cylinder
 
-    Geometries::Vec3D DifferenceVector = RotatedEnd1_um - RotatedEnd0_um;
-    Geometries::Vec3D UnitVector = DifferenceVector / RotatedEnd1_um.Distance(RotatedEnd0_um);
+    Geometries::Vec3D DifferenceVector_um = RotatedEnd1_um - RotatedEnd0_um;
+    float CylinderLength_um = RotatedEnd1_um.Distance(RotatedEnd0_um);
+    Geometries::Vec3D UnitVector = DifferenceVector_um / CylinderLength_um;
     Geometries::Vec3D ScaledUnitVector_um = UnitVector * _Params->VoxelResolution_um;
 
     float MaxRadius_um = std::max(_Shape->End0Radius_um, _Shape->End1Radius_um);
@@ -387,45 +392,96 @@ bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Ge
     Geometries::Vec3D ShiftedEnd0_um = RotatedEnd0_um - Offset_um;
     Geometries::Vec3D ShiftedEnd1_um = RotatedEnd1_um + Offset_um;
 
-    int StartZ = _Array->GetZIndexAtPosition(std::min(ShiftedEnd0_um.z, ShiftedEnd1_um.z));
-    int EndZ = _Array->GetZIndexAtPosition(std::max(ShiftedEnd0_um.z, RotatedEnd1_um.z));
+    int StartZ = _Array->GetZIndexAtPosition(ShiftedEnd0_um.z);
+    int EndZ = _Array->GetZIndexAtPosition(ShiftedEnd1_um.z);
 
-    
-    // Now enumerate the entire cylinder one z layer at a time, and test voxels in a square (of size r) at that layer
-    // Notice that this loop does not count from 0 but from StartZ! Beware of this when mapping back to world coordinates!
-    for (int CurrentZIndex = StartZ + _ThisThread; CurrentZIndex < EndZ; CurrentZIndex += _TotalThreads) {
+    if (StartZ == EndZ) return true; // To avoid divide by 0 below.
 
-        Geometries::Vec3D CylinderMidpointAtCurrentLayer_um = ShiftedEnd0_um + (ScaledUnitVector_um * (CurrentZIndex - StartZ ));
+    if (StartZ < EndZ) {
 
-        // Now create a square at the midpoint here, and then test all points in that square
-        int XTestSpaceMin = _Array->GetXIndexAtPosition(CylinderMidpointAtCurrentLayer_um.x - MaxRadius_um);
-        int XTestSpaceMax = _Array->GetXIndexAtPosition(CylinderMidpointAtCurrentLayer_um.x + MaxRadius_um);
-        int YTestSpaceMin = _Array->GetYIndexAtPosition(CylinderMidpointAtCurrentLayer_um.y - MaxRadius_um);
-        int YTestSpaceMax = _Array->GetYIndexAtPosition(CylinderMidpointAtCurrentLayer_um.y + MaxRadius_um);
+        int ZDiff = EndZ - StartZ;
 
-        for (int CurrentYIndex = YTestSpaceMin; CurrentYIndex <= YTestSpaceMax; CurrentYIndex++) {
-            for (int CurrentXIndex = XTestSpaceMin; CurrentXIndex <= XTestSpaceMax; CurrentXIndex++) {
+        // Now enumerate the entire cylinder one z layer at a time, and test voxels in a square (of size r) at that layer
+        // Notice that this loop does not count from 0 but from StartZ! Beware of this when mapping back to world coordinates!
+        for (int CurrentZIndex = StartZ + _ThisThread; CurrentZIndex < EndZ; CurrentZIndex += _TotalThreads) {
 
+            int ZOffset = CurrentZIndex - StartZ;
+            float ZRatio = float(ZOffset)/float(ZDiff); // Because we can't divide by 0, we can't do this if StartZ == EndZ.
+            float CurrentRadius_um = (1.0 - ZRatio)*_Shape->End0Radius_um + ZRatio*_Shape->End1Radius_um;
 
-                Geometries::Vec3D CurrentWorldSpacePosition_um = _Array->GetPositionAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex);
+            Geometries::Vec3D CylinderMidpointAtCurrentLayer_um = ShiftedEnd0_um + (ScaledUnitVector_um * ZOffset);
 
-                int res = isPointInCylinder(RotatedEnd0_um, RotatedEnd1_um, _Shape->End0Radius_um, _Shape->End1Radius_um, CurrentWorldSpacePosition_um);
-                if (res==0) {
+            // Now create a square at the midpoint here, and then test all points in that square
+            int XTestSpaceMin = _Array->GetXIndexAtPosition(CylinderMidpointAtCurrentLayer_um.x - MaxRadius_um);
+            int XTestSpaceMax = _Array->GetXIndexAtPosition(CylinderMidpointAtCurrentLayer_um.x + MaxRadius_um);
+            int YTestSpaceMin = _Array->GetYIndexAtPosition(CylinderMidpointAtCurrentLayer_um.y - MaxRadius_um);
+            int YTestSpaceMax = _Array->GetYIndexAtPosition(CylinderMidpointAtCurrentLayer_um.y + MaxRadius_um);
 
+            for (int CurrentYIndex = YTestSpaceMin; CurrentYIndex <= YTestSpaceMax; CurrentYIndex++) {
+                for (int CurrentXIndex = XTestSpaceMin; CurrentXIndex <= XTestSpaceMax; CurrentXIndex++) {
 
-                    VoxelType FinalVoxelValue = GenerateVoxelColor(CurrentWorldSpacePosition_um.x, CurrentWorldSpacePosition_um.y, CurrentWorldSpacePosition_um.z, _Params, _Generator);
-                    if (_Params->RenderBorders) {
-                        float DistanceToEdge = CurrentWorldSpacePosition_um.Distance(CylinderMidpointAtCurrentLayer_um);
-                        FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
+                    Geometries::Vec3D CurrentWorldSpacePosition_um = _Array->GetPositionAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex);
+
+                    int res = isPointInCylinder(RotatedEnd0_um, RotatedEnd1_um, _Shape->End0Radius_um, _Shape->End1Radius_um, CurrentWorldSpacePosition_um);
+                    if (res==0) {
+
+                        VoxelType FinalVoxelValue = GenerateVoxelColor(CurrentWorldSpacePosition_um.x, CurrentWorldSpacePosition_um.y, CurrentWorldSpacePosition_um.z, _Params, _Generator);
+                        if (_Params->RenderBorders) {
+                            float DistanceToCenter_um = CurrentWorldSpacePosition_um.Distance(CylinderMidpointAtCurrentLayer_um);
+                            FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, CurrentRadius_um - DistanceToCenter_um, _Params);
+                        }
+
+                        _Array->SetVoxelAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex, FinalVoxelValue);
+
                     }
 
-                    _Array->SetVoxelAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex, FinalVoxelValue);
-
                 }
-
             }
+
         }
 
+    } else {
+
+        int ZDiff = StartZ - EndZ;
+
+        // Now enumerate the entire cylinder one z layer at a time, and test voxels in a square (of size r) at that layer
+        // Notice that this loop does not count from 0 but from StartZ! Beware of this when mapping back to world coordinates!
+        for (int CurrentZIndex = EndZ + _ThisThread; CurrentZIndex < StartZ; CurrentZIndex += _TotalThreads) {
+
+            int ZOffset = CurrentZIndex - EndZ;
+            float ZRatio = float(ZOffset)/float(ZDiff); // Because we can't divide by 0, we can't do this if StartZ == EndZ.
+            float CurrentRadius_um = (1.0 - ZRatio)*_Shape->End1Radius_um + ZRatio*_Shape->End0Radius_um;
+
+            Geometries::Vec3D CylinderMidpointAtCurrentLayer_um = ShiftedEnd1_um - (ScaledUnitVector_um * ZOffset); // ScaledUnitVector_um always points from end0 to end1.
+
+            // Now create a square at the midpoint here, and then test all points in that square
+            int XTestSpaceMin = _Array->GetXIndexAtPosition(CylinderMidpointAtCurrentLayer_um.x - MaxRadius_um);
+            int XTestSpaceMax = _Array->GetXIndexAtPosition(CylinderMidpointAtCurrentLayer_um.x + MaxRadius_um);
+            int YTestSpaceMin = _Array->GetYIndexAtPosition(CylinderMidpointAtCurrentLayer_um.y - MaxRadius_um);
+            int YTestSpaceMax = _Array->GetYIndexAtPosition(CylinderMidpointAtCurrentLayer_um.y + MaxRadius_um);
+
+            for (int CurrentYIndex = YTestSpaceMin; CurrentYIndex <= YTestSpaceMax; CurrentYIndex++) {
+                for (int CurrentXIndex = XTestSpaceMin; CurrentXIndex <= XTestSpaceMax; CurrentXIndex++) {
+
+                    Geometries::Vec3D CurrentWorldSpacePosition_um = _Array->GetPositionAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex);
+
+                    int res = isPointInCylinder(RotatedEnd0_um, RotatedEnd1_um, _Shape->End0Radius_um, _Shape->End1Radius_um, CurrentWorldSpacePosition_um);
+                    if (res==0) {
+
+                        VoxelType FinalVoxelValue = GenerateVoxelColor(CurrentWorldSpacePosition_um.x, CurrentWorldSpacePosition_um.y, CurrentWorldSpacePosition_um.z, _Params, _Generator);
+                        if (_Params->RenderBorders) {
+                            float DistanceToCenter_um = CurrentWorldSpacePosition_um.Distance(CylinderMidpointAtCurrentLayer_um);
+                            FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, CurrentRadius_um - DistanceToCenter_um, _Params);
+                        }
+
+                        _Array->SetVoxelAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex, FinalVoxelValue);
+
+                    }
+
+                }
+            }
+
+        }
 
     }
 
