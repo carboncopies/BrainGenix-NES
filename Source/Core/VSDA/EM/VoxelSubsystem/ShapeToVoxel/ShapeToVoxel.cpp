@@ -148,6 +148,78 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
 
 
 
+
+#include <iostream>
+#include <cmath>
+
+// Define a 3D vector structure
+struct Vector3 {
+    double x, y, z;
+
+    Vector3 operator-(const Vector3& other) const {
+        return {x - other.x, y - other.y, z - other.z};
+    }
+
+    Vector3 operator+(const Vector3& other) const {
+        return {x + other.x, y + other.y, z + other.z};
+    }
+
+    Vector3 operator*(double scalar) const {
+        return {x * scalar, y * scalar, z * scalar};
+    }
+
+    Vector3 cross(const Vector3& other) const {
+        return {y * other.z - z * other.y, z * other.x - x * other.z, x * other.y - y * other.x};
+    }
+
+    double dot(const Vector3& other) const {
+        return x * other.x + y * other.y + z * other.z;
+    }
+
+    double norm() const {
+        return std::sqrt(x * x + y * y + z * z);
+    }
+
+    Vector3 normalize() const {
+        double len = norm();
+        return {x / len, y / len, z / len};
+    }
+};
+
+// Function to check if a point is inside a cylinder with varying radii
+bool isPointInCylinder(const Vector3& rA, const Vector3& rB, double RA, double RB, const Vector3& rP) {
+    Vector3 e = rB - rA;
+    Vector3 m = rA.cross(rB);
+
+    // Calculate the distance from the point to the line
+    Vector3 d_vec = m + e.cross(rP);
+    double d = d_vec.norm() / e.norm();
+
+    // Calculate the closest point on the line to the point
+    Vector3 rQ = rP + e.cross(m + e.cross(rP)) / (e.norm() * e.norm());
+
+    // Calculate barycentric coordinates
+    double wA = (rQ.cross(rB)).norm() / m.norm();
+    double wB = (rQ.cross(rA)).norm() / m.norm();
+
+    // Check if the closest point lies between A and B
+    bool inside = (wA >= 0) && (wA <= 1) && (wB >= 0) && (wB <= 1);
+
+    if (!inside) {
+        return false;
+    }
+
+    // Calculate the radius at the closest point
+    double t = (rQ - rA).dot(e) / e.dot(e);
+    double R = RA + t * (RB - RA);
+
+    // Check if the point is within the radius at the closest point
+    return d <= R;
+}
+
+
+
+
 bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_Array != nullptr);
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
