@@ -305,15 +305,17 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldI
 
                 Geometries::Vec3D CurrentWorldSpacePosition_um = _Array->GetPositionAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex);
 
+                if (isPointInCylinder(RotatedEnd0_um, RotatedEnd1_um, _Shape->End0Radius_um, _Shape->End1Radius_um, CylinderMidpointAtCurrentLayer_um)) {
 
+                    VoxelType FinalVoxelValue = GenerateVoxelColor(CurrentWorldSpacePosition_um.x, CurrentWorldSpacePosition_um.y, CurrentWorldSpacePosition_um.z, _Params, _Generator);
+                    if (_Params->RenderBorders) {
+                        float DistanceToEdge = CurrentWorldSpacePosition_um.Distance(CylinderMidpointAtCurrentLayer_um);
+                        FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
+                    }
 
-                VoxelType FinalVoxelValue = GenerateVoxelColor(CurrentWorldSpacePosition_um.x, CurrentWorldSpacePosition_um.y, CurrentWorldSpacePosition_um.z, _Params, _Generator);
-                if (_Params->RenderBorders) {
-                    float DistanceToEdge = CurrentWorldSpacePosition_um.Distance(CylinderMidpointAtCurrentLayer_um);
-                    FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
+                    _Array->SetVoxelAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex, FinalVoxelValue);
+
                 }
-
-                _Array->SetVoxelAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex, FinalVoxelValue);
 
             }
         }
