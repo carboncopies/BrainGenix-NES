@@ -117,6 +117,23 @@ BoundingBox CylinderBase::GetBoundingBox(VSDA::WorldInfo& _WorldInfo) {
 	return bb;
 }
 
+// BoundingBox SphereBase::GetBoundingBox(VSDA::WorldInfo& _WorldInfo) {
+//     BoundingBox bb;
+
+//     Geometries::Vec3D RotatedCenter = Center_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
+
+//     bb.bb_point1[0] = RotatedCenter.x - Radius_um;
+//     bb.bb_point1[1] = RotatedCenter.y - Radius_um;
+//     bb.bb_point1[2] = RotatedCenter.z - Radius_um;
+
+// 	bb.bb_point2[0] = RotatedCenter.x + Radius_um;
+// 	bb.bb_point2[1] = RotatedCenter.y + Radius_um;
+// 	bb.bb_point2[2] = RotatedCenter.z + Radius_um;
+
+
+//     return bb;
+// }
+
 void add_disk_points(float _z, float _radius, float stepsize, std::vector<Vec3D> & point_cloud) {
     point_cloud.emplace_back(Vec3D(0.0, 0.0, _z));
     for (float r = stepsize; r <= _radius; r += stepsize) {
