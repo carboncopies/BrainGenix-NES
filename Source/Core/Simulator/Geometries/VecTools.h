@@ -58,7 +58,7 @@ struct Vec3D {
     bool AllElementsGTE(const Vec3D &other) const;
 
     //! Norm (size) of vector
-    float Norm() const;
+    float Magnitude() const;
 
     Vec3D Normalize() const;
 

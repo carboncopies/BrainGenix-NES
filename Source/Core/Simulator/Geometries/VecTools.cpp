@@ -60,13 +60,13 @@ bool Vec3D::AllElementsGTE(const Vec3D &other) const {
     return (this->x >= other.x) && (this->y >= other.y) && (this->z >= other.z);
 };
 
-float Vec3D::Norm() const {
+float Vec3D::Magnitude() const {
     float norm2 = pow(x, 2.0) + pow(y, 2.0) + pow(z, 2.0);
     return sqrt(norm2);
 }
 
 Vec3D Vec3D::Normalize() const {
-    return *this / Norm();
+    return *this / Magnitude();
 }
 
 float Vec3D::Distance(const Vec3D &other) const {

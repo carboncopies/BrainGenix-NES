@@ -166,132 +166,161 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
 
 
 
-#include <iostream>
-#include <cmath>
+// #include <iostream>
+// #include <cmath>
 
 // Define a 3D vector structure
-struct Vector3 {
-    double x, y, z;
+// struct Vector3 {
+//     double x, y, z;
 
-    Vector3 operator-(const Vector3& other) const {
-        return {x - other.x, y - other.y, z - other.z};
-    }
+//     Vector3 operator-(const Vector3& other) const {
+//         return {x - other.x, y - other.y, z - other.z};
+//     }
 
-    Vector3 operator+(const Vector3& other) const {
-        return {x + other.x, y + other.y, z + other.z};
-    }
+//     Vector3 operator+(const Vector3& other) const {
+//         return {x + other.x, y + other.y, z + other.z};
+//     }
 
-    Vector3 operator*(double scalar) const {
-        return {x * scalar, y * scalar, z * scalar};
-    }
+//     Vector3 operator*(double scalar) const {
+//         return {x * scalar, y * scalar, z * scalar};
+//     }
 
-    Vector3 operator/(double scalar) const {
-        return {x / scalar, y / scalar, z / scalar};
-    }
+//     Vector3 operator/(double scalar) const {
+//         return {x / scalar, y / scalar, z / scalar};
+//     }
 
 
-    Vector3 cross(const Vector3& other) const {
-        return {y * other.z - z * other.y, z * other.x - x * other.z, x * other.y - y * other.x};
-    }
+//     Vector3 cross(const Vector3& other) const {
+//         return {y * other.z - z * other.y, z * other.x - x * other.z, x * other.y - y * other.x};
+//     }
 
-    double dot(const Vector3& other) const {
-        return x * other.x + y * other.y + z * other.z;
-    }
+//     double dot(const Vector3& other) const {
+//         return x * other.x + y * other.y + z * other.z;
+//     }
 
-    double norm() const {
-        return std::sqrt(x * x + y * y + z * z);
-    }
+//     double norm() const {
+//         return std::sqrt(x * x + y * y + z * z);
+//     }
 
-    Vector3 normalize() const {
-        double len = norm();
-        return {x / len, y / len, z / len};
-    }
-};
+//     Vector3 normalize() const {
+//         double len = norm();
+//         return {x / len, y / len, z / len};
+//     }
+// };
 
-// Function to check if a point is inside a cylinder with varying radii
-bool isPointInCylinder(const Geometries::Vec3D& rA, const Geometries::Vec3D& rB, double RA, double RB, const Geometries::Vec3D& rP) {
-    Geometries::Vec3D e = rB - rA;
-    Geometries::Vec3D m = rA.Cross(rB);
+// // Function to check if a point is inside a cylinder with varying radii
+// bool isPointInCylinder(const Geometries::Vec3D& rA, const Geometries::Vec3D& rB, double RA, double RB, const Geometries::Vec3D& rP) {
+//     Geometries::Vec3D e = rB - rA;
+//     Geometries::Vec3D m = rA.Cross(rB);
 
-    // Calculate the distance from the point to the line
-    Geometries::Vec3D d_vec = m + e.Cross(rP);
-    double d = d_vec.Norm() / e.Norm();
+//     // Calculate the distance from the point to the line
+//     Geometries::Vec3D d_vec = m + e.Cross(rP);
+//     double d = d_vec.Norm() / e.Norm();
 
-    // Calculate the closest point on the line to the point
-    Geometries::Vec3D rQ = rP + e.Cross(m + e.Cross(rP)) / (e.Norm() * e.Norm());
+//     // Calculate the closest point on the line to the point
+//     Geometries::Vec3D rQ = rP + e.Cross(m + e.Cross(rP)) / (e.Norm() * e.Norm());
 
-    // Calculate barycentric coordinates
-    double wA = (rQ.Cross(rB)).Norm() / m.Norm();
-    double wB = (rQ.Cross(rA)).Norm() / m.Norm();
+//     // Calculate barycentric coordinates
+//     double wA = (rQ.Cross(rB)).Norm() / m.Norm();
+//     double wB = (rQ.Cross(rA)).Norm() / m.Norm();
 
-    // Check if the closest point lies between A and B
-    bool inside = (wA >= 0) && (wA <= 1) && (wB >= 0) && (wB <= 1);
+//     // Check if the closest point lies between A and B
+//     bool inside = (wA >= 0) && (wA <= 1) && (wB >= 0) && (wB <= 1);
 
-    if (!inside) {
-        return false;
-    }
+//     if (!inside) {
+//         return false;
+//     }
 
-    // Calculate the radius at the closest point
-    double t = (rQ - rA).Dot(e) / e.Dot(e);
-    double R = RA + t * (RB - RA);
+//     // Calculate the radius at the closest point
+//     double t = (rQ - rA).Dot(e) / e.Dot(e);
+//     double R = RA + t * (RB - RA);
 
-    // Check if the point is within the radius at the closest point
-    return d <= R;
+//     // Check if the point is within the radius at the closest point
+//     return d <= R;
+// }
+
+// bool isPointInCylinderSingle(const Geometries::Vec3D& rA, const Geometries::Vec3D& rB, double R, const Geometries::Vec3D& rP) {
+//     Geometries::Vec3D e = rB - rA;
+//     Geometries::Vec3D m = rA.Cross(rB);
+
+//     // Calculate the distance from the point to the line
+//     Geometries::Vec3D d_vec = m + e.Cross(rP);
+//     double d = d_vec.Norm() / e.Norm();
+
+//     if (d > R) {
+//         return false;
+//     }
+
+//     // Calculate the closest point on the line to the point
+//     Geometries::Vec3D rQ = rP + e.Cross(m + e.Cross(rP)) / (e.Norm() * e.Norm());
+
+//     // Calculate barycentric coordinates
+//     double wA = (rQ.Cross(rB)).Norm() / m.Norm();
+//     double wB = (rQ.Cross(rA)).Norm() / m.Norm();
+
+//     // Check if the closest point lies between A and B
+//     bool inside = (wA >= 0) && (wA <= 1) && (wB >= 0) && (wB <= 1);
+
+//     return inside;
+// }
+
+// bool isPointInCylinder2(const Geometries::Vec3D& rA, const Geometries::Vec3D& rB, double RA, double RB, const Geometries::Vec3D& rP) {
+//     Geometries::Vec3D e = rB - rA;
+//     double e_norm = e.Norm();
+//     Geometries::Vec3D e_normalized = e.Normalize();
+
+//     // Calculate the distance from the point to the line
+//     Geometries::Vec3D rAP = rP - rA;
+//     Geometries::Vec3D rAP_cross_e = rAP.Cross(e_normalized);
+//     double d = rAP_cross_e.Norm();
+
+//     // Calculate the closest point on the line to the point
+//     double t = rAP.Dot(e_normalized) / e_norm;
+//     Geometries::Vec3D rQ = rA + e_normalized * (t * e_norm);
+
+//     // Check if the closest point lies between A and B
+//     bool inside = (t >= 0) && (t <= 1);
+
+//     if (!inside) {
+//         return false;
+//     }
+
+//     // Calculate the radius at the closest point
+//     double R = RA + t * (RB - RA);
+
+//     // Check if the point is within the radius at the closest point
+//     return d <= R;
+// }
+
+bool isPointInCylinder(const Geometries::Vec3D& P1, const Geometries::Vec3D& P2, double r1, double r2, const Geometries::Vec3D& point) {
+	// Vector from P1 to P2
+	Geometries::Vec3D axis = P2 - P1;
+	double height = axis.Magnitude();
+	Geometries::Vec3D axisDir = axis.Normalize();
+    
+	// Vector from P1 to the point
+	Geometries::Vec3D pointVector = point - P1;
+    
+	// Projection of pointVector onto the axis
+	double projectionLength = pointVector.Dot(axisDir);
+    
+	// Check if the point is within the bounds along the axis
+	if (projectionLength < 0 || projectionLength > height) {
+    	return false;
+	}
+
+	// Calculate the radius at the projection point along the cylinder's height
+	double currentRadius = r1 + (r2 - r1) * (projectionLength / height);
+
+	// Closest point on the axis to the given point
+	Geometries::Vec3D closestPointOnAxis = P1 + axisDir * projectionLength;
+
+	// Distance from the point to the closest point on the axis
+	double distanceToAxis = (point - closestPointOnAxis).Magnitude();
+    
+	// Check if the distance is within the current radius
+	return distanceToAxis <= currentRadius;
 }
-
-bool isPointInCylinderSingle(const Geometries::Vec3D& rA, const Geometries::Vec3D& rB, double R, const Geometries::Vec3D& rP) {
-    Geometries::Vec3D e = rB - rA;
-    Geometries::Vec3D m = rA.Cross(rB);
-
-    // Calculate the distance from the point to the line
-    Geometries::Vec3D d_vec = m + e.Cross(rP);
-    double d = d_vec.Norm() / e.Norm();
-
-    if (d > R) {
-        return false;
-    }
-
-    // Calculate the closest point on the line to the point
-    Geometries::Vec3D rQ = rP + e.Cross(m + e.Cross(rP)) / (e.Norm() * e.Norm());
-
-    // Calculate barycentric coordinates
-    double wA = (rQ.Cross(rB)).Norm() / m.Norm();
-    double wB = (rQ.Cross(rA)).Norm() / m.Norm();
-
-    // Check if the closest point lies between A and B
-    bool inside = (wA >= 0) && (wA <= 1) && (wB >= 0) && (wB <= 1);
-
-    return inside;
-}
-
-bool isPointInCylinder2(const Geometries::Vec3D& rA, const Geometries::Vec3D& rB, double RA, double RB, const Geometries::Vec3D& rP) {
-    Geometries::Vec3D e = rB - rA;
-    double e_norm = e.Norm();
-    Geometries::Vec3D e_normalized = e.Normalize();
-
-    // Calculate the distance from the point to the line
-    Geometries::Vec3D rAP = rP - rA;
-    Geometries::Vec3D rAP_cross_e = rAP.Cross(e_normalized);
-    double d = rAP_cross_e.Norm();
-
-    // Calculate the closest point on the line to the point
-    double t = rAP.Dot(e_normalized) / e_norm;
-    Geometries::Vec3D rQ = rA + e_normalized * (t * e_norm);
-
-    // Check if the closest point lies between A and B
-    bool inside = (t >= 0) && (t <= 1);
-
-    if (!inside) {
-        return false;
-    }
-
-    // Calculate the radius at the closest point
-    double R = RA + t * (RB - RA);
-
-    // Check if the point is within the radius at the closest point
-    return d <= R;
-}
-
 
 
 bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
@@ -363,7 +392,7 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldI
                 Geometries::Vec3D CurrentWorldSpacePosition_um = _Array->GetPositionAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex);
 
                 total ++;
-                if (isPointInCylinder2(RotatedEnd0_um, RotatedEnd1_um, _Shape->End0Radius_um, _Shape->End1Radius_um, CurrentWorldSpacePosition_um)) {
+                if (isPointInCylinder(RotatedEnd0_um, RotatedEnd1_um, _Shape->End0Radius_um, _Shape->End1Radius_um, CurrentWorldSpacePosition_um)) {
                     suc++;
                     VoxelType FinalVoxelValue = GenerateVoxelColor(CurrentWorldSpacePosition_um.x, CurrentWorldSpacePosition_um.y, CurrentWorldSpacePosition_um.z, _Params, _Generator);
                     if (_Params->RenderBorders) {
