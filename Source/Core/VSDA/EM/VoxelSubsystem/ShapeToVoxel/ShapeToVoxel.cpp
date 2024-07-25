@@ -239,7 +239,7 @@ bool isPointInCylinder(const Vector3& rA, const Vector3& rB, double RA, double R
 }
 
 
-bool Test__FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
+bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
     assert(_Params != nullptr);
     assert(_Generator != nullptr);
@@ -313,7 +313,7 @@ bool Test__FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::
                     FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
                 }
 
-                _Array->SetVoxel(CurrentXIndex, CurrentYIndex, CurrentZIndex, FinalVoxelValue);
+                _Array->SetVoxelAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex, FinalVoxelValue);
 
             }
         }
@@ -363,7 +363,7 @@ bool Test__FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::
 
 }
 
-bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
+bool TEST_FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_Array != nullptr);
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
 

@@ -141,6 +141,7 @@ public:
      * @param _Value 
      */
     void SetVoxel(int _X, int _Y, int _Z, VoxelType _Value);
+    void SetVoxelAtIndex(int _XIndex, int _YIndex, int _ZIndex, VoxelType _Value);
 
     /**
      * @brief Set the Voxel At the given Position (using the given scale) to the given value.

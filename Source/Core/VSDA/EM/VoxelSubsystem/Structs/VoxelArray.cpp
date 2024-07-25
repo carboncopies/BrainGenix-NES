@@ -194,6 +194,17 @@ void VoxelArray::SetVoxel(int _X, int _Y, int _Z, VoxelType _Value) {
     Data_[CurrentIndex] = _Value;
 }
 
+void VoxelArray::SetVoxelAtIndex(int _XIndex, int _YIndex, int _ZIndex, VoxelType _Value) {
+    
+    uint64_t CurrentIndex = GetIndex(_XIndex, _YIndex, _ZIndex);
+    if (CurrentIndex < 0 || CurrentIndex >= DataMaxLength_) {
+        return;
+    }
+    Data_[CurrentIndex] = _Value;
+
+}
+
+
 void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Value) {
 
     // This is dangerous - there's a round call since this can lead to truncation errors
@@ -209,6 +220,17 @@ void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Val
     SetVoxel(XIndex, YIndex, ZIndex, _Value);
 
 }
+
+Geometries::Vec3D VoxelArray::GetPositionAtIndex(int _XIndex, int _YIndex, int _ZIndex) {
+
+    float XPos_um = _XIndex * VoxelScale_um + BoundingBox_.bb_point1[0];
+    float YPos_um = _YIndex * VoxelScale_um + BoundingBox_.bb_point1[1];
+    float ZPos_um = _ZIndex * VoxelScale_um + BoundingBox_.bb_point1[2];
+    
+    return Geometries::Vec3D(XPos_um, YPos_um, ZPos_um);
+
+}
+
 
 int VoxelArray::GetXIndexAtPosition(float _X_Worldspace_um) {
     return round((_X_Worldspace_um - BoundingBox_.bb_point1[0])/VoxelScale_um);
