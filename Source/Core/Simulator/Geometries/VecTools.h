@@ -57,6 +57,8 @@ struct Vec3D {
     //! Vector >= Vector (all elements)
     bool AllElementsGTE(const Vec3D &other) const;
 
+    //! Norm (size) of vector
+    float Norm() const;
 
     //! Distance between two vectors
     float Distance(const Vec3D &other) const;

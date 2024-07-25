@@ -208,20 +208,20 @@ struct Vector3 {
 };
 
 // Function to check if a point is inside a cylinder with varying radii
-bool isPointInCylinder(const Vector3& rA, const Vector3& rB, double RA, double RB, const Vector3& rP) {
-    Vector3 e = rB - rA;
-    Vector3 m = rA.cross(rB);
+bool isPointInCylinder(const Geometries::Vec3D& rA, const Geometries::Vec3D& rB, double RA, double RB, const Geometries::Vec3D& rP) {
+    Geometries::Vec3D e = rB - rA;
+    Geometries::Vec3D m = rA.Cross(rB);
 
     // Calculate the distance from the point to the line
-    Vector3 d_vec = m + e.cross(rP);
-    double d = d_vec.norm() / e.norm();
+    Geometries::Vec3D d_vec = m + e.Cross(rP);
+    double d = d_vec.Norm() / e.Norm();
 
     // Calculate the closest point on the line to the point
-    Vector3 rQ = rP + e.cross(m + e.cross(rP)) / (e.norm() * e.norm());
+    Geometries::Vec3D rQ = rP + e.Cross(m + e.Cross(rP)) / (e.Norm() * e.Norm());
 
     // Calculate barycentric coordinates
-    double wA = (rQ.cross(rB)).norm() / m.norm();
-    double wB = (rQ.cross(rA)).norm() / m.norm();
+    double wA = (rQ.Cross(rB)).Norm() / m.Norm();
+    double wB = (rQ.Cross(rA)).Norm() / m.Norm();
 
     // Check if the closest point lies between A and B
     bool inside = (wA >= 0) && (wA <= 1) && (wB >= 0) && (wB <= 1);
@@ -231,7 +231,7 @@ bool isPointInCylinder(const Vector3& rA, const Vector3& rB, double RA, double R
     }
 
     // Calculate the radius at the closest point
-    double t = (rQ - rA).dot(e) / e.dot(e);
+    double t = (rQ - rA).Dot(e) / e.Dot(e);
     double R = RA + t * (RB - RA);
 
     // Check if the point is within the radius at the closest point
