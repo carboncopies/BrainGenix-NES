@@ -292,7 +292,7 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
 //     return d <= R;
 // }
 
-bool isPointInCylinder(const Geometries::Vec3D& P1, const Geometries::Vec3D& P2, double r1, double r2, const Geometries::Vec3D& point) {
+int isPointInCylinder(const Geometries::Vec3D& P1, const Geometries::Vec3D& P2, double r1, double r2, const Geometries::Vec3D& point) {
 	// Vector from P1 to P2
 	Geometries::Vec3D axis = P2 - P1;
 	double height = axis.Magnitude();
@@ -305,8 +305,12 @@ bool isPointInCylinder(const Geometries::Vec3D& P1, const Geometries::Vec3D& P2,
 	double projectionLength = pointVector.Dot(axisDir);
     
 	// Check if the point is within the bounds along the axis
-	if (projectionLength < 0 || projectionLength > height) {
-    	return false;
+	if (projectionLength < 0) {
+        return 1;
+    }
+    if (projectionLength > height) {
+        return 2;
+    	//return false;
 	}
 
 	// Calculate the radius at the projection point along the cylinder's height
@@ -319,10 +323,14 @@ bool isPointInCylinder(const Geometries::Vec3D& P1, const Geometries::Vec3D& P2,
 	double distanceToAxis = (point - closestPointOnAxis).Magnitude();
     
 	// Check if the distance is within the current radius
-	return distanceToAxis <= currentRadius;
+	//return distanceToAxis <= currentRadius;
+    if (distanceToAxis <= currentRadius) {
+        return 0;
+    }
+    return 3;
 }
 
-
+// Note that _WorldInfo.VoxelScale_um == _Params->VoxelResolution_um.
 bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
     assert(_Params != nullptr);
@@ -333,19 +341,26 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldI
     Geometries::Vec3D RotatedEnd0_um = _Shape->End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
     Geometries::Vec3D RotatedEnd1_um = _Shape->End1Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
-    // Get rotation angles and length (r, theta, phi).
-    //   Moving the midline of the cylinder to (0,0,0) then switching to spherical coords
-    //   allows us to find angles to rotate around Y and Z axes.
-    // Geometries::Vec3D DifferenceVector = RotatedEnd1 - RotatedEnd0;
-    // Geometries::Vec3D diff_spherical_coords = DifferenceVector.cartesianToSpherical();
-    // float rot_y = diff_spherical_coords.theta();
-    // float rot_z = diff_spherical_coords.phi();
+    // float x_min = RotatedEnd0_um.x < RotatedEnd1_um.x ? RotatedEnd0_um.x : RotatedEnd1_um.x;
+    // float y_min = RotatedEnd0_um.y < RotatedEnd1_um.y ? RotatedEnd0_um.y : RotatedEnd1_um.y;
+    // float z_min = RotatedEnd0_um.z < RotatedEnd1_um.z ? RotatedEnd0_um.z : RotatedEnd1_um.z;
+    // float x_max = RotatedEnd0_um.x > RotatedEnd1_um.x ? RotatedEnd0_um.x : RotatedEnd1_um.x;
+    // float y_max = RotatedEnd0_um.y > RotatedEnd1_um.y ? RotatedEnd0_um.y : RotatedEnd1_um.y;
+    // float z_max = RotatedEnd0_um.z > RotatedEnd1_um.z ? RotatedEnd0_um.z : RotatedEnd1_um.z;
 
-    // float cyl_length = diff_spherical_coords.r();
+    // for (float x = x_min; x <= x_max; x += _WorldInfo.VoxelScale_um) {
+    //     for (float y = y_min; x <= y_max; y += _WorldInfo.VoxelScale_um) {
+    //         for (float z = z_min; z <= z_max; z += _WorldInfo.VoxelScale_um) {
+    //             Geometries::Vec3D p(x, y, z);
+    //             if (isPointInCylinder(RotatedEnd0_um, RotatedEnd1_um, _Shape->End0Radius_um, _Shape->End1Radius_um, p)) {
+    //                 VoxelType FinalVoxelValue = GenerateVoxelColor(p.x, p.y, p.z, _Params, _Generator);
+    //                 _Array->SetVoxelAtPosition(p.x, p.y, p.z, FinalVoxelValue);
+    //             }
+    //         }
+    //     }
+    // }
 
-    // // Use this to know the extent to which to gradually change the radius as you move along the length of the cylinder.
-    // float radius_difference = _Cylinder->End1Radius_um - _Cylinder->End0Radius_um;
-    // float midpoint_radius_um = _Cylinder->End0Radius_um + (0.5*radius_difference);
+    // return true;
 
     /**
      * New method:
@@ -374,11 +389,16 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldI
 
     
     // Now enumerate the entire cylinder one z layer at a time, and test voxels in a square (of size r) at that layer
-    int total = 0;
-    int suc = 0;
+
+    int tot = 0;
+    int within = 0;
+    int above = 0;
+    int below = 0;
+    int toofar = 0;
+    // Notice that this loop does not count from 0 but from StartZ! Beware of this when mapping back to world coordinates!
     for (int CurrentZIndex = StartZ; CurrentZIndex < EndZ; CurrentZIndex++) {
 
-        Geometries::Vec3D CylinderMidpointAtCurrentLayer_um = ShiftedEnd0_um + (ScaledUnitVector_um * CurrentZIndex);
+        Geometries::Vec3D CylinderMidpointAtCurrentLayer_um = ShiftedEnd0_um + (ScaledUnitVector_um * (CurrentZIndex - StartZ ));
 
         // Now create a square at the midpoint here, and then test all points in that square
         int XTestSpaceMin = _Array->GetXIndexAtPosition(CylinderMidpointAtCurrentLayer_um.x - MaxRadius_um);
@@ -389,11 +409,15 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldI
         for (int CurrentYIndex = YTestSpaceMin; CurrentYIndex <= YTestSpaceMax; CurrentYIndex++) {
             for (int CurrentXIndex = XTestSpaceMin; CurrentXIndex <= XTestSpaceMax; CurrentXIndex++) {
 
+                tot++;
+
                 Geometries::Vec3D CurrentWorldSpacePosition_um = _Array->GetPositionAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex);
 
-                total ++;
-                if (isPointInCylinder(RotatedEnd0_um, RotatedEnd1_um, _Shape->End0Radius_um, _Shape->End1Radius_um, CurrentWorldSpacePosition_um)) {
-                    suc++;
+                int res = isPointInCylinder(RotatedEnd0_um, RotatedEnd1_um, _Shape->End0Radius_um, _Shape->End1Radius_um, CurrentWorldSpacePosition_um);
+                if (res==0) {
+
+                    within++;
+
                     VoxelType FinalVoxelValue = GenerateVoxelColor(CurrentWorldSpacePosition_um.x, CurrentWorldSpacePosition_um.y, CurrentWorldSpacePosition_um.z, _Params, _Generator);
                     if (_Params->RenderBorders) {
                         float DistanceToEdge = CurrentWorldSpacePosition_um.Distance(CylinderMidpointAtCurrentLayer_um);
@@ -402,6 +426,12 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldI
 
                     _Array->SetVoxelAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex, FinalVoxelValue);
 
+                } else if (res==1) {
+                    above++;
+                } else if (res==2) {
+                    below++;
+                } else {
+                    toofar++;
                 }
 
             }
@@ -410,45 +440,11 @@ bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldI
 
     }
 
-    std::cout<<"Percent: "<<(float(suc)/float(total))*100.<<std::endl;
-
-
-    // for (float z = -0.5*cyl_length; z <= 0.5*cyl_length; z += stepsize) {
-    //     // 2. At each step, get points in a disk around the axis at the right radius.
-    //     float d_ratio = z / cyl_length; // This goes from -0.5 to 0.5 as we move along the length of the cylinder.
-    //     float radius_at_z = midpoint_radius_um + d_ratio*radius_difference; // Radius at this position on the axis.
-
-    //     // Next disc center point along cylinder midline.
-    //     Geometries::Vec3D RotatedPoint = RotatedVec(0.0, 0.0, z, rot_y, rot_z, translate);
-
-    //     // Set voxel for midline point.
-    //     VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
-    //     _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
-
-    //     // Find points on circles around the midline up to the radius at this point along the cylinder.
-    //     for (float r = stepsize; r <= radius_at_z; r += stepsize) {
-    //         // Circumpherence is 2*pi*r, number of voxels that fit along the circumpherence is 2*pi*r/stepsize.
-    //         // So, in a whole 2*pi rotation, for each step the angle change is 2*pi/(2*pi*r/stepsize) = stepsize/r.
-    //         float radians_per_step = stepsize / r;
-    //         for (float theta = 0; theta < 2.0*M_PI; theta += radians_per_step) {
-
-    //             // Next point on circumpherence at radius r.
-    //             float y = r*std::cos(theta);
-    //             float x = r*std::sin(theta);
-    //             Geometries::Vec3D RotatedPoint = RotatedVec(x, y, z, rot_y, rot_z, translate);
-
-    //             // Set voxel at the point.
-    //             VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
-    //             if (_Params->RenderBorders) {
-    //                 float DistanceToEdge = radius_at_z - r;
-    //                 FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
-    //             }
-    //             _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
-    //         }
-    //     }
-
-    // }
-
+    if (tot<1) {
+        std::cout << "StartZ == EndZ!\n";
+    } else {
+        std::cout << "tot: " << tot << " within: " << within << " above: " << above << " below: " << below << " toofar: " << toofar << '\n';
+    }
 
     return true;
 
