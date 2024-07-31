@@ -970,6 +970,19 @@ std::string SimulationRPCInterface::GetConnectome(std::string _JSONRequest) {
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
+std::string SimulationRPCInterface::GetAbstractConnectome(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetAbstractConnectome", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Return JSON
+    nlohmann::json ResponseJSON = Handle.Sim()->GetAbstractConnectomeJSON();
+    ResponseJSON["StatusCode"] = 0; // ok
+    return Handle.ResponseAndStoreRequest(ResponseJSON);
+}
+
 /**
  * Expects _JSONRequest:
  * {

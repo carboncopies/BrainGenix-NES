@@ -149,6 +149,7 @@ public:
 
     std::string GetSomaPositions(std::string _JSONRequest);
     std::string GetConnectome(std::string _JSONRequest);
+    std::string GetAbstractConnectome(std::string _JSONRequest);
 
 
     /**

@@ -855,6 +855,68 @@ nlohmann::json Simulation::GetConnectomeJSON() const {
     return connectome;
 }
 
+/**
+ * Count the number of receptors involved in a connection
+ * between a pair of presynaptic neuron and postsynaptic neuron.
+ */
+size_t Simulation::GetAbstractConnection(int PreSynID, int PostSynID) const {
+    if (PostSynID >= Neurons.size()) return 0;
+
+    CoreStructs::Neuron* PostsynapticPtr = Neurons.at(PostSynID).get();
+    if (PostsynapticPtr->Class_<CoreStructs::_BSNeuron) return 0;
+
+    size_t NumReceptors = 0;
+    Connections::Receptor* Rptr = nullptr;
+    for (auto& _ReceptorData : static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->ReceptorDataVec) {
+        if (_ReceptorData.SrcNeuronID==PreSynID) {
+            NumReceptors++;
+        }
+    }
+
+    return NumReceptors;
+}
+
+/**
+ * Loop through all possible combinations of presynaptic and
+ * postsynaptic neurons and count the number of receptors involved
+ * in connections between each pair.
+ * Note that the columns are presynaptic indices while the rows are
+ * postsynaptic indices.
+ */
+std::vector<std::vector<size_t>> Simulation::GetAbstractConnectome() const {
+    std::vector<std::vector<size_t>> PrePostReceptorCounts(
+        Neurons.size(),
+        std::vector<size_t>(Neurons.size(), 0));
+    for (int PostSynIdx = 0; PostSynIdx < Neurons.size(); PostSynIdx++) {
+        for (int PreSynIdx = 0; PreSynIdx < Neurons.size(); PreSynIdx++) {
+            size_t NumReceptors = GetAbstractConnection(PreSynIdx, PostSynIdx);
+            PrePostReceptorCounts[PostSynIdx][PreSynIdx] = NumReceptors;
+        }
+    }
+    return PrePostReceptorCounts;
+}
+
+/**
+ * Convert abstract connectome information into JSON for delivery
+ * via API.
+ */
+nlohmann::json Simulation::GetAbstractConnectomeJSON() const {
+    auto PrePostReceptorCounts = GetAbstractConnectome();
+    nlohmann::json connectome;
+    connectome["PrePostNumReceptors"] = nlohmann::json::array();
+    nlohmann::json& reccntlist(connectome["PrePostNumReceptors"]);
+
+    for (auto& PostsynRow : PrePostReceptorCounts) {
+        nlohmann::json frompresynreccntvec(nlohmann::json::value_t::array);
+        for (auto& ReceptorCount : PostsynRow) {
+            frompresynreccntvec.push_back(ReceptorCount);
+        }
+        reccntlist.push_back(frompresynreccntvec);
+    }
+
+    return connectome;
+}
+
 enum sim_methods {
     simmethod_list_of_neurons,
     simmethod_circuits,
