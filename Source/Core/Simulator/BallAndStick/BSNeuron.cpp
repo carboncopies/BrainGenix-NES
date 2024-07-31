@@ -13,15 +13,19 @@ namespace BallAndStick {
 
 //! Constructors
 BSNeuron::BSNeuron(int ID, Geometries::Geometry* soma, Geometries::Geometry* axon) {
-    this->ID = ID;
-    this->Morphology["soma"] = soma;
-    this->Morphology["axon"] = axon;
+    ID = ID;
+    _Class = _BSNeuron;
+    
+    Morphology["soma"] = soma;
+    Morphology["axon"] = axon;
 };
 
 BSNeuron::BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct) {
     build_data = bsneuronstruct;
 
     ID = bsneuronstruct.ID;
+    _Class = _BSNeuron;
+
     Vm_mV = bsneuronstruct.MembranePotential_mV;
     VRest_mV = bsneuronstruct.RestingPotential_mV;
     VAct_mV = bsneuronstruct.SpikeThreshold_mV;
@@ -160,18 +164,20 @@ float BSNeuron::VPSPT_mV(float t_ms) {
     float vPSPt_mV = 0.0;
 
     for (auto receptorData : this->ReceptorDataVec) {
-        auto srcCell = receptorData.SrcNeuronPtr;
-        if (!srcCell->HasSpiked()) continue;
+        if (receptorData.ReceptorPtr->Conductance_nS!=0.0) {
+            auto srcCell = receptorData.SrcNeuronPtr;
+            if (!srcCell->HasSpiked()) continue;
 
-        float dtPSP_ms = srcCell->DtAct_ms(t_ms);
-        float amp = this->IPSP_nA / receptorData.ReceptorPtr->Conductance_nS;
-        //if (ID == 1) std::cout << "IPSP_nA=" << this->IPSP_nA << " Cond nS = " << receptorData.ReceptorPtr->Conductance_nS << " amp = " << amp << '\n';
+            float dtPSP_ms = srcCell->DtAct_ms(t_ms);
+            float amp = this->IPSP_nA / receptorData.ReceptorPtr->Conductance_nS;
+            //if (ID == 1) std::cout << "IPSP_nA=" << this->IPSP_nA << " Cond nS = " << receptorData.ReceptorPtr->Conductance_nS << " amp = " << amp << '\n';
 
-        vPSPt_mV += SignalFunctions::DoubleExponentExpr(
-            amp, 
-            receptorData.ReceptorPtr->TimeConstantRise_ms, //this->TauPSPr_ms, 
-            receptorData.ReceptorPtr->TimeConstantDecay_ms, //this->TauPSPd_ms,
-            dtPSP_ms);
+            vPSPt_mV += SignalFunctions::DoubleExponentExpr(
+                amp, 
+                receptorData.ReceptorPtr->TimeConstantRise_ms, //this->TauPSPr_ms, 
+                receptorData.ReceptorPtr->TimeConstantDecay_ms, //this->TauPSPd_ms,
+                dtPSP_ms);
+        }
     }
     return vPSPt_mV;
 };

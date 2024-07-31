@@ -51,6 +51,10 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
     _RPCManager->AddRoute("Simulation/RunFor",                    std::bind(&SimulationRPCInterface::SimulationRunFor, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/RecordAll",                 std::bind(&SimulationRPCInterface::SimulationRecordAll, this, std::placeholders::_1));
 
+    _RPCManager->AddRoute("Simulation/SetPrePostStrength",        std::bind(&SimulationRPCInterface::SetPrePostStrength, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/SetAllStrength",            std::bind(&SimulationRPCInterface::SetAllStrength, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/BatchSetPrePostStrength",   std::bind(&SimulationRPCInterface::BatchSetPrePostStrength, this, std::placeholders::_1));
+
     _RPCManager->AddRoute("Simulation/GetSpikeTimes",             std::bind(&SimulationRPCInterface::SimulationGetSpikeTimes, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetRecording",              std::bind(&SimulationRPCInterface::SimulationGetRecording, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetStatus",                 std::bind(&SimulationRPCInterface::SimulationGetStatus, this, std::placeholders::_1));
@@ -297,6 +301,69 @@ std::string SimulationRPCInterface::SimulationRecordAll(std::string _JSONRequest
         return Handle.ErrResponse();
     }
     Handle.Sim()->SetRecordAll(MaxRecordTime);
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
+
+std::string SimulationRPCInterface::SetPrePostStrength(std::string _JSONRequest) {
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/SetPrePostStrength", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    int PreSyn, PostSyn;
+    float Conductance_nS;
+    if ((!Handle.GetParInt("PreSyn", PreSyn)) ||
+        (!Handle.GetParInt("PostSyn", PostSyn)) ||
+        (!Handle.GetParFloat("Conductance_nS", Conductance_nS))) {
+        return Handle>ErrResponse();
+    }
+
+    if (!Handle.Sim()->UpdatePrePostStrength(PreSyn, PostSyn, Conductance_nS)) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
+
+std::string SimulationRPCInterface::SetAllStrength(std::string _JSONRequest) {
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/SetAllStrength", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    float Conductance_nS;
+    if (!Handle.GetParFloat("Conductance_nS", Conductance_nS)) {
+        return Handle>ErrResponse();
+    }
+
+    if (!Handle.Sim()->UpdateAllStrength(Conductance_nS)) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
+
+std::string SimulationRPCInterface::BatchSetPrePostStrength(std::string _JSONRequest) {
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/BatchSetPrePostStrength", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    std::vector<int> PreSyn, PostSyn;
+    std::vector<float> Conductance_nS;
+    if ((!Handle.GetParVecInt("PreSyn", PreSyn)) ||
+        (!Handle.GetParVecInt("PostSyn", PostSyn)) ||
+        (!Handle.GetParVecFloat("Conductance_nS", Conductance_nS))) {
+        return Handle>ErrResponse();
+    }
+
+    if (!Handle.Sim()->UpdateBatchPrePostStrength(PreSyn, PostSyn, Conductance_nS)) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
 
     // Return Result ID
     return Handle.ErrResponse(); // ok

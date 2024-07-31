@@ -136,6 +136,10 @@ public:
 
     std::string ManTaskStatus(std::string _JSONRequest);
 
+    std::string SetPrePostStrength(std::string _JSONRequest);
+    std::string SetAllStrength(std::string _JSONRequest);
+    std::string BatchSetPrePostStrength(std::string _JSONRequest);
+
     std::string AttachRecordingElectrodes(std::string _JSONRequest);
     std::string CalciumImagingAttach(std::string _JSONRequest);
     std::string CalciumImagingShowVoxels(std::string _JSONRequest);
