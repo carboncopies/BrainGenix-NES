@@ -74,6 +74,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
 
     _RPCManager->AddRoute("Simulation/GetSomaPositions",          std::bind(&SimulationRPCInterface::GetSomaPositions, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetConnectome",             std::bind(&SimulationRPCInterface::GetConnectome, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetAbstractConnectome",     std::bind(&SimulationRPCInterface::GetAbstractConnectome, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("ManTaskStatus",                        std::bind(&SimulationRPCInterface::ManTaskStatus, this, std::placeholders::_1));
 
