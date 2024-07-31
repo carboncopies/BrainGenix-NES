@@ -95,7 +95,10 @@ public:
     std::shared_ptr<Distributions::Distribution> DtSpontDist{}; //! Distribution for delta t spontaneous (time changed since last spontaneous activity).
 
 protected:
-    BSNeuron(int _ID) { ID = _ID; } // Only used by derived classes that inherit this, e.g. SCNeuron. 
+    BSNeuron(int _ID) {
+        _Class = _BSNeuron;
+        ID = _ID;
+    } // Only used by derived classes that inherit this, e.g. SCNeuron. 
 
 public:
     //! Constructors

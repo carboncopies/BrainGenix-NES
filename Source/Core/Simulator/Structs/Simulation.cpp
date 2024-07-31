@@ -588,6 +588,55 @@ Geometries::Vec3D Simulation::GetGeoCenter() const {
     return geoCenter_um;
 };
 
+/**
+ * Update the abstract strength of a connection between a specific
+ * presynaptic neuron and postsynaptic neuron pair.
+ * This is a short-hand method. All the receptors involved in
+ * transmission between that pair are collected, for all but
+ * one the conductance is set to 0. The remaining receptor
+ * conductance is used to express the new strength.
+ */
+bool Simulation::UpdatePrePostStrength(int PresynapticID, int PostsynapticID, float NewConductance_nS) {
+    if (PostsynapticID >= Neurons.size()) return false;
+
+    CoreStructs::Neuron* PostsynapticPtr = Neurons.at(PostsynapticID);
+    if (PostsynapticPtr._Class<_BSNeuron) return false;
+
+    Connections::Receptor* Rptr = nullptr;
+    for (auto& _ReceptorData : static_cast<BallAndStick::BSNeuron>(PostsynapticPtr)->ReceptorDataVec) {
+        if (_ReceptorData.SrcNeuronID==PresynapticID) {
+            Rptr = _ReceptorData.ReceptorPtr;       // Remember the last one.
+            if (Rptr) Rptr->Conductance_nS = 0.0;   // Clear.
+        }
+    }
+    if (!Rptr) return false;
+
+    Rptr->Conductance_nS = NewConductance_nS;
+    return true;
+}
+
+/**
+ * This is particularly useful for clearing all effective connection
+ * strengths before setting specific ones.
+ */
+void Simulation::UpdateAllStrength(float NewConductance_nS) {
+    for (int PostSynIdx = 0; PostSynIdx < Neurons.size(); PostSynIdx++) {
+        for (int PreSynIdx = 0; PreSynIdx < Neurons.size(); PreSynIdx++) {
+            UpdatePrePostStrength(PreSynIdx, PostSynIdx, NewConductance_nS);
+        }
+    }
+}
+
+bool Simulation::UpdateBatchPrePostStrength(const std::vector<int>& PresynapticIDVec, const std::vector<int>& PostsynapticIDVec, const std::vector<float>& NewConductance_nSVec) {
+    if ((PresynapticIDVec.size()!=PostsynapticIDVec.size()) || (PresynapticIDVec.size()!=NewConductance_nSVec.size())) return false;
+
+    for (size_t Idx = 0; Idx < PresynapticIDVec.size(); Idx++) {
+        if (!UpdatePrePostStrength(PresynapticIDVec.at(Idx), PostsynapticIDVec.at(Idx), NewConductance_nSVec.at(Idx))) return false;
+    }
+
+    return true;
+}
+
 void Simulation::AttachDirectStim(
     std::vector<std::tuple<float, size_t>> listOfStims) {
 

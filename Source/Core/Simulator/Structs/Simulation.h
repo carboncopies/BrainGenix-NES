@@ -175,6 +175,10 @@ public:
 
     Geometries::Geometry* FindShapeByID(int ShapeID);
 
+    bool UpdatePrePostStrength(int PresynapticID, int PostsynapticID, float NewConductance_nS);
+    void UpdateAllStrength(float NewConductance_nS);
+    bool UpdateBatchPrePostStrength(const std::vector<int>& PresynapticIDVec, const std::vector<int>& PostsynapticIDVec, const std::vector<float>& NewConductance_nSVec);
+
     void AttachDirectStim(std::vector<std::tuple<float, size_t>> listOfStims);
     void SetSpontaneousActivity(std::vector<std::tuple<float, float, size_t>> spontSpikeSettings);
 

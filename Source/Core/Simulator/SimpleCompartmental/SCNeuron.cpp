@@ -20,6 +20,8 @@ SCNeuron::SCNeuron(const CoreStructs::SCNeuronStruct & scneuronstruct, Simulatio
     build_data = scneuronstruct;
 
     //ID = scneuronstruct.ID;
+    _Class = _SCNeuron;
+
     Vm_mV = scneuronstruct.MembranePotential_mV;
     VRest_mV = scneuronstruct.RestingPotential_mV;
     VAct_mV = scneuronstruct.SpikeThreshold_mV;

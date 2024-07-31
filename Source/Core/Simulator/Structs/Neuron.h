@@ -54,6 +54,13 @@ enum NeuronType: int {
     NUMNeuronType
 };
 
+enum NeuronClass: int {
+    _Neuron = 0,
+    _BSNeuron = 1,
+    _SCNeuron = 2,
+    NUMNeuronClass
+};
+
 const std::map<std::string, NeuronType> Neurotransmitter2NeuronType = {
     { "AMPA", GenericPrincipalNeuron },
     { "GABA", GenericInterneuron },
@@ -69,6 +76,7 @@ struct Neuron {
     int ID; /**ID of the Neuron */
 
     NeuronType Type_ = UnknownNeuron;
+    NeuronClass Class_ = _Neuron;
 
     Geometries::Vec3D cell_center; // *** FIX THIS!
 
