@@ -600,7 +600,7 @@ bool Simulation::UpdatePrePostStrength(int PresynapticID, int PostsynapticID, fl
     if (PostsynapticID >= Neurons.size()) return false;
 
     CoreStructs::Neuron* PostsynapticPtr = Neurons.at(PostsynapticID);
-    if (PostsynapticPtr._Class<_BSNeuron) return false;
+    if (PostsynapticPtr.Class_<CoreStructs::_BSNeuron) return false;
 
     Connections::Receptor* Rptr = nullptr;
     for (auto& _ReceptorData : static_cast<BallAndStick::BSNeuron>(PostsynapticPtr)->ReceptorDataVec) {
