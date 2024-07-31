@@ -339,9 +339,7 @@ std::string SimulationRPCInterface::SetAllStrength(std::string _JSONRequest) {
         return Handle>ErrResponse();
     }
 
-    if (!Handle.Sim()->UpdateAllStrength(Conductance_nS)) {
-        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
-    }
+    Handle.Sim()->UpdateAllStrength(Conductance_nS);
 
     // Return Result ID
     return Handle.ErrResponse(); // ok
