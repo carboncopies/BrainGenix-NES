@@ -14,7 +14,7 @@ namespace BallAndStick {
 //! Constructors
 BSNeuron::BSNeuron(int ID, Geometries::Geometry* soma, Geometries::Geometry* axon) {
     ID = ID;
-    Class_ = _BSNeuron;
+    Class_ = CoreStructs::_BSNeuron;
     
     Morphology["soma"] = soma;
     Morphology["axon"] = axon;
@@ -24,7 +24,7 @@ BSNeuron::BSNeuron(const CoreStructs::BSNeuronStruct & bsneuronstruct) {
     build_data = bsneuronstruct;
 
     ID = bsneuronstruct.ID;
-    Class_ = _BSNeuron;
+    Class_ = CoreStructs::_BSNeuron;
 
     Vm_mV = bsneuronstruct.MembranePotential_mV;
     VRest_mV = bsneuronstruct.RestingPotential_mV;

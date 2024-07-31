@@ -96,7 +96,7 @@ public:
 
 protected:
     BSNeuron(int _ID) {
-        Class_ = _BSNeuron;
+        Class_ = CoreStructs::_BSNeuron;
         ID = _ID;
     } // Only used by derived classes that inherit this, e.g. SCNeuron. 
 
