@@ -599,11 +599,11 @@ Geometries::Vec3D Simulation::GetGeoCenter() const {
 bool Simulation::UpdatePrePostStrength(int PresynapticID, int PostsynapticID, float NewConductance_nS) {
     if (PostsynapticID >= Neurons.size()) return false;
 
-    CoreStructs::Neuron* PostsynapticPtr = Neurons.at(PostsynapticID);
-    if (PostsynapticPtr._Class<_BSNeuron) return false;
+    CoreStructs::Neuron* PostsynapticPtr = Neurons.at(PostsynapticID).get();
+    if (PostsynapticPtr->Class_<CoreStructs::_BSNeuron) return false;
 
     Connections::Receptor* Rptr = nullptr;
-    for (auto& _ReceptorData : static_cast<BallAndStick::BSNeuron>(PostsynapticPtr)->ReceptorDataVec) {
+    for (auto& _ReceptorData : static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->ReceptorDataVec) {
         if (_ReceptorData.SrcNeuronID==PresynapticID) {
             Rptr = _ReceptorData.ReceptorPtr;       // Remember the last one.
             if (Rptr) Rptr->Conductance_nS = 0.0;   // Clear.

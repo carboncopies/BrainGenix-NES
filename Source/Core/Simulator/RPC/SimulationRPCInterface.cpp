@@ -317,7 +317,7 @@ std::string SimulationRPCInterface::SetPrePostStrength(std::string _JSONRequest)
     if ((!Handle.GetParInt("PreSyn", PreSyn)) ||
         (!Handle.GetParInt("PostSyn", PostSyn)) ||
         (!Handle.GetParFloat("Conductance_nS", Conductance_nS))) {
-        return Handle>ErrResponse();
+        return Handle.ErrResponse();
     }
 
     if (!Handle.Sim()->UpdatePrePostStrength(PreSyn, PostSyn, Conductance_nS)) {
@@ -336,12 +336,10 @@ std::string SimulationRPCInterface::SetAllStrength(std::string _JSONRequest) {
 
     float Conductance_nS;
     if (!Handle.GetParFloat("Conductance_nS", Conductance_nS)) {
-        return Handle>ErrResponse();
+        return Handle.ErrResponse();
     }
 
-    if (!Handle.Sim()->UpdateAllStrength(Conductance_nS)) {
-        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
-    }
+    Handle.Sim()->UpdateAllStrength(Conductance_nS);
 
     // Return Result ID
     return Handle.ErrResponse(); // ok
@@ -358,7 +356,7 @@ std::string SimulationRPCInterface::BatchSetPrePostStrength(std::string _JSONReq
     if ((!Handle.GetParVecInt("PreSyn", PreSyn)) ||
         (!Handle.GetParVecInt("PostSyn", PostSyn)) ||
         (!Handle.GetParVecFloat("Conductance_nS", Conductance_nS))) {
-        return Handle>ErrResponse();
+        return Handle.ErrResponse();
     }
 
     if (!Handle.Sim()->UpdateBatchPrePostStrength(PreSyn, PostSyn, Conductance_nS)) {
