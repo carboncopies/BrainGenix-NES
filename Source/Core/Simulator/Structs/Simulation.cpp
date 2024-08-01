@@ -899,19 +899,38 @@ std::vector<std::vector<size_t>> Simulation::GetAbstractConnectome() const {
 /**
  * Convert abstract connectome information into JSON for delivery
  * via API.
+ * Here, the minor index is the postsynaptic index and the major
+ * index is the presynaptic index: data[PreSynIdx][PostSynIdx].
  */
-nlohmann::json Simulation::GetAbstractConnectomeJSON() const {
+nlohmann::json Simulation::GetAbstractConnectomeJSON(bool Sparse) const {
     auto PrePostReceptorCounts = GetAbstractConnectome();
     nlohmann::json connectome;
     connectome["PrePostNumReceptors"] = nlohmann::json::array();
     nlohmann::json& reccntlist(connectome["PrePostNumReceptors"]);
 
-    for (auto& PostsynRow : PrePostReceptorCounts) {
+    for (size_t PreSynIdx = 0; PreSynIdx<PrePostReceptorCounts.size(); PreSynIdx++) {
         nlohmann::json frompresynreccntvec(nlohmann::json::value_t::array);
-        for (auto& ReceptorCount : PostsynRow) {
-            frompresynreccntvec.push_back(ReceptorCount);
+        for (size_t PostSynIdx = 0; PostSynIdx<PrePostReceptorCounts.size(); PostSynIdx++) {
+
+            size_t ReceptorCount = PrePostReceptorCounts[PostSynIdx][PreSynIdx];
+
+            if (Sparse) {
+
+                if (ReceptorCount>0) {
+                    nlohmann::json connectiondata(nlohmann::json::value_t::array);
+                    connectiondata.push_back(PreSynIdx);
+                    connectiondata.push_back(PostSynIdx);
+                    connectiondata.push_back(ReceptorCount);
+                    reccntlist.push_back(connectiondata);
+                }
+
+            } else {
+
+                frompresynreccntvec.push_back(ReceptorCount);
+            }
+
         }
-        reccntlist.push_back(frompresynreccntvec);
+        if (!Sparse) reccntlist.push_back(frompresynreccntvec);
     }
 
     return connectome;

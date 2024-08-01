@@ -203,7 +203,7 @@ public:
     nlohmann::json GetSomaPositionsJSON() const;
     nlohmann::json GetConnectomeJSON() const;
     size_t GetAbstractConnection(int PreSynID, int PostSynID) const;
-    std::vector<std::vector<size_t>> GetAbstractConnectome() const;
+    std::vector<std::vector<size_t>> GetAbstractConnectome(bool Sparse) const;
     nlohmann::json GetAbstractConnectomeJSON() const;
 
     void RunFor(float tRun_ms);
