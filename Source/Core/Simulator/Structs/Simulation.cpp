@@ -304,7 +304,8 @@ public:
         std::vector<uint32_t> circuitdata_sizes;
         std::vector<std::unique_ptr<uint8_t[]>> circuitdata_list;
         for (auto& ref : (*RefToNeuralCircuits)) { // from a list of unique pointers to NeuralCircuit objects
-            std::unique_ptr<uint8_t[]> circuitdata = static_cast<CoreStructs::NeuralCircuit*>(ref.get())->build_data.GetFlat();
+            //std::unique_ptr<uint8_t[]> circuitdata = static_cast<CoreStructs::NeuralCircuit*>(ref.get())->build_data.GetFlat();
+            std::unique_ptr<uint8_t[]> circuitdata = static_cast<CoreStructs::NeuralCircuit*>(ref.get())->GetFlat();
             CoreStructs::NeuralCircuitStructFlatHeader* header_ptr = (CoreStructs::NeuralCircuitStructFlatHeader*) circuitdata.get();
             circuitdata_sizes.push_back(header_ptr->FlatBufSize);
             circuitdata_list.emplace_back(circuitdata.release());
