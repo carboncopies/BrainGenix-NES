@@ -516,11 +516,11 @@ bool Simulation::LoadModel(const std::string& Name) {
     NeuralCircuits.clear();
     Regions.clear();
 
-    size_t offset = 0;
+    offset = 0;
     for (size_t i = 0; i < _Loader._SaverInfo.RegionsSize; i++) {
         BrainRegions::BrainRegion _R(_Loader.RegionData.get()[i]);
         ID = AddRegion(_R);
-        NeuralCircuits.at(_R.CircuitID)->FromFlat((NeuralCircuitStructFlatHeader*) (_Loader.all_circuitdata.get()+offset));
+        NeuralCircuits.at(_R.CircuitID)->FromFlat((CoreStructs::NeuralCircuitStructFlatHeader*) (_Loader.all_circuitdata.get()+offset));
         offset += _Loader.circuitdata_sizes.get()[i];
     }
 
@@ -580,11 +580,11 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
     for (size_t i = 0; i < siptr->ReceptorsSize; i++) std::cout << rbptr[i].str();
 
     ptr += siptr->ReceptorsSize * sizeof(Connections::ReceptorBase);
-    BrainRegion::RegionBase* rgptr = (BrainRegion::RegionBase*) ptr;
+    BrainRegions::RegionBase* rgptr = (BrainRegions::RegionBase*) ptr;
     std::cout << ">-- Regions Base Data:\n";
     for (size_t i = 0; i < siptr->RegionssSize; i++) std::cout << rgptr[i].str();
 
-    ptr += siptr->RegionsSize * sizeof(BrainRegion::RegionBase);
+    ptr += siptr->RegionsSize * sizeof(BrainRegions::RegionBase);
     uint32_t* fdsptr = (uint32_t*) ptr;
     std::cout << ">-- SC Neurons Flat Data Sizes:\n";
     for (size_t i = 0; i < siptr->NeuronsSize; i++) std::cout << fdsptr[i] << ' ';
