@@ -1055,8 +1055,9 @@ nlohmann::json Simulation::GetAbstractConnectomeJSON(bool Sparse) const {
 
     for (auto& RegionPtr : Regions) {
         regiondict[RegionPtr->Name()] = nlohmann::json::array();
-        auto CircuitPtr = NeuralCircuits.at(RegionPtr->CircuitID);
-        for (auto& NeuronID : CircuitPtr->NeuronIDs) {
+        int CircuitID = RegionPtr->CircuitID;
+        //auto CircuitPtr = NeuralCircuits.at(CircuitID);
+        for (auto& NeuronID : NeuralCircuits.at(CircuitID)->NeuronIDs) {
             regiondict[RegionPtr->Name()].push_back(NeuronID);
         }
     }
