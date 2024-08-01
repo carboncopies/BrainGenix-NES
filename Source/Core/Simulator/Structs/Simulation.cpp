@@ -705,13 +705,14 @@ bool Simulation::IsRecording() const {
     return this->T_ms < (this->StartRecordTime_ms + this->MaxRecordTime_ms);
 };
 
+// *** THIS IS NOT USED BY THE API CALL
 std::unordered_map<std::string, CoreStructs::CircuitRecording> Simulation::GetRecording() {
     std::unordered_map<std::string, CoreStructs::CircuitRecording> recording;
-    for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-        auto circuitPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
-        assert(circuitPtr);
-        recording[circuitID] = circuitPtr->GetRecording();
-    }
+    // for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+    //     auto circuitPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
+    //     assert(circuitPtr);
+    //     recording[circuitID] = circuitPtr->GetRecording();
+    // }
 
     return recording;
 };
@@ -732,16 +733,17 @@ nlohmann::json Simulation::GetRecordingJSON() const {
 
     recording["t_ms"] = nlohmann::json(this->TRecorded_ms);
 
-    if (!this->NeuralCircuits.empty()) {
-        // If there are circuits then obtain the recording from each circuit.
-        recording["circuits"] = nlohmann::json::object(); // = {}
-        nlohmann::json & circuit_recordings = recording.at("circuits");
-        for (const auto &[circuitID, circuit_ptr] : this->NeuralCircuits) {
-            assert(circuit_ptr);
-            circuit_recordings[circuitID] = circuit_ptr->GetRecordingJSON();
-        }
+    // *** The by-neural-circuit version is presently not being used.
+    // if (!this->NeuralCircuits.empty()) {
+    //     // If there are circuits then obtain the recording from each circuit.
+    //     recording["circuits"] = nlohmann::json::object(); // = {}
+    //     nlohmann::json & circuit_recordings = recording.at("circuits");
+    //     for (const auto &[circuitID, circuit_ptr] : this->NeuralCircuits) {
+    //         assert(circuit_ptr);
+    //         circuit_recordings[circuitID] = circuit_ptr->GetRecordingJSON();
+    //     }
 
-    } else {
+    // } else {
         // Otherwise, obtain recordings directly from the list of neurons.
         recording["neurons"] = nlohmann::json::object(); // = {}
         nlohmann::json & neuron_recordings = recording.at("neurons");
@@ -750,7 +752,7 @@ nlohmann::json Simulation::GetRecordingJSON() const {
             neuron_recordings[std::to_string(neuron_ptr->ID)] = neuron_ptr->GetRecordingJSON();
         }
 
-    }
+    // }
     
     return recording;
 }
