@@ -108,7 +108,8 @@ public:
     float StartRecordTime_ms = 0.0;
     float MaxRecordTime_ms = 0.0;
 
-    std::unordered_map<std::string, std::shared_ptr<BrainRegions::BrainRegion>> Regions;
+    //std::unordered_map<std::string, std::shared_ptr<BrainRegions::BrainRegion>> Regions;
+    std::vector<std::unique_ptr<BrainRegions::BrainRegion>> Regions;
     std::unordered_map<std::string, std::shared_ptr<CoreStructs::NeuralCircuit>> NeuralCircuits;
 
     Geometries::GeometryCollection Collection; /**Instance of GeometryCollection struct containing all geometries in this simulation*/
@@ -148,7 +149,8 @@ public:
     Geometries::Vec3D GetGeoCenter() const;
 
     void AddCircuit(std::shared_ptr<CoreStructs::NeuralCircuit> circuit);
-    void AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region);
+    //void AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region);
+    int AddRegion(BrainRegions::BrainRegion& _R);
 
     //! Direct builder functions
     //!   Call these from various '..Create' functions to ensure identical

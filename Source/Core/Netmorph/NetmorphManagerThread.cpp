@@ -353,6 +353,39 @@ public:
     }
 };
 
+/**
+ * For each region:
+ * - Create a corresponding region and neural circuit in the NES simulation.
+ * - Add to each region the neurons that were created that correspond with the neurons
+ *   in those regions in Netmorph.
+ */
+class RegionBuild: public region_list_op {
+public:
+    NetmorphParameters& _Params;
+    int CurrentRegionID = -1;
+    size_t num_errors = 0;
+    RegionBuild(NetmorphParameters& Params): _Params(Params) { }
+    virtual void neuron_op(neuron* n) {
+        // Find the corresponding NES neuron.
+        // Add that neuron to the current region.
+    }
+    virtual void op(region* r) {
+        BrainRegions::BrainRegion R;
+        R.SetName(r->Name().chars());
+        if (_Params.Sim->AddRegion(R)<0) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("RegionBuild failed: Missing data for region build.");
+            return;
+        }
+        CurrentRegionID = R.ID;
+    }
+    void logerrors() const {
+        if (num_errors>0) {
+            _Params.Sim->Logger_->Log("RegionBuild: Number of errors: "+std::to_string(num_errors), 7);
+        }
+    }
+};
+
 // If NetmorphParams.Status==true then the NetmorphParams.net unique_ptr now owns the
 // generated Netmorph network object. We can now use this to build our model in the
 // simulation referenced by Handle.Sim().
@@ -389,6 +422,10 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
     SynapseBuild synapse_build(_Params, psp_timing);
     Net.synapse_op(synapse_build);
     synapse_build.logerrors();
+
+    RegionBuild region_build;
+    Net.region_op(region_build);
+    region_build.logerrors();
 
     NETMORPH_PARAMS_SUCCESS("Build NES model based on Netmorph output.");
     return true;

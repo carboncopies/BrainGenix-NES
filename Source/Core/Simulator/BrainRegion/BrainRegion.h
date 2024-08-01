@@ -23,18 +23,40 @@ namespace NES {
 namespace Simulator {
 namespace BrainRegions {
 
+#define RegionLabelLEN 64
+
+struct RegionBase {
+    int ID = -1;                       /**ID of the Region*/
+
+    char RegionLabel[RegionLabelLEN] = { 0 };
+
+    std::string str() const {
+        std::stringstream ss;
+        ss << "ID: " << ID;
+        ss << "\nRegionLabel: " << RegionLabel;
+        return ss.str();
+    }
+
+    void safeset_RegionLabel(const char* s) {
+        strncpy(RegionLabel, s, RegionLabelLEN-1);
+        RegionLabel[RegionLabelLEN-1] = '\0';
+    }
+};
+
 /**
  * @brief This class defines the characteristics of a brain region, such as
  * geometric shape and physiological content.
  *
  */
-class BrainRegion {
+class BrainRegion: public RegionBase {
   public:
-    size_t ID;
+    void SetName(const std::string& _Name) { safeset_RegionLabel(_Name); }
+    std::string Name() const { return RegionLabel; };
+
     Geometries::Geometry * Shape{nullptr}; // Regular pointers, because the objects are maintained in Simulation.Collection.
     std::shared_ptr<CoreStructs::NeuralCircuit> Content{};
 
-    virtual void Show(float lineWidth) = 0;
+    virtual void Show(float lineWidth) {};
 };
 
 }; // namespace BrainRegions

@@ -44,13 +44,18 @@ void Simulation::AddCircuit(
     this->NeuralCircuits[ID] = circuit;
 };
 
-void Simulation::AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region) {
-    auto regionPtr =
-        std::dynamic_pointer_cast<BallAndStick::BSAlignedBrainRegion>(region);
-    assert(regionPtr != nullptr);
-    auto ID = std::to_string(regionPtr->ID);
-    this->Regions[ID] = regionPtr;
-};
+// void Simulation::AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region) {
+//     auto regionPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedBrainRegion>(region);
+//     assert(regionPtr != nullptr);
+//     auto ID = std::to_string(regionPtr->ID);
+//     this->Regions[ID] = regionPtr;
+// };
+
+int Simulation::AddRegion(BrainRegions::BrainRegion& _R) {
+    _R.ID = Regions.size();
+    Regions.push_back(std::make_unique<BrainRegions::BrainRegion>(_R));
+    return _R.ID;
+}
 
 int Simulation::AddSphere(Geometries::Sphere& _S) {
     _S.ID = Collection.Geometries.size();
