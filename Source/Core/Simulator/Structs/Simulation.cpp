@@ -654,25 +654,27 @@ bool Simulation::UpdateBatchPrePostStrength(const std::vector<int>& PresynapticI
     return true;
 }
 
+// *** THIS IS NOT USED BY THE API CALL
 void Simulation::AttachDirectStim(
     std::vector<std::tuple<float, size_t>> listOfStims) {
 
-    for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-        auto circuitPtr =
-            std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
-        assert(circuitPtr);
-        circuitPtr->AttachDirectStim(listOfStims);
-    }
+    // for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+    //     auto circuitPtr =
+    //         std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
+    //     assert(circuitPtr);
+    //     circuitPtr->AttachDirectStim(listOfStims);
+    // }
 }
 
+// *** THIS IS NOT USED BY THE API CALL
 void Simulation::SetSpontaneousActivity(
     std::vector<std::tuple<float, float, size_t>> spontSpikeSettings) {
-    for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-        auto circuitPtr = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
-        assert(circuitPtr);
-        circuitPtr->SetSpontaneousActivity(spontSpikeSettings);
-    }
+    // for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+    //     auto circuitPtr = std::dynamic_pointer_cast<
+    //         BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
+    //     assert(circuitPtr);
+    //     circuitPtr->SetSpontaneousActivity(spontSpikeSettings);
+    // }
 };
 
 unsigned long Simulation::TotalSpikes() const {
