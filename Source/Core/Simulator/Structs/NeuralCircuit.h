@@ -93,11 +93,16 @@ struct NeuralCircuit: public CircuitBase {
     virtual size_t GetNumberOfNeurons() { return Cells.size(); }
 
     //! Returns all neurons in the neural circuit.
-    virtual std::vector<std::shared_ptr<Neuron>> GetNeurons() {};
+    virtual std::vector<std::shared_ptr<Neuron>> GetNeurons() {
+      std::vector<std::shared_ptr<Neuron>> empty;
+      return empty;
+    };
 
     //! Returns all neurons in the neural circuit with specified IDs.
-    virtual std::vector<std::shared_ptr<Neuron>>
-    GetNeuronsByIDs(std::vector<size_t> IDList) {};
+    virtual std::vector<std::shared_ptr<Neuron>> GetNeuronsByIDs(std::vector<size_t> IDList) {
+      std::vector<std::shared_ptr<Neuron>> empty;
+      return empty;
+    };
 
     virtual nlohmann::json GetRecordingJSON() const;
 
