@@ -50,7 +50,7 @@ struct RegionBase {
  */
 class BrainRegion: public RegionBase {
   public:
-    void SetName(const std::string& _Name) { safeset_RegionLabel(_Name); }
+    void SetName(const std::string& _Name) { safeset_RegionLabel(_Name.c_str()); }
     std::string Name() const { return RegionLabel; };
 
     Geometries::Geometry * Shape{nullptr}; // Regular pointers, because the objects are maintained in Simulation.Collection.
