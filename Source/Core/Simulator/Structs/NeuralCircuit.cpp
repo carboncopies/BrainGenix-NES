@@ -54,7 +54,7 @@ std::unique_ptr<uint8_t[]> NeuralCircuit::GetFlat() const {
  * storage.
  */
 bool NeuralCircuit::FromFlat(NeuralCircuitStructFlatHeader* header) {
-    NeuralCircuit::operator=(header->Base);
+    CircuitBase::operator=(header->Base);
 
     NeuronIDs.resize(header->NeuronIDsSize);
     memcpy(NeuronIDs.data(), ADD_BYTES_TO_POINTER(header, header->NeuronIDsOffset), header->FlatBufSize - header->NeuronIDsOffset);
