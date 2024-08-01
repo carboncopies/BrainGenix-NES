@@ -14,6 +14,7 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
+#include <set>
 
 #include <Simulator/Geometries/Geometry.h>
 #include <Simulator/Geometries/GeometryCollection.h>
@@ -80,7 +81,11 @@ struct NeuralCircuit: public CircuitBase {
 
     Geometries::GeometryCollection * Collection_ptr = nullptr; // Obtained from Simulation.
 
-    std::vector<int> NeuronIDs;
+    std::set<int> NeuronIDs;
+
+    void AddNeuronByID(int _NeuronID) {
+      NeuronIDs.emplace(_NeuronID);
+    }
 
     //! Neurons in the neural circuit.
     std::unordered_map<std::string, std::shared_ptr<Neuron>> Cells;
