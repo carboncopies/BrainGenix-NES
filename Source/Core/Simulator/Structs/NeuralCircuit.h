@@ -14,7 +14,6 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
-#include <set>
 
 #include <Simulator/Geometries/Geometry.h>
 #include <Simulator/Geometries/GeometryCollection.h>
@@ -112,10 +111,10 @@ struct NeuralCircuitStructFlatHeader {
  */
 struct NeuralCircuit: public CircuitBase {
 
-    std::set<int> NeuronIDs;
+    std::vector<int> NeuronIDs;
 
     void AddNeuronByID(int _NeuronID) {
-      NeuronIDs.emplace(_NeuronID);
+      NeuronIDs.emplace_back(_NeuronID);
     }
 
     std::unique_ptr<uint8_t[]> GetFlat() const;
