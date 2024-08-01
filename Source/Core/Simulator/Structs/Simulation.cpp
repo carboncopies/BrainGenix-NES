@@ -62,7 +62,7 @@ int Simulation::AddCircuit(CoreStructs::NeuralCircuit& _C) {
  */
 int Simulation::AddRegion(BrainRegions::BrainRegion& _R) {
     _R.ID = Regions.size();
-    CoreStructs::NeuralCircuit _C;
+    CoreStructs::NeuralCircuit _C(&Collection);
     _C.RegionID = _R.ID;
     _R.CircuitID = AddCircuit(_C);
     Regions.push_back(std::make_unique<BrainRegions::BrainRegion>(_R));
