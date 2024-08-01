@@ -150,6 +150,8 @@ struct SaverInfo {
     size_t BSSCCompartmentsSize = 0;
     size_t ReceptorsSize = 0;
     size_t NeuronsSize = 0;
+    size_t RegionsSize = 0;
+    size_t CircuitsSize = 0;
 
     std::string str() const {
         std::string s;
@@ -160,6 +162,8 @@ struct SaverInfo {
         s += "\nBSSCCompartmentsSize: " + std::to_string(BSSCCompartmentsSize);
         s += "\nReceptorsSize: " + std::to_string(ReceptorsSize);
         s += "\nNeuronsSize: " + std::to_string(NeuronsSize);
+        s += "\nRegionsSize: " + std::to_string(RegionsSize);
+        s += "\nCircuitsSize: " + std::to_string(CircuitsSize);
         s += '\n';
         return s;
     }
@@ -191,6 +195,8 @@ protected:
     std::vector<Compartments::BS>* RefToCompartments;
     std::vector<std::shared_ptr<CoreStructs::Neuron>>* RefToSCNeurons;
     std::vector<std::unique_ptr<Connections::Receptor>>* RefToReceptors;
+    std::vector<std::unique_ptr<BrainRegions::BrainRegion>>* RefToRegions;
+    std::vector<std::unique_ptr<CoreStructs::NeuralCircuit>>* RefToNeuralCircuits;
 
 public:
     Saver(const std::string& _Name): Name_(_Name) {}
@@ -217,6 +223,12 @@ public:
     void AddReceptors(std::vector<std::unique_ptr<Connections::Receptor>>& _RefToReceptors) {
         RefToReceptors = &_RefToReceptors;
     }
+    void AddRegions(std::vector<std::unique_ptr<BrainRegions::BrainRegion>>& _RefToRegions) {
+        RefToRegions = &_RefToRegions;
+    }
+    void AddCircuits(std::vector<std::unique_ptr<CoreStructs::NeuralCircuit>>& _RefToNeuralCircuits) {
+        RefToNeuralCircuits = &_RefToNeuralCircuits;
+    }
 
     bool Save() {
         /** Save file structure is:
@@ -227,8 +239,11 @@ public:
          *  5. Geometries::BoxBase[] (SaverInfo.BoxReferencesSize elements)
          *  6. Compartments::BSBaseData[] (SaverInfo.BSSCCompartmentsSize elements)
          *  7. Connections::ReceptorBase[] (SaverInfo.ReceptorsSize elements)
-         *  8. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
-         *  9. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
+         *  8. BrainRegions::RegionBase[] (SaverInfo.RegionsSize elements)
+         *  9. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
+         *  10. circuitdata_sizes[] (SaverInfo.CircuitsSize.elements)
+         *  11. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
+         *  12. concatenated NeuralCircuit::GetFlat()->data() (SaverInfo.CircuitsSize variable size chunks)
          */
         auto SaveFile = std::fstream(Name_, std::ios::out | std::ios::binary);
         _SaverInfo.SGMapSize = SGMap.size();
@@ -238,6 +253,8 @@ public:
         _SaverInfo.BSSCCompartmentsSize = RefToCompartments->size();
         _SaverInfo.ReceptorsSize = RefToReceptors->size();
         _SaverInfo.NeuronsSize = RefToSCNeurons->size();
+        _SaverInfo.RegionsSize = RefToRegions->size();
+        _SaverInfo.CircuitsSize = RefToNeuralCircuits->size();
 
         SaveFile.write((char*)&_SaverInfo, sizeof(_SaverInfo));
         SaveFile.write((char*)SGMap.data(), sizeof(SaverGeometry)*SGMap.size());
@@ -266,19 +283,43 @@ public:
             SaveFile.write((char*)&basedataref, sizeof(Connections::ReceptorBase));
         }
 
+        // Save fixed-size base data of regions.
+        for (auto& ref : (*RefToRegions)) {
+            BrainRegions::RegionBase& basedataref = *ref;
+            SaveFile.write((char*)&basedataref, sizeof(BrainRegions::RegionBase));
+        }
+
         // Save fixed-size base data of neurons and flattened variable
         // size crucial data.
+        std::vector<uint32_t> flatdata_sizes;
         std::vector<std::unique_ptr<uint8_t[]>> flatdata_list;
-        std::vector<uint32_t> flatdata_sizes; 
         for (auto& ref : (*RefToSCNeurons)) { // from a list of shared pointers to SCNeuron objects
             std::unique_ptr<uint8_t[]> flatdata = static_cast<SCNeuron*>(ref.get())->build_data.GetFlat();
             CoreStructs::SCNeuronStructFlatHeader* header_ptr = (CoreStructs::SCNeuronStructFlatHeader*) flatdata.get();
             flatdata_sizes.push_back(header_ptr->FlatBufSize);
             flatdata_list.emplace_back(flatdata.release());
         }
+
+        // The same for neural circuits.
+        std::vector<uint32_t> circuitdata_sizes;
+        std::vector<std::unique_ptr<uint8_t[]>> circuitdata_list;
+        for (auto& ref : (*RefToNeuralCircuits)) { // from a list of unique pointers to NeuralCircuit objects
+            std::unique_ptr<uint8_t[]> circuitdata = static_cast<CoreStructs::NeuralCircuit*>(ref.get())->build_data.GetFlat();
+            CoreStructs::NeuralCircuitStructFlatHeader* header_ptr = (CoreStructs::NeuralCircuitStructFlatHeader*) circuitdata.get();
+            circuitdata_sizes.push_back(header_ptr->FlatBufSize);
+            circuitdata_list.emplace_back(circuitdata.release());
+        }
+
         SaveFile.write((char*)flatdata_sizes.data(), sizeof(uint32_t)*flatdata_sizes.size());
+
+        SaveFile.write((char*)circuitdata_sizes.data(), sizeof(uint32_t)*circuitdata_sizes.size());
+
         for (size_t i = 0; i < flatdata_list.size(); i++) {
             SaveFile.write((char*)flatdata_list.at(i).get(), flatdata_sizes.at(i));
+        }
+
+        for (size_t i = 0; i < circuitdata_list.size(); i++) {
+            SaveFile.write((char*)circuitdata_list.at(i).get(), circuitdata_sizes.at(i));
         }
 
         SaveFile.close();
@@ -296,8 +337,11 @@ public:
     std::unique_ptr<Geometries::BoxBase[]> BoxData;
     std::unique_ptr<Compartments::BSBaseData[]> CompartmentData;
     std::unique_ptr<Connections::ReceptorBase[]> ReceptorData;
+    std::unique_ptr<BrainRegions::RegionBase[]> RegionData;
     std::unique_ptr<uint32_t[]> flatdata_sizes;
     std::unique_ptr<uint8_t[]> all_flatdata;
+    std::unique_ptr<uint32_t[]> circuitdata_sizes;
+    std::unique_ptr<uint8_t[]> all_circuitdata;
 
 public:
     Loader(const std::string& _Name): Name_(_Name) {}
@@ -328,14 +372,29 @@ public:
         ReceptorData = std::make_unique<Connections::ReceptorBase[]>(_SaverInfo.ReceptorsSize);
         LoadFile.read((char*)ReceptorData.get(), sizeof(Connections::ReceptorBase)*_SaverInfo.ReceptorsSize);
 
-        // 8. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
+        // 8. BrainRegions::RegionBase[] (SaverInfo.RegionsSize elements)
+        RegionData = std::make_unique<BrainRegions::RegionBase[]>(_SaverInfo.RegionsSize);
+        LoadFile.read((char*)RegionData.get(), sizeof(BrainRegions::RegionBase)*_SaverInfo.RegionsSize);
+
+        // 9. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
         flatdata_sizes = std::make_unique<uint32_t[]>(_SaverInfo.NeuronsSize);
         LoadFile.read((char*)flatdata_sizes.get(), sizeof(uint32_t)*_SaverInfo.NeuronsSize);
-        // 9. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
+
+        // 10. circuitdata_sizes[] (SaverInfo.CircuitsSize elements)
+        circuitdata_sizes = std::make_unique<uint32_t[]>(_SaverInfo.CircuitsSize);
+        LoadFile.read((char*)circuitdata_sizes.get(), sizeof(uint32_t)*_SaverInfo.CircuitsSize);
+
+        // 11. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
         size_t totsize = 0;
         for (size_t i = 0; i < _SaverInfo.NeuronsSize; i++) totsize += flatdata_sizes.get()[i];
         all_flatdata = std::make_unique<uint8_t[]>(totsize);
         LoadFile.read((char*)all_flatdata.get(), totsize);
+
+        // 12. concatenated NeuralCircuit::GetFlat()->data() (SaverInfo.CircuitsSize variable size chunks)
+        totsize = 0;
+        for (size_t i = 0; i < _SaverInfo.CircuitsSize; i++) totsize += circuitdata_sizes.get()[i];
+        all_circuitdata = std::make_unique<uint8_t[]>(totsize);
+        LoadFile.read((char*)all_circuitdata.get(), totsize);
 
         return LoadFile.good();
     }
@@ -376,6 +435,10 @@ bool Simulation::SaveModel(const std::string& Name) {
     _Saver.AddNeurons(Neurons);
     // Save synapses.
     _Saver.AddReceptors(Receptors);
+    // Save regions.
+    _Saver.AddRegions(Regions);
+    // Save circuits.
+    _Saver.AddCircuits(NeuralCircuits);
 
     return _Saver.Save();
 }
@@ -448,6 +511,18 @@ bool Simulation::LoadModel(const std::string& Name) {
         ID = AddReceptor(_R);
     }
 
+    // Reset and instantiate regions and neural circuits.
+    NeuralCircuits.clear();
+    Regions.clear();
+
+    size_t offset = 0;
+    for (size_t i = 0; i < _Loader._SaverInfo.RegionsSize; i++) {
+        BrainRegions::BrainRegion _R(_Loader.RegionData.get()[i]);
+        ID = AddRegion(_R);
+        NeuralCircuits.at(_R.CircuitID)->FromFlat((NeuralCircuitStructFlatHeader*) (_Loader.all_circuitdata.get()+offset));
+        offset += _Loader.circuitdata_sizes.get()[i];
+    }
+
     Show();
     //InspectSavedModel(Name);
     return true;
@@ -504,12 +579,23 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
     for (size_t i = 0; i < siptr->ReceptorsSize; i++) std::cout << rbptr[i].str();
 
     ptr += siptr->ReceptorsSize * sizeof(Connections::ReceptorBase);
+    BrainRegion::RegionBase* rgptr = (BrainRegion::RegionBase*) ptr;
+    std::cout << ">-- Regions Base Data:\n";
+    for (size_t i = 0; i < siptr->RegionssSize; i++) std::cout << rgptr[i].str();
+
+    ptr += siptr->RegionsSize * sizeof(BrainRegion::RegionBase);
     uint32_t* fdsptr = (uint32_t*) ptr;
     std::cout << ">-- SC Neurons Flat Data Sizes:\n";
     for (size_t i = 0; i < siptr->NeuronsSize; i++) std::cout << fdsptr[i] << ' ';
     std::cout << '\n';
 
     ptr += siptr->NeuronsSize * sizeof(uint32_t);
+    uint32_t* cdsptr = (uint32_t*) ptr;
+    std::cout << ">-- Neural Circuits Flat Data Sizes:\n";
+    for (size_t i = 0; i < siptr->CircuitsSize; i++) std::cout << cdsptr[i] << ' ';
+    std::cout << '\n';
+
+    ptr += siptr->CircuitsSize * sizeof(uint32_t);
     for (size_t i = 0; i < siptr->NeuronsSize; i++) {
         CoreStructs::SCNeuronStructFlatHeader* scfhptr = (CoreStructs::SCNeuronStructFlatHeader*) ptr;
 
@@ -521,6 +607,16 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
         std::cout << scfhptr->acid_str();
 
         ptr += scfhptr->FlatBufSize;
+    }
+
+    for (size_t i = 0; i < siptr->CircuitsSize; i++) {
+        CoreStructs::NeuralCircuitStructFlatHeader* ncfhptr = (CoreStructs::NeuralCircuitStructFlatHeader*) ptr;
+
+        std::cout << ">-- Neural Circuit Flat Data:\n";
+        std::cout << ncfhptr->str();
+        std::cout << ncfhptr->nid_str();
+
+        ptr += ncfhptr->FlatBufSize;
     }
 
 }

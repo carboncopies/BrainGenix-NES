@@ -51,6 +51,9 @@ struct RegionBase {
  */
 class BrainRegion: public RegionBase {
   public:
+    BrainRegion() {}
+    BrainRegion(const RegionBase& _Base): RegionBase(_Base) {}
+    
     void SetName(const std::string& _Name) { safeset_RegionLabel(_Name.c_str()); }
     std::string Name() const { return RegionLabel; };
 

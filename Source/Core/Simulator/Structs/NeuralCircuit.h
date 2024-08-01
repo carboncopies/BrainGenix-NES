@@ -60,6 +60,9 @@ Note that the above is also how the Python prototypes now work.
   the neuron and not the compartment in the Python prototypes.
 */
 
+#define ADD_BYTES_TO_POINTER(theptr, numbytes) \
+    (((uint8_t*)theptr)+numbytes)
+
 struct CircuitBase {
     int ID; /**ID of the neural circuit */
     int RegionID;
@@ -73,19 +76,52 @@ struct CircuitBase {
 
 };
 
+struct NeuralCircuitStructFlatHeader {
+  uint32_t FlatBufSize = 0;
+  uint32_t NeuronIDsSize = 0;
+  uint32_t NeuronIDsOffset = 0;
+  CircuitBase Base;
+
+  std::string str() const {
+        std::stringstream ss;
+        ss << "FlatBufSize: " << FlatBufSize;
+        ss << "\nNeuronIDsSize: " << NeuronIDsSize;
+        ss << "\nNeuronIDsOffset: " << NeuronIDsOffset << '\n';
+        ss << Base.str();
+        return ss.str();
+    }
+
+  std::string nid_str() const {
+        std::stringstream ss;
+        int* nidptr = (int*) ADD_BYTES_TO_POINTER(this, NeuronIDsOffset);
+        //ss << "flat header address = " << uint64_t(this) << '\n';
+        //ss << "scidptr = " << uint64_t(scidptr) << '\n';
+        ss << "NeuronIDs: ";
+        for (size_t idx = 0; idx < NeuronIDsSize; idx++) {
+            ss << nidptr[idx] << ' ';
+        }
+        ss << '\n';
+        return ss.str();
+    }
+
+};
+
 /**
  * @brief This struct provides the base struct for all neural circuits.
  *
  */
 struct NeuralCircuit: public CircuitBase {
 
-    Geometries::GeometryCollection * Collection_ptr = nullptr; // Obtained from Simulation.
-
     std::set<int> NeuronIDs;
 
     void AddNeuronByID(int _NeuronID) {
       NeuronIDs.emplace(_NeuronID);
     }
+
+    std::unique_ptr<uint8_t[]> GetFlat() const;
+    bool FromFlat(NeuralCircuitStructFlatHeader* header);
+
+    Geometries::GeometryCollection * Collection_ptr = nullptr; // Obtained from Simulation.
 
     //! Neurons in the neural circuit.
     std::unordered_map<std::string, std::shared_ptr<Neuron>> Cells;
