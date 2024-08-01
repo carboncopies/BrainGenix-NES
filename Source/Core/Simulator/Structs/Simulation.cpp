@@ -582,7 +582,7 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
     ptr += siptr->ReceptorsSize * sizeof(Connections::ReceptorBase);
     BrainRegions::RegionBase* rgptr = (BrainRegions::RegionBase*) ptr;
     std::cout << ">-- Regions Base Data:\n";
-    for (size_t i = 0; i < siptr->RegionssSize; i++) std::cout << rgptr[i].str();
+    for (size_t i = 0; i < siptr->RegionsSize; i++) std::cout << rgptr[i].str();
 
     ptr += siptr->RegionsSize * sizeof(BrainRegions::RegionBase);
     uint32_t* fdsptr = (uint32_t*) ptr;
