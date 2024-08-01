@@ -110,7 +110,8 @@ public:
 
     //std::unordered_map<std::string, std::shared_ptr<BrainRegions::BrainRegion>> Regions;
     std::vector<std::unique_ptr<BrainRegions::BrainRegion>> Regions;
-    std::unordered_map<std::string, std::shared_ptr<CoreStructs::NeuralCircuit>> NeuralCircuits;
+    //std::unordered_map<std::string, std::shared_ptr<CoreStructs::NeuralCircuit>> NeuralCircuits;
+    std::vector<std::unique_ptr<CoreStructs::NeuralCircuit>> NeuralCircuits;
 
     Geometries::GeometryCollection Collection; /**Instance of GeometryCollection struct containing all geometries in this simulation*/
 
@@ -148,7 +149,8 @@ public:
 
     Geometries::Vec3D GetGeoCenter() const;
 
-    void AddCircuit(std::shared_ptr<CoreStructs::NeuralCircuit> circuit);
+    //void AddCircuit(std::shared_ptr<CoreStructs::NeuralCircuit> circuit);
+    int AddCircuit(CoreStructs::NeuralCircuit& _C);
     //void AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region);
     int AddRegion(BrainRegions::BrainRegion& _R);
 

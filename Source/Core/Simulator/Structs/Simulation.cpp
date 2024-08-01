@@ -37,12 +37,12 @@ void Simulation::SetRandomSeed(int Seed) {
     MasterRandom_ = std::make_unique<Distributions::Generic>(Seed);
 }
 
-void Simulation::AddCircuit(
-    std::shared_ptr<CoreStructs::NeuralCircuit> circuit) {
-    assert(circuit != nullptr);
-    auto ID = std::to_string(circuit->ID);
-    this->NeuralCircuits[ID] = circuit;
-};
+// void Simulation::AddCircuit(
+//     std::shared_ptr<CoreStructs::NeuralCircuit> circuit) {
+//     assert(circuit != nullptr);
+//     auto ID = std::to_string(circuit->ID);
+//     this->NeuralCircuits[ID] = circuit;
+// };
 
 // void Simulation::AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region) {
 //     auto regionPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedBrainRegion>(region);
@@ -51,8 +51,20 @@ void Simulation::AddCircuit(
 //     this->Regions[ID] = regionPtr;
 // };
 
+int Simulation::AddCircuit(CoreStructs::NeuralCircuit& _C) {
+    _C.ID = NeuralCircuits.size();
+    NeuralCircuits.push_back(std::make_unique<CoreStructs::NeuralCircuit>(_C));
+    return _C.ID;
+}
+
+/**
+ * Note that adding a region automaticall adds a neural circuit.
+ */
 int Simulation::AddRegion(BrainRegions::BrainRegion& _R) {
     _R.ID = Regions.size();
+    CoreStructs::NeuralCircuit _C;
+    _C.RegionID = _R.ID;
+    _R.CircuitID = AddCircuit(_C);
     Regions.push_back(std::make_unique<BrainRegions::BrainRegion>(_R));
     return _R.ID;
 }
@@ -979,6 +991,7 @@ void Simulation::RunFor(float tRun_ms) {
 
         // Call update in circuits (neurons, etc)
         switch (simmethod) {
+            case simmethod_circuits: // *** For now, use the same method
             case simmethod_list_of_neurons: {
                 //std::cout << "DEBUG --> "; std::cout.flush();
                 for (auto & neuron_ptr : this->Neurons) {
@@ -991,15 +1004,15 @@ void Simulation::RunFor(float tRun_ms) {
                 //std::cout << '\n'; std::cout.flush();
                 break;
             }
-            case simmethod_circuits: {
-                for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-                    auto circuitPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
-                    assert(circuitPtr);
-                    circuitPtr->Update(this->T_ms, recording);
-                    num_updates_called++;
-                }
-                break;
-            }
+            // case simmethod_circuits: {
+            //     for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+            //         auto circuitPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
+            //         assert(circuitPtr);
+            //         circuitPtr->Update(this->T_ms, recording);
+            //         num_updates_called++;
+            //     }
+            //     break;
+            // }
         }
 
         // Carry out simulated instrument recordings

@@ -27,6 +27,7 @@ namespace BrainRegions {
 
 struct RegionBase {
     int ID = -1;                       /**ID of the Region*/
+    int CircuitID = -1;
 
     char RegionLabel[RegionLabelLEN] = { 0 };
 
@@ -54,7 +55,7 @@ class BrainRegion: public RegionBase {
     std::string Name() const { return RegionLabel; };
 
     Geometries::Geometry * Shape{nullptr}; // Regular pointers, because the objects are maintained in Simulation.Collection.
-    std::shared_ptr<CoreStructs::NeuralCircuit> Content{};
+    //std::shared_ptr<CoreStructs::NeuralCircuit> Content{};
 
     virtual void Show(float lineWidth) {};
 };

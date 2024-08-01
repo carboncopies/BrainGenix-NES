@@ -59,31 +59,45 @@ Note that the above is also how the Python prototypes now work.
   the neuron and not the compartment in the Python prototypes.
 */
 
+struct CircuitBase {
+    int ID; /**ID of the neural circuit */
+    int RegionID;
+
+    std::string str() const {
+        std::stringstream ss;
+        ss << "ID: " << ID;
+        ss << "\nRegionID: " << RegionID;
+        return ss.str();
+    }
+
+};
+
 /**
  * @brief This struct provides the base struct for all neural circuits.
  *
  */
-struct NeuralCircuit {
-
-    int ID; /**ID of the neural circuit */
+struct NeuralCircuit: public CircuitBase {
 
     Geometries::GeometryCollection * Collection_ptr = nullptr; // Obtained from Simulation.
+
+    std::vector<int> NeuronIDs;
 
     //! Neurons in the neural circuit.
     std::unordered_map<std::string, std::shared_ptr<Neuron>> Cells;
 
     //! Initializes the neurons in the neural circuit.
-    virtual void InitCells(Geometries::Box * domain) = 0;
+    //! *** NOT REALLY USED AT THIS TIME.
+    virtual void InitCells(Geometries::Box * domain) {};
 
     //! Returns the number of neuron in the neural circuit.
     virtual size_t GetNumberOfNeurons() { return Cells.size(); }
 
     //! Returns all neurons in the neural circuit.
-    virtual std::vector<std::shared_ptr<Neuron>> GetNeurons() = 0;
+    virtual std::vector<std::shared_ptr<Neuron>> GetNeurons() {};
 
     //! Returns all neurons in the neural circuit with specified IDs.
     virtual std::vector<std::shared_ptr<Neuron>>
-    GetNeuronsByIDs(std::vector<size_t> IDList) = 0;
+    GetNeuronsByIDs(std::vector<size_t> IDList) {};
 
     virtual nlohmann::json GetRecordingJSON() const;
 
