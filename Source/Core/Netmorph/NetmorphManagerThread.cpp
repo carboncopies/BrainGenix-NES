@@ -459,7 +459,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
     Net.synapse_op(synapse_build);
     synapse_build.logerrors();
 
-    RegionBuild region_build(_Params);
+    RegionBuild region_build(_Params, neuron_build);
     Net.region_op(region_build);
     region_build.logerrors();
 
