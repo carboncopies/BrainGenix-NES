@@ -1037,6 +1037,8 @@ nlohmann::json Simulation::GetAbstractConnectomeJSON(bool Sparse, bool NonZero) 
     nlohmann::json& reccntlist(connectome["PrePostNumReceptors"]);
     connectome["Regions"] = nlohmann::json::object();
     nlohmann::json& regiondict(connectome["Regions"]);
+    connectome["Types"] = nlohmann::json::array();
+    nlohmann::json& typeslist(connectome["Types"]);
 
     for (size_t PreSynIdx = 0; PreSynIdx<PrePostReceptorCounts.size(); PreSynIdx++) {
         nlohmann::json frompresynreccntvec(nlohmann::json::value_t::array);
@@ -1070,6 +1072,10 @@ nlohmann::json Simulation::GetAbstractConnectomeJSON(bool Sparse, bool NonZero) 
         for (auto& NeuronID : NeuralCircuits.at(CircuitID)->NeuronIDs) {
             regiondict[RegionPtr->Name()].push_back(NeuronID);
         }
+    }
+
+    for (auto& NeuronPtr : Neurons) {
+        typeslist.push_back(NeuronPtr->Type);
     }
 
     return connectome;
