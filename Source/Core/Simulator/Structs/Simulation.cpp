@@ -1075,7 +1075,7 @@ nlohmann::json Simulation::GetAbstractConnectomeJSON(bool Sparse, bool NonZero) 
     }
 
     for (auto& NeuronPtr : Neurons) {
-        typeslist.push_back(NeuronPtr->Type);
+        typeslist.push_back(NeuronPtr->Type_);
     }
 
     return connectome;
