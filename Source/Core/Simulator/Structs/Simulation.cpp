@@ -976,8 +976,10 @@ nlohmann::json Simulation::GetConnectomeJSON() const {
 /**
  * Count the number of receptors involved in a connection
  * between a pair of presynaptic neuron and postsynaptic neuron.
+ * If the NonZero flag is set then only receptors with non-zero
+ * conductance are included, i.e. are considered active receptors.
  */
-size_t Simulation::GetAbstractConnection(int PreSynID, int PostSynID) const {
+size_t Simulation::GetAbstractConnection(int PreSynID, int PostSynID, bool NonZero) const {
     if (PostSynID >= Neurons.size()) return 0;
 
     CoreStructs::Neuron* PostsynapticPtr = Neurons.at(PostSynID).get();
@@ -987,7 +989,13 @@ size_t Simulation::GetAbstractConnection(int PreSynID, int PostSynID) const {
     Connections::Receptor* Rptr = nullptr;
     for (auto& _ReceptorData : static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->ReceptorDataVec) {
         if (_ReceptorData.SrcNeuronID==PreSynID) {
-            NumReceptors++;
+            if (NonZero) {
+                if (_ReceptorData.ReceptorPtr->Conductance_nS!=0.0) {
+                    NumReceptors++;
+                }
+            } else {
+                NumReceptors++;
+            }
         }
     }
 
@@ -1000,14 +1008,16 @@ size_t Simulation::GetAbstractConnection(int PreSynID, int PostSynID) const {
  * in connections between each pair.
  * Note that the columns are presynaptic indices while the rows are
  * postsynaptic indices.
+ * If the NonZero flag is set then only receptors with non-zero
+ * conductance are included, i.e. are considered active receptors.
  */
-std::vector<std::vector<size_t>> Simulation::GetAbstractConnectome() const {
+std::vector<std::vector<size_t>> Simulation::GetAbstractConnectome(bool NonZero) const {
     std::vector<std::vector<size_t>> PrePostReceptorCounts(
         Neurons.size(),
         std::vector<size_t>(Neurons.size(), 0));
     for (int PostSynIdx = 0; PostSynIdx < Neurons.size(); PostSynIdx++) {
         for (int PreSynIdx = 0; PreSynIdx < Neurons.size(); PreSynIdx++) {
-            size_t NumReceptors = GetAbstractConnection(PreSynIdx, PostSynIdx);
+            size_t NumReceptors = GetAbstractConnection(PreSynIdx, PostSynIdx, NonZero);
             PrePostReceptorCounts[PostSynIdx][PreSynIdx] = NumReceptors;
         }
     }
@@ -1020,8 +1030,8 @@ std::vector<std::vector<size_t>> Simulation::GetAbstractConnectome() const {
  * Here, the minor index is the postsynaptic index and the major
  * index is the presynaptic index: data[PreSynIdx][PostSynIdx].
  */
-nlohmann::json Simulation::GetAbstractConnectomeJSON(bool Sparse) const {
-    auto PrePostReceptorCounts = GetAbstractConnectome();
+nlohmann::json Simulation::GetAbstractConnectomeJSON(bool Sparse, bool NonZero) const {
+    auto PrePostReceptorCounts = GetAbstractConnectome(NonZero);
     nlohmann::json connectome;
     connectome["PrePostNumReceptors"] = nlohmann::json::array();
     nlohmann::json& reccntlist(connectome["PrePostNumReceptors"]);

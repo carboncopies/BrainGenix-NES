@@ -978,13 +978,14 @@ std::string SimulationRPCInterface::GetAbstractConnectome(std::string _JSONReque
         return Handle.ErrResponse();
     }
 
-    bool Sparse;
-    if (!Handle.GetParBool("Sparse", Sparse)) {
+    bool Sparse, NonZero;
+    if ((!Handle.GetParBool("Sparse", Sparse)) ||
+        (!Handle.GetParBool("NonZero", NonZero))) {
         return Handle.ErrResponse();
     }
 
     // Return JSON
-    nlohmann::json ResponseJSON = Handle.Sim()->GetAbstractConnectomeJSON(Sparse);
+    nlohmann::json ResponseJSON = Handle.Sim()->GetAbstractConnectomeJSON(Sparse, NonZero);
     ResponseJSON["StatusCode"] = 0; // ok
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
