@@ -28,10 +28,13 @@ ReceptorData::ReceptorData(int _RID, Connections::Receptor * _RPtr, Neuron * _SN
 }
 
 //! Update the assumed neuron type based on its neurotransmitters.
+//! Note: For now, we only use the first 4 characters to match, so
+//!       that we can also handle some variants, such as AMPAR that
+//!       are used in Netmorph.
 void Neuron::UpdateType(const std::string & neurotransmitter) {
     // Only do this if it is still "unknown".
     if (Type_==UnknownNeuron) {
-        auto it = Neurotransmitter2NeuronType.find(neurotransmitter);
+        auto it = Neurotransmitter2NeuronType.find(neurotransmitter.substr(0, 4));
         if (it != Neurotransmitter2NeuronType.end()) {
             Type_ = it->second;
         }
