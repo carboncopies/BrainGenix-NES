@@ -63,6 +63,7 @@ enum NeuronClass: int {
 
 const std::map<std::string, NeuronType> Neurotransmitter2NeuronType = {
     { "AMPA", GenericPrincipalNeuron },
+    { "NMDA", GenericPrincipalNeuron },
     { "GABA", GenericInterneuron },
 };
 

@@ -74,6 +74,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
 
     _RPCManager->AddRoute("Simulation/GetSomaPositions",          std::bind(&SimulationRPCInterface::GetSomaPositions, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetConnectome",             std::bind(&SimulationRPCInterface::GetConnectome, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetAbstractConnectome",     std::bind(&SimulationRPCInterface::GetAbstractConnectome, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("ManTaskStatus",                        std::bind(&SimulationRPCInterface::ManTaskStatus, this, std::placeholders::_1));
 
@@ -966,6 +967,25 @@ std::string SimulationRPCInterface::GetConnectome(std::string _JSONRequest) {
 
     // Return JSON
     nlohmann::json ResponseJSON = Handle.Sim()->GetConnectomeJSON();
+    ResponseJSON["StatusCode"] = 0; // ok
+    return Handle.ResponseAndStoreRequest(ResponseJSON);
+}
+
+std::string SimulationRPCInterface::GetAbstractConnectome(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetAbstractConnectome", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    bool Sparse, NonZero;
+    if ((!Handle.GetParBool("Sparse", Sparse)) ||
+        (!Handle.GetParBool("NonZero", NonZero))) {
+        return Handle.ErrResponse();
+    }
+
+    // Return JSON
+    nlohmann::json ResponseJSON = Handle.Sim()->GetAbstractConnectomeJSON(Sparse, NonZero);
     ResponseJSON["StatusCode"] = 0; // ok
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }

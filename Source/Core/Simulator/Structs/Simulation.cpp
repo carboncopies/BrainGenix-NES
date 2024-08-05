@@ -37,20 +37,37 @@ void Simulation::SetRandomSeed(int Seed) {
     MasterRandom_ = std::make_unique<Distributions::Generic>(Seed);
 }
 
-void Simulation::AddCircuit(
-    std::shared_ptr<CoreStructs::NeuralCircuit> circuit) {
-    assert(circuit != nullptr);
-    auto ID = std::to_string(circuit->ID);
-    this->NeuralCircuits[ID] = circuit;
-};
+// void Simulation::AddCircuit(
+//     std::shared_ptr<CoreStructs::NeuralCircuit> circuit) {
+//     assert(circuit != nullptr);
+//     auto ID = std::to_string(circuit->ID);
+//     this->NeuralCircuits[ID] = circuit;
+// };
 
-void Simulation::AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region) {
-    auto regionPtr =
-        std::dynamic_pointer_cast<BallAndStick::BSAlignedBrainRegion>(region);
-    assert(regionPtr != nullptr);
-    auto ID = std::to_string(regionPtr->ID);
-    this->Regions[ID] = regionPtr;
-};
+// void Simulation::AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region) {
+//     auto regionPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedBrainRegion>(region);
+//     assert(regionPtr != nullptr);
+//     auto ID = std::to_string(regionPtr->ID);
+//     this->Regions[ID] = regionPtr;
+// };
+
+int Simulation::AddCircuit(CoreStructs::NeuralCircuit& _C) {
+    _C.ID = NeuralCircuits.size();
+    NeuralCircuits.push_back(std::make_unique<CoreStructs::NeuralCircuit>(_C));
+    return _C.ID;
+}
+
+/**
+ * Note that adding a region automaticall adds a neural circuit.
+ */
+int Simulation::AddRegion(BrainRegions::BrainRegion& _R) {
+    _R.ID = Regions.size();
+    CoreStructs::NeuralCircuit _C(&Collection);
+    _C.RegionID = _R.ID;
+    _R.CircuitID = AddCircuit(_C);
+    Regions.push_back(std::make_unique<BrainRegions::BrainRegion>(_R));
+    return _R.ID;
+}
 
 int Simulation::AddSphere(Geometries::Sphere& _S) {
     _S.ID = Collection.Geometries.size();
@@ -133,6 +150,8 @@ struct SaverInfo {
     size_t BSSCCompartmentsSize = 0;
     size_t ReceptorsSize = 0;
     size_t NeuronsSize = 0;
+    size_t RegionsSize = 0;
+    size_t CircuitsSize = 0;
 
     std::string str() const {
         std::string s;
@@ -143,6 +162,8 @@ struct SaverInfo {
         s += "\nBSSCCompartmentsSize: " + std::to_string(BSSCCompartmentsSize);
         s += "\nReceptorsSize: " + std::to_string(ReceptorsSize);
         s += "\nNeuronsSize: " + std::to_string(NeuronsSize);
+        s += "\nRegionsSize: " + std::to_string(RegionsSize);
+        s += "\nCircuitsSize: " + std::to_string(CircuitsSize);
         s += '\n';
         return s;
     }
@@ -174,6 +195,8 @@ protected:
     std::vector<Compartments::BS>* RefToCompartments;
     std::vector<std::shared_ptr<CoreStructs::Neuron>>* RefToSCNeurons;
     std::vector<std::unique_ptr<Connections::Receptor>>* RefToReceptors;
+    std::vector<std::unique_ptr<BrainRegions::BrainRegion>>* RefToRegions;
+    std::vector<std::unique_ptr<CoreStructs::NeuralCircuit>>* RefToNeuralCircuits;
 
 public:
     Saver(const std::string& _Name): Name_(_Name) {}
@@ -200,6 +223,12 @@ public:
     void AddReceptors(std::vector<std::unique_ptr<Connections::Receptor>>& _RefToReceptors) {
         RefToReceptors = &_RefToReceptors;
     }
+    void AddRegions(std::vector<std::unique_ptr<BrainRegions::BrainRegion>>& _RefToRegions) {
+        RefToRegions = &_RefToRegions;
+    }
+    void AddCircuits(std::vector<std::unique_ptr<CoreStructs::NeuralCircuit>>& _RefToNeuralCircuits) {
+        RefToNeuralCircuits = &_RefToNeuralCircuits;
+    }
 
     bool Save() {
         /** Save file structure is:
@@ -210,8 +239,11 @@ public:
          *  5. Geometries::BoxBase[] (SaverInfo.BoxReferencesSize elements)
          *  6. Compartments::BSBaseData[] (SaverInfo.BSSCCompartmentsSize elements)
          *  7. Connections::ReceptorBase[] (SaverInfo.ReceptorsSize elements)
-         *  8. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
-         *  9. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
+         *  8. BrainRegions::RegionBase[] (SaverInfo.RegionsSize elements)
+         *  9. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
+         *  10. circuitdata_sizes[] (SaverInfo.CircuitsSize.elements)
+         *  11. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
+         *  12. concatenated NeuralCircuit::GetFlat()->data() (SaverInfo.CircuitsSize variable size chunks)
          */
         auto SaveFile = std::fstream(Name_, std::ios::out | std::ios::binary);
         _SaverInfo.SGMapSize = SGMap.size();
@@ -221,6 +253,8 @@ public:
         _SaverInfo.BSSCCompartmentsSize = RefToCompartments->size();
         _SaverInfo.ReceptorsSize = RefToReceptors->size();
         _SaverInfo.NeuronsSize = RefToSCNeurons->size();
+        _SaverInfo.RegionsSize = RefToRegions->size();
+        _SaverInfo.CircuitsSize = RefToNeuralCircuits->size();
 
         SaveFile.write((char*)&_SaverInfo, sizeof(_SaverInfo));
         SaveFile.write((char*)SGMap.data(), sizeof(SaverGeometry)*SGMap.size());
@@ -249,19 +283,44 @@ public:
             SaveFile.write((char*)&basedataref, sizeof(Connections::ReceptorBase));
         }
 
+        // Save fixed-size base data of regions.
+        for (auto& ref : (*RefToRegions)) {
+            BrainRegions::RegionBase& basedataref = *ref;
+            SaveFile.write((char*)&basedataref, sizeof(BrainRegions::RegionBase));
+        }
+
         // Save fixed-size base data of neurons and flattened variable
         // size crucial data.
+        std::vector<uint32_t> flatdata_sizes;
         std::vector<std::unique_ptr<uint8_t[]>> flatdata_list;
-        std::vector<uint32_t> flatdata_sizes; 
         for (auto& ref : (*RefToSCNeurons)) { // from a list of shared pointers to SCNeuron objects
             std::unique_ptr<uint8_t[]> flatdata = static_cast<SCNeuron*>(ref.get())->build_data.GetFlat();
             CoreStructs::SCNeuronStructFlatHeader* header_ptr = (CoreStructs::SCNeuronStructFlatHeader*) flatdata.get();
             flatdata_sizes.push_back(header_ptr->FlatBufSize);
             flatdata_list.emplace_back(flatdata.release());
         }
+
+        // The same for neural circuits.
+        std::vector<uint32_t> circuitdata_sizes;
+        std::vector<std::unique_ptr<uint8_t[]>> circuitdata_list;
+        for (auto& ref : (*RefToNeuralCircuits)) { // from a list of unique pointers to NeuralCircuit objects
+            //std::unique_ptr<uint8_t[]> circuitdata = static_cast<CoreStructs::NeuralCircuit*>(ref.get())->build_data.GetFlat();
+            std::unique_ptr<uint8_t[]> circuitdata = static_cast<CoreStructs::NeuralCircuit*>(ref.get())->GetFlat();
+            CoreStructs::NeuralCircuitStructFlatHeader* header_ptr = (CoreStructs::NeuralCircuitStructFlatHeader*) circuitdata.get();
+            circuitdata_sizes.push_back(header_ptr->FlatBufSize);
+            circuitdata_list.emplace_back(circuitdata.release());
+        }
+
         SaveFile.write((char*)flatdata_sizes.data(), sizeof(uint32_t)*flatdata_sizes.size());
+
+        SaveFile.write((char*)circuitdata_sizes.data(), sizeof(uint32_t)*circuitdata_sizes.size());
+
         for (size_t i = 0; i < flatdata_list.size(); i++) {
             SaveFile.write((char*)flatdata_list.at(i).get(), flatdata_sizes.at(i));
+        }
+
+        for (size_t i = 0; i < circuitdata_list.size(); i++) {
+            SaveFile.write((char*)circuitdata_list.at(i).get(), circuitdata_sizes.at(i));
         }
 
         SaveFile.close();
@@ -279,8 +338,11 @@ public:
     std::unique_ptr<Geometries::BoxBase[]> BoxData;
     std::unique_ptr<Compartments::BSBaseData[]> CompartmentData;
     std::unique_ptr<Connections::ReceptorBase[]> ReceptorData;
+    std::unique_ptr<BrainRegions::RegionBase[]> RegionData;
     std::unique_ptr<uint32_t[]> flatdata_sizes;
     std::unique_ptr<uint8_t[]> all_flatdata;
+    std::unique_ptr<uint32_t[]> circuitdata_sizes;
+    std::unique_ptr<uint8_t[]> all_circuitdata;
 
 public:
     Loader(const std::string& _Name): Name_(_Name) {}
@@ -311,14 +373,29 @@ public:
         ReceptorData = std::make_unique<Connections::ReceptorBase[]>(_SaverInfo.ReceptorsSize);
         LoadFile.read((char*)ReceptorData.get(), sizeof(Connections::ReceptorBase)*_SaverInfo.ReceptorsSize);
 
-        // 8. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
+        // 8. BrainRegions::RegionBase[] (SaverInfo.RegionsSize elements)
+        RegionData = std::make_unique<BrainRegions::RegionBase[]>(_SaverInfo.RegionsSize);
+        LoadFile.read((char*)RegionData.get(), sizeof(BrainRegions::RegionBase)*_SaverInfo.RegionsSize);
+
+        // 9. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
         flatdata_sizes = std::make_unique<uint32_t[]>(_SaverInfo.NeuronsSize);
         LoadFile.read((char*)flatdata_sizes.get(), sizeof(uint32_t)*_SaverInfo.NeuronsSize);
-        // 9. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
+
+        // 10. circuitdata_sizes[] (SaverInfo.CircuitsSize elements)
+        circuitdata_sizes = std::make_unique<uint32_t[]>(_SaverInfo.CircuitsSize);
+        LoadFile.read((char*)circuitdata_sizes.get(), sizeof(uint32_t)*_SaverInfo.CircuitsSize);
+
+        // 11. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
         size_t totsize = 0;
         for (size_t i = 0; i < _SaverInfo.NeuronsSize; i++) totsize += flatdata_sizes.get()[i];
         all_flatdata = std::make_unique<uint8_t[]>(totsize);
         LoadFile.read((char*)all_flatdata.get(), totsize);
+
+        // 12. concatenated NeuralCircuit::GetFlat()->data() (SaverInfo.CircuitsSize variable size chunks)
+        totsize = 0;
+        for (size_t i = 0; i < _SaverInfo.CircuitsSize; i++) totsize += circuitdata_sizes.get()[i];
+        all_circuitdata = std::make_unique<uint8_t[]>(totsize);
+        LoadFile.read((char*)all_circuitdata.get(), totsize);
 
         return LoadFile.good();
     }
@@ -359,6 +436,10 @@ bool Simulation::SaveModel(const std::string& Name) {
     _Saver.AddNeurons(Neurons);
     // Save synapses.
     _Saver.AddReceptors(Receptors);
+    // Save regions.
+    _Saver.AddRegions(Regions);
+    // Save circuits.
+    _Saver.AddCircuits(NeuralCircuits);
 
     return _Saver.Save();
 }
@@ -431,6 +512,18 @@ bool Simulation::LoadModel(const std::string& Name) {
         ID = AddReceptor(_R);
     }
 
+    // Reset and instantiate regions and neural circuits.
+    NeuralCircuits.clear();
+    Regions.clear();
+
+    offset = 0;
+    for (size_t i = 0; i < _Loader._SaverInfo.RegionsSize; i++) {
+        BrainRegions::BrainRegion _R(_Loader.RegionData.get()[i]);
+        ID = AddRegion(_R);
+        NeuralCircuits.at(_R.CircuitID)->FromFlat((CoreStructs::NeuralCircuitStructFlatHeader*) (_Loader.all_circuitdata.get()+offset));
+        offset += _Loader.circuitdata_sizes.get()[i];
+    }
+
     Show();
     //InspectSavedModel(Name);
     return true;
@@ -487,12 +580,23 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
     for (size_t i = 0; i < siptr->ReceptorsSize; i++) std::cout << rbptr[i].str();
 
     ptr += siptr->ReceptorsSize * sizeof(Connections::ReceptorBase);
+    BrainRegions::RegionBase* rgptr = (BrainRegions::RegionBase*) ptr;
+    std::cout << ">-- Regions Base Data:\n";
+    for (size_t i = 0; i < siptr->RegionsSize; i++) std::cout << rgptr[i].str();
+
+    ptr += siptr->RegionsSize * sizeof(BrainRegions::RegionBase);
     uint32_t* fdsptr = (uint32_t*) ptr;
     std::cout << ">-- SC Neurons Flat Data Sizes:\n";
     for (size_t i = 0; i < siptr->NeuronsSize; i++) std::cout << fdsptr[i] << ' ';
     std::cout << '\n';
 
     ptr += siptr->NeuronsSize * sizeof(uint32_t);
+    uint32_t* cdsptr = (uint32_t*) ptr;
+    std::cout << ">-- Neural Circuits Flat Data Sizes:\n";
+    for (size_t i = 0; i < siptr->CircuitsSize; i++) std::cout << cdsptr[i] << ' ';
+    std::cout << '\n';
+
+    ptr += siptr->CircuitsSize * sizeof(uint32_t);
     for (size_t i = 0; i < siptr->NeuronsSize; i++) {
         CoreStructs::SCNeuronStructFlatHeader* scfhptr = (CoreStructs::SCNeuronStructFlatHeader*) ptr;
 
@@ -504,6 +608,16 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
         std::cout << scfhptr->acid_str();
 
         ptr += scfhptr->FlatBufSize;
+    }
+
+    for (size_t i = 0; i < siptr->CircuitsSize; i++) {
+        CoreStructs::NeuralCircuitStructFlatHeader* ncfhptr = (CoreStructs::NeuralCircuitStructFlatHeader*) ptr;
+
+        std::cout << ">-- Neural Circuit Flat Data:\n";
+        std::cout << ncfhptr->str();
+        std::cout << ncfhptr->nid_str();
+
+        ptr += ncfhptr->FlatBufSize;
     }
 
 }
@@ -637,25 +751,27 @@ bool Simulation::UpdateBatchPrePostStrength(const std::vector<int>& PresynapticI
     return true;
 }
 
+// *** THIS IS NOT USED BY THE API CALL
 void Simulation::AttachDirectStim(
     std::vector<std::tuple<float, size_t>> listOfStims) {
 
-    for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-        auto circuitPtr =
-            std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
-        assert(circuitPtr);
-        circuitPtr->AttachDirectStim(listOfStims);
-    }
+    // for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+    //     auto circuitPtr =
+    //         std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
+    //     assert(circuitPtr);
+    //     circuitPtr->AttachDirectStim(listOfStims);
+    // }
 }
 
+// *** THIS IS NOT USED BY THE API CALL
 void Simulation::SetSpontaneousActivity(
     std::vector<std::tuple<float, float, size_t>> spontSpikeSettings) {
-    for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-        auto circuitPtr = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
-        assert(circuitPtr);
-        circuitPtr->SetSpontaneousActivity(spontSpikeSettings);
-    }
+    // for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+    //     auto circuitPtr = std::dynamic_pointer_cast<
+    //         BG::NES::Simulator::BallAndStick::BSAlignedNC>(circuit);
+    //     assert(circuitPtr);
+    //     circuitPtr->SetSpontaneousActivity(spontSpikeSettings);
+    // }
 };
 
 unsigned long Simulation::TotalSpikes() const {
@@ -686,13 +802,14 @@ bool Simulation::IsRecording() const {
     return this->T_ms < (this->StartRecordTime_ms + this->MaxRecordTime_ms);
 };
 
+// *** THIS IS NOT USED BY THE API CALL
 std::unordered_map<std::string, CoreStructs::CircuitRecording> Simulation::GetRecording() {
     std::unordered_map<std::string, CoreStructs::CircuitRecording> recording;
-    for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-        auto circuitPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
-        assert(circuitPtr);
-        recording[circuitID] = circuitPtr->GetRecording();
-    }
+    // for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+    //     auto circuitPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
+    //     assert(circuitPtr);
+    //     recording[circuitID] = circuitPtr->GetRecording();
+    // }
 
     return recording;
 };
@@ -713,16 +830,17 @@ nlohmann::json Simulation::GetRecordingJSON() const {
 
     recording["t_ms"] = nlohmann::json(this->TRecorded_ms);
 
-    if (!this->NeuralCircuits.empty()) {
-        // If there are circuits then obtain the recording from each circuit.
-        recording["circuits"] = nlohmann::json::object(); // = {}
-        nlohmann::json & circuit_recordings = recording.at("circuits");
-        for (const auto &[circuitID, circuit_ptr] : this->NeuralCircuits) {
-            assert(circuit_ptr);
-            circuit_recordings[circuitID] = circuit_ptr->GetRecordingJSON();
-        }
+    // *** The by-neural-circuit version is presently not being used.
+    // if (!this->NeuralCircuits.empty()) {
+    //     // If there are circuits then obtain the recording from each circuit.
+    //     recording["circuits"] = nlohmann::json::object(); // = {}
+    //     nlohmann::json & circuit_recordings = recording.at("circuits");
+    //     for (const auto &[circuitID, circuit_ptr] : this->NeuralCircuits) {
+    //         assert(circuit_ptr);
+    //         circuit_recordings[circuitID] = circuit_ptr->GetRecordingJSON();
+    //     }
 
-    } else {
+    // } else {
         // Otherwise, obtain recordings directly from the list of neurons.
         recording["neurons"] = nlohmann::json::object(); // = {}
         nlohmann::json & neuron_recordings = recording.at("neurons");
@@ -731,7 +849,7 @@ nlohmann::json Simulation::GetRecordingJSON() const {
             neuron_recordings[std::to_string(neuron_ptr->ID)] = neuron_ptr->GetRecordingJSON();
         }
 
-    }
+    // }
     
     return recording;
 }
@@ -855,6 +973,114 @@ nlohmann::json Simulation::GetConnectomeJSON() const {
     return connectome;
 }
 
+/**
+ * Count the number of receptors involved in a connection
+ * between a pair of presynaptic neuron and postsynaptic neuron.
+ * If the NonZero flag is set then only receptors with non-zero
+ * conductance are included, i.e. are considered active receptors.
+ */
+size_t Simulation::GetAbstractConnection(int PreSynID, int PostSynID, bool NonZero) const {
+    if (PostSynID >= Neurons.size()) return 0;
+
+    CoreStructs::Neuron* PostsynapticPtr = Neurons.at(PostSynID).get();
+    if (PostsynapticPtr->Class_<CoreStructs::_BSNeuron) return 0;
+
+    size_t NumReceptors = 0;
+    Connections::Receptor* Rptr = nullptr;
+    for (auto& _ReceptorData : static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->ReceptorDataVec) {
+        if (_ReceptorData.SrcNeuronID==PreSynID) {
+            if (NonZero) {
+                if (_ReceptorData.ReceptorPtr->Conductance_nS!=0.0) {
+                    NumReceptors++;
+                }
+            } else {
+                NumReceptors++;
+            }
+        }
+    }
+
+    return NumReceptors;
+}
+
+/**
+ * Loop through all possible combinations of presynaptic and
+ * postsynaptic neurons and count the number of receptors involved
+ * in connections between each pair.
+ * Note that the columns are presynaptic indices while the rows are
+ * postsynaptic indices.
+ * If the NonZero flag is set then only receptors with non-zero
+ * conductance are included, i.e. are considered active receptors.
+ */
+std::vector<std::vector<size_t>> Simulation::GetAbstractConnectome(bool NonZero) const {
+    std::vector<std::vector<size_t>> PrePostReceptorCounts(
+        Neurons.size(),
+        std::vector<size_t>(Neurons.size(), 0));
+    for (int PostSynIdx = 0; PostSynIdx < Neurons.size(); PostSynIdx++) {
+        for (int PreSynIdx = 0; PreSynIdx < Neurons.size(); PreSynIdx++) {
+            size_t NumReceptors = GetAbstractConnection(PreSynIdx, PostSynIdx, NonZero);
+            PrePostReceptorCounts[PostSynIdx][PreSynIdx] = NumReceptors;
+        }
+    }
+    return PrePostReceptorCounts;
+}
+
+/**
+ * Convert abstract connectome information into JSON for delivery
+ * via API.
+ * Here, the minor index is the postsynaptic index and the major
+ * index is the presynaptic index: data[PreSynIdx][PostSynIdx].
+ */
+nlohmann::json Simulation::GetAbstractConnectomeJSON(bool Sparse, bool NonZero) const {
+    auto PrePostReceptorCounts = GetAbstractConnectome(NonZero);
+    nlohmann::json connectome;
+    connectome["PrePostNumReceptors"] = nlohmann::json::array();
+    nlohmann::json& reccntlist(connectome["PrePostNumReceptors"]);
+    connectome["Regions"] = nlohmann::json::object();
+    nlohmann::json& regiondict(connectome["Regions"]);
+    connectome["Types"] = nlohmann::json::array();
+    nlohmann::json& typeslist(connectome["Types"]);
+
+    for (size_t PreSynIdx = 0; PreSynIdx<PrePostReceptorCounts.size(); PreSynIdx++) {
+        nlohmann::json frompresynreccntvec(nlohmann::json::value_t::array);
+        for (size_t PostSynIdx = 0; PostSynIdx<PrePostReceptorCounts.size(); PostSynIdx++) {
+
+            size_t ReceptorCount = PrePostReceptorCounts[PostSynIdx][PreSynIdx];
+
+            if (Sparse) {
+
+                if (ReceptorCount>0) {
+                    nlohmann::json connectiondata(nlohmann::json::value_t::array);
+                    connectiondata.push_back(PreSynIdx);
+                    connectiondata.push_back(PostSynIdx);
+                    connectiondata.push_back(ReceptorCount);
+                    reccntlist.push_back(connectiondata);
+                }
+
+            } else {
+
+                frompresynreccntvec.push_back(ReceptorCount);
+            }
+
+        }
+        if (!Sparse) reccntlist.push_back(frompresynreccntvec);
+    }
+
+    for (auto& RegionPtr : Regions) {
+        regiondict[RegionPtr->Name()] = nlohmann::json::array();
+        int CircuitID = RegionPtr->CircuitID;
+        //auto CircuitPtr = NeuralCircuits.at(CircuitID);
+        for (auto& NeuronID : NeuralCircuits.at(CircuitID)->NeuronIDs) {
+            regiondict[RegionPtr->Name()].push_back(NeuronID);
+        }
+    }
+
+    for (auto& NeuronPtr : Neurons) {
+        typeslist.push_back(NeuronPtr->Type_);
+    }
+
+    return connectome;
+}
+
 enum sim_methods {
     simmethod_list_of_neurons,
     simmethod_circuits,
@@ -893,6 +1119,7 @@ void Simulation::RunFor(float tRun_ms) {
 
         // Call update in circuits (neurons, etc)
         switch (simmethod) {
+            case simmethod_circuits: // *** For now, use the same method
             case simmethod_list_of_neurons: {
                 //std::cout << "DEBUG --> "; std::cout.flush();
                 for (auto & neuron_ptr : this->Neurons) {
@@ -905,15 +1132,15 @@ void Simulation::RunFor(float tRun_ms) {
                 //std::cout << '\n'; std::cout.flush();
                 break;
             }
-            case simmethod_circuits: {
-                for (auto &[circuitID, circuit] : this->NeuralCircuits) {
-                    auto circuitPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
-                    assert(circuitPtr);
-                    circuitPtr->Update(this->T_ms, recording);
-                    num_updates_called++;
-                }
-                break;
-            }
+            // case simmethod_circuits: {
+            //     for (auto &[circuitID, circuit] : this->NeuralCircuits) {
+            //         auto circuitPtr = std::dynamic_pointer_cast<BallAndStick::BSAlignedNC>(circuit);
+            //         assert(circuitPtr);
+            //         circuitPtr->Update(this->T_ms, recording);
+            //         num_updates_called++;
+            //     }
+            //     break;
+            // }
         }
 
         // Carry out simulated instrument recordings

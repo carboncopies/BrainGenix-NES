@@ -59,13 +59,66 @@ Note that the above is also how the Python prototypes now work.
   the neuron and not the compartment in the Python prototypes.
 */
 
+#define ADD_BYTES_TO_POINTER(theptr, numbytes) \
+    (((uint8_t*)theptr)+numbytes)
+
+struct CircuitBase {
+    int ID; /**ID of the neural circuit */
+    int RegionID;
+
+    std::string str() const {
+        std::stringstream ss;
+        ss << "ID: " << ID;
+        ss << "\nRegionID: " << RegionID;
+        return ss.str();
+    }
+
+};
+
+struct NeuralCircuitStructFlatHeader {
+  uint32_t FlatBufSize = 0;
+  uint32_t NeuronIDsSize = 0;
+  uint32_t NeuronIDsOffset = 0;
+  CircuitBase Base;
+
+  std::string str() const {
+        std::stringstream ss;
+        ss << "FlatBufSize: " << FlatBufSize;
+        ss << "\nNeuronIDsSize: " << NeuronIDsSize;
+        ss << "\nNeuronIDsOffset: " << NeuronIDsOffset << '\n';
+        ss << Base.str();
+        return ss.str();
+    }
+
+  std::string nid_str() const {
+        std::stringstream ss;
+        int* nidptr = (int*) ADD_BYTES_TO_POINTER(this, NeuronIDsOffset);
+        //ss << "flat header address = " << uint64_t(this) << '\n';
+        //ss << "scidptr = " << uint64_t(scidptr) << '\n';
+        ss << "NeuronIDs: ";
+        for (size_t idx = 0; idx < NeuronIDsSize; idx++) {
+            ss << nidptr[idx] << ' ';
+        }
+        ss << '\n';
+        return ss.str();
+    }
+
+};
+
 /**
  * @brief This struct provides the base struct for all neural circuits.
  *
  */
-struct NeuralCircuit {
+struct NeuralCircuit: public CircuitBase {
 
-    int ID; /**ID of the neural circuit */
+    std::vector<int> NeuronIDs;
+
+    void AddNeuronByID(int _NeuronID) {
+      NeuronIDs.emplace_back(_NeuronID);
+    }
+
+    std::unique_ptr<uint8_t[]> GetFlat() const;
+    bool FromFlat(NeuralCircuitStructFlatHeader* header);
 
     Geometries::GeometryCollection * Collection_ptr = nullptr; // Obtained from Simulation.
 
@@ -73,17 +126,23 @@ struct NeuralCircuit {
     std::unordered_map<std::string, std::shared_ptr<Neuron>> Cells;
 
     //! Initializes the neurons in the neural circuit.
-    virtual void InitCells(Geometries::Box * domain) = 0;
+    //! *** NOT REALLY USED AT THIS TIME.
+    virtual void InitCells(Geometries::Box * domain) {};
 
     //! Returns the number of neuron in the neural circuit.
     virtual size_t GetNumberOfNeurons() { return Cells.size(); }
 
     //! Returns all neurons in the neural circuit.
-    virtual std::vector<std::shared_ptr<Neuron>> GetNeurons() = 0;
+    virtual std::vector<std::shared_ptr<Neuron>> GetNeurons() {
+      std::vector<std::shared_ptr<Neuron>> empty;
+      return empty;
+    };
 
     //! Returns all neurons in the neural circuit with specified IDs.
-    virtual std::vector<std::shared_ptr<Neuron>>
-    GetNeuronsByIDs(std::vector<size_t> IDList) = 0;
+    virtual std::vector<std::shared_ptr<Neuron>> GetNeuronsByIDs(std::vector<size_t> IDList) {
+      std::vector<std::shared_ptr<Neuron>> empty;
+      return empty;
+    };
 
     virtual nlohmann::json GetRecordingJSON() const;
 

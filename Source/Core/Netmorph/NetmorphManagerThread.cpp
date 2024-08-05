@@ -281,6 +281,7 @@ public:
     const DynamicPars& dynpars;
     const PSPTiming& psp_timing;
     size_t num_errors = 0;
+    std::map<long, int> NetmorphNeuronID2NESNeuronIDMap;
     NeuronBuild(NetmorphParameters& Params, const DynamicPars& _dynpars, const PSPTiming& _psp_timing): _Params(Params), dynpars(_dynpars), psp_timing(_psp_timing) {}
     virtual void op(neuron* n) {
 
@@ -345,10 +346,78 @@ public:
             return;
         }
 
+        // Store NES Neuron ID and Netmorph numerical ID pair for later use.
+        NetmorphNeuronID2NESNeuronIDMap[n->numerical_ID()] = N.ID;
+
     }
     void logerrors() const {
         if (num_errors>0) {
             _Params.Sim->Logger_->Log("BuildFromNetmorphNetwork: Number of errors: "+std::to_string(num_errors), 7);
+        }
+    }
+    int get_mapped_id(long numID) const {
+        auto it = NetmorphNeuronID2NESNeuronIDMap.find(numID);
+        if (it==NetmorphNeuronID2NESNeuronIDMap.end()) return -1;
+        return it->second;
+    }
+    int get_mapped_id_by_ptr(neuron* n) const {
+        return get_mapped_id(n->numerical_ID());
+    }
+};
+
+/**
+ * For each region:
+ * - Create a corresponding region and neural circuit in the NES simulation.
+ * - Add to each region the neurons that were created that correspond with the neurons
+ *   in those regions in Netmorph.
+ */
+class RegionBuild: public region_list_op {
+public:
+    NetmorphParameters& _Params;
+    NeuronBuild& neuron_build;
+    int CurrentCircuitID = -1;
+    size_t num_errors = 0;
+    RegionBuild(NetmorphParameters& Params, NeuronBuild& _neuronbuild): _Params(Params), neuron_build(_neuronbuild) { }
+    virtual void neuron_op(neuron* n) {
+        // Find the corresponding NES neuron.
+        int NeuronID = neuron_build.get_mapped_id_by_ptr(n);
+        if (NeuronID<0) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("RegionBuild error: Unrecognized neuron in region.");
+            return;
+        }
+        // Add that neuron to the current region.
+        if (CurrentCircuitID<0) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("RegionBuild error: No current circuit.");
+            return;
+        }
+        if (CurrentCircuitID>=_Params.Sim->NeuralCircuits.size()) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("RegionBuild error: CurrentCircuitID exceeds number of circuits.");
+            return;
+        }
+        auto CircuitPtr = _Params.Sim->NeuralCircuits.at(CurrentCircuitID).get();
+        if (!CircuitPtr) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("RegionBuild error: Circuit pointer is null pointer.");
+            return;
+        }
+        CircuitPtr->AddNeuronByID(NeuronID);
+    }
+    virtual void op(region* r) {
+        BrainRegions::BrainRegion R;
+        R.SetName(r->Name().chars());
+        if (_Params.Sim->AddRegion(R)<0) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("RegionBuild failed: Missing data for region build.");
+            return;
+        }
+        CurrentCircuitID = R.CircuitID;
+    }
+    void logerrors() const {
+        if (num_errors>0) {
+            _Params.Sim->Logger_->Log("RegionBuild: Number of errors: "+std::to_string(num_errors), 7);
         }
     }
 };
@@ -389,6 +458,10 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
     SynapseBuild synapse_build(_Params, psp_timing);
     Net.synapse_op(synapse_build);
     synapse_build.logerrors();
+
+    RegionBuild region_build(_Params, neuron_build);
+    Net.region_op(region_build);
+    region_build.logerrors();
 
     NETMORPH_PARAMS_SUCCESS("Build NES model based on Netmorph output.");
     return true;

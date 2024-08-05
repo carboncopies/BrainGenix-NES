@@ -11,8 +11,8 @@ BSAlignedBrainRegion::BSAlignedBrainRegion(){};
 BSAlignedBrainRegion::BSAlignedBrainRegion(size_t _ID, Geometries::Box * _Shape, std::shared_ptr<BallAndStick::BSAlignedNC> _Content) {
     this->ID = _ID;
     this->Shape = _Shape;
-    _Content->InitCells(_Shape);
-    this->Content = _Content;
+    //_Content->InitCells(_Shape);
+    //this->Content = _Content;
 };
 
 //! Display the BrainRegion

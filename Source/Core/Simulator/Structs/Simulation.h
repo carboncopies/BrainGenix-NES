@@ -108,8 +108,10 @@ public:
     float StartRecordTime_ms = 0.0;
     float MaxRecordTime_ms = 0.0;
 
-    std::unordered_map<std::string, std::shared_ptr<BrainRegions::BrainRegion>> Regions;
-    std::unordered_map<std::string, std::shared_ptr<CoreStructs::NeuralCircuit>> NeuralCircuits;
+    //std::unordered_map<std::string, std::shared_ptr<BrainRegions::BrainRegion>> Regions;
+    std::vector<std::unique_ptr<BrainRegions::BrainRegion>> Regions;
+    //std::unordered_map<std::string, std::shared_ptr<CoreStructs::NeuralCircuit>> NeuralCircuits;
+    std::vector<std::unique_ptr<CoreStructs::NeuralCircuit>> NeuralCircuits;
 
     Geometries::GeometryCollection Collection; /**Instance of GeometryCollection struct containing all geometries in this simulation*/
 
@@ -147,8 +149,10 @@ public:
 
     Geometries::Vec3D GetGeoCenter() const;
 
-    void AddCircuit(std::shared_ptr<CoreStructs::NeuralCircuit> circuit);
-    void AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region);
+    //void AddCircuit(std::shared_ptr<CoreStructs::NeuralCircuit> circuit);
+    int AddCircuit(CoreStructs::NeuralCircuit& _C);
+    //void AddRegion(std::shared_ptr<BrainRegions::BrainRegion> region);
+    int AddRegion(BrainRegions::BrainRegion& _R);
 
     //! Direct builder functions
     //!   Call these from various '..Create' functions to ensure identical
@@ -202,6 +206,9 @@ public:
 
     nlohmann::json GetSomaPositionsJSON() const;
     nlohmann::json GetConnectomeJSON() const;
+    size_t GetAbstractConnection(int PreSynID, int PostSynID, bool NonZero) const;
+    std::vector<std::vector<size_t>> GetAbstractConnectome(bool NonZero) const;
+    nlohmann::json GetAbstractConnectomeJSON(bool Sparse, bool NonZero) const;
 
     void RunFor(float tRun_ms);
 
