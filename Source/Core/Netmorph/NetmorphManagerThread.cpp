@@ -15,16 +15,16 @@
 #include <global.hh>
 #include <network.hh>
 #include <synapse_structure.hh>
-#include <diagnostic.hh>
-#include <Sampled_Output.hh>
-#include <Txt_Object.hh>
-#include <prepost_structure.hh>
-#include <synapse.hh>
-#include <synapse_formation_model.hh>
-#include <axon_direction_model.hh>
-#include <environment_physics.hh>
-#include <slice.hh>
-#include <event.hh>
+//#include <diagnostic.hh>
+//#include <Sampled_Output.hh>
+//#include <Txt_Object.hh>
+//#include <prepost_structure.hh>
+//#include <synapse.hh>
+//#include <synapse_formation_model.hh>
+//#include <axon_direction_model.hh>
+//#include <environment_physics.hh>
+//#include <slice.hh>
+//#include <event.hh>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Netmorph/NetmorphManagerThread.h>
@@ -486,7 +486,7 @@ int ExecuteNetmorphOperation(BG::Common::Logger::LoggingSystem* _Logger, Netmorp
     std::unique_ptr<Nm2NESLogging> _embedlog = std::make_unique<Nm2NESLogging>(*_Logger);
 
     _Logger->Log("Starting Netmorph Simulation", 5);
-    _Params->Result = Netmorph(&_Params->Progress_percent, _Params->ModelContent, _embedlog);
+    _Params->Result = Netmorph(&_Params->Progress_percent, _Params->ModelContent, _embedlog.release());
     _Logger->Log("Netmorph Simulation Finished", 5);
 
     if (_Params->Result.Status) {
