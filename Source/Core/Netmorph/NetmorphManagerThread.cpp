@@ -12,8 +12,19 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <Include/Netmorph.h>
 #include <Include/Embeddable.h>
+#include <global.hh>
 #include <network.hh>
 #include <synapse_structure.hh>
+#include <diagnostic.hh>
+#include <Sampled_Output.hh>
+#include <Txt_Object.hh>
+#include <prepost_structure.hh>
+#include <synapse.hh>
+#include <synapse_formation_model.hh>
+#include <axon_direction_model.hh>
+#include <environment_physics.hh>
+#include <slice.hh>
+#include <event.hh>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Netmorph/NetmorphManagerThread.h>
