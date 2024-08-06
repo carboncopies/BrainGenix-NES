@@ -15,6 +15,7 @@
 #include <global.hh>
 #include <network.hh>
 #include <synapse_structure.hh>
+#include <fibre_structure.hh>
 //#include <diagnostic.hh>
 //#include <Sampled_Output.hh>
 //#include <Txt_Object.hh>
@@ -339,13 +340,13 @@ public:
         //        we could quite easily also store information about the
         //        parentage dependencies of compartments, wherer there are
         //        terminal segments (and growth cones), etc.
-        parsing_fs_type = dendrite_fs;
+        _Params.Result.glb_fs->parsing_fs_type = dendrite_fs;
         NeuriteBuild dendrites_build(false, _Params, N);
         n->tree_op(dendrites_build);
         dendrites_build.logerrors();
 
         // 4. Build axons.
-        parsing_fs_type = axon_fs;
+        _Params.Result.glb_fs->parsing_fs_type = axon_fs;
         NeuriteBuild axons_build(true, _Params, N);
         n->tree_op(axons_build);
         axons_build.logerrors();
