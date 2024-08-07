@@ -487,13 +487,19 @@ int ExecuteNetmorphOperation(BG::Common::Logger::LoggingSystem* _Logger, Netmorp
     std::unique_ptr<Nm2NESLogging> _embedlog = std::make_unique<Nm2NESLogging>(*_Logger);
 
     _Logger->Log("Starting Netmorph Simulation", 5);
-    _Params->Result = Netmorph(&_Params->Progress_percent, _Params->ModelContent, _embedlog.release());
+    //_Params->Result = NetmorphRun(&_Params->Progress_percent, _Params->ModelContent, _embedlog.release());
+
+    Netmorph res(_embedlog.release(), &_Params->Progress_percent);
+    res.embedded_run(_Params->ModelContent);
+    _Params->Result = res;
+
     _Logger->Log("Netmorph Simulation Finished", 5);
 
     if (_Params->Result.Status) {
         BuildFromNetmorphNetwork(*_Params);
     }
 
+    _Params->Result.postop();
     _Params->State = Netmorph_DONE;
 
     return 0;
