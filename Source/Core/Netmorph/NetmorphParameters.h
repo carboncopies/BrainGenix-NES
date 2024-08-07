@@ -68,7 +68,7 @@ struct NetmorphParameters {
 
     int Progress_percent; /**Netmorph status percent*/
 
-    NetmorphResult Result; /**Output provided by netmorph written to this struct*/
+    Netmorph Result; /**Output provided by netmorph written to this struct*/
 
     NetmorphState State = Netmorph_NONE; /**Sets the state of this Netmorph task*/
 
