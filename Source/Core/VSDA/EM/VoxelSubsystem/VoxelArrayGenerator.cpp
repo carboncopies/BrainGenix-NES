@@ -199,9 +199,37 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
                 uint64_t EstimatedSize_vox = Volume_um3 / Voxel_um3;
                 
+                // We always add a sphere at the start of a cylinder for cosmetics.
+                std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
+                Task->Array_ = _Array;
+                Task->GeometryCollection_ = &_Sim->Collection;
+                Task->ShapeID_ = -1;
+                Task->CustomShape_ = VoxelArrayGenerator::CUSTOM_SPHERE;
+                Task->WorldInfo_ = Info;
+                Task->Parameters_ = _Params;
+
+                // We have to build a new sphere cause one doesnt exist yet, so we do it just in time
+                Geometries::Sphere ThisSphere;
+                ThisSphere.Center_um = ThisCylinder.End0Pos_um;
+                ThisSphere.Radius_um = ThisCylinder.End0Radius_um;
+                Task->CustomSphere_ = ThisSphere;
+
+                Task->CustomThisComponent = 0;
+                Task->CustomTotalComponents = 1;
+
+                // Update Total Queue Length Statistics
+                _Sim->VSDAData_.TotalVoxelQueueLength_++;
+
+                // Now, enqueue it
+                _GeneratorPool->QueueWorkOperation(Task.get());
+
+                // Then move it to the list so we can keep track of it
+                Tasks.push_back(std::move(Task));
+
+                AddedShapes++;
 
                 // Now, if the cylinder is too big to fit properly, we're going to subdivide it
-                if (EstimatedSize_vox > SubdivisionThreshold_vox) {
+                //if (EstimatedSize_vox > SubdivisionThreshold_vox) {
 
                     // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
                     int NumSegments = ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox));
@@ -252,7 +280,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                     // skip the rest of this loop - we don't want to add the shape we just subdividied
                     continue;
 
-                }
+                //}
                 
             }
 
