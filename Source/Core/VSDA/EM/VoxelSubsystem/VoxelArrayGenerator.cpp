@@ -109,7 +109,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 
     // Preprocessing Stats
-    _Logger->Log("Rasterization Preprocessing " + std::to_string(_Sim->BSCompartments.size()) + " Shapes", 5);
+    _Logger->Log("Rasterization Preprocessing " + std::to_string(_Sim->BSCompartments.size()) + " Shapes", 4);
 
 
     // Build Bounding Boxes For All Compartments
@@ -314,6 +314,9 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         }
 
     }
+    _Logger->Log("Rasterization Preprocessing Added " + std::to_string(AddedShapes) + " Shapes", 4);
+
+
 
     // Now Do It For Receptors
     _Logger->Log("Receptor Preprocessing " + std::to_string( _Sim->Receptors.size()) + " Boxes", 5);
