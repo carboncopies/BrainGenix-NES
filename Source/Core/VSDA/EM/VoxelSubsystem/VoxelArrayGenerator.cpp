@@ -116,6 +116,8 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     int AddedShapes = 0;
     int TotalShapes = 0;
     size_t TotalSegments = 0;
+    size_t AddedSpheres = 0;
+    size_t AddedCylinders = 0;
     _Sim->VSDAData_.TotalVoxelQueueLength_ = 0;
     auto StartTime = std::chrono::high_resolution_clock::now();
     for (size_t i = 0; i < _Sim->BSCompartments.size(); i++) {
@@ -201,6 +203,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 }
                 
                 AddedShapes++;
+                AddedSpheres++;
 
 
                 // skip the rest of this loop - we don't want to add the shape we just subdividied
@@ -302,6 +305,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 }
                 
                 AddedShapes++;
+                AddedCylinders++;
 
 
                 // skip the rest of this loop - we don't want to add the shape we just subdividied
@@ -314,7 +318,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         }
 
     }
-    _Logger->Log("Rasterization Preprocessing Added " + std::to_string(AddedShapes) + " Shapes", 4);
+    _Logger->Log("Rasterization Preprocessing Added " + std::to_string(AddedShapes) + " Shapes (" + std::to_string(AddedSpheres) + " Spheres, " + std::to_string(AddedCylinders) + " Cylinders)", 5);
 
 
 
