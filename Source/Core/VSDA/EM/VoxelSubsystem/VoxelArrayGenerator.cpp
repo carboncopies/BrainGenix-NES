@@ -168,10 +168,6 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 int NumSegments = ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox));
                 // _Logger->Log("Detected Sphere of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
 
-                // If this compartment is smaller, skip over it
-                if (NumSegments < 1) {
-                    continue;
-                }
 
                 // now, create a task for each of these
                 // note that we assume the PointList has at least two segments in it, else it will crash
@@ -235,10 +231,6 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 // _Logger->Log("Detected Cylinder of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
                 // std::vector<Geometries::Vec3D> PointList = SubdivideLine(ThisCylinder.End0Pos_um, ThisCylinder.End1Pos_um, NumSegments);
 
-                // If this compartment is smaller, skip over it
-                if (NumSegments < 1) {
-                    continue;
-                }
 
                 // now, create a task for each of these
                 // note that we assume the PointList has at least two segments in it, else it will crash
@@ -275,7 +267,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                         TotalSegments++;
                     }
     
-                    // Now add the cyliner part
+                    // Now add the cylinder part
                     {
                         std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
                         Task->Array_ = _Array;
@@ -285,9 +277,6 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                         Task->WorldInfo_ = Info;
                         Task->Parameters_ = _Params;
 
-                        Task->CustomThisComponent = i;
-                        Task->CustomTotalComponents = NumSegments;
-
                         Task->CustomCylinder_.End0Pos_um = ThisCylinder.End0Pos_um;
                         Task->CustomCylinder_.End0Radius_um = ThisCylinder.End0Radius_um;
                         Task->CustomCylinder_.End1Pos_um = ThisCylinder.End1Pos_um;
@@ -295,7 +284,6 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
                         Task->CustomThisComponent = i;
                         Task->CustomTotalComponents = NumSegments;
-
 
 
                         // Update Total Queue Length Statistics
