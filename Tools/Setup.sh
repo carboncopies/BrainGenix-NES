@@ -72,6 +72,7 @@ $INSTALL_COMMAND
 # Update Submodules
 echo "Updating Submodules"
 git submodule update --init
+cd ../ThirdParty/NetmorphCMake && git pull origin main && cd ../../Tools
 
 # Bootstrap vcpkg
 echo "Setting Up vcpkg"
