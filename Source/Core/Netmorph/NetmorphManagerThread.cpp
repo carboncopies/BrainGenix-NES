@@ -496,10 +496,6 @@ int ExecuteNetmorphOperation(BG::Common::Logger::LoggingSystem* _Logger, Netmorp
     _Logger->Log("Starting Netmorph Simulation", 5);
     _Params->Result = NetmorphRun(&_Params->Progress_percent, _Params->ModelContent, _embedlog.release());
 
-    // Netmorph res(_embedlog.release(), &_Params->Progress_percent);
-    // res.embedded_run(_Params->ModelContent);
-    // _Params->Result = res;
-
     _Logger->Log("Netmorph Simulation Finished", 5);
 
     if (_Params->Result.Status) {
