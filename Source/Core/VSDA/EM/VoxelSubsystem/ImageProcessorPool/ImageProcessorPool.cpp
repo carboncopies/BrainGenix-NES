@@ -77,7 +77,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
     Logger_->Log("Started EMImageProcessorPool Thread " + std::to_string(_ThreadNumber), 0);
 
     // Initialize Metrics
-    int SamplesBeforeUpdate = 25;
+    int SamplesBeforeUpdate = 2500;
     std::vector<double> Times;
 
     std::mt19937 RandomGenerator(rand());

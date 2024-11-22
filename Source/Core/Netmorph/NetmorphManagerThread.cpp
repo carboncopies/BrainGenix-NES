@@ -12,8 +12,20 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <Include/Netmorph.h>
 #include <Include/Embeddable.h>
+#include <global.hh>
 #include <network.hh>
 #include <synapse_structure.hh>
+#include <fibre_structure.hh>
+//#include <diagnostic.hh>
+//#include <Sampled_Output.hh>
+//#include <Txt_Object.hh>
+//#include <prepost_structure.hh>
+//#include <synapse.hh>
+//#include <synapse_formation_model.hh>
+//#include <axon_direction_model.hh>
+//#include <environment_physics.hh>
+//#include <slice.hh>
+//#include <event.hh>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Netmorph/NetmorphManagerThread.h>
@@ -328,13 +340,13 @@ public:
         //        we could quite easily also store information about the
         //        parentage dependencies of compartments, wherer there are
         //        terminal segments (and growth cones), etc.
-        parsing_fs_type = dendrite_fs;
+        glb_fs->parsing_fs_type = dendrite_fs;
         NeuriteBuild dendrites_build(false, _Params, N);
         n->tree_op(dendrites_build);
         dendrites_build.logerrors();
 
         // 4. Build axons.
-        parsing_fs_type = axon_fs;
+        glb_fs->parsing_fs_type = axon_fs;
         NeuriteBuild axons_build(true, _Params, N);
         n->tree_op(axons_build);
         axons_build.logerrors();
@@ -467,21 +479,30 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
     return true;
 }
 // ---
-    
+
+Netmorph NetmorphRun(int* _StatusPercent, const std::string& _Modelfile, Netmorph2NESLogging* _embedlog) {
+
+  Netmorph res(_embedlog, _StatusPercent);
+  res.embedded_run(_Modelfile);
+
+  return res;
+}
 
 int ExecuteNetmorphOperation(BG::Common::Logger::LoggingSystem* _Logger, NetmorphParameters* _Params) {
 
     // Create link to redirect messaging from Netmorph to the NES Logger.
-    embedlog = std::make_unique<Nm2NESLogging>(*_Logger);
+    std::unique_ptr<Nm2NESLogging> _embedlog = std::make_unique<Nm2NESLogging>(*_Logger);
 
     _Logger->Log("Starting Netmorph Simulation", 5);
-    _Params->Result = Netmorph(&_Params->Progress_percent, _Params->ModelContent);
+    _Params->Result = NetmorphRun(&_Params->Progress_percent, _Params->ModelContent, _embedlog.release());
+
     _Logger->Log("Netmorph Simulation Finished", 5);
 
     if (_Params->Result.Status) {
         BuildFromNetmorphNetwork(*_Params);
     }
 
+    _Params->Result.postop();
     _Params->State = Netmorph_DONE;
 
     return 0;

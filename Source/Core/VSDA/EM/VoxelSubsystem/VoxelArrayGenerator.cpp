@@ -108,23 +108,45 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     Info.WorldRotationOffsetZ_rad = _Region.SampleRotationZ_rad;
 
 
+    // Preprocessing Stats
+    _Logger->Log("Rasterization Preprocessing " + std::to_string(_Sim->BSCompartments.size()) + " Shapes", 4);
+
+
     // Build Bounding Boxes For All Compartments
     int AddedShapes = 0;
     int TotalShapes = 0;
+    size_t TotalSegments = 0;
+    size_t AddedSpheres = 0;
+    size_t AddedCylinders = 0;
     _Sim->VSDAData_.TotalVoxelQueueLength_ = 0;
-    for (unsigned int i = 0; i < _Sim->BSCompartments.size(); i++) {
+    auto StartTime = std::chrono::high_resolution_clock::now();
+    for (size_t i = 0; i < _Sim->BSCompartments.size(); i++) {
 
         Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
 
         TotalShapes++;
 
-        // Create a working task for the generatorpool to complete
-        std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
-        Task->Array_ = _Array;
-        Task->GeometryCollection_ = &_Sim->Collection;
-        Task->ShapeID_ = ThisCompartment->ShapeID;
-        Task->WorldInfo_ = Info;
-        Task->Parameters_ = _Params;
+
+        // Processing Stats, every 500 ms
+        auto CurrentTime = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double, std::milli> Elapsed_ms = CurrentTime - StartTime;
+        if (Elapsed_ms.count() >= 500.0) {
+
+            std::string LogMsg = "Processed (" + std::to_string(TotalShapes) + "/" + std::to_string(_Sim->BSCompartments.size()) + ") TotalShapes, Added ";
+            LogMsg += std::to_string(AddedShapes) + " Shapes, With " + std::to_string(TotalSegments) + " Segments, In " + std::to_string(i) + " Iterations";
+            _Logger->Log(LogMsg, 1);
+
+            // Reset Start Timer
+            StartTime = CurrentTime;
+        }
+
+        // // Create a working task for the generatorpool to complete
+        // std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
+        // Task->Array_ = _Array;
+        // Task->GeometryCollection_ = &_Sim->Collection;
+        // Task->ShapeID_ = ThisCompartment->ShapeID;
+        // Task->WorldInfo_ = Info;
+        // Task->Parameters_ = _Params;
 
 
         // Now submit to render queue if it's inside the region, otherwise skip it
@@ -142,48 +164,52 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 uint64_t EstimatedSize_vox = pow(ThisSphere.Radius_um / _Params->VoxelResolution_um, 3);
 
                 // Now check if the sphere should be broken up
-                if (EstimatedSize_vox > SubdivisionThreshold_vox) {
+                // if (EstimatedSize_vox > SubdivisionThreshold_vox) {
 
-                    // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
-                    int NumSegments = ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox));
-                    _Logger->Log("Detected Sphere of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
-
-                    // now, create a task for each of these
-                    // note that we assume the PointList has at least two segments in it, else it will crash
-                    for (unsigned int i = 0; i < NumSegments; i++) {
-
-                        std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
-                        Task->Array_ = _Array;
-                        Task->GeometryCollection_ = &_Sim->Collection;
-                        Task->ShapeID_ = -1;
-                        Task->CustomShape_ = VoxelArrayGenerator::CUSTOM_SPHERE;
-                        Task->WorldInfo_ = Info;
-                        Task->Parameters_ = _Params;
-
-                        Task->CustomSphere_ = ThisSphere;
-
-                        Task->CustomThisComponent = i;
-                        Task->CustomTotalComponents = NumSegments;
-
-                        // Update Total Queue Length Statistics
-                        _Sim->VSDAData_.TotalVoxelQueueLength_++;
-
-                        // Now, enqueue it
-                        _GeneratorPool->QueueWorkOperation(Task.get());
-
-                        // Then move it to the list so we can keep track of it
-                        Tasks.push_back(std::move(Task));
+                // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
+                int NumSegments = ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox));
+                // _Logger->Log("Detected Sphere of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
 
 
-                    }
-                    
-                    AddedShapes++;
+                // now, create a task for each of these
+                // note that we assume the PointList has at least two segments in it, else it will crash
+                for (unsigned int i = 0; i < NumSegments; i++) {
 
+                    std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
+                    Task->Array_ = _Array;
+                    Task->GeometryCollection_ = &_Sim->Collection;
+                    Task->ShapeID_ = -1;
+                    Task->CustomShape_ = VoxelArrayGenerator::CUSTOM_SPHERE;
+                    Task->WorldInfo_ = Info;
+                    Task->Parameters_ = _Params;
 
-                    // skip the rest of this loop - we don't want to add the shape we just subdividied
-                    continue;
+                    Task->CustomSphere_ = ThisSphere;
+
+                    Task->CustomThisComponent = i;
+                    Task->CustomTotalComponents = NumSegments;
+
+                    // Update Total Queue Length Statistics
+                    _Sim->VSDAData_.TotalVoxelQueueLength_++;
+
+                    // Now, enqueue it
+                    _GeneratorPool->QueueWorkOperation(Task.get());
+
+                    // Then move it to the list so we can keep track of it
+                    Tasks.push_back(std::move(Task));
+
+                    TotalSegments++;
+
 
                 }
+                
+                AddedShapes++;
+                AddedSpheres++;
+
+
+                // skip the rest of this loop - we don't want to add the shape we just subdividied
+                continue;
+
+                // }
 
             } 
             else if (_Sim->Collection.IsCylinder(ThisCompartment->ShapeID)) {
@@ -200,18 +226,52 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 uint64_t EstimatedSize_vox = Volume_um3 / Voxel_um3;
                 
 
-                // Now, if the cylinder is too big to fit properly, we're going to subdivide it
-                if (EstimatedSize_vox > SubdivisionThreshold_vox) {
 
-                    // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
-                    int NumSegments = ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox));
-                    _Logger->Log("Detected Cylinder of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
-                    // std::vector<Geometries::Vec3D> PointList = SubdivideLine(ThisCylinder.End0Pos_um, ThisCylinder.End1Pos_um, NumSegments);
 
-                    // now, create a task for each of these
-                    // note that we assume the PointList has at least two segments in it, else it will crash
-                    for (unsigned int i = 0; i < NumSegments - 1; i++) {
 
+                // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
+                int NumSegments = ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox));
+                // _Logger->Log("Detected Cylinder of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
+                // std::vector<Geometries::Vec3D> PointList = SubdivideLine(ThisCylinder.End0Pos_um, ThisCylinder.End1Pos_um, NumSegments);
+
+
+                // now, create a task for each of these
+                // note that we assume the PointList has at least two segments in it, else it will crash
+                for (unsigned int i = 0; i < NumSegments; i++) {
+
+                    // Add sphere for cosmetic rendering issues
+                    {
+                        // We always add a sphere at the start of a cylinder for cosmetics.
+                        std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
+                        Task->Array_ = _Array;
+                        Task->GeometryCollection_ = &_Sim->Collection;
+                        Task->ShapeID_ = -1;
+                        Task->CustomShape_ = VoxelArrayGenerator::CUSTOM_SPHERE;
+                        Task->WorldInfo_ = Info;
+                        Task->Parameters_ = _Params;
+
+                        // We have to build a new sphere cause one doesnt exist yet, so we do it just in time
+                        Geometries::Sphere ThisSphere;
+                        ThisSphere.Center_um = ThisCylinder.End0Pos_um;
+                        ThisSphere.Radius_um = ThisCylinder.End0Radius_um;
+                        Task->CustomSphere_ = ThisSphere;
+
+                        Task->CustomThisComponent = i;
+                        Task->CustomTotalComponents = NumSegments;
+
+                        // Update Total Queue Length Statistics
+                        _Sim->VSDAData_.TotalVoxelQueueLength_++;
+
+                        // Now, enqueue it
+                        _GeneratorPool->QueueWorkOperation(Task.get());
+
+                        // Then move it to the list so we can keep track of it
+                        Tasks.push_back(std::move(Task));
+                        TotalSegments++;
+                    }
+    
+                    // Now add the cylinder part
+                    {
                         std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
                         Task->Array_ = _Array;
                         Task->GeometryCollection_ = &_Sim->Collection;
@@ -220,9 +280,6 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                         Task->WorldInfo_ = Info;
                         Task->Parameters_ = _Params;
 
-                        Task->CustomThisComponent = i;
-                        Task->CustomTotalComponents = NumSegments;
-
                         Task->CustomCylinder_.End0Pos_um = ThisCylinder.End0Pos_um;
                         Task->CustomCylinder_.End0Radius_um = ThisCylinder.End0Radius_um;
                         Task->CustomCylinder_.End1Pos_um = ThisCylinder.End1Pos_um;
@@ -230,7 +287,6 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
                         Task->CustomThisComponent = i;
                         Task->CustomTotalComponents = NumSegments;
-
 
 
                         // Update Total Queue Length Statistics
@@ -242,38 +298,33 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
                         // Then move it to the list so we can keep track of it
                         Tasks.push_back(std::move(Task));
-
-
+                        TotalSegments++;
                     }
-                    
-                    AddedShapes++;
 
-
-                    // skip the rest of this loop - we don't want to add the shape we just subdividied
-                    continue;
 
                 }
+                
+                AddedShapes++;
+                AddedCylinders++;
+
+
+                // skip the rest of this loop - we don't want to add the shape we just subdividied
+                continue;
+
                 
             }
 
 
-            AddedShapes++;
-
-
-            // Update Total Queue Length Statistics
-            _Sim->VSDAData_.TotalVoxelQueueLength_++;
-
-
-            _GeneratorPool->QueueWorkOperation(Task.get());
-
-            // Then move it to the list so we can keep track of it
-            Tasks.push_back(std::move(Task));
-
         }
 
     }
+    _Logger->Log("Rasterization Preprocessing Added " + std::to_string(AddedShapes) + " Shapes (" + std::to_string(AddedSpheres) + " Spheres, " + std::to_string(AddedCylinders) + " Cylinders)", 5);
+
+
 
     // Now Do It For Receptors
+    _Logger->Log("Receptor Preprocessing " + std::to_string( _Sim->Receptors.size()) + " Boxes", 5);
+
     for (unsigned int i = 0; i < _Sim->Receptors.size(); i++) {
 
         Connections::Receptor* ThisReceptor = _Sim->Receptors[i].get();
@@ -343,7 +394,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 
     // Add our border frame while we wait
-    VoxelArrayGenerator::CreateVoxelArrayBorderFrame(_Array);
+    // VoxelArrayGenerator::CreateVoxelArrayBorderFrame(_Array);
 
 
     // Okay, now we just go through the list of tasks and make sure they're all done
