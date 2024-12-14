@@ -60,6 +60,7 @@ public:
         logger.Log(msg, 3);
     }
     virtual void progress(const std::string & msg) {
+        std::cout << "DEBUG Nm2NESLogging::progress: " << msg << '\n';
         if (bufferedoutput.log_progress) bufferedoutput.LogProgress(msg);
         logger.Log(msg, 5);
     }
