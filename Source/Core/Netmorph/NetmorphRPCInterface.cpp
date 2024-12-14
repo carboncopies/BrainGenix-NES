@@ -29,6 +29,8 @@ NetmorphRPCInterface::NetmorphRPCInterface(BG::Common::Logger::LoggingSystem* _L
     _RPCManager->AddRoute("Netmorph/StartSimulation",  std::bind(&NetmorphRPCInterface::NetmorphStartSimulation, this, std::placeholders::_1));
     _RPCManager->AddRoute("Netmorph/GetStatus",        std::bind(&NetmorphRPCInterface::NetmorphGetStatus, this, std::placeholders::_1));
     _RPCManager->AddRoute("Netmorph/GetFile",          std::bind(&NetmorphRPCInterface::NetmorphGetFile, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Netmorph/SetLogBuffers",    std::bind(&NetmorphRPCInterface::NetmorphSetLogBuffers, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Netmorph/GetLogBuffers",    std::bind(&NetmorphRPCInterface::NetmorphGetLogBuffers, this, std::placeholders::_1));
 
 }
 
@@ -182,6 +184,76 @@ std::string NetmorphRPCInterface::NetmorphGetFile(std::string _JSONRequest) {
 
     return Handle.StringResponse("FileData", Base64Data); // ok, with data
 
+}
+
+/**
+ * Expects _JSONRequest:
+ * {
+ *   "SimulationID": <SimID>,
+ *   "LogBuffers": "error,warning,report,progress" (or some subset of these)
+ * }
+ * 
+ * Returns:
+ * {
+ *   "StatusCode": <StatusCode>
+ *   "NetmorphStatus": <StatusCode>
+ * }
+ */
+std::string NetmorphRPCInterface::NetmorphSetLogBuffers(std::string _JSONRequest) {
+    API::HandlerData Handle(_JSONRequest, Logger_, "Netmorph/SetLogBuffers", Simulations_, true);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    Handle.GetParString("Buffers", Handle.Sim()->NetmorphParams.LogBuffers);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Return Result ID
+    int Status = 0;
+    return Handle.ResponseWithID("NetmorphStatus", Status);
+}
+
+/**
+ * Expects _JSONRequest:
+ * {
+ *   "SimulationID": <SimID>
+ * }
+ * 
+ * Returns:
+ * {
+ *   "StatusCode": <StatusCode>
+ *   "LogBuffers": { "error": "...", etc }
+ * }
+ */
+std::string NetmorphRPCInterface::NetmorphGetLogBuffers(std::string _JSONRequest) {
+    API::HandlerData Handle(_JSONRequest, Logger_, "Netmorph/GetLogBuffers", Simulations_, true);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    BufferNetmorphOutput* BufferedOutput = Handle.Sim()->NetmorphParams.Result.BufferedOutput;
+    nlohmann::json logbuffers;
+    if (BufferedOutput->log_error) {
+        logbuffers["error"] = BufferedOutput->error_log;
+    }
+    if (BufferedOutput->log_warning) {
+        logbuffers["warning"] = BufferedOutput->warning_log;
+    }
+    if (BufferedOutput->log_report) {
+        logbuffers["report"] = BufferedOutput->report_log;
+    }
+    if (BufferedOutput->log_progress) {
+        logbuffers["progress"] = BufferedOutput->progress_log;
+    }
+
+    // Build Response
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0;
+    ResponseJSON["LogBuffers"] = logbuffers;
+    return ResponseJSON.dump();
 }
 
 }; // Close Namespace Simulator

@@ -43,18 +43,24 @@ class Nm2NESLogging: public Netmorph2NESLogging {
 protected:
     BG::Common::Logger::LoggingSystem& logger;
 public:
+    BufferNetmorphOutput bufferedoutput;
+public:
     Nm2NESLogging(BG::Common::Logger::LoggingSystem& _logger): logger(_logger) {}
 
     virtual void error(const std::string & msg) {
+        if (bufferedoutput.log_error) bufferedoutput.LogError(msg);
         logger.Log(msg, 7);
     }
     virtual void warning(const std::string & msg) {
+        if (bufferedoutput.log_warning) bufferedoutput.LogWarning(msg);
         logger.Log(msg, 6);
     }
     virtual void report(const std::string & msg) {
+        if (bufferedoutput.log_report) bufferedoutput.LogReport(msg);
         logger.Log(msg, 3);
     }
     virtual void progress(const std::string & msg) {
+        if (bufferedoutput.log_progress) bufferedoutput.LogProgress(msg);
         logger.Log(msg, 5);
     }
 };
@@ -492,6 +498,8 @@ int ExecuteNetmorphOperation(BG::Common::Logger::LoggingSystem* _Logger, Netmorp
 
     // Create link to redirect messaging from Netmorph to the NES Logger.
     std::unique_ptr<Nm2NESLogging> _embedlog = std::make_unique<Nm2NESLogging>(*_Logger);
+
+    _embedlog->bufferedoutput.SetLogBuffers(_Params->LogBuffers);
 
     _Logger->Log("Starting Netmorph Simulation", 5);
     _Params->Result = NetmorphRun(&_Params->Progress_percent, _Params->ModelContent, _embedlog.release());
