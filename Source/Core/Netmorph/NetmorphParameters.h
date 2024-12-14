@@ -31,7 +31,6 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <cstdint>
 #include <vector>
-#include <iostream>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <vsg/maths/vec3.h>
@@ -69,7 +68,6 @@ public:
     std::string progress_log;
 public:
     void SetLogBuffers(const std::string& _logbuffers) {
-        std::cout << "DEBUG SetLogBuffers: " << _logbuffers << '\n';
         log_error = _logbuffers.find("error") != std::string::npos;
         log_warning = _logbuffers.find("warning") != std::string::npos;
         log_report = _logbuffers.find("report") != std::string::npos;
@@ -85,7 +83,6 @@ public:
         report_log += msg;
     }
     void LogProgress(const std::string& msg) {
-        std::cout << "DEBUG LogProgress: " << msg << '\n';
         progress_log += msg;
     }
 };
