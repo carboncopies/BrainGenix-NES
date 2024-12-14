@@ -104,6 +104,7 @@ struct NetmorphParameters {
     std::string ModelContent; /**String containing the Netmorph model.*/
 
     std::string LogBuffers; // A string such as "error,warning,report,progress".
+    BufferNetmorphOutput* BufferedOutput = nullptr; /**Use this to retrieve buffered Netmorph logging output.*/
 
     int Progress_percent; /**Netmorph status percent*/
 

@@ -234,7 +234,7 @@ std::string NetmorphRPCInterface::NetmorphGetLogBuffers(std::string _JSONRequest
         return Handle.ErrResponse();
     }
 
-    BufferNetmorphOutput* BufferedOutput = Handle.Sim()->NetmorphParams.Result.BufferedOutput;
+    BufferNetmorphOutput* BufferedOutput = Handle.Sim()->NetmorphParams.BufferedOutput;
     nlohmann::json logbuffers;
     if (BufferedOutput->log_error) {
         logbuffers["error"] = BufferedOutput->error_log;
