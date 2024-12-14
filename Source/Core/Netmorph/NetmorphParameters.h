@@ -31,6 +31,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <cstdint>
 #include <vector>
+#include <iostream>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <vsg/maths/vec3.h>
@@ -83,6 +84,7 @@ public:
         report_log += msg;
     }
     void LogProgress(const std::string& msg) {
+        std::cout << "DEBUG LogProgress: " << msg << '\n';
         progress_log += msg;
     }
 };
