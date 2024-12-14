@@ -206,7 +206,7 @@ std::string NetmorphRPCInterface::NetmorphSetLogBuffers(std::string _JSONRequest
         return Handle.ErrResponse();
     }
 
-    Handle.GetParString("Buffers", Handle.Sim()->NetmorphParams.LogBuffers);
+    Handle.GetParString("LogBuffers", Handle.Sim()->NetmorphParams.LogBuffers);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
