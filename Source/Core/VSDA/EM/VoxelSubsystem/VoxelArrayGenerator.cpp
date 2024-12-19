@@ -258,24 +258,24 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                         Task->WorldInfo_ = Info;
                         Task->Parameters_ = _Params;
 
-                        // // We have to build a new sphere cause one doesnt exist yet, so we do it just in time
-                        // Geometries::Sphere ThisSphere;
-                        // ThisSphere.Center_um = ThisCylinder.End0Pos_um;
-                        // ThisSphere.Radius_um = ThisCylinder.End0Radius_um;
-                        // Task->CustomSphere_ = ThisSphere;
+                        // We have to build a new sphere cause one doesnt exist yet, so we do it just in time
+                        Geometries::Sphere ThisSphere;
+                        ThisSphere.Center_um = ThisCylinder.End0Pos_um;
+                        ThisSphere.Radius_um = ThisCylinder.End0Radius_um;
+                        Task->CustomSphere_ = ThisSphere;
 
-                        // Task->CustomThisComponent = i;
-                        // Task->CustomTotalComponents = NumSegments;
+                        Task->CustomThisComponent = i;
+                        Task->CustomTotalComponents = NumSegments;
 
-                        // // Update Total Queue Length Statistics
-                        // _Sim->VSDAData_.TotalVoxelQueueLength_++;
+                        // Update Total Queue Length Statistics
+                        _Sim->VSDAData_.TotalVoxelQueueLength_++;
 
-                        // // Now, enqueue it
-                        // _GeneratorPool->QueueWorkOperation(Task.get());
+                        // Now, enqueue it
+                        _GeneratorPool->QueueWorkOperation(Task.get());
 
-                        // // Then move it to the list so we can keep track of it
-                        // Tasks.push_back(std::move(Task));
-                        // TotalSegments++;
+                        // Then move it to the list so we can keep track of it
+                        Tasks.push_back(std::move(Task));
+                        TotalSegments++;
                     }
     
                     // Now add the cylinder part

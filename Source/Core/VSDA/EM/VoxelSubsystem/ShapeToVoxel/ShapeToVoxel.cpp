@@ -151,7 +151,7 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
                         float DistanceToEdge = _Shape->Radius_um - Geometries::Vec3D(X, Y, Z).Distance(_Shape->Center_um);
                         FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
                     }
-                    _Array->SetVoxelIfNotDarker(X, Y, Z, FinalVoxelValue);
+                    _Array->SetVoxelAtIndex(X, Y, Z, FinalVoxelValue);
                 }
             }
         }
