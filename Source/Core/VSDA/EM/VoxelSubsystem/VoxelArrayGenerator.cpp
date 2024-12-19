@@ -150,7 +150,11 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 
         // Now submit to render queue if it's inside the region, otherwise skip it
-        if (true || IsShapeInsideRegion(_Sim, ThisCompartment->ShapeID, RegionBoundingBox, Info)) {
+        if (i % 1000 == 0) {
+            std::cout<<RegionBoundingBox.ToString()<<std::endl;
+        }
+
+        if (IsShapeInsideRegion(_Sim, ThisCompartment->ShapeID, RegionBoundingBox, Info)) {
             
             
             // Check if we need to render this in parts
@@ -162,6 +166,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 // Calculate Size in voxels of the shape
                 Geometries::Sphere & ThisSphere = _Sim->Collection.GetSphere(ThisCompartment->ShapeID);
                 uint64_t EstimatedSize_vox = pow(ThisSphere.Radius_um / _Params->VoxelResolution_um, 3);
+            std::cout<<"Soma Location: "<<_Sim->Collection.GetSphere(ThisCompartment->ShapeID).Center_um.str()<<std::endl;
 
                 // Now check if the sphere should be broken up
                 // if (EstimatedSize_vox > SubdivisionThreshold_vox) {
@@ -227,7 +232,10 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 
 
 
-
+                if (i % 1000 == 0) {
+                    std::cout<<RegionBoundingBox.ToString()<<std::endl;
+                    std::cout<<ThisCylinder.End0Pos_um.str()<<ThisCylinder.End1Pos_um.str()<<std::endl;
+                }
 
                 // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
                 int NumSegments = ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox));
@@ -250,24 +258,24 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                         Task->WorldInfo_ = Info;
                         Task->Parameters_ = _Params;
 
-                        // We have to build a new sphere cause one doesnt exist yet, so we do it just in time
-                        Geometries::Sphere ThisSphere;
-                        ThisSphere.Center_um = ThisCylinder.End0Pos_um;
-                        ThisSphere.Radius_um = ThisCylinder.End0Radius_um;
-                        Task->CustomSphere_ = ThisSphere;
+                        // // We have to build a new sphere cause one doesnt exist yet, so we do it just in time
+                        // Geometries::Sphere ThisSphere;
+                        // ThisSphere.Center_um = ThisCylinder.End0Pos_um;
+                        // ThisSphere.Radius_um = ThisCylinder.End0Radius_um;
+                        // Task->CustomSphere_ = ThisSphere;
 
-                        Task->CustomThisComponent = i;
-                        Task->CustomTotalComponents = NumSegments;
+                        // Task->CustomThisComponent = i;
+                        // Task->CustomTotalComponents = NumSegments;
 
-                        // Update Total Queue Length Statistics
-                        _Sim->VSDAData_.TotalVoxelQueueLength_++;
+                        // // Update Total Queue Length Statistics
+                        // _Sim->VSDAData_.TotalVoxelQueueLength_++;
 
-                        // Now, enqueue it
-                        _GeneratorPool->QueueWorkOperation(Task.get());
+                        // // Now, enqueue it
+                        // _GeneratorPool->QueueWorkOperation(Task.get());
 
-                        // Then move it to the list so we can keep track of it
-                        Tasks.push_back(std::move(Task));
-                        TotalSegments++;
+                        // // Then move it to the list so we can keep track of it
+                        // Tasks.push_back(std::move(Task));
+                        // TotalSegments++;
                     }
     
                     // Now add the cylinder part
@@ -405,7 +413,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         _Sim->VSDAData_.VoxelQueueLength_ = _GeneratorPool->GetQueueSize();
 
         // Wait for a bit
-        std::this_thread::sleep_for(std::chrono::milliseconds(250));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
         // Log Queue Size
         _Logger->Log("EMArrayGeneratorPool Queue Length '" + std::to_string((int)_GeneratorPool->GetQueueSize()) + "'", 1);
