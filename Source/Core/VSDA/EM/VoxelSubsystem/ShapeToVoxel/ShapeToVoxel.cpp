@@ -146,7 +146,7 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
             for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _WorldInfo.VoxelScale_um) {
                 if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z), _WorldInfo)) {
                     VoxelType FinalVoxelValue = GenerateVoxelColor(X, Y, Z, _Params, _Generator);
-
+                    FinalVoxelValue.Intensity_ = 0;
                     if (_Params->RenderBorders) {
                         float DistanceToEdge = _Shape->Radius_um - Geometries::Vec3D(X, Y, Z).Distance(_Shape->Center_um);
                         FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);

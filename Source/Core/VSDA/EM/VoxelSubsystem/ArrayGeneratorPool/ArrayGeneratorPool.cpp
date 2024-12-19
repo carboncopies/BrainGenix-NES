@@ -49,7 +49,7 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
     noise::module::Perlin PerlinGenerator;
 
     // Initialize Metrics
-    int SamplesBeforeUpdate = 500;
+    int SamplesBeforeUpdate = 10000;
     std::vector<double> Times;
 
     // Run until thread exit is requested - that is, this is set to false

@@ -33,9 +33,9 @@ VoxelArray::VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, BoundingBox _
 
     // Malloc array
     DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
-    float SizeMiB = (sizeof(VoxelType) * DataMaxLength_) / 1024. / 1024.;
+    float SizeMiB = (sizeof(std::atomic<VoxelType>) * DataMaxLength_) / 1024. / 1024.;
     _Logger->Log("Allocating Array Of Size " + std::to_string(SizeMiB) + "MiB In System RAM", 2);
-    Data_ = std::make_unique<VoxelType[]>(DataMaxLength_);
+    Data_ = std::make_unique<std::atomic<VoxelType>[]>(DataMaxLength_);
 
     // We don't need to clear this because make unique does it for us
     // Reset the array so we don't get a bunch of crap in it
@@ -72,8 +72,8 @@ VoxelArray::VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, ScanRegion _R
     DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
     float SizeMiB = (sizeof(VoxelType) * DataMaxLength_) / 1024. / 1024.;
     _Logger->Log("Allocating Array Of Size " + std::to_string(SizeMiB) + "MiB In System RAM", 2);
-    VoxelType* VoxelArrayPtr = (VoxelType*)std::malloc(DataMaxLength_ * sizeof(VoxelType));
-    Data_ = std::unique_ptr<VoxelType[]>(VoxelArrayPtr);
+    std::atomic<VoxelType>* VoxelArrayPtr = (std::atomic<VoxelType>*)std::malloc(DataMaxLength_ * sizeof(std::atomic<VoxelType>));
+    Data_ = std::unique_ptr<std::atomic<VoxelType>[]>(VoxelArrayPtr);
 
     ClearArrayThreaded(std::thread::hardware_concurrency());
     // make unique already clears memory, so we're doing it twice.
@@ -116,7 +116,7 @@ void VoxelArray::ClearArrayThreaded(int _NumThreads) {
         // VoxelType* ThreadStartAddress = StartAddress + (ElementStepSize * i);
         uint64_t ThreadStartIndex = (ElementStepSize * i);
         uint64_t ThreadEndIndex = (ElementStepSize * i) + ElementStepSize;
-        VoxelType* Array = Data_.get();
+        std::atomic<VoxelType>* Array = Data_.get();
 
         AsyncTasks.push_back(std::async(std::launch::async, [Array, ThreadStartIndex, ThreadEndIndex, Empty]{
             for (uint64_t i = ThreadStartIndex; i < ThreadEndIndex; i++) {
