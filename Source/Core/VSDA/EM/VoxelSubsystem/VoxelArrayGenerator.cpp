@@ -118,6 +118,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     size_t TotalSegments = 0;
     size_t AddedSpheres = 0;
     size_t AddedCylinders = 0;
+    size_t AddedCylinderEnds = 0;
     _Sim->VSDAData_.TotalVoxelQueueLength_ = 0;
     auto StartTime = std::chrono::high_resolution_clock::now();
     for (size_t i = 0; i < _Sim->BSCompartments.size(); i++) {
@@ -149,10 +150,10 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         // Task->Parameters_ = _Params;
 
 
-        // Now submit to render queue if it's inside the region, otherwise skip it
-        if (i % 1000 == 0) {
-            std::cout<<RegionBoundingBox.ToString()<<std::endl;
-        }
+        // // Now submit to render queue if it's inside the region, otherwise skip it
+        // if (i % 1000 == 0) {
+        //     std::cout<<RegionBoundingBox.ToString()<<std::endl;
+        // }
 
         if (IsShapeInsideRegion(_Sim, ThisCompartment->ShapeID, RegionBoundingBox, Info)) {
             
@@ -166,7 +167,6 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 // Calculate Size in voxels of the shape
                 Geometries::Sphere & ThisSphere = _Sim->Collection.GetSphere(ThisCompartment->ShapeID);
                 uint64_t EstimatedSize_vox = pow(ThisSphere.Radius_um / _Params->VoxelResolution_um, 3);
-            std::cout<<"Soma Location: "<<_Sim->Collection.GetSphere(ThisCompartment->ShapeID).Center_um.str()<<std::endl;
 
                 // Now check if the sphere should be broken up
                 // if (EstimatedSize_vox > SubdivisionThreshold_vox) {
@@ -232,10 +232,10 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 
 
 
-                if (i % 1000 == 0) {
-                    std::cout<<RegionBoundingBox.ToString()<<std::endl;
-                    std::cout<<ThisCylinder.End0Pos_um.str()<<ThisCylinder.End1Pos_um.str()<<std::endl;
-                }
+                // if (i % 1000 == 0) {
+                //     std::cout<<RegionBoundingBox.ToString()<<std::endl;
+                //     std::cout<<ThisCylinder.End0Pos_um.str()<<ThisCylinder.End1Pos_um.str()<<std::endl;
+                // }
 
                 // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
                 int NumSegments = ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox));
@@ -276,6 +276,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                         // Then move it to the list so we can keep track of it
                         Tasks.push_back(std::move(Task));
                         TotalSegments++;
+
                     }
     
                     // Now add the cylinder part
@@ -313,6 +314,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 }
                 
                 AddedShapes++;
+                AddedCylinderEnds++;
                 AddedCylinders++;
 
 
@@ -320,6 +322,8 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 continue;
 
                 
+            } else {
+                _Logger->Log("Error, Unsupported Shape Added To GeometryCollection, Unable To Rasterize", 9);
             }
 
 
@@ -327,7 +331,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
     }
     _Logger->Log("Rasterization Preprocessing Added " + std::to_string(AddedShapes) + " Shapes (" + std::to_string(AddedSpheres) + " Spheres, " + std::to_string(AddedCylinders) + " Cylinders)", 5);
-
+    _Logger->Log("Added " + std::to_string(AddedCylinderEnds) + " Spheres To Cylinder Ends", 5);
 
 
     // Now Do It For Receptors
