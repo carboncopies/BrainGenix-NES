@@ -73,7 +73,7 @@ bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, VSDA::WorldInfo& _WorldI
  * @return true 
  * @return false 
  */
-bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);
+// bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);
 bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);
 
 /**
@@ -86,7 +86,7 @@ bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Ge
  * @return true 
  * @return false 
  */
-bool FillSphere(VoxelArray* _Array, Geometries::Sphere* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);
+// bool FillSphere(VoxelArray* _Array, Geometries::Sphere* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);
 bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geometries::Sphere* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);
 
 //bool FillLine(VoxelArray* _Array, int P1X, int P1Y, int P1Thickness, int P2X, int P2Y, int P2Thickness, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);

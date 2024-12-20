@@ -108,36 +108,12 @@ VoxelType CalculateBorderColor(VoxelType _Source, float _DistanceFromEdge, Micro
 
 }
 
-bool FillSphere(VoxelArray* _Array, Geometries::Sphere* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
-    assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
-    assert(_Params != nullptr);
-    assert(_Generator != nullptr);
-
-    BoundingBox BB = _Shape->GetBoundingBox(_WorldInfo);
-
-    for (float X = BB.bb_point1[0]; X < BB.bb_point2[0]; X+= _WorldInfo.VoxelScale_um) {
-        for (float Y = BB.bb_point1[1]; Y < BB.bb_point2[1]; Y+= _WorldInfo.VoxelScale_um) {
-            for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _WorldInfo.VoxelScale_um) {
-                if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z), _WorldInfo)) {
-                    VoxelType FinalVoxelValue = GenerateVoxelColor(X, Y, Z, _Params, _Generator);
-                    if (_Params->RenderBorders) {
-                        float DistanceToEdge = _Shape->Radius_um - Geometries::Vec3D(X, Y, Z).Distance(_Shape->Center_um);
-                        FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
-                    }
-                    _Array->SetVoxelIfNotDarker(X, Y, Z, FinalVoxelValue);
-                }
-            }
-        }
-    }
-
-    return true;
-
-}
 
 bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geometries::Sphere*_Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
     assert(_Params != nullptr);
     assert(_Generator != nullptr);
+
 
     BoundingBox BB = _Shape->GetBoundingBox(_WorldInfo);
 
@@ -146,12 +122,11 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
             for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _WorldInfo.VoxelScale_um) {
                 if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z), _WorldInfo)) {
                     VoxelType FinalVoxelValue = GenerateVoxelColor(X, Y, Z, _Params, _Generator);
-
                     if (_Params->RenderBorders) {
                         float DistanceToEdge = _Shape->Radius_um - Geometries::Vec3D(X, Y, Z).Distance(_Shape->Center_um);
                         FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
                     }
-                    _Array->SetVoxelIfNotDarker(X, Y, Z, FinalVoxelValue);
+                    _Array->SetVoxelAtPosition(X, Y, Z, FinalVoxelValue);
                 }
             }
         }
@@ -199,165 +174,6 @@ int isPointInCylinder(const Geometries::Vec3D& P1, const Geometries::Vec3D& P2, 
     return 3;
 }
 
-// THIS ONE IS RIDDLED WITH BUGS! USE FillCylinderPart()!!!!!
-// Note that _WorldInfo.VoxelScale_um == _Params->VoxelResolution_um.
-// bool FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
-//     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
-//     assert(_Params != nullptr);
-//     assert(_Generator != nullptr);
-
-//     // Rotate The Endpoints Around World Origin By Amount Set In World Info
-//     //   This deals with the rotation of the whole model
-//     Geometries::Vec3D RotatedEnd0_um = _Shape->End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
-//     Geometries::Vec3D RotatedEnd1_um = _Shape->End1Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
-
-//     /**
-//      * New method:
-//      * 1) Walk along integer Z steps of the 3D Voxel space (layers).
-//      * 2) For each Z step, we know where that is in 3D float space.
-//      * 3) We know a point in 3D float space (x,y,z) on the cylinder mid-line.
-//      * 4) We find a 2D bounding box around that point expressed in Voxel space X,Y voxels.
-//      * 5) We test each point in that voxel space to see if it is in the cylinder.
-//      */
-//     // Calculate all the points and stuff them into the array
-
-//     // Firstly calculate the Z height of the start and end points on the cylinder
-
-//     Geometries::Vec3D DifferenceVector = RotatedEnd1_um - RotatedEnd0_um;
-//     Geometries::Vec3D UnitVector = DifferenceVector / RotatedEnd1_um.Distance(RotatedEnd0_um);
-//     Geometries::Vec3D ScaledUnitVector_um = UnitVector * _Params->VoxelResolution_um;
-
-//     float MaxRadius_um = std::max(_Shape->End0Radius_um, _Shape->End1Radius_um);
-//     Geometries::Vec3D Offset_um = UnitVector * MaxRadius_um;
-
-//     Geometries::Vec3D ShiftedEnd0_um = RotatedEnd0_um - Offset_um;
-//     Geometries::Vec3D ShiftedEnd1_um = RotatedEnd1_um + Offset_um;
-
-//     int StartZ = _Array->GetZIndexAtPosition(std::min(ShiftedEnd0_um.z, ShiftedEnd1_um.z));
-//     int EndZ = _Array->GetZIndexAtPosition(std::max(ShiftedEnd0_um.z, RotatedEnd1_um.z));
-
-    
-//     // Now enumerate the entire cylinder one z layer at a time, and test voxels in a square (of size r) at that layer
-//     // Notice that this loop does not count from 0 but from StartZ! Beware of this when mapping back to world coordinates!
-//     for (int CurrentZIndex = StartZ; CurrentZIndex < EndZ; CurrentZIndex++) {
-
-//         Geometries::Vec3D CylinderMidpointAtCurrentLayer_um = ShiftedEnd0_um + (ScaledUnitVector_um * (CurrentZIndex - StartZ ));
-
-//         // Now create a square at the midpoint here, and then test all points in that square
-//         int XTestSpaceMin = _Array->GetXIndexAtPosition(CylinderMidpointAtCurrentLayer_um.x - MaxRadius_um);
-//         int XTestSpaceMax = _Array->GetXIndexAtPosition(CylinderMidpointAtCurrentLayer_um.x + MaxRadius_um);
-//         int YTestSpaceMin = _Array->GetYIndexAtPosition(CylinderMidpointAtCurrentLayer_um.y - MaxRadius_um);
-//         int YTestSpaceMax = _Array->GetYIndexAtPosition(CylinderMidpointAtCurrentLayer_um.y + MaxRadius_um);
-
-//         for (int CurrentYIndex = YTestSpaceMin; CurrentYIndex <= YTestSpaceMax; CurrentYIndex++) {
-//             for (int CurrentXIndex = XTestSpaceMin; CurrentXIndex <= XTestSpaceMax; CurrentXIndex++) {
-
-
-//                 Geometries::Vec3D CurrentWorldSpacePosition_um = _Array->GetPositionAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex);
-
-//                 int res = isPointInCylinder(RotatedEnd0_um, RotatedEnd1_um, _Shape->End0Radius_um, _Shape->End1Radius_um, CurrentWorldSpacePosition_um);
-//                 if (res==0) {
-
-
-//                     VoxelType FinalVoxelValue = GenerateVoxelColor(CurrentWorldSpacePosition_um.x, CurrentWorldSpacePosition_um.y, CurrentWorldSpacePosition_um.z, _Params, _Generator);
-//                     if (_Params->RenderBorders) {
-//                         float DistanceToEdge = CurrentWorldSpacePosition_um.Distance(CylinderMidpointAtCurrentLayer_um);
-//                         FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
-//                     }
-
-//                     _Array->SetVoxelAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex, FinalVoxelValue);
-
-//                 }
-
-//             }
-//         }
-
-
-//     }
-
-//     // if (tot<1) {
-//     //     std::cout << "StartZ == EndZ!\n";
-//     // } else {
-//     //     std::cout << "tot: " << tot << " within: " << within << " above: " << above << " below: " << below << " toofar: " << toofar << '\n';
-//     // }
-
-//     return true;
-
-// }
-
-/**
- * This is the older version. It would be interesting to do an actual head-to-head speed comparison between old and new versions.
- */
-bool TEST_FillCylinder(VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
-    assert(_Array != nullptr);
-    assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
-
-    // Rotate The Endpoints Around World Origin By Amount Set In World Info
-    //   This deals with the rotation of the whole model
-    Geometries::Vec3D RotatedEnd0 = _Cylinder->End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
-    Geometries::Vec3D RotatedEnd1 = _Cylinder->End1Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
-
-    // Get rotation angles and length (r, theta, phi).
-    //   Moving the midline of the cylinder to (0,0,0) then switching to spherical coords
-    //   allows us to find angles to rotate around Y and Z axes.
-    Geometries::Vec3D diff = RotatedEnd1 - RotatedEnd0;
-    Geometries::Vec3D diff_spherical_coords = diff.cartesianToSpherical();
-    float rot_y = diff_spherical_coords.theta();
-    float rot_z = diff_spherical_coords.phi();
-
-    float cyl_length = diff_spherical_coords.r();
-
-    // Use this to know the extent to which to gradually change the radius as you move along the length of the cylinder.
-    float radius_difference = _Cylinder->End1Radius_um - _Cylinder->End0Radius_um;
-    float midpoint_radius_um = _Cylinder->End0Radius_um + (0.5*radius_difference);
-
-    // Stepping at half voxel size ensures finding voxels without gaps.
-    float stepsize = 0.5*_WorldInfo.VoxelScale_um;
-
-    Geometries::Vec3D spherical_halfdist_v(cyl_length/2.0, rot_y, rot_z); // mid point vector (from 0,0,0)
-    Geometries::Vec3D cartesian_halfdist_v = spherical_halfdist_v.sphericalToCartesian();
-    Geometries::Vec3D translate = RotatedEnd0 + cartesian_halfdist_v; // actual mid point
-
-
-    // Calculate all the points and stuff them into the array
-    for (float z = -0.5*cyl_length; z <= 0.5*cyl_length; z += stepsize) {
-        // 2. At each step, get points in a disk around the axis at the right radius.
-        float d_ratio = z / cyl_length; // This goes from -0.5 to 0.5 as we move along the length of the cylinder.
-        float radius_at_z = midpoint_radius_um + d_ratio*radius_difference; // Radius at this position on the axis.
-
-        // Next disc center point along cylinder midline.
-        Geometries::Vec3D RotatedPoint = RotatedVec(0.0, 0.0, z, rot_y, rot_z, translate);
-
-        // Set voxel for midline point.
-        VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
-        _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
-
-        // Find points on circles around the midline up to the radius at this point along the cylinder.
-        for (float r = stepsize; r <= radius_at_z; r += stepsize) {
-            // Circumpherence is 2*pi*r, number of voxels that fit along the circumpherence is 2*pi*r/stepsize.
-            // So, in a whole 2*pi rotation, for each step the angle change is 2*pi/(2*pi*r/stepsize) = stepsize/r.
-            float radians_per_step = stepsize / r;
-            for (float theta = 0; theta < 2.0*M_PI; theta += radians_per_step) {
-
-                // Next point on circumpherence at radius r.
-                float y = r*std::cos(theta);
-                float x = r*std::sin(theta);
-                Geometries::Vec3D RotatedPoint = RotatedVec(x, y, z, rot_y, rot_z, translate);
-
-                // Set voxel at the point.
-                VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
-                if (_Params->RenderBorders) {
-                    float DistanceToEdge = radius_at_z - r;
-                    FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
-                }
-                _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
-            }
-        }
-
-    }
-
-    return true;
-}
 
 bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geometries::Cylinder* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
@@ -430,7 +246,7 @@ bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Ge
                             float DistanceToCenter_um = CurrentWorldSpacePosition_um.Distance(CylinderMidpointAtCurrentLayer_um);
                             FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, CurrentRadius_um - DistanceToCenter_um, _Params);
                         }
-
+    
                         _Array->SetVoxelAtIndex(CurrentXIndex, CurrentYIndex, CurrentZIndex, FinalVoxelValue);
 
                     }

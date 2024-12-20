@@ -35,6 +35,7 @@
 #include <inttypes.h>
 #include <math.h>
 #include <memory>
+#include <atomic>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -76,7 +77,7 @@ class VoxelArray {
 
 private:
 
-    std::unique_ptr<VoxelType[]> Data_; /**Big blob of memory that holds all the voxels*/
+    std::unique_ptr<std::atomic<VoxelType>[]> Data_; /**Big blob of memory that holds all the voxels*/
     uint64_t DataMaxLength_ = 0;
 
     uint64_t SizeX_; /**Number of voxels in x dimension*/

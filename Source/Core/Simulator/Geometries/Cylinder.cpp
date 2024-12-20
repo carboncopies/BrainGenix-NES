@@ -326,22 +326,36 @@ bool CylinderBase::IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInf
     return false;
 }
 
-bool CylinderBase::IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) {
-    // We're going to make this a really conservative bounding box
-    // This bounding box probably extends past what is reasonable
-    BoundingBox MyBB;
 
+bool CylinderBase::IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) {
+    // Rotate the cylinder's endpoints based on the world rotation offsets
     Geometries::Vec3D End0Rot = End0Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
     Geometries::Vec3D End1Rot = End1Pos_um.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
-    MyBB.bb_point1[0] = End0Rot.x - End0Radius_um;
-    MyBB.bb_point1[1] = End0Rot.y - End0Radius_um;
-    MyBB.bb_point1[2] = End0Rot.z - End0Radius_um;
-    MyBB.bb_point2[0] = End1Rot.x + End1Radius_um;
-    MyBB.bb_point2[1] = End1Rot.y + End1Radius_um;
-    MyBB.bb_point2[2] = End1Rot.z + End1Radius_um;
+    // Calculate the minimum and maximum coordinates for the bounding box
+    double minX = std::min(End0Rot.x - End0Radius_um, End1Rot.x - End1Radius_um);
+    double minY = std::min(End0Rot.y - End0Radius_um, End1Rot.y - End1Radius_um);
+    double minZ = std::min(End0Rot.z - End0Radius_um, End1Rot.z - End1Radius_um);
+
+    double maxX = std::max(End0Rot.x + End0Radius_um, End1Rot.x + End1Radius_um);
+    double maxY = std::max(End0Rot.y + End0Radius_um, End1Rot.y + End1Radius_um);
+    double maxZ = std::max(End0Rot.z + End1Radius_um, End1Rot.z + End1Radius_um);
+
+    // Construct the bounding box for the cylinder
+    BoundingBox MyBB;
+    MyBB.bb_point1[0] = minX;
+    MyBB.bb_point1[1] = minY;
+    MyBB.bb_point1[2] = minZ;
+    MyBB.bb_point2[0] = maxX;
+    MyBB.bb_point2[1] = maxY;
+    MyBB.bb_point2[2] = maxZ;
+
+    // Check if the cylinder's bounding box intersects with the given region
     return MyBB.IsIntersecting(_Region);
 }
+
+
+
 
 
 
