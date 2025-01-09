@@ -147,9 +147,9 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
         int ResX_nm = Params->VoxelResolution_um * 1000;
         int ResY_nm = Params->VoxelResolution_um * 1000;
         int ResZ_nm = (Params->SliceThickness_um / Params->VoxelResolution_um) * 1000 * Params->VoxelResolution_um;
-        ResX_nm /= ReductionLevel;
-        ResY_nm /= ReductionLevel;
-        // ResZ_nm /= ReductionLevel;
+        ResX_nm *= ReductionLevel; // Note here that resolution means the size of each voxel in nanometres
+        ResY_nm *= ReductionLevel;
+        // ResZ_nm *= ReductionLevel;
         std::vector<int> Resolution{ResX_nm, ResY_nm, ResZ_nm};
         Scales["resolution"] = Resolution;
 
