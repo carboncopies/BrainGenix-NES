@@ -87,7 +87,7 @@ int GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::un
     // Prevent hangs if this is unable to generate properly due to a small output or something
     int MaxIters = 1000000;
     int NumIters = 0;
-    while ((NumIters < MaxIters) && (abs(EndPoint.X - StartPoint.X) > MaxDeltaX) || (PointDistance(StartPoint, EndPoint) < MinSegmentLength) || (abs(EndPoint.Y - StartPoint.Y) > MaxDeltaY)) {
+    while ((NumIters < MaxIters) && ((abs(EndPoint.X - StartPoint.X) > MaxDeltaX) || (PointDistance(StartPoint, EndPoint) < MinSegmentLength) || (abs(EndPoint.Y - StartPoint.Y) > MaxDeltaY))) {
         EndPoint = GeneratePoint(PointGenerator, XVoxelDistribution, YVoxelDistribution);
         NumIters++;
     }

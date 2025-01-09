@@ -63,6 +63,7 @@ double GetAverage(std::vector<double>* _Vec) {
 
 
 // Thread Main Function
+// Thread Main Function
 void ConversionPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
     // Set thread Name
@@ -74,7 +75,6 @@ void ConversionPool::EncoderThreadMainFunction(int _ThreadNumber) {
     int SamplesBeforeUpdate = 25;
     std::vector<double> Times;
 
-
     // Run until thread exit is requested - that is, this is set to false
     while (ThreadControlFlag_) {
 
@@ -84,26 +84,50 @@ void ConversionPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
             // Start Timer
             std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
-
-
-            // Calculate desired output filename
-            std::string X1 = std::to_string(Task->IndexInfo_.StartX);
-            std::string X2 = std::to_string(Task->IndexInfo_.EndX);
-            std::string Y1 = std::to_string(Task->IndexInfo_.StartY);
-            std::string Y2 = std::to_string(Task->IndexInfo_.EndY);
-            std::string Z1 = std::to_string(Task->IndexInfo_.StartZ);
-            std::string Z2 = std::to_string(Task->IndexInfo_.EndZ);
-            std::string TargetFilename = Task->OutputDirectoryBasePath_ + "/" + X1 + "-" + X2;
-            TargetFilename += "_" + Y1 + "-" + Y2;
-            TargetFilename += "_" + Z1 + "-" + Z2;
-
+            std::string TargetFilename;
 
             // Load the source image
             int Width, Height, Channels;
             unsigned char* Image = stbi_load(Task->SourceFilePath_.c_str(), &Width, &Height, &Channels, 0);
 
-            // Now write it as a jpeg
-            stbi_write_jpg(TargetFilename.c_str(), Width, Height, Channels, Image, 100);
+            for (int ReductionLevel = 1; ReductionLevel <= Task->ReductionLevels_; ReductionLevel++) {
+
+                // Calculate the new dimensions
+                int NewWidth = Width / ReductionLevel;
+                int NewHeight = Height / ReductionLevel;
+
+                // Allocate memory for the resized image
+                unsigned char* ResizedImage = (unsigned char*)malloc(NewWidth * NewHeight * Channels);
+
+                // Resize the image
+                stbir_resize_uint8(Image, Width, Height, 0, ResizedImage, NewWidth, NewHeight, 0, Channels);
+
+                // Update the indexes to the scaled size
+                int ScaledX1 = Task->IndexInfo_.StartX / ReductionLevel;
+                int ScaledX2 = Task->IndexInfo_.EndX / ReductionLevel;
+                int ScaledY1 = Task->IndexInfo_.StartY / ReductionLevel;
+                int ScaledY2 = Task->IndexInfo_.EndY / ReductionLevel;
+                int ScaledZ1 = Task->IndexInfo_.StartZ;
+                int ScaledZ2 = Task->IndexInfo_.EndZ;
+
+                // Calculate desired output filename
+                std::string X1 = std::to_string(ScaledX1);
+                std::string X2 = std::to_string(ScaledX2);
+                std::string Y1 = std::to_string(ScaledY1);
+                std::string Y2 = std::to_string(ScaledY2);
+                std::string Z1 = std::to_string(ScaledZ1);
+                std::string Z2 = std::to_string(ScaledZ2);
+                TargetFilename = Task->OutputDirectoryBasePath_ + "Data/ReductionLevel-" + std::to_string(ReductionLevel);
+                TargetFilename += "_" + X1 + "-" + X2;
+                TargetFilename += "_" + Y1 + "-" + Y2;
+                TargetFilename += "_" + Z1 + "-" + Z2 + ".jpg";
+
+                // Write the resized image as a JPEG
+                stbi_write_jpg(TargetFilename.c_str(), NewWidth, NewHeight, Channels, ResizedImage, 100);
+
+                // Free the resized image memory
+                free(ResizedImage);
+            }
 
             stbi_image_free(Image);
             
@@ -115,10 +139,9 @@ void ConversionPool::EncoderThreadMainFunction(int _ThreadNumber) {
             Times.push_back(Duration_ms);
             if (Times.size() > SamplesBeforeUpdate) {
                 double AverageTime = GetAverage(&Times);
-                Logger_ ->Log("EMConversionPool Thread Info '" + std::to_string(_ThreadNumber) + "' Processed Most Recent Image '" + TargetFilename + "',  Averaging " + std::to_string(AverageTime) + "ms / Image", 0);
+                Logger_->Log("EMConversionPool Thread Info '" + std::to_string(_ThreadNumber) + "' Processed Most Recent Image '" + TargetFilename + "',  Averaging " + std::to_string(AverageTime) + "ms / Image", 0);
                 Times.clear();
             }
-
 
         } else {
 

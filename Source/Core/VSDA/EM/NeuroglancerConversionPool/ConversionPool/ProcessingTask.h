@@ -60,6 +60,7 @@ struct ProcessingTask {
     std::string SourceFilePath_; /**Path where the image came from originally*/
     Simulator::VoxelIndexInfo IndexInfo_; /**Information about the image's voxel positions*/
     std::string OutputDirectoryBasePath_; /**Base of the path where the output is going*/
+    int ReductionLevels_; /**Number of downsampling levels to do for this image */
 
     std::atomic_bool IsDone_ = false; /**Indicates if the given task is done or not*/
 
