@@ -139,7 +139,7 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
         }
 
         //  - Create the chunk sizes
-        std::vector<int> ChunkSizeList{Params->ImageWidth_px / ReductionLevel, Params->ImageHeight_px / ReductionLevel, 1};
+        std::vector<int> ChunkSizeList{Params->ImageWidth_px / double(pow(2,ReductionLevel)), Params->ImageHeight_px / double(pow(2,ReductionLevel)), 1};
         std::vector<std::vector<int>> ChunksList{ChunkSizeList};
         Scales["chunk_sizes"] = nlohmann::json(ChunksList);
 
@@ -147,8 +147,8 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
         int ResX_nm = Params->VoxelResolution_um * 1000;
         int ResY_nm = Params->VoxelResolution_um * 1000;
         int ResZ_nm = (Params->SliceThickness_um / Params->VoxelResolution_um) * 1000 * Params->VoxelResolution_um;
-        ResX_nm *= ReductionLevel; // Note here that resolution means the size of each voxel in nanometres
-        ResY_nm *= ReductionLevel;
+        ResX_nm *= pow(2,ReductionLevel); // Note here that resolution means the size of each voxel in nanometres
+        ResY_nm *= pow(2,ReductionLevel);
         // ResZ_nm *= ReductionLevel;
         std::vector<int> Resolution{ResX_nm, ResY_nm, ResZ_nm};
         Scales["resolution"] = Resolution;
@@ -157,8 +157,8 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
         int ResX_px = ceil(double(BaseRegion->RegionIndexInfo_.EndX) / double(Params->ImageWidth_px)) * Params->ImageWidth_px;
         int ResY_px = ceil(double(BaseRegion->RegionIndexInfo_.EndY) / double(Params->ImageHeight_px)) * Params->ImageHeight_px;
         int ResZ_px = BaseRegion->RegionIndexInfo_.EndZ;
-        ResX_px /= ReductionLevel;
-        ResY_px /= ReductionLevel;
+        ResX_px /= pow(2,ReductionLevel);
+        ResY_px /= pow(2,ReductionLevel);
         // ResZ_px /= ReductionLevel;
         std::vector<int> Sizes{ResX_px, ResY_px, ResZ_px};
         Scales["size"] = Sizes;

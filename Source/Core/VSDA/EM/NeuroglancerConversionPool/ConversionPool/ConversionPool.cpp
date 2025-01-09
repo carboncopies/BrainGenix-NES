@@ -93,8 +93,8 @@ void ConversionPool::EncoderThreadMainFunction(int _ThreadNumber) {
             for (int ReductionLevel = 1; ReductionLevel <= Task->ReductionLevels_; ReductionLevel++) {
 
                 // Calculate the new dimensions
-                int NewWidth = Width / ReductionLevel;
-                int NewHeight = Height / ReductionLevel;
+                int NewWidth = Width / pow(2,ReductionLevel);
+                int NewHeight = Height / pow(2,ReductionLevel);
 
                 // Allocate memory for the resized image
                 unsigned char* ResizedImage = (unsigned char*)malloc(NewWidth * NewHeight * Channels);
@@ -103,10 +103,10 @@ void ConversionPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 stbir_resize_uint8(Image, Width, Height, 0, ResizedImage, NewWidth, NewHeight, 0, Channels);
 
                 // Update the indexes to the scaled size
-                int ScaledX1 = Task->IndexInfo_.StartX / ReductionLevel;
-                int ScaledX2 = Task->IndexInfo_.EndX / ReductionLevel;
-                int ScaledY1 = Task->IndexInfo_.StartY / ReductionLevel;
-                int ScaledY2 = Task->IndexInfo_.EndY / ReductionLevel;
+                int ScaledX1 = Task->IndexInfo_.StartX / pow(2,ReductionLevel);
+                int ScaledX2 = Task->IndexInfo_.EndX / pow(2,ReductionLevel);
+                int ScaledY1 = Task->IndexInfo_.StartY / pow(2,ReductionLevel);
+                int ScaledY2 = Task->IndexInfo_.EndY / pow(2,ReductionLevel);
                 int ScaledZ1 = Task->IndexInfo_.StartZ;
                 int ScaledZ2 = Task->IndexInfo_.EndZ;
 
