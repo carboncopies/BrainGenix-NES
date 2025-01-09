@@ -139,7 +139,7 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
         }
 
         //  - Create the chunk sizes
-        std::vector<int> ChunkSizeList{Params->ImageWidth_px / double(pow(2,ReductionLevel)), Params->ImageHeight_px / double(pow(2,ReductionLevel)), 1};
+        std::vector<int> ChunkSizeList{Params->ImageWidth_px / int(pow(2,ReductionLevel)), Params->ImageHeight_px / int(pow(2,ReductionLevel)), 1};
         std::vector<std::vector<int>> ChunksList{ChunkSizeList};
         Scales["chunk_sizes"] = nlohmann::json(ChunksList);
 
