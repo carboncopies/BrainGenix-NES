@@ -117,10 +117,10 @@ void ConversionPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 std::string Y2 = std::to_string(ScaledY2);
                 std::string Z1 = std::to_string(ScaledZ1);
                 std::string Z2 = std::to_string(ScaledZ2);
-                TargetFilename = Task->OutputDirectoryBasePath_ + "Data/ReductionLevel-" + std::to_string(ReductionLevel);
-                TargetFilename += "_" + X1 + "-" + X2;
+                TargetFilename = Task->OutputDirectoryBasePath_ + "/ReductionLevel-" + std::to_string(ReductionLevel);
+                TargetFilename += "/" + X1 + "-" + X2;
                 TargetFilename += "_" + Y1 + "-" + Y2;
-                TargetFilename += "_" + Z1 + "-" + Z2 + ".jpg";
+                TargetFilename += "_" + Z1 + "-" + Z2;
 
                 // Write the resized image as a JPEG
                 stbi_write_jpg(TargetFilename.c_str(), NewWidth, NewHeight, Channels, ResizedImage, 100);
