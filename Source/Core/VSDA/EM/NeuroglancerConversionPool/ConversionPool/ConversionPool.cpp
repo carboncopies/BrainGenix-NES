@@ -138,6 +138,11 @@ ConversionPool::ConversionPool(BG::Common::Logger::LoggingSystem* _Logger, int _
     Logger_ = _Logger;
     ThreadControlFlag_ = true;
 
+    // Reduced threaidng mode for debugging
+    #ifdef REDUCED_THREADING_DEBUG
+        _NumThreads = 1;
+    #endif
+
 
     // Create Renderer Instances
     Logger_->Log("Creating EMConversionPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);

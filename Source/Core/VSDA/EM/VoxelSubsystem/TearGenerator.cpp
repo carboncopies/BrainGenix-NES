@@ -83,8 +83,16 @@ int GenerateTear(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::un
         StartPoint.Y = _Array->GetY() + 100;
     }
 
-    while ((abs(EndPoint.X - StartPoint.X) > MaxDeltaX) || (PointDistance(StartPoint, EndPoint) < MinSegmentLength) || (abs(EndPoint.Y - StartPoint.Y) > MaxDeltaY)) {
+
+    // Prevent hangs if this is unable to generate properly due to a small output or something
+    int MaxIters = 1000000;
+    int NumIters = 0;
+    while ((NumIters < MaxIters) && (abs(EndPoint.X - StartPoint.X) > MaxDeltaX) || (PointDistance(StartPoint, EndPoint) < MinSegmentLength) || (abs(EndPoint.Y - StartPoint.Y) > MaxDeltaY)) {
         EndPoint = GeneratePoint(PointGenerator, XVoxelDistribution, YVoxelDistribution);
+        NumIters++;
+    }
+    if (NumIters == MaxIters) {
+        _Logger->Log("Unable to generate sample tear correctly, hit iteration limit when selecting point for tear to go to, try lowering your MinSegmentLength", 8);
     }
 
 

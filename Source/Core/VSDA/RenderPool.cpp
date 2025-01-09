@@ -68,7 +68,10 @@ RenderPool::RenderPool(Config::Config* _Config, BG::Common::Logger::LoggingSyste
     ThreadControlFlag_ = true;
     Windowed_ = _Windowed;
 
-
+    // Reduced threaidng mode for debugging
+    #ifdef REDUCED_THREADING_DEBUG
+        _NumThreads = 1;
+    #endif
 
     // Setup ConversionPool
     int NumThreads = float(std::thread::hardware_concurrency()) * 1.5;
