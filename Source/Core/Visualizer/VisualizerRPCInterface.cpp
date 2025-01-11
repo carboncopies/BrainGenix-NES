@@ -110,6 +110,7 @@ std::string VisualizerRPCInterface::VisualizerGetImage(std::string _JSONRequest)
         i = ImageHandle.find(Pattern, i);
     }
     std::string SafeHandle = "./" + ImageHandle;
+    std::cout<<SafeHandle<<std::endl;
 
 
     // Now Check If The Handle Is Valid, If So, Load It

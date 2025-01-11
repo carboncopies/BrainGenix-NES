@@ -50,7 +50,7 @@ namespace VSDA {
 
 
 
-bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ConversionPool::ConversionPool* _ConversionPool) {
+bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ConversionPool::ConversionPool* _ConversionPool, int _NumResolutionLevels) {
 
     // Check that the simulation has been initialized and everything is ready to have work done
     if (_Simulation->VSDAData_.State_ != VSDA_CONVERSION_REQUESTED) {
@@ -73,7 +73,7 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
     std::string BasePath = "NeuroglancerDatasets/" + UUID + "/";
 
     std::error_code Error;
-    bool Status = CreateDirectoryRecursive(BasePath + "Data", Error);
+    bool Status = CreateDirectoryRecursive(BasePath, Error);
     if (!Status) {
         return false;
     }
@@ -122,39 +122,54 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
 
     // Create the JSON info data
 
-    // - Create the scales list
-    nlohmann::json Scales;
-    Scales["encoding"] = "jpeg";
-    Scales["key"] = "Data";
+    // Generate Scales List
+    std::vector<nlohmann::json> ScalesList;
+
+    for (int ReductionLevel = 1; ReductionLevel <= _NumResolutionLevels; ReductionLevel++) {
+        // - Create the scales list
+        nlohmann::json Scales;
+        Scales["encoding"] = "jpeg";
+        Scales["key"] = "ReductionLevel-" + std::to_string(ReductionLevel);
 
 
-    //  - Create the chunk sizes
-    std::vector<int> ChunkSizeList{Params->ImageWidth_px, Params->ImageHeight_px, 1};
-    std::vector<std::vector<int>> ChunksList{ChunkSizeList};
-    Scales["chunk_sizes"] = nlohmann::json(ChunksList);
+        std::error_code Error;
+        bool Status = CreateDirectoryRecursive(BasePath + "/ReductionLevel-" + std::to_string(ReductionLevel), Error);
+        if (!Status) {
+            return false;
+        }
 
-    //  - Create the resolution sizes
-    int ResX_nm = Params->VoxelResolution_um * 1000;
-    int ResY_nm = Params->VoxelResolution_um * 1000;
-    int ResZ_nm = (Params->SliceThickness_um / Params->VoxelResolution_um) * 1000 * Params->VoxelResolution_um;
-    std::vector<int> Resolution{ResX_nm, ResY_nm, ResZ_nm};
-    Scales["resolution"] = Resolution;
+        //  - Create the chunk sizes
+        std::vector<int> ChunkSizeList{Params->ImageWidth_px / int(pow(2,ReductionLevel)), Params->ImageHeight_px / int(pow(2,ReductionLevel)), 1};
+        std::vector<std::vector<int>> ChunksList{ChunkSizeList};
+        Scales["chunk_sizes"] = nlohmann::json(ChunksList);
 
-    //  - Create the size values
-    int ResX_px = ceil(double(BaseRegion->RegionIndexInfo_.EndX) / double(Params->ImageWidth_px)) * Params->ImageWidth_px;
-    int ResY_px = ceil(double(BaseRegion->RegionIndexInfo_.EndY) / double(Params->ImageHeight_px)) * Params->ImageHeight_px;
-    int ResZ_px = BaseRegion->RegionIndexInfo_.EndZ;
-    std::vector<int> Sizes{ResX_px, ResY_px, ResZ_px};
-    Scales["size"] = Sizes;
+        //  - Populate information about the resolution of each voxel in this output image (scaled by our total size)
+        int ResX_nm = Params->VoxelResolution_um * 1000;
+        int ResY_nm = Params->VoxelResolution_um * 1000;
+        int ResZ_nm = (Params->SliceThickness_um / Params->VoxelResolution_um) * 1000 * Params->VoxelResolution_um;
+        ResX_nm *= pow(2,ReductionLevel); // Note here that resolution means the size of each voxel in nanometres
+        ResY_nm *= pow(2,ReductionLevel);
+        // ResZ_nm *= ReductionLevel;
+        std::vector<int> Resolution{ResX_nm, ResY_nm, ResZ_nm};
+        Scales["resolution"] = Resolution;
 
-    //  - Create the voxel offset values
-    std::vector<int> Offset{0, 0, 0};
-    Scales["voxel_offset"] = Offset;
+        //  - Create the size values
+        int ResX_px = ceil(double(BaseRegion->RegionIndexInfo_.EndX) / double(Params->ImageWidth_px)) * Params->ImageWidth_px;
+        int ResY_px = ceil(double(BaseRegion->RegionIndexInfo_.EndY) / double(Params->ImageHeight_px)) * Params->ImageHeight_px;
+        int ResZ_px = BaseRegion->RegionIndexInfo_.EndZ;
+        ResX_px /= pow(2,ReductionLevel);
+        ResY_px /= pow(2,ReductionLevel);
+        // ResZ_px /= ReductionLevel;
+        std::vector<int> Sizes{ResX_px, ResY_px, ResZ_px};
+        Scales["size"] = Sizes;
 
+        //  - Create the voxel offset values
+        std::vector<int> Offset{0, 0, 0};
+        Scales["voxel_offset"] = Offset;
+
+        ScalesList.push_back(Scales);
+    }
     
-    // Now apply it to the info dataset
-    std::vector<nlohmann::json> ScalesList = {Scales};
-
 
     nlohmann::json Info;
     Info["data_type"] = "uint8";
@@ -194,8 +209,9 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
         std::unique_ptr<ConversionPool::ProcessingTask> ThisTask = std::make_unique<ConversionPool::ProcessingTask>();
 
         ThisTask->IndexInfo_ = BaseRegion->ImageVoxelIndexes_[i];
-        ThisTask->OutputDirectoryBasePath_ = BasePath + "Data/";
+        ThisTask->OutputDirectoryBasePath_ = BasePath;
         ThisTask->SourceFilePath_ = BaseRegion->ImageFilenames_[i];
+        ThisTask->ReductionLevels_ = _NumResolutionLevels;
 
         _ConversionPool->QueueEncodeOperation(ThisTask.get());
         _Simulation->VSDAData_.ConversionTasks_.push_back(std::move(ThisTask));

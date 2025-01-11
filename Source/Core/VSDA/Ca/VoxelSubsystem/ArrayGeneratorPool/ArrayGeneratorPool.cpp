@@ -121,6 +121,11 @@ ArrayGeneratorPool::ArrayGeneratorPool(BG::Common::Logger::LoggingSystem* _Logge
     Logger_ = _Logger;
     ThreadControlFlag_ = true;
 
+    // Reduced threaidng mode for debugging
+    #ifdef REDUCED_THREADING_DEBUG
+        _NumThreads = 1;
+    #endif
+
 
     // Create Renderer Instances
     Logger_->Log("Creating CAArrayGeneratorPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);

@@ -43,6 +43,14 @@ RPCManager::RPCManager(Config::Config* _Config, BG::Common::Logger::LoggingSyste
     
 
     int ThreadCount = std::thread::hardware_concurrency();
+
+    // Reduced threaidng mode for debugging
+    #ifdef REDUCED_THREADING_DEBUG
+        ThreadCount = 1;
+    #endif
+
+
+
     _Logger->Log("Starting RPC Server With '" + std::to_string(ThreadCount) + "' Threads", 5);
     
     // Start the RPC server asynchronously with the specified thread count

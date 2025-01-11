@@ -339,6 +339,11 @@ ImageProcessorPool::ImageProcessorPool(BG::Common::Logger::LoggingSystem* _Logge
     ThreadControlFlag_ = true;
 
 
+    // Reduced threaidng mode for debugging
+    #ifdef REDUCED_THREADING_DEBUG
+        _NumThreads = 1;
+    #endif
+
     // Create Renderer Instances
     Logger_->Log("Creating EMImageProcessorPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
     for (unsigned int i = 0; i < _NumThreads; i++) {
