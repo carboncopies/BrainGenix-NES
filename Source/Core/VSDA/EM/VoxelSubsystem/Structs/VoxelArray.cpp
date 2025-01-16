@@ -396,7 +396,10 @@ void VoxelArray::CompositeVoxelAtIndex(int _X, int _Y, int _Z, VoxelState _State
     VoxelType ThisVoxel = GetVoxel(XIndex, YIndex, ZIndex);
 
     // Update the voxel state and distance to edge
-    ThisVoxel.DistanceToEdge_ = _DistanceToEdge;
+    // uint8_t CorrectedDistanceToEdge = std::min(255, int(_DistanceToEdge));
+    if (ThisVoxel.DistanceToEdge_ < _DistanceToEdge) {
+        ThisVoxel.DistanceToEdge_ = _DistanceToEdge;
+    }
     if (ThisVoxel.State_ < VoxelState_BLACK) {
         ThisVoxel.State_ = _State;
     }
