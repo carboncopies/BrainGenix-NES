@@ -208,7 +208,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     }
 
                     if (Task->Params_->RenderBorders) {
-                        Intensity = CalculateBorderColor(Intensity, PresentingVoxel.DistanceToEdge_, Task->Params_);
+                        Intensity = CalculateBorderColor(Intensity, PresentingVoxel.DistanceToEdge_vox_, Task->Params_);
                     }
 
                     OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, Intensity);

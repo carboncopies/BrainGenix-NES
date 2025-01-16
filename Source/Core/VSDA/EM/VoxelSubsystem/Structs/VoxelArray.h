@@ -54,7 +54,7 @@ namespace NES {
 namespace Simulator {
 
 
-enum VoxelState {
+enum VoxelState:uint8_t {
     VoxelState_EMPTY=0,
     VoxelState_INTERIOR=1,
     VoxelState_BORDER=2,
@@ -68,7 +68,7 @@ struct VoxelType {
 
     // uint8_t Intensity_; /**Value from 0-255 representing the intensity (brightness) of this voxel, done during coloring stage of compositing*/
     VoxelState State_; /**Determine if this voxel is near the edge of a shape or not*/
-    float DistanceToEdge_; /**Determines the distance to the nearest edge, used to calculate borders later on, set during rasterization stage of compositing.*/
+    uint8_t DistanceToEdge_vox_; /**Determines the distance to the nearest edge (in voxels), used to calculate borders later on, set during rasterization stage of compositing.*/
 
 };
 
