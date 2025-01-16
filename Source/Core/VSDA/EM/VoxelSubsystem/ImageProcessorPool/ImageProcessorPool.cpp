@@ -33,7 +33,21 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
+float LinearInterpolate(float _X, float _Val1, float _Val2) {
+    return _Val1 + _X * (_Val2 - _Val1);
+}
 
+uint8_t CalculateBorderColor(uint8_t _Source, float _DistanceFromEdge, MicroscopeParameters* _Params) {
+
+    if (_DistanceFromEdge < _Params->BorderThickness_um) {
+
+        float NormalizedDistanceFromEdge = 1.0f - (_DistanceFromEdge / _Params->BorderThickness_um);
+        return LinearInterpolate(NormalizedDistanceFromEdge, _Source, _Params->BorderEdgeIntensity);
+    }
+
+    return _Source;
+
+}
 
 uint8_t GenerateVoxelColor(float _X_um, float _Y_um, float _Z_um, MicroscopeParameters* _Params, noise::module::Perlin* _Generator, int _Offset=0) {
 
@@ -191,6 +205,10 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                         Intensity = GenerateVoxelColor(X, Y, Z, Task->Params_, Task->Generator_);
                     } else {
                         Intensity = Task->Params_->DefaultIntensity_;
+                    }
+
+                    if (Task->Params_->RenderBorders) {
+                        Intensity = CalculateBorderColor(Intensity, PresentingVoxel.DistanceToEdge_, Task->Params_);
                     }
 
                     OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, Intensity);

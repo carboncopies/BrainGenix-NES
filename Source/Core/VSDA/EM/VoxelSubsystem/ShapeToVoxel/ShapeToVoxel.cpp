@@ -91,22 +91,22 @@ bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
 
 
 
-float LinearInterpolate(float _X, float _Val1, float _Val2) {
-    return _Val1 + _X * (_Val2 - _Val1);
-}
+// float LinearInterpolate(float _X, float _Val1, float _Val2) {
+//     return _Val1 + _X * (_Val2 - _Val1);
+// }
 
-VoxelType CalculateBorderColor(VoxelType _Source, float _DistanceFromEdge, MicroscopeParameters* _Params) {
+// VoxelType CalculateBorderColor(VoxelType _Source, float _DistanceFromEdge, MicroscopeParameters* _Params) {
 
-    if (_DistanceFromEdge < _Params->BorderThickness_um) {
-        _Source.State_ = VoxelState_BORDER;
+//     if (_DistanceFromEdge < _Params->BorderThickness_um) {
+//         _Source.State_ = VoxelState_BORDER;
 
-        float NormalizedDistanceFromEdge = 1.0f - (_DistanceFromEdge / _Params->BorderThickness_um);
-        _Source.Intensity_ = LinearInterpolate(NormalizedDistanceFromEdge, _Source.Intensity_, _Params->BorderEdgeIntensity);
-    }
+//         float NormalizedDistanceFromEdge = 1.0f - (_DistanceFromEdge / _Params->BorderThickness_um);
+//         _Source.Intensity_ = LinearInterpolate(NormalizedDistanceFromEdge, _Source.Intensity_, _Params->BorderEdgeIntensity);
+//     }
 
-    return _Source;
+//     return _Source;
 
-}
+// }
 
 
 bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geometries::Sphere*_Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
