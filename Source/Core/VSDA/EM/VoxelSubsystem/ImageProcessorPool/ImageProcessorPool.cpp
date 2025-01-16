@@ -176,9 +176,13 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     } else if (PresentingVoxel.State_ == VoxelState_WHITE) {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255);
                         continue;
+                    } else if (PresentingVoxel.State_ == VoxelState_EMPTY) {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 240); // <-- THAT IS THE DEFAULT IMAGE COLOR, SHOULD BE CONFIGURABLE
+                        continue;                    
                     }
 
-                    // int Intensity = PresentingVoxel.Intensity_;
+                    // If we've gotten this far, the voxel must be inside something
+                    // then we set the color based on the perlin noise, and distance to edge
                     uint8_t Intensity;
                     if (Task->Params_->GeneratePerlinNoise_) {
                         float X = Task->Array_->GetXPositionAtIndex(XVoxelIndex);
@@ -188,7 +192,6 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     } else {
                         Intensity = Task->Params_->DefaultIntensity_;
                     }
-                    std::cout<<Intensity<<std::endl;
 
                     OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, Intensity);
                         
