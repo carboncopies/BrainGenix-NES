@@ -59,7 +59,7 @@ enum VoxelState {
     VoxelState_INTERIOR=1,
     VoxelState_BORDER=2,
     VoxelState_BLACK=3,
-    Voxelstate_WHITE=4
+    VoxelState_WHITE=4
 };
 
 
@@ -81,7 +81,7 @@ class VoxelArray {
 
 private:
 
-    std::unique_ptr<std::atomic<VoxelType>[]> Data_; /**Big blob of memory that holds all the voxels*/
+    std::unique_ptr<VoxelType[]> Data_; /**Big blob of memory that holds all the voxels*/
     uint64_t DataMaxLength_ = 0;
 
     uint64_t SizeX_; /**Number of voxels in x dimension*/

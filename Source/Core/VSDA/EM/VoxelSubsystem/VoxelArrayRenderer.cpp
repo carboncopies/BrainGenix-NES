@@ -124,6 +124,7 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
             ThisTask->ContrastRandomAmount = Params->ContrastRandomAmount;
             ThisTask->BrightnessRandomAmount = Params->BrightnessRandomAmount;
             ThisTask->Generator_ = _Generator;
+            ThisTask->Params_ = &_VSDAData->Params_;
 
 
 

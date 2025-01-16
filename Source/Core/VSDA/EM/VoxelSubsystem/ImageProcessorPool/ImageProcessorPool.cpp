@@ -35,6 +35,30 @@ namespace Simulator {
 
 
 
+uint8_t GenerateVoxelColor(float _X_um, float _Y_um, float _Z_um, MicroscopeParameters* _Params, noise::module::Perlin* _Generator, int _Offset=0) {
+
+    // Now, generate the color based on some noise constraints, Clamp it between 0 and 1, then scale based on parameters
+    double NoiseValue;
+    if (_Params->GeneratePerlinNoise_) {
+        float SpatialScale = _Params->SpatialScale_;
+        NoiseValue = _Generator->GetValue(_X_um * SpatialScale, _Y_um * SpatialScale, _Z_um * SpatialScale);
+        NoiseValue = (NoiseValue / 2.) + 0.5;
+        NoiseValue *= _Params->NoiseIntensity_;
+    }
+
+    double VoxelColorValue = _Params->DefaultIntensity_ - NoiseValue;
+    VoxelColorValue += _Offset;
+    VoxelColorValue = std::min(255., VoxelColorValue);
+    VoxelColorValue = std::max(0., VoxelColorValue);
+
+
+
+
+
+    return VoxelColorValue;
+
+}
+
 
 // Returns:
 //   true upon success.
@@ -121,24 +145,25 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
 
                     // Enumerate Depth, Compose based on rules defined above
-                    VoxelType PresentingVoxel;
-                    uint8_t DarkestVoxel = __UINT8_MAX__;
-                    for (size_t ZIndex = Task->VoxelZ; ZIndex < Task->VoxelZ + Task->SliceThickness_vox; ZIndex++) {
+                    VoxelType PresentingVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, Task->VoxelZ);
+                    // uint8_t DarkestVoxel = __UINT8_MAX__;
+                    // for (size_t ZIndex = Task->VoxelZ; ZIndex < Task->VoxelZ + Task->SliceThickness_vox; ZIndex++) {
 
-                        // Get Voxel At Position
-                        VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, ZIndex);
-                        // if (ThisVoxel.State_ == VOXELSTATE_INTENSITY) {
-                            // if (ThisVoxel.Intensity_ < DarkestVoxel) {
-                        PresentingVoxel = ThisVoxel;
-                        DarkestVoxel = ThisVoxel.Intensity_;
-                            // }
-                        // Else, we have a special debug voxel, set this to be the one shown, and exit.
-                        // } else {
-                        //     PresentingVoxel = ThisVoxel;
-                        //     break;
-                        // }
+                    //     // Get Voxel At Position
+                    //     VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, ZIndex);
+                    //     // if (ThisVoxel.State_ == VOXELSTATE_INTENSITY) {
+                    //         // if (ThisVoxel.Intensity_ < DarkestVoxel) {
+                    //     PresentingVoxel = ThisVoxel;
+                    //     DarkestVoxel = ThisVoxel.Intensity_;
+                    //         // }
+                    //     // Else, we have a special debug voxel, set this to be the one shown, and exit.
+                    //     // } else {
+                    //     //     PresentingVoxel = ThisVoxel;
+                    //     //     break;
+                    //     // }
 
-                    }
+                    // }
+
 
                     // Calculate Pixel Index
                     int ThisPixelX = XVoxelIndex - Task->VoxelStartingX;
@@ -148,17 +173,22 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     if (PresentingVoxel.State_ == VoxelState_BLACK) {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0);
                         continue;
-                    } else if (PresentingVoxel.State_ == VoxelState_White) {
+                    } else if (PresentingVoxel.State_ == VoxelState_WHITE) {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255);
                         continue;
                     }
 
                     // int Intensity = PresentingVoxel.Intensity_;
-
-                    float X = Task->Array_->GetXPositionAtIndex(XVoxelIndex);
-                    float Y = Task->Array_->GetYPositionAtIndex(YVoxelIndex);
-                    float Z = Task->Array_->GetZPositionAtIndex(ZVoxelIndex);
-                    Intensity = GenerateVoxelColor(X, Y, Z, Task->Params_, Task->Generator_);
+                    uint8_t Intensity;
+                    if (Task->Params_->GeneratePerlinNoise_) {
+                        float X = Task->Array_->GetXPositionAtIndex(XVoxelIndex);
+                        float Y = Task->Array_->GetYPositionAtIndex(YVoxelIndex);
+                        float Z = Task->Array_->GetZPositionAtIndex(Task->VoxelZ);
+                        Intensity = GenerateVoxelColor(X, Y, Z, Task->Params_, Task->Generator_);
+                    } else {
+                        Intensity = Task->Params_->DefaultIntensity_;
+                    }
+                    std::cout<<Intensity<<std::endl;
 
                     OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, Intensity);
                         

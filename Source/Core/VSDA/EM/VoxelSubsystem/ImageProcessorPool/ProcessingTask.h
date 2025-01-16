@@ -43,6 +43,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
+#include <VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h>
 
 
 namespace BG {
@@ -99,6 +100,7 @@ struct ProcessingTask {
     VoxelArray* Array_ = nullptr;          /**Pointer to the voxel array that we're rendering from*/
 
     noise::module::Perlin* Generator_ = nullptr; /**Pointer to noise generator */
+    MicroscopeParameters* Params_ = nullptr;
 
 };
 

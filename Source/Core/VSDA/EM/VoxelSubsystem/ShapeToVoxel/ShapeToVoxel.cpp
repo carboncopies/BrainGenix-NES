@@ -44,31 +44,31 @@ Geometries::Vec3D RotatedVec(float _X, float _Y, float _Z, float _RY, float _RZ,
     return _Translate + RotateAroundYZ(NewVec, _RY, _RZ);
 }
 
-VoxelType GenerateVoxelColor(float _X_um, float _Y_um, float _Z_um, MicroscopeParameters* _Params, noise::module::Perlin* _Generator, int _Offset=0) {
+// VoxelType GenerateVoxelColor(float _X_um, float _Y_um, float _Z_um, MicroscopeParameters* _Params, noise::module::Perlin* _Generator, int _Offset=0) {
 
-    // Now, generate the color based on some noise constraints, Clamp it between 0 and 1, then scale based on parameters
-    double NoiseValue;
-    if (_Params->GeneratePerlinNoise_) {
-        float SpatialScale = _Params->SpatialScale_;
-        NoiseValue = _Generator->GetValue(_X_um * SpatialScale, _Y_um * SpatialScale, _Z_um * SpatialScale);
-        NoiseValue = (NoiseValue / 2.) + 0.5;
-        NoiseValue *= _Params->NoiseIntensity_;
-    }
+//     // Now, generate the color based on some noise constraints, Clamp it between 0 and 1, then scale based on parameters
+//     double NoiseValue;
+//     if (_Params->GeneratePerlinNoise_) {
+//         float SpatialScale = _Params->SpatialScale_;
+//         NoiseValue = _Generator->GetValue(_X_um * SpatialScale, _Y_um * SpatialScale, _Z_um * SpatialScale);
+//         NoiseValue = (NoiseValue / 2.) + 0.5;
+//         NoiseValue *= _Params->NoiseIntensity_;
+//     }
 
-    double VoxelColorValue = _Params->DefaultIntensity_ - NoiseValue;
-    VoxelColorValue += _Offset;
-    VoxelColorValue = std::min(255., VoxelColorValue);
-    VoxelColorValue = std::max(0., VoxelColorValue);
-
-
-    VoxelType FinalVoxelValue;
-    FinalVoxelValue.Intensity_ = VoxelColorValue;
-    FinalVoxelValue.State_ = VoxelState_INTERIOR;
+//     double VoxelColorValue = _Params->DefaultIntensity_ - NoiseValue;
+//     VoxelColorValue += _Offset;
+//     VoxelColorValue = std::min(255., VoxelColorValue);
+//     VoxelColorValue = std::max(0., VoxelColorValue);
 
 
-    return FinalVoxelValue;
+//     VoxelType FinalVoxelValue;
+//     FinalVoxelValue.Intensity_ = VoxelColorValue;
+//     FinalVoxelValue.State_ = VoxelState_INTERIOR;
 
-}
+
+//     return FinalVoxelValue;
+
+// }
 
 
 bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
@@ -214,8 +214,10 @@ bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Ge
         Geometries::Vec3D RotatedPoint = RotatedVec(0.0, 0.0, z, rot_y, rot_z, translate);
 
         // Set voxel for midline point.
-        VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
-        _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
+        // VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
+        // _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
+        float DistanceToEdge = radius_at_z;
+        _Array->CompositeVoxel(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, VoxelState_INTERIOR, DistanceToEdge);
 
         // Find points on circles around the midline up to the radius at this point along the cylinder.
         for (float r = stepsize + (_ThisThread * stepsize); r <= radius_at_z; r += (_TotalThreads * stepsize)) {
@@ -451,7 +453,7 @@ bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, VSDA::WorldInfo& _WorldI
                 // VoxelType FinalVoxelValue = GenerateVoxelColor(Point.x, Point.y, Point.z, _Params, _Generator, -180);
                 // _Array->SetVoxelIfNotDarker(Point.x, Point.y, Point.z, FinalVoxelValue);
 
-                _Array->CompositeVoxel(x, y, z, VoxelState_Black, 0);
+                _Array->CompositeVoxel(x, y, z, VoxelState_BLACK, 0);
 
             }
         }
