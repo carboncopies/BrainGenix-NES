@@ -71,23 +71,23 @@ Geometries::Vec3D RotatedVec(float _X, float _Y, float _Z, float _RY, float _RZ,
 // }
 
 
-bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
+// bool CreateVoxelArrayBorderFrame(VoxelArray* _Array) {
 
-    VoxelType FinalVoxelValue;
-    FinalVoxelValue.Intensity_ = 0;
+//     VoxelType FinalVoxelValue;
+//     FinalVoxelValue.Intensity_ = 0;
 
     
-    // Z Alligned Border
-    for (int Z = 0; Z < _Array->GetZ(); Z++) {
-        _Array->SetVoxel(0, 0, Z, FinalVoxelValue);
-        _Array->SetVoxel(_Array->GetX()-1, 0, Z, FinalVoxelValue);
-        _Array->SetVoxel(0, _Array->GetY()-1, Z, FinalVoxelValue);
-        _Array->SetVoxel(_Array->GetX()-1, _Array->GetY()-1, Z, FinalVoxelValue);
-    }
+//     // Z Alligned Border
+//     for (int Z = 0; Z < _Array->GetZ(); Z++) {
+//         _Array->SetVoxel(0, 0, Z, FinalVoxelValue);
+//         _Array->SetVoxel(_Array->GetX()-1, 0, Z, FinalVoxelValue);
+//         _Array->SetVoxel(0, _Array->GetY()-1, Z, FinalVoxelValue);
+//         _Array->SetVoxel(_Array->GetX()-1, _Array->GetY()-1, Z, FinalVoxelValue);
+//     }
 
-    return true;
+//     return true;
 
-}
+// }
 
 
 
@@ -391,9 +391,10 @@ bool FillWedge(VoxelArray* _Array, Geometries::Wedge* _Wedge, VSDA::WorldInfo& _
         // Set voxel for midline point.
         // VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
         VoxelType FinalVoxelValue; //GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
-        FinalVoxelValue.Intensity_ = 0;
+        // FinalVoxelValue.Intensity_ = 0;
         FinalVoxelValue.State_ = VoxelState_BLACK;
-        _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
+        _Array->SetVoxelAtPosition(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
+        // _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
 
         // Find points on filled rectangles around the midline up to the radius at this point along the wedge.
         for (float x = -0.5*width_at_z; x <= 0.5*width_at_z; x += stepsize) {
@@ -404,7 +405,7 @@ bool FillWedge(VoxelArray* _Array, Geometries::Wedge* _Wedge, VSDA::WorldInfo& _
 
                 // Set voxel at the point.
                 VoxelType FinalVoxelValue; //GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
-                FinalVoxelValue.Intensity_ = 0;
+                // FinalVoxelValue.Intensity_ = 0;
                 FinalVoxelValue.State_ = VoxelState_BLACK;
                 // if (_Params->RenderBorders) {
                 //     float DistanceToWidthEdge = (0.5*width_at_z) - fabs(x);

@@ -66,7 +66,7 @@ enum VoxelState {
 
 struct VoxelType {
 
-    uint8_t Intensity_; /**Value from 0-255 representing the intensity (brightness) of this voxel, done during coloring stage of compositing*/
+    // uint8_t Intensity_; /**Value from 0-255 representing the intensity (brightness) of this voxel, done during coloring stage of compositing*/
     VoxelState State_; /**Determine if this voxel is near the edge of a shape or not*/
     float DistanceToEdge_; /**Determines the distance to the nearest edge, used to calculate borders later on, set during rasterization stage of compositing.*/
 
@@ -176,8 +176,8 @@ public:
      * @param _Z 
      * @param _Value 
      */
-    void SetVoxelIfNotDarker(float _X, float _Y, float _Z, VoxelType _Value);
-    void SetVoxelIfNotDarkerAtIndex(int _X, int _Y, int _Z, VoxelType _Value);
+    // void SetVoxelIfNotDarker(float _X, float _Y, float _Z, VoxelType _Value);
+    // void SetVoxelIfNotDarkerAtIndex(int _X, int _Y, int _Z, VoxelType _Value);
 
     /**
      * @brief Compositor function that simply sets information about the sate of the given voxel.
