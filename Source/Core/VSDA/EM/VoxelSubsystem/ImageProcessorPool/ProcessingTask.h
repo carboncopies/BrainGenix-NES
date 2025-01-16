@@ -38,6 +38,7 @@
 #include <string>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+#include <noise/noise.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
@@ -95,9 +96,9 @@ struct ProcessingTask {
     std::string TargetFileName_;  /**Filename that this image is to be written to*/
     std::string TargetDirectory_; /**Directory path where the image is to be written to*/
 
-    VoxelArray* Array_;          /**Pointer to the voxel array that we're rendering from*/
+    VoxelArray* Array_ = nullptr;          /**Pointer to the voxel array that we're rendering from*/
 
-
+    noise::module::Perlin* Generator_ = nullptr; /**Pointer to noise generator */
 
 };
 

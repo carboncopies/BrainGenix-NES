@@ -121,12 +121,10 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
         for (float Y = BB.bb_point1[1]; Y < BB.bb_point2[1]; Y+= _WorldInfo.VoxelScale_um) {
             for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _WorldInfo.VoxelScale_um) {
                 if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z), _WorldInfo)) {
-                    VoxelType FinalVoxelValue = GenerateVoxelColor(X, Y, Z, _Params, _Generator);
-                    if (_Params->RenderBorders) {
-                        float DistanceToEdge = _Shape->Radius_um - Geometries::Vec3D(X, Y, Z).Distance(_Shape->Center_um);
-                        FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
-                    }
-                    _Array->SetVoxelAtPosition(X, Y, Z, FinalVoxelValue);
+
+                    float DistanceToEdge = _Shape->Radius_um - Geometries::Vec3D(X, Y, Z).Distance(_Shape->Center_um);
+                    _Array->CompositeVoxel(X, Y, Z, VoxelState_INTERIOR, DistanceToEdge);
+
                 }
             }
         }
@@ -231,13 +229,16 @@ bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Ge
                 float x = r*std::sin(theta);
                 Geometries::Vec3D RotatedPoint = RotatedVec(x, y, z, rot_y, rot_z, translate);
 
-                // Set voxel at the point.
-                VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
-                if (_Params->RenderBorders) {
-                    float DistanceToEdge = radius_at_z - r;
-                    FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
-                }
-                _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
+                float DistanceToEdge = radius_at_z - r;
+                _Array->CompositeVoxel(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, VoxelState_INTERIOR, DistanceToEdge);
+
+                // // Set voxel at the point.
+                // VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
+                // if (_Params->RenderBorders) {
+                //     float DistanceToEdge = radius_at_z - r;
+                //     FinalVoxelValue = CalculateBorderColor(FinalVoxelValue, DistanceToEdge, _Params);
+                // }
+                // _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
             }
         }
 
@@ -386,7 +387,10 @@ bool FillWedge(VoxelArray* _Array, Geometries::Wedge* _Wedge, VSDA::WorldInfo& _
         Geometries::Vec3D RotatedPoint = RotatedVec(0.0, 0.0, z, rot_y, rot_z, translate);
 
         // Set voxel for midline point.
-        VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
+        // VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
+        VoxelType FinalVoxelValue; //GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
+        FinalVoxelValue.Intensity_ = 0;
+        FinalVoxelValue.State_ = VoxelState_BLACK;
         _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
 
         // Find points on filled rectangles around the midline up to the radius at this point along the wedge.
@@ -399,7 +403,7 @@ bool FillWedge(VoxelArray* _Array, Geometries::Wedge* _Wedge, VSDA::WorldInfo& _
                 // Set voxel at the point.
                 VoxelType FinalVoxelValue; //GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
                 FinalVoxelValue.Intensity_ = 0;
-                FinalVoxelValue.State_ = VoxelState_INTERIOR;
+                FinalVoxelValue.State_ = VoxelState_BLACK;
                 // if (_Params->RenderBorders) {
                 //     float DistanceToWidthEdge = (0.5*width_at_z) - fabs(x);
                 //     float DistanceToHeightEdge = (0.5*height_at_z) - fabs(y);
@@ -443,8 +447,11 @@ bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, VSDA::WorldInfo& _WorldI
                 Point = Point.rotate_around_xyz(_WorldInfo.WorldRotationOffsetX_rad, _WorldInfo.WorldRotationOffsetY_rad, _WorldInfo.WorldRotationOffsetZ_rad);
 
                 // Rather than making a point cloud like before, we just write it directly into the array
-                VoxelType FinalVoxelValue = GenerateVoxelColor(Point.x, Point.y, Point.z, _Params, _Generator, -180);
-                _Array->SetVoxelIfNotDarker(Point.x, Point.y, Point.z, FinalVoxelValue);
+                
+                // VoxelType FinalVoxelValue = GenerateVoxelColor(Point.x, Point.y, Point.z, _Params, _Generator, -180);
+                // _Array->SetVoxelIfNotDarker(Point.x, Point.y, Point.z, FinalVoxelValue);
+
+                _Array->CompositeVoxel(x, y, z, VoxelState_Black, 0);
 
             }
         }

@@ -57,14 +57,18 @@ namespace Simulator {
 enum VoxelState {
     VoxelState_EMPTY=0,
     VoxelState_INTERIOR=1,
-    VoxelState_BORDER=2
+    VoxelState_BORDER=2,
+    VoxelState_BLACK=3,
+    Voxelstate_WHITE=4
 };
+
 
 
 struct VoxelType {
 
-    uint8_t Intensity_; /**Value from 0-255 representing the intensity (brightness) of this voxel*/
+    uint8_t Intensity_; /**Value from 0-255 representing the intensity (brightness) of this voxel, done during coloring stage of compositing*/
     VoxelState State_; /**Determine if this voxel is near the edge of a shape or not*/
+    float DistanceToEdge_; /**Determines the distance to the nearest edge, used to calculate borders later on, set during rasterization stage of compositing.*/
 
 };
 
@@ -176,6 +180,12 @@ public:
     void SetVoxelIfNotDarkerAtIndex(int _X, int _Y, int _Z, VoxelType _Value);
 
     /**
+     * @brief Compositor function that simply sets information about the sate of the given voxel.
+     */
+    void CompositeVoxel(float _X, float _Y, float _Z, VoxelState _State, float _DistanceToEdge);
+    void CompositeVoxelAtIndex(int _X, int _Y, int _Z, VoxelState _State, float _DistanceToEdge);
+
+    /**
      * @brief Get the size of the array, populate the int ptrs
      * 
      * @param _X 
@@ -240,6 +250,8 @@ public:
 
     int GetXIndexAtPosition(float _X_Worldspace_um);
 
+    float GetXPositionAtIndex(int _XIndex);
+
     /**
      * @brief Get the y dimensions
      * 
@@ -248,6 +260,8 @@ public:
     int GetY();
 
     int GetYIndexAtPosition(float _X_Worldspace_um);
+
+    float GetYPositionAtIndex(int _YIndex);
 
 
     /**
@@ -259,6 +273,7 @@ public:
 
     int GetZIndexAtPosition(float _X_Worldspace_um);
 
+    float GetZPositionAtIndex(int _ZIndex);
 
     /**
      * @brief Returns the resolution of the given object in micrometers.

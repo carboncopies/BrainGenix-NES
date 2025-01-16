@@ -29,7 +29,7 @@ namespace Simulator {
 // }
 
 
-int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int _SliceNumber, int _SliceThickness, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, double _RegionOffsetX, double _RegionOffsetY, int _SliceOffset) {
+int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, VSDAData* _VSDAData, VoxelArray* _Array, std::string _FilePrefix, int _SliceNumber, int _SliceThickness, ImageProcessorPool* _ImageProcessorPool, double _OffsetX, double _OffsetY, double _RegionOffsetX, double _RegionOffsetY, int _SliceOffset, noise::module::Perlin* _Generator) {
     assert(_VSDAData != nullptr);
     assert(_Logger != nullptr);
 
@@ -123,6 +123,7 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
             ThisTask->Brightness = Params->Brightness;
             ThisTask->ContrastRandomAmount = Params->ContrastRandomAmount;
             ThisTask->BrightnessRandomAmount = Params->BrightnessRandomAmount;
+            ThisTask->Generator_ = _Generator;
 
 
 

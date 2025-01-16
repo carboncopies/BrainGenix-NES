@@ -140,36 +140,28 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
                     }
 
-                    // Add Noise, Intensity Based On Noise Amount
-                    int Intensity = PresentingVoxel.Intensity_;
-                    // if (Task->EnableImageNoise) {
-                    //     Intensity += (RandomGenerator() % Task->ImageNoiseAmount) - int(Task->ImageNoiseAmount/2);
-                    //     Intensity = std::clamp(Intensity, 0, 255);
-                    // }
-
-                    // Now Set The Pixel
+                    // Calculate Pixel Index
                     int ThisPixelX = XVoxelIndex - Task->VoxelStartingX;
                     int ThisPixelY = YVoxelIndex - Task->VoxelStartingY;
 
-                    // Check if the voxel is in the enum reserved range, otherwise it's a color value from 128-255
-                    // if (PresentingVoxel.State_ == VOXELSTATE_INTENSITY) {
+                    // Calculate Color To Be Set
+                    if (PresentingVoxel.State_ == VoxelState_BLACK) {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0);
+                        continue;
+                    } else if (PresentingVoxel.State_ == VoxelState_White) {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255);
+                        continue;
+                    }
+
+                    // int Intensity = PresentingVoxel.Intensity_;
+
+                    float X = Task->Array_->GetXPositionAtIndex(XVoxelIndex);
+                    float Y = Task->Array_->GetYPositionAtIndex(YVoxelIndex);
+                    float Z = Task->Array_->GetZPositionAtIndex(ZVoxelIndex);
+                    Intensity = GenerateVoxelColor(X, Y, Z, Task->Params_, Task->Generator_);
+
                     OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, Intensity);
                         
-                    // } else {
-                    //     if (PresentingVoxel.State_ == BORDER) {
-                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
-                    //     } else if (PresentingVoxel.State_ == OUT_OF_RANGE) {
-                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
-                    //     } else if (PresentingVoxel.State_ == VOXELSTATE_RED) {
-                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 0, 0);
-                    //     } else if (PresentingVoxel.State_ == VOXELSTATE_GREEN) {
-                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 255, 0);
-                    //     } else if (PresentingVoxel.State_ == VOXELSTATE_BLUE) {
-                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
-                    //     } else {
-                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 200, 200, 200);
-                    //     }
-                    // }
 
                 }
             }

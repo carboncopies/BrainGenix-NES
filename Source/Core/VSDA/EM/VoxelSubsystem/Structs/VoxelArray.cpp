@@ -204,7 +204,6 @@ void VoxelArray::SetVoxelAtIndex(int _XIndex, int _YIndex, int _ZIndex, VoxelTyp
 
 }
 
-
 void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Value) {
 
     // This is dangerous - there's a round call since this can lead to truncation errors
@@ -230,7 +229,6 @@ Geometries::Vec3D VoxelArray::GetPositionAtIndex(int _XIndex, int _YIndex, int _
     return Geometries::Vec3D(XPos_um, YPos_um, ZPos_um);
 
 }
-
 
 int VoxelArray::GetXIndexAtPosition(float _X_Worldspace_um) {
     return round((_X_Worldspace_um - BoundingBox_.bb_point1[0])/VoxelScale_um);
@@ -269,8 +267,6 @@ void VoxelArray::SetVoxelIfNotDarker(float _X, float _Y, float _Z, VoxelType _Va
     }
 
 }
-
-
 void VoxelArray::SetVoxelIfNotDarkerAtIndex(int _X, int _Y, int _Z, VoxelType _Value) {
 
     // This is dangerous - there's a round call since this can lead to truncation errors
@@ -304,7 +300,6 @@ void VoxelArray::GetSize(int* _X, int* _Y, int* _Z) {
     (*_Y) = int(SizeY_);
     (*_Z) = int(SizeZ_);
 }
-
 bool VoxelArray::SetSize(int _X, int _Y, int _Z) {
 
     uint64_t ProposedSize = uint64_t(_X) * uint64_t(_Y) * uint64_t(_Z);
@@ -325,7 +320,6 @@ bool VoxelArray::SetSize(int _X, int _Y, int _Z) {
 
     return false;
 }
-
 bool VoxelArray::SetSize(ScanRegion _TargetSize, float _VoxelScale_um) {
     
     // Calc size in voxels for x, y, z
@@ -344,11 +338,9 @@ uint64_t VoxelArray::GetSize() {
 int VoxelArray::GetX() {
     return SizeX_;
 }
-
 int VoxelArray::GetY() {
     return SizeY_;
 }
-
 int VoxelArray::GetZ() {
     return SizeZ_;
 }
@@ -364,13 +356,52 @@ BoundingBox VoxelArray::GetBoundingBox() {
 bool VoxelArray::IsInRangeX(float _X) {
     return _X >= BoundingBox_.bb_point1[0] && _X <= BoundingBox_.bb_point2[0];
 }
-
 bool VoxelArray::IsInRangeY(float _Y) {
     return _Y >= BoundingBox_.bb_point1[1] && _Y <= BoundingBox_.bb_point2[1];
 }
-
 bool VoxelArray::IsInRangeZ(float _Z) {
     return _Z >= BoundingBox_.bb_point1[2] && _Z <= BoundingBox_.bb_point2[2];
+}
+
+float VoxelArray::GetXPositionAtIndex(int _XIndex) {
+    return BoundingBox_.bb_point1[0] + _XIndex * VoxelScale_um;
+}
+float VoxelArray::GetYPositionAtIndex(int _YIndex) {
+    return BoundingBox_.bb_point1[1] + _YIndex * VoxelScale_um;
+}
+float VoxelArray::GetZPositionAtIndex(int _ZIndex) {
+    return BoundingBox_.bb_point1[2] + _ZIndex * VoxelScale_um;
+}
+
+void VoxelArray::CompositeVoxel(float _X, float _Y, float _Z, VoxelState _State, float _DistanceToEdge) {
+    // Convert worldspace coordinates to voxel indices
+    int XIndex = round((_X - BoundingBox_.bb_point1[0]) / VoxelScale_um);
+    int YIndex = round((_Y - BoundingBox_.bb_point1[1]) / VoxelScale_um);
+    int ZIndex = round((_Z - BoundingBox_.bb_point1[2]) / VoxelScale_um);
+
+    // Call the index-based function
+    CompositeVoxelAtIndex(XIndex, YIndex, ZIndex, _State, _DistanceToEdge);
+}
+void VoxelArray::CompositeVoxelAtIndex(int _X, int _Y, int _Z, VoxelState _State, float _DistanceToEdge) {
+    int XIndex = _X;
+    int YIndex = _Y;
+    int ZIndex = _Z;
+
+    // Check bounds
+    if ((XIndex < 0 || XIndex >= SizeX_) || (YIndex < 0 || YIndex >= SizeY_) || (ZIndex < 0 || ZIndex >= SizeZ_)) {
+        return;
+    }
+
+    // Get the current voxel at the index
+    VoxelType ThisVoxel = GetVoxel(XIndex, YIndex, ZIndex);
+
+    // Update the voxel state and distance to edge
+    ThisVoxel.DistanceToEdge_ = _DistanceToEdge;
+    if (ThisVoxel.State_ < VoxelState_BLACK) {
+        ThisVoxel.State_ = _State;
+    }
+    SetVoxel(XIndex, YIndex, ZIndex, _State);
+
 }
 
 
