@@ -33,9 +33,9 @@ VoxelArray::VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, BoundingBox _
 
     // Malloc array
     DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
-    float SizeMiB = (sizeof(std::atomic<VoxelType>) * DataMaxLength_) / 1024. / 1024.;
+    float SizeMiB = (sizeof(VoxelType) * DataMaxLength_) / 1024. / 1024.;
     _Logger->Log("Allocating Array Of Size " + std::to_string(SizeMiB) + "MiB In System RAM", 2);
-    Data_ = std::make_unique<std::atomic<VoxelType>[]>(DataMaxLength_);
+    Data_ = std::make_unique<VoxelType[]>(DataMaxLength_);
 
     // We don't need to clear this because make unique does it for us
     // Reset the array so we don't get a bunch of crap in it
@@ -72,8 +72,8 @@ VoxelArray::VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, ScanRegion _R
     DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
     float SizeMiB = (sizeof(VoxelType) * DataMaxLength_) / 1024. / 1024.;
     _Logger->Log("Allocating Array Of Size " + std::to_string(SizeMiB) + "MiB In System RAM", 2);
-    std::atomic<VoxelType>* VoxelArrayPtr = (std::atomic<VoxelType>*)std::malloc(DataMaxLength_ * sizeof(std::atomic<VoxelType>));
-    Data_ = std::unique_ptr<std::atomic<VoxelType>[]>(VoxelArrayPtr);
+    VoxelType* VoxelArrayPtr = (VoxelType*)std::malloc(DataMaxLength_ * sizeof(VoxelType));
+    Data_ = std::unique_ptr<VoxelType[]>(VoxelArrayPtr);
 
     ClearArrayThreaded(std::thread::hardware_concurrency());
     // make unique already clears memory, so we're doing it twice.
@@ -106,9 +106,7 @@ void VoxelArray::ClearArrayThreaded(int _NumThreads) {
 
     // Initializer
     VoxelType Empty;
-    Empty.Intensity_ = 240;
     Empty.State_ = VoxelState_EMPTY;
-    // Empty.State_ = EMPTY;
 
     // Create a bunch of memset tasks
     std::vector<std::future<int>> AsyncTasks;
@@ -116,7 +114,7 @@ void VoxelArray::ClearArrayThreaded(int _NumThreads) {
         // VoxelType* ThreadStartAddress = StartAddress + (ElementStepSize * i);
         uint64_t ThreadStartIndex = (ElementStepSize * i);
         uint64_t ThreadEndIndex = (ElementStepSize * i) + ElementStepSize;
-        std::atomic<VoxelType>* Array = Data_.get();
+        VoxelType* Array = Data_.get();
 
         AsyncTasks.push_back(std::async(std::launch::async, [Array, ThreadStartIndex, ThreadEndIndex, Empty]{
             for (uint64_t i = ThreadStartIndex; i < ThreadEndIndex; i++) {
@@ -166,7 +164,7 @@ VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
     // Check Bounds
     if ((_X < 0 || _X >= SizeX_) || (_Y < 0 || _Y >= SizeY_) || (_Z < 0 || _Z >= SizeZ_)) {
         VoxelType Ret;
-        Ret.Intensity_ = 0;
+        // Ret.Intensity_ = 0;
         // Ret.State_ = OUT_OF_RANGE;
         return Ret;
     }
@@ -177,7 +175,7 @@ VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
         return Data_.get()[Index];
     }
     VoxelType Ret;
-    Ret.Intensity_ = 0;
+    // Ret.Intensity_ = 0;
     // Ret.State_ = OUT_OF_RANGE;
     return Ret;
 
@@ -203,7 +201,6 @@ void VoxelArray::SetVoxelAtIndex(int _XIndex, int _YIndex, int _ZIndex, VoxelTyp
     Data_[CurrentIndex] = _Value;
 
 }
-
 
 void VoxelArray::SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Value) {
 
@@ -231,7 +228,6 @@ Geometries::Vec3D VoxelArray::GetPositionAtIndex(int _XIndex, int _YIndex, int _
 
 }
 
-
 int VoxelArray::GetXIndexAtPosition(float _X_Worldspace_um) {
     return round((_X_Worldspace_um - BoundingBox_.bb_point1[0])/VoxelScale_um);
 }
@@ -242,69 +238,66 @@ int VoxelArray::GetZIndexAtPosition(float _Z_Worldspace_um) {
     return round((_Z_Worldspace_um - BoundingBox_.bb_point1[2])/VoxelScale_um);
 }
 
-void VoxelArray::SetVoxelIfNotDarker(float _X, float _Y, float _Z, VoxelType _Value) {
+// void VoxelArray::SetVoxelIfNotDarker(float _X, float _Y, float _Z, VoxelType _Value) {
 
-    // This is dangerous - there's a round call since this can lead to truncation errors
-    int XIndex = round((_X - BoundingBox_.bb_point1[0])/VoxelScale_um);
-    int YIndex = round((_Y - BoundingBox_.bb_point1[1])/VoxelScale_um);
-    int ZIndex = round((_Z - BoundingBox_.bb_point1[2])/VoxelScale_um);
+//     // This is dangerous - there's a round call since this can lead to truncation errors
+//     int XIndex = round((_X - BoundingBox_.bb_point1[0])/VoxelScale_um);
+//     int YIndex = round((_Y - BoundingBox_.bb_point1[1])/VoxelScale_um);
+//     int ZIndex = round((_Z - BoundingBox_.bb_point1[2])/VoxelScale_um);
 
-    // Check Bounds (so if it's out of bounds, we print a warning and do nothing!)
-    if ((XIndex < 0 || XIndex >= SizeX_) || (YIndex < 0 || YIndex >= SizeY_) || (ZIndex < 0 || ZIndex >= SizeZ_)) {
-        return;
-    }
+//     // Check Bounds (so if it's out of bounds, we print a warning and do nothing!)
+//     if ((XIndex < 0 || XIndex >= SizeX_) || (YIndex < 0 || YIndex >= SizeY_) || (ZIndex < 0 || ZIndex >= SizeZ_)) {
+//         return;
+//     }
 
-    // Get Voxel At Index, Check That It's Not Darker, Then Set, Otherwise Don't Set
-    VoxelType ThisVoxel = GetVoxel(XIndex, YIndex, ZIndex);
+//     // Get Voxel At Index, Check That It's Not Darker, Then Set, Otherwise Don't Set
+//     VoxelType ThisVoxel = GetVoxel(XIndex, YIndex, ZIndex);
 
-    // Only set the color if it's not in the enum range, and it's darker than the current value (except if it's empty)
-    if (_Value.State_ == VoxelState_INTERIOR) {
-        if ((ThisVoxel.Intensity_ > _Value.Intensity_) || (ThisVoxel.State_ == VoxelState_BORDER)) {
-            SetVoxel(XIndex, YIndex, ZIndex, _Value);
-        }
-    } else if (_Value.State_ == VoxelState_BORDER) {
-        if ((ThisVoxel.State_ != VoxelState_INTERIOR) && (ThisVoxel.Intensity_ > _Value.Intensity_)) {
-            SetVoxel(XIndex, YIndex, ZIndex, _Value);
-        }
-    }
+//     // Only set the color if it's not in the enum range, and it's darker than the current value (except if it's empty)
+//     if (_Value.State_ == VoxelState_INTERIOR) {
+//         if ((ThisVoxel.Intensity_ > _Value.Intensity_) || (ThisVoxel.State_ == VoxelState_BORDER)) {
+//             SetVoxel(XIndex, YIndex, ZIndex, _Value);
+//         }
+//     } else if (_Value.State_ == VoxelState_BORDER) {
+//         if ((ThisVoxel.State_ != VoxelState_INTERIOR) && (ThisVoxel.Intensity_ > _Value.Intensity_)) {
+//             SetVoxel(XIndex, YIndex, ZIndex, _Value);
+//         }
+//     }
 
-}
+// }
+// void VoxelArray::SetVoxelIfNotDarkerAtIndex(int _X, int _Y, int _Z, VoxelType _Value) {
 
+//     // This is dangerous - there's a round call since this can lead to truncation errors
+//     int XIndex = _X;
+//     int YIndex = _Y;
+//     int ZIndex = _Z;
 
-void VoxelArray::SetVoxelIfNotDarkerAtIndex(int _X, int _Y, int _Z, VoxelType _Value) {
+//     // Check Bounds (so if it's out of bounds, we print a warning and do nothing!)
+//     if ((XIndex < 0 || XIndex >= SizeX_) || (YIndex < 0 || YIndex >= SizeY_) || (ZIndex < 0 || ZIndex >= SizeZ_)) {
+//         return;
+//     }
 
-    // This is dangerous - there's a round call since this can lead to truncation errors
-    int XIndex = _X;
-    int YIndex = _Y;
-    int ZIndex = _Z;
+//     // Get Voxel At Index, Check That It's Not Darker, Then Set, Otherwise Don't Set
+//     VoxelType ThisVoxel = GetVoxel(XIndex, YIndex, ZIndex);
 
-    // Check Bounds (so if it's out of bounds, we print a warning and do nothing!)
-    if ((XIndex < 0 || XIndex >= SizeX_) || (YIndex < 0 || YIndex >= SizeY_) || (ZIndex < 0 || ZIndex >= SizeZ_)) {
-        return;
-    }
+//     // Only set the color if it's not in the enum range, and it's darker than the current value (except if it's empty)
+//     if (_Value.State_ == VoxelState_INTERIOR) {
+//         if ((ThisVoxel.Intensity_ > _Value.Intensity_) || (ThisVoxel.State_ == VoxelState_BORDER)) {
+//             SetVoxel(XIndex, YIndex, ZIndex, _Value);
+//         }
+//     } else if (_Value.State_ == VoxelState_BORDER) {
+//         if ((ThisVoxel.State_ != VoxelState_INTERIOR) && (ThisVoxel.Intensity_ > _Value.Intensity_)) {
+//             SetVoxel(XIndex, YIndex, ZIndex, _Value);
+//         }
+//     }
 
-    // Get Voxel At Index, Check That It's Not Darker, Then Set, Otherwise Don't Set
-    VoxelType ThisVoxel = GetVoxel(XIndex, YIndex, ZIndex);
-
-    // Only set the color if it's not in the enum range, and it's darker than the current value (except if it's empty)
-    if (_Value.State_ == VoxelState_INTERIOR) {
-        if ((ThisVoxel.Intensity_ > _Value.Intensity_) || (ThisVoxel.State_ == VoxelState_BORDER)) {
-            SetVoxel(XIndex, YIndex, ZIndex, _Value);
-        }
-    } else if (_Value.State_ == VoxelState_BORDER) {
-        if ((ThisVoxel.State_ != VoxelState_INTERIOR) && (ThisVoxel.Intensity_ > _Value.Intensity_)) {
-            SetVoxel(XIndex, YIndex, ZIndex, _Value);
-        }
-    }
-
-}
+// }
 
 void VoxelArray::GetSize(int* _X, int* _Y, int* _Z) {
     (*_X) = int(SizeX_);
     (*_Y) = int(SizeY_);
     (*_Z) = int(SizeZ_);
 }
-
 bool VoxelArray::SetSize(int _X, int _Y, int _Z) {
 
     uint64_t ProposedSize = uint64_t(_X) * uint64_t(_Y) * uint64_t(_Z);
@@ -325,7 +318,6 @@ bool VoxelArray::SetSize(int _X, int _Y, int _Z) {
 
     return false;
 }
-
 bool VoxelArray::SetSize(ScanRegion _TargetSize, float _VoxelScale_um) {
     
     // Calc size in voxels for x, y, z
@@ -344,11 +336,9 @@ uint64_t VoxelArray::GetSize() {
 int VoxelArray::GetX() {
     return SizeX_;
 }
-
 int VoxelArray::GetY() {
     return SizeY_;
 }
-
 int VoxelArray::GetZ() {
     return SizeZ_;
 }
@@ -364,13 +354,55 @@ BoundingBox VoxelArray::GetBoundingBox() {
 bool VoxelArray::IsInRangeX(float _X) {
     return _X >= BoundingBox_.bb_point1[0] && _X <= BoundingBox_.bb_point2[0];
 }
-
 bool VoxelArray::IsInRangeY(float _Y) {
     return _Y >= BoundingBox_.bb_point1[1] && _Y <= BoundingBox_.bb_point2[1];
 }
-
 bool VoxelArray::IsInRangeZ(float _Z) {
     return _Z >= BoundingBox_.bb_point1[2] && _Z <= BoundingBox_.bb_point2[2];
+}
+
+float VoxelArray::GetXPositionAtIndex(int _XIndex) {
+    return BoundingBox_.bb_point1[0] + _XIndex * VoxelScale_um;
+}
+float VoxelArray::GetYPositionAtIndex(int _YIndex) {
+    return BoundingBox_.bb_point1[1] + _YIndex * VoxelScale_um;
+}
+float VoxelArray::GetZPositionAtIndex(int _ZIndex) {
+    return BoundingBox_.bb_point1[2] + _ZIndex * VoxelScale_um;
+}
+
+void VoxelArray::CompositeVoxel(float _X, float _Y, float _Z, VoxelState _State, float _DistanceToEdge) {
+    // Convert worldspace coordinates to voxel indices
+    int XIndex = round((_X - BoundingBox_.bb_point1[0]) / VoxelScale_um);
+    int YIndex = round((_Y - BoundingBox_.bb_point1[1]) / VoxelScale_um);
+    int ZIndex = round((_Z - BoundingBox_.bb_point1[2]) / VoxelScale_um);
+
+    // Call the index-based function
+    CompositeVoxelAtIndex(XIndex, YIndex, ZIndex, _State, _DistanceToEdge);
+}
+void VoxelArray::CompositeVoxelAtIndex(int _X, int _Y, int _Z, VoxelState _State, float _DistanceToEdge_um) {
+    int XIndex = _X;
+    int YIndex = _Y;
+    int ZIndex = _Z;
+
+    // Check bounds
+    if ((XIndex < 0 || XIndex >= SizeX_) || (YIndex < 0 || YIndex >= SizeY_) || (ZIndex < 0 || ZIndex >= SizeZ_)) {
+        return;
+    }
+
+    // Get the current voxel at the index
+    VoxelType ThisVoxel = GetVoxel(XIndex, YIndex, ZIndex);
+
+    // Update the voxel state and distance to edge
+    uint8_t CorrectedDistanceToEdge_vox = std::min(255, int(_DistanceToEdge_um / VoxelScale_um));
+    if (ThisVoxel.DistanceToEdge_vox_ < CorrectedDistanceToEdge_vox) {
+        ThisVoxel.DistanceToEdge_vox_ = CorrectedDistanceToEdge_vox;
+    }
+    if (ThisVoxel.State_ < VoxelState_BLACK) {
+        ThisVoxel.State_ = _State;
+    }
+    SetVoxel(XIndex, YIndex, ZIndex, ThisVoxel);
+
 }
 
 

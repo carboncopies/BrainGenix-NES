@@ -33,7 +33,45 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
+float LinearInterpolate(float _X, float _Val1, float _Val2) {
+    return _Val1 + _X * (_Val2 - _Val1);
+}
 
+uint8_t CalculateBorderColor(uint8_t _Source, float _DistanceFromEdge, MicroscopeParameters* _Params) {
+
+    if (_DistanceFromEdge < _Params->BorderThickness_um) {
+
+        float NormalizedDistanceFromEdge = 1.0f - (_DistanceFromEdge / _Params->BorderThickness_um);
+        return LinearInterpolate(NormalizedDistanceFromEdge, _Source, _Params->BorderEdgeIntensity);
+    }
+
+    return _Source;
+
+}
+
+uint8_t GenerateVoxelColor(float _X_um, float _Y_um, float _Z_um, MicroscopeParameters* _Params, noise::module::Perlin* _Generator, int _Offset=0) {
+
+    // Now, generate the color based on some noise constraints, Clamp it between 0 and 1, then scale based on parameters
+    double NoiseValue;
+    if (_Params->GeneratePerlinNoise_) {
+        float SpatialScale = _Params->SpatialScale_;
+        NoiseValue = _Generator->GetValue(_X_um * SpatialScale, _Y_um * SpatialScale, _Z_um * SpatialScale);
+        NoiseValue = (NoiseValue / 2.) + 0.5;
+        NoiseValue *= _Params->NoiseIntensity_;
+    }
+
+    double VoxelColorValue = _Params->DefaultIntensity_ - NoiseValue;
+    VoxelColorValue += _Offset;
+    VoxelColorValue = std::min(255., VoxelColorValue);
+    VoxelColorValue = std::max(0., VoxelColorValue);
+
+
+
+
+
+    return VoxelColorValue;
+
+}
 
 
 // Returns:
@@ -121,55 +159,60 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
 
                     // Enumerate Depth, Compose based on rules defined above
-                    VoxelType PresentingVoxel;
-                    uint8_t DarkestVoxel = __UINT8_MAX__;
-                    for (size_t ZIndex = Task->VoxelZ; ZIndex < Task->VoxelZ + Task->SliceThickness_vox; ZIndex++) {
+                    VoxelType PresentingVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, Task->VoxelZ);
+                    // uint8_t DarkestVoxel = __UINT8_MAX__;
+                    // for (size_t ZIndex = Task->VoxelZ; ZIndex < Task->VoxelZ + Task->SliceThickness_vox; ZIndex++) {
 
-                        // Get Voxel At Position
-                        VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, ZIndex);
-                        // if (ThisVoxel.State_ == VOXELSTATE_INTENSITY) {
-                            // if (ThisVoxel.Intensity_ < DarkestVoxel) {
-                        PresentingVoxel = ThisVoxel;
-                        DarkestVoxel = ThisVoxel.Intensity_;
-                            // }
-                        // Else, we have a special debug voxel, set this to be the one shown, and exit.
-                        // } else {
-                        //     PresentingVoxel = ThisVoxel;
-                        //     break;
-                        // }
+                    //     // Get Voxel At Position
+                    //     VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, ZIndex);
+                    //     // if (ThisVoxel.State_ == VOXELSTATE_INTENSITY) {
+                    //         // if (ThisVoxel.Intensity_ < DarkestVoxel) {
+                    //     PresentingVoxel = ThisVoxel;
+                    //     DarkestVoxel = ThisVoxel.Intensity_;
+                    //         // }
+                    //     // Else, we have a special debug voxel, set this to be the one shown, and exit.
+                    //     // } else {
+                    //     //     PresentingVoxel = ThisVoxel;
+                    //     //     break;
+                    //     // }
 
-                    }
-
-                    // Add Noise, Intensity Based On Noise Amount
-                    int Intensity = PresentingVoxel.Intensity_;
-                    // if (Task->EnableImageNoise) {
-                    //     Intensity += (RandomGenerator() % Task->ImageNoiseAmount) - int(Task->ImageNoiseAmount/2);
-                    //     Intensity = std::clamp(Intensity, 0, 255);
                     // }
 
-                    // Now Set The Pixel
+
+                    // Calculate Pixel Index
                     int ThisPixelX = XVoxelIndex - Task->VoxelStartingX;
                     int ThisPixelY = YVoxelIndex - Task->VoxelStartingY;
 
-                    // Check if the voxel is in the enum reserved range, otherwise it's a color value from 128-255
-                    // if (PresentingVoxel.State_ == VOXELSTATE_INTENSITY) {
+                    // Calculate Color To Be Set
+                    if (PresentingVoxel.State_ == VoxelState_BLACK) {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0);
+                        continue;
+                    } else if (PresentingVoxel.State_ == VoxelState_WHITE) {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255);
+                        continue;
+                    } else if (PresentingVoxel.State_ == VoxelState_EMPTY) {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 240); // <-- THAT IS THE DEFAULT IMAGE COLOR, SHOULD BE CONFIGURABLE
+                        continue;                    
+                    }
+
+                    // If we've gotten this far, the voxel must be inside something
+                    // then we set the color based on the perlin noise, and distance to edge
+                    uint8_t Intensity;
+                    if (Task->Params_->GeneratePerlinNoise_) {
+                        float X = Task->Array_->GetXPositionAtIndex(XVoxelIndex);
+                        float Y = Task->Array_->GetYPositionAtIndex(YVoxelIndex);
+                        float Z = Task->Array_->GetZPositionAtIndex(Task->VoxelZ);
+                        Intensity = GenerateVoxelColor(X, Y, Z, Task->Params_, Task->Generator_);
+                    } else {
+                        Intensity = Task->Params_->DefaultIntensity_;
+                    }
+
+                    if (Task->Params_->RenderBorders) {
+                        Intensity = CalculateBorderColor(Intensity, PresentingVoxel.DistanceToEdge_vox_, Task->Params_);
+                    }
+
                     OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, Intensity);
                         
-                    // } else {
-                    //     if (PresentingVoxel.State_ == BORDER) {
-                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 128, 50);
-                    //     } else if (PresentingVoxel.State_ == OUT_OF_RANGE) {
-                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
-                    //     } else if (PresentingVoxel.State_ == VOXELSTATE_RED) {
-                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255, 0, 0);
-                    //     } else if (PresentingVoxel.State_ == VOXELSTATE_GREEN) {
-                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 255, 0);
-                    //     } else if (PresentingVoxel.State_ == VOXELSTATE_BLUE) {
-                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0, 0, 255);
-                    //     } else {
-                    //         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 200, 200, 200);
-                    //     }
-                    // }
 
                 }
             }

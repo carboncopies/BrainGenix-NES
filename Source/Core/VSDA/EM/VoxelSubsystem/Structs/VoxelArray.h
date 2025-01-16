@@ -54,17 +54,21 @@ namespace NES {
 namespace Simulator {
 
 
-enum VoxelState {
+enum VoxelState:uint8_t {
     VoxelState_EMPTY=0,
     VoxelState_INTERIOR=1,
-    VoxelState_BORDER=2
+    VoxelState_BORDER=2,
+    VoxelState_BLACK=3,
+    VoxelState_WHITE=4
 };
+
 
 
 struct VoxelType {
 
-    uint8_t Intensity_; /**Value from 0-255 representing the intensity (brightness) of this voxel*/
+    // uint8_t Intensity_; /**Value from 0-255 representing the intensity (brightness) of this voxel, done during coloring stage of compositing*/
     VoxelState State_; /**Determine if this voxel is near the edge of a shape or not*/
+    uint8_t DistanceToEdge_vox_; /**Determines the distance to the nearest edge (in voxels), used to calculate borders later on, set during rasterization stage of compositing.*/
 
 };
 
@@ -77,7 +81,7 @@ class VoxelArray {
 
 private:
 
-    std::unique_ptr<std::atomic<VoxelType>[]> Data_; /**Big blob of memory that holds all the voxels*/
+    std::unique_ptr<VoxelType[]> Data_; /**Big blob of memory that holds all the voxels*/
     uint64_t DataMaxLength_ = 0;
 
     uint64_t SizeX_; /**Number of voxels in x dimension*/
@@ -172,8 +176,14 @@ public:
      * @param _Z 
      * @param _Value 
      */
-    void SetVoxelIfNotDarker(float _X, float _Y, float _Z, VoxelType _Value);
-    void SetVoxelIfNotDarkerAtIndex(int _X, int _Y, int _Z, VoxelType _Value);
+    // void SetVoxelIfNotDarker(float _X, float _Y, float _Z, VoxelType _Value);
+    // void SetVoxelIfNotDarkerAtIndex(int _X, int _Y, int _Z, VoxelType _Value);
+
+    /**
+     * @brief Compositor function that simply sets information about the sate of the given voxel.
+     */
+    void CompositeVoxel(float _X, float _Y, float _Z, VoxelState _State, float _DistanceToEdge);
+    void CompositeVoxelAtIndex(int _X, int _Y, int _Z, VoxelState _State, float _DistanceToEdge);
 
     /**
      * @brief Get the size of the array, populate the int ptrs
@@ -240,6 +250,8 @@ public:
 
     int GetXIndexAtPosition(float _X_Worldspace_um);
 
+    float GetXPositionAtIndex(int _XIndex);
+
     /**
      * @brief Get the y dimensions
      * 
@@ -248,6 +260,8 @@ public:
     int GetY();
 
     int GetYIndexAtPosition(float _X_Worldspace_um);
+
+    float GetYPositionAtIndex(int _YIndex);
 
 
     /**
@@ -259,6 +273,7 @@ public:
 
     int GetZIndexAtPosition(float _X_Worldspace_um);
 
+    float GetZPositionAtIndex(int _ZIndex);
 
     /**
      * @brief Returns the resolution of the given object in micrometers.
