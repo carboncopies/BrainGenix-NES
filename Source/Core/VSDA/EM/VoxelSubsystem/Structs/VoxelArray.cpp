@@ -371,16 +371,16 @@ float VoxelArray::GetZPositionAtIndex(int _ZIndex) {
     return BoundingBox_.bb_point1[2] + _ZIndex * VoxelScale_um;
 }
 
-void VoxelArray::CompositeVoxel(float _X, float _Y, float _Z, VoxelState _State, float _DistanceToEdge) {
+void VoxelArray::CompositeVoxel(float _X, float _Y, float _Z, VoxelState _State, float _DistanceToEdge, uint64_t _ParentUID) {
     // Convert worldspace coordinates to voxel indices
     int XIndex = round((_X - BoundingBox_.bb_point1[0]) / VoxelScale_um);
     int YIndex = round((_Y - BoundingBox_.bb_point1[1]) / VoxelScale_um);
     int ZIndex = round((_Z - BoundingBox_.bb_point1[2]) / VoxelScale_um);
 
     // Call the index-based function
-    CompositeVoxelAtIndex(XIndex, YIndex, ZIndex, _State, _DistanceToEdge);
+    CompositeVoxelAtIndex(XIndex, YIndex, ZIndex, _State, _DistanceToEdge, _ParentUID);
 }
-void VoxelArray::CompositeVoxelAtIndex(int _X, int _Y, int _Z, VoxelState _State, float _DistanceToEdge_um) {
+void VoxelArray::CompositeVoxelAtIndex(int _X, int _Y, int _Z, VoxelState _State, float _DistanceToEdge_um, uint64_t _ParentUID) {
     int XIndex = _X;
     int YIndex = _Y;
     int ZIndex = _Z;
@@ -401,6 +401,7 @@ void VoxelArray::CompositeVoxelAtIndex(int _X, int _Y, int _Z, VoxelState _State
     if (ThisVoxel.State_ < VoxelState_BLACK) {
         ThisVoxel.State_ = _State;
     }
+    ThisVoxel.ParentUID = _ParentUID;
     SetVoxel(XIndex, YIndex, ZIndex, ThisVoxel);
 
 }
