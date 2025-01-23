@@ -202,6 +202,9 @@ std::string ModelRPCInterface::BSNeuronCreate(std::string _JSONRequest) {
 
     C.ID = Handle.Sim()->Neurons.size();
     
+    Handle.Sim()->RegisterNeuronUIDToCompartments(std::vector<int>(C.SomaCompartmentID), C.ID);
+    Handle.Sim()->RegisterNeuronUIDToCompartments(std::vector<int>(C.AxonCompartmentID), C.ID);
+
     Handle.Sim()->Neurons.push_back(std::make_shared<BallAndStick::BSNeuron>(C));
     Handle.Sim()->NeuronByCompartment.emplace(C.SomaCompartmentID, C.ID);
     Handle.Sim()->NeuronByCompartment.emplace(C.AxonCompartmentID, C.ID);
@@ -281,6 +284,9 @@ std::string ModelRPCInterface::SCNeuronCreate(std::string _JSONRequest) {
     // }
 
     C.ID = Handle.Sim()->AddSCNeuron(C);
+    Handle.Sim()->RegisterNeuronUIDToCompartments(C.SomaCompartmentIDs, C.ID);
+    Handle.Sim()->RegisterNeuronUIDToCompartments(C.DendriteCompartmentIDs, C.ID);
+    Handle.Sim()->RegisterNeuronUIDToCompartments(C.AxonCompartmentIDs, C.ID);
 
     // Return Result ID
     return Handle.ResponseWithID("NeuronID", C.ID);

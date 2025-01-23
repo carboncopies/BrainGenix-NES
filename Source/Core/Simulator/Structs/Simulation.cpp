@@ -142,6 +142,38 @@ int Simulation::AddReceptor(Connections::Receptor& _C) {
     return _C.ID;
 }
 
+void Simulation::RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompartmentIDs, uint64_t _NeuronUID) {
+    
+    // Iterate through all given geometry types so we can set the uuid of the parent neuron
+    size_t MaxShapeIndex = Collection.Size();
+    for (size_t i = 0; i < _GeometryCompartmentIDs.size(); i++) {
+        size_t ShapeIndex = _GeometryCompartmentIDs[i];
+
+        // Index Validation
+        if (ShapeIndex > MaxShapeIndex) {
+            continue;
+        }
+
+        BG::NES::Simulator::Geometries::GeometryShapeEnum ShapeType = Collection.GetShapeType(ShapeIndex);
+
+        if (ShapeType == BG::NES::Simulator::Geometries::GeometrySphere) {
+            Geometries::Sphere& S = Collection.GetSphere(ShapeIndex);
+            S.ParentID = _NeuronUID;
+            
+        } else if (ShapeType == BG::NES::Simulator::Geometries::GeometryCylinder) {
+            Geometries::Cylinder& S = Collection.GetCylinder(ShapeIndex);
+            S.ParentID = _NeuronUID;
+
+        } else if (ShapeType == BG::NES::Simulator::Geometries::GeometryBox) {
+            Geometries::Box& S = Collection.GetBox(ShapeIndex);
+            S.ParentID = _NeuronUID;
+
+        }
+
+    }
+}
+
+
 struct SaverInfo {
     size_t SGMapSize = 0;
     size_t SphereReferencesSize = 0;

@@ -30,6 +30,7 @@ namespace Geometries {
  */
 struct SphereBase: Geometry {
     float Radius_um; //! Radius in micrometers of the sphere.
+    uint64_t ParentID; // ID of the parent object.
 
 
     //! --- The folllwing is here due to pure virtual functions in Geometry.

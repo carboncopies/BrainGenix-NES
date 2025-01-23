@@ -163,6 +163,7 @@ public:
     int AddSCCompartment(Compartments::BS& _C);
     int AddSCNeuron(CoreStructs::SCNeuronStruct& _N);
     int AddReceptor(Connections::Receptor& _C);
+    void RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompartmentIDs, uint64_t _NeuronUID);
 
     bool SaveModel(const std::string& Name);
     bool LoadModel(const std::string& Name);

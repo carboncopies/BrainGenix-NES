@@ -59,6 +59,7 @@ struct CylinderBase: Geometry {
 struct Cylinder : CylinderBase {
 
     std::string Name;
+    uint64_t ParentID; // ID of the parent object.
 
     // Constructors
     Cylinder();
