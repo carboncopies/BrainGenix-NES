@@ -124,9 +124,23 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
     while (ThreadControlFlag_) {
 
         // Step 1, Check For Work
-        ProcessingTask* Task = nullptr;
-        if (DequeueTask(&Task)) {
+        ProcessingTask* genericTask = nullptr;
+        if (DequeueTask(&genericTask)) {
 
+            // If we're compressing instead.
+            if (auto segTask = dynamic_cast<SegmentationCompressionTask*>(genericTask)) {
+                // Handle segmentation compression
+                SegmentationCompressor::ProcessTask(segTask);
+                
+                // Logging
+                Logger_->Log("Compressed segmentation layer " + std::to_string(segTask->ZLevel_) + " to " + segTask->OutputPath_, 1);
+                continue;
+            }
+
+            // Otherwise, it's an image compression task.
+            ProcessingTask* Task = dynamic_cast<ProcessingTask*>(genericTask);
+            
+            
             // Start Timer
             std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
 

@@ -168,6 +168,10 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h
+
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/SegmentationCompression.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/SegmentationCompression.cpp
+
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/Task.cpp
@@ -212,6 +216,7 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/Image.h
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h
+
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h
   ${SRC_DIR}/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/Task.cpp
