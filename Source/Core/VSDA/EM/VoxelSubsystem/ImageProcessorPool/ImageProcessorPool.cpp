@@ -131,7 +131,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             if (auto segTask = dynamic_cast<SegmentationCompressionTask*>(genericTask)) {
                 // Handle segmentation compression
                 SegmentationCompressor::ProcessTask(segTask);
-                
+
                 // Logging
                 Logger_->Log("Compressed segmentation layer " + std::to_string(segTask->ZLevel_) + " to " + segTask->OutputPath_, 1);
                 continue;

@@ -9,6 +9,8 @@
 #include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
 #include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h>
 
+#define SEGMENTATION_BLOCK_SIZE 8
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -18,7 +20,7 @@ struct SegmentationCompressionTask : public ProcessingTask {
     VoxelArray* Voxels_;
     uint64_t ZLevel_;
     std::vector<uint8_t> CompressedData_;
-    std::vector<uint64_t> BlockSize_{8, 8, 8};
+    std::vector<uint64_t> BlockSize_{SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE};
 };
 
 class SegmentationCompressor {

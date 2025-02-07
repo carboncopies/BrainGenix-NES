@@ -156,8 +156,6 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
             _VSDAData->Tasks_.push_back(std::move(ThisTask));
 
 
-
-
         }
     }
 
