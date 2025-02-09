@@ -80,7 +80,10 @@ struct ScanRegion {
 
 
     std::vector<std::string> ImageFilenames_; /**List of image filenames to be used*/
+    std::vector<std::string> SegmentationFilenames_; /**List of segmentation filenames to be used*/
+    
     std::vector<VoxelIndexInfo> ImageVoxelIndexes_; /**List of indexes for each image*/
+    std::vector<VoxelIndexInfo> SegmentationVoxelIndexes_; /**List of indexes for each image*/
     VoxelIndexInfo RegionIndexInfo_; /**Information about the whole rendered region*/
 
     std::string NeuroglancerDatasetHandle_; /**String that represents the neuroglancer handle, if generated*/

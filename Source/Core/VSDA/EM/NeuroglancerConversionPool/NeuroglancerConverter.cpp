@@ -78,7 +78,7 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
         return false;
     }
 
-
+    _NumResolutionLevels = 1;
 
     // Stage 1: Create the metadata for the precomptued format
 
@@ -128,7 +128,7 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
     for (int ReductionLevel = 1; ReductionLevel <= _NumResolutionLevels; ReductionLevel++) {
         // - Create the scales list
         nlohmann::json Scales;
-        Scales["encoding"] = "jpeg";
+        Scales["encoding"] = "compressed_segmentation";
         Scales["key"] = "ReductionLevel-" + std::to_string(ReductionLevel);
 
 
@@ -167,15 +167,20 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
         std::vector<int> Offset{0, 0, 0};
         Scales["voxel_offset"] = Offset;
 
+        Scales["compressed_segmentation_block_size"] = std::vector<int>({8,8,8});
+
+
         ScalesList.push_back(Scales);
     }
     
 
     nlohmann::json Info;
-    Info["data_type"] = "uint8";
-    Info["num_channels"] = "3";
-    Info["type"] = "image";
+    Info["data_type"] = "uint64";
+    Info["num_channels"] = "1";
+    Info["type"] = "segmentation";
     Info["scales"] = ScalesList;
+
+    //"compressed_segmentation_block_size": [8,8,8]
 
     
     // Now, Write Info to disk, then write the provenance json too
@@ -212,12 +217,41 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
         ThisTask->OutputDirectoryBasePath_ = BasePath;
         ThisTask->SourceFilePath_ = BaseRegion->ImageFilenames_[i];
         ThisTask->ReductionLevels_ = _NumResolutionLevels;
+        ThisTask->IsSegmentation_ = false;
 
         _ConversionPool->QueueEncodeOperation(ThisTask.get());
         _Simulation->VSDAData_.ConversionTasks_.push_back(std::move(ThisTask));
 
     }
     
+
+    // Stage 3: Segmap conversion
+    // Now we're going to convert all of the images
+    if (BaseRegion->SegmentationVoxelIndexes_.size() != BaseRegion->SegmentationFilenames_.size()) {
+        _Logger->Log("Something is seriously wrong! FilenameList Size != SegmentationVoxelIndexes Size", 10);
+        return false;
+    }
+
+    Status = CreateDirectoryRecursive(BasePath + "/Segmentation", Error);
+    if (!Status) {
+        return false;
+    }
+
+    for (size_t i = 0; i < BaseRegion->SegmentationVoxelIndexes_.size(); i++) {
+
+        std::unique_ptr<ConversionPool::ProcessingTask> ThisTask = std::make_unique<ConversionPool::ProcessingTask>();
+
+        ThisTask->IndexInfo_ = BaseRegion->SegmentationVoxelIndexes_[i];
+        ThisTask->OutputDirectoryBasePath_ = BasePath;
+        ThisTask->SourceFilePath_ = BaseRegion->SegmentationFilenames_[i];
+        ThisTask->ReductionLevels_ = _NumResolutionLevels;
+        ThisTask->IsSegmentation_ = true;
+
+        _ConversionPool->QueueEncodeOperation(ThisTask.get());
+        _Simulation->VSDAData_.ConversionTasks_.push_back(std::move(ThisTask));
+
+    }
+
 
     // wait for all tasks to finish
     for (size_t i = 0; i < _Simulation->VSDAData_.ConversionTasks_.size(); i++) {

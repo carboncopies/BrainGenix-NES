@@ -62,7 +62,8 @@ double GetAverage(std::vector<double>* _Vec) {
 }
 
 
-// Thread Main Function
+
+
 // Thread Main Function
 void ConversionPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
@@ -86,27 +87,15 @@ void ConversionPool::EncoderThreadMainFunction(int _ThreadNumber) {
             std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
             std::string TargetFilename;
 
-            // Load the source image
-            int Width, Height, Channels;
-            unsigned char* Image = stbi_load(Task->SourceFilePath_.c_str(), &Width, &Height, &Channels, 0);
 
-            for (int ReductionLevel = 1; ReductionLevel <= Task->ReductionLevels_; ReductionLevel++) {
-
-                // Calculate the new dimensions
-                int NewWidth = Width / pow(2,ReductionLevel);
-                int NewHeight = Height / pow(2,ReductionLevel);
-
-                // Allocate memory for the resized image
-                unsigned char* ResizedImage = (unsigned char*)malloc(NewWidth * NewHeight * Channels);
-
-                // Resize the image
-                stbir_resize_uint8(Image, Width, Height, 0, ResizedImage, NewWidth, NewHeight, 0, Channels);
+            // Write segmentation map data
+            if (Task->IsSegmentation_) {
 
                 // Update the indexes to the scaled size
-                int ScaledX1 = Task->IndexInfo_.StartX / pow(2,ReductionLevel);
-                int ScaledX2 = Task->IndexInfo_.EndX / pow(2,ReductionLevel);
-                int ScaledY1 = Task->IndexInfo_.StartY / pow(2,ReductionLevel);
-                int ScaledY2 = Task->IndexInfo_.EndY / pow(2,ReductionLevel);
+                int ScaledX1 = Task->IndexInfo_.StartX;
+                int ScaledX2 = Task->IndexInfo_.EndX;
+                int ScaledY1 = Task->IndexInfo_.StartY;
+                int ScaledY2 = Task->IndexInfo_.EndY;
                 int ScaledZ1 = Task->IndexInfo_.StartZ;
                 int ScaledZ2 = Task->IndexInfo_.EndZ;
 
@@ -117,20 +106,62 @@ void ConversionPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 std::string Y2 = std::to_string(ScaledY2);
                 std::string Z1 = std::to_string(ScaledZ1);
                 std::string Z2 = std::to_string(ScaledZ2);
-                TargetFilename = Task->OutputDirectoryBasePath_ + "/ReductionLevel-" + std::to_string(ReductionLevel);
+                TargetFilename = Task->OutputDirectoryBasePath_ + "Segmentation";
                 TargetFilename += "/" + X1 + "-" + X2;
                 TargetFilename += "_" + Y1 + "-" + Y2;
                 TargetFilename += "_" + Z1 + "-" + Z2;
 
-                // Write the resized image as a JPEG
-                stbi_write_jpg(TargetFilename.c_str(), NewWidth, NewHeight, Channels, ResizedImage, 100);
+                // Copy file
+                std::filesystem::copy_file(Task->SourceFilePath_, TargetFilename); 
+                
 
-                // Free the resized image memory
-                free(ResizedImage);
+            } else {
+                // Load the source image
+                int Width, Height, Channels;
+                unsigned char* Image = stbi_load(Task->SourceFilePath_.c_str(), &Width, &Height, &Channels, 0);
+
+                for (int ReductionLevel = 1; ReductionLevel <= Task->ReductionLevels_; ReductionLevel++) {
+
+                    // Calculate the new dimensions
+                    int NewWidth = Width / pow(2,ReductionLevel);
+                    int NewHeight = Height / pow(2,ReductionLevel);
+
+                    // Allocate memory for the resized image
+                    unsigned char* ResizedImage = (unsigned char*)malloc(NewWidth * NewHeight * Channels);
+
+                    // Resize the image
+                    stbir_resize_uint8(Image, Width, Height, 0, ResizedImage, NewWidth, NewHeight, 0, Channels);
+
+                    // Update the indexes to the scaled size
+                    int ScaledX1 = Task->IndexInfo_.StartX / pow(2,ReductionLevel);
+                    int ScaledX2 = Task->IndexInfo_.EndX / pow(2,ReductionLevel);
+                    int ScaledY1 = Task->IndexInfo_.StartY / pow(2,ReductionLevel);
+                    int ScaledY2 = Task->IndexInfo_.EndY / pow(2,ReductionLevel);
+                    int ScaledZ1 = Task->IndexInfo_.StartZ;
+                    int ScaledZ2 = Task->IndexInfo_.EndZ;
+
+                    // Calculate desired output filename
+                    std::string X1 = std::to_string(ScaledX1);
+                    std::string X2 = std::to_string(ScaledX2);
+                    std::string Y1 = std::to_string(ScaledY1);
+                    std::string Y2 = std::to_string(ScaledY2);
+                    std::string Z1 = std::to_string(ScaledZ1);
+                    std::string Z2 = std::to_string(ScaledZ2);
+                    TargetFilename = Task->OutputDirectoryBasePath_ + "/ReductionLevel-" + std::to_string(ReductionLevel);
+                    TargetFilename += "/" + X1 + "-" + X2;
+                    TargetFilename += "_" + Y1 + "-" + Y2;
+                    TargetFilename += "_" + Z1 + "-" + Z2;
+
+                    // Write the resized image as a JPEG
+                    stbi_write_jpg(TargetFilename.c_str(), NewWidth, NewHeight, Channels, ResizedImage, 100);
+
+                    // Free the resized image memory
+                    free(ResizedImage);
+                }
+
+                stbi_image_free(Image);
             }
 
-            stbi_image_free(Image);
-            
             // Update Task Result
             Task->IsDone_ = true;
 

@@ -121,18 +121,29 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
         // Calculate the filename of the image to be generated, add to list of generated images
         int AdjustedSliceNumber = (CurrentSliceIndex + SliceOffset) / (VSDAData_->Params_.SliceThickness_um / VSDAData_->Params_.VoxelResolution_um);
-        std::string DirectoryPath = "Renders/" + FileNamePrefix + "/Slice" + std::to_string(AdjustedSliceNumber) + "/";
+        std::string DirectoryPath = "Renders/" + FileNamePrefix + "/Slice" + std::to_string(AdjustedSliceNumber);
 
         std::unique_ptr<SegmentationCompressionTask> SegTask = std::make_unique<SegmentationCompressionTask>();
         SegTask->Voxels_ = VSDAData_->Array_.get();
         SegTask->ZLevel_ = CurrentSliceIndex;
         SegTask->OutputPath_ = DirectoryPath;
-
         // SegTask->Params_ = &_VSDAData->Params_;
 
         // Enqueue Work Operation
         _ImageProcessorPool->QueueEncodeOperation(SegTask.get());
         VSDAData_->Tasks_.push_back(std::move(SegTask));
+
+
+        VoxelIndexInfo Info;
+        Info.StartX = 0;
+        Info.EndX = VSDAData_->Array_->GetX();
+        Info.StartY = 0;
+        Info.EndY = VSDAData_->Array_->GetY();
+        Info.StartZ = AdjustedSliceNumber;
+        Info.EndZ = AdjustedSliceNumber + 8;
+
+        VSDAData_->Regions_[VSDAData_->ActiveRegionID_].SegmentationFilenames_.push_back(DirectoryPath + "Segmentation");
+        VSDAData_->Regions_[VSDAData_->ActiveRegionID_].SegmentationVoxelIndexes_.push_back(Info);
 
 
 
