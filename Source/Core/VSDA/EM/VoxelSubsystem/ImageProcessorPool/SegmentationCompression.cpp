@@ -3,11 +3,40 @@
 #include <vector>
 #include <unordered_map>
 #include <algorithm>
+#include <filesystem>
 #include <cstring>
+
+
+
+
+// Returns:
+//   true upon success.
+//   false upon failure, and set the std::error_code & err accordingly.
+// https://stackoverflow.com/questions/71658440/c17-create-directories-automatically-given-a-file-path
+bool CreateDirectoryRecursive2(std::string const & dirName, std::error_code & err)
+{
+    err.clear();
+    if (!std::filesystem::create_directories(dirName, err))
+    {
+        if (std::filesystem::exists(dirName))
+        {
+            // The folder already exists:
+            err.clear();
+            return true;    
+        }
+        return false;
+    }
+    return true;
+}
+
+
 
 namespace BG {
 namespace NES {
 namespace Simulator {
+
+
+
 
 void SegmentationCompressor::CompressBlock(VoxelArray& array,
                                           uint64_t blockX,
@@ -109,11 +138,30 @@ void SegmentationCompressor::ProcessTask(SegmentationCompressionTask* task) {
     
     // Save to disk (simple concatenation)
     // In real implementation, use proper file format
-    std::ofstream out(task->OutputPath_, std::ios::binary);
-    for(const auto& block : blocks) {
-        out.write(reinterpret_cast<const char*>(block.data()), block.size());
+    // std::cout<<"Making File, "<<std::to_string(blocks.size())<<"blocks to: "<<task->OutputPath_ + "/Segmentation"<<std::endl;
+    std::error_code Code;
+    if (!CreateDirectoryRecursive2(task->OutputPath_, Code)) {
+        std::cerr<<"Failed To Create Directory!!!!!";
+        return;
     }
-    
+
+    std::ofstream out(task->OutputPath_ + "/Segmentation", std::ios::binary);
+    if (!out) {
+        std::cerr << "Failed to open file for writing: " << task->OutputPath_ + "/Segmentation" << std::endl;
+        return;
+    }
+
+    for (const auto& block : blocks) {
+        out.write(reinterpret_cast<const char*>(block.data()), block.size());   
+        if (!out) {
+            std::cerr << "Failed to write to file." << std::endl;
+            out.close();
+            return;
+        }
+    }
+
+    out.close();
+
     task->IsDone_ = true;
 }
 

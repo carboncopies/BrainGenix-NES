@@ -77,6 +77,11 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
     for (int XStep = 0; XStep < TotalXSteps; XStep++) {
         for (int YStep = 0; YStep < TotalYSteps; YStep++) {
 
+            // Setup Stats Info About Each Region
+            int VoxelOffsetX = ((_OffsetX + _RegionOffsetX) / Params->VoxelResolution_um);
+            int VoxelOffsetY = ((_OffsetY + _RegionOffsetY) / Params->VoxelResolution_um);
+
+
             // we have to calculate an 'adjusted' slice number since we might skip over z slices to simulate more thickness for each slice
             // so to keep our slices sequential, we just divide the current 'true' slice number by the number of slices skipped so they're once again sequential
             int AdjustedSliceNumber = (_SliceNumber + _SliceOffset) / (_VSDAData->Params_.SliceThickness_um / _VSDAData->Params_.VoxelResolution_um);
@@ -85,9 +90,11 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
             std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(AdjustedSliceNumber) + "/";
             double RoundedXCoord = std::ceil(((CameraStepSizeX_um * XStep) + _OffsetX) * 100.0) / 100.0;
             double RoundedYCoord = std::ceil(((CameraStepSizeY_um * YStep) + _OffsetY) * 100.0) / 100.0;
-            std::string FilePath = "X" + std::to_string(RoundedXCoord) + "_Y" + std::to_string(RoundedYCoord) + ".png";
-
-
+            std::string FilePath = ""; //"X" + std::to_string(RoundedXCoord) + "_Y" + std::to_string(RoundedYCoord) + ".png";
+            FilePath = std::to_string(VoxelsPerStepX * XStep + VoxelOffsetX) + "-" + std::to_string((VoxelsPerStepX * XStep) + ImageWidth_vox + VoxelOffsetX) + "_";
+            FilePath += std::to_string(VoxelsPerStepY * YStep + VoxelOffsetY) + "-" + std::to_string((VoxelsPerStepY * YStep) + ImageHeight_vox + VoxelOffsetY) + "_";
+            FilePath += std::to_string(AdjustedSliceNumber) + "-" + std::to_string(AdjustedSliceNumber + 1);
+            FilePath += ".png";
 
 
             // Setup and submit task to queue for rendering
@@ -128,9 +135,7 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
 
 
 
-            // Setup Stats Info About Each Region
-            int VoxelOffsetX = ((_OffsetX + _RegionOffsetX) / Params->VoxelResolution_um);
-            int VoxelOffsetY = ((_OffsetY + _RegionOffsetY) / Params->VoxelResolution_um);
+  
 
 
             VoxelIndexInfo Info;
