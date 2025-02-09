@@ -142,7 +142,7 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
         Info.StartZ = AdjustedSliceNumber;
         Info.EndZ = AdjustedSliceNumber + 8;
 
-        VSDAData_->Regions_[VSDAData_->ActiveRegionID_].SegmentationFilenames_.push_back(DirectoryPath + "Segmentation");
+        VSDAData_->Regions_[VSDAData_->ActiveRegionID_].SegmentationFilenames_.push_back(DirectoryPath + "/Segmentation");
         VSDAData_->Regions_[VSDAData_->ActiveRegionID_].SegmentationVoxelIndexes_.push_back(Info);
 
 
