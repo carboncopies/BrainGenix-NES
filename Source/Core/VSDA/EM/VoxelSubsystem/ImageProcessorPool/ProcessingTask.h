@@ -46,6 +46,10 @@
 #include <VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h>
 
 
+
+#define SEGMENTATION_BLOCK_SIZE 8
+
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -58,7 +62,7 @@ namespace Simulator {
  * 
  */
 struct ProcessingTask {
-    virtual ~ProcessingTask() = default; // Add virtual destructor
+    // virtual ~ProcessingTask() = default; // Add virtual destructor
     std::atomic<bool> IsDone_{false};
 
 
@@ -104,6 +108,17 @@ struct ProcessingTask {
 
     noise::module::Perlin* Generator_ = nullptr; /**Pointer to noise generator */
     MicroscopeParameters* Params_ = nullptr;
+
+
+
+    // Segmentation Options
+    bool IsSegmentation_;
+    std::string OutputPath_;
+    VoxelArray* Voxels_;
+    uint64_t ZLevel_;
+    std::vector<uint8_t> CompressedData_;
+    std::vector<uint64_t> BlockSize_{SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE};
+
 
 };
 

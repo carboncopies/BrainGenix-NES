@@ -122,10 +122,11 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
             int AdjustedSliceNumber = (CurrentSliceIndex + SliceOffset) / (VSDAData_->Params_.SliceThickness_um / VSDAData_->Params_.VoxelResolution_um);
             std::string DirectoryPath = "Renders/" + FileNamePrefix + "/Slice" + std::to_string(AdjustedSliceNumber);
 
-            std::unique_ptr<SegmentationCompressionTask> SegTask = std::make_unique<SegmentationCompressionTask>();
+            std::unique_ptr<ProcessingTask> SegTask = std::make_unique<ProcessingTask>();
             SegTask->Voxels_ = VSDAData_->Array_.get();
             SegTask->ZLevel_ = CurrentSliceIndex;
             SegTask->OutputPath_ = DirectoryPath;
+            SegTask->IsSegmentation_ = true;
             // SegTask->Params_ = &_VSDAData->Params_;
 
             // Enqueue Work Operation

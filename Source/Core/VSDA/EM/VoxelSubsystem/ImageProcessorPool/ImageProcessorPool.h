@@ -132,9 +132,9 @@ public:
     void QueueEncodeOperation(ProcessingTask* _Task);
 
 
-    void QueueSegmentationCompression(SegmentationCompressionTask* task) {
-        EnqueueTask(reinterpret_cast<ProcessingTask*>(task));
-    }
+    // void QueueSegmentationCompression(ProcessingTask* task) {
+    //     EnqueueTask(reinterpret_cast<ProcessingTask*>(task));
+    // }
 
     /**
      * @brief Thread safe getSize function.

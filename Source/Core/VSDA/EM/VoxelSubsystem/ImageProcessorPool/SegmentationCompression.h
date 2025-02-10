@@ -9,19 +9,18 @@
 #include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
 #include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h>
 
-#define SEGMENTATION_BLOCK_SIZE 8
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 
-struct SegmentationCompressionTask : public ProcessingTask {
-    std::string OutputPath_;
-    VoxelArray* Voxels_;
-    uint64_t ZLevel_;
-    std::vector<uint8_t> CompressedData_;
-    std::vector<uint64_t> BlockSize_{SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE};
-};
+// struct SegmentationCompressionTask : public ProcessingTask {
+//     std::string OutputPath_;
+//     VoxelArray* Voxels_;
+//     uint64_t ZLevel_;
+//     std::vector<uint8_t> CompressedData_;
+//     std::vector<uint64_t> BlockSize_{SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE};
+// };
 
 class SegmentationCompressor {
 public:
@@ -32,7 +31,7 @@ public:
                              const std::vector<uint64_t>& blockSize,
                              std::vector<uint8_t>& output);
                              
-    static void ProcessTask(SegmentationCompressionTask* task);
+    static void ProcessTask(ProcessingTask* task);
 };
 
 }}}

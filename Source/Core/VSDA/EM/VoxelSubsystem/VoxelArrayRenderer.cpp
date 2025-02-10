@@ -100,6 +100,7 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
             // Setup and submit task to queue for rendering
             std::unique_ptr<ProcessingTask> ThisTask = std::make_unique<ProcessingTask>();
             ThisTask->Array_ = _Array;
+            ThisTask->IsSegmentation_ = false;
             ThisTask->Width_px = _VSDAData->Params_.ImageWidth_px;
             ThisTask->Height_px = _VSDAData->Params_.ImageHeight_px;
             ThisTask->VoxelStartingX = VoxelsPerStepX * XStep;

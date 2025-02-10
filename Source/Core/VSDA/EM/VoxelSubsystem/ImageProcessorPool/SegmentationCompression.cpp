@@ -113,7 +113,7 @@ void SegmentationCompressor::CompressBlock(VoxelArray& array,
     memcpy(output.data() + sizeof(header), packed.data(), packed.size());
 }
 
-void SegmentationCompressor::ProcessTask(SegmentationCompressionTask* task) {
+void SegmentationCompressor::ProcessTask(ProcessingTask* task) {
     VoxelArray& array = *task->Voxels_;
     const auto blockSize = task->BlockSize_;
     
