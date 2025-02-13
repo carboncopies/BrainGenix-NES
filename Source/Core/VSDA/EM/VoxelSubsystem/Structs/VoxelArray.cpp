@@ -164,8 +164,9 @@ VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
     // Check Bounds
     if ((_X < 0 || _X >= SizeX_) || (_Y < 0 || _Y >= SizeY_) || (_Z < 0 || _Z >= SizeZ_)) {
         VoxelType Ret;
-        // Ret.Intensity_ = 0;
-        // Ret.State_ = OUT_OF_RANGE;
+        Ret.ParentUID = 0;
+        Ret.DistanceToEdge_vox_ = 0;
+        Ret.State_ = VoxelState_OUT_OF_BOUNDS;
         return Ret;
     }
 
@@ -174,9 +175,11 @@ VoxelType VoxelArray::GetVoxel(int _X, int _Y, int _Z) {
     if (Index < DataMaxLength_) {
         return Data_.get()[Index];
     }
+    
     VoxelType Ret;
-    // Ret.Intensity_ = 0;
-    // Ret.State_ = OUT_OF_RANGE;
+    Ret.ParentUID = 0;
+    Ret.DistanceToEdge_vox_ = 0;
+    Ret.State_ = VoxelState_OUT_OF_BOUNDS;
     return Ret;
 
 }

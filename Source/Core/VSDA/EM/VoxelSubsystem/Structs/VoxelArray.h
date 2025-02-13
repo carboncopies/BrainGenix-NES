@@ -59,7 +59,8 @@ enum VoxelState:uint8_t {
     VoxelState_INTERIOR=1,
     VoxelState_BORDER=2,
     VoxelState_BLACK=3,
-    VoxelState_WHITE=4
+    VoxelState_WHITE=4,
+    VoxelState_OUT_OF_BOUNDS=5
 };
 
 

@@ -189,7 +189,6 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
                     // }
 
-
                     // Calculate Pixel Index
                     int ThisPixelX = XVoxelIndex - Task->VoxelStartingX;
                     int ThisPixelY = YVoxelIndex - Task->VoxelStartingY;
@@ -204,7 +203,10 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     } else if (PresentingVoxel.State_ == VoxelState_EMPTY) {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 240); // <-- THAT IS THE DEFAULT IMAGE COLOR, SHOULD BE CONFIGURABLE
                         continue;                    
-                    }
+                    } else if (PresentingVoxel.State_ == VoxelState_OUT_OF_BOUNDS) {
+                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0); // Force out of bounds color to be black.
+                        continue;                    
+                    } 
 
                     // If we've gotten this far, the voxel must be inside something
                     // then we set the color based on the perlin noise, and distance to edge
