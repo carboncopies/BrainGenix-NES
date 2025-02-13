@@ -171,6 +171,8 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/SegmentationCompression.h
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/SegmentationCompression.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.h
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc
 
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h

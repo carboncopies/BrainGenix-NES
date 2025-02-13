@@ -23,11 +23,7 @@ namespace Simulator {
 // };
 
 namespace SegmentationCompressor {
-    void CompressBlock(VoxelArray& array,
-                        uint64_t startX, uint64_t endX,
-                        uint64_t startY, uint64_t endY,
-                        uint64_t startZ, uint64_t endZ,
-                        std::vector<uint8_t>& output);
+    void CompressSegmentationRegion(VoxelArray& _Array, uint64_t _StartX, uint64_t _EndX, uint64_t _StartY, uint64_t _EndY, uint64_t _StartZ, uint64_t _EndZ, std::vector<uint32_t>* _Output);
                              
     void ProcessTask(ProcessingTask* task);
 };
