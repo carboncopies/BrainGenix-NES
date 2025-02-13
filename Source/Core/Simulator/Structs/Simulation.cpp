@@ -118,6 +118,15 @@ int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
         NeuronByCompartment.emplace(AxonID, _N.ID);
     }
 
+    RegisterNeuronUIDToCompartments(_N.SomaCompartmentIDs, _N.ID + 1);
+    RegisterNeuronUIDToCompartments(_N.DendriteCompartmentIDs, _N.ID + 1);
+    RegisterNeuronUIDToCompartments(_N.AxonCompartmentIDs, _N.ID + 1);
+
+    std::cout<<"Neuron Comp ID: "<<std::to_string(_N.ID)<<std::endl;
+    std::cout<<_N.SomaCompartmentIDs.size()<<std::endl;
+    std::cout<<_N.DendriteCompartmentIDs.size()<<std::endl;
+    std::cout<<_N.AxonCompartmentIDs.size()<<std::endl;
+
     return _N.ID;
 }
 
@@ -151,6 +160,7 @@ void Simulation::RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompa
 
         // Index Validation
         if (ShapeIndex > MaxShapeIndex) {
+            std::cout<<"Error! Shape Index out of shape bounds in registration for neuron uid to compartments\n";
             continue;
         }
 
@@ -172,7 +182,7 @@ void Simulation::RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompa
 
     }
 }
-
+            
 
 struct SaverInfo {
     size_t SGMapSize = 0;

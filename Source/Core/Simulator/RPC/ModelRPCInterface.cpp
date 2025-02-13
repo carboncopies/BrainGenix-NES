@@ -201,7 +201,6 @@ std::string ModelRPCInterface::BSNeuronCreate(std::string _JSONRequest) {
     }
 
     C.ID = Handle.Sim()->Neurons.size();
-    
     Handle.Sim()->RegisterNeuronUIDToCompartments(std::vector<int>(C.SomaCompartmentID), C.ID);
     Handle.Sim()->RegisterNeuronUIDToCompartments(std::vector<int>(C.AxonCompartmentID), C.ID);
 

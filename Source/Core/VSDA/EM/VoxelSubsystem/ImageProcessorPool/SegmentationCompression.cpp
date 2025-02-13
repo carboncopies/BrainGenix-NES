@@ -72,22 +72,18 @@ void SegmentationCompressor::CompressSegmentationRegion(VoxelArray& _Array, uint
     int Status = compress_segmentation::CompressChannel(SegMapData.get(), Strides, Volume, BlockSize, _Output);
     assert(Status == 0);
 
-
-    // Step 3, free uint64_t array
-    // delete SegMapData;
-
 }
 
 
 void SegmentationCompressor::ProcessTask(ProcessingTask* task) {
     // try {
-        VoxelArray& array = *task->Voxels_;
+        VoxelArray& array = *task->Array_;
         std::vector<uint32_t> finalOutput;
 
         // Compress specified region directly
         std::vector<uint32_t> blockData;
         // blockData.resize(8192);
-        CompressSegmentationRegion(array, (uint64_t)task->VoxelStartingX, (uint64_t)task->VoxelEndingX, (uint64_t)task->VoxelStartingY, (uint64_t)task->VoxelEndingY, (uint64_t)task->ZLevel_, (uint64_t)task->ZLevel_ + SEGMENTATION_BLOCK_SIZE, &blockData);
+        CompressSegmentationRegion(array, (uint64_t)task->VoxelStartingX, (uint64_t)task->VoxelEndingX, (uint64_t)task->VoxelStartingY, (uint64_t)task->VoxelEndingY, (uint64_t)task->VoxelZ, (uint64_t)task->VoxelZ + SEGMENTATION_BLOCK_SIZE, &blockData);
 
         // Write to file
         std::error_code ec;

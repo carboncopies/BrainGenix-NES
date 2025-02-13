@@ -132,8 +132,72 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 // Handle segmentation compression
                 SegmentationCompressor::ProcessTask(Task);
 
+                // toggle this to disable writing colored pngs
+                if (true) {
+                    
+                    // -- Phase 1 -- //
+
+                    // First, setup the 1:1 voxel array image base and get it ready to be drawn to
+                    // If the user wants for example, 8 pixels per voxel (8x8), then we make an image 1/8 the dimensions as desired
+                    // then we set each pixel here based on the voxel in the map
+                    // next, we resize it up to the target image, thus saving a lot of compute time
+                    int VoxelsPerStepX = Task->VoxelEndingX - Task->VoxelStartingX;
+                    int VoxelsPerStepY = Task->VoxelEndingY - Task->VoxelStartingY;
+                    int NumChannels = 3;
+
+                    Image OneToOneVoxelImage(VoxelsPerStepX, VoxelsPerStepY, NumChannels);
+                    OneToOneVoxelImage.TargetFileName_ = Task->TargetFileName_;
+
+                    // Now enumerate the voxel array and populate the image with the desired pixels (for the subregion we're on)
+                    for (unsigned int XVoxelIndex = Task->VoxelStartingX; XVoxelIndex < Task->VoxelEndingX; XVoxelIndex++) {
+                        for (unsigned int YVoxelIndex = Task->VoxelStartingY; YVoxelIndex < Task->VoxelEndingY; YVoxelIndex++) {
+
+                        
+                            // Enumerate Depth, Compose based on rules defined above
+                            VoxelType PresentingVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, Task->VoxelZ);
+        
+
+                            // Calculate Pixel Index
+                            int ThisPixelX = XVoxelIndex - Task->VoxelStartingX;
+                            int ThisPixelY = YVoxelIndex - Task->VoxelStartingY;
+
+                            uint64_t Seed = PresentingVoxel.ParentUID;
+                            unsigned int R = (Seed * 9301 + 49297) % 256;
+                            unsigned int G = (Seed * 8303 + 49299) % 256;
+                            unsigned int B = (Seed * 7307 + 49303) % 256;
+
+                            if ((Seed == 0) || (PresentingVoxel.State_ == VoxelState_OUT_OF_BOUNDS)) {
+                                R = 0;
+                                G = 0;
+                                B = 0;
+                            }
+
+                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, R, G, B);
+                                
+
+                        }
+                    }
+
+
+                    int SourceX = OneToOneVoxelImage.Width_px;
+                    int SourceY = OneToOneVoxelImage.Height_px;
+                    int Channels = OneToOneVoxelImage.NumChannels_;
+                    unsigned char* SourcePixels = OneToOneVoxelImage.Data_.get();
+
+
+                    // Ensure Path Exists
+                    std::error_code Code;
+                    if (!CreateDirectoryRecursive(Task->TargetDirectory_, Code)) {
+                        Logger_ ->Log("Failed To Create Directory, Error '" + Code.message() + "'", 7);
+                    }
+
+                    // Write Image
+                    stbi_write_png((Task->TargetDirectory_ + Task->TargetFileName_ + ".seg.png").c_str(), SourceX, SourceY, Channels, SourcePixels, SourceX * Channels);
+
+                }
+
                 // Logging
-                Logger_->Log("Compressed segmentation layer " + std::to_string(Task->ZLevel_) + " to " + Task->OutputPath_, 1);
+                Logger_->Log("Compressed segmentation layer " + std::to_string(Task->VoxelZ) + " to " + Task->OutputPath_, 1);
                 continue;
             }
 

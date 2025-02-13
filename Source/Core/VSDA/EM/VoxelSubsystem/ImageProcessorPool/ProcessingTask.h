@@ -114,8 +114,6 @@ struct ProcessingTask {
     // Segmentation Options
     bool IsSegmentation_;
     std::string OutputPath_;
-    VoxelArray* Voxels_;
-    uint64_t ZLevel_;
     std::vector<uint8_t> CompressedData_;
     std::vector<uint64_t> BlockSize_{SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE};
 

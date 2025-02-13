@@ -179,8 +179,8 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
 
 
                 std::unique_ptr<ProcessingTask> SegTask = std::make_unique<ProcessingTask>();
-                SegTask->Voxels_ = _VSDAData->Array_.get();
-                SegTask->ZLevel_ = _SliceNumber;
+                SegTask->Array_ = _VSDAData->Array_.get();
+                SegTask->VoxelZ = _SliceNumber;
                 SegTask->VoxelStartingX = VoxelsPerStepX * XStep;
                 SegTask->VoxelStartingY = VoxelsPerStepY * YStep;
                 SegTask->VoxelEndingX = SegTask->VoxelStartingX + ImageWidth_vox;

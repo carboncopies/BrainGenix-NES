@@ -234,6 +234,7 @@ bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Ge
                 float DistanceToEdge = radius_at_z - r;
                 _Array->CompositeVoxel(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, VoxelState_INTERIOR, DistanceToEdge, _Cylinder->ParentID);
 
+
                 // // Set voxel at the point.
                 // VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
                 // if (_Params->RenderBorders) {
