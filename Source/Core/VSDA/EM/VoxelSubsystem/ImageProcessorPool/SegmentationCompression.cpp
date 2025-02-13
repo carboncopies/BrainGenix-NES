@@ -46,7 +46,7 @@ void SegmentationCompressor::CompressSegmentationRegion(VoxelArray& _Array, uint
     int TotalZVals = std::abs((int)_StartZ - (int)_EndZ);
     uint64_t TotalValues = TotalXVals * TotalYVals * TotalZVals;
 
-    uint64_t* SegMapData = new uint64_t[TotalValues];
+    std::unique_ptr<uint64_t[]> SegMapData = std::make_unique<uint64_t[]>(TotalValues);
 
     // Calculate strides for x,y,z indexes
     uint64_t XStride_Indices = TotalYVals * TotalZVals;
@@ -57,8 +57,8 @@ void SegmentationCompressor::CompressSegmentationRegion(VoxelArray& _Array, uint
     for (uint64_t X = _StartX; X < _EndX; X++) {
         for (uint64_t Y = _StartY; Y < _EndY; Y++) {
             for (uint64_t Z = _StartZ; Z < _EndZ; Z++) {
-                uint64_t CurrentIndex = (XStride_Indices * X) + (YStride_Indices * Y) + (ZStride_Indices * Z);
-                SegMapData[CurrentIndex] = _Array.GetVoxel(X, Y, Z).ParentUID;
+                uint64_t CurrentIndex = (XStride_Indices * (X - _StartX)) + (YStride_Indices * (Y - _StartY)) + (ZStride_Indices * (Z - _StartZ));
+                SegMapData.get()[CurrentIndex] = _Array.GetVoxel(X, Y, Z).ParentUID;
             }
         }
     }
@@ -69,12 +69,12 @@ void SegmentationCompressor::CompressSegmentationRegion(VoxelArray& _Array, uint
     ptrdiff_t Volume[3] = {TotalXVals, TotalYVals, TotalZVals};
     ptrdiff_t BlockSize[3] = {SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE};
 
-    int Status = compress_segmentation::CompressChannel(SegMapData, Strides, Volume, BlockSize, _Output);
+    int Status = compress_segmentation::CompressChannel(SegMapData.get(), Strides, Volume, BlockSize, _Output);
     assert(Status == 0);
 
 
     // Step 3, free uint64_t array
-    delete SegMapData;
+    // delete SegMapData;
 
 }
 
