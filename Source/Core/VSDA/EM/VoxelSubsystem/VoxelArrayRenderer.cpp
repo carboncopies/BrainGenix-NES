@@ -144,11 +144,11 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
             Info.EndX = ThisTask->VoxelEndingX + VoxelOffsetX;
             Info.StartY = ThisTask->VoxelStartingY + VoxelOffsetY;
             Info.EndY = ThisTask->VoxelEndingY + VoxelOffsetY;
-            Info.StartZ = AdjustedSliceNumber;
             Info.StartX *= Params->NumPixelsPerVoxel_px;
             Info.EndX *= Params->NumPixelsPerVoxel_px;
             Info.StartY *= Params->NumPixelsPerVoxel_px;
             Info.EndY *= Params->NumPixelsPerVoxel_px;
+            Info.StartZ = AdjustedSliceNumber;
             Info.EndZ = AdjustedSliceNumber + 1;
 
             ThisScanRegion->ImageFilenames_.push_back(DirectoryPath + FilePath);
@@ -160,6 +160,61 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
             // Enqueue Work Operation
             _ImageProcessorPool->QueueEncodeOperation(ThisTask.get());
             _VSDAData->Tasks_.push_back(std::move(ThisTask));
+
+
+
+            // Now generate segmentation map data
+            if (_SliceNumber % SEGMENTATION_BLOCK_SIZE == 0) {
+
+                // Calculate the filename of the image to be generated, add to list of generated images
+                // int AdjustedSliceNumber = (CurrentSliceIndex + SliceOffset) / (VSDAData_->Params_.SliceThickness_um / VSDAData_->Params_.VoxelResolution_um);
+                std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(AdjustedSliceNumber) + "/";
+
+                std::string FilePath = ""; //"X" + std::to_string(RoundedXCoord) + "_Y" + std::to_string(RoundedYCoord) + ".png";
+                FilePath = std::to_string(VoxelsPerStepX * XStep + VoxelOffsetX) + "-" + std::to_string((VoxelsPerStepX * XStep) + ImageWidth_vox + VoxelOffsetX) + "_";
+                FilePath += std::to_string(VoxelsPerStepY * YStep + VoxelOffsetY) + "-" + std::to_string((VoxelsPerStepY * YStep) + ImageHeight_vox + VoxelOffsetY) + "_";
+                FilePath += std::to_string(AdjustedSliceNumber) + "-" + std::to_string(AdjustedSliceNumber + SEGMENTATION_BLOCK_SIZE);
+                FilePath += ".seg";
+
+
+
+                std::unique_ptr<ProcessingTask> SegTask = std::make_unique<ProcessingTask>();
+                SegTask->Voxels_ = _VSDAData->Array_.get();
+                SegTask->ZLevel_ = _SliceNumber;
+                SegTask->VoxelStartingX = VoxelsPerStepX * XStep;
+                SegTask->VoxelStartingY = VoxelsPerStepY * YStep;
+                SegTask->VoxelEndingX = SegTask->VoxelStartingX + ImageWidth_vox;
+                SegTask->VoxelEndingY = SegTask->VoxelStartingY + ImageHeight_vox;
+                SegTask->OutputPath_ = DirectoryPath;
+                SegTask->TargetFileName_ = FilePath;
+                SegTask->TargetDirectory_ = DirectoryPath;
+                SegTask->IsSegmentation_ = true;
+                // SegTask->Params_ = &_VSDAData->Params_;
+
+       
+                VoxelIndexInfo Info;
+                Info.StartX = SegTask->VoxelStartingX + VoxelOffsetX;
+                Info.EndX = SegTask->VoxelEndingX + VoxelOffsetX;
+                Info.StartY = SegTask->VoxelStartingY + VoxelOffsetY;
+                Info.EndY = SegTask->VoxelEndingY + VoxelOffsetY;
+                Info.StartX *= Params->NumPixelsPerVoxel_px;
+                Info.EndX *= Params->NumPixelsPerVoxel_px;
+                Info.StartY *= Params->NumPixelsPerVoxel_px;
+                Info.EndY *= Params->NumPixelsPerVoxel_px;
+
+                Info.StartZ = AdjustedSliceNumber;
+                Info.EndZ = AdjustedSliceNumber + SEGMENTATION_BLOCK_SIZE;
+
+                _VSDAData->Regions_[_VSDAData->ActiveRegionID_].SegmentationFilenames_.push_back(DirectoryPath + "/" + FilePath);
+                _VSDAData->Regions_[_VSDAData->ActiveRegionID_].SegmentationVoxelIndexes_.push_back(Info);
+
+
+                // Enqueue Work Operation
+                _ImageProcessorPool->QueueEncodeOperation(SegTask.get());
+                _VSDAData->Tasks_.push_back(std::move(SegTask));
+
+
+            }
 
 
         }

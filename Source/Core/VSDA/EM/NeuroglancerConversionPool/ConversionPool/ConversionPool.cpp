@@ -120,7 +120,7 @@ void ConversionPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 int Width, Height, Channels;
                 unsigned char* Image = stbi_load(Task->SourceFilePath_.c_str(), &Width, &Height, &Channels, 0);
 
-                for (int ReductionLevel = 1; ReductionLevel <= Task->ReductionLevels_; ReductionLevel++) {
+                for (int ReductionLevel = 0; ReductionLevel <= Task->ReductionLevels_; ReductionLevel++) {
 
                     // Calculate the new dimensions
                     int NewWidth = Width / pow(2,ReductionLevel);

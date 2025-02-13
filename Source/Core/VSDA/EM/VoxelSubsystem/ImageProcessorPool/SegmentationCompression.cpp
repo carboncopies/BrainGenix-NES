@@ -5,164 +5,173 @@
 #include <algorithm>
 #include <filesystem>
 #include <cstring>
+#include <cmath>
 
+#pragma pack(push, 1)
+struct BlockHeader {
+    uint64_t startX;
+    uint64_t startY;
+    uint64_t startZ;
+    uint64_t sizeX;
+    uint64_t sizeY;
+    uint64_t sizeZ;
+    uint8_t bitsPerValue;
+    uint64_t numValues;
+};
+#pragma pack(pop)
 
-
-
-// Returns:
-//   true upon success.
-//   false upon failure, and set the std::error_code & err accordingly.
-// https://stackoverflow.com/questions/71658440/c17-create-directories-automatically-given-a-file-path
-bool CreateDirectoryRecursive2(std::string const & dirName, std::error_code & err)
-{
+bool CreateDirectoryRecursive2(std::string const& dirName, std::error_code& err) {
     err.clear();
-    if (!std::filesystem::create_directories(dirName, err))
-    {
-        if (std::filesystem::exists(dirName))
-        {
-            // The folder already exists:
+    if (!std::filesystem::create_directories(dirName, err)) {
+        if (std::filesystem::exists(dirName)) {
             err.clear();
-            return true;    
+            return true;
         }
         return false;
     }
     return true;
 }
 
-
-
 namespace BG {
 namespace NES {
 namespace Simulator {
 
-
-
-
 void SegmentationCompressor::CompressBlock(VoxelArray& array,
-                                          uint64_t blockX,
-                                          uint64_t blockY, 
-                                          uint64_t blockZ,
-                                          const std::vector<uint64_t>& blockSize,
+                                          uint64_t startX, uint64_t endX,
+                                          uint64_t startY, uint64_t endY,
+                                          uint64_t startZ, uint64_t endZ,
                                           std::vector<uint8_t>& output) {
-    // Collect block data
+    // Calculate actual bounds
+    const uint64_t maxX = std::min(endX, static_cast<uint64_t>(array.GetX()));
+    const uint64_t maxY = std::min(endY, static_cast<uint64_t>(array.GetY()));
+    const uint64_t maxZ = std::min(endZ, static_cast<uint64_t>(array.GetZ()));
+    
+    const uint64_t sizeX = maxX > startX ? maxX - startX : 0;
+    const uint64_t sizeY = maxY > startY ? maxY - startY : 0;
+    const uint64_t sizeZ = maxZ > startZ ? maxZ - startZ : 0;
+    const uint64_t totalVoxels = sizeX * sizeY * sizeZ;
+
+    BlockHeader header{};
+    header.startX = startX;
+    header.startY = startY;
+    header.startZ = startZ;
+    header.sizeX = sizeX;
+    header.sizeY = sizeY;
+    header.sizeZ = sizeZ;
+    header.numValues = totalVoxels;
+
     std::unordered_map<uint64_t, uint32_t> valueMap;
     std::vector<uint64_t> blockValues;
-    
-    const uint64_t maxX = std::min(blockX+blockSize[0], uint64_t(array.GetX()));
-    const uint64_t maxY = std::min(blockY+blockSize[1], uint64_t(array.GetY()));
-    const uint64_t maxZ = std::min(blockZ+blockSize[2], uint64_t(array.GetZ()));
-    
-    // Collect unique values and create mapping
-    for(uint64_t z = blockZ; z < maxZ; ++z) {
-        for(uint64_t y = blockY; y < maxY; ++y) {
-            for(uint64_t x = blockX; x < maxX; ++x) {
+    blockValues.reserve(totalVoxels);
+
+    // Collect unique values
+    for (uint64_t z = startZ; z < maxZ; ++z) {
+        for (uint64_t y = startY; y < maxY; ++y) {
+            for (uint64_t x = startX; x < maxX; ++x) {
                 const auto& voxel = array.GetVoxel(x, y, z);
-                if(valueMap.find(voxel.ParentUID) == valueMap.end()) {
-                    valueMap[voxel.ParentUID] = static_cast<uint32_t>(valueMap.size());
+                if (valueMap.emplace(voxel.ParentUID, static_cast<uint32_t>(valueMap.size())).second) {
+                    if (valueMap.size() > (1ULL << 32)) {
+                        throw std::runtime_error("Too many unique values for 32-bit indexing");
+                    }
                 }
                 blockValues.push_back(voxel.ParentUID);
             }
         }
     }
-    
-    // Determine bit size
+
+    // Handle special cases
     const uint32_t numUnique = static_cast<uint32_t>(valueMap.size());
     uint8_t bitsPerValue = 0;
-    if(numUnique > 1) {
-        bitsPerValue = static_cast<uint8_t>(ceil(log2(numUnique)));
-        bitsPerValue = std::max<uint8_t>(bitsPerValue, 1);
+    if (numUnique > 1) {
+        bitsPerValue = static_cast<uint8_t>(std::ceil(std::log2(numUnique)));
+        bitsPerValue = std::max(bitsPerValue, static_cast<uint8_t>(1));
     }
-    
-    // Pack values
-    const uint64_t totalBits = blockValues.size() * bitsPerValue;
-    const uint64_t totalBytes = (totalBits + 7) / 8;
-    std::vector<uint8_t> packed(totalBytes, 0);
-    
-    uint64_t bitPos = 0;
-    for(auto value : blockValues) {
-        const uint32_t index = valueMap[value];
-        for(uint8_t b = 0; b < bitsPerValue; ++b) {
-            if(index & (1 << b)) {
-                packed[bitPos/8] |= (1 << (bitPos%8));
+    header.bitsPerValue = bitsPerValue;
+
+    // Create value list
+    std::vector<uint64_t> uniqueValues(valueMap.size());
+    for (const auto& pair : valueMap) {
+        uniqueValues[pair.second] = pair.first;
+    }
+
+    // Pack bits
+    std::vector<uint8_t> packed;
+    if (bitsPerValue > 0) {
+        const uint64_t totalBits = totalVoxels * bitsPerValue;
+        const size_t totalBytes = (totalBits + 7) / 8; // Round up to the nearest byte
+        const size_t paddedBytes = ((totalBytes + 3) / 4) * 4; // Align to 4-byte boundary
+        packed.resize(paddedBytes, 0); // Pad with zeros to ensure alignment
+
+        uint64_t bitPos = 0;
+        for (uint64_t value : blockValues) {
+            uint32_t index = valueMap[value];
+            for (uint8_t b = 0; b < bitsPerValue; ++b) {
+                if (index & (1ULL << b)) {
+                    packed[bitPos / 8] |= (1 << (bitPos % 8));
+                }
+                bitPos++;
             }
-            bitPos++;
         }
     }
+
+    // Serialize output
+    const uint32_t numUniqueValues = static_cast<uint32_t>(uniqueValues.size());
+    const size_t headerSize = sizeof(BlockHeader);
+    const size_t uniqueValuesSize = uniqueValues.size() * sizeof(uint64_t);
     
-    // Create header (simple version)
-    struct {
-        uint32_t blockX, blockY, blockZ;
-        uint16_t blockSizeX, blockSizeY, blockSizeZ;
-        uint8_t bitsPerValue;
-        uint32_t numValues;
-    } header;
+    // Ensure the output buffer is aligned to 4 bytes
+    const size_t totalOutputSize = headerSize + sizeof(numUniqueValues) + uniqueValuesSize + packed.size();
+    const size_t paddedOutputSize = ((totalOutputSize + 3) / 4) * 4; // Align to 4-byte boundary
+    output.resize(paddedOutputSize, 0); // Pad with zeros to ensure alignment
     
-    // Fill header
-    header.blockX = static_cast<uint32_t>(blockX);
-    header.blockY = static_cast<uint32_t>(blockY);
-    header.blockZ = static_cast<uint32_t>(blockZ);
-    header.blockSizeX = static_cast<uint16_t>(blockSize[0]);
-    header.blockSizeY = static_cast<uint16_t>(blockSize[1]);
-    header.blockSizeZ = static_cast<uint16_t>(blockSize[2]);
-    header.bitsPerValue = bitsPerValue;
-    header.numValues = static_cast<uint32_t>(blockValues.size());
+    uint8_t* ptr = output.data();
+    memcpy(ptr, &header, headerSize);
+    ptr += headerSize;
     
-    // Serialize
-    output.resize(sizeof(header) + packed.size());
-    memcpy(output.data(), &header, sizeof(header));
-    memcpy(output.data() + sizeof(header), packed.data(), packed.size());
+    memcpy(ptr, &numUniqueValues, sizeof(numUniqueValues));
+    ptr += sizeof(numUniqueValues);
+    
+    if (!uniqueValues.empty()) {
+        memcpy(ptr, uniqueValues.data(), uniqueValuesSize);
+        ptr += uniqueValuesSize;
+    }
+    
+    if (!packed.empty()) {
+        memcpy(ptr, packed.data(), packed.size());
+    }
 }
 
 void SegmentationCompressor::ProcessTask(ProcessingTask* task) {
-    VoxelArray& array = *task->Voxels_;
-    const auto blockSize = task->BlockSize_;
-    
-    const uint64_t gridX = (array.GetX() + blockSize[0] - 1) / blockSize[0];
-    const uint64_t gridY = (array.GetY() + blockSize[1] - 1) / blockSize[1];
-    
-    std::vector<std::vector<uint8_t>> blocks;
-    
-    // Process all blocks at this Z level
-    for(uint64_t y = 0; y < gridY; ++y) {
-        for(uint64_t x = 0; x < gridX; ++x) {
-            std::vector<uint8_t> blockData;
-            CompressBlock(array, 
-                         x * blockSize[0],
-                         y * blockSize[1],
-                         task->ZLevel_,
-                         blockSize,
-                         blockData);
-            blocks.emplace_back(std::move(blockData));
+    try {
+        VoxelArray& array = *task->Voxels_;
+        std::vector<uint8_t> finalOutput;
+
+        // Compress specified region directly
+        std::vector<uint8_t> blockData;
+        CompressBlock(array,
+                     task->VoxelStartingX, task->VoxelEndingX,
+                     task->VoxelStartingY, task->VoxelEndingY,
+                     task->ZLevel_, task->ZLevel_ + SEGMENTATION_BLOCK_SIZE,
+                     blockData);
+
+        // Write to file
+        std::error_code ec;
+        if (!CreateDirectoryRecursive2(task->OutputPath_, ec)) {
+            throw std::runtime_error("Failed to create directory: " + ec.message());
         }
-    }
-    
-    // Save to disk (simple concatenation)
-    // In real implementation, use proper file format
-    // std::cout<<"Making File, "<<std::to_string(blocks.size())<<"blocks to: "<<task->OutputPath_ + "/Segmentation"<<std::endl;
-    std::error_code Code;
-    if (!CreateDirectoryRecursive2(task->OutputPath_, Code)) {
-        std::cerr<<"Failed To Create Directory!!!!!";
-        return;
-    }
 
-    std::ofstream out(task->OutputPath_ + "/Segmentation", std::ios::binary);
-    if (!out) {
-        std::cerr << "Failed to open file for writing: " << task->OutputPath_ + "/Segmentation" << std::endl;
-        return;
+        const std::string outputPath = task->TargetDirectory_ + task->TargetFileName_;//task->OutputPath_ + "/Segmentation";
+        std::ofstream out(outputPath, std::ios::binary);
+        if (!out) throw std::runtime_error("Failed to open output file");
+        
+        out.write(reinterpret_cast<const char*>(blockData.data()), blockData.size());
+        if (!out) throw std::runtime_error("Failed to write to file");
+        
+        task->IsDone_ = true;
+    } catch (const std::exception& e) {
+        std::cerr << "Processing failed: " << e.what() << std::endl;
+        task->IsDone_ = false;
     }
-
-    for (const auto& block : blocks) {
-        out.write(reinterpret_cast<const char*>(block.data()), block.size());   
-        if (!out) {
-            std::cerr << "Failed to write to file." << std::endl;
-            out.close();
-            return;
-        }
-    }
-
-    out.close();
-
-    task->IsDone_ = true;
 }
 
-}}}
+}}} // namespace BG::NES::Simulator

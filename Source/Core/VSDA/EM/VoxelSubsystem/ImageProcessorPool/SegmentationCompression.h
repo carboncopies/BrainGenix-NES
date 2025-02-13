@@ -22,16 +22,14 @@ namespace Simulator {
 //     std::vector<uint64_t> BlockSize_{SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE};
 // };
 
-class SegmentationCompressor {
-public:
-    static void CompressBlock(VoxelArray& array,
-                             uint64_t blockX,
-                             uint64_t blockY,
-                             uint64_t blockZ,
-                             const std::vector<uint64_t>& blockSize,
-                             std::vector<uint8_t>& output);
+namespace SegmentationCompressor {
+    void CompressBlock(VoxelArray& array,
+                        uint64_t startX, uint64_t endX,
+                        uint64_t startY, uint64_t endY,
+                        uint64_t startZ, uint64_t endZ,
+                        std::vector<uint8_t>& output);
                              
-    static void ProcessTask(ProcessingTask* task);
+    void ProcessTask(ProcessingTask* task);
 };
 
 }}}

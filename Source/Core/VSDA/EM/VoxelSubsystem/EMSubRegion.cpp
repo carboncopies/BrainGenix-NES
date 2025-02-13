@@ -107,45 +107,17 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
 
     // Clear Scene In Preperation For Rendering
+    VSDAData_->Params_.SegmentationResolutionX_px_ = VSDAData_->Array_->GetX();
+    VSDAData_->Params_.SegmentationResolutionY_px_ = VSDAData_->Array_->GetY();
+    VSDAData_->Params_.SegmentationResolutionZ_px_ = NumVoxelsPerSlice * SEGMENTATION_BLOCK_SIZE;
+
+
     noise::module::Perlin PerlinGenerator;
     for (int i = 0; i < NumZSlices; i++) {
         int CurrentSliceIndex = i * NumVoxelsPerSlice;
         std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "/Region" + std::to_string(VSDAData_->ActiveRegionID_);
 
         VSDAData_->TotalSlices_ += RenderSliceFromArray(_Logger, _SubRegion->MaxImagesX, _SubRegion->MaxImagesY, &Sim->VSDAData_, VSDAData_->Array_.get(), FileNamePrefix, CurrentSliceIndex, NumVoxelsPerSlice, _ImageProcessorPool, XOffset, YOffset, _SubRegion->MasterRegionOffsetX_um, _SubRegion->MasterRegionOffsetY_um, SliceOffset, &PerlinGenerator);
-
-
-        // Now generate segmentation map data
-        if (i % SEGMENTATION_BLOCK_SIZE == 0) {
-
-            // Calculate the filename of the image to be generated, add to list of generated images
-            int AdjustedSliceNumber = (CurrentSliceIndex + SliceOffset) / (VSDAData_->Params_.SliceThickness_um / VSDAData_->Params_.VoxelResolution_um);
-            std::string DirectoryPath = "Renders/" + FileNamePrefix + "/Slice" + std::to_string(AdjustedSliceNumber);
-
-            std::unique_ptr<ProcessingTask> SegTask = std::make_unique<ProcessingTask>();
-            SegTask->Voxels_ = VSDAData_->Array_.get();
-            SegTask->ZLevel_ = CurrentSliceIndex;
-            SegTask->OutputPath_ = DirectoryPath;
-            SegTask->IsSegmentation_ = true;
-            // SegTask->Params_ = &_VSDAData->Params_;
-
-            // Enqueue Work Operation
-            _ImageProcessorPool->QueueEncodeOperation(SegTask.get());
-            VSDAData_->Tasks_.push_back(std::move(SegTask));
-
-
-            VoxelIndexInfo Info;
-            Info.StartX = 0;
-            Info.EndX = VSDAData_->Array_->GetX();
-            Info.StartY = 0;
-            Info.EndY = VSDAData_->Array_->GetY();
-            Info.StartZ = AdjustedSliceNumber;
-            Info.EndZ = AdjustedSliceNumber + 8;
-
-            VSDAData_->Regions_[VSDAData_->ActiveRegionID_].SegmentationFilenames_.push_back(DirectoryPath + "/Segmentation");
-            VSDAData_->Regions_[VSDAData_->ActiveRegionID_].SegmentationVoxelIndexes_.push_back(Info);
-
-        }
 
 
     }

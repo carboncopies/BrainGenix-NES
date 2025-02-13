@@ -107,6 +107,11 @@ struct MicroscopeParameters {
     float TearStartSize_um = 0.15; /**Size in microns of tear start*/
     float TearEndSize_um = 0; /**Size in microns of tear end*/
 
+
+    int SegmentationResolutionX_px_;
+    int SegmentationResolutionY_px_;
+    int SegmentationResolutionZ_px_;
+
 };
 
 
