@@ -166,7 +166,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                             unsigned int G = (Seed * 8303 + 49299) % 256;
                             unsigned int B = (Seed * 7307 + 49303) % 256;
 
-                            if ((Seed == 0) || (PresentingVoxel.State_ == VoxelState_OUT_OF_BOUNDS)) {
+                            if ((Seed == 0) || (PresentingVoxel.State_ == VoxelState_EMPTY) || (PresentingVoxel.State_ == VoxelState_OUT_OF_BOUNDS)) {
                                 R = 0;
                                 G = 0;
                                 B = 0;
@@ -195,6 +195,8 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     stbi_write_png((Task->TargetDirectory_ + Task->TargetFileName_ + ".seg.png").c_str(), SourceX, SourceY, Channels, SourcePixels, SourceX * Channels);
 
                 }
+
+                Task->IsDone_ = true;
 
                 // Logging
                 Logger_->Log("Compressed segmentation layer " + std::to_string(Task->VoxelZ) + " to " + Task->OutputPath_, 1);

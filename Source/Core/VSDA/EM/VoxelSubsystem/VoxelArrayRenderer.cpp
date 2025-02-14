@@ -189,6 +189,7 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
                 SegTask->TargetFileName_ = FilePath;
                 SegTask->TargetDirectory_ = DirectoryPath;
                 SegTask->IsSegmentation_ = true;
+                SegTask->IsDone_ = false;
                 // SegTask->Params_ = &_VSDAData->Params_;
 
        

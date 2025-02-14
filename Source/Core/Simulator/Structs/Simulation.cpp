@@ -122,10 +122,10 @@ int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
     RegisterNeuronUIDToCompartments(_N.DendriteCompartmentIDs, _N.ID + 1);
     RegisterNeuronUIDToCompartments(_N.AxonCompartmentIDs, _N.ID + 1);
 
-    std::cout<<"Neuron Comp ID: "<<std::to_string(_N.ID)<<std::endl;
-    std::cout<<_N.SomaCompartmentIDs.size()<<std::endl;
-    std::cout<<_N.DendriteCompartmentIDs.size()<<std::endl;
-    std::cout<<_N.AxonCompartmentIDs.size()<<std::endl;
+    // std::cout<<"Neuron Comp ID: "<<std::to_string(_N.ID)<<std::endl;
+    // std::cout<<_N.SomaCompartmentIDs.size()<<std::endl;
+    // std::cout<<_N.DendriteCompartmentIDs.size()<<std::endl;
+    // std::cout<<_N.AxonCompartmentIDs.size()<<std::endl;
 
     return _N.ID;
 }

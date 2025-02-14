@@ -60,11 +60,13 @@ void SegmentationCompressor::CompressSegmentationRegion(VoxelArray& _Array, uint
     for (uint64_t X = _StartX; X < _EndX; X++) {
         for (uint64_t Y = _StartY; Y < _EndY; Y++) {
             for (uint64_t Z = _StartZ; Z < _EndZ; Z++) {
-                uint64_t index = (X - _StartX) * XStride +
-                                 (Y - _StartY) * YStride +
-                                 (Z - _StartZ) * ZStride +
-                                 0 * ChannelStride; // Channel index 0
-                SegMapData[index] = _Array.GetVoxel(X, Y, Z).ParentUID;
+                uint64_t index = (X - _StartX) * XStride + (Y - _StartY) * YStride + (Z - _StartZ) * ZStride + 0 * ChannelStride; // Channel index 0
+                VoxelType Vox = _Array.GetVoxel(X, Y, Z);
+                if (Vox.State_ != VoxelState_EMPTY) {
+                    SegMapData[index] = Vox.ParentUID;
+                } else {
+                    SegMapData[index] = 0;
+                }
             }
         }
     }
