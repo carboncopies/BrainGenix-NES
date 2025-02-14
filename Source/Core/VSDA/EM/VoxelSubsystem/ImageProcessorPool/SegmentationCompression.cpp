@@ -40,38 +40,54 @@ namespace Simulator {
 
 void SegmentationCompressor::CompressSegmentationRegion(VoxelArray& _Array, uint64_t _StartX, uint64_t _EndX, uint64_t _StartY, uint64_t _EndY, uint64_t _StartZ, uint64_t _EndZ, std::vector<uint32_t>* _Output) {
 
-    // Step 1, Create an array of uint64_t values from the main array
-    int TotalXVals = std::abs((int)_StartX - (int)_EndX);
-    int TotalYVals = std::abs((int)_StartY - (int)_EndY);
-    int TotalZVals = std::abs((int)_StartZ - (int)_EndZ);
-    uint64_t TotalValues = TotalXVals * TotalYVals * TotalZVals;
+    // Calculate dimensions (assuming _End > _Start)
+    uint64_t TotalXVals = _EndX - _StartX;
+    uint64_t TotalYVals = _EndY - _StartY;
+    uint64_t TotalZVals = _EndZ - _StartZ;
+    uint64_t Channels = 1; // Add channel dimension
+
+    uint64_t TotalValues = TotalXVals * TotalYVals * TotalZVals * Channels;
 
     std::unique_ptr<uint64_t[]> SegMapData = std::make_unique<uint64_t[]>(TotalValues);
 
-    // Calculate strides for x,y,z indexes
-    uint64_t XStride_Indices = TotalYVals * TotalZVals;
-    uint64_t YStride_Indices = TotalZVals;
-    uint64_t ZStride_Indices = 1;
+    // 4D strides (C-order: X, Y, Z, Channel)
+    uint64_t XStride = TotalYVals * TotalZVals * Channels;
+    uint64_t YStride = TotalZVals * Channels;
+    uint64_t ZStride = Channels;
+    uint64_t ChannelStride = 1;
 
-    // Populate parent segmap array from voxel array
+    // Populate data (assuming channel=0)
     for (uint64_t X = _StartX; X < _EndX; X++) {
         for (uint64_t Y = _StartY; Y < _EndY; Y++) {
             for (uint64_t Z = _StartZ; Z < _EndZ; Z++) {
-                uint64_t CurrentIndex = (XStride_Indices * (X - _StartX)) + (YStride_Indices * (Y - _StartY)) + (ZStride_Indices * (Z - _StartZ));
-                SegMapData.get()[CurrentIndex] = _Array.GetVoxel(X, Y, Z).ParentUID;
+                uint64_t index = (X - _StartX) * XStride +
+                                 (Y - _StartY) * YStride +
+                                 (Z - _StartZ) * ZStride +
+                                 0 * ChannelStride; // Channel index 0
+                SegMapData[index] = _Array.GetVoxel(X, Y, Z).ParentUID;
             }
         }
     }
-   
 
-    // Step 2, use seung_labs' compress block function
-    ptrdiff_t Strides[3] = {(long)XStride_Indices, (long)YStride_Indices, (long)ZStride_Indices};
-    ptrdiff_t Volume[3] = {TotalXVals, TotalYVals, TotalZVals};
+    // Pass 4D parameters to backend
+    ptrdiff_t Strides[4] = {static_cast<ptrdiff_t>(XStride), 
+                            static_cast<ptrdiff_t>(YStride), 
+                            static_cast<ptrdiff_t>(ZStride), 
+                            static_cast<ptrdiff_t>(ChannelStride)};
+    ptrdiff_t Volume[4] = {static_cast<ptrdiff_t>(TotalXVals),
+                           static_cast<ptrdiff_t>(TotalYVals),
+                           static_cast<ptrdiff_t>(TotalZVals),
+                           static_cast<ptrdiff_t>(Channels)};
     ptrdiff_t BlockSize[3] = {SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE};
 
-    int Status = compress_segmentation::CompressChannel(SegMapData.get(), Strides, Volume, BlockSize, _Output);
+    int Status = compress_segmentation::CompressChannels<uint64_t>(
+        SegMapData.get(), 
+        Strides, 
+        Volume, 
+        BlockSize, 
+        _Output
+    );
     assert(Status == 0);
-
 }
 
 
