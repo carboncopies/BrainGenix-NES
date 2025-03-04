@@ -57,6 +57,7 @@ namespace ConversionPool {
  */
 struct ProcessingTask {
 
+    bool IsSegmentation_; /**Set if the task is loading and writing segmap or jpeg image data*/
     std::string SourceFilePath_; /**Path where the image came from originally*/
     Simulator::VoxelIndexInfo IndexInfo_; /**Information about the image's voxel positions*/
     std::string OutputDirectoryBasePath_; /**Base of the path where the output is going*/

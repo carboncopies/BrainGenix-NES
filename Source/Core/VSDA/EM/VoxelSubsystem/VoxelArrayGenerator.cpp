@@ -262,6 +262,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                         Geometries::Sphere ThisSphere;
                         ThisSphere.Center_um = ThisCylinder.End0Pos_um;
                         ThisSphere.Radius_um = ThisCylinder.End0Radius_um;
+                        ThisSphere.ParentID = ThisCylinder.ParentID;
                         Task->CustomSphere_ = ThisSphere;
 
                         Task->CustomThisComponent = i;
@@ -293,6 +294,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                         Task->CustomCylinder_.End0Radius_um = ThisCylinder.End0Radius_um;
                         Task->CustomCylinder_.End1Pos_um = ThisCylinder.End1Pos_um;
                         Task->CustomCylinder_.End1Radius_um = ThisCylinder.End1Radius_um;
+                        Task->CustomCylinder_.ParentID = ThisCylinder.ParentID;
 
                         Task->CustomThisComponent = i;
                         Task->CustomTotalComponents = NumSegments;

@@ -59,7 +59,8 @@ enum VoxelState:uint8_t {
     VoxelState_INTERIOR=1,
     VoxelState_BORDER=2,
     VoxelState_BLACK=3,
-    VoxelState_WHITE=4
+    VoxelState_WHITE=4,
+    VoxelState_OUT_OF_BOUNDS=5
 };
 
 
@@ -69,6 +70,8 @@ struct VoxelType {
     // uint8_t Intensity_; /**Value from 0-255 representing the intensity (brightness) of this voxel, done during coloring stage of compositing*/
     VoxelState State_; /**Determine if this voxel is near the edge of a shape or not*/
     uint8_t DistanceToEdge_vox_; /**Determines the distance to the nearest edge (in voxels), used to calculate borders later on, set during rasterization stage of compositing.*/
+
+    uint64_t ParentUID; /**Parent ID Of the voxel, indicates the id of the neuron it belongs to*/
 
 };
 
@@ -182,8 +185,8 @@ public:
     /**
      * @brief Compositor function that simply sets information about the sate of the given voxel.
      */
-    void CompositeVoxel(float _X, float _Y, float _Z, VoxelState _State, float _DistanceToEdge);
-    void CompositeVoxelAtIndex(int _X, int _Y, int _Z, VoxelState _State, float _DistanceToEdge);
+    void CompositeVoxel(float _X, float _Y, float _Z, VoxelState _State, float _DistanceToEdge, uint64_t _ParentUID);
+    void CompositeVoxelAtIndex(int _X, int _Y, int _Z, VoxelState _State, float _DistanceToEdge, uint64_t _ParentUID);
 
     /**
      * @brief Get the size of the array, populate the int ptrs

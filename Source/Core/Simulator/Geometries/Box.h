@@ -52,6 +52,7 @@ struct BoxBase: Geometry {
 struct Box : BoxBase {
 
     std::string Name;
+    uint64_t ParentID; // ID of the parent object.
 
     //! Constructors
     Box();

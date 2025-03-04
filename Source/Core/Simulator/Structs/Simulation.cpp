@@ -118,6 +118,15 @@ int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
         NeuronByCompartment.emplace(AxonID, _N.ID);
     }
 
+    RegisterNeuronUIDToCompartments(_N.SomaCompartmentIDs, _N.ID + 1);
+    RegisterNeuronUIDToCompartments(_N.DendriteCompartmentIDs, _N.ID + 1);
+    RegisterNeuronUIDToCompartments(_N.AxonCompartmentIDs, _N.ID + 1);
+
+    // std::cout<<"Neuron Comp ID: "<<std::to_string(_N.ID)<<std::endl;
+    // std::cout<<_N.SomaCompartmentIDs.size()<<std::endl;
+    // std::cout<<_N.DendriteCompartmentIDs.size()<<std::endl;
+    // std::cout<<_N.AxonCompartmentIDs.size()<<std::endl;
+
     return _N.ID;
 }
 
@@ -141,6 +150,39 @@ int Simulation::AddReceptor(Connections::Receptor& _C) {
 
     return _C.ID;
 }
+
+void Simulation::RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompartmentIDs, uint64_t _NeuronUID) {
+    
+    // Iterate through all given geometry types so we can set the uuid of the parent neuron
+    size_t MaxShapeIndex = Collection.Size();
+    for (size_t i = 0; i < _GeometryCompartmentIDs.size(); i++) {
+        size_t ShapeIndex = _GeometryCompartmentIDs[i];
+
+        // Index Validation
+        if (ShapeIndex > MaxShapeIndex) {
+            std::cout<<"Error! Shape Index out of shape bounds in registration for neuron uid to compartments\n";
+            continue;
+        }
+
+        BG::NES::Simulator::Geometries::GeometryShapeEnum ShapeType = Collection.GetShapeType(ShapeIndex);
+
+        if (ShapeType == BG::NES::Simulator::Geometries::GeometrySphere) {
+            Geometries::Sphere& S = Collection.GetSphere(ShapeIndex);
+            S.ParentID = _NeuronUID;
+            
+        } else if (ShapeType == BG::NES::Simulator::Geometries::GeometryCylinder) {
+            Geometries::Cylinder& S = Collection.GetCylinder(ShapeIndex);
+            S.ParentID = _NeuronUID;
+
+        } else if (ShapeType == BG::NES::Simulator::Geometries::GeometryBox) {
+            Geometries::Box& S = Collection.GetBox(ShapeIndex);
+            S.ParentID = _NeuronUID;
+
+        }
+
+    }
+}
+            
 
 struct SaverInfo {
     size_t SGMapSize = 0;

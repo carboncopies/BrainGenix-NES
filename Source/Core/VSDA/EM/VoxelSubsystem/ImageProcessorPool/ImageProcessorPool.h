@@ -47,7 +47,7 @@
 
 #include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.h>
 #include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h>
-
+#include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/SegmentationCompression.h>
 
 
 
@@ -130,6 +130,11 @@ public:
      * @param _ProcessingTask 
      */
     void QueueEncodeOperation(ProcessingTask* _Task);
+
+
+    // void QueueSegmentationCompression(ProcessingTask* task) {
+    //     EnqueueTask(reinterpret_cast<ProcessingTask*>(task));
+    // }
 
     /**
      * @brief Thread safe getSize function.

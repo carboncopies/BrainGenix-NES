@@ -148,10 +148,10 @@ bool SafeClient::MakeJSONQuery(std::string _Route, std::string _Query, std::stri
     try {
         (*_Result) = Client_->call(_Route.c_str(), _Query).as<std::string>();
     } catch (::rpc::timeout& e) {
-        Logger_->Log("NES Connection timed out!",3);
+        Logger_->Log("API Connection timed out!",3);
         return false;
     } catch (::rpc::rpc_error& e) {
-        Logger_->Log("NES remote returned RPC error",3);
+        Logger_->Log("API remote returned RPC error",3);
         return false;
     } catch (std::system_error& e) {
         Logger_->Log("Cannot talk to RPC Service host",3);

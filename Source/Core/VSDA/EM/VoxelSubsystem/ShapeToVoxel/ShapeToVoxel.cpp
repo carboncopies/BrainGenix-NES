@@ -123,7 +123,7 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
                 if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z), _WorldInfo)) {
 
                     float DistanceToEdge = _Shape->Radius_um - Geometries::Vec3D(X, Y, Z).Distance(_Shape->Center_um);
-                    _Array->CompositeVoxel(X, Y, Z, VoxelState_INTERIOR, DistanceToEdge);
+                    _Array->CompositeVoxel(X, Y, Z, VoxelState_INTERIOR, DistanceToEdge, _Shape->ParentID);
 
                 }
             }
@@ -217,7 +217,7 @@ bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Ge
         // VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
         // _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
         float DistanceToEdge = radius_at_z;
-        _Array->CompositeVoxel(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, VoxelState_INTERIOR, DistanceToEdge);
+        _Array->CompositeVoxel(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, VoxelState_INTERIOR, DistanceToEdge, _Cylinder->ParentID);
 
         // Find points on circles around the midline up to the radius at this point along the cylinder.
         for (float r = stepsize + (_ThisThread * stepsize); r <= radius_at_z; r += (_TotalThreads * stepsize)) {
@@ -232,7 +232,8 @@ bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Ge
                 Geometries::Vec3D RotatedPoint = RotatedVec(x, y, z, rot_y, rot_z, translate);
 
                 float DistanceToEdge = radius_at_z - r;
-                _Array->CompositeVoxel(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, VoxelState_INTERIOR, DistanceToEdge);
+                _Array->CompositeVoxel(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, VoxelState_INTERIOR, DistanceToEdge, _Cylinder->ParentID);
+
 
                 // // Set voxel at the point.
                 // VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
@@ -454,7 +455,7 @@ bool FillBox(VoxelArray* _Array, Geometries::Box* _Box, VSDA::WorldInfo& _WorldI
                 // VoxelType FinalVoxelValue = GenerateVoxelColor(Point.x, Point.y, Point.z, _Params, _Generator, -180);
                 // _Array->SetVoxelIfNotDarker(Point.x, Point.y, Point.z, FinalVoxelValue);
 
-                _Array->CompositeVoxel(x, y, z, VoxelState_BLACK, 0);
+                _Array->CompositeVoxel(x, y, z, VoxelState_BLACK, 0, _Box->ParentID);
 
             }
         }

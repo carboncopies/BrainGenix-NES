@@ -46,6 +46,10 @@
 #include <VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h>
 
 
+
+#define SEGMENTATION_BLOCK_SIZE 2
+
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -58,6 +62,9 @@ namespace Simulator {
  * 
  */
 struct ProcessingTask {
+    // virtual ~ProcessingTask() = default; // Add virtual destructor
+    std::atomic<bool> IsDone_{false};
+
 
     int         Width_px;            /**Width of this image in pixels*/
     int         Height_px;           /**Height of this image in pixels*/
@@ -92,7 +99,7 @@ struct ProcessingTask {
     float ContrastRandomAmount = 0.1; /**Change the contrast plus or minus this amount*/
     float BrightnessRandomAmount = 0.1; /**Change the brightness per image plus or minus this amount*/
 
-    std::atomic_bool IsDone_ = false; /**Indicates if this task has been processed or not*/
+    // std::atomic_bool IsDone_ = false; /**Indicates if this task has been processed or not*/
 
     std::string TargetFileName_;  /**Filename that this image is to be written to*/
     std::string TargetDirectory_; /**Directory path where the image is to be written to*/
@@ -101,6 +108,15 @@ struct ProcessingTask {
 
     noise::module::Perlin* Generator_ = nullptr; /**Pointer to noise generator */
     MicroscopeParameters* Params_ = nullptr;
+
+
+
+    // Segmentation Options
+    bool IsSegmentation_;
+    std::string OutputPath_;
+    std::vector<uint8_t> CompressedData_;
+    std::vector<uint64_t> BlockSize_{SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE, SEGMENTATION_BLOCK_SIZE};
+
 
 };
 

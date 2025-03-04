@@ -17,7 +17,7 @@
 
 #include <VSDA/EM/VoxelSubsystem/EMSubRegion.h>
 
-
+#include <Simulator/SimpleCompartmental/SCNeuron.h>
 
 
 // https://stackoverflow.com/questions/2513505/how-to-get-available-memory-c-g
@@ -50,6 +50,16 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
     // Unpack Variables For Easier Access
     MicroscopeParameters* Params = &_Simulation->VSDAData_.Params_;
     ScanRegion* BaseRegion = &_Simulation->VSDAData_.Regions_[_Simulation->VSDAData_.ActiveRegionID_];
+
+    // // -- Phase -1 --
+    // // We need to backpropagate the ids of the neurons to the compartments, then to us.
+    // for (auto Neuron : _Simulation->Neurons) {
+    //     if (auto SCNeuron = dynamic_cast<Simulation::SCNeuron>(Neuron.get())) {
+    //         RegisterNeuronUIDToCompartments(_N.SomaCompartmentIDs, _N.ID + 1);
+    //         RegisterNeuronUIDToCompartments(_N.DendriteCompartmentIDs, _N.ID + 1);
+    //         RegisterNeuronUIDToCompartments(_N.AxonCompartmentIDs, _N.ID + 1);
+    //     }
+    // }
 
 
     // -- Phase 0 --
