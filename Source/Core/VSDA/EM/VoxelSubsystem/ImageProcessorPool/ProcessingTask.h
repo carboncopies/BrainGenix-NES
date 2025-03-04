@@ -47,7 +47,7 @@
 
 
 
-#define SEGMENTATION_BLOCK_SIZE 2
+#define SEGMENTATION_BLOCK_SIZE 8
 
 
 namespace BG {
