@@ -112,8 +112,10 @@ void ConversionPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 TargetFilename += "_" + Z1 + "-" + Z2;
 
                 // Copy file
-                std::filesystem::copy_file(Task->SourceFilePath_, TargetFilename); 
-                
+                try {
+                    std::filesystem::copy_file(Task->SourceFilePath_, TargetFilename); 
+                } catch (const std::filesystem::filesystem_error& e) {
+                } 
 
             } else {
                 // Load the source image
