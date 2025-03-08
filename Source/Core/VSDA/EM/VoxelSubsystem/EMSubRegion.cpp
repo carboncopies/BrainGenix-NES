@@ -200,7 +200,7 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
         VSCreateDirectoryRecursive3(FileNamePrefix, E);
 
 
-        MeshingStage mesher(_Logger, VSDAData_->Array_.get(), 0.5, FileNamePrefix, 128);
+        MeshingStage mesher(_Logger, VSDAData_->Array_.get(), 1.0, FileNamePrefix, 128);
         mesher.Process();
 
     }

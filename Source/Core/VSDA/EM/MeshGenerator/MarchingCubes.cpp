@@ -19,33 +19,33 @@ Geometries::Vec3D MarchingCubes::InterpolateVertex(float isolevel, const Geometr
 
 // Generate meshes for each neuron in the given region of the voxel array
 std::unordered_map<uint64_t, Mesh> MarchingCubes::GenerateMeshes(
-    VoxelArray* voxelArray, // Pointer to the voxel array
+    VoxelArray* voxelArray,
     int startX, int startY, int startZ,
     int endX, int endY, int endZ,
     float isolevel
 ) {
-    std::unordered_map<uint64_t, Mesh> neuronMeshes; // Maps ParentUID to its mesh
+    std::unordered_map<uint64_t, Mesh> neuronMeshes;
 
-    // Iterate over the specified region of the voxel array
     for (int x = startX; x < endX; ++x) {
         for (int y = startY; y < endY; ++y) {
             for (int z = startZ; z < endZ; ++z) {
+
                 // Get the 8 voxels forming the current cube
                 std::array<VoxelType, 8> cubeVoxels = {
-                    voxelArray->GetVoxel(x, y, z),
-                    voxelArray->GetVoxel(x + 1, y, z),
-                    voxelArray->GetVoxel(x + 1, y, z + 1),
-                    voxelArray->GetVoxel(x, y, z + 1),
-                    voxelArray->GetVoxel(x, y + 1, z),
-                    voxelArray->GetVoxel(x + 1, y + 1, z),
-                    voxelArray->GetVoxel(x + 1, y + 1, z + 1),
-                    voxelArray->GetVoxel(x, y + 1, z + 1)
+                    voxelArray->GetVoxel(x,     y,     z),     // 0
+                    voxelArray->GetVoxel(x + 1, y,     z),     // 1
+                    voxelArray->GetVoxel(x + 1, y,     z + 1), // 2
+                    voxelArray->GetVoxel(x,     y,     z + 1), // 3
+                    voxelArray->GetVoxel(x,     y + 1, z),     // 4
+                    voxelArray->GetVoxel(x + 1, y + 1, z),     // 5
+                    voxelArray->GetVoxel(x + 1, y + 1, z + 1), // 6
+                    voxelArray->GetVoxel(x,     y + 1, z + 1)  // 7
                 };
 
                 // Determine the cube index
                 int cubeIndex = 0;
                 for (int i = 0; i < 8; ++i) {
-                    if (cubeVoxels[i].State_ == VoxelState_INTERIOR || cubeVoxels[i].State_ == VoxelState_BORDER) {
+                    if (cubeVoxels[i].DistanceToEdge_vox_ >= isolevel) {
                         cubeIndex |= (1 << i);
                     }
                 }
@@ -105,8 +105,8 @@ std::unordered_map<uint64_t, Mesh> MarchingCubes::GenerateMeshes(
                     mesh.vertices.push_back(v2);
                     mesh.vertices.push_back(v3);
                     mesh.indices.push_back(baseIndex);       // v1
-                    mesh.indices.push_back(baseIndex + 2);  // v3 (swapped)
-                    mesh.indices.push_back(baseIndex + 1);  // v2 (swapped)
+                    mesh.indices.push_back(baseIndex + 1);  // v2
+                    mesh.indices.push_back(baseIndex + 2);  // v3
                 }
             }
         }

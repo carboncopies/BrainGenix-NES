@@ -189,6 +189,7 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.cpp
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.h
 
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MC.h
   ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MarchingCubes.h
   ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp
   ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MarchingCubesLookupTable.h
