@@ -4,6 +4,7 @@
 
 #include <BG/Common/Logger/Logger.h>
 
+
 namespace BG {
 namespace NES {
 namespace Simulator {
@@ -12,15 +13,17 @@ class MeshingStage {
 public:
     MeshingStage(BG::Common::Logger::LoggingSystem* logger, 
                 VoxelArray* voxelArray, 
-                float isolevel, 
+                float isolevel,
+                const std::string& outputDir,
                 int chunkSize = 32);
     
-    std::unordered_map<uint64_t, Mesh> Process();
+    void Process();  // No longer returns combined meshes
 
 private:
     BG::Common::Logger::LoggingSystem* logger;
     VoxelArray* voxelArray;
     float isolevel;
+    std::string outputDir;
     int chunkSize;
 };
 

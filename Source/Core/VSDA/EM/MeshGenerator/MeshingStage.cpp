@@ -1,27 +1,38 @@
 #include <VSDA/EM/MeshGenerator/MeshingStage.h>
 #include <VSDA/EM/MeshGenerator/MeshCombiner.h>
+#include <VSDA/EM/MeshGenerator/OBJWriter.h>
+
 #include <vector>
 #include <future>
+
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 
 MeshingStage::MeshingStage(BG::Common::Logger::LoggingSystem* logger,
-                          VoxelArray* voxelArray,
-                          float isolevel,
-                          int chunkSize)
+                            VoxelArray* voxelArray,
+                            float isolevel,
+                            const std::string& outputDir,
+                            int chunkSize)
     : logger(logger), voxelArray(voxelArray), 
-      isolevel(isolevel), chunkSize(chunkSize) {}
+        isolevel(isolevel), outputDir(outputDir),
+        chunkSize(chunkSize) {}
 
-std::unordered_map<uint64_t, Mesh> MeshingStage::Process() {
+void MeshingStage::Process() {
     int sizeX, sizeY, sizeZ;
     voxelArray->GetSize(&sizeX, &sizeY, &sizeZ);
+
+    logger->Log("Starting meshing process for volume (" + 
+                std::to_string(sizeX) + "x" + 
+                std::to_string(sizeY) + "x" + 
+                std::to_string(sizeZ) + ")", 2);
 
     MeshGeneratorPool pool(std::thread::hardware_concurrency());
     std::vector<std::future<std::unordered_map<uint64_t, Mesh>>> futures;
 
     // Chunk processing
+    int chunkIndex = 0;
     for (int x = 0; x < sizeX; x += chunkSize) {
         int endX = std::min(x + chunkSize, sizeX);
         for (int y = 0; y < sizeY; y += chunkSize) {
@@ -36,24 +47,23 @@ std::unordered_map<uint64_t, Mesh> MeshingStage::Process() {
                     isolevel
                 };
                 futures.push_back(pool.SubmitTask(task));
+                
+                logger->Log("Submitted chunk " + std::to_string(chunkIndex) + 
+                            ": [" + std::to_string(x) + "-" + std::to_string(endX) + "]x" +
+                            std::to_string(y) + "-" + std::to_string(endY) + "]x" +
+                            std::to_string(z) + "-" + std::to_string(endZ) + "]", 5);
+                chunkIndex++;
             }
         }
     }
 
-    // Combine results
-    std::unordered_map<uint64_t, Mesh> combinedMeshes;
-    for (auto& future : futures) {
-        auto chunkResult = future.get();
-        for (auto& [uid, mesh] : chunkResult) {
-            MeshCombiner::Combine(combinedMeshes[uid], mesh);
-        }
+    // Write OBJ files for each chunk
+    for (size_t i = 0; i < futures.size(); ++i) {
+        auto chunkResult = futures[i].get();
+        ChunkedOBJWriter::WriteChunk(outputDir, i, chunkResult, logger, false); // Set true for debug cubes
     }
 
-    logger->Log("Meshing completed with " + 
-               std::to_string(combinedMeshes.size()) + 
-               " unique neurons", 2);
-    
-    return combinedMeshes;
+    logger->Log("Meshing completed. Files written to: " + outputDir, 2);
 }
 
 } // namespace Simulator

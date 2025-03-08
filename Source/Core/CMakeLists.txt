@@ -199,6 +199,7 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshingStage.h
   ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp
   ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshTask.h
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/OBJWriter.h
   
   ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.cpp
   ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.h

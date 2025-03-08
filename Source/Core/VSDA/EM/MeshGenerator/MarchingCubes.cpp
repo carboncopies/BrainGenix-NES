@@ -6,6 +6,9 @@ namespace Simulator {
 
 // Linear interpolation for vertex positions
 Geometries::Vec3D MarchingCubes::InterpolateVertex(float isolevel, const Geometries::Vec3D& p1, const Geometries::Vec3D& p2, float val1, float val2) {
+    if (std::abs(val1 - val2) < 1e-6) {
+        return p1;  // Avoid division by zero
+    }
     float mu = (isolevel - val1) / (val2 - val1);
     return {
         p1.x + mu * (p2.x - p1.x),

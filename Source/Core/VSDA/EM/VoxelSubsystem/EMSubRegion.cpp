@@ -23,6 +23,26 @@ namespace VSDA {
 
 
 
+// Returns:
+//   true upon success.
+//   false upon failure, and set the std::error_code & err accordingly.
+// https://stackoverflow.com/questions/71658440/c17-create-directories-automatically-given-a-file-path
+bool VSCreateDirectoryRecursive3(std::string const & dirName, std::error_code & err) {
+    err.clear();
+    if (!std::filesystem::create_directories(dirName, err))
+    {
+        if (std::filesystem::exists(dirName))
+        {
+            // The folder already exists:
+            err.clear();
+            return true;    
+        }
+        return false;
+    }
+    return true;
+}
+
+
 bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _SubRegion, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
     _Logger->Log("Executing SubRegion Render For Region Starting At " + std::to_string(_SubRegion->RegionOffsetX_um) + "X, " + std::to_string(_SubRegion->RegionOffsetY_um) + "Y, Layer " + std::to_string(_SubRegion->LayerOffset), 4);
 
@@ -174,8 +194,14 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
     if (ProcessMeshes) {
 
-        MeshingStage mesher(_Logger, VSDAData_->Array_.get(), 128);
-        auto neuronMeshes = mesher.Process();
+        std::string FileNamePrefix =  "Meshes/Simulation" + std::to_string(Sim->ID) + "/Region" + std::to_string(VSDAData_->ActiveRegionID_) + "-Meshes/";
+
+        std::error_code E;
+        VSCreateDirectoryRecursive3(FileNamePrefix, E);
+
+
+        MeshingStage mesher(_Logger, VSDAData_->Array_.get(), 0.5, FileNamePrefix, 128);
+        mesher.Process();
 
     }
 
