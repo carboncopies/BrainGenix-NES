@@ -104,9 +104,9 @@ std::unordered_map<uint64_t, Mesh> MarchingCubes::GenerateMeshes(
                     mesh.vertices.push_back(v1);
                     mesh.vertices.push_back(v2);
                     mesh.vertices.push_back(v3);
-                    mesh.indices.push_back(baseIndex);
-                    mesh.indices.push_back(baseIndex + 1);
-                    mesh.indices.push_back(baseIndex + 2);
+                    mesh.indices.push_back(baseIndex);       // v1
+                    mesh.indices.push_back(baseIndex + 2);  // v3 (swapped)
+                    mesh.indices.push_back(baseIndex + 1);  // v2 (swapped)
                 }
             }
         }
