@@ -76,3 +76,74 @@ Each fragment file is in binary format, as follows:
 <uint32> triangle2 vertexC
 ... (etc)
 ```
+
+## Example code:
+
+```
+#include <vector>
+#include <string>
+#include <fstream>
+#include <iostream>
+#include <cstdint>
+
+// Function to save mesh data in Neuroglancer Legacy Mesh format
+void saveNeuroglancerMesh(const std::string& baseDir, uint32_t segmentId, const std::vector<float>& vertices, const std::vector<uint32_t>& triangles) {
+    // Create the mesh directory if it doesn't exist
+    std::string meshDir = baseDir + "/mesh";
+    std::filesystem::create_directories(meshDir);
+
+    // Create the info.json file for the mesh directory
+    std::ofstream infoFile(meshDir + "/info.json");
+    infoFile << "{\n  \"@type\": \"neuroglancer_legacy_mesh\"\n}";
+    infoFile.close();
+
+    // Create the JSON file for the segment
+    std::string segmentJsonFile = meshDir + "/" + std::to_string(segmentId) + ":0";
+    std::ofstream jsonFile(segmentJsonFile);
+    jsonFile << "{\n  \"fragments\": [\"" << segmentId << ":1\"]\n}";
+    jsonFile.close();
+
+    // Create the binary fragment file
+    std::string fragmentFile = meshDir + "/" + std::to_string(segmentId) + ":1";
+    std::ofstream binFile(fragmentFile, std::ios::binary);
+
+    // Write the number of vertices
+    uint32_t numVertices = vertices.size() / 3;
+    binFile.write(reinterpret_cast<const char*>(&numVertices), sizeof(numVertices));
+
+    // Write the vertices
+    for (size_t i = 0; i < vertices.size(); ++i) {
+        float vertex = vertices[i];
+        binFile.write(reinterpret_cast<const char*>(&vertex), sizeof(vertex));
+    }
+
+    // Write the number of triangles
+    uint32_t numTriangles = triangles.size() / 3;
+    binFile.write(reinterpret_cast<const char*>(&numTriangles), sizeof(numTriangles));
+
+    // Write the triangles
+    for (size_t i = 0; i < triangles.size(); ++i) {
+        uint32_t triangleVertex = triangles[i];
+        binFile.write(reinterpret_cast<const char*>(&triangleVertex), sizeof(triangleVertex));
+    }
+
+    binFile.close();
+}
+
+int main() {
+    // Example usage
+    std::vector<float> vertices = {
+        0.0f, 0.0f, 0.0f,
+        1.0f, 0.0f, 0.0f,
+        0.0f, 1.0f, 0.0f
+    };
+
+    std::vector<uint32_t> triangles = {
+        0, 1, 2
+    };
+
+    saveNeuroglancerMesh("path/to/segmentation", 3764, vertices, triangles);
+
+    return 0;
+}
+```
