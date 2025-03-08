@@ -192,6 +192,13 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MarchingCubes.h
   ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp
   ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MarchingCubesLookupTable.h
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshCombiner.h
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshCombiner.cpp
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.h
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshingStage.h
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshTask.h
   
   ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.cpp
   ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.h

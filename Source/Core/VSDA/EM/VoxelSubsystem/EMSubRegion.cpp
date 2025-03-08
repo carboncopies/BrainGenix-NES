@@ -12,7 +12,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/VoxelSubsystem/EMSubRegion.h>
 
-
+#include <VSDA/EM/MeshGenerator/MeshingStage.h>
 
 
 
@@ -165,6 +165,18 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
         while (Task->IsDone_ != true) {
             std::this_thread::sleep_for(std::chrono::milliseconds(5));
         }
+    }
+
+    // -- BUT WAIT, THERE'S MORE!! -- //
+    // -- PROCESS MESHES MAYBE -- //
+
+    bool ProcessMeshes = true;
+
+    if (ProcessMeshes) {
+
+        MeshingStage mesher(_Logger, VSDAData_->Array_.get(), 128);
+        auto neuronMeshes = mesher.Process();
+
     }
 
 
