@@ -31,6 +31,16 @@ Var=$(lsb_release -r)
 NumOnly=$(cut -f2 <<< "$Var")
 
 
+# Define Python dependencies based on distro
+PYTHON_DEPS=""
+case $DISTRO in
+    "arch") PYTHON_DEPS="python" ;;  # Arch includes venv in the python package
+    "ubuntu") PYTHON_DEPS="python3 python3-venv" ;;
+    "fedora") PYTHON_DEPS="python3 python3-virtualenv" ;;
+    *) PYTHON_DEPS="python3 python3-venv" ;;
+esac
+
+
 # Setup, update package registry
 echo "Setting Up Packages Needed For Compilation"
 # $SUDO_PREFIX $PACKAGE_MANAGER_UPDATE_CMD || exit 1
@@ -63,11 +73,20 @@ else
     fi
 fi
 
-# Install Everything
-INSTALL_COMMAND="$SUDO_PREFIX $PACKAGE_MANAGER_INSTALL_CMD $VCPKG_DEPS $COMPILER_DEPS $VULKAN_DEPS"
+
+# Install Everything (add PYTHON_DEPS)
+INSTALL_COMMAND="$SUDO_PREFIX $PACKAGE_MANAGER_INSTALL_CMD $VCPKG_DEPS $COMPILER_DEPS $VULKAN_DEPS $PYTHON_DEPS"
 echo "Running Install Command: $INSTALL_COMMAND"
-# $INSTALL_COMMAND || exit 1
 $INSTALL_COMMAND
+
+# Create Python virtual environment and install igneous-pipeline
+echo "Creating Python virtual environment..."
+cd ..
+python3 -m venv venv || exit 1
+echo "Installing igneous-pipeline in the virtual environment..."
+./venv/bin/pip install igneous-pipeline || exit 1
+cd Tools
+
 
 # Update Submodules
 echo "Updating Submodules"

@@ -6,6 +6,8 @@
 
 /.vscode/
 
+/venv/
+
 
 ## C++ Gitignore template from github
 
