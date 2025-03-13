@@ -17,7 +17,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.h>
-
+#include <VSDA/EM/NeuroglancerConversionPool/IgneousPipeline.h>
 
 
 
@@ -294,6 +294,15 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
         }
     }
 
+
+
+    // Now run mesh generation optionally
+    std::string DatasetPath = "NeuroglancerDatasets/" + UUID + "/Segmentation";
+    std::string OutputPath = "Meshes/" + UUID;
+    if(!ProcessIgneousPipeline(_Logger, DatasetPath, OutputPath, true, 0, std::thread::hardware_concurrency())) {
+        _Logger->Log("Igneous meshing pipeline execution failed!", 10);
+        return false;
+    }
 
 
     _Logger->Log("Generated Neuroglancer Dataset At Path " + BasePath, 5);

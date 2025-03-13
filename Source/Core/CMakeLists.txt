@@ -182,6 +182,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.h
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/IgneousPipeline.cpp
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/IgneousPipeline.h
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.cpp
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.h
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.cpp

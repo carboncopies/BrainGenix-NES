@@ -2,10 +2,8 @@
 cd ..
 cd Binaries
 
-# Set environment to use the Python virtual environment
-export PYTHONHOME=../venv
-export PATH="../venv/bin:$PATH"
+# Activate the Python virtual environment
+source ../venv/bin/activate
 
-# Depending On Platform, Run
-# export VK_INSTANCE_LAYERS=VK_LAYER_LUNARG_api_dump
+# Run the application
 ./BrainGenix-NES $1 $2 $3 $4

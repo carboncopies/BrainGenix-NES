@@ -164,7 +164,7 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
 
 
             // Now generate segmentation map data
-            if (_SliceNumber % SEGMENTATION_BLOCK_SIZE == 0) {
+            if (AdjustedSliceNumber % SEGMENTATION_BLOCK_SIZE == 0) {
 
                 // Calculate the filename of the image to be generated, add to list of generated images
                 // int AdjustedSliceNumber = (CurrentSliceIndex + SliceOffset) / (VSDAData_->Params_.SliceThickness_um / VSDAData_->Params_.VoxelResolution_um);
@@ -204,7 +204,11 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
                 Info.EndY *= Params->NumPixelsPerVoxel_px;
 
                 Info.StartZ = AdjustedSliceNumber;
-                Info.EndZ = AdjustedSliceNumber + SEGMENTATION_BLOCK_SIZE;
+                ScanRegion* BaseRegion = &_VSDAData->Regions_[_VSDAData->ActiveRegionID_];
+                Info.EndZ = std::min(AdjustedSliceNumber + SEGMENTATION_BLOCK_SIZE, BaseRegion->RegionIndexInfo_.EndZ);
+
+               
+
 
                 _VSDAData->Regions_[_VSDAData->ActiveRegionID_].SegmentationFilenames_.push_back(DirectoryPath + "/" + FilePath);
                 _VSDAData->Regions_[_VSDAData->ActiveRegionID_].SegmentationVoxelIndexes_.push_back(Info);

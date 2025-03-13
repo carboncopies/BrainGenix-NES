@@ -190,20 +190,20 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     // -- BUT WAIT, THERE'S MORE!! -- //
     // -- PROCESS MESHES MAYBE -- //
 
-    bool ProcessMeshes = true;
+    // bool ProcessMeshes = true;
 
-    if (ProcessMeshes) {
+    // if (ProcessMeshes) {
 
-        std::string FileNamePrefix =  "Meshes/Simulation" + std::to_string(Sim->ID) + "/Region" + std::to_string(VSDAData_->ActiveRegionID_) + "-Meshes/";
+    //     std::string FileNamePrefix =  "Meshes/Simulation" + std::to_string(Sim->ID) + "/Region" + std::to_string(VSDAData_->ActiveRegionID_) + "-Meshes/";
 
-        std::error_code E;
-        VSCreateDirectoryRecursive3(FileNamePrefix, E);
+    //     std::error_code E;
+    //     VSCreateDirectoryRecursive3(FileNamePrefix, E);
 
 
-        MeshingStage mesher(_Logger, VSDAData_->Array_.get(), 1.0, FileNamePrefix, 128);
-        mesher.Process();
+    //     MeshingStage mesher(_Logger, VSDAData_->Array_.get(), 1.0, FileNamePrefix, 128);
+    //     mesher.Process();
 
-    }
+    // }
 
 
     return true;
