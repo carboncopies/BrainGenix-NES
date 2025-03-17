@@ -1,5 +1,6 @@
 #include "IgneousPipeline.h"
 #include <cstdlib>
+//#include <unistd.h>
 
 namespace {
     bool ExecuteCommand(BG::Common::Logger::LoggingSystem* _Logger, const std::string& command, const std::filesystem::path& absPythonVenv) {
@@ -67,6 +68,16 @@ const std::string queuePath = (absOutputDir / "queue").string();
 // Use the igneous command directly from the venv's bin directory
 const std::string igneousBin = "\"" + absPythonVenv.string() + "/bin/igneous\"";
 
+//std::system((std::string("bash /home/rkoene/src/igneous_calls.sh ")+absDatasetPath.string()+" 0 60").c_str());
+std::system(("bash "+absPythonVenv.string()+"/bin/activate && python3 /home/rkoene/src/igneous_local.py --datapath "+absDatasetPath.string()+" --parallel 60").c_str());
+return true;
+// pid_t pid = fork();
+// if (pid == 0) {
+//     // Child process
+//     execl("/bin/bash", "bash", "/home/rkoene/src/igneous_calls.sh", absDatasetPath.string().c_str(), nullptr);
+// }
+
+/*
 if (enableDownsampling) {
 _Logger->Log("Starting image downsampling", 3);
 ClearQueue(_Logger, queuePath);
@@ -82,6 +93,7 @@ return false;
 }
 
 const std::string executeCmd = igneousBin + " --parallel " + std::to_string(parallelJobs) + " execute -x " + queuePath;
+
 
 if (!ExecuteCommand(_Logger, executeCmd, absPythonVenv)) {
 _Logger->Log("Downsampling queue execution failed", 1);
@@ -140,6 +152,7 @@ return true;
 } catch (const std::filesystem::filesystem_error& e) {
 _Logger->Log("Filesystem error: " + std::string(e.what()), 0);
 return false;
+*/
 } catch (const std::exception& e) {
 _Logger->Log("Unexpected error: " + std::string(e.what()), 0);
 return false;
