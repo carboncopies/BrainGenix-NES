@@ -553,8 +553,6 @@ std::string VSDARPCInterface::VSDAEMGetNeuroglancerDatasetURL(std::string _JSONR
 
 }
 std::string VSDARPCInterface::VSDAGetImage(std::string _JSONRequest) {
-
-
     // Parse Request, Get Parameters
     API::HandlerData Handle(_JSONRequest, Logger_, "VSDA/GetImage", SimulationsPtr_, true, true);
     if (Handle.HasError()) {
@@ -567,12 +565,7 @@ std::string VSDARPCInterface::VSDAGetImage(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-
-
     // Minor security feature (probably still exploitable, so be warned!)
-    // We just remove .. from the incoming handle for the image, since they're just files right now
-    // as such, if we didnt strip that, then people could read any files on the server!
-    // Also, we prepend a '.' so people can't try and get to the root
     std::string Pattern = "..";
     std::string::size_type i = ImageHandle.find(Pattern);
     while (i != std::string::npos) {
@@ -582,40 +575,41 @@ std::string VSDARPCInterface::VSDAGetImage(std::string _JSONRequest) {
     }
     std::string SafeHandle = "./" + ImageHandle;
 
-
-    // Now Check If The Handle Is Valid, If So, Load It
+    // Try to open the file with no extension
     std::ifstream ImageStream(SafeHandle.c_str(), std::ios::binary);
     std::string RawData;
+    if (!ImageStream.good()) {
+        // If the file with no extension fails, try appending .gz
+        ImageStream.open((SafeHandle + ".gz").c_str(), std::ios::binary);
+        if (!ImageStream.good()) {
+            // If .gz fails, try appending .jpg
+            ImageStream.open((SafeHandle + ".jpg").c_str(), std::ios::binary);
+            if (!ImageStream.good()) {
+                Logger_->Log("An Invalid ImageHandle Was Provided " + SafeHandle, 6);
+                nlohmann::json ResponseJSON;
+                ResponseJSON["StatusCode"] = 2; // error
+                return ResponseJSON.dump();
+            }
+        }
+    }
+
+    // Load the file content
     if (ImageStream.good()) {
         std::stringstream Buffer;
         Buffer << ImageStream.rdbuf();
         RawData = Buffer.str();
-        // ImageStream>>RawData;
         ImageStream.close();
-
-    } else {
-        Logger_->Log("An Invalid ImageHandle Was Provided " + SafeHandle, 6);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 2; // error
-        return ResponseJSON.dump();
     }
 
     // Now, Convert It To Base64
     std::string Base64Data = base64_encode(reinterpret_cast<const unsigned char*>(RawData.c_str()), RawData.length());
 
-
     // Build Response
     nlohmann::json ResponseJSON;
-
-    ResponseJSON["StatusCode"] = (int)(0);
+    ResponseJSON["StatusCode"] = 0;
     ResponseJSON["ImageData"] = Base64Data;
 
-    // nlohmann::json ImagePaths = ThisSimulation->VSDAData_.RenderedImagePaths_[ScanRegionID];
-    // ResponseJSON["RenderedImages"] = ImagePaths;
-
-
     return ResponseJSON.dump();
-
 }
 
 
