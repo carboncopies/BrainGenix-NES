@@ -181,6 +181,8 @@ include(CTest)
 
 file(COPY "${SRC_DIR}/Data/" DESTINATION "${BIN_DIR}")
 
+file(COPY "${SRC_DIR}/Python" DESTINATION "${BIN_DIR}")
+
 
 
 # Include CTest for testing

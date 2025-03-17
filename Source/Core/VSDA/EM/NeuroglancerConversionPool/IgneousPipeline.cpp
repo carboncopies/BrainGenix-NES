@@ -69,7 +69,7 @@ const std::string queuePath = (absOutputDir / "queue").string();
 const std::string igneousBin = "\"" + absPythonVenv.string() + "/bin/igneous\"";
 
 //std::system((std::string("bash /home/rkoene/src/igneous_calls.sh ")+absDatasetPath.string()+" 0 60").c_str());
-std::system(("bash "+absPythonVenv.string()+"/bin/activate && python3 /home/rkoene/src/igneous_local.py --datapath "+absDatasetPath.string()+" --parallel 60").c_str());
+std::system(("bash "+absPythonVenv.string()+"/bin/activate && python3 ./Python/igneous_local.py --datapath "+absDatasetPath.string()+" --parallel 60").c_str());
 return true;
 // pid_t pid = fork();
 // if (pid == 0) {
