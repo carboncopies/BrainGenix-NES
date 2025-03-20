@@ -8,6 +8,9 @@
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <cpp-base64/base64.cpp>
+#include <gzip/compress.hpp>
+#include <gzip/decompress.hpp>
+#include <gzip/utils.hpp>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <RPC/RPCHandlerHelper.h>
@@ -578,9 +581,13 @@ std::string VSDARPCInterface::VSDAGetImage(std::string _JSONRequest) {
     // Try to open the file with no extension
     std::ifstream ImageStream(SafeHandle.c_str(), std::ios::binary);
     std::string RawData;
+    bool was_gzipped = false;
     if (!ImageStream.good()) {
         // If the file with no extension fails, try appending .gz
         ImageStream.open((SafeHandle + ".gz").c_str(), std::ios::binary);
+        if (ImageStream.good()) {
+            was_gzipped = true;
+        }
         if (!ImageStream.good()) {
             // If .gz fails, try appending .jpg
             ImageStream.open((SafeHandle + ".jpg").c_str(), std::ios::binary);
@@ -601,7 +608,12 @@ std::string VSDARPCInterface::VSDAGetImage(std::string _JSONRequest) {
         ImageStream.close();
     }
 
-    std::cout << "Loading: " << SafeHandle << " -- size loaded: " << std::to_string(RawData.length()) << '\n';
+    if (was_gzipped) {
+        std::string UnzippedRawData = gzip::decompress(RawData.data(), RawData.size());
+        RawData = UnzippedRawData;
+    }
+
+    //std::cout << "Loading: " << SafeHandle << " -- size loaded: " << std::to_string(RawData.length()) << '\n';
 
     // Now, Convert It To Base64
     std::string Base64Data = base64_encode(reinterpret_cast<const unsigned char*>(RawData.c_str()), RawData.length());

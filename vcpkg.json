@@ -13,6 +13,7 @@
     "cpp-base64",
     "stb",
     "libnoise",
+    "gzip-hpp",
     {
       "name": "stduuid",
       "features": [
