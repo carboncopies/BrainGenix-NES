@@ -5,6 +5,7 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <fstream>
+#include <cstdint>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <cpp-base64/base64.cpp>
@@ -581,12 +582,12 @@ std::string VSDARPCInterface::VSDAGetImage(std::string _JSONRequest) {
     // Try to open the file with no extension
     std::ifstream ImageStream(SafeHandle.c_str(), std::ios::binary);
     std::string RawData;
-    bool was_gzipped = false;
+    bool WasCompressed = false;
     if (!ImageStream.good()) {
         // If the file with no extension fails, try appending .gz
         ImageStream.open((SafeHandle + ".gz").c_str(), std::ios::binary);
         if (ImageStream.good()) {
-            was_gzipped = true;
+            WasCompressed = true;
         }
         if (!ImageStream.good()) {
             // If .gz fails, try appending .jpg
@@ -608,7 +609,7 @@ std::string VSDARPCInterface::VSDAGetImage(std::string _JSONRequest) {
         ImageStream.close();
     }
 
-    if (was_gzipped) {
+    if (WasCompressed) {
         std::string UnzippedRawData = gzip::decompress(RawData.data(), RawData.size());
         RawData = UnzippedRawData;
     }

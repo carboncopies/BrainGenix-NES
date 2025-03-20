@@ -46,7 +46,15 @@ find_package(rpclib CONFIG REQUIRED)
 message(STATUS "Finding system pthreads lib")
 find_package(Threads REQUIRED)
 
+message(STATUS "Finding system base64 lib")
 find_path(CPP_BASE64_INCLUDE_DIRS "cpp-base64/base64.cpp")
+
+message(STATUS "Finding system zlib lib")
+find_package(ZLIB REQUIRED)
+
+message(STATUS "Finding system gzip-hpp lib")
+find_path(GZIP_HPP_INCLUDE_DIRS "gzip/compress.hpp")
+
 
 
 # Renderer Dependencies
@@ -73,6 +81,7 @@ find_package(vsg CONFIG REQUIRED)
 
 # message(STATUS "Setting Up vsgXchange Library")
 # find_package(vsgXchange CONFIG REQUIRED)
+
 
 message(STATUS "Setting Up STB Library")
 find_package(Stb REQUIRED)
