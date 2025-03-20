@@ -601,6 +601,8 @@ std::string VSDARPCInterface::VSDAGetImage(std::string _JSONRequest) {
         ImageStream.close();
     }
 
+    std::cout << "Loading: " << SafeHandle << " -- size loaded: " << std::to_string(RawData.length()) << '\n';
+
     // Now, Convert It To Base64
     std::string Base64Data = base64_encode(reinterpret_cast<const unsigned char*>(RawData.c_str()), RawData.length());
 
