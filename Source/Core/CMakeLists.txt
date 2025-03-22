@@ -182,12 +182,28 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.h
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/IgneousPipeline.cpp
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/IgneousPipeline.h
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.cpp
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.h
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.cpp
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.h
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.cpp
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.h
+
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MC.h
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MarchingCubes.h
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MarchingCubesLookupTable.h
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshCombiner.h
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshCombiner.cpp
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.h
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshingStage.h
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/MeshTask.h
+  ${SRC_DIR}/Core/VSDA/EM/MeshGenerator/OBJWriter.h
+  
   ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.cpp
   ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.h
   ${SRC_DIR}/Core/VSDA/Common/Structs/WorldInfo.cpp
@@ -314,6 +330,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     # Boost::program_options
     rpclib::rpc
     ${CMAKE_THREAD_LIBS_INIT}
+    ZLIB::ZLIB
     unofficial::noise::noise-static
     stduuid
 
@@ -326,7 +343,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 )
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
-
+target_include_directories(${PROJECT_NAME} PRIVATE ${GZIP_HPP_INCLUDE_DIRS})
 
 ## -- IMPORTANT -- | !FOR REDUCED THREADING DEBUGGING, UNCOMMENT LINE BELOW, OTHERWISE LEAVE COMMENTED OUT! | -- IMPORTANT -- ##
 # target_compile_definitions(${PROJECT_NAME} PRIVATE REDUCED_THREADING_DEBUG=1)

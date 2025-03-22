@@ -1,8 +1,9 @@
-
 # Enter Artifact/Binary Dir
 cd ..
 cd Binaries
 
-# Depending On Platform, Run
-# export VK_INSTANCE_LAYERS=VK_LAYER_LUNARG_api_dump
+# Activate the Python virtual environment
+source ../venv/bin/activate
+
+# Run the application
 ./BrainGenix-NES $1 $2 $3 $4

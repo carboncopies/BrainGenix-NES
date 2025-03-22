@@ -12,7 +12,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/VoxelSubsystem/EMSubRegion.h>
 
-
+#include <VSDA/EM/MeshGenerator/MeshingStage.h>
 
 
 
@@ -21,6 +21,26 @@ namespace NES {
 namespace Simulator {
 namespace VSDA {
 
+
+
+// Returns:
+//   true upon success.
+//   false upon failure, and set the std::error_code & err accordingly.
+// https://stackoverflow.com/questions/71658440/c17-create-directories-automatically-given-a-file-path
+bool VSCreateDirectoryRecursive3(std::string const & dirName, std::error_code & err) {
+    err.clear();
+    if (!std::filesystem::create_directories(dirName, err))
+    {
+        if (std::filesystem::exists(dirName))
+        {
+            // The folder already exists:
+            err.clear();
+            return true;    
+        }
+        return false;
+    }
+    return true;
+}
 
 
 bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _SubRegion, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
@@ -166,6 +186,24 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
             std::this_thread::sleep_for(std::chrono::milliseconds(5));
         }
     }
+
+    // -- BUT WAIT, THERE'S MORE!! -- //
+    // -- PROCESS MESHES MAYBE -- //
+
+    // bool ProcessMeshes = true;
+
+    // if (ProcessMeshes) {
+
+    //     std::string FileNamePrefix =  "Meshes/Simulation" + std::to_string(Sim->ID) + "/Region" + std::to_string(VSDAData_->ActiveRegionID_) + "-Meshes/";
+
+    //     std::error_code E;
+    //     VSCreateDirectoryRecursive3(FileNamePrefix, E);
+
+
+    //     MeshingStage mesher(_Logger, VSDAData_->Array_.get(), 1.0, FileNamePrefix, 128);
+    //     mesher.Process();
+
+    // }
 
 
     return true;
