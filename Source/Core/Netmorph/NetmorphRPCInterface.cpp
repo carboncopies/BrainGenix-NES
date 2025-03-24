@@ -8,6 +8,7 @@
 #include <Netmorph/NetmorphRPCInterface.h>
 #include <RPC/APIStatusCode.h>
 #include <cpp-base64/base64.h>
+#include <uuid.h>
 
 #include <Netmorph/NetmorphManagerThread.h>
 
@@ -92,6 +93,22 @@ std::string NetmorphRPCInterface::NetmorphStartSimulation(std::string _JSONReque
     } else {
         Status = 3; // Something is broken
     }
+
+    // Create a unique output directory for this Netmorph run
+    uuids::uuid const ThisID = uuids::uuid_system_generator{}();
+    std::string UUID = uuids::to_string(ThisID);
+    std::string NetmorphOutputPath = "NetmorphOutput/" + UUID + "/";
+    std::error_code err;
+    err.clear();
+    if (!std::filesystem::create_directories(NetmorphOutputPath, err)) {
+        if (std::filesystem::exists(NetmorphOutputPath)) {
+            // The folder already exists:
+            err.clear();
+        } else {
+            return Handle.ErrResponse();
+        }
+    }
+    Handle.Sim()->NetmorphParams.OutputDirectory = NetmorphOutputPath;
 
     // Start Worker Thread
     Handle.Sim()->NetmorphParams.Sim = Handle.Sim();

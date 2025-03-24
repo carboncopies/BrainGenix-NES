@@ -66,6 +66,8 @@ struct NetmorphParameters {
 
     std::string ModelContent; /**String containing the Netmorph model.*/
 
+    std::string OutputDirectory; /**A unique output directory. */
+
     int Progress_percent; /**Netmorph status percent*/
 
     Netmorph Result; /**Output provided by netmorph written to this struct*/

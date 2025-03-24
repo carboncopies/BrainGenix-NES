@@ -480,10 +480,10 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
 }
 // ---
 
-Netmorph NetmorphRun(int* _StatusPercent, const std::string& _Modelfile, Netmorph2NESLogging* _embedlog) {
+Netmorph NetmorphRun(int* _StatusPercent, const std::string& _Modelfile, Netmorph2NESLogging* _embedlog, const std::string& _OverrideOutputDir) {
 
   Netmorph res(_embedlog, _StatusPercent);
-  res.embedded_run(_Modelfile);
+  res.embedded_run(_Modelfile, _OverrideOutputDir);
 
   return res;
 }
@@ -494,7 +494,7 @@ int ExecuteNetmorphOperation(BG::Common::Logger::LoggingSystem* _Logger, Netmorp
     std::unique_ptr<Nm2NESLogging> _embedlog = std::make_unique<Nm2NESLogging>(*_Logger);
 
     _Logger->Log("Starting Netmorph Simulation", 5);
-    _Params->Result = NetmorphRun(&_Params->Progress_percent, _Params->ModelContent, _embedlog.release());
+    _Params->Result = NetmorphRun(&_Params->Progress_percent, _Params->ModelContent, _embedlog.release(), _Params->OutputDirectory);
 
     _Logger->Log("Netmorph Simulation Finished", 5);
 
