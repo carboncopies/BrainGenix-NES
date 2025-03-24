@@ -115,8 +115,12 @@ std::string NetmorphRPCInterface::NetmorphStartSimulation(std::string _JSONReque
     Logger_->Log("Starting Netmorph Worker Thread", 4);
     Handle.Sim()->NetmorphWorkerThread = std::thread(ExecuteNetmorphOperation, Logger_, &Handle.Sim()->NetmorphParams);
 
-    // Return Result ID
-    return Handle.ResponseWithID("NetmorphStatus", Status);
+    // Build Response
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = Handle.GetStatus();
+    ResponseJSON["NetmorphOutputDirectory"] = Handle.Sim()->NetmorphParams.OutputDirectory;
+    ResponseJSON["NetmorphStatus"] = Status;
+    return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
 
