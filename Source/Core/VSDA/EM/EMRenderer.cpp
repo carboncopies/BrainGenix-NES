@@ -44,7 +44,7 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
     }
     _Simulation->VSDAData_.State_ = VSDA_RENDER_IN_PROGRESS;
     
-    _Logger->Log("Executing Render Job For Requested Simulation", 4);
+    _Logger->Log("Executing Render Job For Requested Simulation " + std::to_string(_Simulation->ID), 4);
 
 
     // Unpack Variables For Easier Access

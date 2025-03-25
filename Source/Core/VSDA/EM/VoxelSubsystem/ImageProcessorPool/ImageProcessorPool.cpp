@@ -199,7 +199,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 Task->IsDone_ = true;
 
                 // Logging
-                Logger_->Log("Compressed segmentation layer " + std::to_string(Task->VoxelZ) + " to " + Task->OutputPath_, 1);
+                //Logger_->Log("Compressed segmentation layer " + std::to_string(Task->VoxelZ) + " to " + Task->OutputPath_, 1);
                 continue;
             }
 
