@@ -165,6 +165,9 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
 
     }
 
+    // Incriment counter of memory usage
+    _ImageProcessorPool->TotalConsumedMemory_MB += MemorySize_MB;
+
 
 
     // Now, we go through all of the steps in each direction that we identified, and calculate the bounding boxes for each
@@ -258,6 +261,11 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
     Empty.Point2Z_um = 0.;
     _Simulation->VSDAData_.Array_ = std::make_unique<VoxelArray>(_Logger, Empty, 999.);
     _Simulation->VSDAData_.State_ = VSDA_RENDER_DONE;
+
+
+    // Decrement memory usage counter
+    _ImageProcessorPool->TotalConsumedMemory_MB -= MemorySize_MB;
+
 
     return true;
 
