@@ -114,8 +114,29 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     _Logger->Log("This EM Render Operation Desires " + std::to_string(VSDAData_->Params_.SliceThickness_um) + "um Slice Thickness", 5);
     _Logger->Log("Therefore, we are using " + std::to_string(NumVoxelsPerSlice) + "vox per slice at " + std::to_string(VSDAData_->Params_.VoxelResolution_um) + "um per vox", 5);
     _Logger->Log("We Will Render A Total Of " + std::to_string(NumZSlices) + " Slices", 5);
-    
 
+    
+    // Force us to wait for any other renders using the image processor pool
+    while (_ImageProcessorPool->GetQueueSize() > 0) {
+
+        // Update Current Slice Information (Account for slice numbers not starting at 0)
+        VSDAData_->CurrentOperation_ = "Image Processing Enqueued";
+        VSDAData_->TotalSliceImages_ = 0;
+        VSDAData_->CurrentSliceImage_ = 0;
+        VSDAData_->VoxelQueueLength_ = 0;
+        VSDAData_->TotalVoxelQueueLength_ = 0;
+        VSDAData_->TotalSlices_ = 0;
+        VSDAData_->CurrentSlice_ = 0;
+        VSDAData_->CurrentSlice_ = VSDAData_->TotalSlices_ - _ImageProcessorPool->GetQueueSize();
+
+        _Logger->Log("Waiting for ImageProcessorPool to become available; '" + std::to_string(_ImageProcessorPool->GetQueueSize()) + "' items remaining", 1);
+
+        // Now wait a while so we don't spam the console
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    
+    }
+
+    
     // Update Status Bar
     VSDAData_->CurrentOperation_ = "Image Processing";
     VSDAData_->TotalSliceImages_ = 0;
@@ -147,36 +168,13 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     // Ensure All Tasks Are Finished
     while (_ImageProcessorPool->GetQueueSize() > 0) {
 
-        // // Calculate Desired Image Size
-        // // In order for us to deal with multiple different pixel/voxel setting, we create an image of start size where one pixel = 1 voxel
-        // // then later on, we resample it to be the right size (for the target image)
-        // int VoxelsPerStepX = ceil(VSDAData_->Params_.ImageWidth_px / VSDAData_->Params_.NumPixelsPerVoxel_px);
-        // int VoxelsPerStepY = ceil(VSDAData_->Params_.ImageHeight_px / VSDAData_->Params_.NumPixelsPerVoxel_px);
-        // int NumChannels = 3;
-        // float CameraStepSizeX_um = VoxelsPerStepX * VSDAData_->Params_.VoxelResolution_um;
-        // float CameraStepSizeY_um = VoxelsPerStepY * VSDAData_->Params_.VoxelResolution_um;
-
-        // double TotalSliceWidth = abs((double)VSDAData_->Array_->GetBoundingBox().bb_point1[0] - (double)VSDAData_->Array_->GetBoundingBox().bb_point2[0]);
-        // double TotalSliceHeight = abs((double)VSDAData_->Array_->GetBoundingBox().bb_point1[1] - (double)VSDAData_->Array_->GetBoundingBox().bb_point2[1]);
-        // int TotalXSteps = ceil(TotalSliceWidth / CameraStepSizeX_um);
-        // int TotalYSteps = ceil(TotalSliceHeight / CameraStepSizeY_um);
-        // TotalXSteps = std::min(TotalXSteps, _SubRegion->MaxImagesX);
-        // TotalYSteps = std::min(TotalYSteps, _SubRegion->MaxImagesY);
-
-        // int ImagesPerSlice = TotalXSteps * TotalYSteps;
-
-
         // Update Current Slice Information (Account for slice numbers not starting at 0)
         VSDAData_->CurrentSlice_ = VSDAData_->TotalSlices_ - _ImageProcessorPool->GetQueueSize();
-        // VSDAData_->TotalSliceImages_ = ImagesPerSlice;
-        // VSDAData_->CurrentSliceImage_ = _ImageProcessorPool->GetQueueSize() % ImagesPerSlice;
 
-        // Log Queue Size
         _Logger->Log("ImageProcessorPool Queue Length '" + std::to_string(_ImageProcessorPool->GetQueueSize()) + "'", 1);
 
-
         // Now wait a while so we don't spam the console
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
 
     }

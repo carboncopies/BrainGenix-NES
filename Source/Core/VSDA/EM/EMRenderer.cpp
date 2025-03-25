@@ -44,22 +44,12 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
     }
     _Simulation->VSDAData_.State_ = VSDA_RENDER_IN_PROGRESS;
     
-    _Logger->Log("Executing Render Job For Requested Simulation", 4);
+    _Logger->Log("Executing Render Job For Requested Simulation " + std::to_string(_Simulation->ID), 4);
 
 
     // Unpack Variables For Easier Access
     MicroscopeParameters* Params = &_Simulation->VSDAData_.Params_;
     ScanRegion* BaseRegion = &_Simulation->VSDAData_.Regions_[_Simulation->VSDAData_.ActiveRegionID_];
-
-    // // -- Phase -1 --
-    // // We need to backpropagate the ids of the neurons to the compartments, then to us.
-    // for (auto Neuron : _Simulation->Neurons) {
-    //     if (auto SCNeuron = dynamic_cast<Simulation::SCNeuron>(Neuron.get())) {
-    //         RegisterNeuronUIDToCompartments(_N.SomaCompartmentIDs, _N.ID + 1);
-    //         RegisterNeuronUIDToCompartments(_N.DendriteCompartmentIDs, _N.ID + 1);
-    //         RegisterNeuronUIDToCompartments(_N.AxonCompartmentIDs, _N.ID + 1);
-    //     }
-    // }
 
 
     // -- Phase 0 --
@@ -151,6 +141,32 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
     Info.EndY = abs(BaseRegion->Point1Y_um - BaseRegion->Point2Y_um) / Params->VoxelResolution_um;
     Info.EndZ = abs(BaseRegion->Point1Z_um - BaseRegion->Point2Z_um) / (Params->VoxelResolution_um * NumVoxelsPerSlice);
     BaseRegion->RegionIndexInfo_ = Info;
+
+
+    // Now we need to check that we have enough memory right now to begin rendering, if we dont, we need to wait until we do
+    // this actually just looks for other renders that are happening right now and checks its status
+    double CurrentRendererUsage = _ImageProcessorPool->TotalConsumedMemory_MB.load();
+
+    while (((_ImageProcessorPool->TotalConsumedMemory_MB.load() + MemorySize_MB) / SystemRAM_MB) > 0.9) {
+
+        // Update Current Slice Information (Account for slice numbers not starting at 0)
+        _Simulation->VSDAData_.CurrentOperation_ = "Waiting for free RAM";
+        _Simulation->VSDAData_.TotalSliceImages_ = 0;
+        _Simulation->VSDAData_.CurrentSliceImage_ = 0;
+        _Simulation->VSDAData_.VoxelQueueLength_ = 0;
+        _Simulation->VSDAData_.TotalVoxelQueueLength_ = 0;
+        _Simulation->VSDAData_.TotalSlices_ = 0;
+        _Simulation->VSDAData_.CurrentSlice_ = 0;
+
+        _Logger->Log("Waiting for enough free RAM to become available before starting render", 1);
+
+        // Now wait a while so we don't spam the console
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+    }
+
+    // Incriment counter of memory usage
+    _ImageProcessorPool->TotalConsumedMemory_MB += MemorySize_MB;
 
 
 
@@ -245,6 +261,11 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
     Empty.Point2Z_um = 0.;
     _Simulation->VSDAData_.Array_ = std::make_unique<VoxelArray>(_Logger, Empty, 999.);
     _Simulation->VSDAData_.State_ = VSDA_RENDER_DONE;
+
+
+    // Decrement memory usage counter
+    _ImageProcessorPool->TotalConsumedMemory_MB -= MemorySize_MB;
+
 
     return true;
 

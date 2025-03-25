@@ -78,7 +78,6 @@ private:
     std::atomic_bool ThreadControlFlag_;                  /**Bool that signals threads to exit*/
 
 
-
     /**
      * @brief Thread safe enqueue function.
      * 
@@ -108,6 +107,9 @@ private:
 
 
 public:
+
+    std::atomic<double> TotalConsumedMemory_MB; /**Counter for emrenderer to keep track of how much memory is being used by renders*/
+
 
     /**
      * @brief Initializes the imageprocessorpool with the given number of threads requested.
