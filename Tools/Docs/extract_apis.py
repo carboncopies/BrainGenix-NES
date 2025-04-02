@@ -5,6 +5,8 @@ import sys
 
 # No filename sanitization needed for single output file
 
+#script to scan C++ files in a repository for API definitions
+
 def extract_apis_to_single_file(repo_path, output_file):
     """
     Finds C++ files, extracts unique API names from AddRoute calls,
