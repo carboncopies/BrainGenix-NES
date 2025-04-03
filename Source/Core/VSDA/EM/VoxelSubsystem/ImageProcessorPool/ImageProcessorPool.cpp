@@ -133,7 +133,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 SegmentationCompressor::ProcessTask(Task);
 
                 // toggle this to disable writing colored pngs
-                if (true) {
+                if (Task->Parameters_->GenerateSegmentationPNGs) {
                     
                     // -- Phase 1 -- //
 
