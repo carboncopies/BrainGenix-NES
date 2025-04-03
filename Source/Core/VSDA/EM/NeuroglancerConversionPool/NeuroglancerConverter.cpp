@@ -297,11 +297,13 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
 
 
     // Now run mesh generation optionally
-    std::string DatasetPath = "NeuroglancerDatasets/" + UUID + "/Segmentation";
-    std::string OutputPath = "Meshes/" + UUID;
-    if(!ProcessIgneousPipeline(_Logger, DatasetPath, OutputPath, true, 0, std::thread::hardware_concurrency())) {
-        _Logger->Log("Igneous meshing pipeline execution failed!", 10);
-        return false;
+    if (Params->GenerateMeshes && Params->GenerateSegmentation) { 
+        std::string DatasetPath = "NeuroglancerDatasets/" + UUID + "/Segmentation";
+        std::string OutputPath = "Meshes/" + UUID;
+        if(!ProcessIgneousPipeline(_Logger, DatasetPath, OutputPath, true, 0, std::thread::hardware_concurrency())) {
+            _Logger->Log("Igneous meshing pipeline execution failed!", 10);
+            return false;
+        }
     }
 
 
