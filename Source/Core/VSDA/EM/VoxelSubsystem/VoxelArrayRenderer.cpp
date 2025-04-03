@@ -164,7 +164,7 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
 
 
             // Now generate segmentation map data
-            if (AdjustedSliceNumber % SEGMENTATION_BLOCK_SIZE == 0) {
+            if (_VSDAData->Params_.GenerateSegmentation && AdjustedSliceNumber % SEGMENTATION_BLOCK_SIZE == 0) {
 
                 // Calculate the filename of the image to be generated, add to list of generated images
                 // int AdjustedSliceNumber = (CurrentSliceIndex + SliceOffset) / (VSDAData_->Params_.SliceThickness_um / VSDAData_->Params_.VoxelResolution_um);
@@ -218,6 +218,8 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
                 _ImageProcessorPool->QueueEncodeOperation(SegTask.get());
                 _VSDAData->Tasks_.push_back(std::move(SegTask));
 
+                // Incriment counter for progress bar accuracy
+                TotalImages++;
 
             }
 
