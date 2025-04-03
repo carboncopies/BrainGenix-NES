@@ -51,6 +51,11 @@ namespace Simulator {
 struct MicroscopeParameters {
 
 
+    bool GenerateSegmentation; /** Enables or disables the generation of neuroglancer microscope segmentation image data */
+    bool GenerateSegmentationPNGs; /**Enable or disable the generation of segmentation pngs in addition to segmentation data */
+    bool GenerateMeshes; /** Enable or disable the generation of meshes. Has no effect if segmenetation isnt generated */
+
+    
     float VoxelResolution_um; /**Set the size of each voxel in micrometers*/
 
     int ImageWidth_px; /**Width of the rendered image in pixels*/

@@ -147,6 +147,11 @@ std::string VSDARPCInterface::VSDAEMSetupMicroscope(std::string _JSONRequest) {
     Handle.GetParFloat("TearStartSize_um", Params.TearStartSize_um);
     Handle.GetParFloat("TearEndSize_um", Params.TearEndSize_um);
 
+    Handle.GetParBool("GenerateSegmentation", Params.GenerateSegmentation);
+    Handle.GetParBool("GenerateSegmentationPNGs", Params.GenerateSegmentationPNGs);
+    Handle.GetParBool("GenerateMeshes", Params.GenerateMeshes);
+    
+
     // Sanity Check
     if (Params.SliceThickness_um < Params.VoxelResolution_um) {
         Params.SliceThickness_um = Params.VoxelResolution_um;
