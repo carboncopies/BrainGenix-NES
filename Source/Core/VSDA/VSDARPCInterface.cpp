@@ -17,6 +17,7 @@
 #include <RPC/RPCHandlerHelper.h>
 
 #include <VSDA/VSDARPCInterface.h>
+#include <VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.h>
 
 
 
@@ -540,22 +541,23 @@ std::string VSDARPCInterface::VSDAEMGetNeuroglancerDatasetURL(std::string _JSONR
     }
 
 
-    // Make Query To Generate Link For Dataset
-    nlohmann::json Query;
-    Query["NeuroglancerDataset"] = Region->NeuroglancerDatasetHandle_;
-    std::string QueryResult;
-    bool Status = RPCManager_->MakeAPIQuery("API/GenerateNeuroglancerLink", Query.dump(), &QueryResult);
-    if (!Status) {
-        return Handle.ErrResponse();
-    }
-    nlohmann::json Result = nlohmann::json::parse(QueryResult);
-
+    // // Make Query To Generate Link For Dataset
+    // nlohmann::json Query;
+    // Query["NeuroglancerDataset"] = Region->NeuroglancerDatasetHandle_;
+    // std::string QueryResult;
+    // bool Status = RPCManager_->MakeAPIQuery("API/GenerateNeuroglancerLink", Query.dump(), &QueryResult);
+    // if (!Status) {
+    //     return Handle.ErrResponse();
+    // }
+    // nlohmann::json Result = nlohmann::json::parse(QueryResult);
+    
+    std::string URL = GenerateNeuroglancerURL(Region->NeuroglancerDatasetHandle_, ThisSimulation->VSDAData_.Params_.GenerateSegmentation);
    
     // Build Response
     Logger_->Log(std::string("VSDA EM GetNeuroglancerDatasetURL Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
-    ResponseJSON["NeuroglancerURL"] = Result["NeuroglancerURL"];
+    ResponseJSON["NeuroglancerURL"] = URL;
 
     return ResponseJSON.dump();
 

@@ -65,7 +65,10 @@ namespace VSDA {
  */
 bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ConversionPool::ConversionPool* _ConversionPool, int _NumResolutionLevels = 3);
 
-
+/**
+ * Generates the url of a dataset.
+ */
+std::string GenerateNeuroglancerURL(std::string _DatasetHandle, bool _EnableSegmentation, std::string _NeuroglancerBaseURL = "http://neuroglancer-demo.appspot.com");
 
 
 }; // Close Namespace VSDA
