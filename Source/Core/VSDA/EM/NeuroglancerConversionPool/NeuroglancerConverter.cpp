@@ -317,6 +317,115 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
 }
 
 
+// Function to URL-encode a string
+std::string urlEncode(const std::string &value) {
+    std::ostringstream escaped;
+    escaped.fill('0');
+    escaped << std::hex;
+
+    for (char c : value) {
+        // Keep alphanumeric characters as is
+        if (isalnum(c)) {
+            escaped << c;
+        }
+        // Any other characters are percent-encoded
+        else {
+            escaped << '%' << std::setw(2) << int((unsigned char)c);
+        }
+    }
+
+    return escaped.str();
+}
+
+
+std::string NGurlEncode(const std::string& value) {
+    std::ostringstream encoded;
+    encoded << std::hex;
+    
+    for (unsigned char c : value) {
+        if (isalnum(c) || c == '-' || c == '_' || c == '.' || c == '~') {
+            encoded << c;
+        } else {
+            encoded << '%' << std::uppercase << std::setw(2) << std::setfill('0') << (int)c;
+        }
+    }
+    return encoded.str();
+}
+
+#include <nlohmann/json.hpp>
+#include <string>
+#include <vector>
+
+std::string GenerateNeuroglancerJson(const std::string& imageDatasetUrl, const std::string& segmentationDatasetUrl, bool enableSegmentation) {
+
+    nlohmann::json neuroglancerConfig;
+    
+    // Set dimensions
+    nlohmann::json dimensions;
+    dimensions["x"] = std::vector<nlohmann::json>{100, "nm"};
+    dimensions["y"] = std::vector<nlohmann::json>{100, "nm"};
+    dimensions["z"] = std::vector<nlohmann::json>{200, "nm"};
+    neuroglancerConfig["dimensions"] = dimensions;
+    
+    // Set position and orientation
+    neuroglancerConfig["position"] = std::vector<double>{0.0, 0.0, 0.0};
+    neuroglancerConfig["projectionOrientation"] = std::vector<double>{
+        0.09116003662347794,
+        0.28062376379966736,
+        -0.19248539209365845,
+        0.935889720916748
+    };
+    
+    // Create layers array
+    std::vector<nlohmann::json> layers;
+    
+    // Add microscopy image layer
+    nlohmann::json imageLayer = {
+        {"type", "image"},
+        {"source", "precomputed://" + imageDatasetUrl},
+        {"tab", "source"},
+        {"name", "Microscopy Data"}
+    };
+    layers.push_back(imageLayer);
+    
+    // Conditionally add segmentation layer
+    if (enableSegmentation) {
+        nlohmann::json segmentationLayer = {
+            {"type", "segmentation"},
+            {"source", "precomputed://" + segmentationDatasetUrl},
+            {"tab", "source"},
+            {"name", "Ground Truth Segmentation"}
+        };
+        layers.push_back(segmentationLayer);
+        
+        // Set selected layer only when segmentation is enabled
+        neuroglancerConfig["selectedLayer"] = {
+            {"visible", true},
+            {"layer", "Ground Truth Segmentation"}
+        };
+    }
+    
+    neuroglancerConfig["layers"] = layers;
+    neuroglancerConfig["layout"] = "xy-3d";
+    
+    return neuroglancerConfig.dump();
+}
+
+std::string GenerateNeuroglancerURL(std::string _DatasetHandle, bool _EnableSegmentation, std::string _NeuroglancerBaseURL) {
+
+    std::string URLBase = "URL_BASE_STRING"; // CHANGE THIS LATER TO A MACRO MAYBE "{URL_BASE_STRING}" OR SOMETHING, HAVE PYTHON CLIENT SUB IT IN!
+
+    std::string ImgDatasetURL = URLBase + "/Dataset/" + _DatasetHandle + "/Data";
+    std::string SegDatasetURL = URLBase + "/Dataset/" + _DatasetHandle + "/Segmentation";
+
+    std::string NeuroglancerURLPrefix = _NeuroglancerBaseURL + "/#!";
+    std::string NeuroglancerArgs = GenerateNeuroglancerJson(ImgDatasetURL, SegDatasetURL, _EnableSegmentation);
+    std::string NeuroglancerArgsEncoded = NGurlEncode(NeuroglancerArgs);
+    std::string NeuroglancerURL = NeuroglancerURLPrefix + NeuroglancerArgsEncoded;
+
+    return NeuroglancerURL;
+}
+
 
 
 }; // Close Namespace VSDA
