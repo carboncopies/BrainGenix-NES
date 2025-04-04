@@ -190,7 +190,7 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
                 SegTask->TargetDirectory_ = DirectoryPath;
                 SegTask->IsSegmentation_ = true;
                 SegTask->IsDone_ = false;
-                // SegTask->Params_ = &_VSDAData->Params_;
+                SegTask->Params_ = &_VSDAData->Params_;
 
        
                 VoxelIndexInfo Info;
