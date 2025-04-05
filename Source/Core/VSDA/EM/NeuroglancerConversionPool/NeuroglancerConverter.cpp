@@ -60,6 +60,15 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
     
     _Logger->Log("Executing Conversion Job For Requested Simulation", 4);
 
+    // Update Status
+    _Simulation->VSDAData_.CurrentOperation_ = "Converting Image Data To Neuroglancer Format";
+    _Simulation->VSDAData_.TotalSliceImages_ = 0;
+    _Simulation->VSDAData_.CurrentSliceImage_ = 0;
+    _Simulation->VSDAData_.VoxelQueueLength_ = 0;
+    _Simulation->VSDAData_.TotalVoxelQueueLength_ = 0;
+    _Simulation->VSDAData_.TotalSlices_ = 0;
+    _Simulation->VSDAData_.CurrentSlice_ = 0;
+
 
     // Unpack Variables For Easier Access
     MicroscopeParameters* Params = &_Simulation->VSDAData_.Params_;
@@ -298,6 +307,16 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
 
     // Now run mesh generation optionally
     if (Params->GenerateMeshes && Params->GenerateSegmentation) { 
+
+        // Update Status
+        _Simulation->VSDAData_.CurrentOperation_ = "Running Igneous Pipeline Mesh Generation";
+        _Simulation->VSDAData_.TotalSliceImages_ = 0;
+        _Simulation->VSDAData_.CurrentSliceImage_ = 0;
+        _Simulation->VSDAData_.VoxelQueueLength_ = 0;
+        _Simulation->VSDAData_.TotalVoxelQueueLength_ = 0;
+        _Simulation->VSDAData_.TotalSlices_ = 0;
+        _Simulation->VSDAData_.CurrentSlice_ = 0;
+
         std::string DatasetPath = "NeuroglancerDatasets/" + UUID + "/Segmentation";
         std::string OutputPath = "Meshes/" + UUID;
         if(!ProcessIgneousPipeline(_Logger, DatasetPath, OutputPath, true, 0, std::thread::hardware_concurrency())) {
