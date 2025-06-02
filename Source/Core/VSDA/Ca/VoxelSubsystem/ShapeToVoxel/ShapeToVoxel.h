@@ -1,4 +1,3 @@
-
 //=================================//
 // This file is part of BrainGenix //
 //=================================//
@@ -53,22 +52,24 @@ namespace VoxelArrayGenerator {
 /**
  * @brief Rasterizes the given box struct, writes it into the voxelarray in question given the scale set.
  * 
- * @param _Array 
- * @param _Box 
- * @param _VoxelScale 
- * @return true 
- * @return false 
+ * @param _Array Pointer to the voxel array to be filled.
+ * @param _Box Pointer to the box geometry to be rasterized.
+ * @param _CompartmentID Identifier for the compartment being processed.
+ * @param _WorldInfo Reference to the world information for scaling and positioning.
+ * @return true if the operation was successful.
+ * @return false if the operation failed.
  */
 bool FillBox(VoxelArray* _Array, Simulator::Geometries::Box* _Box, size_t _CompartmentID, WorldInfo& _WorldInfo);
 
 /**
  * @brief Rasterize the given cylinder struct, and writes it into the given voxelarray at the given scale.
  * 
- * @param _Array 
- * @param _Cylinder 
- * @param _VoxelScale 
- * @return true 
- * @return false 
+ * @param _Array Pointer to the voxel array to be filled.
+ * @param _Cylinder Pointer to the cylinder geometry to be rasterized.
+ * @param _CompartmentID Identifier for the compartment being processed.
+ * @param _WorldInfo Reference to the world information for scaling and positioning.
+ * @return true if the operation was successful.
+ * @return false if the operation failed.
  */
 bool FillCylinder(VoxelArray* _Array, Simulator::Geometries::Cylinder* _Cylinder, size_t _CompartmentID, WorldInfo& _WorldInfo);
 
@@ -76,11 +77,12 @@ bool FillCylinder(VoxelArray* _Array, Simulator::Geometries::Cylinder* _Cylinder
  * @brief Uses a generic ispointinshape function to write an object into the voxelarray.
  * Some objects don't support this (such as boxes and cylinders).
  * 
- * @param _Array 
- * @param _Shape 
- * @param _VoxelScale 
- * @return true 
- * @return false 
+ * @param _Array Pointer to the voxel array to be filled.
+ * @param _Shape Pointer to the geometry shape to be rasterized.
+ * @param _CompartmentID Identifier for the compartment being processed.
+ * @param _WorldInfo Reference to the world information for scaling and positioning.
+ * @return true if the operation was successful.
+ * @return false if the operation failed.
  */
 bool FillShape(VoxelArray* _Array, Simulator::Geometries::Geometry* _Shape, size_t _CompartmentID, WorldInfo& _WorldInfo);
 

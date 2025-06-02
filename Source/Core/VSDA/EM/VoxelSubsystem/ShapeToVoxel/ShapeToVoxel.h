@@ -1,4 +1,3 @@
-
 //=================================//
 // This file is part of BrainGenix //
 //=================================//
@@ -80,13 +79,16 @@ bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Ge
  * @brief Uses a generic ispointinshape function to write an object into the voxelarray.
  * Some objects don't support this (such as boxes and cylinders).
  * 
- * @param _Array 
- * @param _Shape 
- * @param _VoxelScale 
- * @return true 
- * @return false 
+ * @param _TotalThreads Total number of threads being used for parallel processing.
+ * @param _ThisThread The ID of the current thread.
+ * @param _Array Pointer to the voxel array where the shape will be written.
+ * @param _Shape Pointer to the sphere geometry to be rasterized.
+ * @param _WorldInfo Reference to the world information structure.
+ * @param _Params Pointer to the microscope parameters.
+ * @param _Generator Pointer to the Perlin noise generator.
+ * @return true if the operation was successful.
+ * @return false otherwise.
  */
-// bool FillSphere(VoxelArray* _Array, Geometries::Sphere* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);
 bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geometries::Sphere* _Shape, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);
 
 //bool FillLine(VoxelArray* _Array, int P1X, int P1Y, int P1Thickness, int P2X, int P2Y, int P2Thickness, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator);

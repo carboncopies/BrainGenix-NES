@@ -81,10 +81,10 @@ struct Box : BoxBase {
     /**
      * @brief Writes the shape at the current size into the voxel array.
      * 
-     * @param _VoxelScale 
-     * @param _Array 
+     * @param _Array Pointer to the voxel array where the shape will be written.
+     * @param _VoxelInfo Information about the voxel type to be written.
+     * @param _WorldInfo World information used for transformations and scaling.
      */
-    // void WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo);
     void WriteToVoxelArray(VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo, VSDA::WorldInfo& _WorldInfo);
 
 

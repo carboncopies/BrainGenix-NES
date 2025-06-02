@@ -54,13 +54,20 @@ namespace Calcium {
 
 
 /**
- * @brief Render the given slice from an array to the renderer's screen
+ * @brief Render the given slice from an array to the renderer's screen.
  * 
- * @param _Logger 
- * @param _CaData 
- * @param _FilePrefix
- * @param _SliceNumber 
- * @return std::vector<std::string> 
+ * @param _Logger Pointer to the logging system.
+ * @param MaxImagesX Maximum number of images along the X-axis.
+ * @param MaxImagesY Maximum number of images along the Y-axis.
+ * @param _CaData Pointer to the calcium imaging data.
+ * @param _Array Pointer to the voxel array to render.
+ * @param _FilePrefix Prefix for the output file names.
+ * @param SliceNumber The slice number to render.
+ * @param _ImageProcessorPool Pointer to the image processor pool for handling image compression.
+ * @param _OffsetX Offset along the X-axis (default is 0.0).
+ * @param _OffsetY Offset along the Y-axis (default is 0.0).
+ * @param _SliceOffset Offset for the slice index (default is 0).
+ * @return std::vector<std::string> A vector of strings containing the paths to the rendered slice images.
  */
 std::vector<std::string> CaRenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImagesX, int MaxImagesY, CalciumImagingData* _CaData, VoxelArray* _Array, std::string _FilePrefix, int SliceNumber, ImageProcessorPool* _ImageProcessorPool, double _OffsetX=0., double _OffsetY=0., int _SliceOffset=0);
 

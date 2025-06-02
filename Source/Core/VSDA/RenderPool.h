@@ -145,9 +145,10 @@ public:
      * @brief Initializes the renderpool with the given number of threads requested.
      * Note that this may be subject to however many logical devices your vulkan hardware can support.
      * 
-     * @param _Logger 
-     * @param _Windowed
-     * @param _NumThreads 
+     * @param _Config Pointer to the configuration object.
+     * @param _Logger Pointer to the logging system.
+     * @param _Windowed Boolean indicating whether the renderers should be windowed or headless.
+     * @param _NumThreads Number of threads to initialize in the render pool (default is 1).
      */
     RenderPool(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, bool _Windowed = false, int _NumThreads = 1);
 

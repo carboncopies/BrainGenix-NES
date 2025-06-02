@@ -317,7 +317,7 @@ std::string ModelRPCInterface::PatchClampDACCreate(std::string _JSONRequest) {
 /**
  * Expects _JSONRequest:
  * {
- *   "SimulationID": <SimID>,
+ *   "SimulationID": \a SimID,
  *   "PatchClampDACID": <DAC-ID>,
  *   "ControlData": [
  *      [ <t_ms>, <v_mV> ],
@@ -444,9 +444,9 @@ std::string ModelRPCInterface::PatchClampADCGetRecordedData(std::string _JSONReq
 /**
  * Expects _JSONRequest:
  * {
- *   "SimulationID": <SimID>,
+ *   "SimulationID": \a SimID,
  *   "TimeNeuronPairs": [
- *      [ <t_ms>, <neuron-id> ],
+ *      [ \a t_ms, \a neuron-id ],
  *      (more pairs)
  *   ]
  * }
@@ -486,9 +486,9 @@ std::string ModelRPCInterface::SetSpecificAPTimes(std::string _JSONRequest) {
 /**
  * Expects _JSONRequest:
  * {
- *   "SimulationID": <SimID>,
- *   "SpikeIntervalMean_ms": <float>,
- *   "SpikeIntervalStDev_ms": <float>,
+ *   "SimulationID": \a SimID,
+ *   "SpikeIntervalMean_ms": \a float,
+ *   "SpikeIntervalStDev_ms": \a float,
  *   "NeuronIDs": [
  *      (neuron-id,)
  *   ]
@@ -498,7 +498,7 @@ std::string ModelRPCInterface::SetSpecificAPTimes(std::string _JSONRequest) {
  * - SpikeIntervalStDev_ms 0 means no spontaneous activity.
  * Responds:
  * {
- *   "StatusCode": <status-code>,
+ *   "StatusCode": \c status-code,
  * }
  */
 std::string ModelRPCInterface::SetSpontaneousActivity(std::string _JSONRequest) {

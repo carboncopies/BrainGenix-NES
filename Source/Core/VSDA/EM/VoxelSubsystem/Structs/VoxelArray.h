@@ -1,4 +1,3 @@
-
 //=================================//
 // This file is part of BrainGenix //
 //=================================//
@@ -99,12 +98,12 @@ private:
 
 
     /**
-     * @brief Returns the flat index for the voxel at the given coords.
+     * @brief Returns the flat index for the voxel at the given coordinates.
      * 
-     * @param _X 
-     * @param _Y 
-     * @param _Z 
-     * @return uint64_t 
+     * @param _X X-coordinate of the voxel.
+     * @param _Y Y-coordinate of the voxel.
+     * @param _Z Z-coordinate of the voxel.
+     * @return uint64_t The flat index of the voxel.
      */
     uint64_t GetIndex(int _X, int _Y, int _Z);
 
@@ -113,52 +112,60 @@ private:
 public:
 
     /**
-     * @brief Construct a new Voxel Array object
+     * @brief Construct a new Voxel Array object.
      * 
-     * @param _BB Bounding box of the array, in world space
-     * @param _VoxelScale_um Scale of each voxel in micrometers
+     * @param _Logger Pointer to the logging system.
+     * @param _BB Bounding box of the array, in world space.
+     * @param _VoxelScale_um Scale of each voxel in micrometers.
      */
     VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, BoundingBox _BB, float _VoxelScale_um);
+
+    /**
+     * @brief Construct a new Voxel Array object using a scan region.
+     * 
+     * @param _Logger Pointer to the logging system.
+     * @param _Region Scan region defining the array bounds.
+     * @param _VoxelScale_um Scale of each voxel in micrometers.
+     */
     VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, ScanRegion _Region, float _VoxelScale_um);
 
     /**
-     * @brief Destroy the Voxel Array object
-     * 
+     * @brief Destroy the Voxel Array object.
      */
     ~VoxelArray();
 
 
 
     /**
-     * @brief Returns the voxel at the given coordinates
+     * @brief Returns the voxel at the given coordinates.
      * 
-     * @param _X 
-     * @param _Y 
-     * @param _Z 
-     * @return VoxelType 
+     * @param _X X-coordinate of the voxel.
+     * @param _Y Y-coordinate of the voxel.
+     * @param _Z Z-coordinate of the voxel.
+     * @return VoxelType The voxel at the specified coordinates.
      */
     VoxelType GetVoxel(int _X, int _Y, int _Z);
 
 
     /**
-     * @brief Sets the voxel at the given coords to _Value.
+     * @brief Sets the voxel at the given coordinates to the specified value.
      * 
-     * @param _X 
-     * @param _Y 
-     * @param _Z 
-     * @param _Value 
+     * @param _X X-coordinate of the voxel.
+     * @param _Y Y-coordinate of the voxel.
+     * @param _Z Z-coordinate of the voxel.
+     * @param _Value The value to set for the voxel.
      */
     void SetVoxel(int _X, int _Y, int _Z, VoxelType _Value);
     void SetVoxelAtIndex(int _XIndex, int _YIndex, int _ZIndex, VoxelType _Value);
 
     /**
-     * @brief Set the Voxel At the given Position (using the given scale) to the given value.
-     * Converts the given float x,y,z um position to index, then calls setvoxel normally
+     * @brief Sets the voxel at the given position (using the given scale) to the specified value.
+     * Converts the given float x, y, z position in micrometers to an index, then calls SetVoxel.
      * 
-     * @param _X 
-     * @param _Y 
-     * @param _Z 
-     * @param _Value
+     * @param _X X-coordinate in micrometers.
+     * @param _Y Y-coordinate in micrometers.
+     * @param _Z Z-coordinate in micrometers.
+     * @param _Value The value to set for the voxel.
      */
     void SetVoxelAtPosition(float _X, float _Y, float _Z, VoxelType _Value);
 
@@ -174,45 +181,65 @@ public:
     /**
      * @brief Sets the voxel if the one currently there is not darker.
      * 
-     * @param _X 
-     * @param _Y 
-     * @param _Z 
-     * @param _Value 
+     * @param _X X-coordinate of the voxel.
+     * @param _Y Y-coordinate of the voxel.
+     * @param _Z Z-coordinate of the voxel.
+     * @param _Value The value to set for the voxel.
      */
     // void SetVoxelIfNotDarker(float _X, float _Y, float _Z, VoxelType _Value);
     // void SetVoxelIfNotDarkerAtIndex(int _X, int _Y, int _Z, VoxelType _Value);
 
     /**
-     * @brief Compositor function that simply sets information about the sate of the given voxel.
+     * @brief Compositor function that sets information about the state of the given voxel.
+     * 
+     * @param _X X-coordinate of the voxel.
+     * @param _Y Y-coordinate of the voxel.
+     * @param _Z Z-coordinate of the voxel.
+     * @param _State The state of the voxel (e.g., interior, border).
+     * @param _DistanceToEdge Distance to the nearest edge in voxels.
+     * @param _ParentUID The parent ID of the voxel.
      */
     void CompositeVoxel(float _X, float _Y, float _Z, VoxelState _State, float _DistanceToEdge, uint64_t _ParentUID);
+
+    /**
+     * @brief Compositor function that sets information about the state of the voxel at the given index.
+     * 
+     * @param _X X-index of the voxel.
+     * @param _Y Y-index of the voxel.
+     * @param _Z Z-index of the voxel.
+     * @param _State The state of the voxel (e.g., interior, border).
+     * @param _DistanceToEdge Distance to the nearest edge in voxels.
+     * @param _ParentUID The parent ID of the voxel.
+     */
     void CompositeVoxelAtIndex(int _X, int _Y, int _Z, VoxelState _State, float _DistanceToEdge, uint64_t _ParentUID);
 
     /**
-     * @brief Get the size of the array, populate the int ptrs
+     * @brief Get the size of the array, populating the provided pointers.
      * 
-     * @param _X 
-     * @param _Y 
-     * @param _Z 
+     * @param _X Pointer to store the size in the X dimension.
+     * @param _Y Pointer to store the size in the Y dimension.
+     * @param _Z Pointer to store the size in the Z dimension.
      */
     void GetSize(int* _X, int* _Y, int* _Z);
 
     /**
      * @brief Attempt to set the size of the current array, if it's less than or equal to the max array size.
      * 
-     * @param _X Dimension In Voxels
-     * @param _Y Dimension In Voxels
-     * @param _Z Dimension In Voxels
+     * @param _X Dimension in voxels for the X-axis.
+     * @param _Y Dimension in voxels for the Y-axis.
+     * @param _Z Dimension in voxels for the Z-axis.
+     * @return true If the size was successfully set.
+     * @return false If the size could not be set.
      */
     bool SetSize(int _X, int _Y, int _Z);
     bool SetSize(ScanRegion _TargetSize, float _VoxelScale_um);
 
     /**
-     * @brief Update the given bounding box with the new size.
+     * @brief Update the bounding box with the new size.
      * 
-     * @param _NewBoundingBox 
-     * @return true 
-     * @return false 
+     * @param _NewBoundingBox The new bounding box to set.
+     * @return true If the bounding box was successfully updated.
+     * @return false If the bounding box could not be updated.
      */
     bool SetBB(BoundingBox _NewBoundingBox);
     bool SetBB(ScanRegion _NewBoundingBox);
@@ -220,85 +247,42 @@ public:
     /**
      * @brief Checks if the given x value is in the x range.
      * 
-     * @param _X 
-     * @return true 
-     * @return false 
+     * @param _X The x-coordinate in world space to check.
+     * @return true If the x value is within range.
+     * @return false If the x value is out of range.
      */
     bool IsInRangeX(float _X);
 
     /**
      * @brief Checks if the given y value is in the y range.
      * 
-     * @param _y 
-     * @return true 
-     * @return false 
+     * @param _Y The y-coordinate in world space to check.
+     * @return true If the y value is within range.
+     * @return false If the y value is out of range.
      */
     bool IsInRangeY(float _Y);
 
     /**
      * @brief Checks if the given z value is in the z range.
      * 
-     * @param _Z 
-     * @return true 
-     * @return false 
+     * @param _Z The z-coordinate in world space to check.
+     * @return true If the z value is within range.
+     * @return false If the z value is out of range.
      */
     bool IsInRangeZ(float _Z);
 
     /**
-     * @brief Get the x dimensions
-     * 
-     * @return int 
-     */
-    int GetX();
-
-    int GetXIndexAtPosition(float _X_Worldspace_um);
-
-    float GetXPositionAtIndex(int _XIndex);
-
-    /**
-     * @brief Get the y dimensions
-     * 
-     * @return int 
-     */
-    int GetY();
-
-    int GetYIndexAtPosition(float _X_Worldspace_um);
-
-    float GetYPositionAtIndex(int _YIndex);
-
-
-    /**
-     * @brief Get the Z dimensions
-     * 
-     * @return int 
-     */
-    int GetZ();
-
-    int GetZIndexAtPosition(float _X_Worldspace_um);
-
-    float GetZPositionAtIndex(int _ZIndex);
-
-    /**
-     * @brief Returns the resolution of the given object in micrometers.
-     * 
-     * @return float 
-     */
-    float GetResolution();
-
-    /**
-     * @brief Returns the bounding box of this voxel array (in simulation world space).
-     * 
-     * @return BoundingBox 
-     */
-    BoundingBox GetBoundingBox();
-
-
-    /**
-     * @brief Clears the given array to all 0s
+     * @brief Clears the given array to all 0s.
      * 
      */
     void ClearArray();
-    void ClearArrayThreaded(int _NumThreads=10);
+
+    /**
+     * @brief Clears the array using multiple threads.
+     * 
+     * @param _NumThreads The number of threads to use for clearing the array (default is 10).
+     */
+    void ClearArrayThreaded(int _NumThreads = 10);
 
     /**
      * @brief Returns the size of the array.

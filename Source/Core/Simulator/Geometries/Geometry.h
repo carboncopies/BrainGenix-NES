@@ -52,25 +52,31 @@ struct Geometry {
     //! Returns the volume of the object in micrometer^3.
     virtual float Volume_um3() = 0;
 
-    //! Gets the bounding box for the given shape
+    //! Gets the bounding box for the given shape.
+    /**
+     * @param _WorldInfo Reference to the world information structure.
+     * @return BoundingBox The bounding box of the shape.
+     */
     virtual BoundingBox GetBoundingBox(VSDA::WorldInfo& _WorldInfo) = 0;
 
     /**
      * @brief Determines if this shape is intersecting with the given region.
      * May sometimes give false positives, but we just need it to be really quick and dirty.
      * 
-     * @param _Region 
-     * @return true 
-     * @return false 
+     * @param _Region The bounding box region to check for intersection.
+     * @param _WorldInfo Reference to the world information structure.
+     * @return true If the shape intersects with the region.
+     * @return false If the shape does not intersect with the region.
      */
     virtual bool IsInsideRegion(BoundingBox _Region, VSDA::WorldInfo& _WorldInfo) = 0;
 
     /**
      * @brief Checks if the given world space position is in this shape.
      * 
-     * @param _Position_um Position (in world space) to check if is in this shape.
-     * @return true Is in shape
-     * @return false Is not in shape
+     * @param _Position_um Position (in world space) to check if it is in this shape.
+     * @param _WorldInfo Reference to the world information structure.
+     * @return true If the position is inside the shape.
+     * @return false If the position is outside the shape.
      */
     virtual bool IsPointInShape(Vec3D _Position_um, VSDA::WorldInfo& _WorldInfo) = 0;
 

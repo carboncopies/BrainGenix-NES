@@ -1,4 +1,3 @@
-
 //=================================//
 // This file is part of BrainGenix //
 //=================================//
@@ -51,36 +50,69 @@ namespace Calcium {
 
 
 /**
- * @brief Structure that defines the work to be completed. This involves taking a pointer to the voxel array in question,
- * reading the voxels specified, and generating an image with some extra parameters. This is done with multiple threads, 
- * but since we're just reading from the voxelarray, no sync is needed for accessing this data. 
+ * @brief Structure that defines the work to be completed.
  * 
+ * This involves taking a pointer to the voxel array in question,
+ * reading the voxels specified, and generating an image with some extra parameters.
+ * This is done with multiple threads, but since we're just reading from the voxel array,
+ * no synchronization is needed for accessing this data.
  */
 struct ProcessingTask {
 
-    int         Width_px;        /**Width of this image in pixels*/
-    int         Height_px;       /**Height of this image in pixels*/
-    int         VoxelStartingX;  /**Specify starting x index of the region*/
-    int         VoxelStartingY;  /**Specify starting y index of the region*/
-    int         VoxelEndingX;    /**Specify the ending x index of the region*/
-    int         VoxelEndingY;    /**Specify the ending y index of the region*/
-    int         VoxelZ;          /**Specify the slice number that we're going for*/
+    /** @brief Width of this image in pixels. */
+    int Width_px;
 
-    std::atomic_bool IsDone_ = false; /**Indicates if this task has been processed or not*/
+    /** @brief Height of this image in pixels. */
+    int Height_px;
 
-    std::string TargetFileName_;  /**Filename that this image is to be written to*/
-    std::string TargetDirectory_; /**Directory path where the image is to be written to*/
+    /** @brief Starting x index of the region. */
+    int VoxelStartingX;
 
-    VoxelArray* Array_;          /**Pointer to the voxel array that we're rendering from*/
+    /** @brief Starting y index of the region. */
+    int VoxelStartingY;
 
-    std::vector<std::vector<float>>* CalciumConcentrationByIndex_; /**Pointer to vector containing all the calcium concentrations*/
-    int CurrentTimestepIndex_; /**Index of the current timestep that we're on*/
+    /** @brief Ending x index of the region. */
+    int VoxelEndingX;
 
+    /** @brief Ending y index of the region. */
+    int VoxelEndingY;
+
+    /** @brief Slice number that we're processing. */
+    int VoxelZ;
+
+    /** @brief Indicates if this task has been processed or not. */
+    std::atomic_bool IsDone_ = false;
+
+    /** @brief Filename that this image is to be written to. */
+    std::string TargetFileName_;
+
+    /** @brief Directory path where the image is to be written to. */
+    std::string TargetDirectory_;
+
+    /** @brief Pointer to the voxel array that we're rendering from. */
+    VoxelArray* Array_;
+
+    /** 
+     * @brief Pointer to a vector containing all the calcium concentrations.
+     * 
+     * Each index corresponds to a specific region in the voxel array.
+     */
+    std::vector<std::vector<float>>* CalciumConcentrationByIndex_;
+
+    /** @brief Index of the current timestep that we're processing. */
+    int CurrentTimestepIndex_;
+
+    /** @brief Brightness amplification factor for rendering. */
     float BrightnessAmplification;
-    float AttenuationPerUm;
-    float VoxelResolution_um;
-    int NumVoxelsPerSlice;
 
+    /** @brief Attenuation per micrometer for rendering. */
+    float AttenuationPerUm;
+
+    /** @brief Resolution of each voxel in micrometers. */
+    float VoxelResolution_um;
+
+    /** @brief Number of voxels per slice in the z-dimension. */
+    int NumVoxelsPerSlice;
 };
 
 

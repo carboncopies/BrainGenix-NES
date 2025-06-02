@@ -1,5 +1,10 @@
 /**
- * @license
+ * @file
+ * @brief Implementation of segmentation compression algorithms.
+ * 
+ * This file contains functions and templates for compressing segmentation data
+ * using block-based encoding and caching mechanisms.
+ * 
  * Copyright 2016 Google Inc.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +28,20 @@
 
 namespace compress_segmentation {
 
-// Hash function for a vector.
+/**
+ * @brief Hash function for a vector.
+ * 
+ * This struct provides a custom hash function for vectors, enabling their use
+ * as keys in unordered maps.
+ */
 struct HashVector {
+  /**
+   * @brief Computes the hash value for a vector.
+   * 
+   * @tparam T Type of elements in the vector.
+   * @param x The vector to hash.
+   * @return size_t The computed hash value.
+   */
   template <class T>
   size_t operator()(const std::vector<T>& x) const {
     std::hash<T> hasher;
@@ -36,15 +53,32 @@ struct HashVector {
   }
 };
 
+/**
+ * @brief Cache for storing encoded values and their offsets.
+ * 
+ * This cache maps a vector of labels to a 32-bit unsigned integer offset,
+ * using a custom hash function for vectors.
+ * 
+ * @tparam Label Type of the labels in the vector.
+ */
 template <class Label>
 using EncodedValueCache =
     std::unordered_map<std::vector<Label>, uint32_t, HashVector>;
 
 constexpr size_t kBlockHeaderSize = 2;
 
+/**
+ * @brief Writes the block header for compressed data.
+ * 
+ * @param encoded_value_base_offset Offset of the encoded values.
+ * @param table_base_offset Offset of the table.
+ * @param encoding_bits Number of bits used to encode.
+ * @param output Array to store the block header.
+ * @return int Returns 0 on success, 1 if the table_base_offset exceeds the limit.
+ */
 int WriteBlockHeader(size_t encoded_value_base_offset,
-                      size_t table_base_offset, size_t encoding_bits,
-                      uint32_t output[2]) {
+                     size_t table_base_offset, size_t encoding_bits,
+                     uint32_t output[2]) {
   if (table_base_offset >= (1<<24)) {
     return 1;
   }
@@ -54,35 +88,20 @@ int WriteBlockHeader(size_t encoded_value_base_offset,
 }
 
 
-// Encodes a single block.
-//
-// Args:
-//
-//   input: Pointer to the first element.
-//
-//   input_strides: Stride in uint64 units between consecutive elements in the
-//       x, y, and z dimensions.
-//
-//   block_size: Extent of the x, y, and z dimensions of the encoding block
-//       size.
-//
-//   actual_size: Actual extent of the x, y, and z dimensions of the input.
-//       These values must be <= block_size.  If actual_size < block_size, the
-//       input is treated as if it were padded up to block_size with the lowest
-//       numerical value contained within it.
-//
-//   base_offset: Starting offset into output_vec relative to which table
-//       offsets will be specified.
-//
-//   encoded_bits_output: output parameter that receives the number of bits used
-//       to encode each value.
-//
-//   table_offset_output: output parameter that receives the offset of either
-//       the existing or newly written value table used for this block.
-//
-//   cache: Cache of existing tables written and their corresponding offsets.
-//
-//   output_vec: Vector to which output will be appended.
+/**
+ * @brief Encodes a single block of data.
+ * 
+ * @tparam Label Type of the labels in the input data.
+ * @param input Pointer to the input data.
+ * @param input_strides Strides in uint64 units between consecutive elements in the x, y, and z dimensions.
+ * @param block_size Extent of the x, y, and z dimensions of the encoding block size.
+ * @param actual_size Actual extent of the x, y, and z dimensions of the input.
+ * @param base_offset Starting offset into the output vector.
+ * @param encoded_bits_output Output parameter for the number of bits used to encode each value.
+ * @param table_offset_output Output parameter for the offset of the value table.
+ * @param cache Cache of existing tables and their offsets.
+ * @param output_vec Vector to store the encoded output.
+ */
 template <class Label>
 void EncodeBlock(const Label* input, const ptrdiff_t input_strides[3],
                  const ptrdiff_t block_size[3], const ptrdiff_t actual_size[3],
@@ -203,11 +222,22 @@ void EncodeBlock(const Label* input, const ptrdiff_t input_strides[3],
   }
 }
 
+/**
+ * @brief Compresses a single channel of data.
+ * 
+ * @tparam Label Type of the labels in the input data.
+ * @param input Pointer to the input data.
+ * @param input_strides Strides in uint64 units between consecutive elements in the x, y, and z dimensions.
+ * @param volume_size Size of the volume in the x, y, and z dimensions.
+ * @param block_size Size of the blocks in the x, y, and z dimensions.
+ * @param output Vector to store the compressed output.
+ * @return int Returns 0 on success, or an error code on failure.
+ */
 template <class Label>
 int CompressChannel(const Label* input, const ptrdiff_t input_strides[3],
-                     const ptrdiff_t volume_size[3],
-                     const ptrdiff_t block_size[3],
-                     std::vector<uint32_t>* output) {
+                    const ptrdiff_t volume_size[3],
+                    const ptrdiff_t block_size[3],
+                    std::vector<uint32_t>* output) {
   EncodedValueCache<Label> cache;
   const size_t base_offset = output->size();
   ptrdiff_t grid_size[3];
@@ -249,11 +279,22 @@ int CompressChannel(const Label* input, const ptrdiff_t input_strides[3],
   return 0;
 }
 
+/**
+ * @brief Compresses multiple channels of data.
+ * 
+ * @tparam Label Type of the labels in the input data.
+ * @param input Pointer to the input data.
+ * @param input_strides Strides in uint64 units between consecutive elements in the x, y, z, and channel dimensions.
+ * @param volume_size Size of the volume in the x, y, z, and channel dimensions.
+ * @param block_size Size of the blocks in the x, y, and z dimensions.
+ * @param output Vector to store the compressed output.
+ * @return int Returns 0 on success, or an error code on failure.
+ */
 template <class Label>
 int CompressChannels(const Label* input, const ptrdiff_t input_strides[4],
-                      const ptrdiff_t volume_size[4],
-                      const ptrdiff_t block_size[3],
-                      std::vector<uint32_t>* output) {
+                     const ptrdiff_t volume_size[4],
+                     const ptrdiff_t block_size[3],
+                     std::vector<uint32_t>* output) {
   output->resize(volume_size[3]);
   for (size_t channel_i = 0; channel_i < static_cast<size_t>(volume_size[3]); ++channel_i) {
     (*output)[channel_i] = output->size();
@@ -267,6 +308,7 @@ int CompressChannels(const Label* input, const ptrdiff_t input_strides[4],
   return 0;
 }
 
+// Explicit template instantiations for uint32_t and uint64_t.
 #define DO_INSTANTIATE(Label)                                        \
   template void EncodeBlock<Label>(                                  \
       const Label* input, const ptrdiff_t input_strides[3],          \

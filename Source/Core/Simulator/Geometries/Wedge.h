@@ -77,10 +77,10 @@ struct Wedge : Geometry {
     /**
      * @brief Writes the shape at the current size into the voxel array.
      * 
-     * @param _VoxelScale 
-     * @param _Array 
+     * @param _Array Pointer to the calcium voxel array where the wedge will be written.
+     * @param _VoxelInfo Voxel type information to be used for writing.
+     * @param _WorldInfo Reference to the world information structure.
      */
-    // void WriteToVoxelArray(VoxelArray* _Array, VSDA::WorldInfo& _WorldInfo);
     void WriteToVoxelArray(VSDA::Calcium::VoxelArray* _Array, VSDA::Calcium::VoxelType _VoxelInfo, VSDA::WorldInfo& _WorldInfo) {} // *** FIX THIS!
 
 };

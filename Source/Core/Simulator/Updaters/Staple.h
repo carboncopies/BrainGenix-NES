@@ -30,7 +30,8 @@ namespace Updater {
 /**
  * @brief Resets the target Staple.
  * 
- * @param _Target 
+ * @param _Target Pointer to the Staple to reset.
+ * @param _Sim Pointer to the simulation context.
  */
 void StapleReset(Connections::Staple* _Target, Simulation* _Sim);
 
@@ -38,7 +39,8 @@ void StapleReset(Connections::Staple* _Target, Simulation* _Sim);
 /**
  * @brief Updates the target Staple.
  * 
- * @param _Target 
+ * @param _Target Pointer to the Staple to update.
+ * @param _Sim Pointer to the simulation context.
  */
 void StapleUpdate(Connections::Staple* _Target, Simulation* _Sim);
 

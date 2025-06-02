@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <fstream>
 #include <thread>
@@ -15,11 +14,21 @@
 #include <RPC/APIStatusCode.h>
 
 
+/**
+ * @class VisualizerRPCInterface
+ * @brief Handles RPC interface for the Visualizer module.
+ */
 namespace BG {
 namespace NES {
 namespace Simulator {
 
-
+/**
+ * @brief Constructor for VisualizerRPCInterface.
+ * 
+ * @param _Logger Pointer to the logging system.
+ * @param _Simulations Pointer to the vector of simulations.
+ * @param _RPCManager Pointer to the RPC manager for registering routes.
+ */
 VisualizerRPCInterface::VisualizerRPCInterface(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::unique_ptr<Simulation>>* _Simulations, API::RPCManager* _RPCManager) {
     assert(_Logger != nullptr);
     assert(_RPCManager != nullptr);
@@ -36,14 +45,21 @@ VisualizerRPCInterface::VisualizerRPCInterface(BG::Common::Logger::LoggingSystem
 
 }
 
+/**
+ * @brief Destructor for VisualizerRPCInterface.
+ */
 VisualizerRPCInterface::~VisualizerRPCInterface() {
 
 }
 
 /**
- * Expects _JSONRequest:
+ * @brief Handles the "Visualizer/GetStatus" RPC call.
+ * 
+ * @param _JSONRequest JSON string containing the request parameters.
+ * @return JSON string containing the response.
+ * @details Expects _JSONRequest:
  * {
- *   "SimulationID": <SimID>,
+ *   "SimulationID": <SimID>
  * }
  */
 std::string VisualizerRPCInterface::VisualizerGetStatus(std::string _JSONRequest) {
@@ -59,9 +75,13 @@ std::string VisualizerRPCInterface::VisualizerGetStatus(std::string _JSONRequest
 
 
 /**
- * Expects _JSONRequest:
+ * @brief Handles the "Visualizer/GetImageHandles" RPC call.
+ * 
+ * @param _JSONRequest JSON string containing the request parameters.
+ * @return JSON string containing the response.
+ * @details Expects _JSONRequest:
  * {
- *   "SimulationID": <SimID>,
+ *   "SimulationID": <SimID>
  * }
  */
 std::string VisualizerRPCInterface::VisualizerGetImageHandles(std::string _JSONRequest) {
@@ -78,7 +98,11 @@ std::string VisualizerRPCInterface::VisualizerGetImageHandles(std::string _JSONR
 
 
 /**
- * Expects _JSONRequest:
+ * @brief Handles the "Visualizer/GetImage" RPC call.
+ * 
+ * @param _JSONRequest JSON string containing the request parameters.
+ * @return JSON string containing the response.
+ * @details Expects _JSONRequest:
  * {
  *   "SimulationID": <SimID>,
  *   "ImageHandle": <str>
@@ -139,21 +163,25 @@ std::string VisualizerRPCInterface::VisualizerGetImage(std::string _JSONRequest)
 }
 
 /**
- * Expects _JSONRequest:
+ * @brief Handles the "Visualizer/GenerateImages" RPC call.
+ * 
+ * @param _JSONRequest JSON string containing the request parameters.
+ * @return JSON string containing the response.
+ * @details Expects _JSONRequest:
  * {
  *   "SimulationID": <SimID>,
  *   "Locations": [
  *     {
  *          "CameraPositionX_um": float,
  *          "CameraPositionY_um": float,
- *          "CameraPositionz_um": float,
+ *          "CameraPositionZ_um": float,
  *          "CameraLookAtPositionX_um": float,
  *          "CameraLookAtPositionY_um": float,
- *          "CameraLookAtPositionz_um": float,
+ *          "CameraLookAtPositionZ_um": float,
  *          "CameraFOV_deg": float
  *      },
  *      ...
- *      ]
+ *   ],
  *   "ImageWidth_px": unsigned int,
  *   "ImageHeight_px": unsigned int
  * }

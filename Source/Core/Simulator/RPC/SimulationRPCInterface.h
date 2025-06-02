@@ -56,59 +56,67 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
-
 /**
  * @brief This class provides the infrastructure to run simulations.
  */
 class SimulationRPCInterface {
 
 private:
-    Config::Config* Config_; /**Pointer to configuration struct owned by the rest of the system*/
+    Config::Config* Config_; /**< Pointer to configuration struct owned by the rest of the system */
 
-    API::RPCManager* RPCManager_;
+    API::RPCManager* RPCManager_; /**< Pointer to the RPC manager */
 
-    std::vector<std::thread> SimulationThreads_; /**Threads that enumerate simulations and checks for any tasks to be done.*/
-    std::atomic<bool> StopThreads_; /**Indicates to workers to stop what they're doing*/
-    std::vector<std::unique_ptr<Simulation>> Simulations_; /**Vector containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
-    // Note: This simulation vector is not thread safe and will probably segfault if you try to multithread this
-    // we will fix this later when we scale the system (DO NOT ALLOW RPC to use more than 1 thread unless this is fixed!)
+    std::vector<std::thread> SimulationThreads_; /**< Threads that enumerate simulations and check for any tasks to be done */
+    std::atomic<bool> StopThreads_; /**< Indicates to workers to stop what they're doing */
+    std::vector<std::unique_ptr<Simulation>> Simulations_; /**< Vector containing simulation instances. Index in this vector is the simulation's ID (also stored in the simulation struct for reference) */
+    /**< Note: This simulation vector is not thread-safe and may cause segmentation faults if accessed by multiple threads. */
 
-    BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to the instance of the logging system*/
-    VSDA::RenderPool* RenderPool_;                        /**Pointer to an instance of the render threadpool class*/
-    VisualizerPool* VisualizerPool_;                      /**Pointer to instance of the vizualizerpool class*/
+    BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**< Pointer to the instance of the logging system */
+    VSDA::RenderPool* RenderPool_; /**< Pointer to an instance of the render thread pool class */
+    VisualizerPool* VisualizerPool_; /**< Pointer to an instance of the visualizer pool class */
 
-    int NextManTaskID = 0; /**Use this, because we use a map not a vector, so that we can expire some to shed old cached stuff*/
-    std::map<int, std::unique_ptr<API::ManagerTaskData>> ManagerTasks; /**Status data of launched tasks by Task ID*/
-
-
+    int NextManTaskID = 0; /**< Task ID counter for manager tasks */
+    std::map<int, std::unique_ptr<API::ManagerTaskData>> ManagerTasks; /**< Status data of launched tasks by Task ID */
 
 public:
 
     /**
-     * @brief Construct a new Manager object
-     * Give this a pointer to an initialized configuration object.
+     * @brief Construct a new SimulationRPCInterface object.
      * 
      * @param _Logger Pointer to the logging interface
-     * @param _Config 
-     * @param _RPCManager
-     * @param _Renderer Instance of the rendering system.
+     * @param _Config Pointer to the configuration object
+     * @param _RenderPool Pointer to the render pool instance
+     * @param _VisualizerPool Pointer to the visualizer pool instance
+     * @param _RPCManager Pointer to the RPC manager
      */
     SimulationRPCInterface(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, VSDA::RenderPool* _RenderPool, VisualizerPool* _VisualizerPool, API::RPCManager* _RPCManager);
 
     /**
-     * @brief Destroy the SimulationRPCInterface object
-     * 
+     * @brief Destroy the SimulationRPCInterface object.
      */
     ~SimulationRPCInterface();
 
-    // Simulation* MakeSimulation();
+    /**
+     * @brief Add a manager task.
+     * 
+     * @param TaskData Unique pointer to the task data
+     * @return int Task ID
+     */
+    int AddManagerTask(std::unique_ptr<API::ManagerTaskData>& TaskData);
 
-    // bool BadReqID(int ReqID);
-
-    int AddManagerTask(std::unique_ptr<API::ManagerTaskData> & TaskData);
-
+    /**
+     * @brief Set the loading simulation flag.
+     * 
+     * @param SetTo Boolean value to set the flag
+     */
     void LoadingSimSetter(bool SetTo);
-    void SimLoadingTask(API::ManagerTaskData & TaskData);
+
+    /**
+     * @brief Perform a simulation loading task.
+     * 
+     * @param TaskData Reference to the task data
+     */
+    void SimLoadingTask(API::ManagerTaskData& TaskData);
 
     /**
      * @brief Various routes for API
@@ -153,26 +161,25 @@ public:
 
 
     /**
-     * @brief Returns true if the simulation is being worked on by another thread.
+     * @brief Check if a simulation is busy.
      * 
-     * @param _Sim 
-     * @return true 
-     * @return false 
+     * @param _Sim Pointer to the simulation
+     * @return true If the simulation is busy
+     * @return false If the simulation is not busy
      */
     bool IsSimulationBusy(Simulation* _Sim);
 
-    //bool IsLoadingSim() const { return LoadingSim; }
-
-    //bool SimReplaceIDMissing() const { return LoadingSimReplaceID < 0; }
-
-    //int GetSimReplaceID() const { return LoadingSimReplaceID; }
-
+    /**
+     * @brief Get the number of simulations.
+     * 
+     * @return size_t Number of simulations
+     */
     size_t GetNumberOfSimulations() const { return Simulations_.size(); }
 
     /**
-     * @brief Returns a pointer to the current simulation vector.
+     * @brief Get a pointer to the simulation vector.
      * 
-     * @return std::vector<std::unique_ptr<Simulation>>* 
+     * @return std::vector<std::unique_ptr<Simulation>>* Pointer to the simulation vector
      */
     std::vector<std::unique_ptr<Simulation>>* GetSimulationVectorPtr();
 

@@ -4,85 +4,107 @@
 #include <vector>
 #include <cmath>
 
-namespace MC
-{
-	// Optionally define double precision
+namespace MC {
+
+/**
+ * @brief Defines the floating-point precision for the library.
+ * 
+ * MC_FLOAT is either a float or double, depending on the precision setting.
+ */
 #ifdef MC_CPP_USE_DOUBLE_PRECISION
-	typedef double MC_FLOAT;
+typedef double MC_FLOAT;
 #else
-	typedef float MC_FLOAT;
+typedef float MC_FLOAT;
 #endif
 
-	typedef unsigned int muint;
+typedef unsigned int muint; /**< Unsigned integer type used for indexing. */
 
-	typedef struct mcVec3f
-	{
-	public:
-		union 
-		{
-			MC_FLOAT v[3];
-			struct 
-			{
-				MC_FLOAT x, y, z;
-			};
-		};
-		inline mcVec3f& operator+=(const mcVec3f& r)
-		{
-			x += r.x; y += r.y; z += r.z;
-			return *this;
-		}
-		inline MC_FLOAT& operator[](int i)
-		{
-			return v[i];
-		}
-	} mcVec3f;
+/**
+ * @brief Represents a 3D vector with floating-point components.
+ */
+typedef struct mcVec3f {
+public:
+    union {
+        MC_FLOAT v[3]; /**< Array representation of the vector. */
+        struct {
+            MC_FLOAT x, y, z; /**< Individual components of the vector. */
+        };
+    };
 
-	static inline MC_FLOAT mc_internalLength2(const mcVec3f& v)
-	{
-		return v.x * v.x + v.y * v.y + v.z * v.z;
-	}
-	static inline MC_FLOAT mc_internalLength(const mcVec3f& v)
-	{
-		return std::sqrt(mc_internalLength2(v));
-	}
-	static inline mcVec3f mc_internalNormalize(const mcVec3f& v)
-	{
-		MC_FLOAT vv = mc_internalLength(v);
-		return mcVec3f({{{ v.x / vv, v.y / vv, v.z / vv }}});
-	}
-	static inline mcVec3f mc_internalCross(const mcVec3f& v1, const mcVec3f& v2)
-	{
-		return mcVec3f({{{ v1.y * v2.z - v1.z * v2.y, v1.z * v2.x - v1.x * v2.z, v1.x * v2.y - v1.y * v2.x }}});
-	}
-	inline mcVec3f operator-(const mcVec3f& l, const mcVec3f r)
-	{
-		return mcVec3f({{{ l.x - r.x, l.y - r.y, l.z - r.z }}});
-	}
+    /**
+     * @brief Adds another vector to this vector.
+     * 
+     * @param r The vector to add.
+     * @return mcVec3f& Reference to the updated vector.
+     */
+    inline mcVec3f& operator+=(const mcVec3f& r) {
+        x += r.x; y += r.y; z += r.z;
+        return *this;
+    }
 
-	typedef struct mcVec3i
-	{
-	public:
-		union 
-		{
-			muint v[3];
-			struct 
-			{
-				muint x, y, z;
-			};
-		};
-		inline muint& operator[](int i) { return v[i]; }
-	} mcVec3i;
+    /**
+     * @brief Accesses a component of the vector by index.
+     * 
+     * @param i Index of the component (0 for x, 1 for y, 2 for z).
+     * @return MC_FLOAT& Reference to the component.
+     */
+    inline MC_FLOAT& operator[](int i) {
+        return v[i];
+    }
+} mcVec3f;
 
-	typedef struct mcMesh
-	{
-	public:
-		std::vector<mcVec3f> vertices;
-		std::vector<mcVec3f> normals;
-		std::vector<muint> indices;
-	} mcMesh;
+/**
+ * @brief Represents a 3D vector with integer components.
+ */
+typedef struct mcVec3i {
+public:
+    union {
+        muint v[3]; /**< Array representation of the vector. */
+        struct {
+            muint x, y, z; /**< Individual components of the vector. */
+        };
+    };
 
-	void marching_cube(MC_FLOAT* field, muint nx, muint ny, muint nz, mcMesh& outputMesh);
-	void setDefaultArraySizes(muint vertSize, muint normSize, muint triSize);
+    /**
+     * @brief Accesses a component of the vector by index.
+     * 
+     * @param i Index of the component (0 for x, 1 for y, 2 for z).
+     * @return muint& Reference to the component.
+     */
+    inline muint& operator[](int i) {
+        return v[i];
+    }
+} mcVec3i;
+
+/**
+ * @brief Represents a 3D mesh with vertices, normals, and indices.
+ */
+typedef struct mcMesh {
+public:
+    std::vector<mcVec3f> vertices; /**< List of vertices in the mesh. */
+    std::vector<mcVec3f> normals; /**< List of normals for the vertices. */
+    std::vector<muint> indices; /**< List of indices defining the mesh's triangles. */
+} mcMesh;
+
+/**
+ * @brief Computes the mesh representing the zero isosurface of a 3D scalar field.
+ * 
+ * @param field Scalar field of real values in C-contiguous order.
+ * @param nx Number of grid points along the x-axis.
+ * @param ny Number of grid points along the y-axis.
+ * @param nz Number of grid points along the z-axis.
+ * @param outputMesh The resulting indexed mesh.
+ */
+void marching_cube(MC_FLOAT* field, muint nx, muint ny, muint nz, mcMesh& outputMesh);
+
+/**
+ * @brief Sets the default array sizes for the indexed mesh computed by marching cubes.
+ * 
+ * @param vertSize Default size for the vertex array.
+ * @param normSize Default size for the normal array.
+ * @param triSize Default size for the triangle index array.
+ */
+void setDefaultArraySizes(muint vertSize, muint normSize, muint triSize);
 }
 
 

@@ -30,7 +30,8 @@ namespace Updater {
 /**
  * @brief Resets the target Receptor.
  * 
- * @param _Target 
+ * @param _Target Pointer to the Receptor to reset.
+ * @param _Sim Pointer to the simulation context.
  */
 void ReceptorReset(Connections::Receptor* _Target, Simulation* _Sim);
 
@@ -38,7 +39,8 @@ void ReceptorReset(Connections::Receptor* _Target, Simulation* _Sim);
 /**
  * @brief Updates the target Receptor.
  * 
- * @param _Target 
+ * @param _Target Pointer to the Receptor to update.
+ * @param _Sim Pointer to the simulation context.
  */
 void ReceptorUpdate(Connections::Receptor* _Target, Simulation* _Sim);
 

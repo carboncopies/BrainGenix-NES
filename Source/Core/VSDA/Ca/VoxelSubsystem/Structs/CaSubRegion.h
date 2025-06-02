@@ -1,4 +1,3 @@
-
 //=================================//
 // This file is part of BrainGenix //
 //=================================//
@@ -54,27 +53,48 @@ namespace Calcium {
 
 /**
  * @brief This struct defines a region within the whole region to be scanned.
- * We break up entire regions to smaller subregions to handle internally, allowing for arbitrarilly large regions.
- * This way, we don't try and allocate some huge array on the server.
  * 
+ * We break up entire regions into smaller subregions to handle internally, allowing for arbitrarily large regions.
+ * This way, we avoid allocating a huge array on the server.
  */
 struct SubRegion {
 
     // Set Offset Parameters, added to the resulting image filenames
-    double RegionOffsetX_um; /**Offset from origin in the x axis in microns*/
-    double RegionOffsetY_um; /**Offset from origin in the y axis in microns*/
-    // double RegionOffsetZ_um; /**Offset from origin in the z axis in microns*/
-    int MaxImagesX;          /**Set a limit on the number of images in the x direction, useful for fixing subregion rounding errors*/
-    int MaxImagesY;          /**Set a limit on the number of images in the y direction, useful for fixing subregion rounding errors*/
-    size_t LayerOffset;      /**Layer offset from bottom of the image stack in microns*/
 
+    /** @brief Offset from origin in the x-axis in microns. */
+    double RegionOffsetX_um;
+
+    /** @brief Offset from origin in the y-axis in microns. */
+    double RegionOffsetY_um;
+
+    // double RegionOffsetZ_um; /**Offset from origin in the z axis in microns*/
+
+    /** 
+     * @brief Maximum number of images in the x direction.
+     * 
+     * Useful for fixing subregion rounding errors.
+     */
+    int MaxImagesX;
+
+    /** 
+     * @brief Maximum number of images in the y direction.
+     * 
+     * Useful for fixing subregion rounding errors.
+     */
+    int MaxImagesY;
+
+    /** @brief Layer offset from the bottom of the image stack in microns. */
+    size_t LayerOffset;
 
     // Working Data Params
-    Simulator::ScanRegion Region;                       /**Region that we're going to perform the rendering on*/
-    Simulator::Simulation* Sim;                         /**Simulation that we're rendering*/
-    // std::unique_ptr<VoxelArray> RegionArray; /**Array for this region, which we deallocate when we're done with*/
-    
 
+    /** @brief Region that will be used for rendering. */
+    Simulator::ScanRegion Region;
+
+    /** @brief Pointer to the simulation being rendered. */
+    Simulator::Simulation* Sim;
+
+    // std::unique_ptr<VoxelArray> RegionArray; /**Array for this region, which we deallocate when we're done with*/
 };
 
 

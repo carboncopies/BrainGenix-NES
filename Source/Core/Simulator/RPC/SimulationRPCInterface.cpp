@@ -695,25 +695,25 @@ std::string SimulationRPCInterface::SimulationGetBoundingBox(std::string _JSONRe
 /**
  * Expects _JSONRequest:
  * {
- *   "SimulationID": <SimID>,
+ *   "SimulationID": (integer) Simulation ID,
  *   "ElectrodeSpecs": [
  *     {
- *       "name": <electrode-name>,
- *       "tip_position": <3D-vector>,
- *       "end_position": <3D-vector>,
+ *       "name": (string) Electrode name,
+ *       "tip_position": (array of 3 floats) Tip position in 3D space,
+ *       "end_position": (array of 3 floats) End position in 3D space,
  *       "sites": [
- *         [<x-ratio>, <y-ratio>, <z-ratio>],
- *         (more site xyz ratios)
- *       ]
- *       "noise_level": <float>,
+ *         (array of 3 floats) Site position in 3D space,
+ *         (more site positions)
+ *       ],
+ *       "noise_level": (float) Noise level,
  *     },
  *     (more electrode specs)
  *   ]
  * }
  * Responds:
  * {
- *   "StatusCode": <status-code>,
- *   "ElectrodeIDs": [ <id>, (more IDs) ]
+ *   "StatusCode": (integer) Status code,
+ *   "ElectrodeIDs": [ (integer) Electrode IDs... ]
  * }
  */
 std::string SimulationRPCInterface::AttachRecordingElectrodes(std::string _JSONRequest) {
@@ -790,27 +790,27 @@ std::string SimulationRPCInterface::AttachRecordingElectrodes(std::string _JSONR
 /**
  * Expects _JSONRequest:
  * {
- *   "SimulationID": <SimID>,
- *   "name": <Ca-imaging-name>,
- *   "fluorescing_neurons": [ <neuron-id>... ], -- Empty means all.
- *   "calcium_indicator": <indicator-type>,
- *   "indicator_rise_ms": <float>,
- *   "indicator_decay_ms": <float>,
- *   "indicator_interval_ms": <float>, -- Determines max trackable spike rate.
- *   "voxelspace_side_px": <num-pixels>,
+ *   "SimulationID": (integer) Simulation ID,
+ *   "name": (string) Calcium imaging name,
+ *   "fluorescing_neurons": [ (integer) neuron IDs... ], -- Empty means all.
+ *   "calcium_indicator": (string) Indicator type,
+ *   "indicator_rise_ms": (float) Indicator rise time in milliseconds,
+ *   "indicator_decay_ms": (float) Indicator decay time in milliseconds,
+ *   "indicator_interval_ms": (float) Indicator interval in milliseconds, -- Determines max trackable spike rate.
+ *   "voxelspace_side_px": (integer) Number of pixels for voxel space side,
  *   "imaged_subvolume": {
- *     "center": <3D-vector>,
- *     "half": <3D-vector>,
- *     "dx": <3D-vector>,
- *     "dy": <3D-vector>,
- *     "dz": <3D-vector>, -- Positive dz indicates most visible top surface.
+ *     "center": (array of 3 floats) Center of the subvolume,
+ *     "half": (array of 3 floats) Half dimensions of the subvolume,
+ *     "dx": (array of 3 floats) X-axis direction vector,
+ *     "dy": (array of 3 floats) Y-axis direction vector,
+ *     "dz": (array of 3 floats) Z-axis direction vector, -- Positive dz indicates most visible top surface.
  *   },
- *   "generate_during_sim": <bool>
+ *   "generate_during_sim": (boolean) Whether to generate during simulation
  * }
- * Note: Possibly add "microscope_lensfront_position_um": <3D-vector>, "microscope_rear_position_um": <3D-vector>,
+ * 
  * Responds:
  * {
- *   "StatusCode": <status-code>,
+ *   "StatusCode": (integer) Status code,
  * }
  */
 std::string SimulationRPCInterface::CalciumImagingAttach(std::string _JSONRequest) {

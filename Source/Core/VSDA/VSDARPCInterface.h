@@ -61,120 +61,190 @@ namespace NES {
 namespace Simulator {
 namespace VSDA {
 
-
-
 /**
- * @brief This class provides the infrastructure to run simulations.
+ * @brief This class provides the infrastructure to run simulations and manage VSDA routes.
+ * 
+ * The VSDARPCInterface class connects the NES routes for VSDA to the API, enabling
+ * operations such as initializing simulations, setting up microscopes, defining scan regions,
+ * and managing render operations.
  */
 class VSDARPCInterface {
 
 private:
-    std::vector<std::unique_ptr<Simulation>>* SimulationsPtr_; /**Vector pointer containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
+    std::vector<std::unique_ptr<Simulation>>* SimulationsPtr_; /**< Pointer to a vector containing simulation instances. The index in this vector corresponds to the simulation's ID. */
 
-    BG::NES::Renderer::Interface* Renderer_ = nullptr; /**Pointer to instance of renderer*/
-    BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/
-    API::RPCManager* RPCManager_; /**Pointer to RPC Manager instance*/
+    BG::NES::Renderer::Interface* Renderer_ = nullptr; /**< Pointer to the renderer instance. */
+    BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**< Pointer to the logging system instance. */
+    API::RPCManager* RPCManager_; /**< Pointer to the RPC Manager instance. */
 
 public:
 
     /**
-     * @brief Construct a new VSDARPCInterface for VSDA Slice Generator object
+     * @brief Construct a new VSDARPCInterface object.
      * 
-     * @param _Logger Pointer to logging interface
-     * @param _RPCManager Pointer to instance of the RPC manager.
-     * @param _SimulationsPointerVector Pointer to vector which contains the other simulations. Allows us to access them and modify them as needed.
+     * @param _Logger Pointer to the logging system interface.
+     * @param _RPCManager Pointer to the RPC Manager instance.
+     * @param _SimulationsVectorPointer Pointer to the vector containing simulation instances.
      */
     VSDARPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::RPCManager* _RPCManager, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer);
 
-
     /**
-     * @brief Destroy the VSDARPCInterface for VSDA Slice Generator object
-     * 
+     * @brief Destroy the VSDARPCInterface object.
      */
     ~VSDARPCInterface();
 
-
     /**
      * @brief Handles the EM Initialize route for NES.
+     * 
      * Modifies the simulation struct for the requested ID.
      * 
-     * @param _JSONRequest 
-     * @return std::string 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
      */
     std::string VSDAEMInitialize(std::string _JSONRequest);
 
     /**
      * @brief Sets up the microscope parameters.
+     * 
      * Modifies the simulation struct for the requested ID.
      * 
-     * @param _JSONRequest 
-     * @return std::string 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
      */
     std::string VSDAEMSetupMicroscope(std::string _JSONRequest);
 
     /**
      * @brief Defines the scan region for the given simulation.
+     * 
      * Modifies the simulation struct for the requested ID.
      * 
-     * @param _JSONRequest 
-     * @return std::string 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
      */
     std::string VSDAEMDefineScanRegion(std::string _JSONRequest);
 
     /**
      * @brief Queues a simulation render operation for the EM renderer.
+     * 
      * Modifies the simulation struct for the requested ID.
      * 
-     * @param _JSONRequest 
-     * @return std::string 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
      */
     std::string VSDAEMQueueRenderOperation(std::string _JSONRequest);
 
     /**
-     * @brief Checks the Result of a given render operation.
-     * Will return if it's busy or doing other things.
+     * @brief Checks the result of a given render operation.
      * 
-     * @param _JSONRequest 
-     * @return std::string 
+     * Returns whether the operation is busy or completed.
+     * 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
      */
     std::string VSDAEMGetRenderStatus(std::string _JSONRequest);
 
     /**
      * @brief Returns a completed image stack.
+     * 
      * Must have already been rendered prior to calling, otherwise an error will be returned to the client.
      * Modifies the simulation struct for the requested ID.
      * 
-     * @param _JSONRequest 
-     * @return std::string 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
      */
     std::string VSDAEMGetImageStack(std::string _JSONRequest);
+
+    /**
+     * @brief Retrieves index data for the simulation.
+     * 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
+     */
     std::string VSDAEMGetIndexData(std::string _JSONRequest);
+
+    /**
+     * @brief Prepares a Neuroglancer dataset for visualization.
+     * 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
+     */
     std::string VSDAEMPrepareNeuroglancerDataset(std::string _JSONRequest);
+
+    /**
+     * @brief Retrieves a handle for the Neuroglancer dataset.
+     * 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
+     */
     std::string VSDAEMGetDatasetHandle(std::string _JSONRequest);
+
+    /**
+     * @brief Retrieves the URL for the Neuroglancer dataset.
+     * 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
+     */
     std::string VSDAEMGetNeuroglancerDatasetURL(std::string _JSONRequest);
 
     /**
-     * @brief Will get an image that has been rendered and returned in the getstack function.
-     * Will return this as a base64 encoded string which can be then converted to an image file later on by the renderer.
+     * @brief Retrieves a rendered image as a base64-encoded string.
      * 
-     * @param _JSONRequest 
-     * @return std::string 
+     * The image must have been rendered and returned in the getstack function.
+     * 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Base64-encoded image string.
      */
     std::string VSDAGetImage(std::string _JSONRequest);
 
-
+    /**
+     * @brief Initializes the CA route for NES.
+     * 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
+     */
     std::string VSDACAInitialize(std::string _JSONRequest);
+
+    /**
+     * @brief Sets up the microscope parameters for the CA route.
+     * 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
+     */
     std::string VSDACASetupMicroscope(std::string _JSONRequest);
+
+    /**
+     * @brief Defines the scan region for the CA route.
+     * 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
+     */
     std::string VSDACADefineScanRegion(std::string _JSONRequest);
+
+    /**
+     * @brief Queues a render operation for the CA renderer.
+     * 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
+     */
     std::string VSDACAQueueRenderOperation(std::string _JSONRequest);
+
+    /**
+     * @brief Checks the result of a render operation for the CA renderer.
+     * 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
+     */
     std::string VSDACAGetRenderStatus(std::string _JSONRequest);
+
+    /**
+     * @brief Retrieves a completed image stack for the CA renderer.
+     * 
+     * @param _JSONRequest JSON string containing the request data.
+     * @return std::string Response as a JSON string.
+     */
     std::string VSDACAGetImageStack(std::string _JSONRequest);
-    
-
-
 
 };
-
 
 }; // Close Namespace VSDA
 }; // Close Namespace Simulator

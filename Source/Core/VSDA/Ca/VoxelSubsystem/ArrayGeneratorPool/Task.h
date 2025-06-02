@@ -1,4 +1,3 @@
-
 //=================================//
 // This file is part of BrainGenix //
 //=================================//
@@ -61,6 +60,9 @@ namespace VoxelArrayGenerator {
  */
 struct Task {
 
+    /**
+     * @brief Index of the relevant shape from the shapes array of the simulation.
+     */
     size_t                          ShapeID_;            /**Index of the relevant shape from the shapes array of the simulation.*/
     size_t                          CompartmentID_;      /**ID of the compartment that this shape belongs to (for calcium generation)*/
     // float                           VoxelResolution_um_; /**Set the resolution size of each voxel on axis in microns.*/

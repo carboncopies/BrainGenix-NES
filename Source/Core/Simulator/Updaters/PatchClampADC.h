@@ -30,15 +30,17 @@ namespace Updater {
  * @brief Resets the target ADC.
  * Clears all recorded data, and resets the list to empty.
  * 
- * @param _Target 
+ * @param _Target Pointer to the PatchClampADC to reset.
+ * @param _Sim Pointer to the simulation context.
  */
 void PatchClampADCReset(Tools::PatchClampADC* _Target, Simulation* _Sim);
 
 /**
  * @brief Updates the target ADC.
- * Will record membrane potnetial data into local vector as needed.
+ * Will record membrane potential data into the local vector as needed.
  * 
- * @param _Target 
+ * @param _Target Pointer to the PatchClampADC to update.
+ * @param _Sim Pointer to the simulation context.
  */
 void PatchClampADCUpdate(Tools::PatchClampADC* _Target, Simulation* _Sim);
 

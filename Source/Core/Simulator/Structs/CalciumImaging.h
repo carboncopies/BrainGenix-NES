@@ -30,59 +30,62 @@ struct Simulation;
 namespace Tools {
 
 /**
- * @brief This struct emulates a recording electrode.
- *
+ * @brief This struct emulates a recording electrode for calcium imaging.
+ * 
+ * The CalciumImaging struct provides functionality to simulate calcium imaging
+ * by recording fluorescence data and initializing relevant parameters.
  */
 struct CalciumImaging {
 
-    // Simulator::Simulation* Sim;
-
-    // std::string Name;
-    // int ID;
-
-    //std::vector<int> FluorescingNeurons;
-    //std::string CalciumIndicator;
-    //float IndicatorRise_ms = 30.0;
-    //float IndicatorDecay_ms = 80.0;
-    //float IndicatorInterval_ms = 80.0;
+    //! Imaging interval in milliseconds.
     float ImagingInterval_ms = 90.0;
-    //int VoxelSpaceSide_px = 2;
-    //float Voxel_um = 0.0;
-    //bool GenerateDuringSim = false;
-    //Geometries::Vec3D Center_um{0.0, 0.0, 0.0};
-    //Geometries::Vec3D Half{10.0, 10.0, 2.0};
-    //Geometries::Vec3D Dx{1.0, 0.0, 0.0};
-    //Geometries::Vec3D Dy{0.0, 1.0, 0.0};
-    //Geometries::Vec3D Dz{0.0, 0.0, 1.0}; // Positive dz indicates most visible top surface.
 
+    //! Fluorescence kernel used for imaging.
     std::vector<float> FluorescenceKernel;
-    std::vector<float> ReversedFluorescenceKernel;
-    float max_pixel_contributions = 0.0;
-    // std::vector<float> image_dims_px; // *** or unsigned int?
-    //??? image_t; // Image taken at time t.
-    //std::vector<???> images;
 
+    //! Reversed fluorescence kernel used for imaging.
+    std::vector<float> ReversedFluorescenceKernel;
+
+    //! Maximum pixel contributions for fluorescence imaging.
+    float max_pixel_contributions = 0.0;
+
+    //! Components to include in the imaging process.
     std::vector<int> IncludeComponents;
 
-    // *** (in prototype:) voxelspace = []
-
+    //! Recorded time points in milliseconds.
     std::vector<float> TRecorded_ms{};
-    // size_t num_samples = 0;
 
-    //! Constructors
-    //CalciumImaging(CalciumImaging & CaImg);
-    //CalciumImaging(Simulator::Simulation* _Sim);
-
+    /**
+     * @brief Initializes the CalciumImaging struct with simulation and microscope parameters.
+     * 
+     * @param _Sim Pointer to the simulation object.
+     * @param _Params Reference to the microscope parameters.
+     */
     void Init(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params);
 
-    // void SetImageSize();
-    // void InstantiateVoxelSpace();
-    // void InitializeDepthDimming();
-    // void InitializeProjectionCircles();
-
+    /**
+     * @brief Initializes the fluorescence kernel based on simulation and microscope parameters.
+     * 
+     * @param _Sim Pointer to the simulation object.
+     * @param _Params Reference to the microscope parameters.
+     */
     void InitializeFluorescenceKernel(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params);
+
+    /**
+     * @brief Initializes the fluorescing neuron FIFOs based on simulation and microscope parameters.
+     * 
+     * @param _Sim Pointer to the simulation object.
+     * @param _Params Reference to the microscope parameters.
+     */
     void InitializeFluorescingNeuronFIFOs(Simulation* _Sim, NES::VSDA::Calcium::CaMicroscopeParameters & _Params);
 
+    /**
+     * @brief Records fluorescence data at a specific time point.
+     * 
+     * @param t_ms Time in milliseconds at which to record.
+     * @param Sim Pointer to the simulation object.
+     * @param _Params Reference to the microscope parameters.
+     */
     void Record(float t_ms, Simulation* Sim, NES::VSDA::Calcium::CaMicroscopeParameters& _Params);
 
 };
