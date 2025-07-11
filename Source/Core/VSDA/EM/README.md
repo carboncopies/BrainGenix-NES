@@ -213,52 +213,19 @@ int RenderSliceFromArray(
 5. **Balance Quality vs Performance**: Adjust resolution and noise parameters appropriately
 
 ---
+## **Common Questions and Answers**
 
-## Frequently Asked Questions (FAQ)
+**Q: Why not just process the whole brain region at once?**
+A: Large brain simulations can require hundreds of gigabytes of memory. Breaking into subregions allows processing on normal computers.
 
-### **Q: What should I do if I get a memory allocation error during rendering?**
-- Lower the voxel resolution or reduce the image size in your configuration.
-- Increase available system memory or close other memory-intensive applications.
-- Adjust the `MaxVoxelArraySize_` parameter to fit within your system’s RAM.
+**Q: Why the complex overlap calculations?**
+A: Without proper overlap, you'd see visible seams between subregions in the final images, like a poorly made panoramic photo.
 
----
+**Q: Why wait for memory instead of failing immediately?**
+A: Multiple render jobs might be running. Waiting allows them to complete and free memory rather than failing unnecessarily.
 
-### **Q: Why do my output images have visible seams or gaps?**
-- Ensure the overlap percentage (`ScanRegionOverlap_percent`) is set correctly.
-- Double-check that your coordinate calculations and offsets are consistent between subregions.
-- Test with sample data and visualize the stitched output to verify seamless alignment.
-
----
-
-### **Q: How can I speed up the rendering process?**
-- Increase the number of threads in your `ImageProcessorPool` and `ArrayGeneratorPool` to match your CPU’s core count.
-- Use a lower resolution or reduce the number of slices if possible.
-- Make sure your storage device is fast enough for high-throughput image output.
-
----
-
-### **Q: What configuration parameters most affect image quality?**
-- `VoxelResolution_um`: Smaller values increase detail but require more memory.
-- `NumPixelsPerVoxel_px`: Higher values improve anti-aliasing and smoothness.
-- `Noise` parameters: Adjust these for more or less realistic EM artifacts.
-
----
-
-### **Q: How do I debug misaligned or missing images?**
-- Enable higher log verbosity in the logger to track subregion and slice boundaries.
-- Check the calculated start/end coordinates for each subregion in the logs.
-- Verify that all subregions are being processed and output files are generated as expected.
-
----
-
-### **Q: Can I use this module for non-brain tissue simulations?**
-- Yes, as long as your simulation data can be converted into the expected voxel and geometry formats.
-
----
-
-### **Q: Where can I find more implementation details?**
-- Refer to the source code in the respective module files for in-depth documentation and comments.
-- See the `VSDA/EM/EMRenderer.cpp` and related headers for algorithm specifics.
+**Q: What happens if there's a bug in the coordinate calculations?**
+A: You could get gaps in coverage, overlapping artifacts, or images that don't align properly when stitched together.
 
 ---
 
