@@ -217,7 +217,6 @@ int RenderSliceFromArray(
 ## Frequently Asked Questions (FAQ)
 
 ### **Q: What should I do if I get a memory allocation error during rendering?**
-**A:**  
 - Lower the voxel resolution or reduce the image size in your configuration.
 - Increase available system memory or close other memory-intensive applications.
 - Adjust the `MaxVoxelArraySize_` parameter to fit within your system’s RAM.
@@ -225,7 +224,6 @@ int RenderSliceFromArray(
 ---
 
 ### **Q: Why do my output images have visible seams or gaps?**
-**A:**  
 - Ensure the overlap percentage (`ScanRegionOverlap_percent`) is set correctly.
 - Double-check that your coordinate calculations and offsets are consistent between subregions.
 - Test with sample data and visualize the stitched output to verify seamless alignment.
@@ -233,7 +231,6 @@ int RenderSliceFromArray(
 ---
 
 ### **Q: How can I speed up the rendering process?**
-**A:**  
 - Increase the number of threads in your `ImageProcessorPool` and `ArrayGeneratorPool` to match your CPU’s core count.
 - Use a lower resolution or reduce the number of slices if possible.
 - Make sure your storage device is fast enough for high-throughput image output.
@@ -241,7 +238,6 @@ int RenderSliceFromArray(
 ---
 
 ### **Q: What configuration parameters most affect image quality?**
-**A:**  
 - `VoxelResolution_um`: Smaller values increase detail but require more memory.
 - `NumPixelsPerVoxel_px`: Higher values improve anti-aliasing and smoothness.
 - `Noise` parameters: Adjust these for more or less realistic EM artifacts.
@@ -249,7 +245,6 @@ int RenderSliceFromArray(
 ---
 
 ### **Q: How do I debug misaligned or missing images?**
-**A:**  
 - Enable higher log verbosity in the logger to track subregion and slice boundaries.
 - Check the calculated start/end coordinates for each subregion in the logs.
 - Verify that all subregions are being processed and output files are generated as expected.
@@ -257,13 +252,11 @@ int RenderSliceFromArray(
 ---
 
 ### **Q: Can I use this module for non-brain tissue simulations?**
-**A:**  
 - Yes, as long as your simulation data can be converted into the expected voxel and geometry formats.
 
 ---
 
 ### **Q: Where can I find more implementation details?**
-**A:**  
 - Refer to the source code in the respective module files for in-depth documentation and comments.
 - See the `VSDA/EM/EMRenderer.cpp` and related headers for algorithm specifics.
 
