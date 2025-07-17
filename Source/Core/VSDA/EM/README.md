@@ -2,13 +2,13 @@
 
 ## Overview
 
-The EMRenderer module converts 3D brain tissue simulations into electron microscopy (EM) images. It handles large datasets by automatically dividing them into memory-efficient subregions and processing them in parallel.
+The EMRenderer module converts 3D brain tissue simulations into electron microscopy (EM) images. It handles large datasets by automatically dividing them into memory-efficient subregions and processing them in sequentially.
 
 ## Purpose
 
 - **Memory Management**: Automatically subdivides large brain regions to fit available memory
 - **Image Generation**: Creates realistic electron microscopy simulation images
-- **Parallel Processing**: Coordinates multiple rendering tasks across system resources
+- **Sequential Processing**: Coordinates multiple rendering tasks across system resources
 
 ## Architecture
 
@@ -17,6 +17,12 @@ The module uses a three-component pipeline:
 1. **Voxel System**: Converts neural data into 3D discrete units (voxels)
 2. **Subregion Management**: Divides large regions into manageable pieces with overlapping boundaries
 3. **Image Generation**: Produces 2D image sequences that reconstruct the full 3D volume
+
+The processing occurs in three main stages:
+
+1. **Rasterization**: Converts neural data to voxels
+2. **VoxelsToImage**: Parses out individual images from the array for each subregion, handles overlap
+3. **ImagePostProcessing**: Adds noise, blur, and other effects to images and saves them
 
 ## Core Functions
 
@@ -40,13 +46,11 @@ bool ExecuteSubRenderOperations(
 | `_Config` | `Config::Config*` | System configuration containing memory limits and rendering parameters |
 | `_Logger` | `BG::Common::Logger::LoggingSystem*` | Logging interface for operation tracking and debugging |
 | `_Simulation` | `Simulation*` | Brain simulation data structure containing neural network information |
-| `_ImageProcessorPool` | `ImageProcessorPool*` | Thread pool manager for parallel image processing operations |
+| `_ImageProcessorPool` | `ImageProcessorPool*` | Thread pool manager for sequential image processing operations |
 | `_GeneratorPool` | `VoxelArrayGenerator::ArrayGeneratorPool*` | Resource pool for voxel array generation tasks |
 
 **Process**:
-1. **Memory Calculation**: Determines maximum voxel array size that fits in available RAM
-2. **Spatial Subdivision**: Divides large regions into memory-efficient subregions with overlap
-3. **Parallel Execution**: Processes each subregion using `EMRenderSubRegion`
+The function begins by determining the maximum voxel array size that fits in available RAM through memory calculation algorithms. It then performs spatial subdivision to divide large regions into memory-efficient subregions with appropriate overlap to prevent rendering artifacts. Finally, it executes sequential processing by calling `EMRenderSubRegion` for each subregion to generate the final electron microscopy images.
 
 ---
 
@@ -68,14 +72,11 @@ bool EMRenderSubRegion(
 |-----------|------|-------------|
 | `_Logger` | `BG::Common::Logger::LoggingSystem*` | Logging system for debugging and progress tracking |
 | `_SubRegion` | `SubRegion*` | Subregion definition with spatial boundaries and offsets |
-| `_ImageProcessorPool` | `ImageProcessorPool*` | Thread pool for parallel image processing |
+| `_ImageProcessorPool` | `ImageProcessorPool*` | Thread pool for sequential image processing |
 | `_GeneratorPool` | `VoxelArrayGenerator::ArrayGeneratorPool*` | Thread pool for voxel array generation |
 
 **Process**:
-1. **Voxel Array Management**: Creates or reuses voxel arrays with memory optimization
-2. **Neural Data Conversion**: Calls `CreateVoxelArrayFromSimulation` to rasterize neural data
-3. **Slice Processing**: Divides 3D volume into 2D slices based on thickness parameters
-4. **Image Generation**: Uses `RenderSliceFromArray` to create EM images
+The function starts with voxel array management, creating or reusing voxel arrays with memory optimization to minimize allocation overhead. It then performs neural data conversion by calling `CreateVoxelArrayFromSimulation` to rasterize the neural simulation data into a 3D voxel representation. The 3D volume is then divided into 2D slices based on configured thickness parameters for slice processing. Finally, it generates electron microscopy images by using `RenderSliceFromArray` to create realistic EM images from each slice.
 
 ---
 
@@ -102,19 +103,15 @@ bool CreateVoxelArrayFromSimulation(
 | `_Params` | `MicroscopeParameters*` | Microscope settings including resolution and rendering parameters |
 | `_Array` | `VoxelArray*` | Target voxel array to populate |
 | `_Region` | `ScanRegion` | 3D region boundaries and transformation parameters |
-| `_GeneratorPool` | `VoxelArrayGenerator::ArrayGeneratorPool*` | Thread pool for parallel voxel generation |
+| `_GeneratorPool` | `VoxelArrayGenerator::ArrayGeneratorPool*` | Thread pool for sequential voxel generation |
 
 **Process**:
-1. **Spatial Culling**: Filters neural structures to only those within the target region
-2. **Geometry Processing**: Handles spheres (cell bodies), cylinders (axons/dendrites), and boxes (receptors)
-3. **Shape Subdivision**: Breaks large structures into smaller pieces for memory efficiency
-4. **Parallel Rasterization**: Converts geometry to voxels using thread pool
-5. **Optional Artifacts**: Adds realistic tissue tears if enabled
+The function begins with spatial culling to filter neural structures, processing only those within the target region to optimize performance. It then handles geometry processing for different neural structure types including spheres (cell bodies), cylinders (axons/dendrites), and boxes (receptors), converting each into appropriate voxel representations. Large structures undergo shape subdivision, where they are broken into smaller pieces for memory efficiency. The function then performs sequential rasterization, converting geometry to voxels using thread pool processing for optimal performance. Finally, it can optionally add realistic tissue tears and other artifacts to simulate real electron microscopy imaging conditions.
 
 **Key Features**:
 - **Memory Optimization**: Subdivides large shapes (>75,000 voxels) to prevent memory issues
 - **Spatial Efficiency**: Eliminates 60-90% of processing through spatial culling
-- **Parallel Processing**: Each shape becomes an independent task for thread pool
+- **Sequential Processing**: Each shape becomes an independent task for thread pool
 
 ---
 
@@ -152,18 +149,14 @@ int RenderSliceFromArray(
 | `_FilePrefix` | `std::string` | Base path for output image files |
 | `_SliceNumber` | `int` | Z-slice index to render |
 | `_SliceThickness` | `int` | Number of voxel layers to integrate per slice |
-| `_ImageProcessorPool` | `ImageProcessorPool*` | Thread pool for parallel image processing |
+| `_ImageProcessorPool` | `ImageProcessorPool*` | Thread pool for sequential image processing |
 | `_OffsetX/Y` | `double` | Local coordinate offsets for alignment |
 | `_RegionOffsetX/Y` | `double` | Global coordinate offsets for region alignment |
 | `_SliceOffset` | `int` | Z-offset for slice numbering |
 | `_Generator` | `noise::module::Perlin*` | Noise generator for realistic EM artifacts |
 
 **Process**:
-1. **Camera Grid Setup**: Calculates optimal camera positions for complete slice coverage
-2. **Voxel Sampling**: Extracts pixel data from voxel array with configurable oversampling
-3. **Noise Application**: Adds realistic electron microscopy imaging artifacts
-4. **Image Processing**: Applies contrast enhancement and gamma correction
-5. **Parallel Output**: Creates image processing tasks for thread pool execution
+The function starts with camera grid setup, calculating optimal camera positions to ensure complete slice coverage without gaps. It then performs voxel sampling to extract pixel data from the voxel array with configurable oversampling for anti-aliasing effects. Realistic electron microscopy imaging artifacts are added through noise application using Perlin noise generation. The function applies image processing including contrast enhancement and gamma correction to simulate authentic EM imaging characteristics. Finally, it creates image processing tasks for sequential execution through the thread pool to generate the final output images efficiently.
 
 **Key Features**:
 - **Configurable Overlap**: Supports seamless image stitching between adjacent images
@@ -216,7 +209,7 @@ int RenderSliceFromArray(
 ## **Common Questions and Answers**
 
 **Q: Why not just process the whole brain region at once?**
-A: Large brain simulations can require hundreds of gigabytes of memory. Breaking into subregions allows processing on normal computers.
+A: Large brain simulations can require hundreds of gigabytes of memory. Breaking into subregions allows processing on any computers.
 
 **Q: Why the complex overlap calculations?**
 A: Without proper overlap, you'd see visible seams between subregions in the final images, like a poorly made panoramic photo.
