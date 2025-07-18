@@ -222,6 +222,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             OneToOneVoxelImage.TargetFileName_ = Task->TargetFileName_;
 
             // Now enumerate the voxel array and populate the image with the desired pixels (for the subregion we're on)
+            bool IsImageEmpty = true;
             for (unsigned int XVoxelIndex = Task->VoxelStartingX; XVoxelIndex < Task->VoxelEndingX; XVoxelIndex++) {
                 for (unsigned int YVoxelIndex = Task->VoxelStartingY; YVoxelIndex < Task->VoxelEndingY; YVoxelIndex++) {
 
@@ -237,23 +238,6 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
                     // Enumerate Depth, Compose based on rules defined above
                     VoxelType PresentingVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, Task->VoxelZ);
-                    // uint8_t DarkestVoxel = __UINT8_MAX__;
-                    // for (size_t ZIndex = Task->VoxelZ; ZIndex < Task->VoxelZ + Task->SliceThickness_vox; ZIndex++) {
-
-                    //     // Get Voxel At Position
-                    //     VoxelType ThisVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, ZIndex);
-                    //     // if (ThisVoxel.State_ == VOXELSTATE_INTENSITY) {
-                    //         // if (ThisVoxel.Intensity_ < DarkestVoxel) {
-                    //     PresentingVoxel = ThisVoxel;
-                    //     DarkestVoxel = ThisVoxel.Intensity_;
-                    //         // }
-                    //     // Else, we have a special debug voxel, set this to be the one shown, and exit.
-                    //     // } else {
-                    //     //     PresentingVoxel = ThisVoxel;
-                    //     //     break;
-                    //     // }
-
-                    // }
 
                     // Calculate Pixel Index
                     int ThisPixelX = XVoxelIndex - Task->VoxelStartingX;
@@ -262,9 +246,11 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     // Calculate Color To Be Set
                     if (PresentingVoxel.State_ == VoxelState_BLACK) {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0);
+                        IsImageEmpty = false;
                         continue;
                     } else if (PresentingVoxel.State_ == VoxelState_WHITE) {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255);
+                        IsImageEmpty = false;
                         continue;
                     } else if (PresentingVoxel.State_ == VoxelState_EMPTY) {
                         OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 240); // <-- THAT IS THE DEFAULT IMAGE COLOR, SHOULD BE CONFIGURABLE
@@ -291,10 +277,33 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     }
 
                     OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, Intensity);
+                    IsImageEmpty = false;
                         
 
                 }
             }
+
+
+
+            // Check for image being empty, if it is we use the null image, and dont bother finishing the render process
+            if (IsImageEmpty) {
+
+                // Ensure Path Exists
+                std::error_code Code;
+                if (!CreateDirectoryRecursive(Task->TargetDirectory_, Code)) {
+                    Logger_ ->Log("Failed To Create Directory, Error '" + Code.message() + "'", 7);
+                }
+
+                // Copy null image into new image.
+                std::filesystem::copy_file(Task->NullImagePath_, Task->TargetDirectory_ + Task->TargetFileName_);
+
+                // Update Task Result
+                Task->IsDone_ = true;
+
+                continue;
+            }
+
+
 
             // Note, when we do image processing (for like noise and that stuff, we should do it here!) (or after resizing depending on what is needed)
             // so then this will be phase two, and phase 3 is saving after processing

@@ -94,6 +94,8 @@ struct VSDAData {
     int                         TotalImagesY_ = 0;         /**Defines the total number of images per slice in the y dimension*/
 
 
+    std::string                 NullImagePath_ = "";       /**Defines the path of the black png to be used when no content is in frame of rendered image */
+
 
     std::vector<std::vector<std::string>> RenderedImagePaths_; /**List of paths for each region to be populated as we render all the images for this simulation into a stack*/
     std::vector<std::unique_ptr<ProcessingTask>> Tasks_; /**List of tasks that have been created for this render operation, we check that they're all done before finishing our render operation*/

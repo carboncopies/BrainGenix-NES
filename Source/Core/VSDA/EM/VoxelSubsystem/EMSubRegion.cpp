@@ -43,6 +43,16 @@ bool VSCreateDirectoryRecursive3(std::string const & dirName, std::error_code & 
 }
 
 
+
+void createBlackPng(const std::string& filePath, int width, int height) {
+    // Create a buffer to hold the image data
+    std::vector<uint8_t> imageData(width * height, 0); // Initialize with zeros (black)
+
+    // Write the image to the specified file path
+    stbi_write_png(filePath.c_str(), width, height, 1, imageData.data(), width);
+}
+
+
 bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _SubRegion, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
     _Logger->Log("Executing SubRegion Render For Region Starting At " + std::to_string(_SubRegion->RegionOffsetX_um) + "X, " + std::to_string(_SubRegion->RegionOffsetY_um) + "Y, Layer " + std::to_string(_SubRegion->LayerOffset), 4);
 
@@ -55,6 +65,16 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     double XOffset = _SubRegion->RegionOffsetX_um;
     double YOffset = _SubRegion->RegionOffsetY_um;
 
+    std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "/Region" + std::to_string(VSDAData_->ActiveRegionID_);
+
+
+
+    // Generate Black Placeholder PNG
+    std::string NullImagePath = "Renders/" + FileNamePrefix + "/NullImage.png";
+    VSDAData_->NullImagePath_ = NullImagePath;
+    std::error_code e;
+    VSCreateDirectoryRecursive3("Renders/" + FileNamePrefix, e);
+    createBlackPng(NullImagePath, VSDAData_->Params_.ImageWidth_px, VSDAData_->Params_.ImageHeight_px);
 
 
     // Setup Metadata For GetRenderStatus
@@ -156,7 +176,6 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     noise::module::Perlin PerlinGenerator;
     for (int i = 0; i < NumZSlices; i++) {
         int CurrentSliceIndex = i * NumVoxelsPerSlice;
-        std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "/Region" + std::to_string(VSDAData_->ActiveRegionID_);
 
         VSDAData_->TotalSlices_ += RenderSliceFromArray(_Logger, _SubRegion->MaxImagesX, _SubRegion->MaxImagesY, &Sim->VSDAData_, VSDAData_->Array_.get(), FileNamePrefix, CurrentSliceIndex, NumVoxelsPerSlice, _ImageProcessorPool, XOffset, YOffset, _SubRegion->MasterRegionOffsetX_um, _SubRegion->MasterRegionOffsetY_um, SliceOffset, &PerlinGenerator);
 
