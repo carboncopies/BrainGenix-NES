@@ -44,11 +44,120 @@ bool VSCreateDirectoryRecursive3(std::string const & dirName, std::error_code & 
 
 
 
-void createBlackPng(const std::string& filePath, int width, int height) {
-    // Create a buffer to hold the image data
-    std::vector<uint8_t> imageData(width * height, 0); // Initialize with zeros (black)
+void createCheckerboardWithTextPlaceholder(const std::string& filePath, int width, int height) {
+    const int squareSize = 16;
+    const uint8_t white = 255;
+    const uint8_t black = 0;
 
-    // Write the image to the specified file path
+    std::vector<uint8_t> imageData(width * height, white);
+
+    // Draw checkerboard pattern
+    for (int y = 0; y < height; ++y) {
+        for (int x = 0; x < width; ++x) {
+            int boardX = x / squareSize;
+            int boardY = y / squareSize;
+            bool isBlack = (boardX + boardY) % 2 == 0;
+            imageData[y * width + x] = isBlack ? black : white;
+        }
+    }
+
+    // Define "EMPTY" characters as 5x7 bitmap patterns
+    std::map<char, std::vector<std::string>> patterns = {
+        {'E', {
+            "11111",
+            "10000",
+            "11110",
+            "10000",
+            "11111"
+        }},
+        {'M', {
+            "10101",
+            "11111",
+            "11011",
+            "11011",
+            "10001"
+        }},
+        {'P', {
+            "11110",
+            "10001",
+            "11110",
+            "10000",
+            "10000"
+        }},
+        {'T', {
+            "11111",
+            "00100",
+            "00100",
+            "00100",
+            "00100"
+        }},
+        {'Y', {
+            "10001",
+            "01010",
+            "00100",
+            "00100",
+            "00100"
+        }}
+    };
+
+    const int scale = 8;  // Increased scale for larger text
+    const int letterSpacing = scale * 2;  // Space between letters
+    const std::string text = "EMPTY";
+    const int charWidth = 5 * scale;       // Each character is 5 pixels wide
+    const int charHeight = 7 * scale;      // Each character is 7 pixels tall
+    
+    // Calculate total text width with spacing
+    int textWidth = 0;
+    for (int i = 0; i < text.length(); i++) {
+        textWidth += charWidth;
+        if (i < text.length() - 1) {
+            textWidth += letterSpacing;
+        }
+    }
+
+    // Calculate centered text position
+    int startX = (width - textWidth) / 2;
+    int startY = (height - charHeight) / 2;
+
+    // Draw background rectangle with padding
+    const int padding = scale * 2;
+    for (int y = startY - padding; y < startY + charHeight + padding; ++y) {
+        for (int x = startX - padding; x < startX + textWidth + padding; ++x) {
+            if (x >= 0 && x < width && y >= 0 && y < height) {
+                imageData[y * width + x] = white;
+            }
+        }
+    }
+
+    // Draw each character with spacing
+    int currentX = startX;
+    for (int i = 0; i < text.length(); ++i) {
+        char c = text[i];
+        if (patterns.find(c) == patterns.end()) continue;
+        
+        const auto& pattern = patterns[c];
+        for (int row = 0; row < pattern.size(); ++row) {
+            for (int col = 0; col < pattern[row].size(); ++col) {
+                if (pattern[row][col] != '1') continue;
+                
+                // Draw scaled pixel block
+                for (int dy = 0; dy < scale; ++dy) {
+                    for (int dx = 0; dx < scale; ++dx) {
+                        int px = currentX + col * scale + dx;
+                        int py = startY + row * scale + dy;
+                        if (px >= 0 && px < width && py >= 0 && py < height) {
+                            imageData[py * width + px] = black;
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Move to next character position with spacing
+        currentX += charWidth + letterSpacing;
+    }
+
+    // Save as PNG
     stbi_write_png(filePath.c_str(), width, height, 1, imageData.data(), width);
 }
 
@@ -74,7 +183,7 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     VSDAData_->NullImagePath_ = NullImagePath;
     std::error_code e;
     VSCreateDirectoryRecursive3("Renders/" + FileNamePrefix, e);
-    createBlackPng(NullImagePath, VSDAData_->Params_.ImageWidth_px, VSDAData_->Params_.ImageHeight_px);
+    createCheckerboardWithTextPlaceholder(NullImagePath, VSDAData_->Params_.ImageWidth_px, VSDAData_->Params_.ImageHeight_px);
 
 
     // Setup Metadata For GetRenderStatus

@@ -295,7 +295,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 }
 
                 // Copy null image into new image.
-                std::filesystem::copy_file(Task->NullImagePath_, Task->TargetDirectory_ + Task->TargetFileName_);
+                std::filesystem::copy_file(Task->NullImagePath_, Task->TargetDirectory_ + Task->TargetFileName_, std::filesystem::copy_options::overwrite_existing);
 
                 // Update Task Result
                 Task->IsDone_ = true;
