@@ -2,8 +2,7 @@
 set(MAIN_SOURCES 
 
 
-  ${SRC_DIR}/Core/Main.cpp
-  ${SRC_DIR}/Core/Main.h
+
   
 
 
@@ -322,7 +321,7 @@ target_include_directories(${PROJECT_LIBRARY_NAME} PRIVATE ${CPP_BASE64_INCLUDE_
 
 
 # Create Main Executable
-add_executable(${PROJECT_NAME} ${MAIN_SOURCES})
+add_executable(${PROJECT_NAME} ${MAIN_SOURCES} ${SRC_DIR}/Core/Main.cpp ${SRC_DIR}/Core/Main.h)
 set(EXECUTABLE_TYPE "Binary")
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
@@ -352,20 +351,21 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${GZIP_HPP_INCLUDE_DIRS})
 
 
 # Configure testing.
-# enable_testing()
-# include(GoogleTest)
+enable_testing()
+include(GoogleTest)
 
-# message(STATUS "Testing enabled. Building test binaries ...")
-# add_executable(${TEST_BINS} ${UNITTEST_SOURCES})
-# target_compile_features(${TEST_BINS} PRIVATE cxx_std_17)
+message(STATUS "Testing enabled. Building test binaries ...")
+add_executable(${TEST_BINS} ${UNITTEST_SOURCES})
+target_compile_features(${TEST_BINS} PRIVATE cxx_std_17)
 
-# target_link_libraries(${TEST_BINS} PRIVATE 
-#     NESRenderer
-#     GTest::gtest 
-#     GTest::gtest_main
-#     ${PROJECT_LIBRARY_NAME}
-# )
-# target_include_directories(${TEST_BINS} PUBLIC ${SRC_DIR}/Core)
-# target_include_directories(${TEST_BINS} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
+target_link_libraries(${TEST_BINS} PRIVATE 
+    NESRenderer
+    GTest::gtest 
+    GTest::gtest_main
+    ${PROJECT_LIBRARY_NAME}
+    ZLIB::ZLIB
+)
+target_include_directories(${TEST_BINS} PUBLIC ${SRC_DIR}/Core)
+target_include_directories(${TEST_BINS} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
 
-# gtest_discover_tests(${TEST_BINS})
+gtest_discover_tests(${TEST_BINS})
