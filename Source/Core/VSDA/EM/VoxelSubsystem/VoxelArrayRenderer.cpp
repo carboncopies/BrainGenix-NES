@@ -111,6 +111,7 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
             ThisTask->SliceThickness_vox = _SliceThickness;
             ThisTask->TargetFileName_ = FilePath;
             ThisTask->TargetDirectory_ = DirectoryPath;
+            ThisTask->NullImagePath_ = _VSDAData->NullImagePath_;
             ThisTask->EnableImageNoise = Params->GenerateImageNoise;
             ThisTask->ImageNoiseAmount = Params->ImageNoiseIntensity;
             ThisTask->PreBlurNoisePasses = Params->PreBlurNoisePasses;

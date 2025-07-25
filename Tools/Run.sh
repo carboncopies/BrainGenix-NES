@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Enter Artifact/Binary Dir
 cd ..
 cd Binaries
