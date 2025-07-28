@@ -88,6 +88,8 @@ public:
 
     const nlohmann::json& ReqJSON() const;
 
+    bool CheckCompatibility(SimulationNeuronClass _NewObjectCategory);
+
     bool FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, nlohmann::json& _JSON, bool _Optional = false);
     bool FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, bool _Optional = false);
 

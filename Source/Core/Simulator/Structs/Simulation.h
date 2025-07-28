@@ -62,6 +62,13 @@ namespace Tools {
 
 enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA, SIMULATION_CALCIUM, SIMULATION_VISUALIZATION};
 
+enum SimulationNeuronClass: int {
+    UNDETERMINED = -1,
+    BSNEURONS = 0,
+    SCNEURONS = 1,
+    LIFCNEURONS = 2
+};
+
 struct StoredRequest {
     std::string Route;
     std::string RequestJSON;
@@ -87,6 +94,8 @@ public:
 
     int RandomSeed = 0; /** Master random seed for this simulation. */
     std::unique_ptr<Distributions::Generic> MasterRandom_;
+
+    SimulationNeuronClass SimNeuronClass = UNDETERMINED;
 
     float T_ms = 0.0;
     float Dt_ms = 1.0;

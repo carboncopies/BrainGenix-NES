@@ -30,11 +30,14 @@ ModelRPCInterface::ModelRPCInterface(BG::Common::Logger::LoggingSystem* _Logger,
     _RPCManager->AddRoute("Simulation/Staple/Create",                 std::bind(&ModelRPCInterface::StapleCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Receptor/Create",               std::bind(&ModelRPCInterface::ReceptorCreate, this, std::placeholders::_1));
 
-    _RPCManager->AddRoute("Simulation/Neuron/BS/Create",              std::bind(&ModelRPCInterface::BSNeuronCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Compartments/BS/Create",        std::bind(&ModelRPCInterface::BSCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Neuron/BS/Create",              std::bind(&ModelRPCInterface::BSNeuronCreate, this, std::placeholders::_1));
    
-    _RPCManager->AddRoute("Simulation/Neuron/SC/Create",              std::bind(&ModelRPCInterface::SCNeuronCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Compartments/SC/Create",        std::bind(&ModelRPCInterface::SCCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Neuron/SC/Create",              std::bind(&ModelRPCInterface::SCNeuronCreate, this, std::placeholders::_1));
+
+    _RPCManager->AddRoute("Simulation/Compartments/LIFC/Create",        std::bind(&ModelRPCInterface::LIFCCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Neuron/LIFC/Create",              std::bind(&ModelRPCInterface::LIFCNeuronCreate, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/PatchClampDAC/Create",          std::bind(&ModelRPCInterface::PatchClampDACCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/PatchClampDAC/SetOutputList",   std::bind(&ModelRPCInterface::PatchClampDACSetOutputList, this, std::placeholders::_1));
@@ -140,6 +143,10 @@ std::string ModelRPCInterface::BSCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
+    if (!Handle.CheckCompatibility(BSNEURONS)) {
+        return Handle.ErrResponse();
+    }
+
     // Build New BS Object
     Compartments::BS C;
     if ((!Handle.GetParInt("ShapeID", C.ShapeID))
@@ -173,6 +180,10 @@ std::string ModelRPCInterface::BSNeuronCreate(std::string _JSONRequest) {
  
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Neuron/BS/Create", Simulations_);
     if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    if (!Handle.CheckCompatibility(BSNEURONS)) {
         return Handle.ErrResponse();
     }
 
@@ -224,6 +235,10 @@ std::string ModelRPCInterface::SCCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
+    if (!Handle.CheckCompatibility(SCNEURONS)) {
+        return Handle.ErrResponse();
+    }
+
     // Build New SC Object
     Compartments::SC C;
     if ((!Handle.GetParInt("ShapeID", C.ShapeID))
@@ -254,6 +269,98 @@ std::string ModelRPCInterface::SCNeuronCreate(std::string _JSONRequest) {
  
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Neuron/SC/Create", Simulations_);
     if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    if (!Handle.CheckCompatibility(SCNEURONS)) {
+        return Handle.ErrResponse();
+    }
+
+    // Build New SCNeuron Object
+    CoreStructs::SCNeuronStruct C;
+    if ((!Handle.GetParVecInt("SomaIDs", C.SomaCompartmentIDs))
+        || (!Handle.GetParVecInt("DendriteIDs", C.DendriteCompartmentIDs))
+        || (!Handle.GetParVecInt("AxonIDs", C.AxonCompartmentIDs))
+        || (!Handle.GetParFloat("MembranePotential_mV", C.MembranePotential_mV))
+        || (!Handle.GetParFloat("RestingPotential_mV", C.RestingPotential_mV))
+        || (!Handle.GetParFloat("SpikeThreshold_mV", C.SpikeThreshold_mV))
+        || (!Handle.GetParFloat("DecayTime_ms", C.DecayTime_ms))
+        || (!Handle.GetParFloat("AfterHyperpolarizationAmplitude_mV", C.AfterHyperpolarizationAmplitude_mV))
+        || (!Handle.GetParFloat("PostsynapticPotentialRiseTime_ms", C.PostsynapticPotentialRiseTime_ms))
+        || (!Handle.GetParFloat("PostsynapticPotentialDecayTime_ms", C.PostsynapticPotentialDecayTime_ms))
+        || (!Handle.GetParFloat("PostsynapticPotentialAmplitude_nA", C.PostsynapticPotentialAmplitude_nA))
+        || (!Handle.GetParString("Name", C.Name))) {
+        return Handle.ErrResponse();
+    }
+
+    // // We cache the pointers to the compartments in the neuron data, so that it
+    // // does not need to reach back to the Simulation to search for it.
+    // C.SomaCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.SomaCompartmentID);
+    // C.AxonCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.AxonCompartmentID);
+    // if ((!C.SomaCompartmentPtr) || (!C.AxonCompartmentPtr)) {
+    //     return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    // }
+
+    C.ID = Handle.Sim()->AddSCNeuron(C);
+    Handle.Sim()->RegisterNeuronUIDToCompartments(C.SomaCompartmentIDs, C.ID);
+    Handle.Sim()->RegisterNeuronUIDToCompartments(C.DendriteCompartmentIDs, C.ID);
+    Handle.Sim()->RegisterNeuronUIDToCompartments(C.AxonCompartmentIDs, C.ID);
+
+    // Return Result ID
+    return Handle.ResponseWithID("NeuronID", C.ID);
+}
+
+/**
+ * Creates a LIFC Compartment with form and function.
+ * Form: A shape.
+ * Function: Some parameters.
+ */
+std::string ModelRPCInterface::LIFCCreate(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Compartments/LIFC/Create", Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    if (!Handle.CheckCompatibility(LIFCNEURONS)) {
+        return Handle.ErrResponse();
+    }
+
+    // Build New LIFC Object
+    Compartments::LIFC C;
+    if ((!Handle.GetParInt("ShapeID", C.ShapeID))
+        || (!Handle.GetParFloat("RestingPotential_mV", C.RestingPotential_mV))
+        || (!Handle.GetParFloat("ResetPotential_mV", C.ResetPotential_mV))
+        || (!Handle.GetParFloat("SpikeThreshold_mV", C.SpikeThreshold_mV))
+        || (!Handle.GetParFloat("MembraneResistance_MOhm", C.MembraneResistance_MOhm))
+        || (!Handle.GetParFloat("MembraneCapacitance_pF", C.MembraneCapacitance_pF))
+        || (!Handle.GetParFloat("AfterHyperpolarizationAmplitude_mV", C.AfterHyperpolarizationAmplitude_mV))
+        || (!Handle.GetParString("Name", C.Name))) {
+        return Handle.ErrResponse();
+    }
+
+    // We cache the pointer to the shape in the compartment data, so that it
+    // does not need to reach back to the Simulation to search for it.
+    C.ShapePtr = Handle.Sim()->Collection.GetGeometry(C.ShapeID);
+    if (!C.ShapePtr) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    C.ID = Handle.Sim()->BSCompartments.size();
+    Handle.Sim()->BSCompartments.push_back(C);
+
+    // Return Result ID
+    return Handle.ResponseWithID("CompartmentID", C.ID);
+}
+
+std::string ModelRPCInterface::LIFCNeuronCreate(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Neuron/LIFC/Create", Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    if (!Handle.CheckCompatibility(LIFCNEURONS)) {
         return Handle.ErrResponse();
     }
 
