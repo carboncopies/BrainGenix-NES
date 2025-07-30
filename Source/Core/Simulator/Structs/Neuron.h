@@ -58,6 +58,7 @@ enum NeuronClass: int {
     _Neuron = 0,
     _BSNeuron = 1,
     _SCNeuron = 2,
+    _LIFCNeuron = 3,
     NUMNeuronClass
 };
 
@@ -256,6 +257,143 @@ struct SCNeuronStruct: public SCNeuronBase {
     // std::vector<Compartments::SC*> SomaCompartmentPtr;
     // std::vector<Compartments::SC*> DendriteCompartmentPtr;
     // std::vector<Compartments::SC*> AxonCompartmentPtr;
+
+    std::unique_ptr<uint8_t[]> GetFlat() const;
+    bool FromFlat(SCNeuronStructFlatHeader* header);
+
+};
+
+enum LIFCUpdateMethodEnum: int {
+    EXPEULER_CM = 0, // Default: Exponential Euler Capacitance-based calculation
+    EXPEULER_RM = 1,
+    FORWARD_EULER = 2,
+    CLASSICAL = 3,
+    NUMLIFCUpdateMethodEnum = 4
+};
+
+enum LIFCResetMethodEnum: int {
+    TOVM = 0,  // Default: Set to Vm prior to spike after absolute refractory period
+    ONSET = 1, // Set to ResetPotential_mV at time step right after setting to SpikeDepolarization_mV
+    AFTER = 2, // Set to ResetPotential_mV after absolute refractory period
+    NUMLIFCResetMethodEnum = 3
+};
+
+enum LIFCAHPSaturationModelEnum: int {
+    AHPCLIP = 0,    // Default: Clip at max cumulative level
+    AHPSIGMOID = 1, // Sigmoidal saturation
+    NUMLIFCAHPSaturationModelEnum = 2,
+};
+
+enum LIFCADPSaturationModelEnum: int {
+    ADPCLIP = 0,     // Default: Clip at max cumulative level
+    ADPRESOURCE = 1, // Resource saturation
+    NUMLIFCADPSaturationModelEnum  = 2
+};
+
+/**
+ * @brief Crucial fixed-size data of a neuron. This is saved in neuronal
+ * circuit model saves. Does not include name and cached data.
+ */
+struct LIFCNeuronBase {
+    int ID = -1; /**ID of the Neuron */
+
+    float RestingPotential_mV;
+    float ResetPotential_mV;
+    float SpikeThreshold_mV;
+    float MembraneResistance_MOhm;
+    float MembraneCapacitance_pF;
+    float RefractoryPeriod_ms;
+    float SpikeDepolarization_mV;
+
+    LIFCUpdateMethodEnum UpdateMethod;
+    LIFCResetMethodEnum ResetMethod;
+
+    float AfterHyperpolarizationReversalPotential_mV;
+
+    float FastAfterHyperpolarizationRise_ms;
+    float FastAfterHyperpolarizationDecay_ms;
+    float FastAfterHyperpolarizationPeakConductance_nS;
+    float FastAfterHyperpolarizationMaxPeakConductance_nS;
+    float FastAfterHyperpolarizationHalfActConstant;
+
+    float SlowAfterHyperpolarizationRise_ms;
+    float SlowAfterHyperpolarizationDecay_ms;
+    float SlowAfterHyperpolarizationPeakConductance_nS;
+    float SlowAfterHyperpolarizationMaxPeakConductance_nS;
+    float SlowAfterHyperpolarizationHalfActConstant;
+
+    LIFCAHPSaturationModelEnum AfterHyperpolarizationSaturationModel;
+
+    float FatigueThreshold;
+    float FatigueRecoveryTime_ms;
+
+    float AfterDepolarizationReversalPotential_mV;
+    float AfterDepolarizationRise_ms;
+    float AfterDepolarizationDecay_ms;
+    float AfterDepolarizationPeakConductance_nS;
+    float AfterDepolarizationSaturationMultiplier;
+    float AfterDepolarizationRecoveryTime_ms;
+    float AfterDepolarizationDepletion;
+    LIFCADPSaturationModelEnum AfterDepolarizationSaturationModel;
+
+    float AdaptiveThresholdDiffPerSpike;
+    float AdaptiveTresholdRecoveryTime_ms;
+    float AdaptiveThresholdDiffPotential_mV;
+    float AdaptiveThresholdFloor_mV;
+    float AdaptiveThresholdFloorDeltaPerSpike_mV;
+    float AdaptiveThresholdFloorRecoveryTime_ms;
+
+    std::string str() const {
+        std::stringstream ss;
+        ss << "ID: " << ID;
+        ss << "\nRestingPotential_mV: " << RestingPotential_mV;
+        ss << "\nResetPotential_mV: " << ResetPotential_mV;
+        ss << "\nSpikeThreshold_mV: " << SpikeThreshold_mV;
+        ss << "\nMembraneResistance_MOhm: " << MembraneResistance_MOhm;
+        ss << "\nMembraneCapacitance_pF: " << MembraneCapacitance_pF;
+        ss << "\nRefractoryPeriod_ms: " << RefractoryPeriod_ms;
+        ss << "\nSpikeDepolarization_mV: " << SpikeDepolarization_mV;
+        ss << "\nUpdateMethod: " << UpdateMethod;
+        ss << "\nResetMethod: " << ResetMethod;
+        ss << "\nAfterHyperpolarizationReversalPotential_mV: " << AfterHyperpolarizationReversalPotential_mV;
+        ss << "\nFastAfterHyperpolarizationRise_ms: " << FastAfterHyperpolarizationRise_ms;
+        ss << "\nFastAfterHyperpolarizationDecay_ms: " << FastAfterHyperpolarizationDecay_ms;
+        ss << "\nFastAfterHyperpolarizationPeakConductance_nS: " << FastAfterHyperpolarizationPeakConductance_nS;
+        ss << "\nFastAfterHyperpolarizationMaxPeakConductance_nS: " << FastAfterHyperpolarizationMaxPeakConductance_nS;
+        ss << "\nFastAfterHyperpolarizationHalfActConstant: " << FastAfterHyperpolarizationHalfActConstant;
+        ss << "\nSlowAfterHyperpolarizationRise_ms: " << SlowAfterHyperpolarizationRise_ms;
+        ss << "\nSlowAfterHyperpolarizationDecay_ms: " << SlowAfterHyperpolarizationDecay_ms;
+        ss << "\nSlowAfterHyperpolarizationPeakConductance_nS: " << SlowAfterHyperpolarizationPeakConductance_nS;
+        ss << "\nSlowAfterHyperpolarizationMaxPeakConductance_nS: " << SlowAfterHyperpolarizationMaxPeakConductance_nS;
+        ss << "\nSlowAfterHyperpolarizationHalfActConstant: " << SlowAfterHyperpolarizationHalfActConstant;
+        ss << "\nAfterHyperpolarizationSaturationModel: " << AfterHyperpolarizationSaturationModel;
+        ss << "\nFatigueThreshold: " << FatigueThreshold;
+        ss << "\nFatigueRecoveryTime_ms: " << FatigueRecoveryTime_ms;
+        ss << "\nAfterDepolarizationReversalPotential_mV: " << AfterDepolarizationReversalPotential_mV;
+        ss << "\nAfterDepolarizationRise_ms: " << AfterDepolarizationRise_ms;
+        ss << "\nAfterDepolarizationDecay_ms: " << AfterDepolarizationDecay_ms;
+        ss << "\nAfterDepolarizationPeakConductance_nS: " << AfterDepolarizationPeakConductance_nS;
+        ss << "\nAfterDepolarizationSaturationMultiplier: " << AfterDepolarizationSaturationMultiplier;
+        ss << "\nAfterDepolarizationRecoveryTime_ms: " << AfterDepolarizationRecoveryTime_ms;
+        ss << "\nAfterDepolarizationDepletion: " << AfterDepolarizationDepletion;
+        ss << "\nAfterDepolarizationSaturationModel: " << AfterDepolarizationSaturationModel;
+        ss << "\nAdaptiveThresholdDiffPerSpike: " << AdaptiveThresholdDiffPerSpike;
+        ss << "\nAdaptiveTresholdRecoveryTime_ms: " << AdaptiveTresholdRecoveryTime_ms;
+        ss << "\nAdaptiveThresholdDiffPotential_mV: " << AdaptiveThresholdDiffPotential_mV;
+        ss << "\nAdaptiveThresholdFloor_mV: " << AdaptiveThresholdFloor_mV;
+        ss << "\nAdaptiveThresholdFloorDeltaPerSpike_mV: " << AdaptiveThresholdFloorDeltaPerSpike_mV;
+        ss << "\nAdaptiveThresholdFloorRecoveryTime_ms: " << AdaptiveThresholdFloorRecoveryTime_ms << '\n';
+        return ss.str();
+    }
+};
+
+struct LIFCNeuronStruct: public LIFCNeuronBase {
+
+    std::string Name; /**Name of the Neuron*/
+
+    std::vector<int> SomaCompartmentIDs;
+    std::vector<int> DendriteCompartmentIDs;
+    std::vector<int> AxonCompartmentIDs;
 
     std::unique_ptr<uint8_t[]> GetFlat() const;
     bool FromFlat(SCNeuronStructFlatHeader* header);

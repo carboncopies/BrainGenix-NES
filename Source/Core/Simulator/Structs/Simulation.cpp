@@ -3,6 +3,7 @@
 #include <Simulator/Structs/RecordingElectrode.h>
 #include <Simulator/Structs/CalciumImaging.h>
 #include <Simulator/SimpleCompartmental/SCNeuron.h>
+#include <Simulator/LIFCompartmental/LIFCNeuron.h>
 #include <Simulator/Geometries/GeometryCollection.h>
 #include <Simulator/Geometries/Geometry.h>
 #include <Simulator/Geometries/Sphere.h>
@@ -94,6 +95,7 @@ int Simulation::AddBox(Geometries::Box& _S){
 int Simulation::AddSCCompartment(Compartments::BS& _C) {
     _C.ShapePtr = Collection.GetGeometry(_C.ShapeID);
     if (!_C.ShapePtr) {
+        Logger_->Log("Error: Shape with ID "+std::to_string(_C.ShapeID)+" not found", 7);
         return -1;
     }
 
@@ -102,8 +104,37 @@ int Simulation::AddSCCompartment(Compartments::BS& _C) {
     return _C.ID;
 }
 
+int Simulation::AddLIFCCompartment(Compartments::LIFC& _C) {
+    _C.ShapePtr = Collection.GetGeometry(_C.ShapeID);
+    if (!_C.ShapePtr) {
+        Logger_->Log("Error: Shape with ID "+std::to_string(_C.ShapeID)+" not found", 7);
+        return -1;
+    }
+
+    _C.ID = LIFCCompartments.size();
+    LIFCCompartments.push_back(_C);
+    return _C.ID;
+}
+
+int Simulation::AddBSNeuron(CoreStructs::BSNeuronStruct& _N) {
+    _N.ID = Neurons.size();
+    
+    Neurons.push_back(std::make_shared<BallAndStick::BSNeuron>(_N, *this));
+
+    NeuronByCompartment.emplace(_N.SomaCompartmentID, _N.ID);
+    NeuronByCompartment.emplace(_N.AxonCompartmentID, _N.ID);
+
+    RegisterNeuronUIDToCompartments(std::vector<int>(C.SomaCompartmentID), _N.ID + 1);
+    RegisterNeuronUIDToCompartments(std::vector<int>(C.AxonCompartmentID), _N.ID + 1);
+
+    return _N.ID;
+}
+
 int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
-    if (_N.SomaCompartmentIDs.size()<1) return -1;
+    if (_N.SomaCompartmentIDs.size()<1) {
+        Logger_->Log("Error: Missing soma campartments", 7);
+        return -1;
+    }
 
     _N.ID = Neurons.size();
     
@@ -118,6 +149,7 @@ int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
         NeuronByCompartment.emplace(AxonID, _N.ID);
     }
 
+    // *** WARNING: Why +1?
     RegisterNeuronUIDToCompartments(_N.SomaCompartmentIDs, _N.ID + 1);
     RegisterNeuronUIDToCompartments(_N.DendriteCompartmentIDs, _N.ID + 1);
     RegisterNeuronUIDToCompartments(_N.AxonCompartmentIDs, _N.ID + 1);
@@ -130,6 +162,32 @@ int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
     return _N.ID;
 }
 
+int Simulation::AddLIFCNeuron(CoreStructs::LIFCNeuronStruct& _N) {
+    if (_N.SomaCompartmentIDs.size()<1) {
+        Logger_->Log("Error: Missing soma campartments", 7);
+        return -1;
+    }
+
+    _N.ID = Neurons.size();
+    
+    Neurons.push_back(std::make_shared<LIFCNeuron>(_N, *this));
+    for (const auto & SomaID : _N.SomaCompartmentIDs) {
+        NeuronByCompartment.emplace(SomaID, _N.ID);
+    }
+    for (const auto & DendriteID : _N.DendriteCompartmentIDs) {
+        NeuronByCompartment.emplace(DendriteID, _N.ID);
+    }
+    for (const auto & AxonID : _N.AxonCompartmentIDs) {
+        NeuronByCompartment.emplace(AxonID, _N.ID);
+    }
+
+    RegisterNeuronUIDToCompartments(_N.SomaCompartmentIDs, _N.ID + 1);
+    RegisterNeuronUIDToCompartments(_N.DendriteCompartmentIDs, _N.ID + 1);
+    RegisterNeuronUIDToCompartments(_N.AxonCompartmentIDs, _N.ID + 1);
+
+    return _N.ID;
+}
+
 int Simulation::AddReceptor(Connections::Receptor& _C) {
 
     _C.ID = Receptors.size();
@@ -138,8 +196,13 @@ int Simulation::AddReceptor(Connections::Receptor& _C) {
 
     // Inform destination neuron of its new input receptor.
     CoreStructs::Neuron* SrcNeuronPtr = FindNeuronByCompartment(_C.SourceCompartmentID);
+    if (SrcNeuronPtr==nullptr) {
+        Logger_->Log("Error: No source neuron associated with compartment "+std::to_string(_C.SourceCompartmentID), 7);
+        return -1;
+    }
     CoreStructs::Neuron* DstNeuronPtr = FindNeuronByCompartment(_C.DestinationCompartmentID);
-    if ((SrcNeuronPtr==nullptr) || (DstNeuronPtr==nullptr)) {
+    if (DstNeuronPtr==nullptr) {
+        Logger_->Log("Error: No target neuron associated with compartment "+std::to_string(_C.DestinationCompartmentID), 7);
         return -1;
     }
 

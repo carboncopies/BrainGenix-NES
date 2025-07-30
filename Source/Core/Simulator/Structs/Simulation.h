@@ -32,6 +32,7 @@
 #include <Simulator/Geometries/GeometryCollection.h>
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/BS.h>
+#include <Simulator/Structs/LIFC.h>
 #include <Simulator/Structs/NeuralCircuit.h>
 #include <Simulator/Structs/Neuron.h>
 #include <Simulator/Structs/PatchClampADC.h>
@@ -124,7 +125,8 @@ public:
 
     Geometries::GeometryCollection Collection; /**Instance of GeometryCollection struct containing all geometries in this simulation*/
 
-    std::vector<Compartments::BS> BSCompartments; /**This will need to be updated later to a std::variant type, but for now it stores the only type of supported compartments, BallStick type*/
+    std::vector<Compartments::BS> BSCompartments;
+    std::vector<Compartments::LIFC> LIFCCompartments;
     std::map<int, int> NeuronByCompartment; // Fast look-up map built while creating neurons.
 
     std::vector<std::shared_ptr<CoreStructs::Neuron>> Neurons; /** List of neurons, index is their id. Notice that this takes a Neuron base class object (not BSNeuron and other derivatives). */
@@ -170,7 +172,9 @@ public:
     int AddCylinder(Geometries::Cylinder& _S);
     int AddBox(Geometries::Box& _S);
     int AddSCCompartment(Compartments::BS& _C);
+    int AddLIFCCompartment(Compartments::LIFC& _C);
     int AddSCNeuron(CoreStructs::SCNeuronStruct& _N);
+    int AddLIFCNeuron(CoreStructs::LIFCNeuronStruct& _N);
     int AddReceptor(Connections::Receptor& _C);
     void RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompartmentIDs, uint64_t _NeuronUID);
 

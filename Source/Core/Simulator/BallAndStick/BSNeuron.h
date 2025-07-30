@@ -57,7 +57,6 @@ class BSNeuron : public CoreStructs::Neuron {
 public:
     CoreStructs::BSNeuronStruct build_data; // Copy of the struct that was used to build this neuron.
 
-    //std::unordered_map<std::string, std::shared_ptr<Geometries::Geometry>> Morphology;
     std::unordered_map<std::string, Geometries::Geometry*> Morphology; // Regular pointers, because the objects are maintained in Simulation.Collection.
 
     float Vm_mV = -60.0;    //! Membrane potential
