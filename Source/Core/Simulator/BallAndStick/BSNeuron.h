@@ -79,8 +79,6 @@ public:
     bool in_absref = false;
     float _dt_act_ms = 0.0;
 
-    // Moved to Neuron.h: std::vector<float> TAct_ms{};
-    // Moved to Neuron.h: std::vector<float> TDirectStim_ms{}; // Or should this be a deque?
     std::vector<float> CaSamples{};
     std::vector<float> TCaSamples_ms{};
 

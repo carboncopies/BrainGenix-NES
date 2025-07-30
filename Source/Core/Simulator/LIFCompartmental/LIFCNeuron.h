@@ -59,7 +59,7 @@ public:
     float Kd_sAHP_nS = 0.3; // 0.3-1 nS half-activation constant for sigmoidal AHP saturation model
 
     // Hard-cap fatigue threshold
-    float fatigue_treshold = 300; // number of spikes in a burst
+    float fatigue_treshold = 300; // 0 means not applied, number of spikes in a burst
     float tau_fatigue_recovery_ms = 1000.0;
 
     // After-depolarization (in select neuron types, otherwise g_peak_ADP_nS = 0)
@@ -68,7 +68,6 @@ public:
     float tau_decay_ADP_ms = 200.0;
     float g_peak_ADP_nS = 0.0; // E.g. 0.3 pyramidal
     float ADP_saturation_multiplier = 2.0 // typically between 2-3 times
-    float g_peak_ADP_max_nS = 0.0; // initialized by calculation in LIFCNeuron::LIFCNeuron()
     float tau_recovery_ADP_ms = 300.0; // for resource availability mode, 200-600 ms for slow ADP recovery times
     float ADP_depletion = 0.3; // 0.2-0.4 per spike, ADP resource availability model
 
@@ -76,27 +75,65 @@ public:
     float dh_spike = 0.2;
     float tau_h_ms = 50.0; // 50 - 200 ms
     float dVth_mV = 10.0;
-    float Vth_floor_mV = -50.0; // Dynamic threshold floor, can set equal to VAct_mV
-    float delta_floor_per_spike_mV = 1.0;
+    float Vth_floor_mV = -50.0; // dynamic threshold floor, can set equal to VAct_mV
+    float delta_floor_per_spike_mV = 1.0; // 0 means dynamic threshold floor not applied
     float tau_floor_decay_ms = 500.0;
 
+    // Use directly from build_data
+    //   UpdateMethod
+    //   ResetMethod
+    //   AfterHyperpolarizationSaturationModel
+    //   AfterDepolarizationSaturationModel
+
 public:
+    // Parameters initialized by calculation in LIFCNeuron::LIFCNeuron()
+    float tau_m_ms = 0.0;
+    float g_L_nS = 0.0;
+    float g_peak_ADP_max_nS = 0.0;
+
+    float norm_fAHP = 0.0;
+    float norm_sAHP = 0.0;
+    float norm_ADP = 0.0;
+
     // Variables used during simulation but not initialized by parameters
     float g_fAHP_nS = 0.0;
     float g_sAHP_nS = 0.0;
 
     float fatigue = 0.0; // grows with spiking, decays slowly
 
-    float self.a_ADP = 1.0; // ADP factor for resource depletion model
+    float a_ADP = 1.0; // ADP factor for resource depletion model
     float g_ADP_nS = 0.0;
 
     float h_spike = 1.0 // Adaptive threshold factor
+
+    bool reset_done = true; // Only used for reset AFTER
+    long last_spike_idx = -INFINITY;
+    float t_last_spike = -1000.0;
+
+    float tDiff_ms = 0.0;
 
 public:
     LIFCNeuron(const CoreStructs::LIFCNeuronStruct & lifcneuronstruct, Simulation & _Sim);
 
     //! Returns the geometric center of the neuron.
     virtual Geometries::Vec3D& GetCellCenter();
+
+    // *** Begin with the functions as per IF_with_stdp, then find parallels in
+    //     BSNeuron function calls to overload.
+
+    void spike(size_t i, double t);
+    void check_spiking(size_t i, float t, float V_th_adaptive);
+    void update_conductances(size_t i, float t);
+    float update_currents();
+    float update_membrane_potential_forward_Euler(float I);
+    void update_membrane_potential_exponential_Euler_Rm();
+    void update_membrane_potential_exponential_Euler_Cm();
+    float update_adaptive_threshold();
+    void update_with_classical_reset_clamp(size_t i, float t);
+    void update_with_reset_options(size_t i, float t);
+    void update(size_t i, float t);
+    void record(size_t i);
+
 };
 
 } // Simulator

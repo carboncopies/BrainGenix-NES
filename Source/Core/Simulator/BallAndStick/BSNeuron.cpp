@@ -259,14 +259,21 @@ void BSNeuron::Update(float t_ms, bool recording) {
     if (tDiff_ms < 0) return;
 
     // 1. Has there been a directed stimulation?
-    if (!(this->TDirectStim_ms.empty())) {
-        float tFire_ms = this->TDirectStim_ms.front();
+    if (next_directstim_idx < TDirectStim_ms.size()) {
+        float tFire_ms = TDirectStim_ms.at(next_directstim_idx);
         if (tFire_ms <= t_ms) {
-            this->TAct_ms.push_back(tFire_ms);
-            //this->TDirectStim_ms.erase(this->TDirectStim_ms.begin());
-            this->TDirectStim_ms.pop_front();
+            TAct_ms.push_back(tFire_ms);
+            next_directstim_idx++;
         }
     }
+    // if (!(this->TDirectStim_ms.empty())) {
+    //     float tFire_ms = this->TDirectStim_ms.front();
+    //     if (tFire_ms <= t_ms) {
+    //         this->TAct_ms.push_back(tFire_ms);
+    //         //this->TDirectStim_ms.erase(this->TDirectStim_ms.begin());
+    //         this->TDirectStim_ms.pop_front();
+    //     }
+    // }
 
     // 2. Update variables.
     this->UpdateVm(t_ms, recording);

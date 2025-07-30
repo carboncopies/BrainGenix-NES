@@ -16,7 +16,7 @@
 #include <unordered_map>
 #include <vector>
 #include <memory>
-#include <deque>
+//#include <deque>
 
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/Receptor.h>
@@ -82,8 +82,9 @@ struct Neuron {
 
     Geometries::Vec3D cell_center; // *** FIX THIS!
 
-    std::vector<float> TAct_ms{};
-    std::deque<float> TDirectStim_ms{};
+    std::vector<float> TAct_ms{}; // Record of spike times
+    std::vector<float> TDirectStim_ms{}; // was deque
+    size_t next_directstim_idx = 0;
 
     //! Update the assumed neuron "type" based on its neurotransmitters.
     virtual void UpdateType(const std::string & neurotransmitter);

@@ -102,6 +102,8 @@ public:
     float Dt_ms = 1.0;
     std::vector<float> TRecorded_ms{};
 
+    bool STDP = false; // STDP simulation included when true
+
     std::atomic<bool> IsProcessing = false;  /**Indicator if the simulation is currently being modified or not*/
     std::atomic<bool> WorkRequested = false; /**Indicator if work is requested to be done on this simulation by a worker thread*/
     std::atomic<bool> IsRendering = false;   /**Indicates if this simulation is being acted upon by a renderer or not*/
