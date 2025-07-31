@@ -120,36 +120,43 @@ public:
      */
     std::string SimulationCreate(std::string _JSONRequest);
     std::string SimulationReset(std::string _JSONRequest);
+
     std::string SimulationSetSeed(std::string _JSONRequest);
+    std::string LIFCAbstractedFunctional(std::string _JSONRequest);
+
     std::string SimulationRunFor(std::string _JSONRequest);
     std::string SimulationRecordAll(std::string _JSONRequest);
-    std::string SimulationGetSpikeTimes(std::string _JSONRequest);
-    std::string SimulationGetRecording(std::string _JSONRequest);
-    std::string SimulationGetStatus(std::string _JSONRequest);
-    std::string SimulationSave(std::string _JSONRequest);
-    std::string SimulationGetSave(std::string _JSONRequest);
-    std::string SimulationLoad(std::string _JSONRequest);
-    std::string SimulationSaveModel(std::string _JSONRequest);
-    std::string SimulationLoadModel(std::string _JSONRequest);
-    std::string SimulationGetGeoCenter(std::string _JSONRequest);
-    std::string SimulationGetBoundingBox(std::string _JSONRequest);
-
-    std::string ManTaskStatus(std::string _JSONRequest);
 
     std::string SetPrePostStrength(std::string _JSONRequest);
     std::string SetAllStrength(std::string _JSONRequest);
     std::string BatchSetPrePostStrength(std::string _JSONRequest);
 
+    std::string SimulationGetSpikeTimes(std::string _JSONRequest);
+    std::string SimulationGetRecording(std::string _JSONRequest);
+    std::string SimulationGetStatus(std::string _JSONRequest);
+    std::string SimulationGetGeoCenter(std::string _JSONRequest);
+    std::string SimulationGetBoundingBox(std::string _JSONRequest);
+
     std::string AttachRecordingElectrodes(std::string _JSONRequest);
-    std::string CalciumImagingAttach(std::string _JSONRequest);
-    std::string CalciumImagingShowVoxels(std::string _JSONRequest);
-    std::string CalciumImagingRecordAposteriori(std::string _JSONRequest);
     std::string SetRecordInstruments(std::string _JSONRequest);
     std::string GetInstrumentRecordings(std::string _JSONRequest);
+
+    std::string SimulationSave(std::string _JSONRequest);
+    std::string SimulationGetSave(std::string _JSONRequest);
+    std::string SimulationLoad(std::string _JSONRequest);
+
+    std::string SimulationSaveModel(std::string _JSONRequest);
+    std::string SimulationLoadModel(std::string _JSONRequest);
 
     std::string GetSomaPositions(std::string _JSONRequest);
     std::string GetConnectome(std::string _JSONRequest);
     std::string GetAbstractConnectome(std::string _JSONRequest);
+
+    std::string ManTaskStatus(std::string _JSONRequest);
+
+    std::string CalciumImagingAttach(std::string _JSONRequest);
+    std::string CalciumImagingShowVoxels(std::string _JSONRequest);
+    std::string CalciumImagingRecordAposteriori(std::string _JSONRequest);
 
 
     /**
