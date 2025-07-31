@@ -34,18 +34,81 @@ namespace CoreStructs {
 // Forward declarations:
 struct Neuron;
 
-//! The neuron maintains informaition about receptors that were created.
-struct ReceptorData {
-    int ReceptorID = -1;
+struct ReceptorDataBase {
     int SrcNeuronID = -1;
     int DstNeuronID = -1;
-    Connections::Receptor * ReceptorPtr = nullptr;
     Neuron * SrcNeuronPtr = nullptr; // *** May want to get away from using these pointere and just use the Neuron IDs instead.
     Neuron * DstNeuronPtr = nullptr;
 
-    ReceptorData(int _RID, Connections::Receptor * _RPtr, Neuron * _SNPtr, Neuron * _DNPtr);
+    ReceptorDataBase(Neuron * _SNPtr, Neuron * _DNPtr): SrcNeuronID(_SNPtr->ID), DstNeuronID(_DNPtr->ID), SrcNeuronPtr(_SNPtr), DstNeuronPtr(_DNPtr) {}
 };
-//typedef std::tuple<std::shared_ptr<CoreStructs::Neuron>, float> ReceptorData;
+
+//! The neuron maintains informaition about receptors that were created.
+struct ReceptorData: public ReceptorDataBase {
+    int ReceptorID = -1;
+    Connections::Receptor * ReceptorPtr = nullptr;
+
+    ReceptorData(int _RID, Connections::Receptor * _RPtr, Neuron * _SNPtr, Neuron * _DNPtr):
+        ReceptorDataBase(_SNPtr, _DNPtr), ReceptorID(_RID), ReceptorPtr(_RPtr) {}
+}
+
+};
+
+//! This is used to store and update abstracted functional data for each
+//! receptor type by pre-post neuron pair.
+//! Note that this is quite different than the one-to-one mapping done in BS/SC ReceptorData.
+struct LIFCReceptorData: public ReceptorDataBase {
+    std::vector<int> ReceptorIDs;
+    std::vector<Connections::LIFCReceptor*> ReceptorPtrs;
+
+    float g_peak_sum_nS = 0.0; // used as abstracted g_peak_nS (sum)
+    float weight_g_peak_sum = 0.0; // only used for abstracted weight recalculation
+    float weight = 0.0; // abstracted weight
+    float tau_rise_ms = 0.0; // abstracted tau_rise (median)
+    float tau_decay_ms = 0.0; // abstracted tau_decay (median)
+    float onset_delay_ms = 0.0; // abstracted onset_delay (median)
+
+    float norm = 0.0; // Calculated once abstracted tau_rise_ms and tau_decay_ms are available
+    float g_k = 0.0; // Calculated in Update_Conductance
+
+    // A new LIFCReceptorData is created only where the data cannot be
+    // added to an existing abstracted functional receptor connection.
+    LIFCReceptorData(int _RID, Connections::LIFCReceptor * _RPtr, Neuron * _SNPtr, Neuron * _DNPtr):
+        ReceptorDataBase(_SNPtr, _DNPtr) {
+
+        ReceptorIDs.emplace_back(_RID);
+        ReceptorPtrs.emplace_back(_RPtr);
+
+        g_peak_sum_nS = _RPtr->PeakConductance_nS;
+        weight = _RPtr->Weight;
+        weight_g_peak_sum = _RPtr->Weight*_RPtr->PeakConductance_nS;
+        tau_rise_ms = _RPtr->PSPRise_ms;
+        tau_decay_ms = _RPtr->PSPDecay_ms;
+        onset_delay_ms = _RPtr->OnsetDelay_ms;
+        if (!dynamic_cast<LIFCNeuron*>(_SNPtr)->Sim->use_abstracted_LIF_receptors) {
+            norm = compute_normalization(tau_rise_ms, tau_decay_ms);
+        }
+    }
+
+    void AddToAbstractedFunctional(int _RID, Connections::LIFCReceptor * _RPtr);
+
+    void Calculate_Abstracted_PSP_Medians();
+
+    float E_k() { return ReceptorPtrs.at(0)->ReversalPotential_mV; }
+    bool voltage_gated() { return ReceptorPtrs.at(0)->voltage_gated; }
+
+    float g() { return g_k; }
+    float gE_k() { return g_k * E_k(); }
+
+    float Get_Current(float Vm) { return g_k * (Vm - E_k()); }
+
+    NeurotransmitterType Type() { return ReceptorPtrs.at(0)->Neurotransmitter; }
+
+    void Update_Conductance(float t, float Vm);
+
+    void STDP_Update(float tfire);
+
+};
 
 enum NeuronType: int {
     UnknownNeuron = 0,
@@ -86,6 +149,10 @@ struct Neuron {
     std::vector<float> TDirectStim_ms{}; // was deque
     size_t next_directstim_idx = 0;
 
+    //! Virtual destructor is essential for proper cleanup when
+    //! Simulation::Neurons is destructed.
+    virtual ~Neuron() {}
+
     //! Update the assumed neuron "type" based on its neurotransmitters.
     virtual void UpdateType(const std::string & neurotransmitter);
 
@@ -111,9 +178,9 @@ struct Neuron {
 
     virtual void SetSpontaneousActivity(float mean, float stdev, int Seed);
 
-    virtual void InputReceptorAdded(ReceptorData RData);
+    virtual void InputReceptorAdded(ReceptorData* RData);
 
-    virtual void OutputTransmitterAdded(ReceptorData RData);
+    virtual void OutputTransmitterAdded(ReceptorData* RData);
 };
 
 //! NeuronRecording is an unordered map containing data from simulation in a

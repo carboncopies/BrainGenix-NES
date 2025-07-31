@@ -107,10 +107,15 @@ public:
     float h_spike = 1.0 // Adaptive threshold factor
 
     bool reset_done = true; // Only used for reset AFTER
-    long last_spike_idx = -INFINITY;
+    size_t updates_since_spike = 1000;
     float t_last_spike = -1000.0;
 
     float tDiff_ms = 0.0;
+
+    bool abstracted_medians = false; // Done at start of simulation when build is complete
+
+    std::vector<CoreStructs::LIFCReceptorData*> LIFCReceptorDataVec;
+    std::vector<CoreStructs::LIFCReceptorData*> LIFCTransmitterDataVec;
 
 public:
     LIFCNeuron(const CoreStructs::LIFCNeuronStruct & lifcneuronstruct, Simulation & _Sim);
@@ -121,18 +126,25 @@ public:
     // *** Begin with the functions as per IF_with_stdp, then find parallels in
     //     BSNeuron function calls to overload.
 
-    void spike(size_t i, double t);
-    void check_spiking(size_t i, float t, float V_th_adaptive);
-    void update_conductances(size_t i, float t);
+    void spike(double t);
+    void check_spiking(float t, float V_th_adaptive);
+    void update_conductances(float t);
     float update_currents();
     float update_membrane_potential_forward_Euler(float I);
     void update_membrane_potential_exponential_Euler_Rm();
     void update_membrane_potential_exponential_Euler_Cm();
     float update_adaptive_threshold();
-    void update_with_classical_reset_clamp(size_t i, float t);
-    void update_with_reset_options(size_t i, float t);
-    void update(size_t i, float t);
-    void record(size_t i);
+    void update_with_classical_reset_clamp(float t);
+    void update_with_reset_options(float t);
+
+    CoreStructs::LIFCReceptorData* FindLIFCReceptorPairing(LIFCNeuron* SrcNeuronPtr, Connections::LIFCReceptor* RPtr);
+    void Calculate_Abstracted_PSP_Medians();
+
+    virtual void Update(float t_ms, bool recording);
+
+    virtual void InputReceptorAdded(CoreStructs::LIFCReceptorData* RData);
+
+    virtual void OutputTransmitterAdded(CoreStructs::LIFCReceptorData* RData);
 
 };
 

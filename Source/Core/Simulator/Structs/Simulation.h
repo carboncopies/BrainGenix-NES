@@ -103,6 +103,7 @@ public:
     std::vector<float> TRecorded_ms{};
 
     bool STDP = false; // STDP simulation included when true
+    bool use_abstracted_LIF_receptors = true; // Abstracted functional receptors with LIFCNeuron
 
     std::atomic<bool> IsProcessing = false;  /**Indicator if the simulation is currently being modified or not*/
     std::atomic<bool> WorkRequested = false; /**Indicator if work is requested to be done on this simulation by a worker thread*/
@@ -138,6 +139,9 @@ public:
     // moved as the vector is expanded and remapped, and InputReceptorAdded delivers
     // a static pointer:
     std::vector<std::unique_ptr<Connections::Receptor>> Receptors; /**List of receptor connections, index is their id (and it's also stored in the struct itself)*/
+    std::vector<std::unique_ptr<Connections::LIFCReceptor>> LIFCReceptors; /**List of receptor connections, index is their id (and it's also stored in the struct itself)*/
+    std::vector<std::unique_ptr<CoreStructs::ReceptorData>> ReceptorDataVec; // Used for functional data access
+    std::vector<std::unique_ptr<CoreStructs::LIFCReceptorData>> LIFCReceptorDataVec;
 
     std::vector<Tools::PatchClampDAC> PatchClampDACs; /**List of patchclamp dacs, id is index*/
     std::vector<Tools::PatchClampADC> PatchClampADCs; /**List of patchclamp adcs, id is index*/
@@ -178,6 +182,7 @@ public:
     int AddSCNeuron(CoreStructs::SCNeuronStruct& _N);
     int AddLIFCNeuron(CoreStructs::LIFCNeuronStruct& _N);
     int AddReceptor(Connections::Receptor& _C);
+    int AddLIFCReceptor(Connections::LIFCReceptor& _C);
     void RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompartmentIDs, uint64_t _NeuronUID);
 
     bool SaveModel(const std::string& Name);

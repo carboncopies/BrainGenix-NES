@@ -163,19 +163,19 @@ float BSNeuron::VPSPT_mV(float t_ms) {
     assert(t_ms >= 0.0);
     float vPSPt_mV = 0.0;
 
-    for (auto receptorData : this->ReceptorDataVec) {
-        if (receptorData.ReceptorPtr->Conductance_nS!=0.0) {
-            auto srcCell = receptorData.SrcNeuronPtr;
+    for (auto receptorDataptr : this->ReceptorDataVec) {
+        if (receptorDataptr->ReceptorPtr->Conductance_nS!=0.0) {
+            auto srcCell = receptorDataptr->SrcNeuronPtr;
             if (!srcCell->HasSpiked()) continue;
 
             float dtPSP_ms = srcCell->DtAct_ms(t_ms);
-            float amp = this->IPSP_nA / receptorData.ReceptorPtr->Conductance_nS;
+            float amp = this->IPSP_nA / receptorDataptr->ReceptorPtr->Conductance_nS;
             //if (ID == 1) std::cout << "IPSP_nA=" << this->IPSP_nA << " Cond nS = " << receptorData.ReceptorPtr->Conductance_nS << " amp = " << amp << '\n';
 
             vPSPt_mV += SignalFunctions::DoubleExponentExpr(
                 amp, 
-                receptorData.ReceptorPtr->TimeConstantRise_ms, //this->TauPSPr_ms, 
-                receptorData.ReceptorPtr->TimeConstantDecay_ms, //this->TauPSPd_ms,
+                receptorDataptr->ReceptorPtr->TimeConstantRise_ms, //this->TauPSPr_ms, 
+                receptorDataptr->ReceptorPtr->TimeConstantDecay_ms, //this->TauPSPd_ms,
                 dtPSP_ms);
         }
     }
@@ -341,12 +341,12 @@ void BSNeuron::UpdateConvolvedFIFO(const std::vector<float> & reversed_kernel) {
     }
 };
 
-void BSNeuron::InputReceptorAdded(CoreStructs::ReceptorData RData) {
+void BSNeuron::InputReceptorAdded(CoreStructs::ReceptorData* RData) {
     ReceptorDataVec.emplace_back(RData);
 
 }
 
-void BSNeuron::OutputTransmitterAdded(CoreStructs::ReceptorData RData) {
+void BSNeuron::OutputTransmitterAdded(CoreStructs::ReceptorData* RData) {
     TransmitterDataVec.emplace_back(RData);
 
 }

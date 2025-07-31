@@ -86,8 +86,8 @@ public:
     std::vector<float> VmRecorded_mV{};
     std::deque<float> FIFO{};
     std::vector<float> ConvolvedFIFO{};
-    std::vector<CoreStructs::ReceptorData> ReceptorDataVec{};
-    std::vector<CoreStructs::ReceptorData> TransmitterDataVec{};
+    std::vector<CoreStructs::ReceptorData*> ReceptorDataVec{};
+    std::vector<CoreStructs::ReceptorData*> TransmitterDataVec{};
 
     std::shared_ptr<Distributions::Distribution> DtSpontDist{}; //! Distribution for delta t spontaneous (time changed since last spontaneous activity).
 
@@ -154,7 +154,7 @@ public:
 
     //! Updates all potential components, the membrane potential
     //! and the time of update.
-    void Update(float t_ms, bool recording);
+    virtual void Update(float t_ms, bool recording);
 
     //! NOTE: SetFIFO must be called first, otherwise the FIFO is not
     //!       updated in UpdateVm.
@@ -170,9 +170,9 @@ public:
     //! FIFO_dt_ms == 0.0 means used a FIFO of size 1.
     void SetFIFO(float FIFO_ms, float FIFO_dt_ms, size_t reversed_kernel_size);
 
-    virtual void InputReceptorAdded(CoreStructs::ReceptorData RData);
+    virtual void InputReceptorAdded(CoreStructs::ReceptorData* RData);
 
-    virtual void OutputTransmitterAdded(CoreStructs::ReceptorData RData);
+    virtual void OutputTransmitterAdded(CoreStructs::ReceptorData* RData);
 
 };
 

@@ -206,10 +206,52 @@ int Simulation::AddReceptor(Connections::Receptor& _C) {
         return -1;
     }
 
-    CoreStructs::ReceptorData RData(_C.ID, Receptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
-    SrcNeuronPtr->OutputTransmitterAdded(RData);
-    DstNeuronPtr->InputReceptorAdded(RData);
+    //CoreStructs::ReceptorData RData(_C.ID, Receptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
+    std::unique_ptr<CoreStructs::ReceptorData> RData = std::make_unique<CoreStructs::ReceptorData>(_C.ID, Receptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
+    SrcNeuronPtr->OutputTransmitterAdded(RData.get());
+    DstNeuronPtr->InputReceptorAdded(RData.get());
     SrcNeuronPtr->UpdateType(_C.Neurotransmitter);
+    ReceptorDataVec.push_back(RData);
+
+    return _C.ID;
+}
+
+int Simulation::AddLIFCReceptor(Connections::LIFCReceptor& _C) {
+
+    _C.ID = LIFCReceptors.size();
+
+    LIFCReceptors.push_back(std::make_unique<Connections::LIFCReceptor>(_C));
+
+    // Inform destination neuron of its new input receptor.
+    CoreStructs::Neuron* SrcNeuronPtr = FindNeuronByCompartment(_C.SourceCompartmentID);
+    if (SrcNeuronPtr==nullptr) {
+        Logger_->Log("Error: No source neuron associated with compartment "+std::to_string(_C.SourceCompartmentID), 7);
+        return -1;
+    }
+    CoreStructs::Neuron* DstNeuronPtr = FindNeuronByCompartment(_C.DestinationCompartmentID);
+    if (DstNeuronPtr==nullptr) {
+        Logger_->Log("Error: No target neuron associated with compartment "+std::to_string(_C.DestinationCompartmentID), 7);
+        return -1;
+    }
+
+    if (use_abstracted_LIF_receptors) {
+        CoreStructs::LIFCReceptorData* RDataFunctional = DstNeuronPtr->FindLIFCReceptorPairing(dynamic_cast<LIFCNeuron*>(SrcNeuronPtr), LIFCReceptors.back().get());
+        if (RDataFunctional==nullptr) {
+            std::unique_ptr<CoreStructs::LIFCReceptorData> RData = std::make_unique<CoreStructs::LIFCReceptorData>(_C.ID, LIFCReceptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
+            SrcNeuronPtr->OutputTransmitterAdded(RData.get());
+            DstNeuronPtr->InputReceptorAdded(RData.get());
+            SrcNeuronPtr->UpdateType(_C.Neurotransmitter);
+            LIFCReceptorDataVec.push_back(RData);
+        } else {
+            RDataFunctional->AddToAbstractedFunctional(_C.ID, LIFCReceptors.back().get());
+        }
+    } else {
+        std::unique_ptr<CoreStructs::LIFCReceptorData> RData = std::make_unique<CoreStructs::LIFCReceptorData>(_C.ID, LIFCReceptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
+        SrcNeuronPtr->OutputTransmitterAdded(RData.get());
+        DstNeuronPtr->InputReceptorAdded(RData.get());
+        SrcNeuronPtr->UpdateType(_C.Neurotransmitter);
+        LIFCReceptorDataVec.push_back(RData);
+    }
 
     return _C.ID;
 }
@@ -822,9 +864,9 @@ bool Simulation::UpdatePrePostStrength(int PresynapticID, int PostsynapticID, fl
     if (PostsynapticPtr->Class_<CoreStructs::_BSNeuron) return false;
 
     Connections::Receptor* Rptr = nullptr;
-    for (auto& _ReceptorData : static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->ReceptorDataVec) {
-        if (_ReceptorData.SrcNeuronID==PresynapticID) {
-            Rptr = _ReceptorData.ReceptorPtr;       // Remember the last one.
+    for (auto& _ReceptorDataptr : static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->ReceptorDataVec) {
+        if (_ReceptorDataptr->SrcNeuronID==PresynapticID) {
+            Rptr = _ReceptorDataptr->ReceptorPtr;       // Remember the last one.
             if (Rptr) Rptr->Conductance_nS = 0.0;   // Clear.
         }
     }
@@ -1092,10 +1134,10 @@ size_t Simulation::GetAbstractConnection(int PreSynID, int PostSynID, bool NonZe
 
     size_t NumReceptors = 0;
     Connections::Receptor* Rptr = nullptr;
-    for (auto& _ReceptorData : static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->ReceptorDataVec) {
-        if (_ReceptorData.SrcNeuronID==PreSynID) {
+    for (auto& _ReceptorDataptr : static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->ReceptorDataVec) {
+        if (_ReceptorDataptr->SrcNeuronID==PreSynID) {
             if (NonZero) {
-                if (_ReceptorData.ReceptorPtr->Conductance_nS!=0.0) {
+                if (_ReceptorDataptr->ReceptorPtr->Conductance_nS!=0.0) {
                     NumReceptors++;
                 }
             } else {

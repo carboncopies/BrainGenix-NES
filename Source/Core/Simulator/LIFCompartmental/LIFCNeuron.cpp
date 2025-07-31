@@ -8,36 +8,7 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
-// Helper function to compute normalization factor
-float compute_normalization(float tau_rise, float tau_decay) {
-    if (tau_rise == tau_decay) {
-        throw std::invalid_argument("tau_rise must be different from tau_decay for normalization.");
-    }
-    float t_peak = (tau_rise * tau_decay) / (tau_decay - tau_rise) * log(tau_decay / tau_rise);
-    float norm = exp(-t_peak / tau_decay) - exp(-t_peak / tau_rise);
-    return norm;
-}
-
-// Function to compute normalized synaptic conductance
-float g_norm(float t, const std::vector<float>& spike_times, float tau_rise, float tau_decay, 
-             float norm, float onset_delay, float spike_dt_delta = 1000, float history_delta = 0.001) {
-    t -= onset_delay;
-    history_delta *= norm;
-    double gnorm = 0;
-    
-    // Iterate in reverse to process most recent spikes first
-    for (auto it = spike_times.rbegin(); it != spike_times.rend(); ++it) {
-        double spike_dt = t - *it;
-        if (spike_dt >= 0) {
-            double g_norm_contribution = exp(-spike_dt / tau_decay) - exp(-spike_dt / tau_rise);
-            if (spike_dt > spike_dt_delta && g_norm_contribution < history_delta) {
-                return gnorm / norm;
-            }
-            gnorm += g_norm_contribution;
-        }
-    }
-    return gnorm / norm;
-}
+// Note that compute_normalization() and g_norm() are in Receptor.h.
 
 LIFCNeuron::LIFCNeuron(const CoreStructs::LIFCNeuronStruct & lifcneuronstruct, Simulation & _Sim): BSNeuron(lifcneuronstruct.ID), Sim(_Sim) {
     build_data = lifcneuronstruct;
@@ -117,9 +88,9 @@ Geometries::Vec3D& LIFCNeuron::GetCellCenter() {
     return GeoCenter_um;
 };
 
-void LIFCNeuron::spike(size_t i, float tfire) {
+void LIFCNeuron::spike(float tfire) {
     // Spike logging
-    last_spike_idx = static_cast<long>(i);
+    updates_since_spike = 0;
     t_last_spike = tfire;
     TAct_ms.push_back(t_last_spike);
     
@@ -153,18 +124,18 @@ void LIFCNeuron::spike(size_t i, float tfire) {
     
     // STDP
     if (Sim->STDP) {
-        for (auto p : presyn) {
-            p->stdp_update(tfire);
+        for (auto& RDataptr : LIFCReceptorDataVec) {
+            RDataptr->STDP_Update(tfire);
         }
     }
 }
 
-void LIFCNeuron::check_spiking(size_t i, float t, float V_th_adaptive) {
+void LIFCNeuron::check_spiking(float t, float V_th_adaptive) {
     if (next_directstim_idx < TDirectStim_ms.size()) {
         float tFire_ms = TDirectStim_ms.at(next_directstim_idx);
         if (tFire_ms <= t) {
             TAct_ms.push_back(tFire_ms);
-            spike(i, tFire_ms);
+            spike(tFire_ms);
             next_directstim_idx++;
             return;
         }
@@ -173,16 +144,27 @@ void LIFCNeuron::check_spiking(size_t i, float t, float V_th_adaptive) {
     if ((fatigue_treshold > 0) && (fatigue > fatigue_threshold)) {
         return;
     }
+
+    if (TauSpont_ms.stdev != 0) {
+        if (t >= TSpontNext_ms) {
+            spike(t);
+
+            // Obtain interval to the next spontaneous event from the distribution.
+            float dt_spont = DtSpontDist->RandomSample(1)[0]; // Generate 1 random sample in a vector, take the 0th element.
+            TSpontNext_ms = t + dt_spont;
+            return;
+        }
+    }
     
     if (Vm_mV >= V_th_adaptive) {
-        spike(i, t);
+        spike(t);
     }
 }
 
-void LIFCNeuron::update_conductances(size_t i, float t) {
+void LIFCNeuron::update_conductances(float t) {
     // Update PSP conductances
-    for (auto p : presyn) {
-        p->update(i, t, Vm);
+    for (auto& RDataptr : LIFCReceptorDataVec) {
+        RDataptr->Update_Conductance(t, Vm_mV);
     }
     
     // Update fAHP, sAHP, ADP conductances
@@ -211,8 +193,8 @@ float LIFCNeuron::update_currents() {
               g_sAHP_nS * (Vm_mV - E_AHP_mV) +
               g_ADP_nS * (Vm_mV - E_ADP_mV);
     
-    for (auto p : presyn) {
-        I += p->g * (Vm_mV - p->E);
+    for (auto& RDataptr : LIFCReceptorDataVec) {
+        I += RDataptr->Get_Current(Vm_mV); // p->g * (Vm_mV - p->E)
     }
     
     return I;
@@ -229,9 +211,9 @@ void LIFCNeuron::update_membrane_potential_exponential_Euler_Rm() {
     float sum_g = 0.0;
     float sum_gE = 0.0;
     
-    for (auto p : presyn) {
-        sum_g += p->g;
-        sum_gE += p->g * p->E;
+    for (auto& RDataptr : LIFCReceptorDataVec) {
+        sum_g += RDataptr->g();
+        sum_gE += RDataptr->gE_k(); // p->g * p->E
     }
     
     float V_inf = (g_fAHP_nS * E_AHP_mV + g_sAHP_nS * E_AHP_mV + g_ADP_nS * E_ADP_mV + sum_gE + (1 / Rm_GOhm) * VRest_mV) /
@@ -244,9 +226,9 @@ void LIFCNeuron::update_membrane_potential_exponential_Euler_Cm() {
     float sum_g = 0.0;
     float sum_gE = 0.0;
     
-    for (auto p : presyn) {
-        sum_g += p->g;
-        sum_gE += p->g * p->E;
+    for (auto& RDataptr : LIFCReceptorDataVec) {
+        sum_g += RDataptr->g();
+        sum_gE += RDataptr->gE_k(); // p->g * p->E
     }
     
     float g_total = g_L_nS + g_fAHP_nS + g_sAHP_nS + g_ADP_nS + sum_g;
@@ -272,7 +254,7 @@ float LIFCNeuron::update_adaptive_threshold() {
     return V_th_adaptive;
 }
 
-void LIFCNeuron::update_with_classical_reset_clamp(size_t i, float t) {
+void LIFCNeuron::update_with_classical_reset_clamp(float t) {
     float I = update_currents();
     
     if (t < (t_last_spike + tau_absref_ms)) {
@@ -285,13 +267,13 @@ void LIFCNeuron::update_with_classical_reset_clamp(size_t i, float t) {
     float V_th_adaptive = update_adaptive_threshold();
     
     // Check possible spiking:
-    check_spiking(i, t, V_th_adaptive);
+    check_spiking(t, V_th_adaptive);
 }
 
-void LIFCNeuron::update_with_reset_options(size_t i, float t) {
+void LIFCNeuron::update_with_reset_options(float t) {
     // (Option:) Spike onset drives membrane potential below threshold.
     if (build_data.ResetMethod == CoreStructs::ONSET) {
-        if ((last_spike_idx + 1) == i) {
+        if (updates_since_spike == 1) {
             Vm_mV = VReset_mV;
         }
     }
@@ -316,12 +298,37 @@ void LIFCNeuron::update_with_reset_options(size_t i, float t) {
         }
         
         // Check possible spiking:
-        check_spiking(i, t, V_th_adaptive);
+        check_spiking(t, V_th_adaptive);
     }
 }
 
-void LIFCNeuron::update(size_t i, float t) {
-    tDiff_ms = t - T_ms;
+// Search for SrcNeuron-DstNeuron-ReceptorType triplet in LIFCReceptorDataVec.
+CoreStructs::LIFCReceptorData* LIFCNeuron::FindLIFCReceptorPairing(LIFCNeuron* SrcNeuronPtr, Connections::LIFCReceptor* RPtr) {
+    // We already know the DstNeuron ID is this neuron's ID, so we're looking for SrcNeuron match and receptor type match
+    for (auto& LIFCRDataptr : LIFCReceptorDataVec) {
+        if (LIFCRDataptr->SrcNeuronPtr == SrcNeuronPtr) {
+            if (LIFCRDataptr->Type() == RPtr->Neurotransmitter) return LIFCRDataptr;
+        }
+    }
+    return nullptr;
+}
+
+void LIFCNeuron::Calculate_Abstracted_PSP_Medians() {
+    for (auto& RData : LIFCReceptorDataVec) {
+        RData->Calculate_Abstracted_PSP_Medians();
+    }
+}
+
+void LIFCNeuron::Update(float t_ms, bool recording) {
+    assert(t_ms >= 0.0);
+
+    tDiff_ms = t_ms - T_ms;
+    if (tDiff_ms < 0) return;
+
+    if (!abstracted_medians) { // Prepared once at the start of the simulation
+        if (Sim->use_abstracted_LIF_receptors) Calculate_Abstracted_PSP_Medians();
+        abstracted_medians = true;
+    }
 
     // Hard-cap nonlinear spiking fatigue threshold.
     if (fatigue_treshold > 0) {
@@ -329,22 +336,39 @@ void LIFCNeuron::update(size_t i, float t) {
         fatigue = std::max(fatigue, 0.0);
     }
     
-    update_conductances(i, t);
+    update_conductances(t);
     
     if (build_data.UpdateMethod == CoreStructs::CLASSICAL) {
-        update_with_classical_reset_clamp(i, t);
+        update_with_classical_reset_clamp(t);
     } else {
-        update_with_reset_options(i, t);
+        update_with_reset_options(t);
     }
 
-    T_ms = t;
+    // FIFO update if needed for something like Calcium imaging
+    if (!FIFO.empty()) {
+        FIFO.pop_front();
+        float v = VRest_mV - Vm_mV;
+        v = v < 0.0 ? 0.0 : v / 20.0; // *** Not clear to me what the sign and scaling should really be here.
+        FIFO.push_back(v);
+    }
+
+    if (recording) {
+        Record(t_ms);
+    }
+
+    T_ms = t_ms;
+    updates_since_spike++; // *** Could add if (t_last_spike>=0.0) if it helps with overruns.
+};
+
+void LIFCNeuron::InputReceptorAdded(CoreStructs::LIFCReceptorData* RData) {
+    LIFCReceptorDataVec.emplace_back(RData);
+
 }
 
-void LIFCNeuron::record(size_t i) {
-    TRecorded_ms.push_back(T_ms);
-    VmRecorded_mV.push_back(Vm_mV);
-}
+void LIFCNeuron::OutputTransmitterAdded(CoreStructs::LIFCReceptorData* RData) {
+    LIFCTransmitterDataVec.emplace_back(RData);
 
+}
 
 }; // namespace Simulator
 }; // namespace NES

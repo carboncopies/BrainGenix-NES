@@ -9,6 +9,7 @@
 */
 
 #include <iostream>
+#include <algorithm> // for std::sort(), std::min(), std::max()
 
 #include <Simulator/Structs/Neuron.h>
 
@@ -23,9 +24,58 @@ namespace CoreStructs {
     std::cout << "DEBUG --> Wrong OOP level: " << __func__ << '\n'; std::cout.flush();\
 }
 
-ReceptorData::ReceptorData(int _RID, Connections::Receptor * _RPtr, Neuron * _SNPtr, Neuron * _DNPtr):
-        ReceptorID(_RID), SrcNeuronID(_SNPtr->ID), DstNeuronID(_DNPtr->ID), ReceptorPtr(_RPtr), SrcNeuronPtr(_SNPtr), DstNeuronPtr(_DNPtr) {
+// This is for the abstracted parameters that do not use a median.
+void LIFCReceptorData::AddToAbstractedFunctional(int _RID, Connections::LIFCReceptor * _RPtr) {
+    g_peak_sum_nS += _RPtr->PeakConductance_nS;
+    weight_g_peak_sum += _RPtr->Weight*_RPtr->PeakConductance_nS;
+    weight = weight_g_peak_sum / g_peak_sum_nS;
 }
+
+// This is for the abstracted parameters that do use a median.
+// It is run once at the start of simulation.
+void LIFCReceptorData::Calculate_Abstracted_PSP_Medians() {
+    std::vector<float> tau_rises;
+    std::vector<float> tau_decays;
+    std::vector<float> onset_delays;
+    for (auto& LIFCRptr : ReceptorPtrs) {
+        tau_rises.push_back(LIFCRptr->PSPRise_ms);
+        tau_decays.push_back(LIFCRptr->PSPDecay_ms);
+        onset_delays.push_back(LIFCRptr->OnsetDelay_ms);
+    }
+    std::sort(tau_rises.begin(), tau_rises.end());
+    std::sort(tau_decays.begin(), tau_decays.end());
+    std::sort(onset_delays.begin(), onset_delays.end());
+    size_t size = tau_rises.size();
+    if (size % 2 == 1) {
+        tau_rise_ms = tau_rises[size / 2];
+        tau_decay_ms = tau_decays[size / 2];
+        onset_delay_ms = onset_delays[size / 2];
+    } else {
+        tau_rise_ms = (tau_rises[size / 2 - 1] + tau_rises[size / 2]) / 2.0;
+        tau_decay_ms = (tau_decays[size / 2 - 1] + tau_decays[size / 2]) / 2.0;
+        onset_delay_ms = (onset_delays[size / 2 - 1] + onset_delays[size / 2]) / 2.0;
+    }
+    norm = compute_normalization(tau_rise_ms, tau_decay_ms);
+}
+
+// Effect of voltage-gated Mg2+ block.
+float B_NMDA(float V, float Mg = 1.0) {
+    float gamma = 0.33;  // per mM
+    float beta = 0.062;  // per mV
+    return 1.0 / (1.0 + gamma * Mg * exp(-beta * V));
+}
+
+void LIFCReceptorData::Update_Conductance(float t, float Vm) {
+    auto& syn_times = SrcNeuronPtr->TAct_ms;
+    if (voltage_gated()) {
+        g_k = std::min(g_peak_sum_nS, B_NMDA(Vm) * weight * g_peak_sum_nS * 
+                     g_norm(t, syn_times, tau_rise_ms, tau_decay_ms, norm, onset_delay_ms));
+    } else {
+        g_k = std::min(g_peak_sum_nS, weight * g_peak_sum_nS * 
+                     g_norm(t, syn_times, tau_rise_ms, tau_decay_ms, norm, onset_delay_ms));
+    }
+}
+
 
 //! Update the assumed neuron type based on its neurotransmitters.
 //! Note: For now, we only use the first 4 characters to match, so
@@ -86,11 +136,11 @@ void Neuron::SetSpontaneousActivity(float mean, float stdev, int Seed) {
     WARNWRONGOOPLEVEL();
 }
 
-void Neuron::InputReceptorAdded(ReceptorData RData) {
+void Neuron::InputReceptorAdded(ReceptorData* RData) {
     WARNWRONGOOPLEVEL();
 }
 
-void Neuron::OutputTransmitterAdded(ReceptorData RData) {
+void Neuron::OutputTransmitterAdded(ReceptorData* RData) {
     WARNWRONGOOPLEVEL();
 }
 

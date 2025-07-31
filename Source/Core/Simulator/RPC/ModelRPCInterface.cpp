@@ -29,6 +29,7 @@ ModelRPCInterface::ModelRPCInterface(BG::Common::Logger::LoggingSystem* _Logger,
     // Register Callbacks
     _RPCManager->AddRoute("Simulation/Staple/Create",                 std::bind(&ModelRPCInterface::StapleCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Receptor/Create",               std::bind(&ModelRPCInterface::ReceptorCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/LIFCReceptor/Create",           std::bind(&ModelRPCInterface::LIFCReceptorCreate, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/Compartments/BS/Create",        std::bind(&ModelRPCInterface::BSCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Neuron/BS/Create",              std::bind(&ModelRPCInterface::BSNeuronCreate, this, std::placeholders::_1));
@@ -81,7 +82,7 @@ std::string ModelRPCInterface::StapleCreate(std::string _JSONRequest) {
  * This receptor create handler creates an object that contains information
  * about source and destination compartments and the physical location of
  * the receptor, as well as receptor paramters.
- * (*** TODO: This does not yet link to the shape of the receptor!!)
+ * (*** TODO: This does not yet link to the shape of the receptor!! -- or does it now? See ReceptorMorphology.)
  * 
  * The receptor object is maintained in a list at the Simulation level,
  * and the target neuron is found (via the destination compartment), and
@@ -123,6 +124,88 @@ std::string ModelRPCInterface::ReceptorCreate(std::string _JSONRequest) {
     C.safeset_Neurotransmitter(neurotransmitter_cache.c_str());
 
     C.ID = Handle.Sim()->AddReceptor(C);
+    if (C.ID<0) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    // Return Result ID
+    return Handle.ResponseWithID("ReceptorID", C.ID);
+}
+
+const std::map<std::string, Connections::LIFCSTDPMethodEnum> LIFCSTDPMethodStrToEnum = {
+    "Hebbian", Connections::STDPHEBBIAN,
+    "Anti-Hebbian", Connections::STDPANTIHEBBIAN,
+    "None", Connections::STDPNONE
+};
+
+Connections::LIFCSTDPMethodEnum LIFCSTDPMethod(const std::string& stdpmethod_cache) {
+    auto it = LIFCSTDPMethodStrToEnum.find(stdpmethod_cache);
+    if (it == LIFCSTDPMethodStrToEnum.end()) {
+        return Connections::NUMLIFCSTDPMethodEnum;
+    }
+    return it->second;
+}
+
+const std::map<std::string, Connections::NeurotransmitterType> LIFCNeurotransmitterStrToEnum = {
+    "AMPA", Connections:AMPA,
+    "GABA", Connections:GABA,
+    "NMDA", Connections:NMDA
+};
+
+Connections::NeurotransmitterType LIFCNeurotransmitter(const std::string& neurotransmitter_cache) {
+    auto it = LIFCNeurotransmitterStrToEnum.find(neurotransmitter_cache);
+    if (it == LIFCNeurotransmitterStrToEnum.end()) {
+        return Connections::NUMNeurotransmitterType;
+    }
+    return it->second;
+}
+
+std::string ModelRPCInterface::LIFCReceptorCreate(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/LIFCReceptor/Create", Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Build New Receptor Object
+    Connections::LIFCReceptor C;
+    std::string neurotransmitter_cache;
+    std::string stdpmethod_cache;
+    if ((!Handle.GetParInt("SourceCompartmentID", C.SourceCompartmentID))
+        || (!Handle.GetParInt("DestinationCompartmentID", C.DestinationCompartmentID))
+
+        || (!Handle.GetParFloat("ReversalPotential_mV", C.ReversalPotential_mV))
+        || (!Handle.GetParFloat("PSPRise_ms", C.PSPRise_ms))
+        || (!Handle.GetParFloat("PSPDecay_ms", C.PSPDecay_ms))
+        || (!Handle.GetParFloat("PeakConductance_nS", C.PeakConductance_nS))
+        || (!Handle.GetParFloat("Weight", C.Weight))
+        || (!Handle.GetParFloat("OnsetDelay_ms", C.OnsetDelay_ms))
+        || (!Handle.GetParString("Neurotransmitter", neurotransmitter_cache))
+        || (!Handle.GetParBool("voltage_gated", C.voltage_gated))
+
+        || (!Handle.GetParString("STDP_Method", stdpmethod_cache))
+        || (!Handle.GetParFloat("STDP_A_pos", C.STDP_A_pos))
+        || (!Handle.GetParFloat("STDP_A_neg", C.STDP_A_neg))
+        || (!Handle.GetParFloat("STDP_Tau_pos", C.STDP_Tau_pos))
+        || (!Handle.GetParFloat("STDP_Tau_neg", C.STDP_Tau_neg))
+
+        || (!Handle.GetParInt("ReceptorMorphology", C.ShapeID))
+        || (!Handle.GetParString("Name", C.Name))) {
+        return Handle.ErrResponse();
+    }
+    C.Neurotransmitter = LIFCNeurotransmitter(neurotransmitter_cache);
+    if (C.Neurotransmitter >= Connections::NUMNeurotransmitterType) {
+        Logger_->Log("Error: Unrecognized LIFC Neurotransmitter type", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    C.STDP_Method = LIFCSTDPMethod(stdpmethod_cache);
+    if (C.STDP_Method >= Connections::NUMLIFCSTDPMethodEnum) {
+        Logger_->Log("Error: Unrecognized LIFC STDP Method", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    C.ID = Handle.Sim()->AddLIFCReceptor(C);
     if (C.ID<0) {
         return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
