@@ -15,7 +15,7 @@ stages:
 include: 
   # Update CI Containersers
   - '/CI/Images/Ubuntu2204/CI.yml'
-  # - '/CI/Images/Ubuntu2004/CI.yml'
+  - '/CI/Images/Ubuntu2004/CI.yml'
   - '/CI/Images/Doxygen/CI.yml'
   # - '/CI/Images/Drawio/CI.yml' Disabled for now since this uses Electron which is a pain in the ass.
   # - '/CI/Images/Debian11/CI.yml'
