@@ -1,9 +1,9 @@
-# Trying to add caching (I will ask before i try this)
-# cache:
-#   key: "$CI_JOB_NAME"
-#   paths:
-#     - Build/
-#     - .ccache/
+# Trying to add caching (I will ask before this)
+cache:
+  key: "$CI_JOB_NAME"
+  paths:
+    - Build/
+    - .ccache/
 
 # Set some global variables
 variables:
