@@ -120,8 +120,6 @@ find_package(GTest CONFIG REQUIRED)
 # Ensure config is copied to bin
 file(COPY "${SRC_DIR}/Data/NES.yaml" DESTINATION "${BIN_DIR}")
 
-
-
 # Run Configuration Tools
 include(${CMAKE_SCRIPTS_DIR}/VersioningSystem/VersioningSystem.cmake)
 include(${CMAKE_SCRIPTS_DIR}/CompilePlatformInfo/CompilePlatformInfo.cmake)
