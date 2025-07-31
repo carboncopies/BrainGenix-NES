@@ -21,7 +21,7 @@ include:
   - '/CI/Images/Doxygen/CI.yml'
   # - '/CI/Images/Drawio/CI.yml' Disabled for now since this uses Electron which is a pain in the ass.
   # - '/CI/Images/Debian11/CI.yml'
-  - '/CI/Images/Debian12/CI.yml'
+  # - '/CI/Images/Debian12/CI.yml'
 
   # Executable Builders
   - '/CI/Build/Ubuntu2204/CI.yml'
