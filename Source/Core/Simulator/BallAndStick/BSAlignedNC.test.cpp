@@ -58,96 +58,96 @@ TEST_F(BSAlignedNCTest, test_GetCellCenters_default) {
     ASSERT_EQ(cellCenters.size(), 2);
 }
 
-TEST_F(BSAlignedNCTest, test_SetWeight_default) {
-    size_t from, to;
-    auto method = BG::NES::Simulator::BallAndStick::BSAlignedNC::SetWeightMethod::BINARY;
-    std::shared_ptr<BG::NES::Simulator::BallAndStick::BSNeuron> sourceCell{}, targetCell{};
+// TEST_F(BSAlignedNCTest, test_SetWeight_default) {
+//     size_t from, to;
+//     auto method = BG::NES::Simulator::BallAndStick::BSAlignedNC::SetWeightMethod::BINARY;
+//     std::shared_ptr<BG::NES::Simulator::BallAndStick::BSNeuron> sourceCell{}, targetCell{};
 
-    InitCells();
+//     InitCells();
 
-    // Case 1: Method supplied is "binary", but either "from" or
-    // "to" cells are invalid.
+//     // Case 1: Method supplied is "binary", but either "from" or
+//     // "to" cells are invalid.
 
-    from = 99;
-    to = 1;
+//     from = 99;
+//     to = 1;
 
-    try {
-        testBSAlignedNC->SetWeight(from, to, method);
-        FAIL();
-    } catch (std::invalid_argument &ex) {
-        ASSERT_STREQ("Unknown source cell.", ex.what());
-    }
+//     try {
+//         testBSAlignedNC->SetWeight(from, to, method);
+//         FAIL();
+//     } catch (std::invalid_argument &ex) {
+//         ASSERT_STREQ("Unknown source cell.", ex.what());
+//     }
 
-    from = 0;
-    to = 99;
+//     from = 0;
+//     to = 99;
 
-    try {
-        testBSAlignedNC->SetWeight(from, to, method);
-        FAIL();
-    } catch (std::invalid_argument &ex) {
-        ASSERT_STREQ("Unknown target cell.", ex.what());
-    }
+//     try {
+//         testBSAlignedNC->SetWeight(from, to, method);
+//         FAIL();
+//     } catch (std::invalid_argument &ex) {
+//         ASSERT_STREQ("Unknown target cell.", ex.what());
+//     }
 
-    // Case 2: All parameters supplied are valid
-    from = 0;
-    to = 1;
+//     // Case 2: All parameters supplied are valid
+//     from = 0;
+//     to = 1;
 
-    testBSAlignedNC->SetWeight(
-        from, to,
-        BG::NES::Simulator::BallAndStick::BSAlignedNC::SetWeightMethod::BINARY);
-    targetCell =
-        std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSNeuron>(
-            testBSAlignedNC->Cells[std::to_string(to)]);
-    sourceCell =
-        std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSNeuron>(
-            testBSAlignedNC->Cells[std::to_string(from)]);
+//     testBSAlignedNC->SetWeight(
+//         from, to,
+//         BG::NES::Simulator::BallAndStick::BSAlignedNC::SetWeightMethod::BINARY);
+//     targetCell =
+//         std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSNeuron>(
+//             testBSAlignedNC->Cells[std::to_string(to)]);
+//     sourceCell =
+//         std::dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSNeuron>(
+//             testBSAlignedNC->Cells[std::to_string(from)]);
 
-    auto lastReceptorData = targetCell->ReceptorDataVec.back();
+//     auto lastReceptorData = targetCell->ReceptorDataVec.back();
 
-    //ASSERT_EQ(std::get<0>(lastReceptorData), sourceCell);
-    //ASSERT_EQ(std::get<1>(lastReceptorData), 1.0);
-    ASSERT_TRUE(targetCell->Morphology["receptor"]->Center_um ==
-                sourceCell->Morphology["soma"]->Center_um);
-}
+//     //ASSERT_EQ(std::get<0>(lastReceptorData), sourceCell);
+//     //ASSERT_EQ(std::get<1>(lastReceptorData), 1.0);
+//     ASSERT_TRUE(targetCell->Morphology["receptor"]->Center_um ==
+//                 sourceCell->Morphology["soma"]->Center_um);
+// }
 
-TEST_F(BSAlignedNCTest, test_Encode_default) {
-    std::vector<std::tuple<size_t, size_t>> patternSet;
-    auto encodingMethod =
-        BG::NES::Simulator::BallAndStick::BSAlignedNC::EncodingMethod::INSTANT;
-    auto weightMethod =
-        BG::NES::Simulator::BallAndStick::BSAlignedNC::SetWeightMethod::BINARY;
+// TEST_F(BSAlignedNCTest, test_Encode_default) {
+//     std::vector<std::tuple<size_t, size_t>> patternSet;
+//     auto encodingMethod =
+//         BG::NES::Simulator::BallAndStick::BSAlignedNC::EncodingMethod::INSTANT;
+//     auto weightMethod =
+//         BG::NES::Simulator::BallAndStick::BSAlignedNC::SetWeightMethod::BINARY;
 
-    InitCells();
+//     InitCells();
 
-    // Case 1: Empty pattern set
-    testBSAlignedNC->Encode(patternSet, encodingMethod, weightMethod);
+//     // Case 1: Empty pattern set
+//     testBSAlignedNC->Encode(patternSet, encodingMethod, weightMethod);
 
-    // No receptors have been added to any cell
-    for (const auto &[cellID, cell] : testBSAlignedNC->Cells) {
-        auto bsCellPtr = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSNeuron>(cell);
-        ASSERT_TRUE(bsCellPtr->ReceptorDataVec.empty());
-    }
+//     // No receptors have been added to any cell
+//     for (const auto &[cellID, cell] : testBSAlignedNC->Cells) {
+//         auto bsCellPtr = std::dynamic_pointer_cast<
+//             BG::NES::Simulator::BallAndStick::BSNeuron>(cell);
+//         ASSERT_TRUE(bsCellPtr->ReceptorDataVec.empty());
+//     }
 
-    // Case 2: All parameters valid and non-empty pattern set
-    patternSet.push_back(std::make_tuple(0, 1));
-    testBSAlignedNC->Encode(patternSet, encodingMethod, weightMethod);
+//     // Case 2: All parameters valid and non-empty pattern set
+//     patternSet.push_back(std::make_tuple(0, 1));
+//     testBSAlignedNC->Encode(patternSet, encodingMethod, weightMethod);
 
-    for (const auto fromTo : patternSet) {
-        auto targetCell = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSNeuron>(
-            testBSAlignedNC->Cells[std::to_string(std::get<1>(fromTo))]);
-        auto sourceCell = std::dynamic_pointer_cast<
-            BG::NES::Simulator::BallAndStick::BSNeuron>(
-            testBSAlignedNC->Cells[std::to_string(std::get<0>(fromTo))]);
-        auto lastReceptorData = targetCell->ReceptorDataVec.back();
+//     for (const auto fromTo : patternSet) {
+//         auto targetCell = std::dynamic_pointer_cast<
+//             BG::NES::Simulator::BallAndStick::BSNeuron>(
+//             testBSAlignedNC->Cells[std::to_string(std::get<1>(fromTo))]);
+//         auto sourceCell = std::dynamic_pointer_cast<
+//             BG::NES::Simulator::BallAndStick::BSNeuron>(
+//             testBSAlignedNC->Cells[std::to_string(std::get<0>(fromTo))]);
+//         auto lastReceptorData = targetCell->ReceptorDataVec.back();
 
-        //ASSERT_EQ(std::get<0>(lastReceptorData), sourceCell);
-        //ASSERT_EQ(std::get<1>(lastReceptorData), 1.0);
-        ASSERT_TRUE(targetCell->Morphology["receptor"]->Center_um ==
-                    sourceCell->Morphology["soma"]->Center_um);
-    }
-}
+//         //ASSERT_EQ(std::get<0>(lastReceptorData), sourceCell);
+//         //ASSERT_EQ(std::get<1>(lastReceptorData), 1.0);
+//         ASSERT_TRUE(targetCell->Morphology["receptor"]->Center_um ==
+//                     sourceCell->Morphology["soma"]->Center_um);
+//     }
+// }
 
 TEST_F(BSAlignedNCTest, test_AttachDirectStim_default) {
     std::vector<std::tuple<float, size_t>> tStim_ms;

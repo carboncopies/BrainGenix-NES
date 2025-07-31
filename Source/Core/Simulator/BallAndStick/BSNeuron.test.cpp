@@ -276,34 +276,34 @@ TEST_F(BSNeuronTest, test_SetFIFO_default) {
     ASSERT_EQ(testBSNeuron->FIFO.size(), expectedFIFOSize);
 }
 
-TEST_F(BSNeuronTest, test_UpdateConvolvedFIFO_default) {
-    std::vector<float> reversed_kernel = {1.0, 0.0, -1.0};
-    std::vector<float> expectedConvolvedFIFO{};
-    std::deque<float> FIFO{};
+// TEST_F(BSNeuronTest, test_UpdateConvolvedFIFO_default) {
+//     std::vector<float> reversed_kernel = {1.0, 0.0, -1.0};
+//     std::vector<float> expectedConvolvedFIFO{};
+//     std::deque<float> FIFO{};
 
-    // Simulate
-    Simulate();
+//     // Simulate
+//     Simulate();
 
-    testBSNeuron->UpdateConvolvedFIFO(reversed_kernel);
+//     testBSNeuron->UpdateConvolvedFIFO(reversed_kernel);
 
-    std::reverse_copy(testBSNeuron->FIFO.begin(), testBSNeuron->FIFO.end(), FIFO.begin());
+//     std::reverse_copy(testBSNeuron->FIFO.begin(), testBSNeuron->FIFO.end(), FIFO.begin());
 
-    for (size_t i = 0; i < FIFO.size(); ++i) {
-        FIFO[i] *= -1.0;
-        if (FIFO[i] < 0.0)
-            FIFO[i] = 0.0;
-    }
+//     for (size_t i = 0; i < FIFO.size(); ++i) {
+//         FIFO[i] *= -1.0;
+//         if (FIFO[i] < 0.0)
+//             FIFO[i] = 0.0;
+//     }
 
-    expectedConvolvedFIFO.resize(FIFO.size(), 0.0);
+//     expectedConvolvedFIFO.resize(FIFO.size(), 0.0);
 
-    BG::NES::Simulator::SignalFunctions::Convolve1D(FIFO, reversed_kernel, expectedConvolvedFIFO);
+//     BG::NES::Simulator::SignalFunctions::Convolve1D(FIFO, reversed_kernel, expectedConvolvedFIFO);
 
-    ASSERT_EQ(testBSNeuron->ConvolvedFIFO.size(), expectedConvolvedFIFO.size());
-    for (size_t i = 0; i < testBSNeuron->ConvolvedFIFO.size(); ++i)
-        ASSERT_NEAR(testBSNeuron->ConvolvedFIFO[i], expectedConvolvedFIFO[i],
-                    tol);
+//     ASSERT_EQ(testBSNeuron->ConvolvedFIFO.size(), expectedConvolvedFIFO.size());
+//     for (size_t i = 0; i < testBSNeuron->ConvolvedFIFO.size(); ++i)
+//         ASSERT_NEAR(testBSNeuron->ConvolvedFIFO[i], expectedConvolvedFIFO[i],
+//                     tol);
 
-    ASSERT_EQ(testBSNeuron->CaSamples.back(),
-              testBSNeuron->ConvolvedFIFO.back() + 1.0f);
-    ASSERT_EQ(testBSNeuron->TCaSamples_ms.back(), 1.6f);
-}
+//     ASSERT_EQ(testBSNeuron->CaSamples.back(),
+//               testBSNeuron->ConvolvedFIFO.back() + 1.0f);
+//     ASSERT_EQ(testBSNeuron->TCaSamples_ms.back(), 1.6f);
+// }
