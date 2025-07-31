@@ -10,6 +10,13 @@ The CI pipeline is managed by GitLab CI/CD and is configured using the `.gitlab-
 
 ---
 
+## Job Features
+
+Doxygen: In the pipeline it automatically builds and updates the project’s developer documentation from the code comments, making it easier for others to understand and use the code.<br>
+Drawio: In the pipeline is meant to automate the export and update of project diagrams, ensuring the visual documentation is always current and included with the other docs and artifacts. 
+
+---
+
 ## Pipeline Structure
 
 The pipeline is modular and organized by operating system and task. Each major task (building, testing, packaging, documentation, etc.) is defined in its own YAML file within subdirectories of the `CI` folder. Within each subdirectory
