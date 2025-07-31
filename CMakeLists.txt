@@ -117,6 +117,13 @@ enable_testing()
 message(STATUS "Finding gtest Package")
 find_package(GTest CONFIG REQUIRED)
 
+# Testing a test case with EMRenderer
+add_executable(EMRendererTests
+    ${SRC_DIR}/Core/VSDA/EM/EMRenderer.test.cpp
+)
+target_link_libraries(EMRendererTests PRIVATE GTest::gtest_main bg-common-logger)
+add_test(NAME EMRendererTests COMMAND EMRendererTests)
+
 # Ensure config is copied to bin
 file(COPY "${SRC_DIR}/Data/NES.yaml" DESTINATION "${BIN_DIR}")
 
