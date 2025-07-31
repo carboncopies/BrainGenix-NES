@@ -13,7 +13,7 @@ stages:
   - Test # Temp. disabled tests as they have not yet been implemented.
 
 include: 
-  # Update CI Containersers
+  # Update CI Containers
   - '/CI/Images/Ubuntu2204/CI.yml'
   - '/CI/Images/Ubuntu2004/CI.yml'
   - '/CI/Images/Doxygen/CI.yml'
