@@ -321,11 +321,6 @@ struct SCNeuronStruct: public SCNeuronBase {
     std::vector<int> DendriteCompartmentIDs;
     std::vector<int> AxonCompartmentIDs;
 
-    // Direct access caches:
-    // std::vector<Compartments::SC*> SomaCompartmentPtr;
-    // std::vector<Compartments::SC*> DendriteCompartmentPtr;
-    // std::vector<Compartments::SC*> AxonCompartmentPtr;
-
     std::unique_ptr<uint8_t[]> GetFlat() const;
     bool FromFlat(SCNeuronStructFlatHeader* header);
 
@@ -451,6 +446,75 @@ struct LIFCNeuronBase {
         ss << "\nAdaptiveThresholdFloor_mV: " << AdaptiveThresholdFloor_mV;
         ss << "\nAdaptiveThresholdFloorDeltaPerSpike_mV: " << AdaptiveThresholdFloorDeltaPerSpike_mV;
         ss << "\nAdaptiveThresholdFloorRecoveryTime_ms: " << AdaptiveThresholdFloorRecoveryTime_ms << '\n';
+        return ss.str();
+    }
+};
+
+struct LIFCNeuronStructFlatHeader {
+    uint32_t FlatBufSize = 0;
+    uint32_t NameSize = 0;
+    uint32_t NameOffset = 0;
+    uint32_t SomaCompartmentIDsSize = 0;
+    uint32_t SomaCompartmentIDsOffset = 0;
+    uint32_t DendriteCompartmentIDsSize = 0;
+    uint32_t DendriteCompartmentIDsOffset = 0;
+    uint32_t AxonCompartmentIDsSize = 0;
+    uint32_t AxonCompartmentIDsOffset = 0;
+    LIFCNeuronBase Base;
+
+    std::string str() const {
+        std::stringstream ss;
+        ss << "FlatBufSize: " << FlatBufSize;
+        ss << "\nNameSize: " << NameSize;
+        ss << "\nNameOffset: " << NameOffset;
+        ss << "\nSomaCompartmentIDsSize: " << SomaCompartmentIDsSize;
+        ss << "\nSomaCompartmentIDsOffset: " << SomaCompartmentIDsOffset;
+        ss << "\nDendriteCompartmentIDsSize: " << DendriteCompartmentIDsSize;
+        ss << "\nDendriteCompartmentIDsOffset: " << DendriteCompartmentIDsOffset;
+        ss << "\nAxonCompartmentIDsSize: " << AxonCompartmentIDsSize;
+        ss << "\nAxonCompartmentIDsOffset: " << AxonCompartmentIDsOffset << '\n';
+        ss << Base.str();
+        return ss.str();
+    }
+
+    std::string name_str() const {
+        std::stringstream ss;
+        ss << "Name: " << (const char*) ADD_BYTES_TO_POINTER(this, NameOffset) << '\n';
+        return ss.str();
+    }
+
+    std::string scid_str() const {
+        std::stringstream ss;
+        int* scidptr = (int*) ADD_BYTES_TO_POINTER(this, SomaCompartmentIDsOffset);
+        //ss << "flat header address = " << uint64_t(this) << '\n';
+        //ss << "scidptr = " << uint64_t(scidptr) << '\n';
+        ss << "SomaCompartmentIDs: ";
+        for (size_t idx = 0; idx < SomaCompartmentIDsSize; idx++) {
+            ss << scidptr[idx] << ' ';
+        }
+        ss << '\n';
+        return ss.str();
+    }
+
+    std::string dcid_str() const {
+        std::stringstream ss;
+        int* dcidptr = (int*) ADD_BYTES_TO_POINTER(this, DendriteCompartmentIDsOffset);
+        ss << "DendriteCompartmentIDs: ";
+        for (size_t idx = 0; idx < DendriteCompartmentIDsSize; idx++) {
+            ss << dcidptr[idx] << ' ';
+        }
+        ss << '\n';
+        return ss.str();
+    }
+
+    std::string acid_str() const {
+        std::stringstream ss;
+        int* acidptr = (int*) ADD_BYTES_TO_POINTER(this, AxonCompartmentIDsOffset);
+        ss << "AxonCompartmentIDs: ";
+        for (size_t idx = 0; idx < AxonCompartmentIDsSize; idx++) {
+            ss << acidptr[idx] << ' ';
+        }
+        ss << '\n';
         return ss.str();
     }
 };

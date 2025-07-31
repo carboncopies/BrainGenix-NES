@@ -187,7 +187,7 @@ public:
 
     bool SaveModel(const std::string& Name);
     bool LoadModel(const std::string& Name);
-    void InspectSavedModel(const std::string& Name) const;
+    void InspectSavedModel(const std::string& Name, SaveLoadPrior& _SaveLoadPrior) const;
 
     size_t GetTotalNumberOfNeurons();
     std::vector<std::shared_ptr<CoreStructs::Neuron>> GetAllNeurons();
