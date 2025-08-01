@@ -117,6 +117,11 @@ void LIFCReceptorData::Update_Conductance(float t, float Vm) {
     }
 }
 
+// See the platform paper for a detailed description of the biophysics and
+// equations underlying this STDP implementation.
+void LIFCReceptorData::STDP_Update(float tfire) {
+    
+}
 
 //! Update the assumed neuron type based on its neurotransmitters.
 //! Note: For now, we only use the first 4 characters to match, so

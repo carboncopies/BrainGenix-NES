@@ -159,6 +159,12 @@ public:
     // Used in Simulation::GetConnectomeJSON().
     virtual void GetConnectomeTargetsJSON(nlohmann::json& targetvec, nlohmann::json& typevec, nlohmann::json& weightvec);
 
+    // Used in Simulation::UpdatePrePostStrength().
+    virtual bool UpdatePrePostStrength(int PresynapticID, float NewConductance_nS);
+
+    // Pure abstraction count of number of synapses.
+    virtual size_t GetAbstractConnection(int PreSynID, bool NonZero);
+
 };
 
 } // Simulator

@@ -372,6 +372,39 @@ void BSNeuron::GetConnectomeTargetsJSON(nlohmann::json& targetvec, nlohmann::jso
     }   
 }
 
+bool BSNeuron::UpdatePrePostStrength(int PresynapticID, float NewConductance_nS) {
+    Connections::Receptor* Rptr = nullptr;
+    for (auto& _ReceptorDataptr : ReceptorDataVec) {
+        if (_ReceptorDataptr->SrcNeuronID==PresynapticID) {
+            Rptr = _ReceptorDataptr->ReceptorPtr;   // Remember the last one.
+            if (Rptr) Rptr->Conductance_nS = 0.0;   // Clear.
+        }
+    }
+    if (!Rptr) return false;
+
+    Rptr->Conductance_nS = NewConductance_nS;
+    return true;
+}
+
+// Pure abstraction count of number of synapses.
+size_t BSNeuron::GetAbstractConnection(int PreSynID, bool NonZero) {
+    size_t NumReceptors = 0;
+    Connections::Receptor* Rptr = nullptr;
+    for (auto& _ReceptorDataptr : ReceptorDataVec) {
+        if (_ReceptorDataptr->SrcNeuronID==PreSynID) {
+            if (NonZero) {
+                if (_ReceptorDataptr->ReceptorPtr->Conductance_nS!=0.0) {
+                    NumReceptors++;
+                }
+            } else {
+                NumReceptors++;
+            }
+        }
+    }
+
+    return NumReceptors;
+}
+
 }; // namespace BallAndStick
 }; // namespace Simulator
 }; // namespace NES

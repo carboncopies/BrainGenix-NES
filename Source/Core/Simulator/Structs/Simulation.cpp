@@ -1266,17 +1266,11 @@ bool Simulation::UpdatePrePostStrength(int PresynapticID, int PostsynapticID, fl
     CoreStructs::Neuron* PostsynapticPtr = Neurons.at(PostsynapticID).get();
     if (PostsynapticPtr->Class_<CoreStructs::_BSNeuron) return false;
 
-    Connections::Receptor* Rptr = nullptr;
-    for (auto& _ReceptorDataptr : static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->ReceptorDataVec) {
-        if (_ReceptorDataptr->SrcNeuronID==PresynapticID) {
-            Rptr = _ReceptorDataptr->ReceptorPtr;       // Remember the last one.
-            if (Rptr) Rptr->Conductance_nS = 0.0;   // Clear.
-        }
+    if (SimNeuronClass == LIFCNEURONS) {
+        return static_cast<LIFCNeuron*>(PostsynapticPtr)->UpdatePrePostStrength(PresynapticID, NewConductance_nS);
+    } else {
+        return static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->UpdatePrePostStrength(PresynapticID, NewConductance_nS);
     }
-    if (!Rptr) return false;
-
-    Rptr->Conductance_nS = NewConductance_nS;
-    return true;
 }
 
 /**
@@ -1522,21 +1516,11 @@ size_t Simulation::GetAbstractConnection(int PreSynID, int PostSynID, bool NonZe
     CoreStructs::Neuron* PostsynapticPtr = Neurons.at(PostSynID).get();
     if (PostsynapticPtr->Class_<CoreStructs::_BSNeuron) return 0;
 
-    size_t NumReceptors = 0;
-    Connections::Receptor* Rptr = nullptr;
-    for (auto& _ReceptorDataptr : static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->ReceptorDataVec) {
-        if (_ReceptorDataptr->SrcNeuronID==PreSynID) {
-            if (NonZero) {
-                if (_ReceptorDataptr->ReceptorPtr->Conductance_nS!=0.0) {
-                    NumReceptors++;
-                }
-            } else {
-                NumReceptors++;
-            }
-        }
+    if (SimNeuronClass == LIFCNEURONS) {
+        return static_cast<LIFCNeuron*>(PostsynapticPtr)->GetAbstractConnection(PreSynID, NonZero);
+    } else {
+        return static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->GetAbstractConnection(PreSynID, NonZero);
     }
-
-    return NumReceptors;
 }
 
 /**

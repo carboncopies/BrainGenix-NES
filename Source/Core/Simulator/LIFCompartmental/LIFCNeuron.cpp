@@ -401,6 +401,46 @@ void LIFCNeuron::GetConnectomeTargetsJSON(nlohmann::json& targetvec, nlohmann::j
     }   
 }
 
+bool LIFCNeuron::UpdatePrePostStrength(int PresynapticID, float NewConductance_nS) {
+    bool AMPA_found = false;
+    for (auto& _ReceptorDataptr : LIFCReceptorDataVec) {
+        if (_ReceptorDataptr->SrcNeuronID == PresynapticID) {
+            if ((!AMPA_found) && (_ReceptorDataptr->Type()==Connections::AMPA)) {
+                // The first one found is modified.
+                _ReceptorDataptr->weight = NewConductance_nS/_ReceptorDataptr->g_peak_sum_nS;
+                AMPA_found = true;
+            } else {
+                // Others are cleared to zero.
+                _ReceptorDataptr->weight = 0.0;
+            }
+        }
+    }
+
+    return AMPA_found;
+}
+
+// Pure abstraction count of number of synapses.
+// In order to not double-count, this counts AMPA and GABA but not NMDA.
+size_t LIFCNeuron::GetAbstractConnection(int PreSynID, bool NonZero) {
+    size_t NumReceptors = 0;
+    for (auto& _ReceptorDataptr : LIFCReceptorDataVec) {
+        if (_ReceptorDataptr->SrcNeuronID == PreSynID) {
+            if (_ReceptorDataptr->Type() != Connections::NMDA) {
+                if (NonZero) {
+                    if (_ReceptorDataptr->weight != 0.0) {
+                        NumReceptors += _ReceptorDataptr->ReceptorPtrs.size();
+                    }
+                } else {
+                    NumReceptors += _ReceptorDataptr->ReceptorPtrs.size();
+                }
+            }
+
+        }
+    }
+
+    return NumReceptors;
+}
+
 }; // namespace Simulator
 }; // namespace NES
 }; // namespace BG
