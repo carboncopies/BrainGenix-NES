@@ -14,6 +14,7 @@
 #include <Simulator/Structs/Simulation.h>
 #include <Simulator/Structs/Neuron.h>
 #include <Simulator/LIFCompartmental/LIFCNeuron.h>
+#include <Simulator/Structs/Receptor.h>
 
 namespace BG {
 namespace NES {
@@ -48,8 +49,20 @@ LIFCReceptorData::LIFCReceptorData(int _RID, Connections::LIFCReceptor * _RPtr, 
     tau_decay_ms = _RPtr->PSPDecay_ms;
     onset_delay_ms = _RPtr->OnsetDelay_ms;
     if (!dynamic_cast<LIFCNeuron*>(_SNPtr)->Sim.use_abstracted_LIF_receptors) {
-        norm = compute_normalization(tau_rise_ms, tau_decay_ms);
+        norm = Connections::compute_normalization(tau_rise_ms, tau_decay_ms);
     }
+}
+
+float LIFCReceptorData::E_k() {
+    return ReceptorPtrs.at(0)->ReversalPotential_mV;
+}
+
+bool LIFCReceptorData::voltage_gated() {
+    return ReceptorPtrs.at(0)->voltage_gated;
+}
+
+Connections::NeurotransmitterType LIFCReceptorData::Type() {
+    return ReceptorPtrs.at(0)->Neurotransmitter;
 }
 
 // This is for the abstracted parameters that do not use a median.
@@ -83,7 +96,7 @@ void LIFCReceptorData::Calculate_Abstracted_PSP_Medians() {
         tau_decay_ms = (tau_decays[size / 2 - 1] + tau_decays[size / 2]) / 2.0;
         onset_delay_ms = (onset_delays[size / 2 - 1] + onset_delays[size / 2]) / 2.0;
     }
-    norm = compute_normalization(tau_rise_ms, tau_decay_ms);
+    norm = Connections::compute_normalization(tau_rise_ms, tau_decay_ms);
 }
 
 // Effect of voltage-gated Mg2+ block.
@@ -97,10 +110,10 @@ void LIFCReceptorData::Update_Conductance(float t, float Vm) {
     auto& syn_times = SrcNeuronPtr->TAct_ms;
     if (voltage_gated()) {
         g_k = std::min(g_peak_sum_nS, B_NMDA(Vm) * weight * g_peak_sum_nS * 
-                     g_norm(t, syn_times, tau_rise_ms, tau_decay_ms, norm, onset_delay_ms));
+                     Connections::g_norm(t, syn_times, tau_rise_ms, tau_decay_ms, norm, onset_delay_ms));
     } else {
         g_k = std::min(g_peak_sum_nS, weight * g_peak_sum_nS * 
-                     g_norm(t, syn_times, tau_rise_ms, tau_decay_ms, norm, onset_delay_ms));
+                     Connections::g_norm(t, syn_times, tau_rise_ms, tau_decay_ms, norm, onset_delay_ms));
     }
 }
 

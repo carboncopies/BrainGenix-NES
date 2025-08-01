@@ -1,5 +1,10 @@
 #include <Simulator/Structs/LIFC.h>
 
+namespace BG {
+namespace NES {
+namespace Simulator {
+namespace Compartments {
+
 std::string LIFCBaseData::str() const {
     std::stringstream ss;
     ss << "ID: " << ID;
@@ -12,3 +17,8 @@ std::string LIFCBaseData::str() const {
     ss << "\nAfterHyperpolarizationAmplitude_mV: " << AfterHyperpolarizationAmplitude_mV << '\n';
     return ss.str();
 }
+
+}; // Close Namespace Compartments
+}; // Close Namespace Simulator
+}; // Close Namespace NES
+}; // Close Namespace BG

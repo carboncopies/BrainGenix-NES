@@ -18,6 +18,8 @@
 #include <unordered_map>
 #include <vector>
 
+#include <nlohmann/json.hpp>
+
 #include <Simulator/Distributions/Distribution.h>
 #include <Simulator/Distributions/TruncNorm.h>
 #include <Simulator/Geometries/Cylinder.h>
@@ -173,6 +175,9 @@ public:
     virtual void InputReceptorAdded(CoreStructs::ReceptorData* RData);
 
     virtual void OutputTransmitterAdded(CoreStructs::ReceptorData* RData);
+
+    // Used in Simulation::GetConnectomeJSON().
+    virtual void GetConnectomeTargetsJSON(nlohmann::json& targetvec, nlohmann::json& typevec, nlohmann::json& weightvec);
 
 };
 

@@ -119,13 +119,13 @@ int Simulation::AddLIFCCompartment(Compartments::LIFC& _C) {
 int Simulation::AddBSNeuron(CoreStructs::BSNeuronStruct& _N) {
     _N.ID = Neurons.size();
     
-    Neurons.push_back(std::make_shared<BallAndStick::BSNeuron>(_N, *this));
+    Neurons.push_back(std::make_shared<BallAndStick::BSNeuron>(_N));
 
     NeuronByCompartment.emplace(_N.SomaCompartmentID, _N.ID);
     NeuronByCompartment.emplace(_N.AxonCompartmentID, _N.ID);
 
-    RegisterNeuronUIDToCompartments(std::vector<int>(C.SomaCompartmentID), _N.ID + 1);
-    RegisterNeuronUIDToCompartments(std::vector<int>(C.AxonCompartmentID), _N.ID + 1);
+    RegisterNeuronUIDToCompartments(std::vector<int>(_N.SomaCompartmentID), _N.ID + 1);
+    RegisterNeuronUIDToCompartments(std::vector<int>(_N.AxonCompartmentID), _N.ID + 1);
 
     return _N.ID;
 }
@@ -211,7 +211,7 @@ int Simulation::AddReceptor(Connections::Receptor& _C) {
     SrcNeuronPtr->OutputTransmitterAdded(RData.get());
     DstNeuronPtr->InputReceptorAdded(RData.get());
     SrcNeuronPtr->UpdateType(_C.Neurotransmitter);
-    ReceptorDataVec.push_back(RData);
+    ReceptorDataVec.emplace_back(RData.release());
 
     return _C.ID;
 }
@@ -235,22 +235,22 @@ int Simulation::AddLIFCReceptor(Connections::LIFCReceptor& _C) {
     }
 
     if (use_abstracted_LIF_receptors) {
-        CoreStructs::LIFCReceptorData* RDataFunctional = DstNeuronPtr->FindLIFCReceptorPairing(dynamic_cast<LIFCNeuron*>(SrcNeuronPtr), LIFCReceptors.back().get());
+        CoreStructs::LIFCReceptorData* RDataFunctional = dynamic_cast<LIFCNeuron*>(DstNeuronPtr)->FindLIFCReceptorPairing(dynamic_cast<LIFCNeuron*>(SrcNeuronPtr), LIFCReceptors.back().get());
         if (RDataFunctional==nullptr) {
             std::unique_ptr<CoreStructs::LIFCReceptorData> RData = std::make_unique<CoreStructs::LIFCReceptorData>(_C.ID, LIFCReceptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
-            SrcNeuronPtr->OutputTransmitterAdded(RData.get());
-            DstNeuronPtr->InputReceptorAdded(RData.get());
-            SrcNeuronPtr->UpdateType(_C.Neurotransmitter);
-            LIFCReceptorDataVec.push_back(RData);
+            dynamic_cast<LIFCNeuron*>(SrcNeuronPtr)->OutputTransmitterAdded(RData.get());
+            dynamic_cast<LIFCNeuron*>(DstNeuronPtr)->InputReceptorAdded(RData.get());
+            dynamic_cast<LIFCNeuron*>(SrcNeuronPtr)->UpdateType(_C.Neurotransmitter);
+            LIFCReceptorDataVec.emplace_back(RData.release());
         } else {
             RDataFunctional->AddToAbstractedFunctional(_C.ID, LIFCReceptors.back().get());
         }
     } else {
         std::unique_ptr<CoreStructs::LIFCReceptorData> RData = std::make_unique<CoreStructs::LIFCReceptorData>(_C.ID, LIFCReceptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
-        SrcNeuronPtr->OutputTransmitterAdded(RData.get());
-        DstNeuronPtr->InputReceptorAdded(RData.get());
-        SrcNeuronPtr->UpdateType(_C.Neurotransmitter);
-        LIFCReceptorDataVec.push_back(RData);
+        dynamic_cast<LIFCNeuron*>(SrcNeuronPtr)->OutputTransmitterAdded(RData.get());
+        dynamic_cast<LIFCNeuron*>(DstNeuronPtr)->InputReceptorAdded(RData.get());
+        dynamic_cast<LIFCNeuron*>(SrcNeuronPtr)->UpdateType(_C.Neurotransmitter);
+        LIFCReceptorDataVec.emplace_back(RData.release());
     }
 
     return _C.ID;
@@ -287,18 +287,12 @@ void Simulation::RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompa
 
     }
 }
-            
 
-// Globally essential prior information that determines how to save or load.
-struct SaveLoadPrior {
-    SimulationNeuronClass SimNeuronClass = UNDETERMINED;
-
-    std::string str() const {
-        std::string s;
-        s += "SimNeuronClass: " + std::to_string(SimNeuronClass);
-        s += '\n';
-        return s;
-    }
+std::string SaveLoadPrior::str() const {
+    std::string s;
+    s += "SimNeuronClass: " + std::to_string(SimNeuronClass);
+    s += '\n';
+    return s;
 }
 
 struct SaverInfo {
@@ -392,7 +386,7 @@ public:
         RefToNeuralCircuits = &_RefToNeuralCircuits;
     }
 
-    void Prepare(Simulation* Sim) {
+    bool Prepare(Simulation* Sim) {
         // Prepare to save shapes.
         for (size_t i = 0; i < Sim->Collection.Size(); i++) {
             switch (Sim->Collection.GetShapeType(i)) {
@@ -426,7 +420,8 @@ public:
         // Save regions.
         AddRegions(Sim->Regions);
         // Save circuits.
-        AddCircuits(Sim->NeuralCircuits);  
+        AddCircuits(Sim->NeuralCircuits);
+        return true;
     }
 
     bool Save() {
@@ -539,7 +534,7 @@ protected:
     std::vector<Geometries::Box*> BoxReferences;
     std::vector<Compartments::LIFC>* RefToCompartments;
     std::vector<std::shared_ptr<CoreStructs::Neuron>>* RefToLIFCNeurons;
-    std::vector<std::unique_ptr<Connections::Receptor>>* RefToReceptors;
+    std::vector<std::unique_ptr<Connections::LIFCReceptor>>* RefToReceptors;
     std::vector<std::unique_ptr<BrainRegions::BrainRegion>>* RefToRegions;
     std::vector<std::unique_ptr<CoreStructs::NeuralCircuit>>* RefToNeuralCircuits;
 
@@ -577,7 +572,7 @@ public:
         RefToNeuralCircuits = &_RefToNeuralCircuits;
     }
 
-    void Prepare(Simulation* Sim) {
+    bool Prepare(Simulation* Sim) {
         // Prepare to save shapes.
         for (size_t i = 0; i < Sim->Collection.Size(); i++) {
             switch (Sim->Collection.GetShapeType(i)) {
@@ -611,7 +606,8 @@ public:
         // Save regions.
         AddRegions(Sim->Regions);
         // Save circuits.
-        AddCircuits(Sim->NeuralCircuits);  
+        AddCircuits(Sim->NeuralCircuits);
+        return true;
     }
 
     bool Save() {
@@ -867,11 +863,11 @@ public:
 bool Simulation::SaveModel(const std::string& Name) {
     if (SimNeuronClass == LIFCNEURONS) {
         LIFCSaver _Saver(Name, SimNeuronClass);
-        _Saver.Prepare(this);
+        if (!_Saver.Prepare(this)) return false;
         return _Saver.Save();
     } else {
         Saver _Saver(Name, SimNeuronClass);
-        _Saver.Prepare(this);
+        if (!_Saver.Prepare(this)) return false;
         return _Saver.Save();
     }
 }
@@ -882,7 +878,7 @@ bool Simulation::SaveModel(const std::string& Name) {
  */
 bool Simulation::LoadModel(const std::string& Name) {
     SaveLoadPrior _SaveLoadPrior;
-    std::fstream LoadFile = std::fstream(Name_, std::ios::in | std::ios::binary);
+    std::fstream LoadFile = std::fstream(Name, std::ios::in | std::ios::binary);
     // 0. SaveLoadPrior
     LoadFile.read((char*)&_SaveLoadPrior, sizeof(_SaveLoadPrior));
 
@@ -1064,7 +1060,7 @@ void Simulation::InspectSavedModel(const std::string& Name, SaveLoadPrior& _Save
     SaveLoadPrior* slpptr = (SaveLoadPrior*) ptr;
     std::cout << slpptr->str();
 
-    if (slpptr->SimNeuronClass != _SaveLoadPrior->SimNeuronClass) {
+    if (slpptr->SimNeuronClass != _SaveLoadPrior.SimNeuronClass) {
         std::cout << ">-- WARNING: SimNeuronClass does not match expected!\n";
     }
 
@@ -1488,17 +1484,6 @@ nlohmann::json Simulation::GetSomaPositionsJSON() const {
     return somapositions;
 }
 
-const std::map<std::string, int> Neurotransmitter2ConnectionType = {
-    { "AMPA", 1 },
-    { "GABA", 2 },
-};
-
-int GetConnectionType(const std::string& neurotransmitter) {
-    auto it = Neurotransmitter2ConnectionType.find(neurotransmitter);
-    if (it == Neurotransmitter2ConnectionType.end()) return 0; // Unknown type.
-    return it->second;
-}
-
 nlohmann::json Simulation::GetConnectomeJSON() const {
     nlohmann::json connectome;
     connectome["ConnectionTargets"] = nlohmann::json::array();
@@ -1509,15 +1494,13 @@ nlohmann::json Simulation::GetConnectomeJSON() const {
     nlohmann::json& weightslist(connectome["ConnectionWeights"]);
 
     for (auto& neuron_ptr : Neurons) {
-        BallAndStick::BSNeuron* bsneuron_ptr = static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get());
         nlohmann::json targetvec(nlohmann::json::value_t::array);
         nlohmann::json typevec(nlohmann::json::value_t::array);
         nlohmann::json weightvec(nlohmann::json::value_t::array);
-        for (auto & rdata : bsneuron_ptr->TransmitterDataVec) {
-            targetvec.push_back(rdata.DstNeuronID);
-            auto ReceptorPtr = rdata.ReceptorPtr;
-            typevec.push_back(GetConnectionType(ReceptorPtr->Neurotransmitter));
-            weightvec.push_back(ReceptorPtr->Conductance_nS); // *** A better "weight" might by conductance times peak or under-curve area of PSP double-exp.
+        if (SimNeuronClass == LIFCNEURONS) {
+            static_cast<LIFCNeuron*>(neuron_ptr.get())->GetConnectomeTargetsJSON(targetvec, typevec, weightvec);
+        } else {
+            static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get())->GetConnectomeTargetsJSON(targetvec, typevec, weightvec);
         }
         targetslist.push_back(targetvec);
         typeslist.push_back(typevec);

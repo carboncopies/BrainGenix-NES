@@ -12,7 +12,10 @@
 
 #pragma once
 
+#include <nlohmann/json.hpp>
+
 #include <Simulator/BallAndStick/BSNeuron.h>
+#include <Simulator/Structs/Receptor.h>
 
 namespace BG {
 namespace NES {
@@ -26,13 +29,20 @@ namespace Simulator {
 // all already available in the handy Simulation object.
 struct Simulation;
 
+const std::map<Connections::NeurotransmitterType, CoreStructs::NeuronType> NeurotransmitterType2NeuronType = {
+    { Connections::AMPA, CoreStructs::GenericPrincipalNeuron },
+    { Connections::GABA, CoreStructs::GenericInterneuron },
+    { Connections::NMDA, CoreStructs::GenericPrincipalNeuron }
+};
+
 /**
  * @brief Provides object data and member functions of the LIF Compartmental
  *        neuron class.
  */
 class LIFCNeuron: public BallAndStick::BSNeuron {
-protected:
+public:
     Simulation & Sim;
+protected:
     Geometries::Vec3D GeoCenter_um{}; // This cache is updated whenever GetCellCenter() is called.
 
 public:
@@ -59,7 +69,7 @@ public:
     float Kd_sAHP_nS = 0.3; // 0.3-1 nS half-activation constant for sigmoidal AHP saturation model
 
     // Hard-cap fatigue threshold
-    float fatigue_treshold = 300; // 0 means not applied, number of spikes in a burst
+    float fatigue_threshold = 300; // 0 means not applied, number of spikes in a burst
     float tau_fatigue_recovery_ms = 1000.0;
 
     // After-depolarization (in select neuron types, otherwise g_peak_ADP_nS = 0)
@@ -67,7 +77,7 @@ public:
     float tau_rise_ADP_ms = 20.0;
     float tau_decay_ADP_ms = 200.0;
     float g_peak_ADP_nS = 0.0; // E.g. 0.3 pyramidal
-    float ADP_saturation_multiplier = 2.0 // typically between 2-3 times
+    float ADP_saturation_multiplier = 2.0; // typically between 2-3 times
     float tau_recovery_ADP_ms = 300.0; // for resource availability mode, 200-600 ms for slow ADP recovery times
     float ADP_depletion = 0.3; // 0.2-0.4 per spike, ADP resource availability model
 
@@ -104,7 +114,7 @@ public:
     float a_ADP = 1.0; // ADP factor for resource depletion model
     float g_ADP_nS = 0.0;
 
-    float h_spike = 1.0 // Adaptive threshold factor
+    float h_spike = 1.0; // Adaptive threshold factor
 
     bool reset_done = true; // Only used for reset AFTER
     size_t updates_since_spike = 1000;
@@ -123,10 +133,10 @@ public:
     //! Returns the geometric center of the neuron.
     virtual Geometries::Vec3D& GetCellCenter();
 
-    // *** Begin with the functions as per IF_with_stdp, then find parallels in
-    //     BSNeuron function calls to overload.
+    //! Update the assumed neuron "type" based on its neurotransmitters.
+    virtual void UpdateType(Connections::NeurotransmitterType neurotransmitter);
 
-    void spike(double t);
+    void spike(float t);
     void check_spiking(float t, float V_th_adaptive);
     void update_conductances(float t);
     float update_currents();
@@ -145,6 +155,9 @@ public:
     virtual void InputReceptorAdded(CoreStructs::LIFCReceptorData* RData);
 
     virtual void OutputTransmitterAdded(CoreStructs::LIFCReceptorData* RData);
+
+    // Used in Simulation::GetConnectomeJSON().
+    virtual void GetConnectomeTargetsJSON(nlohmann::json& targetvec, nlohmann::json& typevec, nlohmann::json& weightvec);
 
 };
 

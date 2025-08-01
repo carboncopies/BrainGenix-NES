@@ -1,5 +1,10 @@
 #include <Simulator/Structs/Receptor.h>
 
+namespace BG {
+namespace NES {
+namespace Simulator {
+namespace Connections {
+
 // Helper function to compute normalization factor for LIFC PSPs, fAHP, sAHP, ADP.
 float compute_normalization(float tau_rise, float tau_decay) {
     if (tau_rise == tau_decay) {
@@ -12,7 +17,7 @@ float compute_normalization(float tau_rise, float tau_decay) {
 
 // Function to compute normalized synaptic conductance for LIFC PSPs, fAHP, sAHP, ADP.
 float g_norm(float t, const std::vector<float>& spike_times, float tau_rise, float tau_decay, 
-             float norm, float onset_delay, float spike_dt_delta = 1000, float history_delta = 0.001) {
+             float norm, float onset_delay, float spike_dt_delta, float history_delta) {
     t -= onset_delay;
     history_delta *= norm;
     float gnorm = 0;
@@ -31,7 +36,7 @@ float g_norm(float t, const std::vector<float>& spike_times, float tau_rise, flo
     return gnorm / norm;
 }
 
-ReceptorBase::str() const {
+std::string ReceptorBase::str() const {
     std::stringstream ss;
     ss << "ID: " << ID;
     ss << "\nShapeID: " << ShapeID;
@@ -70,3 +75,8 @@ std::string LIFCReceptorBase::str() const {
     ss << "\nNeurotransmitter: " << Neurotransmitter;
     return ss.str();
 }
+
+}; // namespace Connections
+}; // namespace Simulator
+}; // namespace NES
+}; // namespace BG

@@ -70,6 +70,13 @@ enum SimulationNeuronClass: int {
     LIFCNEURONS = 2
 };
 
+// Globally essential prior information that determines how to save or load.
+struct SaveLoadPrior {
+    SimulationNeuronClass SimNeuronClass = UNDETERMINED;
+
+    std::string str() const;
+};
+
 struct StoredRequest {
     std::string Route;
     std::string RequestJSON;
@@ -179,6 +186,7 @@ public:
     int AddBox(Geometries::Box& _S);
     int AddSCCompartment(Compartments::BS& _C);
     int AddLIFCCompartment(Compartments::LIFC& _C);
+    int AddBSNeuron(CoreStructs::BSNeuronStruct& _N);
     int AddSCNeuron(CoreStructs::SCNeuronStruct& _N);
     int AddLIFCNeuron(CoreStructs::LIFCNeuronStruct& _N);
     int AddReceptor(Connections::Receptor& _C);

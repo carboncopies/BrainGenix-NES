@@ -70,6 +70,9 @@ struct Receptor: public ReceptorBase {
 
 extern float compute_normalization(float tau_rise, float tau_decay);
 
+extern float g_norm(float t, const std::vector<float>& spike_times, float tau_rise, float tau_decay,
+    float norm, float onset_delay, float spike_dt_delta = 1000, float history_delta = 0.001);
+
 enum LIFCSTDPMethodEnum: int {
     STDPNONE = 0,
     STDPHEBBIAN = 1,
@@ -106,7 +109,7 @@ struct LIFCReceptorBase {
 
 };
 
-struct LIFCReceptor {
+struct LIFCReceptor: public LIFCReceptorBase {
     std::string Name;                  /**Name of the connection*/
 
     LIFCReceptor() {}

@@ -1,5 +1,6 @@
 #include <Simulator/Structs/Simulation.h>
 #include <Simulator/LIFCompartmental/LIFCNeuron.h>
+#include <Simulator/Structs/Receptor.h>
 
 #include <algorithm>
 #include <iostream>
@@ -40,7 +41,7 @@ LIFCNeuron::LIFCNeuron(const CoreStructs::LIFCNeuronStruct & lifcneuronstruct, S
 
     // Use AfterHyperpolarizationSaturationModel from buid_data directly
 
-    fatigue_treshold = lifcneuronstruct.FatigueThreshold;
+    fatigue_threshold = lifcneuronstruct.FatigueThreshold;
     tau_fatigue_recovery_ms = lifcneuronstruct.FatigueRecoveryTime_ms;
 
     E_ADP_mV = lifcneuronstruct.AfterDepolarizationReversalPotential_mV;
@@ -66,9 +67,9 @@ LIFCNeuron::LIFCNeuron(const CoreStructs::LIFCNeuronStruct & lifcneuronstruct, S
     g_L_nS = 1.0 / Rm_GOhm;
     g_peak_ADP_max_nS = g_peak_ADP_nS*ADP_saturation_multiplier;
 
-    norm_fAHP = compute_normalization(tau_rise_fAHP, tau_decay_fAHP);
-    norm_sAHP = compute_normalization(tau_rise_sAHP, tau_decay_sAHP);
-    norm_ADP = compute_normalization(tau_rise_ADP, tau_decay_ADP);
+    norm_fAHP = Connections::compute_normalization(tau_rise_fAHP_ms, tau_decay_fAHP_ms);
+    norm_sAHP = Connections::compute_normalization(tau_rise_sAHP_ms, tau_decay_sAHP_ms);
+    norm_ADP = Connections::compute_normalization(tau_rise_ADP_ms, tau_decay_ADP_ms);
 }
 
 //! Returns the geometric center of the neuron.
@@ -87,6 +88,16 @@ Geometries::Vec3D& LIFCNeuron::GetCellCenter() {
     GeoCenter_um = geoCenter_um / float(build_data.SomaCompartmentIDs.size());
     return GeoCenter_um;
 };
+
+void LIFCNeuron::UpdateType(Connections::NeurotransmitterType neurotransmitter) {
+    // Only if still unknown.
+    if (Type_==CoreStructs::UnknownNeuron) {
+        auto it = NeurotransmitterType2NeuronType.find(neurotransmitter);
+        if (it != NeurotransmitterType2NeuronType.end()) {
+            Type_ = it->second;
+        }
+    }
+}
 
 void LIFCNeuron::spike(float tfire) {
     // Spike logging
@@ -107,7 +118,7 @@ void LIFCNeuron::spike(float tfire) {
     
     // Threshold effects
     // a. nonlinear hard-cap
-    if (fatigue_treshold > 0) {
+    if (fatigue_threshold > 0) {
         fatigue += 1.0;
     }
     // b. Adaptive threshold models sodium channel inactivation
@@ -123,7 +134,7 @@ void LIFCNeuron::spike(float tfire) {
     }
     
     // STDP
-    if (Sim->STDP) {
+    if (Sim.STDP) {
         for (auto& RDataptr : LIFCReceptorDataVec) {
             RDataptr->STDP_Update(tfire);
         }
@@ -141,7 +152,7 @@ void LIFCNeuron::check_spiking(float t, float V_th_adaptive) {
         }
     }
     
-    if ((fatigue_treshold > 0) && (fatigue > fatigue_threshold)) {
+    if ((fatigue_threshold > 0) && (fatigue > fatigue_threshold)) {
         return;
     }
 
@@ -168,8 +179,8 @@ void LIFCNeuron::update_conductances(float t) {
     }
     
     // Update fAHP, sAHP, ADP conductances
-    float g_fAHP_linear = g_peak_fAHP_nS * g_norm(t, TAct_ms, tau_rise_fAHP_ms, tau_decay_fAHP_ms, norm_fAHP, 0);
-    float g_sAHP_linear = g_peak_sAHP_nS * g_norm(t, TAct_ms, tau_rise_sAHP_ms, tau_decay_sAHP_ms, norm_sAHP, 0);
+    float g_fAHP_linear = g_peak_fAHP_nS * Connections::g_norm(t, TAct_ms, tau_rise_fAHP_ms, tau_decay_fAHP_ms, norm_fAHP, 0);
+    float g_sAHP_linear = g_peak_sAHP_nS * Connections::g_norm(t, TAct_ms, tau_rise_sAHP_ms, tau_decay_sAHP_ms, norm_sAHP, 0);
     if (build_data.AfterHyperpolarizationSaturationModel == CoreStructs::AHPCLIP) {
         g_fAHP_nS = std::min(g_fAHP_linear, g_peak_fAHP_max_nS);
         g_sAHP_nS = std::min(g_sAHP_linear, g_peak_sAHP_max_nS);
@@ -178,12 +189,12 @@ void LIFCNeuron::update_conductances(float t) {
         g_sAHP_nS = g_peak_sAHP_max_nS * (g_sAHP_linear / (g_sAHP_linear + Kd_sAHP_nS));
     }
     
-    float g_ADP_linear = g_peak_ADP_nS * g_norm(t, TAct_ms, tau_rise_ADP_ms, tau_decay_ADP_ms, norm_ADP, 0);
+    float g_ADP_linear = g_peak_ADP_nS * Connections::g_norm(t, TAct_ms, tau_rise_ADP_ms, tau_decay_ADP_ms, norm_ADP, 0);
     if (build_data.AfterDepolarizationSaturationModel == CoreStructs::ADPCLIP) {
         g_ADP_nS = std::min(g_ADP_linear, g_peak_ADP_max_nS);
     } else {
         a_ADP = a_ADP + (1 - a_ADP) * tDiff_ms / tau_recovery_ADP_ms;
-        a_ADP = std::max(0.0, std::min(1.0, a_ADP));
+        a_ADP = std::max(0.0f, std::min(1.0f, a_ADP));
         g_ADP_nS = a_ADP * g_ADP_linear;
     }
 }
@@ -326,22 +337,22 @@ void LIFCNeuron::Update(float t_ms, bool recording) {
     if (tDiff_ms < 0) return;
 
     if (!abstracted_medians) { // Prepared once at the start of the simulation
-        if (Sim->use_abstracted_LIF_receptors) Calculate_Abstracted_PSP_Medians();
+        if (Sim.use_abstracted_LIF_receptors) Calculate_Abstracted_PSP_Medians();
         abstracted_medians = true;
     }
 
     // Hard-cap nonlinear spiking fatigue threshold.
-    if (fatigue_treshold > 0) {
+    if (fatigue_threshold > 0) {
         fatigue -= tDiff_ms / tau_fatigue_recovery_ms;
-        fatigue = std::max(fatigue, 0.0);
+        fatigue = std::max(fatigue, 0.0f);
     }
     
-    update_conductances(t);
+    update_conductances(t_ms);
     
     if (build_data.UpdateMethod == CoreStructs::CLASSICAL) {
-        update_with_classical_reset_clamp(t);
+        update_with_classical_reset_clamp(t_ms);
     } else {
-        update_with_reset_options(t);
+        update_with_reset_options(t_ms);
     }
 
     // FIFO update if needed for something like Calcium imaging
@@ -368,6 +379,26 @@ void LIFCNeuron::InputReceptorAdded(CoreStructs::LIFCReceptorData* RData) {
 void LIFCNeuron::OutputTransmitterAdded(CoreStructs::LIFCReceptorData* RData) {
     LIFCTransmitterDataVec.emplace_back(RData);
 
+}
+
+const std::map<Connections::NeurotransmitterType, int> NeurotransmitterType2ConnectionType = {
+    { Connections::AMPA, 1 },
+    { Connections::GABA, 2 },
+    { Connections::NMDA, 3 },
+};
+
+int GetConnectionType(Connections::NeurotransmitterType neurotransmitter) {
+    auto it = NeurotransmitterType2ConnectionType.find(neurotransmitter);
+    if (it == NeurotransmitterType2ConnectionType.end()) return 0; // Unknown type.
+    return it->second;
+}
+
+void LIFCNeuron::GetConnectomeTargetsJSON(nlohmann::json& targetvec, nlohmann::json& typevec, nlohmann::json& weightvec) {
+    for (auto & rdata : LIFCTransmitterDataVec) {
+        targetvec.push_back(rdata->DstNeuronID);
+        typevec.push_back(GetConnectionType(rdata->Type()));
+        weightvec.push_back(rdata->weight * rdata->g_peak_sum_nS);
+    }   
 }
 
 }; // namespace Simulator

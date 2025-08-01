@@ -133,9 +133,9 @@ std::string ModelRPCInterface::ReceptorCreate(std::string _JSONRequest) {
 }
 
 const std::map<std::string, Connections::LIFCSTDPMethodEnum> LIFCSTDPMethodStrToEnum = {
-    "Hebbian", Connections::STDPHEBBIAN,
-    "Anti-Hebbian", Connections::STDPANTIHEBBIAN,
-    "None", Connections::STDPNONE
+    { "Hebbian", Connections::STDPHEBBIAN },
+    { "Anti-Hebbian", Connections::STDPANTIHEBBIAN },
+    { "None", Connections::STDPNONE }
 };
 
 Connections::LIFCSTDPMethodEnum LIFCSTDPMethod(const std::string& stdpmethod_cache) {
@@ -147,9 +147,9 @@ Connections::LIFCSTDPMethodEnum LIFCSTDPMethod(const std::string& stdpmethod_cac
 }
 
 const std::map<std::string, Connections::NeurotransmitterType> LIFCNeurotransmitterStrToEnum = {
-    "AMPA", Connections:AMPA,
-    "GABA", Connections:GABA,
-    "NMDA", Connections:NMDA
+    { "AMPA", Connections::AMPA },
+    { "GABA", Connections::GABA },
+    { "NMDA", Connections::NMDA }
 };
 
 Connections::NeurotransmitterType LIFCNeurotransmitter(const std::string& neurotransmitter_cache) {
@@ -438,10 +438,10 @@ std::string ModelRPCInterface::LIFCCreate(std::string _JSONRequest) {
 }
 
 const std::map<std::string, CoreStructs::LIFCUpdateMethodEnum> UpdateMethodStrToEnum = {
-    "ExpEulerCm", CoreStructs::EXPEULER_CM,
-    "ExpEulerRm", CoreStructs::EXPEULER_RM,
-    "ForwardEuler", CoreStructs::FORWARD_EULER,
-    "Classical", CoreStructs::CLASSICAL
+    { "ExpEulerCm", CoreStructs::EXPEULER_CM },
+    { "ExpEulerRm", CoreStructs::EXPEULER_RM },
+    { "ForwardEuler", CoreStructs::FORWARD_EULER },
+    { "Classical", CoreStructs::CLASSICAL }
 };
 
 CoreStructs::LIFCUpdateMethodEnum LIFCUpdateMethod(const std::string& UpdateMethodStr) {
@@ -453,9 +453,9 @@ CoreStructs::LIFCUpdateMethodEnum LIFCUpdateMethod(const std::string& UpdateMeth
 }
 
 const std::map<std::string, CoreStructs::LIFCResetMethodEnum> ResetMethodStrToEnum = {
-    "ToVm", CoreStructs::TOVM,
-    "Onset", CoreStructs::ONSET,
-    "After", CoreStructs::AFTER,
+    { "ToVm", CoreStructs::TOVM },
+    { "Onset", CoreStructs::ONSET },
+    { "After", CoreStructs::AFTER }
 };
 
 CoreStructs::LIFCResetMethodEnum LIFCResetMethod(const std::string& ResetMethodStr) {
@@ -467,8 +467,8 @@ CoreStructs::LIFCResetMethodEnum LIFCResetMethod(const std::string& ResetMethodS
 }
 
 const std::map<std::string, CoreStructs::LIFCAHPSaturationModelEnum> AHPSaturationModelStrToEnum = {
-    "clip", CoreStructs::AHPCLIP,
-    "sigmoid", CoreStructs::AHPSIGMOID,
+    { "clip", CoreStructs::AHPCLIP },
+    { "sigmoid", CoreStructs::AHPSIGMOID }
 };
 
 CoreStructs::LIFCAHPSaturationModelEnum LIFCAHPSaturationModel(const std::string& AHPSaturationModelStr) {
@@ -480,8 +480,8 @@ CoreStructs::LIFCAHPSaturationModelEnum LIFCAHPSaturationModel(const std::string
 }
 
 const std::map<std::string, CoreStructs::LIFCADPSaturationModelEnum> ADPSaturationModelStrToEnum = {
-    "clip", CoreStructs::ADPCLIP,
-    "resource", CoreStructs::ADPRESOURCE,
+    { "clip", CoreStructs::ADPCLIP },
+    { "resource", CoreStructs::ADPRESOURCE }
 };
 
 CoreStructs::LIFCADPSaturationModelEnum LIFCADPSaturationModel(const std::string& ADPSaturationModelStr) {
@@ -521,8 +521,8 @@ std::string ModelRPCInterface::LIFCNeuronCreate(std::string _JSONRequest) {
         || (!Handle.GetParFloat("RefractoryPeriod_ms", C.RefractoryPeriod_ms))
         || (!Handle.GetParFloat("SpikeDepolarization_mV", C.SpikeDepolarization_mV))
 
-        || (!Handle.GetParString("UpdateMethod", UpdateMethodStr)))
-        || (!Handle.GetParString("ResetMethod", ResetMethodStr)))
+        || (!Handle.GetParString("UpdateMethod", UpdateMethodStr))
+        || (!Handle.GetParString("ResetMethod", ResetMethodStr))
 
         || (!Handle.GetParFloat("AfterHyperpolarizationReversalPotential_mV", C.AfterHyperpolarizationReversalPotential_mV))
 

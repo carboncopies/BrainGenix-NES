@@ -49,8 +49,6 @@ struct ReceptorData: public ReceptorDataBase {
     Connections::Receptor * ReceptorPtr = nullptr;
 
     ReceptorData(int _RID, Connections::Receptor * _RPtr, Neuron * _SNPtr, Neuron * _DNPtr);
-}
-
 };
 
 //! This is used to store and update abstracted functional data for each
@@ -78,15 +76,15 @@ struct LIFCReceptorData: public ReceptorDataBase {
 
     void Calculate_Abstracted_PSP_Medians();
 
-    float E_k() { return ReceptorPtrs.at(0)->ReversalPotential_mV; }
-    bool voltage_gated() { return ReceptorPtrs.at(0)->voltage_gated; }
+    float E_k();
+    bool voltage_gated();
 
     float g() { return g_k; }
     float gE_k() { return g_k * E_k(); }
 
     float Get_Current(float Vm) { return g_k * (Vm - E_k()); }
 
-    NeurotransmitterType Type() { return ReceptorPtrs.at(0)->Neurotransmitter; }
+    Connections::NeurotransmitterType Type();
 
     void Update_Conductance(float t, float Vm);
 
@@ -359,7 +357,7 @@ struct LIFCNeuronStruct: public LIFCNeuronBase {
     std::vector<int> AxonCompartmentIDs;
 
     std::unique_ptr<uint8_t[]> GetFlat() const;
-    bool FromFlat(SCNeuronStructFlatHeader* header);
+    bool FromFlat(LIFCNeuronStructFlatHeader* header);
 
 };
 

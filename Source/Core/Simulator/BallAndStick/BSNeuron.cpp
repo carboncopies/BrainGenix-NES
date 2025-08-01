@@ -351,6 +351,27 @@ void BSNeuron::OutputTransmitterAdded(CoreStructs::ReceptorData* RData) {
 
 }
 
+const std::map<std::string, int> Neurotransmitter2ConnectionType = {
+    { "AMPA", 1 },
+    { "GABA", 2 },
+    { "NMDA", 3 },
+};
+
+int GetConnectionType(const std::string& neurotransmitter) {
+    auto it = Neurotransmitter2ConnectionType.find(neurotransmitter);
+    if (it == Neurotransmitter2ConnectionType.end()) return 0; // Unknown type.
+    return it->second;
+}
+
+void BSNeuron::GetConnectomeTargetsJSON(nlohmann::json& targetvec, nlohmann::json& typevec, nlohmann::json& weightvec) {
+    for (auto & rdata : TransmitterDataVec) {
+        targetvec.push_back(rdata->DstNeuronID);
+        auto ReceptorPtr = rdata->ReceptorPtr;
+        typevec.push_back(GetConnectionType(ReceptorPtr->Neurotransmitter));
+        weightvec.push_back(ReceptorPtr->Conductance_nS); // *** A better "weight" might by conductance times peak or under-curve area of PSP double-exp.
+    }   
+}
+
 }; // namespace BallAndStick
 }; // namespace Simulator
 }; // namespace NES

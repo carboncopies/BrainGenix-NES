@@ -158,8 +158,8 @@ const nlohmann::json& HandlerData::ReqJSON() const {
     return RequestJSON;
 }
 
-bool HandlerData::CheckCompatibility(SimulationNeuronClass _NewObjectCategory) {
-    if (ThisSimulation->SimNeuronClass == UNDETERMINED) {
+bool HandlerData::CheckCompatibility(Simulator::SimulationNeuronClass _NewObjectCategory) {
+    if (ThisSimulation->SimNeuronClass == Simulator::UNDETERMINED) {
         ThisSimulation->SimNeuronClass = _NewObjectCategory;
         return true;
     }
