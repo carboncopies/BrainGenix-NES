@@ -184,13 +184,17 @@ public:
     int AddSphere(Geometries::Sphere& _S);
     int AddCylinder(Geometries::Cylinder& _S);
     int AddBox(Geometries::Box& _S);
-    int AddSCCompartment(Compartments::BS& _C);
+
+    bool CheckCompatibility(SimulationNeuronClass _NewObjectCategory);
+    int AddSCCompartment(Compartments::BS& _C, SimulationNeuronClass _NewObjectCategory);
     int AddLIFCCompartment(Compartments::LIFC& _C);
     int AddBSNeuron(CoreStructs::BSNeuronStruct& _N);
     int AddSCNeuron(CoreStructs::SCNeuronStruct& _N);
     int AddLIFCNeuron(CoreStructs::LIFCNeuronStruct& _N);
+
     int AddReceptor(Connections::Receptor& _C);
     int AddLIFCReceptor(Connections::LIFCReceptor& _C);
+
     void RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompartmentIDs, uint64_t _NeuronUID);
 
     bool SaveModel(const std::string& Name);

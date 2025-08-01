@@ -226,10 +226,6 @@ std::string ModelRPCInterface::BSCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    if (!Handle.CheckCompatibility(BSNEURONS)) {
-        return Handle.ErrResponse();
-    }
-
     // Build New BS Object
     Compartments::BS C;
     if ((!Handle.GetParInt("ShapeID", C.ShapeID))
@@ -242,7 +238,7 @@ std::string ModelRPCInterface::BSCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    C.ID = Handle.Sim()->AddSCCompartment(C);
+    C.ID = Handle.Sim()->AddSCCompartment(C, BSNEURONS);
     if (C.ID < 0) {
         return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
@@ -266,10 +262,6 @@ std::string ModelRPCInterface::BSNeuronCreate(std::string _JSONRequest) {
  
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Neuron/BS/Create", Simulations_);
     if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
-
-    if (!Handle.CheckCompatibility(BSNEURONS)) {
         return Handle.ErrResponse();
     }
 
@@ -298,6 +290,9 @@ std::string ModelRPCInterface::BSNeuronCreate(std::string _JSONRequest) {
     }
 
     C.ID = Handle.Sim()->AddBSNeuron(C);
+    if (C.ID < 0) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
 
     // Return Result ID
     return Handle.ResponseWithID("NeuronID", C.ID);
@@ -315,10 +310,6 @@ std::string ModelRPCInterface::SCCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    if (!Handle.CheckCompatibility(SCNEURONS)) {
-        return Handle.ErrResponse();
-    }
-
     // Build New SC Object
     Compartments::SC C;
     if ((!Handle.GetParInt("ShapeID", C.ShapeID))
@@ -331,7 +322,7 @@ std::string ModelRPCInterface::SCCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    C.ID = Handle.Sim()->AddSCCompartment(C);
+    C.ID = Handle.Sim()->AddSCCompartment(C, SCNEURONS);
     if (C.ID < 0) {
         return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
@@ -353,10 +344,6 @@ std::string ModelRPCInterface::SCNeuronCreate(std::string _JSONRequest) {
  
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Neuron/SC/Create", Simulations_);
     if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
-
-    if (!Handle.CheckCompatibility(SCNEURONS)) {
         return Handle.ErrResponse();
     }
 
@@ -408,10 +395,6 @@ std::string ModelRPCInterface::LIFCCreate(std::string _JSONRequest) {
  
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Compartments/LIFC/Create", Simulations_);
     if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
-
-    if (!Handle.CheckCompatibility(LIFCNEURONS)) {
         return Handle.ErrResponse();
     }
 
@@ -496,10 +479,6 @@ std::string ModelRPCInterface::LIFCNeuronCreate(std::string _JSONRequest) {
  
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Neuron/LIFC/Create", Simulations_);
     if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
-
-    if (!Handle.CheckCompatibility(LIFCNEURONS)) {
         return Handle.ErrResponse();
     }
 

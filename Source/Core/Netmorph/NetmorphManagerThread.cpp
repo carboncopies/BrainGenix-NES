@@ -128,7 +128,7 @@ public:
         } else {
             C.Name = "dendrite-"+N.Name;
         }
-        if (_Params.Sim->AddSCCompartment(C)<0) { // invalid C.ID
+        if (_Params.Sim->AddSCCompartment(C, SCNEURONS)<0) { // invalid C.ID
             num_errors++;
             NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed: Missing Cylinder for neurite compartment build.");
         } else { // valid C.ID
@@ -327,7 +327,7 @@ public:
         C.AfterHyperpolarizationAmplitude_mV = N.AfterHyperpolarizationAmplitude_mV;
         C.DecayTime_ms = N.DecayTime_ms;
         C.Name = "somacomp-"+N.Name;
-        if (_Params.Sim->AddSCCompartment(C)<0) {
+        if (_Params.Sim->AddSCCompartment(C, SCNEURONS)<0) {
             num_errors++;
             NETMORPH_PARAMS_FAIL("NeuronBuild failed: Missing Sphere for soma compartment build.");
             return;

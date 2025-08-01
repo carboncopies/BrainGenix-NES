@@ -88,11 +88,27 @@ int Simulation::AddBox(Geometries::Box& _S){
     return _S.ID;
 }
 
+bool Simulation::CheckCompatibility(SimulationNeuronClass _NewObjectCategory) {
+    if (SimNeuronClass == Simulator::UNDETERMINED) {
+        SimNeuronClass = _NewObjectCategory;
+        return true;
+    }
+
+    if (SimNeuronClass != _NewObjectCategory) {
+        Logger_->Log("Error attempted mixing of neuron or compartment classes", 7);
+        return false;
+    }
+
+    return true;
+}
+
 /**
  * Note: We cache the pointer to the shape in the compartment data, so that it
  *       does not need to reach back to the Simulation to search for it.
  */
-int Simulation::AddSCCompartment(Compartments::BS& _C) {
+int Simulation::AddSCCompartment(Compartments::BS& _C, SimulationNeuronClass _NewObjectCategory) {
+    if (!CheckCompatibility(_NewObjectCategory)) return -1;
+
     _C.ShapePtr = Collection.GetGeometry(_C.ShapeID);
     if (!_C.ShapePtr) {
         Logger_->Log("Error: Shape with ID "+std::to_string(_C.ShapeID)+" not found", 7);
@@ -105,6 +121,8 @@ int Simulation::AddSCCompartment(Compartments::BS& _C) {
 }
 
 int Simulation::AddLIFCCompartment(Compartments::LIFC& _C) {
+    if (!CheckCompatibility(LIFCNEURONS)) return -1;
+
     _C.ShapePtr = Collection.GetGeometry(_C.ShapeID);
     if (!_C.ShapePtr) {
         Logger_->Log("Error: Shape with ID "+std::to_string(_C.ShapeID)+" not found", 7);
@@ -117,6 +135,8 @@ int Simulation::AddLIFCCompartment(Compartments::LIFC& _C) {
 }
 
 int Simulation::AddBSNeuron(CoreStructs::BSNeuronStruct& _N) {
+    if (!CheckCompatibility(BSNEURONS)) return -1;
+
     _N.ID = Neurons.size();
     
     Neurons.push_back(std::make_shared<BallAndStick::BSNeuron>(_N));
@@ -131,6 +151,8 @@ int Simulation::AddBSNeuron(CoreStructs::BSNeuronStruct& _N) {
 }
 
 int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
+    if (!CheckCompatibility(SCNEURONS)) return -1;
+
     if (_N.SomaCompartmentIDs.size()<1) {
         Logger_->Log("Error: Missing soma campartments", 7);
         return -1;
@@ -163,6 +185,8 @@ int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
 }
 
 int Simulation::AddLIFCNeuron(CoreStructs::LIFCNeuronStruct& _N) {
+    if (!CheckCompatibility(LIFCNEURONS)) return -1;
+
     if (_N.SomaCompartmentIDs.size()<1) {
         Logger_->Log("Error: Missing soma campartments", 7);
         return -1;
@@ -999,7 +1023,7 @@ bool Simulation::LoadModel(const std::string& Name) {
         for (size_t i = 0; i < _Loader._SaverInfo.BSSCCompartmentsSize; i++) {
             Compartments::BS _C(_Loader.CompartmentData.get()[i]);
             _C.Name = "compartment-"+std::to_string(i);
-            ID = AddSCCompartment(_C);
+            ID = AddSCCompartment(_C, _SaveLoadPrior.SimNeuronClass);
         }
 
         // Reset and instantiate SCNeurons.
