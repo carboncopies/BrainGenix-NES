@@ -11,7 +11,9 @@
 #include <iostream>
 #include <algorithm> // for std::sort(), std::min(), std::max()
 
+#include <Simulator/Structs/Simulation.h>
 #include <Simulator/Structs/Neuron.h>
+#include <Simulator/LIFCompartmental/LIFCNeuron.h>
 
 namespace BG {
 namespace NES {
@@ -22,6 +24,32 @@ namespace CoreStructs {
 // OOP level:
 #define WARNWRONGOOPLEVEL() {\
     std::cout << "DEBUG --> Wrong OOP level: " << __func__ << '\n'; std::cout.flush();\
+}
+
+ReceptorDataBase::ReceptorDataBase(Neuron * _SNPtr, Neuron * _DNPtr):
+    SrcNeuronID(_SNPtr->ID), DstNeuronID(_DNPtr->ID),
+    SrcNeuronPtr(_SNPtr), DstNeuronPtr(_DNPtr) {
+}
+
+ReceptorData::ReceptorData(int _RID, Connections::Receptor * _RPtr, Neuron * _SNPtr, Neuron * _DNPtr):
+    ReceptorDataBase(_SNPtr, _DNPtr), ReceptorID(_RID), ReceptorPtr(_RPtr) {
+}
+
+LIFCReceptorData::LIFCReceptorData(int _RID, Connections::LIFCReceptor * _RPtr, Neuron * _SNPtr, Neuron * _DNPtr):
+    ReceptorDataBase(_SNPtr, _DNPtr) {
+
+    ReceptorIDs.emplace_back(_RID);
+    ReceptorPtrs.emplace_back(_RPtr);
+
+    g_peak_sum_nS = _RPtr->PeakConductance_nS;
+    weight = _RPtr->Weight;
+    weight_g_peak_sum = _RPtr->Weight*_RPtr->PeakConductance_nS;
+    tau_rise_ms = _RPtr->PSPRise_ms;
+    tau_decay_ms = _RPtr->PSPDecay_ms;
+    onset_delay_ms = _RPtr->OnsetDelay_ms;
+    if (!dynamic_cast<LIFCNeuron*>(_SNPtr)->Sim.use_abstracted_LIF_receptors) {
+        norm = compute_normalization(tau_rise_ms, tau_decay_ms);
+    }
 }
 
 // This is for the abstracted parameters that do not use a median.
@@ -144,6 +172,77 @@ void Neuron::OutputTransmitterAdded(ReceptorData* RData) {
     WARNWRONGOOPLEVEL();
 }
 
+std::string SCNeuronBase::str() const {
+    std::stringstream ss;
+    ss << "ID: " << ID;
+    ss << "\nMembranePotential_mV: " << MembranePotential_mV;
+    ss << "\nRestingPotential_mV: " << RestingPotential_mV;
+    ss << "\nSpikeThreshold_mV: " << SpikeThreshold_mV;
+    ss << "\nDecayTime_ms: " << DecayTime_ms;
+    ss << "\nAfterHyperpolarizationAmplitude_mV: " << AfterHyperpolarizationAmplitude_mV;
+    ss << "\nPostsynapticPotentialRiseTime_ms: " << PostsynapticPotentialRiseTime_ms;
+    ss << "\nPostsynapticPotentialDecayTime_ms: " << PostsynapticPotentialDecayTime_ms;
+    ss << "\nPostsynapticPotentialAmplitude_nA: " << PostsynapticPotentialAmplitude_nA << '\n';
+    return ss.str();
+}
+
+
+std::string SCNeuronStructFlatHeader::str() const {
+    std::stringstream ss;
+    ss << "FlatBufSize: " << FlatBufSize;
+    ss << "\nNameSize: " << NameSize;
+    ss << "\nNameOffset: " << NameOffset;
+    ss << "\nSomaCompartmentIDsSize: " << SomaCompartmentIDsSize;
+    ss << "\nSomaCompartmentIDsOffset: " << SomaCompartmentIDsOffset;
+    ss << "\nDendriteCompartmentIDsSize: " << DendriteCompartmentIDsSize;
+    ss << "\nDendriteCompartmentIDsOffset: " << DendriteCompartmentIDsOffset;
+    ss << "\nAxonCompartmentIDsSize: " << AxonCompartmentIDsSize;
+    ss << "\nAxonCompartmentIDsOffset: " << AxonCompartmentIDsOffset << '\n';
+    ss << Base.str();
+    return ss.str();
+}
+
+std::string SCNeuronStructFlatHeader::name_str() const {
+    std::stringstream ss;
+    ss << "Name: " << (const char*) ADD_BYTES_TO_POINTER(this, NameOffset) << '\n';
+    return ss.str();
+}
+
+std::string SCNeuronStructFlatHeader::scid_str() const {
+    std::stringstream ss;
+    int* scidptr = (int*) ADD_BYTES_TO_POINTER(this, SomaCompartmentIDsOffset);
+    //ss << "flat header address = " << uint64_t(this) << '\n';
+    //ss << "scidptr = " << uint64_t(scidptr) << '\n';
+    ss << "SomaCompartmentIDs: ";
+    for (size_t idx = 0; idx < SomaCompartmentIDsSize; idx++) {
+        ss << scidptr[idx] << ' ';
+    }
+    ss << '\n';
+    return ss.str();
+}
+
+std::string SCNeuronStructFlatHeader::dcid_str() const {
+    std::stringstream ss;
+    int* dcidptr = (int*) ADD_BYTES_TO_POINTER(this, DendriteCompartmentIDsOffset);
+    ss << "DendriteCompartmentIDs: ";
+    for (size_t idx = 0; idx < DendriteCompartmentIDsSize; idx++) {
+        ss << dcidptr[idx] << ' ';
+    }
+    ss << '\n';
+    return ss.str();
+}
+
+std::string SCNeuronStructFlatHeader::acid_str() const {
+    std::stringstream ss;
+    int* acidptr = (int*) ADD_BYTES_TO_POINTER(this, AxonCompartmentIDsOffset);
+    ss << "AxonCompartmentIDs: ";
+    for (size_t idx = 0; idx < AxonCompartmentIDsSize; idx++) {
+        ss << acidptr[idx] << ' ';
+    }
+    ss << '\n';
+    return ss.str();
+}
+
 /**
  * Return a flattened struct describing name and compartment indices of
  * the SCNeuron. This is useful for storage, among other things.
@@ -205,6 +304,106 @@ bool SCNeuronStruct::FromFlat(SCNeuronStructFlatHeader* header) {
     memcpy(AxonCompartmentIDs.data(), ADD_BYTES_TO_POINTER(header, header->AxonCompartmentIDsOffset), header->FlatBufSize - header->AxonCompartmentIDsOffset);
 
     return true;
+}
+
+std::string LIFCNeuronBase::str() const {
+    std::stringstream ss;
+    ss << "ID: " << ID;
+    ss << "\nRestingPotential_mV: " << RestingPotential_mV;
+    ss << "\nResetPotential_mV: " << ResetPotential_mV;
+    ss << "\nSpikeThreshold_mV: " << SpikeThreshold_mV;
+    ss << "\nMembraneResistance_MOhm: " << MembraneResistance_MOhm;
+    ss << "\nMembraneCapacitance_pF: " << MembraneCapacitance_pF;
+    ss << "\nRefractoryPeriod_ms: " << RefractoryPeriod_ms;
+    ss << "\nSpikeDepolarization_mV: " << SpikeDepolarization_mV;
+    ss << "\nUpdateMethod: " << UpdateMethod;
+    ss << "\nResetMethod: " << ResetMethod;
+    ss << "\nAfterHyperpolarizationReversalPotential_mV: " << AfterHyperpolarizationReversalPotential_mV;
+    ss << "\nFastAfterHyperpolarizationRise_ms: " << FastAfterHyperpolarizationRise_ms;
+    ss << "\nFastAfterHyperpolarizationDecay_ms: " << FastAfterHyperpolarizationDecay_ms;
+    ss << "\nFastAfterHyperpolarizationPeakConductance_nS: " << FastAfterHyperpolarizationPeakConductance_nS;
+    ss << "\nFastAfterHyperpolarizationMaxPeakConductance_nS: " << FastAfterHyperpolarizationMaxPeakConductance_nS;
+    ss << "\nFastAfterHyperpolarizationHalfActConstant: " << FastAfterHyperpolarizationHalfActConstant;
+    ss << "\nSlowAfterHyperpolarizationRise_ms: " << SlowAfterHyperpolarizationRise_ms;
+    ss << "\nSlowAfterHyperpolarizationDecay_ms: " << SlowAfterHyperpolarizationDecay_ms;
+    ss << "\nSlowAfterHyperpolarizationPeakConductance_nS: " << SlowAfterHyperpolarizationPeakConductance_nS;
+    ss << "\nSlowAfterHyperpolarizationMaxPeakConductance_nS: " << SlowAfterHyperpolarizationMaxPeakConductance_nS;
+    ss << "\nSlowAfterHyperpolarizationHalfActConstant: " << SlowAfterHyperpolarizationHalfActConstant;
+    ss << "\nAfterHyperpolarizationSaturationModel: " << AfterHyperpolarizationSaturationModel;
+    ss << "\nFatigueThreshold: " << FatigueThreshold;
+    ss << "\nFatigueRecoveryTime_ms: " << FatigueRecoveryTime_ms;
+    ss << "\nAfterDepolarizationReversalPotential_mV: " << AfterDepolarizationReversalPotential_mV;
+    ss << "\nAfterDepolarizationRise_ms: " << AfterDepolarizationRise_ms;
+    ss << "\nAfterDepolarizationDecay_ms: " << AfterDepolarizationDecay_ms;
+    ss << "\nAfterDepolarizationPeakConductance_nS: " << AfterDepolarizationPeakConductance_nS;
+    ss << "\nAfterDepolarizationSaturationMultiplier: " << AfterDepolarizationSaturationMultiplier;
+    ss << "\nAfterDepolarizationRecoveryTime_ms: " << AfterDepolarizationRecoveryTime_ms;
+    ss << "\nAfterDepolarizationDepletion: " << AfterDepolarizationDepletion;
+    ss << "\nAfterDepolarizationSaturationModel: " << AfterDepolarizationSaturationModel;
+    ss << "\nAdaptiveThresholdDiffPerSpike: " << AdaptiveThresholdDiffPerSpike;
+    ss << "\nAdaptiveTresholdRecoveryTime_ms: " << AdaptiveTresholdRecoveryTime_ms;
+    ss << "\nAdaptiveThresholdDiffPotential_mV: " << AdaptiveThresholdDiffPotential_mV;
+    ss << "\nAdaptiveThresholdFloor_mV: " << AdaptiveThresholdFloor_mV;
+    ss << "\nAdaptiveThresholdFloorDeltaPerSpike_mV: " << AdaptiveThresholdFloorDeltaPerSpike_mV;
+    ss << "\nAdaptiveThresholdFloorRecoveryTime_ms: " << AdaptiveThresholdFloorRecoveryTime_ms << '\n';
+    return ss.str();
+}
+
+
+std::string LIFCNeuronStructFlatHeader::str() const {
+    std::stringstream ss;
+    ss << "FlatBufSize: " << FlatBufSize;
+    ss << "\nNameSize: " << NameSize;
+    ss << "\nNameOffset: " << NameOffset;
+    ss << "\nSomaCompartmentIDsSize: " << SomaCompartmentIDsSize;
+    ss << "\nSomaCompartmentIDsOffset: " << SomaCompartmentIDsOffset;
+    ss << "\nDendriteCompartmentIDsSize: " << DendriteCompartmentIDsSize;
+    ss << "\nDendriteCompartmentIDsOffset: " << DendriteCompartmentIDsOffset;
+    ss << "\nAxonCompartmentIDsSize: " << AxonCompartmentIDsSize;
+    ss << "\nAxonCompartmentIDsOffset: " << AxonCompartmentIDsOffset << '\n';
+    ss << Base.str();
+    return ss.str();
+}
+
+std::string LIFCNeuronStructFlatHeader::name_str() const {
+    std::stringstream ss;
+    ss << "Name: " << (const char*) ADD_BYTES_TO_POINTER(this, NameOffset) << '\n';
+    return ss.str();
+}
+
+std::string LIFCNeuronStructFlatHeader::scid_str() const {
+    std::stringstream ss;
+    int* scidptr = (int*) ADD_BYTES_TO_POINTER(this, SomaCompartmentIDsOffset);
+    //ss << "flat header address = " << uint64_t(this) << '\n';
+    //ss << "scidptr = " << uint64_t(scidptr) << '\n';
+    ss << "SomaCompartmentIDs: ";
+    for (size_t idx = 0; idx < SomaCompartmentIDsSize; idx++) {
+        ss << scidptr[idx] << ' ';
+    }
+    ss << '\n';
+    return ss.str();
+}
+
+std::string LIFCNeuronStructFlatHeader::dcid_str() const {
+    std::stringstream ss;
+    int* dcidptr = (int*) ADD_BYTES_TO_POINTER(this, DendriteCompartmentIDsOffset);
+    ss << "DendriteCompartmentIDs: ";
+    for (size_t idx = 0; idx < DendriteCompartmentIDsSize; idx++) {
+        ss << dcidptr[idx] << ' ';
+    }
+    ss << '\n';
+    return ss.str();
+}
+
+std::string LIFCNeuronStructFlatHeader::acid_str() const {
+    std::stringstream ss;
+    int* acidptr = (int*) ADD_BYTES_TO_POINTER(this, AxonCompartmentIDsOffset);
+    ss << "AxonCompartmentIDs: ";
+    for (size_t idx = 0; idx < AxonCompartmentIDsSize; idx++) {
+        ss << acidptr[idx] << ' ';
+    }
+    ss << '\n';
+    return ss.str();
 }
 
 /**

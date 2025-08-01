@@ -17,7 +17,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Geometries/Geometry.h>
-#include <Simulator/Structs/SC.h>
+//#include <Simulator/Structs/SC.h>
 
 namespace BG {
 namespace NES {
@@ -40,18 +40,7 @@ struct LIFCBaseData {
     float MembraneCapacitance_pF;
     float AfterHyperpolarizationAmplitude_mV; /**AfterHyperpolarization Amplitude in millivolts*/
 
-    std::string str() const {
-        std::stringstream ss;
-        ss << "ID: " << ID;
-        ss << "\nShapeID: " << ShapeID;
-        ss << "\nRestingPotential_mV: " << RestingPotential_mV;
-        ss << "\nResetPotential_mV: " << ResetPotential_mV;
-        ss << "\nSpikeThreshold_mV: " << SpikeThreshold_mV;
-        ss << "\nMembraneResistance_MOhm: " << MembraneResistance_MOhm;
-        ss << "\nMembraneCapacitance_pF: " << MembraneCapacitance_pF;
-        ss << "\nAfterHyperpolarizationAmplitude_mV: " << AfterHyperpolarizationAmplitude_mV << '\n';
-        return ss.str();
-    }
+    std::string str() const;
 };
 
 /**

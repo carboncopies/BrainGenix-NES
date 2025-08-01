@@ -30,3 +30,43 @@ float g_norm(float t, const std::vector<float>& spike_times, float tau_rise, flo
     }
     return gnorm / norm;
 }
+
+ReceptorBase::str() const {
+    std::stringstream ss;
+    ss << "ID: " << ID;
+    ss << "\nShapeID: " << ShapeID;
+    ss << "\nSourceCompartmentID: " << SourceCompartmentID;
+    ss << "\nDestinationCompartmentID: " << DestinationCompartmentID;
+    ss << "\nConductance_nS: " << Conductance_nS;
+    ss << "\nTimeConstantRise_ms: " << TimeConstantRise_ms;
+    ss << "\nTimeConstantDecay_ms: " << TimeConstantDecay_ms;
+    ss << "\nNeurotransmitter: " << Neurotransmitter;
+    return ss.str();
+}
+
+void ReceptorBase::safeset_Neurotransmitter(const char* s) {
+    strncpy(Neurotransmitter, s, NeurotransmitterLEN-1);
+    Neurotransmitter[NeurotransmitterLEN-1] = '\0';
+}
+
+std::string LIFCReceptorBase::str() const {
+    std::stringstream ss;
+    ss << "ID: " << ID;
+    ss << "\nShapeID: " << ShapeID;
+    ss << "\nSourceCompartmentID: " << SourceCompartmentID;
+    ss << "\nDestinationCompartmentID: " << DestinationCompartmentID;
+    ss << "\nReversalPotential_mV: " << ReversalPotential_mV; 
+    ss << "\nPSPRise_ms: " << PSPRise_ms;
+    ss << "\nPSPDecay_ms: " << PSPDecay_ms;
+    ss << "\nPeakConductance_nS: " << PeakConductance_nS;
+    ss << "\nWeight: " << Weight;
+    ss << "\nOnsetDelay_ms: " << OnsetDelay_ms;
+    ss << "\nvoltage_gated: " << voltage_gated;
+    ss << "\nSTDP_Method: " << STDP_Method;
+    ss << "\nSTDP_A_pos: " << STDP_A_pos;
+    ss << "\nSTDP_A_neg: " << STDP_A_neg;
+    ss << "\nSTDP_Tau_pos: " << STDP_Tau_pos;
+    ss << "\nSTDP_Tau_neg: " << STDP_Tau_neg;
+    ss << "\nNeurotransmitter: " << Neurotransmitter;
+    return ss.str();
+}
