@@ -364,23 +364,10 @@ std::string ModelRPCInterface::SCNeuronCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    // // We cache the pointers to the compartments in the neuron data, so that it
-    // // does not need to reach back to the Simulation to search for it.
-    // C.SomaCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.SomaCompartmentID);
-    // C.AxonCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.AxonCompartmentID);
-    // if ((!C.SomaCompartmentPtr) || (!C.AxonCompartmentPtr)) {
-    //     return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
-    // }
-
     C.ID = Handle.Sim()->AddSCNeuron(C);
     if (C.ID < 0) {
         return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
-    // *** WARNING: R.K removing the following on 2025-07-29, because it's
-    //     already done in AddSCNeuron(), but note the +1 difference in code!
-    // Handle.Sim()->RegisterNeuronUIDToCompartments(C.SomaCompartmentIDs, C.ID);
-    // Handle.Sim()->RegisterNeuronUIDToCompartments(C.DendriteCompartmentIDs, C.ID);
-    // Handle.Sim()->RegisterNeuronUIDToCompartments(C.AxonCompartmentIDs, C.ID);
 
     // Return Result ID
     return Handle.ResponseWithID("NeuronID", C.ID);

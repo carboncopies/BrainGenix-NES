@@ -34,7 +34,7 @@ enum GeometryVariantOrder {
 
 /**
  * @brief This struct contains the various geometries used in the simulation. It has a vector containing each of the geometries.
- * For now, the "id" of the geometry, is simply its index minus an offset (cylinders are -1000000, boxes -2000000, etc.)
+ * For now, the "id" of the geometry, is simply its index.
  * 
  */
 struct GeometryCollection {

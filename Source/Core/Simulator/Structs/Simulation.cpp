@@ -144,8 +144,8 @@ int Simulation::AddBSNeuron(CoreStructs::BSNeuronStruct& _N) {
     NeuronByCompartment.emplace(_N.SomaCompartmentID, _N.ID);
     NeuronByCompartment.emplace(_N.AxonCompartmentID, _N.ID);
 
-    RegisterNeuronUIDToCompartments(std::vector<int>(_N.SomaCompartmentID), _N.ID + 1);
-    RegisterNeuronUIDToCompartments(std::vector<int>(_N.AxonCompartmentID), _N.ID + 1);
+    RegisterNeuronUIDToCompartments(std::vector<int>(_N.SomaCompartmentID), _N.ID);
+    RegisterNeuronUIDToCompartments(std::vector<int>(_N.AxonCompartmentID), _N.ID);
 
     return _N.ID;
 }
@@ -171,10 +171,9 @@ int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
         NeuronByCompartment.emplace(AxonID, _N.ID);
     }
 
-    // *** WARNING: Why +1?
-    RegisterNeuronUIDToCompartments(_N.SomaCompartmentIDs, _N.ID + 1);
-    RegisterNeuronUIDToCompartments(_N.DendriteCompartmentIDs, _N.ID + 1);
-    RegisterNeuronUIDToCompartments(_N.AxonCompartmentIDs, _N.ID + 1);
+    RegisterNeuronUIDToCompartments(_N.SomaCompartmentIDs, _N.ID);
+    RegisterNeuronUIDToCompartments(_N.DendriteCompartmentIDs, _N.ID);
+    RegisterNeuronUIDToCompartments(_N.AxonCompartmentIDs, _N.ID);
 
     // std::cout<<"Neuron Comp ID: "<<std::to_string(_N.ID)<<std::endl;
     // std::cout<<_N.SomaCompartmentIDs.size()<<std::endl;
@@ -205,9 +204,9 @@ int Simulation::AddLIFCNeuron(CoreStructs::LIFCNeuronStruct& _N) {
         NeuronByCompartment.emplace(AxonID, _N.ID);
     }
 
-    RegisterNeuronUIDToCompartments(_N.SomaCompartmentIDs, _N.ID + 1);
-    RegisterNeuronUIDToCompartments(_N.DendriteCompartmentIDs, _N.ID + 1);
-    RegisterNeuronUIDToCompartments(_N.AxonCompartmentIDs, _N.ID + 1);
+    RegisterNeuronUIDToCompartments(_N.SomaCompartmentIDs, _N.ID);
+    RegisterNeuronUIDToCompartments(_N.DendriteCompartmentIDs, _N.ID);
+    RegisterNeuronUIDToCompartments(_N.AxonCompartmentIDs, _N.ID);
 
     return _N.ID;
 }
@@ -280,7 +279,9 @@ int Simulation::AddLIFCReceptor(Connections::LIFCReceptor& _C) {
     return _C.ID;
 }
 
+// Note: _NeuronUID is incremented, because value 0 is reserved during Segmentation.
 void Simulation::RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompartmentIDs, uint64_t _NeuronUID) {
+    _NeuronUID += 1; // This is necessary to avoid UID 0 during Segmentation!
     
     // Iterate through all given geometry types so we can set the uuid of the parent neuron
     size_t MaxShapeIndex = Collection.Size();
@@ -288,7 +289,7 @@ void Simulation::RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompa
         size_t ShapeIndex = _GeometryCompartmentIDs[i];
 
         // Index Validation
-        if (ShapeIndex > MaxShapeIndex) {
+        if (ShapeIndex > MaxShapeIndex) { // *** Should this be >= ?
             std::cout<<"Error! Shape Index out of shape bounds in registration for neuron uid to compartments\n";
             continue;
         }
