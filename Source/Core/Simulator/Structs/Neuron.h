@@ -65,6 +65,11 @@ struct LIFCReceptorData: public ReceptorDataBase {
     float tau_decay_ms = 0.0; // abstracted tau_decay (median)
     float onset_delay_ms = 0.0; // abstracted onset_delay (median)
 
+    float STDP_A_pos = 0.0; // abstracted A_pos (median)
+    float STDP_A_neg = 0.0; // abstracted A_neg (median)
+    float STDP_Tau_pos = 0.0; // abstracted tau_pos (median)
+    float STDP_Tau_neg = 0.0; // abstracted tau_neg (median)
+
     float norm = 0.0; // Calculated once abstracted tau_rise_ms and tau_decay_ms are available
     float g_k = 0.0; // Calculated in Update_Conductance
 
@@ -85,6 +90,8 @@ struct LIFCReceptorData: public ReceptorDataBase {
     float Get_Current(float Vm) { return g_k * (Vm - E_k()); }
 
     Connections::NeurotransmitterType Type();
+
+    Connections::LIFCSTDPMethodEnum STDP_Method();
 
     void Update_Conductance(float t, float Vm);
 

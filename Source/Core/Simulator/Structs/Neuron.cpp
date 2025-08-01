@@ -65,6 +65,10 @@ Connections::NeurotransmitterType LIFCReceptorData::Type() {
     return ReceptorPtrs.at(0)->Neurotransmitter;
 }
 
+Connections::LIFCSTDPMethodEnum LIFCReceptorData::STDP_Method() {
+    return ReceptorPtrs.at(0)->STDP_Method;
+}
+
 // This is for the abstracted parameters that do not use a median.
 void LIFCReceptorData::AddToAbstractedFunctional(int _RID, Connections::LIFCReceptor * _RPtr) {
     g_peak_sum_nS += _RPtr->PeakConductance_nS;
@@ -97,6 +101,34 @@ void LIFCReceptorData::Calculate_Abstracted_PSP_Medians() {
         onset_delay_ms = (onset_delays[size / 2 - 1] + onset_delays[size / 2]) / 2.0;
     }
     norm = Connections::compute_normalization(tau_rise_ms, tau_decay_ms);
+
+    if (STDP_Method() != Connections::STDPNONE) {
+        std::vector<float> STDP_A_poses;
+        std::vector<float> STDP_A_negs;
+        std::vector<float> STDP_tau_poses;
+        std::vector<float> STDP_tau_negs;
+        for (auto& LIFCRptr : ReceptorPtrs) {
+            STDP_A_poses.push_back(LIFCRptr->STDP_A_pos);
+            STDP_A_negs.push_back(LIFCRptr->STDP_A_neg);
+            STDP_tau_poses.push_back(LIFCRptr->STDP_Tau_pos);
+            STDP_tau_negs.push_back(LIFCRptr->STDP_Tau_neg);
+        }
+        std::sort(STDP_A_poses.begin(), STDP_A_poses.end());
+        std::sort(STDP_A_negs.begin(), STDP_A_negs.end());
+        std::sort(STDP_tau_poses.begin(), STDP_tau_poses.end());
+        std::sort(STDP_tau_negs.begin(), STDP_tau_negs.end());
+        if (size % 2 == 1) {
+            STDP_A_pos = STDP_A_poses[size / 2];
+            STDP_A_neg = STDP_A_negs[size / 2];
+            STDP_Tau_pos = STDP_tau_poses[size / 2];
+            STDP_Tau_neg = STDP_tau_negs[size / 2];
+        } else {
+            STDP_A_pos = (STDP_A_poses[size / 2 - 1] + STDP_A_poses[size / 2]) / 2.0;
+            STDP_A_neg = (STDP_A_negs[size / 2 - 1] + STDP_A_negs[size / 2]) / 2.0;
+            STDP_Tau_pos = (STDP_tau_poses[size / 2 - 1] + STDP_tau_poses[size / 2]) / 2.0;
+            STDP_Tau_neg = (STDP_tau_negs[size / 2 - 1] + STDP_tau_negs[size / 2]) / 2.0;
+        }
+    }
 }
 
 // Effect of voltage-gated Mg2+ block.
@@ -120,7 +152,28 @@ void LIFCReceptorData::Update_Conductance(float t, float Vm) {
 // See the platform paper for a detailed description of the biophysics and
 // equations underlying this STDP implementation.
 void LIFCReceptorData::STDP_Update(float tfire) {
+    if (SrcNeuronPtr->TAct_ms.empty()) return;
+
+    float t_pre = SrcNeuronPtr->TAct_ms.back();
     
+    if (STDP_Method() == Connections::STDPNONE) return;
+    
+    float dt_spikes;
+    if (STDP_Method() == Connections::STDPANTIHEBBIAN) {
+        dt_spikes = t_pre - tfire;
+    } else {
+        dt_spikes = tfire - t_pre;
+    }
+    
+    float dw;
+    if (dt_spikes > 0) {
+        dw = STDP_A_pos * exp(-dt_spikes / STDP_Tau_pos);
+    } else {
+        dw = -STDP_A_neg * exp(dt_spikes / STDP_Tau_neg);
+    }
+    
+    weight += dw;
+    weight = std::max(0.0f, std::min(1.0f, weight));
 }
 
 //! Update the assumed neuron type based on its neurotransmitters.
