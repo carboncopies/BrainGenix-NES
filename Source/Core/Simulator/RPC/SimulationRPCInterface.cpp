@@ -48,6 +48,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
 
     _RPCManager->AddRoute("Simulation/SetRandomSeed",             std::bind(&SimulationRPCInterface::SimulationSetSeed, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/LIFCAbstractedFunctional",  std::bind(&SimulationRPCInterface::LIFCAbstractedFunctional, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/SetSTDP",                   std::bind(&SimulationRPCInterface::SetSTDP, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/RunFor",                    std::bind(&SimulationRPCInterface::SimulationRunFor, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/RecordAll",                 std::bind(&SimulationRPCInterface::SimulationRecordAll, this, std::placeholders::_1));
@@ -291,6 +292,25 @@ std::string SimulationRPCInterface::LIFCAbstractedFunctional(std::string _JSONRe
     return Handle.ErrResponse(); // ok
 }
 
+std::string SimulationRPCInterface::SetSTDP(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/SetSTDP", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    bool DoSTDP;
+    Handle.GetParBool("DoSTDP", DoSTDP);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    Handle.Sim()->STDP = DoSTDP;
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
 
 // This request starts at Simulation Task.
 std::string SimulationRPCInterface::SimulationRunFor(std::string _JSONRequest) {

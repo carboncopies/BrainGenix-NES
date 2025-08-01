@@ -123,6 +123,7 @@ public:
 
     std::string SimulationSetSeed(std::string _JSONRequest);
     std::string LIFCAbstractedFunctional(std::string _JSONRequest);
+    std::string SetSTDP(std::string _JSONRequest);
 
     std::string SimulationRunFor(std::string _JSONRequest);
     std::string SimulationRecordAll(std::string _JSONRequest);
