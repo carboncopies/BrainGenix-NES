@@ -283,9 +283,14 @@ std::string ModelRPCInterface::BSNeuronCreate(std::string _JSONRequest) {
 
     // We cache the pointers to the compartments in the neuron data, so that it
     // does not need to reach back to the Simulation to search for it.
-    C.SomaCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.SomaCompartmentID);
-    C.AxonCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.AxonCompartmentID);
-    if ((!C.SomaCompartmentPtr) || (!C.AxonCompartmentPtr)) {
+    C.SomaCompartmentPtr = Handle.Sim()->FindBSCompartmentByID(C.SomaCompartmentID);
+    if (!C.SomaCompartmentPtr) {
+        Handle.Sim()->Logger_->Log("Soma compartment with ID "+std::to_string(C.SomaCompartmentID)+" not found", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+    C.AxonCompartmentPtr = Handle.Sim()->FindBSCompartmentByID(C.AxonCompartmentID);
+    if (!C.AxonCompartmentPtr) {
+        Handle.Sim()->Logger_->Log("Axon compartment with ID "+std::to_string(C.AxonCompartmentID)+" not found", 7);
         return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
 

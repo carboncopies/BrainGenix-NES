@@ -211,7 +211,7 @@ public:
     std::vector<size_t> GetAllNeuronIDs();
     std::vector<std::shared_ptr<CoreStructs::Neuron>> GetNeuronsByIDs(std::vector<size_t> IDList);
 
-    Compartments::BS * FindCompartmentByID(int CompartmentID);
+    Compartments::BS * FindBSCompartmentByID(int CompartmentID);
     CoreStructs::Neuron * FindNeuronByCompartment(int CompartmentID) const;
     int GetNeuronIndexByCompartment(int CompartmentID) const;
 

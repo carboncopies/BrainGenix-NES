@@ -1760,7 +1760,7 @@ void Simulation::Show() {
     return;
 };
 
-Compartments::BS * Simulation::FindCompartmentByID(int CompartmentID) {
+Compartments::BS * Simulation::FindBSCompartmentByID(int CompartmentID) {
     if (CompartmentID >= BSCompartments.size()) {
         return nullptr;
     }
