@@ -24,6 +24,15 @@ namespace NES {
 namespace Simulator {
 namespace Compartments {
 
+// Common base for all compartment types.
+struct Compartment {
+    std::string Name; /**Name of the BS Compartment*/
+
+    // Direct access caches:
+    Geometries::Geometry* ShapePtr = nullptr;
+
+};
+
 /**
  * @brief Crucial fixed-size data of a component. This is saved in neuronal
  * circuit model saves. Does not include name and cached data.
@@ -56,12 +65,12 @@ struct BSBaseData {
  * @brief This struct provides the data storage for each of the compartments
  * 
  */
-struct BS: public BSBaseData {
+struct BS: public BSBaseData, public Compartment {
 
-    std::string Name; /**Name of the BS Compartment*/
+    // std::string Name; /**Name of the BS Compartment*/
 
-    // Direct access caches:
-    Geometries::Geometry* ShapePtr = nullptr;
+    // // Direct access caches:
+    // Geometries::Geometry* ShapePtr = nullptr;
 
     BS() {}
     BS(const BSBaseData& _Base): BSBaseData(_Base) {}

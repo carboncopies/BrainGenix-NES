@@ -1197,6 +1197,38 @@ void Simulation::InspectSavedModel(const std::string& Name, SaveLoadPrior& _Save
 
 }
 
+size_t Simulation::GetNumCompartments() {
+    if (SimNeuronClass == LIFCNEURONS) return LIFCCompartments.size();
+    return BSCompartments.size();
+}
+
+// This can be static_cast<Compartments::LIFC> or static_cast<Compartments::BS> if valid.
+Compartments::Compartment* Simulation::GetCompartmentByIdx(size_t Idx) {
+    if (SimNeuronClass == LIFCNEURONS) {
+        if (Idx >= LIFCCompartments.size()) return nullptr;
+        return &(LIFCCompartments.at(Idx));
+    } else {
+        if (Idx >= BSCompartments.size()) return nullptr;
+        return &(BSCompartments.at(Idx));
+    }
+}
+
+size_t Simulation::GetNumReceptors() {
+    if (SimNeuronClass == LIFCNEURONS) return LIFCReceptors.size();
+    return Receptors.size();
+}
+
+// This can be static_cast<Connections::LIFCReceptor> or static_cast<Connections::Receptor> if valid.
+Connections::ReceptorCommonBase* Simulation::GetReceptorByIdx(size_t Idx) {
+    if (SimNeuronClass == LIFCNEURONS) {
+        if (Idx >= LIFCReceptors.size()) return nullptr;
+        return &(LIFCReceptors.at(Idx));
+    } else {
+        if (Idx >= Receptors.size()) return nullptr;
+        return &(Receptors.at(Idx));
+    }
+}
+
 size_t Simulation::GetTotalNumberOfNeurons() {
     return Neurons.size();
     // size_t long num_neurons = 0;
@@ -1645,7 +1677,7 @@ void Simulation::RunFor(float tRun_ms) {
     Logger_->Log(std::to_string(NeuralCircuits.size())+" circuits with a total of", 3);
     Logger_->Log(std::to_string(Neurons.size())+" neurons drafted in Neurons vector and a total of", 3);
     Logger_->Log(std::to_string(GetTotalNumberOfNeurons())+" neurons residing in defined circuits and a total of", 3);
-    Logger_->Log(std::to_string(BSCompartments.size())+" compartments.", 3);
+    Logger_->Log(std::to_string(GetNumCompartments())+" compartments.", 3);
 
     // *** TODO: add making circuits and brain regions
     //           to be able to use the other method
@@ -1717,7 +1749,7 @@ void Simulation::Show() {
     std::string simreport("Simulation ID="+std::to_string(ID)+" Name="+Name+" Status Report:\n");
     simreport += "\nSimNeuronClass: "+std::to_string(SimNeuronClass);
     simreport += "\nNumber of neurons: "+std::to_string(Neurons.size());
-    simreport += "\nNumber of compartments: "+std::to_string(BSCompartments.size());
+    simreport += "\nNumber of compartments: "+std::to_string(GetNumCompartments());
     simreport += "\nNumber of geometric shapes: "+std::to_string(Collection.Geometries.size());
     simreport += "\n\nLocations of neuron somas:\n";
     for (auto& nptr : Neurons) {

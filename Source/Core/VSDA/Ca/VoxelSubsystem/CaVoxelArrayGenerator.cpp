@@ -82,9 +82,11 @@ bool CaCreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger
     // Build Bounding Boxes For All Compartments
     int AddedShapes = 0;
     int TotalShapes = 0;
-    for (unsigned int i = 0; i < _Sim->BSCompartments.size(); i++) {
+    unsigned int numcompartments = _Sim->GetNumCompartments();
+    for (unsigned int i = 0; i < numcompartments; i++) {
 
-        Simulator::Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
+        //Simulator::Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
+        int ShapeID = _Sim->GetCompartmentByIdx(i)->ShapeID;
 
         TotalShapes++;
 
@@ -95,12 +97,12 @@ bool CaCreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger
         std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
         Task->Array_ = _Array;
         Task->GeometryCollection_ = &_Sim->Collection;
-        Task->ShapeID_ = ThisCompartment->ShapeID;
+        Task->ShapeID_ = ShapeID;
         Task->WorldInfo_ = Info;
-        Task->CompartmentID_ = ThisCompartment->ID;
+        Task->CompartmentID_ = i; //ThisCompartment->ID;
 
         // Now submit to render queue if it's inside the region, otherwise skip it
-        if (IsShapeInsideRegion(_Sim, ThisCompartment->ShapeID, RegionBoundingBox, Info)) {
+        if (IsShapeInsideRegion(_Sim, ShapeID, RegionBoundingBox, Info)) {
             
             AddedShapes++;
 

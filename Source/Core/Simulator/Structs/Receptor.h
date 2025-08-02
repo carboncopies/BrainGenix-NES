@@ -34,6 +34,11 @@ enum NeurotransmitterType: int {
     NUMNeurotransmitterType = 3
 };
 
+struct ReceptorCommonBase {
+    std::string Name;                  /**Name of the connection*/
+
+};
+
 struct ReceptorBase {
     int ID = -1;                       /**ID of the connection*/
     int ShapeID = -1;                  /**ID of the shape that represents this receptor*/
@@ -61,8 +66,8 @@ struct ReceptorBase {
  * @brief This struct provides the data storage for the connection
  *
  */
-struct Receptor: public ReceptorBase {
-    std::string Name;                  /**Name of the connection*/
+struct Receptor: public ReceptorBase, public ReceptorCommonBase {
+    // std::string Name;                  /**Name of the connection*/
 
     Receptor() {}
     Receptor(const ReceptorBase& _Base): ReceptorBase(_Base) {}
@@ -109,8 +114,8 @@ struct LIFCReceptorBase {
 
 };
 
-struct LIFCReceptor: public LIFCReceptorBase {
-    std::string Name;                  /**Name of the connection*/
+struct LIFCReceptor: public LIFCReceptorBase, public ReceptorCommonBase {
+    // std::string Name;                  /**Name of the connection*/
 
     LIFCReceptor() {}
     LIFCReceptor(const LIFCReceptorBase& _Base): LIFCReceptorBase(_Base) {}

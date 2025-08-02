@@ -201,6 +201,11 @@ public:
     bool LoadModel(const std::string& Name);
     void InspectSavedModel(const std::string& Name, SaveLoadPrior& _SaveLoadPrior) const;
 
+    size_t GetNumCompartments(); // independent of SimNeuronClass
+    Compartments::Compartment* GetCompartmentByIdx(size_t Idx); // independent of SimNeuronClass
+    size_t GetNumReceptors(); // independent of SimNeuronClass
+    Connections::ReceptorCommonBase* GetReceptorByIdx(size_t Idx); // independent of SimNeuronClass
+
     size_t GetTotalNumberOfNeurons();
     std::vector<std::shared_ptr<CoreStructs::Neuron>> GetAllNeurons();
     std::vector<size_t> GetAllNeuronIDs();

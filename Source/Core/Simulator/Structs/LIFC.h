@@ -17,6 +17,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Geometries/Geometry.h>
+#include <Simulator/Structs/BS.h>
 //#include <Simulator/Structs/SC.h>
 
 namespace BG {
@@ -47,12 +48,12 @@ struct LIFCBaseData {
  * @brief This struct provides the data storage for each of the compartments
  * 
  */
-struct LIFC: public LIFCBaseData {
+struct LIFC: public LIFCBaseData, public Compartment {
 
-    std::string Name; /**Name of the LIFC Compartment*/
+    // std::string Name; /**Name of the LIFC Compartment*/
 
-    // Direct access caches:
-    Geometries::Geometry* ShapePtr = nullptr;
+    // // Direct access caches:
+    // Geometries::Geometry* ShapePtr = nullptr;
 
     LIFC() {}
     LIFC(const LIFCBaseData& _Base): LIFCBaseData(_Base) {}
