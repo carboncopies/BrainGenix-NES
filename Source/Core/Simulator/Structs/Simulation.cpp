@@ -1222,10 +1222,10 @@ size_t Simulation::GetNumReceptors() {
 Connections::ReceptorCommonBase* Simulation::GetReceptorByIdx(size_t Idx) {
     if (SimNeuronClass == LIFCNEURONS) {
         if (Idx >= LIFCReceptors.size()) return nullptr;
-        return &(LIFCReceptors.at(Idx));
+        return LIFCReceptors.at(Idx).get();
     } else {
         if (Idx >= Receptors.size()) return nullptr;
-        return &(Receptors.at(Idx));
+        return Receptors.at(Idx).get();
     }
 }
 

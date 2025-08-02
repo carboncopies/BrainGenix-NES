@@ -80,7 +80,7 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
     // Enumerate Simulation Primitives
     unsigned int numcompartments = _Simulation->GetNumCompartments();
     for (unsigned int i = 0; i < numcompartments; i++) {
-        int ShapeID = _Simulation->GetCompartmentByIdx(i)->ShapeID;
+        int ShapeID = _Simulation->GetCompartmentByIdx(i)->ShapePtr->ID;
         int CompartmentID = i; //_Simulation->BSCompartments[i].ID;
         int AssocNeuronID = _Simulation->GetNeuronIndexByCompartment(CompartmentID);
         

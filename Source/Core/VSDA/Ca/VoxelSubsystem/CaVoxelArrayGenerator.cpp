@@ -86,7 +86,7 @@ bool CaCreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger
     for (unsigned int i = 0; i < numcompartments; i++) {
 
         //Simulator::Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
-        int ShapeID = _Sim->GetCompartmentByIdx(i)->ShapeID;
+        int ShapeID = _Sim->GetCompartmentByIdx(i)->ShapePtr->ID; // ShapeID
 
         TotalShapes++;
 

@@ -78,8 +78,8 @@ LIFCNeuron::LIFCNeuron(const CoreStructs::LIFCNeuronStruct & lifcneuronstruct, S
 Geometries::Vec3D& LIFCNeuron::GetCellCenter() {
     Geometries::Vec3D geoCenter_um{};
     for (const auto & CompID : build_data.SomaCompartmentIDs) {
-        if (CompID < LIFCCompartments.size()) {
-            int ShapeID = LIFCCompartments.at(CompID).ShapeID;
+        if (CompID < Sim.LIFCCompartments.size()) {
+            int ShapeID = Sim.LIFCCompartments.at(CompID).ShapeID;
             auto ShapePtr = Sim.FindShapeByID(ShapeID);
             if (ShapePtr != nullptr) {
                 geoCenter_um = geoCenter_um + ShapePtr->Center_um;
