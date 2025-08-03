@@ -45,6 +45,8 @@ ModelRPCInterface::ModelRPCInterface(BG::Common::Logger::LoggingSystem* _Logger,
     _RPCManager->AddRoute("Simulation/SetSpecificAPTimes",            std::bind(&ModelRPCInterface::SetSpecificAPTimes, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/SetSpontaneousActivity",        std::bind(&ModelRPCInterface::SetSpontaneousActivity, this, std::placeholders::_1));
 
+    _RPCManager->AddRoute("Simulation/OptoModifyInjection",           std::bind(&ModelRPCInterface::OptoModifyInjection, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/OptoActivation",                std::bind(&ModelRPCInterface::OptoActivation, this, std::placeholders::_1));
 
 }
 
@@ -540,6 +542,71 @@ std::string ModelRPCInterface::SetSpontaneousActivity(std::string _JSONRequest) 
     return Handle.ErrResponse(); // ok
 }
 
+std::string ModelRPCInterface::OptoModifyInjection(std::string _JSONRequest) {
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/OptoModifyInjection", Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+  
+    Geometries::Vec3D inject_pos;
+    if (!Handle.GetParVec3("InjectLocation", inject_pos)) {
+        return Handle.ErrResponse();
+    }
+
+    float radius = -1.f;
+    if (!Handle.GetParFloat("Radius", radius)) {
+        return Handle.ErrResponse();
+    }
+
+    int desired_wavelength = 0;
+    if (!Handle.GetParInt("Wavelength", desired_wavelength)) {
+        return Handle.ErrResponse();
+    }
+
+    int type = CoreStructs::UnknownNeuron;
+    if (!Handle.GetParInt("Type", type)) {
+        return Handle.ErrResponse();
+    }
+
+    for (auto& neuron : Handle.Sim()->Neurons) {
+        if (neuron->Type_ != type) {
+            continue;
+        }
+
+        if (neuron->GetCellCenter().Distance(inject_pos) <= radius) {
+            neuron->opto_wavelength_nm = desired_wavelength;
+        }
+    }
+
+    return Handle.ErrResponse(); // ok
+}
+
+std::string ModelRPCInterface::OptoActivation(std::string _JSONRequest) {
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/OptoActivation", Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    std::vector<float> laser_activation_times;
+    if (!Handle.GetParVecFloat("LaserActivationTimes", laser_activation_times)) {
+        return Handle.ErrResponse();
+    }
+
+    int target_wavelength = 0;
+    if (!Handle.GetParInt("TargetWavelength", target_wavelength)) {
+        return Handle.ErrResponse();
+    }
+
+    for (float time : laser_activation_times) {
+        for (auto& neuron : Handle.Sim()->Neurons) {
+            if (neuron->opto_wavelength_nm == target_wavelength) {
+                neuron->AddSpecificAPTime(time);
+            }
+        }
+    }
+
+    return Handle.ErrResponse(); // ok
+}
 
 }; // Close Namespace Simulator
 }; // Close Namespace NES

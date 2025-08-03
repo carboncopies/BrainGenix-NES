@@ -99,6 +99,8 @@ public:
     std::string SetSpecificAPTimes(std::string _JSONRequest);
     std::string SetSpontaneousActivity(std::string _JSONRequest);
 
+    std::string OptoModifyInjection(std::string _JSONRequest);
+    std::string OptoActivation(std::string _JSONRequest);
 };
 
 }; // Close Namespace Simulator

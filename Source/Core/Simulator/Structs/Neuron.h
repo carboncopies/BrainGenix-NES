@@ -84,6 +84,8 @@ struct Neuron {
     std::vector<float> TAct_ms{};
     std::deque<float> TDirectStim_ms{};
 
+    int opto_wavelength_nm = 0;
+
     //! Update the assumed neuron "type" based on its neurotransmitters.
     virtual void UpdateType(const std::string & neurotransmitter);
 
