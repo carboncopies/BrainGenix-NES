@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <algorithm> // for std::sort(), std::min(), std::max()
+#include <sstream>
 
 #include <Simulator/Structs/Simulation.h>
 #include <Simulator/Structs/Neuron.h>
@@ -174,6 +175,26 @@ void LIFCReceptorData::STDP_Update(float tfire) {
     
     weight += dw;
     weight = std::max(0.0f, std::min(1.0f, weight));
+}
+
+std::string LIFCReceptorData::Show_Functional_Parameters() {
+    std::stringstream paramstr;
+
+    paramstr << "Receptors";
+    for (auto RID : ReceptorIDs) paramstr << ' ' << RID;
+    paramstr << "\n  Type = " << Type() << '\n';
+    paramstr << "  g_peak_sum_nS = " << g_peak_sum_nS << '\n';
+    paramstr << "  weight = " << weight << '\n';
+    paramstr << "  tau_rise_ms = " << tau_rise_ms << '\n';
+    paramstr << "  tau_decay_ms = " << tau_decay_ms << '\n';
+    paramstr << "  onset_delay_ms = " << onset_delay_ms << '\n';
+    paramstr << "  STDP_Method = " << STDP_Method() << '\n';
+    paramstr << "  STDP_A_pos = " << STDP_A_pos << '\n';
+    paramstr << "  STDP_A_neg = " << STDP_A_neg << '\n';
+    paramstr << "  STDP_Tau_pos = " << STDP_Tau_pos << '\n';
+    paramstr << "  STDP_Tau_neg = " << STDP_Tau_pos << '\n';
+
+    return paramstr.str();
 }
 
 //! Update the assumed neuron type based on its neurotransmitters.

@@ -112,6 +112,8 @@ public:
     bool STDP = false; // STDP simulation included when true
     bool use_abstracted_LIF_receptors = true; // Abstracted functional receptors with LIFCNeuron
 
+    bool ShowFunctionalParameters = true; // Mostly for testing
+
     std::atomic<bool> IsProcessing = false;  /**Indicator if the simulation is currently being modified or not*/
     std::atomic<bool> WorkRequested = false; /**Indicator if work is requested to be done on this simulation by a worker thread*/
     std::atomic<bool> IsRendering = false;   /**Indicates if this simulation is being acted upon by a renderer or not*/

@@ -97,6 +97,8 @@ struct LIFCReceptorData: public ReceptorDataBase {
 
     void STDP_Update(float tfire);
 
+    std::string Show_Functional_Parameters();
+
 };
 
 enum NeuronType: int {

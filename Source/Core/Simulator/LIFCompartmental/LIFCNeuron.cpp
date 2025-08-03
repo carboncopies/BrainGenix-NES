@@ -4,6 +4,7 @@
 
 #include <algorithm>
 #include <iostream>
+#include <sstream>
 
 namespace BG {
 namespace NES {
@@ -325,10 +326,58 @@ CoreStructs::LIFCReceptorData* LIFCNeuron::FindLIFCReceptorPairing(LIFCNeuron* S
     return nullptr;
 }
 
+void LIFCNeuron::Show_Functional_Parameters() {
+    std::stringstream paramstr;
+    paramstr << "Parameters of neuron " << build_data.ID + ":\n";
+
+    paramstr << "  VReset_mV = " << VReset_mV << '\n';
+    paramstr << "  Rm_GOhm = " << Rm_GOhm << '\n';
+    paramstr << "  Cm_pF = " << Cm_pF << '\n';
+    paramstr << "  tau_absref_ms = " << tau_absref_ms << '\n';
+
+    paramstr << "  E_AHP_mV = " << E_AHP_mV << '\n';
+    paramstr << "  tau_rise_fAHP_ms = " << tau_rise_fAHP_ms << '\n';
+    paramstr << "  tau_decay_fAHP_ms = " << tau_decay_fAHP_ms << '\n';
+    paramstr << "  g_peak_fAHP_nS = " << g_peak_fAHP_nS << '\n';
+    paramstr << "  g_peak_fAHP_max_nS = " << g_peak_fAHP_max_nS << '\n';
+    paramstr << "  Kd_fAHP_nS = " << Kd_fAHP_nS << '\n';
+
+    paramstr << "  tau_rise_sAHP_ms = " << tau_rise_sAHP_ms << '\n';
+    paramstr << "  tau_decay_sAHP_ms = " << tau_decay_sAHP_ms << '\n';
+    paramstr << "  g_peak_sAHP_nS = " << g_peak_sAHP_nS << '\n';
+    paramstr << "  g_peak_sAHP_max_nS = " << g_peak_sAHP_max_nS << '\n';
+    paramstr << "  Kd_sAHP_nS = " << Kd_sAHP_nS << '\n';
+
+    paramstr << "  fatigue_threshold = " << fatigue_threshold << '\n';
+    paramstr << "  tau_fatigue_recovery_ms = " << tau_fatigue_recovery_ms << '\n';
+
+    paramstr << "  E_ADP_mV = " << E_ADP_mV << '\n';
+    paramstr << "  tau_rise_ADP_ms = " << tau_rise_ADP_ms << '\n';
+    paramstr << "  tau_decay_ADP_ms = " << tau_decay_ADP_ms << '\n';
+    paramstr << "  g_peak_ADP_nS = " << g_peak_ADP_nS << '\n';
+    paramstr << "  ADP_saturation_multiplier = " << ADP_saturation_multiplier << '\n';
+    paramstr << "  tau_recovery_ADP_ms = " << tau_recovery_ADP_ms << '\n';
+    paramstr << "  ADP_depletion = " << ADP_depletion << '\n';
+
+    paramstr << "  dh_spike = " << dh_spike << '\n';
+    paramstr << "  tau_h_ms = " << tau_h_ms << '\n';
+    paramstr << "  dVth_mV = " << dVth_mV << '\n';
+    paramstr << "  Vth_floor_mV = " << Vth_floor_mV << '\n';
+    paramstr << "  delta_floor_per_spike_mV = " << delta_floor_per_spike_mV << '\n';
+    paramstr << "  tau_floor_decay_ms = " << tau_floor_decay_ms << '\n';
+
+    for (auto& RData : LIFCReceptorDataVec) {
+        paramstr << RData->Show_Functional_Parameters();
+    }
+    Sim.Logger_->Log(paramstr.str(), 6);
+}
+
 void LIFCNeuron::Calculate_Abstracted_PSP_Medians() {
     for (auto& RData : LIFCReceptorDataVec) {
         RData->Calculate_Abstracted_PSP_Medians();
     }
+
+    if (Sim.ShowFunctionalParameters) Show_Functional_Parameters();
 }
 
 void LIFCNeuron::Update(float t_ms, bool recording) {
