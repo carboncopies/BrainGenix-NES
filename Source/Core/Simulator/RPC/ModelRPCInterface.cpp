@@ -30,7 +30,7 @@ ModelRPCInterface::ModelRPCInterface(BG::Common::Logger::LoggingSystem* _Logger,
     _RPCManager->AddRoute("Simulation/Staple/Create",                 std::bind(&ModelRPCInterface::StapleCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Receptor/Create",               std::bind(&ModelRPCInterface::ReceptorCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/LIFCReceptor/Create",           std::bind(&ModelRPCInterface::LIFCReceptorCreate, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/NetmorphLIFCReceptor/Create",   std::bind(&ModelRPCInterface::NetmorphLIFCReceptor, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/NetmorphLIFCReceptor/Create",   std::bind(&ModelRPCInterface::NetmorphLIFCReceptorCreate, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/Compartments/BS/Create",        std::bind(&ModelRPCInterface::BSCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Neuron/BS/Create",              std::bind(&ModelRPCInterface::BSNeuronCreate, this, std::placeholders::_1));
@@ -235,7 +235,7 @@ std::string ModelRPCInterface::NetmorphLIFCReceptorCreate(std::string _JSONReque
         || (!Handle.GetParFloat("PSPDecay_ms", C.PSPDecay_ms))
 
         || (!Handle.GetParFloat("ReceptorPeakConductance_nS", CDataRaw.ReceptorPeakConductance_nS))
-        || (!Handle.GetParFloat("ReceptorQuantity", CDataRaw.ReceptorQuantity))
+        || (!Handle.GetParInt("ReceptorQuantity", CDataRaw.ReceptorQuantity))
 
         || (!Handle.GetParFloat("HillocDistance_um", CDataRaw.HillocDistance_um))
         || (!Handle.GetParFloat("Velocity_mps", CDataRaw.Velocity_mps))

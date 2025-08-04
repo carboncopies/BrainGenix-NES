@@ -280,9 +280,9 @@ int Simulation::AddLIFCReceptor(Connections::LIFCReceptor& _C) {
 }
 
 // PeakConductance_nS, OnsetDelay_ms are determined from NetmorphLIFCReceptorRaw data.
-int AddNetmorphLIFCReceptor(Connections::LIFCReceptor& _C, Connections::NetmorphLIFCReceptorRaw& _CDataRaw) {
+int Simulation::AddNetmorphLIFCReceptor(Connections::LIFCReceptor& _C, Connections::NetmorphLIFCReceptorRaw& _CDataRaw) {
 
-    _C.PeakConductance_nS = _CDataRaw.ReceptorQuantity * ReceptorPeakConductance_nS;
+    _C.PeakConductance_nS = _CDataRaw.ReceptorQuantity * _CDataRaw.ReceptorPeakConductance_nS;
     _C.OnsetDelay_ms = _CDataRaw.SynapticDelay_ms + (_CDataRaw.HillocDistance_um*1e-6/_CDataRaw.Velocity_mps);
 
     return AddLIFCReceptor(_C);
@@ -1687,7 +1687,11 @@ void Simulation::RunFor(float tRun_ms) {
     Logger_->Log(std::to_string(NeuralCircuits.size())+" circuits with a total of", 3);
     Logger_->Log(std::to_string(Neurons.size())+" neurons drafted in Neurons vector and a total of", 3);
     Logger_->Log(std::to_string(GetTotalNumberOfNeurons())+" neurons residing in defined circuits and a total of", 3);
-    Logger_->Log(std::to_string(GetNumCompartments())+" compartments.", 3);
+    Logger_->Log(std::to_string(GetNumCompartments())+" compartments and", 3);
+    Logger_->Log(std::to_string(GetNumReceptors())+" receptors.", 3);
+    if (SimNeuronClass == LIFCNEURONS) {
+        Logger_->Log(std::to_string(LIFCReceptorDataVec.size())+" abstracted functional receptors.", 3);
+    }
 
     // *** TODO: add making circuits and brain regions
     //           to be able to use the other method
