@@ -230,13 +230,6 @@ struct PSPTiming {
     float neuron_tau_PSPd = 25.0;
 };
 
-struct MethodPars {
-    CoreStructs::LIFCUpdateMethodEnum UpdateMethod = CoreStructs::EXPEULER_CM;
-    CoreStructs::LIFCResetMethodEnum ResetMethod = CoreStructs::TOVM;
-    CoreStructs::LIFCAHPSaturationModelEnum AfterHyperpolarizationSaturationModel = CoreStructs::AHPCLIP;
-    CoreStructs::LIFCADPSaturationModelEnum AfterDepolarizationSaturationModel = CoreStructs::ADPCLIP;
-};
-
 /**
  * In Netmorph, after growth, candidate synapse identification, synapse selectin, and
  * receptor type specification, a logical connection between two neurons ('connection')
@@ -330,10 +323,45 @@ const std::map<synapse_type, Connections::NeurotransmitterType> synapse_typeToNe
     { syntype_candidate, Connections::NUMNeurotransmitterType },
 };
 
+struct LIFCReceptorPars {
+    Connections::LIFCReceptorBase ampa;
+    Connections::LIFCReceptorBase nmda;
+    Connections::LIFCReceptorBase gaba;
+    LIFCReceptorPars() {
+        ampa.ReversalPotential_mV = 0;
+        ampa.PSPRise_ms = 0.5;
+        ampa.PSPDecay_ms = 3.0;
+        ampa.voltage_gated = false;
+        ampa.STDP_Method = Connections::STDPHEBBIAN;
+        ampa.STDP_A_pos = 0.01;
+        ampa.STDP_A_neg = 0.01;
+        ampa.STDP_Tau_pos = 20.0;
+        ampa.STDP_Tau_neg = 20.0;
+        nmda = ampa;
+        nmda.PSPRise_ms = 2.0;
+        nmda.PSPDecay_ms = 100;
+        nmda.voltage_gated = true;
+        nmda.STDP_Method = Connections::STDPNONE;
+        nmda.STDP_A_pos = 0;
+        nmda.STDP_A_neg = 0;
+        nmda.STDP_Tau_pos = 0;
+        nmda.STDP_Tau_neg = 0;
+        nmda.Neurotransmitter = Connections::NMDA;
+        gaba = nmda;
+        gaba.PSPRise_ms = 0.5;
+        gaba.PSPDecay_ms = 10;
+        gaba.ReversalPotential_mV = -70;
+        gaba.voltage_gated = false;
+        gaba.Neurotransmitter = Connections::GABA;
+    }
+};
+
 class LIFCSynapseBuild: public SynapseBuild {
 public:
-    LIFCSynapseBuild(NetmorphParameters& Params, const PSPTiming& _psp_timing):
-        SynapseBuild(Params, _psp_timing) {}
+    const PSPTiming Dummypsptiming;
+    const LIFCReceptorPars& LIFCreceptorpars;
+    LIFCSynapseBuild(NetmorphParameters& Params, const LIFCReceptorPars& _LIFCreceptorpars):
+        SynapseBuild(Params, Dummypsptiming), LIFCreceptorpars(_LIFCreceptorpars) {}
     virtual void op(synapse* s) {
         // Morphology shape.
         Geometries::Box S;
@@ -359,6 +387,17 @@ public:
         // Morphology compartment.
         Connections::LIFCReceptor C;
         Connections::NetmorphLIFCReceptorRaw RawData;
+
+        C.Neurotransmitter = synapse_typeToNeurotransmitterType[s->type_ID()];
+        if (C.Neurotransmitter ==  Connections::AMPA) {
+            C::LIFCReceptorBase = LIFCreceptorpars.ampa;
+        } else if (C.Neurotransmitter ==  Connections::NMDA) {
+            C::LIFCReceptorBase = LIFCreceptorpars.nmda;
+        } else {
+            C::LIFCReceptorBase = LIFCreceptorpars.gaba;
+        }
+
+        C.Name = "synapse";
         C.SourceCompartmentID = s->Structure()->AxonSegment()->cache.i;
         C.DestinationCompartmentID = s->Structure()->DendriteSegment()->cache.i;
         if (C.SourceCompartmentID<0) {
@@ -374,29 +413,14 @@ public:
 
         C.ShapeID = S.ID;
 
-        // Dynamics compartment.
-        C.ReversalPotential_mV = 
-        C.PSPRise_ms =
-        C.PSPDecay_ms =
         RawData.ReceptorPeakConductance_nS =
         RawData.ReceptorQuantity =
         C.Weight =
-        RawData.HillocDistance_um =
+        RawData.HillocDistance_um = there could be options here to calculate or specify
         RawData.Velocity_mps =
         RawData.SynapticDelay_ms =
-        C.voltage_gated =
 
-        C.STDP_Method =
-        C.STDP_A_pos =
-        C.STDP_A_neg =
-        C.STDP_Tau_pos =
-        C.STDP_Tau_neg =
-
-        C.Neurotransmitter = synapse_typeToNeurotransmitterType[s->type_ID()];
-
-        C.Name = "synapse";
-
-        C.ID = _Params.Sim->AddNetmorphLIFCReceptor(C);
+        C.ID = _Params.Sim->AddNetmorphLIFCReceptor(C, RawData);
         if (C.ID<0) {
             num_errors++;
             NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Source neuron or destination neuron not found.");
@@ -526,63 +550,90 @@ public:
     }
 };
 
+// Defaults
+struct LIFCNeuronPars {
+    LIFCNeuronBase principal;
+    LIFCNeuronBase interneuron;
+    LIFCNeuronPars() {
+        principal.RestingPotential_mV = -70;
+        principal.ResetPotential_mV = -55;
+        principal.SpikeThreshold_mV = -50;
+        principal.MembraneResistance_MOhm = 100;
+        principal.MembraneCapacitance_pF = 100;
+        principal.RefractoryPeriod_ms = 2;
+        principal.SpikeDepolarization_mV = 30;
+
+        principal.UpdateMethod = CoreStructs::EXPEULER_CM;
+        principal.ResetMethod = CoreStructs::TOVM;
+
+        principal.AfterHyperpolarizationReversalPotential_mV = -90;
+
+        principal.FastAfterHyperpolarizationRise_ms = 2.5;
+        principal.FastAfterHyperpolarizationDecay_ms = 30;
+        principal.FastAfterHyperpolarizationPeakConductance_nS = 3.0;
+        principal.FastAfterHyperpolarizationMaxPeakConductance_nS = 5.0;
+        principal.FastAfterHyperpolarizationHalfActConstant = 1.5;
+
+        principal.SlowAfterHyperpolarizationRise_ms = 30;
+        principal.SlowAfterHyperpolarizationDecay_ms = 300;
+        principal.SlowAfterHyperpolarizationPeakConductance_nS = 1.0;
+        principal.SlowAfterHyperpolarizationMaxPeakConductance_nS = 2.0;
+        principal.SlowAfterHyperpolarizationHalfActConstant = 0.3;
+
+        principal.AfterHyperpolarizationSaturationModel = CoreStructs::AHPCLIP;
+
+        principal.FatigueThreshold = 300;
+        principal.FatigueRecoveryTime_ms = 1000;
+
+        principal.AfterDepolarizationReversalPotential_mV = -20;
+        principal.AfterDepolarizationRise_ms = 20;
+        principal.AfterDepolarizationDecay_ms = 200;
+        principal.AfterDepolarizationPeakConductance_nS = 0.3;
+        principal.AfterDepolarizationSaturationMultiplier = 2;
+        principal.AfterDepolarizationRecoveryTime_ms = 300;
+        principal.AfterDepolarizationDepletion = 0.3;
+        principal.AfterDepolarizationSaturationModel = CoreStructs::ADPCLIP;
+
+        principal.AdaptiveThresholdDiffPerSpike = 0.2;
+        principal.AdaptiveTresholdRecoveryTime_ms = 50;
+        principal.AdaptiveThresholdDiffPotential_mV = 10;
+        principal.AdaptiveThresholdFloor_mV = principal.SpikeThreshold_mV;
+        principal.AdaptiveThresholdFloorDeltaPerSpike_mV = 1.0;
+        principal.AdaptiveThresholdFloorRecoveryTime_ms = 500;
+
+        interneuron = principal;
+        interneuron.SlowAfterHyperpolarizationPeakConductance_nS = 0;
+        interneuron.SlowAfterHyperpolarizationMaxPeakConductance_nS = 0;
+        interneuron.AfterDepolarizationPeakConductance_nS = 0;
+    }
+};
+
+/**
+ * *** TODO: There should be relationships between morphology and function,
+ *           some of which have not yet been implemented:
+ *           - Correlations between Type and functional dynamics.
+ *           - Correlations between Shape and functional dynamics.
+ */
 class LIFCNeuronBuild: public NeuronBuild {
 public:
-    const MethodPars& methodpars;
-    NeuronBuild(NetmorphParameters& Params, const DynamicPars& _dynpars, const PSPTiming& _psp_timing, const MethodPars& _methodpars):
-        NeuronBuild(Params, _dynpars, _psp_timing), methodpars(_methodpars) {}
+    const DynamicPars Dummydynpars;
+    const PSPTiming Dummypsptiming;
+    const LIFCNeuronPars& LIFCpars;
+    NeuronBuild(NetmorphParameters& Params, const LIFCNeuronPars& _LIFCpars):
+        NeuronBuild(Params, Dummydynpars, Dummypsptiming), LIFCpars(_LIFCpars) {}
 
     virtual void op(neuron* n) {
 
         // 0. Prepare neuron scaffold with lists.
         CoreStructs::LIFCNeuronStruct N;
+
+        if (n->TypeID() == INTERNEURON) {
+            N::LIFCNeuronBase = LIFCpars.interneuron;
+        } else {
+            N::LIFCNeuronBase = LIFCpars.principal;
+        }
+
         N.Name = std::to_string(uint64_t(n));
-
-        N.RestingPotential_mV = dynpars.neuron_Vrest_mV;
-        N.ResetPotential_mV =
-        N.SpikeThreshold_mV = dynpars.neuron_Vact_mV;
-        N.MembraneResistance_MOhm =
-        N.MembraneCapacitance_pF =
-        N.RefractoryPeriod_ms =
-        N.SpikeDepolarization_mV =
-
-        N.UpdateMethod = methodpars.UpdateMethod;
-        N.ResetMethod = methodpars.ResetMethod
-
-        N.AfterHyperpolarizationReversalPotential_mV =
-
-        N.FastAfterHyperpolarizationRise_ms =
-        N.FastAfterHyperpolarizationDecay_ms =
-        N.FastAfterHyperpolarizationPeakConductance_nS =
-        N.FastAfterHyperpolarizationMaxPeakConductance_nS =
-        N.FastAfterHyperpolarizationHalfActConstant =
-
-        N.SlowAfterHyperpolarizationRise_ms =
-        N.SlowAfterHyperpolarizationDecay_ms =
-        N.SlowAfterHyperpolarizationPeakConductance_nS = // 0 for interneurons
-        N.SlowAfterHyperpolarizationMaxPeakConductance_nS = // 0 for interneurons
-        N.SlowAfterHyperpolarizationHalfActConstant =
-
-        N.AfterHyperpolarizationSaturationModel = methodpars.AfterHyperpolarizationSaturationModel;
-
-        N.FatigueThreshold =
-        N.FatigueRecoveryTime_ms =
-
-        N.AfterDepolarizationReversalPotential_mV =
-        N.AfterDepolarizationRise_ms =
-        N.AfterDepolarizationDecay_ms =
-        N.AfterDepolarizationPeakConductance_nS = // 0 for interneurons
-        N.AfterDepolarizationSaturationMultiplier =
-        N.AfterDepolarizationRecoveryTime_ms =
-        N.AfterDepolarizationDepletion =
-        N.AfterDepolarizationSaturationModel = methodpars.AfterDepolarizationSaturationModel;
-
-        N.AdaptiveThresholdDiffPerSpike =
-        N.AdaptiveTresholdRecoveryTime_ms =
-        N.AdaptiveThresholdDiffPotential_mV =
-        N.AdaptiveThresholdFloor_mV =
-        N.AdaptiveThresholdFloorDeltaPerSpike_mV =
-        N.AdaptiveThresholdFloorRecoveryTime_ms =
 
         // 1. Build soma spheres.
         Geometries::Sphere S;
@@ -747,8 +798,8 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
 bool BuildLIFCFromNetmorphNetwork(NetmorphParameters& _Params) {
     assert(_Params.Sim != nullptr);
 
-    DynamicPars dynpars;
-    PSPTiming psp_timing;
+    LIFCNeuronPars LIFCpars;
+    LIFCReceptorPars LIFCreceptorpars;
 
     network& Net = *(_Params.Result.net);
 
@@ -762,7 +813,7 @@ bool BuildLIFCFromNetmorphNetwork(NetmorphParameters& _Params) {
     Net.tree_op(unparsed_pre);
     unparsed_pre.log();
 
-    LIFCNeuronBuild neuron_build(_Params, dynpars, psp_timing);
+    LIFCNeuronBuild neuron_build(_Params, LIFCpars);
     Net.neuron_op(neuron_build);
     neuron_build.logerrors();
 
@@ -774,7 +825,7 @@ bool BuildLIFCFromNetmorphNetwork(NetmorphParameters& _Params) {
     // Net.tree_op(findunparsed);
 
     // Synapses need to be processed after all segments have received IDs.
-    LIFCSynapseBuild synapse_build(_Params, psp_timing);
+    LIFCSynapseBuild synapse_build(_Params, LIFCreceptorpars);
     Net.synapse_op(synapse_build);
     synapse_build.logerrors();
 
