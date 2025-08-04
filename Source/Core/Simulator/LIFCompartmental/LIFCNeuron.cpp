@@ -3,7 +3,6 @@
 #include <Simulator/Structs/Receptor.h>
 
 #include <algorithm>
-#include <iostream>
 #include <sstream>
 
 namespace BG {
@@ -147,7 +146,6 @@ void LIFCNeuron::check_spiking(float t, float V_th_adaptive) {
     if (next_directstim_idx < TDirectStim_ms.size()) {
         float tFire_ms = TDirectStim_ms.at(next_directstim_idx);
         if (tFire_ms <= t) {
-            TAct_ms.push_back(tFire_ms);
             spike(tFire_ms);
             next_directstim_idx++;
             return;
@@ -199,6 +197,7 @@ void LIFCNeuron::update_conductances(float t) {
         a_ADP = std::max(0.0f, std::min(1.0f, a_ADP));
         g_ADP_nS = a_ADP * g_ADP_linear;
     }
+
 }
 
 float LIFCNeuron::update_currents() {
@@ -293,9 +292,9 @@ void LIFCNeuron::update_with_reset_options(float t) {
     
     float dV = 0;
     if (build_data.UpdateMethod == CoreStructs::EXPEULER_CM) {
-        update_membrane_potential_exponential_Euler_Rm();
-    } else if (build_data.UpdateMethod == CoreStructs::EXPEULER_RM) {
         update_membrane_potential_exponential_Euler_Cm();
+    } else if (build_data.UpdateMethod == CoreStructs::EXPEULER_RM) {
+        update_membrane_potential_exponential_Euler_Rm();
     } else {
         float I = update_currents();
         dV = update_membrane_potential_forward_Euler(I);
