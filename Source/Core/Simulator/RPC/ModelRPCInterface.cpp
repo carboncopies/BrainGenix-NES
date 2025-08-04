@@ -30,6 +30,7 @@ ModelRPCInterface::ModelRPCInterface(BG::Common::Logger::LoggingSystem* _Logger,
     _RPCManager->AddRoute("Simulation/Staple/Create",                 std::bind(&ModelRPCInterface::StapleCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Receptor/Create",               std::bind(&ModelRPCInterface::ReceptorCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/LIFCReceptor/Create",           std::bind(&ModelRPCInterface::LIFCReceptorCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/NetmorphLIFCReceptor/Create",   std::bind(&ModelRPCInterface::NetmorphLIFCReceptor, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/Compartments/BS/Create",        std::bind(&ModelRPCInterface::BSCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Neuron/BS/Create",              std::bind(&ModelRPCInterface::BSNeuronCreate, this, std::placeholders::_1));
@@ -206,6 +207,66 @@ std::string ModelRPCInterface::LIFCReceptorCreate(std::string _JSONRequest) {
     }
 
     C.ID = Handle.Sim()->AddLIFCReceptor(C);
+    if (C.ID<0) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    // Return Result ID
+    return Handle.ResponseWithID("ReceptorID", C.ID);
+}
+
+std::string ModelRPCInterface::NetmorphLIFCReceptorCreate(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/NetmorphLIFCReceptor/Create", Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Build New Receptor Object
+    Connections::LIFCReceptor C;
+    Connections::NetmorphLIFCReceptorRaw CDataRaw; // additional data
+    std::string neurotransmitter_cache;
+    std::string stdpmethod_cache;
+    if ((!Handle.GetParInt("SourceCompartmentID", C.SourceCompartmentID))
+        || (!Handle.GetParInt("DestinationCompartmentID", C.DestinationCompartmentID))
+
+        || (!Handle.GetParFloat("ReversalPotential_mV", C.ReversalPotential_mV))
+        || (!Handle.GetParFloat("PSPRise_ms", C.PSPRise_ms))
+        || (!Handle.GetParFloat("PSPDecay_ms", C.PSPDecay_ms))
+
+        || (!Handle.GetParFloat("ReceptorPeakConductance_nS", CDataRaw.ReceptorPeakConductance_nS))
+        || (!Handle.GetParFloat("ReceptorQuantity", CDataRaw.ReceptorQuantity))
+
+        || (!Handle.GetParFloat("HillocDistance_um", CDataRaw.HillocDistance_um))
+        || (!Handle.GetParFloat("Velocity_mps", CDataRaw.Velocity_mps))
+        || (!Handle.GetParFloat("SynapticDelay_ms", CDataRaw.SynapticDelay_ms))
+        || (!Handle.GetParString("Neurotransmitter", neurotransmitter_cache))
+        || (!Handle.GetParBool("voltage_gated", C.voltage_gated))
+
+        || (!Handle.GetParFloat("Weight", C.Weight))
+        || (!Handle.GetParString("STDP_Method", stdpmethod_cache))
+        || (!Handle.GetParFloat("STDP_A_pos", C.STDP_A_pos))
+        || (!Handle.GetParFloat("STDP_A_neg", C.STDP_A_neg))
+        || (!Handle.GetParFloat("STDP_Tau_pos", C.STDP_Tau_pos))
+        || (!Handle.GetParFloat("STDP_Tau_neg", C.STDP_Tau_neg))
+
+        || (!Handle.GetParInt("ReceptorMorphology", C.ShapeID))
+        || (!Handle.GetParString("Name", C.Name))) {
+        return Handle.ErrResponse();
+    }
+    C.Neurotransmitter = LIFCNeurotransmitter(neurotransmitter_cache);
+    if (C.Neurotransmitter >= Connections::NUMNeurotransmitterType) {
+        Logger_->Log("Error: Unrecognized LIFC Neurotransmitter type", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    C.STDP_Method = LIFCSTDPMethod(stdpmethod_cache);
+    if (C.STDP_Method >= Connections::NUMLIFCSTDPMethodEnum) {
+        Logger_->Log("Error: Unrecognized LIFC STDP Method", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    C.ID = Handle.Sim()->AddNetmorphLIFCReceptor(C, CDataRaw);
     if (C.ID<0) {
         return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }

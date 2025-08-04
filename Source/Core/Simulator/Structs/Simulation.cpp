@@ -279,6 +279,16 @@ int Simulation::AddLIFCReceptor(Connections::LIFCReceptor& _C) {
     return _C.ID;
 }
 
+// PeakConductance_nS, OnsetDelay_ms are determined from NetmorphLIFCReceptorRaw data.
+int AddNetmorphLIFCReceptor(Connections::LIFCReceptor& _C, Connections::NetmorphLIFCReceptorRaw& _CDataRaw) {
+
+    _C.PeakConductance_nS = _CDataRaw.ReceptorQuantity * ReceptorPeakConductance_nS;
+    _C.OnsetDelay_ms = _CDataRaw.SynapticDelay_ms + (_CDataRaw.HillocDistance_um*1e-6/_CDataRaw.Velocity_mps);
+
+    return AddLIFCReceptor(_C);
+
+}
+
 // Note: _NeuronUID is incremented, because value 0 is reserved during Segmentation.
 void Simulation::RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompartmentIDs, uint64_t _NeuronUID) {
     _NeuronUID += 1; // This is necessary to avoid UID 0 during Segmentation!

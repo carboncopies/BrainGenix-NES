@@ -121,6 +121,17 @@ struct LIFCReceptor: public LIFCReceptorBase, public ReceptorCommonBase {
     LIFCReceptor(const LIFCReceptorBase& _Base): LIFCReceptorBase(_Base) {}
 };
 
+// These are the raw data typically provided during Netmorph to NES receptor
+// conversion needed to produce several parameters in LIFCReceptorData.
+struct NetmorphLIFCReceptorRaw {
+    float ReceptorPeakConductance_nS = 0.0;
+    int ReceptorQuantity = 0;
+    float HillocDistance_um = 0.0;
+    float Velocity_mps = 1.0;
+    float SynapticDelay_ms = 1.0;
+};
+
+
 }; // namespace Connections
 }; // namespace Simulator
 }; // namespace NES
