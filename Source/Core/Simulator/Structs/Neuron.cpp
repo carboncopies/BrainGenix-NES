@@ -195,6 +195,7 @@ std::string LIFCReceptorData::Show_Functional_Parameters() {
     paramstr << "  STDP_A_neg = " << STDP_A_neg << '\n';
     paramstr << "  STDP_Tau_pos = " << STDP_Tau_pos << '\n';
     paramstr << "  STDP_Tau_neg = " << STDP_Tau_pos << '\n';
+    paramstr << "  norm = " << norm << '\n';
 
     return paramstr.str();
 }

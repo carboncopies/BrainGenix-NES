@@ -366,6 +366,10 @@ void LIFCNeuron::Show_Functional_Parameters() {
     paramstr << "  delta_floor_per_spike_mV = " << delta_floor_per_spike_mV << '\n';
     paramstr << "  tau_floor_decay_ms = " << tau_floor_decay_ms << '\n';
 
+    paramstr << "  norm_fAHP = " << norm_fAHP << '\n';
+    paramstr << "  norm_sAHP = " << norm_sAHP << '\n';
+    paramstr << "  norm_ADP = " << norm_ADP << '\n';
+
     for (auto& RData : LIFCReceptorDataVec) {
         paramstr << RData->Show_Functional_Parameters();
     }
