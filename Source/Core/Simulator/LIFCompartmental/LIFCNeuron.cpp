@@ -328,7 +328,7 @@ CoreStructs::LIFCReceptorData* LIFCNeuron::FindLIFCReceptorPairing(LIFCNeuron* S
 
 void LIFCNeuron::Show_Functional_Parameters() {
     std::stringstream paramstr;
-    paramstr << "Parameters of neuron " << build_data.ID + ":\n";
+    paramstr << "Parameters of neuron " << std::to_string(build_data.ID) + ":\n";
 
     paramstr << "  VReset_mV = " << VReset_mV << '\n';
     paramstr << "  Rm_GOhm = " << Rm_GOhm << '\n';

@@ -148,6 +148,7 @@ public:
     void update_with_reset_options(float t);
 
     CoreStructs::LIFCReceptorData* FindLIFCReceptorPairing(LIFCNeuron* SrcNeuronPtr, Connections::LIFCReceptor* RPtr);
+    void Show_Functional_Parameters();
     void Calculate_Abstracted_PSP_Medians();
 
     virtual void Update(float t_ms, bool recording);

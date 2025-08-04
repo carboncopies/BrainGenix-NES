@@ -183,11 +183,13 @@ std::string LIFCReceptorData::Show_Functional_Parameters() {
     paramstr << "Receptors";
     for (auto RID : ReceptorIDs) paramstr << ' ' << RID;
     paramstr << "\n  Type = " << Type() << '\n';
+    paramstr << "  E_k = " << E_k() << '\n';
     paramstr << "  g_peak_sum_nS = " << g_peak_sum_nS << '\n';
     paramstr << "  weight = " << weight << '\n';
     paramstr << "  tau_rise_ms = " << tau_rise_ms << '\n';
     paramstr << "  tau_decay_ms = " << tau_decay_ms << '\n';
     paramstr << "  onset_delay_ms = " << onset_delay_ms << '\n';
+    paramstr << "  voltage_gated = " << voltage_gated() << '\n';
     paramstr << "  STDP_Method = " << STDP_Method() << '\n';
     paramstr << "  STDP_A_pos = " << STDP_A_pos << '\n';
     paramstr << "  STDP_A_neg = " << STDP_A_neg << '\n';
