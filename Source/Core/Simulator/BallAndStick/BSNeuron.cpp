@@ -52,6 +52,10 @@ void BSNeuron::AttachDirectStim(float t_ms) {
     this->TDirectStim_ms.push_back(t_ms);
 };
 
+void BSNeuron::Sort_Direct_Stimulation() {
+    std::sort(TDirectStim_ms.begin(), TDirectStim_ms.end());
+}
+
 //! Set the distribution for delta t spontaneous (time changed
 //! since last spontaneous activity).
 void BSNeuron::SetSpontaneousActivity(float mean, float stdev, int Seed) {

@@ -112,6 +112,8 @@ public:
     //! of a direct stimulation.
     void AttachDirectStim(float t_ms);
 
+    void Sort_Direct_Stimulation();
+
     //! Set the distribution for delta t spontaneous (time changed
     //! since last spontaneous activity).
     //! A stdev==0 means the Neuron does not experience spontaneous activity.

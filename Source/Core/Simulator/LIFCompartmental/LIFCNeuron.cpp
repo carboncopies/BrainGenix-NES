@@ -390,6 +390,7 @@ void LIFCNeuron::Update(float t_ms, bool recording) {
     if (tDiff_ms < 0) return;
 
     if (!abstracted_medians) { // Prepared once at the start of the simulation
+        if (!TDirectStim_ms.empty()) Sort_Direct_Stimulation();
         if (Sim.use_abstracted_LIF_receptors) Calculate_Abstracted_PSP_Medians();
         abstracted_medians = true;
     }

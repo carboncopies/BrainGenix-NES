@@ -233,6 +233,8 @@ Geometries::Vec3D &Neuron::GetCellCenter() {
     return cell_center; // Placeholder.
 }
 
+// Note that this does not guarantee that spike times are added in order.
+// Sorting should precede simulation.
 void Neuron::AddSpecificAPTime(float t_ms) {
     TDirectStim_ms.emplace_back(t_ms);
 }
