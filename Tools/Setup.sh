@@ -26,9 +26,9 @@ case $DISTRO in
        PACKAGE_MANAGER_UPDATE_CMD="apt update -y";;
 esac
 
-# Detect version
-Var=$(lsb_release -r)
-NumOnly=$(cut -f2 <<< "$Var")
+# Detect version using /etc/os-release which is more reliable
+VERSION_ID=$(grep VERSION_ID /etc/os-release | cut -d'"' -f2)
+echo "Detected Ubuntu version: $VERSION_ID"
 
 
 # Define Python dependencies based on distro
@@ -65,8 +65,8 @@ if [ "$DISTRO" = "arch" ]; then
 elif [ "$DISTRO" = "fedora" ]; then
     VULKAN_DEPS="libvulkan-dev vulkan-validationlayers-dev vulkan-tools libxcb-xfixes0-dev libx11-dev libxrandr-dev"  
 else
-    # Check if it's ubuntu 24.04 since they did some dumb shit and changed the library name
-    if [ "$NumOnly" = "24.04" ]; then
+    # Check if it's ubuntu 24.04 since they changed the library name
+    if [ "$VERSION_ID" = "24.04" ]; then
         VULKAN_DEPS="libvulkan-dev vulkan-utility-libraries-dev vulkan-tools libxcb-xfixes0-dev libx11-dev libxrandr-dev"  
     else
         VULKAN_DEPS="libvulkan-dev vulkan-validationlayers-dev vulkan-tools libxcb-xfixes0-dev libx11-dev libxrandr-dev"  
