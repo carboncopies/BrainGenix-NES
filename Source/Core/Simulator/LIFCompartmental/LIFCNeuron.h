@@ -122,8 +122,6 @@ public:
 
     float tDiff_ms = 0.0;
 
-    bool abstracted_medians = false; // Done at start of simulation when build is complete
-
     std::vector<CoreStructs::LIFCReceptorData*> LIFCReceptorDataVec;
     std::vector<CoreStructs::LIFCReceptorData*> LIFCTransmitterDataVec;
 

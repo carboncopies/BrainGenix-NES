@@ -389,10 +389,10 @@ void LIFCNeuron::Update(float t_ms, bool recording) {
     tDiff_ms = t_ms - T_ms;
     if (tDiff_ms < 0) return;
 
-    if (!abstracted_medians) { // Prepared once at the start of the simulation
+    if (is_first_update) { // Prepared once at the start of the simulation when build is complete
         if (!TDirectStim_ms.empty()) Sort_Direct_Stimulation();
         if (Sim.use_abstracted_LIF_receptors) Calculate_Abstracted_PSP_Medians();
-        abstracted_medians = true;
+        is_first_update = false;
     }
 
     // Hard-cap nonlinear spiking fatigue threshold.

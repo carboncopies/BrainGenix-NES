@@ -140,6 +140,8 @@ struct Neuron {
     std::vector<float> TDirectStim_ms{}; // was deque
     size_t next_directstim_idx = 0;
 
+    bool is_first_update = true;
+
     //! Virtual destructor is essential for proper cleanup when
     //! Simulation::Neurons is destructed.
     virtual ~Neuron() {}

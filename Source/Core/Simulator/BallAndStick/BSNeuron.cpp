@@ -262,6 +262,11 @@ void BSNeuron::Update(float t_ms, bool recording) {
     float tDiff_ms = t_ms - this->T_ms;
     if (tDiff_ms < 0) return;
 
+    if (is_first_update) {
+        if (!TDirectStim_ms.empty()) Sort_Direct_Stimulation();
+        is_first_update = false;
+    }
+
     // 1. Has there been a directed stimulation?
     if (next_directstim_idx < TDirectStim_ms.size()) {
         float tFire_ms = TDirectStim_ms.at(next_directstim_idx);
