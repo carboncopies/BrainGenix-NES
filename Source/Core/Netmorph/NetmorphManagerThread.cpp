@@ -405,13 +405,13 @@ public:
         Connections::LIFCReceptor C;
         Connections::NetmorphLIFCReceptorRaw RawData;
 
-        C.Neurotransmitter = synapse_typeToNeurotransmitterType[s->type_ID()];
+        C.Neurotransmitter = synapse_typeToNeurotransmitterType.at(s->type_ID());
         if (C.Neurotransmitter ==  Connections::AMPA) {
-            C::LIFCReceptorBase = LIFCreceptorpars.ampa;
+            static_cast<Connections::LIFCReceptorBase&>(C) = LIFCreceptorpars.ampa;
         } else if (C.Neurotransmitter ==  Connections::NMDA) {
-            C::LIFCReceptorBase = LIFCreceptorpars.nmda;
+            static_cast<Connections::LIFCReceptorBase&>(C) = LIFCreceptorpars.nmda;
         } else {
-            C::LIFCReceptorBase = LIFCreceptorpars.gaba;
+            static_cast<Connections::LIFCReceptorBase&>(C) = LIFCreceptorpars.gaba;
         }
 
         C.Name = "synapse";
@@ -578,8 +578,8 @@ public:
 
 // Defaults
 struct LIFCNeuronPars {
-    LIFCNeuronBase principal;
-    LIFCNeuronBase interneuron;
+    CoreStructs::LIFCNeuronBase principal;
+    CoreStructs::LIFCNeuronBase interneuron;
     LIFCNeuronPars() {
         principal.RestingPotential_mV = -70;
         principal.ResetPotential_mV = -55;
@@ -645,7 +645,7 @@ public:
     const DynamicPars Dummydynpars;
     const PSPTiming Dummypsptiming;
     const LIFCNeuronPars& LIFCpars;
-    NeuronBuild(NetmorphParameters& Params, const LIFCNeuronPars& _LIFCpars):
+    LIFCNeuronBuild(NetmorphParameters& Params, const LIFCNeuronPars& _LIFCpars):
         NeuronBuild(Params, Dummydynpars, Dummypsptiming), LIFCpars(_LIFCpars) {}
 
     virtual void op(neuron* n) {
@@ -654,9 +654,9 @@ public:
         CoreStructs::LIFCNeuronStruct N;
 
         if (n->TypeID() == INTERNEURON) {
-            N::LIFCNeuronBase = LIFCpars.interneuron;
+            static_cast<CoreStructs::LIFCNeuronBase&>(N) = LIFCpars.interneuron;
         } else {
-            N::LIFCNeuronBase = LIFCpars.principal;
+            static_cast<CoreStructs::LIFCNeuronBase&>(N) = LIFCpars.principal;
         }
 
         N.Name = std::to_string(uint64_t(n));
@@ -883,11 +883,9 @@ int ExecuteNetmorphOperation(BG::Common::Logger::LoggingSystem* _Logger, Netmorp
     _Logger->Log("Netmorph Simulation Finished", 5);
 
     if (_Params->Result.Status) {
-        if (_Params->SimNeuronClass == LIFCNEURONS) {
-            _Logger->Log("Converting to NES model using LIFCNeuron", 5);
+        if (_Params->Sim->SimNeuronClass == LIFCNEURONS) {
             BuildLIFCFromNetmorphNetwork(*_Params);
         } else {
-            _Logger->Log("Converting to NES model using SCNeuron", 5);
             BuildFromNetmorphNetwork(*_Params);
         }
     }
