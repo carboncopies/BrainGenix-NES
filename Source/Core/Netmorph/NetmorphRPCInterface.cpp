@@ -45,6 +45,9 @@ NetmorphRPCInterface::~NetmorphRPCInterface() {
  *   "SimulationID": <SimID>,
  *   "ModelFile": <string of model file>
  * }
+ * NOTE: This API call is not currently supported by PythonClient
+ *       and it is not really necessary, because the ModelContent
+ *       can be provided as part of the Netmorph/StartSimulation call.
  */
 std::string NetmorphRPCInterface::NetmorphSetModelfile(std::string _JSONRequest) {
 
@@ -54,19 +57,12 @@ std::string NetmorphRPCInterface::NetmorphSetModelfile(std::string _JSONRequest)
     }
 
     std::string ModelFileString, NeuronClass;
-    if ((!Handle.GetParString("ModelContent", ModelFileString))
-        || (!Handle.GetParString("NeuronClass", NeuronClass))) {
+    if (!Handle.GetParString("ModelContent", ModelFileString) {
         return Handle.ErrResponse();
     }
 
     // Now Populate Modelfile
     Handle.Sim()->NetmorphParams.ModelContent = ModelFileString;
-
-    if (NeuronClass == "LIFC") {
-        Handle.Sim()->SimNeuronClass = LIFCNEURONS;
-    } else {
-        Handle.Sim()->SimNeuronClass = SCNEURONS;
-    }
 
     // Return Result ID
     return Handle.ResponseWithID("NetmorphStatus", 0); // ok
@@ -81,14 +77,20 @@ std::string NetmorphRPCInterface::NetmorphSetModelfile(std::string _JSONRequest)
 std::string NetmorphRPCInterface::NetmorphStartSimulation(std::string _JSONRequest) {
 
     API::HandlerData Handle(_JSONRequest, Logger_, "Netmorph/StartSimulation", Simulations_, true);
-
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
 
-    Handle.GetParString("ModelContent", Handle.Sim()->NetmorphParams.ModelContent);
-    if (Handle.HasError()) {
+    std::string NeuronClass;
+    if ((!Handle.GetParString("ModelContent", Handle.Sim()->NetmorphParams.ModelContent))
+        || (!Handle.GetParString("NeuronClass", NeuronClass))) {
         return Handle.ErrResponse();
+    }
+
+    if (NeuronClass == "LIFC") {
+        Handle.Sim()->SimNeuronClass = LIFCNEURONS;
+    } else {
+        Handle.Sim()->SimNeuronClass = SCNEURONS;
     }
 
     // Now Populate Modelfile

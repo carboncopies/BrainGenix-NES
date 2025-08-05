@@ -884,8 +884,10 @@ int ExecuteNetmorphOperation(BG::Common::Logger::LoggingSystem* _Logger, Netmorp
 
     if (_Params->Result.Status) {
         if (_Params->SimNeuronClass == LIFCNEURONS) {
+            _Logger->Log("Converting to NES model using LIFCNeuron", 5);
             BuildLIFCFromNetmorphNetwork(*_Params);
         } else {
+            _Logger->Log("Converting to NES model using SCNeuron", 5);
             BuildFromNetmorphNetwork(*_Params);
         }
     }
