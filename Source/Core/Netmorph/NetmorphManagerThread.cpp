@@ -327,6 +327,11 @@ struct LIFCReceptorPars {
     Connections::LIFCReceptorBase ampa;
     Connections::LIFCReceptorBase nmda;
     Connections::LIFCReceptorBase gaba;
+
+    Connections::NetmorphLIFCReceptorRaw ampa_raw;
+    Connections::NetmorphLIFCReceptorRaw nmda_raw;
+    Connections::NetmorphLIFCReceptorRaw gaba_raw;
+
     LIFCReceptorPars() {
         ampa.ReversalPotential_mV = 0;
         ampa.PSPRise_ms = 0.5;
@@ -353,6 +358,18 @@ struct LIFCReceptorPars {
         gaba.ReversalPotential_mV = -70;
         gaba.voltage_gated = false;
         gaba.Neurotransmitter = Connections::GABA;
+
+        ampa_raw.ReceptorPeakConductance_nS = 20e-3;
+        ampa_raw.ReceptorQuantity = 49;
+        ampa_raw.HillocDistance_um = 100;
+        ampa_raw.Velocity_mps = 1.0;
+        ampa_raw.SynapticDelay_ms = 1.0;
+        nmda_raw = ampa_raw;
+        nmda_raw.ReceptorPeakConductance_nS = 50e-3;
+        nmda_raw.ReceptorQuantity = 11;
+        gaba_raw = nmda_raw;
+        gaba_raw.ReceptorPeakConductance_nS = 80e-3;
+        gaba_raw.ReceptorQuantity = 10;
     }
 };
 
@@ -413,12 +430,21 @@ public:
 
         C.ShapeID = S.ID;
 
-        RawData.ReceptorPeakConductance_nS =
-        RawData.ReceptorQuantity =
-        C.Weight =
-        RawData.HillocDistance_um = there could be options here to calculate or specify
-        RawData.Velocity_mps =
-        RawData.SynapticDelay_ms =
+        /**
+         * *** TODO: Structure-to-function improvements:
+         * - ReceptorQuantity = int(AMPAChannelsProportion*Synapse_Area_um2/0.0086)
+         * - HillocDistance_um calculated by tracing back from synapse location
+         * - Weight specified
+         */
+        if (C.Neurotransmitter ==  Connections::AMPA) {
+            RawData = LIFCreceptorpars.ampa_raw;
+        } else if (C.Neurotransmitter ==  Connections::NMDA) {
+            RawData = LIFCreceptorpars.nmda_raw;
+        } else {
+            RawData = LIFCreceptorpars.gaba_raw;
+        }
+
+        C.Weight = 0.2;
 
         C.ID = _Params.Sim->AddNetmorphLIFCReceptor(C, RawData);
         if (C.ID<0) {
