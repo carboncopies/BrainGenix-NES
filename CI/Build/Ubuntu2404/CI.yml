@@ -5,7 +5,7 @@ Ubuntu_2404_Build:
   stage: Build
   script:
     - cd Tools
-    - bash Build.sh $NUMBER_THREADS
+    - bash Build.sh 10
   artifacts:
     name: "$PLATFORM_BUILD_PREAMBLE-Ubuntu24.04"
     paths:
