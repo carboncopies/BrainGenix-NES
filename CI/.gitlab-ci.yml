@@ -33,20 +33,10 @@ include:
   # - '/CI/Docs/Drawio/CI.yml' Disabled for now since this uses Electron which is a pain in the ass.
 
   # Tests
-  # - '/CI/Test/Ubuntu2204/CI.yml'
   - '/CI/Test/Ubuntu2404/CI.yml'
-  # - '/CI/Test/Ubuntu2004/CI.yml'
-  # - '/CI/Test/Debian11/CI.yml'
-  # - '/CI/Test/Debian12/CI.yml' 
-
 
   # Package Stage
-  # - '/CI/Package/Ubuntu2204/CI.yml'
   - '/CI/Package/Ubuntu2404/CI.yml'
-  # # - '/CI/Package/Ubuntu2004/CI.yml'
-  # # - '/CI/Package/Debian11/CI.yml'
-  # - '/CI/Package/Debian12/CI.yml'
-
 
 
   # TODO: Packaging Tets here
