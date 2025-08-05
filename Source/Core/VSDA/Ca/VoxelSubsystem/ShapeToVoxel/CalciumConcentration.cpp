@@ -37,7 +37,8 @@ namespace VoxelArrayGenerator {
  */
 bool CalculateCalciumConcentrations(BG::Common::Logger::LoggingSystem *_Logger, Simulator::Simulation* _Simulation, std::vector<std::vector<float>>* _Data) {
 	// Walking through the list of components as stored in Simulation:
-	for (unsigned int component_id = 0; component_id < _Simulation->BSCompartments.size(); component_id++) {
+	unsigned int numcompartments = _Simulation->GetNumCompartments();
+	for (unsigned int component_id = 0; component_id < numcompartments; component_id++) {
 		// Getting the corresponding neuron by component ID:
 		auto neuron_ptr = _Simulation->FindNeuronByCompartment(component_id);
 

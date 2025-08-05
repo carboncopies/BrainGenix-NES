@@ -52,6 +52,10 @@ void BSNeuron::AttachDirectStim(float t_ms) {
     this->TDirectStim_ms.push_back(t_ms);
 };
 
+void BSNeuron::Sort_Direct_Stimulation() {
+    std::sort(TDirectStim_ms.begin(), TDirectStim_ms.end());
+}
+
 //! Set the distribution for delta t spontaneous (time changed
 //! since last spontaneous activity).
 void BSNeuron::SetSpontaneousActivity(float mean, float stdev, int Seed) {
@@ -163,19 +167,19 @@ float BSNeuron::VPSPT_mV(float t_ms) {
     assert(t_ms >= 0.0);
     float vPSPt_mV = 0.0;
 
-    for (auto receptorData : this->ReceptorDataVec) {
-        if (receptorData.ReceptorPtr->Conductance_nS!=0.0) {
-            auto srcCell = receptorData.SrcNeuronPtr;
+    for (auto receptorDataptr : this->ReceptorDataVec) {
+        if (receptorDataptr->ReceptorPtr->Conductance_nS!=0.0) {
+            auto srcCell = receptorDataptr->SrcNeuronPtr;
             if (!srcCell->HasSpiked()) continue;
 
             float dtPSP_ms = srcCell->DtAct_ms(t_ms);
-            float amp = this->IPSP_nA / receptorData.ReceptorPtr->Conductance_nS;
+            float amp = this->IPSP_nA / receptorDataptr->ReceptorPtr->Conductance_nS;
             //if (ID == 1) std::cout << "IPSP_nA=" << this->IPSP_nA << " Cond nS = " << receptorData.ReceptorPtr->Conductance_nS << " amp = " << amp << '\n';
 
             vPSPt_mV += SignalFunctions::DoubleExponentExpr(
                 amp, 
-                receptorData.ReceptorPtr->TimeConstantRise_ms, //this->TauPSPr_ms, 
-                receptorData.ReceptorPtr->TimeConstantDecay_ms, //this->TauPSPd_ms,
+                receptorDataptr->ReceptorPtr->TimeConstantRise_ms, //this->TauPSPr_ms, 
+                receptorDataptr->ReceptorPtr->TimeConstantDecay_ms, //this->TauPSPd_ms,
                 dtPSP_ms);
         }
     }
@@ -258,15 +262,27 @@ void BSNeuron::Update(float t_ms, bool recording) {
     float tDiff_ms = t_ms - this->T_ms;
     if (tDiff_ms < 0) return;
 
+    if (is_first_update) {
+        if (!TDirectStim_ms.empty()) Sort_Direct_Stimulation();
+        is_first_update = false;
+    }
+
     // 1. Has there been a directed stimulation?
-    if (!(this->TDirectStim_ms.empty())) {
-        float tFire_ms = this->TDirectStim_ms.front();
+    if (next_directstim_idx < TDirectStim_ms.size()) {
+        float tFire_ms = TDirectStim_ms.at(next_directstim_idx);
         if (tFire_ms <= t_ms) {
-            this->TAct_ms.push_back(tFire_ms);
-            //this->TDirectStim_ms.erase(this->TDirectStim_ms.begin());
-            this->TDirectStim_ms.pop_front();
+            TAct_ms.push_back(tFire_ms);
+            next_directstim_idx++;
         }
     }
+    // if (!(this->TDirectStim_ms.empty())) {
+    //     float tFire_ms = this->TDirectStim_ms.front();
+    //     if (tFire_ms <= t_ms) {
+    //         this->TAct_ms.push_back(tFire_ms);
+    //         //this->TDirectStim_ms.erase(this->TDirectStim_ms.begin());
+    //         this->TDirectStim_ms.pop_front();
+    //     }
+    // }
 
     // 2. Update variables.
     this->UpdateVm(t_ms, recording);
@@ -334,14 +350,68 @@ void BSNeuron::UpdateConvolvedFIFO(const std::vector<float> & reversed_kernel) {
     }
 };
 
-void BSNeuron::InputReceptorAdded(CoreStructs::ReceptorData RData) {
+void BSNeuron::InputReceptorAdded(CoreStructs::ReceptorData* RData) {
     ReceptorDataVec.emplace_back(RData);
 
 }
 
-void BSNeuron::OutputTransmitterAdded(CoreStructs::ReceptorData RData) {
+void BSNeuron::OutputTransmitterAdded(CoreStructs::ReceptorData* RData) {
     TransmitterDataVec.emplace_back(RData);
 
+}
+
+const std::map<std::string, int> Neurotransmitter2ConnectionType = {
+    { "AMPA", 1 },
+    { "GABA", 2 },
+    { "NMDA", 3 },
+};
+
+int GetConnectionType(const std::string& neurotransmitter) {
+    auto it = Neurotransmitter2ConnectionType.find(neurotransmitter);
+    if (it == Neurotransmitter2ConnectionType.end()) return 0; // Unknown type.
+    return it->second;
+}
+
+void BSNeuron::GetConnectomeTargetsJSON(nlohmann::json& targetvec, nlohmann::json& typevec, nlohmann::json& weightvec) {
+    for (auto & rdata : TransmitterDataVec) {
+        targetvec.push_back(rdata->DstNeuronID);
+        auto ReceptorPtr = rdata->ReceptorPtr;
+        typevec.push_back(GetConnectionType(ReceptorPtr->Neurotransmitter));
+        weightvec.push_back(ReceptorPtr->Conductance_nS); // *** A better "weight" might by conductance times peak or under-curve area of PSP double-exp.
+    }   
+}
+
+bool BSNeuron::UpdatePrePostStrength(int PresynapticID, float NewConductance_nS) {
+    Connections::Receptor* Rptr = nullptr;
+    for (auto& _ReceptorDataptr : ReceptorDataVec) {
+        if (_ReceptorDataptr->SrcNeuronID==PresynapticID) {
+            Rptr = _ReceptorDataptr->ReceptorPtr;   // Remember the last one.
+            if (Rptr) Rptr->Conductance_nS = 0.0;   // Clear.
+        }
+    }
+    if (!Rptr) return false;
+
+    Rptr->Conductance_nS = NewConductance_nS;
+    return true;
+}
+
+// Pure abstraction count of number of synapses.
+size_t BSNeuron::GetAbstractConnection(int PreSynID, bool NonZero) {
+    size_t NumReceptors = 0;
+    Connections::Receptor* Rptr = nullptr;
+    for (auto& _ReceptorDataptr : ReceptorDataVec) {
+        if (_ReceptorDataptr->SrcNeuronID==PreSynID) {
+            if (NonZero) {
+                if (_ReceptorDataptr->ReceptorPtr->Conductance_nS!=0.0) {
+                    NumReceptors++;
+                }
+            } else {
+                NumReceptors++;
+            }
+        }
+    }
+
+    return NumReceptors;
 }
 
 }; // namespace BallAndStick

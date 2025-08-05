@@ -78,9 +78,10 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
     _Renderer->WaitUntilGPUDone();
 
     // Enumerate Simulation Primitives
-    for (unsigned int i = 0; i < _Simulation->BSCompartments.size(); i++) {
-        int ShapeID = _Simulation->BSCompartments[i].ShapeID;
-        int CompartmentID = _Simulation->BSCompartments[i].ID;
+    unsigned int numcompartments = _Simulation->GetNumCompartments();
+    for (unsigned int i = 0; i < numcompartments; i++) {
+        int ShapeID = _Simulation->GetCompartmentByIdx(i)->ShapePtr->ID;
+        int CompartmentID = i; //_Simulation->BSCompartments[i].ID;
         int AssocNeuronID = _Simulation->GetNeuronIndexByCompartment(CompartmentID);
         
         bool DrawThisNeuron = std::find(_Simulation->VisualizerParams.Optional_VisibleNeuronIDs.begin(), _Simulation->VisualizerParams.Optional_VisibleNeuronIDs.end(), AssocNeuronID) != _Simulation->VisualizerParams.Optional_VisibleNeuronIDs.end();

@@ -109,7 +109,8 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 
     // Preprocessing Stats
-    _Logger->Log("Rasterization Preprocessing " + std::to_string(_Sim->BSCompartments.size()) + " Shapes", 4);
+    size_t numcompartments = _Sim->GetNumCompartments();
+    _Logger->Log("Rasterization Preprocessing " + std::to_string(numcompartments) + " Shapes", 4);
 
 
     // Build Bounding Boxes For All Compartments
@@ -121,9 +122,10 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     size_t AddedCylinderEnds = 0;
     _Sim->VSDAData_.TotalVoxelQueueLength_ = 0;
     auto StartTime = std::chrono::high_resolution_clock::now();
-    for (size_t i = 0; i < _Sim->BSCompartments.size(); i++) {
+    for (size_t i = 0; i < numcompartments; i++) {
 
-        Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
+        //Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
+        int ShapeID = _Sim->GetCompartmentByIdx(i)->ShapePtr->ID;
 
         TotalShapes++;
 
@@ -133,7 +135,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         std::chrono::duration<double, std::milli> Elapsed_ms = CurrentTime - StartTime;
         if (Elapsed_ms.count() >= 500.0) {
 
-            std::string LogMsg = "Processed (" + std::to_string(TotalShapes) + "/" + std::to_string(_Sim->BSCompartments.size()) + ") TotalShapes, Added ";
+            std::string LogMsg = "Processed (" + std::to_string(TotalShapes) + "/" + std::to_string(numcompartments) + ") TotalShapes, Added ";
             LogMsg += std::to_string(AddedShapes) + " Shapes, With " + std::to_string(TotalSegments) + " Segments, In " + std::to_string(i) + " Iterations";
             _Logger->Log(LogMsg, 1);
 
@@ -145,7 +147,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         // std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
         // Task->Array_ = _Array;
         // Task->GeometryCollection_ = &_Sim->Collection;
-        // Task->ShapeID_ = ThisCompartment->ShapeID;
+        // Task->ShapeID_ = ShapeID;
         // Task->WorldInfo_ = Info;
         // Task->Parameters_ = _Params;
 
@@ -155,17 +157,17 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         //     std::cout<<RegionBoundingBox.ToString()<<std::endl;
         // }
 
-        if (IsShapeInsideRegion(_Sim, ThisCompartment->ShapeID, RegionBoundingBox, Info)) {
+        if (IsShapeInsideRegion(_Sim, ShapeID, RegionBoundingBox, Info)) {
             
             
             // Check if we need to render this in parts
 
             // Check Volume of Shape if it's a cylinder, (for optional subdivision)
             uint64_t SubdivisionThreshold_vox = 75000; 
-            if (_Sim->Collection.IsSphere(ThisCompartment->ShapeID)) {
+            if (_Sim->Collection.IsSphere(ShapeID)) {
 
                 // Calculate Size in voxels of the shape
-                Geometries::Sphere & ThisSphere = _Sim->Collection.GetSphere(ThisCompartment->ShapeID);
+                Geometries::Sphere & ThisSphere = _Sim->Collection.GetSphere(ShapeID);
                 uint64_t EstimatedSize_vox = pow(ThisSphere.Radius_um / _Params->VoxelResolution_um, 3);
 
                 // Now check if the sphere should be broken up
@@ -217,10 +219,10 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 // }
 
             } 
-            else if (_Sim->Collection.IsCylinder(ThisCompartment->ShapeID)) {
+            else if (_Sim->Collection.IsCylinder(ShapeID)) {
 
                 // Calculate size of the cylinder in question
-                Geometries::Cylinder& ThisCylinder = _Sim->Collection.GetCylinder(ThisCompartment->ShapeID);
+                Geometries::Cylinder& ThisCylinder = _Sim->Collection.GetCylinder(ShapeID);
 
                 double AverageRadius_um = (ThisCylinder.End0Radius_um + ThisCylinder.End1Radius_um) / 2.;
                 double Distance_um = ThisCylinder.End0Pos_um.Distance(ThisCylinder.End1Pos_um);
@@ -337,17 +339,24 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 
     // Now Do It For Receptors
-    _Logger->Log("Receptor Preprocessing " + std::to_string( _Sim->Receptors.size()) + " Boxes", 5);
+    unsigned int numreceptors = _Sim->GetNumReceptors();
+    _Logger->Log("Receptor Preprocessing " + std::to_string(numreceptors) + " Boxes", 5);
 
-    for (unsigned int i = 0; i < _Sim->Receptors.size(); i++) {
+    for (unsigned int i = 0; i < numreceptors; i++) {
 
-        Connections::Receptor* ThisReceptor = _Sim->Receptors[i].get();
+        //Connections::Receptor* ThisReceptor = _Sim->Receptors[i].get();
+        int ShapeID;
+        if (_Sim->SimNeuronClass == LIFCNEURONS) {
+            ShapeID = _Sim->LIFCReceptors[i]->ShapeID;
+        } else {
+            ShapeID = _Sim->Receptors[i]->ShapeID;
+        }
 
         // Create a working task for the generatorpool to complete
         std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
         Task->Array_ = _Array;
         Task->GeometryCollection_ = &_Sim->Collection;
-        Task->ShapeID_ = ThisReceptor->ShapeID;
+        Task->ShapeID_ = ShapeID;
         Task->WorldInfo_ = Info;
         Task->Parameters_ = _Params;
 
@@ -365,7 +374,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         }
 
         // Now submit to render queue if it's inside the region, otherwise skip it
-        if (IsShapeInsideRegion(_Sim, ThisReceptor->ShapeID, RegionBoundingBox, Info)) {
+        if (IsShapeInsideRegion(_Sim, ShapeID, RegionBoundingBox, Info)) {
             
             AddedShapes++;
 

@@ -32,6 +32,7 @@
 #include <Simulator/Geometries/GeometryCollection.h>
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/BS.h>
+#include <Simulator/Structs/LIFC.h>
 #include <Simulator/Structs/NeuralCircuit.h>
 #include <Simulator/Structs/Neuron.h>
 #include <Simulator/Structs/PatchClampADC.h>
@@ -62,6 +63,20 @@ namespace Tools {
 
 enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA, SIMULATION_CALCIUM, SIMULATION_VISUALIZATION};
 
+enum SimulationNeuronClass: int {
+    UNDETERMINED = -1,
+    BSNEURONS = 0,
+    SCNEURONS = 1,
+    LIFCNEURONS = 2
+};
+
+// Globally essential prior information that determines how to save or load.
+struct SaveLoadPrior {
+    SimulationNeuronClass SimNeuronClass = UNDETERMINED;
+
+    std::string str() const;
+};
+
 struct StoredRequest {
     std::string Route;
     std::string RequestJSON;
@@ -88,9 +103,16 @@ public:
     int RandomSeed = 0; /** Master random seed for this simulation. */
     std::unique_ptr<Distributions::Generic> MasterRandom_;
 
+    SimulationNeuronClass SimNeuronClass = UNDETERMINED;
+
     float T_ms = 0.0;
     float Dt_ms = 1.0;
     std::vector<float> TRecorded_ms{};
+
+    bool STDP = false; // STDP simulation included when true
+    bool use_abstracted_LIF_receptors = true; // Abstracted functional receptors with LIFCNeuron
+
+    bool ShowFunctionalParameters = false; // Mostly for testing, turn on if needed
 
     std::atomic<bool> IsProcessing = false;  /**Indicator if the simulation is currently being modified or not*/
     std::atomic<bool> WorkRequested = false; /**Indicator if work is requested to be done on this simulation by a worker thread*/
@@ -115,7 +137,8 @@ public:
 
     Geometries::GeometryCollection Collection; /**Instance of GeometryCollection struct containing all geometries in this simulation*/
 
-    std::vector<Compartments::BS> BSCompartments; /**This will need to be updated later to a std::variant type, but for now it stores the only type of supported compartments, BallStick type*/
+    std::vector<Compartments::BS> BSCompartments;
+    std::vector<Compartments::LIFC> LIFCCompartments;
     std::map<int, int> NeuronByCompartment; // Fast look-up map built while creating neurons.
 
     std::vector<std::shared_ptr<CoreStructs::Neuron>> Neurons; /** List of neurons, index is their id. Notice that this takes a Neuron base class object (not BSNeuron and other derivatives). */
@@ -125,6 +148,9 @@ public:
     // moved as the vector is expanded and remapped, and InputReceptorAdded delivers
     // a static pointer:
     std::vector<std::unique_ptr<Connections::Receptor>> Receptors; /**List of receptor connections, index is their id (and it's also stored in the struct itself)*/
+    std::vector<std::unique_ptr<Connections::LIFCReceptor>> LIFCReceptors; /**List of receptor connections, index is their id (and it's also stored in the struct itself)*/
+    std::vector<std::unique_ptr<CoreStructs::ReceptorData>> ReceptorDataVec; // Used for functional data access
+    std::vector<std::unique_ptr<CoreStructs::LIFCReceptorData>> LIFCReceptorDataVec;
 
     std::vector<Tools::PatchClampDAC> PatchClampDACs; /**List of patchclamp dacs, id is index*/
     std::vector<Tools::PatchClampADC> PatchClampADCs; /**List of patchclamp adcs, id is index*/
@@ -160,21 +186,35 @@ public:
     int AddSphere(Geometries::Sphere& _S);
     int AddCylinder(Geometries::Cylinder& _S);
     int AddBox(Geometries::Box& _S);
-    int AddSCCompartment(Compartments::BS& _C);
+
+    bool CheckCompatibility(SimulationNeuronClass _NewObjectCategory);
+    int AddSCCompartment(Compartments::BS& _C, SimulationNeuronClass _NewObjectCategory);
+    int AddLIFCCompartment(Compartments::LIFC& _C);
+    int AddBSNeuron(CoreStructs::BSNeuronStruct& _N);
     int AddSCNeuron(CoreStructs::SCNeuronStruct& _N);
+    int AddLIFCNeuron(CoreStructs::LIFCNeuronStruct& _N);
+
     int AddReceptor(Connections::Receptor& _C);
+    int AddLIFCReceptor(Connections::LIFCReceptor& _C);
+    int AddNetmorphLIFCReceptor(Connections::LIFCReceptor& _C, Connections::NetmorphLIFCReceptorRaw& _CDataRaw);
+
     void RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompartmentIDs, uint64_t _NeuronUID);
 
     bool SaveModel(const std::string& Name);
     bool LoadModel(const std::string& Name);
-    void InspectSavedModel(const std::string& Name) const;
+    void InspectSavedModel(const std::string& Name, SaveLoadPrior& _SaveLoadPrior) const;
+
+    size_t GetNumCompartments(); // independent of SimNeuronClass
+    Compartments::Compartment* GetCompartmentByIdx(size_t Idx); // independent of SimNeuronClass
+    size_t GetNumReceptors(); // independent of SimNeuronClass
+    Connections::ReceptorCommonBase* GetReceptorByIdx(size_t Idx); // independent of SimNeuronClass
 
     size_t GetTotalNumberOfNeurons();
     std::vector<std::shared_ptr<CoreStructs::Neuron>> GetAllNeurons();
     std::vector<size_t> GetAllNeuronIDs();
     std::vector<std::shared_ptr<CoreStructs::Neuron>> GetNeuronsByIDs(std::vector<size_t> IDList);
 
-    Compartments::BS * FindCompartmentByID(int CompartmentID);
+    Compartments::BS * FindBSCompartmentByID(int CompartmentID);
     CoreStructs::Neuron * FindNeuronByCompartment(int CompartmentID) const;
     int GetNeuronIndexByCompartment(int CompartmentID) const;
 

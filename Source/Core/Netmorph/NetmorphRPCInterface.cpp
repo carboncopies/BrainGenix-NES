@@ -49,18 +49,24 @@ NetmorphRPCInterface::~NetmorphRPCInterface() {
 std::string NetmorphRPCInterface::NetmorphSetModelfile(std::string _JSONRequest) {
 
     API::HandlerData Handle(_JSONRequest, Logger_, "Netmorph/SetModelfile", Simulations_, true);
-
-    std::string ModelFileString;
-    Handle.GetParString("ModelContent", ModelFileString);
-    
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
 
+    std::string ModelFileString, NeuronClass;
+    if ((!Handle.GetParString("ModelContent", ModelFileString))
+        || (!Handle.GetParString("NeuronClass", NeuronClass))) {
+        return Handle.ErrResponse();
+    }
 
     // Now Populate Modelfile
     Handle.Sim()->NetmorphParams.ModelContent = ModelFileString;
 
+    if (NeuronClass == "LIFC") {
+        Handle.Sim()->SimNeuronClass = LIFCNEURONS;
+    } else {
+        Handle.Sim()->SimNeuronClass = SCNEURONS;
+    }
 
     // Return Result ID
     return Handle.ResponseWithID("NetmorphStatus", 0); // ok

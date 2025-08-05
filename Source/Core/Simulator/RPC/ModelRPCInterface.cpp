@@ -29,12 +29,17 @@ ModelRPCInterface::ModelRPCInterface(BG::Common::Logger::LoggingSystem* _Logger,
     // Register Callbacks
     _RPCManager->AddRoute("Simulation/Staple/Create",                 std::bind(&ModelRPCInterface::StapleCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Receptor/Create",               std::bind(&ModelRPCInterface::ReceptorCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/LIFCReceptor/Create",           std::bind(&ModelRPCInterface::LIFCReceptorCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/NetmorphLIFCReceptor/Create",   std::bind(&ModelRPCInterface::NetmorphLIFCReceptorCreate, this, std::placeholders::_1));
 
-    _RPCManager->AddRoute("Simulation/Neuron/BS/Create",              std::bind(&ModelRPCInterface::BSNeuronCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Compartments/BS/Create",        std::bind(&ModelRPCInterface::BSCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Neuron/BS/Create",              std::bind(&ModelRPCInterface::BSNeuronCreate, this, std::placeholders::_1));
    
-    _RPCManager->AddRoute("Simulation/Neuron/SC/Create",              std::bind(&ModelRPCInterface::SCNeuronCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Compartments/SC/Create",        std::bind(&ModelRPCInterface::SCCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Neuron/SC/Create",              std::bind(&ModelRPCInterface::SCNeuronCreate, this, std::placeholders::_1));
+
+    _RPCManager->AddRoute("Simulation/Compartments/LIFC/Create",        std::bind(&ModelRPCInterface::LIFCCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Neuron/LIFC/Create",              std::bind(&ModelRPCInterface::LIFCNeuronCreate, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/PatchClampDAC/Create",          std::bind(&ModelRPCInterface::PatchClampDACCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/PatchClampDAC/SetOutputList",   std::bind(&ModelRPCInterface::PatchClampDACSetOutputList, this, std::placeholders::_1));
@@ -78,7 +83,7 @@ std::string ModelRPCInterface::StapleCreate(std::string _JSONRequest) {
  * This receptor create handler creates an object that contains information
  * about source and destination compartments and the physical location of
  * the receptor, as well as receptor paramters.
- * (*** TODO: This does not yet link to the shape of the receptor!!)
+ * (*** TODO: This does not yet link to the shape of the receptor!! -- or does it now? See ReceptorMorphology.)
  * 
  * The receptor object is maintained in a list at the Simulation level,
  * and the target neuron is found (via the destination compartment), and
@@ -128,6 +133,148 @@ std::string ModelRPCInterface::ReceptorCreate(std::string _JSONRequest) {
     return Handle.ResponseWithID("ReceptorID", C.ID);
 }
 
+const std::map<std::string, Connections::LIFCSTDPMethodEnum> LIFCSTDPMethodStrToEnum = {
+    { "Hebbian", Connections::STDPHEBBIAN },
+    { "Anti-Hebbian", Connections::STDPANTIHEBBIAN },
+    { "None", Connections::STDPNONE }
+};
+
+Connections::LIFCSTDPMethodEnum LIFCSTDPMethod(const std::string& stdpmethod_cache) {
+    auto it = LIFCSTDPMethodStrToEnum.find(stdpmethod_cache);
+    if (it == LIFCSTDPMethodStrToEnum.end()) {
+        return Connections::NUMLIFCSTDPMethodEnum;
+    }
+    return it->second;
+}
+
+const std::map<std::string, Connections::NeurotransmitterType> LIFCNeurotransmitterStrToEnum = {
+    { "AMPA", Connections::AMPA },
+    { "GABA", Connections::GABA },
+    { "NMDA", Connections::NMDA }
+};
+
+Connections::NeurotransmitterType LIFCNeurotransmitter(const std::string& neurotransmitter_cache) {
+    auto it = LIFCNeurotransmitterStrToEnum.find(neurotransmitter_cache);
+    if (it == LIFCNeurotransmitterStrToEnum.end()) {
+        return Connections::NUMNeurotransmitterType;
+    }
+    return it->second;
+}
+
+std::string ModelRPCInterface::LIFCReceptorCreate(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/LIFCReceptor/Create", Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Build New Receptor Object
+    Connections::LIFCReceptor C;
+    std::string neurotransmitter_cache;
+    std::string stdpmethod_cache;
+    if ((!Handle.GetParInt("SourceCompartmentID", C.SourceCompartmentID))
+        || (!Handle.GetParInt("DestinationCompartmentID", C.DestinationCompartmentID))
+
+        || (!Handle.GetParFloat("ReversalPotential_mV", C.ReversalPotential_mV))
+        || (!Handle.GetParFloat("PSPRise_ms", C.PSPRise_ms))
+        || (!Handle.GetParFloat("PSPDecay_ms", C.PSPDecay_ms))
+        || (!Handle.GetParFloat("PeakConductance_nS", C.PeakConductance_nS))
+        || (!Handle.GetParFloat("Weight", C.Weight))
+        || (!Handle.GetParFloat("OnsetDelay_ms", C.OnsetDelay_ms))
+        || (!Handle.GetParString("Neurotransmitter", neurotransmitter_cache))
+        || (!Handle.GetParBool("voltage_gated", C.voltage_gated))
+
+        || (!Handle.GetParString("STDP_Method", stdpmethod_cache))
+        || (!Handle.GetParFloat("STDP_A_pos", C.STDP_A_pos))
+        || (!Handle.GetParFloat("STDP_A_neg", C.STDP_A_neg))
+        || (!Handle.GetParFloat("STDP_Tau_pos", C.STDP_Tau_pos))
+        || (!Handle.GetParFloat("STDP_Tau_neg", C.STDP_Tau_neg))
+
+        || (!Handle.GetParInt("ReceptorMorphology", C.ShapeID))
+        || (!Handle.GetParString("Name", C.Name))) {
+        return Handle.ErrResponse();
+    }
+    C.Neurotransmitter = LIFCNeurotransmitter(neurotransmitter_cache);
+    if (C.Neurotransmitter >= Connections::NUMNeurotransmitterType) {
+        Logger_->Log("Error: Unrecognized LIFC Neurotransmitter type", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    C.STDP_Method = LIFCSTDPMethod(stdpmethod_cache);
+    if (C.STDP_Method >= Connections::NUMLIFCSTDPMethodEnum) {
+        Logger_->Log("Error: Unrecognized LIFC STDP Method", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    C.ID = Handle.Sim()->AddLIFCReceptor(C);
+    if (C.ID<0) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    // Return Result ID
+    return Handle.ResponseWithID("ReceptorID", C.ID);
+}
+
+std::string ModelRPCInterface::NetmorphLIFCReceptorCreate(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/NetmorphLIFCReceptor/Create", Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Build New Receptor Object
+    Connections::LIFCReceptor C;
+    Connections::NetmorphLIFCReceptorRaw CDataRaw; // additional data
+    std::string neurotransmitter_cache;
+    std::string stdpmethod_cache;
+    if ((!Handle.GetParInt("SourceCompartmentID", C.SourceCompartmentID))
+        || (!Handle.GetParInt("DestinationCompartmentID", C.DestinationCompartmentID))
+
+        || (!Handle.GetParFloat("ReversalPotential_mV", C.ReversalPotential_mV))
+        || (!Handle.GetParFloat("PSPRise_ms", C.PSPRise_ms))
+        || (!Handle.GetParFloat("PSPDecay_ms", C.PSPDecay_ms))
+
+        || (!Handle.GetParFloat("ReceptorPeakConductance_nS", CDataRaw.ReceptorPeakConductance_nS))
+        || (!Handle.GetParInt("ReceptorQuantity", CDataRaw.ReceptorQuantity))
+
+        || (!Handle.GetParFloat("HillocDistance_um", CDataRaw.HillocDistance_um))
+        || (!Handle.GetParFloat("Velocity_mps", CDataRaw.Velocity_mps))
+        || (!Handle.GetParFloat("SynapticDelay_ms", CDataRaw.SynapticDelay_ms))
+        || (!Handle.GetParString("Neurotransmitter", neurotransmitter_cache))
+        || (!Handle.GetParBool("voltage_gated", C.voltage_gated))
+
+        || (!Handle.GetParFloat("Weight", C.Weight))
+        || (!Handle.GetParString("STDP_Method", stdpmethod_cache))
+        || (!Handle.GetParFloat("STDP_A_pos", C.STDP_A_pos))
+        || (!Handle.GetParFloat("STDP_A_neg", C.STDP_A_neg))
+        || (!Handle.GetParFloat("STDP_Tau_pos", C.STDP_Tau_pos))
+        || (!Handle.GetParFloat("STDP_Tau_neg", C.STDP_Tau_neg))
+
+        || (!Handle.GetParInt("ReceptorMorphology", C.ShapeID))
+        || (!Handle.GetParString("Name", C.Name))) {
+        return Handle.ErrResponse();
+    }
+    C.Neurotransmitter = LIFCNeurotransmitter(neurotransmitter_cache);
+    if (C.Neurotransmitter >= Connections::NUMNeurotransmitterType) {
+        Logger_->Log("Error: Unrecognized LIFC Neurotransmitter type", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    C.STDP_Method = LIFCSTDPMethod(stdpmethod_cache);
+    if (C.STDP_Method >= Connections::NUMLIFCSTDPMethodEnum) {
+        Logger_->Log("Error: Unrecognized LIFC STDP Method", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    C.ID = Handle.Sim()->AddNetmorphLIFCReceptor(C, CDataRaw);
+    if (C.ID<0) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    // Return Result ID
+    return Handle.ResponseWithID("ReceptorID", C.ID);
+}
+
 /**
  * Creates a BS Compartment with form and function.
  * Form: A shape.
@@ -152,7 +299,10 @@ std::string ModelRPCInterface::BSCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    C.ID = Handle.Sim()->AddSCCompartment(C);
+    C.ID = Handle.Sim()->AddSCCompartment(C, BSNEURONS);
+    if (C.ID < 0) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
 
     // Return Result ID
     return Handle.ResponseWithID("CompartmentID", C.ID);
@@ -194,19 +344,21 @@ std::string ModelRPCInterface::BSNeuronCreate(std::string _JSONRequest) {
 
     // We cache the pointers to the compartments in the neuron data, so that it
     // does not need to reach back to the Simulation to search for it.
-    C.SomaCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.SomaCompartmentID);
-    C.AxonCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.AxonCompartmentID);
-    if ((!C.SomaCompartmentPtr) || (!C.AxonCompartmentPtr)) {
+    C.SomaCompartmentPtr = Handle.Sim()->FindBSCompartmentByID(C.SomaCompartmentID);
+    if (!C.SomaCompartmentPtr) {
+        Handle.Sim()->Logger_->Log("Soma compartment with ID "+std::to_string(C.SomaCompartmentID)+" not found", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+    C.AxonCompartmentPtr = Handle.Sim()->FindBSCompartmentByID(C.AxonCompartmentID);
+    if (!C.AxonCompartmentPtr) {
+        Handle.Sim()->Logger_->Log("Axon compartment with ID "+std::to_string(C.AxonCompartmentID)+" not found", 7);
         return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
 
-    C.ID = Handle.Sim()->Neurons.size();
-    Handle.Sim()->RegisterNeuronUIDToCompartments(std::vector<int>(C.SomaCompartmentID), C.ID);
-    Handle.Sim()->RegisterNeuronUIDToCompartments(std::vector<int>(C.AxonCompartmentID), C.ID);
-
-    Handle.Sim()->Neurons.push_back(std::make_shared<BallAndStick::BSNeuron>(C));
-    Handle.Sim()->NeuronByCompartment.emplace(C.SomaCompartmentID, C.ID);
-    Handle.Sim()->NeuronByCompartment.emplace(C.AxonCompartmentID, C.ID);
+    C.ID = Handle.Sim()->AddBSNeuron(C);
+    if (C.ID < 0) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
 
     // Return Result ID
     return Handle.ResponseWithID("NeuronID", C.ID);
@@ -236,15 +388,10 @@ std::string ModelRPCInterface::SCCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    // We cache the pointer to the shape in the compartment data, so that it
-    // does not need to reach back to the Simulation to search for it.
-    C.ShapePtr = Handle.Sim()->Collection.GetGeometry(C.ShapeID);
-    if (!C.ShapePtr) {
+    C.ID = Handle.Sim()->AddSCCompartment(C, SCNEURONS);
+    if (C.ID < 0) {
         return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
-
-    C.ID = Handle.Sim()->BSCompartments.size();
-    Handle.Sim()->BSCompartments.push_back(C);
 
     // Return Result ID
     return Handle.ResponseWithID("CompartmentID", C.ID);
@@ -274,18 +421,196 @@ std::string ModelRPCInterface::SCNeuronCreate(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    // // We cache the pointers to the compartments in the neuron data, so that it
-    // // does not need to reach back to the Simulation to search for it.
-    // C.SomaCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.SomaCompartmentID);
-    // C.AxonCompartmentPtr = Handle.Sim()->FindCompartmentByID(C.AxonCompartmentID);
-    // if ((!C.SomaCompartmentPtr) || (!C.AxonCompartmentPtr)) {
-    //     return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
-    // }
-
     C.ID = Handle.Sim()->AddSCNeuron(C);
-    Handle.Sim()->RegisterNeuronUIDToCompartments(C.SomaCompartmentIDs, C.ID);
-    Handle.Sim()->RegisterNeuronUIDToCompartments(C.DendriteCompartmentIDs, C.ID);
-    Handle.Sim()->RegisterNeuronUIDToCompartments(C.AxonCompartmentIDs, C.ID);
+    if (C.ID < 0) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    // Return Result ID
+    return Handle.ResponseWithID("NeuronID", C.ID);
+}
+
+/**
+ * Creates a LIFC Compartment with form and function.
+ * Form: A shape.
+ * Function: Some parameters.
+ */
+std::string ModelRPCInterface::LIFCCreate(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Compartments/LIFC/Create", Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Build New LIFC Object
+    Compartments::LIFC C;
+    if ((!Handle.GetParInt("ShapeID", C.ShapeID))
+        || (!Handle.GetParFloat("RestingPotential_mV", C.RestingPotential_mV))
+        || (!Handle.GetParFloat("ResetPotential_mV", C.ResetPotential_mV))
+        || (!Handle.GetParFloat("SpikeThreshold_mV", C.SpikeThreshold_mV))
+        || (!Handle.GetParFloat("MembraneResistance_MOhm", C.MembraneResistance_MOhm))
+        || (!Handle.GetParFloat("MembraneCapacitance_pF", C.MembraneCapacitance_pF))
+        || (!Handle.GetParFloat("AfterHyperpolarizationAmplitude_mV", C.AfterHyperpolarizationAmplitude_mV))
+        || (!Handle.GetParString("Name", C.Name))) {
+        return Handle.ErrResponse();
+    }
+
+    C.ID = Handle.Sim()->AddLIFCCompartment(C);
+    if (C.ID < 0) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    // Return Result ID
+    return Handle.ResponseWithID("CompartmentID", C.ID);
+}
+
+const std::map<std::string, CoreStructs::LIFCUpdateMethodEnum> UpdateMethodStrToEnum = {
+    { "ExpEulerCm", CoreStructs::EXPEULER_CM },
+    { "ExpEulerRm", CoreStructs::EXPEULER_RM },
+    { "ForwardEuler", CoreStructs::FORWARD_EULER },
+    { "Classical", CoreStructs::CLASSICAL }
+};
+
+CoreStructs::LIFCUpdateMethodEnum LIFCUpdateMethod(const std::string& UpdateMethodStr) {
+    auto it = UpdateMethodStrToEnum.find(UpdateMethodStr);
+    if (it == UpdateMethodStrToEnum.end()) {
+        return CoreStructs::NUMLIFCUpdateMethodEnum;
+    }
+    return it->second;
+}
+
+const std::map<std::string, CoreStructs::LIFCResetMethodEnum> ResetMethodStrToEnum = {
+    { "ToVm", CoreStructs::TOVM },
+    { "Onset", CoreStructs::ONSET },
+    { "After", CoreStructs::AFTER }
+};
+
+CoreStructs::LIFCResetMethodEnum LIFCResetMethod(const std::string& ResetMethodStr) {
+    auto it = ResetMethodStrToEnum.find(ResetMethodStr);
+    if (it == ResetMethodStrToEnum.end()) {
+        return CoreStructs::NUMLIFCResetMethodEnum;
+    }
+    return it->second;
+}
+
+const std::map<std::string, CoreStructs::LIFCAHPSaturationModelEnum> AHPSaturationModelStrToEnum = {
+    { "clip", CoreStructs::AHPCLIP },
+    { "sigmoid", CoreStructs::AHPSIGMOID }
+};
+
+CoreStructs::LIFCAHPSaturationModelEnum LIFCAHPSaturationModel(const std::string& AHPSaturationModelStr) {
+    auto it = AHPSaturationModelStrToEnum.find(AHPSaturationModelStr);
+    if (it == AHPSaturationModelStrToEnum.end()) {
+        return CoreStructs::NUMLIFCAHPSaturationModelEnum;
+    }
+    return it->second;
+}
+
+const std::map<std::string, CoreStructs::LIFCADPSaturationModelEnum> ADPSaturationModelStrToEnum = {
+    { "clip", CoreStructs::ADPCLIP },
+    { "resource", CoreStructs::ADPRESOURCE }
+};
+
+CoreStructs::LIFCADPSaturationModelEnum LIFCADPSaturationModel(const std::string& ADPSaturationModelStr) {
+    auto it = ADPSaturationModelStrToEnum.find(ADPSaturationModelStr);
+    if (it == ADPSaturationModelStrToEnum.end()) {
+        return CoreStructs::NUMLIFCADPSaturationModelEnum;
+    }
+    return it->second;
+}
+
+std::string ModelRPCInterface::LIFCNeuronCreate(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Neuron/LIFC/Create", Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Build New LIFCNeuron Object
+    CoreStructs::LIFCNeuronStruct C;
+    std::string UpdateMethodStr;
+    std::string ResetMethodStr;
+    std::string AHPSaturationModelStr;
+    std::string ADPSaturationModelStr;
+    if ((!Handle.GetParVecInt("SomaIDs", C.SomaCompartmentIDs))
+        || (!Handle.GetParVecInt("DendriteIDs", C.DendriteCompartmentIDs))
+        || (!Handle.GetParVecInt("AxonIDs", C.AxonCompartmentIDs))
+
+        || (!Handle.GetParFloat("RestingPotential_mV", C.RestingPotential_mV))
+        || (!Handle.GetParFloat("ResetPotential_mV", C.ResetPotential_mV))
+        || (!Handle.GetParFloat("SpikeThreshold_mV", C.SpikeThreshold_mV))
+        || (!Handle.GetParFloat("MembraneResistance_MOhm", C.MembraneResistance_MOhm))
+        || (!Handle.GetParFloat("MembraneCapacitance_pF", C.MembraneCapacitance_pF))
+        || (!Handle.GetParFloat("RefractoryPeriod_ms", C.RefractoryPeriod_ms))
+        || (!Handle.GetParFloat("SpikeDepolarization_mV", C.SpikeDepolarization_mV))
+
+        || (!Handle.GetParString("UpdateMethod", UpdateMethodStr))
+        || (!Handle.GetParString("ResetMethod", ResetMethodStr))
+
+        || (!Handle.GetParFloat("AfterHyperpolarizationReversalPotential_mV", C.AfterHyperpolarizationReversalPotential_mV))
+
+        || (!Handle.GetParFloat("FastAfterHyperpolarizationRise_ms", C.FastAfterHyperpolarizationRise_ms))
+        || (!Handle.GetParFloat("FastAfterHyperpolarizationDecay_ms", C.FastAfterHyperpolarizationDecay_ms))
+        || (!Handle.GetParFloat("FastAfterHyperpolarizationPeakConductance_nS", C.FastAfterHyperpolarizationPeakConductance_nS))
+        || (!Handle.GetParFloat("FastAfterHyperpolarizationMaxPeakConductance_nS", C.FastAfterHyperpolarizationMaxPeakConductance_nS))
+        || (!Handle.GetParFloat("FastAfterHyperpolarizationHalfActConstant", C.FastAfterHyperpolarizationHalfActConstant))
+
+        || (!Handle.GetParFloat("SlowAfterHyperpolarizationRise_ms", C.SlowAfterHyperpolarizationRise_ms))
+        || (!Handle.GetParFloat("SlowAfterHyperpolarizationDecay_ms", C.SlowAfterHyperpolarizationDecay_ms))
+        || (!Handle.GetParFloat("SlowAfterHyperpolarizationPeakConductance_nS", C.SlowAfterHyperpolarizationPeakConductance_nS))
+        || (!Handle.GetParFloat("SlowAfterHyperpolarizationMaxPeakConductance_nS", C.SlowAfterHyperpolarizationMaxPeakConductance_nS))
+        || (!Handle.GetParFloat("SlowAfterHyperpolarizationHalfActConstant", C.SlowAfterHyperpolarizationHalfActConstant))
+
+        || (!Handle.GetParString("AfterHyperpolarizationSaturationModel", AHPSaturationModelStr))
+
+        || (!Handle.GetParFloat("FatigueThreshold", C.FatigueThreshold))
+        || (!Handle.GetParFloat("FatigueRecoveryTime_ms", C.FatigueRecoveryTime_ms))
+
+        || (!Handle.GetParFloat("AfterDepolarizationReversalPotential_mV", C.AfterDepolarizationReversalPotential_mV))
+        || (!Handle.GetParFloat("AfterDepolarizationRise_ms", C.AfterDepolarizationRise_ms))
+        || (!Handle.GetParFloat("AfterDepolarizationDecay_ms", C.AfterDepolarizationDecay_ms))
+        || (!Handle.GetParFloat("AfterDepolarizationPeakConductance_nS", C.AfterDepolarizationPeakConductance_nS))
+        || (!Handle.GetParFloat("AfterDepolarizationSaturationMultiplier", C.AfterDepolarizationSaturationMultiplier))
+        || (!Handle.GetParFloat("AfterDepolarizationRecoveryTime_ms", C.AfterDepolarizationRecoveryTime_ms))
+        || (!Handle.GetParFloat("AfterDepolarizationDepletion", C.AfterDepolarizationDepletion))
+        || (!Handle.GetParString("AfterDepolarizationSaturationModel", ADPSaturationModelStr))
+
+        || (!Handle.GetParFloat("AdaptiveThresholdDiffPerSpike", C.AdaptiveThresholdDiffPerSpike))
+        || (!Handle.GetParFloat("AdaptiveTresholdRecoveryTime_ms", C.AdaptiveTresholdRecoveryTime_ms))
+        || (!Handle.GetParFloat("AdaptiveThresholdDiffPotential_mV", C.AdaptiveThresholdDiffPotential_mV))
+        || (!Handle.GetParFloat("AdaptiveThresholdFloor_mV", C.AdaptiveThresholdFloor_mV))
+        || (!Handle.GetParFloat("AdaptiveThresholdFloorDeltaPerSpike_mV", C.AdaptiveThresholdFloorDeltaPerSpike_mV))
+        || (!Handle.GetParFloat("AdaptiveThresholdFloorRecoveryTime_ms", C.AdaptiveThresholdFloorRecoveryTime_ms))
+
+        || (!Handle.GetParString("Name", C.Name))) {
+        return Handle.ErrResponse();
+    }
+
+    C.UpdateMethod = LIFCUpdateMethod(UpdateMethodStr);
+    if (C.UpdateMethod >= CoreStructs::NUMLIFCUpdateMethodEnum) {
+        Logger_->Log("Error: Unrecognized LIFC UpdateMethod", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+    C.ResetMethod = LIFCResetMethod(ResetMethodStr);
+    if (C.ResetMethod >= CoreStructs::NUMLIFCResetMethodEnum) {
+        Logger_->Log("Error: Unrecognized LIFC ResetMethod", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+    C.AfterHyperpolarizationSaturationModel = LIFCAHPSaturationModel(AHPSaturationModelStr);
+    if (C.AfterHyperpolarizationSaturationModel >= CoreStructs::NUMLIFCAHPSaturationModelEnum) {
+        Logger_->Log("Error: Unrecognized LIFC AHP Saturation Model", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+    C.AfterDepolarizationSaturationModel = LIFCADPSaturationModel(ADPSaturationModelStr);
+    if (C.AfterDepolarizationSaturationModel >= CoreStructs::NUMLIFCADPSaturationModelEnum) {
+        Logger_->Log("Error: Unrecognized LIFC ADP Saturation Model", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    C.ID = Handle.Sim()->AddLIFCNeuron(C);
+    if (C.ID < 0) {
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
 
     // Return Result ID
     return Handle.ResponseWithID("NeuronID", C.ID);

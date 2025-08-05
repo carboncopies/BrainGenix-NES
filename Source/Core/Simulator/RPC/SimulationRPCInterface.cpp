@@ -47,6 +47,8 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
     _RPCManager->AddRoute("Simulation/Reset",                     std::bind(&SimulationRPCInterface::SimulationReset, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/SetRandomSeed",             std::bind(&SimulationRPCInterface::SimulationSetSeed, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/LIFCAbstractedFunctional",  std::bind(&SimulationRPCInterface::LIFCAbstractedFunctional, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/SetSTDP",                   std::bind(&SimulationRPCInterface::SetSTDP, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/RunFor",                    std::bind(&SimulationRPCInterface::SimulationRunFor, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/RecordAll",                 std::bind(&SimulationRPCInterface::SimulationRecordAll, this, std::placeholders::_1));
@@ -78,6 +80,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
 
     _RPCManager->AddRoute("ManTaskStatus",                        std::bind(&SimulationRPCInterface::ManTaskStatus, this, std::placeholders::_1));
 
+    // *** WHY IS THE FOLLOWING COMMENTED OUT?
     // _RPCManager->AddRoute("CalciumImagingAttach", std::bind(&SimulationRPCInterface::CalciumImagingAttach, this, std::placeholders::_1));
     // _RPCManager->AddRoute("CalciumImagingShowVoxels", std::bind(&SimulationRPCInterface::CalciumImagingShowVoxels, this, std::placeholders::_1));
     // _RPCManager->AddRoute("CalciumImagingRecordAposteriori", std::bind(&SimulationRPCInterface::CalciumImagingRecordAposteriori, this, std::placeholders::_1));
@@ -269,6 +272,45 @@ std::string SimulationRPCInterface::SimulationSetSeed(std::string _JSONRequest) 
     return Handle.ErrResponse(); // ok
 }
 
+std::string SimulationRPCInterface::LIFCAbstractedFunctional(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/LIFCAbstractedFunctional", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    bool useabstractedLIFreceptors;
+    Handle.GetParBool("UseAbstractedFunctional", useabstractedLIFreceptors);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    Handle.Sim()->use_abstracted_LIF_receptors = useabstractedLIFreceptors;
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
+
+std::string SimulationRPCInterface::SetSTDP(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/SetSTDP", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    bool DoSTDP;
+    Handle.GetParBool("DoSTDP", DoSTDP);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    Handle.Sim()->STDP = DoSTDP;
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
 
 // This request starts at Simulation Task.
 std::string SimulationRPCInterface::SimulationRunFor(std::string _JSONRequest) {

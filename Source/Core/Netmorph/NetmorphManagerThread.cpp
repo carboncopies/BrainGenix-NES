@@ -128,7 +128,7 @@ public:
         } else {
             C.Name = "dendrite-"+N.Name;
         }
-        if (_Params.Sim->AddSCCompartment(C)<0) { // invalid C.ID
+        if (_Params.Sim->AddSCCompartment(C, SCNEURONS)<0) { // invalid C.ID
             num_errors++;
             NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed: Missing Cylinder for neurite compartment build.");
         } else { // valid C.ID
@@ -145,6 +145,63 @@ public:
         if (num_errors>0) {
             _Params.Sim->Logger_->Log("NeuriteBuild: Number of errors: "+std::to_string(num_errors), 7);
         }
+    }
+};
+
+class LIFCNeuriteBuild: public NeuriteBuild {
+public:
+    CoreStructs::SCNeuronStruct DummyN;
+    CoreStructs::LIFCNeuronStruct& N;
+    LIFCNeuriteBuild(bool _IsAxon, NetmorphParameters& Params, CoreStructs::LIFCNeuronStruct& _N):
+        NeuriteBuild(_IsAxon, Params, DummyN), N(_N) {}
+    virtual void op(fibre_segment* fs) {
+        //*** MAYBE FIX REPEATED NAMES
+
+        // Build neurite cylinder.
+        Geometries::Cylinder S;
+        S.End1Radius_um = fs->Diameter() <= 0.0 ? 1.0 : fs->Diameter();
+        if (!fs->Parent()) {
+            S.End0Radius_um = S.End1Radius_um;
+        } else {
+            S.End0Radius_um = fs->Parent()->Diameter();
+            if (S.End0Radius_um <= 0.0) S.End0Radius_um = S.End1Radius_um;
+        }
+        S.End0Pos_um.x = fs->P0.X();
+        S.End0Pos_um.y = fs->P0.Y();
+        S.End0Pos_um.z = fs->P0.Z();
+        S.End1Pos_um.x = fs->P1.X();
+        S.End1Pos_um.y = fs->P1.Y();
+        S.End1Pos_um.z = fs->P1.Z();
+        S.Name = "cyl-"+N.Name;
+
+        S.ID = _Params.Sim->AddCylinder(S);
+
+        // Build neurite compartment.
+        Compartments::LIFC C;
+        C.ShapeID = S.ID;
+        C.RestingPotential_mV = N.RestingPotential_mV;
+        C.ResetPotential_mV = N.ResetPotential_mV;
+        C.SpikeThreshold_mV = N.SpikeThreshold_mV;
+        C.MembraneResistance_MOhm = N.MembraneResistance_MOhm;
+        C.MembraneCapacitance_pF = N.MembraneCapacitance_pF;
+        C.AfterHyperpolarizationAmplitude_mV = N.AfterHyperpolarizationReversalPotential_mV;
+        if (IsAxon) {
+            C.Name = "axon-"+N.Name;
+        } else {
+            C.Name = "dendrite-"+N.Name;
+        }
+        if (_Params.Sim->AddLIFCCompartment(C)<0) { // invalid C.ID
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("RecursiveDendriteBuild failed: Missing Cylinder for neurite compartment build.");
+        } else { // valid C.ID
+            if (IsAxon) {
+                N.AxonCompartmentIDs.emplace_back(C.ID);
+            } else {
+                N.DendriteCompartmentIDs.emplace_back(C.ID);
+            }
+            fs->cache.i = C.ID;
+        }
+
     }
 };
 
@@ -259,6 +316,146 @@ public:
     }
 };
 
+const std::map<synapse_type, Connections::NeurotransmitterType> synapse_typeToNeurotransmitterType = {
+    { syntype_AMPAR, Connections::AMPA },
+    { syntype_NMDAR, Connections::NMDA },
+    { syntype_GABAR, Connections::GABA },
+    { syntype_candidate, Connections::NUMNeurotransmitterType },
+};
+
+struct LIFCReceptorPars {
+    Connections::LIFCReceptorBase ampa;
+    Connections::LIFCReceptorBase nmda;
+    Connections::LIFCReceptorBase gaba;
+
+    Connections::NetmorphLIFCReceptorRaw ampa_raw;
+    Connections::NetmorphLIFCReceptorRaw nmda_raw;
+    Connections::NetmorphLIFCReceptorRaw gaba_raw;
+
+    LIFCReceptorPars() {
+        ampa.ReversalPotential_mV = 0;
+        ampa.PSPRise_ms = 0.5;
+        ampa.PSPDecay_ms = 3.0;
+        ampa.voltage_gated = false;
+        ampa.STDP_Method = Connections::STDPHEBBIAN;
+        ampa.STDP_A_pos = 0.01;
+        ampa.STDP_A_neg = 0.01;
+        ampa.STDP_Tau_pos = 20.0;
+        ampa.STDP_Tau_neg = 20.0;
+        nmda = ampa;
+        nmda.PSPRise_ms = 2.0;
+        nmda.PSPDecay_ms = 100;
+        nmda.voltage_gated = true;
+        nmda.STDP_Method = Connections::STDPNONE;
+        nmda.STDP_A_pos = 0;
+        nmda.STDP_A_neg = 0;
+        nmda.STDP_Tau_pos = 0;
+        nmda.STDP_Tau_neg = 0;
+        nmda.Neurotransmitter = Connections::NMDA;
+        gaba = nmda;
+        gaba.PSPRise_ms = 0.5;
+        gaba.PSPDecay_ms = 10;
+        gaba.ReversalPotential_mV = -70;
+        gaba.voltage_gated = false;
+        gaba.Neurotransmitter = Connections::GABA;
+
+        ampa_raw.ReceptorPeakConductance_nS = 20e-3;
+        ampa_raw.ReceptorQuantity = 49;
+        ampa_raw.HillocDistance_um = 100;
+        ampa_raw.Velocity_mps = 1.0;
+        ampa_raw.SynapticDelay_ms = 1.0;
+        nmda_raw = ampa_raw;
+        nmda_raw.ReceptorPeakConductance_nS = 50e-3;
+        nmda_raw.ReceptorQuantity = 11;
+        gaba_raw = nmda_raw;
+        gaba_raw.ReceptorPeakConductance_nS = 80e-3;
+        gaba_raw.ReceptorQuantity = 10;
+    }
+};
+
+class LIFCSynapseBuild: public SynapseBuild {
+public:
+    const PSPTiming Dummypsptiming;
+    const LIFCReceptorPars& LIFCreceptorpars;
+    LIFCSynapseBuild(NetmorphParameters& Params, const LIFCReceptorPars& _LIFCreceptorpars):
+        SynapseBuild(Params, Dummypsptiming), LIFCreceptorpars(_LIFCreceptorpars) {}
+    virtual void op(synapse* s) {
+        // Morphology shape.
+        Geometries::Box S;
+        // *** This needs better detailing to take what are clearly pre-
+        //     and postsynaptic locations and to transform them into a
+        //     morphology for synapses, with spines, terminals and receptors.
+
+        auto center = (s->Structure()->P0 + s->Structure()->P1)/2.0;
+        double x_absdiff = fabs(s->Structure()->P0.X() - s->Structure()->P1.X());
+        double y_absdiff = fabs(s->Structure()->P0.Y() - s->Structure()->P1.Y());
+        double z_absdiff = fabs(s->Structure()->P0.Z() - s->Structure()->P1.Z());
+        S.Center_um.x = center.X();
+        S.Center_um.y = center.Y();
+        S.Center_um.z = center.Z();
+        S.Dims_um.x = x_absdiff;
+        S.Dims_um.y = y_absdiff;
+        S.Dims_um.z = z_absdiff;
+        // S.Rotations_rad = ...;
+        S.Name = "synbox";
+
+        S.ID = _Params.Sim->AddBox(S);
+
+        // Morphology compartment.
+        Connections::LIFCReceptor C;
+        Connections::NetmorphLIFCReceptorRaw RawData;
+
+        C.Neurotransmitter = synapse_typeToNeurotransmitterType.at(s->type_ID());
+        if (C.Neurotransmitter ==  Connections::AMPA) {
+            static_cast<Connections::LIFCReceptorBase&>(C) = LIFCreceptorpars.ampa;
+        } else if (C.Neurotransmitter ==  Connections::NMDA) {
+            static_cast<Connections::LIFCReceptorBase&>(C) = LIFCreceptorpars.nmda;
+        } else {
+            static_cast<Connections::LIFCReceptorBase&>(C) = LIFCreceptorpars.gaba;
+        }
+
+        C.Name = "synapse";
+        C.SourceCompartmentID = s->Structure()->AxonSegment()->cache.i;
+        C.DestinationCompartmentID = s->Structure()->DendriteSegment()->cache.i;
+        if (C.SourceCompartmentID<0) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Presynaptic neurite segment not found.");
+            return;
+        }
+        if (C.DestinationCompartmentID<0) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Postsynaptic neurite segment not found.");
+            return;
+        }
+
+        C.ShapeID = S.ID;
+
+        /**
+         * *** TODO: Structure-to-function improvements:
+         * - ReceptorQuantity = int(AMPAChannelsProportion*Synapse_Area_um2/0.0086)
+         * - HillocDistance_um calculated by tracing back from synapse location
+         * - Weight specified
+         */
+        if (C.Neurotransmitter ==  Connections::AMPA) {
+            RawData = LIFCreceptorpars.ampa_raw;
+        } else if (C.Neurotransmitter ==  Connections::NMDA) {
+            RawData = LIFCreceptorpars.nmda_raw;
+        } else {
+            RawData = LIFCreceptorpars.gaba_raw;
+        }
+
+        C.Weight = 0.2;
+
+        C.ID = _Params.Sim->AddNetmorphLIFCReceptor(C, RawData);
+        if (C.ID<0) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Source neuron or destination neuron not found.");
+            return;
+        }
+
+    }
+};
+
 class FindUnParsedSegments: public fibre_tree_op {
 public:
     NetmorphParameters& _Params;
@@ -327,7 +524,7 @@ public:
         C.AfterHyperpolarizationAmplitude_mV = N.AfterHyperpolarizationAmplitude_mV;
         C.DecayTime_ms = N.DecayTime_ms;
         C.Name = "somacomp-"+N.Name;
-        if (_Params.Sim->AddSCCompartment(C)<0) {
+        if (_Params.Sim->AddSCCompartment(C, SCNEURONS)<0) {
             num_errors++;
             NETMORPH_PARAMS_FAIL("NeuronBuild failed: Missing Sphere for soma compartment build.");
             return;
@@ -376,6 +573,149 @@ public:
     }
     int get_mapped_id_by_ptr(neuron* n) const {
         return get_mapped_id(n->numerical_ID());
+    }
+};
+
+// Defaults
+struct LIFCNeuronPars {
+    CoreStructs::LIFCNeuronBase principal;
+    CoreStructs::LIFCNeuronBase interneuron;
+    LIFCNeuronPars() {
+        principal.RestingPotential_mV = -70;
+        principal.ResetPotential_mV = -55;
+        principal.SpikeThreshold_mV = -50;
+        principal.MembraneResistance_MOhm = 100;
+        principal.MembraneCapacitance_pF = 100;
+        principal.RefractoryPeriod_ms = 2;
+        principal.SpikeDepolarization_mV = 30;
+
+        principal.UpdateMethod = CoreStructs::EXPEULER_CM;
+        principal.ResetMethod = CoreStructs::TOVM;
+
+        principal.AfterHyperpolarizationReversalPotential_mV = -90;
+
+        principal.FastAfterHyperpolarizationRise_ms = 2.5;
+        principal.FastAfterHyperpolarizationDecay_ms = 30;
+        principal.FastAfterHyperpolarizationPeakConductance_nS = 3.0;
+        principal.FastAfterHyperpolarizationMaxPeakConductance_nS = 5.0;
+        principal.FastAfterHyperpolarizationHalfActConstant = 1.5;
+
+        principal.SlowAfterHyperpolarizationRise_ms = 30;
+        principal.SlowAfterHyperpolarizationDecay_ms = 300;
+        principal.SlowAfterHyperpolarizationPeakConductance_nS = 1.0;
+        principal.SlowAfterHyperpolarizationMaxPeakConductance_nS = 2.0;
+        principal.SlowAfterHyperpolarizationHalfActConstant = 0.3;
+
+        principal.AfterHyperpolarizationSaturationModel = CoreStructs::AHPCLIP;
+
+        principal.FatigueThreshold = 300;
+        principal.FatigueRecoveryTime_ms = 1000;
+
+        principal.AfterDepolarizationReversalPotential_mV = -20;
+        principal.AfterDepolarizationRise_ms = 20;
+        principal.AfterDepolarizationDecay_ms = 200;
+        principal.AfterDepolarizationPeakConductance_nS = 0.3;
+        principal.AfterDepolarizationSaturationMultiplier = 2;
+        principal.AfterDepolarizationRecoveryTime_ms = 300;
+        principal.AfterDepolarizationDepletion = 0.3;
+        principal.AfterDepolarizationSaturationModel = CoreStructs::ADPCLIP;
+
+        principal.AdaptiveThresholdDiffPerSpike = 0.2;
+        principal.AdaptiveTresholdRecoveryTime_ms = 50;
+        principal.AdaptiveThresholdDiffPotential_mV = 10;
+        principal.AdaptiveThresholdFloor_mV = principal.SpikeThreshold_mV;
+        principal.AdaptiveThresholdFloorDeltaPerSpike_mV = 1.0;
+        principal.AdaptiveThresholdFloorRecoveryTime_ms = 500;
+
+        interneuron = principal;
+        interneuron.SlowAfterHyperpolarizationPeakConductance_nS = 0;
+        interneuron.SlowAfterHyperpolarizationMaxPeakConductance_nS = 0;
+        interneuron.AfterDepolarizationPeakConductance_nS = 0;
+    }
+};
+
+/**
+ * *** TODO: There should be relationships between morphology and function,
+ *           some of which have not yet been implemented:
+ *           - Correlations between Type and functional dynamics.
+ *           - Correlations between Shape and functional dynamics.
+ */
+class LIFCNeuronBuild: public NeuronBuild {
+public:
+    const DynamicPars Dummydynpars;
+    const PSPTiming Dummypsptiming;
+    const LIFCNeuronPars& LIFCpars;
+    LIFCNeuronBuild(NetmorphParameters& Params, const LIFCNeuronPars& _LIFCpars):
+        NeuronBuild(Params, Dummydynpars, Dummypsptiming), LIFCpars(_LIFCpars) {}
+
+    virtual void op(neuron* n) {
+
+        // 0. Prepare neuron scaffold with lists.
+        CoreStructs::LIFCNeuronStruct N;
+
+        if (n->TypeID() == INTERNEURON) {
+            static_cast<CoreStructs::LIFCNeuronBase&>(N) = LIFCpars.interneuron;
+        } else {
+            static_cast<CoreStructs::LIFCNeuronBase&>(N) = LIFCpars.principal;
+        }
+
+        N.Name = std::to_string(uint64_t(n));
+
+        // 1. Build soma spheres.
+        Geometries::Sphere S;
+        S.Radius_um = n->Radius();
+        S.Center_um.x = n->Pos().X();
+        S.Center_um.y = n->Pos().Y();
+        S.Center_um.z = n->Pos().Z();
+        S.Name = "sphere-"+N.Name;
+        _Params.Sim->AddSphere(S);
+
+        // 2. Build soma compartments.
+        Compartments::LIFC C;
+        C.ShapeID = S.ID;
+        C.RestingPotential_mV = N.RestingPotential_mV;
+        C.ResetPotential_mV = N.ResetPotential_mV;
+        C.SpikeThreshold_mV = N.SpikeThreshold_mV;
+        C.MembraneResistance_MOhm = N.MembraneResistance_MOhm;
+        C.MembraneCapacitance_pF = N.MembraneCapacitance_pF;
+        C.AfterHyperpolarizationAmplitude_mV = N.AfterHyperpolarizationReversalPotential_mV;
+        C.Name = "somacomp-"+N.Name;
+        if (_Params.Sim->AddLIFCCompartment(C)<0) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("NeuronBuild failed: Missing Sphere for soma compartment build.");
+            return;
+        }
+
+        N.SomaCompartmentIDs.emplace_back(C.ID);
+
+        // 3. Build dendrites.
+        //    *** Note: Because Netmorph almost makes all the nodes available
+        //        we could quite easily also store information about the
+        //        parentage dependencies of compartments, wherer there are
+        //        terminal segments (and growth cones), etc.
+        _Params.Result.base->fs->parsing_fs_type = dendrite_fs;
+        //glb_fs->parsing_fs_type = dendrite_fs;
+        LIFCNeuriteBuild dendrites_build(false, _Params, N);
+        n->tree_op(dendrites_build);
+        dendrites_build.logerrors();
+
+        // 4. Build axons.
+        _Params.Result.base->fs->parsing_fs_type = axon_fs;
+        //glb_fs->parsing_fs_type = axon_fs;
+        LIFCNeuriteBuild axons_build(true, _Params, N);
+        n->tree_op(axons_build);
+        axons_build.logerrors();
+
+        // 5. Build neurons.
+        if (_Params.Sim->AddLIFCNeuron(N)<0) {
+            num_errors++;
+            NETMORPH_PARAMS_FAIL("NeuronBuild failed: Missing soma compartment for neuron build.");
+            return;
+        }
+
+        // Store NES Neuron ID and Netmorph numerical ID pair for later use.
+        NetmorphNeuronID2NESNeuronIDMap[n->numerical_ID()] = N.ID;
+
     }
 };
 
@@ -447,7 +787,7 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
 
     network& Net = *(_Params.Result.net);
 
-    // Make sure the common cache integer valus of all fiber segments are
+    // Make sure the common cache integer values of all fiber segments are
     // initialized to -1.
     set_cache_int op;
     op.value = -1;
@@ -480,6 +820,48 @@ bool BuildFromNetmorphNetwork(NetmorphParameters& _Params) {
     NETMORPH_PARAMS_SUCCESS("Build NES model based on Netmorph output.");
     return true;
 }
+
+bool BuildLIFCFromNetmorphNetwork(NetmorphParameters& _Params) {
+    assert(_Params.Sim != nullptr);
+
+    LIFCNeuronPars LIFCpars;
+    LIFCReceptorPars LIFCreceptorpars;
+
+    network& Net = *(_Params.Result.net);
+
+    // Make sure the common cache integer values of all fiber segments are
+    // initialized to -1.
+    set_cache_int op;
+    op.value = -1;
+    Net.tree_op(op);
+
+    CountUnParsedSegments unparsed_pre(_Params);
+    Net.tree_op(unparsed_pre);
+    unparsed_pre.log();
+
+    LIFCNeuronBuild neuron_build(_Params, LIFCpars);
+    Net.neuron_op(neuron_build);
+    neuron_build.logerrors();
+
+    CountUnParsedSegments unparsed_post(_Params);
+    Net.tree_op(unparsed_post);
+    unparsed_post.log();
+
+    // FindUnParsedSegments findunparsed(_Params);
+    // Net.tree_op(findunparsed);
+
+    // Synapses need to be processed after all segments have received IDs.
+    LIFCSynapseBuild synapse_build(_Params, LIFCreceptorpars);
+    Net.synapse_op(synapse_build);
+    synapse_build.logerrors();
+
+    RegionBuild region_build(_Params, neuron_build);
+    Net.region_op(region_build);
+    region_build.logerrors();
+
+    NETMORPH_PARAMS_SUCCESS("Build NES model based on Netmorph output.");
+    return true;
+}
 // ---
 
 Netmorph NetmorphRun(int* _StatusPercent, const std::string& _Modelfile, Netmorph2NESLogging* _embedlog, const std::string& _OverrideOutputDir) {
@@ -501,7 +883,11 @@ int ExecuteNetmorphOperation(BG::Common::Logger::LoggingSystem* _Logger, Netmorp
     _Logger->Log("Netmorph Simulation Finished", 5);
 
     if (_Params->Result.Status) {
-        BuildFromNetmorphNetwork(*_Params);
+        if (_Params->Sim->SimNeuronClass == LIFCNEURONS) {
+            BuildLIFCFromNetmorphNetwork(*_Params);
+        } else {
+            BuildFromNetmorphNetwork(*_Params);
+        }
     }
 
     _Params->Result.postop();
