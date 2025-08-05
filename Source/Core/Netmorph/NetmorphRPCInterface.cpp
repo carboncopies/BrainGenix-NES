@@ -57,7 +57,7 @@ std::string NetmorphRPCInterface::NetmorphSetModelfile(std::string _JSONRequest)
     }
 
     std::string ModelFileString, NeuronClass;
-    if (!Handle.GetParString("ModelContent", ModelFileString) {
+    if (!Handle.GetParString("ModelContent", ModelFileString)) {
         return Handle.ErrResponse();
     }
 
