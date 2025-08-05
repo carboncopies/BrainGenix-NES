@@ -19,7 +19,6 @@ Ubuntu_2404_Build:
     - key: 
         files:
           - vcpkg.json
-          - vcpkg-configuration.json
           - CMakeLists.txt
         prefix: "build-$CI_COMMIT_REF_SLUG"
       paths:
