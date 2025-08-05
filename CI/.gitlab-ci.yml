@@ -1,9 +1,25 @@
-# Trying to add caching (I will ask before this)
+# Improved caching configuration
 cache:
-  key: "$CI_JOB_NAME"
+  # Create cache keys based on branch and files that affect dependencies
+  key: 
+    files:
+      - vcpkg.json
+      - vcpkg-configuration.json
+      - CMakeLists.txt
+    prefix: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
   paths:
+    # Build artifacts
     - Build/
+    # Compiler cache for faster C++ compilation
     - .ccache/
+    # vcpkg cache for faster dependency installation
+    - vcpkg_installed/
+    - ThirdParty/vcpkg/downloads/
+    - ThirdParty/vcpkg/buildtrees/
+    # CMake cache
+    - CMakeCache.txt
+    - CMakeFiles/
+  policy: pull-push
 
 # Set some global variables
 variables:

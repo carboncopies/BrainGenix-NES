@@ -15,7 +15,19 @@ Ubuntu_2404_Build:
     when: always
     
   cache:
-    - key:
+    # Inherit global cache settings but add build-specific optimizations
+    - key: 
+        files:
+          - vcpkg.json
+          - vcpkg-configuration.json
+          - CMakeLists.txt
+        prefix: "build-$CI_COMMIT_REF_SLUG"
       paths:
+        - Build/
+        - .ccache/
+        - vcpkg_installed/
+        - ThirdParty/vcpkg/downloads/
+        - ThirdParty/vcpkg/buildtrees/
         - ThirdParty/**/*
+      policy: pull-push
 
