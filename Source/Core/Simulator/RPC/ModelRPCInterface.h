@@ -82,12 +82,17 @@ public:
      */
     std::string StapleCreate(std::string _JSONRequest);
     std::string ReceptorCreate(std::string _JSONRequest);
+    std::string LIFCReceptorCreate(std::string _JSONRequest);
+    std::string NetmorphLIFCReceptorCreate(std::string _JSONRequest);
 
     std::string BSCreate(std::string _JSONRequest);
     std::string BSNeuronCreate(std::string _JSONRequest);
 
     std::string SCCreate(std::string _JSONRequest);
     std::string SCNeuronCreate(std::string _JSONRequest);
+
+    std::string LIFCCreate(std::string _JSONRequest);
+    std::string LIFCNeuronCreate(std::string _JSONRequest);
 
     std::string PatchClampDACCreate(std::string _JSONRequest);
     std::string PatchClampDACSetOutputList(std::string _JSONRequest);

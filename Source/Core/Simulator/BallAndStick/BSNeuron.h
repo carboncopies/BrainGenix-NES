@@ -18,6 +18,8 @@
 #include <unordered_map>
 #include <vector>
 
+#include <nlohmann/json.hpp>
+
 #include <Simulator/Distributions/Distribution.h>
 #include <Simulator/Distributions/TruncNorm.h>
 #include <Simulator/Geometries/Cylinder.h>
@@ -57,7 +59,6 @@ class BSNeuron : public CoreStructs::Neuron {
 public:
     CoreStructs::BSNeuronStruct build_data; // Copy of the struct that was used to build this neuron.
 
-    //std::unordered_map<std::string, std::shared_ptr<Geometries::Geometry>> Morphology;
     std::unordered_map<std::string, Geometries::Geometry*> Morphology; // Regular pointers, because the objects are maintained in Simulation.Collection.
 
     float Vm_mV = -60.0;    //! Membrane potential
@@ -80,8 +81,6 @@ public:
     bool in_absref = false;
     float _dt_act_ms = 0.0;
 
-    // Moved to Neuron.h: std::vector<float> TAct_ms{};
-    // Moved to Neuron.h: std::vector<float> TDirectStim_ms{}; // Or should this be a deque?
     std::vector<float> CaSamples{};
     std::vector<float> TCaSamples_ms{};
 
@@ -89,8 +88,8 @@ public:
     std::vector<float> VmRecorded_mV{};
     std::deque<float> FIFO{};
     std::vector<float> ConvolvedFIFO{};
-    std::vector<CoreStructs::ReceptorData> ReceptorDataVec{};
-    std::vector<CoreStructs::ReceptorData> TransmitterDataVec{};
+    std::vector<CoreStructs::ReceptorData*> ReceptorDataVec{};
+    std::vector<CoreStructs::ReceptorData*> TransmitterDataVec{};
 
     std::shared_ptr<Distributions::Distribution> DtSpontDist{}; //! Distribution for delta t spontaneous (time changed since last spontaneous activity).
 
@@ -112,6 +111,8 @@ public:
     //! Records the time of direct stimulation for every occurrence
     //! of a direct stimulation.
     void AttachDirectStim(float t_ms);
+
+    void Sort_Direct_Stimulation();
 
     //! Set the distribution for delta t spontaneous (time changed
     //! since last spontaneous activity).
@@ -157,7 +158,7 @@ public:
 
     //! Updates all potential components, the membrane potential
     //! and the time of update.
-    void Update(float t_ms, bool recording);
+    virtual void Update(float t_ms, bool recording);
 
     //! NOTE: SetFIFO must be called first, otherwise the FIFO is not
     //!       updated in UpdateVm.
@@ -173,9 +174,18 @@ public:
     //! FIFO_dt_ms == 0.0 means used a FIFO of size 1.
     void SetFIFO(float FIFO_ms, float FIFO_dt_ms, size_t reversed_kernel_size);
 
-    virtual void InputReceptorAdded(CoreStructs::ReceptorData RData);
+    virtual void InputReceptorAdded(CoreStructs::ReceptorData* RData);
 
-    virtual void OutputTransmitterAdded(CoreStructs::ReceptorData RData);
+    virtual void OutputTransmitterAdded(CoreStructs::ReceptorData* RData);
+
+    // Used in Simulation::GetConnectomeJSON().
+    virtual void GetConnectomeTargetsJSON(nlohmann::json& targetvec, nlohmann::json& typevec, nlohmann::json& weightvec);
+
+    // Used in Simulation::UpdatePrePostStrength().
+    virtual bool UpdatePrePostStrength(int PresynapticID, float NewConductance_nS);
+
+    // Pure abstraction count of number of synapses.
+    virtual size_t GetAbstractConnection(int PreSynID, bool NonZero);
 
 };
 

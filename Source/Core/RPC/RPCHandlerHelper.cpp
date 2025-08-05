@@ -158,6 +158,21 @@ const nlohmann::json& HandlerData::ReqJSON() const {
     return RequestJSON;
 }
 
+// bool HandlerData::CheckCompatibility(Simulator::SimulationNeuronClass _NewObjectCategory) {
+//     if (ThisSimulation->SimNeuronClass == Simulator::UNDETERMINED) {
+//         ThisSimulation->SimNeuronClass = _NewObjectCategory;
+//         return true;
+//     }
+
+//     if (ThisSimulation->SimNeuronClass != _NewObjectCategory) {
+//         Logger_->Log("Error attempted mixing of neuron or compartment classes", 7);
+//         Status = BGStatusCode::BGStatusInvalidParametersPassed;
+//         return false;
+//     }
+
+//     return true;
+// }
+
 bool HandlerData::FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, nlohmann::json& _JSON, bool _Optional) {
     Iterator = _JSON.find(ParName);
     if (Iterator == _JSON.end()) {

@@ -17,7 +17,7 @@ void PatchClampADCReset(Tools::PatchClampADC* _Target, Simulation* _Sim) {
 }
 
 
-
+// *** Probably doesn't really work, and certainly doesn't work with LIFC compartments.
 void PatchClampADCUpdate(Tools::PatchClampADC* _Target, Simulation* _Sim) {
     assert(_Target != nullptr && "You have passed _Target a null pointer!");
 

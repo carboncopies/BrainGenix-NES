@@ -74,6 +74,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/BS.h
   ${SRC_DIR}/Core/Simulator/Structs/SC.cpp
   ${SRC_DIR}/Core/Simulator/Structs/SC.h
+  ${SRC_DIR}/Core/Simulator/Structs/LIFC.cpp
+  ${SRC_DIR}/Core/Simulator/Structs/LIFC.h
   ${SRC_DIR}/Core/Simulator/Structs/Staple.cpp
   ${SRC_DIR}/Core/Simulator/Structs/Staple.h
   ${SRC_DIR}/Core/Simulator/Structs/Receptor.cpp
@@ -114,7 +116,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.h
   ${SRC_DIR}/Core/Simulator/SimpleCompartmental/SCNeuron.h
   ${SRC_DIR}/Core/Simulator/SimpleCompartmental/SCNeuron.cpp
-
+  ${SRC_DIR}/Core/Simulator/LIFCompartmental/LIFCNeuron.h
+  ${SRC_DIR}/Core/Simulator/LIFCompartmental/LIFCNeuron.cpp
 
   ${SRC_DIR}/Core/Util/JSONHelpers.cpp
   ${SRC_DIR}/Core/Util/JSONHelpers.h

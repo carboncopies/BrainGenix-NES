@@ -52,7 +52,7 @@ struct BoxBase: Geometry {
 struct Box : BoxBase {
 
     std::string Name;
-    uint64_t ParentID; // ID of the parent object.
+    uint64_t ParentID; // ID of the parent object. NOTE: This is NeuronID+1, because value 0 is reserved during Segmentation.
 
     //! Constructors
     Box();

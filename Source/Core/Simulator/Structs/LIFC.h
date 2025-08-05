@@ -3,79 +3,63 @@
 //=================================================================//
 
 /*
-    Description: This file provides the BS struct.
+    Description: This file provides the LIFC struct.
     Additional Notes: None
-    Date Created: 2023-06-26
+    Date Created: 2025-07-28
 */
 
 #pragma once
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <string>
-#include <sstream>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Geometries/Geometry.h>
+#include <Simulator/Structs/BS.h>
+//#include <Simulator/Structs/SC.h>
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 namespace Compartments {
 
-// Common base for all compartment types.
-struct Compartment {
-    std::string Name; /**Name of the BS Compartment*/
-
-    // Direct access caches:
-    Geometries::Geometry* ShapePtr = nullptr;
-
-};
-
 /**
  * @brief Crucial fixed-size data of a component. This is saved in neuronal
  * circuit model saves. Does not include name and cached data.
  */
-struct BSBaseData {
-    int ID = -1; /**ID of the BS compartment*/
+struct LIFCBaseData {
+    int ID = -1; /**ID of the LIFC compartment*/
 
     int ShapeID; /**ID of the associated shape of this compartment*/
 
-    float MembranePotential_mV; /**Membrane potential in millivolts*/
+    float RestingPotential_mV; /**Resting potential in millivolts*/
+    float ResetPotential_mV; /** Reset potential in millivolts*/
     float SpikeThreshold_mV; /**Action potential spike threshold voltage in millivolts*/
-    float DecayTime_ms; /**After hyperpolarization time constant in ms, also known as tau_ahp*/
-    float RestingPotential_mV; /**Resting Potential in millivolts*/
+    float MembraneResistance_MOhm; /** Must be converted to giga-Ohm!*/
+    float MembraneCapacitance_pF;
     float AfterHyperpolarizationAmplitude_mV; /**AfterHyperpolarization Amplitude in millivolts*/
 
-    std::string str() const {
-        std::stringstream ss;
-        ss << "ID: " << ID;
-        ss << "\nShapeID: " << ShapeID;
-        ss << "\nMembranePotential_mV: " << MembranePotential_mV;
-        ss << "\nSpikeThreshold_mV: " << SpikeThreshold_mV;
-        ss << "\nDecayTime_ms: " << DecayTime_ms;
-        ss << "\nRestingPotential_mV: " << RestingPotential_mV;
-        ss << "\nAfterHyperpolarizationAmplitude_mV: " << AfterHyperpolarizationAmplitude_mV << '\n';
-        return ss.str();
-    }
+    std::string str() const;
 };
 
 /**
  * @brief This struct provides the data storage for each of the compartments
  * 
  */
-struct BS: public BSBaseData, public Compartment {
+struct LIFC: public LIFCBaseData, public Compartment {
 
-    // std::string Name; /**Name of the BS Compartment*/
+    // std::string Name; /**Name of the LIFC Compartment*/
 
     // // Direct access caches:
     // Geometries::Geometry* ShapePtr = nullptr;
 
-    BS() {}
-    BS(const BSBaseData& _Base): BSBaseData(_Base) {}
+    LIFC() {}
+    LIFC(const LIFCBaseData& _Base): LIFCBaseData(_Base) {}
 
 };
+
 
 }; // Close Namespace Compartments
 }; // Close Namespace Simulator

@@ -39,12 +39,13 @@ SCNeuron::SCNeuron(const CoreStructs::SCNeuronStruct & scneuronstruct, Simulatio
 Geometries::Vec3D &SCNeuron::GetCellCenter() {
     Geometries::Vec3D geoCenter_um{};
     for (const auto & CompID : build_data.SomaCompartmentIDs) {
-        auto CompPtr = Sim.FindCompartmentByID(CompID);
-        assert(CompPtr != nullptr);
-        auto ShapeID = CompPtr->ShapeID;
-        auto ShapePtr = Sim.FindShapeByID(ShapeID);
-        assert(ShapePtr != nullptr);
-        geoCenter_um = geoCenter_um + ShapePtr->Center_um;
+        if (CompID < Sim.BSCompartments.size()) {
+            int ShapeID = Sim.BSCompartments.at(CompID).ShapeID;
+            auto ShapePtr = Sim.FindShapeByID(ShapeID);
+            if (ShapePtr != nullptr) {
+                geoCenter_um = geoCenter_um + ShapePtr->Center_um;
+            }
+        }
     }
     GeoCenter_um = geoCenter_um / float(build_data.SomaCompartmentIDs.size());
     return GeoCenter_um;

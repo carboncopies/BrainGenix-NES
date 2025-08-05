@@ -3,6 +3,7 @@
 #include <Simulator/Structs/RecordingElectrode.h>
 #include <Simulator/Structs/CalciumImaging.h>
 #include <Simulator/SimpleCompartmental/SCNeuron.h>
+#include <Simulator/LIFCompartmental/LIFCNeuron.h>
 #include <Simulator/Geometries/GeometryCollection.h>
 #include <Simulator/Geometries/Geometry.h>
 #include <Simulator/Geometries/Sphere.h>
@@ -87,13 +88,30 @@ int Simulation::AddBox(Geometries::Box& _S){
     return _S.ID;
 }
 
+bool Simulation::CheckCompatibility(SimulationNeuronClass _NewObjectCategory) {
+    if (SimNeuronClass == Simulator::UNDETERMINED) {
+        SimNeuronClass = _NewObjectCategory;
+        return true;
+    }
+
+    if (SimNeuronClass != _NewObjectCategory) {
+        Logger_->Log("Error attempted mixing of neuron or compartment classes", 7);
+        return false;
+    }
+
+    return true;
+}
+
 /**
  * Note: We cache the pointer to the shape in the compartment data, so that it
  *       does not need to reach back to the Simulation to search for it.
  */
-int Simulation::AddSCCompartment(Compartments::BS& _C) {
+int Simulation::AddSCCompartment(Compartments::BS& _C, SimulationNeuronClass _NewObjectCategory) {
+    if (!CheckCompatibility(_NewObjectCategory)) return -1;
+
     _C.ShapePtr = Collection.GetGeometry(_C.ShapeID);
     if (!_C.ShapePtr) {
+        Logger_->Log("Error: Shape with ID "+std::to_string(_C.ShapeID)+" not found", 7);
         return -1;
     }
 
@@ -102,8 +120,43 @@ int Simulation::AddSCCompartment(Compartments::BS& _C) {
     return _C.ID;
 }
 
+int Simulation::AddLIFCCompartment(Compartments::LIFC& _C) {
+    if (!CheckCompatibility(LIFCNEURONS)) return -1;
+
+    _C.ShapePtr = Collection.GetGeometry(_C.ShapeID);
+    if (!_C.ShapePtr) {
+        Logger_->Log("Error: Shape with ID "+std::to_string(_C.ShapeID)+" not found", 7);
+        return -1;
+    }
+
+    _C.ID = LIFCCompartments.size();
+    LIFCCompartments.push_back(_C);
+    return _C.ID;
+}
+
+int Simulation::AddBSNeuron(CoreStructs::BSNeuronStruct& _N) {
+    if (!CheckCompatibility(BSNEURONS)) return -1;
+
+    _N.ID = Neurons.size();
+    
+    Neurons.push_back(std::make_shared<BallAndStick::BSNeuron>(_N));
+
+    NeuronByCompartment.emplace(_N.SomaCompartmentID, _N.ID);
+    NeuronByCompartment.emplace(_N.AxonCompartmentID, _N.ID);
+
+    RegisterNeuronUIDToCompartments(std::vector<int>(_N.SomaCompartmentID), _N.ID);
+    RegisterNeuronUIDToCompartments(std::vector<int>(_N.AxonCompartmentID), _N.ID);
+
+    return _N.ID;
+}
+
 int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
-    if (_N.SomaCompartmentIDs.size()<1) return -1;
+    if (!CheckCompatibility(SCNEURONS)) return -1;
+
+    if (_N.SomaCompartmentIDs.size()<1) {
+        Logger_->Log("Error: Missing soma campartments", 7);
+        return -1;
+    }
 
     _N.ID = Neurons.size();
     
@@ -118,14 +171,42 @@ int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
         NeuronByCompartment.emplace(AxonID, _N.ID);
     }
 
-    RegisterNeuronUIDToCompartments(_N.SomaCompartmentIDs, _N.ID + 1);
-    RegisterNeuronUIDToCompartments(_N.DendriteCompartmentIDs, _N.ID + 1);
-    RegisterNeuronUIDToCompartments(_N.AxonCompartmentIDs, _N.ID + 1);
+    RegisterNeuronUIDToCompartments(_N.SomaCompartmentIDs, _N.ID);
+    RegisterNeuronUIDToCompartments(_N.DendriteCompartmentIDs, _N.ID);
+    RegisterNeuronUIDToCompartments(_N.AxonCompartmentIDs, _N.ID);
 
     // std::cout<<"Neuron Comp ID: "<<std::to_string(_N.ID)<<std::endl;
     // std::cout<<_N.SomaCompartmentIDs.size()<<std::endl;
     // std::cout<<_N.DendriteCompartmentIDs.size()<<std::endl;
     // std::cout<<_N.AxonCompartmentIDs.size()<<std::endl;
+
+    return _N.ID;
+}
+
+int Simulation::AddLIFCNeuron(CoreStructs::LIFCNeuronStruct& _N) {
+    if (!CheckCompatibility(LIFCNEURONS)) return -1;
+
+    if (_N.SomaCompartmentIDs.size()<1) {
+        Logger_->Log("Error: Missing soma campartments", 7);
+        return -1;
+    }
+
+    _N.ID = Neurons.size();
+    
+    Neurons.push_back(std::make_shared<LIFCNeuron>(_N, *this));
+    for (const auto & SomaID : _N.SomaCompartmentIDs) {
+        NeuronByCompartment.emplace(SomaID, _N.ID);
+    }
+    for (const auto & DendriteID : _N.DendriteCompartmentIDs) {
+        NeuronByCompartment.emplace(DendriteID, _N.ID);
+    }
+    for (const auto & AxonID : _N.AxonCompartmentIDs) {
+        NeuronByCompartment.emplace(AxonID, _N.ID);
+    }
+
+    RegisterNeuronUIDToCompartments(_N.SomaCompartmentIDs, _N.ID);
+    RegisterNeuronUIDToCompartments(_N.DendriteCompartmentIDs, _N.ID);
+    RegisterNeuronUIDToCompartments(_N.AxonCompartmentIDs, _N.ID);
 
     return _N.ID;
 }
@@ -138,20 +219,79 @@ int Simulation::AddReceptor(Connections::Receptor& _C) {
 
     // Inform destination neuron of its new input receptor.
     CoreStructs::Neuron* SrcNeuronPtr = FindNeuronByCompartment(_C.SourceCompartmentID);
+    if (SrcNeuronPtr==nullptr) {
+        Logger_->Log("Error: No source neuron associated with compartment "+std::to_string(_C.SourceCompartmentID), 7);
+        return -1;
+    }
     CoreStructs::Neuron* DstNeuronPtr = FindNeuronByCompartment(_C.DestinationCompartmentID);
-    if ((SrcNeuronPtr==nullptr) || (DstNeuronPtr==nullptr)) {
+    if (DstNeuronPtr==nullptr) {
+        Logger_->Log("Error: No target neuron associated with compartment "+std::to_string(_C.DestinationCompartmentID), 7);
         return -1;
     }
 
-    CoreStructs::ReceptorData RData(_C.ID, Receptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
-    SrcNeuronPtr->OutputTransmitterAdded(RData);
-    DstNeuronPtr->InputReceptorAdded(RData);
+    //CoreStructs::ReceptorData RData(_C.ID, Receptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
+    std::unique_ptr<CoreStructs::ReceptorData> RData = std::make_unique<CoreStructs::ReceptorData>(_C.ID, Receptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
+    SrcNeuronPtr->OutputTransmitterAdded(RData.get());
+    DstNeuronPtr->InputReceptorAdded(RData.get());
     SrcNeuronPtr->UpdateType(_C.Neurotransmitter);
+    ReceptorDataVec.emplace_back(RData.release());
 
     return _C.ID;
 }
 
+int Simulation::AddLIFCReceptor(Connections::LIFCReceptor& _C) {
+
+    _C.ID = LIFCReceptors.size();
+
+    LIFCReceptors.push_back(std::make_unique<Connections::LIFCReceptor>(_C));
+
+    // Inform destination neuron of its new input receptor.
+    CoreStructs::Neuron* SrcNeuronPtr = FindNeuronByCompartment(_C.SourceCompartmentID);
+    if (SrcNeuronPtr==nullptr) {
+        Logger_->Log("Error: No source neuron associated with compartment "+std::to_string(_C.SourceCompartmentID), 7);
+        return -1;
+    }
+    CoreStructs::Neuron* DstNeuronPtr = FindNeuronByCompartment(_C.DestinationCompartmentID);
+    if (DstNeuronPtr==nullptr) {
+        Logger_->Log("Error: No target neuron associated with compartment "+std::to_string(_C.DestinationCompartmentID), 7);
+        return -1;
+    }
+
+    if (use_abstracted_LIF_receptors) {
+        CoreStructs::LIFCReceptorData* RDataFunctional = dynamic_cast<LIFCNeuron*>(DstNeuronPtr)->FindLIFCReceptorPairing(dynamic_cast<LIFCNeuron*>(SrcNeuronPtr), LIFCReceptors.back().get());
+        if (RDataFunctional==nullptr) {
+            std::unique_ptr<CoreStructs::LIFCReceptorData> RData = std::make_unique<CoreStructs::LIFCReceptorData>(_C.ID, LIFCReceptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
+            dynamic_cast<LIFCNeuron*>(SrcNeuronPtr)->OutputTransmitterAdded(RData.get());
+            dynamic_cast<LIFCNeuron*>(DstNeuronPtr)->InputReceptorAdded(RData.get());
+            dynamic_cast<LIFCNeuron*>(SrcNeuronPtr)->UpdateType(_C.Neurotransmitter);
+            LIFCReceptorDataVec.emplace_back(RData.release());
+        } else {
+            RDataFunctional->AddToAbstractedFunctional(_C.ID, LIFCReceptors.back().get());
+        }
+    } else {
+        std::unique_ptr<CoreStructs::LIFCReceptorData> RData = std::make_unique<CoreStructs::LIFCReceptorData>(_C.ID, LIFCReceptors.back().get(), SrcNeuronPtr, DstNeuronPtr);
+        dynamic_cast<LIFCNeuron*>(SrcNeuronPtr)->OutputTransmitterAdded(RData.get());
+        dynamic_cast<LIFCNeuron*>(DstNeuronPtr)->InputReceptorAdded(RData.get());
+        dynamic_cast<LIFCNeuron*>(SrcNeuronPtr)->UpdateType(_C.Neurotransmitter);
+        LIFCReceptorDataVec.emplace_back(RData.release());
+    }
+
+    return _C.ID;
+}
+
+// PeakConductance_nS, OnsetDelay_ms are determined from NetmorphLIFCReceptorRaw data.
+int Simulation::AddNetmorphLIFCReceptor(Connections::LIFCReceptor& _C, Connections::NetmorphLIFCReceptorRaw& _CDataRaw) {
+
+    _C.PeakConductance_nS = _CDataRaw.ReceptorQuantity * _CDataRaw.ReceptorPeakConductance_nS;
+    _C.OnsetDelay_ms = _CDataRaw.SynapticDelay_ms + (_CDataRaw.HillocDistance_um*1e-6/_CDataRaw.Velocity_mps);
+
+    return AddLIFCReceptor(_C);
+
+}
+
+// Note: _NeuronUID is incremented, because value 0 is reserved during Segmentation.
 void Simulation::RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompartmentIDs, uint64_t _NeuronUID) {
+    _NeuronUID += 1; // This is necessary to avoid UID 0 during Segmentation!
     
     // Iterate through all given geometry types so we can set the uuid of the parent neuron
     size_t MaxShapeIndex = Collection.Size();
@@ -159,7 +299,7 @@ void Simulation::RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompa
         size_t ShapeIndex = _GeometryCompartmentIDs[i];
 
         // Index Validation
-        if (ShapeIndex > MaxShapeIndex) {
+        if (ShapeIndex > MaxShapeIndex) { // *** Should this be >= ?
             std::cout<<"Error! Shape Index out of shape bounds in registration for neuron uid to compartments\n";
             continue;
         }
@@ -182,7 +322,13 @@ void Simulation::RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompa
 
     }
 }
-            
+
+std::string SaveLoadPrior::str() const {
+    std::string s;
+    s += "SimNeuronClass: " + std::to_string(SimNeuronClass);
+    s += '\n';
+    return s;
+}
 
 struct SaverInfo {
     size_t SGMapSize = 0;
@@ -229,6 +375,7 @@ struct SaverGeometry {
 class Saver {
 protected:
     std::string Name_;
+    SaveLoadPrior _SaveLoadPrior;
     SaverInfo _SaverInfo;
     std::vector<SaverGeometry> SGMap; // Vector indices follow those in Collection.Geometries.
     std::vector<Geometries::Sphere*> SphereReferences;
@@ -241,7 +388,9 @@ protected:
     std::vector<std::unique_ptr<CoreStructs::NeuralCircuit>>* RefToNeuralCircuits;
 
 public:
-    Saver(const std::string& _Name): Name_(_Name) {}
+    Saver(const std::string& _Name, SimulationNeuronClass _SimNeuronClass): Name_(_Name) {
+        _SaveLoadPrior.SimNeuronClass = _SimNeuronClass;
+    }
 
     void AddSphere(Geometries::Sphere& S) {
         SGMap.emplace_back(Geometries::GeometrySphere, SphereReferences.size());
@@ -272,6 +421,44 @@ public:
         RefToNeuralCircuits = &_RefToNeuralCircuits;
     }
 
+    bool Prepare(Simulation* Sim) {
+        // Prepare to save shapes.
+        for (size_t i = 0; i < Sim->Collection.Size(); i++) {
+            switch (Sim->Collection.GetShapeType(i)) {
+            case Geometries::GeometrySphere: {
+                auto& S = Sim->Collection.GetSphere(i);
+                AddSphere(S);
+                break;
+            }
+            case Geometries::GeometryCylinder: {
+                auto& C = Sim->Collection.GetCylinder(i);
+                AddCylinder(C);
+                break;
+            }
+            case Geometries::GeometryBox: {
+                auto& B = Sim->Collection.GetBox(i);
+                AddBox(B);
+                break;
+            }
+            default: {
+                Sim->Logger_->Log("Encountered a geometric shape for which model saving is not implemented!", 7);
+                return false;
+            }
+            }
+        }
+        // Prepare to save compartments.
+        AddBSSCCompartments(Sim->BSCompartments);
+        // Save neurons.
+        AddNeurons(Sim->Neurons);
+        // Save synapses.
+        AddReceptors(Sim->Receptors);
+        // Save regions.
+        AddRegions(Sim->Regions);
+        // Save circuits.
+        AddCircuits(Sim->NeuralCircuits);
+        return true;
+    }
+
     bool Save() {
         /** Save file structure is:
          *  1. SaverInfo
@@ -298,6 +485,7 @@ public:
         _SaverInfo.RegionsSize = RefToRegions->size();
         _SaverInfo.CircuitsSize = RefToNeuralCircuits->size();
 
+        SaveFile.write((char*)&_SaveLoadPrior, sizeof(_SaveLoadPrior));
         SaveFile.write((char*)&_SaverInfo, sizeof(_SaverInfo));
         SaveFile.write((char*)SGMap.data(), sizeof(SaverGeometry)*SGMap.size());
         for (auto& ptr : SphereReferences) {
@@ -370,9 +558,197 @@ public:
     }
 };
 
+class LIFCSaver {
+protected:
+    std::string Name_;
+    SaveLoadPrior _SaveLoadPrior;
+    SaverInfo _SaverInfo;
+    std::vector<SaverGeometry> SGMap; // Vector indices follow those in Collection.Geometries.
+    std::vector<Geometries::Sphere*> SphereReferences;
+    std::vector<Geometries::Cylinder*> CylinderReferences;
+    std::vector<Geometries::Box*> BoxReferences;
+    std::vector<Compartments::LIFC>* RefToCompartments;
+    std::vector<std::shared_ptr<CoreStructs::Neuron>>* RefToLIFCNeurons;
+    std::vector<std::unique_ptr<Connections::LIFCReceptor>>* RefToReceptors;
+    std::vector<std::unique_ptr<BrainRegions::BrainRegion>>* RefToRegions;
+    std::vector<std::unique_ptr<CoreStructs::NeuralCircuit>>* RefToNeuralCircuits;
+
+public:
+    LIFCSaver(const std::string& _Name, SimulationNeuronClass _SimNeuronClass): Name_(_Name) {
+        _SaveLoadPrior.SimNeuronClass = _SimNeuronClass;
+    }
+
+    void AddSphere(Geometries::Sphere& S) {
+        SGMap.emplace_back(Geometries::GeometrySphere, SphereReferences.size());
+        SphereReferences.emplace_back(&S);
+    }
+    void AddCylinder(Geometries::Cylinder& C) {
+        SGMap.emplace_back(Geometries::GeometryCylinder, CylinderReferences.size());
+        CylinderReferences.emplace_back(&C);
+    }
+    void AddBox(Geometries::Box& B) {
+        SGMap.emplace_back(Geometries::GeometryBox, BoxReferences.size());
+        BoxReferences.emplace_back(&B);
+    }
+    void AddLIFCCompartments(std::vector<Compartments::LIFC>& _RefToCompartments) {
+        RefToCompartments = &_RefToCompartments;
+    }
+    //! Warning: This assumes all neurons are of LIFCNeuron type.
+    void AddNeurons(std::vector<std::shared_ptr<CoreStructs::Neuron>>& _RefToLIFCNeurons) {
+        RefToLIFCNeurons = &_RefToLIFCNeurons;
+    }
+    void AddLIFCReceptors(std::vector<std::unique_ptr<Connections::LIFCReceptor>>& _RefToReceptors) {
+        RefToReceptors = &_RefToReceptors;
+    }
+    void AddRegions(std::vector<std::unique_ptr<BrainRegions::BrainRegion>>& _RefToRegions) {
+        RefToRegions = &_RefToRegions;
+    }
+    void AddCircuits(std::vector<std::unique_ptr<CoreStructs::NeuralCircuit>>& _RefToNeuralCircuits) {
+        RefToNeuralCircuits = &_RefToNeuralCircuits;
+    }
+
+    bool Prepare(Simulation* Sim) {
+        // Prepare to save shapes.
+        for (size_t i = 0; i < Sim->Collection.Size(); i++) {
+            switch (Sim->Collection.GetShapeType(i)) {
+            case Geometries::GeometrySphere: {
+                auto& S = Sim->Collection.GetSphere(i);
+                AddSphere(S);
+                break;
+            }
+            case Geometries::GeometryCylinder: {
+                auto& C = Sim->Collection.GetCylinder(i);
+                AddCylinder(C);
+                break;
+            }
+            case Geometries::GeometryBox: {
+                auto& B = Sim->Collection.GetBox(i);
+                AddBox(B);
+                break;
+            }
+            default: {
+                Sim->Logger_->Log("Encountered a geometric shape for which model saving is not implemented!", 7);
+                return false;
+            }
+            }
+        }
+        // Prepare to save compartments.
+        AddLIFCCompartments(Sim->LIFCCompartments);
+        // Save neurons.
+        AddNeurons(Sim->Neurons);
+        // Save synapses.
+        AddLIFCReceptors(Sim->LIFCReceptors);
+        // Save regions.
+        AddRegions(Sim->Regions);
+        // Save circuits.
+        AddCircuits(Sim->NeuralCircuits);
+        return true;
+    }
+
+    bool Save() {
+        /** Save file structure is:
+         *  1. SaverInfo
+         *  2. SaverGeometry[] (SaverInfo.SGMapSize elements)
+         *  3. Geometries::SphereBase[] (SaverInfo.SphereReferencesSize elements)
+         *  4. Geometries::CylinderBase[] (SaverInfo.CylinderReferencesSize elements)
+         *  5. Geometries::BoxBase[] (SaverInfo.BoxReferencesSize elements)
+         *  6. Compartments::LIFCBaseData[] (SaverInfo.LIFCCompartmentsSize elements)
+         *  7. Connections::LIFCReceptorBase[] (SaverInfo.LIFCReceptorsSize elements)
+         *  8. BrainRegions::RegionBase[] (SaverInfo.RegionsSize elements)
+         *  9. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
+         *  10. circuitdata_sizes[] (SaverInfo.CircuitsSize.elements)
+         *  11. concatenated LIFCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
+         *  12. concatenated NeuralCircuit::GetFlat()->data() (SaverInfo.CircuitsSize variable size chunks)
+         */
+        auto SaveFile = std::fstream(Name_, std::ios::out | std::ios::binary);
+        _SaverInfo.SGMapSize = SGMap.size();
+        _SaverInfo.SphereReferencesSize = SphereReferences.size();
+        _SaverInfo.CylinderReferencesSize = CylinderReferences.size();
+        _SaverInfo.BoxReferencesSize = BoxReferences.size();
+        _SaverInfo.BSSCCompartmentsSize = RefToCompartments->size();
+        _SaverInfo.ReceptorsSize = RefToReceptors->size();
+        _SaverInfo.NeuronsSize = RefToLIFCNeurons->size();
+        _SaverInfo.RegionsSize = RefToRegions->size();
+        _SaverInfo.CircuitsSize = RefToNeuralCircuits->size();
+
+        SaveFile.write((char*)&_SaveLoadPrior, sizeof(_SaveLoadPrior));
+        SaveFile.write((char*)&_SaverInfo, sizeof(_SaverInfo));
+        SaveFile.write((char*)SGMap.data(), sizeof(SaverGeometry)*SGMap.size());
+        for (auto& ptr : SphereReferences) {
+            Geometries::SphereBase& basedataref = *ptr;
+            SaveFile.write((char*)&basedataref, sizeof(Geometries::SphereBase));
+        }
+        for (auto& ptr : CylinderReferences) {
+            Geometries::CylinderBase& basedataref = *ptr;
+            SaveFile.write((char*)&basedataref, sizeof(Geometries::CylinderBase));
+        }
+        for (auto& ptr : BoxReferences) {
+            Geometries::BoxBase& basedataref = *ptr;
+            SaveFile.write((char*)&basedataref, sizeof(Geometries::BoxBase));
+        }
+
+        // Save fixed-size base data of compartments.
+        for (auto& ref : (*RefToCompartments)) {
+            Compartments::LIFCBaseData& basedataref = ref;
+            SaveFile.write((char*)&basedataref, sizeof(Compartments::LIFCBaseData));
+        }
+
+        // Save fixed-size base data of receptors.
+        for (auto& ref : (*RefToReceptors)) {
+            Connections::LIFCReceptorBase& basedataref = *ref;
+            SaveFile.write((char*)&basedataref, sizeof(Connections::LIFCReceptorBase));
+        }
+
+        // Save fixed-size base data of regions.
+        for (auto& ref : (*RefToRegions)) {
+            BrainRegions::RegionBase& basedataref = *ref;
+            SaveFile.write((char*)&basedataref, sizeof(BrainRegions::RegionBase));
+        }
+
+        // Save fixed-size base data of neurons and flattened variable
+        // size crucial data.
+        std::vector<uint32_t> flatdata_sizes;
+        std::vector<std::unique_ptr<uint8_t[]>> flatdata_list;
+        for (auto& ref : (*RefToLIFCNeurons)) { // from a list of shared pointers to LIFCNeuron objects
+            std::unique_ptr<uint8_t[]> flatdata = static_cast<LIFCNeuron*>(ref.get())->build_data.GetFlat();
+            CoreStructs::LIFCNeuronStructFlatHeader* header_ptr = (CoreStructs::LIFCNeuronStructFlatHeader*) flatdata.get();
+            flatdata_sizes.push_back(header_ptr->FlatBufSize);
+            flatdata_list.emplace_back(flatdata.release());
+        }
+
+        // The same for neural circuits.
+        std::vector<uint32_t> circuitdata_sizes;
+        std::vector<std::unique_ptr<uint8_t[]>> circuitdata_list;
+        for (auto& ref : (*RefToNeuralCircuits)) { // from a list of unique pointers to NeuralCircuit objects
+            //std::unique_ptr<uint8_t[]> circuitdata = static_cast<CoreStructs::NeuralCircuit*>(ref.get())->build_data.GetFlat();
+            std::unique_ptr<uint8_t[]> circuitdata = static_cast<CoreStructs::NeuralCircuit*>(ref.get())->GetFlat();
+            CoreStructs::NeuralCircuitStructFlatHeader* header_ptr = (CoreStructs::NeuralCircuitStructFlatHeader*) circuitdata.get();
+            circuitdata_sizes.push_back(header_ptr->FlatBufSize);
+            circuitdata_list.emplace_back(circuitdata.release());
+        }
+
+        SaveFile.write((char*)flatdata_sizes.data(), sizeof(uint32_t)*flatdata_sizes.size());
+
+        SaveFile.write((char*)circuitdata_sizes.data(), sizeof(uint32_t)*circuitdata_sizes.size());
+
+        for (size_t i = 0; i < flatdata_list.size(); i++) {
+            SaveFile.write((char*)flatdata_list.at(i).get(), flatdata_sizes.at(i));
+        }
+
+        for (size_t i = 0; i < circuitdata_list.size(); i++) {
+            SaveFile.write((char*)circuitdata_list.at(i).get(), circuitdata_sizes.at(i));
+        }
+
+        SaveFile.close();
+        return SaveFile.good();
+    }
+};
+
 class Loader {
 public:
+    std::fstream& LoadFile;
     std::string Name_;
+    SaveLoadPrior _SaveLoadPrior;
     SaverInfo _SaverInfo;
     std::unique_ptr<SaverGeometry[]> SGMap;
     std::unique_ptr<Geometries::SphereBase[]> SphereData;
@@ -387,10 +763,9 @@ public:
     std::unique_ptr<uint8_t[]> all_circuitdata;
 
 public:
-    Loader(const std::string& _Name): Name_(_Name) {}
+    Loader(std::fstream& _LoadFile, const std::string& _Name, SaveLoadPrior& SaveLoadPrior): LoadFile(_LoadFile), Name_(_Name), _SaveLoadPrior(SaveLoadPrior) {}
 
     bool Load() {
-        auto LoadFile = std::fstream(Name_, std::ios::in | std::ios::binary);
         // 1. SaverInfo
         LoadFile.read((char*)&_SaverInfo, sizeof(_SaverInfo));
 
@@ -427,7 +802,81 @@ public:
         circuitdata_sizes = std::make_unique<uint32_t[]>(_SaverInfo.CircuitsSize);
         LoadFile.read((char*)circuitdata_sizes.get(), sizeof(uint32_t)*_SaverInfo.CircuitsSize);
 
-        // 11. concatenated SCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
+        // 11. concatenated NeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
+        size_t totsize = 0;
+        for (size_t i = 0; i < _SaverInfo.NeuronsSize; i++) totsize += flatdata_sizes.get()[i];
+        all_flatdata = std::make_unique<uint8_t[]>(totsize);
+        LoadFile.read((char*)all_flatdata.get(), totsize);
+
+        // 12. concatenated NeuralCircuit::GetFlat()->data() (SaverInfo.CircuitsSize variable size chunks)
+        totsize = 0;
+        for (size_t i = 0; i < _SaverInfo.CircuitsSize; i++) totsize += circuitdata_sizes.get()[i];
+        all_circuitdata = std::make_unique<uint8_t[]>(totsize);
+        LoadFile.read((char*)all_circuitdata.get(), totsize);
+
+        return LoadFile.good();
+    }
+};
+
+class LIFCLoader {
+public:
+    std::fstream& LoadFile;
+    std::string Name_;
+    SaveLoadPrior _SaveLoadPrior;
+    SaverInfo _SaverInfo;
+    std::unique_ptr<SaverGeometry[]> SGMap;
+    std::unique_ptr<Geometries::SphereBase[]> SphereData;
+    std::unique_ptr<Geometries::CylinderBase[]> CylinderData;
+    std::unique_ptr<Geometries::BoxBase[]> BoxData;
+    std::unique_ptr<Compartments::LIFCBaseData[]> CompartmentData;
+    std::unique_ptr<Connections::LIFCReceptorBase[]> ReceptorData;
+    std::unique_ptr<BrainRegions::RegionBase[]> RegionData;
+    std::unique_ptr<uint32_t[]> flatdata_sizes;
+    std::unique_ptr<uint8_t[]> all_flatdata;
+    std::unique_ptr<uint32_t[]> circuitdata_sizes;
+    std::unique_ptr<uint8_t[]> all_circuitdata;
+
+public:
+    LIFCLoader(std::fstream& _LoadFile, const std::string& _Name, SaveLoadPrior& SaveLoadPrior): LoadFile(_LoadFile), Name_(_Name), _SaveLoadPrior(SaveLoadPrior) {}
+
+    bool Load() {
+        // 1. SaverInfo
+        LoadFile.read((char*)&_SaverInfo, sizeof(_SaverInfo));
+
+        // 2. SaverGeometry[] (SaverInfo.SGMapSize elements)
+        SGMap = std::make_unique<SaverGeometry[]>(_SaverInfo.SGMapSize);
+        LoadFile.read((char*)SGMap.get(), sizeof(SaverGeometry)*_SaverInfo.SGMapSize);
+        // 3. Geometries::SphereBase[] (SaverInfo.SphereReferencesSize elements)
+        SphereData = std::make_unique<Geometries::SphereBase[]>(_SaverInfo.SphereReferencesSize);
+        LoadFile.read((char*)SphereData.get(), sizeof(Geometries::SphereBase)*_SaverInfo.SphereReferencesSize);
+        // 4. Geometries::CylinderBase[] (SaverInfo.CylinderReferencesSize elements)
+        CylinderData = std::make_unique<Geometries::CylinderBase[]>(_SaverInfo.CylinderReferencesSize);
+        LoadFile.read((char*)CylinderData.get(), sizeof(Geometries::CylinderBase)*_SaverInfo.CylinderReferencesSize);
+        // 5. Geometries::BoxBase[] (SaverInfo.BoxReferencesSize elements)
+        BoxData = std::make_unique<Geometries::BoxBase[]>(_SaverInfo.BoxReferencesSize);
+        LoadFile.read((char*)BoxData.get(), sizeof(Geometries::BoxBase)*_SaverInfo.BoxReferencesSize);
+
+        // 6. Compartments::LIFCBaseData[] (SaverInfo.BSSCCompartmentsSize elements)
+        CompartmentData = std::make_unique<Compartments::LIFCBaseData[]>(_SaverInfo.BSSCCompartmentsSize);
+        LoadFile.read((char*)CompartmentData.get(), sizeof(Compartments::LIFCBaseData)*_SaverInfo.BSSCCompartmentsSize);
+
+        // 7. Connections::LIFCReceptorBase[] (SaverInfo.ReceptorsSize elements)
+        ReceptorData = std::make_unique<Connections::LIFCReceptorBase[]>(_SaverInfo.ReceptorsSize);
+        LoadFile.read((char*)ReceptorData.get(), sizeof(Connections::LIFCReceptorBase)*_SaverInfo.ReceptorsSize);
+
+        // 8. BrainRegions::RegionBase[] (SaverInfo.RegionsSize elements)
+        RegionData = std::make_unique<BrainRegions::RegionBase[]>(_SaverInfo.RegionsSize);
+        LoadFile.read((char*)RegionData.get(), sizeof(BrainRegions::RegionBase)*_SaverInfo.RegionsSize);
+
+        // 9. flatdata_sizes[] (SaverInfo.NeuronsSize elements)
+        flatdata_sizes = std::make_unique<uint32_t[]>(_SaverInfo.NeuronsSize);
+        LoadFile.read((char*)flatdata_sizes.get(), sizeof(uint32_t)*_SaverInfo.NeuronsSize);
+
+        // 10. circuitdata_sizes[] (SaverInfo.CircuitsSize elements)
+        circuitdata_sizes = std::make_unique<uint32_t[]>(_SaverInfo.CircuitsSize);
+        LoadFile.read((char*)circuitdata_sizes.get(), sizeof(uint32_t)*_SaverInfo.CircuitsSize);
+
+        // 11. concatenated LIFCNeuronStruct::GetFlat()->data() (SaverInfo.NeuronsSize variable size chunks)
         size_t totsize = 0;
         for (size_t i = 0; i < _SaverInfo.NeuronsSize; i++) totsize += flatdata_sizes.get()[i];
         all_flatdata = std::make_unique<uint8_t[]>(totsize);
@@ -447,43 +896,15 @@ public:
  * Save neuronal circuit specifications to file.
  */
 bool Simulation::SaveModel(const std::string& Name) {
-    Saver _Saver(Name);
-    // Prepare to save shapes.
-    for (size_t i = 0; i < Collection.Size(); i++) {
-        switch (Collection.GetShapeType(i)) {
-        case Geometries::GeometrySphere: {
-            auto& S = Collection.GetSphere(i);
-            _Saver.AddSphere(S);
-            break;
-        }
-        case Geometries::GeometryCylinder: {
-            auto& C = Collection.GetCylinder(i);
-            _Saver.AddCylinder(C);
-            break;
-        }
-        case Geometries::GeometryBox: {
-            auto& B = Collection.GetBox(i);
-            _Saver.AddBox(B);
-            break;
-        }
-        default: {
-            Logger_->Log("Encountered a geometric shape for which model saving is not implemented!", 7);
-            return false;
-        }
-        }
+    if (SimNeuronClass == LIFCNEURONS) {
+        LIFCSaver _Saver(Name, SimNeuronClass);
+        if (!_Saver.Prepare(this)) return false;
+        return _Saver.Save();
+    } else {
+        Saver _Saver(Name, SimNeuronClass);
+        if (!_Saver.Prepare(this)) return false;
+        return _Saver.Save();
     }
-    // Prepare to save compartments.
-    _Saver.AddBSSCCompartments(BSCompartments);
-    // Save neurons.
-    _Saver.AddNeurons(Neurons);
-    // Save synapses.
-    _Saver.AddReceptors(Receptors);
-    // Save regions.
-    _Saver.AddRegions(Regions);
-    // Save circuits.
-    _Saver.AddCircuits(NeuralCircuits);
-
-    return _Saver.Save();
 }
 
 /**
@@ -491,83 +912,167 @@ bool Simulation::SaveModel(const std::string& Name) {
  * previous specifications in this simulation object.
  */
 bool Simulation::LoadModel(const std::string& Name) {
-    Loader _Loader(Name);
-    if (!_Loader.Load()) return false;
+    SaveLoadPrior _SaveLoadPrior;
+    std::fstream LoadFile = std::fstream(Name, std::ios::in | std::ios::binary);
+    // 0. SaveLoadPrior
+    LoadFile.read((char*)&_SaveLoadPrior, sizeof(_SaveLoadPrior));
 
-    // Reset and instantiate shapes.
-    Collection.Geometries.clear();
+    if (_SaveLoadPrior.SimNeuronClass == LIFCNEURONS) {
+        LIFCLoader _Loader(LoadFile, Name, _SaveLoadPrior);
+        if (!_Loader.Load()) return false;
 
-    int ID;
-    for (size_t i = 0; i < _Loader._SaverInfo.SGMapSize; i++) {
-        auto& sgm = _Loader.SGMap.get()[i];
-        switch (sgm.Type) {
-        case Geometries::GeometrySphere: {
-            Geometries::Sphere _S(_Loader.SphereData.get()[sgm.Idx]);
-            _S.Name = "sphere-"+std::to_string(i);
-            ID = AddSphere(_S);
-            break;
+        // Reset and instantiate shapes.
+        Collection.Geometries.clear();
+
+        int ID;
+        for (size_t i = 0; i < _Loader._SaverInfo.SGMapSize; i++) {
+            auto& sgm = _Loader.SGMap.get()[i];
+            switch (sgm.Type) {
+            case Geometries::GeometrySphere: {
+                Geometries::Sphere _S(_Loader.SphereData.get()[sgm.Idx]);
+                _S.Name = "sphere-"+std::to_string(i);
+                ID = AddSphere(_S);
+                break;
+            }
+            case Geometries::GeometryCylinder: {
+                Geometries::Cylinder _S(_Loader.CylinderData.get()[sgm.Idx]);
+                _S.Name = "cylinder-"+std::to_string(i);
+                ID = AddCylinder(_S);
+                break;
+            }
+            case Geometries::GeometryBox: {
+                Geometries::Box _S(_Loader.BoxData.get()[sgm.Idx]);
+                _S.Name = "box-"+std::to_string(i);
+                ID = AddBox(_S);
+                break;
+            }
+            default: {
+                Logger_->Log("Loaded unknown shape type.", 7);
+            }
+            }
         }
-        case Geometries::GeometryCylinder: {
-            Geometries::Cylinder _S(_Loader.CylinderData.get()[sgm.Idx]);
-            _S.Name = "cylinder-"+std::to_string(i);
-            ID = AddCylinder(_S);
-            break;
+
+        // Reset and instantiate compartments.
+        LIFCCompartments.clear();
+
+        for (size_t i = 0; i < _Loader._SaverInfo.BSSCCompartmentsSize; i++) {
+            Compartments::LIFC _C(_Loader.CompartmentData.get()[i]);
+            _C.Name = "compartment-"+std::to_string(i);
+            ID = AddLIFCCompartment(_C);
         }
-        case Geometries::GeometryBox: {
-            Geometries::Box _S(_Loader.BoxData.get()[sgm.Idx]);
-            _S.Name = "box-"+std::to_string(i);
-            ID = AddBox(_S);
-            break;
+
+        // Reset and instantiate LIFCNeurons.
+        Neurons.clear();
+
+        size_t offset = 0;
+        for (size_t i = 0; i < _Loader._SaverInfo.NeuronsSize; i++) {
+            CoreStructs::LIFCNeuronStruct _N;
+            _N.FromFlat((CoreStructs::LIFCNeuronStructFlatHeader*) (_Loader.all_flatdata.get()+offset));
+            ID = AddLIFCNeuron(_N);
+            offset += _Loader.flatdata_sizes.get()[i];
         }
-        default: {
-            Logger_->Log("Loaded unknown shape type.", 7);
+
+        // Reset and instantiate receptors.
+        LIFCReceptors.clear();
+
+        for (size_t i = 0; i < _Loader._SaverInfo.ReceptorsSize; i++) {
+            Connections::LIFCReceptor _R(_Loader.ReceptorData.get()[i]);
+            _R.Name = "syn-"+std::to_string(i);
+            ID = AddLIFCReceptor(_R);
         }
+
+        // Reset and instantiate regions and neural circuits.
+        NeuralCircuits.clear();
+        Regions.clear();
+
+        offset = 0;
+        for (size_t i = 0; i < _Loader._SaverInfo.RegionsSize; i++) {
+            BrainRegions::BrainRegion _R(_Loader.RegionData.get()[i]);
+            ID = AddRegion(_R);
+            NeuralCircuits.at(_R.CircuitID)->FromFlat((CoreStructs::NeuralCircuitStructFlatHeader*) (_Loader.all_circuitdata.get()+offset));
+            offset += _Loader.circuitdata_sizes.get()[i];
         }
-    }
 
-    // Reset and instantiate compartments.
-    BSCompartments.clear();
+    } else {
+        Loader _Loader(LoadFile, Name, _SaveLoadPrior);
+        if (!_Loader.Load()) return false;
 
-    for (size_t i = 0; i < _Loader._SaverInfo.BSSCCompartmentsSize; i++) {
-        Compartments::BS _C(_Loader.CompartmentData.get()[i]);
-        _C.Name = "compartment-"+std::to_string(i);
-        ID = AddSCCompartment(_C);
-    }
+        // Reset and instantiate shapes.
+        Collection.Geometries.clear();
 
-    // Reset and instantiate SCNeurons.
-    Neurons.clear();
+        int ID;
+        for (size_t i = 0; i < _Loader._SaverInfo.SGMapSize; i++) {
+            auto& sgm = _Loader.SGMap.get()[i];
+            switch (sgm.Type) {
+            case Geometries::GeometrySphere: {
+                Geometries::Sphere _S(_Loader.SphereData.get()[sgm.Idx]);
+                _S.Name = "sphere-"+std::to_string(i);
+                ID = AddSphere(_S);
+                break;
+            }
+            case Geometries::GeometryCylinder: {
+                Geometries::Cylinder _S(_Loader.CylinderData.get()[sgm.Idx]);
+                _S.Name = "cylinder-"+std::to_string(i);
+                ID = AddCylinder(_S);
+                break;
+            }
+            case Geometries::GeometryBox: {
+                Geometries::Box _S(_Loader.BoxData.get()[sgm.Idx]);
+                _S.Name = "box-"+std::to_string(i);
+                ID = AddBox(_S);
+                break;
+            }
+            default: {
+                Logger_->Log("Loaded unknown shape type.", 7);
+            }
+            }
+        }
 
-    size_t offset = 0;
-    for (size_t i = 0; i < _Loader._SaverInfo.NeuronsSize; i++) {
-        CoreStructs::SCNeuronStruct _N;
-        _N.FromFlat((CoreStructs::SCNeuronStructFlatHeader*) (_Loader.all_flatdata.get()+offset));
-        ID = AddSCNeuron(_N);
-        offset += _Loader.flatdata_sizes.get()[i];
-    }
+        // Reset and instantiate compartments.
+        BSCompartments.clear();
 
-    // Reset and instantiate receptors.
-    Receptors.clear();
+        for (size_t i = 0; i < _Loader._SaverInfo.BSSCCompartmentsSize; i++) {
+            Compartments::BS _C(_Loader.CompartmentData.get()[i]);
+            _C.Name = "compartment-"+std::to_string(i);
+            ID = AddSCCompartment(_C, _SaveLoadPrior.SimNeuronClass);
+        }
 
-    for (size_t i = 0; i < _Loader._SaverInfo.ReceptorsSize; i++) {
-        Connections::Receptor _R(_Loader.ReceptorData.get()[i]);
-        _R.Name = "syn-"+std::to_string(i);
-        ID = AddReceptor(_R);
-    }
+        // Reset and instantiate SCNeurons.
+        Neurons.clear();
 
-    // Reset and instantiate regions and neural circuits.
-    NeuralCircuits.clear();
-    Regions.clear();
+        size_t offset = 0;
+        for (size_t i = 0; i < _Loader._SaverInfo.NeuronsSize; i++) {
+            CoreStructs::SCNeuronStruct _N;
+            _N.FromFlat((CoreStructs::SCNeuronStructFlatHeader*) (_Loader.all_flatdata.get()+offset));
+            ID = AddSCNeuron(_N);
+            offset += _Loader.flatdata_sizes.get()[i];
+        }
 
-    offset = 0;
-    for (size_t i = 0; i < _Loader._SaverInfo.RegionsSize; i++) {
-        BrainRegions::BrainRegion _R(_Loader.RegionData.get()[i]);
-        ID = AddRegion(_R);
-        NeuralCircuits.at(_R.CircuitID)->FromFlat((CoreStructs::NeuralCircuitStructFlatHeader*) (_Loader.all_circuitdata.get()+offset));
-        offset += _Loader.circuitdata_sizes.get()[i];
+        // Reset and instantiate receptors.
+        Receptors.clear();
+
+        for (size_t i = 0; i < _Loader._SaverInfo.ReceptorsSize; i++) {
+            Connections::Receptor _R(_Loader.ReceptorData.get()[i]);
+            _R.Name = "syn-"+std::to_string(i);
+            ID = AddReceptor(_R);
+        }
+
+        // Reset and instantiate regions and neural circuits.
+        NeuralCircuits.clear();
+        Regions.clear();
+
+        offset = 0;
+        for (size_t i = 0; i < _Loader._SaverInfo.RegionsSize; i++) {
+            BrainRegions::BrainRegion _R(_Loader.RegionData.get()[i]);
+            ID = AddRegion(_R);
+            NeuralCircuits.at(_R.CircuitID)->FromFlat((CoreStructs::NeuralCircuitStructFlatHeader*) (_Loader.all_circuitdata.get()+offset));
+            offset += _Loader.circuitdata_sizes.get()[i];
+        }
+
     }
 
     Show();
-    //InspectSavedModel(Name);
+    //InspectSavedModel(Name, _SaveLoadPrior);
     return true;
 }
 
@@ -577,7 +1082,7 @@ bool Simulation::LoadModel(const std::string& Name) {
  * This uses a different approach to load a saved model file and to
  * inspect its contents. It is meant as a sanity test.
  */
-void Simulation::InspectSavedModel(const std::string& Name) const {
+void Simulation::InspectSavedModel(const std::string& Name, SaveLoadPrior& _SaveLoadPrior) const {
     std::filesystem::path savedmodel = Name;
     size_t fsize = std::filesystem::file_size(savedmodel);
     std::cout << ">-- File size: " << fsize << '\n';
@@ -587,6 +1092,14 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
     LoadFile.close();
 
     uint8_t* ptr = data.data();
+    SaveLoadPrior* slpptr = (SaveLoadPrior*) ptr;
+    std::cout << slpptr->str();
+
+    if (slpptr->SimNeuronClass != _SaveLoadPrior.SimNeuronClass) {
+        std::cout << ">-- WARNING: SimNeuronClass does not match expected!\n";
+    }
+
+    ptr += sizeof(SaveLoadPrior);
     SaverInfo* siptr = (SaverInfo*) ptr;
     std::cout << siptr->str();
 
@@ -612,16 +1125,30 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
     for (size_t i = 0; i < siptr->BoxReferencesSize; i++) std::cout << bbptr[i].str();
 
     ptr += siptr->BoxReferencesSize * sizeof(Geometries::BoxBase);
-    Compartments::BSBaseData* cpbptr = (Compartments::BSBaseData*) ptr;
-    std::cout << ">-- Compartments Base Data:\n";
-    for (size_t i = 0; i < siptr->BSSCCompartmentsSize; i++) std::cout << cpbptr[i].str();
+    if (slpptr->SimNeuronClass == LIFCNEURONS) {
+        Compartments::LIFCBaseData* cpbptr = (Compartments::LIFCBaseData*) ptr;
+        std::cout << ">-- LIFC Compartments Base Data:\n";
+        for (size_t i = 0; i < siptr->BSSCCompartmentsSize; i++) std::cout << cpbptr[i].str();
 
-    ptr += siptr->BSSCCompartmentsSize * sizeof(Compartments::BSBaseData);
-    Connections::ReceptorBase* rbptr = (Connections::ReceptorBase*) ptr;
-    std::cout << ">-- Receptors Base Data:\n";
-    for (size_t i = 0; i < siptr->ReceptorsSize; i++) std::cout << rbptr[i].str();
+        ptr += siptr->BSSCCompartmentsSize * sizeof(Compartments::LIFCBaseData);
+        Connections::LIFCReceptorBase* rbptr = (Connections::LIFCReceptorBase*) ptr;
+        std::cout << ">-- LIFC Receptors Base Data:\n";
+        for (size_t i = 0; i < siptr->ReceptorsSize; i++) std::cout << rbptr[i].str();        
 
-    ptr += siptr->ReceptorsSize * sizeof(Connections::ReceptorBase);
+        ptr += siptr->ReceptorsSize * sizeof(Connections::LIFCReceptorBase);
+    } else {
+        Compartments::BSBaseData* cpbptr = (Compartments::BSBaseData*) ptr;
+        std::cout << ">-- Compartments Base Data:\n";
+        for (size_t i = 0; i < siptr->BSSCCompartmentsSize; i++) std::cout << cpbptr[i].str();
+
+        ptr += siptr->BSSCCompartmentsSize * sizeof(Compartments::BSBaseData);
+        Connections::ReceptorBase* rbptr = (Connections::ReceptorBase*) ptr;
+        std::cout << ">-- Receptors Base Data:\n";
+        for (size_t i = 0; i < siptr->ReceptorsSize; i++) std::cout << rbptr[i].str();        
+
+        ptr += siptr->ReceptorsSize * sizeof(Connections::ReceptorBase);
+    }
+
     BrainRegions::RegionBase* rgptr = (BrainRegions::RegionBase*) ptr;
     std::cout << ">-- Regions Base Data:\n";
     for (size_t i = 0; i < siptr->RegionsSize; i++) std::cout << rgptr[i].str();
@@ -639,17 +1166,33 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
     std::cout << '\n';
 
     ptr += siptr->CircuitsSize * sizeof(uint32_t);
-    for (size_t i = 0; i < siptr->NeuronsSize; i++) {
-        CoreStructs::SCNeuronStructFlatHeader* scfhptr = (CoreStructs::SCNeuronStructFlatHeader*) ptr;
+    if (slpptr->SimNeuronClass == LIFCNEURONS) {
+        for (size_t i = 0; i < siptr->NeuronsSize; i++) {
+            CoreStructs::LIFCNeuronStructFlatHeader* scfhptr = (CoreStructs::LIFCNeuronStructFlatHeader*) ptr;
 
-        std::cout << ">-- SC Neuron Flat Data:\n";
-        std::cout << scfhptr->str();
-        std::cout << scfhptr->name_str();
-        std::cout << scfhptr->scid_str();
-        std::cout << scfhptr->dcid_str();
-        std::cout << scfhptr->acid_str();
+            std::cout << ">-- LIFC Neuron Flat Data:\n";
+            std::cout << scfhptr->str();
+            std::cout << scfhptr->name_str();
+            std::cout << scfhptr->scid_str();
+            std::cout << scfhptr->dcid_str();
+            std::cout << scfhptr->acid_str();
 
-        ptr += scfhptr->FlatBufSize;
+            ptr += scfhptr->FlatBufSize;
+        }        
+
+    } else {
+        for (size_t i = 0; i < siptr->NeuronsSize; i++) {
+            CoreStructs::SCNeuronStructFlatHeader* scfhptr = (CoreStructs::SCNeuronStructFlatHeader*) ptr;
+
+            std::cout << ">-- SC Neuron Flat Data:\n";
+            std::cout << scfhptr->str();
+            std::cout << scfhptr->name_str();
+            std::cout << scfhptr->scid_str();
+            std::cout << scfhptr->dcid_str();
+            std::cout << scfhptr->acid_str();
+
+            ptr += scfhptr->FlatBufSize;
+        }        
     }
 
     for (size_t i = 0; i < siptr->CircuitsSize; i++) {
@@ -662,6 +1205,38 @@ void Simulation::InspectSavedModel(const std::string& Name) const {
         ptr += ncfhptr->FlatBufSize;
     }
 
+}
+
+size_t Simulation::GetNumCompartments() {
+    if (SimNeuronClass == LIFCNEURONS) return LIFCCompartments.size();
+    return BSCompartments.size();
+}
+
+// This can be static_cast<Compartments::LIFC> or static_cast<Compartments::BS> if valid.
+Compartments::Compartment* Simulation::GetCompartmentByIdx(size_t Idx) {
+    if (SimNeuronClass == LIFCNEURONS) {
+        if (Idx >= LIFCCompartments.size()) return nullptr;
+        return &(LIFCCompartments.at(Idx));
+    } else {
+        if (Idx >= BSCompartments.size()) return nullptr;
+        return &(BSCompartments.at(Idx));
+    }
+}
+
+size_t Simulation::GetNumReceptors() {
+    if (SimNeuronClass == LIFCNEURONS) return LIFCReceptors.size();
+    return Receptors.size();
+}
+
+// This can be static_cast<Connections::LIFCReceptor> or static_cast<Connections::Receptor> if valid.
+Connections::ReceptorCommonBase* Simulation::GetReceptorByIdx(size_t Idx) {
+    if (SimNeuronClass == LIFCNEURONS) {
+        if (Idx >= LIFCReceptors.size()) return nullptr;
+        return LIFCReceptors.at(Idx).get();
+    } else {
+        if (Idx >= Receptors.size()) return nullptr;
+        return Receptors.at(Idx).get();
+    }
 }
 
 size_t Simulation::GetTotalNumberOfNeurons() {
@@ -758,17 +1333,11 @@ bool Simulation::UpdatePrePostStrength(int PresynapticID, int PostsynapticID, fl
     CoreStructs::Neuron* PostsynapticPtr = Neurons.at(PostsynapticID).get();
     if (PostsynapticPtr->Class_<CoreStructs::_BSNeuron) return false;
 
-    Connections::Receptor* Rptr = nullptr;
-    for (auto& _ReceptorData : static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->ReceptorDataVec) {
-        if (_ReceptorData.SrcNeuronID==PresynapticID) {
-            Rptr = _ReceptorData.ReceptorPtr;       // Remember the last one.
-            if (Rptr) Rptr->Conductance_nS = 0.0;   // Clear.
-        }
+    if (SimNeuronClass == LIFCNEURONS) {
+        return static_cast<LIFCNeuron*>(PostsynapticPtr)->UpdatePrePostStrength(PresynapticID, NewConductance_nS);
+    } else {
+        return static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->UpdatePrePostStrength(PresynapticID, NewConductance_nS);
     }
-    if (!Rptr) return false;
-
-    Rptr->Conductance_nS = NewConductance_nS;
-    return true;
 }
 
 /**
@@ -976,17 +1545,6 @@ nlohmann::json Simulation::GetSomaPositionsJSON() const {
     return somapositions;
 }
 
-const std::map<std::string, int> Neurotransmitter2ConnectionType = {
-    { "AMPA", 1 },
-    { "GABA", 2 },
-};
-
-int GetConnectionType(const std::string& neurotransmitter) {
-    auto it = Neurotransmitter2ConnectionType.find(neurotransmitter);
-    if (it == Neurotransmitter2ConnectionType.end()) return 0; // Unknown type.
-    return it->second;
-}
-
 nlohmann::json Simulation::GetConnectomeJSON() const {
     nlohmann::json connectome;
     connectome["ConnectionTargets"] = nlohmann::json::array();
@@ -997,15 +1555,13 @@ nlohmann::json Simulation::GetConnectomeJSON() const {
     nlohmann::json& weightslist(connectome["ConnectionWeights"]);
 
     for (auto& neuron_ptr : Neurons) {
-        BallAndStick::BSNeuron* bsneuron_ptr = static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get());
         nlohmann::json targetvec(nlohmann::json::value_t::array);
         nlohmann::json typevec(nlohmann::json::value_t::array);
         nlohmann::json weightvec(nlohmann::json::value_t::array);
-        for (auto & rdata : bsneuron_ptr->TransmitterDataVec) {
-            targetvec.push_back(rdata.DstNeuronID);
-            auto ReceptorPtr = rdata.ReceptorPtr;
-            typevec.push_back(GetConnectionType(ReceptorPtr->Neurotransmitter));
-            weightvec.push_back(ReceptorPtr->Conductance_nS); // *** A better "weight" might by conductance times peak or under-curve area of PSP double-exp.
+        if (SimNeuronClass == LIFCNEURONS) {
+            static_cast<LIFCNeuron*>(neuron_ptr.get())->GetConnectomeTargetsJSON(targetvec, typevec, weightvec);
+        } else {
+            static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get())->GetConnectomeTargetsJSON(targetvec, typevec, weightvec);
         }
         targetslist.push_back(targetvec);
         typeslist.push_back(typevec);
@@ -1027,21 +1583,11 @@ size_t Simulation::GetAbstractConnection(int PreSynID, int PostSynID, bool NonZe
     CoreStructs::Neuron* PostsynapticPtr = Neurons.at(PostSynID).get();
     if (PostsynapticPtr->Class_<CoreStructs::_BSNeuron) return 0;
 
-    size_t NumReceptors = 0;
-    Connections::Receptor* Rptr = nullptr;
-    for (auto& _ReceptorData : static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->ReceptorDataVec) {
-        if (_ReceptorData.SrcNeuronID==PreSynID) {
-            if (NonZero) {
-                if (_ReceptorData.ReceptorPtr->Conductance_nS!=0.0) {
-                    NumReceptors++;
-                }
-            } else {
-                NumReceptors++;
-            }
-        }
+    if (SimNeuronClass == LIFCNEURONS) {
+        return static_cast<LIFCNeuron*>(PostsynapticPtr)->GetAbstractConnection(PreSynID, NonZero);
+    } else {
+        return static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->GetAbstractConnection(PreSynID, NonZero);
     }
-
-    return NumReceptors;
 }
 
 /**
@@ -1141,7 +1687,11 @@ void Simulation::RunFor(float tRun_ms) {
     Logger_->Log(std::to_string(NeuralCircuits.size())+" circuits with a total of", 3);
     Logger_->Log(std::to_string(Neurons.size())+" neurons drafted in Neurons vector and a total of", 3);
     Logger_->Log(std::to_string(GetTotalNumberOfNeurons())+" neurons residing in defined circuits and a total of", 3);
-    Logger_->Log(std::to_string(BSCompartments.size())+" compartments.", 3);
+    Logger_->Log(std::to_string(GetNumCompartments())+" compartments and", 3);
+    Logger_->Log(std::to_string(GetNumReceptors())+" receptors.", 3);
+    if (SimNeuronClass == LIFCNEURONS) {
+        Logger_->Log(std::to_string(LIFCReceptorDataVec.size())+" abstracted functional receptors.", 3);
+    }
 
     // *** TODO: add making circuits and brain regions
     //           to be able to use the other method
@@ -1211,8 +1761,9 @@ void Simulation::RunFor(float tRun_ms) {
  */
 void Simulation::Show() {
     std::string simreport("Simulation ID="+std::to_string(ID)+" Name="+Name+" Status Report:\n");
+    simreport += "\nSimNeuronClass: "+std::to_string(SimNeuronClass);
     simreport += "\nNumber of neurons: "+std::to_string(Neurons.size());
-    simreport += "\nNumber of compartments: "+std::to_string(BSCompartments.size());
+    simreport += "\nNumber of compartments: "+std::to_string(GetNumCompartments());
     simreport += "\nNumber of geometric shapes: "+std::to_string(Collection.Geometries.size());
     simreport += "\n\nLocations of neuron somas:\n";
     for (auto& nptr : Neurons) {
@@ -1223,7 +1774,7 @@ void Simulation::Show() {
     return;
 };
 
-Compartments::BS * Simulation::FindCompartmentByID(int CompartmentID) {
+Compartments::BS * Simulation::FindBSCompartmentByID(int CompartmentID) {
     if (CompartmentID >= BSCompartments.size()) {
         return nullptr;
     }

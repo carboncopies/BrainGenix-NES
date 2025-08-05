@@ -30,7 +30,7 @@ namespace Geometries {
  */
 struct SphereBase: Geometry {
     float Radius_um; //! Radius in micrometers of the sphere.
-    uint64_t ParentID; // ID of the parent object.
+    uint64_t ParentID; // ID of the parent object. NOTE: This is NeuronID+1, because value 0 is reserved during Segmentation.
 
 
     //! --- The folllwing is here due to pure virtual functions in Geometry.
