@@ -39,6 +39,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <nlohmann/json.hpp>
 
+#include <stb_image_write.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Simulator/Structs/Simulation.h>
