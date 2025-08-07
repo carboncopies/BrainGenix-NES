@@ -289,6 +289,9 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.test.cpp
   ${SRC_DIR}/Core/Simulator/Structs/RecordingElectrode.test.cpp
   ${SRC_DIR}/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp
+
+  #Add EMRenderer test?
+  ${SRC_DIR}/Core/VSDA/EM/EMRenderer.test.cpp
 )
 
 # Configure test binaries
@@ -369,16 +372,3 @@ target_include_directories(${TEST_BINS} PUBLIC ${SRC_DIR}/Core)
 target_include_directories(${TEST_BINS} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
 
 gtest_discover_tests(${TEST_BINS})
-
-# EMRenderer test case — standalone
-add_executable(EMRendererTests
-    ${SRC_DIR}/Core/VSDA/EM/EMRenderer.test.cpp
-)
-target_compile_features(EMRendererTests PRIVATE cxx_std_17)
-target_link_libraries(EMRendererTests PRIVATE 
-    GTest::gtest_main
-    bg-common-logger
-    ${PROJECT_LIBRARY_NAME}
-)
-target_include_directories(EMRendererTests PUBLIC ${SRC_DIR}/Core)
-gtest_discover_tests(EMRendererTests)
