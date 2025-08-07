@@ -16,7 +16,7 @@ Ubuntu_2404_Build:
     
   cache:
     # Inherit global cache settings but add build-specific optimizations
-    - key: "build-$CI_COMMIT_REF_SLUG" 
+      key: "build-$CI_COMMIT_REF_SLUG" 
       paths:
         - Build/
         - .ccache/
