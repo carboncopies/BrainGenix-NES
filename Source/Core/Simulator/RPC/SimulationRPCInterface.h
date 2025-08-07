@@ -152,6 +152,7 @@ public:
     std::string GetSomaPositions(std::string _JSONRequest);
     std::string GetConnectome(std::string _JSONRequest);
     std::string GetAbstractConnectome(std::string _JSONRequest);
+    std::string GetDetailedConnectome(std::string _JSONRequest);
 
     std::string ManTaskStatus(std::string _JSONRequest);
 

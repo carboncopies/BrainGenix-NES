@@ -250,6 +250,7 @@ public:
     size_t GetAbstractConnection(int PreSynID, int PostSynID, bool NonZero) const;
     std::vector<std::vector<size_t>> GetAbstractConnectome(bool NonZero) const;
     nlohmann::json GetAbstractConnectomeJSON(bool Sparse, bool NonZero) const;
+    nlohmann::json GetDetailedConnectomeJSON(bool Sparse, bool NonZero) const;
 
     void RunFor(float tRun_ms);
 

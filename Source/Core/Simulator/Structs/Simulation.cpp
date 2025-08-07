@@ -1669,6 +1669,127 @@ nlohmann::json Simulation::GetAbstractConnectomeJSON(bool Sparse, bool NonZero) 
     return connectome;
 }
 
+/**
+ * Convert detailed connectome information into JSON for delivery
+ * via API, including neuron positions, types, and synapse locations/types.
+ */
+nlohmann::json Simulation::GetDetailedConnectomeJSON(bool Sparse, bool NonZero) const {
+    nlohmann::json detailed_connectome;
+    
+    // Initialize main arrays
+    detailed_connectome["Neurons"] = nlohmann::json::array();
+    detailed_connectome["Regions"] = nlohmann::json::object();
+    
+    nlohmann::json& neurons_list(detailed_connectome["Neurons"]);
+    nlohmann::json& regiondict(detailed_connectome["Regions"]);
+    
+    // Process each neuron
+    for (size_t neuron_idx = 0; neuron_idx < Neurons.size(); neuron_idx++) {
+        auto& neuron_ptr = Neurons[neuron_idx];
+        
+        nlohmann::json neuron_data;
+        neuron_data["ID"] = neuron_idx;
+        neuron_data["Type"] = neuron_ptr->Type_;
+        
+        // Get neuron position
+        nlohmann::json position_vec(nlohmann::json::value_t::array);
+        for (auto& element : neuron_ptr->GetCellCenter().AsFloatVector()) {
+            position_vec.push_back(element);
+        }
+        neuron_data["Position"] = position_vec;
+        
+        // Get input synapses for this neuron
+        neuron_data["InputSynapses"] = nlohmann::json::array();
+        nlohmann::json& synapses_list(neuron_data["InputSynapses"]);
+        
+        if (SimNeuronClass == LIFCNEURONS) {
+            // Handle LIFC neurons
+            LIFCNeuron* lifc_neuron = static_cast<LIFCNeuron*>(neuron_ptr.get());
+            // Access LIFCReceptorDataVec for LIFC neurons
+            for (auto& receptor_data : lifc_neuron->LIFCReceptorDataVec) {
+                // For LIFC, receptor_data contains multiple receptors of the same type
+                // We'll create one synapse entry per abstracted connection
+                if (NonZero && receptor_data->g_peak_sum_nS == 0.0) {
+                    continue; // Skip zero-conductance synapses if NonZero is true
+                }
+                
+                nlohmann::json synapse_data;
+                synapse_data["PresynapticNeuronID"] = receptor_data->SrcNeuronID;
+                synapse_data["Type"] = (int)receptor_data->Type();
+                synapse_data["Conductance"] = receptor_data->g_peak_sum_nS;
+                
+                // Get synapse position from the first receptor's geometry
+                if (!receptor_data->ReceptorPtrs.empty()) {
+                    int shape_id = receptor_data->ReceptorPtrs[0]->ShapeID;
+                    if (shape_id >= 0 && shape_id < Collection.Size()) {
+                        nlohmann::json synapse_position(nlohmann::json::value_t::array);
+                        // Cast away const to access geometry (read-only operation)
+                        Geometries::Geometry* geom = const_cast<Geometries::GeometryCollection&>(Collection).GetGeometry(shape_id);
+                        if (geom) {
+                            // Get center position of the geometry
+                            Geometries::Vec3D center = geom->Center_um;
+                            synapse_position.push_back(center.x);
+                            synapse_position.push_back(center.y);
+                            synapse_position.push_back(center.z);
+                        }
+                        synapse_data["Position"] = synapse_position;
+                    }
+                }
+                
+                if (!Sparse || receptor_data->g_peak_sum_nS > 0.0) {
+                    synapses_list.push_back(synapse_data);
+                }
+            }
+        } else {
+            // Handle BS/SC neurons
+            BallAndStick::BSNeuron* bs_neuron = static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get());
+            for (auto& receptor_data : bs_neuron->ReceptorDataVec) {
+                if (NonZero && receptor_data->ReceptorPtr->Conductance_nS == 0.0) {
+                    continue; // Skip zero-conductance synapses if NonZero is true
+                }
+                
+                nlohmann::json synapse_data;
+                synapse_data["PresynapticNeuronID"] = receptor_data->SrcNeuronID;
+                synapse_data["Type"] = std::string(receptor_data->ReceptorPtr->Neurotransmitter);
+                synapse_data["Conductance"] = receptor_data->ReceptorPtr->Conductance_nS;
+                
+                // Get synapse position from geometry
+                int shape_id = receptor_data->ReceptorPtr->ShapeID;
+                if (shape_id >= 0 && shape_id < Collection.Size()) {
+                    nlohmann::json synapse_position(nlohmann::json::value_t::array);
+                    // Cast away const to access geometry (read-only operation)
+                    Geometries::Geometry* geom = const_cast<Geometries::GeometryCollection&>(Collection).GetGeometry(shape_id);
+                    if (geom) {
+                        // Get center position of the geometry
+                        Geometries::Vec3D center = geom->Center_um;
+                        synapse_position.push_back(center.x);
+                        synapse_position.push_back(center.y);
+                        synapse_position.push_back(center.z);
+                    }
+                    synapse_data["Position"] = synapse_position;
+                }
+                
+                if (!Sparse || receptor_data->ReceptorPtr->Conductance_nS > 0.0) {
+                    synapses_list.push_back(synapse_data);
+                }
+            }
+        }
+        
+        neurons_list.push_back(neuron_data);
+    }
+    
+    // Add region information (same as GetAbstractConnectomeJSON)
+    for (auto& RegionPtr : Regions) {
+        regiondict[RegionPtr->Name()] = nlohmann::json::array();
+        int CircuitID = RegionPtr->CircuitID;
+        for (auto& NeuronID : NeuralCircuits.at(CircuitID)->NeuronIDs) {
+            regiondict[RegionPtr->Name()].push_back(NeuronID);
+        }
+    }
+    
+    return detailed_connectome;
+}
+
 enum sim_methods {
     simmethod_list_of_neurons,
     simmethod_circuits,

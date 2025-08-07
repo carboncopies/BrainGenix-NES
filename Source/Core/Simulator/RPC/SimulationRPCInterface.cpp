@@ -77,6 +77,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
     _RPCManager->AddRoute("Simulation/GetSomaPositions",          std::bind(&SimulationRPCInterface::GetSomaPositions, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetConnectome",             std::bind(&SimulationRPCInterface::GetConnectome, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetAbstractConnectome",     std::bind(&SimulationRPCInterface::GetAbstractConnectome, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetDetailedConnectome",     std::bind(&SimulationRPCInterface::GetDetailedConnectome, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("ManTaskStatus",                        std::bind(&SimulationRPCInterface::ManTaskStatus, this, std::placeholders::_1));
 
@@ -1028,6 +1029,53 @@ std::string SimulationRPCInterface::GetAbstractConnectome(std::string _JSONReque
 
     // Return JSON
     nlohmann::json ResponseJSON = Handle.Sim()->GetAbstractConnectomeJSON(Sparse, NonZero);
+    ResponseJSON["StatusCode"] = 0; // ok
+    return Handle.ResponseAndStoreRequest(ResponseJSON);
+}
+
+/**
+ * Expects _JSONRequest:
+ * {
+ *   "SimulationID": <SimID>,
+ *   "Sparse": <bool>,
+ *   "NonZero": <bool>
+ * }
+ * Responds:
+ * {
+ *   "StatusCode": <status-code>,
+ *   "Neurons": [
+ *     {
+ *       "ID": <neuron-id>,
+ *       "Type": <neuron-type>,
+ *       "Position": [x, y, z],
+ *       "InputSynapses": [
+ *         {
+ *           "PresynapticNeuronID": <pre-neuron-id>,
+ *           "Type": <synapse-type>,
+ *           "Conductance": <conductance-value>,
+ *           "Position": [x, y, z]
+ *         }
+ *       ]
+ *     }
+ *   ],
+ *   "Regions": { ... }
+ * }
+ */
+std::string SimulationRPCInterface::GetDetailedConnectome(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetDetailedConnectome", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    bool Sparse, NonZero;
+    if ((!Handle.GetParBool("Sparse", Sparse)) ||
+        (!Handle.GetParBool("NonZero", NonZero))) {
+        return Handle.ErrResponse();
+    }
+
+    // Return JSON
+    nlohmann::json ResponseJSON = Handle.Sim()->GetDetailedConnectomeJSON(Sparse, NonZero);
     ResponseJSON["StatusCode"] = 0; // ok
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
