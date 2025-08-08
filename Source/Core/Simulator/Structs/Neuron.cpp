@@ -153,11 +153,12 @@ void LIFCReceptorData::Update_Conductance(float t, float Vm) {
 // See the platform paper for a detailed description of the biophysics and
 // equations underlying this STDP implementation.
 void LIFCReceptorData::STDP_Update(float tfire) {
-    if (SrcNeuronPtr->TAct_ms.empty()) return;
-
-    float t_pre = SrcNeuronPtr->TAct_ms.back();
-    
     if (STDP_Method() == Connections::STDPNONE) return;
+
+    float t_pre = SrcNeuronPtr->t_last_spike;
+    if (t_pre < 0) return;
+    //if (SrcNeuronPtr->TAct_ms.empty()) return;
+    //float t_pre = SrcNeuronPtr->TAct_ms.back();
     
     float dt_spikes;
     if (STDP_Method() == Connections::STDPANTIHEBBIAN) {
@@ -167,7 +168,7 @@ void LIFCReceptorData::STDP_Update(float tfire) {
     }
     
     float dw;
-    if (dt_spikes > 0) {
+    if (dt_spikes >= 0) {
         dw = STDP_A_pos * exp(-dt_spikes / STDP_Tau_pos);
     } else {
         dw = -STDP_A_neg * exp(dt_spikes / STDP_Tau_neg);
