@@ -69,6 +69,7 @@ struct LIFCReceptorData: public ReceptorDataBase {
     float STDP_A_neg = 0.0; // abstracted A_neg (median)
     float STDP_Tau_pos = 0.0; // abstracted tau_pos (median)
     float STDP_Tau_neg = 0.0; // abstracted tau_neg (median)
+    float STDP_Shift = 0.0; // abstracted tau_neg (median)
 
     float norm = 0.0; // Calculated once abstracted tau_rise_ms and tau_decay_ms are available
     float g_k = 0.0; // Calculated in Update_Conductance

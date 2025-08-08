@@ -72,6 +72,7 @@ std::string LIFCReceptorBase::str() const {
     ss << "\nSTDP_A_neg: " << STDP_A_neg;
     ss << "\nSTDP_Tau_pos: " << STDP_Tau_pos;
     ss << "\nSTDP_Tau_neg: " << STDP_Tau_neg;
+    ss << "\nSTDP_Shift: " << STDP_Shift;
     ss << "\nNeurotransmitter: " << Neurotransmitter;
     return ss.str();
 }

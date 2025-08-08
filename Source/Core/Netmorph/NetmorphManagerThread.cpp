@@ -338,10 +338,11 @@ struct LIFCReceptorPars {
         ampa.PSPDecay_ms = 3.0;
         ampa.voltage_gated = false;
         ampa.STDP_Method = Connections::STDPHEBBIAN;
-        ampa.STDP_A_pos = 0.01;
-        ampa.STDP_A_neg = 0.01;
-        ampa.STDP_Tau_pos = 20.0;
-        ampa.STDP_Tau_neg = 20.0;
+        ampa.STDP_A_pos = 0.027;
+        ampa.STDP_A_neg = 0.02;
+        ampa.STDP_Tau_pos = 7.0;
+        ampa.STDP_Tau_neg = 7.0;
+        ampa.STDP_Shift = -4.0;
         nmda = ampa;
         nmda.PSPRise_ms = 2.0;
         nmda.PSPDecay_ms = 100;
@@ -351,6 +352,7 @@ struct LIFCReceptorPars {
         nmda.STDP_A_neg = 0;
         nmda.STDP_Tau_pos = 0;
         nmda.STDP_Tau_neg = 0;
+        nmda.STDP_Shift = 0;
         nmda.Neurotransmitter = Connections::NMDA;
         gaba = nmda;
         gaba.PSPRise_ms = 0.5;
