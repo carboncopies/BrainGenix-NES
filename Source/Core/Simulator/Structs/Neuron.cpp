@@ -160,7 +160,7 @@ void LIFCReceptorData::Update_Conductance(float t, float Vm) {
 void LIFCReceptorData::STDP_Update(float tfire) {
     if (STDP_Method() == Connections::STDPNONE) return;
 
-    float t_pre = SrcNeuronPtr->t_last_spike;
+    float t_pre = static_cast<LIFCNeuron*>(SrcNeuronPtr)->t_last_spike;
     if (t_pre < 0) return;
     
     float dt_spikes;
@@ -173,11 +173,11 @@ void LIFCReceptorData::STDP_Update(float tfire) {
     
     float dw;
     if (dt_spikes >= 0) {
-        dtdivtaupos = dt_spikes/STDP_Tau_pos;
+        float dtdivtaupos = dt_spikes/STDP_Tau_pos;
         dw = STDP_A_pos * dtdivtaupos * exp(dtdivtaupos);
         //dw = STDP_A_pos * exp(-dt_spikes / STDP_Tau_pos);
     } else {
-        dtdivtauneg = dt_spikes/STDP_Tau_neg;
+        float dtdivtauneg = dt_spikes/STDP_Tau_neg;
         dw = STDP_A_neg * dtdivtauneg * exp(dtdivtauneg);
         //dw = -STDP_A_neg * exp(dt_spikes / STDP_Tau_neg);
     }
