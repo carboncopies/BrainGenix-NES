@@ -191,6 +191,7 @@ std::string ModelRPCInterface::LIFCReceptorCreate(std::string _JSONRequest) {
         || (!Handle.GetParFloat("STDP_A_neg", C.STDP_A_neg))
         || (!Handle.GetParFloat("STDP_Tau_pos", C.STDP_Tau_pos))
         || (!Handle.GetParFloat("STDP_Tau_neg", C.STDP_Tau_neg))
+        || (!Handle.GetParFloat("STDP_Shift", C.STDP_Shift))
 
         || (!Handle.GetParInt("ReceptorMorphology", C.ShapeID))
         || (!Handle.GetParString("Name", C.Name))) {
@@ -251,6 +252,7 @@ std::string ModelRPCInterface::NetmorphLIFCReceptorCreate(std::string _JSONReque
         || (!Handle.GetParFloat("STDP_A_neg", C.STDP_A_neg))
         || (!Handle.GetParFloat("STDP_Tau_pos", C.STDP_Tau_pos))
         || (!Handle.GetParFloat("STDP_Tau_neg", C.STDP_Tau_neg))
+        || (!Handle.GetParFloat("STDP_Shift", C.STDP_Shift))
 
         || (!Handle.GetParInt("ReceptorMorphology", C.ShapeID))
         || (!Handle.GetParString("Name", C.Name))) {

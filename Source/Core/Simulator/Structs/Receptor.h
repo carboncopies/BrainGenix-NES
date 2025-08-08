@@ -107,6 +107,7 @@ struct LIFCReceptorBase {
     float STDP_A_neg = 0.0;
     float STDP_Tau_pos = 0.0;
     float STDP_Tau_neg = 0.0;
+    float STDP_Shift = 0.0;
 
     NeurotransmitterType Neurotransmitter = AMPA;
 

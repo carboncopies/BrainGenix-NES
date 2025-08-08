@@ -108,26 +108,31 @@ void LIFCReceptorData::Calculate_Abstracted_PSP_Medians() {
         std::vector<float> STDP_A_negs;
         std::vector<float> STDP_tau_poses;
         std::vector<float> STDP_tau_negs;
+        std::vector<float> STDP_shifts;
         for (auto& LIFCRptr : ReceptorPtrs) {
             STDP_A_poses.push_back(LIFCRptr->STDP_A_pos);
             STDP_A_negs.push_back(LIFCRptr->STDP_A_neg);
             STDP_tau_poses.push_back(LIFCRptr->STDP_Tau_pos);
             STDP_tau_negs.push_back(LIFCRptr->STDP_Tau_neg);
+            STDP_shifts.push_back(LIFCRptr->STDP_Shift);
         }
         std::sort(STDP_A_poses.begin(), STDP_A_poses.end());
         std::sort(STDP_A_negs.begin(), STDP_A_negs.end());
         std::sort(STDP_tau_poses.begin(), STDP_tau_poses.end());
         std::sort(STDP_tau_negs.begin(), STDP_tau_negs.end());
+        std::sort(STDP_shifts.begin(), STDP_shifts.end());
         if (size % 2 == 1) {
             STDP_A_pos = STDP_A_poses[size / 2];
             STDP_A_neg = STDP_A_negs[size / 2];
             STDP_Tau_pos = STDP_tau_poses[size / 2];
             STDP_Tau_neg = STDP_tau_negs[size / 2];
+            STDP_Shift = STDP_shifts[size / 2];
         } else {
             STDP_A_pos = (STDP_A_poses[size / 2 - 1] + STDP_A_poses[size / 2]) / 2.0;
             STDP_A_neg = (STDP_A_negs[size / 2 - 1] + STDP_A_negs[size / 2]) / 2.0;
             STDP_Tau_pos = (STDP_tau_poses[size / 2 - 1] + STDP_tau_poses[size / 2]) / 2.0;
             STDP_Tau_neg = (STDP_tau_negs[size / 2 - 1] + STDP_tau_negs[size / 2]) / 2.0;
+            STDP_Shift = (STDP_shifts[size / 2 - 1] + STDP_shifts[size / 2]) / 2.0;
         }
     }
 }
@@ -157,8 +162,6 @@ void LIFCReceptorData::STDP_Update(float tfire) {
 
     float t_pre = SrcNeuronPtr->t_last_spike;
     if (t_pre < 0) return;
-    //if (SrcNeuronPtr->TAct_ms.empty()) return;
-    //float t_pre = SrcNeuronPtr->TAct_ms.back();
     
     float dt_spikes;
     if (STDP_Method() == Connections::STDPANTIHEBBIAN) {
@@ -166,12 +169,17 @@ void LIFCReceptorData::STDP_Update(float tfire) {
     } else {
         dt_spikes = tfire - t_pre;
     }
+    dt_spikes -= STDP_Shift;
     
     float dw;
     if (dt_spikes >= 0) {
-        dw = STDP_A_pos * exp(-dt_spikes / STDP_Tau_pos);
+        dtdivtaupos = dt_spikes/STDP_Tau_pos;
+        dw = STDP_A_pos * dtdivtaupos * exp(dtdivtaupos);
+        //dw = STDP_A_pos * exp(-dt_spikes / STDP_Tau_pos);
     } else {
-        dw = -STDP_A_neg * exp(dt_spikes / STDP_Tau_neg);
+        dtdivtauneg = dt_spikes/STDP_Tau_neg;
+        dw = STDP_A_neg * dtdivtauneg * exp(dtdivtauneg);
+        //dw = -STDP_A_neg * exp(dt_spikes / STDP_Tau_neg);
     }
     
     weight += dw;
@@ -196,6 +204,7 @@ std::string LIFCReceptorData::Show_Functional_Parameters() {
     paramstr << "  STDP_A_neg = " << STDP_A_neg << '\n';
     paramstr << "  STDP_Tau_pos = " << STDP_Tau_pos << '\n';
     paramstr << "  STDP_Tau_neg = " << STDP_Tau_pos << '\n';
+    paramstr << "  STDP_Shift = " << STDP_Shift << '\n';
     paramstr << "  norm = " << norm << '\n';
 
     return paramstr.str();
