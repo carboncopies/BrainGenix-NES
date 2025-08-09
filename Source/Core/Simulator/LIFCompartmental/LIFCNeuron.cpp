@@ -111,8 +111,7 @@ void LIFCNeuron::spike(float tfire) {
         Vm_mV = VReset_mV;
     } else {
         if (build_data.ResetMethod == CoreStructs::TOVM) {
-            VReset_mV = Vm_mV; // Remember value before AP
-            VReset_mV = std::min(Vm_mV, VAct_mV);
+            VReset_mV = std::min(Vm_mV, VAct_mV); // Remember value before AP
         }
         Vm_mV = VSpike_mV;
     }
@@ -172,7 +171,7 @@ void LIFCNeuron::check_spiking(float& t, float V_th_adaptive) {
     if (Vm_mV >= V_th_adaptive) {
         // Optional precision triangulation
         if (Sim.triangulate_precise_spiketimes) {
-            t = T_ms + tDiff_ms * (V_th_adaptive - Vm_prev_mV)/(Vm_mV - Vm_prev_mV);
+            //t = T_ms + tDiff_ms * (V_th_adaptive - Vm_prev_mV)/(Vm_mV - Vm_prev_mV);
             Vm_mV = V_th_adaptive;
         }
         spike(t);
