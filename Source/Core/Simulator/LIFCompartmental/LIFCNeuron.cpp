@@ -170,8 +170,8 @@ void LIFCNeuron::check_spiking(float& t, float V_th_adaptive) {
     
     if (Vm_mV >= V_th_adaptive) {
         // Optional precision triangulation
-        if (Sim.triangulate_precise_spiketimes) {
-            //t = T_ms + tDiff_ms * (V_th_adaptive - Vm_prev_mV)/(Vm_mV - Vm_prev_mV);
+        if (Sim.triangulate_precise_spiketimes && (Vm_mV > Vm_prev_mV)) {
+            t = T_ms + tDiff_ms * (V_th_adaptive - Vm_prev_mV)/(Vm_mV - Vm_prev_mV);
             Vm_mV = V_th_adaptive;
         }
         spike(t);
