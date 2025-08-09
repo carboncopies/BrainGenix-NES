@@ -344,10 +344,21 @@ std::string SimulationRPCInterface::SimulationRunFor(std::string _JSONRequest) {
     }
 
     float RunTime = -1.0;
-    if (!Handle.GetParFloat("Runtime_ms", RunTime)) {
+    float Dt = 1.0;
+    if ((!Handle.GetParFloat("Runtime_ms", RunTime)) ||
+        (!Handle.GetParFloat("Dt_ms", Dt))) {
         return Handle.ErrResponse();
     }
+    if (RunTime <= 0.0) {
+        Logger_->Log("Parameter error, Runtime_ms must be >= 0", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+    if (Dt <= 0.0) {
+        Logger_->Log("Parameter error, Dt_ms must be >= 0", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
     Handle.Sim()->RunTimes_ms = RunTime;
+    Handle.Sim()->Dt_ms = Dt;
     Handle.Sim()->CurrentTask = SIMULATION_RUNFOR; // request work be done
     Handle.Sim()->WorkRequested = true;
 
