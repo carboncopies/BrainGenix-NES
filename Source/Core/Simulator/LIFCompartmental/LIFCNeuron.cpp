@@ -112,7 +112,7 @@ void LIFCNeuron::spike(float tfire) {
     } else {
         if (build_data.ResetMethod == CoreStructs::TOVM) {
             VReset_mV = Vm_mV; // Remember value before AP
-            VReset_mV = std::min(Vm_mV, V_th_adaptive);
+            VReset_mV = std::min(Vm_mV, VAct_mV);
         }
         Vm_mV = VSpike_mV;
     }
