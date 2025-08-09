@@ -121,6 +121,7 @@ public:
     float t_last_spike = -1000.0;
 
     float tDiff_ms = 0.0;
+    float Vm_prev_mV = 0.0;
 
     std::vector<CoreStructs::LIFCReceptorData*> LIFCReceptorDataVec;
     std::vector<CoreStructs::LIFCReceptorData*> LIFCTransmitterDataVec;

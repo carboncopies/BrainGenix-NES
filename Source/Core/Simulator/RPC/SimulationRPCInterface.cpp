@@ -48,6 +48,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
 
     _RPCManager->AddRoute("Simulation/SetRandomSeed",             std::bind(&SimulationRPCInterface::SimulationSetSeed, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/LIFCAbstractedFunctional",  std::bind(&SimulationRPCInterface::LIFCAbstractedFunctional, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/LIFCPreciseSpikeTimes",     std::bind(&SimulationRPCInterface::LIFCPreciseSpikeTimes, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/SetSTDP",                   std::bind(&SimulationRPCInterface::SetSTDP, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/RunFor",                    std::bind(&SimulationRPCInterface::SimulationRunFor, this, std::placeholders::_1));
@@ -291,6 +292,28 @@ std::string SimulationRPCInterface::LIFCAbstractedFunctional(std::string _JSONRe
     // Return Result ID
     return Handle.ErrResponse(); // ok
 }
+
+std::string SimulationRPCInterface::LIFCPreciseSpikeTimes(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/LIFCPreciseSpikeTimes", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    bool useprecisespiketimes;
+    Handle.GetParBool("UsePreciseSpikeTimes", useprecisespiketimes);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    Handle.Sim()->triangulate_precise_spiketimes = useprecisespiketimes;
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
+
+
 
 std::string SimulationRPCInterface::SetSTDP(std::string _JSONRequest) {
 

@@ -143,7 +143,8 @@ void LIFCNeuron::spike(float tfire) {
     }
 }
 
-void LIFCNeuron::check_spiking(float t, float V_th_adaptive) {
+// Note that this function may modify t if triangulate_precise_spiketimes is used.
+void LIFCNeuron::check_spiking(float& t, float V_th_adaptive) {
     if (next_directstim_idx < TDirectStim_ms.size()) {
         float tFire_ms = TDirectStim_ms.at(next_directstim_idx);
         if (tFire_ms <= t) {
@@ -169,6 +170,11 @@ void LIFCNeuron::check_spiking(float t, float V_th_adaptive) {
     }
     
     if (Vm_mV >= V_th_adaptive) {
+        // Optional precision triangulation
+        if (Sim.triangulate_precise_spiketimes) {
+            t = T_ms + tDiff_ms * (V_th_adaptive - Vm_prev_mV)/(Vm_mV - Vm_prev_mV);
+            Vm_mV = V_th_adaptive;
+        }
         spike(t);
     }
 }
@@ -267,7 +273,7 @@ float LIFCNeuron::update_adaptive_threshold() {
     return V_th_adaptive;
 }
 
-void LIFCNeuron::update_with_classical_reset_clamp(float t) {
+void LIFCNeuron::update_with_classical_reset_clamp(float& t) {
     float I = update_currents();
     
     if (t < (t_last_spike + tau_absref_ms)) {
@@ -283,7 +289,7 @@ void LIFCNeuron::update_with_classical_reset_clamp(float t) {
     check_spiking(t, V_th_adaptive);
 }
 
-void LIFCNeuron::update_with_reset_options(float t) {
+void LIFCNeuron::update_with_reset_options(float& t) {
     // (Option:) Spike onset drives membrane potential below threshold.
     if (build_data.ResetMethod == CoreStructs::ONSET) {
         if (updates_since_spike == 1) {
@@ -389,6 +395,7 @@ void LIFCNeuron::Update(float t_ms, bool recording) {
 
     tDiff_ms = t_ms - T_ms;
     if (tDiff_ms < 0) return;
+    Vm_prev_mV = Vm_mV; // Used for triangulate_precise_spiketimes.
 
     if (is_first_update) { // Prepared once at the start of the simulation when build is complete
         if (!TDirectStim_ms.empty()) Sort_Direct_Stimulation();
@@ -419,10 +426,10 @@ void LIFCNeuron::Update(float t_ms, bool recording) {
     }
 
     if (recording) {
-        Record(t_ms);
+        Record(t_ms); // Note that with triangulate_precise_spiketimes t_ms may have been modified.
     }
 
-    T_ms = t_ms;
+    T_ms = t_ms; // Only update this here, because T_ms is used for triangulate_precise_spiketimes.
     updates_since_spike++; // *** Could add if (t_last_spike>=0.0) if it helps with overruns.
 };
 
