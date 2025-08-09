@@ -136,15 +136,15 @@ public:
     virtual void UpdateType(Connections::NeurotransmitterType neurotransmitter);
 
     void spike(float t);
-    void check_spiking(float t, float V_th_adaptive);
+    void check_spiking(float& t, float V_th_adaptive);
     void update_conductances(float t);
     float update_currents();
     float update_membrane_potential_forward_Euler(float I);
     void update_membrane_potential_exponential_Euler_Rm();
     void update_membrane_potential_exponential_Euler_Cm();
     float update_adaptive_threshold();
-    void update_with_classical_reset_clamp(float t);
-    void update_with_reset_options(float t);
+    void update_with_classical_reset_clamp(float& t);
+    void update_with_reset_options(float& t);
 
     CoreStructs::LIFCReceptorData* FindLIFCReceptorPairing(LIFCNeuron* SrcNeuronPtr, Connections::LIFCReceptor* RPtr);
     void Show_Functional_Parameters();
