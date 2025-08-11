@@ -111,6 +111,7 @@ public:
 
     bool STDP = false; // STDP simulation included when true
     bool use_abstracted_LIF_receptors = true; // Abstracted functional receptors with LIFCNeuron
+    bool triangulate_precise_spiketimes = false; // Use this with larger Dt_ms for better spike time precision
 
     bool ShowFunctionalParameters = false; // Mostly for testing, turn on if needed
 

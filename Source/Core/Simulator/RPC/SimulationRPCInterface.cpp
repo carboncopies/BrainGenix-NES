@@ -48,6 +48,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
 
     _RPCManager->AddRoute("Simulation/SetRandomSeed",             std::bind(&SimulationRPCInterface::SimulationSetSeed, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/LIFCAbstractedFunctional",  std::bind(&SimulationRPCInterface::LIFCAbstractedFunctional, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/LIFCPreciseSpikeTimes",     std::bind(&SimulationRPCInterface::LIFCPreciseSpikeTimes, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/SetSTDP",                   std::bind(&SimulationRPCInterface::SetSTDP, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/RunFor",                    std::bind(&SimulationRPCInterface::SimulationRunFor, this, std::placeholders::_1));
@@ -292,6 +293,28 @@ std::string SimulationRPCInterface::LIFCAbstractedFunctional(std::string _JSONRe
     return Handle.ErrResponse(); // ok
 }
 
+std::string SimulationRPCInterface::LIFCPreciseSpikeTimes(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/LIFCPreciseSpikeTimes", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    bool useprecisespiketimes;
+    Handle.GetParBool("UsePreciseSpikeTimes", useprecisespiketimes);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    Handle.Sim()->triangulate_precise_spiketimes = useprecisespiketimes;
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
+
+
+
 std::string SimulationRPCInterface::SetSTDP(std::string _JSONRequest) {
 
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/SetSTDP", &Simulations_);
@@ -321,10 +344,21 @@ std::string SimulationRPCInterface::SimulationRunFor(std::string _JSONRequest) {
     }
 
     float RunTime = -1.0;
-    if (!Handle.GetParFloat("Runtime_ms", RunTime)) {
+    float Dt = 1.0;
+    if ((!Handle.GetParFloat("Runtime_ms", RunTime)) ||
+        (!Handle.GetParFloat("Dt_ms", Dt))) {
         return Handle.ErrResponse();
     }
+    if (RunTime <= 0.0) {
+        Logger_->Log("Parameter error, Runtime_ms must be >= 0", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+    if (Dt <= 0.0) {
+        Logger_->Log("Parameter error, Dt_ms must be >= 0", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
     Handle.Sim()->RunTimes_ms = RunTime;
+    Handle.Sim()->Dt_ms = Dt;
     Handle.Sim()->CurrentTask = SIMULATION_RUNFOR; // request work be done
     Handle.Sim()->WorkRequested = true;
 

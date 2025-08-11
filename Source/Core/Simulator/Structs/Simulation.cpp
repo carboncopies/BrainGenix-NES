@@ -1553,19 +1553,30 @@ nlohmann::json Simulation::GetConnectomeJSON() const {
     nlohmann::json& typeslist(connectome["ConnectionTypes"]);
     connectome["ConnectionWeights"] = nlohmann::json::array();
     nlohmann::json& weightslist(connectome["ConnectionWeights"]);
-
-    for (auto& neuron_ptr : Neurons) {
-        nlohmann::json targetvec(nlohmann::json::value_t::array);
-        nlohmann::json typevec(nlohmann::json::value_t::array);
-        nlohmann::json weightvec(nlohmann::json::value_t::array);
-        if (SimNeuronClass == LIFCNEURONS) {
-            static_cast<LIFCNeuron*>(neuron_ptr.get())->GetConnectomeTargetsJSON(targetvec, typevec, weightvec);
-        } else {
+    if (SimNeuronClass == LIFCNEURONS) {
+        connectome["ConnectionGPeakSum"] = nlohmann::json::array();
+        nlohmann::json& gpeaksumlist(connectome["ConnectionGPeakSum"]);
+        for (auto& neuron_ptr : Neurons) {
+            nlohmann::json targetvec(nlohmann::json::value_t::array);
+            nlohmann::json typevec(nlohmann::json::value_t::array);
+            nlohmann::json weightvec(nlohmann::json::value_t::array);
+            nlohmann::json gpeaksumvec(nlohmann::json::value_t::array);
+            static_cast<LIFCNeuron*>(neuron_ptr.get())->GetConnectomeTargetsJSON(targetvec, typevec, weightvec, gpeaksumvec);
+            targetslist.push_back(targetvec);
+            typeslist.push_back(typevec);
+            weightslist.push_back(weightvec);
+            gpeaksumlist.push_back(gpeaksumvec);
+        } 
+    } else {
+        for (auto& neuron_ptr : Neurons) {
+            nlohmann::json targetvec(nlohmann::json::value_t::array);
+            nlohmann::json typevec(nlohmann::json::value_t::array);
+            nlohmann::json weightvec(nlohmann::json::value_t::array);
             static_cast<BallAndStick::BSNeuron*>(neuron_ptr.get())->GetConnectomeTargetsJSON(targetvec, typevec, weightvec);
-        }
-        targetslist.push_back(targetvec);
-        typeslist.push_back(typevec);
-        weightslist.push_back(weightvec);
+            targetslist.push_back(targetvec);
+            typeslist.push_back(typevec);
+            weightslist.push_back(weightvec);
+        }        
     }
 
     return connectome;
