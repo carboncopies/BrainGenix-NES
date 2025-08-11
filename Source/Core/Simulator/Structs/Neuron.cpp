@@ -72,6 +72,8 @@ Connections::LIFCSTDPMethodEnum LIFCReceptorData::STDP_Method() {
 
 // This is for the abstracted parameters that do not use a median.
 void LIFCReceptorData::AddToAbstractedFunctional(int _RID, Connections::LIFCReceptor * _RPtr) {
+    ReceptorIDs.emplace_back(_RID);
+    ReceptorPtrs.emplace_back(_RPtr);
     g_peak_sum_nS += _RPtr->PeakConductance_nS;
     weight_g_peak_sum += _RPtr->Weight*_RPtr->PeakConductance_nS;
     weight = weight_g_peak_sum / g_peak_sum_nS;
