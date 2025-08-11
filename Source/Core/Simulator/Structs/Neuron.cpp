@@ -174,7 +174,7 @@ void LIFCReceptorData::STDP_Update(float tfire) {
     float dw;
     if (dt_spikes >= 0) {
         float dtdivtaupos = dt_spikes/STDP_Tau_pos;
-        dw = STDP_A_pos * dtdivtaupos * exp(dtdivtaupos);
+        dw = STDP_A_pos * dtdivtaupos * exp(-dtdivtaupos);
         //dw = STDP_A_pos * exp(-dt_spikes / STDP_Tau_pos);
     } else {
         float dtdivtauneg = dt_spikes/STDP_Tau_neg;
