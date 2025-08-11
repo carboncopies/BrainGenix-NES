@@ -1556,16 +1556,20 @@ nlohmann::json Simulation::GetConnectomeJSON() const {
     if (SimNeuronClass == LIFCNEURONS) {
         connectome["ConnectionGPeakSum"] = nlohmann::json::array();
         nlohmann::json& gpeaksumlist(connectome["ConnectionGPeakSum"]);
+        connectome["NumReceptors"] = nlohmann::json::array();
+        nlohmann::json& numreceptorslist(connectome["NumReceptors"]);
         for (auto& neuron_ptr : Neurons) {
             nlohmann::json targetvec(nlohmann::json::value_t::array);
             nlohmann::json typevec(nlohmann::json::value_t::array);
             nlohmann::json weightvec(nlohmann::json::value_t::array);
             nlohmann::json gpeaksumvec(nlohmann::json::value_t::array);
-            static_cast<LIFCNeuron*>(neuron_ptr.get())->GetConnectomeTargetsJSON(targetvec, typevec, weightvec, gpeaksumvec);
+            nlohmann::json numreceptorsvec(nlohmann::json::value_t::array);
+            static_cast<LIFCNeuron*>(neuron_ptr.get())->GetConnectomeTargetsJSON(targetvec, typevec, weightvec, gpeaksumvec, numreceptorsvec);
             targetslist.push_back(targetvec);
             typeslist.push_back(typevec);
             weightslist.push_back(weightvec);
             gpeaksumlist.push_back(gpeaksumvec);
+            numreceptorslist.push_back(numreceptorsvec);
         } 
     } else {
         for (auto& neuron_ptr : Neurons) {

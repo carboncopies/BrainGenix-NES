@@ -159,7 +159,8 @@ public:
     // Used in Simulation::GetConnectomeJSON().
     virtual void GetConnectomeTargetsJSON(
         nlohmann::json& targetvec, nlohmann::json& typevec,
-        nlohmann::json& weightvec, nlohmann::json& gpeaksumvec);
+        nlohmann::json& weightvec, nlohmann::json& gpeaksumvec,
+        nlohmann::json& numreceptorsvec);
 
     // Used in Simulation::UpdatePrePostStrength().
     virtual bool UpdatePrePostStrength(int PresynapticID, float NewConductance_nS);
