@@ -157,7 +157,9 @@ public:
     virtual void OutputTransmitterAdded(CoreStructs::LIFCReceptorData* RData);
 
     // Used in Simulation::GetConnectomeJSON().
-    virtual void GetConnectomeTargetsJSON(nlohmann::json& targetvec, nlohmann::json& typevec, nlohmann::json& weightvec);
+    virtual void GetConnectomeTargetsJSON(
+        nlohmann::json& targetvec, nlohmann::json& typevec,
+        nlohmann::json& weightvec, nlohmann::json& gpeaksumvec);
 
     // Used in Simulation::UpdatePrePostStrength().
     virtual bool UpdatePrePostStrength(int PresynapticID, float NewConductance_nS);

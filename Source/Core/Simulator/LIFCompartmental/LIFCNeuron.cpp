@@ -454,11 +454,15 @@ int GetConnectionType(Connections::NeurotransmitterType neurotransmitter) {
     return it->second;
 }
 
-void LIFCNeuron::GetConnectomeTargetsJSON(nlohmann::json& targetvec, nlohmann::json& typevec, nlohmann::json& weightvec) {
+void LIFCNeuron::GetConnectomeTargetsJSON(
+    nlohmann::json& targetvec, nlohmann::json& typevec,
+    nlohmann::json& weightvec, nlohmann::json& gpeaksumvec) {
+
     for (auto & rdata : LIFCTransmitterDataVec) {
         targetvec.push_back(rdata->DstNeuronID);
         typevec.push_back(GetConnectionType(rdata->Type()));
-        weightvec.push_back(rdata->weight * rdata->g_peak_sum_nS);
+        weightvec.push_back(rdata->weight);
+        gpeaksumvec.push_back(rdata->g_peak_sum_nS);
     }   
 }
 
