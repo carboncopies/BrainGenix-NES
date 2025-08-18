@@ -51,7 +51,7 @@ Geometries::Vec3D &SCNeuron::GetCellCenter() {
     return GeoCenter_um;
 };
 
-BoundingBox SCNeuron::GetSomaBoundingBox(VSDA::WorldInfo& _WorldInfo) {
+BoundingBox SCNeuron::GetSomaBoundingBox(NES::VSDA::WorldInfo& _WorldInfo) {
     BoundingBox bb;
     bool is_first = true;
     for (const auto & CompID : build_data.SomaCompartmentIDs) {

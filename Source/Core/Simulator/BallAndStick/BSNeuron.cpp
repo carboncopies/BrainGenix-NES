@@ -44,7 +44,7 @@ Geometries::Vec3D &BSNeuron::GetCellCenter() {
     return this->Morphology["soma"]->Center_um;
 };
 
-BoundingBox BSNeuron::GetSomaBoundingBox(VSDA::WorldInfo& _WorldInfo) {
+BoundingBox BSNeuron::GetSomaBoundingBox(NES::VSDA::WorldInfo& _WorldInfo) {
     return Morphology["soma"]->GetBoundingBox(_WorldInfo);
 }
 

@@ -90,7 +90,7 @@ Geometries::Vec3D& LIFCNeuron::GetCellCenter() {
     return GeoCenter_um;
 };
 
-BoundingBox LIFCNeuron::GetSomaBoundingBox(VSDA::WorldInfo& _WorldInfo) {
+BoundingBox LIFCNeuron::GetSomaBoundingBox(NES::VSDA::WorldInfo& _WorldInfo) {
     BoundingBox bb;
     bool is_first = true;
     for (const auto & CompID : build_data.SomaCompartmentIDs) {

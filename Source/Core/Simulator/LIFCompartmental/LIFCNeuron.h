@@ -133,7 +133,7 @@ public:
     //! Returns the geometric center of the neuron.
     virtual Geometries::Vec3D& GetCellCenter();
 
-    virtual BoundingBox GetSomaBoundingBox(VSDA::WorldInfo& _WorldInfo);
+    virtual BoundingBox GetSomaBoundingBox(NES::VSDA::WorldInfo& _WorldInfo);
 
     virtual float GetSomaRadius();
 
