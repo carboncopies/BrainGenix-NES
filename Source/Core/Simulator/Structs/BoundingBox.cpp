@@ -20,6 +20,45 @@ std::string BoundingBox::Dimensions() {
     return Out;
 }
 
+std::vector<float> BoundingBox::Dims() {
+    std::vector<float> dims(3);
+    dims[0] = bb_point2[0] - bb_point1[0];
+    dims[1] = bb_point2[1] - bb_point1[1];
+    dims[2] = bb_point2[2] - bb_point1[2];
+    return dims;
+}
+
+float BoundingBox::LargestDim(int* dim_idx) {
+    auto dims = Dims();
+    if (dims[0] < dims[1]) {
+        if (dims[1] < dims[2]) { // z largest
+            if (dim_idx) *dim_idx = 2;
+            return dims[2];
+        } else { // y largest
+            if (dim_idx) *dim_idx = 1;
+            return dims[1];
+        }
+    } else {
+        if (dims[0] < dims[2]) { // z largest
+            if (dim_idx) *dim_idx = 2;
+            return dims[2];
+        } else { // x largest
+            if (dim_idx) *dim_idx = 0;
+            return dims[0];
+        }
+    }
+}
+
+void BoundingBox::Enclosing(const BoundingBox& _bbB) {
+    bb_point1[0] = bb_point1[0] <= _bbB.bb_point1[0] ? bb_point1[0] : _bbB.bb_point1[0]; // min p1 X'es
+    bb_point1[1] = bb_point1[1] <= _bbB.bb_point1[1] ? bb_point1[1] : _bbB.bb_point1[1]; // min p1 Y'es
+    bb_point1[2] = bb_point1[2] <= _bbB.bb_point1[2] ? bb_point1[2] : _bbB.bb_point1[2]; // min p1 Z'es
+
+    bb_point2[0] = bb_point2[0] >= _bbB.bb_point2[0] ? bb_point2[0] : _bbB.bb_point2[0]; // max p2 X'es
+    bb_point2[1] = bb_point2[1] >= _bbB.bb_point2[1] ? bb_point2[1] : _bbB.bb_point2[1]; // max p2 Y'es
+    bb_point2[2] = bb_point2[2] >= _bbB.bb_point2[2] ? bb_point2[2] : _bbB.bb_point2[2]; // max p2 Z'es
+}
+
 std::string BoundingBox::ToString() {
     std::string Out = "";
     Out += std::to_string(bb_point1[0]) + "X1, ";
@@ -33,6 +72,11 @@ std::string BoundingBox::ToString() {
     return Out;
 }
 
+void BoundingBox::Singularity() {
+    bb_point1[0] = 0;
+    bb_point1[1] = 0;
+    bb_point1[2] = 0;
+}
 
 bool IsOverlapping1D(float Max1, float Min1, float Max2, float Min2) {
     return (Max1 >= Min2) && (Max2 >= Min1);

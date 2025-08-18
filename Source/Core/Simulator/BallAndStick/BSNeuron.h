@@ -108,6 +108,10 @@ public:
     //! Returns the geometric center of the neuron.
     virtual Geometries::Vec3D &GetCellCenter();
 
+    virtual BoundingBox GetSomaBoundingBox(VSDA::WorldInfo& _WorldInfo);
+
+    virtual float GetSomaRadius();
+
     //! Records the time of direct stimulation for every occurrence
     //! of a direct stimulation.
     void AttachDirectStim(float t_ms);

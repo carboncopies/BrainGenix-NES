@@ -240,9 +240,21 @@ bool Neuron::HasSpiked() {
 }
 
 //! Returns the geometric center of the neuron.
-Geometries::Vec3D &Neuron::GetCellCenter() {
+Geometries::Vec3D& Neuron::GetCellCenter() {
     WARNWRONGOOPLEVEL();
     return cell_center; // Placeholder.
+}
+
+virtual BoundingBox GetSomaBoundingBox(VSDA::WorldInfo& _WorldInfo) {
+    WARNWRONGOOPLEVEL();
+    BoundingBox bb;
+    bb.Singularity();
+    return bb;
+}
+
+float Neuron::GetSomaRadius() {
+    WARNWRONGOOPLEVEL();
+    return 1.0;
 }
 
 // Note that this does not guarantee that spike times are added in order.

@@ -160,7 +160,11 @@ struct Neuron {
     virtual bool HasSpiked(); // *** FIX THIS!
 
     //! Returns the geometric center of the neuron.
-    virtual Geometries::Vec3D &GetCellCenter(); // *** FIX THIS!
+    virtual Geometries::Vec3D& GetCellCenter(); // *** FIX THIS!
+
+    virtual BoundingBox GetSomaBoundingBox(VSDA::WorldInfo& _WorldInfo);
+
+    virtual float GetSomaRadius();
 
     virtual void AddSpecificAPTime(float t_ms);
 

@@ -132,6 +132,10 @@ public:
     //! Returns the geometric center of the neuron.
     virtual Geometries::Vec3D& GetCellCenter();
 
+    virtual BoundingBox GetSomaBoundingBox(VSDA::WorldInfo& _WorldInfo);
+
+    virtual float GetSomaRadius();
+
     //! Update the assumed neuron "type" based on its neurotransmitters.
     virtual void UpdateType(Connections::NeurotransmitterType neurotransmitter);
 

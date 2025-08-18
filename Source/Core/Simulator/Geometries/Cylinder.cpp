@@ -113,6 +113,7 @@ Vec3D Cylinder::GetRotation_rad() const {
 BoundingBox CylinderBase::GetBoundingBox(VSDA::WorldInfo& _WorldInfo) {
 	BoundingBox bb;
 
+    bb.Singularity(); // !!!
 
 	return bb;
 }

@@ -51,6 +51,40 @@ Geometries::Vec3D &SCNeuron::GetCellCenter() {
     return GeoCenter_um;
 };
 
+BoundingBox SCNeuron::GetSomaBoundingBox(VSDA::WorldInfo& _WorldInfo) {
+    BoundingBox bb;
+    bool is_first = true;
+    for (const auto & CompID : build_data.SomaCompartmentIDs) {
+        if (CompID < Sim.LIFCCompartments.size()) {
+            int ShapeID = Sim.LIFCCompartments.at(CompID).ShapeID;
+            auto ShapePtr = Sim.FindShapeByID(ShapeID);
+            if (ShapePtr != nullptr) {
+                if (is_first) {
+                    bb = ShapePtr->GetBoundingBox(_WorldInfo);
+                    is_first = false;
+                } else {
+                    bb.Enclosing(ShapePtr->GetBoundingBox(_WorldInfo));
+                }
+            }
+        }
+    }
+    if (is_first) bb.Singularity();
+    return bb;
+}
+
+/**
+ * Here, we use the bounding box information for all the compartments in
+ * the soma to obtain maximum extents in x,y,z and estimate a max
+ * radius from that.
+ */
+float SCNeuron::GetSomaRadius() {
+    // Find the overall bounding box of the soma.
+    VSDA::WorldInfo WorldInfo_; // Using default values.
+    BoundingBox bb = GetSomaBoundingBox(WorldInfo_);
+    // Return half of the largest dimension as radius equivalent.
+    return bb.LargestDim()/2.0;
+}
+
 }; // namespace Simulator
 }; // namespace NES
 }; // namespace BG
