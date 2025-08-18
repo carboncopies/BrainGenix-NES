@@ -16,6 +16,7 @@
 
 #include <Simulator/BallAndStick/BSNeuron.h>
 #include <Simulator/Structs/Receptor.h>
+#include <VSDA/Common/Structs/WorldInfo.h>
 
 namespace BG {
 namespace NES {

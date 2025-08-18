@@ -22,6 +22,7 @@
 #include <Simulator/Structs/Receptor.h>
 #include <Simulator/Structs/BS.h>
 #include <Simulator/Structs/SC.h>
+#include <VSDA/Common/Structs/WorldInfo.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <nlohmann/json.hpp>

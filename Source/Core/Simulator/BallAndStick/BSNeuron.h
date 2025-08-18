@@ -28,6 +28,7 @@
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/Neuron.h>
 #include <Simulator/Structs/SignalFunctions.h>
+#include <VSDA/Common/Structs/WorldInfo.h>
 //#include <Simulator/Structs/Receptor.h>
 //#include <Simulator/Structs/Simulation.h>
 

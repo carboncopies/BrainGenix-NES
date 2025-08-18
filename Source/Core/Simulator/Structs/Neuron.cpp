@@ -245,7 +245,7 @@ Geometries::Vec3D& Neuron::GetCellCenter() {
     return cell_center; // Placeholder.
 }
 
-virtual BoundingBox GetSomaBoundingBox(VSDA::WorldInfo& _WorldInfo) {
+BoundingBox GetSomaBoundingBox(VSDA::WorldInfo& _WorldInfo) {
     WARNWRONGOOPLEVEL();
     BoundingBox bb;
     bb.Singularity();

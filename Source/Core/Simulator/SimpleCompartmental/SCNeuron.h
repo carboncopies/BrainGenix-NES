@@ -13,6 +13,7 @@
 #pragma once
 
 #include <Simulator/BallAndStick/BSNeuron.h>
+#include <VSDA/Common/Structs/WorldInfo.h>
 
 namespace BG {
 namespace NES {
