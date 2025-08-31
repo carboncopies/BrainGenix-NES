@@ -60,6 +60,8 @@ namespace Tools {
     struct CalciumImaging;
 }
 
+class Engine;
+
 enum SimulationActions { SIMULATION_NONE, SIMULATION_RESET, SIMULATION_RUNFOR, SIMULATION_VSDA, SIMULATION_CALCIUM, SIMULATION_VISUALIZATION};
 
 struct StoredRequest {
@@ -68,6 +70,12 @@ struct StoredRequest {
 
     StoredRequest(const std::string & _Route, const std::string & _RequestJSON): Route(_Route), RequestJSON(_RequestJSON) {}
     std::string Str() const { return "{ \"" + Route + "\": " + RequestJSON + " }"; }
+};
+
+enum sim_methods {
+    simmethod_list_of_neurons,
+    simmethod_circuits,
+    NUMsimmethods,
 };
 
 /**
@@ -136,7 +144,7 @@ public:
     NetmorphParameters NetmorphParams; /**Instance of the netmorph parameters, used to configure netmorph's neuron culture simulation*/
 
     std::thread NetmorphWorkerThread; /**Thread that when exists, runs the netmorph simulation.*/
-
+    bool MultithreadedSimulation = true;
 
     //! Constructors
     Simulation(BG::Common::Logger::LoggingSystem* _Logger);
@@ -212,6 +220,7 @@ public:
     nlohmann::json GetAbstractConnectomeJSON(bool Sparse, bool NonZero) const;
 
     void RunFor(float tRun_ms);
+    void RunForMT(float tRun_ms, Engine* _Engine);
 
     void Show();
 

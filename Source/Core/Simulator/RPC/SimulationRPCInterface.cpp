@@ -990,6 +990,22 @@ std::string SimulationRPCInterface::GetAbstractConnectome(std::string _JSONReque
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
+std::string SimulationRPCInterface::SetMultithreaded(std::string _JSONRequest) {
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/SetMultithreaded", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    bool Multithreaded = false;
+    if (!Handle.GetParBool("Multithreaded", Multithreaded)) {
+        return Handle.ErrResponse();
+    }
+    Handle.Sim()->MultithreadedSimulation = Multithreaded;
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
+
 /**
  * Expects _JSONRequest:
  * {

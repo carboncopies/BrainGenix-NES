@@ -20,7 +20,7 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
     _Logger->Log("Starting Simulation Updater Thread", 3);
 
     // Setup Simulation Engine
-    Engine SE;
+    Engine SE(_Logger, _Sim->MultithreadedSimulation ? std::thread::hardware_concurrency() : 0);
 
     // Enter into loop until thread should stop
     while (!(*_StopThreads)) {

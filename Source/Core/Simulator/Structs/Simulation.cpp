@@ -8,7 +8,7 @@
 #include <Simulator/Geometries/Sphere.h>
 #include <Simulator/Geometries/Cylinder.h>
 #include <Simulator/Geometries/Box.h>
-
+#include <Simulator/Engine.h>
 
 
 #include <iostream>
@@ -1123,12 +1123,6 @@ nlohmann::json Simulation::GetAbstractConnectomeJSON(bool Sparse, bool NonZero) 
     return connectome;
 }
 
-enum sim_methods {
-    simmethod_list_of_neurons,
-    simmethod_circuits,
-    NUMsimmethods,
-};
-
 void Simulation::RunFor(float tRun_ms) {
     assert(Logger_ != nullptr);
     
@@ -1204,7 +1198,71 @@ void Simulation::RunFor(float tRun_ms) {
     }
     Logger_->Log("Number of top-level Update() calls: "+std::to_string(num_updates_called), 3);
     Logger_->Log("Total number of spikes on all neurons: "+std::to_string(TotalSpikes()), 3);
-};
+}
+
+void Simulation::RunForMT(float tRun_ms, Engine* _Engine) {
+    assert(Logger_ != nullptr);
+    
+    if (!(tRun_ms >= 0.0))
+        return;
+
+    float tEnd_ms = this->T_ms + tRun_ms;
+
+    Logger_->Log("Simulation run includes:", 3);
+    Logger_->Log(std::to_string(NeuralCircuits.size())+" circuits with a total of", 3);
+    Logger_->Log(std::to_string(Neurons.size())+" neurons drafted in Neurons vector and a total of", 3);
+    Logger_->Log(std::to_string(GetTotalNumberOfNeurons())+" neurons residing in defined circuits and a total of", 3);
+    Logger_->Log(std::to_string(BSCompartments.size())+" compartments.", 3);
+
+    // *** TODO: add making circuits and brain regions
+    //           to be able to use the other method
+
+    // *** TODO: obtain this from an API call...
+    sim_methods simmethod = simmethod_list_of_neurons;
+
+    unsigned long num_updates_called = 0;
+    while (this->T_ms < tEnd_ms) {
+
+        // Track time-points for God's eye recording
+        bool recording = this->IsRecording();
+        if (recording) {
+            //std::cout << 'R'; std::cout.flush();
+            this->TRecorded_ms.emplace_back(this->T_ms);
+        }
+
+        // Call update in circuits (neurons, etc)
+        switch (simmethod) {
+            case simmethod_circuits: // *** For now, use the same method
+            case simmethod_list_of_neurons: {
+                //std::cout << "DEBUG --> "; std::cout.flush();
+                _Engine->EnqueueSimulation(this);
+                //std::cout << '\n'; std::cout.flush();
+                break;
+            }
+        }
+
+        _Engine->BlockUntilQueueEmpty();
+
+        // Carry out simulated instrument recordings
+        if (InstrumentsAreRecording()) {
+            this->TInstruments_ms.emplace_back(this->T_ms);
+
+            // Electrodes
+            for (auto & Electrode : RecordingElectrodes) {
+                Electrode->Record(this->T_ms);
+            }
+
+            // Calcium Imaging
+            if (CaData_.State_ != BG::NES::VSDA::Calcium::CA_NOT_INITIALIZED) {
+                CaData_.CaImaging.Record(this->T_ms, this, CaData_.Params_); // flatten this later please
+            }
+        }
+
+        this->T_ms += this->Dt_ms;
+    }
+    Logger_->Log("Number of top-level Update() calls: "+std::to_string(num_updates_called), 3);
+    Logger_->Log("Total number of spikes on all neurons: "+std::to_string(TotalSpikes()), 3);
+}
 
 /**
  * Text overview of the state of the current simulation.

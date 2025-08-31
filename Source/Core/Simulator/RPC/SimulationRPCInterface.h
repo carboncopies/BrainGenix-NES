@@ -151,6 +151,7 @@ public:
     std::string GetConnectome(std::string _JSONRequest);
     std::string GetAbstractConnectome(std::string _JSONRequest);
 
+    std::string SetMultithreaded(std::string _JSONRequest);
 
     /**
      * @brief Returns true if the simulation is being worked on by another thread.
