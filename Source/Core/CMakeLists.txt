@@ -28,6 +28,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/RPC/ManagerTaskData.h
   ${SRC_DIR}/Core/RPC/SafeClient.cpp
   ${SRC_DIR}/Core/RPC/SafeClient.h
+  ${SRC_DIR}/Core/RPC/BackendServiceCommunicator.cpp
+  ${SRC_DIR}/Core/RPC/BackendServiceCommunicator.h
 
 
   ${SRC_DIR}/Core/Simulator/RPC/SimulationRPCInterface.cpp
@@ -269,39 +271,16 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Visualizer/ImageProcessorPool/ProcessingTask.cpp
 
 )
- 
-set(UNITTEST_SOURCES
 
-  ${SRC_DIR}/Core/Simulator/Geometries/Box.test.cpp
-  ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.test.cpp
-  ${SRC_DIR}/Core/Simulator/Geometries/Sphere.test.cpp
-  ${SRC_DIR}/Core/Simulator/Geometries/VecTools.test.cpp
-
-  ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.test.cpp
-  
-  ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.test.cpp
-  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.test.cpp
-  ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.test.cpp
-  ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.test.cpp
-
-  ${SRC_DIR}/Core/Simulator/Receptors/NMDAReceptor.test.cpp
-  ${SRC_DIR}/Core/Simulator/Receptors/AMPAReceptor.test.cpp
-  ${SRC_DIR}/Core/Simulator/Receptors/Receptor.test.cpp
-  
-  ${SRC_DIR}/Core/Simulator/Structs/SignalFunctions.test.cpp
-  ${SRC_DIR}/Core/Simulator/Structs/Simulation.test.cpp
-  ${SRC_DIR}/Core/Simulator/Structs/RecordingElectrode.test.cpp
-  ${SRC_DIR}/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp
-
-  #Add EMRenderer test?
-  ${SRC_DIR}/Core/VSDA/EM/EMRenderer.test.cpp
+# Automatically glob all test files
+file(GLOB_RECURSE TEST_SOURCES
+  "${SRC_DIR}/Core/*.test.cpp"
+  "Tests/*.cpp"
+  "Tests/*.h"
 )
 
-# Configure test binaries
-set(TEST_BINS
-
-    BrainGenix-NES.test
-)
+# Exclude test files from main sources if they were accidentally included
+list(FILTER MAIN_SOURCES EXCLUDE REGEX ".*\\.test\\.cpp$")
 
 # Create Main Library
 add_library(${PROJECT_LIBRARY_NAME} STATIC ${MAIN_SOURCES})
@@ -360,18 +339,39 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${GZIP_HPP_INCLUDE_DIRS})
 enable_testing()
 include(GoogleTest)
 
-message(STATUS "Testing enabled. Building test binaries ...")
-add_executable(${TEST_BINS} ${UNITTEST_SOURCES})
-target_compile_features(${TEST_BINS} PRIVATE cxx_std_17)
+# Create test executable if test sources exist
+if(TEST_SOURCES)
+  message(STATUS "Found test sources: ${TEST_SOURCES}")
 
-target_link_libraries(${TEST_BINS} PRIVATE 
+  add_executable(BrainGenix-NES.test ${TEST_SOURCES})
+  target_compile_features(BrainGenix-NES.test PRIVATE cxx_std_17)
+  target_include_directories(BrainGenix-NES.test PRIVATE Tests/)
+
+  target_link_libraries(BrainGenix-NES.test PRIVATE 
     NESRenderer
     GTest::gtest 
     GTest::gtest_main
     ${PROJECT_LIBRARY_NAME}
     ZLIB::ZLIB
-)
-target_include_directories(${TEST_BINS} PUBLIC ${SRC_DIR}/Core)
-target_include_directories(${TEST_BINS} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
+    VersioningSystem
+    CompileTimeStamp
+    CompilePlatformInfo
+  )
+  target_include_directories(BrainGenix-NES.test PUBLIC ${SRC_DIR}/Core)
+  target_include_directories(BrainGenix-NES.test PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
+  target_include_directories(BrainGenix-NES.test PRIVATE ${GZIP_HPP_INCLUDE_DIRS})
 
-gtest_discover_tests(${TEST_BINS})
+  # Discover and register tests
+  gtest_discover_tests(BrainGenix-NES.test
+    EXTRA_ARGS "--gtest_output=xml:${CMAKE_BINARY_DIR}/test_results/"
+  )
+
+  # Set test output directory to main binaries directory
+  set_target_properties(BrainGenix-NES.test PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
+    RUNTIME_OUTPUT_DIRECTORY_DEBUG ${BIN_DIR}
+    RUNTIME_OUTPUT_DIRECTORY_RELEASE ${BIN_DIR}
+  )
+else()
+  message(STATUS "No test sources found")
+endif()
