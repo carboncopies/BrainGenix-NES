@@ -32,7 +32,7 @@
 
     // API connection settings - adjust these for your test environment
     std::string APIHost = "localhost";  // Change if API is on different host
-    int APIPort = 8005;                  // Change if API uses different port DEFAULT IS 8000
+    int APIPort = 8006;                  // rpclib port (8005 is HTTP, 8006 is rpclib) CONFIGURE THIS TO THE RPCCALLBACK PORT
 
     void SetUp() override {
         // Initialize Logger

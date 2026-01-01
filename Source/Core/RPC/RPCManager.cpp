@@ -40,6 +40,7 @@ RPCManager::RPCManager(Config::Config* _Config, BG::Common::Logger::LoggingSyste
     AddRoute("Echo", _Logger, &Echo);
     AddRoute("NES", Logger_, [this](std::string RequestJSON){ return NESRequest(RequestJSON);});
     AddRoute("SetCallback", Logger_, [this](std::string RequestJSON){ return SetupCallback(RequestJSON);});
+    AddRoute("QueryBackendService", Logger_, [this](std::string RequestJSON){ return QueryBackendService(RequestJSON);});
     
 
     int ThreadCount = std::thread::hardware_concurrency();
@@ -227,6 +228,73 @@ std::string RPCManager::SetupCallback(std::string _JSONRequest) {
 
     return "{\"StatusCode\": 0}";
 }
+
+
+std::string RPCManager::QueryBackendService(std::string _JSONRequest) {
+    
+    // Parse the incoming request
+    nlohmann::json RequestJSON;
+    try {
+        RequestJSON = nlohmann::json::parse(_JSONRequest);
+    } catch (const nlohmann::json::parse_error& e) {
+        Logger_->Log("QueryBackendService: Failed to parse JSON request", 7);
+        nlohmann::json ErrorResponse;
+        ErrorResponse["StatusCode"] = 1;
+        ErrorResponse["ErrorMessage"] = "Invalid JSON format";
+        return ErrorResponse.dump();
+    }
+
+    // Extract required fields
+    std::string TargetService = RequestJSON.value("TargetService", "");
+    std::string RPCQuery = RequestJSON.value("RPCQuery", "");
+    std::string QueryContent = RequestJSON.value("QueryContent", "{}");
+
+    Logger_->Log("QueryBackendService: Received request for " + TargetService + " -> " + RPCQuery, 4);
+
+    // Validate target service
+    if (TargetService.empty()) {
+        Logger_->Log("QueryBackendService: Missing TargetService field", 7);
+        nlohmann::json ErrorResponse;
+        ErrorResponse["StatusCode"] = 1;
+        ErrorResponse["ErrorMessage"] = "Missing TargetService field";
+        return ErrorResponse.dump();
+    }
+
+    // Handle requests targeting this NES instance
+    if (TargetService == "NES") {
+        
+        // Handle TestPing for integration testing
+        if (RPCQuery == "TestPing") {
+            Logger_->Log("QueryBackendService: Handling TestPing request", 3);
+            nlohmann::json Response;
+            Response["StatusCode"] = 0;
+            Response["Message"] = "PING PING";
+            return Response.dump();
+        }
+        
+        // For other NES queries, try to route through the request handlers
+        auto it = RequestHandlers_.find(RPCQuery);
+        if (it != RequestHandlers_.end() && it->second) {
+            Logger_->Log("QueryBackendService: Routing to handler " + RPCQuery, 3);
+            return it->second(QueryContent);
+        } else {
+            Logger_->Log("QueryBackendService: No handler found for " + RPCQuery, 7);
+            nlohmann::json ErrorResponse;
+            ErrorResponse["StatusCode"] = 1;
+            ErrorResponse["ErrorMessage"] = "Unknown RPC query: " + RPCQuery;
+            return ErrorResponse.dump();
+        }
+    }
+
+    // For other backend services, we would forward to the API gateway
+    // For now, return an error since we can only handle NES requests directly
+    Logger_->Log("QueryBackendService: Cannot handle requests for " + TargetService + " directly", 7);
+    nlohmann::json ErrorResponse;
+    ErrorResponse["StatusCode"] = 1;
+    ErrorResponse["ErrorMessage"] = "This NES instance can only handle NES requests directly. For " + TargetService + ", route through the API gateway.";
+    return ErrorResponse.dump();
+}
+
 
 bool RPCManager::MakeAPIQuery(std::string _Path, std::string _QueryJSONString, std::string* _Result) {
     

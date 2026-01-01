@@ -132,6 +132,18 @@ public:
 
     std::string NESRequest(std::string _JSONRequest, int _SimulationIDOverride = -1); // Generic JSON-based NES requests.
 
+    /**
+     * @brief Handles requests from other backend services to query this NES instance.
+     * 
+     * This route allows other backend services (or the API gateway) to send requests
+     * to this NES instance. It parses the incoming request and routes it to the
+     * appropriate internal handler.
+     * 
+     * @param _JSONRequest JSON string containing TargetService, RPCQuery, and QueryContent
+     * @return std::string JSON response from the handler
+     */
+    std::string QueryBackendService(std::string _JSONRequest);
+
 
     /**
      * @brief Registers a callback to the API service.

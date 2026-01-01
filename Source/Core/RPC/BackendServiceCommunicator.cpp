@@ -68,7 +68,6 @@ std::string BackendServiceCommunicator::QueryOtherBackendServiceCommunicator(
     }
 
     // Construction the JSON payload with nlohmann
-    // Note: API expects "TargetService" not "BackendService"
     nlohmann::json RequestPayload;
     RequestPayload["TargetService"] = _BackendService;
     RequestPayload["RPCQuery"] = _RPCQuery;
