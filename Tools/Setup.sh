@@ -84,7 +84,7 @@ echo "Creating Python virtual environment..."
 cd ..
 python3 -m venv venv || exit 1
 echo "Installing igneous-pipeline in the virtual environment..."
-./venv/bin/pip install igneous-pipeline || exit 1
+./venv/bin/pip install --platform manylinux2014_x86_64 --only-binary :all: igneous-pipeline || exit 1
 cd Tools
 
 
