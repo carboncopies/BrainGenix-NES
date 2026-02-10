@@ -84,6 +84,8 @@ echo "Creating Python virtual environment..."
 cd ..
 python3 -m venv venv || exit 1
 echo "Installing compatible Python libraries into a vendored directory..."
+# Ensure the target directory is clean for an idempotent setup
+rm -rf ../venv/vendored_libs
 # Create a dedicated directory for our compatible, vendored libraries
 mkdir -p ../venv/vendored_libs
 # Install igneous-pipeline and its dependencies into the target directory
