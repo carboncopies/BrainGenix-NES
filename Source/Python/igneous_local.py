@@ -82,6 +82,11 @@ else:
     factor = (2,2,1)
 bounds = compute_bounds(Args.datapath, Args.mip, None, None, None)
 
+if bounds.volume() == 0:
+    print("Volume is empty (zero size). Skipping Igneous tasks.")
+    print("Igneous Done!")
+    exit(0)
+
 tq = LocalTaskQueue(parallel=Args.parallel)
 tasks = tc.create_downsampling_tasks(
     Args.datapath, mip=Args.mip, fill_missing=Args.fillmissing, 
