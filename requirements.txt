@@ -252,8 +252,9 @@ networkx==3.6.1
     #   trimesh
 nose2==0.15.1
     # via intern
-numpy==2.4.2
+numpy==2.2.4
     # via
+    #   -r requirements.in
     #   cloud-files
     #   cloud-volume
     #   compressed-segmentation

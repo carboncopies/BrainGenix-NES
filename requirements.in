@@ -4,4 +4,5 @@
 # 'pip-compile' will use this to generate the full, pinned
 # 'requirements.txt' lock file.
 
-igneous-pipeline
+numpy==2.2.4
+igneous-pipeline==4.34.0
