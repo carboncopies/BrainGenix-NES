@@ -914,6 +914,10 @@ bool Simulation::SaveModel(const std::string& Name) {
 bool Simulation::LoadModel(const std::string& Name) {
     SaveLoadPrior _SaveLoadPrior;
     std::fstream LoadFile = std::fstream(Name, std::ios::in | std::ios::binary);
+    if (!LoadFile.is_open()) {
+        Logger_->Log("Simulation::LoadModel: Error, could not open model file '" + Name + "' for reading.", 7);
+        return false;
+    }
     // 0. SaveLoadPrior
     LoadFile.read((char*)&_SaveLoadPrior, sizeof(_SaveLoadPrior));
 
@@ -925,6 +929,7 @@ bool Simulation::LoadModel(const std::string& Name) {
         Collection.Geometries.clear();
 
         int ID;
+        Logger_->Log("Simulation::LoadModel: Loading " + std::to_string(_Loader._SaverInfo.SGMapSize) + " shapes.", 5);
         for (size_t i = 0; i < _Loader._SaverInfo.SGMapSize; i++) {
             auto& sgm = _Loader.SGMap.get()[i];
             switch (sgm.Type) {
@@ -1001,6 +1006,7 @@ bool Simulation::LoadModel(const std::string& Name) {
         Collection.Geometries.clear();
 
         int ID;
+        Logger_->Log("Simulation::LoadModel: Loading " + std::to_string(_Loader._SaverInfo.SGMapSize) + " shapes.", 5);
         for (size_t i = 0; i < _Loader._SaverInfo.SGMapSize; i++) {
             auto& sgm = _Loader.SGMap.get()[i];
             switch (sgm.Type) {
