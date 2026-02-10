@@ -1,0 +1,12 @@
+# BrainGenix-NES Python Dependencies
+
+# This file lists the direct dependencies.
+# 'pip-compile' will use this to generate the full, pinned
+# 'requirements.txt' lock file.
+
+# Pin numpy to a version before X86_V2 optimizations were introduced
+# to ensure broad CPU compatibility.
+numpy<1.22
+
+# The main application dependency
+igneous-pipeline

@@ -79,12 +79,20 @@ INSTALL_COMMAND="$SUDO_PREFIX $PACKAGE_MANAGER_INSTALL_CMD $VCPKG_DEPS $COMPILER
 echo "Running Install Command: $INSTALL_COMMAND"
 $INSTALL_COMMAND
 
-# Create Python virtual environment and install igneous-pipeline
+# Create Python virtual environment and install dependencies
 echo "Creating Python virtual environment..."
 cd ..
-python3 -m venv venv || exit 1
-echo "Installing igneous-pipeline in the virtual environment..."
-./venv/bin/pip install igneous-pipeline || exit 1
+python3 -m venv venv || { echo "ERROR: Failed to create venv." >&2; exit 1; }
+
+echo "Installing/upgrading Python build tools..."
+./venv/bin/pip install --upgrade pip || { echo "ERROR: Failed to upgrade pip." >&2; exit 1; }
+./venv/bin/pip install pip-tools || { echo "ERROR: Failed to install pip-tools." >&2; exit 1; }
+
+echo "Compiling requirements.txt lock file from requirements.in..."
+./venv/bin/pip-compile requirements.in -o requirements.txt || { echo "ERROR: Failed to compile requirements.txt." >&2; exit 1; }
+
+echo "Installing dependencies from lock file..."
+./venv/bin/pip install -r requirements.txt || { echo "ERROR: Failed to install from requirements.txt." >&2; exit 1; }
 cd Tools
 
 
