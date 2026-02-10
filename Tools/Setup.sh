@@ -83,8 +83,15 @@ $INSTALL_COMMAND
 echo "Creating Python virtual environment..."
 cd ..
 python3 -m venv venv || exit 1
-echo "Installing igneous-pipeline in the virtual environment..."
-./venv/bin/pip install igneous-pipeline || exit 1
+echo "Installing compatible Python libraries into a vendored directory..."
+# Create a dedicated directory for our compatible, vendored libraries
+mkdir -p ../venv/vendored_libs
+# Install igneous-pipeline and its dependencies into the target directory
+./venv/bin/pip install \
+    --target=../venv/vendored_libs \
+    --platform manylinux2014_x86_64 \
+    --only-binary :all: \
+    igneous-pipeline || exit 1
 cd Tools
 
 
