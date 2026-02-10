@@ -85,7 +85,8 @@ cd ..
 python3 -m venv venv || { echo "ERROR: Failed to create venv." >&2; exit 1; }
 
 echo "Installing/upgrading Python build tools..."
-./venv/bin/pip install --upgrade pip || { echo "ERROR: Failed to upgrade pip." >&2; exit 1; }
+# Pin pip to a version compatible with pip-tools to avoid AttributeError
+./venv/bin/pip install --upgrade "pip<24" || { echo "ERROR: Failed to upgrade pip to a compatible version." >&2; exit 1; }
 ./venv/bin/pip install pip-tools || { echo "ERROR: Failed to install pip-tools." >&2; exit 1; }
 
 echo "Compiling requirements.txt lock file from requirements.in..."
