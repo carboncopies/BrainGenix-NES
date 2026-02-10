@@ -83,22 +83,8 @@ $INSTALL_COMMAND
 echo "Creating Python virtual environment..."
 cd ..
 python3 -m venv venv || exit 1
-echo "Installing igneous-pipeline and dependencies for a compatible platform..."
-# Create a temporary directory for the wheels
-mkdir -p ../pip-wheels-temp
-# Download wheels compatible with manylinux2014
-./venv/bin/pip download \
-    --platform manylinux2014_x86_64 \
-    --only-binary :all: \
-    -d ../pip-wheels-temp \
-    igneous-pipeline || exit 1
-# Install from the downloaded wheels, without connecting to the internet
-./venv/bin/pip install \
-    --no-index \
-    --find-links=../pip-wheels-temp \
-    igneous-pipeline || exit 1
-# Clean up the temporary directory
-rm -rf ../pip-wheels-temp
+echo "Installing igneous-pipeline in the virtual environment..."
+./venv/bin/pip install igneous-pipeline || exit 1
 cd Tools
 
 
