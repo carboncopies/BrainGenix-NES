@@ -699,33 +699,19 @@ std::string SimulationRPCInterface::SimulationGetBoundingBox(std::string _JSONRe
         return Handle.ErrResponse();
     }
     
-    // Check if there are any shapes in the collection
-    if (Handle.Sim()->Collection.Size() == 0) {
-        Logger_->Log("Simulation/GetBoundingBox: No shapes found in simulation " + std::to_string(Handle.Sim()->ID) + ", returning zero bounding box.", 5);
-        nlohmann::json ResponseJSON;
-        ResponseJSON["StatusCode"] = 0;
-        ResponseJSON["BottomLeftX_um"] = 0.0;
-        ResponseJSON["BottomLeftY_um"] = 0.0;
-        ResponseJSON["BottomLeftZ_um"] = 0.0;
-        ResponseJSON["TopRightX_um"] = 0.0;
-        ResponseJSON["TopRightY_um"] = 0.0;
-        ResponseJSON["TopRightZ_um"] = 0.0;
-        return Handle.ResponseAndStoreRequest(ResponseJSON);
-    }
-
-    // Setup floats to store max/min values - initialize with infinity to ensure first shape sets the bounds
-    float BottomLeftX_um = std::numeric_limits<float>::max();
-    float BottomLeftY_um = std::numeric_limits<float>::max();
-    float BottomLeftZ_um = std::numeric_limits<float>::max();
-    float TopRightX_um = -std::numeric_limits<float>::max();
-    float TopRightY_um = -std::numeric_limits<float>::max();
-    float TopRightZ_um = -std::numeric_limits<float>::max();
+    // Setup floats to store max/min values
+    float BottomLeftX_um = 0.0;
+    float BottomLeftY_um = 0.0;
+    float BottomLeftZ_um = 0.0;
+    float TopRightX_um = 0.0;
+    float TopRightY_um = 0.0;
+    float TopRightZ_um = 0.0;
     
     // Iterate all shapes and create a bounding box that encompasses them all
     for (size_t ShapeID = 0; ShapeID < Handle.Sim()->Collection.Size(); ShapeID++) {
 
-        if (Handle.Sim()->Collection.IsBox(ShapeID)) {
-            const Geometries::Box& Box = Handle.Sim()->Collection.GetBox(ShapeID);
+        if (Handle.Sim()->Collection.IsBox(ShapeID)) { // (std::holds_alternative<Geometries::Box>(_Simulation->Collection.Geometries[ShapeID])) {
+            const Geometries::Box& Box = Handle.Sim()->Collection.GetBox(ShapeID); // Geometries::Box Box = std::get<Geometries::Box>(_Simulation->Collection.Geometries[ShapeID]);
 
             BottomLeftX_um = std::min(BottomLeftX_um, Box.Center_um.x - Box.Dims_um.x);
             BottomLeftY_um = std::min(BottomLeftY_um, Box.Center_um.y - Box.Dims_um.y);
@@ -735,8 +721,8 @@ std::string SimulationRPCInterface::SimulationGetBoundingBox(std::string _JSONRe
             TopRightZ_um = std::max(TopRightZ_um, Box.Center_um.z + Box.Dims_um.z);
 
 
-        } else if (Handle.Sim()->Collection.IsSphere(ShapeID)) {
-            const Geometries::Sphere& Sphere = Handle.Sim()->Collection.GetSphere(ShapeID);
+        } else if (Handle.Sim()->Collection.IsSphere(ShapeID)) { // (std::holds_alternative<Geometries::Sphere>(_Simulation->Collection.Geometries[ShapeID])) {
+            const Geometries::Sphere& Sphere = Handle.Sim()->Collection.GetSphere(ShapeID); // Geometries::Sphere Sphere = std::get<Geometries::Sphere>(_Simulation->Collection.Geometries[ShapeID]);
 
             BottomLeftX_um = std::min(BottomLeftX_um, Sphere.Center_um.x - Sphere.Radius_um);
             BottomLeftY_um = std::min(BottomLeftY_um, Sphere.Center_um.y - Sphere.Radius_um);
@@ -746,15 +732,23 @@ std::string SimulationRPCInterface::SimulationGetBoundingBox(std::string _JSONRe
             TopRightZ_um = std::max(TopRightZ_um, Sphere.Center_um.z + Sphere.Radius_um);
 
 
-        } else if (Handle.Sim()->Collection.IsCylinder(ShapeID)) {
-            const Geometries::Cylinder& Cylinder = Handle.Sim()->Collection.GetCylinder(ShapeID);
+        } else if (Handle.Sim()->Collection.IsCylinder(ShapeID)) { // (std::holds_alternative<Geometries::Cylinder>(_Simulation->Collection.Geometries[ShapeID])) {
+            const Geometries::Cylinder& Cylinder = Handle.Sim()->Collection.GetCylinder(ShapeID); // Geometries::Cylinder Cylinder = std::get<Geometries::Cylinder>(_Simulation->Collection.Geometries[ShapeID]);
 
-            BottomLeftX_um = std::min(BottomLeftX_um, std::min(Cylinder.End0Pos_um.x, Cylinder.End1Pos_um.x));
-            BottomLeftY_um = std::min(BottomLeftY_um, std::min(Cylinder.End0Pos_um.y, Cylinder.End1Pos_um.y));
-            BottomLeftZ_um = std::min(BottomLeftZ_um, std::min(Cylinder.End0Pos_um.z, Cylinder.End1Pos_um.z));
-            TopRightX_um = std::max(TopRightX_um, std::max(Cylinder.End0Pos_um.x, Cylinder.End1Pos_um.x));
-            TopRightY_um = std::max(TopRightY_um, std::max(Cylinder.End0Pos_um.y, Cylinder.End1Pos_um.y));
-            TopRightZ_um = std::max(TopRightZ_um, std::max(Cylinder.End0Pos_um.z, Cylinder.End1Pos_um.z));
+            BottomLeftX_um = std::min(BottomLeftX_um, Cylinder.End0Pos_um.x);
+            BottomLeftY_um = std::min(BottomLeftY_um, Cylinder.End0Pos_um.y);
+            BottomLeftZ_um = std::min(BottomLeftZ_um, Cylinder.End0Pos_um.z);
+            TopRightX_um = std::max(TopRightX_um, Cylinder.End0Pos_um.x);
+            TopRightY_um = std::max(TopRightY_um, Cylinder.End0Pos_um.y);
+            TopRightZ_um = std::max(TopRightZ_um, Cylinder.End0Pos_um.z);
+
+            BottomLeftX_um = std::min(BottomLeftX_um, Cylinder.End1Pos_um.x);
+            BottomLeftY_um = std::min(BottomLeftY_um, Cylinder.End1Pos_um.y);
+            BottomLeftZ_um = std::min(BottomLeftZ_um, Cylinder.End1Pos_um.z);
+            TopRightX_um = std::max(TopRightX_um, Cylinder.End1Pos_um.x);
+            TopRightY_um = std::max(TopRightY_um, Cylinder.End1Pos_um.y);
+            TopRightZ_um = std::max(TopRightZ_um, Cylinder.End1Pos_um.z);
+
         }
 
     }
@@ -763,9 +757,8 @@ std::string SimulationRPCInterface::SimulationGetBoundingBox(std::string _JSONRe
     Geometries::Vec3D BottomLeft_um = Geometries::Vec3D(BottomLeftX_um, BottomLeftY_um, BottomLeftZ_um);
     Geometries::Vec3D TopRight_um = Geometries::Vec3D(TopRightX_um, TopRightY_um, TopRightZ_um);
 
-    Logger_->Log("Simulation/GetBoundingBox: Calculated box for " + std::to_string(Handle.Sim()->Collection.Size()) + " shapes: [" + std::to_string(BottomLeftX_um) + "," + std::to_string(BottomLeftY_um) + "," + std::to_string(BottomLeftZ_um) + "] to [" + std::to_string(TopRightX_um) + "," + std::to_string(TopRightY_um) + "," + std::to_string(TopRightZ_um) + "]", 5);
 
-    // Return Bounding Box
+    // Return GeoCenter vector
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0;
     Util::SetVec3(ResponseJSON, BottomLeft_um, "BottomLeft");
