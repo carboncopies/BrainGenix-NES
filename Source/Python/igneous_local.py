@@ -59,9 +59,7 @@ cf.delete(remove_paths())
 print('\nDownsampling...')
 
 def compute_bounds(path, mip, xrange, yrange, zrange):
-    bounds = None
-    if xrange or yrange or zrange:
-        bounds = CloudVolume(path).meta.bounds(mip)
+    bounds = CloudVolume(path).meta.bounds(mip)
     if xrange:
         xrange = sorted(xrange)
         bounds.minpt.x = xrange[0]
