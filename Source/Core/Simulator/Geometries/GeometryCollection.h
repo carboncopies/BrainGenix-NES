@@ -39,11 +39,11 @@ enum GeometryVariantOrder {
  */
 struct GeometryCollection {
 
-    // std::vector<Sphere> Spheres; /**Vector of spheres owned by the simulation.*/
-    // std::vector<Cylinder> Cylinders; /**Vector of cylinders owned by the simulation*/
-    // std::vector<Box> Boxes; /**Vector of Boxes owned by the simulation*/
+    // std::vector<Sphere> Spheres; /**NM_Vector of spheres owned by the simulation.*/
+    // std::vector<Cylinder> Cylinders; /**NM_Vector of cylinders owned by the simulation*/
+    // std::vector<Box> Boxes; /**NM_Vector of Boxes owned by the simulation*/
 
-    std::vector<std::variant<Sphere, Cylinder, Box>> Geometries; //! Vector of variants, each being a geometry, note that the type order here MUST match the above enum.
+    std::vector<std::variant<Sphere, Cylinder, Box>> Geometries; //! NM_Vector of variants, each being a geometry, note that the type order here MUST match the above enum.
     //std::vector<Geometry> Geometries_; // We could instead hold them in here and make use of inheritance and static_cast... (comment by Randal)
 
     void append(Geometry & geom) {

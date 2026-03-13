@@ -24,6 +24,10 @@ project(
 	LANGUAGES CXX
 )
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+
 # Set project static library name
 set(PROJECT_LIBRARY_NAME "braingenix_nes")
 
@@ -147,7 +151,8 @@ endif()
 
 if (WITH_DEBUG_SYMBOLS)
     message(STATUS "Enabling Debug Symbols")
-    SET(CMAKE_CXX_FLAGS "-g")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
 else()
     message(STATUS "Not Enabling Debug Symbols")
 endif()

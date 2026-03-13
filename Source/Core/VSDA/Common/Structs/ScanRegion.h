@@ -63,12 +63,12 @@ struct VoxelIndexInfo {
  */
 struct ScanRegion {
 
-    /** Point 1*/
+    /** NM_Point 1*/
     float Point1X_um;
     float Point1Y_um;
     float Point1Z_um;
 
-    /** Point 2*/
+    /** NM_Point 2*/
     float Point2X_um;
     float Point2Y_um;
     float Point2Z_um;

@@ -14,7 +14,11 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
     assert(_StopThreads != nullptr);
 
     // Set thread Name
+    #ifdef __APPLE__
+    pthread_setname_np(std::string("Simulation Engine Thread " + std::to_string(_Sim->ID)).c_str());
+#else
     pthread_setname_np(pthread_self(), std::string("Simulation Engine Thread " + std::to_string(_Sim->ID)).c_str());
+#endif
 
     // Log Init message
     _Logger->Log("Starting Simulation Updater Thread", 3);

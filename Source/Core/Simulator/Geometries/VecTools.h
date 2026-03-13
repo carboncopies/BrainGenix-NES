@@ -36,25 +36,25 @@ struct Vec3D {
     Vec3D(const std::vector<float> & vec);
 
     //! Operators
-    //! Vector + Vector
+    //! NM_Vector + NM_Vector
     Vec3D operator+(const Vec3D &other) const;
-    //! Vector - Vector
+    //! NM_Vector - NM_Vector
     Vec3D operator-(const Vec3D &other) const;
-    //! Vector * Vector (Elementwise)
+    //! NM_Vector * NM_Vector (Elementwise)
     Vec3D operator*(const Vec3D other) const;
-    //! scalar * Vector
+    //! scalar * NM_Vector
     Vec3D operator*(const float other) const;
-    //! Vector / scalar
+    //! NM_Vector / scalar
     Vec3D operator/(const float other) const;
-    //! Vector == Vector
+    //! NM_Vector == NM_Vector
     bool operator==(const Vec3D &other) const;
-    //! Vector != Vector
+    //! NM_Vector != NM_Vector
     bool operator!=(const Vec3D &other) const;
 
-    //! Vector <= Vector (all elements)
+    //! NM_Vector <= NM_Vector (all elements)
     bool AllElementsLTE(const Vec3D &other) const;
     
-    //! Vector >= Vector (all elements)
+    //! NM_Vector >= NM_Vector (all elements)
     bool AllElementsGTE(const Vec3D &other) const;
 
     //! Norm (size) of vector

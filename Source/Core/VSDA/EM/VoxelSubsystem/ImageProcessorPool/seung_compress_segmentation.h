@@ -82,7 +82,7 @@ namespace compress_segmentation {
 //
 //   block_size: Extent of the x, y, and z dimensions of the block.
 //
-//   output: Vector to which output will be appended.
+//   output: NM_Vector to which output will be appended.
 template <class Label>
 int CompressChannel(const Label* input, const ptrdiff_t input_strides[3],
                      const ptrdiff_t volume_size[3],
@@ -108,7 +108,7 @@ int CompressChannel(const Label* input, const ptrdiff_t input_strides[3],
 //
 //   block_size: Extent of the x, y, and z dimensions of the block.
 //
-//   output: Vector where output will be stored.  Any existing content is
+//   output: NM_Vector where output will be stored.  Any existing content is
 //       cleared.
 template <class Label>
 int CompressChannels(const Label* input, const ptrdiff_t input_strides[4],

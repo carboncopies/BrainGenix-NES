@@ -82,7 +82,7 @@ int WriteBlockHeader(size_t encoded_value_base_offset,
 //
 //   cache: Cache of existing tables written and their corresponding offsets.
 //
-//   output_vec: Vector to which output will be appended.
+//   output_vec: NM_Vector to which output will be appended.
 template <class Label>
 void EncodeBlock(const Label* input, const ptrdiff_t input_strides[3],
                  const ptrdiff_t block_size[3], const ptrdiff_t actual_size[3],

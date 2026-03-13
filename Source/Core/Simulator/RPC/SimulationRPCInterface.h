@@ -69,7 +69,7 @@ private:
 
     std::vector<std::thread> SimulationThreads_; /**Threads that enumerate simulations and checks for any tasks to be done.*/
     std::atomic<bool> StopThreads_; /**Indicates to workers to stop what they're doing*/
-    std::vector<std::unique_ptr<Simulation>> Simulations_; /**Vector containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
+    std::vector<std::unique_ptr<Simulation>> Simulations_; /**NM_Vector containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
     // Note: This simulation vector is not thread safe and will probably segfault if you try to multithread this
     // we will fix this later when we scale the system (DO NOT ALLOW RPC to use more than 1 thread unless this is fixed!)
 

@@ -56,8 +56,8 @@ namespace Math {
  * @brief Helper function that converts a vsg vector to a glm vector.
  * Basically just reads the x,y,z values of _Vector and creates a glm vector from that. 
  * 
- * @param _Vector VSG Source Vector
- * @return glm::vec3 GLM Vector
+ * @param _Vector VSG Source NM_Vector
+ * @return glm::vec3 GLM NM_Vector
  */
 glm::vec3 Vec3_VSGToGLM(vsg::vec3 _Vector);
 
@@ -65,8 +65,8 @@ glm::vec3 Vec3_VSGToGLM(vsg::vec3 _Vector);
  * @brief Helper function that converts a glm vector to a vsg vector.
  * Basically just reads the x,y,z values of _Vector and creates a vsg vector from that. 
  * 
- * @param _Vector GLM Source Vector
- * @return vsg::vec3 VSG Vector
+ * @param _Vector GLM Source NM_Vector
+ * @return vsg::vec3 VSG NM_Vector
  */
 vsg::vec3 Vec3_GLMToVSG(glm::vec3 _Vector);
 

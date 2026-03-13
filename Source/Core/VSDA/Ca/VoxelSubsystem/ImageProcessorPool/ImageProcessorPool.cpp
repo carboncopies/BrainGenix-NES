@@ -87,7 +87,11 @@ float ImageProcessorPool::GetDepthVoxelContribution(ProcessingTask* Task, long T
 void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
     // Set thread Name
+    #ifdef __APPLE__
+    pthread_setname_np(std::string("CA Image Processor Pool Thread " + std::to_string(_ThreadNumber)).c_str());
+#else
     pthread_setname_np(pthread_self(), std::string("CA Image Processor Pool Thread " + std::to_string(_ThreadNumber)).c_str());
+#endif
 
     Logger_->Log("Started CA ImageProcessorPool Thread " + std::to_string(_ThreadNumber), 0);
 
