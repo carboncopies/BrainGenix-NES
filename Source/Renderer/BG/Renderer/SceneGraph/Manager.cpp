@@ -74,7 +74,12 @@ bool Manager::Initialize(bool _Windowed) {
 
     // Setup Device If Not Windowed
     if (RenderData_->Headless_) {
-        Headless_SetupDevice();
+        if (!Headless_SetupDevice()) {
+            Logger_->Log("Headless Vulkan setup failed. VSDA rendering will be disabled.", 10);
+            RenderData_->Headless_ = false; // Disable headless rendering flag if setup failed
+        } else {
+            Logger_->Log("Headless Vulkan setup successful.", 4);
+        }
     }
     RenderData_->Extent_ = VkExtent2D{(unsigned int)RenderData_->Width_, (unsigned int)RenderData_->Height_};
 
