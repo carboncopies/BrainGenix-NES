@@ -1,0 +1,88 @@
+diff --git a/ports/libnoise/portfile.cmake b/ports/libnoise/portfile.cmake
+index a929f37c69..c713eeea6c 100644
+--- a/ports/libnoise/portfile.cmake
++++ b/ports/libnoise/portfile.cmake
+@@ -18,6 +18,7 @@ vcpkg_cmake_configure(
+         -DBUILD_LIBNOISE_DOCUMENTATION=OFF
+         -DBUILD_LIBNOISE_UTILS=ON
+         -DBUILD_LIBNOISE_EXAMPLES=OFF
++        -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+ )
+ 
+ vcpkg_cmake_install()
+diff --git a/ports/nlohmann-json/portfile.cmake b/ports/nlohmann-json/portfile.cmake
+index 947cba3572..ac492ec0f4 100644
+--- a/ports/nlohmann-json/portfile.cmake
++++ b/ports/nlohmann-json/portfile.cmake
+@@ -22,6 +22,7 @@ vcpkg_cmake_configure(
+         -DJSON_MultipleHeaders=ON
+         -DJSON_BuildTests=OFF
+         -DJSON_ImplicitConversions=${nlohmann-json_IMPLICIT_CONVERSIONS}
++        -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+ )
+ vcpkg_cmake_install()
+ vcpkg_cmake_config_fixup(PACKAGE_NAME "nlohmann_json" CONFIG_PATH "share/cmake/nlohmann_json")
+diff --git a/ports/yaml-cpp/portfile.cmake b/ports/yaml-cpp/portfile.cmake
+index 795d93e24e..fb4f5b0d34 100644
+--- a/ports/yaml-cpp/portfile.cmake
++++ b/ports/yaml-cpp/portfile.cmake
+@@ -17,6 +17,7 @@ vcpkg_cmake_configure(
+         -DYAML_CPP_BUILD_TESTS=OFF
+         -DYAML_BUILD_SHARED_LIBS=${YAML_BUILD_SHARED_LIBS}
+         -DYAML_CPP_INSTALL_CMAKEDIR=share/${PORT}
++        -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+ )
+ 
+ vcpkg_cmake_install()
+diff --git a/ports/zlib/0005-macos-compile-fixes.patch b/ports/zlib/0005-macos-compile-fixes.patch
+new file mode 100644
+index 0000000000..32cb0f5b14
+--- /dev/null
++++ b/ports/zlib/0005-macos-compile-fixes.patch
+@@ -0,0 +1,34 @@
++Common subdirectories: zlib-clean/.github and zlib-patched/.github
++Common subdirectories: zlib-clean/amiga and zlib-patched/amiga
++Common subdirectories: zlib-clean/contrib and zlib-patched/contrib
++Common subdirectories: zlib-clean/doc and zlib-patched/doc
++Common subdirectories: zlib-clean/examples and zlib-patched/examples
++Common subdirectories: zlib-clean/msdos and zlib-patched/msdos
++Common subdirectories: zlib-clean/nintendods and zlib-patched/nintendods
++Common subdirectories: zlib-clean/old and zlib-patched/old
++Common subdirectories: zlib-clean/os400 and zlib-patched/os400
++Common subdirectories: zlib-clean/qnx and zlib-patched/qnx
++Common subdirectories: zlib-clean/test and zlib-patched/test
++Common subdirectories: zlib-clean/watcom and zlib-patched/watcom
++Common subdirectories: zlib-clean/win32 and zlib-patched/win32
++diff -u zlib-clean/zutil.h zlib-patched/zutil.h
++--- zlib-clean/zutil.h	2026-03-13 07:44:09
+++++ zlib-patched/zutil.h	2026-03-13 07:44:09
++@@ -143,7 +143,7 @@
++ #    if defined(__MWERKS__) && __dest_os != __be_os && __dest_os != __win32_os
++ #      include <unix.h> /* for fdopen */
++ #    else
++-#      ifndef fdopen
+++#      if !defined(fdopen) && !defined(__APPLE__)
++ #        define fdopen(fd,mode) NULL /* No fdopen() */
++ #      endif
++ #    endif
++@@ -166,7 +166,7 @@
++ #  define OS_CODE 18
++ #endif
++ 
++-#ifdef __APPLE__
+++#if defined(__APPLE__) && !defined(OS_CODE)
++ #  define OS_CODE 19
++ #endif
++ 
+diff --git a/ports/zlib/portfile.cmake b/ports/zlib/portfile.cmake
+index 1ec750bead..9aaa407e68 100644
+--- a/ports/zlib/portfile.cmake
++++ b/ports/zlib/portfile.cmake
+@@ -10,6 +10,7 @@ vcpkg_from_github(
+         0002-skip-building-examples.patch
+         0003-build-static-or-shared-not-both.patch
+         0004-android-and-mingw-fixes.patch
++        0005-macos-compile-fixes.patch
+ )
+ 
+ # This is generated during the cmake build

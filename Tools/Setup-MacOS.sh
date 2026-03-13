@@ -30,6 +30,12 @@ echo "Updating Submodules"
 git submodule update --init
 cd ../ThirdParty/NetmorphCMake && git pull origin main && cd ../../Tools
 
+# Apply vcpkg patches
+echo "Applying macOS patches to vcpkg..."
+cd ../ThirdParty/vcpkg
+git apply ../../Tools/Patches/vcpkg/vcpkg-macos.patch
+cd ../../Tools
+
 # Bootstrap vcpkg
 echo "Setting Up vcpkg"
 ./../ThirdParty/vcpkg/bootstrap-vcpkg.sh -disableMetrics
