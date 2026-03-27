@@ -28,6 +28,7 @@
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/Neuron.h>
 #include <Simulator/Structs/SignalFunctions.h>
+#include <VSDA/Common/Structs/WorldInfo.h>
 //#include <Simulator/Structs/Receptor.h>
 //#include <Simulator/Structs/Simulation.h>
 
@@ -107,6 +108,10 @@ public:
 
     //! Returns the geometric center of the neuron.
     virtual Geometries::Vec3D &GetCellCenter();
+
+    virtual BoundingBox GetSomaBoundingBox(NES::VSDA::WorldInfo& _WorldInfo);
+
+    virtual float GetSomaRadius();
 
     //! Records the time of direct stimulation for every occurrence
     //! of a direct stimulation.

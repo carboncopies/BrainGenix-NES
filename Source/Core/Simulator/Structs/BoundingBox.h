@@ -13,6 +13,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <cstdint>
 #include <string>
+#include <vector>
 
 namespace BG {
 namespace NES {
@@ -33,6 +34,20 @@ struct BoundingBox {
      * @return std::string
      */
     std::string Dimensions();
+
+    std::vector<float> Dims();
+
+    /**
+     * @brief Return the size of the largest dimension.
+     * @param dim_idx Pointer to optional cache of largest dimension index
+     *                0=x, 1=y, 2=z.
+     * @return float
+     */
+    float LargestDim(int* dim_idx = nullptr);
+
+    void Enclosing(const BoundingBox& _bbB);
+
+    void Singularity();
 
     /**
      * @brief Prints the two points of the bounding box, X1,Y1,Z1, X2,Y2,Z2

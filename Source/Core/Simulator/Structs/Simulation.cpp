@@ -1532,6 +1532,8 @@ nlohmann::json Simulation::GetSomaPositionsJSON() const {
     nlohmann::json& positionslist(somapositions["SomaCenters"]);
     somapositions["SomaTypes"] = nlohmann::json::array();
     nlohmann::json& typeslist(somapositions["SomaTypes"]);
+    somapositions["SomaRadius"] = nlohmann::json::array();
+    nlohmann::json& radiuslist(somapositions["SomaRadius"]);
 
     for (auto& neuron_ptr : Neurons) {
         nlohmann::json vec(nlohmann::json::value_t::array);
@@ -1540,6 +1542,7 @@ nlohmann::json Simulation::GetSomaPositionsJSON() const {
         }
         positionslist.push_back(vec);
         typeslist.push_back(int(neuron_ptr->Type_));
+        radiuslist.push_back(neuron_ptr->GetSomaRadius());
     }
 
     return somapositions;
@@ -1556,16 +1559,20 @@ nlohmann::json Simulation::GetConnectomeJSON() const {
     if (SimNeuronClass == LIFCNEURONS) {
         connectome["ConnectionGPeakSum"] = nlohmann::json::array();
         nlohmann::json& gpeaksumlist(connectome["ConnectionGPeakSum"]);
+        connectome["NumReceptors"] = nlohmann::json::array();
+        nlohmann::json& numreceptorslist(connectome["NumReceptors"]);
         for (auto& neuron_ptr : Neurons) {
             nlohmann::json targetvec(nlohmann::json::value_t::array);
             nlohmann::json typevec(nlohmann::json::value_t::array);
             nlohmann::json weightvec(nlohmann::json::value_t::array);
             nlohmann::json gpeaksumvec(nlohmann::json::value_t::array);
-            static_cast<LIFCNeuron*>(neuron_ptr.get())->GetConnectomeTargetsJSON(targetvec, typevec, weightvec, gpeaksumvec);
+            nlohmann::json numreceptorsvec(nlohmann::json::value_t::array);
+            static_cast<LIFCNeuron*>(neuron_ptr.get())->GetConnectomeTargetsJSON(targetvec, typevec, weightvec, gpeaksumvec, numreceptorsvec);
             targetslist.push_back(targetvec);
             typeslist.push_back(typevec);
             weightslist.push_back(weightvec);
             gpeaksumlist.push_back(gpeaksumvec);
+            numreceptorslist.push_back(numreceptorsvec);
         } 
     } else {
         for (auto& neuron_ptr : Neurons) {

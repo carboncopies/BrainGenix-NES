@@ -90,6 +90,40 @@ Geometries::Vec3D& LIFCNeuron::GetCellCenter() {
     return GeoCenter_um;
 };
 
+BoundingBox LIFCNeuron::GetSomaBoundingBox(NES::VSDA::WorldInfo& _WorldInfo) {
+    BoundingBox bb;
+    bool is_first = true;
+    for (const auto & CompID : build_data.SomaCompartmentIDs) {
+        if (CompID < Sim.LIFCCompartments.size()) {
+            int ShapeID = Sim.LIFCCompartments.at(CompID).ShapeID;
+            auto ShapePtr = Sim.FindShapeByID(ShapeID);
+            if (ShapePtr != nullptr) {
+                if (is_first) {
+                    bb = ShapePtr->GetBoundingBox(_WorldInfo);
+                    is_first = false;
+                } else {
+                    bb.Enclosing(ShapePtr->GetBoundingBox(_WorldInfo));
+                }
+            }
+        }
+    }
+    if (is_first) bb.Singularity();
+    return bb;
+}
+
+/**
+ * Here, we use the bounding box information for all the compartments in
+ * the soma to obtain maximum extents in x,y,z and estimate a max
+ * radius from that.
+ */
+float LIFCNeuron::GetSomaRadius() {
+    // Find the overall bounding box of the soma.
+    VSDA::WorldInfo WorldInfo_; // Using default values.
+    BoundingBox bb = GetSomaBoundingBox(WorldInfo_);
+    // Return half of the largest dimension as radius equivalent.
+    return bb.LargestDim()/2.0;
+}
+
 void LIFCNeuron::UpdateType(Connections::NeurotransmitterType neurotransmitter) {
     // Only if still unknown.
     if (Type_==CoreStructs::UnknownNeuron) {
@@ -456,13 +490,15 @@ int GetConnectionType(Connections::NeurotransmitterType neurotransmitter) {
 
 void LIFCNeuron::GetConnectomeTargetsJSON(
     nlohmann::json& targetvec, nlohmann::json& typevec,
-    nlohmann::json& weightvec, nlohmann::json& gpeaksumvec) {
+    nlohmann::json& weightvec, nlohmann::json& gpeaksumvec,
+    nlohmann::json& numreceptorsvec) {
 
     for (auto & rdata : LIFCTransmitterDataVec) {
         targetvec.push_back(rdata->DstNeuronID);
         typevec.push_back(GetConnectionType(rdata->Type()));
         weightvec.push_back(rdata->weight);
         gpeaksumvec.push_back(rdata->g_peak_sum_nS);
+        numreceptorsvec.push_back(rdata->ReceptorIDs.size());
     }   
 }
 

@@ -72,6 +72,8 @@ Connections::LIFCSTDPMethodEnum LIFCReceptorData::STDP_Method() {
 
 // This is for the abstracted parameters that do not use a median.
 void LIFCReceptorData::AddToAbstractedFunctional(int _RID, Connections::LIFCReceptor * _RPtr) {
+    ReceptorIDs.emplace_back(_RID);
+    ReceptorPtrs.emplace_back(_RPtr);
     g_peak_sum_nS += _RPtr->PeakConductance_nS;
     weight_g_peak_sum += _RPtr->Weight*_RPtr->PeakConductance_nS;
     weight = weight_g_peak_sum / g_peak_sum_nS;
@@ -238,9 +240,21 @@ bool Neuron::HasSpiked() {
 }
 
 //! Returns the geometric center of the neuron.
-Geometries::Vec3D &Neuron::GetCellCenter() {
+Geometries::Vec3D& Neuron::GetCellCenter() {
     WARNWRONGOOPLEVEL();
     return cell_center; // Placeholder.
+}
+
+BoundingBox Neuron::GetSomaBoundingBox(NES::VSDA::WorldInfo& _WorldInfo) {
+    WARNWRONGOOPLEVEL();
+    BoundingBox bb;
+    bb.Singularity();
+    return bb;
+}
+
+float Neuron::GetSomaRadius() {
+    WARNWRONGOOPLEVEL();
+    return 1.0;
 }
 
 // Note that this does not guarantee that spike times are added in order.

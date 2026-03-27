@@ -22,6 +22,7 @@
 #include <Simulator/Structs/Receptor.h>
 #include <Simulator/Structs/BS.h>
 #include <Simulator/Structs/SC.h>
+#include <VSDA/Common/Structs/WorldInfo.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <nlohmann/json.hpp>
@@ -160,7 +161,11 @@ struct Neuron {
     virtual bool HasSpiked(); // *** FIX THIS!
 
     //! Returns the geometric center of the neuron.
-    virtual Geometries::Vec3D &GetCellCenter(); // *** FIX THIS!
+    virtual Geometries::Vec3D& GetCellCenter(); // *** FIX THIS!
+
+    virtual BoundingBox GetSomaBoundingBox(NES::VSDA::WorldInfo& _WorldInfo);
+
+    virtual float GetSomaRadius();
 
     virtual void AddSpecificAPTime(float t_ms);
 

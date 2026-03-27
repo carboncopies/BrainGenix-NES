@@ -47,11 +47,11 @@ namespace VSDA {
  */
 struct WorldInfo {
 
-    float WorldRotationOffsetX_rad;
-    float WorldRotationOffsetY_rad;
-    float WorldRotationOffsetZ_rad;
+    float WorldRotationOffsetX_rad = 0.0;
+    float WorldRotationOffsetY_rad = 0.0;
+    float WorldRotationOffsetZ_rad = 0.0;
 
-    float VoxelScale_um; /**Size of each voxel in microns*/
+    float VoxelScale_um = 0.01; /**Size of each voxel in microns*/
 
 };
 

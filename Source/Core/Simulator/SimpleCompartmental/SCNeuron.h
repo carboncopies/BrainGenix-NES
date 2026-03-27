@@ -13,6 +13,7 @@
 #pragma once
 
 #include <Simulator/BallAndStick/BSNeuron.h>
+#include <VSDA/Common/Structs/WorldInfo.h>
 
 namespace BG {
 namespace NES {
@@ -44,6 +45,10 @@ public:
 
     //! Returns the geometric center of the neuron.
     virtual Geometries::Vec3D& GetCellCenter();
+
+    virtual BoundingBox GetSomaBoundingBox(NES::VSDA::WorldInfo& _WorldInfo);
+
+    virtual float GetSomaRadius();
 };
 
 } // Simulator
