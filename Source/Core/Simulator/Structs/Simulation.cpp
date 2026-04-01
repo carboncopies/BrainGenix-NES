@@ -187,7 +187,7 @@ bool Simulation::EditSCNeuron(int _ID, CoreStructs::SCNeuronStruct& _N, CoreStru
     if (!CheckCompatibility(SCNEURONS)) return false;
     if (_ID >= Neurons.size()) return false;
 
-    return static_cast<SCNeuron*>(Neurons.at(_ID))->Edit(_N, _E);
+    return static_cast<SCNeuron*>(Neurons.at(_ID).get())->Edit(_N, _E);
 }
 
 int Simulation::AddLIFCNeuron(CoreStructs::LIFCNeuronStruct& _N) {
