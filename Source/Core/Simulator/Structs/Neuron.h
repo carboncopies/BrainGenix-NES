@@ -211,6 +211,15 @@ struct BSNeuronStruct {
 
 };
 
+// This is used to indicate which parameters to edit.
+struct BSEdit {
+    bool MembranePotential_mV = false;
+    bool RestingPotential_mV = false;
+    bool SpikeThreshold_mV = false;
+    bool DecayTime_ms = false;
+    bool AfterHyperpolarizationAmplitude_mV = false;
+};
+
 /**
  * @brief Crucial fixed-size data of a neuron. This is saved in neuronal
  * circuit model saves. Does not include name and cached data.
@@ -264,6 +273,11 @@ struct SCNeuronStruct: public SCNeuronBase {
     bool FromFlat(SCNeuronStructFlatHeader* header);
 
 };
+
+// This is used to indicate which parameters to edit.
+struct SCEdit: public BSEdit {
+};
+
 
 enum LIFCUpdateMethodEnum: int {
     EXPEULER_CM = 0, // Default: Exponential Euler Capacitance-based calculation

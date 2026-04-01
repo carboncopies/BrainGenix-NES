@@ -199,6 +199,8 @@ public:
     int AddLIFCReceptor(Connections::LIFCReceptor& _C);
     int AddNetmorphLIFCReceptor(Connections::LIFCReceptor& _C, Connections::NetmorphLIFCReceptorRaw& _CDataRaw);
 
+    bool EditSCNeuron(int _ID, CoreStructs::SCNeuronStruct& _N, CoreStructs::SCEdit& _E);
+
     void RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompartmentIDs, uint64_t _NeuronUID);
 
     bool SaveModel(const std::string& Name);

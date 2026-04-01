@@ -12,7 +12,18 @@
 #include <mutex>
 #include <chrono>
 
+/* About build data for neurons:
 
+Available neuron types use the data that is initialized in data structs
+to set up their type-specific parameters.
+
+The data is copied to a 'build_data' struct within each neuron, and
+that copy is used when saving models.
+
+For more information about the various classes used see the diagram
+at: https://docs.google.com/drawings/d/1hobKDiIKVf0mgKr_8D89rkpK378XToXbCfigYSxdxfY/edit
+
+*/
 
 namespace BG {
 namespace NES {
@@ -37,6 +48,7 @@ ModelRPCInterface::ModelRPCInterface(BG::Common::Logger::LoggingSystem* _Logger,
    
     _RPCManager->AddRoute("Simulation/Compartments/SC/Create",        std::bind(&ModelRPCInterface::SCCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Neuron/SC/Create",              std::bind(&ModelRPCInterface::SCNeuronCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Neuron/SC/Edit",                std::bind(&ModelRPCInterface::SCNeuronEdit, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/Compartments/LIFC/Create",        std::bind(&ModelRPCInterface::LIFCCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Neuron/LIFC/Create",              std::bind(&ModelRPCInterface::LIFCNeuronCreate, this, std::placeholders::_1));
@@ -432,6 +444,44 @@ std::string ModelRPCInterface::SCNeuronCreate(std::string _JSONRequest) {
 
     // Return Result ID
     return Handle.ResponseWithID("NeuronID", C.ID);
+}
+
+// Takes a list of IDs of previously created neurons and edits parameters specified.
+std::string ModelRPCInterface::SCNeuronEdit(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Neuron/SC/Edit", Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Collect and check neuron IDs
+    std::vector<int> NeuronIDs;
+    if (!Handle.GetParVecInt("NeuronIDs", NeuronIDs)) {
+        return Handle.ErrResponse();
+    }
+    int maxID = Handle.Sim()->GetTotalNumberOfNeurons()-1;
+    for (auto& nID : NeuronIDs) {
+        if ((nID < 0) || (nID > maxID)) {
+            Logger_->Log("Error: Invalid Neuron ID '" + std::to_string(nID) + "'", 7);
+            return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+        }
+    }
+
+    // Collect parameters to edit
+    CoreStructs::SCNeuronStruct C;
+    CoreStructs::SCEdit Edit;
+    Edit.MembranePotential_mV = Handle.GetParFloat("MembranePotential_mV", C.MembranePotential_mV, true);
+    Edit.RestingPotential_mV = Handle.GetParFloat("RestingPotential_mV", C.RestingPotential_mV, true);
+    Edit.SpikeThreshold_mV = Handle.GetParFloat("SpikeThreshold_mV", C.SpikeThreshold_mV, true);
+    Edit.DecayTime_ms = Handle.GetParFloat("DecayTime_ms", C.DecayTime_ms, true);
+    Edit.AfterHyperpolarizationAmplitude_mV = Handle.GetParFloat("AfterHyperpolarizationAmplitude_mV", C.AfterHyperpolarizationAmplitude_mV, true);
+
+    // Edit parameters
+    for (auto& nID : NeuronIDs) {
+        Handle.Sim()->EditSCNeuron(nID, C, Edit); // *** could add test for false return here in case neuron type is a mismatch
+    }
+
+    return Handle.ErrResponse(); // ok
 }
 
 /**

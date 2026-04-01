@@ -33,6 +33,30 @@ SCNeuron::SCNeuron(const CoreStructs::SCNeuronStruct & scneuronstruct, Simulatio
 
 }
 
+bool SCNeuron::Edit(const CoreStructs::SCNeuronStruct & scneuronstruct, const CoreStructs::SCEdit & edit) {
+    if (edit.MembranePotential_mV) {
+        build_data.MembranePotential_mV = scneuronstruct.MembranePotential_mV;
+        Vm_mV = scneuronstruct.MembranePotential_mV;
+    }
+    if (edit.RestingPotential_mV) {
+        build_data.RestingPotential_mV = scneuronstruct.RestingPotential_mV;
+        VRest_mV = scneuronstruct.RestingPotential_mV;
+    }
+    if (edit.SpikeThreshold_mV) {
+        build_data.SpikeThreshold_mV = scneuronstruct.SpikeThreshold_mV;
+        VAct_mV = scneuronstruct.SpikeThreshold_mV;
+    }
+    if (edit.AfterHyperpolarizationAmplitude_mV) {
+        build_data.AfterHyperpolarizationAmplitude_mV = scneuronstruct.AfterHyperpolarizationAmplitude_mV;
+        VAHP_mV = scneuronstruct.AfterHyperpolarizationAmplitude_mV;
+    }
+    if (edit.DecayTime_ms) {
+        build_data.DecayTime_ms = scneuronstruct.DecayTime_ms;
+        TauAHP_ms = scneuronstruct.DecayTime_ms;
+    }
+    return true;
+}
+
 //! Returns the geometric center of the neuron.
 //! In case the soma is constructed of multiple compartments,
 //! this is a center of gravity of the set of compartment centers.

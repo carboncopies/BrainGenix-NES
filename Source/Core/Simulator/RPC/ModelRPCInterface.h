@@ -90,6 +90,7 @@ public:
 
     std::string SCCreate(std::string _JSONRequest);
     std::string SCNeuronCreate(std::string _JSONRequest);
+    std::string SCNeuronEdit(std::string _JSONRequest);
 
     std::string LIFCCreate(std::string _JSONRequest);
     std::string LIFCNeuronCreate(std::string _JSONRequest);
