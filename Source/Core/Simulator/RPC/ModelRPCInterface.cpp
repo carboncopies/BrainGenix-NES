@@ -447,6 +447,7 @@ std::string ModelRPCInterface::SCNeuronCreate(std::string _JSONRequest) {
 }
 
 // Takes a list of IDs of previously created neurons and edits parameters specified.
+// Empty list of neuron IDs means all neurons.
 std::string ModelRPCInterface::SCNeuronEdit(std::string _JSONRequest) {
  
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Neuron/SC/Edit", Simulations_);
@@ -477,8 +478,14 @@ std::string ModelRPCInterface::SCNeuronEdit(std::string _JSONRequest) {
     Edit.AfterHyperpolarizationAmplitude_mV = Handle.GetParFloat("AfterHyperpolarizationAmplitude_mV", C.AfterHyperpolarizationAmplitude_mV, true);
 
     // Edit parameters
-    for (auto& nID : NeuronIDs) {
-        Handle.Sim()->EditSCNeuron(nID, C, Edit); // *** could add test for false return here in case neuron type is a mismatch
+    if (NeuronIDs.empty()) { // all neurons
+        for (int nID = 0; nID <= maxID; nID++) {
+            Handle.Sim()->EditSCNeuron(nID, C, Edit); // *** could add test for false return here in case neuron type is a mismatch
+        }
+    } else {
+        for (auto& nID : NeuronIDs) {
+            Handle.Sim()->EditSCNeuron(nID, C, Edit); // *** could add test for false return here in case neuron type is a mismatch
+        } 
     }
 
     return Handle.ErrResponse(); // ok
