@@ -240,7 +240,7 @@ bool HandlerData::GetParFloat(const std::string& ParName, float& Value, nlohmann
 }
 
 bool HandlerData::GetParFloat(const std::string& ParName, float& Value, bool _Optional) {
-    return GetParFloat(ParName, Value, RequestJSON);
+    return GetParFloat(ParName, Value, RequestJSON, _Optional);
 }
 
 bool HandlerData::GetParString(const std::string& ParName, std::string& Value, nlohmann::json& _JSON) {
