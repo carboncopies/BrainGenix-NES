@@ -50,8 +50,9 @@ ModelRPCInterface::ModelRPCInterface(BG::Common::Logger::LoggingSystem* _Logger,
     _RPCManager->AddRoute("Simulation/Neuron/SC/Create",              std::bind(&ModelRPCInterface::SCNeuronCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Neuron/SC/Edit",                std::bind(&ModelRPCInterface::SCNeuronEdit, this, std::placeholders::_1));
 
-    _RPCManager->AddRoute("Simulation/Compartments/LIFC/Create",        std::bind(&ModelRPCInterface::LIFCCreate, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/Neuron/LIFC/Create",              std::bind(&ModelRPCInterface::LIFCNeuronCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Compartments/LIFC/Create",      std::bind(&ModelRPCInterface::LIFCCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Neuron/LIFC/Create",            std::bind(&ModelRPCInterface::LIFCNeuronCreate, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Neuron/LIFC/Edit",              std::bind(&ModelRPCInterface::LIFCNeuronEdit, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/PatchClampDAC/Create",          std::bind(&ModelRPCInterface::PatchClampDACCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/PatchClampDAC/SetOutputList",   std::bind(&ModelRPCInterface::PatchClampDACSetOutputList, this, std::placeholders::_1));
@@ -675,6 +676,53 @@ std::string ModelRPCInterface::LIFCNeuronCreate(std::string _JSONRequest) {
 
     // Return Result ID
     return Handle.ResponseWithID("NeuronID", C.ID);
+}
+
+// Takes a list of IDs of previously created neurons and edits parameters specified.
+// Empty list of neuron IDs means all neurons.
+std::string ModelRPCInterface::LIFCNeuronEdit(std::string _JSONRequest) {
+ 
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Neuron/LIFC/Edit", Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Collect and check neuron IDs
+    std::vector<int> NeuronIDs;
+    if (!Handle.GetParVecInt("NeuronIDs", NeuronIDs)) {
+        return Handle.ErrResponse();
+    }
+    int maxID = Handle.Sim()->GetTotalNumberOfNeurons()-1;
+    for (auto& nID : NeuronIDs) {
+        if ((nID < 0) || (nID > maxID)) {
+            Logger_->Log("Error: Invalid Neuron ID '" + std::to_string(nID) + "'", 7);
+            return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+        }
+    }
+
+    // Collect parameters to edit
+    CoreStructs::LIFCNeuronStruct C;
+    CoreStructs::LIFCEdit Edit;
+    Edit.RestingPotential_mV = Handle.GetParFloat("RestingPotential_mV", C.RestingPotential_mV, true);
+    Edit.ResetPotential_mV = Handle.GetParFloat("ResetPotential_mV", C.ResetPotential_mV, true);
+    Edit.SpikeThreshold_mV = Handle.GetParFloat("SpikeThreshold_mV", C.SpikeThreshold_mV, true);
+    Edit.MembraneResistance_MOhm = Handle.GetParFloat("MembraneResistance_MOhm", C.MembraneResistance_MOhm, true);
+    Edit.MembraneCapacitance_pF = Handle.GetParFloat("MembraneCapacitance_pF", C.MembraneCapacitance_pF, true);
+    Edit.RefractoryPeriod_ms = Handle.GetParFloat("RefractoryPeriod_ms", C.RefractoryPeriod_ms, true);
+    Edit.SpikeDepolarization_mV = Handle.GetParFloat("SpikeDepolarization_mV", C.SpikeDepolarization_mV, true);
+
+    // Edit parameters
+    if (NeuronIDs.empty()) { // all neurons
+        for (int nID = 0; nID <= maxID; nID++) {
+            Handle.Sim()->EditLIFCNeuron(nID, C, Edit); // *** could add test for false return here in case neuron type is a mismatch
+        }
+    } else {
+        for (auto& nID : NeuronIDs) {
+            Handle.Sim()->EditLIFCNeuron(nID, C, Edit); // *** could add test for false return here in case neuron type is a mismatch
+        } 
+    }
+
+    return Handle.ErrResponse(); // ok
 }
 
 std::string ModelRPCInterface::PatchClampDACCreate(std::string _JSONRequest) {

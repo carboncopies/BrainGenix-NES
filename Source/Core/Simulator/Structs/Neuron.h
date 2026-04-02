@@ -394,6 +394,17 @@ struct LIFCNeuronStruct: public LIFCNeuronBase {
 
 };
 
+// This is used to indicate which parameters to edit.
+struct LIFCEdit {
+    bool RestingPotential_mV = false;
+    bool ResetPotential_mV = false;
+    bool SpikeThreshold_mV = false;
+    bool MembraneResistance_MOhm = false;
+    bool MembraneCapacitance_pF = false;
+    bool RefractoryPeriod_ms = false;
+    bool SpikeDepolarization_mV = false;
+};
+
 }; // namespace CoreStructs
 }; // namespace Simulator
 }; // namespace NES

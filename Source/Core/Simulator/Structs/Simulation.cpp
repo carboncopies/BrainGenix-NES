@@ -218,6 +218,13 @@ int Simulation::AddLIFCNeuron(CoreStructs::LIFCNeuronStruct& _N) {
     return _N.ID;
 }
 
+bool Simulation::EditLIFCNeuron(int _ID, CoreStructs::LIFCNeuronStruct& _N, CoreStructs::LIFCEdit& _E) {
+    if (!CheckCompatibility(LIFCNEURONS)) return false;
+    if (_ID >= Neurons.size()) return false;
+
+    return static_cast<LIFCNeuron*>(Neurons.at(_ID).get())->Edit(_N, _E);
+}
+
 int Simulation::AddReceptor(Connections::Receptor& _C) {
 
     _C.ID = Receptors.size();

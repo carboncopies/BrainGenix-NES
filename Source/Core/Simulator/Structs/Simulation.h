@@ -200,6 +200,7 @@ public:
     int AddNetmorphLIFCReceptor(Connections::LIFCReceptor& _C, Connections::NetmorphLIFCReceptorRaw& _CDataRaw);
 
     bool EditSCNeuron(int _ID, CoreStructs::SCNeuronStruct& _N, CoreStructs::SCEdit& _E);
+    bool EditLIFCNeuron(int _ID, CoreStructs::LIFCNeuronStruct& _N, CoreStructs::LIFCEdit& _E)
 
     void RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompartmentIDs, uint64_t _NeuronUID);
 
