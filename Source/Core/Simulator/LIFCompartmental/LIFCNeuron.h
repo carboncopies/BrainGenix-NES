@@ -130,6 +130,8 @@ public:
 public:
     LIFCNeuron(const CoreStructs::LIFCNeuronStruct & lifcneuronstruct, Simulation & _Sim);
 
+    bool Edit(const CoreStructs::LIFCNeuronStruct & lifcneuronstruct, const CoreStructs::LIFCEdit & edit);
+
     //! Returns the geometric center of the neuron.
     virtual Geometries::Vec3D& GetCellCenter();
 

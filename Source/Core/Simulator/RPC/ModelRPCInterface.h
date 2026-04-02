@@ -90,9 +90,11 @@ public:
 
     std::string SCCreate(std::string _JSONRequest);
     std::string SCNeuronCreate(std::string _JSONRequest);
+    std::string SCNeuronEdit(std::string _JSONRequest);
 
     std::string LIFCCreate(std::string _JSONRequest);
     std::string LIFCNeuronCreate(std::string _JSONRequest);
+    std::string LIFCNeuronEdit(std::string _JSONRequest);
 
     std::string PatchClampDACCreate(std::string _JSONRequest);
     std::string PatchClampDACSetOutputList(std::string _JSONRequest);

@@ -72,6 +72,44 @@ LIFCNeuron::LIFCNeuron(const CoreStructs::LIFCNeuronStruct & lifcneuronstruct, S
     norm_ADP = Connections::compute_normalization(tau_rise_ADP_ms, tau_decay_ADP_ms);
 }
 
+bool LIFCNeuron::Edit(const CoreStructs::LIFCNeuronStruct & lifcneuronstruct, const CoreStructs::LIFCEdit & edit) {
+    if (edit.RestingPotential_mV) {
+        build_data.RestingPotential_mV = lifcneuronstruct.RestingPotential_mV;
+        VRest_mV = lifcneuronstruct.RestingPotential_mV;
+    }
+    if (edit.ResetPotential_mV) {
+        build_data.ResetPotential_mV = lifcneuronstruct.ResetPotential_mV;
+        VReset_mV = lifcneuronstruct.ResetPotential_mV;
+    }
+    if (edit.SpikeThreshold_mV) {
+        build_data.SpikeThreshold_mV = lifcneuronstruct.SpikeThreshold_mV;
+        VAct_mV = lifcneuronstruct.SpikeThreshold_mV;
+    }
+    if (edit.MembraneResistance_MOhm) {
+        build_data.MembraneResistance_MOhm = lifcneuronstruct.MembraneResistance_MOhm;
+        Rm_GOhm = lifcneuronstruct.MembraneResistance_MOhm/1000.0; // Note the unit conversion needed!
+    }
+    if (edit.MembraneCapacitance_pF) {
+        build_data.MembraneCapacitance_pF = lifcneuronstruct.MembraneCapacitance_pF;
+        Cm_pF = lifcneuronstruct.MembraneCapacitance_pF;
+    }
+    if (edit.RefractoryPeriod_ms) {
+        build_data.RefractoryPeriod_ms = lifcneuronstruct.RefractoryPeriod_ms;
+        tau_absref_ms = lifcneuronstruct.RefractoryPeriod_ms;
+    }
+    if (edit.SpikeDepolarization_mV) {
+        build_data.SpikeDepolarization_mV = lifcneuronstruct.SpikeDepolarization_mV;
+        VSpike_mV = lifcneuronstruct.SpikeDepolarization_mV;
+    }
+
+    // Updating variables dependent on edited parameters
+    Vm_mV = VRest_mV;
+    tau_m_ms = Rm_GOhm * Cm_pF;
+    g_L_nS = 1.0 / Rm_GOhm;
+
+    return true;
+}
+
 //! Returns the geometric center of the neuron.
 //! In case the soma is constructed of multiple compartments,
 //! this is a center of gravity of the set of compartment centers.

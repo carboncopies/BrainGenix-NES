@@ -183,6 +183,13 @@ int Simulation::AddSCNeuron(CoreStructs::SCNeuronStruct& _N) {
     return _N.ID;
 }
 
+bool Simulation::EditSCNeuron(int _ID, CoreStructs::SCNeuronStruct& _N, CoreStructs::SCEdit& _E) {
+    if (!CheckCompatibility(SCNEURONS)) return false;
+    if (_ID >= Neurons.size()) return false;
+
+    return static_cast<SCNeuron*>(Neurons.at(_ID).get())->Edit(_N, _E);
+}
+
 int Simulation::AddLIFCNeuron(CoreStructs::LIFCNeuronStruct& _N) {
     if (!CheckCompatibility(LIFCNEURONS)) return -1;
 
@@ -209,6 +216,13 @@ int Simulation::AddLIFCNeuron(CoreStructs::LIFCNeuronStruct& _N) {
     RegisterNeuronUIDToCompartments(_N.AxonCompartmentIDs, _N.ID);
 
     return _N.ID;
+}
+
+bool Simulation::EditLIFCNeuron(int _ID, CoreStructs::LIFCNeuronStruct& _N, CoreStructs::LIFCEdit& _E) {
+    if (!CheckCompatibility(LIFCNEURONS)) return false;
+    if (_ID >= Neurons.size()) return false;
+
+    return static_cast<LIFCNeuron*>(Neurons.at(_ID).get())->Edit(_N, _E);
 }
 
 int Simulation::AddReceptor(Connections::Receptor& _C) {
