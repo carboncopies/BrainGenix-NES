@@ -107,7 +107,7 @@ bool Manager::Headless_SetupDevice() {
     // VSG 1.0.9 handles VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME internally
 #endif
 
-    vsg::Names validatedNames = vsg::validateInstancelayerNames(requestedLayers);
+    vsg::Names validatedNames = vsg::validateInstanceLayerNames(requestedLayers);
     uint32_t VulkanVersion = VK_API_VERSION_1_0;
 
     vsg::ref_ptr<vsg::Instance> instance;
@@ -462,7 +462,9 @@ bool Manager::SetupViewer() {
 
 
     if (!RenderData_->Headless_) {
-        Windowed_CreateWindow();
+        if (!Windowed_CreateWindow()) {
+            return false;
+        }
     }
 
     SetupCamera();
@@ -514,6 +516,7 @@ bool Manager::SetupViewer() {
 
 
 bool Manager::CompileScene() {
+    if (!RenderData_->Viewer_) return false;
     RenderData_->Viewer_->compile();
     return true;
 }

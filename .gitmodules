@@ -3,4 +3,4 @@
 	url = https://github.com/Microsoft/vcpkg.git
 [submodule "ThirdParty/NetmorphCMake"]
 	path = ThirdParty/NetmorphCMake
-	url = https://gitlab.braingenix.org/john/netmorph-c-make-john.git
+	url = git@gitlab.braingenix.org:johnjose/netmorph-c-make-john.git

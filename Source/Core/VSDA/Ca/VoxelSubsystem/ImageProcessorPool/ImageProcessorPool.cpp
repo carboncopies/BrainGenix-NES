@@ -13,7 +13,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <stb_image.h>
 #include <stb_image_write.h>
-#include <stb_image_resize.h>
+#include <stb_image_resize2.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
@@ -194,7 +194,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             std::unique_ptr<unsigned char> ResizedPixels;
             if (ResizeImage) {
                 ResizedPixels = std::unique_ptr<unsigned char>(new unsigned char[TargetX * TargetY * Channels]());
-                stbir_resize_uint8(SourcePixels, SourceX, SourceY, SourceX * Channels, ResizedPixels.get(), TargetX, TargetY, TargetX * Channels, Channels);
+                stbir_resize_uint8_linear(SourcePixels, SourceX, SourceY, SourceX * Channels, ResizedPixels.get(), TargetX, TargetY, TargetX * Channels, (stbir_pixel_layout)Channels);
             }
 
             // -- Phase 3 -- //
