@@ -48,7 +48,7 @@ class ModelRPCInterface {
 
 private:
 
-    std::vector<std::unique_ptr<Simulation>>* Simulations_; /**NM_Vector containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
+    std::vector<std::unique_ptr<Simulation>>* Simulations_; /**Vector containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
 
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to the instance of the logging system*/
 
@@ -90,9 +90,11 @@ public:
 
     std::string SCCreate(std::string _JSONRequest);
     std::string SCNeuronCreate(std::string _JSONRequest);
+    std::string SCNeuronEdit(std::string _JSONRequest);
 
     std::string LIFCCreate(std::string _JSONRequest);
     std::string LIFCNeuronCreate(std::string _JSONRequest);
+    std::string LIFCNeuronEdit(std::string _JSONRequest);
 
     std::string PatchClampDACCreate(std::string _JSONRequest);
     std::string PatchClampDACSetOutputList(std::string _JSONRequest);

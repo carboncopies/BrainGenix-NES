@@ -65,7 +65,7 @@ vsg::ref_ptr<vsg::ProjectionMatrix> CreatePerspectiveMatrix(float _FOV, double _
  * So, if your camera is looking perfectly down, don't make the up vector on the Z axis.
  * 
  * @param _Position Position of the camera, pretty self-explanitory
- * @param _Target NM_Point where the camera is looking at.
+ * @param _Target Point where the camera is looking at.
  * @param _Up Describes what is 'up' for the camera.
  * @return vsg::ref_ptr<vsg::LookAt> 
  */

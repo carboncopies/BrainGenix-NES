@@ -69,7 +69,7 @@ namespace VSDA {
 class VSDARPCInterface {
 
 private:
-    std::vector<std::unique_ptr<Simulation>>* SimulationsPtr_; /**NM_Vector pointer containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
+    std::vector<std::unique_ptr<Simulation>>* SimulationsPtr_; /**Vector pointer containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
 
     BG::NES::Renderer::Interface* Renderer_ = nullptr; /**Pointer to instance of renderer*/
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/

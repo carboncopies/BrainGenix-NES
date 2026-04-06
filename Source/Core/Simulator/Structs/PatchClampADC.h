@@ -38,7 +38,7 @@ struct PatchClampADC {
 
     float Timestep_ms; /**Recording Timestep for this patchclamp ADC*/
 
-    std::vector<float> RecordedData_mV; /**NM_Vector containing list of recorded data in milliseconds*/
+    std::vector<float> RecordedData_mV; /**Vector containing list of recorded data in milliseconds*/
 
 
 };
