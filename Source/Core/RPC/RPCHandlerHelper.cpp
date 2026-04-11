@@ -50,6 +50,11 @@ HandlerData::HandlerData(const std::string& _JSONRequest, BG::Common::Logger::Lo
         return;
     }
 
+    if (!SimVec) {
+        Logger_->Log("NullPtr in vector of Simulations", 8);
+        Status = BGStatusCode::BGStatusInvalidParametersPassed;
+        return;
+    }
     // if (isloadingsim) {
     //     SimulationID = ManTaskData->ReplaceSimulationID;
     // } else {
