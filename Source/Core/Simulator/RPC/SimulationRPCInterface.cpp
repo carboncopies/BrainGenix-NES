@@ -265,9 +265,9 @@ std::string SimulationRPCInterface::DeleteResidentByID(std::string _JSONRequest)
     }
 
     Handle.Sim()->KeepResident = false; // Stop thread for this specific simulation
-    SimulationThreads_.at(Sim->ID).join(); // Wait to ensure stopped
-    SimulationThreads_[Sim->ID] = std::thread(); // cleared to default-constructed std:thread (does not execute)
-    Simulations_.at(Sim->ID).reset(); // Delete the Simulation object and all associated data
+    SimulationThreads_.at(Handle.Sim()->ID).join(); // Wait to ensure stopped
+    SimulationThreads_[Handle.Sim()->ID] = std::thread(); // cleared to default-constructed std:thread (does not execute)
+    Simulations_.at(Handle.Sim()->ID).reset(); // Delete the Simulation object and all associated data
 
     return Handle.ErrResponse(); // ok
 }
