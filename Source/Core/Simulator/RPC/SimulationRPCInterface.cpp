@@ -45,6 +45,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
 
     _RPCManager->AddRoute("Simulation/Create",                    std::bind(&SimulationRPCInterface::SimulationCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Reset",                     std::bind(&SimulationRPCInterface::SimulationReset, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/DeleteResidentByID",        std::bind(&SimulationRPCInterface::DeleteResidentByID, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/SetRandomSeed",             std::bind(&SimulationRPCInterface::SimulationSetSeed, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/LIFCAbstractedFunctional",  std::bind(&SimulationRPCInterface::LIFCAbstractedFunctional, this, std::placeholders::_1));
@@ -252,6 +253,24 @@ std::string SimulationRPCInterface::SimulationReset(std::string _JSONRequest) {
     return Handle.ErrResponse(); // ok
 }
 
+/**
+ * Delete the simulation indicated by its ID from the memory-resident simulations.
+ * This can be used to free up resources.
+ */
+std::string SimulationRPCInterface::DeleteResidentByID(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/DeleteResidentByID", &Simulations_, false, false);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    Handle.Sim()->KeepResident = false; // Stop thread for this specific simulation
+    SimulationThreads_.at(Sim->ID).join(); // Wait to ensure stopped
+    SimulationThreads_[Sim->ID] = std::thread(); // cleared to default-constructed std:thread (does not execute)
+    Simulations_.at(Sim->ID).reset(); // Delete the Simulation object and all associated data
+
+    return Handle.ErrResponse(); // ok
+}
 
 std::string SimulationRPCInterface::SimulationSetSeed(std::string _JSONRequest) {
 
