@@ -62,7 +62,7 @@ std::string NetmorphRPCInterface::NetmorphSetModelfile(std::string _JSONRequest)
     }
 
     // Now Populate Modelfile
-    Handle.Sim()->NetmorphParams.ModelContent = ModelFileString;
+    Handle.Sim()->NetmorphParams->ModelContent = ModelFileString;
 
     // Return Result ID
     return Handle.ResponseWithID("NetmorphStatus", 0); // ok
@@ -82,7 +82,7 @@ std::string NetmorphRPCInterface::NetmorphStartSimulation(std::string _JSONReque
     }
 
     std::string NeuronClass;
-    if ((!Handle.GetParString("ModelContent", Handle.Sim()->NetmorphParams.ModelContent))
+    if ((!Handle.GetParString("ModelContent", Handle.Sim()->NetmorphParams->ModelContent))
         || (!Handle.GetParString("NeuronClass", NeuronClass))) {
         return Handle.ErrResponse();
     }
@@ -95,9 +95,9 @@ std::string NetmorphRPCInterface::NetmorphStartSimulation(std::string _JSONReque
 
     // Now Populate Modelfile
     int Status = 0;
-    if (Handle.Sim()->NetmorphParams.State != Netmorph_WORKING && Handle.Sim()->NetmorphParams.State != Netmorph_REQUESTED) {
-        Handle.Sim()->NetmorphParams.State = Netmorph_REQUESTED;
-        Handle.Sim()->NetmorphParams.Progress_percent = 0;
+    if (Handle.Sim()->NetmorphParams->State != Netmorph_WORKING && Handle.Sim()->NetmorphParams->State != Netmorph_REQUESTED) {
+        Handle.Sim()->NetmorphParams->State = Netmorph_REQUESTED;
+        Handle.Sim()->NetmorphParams->Progress_percent = 0;
     } else {
         Status = 3; // Something is broken
     }
@@ -116,17 +116,17 @@ std::string NetmorphRPCInterface::NetmorphStartSimulation(std::string _JSONReque
             return Handle.ErrResponse();
         }
     }
-    Handle.Sim()->NetmorphParams.OutputDirectory = NetmorphOutputPath;
+    Handle.Sim()->NetmorphParams->OutputDirectory = NetmorphOutputPath;
 
     // Start Worker Thread
-    Handle.Sim()->NetmorphParams.Sim = Handle.Sim();
+    Handle.Sim()->NetmorphParams->Sim = Handle.Sim();
     Logger_->Log("Starting Netmorph Worker Thread", 4);
-    Handle.Sim()->NetmorphWorkerThread = std::thread(ExecuteNetmorphOperation, Logger_, &Handle.Sim()->NetmorphParams);
+    Handle.Sim()->NetmorphWorkerThread = std::thread(ExecuteNetmorphOperation, Logger_, Handle.Sim()->NetmorphParams.get());
 
     // Build Response
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = Handle.GetStatus();
-    ResponseJSON["NetmorphOutputDirectory"] = Handle.Sim()->NetmorphParams.OutputDirectory;
+    ResponseJSON["NetmorphOutputDirectory"] = Handle.Sim()->NetmorphParams->OutputDirectory;
     ResponseJSON["NetmorphStatus"] = Status;
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
@@ -149,18 +149,18 @@ std::string NetmorphRPCInterface::NetmorphGetStatus(std::string _JSONRequest) {
 
     // Return Result ID
     std::string Status = "None";
-    if (Handle.Sim()->NetmorphParams.State == Netmorph_REQUESTED) {
+    if (Handle.Sim()->NetmorphParams->State == Netmorph_REQUESTED) {
         Status = "Requested";
-    } else if (Handle.Sim()->NetmorphParams.State == Netmorph_WORKING) {
+    } else if (Handle.Sim()->NetmorphParams->State == Netmorph_WORKING) {
         Status = "Working";
-    } else if (Handle.Sim()->NetmorphParams.State == Netmorph_DONE) {
+    } else if (Handle.Sim()->NetmorphParams->State == Netmorph_DONE) {
         Status = "Done";
     }
 
     // Build Response
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0;
-    ResponseJSON["Progress_percent"] = Handle.Sim()->NetmorphParams.Progress_percent;
+    ResponseJSON["Progress_percent"] = Handle.Sim()->NetmorphParams->Progress_percent;
     ResponseJSON["NetmorphStatus"] = Status;
     return ResponseJSON.dump();
 
@@ -192,7 +192,7 @@ std::string NetmorphRPCInterface::NetmorphGetFile(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    std::string NetmorphOutputDirectory(Handle.Sim()->NetmorphParams.Result.net->get_outputdirectory().chars());
+    std::string NetmorphOutputDirectory(Handle.Sim()->NetmorphParams->Result.net->get_outputdirectory().chars());
     std::string FilePath(NetmorphOutputDirectory+FileID);
 
     // Open the file, see if it is valid.

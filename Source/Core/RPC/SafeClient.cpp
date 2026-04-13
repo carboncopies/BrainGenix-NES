@@ -180,6 +180,7 @@ void SafeClient::RPCManagerThread() {
 
         // If not healthy, re-establish connection, retry stuff... For now, nothing...
         if (!IsHealthy) {
+            Logger_->Log("DEBUG: Reestablish connection", 8);
             if (!Connect()) {
                 Logger_->Log("Failed To Reconnect To RPC Service (Connect() returned false)", 3);
             }

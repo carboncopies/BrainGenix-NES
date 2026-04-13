@@ -35,13 +35,13 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
 
             // Okay, we got work, now render this simulation
             Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Detecting Work For Simulation " + std::to_string(SimToProcess->ID), 5);
-            if (SimToProcess->VSDAData_.State_ == VSDA_RENDER_REQUESTED) {
+            if (SimToProcess->VSDAData_->State_ == VSDA_RENDER_REQUESTED) {
                 Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering EM Stack For Simulation " + std::to_string(SimToProcess->ID), 5);
                 VSDA::ExecuteSubRenderOperations(Config_, Logger_, SimToProcess, EMImageProcessorPool_.get(), EMArrayGeneratorPool_.get());
-            } else if (SimToProcess->CaData_.State_ == ::BG::NES::VSDA::Calcium::CA_RENDER_REQUESTED) {
+            } else if (SimToProcess->CaData_->State_ == ::BG::NES::VSDA::Calcium::CA_RENDER_REQUESTED) {
                 Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Rendering Calcium Stack For Simulation " + std::to_string(SimToProcess->ID), 5);
                 ::BG::NES::VSDA::Calcium::ExecuteCaSubRenderOperations(Logger_, SimToProcess, CalciumImageProcessorPool_.get(), CalciumArrayGeneratorPool_.get());
-            } else if (SimToProcess->VSDAData_.State_ == VSDA_CONVERSION_REQUESTED) {
+            } else if (SimToProcess->VSDAData_->State_ == VSDA_CONVERSION_REQUESTED) {
                 Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Converting EM Stack To Neuroglancer Precomputed Format For Simulation " + std::to_string(SimToProcess->ID), 5);
                 ExecuteConversionOperation(Logger_, SimToProcess, EMImageConversionPool_.get());
             }

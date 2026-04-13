@@ -278,6 +278,31 @@ std::string SimulationRPCInterface::DeleteResidentByID(std::string _JSONRequest)
     std::this_thread::sleep_for(std::chrono::seconds(3));
     int simid = Handle.Sim()->ID;
     Logger_->Log("Number of simulations is "+std::to_string(Simulations_.size())+" and sim to delete is "+std::to_string(simid), 3);
+    // *** Testing what part of the Simulation object may not be deleting clean
+    Handle.Sim()->MasterRandom_.reset();
+    Handle.Sim()->NetmorphWorkerThread = std::thread();
+    Handle.Sim()->Neurons.clear();
+    Handle.Sim()->TRecorded_ms.clear();
+    Handle.Sim()->TInstruments_ms.clear();
+    Handle.Sim()->RecordingElectrodes.clear();
+    Handle.Sim()->Regions.clear();
+    Handle.Sim()->NeuralCircuits.clear();
+    Handle.Sim()->Collection.Clear();
+    Handle.Sim()->BSCompartments.clear();
+    Handle.Sim()->LIFCCompartments.clear();
+    Handle.Sim()->NeuronByCompartment.clear();
+    Handle.Sim()->Staples.clear();
+    Handle.Sim()->Receptors.clear();
+    Handle.Sim()->LIFCReceptors.clear();
+    Handle.Sim()->ReceptorDataVec.clear();
+    Handle.Sim()->LIFCReceptorDataVec.clear();
+    Handle.Sim()->PatchClampDACs.clear();
+    Handle.Sim()->PatchClampADCs.clear();
+    Handle.Sim()->VSDAData_.reset();
+    Handle.Sim()->CaData_.reset();
+    Handle.Sim()->VisualizerParams.reset();
+    Handle.Sim()->NetmorphParams.reset();
+    Handle.Sim()->ClearStoredRequests();
     Simulations_[Handle.Sim()->ID].reset(); // Delete the Simulation object and all associated data
     Logger_->Log("D5 ", 3);
 

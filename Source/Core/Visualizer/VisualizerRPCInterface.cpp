@@ -54,7 +54,7 @@ std::string VisualizerRPCInterface::VisualizerGetStatus(std::string _JSONRequest
     }
 
     // Return Result ID
-    return Handle.ResponseWithID("VisualizerStatus", Handle.Sim()->VisualizerParams.State); // ok
+    return Handle.ResponseWithID("VisualizerStatus", Handle.Sim()->VisualizerParams->State); // ok
 }
 
 
@@ -72,7 +72,7 @@ std::string VisualizerRPCInterface::VisualizerGetImageHandles(std::string _JSONR
     }
   
     // Return Result ID
-    std::string ImageHandleStrings = nlohmann::json(Handle.Sim()->VisualizerParams.FileHandles).dump();
+    std::string ImageHandleStrings = nlohmann::json(Handle.Sim()->VisualizerParams->FileHandles).dump();
     return Handle.StringResponse("ImageHandles", ImageHandleStrings); // ok
 }
 
@@ -172,25 +172,25 @@ std::string VisualizerRPCInterface::VisualizerGenerateImages(std::string _JSONRe
     for (auto& ThisLocation: LocationIterator.value()) {
         Geometries::Vec3D Position;
         Handle.GetParVec3FromJSON("CameraPosition", Position, ThisLocation);
-        Handle.Sim()->VisualizerParams.CameraPositionList_um.push_back(vsg::dvec3(Position.x, Position.y, Position.z));
+        Handle.Sim()->VisualizerParams->CameraPositionList_um.push_back(vsg::dvec3(Position.x, Position.y, Position.z));
 
         Geometries::Vec3D LookAtPosition;
         Handle.GetParVec3FromJSON("CameraLookAtPosition", Position, ThisLocation);
-        Handle.Sim()->VisualizerParams.CameraLookAtPositionList_um.push_back(vsg::dvec3(LookAtPosition.x, LookAtPosition.y, LookAtPosition.z));
+        Handle.Sim()->VisualizerParams->CameraLookAtPositionList_um.push_back(vsg::dvec3(LookAtPosition.x, LookAtPosition.y, LookAtPosition.z));
 
         float FOV_deg;
         Handle.GetParFloat("CameraFOV_deg", FOV_deg, ThisLocation);
-        Handle.Sim()->VisualizerParams.FOVList_deg.push_back(FOV_deg);
+        Handle.Sim()->VisualizerParams->FOVList_deg.push_back(FOV_deg);
     }
 
-    Handle.Sim()->VisualizerParams.VisualizeElectrodes = true;          // Force the electrodes to be visualized for now -------------------------------------------
+    Handle.Sim()->VisualizerParams->VisualizeElectrodes = true;          // Force the electrodes to be visualized for now -------------------------------------------
 
-    Handle.GetParInt("ImageWidth_px", Handle.Sim()->VisualizerParams.ImageWidth_px);
-    Handle.GetParInt("ImageHeight_px", Handle.Sim()->VisualizerParams.ImageHeight_px);
+    Handle.GetParInt("ImageWidth_px", Handle.Sim()->VisualizerParams->ImageWidth_px);
+    Handle.GetParInt("ImageHeight_px", Handle.Sim()->VisualizerParams->ImageHeight_px);
 
 
     // Get Optional Params
-    Handle.GetParVecInt("Optional_VisibleNeuronIDs", Handle.Sim()->VisualizerParams.Optional_VisibleNeuronIDs, true);
+    Handle.GetParVecInt("Optional_VisibleNeuronIDs", Handle.Sim()->VisualizerParams->Optional_VisibleNeuronIDs, true);
 
     if (Handle.HasError()) {
         return Handle.ErrResponse();
@@ -199,7 +199,7 @@ std::string VisualizerRPCInterface::VisualizerGenerateImages(std::string _JSONRe
     
 
     Handle.Sim()->CurrentTask = SIMULATION_VISUALIZATION;
-    Handle.Sim()->VisualizerParams.State = VISUALIZER_REQUESTED;
+    Handle.Sim()->VisualizerParams->State = VISUALIZER_REQUESTED;
     Handle.Sim()->WorkRequested = true;
 
 

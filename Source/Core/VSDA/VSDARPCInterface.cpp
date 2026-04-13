@@ -239,7 +239,7 @@ std::string VSDARPCInterface::VSDAEMQueueRenderOperation(std::string _JSONReques
 
 
     // Check Region ID
-    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_.RenderedImagePaths_.size()) {
+    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_->RenderedImagePaths_.size()) {
         Logger_->Log(std::string("VSDA EM GetImageStack Error, ScanRegion With ID ") + std::to_string(ScanRegionID) + " Does Not Exist", 7);
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 3; // Error
@@ -269,18 +269,18 @@ std::string VSDARPCInterface::VSDAEMGetRenderStatus(std::string _JSONRequest) {
     // Build Response
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0;
-    ResponseJSON["RenderStatus"] = ThisSimulation->VSDAData_.State_;
-    ResponseJSON["CurrentSlice"] = ThisSimulation->VSDAData_.CurrentSlice_;
-    ResponseJSON["TotalSlices"] = ThisSimulation->VSDAData_.TotalSlices_;
-    ResponseJSON["CurrentSliceImage"] = ThisSimulation->VSDAData_.CurrentSliceImage_;
-    ResponseJSON["TotalSliceImages"] = ThisSimulation->VSDAData_.TotalSliceImages_;
-    ResponseJSON["CurrentRegion"] = ThisSimulation->VSDAData_.CurrentRegion_;
-    ResponseJSON["TotalRegions"] = ThisSimulation->VSDAData_.TotalRegions_;
-    ResponseJSON["TotalImagesX"] = ThisSimulation->VSDAData_.TotalImagesX_;
-    ResponseJSON["TotalImagesY"] = ThisSimulation->VSDAData_.TotalImagesY_;
-    ResponseJSON["CurrentOperation"] = ThisSimulation->VSDAData_.CurrentOperation_;
-    ResponseJSON["VoxelQueueLength"] = ThisSimulation->VSDAData_.VoxelQueueLength_;
-    ResponseJSON["TotalVoxelQueueLength"] = ThisSimulation->VSDAData_.TotalVoxelQueueLength_;
+    ResponseJSON["RenderStatus"] = ThisSimulation->VSDAData_->State_;
+    ResponseJSON["CurrentSlice"] = ThisSimulation->VSDAData_->CurrentSlice_;
+    ResponseJSON["TotalSlices"] = ThisSimulation->VSDAData_->TotalSlices_;
+    ResponseJSON["CurrentSliceImage"] = ThisSimulation->VSDAData_->CurrentSliceImage_;
+    ResponseJSON["TotalSliceImages"] = ThisSimulation->VSDAData_->TotalSliceImages_;
+    ResponseJSON["CurrentRegion"] = ThisSimulation->VSDAData_->CurrentRegion_;
+    ResponseJSON["TotalRegions"] = ThisSimulation->VSDAData_->TotalRegions_;
+    ResponseJSON["TotalImagesX"] = ThisSimulation->VSDAData_->TotalImagesX_;
+    ResponseJSON["TotalImagesY"] = ThisSimulation->VSDAData_->TotalImagesY_;
+    ResponseJSON["CurrentOperation"] = ThisSimulation->VSDAData_->CurrentOperation_;
+    ResponseJSON["VoxelQueueLength"] = ThisSimulation->VSDAData_->VoxelQueueLength_;
+    ResponseJSON["TotalVoxelQueueLength"] = ThisSimulation->VSDAData_->TotalVoxelQueueLength_;
 
     return ResponseJSON.dump();
 
@@ -302,7 +302,7 @@ std::string VSDARPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
 
 
     // Check Region ID
-    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_.RenderedImagePaths_.size()) {
+    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_->RenderedImagePaths_.size()) {
         Logger_->Log(std::string("VSDA EM GetImageStack Error, ScanRegion With ID ") + std::to_string(ScanRegionID) + " Does Not Exist", 7);
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 3; // Error
@@ -313,10 +313,10 @@ std::string VSDARPCInterface::VSDAEMGetImageStack(std::string _JSONRequest) {
     // Build Response
     nlohmann::json ResponseJSON;
 
-    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
+    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_->State_ != VSDA_RENDER_DONE;
 
-    nlohmann::json ImagePaths = ThisSimulation->VSDAData_.Regions_[ScanRegionID].ImageFilenames_;
-    Logger_->Log(std::string("VSDA EM GetImageStack Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
+    nlohmann::json ImagePaths = ThisSimulation->VSDAData_->Regions_[ScanRegionID].ImageFilenames_;
+    Logger_->Log(std::string("VSDA EM GetImageStack Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_->RenderedImagePaths_.size()) + " Layers", 4);
     ResponseJSON["RenderedImages"] = ImagePaths;
 
 
@@ -341,14 +341,14 @@ std::string VSDARPCInterface::VSDAEMGetIndexData(std::string _JSONRequest) {
 
 
     // Check Region ID
-    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_.RenderedImagePaths_.size()) {
+    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_->RenderedImagePaths_.size()) {
         Logger_->Log(std::string("VSDA EM GetIndexData Error, ScanRegion With ID ") + std::to_string(ScanRegionID) + " Does Not Exist", 7);
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 3; // Error
         return ResponseJSON.dump();
     } 
 
-    ScanRegion* Region = &ThisSimulation->VSDAData_.Regions_[ScanRegionID];
+    ScanRegion* Region = &ThisSimulation->VSDAData_->Regions_[ScanRegionID];
 
     // Sanity check
     if (Region->ImageFilenames_.size() != Region->ImageVoxelIndexes_.size()) {
@@ -378,7 +378,7 @@ std::string VSDARPCInterface::VSDAEMGetIndexData(std::string _JSONRequest) {
 
 
 
-    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
+    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_->State_ != VSDA_RENDER_DONE;
 
     ResponseJSON["RegionStartXIndex"] = Region->RegionIndexInfo_.StartX;
     ResponseJSON["RegionStartYIndex"] = Region->RegionIndexInfo_.StartY;
@@ -388,7 +388,7 @@ std::string VSDARPCInterface::VSDAEMGetIndexData(std::string _JSONRequest) {
     ResponseJSON["RegionEndZIndex"] = Region->RegionIndexInfo_.EndZ;
 
     nlohmann::json ImagePropertiesJSON = ImageProperties;
-    Logger_->Log(std::string("VSDA EM GetIndexData Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
+    Logger_->Log(std::string("VSDA EM GetIndexData Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_->RenderedImagePaths_.size()) + " Layers", 4);
     ResponseJSON["ImageProperties"] = ImagePropertiesJSON;
 
 
@@ -413,14 +413,14 @@ std::string VSDARPCInterface::VSDAEMPrepareNeuroglancerDataset(std::string _JSON
 
 
     // Check Region ID
-    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_.RenderedImagePaths_.size()) {
+    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_->RenderedImagePaths_.size()) {
         Logger_->Log(std::string("VSDA EM PrepareNeuroglancerDataset Error, ScanRegion With ID ") + std::to_string(ScanRegionID) + " Does Not Exist", 7);
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 3; // Error
         return ResponseJSON.dump();
     } 
 
-    ScanRegion* Region = &ThisSimulation->VSDAData_.Regions_[ScanRegionID];
+    ScanRegion* Region = &ThisSimulation->VSDAData_->Regions_[ScanRegionID];
 
     // Sanity check
     if (Region->ImageFilenames_.size() != Region->ImageVoxelIndexes_.size()) {
@@ -428,15 +428,15 @@ std::string VSDARPCInterface::VSDAEMPrepareNeuroglancerDataset(std::string _JSON
         return "{\"StatusCode\":\"Help\"}";
     }
 
-    if (ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE) {
+    if (ThisSimulation->VSDAData_->State_ != VSDA_RENDER_DONE) {
         Logger_->Log(std::string("VSDA EM Called On Simulation Not Yet Rendered"), 7);
         return Handle.ErrResponse();
     }
 
 
     // Setup Enums, Indicate that work is requested
-    ThisSimulation->VSDAData_.ActiveRegionID_ = ScanRegionID;
-    ThisSimulation->VSDAData_.State_ = VSDA_CONVERSION_REQUESTED;
+    ThisSimulation->VSDAData_->ActiveRegionID_ = ScanRegionID;
+    ThisSimulation->VSDAData_->State_ = VSDA_CONVERSION_REQUESTED;
     ThisSimulation->CurrentTask = SIMULATION_VSDA;
     ThisSimulation->WorkRequested = true;
 
@@ -446,9 +446,9 @@ std::string VSDARPCInterface::VSDAEMPrepareNeuroglancerDataset(std::string _JSON
 
 
 
-    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
+    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_->State_ != VSDA_RENDER_DONE;
 
-    Logger_->Log(std::string("VSDA EM PrepareNeuroglancerDataset Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
+    Logger_->Log(std::string("VSDA EM PrepareNeuroglancerDataset Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_->RenderedImagePaths_.size()) + " Layers", 4);
 
 
     return ResponseJSON.dump();
@@ -472,14 +472,14 @@ std::string VSDARPCInterface::VSDAEMGetDatasetHandle(std::string _JSONRequest) {
 
 
     // Check Region ID
-    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_.RenderedImagePaths_.size()) {
+    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_->RenderedImagePaths_.size()) {
         Logger_->Log(std::string("VSDA EM GetDatasetHandle Error, ScanRegion With ID ") + std::to_string(ScanRegionID) + " Does Not Exist", 7);
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 3; // Error
         return ResponseJSON.dump();
     } 
 
-    ScanRegion* Region = &ThisSimulation->VSDAData_.Regions_[ScanRegionID];
+    ScanRegion* Region = &ThisSimulation->VSDAData_->Regions_[ScanRegionID];
 
     // Sanity check
     if (Region->ImageFilenames_.size() != Region->ImageVoxelIndexes_.size()) {
@@ -487,7 +487,7 @@ std::string VSDARPCInterface::VSDAEMGetDatasetHandle(std::string _JSONRequest) {
         return "{\"StatusCode\":\"Help\"}";
     }
 
-    if (ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE) {
+    if (ThisSimulation->VSDAData_->State_ != VSDA_RENDER_DONE) {
         Logger_->Log(std::string("VSDA EM Called On Simulation Not Yet Rendered"), 7);
         return Handle.ErrResponse();
     }
@@ -498,7 +498,7 @@ std::string VSDARPCInterface::VSDAEMGetDatasetHandle(std::string _JSONRequest) {
    
     // Build Response
     nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
+    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_->State_ != VSDA_RENDER_DONE;
     ResponseJSON["DatasetHandle"] = Region->NeuroglancerDatasetHandle_;
 
     Logger_->Log(std::string("VSDA EM GetDatasetHandle Called On Simulation With ID ") + std::to_string(ThisSimulation->ID), 4);
@@ -525,14 +525,14 @@ std::string VSDARPCInterface::VSDAEMGetNeuroglancerDatasetURL(std::string _JSONR
 
 
     // Check Region ID
-    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_.RenderedImagePaths_.size()) {
+    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->VSDAData_->RenderedImagePaths_.size()) {
         Logger_->Log(std::string("VSDA EM GetNeuroglancerDatasetURL Error, ScanRegion With ID ") + std::to_string(ScanRegionID) + " Does Not Exist", 7);
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 3; // Error
         return ResponseJSON.dump();
     } 
 
-    ScanRegion* Region = &ThisSimulation->VSDAData_.Regions_[ScanRegionID];
+    ScanRegion* Region = &ThisSimulation->VSDAData_->Regions_[ScanRegionID];
 
     // Sanity check
     if (Region->ImageFilenames_.size() != Region->ImageVoxelIndexes_.size()) {
@@ -551,12 +551,12 @@ std::string VSDARPCInterface::VSDAEMGetNeuroglancerDatasetURL(std::string _JSONR
     // }
     // nlohmann::json Result = nlohmann::json::parse(QueryResult);
     
-    std::string URL = GenerateNeuroglancerURL(Region->NeuroglancerDatasetHandle_, ThisSimulation->VSDAData_.Params_.GenerateSegmentation);
+    std::string URL = GenerateNeuroglancerURL(Region->NeuroglancerDatasetHandle_, ThisSimulation->VSDAData_->Params_.GenerateSegmentation);
    
     // Build Response
-    Logger_->Log(std::string("VSDA EM GetNeuroglancerDatasetURL Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
+    Logger_->Log(std::string("VSDA EM GetNeuroglancerDatasetURL Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_->RenderedImagePaths_.size()) + " Layers", 4);
     nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_.State_ != VSDA_RENDER_DONE;
+    ResponseJSON["StatusCode"] = ThisSimulation->VSDAData_->State_ != VSDA_RENDER_DONE;
     ResponseJSON["NeuroglancerURL"] = URL;
 
     return ResponseJSON.dump();
@@ -684,7 +684,7 @@ std::string VSDARPCInterface::VSDACASetupMicroscope(std::string _JSONRequest) {
 
     int Result = !NES::VSDA::Calcium::VSDA_CA_SetupMicroscope(Logger_, Handle.Sim(), Params);
 
-    Handle.Sim()->CaData_.CaImaging.Init(Handle.Sim(), Handle.Sim()->CaData_.Params_);
+    Handle.Sim()->CaData_->CaImaging.Init(Handle.Sim(), Handle.Sim()->CaData_->Params_);
 
     // Build Response
     return Handle.ErrResponse();
@@ -779,13 +779,13 @@ std::string VSDARPCInterface::VSDACAGetRenderStatus(std::string _JSONRequest) {
     // Build Response
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0;
-    ResponseJSON["RenderStatus"] = ThisSimulation->CaData_.State_;
-    ResponseJSON["CurrentSlice"] = ThisSimulation->CaData_.CurrentSlice_;
-    ResponseJSON["TotalSlices"] = ThisSimulation->CaData_.TotalSlices_;
-    ResponseJSON["CurrentSliceImage"] = ThisSimulation->CaData_.CurrentSliceImage_;
-    ResponseJSON["TotalSliceImages"] = ThisSimulation->CaData_.TotalSliceImages_;
-    ResponseJSON["CurrentRegion"] = ThisSimulation->CaData_.CurrentRegion_;
-    ResponseJSON["TotalRegions"] = ThisSimulation->CaData_.TotalRegions_;
+    ResponseJSON["RenderStatus"] = ThisSimulation->CaData_->State_;
+    ResponseJSON["CurrentSlice"] = ThisSimulation->CaData_->CurrentSlice_;
+    ResponseJSON["TotalSlices"] = ThisSimulation->CaData_->TotalSlices_;
+    ResponseJSON["CurrentSliceImage"] = ThisSimulation->CaData_->CurrentSliceImage_;
+    ResponseJSON["TotalSliceImages"] = ThisSimulation->CaData_->TotalSliceImages_;
+    ResponseJSON["CurrentRegion"] = ThisSimulation->CaData_->CurrentRegion_;
+    ResponseJSON["TotalRegions"] = ThisSimulation->CaData_->TotalRegions_;
 
     return ResponseJSON.dump();
 
@@ -807,7 +807,7 @@ std::string VSDARPCInterface::VSDACAGetImageStack(std::string _JSONRequest) {
 
 
     // Check Region ID
-    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->CaData_.RenderedImagePaths_.size()) {
+    if (ScanRegionID < 0 || ScanRegionID >= ThisSimulation->CaData_->RenderedImagePaths_.size()) {
         Logger_->Log(std::string("VSDA Ca GetImageStack Error, ScanRegion With ID ") + std::to_string(ScanRegionID) + " Does Not Exist", 7);
         nlohmann::json ResponseJSON;
         ResponseJSON["StatusCode"] = 3; // Error
@@ -818,10 +818,10 @@ std::string VSDARPCInterface::VSDACAGetImageStack(std::string _JSONRequest) {
     // Build Response
     nlohmann::json ResponseJSON;
 
-    ResponseJSON["StatusCode"] = ThisSimulation->CaData_.State_ != NES::VSDA::Calcium::CA_RENDER_DONE;
+    ResponseJSON["StatusCode"] = ThisSimulation->CaData_->State_ != NES::VSDA::Calcium::CA_RENDER_DONE;
 
-    nlohmann::json ImagePaths = ThisSimulation->CaData_.RenderedImagePaths_[ScanRegionID];
-    Logger_->Log(std::string("VSDA Ca GetImageStack Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_.RenderedImagePaths_.size()) + " Layers", 4);
+    nlohmann::json ImagePaths = ThisSimulation->CaData_->RenderedImagePaths_[ScanRegionID];
+    Logger_->Log(std::string("VSDA Ca GetImageStack Called On Simulation With ID ") + std::to_string(ThisSimulation->ID) + ", Found " + std::to_string(ThisSimulation->VSDAData_->RenderedImagePaths_.size()) + " Layers", 4);
     ResponseJSON["RenderedImages"] = ImagePaths;
 
 

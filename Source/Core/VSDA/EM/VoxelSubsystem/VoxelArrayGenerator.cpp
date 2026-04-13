@@ -120,7 +120,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     size_t AddedSpheres = 0;
     size_t AddedCylinders = 0;
     size_t AddedCylinderEnds = 0;
-    _Sim->VSDAData_.TotalVoxelQueueLength_ = 0;
+    _Sim->VSDAData_->TotalVoxelQueueLength_ = 0;
     auto StartTime = std::chrono::high_resolution_clock::now();
     for (size_t i = 0; i < numcompartments; i++) {
 
@@ -196,7 +196,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                     Task->CustomTotalComponents = NumSegments;
 
                     // Update Total Queue Length Statistics
-                    _Sim->VSDAData_.TotalVoxelQueueLength_++;
+                    _Sim->VSDAData_->TotalVoxelQueueLength_++;
 
                     // Now, enqueue it
                     _GeneratorPool->QueueWorkOperation(Task.get());
@@ -271,7 +271,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                         Task->CustomTotalComponents = NumSegments;
 
                         // Update Total Queue Length Statistics
-                        _Sim->VSDAData_.TotalVoxelQueueLength_++;
+                        _Sim->VSDAData_->TotalVoxelQueueLength_++;
 
                         // Now, enqueue it
                         _GeneratorPool->QueueWorkOperation(Task.get());
@@ -303,7 +303,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 
                         // Update Total Queue Length Statistics
-                        _Sim->VSDAData_.TotalVoxelQueueLength_++;
+                        _Sim->VSDAData_->TotalVoxelQueueLength_++;
 
 
                         // Now, enqueue it
@@ -379,7 +379,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
             AddedShapes++;
 
             // Update Total Queue Length Statistics
-            _Sim->VSDAData_.TotalVoxelQueueLength_++;
+            _Sim->VSDAData_->TotalVoxelQueueLength_++;
 
             _GeneratorPool->QueueWorkOperation(Task.get());
 
@@ -404,7 +404,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
             for (int i = 0; i < NumTearsThisSlice; i++) {
                 int NumShapes = GenerateTear(_Logger, Tasks, _GeneratorPool, _Region, _Params, _Array, Info, z, Generator());
                 AddedShapes += NumShapes;
-                _Sim->VSDAData_.TotalVoxelQueueLength_ += NumShapes;
+                _Sim->VSDAData_->TotalVoxelQueueLength_ += NumShapes;
             }
 
         }
@@ -424,8 +424,8 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     while (_GeneratorPool->GetQueueSize() != 0) {
 
         // Update Progress Bar
-        _Sim->VSDAData_.CurrentOperation_ = "Rasterization";
-        _Sim->VSDAData_.VoxelQueueLength_ = _GeneratorPool->GetQueueSize();
+        _Sim->VSDAData_->CurrentOperation_ = "Rasterization";
+        _Sim->VSDAData_->VoxelQueueLength_ = _GeneratorPool->GetQueueSize();
 
         // Wait for a bit
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));

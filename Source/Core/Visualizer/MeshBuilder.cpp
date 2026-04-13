@@ -84,7 +84,7 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
         int CompartmentID = i; //_Simulation->BSCompartments[i].ID;
         int AssocNeuronID = _Simulation->GetNeuronIndexByCompartment(CompartmentID);
         
-        bool DrawThisNeuron = std::find(_Simulation->VisualizerParams.Optional_VisibleNeuronIDs.begin(), _Simulation->VisualizerParams.Optional_VisibleNeuronIDs.end(), AssocNeuronID) != _Simulation->VisualizerParams.Optional_VisibleNeuronIDs.end();
+        bool DrawThisNeuron = std::find(_Simulation->VisualizerParams->Optional_VisibleNeuronIDs.begin(), _Simulation->VisualizerParams->Optional_VisibleNeuronIDs.end(), AssocNeuronID) != _Simulation->VisualizerParams->Optional_VisibleNeuronIDs.end();
 
         if (_Simulation->Collection.IsBox(ShapeID)) { // (std::holds_alternative<Geometries::Box>(_Simulation->Collection.Geometries[ShapeID])) {
             const Geometries::Box & Box = _Simulation->Collection.GetBox(ShapeID); // Geometries::Box Box = std::get<Geometries::Box>(_Simulation->Collection.Geometries[ShapeID]);
@@ -120,7 +120,7 @@ bool BuildMeshFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, Rendere
             const Geometries::Cylinder & Cylinder = _Simulation->Collection.GetCylinder(ShapeID); // Geometries::Cylinder Cylinder = std::get<Geometries::Cylinder>(_Simulation->Collection.Geometries[ShapeID]);
             
             // If both the optional filter list is provided, AND this neuron isn't in the list, don't draw the compartments.
-            if ((_Simulation->VisualizerParams.Optional_VisibleNeuronIDs.size() != 0) && (!DrawThisNeuron)) {
+            if ((_Simulation->VisualizerParams->Optional_VisibleNeuronIDs.size() != 0) && (!DrawThisNeuron)) {
                 continue;
             }
 
