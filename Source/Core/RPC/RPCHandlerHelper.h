@@ -90,6 +90,8 @@ public:
 
     //bool CheckCompatibility(Simulator::SimulationNeuronClass _NewObjectCategory);
 
+    void ResetThisSimulation() { ThisSimulation = nullptr; }
+
     bool FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, nlohmann::json& _JSON, bool _Optional = false);
     bool FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, bool _Optional = false);
 
