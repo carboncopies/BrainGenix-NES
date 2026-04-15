@@ -120,6 +120,7 @@ public:
      */
     std::string SimulationCreate(std::string _JSONRequest);
     std::string SimulationReset(std::string _JSONRequest);
+    std::string SimulationDestroy(std::string _JSONRequest);
 
     std::string SimulationSetSeed(std::string _JSONRequest);
     std::string LIFCAbstractedFunctional(std::string _JSONRequest);

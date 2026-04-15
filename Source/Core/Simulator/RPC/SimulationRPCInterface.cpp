@@ -45,6 +45,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
 
     _RPCManager->AddRoute("Simulation/Create",                    std::bind(&SimulationRPCInterface::SimulationCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Reset",                     std::bind(&SimulationRPCInterface::SimulationReset, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/Destroy",                   std::bind(&SimulationRPCInterface::SimulationDestroy, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/SetRandomSeed",             std::bind(&SimulationRPCInterface::SimulationSetSeed, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/LIFCAbstractedFunctional",  std::bind(&SimulationRPCInterface::LIFCAbstractedFunctional, this, std::placeholders::_1));
@@ -250,6 +251,64 @@ std::string SimulationRPCInterface::SimulationReset(std::string _JSONRequest) {
 
     // Return Result ID
     return Handle.ErrResponse(); // ok
+}
+
+
+std::string SimulationRPCInterface::SimulationDestroy(std::string _JSONRequest) {
+
+    nlohmann::json ReqJSON;
+    try {
+        ReqJSON = nlohmann::json::parse(_JSONRequest);
+    } catch (...) {
+        nlohmann::json Response;
+        Response["StatusCode"] = API::BGStatusCode::BGStatusInvalidParametersPassed;
+        Response["Error"] = "Invalid JSON in request";
+        return Response.dump();
+    }
+
+    // Get SimulationID from request
+    if (!ReqJSON.contains("SimulationID") || !ReqJSON["SimulationID"].is_number()) {
+        nlohmann::json Response;
+        Response["StatusCode"] = API::BGStatusCode::BGStatusInvalidParametersPassed;
+        Response["Error"] = "Missing or invalid SimulationID parameter";
+        return Response.dump();
+    }
+
+    int SimulationID = ReqJSON["SimulationID"];
+
+    // Validate simulation ID
+    if (SimulationID < 0 || SimulationID >= (int)Simulations_.size()) {
+        nlohmann::json Response;
+        Response["StatusCode"] = API::BGStatusCode::BGStatusInvalidParametersPassed;
+        Response["Error"] = "SimulationID out of range";
+        return Response.dump();
+    }
+
+    Simulation* sim = Simulations_[SimulationID].get();
+
+    // Check if simulation already destroyed
+    if (!sim) {
+        nlohmann::json Response;
+        Response["StatusCode"] = API::BGStatusCode::BGStatusInvalidParametersPassed;
+        Response["Error"] = "Simulation already destroyed";
+        return Response.dump();
+    }
+
+    // Check if simulation is busy (IsProcessing or WorkRequested)
+    if (sim->IsProcessing || sim->WorkRequested) {
+        nlohmann::json Response;
+        Response["StatusCode"] = API::BGStatusCode::BGStatusSimulationBusy;
+        Response["Error"] = "Cannot destroy simulation while it is processing";
+        return Response.dump();
+    }
+
+    // Destroy the simulation - unique_ptr will clean up all owned objects
+    Simulations_[SimulationID].reset();
+
+    nlohmann::json Response;
+    Response["StatusCode"] = API::BGStatusCode::BGStatusSuccess;
+    Response["SimulationID"] = SimulationID;
+    return Response.dump();
 }
 
 
