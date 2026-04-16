@@ -77,7 +77,6 @@ bool SafeClient::Connect() {
 
 
     try {
-        Logger_->Log("DEBUG Connect: " + std::string(NESHost.c_str()), 1);
         Client_ = std::make_unique<::rpc::client>(NESHost.c_str(), NESPort);
     } catch (std::system_error& e) {
         Logger_->Log("Cannot find RPC Service host (authoritative)", 9);
@@ -127,7 +126,6 @@ bool SafeClient::MakeJSONQuery(std::string _Route, std::string* _Result, bool _F
         return false;
     }
     try {
-        Logger_->Log("DEBUG MakeJSONQuery1: "+std::string(_Route.c_str()), 3);
         (*_Result) = Client_->call(_Route.c_str()).as<std::string>();
     } catch (::rpc::timeout& e) {
         Logger_->Log("RPC Connection Timed Out", 3);
@@ -148,7 +146,6 @@ bool SafeClient::MakeJSONQuery(std::string _Route, std::string _Query, std::stri
         return false;
     }
     try {
-        Logger_->Log("DEBUG MakeJSONQuery2: "+std::string(_Route.c_str()), 3);
         (*_Result) = Client_->call(_Route.c_str(), _Query).as<std::string>();
     } catch (::rpc::timeout& e) {
         Logger_->Log("API Connection timed out!",3);
@@ -180,7 +177,6 @@ void SafeClient::RPCManagerThread() {
 
         // If not healthy, re-establish connection, retry stuff... For now, nothing...
         if (!IsHealthy) {
-            Logger_->Log("DEBUG: Reestablish connection", 8);
             if (!Connect()) {
                 Logger_->Log("Failed To Reconnect To RPC Service (Connect() returned false)", 3);
             }

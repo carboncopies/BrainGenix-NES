@@ -264,56 +264,48 @@ std::string SimulationRPCInterface::DeleteResidentByID(std::string _JSONRequest)
         return Handle.ErrResponse();
     }
 
-    Logger_->Log("D0 ", 3);
     if (Handle.Sim()->NetmorphWorkerThread.get_id() != std::thread::id()) {
-        Handle.Sim()->NetmorphWorkerThread.join();
+        Handle.Sim()->NetmorphWorkerThread.join(); // Wait for thread to complete
+        Handle.Sim()->NetmorphWorkerThread = std::thread();
     }
-    Logger_->Log("D1 ", 3);
     Handle.Sim()->KeepResident = false; // Stop thread for this specific simulation
-    Logger_->Log("D2 ", 3);
-    if (SimulationThreads_.size() > Handle.Sim()->ID) {
-        if (SimulationThreads_.at(Handle.Sim()->ID).get_id() != std::thread::id()) {
-            SimulationThreads_.at(Handle.Sim()->ID).join(); // Wait to ensure stopped
-            Logger_->Log("D3 ", 3);
-            SimulationThreads_[Handle.Sim()->ID] = std::thread(); // cleared to default-constructed std:thread (does not execute)
-        }
+    //if (SimulationThreads_.size() > Handle.Sim()->ID) {
+    if (SimulationThreads_.at(Handle.Sim()->ID).get_id() != std::thread::id()) {
+        SimulationThreads_.at(Handle.Sim()->ID).join(); // Wait to ensure stopped
+        SimulationThreads_[Handle.Sim()->ID] = std::thread(); // cleared to default-constructed std:thread (does not execute)
     }
-    Logger_->Log("D4 ", 3);
-    std::this_thread::sleep_for(std::chrono::seconds(3));
+    //}
+    //std::this_thread::sleep_for(std::chrono::seconds(3));
     int simid = Handle.Sim()->ID;
-    Logger_->Log("Number of simulations is "+std::to_string(Simulations_.size())+" and sim to delete is "+std::to_string(simid), 3);
+
     // *** Testing what part of the Simulation object may not be deleting clean
-    Handle.Sim()->MasterRandom_.reset();
-    Handle.Sim()->NetmorphWorkerThread = std::thread();
-    Handle.Sim()->Neurons.clear();
-    Handle.Sim()->TRecorded_ms.clear();
-    Handle.Sim()->TInstruments_ms.clear();
-    Handle.Sim()->RecordingElectrodes.clear();
-    Handle.Sim()->Regions.clear();
-    Handle.Sim()->NeuralCircuits.clear();
-    Handle.Sim()->Collection.Clear();
-    Handle.Sim()->BSCompartments.clear();
-    Handle.Sim()->LIFCCompartments.clear();
-    Handle.Sim()->NeuronByCompartment.clear();
-    Handle.Sim()->Staples.clear();
-    Handle.Sim()->Receptors.clear();
-    Handle.Sim()->LIFCReceptors.clear();
-    Handle.Sim()->ReceptorDataVec.clear();
-    Handle.Sim()->LIFCReceptorDataVec.clear();
-    Handle.Sim()->PatchClampDACs.clear();
-    Handle.Sim()->PatchClampADCs.clear();
-    Handle.Sim()->VSDAData_.reset();
-    Handle.Sim()->CaData_.reset();
-    Handle.Sim()->VisualizerParams.reset();
-    Handle.Sim()->NetmorphParams.reset();
-    Handle.Sim()->ClearStoredRequests();
-    //DEBUGSimulations.push_back(std::make_unique<Simulation>(Logger_));
-    //DEBUGSimulations[0].reset();
-    //std::unique_ptr<Simulation> nilSim = std::make_unique<Simulation>(Logger_);
-    //nilSim.reset();
+    // Handle.Sim()->MasterRandom_.reset();
+    // Handle.Sim()->Neurons.clear();
+    // Handle.Sim()->TRecorded_ms.clear();
+    // Handle.Sim()->TInstruments_ms.clear();
+    // Handle.Sim()->RecordingElectrodes.clear();
+    // Handle.Sim()->Regions.clear();
+    // Handle.Sim()->NeuralCircuits.clear();
+    // Handle.Sim()->Collection.Clear();
+    // Handle.Sim()->BSCompartments.clear();
+    // Handle.Sim()->LIFCCompartments.clear();
+    // Handle.Sim()->NeuronByCompartment.clear();
+    // Handle.Sim()->Staples.clear();
+    // Handle.Sim()->Receptors.clear();
+    // Handle.Sim()->LIFCReceptors.clear();
+    // Handle.Sim()->ReceptorDataVec.clear();
+    // Handle.Sim()->LIFCReceptorDataVec.clear();
+    // Handle.Sim()->PatchClampDACs.clear();
+    // Handle.Sim()->PatchClampADCs.clear();
+    // Handle.Sim()->VSDAData_.reset();
+    // Handle.Sim()->CaData_.reset();
+    // Handle.Sim()->VisualizerParams.reset();
+    // Handle.Sim()->NetmorphParams.reset();
+    // Handle.Sim()->ClearStoredRequests();
+
     Simulations_[simid].reset(); // Delete the Simulation object and all associated data
     Handle.ResetThisSimulation();
-    Logger_->Log("D5 ", 3);
+    Logger_->Log("Removed memory resident simulation with ID "+std::to_string(simid), 3);
 
     return Handle.ErrResponse(); // ok
 }

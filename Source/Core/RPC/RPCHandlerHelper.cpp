@@ -67,7 +67,6 @@ HandlerData::HandlerData(const std::string& _JSONRequest, BG::Common::Logger::Lo
         Status = BGStatusCode::BGStatusInvalidParametersPassed;
         return;
     }
-    Logger_->Log("DEBUG: Request getting Sim pointer", 3);
     ThisSimulation = SimVec->at(SimulationID).get();
     if (!ThisSimulation) { // in case deleted with DeleteResidentByID()
         Logger_->Log("Simulation with ID "+std::to_string(SimulationID)+" was deleted, cannot make further requests", 8);
