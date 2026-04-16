@@ -13,6 +13,8 @@
 #include <thread>
 #include <mutex>
 #include <chrono>
+#include <malloc.h>
+#include <sys/sysinfo.h>
 
 namespace BG {
 namespace NES {
@@ -46,6 +48,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
     _RPCManager->AddRoute("Simulation/Create",                    std::bind(&SimulationRPCInterface::SimulationCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Reset",                     std::bind(&SimulationRPCInterface::SimulationReset, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/DeleteResidentByID",        std::bind(&SimulationRPCInterface::DeleteResidentByID, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetResourceStatus",         std::bind(&SimulationRPCInterface::GetResourceStatus, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/SetRandomSeed",             std::bind(&SimulationRPCInterface::SimulationSetSeed, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/LIFCAbstractedFunctional",  std::bind(&SimulationRPCInterface::LIFCAbstractedFunctional, this, std::placeholders::_1));
@@ -308,6 +311,40 @@ std::string SimulationRPCInterface::DeleteResidentByID(std::string _JSONRequest)
     Logger_->Log("Removed memory resident simulation with ID "+std::to_string(simid), 3);
 
     return Handle.ErrResponse(); // ok
+}
+
+/**
+ * Return information about available resources (e.g. RAM).
+ */
+std::string SimulationRPCInterface::GetResourceStatus(std::string _JSONRequest) {
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetResourceStatus", &Simulations_, true, true);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // 1. Get System-wide available memory
+    struct sysinfo si;
+    size_t system_free = 0;
+    if (sysinfo(&si) == 0) {
+        // freeram: totally unused memory
+        // bufferram: memory used for temporary block device storage
+        // Multiply by mem_unit to get actual byte count
+        system_free = (size_t)(si.freeram + si.bufferram) * si.mem_unit;
+    }
+
+    // 2. Get Internal Heap available memory
+    struct mallinfo2 mi = mallinfo2();
+    
+    // fordblks: Total quantity of free space in the heap
+    size_t internal_free = (size_t)mi.fordblks;
+
+    size_t totalRAMfree = system_free + internal_free;
+
+    // Return JSON
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = 0; // ok
+    ResponseJSON["RAMfree"] = totalRAMfree;
+    return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
 std::string SimulationRPCInterface::SimulationSetSeed(std::string _JSONRequest) {
