@@ -111,6 +111,7 @@ public:
     void SimLoadingTask(API::ManagerTaskData & TaskData);
 
     void GetResourceStatusTask(API::ManagerTaskData & TaskData);
+    void DeleteResidentByIDTask(API::ManagerTaskData & TaskData)
 
     /**
      * @brief Various routes for API
