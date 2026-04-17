@@ -340,7 +340,7 @@ std::string SimulationRPCInterface::GetResourceStatus(std::string _JSONRequest) 
 
     // size_t totalRAMfree = system_free + internal_free;
 
-    size_t totalRAMfree = 250*1024*1024*250; // DUMMY VALUE FOR TEST
+    size_t totalRAMfree = size_t(250)*size_t(1024)*size_t(1024)*size_t(1024); // DUMMY VALUE FOR TEST
 
     // Return JSON
     nlohmann::json ResponseJSON;
