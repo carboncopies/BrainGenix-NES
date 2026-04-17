@@ -256,40 +256,6 @@ std::string SimulationRPCInterface::SimulationReset(std::string _JSONRequest) {
     return Handle.ErrResponse(); // ok
 }
 
-/**
- * Delete the simulation indicated by its ID from the memory-resident simulations.
- * This can be used to free up resources.
- * This is a managed request and completion should be tested with ManTaskStatus.
- */
-std::string SimulationRPCInterface::DeleteResidentByID(std::string _JSONRequest) {
-
-    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/DeleteResidentByID", &Simulations_, false, false);
-    if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
-
-    // Prepare data structure for task
-    std::unique_ptr<API::ManagerTaskData> DeleteResidentByIDTaskData = std::make_unique<API::ManagerTaskData>();
-
-    // Note that this managed request needs to know the Simulation to delete.
-    DeleteResidentByIDTaskData->InputInt = Handle.Sim()->ID;
-
-    // Launch task thread
-    // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
-    DeleteResidentByIDTaskData->Task = std::make_unique<std::thread>(DeleteResidentByIDTaskThread, this, DeleteResidentByIDTaskData.get());
-
-    // Add task with fresh task status and get task ID to be returned to requestor
-    int TaskID = AddManagerTask(DeleteResidentByIDTaskData);
-    if (TaskID<0) {
-        Logger_->Log("Unable to launch GetResourceStatus Task", 8);
-        return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
-    }
-
-    // Return Result ID
-    Handle.ResetThisSimulation(); // Just in case deletion is super fast
-    return Handle.ResponseWithID("TaskID", TaskID);
-}
-
 void SimulationRPCInterface::DeleteResidentByIDTask(API::ManagerTaskData & TaskData) {
     int SimID = TaskData.InputInt;
     if ((SimID < 0) || (SimID>=Simulations_.size())) {
@@ -351,32 +317,36 @@ void DeleteResidentByIDTaskThread(SimulationRPCInterface* _Manager, API::Manager
 }
 
 /**
- * Return information about available resources (e.g. RAM).
+ * Delete the simulation indicated by its ID from the memory-resident simulations.
+ * This can be used to free up resources.
  * This is a managed request and completion should be tested with ManTaskStatus.
  */
-std::string SimulationRPCInterface::GetResourceStatus(std::string _JSONRequest) {
-    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetResourceStatus", &Simulations_, true, true);
+std::string SimulationRPCInterface::DeleteResidentByID(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/DeleteResidentByID", &Simulations_, false, false);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
 
     // Prepare data structure for task
-    std::unique_ptr<API::ManagerTaskData> GetResourceStatusTaskData = std::make_unique<API::ManagerTaskData>();
+    std::unique_ptr<API::ManagerTaskData> DeleteResidentByIDTaskData = std::make_unique<API::ManagerTaskData>();
 
-    // Note that this managed request does not need any GetResourceStatusTaskData->InputData.
+    // Note that this managed request needs to know the Simulation to delete.
+    DeleteResidentByIDTaskData->InputInt = Handle.Sim()->ID;
 
     // Launch task thread
     // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
-    GetResourceStatusTaskData->Task = std::make_unique<std::thread>(GetResourceStatusTaskThread, this, GetResourceStatusTaskData.get());
+    DeleteResidentByIDTaskData->Task = std::make_unique<std::thread>(DeleteResidentByIDTaskThread, this, DeleteResidentByIDTaskData.get());
 
     // Add task with fresh task status and get task ID to be returned to requestor
-    int TaskID = AddManagerTask(GetResourceStatusTaskData);
+    int TaskID = AddManagerTask(DeleteResidentByIDTaskData);
     if (TaskID<0) {
         Logger_->Log("Unable to launch GetResourceStatus Task", 8);
         return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
     }
 
     // Return Result ID
+    Handle.ResetThisSimulation(); // Just in case deletion is super fast
     return Handle.ResponseWithID("TaskID", TaskID);
 }
 
@@ -408,6 +378,36 @@ void SimulationRPCInterface::GetResourceStatusTask(API::ManagerTaskData & TaskDa
 void GetResourceStatusTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskData* TaskData) {
     if (!TaskData) return;
     _Manager->GetResourceStatusTask(*TaskData); // Run the rest back in the Manager for full context.
+}
+
+/**
+ * Return information about available resources (e.g. RAM).
+ * This is a managed request and completion should be tested with ManTaskStatus.
+ */
+std::string SimulationRPCInterface::GetResourceStatus(std::string _JSONRequest) {
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetResourceStatus", &Simulations_, true, true);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Prepare data structure for task
+    std::unique_ptr<API::ManagerTaskData> GetResourceStatusTaskData = std::make_unique<API::ManagerTaskData>();
+
+    // Note that this managed request does not need any GetResourceStatusTaskData->InputData.
+
+    // Launch task thread
+    // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
+    GetResourceStatusTaskData->Task = std::make_unique<std::thread>(GetResourceStatusTaskThread, this, GetResourceStatusTaskData.get());
+
+    // Add task with fresh task status and get task ID to be returned to requestor
+    int TaskID = AddManagerTask(GetResourceStatusTaskData);
+    if (TaskID<0) {
+        Logger_->Log("Unable to launch GetResourceStatus Task", 8);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+    }
+
+    // Return Result ID
+    return Handle.ResponseWithID("TaskID", TaskID);
 }
 
 std::string SimulationRPCInterface::SimulationSetSeed(std::string _JSONRequest) {
