@@ -110,6 +110,8 @@ public:
     void LoadingSimSetter(bool SetTo);
     void SimLoadingTask(API::ManagerTaskData & TaskData);
 
+    void GetResourceStatusTask(API::ManagerTaskData & TaskData);
+
     /**
      * @brief Various routes for API
      * Note that since this file is getting too long, several RPC handlers are being set up - each taking over part of this.

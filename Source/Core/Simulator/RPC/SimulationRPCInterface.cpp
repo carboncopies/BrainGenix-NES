@@ -259,6 +259,7 @@ std::string SimulationRPCInterface::SimulationReset(std::string _JSONRequest) {
 /**
  * Delete the simulation indicated by its ID from the memory-resident simulations.
  * This can be used to free up resources.
+ * This is a managed request and completion should be tested with ManTaskStatus.
  */
 std::string SimulationRPCInterface::DeleteResidentByID(std::string _JSONRequest) {
 
@@ -267,54 +268,91 @@ std::string SimulationRPCInterface::DeleteResidentByID(std::string _JSONRequest)
         return Handle.ErrResponse();
     }
 
-    if (Handle.Sim()->NetmorphWorkerThread.get_id() != std::thread::id()) {
-        Handle.Sim()->NetmorphWorkerThread.join(); // Wait for thread to complete
-        Handle.Sim()->NetmorphWorkerThread = std::thread();
+    // Prepare data structure for task
+    std::unique_ptr<API::ManagerTaskData> DeleteResidentByIDTaskData = std::make_unique<API::ManagerTaskData>();
+
+    // Note that this managed request needs to know the Simulation to delete.
+    DeleteResidentByIDTaskData->InputInt = Handle.Sim()->ID;
+
+    // Launch task thread
+    // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
+    DeleteResidentByIDTaskData->Task = std::make_unique<std::thread>(DeleteResidentByIDTaskThread, this, DeleteResidentByIDTaskData.get());
+
+    // Add task with fresh task status and get task ID to be returned to requestor
+    int TaskID = AddManagerTask(DeleteResidentByIDTaskData);
+    if (TaskID<0) {
+        Logger_->Log("Unable to launch GetResourceStatus Task", 8);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
     }
-    Handle.Sim()->KeepResident = false; // Stop thread for this specific simulation
-    //if (SimulationThreads_.size() > Handle.Sim()->ID) {
-    if (SimulationThreads_.at(Handle.Sim()->ID).get_id() != std::thread::id()) {
-        SimulationThreads_.at(Handle.Sim()->ID).join(); // Wait to ensure stopped
-        SimulationThreads_[Handle.Sim()->ID] = std::thread(); // cleared to default-constructed std:thread (does not execute)
+
+    // Return Result ID
+    Handle.ResetThisSimulation(); // Just in case deletion is super fast
+    return Handle.ResponseWithID("TaskID", TaskID);
+}
+
+void SimulationRPCInterface::DeleteResidentByIDTask(API::ManagerTaskData & TaskData) {
+    int SimID = TaskData.InputInt;
+    if ((SimID < 0) || (SimID>=Simulations_.size())) {
+        Logger_->Log("Sim "+std::to_string(SimID)+" to delete is out of range", 8);
+        TaskData.SetStatus(API::ManagerTaskStatus::GeneralFailure);
+        return;
     }
-    //}
-    //std::this_thread::sleep_for(std::chrono::seconds(3));
-    int simid = Handle.Sim()->ID;
+    Simulation* SimToDelete = Simulations_.at(SimID).get();
+    if (!SimToDelete) {
+        Logger_->Log("Sim "+std::to_string(SimID)+" to delete has already been deleted", 8);
+        TaskData.SetStatus(API::ManagerTaskStatus::GeneralFailure);
+        return;
+    }
+
+    if (SimToDelete->NetmorphWorkerThread.get_id() != std::thread::id()) {
+        SimToDelete->NetmorphWorkerThread.join(); // Wait for thread to complete
+        SimToDelete->NetmorphWorkerThread = std::thread();
+    }
+    SimToDelete->KeepResident = false; // Stop thread for this specific simulation
+    if (SimulationThreads_.at(SimToDelete->ID).get_id() != std::thread::id()) {
+        SimulationThreads_.at(SimToDelete->ID).join(); // Wait to ensure stopped
+        SimulationThreads_[SimToDelete->ID] = std::thread(); // cleared to default-constructed std:thread (does not execute)
+    }
 
     // *** Testing what part of the Simulation object may not be deleting clean
-    // Handle.Sim()->MasterRandom_.reset();
-    // Handle.Sim()->Neurons.clear();
-    // Handle.Sim()->TRecorded_ms.clear();
-    // Handle.Sim()->TInstruments_ms.clear();
-    // Handle.Sim()->RecordingElectrodes.clear();
-    // Handle.Sim()->Regions.clear();
-    // Handle.Sim()->NeuralCircuits.clear();
-    // Handle.Sim()->Collection.Clear();
-    // Handle.Sim()->BSCompartments.clear();
-    // Handle.Sim()->LIFCCompartments.clear();
-    // Handle.Sim()->NeuronByCompartment.clear();
-    // Handle.Sim()->Staples.clear();
-    // Handle.Sim()->Receptors.clear();
-    // Handle.Sim()->LIFCReceptors.clear();
-    // Handle.Sim()->ReceptorDataVec.clear();
-    // Handle.Sim()->LIFCReceptorDataVec.clear();
-    // Handle.Sim()->PatchClampDACs.clear();
-    // Handle.Sim()->PatchClampADCs.clear();
-    // Handle.Sim()->VSDAData_.reset();
-    // Handle.Sim()->CaData_.reset();
-    // Handle.Sim()->VisualizerParams.reset();
-    // Handle.Sim()->NetmorphParams.reset();
-    // Handle.Sim()->ClearStoredRequests();
+    // SimToDelete->MasterRandom_.reset();
+    // SimToDelete->Neurons.clear();
+    // SimToDelete->TRecorded_ms.clear();
+    // SimToDelete->TInstruments_ms.clear();
+    // SimToDelete->RecordingElectrodes.clear();
+    // SimToDelete->Regions.clear();
+    // SimToDelete->NeuralCircuits.clear();
+    // SimToDelete->Collection.Clear();
+    // SimToDelete->BSCompartments.clear();
+    // SimToDelete->LIFCCompartments.clear();
+    // SimToDelete->NeuronByCompartment.clear();
+    // SimToDelete->Staples.clear();
+    // SimToDelete->Receptors.clear();
+    // SimToDelete->LIFCReceptors.clear();
+    // SimToDelete->ReceptorDataVec.clear();
+    // SimToDelete->LIFCReceptorDataVec.clear();
+    // SimToDelete->PatchClampDACs.clear();
+    // SimToDelete->PatchClampADCs.clear();
+    // SimToDelete->VSDAData_.reset();
+    // SimToDelete->CaData_.reset();
+    // SimToDelete->VisualizerParams.reset();
+    // SimToDelete->NetmorphParams.reset();
+    // SimToDelete->ClearStoredRequests();
 
-    Simulations_[simid].reset(); // Delete the Simulation object and all associated data
-    Handle.ResetThisSimulation();
-    Logger_->Log("Removed memory resident simulation with ID "+std::to_string(simid), 3);
+    Simulations_[SimID].reset(); // Delete the Simulation object and all associated data
+    Logger_->Log("Removed memory resident simulation with ID "+std::to_string(SimID), 3);
 
-    return Handle.ErrResponse(); // ok
+    TaskData.SetStatus(API::ManagerTaskStatus::Success);
+}
+
+void DeleteResidentByIDTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskData* TaskData) {
+    if (!TaskData) return;
+    _Manager->DeleteResidentByIDTask(*TaskData); // Run the rest back in the Manager for full context.
 }
 
 /**
  * Return information about available resources (e.g. RAM).
+ * This is a managed request and completion should be tested with ManTaskStatus.
  */
 std::string SimulationRPCInterface::GetResourceStatus(std::string _JSONRequest) {
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetResourceStatus", &Simulations_, true, true);
@@ -322,6 +360,27 @@ std::string SimulationRPCInterface::GetResourceStatus(std::string _JSONRequest) 
         return Handle.ErrResponse();
     }
 
+    // Prepare data structure for task
+    std::unique_ptr<API::ManagerTaskData> GetResourceStatusTaskData = std::make_unique<API::ManagerTaskData>();
+
+    // Note that this managed request does not need any GetResourceStatusTaskData->InputData.
+
+    // Launch task thread
+    // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
+    GetResourceStatusTaskData->Task = std::make_unique<std::thread>(GetResourceStatusTaskThread, this, GetResourceStatusTaskData.get());
+
+    // Add task with fresh task status and get task ID to be returned to requestor
+    int TaskID = AddManagerTask(GetResourceStatusTaskData);
+    if (TaskID<0) {
+        Logger_->Log("Unable to launch GetResourceStatus Task", 8);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+    }
+
+    // Return Result ID
+    return Handle.ResponseWithID("TaskID", TaskID);
+}
+
+void SimulationRPCInterface::GetResourceStatusTask(API::ManagerTaskData & TaskData) {
     // 1. Get System-wide available memory
     struct sysinfo si;
     size_t system_free = 0;
@@ -332,22 +391,23 @@ std::string SimulationRPCInterface::GetResourceStatus(std::string _JSONRequest) 
         system_free = (size_t)(si.freeram + si.bufferram) * si.mem_unit;
     }
 
-    // // 2. Get Internal Heap available memory
-    // struct mallinfo2 mi = mallinfo2();
+    // 2. Get Internal Heap available memory
+    struct mallinfo2 mi = mallinfo2();
     
-    // // fordblks: Total quantity of free space in the heap
-    // size_t internal_free = (size_t)mi.fordblks;
+    // fordblks: Total quantity of free space in the heap
+    size_t internal_free = (size_t)mi.fordblks;
 
-    // size_t totalRAMfree = system_free + internal_free;
+    size_t totalRAMfree = system_free + internal_free;
 
-    //size_t totalRAMfree = size_t(250)*size_t(1024)*size_t(1024)*size_t(1024); // DUMMY VALUE FOR TEST
-    size_t totalRAMfree = system_free;
+    //size_t totalRAMfree = system_free;
 
-    // Return JSON
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0; // ok
-    ResponseJSON["RAMfree"] = totalRAMfree;
-    return Handle.ResponseAndStoreRequest(ResponseJSON);
+    TaskData.OutputData["RAMfree"] = totalRAMfree;
+    TaskData.SetStatus(API::ManagerTaskStatus::Success);
+}
+
+void GetResourceStatusTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskData* TaskData) {
+    if (!TaskData) return;
+    _Manager->GetResourceStatusTask(*TaskData); // Run the rest back in the Manager for full context.
 }
 
 std::string SimulationRPCInterface::SimulationSetSeed(std::string _JSONRequest) {
@@ -1177,12 +1237,10 @@ std::string SimulationRPCInterface::GetAbstractConnectome(std::string _JSONReque
  */
 std::string SimulationRPCInterface::ManTaskStatus(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, Logger_, "ManTaskStatus", &Simulations_, true, true);
+    API::HandlerData Handle(_JSONRequest, Logger_, "ManTaskStatus", &Simulations_, true, true); // Not Sim specific.
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
-
-
 
 // *** NOTE: By passing JSON objects/components as strings and then having to
 //           parse them into JSON objects again, the handlers above are doing
