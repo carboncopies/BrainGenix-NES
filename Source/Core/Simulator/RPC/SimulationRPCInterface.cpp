@@ -322,15 +322,15 @@ std::string SimulationRPCInterface::GetResourceStatus(std::string _JSONRequest) 
         return Handle.ErrResponse();
     }
 
-    // // 1. Get System-wide available memory
-    // struct sysinfo si;
-    // size_t system_free = 0;
-    // if (sysinfo(&si) == 0) {
-    //     // freeram: totally unused memory
-    //     // bufferram: memory used for temporary block device storage
-    //     // Multiply by mem_unit to get actual byte count
-    //     system_free = (size_t)(si.freeram + si.bufferram) * si.mem_unit;
-    // }
+    // 1. Get System-wide available memory
+    struct sysinfo si;
+    size_t system_free = 0;
+    if (sysinfo(&si) == 0) {
+        // freeram: totally unused memory
+        // bufferram: memory used for temporary block device storage
+        // Multiply by mem_unit to get actual byte count
+        system_free = (size_t)(si.freeram + si.bufferram) * si.mem_unit;
+    }
 
     // // 2. Get Internal Heap available memory
     // struct mallinfo2 mi = mallinfo2();
@@ -340,7 +340,8 @@ std::string SimulationRPCInterface::GetResourceStatus(std::string _JSONRequest) 
 
     // size_t totalRAMfree = system_free + internal_free;
 
-    size_t totalRAMfree = size_t(250)*size_t(1024)*size_t(1024)*size_t(1024); // DUMMY VALUE FOR TEST
+    //size_t totalRAMfree = size_t(250)*size_t(1024)*size_t(1024)*size_t(1024); // DUMMY VALUE FOR TEST
+    size_t totalRAMfree = system_free;
 
     // Return JSON
     nlohmann::json ResponseJSON;
