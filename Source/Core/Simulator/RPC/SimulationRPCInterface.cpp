@@ -779,15 +779,15 @@ std::string SimulationRPCInterface::SimulationLoad(std::string _JSONRequest) {
 // The function that handles the request.
 void SimulationRPCInterface::SimulationSaveModelTask(API::ManagerTaskData & TaskData) {
 
-    Logger_->Log("Saving Neuronal Circuit Model " + TaskData->InputData, 2);
+    Logger_->Log("Saving Neuronal Circuit Model " + TaskData.InputData, 2);
 
-    if (!TaskData->InputSim->SaveModel(TaskData->InputData)) {
-        Logger_->Log("Failed to save neuronal circuit model as "+TaskData->InputData, 8);
+    if (!TaskData.InputSim->SaveModel(TaskData.InputData)) {
+        Logger_->Log("Failed to save neuronal circuit model as "+TaskData.InputData, 8);
         TaskData.SetStatus(API::ManagerTaskStatus::GeneralFailure);
         return;
     }
 
-    Logger_->Log("Saved neuronal circuit model to "+TaskData->InputData, 3);
+    Logger_->Log("Saved neuronal circuit model to "+TaskData.InputData, 3);
 
     TaskData.SetStatus(API::ManagerTaskStatus::Success); // Signal task done
 }
@@ -840,16 +840,16 @@ std::string SimulationRPCInterface::SimulationSaveModel(std::string _JSONRequest
 void SimulationRPCInterface::SimulationLoadModelTask(API::ManagerTaskData & TaskData) {
 
     // --> This is where you put the actual code that handles the request
-    Logger_->Log("Loading Neuronal Circuit Model " + TaskData->InputData, 2);
+    Logger_->Log("Loading Neuronal Circuit Model " + TaskData.InputData, 2);
 
     // *** This may need to be a task with its own thread as well, like simulation load.
-    if (!TaskData->InputSim->LoadModel(TaskData->InputData)) {
-        Logger_->Log("Failed to load neuronal circuit model "+TaskData->InputData, 8);
+    if (!TaskData.InputSim->LoadModel(TaskData.InputData)) {
+        Logger_->Log("Failed to load neuronal circuit model "+TaskData.InputData, 8);
         TaskData.SetStatus(API::ManagerTaskStatus::GeneralFailure);
         return;
     }
 
-    Logger_->Log("Loaded neuronal circuit model "+TaskData->InputData, 3);
+    Logger_->Log("Loaded neuronal circuit model "+TaskData.InputData, 3);
 
     TaskData.SetStatus(API::ManagerTaskStatus::Success); // Signal task done
 }
@@ -880,7 +880,7 @@ std::string SimulationRPCInterface::SimulationLoadModel(std::string _JSONRequest
         return Handle.ErrResponse();
     }
     SimulationLoadModelTaskData->InputData = SavedModelName;
-    SimulationSaveModelTaskData->InputSim = Handle.Sim();
+    SimulationLoadModelTaskData->InputSim = Handle.Sim();
 
     // Launch task thread
     // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
@@ -1260,7 +1260,7 @@ std::string SimulationRPCInterface::GetSomaPositions(std::string _JSONRequest) {
 // The function that handles the request.
 void SimulationRPCInterface::GetConnectomeTask(API::ManagerTaskData & TaskData) {
 
-    TaskData->OutputData = TaskData->InputSim->GetConnectomeJSON();
+    TaskData.OutputData = TaskData.InputSim->GetConnectomeJSON();
 
     TaskData.SetStatus(API::ManagerTaskStatus::Success); // Signal task done
 }
@@ -1302,7 +1302,7 @@ std::string SimulationRPCInterface::GetConnectome(std::string _JSONRequest) {
 // The function that handles the request.
 void SimulationRPCInterface::GetAbstractConnectomeTask(API::ManagerTaskData & TaskData) {
 
-    TaskData->OutputData = TaskData->InputSim->GetAbstractConnectomeJSON(TaskData->InputFlags[0], TaskData->InputFlags[1]);
+    TaskData.OutputData = TaskData.InputSim->GetAbstractConnectomeJSON(TaskData.InputFlags[0], TaskData.InputFlags[1]);
 
     TaskData.SetStatus(API::ManagerTaskStatus::Success); // Signal task done
 }
@@ -1335,7 +1335,7 @@ std::string SimulationRPCInterface::GetAbstractConnectome(std::string _JSONReque
     }
     GetAbstractConnectomeTaskData->InputFlags[0] = Sparse;
     GetAbstractConnectomeTaskData->InputFlags[1] = NonZero;
-    GetConnectomeTaskData->InputSim = Handle.Sim();
+    GetAbstractConnectomeTaskData->InputSim = Handle.Sim();
 
     // Launch task thread
     // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
