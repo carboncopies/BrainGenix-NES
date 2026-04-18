@@ -105,6 +105,8 @@ public:
 
     // bool BadReqID(int ReqID);
 
+    // === Functions for Managed Tasks that can take long to complete
+
     int AddManagerTask(std::unique_ptr<API::ManagerTaskData> & TaskData);
 
     void LoadingSimSetter(bool SetTo);
@@ -112,6 +114,12 @@ public:
 
     void GetResourceStatusTask(API::ManagerTaskData & TaskData);
     void DeleteResidentByIDTask(API::ManagerTaskData & TaskData);
+    void SimulationSaveModelTask(API::ManagerTaskData & TaskData);
+    void SimulationLoadModelTask(API::ManagerTaskData & TaskData);
+    void GetConnectomeTask(API::ManagerTaskData & TaskData);
+    void GetAbstractConnectomeTask(API::ManagerTaskData & TaskData);
+
+    // === API Request Handler functions that must complete quickly
 
     /**
      * @brief Various routes for API

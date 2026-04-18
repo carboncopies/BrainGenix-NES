@@ -53,6 +53,8 @@ struct ManagerTaskData {
     // Simulator::Manager& Man;
     std::string InputData; // optional, string for input data (JSON or whatever)
     int InputInt; // optional, useful for something like Simulation ID
+    Simulator::Simulation* InputSim = nullptr; // optional, quick pointer to Simulation object
+    std::map<int, bool> InputFlags; // optional, map of options
 
     // Must be set before calling AddManagerTask:
     std::unique_ptr<std::thread> Task;
