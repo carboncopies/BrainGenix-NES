@@ -53,7 +53,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
     _RPCManager->AddRoute("Simulation/Reset",                     std::bind(&SimulationRPCInterface::SimulationReset, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/DeleteResidentByID",        std::bind(&SimulationRPCInterface::DeleteResidentByID, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetResourceStatus",         std::bind(&SimulationRPCInterface::GetResourceStatus, this, std::placeholders::_1));
-    _RPCManager->AddRoute("Simulation/ResourceChecksIncludeHeap", std::bind(&SimulationRPCInterface::ResourceChecksIncludeHeap, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/ResourceChecksIncludeHeap", std::bind(&SimulationRPCInterface::SetResourceChecksIncludeHeap, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/SetRandomSeed",             std::bind(&SimulationRPCInterface::SimulationSetSeed, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/LIFCAbstractedFunctional",  std::bind(&SimulationRPCInterface::LIFCAbstractedFunctional, this, std::placeholders::_1));
@@ -417,7 +417,7 @@ std::string SimulationRPCInterface::GetResourceStatus(std::string _JSONRequest) 
     return Handle.ResponseWithID("TaskID", TaskID);
 }
 
-std::string SimulationRPCInterface::ResourceChecksIncludeHeap(std::string _JSONRequest) {
+std::string SimulationRPCInterface::SetResourceChecksIncludeHeap(std::string _JSONRequest) {
 
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/ResourceChecksIncludeHeap", &Simulations_);
     if (Handle.HasError()) {
