@@ -53,6 +53,7 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
     _RPCManager->AddRoute("Simulation/Reset",                     std::bind(&SimulationRPCInterface::SimulationReset, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/DeleteResidentByID",        std::bind(&SimulationRPCInterface::DeleteResidentByID, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/GetResourceStatus",         std::bind(&SimulationRPCInterface::GetResourceStatus, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/ResourceChecksIncludeHeap", std::bind(&SimulationRPCInterface::ResourceChecksIncludeHeap, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/SetRandomSeed",             std::bind(&SimulationRPCInterface::SimulationSetSeed, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/LIFCAbstractedFunctional",  std::bind(&SimulationRPCInterface::LIFCAbstractedFunctional, this, std::placeholders::_1));
@@ -364,16 +365,18 @@ void SimulationRPCInterface::GetResourceStatusTask(API::ManagerTaskData & TaskDa
         // Multiply by mem_unit to get actual byte count
         system_free = (size_t)(si.freeram + si.bufferram) * si.mem_unit;
     }
+    size_t totalRAMfree = system_free;
 
-    // 2. Get Internal Heap available memory
-    struct mallinfo2 mi = mallinfo2();
-    
-    // fordblks: Total quantity of free space in the heap
-    size_t internal_free = (size_t)mi.fordblks;
+    // This is optional, because it can take quite long.
+    if (TaskData.InputSim->ResourceChecksIncludeHeap) {
+        // 2. Get Internal Heap available memory
+        struct mallinfo2 mi = mallinfo2();
+        
+        // fordblks: Total quantity of free space in the heap
+        size_t internal_free = (size_t)mi.fordblks;
 
-    size_t totalRAMfree = system_free + internal_free;
-
-    //size_t totalRAMfree = system_free;
+        totalRAMfree += internal_free;
+    }
 
     TaskData.OutputData["RAMfree"] = totalRAMfree;
     TaskData.SetStatus(API::ManagerTaskStatus::Success);
@@ -398,6 +401,7 @@ std::string SimulationRPCInterface::GetResourceStatus(std::string _JSONRequest) 
     std::unique_ptr<API::ManagerTaskData> GetResourceStatusTaskData = std::make_unique<API::ManagerTaskData>();
 
     // Note that this managed request does not need any GetResourceStatusTaskData->InputData.
+    GetResourceStatusTaskData->InputSim = Handle.Sim();
 
     // Launch task thread
     // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
@@ -412,6 +416,26 @@ std::string SimulationRPCInterface::GetResourceStatus(std::string _JSONRequest) 
 
     // Return Result ID
     return Handle.ResponseWithID("TaskID", TaskID);
+}
+
+std::string SimulationRPCInterface::ResourceChecksIncludeHeap(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/ResourceChecksIncludeHeap", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    bool resourcechecksincludeheap;
+    Handle.GetParBool("IncludeHeap", resourcechecksincludeheap);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    Handle.Sim()->ResourceChecksIncludeHeap = resourcechecksincludeheap;
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
 }
 
 std::string SimulationRPCInterface::SimulationSetSeed(std::string _JSONRequest) {
