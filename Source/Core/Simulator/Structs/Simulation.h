@@ -110,8 +110,6 @@ public:
     float Dt_ms = 1.0;
     std::vector<float> TRecorded_ms{};
 
-    bool ResourceChecksIncludeHeap = false; // See how this applies in GetResourceStatus().
-
     bool STDP = false; // STDP simulation included when true
     bool use_abstracted_LIF_receptors = true; // Abstracted functional receptors with LIFCNeuron
     bool triangulate_precise_spiketimes = false; // Use this with larger Dt_ms for better spike time precision

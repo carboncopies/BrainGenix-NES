@@ -80,6 +80,7 @@ private:
     int NextManTaskID = 0; /**Use this, because we use a map not a vector, so that we can expire some to shed old cached stuff*/
     std::map<int, std::unique_ptr<API::ManagerTaskData>> ManagerTasks; /**Status data of launched tasks by Task ID*/
 
+    bool ResourceChecksIncludeHeap = false; // See how this applies in GetResourceStatus().
 
 
 public:
@@ -133,7 +134,7 @@ public:
     std::string SimulationReset(std::string _JSONRequest);
     std::string DeleteResidentByID(std::string _JSONRequest);
     std::string GetResourceStatus(std::string _JSONRequest);
-    std::string ResourceChecksIncludeHeap(std::string _JSONRequest)
+    std::string ResourceChecksIncludeHeap(std::string _JSONRequest);
 
     std::string SimulationSetSeed(std::string _JSONRequest);
     std::string LIFCAbstractedFunctional(std::string _JSONRequest);

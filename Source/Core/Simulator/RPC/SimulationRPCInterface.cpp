@@ -368,7 +368,7 @@ void SimulationRPCInterface::GetResourceStatusTask(API::ManagerTaskData & TaskDa
     size_t totalRAMfree = system_free;
 
     // This is optional, because it can take quite long.
-    if (TaskData.InputSim->ResourceChecksIncludeHeap) {
+    if (ResourceChecksIncludeHeap) {
         // 2. Get Internal Heap available memory
         struct mallinfo2 mi = mallinfo2();
         
@@ -401,7 +401,6 @@ std::string SimulationRPCInterface::GetResourceStatus(std::string _JSONRequest) 
     std::unique_ptr<API::ManagerTaskData> GetResourceStatusTaskData = std::make_unique<API::ManagerTaskData>();
 
     // Note that this managed request does not need any GetResourceStatusTaskData->InputData.
-    GetResourceStatusTaskData->InputSim = Handle.Sim();
 
     // Launch task thread
     // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
@@ -432,7 +431,7 @@ std::string SimulationRPCInterface::ResourceChecksIncludeHeap(std::string _JSONR
         return Handle.ErrResponse();
     }
 
-    Handle.Sim()->ResourceChecksIncludeHeap = resourcechecksincludeheap;
+    ResourceChecksIncludeHeap = resourcechecksincludeheap;
 
     // Return Result ID
     return Handle.ErrResponse(); // ok
