@@ -53,26 +53,26 @@ namespace VSDA {
 bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ConversionPool::ConversionPool* _ConversionPool, int _NumResolutionLevels) {
 
     // Check that the simulation has been initialized and everything is ready to have work done
-    if (_Simulation->VSDAData_.State_ != VSDA_CONVERSION_REQUESTED) {
+    if (_Simulation->VSDAData_->State_ != VSDA_CONVERSION_REQUESTED) {
         return false;
     }
-    _Simulation->VSDAData_.State_ = VSDA_CONVERSION_IN_PROGRESS;
+    _Simulation->VSDAData_->State_ = VSDA_CONVERSION_IN_PROGRESS;
     
     _Logger->Log("Executing Conversion Job For Requested Simulation", 4);
 
     // Update Status
-    _Simulation->VSDAData_.CurrentOperation_ = "Converting Image Data To Neuroglancer Format";
-    _Simulation->VSDAData_.TotalSliceImages_ = 0;
-    _Simulation->VSDAData_.CurrentSliceImage_ = 0;
-    _Simulation->VSDAData_.VoxelQueueLength_ = 0;
-    _Simulation->VSDAData_.TotalVoxelQueueLength_ = 0;
-    _Simulation->VSDAData_.TotalSlices_ = 0;
-    _Simulation->VSDAData_.CurrentSlice_ = 0;
+    _Simulation->VSDAData_->CurrentOperation_ = "Converting Image Data To Neuroglancer Format";
+    _Simulation->VSDAData_->TotalSliceImages_ = 0;
+    _Simulation->VSDAData_->CurrentSliceImage_ = 0;
+    _Simulation->VSDAData_->VoxelQueueLength_ = 0;
+    _Simulation->VSDAData_->TotalVoxelQueueLength_ = 0;
+    _Simulation->VSDAData_->TotalSlices_ = 0;
+    _Simulation->VSDAData_->CurrentSlice_ = 0;
 
 
     // Unpack Variables For Easier Access
-    MicroscopeParameters* Params = &_Simulation->VSDAData_.Params_;
-    ScanRegion* BaseRegion = &_Simulation->VSDAData_.Regions_[_Simulation->VSDAData_.ActiveRegionID_];
+    MicroscopeParameters* Params = &_Simulation->VSDAData_->Params_;
+    ScanRegion* BaseRegion = &_Simulation->VSDAData_->Regions_[_Simulation->VSDAData_->ActiveRegionID_];
 
 
     // Stage 0: Firstly, we're going to create the dataset path for this conversion output 
@@ -268,7 +268,7 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
         ThisTask->IsSegmentation_ = false;
 
         _ConversionPool->QueueEncodeOperation(ThisTask.get());
-        _Simulation->VSDAData_.ConversionTasks_.push_back(std::move(ThisTask));
+        _Simulation->VSDAData_->ConversionTasks_.push_back(std::move(ThisTask));
 
     }
     
@@ -291,14 +291,14 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
         ThisTask->IsSegmentation_ = true;
 
         _ConversionPool->QueueEncodeOperation(ThisTask.get());
-        _Simulation->VSDAData_.ConversionTasks_.push_back(std::move(ThisTask));
+        _Simulation->VSDAData_->ConversionTasks_.push_back(std::move(ThisTask));
 
     }
 
 
     // wait for all tasks to finish
-    for (size_t i = 0; i < _Simulation->VSDAData_.ConversionTasks_.size(); i++) {
-        while (!_Simulation->VSDAData_.ConversionTasks_[i]->IsDone_) {
+    for (size_t i = 0; i < _Simulation->VSDAData_->ConversionTasks_.size(); i++) {
+        while (!_Simulation->VSDAData_->ConversionTasks_[i]->IsDone_) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
     }
@@ -309,13 +309,13 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
     if (Params->GenerateMeshes && Params->GenerateSegmentation) { 
 
         // Update Status
-        _Simulation->VSDAData_.CurrentOperation_ = "Running Igneous Pipeline Mesh Generation";
-        _Simulation->VSDAData_.TotalSliceImages_ = 0;
-        _Simulation->VSDAData_.CurrentSliceImage_ = 0;
-        _Simulation->VSDAData_.VoxelQueueLength_ = 0;
-        _Simulation->VSDAData_.TotalVoxelQueueLength_ = 0;
-        _Simulation->VSDAData_.TotalSlices_ = 0;
-        _Simulation->VSDAData_.CurrentSlice_ = 0;
+        _Simulation->VSDAData_->CurrentOperation_ = "Running Igneous Pipeline Mesh Generation";
+        _Simulation->VSDAData_->TotalSliceImages_ = 0;
+        _Simulation->VSDAData_->CurrentSliceImage_ = 0;
+        _Simulation->VSDAData_->VoxelQueueLength_ = 0;
+        _Simulation->VSDAData_->TotalVoxelQueueLength_ = 0;
+        _Simulation->VSDAData_->TotalSlices_ = 0;
+        _Simulation->VSDAData_->CurrentSlice_ = 0;
 
         std::string DatasetPath = "NeuroglancerDatasets/" + UUID + "/Segmentation";
         std::string OutputPath = "Meshes/" + UUID;
@@ -329,7 +329,7 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
     _Logger->Log("Generated Neuroglancer Dataset At Path " + BasePath, 5);
     BaseRegion->NeuroglancerDatasetHandle_ = UUID;
 
-    _Simulation->VSDAData_.State_ = VSDA_RENDER_DONE;
+    _Simulation->VSDAData_->State_ = VSDA_RENDER_DONE;
 
     return true;
 

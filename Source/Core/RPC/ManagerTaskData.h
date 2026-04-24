@@ -20,7 +20,7 @@
 
 
 // Internal Libraries (BG convention: use <> instead of "")
-
+#include <Simulator/Structs/Simulation.h>
 
 namespace BG {
 namespace NES {
@@ -38,6 +38,10 @@ enum ManagerTaskStatus {
 
 
 /**
+ * This is useful for various requests that may take longer to complete than the
+ * NES request timeout (def: 5 seconds) when the server is under significant load.
+ * See for example how this is used for SimulationLoad or GetResourceStatus.
+ * 
  * Process:
  * 1. Prepare the data that the Task will need.
  * 2. Launch the specific Task function within a std::thread, giving it a pointer to this struct.
@@ -47,7 +51,10 @@ enum ManagerTaskStatus {
 struct ManagerTaskData {
     // Must be set before launching Task:
     // Simulator::Manager& Man;
-    std::string InputData;
+    std::string InputData; // optional, string for input data (JSON or whatever)
+    int InputInt; // optional, useful for something like Simulation ID
+    Simulator::Simulation* InputSim = nullptr; // optional, quick pointer to Simulation object
+    std::map<int, bool> InputFlags; // optional, map of options
 
     // Must be set before calling AddManagerTask:
     std::unique_ptr<std::thread> Task;

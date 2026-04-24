@@ -39,17 +39,17 @@ namespace VSDA {
 bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
 
     // Check that the simulation has been initialized and everything is ready to have work done
-    if (_Simulation->VSDAData_.State_ != VSDA_RENDER_REQUESTED) {
+    if (_Simulation->VSDAData_->State_ != VSDA_RENDER_REQUESTED) {
         return false;
     }
-    _Simulation->VSDAData_.State_ = VSDA_RENDER_IN_PROGRESS;
+    _Simulation->VSDAData_->State_ = VSDA_RENDER_IN_PROGRESS;
     
     _Logger->Log("Executing Render Job For Requested Simulation " + std::to_string(_Simulation->ID), 4);
 
 
     // Unpack Variables For Easier Access
-    MicroscopeParameters* Params = &_Simulation->VSDAData_.Params_;
-    ScanRegion* BaseRegion = &_Simulation->VSDAData_.Regions_[_Simulation->VSDAData_.ActiveRegionID_];
+    MicroscopeParameters* Params = &_Simulation->VSDAData_->Params_;
+    ScanRegion* BaseRegion = &_Simulation->VSDAData_->Regions_[_Simulation->VSDAData_->ActiveRegionID_];
 
 
     // -- Phase 0 --
@@ -94,8 +94,8 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
     double ImageStepSizeY_um = (Params->ImageHeight_px / Params->NumPixelsPerVoxel_px) * Params->VoxelResolution_um * (1 - (double(Params->ScanRegionOverlap_percent) / 100.));
     int NumImagesInXDimension_img = ceil(BaseRegion->SizeX() / ImageStepSizeX_um);
     int NumImagesInYDimension_img = ceil(BaseRegion->SizeX() / ImageStepSizeY_um);
-    _Simulation->VSDAData_.TotalImagesX_ = NumImagesInXDimension_img;
-    _Simulation->VSDAData_.TotalImagesY_ = NumImagesInXDimension_img;
+    _Simulation->VSDAData_->TotalImagesX_ = NumImagesInXDimension_img;
+    _Simulation->VSDAData_->TotalImagesY_ = NumImagesInXDimension_img;
     _Logger->Log("Identified The Total Number Of Images To Be '" + std::to_string(NumImagesInXDimension_img) + "'X, '" + std::to_string(NumImagesInYDimension_img) + "'Y", 4);
 
     // Nextly, we're going to figure out the step size information for the subregions.
@@ -150,13 +150,13 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
     while (((_ImageProcessorPool->TotalConsumedMemory_MB.load() + MemorySize_MB) / SystemRAM_MB) > 0.9) {
 
         // Update Current Slice Information (Account for slice numbers not starting at 0)
-        _Simulation->VSDAData_.CurrentOperation_ = "Waiting For Free RAM";
-        _Simulation->VSDAData_.TotalSliceImages_ = 0;
-        _Simulation->VSDAData_.CurrentSliceImage_ = 0;
-        _Simulation->VSDAData_.VoxelQueueLength_ = 0;
-        _Simulation->VSDAData_.TotalVoxelQueueLength_ = 0;
-        _Simulation->VSDAData_.TotalSlices_ = 0;
-        _Simulation->VSDAData_.CurrentSlice_ = 0;
+        _Simulation->VSDAData_->CurrentOperation_ = "Waiting For Free RAM";
+        _Simulation->VSDAData_->TotalSliceImages_ = 0;
+        _Simulation->VSDAData_->CurrentSliceImage_ = 0;
+        _Simulation->VSDAData_->VoxelQueueLength_ = 0;
+        _Simulation->VSDAData_->TotalVoxelQueueLength_ = 0;
+        _Simulation->VSDAData_->TotalSlices_ = 0;
+        _Simulation->VSDAData_->CurrentSlice_ = 0;
 
         _Logger->Log("Waiting for enough free RAM to become available before starting render", 1);
 
@@ -238,7 +238,7 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
     }
 
 
-    _Simulation->VSDAData_.TotalRegions_ = SubRegions.size();
+    _Simulation->VSDAData_->TotalRegions_ = SubRegions.size();
 
 
     // -- Phase 3 -- 
@@ -247,18 +247,18 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
     _Logger->Log("Rendering " + std::to_string(SubRegions.size()) + " Sub Regions", 4);
     for (size_t i = 0; i < SubRegions.size(); i++) {
         EMRenderSubRegion(_Logger, &SubRegions[i], _ImageProcessorPool, _GeneratorPool);
-        _Simulation->VSDAData_.CurrentRegion_ = i + 1;
+        _Simulation->VSDAData_->CurrentRegion_ = i + 1;
     }
 
 
     // Now, release memory by creating an empty array, which will cause the unique_ptr for the previous array to be destroyed
-    _Simulation->VSDAData_.CurrentOperation_ = "Freeing Voxel Array";
-    _Simulation->VSDAData_.TotalSliceImages_ = 0;
-    _Simulation->VSDAData_.CurrentSliceImage_ = 0;
-    _Simulation->VSDAData_.VoxelQueueLength_ = 0;
-    _Simulation->VSDAData_.TotalVoxelQueueLength_ = 0;
-    _Simulation->VSDAData_.TotalSlices_ = 0;
-    _Simulation->VSDAData_.CurrentSlice_ = 0;
+    _Simulation->VSDAData_->CurrentOperation_ = "Freeing Voxel Array";
+    _Simulation->VSDAData_->TotalSliceImages_ = 0;
+    _Simulation->VSDAData_->CurrentSliceImage_ = 0;
+    _Simulation->VSDAData_->VoxelQueueLength_ = 0;
+    _Simulation->VSDAData_->TotalVoxelQueueLength_ = 0;
+    _Simulation->VSDAData_->TotalSlices_ = 0;
+    _Simulation->VSDAData_->CurrentSlice_ = 0;
     ScanRegion Empty;
     Empty.Point1X_um = 0.;
     Empty.Point1Y_um = 0.;
@@ -266,8 +266,8 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
     Empty.Point2X_um = 0.;
     Empty.Point2Y_um = 0.;
     Empty.Point2Z_um = 0.;
-    _Simulation->VSDAData_.Array_ = std::make_unique<VoxelArray>(_Logger, Empty, 999.);
-    _Simulation->VSDAData_.State_ = VSDA_RENDER_DONE;
+    _Simulation->VSDAData_->Array_ = std::make_unique<VoxelArray>(_Logger, Empty, 999.);
+    _Simulation->VSDAData_->State_ = VSDA_RENDER_DONE;
 
 
     // Decrement memory usage counter

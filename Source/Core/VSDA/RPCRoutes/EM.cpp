@@ -24,13 +24,13 @@ bool VSDA_EM_Initialize(BG::Common::Logger::LoggingSystem* _Logger, Simulation* 
     // Check Preconditions
     assert(_Logger != nullptr);
     assert(_Sim != nullptr);
-    if (_Sim->VSDAData_.State_ != VSDA_NOT_INITIALIZED) { // Check if the VSDA has already been initialized, if so - we don't touch it.
+    if (_Sim->VSDAData_->State_ != VSDA_NOT_INITIALIZED) { // Check if the VSDA has already been initialized, if so - we don't touch it.
         _Logger->Log("VSDA EM Initialize Error, Cannot Reinit A Region Which Has Already Been Initialized", 6);
         return false; 
     }
 
     // Initialize it
-    _Sim->VSDAData_.State_ = VSDA_INIT_BEGIN;
+    _Sim->VSDAData_->State_ = VSDA_INIT_BEGIN;
 
 
     // That's all we have to do apparently...
@@ -43,7 +43,7 @@ bool VSDA_EM_SetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulat
     // Check Preconditions
     assert(_Logger != nullptr);
     assert(_Sim != nullptr);
-    if ((_Sim->VSDAData_.State_ != VSDA_INIT_BEGIN) && (_Sim->VSDAData_.State_ != VSDA_RENDER_DONE)) { // Check that the VSDA is during its init phase, and not yet done initializing.
+    if ((_Sim->VSDAData_->State_ != VSDA_INIT_BEGIN) && (_Sim->VSDAData_->State_ != VSDA_RENDER_DONE)) { // Check that the VSDA is during its init phase, and not yet done initializing.
         _Logger->Log("VSDA EM SetupMicroscope Error, Cannot Setup Microscope On System With Unknown State", 6);
         return false; 
     }
@@ -54,7 +54,7 @@ bool VSDA_EM_SetupMicroscope(BG::Common::Logger::LoggingSystem* _Logger, Simulat
     }
 
     // Copy over the parameters
-    _Sim->VSDAData_.Params_ = _Params;
+    _Sim->VSDAData_->Params_ = _Params;
 
     return true;
 
@@ -65,18 +65,18 @@ bool VSDA_EM_DefineScanRegion(BG::Common::Logger::LoggingSystem* _Logger, Simula
     // Check Preconditions
     assert(_Logger != nullptr);
     assert(_Sim != nullptr);
-    if ((_Sim->VSDAData_.State_ != VSDA_INIT_BEGIN) && (_Sim->VSDAData_.State_ != VSDA_RENDER_DONE)) { // Check that the VSDA is during its init phase, and not yet done initializing.
+    if ((_Sim->VSDAData_->State_ != VSDA_INIT_BEGIN) && (_Sim->VSDAData_->State_ != VSDA_RENDER_DONE)) { // Check that the VSDA is during its init phase, and not yet done initializing.
         _Logger->Log("VSDA EM DefineScanRegion Error, Cannot Define Microscope Scan Region On System With Unknown State", 6);
         return false; 
     }
 
     // Copy over the parameters, update region ID
     _Logger->Log(std::string("Adding Scan Region With Dimensions ") + _ScanRegion.Dimensions(), 2);
-    _Sim->VSDAData_.Regions_.push_back(_ScanRegion);
-    (*_RegionID) = _Sim->VSDAData_.Regions_.size()-1;
+    _Sim->VSDAData_->Regions_.push_back(_ScanRegion);
+    (*_RegionID) = _Sim->VSDAData_->Regions_.size()-1;
 
     // Add New Vector To Store The Rendered Image Paths As We Create Them Later On
-    _Sim->VSDAData_.RenderedImagePaths_.push_back(std::vector<std::string>());
+    _Sim->VSDAData_->RenderedImagePaths_.push_back(std::vector<std::string>());
 
     return true;
 
@@ -87,11 +87,11 @@ bool VSDA_EM_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Si
     // Check Preconditions
     assert(_Logger != nullptr);
     assert(_Sim != nullptr);
-    if ((_Sim->VSDAData_.State_ != VSDA_INIT_BEGIN) && (_Sim->VSDAData_.State_ != VSDA_RENDER_DONE)) { // Check that the VSDA is during its init phase, and not yet done initializing.
+    if ((_Sim->VSDAData_->State_ != VSDA_INIT_BEGIN) && (_Sim->VSDAData_->State_ != VSDA_RENDER_DONE)) { // Check that the VSDA is during its init phase, and not yet done initializing.
         _Logger->Log("VSDA EM QueueRenderOperation Error, Cannot Queue Render Operation On System With Unknown State", 6);
         return false; 
     }
-    if (_RegionID < 0 || _RegionID >= _Sim->VSDAData_.Regions_.size()) { // the region ID is out of range
+    if (_RegionID < 0 || _RegionID >= _Sim->VSDAData_->Regions_.size()) { // the region ID is out of range
         _Logger->Log("VSDA EM QueueRenderOperation Error, Region ID Is Out Of Range!", 6);
         return false;    
     }
@@ -102,8 +102,8 @@ bool VSDA_EM_QueueRenderOperation(BG::Common::Logger::LoggingSystem* _Logger, Si
     }
 
     // Setup Enums, Indicate that work is requested
-    _Sim->VSDAData_.ActiveRegionID_ = _RegionID;
-    _Sim->VSDAData_.State_ = VSDA_RENDER_REQUESTED;
+    _Sim->VSDAData_->ActiveRegionID_ = _RegionID;
+    _Sim->VSDAData_->State_ = VSDA_RENDER_REQUESTED;
     _Sim->CurrentTask = SIMULATION_VSDA;
     _Sim->WorkRequested = true;
 

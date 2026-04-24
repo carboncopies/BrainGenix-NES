@@ -34,7 +34,7 @@ bool CaRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     // Get Local Variables
     Simulator::ScanRegion RequestedRegion = _SubRegion->Region;
     Simulator::Simulation* Sim = _SubRegion->Sim;
-    CalciumImagingData* CaData_ = &Sim->CaData_; 
+    CalciumImagingData* CaData_ = Sim->CaData_.get(); 
     int SliceOffset = _SubRegion->LayerOffset;
     double XOffset = _SubRegion->RegionOffsetX_um;
     double YOffset = _SubRegion->RegionOffsetY_um;
@@ -101,7 +101,7 @@ bool CaRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
         std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "/Calcium/Region" + std::to_string(CaData_->ActiveRegionID_);
 
         unsigned int CurrentSlice = (i + 1) * CaData_->Params_.NumVoxelsPerSlice;
-        std::vector<std::string> Files = CaRenderSliceFromArray(_Logger, _SubRegion->MaxImagesX, _SubRegion->MaxImagesY, &Sim->CaData_, CaData_->Array_.get(), FileNamePrefix, CurrentSlice, _ImageProcessorPool, XOffset, YOffset, SliceOffset);
+        std::vector<std::string> Files = CaRenderSliceFromArray(_Logger, _SubRegion->MaxImagesX, _SubRegion->MaxImagesY, Sim->CaData_.get(), CaData_->Array_.get(), FileNamePrefix, CurrentSlice, _ImageProcessorPool, XOffset, YOffset, SliceOffset);
         for (size_t i = 0; i < Files.size(); i++) {
             CaData_->RenderedImagePaths_[CaData_->ActiveRegionID_].push_back(Files[i]);
         }

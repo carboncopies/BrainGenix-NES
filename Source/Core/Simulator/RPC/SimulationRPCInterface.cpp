@@ -13,13 +13,19 @@
 #include <thread>
 #include <mutex>
 #include <chrono>
+#include <malloc.h>
+#include <sys/sysinfo.h>
 
 namespace BG {
 namespace NES {
 namespace Simulator {
 
 
-
+/**
+ * Note: See bottom of file for a template that can be used to create
+ * "managed task" API handlers when completing the API request could
+ * take longer than the NES-API communication timeout (typically 5s).
+ */
 
 
 
@@ -45,6 +51,9 @@ SimulationRPCInterface::SimulationRPCInterface(BG::Common::Logger::LoggingSystem
 
     _RPCManager->AddRoute("Simulation/Create",                    std::bind(&SimulationRPCInterface::SimulationCreate, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/Reset",                     std::bind(&SimulationRPCInterface::SimulationReset, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/DeleteResidentByID",        std::bind(&SimulationRPCInterface::DeleteResidentByID, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/GetResourceStatus",         std::bind(&SimulationRPCInterface::GetResourceStatus, this, std::placeholders::_1));
+    _RPCManager->AddRoute("Simulation/ResourceChecksIncludeHeap", std::bind(&SimulationRPCInterface::SetResourceChecksIncludeHeap, this, std::placeholders::_1));
 
     _RPCManager->AddRoute("Simulation/SetRandomSeed",             std::bind(&SimulationRPCInterface::SimulationSetSeed, this, std::placeholders::_1));
     _RPCManager->AddRoute("Simulation/LIFCAbstractedFunctional",  std::bind(&SimulationRPCInterface::LIFCAbstractedFunctional, this, std::placeholders::_1));
@@ -252,6 +261,181 @@ std::string SimulationRPCInterface::SimulationReset(std::string _JSONRequest) {
     return Handle.ErrResponse(); // ok
 }
 
+void SimulationRPCInterface::DeleteResidentByIDTask(API::ManagerTaskData & TaskData) {
+    int SimID = TaskData.InputInt;
+    if ((SimID < 0) || (SimID>=Simulations_.size())) {
+        Logger_->Log("Sim "+std::to_string(SimID)+" to delete is out of range", 8);
+        TaskData.SetStatus(API::ManagerTaskStatus::GeneralFailure);
+        return;
+    }
+    Simulation* SimToDelete = Simulations_.at(SimID).get();
+    if (!SimToDelete) {
+        Logger_->Log("Sim "+std::to_string(SimID)+" to delete has already been deleted", 8);
+        TaskData.SetStatus(API::ManagerTaskStatus::GeneralFailure);
+        return;
+    }
+
+    if (SimToDelete->NetmorphWorkerThread.get_id() != std::thread::id()) {
+        SimToDelete->NetmorphWorkerThread.join(); // Wait for thread to complete
+        SimToDelete->NetmorphWorkerThread = std::thread();
+    }
+    SimToDelete->KeepResident = false; // Stop thread for this specific simulation
+    if (SimulationThreads_.at(SimToDelete->ID).get_id() != std::thread::id()) {
+        SimulationThreads_.at(SimToDelete->ID).join(); // Wait to ensure stopped
+        SimulationThreads_[SimToDelete->ID] = std::thread(); // cleared to default-constructed std:thread (does not execute)
+    }
+
+    // *** Testing what part of the Simulation object may not be deleting clean
+    // SimToDelete->MasterRandom_.reset();
+    // SimToDelete->Neurons.clear();
+    // SimToDelete->TRecorded_ms.clear();
+    // SimToDelete->TInstruments_ms.clear();
+    // SimToDelete->RecordingElectrodes.clear();
+    // SimToDelete->Regions.clear();
+    // SimToDelete->NeuralCircuits.clear();
+    // SimToDelete->Collection.Clear();
+    // SimToDelete->BSCompartments.clear();
+    // SimToDelete->LIFCCompartments.clear();
+    // SimToDelete->NeuronByCompartment.clear();
+    // SimToDelete->Staples.clear();
+    // SimToDelete->Receptors.clear();
+    // SimToDelete->LIFCReceptors.clear();
+    // SimToDelete->ReceptorDataVec.clear();
+    // SimToDelete->LIFCReceptorDataVec.clear();
+    // SimToDelete->PatchClampDACs.clear();
+    // SimToDelete->PatchClampADCs.clear();
+    // SimToDelete->VSDAData_.reset();
+    // SimToDelete->CaData_.reset();
+    // SimToDelete->VisualizerParams.reset();
+    // SimToDelete->NetmorphParams.reset();
+    // SimToDelete->ClearStoredRequests();
+
+    Simulations_[SimID].reset(); // Delete the Simulation object and all associated data
+    Logger_->Log("Removed memory resident simulation with ID "+std::to_string(SimID), 3);
+
+    TaskData.SetStatus(API::ManagerTaskStatus::Success);
+}
+
+void DeleteResidentByIDTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskData* TaskData) {
+    if (!TaskData) return;
+    _Manager->DeleteResidentByIDTask(*TaskData); // Run the rest back in the Manager for full context.
+}
+
+/**
+ * Delete the simulation indicated by its ID from the memory-resident simulations.
+ * This can be used to free up resources.
+ * This is a managed request and completion should be tested with ManTaskStatus.
+ */
+std::string SimulationRPCInterface::DeleteResidentByID(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/DeleteResidentByID", &Simulations_, false, false);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Prepare data structure for task
+    std::unique_ptr<API::ManagerTaskData> DeleteResidentByIDTaskData = std::make_unique<API::ManagerTaskData>();
+
+    // Note that this managed request needs to know the Simulation to delete.
+    DeleteResidentByIDTaskData->InputInt = Handle.Sim()->ID;
+
+    // Launch task thread
+    // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
+    DeleteResidentByIDTaskData->Task = std::make_unique<std::thread>(DeleteResidentByIDTaskThread, this, DeleteResidentByIDTaskData.get());
+
+    // Add task with fresh task status and get task ID to be returned to requestor
+    int TaskID = AddManagerTask(DeleteResidentByIDTaskData);
+    if (TaskID<0) {
+        Logger_->Log("Unable to launch GetResourceStatus Task", 8);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+    }
+
+    // Return Result ID
+    Handle.ResetThisSimulation(); // Just in case deletion is super fast
+    return Handle.ResponseWithID("TaskID", TaskID);
+}
+
+void SimulationRPCInterface::GetResourceStatusTask(API::ManagerTaskData & TaskData) {
+    // 1. Get System-wide available memory
+    struct sysinfo si;
+    size_t system_free = 0;
+    if (sysinfo(&si) == 0) {
+        // freeram: totally unused memory
+        // bufferram: memory used for temporary block device storage
+        // Multiply by mem_unit to get actual byte count
+        system_free = (size_t)(si.freeram + si.bufferram) * si.mem_unit;
+    }
+    size_t totalRAMfree = system_free;
+
+    // This is optional, because it can take quite long.
+    if (ResourceChecksIncludeHeap) {
+        // 2. Get Internal Heap available memory
+        struct mallinfo2 mi = mallinfo2();
+        
+        // fordblks: Total quantity of free space in the heap
+        size_t internal_free = (size_t)mi.fordblks;
+
+        totalRAMfree += internal_free;
+    }
+
+    TaskData.OutputData["RAMfree"] = totalRAMfree;
+    TaskData.SetStatus(API::ManagerTaskStatus::Success);
+}
+
+void GetResourceStatusTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskData* TaskData) {
+    if (!TaskData) return;
+    _Manager->GetResourceStatusTask(*TaskData); // Run the rest back in the Manager for full context.
+}
+
+/**
+ * Return information about available resources (e.g. RAM).
+ * This is a managed request and completion should be tested with ManTaskStatus.
+ */
+std::string SimulationRPCInterface::GetResourceStatus(std::string _JSONRequest) {
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetResourceStatus", &Simulations_, true, true);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Prepare data structure for task
+    std::unique_ptr<API::ManagerTaskData> GetResourceStatusTaskData = std::make_unique<API::ManagerTaskData>();
+
+    // Note that this managed request does not need any GetResourceStatusTaskData->InputData.
+
+    // Launch task thread
+    // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
+    GetResourceStatusTaskData->Task = std::make_unique<std::thread>(GetResourceStatusTaskThread, this, GetResourceStatusTaskData.get());
+
+    // Add task with fresh task status and get task ID to be returned to requestor
+    int TaskID = AddManagerTask(GetResourceStatusTaskData);
+    if (TaskID<0) {
+        Logger_->Log("Unable to launch GetResourceStatus Task", 8);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+    }
+
+    // Return Result ID
+    return Handle.ResponseWithID("TaskID", TaskID);
+}
+
+std::string SimulationRPCInterface::SetResourceChecksIncludeHeap(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/ResourceChecksIncludeHeap", &Simulations_);
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    bool resourcechecksincludeheap;
+    Handle.GetParBool("IncludeHeap", resourcechecksincludeheap);
+
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    ResourceChecksIncludeHeap = resourcechecksincludeheap;
+
+    // Return Result ID
+    return Handle.ErrResponse(); // ok
+}
 
 std::string SimulationRPCInterface::SimulationSetSeed(std::string _JSONRequest) {
 
@@ -615,6 +799,28 @@ std::string SimulationRPCInterface::SimulationLoad(std::string _JSONRequest) {
     return Handle.ResponseWithID("TaskID", TaskID);
 }
 
+// The function that handles the request.
+void SimulationRPCInterface::SimulationSaveModelTask(API::ManagerTaskData & TaskData) {
+
+    Logger_->Log("Saving Neuronal Circuit Model " + TaskData.InputData, 2);
+
+    if (!TaskData.InputSim->SaveModel(TaskData.InputData)) {
+        Logger_->Log("Failed to save neuronal circuit model as "+TaskData.InputData, 8);
+        TaskData.SetStatus(API::ManagerTaskStatus::GeneralFailure);
+        return;
+    }
+
+    Logger_->Log("Saved neuronal circuit model to "+TaskData.InputData, 3);
+
+    TaskData.SetStatus(API::ManagerTaskStatus::Success); // Signal task done
+}
+
+// The threadable function that calls the task handler above.
+void SimulationSaveModelTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskData* TaskData) {
+    if (!TaskData) return;
+    _Manager->SimulationSaveModelTask(*TaskData); // Run the rest back in the Manager for full context.
+}
+
 /**
  * This saves aspects of a Simulation that define the neuronal circuit model,
  * i.e. neurons, compartments, shapes, synapses, and a few other necessary
@@ -622,27 +828,59 @@ std::string SimulationRPCInterface::SimulationLoad(std::string _JSONRequest) {
  */
 std::string SimulationRPCInterface::SimulationSaveModel(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/SaveModel", &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/SaveModel", &Simulations_, false, false); // false, false if applied to Simulation object
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
+
+    // Prepare data structure for task
+    std::unique_ptr<API::ManagerTaskData> SimulationSaveModelTaskData = std::make_unique<API::ManagerTaskData>();
 
     // Get the Model File Name
     std::string SavedModelName;
     if (!Handle.GetParString("Name", SavedModelName)) {
         return Handle.ErrResponse();
     }
+    SimulationSaveModelTaskData->InputData = SavedModelName;
+    SimulationSaveModelTaskData->InputSim = Handle.Sim();
 
-    Logger_->Log("Saving Neuronal Circuit Model " + SavedModelName, 2);
+    // Launch task thread
+    // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
+    SimulationSaveModelTaskData->Task = std::make_unique<std::thread>(SimulationSaveModelTaskThread, this, SimulationSaveModelTaskData.get());
 
-    // *** This may need to be a task with its own thread as well, like simulation load.
-    if (!Handle.Sim()->SaveModel(SavedModelName)) {
-        Logger_->Log("Failed to save neuronal circuit model as "+SavedModelName, 8);
+    // Add task with fresh task status and get task ID to be returned to requestor
+    int TaskID = AddManagerTask(SimulationSaveModelTaskData);
+    if (TaskID<0) {
+        Logger_->Log("Unable to launch SimulationSaveModel Task", 8);
         return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
     }
 
-    Logger_->Log("Saved neuronal circuit model to "+SavedModelName, 3);
-    return Handle.ErrResponse(); // ok
+    // Return Result ID
+    return Handle.ResponseWithID("TaskID", TaskID);
+}
+
+// The function that handles the request.
+void SimulationRPCInterface::SimulationLoadModelTask(API::ManagerTaskData & TaskData) {
+
+    // --> This is where you put the actual code that handles the request
+    Logger_->Log("Loading Neuronal Circuit Model " + TaskData.InputData, 2);
+
+    // *** This may need to be a task with its own thread as well, like simulation load.
+    if (!TaskData.InputSim->LoadModel(TaskData.InputData)) {
+        Logger_->Log("Failed to load neuronal circuit model "+TaskData.InputData, 8);
+        TaskData.SetStatus(API::ManagerTaskStatus::GeneralFailure);
+        return;
+    }
+
+    Logger_->Log("Loaded neuronal circuit model "+TaskData.InputData, 3);
+
+    TaskData.SetStatus(API::ManagerTaskStatus::Success); // Signal task done
+}
+
+// The threadable function that calls the task handler above.
+void SimulationLoadModelTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskData* TaskData) {
+    if (!TaskData) return;
+    _Manager->SimulationLoadModelTask(*TaskData); // Run the rest back in the Manager for full context.
 }
 
 /**
@@ -651,27 +889,35 @@ std::string SimulationRPCInterface::SimulationSaveModel(std::string _JSONRequest
  */
 std::string SimulationRPCInterface::SimulationLoadModel(std::string _JSONRequest) {
 
-    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/LoadModel", &Simulations_);
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/LoadModel", &Simulations_, false, false); // false, false if applied to Simulation object
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
+
+    // Prepare data structure for task
+    std::unique_ptr<API::ManagerTaskData> SimulationLoadModelTaskData = std::make_unique<API::ManagerTaskData>();
 
     // Get the Model File Name
     std::string SavedModelName;
     if (!Handle.GetParString("Name", SavedModelName)) {
         return Handle.ErrResponse();
     }
+    SimulationLoadModelTaskData->InputData = SavedModelName;
+    SimulationLoadModelTaskData->InputSim = Handle.Sim();
 
-    Logger_->Log("Loading Neuronal Circuit Model " + SavedModelName, 2);
+    // Launch task thread
+    // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
+    SimulationLoadModelTaskData->Task = std::make_unique<std::thread>(SimulationLoadModelTaskThread, this, SimulationLoadModelTaskData.get());
 
-    // *** This may need to be a task with its own thread as well, like simulation load.
-    if (!Handle.Sim()->LoadModel(SavedModelName)) {
-        Logger_->Log("Failed to load neuronal circuit model "+SavedModelName, 8);
+    // Add task with fresh task status and get task ID to be returned to requestor
+    int TaskID = AddManagerTask(SimulationLoadModelTaskData);
+    if (TaskID<0) {
+        Logger_->Log("Unable to launch SimulationLoadModel Task", 8);
         return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
     }
 
-    Logger_->Log("Loaded neuronal circuit model "+SavedModelName, 3);
-    return Handle.ErrResponse(); // ok
+    // Return Result ID
+    return Handle.ResponseWithID("TaskID", TaskID);
 }
 
 std::string SimulationRPCInterface::SimulationGetGeoCenter(std::string _JSONRequest) {
@@ -1034,36 +1280,99 @@ std::string SimulationRPCInterface::GetSomaPositions(std::string _JSONRequest) {
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
-std::string SimulationRPCInterface::GetConnectome(std::string _JSONRequest) {
- 
-    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetConnectome", &Simulations_);
-    if (Handle.HasError()) {
-        return Handle.ErrResponse();
-    }
+// The function that handles the request.
+void SimulationRPCInterface::GetConnectomeTask(API::ManagerTaskData & TaskData) {
 
-    // Return JSON
-    nlohmann::json ResponseJSON = Handle.Sim()->GetConnectomeJSON();
-    ResponseJSON["StatusCode"] = 0; // ok
-    return Handle.ResponseAndStoreRequest(ResponseJSON);
+    TaskData.OutputData = TaskData.InputSim->GetConnectomeJSON();
+
+    TaskData.SetStatus(API::ManagerTaskStatus::Success); // Signal task done
 }
 
-std::string SimulationRPCInterface::GetAbstractConnectome(std::string _JSONRequest) {
- 
-    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetAbstractConnectome", &Simulations_);
+// The threadable function that calls the task handler above.
+void GetConnectomeTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskData* TaskData) {
+    if (!TaskData) return;
+    _Manager->GetConnectomeTask(*TaskData); // Run the rest back in the Manager for full context.
+}
+
+// The API request handling function that needs to return quickly.
+std::string SimulationRPCInterface::GetConnectome(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetConnectome", &Simulations_, false, false); // false, false if applied to Simulation object
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
 
+    // Prepare data structure for task
+    std::unique_ptr<API::ManagerTaskData> GetConnectomeTaskData = std::make_unique<API::ManagerTaskData>();
+
+    GetConnectomeTaskData->InputSim = Handle.Sim();
+
+    // Launch task thread
+    // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
+    GetConnectomeTaskData->Task = std::make_unique<std::thread>(GetConnectomeTaskThread, this, GetConnectomeTaskData.get());
+
+    // Add task with fresh task status and get task ID to be returned to requestor
+    int TaskID = AddManagerTask(GetConnectomeTaskData);
+    if (TaskID<0) {
+        Logger_->Log("Unable to launch GetConnectome Task", 8);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+    }
+
+    // Return Result ID
+    return Handle.ResponseWithID("TaskID", TaskID);
+}
+
+// The function that handles the request.
+void SimulationRPCInterface::GetAbstractConnectomeTask(API::ManagerTaskData & TaskData) {
+
+    TaskData.OutputData = TaskData.InputSim->GetAbstractConnectomeJSON(TaskData.InputFlags[0], TaskData.InputFlags[1]);
+
+    TaskData.SetStatus(API::ManagerTaskStatus::Success); // Signal task done
+}
+
+// The threadable function that calls the task handler above.
+void GetAbstractConnectomeTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskData* TaskData) {
+    if (!TaskData) return;
+    _Manager->GetAbstractConnectomeTask(*TaskData); // Run the rest back in the Manager for full context.
+}
+
+// The API request handling function that needs to return quickly.
+std::string SimulationRPCInterface::GetAbstractConnectome(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetAbstractConnectome", &Simulations_, false, false); // false, false if applied to Simulation object
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Prepare data structure for task
+    std::unique_ptr<API::ManagerTaskData> GetAbstractConnectomeTaskData = std::make_unique<API::ManagerTaskData>();
+
+    // --> Put necessary data into task data input variables, e.g.
+    //     SomethingTaskData->InputInt = Handle.Sim()->ID;
+    //     SomethingTaskData->InputData = _JSONRequest;
+    //     LoadFileIntoString("Somepath", SomethingTaskData->InputData));
     bool Sparse, NonZero;
     if ((!Handle.GetParBool("Sparse", Sparse)) ||
         (!Handle.GetParBool("NonZero", NonZero))) {
         return Handle.ErrResponse();
     }
+    GetAbstractConnectomeTaskData->InputFlags[0] = Sparse;
+    GetAbstractConnectomeTaskData->InputFlags[1] = NonZero;
+    GetAbstractConnectomeTaskData->InputSim = Handle.Sim();
 
-    // Return JSON
-    nlohmann::json ResponseJSON = Handle.Sim()->GetAbstractConnectomeJSON(Sparse, NonZero);
-    ResponseJSON["StatusCode"] = 0; // ok
-    return Handle.ResponseAndStoreRequest(ResponseJSON);
+    // Launch task thread
+    // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
+    GetAbstractConnectomeTaskData->Task = std::make_unique<std::thread>(GetAbstractConnectomeTaskThread, this, GetAbstractConnectomeTaskData.get());
+
+    // Add task with fresh task status and get task ID to be returned to requestor
+    int TaskID = AddManagerTask(GetAbstractConnectomeTaskData);
+    if (TaskID<0) {
+        Logger_->Log("Unable to launch GetAbstractConnectome Task", 8);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+    }
+
+    // Return Result ID
+    return Handle.ResponseWithID("TaskID", TaskID);
 }
 
 /**
@@ -1080,12 +1389,10 @@ std::string SimulationRPCInterface::GetAbstractConnectome(std::string _JSONReque
  */
 std::string SimulationRPCInterface::ManTaskStatus(std::string _JSONRequest) {
  
-    API::HandlerData Handle(_JSONRequest, Logger_, "ManTaskStatus", &Simulations_, true, true);
+    API::HandlerData Handle(_JSONRequest, Logger_, "ManTaskStatus", &Simulations_, true, true); // Not Sim specific.
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
-
-
 
 // *** NOTE: By passing JSON objects/components as strings and then having to
 //           parse them into JSON objects again, the handlers above are doing
@@ -1118,14 +1425,6 @@ std::string SimulationRPCInterface::ManTaskStatus(std::string _JSONRequest) {
 }
 
 
-
-
-
-
-
-
-
-
 // bool SimulationRPCInterface::IsSimulationBusy(Simulation* _Sim) {
 //     return _Sim->IsProcessing || _Sim->WorkRequested;
 // }
@@ -1138,3 +1437,66 @@ std::vector<std::unique_ptr<Simulation>>* SimulationRPCInterface::GetSimulationV
 }; // Close Namespace Simulator
 }; // Close Namespace NES
 }; // Close Namespace BG
+
+// ==== TEMPLATE for managed tasks:
+
+/*
+
+// The function that handles the request.
+void SimulationRPCInterface::SomethingTask(API::ManagerTaskData & TaskData) {
+
+    // --> This is where you put the actual code that handles the request
+
+    // --> Use "Input" variables in TaskData if you need data.
+
+    // --> Add to TaskData.OutputData to deliver output data, e.g.
+    //     TaskData.OutputData["something"] = value.
+
+    // --> If there are outcomes that can be an error, incomplete, or undoable
+    //     then use TaskData.SetStatus(API::ManagerTaskStatus::GeneralFailure);
+    //     and return.
+    Logger_->Log("Indicate something in the Log as needed", 3);
+
+    TaskData.SetStatus(API::ManagerTaskStatus::Success); // Signal task done
+}
+
+// The threadable function that calls the task handler above.
+void SomethingTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskData* TaskData) {
+    if (!TaskData) return;
+    _Manager->SomethingTask(*TaskData); // Run the rest back in the Manager for full context.
+}
+
+// The API request handling function that needs to return quickly.
+std::string SimulationRPCInterface::Something(std::string _JSONRequest) {
+
+    API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Something", &Simulations_, false, false); // false, false if applied to Simulation object
+    if (Handle.HasError()) {
+        return Handle.ErrResponse();
+    }
+
+    // Prepare data structure for task
+    std::unique_ptr<API::ManagerTaskData> SomethingTaskData = std::make_unique<API::ManagerTaskData>();
+
+    // --> Put necessary data into task data input variables, e.g.
+    //     SomethingTaskData->InputInt = Handle.Sim()->ID;
+    //     SomethingTaskData->InputData = _JSONRequest;
+    //     LoadFileIntoString("Somepath", SomethingTaskData->InputData));
+
+    // Launch task thread
+    // The thread receives a pointer to this object for access to Sims and such, plus a pointer to task data.
+    SomethingTaskData->Task = std::make_unique<std::thread>(SomethingTaskThread, this, SomethingTaskData.get());
+
+    // Add task with fresh task status and get task ID to be returned to requestor
+    int TaskID = AddManagerTask(SomethingTaskData);
+    if (TaskID<0) {
+        Logger_->Log("Unable to launch Something Task", 8);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+    }
+
+    // Return Result ID
+    // --> Nullify ThisSimulation in HandlerData if the Simulation object may become invalid by handling the request:
+    //     Handle.ResetThisSimulation(); // Just in case Simulation object invalidation is super fast
+    return Handle.ResponseWithID("TaskID", TaskID);
+}
+
+*/

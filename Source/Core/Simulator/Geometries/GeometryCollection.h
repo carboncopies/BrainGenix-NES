@@ -64,6 +64,8 @@ struct GeometryCollection {
         }
     }
 
+    void Clear() { Geometries.clear(); }
+
     size_t Size() const { return Geometries.size(); }
 
     size_t SizeOf() const {

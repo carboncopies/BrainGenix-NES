@@ -50,6 +50,11 @@ HandlerData::HandlerData(const std::string& _JSONRequest, BG::Common::Logger::Lo
         return;
     }
 
+    if (!SimVec) {
+        Logger_->Log("NullPtr in vector of Simulations", 8);
+        Status = BGStatusCode::BGStatusInvalidParametersPassed;
+        return;
+    }
     // if (isloadingsim) {
     //     SimulationID = ManTaskData->ReplaceSimulationID;
     // } else {
@@ -63,6 +68,11 @@ HandlerData::HandlerData(const std::string& _JSONRequest, BG::Common::Logger::Lo
         return;
     }
     ThisSimulation = SimVec->at(SimulationID).get();
+    if (!ThisSimulation) { // in case deleted with DeleteResidentByID()
+        Logger_->Log("Simulation with ID "+std::to_string(SimulationID)+" was deleted, cannot make further requests", 8);
+        Status = BGStatusCode::BGStatusInvalidParametersPassed;
+        return;
+    }
 
     if (!PermitBusy && (ThisSimulation->IsProcessing || ThisSimulation->WorkRequested)) {
         Logger_->Log("Simulation Is Currently Busy, And Route Is Not Allowed To Run While Busy", 8);

@@ -112,7 +112,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         ::BG::NES::VSDA::Calcium::VSDA_CA_DefineScanRegion(_Logger, Sim, Region, &RegionID);
         ::BG::NES::VSDA::Calcium::VSDA_CA_QueueRenderOperation(_Logger, Sim, RegionID);
 
-        while (Sim->CaData_.State_ != ::BG::NES::VSDA::Calcium::CA_RENDER_DONE) {
+        while (Sim->CaData_->State_ != ::BG::NES::VSDA::Calcium::CA_RENDER_DONE) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
 
@@ -241,7 +241,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         VSDA_EM_DefineScanRegion(_Logger, Sim, Region, &RegionID);
         VSDA_EM_QueueRenderOperation(_Logger, Sim, RegionID);
 
-        while (Sim->VSDAData_.State_ != Simulator::VSDA_RENDER_DONE) {
+        while (Sim->VSDAData_->State_ != Simulator::VSDA_RENDER_DONE) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
 
@@ -327,7 +327,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         VSDA_EM_DefineScanRegion(_Logger, Sim, Region, &RegionID);
         VSDA_EM_QueueRenderOperation(_Logger, Sim, RegionID);
 
-        while (Sim->VSDAData_.State_ != Simulator::VSDA_RENDER_DONE) {
+        while (Sim->VSDAData_->State_ != Simulator::VSDA_RENDER_DONE) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
 
@@ -412,7 +412,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         VSDA_EM_DefineScanRegion(_Logger, Sim, Region, &RegionID);
         VSDA_EM_QueueRenderOperation(_Logger, Sim, RegionID);
 
-        while (Sim->VSDAData_.State_ != Simulator::VSDA_RENDER_DONE) {
+        while (Sim->VSDAData_->State_ != Simulator::VSDA_RENDER_DONE) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
 
@@ -568,7 +568,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         VSDA_EM_DefineScanRegion(_Logger, Sim, Region, &RegionID);
         VSDA_EM_QueueRenderOperation(_Logger, Sim, RegionID);
 
-        while (Sim->VSDAData_.State_ != Simulator::VSDA_RENDER_DONE) {
+        while (Sim->VSDAData_->State_ != Simulator::VSDA_RENDER_DONE) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
 
@@ -684,7 +684,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         VSDA_EM_DefineScanRegion(_Logger, Sim, Region, &RegionID);
         VSDA_EM_QueueRenderOperation(_Logger, Sim, RegionID);
 
-        while (Sim->VSDAData_.State_ != Simulator::VSDA_RENDER_DONE) {
+        while (Sim->VSDAData_->State_ != Simulator::VSDA_RENDER_DONE) {
             std::this_thread::sleep_for(std::chrono::milliseconds(10));
         }
 
