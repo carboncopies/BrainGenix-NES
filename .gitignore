@@ -7,6 +7,9 @@
 /.vscode/
 
 /venv/
+.DS_Store
+nes_build.log
+*.log
 
 
 ## C++ Gitignore template from github

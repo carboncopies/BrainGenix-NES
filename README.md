@@ -31,3 +31,14 @@ By contributing to or participating in BrainGenix-NES and the WBE Challenge, you
 ## Supported platforms
 
 BrainGenix-NES compiles and runs on modern Linux distributions.
+
+Apple Silicon macOS is supported through the same setup, build, and run scripts:
+
+```bash
+cd Tools
+./Setup.sh
+./Build.sh 6 Release
+./Run.sh
+```
+
+See [Docs/MacOS.md](Docs/MacOS.md) for prerequisites, MoltenVK notes, and VSDA rendering expectations.

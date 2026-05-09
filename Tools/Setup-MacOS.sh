@@ -3,6 +3,11 @@
 # Setup MacOS Environment via Homebrew
 echo "Setting Up Packages Needed For Compilation on MacOS"
 
+if ! command -v brew >/dev/null 2>&1; then
+    echo "Homebrew is required on macOS. Install it from https://brew.sh/ and rerun this script."
+    exit 1
+fi
+
 # Ensure Homebrew is updated
 brew update
 
@@ -27,13 +32,19 @@ cd Tools
 
 # Update Submodules
 echo "Updating Submodules"
-git submodule update --init
-cd ../ThirdParty/NetmorphCMake && git pull origin main && cd ../../Tools
+git submodule update --init --recursive
 
 # Apply vcpkg patches
 echo "Applying macOS patches to vcpkg..."
 cd ../ThirdParty/vcpkg
-git apply ../../Tools/Patches/vcpkg/vcpkg-macos.patch
+if git apply --reverse --check ../../Tools/Patches/vcpkg/vcpkg-macos.patch >/dev/null 2>&1; then
+    echo "macOS vcpkg patches already applied"
+elif git apply --check ../../Tools/Patches/vcpkg/vcpkg-macos.patch; then
+    git apply ../../Tools/Patches/vcpkg/vcpkg-macos.patch
+else
+    echo "Unable to apply macOS vcpkg patches"
+    exit 1
+fi
 cd ../../Tools
 
 # Bootstrap vcpkg

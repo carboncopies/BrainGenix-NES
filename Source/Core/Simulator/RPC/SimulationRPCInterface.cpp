@@ -13,8 +13,14 @@
 #include <thread>
 #include <mutex>
 #include <chrono>
+
+#ifdef __linux__
 #include <malloc.h>
 #include <sys/sysinfo.h>
+#elif defined(__APPLE__)
+#include <mach/mach.h>
+#include <mach/mach_host.h>
+#endif
 
 namespace BG {
 namespace NES {
@@ -357,17 +363,30 @@ std::string SimulationRPCInterface::DeleteResidentByID(std::string _JSONRequest)
 
 void SimulationRPCInterface::GetResourceStatusTask(API::ManagerTaskData & TaskData) {
     // 1. Get System-wide available memory
-    struct sysinfo si;
     size_t system_free = 0;
+#ifdef __linux__
+    struct sysinfo si;
     if (sysinfo(&si) == 0) {
         // freeram: totally unused memory
         // bufferram: memory used for temporary block device storage
         // Multiply by mem_unit to get actual byte count
         system_free = (size_t)(si.freeram + si.bufferram) * si.mem_unit;
     }
+#elif defined(__APPLE__)
+    vm_statistics64_data_t vm_stats;
+    mach_msg_type_number_t count = HOST_VM_INFO64_COUNT;
+    mach_port_t host = mach_host_self();
+    if (host_statistics64(host, HOST_VM_INFO64, reinterpret_cast<host_info64_t>(&vm_stats), &count) == KERN_SUCCESS) {
+        vm_size_t page_size = 0;
+        host_page_size(host, &page_size);
+        system_free = (size_t)(vm_stats.free_count + vm_stats.inactive_count + vm_stats.speculative_count) * page_size;
+    }
+    mach_port_deallocate(mach_task_self(), host);
+#endif
     size_t totalRAMfree = system_free;
 
     // This is optional, because it can take quite long.
+#ifdef __linux__
     if (ResourceChecksIncludeHeap) {
         // 2. Get Internal Heap available memory
         struct mallinfo2 mi = mallinfo2();
@@ -377,6 +396,7 @@ void SimulationRPCInterface::GetResourceStatusTask(API::ManagerTaskData & TaskDa
 
         totalRAMfree += internal_free;
     }
+#endif
 
     TaskData.OutputData["RAMfree"] = totalRAMfree;
     TaskData.SetStatus(API::ManagerTaskStatus::Success);
