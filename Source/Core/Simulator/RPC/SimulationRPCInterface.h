@@ -80,6 +80,7 @@ private:
     int NextManTaskID = 0; /**Use this, because we use a map not a vector, so that we can expire some to shed old cached stuff*/
     std::map<int, std::unique_ptr<API::ManagerTaskData>> ManagerTasks; /**Status data of launched tasks by Task ID*/
 
+    bool ResourceChecksIncludeHeap = false; // See how this applies in GetResourceStatus().
 
 
 public:
@@ -105,10 +106,21 @@ public:
 
     // bool BadReqID(int ReqID);
 
+    // === Functions for Managed Tasks that can take long to complete
+
     int AddManagerTask(std::unique_ptr<API::ManagerTaskData> & TaskData);
 
     void LoadingSimSetter(bool SetTo);
     void SimLoadingTask(API::ManagerTaskData & TaskData);
+
+    void GetResourceStatusTask(API::ManagerTaskData & TaskData);
+    void DeleteResidentByIDTask(API::ManagerTaskData & TaskData);
+    void SimulationSaveModelTask(API::ManagerTaskData & TaskData);
+    void SimulationLoadModelTask(API::ManagerTaskData & TaskData);
+    void GetConnectomeTask(API::ManagerTaskData & TaskData);
+    void GetAbstractConnectomeTask(API::ManagerTaskData & TaskData);
+
+    // === API Request Handler functions that must complete quickly
 
     /**
      * @brief Various routes for API
@@ -120,6 +132,9 @@ public:
      */
     std::string SimulationCreate(std::string _JSONRequest);
     std::string SimulationReset(std::string _JSONRequest);
+    std::string DeleteResidentByID(std::string _JSONRequest);
+    std::string GetResourceStatus(std::string _JSONRequest);
+    std::string SetResourceChecksIncludeHeap(std::string _JSONRequest);
 
     std::string SimulationSetSeed(std::string _JSONRequest);
     std::string LIFCAbstractedFunctional(std::string _JSONRequest);

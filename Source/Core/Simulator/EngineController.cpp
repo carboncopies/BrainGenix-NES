@@ -27,7 +27,7 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
     Engine SE;
 
     // Enter into loop until thread should stop
-    while (!(*_StopThreads)) {
+    while ((!(*_StopThreads)) && (_Sim->KeepResident)) {
 
         if (_Sim->WorkRequested) {
             _Logger->Log("Simulation Work Requested, Identifiying Task", 2);
@@ -50,7 +50,7 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
                 while (_Sim->IsRendering) {
                     std::this_thread::sleep_for(std::chrono::milliseconds(10)); // sleep for 10ms
                 }
-                _Sim->VSDAData_.State_ = VSDA_RENDER_DONE;
+                _Sim->VSDAData_->State_ = VSDA_RENDER_DONE;
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
             } else if (_Sim->CurrentTask == SIMULATION_VISUALIZATION) {
@@ -60,7 +60,7 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
                 while (_Sim->IsRendering) {
                     std::this_thread::sleep_for(std::chrono::milliseconds(10)); // sleep for 10ms
                 }
-                _Sim->VisualizerParams.State = VISUALIZER_DONE;
+                _Sim->VisualizerParams->State = VISUALIZER_DONE;
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
             } else if (_Sim->CurrentTask == SIMULATION_CALCIUM) {
@@ -70,7 +70,7 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
                 while (_Sim->IsRendering) {
                     std::this_thread::sleep_for(std::chrono::milliseconds(10)); // sleep for 10ms
                 }
-                _Sim->VSDAData_.State_ = VSDA_RENDER_DONE;
+                _Sim->VSDAData_->State_ = VSDA_RENDER_DONE;
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
             } else {

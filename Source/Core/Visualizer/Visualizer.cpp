@@ -52,7 +52,7 @@ bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
     BuildMeshFromSimulation(_Logger, _Renderer, _Simulation);
 
     // Now, build the electrode mesh if enabled
-    if (_Simulation->VisualizerParams.VisualizeElectrodes) {
+    if (_Simulation->VisualizerParams->VisualizeElectrodes) {
         BuildMeshFromElectrodes(_Logger, _Renderer, _Simulation);
     }
 
@@ -66,7 +66,7 @@ bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
         _Logger->Log("Failed To Create Directory, Error '" + Code.message() + "'", 7);
     }
     std::string Filepath = TargetDirectory;
-    RenderVisualization(_Logger, _Renderer, &_Simulation->VisualizerParams, Filepath, _ImageProcessorPool);
+    RenderVisualization(_Logger, _Renderer, _Simulation->VisualizerParams.get(), Filepath, _ImageProcessorPool);
 
 
     return true;

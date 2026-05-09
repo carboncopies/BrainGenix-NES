@@ -44,6 +44,18 @@ Geometries::Vec3D &BSNeuron::GetCellCenter() {
     return this->Morphology["soma"]->Center_um;
 };
 
+BoundingBox BSNeuron::GetSomaBoundingBox(NES::VSDA::WorldInfo& _WorldInfo) {
+    return Morphology["soma"]->GetBoundingBox(_WorldInfo);
+}
+
+/**
+ * BSNeuron uses only a single compartment for the soma and that
+ * compartment is a sphere.
+ */
+float BSNeuron::GetSomaRadius() {
+    return static_cast<Geometries::Sphere*>(Morphology["soma"])->Radius_um;
+}
+
 //! Records the time of direct stimulation for every occurrence
 //! of a direct stimulation.
 // *** WARNING: This does the same as AddSpecificAPTime(), probably delete this one.

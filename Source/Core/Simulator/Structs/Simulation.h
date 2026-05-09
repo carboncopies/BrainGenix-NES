@@ -99,6 +99,7 @@ public:
 
     std::string Name; /**Name of the simulation*/
     int ID;           /**ID of the simulation*/
+    bool KeepResident = true; // Can be used to delete this specific simulation (see DeleteResidentByID)
 
     int RandomSeed = 0; /** Master random seed for this simulation. */
     std::unique_ptr<Distributions::Generic> MasterRandom_;
@@ -156,11 +157,11 @@ public:
     std::vector<Tools::PatchClampDAC> PatchClampDACs; /**List of patchclamp dacs, id is index*/
     std::vector<Tools::PatchClampADC> PatchClampADCs; /**List of patchclamp adcs, id is index*/
 
-    VSDAData VSDAData_; /**Instance of the simulator VSDA data - stores the state for the renderer to use*/
-    VSDA::Calcium::CalciumImagingData CaData_; /**Instance of CA Data - stores state info about calcium imaging*/
+    std::unique_ptr<VSDAData> VSDAData_ = std::make_unique<VSDAData>(); /**Instance of the simulator VSDA data - stores the state for the renderer to use*/
+    std::unique_ptr<VSDA::Calcium::CalciumImagingData> CaData_ = std::make_unique<VSDA::Calcium::CalciumImagingData>(); /**Instance of CA Data - stores state info about calcium imaging*/
 
-    VisualizerParameters VisualizerParams; /**Instance of visualizer parameters, used to generate visualizations in vulkan*/
-    NetmorphParameters NetmorphParams; /**Instance of the netmorph parameters, used to configure netmorph's neuron culture simulation*/
+    std::unique_ptr<VisualizerParameters> VisualizerParams = std::make_unique<VisualizerParameters>(); /**Instance of visualizer parameters, used to generate visualizations in vulkan*/
+    std::unique_ptr<NetmorphParameters> NetmorphParams = std::make_unique<NetmorphParameters>(); /**Instance of the netmorph parameters, used to configure netmorph's neuron culture simulation*/
 
     std::thread NetmorphWorkerThread; /**Thread that when exists, runs the netmorph simulation.*/
 
@@ -198,6 +199,9 @@ public:
     int AddReceptor(Connections::Receptor& _C);
     int AddLIFCReceptor(Connections::LIFCReceptor& _C);
     int AddNetmorphLIFCReceptor(Connections::LIFCReceptor& _C, Connections::NetmorphLIFCReceptorRaw& _CDataRaw);
+
+    bool EditSCNeuron(int _ID, CoreStructs::SCNeuronStruct& _N, CoreStructs::SCEdit& _E);
+    bool EditLIFCNeuron(int _ID, CoreStructs::LIFCNeuronStruct& _N, CoreStructs::LIFCEdit& _E);
 
     void RegisterNeuronUIDToCompartments(std::vector<int> _GeometryCompartmentIDs, uint64_t _NeuronUID);
 

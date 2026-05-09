@@ -169,7 +169,7 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     // Get Local Variables
     ScanRegion RequestedRegion = _SubRegion->Region;
     Simulation* Sim = _SubRegion->Sim;
-    VSDAData* VSDAData_ = &Sim->VSDAData_; 
+    VSDAData* VSDAData_ = Sim->VSDAData_.get(); 
     int SliceOffset = _SubRegion->LayerOffset;
     double XOffset = _SubRegion->RegionOffsetX_um;
     double YOffset = _SubRegion->RegionOffsetY_um;
@@ -286,7 +286,7 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     for (int i = 0; i < NumZSlices; i++) {
         int CurrentSliceIndex = i * NumVoxelsPerSlice;
 
-        VSDAData_->TotalSlices_ += RenderSliceFromArray(_Logger, _SubRegion->MaxImagesX, _SubRegion->MaxImagesY, &Sim->VSDAData_, VSDAData_->Array_.get(), FileNamePrefix, CurrentSliceIndex, NumVoxelsPerSlice, _ImageProcessorPool, XOffset, YOffset, _SubRegion->MasterRegionOffsetX_um, _SubRegion->MasterRegionOffsetY_um, SliceOffset, &PerlinGenerator);
+        VSDAData_->TotalSlices_ += RenderSliceFromArray(_Logger, _SubRegion->MaxImagesX, _SubRegion->MaxImagesY, Sim->VSDAData_.get(), VSDAData_->Array_.get(), FileNamePrefix, CurrentSliceIndex, NumVoxelsPerSlice, _ImageProcessorPool, XOffset, YOffset, _SubRegion->MasterRegionOffsetX_um, _SubRegion->MasterRegionOffsetY_um, SliceOffset, &PerlinGenerator);
 
 
     }

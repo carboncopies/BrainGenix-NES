@@ -50,6 +50,11 @@ HandlerData::HandlerData(const std::string& _JSONRequest, BG::Common::Logger::Lo
         return;
     }
 
+    if (!SimVec) {
+        Logger_->Log("NullPtr in vector of Simulations", 8);
+        Status = BGStatusCode::BGStatusInvalidParametersPassed;
+        return;
+    }
     // if (isloadingsim) {
     //     SimulationID = ManTaskData->ReplaceSimulationID;
     // } else {
@@ -63,6 +68,11 @@ HandlerData::HandlerData(const std::string& _JSONRequest, BG::Common::Logger::Lo
         return;
     }
     ThisSimulation = SimVec->at(SimulationID).get();
+    if (!ThisSimulation) { // in case deleted with DeleteResidentByID()
+        Logger_->Log("Simulation with ID "+std::to_string(SimulationID)+" was deleted, cannot make further requests", 8);
+        Status = BGStatusCode::BGStatusInvalidParametersPassed;
+        return;
+    }
 
     if (!PermitBusy && (ThisSimulation->IsProcessing || ThisSimulation->WorkRequested)) {
         Logger_->Log("Simulation Is Currently Busy, And Route Is Not Allowed To Run While Busy", 8);
@@ -176,8 +186,8 @@ const nlohmann::json& HandlerData::ReqJSON() const {
 bool HandlerData::FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, nlohmann::json& _JSON, bool _Optional) {
     Iterator = _JSON.find(ParName);
     if (Iterator == _JSON.end()) {
-        Logger_->Log("Error Finding Parameter '" + ParName + "', Request Is: " + _JSON.dump(), 7);
         if (!_Optional) {
+            Logger_->Log("Error Finding Parameter '" + ParName + "', Request Is: " + _JSON.dump(), 7);
             Status = BGStatusCode::BGStatusInvalidParametersPassed;
         }
         return false;
@@ -225,9 +235,9 @@ bool HandlerData::GetParInt(const std::string& ParName, int& Value) {
     return GetParInt(ParName, Value, RequestJSON);
 }
 
-bool HandlerData::GetParFloat(const std::string& ParName, float& Value, nlohmann::json& _JSON) {
+bool HandlerData::GetParFloat(const std::string& ParName, float& Value, nlohmann::json& _JSON, bool _Optional) {
     nlohmann::json::iterator it;
-    if (!FindPar(ParName, it, _JSON)) {
+    if (!FindPar(ParName, it, _JSON, _Optional)) {
         return false;
     }
     if (!it.value().is_number()) {
@@ -239,8 +249,8 @@ bool HandlerData::GetParFloat(const std::string& ParName, float& Value, nlohmann
     return true;
 }
 
-bool HandlerData::GetParFloat(const std::string& ParName, float& Value) {
-    return GetParFloat(ParName, Value, RequestJSON);
+bool HandlerData::GetParFloat(const std::string& ParName, float& Value, bool _Optional) {
+    return GetParFloat(ParName, Value, RequestJSON, _Optional);
 }
 
 bool HandlerData::GetParString(const std::string& ParName, std::string& Value, nlohmann::json& _JSON) {
@@ -280,7 +290,7 @@ bool HandlerData::GetParVec3(const std::string& ParName, Simulator::Geometries::
 
 bool HandlerData::GetParVecInt(const std::string& ParName, std::vector<int>& Value, nlohmann::json& _JSON, bool _Optional) {
     nlohmann::json::iterator it;
-    if (!FindPar(ParName, it, _JSON)) {
+    if (!FindPar(ParName, it, _JSON, _Optional)) {
         return false;
     }
     if (!it.value().is_array()) {

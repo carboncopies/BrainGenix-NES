@@ -72,6 +72,44 @@ LIFCNeuron::LIFCNeuron(const CoreStructs::LIFCNeuronStruct & lifcneuronstruct, S
     norm_ADP = Connections::compute_normalization(tau_rise_ADP_ms, tau_decay_ADP_ms);
 }
 
+bool LIFCNeuron::Edit(const CoreStructs::LIFCNeuronStruct & lifcneuronstruct, const CoreStructs::LIFCEdit & edit) {
+    if (edit.RestingPotential_mV) {
+        build_data.RestingPotential_mV = lifcneuronstruct.RestingPotential_mV;
+        VRest_mV = lifcneuronstruct.RestingPotential_mV;
+    }
+    if (edit.ResetPotential_mV) {
+        build_data.ResetPotential_mV = lifcneuronstruct.ResetPotential_mV;
+        VReset_mV = lifcneuronstruct.ResetPotential_mV;
+    }
+    if (edit.SpikeThreshold_mV) {
+        build_data.SpikeThreshold_mV = lifcneuronstruct.SpikeThreshold_mV;
+        VAct_mV = lifcneuronstruct.SpikeThreshold_mV;
+    }
+    if (edit.MembraneResistance_MOhm) {
+        build_data.MembraneResistance_MOhm = lifcneuronstruct.MembraneResistance_MOhm;
+        Rm_GOhm = lifcneuronstruct.MembraneResistance_MOhm/1000.0; // Note the unit conversion needed!
+    }
+    if (edit.MembraneCapacitance_pF) {
+        build_data.MembraneCapacitance_pF = lifcneuronstruct.MembraneCapacitance_pF;
+        Cm_pF = lifcneuronstruct.MembraneCapacitance_pF;
+    }
+    if (edit.RefractoryPeriod_ms) {
+        build_data.RefractoryPeriod_ms = lifcneuronstruct.RefractoryPeriod_ms;
+        tau_absref_ms = lifcneuronstruct.RefractoryPeriod_ms;
+    }
+    if (edit.SpikeDepolarization_mV) {
+        build_data.SpikeDepolarization_mV = lifcneuronstruct.SpikeDepolarization_mV;
+        VSpike_mV = lifcneuronstruct.SpikeDepolarization_mV;
+    }
+
+    // Updating variables dependent on edited parameters
+    Vm_mV = VRest_mV;
+    tau_m_ms = Rm_GOhm * Cm_pF;
+    g_L_nS = 1.0 / Rm_GOhm;
+
+    return true;
+}
+
 //! Returns the geometric center of the neuron.
 //! In case the soma is constructed of multiple compartments,
 //! this is a center of gravity of the set of compartment centers.
@@ -89,6 +127,40 @@ Geometries::Vec3D& LIFCNeuron::GetCellCenter() {
     GeoCenter_um = geoCenter_um / float(build_data.SomaCompartmentIDs.size());
     return GeoCenter_um;
 };
+
+BoundingBox LIFCNeuron::GetSomaBoundingBox(NES::VSDA::WorldInfo& _WorldInfo) {
+    BoundingBox bb;
+    bool is_first = true;
+    for (const auto & CompID : build_data.SomaCompartmentIDs) {
+        if (CompID < Sim.LIFCCompartments.size()) {
+            int ShapeID = Sim.LIFCCompartments.at(CompID).ShapeID;
+            auto ShapePtr = Sim.FindShapeByID(ShapeID);
+            if (ShapePtr != nullptr) {
+                if (is_first) {
+                    bb = ShapePtr->GetBoundingBox(_WorldInfo);
+                    is_first = false;
+                } else {
+                    bb.Enclosing(ShapePtr->GetBoundingBox(_WorldInfo));
+                }
+            }
+        }
+    }
+    if (is_first) bb.Singularity();
+    return bb;
+}
+
+/**
+ * Here, we use the bounding box information for all the compartments in
+ * the soma to obtain maximum extents in x,y,z and estimate a max
+ * radius from that.
+ */
+float LIFCNeuron::GetSomaRadius() {
+    // Find the overall bounding box of the soma.
+    VSDA::WorldInfo WorldInfo_; // Using default values.
+    BoundingBox bb = GetSomaBoundingBox(WorldInfo_);
+    // Return half of the largest dimension as radius equivalent.
+    return bb.LargestDim()/2.0;
+}
 
 void LIFCNeuron::UpdateType(Connections::NeurotransmitterType neurotransmitter) {
     // Only if still unknown.
@@ -456,13 +528,15 @@ int GetConnectionType(Connections::NeurotransmitterType neurotransmitter) {
 
 void LIFCNeuron::GetConnectomeTargetsJSON(
     nlohmann::json& targetvec, nlohmann::json& typevec,
-    nlohmann::json& weightvec, nlohmann::json& gpeaksumvec) {
+    nlohmann::json& weightvec, nlohmann::json& gpeaksumvec,
+    nlohmann::json& numreceptorsvec) {
 
     for (auto & rdata : LIFCTransmitterDataVec) {
         targetvec.push_back(rdata->DstNeuronID);
         typevec.push_back(GetConnectionType(rdata->Type()));
         weightvec.push_back(rdata->weight);
         gpeaksumvec.push_back(rdata->g_peak_sum_nS);
+        numreceptorsvec.push_back(rdata->ReceptorIDs.size());
     }   
 }
 

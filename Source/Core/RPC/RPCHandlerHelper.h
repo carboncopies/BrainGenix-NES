@@ -90,6 +90,8 @@ public:
 
     //bool CheckCompatibility(Simulator::SimulationNeuronClass _NewObjectCategory);
 
+    void ResetThisSimulation() { ThisSimulation = nullptr; }
+
     bool FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, nlohmann::json& _JSON, bool _Optional = false);
     bool FindPar(const std::string& ParName, nlohmann::json::iterator& Iterator, bool _Optional = false);
 
@@ -99,8 +101,8 @@ public:
     bool GetParInt(const std::string& ParName, int& Value, nlohmann::json& _JSON);
     bool GetParInt(const std::string& ParName, int& Value);
 
-    bool GetParFloat(const std::string& ParName, float& Value, nlohmann::json& _JSON);
-    bool GetParFloat(const std::string& ParName, float& Value);
+    bool GetParFloat(const std::string& ParName, float& Value, nlohmann::json& _JSON, bool _Optional = false);
+    bool GetParFloat(const std::string& ParName, float& Value, bool _Optional = false);
 
     bool GetParString(const std::string& ParName, std::string& Value, nlohmann::json& _JSON);
     bool GetParString(const std::string& ParName, std::string& Value);

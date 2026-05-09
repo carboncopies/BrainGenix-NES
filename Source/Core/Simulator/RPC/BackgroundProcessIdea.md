@@ -1,7 +1,7 @@
 # Background API Process Generalization
 
 We came up with this as an idea for how to generalize putting API calls into the
-background. The idea was than an extra parameter `InBackground` would be used
+background. The idea was that an extra parameter `InBackground` would be used
 and it would change the process as follows:
 
 ```

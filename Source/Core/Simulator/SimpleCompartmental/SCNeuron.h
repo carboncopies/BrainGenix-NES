@@ -13,6 +13,7 @@
 #pragma once
 
 #include <Simulator/BallAndStick/BSNeuron.h>
+#include <VSDA/Common/Structs/WorldInfo.h>
 
 namespace BG {
 namespace NES {
@@ -42,8 +43,14 @@ public:
     //SCNeuron(int ID, std::unordered_map<std::string, Geometries::Geometry*> & morphology);
     SCNeuron(const CoreStructs::SCNeuronStruct & scneuronstruct, Simulation & _Sim);
 
+    bool Edit(const CoreStructs::SCNeuronStruct & scneuronstruct, const CoreStructs::SCEdit & edit);
+
     //! Returns the geometric center of the neuron.
     virtual Geometries::Vec3D& GetCellCenter();
+
+    virtual BoundingBox GetSomaBoundingBox(NES::VSDA::WorldInfo& _WorldInfo);
+
+    virtual float GetSomaRadius();
 };
 
 } // Simulator

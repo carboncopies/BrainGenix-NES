@@ -377,6 +377,9 @@ struct LIFCReceptorPars {
 
 class LIFCSynapseBuild: public SynapseBuild {
 public:
+    size_t ampa_found = 0;
+    size_t nmda_found = 0;
+    size_t gaba_found = 0;
     const PSPTiming Dummypsptiming;
     const LIFCReceptorPars& LIFCreceptorpars;
     LIFCSynapseBuild(NetmorphParameters& Params, const LIFCReceptorPars& _LIFCreceptorpars):
@@ -440,10 +443,13 @@ public:
          */
         if (C.Neurotransmitter ==  Connections::AMPA) {
             RawData = LIFCreceptorpars.ampa_raw;
+            ampa_found++;
         } else if (C.Neurotransmitter ==  Connections::NMDA) {
             RawData = LIFCreceptorpars.nmda_raw;
+            nmda_found++;
         } else {
             RawData = LIFCreceptorpars.gaba_raw;
+            gaba_found++;
         }
 
         C.Weight = 0.2;
@@ -856,6 +862,9 @@ bool BuildLIFCFromNetmorphNetwork(NetmorphParameters& _Params) {
     LIFCSynapseBuild synapse_build(_Params, LIFCreceptorpars);
     Net.synapse_op(synapse_build);
     synapse_build.logerrors();
+    _Params.Sim->Logger_->Log("AMPA synapses found: "+std::to_string(synapse_build.ampa_found), 6);
+    _Params.Sim->Logger_->Log("NMDA synapses found: "+std::to_string(synapse_build.nmda_found), 6);
+    _Params.Sim->Logger_->Log("GABA synapses found: "+std::to_string(synapse_build.gaba_found), 6);
 
     RegionBuild region_build(_Params, neuron_build);
     Net.region_op(region_build);

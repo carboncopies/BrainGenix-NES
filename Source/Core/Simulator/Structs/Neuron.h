@@ -22,6 +22,7 @@
 #include <Simulator/Structs/Receptor.h>
 #include <Simulator/Structs/BS.h>
 #include <Simulator/Structs/SC.h>
+#include <VSDA/Common/Structs/WorldInfo.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <nlohmann/json.hpp>
@@ -160,7 +161,11 @@ struct Neuron {
     virtual bool HasSpiked(); // *** FIX THIS!
 
     //! Returns the geometric center of the neuron.
-    virtual Geometries::Vec3D &GetCellCenter(); // *** FIX THIS!
+    virtual Geometries::Vec3D& GetCellCenter(); // *** FIX THIS!
+
+    virtual BoundingBox GetSomaBoundingBox(NES::VSDA::WorldInfo& _WorldInfo);
+
+    virtual float GetSomaRadius();
 
     virtual void AddSpecificAPTime(float t_ms);
 
@@ -204,6 +209,15 @@ struct BSNeuronStruct {
     Compartments::BS* SomaCompartmentPtr = nullptr;
     Compartments::BS* AxonCompartmentPtr = nullptr;
 
+};
+
+// This is used to indicate which parameters to edit.
+struct BSEdit {
+    bool MembranePotential_mV = false;
+    bool RestingPotential_mV = false;
+    bool SpikeThreshold_mV = false;
+    bool DecayTime_ms = false;
+    bool AfterHyperpolarizationAmplitude_mV = false;
 };
 
 /**
@@ -259,6 +273,11 @@ struct SCNeuronStruct: public SCNeuronBase {
     bool FromFlat(SCNeuronStructFlatHeader* header);
 
 };
+
+// This is used to indicate which parameters to edit.
+struct SCEdit: public BSEdit {
+};
+
 
 enum LIFCUpdateMethodEnum: int {
     EXPEULER_CM = 0, // Default: Exponential Euler Capacitance-based calculation
@@ -373,6 +392,17 @@ struct LIFCNeuronStruct: public LIFCNeuronBase {
     std::unique_ptr<uint8_t[]> GetFlat() const;
     bool FromFlat(LIFCNeuronStructFlatHeader* header);
 
+};
+
+// This is used to indicate which parameters to edit.
+struct LIFCEdit {
+    bool RestingPotential_mV = false;
+    bool ResetPotential_mV = false;
+    bool SpikeThreshold_mV = false;
+    bool MembraneResistance_MOhm = false;
+    bool MembraneCapacitance_pF = false;
+    bool RefractoryPeriod_ms = false;
+    bool SpikeDepolarization_mV = false;
 };
 
 }; // namespace CoreStructs
