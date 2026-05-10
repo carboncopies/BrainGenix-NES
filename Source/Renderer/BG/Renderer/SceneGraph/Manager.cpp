@@ -74,7 +74,12 @@ bool Manager::Initialize(bool _Windowed) {
 
     // Setup Device If Not Windowed
     if (RenderData_->Headless_) {
-        Headless_SetupDevice();
+        if (!Headless_SetupDevice()) {
+            Logger_->Log("Headless Vulkan setup failed. VSDA rendering will be disabled.", 10);
+            RenderData_->Headless_ = false; // Disable headless rendering flag if setup failed
+        } else {
+            Logger_->Log("Headless Vulkan setup successful.", 4);
+        }
     }
     RenderData_->Extent_ = VkExtent2D{(unsigned int)RenderData_->Width_, (unsigned int)RenderData_->Height_};
 
@@ -89,7 +94,7 @@ bool Manager::Headless_SetupDevice() {
     // create instance
     vsg::Names instanceExtensions;
     vsg::Names requestedLayers;
-    bool debugLayer = true;
+    bool debugLayer = false;
     bool apiDumpLayer = false;
     if (debugLayer || apiDumpLayer) {
         instanceExtensions.push_back(VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_EXTENSION_NAME);
@@ -98,10 +103,22 @@ bool Manager::Headless_SetupDevice() {
         if (apiDumpLayer) requestedLayers.push_back("VK_LAYER_LUNARG_api_dump");
     }
 
-    vsg::Names validatedNames = vsg::validateInstancelayerNames(requestedLayers);
+#ifdef __APPLE__
+    // VSG 1.0.9 handles VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME internally
+#endif
+
+    vsg::Names validatedNames = vsg::validateInstanceLayerNames(requestedLayers);
     uint32_t VulkanVersion = VK_API_VERSION_1_0;
 
-    auto instance = vsg::Instance::create(instanceExtensions, validatedNames, VulkanVersion);
+    vsg::ref_ptr<vsg::Instance> instance;
+    try {
+        instance = vsg::Instance::create(instanceExtensions, validatedNames, VulkanVersion);
+    } catch (const vsg::Exception& e) {
+        Logger_->Log("Caught VSG Exception during instance creation: " + std::string(e.message), 10);
+        Logger_->Log("Vulkan Result Code: " + std::to_string(e.result), 10);
+        return false;
+    }
+
     auto [physicalDevice, queueFamily] = instance->getPhysicalDeviceAndQueueFamily(VK_QUEUE_GRAPHICS_BIT);
     RenderData_->QueueFamily_ = queueFamily;
     if (!physicalDevice || queueFamily < 0) {
@@ -110,6 +127,9 @@ bool Manager::Headless_SetupDevice() {
     }
 
     vsg::Names deviceExtensions;
+#ifdef __APPLE__
+    deviceExtensions.push_back("VK_KHR_portability_subset");
+#endif
     vsg::QueueSettings queueSettings{vsg::QueueSetting{queueFamily, {1.0}}};
 
     auto deviceFeatures = vsg::DeviceFeatures::create();
@@ -442,7 +462,9 @@ bool Manager::SetupViewer() {
 
 
     if (!RenderData_->Headless_) {
-        Windowed_CreateWindow();
+        if (!Windowed_CreateWindow()) {
+            return false;
+        }
     }
 
     SetupCamera();
@@ -494,6 +516,7 @@ bool Manager::SetupViewer() {
 
 
 bool Manager::CompileScene() {
+    if (!RenderData_->Viewer_) return false;
     RenderData_->Viewer_->compile();
     return true;
 }

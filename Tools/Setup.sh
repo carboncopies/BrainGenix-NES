@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ "$(uname)" = "Darwin" ]; then
+    echo "Detected macOS, using macOS setup path"
+    ./Setup-MacOS.sh
+    exit $?
+fi
+
 # Detect if running as root
 SUDO_PREFIX=""
 echo "Detecting If Script Running As root"

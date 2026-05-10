@@ -40,7 +40,11 @@ double GetAverage(std::vector<double>* _Vec) {
 void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
 
     // Set thread Name
+    #ifdef __APPLE__
+    pthread_setname_np(std::string("EM Array Generator Pool Thread " + std::to_string(_ThreadNumber)).c_str());
+#else
     pthread_setname_np(pthread_self(), std::string("EM Array Generator Pool Thread " + std::to_string(_ThreadNumber)).c_str());
+#endif
 
     Logger_->Log("Started EMArrayGeneratorPool Thread " + std::to_string(_ThreadNumber), 0);
 

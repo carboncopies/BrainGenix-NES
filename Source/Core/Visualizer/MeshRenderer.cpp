@@ -12,7 +12,6 @@
 // #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <stb_image_write.h>
 // #define STB_IMAGE_RESIZE_IMPLEMENTATION
-#include <stb_image_resize.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Visualizer/MeshRenderer.h>

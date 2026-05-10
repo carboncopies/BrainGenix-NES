@@ -29,7 +29,7 @@ bool GeometryBuilder::ShaderHandler(Shaders::Shader* _Shader) {
 
     if (_Shader->Type_ == Shaders::SHADER_PHONG) {
         Builder_->shaderSet = vsg::createPhongShaderSet(Options);
-        vsg::UniformBinding& MaterialBinding = Builder_->shaderSet->getUniformBinding("material");
+        vsg::DescriptorBinding& MaterialBinding = Builder_->shaderSet->getUniformBinding("material");
         vsg::ref_ptr<vsg::PhongMaterialValue> Material = vsg::PhongMaterialValue::create();
 
         Shaders::Phong* ShaderInfo = (Shaders::Phong*)_Shader; // If this fails and explodes, someone set the Shader.Type_ enum wrong!

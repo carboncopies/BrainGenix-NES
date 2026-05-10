@@ -15,7 +15,7 @@
 // #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <stb_image_write.h>
 // #define STB_IMAGE_RESIZE_IMPLEMENTATION
-#include <stb_image_resize.h>
+#include <stb_image_resize2.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
@@ -68,7 +68,11 @@ double GetAverage(std::vector<double>* _Vec) {
 void ConversionPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
     // Set thread Name
+    #ifdef __APPLE__
+    pthread_setname_np(std::string("EM Image Processor Pool Thread " + std::to_string(_ThreadNumber)).c_str());
+#else
     pthread_setname_np(pthread_self(), std::string("EM Image Processor Pool Thread " + std::to_string(_ThreadNumber)).c_str());
+#endif
 
     Logger_->Log("Started EMConversionPool Thread " + std::to_string(_ThreadNumber), 0);
 
@@ -132,7 +136,7 @@ void ConversionPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     unsigned char* ResizedImage = (unsigned char*)malloc(NewWidth * NewHeight * Channels);
 
                     // Resize the image
-                    stbir_resize_uint8(Image, Width, Height, 0, ResizedImage, NewWidth, NewHeight, 0, Channels);
+                    stbir_resize_uint8_linear(Image, Width, Height, 0, ResizedImage, NewWidth, NewHeight, 0, (stbir_pixel_layout)Channels);
 
                     // Update the indexes to the scaled size
                     int ScaledX1 = Task->IndexInfo_.StartX / pow(2,ReductionLevel);

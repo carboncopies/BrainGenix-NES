@@ -7,7 +7,7 @@
 // #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <stb_image_write.h>
 // #define STB_IMAGE_RESIZE_IMPLEMENTATION
-#include <stb_image_resize.h>
+#include <stb_image_resize2.h>
 
 
 namespace BG {
@@ -43,7 +43,7 @@ void EncoderPool::EncoderThreadMainFunction(int _ThreadNumber) {
             int TargetX = ImgToProcess->TargetWidth_px;
             int TargetY = ImgToProcess->TargetHeight_px;
             std::unique_ptr<unsigned char> ResizedPixels = std::unique_ptr<unsigned char>(new unsigned char[TargetX * TargetY * Channels]());
-            stbir_resize_uint8(SourcePixels, SourceX, SourceY, SourceX * Channels, ResizedPixels.get(), TargetX, TargetY, TargetX * Channels, Channels);
+            stbir_resize_uint8_linear(SourcePixels, SourceX, SourceY, SourceX * Channels, ResizedPixels.get(), TargetX, TargetY, TargetX * Channels, (stbir_pixel_layout)Channels);
 
             // Write Image
             stbi_write_png(ImgToProcess->TargetFileName_.c_str(), TargetX, TargetY, Channels, ResizedPixels.get(), TargetX * Channels);

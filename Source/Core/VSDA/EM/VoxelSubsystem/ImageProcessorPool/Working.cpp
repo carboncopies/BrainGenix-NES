@@ -19,7 +19,7 @@
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <stb_image_write.h>
 #define STB_IMAGE_RESIZE_IMPLEMENTATION
-#include <stb_image_resize.h>
+#include <stb_image_resize2.h>
 
 #define IIR_GAUSS_BLUR_IMPLEMENTATION
 #include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/iir_gauss_blur.h>
@@ -110,7 +110,11 @@ double GetAverage(std::vector<double>* _Vec) {
 void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
     // Set thread Name
+    #ifdef __APPLE__
+    pthread_setname_np(std::string("EM Image Processor Pool Thread " + std::to_string(_ThreadNumber)).c_str());
+#else
     pthread_setname_np(pthread_self(), std::string("EM Image Processor Pool Thread " + std::to_string(_ThreadNumber)).c_str());
+#endif
 
     Logger_->Log("Started EMImageProcessorPool Thread " + std::to_string(_ThreadNumber), 0);
 
@@ -328,7 +332,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             std::unique_ptr<unsigned char> ResizedPixels;
             if (ResizeImage) {
                 ResizedPixels = std::unique_ptr<unsigned char>(new unsigned char[TargetX * TargetY * Channels]());
-                stbir_resize_uint8(SourcePixels, SourceX, SourceY, SourceX * Channels, ResizedPixels.get(), TargetX, TargetY, TargetX * Channels, Channels);
+                stbir_resize_uint8_linear(SourcePixels, SourceX, SourceY, SourceX * Channels, ResizedPixels.get(), TargetX, TargetY, TargetX * Channels, (stbir_pixel_layout)Channels);
             }
 
 
