@@ -112,11 +112,13 @@ cd Tools
 
 # Update Submodules
 echo "Updating Submodules"
-if [ "$IS_MACOS" = true ]; then
-    git submodule update --init --recursive
-else
-    git submodule update --init
-    cd ../ThirdParty/NetmorphCMake && git pull origin main && cd ../../Tools
+git submodule update --init ../ThirdParty/vcpkg
+
+if ! git submodule update --init ../ThirdParty/NetmorphCMake; then
+    echo "Warning: NetmorphCMake recorded submodule commit is unavailable from the configured remote."
+    echo "Falling back to NetmorphCMake origin/main."
+    git -C ../ThirdParty/NetmorphCMake fetch origin main
+    git -C ../ThirdParty/NetmorphCMake checkout origin/main
 fi
 
 # Bootstrap vcpkg
