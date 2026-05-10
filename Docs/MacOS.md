@@ -22,7 +22,7 @@ cd Tools
 ./Setup.sh
 ```
 
-On macOS, `Setup.sh` delegates to `Setup-MacOS.sh`. Linux uses the existing Linux setup path.
+`Setup.sh` auto-detects macOS and Linux and runs the appropriate setup path.
 
 ## Build and run
 
