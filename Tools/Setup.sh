@@ -18,7 +18,7 @@ if [ "$IS_MACOS" = true ]; then
     echo "Setting Up Packages Needed For Compilation on macOS"
     brew update
 
-    COMPILER_DEPS="git wget cmake autoconf flex bison pkg-config"
+    COMPILER_DEPS="git wget cmake autoconf autoconf-archive automake libtool flex bison pkg-config"
     VCPKG_DEPS="curl zip unzip"
     VULKAN_DEPS="molten-vk vulkan-headers vulkan-loader vulkan-tools vulkan-validationlayers vulkan-utility-libraries"
     PYTHON_DEPS="python3"
@@ -83,7 +83,7 @@ else
     fi
 
     # vcpkg Dependencies
-    VCPKG_DEPS="curl zip unzip tar pkg-config autoconf flex bison"
+    VCPKG_DEPS="curl zip unzip tar pkg-config autoconf autoconf-archive automake libtool flex bison"
 
     # Vulkan Dependencies
     if [ "$DISTRO" = "arch" ]; then
