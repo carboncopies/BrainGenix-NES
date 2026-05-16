@@ -61,6 +61,8 @@ struct BSNeuronTest : testing::Test {
 };
 
 TEST_F(BSNeuronTest, test_GetCellCenter_default) {
+    ASSERT_EQ(testBSNeuron->ID, 200);
+
     BG::NES::Simulator::Geometries::Vec3D cellCenter =
         testBSNeuron->GetCellCenter();
     BG::NES::Simulator::Geometries::Vec3D expectedCenter = testSoma->Center_um;

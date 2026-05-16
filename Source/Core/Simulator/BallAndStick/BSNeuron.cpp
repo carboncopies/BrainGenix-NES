@@ -13,7 +13,7 @@ namespace BallAndStick {
 
 //! Constructors
 BSNeuron::BSNeuron(int ID, Geometries::Geometry* soma, Geometries::Geometry* axon) {
-    ID = ID;
+    this->ID = ID;
     Class_ = CoreStructs::_BSNeuron;
     
     Morphology["soma"] = soma;
