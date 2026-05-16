@@ -51,15 +51,27 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
     // In order for us to deal with multiple different pixel/voxel setting, we create an image of start size where one pixel = 1 voxel
     // then later on, we resample it to be the right size (for the target image)
     // The number of voxels we move per step depends on image size and overlap percentage:
-    int ImageWidth_vox = ceil(_VSDAData->Params_.ImageWidth_px / _VSDAData->Params_.NumPixelsPerVoxel_px);
-    int ImageHeight_vox = ceil(_VSDAData->Params_.ImageHeight_px / _VSDAData->Params_.NumPixelsPerVoxel_px);
-    int VoxelsPerStepX = ceil(_VSDAData->Params_.ImageWidth_px * (1. - (_VSDAData->Params_.ScanRegionOverlap_percent / 100.)) / _VSDAData->Params_.NumPixelsPerVoxel_px);
-    int VoxelsPerStepY = ceil(_VSDAData->Params_.ImageHeight_px * (1. - (_VSDAData->Params_.ScanRegionOverlap_percent / 100.)) / _VSDAData->Params_.NumPixelsPerVoxel_px);
-    int VoxelsOverlapX = ceil(_VSDAData->Params_.ImageWidth_px * (_VSDAData->Params_.ScanRegionOverlap_percent / 100.) / _VSDAData->Params_.NumPixelsPerVoxel_px);
-    int VoxelsOverlapY = ceil(_VSDAData->Params_.ImageHeight_px * (_VSDAData->Params_.ScanRegionOverlap_percent / 100.) / _VSDAData->Params_.NumPixelsPerVoxel_px);
+    int PixelsPerVoxel = _VSDAData->Params_.NumPixelsPerVoxel_px;
+    if (PixelsPerVoxel < 1) PixelsPerVoxel = 1;
+    float OverlapRatio = _VSDAData->Params_.ScanRegionOverlap_percent / 100.0F;
+    if (OverlapRatio < 0.0F) OverlapRatio = 0.0F;
+    if (OverlapRatio >= 1.0F) OverlapRatio = 0.99F;
+    float StepRatio = 1.0F - OverlapRatio;
+    int ImageWidth_vox = ceil(static_cast<float>(_VSDAData->Params_.ImageWidth_px) / PixelsPerVoxel);
+    int ImageHeight_vox = ceil(static_cast<float>(_VSDAData->Params_.ImageHeight_px) / PixelsPerVoxel);
+    int VoxelsPerStepX = ceil(_VSDAData->Params_.ImageWidth_px * StepRatio / PixelsPerVoxel);
+    int VoxelsPerStepY = ceil(_VSDAData->Params_.ImageHeight_px * StepRatio / PixelsPerVoxel);
+    if (ImageWidth_vox < 1) ImageWidth_vox = 1;
+    if (ImageHeight_vox < 1) ImageHeight_vox = 1;
+    if (VoxelsPerStepX < 1) VoxelsPerStepX = 1;
+    if (VoxelsPerStepY < 1) VoxelsPerStepY = 1;
     int NumChannels = 3;
     float CameraStepSizeX_um = VoxelsPerStepX * _VSDAData->Params_.VoxelResolution_um;
     float CameraStepSizeY_um = VoxelsPerStepY * _VSDAData->Params_.VoxelResolution_um;
+    if ((CameraStepSizeX_um <= 0.0F) || (CameraStepSizeY_um <= 0.0F)) {
+        _Logger->Log("Cannot render EM voxel array with nonpositive camera step size", 7);
+        return 0;
+    }
 
     double TotalSliceWidth = abs((double)Array->GetBoundingBox().bb_point1[0] - (double)Array->GetBoundingBox().bb_point2[0]);
     double TotalSliceHeight = abs((double)Array->GetBoundingBox().bb_point1[1] - (double)Array->GetBoundingBox().bb_point2[1]);
