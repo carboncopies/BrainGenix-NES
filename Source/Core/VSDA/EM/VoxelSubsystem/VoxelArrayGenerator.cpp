@@ -175,6 +175,9 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
                 // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
                 int NumSegments = ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox));
+                if (NumSegments < 1) {
+                    NumSegments = 1;
+                }
                 // _Logger->Log("Detected Sphere of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
 
 
@@ -241,6 +244,9 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
                 // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
                 int NumSegments = ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox));
+                if (NumSegments < 1) {
+                    NumSegments = 1;
+                }
                 // _Logger->Log("Detected Cylinder of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
                 // std::vector<Geometries::Vec3D> PointList = SubdivideLine(ThisCylinder.End0Pos_um, ThisCylinder.End1Pos_um, NumSegments);
 
