@@ -93,16 +93,29 @@ void VoxelArray::ClearArray() {
 void VoxelArray::ClearArrayThreaded(int _NumThreads) {
 
     // Calculate Start Ptr, StepSize
-    uint64_t StepSize = DataMaxLength_ / _NumThreads;
+    if (DataMaxLength_ == 0) {
+        return;
+    }
+    if (_NumThreads <= 0) {
+        _NumThreads = 1;
+    }
+    uint64_t ThreadCount = static_cast<uint64_t>(_NumThreads);
+    if (ThreadCount > DataMaxLength_) {
+        ThreadCount = DataMaxLength_;
+    }
+    uint64_t StepSize = DataMaxLength_ / ThreadCount;
     VoxelType* StartAddress = Data_.get();
 
     // Create a bunch of memset tasks
     std::vector<std::future<int>> AsyncTasks;
-    for (size_t i = 0; i < _NumThreads; i++) {
-        VoxelType* ThreadStartAddress = StartAddress + (StepSize * i);
-        assert(ThreadStartAddress + StepSize <= StartAddress + DataMaxLength_);
-        AsyncTasks.push_back(std::async(std::launch::async, [ThreadStartAddress, StepSize]{
-            std::memset(ThreadStartAddress, 0, StepSize);
+    for (uint64_t i = 0; i < ThreadCount; i++) {
+        uint64_t StartIndex = StepSize * i;
+        uint64_t EndIndex = (i == ThreadCount - 1) ? DataMaxLength_ : StartIndex + StepSize;
+        VoxelType* ThreadStartAddress = StartAddress + StartIndex;
+        uint64_t ThreadLength = EndIndex - StartIndex;
+        assert(ThreadStartAddress + ThreadLength <= StartAddress + DataMaxLength_);
+        AsyncTasks.push_back(std::async(std::launch::async, [ThreadStartAddress, ThreadLength]{
+            std::memset(ThreadStartAddress, 0, ThreadLength * sizeof(VoxelType));
             return 0;
         }));
     }
