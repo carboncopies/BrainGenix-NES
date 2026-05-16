@@ -107,6 +107,10 @@ bool BoundingBox::IsIntersecting(BoundingBox _Box) {
 
 uint64_t BoundingBox::GetVoxelSize(float _VoxelScale_um) {
 
+    if (_VoxelScale_um <= 0.0F) {
+        return 0;
+    }
+
     float SizeX = abs(bb_point1[0] - bb_point2[0]);
     float SizeY = abs(bb_point1[1] - bb_point2[1]);
     float SizeZ = abs(bb_point1[2] - bb_point2[2]);
