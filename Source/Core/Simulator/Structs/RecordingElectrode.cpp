@@ -50,7 +50,7 @@ RecordingElectrode::RecordingElectrode(
 //       At present, this is using only the z-coord of eloc_ratio as
 //       a position along the center line of the vector between tip and end.
 Geometries::Vec3D RecordingElectrode::CoordsElectrodeToSystem(Geometries::Vec3D eLocRatio) {
-    auto toAdd = (this->TipPosition_um - this->EndPosition_um) * eLocRatio.z;
+    auto toAdd = (this->EndPosition_um - this->TipPosition_um) * eLocRatio.z;
     return this->TipPosition_um + toAdd;
 };
 

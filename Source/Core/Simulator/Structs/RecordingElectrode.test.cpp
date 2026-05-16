@@ -55,10 +55,11 @@ struct RecordingElectrodeTest : testing::Test {
 
 TEST_F(RecordingElectrodeTest, test_CoordsElectrodeToSystem_default) {
     BG::NES::Simulator::Geometries::Vec3D eLocRatio(0.0, 0.5, 0.2);
-    auto toAdd = (testElectrode->TipPosition_um - testElectrode->EndPosition_um) * eLocRatio.z;
+    auto toAdd = (testElectrode->EndPosition_um - testElectrode->TipPosition_um) * eLocRatio.z;
     auto expectedSysLoc_um = testElectrode->TipPosition_um + toAdd;
 
     ASSERT_TRUE(testElectrode->CoordsElectrodeToSystem(eLocRatio) == expectedSysLoc_um);
+    ASSERT_TRUE(testElectrode->CoordsElectrodeToSystem(BG::NES::Simulator::Geometries::Vec3D(0.0, 0.0, 1.0)) == testElectrode->EndPosition_um);
 }
 
 TEST_F(RecordingElectrodeTest, test_InitSystemCoordSiteLocations_default) {
