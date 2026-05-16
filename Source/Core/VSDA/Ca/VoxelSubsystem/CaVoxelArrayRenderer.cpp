@@ -82,7 +82,11 @@ std::vector<std::string> CaRenderSliceFromArray(BG::Common::Logger::LoggingSyste
 
                 // Calculate the filename of the image to be generated, add to list of generated images
                 std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(SliceNumber + _SliceOffset) + "/";
-                DirectoryPath += "Timestep" + std::to_string(_CaData->CalciumConcentrationTimestep_ms * CalciumConcentrationIndex) + "/"; // fixme - make this done by a list of timesteps instead of a hard-coded single timestep
+                float CalciumSampleTime_ms = _CaData->CalciumConcentrationTimestep_ms * CalciumConcentrationIndex;
+                if (_CaData->CaImaging.TRecorded_ms.size() > static_cast<size_t>(CalciumConcentrationIndex)) {
+                    CalciumSampleTime_ms = _CaData->CaImaging.TRecorded_ms[CalciumConcentrationIndex];
+                }
+                DirectoryPath += "Timestep" + std::to_string(CalciumSampleTime_ms) + "/";
                 double RoundedXCoord = std::ceil(((CameraStepSizeX_um * XStep) + _OffsetX) * 100.0) / 100.0;
                 double RoundedYCoord = std::ceil(((CameraStepSizeY_um * YStep) + _OffsetY) * 100.0) / 100.0;
                 std::string FilePath = "X" + std::to_string(RoundedXCoord) + "_Y" + std::to_string(RoundedYCoord) + ".png";

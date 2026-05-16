@@ -76,7 +76,27 @@ float ComponentSampledCalciumConcentration(Simulator::Simulation* _Simulation, i
  *   meant was that you wanted to know the simulation time-point of a specific Ca sample by its _SampleIdx.
  */
 bool GetCalciumConcentrationTimestep(BG::Common::Logger::LoggingSystem *_Logger, Simulator::Simulation* _Simulation, float* _Timestep){
-	// *** Don't know how to make this, please see alternative function below where I make some assumptions about what was intended!
+	if (_Simulation == nullptr || _Simulation->CaData_ == nullptr || _Timestep == nullptr) {
+		if (_Logger != nullptr) {
+			_Logger->Log("Failed To Get Calcium Concentration Timestep, Invalid Input", 7);
+		}
+		return false;
+	}
+
+	const std::vector<float>& RecordedTimes = _Simulation->CaData_->CaImaging.TRecorded_ms;
+	if (RecordedTimes.empty()) {
+		if (_Logger != nullptr) {
+			_Logger->Log("Failed To Get Calcium Concentration Timestep, No Calcium Timesteps Recorded", 7);
+		}
+		return false;
+	}
+
+	if (RecordedTimes.size() == 1) {
+		*_Timestep = 0.0f;
+		return true;
+	}
+
+	*_Timestep = RecordedTimes[1] - RecordedTimes[0];
 	return true;
 }
 

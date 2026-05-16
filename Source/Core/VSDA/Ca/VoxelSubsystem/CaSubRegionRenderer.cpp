@@ -46,13 +46,15 @@ bool CaRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
 
     std::vector<std::vector<float>> CalciumIndexes;
-    float CalciumTimestep = 50.; // Randal - this is done since we want to know how much time passes between each step
-    // That's why I had the GetCalciumConcentrationTimestep
+    float CalciumTimestep = 0.0f;
     bool Status = VoxelArrayGenerator::CalculateCalciumConcentrations(_Logger, Sim, &CalciumIndexes);
     if (!Status) {
         return false;
     }
-    // get timestep here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    Status = VoxelArrayGenerator::GetCalciumConcentrationTimestep(_Logger, Sim, &CalciumTimestep);
+    if (!Status) {
+        return false;
+    }
 
 
     CaData_->CalciumConcentrationByIndex_ = &CalciumIndexes;
