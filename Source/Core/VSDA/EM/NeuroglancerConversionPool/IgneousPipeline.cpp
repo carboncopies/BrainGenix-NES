@@ -43,6 +43,9 @@ bool ProcessIgneousPipeline(BG::Common::Logger::LoggingSystem* _Logger,
     int mipLevel,
     int parallelJobs,
     const std::string& pythonVenv) {
+if (parallelJobs < 1) {
+parallelJobs = 1;
+}
 _Logger->Log("Starting Igneous processing pipeline", 3);
 _Logger->Log("Parameters:", 4);
 _Logger->Log("- Dataset path: " + datasetPath, 4);
@@ -69,7 +72,10 @@ const std::string queuePath = (absOutputDir / "queue").string();
 const std::string igneousBin = "\"" + absPythonVenv.string() + "/bin/igneous\"";
 
 //std::system((std::string("bash /home/rkoene/src/igneous_calls.sh ")+absDatasetPath.string()+" 0 60").c_str());
-std::system(("bash "+absPythonVenv.string()+"/bin/activate && python3 ./Python/igneous_local.py --datapath "+absDatasetPath.string()+" --parallel 60").c_str());
+const std::string igneousCommand = "bash " + absPythonVenv.string() + "/bin/activate && "
+    "python3 ./Python/igneous_local.py --datapath " + absDatasetPath.string() +
+    " --parallel " + std::to_string(parallelJobs);
+std::system(igneousCommand.c_str());
 return true;
 // pid_t pid = fork();
 // if (pid == 0) {
