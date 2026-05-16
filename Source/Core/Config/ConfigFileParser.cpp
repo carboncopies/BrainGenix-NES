@@ -44,11 +44,30 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
 
 
     // Populate Configuration Struct With Data From Configuration File
-    _Config.PortNumber = Config["Network_NES_API_Port"].as<int>();
-    _Config.Host = Config["Network_NES_API_Host"].as<std::string>();
+    auto ReportInvalidConfigAndExit = [&](const std::string &Message) {
+        std::cerr<<"[FATAL], Invalid Config File: "<<Message<<"\n";
+        exit(1);
+    };
 
-    _Config.MaxVoxelArraySize_ = Config["VSDA_EM_MaxVoxelArraySize"].as<int>();
-    _Config.VoxelArrayPercentOfSystemMemory_ = Config["VSDA_EM_PercentOfSysteMemoryLimit"].as<int>();
+    auto RequireConfigKey = [&](const std::string &Key) {
+        if (!Config[Key]) {
+            ReportInvalidConfigAndExit("Missing required key " + Key);
+        }
+    };
+
+    try {
+        RequireConfigKey("Network_NES_API_Port");
+        RequireConfigKey("Network_NES_API_Host");
+        RequireConfigKey("VSDA_EM_MaxVoxelArraySize");
+        RequireConfigKey("VSDA_EM_PercentOfSysteMemoryLimit");
+
+        _Config.PortNumber = Config["Network_NES_API_Port"].as<int>();
+        _Config.Host = Config["Network_NES_API_Host"].as<std::string>();
+        _Config.MaxVoxelArraySize_ = Config["VSDA_EM_MaxVoxelArraySize"].as<int>();
+        _Config.VoxelArrayPercentOfSystemMemory_ = Config["VSDA_EM_PercentOfSysteMemoryLimit"].as<float>();
+    } catch(const YAML::Exception& e) {
+        ReportInvalidConfigAndExit(e.what());
+    }
 
 }
 
