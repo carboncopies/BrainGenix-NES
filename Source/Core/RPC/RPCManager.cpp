@@ -42,7 +42,10 @@ RPCManager::RPCManager(Config::Config* _Config, BG::Common::Logger::LoggingSyste
     AddRoute("SetCallback", Logger_, [this](std::string RequestJSON){ return SetupCallback(RequestJSON);});
     
 
-    int ThreadCount = std::thread::hardware_concurrency();
+    unsigned int ThreadCount = std::thread::hardware_concurrency();
+    if (ThreadCount == 0) {
+        ThreadCount = 1;
+    }
 
     // Reduced threaidng mode for debugging
     #ifdef REDUCED_THREADING_DEBUG
