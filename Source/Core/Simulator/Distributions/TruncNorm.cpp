@@ -88,9 +88,9 @@ float TruncNorm::PDF(float x) {
     if (x < this->a || x > this->b)
         return 0.0;
 
-    static float z_a = (this->a - this->loc) / this->scale;
-    static float z_b = (this->b - this->loc) / this->scale;
-    static float Z = _StandardNormalCDF(z_b) - _StandardNormalCDF(z_a);
+    float z_a = (this->a - this->loc) / this->scale;
+    float z_b = (this->b - this->loc) / this->scale;
+    float Z = _StandardNormalCDF(z_b) - _StandardNormalCDF(z_a);
 
     float z_x = (x - this->loc) / this->scale;
     return _StandardNormalPDF(z_x) / (this->scale * Z);
@@ -112,9 +112,9 @@ float TruncNorm::CDF(float x) {
     if (x > b)
         return 1.0;
 
-    static float z_a = (this->a - this->loc) / this->scale;
-    static float z_b = (this->b - this->loc) / this->scale;
-    static float Z = _StandardNormalCDF(z_b) - _StandardNormalCDF(z_a);
+    float z_a = (this->a - this->loc) / this->scale;
+    float z_b = (this->b - this->loc) / this->scale;
+    float Z = _StandardNormalCDF(z_b) - _StandardNormalCDF(z_a);
 
     float z_x = (x - this->loc) / this->scale;
 
@@ -129,10 +129,10 @@ std::tuple<float, float> TruncNorm::Stats() {
 
 //! Mean
 float TruncNorm::Mean() {
-    static float z_a = (this->a - this->loc) / this->scale;
-    static float z_b = (this->b - this->loc) / this->scale;
-    static float Z = _StandardNormalCDF(z_b) - _StandardNormalCDF(z_a);
-    static float mean =
+    float z_a = (this->a - this->loc) / this->scale;
+    float z_b = (this->b - this->loc) / this->scale;
+    float Z = _StandardNormalCDF(z_b) - _StandardNormalCDF(z_a);
+    float mean =
         this->loc +
         (_StandardNormalPDF(z_a) - _StandardNormalPDF(z_b)) * this->scale / Z;
 
@@ -141,13 +141,13 @@ float TruncNorm::Mean() {
 
 //! Standard deviation
 float TruncNorm::Std() {
-    static float z_a = (this->a - this->loc) / this->scale;
-    static float z_b = (this->b - this->loc) / this->scale;
-    static float Z = _StandardNormalCDF(z_b) - _StandardNormalCDF(z_a);
-    static float pdf_z_a = _StandardNormalPDF(z_a);
-    static float pdf_z_b = _StandardNormalPDF(z_b);
+    float z_a = (this->a - this->loc) / this->scale;
+    float z_b = (this->b - this->loc) / this->scale;
+    float Z = _StandardNormalCDF(z_b) - _StandardNormalCDF(z_a);
+    float pdf_z_a = _StandardNormalPDF(z_a);
+    float pdf_z_b = _StandardNormalPDF(z_b);
 
-    static float sigma =
+    float sigma =
         this->scale * sqrt(1 - (z_b * pdf_z_b - z_a * pdf_z_a) / Z -
                            pow((pdf_z_a - pdf_z_b) / Z, 2.0));
 

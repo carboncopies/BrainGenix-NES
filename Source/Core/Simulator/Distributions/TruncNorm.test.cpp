@@ -82,3 +82,17 @@ TEST_F( TruncNormTest, test_Std_default ) {
     
     ASSERT_NEAR(std, 0.4787, tol);
 }
+
+TEST_F( TruncNormTest, test_InstanceSpecificParameters ) {
+    testTruncNorm->PDF(1.0f);
+    testTruncNorm->CDF(1.0f);
+    testTruncNorm->Mean();
+    testTruncNorm->Std();
+
+    BG::NES::Simulator::Distributions::TruncNorm shiftedTruncNorm(1.0f, 5.0f, 3.0f, 0.5f);
+
+    ASSERT_NEAR(shiftedTruncNorm.PDF(3.0f), 0.7979, tol);
+    ASSERT_NEAR(shiftedTruncNorm.CDF(3.0f), 0.5, tol);
+    ASSERT_NEAR(shiftedTruncNorm.Mean(), 3.0, tol);
+    ASSERT_NEAR(shiftedTruncNorm.Std(), 0.4997, tol);
+}
