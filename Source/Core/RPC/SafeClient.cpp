@@ -67,9 +67,15 @@ bool SafeClient::Connect() {
     Client_ = nullptr;
 
     // Extract RPC Service Client Parameters, Connect, Configure
-    std::string NESHost = RPCHost_;
-    int NESPort = RPCPort_;
-    int NESTimeout_ms = RPCTimeout_ms;
+    std::string NESHost;
+    int NESPort;
+    int NESTimeout_ms;
+    {
+        std::lock_guard<std::mutex> Lock(ConfigMutex_);
+        NESHost = RPCHost_;
+        NESPort = RPCPort_;
+        NESTimeout_ms = RPCTimeout_ms;
+    }
     
     Logger_->Log("Connecting to RPC Service on port: " + std::to_string(NESPort), 1);
     Logger_->Log("Connecting to RPC Service on host: " + NESHost, 1);
@@ -97,21 +103,26 @@ bool SafeClient::Connect() {
 SafeClient::SafeClient(BG::Common::Logger::LoggingSystem* _Logger) {
 
     Logger_ = _Logger;
-    RequestExit_ = false;
+    IsHealthy_.store(false);
+    RequestExit_.store(false);
     ClientManager_ = std::thread(&SafeClient::RPCManagerThread, this);
 
 }
 
 SafeClient::~SafeClient() {
-    RequestExit_ = true;
-    ClientManager_.join();
+    RequestExit_.store(true);
+    if (ClientManager_.joinable()) {
+        ClientManager_.join();
+    }
 }
 
 bool SafeClient::SetTimeout(int _Timeout_ms) {
+    std::lock_guard<std::mutex> Lock(ConfigMutex_);
     RPCTimeout_ms = _Timeout_ms;
     return true;
 }
 bool SafeClient::SetHostPort(std::string _Host, int _Port) {
+    std::lock_guard<std::mutex> Lock(ConfigMutex_);
     RPCHost_ = _Host;
     RPCPort_ = _Port;
     return true;
@@ -164,13 +175,22 @@ bool SafeClient::MakeJSONQuery(std::string _Route, std::string _Query, std::stri
 void SafeClient::RPCManagerThread() {
 
     // Wait Until Config Valid
-    while (RPCHost_ == "") {
+    while (!RequestExit_.load()) {
+        {
+            std::lock_guard<std::mutex> Lock(ConfigMutex_);
+            if (RPCHost_ != "") {
+                break;
+            }
+        }
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    }
+    if (RequestExit_.load()) {
+        return;
     }
 
 
     // Enter loop
-    while (!RequestExit_) {
+    while (!RequestExit_.load()) {
 
         // Check Version
         bool IsHealthy = RunVersionCheck();

@@ -13,6 +13,8 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <iostream>
 #include <memory>
+// cppcheck-suppress missingIncludeSystem
+#include <mutex>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <rpc/client.h>
@@ -43,6 +45,7 @@ private:
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to the instance of the logging system*/
 
     std::thread ClientManager_; /**Thread that owns the client, and autoreconnects, etc.*/
+    std::mutex ConfigMutex_; /**Protects host, port, and timeout settings shared with the manager thread*/
 
     bool LastState_ = false;
 
