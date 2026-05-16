@@ -251,6 +251,11 @@ ImageProcessorPool::ImageProcessorPool(BG::Common::Logger::LoggingSystem* _Logge
         _NumThreads = 1;
     #endif
 
+    // cppcheck-suppress knownConditionTrueFalse
+    if (_NumThreads == 0) {
+        _NumThreads = 1;
+    }
+
     // Create Renderer Instances
     Logger_->Log("Creating CAImageProcessorPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
     for (unsigned int i = 0; i < _NumThreads; i++) {

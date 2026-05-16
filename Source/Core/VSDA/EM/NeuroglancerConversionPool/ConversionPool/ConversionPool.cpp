@@ -203,6 +203,11 @@ ConversionPool::ConversionPool(BG::Common::Logger::LoggingSystem* _Logger, int _
         _NumThreads = 1;
     #endif
 
+    // cppcheck-suppress knownConditionTrueFalse
+    if (_NumThreads == 0) {
+        _NumThreads = 1;
+    }
+
 
     // Create Renderer Instances
     Logger_->Log("Creating EMConversionPool With " + std::to_string(_NumThreads) + " Thread(s)", 2);
