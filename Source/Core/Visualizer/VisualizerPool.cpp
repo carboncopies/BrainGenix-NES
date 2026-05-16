@@ -79,7 +79,11 @@ VisualizerPool::VisualizerPool(BG::Common::Logger::LoggingSystem* _Logger, bool 
 
 
     // Create ImageProcessorPool Instance
-    int NumEncoderThreads = std::thread::hardware_concurrency();
+    unsigned int HardwareThreadCount = std::thread::hardware_concurrency();
+    if (HardwareThreadCount == 0) {
+        HardwareThreadCount = 1;
+    }
+    int NumEncoderThreads = static_cast<int>(HardwareThreadCount);
     ImageProcessorPool_ = std::make_unique<Visualizer::ImageProcessorPool>(Logger_, NumEncoderThreads);
 
 
