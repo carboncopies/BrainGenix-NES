@@ -5,7 +5,21 @@ namespace NES {
 namespace Util {
 
 int GetInt(const nlohmann::json *_JSON, std::string _ParamName) {
-    return (*_JSON).at(_ParamName).template get<int>();
+    try {
+        return (*_JSON).at(_ParamName).template get<int>();
+    } catch (nlohmann::json::type_error &Ex) {
+        std::cerr<<"Cannot Get JSON Param: "<<_ParamName<<std::endl;
+        std::cerr<<"ERR: JSON Int Type Error: "<<Ex.what()<<std::endl;
+        return -1;
+    } catch (nlohmann::json::out_of_range &Ex) {
+        std::cerr<<"Cannot Get JSON Param: "<<_ParamName<<std::endl;
+        std::cerr<<"ERR: JSON Int Missing Param Error: "<<Ex.what()<<std::endl;
+        return -1;
+    } catch (nlohmann::json::parse_error &Ex) {
+        std::cerr<<"Cannot Get JSON Param: "<<_ParamName<<std::endl;
+        std::cerr<<"ERR: JSON Int Parsing Error: "<<Ex.what()<<std::endl;
+        return -1;
+    }
 }
 
 float GetFloat(const nlohmann::json *_JSON, std::string _ParamName) {
@@ -15,6 +29,10 @@ float GetFloat(const nlohmann::json *_JSON, std::string _ParamName) {
         std::cerr<<"Cannot Get JSON Param: "<<_ParamName<<std::endl;
         std::cerr<<"ERR: JSON Float Type Error: "<<Ex.what()<<std::endl;
         return -1;
+    } catch (nlohmann::json::out_of_range &Ex) {
+        std::cerr<<"Cannot Get JSON Param: "<<_ParamName<<std::endl;
+        std::cerr<<"ERR: JSON Float Missing Param Error: "<<Ex.what()<<std::endl;
+        return -1;
     } catch (nlohmann::json::parse_error &Ex) {
         std::cerr<<"Cannot Get JSON Param: "<<_ParamName<<std::endl;
         std::cerr<<"ERR: JSON Float Parsing Error: "<<Ex.what()<<std::endl;
@@ -23,7 +41,21 @@ float GetFloat(const nlohmann::json *_JSON, std::string _ParamName) {
 }
 
 std::string GetString(const nlohmann::json *_JSON, std::string _ParamName) {
-    return (*_JSON).at(_ParamName).template get<std::string>();
+    try {
+        return (*_JSON).at(_ParamName).template get<std::string>();
+    } catch (nlohmann::json::type_error &Ex) {
+        std::cerr<<"Cannot Get JSON Param: "<<_ParamName<<std::endl;
+        std::cerr<<"ERR: JSON String Type Error: "<<Ex.what()<<std::endl;
+        return "";
+    } catch (nlohmann::json::out_of_range &Ex) {
+        std::cerr<<"Cannot Get JSON Param: "<<_ParamName<<std::endl;
+        std::cerr<<"ERR: JSON String Missing Param Error: "<<Ex.what()<<std::endl;
+        return "";
+    } catch (nlohmann::json::parse_error &Ex) {
+        std::cerr<<"Cannot Get JSON Param: "<<_ParamName<<std::endl;
+        std::cerr<<"ERR: JSON String Parsing Error: "<<Ex.what()<<std::endl;
+        return "";
+    }
 }
 
 // From stringified JSON to JSON.
