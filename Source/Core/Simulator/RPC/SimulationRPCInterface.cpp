@@ -1069,49 +1069,49 @@ std::string SimulationRPCInterface::AttachRecordingElectrodes(std::string _JSONR
 
     nlohmann::json::iterator ElectrodeSpecsIterator;
     if (!Handle.FindPar("ElectrodeSpecs", ElectrodeSpecsIterator, const_cast<nlohmann::json&>(Handle.ReqJSON()))) {
-        Handle.ErrResponse();
+        return Handle.ErrResponse();
     }
     auto ElectrodeList = ElectrodeSpecsIterator.value();
     if (!ElectrodeList.is_array()) {
-        Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
     for (auto& ElectodeData : ElectrodeList) {
 
         // Collect electrode parameters and make electrode
         Tools::RecordingElectrode E(Handle.Sim());
         if (!Handle.GetParString("name", E.Name, ElectodeData)) {
-            Handle.ErrResponse();
+            return Handle.ErrResponse();
         }
         std::vector<float> TipPosition;
         if (!Handle.GetParVecFloat("tip_position", TipPosition, ElectodeData)) {
-            Handle.ErrResponse();
+            return Handle.ErrResponse();
         }
         std::vector<float> EndPosition;
         if (!Handle.GetParVecFloat("end_position", EndPosition, ElectodeData)) {
-            Handle.ErrResponse();
+            return Handle.ErrResponse();
         }
         if ((TipPosition.size()<3) || (EndPosition.size()<3)) {
-            Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+            return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
         }
         E.TipPosition_um = TipPosition;
         E.EndPosition_um = EndPosition;
         if (!Handle.GetParFloat("noise_level", E.NoiseLevel, ElectodeData)) {
-            Handle.ErrResponse();
+            return Handle.ErrResponse();
         }
         nlohmann::json::iterator SitesIterator;
         if (!Handle.FindPar("sites", SitesIterator, ElectodeData)) {
-            Handle.ErrResponse();
+            return Handle.ErrResponse();
         }
         if (!SitesIterator.value().is_array()) {
-            Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+            return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
         }
         for (auto& SiteData : SitesIterator.value()) {
             std::vector<float> SitePosition;
             if (!Handle.GetParVecFloat("", SitePosition, SiteData)) {
-                Handle.ErrResponse();
+                return Handle.ErrResponse();
             }
             if (SitePosition.size()<3) {
-                Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+                return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
             }
             E.Sites.emplace_back(SitePosition);
         }
