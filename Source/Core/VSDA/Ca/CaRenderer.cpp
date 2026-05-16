@@ -99,7 +99,7 @@ bool ExecuteCaSubRenderOperations(BG::Common::Logger::LoggingSystem* _Logger, Si
     double ImageStepSizeX_um = (Params->ImageWidth_px / Params->NumPixelsPerVoxel_px) * Params->VoxelResolution_um * (1 - (double(Params->ScanRegionOverlap_percent) / 100.));
     double ImageStepSizeY_um = (Params->ImageHeight_px / Params->NumPixelsPerVoxel_px) * Params->VoxelResolution_um * (1 - (double(Params->ScanRegionOverlap_percent) / 100.));
     int NumImagesInXDimension_img = ceil(BaseRegion->SizeX() / ImageStepSizeX_um);
-    int NumImagesInYDimension_img = ceil(BaseRegion->SizeX() / ImageStepSizeY_um);
+    int NumImagesInYDimension_img = ceil(BaseRegion->SizeY() / ImageStepSizeY_um);
 
     // Nextly, we're going to figure out the step size information for the subregions.
     // This will enable us to create subregions that exactly are multiples of the image step sizes, removing any overlap (unless it's on the border, then it may overshoot slightly)
