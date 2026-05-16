@@ -91,6 +91,12 @@ void CalciumImaging::InitializeFluorescenceKernel(Simulation* _Sim, NES::VSDA::C
         v_sum += k;
         t += _Sim->Dt_ms;
     }
+    if (FluorescenceKernel.empty() || ((v_sum > -0.000001F) && (v_sum < 0.000001F))) {
+        FluorescenceKernel.clear();
+        FluorescenceKernel.emplace_back(1.0F);
+        ReversedFluorescenceKernel.assign(1, 1.0F);
+        return;
+    }
     // Scale and reverse the kernel:
     size_t kernelsize = FluorescenceKernel.size();
     ReversedFluorescenceKernel.resize(kernelsize, 0.0);
@@ -108,6 +114,10 @@ void CalciumImaging::InitializeFluorescingNeuronFIFOs(Simulation* _Sim, NES::VSD
     // *** TODO: Set different FIFO sizes for different GCaMP types.
     float FIFO_ms = 4.0 * (_Params.IndicatorRiseTime_ms + _Params.IndicatorDecayTime_ms);
     float FIFO_dt_ms = _Sim->Dt_ms;
+    if (FIFO_dt_ms > 0.0F) {
+        float MinFIFO_ms = 9.0F * FIFO_dt_ms;
+        if (FIFO_ms < MinFIFO_ms) FIFO_ms = MinFIFO_ms;
+    }
     if (_Params.FlourescingNeuronIDs_.empty()) {
         // All neurons.
         for (auto & neuron_ptr : _Sim->Neurons) {

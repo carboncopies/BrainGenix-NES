@@ -11,6 +11,7 @@ float DoubleExponentExpr(float amp, float tauRise, float tauDecay, float tDiff) 
     assert(tauRise >= 0.0 && tauDecay >= 0.0);
 
     if (tDiff < 0) return 0.0;
+    if ((tauRise <= 0.0F) || (tauDecay <= 0.0F)) return 0.0F;
 
     return amp * (-exp(-tDiff / tauRise) + exp(-tDiff / tauDecay));
 }
