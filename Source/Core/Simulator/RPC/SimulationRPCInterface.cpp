@@ -727,7 +727,13 @@ std::string SimulationRPCInterface::SimulationGetSave(std::string _JSONRequest) 
     //std::cout << Handle.Sim()->StoredRequestsToString() << '\n';
 
     std::string SaveName;
-    Handle.GetParString("SaveHandle", SaveName);
+    if (!Handle.GetParString("SaveHandle", SaveName)) {
+        return Handle.ErrResponse();
+    }
+    if (SaveName.empty() || SaveName.find_first_of("/\\") != std::string::npos) {
+        Logger_->Log("An Invalid SaveHandle Was Provided " + SaveName, 6);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
 
     // Minor security feature (probably still exploitable, so be warned!)
     // We just remove .. from the incoming handle for the image, since they're just files right now
@@ -739,6 +745,10 @@ std::string SimulationRPCInterface::SimulationGetSave(std::string _JSONRequest) 
         Logger_->Log("Detected '..' In SaveName, It's Possible That Someone Is Trying To Do Something Nasty", 8);
         SaveName.erase(i, Pattern.length());
         i = SaveName.find(Pattern, i);
+    }
+    if (SaveName.empty()) {
+        Logger_->Log("An Invalid SaveHandle Was Provided", 6);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
     std::string SafeHandle = "SavedSimulations/" + SaveName + ".NES";
 
