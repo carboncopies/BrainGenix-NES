@@ -101,7 +101,17 @@ void VoxelArray::ClearArray() {
 
 void VoxelArray::ClearArrayThreaded(int _NumThreads) {
 
-    uint64_t ElementStepSize = DataMaxLength_ / _NumThreads;
+    if (DataMaxLength_ == 0) {
+        return;
+    }
+    if (_NumThreads <= 0) {
+        _NumThreads = 1;
+    }
+    uint64_t ThreadCount = static_cast<uint64_t>(_NumThreads);
+    if (ThreadCount > DataMaxLength_) {
+        ThreadCount = DataMaxLength_;
+    }
+    uint64_t ElementStepSize = DataMaxLength_ / ThreadCount;
     // VoxelType* StartAddress = Data_.get();
 
     // Initializer
@@ -110,10 +120,10 @@ void VoxelArray::ClearArrayThreaded(int _NumThreads) {
 
     // Create a bunch of memset tasks
     std::vector<std::future<int>> AsyncTasks;
-    for (size_t i = 0; i < _NumThreads; i++) {
+    for (uint64_t i = 0; i < ThreadCount; i++) {
         // VoxelType* ThreadStartAddress = StartAddress + (ElementStepSize * i);
         uint64_t ThreadStartIndex = (ElementStepSize * i);
-        uint64_t ThreadEndIndex = (ElementStepSize * i) + ElementStepSize;
+        uint64_t ThreadEndIndex = (i == ThreadCount - 1) ? DataMaxLength_ : ThreadStartIndex + ElementStepSize;
         VoxelType* Array = Data_.get();
 
         AsyncTasks.push_back(std::async(std::launch::async, [Array, ThreadStartIndex, ThreadEndIndex, Empty]{
