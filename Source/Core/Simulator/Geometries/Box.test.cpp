@@ -61,6 +61,16 @@ TEST_F( BoxTest, test_EqualSliceBounds_default ) {
     ASSERT_TRUE((bottomRight[1] >= minY) && (bottomRight[1] <= maxY)) << "Bottom right y coordinate = " << bottomRight[1];
 }
 
+TEST_F( BoxTest, test_EqualSliceBounds_last_slice ) {
+    int nSlices = 10;
+    std::vector<std::vector<float>> gotBounds = testBox->EqualSliceBounds(nSlices, nSlices - 1);
+    std::vector<float> topLeft = gotBounds[0];
+    std::vector<float> bottomRight = gotBounds[1];
+
+    ASSERT_TRUE((topLeft[1] >= minY) && (topLeft[1] <= maxY)) << "Top left y coordinate = " << topLeft[1];
+    ASSERT_NEAR(bottomRight[1], maxY, tol) << "Bottom right y coordinate = " << bottomRight[1];
+}
+
 TEST_F( BoxTest, test_Sides_default ) {
     std::vector<float> gotSides = testBox->Sides();
 

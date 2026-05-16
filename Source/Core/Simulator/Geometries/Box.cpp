@@ -42,7 +42,12 @@ std::vector<std::vector<float>> Box::EqualSliceBounds(int nSlices, int slice) {
     std::vector<float> bottomRight = {0.0, 0.0, 0.0};
     float pWidth = 0.0, y0 = 0.0;
 
-    assert(slice <= nSlices);
+    assert(nSlices > 0);
+    assert(slice >= 0);
+    assert(slice < nSlices);
+    if (nSlices <= 0 || slice < 0 || slice >= nSlices) {
+        return {topLeft, bottomRight};
+    }
 
     pWidth = this->Dims_um.y / nSlices;
     y0 = this->Center_um.y - this->Dims_um.y / 2.0;
