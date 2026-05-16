@@ -73,19 +73,28 @@ RenderPool::RenderPool(Config::Config* _Config, BG::Common::Logger::LoggingSyste
         _NumThreads = 1;
     #endif
 
+    if (_NumThreads < 1) {
+        _NumThreads = 1;
+    }
+
+    unsigned int HardwareThreadCount = std::thread::hardware_concurrency();
+    if (HardwareThreadCount == 0) {
+        HardwareThreadCount = 1;
+    }
+
     // Setup ConversionPool
-    int NumThreads = float(std::thread::hardware_concurrency()) * 1.5;
+    int NumThreads = static_cast<int>((HardwareThreadCount * 3) / 2);
     EMImageConversionPool_ = std::make_unique<ConversionPool::ConversionPool>(Logger_, NumThreads);
 
 
     // Create VoxelArrayGenerator Instance
-    int NumArrayGeneratorThreads = std::thread::hardware_concurrency();
+    int NumArrayGeneratorThreads = static_cast<int>(HardwareThreadCount);
     EMArrayGeneratorPool_ = std::make_unique<VoxelArrayGenerator::ArrayGeneratorPool>(Logger_, NumArrayGeneratorThreads);
     CalciumArrayGeneratorPool_ = std::make_unique<::BG::NES::VSDA::Calcium::VoxelArrayGenerator::ArrayGeneratorPool>(Logger_, NumArrayGeneratorThreads);
 
 
     // Create ImageProcessorPool Instance
-    int NumEncoderThreads = std::thread::hardware_concurrency();
+    int NumEncoderThreads = static_cast<int>(HardwareThreadCount);
     EMImageProcessorPool_ = std::make_unique<ImageProcessorPool>(Logger_, NumEncoderThreads);
     CalciumImageProcessorPool_ = std::make_unique<::BG::NES::VSDA::Calcium::ImageProcessorPool>(Logger_, NumEncoderThreads);
 
