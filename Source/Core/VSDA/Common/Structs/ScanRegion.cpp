@@ -35,6 +35,10 @@ std::string ScanRegion::ToString() {
 }
 
 std::string ScanRegion::GetDimensionsInVoxels(float _VoxelScale_um) {
+    if (_VoxelScale_um <= 0.0F) {
+        return "0XVox, 0YVox, 0ZVox";
+    }
+
     float SizeX = fabs(Point1X_um - Point2X_um); // apparently abs *only* returns an int!!!!! WTF!>!:??!?!?! WHY DO I HAVE TO USE fabs INSTEAD?>!?!?!?!!
     float SizeY = fabs(Point1Y_um - Point2Y_um);
     float SizeZ = fabs(Point1Z_um - Point2Z_um);
@@ -65,6 +69,10 @@ double ScanRegion::SizeZ() {
 
 
 uint64_t ScanRegion::GetVoxelSize(float _VoxelScale_um) {
+    if (_VoxelScale_um <= 0.0F) {
+        return 0;
+    }
+
     float SizeX = fabs(Point1X_um - Point2X_um);
     float SizeY = fabs(Point1Y_um - Point2Y_um);
     float SizeZ = fabs(Point1Z_um - Point2Z_um);
