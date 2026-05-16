@@ -140,3 +140,11 @@ TEST_F(Vec3DTest, test_Maximum_default) {
     float max = testVec3D_2->Max();
     ASSERT_EQ(max, 5.6f);
 }
+
+TEST_F(Vec3DTest, test_StringPrecision_default) {
+
+    BG::NES::Simulator::Geometries::Vec3D vec{
+        1.23456f, 7.89123f, 0.000123456f};
+
+    ASSERT_EQ(vec.str(3), "1.23,7.89,0.000123");
+}
