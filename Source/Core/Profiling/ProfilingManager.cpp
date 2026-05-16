@@ -72,7 +72,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.Center_um.x = CenterPosX;
             S.Center_um.y = CenterPosY;
             S.Center_um.z = CenterPosZ;
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Sim;
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
@@ -201,7 +201,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.Center_um.x = CenterPosX;
             S.Center_um.y = CenterPosY;
             S.Center_um.z = CenterPosZ;
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Sim;
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
@@ -289,7 +289,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.End1Radius_um = Radius_um;
             S.End0Pos_um = Simulator::Geometries::Vec3D(CenterPosX, CenterPosY, CenterPosZ);
             S.End1Pos_um = Simulator::Geometries::Vec3D(CenterPos2X, CenterPos2Y, CenterPos2Z);
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Sim;
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
@@ -374,7 +374,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.Name = Name;
             S.Center_um = Simulator::Geometries::Vec3D(CenterPosX, CenterPosY, CenterPosZ);
             S.Dims_um = Simulator::Geometries::Vec3D(SizeX, SizeY, SizeZ);
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Sim;
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
@@ -460,7 +460,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.Center_um.x = CenterPosX;
             S.Center_um.y = CenterPosY;
             S.Center_um.z = CenterPosZ;
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Sim;
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
@@ -530,7 +530,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.Name = Name;
             S.Center_um = Simulator::Geometries::Vec3D(CenterPosX, CenterPosY, CenterPosZ);
             S.Dims_um = Simulator::Geometries::Vec3D(SizeX, SizeY, SizeZ);
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Sim;
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
@@ -612,7 +612,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.Name = Name;
             S.Center_um = Simulator::Geometries::Vec3D(CenterPosX, CenterPosY, CenterPosZ);
             S.Dims_um = Simulator::Geometries::Vec3D(SizeX, SizeY, SizeZ);
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Sim;
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
@@ -645,7 +645,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.Center_um.x = CenterPosX;
             S.Center_um.y = CenterPosY;
             S.Center_um.z = CenterPosZ;
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Sim;
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
