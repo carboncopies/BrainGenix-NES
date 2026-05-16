@@ -684,10 +684,14 @@ std::string VSDARPCInterface::VSDACASetupMicroscope(std::string _JSONRequest) {
 
     int Result = !NES::VSDA::Calcium::VSDA_CA_SetupMicroscope(Logger_, Handle.Sim(), Params);
 
-    Handle.Sim()->CaData_->CaImaging.Init(Handle.Sim(), Handle.Sim()->CaData_->Params_);
+    if (Result == 0) {
+        Handle.Sim()->CaData_->CaImaging.Init(Handle.Sim(), Handle.Sim()->CaData_->Params_);
+    }
 
     // Build Response
-    return Handle.ErrResponse();
+    nlohmann::json ResponseJSON;
+    ResponseJSON["StatusCode"] = Result;
+    return ResponseJSON.dump();
 
 }
 std::string VSDARPCInterface::VSDACADefineScanRegion(std::string _JSONRequest) {
