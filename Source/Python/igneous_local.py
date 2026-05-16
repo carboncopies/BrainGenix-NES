@@ -10,14 +10,31 @@ from igneous.types import DownsampleMethods
 import os
 import argparse
 
+
+def ParseBool(Value):
+    if isinstance(Value, bool):
+        return Value
+
+    Normalized = Value.lower()
+    if Normalized in ("1", "true", "t", "yes", "y", "on"):
+        return True
+    if Normalized in ("0", "false", "f", "no", "n", "off"):
+        return False
+
+    raise argparse.ArgumentTypeError("Expected a boolean value")
+
 Parser = argparse.ArgumentParser(description="Igneous tasks")
 #Parser.add_argument("-Port", default=1335, type=int, help="Port number to connect to")
 Parser.add_argument("--datapath", default=".", type=str, help="Path to Segmentation data.")
 Parser.add_argument("--mip", default=0, type=int, help="Resolution hierarchy level at which to begin downsampling, 0=highest res.")
 Parser.add_argument("--parallel", default=1, type=int, help="Number of parallel cores to use (default 1, 0 means all cores).")
-Parser.add_argument("--fillmissing", default=False, type=bool, help=" Whether to fail (default) or fill missing image files.")
+Parser.add_argument(
+    "--fillmissing", nargs="?", const=True, default=False, type=ParseBool,
+    help=" Whether to fail (default) or fill missing image files.")
 Parser.add_argument("--taskleasesec", default=60, type=int, help="Maximum seconds to lease a task (default: 60 seconds).")
-Parser.add_argument("--volumetric", default=False, type=bool, help="Volumetric 2x2x2 downsampling instead of 2x2x1 (default: False).")
+Parser.add_argument(
+    "--volumetric", nargs="?", const=True, default=False, type=ParseBool,
+    help="Volumetric 2x2x2 downsampling instead of 2x2x1 (default: False).")
 Args = Parser.parse_args()
 
 if not Args.datapath:
