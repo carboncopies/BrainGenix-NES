@@ -170,13 +170,13 @@ std::string RPCManager::NESRequest(std::string _JSONRequest, int _SimulationIDOv
         if (it == RequestHandlers_.end()) {
             Logger_->Log("Error, No Handler Exists For Call " + ReqFunc, 7);
             ReqResponseJSON["ReqID"] = ReqID;
-            ReqResponseJSON["StatusCode"] = 1; // unknown request *** TODO: use the right code
+            ReqResponseJSON["StatusCode"] = int(BGStatusCode::BGStatusInvalidParametersPassed);
             //Response = ReqResponseJSON.dump();
         } else {
             if (!it->second) {
                 ReqResponseJSON["ReqID"] = ReqID;
                 Logger_->Log("Error, Handler Is Null For Call " + ReqFunc + ", Continuing Anyway", 7);
-                // ReqResponseJSON["StatusCode"] = 1; // not a valid NES request *** TODO: use the right code
+                ReqResponseJSON["StatusCode"] = int(BGStatusCode::BGStatusGeneralFailure);
             } else {
                 // Logger_->Log("DEBUG -> Got Request For '" + ReqFunc + "'", 0);
                 if (_SimulationIDOverride != -1) {
