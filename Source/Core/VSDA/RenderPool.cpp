@@ -73,10 +73,6 @@ RenderPool::RenderPool(Config::Config* _Config, BG::Common::Logger::LoggingSyste
         _NumThreads = 1;
     #endif
 
-    if (_NumThreads < 1) {
-        _NumThreads = 1;
-    }
-
     unsigned int HardwareThreadCount = std::thread::hardware_concurrency();
     if (HardwareThreadCount == 0) {
         HardwareThreadCount = 1;
