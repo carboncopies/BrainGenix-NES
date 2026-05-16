@@ -1,4 +1,3 @@
-#include <iomanip>
 #include <sstream>
 
 #include <Simulator/Geometries/VecTools.h>
@@ -123,7 +122,8 @@ std::vector<float> Vec3D::AsFloatVector() const {
 //! Return string representation of vector.
 std::string Vec3D::str(int precision) const {
     std::stringstream s;
-    s << std::setprecision(precision) << this->x << ',' << this->y << ',' << this->z;
+    s.precision(precision);
+    s << this->x << ',' << this->y << ',' << this->z;
     return s.str();
 }
 
