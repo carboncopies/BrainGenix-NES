@@ -78,6 +78,7 @@ private:
     VisualizerPool* VisualizerPool_;                      /**Pointer to instance of the vizualizerpool class*/
 
     int NextManTaskID = 0; /**Use this, because we use a map not a vector, so that we can expire some to shed old cached stuff*/
+    std::mutex ManTaskMtx; // guards the dynamically allocated object holding ManagerTasks
     std::map<int, std::unique_ptr<API::ManagerTaskData>> ManagerTasks; /**Status data of launched tasks by Task ID*/
 
     bool ResourceChecksIncludeHeap = false; // See how this applies in GetResourceStatus().
