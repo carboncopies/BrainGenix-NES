@@ -75,9 +75,9 @@ generate_knowledge_graph() {
   local graphify_cmd="$1"
 
   echo "$repo_name: generating Graphify knowledge graph"
-  if ! "$graphify_cmd" . --update; then
+  if ! "$graphify_cmd" update .; then
     echo "$repo_name: Graphify update failed; building a fresh graph"
-    "$graphify_cmd" .
+    "$graphify_cmd" update . --force
   fi
 }
 
