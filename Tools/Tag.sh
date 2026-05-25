@@ -5,12 +5,12 @@ MODE="minor"
 PUSH=false
 DRY_RUN=false
 SKIP_GRAPH=false
-SNAPSHOT_BRANCH=false
+SNAPSHOT_BRANCH=true
 
 usage() {
   cat <<'USAGE'
 Usage:
-  ./Tools/Tag.sh [minor|patch|major|init] [--push] [--dry-run] [--skip-graph] [--snapshot-branch]
+  ./Tools/Tag.sh [minor|patch|major|init] [--push] [--dry-run] [--skip-graph] [--no-snapshot-branch]
 
 Behavior:
   first run with no existing version tag -> 1.0.0
@@ -23,9 +23,9 @@ Options:
   --push       Push the new tag to origin after creating it.
   --dry-run    Print what would happen without creating or pushing tags.
   --skip-graph Skip Graphify knowledge graph generation.
-  --snapshot-branch
-               Commit graphify-out changes on graphify-snapshot-<version>.
-               With --push, push that branch to origin for protected-branch review.
+  --no-snapshot-branch
+               Do not create graphify-snapshot-<version> for graphify-out changes.
+               By default, graph snapshots are committed to a versioned branch.
   -h, --help   Show this help text.
 USAGE
 }
@@ -46,6 +46,9 @@ for arg in "$@"; do
       ;;
     --snapshot-branch)
       SNAPSHOT_BRANCH=true
+      ;;
+    --no-snapshot-branch)
+      SNAPSHOT_BRANCH=false
       ;;
     -h|--help)
       usage
