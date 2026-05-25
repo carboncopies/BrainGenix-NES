@@ -106,8 +106,8 @@ fi
 echo "Creating Python virtual environment..."
 cd ..
 python3 -m venv venv
-echo "Installing igneous-pipeline in the virtual environment..."
-./venv/bin/pip install igneous-pipeline
+echo "Installing igneous-pipeline and graphify in the virtual environment..."
+./venv/bin/pip install igneous-pipeline graphifyy
 cd Tools
 
 # Update Submodules

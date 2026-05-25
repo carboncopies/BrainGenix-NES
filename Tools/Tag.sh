@@ -4,11 +4,12 @@ set -euo pipefail
 MODE="minor"
 PUSH=false
 DRY_RUN=false
+SKIP_GRAPH=false
 
 usage() {
   cat <<'USAGE'
 Usage:
-  ./Tools/Tag.sh [minor|patch|major|init] [--push] [--dry-run]
+  ./Tools/Tag.sh [minor|patch|major|init] [--push] [--dry-run] [--skip-graph]
 
 Behavior:
   first run with no existing version tag -> 1.0.0
@@ -20,6 +21,7 @@ Behavior:
 Options:
   --push       Push the new tag to origin after creating it.
   --dry-run    Print what would happen without creating or pushing tags.
+  --skip-graph Skip Graphify knowledge graph generation.
   -h, --help   Show this help text.
 USAGE
 }
@@ -34,6 +36,9 @@ for arg in "$@"; do
       ;;
     --dry-run)
       DRY_RUN=true
+      ;;
+    --skip-graph)
+      SKIP_GRAPH=true
       ;;
     -h|--help)
       usage
@@ -54,6 +59,26 @@ cd "$repo_root"
 
 latest_version_tag() {
   git tag --list '[0-9]*.[0-9]*.[0-9]*' --sort=-v:refname | head -n 1
+}
+
+graphify_command() {
+  if [[ -x "$repo_root/venv/bin/graphify" ]]; then
+    echo "$repo_root/venv/bin/graphify"
+  elif command -v graphify >/dev/null 2>&1; then
+    command -v graphify
+  else
+    return 1
+  fi
+}
+
+generate_knowledge_graph() {
+  local graphify_cmd="$1"
+
+  echo "$repo_name: generating Graphify knowledge graph"
+  if ! "$graphify_cmd" . --update; then
+    echo "$repo_name: Graphify update failed; building a fresh graph"
+    "$graphify_cmd" .
+  fi
 }
 
 next_version() {
@@ -105,6 +130,15 @@ if [[ "$DRY_RUN" == true ]]; then
     echo "$repo_name: would create tag $new_tag on $commit_sha (latest tag: $current_tag)"
   fi
   exit 0
+fi
+
+if [[ "$SKIP_GRAPH" == false ]]; then
+  if graphify_cmd="$(graphify_command)"; then
+    generate_knowledge_graph "$graphify_cmd"
+  else
+    echo "$repo_name: graphify command not found; run ./Tools/Setup.sh first or install graphifyy" >&2
+    exit 1
+  fi
 fi
 
 git tag -a "$new_tag" -m "Release $new_tag"
