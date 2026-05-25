@@ -5,11 +5,12 @@ MODE="minor"
 PUSH=false
 DRY_RUN=false
 SKIP_GRAPH=false
+SNAPSHOT_BRANCH=false
 
 usage() {
   cat <<'USAGE'
 Usage:
-  ./Tools/Tag.sh [minor|patch|major|init] [--push] [--dry-run] [--skip-graph]
+  ./Tools/Tag.sh [minor|patch|major|init] [--push] [--dry-run] [--skip-graph] [--snapshot-branch]
 
 Behavior:
   first run with no existing version tag -> 1.0.0
@@ -22,6 +23,9 @@ Options:
   --push       Push the new tag to origin after creating it.
   --dry-run    Print what would happen without creating or pushing tags.
   --skip-graph Skip Graphify knowledge graph generation.
+  --snapshot-branch
+               Commit graphify-out changes on graphify-snapshot-<version>.
+               With --push, push that branch to origin for protected-branch review.
   -h, --help   Show this help text.
 USAGE
 }
@@ -39,6 +43,9 @@ for arg in "$@"; do
       ;;
     --skip-graph)
       SKIP_GRAPH=true
+      ;;
+    --snapshot-branch)
+      SNAPSHOT_BRANCH=true
       ;;
     -h|--help)
       usage
@@ -176,6 +183,36 @@ next_version() {
   esac
 }
 
+create_snapshot_branch() {
+  local tag_name="$1"
+  local snapshot_branch="graphify-snapshot-$tag_name"
+
+  if [[ -z "$(git status --porcelain -- graphify-out)" ]]; then
+    echo "$repo_name: no graphify-out changes to snapshot"
+    return
+  fi
+
+  if git rev-parse -q --verify "refs/heads/$snapshot_branch" >/dev/null; then
+    echo "$repo_name: snapshot branch $snapshot_branch already exists locally" >&2
+    exit 1
+  fi
+
+  if [[ "$PUSH" == true ]] && git ls-remote --exit-code --heads origin "$snapshot_branch" >/dev/null 2>&1; then
+    echo "$repo_name: snapshot branch origin/$snapshot_branch already exists" >&2
+    exit 1
+  fi
+
+  git switch -c "$snapshot_branch"
+  git add graphify-out
+  git commit -m "Add Graphify snapshot for $tag_name"
+  echo "$repo_name: created graph snapshot branch $snapshot_branch"
+
+  if [[ "$PUSH" == true ]]; then
+    git push -u origin "$snapshot_branch"
+    echo "$repo_name: pushed graph snapshot branch $snapshot_branch"
+  fi
+}
+
 repo_name="$(basename "$repo_root")"
 current_tag="$(latest_version_tag)"
 new_tag="$(next_version "$current_tag" "$MODE")"
@@ -214,4 +251,8 @@ echo "$repo_name: created tag $new_tag on $commit_sha"
 if [[ "$PUSH" == true ]]; then
   git push origin "$new_tag"
   echo "$repo_name: pushed tag $new_tag to origin"
+fi
+
+if [[ "$SNAPSHOT_BRANCH" == true ]]; then
+  create_snapshot_branch "$new_tag"
 fi
