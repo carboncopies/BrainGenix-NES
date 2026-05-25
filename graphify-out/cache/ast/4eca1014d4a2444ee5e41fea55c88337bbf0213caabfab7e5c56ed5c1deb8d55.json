@@ -1,1 +1,34 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_legacyslicegenerator_cpp", "label": "LegacySliceGenerator.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.cpp", "source_location": "L1"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_legacyslicegenerator_cpp", "target": "vector", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.cpp", "source_location": "L7", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_legacyslicegenerator_cpp", "target": "legacyslicegenerator", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.cpp", "source_location": "L12", "weight": 1.0}], "raw_calls": []}
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_voxelsubsystem_legacyslicegenerator_cpp",
+      "label": "LegacySliceGenerator.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.cpp",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_legacyslicegenerator_cpp",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_legacyslicegenerator_cpp",
+      "target": "legacyslicegenerator",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.cpp",
+      "source_location": "L12",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

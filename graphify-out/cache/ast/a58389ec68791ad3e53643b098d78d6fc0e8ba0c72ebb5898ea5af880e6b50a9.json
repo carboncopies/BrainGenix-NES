@@ -1,1 +1,1036 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "label": "RPCHandlerHelper.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L1"}, {"id": "rpc_rpchandlerhelper_handlerdata", "label": "HandlerData()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L24"}, {"id": "rpc_rpchandlerhelper_haserror", "label": "HasError()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L94"}, {"id": "rpc_rpchandlerhelper_getstatus", "label": "GetStatus()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L98"}, {"id": "rpc_rpchandlerhelper_responseandstorerequest", "label": "ResponseAndStoreRequest()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L112"}, {"id": "rpc_rpchandlerhelper_errresponse", "label": "ErrResponse()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L124"}, {"id": "rpc_rpchandlerhelper_responsewithid", "label": "ResponseWithID()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L137"}, {"id": "rpc_rpchandlerhelper_stringresponse", "label": "StringResponse()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L149"}, {"id": "rpc_rpchandlerhelper_simid", "label": "SimID()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L156"}, {"id": "rpc_rpchandlerhelper_simidstr", "label": "SimIDStr()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L159"}, {"id": "rpc_rpchandlerhelper_sim", "label": "Sim()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L163"}, {"id": "rpc_rpchandlerhelper_findpar", "label": "FindPar()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L186"}, {"id": "rpc_rpchandlerhelper_getparbool", "label": "GetParBool()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L202"}, {"id": "rpc_rpchandlerhelper_getparint", "label": "GetParInt()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L220"}, {"id": "rpc_rpchandlerhelper_getparfloat", "label": "GetParFloat()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L238"}, {"id": "rpc_rpchandlerhelper_getparstring", "label": "GetParString()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L256"}, {"id": "rpc_rpchandlerhelper_getparvec3fromjson", "label": "GetParVec3FromJSON()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L274"}, {"id": "rpc_rpchandlerhelper_getparvec3", "label": "GetParVec3()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L287"}, {"id": "rpc_rpchandlerhelper_getparvecint", "label": "GetParVecInt()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L291"}, {"id": "rpc_rpchandlerhelper_getparvecfloat", "label": "GetParVecFloat()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L317"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "thread", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L7", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpchandlerhelper", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L13", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_handlerdata", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L24", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_haserror", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L94", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_getstatus", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L98", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_responseandstorerequest", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L112", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_errresponse", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L124", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_errresponse", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L130", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_errresponse", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L133", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_responsewithid", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L137", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_responsewithid", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L143", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_stringresponse", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L149", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_simid", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L156", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_simidstr", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L159", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_sim", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L163", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_findpar", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L186", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_findpar", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L198", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_getparbool", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L202", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_getparbool", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L216", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_getparint", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L220", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_getparint", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L234", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_getparfloat", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L238", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_getparfloat", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L252", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_getparstring", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L256", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_getparstring", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L270", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_getparvec3fromjson", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L274", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_getparvec3", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L287", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_getparvecint", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L291", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_getparvecint", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L312", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_getparvecfloat", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L317", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpchandlerhelper_cpp", "target": "rpc_rpchandlerhelper_getparvecfloat", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L355", "weight": 1.0}, {"source": "rpc_rpchandlerhelper_handlerdata", "target": "rpc_rpchandlerhelper_getparint", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L61", "weight": 1.0}, {"source": "rpc_rpchandlerhelper_errresponse", "target": "rpc_rpchandlerhelper_responseandstorerequest", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L128", "weight": 1.0}, {"source": "rpc_rpchandlerhelper_responsewithid", "target": "rpc_rpchandlerhelper_responseandstorerequest", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L141", "weight": 1.0}, {"source": "rpc_rpchandlerhelper_getparbool", "target": "rpc_rpchandlerhelper_findpar", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L204", "weight": 1.0}, {"source": "rpc_rpchandlerhelper_getparint", "target": "rpc_rpchandlerhelper_findpar", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L222", "weight": 1.0}, {"source": "rpc_rpchandlerhelper_getparfloat", "target": "rpc_rpchandlerhelper_findpar", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L240", "weight": 1.0}, {"source": "rpc_rpchandlerhelper_getparstring", "target": "rpc_rpchandlerhelper_findpar", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L258", "weight": 1.0}, {"source": "rpc_rpchandlerhelper_getparvec3fromjson", "target": "rpc_rpchandlerhelper_getparfloat", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L275", "weight": 1.0}, {"source": "rpc_rpchandlerhelper_getparvec3", "target": "rpc_rpchandlerhelper_getparvec3fromjson", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L288", "weight": 1.0}, {"source": "rpc_rpchandlerhelper_getparvecint", "target": "rpc_rpchandlerhelper_findpar", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L293", "weight": 1.0}, {"source": "rpc_rpchandlerhelper_getparvecfloat", "target": "rpc_rpchandlerhelper_findpar", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L335", "weight": 1.0}], "raw_calls": [{"caller_nid": "rpc_rpchandlerhelper_handlerdata", "callee": "json::parse", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L32"}, {"caller_nid": "rpc_rpchandlerhelper_handlerdata", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L54"}, {"caller_nid": "rpc_rpchandlerhelper_handlerdata", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L65"}, {"caller_nid": "rpc_rpchandlerhelper_handlerdata", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L66"}, {"caller_nid": "rpc_rpchandlerhelper_handlerdata", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L70"}, {"caller_nid": "rpc_rpchandlerhelper_handlerdata", "callee": "at", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L70"}, {"caller_nid": "rpc_rpchandlerhelper_handlerdata", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L72"}, {"caller_nid": "rpc_rpchandlerhelper_handlerdata", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L72"}, {"caller_nid": "rpc_rpchandlerhelper_handlerdata", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L78"}, {"caller_nid": "rpc_rpchandlerhelper_responseandstorerequest", "callee": "StoreRequestHandled", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L119"}, {"caller_nid": "rpc_rpchandlerhelper_responseandstorerequest", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L122"}, {"caller_nid": "rpc_rpchandlerhelper_errresponse", "callee": "BGStatusCode", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L125"}, {"caller_nid": "rpc_rpchandlerhelper_stringresponse", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L153"}, {"caller_nid": "rpc_rpchandlerhelper_simidstr", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L160"}, {"caller_nid": "rpc_rpchandlerhelper_findpar", "callee": "find", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L187"}, {"caller_nid": "rpc_rpchandlerhelper_findpar", "callee": "end", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L188"}, {"caller_nid": "rpc_rpchandlerhelper_findpar", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L190"}, {"caller_nid": "rpc_rpchandlerhelper_findpar", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L190"}, {"caller_nid": "rpc_rpchandlerhelper_getparbool", "callee": "is_boolean", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L207"}, {"caller_nid": "rpc_rpchandlerhelper_getparbool", "callee": "value", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L207"}, {"caller_nid": "rpc_rpchandlerhelper_getparbool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L208"}, {"caller_nid": "rpc_rpchandlerhelper_getparbool", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L208"}, {"caller_nid": "rpc_rpchandlerhelper_getparbool", "callee": "template get<bool>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L212"}, {"caller_nid": "rpc_rpchandlerhelper_getparbool", "callee": "value", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L212"}, {"caller_nid": "rpc_rpchandlerhelper_getparint", "callee": "is_number", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L225"}, {"caller_nid": "rpc_rpchandlerhelper_getparint", "callee": "value", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L225"}, {"caller_nid": "rpc_rpchandlerhelper_getparint", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L226"}, {"caller_nid": "rpc_rpchandlerhelper_getparint", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L226"}, {"caller_nid": "rpc_rpchandlerhelper_getparint", "callee": "template get<int>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L230"}, {"caller_nid": "rpc_rpchandlerhelper_getparint", "callee": "value", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L230"}, {"caller_nid": "rpc_rpchandlerhelper_getparfloat", "callee": "is_number", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L243"}, {"caller_nid": "rpc_rpchandlerhelper_getparfloat", "callee": "value", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L243"}, {"caller_nid": "rpc_rpchandlerhelper_getparfloat", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L244"}, {"caller_nid": "rpc_rpchandlerhelper_getparfloat", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L244"}, {"caller_nid": "rpc_rpchandlerhelper_getparfloat", "callee": "template get<float>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L248"}, {"caller_nid": "rpc_rpchandlerhelper_getparfloat", "callee": "value", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L248"}, {"caller_nid": "rpc_rpchandlerhelper_getparstring", "callee": "is_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L261"}, {"caller_nid": "rpc_rpchandlerhelper_getparstring", "callee": "value", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L261"}, {"caller_nid": "rpc_rpchandlerhelper_getparstring", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L262"}, {"caller_nid": "rpc_rpchandlerhelper_getparstring", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L262"}, {"caller_nid": "rpc_rpchandlerhelper_getparstring", "callee": "template get<std::string>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L266"}, {"caller_nid": "rpc_rpchandlerhelper_getparstring", "callee": "value", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L266"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecint", "callee": "is_array", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L296"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecint", "callee": "value", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L296"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecint", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L297"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecint", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L297"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecint", "callee": "value", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L301"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecint", "callee": "is_number", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L302"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecint", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L303"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecint", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L303"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecint", "callee": "emplace_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L307"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecint", "callee": "template get<int>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L307"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "empty", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L318"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "is_array", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L319"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L320"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L320"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "is_number", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L325"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L326"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L326"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "emplace_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L330"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "template get<float>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L330"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "is_array", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L338"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "value", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L338"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L339"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L339"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "value", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L343"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "is_number", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L344"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L345"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L345"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "emplace_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L349"}, {"caller_nid": "rpc_rpchandlerhelper_getparvecfloat", "callee": "template get<float>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp", "source_location": "L349"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_rpc_rpchandlerhelper_cpp",
+      "label": "RPCHandlerHelper.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_handlerdata",
+      "label": "HandlerData()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L24"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_haserror",
+      "label": "HasError()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L94"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_getstatus",
+      "label": "GetStatus()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L98"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_responseandstorerequest",
+      "label": "ResponseAndStoreRequest()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L112"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_errresponse",
+      "label": "ErrResponse()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L124"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_responsewithid",
+      "label": "ResponseWithID()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L137"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_stringresponse",
+      "label": "StringResponse()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L149"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_simid",
+      "label": "SimID()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L156"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_simidstr",
+      "label": "SimIDStr()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L159"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_sim",
+      "label": "Sim()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L163"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_findpar",
+      "label": "FindPar()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L186"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_getparbool",
+      "label": "GetParBool()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L202"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_getparint",
+      "label": "GetParInt()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L220"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_getparfloat",
+      "label": "GetParFloat()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L238"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_getparstring",
+      "label": "GetParString()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L256"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_getparvec3fromjson",
+      "label": "GetParVec3FromJSON()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L274"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_getparvec3",
+      "label": "GetParVec3()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L287"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_getparvecint",
+      "label": "GetParVecInt()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L291"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_getparvecfloat",
+      "label": "GetParVecFloat()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L317"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "thread",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpchandlerhelper",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_handlerdata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_haserror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_getstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_responseandstorerequest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_errresponse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_errresponse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_errresponse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_responsewithid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_responsewithid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L143",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_stringresponse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_simid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_simidstr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L159",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_sim",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_findpar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_findpar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_getparbool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_getparbool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_getparint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L220",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_getparint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L234",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_getparfloat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L238",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_getparfloat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L252",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_getparstring",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L256",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_getparstring",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L270",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_getparvec3fromjson",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L274",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_getparvec3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L287",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_getparvecint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L291",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_getparvecint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L312",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_getparvecfloat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L317",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_cpp",
+      "target": "rpc_rpchandlerhelper_getparvecfloat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L355",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_rpchandlerhelper_handlerdata",
+      "target": "rpc_rpchandlerhelper_getparint",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_rpchandlerhelper_errresponse",
+      "target": "rpc_rpchandlerhelper_responseandstorerequest",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_rpchandlerhelper_responsewithid",
+      "target": "rpc_rpchandlerhelper_responseandstorerequest",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_rpchandlerhelper_getparbool",
+      "target": "rpc_rpchandlerhelper_findpar",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L204",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_rpchandlerhelper_getparint",
+      "target": "rpc_rpchandlerhelper_findpar",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L222",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_rpchandlerhelper_getparfloat",
+      "target": "rpc_rpchandlerhelper_findpar",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L240",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_rpchandlerhelper_getparstring",
+      "target": "rpc_rpchandlerhelper_findpar",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L258",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_rpchandlerhelper_getparvec3fromjson",
+      "target": "rpc_rpchandlerhelper_getparfloat",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L275",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_rpchandlerhelper_getparvec3",
+      "target": "rpc_rpchandlerhelper_getparvec3fromjson",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L288",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_rpchandlerhelper_getparvecint",
+      "target": "rpc_rpchandlerhelper_findpar",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L293",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_rpchandlerhelper_getparvecfloat",
+      "target": "rpc_rpchandlerhelper_findpar",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L335",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "rpc_rpchandlerhelper_handlerdata",
+      "callee": "json::parse",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_handlerdata",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_handlerdata",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_handlerdata",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_handlerdata",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_handlerdata",
+      "callee": "at",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_handlerdata",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L72"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_handlerdata",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L72"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_handlerdata",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_responseandstorerequest",
+      "callee": "StoreRequestHandled",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_responseandstorerequest",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_errresponse",
+      "callee": "BGStatusCode",
+      "is_member_call": false,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_stringresponse",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L153"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_simidstr",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L160"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_findpar",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L187"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_findpar",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L188"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_findpar",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L190"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_findpar",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L190"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparbool",
+      "callee": "is_boolean",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L207"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparbool",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L207"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparbool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L208"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparbool",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L208"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparbool",
+      "callee": "template get<bool>",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L212"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparbool",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L212"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparint",
+      "callee": "is_number",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L225"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparint",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L225"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparint",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L226"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparint",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L226"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparint",
+      "callee": "template get<int>",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L230"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparint",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L230"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparfloat",
+      "callee": "is_number",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L243"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparfloat",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L243"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparfloat",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L244"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparfloat",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L244"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparfloat",
+      "callee": "template get<float>",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L248"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparfloat",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L248"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparstring",
+      "callee": "is_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L261"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparstring",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L261"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparstring",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L262"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparstring",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L262"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparstring",
+      "callee": "template get<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L266"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparstring",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L266"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecint",
+      "callee": "is_array",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L296"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecint",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L296"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecint",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L297"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecint",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L297"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecint",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L301"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecint",
+      "callee": "is_number",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L302"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecint",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L303"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecint",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L303"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecint",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L307"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecint",
+      "callee": "template get<int>",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L307"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L318"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "is_array",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L319"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L320"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L320"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "is_number",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L325"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L326"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L326"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L330"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "template get<float>",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L330"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "is_array",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L338"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L338"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L339"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L339"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L343"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "is_number",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L344"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L345"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L345"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L349"
+    },
+    {
+      "caller_nid": "rpc_rpchandlerhelper_getparvecfloat",
+      "callee": "template get<float>",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.cpp",
+      "source_location": "L349"
+    }
+  ]
+}

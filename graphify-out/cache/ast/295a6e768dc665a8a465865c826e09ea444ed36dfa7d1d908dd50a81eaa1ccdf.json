@@ -1,1 +1,769 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "label": "ArrayGeneratorPool.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L1"}, {"id": "arraygeneratorpool_arraygeneratorpool_getaverage", "label": "GetAverage()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L30"}, {"id": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "label": "RendererThreadMainFunction()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L40"}, {"id": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "label": "ArrayGeneratorPool()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L153"}, {"id": "arraygeneratorpool_arraygeneratorpool_enqueuetask", "label": "EnqueueTask()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L191"}, {"id": "arraygeneratorpool_arraygeneratorpool_getqueuesize", "label": "GetQueueSize()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L199"}, {"id": "arraygeneratorpool_arraygeneratorpool_dequeuetask", "label": "DequeueTask()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L209"}, {"id": "arraygeneratorpool_arraygeneratorpool_dequeuetasks", "label": "DequeueTasks()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L226"}, {"id": "arraygeneratorpool_arraygeneratorpool_queueworkoperation", "label": "QueueWorkOperation()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L244"}, {"id": "arraygeneratorpool_arraygeneratorpool_blockuntilqueueempty", "label": "BlockUntilQueueEmpty()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L249"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "vector", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L7", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "chrono", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L8", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "string", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L9", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "noise", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L12", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "shapetovoxel", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L15", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "arraygeneratorpool", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L16", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "arraygeneratorpool_arraygeneratorpool_getaverage", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L30", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L40", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L153", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L174", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "arraygeneratorpool_arraygeneratorpool_enqueuetask", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L191", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "arraygeneratorpool_arraygeneratorpool_getqueuesize", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L199", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "arraygeneratorpool_arraygeneratorpool_dequeuetask", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L209", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "arraygeneratorpool_arraygeneratorpool_dequeuetasks", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L226", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "arraygeneratorpool_arraygeneratorpool_queueworkoperation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L244", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp", "target": "arraygeneratorpool_arraygeneratorpool_blockuntilqueueempty", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L249", "weight": 1.0}, {"source": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "target": "arraygeneratorpool_arraygeneratorpool_dequeuetask", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L64", "weight": 1.0}, {"source": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "target": "arraygeneratorpool_arraygeneratorpool_getaverage", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L136", "weight": 1.0}, {"source": "arraygeneratorpool_arraygeneratorpool_queueworkoperation", "target": "arraygeneratorpool_arraygeneratorpool_enqueuetask", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L245", "weight": 1.0}], "raw_calls": [{"caller_nid": "arraygeneratorpool_arraygeneratorpool_getaverage", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L32"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_getaverage", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L35"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "pthread_setname_np", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L44"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "c_str", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L44"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L44"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L44"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "pthread_setname_np", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L46"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "pthread_self", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L46"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "c_str", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L46"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L46"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L46"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L49"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L49"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "chrono::high_resolution_clock::now", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L67"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L76"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "FillWedge", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L87"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "IsSphere", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L90"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "GetSphere", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L91"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L92"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L93"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L94"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L95"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "FillSpherePart", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L97"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "IsBox", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L99"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "GetBox", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L100"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "FillBox", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L102"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "IsCylinder", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L104"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "GetCylinder", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L105"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "FillCylinderPart", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L108"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "FillCylinderPart", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L114"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "FillSpherePart", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L117"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "count", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L129"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "chrono::duration_cast<std::chrono::milliseconds>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L129"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "chrono::high_resolution_clock::now", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L129"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L131"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L131"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L131"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L134"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L135"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L137"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L137"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L137"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L137"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "clear", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L138"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "this_thread::sleep_for", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L146"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction", "callee": "chrono::milliseconds", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L146"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L154"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L167"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L167"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L169"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L169"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L170"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "callee": "thread", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L170"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L177"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L181"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L182"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L183"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L183"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool", "callee": "join", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L184"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_enqueuetask", "callee": "emplace", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L196"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_getqueuesize", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L204"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_dequeuetask", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L215"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_dequeuetask", "callee": "front", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L216"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_dequeuetask", "callee": "pop", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L217"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_dequeuetasks", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L234"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_dequeuetasks", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L235"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_dequeuetasks", "callee": "front", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L235"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_dequeuetasks", "callee": "pop", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L236"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_blockuntilqueueempty", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L261"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_blockuntilqueueempty", "callee": "this_thread::sleep_for", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L266"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_blockuntilqueueempty", "callee": "chrono::milliseconds", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L266"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_blockuntilqueueempty", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L269"}, {"caller_nid": "arraygeneratorpool_arraygeneratorpool_blockuntilqueueempty", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp", "source_location": "L269"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "label": "ArrayGeneratorPool.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "arraygeneratorpool_arraygeneratorpool_getaverage",
+      "label": "GetAverage()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L30"
+    },
+    {
+      "id": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "label": "RendererThreadMainFunction()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L40"
+    },
+    {
+      "id": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "label": "ArrayGeneratorPool()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L153"
+    },
+    {
+      "id": "arraygeneratorpool_arraygeneratorpool_enqueuetask",
+      "label": "EnqueueTask()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L191"
+    },
+    {
+      "id": "arraygeneratorpool_arraygeneratorpool_getqueuesize",
+      "label": "GetQueueSize()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L199"
+    },
+    {
+      "id": "arraygeneratorpool_arraygeneratorpool_dequeuetask",
+      "label": "DequeueTask()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L209"
+    },
+    {
+      "id": "arraygeneratorpool_arraygeneratorpool_dequeuetasks",
+      "label": "DequeueTasks()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L226"
+    },
+    {
+      "id": "arraygeneratorpool_arraygeneratorpool_queueworkoperation",
+      "label": "QueueWorkOperation()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L244"
+    },
+    {
+      "id": "arraygeneratorpool_arraygeneratorpool_blockuntilqueueempty",
+      "label": "BlockUntilQueueEmpty()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L249"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "chrono",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "noise",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "shapetovoxel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "arraygeneratorpool",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "arraygeneratorpool_arraygeneratorpool_getaverage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L153",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L174",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "arraygeneratorpool_arraygeneratorpool_enqueuetask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "arraygeneratorpool_arraygeneratorpool_getqueuesize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L199",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "arraygeneratorpool_arraygeneratorpool_dequeuetask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "arraygeneratorpool_arraygeneratorpool_dequeuetasks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L226",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "arraygeneratorpool_arraygeneratorpool_queueworkoperation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L244",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_arraygeneratorpool_arraygeneratorpool_cpp",
+      "target": "arraygeneratorpool_arraygeneratorpool_blockuntilqueueempty",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L249",
+      "weight": 1.0
+    },
+    {
+      "source": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "target": "arraygeneratorpool_arraygeneratorpool_dequeuetask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "target": "arraygeneratorpool_arraygeneratorpool_getaverage",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "arraygeneratorpool_arraygeneratorpool_queueworkoperation",
+      "target": "arraygeneratorpool_arraygeneratorpool_enqueuetask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L245",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_getaverage",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_getaverage",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "pthread_setname_np",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "pthread_setname_np",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "pthread_self",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "chrono::high_resolution_clock::now",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "FillWedge",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "IsSphere",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "GetSphere",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "FillSpherePart",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "IsBox",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "GetBox",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L100"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "FillBox",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L102"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "IsCylinder",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L104"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "GetCylinder",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L105"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "FillCylinderPart",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L108"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "FillCylinderPart",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L114"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "FillSpherePart",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L117"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "count",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "chrono::duration_cast<std::chrono::milliseconds>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "chrono::high_resolution_clock::now",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L135"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "clear",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L138"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L146"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_rendererthreadmainfunction",
+      "callee": "chrono::milliseconds",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L146"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L154"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L167"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L167"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L169"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L169"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L170"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "callee": "thread",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L170"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L177"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L181"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L182"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L183"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L183"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_arraygeneratorpool",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L184"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_enqueuetask",
+      "callee": "emplace",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L196"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_getqueuesize",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L204"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_dequeuetask",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L215"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_dequeuetask",
+      "callee": "front",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L216"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_dequeuetask",
+      "callee": "pop",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L217"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_dequeuetasks",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L234"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_dequeuetasks",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L235"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_dequeuetasks",
+      "callee": "front",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L235"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_dequeuetasks",
+      "callee": "pop",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L236"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_blockuntilqueueempty",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L261"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_blockuntilqueueempty",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L266"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_blockuntilqueueempty",
+      "callee": "chrono::milliseconds",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L266"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_blockuntilqueueempty",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L269"
+    },
+    {
+      "caller_nid": "arraygeneratorpool_arraygeneratorpool_blockuntilqueueempty",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp",
+      "source_location": "L269"
+    }
+  ]
+}

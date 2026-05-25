@@ -1,1 +1,482 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp", "label": "ShapeToVoxel.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L1"}, {"id": "shapetovoxel_shapetovoxel_rotatearoundyz", "label": "RotateAroundYZ()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L38"}, {"id": "shapetovoxel_shapetovoxel_rotatedvec", "label": "RotatedVec()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L42"}, {"id": "shapetovoxel_shapetovoxel_fillspherepart", "label": "FillSpherePart()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L112"}, {"id": "shapetovoxel_shapetovoxel_ispointincylinder", "label": "isPointInCylinder()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L137"}, {"id": "shapetovoxel_shapetovoxel_fillcylinderpart", "label": "FillCylinderPart()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L175"}, {"id": "shapetovoxel_shapetovoxel_fillwedge", "label": "FillWedge()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L349"}, {"id": "shapetovoxel_shapetovoxel_fillbox", "label": "FillBox()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L428"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp", "target": "shapetovoxel", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L11", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp", "target": "shapetovoxel_shapetovoxel_rotatearoundyz", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L38", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp", "target": "shapetovoxel_shapetovoxel_rotatedvec", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L42", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp", "target": "shapetovoxel_shapetovoxel_fillspherepart", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L112", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp", "target": "shapetovoxel_shapetovoxel_ispointincylinder", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L137", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp", "target": "shapetovoxel_shapetovoxel_fillcylinderpart", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L175", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp", "target": "shapetovoxel_shapetovoxel_fillwedge", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L349", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp", "target": "shapetovoxel_shapetovoxel_fillbox", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L428", "weight": 1.0}, {"source": "shapetovoxel_shapetovoxel_rotatedvec", "target": "shapetovoxel_shapetovoxel_rotatearoundyz", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L44", "weight": 1.0}, {"source": "shapetovoxel_shapetovoxel_fillcylinderpart", "target": "shapetovoxel_shapetovoxel_rotatedvec", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L214", "weight": 1.0}, {"source": "shapetovoxel_shapetovoxel_fillwedge", "target": "shapetovoxel_shapetovoxel_rotatedvec", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L390", "weight": 1.0}], "raw_calls": [{"caller_nid": "shapetovoxel_shapetovoxel_rotatearoundyz", "callee": "rotate_around_z", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L39"}, {"caller_nid": "shapetovoxel_shapetovoxel_rotatearoundyz", "callee": "rotate_around_y", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L39"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillspherepart", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L113"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillspherepart", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L114"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillspherepart", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L115"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillspherepart", "callee": "GetBoundingBox", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L118"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillspherepart", "callee": "IsPointInShape", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L123"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillspherepart", "callee": "Vec3D", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L123"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillspherepart", "callee": "Distance", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L125"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillspherepart", "callee": "Vec3D", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L125"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillspherepart", "callee": "CompositeVoxel", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L126"}, {"caller_nid": "shapetovoxel_shapetovoxel_ispointincylinder", "callee": "Magnitude", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L140"}, {"caller_nid": "shapetovoxel_shapetovoxel_ispointincylinder", "callee": "Normalize", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L141"}, {"caller_nid": "shapetovoxel_shapetovoxel_ispointincylinder", "callee": "Dot", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L147"}, {"caller_nid": "shapetovoxel_shapetovoxel_ispointincylinder", "callee": "Magnitude", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L165"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L176"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L177"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart", "callee": "rotate_around_xyz", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L181"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart", "callee": "rotate_around_xyz", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L182"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart", "callee": "cartesianToSpherical", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L188"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart", "callee": "theta", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L189"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart", "callee": "phi", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L190"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart", "callee": "r", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L192"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart", "callee": "sphericalToCartesian", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L202"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart", "callee": "CompositeVoxel", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L220"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart", "callee": "cos", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L230"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart", "callee": "sin", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L231"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart", "callee": "CompositeVoxel", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L235"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillwedge", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L350"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillwedge", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L351"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillwedge", "callee": "rotate_around_xyz", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L355"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillwedge", "callee": "rotate_around_xyz", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L356"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillwedge", "callee": "cartesianToSpherical", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L362"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillwedge", "callee": "theta", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L363"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillwedge", "callee": "phi", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L364"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillwedge", "callee": "r", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L366"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillwedge", "callee": "sphericalToCartesian", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L378"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillwedge", "callee": "SetVoxelAtPosition", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L397"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillwedge", "callee": "SetVoxelAtPosition", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L417"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillbox", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L429"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillbox", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L430"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillbox", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L431"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillbox", "callee": "rotate_around_xyz", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L447"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillbox", "callee": "rotate_around_xyz", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L451"}, {"caller_nid": "shapetovoxel_shapetovoxel_fillbox", "callee": "CompositeVoxel", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp", "source_location": "L458"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp",
+      "label": "ShapeToVoxel.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "shapetovoxel_shapetovoxel_rotatearoundyz",
+      "label": "RotateAroundYZ()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L38"
+    },
+    {
+      "id": "shapetovoxel_shapetovoxel_rotatedvec",
+      "label": "RotatedVec()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L42"
+    },
+    {
+      "id": "shapetovoxel_shapetovoxel_fillspherepart",
+      "label": "FillSpherePart()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L112"
+    },
+    {
+      "id": "shapetovoxel_shapetovoxel_ispointincylinder",
+      "label": "isPointInCylinder()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L137"
+    },
+    {
+      "id": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "label": "FillCylinderPart()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L175"
+    },
+    {
+      "id": "shapetovoxel_shapetovoxel_fillwedge",
+      "label": "FillWedge()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L349"
+    },
+    {
+      "id": "shapetovoxel_shapetovoxel_fillbox",
+      "label": "FillBox()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L428"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp",
+      "target": "shapetovoxel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp",
+      "target": "shapetovoxel_shapetovoxel_rotatearoundyz",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp",
+      "target": "shapetovoxel_shapetovoxel_rotatedvec",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp",
+      "target": "shapetovoxel_shapetovoxel_fillspherepart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp",
+      "target": "shapetovoxel_shapetovoxel_ispointincylinder",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp",
+      "target": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L175",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp",
+      "target": "shapetovoxel_shapetovoxel_fillwedge",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L349",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_shapetovoxel_shapetovoxel_cpp",
+      "target": "shapetovoxel_shapetovoxel_fillbox",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L428",
+      "weight": 1.0
+    },
+    {
+      "source": "shapetovoxel_shapetovoxel_rotatedvec",
+      "target": "shapetovoxel_shapetovoxel_rotatearoundyz",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "target": "shapetovoxel_shapetovoxel_rotatedvec",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L214",
+      "weight": 1.0
+    },
+    {
+      "source": "shapetovoxel_shapetovoxel_fillwedge",
+      "target": "shapetovoxel_shapetovoxel_rotatedvec",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L390",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_rotatearoundyz",
+      "callee": "rotate_around_z",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_rotatearoundyz",
+      "callee": "rotate_around_y",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillspherepart",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L113"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillspherepart",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L114"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillspherepart",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L115"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillspherepart",
+      "callee": "GetBoundingBox",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L118"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillspherepart",
+      "callee": "IsPointInShape",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L123"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillspherepart",
+      "callee": "Vec3D",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L123"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillspherepart",
+      "callee": "Distance",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillspherepart",
+      "callee": "Vec3D",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillspherepart",
+      "callee": "CompositeVoxel",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L126"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_ispointincylinder",
+      "callee": "Magnitude",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L140"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_ispointincylinder",
+      "callee": "Normalize",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L141"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_ispointincylinder",
+      "callee": "Dot",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L147"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_ispointincylinder",
+      "callee": "Magnitude",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L165"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L176"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L177"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "callee": "rotate_around_xyz",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L181"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "callee": "rotate_around_xyz",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L182"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "callee": "cartesianToSpherical",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L188"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "callee": "theta",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L189"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "callee": "phi",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L190"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "callee": "r",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L192"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "callee": "sphericalToCartesian",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L202"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "callee": "CompositeVoxel",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L220"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "callee": "cos",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L230"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "callee": "sin",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L231"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillcylinderpart",
+      "callee": "CompositeVoxel",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L235"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillwedge",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L350"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillwedge",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L351"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillwedge",
+      "callee": "rotate_around_xyz",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L355"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillwedge",
+      "callee": "rotate_around_xyz",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L356"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillwedge",
+      "callee": "cartesianToSpherical",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L362"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillwedge",
+      "callee": "theta",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L363"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillwedge",
+      "callee": "phi",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L364"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillwedge",
+      "callee": "r",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L366"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillwedge",
+      "callee": "sphericalToCartesian",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L378"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillwedge",
+      "callee": "SetVoxelAtPosition",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L397"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillwedge",
+      "callee": "SetVoxelAtPosition",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L417"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillbox",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L429"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillbox",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L430"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillbox",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L431"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillbox",
+      "callee": "rotate_around_xyz",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L447"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillbox",
+      "callee": "rotate_around_xyz",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L451"
+    },
+    {
+      "caller_nid": "shapetovoxel_shapetovoxel_fillbox",
+      "callee": "CompositeVoxel",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp",
+      "source_location": "L458"
+    }
+  ]
+}

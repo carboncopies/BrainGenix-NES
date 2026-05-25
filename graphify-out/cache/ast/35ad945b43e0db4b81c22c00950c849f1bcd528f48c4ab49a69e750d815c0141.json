@@ -1,1 +1,37 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_tools_setup_sh", "label": "Setup.sh", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Setup.sh", "source_location": "L1", "metadata": {"language": "bash", "kind": "file"}}, {"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_tools_setup_sh__entry", "label": "Setup.sh script", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Setup.sh", "source_location": "L1", "metadata": {"language": "bash", "kind": "bash_entrypoint"}}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_tools_setup_sh", "target": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_tools_setup_sh__entry", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Setup.sh", "source_location": "L1", "weight": 1.0}]}
+{
+  "nodes": [
+    {
+      "id": "tools_setup_sh",
+      "label": "Setup.sh",
+      "file_type": "code",
+      "source_file": "Tools/Setup.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      }
+    },
+    {
+      "id": "tools_setup_sh__entry",
+      "label": "Setup.sh script",
+      "file_type": "code",
+      "source_file": "Tools/Setup.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "tools_setup_sh",
+      "target": "tools_setup_sh__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Tools/Setup.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ]
+}

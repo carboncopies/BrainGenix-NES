@@ -1,1 +1,463 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_docs_doxygen_third_party_doxygen_awesome_css_readme_md", "label": "README.md", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L1"}, {"id": "doxygen_awesome_css_readme_doxygen_awesome", "label": "Doxygen Awesome", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L1"}, {"id": "doxygen_awesome_css_readme_motivation", "label": "Motivation", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L15"}, {"id": "doxygen_awesome_css_readme_features", "label": "Features", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L21"}, {"id": "doxygen_awesome_css_readme_installation", "label": "Installation", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L30"}, {"id": "doxygen_awesome_css_readme_codeblock_1", "label": "code:bash (git submodule add https://github.com/jothepro/doxygen-awesom)", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L34"}, {"id": "doxygen_awesome_css_readme_codeblock_2", "label": "code:block2 (# Doxyfile)", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L42"}, {"id": "doxygen_awesome_css_readme_variants", "label": "Variants", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L48"}, {"id": "doxygen_awesome_css_readme_codeblock_3", "label": "code:block3 (# Doxyfile)", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L55"}, {"id": "doxygen_awesome_css_readme_codeblock_4", "label": "code:block4 (# Doxyfile)", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L62"}, {"id": "doxygen_awesome_css_readme_dark_mode_toggle_experimental", "label": "Dark Mode Toggle (Experimental)", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L68"}, {"id": "doxygen_awesome_css_readme_codeblock_5", "label": "code:bash (doxygen -w html header.html footer.html delete_me.css)", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L75"}, {"id": "doxygen_awesome_css_readme_codeblock_6", "label": "code:block6 (# Include the required Javascript)", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L80"}, {"id": "doxygen_awesome_css_readme_codeblock_7", "label": "code:html (<html>)", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L95"}, {"id": "doxygen_awesome_css_readme_codeblock_8", "label": "code:html (<!-- ... -->)", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L104"}, {"id": "doxygen_awesome_css_readme_codeblock_9", "label": "code:js ($(function() {)", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L120"}, {"id": "doxygen_awesome_css_readme_examples", "label": "Examples", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L134"}, {"id": "doxygen_awesome_css_readme_configuration", "label": "Configuration", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L140"}, {"id": "doxygen_awesome_css_readme_css_variables", "label": "CSS Variables", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L142"}, {"id": "doxygen_awesome_css_readme_codeblock_10", "label": "code:block10 (HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-aweso)", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L149"}, {"id": "doxygen_awesome_css_readme_codeblock_11", "label": "code:css (/* custom.css */)", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L153"}, {"id": "doxygen_awesome_css_readme_doxygen_generator", "label": "Doxygen generator", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L200"}, {"id": "doxygen_awesome_css_readme_codeblock_12", "label": "code:block12 (# Doxyfile)", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L210"}, {"id": "doxygen_awesome_css_readme_browser_support", "label": "Browser support", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L217"}, {"id": "doxygen_awesome_css_readme_tips_tricks", "label": "Tips & Tricks", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L225"}, {"id": "doxygen_awesome_css_readme_class_diagrams_with_graphviz", "label": "Class Diagrams with Graphviz", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L227"}, {"id": "doxygen_awesome_css_readme_codeblock_13", "label": "code:block13 (# Doxyfile)", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L231"}, {"id": "doxygen_awesome_css_readme_share_your_own_theme_customizations", "label": "Share your own theme customizations", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L238"}, {"id": "doxygen_awesome_css_readme_credits", "label": "Credits", "file_type": "document", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L245"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_docs_doxygen_third_party_doxygen_awesome_css_readme_md", "target": "doxygen_awesome_css_readme_doxygen_awesome", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L1", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_doxygen_awesome", "target": "doxygen_awesome_css_readme_motivation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L15", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_doxygen_awesome", "target": "doxygen_awesome_css_readme_features", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L21", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_doxygen_awesome", "target": "doxygen_awesome_css_readme_installation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L30", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_installation", "target": "doxygen_awesome_css_readme_codeblock_1", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L34", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_installation", "target": "doxygen_awesome_css_readme_codeblock_2", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L42", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_installation", "target": "doxygen_awesome_css_readme_variants", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L48", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_variants", "target": "doxygen_awesome_css_readme_codeblock_3", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L55", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_variants", "target": "doxygen_awesome_css_readme_codeblock_4", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L62", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_installation", "target": "doxygen_awesome_css_readme_dark_mode_toggle_experimental", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L68", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_dark_mode_toggle_experimental", "target": "doxygen_awesome_css_readme_codeblock_5", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L75", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_dark_mode_toggle_experimental", "target": "doxygen_awesome_css_readme_codeblock_6", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L80", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_dark_mode_toggle_experimental", "target": "doxygen_awesome_css_readme_codeblock_7", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L95", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_dark_mode_toggle_experimental", "target": "doxygen_awesome_css_readme_codeblock_8", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L104", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_dark_mode_toggle_experimental", "target": "doxygen_awesome_css_readme_codeblock_9", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L120", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_doxygen_awesome", "target": "doxygen_awesome_css_readme_examples", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L134", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_doxygen_awesome", "target": "doxygen_awesome_css_readme_configuration", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L140", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_configuration", "target": "doxygen_awesome_css_readme_css_variables", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L142", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_css_variables", "target": "doxygen_awesome_css_readme_codeblock_10", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L149", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_css_variables", "target": "doxygen_awesome_css_readme_codeblock_11", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L153", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_configuration", "target": "doxygen_awesome_css_readme_doxygen_generator", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L200", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_doxygen_generator", "target": "doxygen_awesome_css_readme_codeblock_12", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L210", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_doxygen_awesome", "target": "doxygen_awesome_css_readme_browser_support", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L217", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_doxygen_awesome", "target": "doxygen_awesome_css_readme_tips_tricks", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L225", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_tips_tricks", "target": "doxygen_awesome_css_readme_class_diagrams_with_graphviz", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L227", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_class_diagrams_with_graphviz", "target": "doxygen_awesome_css_readme_codeblock_13", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L231", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_tips_tricks", "target": "doxygen_awesome_css_readme_share_your_own_theme_customizations", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L238", "weight": 1.0}, {"source": "doxygen_awesome_css_readme_doxygen_awesome", "target": "doxygen_awesome_css_readme_credits", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md", "source_location": "L245", "weight": 1.0}], "input_tokens": 0, "output_tokens": 0}
+{
+  "nodes": [
+    {
+      "id": "docs_doxygen_third_party_doxygen_awesome_css_readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_doxygen_awesome",
+      "label": "Doxygen Awesome",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_motivation",
+      "label": "Motivation",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L15"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_features",
+      "label": "Features",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L21"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_installation",
+      "label": "Installation",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L30"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_codeblock_1",
+      "label": "code:bash (git submodule add https://github.com/jothepro/doxygen-awesom)",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L34"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_codeblock_2",
+      "label": "code:block2 (# Doxyfile)",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L42"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_variants",
+      "label": "Variants",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L48"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_codeblock_3",
+      "label": "code:block3 (# Doxyfile)",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L55"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_codeblock_4",
+      "label": "code:block4 (# Doxyfile)",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L62"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_dark_mode_toggle_experimental",
+      "label": "Dark Mode Toggle (Experimental)",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L68"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_codeblock_5",
+      "label": "code:bash (doxygen -w html header.html footer.html delete_me.css)",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L75"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_codeblock_6",
+      "label": "code:block6 (# Include the required Javascript)",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L80"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_codeblock_7",
+      "label": "code:html (<html>)",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L95"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_codeblock_8",
+      "label": "code:html (<!-- ... -->)",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L104"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_codeblock_9",
+      "label": "code:js ($(function() {)",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L120"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_examples",
+      "label": "Examples",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L134"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_configuration",
+      "label": "Configuration",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L140"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_css_variables",
+      "label": "CSS Variables",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L142"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_codeblock_10",
+      "label": "code:block10 (HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-aweso)",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L149"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_codeblock_11",
+      "label": "code:css (/* custom.css */)",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L153"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_doxygen_generator",
+      "label": "Doxygen generator",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L200"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_codeblock_12",
+      "label": "code:block12 (# Doxyfile)",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L210"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_browser_support",
+      "label": "Browser support",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L217"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_tips_tricks",
+      "label": "Tips & Tricks",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L225"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_class_diagrams_with_graphviz",
+      "label": "Class Diagrams with Graphviz",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L227"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_codeblock_13",
+      "label": "code:block13 (# Doxyfile)",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L231"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_share_your_own_theme_customizations",
+      "label": "Share your own theme customizations",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L238"
+    },
+    {
+      "id": "doxygen_awesome_css_readme_credits",
+      "label": "Credits",
+      "file_type": "document",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L245"
+    }
+  ],
+  "edges": [
+    {
+      "source": "docs_doxygen_third_party_doxygen_awesome_css_readme_md",
+      "target": "doxygen_awesome_css_readme_doxygen_awesome",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_doxygen_awesome",
+      "target": "doxygen_awesome_css_readme_motivation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_doxygen_awesome",
+      "target": "doxygen_awesome_css_readme_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_doxygen_awesome",
+      "target": "doxygen_awesome_css_readme_installation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_installation",
+      "target": "doxygen_awesome_css_readme_codeblock_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_installation",
+      "target": "doxygen_awesome_css_readme_codeblock_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_installation",
+      "target": "doxygen_awesome_css_readme_variants",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_variants",
+      "target": "doxygen_awesome_css_readme_codeblock_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_variants",
+      "target": "doxygen_awesome_css_readme_codeblock_4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_installation",
+      "target": "doxygen_awesome_css_readme_dark_mode_toggle_experimental",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_dark_mode_toggle_experimental",
+      "target": "doxygen_awesome_css_readme_codeblock_5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_dark_mode_toggle_experimental",
+      "target": "doxygen_awesome_css_readme_codeblock_6",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_dark_mode_toggle_experimental",
+      "target": "doxygen_awesome_css_readme_codeblock_7",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_dark_mode_toggle_experimental",
+      "target": "doxygen_awesome_css_readme_codeblock_8",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_dark_mode_toggle_experimental",
+      "target": "doxygen_awesome_css_readme_codeblock_9",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_doxygen_awesome",
+      "target": "doxygen_awesome_css_readme_examples",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_doxygen_awesome",
+      "target": "doxygen_awesome_css_readme_configuration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L140",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_configuration",
+      "target": "doxygen_awesome_css_readme_css_variables",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_css_variables",
+      "target": "doxygen_awesome_css_readme_codeblock_10",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_css_variables",
+      "target": "doxygen_awesome_css_readme_codeblock_11",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L153",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_configuration",
+      "target": "doxygen_awesome_css_readme_doxygen_generator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L200",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_doxygen_generator",
+      "target": "doxygen_awesome_css_readme_codeblock_12",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L210",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_doxygen_awesome",
+      "target": "doxygen_awesome_css_readme_browser_support",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L217",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_doxygen_awesome",
+      "target": "doxygen_awesome_css_readme_tips_tricks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L225",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_tips_tricks",
+      "target": "doxygen_awesome_css_readme_class_diagrams_with_graphviz",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L227",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_class_diagrams_with_graphviz",
+      "target": "doxygen_awesome_css_readme_codeblock_13",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L231",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_tips_tricks",
+      "target": "doxygen_awesome_css_readme_share_your_own_theme_customizations",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L238",
+      "weight": 1.0
+    },
+    {
+      "source": "doxygen_awesome_css_readme_doxygen_awesome",
+      "target": "doxygen_awesome_css_readme_credits",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md",
+      "source_location": "L245",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

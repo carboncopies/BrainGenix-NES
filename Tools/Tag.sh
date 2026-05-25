@@ -79,6 +79,73 @@ generate_knowledge_graph() {
     echo "$repo_name: Graphify update failed; building a fresh graph"
     "$graphify_cmd" update . --force
   fi
+  normalize_graphify_paths
+}
+
+normalize_graphify_paths() {
+  local output_dir="$repo_root/graphify-out"
+
+  if [[ ! -d "$output_dir" ]]; then
+    return
+  fi
+
+  python3 - "$repo_root" "$output_dir" <<'PY'
+import json
+import os
+import pathlib
+import re
+import sys
+
+repo_root = pathlib.Path(sys.argv[1]).resolve()
+output_dir = pathlib.Path(sys.argv[2]).resolve()
+repo_root_text = str(repo_root)
+repo_root_prefix = repo_root_text + os.sep
+sanitized_repo_root = re.sub(r"[^0-9A-Za-z]+", "_", repo_root_text.strip(os.sep)).strip("_").lower()
+sanitized_repo_prefix = sanitized_repo_root + "_"
+
+def relativize_text(value):
+    if not isinstance(value, str):
+        return value
+    if value == repo_root_text:
+        return "."
+    return (
+        value
+        .replace(repo_root_prefix, "")
+        .replace(repo_root_text, ".")
+        .replace(sanitized_repo_prefix, "")
+        .replace(sanitized_repo_root, ".")
+    )
+
+def relativize_json(value):
+    if isinstance(value, dict):
+        return {relativize_text(key): relativize_json(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [relativize_json(item) for item in value]
+    return relativize_text(value)
+
+root_marker = output_dir / ".graphify_root"
+if root_marker.exists():
+    root_marker.write_text(".\n", encoding="utf-8")
+
+for path in output_dir.rglob("*"):
+    if not path.is_file() or path.name == ".graphify_root":
+        continue
+
+    if path.suffix == ".json":
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError):
+            continue
+        path.write_text(json.dumps(relativize_json(data), indent=2) + "\n", encoding="utf-8")
+        continue
+
+    if path.suffix in {".html", ".md", ".txt"}:
+        try:
+            text = path.read_text(encoding="utf-8")
+        except UnicodeDecodeError:
+            continue
+        path.write_text(relativize_text(text), encoding="utf-8")
+PY
 }
 
 next_version() {

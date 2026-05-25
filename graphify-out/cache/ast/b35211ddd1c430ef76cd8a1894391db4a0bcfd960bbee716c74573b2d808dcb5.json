@@ -1,1 +1,500 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_cpp", "label": "BSAlignedNC.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L1"}, {"id": "ballandstick_bsalignednc_bsalignednc", "label": "BSAlignedNC()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L9"}, {"id": "ballandstick_bsalignednc_initcells", "label": "InitCells()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L18"}, {"id": "ballandstick_bsalignednc_getneurons", "label": "GetNeurons()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L36"}, {"id": "ballandstick_bsalignednc_getneuronsbyids", "label": "GetNeuronsByIDs()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L46"}, {"id": "ballandstick_bsalignednc_getcellcenters", "label": "GetCellCenters()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L56"}, {"id": "ballandstick_bsalignednc_setweight", "label": "SetWeight()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L66"}, {"id": "ballandstick_bsalignednc_encode", "label": "Encode()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L97"}, {"id": "ballandstick_bsalignednc_attachdirectstim", "label": "AttachDirectStim()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L113"}, {"id": "ballandstick_bsalignednc_setspontaneousactivity", "label": "SetSpontaneousActivity()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L129"}, {"id": "ballandstick_bsalignednc_update", "label": "Update()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L148"}, {"id": "ballandstick_bsalignednc_getrecording", "label": "GetRecording()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L157"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_cpp", "target": "bsalignednc", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L1", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_cpp", "target": "ballandstick_bsalignednc_bsalignednc", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L9", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_cpp", "target": "ballandstick_bsalignednc_bsalignednc", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L13", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_cpp", "target": "ballandstick_bsalignednc_initcells", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L18", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_cpp", "target": "ballandstick_bsalignednc_getneurons", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L36", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_cpp", "target": "ballandstick_bsalignednc_getneuronsbyids", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L46", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_cpp", "target": "ballandstick_bsalignednc_getcellcenters", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L56", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_cpp", "target": "ballandstick_bsalignednc_setweight", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L66", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_cpp", "target": "ballandstick_bsalignednc_encode", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L97", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_cpp", "target": "ballandstick_bsalignednc_attachdirectstim", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L113", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_cpp", "target": "ballandstick_bsalignednc_setspontaneousactivity", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L129", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_cpp", "target": "ballandstick_bsalignednc_update", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L148", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_cpp", "target": "ballandstick_bsalignednc_getrecording", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L157", "weight": 1.0}, {"source": "ballandstick_bsalignednc_encode", "target": "ballandstick_bsalignednc_setweight", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L103", "weight": 1.0}], "raw_calls": [{"caller_nid": "ballandstick_bsalignednc_initcells", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L25"}, {"caller_nid": "ballandstick_bsalignednc_initcells", "callee": "EqualSliceBounds", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L28"}, {"caller_nid": "ballandstick_bsalignednc_initcells", "callee": "CreateBSSoma", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L29"}, {"caller_nid": "ballandstick_bsalignednc_initcells", "callee": "CreateBSAxon", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L30"}, {"caller_nid": "ballandstick_bsalignednc_initcells", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L31"}, {"caller_nid": "ballandstick_bsalignednc_initcells", "callee": "make_shared<BSNeuron>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L31"}, {"caller_nid": "ballandstick_bsalignednc_getneurons", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L40"}, {"caller_nid": "ballandstick_bsalignednc_getneuronsbyids", "callee": "emplace_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L51"}, {"caller_nid": "ballandstick_bsalignednc_getneuronsbyids", "callee": "at", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L51"}, {"caller_nid": "ballandstick_bsalignednc_getneuronsbyids", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L51"}, {"caller_nid": "ballandstick_bsalignednc_getcellcenters", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L60"}, {"caller_nid": "ballandstick_bsalignednc_getcellcenters", "callee": "GetCellCenter", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L60"}, {"caller_nid": "ballandstick_bsalignednc_setweight", "callee": "find", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L69"}, {"caller_nid": "ballandstick_bsalignednc_setweight", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L69"}, {"caller_nid": "ballandstick_bsalignednc_setweight", "callee": "find", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L70"}, {"caller_nid": "ballandstick_bsalignednc_setweight", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L70"}, {"caller_nid": "ballandstick_bsalignednc_setweight", "callee": "end", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L72"}, {"caller_nid": "ballandstick_bsalignednc_setweight", "callee": "invalid_argument", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L73"}, {"caller_nid": "ballandstick_bsalignednc_setweight", "callee": "end", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L74"}, {"caller_nid": "ballandstick_bsalignednc_setweight", "callee": "invalid_argument", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L75"}, {"caller_nid": "ballandstick_bsalignednc_encode", "callee": "get<0>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L103"}, {"caller_nid": "ballandstick_bsalignednc_encode", "callee": "get<1>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L103"}, {"caller_nid": "ballandstick_bsalignednc_attachdirectstim", "callee": "get<1>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L116"}, {"caller_nid": "ballandstick_bsalignednc_attachdirectstim", "callee": "get<0>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L117"}, {"caller_nid": "ballandstick_bsalignednc_attachdirectstim", "callee": "find", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L119"}, {"caller_nid": "ballandstick_bsalignednc_attachdirectstim", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L119"}, {"caller_nid": "ballandstick_bsalignednc_attachdirectstim", "callee": "end", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L120"}, {"caller_nid": "ballandstick_bsalignednc_attachdirectstim", "callee": "invalid_argument", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L121"}, {"caller_nid": "ballandstick_bsalignednc_attachdirectstim", "callee": "dynamic_pointer_cast<BSNeuron>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L122"}, {"caller_nid": "ballandstick_bsalignednc_setspontaneousactivity", "callee": "get<0>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L133"}, {"caller_nid": "ballandstick_bsalignednc_setspontaneousactivity", "callee": "get<1>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L134"}, {"caller_nid": "ballandstick_bsalignednc_setspontaneousactivity", "callee": "get<2>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L135"}, {"caller_nid": "ballandstick_bsalignednc_setspontaneousactivity", "callee": "find", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L137"}, {"caller_nid": "ballandstick_bsalignednc_setspontaneousactivity", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L137"}, {"caller_nid": "ballandstick_bsalignednc_setspontaneousactivity", "callee": "end", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L139"}, {"caller_nid": "ballandstick_bsalignednc_setspontaneousactivity", "callee": "invalid_argument", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L140"}, {"caller_nid": "ballandstick_bsalignednc_setspontaneousactivity", "callee": "dynamic_pointer_cast<BSNeuron>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L142"}, {"caller_nid": "ballandstick_bsalignednc_update", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L149"}, {"caller_nid": "ballandstick_bsalignednc_update", "callee": "dynamic_pointer_cast<BSNeuron>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L151"}, {"caller_nid": "ballandstick_bsalignednc_getrecording", "callee": "dynamic_pointer_cast<BSNeuron>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp", "source_location": "L161"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_ballandstick_bsalignednc_cpp",
+      "label": "BSAlignedNC.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "ballandstick_bsalignednc_bsalignednc",
+      "label": "BSAlignedNC()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L9"
+    },
+    {
+      "id": "ballandstick_bsalignednc_initcells",
+      "label": "InitCells()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L18"
+    },
+    {
+      "id": "ballandstick_bsalignednc_getneurons",
+      "label": "GetNeurons()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L36"
+    },
+    {
+      "id": "ballandstick_bsalignednc_getneuronsbyids",
+      "label": "GetNeuronsByIDs()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L46"
+    },
+    {
+      "id": "ballandstick_bsalignednc_getcellcenters",
+      "label": "GetCellCenters()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L56"
+    },
+    {
+      "id": "ballandstick_bsalignednc_setweight",
+      "label": "SetWeight()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L66"
+    },
+    {
+      "id": "ballandstick_bsalignednc_encode",
+      "label": "Encode()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L97"
+    },
+    {
+      "id": "ballandstick_bsalignednc_attachdirectstim",
+      "label": "AttachDirectStim()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L113"
+    },
+    {
+      "id": "ballandstick_bsalignednc_setspontaneousactivity",
+      "label": "SetSpontaneousActivity()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L129"
+    },
+    {
+      "id": "ballandstick_bsalignednc_update",
+      "label": "Update()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L148"
+    },
+    {
+      "id": "ballandstick_bsalignednc_getrecording",
+      "label": "GetRecording()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L157"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_cpp",
+      "target": "bsalignednc",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_cpp",
+      "target": "ballandstick_bsalignednc_bsalignednc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_cpp",
+      "target": "ballandstick_bsalignednc_bsalignednc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_cpp",
+      "target": "ballandstick_bsalignednc_initcells",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_cpp",
+      "target": "ballandstick_bsalignednc_getneurons",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_cpp",
+      "target": "ballandstick_bsalignednc_getneuronsbyids",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_cpp",
+      "target": "ballandstick_bsalignednc_getcellcenters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_cpp",
+      "target": "ballandstick_bsalignednc_setweight",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_cpp",
+      "target": "ballandstick_bsalignednc_encode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_cpp",
+      "target": "ballandstick_bsalignednc_attachdirectstim",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_cpp",
+      "target": "ballandstick_bsalignednc_setspontaneousactivity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_cpp",
+      "target": "ballandstick_bsalignednc_update",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_cpp",
+      "target": "ballandstick_bsalignednc_getrecording",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L157",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsalignednc_encode",
+      "target": "ballandstick_bsalignednc_setweight",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L103",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "ballandstick_bsalignednc_initcells",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_initcells",
+      "callee": "EqualSliceBounds",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L28"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_initcells",
+      "callee": "CreateBSSoma",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_initcells",
+      "callee": "CreateBSAxon",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_initcells",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_initcells",
+      "callee": "make_shared<BSNeuron>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_getneurons",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_getneuronsbyids",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_getneuronsbyids",
+      "callee": "at",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_getneuronsbyids",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_getcellcenters",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_getcellcenters",
+      "callee": "GetCellCenter",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setweight",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setweight",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setweight",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setweight",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setweight",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L72"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setweight",
+      "callee": "invalid_argument",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setweight",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setweight",
+      "callee": "invalid_argument",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_encode",
+      "callee": "get<0>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L103"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_encode",
+      "callee": "get<1>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L103"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_attachdirectstim",
+      "callee": "get<1>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_attachdirectstim",
+      "callee": "get<0>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L117"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_attachdirectstim",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_attachdirectstim",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_attachdirectstim",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_attachdirectstim",
+      "callee": "invalid_argument",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L121"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_attachdirectstim",
+      "callee": "dynamic_pointer_cast<BSNeuron>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setspontaneousactivity",
+      "callee": "get<0>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setspontaneousactivity",
+      "callee": "get<1>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setspontaneousactivity",
+      "callee": "get<2>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L135"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setspontaneousactivity",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setspontaneousactivity",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setspontaneousactivity",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L139"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setspontaneousactivity",
+      "callee": "invalid_argument",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L140"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_setspontaneousactivity",
+      "callee": "dynamic_pointer_cast<BSNeuron>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L142"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_update",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L149"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_update",
+      "callee": "dynamic_pointer_cast<BSNeuron>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L151"
+    },
+    {
+      "caller_nid": "ballandstick_bsalignednc_getrecording",
+      "callee": "dynamic_pointer_cast<BSNeuron>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp",
+      "source_location": "L161"
+    }
+  ]
+}

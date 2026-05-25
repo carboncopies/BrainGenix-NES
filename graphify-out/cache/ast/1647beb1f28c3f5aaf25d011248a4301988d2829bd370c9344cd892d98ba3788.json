@@ -1,1 +1,172 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_meshgenerator_mc_h", "label": "MC.h", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L1"}, {"id": "meshgenerator_mc_mc", "label": "MC()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L7"}, {"id": "meshgenerator_mc_mc_internallength2", "label": "mc_internalLength2()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L40"}, {"id": "meshgenerator_mc_mc_internallength", "label": "mc_internalLength()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L44"}, {"id": "meshgenerator_mc_mc_internalnormalize", "label": "mc_internalNormalize()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L48"}, {"id": "meshgenerator_mc_mc_internalcross", "label": "mc_internalCross()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L53"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_meshgenerator_mc_h", "target": "vector", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L4", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_meshgenerator_mc_h", "target": "cmath", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L5", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_meshgenerator_mc_h", "target": "meshgenerator_mc_mc", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L7", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_meshgenerator_mc_h", "target": "meshgenerator_mc_mc_internallength2", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L40", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_meshgenerator_mc_h", "target": "meshgenerator_mc_mc_internallength", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L44", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_meshgenerator_mc_h", "target": "meshgenerator_mc_mc_internalnormalize", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L48", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_meshgenerator_mc_h", "target": "meshgenerator_mc_mc_internalcross", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L53", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_meshgenerator_mc_h", "target": "meshgenerator_mc_mc", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L91", "weight": 1.0}, {"source": "meshgenerator_mc_mc_internallength", "target": "meshgenerator_mc_mc_internallength2", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L46", "weight": 1.0}, {"source": "meshgenerator_mc_mc_internalnormalize", "target": "meshgenerator_mc_mc_internallength", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L50", "weight": 1.0}], "raw_calls": [{"caller_nid": "meshgenerator_mc_mc", "callee": "operator[]", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L34"}, {"caller_nid": "meshgenerator_mc_mc_internallength", "callee": "sqrt", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L46"}, {"caller_nid": "meshgenerator_mc_mc_internalnormalize", "callee": "mcVec3f", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L51"}, {"caller_nid": "meshgenerator_mc_mc_internalcross", "callee": "mcVec3f", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h", "source_location": "L55"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_meshgenerator_mc_h",
+      "label": "MC.h",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "meshgenerator_mc_mc",
+      "label": "MC()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L7"
+    },
+    {
+      "id": "meshgenerator_mc_mc_internallength2",
+      "label": "mc_internalLength2()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L40"
+    },
+    {
+      "id": "meshgenerator_mc_mc_internallength",
+      "label": "mc_internalLength()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L44"
+    },
+    {
+      "id": "meshgenerator_mc_mc_internalnormalize",
+      "label": "mc_internalNormalize()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L48"
+    },
+    {
+      "id": "meshgenerator_mc_mc_internalcross",
+      "label": "mc_internalCross()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L53"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_meshgenerator_mc_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_mc_h",
+      "target": "cmath",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_mc_h",
+      "target": "meshgenerator_mc_mc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_mc_h",
+      "target": "meshgenerator_mc_mc_internallength2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_mc_h",
+      "target": "meshgenerator_mc_mc_internallength",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_mc_h",
+      "target": "meshgenerator_mc_mc_internalnormalize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_mc_h",
+      "target": "meshgenerator_mc_mc_internalcross",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_mc_h",
+      "target": "meshgenerator_mc_mc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "meshgenerator_mc_mc_internallength",
+      "target": "meshgenerator_mc_mc_internallength2",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "meshgenerator_mc_mc_internalnormalize",
+      "target": "meshgenerator_mc_mc_internallength",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L50",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "meshgenerator_mc_mc",
+      "callee": "operator[]",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L34"
+    },
+    {
+      "caller_nid": "meshgenerator_mc_mc_internallength",
+      "callee": "sqrt",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "meshgenerator_mc_mc_internalnormalize",
+      "callee": "mcVec3f",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "meshgenerator_mc_mc_internalcross",
+      "callee": "mcVec3f",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MC.h",
+      "source_location": "L55"
+    }
+  ]
+}

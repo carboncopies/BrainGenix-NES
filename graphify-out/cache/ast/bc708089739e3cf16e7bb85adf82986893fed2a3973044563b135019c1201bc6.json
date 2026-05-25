@@ -1,1 +1,354 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_structs_calciumimaging_cpp", "label": "CalciumImaging.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L1"}, {"id": "structs_calciumimaging_init", "label": "Init()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L34"}, {"id": "structs_calciumimaging_delayedpulse", "label": "DelayedPulse()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L62"}, {"id": "structs_calciumimaging_initializefluorescencekernel", "label": "InitializeFluorescenceKernel()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L74"}, {"id": "structs_calciumimaging_initializefluorescingneuronfifos", "label": "InitializeFluorescingNeuronFIFOs()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L107"}, {"id": "structs_calciumimaging_record", "label": "Record()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L126"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_structs_calciumimaging_cpp", "target": "calciumimaging", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L1", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_structs_calciumimaging_cpp", "target": "simulation", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L2", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_structs_calciumimaging_cpp", "target": "bsneuron", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L3", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_structs_calciumimaging_cpp", "target": "signalfunctions", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L4", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_structs_calciumimaging_cpp", "target": "structs_calciumimaging_init", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L34", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_structs_calciumimaging_cpp", "target": "structs_calciumimaging_delayedpulse", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L62", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_structs_calciumimaging_cpp", "target": "structs_calciumimaging_initializefluorescencekernel", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L74", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_structs_calciumimaging_cpp", "target": "structs_calciumimaging_initializefluorescingneuronfifos", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L107", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_structs_calciumimaging_cpp", "target": "structs_calciumimaging_record", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L126", "weight": 1.0}, {"source": "structs_calciumimaging_init", "target": "structs_calciumimaging_initializefluorescencekernel", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L41", "weight": 1.0}, {"source": "structs_calciumimaging_init", "target": "structs_calciumimaging_initializefluorescingneuronfifos", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L42", "weight": 1.0}, {"source": "structs_calciumimaging_initializefluorescencekernel", "target": "structs_calciumimaging_delayedpulse", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L88", "weight": 1.0}], "raw_calls": [{"caller_nid": "structs_calciumimaging_initializefluorescencekernel", "callee": "clear", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L75"}, {"caller_nid": "structs_calciumimaging_initializefluorescencekernel", "callee": "DoubleExponentExpr", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L86"}, {"caller_nid": "structs_calciumimaging_initializefluorescencekernel", "callee": "emplace_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L90"}, {"caller_nid": "structs_calciumimaging_initializefluorescencekernel", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L95"}, {"caller_nid": "structs_calciumimaging_initializefluorescencekernel", "callee": "resize", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L96"}, {"caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos", "callee": "empty", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L111"}, {"caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos", "callee": "SetFIFO", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L114"}, {"caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L114"}, {"caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L114"}, {"caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L119"}, {"caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos", "callee": "SetFIFO", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L120"}, {"caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L120"}, {"caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos", "callee": "at", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L120"}, {"caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L120"}, {"caller_nid": "structs_calciumimaging_record", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L127"}, {"caller_nid": "structs_calciumimaging_record", "callee": "empty", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L129"}, {"caller_nid": "structs_calciumimaging_record", "callee": "back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L130"}, {"caller_nid": "structs_calciumimaging_record", "callee": "emplace_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L134"}, {"caller_nid": "structs_calciumimaging_record", "callee": "empty", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L136"}, {"caller_nid": "structs_calciumimaging_record", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L138"}, {"caller_nid": "structs_calciumimaging_record", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L140"}, {"caller_nid": "structs_calciumimaging_record", "callee": "UpdateConvolvedFIFO", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L141"}, {"caller_nid": "structs_calciumimaging_record", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L141"}, {"caller_nid": "structs_calciumimaging_record", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L146"}, {"caller_nid": "structs_calciumimaging_record", "callee": "UpdateConvolvedFIFO", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L147"}, {"caller_nid": "structs_calciumimaging_record", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L147"}, {"caller_nid": "structs_calciumimaging_record", "callee": "at", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp", "source_location": "L147"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_structs_calciumimaging_cpp",
+      "label": "CalciumImaging.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "structs_calciumimaging_init",
+      "label": "Init()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L34"
+    },
+    {
+      "id": "structs_calciumimaging_delayedpulse",
+      "label": "DelayedPulse()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L62"
+    },
+    {
+      "id": "structs_calciumimaging_initializefluorescencekernel",
+      "label": "InitializeFluorescenceKernel()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L74"
+    },
+    {
+      "id": "structs_calciumimaging_initializefluorescingneuronfifos",
+      "label": "InitializeFluorescingNeuronFIFOs()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L107"
+    },
+    {
+      "id": "structs_calciumimaging_record",
+      "label": "Record()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L126"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_structs_calciumimaging_cpp",
+      "target": "calciumimaging",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_calciumimaging_cpp",
+      "target": "simulation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_calciumimaging_cpp",
+      "target": "bsneuron",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_calciumimaging_cpp",
+      "target": "signalfunctions",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_calciumimaging_cpp",
+      "target": "structs_calciumimaging_init",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_calciumimaging_cpp",
+      "target": "structs_calciumimaging_delayedpulse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_calciumimaging_cpp",
+      "target": "structs_calciumimaging_initializefluorescencekernel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_calciumimaging_cpp",
+      "target": "structs_calciumimaging_initializefluorescingneuronfifos",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_calciumimaging_cpp",
+      "target": "structs_calciumimaging_record",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_calciumimaging_init",
+      "target": "structs_calciumimaging_initializefluorescencekernel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_calciumimaging_init",
+      "target": "structs_calciumimaging_initializefluorescingneuronfifos",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_calciumimaging_initializefluorescencekernel",
+      "target": "structs_calciumimaging_delayedpulse",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L88",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "structs_calciumimaging_initializefluorescencekernel",
+      "callee": "clear",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_initializefluorescencekernel",
+      "callee": "DoubleExponentExpr",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_initializefluorescencekernel",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_initializefluorescencekernel",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_initializefluorescencekernel",
+      "callee": "resize",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L96"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L111"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos",
+      "callee": "SetFIFO",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L114"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L114"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L114"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos",
+      "callee": "SetFIFO",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos",
+      "callee": "at",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_initializefluorescingneuronfifos",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_record",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_record",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_record",
+      "callee": "back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_record",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_record",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L136"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_record",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L138"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_record",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L140"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_record",
+      "callee": "UpdateConvolvedFIFO",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L141"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_record",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L141"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_record",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L146"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_record",
+      "callee": "UpdateConvolvedFIFO",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L147"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_record",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L147"
+    },
+    {
+      "caller_nid": "structs_calciumimaging_record",
+      "callee": "at",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/CalciumImaging.cpp",
+      "source_location": "L147"
+    }
+  ]
+}

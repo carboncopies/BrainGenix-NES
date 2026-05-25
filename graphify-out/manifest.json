@@ -1,1955 +1,1955 @@
 {
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/vcpkg.json": {
+  "vcpkg.json": {
     "mtime": 1779675967.5922837,
     "ast_hash": "74509ed97d532b0acd02ddaf972da8b5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/vcpkg-configuration.json": {
+  "vcpkg-configuration.json": {
     "mtime": 1779675967.592209,
     "ast_hash": "4a1e5a63fea1809c506e6052ce3db553",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Setup.sh": {
+  "Tools/Setup.sh": {
     "mtime": 1779682688.5967631,
     "ast_hash": "afbdf8755880186b100c0604c440cbdf",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/RunTest.py": {
+  "Tools/RunTest.py": {
     "mtime": 1779675967.5912745,
     "ast_hash": "e7dda9675fe6fd2675df81d9d436a46a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/MemLeakCheck.sh": {
+  "Tools/MemLeakCheck.sh": {
     "mtime": 1779675967.5908494,
     "ast_hash": "c40bedf91c8d2a6f34ab951336e8689c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Tag.sh": {
-    "mtime": 1779682963.1907725,
-    "ast_hash": "ce6fc80075ced302da1a1820c2ebd23d",
+  "Tools/Tag.sh": {
+    "mtime": 1779684253.617232,
+    "ast_hash": "842d34928dd8a9370dec038a85bba65a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Run.sh": {
+  "Tools/Run.sh": {
     "mtime": 1779675967.59118,
     "ast_hash": "be66999358de1d57aa950ff093f2d4d4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Build.sh": {
+  "Tools/Build.sh": {
     "mtime": 1779675967.5904737,
     "ast_hash": "13bb753ebd35a7d986924cf9c2d60e06",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Package.sh": {
+  "Tools/Package.sh": {
     "mtime": 1779675967.5909233,
     "ast_hash": "8e8c5fdb16aa6c00a7a569c60558154e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Benchmark.sh": {
+  "Tools/Benchmark.sh": {
     "mtime": 1779675967.5903893,
     "ast_hash": "bd56903b8b7d73f8afb5be4e022da14b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Clean.sh": {
+  "Tools/Clean.sh": {
     "mtime": 1779675967.59055,
     "ast_hash": "1fe71776065b51eb3f99aab44aeca7d6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/vcpkg.sh": {
+  "Tools/vcpkg.sh": {
     "mtime": 1779675967.591712,
     "ast_hash": "b80e971ed387b7f830a6d865f8c78836",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Test.sh": {
+  "Tools/Test.sh": {
     "mtime": 1779675967.5915096,
     "ast_hash": "4e3dcb2da29cd5c5759d3d3530b7279c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Deploy/Deploy.sh": {
+  "Tools/Deploy/Deploy.sh": {
     "mtime": 1779675967.5906684,
     "ast_hash": "19af05333d9817f0718d8ee85c58d7d4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Docs/GenerateDoxygen.sh": {
+  "Tools/Docs/GenerateDoxygen.sh": {
     "mtime": 1779675967.5907838,
     "ast_hash": "c703e0883811dc6ce5c02e1fe7472813",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Overlays/BG-Logger/vcpkg.json": {
+  "Overlays/BG-Logger/vcpkg.json": {
     "mtime": 1779675967.5431035,
     "ast_hash": "c7eac124a1d04aa9dd6f4b5be58ddb1f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/Interface.h": {
+  "Source/Renderer/BG/Renderer/Interface.h": {
     "mtime": 1779675967.5870326,
     "ast_hash": "5244f4f66b0688cc6cd8deecf757b70d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/Interface.cpp": {
+  "Source/Renderer/BG/Renderer/Interface.cpp": {
     "mtime": 1779675967.5868635,
     "ast_hash": "9cc7072023f0962414f609b1e2c64b37",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/State/Scene.cpp": {
+  "Source/Renderer/BG/Renderer/State/Scene.cpp": {
     "mtime": 1779675967.590022,
     "ast_hash": "6044ab82b24af0916955a4a236e30bf4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/State/RenderData.cpp": {
+  "Source/Renderer/BG/Renderer/State/RenderData.cpp": {
     "mtime": 1779675967.5898733,
     "ast_hash": "f931440af3d29dad9635f9824f6607d4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/State/RenderData.h": {
+  "Source/Renderer/BG/Renderer/State/RenderData.h": {
     "mtime": 1779675967.5899515,
     "ast_hash": "3dbf2403c54e38fca11ff4c947611db1",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/State/Scene.h": {
+  "Source/Renderer/BG/Renderer/State/Scene.h": {
     "mtime": 1779675967.5900888,
     "ast_hash": "f25dba9dbd6aab0fd7dc9a9b0d900bc1",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/Math/MathHelpers.h": {
+  "Source/Renderer/BG/Renderer/Math/MathHelpers.h": {
     "mtime": 1779675967.5872996,
     "ast_hash": "bbe26cb2f16a803d109a0094a7cff457",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/Math/MathHelpers.cpp": {
+  "Source/Renderer/BG/Renderer/Math/MathHelpers.cpp": {
     "mtime": 1779675967.5872176,
     "ast_hash": "6fa66272f249a5b9ca20e2debe1fb817",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.h": {
+  "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.h": {
     "mtime": 1779675967.5865362,
     "ast_hash": "9814d5163d9a017b0154bce44eb07ce5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/Image.cpp": {
+  "Source/Renderer/BG/Renderer/EncoderPool/Image.cpp": {
     "mtime": 1779675967.5866098,
     "ast_hash": "0c158c07a91ead7bf7006627b1a54db2",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp": {
+  "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp": {
     "mtime": 1779675967.5864089,
     "ast_hash": "77fc9f1f94543eaa0abc16a9bcaf831b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/Image.h": {
+  "Source/Renderer/BG/Renderer/EncoderPool/Image.h": {
     "mtime": 1779675967.5867033,
     "ast_hash": "1eb00ac6ddeda6f6f83fb9d1634796be",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/GeometryBuilder.h": {
+  "Source/Renderer/BG/Renderer/SceneGraph/GeometryBuilder.h": {
     "mtime": 1779675967.5880039,
     "ast_hash": "24586a7510978f01080306d9d4000426",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/renderdoc_app.h": {
+  "Source/Renderer/BG/Renderer/SceneGraph/renderdoc_app.h": {
     "mtime": 1779675967.5897593,
     "ast_hash": "eccf15b5d3740b7032fbd08e7b4674c5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/OffscreenRenderHelpers.cpp": {
+  "Source/Renderer/BG/Renderer/SceneGraph/OffscreenRenderHelpers.cpp": {
     "mtime": 1779675967.5883756,
     "ast_hash": "3762d28474a935bbc44ba1e12ca14cb5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Manager.h": {
+  "Source/Renderer/BG/Renderer/SceneGraph/Manager.h": {
     "mtime": 1779675967.588233,
     "ast_hash": "a9babf317478d639a130a837adc3758f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.cpp": {
+  "Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.cpp": {
     "mtime": 1779675967.5874248,
     "ast_hash": "0f010107b02cd644569234cd5f286c92",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.h": {
+  "Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.h": {
     "mtime": 1779675967.5876637,
     "ast_hash": "e091808f6c8b8dd20d58e4a08e79e08c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Manager.cpp": {
+  "Source/Renderer/BG/Renderer/SceneGraph/Manager.cpp": {
     "mtime": 1779675967.58812,
     "ast_hash": "e23b8da15414ba41dbbf33f944049375",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/OffscreenRenderHelpers.h": {
+  "Source/Renderer/BG/Renderer/SceneGraph/OffscreenRenderHelpers.h": {
     "mtime": 1779675967.5885792,
     "ast_hash": "1449fb18f292a7f6b6a766591e0bec98",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/GeometryBuilder.cpp": {
+  "Source/Renderer/BG/Renderer/SceneGraph/GeometryBuilder.cpp": {
     "mtime": 1779675967.5878634,
     "ast_hash": "f3aaa77234540f88355444055df831fe",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cylinder.cpp": {
+  "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cylinder.cpp": {
     "mtime": 1779675967.5889971,
     "ast_hash": "cb0f758060864024dcb3bd115e5f0847",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Primitive/Sphere.h": {
+  "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Sphere.h": {
     "mtime": 1779675967.5892935,
     "ast_hash": "835e6f7962e163b538f69f8259f32fdf",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cylinder.h": {
+  "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cylinder.h": {
     "mtime": 1779675967.5891669,
     "ast_hash": "7ad008d11df7f03e45539393f71fded5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cube.h": {
+  "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cube.h": {
     "mtime": 1779675967.588918,
     "ast_hash": "99a9b41fd33c1754b28a23c70a8f90d1",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Primitive/Sphere.cpp": {
+  "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Sphere.cpp": {
     "mtime": 1779675967.5892308,
     "ast_hash": "d5faf3b24488fd62d5f3c7a18b8efd26",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cube.cpp": {
+  "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cube.cpp": {
     "mtime": 1779675967.5887077,
     "ast_hash": "acdd473b5db787bb3c4049996f698f26",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Shader/Shader.h": {
+  "Source/Renderer/BG/Renderer/SceneGraph/Shader/Shader.h": {
     "mtime": 1779675967.5896404,
     "ast_hash": "75b1f777f3510167a9a857e0fcb341e9",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Shader/Shader.cpp": {
+  "Source/Renderer/BG/Renderer/SceneGraph/Shader/Shader.cpp": {
     "mtime": 1779675967.589558,
     "ast_hash": "478f46342fdef922021734625ca5508f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Shader/Phong.cpp": {
+  "Source/Renderer/BG/Renderer/SceneGraph/Shader/Phong.cpp": {
     "mtime": 1779675967.5894017,
     "ast_hash": "1d77e4f6124050aa17b7c6b560640fce",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Shader/Phong.h": {
+  "Source/Renderer/BG/Renderer/SceneGraph/Shader/Phong.h": {
     "mtime": 1779675967.5894847,
     "ast_hash": "265ca4af9b25101fbf09457dd0c5b761",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Main.h": {
+  "Source/Core/Main.h": {
     "mtime": 1779675967.5447927,
     "ast_hash": "91ccab379a1567808f6dd2815df1f40f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Main.cpp": {
+  "Source/Core/Main.cpp": {
     "mtime": 1779675967.544712,
     "ast_hash": "e67962501d2bba4a5d944ed5bcd68563",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Util/LogLogo.h": {
+  "Source/Core/Util/LogLogo.h": {
     "mtime": 1779675967.5643713,
     "ast_hash": "60fef5f29df23a4d89c90bf7f6873279",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Util/LogLogo.cpp": {
+  "Source/Core/Util/LogLogo.cpp": {
     "mtime": 1779675967.5641568,
     "ast_hash": "a4bd68f732ea91762106a5a37405f6c6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Util/JSONHelpers.h": {
+  "Source/Core/Util/JSONHelpers.h": {
     "mtime": 1779675967.5640526,
     "ast_hash": "872ac7416f00a49e6ff50f1aa4b7603c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Util/JSONHelpers.cpp": {
+  "Source/Core/Util/JSONHelpers.cpp": {
     "mtime": 1779675967.5639071,
     "ast_hash": "615ba93f47292a3ad6600a1df7095bd8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/ConfigDefaults.cpp": {
+  "Source/Core/Config/ConfigDefaults.cpp": {
     "mtime": 1779675967.5438304,
     "ast_hash": "db89ea2253202ff6045eaa32cfc8b49d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/Config.h": {
+  "Source/Core/Config/Config.h": {
     "mtime": 1779675967.5437589,
     "ast_hash": "5a3d9855382f4adab30025f0fe6fa55f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/ConfigurationManager.cpp": {
+  "Source/Core/Config/ConfigurationManager.cpp": {
     "mtime": 1779675967.5445585,
     "ast_hash": "acbcbee473c5e666892178d80fa7dbe5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/ConfigFileParser.cpp": {
+  "Source/Core/Config/ConfigFileParser.cpp": {
     "mtime": 1779675967.5441575,
     "ast_hash": "381fe15dda92519113ff41188fbf0e17",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/ConfigFileParser.h": {
+  "Source/Core/Config/ConfigFileParser.h": {
     "mtime": 1779675967.5443764,
     "ast_hash": "feba6d584b09970e9f2394d898be0c60",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/ConfigDefaults.h": {
+  "Source/Core/Config/ConfigDefaults.h": {
     "mtime": 1779675967.5440636,
     "ast_hash": "36a900fd7e79e1ad74b81eedf6c183bf",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/Config.cpp": {
+  "Source/Core/Config/Config.cpp": {
     "mtime": 1779675967.5435941,
     "ast_hash": "b64296cbab0567a30f2c4888a78d71e5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/ConfigurationManager.h": {
+  "Source/Core/Config/ConfigurationManager.h": {
     "mtime": 1779675967.5446382,
     "ast_hash": "43faa5aab60a4d75c286fbbd10e4b18e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Netmorph/NetmorphParameters.cpp": {
+  "Source/Core/Netmorph/NetmorphParameters.cpp": {
     "mtime": 1779675967.5452483,
     "ast_hash": "43feec884cbe406a817cf909b92071da",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Netmorph/NetmorphManagerThread.cpp": {
+  "Source/Core/Netmorph/NetmorphManagerThread.cpp": {
     "mtime": 1779675967.544942,
     "ast_hash": "265ecf1cdab735e7027a0fe6caae0d6e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Netmorph/NetmorphParameters.h": {
+  "Source/Core/Netmorph/NetmorphParameters.h": {
     "mtime": 1779675967.5454288,
     "ast_hash": "7ff04dd361603bbc3067addce840de4d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Netmorph/NetmorphRPCInterface.cpp": {
+  "Source/Core/Netmorph/NetmorphRPCInterface.cpp": {
     "mtime": 1779675967.5455778,
     "ast_hash": "7a9a302f84178036507b16d5320532db",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Netmorph/NetmorphRPCInterface.h": {
+  "Source/Core/Netmorph/NetmorphRPCInterface.h": {
     "mtime": 1779675967.545814,
     "ast_hash": "2d3547b47277ee2664c23e39c76ae621",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Netmorph/NetmorphManagerThread.h": {
+  "Source/Core/Netmorph/NetmorphManagerThread.h": {
     "mtime": 1779675967.5450583,
     "ast_hash": "bfe0c8c007d48d94360feb13ab6b360b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.h": {
+  "Source/Core/VSDA/RenderPool.h": {
     "mtime": 1779675967.5796626,
     "ast_hash": "7b0b605687b444dc7cd58b027cde0816",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/VSDARPCInterface.h": {
+  "Source/Core/VSDA/VSDARPCInterface.h": {
     "mtime": 1779675967.57998,
     "ast_hash": "2296e6b210fb8b3238faa55b364755c0",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/VSDARPCInterface.cpp": {
+  "Source/Core/VSDA/VSDARPCInterface.cpp": {
     "mtime": 1779675967.5797946,
     "ast_hash": "2e27c21584f09c4dadabc704a3b27de1",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp": {
+  "Source/Core/VSDA/RenderPool.cpp": {
     "mtime": 1779675967.579474,
     "ast_hash": "1483a972248916ed3064305089928960",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp": {
+  "Source/Core/VSDA/RPCRoutes/Ca.cpp": {
     "mtime": 1779675967.578906,
     "ast_hash": "2183dd1bb2e2f5fbb6b65dd26cb3776d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/EM.cpp": {
+  "Source/Core/VSDA/RPCRoutes/EM.cpp": {
     "mtime": 1779675967.579133,
     "ast_hash": "9ac2a87f808ed7e0d367c894cf67afc3",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/EM.h": {
+  "Source/Core/VSDA/RPCRoutes/EM.h": {
     "mtime": 1779675967.579286,
     "ast_hash": "aa62e6eabacac173669089d711867f90",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.h": {
+  "Source/Core/VSDA/RPCRoutes/Ca.h": {
     "mtime": 1779675967.5789886,
     "ast_hash": "2aa7b195c80226171a9bced3c7ddea78",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/CaRenderer.h": {
+  "Source/Core/VSDA/Ca/CaRenderer.h": {
     "mtime": 1779675967.564807,
     "ast_hash": "1e4dea30a362f5e66ec8513efc3c402a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/CaRenderer.cpp": {
+  "Source/Core/VSDA/Ca/CaRenderer.cpp": {
     "mtime": 1779675967.5645876,
     "ast_hash": "604933baaa5edfd4ea34b42f1c2a2427",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.cpp": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.cpp": {
     "mtime": 1779675967.5662763,
     "ast_hash": "41b249f975c2d8008e1bca5a9a3927b8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.cpp": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.cpp": {
     "mtime": 1779675967.5657191,
     "ast_hash": "0f5d4899dc7e08c90698d5238ba09f29",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.cpp": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.cpp": {
     "mtime": 1779675967.5659766,
     "ast_hash": "c268fa4d855940a7b6edd4cd45664a07",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h": {
     "mtime": 1779675967.5663645,
     "ast_hash": "4c2d76d737b5ff49c845fdeb6deeaaac",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.h": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.h": {
     "mtime": 1779675967.5661018,
     "ast_hash": "d9016b88a60b0c6ca654a066c9f9da9a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h": {
     "mtime": 1779675967.5657964,
     "ast_hash": "f9c892fa5898fdb9e4c22b20d2d41823",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h": {
     "mtime": 1779675967.5680962,
     "ast_hash": "fd0165fbb23ad3fb08bbe9559e62e568",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/Image.cpp": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/Image.cpp": {
     "mtime": 1779675967.5672112,
     "ast_hash": "91d116ec6a28068d75feb52c527d569a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp": {
     "mtime": 1779675967.5675206,
     "ast_hash": "3396bccf7c1503e1ab92ef5d4a1dd186",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h": {
     "mtime": 1779675967.567706,
     "ast_hash": "6f51ec4ab04cae9c1f8df34835bd6918",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp": {
     "mtime": 1779675967.5678964,
     "ast_hash": "7de7aaa10832c07c3e3d4d53d92fb55e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/Image.h": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/Image.h": {
     "mtime": 1779675967.5673912,
     "ast_hash": "2ff59eed3bc5ab398ce4cc051dc85c9a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.h": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.h": {
     "mtime": 1779675967.568379,
     "ast_hash": "3dc6a8b75c095b783db9d689acb5d0b6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.cpp": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.cpp": {
     "mtime": 1779675967.5682938,
     "ast_hash": "e9ea0b2f154d4e707b589c390424b578",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp": {
     "mtime": 1779675967.5685208,
     "ast_hash": "8288718dbc022a92b55e4d40858f9300",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h": {
     "mtime": 1779675967.5686166,
     "ast_hash": "1dabd601c620b91129b93a60f91a13a6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/Task.h": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/Task.h": {
     "mtime": 1779675967.5655715,
     "ast_hash": "0c2201f3a2722eb9aad8f68aab1e17af",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp": {
     "mtime": 1779675967.5651298,
     "ast_hash": "4bdb7ffa6db4efb4e7e995c5e811c80d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/Task.cpp": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/Task.cpp": {
     "mtime": 1779675967.5654564,
     "ast_hash": "c7f00904c67d4023e320f7f52b4f01f2",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h": {
     "mtime": 1779675967.565297,
     "ast_hash": "a738973362175c7318c009b13534b11d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaData.h": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaData.h": {
     "mtime": 1779675967.568997,
     "ast_hash": "c6f738dbdad6ab02005cfc03b464ed45",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaSubRegion.cpp": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaSubRegion.cpp": {
     "mtime": 1779675967.5692718,
     "ast_hash": "79dc76c57cfd2b0654e8c70b7489eb32",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.h": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.h": {
     "mtime": 1779675967.5691757,
     "ast_hash": "0e8cd1542235ee1e5110de53d88d9d28",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.cpp": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.cpp": {
     "mtime": 1779675967.5690758,
     "ast_hash": "a5d96873fc63e3acf5304262404dfd08",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp": {
     "mtime": 1779675967.5695035,
     "ast_hash": "b40c0ce0c2d5a24ba8f1a506155a28d5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h": {
     "mtime": 1779675967.5696425,
     "ast_hash": "557bc1971ed0b2f2ed9d3e969ddf7935",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaData.cpp": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaData.cpp": {
     "mtime": 1779675967.5688455,
     "ast_hash": "e95186f341c437266cf262a94d4b53c6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaSubRegion.h": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaSubRegion.h": {
     "mtime": 1779675967.5693636,
     "ast_hash": "43758cfb5f35fca5f4ce5bb728663dc5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/EMRenderer.h": {
+  "Source/Core/VSDA/EM/EMRenderer.h": {
     "mtime": 1779675967.571172,
     "ast_hash": "733bf95a53571cc817af2e21d44c1026",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/EMRenderer.cpp": {
+  "Source/Core/VSDA/EM/EMRenderer.cpp": {
     "mtime": 1779675967.571051,
     "ast_hash": "e8afeab0feb0c37b6c333be89a26561b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/IgneousPipeline.cpp": {
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/IgneousPipeline.cpp": {
     "mtime": 1779675967.5736697,
     "ast_hash": "54bf1efa2e056743d3c1c8abae90a6cb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/IgneousPipeline.h": {
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/IgneousPipeline.h": {
     "mtime": 1779675967.5737467,
     "ast_hash": "972ac5bacffc4e992e6a87473a813cc0",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp": {
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp": {
     "mtime": 1779675967.5738492,
     "ast_hash": "0d784410cf6317e570a41f955da6a275",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.h": {
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.h": {
     "mtime": 1779675967.5739772,
     "ast_hash": "fdac2e299724d9e7e0b726bebc5bcaf4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.h": {
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.h": {
     "mtime": 1779675967.5735211,
     "ast_hash": "3e54f411368bc484800d9774397651ec",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.cpp": {
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.cpp": {
     "mtime": 1779675967.5732372,
     "ast_hash": "eb2e127b9b62d6725eda636d6a081a0b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.h": {
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.h": {
     "mtime": 1779675967.5731585,
     "ast_hash": "e608f58379e722353fcde026a71b7643",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.cpp": {
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.cpp": {
     "mtime": 1779675967.573079,
     "ast_hash": "c657e873d82d35ec065582c7a969ef22",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.cpp": {
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.cpp": {
     "mtime": 1779675967.5734308,
     "ast_hash": "ce80a97823290335fd618e545f13cc60",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.h": {
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.h": {
     "mtime": 1779675967.5733154,
     "ast_hash": "da1c7e5e40119ce05eb9162588525089",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp": {
+  "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp": {
     "mtime": 1779675967.571525,
     "ast_hash": "5ec4358dc8e43a59d9fe392ef0ebd796",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h": {
+  "Source/Core/VSDA/EM/MeshGenerator/MC.h": {
     "mtime": 1779675967.5713673,
     "ast_hash": "301cde71913ad82e9acc431d568197f7",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MeshCombiner.cpp": {
+  "Source/Core/VSDA/EM/MeshGenerator/MeshCombiner.cpp": {
     "mtime": 1779675967.5719056,
     "ast_hash": "a82b4824d1a4729bfc7ccc66983dce36",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.h": {
+  "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.h": {
     "mtime": 1779675967.57162,
     "ast_hash": "dfd878554cdc0e2a6cc892ff2ccfbf64",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/OBJWriter.h": {
+  "Source/Core/VSDA/EM/MeshGenerator/OBJWriter.h": {
     "mtime": 1779675967.572868,
     "ast_hash": "f88e8251a96e34701d92378a4a946b5e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MarchingCubesLookupTable.h": {
+  "Source/Core/VSDA/EM/MeshGenerator/MarchingCubesLookupTable.h": {
     "mtime": 1779675967.571735,
     "ast_hash": "239332b2e8bcc3c2291dac00407aab8d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp": {
+  "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp": {
     "mtime": 1779675967.5726192,
     "ast_hash": "f21b7c9abb2206d441a7bc9e6cbe89d8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MeshCombiner.h": {
+  "Source/Core/VSDA/EM/MeshGenerator/MeshCombiner.h": {
     "mtime": 1779675967.5720284,
     "ast_hash": "cf5bbe00e4b3f471a4729377a4e2b5a6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MeshTask.h": {
+  "Source/Core/VSDA/EM/MeshGenerator/MeshTask.h": {
     "mtime": 1779675967.5724123,
     "ast_hash": "c747a5920c69704fa94b9ea58b3bf508",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp": {
+  "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp": {
     "mtime": 1779675967.5721042,
     "ast_hash": "8380e9f0c1a61c76014dc5fa81a525ee",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.h": {
+  "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.h": {
     "mtime": 1779675967.5723171,
     "ast_hash": "8e9643956ae4d33adbd3a04f7eee2445",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MeshingStage.h": {
+  "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.h": {
     "mtime": 1779675967.5727105,
     "ast_hash": "e6ef0aaed8897baec648a60208655daf",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h": {
     "mtime": 1779675967.5785062,
     "ast_hash": "7a70e55c4e180ddddb97a81d97c49b54",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h": {
     "mtime": 1779675967.5767934,
     "ast_hash": "3876bfa260697e3d1516f5d761e54d2a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.cpp": {
     "mtime": 1779675967.5767157,
     "ast_hash": "676f1919fc50f7cf1687bc57a9139b9a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/EMSubRegion.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/EMSubRegion.h": {
     "mtime": 1779675967.5747175,
     "ast_hash": "5a26e1c26eab12afe44b236e9a819b62",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.cpp": {
     "mtime": 1779675967.5786276,
     "ast_hash": "3d85b738c323af0aa56ea2c02dda180e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp": {
     "mtime": 1779675967.5784178,
     "ast_hash": "8dee5a396f43e6c9cbdfd75bc9c660fb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.h": {
     "mtime": 1779675967.5783093,
     "ast_hash": "60ad2d4442173c4f4bc23d6c958b7f29",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.h": {
     "mtime": 1779675967.5787091,
     "ast_hash": "8aba4ec545a68d2e8b156449dee33965",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/EMSubRegion.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/EMSubRegion.cpp": {
     "mtime": 1779675967.5746396,
     "ast_hash": "01df36783612bb051ef1d952974c1e12",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp": {
     "mtime": 1779675967.5782197,
     "ast_hash": "734c2cbfd94c3c985ad71950d8e28ab3",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/SegmentationCompression.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/SegmentationCompression.cpp": {
     "mtime": 1779675967.5760384,
     "ast_hash": "90a653c979175c318cf34ede25f546bb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h": {
     "mtime": 1779675967.575851,
     "ast_hash": "4acd655246afc7dc0943b50db94b26e1",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.cpp": {
     "mtime": 1779675967.575367,
     "ast_hash": "a3e6d1c6ffb6071b577d8c0b2d24b2f6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp": {
     "mtime": 1779675967.5755386,
     "ast_hash": "54f45f3e627e67e7a2b1f1607a64c1bc",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/SegmentationCompression.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/SegmentationCompression.h": {
     "mtime": 1779675967.5761282,
     "ast_hash": "7d1be60cfa1a5048164744801ac65b51",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.h": {
     "mtime": 1779675967.576541,
     "ast_hash": "a274f87ccfd6f9f0a8b00975dd38403f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/iir_gauss_blur.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/iir_gauss_blur.h": {
     "mtime": 1779675967.5763106,
     "ast_hash": "06e0c30c15341b11dd59cafe42dc90db",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h": {
     "mtime": 1779675967.5756304,
     "ast_hash": "e891e735f2073c0ee73063233b1f5fa7",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp": {
     "mtime": 1779675967.5757134,
     "ast_hash": "2bed1ce4b95f1fe995b28b02e11a7e2e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Working.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Working.cpp": {
     "mtime": 1779675967.5762138,
     "ast_hash": "ad8c9f4d11f64163bbb88942f61ee775",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.h": {
     "mtime": 1779675967.575445,
     "ast_hash": "7ecac1fe6c3fa8b6041ea1669b96cf26",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc": {
     "mtime": 1779675967.5764081,
     "ast_hash": "a729c6a681fda2cf1cb8f985f7610397",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp": {
     "mtime": 1779675967.5769308,
     "ast_hash": "1e98da5d72340b91d58ad48429f9f915",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h": {
     "mtime": 1779675967.5770068,
     "ast_hash": "b9460d9aaf495dbc65fc5ecad7bc0f6b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/Task.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/Task.h": {
     "mtime": 1779675967.5745394,
     "ast_hash": "e017e4c2241333c86e98e4210c546f46",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp": {
     "mtime": 1779675967.5742252,
     "ast_hash": "bd16d415790a00281e58762d7c28286e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/Task.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/Task.cpp": {
     "mtime": 1779675967.5744529,
     "ast_hash": "c1ed5b4b55ce7c02de6098e3bc8bcc02",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h": {
     "mtime": 1779675967.5743628,
     "ast_hash": "3af88f4bb5292d5bf499c4a8de826da1",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h": {
     "mtime": 1779675967.57728,
     "ast_hash": "e8073f9c43226a7659eafe2d62cd1258",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/SubRegion.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/SubRegion.cpp": {
     "mtime": 1779675967.577478,
     "ast_hash": "5c51a52bc4eabc65961138d2eb998944",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/SubRegion.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/SubRegion.h": {
     "mtime": 1779675967.5775533,
     "ast_hash": "a25b4ee615cd46282c9a7b0574fdb20a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.cpp": {
     "mtime": 1779675967.5771396,
     "ast_hash": "f4c68b30adc626fef993fc5d510180c5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/VSDAData.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VSDAData.h": {
     "mtime": 1779675967.5777695,
     "ast_hash": "70e2ff7bc8f72d134bcee4369484fd2e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/VSDAData.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VSDAData.cpp": {
     "mtime": 1779675967.577627,
     "ast_hash": "365c15b6a6e390d8d9a5a55f3c7a3da5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h": {
     "mtime": 1779675967.5780585,
     "ast_hash": "6cb84e5f5051a7a0c989a562ee81ba79",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp": {
     "mtime": 1779675967.5779026,
     "ast_hash": "851e655aebd79288e7ab3e98e538b405",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Common/Structs/WorldInfo.cpp": {
+  "Source/Core/VSDA/Common/Structs/WorldInfo.cpp": {
     "mtime": 1779675967.569984,
     "ast_hash": "711f3e57d34a3b2c445d0eb67ddeacee",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Common/Structs/WorldInfo.h": {
+  "Source/Core/VSDA/Common/Structs/WorldInfo.h": {
     "mtime": 1779675967.5701132,
     "ast_hash": "aff7c8a3e56b477ec635ef1a4cb533de",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Common/Structs/ScanRegion.h": {
+  "Source/Core/VSDA/Common/Structs/ScanRegion.h": {
     "mtime": 1779675967.5699074,
     "ast_hash": "1852477f684af90f53a1bc28d5489ee0",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Common/Structs/ScanRegion.cpp": {
+  "Source/Core/VSDA/Common/Structs/ScanRegion.cpp": {
     "mtime": 1779675967.569814,
     "ast_hash": "8cb59fffc49de3e3a24a6bc0be7feaf5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/DebugHelpers/MeshBuilder.cpp": {
+  "Source/Core/VSDA/DebugHelpers/MeshBuilder.cpp": {
     "mtime": 1779675967.5704918,
     "ast_hash": "f0d3ba62fdb2e3ac3016d69cd69121e5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/DebugHelpers/MeshConversionHelpers.cpp": {
+  "Source/Core/VSDA/DebugHelpers/MeshConversionHelpers.cpp": {
     "mtime": 1779675967.570726,
     "ast_hash": "3dea26967413019ec2bd2aa61ae4cc74",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/DebugHelpers/MeshBuilder.h": {
+  "Source/Core/VSDA/DebugHelpers/MeshBuilder.h": {
     "mtime": 1779675967.5706263,
     "ast_hash": "827ee63116286783cbfde96f1d7ff063",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/DebugHelpers/MeshConversionHelpers.h": {
+  "Source/Core/VSDA/DebugHelpers/MeshConversionHelpers.h": {
     "mtime": 1779675967.5708282,
     "ast_hash": "cfd4c99b97715bd1f91351cc4b1ee676",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Engine.h": {
+  "Source/Core/Simulator/Engine.h": {
     "mtime": 1779675967.5526702,
     "ast_hash": "313b33964f4ae850bcb9a8c5347a9f1e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.h": {
+  "Source/Core/Simulator/EngineController.h": {
     "mtime": 1779675967.5528903,
     "ast_hash": "ff5847d95a2110753cc15e8e82a1bb82",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp": {
+  "Source/Core/Simulator/EngineController.cpp": {
     "mtime": 1779675967.5528088,
     "ast_hash": "0c999a4e4f8ef553dac9c39b43bf25e3",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Engine.cpp": {
+  "Source/Core/Simulator/Engine.cpp": {
     "mtime": 1779675967.5525923,
     "ast_hash": "0e6c3612608a54c869d809602c44d705",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BrainRegion/BrainRegion.h": {
+  "Source/Core/Simulator/BrainRegion/BrainRegion.h": {
     "mtime": 1779675967.5509293,
     "ast_hash": "d950db65a95ec5aeafb56e0d730d8829",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/SimpleCompartmental/SCNeuron.h": {
+  "Source/Core/Simulator/SimpleCompartmental/SCNeuron.h": {
     "mtime": 1779675967.5586197,
     "ast_hash": "9edc0f129a04590185040767f77fc651",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/SimpleCompartmental/SCNeuron.cpp": {
+  "Source/Core/Simulator/SimpleCompartmental/SCNeuron.cpp": {
     "mtime": 1779675967.558541,
     "ast_hash": "e8c10a58156236a07d46c3433b399ccf",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/LIFCompartmental/LIFCNeuron.cpp": {
+  "Source/Core/Simulator/LIFCompartmental/LIFCNeuron.cpp": {
     "mtime": 1779675967.5550604,
     "ast_hash": "398cf4f82f785f7dd7c4941eda05df1c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/LIFCompartmental/LIFCNeuron.h": {
+  "Source/Core/Simulator/LIFCompartmental/LIFCNeuron.h": {
     "mtime": 1779675967.5552232,
     "ast_hash": "5f6c7f5cec0090f0d4f854ac904106a2",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/Receptor.cpp": {
+  "Source/Core/Simulator/Receptors/Receptor.cpp": {
     "mtime": 1779675967.557932,
     "ast_hash": "8ad6f92d809b35893dfd5c8ea77bdbd5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp": {
+  "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp": {
     "mtime": 1779675967.5573537,
     "ast_hash": "294e297506ad530fff4b8d2f87854c2e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.h": {
+  "Source/Core/Simulator/Receptors/NMDAReceptor.h": {
     "mtime": 1779675967.557655,
     "ast_hash": "480a8220a1b9c57f0f2e97336366d564",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/AMPAReceptor.h": {
+  "Source/Core/Simulator/Receptors/AMPAReceptor.h": {
     "mtime": 1779675967.5571651,
     "ast_hash": "44acfa035541399547cb16da4108e54d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp": {
+  "Source/Core/Simulator/Receptors/NMDAReceptor.cpp": {
     "mtime": 1779675967.55751,
     "ast_hash": "8c397a6b01da8d34672fbd88c2548cee",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.test.cpp": {
+  "Source/Core/Simulator/Receptors/NMDAReceptor.test.cpp": {
     "mtime": 1779675967.557791,
     "ast_hash": "3c4b8433b88cdbf65b787801410f2626",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/AMPAReceptor.cpp": {
+  "Source/Core/Simulator/Receptors/AMPAReceptor.cpp": {
     "mtime": 1779675967.5570762,
     "ast_hash": "9529e996171d0724e605fb812c653fad",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/Receptor.h": {
+  "Source/Core/Simulator/Receptors/Receptor.h": {
     "mtime": 1779675967.5580406,
     "ast_hash": "c4dc00a20b0c50479c67dd76934c9b99",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/Receptor.test.cpp": {
+  "Source/Core/Simulator/Receptors/Receptor.test.cpp": {
     "mtime": 1779675967.5581324,
     "ast_hash": "d12d06a049361a6bef61a5d132169320",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSNeuron.cpp": {
+  "Source/Core/Simulator/BallAndStick/BSNeuron.cpp": {
     "mtime": 1779675967.5504682,
     "ast_hash": "1eb1c6fab7cacab68ad25f7515088a1a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.h": {
+  "Source/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.h": {
     "mtime": 1779675967.5496097,
     "ast_hash": "f32d81be280dce8a1d07d110c537f169",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.test.cpp": {
+  "Source/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.test.cpp": {
     "mtime": 1779675967.549833,
     "ast_hash": "85bb7aa34276de91dbeb58b1bab7df82",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp": {
+  "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp": {
     "mtime": 1779675967.54894,
     "ast_hash": "3e0020bb195477cd9af6f644dd154511",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSMorphology.cpp": {
+  "Source/Core/Simulator/BallAndStick/BSMorphology.cpp": {
     "mtime": 1779675967.5500143,
     "ast_hash": "7e2e2d565c2f8c010f6f13978f183caf",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedBrainRegion.h": {
+  "Source/Core/Simulator/BallAndStick/BSAlignedBrainRegion.h": {
     "mtime": 1779675967.5488029,
     "ast_hash": "3109c337d5ee574c398688d48269e86d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp": {
+  "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp": {
     "mtime": 1779675967.5503452,
     "ast_hash": "a35d8675f0e175ec3522ff8d07dbdad2",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSNeuron.h": {
+  "Source/Core/Simulator/BallAndStick/BSNeuron.h": {
     "mtime": 1779675967.5505993,
     "ast_hash": "087e036126d0bb883436d8b34e0c7dea",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSNeuron.test.cpp": {
+  "Source/Core/Simulator/BallAndStick/BSNeuron.test.cpp": {
     "mtime": 1779675967.5506833,
     "ast_hash": "ac70d8dbc8ee355479bf05f09c0b1f3e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h": {
+  "Source/Core/Simulator/BallAndStick/BSAlignedNC.h": {
     "mtime": 1779675967.5491295,
     "ast_hash": "c6816915e10f70f069bf0d24d6ae84da",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.test.cpp": {
+  "Source/Core/Simulator/BallAndStick/BSAlignedNC.test.cpp": {
     "mtime": 1779675967.549262,
     "ast_hash": "643f8a1960e47eff06ca63a19bcf7ab2",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.cpp": {
+  "Source/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.cpp": {
     "mtime": 1779675967.5494058,
     "ast_hash": "ae8f989eb0fa5b4039029c958f1fffde",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSMorphology.h": {
+  "Source/Core/Simulator/BallAndStick/BSMorphology.h": {
     "mtime": 1779675967.5501904,
     "ast_hash": "8927f9cacd2c26c1d70f701846c25752",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedBrainRegion.cpp": {
+  "Source/Core/Simulator/BallAndStick/BSAlignedBrainRegion.cpp": {
     "mtime": 1779675967.548607,
     "ast_hash": "faca3aeac1f0c9540041c8486b99ec8a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SignalFunctions.h": {
+  "Source/Core/Simulator/Structs/SignalFunctions.h": {
     "mtime": 1779675967.5613265,
     "ast_hash": "e7a50fcec0c95adf46e5bc241da4546d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Simulation.h": {
+  "Source/Core/Simulator/Structs/Simulation.h": {
     "mtime": 1779675967.561754,
     "ast_hash": "5b572c1c1712acdec3e2f34eb38a433d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Staple.h": {
+  "Source/Core/Simulator/Structs/Staple.h": {
     "mtime": 1779675967.5621536,
     "ast_hash": "755bcce770dc429b5cb6e5c02f7ba6c8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Neuron.cpp": {
+  "Source/Core/Simulator/Structs/Neuron.cpp": {
     "mtime": 1779675967.5598114,
     "ast_hash": "817f7c5e496e1423b89737e9ec228c95",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp": {
+  "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp": {
     "mtime": 1779675967.5624552,
     "ast_hash": "c8b0953b676a8d6c5f7e89579a6a1e72",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/NeuralCircuit.h": {
+  "Source/Core/Simulator/Structs/NeuralCircuit.h": {
     "mtime": 1779675967.5597215,
     "ast_hash": "d3f169bd231c37299ce8ccfe935938dd",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/PatchClampADC.h": {
+  "Source/Core/Simulator/Structs/PatchClampADC.h": {
     "mtime": 1779675967.560109,
     "ast_hash": "364a0ae5682d8d4fa83ffd88cccb323c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/BS.cpp": {
+  "Source/Core/Simulator/Structs/BS.cpp": {
     "mtime": 1779675967.5588493,
     "ast_hash": "a9309c806d53d2201e1f4d96ebf4ecde",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/PatchClampDAC.h": {
+  "Source/Core/Simulator/Structs/PatchClampDAC.h": {
     "mtime": 1779675967.5602472,
     "ast_hash": "809b302f55e39c36cb5f1678eec8de5c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Neuron.h": {
+  "Source/Core/Simulator/Structs/Neuron.h": {
     "mtime": 1779675967.5599368,
     "ast_hash": "58335ea7924ad9f61628ae58a54731a3",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/PatchClampADC.cpp": {
+  "Source/Core/Simulator/Structs/PatchClampADC.cpp": {
     "mtime": 1779675967.5600102,
     "ast_hash": "1d18a2f89285a29e502b834ce778bc89",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/BoundingBox.h": {
+  "Source/Core/Simulator/Structs/BoundingBox.h": {
     "mtime": 1779675967.559128,
     "ast_hash": "eac65c16765f0584a36ca5deb3a78ac8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Receptor.cpp": {
+  "Source/Core/Simulator/Structs/Receptor.cpp": {
     "mtime": 1779675967.560319,
     "ast_hash": "954c9b5c26b5d3e156f311df9e5f77c8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SynTrQuantalRelease.cpp": {
+  "Source/Core/Simulator/Structs/SynTrQuantalRelease.cpp": {
     "mtime": 1779675967.562251,
     "ast_hash": "95f8bc96a8798a39ca74869063a08618",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp": {
+  "Source/Core/Simulator/Structs/CalciumImaging.cpp": {
     "mtime": 1779675967.5592642,
     "ast_hash": "3cf0f9a1fc27c4b334d116e7667da619",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Simulation.test.cpp": {
+  "Source/Core/Simulator/Structs/Simulation.test.cpp": {
     "mtime": 1779675967.5618591,
     "ast_hash": "0777c3f5373810ba48dbc578ac328b10",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/RecordingElectrode.h": {
+  "Source/Core/Simulator/Structs/RecordingElectrode.h": {
     "mtime": 1779675967.5606768,
     "ast_hash": "9aadf436779c835a5f3c9cda91ef3898",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Staple.cpp": {
+  "Source/Core/Simulator/Structs/Staple.cpp": {
     "mtime": 1779675967.5620446,
     "ast_hash": "e41fc17d109cc59ae4d0cc619f1e326f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/RecordingElectrode.cpp": {
+  "Source/Core/Simulator/Structs/RecordingElectrode.cpp": {
     "mtime": 1779675967.5605915,
     "ast_hash": "ac826661d1fde3f5026661f8a3a4b691",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SignalFunctions.cpp": {
+  "Source/Core/Simulator/Structs/SignalFunctions.cpp": {
     "mtime": 1779675967.5612433,
     "ast_hash": "aeecdc66b9f10b1578d6347e017ba22d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/BoundingBox.cpp": {
+  "Source/Core/Simulator/Structs/BoundingBox.cpp": {
     "mtime": 1779675967.5590467,
     "ast_hash": "8923fea335da80cf1e4d38151a83dfb9",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/PatchClampDAC.cpp": {
+  "Source/Core/Simulator/Structs/PatchClampDAC.cpp": {
     "mtime": 1779675967.5601778,
     "ast_hash": "74f3982c30429cb6dfcd456608f2fb8e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SC.cpp": {
+  "Source/Core/Simulator/Structs/SC.cpp": {
     "mtime": 1779675967.5609787,
     "ast_hash": "bf8edcc3f478b8b0190c00190be36564",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/RecordingElectrode.test.cpp": {
+  "Source/Core/Simulator/Structs/RecordingElectrode.test.cpp": {
     "mtime": 1779675967.5608253,
     "ast_hash": "87096d08c5b8a0fc7f391b28ce0b7996",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SignalFunctions.test.cpp": {
+  "Source/Core/Simulator/Structs/SignalFunctions.test.cpp": {
     "mtime": 1779675967.561423,
     "ast_hash": "79086d1568ea352b38b2c228b31b4a44",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/LIFC.cpp": {
+  "Source/Core/Simulator/Structs/LIFC.cpp": {
     "mtime": 1779675967.5594063,
     "ast_hash": "f163325316268bd5ceaaa00855d5be36",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/NeuralCircuit.cpp": {
+  "Source/Core/Simulator/Structs/NeuralCircuit.cpp": {
     "mtime": 1779675967.5595746,
     "ast_hash": "02cbc40c75c114f9ddc3e17eee646065",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/LIFC.h": {
+  "Source/Core/Simulator/Structs/LIFC.h": {
     "mtime": 1779675967.5594912,
     "ast_hash": "75044ea19f841fe3f228d4db58744630",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Simulation.cpp": {
+  "Source/Core/Simulator/Structs/Simulation.cpp": {
     "mtime": 1779675967.5615962,
     "ast_hash": "b4a24a16f1309f521b3e2330d64ffce8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/BS.h": {
+  "Source/Core/Simulator/Structs/BS.h": {
     "mtime": 1779675967.558949,
     "ast_hash": "50e2b93f98e75f6bff81d4cace14292b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SC.h": {
+  "Source/Core/Simulator/Structs/SC.h": {
     "mtime": 1779675967.561155,
     "ast_hash": "e5879a8fa7674ce51587c6c46dfaaefc",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.h": {
+  "Source/Core/Simulator/Structs/CalciumImaging.h": {
     "mtime": 1779675967.5593429,
     "ast_hash": "ca1afddff300af299907d0bb43b7992e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SynTrQuantalRelease.h": {
+  "Source/Core/Simulator/Structs/SynTrQuantalRelease.h": {
     "mtime": 1779675967.562352,
     "ast_hash": "272d967e54e62d91a772c2b419ca781b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Receptor.h": {
+  "Source/Core/Simulator/Structs/Receptor.h": {
     "mtime": 1779675967.5604537,
     "ast_hash": "5a295b5eebd810f218d79ee27767c6a4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.h": {
+  "Source/Core/Simulator/Geometries/Box.h": {
     "mtime": 1779675967.5531528,
     "ast_hash": "81c8a8e301bd5d3986dedfbb3b4ed29a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Geometry.cpp": {
+  "Source/Core/Simulator/Geometries/Geometry.cpp": {
     "mtime": 1779675967.5535872,
     "ast_hash": "bfdc698bd7daed2d77614601a0b8dee6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Cylinder.cpp": {
+  "Source/Core/Simulator/Geometries/Cylinder.cpp": {
     "mtime": 1779675967.5533526,
     "ast_hash": "4daddd18ac5424c629ed1c6c211a94b4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/GeometryCollection.h": {
+  "Source/Core/Simulator/Geometries/GeometryCollection.h": {
     "mtime": 1779675967.553805,
     "ast_hash": "e8be472cd187b46b09672a545dea75e6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/VecTools.cpp": {
+  "Source/Core/Simulator/Geometries/VecTools.cpp": {
     "mtime": 1779675967.5542939,
     "ast_hash": "5318a28fca10e480d7bdaacee40e41bf",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/VecTools.test.cpp": {
+  "Source/Core/Simulator/Geometries/VecTools.test.cpp": {
     "mtime": 1779675967.554607,
     "ast_hash": "d9e5ddc1b419db19721f24a91b162dda",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp": {
+  "Source/Core/Simulator/Geometries/Box.cpp": {
     "mtime": 1779675967.5530586,
     "ast_hash": "acd20872e7d668058f07677a3ef9e018",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Wedge.h": {
+  "Source/Core/Simulator/Geometries/Wedge.h": {
     "mtime": 1779675967.554889,
     "ast_hash": "3ca597afb52a60ad6f0ecadedcde5fcb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Sphere.h": {
+  "Source/Core/Simulator/Geometries/Sphere.h": {
     "mtime": 1779675967.5540535,
     "ast_hash": "60960d888d3804e667ae4d1dfb2e2f41",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Cylinder.h": {
+  "Source/Core/Simulator/Geometries/Cylinder.h": {
     "mtime": 1779675967.5534332,
     "ast_hash": "671647eb58608dbfc80bfcaed8742681",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Wedge.cpp": {
+  "Source/Core/Simulator/Geometries/Wedge.cpp": {
     "mtime": 1779675967.5546985,
     "ast_hash": "12330fcf7d0e076b9d12a494ffb7e56b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/VecTools.h": {
+  "Source/Core/Simulator/Geometries/VecTools.h": {
     "mtime": 1779675967.5543988,
     "ast_hash": "3e4bd2bfb2b2a4a055d0b6d306cbe6f5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Cylinder.test.cpp": {
+  "Source/Core/Simulator/Geometries/Cylinder.test.cpp": {
     "mtime": 1779675967.5535138,
     "ast_hash": "d62dca007bff7cd821a7b1d2db8c9014",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.test.cpp": {
+  "Source/Core/Simulator/Geometries/Box.test.cpp": {
     "mtime": 1779675967.5532315,
     "ast_hash": "d911141f6466e041752b026ac3b856f9",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Sphere.cpp": {
+  "Source/Core/Simulator/Geometries/Sphere.cpp": {
     "mtime": 1779675967.5539753,
     "ast_hash": "efd9c336b053bd552d62167af37b9c2c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Sphere.test.cpp": {
+  "Source/Core/Simulator/Geometries/Sphere.test.cpp": {
     "mtime": 1779675967.55413,
     "ast_hash": "29040fedaa72437b2f96e9ed8e7e70ef",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Geometry.h": {
+  "Source/Core/Simulator/Geometries/Geometry.h": {
     "mtime": 1779675967.5536644,
     "ast_hash": "83a9aad7146a2c0af7fce8bda44e848d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/Staple.h": {
+  "Source/Core/Simulator/Updaters/Staple.h": {
     "mtime": 1779675967.563656,
     "ast_hash": "739440f7e03055d2a202086d76a0acb4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/PatchClampADC.h": {
+  "Source/Core/Simulator/Updaters/PatchClampADC.h": {
     "mtime": 1779675967.5626683,
     "ast_hash": "593f26a19fefd87ab4f084e728d782c5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/PatchClampDAC.h": {
+  "Source/Core/Simulator/Updaters/PatchClampDAC.h": {
     "mtime": 1779675967.5628753,
     "ast_hash": "26fbbb4d0b6edab8353ff2707588f431",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/PatchClampADC.cpp": {
+  "Source/Core/Simulator/Updaters/PatchClampADC.cpp": {
     "mtime": 1779675967.5625718,
     "ast_hash": "c1f5c98a1185f2018d9e18a07430a26c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/Receptor.cpp": {
+  "Source/Core/Simulator/Updaters/Receptor.cpp": {
     "mtime": 1779675967.5631742,
     "ast_hash": "b4a5daa035a642cae3309104ba27d9b6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/Staple.cpp": {
+  "Source/Core/Simulator/Updaters/Staple.cpp": {
     "mtime": 1779675967.5633652,
     "ast_hash": "a93758a71198945c0bbc754f24e1f611",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/PatchClampDAC.cpp": {
+  "Source/Core/Simulator/Updaters/PatchClampDAC.cpp": {
     "mtime": 1779675967.5627804,
     "ast_hash": "6686625327463c3fe95ea561347ceb13",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/Receptor.h": {
+  "Source/Core/Simulator/Updaters/Receptor.h": {
     "mtime": 1779675967.5632763,
     "ast_hash": "6098b91cfa604d92891d31e266acdd50",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/RPC/ModelRPCInterface.cpp": {
+  "Source/Core/Simulator/RPC/ModelRPCInterface.cpp": {
     "mtime": 1779675967.5564358,
     "ast_hash": "b6e49ccbb084c5282de5fb574c36739d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/RPC/GeometryRPCInterface.cpp": {
+  "Source/Core/Simulator/RPC/GeometryRPCInterface.cpp": {
     "mtime": 1779675967.55612,
     "ast_hash": "4c5a37cb574dbdf19aba49d46fb55eaa",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/RPC/ModelRPCInterface.h": {
+  "Source/Core/Simulator/RPC/ModelRPCInterface.h": {
     "mtime": 1779675967.5565383,
     "ast_hash": "812cf796d8a1d7b7fe84ede4310b5240",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/RPC/SimulationRPCInterface.cpp": {
+  "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp": {
     "mtime": 1779675967.5566885,
     "ast_hash": "819c26737fd853faf1426727360ce1d1",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/RPC/SimulationRPCInterface.h": {
+  "Source/Core/Simulator/RPC/SimulationRPCInterface.h": {
     "mtime": 1779675967.5568304,
     "ast_hash": "a0a3e94cf2adbee24ef062c530aac614",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/RPC/GeometryRPCInterface.h": {
+  "Source/Core/Simulator/RPC/GeometryRPCInterface.h": {
     "mtime": 1779675967.5563126,
     "ast_hash": "b20cf0c1c78f6ba909fb9e44f0fcce59",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Distributions/Generic.h": {
+  "Source/Core/Simulator/Distributions/Generic.h": {
     "mtime": 1779675967.5521355,
     "ast_hash": "ef686d794c1a633ad77c47bb4295692e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Distributions/Distribution.cpp": {
+  "Source/Core/Simulator/Distributions/Distribution.cpp": {
     "mtime": 1779675967.5511441,
     "ast_hash": "5bf7c52caeb5da63b82b025f3d195755",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Distributions/TruncNorm.cpp": {
+  "Source/Core/Simulator/Distributions/TruncNorm.cpp": {
     "mtime": 1779675967.5522768,
     "ast_hash": "b55fd7fad31782ab90ce69d796343034",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Distributions/Generic.cpp": {
+  "Source/Core/Simulator/Distributions/Generic.cpp": {
     "mtime": 1779675967.551941,
     "ast_hash": "4fe6d43920ea33e189c1abcc2e3d1a5d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Distributions/TruncNorm.h": {
+  "Source/Core/Simulator/Distributions/TruncNorm.h": {
     "mtime": 1779675967.5523424,
     "ast_hash": "a01090d213640e3608b6aa1c4922d63b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Distributions/TruncNorm.test.cpp": {
+  "Source/Core/Simulator/Distributions/TruncNorm.test.cpp": {
     "mtime": 1779675967.552513,
     "ast_hash": "57d2241c4c32ec22c08eabd10e9b8838",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Distributions/Distribution.h": {
+  "Source/Core/Simulator/Distributions/Distribution.h": {
     "mtime": 1779675967.5513794,
     "ast_hash": "946474f4c1867c08aaec11df38abcec7",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Profiling/ProfilingManager.cpp": {
+  "Source/Core/Profiling/ProfilingManager.cpp": {
     "mtime": 1779675967.546021,
     "ast_hash": "a6edffe7b552cc0771b8361e5cabbb2d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Profiling/ProfilingManager.h": {
+  "Source/Core/Profiling/ProfilingManager.h": {
     "mtime": 1779675967.5462108,
     "ast_hash": "9df370d949365cc2e88bb3227b884d86",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/ManagerTaskData.h": {
+  "Source/Core/RPC/ManagerTaskData.h": {
     "mtime": 1779675967.5466995,
     "ast_hash": "309abcec7da24f4627a6d42f6b21ceab",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/APIStatusCode.cpp": {
+  "Source/Core/RPC/APIStatusCode.cpp": {
     "mtime": 1779675967.5463855,
     "ast_hash": "4a7b2c225da1b0784bb6187439823d60",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RouteAndHandler.cpp": {
+  "Source/Core/RPC/RouteAndHandler.cpp": {
     "mtime": 1779675967.5473113,
     "ast_hash": "7b28e79db11ed6d9d58b3f9a8ec1d367",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/APIStatusCode.h": {
+  "Source/Core/RPC/APIStatusCode.h": {
     "mtime": 1779675967.5465136,
     "ast_hash": "9f20dceda44a8eeb36cf058fc65396c7",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RouteAndHandler.h": {
+  "Source/Core/RPC/RouteAndHandler.h": {
     "mtime": 1779675967.5474067,
     "ast_hash": "d7dedead499f1d4ff12555e5213af6f4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp": {
+  "Source/Core/RPC/RPCManager.cpp": {
     "mtime": 1779675967.5470731,
     "ast_hash": "76577456b0e37f5fbab9e908d840e879",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/StaticRoutes.cpp": {
+  "Source/Core/RPC/StaticRoutes.cpp": {
     "mtime": 1779675967.5479374,
     "ast_hash": "d07f31ad3ab04f0f157c0d75ab11cc36",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.h": {
+  "Source/Core/RPC/RPCManager.h": {
     "mtime": 1779675967.5472226,
     "ast_hash": "24bc5545ed4cf36d8f6f8f4c5e4ef674",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/ManagerTaskData.cpp": {
+  "Source/Core/RPC/ManagerTaskData.cpp": {
     "mtime": 1779675967.5466073,
     "ast_hash": "7b28e79db11ed6d9d58b3f9a8ec1d367",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/StaticRoutes.h": {
+  "Source/Core/RPC/StaticRoutes.h": {
     "mtime": 1779675967.5481267,
     "ast_hash": "48fae086f2dac5d59484517cbac5fc1e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp": {
+  "Source/Core/RPC/SafeClient.cpp": {
     "mtime": 1779675967.5475612,
     "ast_hash": "6f6d5d9c9a4c6b7092527df65f465640",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.h": {
+  "Source/Core/RPC/RPCHandlerHelper.h": {
     "mtime": 1779675967.5469737,
     "ast_hash": "921e537f494a9ac60f18d5311323e172",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp": {
+  "Source/Core/RPC/RPCHandlerHelper.cpp": {
     "mtime": 1779675967.5468292,
     "ast_hash": "1e47e5eed22e149d3b84a3b3bb852eb1",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.h": {
+  "Source/Core/RPC/SafeClient.h": {
     "mtime": 1779675967.5477507,
     "ast_hash": "b70dfee5e2e5d64574e59b15656a197d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/Visualizer.cpp": {
+  "Source/Core/Visualizer/Visualizer.cpp": {
     "mtime": 1779675967.5812902,
     "ast_hash": "002a023c15a757bbaae0ee59548d0949",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/VisualizerPool.h": {
+  "Source/Core/Visualizer/VisualizerPool.h": {
     "mtime": 1779675967.581826,
     "ast_hash": "6360f1c4f5a2281118883de507151aad",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp": {
+  "Source/Core/Visualizer/MeshBuilder.cpp": {
     "mtime": 1779675967.5807858,
     "ast_hash": "018b9770d2425cad63cc11c604f5d940",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/VisualizerParameters.cpp": {
+  "Source/Core/Visualizer/VisualizerParameters.cpp": {
     "mtime": 1779675967.581446,
     "ast_hash": "5756809dec2191e8860853fc04d134ba",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshRenderer.cpp": {
+  "Source/Core/Visualizer/MeshRenderer.cpp": {
     "mtime": 1779675967.5811098,
     "ast_hash": "8bfb3e10a68ded643a5a7551be6e9b1a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/VisualizerPool.cpp": {
+  "Source/Core/Visualizer/VisualizerPool.cpp": {
     "mtime": 1779675967.5816863,
     "ast_hash": "30220638bec02ef7c00829d13efdc0ef",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.h": {
+  "Source/Core/Visualizer/MeshBuilder.h": {
     "mtime": 1779675967.581011,
     "ast_hash": "65eea0f304f92092310d420cf9e0d616",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshRenderer.h": {
+  "Source/Core/Visualizer/MeshRenderer.h": {
     "mtime": 1779675967.5812025,
     "ast_hash": "be1b8695ee942c8998e42ea9cae17e6a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/VisualizerRPCInterface.cpp": {
+  "Source/Core/Visualizer/VisualizerRPCInterface.cpp": {
     "mtime": 1779675967.582006,
     "ast_hash": "5dff75c3287cdc3c158276b27c77b2e6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/VisualizerParameters.h": {
+  "Source/Core/Visualizer/VisualizerParameters.h": {
     "mtime": 1779675967.5815403,
     "ast_hash": "956c900cb2897ea569d0b5fb9d21f67d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/VisualizerRPCInterface.h": {
+  "Source/Core/Visualizer/VisualizerRPCInterface.h": {
     "mtime": 1779675967.5820906,
     "ast_hash": "46ca0b7cb4c37bd0bae4f36e16d480a7",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/Visualizer.h": {
+  "Source/Core/Visualizer/Visualizer.h": {
     "mtime": 1779675967.5813653,
     "ast_hash": "2e8d3c479df11b0b08d6f4a3cf0a41b9",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/ImageProcessorPool/ProcessingTask.h": {
+  "Source/Core/Visualizer/ImageProcessorPool/ProcessingTask.h": {
     "mtime": 1779675967.5806897,
     "ast_hash": "6efb203cbd717b570d93a602153b4fe2",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/ImageProcessorPool/Image.cpp": {
+  "Source/Core/Visualizer/ImageProcessorPool/Image.cpp": {
     "mtime": 1779675967.5801873,
     "ast_hash": "70ffa63938b2dc5f92e38accb5656652",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/ImageProcessorPool/ImageProcessorPool.cpp": {
+  "Source/Core/Visualizer/ImageProcessorPool/ImageProcessorPool.cpp": {
     "mtime": 1779675967.5804427,
     "ast_hash": "aa3bbc2390557edc60e39aa2fdb42a8f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/ImageProcessorPool/ImageProcessorPool.h": {
+  "Source/Core/Visualizer/ImageProcessorPool/ImageProcessorPool.h": {
     "mtime": 1779675967.580518,
     "ast_hash": "8a3815a3ea3764a631eb8d7973a10133",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/ImageProcessorPool/ProcessingTask.cpp": {
+  "Source/Core/Visualizer/ImageProcessorPool/ProcessingTask.cpp": {
     "mtime": 1779675967.580598,
     "ast_hash": "a7366797e677ebd229482e5bcf1e3c4a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/ImageProcessorPool/Image.h": {
+  "Source/Core/Visualizer/ImageProcessorPool/Image.h": {
     "mtime": 1779675967.5802867,
     "ast_hash": "8d975e28ca649cdc3acd5627634a8054",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py": {
+  "Source/Python/igneous_local.py": {
     "mtime": 1779675967.5860653,
     "ast_hash": "9c75474aabfde3e9662ae91d312db644",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/CompilePlatformInfo/CompilePlatformInfo.cpp": {
+  "Source/Info/Static/CompilePlatformInfo/CompilePlatformInfo.cpp": {
     "mtime": 1779675967.584677,
     "ast_hash": "48be752c7d406b8d189d4894b773b63a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/CompileTimeStamp/CompileTimeStamp.cpp": {
+  "Source/Info/Static/CompileTimeStamp/CompileTimeStamp.cpp": {
     "mtime": 1779675967.5851924,
     "ast_hash": "a8f8f6ac4b45e691ab1fa9eb8ff01e8d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/VersioningSystem/Version.cpp": {
+  "Source/Info/Static/VersioningSystem/Version.cpp": {
     "mtime": 1779675967.5858772,
     "ast_hash": "18c2a6047fcaaadc8f91c18bfcf215f5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Data/prerm": {
+  "Source/Data/prerm": {
     "mtime": 1779675967.582543,
     "ast_hash": "0ff36bd1800982fd25372ea83734f2fb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Data/postinst": {
+  "Source/Data/postinst": {
     "mtime": 1779675967.5823748,
     "ast_hash": "a37069faab93c28736e969b54c2ed01c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Data/postrm": {
+  "Source/Data/postrm": {
     "mtime": 1779675967.5824401,
     "ast_hash": "5e092ac9f832151eb3f5fa8e58fb08a5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Tools/GenerateDocs.sh": {
+  "Docs/Doxygen/Tools/GenerateDocs.sh": {
     "mtime": 1779675967.5417912,
     "ast_hash": "b205880f5df1a56c4f75229411464a50",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js": {
     "mtime": 1779675967.5395124,
     "ast_hash": "64af7ba7a0c1e71628aec9dc7d59dac4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/example.hpp": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/example.hpp": {
     "mtime": 1779675967.5413702,
     "ast_hash": "30d9925ec4c6a14bf9a22c0162bcb015",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp": {
     "mtime": 1779675967.5414612,
     "ast_hash": "b6cfa034eb41369953b3b6a8da8cd969",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Benchmark.sh": {
+  "Benchmarking/Benchmark.sh": {
     "mtime": 1779675967.527925,
     "ast_hash": "325c616afb7fa713a316e73c9c729e4c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/Test4.py": {
+  "Benchmarking/Renderer/Test4.py": {
     "mtime": 1779675967.529711,
     "ast_hash": "c35450dee1615067a45ae273bfdc4e13",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/Test0.py": {
+  "Benchmarking/Renderer/Test0.py": {
     "mtime": 1779675967.5289834,
     "ast_hash": "6d5108d7cb15ff699a3ed888508b5694",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/Test1.py": {
+  "Benchmarking/Renderer/Test1.py": {
     "mtime": 1779675967.5290976,
     "ast_hash": "42e790cab8cdb318593dc9bfbf35ba40",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/Test5.py": {
+  "Benchmarking/Renderer/Test5.py": {
     "mtime": 1779675967.5298827,
     "ast_hash": "711c3f91824fcb970e4edf1caf6c4e98",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/Test2.py": {
+  "Benchmarking/Renderer/Test2.py": {
     "mtime": 1779675967.5292392,
     "ast_hash": "8fb8ec06a714678d2b04ef18b12ac111",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/Test6.py": {
+  "Benchmarking/Renderer/Test6.py": {
     "mtime": 1779675967.52997,
     "ast_hash": "4f324a16b6f21eb8ee8b5218e9d45921",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/RenderBenchmarks.py": {
+  "Benchmarking/Renderer/RenderBenchmarks.py": {
     "mtime": 1779675967.528875,
     "ast_hash": "d0d8496cdc28de7f00ca07e84f490c48",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/Test3.py": {
+  "Benchmarking/Renderer/Test3.py": {
     "mtime": 1779675967.5294757,
     "ast_hash": "dfed06363ca827f85f0f45954e868cbd",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CODE_OF_CONDUCT.md": {
+  "CODE_OF_CONDUCT.md": {
     "mtime": 1779675967.5364232,
     "ast_hash": "d73ff4d9a188e0ee53deec81ab8ea66a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CMakeLists.txt": {
+  "CMakeLists.txt": {
     "mtime": 1779675967.5363357,
     "ast_hash": "33b1252cddbee89bf11d22e152792d2b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/UnFrackList.txt": {
+  "UnFrackList.txt": {
     "mtime": 1779675967.5917878,
     "ast_hash": "affabfc3503ec891d8b5e02d3f20490b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/README.md": {
+  "README.md": {
     "mtime": 1779675967.5432868,
     "ast_hash": "7aba21e14c8680879d972efda6d8172a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/.gitlab-ci.yml": {
+  "CI/.gitlab-ci.yml": {
     "mtime": 1779675967.5310786,
     "ast_hash": "3abb85f8d6dce088f3a0efe94521b5f4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Test/Ubuntu2004/CI.yml": {
+  "CI/Test/Ubuntu2004/CI.yml": {
     "mtime": 1779675967.5347285,
     "ast_hash": "94f3ed605384c1e4b97fe14df914f87b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Test/Debian11/CI.yml": {
+  "CI/Test/Debian11/CI.yml": {
     "mtime": 1779675967.5344129,
     "ast_hash": "5986a51b3ef57b60ef67cddaaaeddc1c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Test/Ubuntu2204/CI.yml": {
+  "CI/Test/Ubuntu2204/CI.yml": {
     "mtime": 1779675967.5349262,
     "ast_hash": "d13cf5d2361d8a8b6c3e26b3caf5206b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Test/Debian12/CI.yml": {
+  "CI/Test/Debian12/CI.yml": {
     "mtime": 1779675967.5345268,
     "ast_hash": "b6b1a0353a955282e2963bba84e3485f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Images/Ubuntu2004/CI.yml": {
+  "CI/Images/Ubuntu2004/CI.yml": {
     "mtime": 1779675967.5334632,
     "ast_hash": "b79deff0f9b7076cf55375f8542c8911",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Images/Debian11/CI.yml": {
+  "CI/Images/Debian11/CI.yml": {
     "mtime": 1779675967.5324082,
     "ast_hash": "f88baa2b72288044bd5f756849536a0e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Images/Drawio/CI.yml": {
+  "CI/Images/Drawio/CI.yml": {
     "mtime": 1779675967.5330846,
     "ast_hash": "a2e36c68ee21577459cdadff91816a8f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Images/Ubuntu2204/CI.yml": {
+  "CI/Images/Ubuntu2204/CI.yml": {
     "mtime": 1779675967.53365,
     "ast_hash": "f9af0a2de1d24ff1b256d0d8cb08c4cb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Images/Doxygen/CI.yml": {
+  "CI/Images/Doxygen/CI.yml": {
     "mtime": 1779675967.5329075,
     "ast_hash": "c6904b2b3666283ffce937fe0b1fbebe",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Images/Debian12/CI.yml": {
+  "CI/Images/Debian12/CI.yml": {
     "mtime": 1779675967.5327146,
     "ast_hash": "15578f37a1ec6b5598a511014fd78dcd",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Deploy/Prod.yml": {
+  "CI/Deploy/Prod.yml": {
     "mtime": 1779675967.5319967,
     "ast_hash": "93b1ebd67be48e651e282856eac4973e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Docs/Drawio/CI.yml": {
+  "CI/Docs/Drawio/CI.yml": {
     "mtime": 1779675967.5322547,
     "ast_hash": "de0a47ccc01f5bfe34b7f4be67648176",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Docs/Doxygen/CI.yml": {
+  "CI/Docs/Doxygen/CI.yml": {
     "mtime": 1779675967.5321505,
     "ast_hash": "f8777399a43b0960f34e0fb698e9a214",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Package/Ubuntu2004/CI.yml": {
+  "CI/Package/Ubuntu2004/CI.yml": {
     "mtime": 1779675967.534064,
     "ast_hash": "12de26596c2c53db1a9bcef3088d561c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Package/Debian11/CI.yml": {
+  "CI/Package/Debian11/CI.yml": {
     "mtime": 1779675967.5338597,
     "ast_hash": "a2d4e55b53df69628b9b02c485da1907",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Package/Ubuntu2204/CI.yml": {
+  "CI/Package/Ubuntu2204/CI.yml": {
     "mtime": 1779675967.5341606,
     "ast_hash": "9472d74b1838f977e1b4546d36258451",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Package/Debian12/CI.yml": {
+  "CI/Package/Debian12/CI.yml": {
     "mtime": 1779675967.533954,
     "ast_hash": "bb6bf920bfafd34671363a6e2e991de4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/CMakeLists.txt": {
+  "Source/Renderer/CMakeLists.txt": {
     "mtime": 1779675967.5901592,
     "ast_hash": "35e39a379758a97caef338e776a93a29",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/CMakeLists.txt": {
+  "Source/Core/CMakeLists.txt": {
     "mtime": 1779675967.5434678,
     "ast_hash": "976a5f88f1adc821e050f133d6ff79c9",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/README.md": {
+  "Source/Core/VSDA/EM/README.md": {
     "mtime": 1779675967.5740836,
     "ast_hash": "659b092a1860723f388599eaf0d55a54",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/SimpleCompartmental/README.md": {
+  "Source/Core/Simulator/SimpleCompartmental/README.md": {
     "mtime": 1779675967.5583704,
     "ast_hash": "be35d84bc3bda1f5a6aa4db522145ff9",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/LIFCompartmental/README.md": {
+  "Source/Core/Simulator/LIFCompartmental/README.md": {
     "mtime": 1779675967.5554194,
     "ast_hash": "a55210905902a150a4275d25eec83bb8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/README.md": {
+  "Source/Core/Simulator/Geometries/README.md": {
     "mtime": 1779675967.5538871,
     "ast_hash": "154c43698fc0aa4cbd9afac0ae51b294",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/README.md": {
+  "Source/Core/Simulator/Updaters/README.md": {
     "mtime": 1779675967.5629835,
     "ast_hash": "1c8477cf69ab2b620732e3c1241a3fec",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/RPC/BackgroundProcessIdea.md": {
+  "Source/Core/Simulator/RPC/BackgroundProcessIdea.md": {
     "mtime": 1779675967.5556722,
     "ast_hash": "27433b011bd6f2326b28fb86d45f3c18",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/CompilePlatformInfo/CMakeLists.txt": {
+  "Source/Info/Static/CompilePlatformInfo/CMakeLists.txt": {
     "mtime": 1779675967.5844967,
     "ast_hash": "6feedf577c7673abe4ada4f877270b42",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/CompilePlatformInfo/README.md": {
+  "Source/Info/Static/CompilePlatformInfo/README.md": {
     "mtime": 1779675967.5848653,
     "ast_hash": "79ad03005da0e4b36eadc9b7af7ada90",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/CompileTimeStamp/CMakeLists.txt": {
+  "Source/Info/Static/CompileTimeStamp/CMakeLists.txt": {
     "mtime": 1779675967.5851035,
     "ast_hash": "5ed8147833d5b5061eb2d97cdf2ec1a1",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/CompileTimeStamp/README.md": {
+  "Source/Info/Static/CompileTimeStamp/README.md": {
     "mtime": 1779675967.5852835,
     "ast_hash": "52ede0b35a8fb87655b2b4216246d7fe",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/VersioningSystem/CMakeLists.txt": {
+  "Source/Info/Static/VersioningSystem/CMakeLists.txt": {
     "mtime": 1779675967.5856035,
     "ast_hash": "7c5670affce865af0118a993c0e0f17c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/VersioningSystem/README.md": {
+  "Source/Info/Static/VersioningSystem/README.md": {
     "mtime": 1779675967.5856876,
     "ast_hash": "6927e5460937dea3815d9946938c6b91",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Data/NES.yaml": {
+  "Source/Data/NES.yaml": {
     "mtime": 1779675967.582302,
     "ast_hash": "03d51f480be78f8e9134593a6ad0af41",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Simulating.md": {
+  "Docs/Simulating.md": {
     "mtime": 1779675967.5423543,
     "ast_hash": "a6ddcab8d6d7faefae806a8055d3bf61",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/API.md": {
+  "Docs/API.md": {
     "mtime": 1779675967.536566,
     "ast_hash": "542a7c73fc6e5515221f48bc15e6105d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Neuroglancer-legacy-mesh.md": {
+  "Docs/Neuroglancer-legacy-mesh.md": {
     "mtime": 1779675967.5421138,
     "ast_hash": "cb96d734ede9c8c97ace82106e583383",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/SaveModel.md": {
+  "Docs/SaveModel.md": {
     "mtime": 1779675967.5422065,
     "ast_hash": "bf367ed569da70021013dbea39c0def2",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Collected-Documentation.md": {
+  "Docs/Collected-Documentation.md": {
     "mtime": 1779675967.5369127,
     "ast_hash": "45a06619db5f60f2c442213628f9e854",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/MacOS.md": {
+  "Docs/MacOS.md": {
     "mtime": 1779675967.5419111,
     "ast_hash": "9c0f99e27dea054020ad99194d4b2dbf",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md": {
     "mtime": 1779675967.5383303,
     "ast_hash": "f24d350948e139dfaf24c2ab1e04b336",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/footer.html": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/footer.html": {
     "mtime": 1779675967.5390267,
     "ast_hash": "6204637f595573cf60ba436b0f9f2ec5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/header.html": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/header.html": {
     "mtime": 1779675967.5391755,
     "ast_hash": "4bc7cdefba127c5f1629c74eb1690be7",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/.github/workflows/publish.yaml": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/.github/workflows/publish.yaml": {
     "mtime": 1779675967.5379114,
     "ast_hash": "67ee255650ba28dc51cad6aa610fe0d0",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/agent notes/mac-silicon-change-log.md": {
+  "agent notes/mac-silicon-change-log.md": {
     "mtime": 1779675967.59212,
     "ast_hash": "1b9d55eeef602d13d603beea7eb44657",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/agent notes/agent-session-notes-2026-05-09.md": {
+  "agent notes/agent-session-notes-2026-05-09.md": {
     "mtime": 1779675967.5919755,
     "ast_hash": "66e3302e32f2b9b9fc748e4a431eab90",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/graphify/README.md": {
+  "graphify/README.md": {
     "mtime": 1779682688.5973914,
     "ast_hash": "0c4029db503c0a8732671eda3195351d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/README.md": {
+  "Benchmarking/README.md": {
     "mtime": 1779675967.5285032,
     "ast_hash": "dedfe6f3c36b647c254bb54657b33b65",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Image Overlap Process.drawio.png": {
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Image Overlap Process.drawio.png": {
     "mtime": 1779675967.5667913,
     "ast_hash": "9b912fd00f5d9c88f7b7808e7cb86c21",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Image Overlap Process.drawio.png": {
+  "Source/Core/VSDA/EM/VoxelSubsystem/Image Overlap Process.drawio.png": {
     "mtime": 1779675967.575113,
     "ast_hash": "9b912fd00f5d9c88f7b7808e7cb86c21",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Virtual EM Camera Positioning.jpg": {
+  "Docs/Virtual EM Camera Positioning.jpg": {
     "mtime": 1779675967.5427048,
     "ast_hash": "67703427496c056030c9fd9f96cce913",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Source/Assets/Logos/Logo.png": {
+  "Docs/Doxygen/Source/Assets/Logos/Logo.png": {
     "mtime": 1779675967.5372605,
     "ast_hash": "0ff7c677f3932dfddd527fc0a4dbe1bd",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/logo.drawio.svg": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/logo.drawio.svg": {
     "mtime": 1779675967.5415595,
     "ast_hash": "2017986f954ba4c18de8a4db88effda8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/img/screenshot.png": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/img/screenshot.png": {
     "mtime": 1779675967.5408747,
     "ast_hash": "37a42edbb97f1b4bff5c6f1cb2fcee09",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/img/theme-variations.drawio.svg": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/img/theme-variations.drawio.svg": {
     "mtime": 1779675967.541047,
     "ast_hash": "5e236a264f3bc47d1377b357794f0655",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Slow.png": {
+  "Benchmarking/Slow.png": {
     "mtime": 1779675967.5305989,
     "ast_hash": "517f488bc0e67659cadacd968b0d1cda",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Fast.png": {
+  "Benchmarking/Fast.png": {
     "mtime": 1779675967.528359,
     "ast_hash": "c793b8b3842029c7ed227c0afd405ac6",
     "semantic_hash": ""

@@ -1,1 +1,442 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_renderer_bg_renderer_encoderpool_encoderpool_cpp", "label": "EncoderPool.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L1"}, {"id": "encoderpool_encoderpool_encoderthreadmainfunction", "label": "EncoderThreadMainFunction()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L20"}, {"id": "encoderpool_encoderpool_encoderpool", "label": "EncoderPool()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L68"}, {"id": "encoderpool_encoderpool_enqueueimage", "label": "EnqueueImage()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L102"}, {"id": "encoderpool_encoderpool_getqueuesize", "label": "GetQueueSize()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L110"}, {"id": "encoderpool_encoderpool_dequeueimage", "label": "DequeueImage()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L120"}, {"id": "encoderpool_encoderpool_queueencodeoperation", "label": "QueueEncodeOperation()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L138"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_renderer_bg_renderer_encoderpool_encoderpool_cpp", "target": "encoderpool", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L1", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_renderer_bg_renderer_encoderpool_encoderpool_cpp", "target": "chrono", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L3", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_renderer_bg_renderer_encoderpool_encoderpool_cpp", "target": "stb_image", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L6", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_renderer_bg_renderer_encoderpool_encoderpool_cpp", "target": "stb_image_write", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L8", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_renderer_bg_renderer_encoderpool_encoderpool_cpp", "target": "stb_image_resize2", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L10", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_renderer_bg_renderer_encoderpool_encoderpool_cpp", "target": "encoderpool_encoderpool_encoderthreadmainfunction", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L20", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_renderer_bg_renderer_encoderpool_encoderpool_cpp", "target": "encoderpool_encoderpool_encoderpool", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L68", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_renderer_bg_renderer_encoderpool_encoderpool_cpp", "target": "encoderpool_encoderpool_encoderpool", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L85", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_renderer_bg_renderer_encoderpool_encoderpool_cpp", "target": "encoderpool_encoderpool_enqueueimage", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L102", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_renderer_bg_renderer_encoderpool_encoderpool_cpp", "target": "encoderpool_encoderpool_getqueuesize", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L110", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_renderer_bg_renderer_encoderpool_encoderpool_cpp", "target": "encoderpool_encoderpool_dequeueimage", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L120", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_renderer_bg_renderer_encoderpool_encoderpool_cpp", "target": "encoderpool_encoderpool_queueencodeoperation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L138", "weight": 1.0}, {"source": "encoderpool_encoderpool_encoderthreadmainfunction", "target": "encoderpool_encoderpool_dequeueimage", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L30", "weight": 1.0}, {"source": "encoderpool_encoderpool_queueencodeoperation", "target": "encoderpool_encoderpool_enqueueimage", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L139", "weight": 1.0}], "raw_calls": [{"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L22"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L22"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "chrono::high_resolution_clock::now", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L33"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L40"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "unique_ptr<unsigned char>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L45"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "stbir_resize_uint8_linear", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L46"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L46"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "stbi_write_png", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L49"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "c_str", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L49"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L49"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "count", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L52"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "chrono::duration_cast<std::chrono::milliseconds>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L52"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "chrono::high_resolution_clock::now", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L52"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L53"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L53"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L53"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "this_thread::sleep_for", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L61"}, {"caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction", "callee": "chrono::milliseconds", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L61"}, {"caller_nid": "encoderpool_encoderpool_encoderpool", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L69"}, {"caller_nid": "encoderpool_encoderpool_encoderpool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L78"}, {"caller_nid": "encoderpool_encoderpool_encoderpool", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L78"}, {"caller_nid": "encoderpool_encoderpool_encoderpool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L80"}, {"caller_nid": "encoderpool_encoderpool_encoderpool", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L80"}, {"caller_nid": "encoderpool_encoderpool_encoderpool", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L81"}, {"caller_nid": "encoderpool_encoderpool_encoderpool", "callee": "thread", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L81"}, {"caller_nid": "encoderpool_encoderpool_encoderpool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L88"}, {"caller_nid": "encoderpool_encoderpool_encoderpool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L92"}, {"caller_nid": "encoderpool_encoderpool_encoderpool", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L93"}, {"caller_nid": "encoderpool_encoderpool_encoderpool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L94"}, {"caller_nid": "encoderpool_encoderpool_encoderpool", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L94"}, {"caller_nid": "encoderpool_encoderpool_encoderpool", "callee": "join", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L95"}, {"caller_nid": "encoderpool_encoderpool_enqueueimage", "callee": "emplace", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L107"}, {"caller_nid": "encoderpool_encoderpool_getqueuesize", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L115"}, {"caller_nid": "encoderpool_encoderpool_dequeueimage", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L126"}, {"caller_nid": "encoderpool_encoderpool_dequeueimage", "callee": "front", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L127"}, {"caller_nid": "encoderpool_encoderpool_dequeueimage", "callee": "pop", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp", "source_location": "L128"}]}
+{
+  "nodes": [
+    {
+      "id": "source_renderer_bg_renderer_encoderpool_encoderpool_cpp",
+      "label": "EncoderPool.cpp",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "label": "EncoderThreadMainFunction()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L20"
+    },
+    {
+      "id": "encoderpool_encoderpool_encoderpool",
+      "label": "EncoderPool()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L68"
+    },
+    {
+      "id": "encoderpool_encoderpool_enqueueimage",
+      "label": "EnqueueImage()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L102"
+    },
+    {
+      "id": "encoderpool_encoderpool_getqueuesize",
+      "label": "GetQueueSize()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L110"
+    },
+    {
+      "id": "encoderpool_encoderpool_dequeueimage",
+      "label": "DequeueImage()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L120"
+    },
+    {
+      "id": "encoderpool_encoderpool_queueencodeoperation",
+      "label": "QueueEncodeOperation()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L138"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_renderer_bg_renderer_encoderpool_encoderpool_cpp",
+      "target": "encoderpool",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_encoderpool_encoderpool_cpp",
+      "target": "chrono",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_encoderpool_encoderpool_cpp",
+      "target": "stb_image",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_encoderpool_encoderpool_cpp",
+      "target": "stb_image_write",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_encoderpool_encoderpool_cpp",
+      "target": "stb_image_resize2",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_encoderpool_encoderpool_cpp",
+      "target": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_encoderpool_encoderpool_cpp",
+      "target": "encoderpool_encoderpool_encoderpool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_encoderpool_encoderpool_cpp",
+      "target": "encoderpool_encoderpool_encoderpool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_encoderpool_encoderpool_cpp",
+      "target": "encoderpool_encoderpool_enqueueimage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_encoderpool_encoderpool_cpp",
+      "target": "encoderpool_encoderpool_getqueuesize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_encoderpool_encoderpool_cpp",
+      "target": "encoderpool_encoderpool_dequeueimage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_encoderpool_encoderpool_cpp",
+      "target": "encoderpool_encoderpool_queueencodeoperation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "target": "encoderpool_encoderpool_dequeueimage",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "encoderpool_encoderpool_queueencodeoperation",
+      "target": "encoderpool_encoderpool_enqueueimage",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L139",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "chrono::high_resolution_clock::now",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "unique_ptr<unsigned char>",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "stbir_resize_uint8_linear",
+      "is_member_call": false,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "stbi_write_png",
+      "is_member_call": false,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "count",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "chrono::duration_cast<std::chrono::milliseconds>",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "chrono::high_resolution_clock::now",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderthreadmainfunction",
+      "callee": "chrono::milliseconds",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderpool",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderpool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderpool",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderpool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderpool",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderpool",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderpool",
+      "callee": "thread",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderpool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderpool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderpool",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderpool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderpool",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_encoderpool",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_enqueueimage",
+      "callee": "emplace",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_getqueuesize",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L115"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_dequeueimage",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L126"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_dequeueimage",
+      "callee": "front",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "encoderpool_encoderpool_dequeueimage",
+      "callee": "pop",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp",
+      "source_location": "L128"
+    }
+  ]
+}

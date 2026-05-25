@@ -1,1 +1,307 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "label": "Box.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L1"}, {"id": "geometries_box_box", "label": "Box()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L13"}, {"id": "geometries_box_show", "label": "Show()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L31"}, {"id": "geometries_box_volume_um3", "label": "Volume_um3()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L34"}, {"id": "geometries_box_equalslicebounds", "label": "EqualSliceBounds()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L40"}, {"id": "geometries_box_sides", "label": "Sides()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L63"}, {"id": "geometries_box_getboundingbox", "label": "GetBoundingBox()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L71"}, {"id": "geometries_box_ispointinshape", "label": "IsPointInShape()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L89"}, {"id": "geometries_box_add_rectangle_points", "label": "add_rectangle_points()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L102"}, {"id": "geometries_box_writetovoxelarray", "label": "WriteToVoxelArray()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L147"}, {"id": "geometries_box_isinsideregion", "label": "IsInsideRegion()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L209"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "target": "iostream", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L1", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "target": "vector", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L2", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "target": "box", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L4", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "target": "geometries_box_box", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L13", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "target": "geometries_box_box", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L17", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "target": "geometries_box_box", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L23", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "target": "geometries_box_show", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L31", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "target": "geometries_box_volume_um3", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L34", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "target": "geometries_box_equalslicebounds", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L40", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "target": "geometries_box_sides", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L63", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "target": "geometries_box_getboundingbox", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L71", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "target": "geometries_box_ispointinshape", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L89", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "target": "geometries_box_add_rectangle_points", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L102", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "target": "geometries_box_writetovoxelarray", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L147", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_geometries_box_cpp", "target": "geometries_box_isinsideregion", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L209", "weight": 1.0}], "raw_calls": [{"caller_nid": "geometries_box_equalslicebounds", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L45"}, {"caller_nid": "geometries_box_getboundingbox", "callee": "rotate_around_xyz", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L74"}, {"caller_nid": "geometries_box_ispointinshape", "callee": "AllElementsGTE", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L97"}, {"caller_nid": "geometries_box_ispointinshape", "callee": "AllElementsLTE", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L97"}, {"caller_nid": "geometries_box_add_rectangle_points", "callee": "emplace_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L107"}, {"caller_nid": "geometries_box_writetovoxelarray", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L148"}, {"caller_nid": "geometries_box_writetovoxelarray", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L149"}, {"caller_nid": "geometries_box_writetovoxelarray", "callee": "rotate_around_xyz", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L165"}, {"caller_nid": "geometries_box_writetovoxelarray", "callee": "rotate_around_xyz", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L169"}, {"caller_nid": "geometries_box_writetovoxelarray", "callee": "SetVoxelAtPosition", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L172"}, {"caller_nid": "geometries_box_isinsideregion", "callee": "rotate_around_xyz", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L215"}, {"caller_nid": "geometries_box_isinsideregion", "callee": "IsIntersecting", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp", "source_location": "L223"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_geometries_box_cpp",
+      "label": "Box.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "geometries_box_box",
+      "label": "Box()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L13"
+    },
+    {
+      "id": "geometries_box_show",
+      "label": "Show()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L31"
+    },
+    {
+      "id": "geometries_box_volume_um3",
+      "label": "Volume_um3()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L34"
+    },
+    {
+      "id": "geometries_box_equalslicebounds",
+      "label": "EqualSliceBounds()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L40"
+    },
+    {
+      "id": "geometries_box_sides",
+      "label": "Sides()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L63"
+    },
+    {
+      "id": "geometries_box_getboundingbox",
+      "label": "GetBoundingBox()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L71"
+    },
+    {
+      "id": "geometries_box_ispointinshape",
+      "label": "IsPointInShape()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L89"
+    },
+    {
+      "id": "geometries_box_add_rectangle_points",
+      "label": "add_rectangle_points()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L102"
+    },
+    {
+      "id": "geometries_box_writetovoxelarray",
+      "label": "WriteToVoxelArray()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L147"
+    },
+    {
+      "id": "geometries_box_isinsideregion",
+      "label": "IsInsideRegion()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L209"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_geometries_box_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_box_cpp",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_box_cpp",
+      "target": "box",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_box_cpp",
+      "target": "geometries_box_box",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_box_cpp",
+      "target": "geometries_box_box",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_box_cpp",
+      "target": "geometries_box_box",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_box_cpp",
+      "target": "geometries_box_show",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_box_cpp",
+      "target": "geometries_box_volume_um3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_box_cpp",
+      "target": "geometries_box_equalslicebounds",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_box_cpp",
+      "target": "geometries_box_sides",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_box_cpp",
+      "target": "geometries_box_getboundingbox",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_box_cpp",
+      "target": "geometries_box_ispointinshape",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_box_cpp",
+      "target": "geometries_box_add_rectangle_points",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_box_cpp",
+      "target": "geometries_box_writetovoxelarray",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L147",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_box_cpp",
+      "target": "geometries_box_isinsideregion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L209",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "geometries_box_equalslicebounds",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "geometries_box_getboundingbox",
+      "callee": "rotate_around_xyz",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "geometries_box_ispointinshape",
+      "callee": "AllElementsGTE",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "geometries_box_ispointinshape",
+      "callee": "AllElementsLTE",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "geometries_box_add_rectangle_points",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "geometries_box_writetovoxelarray",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L148"
+    },
+    {
+      "caller_nid": "geometries_box_writetovoxelarray",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L149"
+    },
+    {
+      "caller_nid": "geometries_box_writetovoxelarray",
+      "callee": "rotate_around_xyz",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L165"
+    },
+    {
+      "caller_nid": "geometries_box_writetovoxelarray",
+      "callee": "rotate_around_xyz",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L169"
+    },
+    {
+      "caller_nid": "geometries_box_writetovoxelarray",
+      "callee": "SetVoxelAtPosition",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L172"
+    },
+    {
+      "caller_nid": "geometries_box_isinsideregion",
+      "callee": "rotate_around_xyz",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L215"
+    },
+    {
+      "caller_nid": "geometries_box_isinsideregion",
+      "callee": "IsIntersecting",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/Box.cpp",
+      "source_location": "L223"
+    }
+  ]
+}

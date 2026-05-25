@@ -1,1 +1,804 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp", "label": "VoxelArrayGenerator.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L1"}, {"id": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion", "label": "IsShapeInsideRegion()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L30"}, {"id": "voxelsubsystem_voxelarraygenerator_subdivideline", "label": "SubdivideLine()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L52"}, {"id": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "label": "CreateVoxelArrayFromSimulation()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L82"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp", "target": "vector", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L7", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp", "target": "filesystem", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L8", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp", "target": "chrono", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L9", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp", "target": "thread", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L10", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp", "target": "task", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L15", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp", "target": "shapetovoxel", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L16", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp", "target": "voxelarraygenerator", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L17", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp", "target": "teargenerator", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L19", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp", "target": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L30", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp", "target": "voxelsubsystem_voxelarraygenerator_subdivideline", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L52", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp", "target": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L82", "weight": 1.0}, {"source": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "target": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L160", "weight": 1.0}], "raw_calls": [{"caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion", "callee": "IsSphere", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L34"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion", "callee": "GetSphere", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L35"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion", "callee": "IsInsideRegion", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L36"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion", "callee": "IsBox", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L38"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion", "callee": "GetBox", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L39"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion", "callee": "IsInsideRegion", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L40"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion", "callee": "IsCylinder", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L42"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion", "callee": "GetCylinder", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L43"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion", "callee": "IsInsideRegion", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L44"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_subdivideline", "callee": "sqrt", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L59"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_subdivideline", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L73"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L83"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L84"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L85"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L86"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L88"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L88"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "GetNumCompartments", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L112"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L113"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L113"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "chrono::high_resolution_clock::now", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L124"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "GetCompartmentByIdx", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L128"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "chrono::high_resolution_clock::now", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L134"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "count", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L136"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L138"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L138"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L139"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L139"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L139"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L140"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "IsSphere", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L167"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "GetSphere", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L170"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L171"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "ceil", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L177"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "make_unique<VoxelArrayGenerator::Task>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L185"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "QueueWorkOperation", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L202"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L202"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L205"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "move", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L205"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "IsCylinder", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L222"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "GetCylinder", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L225"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "Distance", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L228"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L229"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L231"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "ceil", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L243"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "make_unique<VoxelArrayGenerator::Task>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L255"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "QueueWorkOperation", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L277"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L277"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L280"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "move", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L280"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "make_unique<VoxelArrayGenerator::Task>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L287"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "QueueWorkOperation", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L310"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L310"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L313"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "move", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L313"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L330"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L337"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L337"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L337"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L337"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L338"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L338"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "GetNumReceptors", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L342"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L343"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L343"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "make_unique<VoxelArrayGenerator::Task>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L356"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "IsBox", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L364"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "GetBox", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L365"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "Volume_um3", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L366"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L371"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L371"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L371"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L371"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "QueueWorkOperation", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L384"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L384"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L387"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "move", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L387"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "GetZ", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L395"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "Distribution", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L401"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "GenerateTear", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L405"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "Generator", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L405"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L416"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L416"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "GetQueueSize", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L424"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "GetQueueSize", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L428"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "this_thread::sleep_for", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L431"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "chrono::milliseconds", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L431"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L434"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L434"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "GetQueueSize", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L434"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L439"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "this_thread::sleep_for", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L441"}, {"caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation", "callee": "chrono::milliseconds", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp", "source_location": "L441"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp",
+      "label": "VoxelArrayGenerator.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion",
+      "label": "IsShapeInsideRegion()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L30"
+    },
+    {
+      "id": "voxelsubsystem_voxelarraygenerator_subdivideline",
+      "label": "SubdivideLine()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L52"
+    },
+    {
+      "id": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "label": "CreateVoxelArrayFromSimulation()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L82"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp",
+      "target": "filesystem",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp",
+      "target": "chrono",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp",
+      "target": "thread",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp",
+      "target": "task",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp",
+      "target": "shapetovoxel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp",
+      "target": "voxelarraygenerator",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp",
+      "target": "teargenerator",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp",
+      "target": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp",
+      "target": "voxelsubsystem_voxelarraygenerator_subdivideline",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_cpp",
+      "target": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "target": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L160",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion",
+      "callee": "IsSphere",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L34"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion",
+      "callee": "GetSphere",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion",
+      "callee": "IsInsideRegion",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion",
+      "callee": "IsBox",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion",
+      "callee": "GetBox",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion",
+      "callee": "IsInsideRegion",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion",
+      "callee": "IsCylinder",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion",
+      "callee": "GetCylinder",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_isshapeinsideregion",
+      "callee": "IsInsideRegion",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_subdivideline",
+      "callee": "sqrt",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_subdivideline",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L85"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "GetNumCompartments",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L112"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L113"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L113"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "chrono::high_resolution_clock::now",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "GetCompartmentByIdx",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "chrono::high_resolution_clock::now",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "count",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L136"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L138"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L138"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L139"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L139"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L139"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L140"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "IsSphere",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L167"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "GetSphere",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L170"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L171"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "ceil",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L177"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "make_unique<VoxelArrayGenerator::Task>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L185"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "QueueWorkOperation",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L202"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L202"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L205"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "move",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L205"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "IsCylinder",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L222"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "GetCylinder",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L225"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "Distance",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L228"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L229"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L231"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "ceil",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L243"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "make_unique<VoxelArrayGenerator::Task>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L255"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "QueueWorkOperation",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L277"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L277"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L280"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "move",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L280"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "make_unique<VoxelArrayGenerator::Task>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L287"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "QueueWorkOperation",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L310"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L310"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L313"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "move",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L313"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L330"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L337"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L337"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L337"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L337"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L338"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L338"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "GetNumReceptors",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L342"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L343"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L343"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "make_unique<VoxelArrayGenerator::Task>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L356"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "IsBox",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L364"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "GetBox",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L365"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "Volume_um3",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L366"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L371"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L371"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L371"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L371"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "QueueWorkOperation",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L384"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L384"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L387"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "move",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L387"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "GetZ",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L395"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "Distribution",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L401"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "GenerateTear",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L405"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "Generator",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L405"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L416"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L416"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "GetQueueSize",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L424"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "GetQueueSize",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L428"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L431"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "chrono::milliseconds",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L431"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L434"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L434"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "GetQueueSize",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L434"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L439"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L441"
+    },
+    {
+      "caller_nid": "voxelsubsystem_voxelarraygenerator_createvoxelarrayfromsimulation",
+      "callee": "chrono::milliseconds",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp",
+      "source_location": "L441"
+    }
+  ]
+}

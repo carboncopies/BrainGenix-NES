@@ -1,1 +1,492 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "label": "SafeClient.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L1"}, {"id": "rpc_safeclient_runversioncheck", "label": "RunVersionCheck()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L25"}, {"id": "rpc_safeclient_connect", "label": "Connect()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L65"}, {"id": "rpc_safeclient_safeclient", "label": "SafeClient()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L97"}, {"id": "rpc_safeclient_settimeout", "label": "SetTimeout()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L110"}, {"id": "rpc_safeclient_sethostport", "label": "SetHostPort()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L114"}, {"id": "rpc_safeclient_reconnect", "label": "Reconnect()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L120"}, {"id": "rpc_safeclient_makejsonquery", "label": "MakeJSONQuery()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L124"}, {"id": "rpc_safeclient_rpcmanagerthread", "label": "RPCManagerThread()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L164"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "thread", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L7", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "rpc_error", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L10", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "safeclient", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L14", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "rpchandlerhelper", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L16", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "apistatuscode", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L17", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "version", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L19", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "rpc_safeclient_runversioncheck", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L25", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "rpc_safeclient_connect", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L65", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "rpc_safeclient_safeclient", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L97", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "rpc_safeclient_safeclient", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L105", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "rpc_safeclient_settimeout", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L110", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "rpc_safeclient_sethostport", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L114", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "rpc_safeclient_reconnect", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L120", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "rpc_safeclient_makejsonquery", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L124", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "rpc_safeclient_makejsonquery", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L144", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_safeclient_cpp", "target": "rpc_safeclient_rpcmanagerthread", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L164", "weight": 1.0}, {"source": "rpc_safeclient_runversioncheck", "target": "rpc_safeclient_makejsonquery", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L33", "weight": 1.0}, {"source": "rpc_safeclient_connect", "target": "rpc_safeclient_runversioncheck", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L88", "weight": 1.0}, {"source": "rpc_safeclient_rpcmanagerthread", "target": "rpc_safeclient_runversioncheck", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L176", "weight": 1.0}, {"source": "rpc_safeclient_rpcmanagerthread", "target": "rpc_safeclient_connect", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L180", "weight": 1.0}], "raw_calls": [{"caller_nid": "rpc_safeclient_runversioncheck", "callee": "get_connection_state", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L37"}, {"caller_nid": "rpc_safeclient_runversioncheck", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L39"}, {"caller_nid": "rpc_safeclient_runversioncheck", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L43"}, {"caller_nid": "rpc_safeclient_runversioncheck", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L52"}, {"caller_nid": "rpc_safeclient_runversioncheck", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L57"}, {"caller_nid": "rpc_safeclient_connect", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L74"}, {"caller_nid": "rpc_safeclient_connect", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L74"}, {"caller_nid": "rpc_safeclient_connect", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L75"}, {"caller_nid": "rpc_safeclient_connect", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L76"}, {"caller_nid": "rpc_safeclient_connect", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L76"}, {"caller_nid": "rpc_safeclient_connect", "callee": "make_unique<::rpc::client>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L80"}, {"caller_nid": "rpc_safeclient_connect", "callee": "c_str", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L80"}, {"caller_nid": "rpc_safeclient_connect", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L82"}, {"caller_nid": "rpc_safeclient_connect", "callee": "set_timeout", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L85"}, {"caller_nid": "rpc_safeclient_safeclient", "callee": "thread", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L101"}, {"caller_nid": "rpc_safeclient_safeclient", "callee": "join", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L107"}, {"caller_nid": "rpc_safeclient_makejsonquery", "callee": "as<std::string>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L129"}, {"caller_nid": "rpc_safeclient_makejsonquery", "callee": "call", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L129"}, {"caller_nid": "rpc_safeclient_makejsonquery", "callee": "c_str", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L129"}, {"caller_nid": "rpc_safeclient_makejsonquery", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L131"}, {"caller_nid": "rpc_safeclient_makejsonquery", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L134"}, {"caller_nid": "rpc_safeclient_makejsonquery", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L137"}, {"caller_nid": "rpc_safeclient_makejsonquery", "callee": "as<std::string>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L149"}, {"caller_nid": "rpc_safeclient_makejsonquery", "callee": "call", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L149"}, {"caller_nid": "rpc_safeclient_makejsonquery", "callee": "c_str", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L149"}, {"caller_nid": "rpc_safeclient_makejsonquery", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L151"}, {"caller_nid": "rpc_safeclient_makejsonquery", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L154"}, {"caller_nid": "rpc_safeclient_makejsonquery", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L157"}, {"caller_nid": "rpc_safeclient_rpcmanagerthread", "callee": "this_thread::sleep_for", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L168"}, {"caller_nid": "rpc_safeclient_rpcmanagerthread", "callee": "chrono::milliseconds", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L168"}, {"caller_nid": "rpc_safeclient_rpcmanagerthread", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L181"}, {"caller_nid": "rpc_safeclient_rpcmanagerthread", "callee": "this_thread::sleep_for", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L186"}, {"caller_nid": "rpc_safeclient_rpcmanagerthread", "callee": "chrono::milliseconds", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp", "source_location": "L186"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_rpc_safeclient_cpp",
+      "label": "SafeClient.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "rpc_safeclient_runversioncheck",
+      "label": "RunVersionCheck()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L25"
+    },
+    {
+      "id": "rpc_safeclient_connect",
+      "label": "Connect()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L65"
+    },
+    {
+      "id": "rpc_safeclient_safeclient",
+      "label": "SafeClient()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L97"
+    },
+    {
+      "id": "rpc_safeclient_settimeout",
+      "label": "SetTimeout()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L110"
+    },
+    {
+      "id": "rpc_safeclient_sethostport",
+      "label": "SetHostPort()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L114"
+    },
+    {
+      "id": "rpc_safeclient_reconnect",
+      "label": "Reconnect()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L120"
+    },
+    {
+      "id": "rpc_safeclient_makejsonquery",
+      "label": "MakeJSONQuery()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L124"
+    },
+    {
+      "id": "rpc_safeclient_rpcmanagerthread",
+      "label": "RPCManagerThread()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L164"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "thread",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "rpc_error",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "safeclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "rpchandlerhelper",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "apistatuscode",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "version",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "rpc_safeclient_runversioncheck",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "rpc_safeclient_connect",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "rpc_safeclient_safeclient",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "rpc_safeclient_safeclient",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "rpc_safeclient_settimeout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "rpc_safeclient_sethostport",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "rpc_safeclient_reconnect",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "rpc_safeclient_makejsonquery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "rpc_safeclient_makejsonquery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_safeclient_cpp",
+      "target": "rpc_safeclient_rpcmanagerthread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_safeclient_runversioncheck",
+      "target": "rpc_safeclient_makejsonquery",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_safeclient_connect",
+      "target": "rpc_safeclient_runversioncheck",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_safeclient_rpcmanagerthread",
+      "target": "rpc_safeclient_runversioncheck",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L176",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_safeclient_rpcmanagerthread",
+      "target": "rpc_safeclient_connect",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L180",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "rpc_safeclient_runversioncheck",
+      "callee": "get_connection_state",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "rpc_safeclient_runversioncheck",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "rpc_safeclient_runversioncheck",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "rpc_safeclient_runversioncheck",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "rpc_safeclient_runversioncheck",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "rpc_safeclient_connect",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "rpc_safeclient_connect",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "rpc_safeclient_connect",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "rpc_safeclient_connect",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "rpc_safeclient_connect",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "rpc_safeclient_connect",
+      "callee": "make_unique<::rpc::client>",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "rpc_safeclient_connect",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "rpc_safeclient_connect",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L82"
+    },
+    {
+      "caller_nid": "rpc_safeclient_connect",
+      "callee": "set_timeout",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L85"
+    },
+    {
+      "caller_nid": "rpc_safeclient_safeclient",
+      "callee": "thread",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L101"
+    },
+    {
+      "caller_nid": "rpc_safeclient_safeclient",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "rpc_safeclient_makejsonquery",
+      "callee": "as<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "rpc_safeclient_makejsonquery",
+      "callee": "call",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "rpc_safeclient_makejsonquery",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "rpc_safeclient_makejsonquery",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "rpc_safeclient_makejsonquery",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "rpc_safeclient_makejsonquery",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "rpc_safeclient_makejsonquery",
+      "callee": "as<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L149"
+    },
+    {
+      "caller_nid": "rpc_safeclient_makejsonquery",
+      "callee": "call",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L149"
+    },
+    {
+      "caller_nid": "rpc_safeclient_makejsonquery",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L149"
+    },
+    {
+      "caller_nid": "rpc_safeclient_makejsonquery",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L151"
+    },
+    {
+      "caller_nid": "rpc_safeclient_makejsonquery",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L154"
+    },
+    {
+      "caller_nid": "rpc_safeclient_makejsonquery",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L157"
+    },
+    {
+      "caller_nid": "rpc_safeclient_rpcmanagerthread",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L168"
+    },
+    {
+      "caller_nid": "rpc_safeclient_rpcmanagerthread",
+      "callee": "chrono::milliseconds",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L168"
+    },
+    {
+      "caller_nid": "rpc_safeclient_rpcmanagerthread",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L181"
+    },
+    {
+      "caller_nid": "rpc_safeclient_rpcmanagerthread",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L186"
+    },
+    {
+      "caller_nid": "rpc_safeclient_rpcmanagerthread",
+      "callee": "chrono::milliseconds",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/SafeClient.cpp",
+      "source_location": "L186"
+    }
+  ]
+}

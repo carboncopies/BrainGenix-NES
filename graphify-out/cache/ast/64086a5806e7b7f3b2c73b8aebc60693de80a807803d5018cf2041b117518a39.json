@@ -1,1 +1,335 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_enginecontroller_cpp", "label": "EngineController.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L1"}, {"id": "simulator_enginecontroller_simulationenginethread", "label": "SimulationEngineThread()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L10"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_enginecontroller_cpp", "target": "enginecontroller", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L1", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_enginecontroller_cpp", "target": "simulator_enginecontroller_simulationenginethread", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L10", "weight": 1.0}], "raw_calls": [{"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L11"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L12"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L13"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L14"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "pthread_setname_np", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L18"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "c_str", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L18"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L18"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L18"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "pthread_setname_np", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L20"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "pthread_self", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L20"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "c_str", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L20"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L20"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L20"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L24"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L33"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L37"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L37"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "Reset", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L38"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L42"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L42"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "RunFor", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L43"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L47"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L47"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "QueueRenderOperation", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L49"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "this_thread::sleep_for", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L51"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "chrono::milliseconds", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L51"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L57"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L57"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "QueueRenderOperation", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L59"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "this_thread::sleep_for", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L61"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "chrono::milliseconds", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L61"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L67"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L67"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "QueueRenderOperation", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L69"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "this_thread::sleep_for", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L71"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "chrono::milliseconds", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L71"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L77"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L81"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L81"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "this_thread::sleep_for", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L83"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "chrono::milliseconds", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L83"}, {"caller_nid": "simulator_enginecontroller_simulationenginethread", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp", "source_location": "L89"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_enginecontroller_cpp",
+      "label": "EngineController.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "simulator_enginecontroller_simulationenginethread",
+      "label": "SimulationEngineThread()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L10"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_enginecontroller_cpp",
+      "target": "enginecontroller",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_enginecontroller_cpp",
+      "target": "simulator_enginecontroller_simulationenginethread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L10",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L11"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L12"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L13"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "pthread_setname_np",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "pthread_setname_np",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "pthread_self",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L24"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "Reset",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "RunFor",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "QueueRenderOperation",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "chrono::milliseconds",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "QueueRenderOperation",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "chrono::milliseconds",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "QueueRenderOperation",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "chrono::milliseconds",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "chrono::milliseconds",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "simulator_enginecontroller_simulationenginethread",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/EngineController.cpp",
+      "source_location": "L89"
+    }
+  ]
+}
