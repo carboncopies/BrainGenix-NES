@@ -1,0 +1,7 @@
+# Graphify
+
+This folder marks the repository's Graphify integration point for AI agents and maintainers.
+
+Run `./Tools/Setup.sh` to install Graphify into the repo virtual environment, then run `./Tools/Tag.sh` to generate or update the knowledge graph before creating a release tag.
+
+Generated Graphify output is written to `graphify-out/`, which is intentionally ignored by git.
