@@ -1,1 +1,388 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_teargenerator_cpp", "label": "TearGenerator.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L1"}, {"id": "voxelsubsystem_teargenerator_point2d", "label": "Point2D", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L29"}, {"id": "voxelsubsystem_teargenerator_point2d_x", "label": "X", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L30"}, {"id": "voxelsubsystem_teargenerator_point2d_y", "label": "Y", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L31"}, {"id": "voxelsubsystem_teargenerator_pointdistance", "label": "PointDistance()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L34"}, {"id": "voxelsubsystem_teargenerator_generatepoint", "label": "GeneratePoint()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L38"}, {"id": "voxelsubsystem_teargenerator_generatetear", "label": "GenerateTear()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L52"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_teargenerator_cpp", "target": "vector", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L7", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_teargenerator_cpp", "target": "filesystem", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L8", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_teargenerator_cpp", "target": "chrono", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L9", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_teargenerator_cpp", "target": "thread", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L10", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_teargenerator_cpp", "target": "cmath", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L11", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_teargenerator_cpp", "target": "task", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L16", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_teargenerator_cpp", "target": "shapetovoxel", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L17", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_teargenerator_cpp", "target": "voxelarraygenerator", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L18", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_teargenerator_cpp", "target": "voxelsubsystem_teargenerator_point2d", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L29", "weight": 1.0}, {"source": "voxelsubsystem_teargenerator_point2d", "target": "voxelsubsystem_teargenerator_point2d_x", "relation": "defines", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L30", "weight": 1.0, "context": "field"}, {"source": "voxelsubsystem_teargenerator_point2d", "target": "voxelsubsystem_teargenerator_point2d_y", "relation": "defines", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L31", "weight": 1.0, "context": "field"}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_teargenerator_cpp", "target": "voxelsubsystem_teargenerator_pointdistance", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L34", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_teargenerator_cpp", "target": "voxelsubsystem_teargenerator_generatepoint", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L38", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_voxelsubsystem_teargenerator_cpp", "target": "voxelsubsystem_teargenerator_generatetear", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L52", "weight": 1.0}, {"source": "voxelsubsystem_teargenerator_generatetear", "target": "voxelsubsystem_teargenerator_generatepoint", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L76", "weight": 1.0}, {"source": "voxelsubsystem_teargenerator_generatetear", "target": "voxelsubsystem_teargenerator_pointdistance", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L90", "weight": 1.0}], "raw_calls": [{"caller_nid": "voxelsubsystem_teargenerator_pointdistance", "callee": "sqrt", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L35"}, {"caller_nid": "voxelsubsystem_teargenerator_pointdistance", "callee": "pow", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L35"}, {"caller_nid": "voxelsubsystem_teargenerator_pointdistance", "callee": "pow", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L35"}, {"caller_nid": "voxelsubsystem_teargenerator_generatepoint", "callee": "_XDist", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L41"}, {"caller_nid": "voxelsubsystem_teargenerator_generatepoint", "callee": "_YDist", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L42"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "GetX", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L68"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "GetY", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L69"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "TearOrigin", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L72"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "PointGenerator", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L72"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "GetY", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L83"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "abs", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L90"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "abs", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L90"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L95"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L108"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L115"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L116"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "XJitter", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L117"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "YJitter", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L118"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L119"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L125"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L127"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "make_unique<VoxelArrayGenerator::Task>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L127"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L130"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L130"}, {"caller_nid": "voxelsubsystem_teargenerator_generatetear", "callee": "QueueWorkOperation", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp", "source_location": "L157"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_voxelsubsystem_teargenerator_cpp",
+      "label": "TearGenerator.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "voxelsubsystem_teargenerator_point2d",
+      "label": "Point2D",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L29"
+    },
+    {
+      "id": "voxelsubsystem_teargenerator_point2d_x",
+      "label": "X",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L30"
+    },
+    {
+      "id": "voxelsubsystem_teargenerator_point2d_y",
+      "label": "Y",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L31"
+    },
+    {
+      "id": "voxelsubsystem_teargenerator_pointdistance",
+      "label": "PointDistance()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L34"
+    },
+    {
+      "id": "voxelsubsystem_teargenerator_generatepoint",
+      "label": "GeneratePoint()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L38"
+    },
+    {
+      "id": "voxelsubsystem_teargenerator_generatetear",
+      "label": "GenerateTear()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L52"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_teargenerator_cpp",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_teargenerator_cpp",
+      "target": "filesystem",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_teargenerator_cpp",
+      "target": "chrono",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_teargenerator_cpp",
+      "target": "thread",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_teargenerator_cpp",
+      "target": "cmath",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_teargenerator_cpp",
+      "target": "task",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_teargenerator_cpp",
+      "target": "shapetovoxel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_teargenerator_cpp",
+      "target": "voxelarraygenerator",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_teargenerator_cpp",
+      "target": "voxelsubsystem_teargenerator_point2d",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "voxelsubsystem_teargenerator_point2d",
+      "target": "voxelsubsystem_teargenerator_point2d_x",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "voxelsubsystem_teargenerator_point2d",
+      "target": "voxelsubsystem_teargenerator_point2d_y",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_teargenerator_cpp",
+      "target": "voxelsubsystem_teargenerator_pointdistance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_teargenerator_cpp",
+      "target": "voxelsubsystem_teargenerator_generatepoint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_teargenerator_cpp",
+      "target": "voxelsubsystem_teargenerator_generatetear",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "voxelsubsystem_teargenerator_generatetear",
+      "target": "voxelsubsystem_teargenerator_generatepoint",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "voxelsubsystem_teargenerator_generatetear",
+      "target": "voxelsubsystem_teargenerator_pointdistance",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L90",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_pointdistance",
+      "callee": "sqrt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_pointdistance",
+      "callee": "pow",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_pointdistance",
+      "callee": "pow",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatepoint",
+      "callee": "_XDist",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatepoint",
+      "callee": "_YDist",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "GetX",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "GetY",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "TearOrigin",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L72"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "PointGenerator",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L72"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "GetY",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L108"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L115"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "XJitter",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L117"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "YJitter",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L118"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "make_unique<VoxelArrayGenerator::Task>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "voxelsubsystem_teargenerator_generatetear",
+      "callee": "QueueWorkOperation",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp",
+      "source_location": "L157"
+    }
+  ]
+}

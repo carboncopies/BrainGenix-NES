@@ -1,1 +1,507 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_renderpool_cpp", "label": "RenderPool.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L1"}, {"id": "vsda_renderpool_rendererthreadmainfunction", "label": "RendererThreadMainFunction()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L25"}, {"id": "vsda_renderpool_renderpool", "label": "RenderPool()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L60"}, {"id": "vsda_renderpool_enqueuesimulation", "label": "EnqueueSimulation()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L119"}, {"id": "vsda_renderpool_getqueuesize", "label": "GetQueueSize()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L127"}, {"id": "vsda_renderpool_dequeuesimulation", "label": "DequeueSimulation()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L137"}, {"id": "vsda_renderpool_queuerenderoperation", "label": "QueueRenderOperation()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L155"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_renderpool_cpp", "target": "renderpool", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L11", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_renderpool_cpp", "target": "vsda_renderpool_rendererthreadmainfunction", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L25", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_renderpool_cpp", "target": "vsda_renderpool_renderpool", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L60", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_renderpool_cpp", "target": "vsda_renderpool_renderpool", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L102", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_renderpool_cpp", "target": "vsda_renderpool_enqueuesimulation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L119", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_renderpool_cpp", "target": "vsda_renderpool_getqueuesize", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L127", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_renderpool_cpp", "target": "vsda_renderpool_dequeuesimulation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L137", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_renderpool_cpp", "target": "vsda_renderpool_queuerenderoperation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L155", "weight": 1.0}, {"source": "vsda_renderpool_rendererthreadmainfunction", "target": "vsda_renderpool_dequeuesimulation", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L34", "weight": 1.0}, {"source": "vsda_renderpool_queuerenderoperation", "target": "vsda_renderpool_enqueuesimulation", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L156", "weight": 1.0}], "raw_calls": [{"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L27"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L27"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L37"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L37"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L37"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L39"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L39"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L39"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "ExecuteSubRenderOperations", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L40"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L40"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L40"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L42"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L42"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L42"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "BG::NES::VSDA::Calcium::ExecuteCaSubRenderOperations", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L43"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L43"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L43"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L45"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L45"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L45"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "ExecuteConversionOperation", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L46"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L46"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "this_thread::sleep_for", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L53"}, {"caller_nid": "vsda_renderpool_rendererthreadmainfunction", "callee": "chrono::milliseconds", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L53"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L61"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L62"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "thread::hardware_concurrency", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L77"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "make_unique<ConversionPool::ConversionPool>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L78"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "thread::hardware_concurrency", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L82"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "make_unique<VoxelArrayGenerator::ArrayGeneratorPool>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L83"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "make_unique<::BG::NES::VSDA::Calcium::VoxelArrayGenerator::ArrayGeneratorPool>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L84"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "thread::hardware_concurrency", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L88"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "make_unique<ImageProcessorPool>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L89"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "make_unique<::BG::NES::VSDA::Calcium::ImageProcessorPool>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L90"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L95"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L95"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L97"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L97"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L98"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "thread", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L98"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L105"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L109"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L110"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L111"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L111"}, {"caller_nid": "vsda_renderpool_renderpool", "callee": "join", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L112"}, {"caller_nid": "vsda_renderpool_enqueuesimulation", "callee": "emplace", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L124"}, {"caller_nid": "vsda_renderpool_getqueuesize", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L132"}, {"caller_nid": "vsda_renderpool_dequeuesimulation", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L143"}, {"caller_nid": "vsda_renderpool_dequeuesimulation", "callee": "front", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L144"}, {"caller_nid": "vsda_renderpool_dequeuesimulation", "callee": "pop", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp", "source_location": "L145"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_renderpool_cpp",
+      "label": "RenderPool.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "vsda_renderpool_rendererthreadmainfunction",
+      "label": "RendererThreadMainFunction()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L25"
+    },
+    {
+      "id": "vsda_renderpool_renderpool",
+      "label": "RenderPool()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L60"
+    },
+    {
+      "id": "vsda_renderpool_enqueuesimulation",
+      "label": "EnqueueSimulation()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L119"
+    },
+    {
+      "id": "vsda_renderpool_getqueuesize",
+      "label": "GetQueueSize()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L127"
+    },
+    {
+      "id": "vsda_renderpool_dequeuesimulation",
+      "label": "DequeueSimulation()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L137"
+    },
+    {
+      "id": "vsda_renderpool_queuerenderoperation",
+      "label": "QueueRenderOperation()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L155"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_renderpool_cpp",
+      "target": "renderpool",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_renderpool_cpp",
+      "target": "vsda_renderpool_rendererthreadmainfunction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_renderpool_cpp",
+      "target": "vsda_renderpool_renderpool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_renderpool_cpp",
+      "target": "vsda_renderpool_renderpool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_renderpool_cpp",
+      "target": "vsda_renderpool_enqueuesimulation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_renderpool_cpp",
+      "target": "vsda_renderpool_getqueuesize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L127",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_renderpool_cpp",
+      "target": "vsda_renderpool_dequeuesimulation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_renderpool_cpp",
+      "target": "vsda_renderpool_queuerenderoperation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "vsda_renderpool_rendererthreadmainfunction",
+      "target": "vsda_renderpool_dequeuesimulation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "vsda_renderpool_queuerenderoperation",
+      "target": "vsda_renderpool_enqueuesimulation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L156",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L27"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L27"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "ExecuteSubRenderOperations",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "BG::NES::VSDA::Calcium::ExecuteCaSubRenderOperations",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "ExecuteConversionOperation",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "vsda_renderpool_rendererthreadmainfunction",
+      "callee": "chrono::milliseconds",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "thread::hardware_concurrency",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "make_unique<ConversionPool::ConversionPool>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "thread::hardware_concurrency",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L82"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "make_unique<VoxelArrayGenerator::ArrayGeneratorPool>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "make_unique<::BG::NES::VSDA::Calcium::VoxelArrayGenerator::ArrayGeneratorPool>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "thread::hardware_concurrency",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "make_unique<ImageProcessorPool>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L89"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "make_unique<::BG::NES::VSDA::Calcium::ImageProcessorPool>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "thread",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L105"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L109"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L110"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L111"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L111"
+    },
+    {
+      "caller_nid": "vsda_renderpool_renderpool",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L112"
+    },
+    {
+      "caller_nid": "vsda_renderpool_enqueuesimulation",
+      "callee": "emplace",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "vsda_renderpool_getqueuesize",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L132"
+    },
+    {
+      "caller_nid": "vsda_renderpool_dequeuesimulation",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L143"
+    },
+    {
+      "caller_nid": "vsda_renderpool_dequeuesimulation",
+      "callee": "front",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L144"
+    },
+    {
+      "caller_nid": "vsda_renderpool_dequeuesimulation",
+      "callee": "pop",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RenderPool.cpp",
+      "source_location": "L145"
+    }
+  ]
+}

@@ -1,1 +1,203 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_python_igneous_local_py", "label": "igneous_local.py", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L1"}, {"id": "python_igneous_local_remove_paths", "label": "remove_paths()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L45"}, {"id": "python_igneous_local_compute_bounds", "label": "compute_bounds()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L61"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_python_igneous_local_py", "target": "taskqueue", "relation": "imports_from", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L4", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_python_igneous_local_py", "target": "igneous_task_creation", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L5", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_python_igneous_local_py", "target": "cloudvolume", "relation": "imports_from", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L6", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_python_igneous_local_py", "target": "cloudfiles", "relation": "imports_from", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L7", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_python_igneous_local_py", "target": "igneous_types", "relation": "imports_from", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L8", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_python_igneous_local_py", "target": "os", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L10", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_python_igneous_local_py", "target": "argparse", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L11", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_python_igneous_local_py", "target": "python_igneous_local_remove_paths", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L45", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_python_igneous_local_py", "target": "python_igneous_local_remove_paths", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L52", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_python_igneous_local_py", "target": "python_igneous_local_compute_bounds", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L61", "weight": 1.0}], "raw_calls": [{"caller_nid": "python_igneous_local_remove_paths", "callee": "list", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L46"}, {"caller_nid": "python_igneous_local_remove_paths", "callee": "len", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L47"}, {"caller_nid": "python_igneous_local_remove_paths", "callee": "split", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L47"}, {"caller_nid": "python_igneous_local_remove_paths", "callee": "basename", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L47"}, {"caller_nid": "python_igneous_local_remove_paths", "callee": "list", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L53"}, {"caller_nid": "python_igneous_local_remove_paths", "callee": "splitext", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L54"}, {"caller_nid": "python_igneous_local_compute_bounds", "callee": "bounds", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L64"}, {"caller_nid": "python_igneous_local_compute_bounds", "callee": "CloudVolume", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L64"}, {"caller_nid": "python_igneous_local_compute_bounds", "callee": "sorted", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L66"}, {"caller_nid": "python_igneous_local_compute_bounds", "callee": "sorted", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L70"}, {"caller_nid": "python_igneous_local_compute_bounds", "callee": "sorted", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py", "source_location": "L74"}]}
+{
+  "nodes": [
+    {
+      "id": "source_python_igneous_local_py",
+      "label": "igneous_local.py",
+      "file_type": "code",
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "python_igneous_local_remove_paths",
+      "label": "remove_paths()",
+      "file_type": "code",
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L45"
+    },
+    {
+      "id": "python_igneous_local_compute_bounds",
+      "label": "compute_bounds()",
+      "file_type": "code",
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L61"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_python_igneous_local_py",
+      "target": "taskqueue",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_python_igneous_local_py",
+      "target": "igneous_task_creation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "source_python_igneous_local_py",
+      "target": "cloudvolume",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "source_python_igneous_local_py",
+      "target": "cloudfiles",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_python_igneous_local_py",
+      "target": "igneous_types",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_python_igneous_local_py",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "source_python_igneous_local_py",
+      "target": "argparse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_python_igneous_local_py",
+      "target": "python_igneous_local_remove_paths",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "source_python_igneous_local_py",
+      "target": "python_igneous_local_remove_paths",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "source_python_igneous_local_py",
+      "target": "python_igneous_local_compute_bounds",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L61",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "python_igneous_local_remove_paths",
+      "callee": "list",
+      "is_member_call": true,
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "python_igneous_local_remove_paths",
+      "callee": "len",
+      "is_member_call": false,
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "python_igneous_local_remove_paths",
+      "callee": "split",
+      "is_member_call": true,
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "python_igneous_local_remove_paths",
+      "callee": "basename",
+      "is_member_call": true,
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "python_igneous_local_remove_paths",
+      "callee": "list",
+      "is_member_call": true,
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "python_igneous_local_remove_paths",
+      "callee": "splitext",
+      "is_member_call": true,
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "python_igneous_local_compute_bounds",
+      "callee": "bounds",
+      "is_member_call": true,
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "python_igneous_local_compute_bounds",
+      "callee": "CloudVolume",
+      "is_member_call": false,
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "python_igneous_local_compute_bounds",
+      "callee": "sorted",
+      "is_member_call": false,
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "python_igneous_local_compute_bounds",
+      "callee": "sorted",
+      "is_member_call": false,
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "python_igneous_local_compute_bounds",
+      "callee": "sorted",
+      "is_member_call": false,
+      "source_file": "Source/Python/igneous_local.py",
+      "source_location": "L74"
+    }
+  ]
+}

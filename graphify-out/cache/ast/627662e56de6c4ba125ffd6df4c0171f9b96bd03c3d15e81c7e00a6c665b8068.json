@@ -1,1 +1,614 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "label": "CaVoxelArray.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L1"}, {"id": "structs_cavoxelarray_voxelarray", "label": "VoxelArray()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L16"}, {"id": "structs_cavoxelarray_cleararray", "label": "ClearArray()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L82"}, {"id": "structs_cavoxelarray_cleararraythreaded", "label": "ClearArrayThreaded()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L93"}, {"id": "structs_cavoxelarray_setbb", "label": "SetBB()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L117"}, {"id": "structs_cavoxelarray_getindex", "label": "GetIndex()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L140"}, {"id": "structs_cavoxelarray_getvoxel", "label": "GetVoxel()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L144"}, {"id": "structs_cavoxelarray_setvoxel", "label": "SetVoxel()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L169"}, {"id": "structs_cavoxelarray_setvoxelatposition", "label": "SetVoxelAtPosition()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L180"}, {"id": "structs_cavoxelarray_getsize", "label": "GetSize()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L197"}, {"id": "structs_cavoxelarray_getx", "label": "GetX()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L207"}, {"id": "structs_cavoxelarray_gety", "label": "GetY()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L211"}, {"id": "structs_cavoxelarray_getz", "label": "GetZ()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L215"}, {"id": "structs_cavoxelarray_getresolution", "label": "GetResolution()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L219"}, {"id": "structs_cavoxelarray_getboundingbox", "label": "GetBoundingBox()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L223"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "iostream", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L1", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "cstring", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L2", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "future", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L3", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "vector", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L4", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "cavoxelarray", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L6", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_voxelarray", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L16", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_voxelarray", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L40", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_voxelarray", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L76", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_cleararray", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L82", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_cleararraythreaded", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L93", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_setbb", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L117", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_setbb", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L123", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_getindex", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L140", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_getvoxel", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L144", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_setvoxel", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L169", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_setvoxelatposition", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L180", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_getsize", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L197", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_getsize", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L203", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_getx", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L207", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_gety", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L211", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_getz", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L215", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_getresolution", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L219", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp", "target": "structs_cavoxelarray_getboundingbox", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L223", "weight": 1.0}, {"source": "structs_cavoxelarray_getvoxel", "target": "structs_cavoxelarray_getindex", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L155", "weight": 1.0}, {"source": "structs_cavoxelarray_setvoxel", "target": "structs_cavoxelarray_getindex", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L170", "weight": 1.0}, {"source": "structs_cavoxelarray_setvoxelatposition", "target": "structs_cavoxelarray_setvoxel", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L192", "weight": 1.0}], "raw_calls": [{"caller_nid": "structs_cavoxelarray_voxelarray", "callee": "abs", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L19"}, {"caller_nid": "structs_cavoxelarray_voxelarray", "callee": "abs", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L20"}, {"caller_nid": "structs_cavoxelarray_voxelarray", "callee": "abs", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L21"}, {"caller_nid": "structs_cavoxelarray_voxelarray", "callee": "make_unique<VoxelType[]>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L34"}, {"caller_nid": "structs_cavoxelarray_voxelarray", "callee": "abs", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L53"}, {"caller_nid": "structs_cavoxelarray_voxelarray", "callee": "abs", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L54"}, {"caller_nid": "structs_cavoxelarray_voxelarray", "callee": "abs", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L55"}, {"caller_nid": "structs_cavoxelarray_voxelarray", "callee": "make_unique<VoxelType[]>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L68"}, {"caller_nid": "structs_cavoxelarray_cleararray", "callee": "memset", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L84"}, {"caller_nid": "structs_cavoxelarray_cleararray", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L84"}, {"caller_nid": "structs_cavoxelarray_cleararraythreaded", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L97"}, {"caller_nid": "structs_cavoxelarray_cleararraythreaded", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L103"}, {"caller_nid": "structs_cavoxelarray_cleararraythreaded", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L104"}, {"caller_nid": "structs_cavoxelarray_cleararraythreaded", "callee": "async", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L104"}, {"caller_nid": "structs_cavoxelarray_cleararraythreaded", "callee": "memset", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L105"}, {"caller_nid": "structs_cavoxelarray_cleararraythreaded", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L111"}, {"caller_nid": "structs_cavoxelarray_cleararraythreaded", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L112"}, {"caller_nid": "structs_cavoxelarray_setbb", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L118"}, {"caller_nid": "structs_cavoxelarray_setbb", "callee": "GetVoxelSize", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L118"}, {"caller_nid": "structs_cavoxelarray_setbb", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L135"}, {"caller_nid": "structs_cavoxelarray_setbb", "callee": "GetVoxelSize", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L135"}, {"caller_nid": "structs_cavoxelarray_getvoxel", "callee": "VoxelType", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L151"}, {"caller_nid": "structs_cavoxelarray_getvoxel", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L160"}, {"caller_nid": "structs_cavoxelarray_getvoxel", "callee": "VoxelType", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L165"}, {"caller_nid": "structs_cavoxelarray_setvoxel", "callee": "string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L172"}, {"caller_nid": "structs_cavoxelarray_setvoxel", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L172"}, {"caller_nid": "structs_cavoxelarray_setvoxel", "callee": "string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L173"}, {"caller_nid": "structs_cavoxelarray_setvoxel", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L173"}, {"caller_nid": "structs_cavoxelarray_setvoxel", "callee": "string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L173"}, {"caller_nid": "structs_cavoxelarray_setvoxel", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L173"}, {"caller_nid": "structs_cavoxelarray_setvoxel", "callee": "string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L174"}, {"caller_nid": "structs_cavoxelarray_setvoxel", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L174"}, {"caller_nid": "structs_cavoxelarray_setvoxel", "callee": "out_of_range", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L175"}, {"caller_nid": "structs_cavoxelarray_setvoxel", "callee": "c_str", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L175"}, {"caller_nid": "structs_cavoxelarray_setvoxelatposition", "callee": "round", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L183"}, {"caller_nid": "structs_cavoxelarray_setvoxelatposition", "callee": "round", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L184"}, {"caller_nid": "structs_cavoxelarray_setvoxelatposition", "callee": "round", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp", "source_location": "L185"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "label": "CaVoxelArray.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "structs_cavoxelarray_voxelarray",
+      "label": "VoxelArray()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L16"
+    },
+    {
+      "id": "structs_cavoxelarray_cleararray",
+      "label": "ClearArray()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L82"
+    },
+    {
+      "id": "structs_cavoxelarray_cleararraythreaded",
+      "label": "ClearArrayThreaded()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L93"
+    },
+    {
+      "id": "structs_cavoxelarray_setbb",
+      "label": "SetBB()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L117"
+    },
+    {
+      "id": "structs_cavoxelarray_getindex",
+      "label": "GetIndex()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L140"
+    },
+    {
+      "id": "structs_cavoxelarray_getvoxel",
+      "label": "GetVoxel()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L144"
+    },
+    {
+      "id": "structs_cavoxelarray_setvoxel",
+      "label": "SetVoxel()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L169"
+    },
+    {
+      "id": "structs_cavoxelarray_setvoxelatposition",
+      "label": "SetVoxelAtPosition()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L180"
+    },
+    {
+      "id": "structs_cavoxelarray_getsize",
+      "label": "GetSize()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L197"
+    },
+    {
+      "id": "structs_cavoxelarray_getx",
+      "label": "GetX()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L207"
+    },
+    {
+      "id": "structs_cavoxelarray_gety",
+      "label": "GetY()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L211"
+    },
+    {
+      "id": "structs_cavoxelarray_getz",
+      "label": "GetZ()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L215"
+    },
+    {
+      "id": "structs_cavoxelarray_getresolution",
+      "label": "GetResolution()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L219"
+    },
+    {
+      "id": "structs_cavoxelarray_getboundingbox",
+      "label": "GetBoundingBox()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L223"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "cstring",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "future",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "cavoxelarray",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_voxelarray",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_voxelarray",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_voxelarray",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_cleararray",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_cleararraythreaded",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_setbb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_setbb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_getindex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L140",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_getvoxel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_setvoxel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L169",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_setvoxelatposition",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L180",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_getsize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L197",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_getsize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L203",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_getx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_gety",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_getz",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L215",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_getresolution",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L219",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_cpp",
+      "target": "structs_cavoxelarray_getboundingbox",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L223",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_cavoxelarray_getvoxel",
+      "target": "structs_cavoxelarray_getindex",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_cavoxelarray_setvoxel",
+      "target": "structs_cavoxelarray_getindex",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_cavoxelarray_setvoxelatposition",
+      "target": "structs_cavoxelarray_setvoxel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L192",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "structs_cavoxelarray_voxelarray",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_voxelarray",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_voxelarray",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_voxelarray",
+      "callee": "make_unique<VoxelType[]>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L34"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_voxelarray",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_voxelarray",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_voxelarray",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_voxelarray",
+      "callee": "make_unique<VoxelType[]>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_cleararray",
+      "callee": "memset",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_cleararray",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_cleararraythreaded",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_cleararraythreaded",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L103"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_cleararraythreaded",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L104"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_cleararraythreaded",
+      "callee": "async",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L104"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_cleararraythreaded",
+      "callee": "memset",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L105"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_cleararraythreaded",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L111"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_cleararraythreaded",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L112"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setbb",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L118"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setbb",
+      "callee": "GetVoxelSize",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L118"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setbb",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L135"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setbb",
+      "callee": "GetVoxelSize",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L135"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_getvoxel",
+      "callee": "VoxelType",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L151"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_getvoxel",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L160"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_getvoxel",
+      "callee": "VoxelType",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L165"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setvoxel",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L172"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setvoxel",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L172"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setvoxel",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L173"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setvoxel",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L173"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setvoxel",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L173"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setvoxel",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L173"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setvoxel",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L174"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setvoxel",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L174"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setvoxel",
+      "callee": "out_of_range",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L175"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setvoxel",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L175"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setvoxelatposition",
+      "callee": "round",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L183"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setvoxelatposition",
+      "callee": "round",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L184"
+    },
+    {
+      "caller_nid": "structs_cavoxelarray_setvoxelatposition",
+      "callee": "round",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp",
+      "source_location": "L185"
+    }
+  ]
+}

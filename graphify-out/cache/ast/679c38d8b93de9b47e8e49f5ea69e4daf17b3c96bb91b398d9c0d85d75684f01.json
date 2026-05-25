@@ -1,1 +1,150 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_h", "label": "BSAlignedNC.h", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h", "source_location": "L1"}, {"id": "ballandstick_bsalignednc_bg", "label": "BG()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h", "source_location": "L28"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_h", "target": "cassert", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h", "source_location": "L14", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_h", "target": "memory", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h", "source_location": "L15", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_h", "target": "stdexcept", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h", "source_location": "L16", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_h", "target": "string", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h", "source_location": "L17", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_h", "target": "unordered_map", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h", "source_location": "L18", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_h", "target": "vector", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h", "source_location": "L19", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_h", "target": "bsmorphology", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h", "source_location": "L21", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_h", "target": "bsneuron", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h", "source_location": "L22", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_h", "target": "box", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h", "source_location": "L23", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_h", "target": "vectools", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h", "source_location": "L24", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_h", "target": "neuralcircuit", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h", "source_location": "L25", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_h", "target": "neuron", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h", "source_location": "L26", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_ballandstick_bsalignednc_h", "target": "ballandstick_bsalignednc_bg", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h", "source_location": "L28", "weight": 1.0}], "raw_calls": []}
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_ballandstick_bsalignednc_h",
+      "label": "BSAlignedNC.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "ballandstick_bsalignednc_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.h",
+      "source_location": "L28"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_h",
+      "target": "cassert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_h",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_h",
+      "target": "stdexcept",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.h",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_h",
+      "target": "unordered_map",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.h",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.h",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_h",
+      "target": "bsmorphology",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.h",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_h",
+      "target": "bsneuron",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.h",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_h",
+      "target": "box",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.h",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_h",
+      "target": "vectools",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.h",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_h",
+      "target": "neuralcircuit",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.h",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_h",
+      "target": "neuron",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.h",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignednc_h",
+      "target": "ballandstick_bsalignednc_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedNC.h",
+      "source_location": "L28",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

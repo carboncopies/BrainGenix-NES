@@ -1,1 +1,725 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_visualizer_meshbuilder_cpp", "label": "MeshBuilder.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L1"}, {"id": "visualizer_meshbuilder_randfloatbetween0and1", "label": "RandFloatBetween0And1()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L15"}, {"id": "visualizer_meshbuilder_getrotationinfo", "label": "GetRotationInfo()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L20"}, {"id": "visualizer_meshbuilder_generateseededrandomvector", "label": "GenerateSeededRandomVector()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L59"}, {"id": "visualizer_meshbuilder_buildmeshfromsimulation", "label": "BuildMeshFromSimulation()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L71"}, {"id": "visualizer_meshbuilder_buildmeshfromelectrodes", "label": "BuildMeshFromElectrodes()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L163"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_visualizer_meshbuilder_cpp", "target": "random", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L1", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_visualizer_meshbuilder_cpp", "target": "iostream", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L2", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_visualizer_meshbuilder_cpp", "target": "algorithm", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L3", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_visualizer_meshbuilder_cpp", "target": "meshbuilder", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L5", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_visualizer_meshbuilder_cpp", "target": "recordingelectrode", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L6", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_visualizer_meshbuilder_cpp", "target": "visualizer_meshbuilder_randfloatbetween0and1", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L15", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_visualizer_meshbuilder_cpp", "target": "visualizer_meshbuilder_getrotationinfo", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L20", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_visualizer_meshbuilder_cpp", "target": "visualizer_meshbuilder_generateseededrandomvector", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L59", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_visualizer_meshbuilder_cpp", "target": "visualizer_meshbuilder_buildmeshfromsimulation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L71", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_visualizer_meshbuilder_cpp", "target": "visualizer_meshbuilder_buildmeshfromelectrodes", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L163", "weight": 1.0}, {"source": "visualizer_meshbuilder_buildmeshfromsimulation", "target": "visualizer_meshbuilder_generateseededrandomvector", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L93", "weight": 1.0}, {"source": "visualizer_meshbuilder_buildmeshfromelectrodes", "target": "visualizer_meshbuilder_getrotationinfo", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L198", "weight": 1.0}], "raw_calls": [{"caller_nid": "visualizer_meshbuilder_randfloatbetween0and1", "callee": "rand", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L16"}, {"caller_nid": "visualizer_meshbuilder_getrotationinfo", "callee": "sqrt", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L26"}, {"caller_nid": "visualizer_meshbuilder_getrotationinfo", "callee": "atan2", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L42"}, {"caller_nid": "visualizer_meshbuilder_getrotationinfo", "callee": "sqrt", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L42"}, {"caller_nid": "visualizer_meshbuilder_getrotationinfo", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L42"}, {"caller_nid": "visualizer_meshbuilder_getrotationinfo", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L42"}, {"caller_nid": "visualizer_meshbuilder_getrotationinfo", "callee": "abs", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L42"}, {"caller_nid": "visualizer_meshbuilder_getrotationinfo", "callee": "asin", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L45"}, {"caller_nid": "visualizer_meshbuilder_getrotationinfo", "callee": "atan2", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L48"}, {"caller_nid": "visualizer_meshbuilder_getrotationinfo", "callee": "sqrt", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L48"}, {"caller_nid": "visualizer_meshbuilder_getrotationinfo", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L48"}, {"caller_nid": "visualizer_meshbuilder_getrotationinfo", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L48"}, {"caller_nid": "visualizer_meshbuilder_getrotationinfo", "callee": "abs", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L48"}, {"caller_nid": "visualizer_meshbuilder_getrotationinfo", "callee": "sqrt", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L56"}, {"caller_nid": "visualizer_meshbuilder_generateseededrandomvector", "callee": "vec4", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L66"}, {"caller_nid": "visualizer_meshbuilder_generateseededrandomvector", "callee": "X", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L66"}, {"caller_nid": "visualizer_meshbuilder_generateseededrandomvector", "callee": "Y", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L66"}, {"caller_nid": "visualizer_meshbuilder_generateseededrandomvector", "callee": "Z", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L66"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L72"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L73"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L74"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L76"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "LockScene", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L77"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "WaitUntilGPUDone", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L78"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "GetNumCompartments", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L81"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "GetCompartmentByIdx", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L83"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "GetNeuronIndexByCompartment", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L85"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "find", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L87"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "begin", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L87"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "end", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L87"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "end", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L87"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "IsBox", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L89"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "GetBox", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L90"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "vec4", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L94"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "ConvertVector", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L98"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "RadsToDeg", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L99"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "ConvertVector", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L99"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "ConvertVector", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L100"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "AddBox", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L103"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "IsSphere", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L105"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "GetSphere", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L106"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "vec4", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L110"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "ConvertVector", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L114"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "AddSphere", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L118"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "IsCylinder", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L119"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "GetCylinder", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L120"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L123"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "vec4", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L129"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "ConvertVector", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L134"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "RadsToDeg", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L135"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "ConvertVector", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L135"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "GetRotation_rad", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L135"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L140"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L140"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L140"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L140"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "AddCylinder", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L146"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L151"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "UpdateScene", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L153"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation", "callee": "UnlockScene", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L154"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L164"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L165"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L166"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L168"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "LockScene", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L169"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "WaitUntilGPUDone", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L170"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L177"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L178"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "Distance", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L185"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "vec4", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L211"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "vec4", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L212"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "vec4", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L213"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "ConvertVector", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L217"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "RadsToDeg", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L218"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "ConvertVector", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L218"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "ConvertVector", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L219"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "AddBox", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L222"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L227"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "UpdateScene", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L229"}, {"caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes", "callee": "UnlockScene", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp", "source_location": "L230"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_visualizer_meshbuilder_cpp",
+      "label": "MeshBuilder.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "visualizer_meshbuilder_randfloatbetween0and1",
+      "label": "RandFloatBetween0And1()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L15"
+    },
+    {
+      "id": "visualizer_meshbuilder_getrotationinfo",
+      "label": "GetRotationInfo()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L20"
+    },
+    {
+      "id": "visualizer_meshbuilder_generateseededrandomvector",
+      "label": "GenerateSeededRandomVector()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L59"
+    },
+    {
+      "id": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "label": "BuildMeshFromSimulation()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L71"
+    },
+    {
+      "id": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "label": "BuildMeshFromElectrodes()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L163"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_visualizer_meshbuilder_cpp",
+      "target": "random",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_meshbuilder_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_meshbuilder_cpp",
+      "target": "algorithm",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_meshbuilder_cpp",
+      "target": "meshbuilder",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_meshbuilder_cpp",
+      "target": "recordingelectrode",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_meshbuilder_cpp",
+      "target": "visualizer_meshbuilder_randfloatbetween0and1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_meshbuilder_cpp",
+      "target": "visualizer_meshbuilder_getrotationinfo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_meshbuilder_cpp",
+      "target": "visualizer_meshbuilder_generateseededrandomvector",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_meshbuilder_cpp",
+      "target": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_meshbuilder_cpp",
+      "target": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "target": "visualizer_meshbuilder_generateseededrandomvector",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "target": "visualizer_meshbuilder_getrotationinfo",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L198",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "visualizer_meshbuilder_randfloatbetween0and1",
+      "callee": "rand",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L16"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_getrotationinfo",
+      "callee": "sqrt",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L26"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_getrotationinfo",
+      "callee": "atan2",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_getrotationinfo",
+      "callee": "sqrt",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_getrotationinfo",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_getrotationinfo",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_getrotationinfo",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_getrotationinfo",
+      "callee": "asin",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_getrotationinfo",
+      "callee": "atan2",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_getrotationinfo",
+      "callee": "sqrt",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_getrotationinfo",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_getrotationinfo",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_getrotationinfo",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_getrotationinfo",
+      "callee": "sqrt",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_generateseededrandomvector",
+      "callee": "vec4",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_generateseededrandomvector",
+      "callee": "X",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_generateseededrandomvector",
+      "callee": "Y",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_generateseededrandomvector",
+      "callee": "Z",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L72"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "LockScene",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "WaitUntilGPUDone",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "GetNumCompartments",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "GetCompartmentByIdx",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "GetNeuronIndexByCompartment",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L85"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "begin",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "IsBox",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L89"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "GetBox",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "vec4",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "ConvertVector",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "RadsToDeg",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "ConvertVector",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "ConvertVector",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L100"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "AddBox",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L103"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "IsSphere",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L105"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "GetSphere",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L106"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "vec4",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L110"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "ConvertVector",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L114"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "AddSphere",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L118"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "IsCylinder",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "GetCylinder",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L123"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "vec4",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "ConvertVector",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "RadsToDeg",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L135"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "ConvertVector",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L135"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "GetRotation_rad",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L135"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L140"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L140"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L140"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L140"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "AddCylinder",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L146"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L151"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "UpdateScene",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L153"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromsimulation",
+      "callee": "UnlockScene",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L154"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L164"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L165"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L166"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L168"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "LockScene",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L169"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "WaitUntilGPUDone",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L170"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L177"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L178"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "Distance",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L185"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "vec4",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L211"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "vec4",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L212"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "vec4",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L213"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "ConvertVector",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L217"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "RadsToDeg",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L218"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "ConvertVector",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L218"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "ConvertVector",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L219"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "AddBox",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L222"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L227"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "UpdateScene",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L229"
+    },
+    {
+      "caller_nid": "visualizer_meshbuilder_buildmeshfromelectrodes",
+      "callee": "UnlockScene",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshBuilder.cpp",
+      "source_location": "L230"
+    }
+  ]
+}

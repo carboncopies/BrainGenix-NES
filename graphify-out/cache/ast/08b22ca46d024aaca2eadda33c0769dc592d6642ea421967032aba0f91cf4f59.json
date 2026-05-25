@@ -1,1 +1,730 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "label": "NeuroglancerConverter.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L1"}, {"id": "neuroglancerconversionpool_neuroglancerconverter_createdirectoryrecursive", "label": "CreateDirectoryRecursive()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L28"}, {"id": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "label": "ExecuteConversionOperation()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L53"}, {"id": "neuroglancerconversionpool_neuroglancerconverter_urlencode", "label": "urlEncode()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L340"}, {"id": "neuroglancerconversionpool_neuroglancerconverter_ngurlencode", "label": "NGurlEncode()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L360"}, {"id": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerjson", "label": "GenerateNeuroglancerJson()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L378"}, {"id": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerurl", "label": "GenerateNeuroglancerURL()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L433"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "vector", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L7", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "chrono", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L8", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "random", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L9", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "cmath", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L10", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "algorithm", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L11", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "unistd", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L13", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "uuid", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L16", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "neuroglancerconverter", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L19", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "igneouspipeline", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L20", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "neuroglancerconversionpool_neuroglancerconverter_createdirectoryrecursive", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L28", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L53", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "neuroglancerconversionpool_neuroglancerconverter_urlencode", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L340", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "neuroglancerconversionpool_neuroglancerconverter_ngurlencode", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L360", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "json", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L374", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "string", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L375", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "vector", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L376", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerjson", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L378", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp", "target": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerurl", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L433", "weight": 1.0}, {"source": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "target": "neuroglancerconversionpool_neuroglancerconverter_createdirectoryrecursive", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L85", "weight": 1.0}, {"source": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerurl", "target": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerjson", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L441", "weight": 1.0}, {"source": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerurl", "target": "neuroglancerconversionpool_neuroglancerconverter_ngurlencode", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L442", "weight": 1.0}], "raw_calls": [{"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_createdirectoryrecursive", "callee": "clear", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L29"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_createdirectoryrecursive", "callee": "filesystem::create_directories", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L30"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_createdirectoryrecursive", "callee": "filesystem::exists", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L32"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_createdirectoryrecursive", "callee": "clear", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L35"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L61"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L81"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L101"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L105"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L111"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L111"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "json", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L113"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L119"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L120"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "ceil", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L126"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "ceil", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L127"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L129"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L130"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L142"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L155"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L191"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L191"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "json", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L193"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L199"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L200"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "ceil", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L206"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "ceil", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L207"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L209"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "pow", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L210"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "vector<int>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L219"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L222"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L234"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L255"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L255"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L256"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L260"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "make_unique<ConversionPool::ProcessingTask>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L262"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "QueueEncodeOperation", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L270"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L270"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L271"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "move", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L271"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L278"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L278"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L279"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L283"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "make_unique<ConversionPool::ProcessingTask>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L285"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "QueueEncodeOperation", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L293"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "get", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L293"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L294"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "move", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L294"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L300"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "this_thread::sleep_for", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L302"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "chrono::milliseconds", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L302"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "ProcessIgneousPipeline", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L322"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "thread::hardware_concurrency", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L322"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L323"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L329"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_urlencode", "callee": "fill", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L342"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_urlencode", "callee": "isalnum", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L347"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_urlencode", "callee": "setw", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L352"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_urlencode", "callee": "str", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L356"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_ngurlencode", "callee": "isalnum", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L365"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_ngurlencode", "callee": "setw", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L368"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_ngurlencode", "callee": "setfill", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L368"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_ngurlencode", "callee": "str", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L371"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerjson", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L408"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerjson", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L418"}, {"caller_nid": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerjson", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp", "source_location": "L430"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "label": "NeuroglancerConverter.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "neuroglancerconversionpool_neuroglancerconverter_createdirectoryrecursive",
+      "label": "CreateDirectoryRecursive()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L28"
+    },
+    {
+      "id": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "label": "ExecuteConversionOperation()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L53"
+    },
+    {
+      "id": "neuroglancerconversionpool_neuroglancerconverter_urlencode",
+      "label": "urlEncode()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L340"
+    },
+    {
+      "id": "neuroglancerconversionpool_neuroglancerconverter_ngurlencode",
+      "label": "NGurlEncode()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L360"
+    },
+    {
+      "id": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerjson",
+      "label": "GenerateNeuroglancerJson()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L378"
+    },
+    {
+      "id": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerurl",
+      "label": "GenerateNeuroglancerURL()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L433"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "chrono",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "random",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "cmath",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "algorithm",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "unistd",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "uuid",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "neuroglancerconverter",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "igneouspipeline",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "neuroglancerconversionpool_neuroglancerconverter_createdirectoryrecursive",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "neuroglancerconversionpool_neuroglancerconverter_urlencode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L340",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "neuroglancerconversionpool_neuroglancerconverter_ngurlencode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L360",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L374",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L375",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L376",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerjson",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L378",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_neuroglancerconversionpool_neuroglancerconverter_cpp",
+      "target": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerurl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L433",
+      "weight": 1.0
+    },
+    {
+      "source": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "target": "neuroglancerconversionpool_neuroglancerconverter_createdirectoryrecursive",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerurl",
+      "target": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerjson",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L441",
+      "weight": 1.0
+    },
+    {
+      "source": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerurl",
+      "target": "neuroglancerconversionpool_neuroglancerconverter_ngurlencode",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L442",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_createdirectoryrecursive",
+      "callee": "clear",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_createdirectoryrecursive",
+      "callee": "filesystem::create_directories",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_createdirectoryrecursive",
+      "callee": "filesystem::exists",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_createdirectoryrecursive",
+      "callee": "clear",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L101"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L105"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L111"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L111"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "json",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L113"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "ceil",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L126"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "ceil",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L142"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L155"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L191"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L191"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "json",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L193"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L199"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L200"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "ceil",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L206"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "ceil",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L207"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L209"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L210"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "vector<int>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L219"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L222"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L234"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L255"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L255"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L256"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L260"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "make_unique<ConversionPool::ProcessingTask>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L262"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "QueueEncodeOperation",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L270"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L270"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L271"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "move",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L271"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L278"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L278"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L279"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L283"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "make_unique<ConversionPool::ProcessingTask>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L285"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "QueueEncodeOperation",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L293"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L293"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L294"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "move",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L294"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L300"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L302"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "chrono::milliseconds",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L302"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "ProcessIgneousPipeline",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L322"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "thread::hardware_concurrency",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L322"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L323"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_executeconversionoperation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L329"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_urlencode",
+      "callee": "fill",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L342"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_urlencode",
+      "callee": "isalnum",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L347"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_urlencode",
+      "callee": "setw",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L352"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_urlencode",
+      "callee": "str",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L356"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_ngurlencode",
+      "callee": "isalnum",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L365"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_ngurlencode",
+      "callee": "setw",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L368"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_ngurlencode",
+      "callee": "setfill",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L368"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_ngurlencode",
+      "callee": "str",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L371"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerjson",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L408"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerjson",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L418"
+    },
+    {
+      "caller_nid": "neuroglancerconversionpool_neuroglancerconverter_generateneuroglancerjson",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp",
+      "source_location": "L430"
+    }
+  ]
+}

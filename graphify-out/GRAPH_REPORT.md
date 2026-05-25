@@ -1,16 +1,16 @@
 # Graph Report - BrainGenix-NES  (2026-05-24)
 
 ## Corpus Check
-- 353 files · ~199,776 words
+- 353 files · ~199,915 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1883 nodes · 1944 edges · 391 communities (342 shown, 49 thin omitted)
+- 1884 nodes · 1946 edges · 391 communities (342 shown, 49 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 47 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6638533f`
+- Built from commit: `3d4e1950`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -506,8 +506,8 @@ Cohesion: 0.29
 Nodes (7): DynamicPars, neuron_IPSP, neuron_tau_AHP_ms, neuron_Vact_mV, neuron_Vahp_mV, neuron_Vm_mV, neuron_Vrest_mV
 
 ### Community 79 - "Community 79"
-Cohesion: 0.38
-Nodes (3): generate_knowledge_graph(), usage(), Tag.sh script
+Cohesion: 0.36
+Nodes (4): generate_knowledge_graph(), normalize_graphify_paths(), usage(), Tag.sh script
 
 ### Community 80 - "Community 80"
 Cohesion: 0.33
@@ -752,7 +752,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `NES API Documentation` connect `Community 61` to `Community 128`, `Community 129`, `Community 130`, `Community 131`, `Community 132`, `Community 133`, `Community 134`, `Community 135`, `Community 136`, `Community 137`, `Community 138`, `Community 139`, `Community 140`, `Community 141`, `Community 142`, `Community 143`, `Community 144`, `Community 145`, `Community 146`, `Community 147`, `Community 148`, `Community 149`, `Community 150`, `Community 151`, `Community 152`, `Community 153`, `Community 154`, `Community 155`, `Community 113`, `Community 114`, `Community 115`, `Community 116`, `Community 117`, `Community 118`, `Community 119`, `Community 120`, `Community 121`, `Community 122`, `Community 123`, `Community 124`, `Community 125`, `Community 126`, `Community 127`?**
   _High betweenness centrality (0.005) - this node is a cross-community bridge._
 - **Why does `test` connect `Community 50` to `Community 32`, `Community 69`, `Community 70`, `Community 71`, `Community 72`, `Community 73`, `Community 74`, `Community 42`, `Community 46`, `Community 81`, `Community 49`, `Community 18`, `Community 82`, `Community 51`, `Community 62`, `Community 63`?**
-  _High betweenness centrality (0.003) - this node is a cross-community bridge._
+  _High betweenness centrality (0.001) - this node is a cross-community bridge._
 - **Why does `Loader` connect `Community 19` to `Community 4`?**
   _High betweenness centrality (0.001) - this node is a cross-community bridge._
 - **What connects `name`, `version-string`, `license` to the rest of the system?**

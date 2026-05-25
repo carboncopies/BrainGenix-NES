@@ -1,1 +1,331 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_receptors_nmdareceptor_cpp", "label": "NMDAReceptor.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L1"}, {"id": "receptors_nmdareceptor_nmdareceptor", "label": "NMDAReceptor()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L9"}, {"id": "receptors_nmdareceptor_phiv", "label": "PhiV()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L40"}, {"id": "receptors_nmdareceptor_phivbolzmann", "label": "PhiVBolzmann()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L64"}, {"id": "receptors_nmdareceptor_phi", "label": "Phi()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L72"}, {"id": "receptors_nmdareceptor_kbindingrate", "label": "KBindingRate()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L82"}, {"id": "receptors_nmdareceptor_kunbindingrate", "label": "KUnbindingRate()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L90"}, {"id": "receptors_nmdareceptor_phivwoodhull1", "label": "PhiVWoodhull1()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L104"}, {"id": "receptors_nmdareceptor_phivwoodhull2", "label": "PhiVWoodhull2()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L125"}, {"id": "receptors_nmdareceptor_postsyncurrentstrongvoltagedep_pa", "label": "PostSynCurrentStrongVoltageDep_pA()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L136"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_receptors_nmdareceptor_cpp", "target": "nmdareceptor", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L1", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_receptors_nmdareceptor_cpp", "target": "receptors_nmdareceptor_nmdareceptor", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L9", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_receptors_nmdareceptor_cpp", "target": "receptors_nmdareceptor_nmdareceptor", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L11", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_receptors_nmdareceptor_cpp", "target": "receptors_nmdareceptor_phiv", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L40", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_receptors_nmdareceptor_cpp", "target": "receptors_nmdareceptor_phivbolzmann", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L64", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_receptors_nmdareceptor_cpp", "target": "receptors_nmdareceptor_phi", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L72", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_receptors_nmdareceptor_cpp", "target": "receptors_nmdareceptor_kbindingrate", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L82", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_receptors_nmdareceptor_cpp", "target": "receptors_nmdareceptor_kunbindingrate", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L90", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_receptors_nmdareceptor_cpp", "target": "receptors_nmdareceptor_phivwoodhull1", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L104", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_receptors_nmdareceptor_cpp", "target": "receptors_nmdareceptor_phivwoodhull2", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L125", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_simulator_receptors_nmdareceptor_cpp", "target": "receptors_nmdareceptor_postsyncurrentstrongvoltagedep_pa", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L136", "weight": 1.0}, {"source": "receptors_nmdareceptor_phiv", "target": "receptors_nmdareceptor_phivbolzmann", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L46", "weight": 1.0}, {"source": "receptors_nmdareceptor_phiv", "target": "receptors_nmdareceptor_phivwoodhull1", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L50", "weight": 1.0}, {"source": "receptors_nmdareceptor_phiv", "target": "receptors_nmdareceptor_phivwoodhull2", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L54", "weight": 1.0}, {"source": "receptors_nmdareceptor_kbindingrate", "target": "receptors_nmdareceptor_phi", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L85", "weight": 1.0}, {"source": "receptors_nmdareceptor_kunbindingrate", "target": "receptors_nmdareceptor_phi", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L93", "weight": 1.0}, {"source": "receptors_nmdareceptor_phivwoodhull1", "target": "receptors_nmdareceptor_kbindingrate", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L109", "weight": 1.0}, {"source": "receptors_nmdareceptor_phivwoodhull1", "target": "receptors_nmdareceptor_kunbindingrate", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L111", "weight": 1.0}, {"source": "receptors_nmdareceptor_phivwoodhull2", "target": "receptors_nmdareceptor_phi", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L130", "weight": 1.0}, {"source": "receptors_nmdareceptor_postsyncurrentstrongvoltagedep_pa", "target": "receptors_nmdareceptor_phiv", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L141", "weight": 1.0}], "raw_calls": [{"caller_nid": "receptors_nmdareceptor_phivbolzmann", "callee": "overflow_error", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L66"}, {"caller_nid": "receptors_nmdareceptor_phivbolzmann", "callee": "exp", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L67"}, {"caller_nid": "receptors_nmdareceptor_phi", "callee": "overflow_error", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L74"}, {"caller_nid": "receptors_nmdareceptor_kbindingrate", "callee": "exp", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L85"}, {"caller_nid": "receptors_nmdareceptor_kunbindingrate", "callee": "exp", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L93"}, {"caller_nid": "receptors_nmdareceptor_phivwoodhull1", "callee": "overflow_error", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L107"}, {"caller_nid": "receptors_nmdareceptor_phivwoodhull2", "callee": "overflow_error", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L128"}, {"caller_nid": "receptors_nmdareceptor_phivwoodhull2", "callee": "exp", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L130"}, {"caller_nid": "receptors_nmdareceptor_postsyncurrentstrongvoltagedep_pa", "callee": "PostSynCurrent_pA", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp", "source_location": "L142"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_receptors_nmdareceptor_cpp",
+      "label": "NMDAReceptor.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "receptors_nmdareceptor_nmdareceptor",
+      "label": "NMDAReceptor()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L9"
+    },
+    {
+      "id": "receptors_nmdareceptor_phiv",
+      "label": "PhiV()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L40"
+    },
+    {
+      "id": "receptors_nmdareceptor_phivbolzmann",
+      "label": "PhiVBolzmann()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L64"
+    },
+    {
+      "id": "receptors_nmdareceptor_phi",
+      "label": "Phi()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L72"
+    },
+    {
+      "id": "receptors_nmdareceptor_kbindingrate",
+      "label": "KBindingRate()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L82"
+    },
+    {
+      "id": "receptors_nmdareceptor_kunbindingrate",
+      "label": "KUnbindingRate()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L90"
+    },
+    {
+      "id": "receptors_nmdareceptor_phivwoodhull1",
+      "label": "PhiVWoodhull1()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L104"
+    },
+    {
+      "id": "receptors_nmdareceptor_phivwoodhull2",
+      "label": "PhiVWoodhull2()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L125"
+    },
+    {
+      "id": "receptors_nmdareceptor_postsyncurrentstrongvoltagedep_pa",
+      "label": "PostSynCurrentStrongVoltageDep_pA()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L136"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_receptors_nmdareceptor_cpp",
+      "target": "nmdareceptor",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_nmdareceptor_cpp",
+      "target": "receptors_nmdareceptor_nmdareceptor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_nmdareceptor_cpp",
+      "target": "receptors_nmdareceptor_nmdareceptor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_nmdareceptor_cpp",
+      "target": "receptors_nmdareceptor_phiv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_nmdareceptor_cpp",
+      "target": "receptors_nmdareceptor_phivbolzmann",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_nmdareceptor_cpp",
+      "target": "receptors_nmdareceptor_phi",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_nmdareceptor_cpp",
+      "target": "receptors_nmdareceptor_kbindingrate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_nmdareceptor_cpp",
+      "target": "receptors_nmdareceptor_kunbindingrate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_nmdareceptor_cpp",
+      "target": "receptors_nmdareceptor_phivwoodhull1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_nmdareceptor_cpp",
+      "target": "receptors_nmdareceptor_phivwoodhull2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_nmdareceptor_cpp",
+      "target": "receptors_nmdareceptor_postsyncurrentstrongvoltagedep_pa",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "receptors_nmdareceptor_phiv",
+      "target": "receptors_nmdareceptor_phivbolzmann",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "receptors_nmdareceptor_phiv",
+      "target": "receptors_nmdareceptor_phivwoodhull1",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "receptors_nmdareceptor_phiv",
+      "target": "receptors_nmdareceptor_phivwoodhull2",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "receptors_nmdareceptor_kbindingrate",
+      "target": "receptors_nmdareceptor_phi",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "receptors_nmdareceptor_kunbindingrate",
+      "target": "receptors_nmdareceptor_phi",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "receptors_nmdareceptor_phivwoodhull1",
+      "target": "receptors_nmdareceptor_kbindingrate",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "receptors_nmdareceptor_phivwoodhull1",
+      "target": "receptors_nmdareceptor_kunbindingrate",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "receptors_nmdareceptor_phivwoodhull2",
+      "target": "receptors_nmdareceptor_phi",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "receptors_nmdareceptor_postsyncurrentstrongvoltagedep_pa",
+      "target": "receptors_nmdareceptor_phiv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L141",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "receptors_nmdareceptor_phivbolzmann",
+      "callee": "overflow_error",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "receptors_nmdareceptor_phivbolzmann",
+      "callee": "exp",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "receptors_nmdareceptor_phi",
+      "callee": "overflow_error",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "receptors_nmdareceptor_kbindingrate",
+      "callee": "exp",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L85"
+    },
+    {
+      "caller_nid": "receptors_nmdareceptor_kunbindingrate",
+      "callee": "exp",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "receptors_nmdareceptor_phivwoodhull1",
+      "callee": "overflow_error",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "receptors_nmdareceptor_phivwoodhull2",
+      "callee": "overflow_error",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "receptors_nmdareceptor_phivwoodhull2",
+      "callee": "exp",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "receptors_nmdareceptor_postsyncurrentstrongvoltagedep_pa",
+      "callee": "PostSynCurrent_pA",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Receptors/NMDAReceptor.cpp",
+      "source_location": "L142"
+    }
+  ]
+}

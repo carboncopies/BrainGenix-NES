@@ -67,11 +67,22 @@
       }
     },
     {
+      "id": "tools_tag_normalize_graphify_paths",
+      "label": "normalize_graphify_paths()",
+      "file_type": "code",
+      "source_file": "Tools/Tag.sh",
+      "source_location": "L85",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      }
+    },
+    {
       "id": "tools_tag_next_version",
       "label": "next_version()",
       "file_type": "code",
       "source_file": "Tools/Tag.sh",
-      "source_location": "L84",
+      "source_location": "L142",
       "metadata": {
         "language": "bash",
         "kind": "bash_function"
@@ -126,11 +137,20 @@
     },
     {
       "source": "tools_tag_sh",
+      "target": "tools_tag_normalize_graphify_paths",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "Tools/Tag.sh",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "tools_tag_sh",
       "target": "tools_tag_next_version",
       "relation": "defines",
       "confidence": "EXTRACTED",
       "source_file": "Tools/Tag.sh",
-      "source_location": "L84",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -149,7 +169,17 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "Tools/Tag.sh",
-      "source_location": "L137",
+      "source_location": "L195",
+      "weight": 1.0,
+      "context": "call"
+    },
+    {
+      "source": "tools_tag_generate_knowledge_graph",
+      "target": "tools_tag_normalize_graphify_paths",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "Tools/Tag.sh",
+      "source_location": "L82",
       "weight": 1.0,
       "context": "call"
     }

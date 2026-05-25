@@ -1,1 +1,273 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_rpcroutes_ca_cpp", "label": "Ca.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L1"}, {"id": "rpcroutes_ca_vsda_ca_initialize", "label": "VSDA_CA_Initialize()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L23"}, {"id": "rpcroutes_ca_vsda_ca_setupmicroscope", "label": "VSDA_CA_SetupMicroscope()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L42"}, {"id": "rpcroutes_ca_vsda_ca_definescanregion", "label": "VSDA_CA_DefineScanRegion()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L64"}, {"id": "rpcroutes_ca_vsda_ca_queuerenderoperation", "label": "VSDA_CA_QueueRenderOperation()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L86"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_rpcroutes_ca_cpp", "target": "filesystem", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L7", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_rpcroutes_ca_cpp", "target": "vector", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L8", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_rpcroutes_ca_cpp", "target": "ca", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L13", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_rpcroutes_ca_cpp", "target": "cavoxelarray", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L14", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_rpcroutes_ca_cpp", "target": "rpcroutes_ca_vsda_ca_initialize", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L23", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_rpcroutes_ca_cpp", "target": "rpcroutes_ca_vsda_ca_setupmicroscope", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L42", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_rpcroutes_ca_cpp", "target": "rpcroutes_ca_vsda_ca_definescanregion", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L64", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_vsda_rpcroutes_ca_cpp", "target": "rpcroutes_ca_vsda_ca_queuerenderoperation", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L86", "weight": 1.0}], "raw_calls": [{"caller_nid": "rpcroutes_ca_vsda_ca_initialize", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L26"}, {"caller_nid": "rpcroutes_ca_vsda_ca_initialize", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L27"}, {"caller_nid": "rpcroutes_ca_vsda_ca_initialize", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L29"}, {"caller_nid": "rpcroutes_ca_vsda_ca_setupmicroscope", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L45"}, {"caller_nid": "rpcroutes_ca_vsda_ca_setupmicroscope", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L46"}, {"caller_nid": "rpcroutes_ca_vsda_ca_setupmicroscope", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L48"}, {"caller_nid": "rpcroutes_ca_vsda_ca_definescanregion", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L67"}, {"caller_nid": "rpcroutes_ca_vsda_ca_definescanregion", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L68"}, {"caller_nid": "rpcroutes_ca_vsda_ca_definescanregion", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L70"}, {"caller_nid": "rpcroutes_ca_vsda_ca_definescanregion", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L75"}, {"caller_nid": "rpcroutes_ca_vsda_ca_definescanregion", "callee": "string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L75"}, {"caller_nid": "rpcroutes_ca_vsda_ca_definescanregion", "callee": "Dimensions", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L75"}, {"caller_nid": "rpcroutes_ca_vsda_ca_definescanregion", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L76"}, {"caller_nid": "rpcroutes_ca_vsda_ca_definescanregion", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L77"}, {"caller_nid": "rpcroutes_ca_vsda_ca_definescanregion", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L80"}, {"caller_nid": "rpcroutes_ca_vsda_ca_definescanregion", "callee": "vector<std::string>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L80"}, {"caller_nid": "rpcroutes_ca_vsda_ca_queuerenderoperation", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L89"}, {"caller_nid": "rpcroutes_ca_vsda_ca_queuerenderoperation", "callee": "assert", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L90"}, {"caller_nid": "rpcroutes_ca_vsda_ca_queuerenderoperation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L92"}, {"caller_nid": "rpcroutes_ca_vsda_ca_queuerenderoperation", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L95"}, {"caller_nid": "rpcroutes_ca_vsda_ca_queuerenderoperation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L96"}, {"caller_nid": "rpcroutes_ca_vsda_ca_queuerenderoperation", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp", "source_location": "L101"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_rpcroutes_ca_cpp",
+      "label": "Ca.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "rpcroutes_ca_vsda_ca_initialize",
+      "label": "VSDA_CA_Initialize()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L23"
+    },
+    {
+      "id": "rpcroutes_ca_vsda_ca_setupmicroscope",
+      "label": "VSDA_CA_SetupMicroscope()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L42"
+    },
+    {
+      "id": "rpcroutes_ca_vsda_ca_definescanregion",
+      "label": "VSDA_CA_DefineScanRegion()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L64"
+    },
+    {
+      "id": "rpcroutes_ca_vsda_ca_queuerenderoperation",
+      "label": "VSDA_CA_QueueRenderOperation()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L86"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_rpcroutes_ca_cpp",
+      "target": "filesystem",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_rpcroutes_ca_cpp",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_rpcroutes_ca_cpp",
+      "target": "ca",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_rpcroutes_ca_cpp",
+      "target": "cavoxelarray",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_rpcroutes_ca_cpp",
+      "target": "rpcroutes_ca_vsda_ca_initialize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_rpcroutes_ca_cpp",
+      "target": "rpcroutes_ca_vsda_ca_setupmicroscope",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_rpcroutes_ca_cpp",
+      "target": "rpcroutes_ca_vsda_ca_definescanregion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_rpcroutes_ca_cpp",
+      "target": "rpcroutes_ca_vsda_ca_queuerenderoperation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L86",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_initialize",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L26"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_initialize",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L27"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_initialize",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_setupmicroscope",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_setupmicroscope",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_setupmicroscope",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_definescanregion",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_definescanregion",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_definescanregion",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_definescanregion",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_definescanregion",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_definescanregion",
+      "callee": "Dimensions",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_definescanregion",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_definescanregion",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_definescanregion",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_definescanregion",
+      "callee": "vector<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_queuerenderoperation",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L89"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_queuerenderoperation",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_queuerenderoperation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_queuerenderoperation",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_queuerenderoperation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L96"
+    },
+    {
+      "caller_nid": "rpcroutes_ca_vsda_ca_queuerenderoperation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/Ca.cpp",
+      "source_location": "L101"
+    }
+  ]
+}

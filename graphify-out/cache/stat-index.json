@@ -1,1 +1,1937 @@
-{"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/vcpkg.json":{"size":376,"mtime_ns":1779675967592283786,"hash":"fcecf5b02dec38fc5ad8fc6876dae45a2438e9ab0c5a0e68915a082f953f25e5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/vcpkg-configuration.json":{"size":55,"mtime_ns":1779675967592209161,"hash":"b6f290a9ea9c86f5819ce516279218c9ef723ae8d274bb424076cf1ecb858e46"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Setup.sh":{"size":4591,"mtime_ns":1779682688596763077,"hash":"35ad945b43e0db4b81c22c00950c849f1bcd528f48c4ab49a69e750d815c0141"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/RunTest.py":{"size":1023,"mtime_ns":1779675967591274619,"hash":"92f2a1979d677ff49e963e63530cc98f88a3b824f7c9663820f1a377d09dc56f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/MemLeakCheck.sh":{"size":219,"mtime_ns":1779675967590849327,"hash":"2eebc4bc1644db82657486e44a2e008886aafaf7f64ea4c6610252a30e1988ef"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Tag.sh":{"size":3432,"mtime_ns":1779682963190772452,"hash":"90f5f0cbba1ea3dc25db64939f98921a43b66703b3b0cdf531c3baa05d7f13e1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Run.sh":{"size":711,"mtime_ns":1779675967591179994,"hash":"3c8afbb223881bee884e389b4235ed148eea2988b87bb9464ed387a4d38c71f1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Build.sh":{"size":1779,"mtime_ns":1779675967590473577,"hash":"f6099fac1d0b83b3482ca76890a6c144f14ff1b0288dbfa2b8468723c0d978ac"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Package.sh":{"size":131,"mtime_ns":1779675967590923369,"hash":"f8ad121c0f52af67da2778e3d53e1405b41e20629c70eb5f3d8dd0efb4bd684a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Benchmark.sh":{"size":47,"mtime_ns":1779675967590389286,"hash":"72674bbfe81df2b6d33ce3636ee8728ab6c15e97722d03c84b68617fafb1200e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Clean.sh":{"size":205,"mtime_ns":1779675967590549869,"hash":"d483c16e45713c9c0024e19c84f61c61aeb04f07492033d46d7950f836f8355c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/vcpkg.sh":{"size":35,"mtime_ns":1779675967591711911,"hash":"f2873cf3a323ed757dca60a80121c61b76145675c10f284a2a3be81d8862d052"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Test.sh":{"size":160,"mtime_ns":1779675967591509536,"hash":"8927d179a352dbc3c321317352d90cfdbfea2b395df91339335059fcee5d1e62"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Deploy/Deploy.sh":{"size":477,"mtime_ns":1779675967590668369,"hash":"824c949030240202d6c7eb380088507ac2b62f18d5098b1edc72ced236ddafd0"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Tools/Docs/GenerateDoxygen.sh":{"size":102,"mtime_ns":1779675967590783786,"hash":"0c146daea5e4404905dc7fa87afa0c3def47feaeaa87ae136d56142f992d1d5e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Overlays/BG-Logger/vcpkg.json":{"size":354,"mtime_ns":1779675967543103494,"hash":"12e1a80479cad00607f2d37bb1269702e9cf044fff41a2299449735c93c9a016"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/Interface.h":{"size":6559,"mtime_ns":1779675967587032536,"hash":"367e023c13383e55a65c30cb5649c64b8343ea9951dc7688142b5073bbfee88e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/Interface.cpp":{"size":4204,"mtime_ns":1779675967586863536,"hash":"cc3b3011b29dd15beb0a15bd3024aa54368b043ad411cc1faa75b542e4dc2fa2"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/State/Scene.cpp":{"size":179,"mtime_ns":1779675967590022203,"hash":"a558f4936cee477b41fffda49512754f75422e3a3d12166b93e31228e50f10b4"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/State/RenderData.cpp":{"size":184,"mtime_ns":1779675967589873286,"hash":"db32a55eb67fab7915186aafa16105a8cdf5cc77879b380330b20ddf60824720"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/State/RenderData.h":{"size":3188,"mtime_ns":1779675967589951619,"hash":"fe3eb8cf4d1c2cc960b25bd59907c33e8187dfd0ec41f4cea759bfd12d611f77"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/State/Scene.h":{"size":1835,"mtime_ns":1779675967590088869,"hash":"c95e4adabae46b4a66e886ea97185adb361aaf0ad8770c010b90bf1b13f07074"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/Math/MathHelpers.h":{"size":2707,"mtime_ns":1779675967587299702,"hash":"42fe2e5f0f1a1cd69453debf4612973b14696b2d65bf01e67d565f869bc24d1d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/Math/MathHelpers.cpp":{"size":1917,"mtime_ns":1779675967587217619,"hash":"2aa09db955db82db5a6f54f5ee04527d2dbc346cd56dec2c1d86046b5759e868"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.h":{"size":3477,"mtime_ns":1779675967586536161,"hash":"c73331ab5e5b6ebe9588731623cb6ce1f9e240bff598f1c23c106d94cdfcc3db"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/Image.cpp":{"size":725,"mtime_ns":1779675967586609911,"hash":"bb02925a36f9c9373adde21a09619255ec115288180f2e70805806568bb0e45f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp":{"size":4390,"mtime_ns":1779675967586408952,"hash":"8ef944a18a28337e40196c715017f610117378aafb3ee18ab2ef2fda6a208c45"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/EncoderPool/Image.h":{"size":3094,"mtime_ns":1779675967586703286,"hash":"81cfe24c996ba4f4a14688bda116d2ab721e4e47a0deb3e7c949a1a8bcffce76"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/GeometryBuilder.h":{"size":4322,"mtime_ns":1779675967588003786,"hash":"7eefe3cb0d6d9720d4c0af7853c8b81ae0c01b05ca3fac33e4282beaa54cde92"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/renderdoc_app.h":{"size":31606,"mtime_ns":1779675967589759452,"hash":"f1d0353542500bcf9a9ff80e8a3dd2d6b84ec2f3be1198520c5472c02dcccece"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/OffscreenRenderHelpers.cpp":{"size":16978,"mtime_ns":1779675967588375661,"hash":"e6cdb3ec51605a81ce645102e8ef4dfb7e7a4a6ebd24c8279f5b55bfb11ec8ca"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Manager.h":{"size":8404,"mtime_ns":1779675967588233077,"hash":"c5766b037a6df7251da04fc4771bd30f4acb151b3cb4e7cc1d7b4e8938a8bd9e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.cpp":{"size":567,"mtime_ns":1779675967587424661,"hash":"1e8001c604d5b481443ee5b39be8bb841e0e5a1a473ad91e1de40880c7313fe0"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.h":{"size":2673,"mtime_ns":1779675967587663661,"hash":"38109d1ed74228009a1dac6d62dbbcbc70835c6fbbb5019f03ed98337c528c81"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Manager.cpp":{"size":23144,"mtime_ns":1779675967588119952,"hash":"17bc4a9fbbcf423a27185804de53d3a799c0c1134f8b353984242772c620c09b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/OffscreenRenderHelpers.h":{"size":2335,"mtime_ns":1779675967588579119,"hash":"d7cb0b96d6c90067c6fdeb8e43f792e8463a5d0bc528e3eeaaf0556f0d6031fe"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/GeometryBuilder.cpp":{"size":4267,"mtime_ns":1779675967587863327,"hash":"e02b59eb41c616a19f33fd09e9f810bc020d8e0785881435b37b9d1adc154dac"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cylinder.cpp":{"size":199,"mtime_ns":1779675967588997036,"hash":"770d9a41d2c999e9ff6037dceea181e66746bf2ee4f588e58e9d408d3c7d3f81"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Primitive/Sphere.h":{"size":1932,"mtime_ns":1779675967589293494,"hash":"6e47e18855b85e9605ced4b50850c7b209f946442f0339a33bf6b3e333a16dfd"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cylinder.h":{"size":2061,"mtime_ns":1779675967589166911,"hash":"255f76f7c1672a3e1773329f6fa94b3e867d0eee5a6dc715d7763c7bca15c2dc"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cube.h":{"size":2004,"mtime_ns":1779675967588917869,"hash":"5f9ef9f343e6694ebd351185e0e1cd328a8f8429230179ab30231bf235bd28e7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Primitive/Sphere.cpp":{"size":197,"mtime_ns":1779675967589230702,"hash":"f965fcac613922122e158648408128c824cf8040eba9c651035f41cf01e9ad02"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cube.cpp":{"size":195,"mtime_ns":1779675967588707702,"hash":"85fcb750bf6d409e15c5b936c7523e7ad8d56745d078a8fd18e179cc175453ff"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Shader/Shader.h":{"size":1856,"mtime_ns":1779675967589640452,"hash":"ba396445bb5664aabfbb32b4b93ffcbdbbc5b639cd0acb6a00a7bf2362ae708c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Shader/Shader.cpp":{"size":192,"mtime_ns":1779675967589557786,"hash":"b8e6aeed122e7b0785567e5f1f8391af06bb57231c930b78fefad5952c309992"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Shader/Phong.cpp":{"size":191,"mtime_ns":1779675967589401786,"hash":"094e90a9bf08a165166934eb6086100944db3ff2ae62327c71d98bfebb3ada6f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/BG/Renderer/SceneGraph/Shader/Phong.h":{"size":1986,"mtime_ns":1779675967589484744,"hash":"4f329a6d764ecb529e558e5b6a9ad022198aaac0752a1ea421a9e488ccf3be99"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Main.h":{"size":1763,"mtime_ns":1779675967544792536,"hash":"30a4b1dda384e93df1a8859c4e56a7bf482e27d7aafafafbb2b28a75745cb426"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Main.cpp":{"size":2678,"mtime_ns":1779675967544712161,"hash":"e00b0ff81c902c90b9d6dab8d6d6e017dcd9c95c90a58716b61f567488fde75d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Util/LogLogo.h":{"size":1682,"mtime_ns":1779675967564371369,"hash":"a0ba8ffa489e4cff5dc5d20df5ea2b7fe79c8c777693e598e9517fac900be2a1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Util/LogLogo.cpp":{"size":2450,"mtime_ns":1779675967564156702,"hash":"dcfb81e465bdbba1c03e34b361e1761848dedb30e5549bd3e35afe9bf321944c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Util/JSONHelpers.h":{"size":4935,"mtime_ns":1779675967564052661,"hash":"12b0000394418da7c891f22fedab97dbb412f911ba156bf5aeb20eef64bb7172"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Util/JSONHelpers.cpp":{"size":3710,"mtime_ns":1779675967563907078,"hash":"e02167a9f3561ea4999e4c6976dbb4c9caac5b105e0a3c306d45f7735d623a2c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/ConfigDefaults.cpp":{"size":34,"mtime_ns":1779675967543830452,"hash":"23fabf5107c7fb3c4a214c0a74cf725e9099b5b39e75406c27bb4becbed883fd"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/Config.h":{"size":2669,"mtime_ns":1779675967543758827,"hash":"6530d011c754dd07c4a16d0c7d257a89ee709360c83f52fc899298df1f8cdc7a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/ConfigurationManager.cpp":{"size":918,"mtime_ns":1779675967544558411,"hash":"fbb3b492c851aa14283ebbb9b1fad277ce0be5b1615aa8af7dbc086e0d98e1f3"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/ConfigFileParser.cpp":{"size":1886,"mtime_ns":1779675967544157494,"hash":"30e3978e1a5fe569706fb195590e569d4ca0db408273283963a7340d8510bdd0"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/ConfigFileParser.h":{"size":1935,"mtime_ns":1779675967544376411,"hash":"af8e2814d22a62162727d4a9152495995728f693399d74bf1083a6145daeded6"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/ConfigDefaults.h":{"size":751,"mtime_ns":1779675967544063577,"hash":"820b33a024e2ad12f716de055859dc56430bda5e4a47e72b0809cda7b712685e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/Config.cpp":{"size":26,"mtime_ns":1779675967543594036,"hash":"9d83c00e6fbcb96ae9da18176c128c7bf9412c078a3f1faa753cd13272678c20"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Config/ConfigurationManager.h":{"size":1904,"mtime_ns":1779675967544638161,"hash":"773e2feb7e31a110c9f4d85e0c54b7524fcd67f6c290a86696be379dee1eb756"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Netmorph/NetmorphParameters.cpp":{"size":504,"mtime_ns":1779675967545248202,"hash":"d1833e1fd6af7981d794283c460f3fc6ad754b07a3ee70582232c1e48645fa2a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Netmorph/NetmorphManagerThread.cpp":{"size":33410,"mtime_ns":1779675967544941952,"hash":"3381291b86de2c747c8ccf34b34ed7fb1b5c469d0aba1db96bef3b7009b5a43a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Netmorph/NetmorphParameters.h":{"size":2567,"mtime_ns":1779675967545428744,"hash":"41838a79ae559473f8e27927a0a1497b13ef64541a9c9cede7bb966414479747"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Netmorph/NetmorphRPCInterface.cpp":{"size":6907,"mtime_ns":1779675967545577661,"hash":"8e9a52c51c0fb45cbb8a9b6da8d0056d3ac43aaf289feae180b09344846309a5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Netmorph/NetmorphRPCInterface.h":{"size":2623,"mtime_ns":1779675967545814078,"hash":"739293f996fd9ad83aaa3b0b010b86249ff658ace62e9c68594e10542ed58705"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Netmorph/NetmorphManagerThread.h":{"size":1858,"mtime_ns":1779675967545058327,"hash":"c8d95edd24941c121f4b8615212554c738121e22f46c5da7dc62b5272a168d41"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.h":{"size":5824,"mtime_ns":1779675967579662452,"hash":"60e1d348fabace96002a88331c23d2fd63c41a96bf6973b1dc8b9115b7b02672"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/VSDARPCInterface.h":{"size":5784,"mtime_ns":1779675967579979994,"hash":"f535a5db45f13d5ce99956c7d35b160af245fa5e8416a5941e36345e2a57a504"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/VSDARPCInterface.cpp":{"size":34940,"mtime_ns":1779675967579794536,"hash":"3b83802974f374692210e0c2bb50599a37711b6af340c546153d05766f80750a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RenderPool.cpp":{"size":5686,"mtime_ns":1779675967579473869,"hash":"478a98ff9bf234d419b5bd26bf4f8f8e537cdbb404fa1c93ce1637b7270dcfe6"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.cpp":{"size":4264,"mtime_ns":1779675967578906036,"hash":"ec8f8f8b78bc8156f805b400b872e6337d6a3b3917f442b81a24170ee9a419a3"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/EM.cpp":{"size":4227,"mtime_ns":1779675967579133077,"hash":"23a524964cd095729e319fb0201275634a204b6716f26c61cb9d7be9dcbef310"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/EM.h":{"size":4187,"mtime_ns":1779675967579286077,"hash":"cfcc4bce9f21a4a06d5dd79ab5a2ebc252e850a87b2ed0c2ff23523e762ebe4b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/RPCRoutes/Ca.h":{"size":4074,"mtime_ns":1779675967578988494,"hash":"76d003422b6da5c3341560a83efedbe1f663873fd55bb09f4e38a65cb673d224"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/CaRenderer.h":{"size":1984,"mtime_ns":1779675967564806911,"hash":"e8382cc2a4f5d25cad67bf0384d720d0a1ec5278882cf3569952ca066f5e0877"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/CaRenderer.cpp":{"size":11372,"mtime_ns":1779675967564587577,"hash":"322c074d3f391c48a012383af4600895d7a90afc6a29e5de1ad05eaf48e48907"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.cpp":{"size":6830,"mtime_ns":1779675967566276286,"hash":"5849bc42ab683438bd5695c5c3d247ca59a8921a60a5fc8cddd662cdeedc02f0"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.cpp":{"size":7459,"mtime_ns":1779675967565719078,"hash":"b0aded27e2e7c90cafdda4e68ad5d056cc353bfda74f810563de2d04074d79f5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.cpp":{"size":5283,"mtime_ns":1779675967565976703,"hash":"37411c799a541fe771a60929cc8ad9194de6c2d14dabb400b35b51a5152664cf"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h":{"size":2315,"mtime_ns":1779675967566364577,"hash":"56fb5da5851fd31b7a8bebd8ffd2b099b12618bfc88c89dfd2b35aed039a2b9d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.h":{"size":2538,"mtime_ns":1779675967566101702,"hash":"b3f3575efb5ab983b5e5c3272b922daede7de36a15df4c9bc236e02ee3a118fe"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h":{"size":2171,"mtime_ns":1779675967565796328,"hash":"6a7b03682ed6b260e1d32c2e4038b911d85403719798667c20e092e974bd69b8"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h":{"size":3140,"mtime_ns":1779675967568096203,"hash":"90b298445d9d3b9eb731b5f453e7a3e4c506c1e3347d94e15f6655532d31b59c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/Image.cpp":{"size":1088,"mtime_ns":1779675967567211036,"hash":"21fbf2bf25842e26956320083729d6e4497c9ea31a8c0d7bab540439ecb3ace1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp":{"size":12539,"mtime_ns":1779675967567520619,"hash":"ea365b3de3f26951f8911fc17db229f742bbc931b3710ffc2232352355eb86ca"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h":{"size":3951,"mtime_ns":1779675967567705994,"hash":"e0eec4293f0b3abbe21fef147f379e4843d01be02bef11fc74dd820e0641b01f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp":{"size":553,"mtime_ns":1779675967567896286,"hash":"f8dd243a0de512ba44ba6845f41b85675c3306095d8776b818d7c86bb4130e30"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/Image.h":{"size":3154,"mtime_ns":1779675967567391161,"hash":"77786a207fd6dfd0bb5e72ca2a583adff1c3b669ce0063179510bf5a69e972ee"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.h":{"size":4056,"mtime_ns":1779675967568378911,"hash":"02270d8de5749017dec14cf65e7fbf4a8590ebda51d2dcbef990c48566035c55"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.cpp":{"size":4215,"mtime_ns":1779675967568293744,"hash":"c579a84ae0d6e5b4fd7d5e9590624e07066ea70ead5c2bfda4a4dfab3916eb8a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp":{"size":3191,"mtime_ns":1779675967568520869,"hash":"696c132901806b0a8266977f79237b8e7025d80d9235b9ea46c59ae63e9d14eb"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h":{"size":3068,"mtime_ns":1779675967568616744,"hash":"8504e547a1e475990a17b6e31f12bf1f056fc5786d36c9079ef5e84c3d5967dc"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/Task.h":{"size":2843,"mtime_ns":1779675967565571577,"hash":"96ab30022f86daba58af6607407de625ba823ad57717f35996ce7cd45533b78a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp":{"size":8185,"mtime_ns":1779675967565129702,"hash":"67c652c4b12c4f7bdc59d50bac50443cb7243a23c94ff8da27591cd2656efbde"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/Task.cpp":{"size":628,"mtime_ns":1779675967565456286,"hash":"e444c0ab98027d42e644341429d2c936d1e2ff848fbdaa526941354fbff04292"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h":{"size":4651,"mtime_ns":1779675967565296994,"hash":"39c5eb14a05100a2b1822e0ee129c806187d12b3c9c827903eda4139e72dbfeb"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaData.h":{"size":4335,"mtime_ns":1779675967568996911,"hash":"7f0ec4c9cc3820d9e4993ffc16a08b0c96051d4bee0756b22185bd587f452ada"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaSubRegion.cpp":{"size":200,"mtime_ns":1779675967569271786,"hash":"4abb5b0a8e62e66061df43e85045cb9e61fa51aef691706d955ddae48f03c84c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.h":{"size":3073,"mtime_ns":1779675967569175744,"hash":"2905b64b0fdbba8061cbd0b59b24c10a20d12ecbcf294479584929381e52288e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.cpp":{"size":66,"mtime_ns":1779675967569075786,"hash":"45ea4c63eb04c9a13388666421290586b761e09c41df673c0a11027d3e26f604"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp":{"size":6601,"mtime_ns":1779675967569503619,"hash":"627662e56de6c4ba125ffd6df4c0171f9b96bd03c3d15e81c7e00a6c665b8068"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h":{"size":5075,"mtime_ns":1779675967569642494,"hash":"b2d4307a6a4b98fb69df3e74fc14cc2c4f2ba0d15e01a3a215423d6d53b3cc96"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaData.cpp":{"size":50,"mtime_ns":1779675967568845494,"hash":"b647fc4c9112a22926371246e4d9f3d8638c3e59d961ae257ddff6d589d5859c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaSubRegion.h":{"size":2869,"mtime_ns":1779675967569363494,"hash":"4b5e86c7d02b908693afc58c144a86b4ae832d9de67b9f2531ff56db2ca0238a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/EMRenderer.h":{"size":2608,"mtime_ns":1779675967571171952,"hash":"68f3edfe90b353bb8a6360b056f143e0f82347b2710c102edf85d054f4b97219"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/EMRenderer.cpp":{"size":15683,"mtime_ns":1779675967571050869,"hash":"724595b028187fd8c045e56d8d4d99575cb9c8d4b3ff3fabad344c8c00833e7a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/IgneousPipeline.cpp":{"size":5939,"mtime_ns":1779675967573669702,"hash":"b53a1edbfbd9734bd105e5e4d294fe3a23a967d0486ccce7a01ae9e2ce00f9b1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/IgneousPipeline.h":{"size":1214,"mtime_ns":1779675967573746578,"hash":"3545bd43a8052f3a0b974ec15d74b508520db0f74aac598d5cf5ff2a5fd25410"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp":{"size":16549,"mtime_ns":1779675967573849161,"hash":"08b22ca46d024aaca2eadda33c0769dc592d6642ea421967032aba0f91cf4f59"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.h":{"size":2254,"mtime_ns":1779675967573977327,"hash":"82501f13cf1f20927cc0a5af7deb3885f19b4fc86109bc39de20d7ad17280e21"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.h":{"size":2391,"mtime_ns":1779675967573521119,"hash":"e743ea377a4d4ba4b908c4ca228b4b06d104a6f8ed80c719aa85f6bef2374158"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.cpp":{"size":1058,"mtime_ns":1779675967573237161,"hash":"e882228480d87926875481fcb9555c7b73440e04fabb49d26239d899edbe4517"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.h":{"size":3656,"mtime_ns":1779675967573158578,"hash":"fc836102abfe37e6f34f47a565f15ebd18c7a3f02b7e4a0c62535bbe8f9acecd"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.cpp":{"size":9363,"mtime_ns":1779675967573079077,"hash":"db8c9272ff623b95c4975636b71d961a6e50369d82bcee7832d1e28e2daebec1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.cpp":{"size":523,"mtime_ns":1779675967573430703,"hash":"026a5a6a3c6a8152599170a8a6008e3b0469602263bd6f225bc73c60d6a04eca"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.h":{"size":3113,"mtime_ns":1779675967573315286,"hash":"834b28688038a3a5d821d2ee2b6277fa0bf0de2d78b98afeaada10637fbd2ffc"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp":{"size":5200,"mtime_ns":1779675967571525161,"hash":"b975e890eae6734cc88119b0b46f43f09e76d431e521c142cbd7ffe266dc4620"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MC.h":{"size":13556,"mtime_ns":1779675967571367286,"hash":"1647beb1f28c3f5aaf25d011248a4301988d2829bd370c9344cd892d98ba3788"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MeshCombiner.cpp":{"size":535,"mtime_ns":1779675967571905536,"hash":"719aa26b5b14d3b20300e684ed5e93e5defc0db935c35a9a8f77a14384e9b6b5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.h":{"size":1229,"mtime_ns":1779675967571619994,"hash":"18cc972443221782f386b312ab395331f21ba531924a520d5537ded448ee61d8"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/OBJWriter.h":{"size":4715,"mtime_ns":1779675967572868203,"hash":"d91bb24402dd2baac4a692a8104590d672c98f2c6f04e7247949a8bbcdaf5190"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MarchingCubesLookupTable.h":{"size":17424,"mtime_ns":1779675967571734911,"hash":"fad6cfedfd1a71180f707cbe8374ec24ce5a2b0a4bea677d95006db8cfca56c6"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp":{"size":2936,"mtime_ns":1779675967572619203,"hash":"7b6956ae499688c7508e8d69414cc924e28876327fe5c629f52acfed1a9e7e98"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MeshCombiner.h":{"size":271,"mtime_ns":1779675967572028452,"hash":"c32b0f18e488933e8eb97925f11ee2b49111df1d8336500fff708d6ad15f03d7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MeshTask.h":{"size":584,"mtime_ns":1779675967572412327,"hash":"5d5c304bc37e259d7f0790dc13e05c010a3e9b246b8df689b1912f3411ead0a3"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp":{"size":1780,"mtime_ns":1779675967572104161,"hash":"e58417ccfb2e69dd85a79df50a8e523244fb26beaf5a7b729f1a142a55ef2da3"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.h":{"size":761,"mtime_ns":1779675967572317161,"hash":"d28dfeccc14e57c6f42be715b98b3bfceb8837979abfaef0b38a9ad9887ffab1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/MeshGenerator/MeshingStage.h":{"size":740,"mtime_ns":1779675967572710411,"hash":"c282744588f006eb9bf2fbe475577166181d353af700b85825834962c2956c64"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h":{"size":2468,"mtime_ns":1779675967578506327,"hash":"d56507060c4b546c22a66d79efa3550236b647cb42a14789bf354874ea86841e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h":{"size":2361,"mtime_ns":1779675967576793411,"hash":"49b41ffcae11a1737752e676ac6cfe06aaf5cfbd8d72b25d904b7c2098c0edbe"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.cpp":{"size":7783,"mtime_ns":1779675967576715702,"hash":"4eca1014d4a2444ee5e41fea55c88337bbf0213caabfab7e5c56ed5c1deb8d55"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/EMSubRegion.h":{"size":2386,"mtime_ns":1779675967574717578,"hash":"e21e48f35944e68d7bf844e475535efb6624e1cb1df2f0cd7abc37409e13f0a3"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.cpp":{"size":13135,"mtime_ns":1779675967578627494,"hash":"83e2e638bd82a38974cc63cad35657b745bcbeb2318ccb215af6b211ffd88b19"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp":{"size":18047,"mtime_ns":1779675967578417661,"hash":"72034a789ec645531e60da3d15c5dc027a7e79ddd64931e3e02e3ec70e1cf896"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.h":{"size":2208,"mtime_ns":1779675967578309328,"hash":"6245068b15f73b2dd5395502e66563ff63b0a104dcbad88b28f43c4628b4522c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.h":{"size":2904,"mtime_ns":1779675967578709244,"hash":"d6ec416dfa1aa66a40fefe48b38125a8323d3dd17a3a1eee610347bbd07a77cc"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/EMSubRegion.cpp":{"size":12085,"mtime_ns":1779675967574639619,"hash":"7b638df6621413c50d68bf81b6efb0f01dd88d42b261d278b997faad44ad07f9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp":{"size":6073,"mtime_ns":1779675967578219661,"hash":"960958f89c599e08cc962d8474de871a56ef29a414f70372a46e9b1f37d8177e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/SegmentationCompression.cpp":{"size":4506,"mtime_ns":1779675967576038411,"hash":"1a77ebcccbf8980ccfa10e0d6d1322dbc9df5410eacb7556625b066899993809"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h":{"size":5414,"mtime_ns":1779675967575850952,"hash":"a2a9a7542508d244512f27a9f957204479791c417e4da188245ccd03f4875840"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.cpp":{"size":1396,"mtime_ns":1779675967575366994,"hash":"c5bbd60808f529069f4d1c07166864cf612441e4b17d221241c203b9930c1b20"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp":{"size":22548,"mtime_ns":1779675967575538577,"hash":"572de9e51ca306e4a1d5cd77d4268801d9d2a2b7f9d7aeba10d59d0671b1e333"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/SegmentationCompression.h":{"size":930,"mtime_ns":1779675967576128286,"hash":"935657c86238e88bf1bcf504a0c7f906593d797e3ec5f2a67892cf0f4d7aa2d7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.h":{"size":4216,"mtime_ns":1779675967576540911,"hash":"d5f5e8a1e0eb4138047adb6b66101ad910161183009dc3799f5f5100d4dfadd9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/iir_gauss_blur.h":{"size":8960,"mtime_ns":1779675967576310619,"hash":"a29b00ed911a2f8f223a1ee8fde2ef425bc4def03fa3af34886fb422212239c1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h":{"size":4005,"mtime_ns":1779675967575630369,"hash":"16d8d0fa5cb7804e85f63c9c0fca83c78ccfac738904782c82763897cb28e684"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp":{"size":510,"mtime_ns":1779675967575713327,"hash":"05e7a43d3dea8996eac04823b9d105b4ec1a30b4937b8c08754e0b10c630438e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Working.cpp":{"size":18476,"mtime_ns":1779675967576213911,"hash":"1321f16b94281132ee5bbc71469c354a9bbc47e9f412d1557d99323b64077262"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.h":{"size":3197,"mtime_ns":1779675967575444869,"hash":"d6ad4f5869a8dcee6b79106a98def362e4737aa85864dd8b431ba1e6c530f188"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc":{"size":10442,"mtime_ns":1779675967576408202,"hash":"b239e990b78e9220646d8c58cd5dc98dc0de6f17e0049f025a405fd7785c525c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp":{"size":23084,"mtime_ns":1779675967576930827,"hash":"2759bb625d7fe575909f4e54464e4a1b2f53123d8b1148dc356fcab5ee03d76a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h":{"size":3833,"mtime_ns":1779675967577006786,"hash":"9ec5fff52480558c8bfe4f86ec37d196dd1ee098a6111a622fad4d3567644397"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/Task.h":{"size":3685,"mtime_ns":1779675967574539536,"hash":"09a3ab8c9d708185bb9e55cad701c16f1b7132d9d740e47ac23a35dc8f1d9569"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp":{"size":10202,"mtime_ns":1779675967574225161,"hash":"295a6e768dc665a8a465865c826e09ea444ed36dfa7d1d908dd50a81eaa1ccdf"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/Task.cpp":{"size":585,"mtime_ns":1779675967574452869,"hash":"370e43fe39a9946ec64aa2ec5e6bd2d1929853354de1532a21b2db027e3bd899"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h":{"size":4613,"mtime_ns":1779675967574362869,"hash":"a7fcf7f57fb3372c452d870951c036d9d51023b9c1d281dc73585b90687c9746"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h":{"size":6040,"mtime_ns":1779675967577280119,"hash":"0cd0177a309a7a8a486269bc14eba9acb050579ebc18fe3e9384eb83b64c7285"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/SubRegion.cpp":{"size":198,"mtime_ns":1779675967577477827,"hash":"cb5adcf7fd98e95634474762491afe4d0c25821f11743de597d26dc30b13bd62"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/SubRegion.h":{"size":3027,"mtime_ns":1779675967577553369,"hash":"6a6c73605a82aecb484e57426b1668c77439e584bcae795bd81feed79b64c4f6"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.cpp":{"size":64,"mtime_ns":1779675967577139702,"hash":"1f5c95ed6d8caab8f927d17db1343db72e3b7c3b4cae8dd3dce43bb34035b6f3"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/VSDAData.h":{"size":5185,"mtime_ns":1779675967577769577,"hash":"b5bd196d849cae5abc705356aad417167cf1d09d7559edbb07a0b4af5890d9c6"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/VSDAData.cpp":{"size":52,"mtime_ns":1779675967577626869,"hash":"ce898efbba360d69de5a4d791fd22c297ef5631ff6e74c3591f98d58fa93c19f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h":{"size":7898,"mtime_ns":1779675967578058453,"hash":"d69ea39a130843ab414c6a7a56f8e0a1063a70f157aa8f2bc084ef1dfce26297"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp":{"size":14339,"mtime_ns":1779675967577902578,"hash":"a7fc2b6a2b590d77449e81f842e7e9457cf5303e2eaf423cf3de465015cc17c8"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Common/Structs/WorldInfo.cpp":{"size":179,"mtime_ns":1779675967569984036,"hash":"7f19f6c12b076d4d012252860bbf1855449568d5c3da09137f41a2be69376dad"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Common/Structs/WorldInfo.h":{"size":1705,"mtime_ns":1779675967570113244,"hash":"b39dfa8bb43f06103fe7efde0fb6afca14f85d6b5f261422d79130f53b401d50"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Common/Structs/ScanRegion.h":{"size":3941,"mtime_ns":1779675967569907536,"hash":"ece4291638d004d57c497a2b48449bdb0a3a9844a1a8ebaa5470692312ed32b2"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Common/Structs/ScanRegion.cpp":{"size":2127,"mtime_ns":1779675967569813953,"hash":"fa46ee5b9a3984e34b27da30ed7441bfde75356837b0c22693ecbf3bfbc14129"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/DebugHelpers/MeshBuilder.cpp":{"size":4270,"mtime_ns":1779675967570491828,"hash":"0574743a75cb899925f4b4e87595198ebe4553050a1a96f4105438435c4c65d6"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/DebugHelpers/MeshConversionHelpers.cpp":{"size":790,"mtime_ns":1779675967570725952,"hash":"257b6af3d7834feab6f7e98e12e3dca7b0deab275dd3b5ca18bf7a7b2df95500"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/DebugHelpers/MeshBuilder.h":{"size":1472,"mtime_ns":1779675967570626161,"hash":"bb292f7237ca2af9802ae1a94b8dc2af04730ebf8535ca9e519a28c84615826d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/DebugHelpers/MeshConversionHelpers.h":{"size":1247,"mtime_ns":1779675967570828244,"hash":"2eebb04506825d005eeec0e2be306eaffa21c87e518a6ee0a360ef6128722328"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Engine.h":{"size":1506,"mtime_ns":1779675967552670286,"hash":"e3ba2d5c516657ba3992b1ff64bc62920afe96a18004c0c46c8ffdb5fcd0b13e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.h":{"size":1371,"mtime_ns":1779675967552890327,"hash":"aef64f54349891286f8debe4a3d404d5361da849bf9c6d679581d665f6936bd8"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/EngineController.cpp":{"size":4149,"mtime_ns":1779675967552808869,"hash":"64086a5806e7b7f3b2c73b8aebc60693de80a807803d5018cf2041b117518a39"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Engine.cpp":{"size":1461,"mtime_ns":1779675967552592244,"hash":"713c4256d2568763cf270acdbea605501930f3bbd3b9de7ee61632d35127527f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BrainRegion/BrainRegion.h":{"size":1885,"mtime_ns":1779675967550929327,"hash":"1e1e007e768720e7a62280922205aedc50a522212d603abb02678382f7bebc94"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/SimpleCompartmental/SCNeuron.h":{"size":1956,"mtime_ns":1779675967558619827,"hash":"97ffd8cab427a790a1104e6641d3c2ca9000a43745aeebc6b9c732d4e923f5ca"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/SimpleCompartmental/SCNeuron.cpp":{"size":4207,"mtime_ns":1779675967558540994,"hash":"8baf4d5bce8a4d08d9f9cc2d73e7fcc8d41f1476839da4a1f840d22779c230fa"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/LIFCompartmental/LIFCNeuron.cpp":{"size":22263,"mtime_ns":1779675967555060453,"hash":"a0d86a580b53a95766393310f2ef0cd23815b9893c5ac5808a09992c96193cd5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/LIFCompartmental/LIFCNeuron.h":{"size":6976,"mtime_ns":1779675967555223244,"hash":"eeb4823215e4e3871c0c888c4eb6e02b161bc4772e0cfc3f885644f97bebb027"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/Receptor.cpp":{"size":7594,"mtime_ns":1779675967557931911,"hash":"b45a6626206dc9eabf6fedf8bbebc530e330cf30318dc901a60649762c5dcd54"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp":{"size":821,"mtime_ns":1779675967557353744,"hash":"e7decce1d160c99b950dcd5c49f550db2d643c612cec78d646fba299004d64fd"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.h":{"size":5763,"mtime_ns":1779675967557654994,"hash":"4adf89fb57a048bb26157b68b21d8ef49dcb85a803a2fa7aa6d27a544806db85"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/AMPAReceptor.h":{"size":1970,"mtime_ns":1779675967557165036,"hash":"3744f7f7cabc30853d72618012cc25e2e45b03f2893c4a59abff731dcd0726d4"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.cpp":{"size":5755,"mtime_ns":1779675967557509786,"hash":"7ae7c2bc3b199cee346b1f86e00b9b1d13bcd4b0f4737323fa604cdafb1ab14a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/NMDAReceptor.test.cpp":{"size":5615,"mtime_ns":1779675967557791077,"hash":"543edd5ddfb4856d566993b3974faa4931337a78d6ce7ad8f48d6aae43332dba"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/AMPAReceptor.cpp":{"size":1015,"mtime_ns":1779675967557076244,"hash":"3b19e9b1ced86174c8fb5df8662a5e42cfa4d68bbdfd579b05d79a621576e77a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/Receptor.h":{"size":3183,"mtime_ns":1779675967558040577,"hash":"bedaac7cd0e52dd46fc5e8eb01958cc02d69c686de2334eaecd4138ef1cbd651"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Receptors/Receptor.test.cpp":{"size":10800,"mtime_ns":1779675967558132494,"hash":"d9f9c9da5663ed446715bfb5bf854f7349504fd23cdee86df6ad660880470d56"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSNeuron.cpp":{"size":14717,"mtime_ns":1779675967550468244,"hash":"477e309882bbd591d9a5b27268aaffa6d738393f66d609eac0d563fbd50121db"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.h":{"size":1946,"mtime_ns":1779675967549609703,"hash":"873845b2619345f4a194480766fadbe0c36a7ed468c52e1e7351f3b38446bbfe"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.test.cpp":{"size":1375,"mtime_ns":1779675967549832952,"hash":"9b1be7b18d10743a086f38e17692199cf34cc1ca80d91a53fe149a78a7a7ee43"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp":{"size":6293,"mtime_ns":1779675967548939911,"hash":"b35211ddd1c430ef76cd8a1894391db4a0bcfd960bbee716c74573b2d808dcb5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSMorphology.cpp":{"size":3825,"mtime_ns":1779675967550014202,"hash":"fd5b67bcf017dc9496f1acba44bd651808531a5d1b730a5708b26b6c031608e2"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedBrainRegion.h":{"size":1555,"mtime_ns":1779675967548802744,"hash":"ec420af74785e11239f44a26f99b99ecab4640de2dd23e954e9b0073703e4d0a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp":{"size":2822,"mtime_ns":1779675967550345244,"hash":"be26727430b8890ffda760c0f3eb0aedb9533d53ea5ff2197255a9f4179603b2"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSNeuron.h":{"size":7318,"mtime_ns":1779675967550599369,"hash":"8e49b35e307f460a2508d63331f6a53ebc9c1aa56b51e84ef995b89e2c410dbf"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSNeuron.test.cpp":{"size":9984,"mtime_ns":1779675967550683286,"hash":"1a7b724a6302e2435ec8c41d373f38daf8e0e74363629cc3e677b1a6f336b914"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.h":{"size":3358,"mtime_ns":1779675967549129578,"hash":"679c38d8b93de9b47e8e49f5ea69e4daf17b3c96bb91b398d9c0d85d75684f01"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNC.test.cpp":{"size":10094,"mtime_ns":1779675967549262078,"hash":"b78d806e179d67e3cd7a4e8968ebf9922fce4606e7204b75ab91b4520790a496"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.cpp":{"size":4188,"mtime_ns":1779675967549405786,"hash":"b30fc6d532fb801eafadbeeb82b191eeb9b558455495dd229c8f2aa20a9aa75f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSMorphology.h":{"size":1947,"mtime_ns":1779675967550190452,"hash":"0c0ac5eed990dba645749115c1445770b58dc9f34c5a51ab66aa58e692e8383f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/BallAndStick/BSAlignedBrainRegion.cpp":{"size":640,"mtime_ns":1779675967548607036,"hash":"afe1fb4f572bbfe32fa31071c4b6ce99704b7a3aab76339c095e3c6c86802bcf"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SignalFunctions.h":{"size":1311,"mtime_ns":1779675967561326619,"hash":"1667e2ff7fbe5aeebd5130f5152133ced515bcc8662d15d475be1757ebc948c5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Simulation.h":{"size":12428,"mtime_ns":1779675967561753952,"hash":"86a3b22d96f6729d0a22f80c94981a3929aab79ff9ae3c8c089998194acf8e6e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Staple.h":{"size":1162,"mtime_ns":1779675967562153494,"hash":"3eb50be60c34e45ecc53ea1801cca4e820fb53ed1327508dcc7965335514cd23"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Neuron.cpp":{"size":24872,"mtime_ns":1779675967559811369,"hash":"5c06ed71a7eea9474bbfaf59ba93e98a64508071adfbc7895dcc9c2c2310b071"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp":{"size":1140,"mtime_ns":1779675967562455202,"hash":"177f912c08e09f5a936d260ce84d74127dd0ed0eb1e2cca23edf53fe338a4a5a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/NeuralCircuit.h":{"size":5512,"mtime_ns":1779675967559721494,"hash":"34556284f8bc98c80880954b99831a082015a2d71b3dc5361a91c24441444800"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/PatchClampADC.h":{"size":1363,"mtime_ns":1779675967560108911,"hash":"97464b4baf0fe67cdecfce3a89b330b549c559f54442456fd499e5dc19297239"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/BS.cpp":{"size":33,"mtime_ns":1779675967558849327,"hash":"cdf345852d4b2a9a5540edd04ca522f9336234be0c608b4f78df791ece531eb6"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/PatchClampDAC.h":{"size":1641,"mtime_ns":1779675967560247202,"hash":"77d0fa4acd1407ee430876e563e8a5617d0485cc1a7018ad21b47dec23b568bf"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Neuron.h":{"size":12503,"mtime_ns":1779675967559936869,"hash":"46abee15978c4d1bfdd009c86d52c0601d3ff5d72cc488b16250a9bdd260440b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/PatchClampADC.cpp":{"size":44,"mtime_ns":1779675967560010161,"hash":"7ec8412125b43c243f4b498030daf66e3f9847631789891cc7c669777dc93fc8"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/BoundingBox.h":{"size":1690,"mtime_ns":1779675967559127994,"hash":"994ba3d2bef727cc98dbbb7c87ac305aa56c2e27d4a10f5fd205f317081a5ed0"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Receptor.cpp":{"size":3162,"mtime_ns":1779675967560318994,"hash":"d9f2ef669145e89b15c8375b01636b533c807206bf52dea630b3a7229f422115"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SynTrQuantalRelease.cpp":{"size":656,"mtime_ns":1779675967562251077,"hash":"99eca955132f1066302b0a08aed83ee61d2ef46f844deb063537ef602f169812"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.cpp":{"size":6211,"mtime_ns":1779675967559264119,"hash":"bc708089739e3cf16e7bb85adf82986893fed2a3973044563b135019c1201bc6"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Simulation.test.cpp":{"size":14717,"mtime_ns":1779675967561859078,"hash":"816b71c15aafea83008f2212bd4ed7ed78d9ee417311affa7c7e7f2d6e15c6e7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/RecordingElectrode.h":{"size":2949,"mtime_ns":1779675967560676869,"hash":"d53fda1a81fc19b02d29860e33eedd70e261c50a2a3d36bea1b6c05b5e8b5c51"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Staple.cpp":{"size":37,"mtime_ns":1779675967562044536,"hash":"e99135732fe8a4f3edaefea7461b44417b77dff60e888f661cbd0081814fa6a9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/RecordingElectrode.cpp":{"size":5216,"mtime_ns":1779675967560591411,"hash":"07bcd89da35e9c39291eba064af0f232bcc4a32ab90dedc55c590e496b51fd62"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SignalFunctions.cpp":{"size":1746,"mtime_ns":1779675967561243286,"hash":"f0781f1a46a3b7cf13a994f0dd6ae943246c86d36bd99d72b2e9ae6e1da21306"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/BoundingBox.cpp":{"size":3991,"mtime_ns":1779675967559046786,"hash":"7c7da502cc5beeb29071072fa2e9fc4958ae700df947f4d3ae5d859158248eac"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/PatchClampDAC.cpp":{"size":44,"mtime_ns":1779675967560177827,"hash":"04471030236883b007eadc41f62571fe60fea52aabb115ae809e170445a58f5f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SC.cpp":{"size":34,"mtime_ns":1779675967560978619,"hash":"f6a5a8dba87fe4762e002ca018ee305dc230de53cca0ee2395e109bc92b5d18d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/RecordingElectrode.test.cpp":{"size":6546,"mtime_ns":1779675967560825452,"hash":"ac5d226ab1b5c03fee29aa7c05f6d796b3e7a431657ba0ac65aee3cfeed88d1a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SignalFunctions.test.cpp":{"size":2188,"mtime_ns":1779675967561422952,"hash":"adeac1cfd47d26fb486baf9c011c6d15b47e8e9ff9c617e2b1b49cea6ec635f9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/LIFC.cpp":{"size":788,"mtime_ns":1779675967559406369,"hash":"76b18985ca0a79b8205b559bf438e7f8306c24faeab0147503f5a12c49d93060"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/NeuralCircuit.cpp":{"size":2008,"mtime_ns":1779675967559574577,"hash":"7cf4e4c06f1c617f87edf7da438850cf8b2a63a7c7a4a2aa2a86ceeaf9cccc17"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/LIFC.h":{"size":1971,"mtime_ns":1779675967559491244,"hash":"dfff7975bea9da3cbf1e4f06c1be3371e54efe684d04d35b978cab77c27a17a7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Simulation.cpp":{"size":79531,"mtime_ns":1779675967561596036,"hash":"8ebce4281f50544791f45c2bdf6d93b7bf872fbb7da1cf049337a07276c3337f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/BS.h":{"size":2564,"mtime_ns":1779675967558948994,"hash":"768ce475c873e2d338d701cea4e0200ee9cd88cefc9edb6101dfc5e730d2efa1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SC.h":{"size":934,"mtime_ns":1779675967561155036,"hash":"16cc77632d7ea4eb1f30ef384c821392782205e967408ed2432e433cef80ce48"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/CalciumImaging.h":{"size":2738,"mtime_ns":1779675967559342827,"hash":"c07ee0cfa99a4d3d6b8655cec1fb9aa8d35821556f4cb76a65a1aaef6cfc9f12"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/SynTrQuantalRelease.h":{"size":1304,"mtime_ns":1779675967562352036,"hash":"04ec3f854b80e3f1f78f9e5ec1eaf756042267edb1eb001940ae3547360b93b9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Structs/Receptor.h":{"size":4515,"mtime_ns":1779675967560453661,"hash":"713b122415259eab472f2c8a2a56d62c69c3108bb3f4bca355eae9a4991ccb82"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.h":{"size":2915,"mtime_ns":1779675967553152911,"hash":"3cf1b4f5f8456c196351dc75808f72a73c9d34907adcb260cc3e68e800a6d958"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Geometry.cpp":{"size":43,"mtime_ns":1779675967553587286,"hash":"bb0914ff23a7ee5205037a81abaf6bffae9db02cc2cd85efdaebfe62a0cff7ee"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Cylinder.cpp":{"size":14788,"mtime_ns":1779675967553352661,"hash":"0754571e0f8b22023663b0268b1638e8bc33c177f75cbe6afa8c1b3da2d113f6"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/GeometryCollection.h":{"size":5176,"mtime_ns":1779675967553805202,"hash":"036c1942693be77209037fa4c4de5a43488567293fb0395b992ec01fa4904573"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/VecTools.cpp":{"size":6876,"mtime_ns":1779675967554293952,"hash":"c9cc4556ad3cadeb2b3ee9a81fa0f6a957e0a6f4aac0209cca6bf49f0599570a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/VecTools.test.cpp":{"size":3928,"mtime_ns":1779675967554606827,"hash":"b1fa1bdc1f11808118ec82fd9513c00f2ed1f01adb1086afae6a149a62d41d4c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.cpp":{"size":8140,"mtime_ns":1779675967553058619,"hash":"b3365ab77d64f173a76c18074ddf3b12ae283d9f3663cb7cc3dcbf62e8099aad"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Wedge.h":{"size":3219,"mtime_ns":1779675967554888869,"hash":"512da5f5121f78cdf21ea404500669da67087ab1ef540fd55e220e2e9499ff76"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Sphere.h":{"size":2049,"mtime_ns":1779675967554053494,"hash":"07ca2a2f53f281306ec56817f5b5ee8d92d069cf560725eb4a8bfa49542f4534"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Cylinder.h":{"size":3211,"mtime_ns":1779675967553433202,"hash":"cbdf777126b4c4b7c817b877bcebed5847c42caf70ba468ef0d97d3a9522defd"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Wedge.cpp":{"size":669,"mtime_ns":1779675967554698536,"hash":"7c35fb7f7407174f94d6e0ed584bf311a9573e9771bdcc7e2d912119770f6246"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/VecTools.h":{"size":3192,"mtime_ns":1779675967554398869,"hash":"9e0a5e4f509c8e76624b84e1fddcd2fe7f8175c5976022315b1083ac77390159"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Cylinder.test.cpp":{"size":2616,"mtime_ns":1779675967553513702,"hash":"da73048349155f2d970c38310003a323afbae24b9c6b78a457a4471249dd3560"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Box.test.cpp":{"size":2263,"mtime_ns":1779675967553231536,"hash":"3bc006bb6b85867862dee3f696cad9b0cd860cd043fb3c192ca0b8d676f8e639"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Sphere.cpp":{"size":1848,"mtime_ns":1779675967553975369,"hash":"46fe93dd8d7b6d020b234bb39215ac5aa9cdffb3cbe75b7363f3ae21af7c4b39"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Sphere.test.cpp":{"size":1263,"mtime_ns":1779675967554130119,"hash":"928e7642063c98477be4a62f4ef88a420aadbd1b64fc6598f34821b0c09ca4ae"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/Geometry.h":{"size":2586,"mtime_ns":1779675967553664452,"hash":"204459aec152343fc0964640102246109bfd3b848f41d2bd24c24f57173fd092"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/Staple.h":{"size":1109,"mtime_ns":1779675967563655994,"hash":"47d020f6f6d1ce08b86f4c375f2485a0b253f895e04b74f6448551195db0421a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/PatchClampADC.h":{"size":1274,"mtime_ns":1779675967562668244,"hash":"18c4414ecee4e8c5db4a8aa4fddeabfde9c7a9c809e37371eee294e2b1f49e1e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/PatchClampDAC.h":{"size":1151,"mtime_ns":1779675967562875369,"hash":"e7aa52a44dbad93b3f3e86dace66d96191eb70c49466abad87a2ee166027e19d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/PatchClampADC.cpp":{"size":841,"mtime_ns":1779675967562571828,"hash":"5519081f21b3e7999bf3205c87906fe23733c148062c9e31db8979a9ee571fdc"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/Receptor.cpp":{"size":618,"mtime_ns":1779675967563174286,"hash":"c7851f84bd5ea21008566acdddb436f2f8e38fe26246b03986361e3cd53df012"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/Staple.cpp":{"size":580,"mtime_ns":1779675967563365202,"hash":"171b031ff0c3bd9e9a5ac49e20b15f4f43ccf7a2be099163a2d0c085837acdda"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/PatchClampDAC.cpp":{"size":677,"mtime_ns":1779675967562780411,"hash":"599c1f781f2ed5fc19cd567db9c8ce8eceb7661100b306c4c135caf9206c8b89"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/Receptor.h":{"size":1125,"mtime_ns":1779675967563276369,"hash":"faae04afd3bf728a1f373d5189f2b42e06fecf7b7b4e8b891dfdb6859234e4e2"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/RPC/ModelRPCInterface.cpp":{"size":44705,"mtime_ns":1779675967556435869,"hash":"8b0f70612ce3e038c2e011d9d15e9cc282cf39c441ec43729f875714fc2abae3"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/RPC/GeometryRPCInterface.cpp":{"size":3305,"mtime_ns":1779675967556119869,"hash":"80f03a2182d472a4948f5b61d5e45d757fc341464c071fa15835ddc87aad24ed"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/RPC/ModelRPCInterface.h":{"size":3768,"mtime_ns":1779675967556538452,"hash":"444b2e0361d1ce8a535c17a4de3f96781ec455b71d5fa901dbadacddc1ce7e30"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/RPC/SimulationRPCInterface.cpp":{"size":61626,"mtime_ns":1779675967556688619,"hash":"fcef3b07dbd4ecaac5659fb837a116dc1d973e88b4c21f9431ac4e63dcd6b50e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/RPC/SimulationRPCInterface.h":{"size":7847,"mtime_ns":1779675967556830369,"hash":"8a8ced23fa984dd1eaa37079c35c8eacde4810886edce4f0123362daae6415d5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/RPC/GeometryRPCInterface.h":{"size":2660,"mtime_ns":1779675967556312453,"hash":"a5b27de7df54bf0153ed85469a6a4bc4f96d5932eb45f2a6308dcd574f6eba36"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Distributions/Generic.h":{"size":1791,"mtime_ns":1779675967552135452,"hash":"f16c08f2861974df520d2891eb319c971d444ed4a433f54e0cb8b46b9390e793"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Distributions/Distribution.cpp":{"size":643,"mtime_ns":1779675967551144161,"hash":"71626e34b1c1b9dcb03c70dd198331ab14d0cf5288ac7b650401dd1660f170f7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Distributions/TruncNorm.cpp":{"size":4724,"mtime_ns":1779675967552276952,"hash":"f05db1f60f72abf7a20d6976097807fa8525e9c88dc4137e8168d08b5e6ebeaf"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Distributions/Generic.cpp":{"size":628,"mtime_ns":1779675967551940911,"hash":"4aa8c7a02e2221caa948f47d4cdd334d22e075f77c257fe67e6437a8607b6f16"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Distributions/TruncNorm.h":{"size":1566,"mtime_ns":1779675967552342411,"hash":"5dfa72ba57233ee12cd1f6620e155d923a99712364578c49641a44f8ee6e6141"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Distributions/TruncNorm.test.cpp":{"size":2171,"mtime_ns":1779675967552512786,"hash":"7192347cd0313128fd8b986c8335b08e96cd212d3ac9cb475947a24f7d115fd1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Distributions/Distribution.h":{"size":1756,"mtime_ns":1779675967551379369,"hash":"b6afde8db70ff790c7cecb2255ff598d528d3579b0e74b73894705149fc792c7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Profiling/ProfilingManager.cpp":{"size":27514,"mtime_ns":1779675967546020869,"hash":"9ad2cf78651675009432088f140ff1426dd51a3d12530104822174e7f67a8b34"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Profiling/ProfilingManager.h":{"size":1419,"mtime_ns":1779675967546210786,"hash":"d8a52868220bde116e4843e56d70b480f62344694239673cbdb43d843d8aa9fd"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/ManagerTaskData.h":{"size":2526,"mtime_ns":1779675967546699411,"hash":"637b7765bb4a39ec798a0a04547a38bc3a1608a47af25eb5ef62b31328075897"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/APIStatusCode.cpp":{"size":480,"mtime_ns":1779675967546385577,"hash":"552b24d4767bbf4e75fe2a1106cab011ac4a4fd8fa73b142bc83cabbe266c198"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RouteAndHandler.cpp":{"size":482,"mtime_ns":1779675967547311327,"hash":"82c3eb2ea933194d866ababac4e09f5714dd25c60e304d4d8e36c37e426a8f56"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/APIStatusCode.h":{"size":960,"mtime_ns":1779675967546513494,"hash":"ac1136afa75541c27c4eb27d7122479a367bebc6af0c9627f94e12266c771f1a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RouteAndHandler.h":{"size":1338,"mtime_ns":1779675967547406661,"hash":"c6b5116c2a76a32c0fee252e0ba1f747a412705b346b6e3e980f5df0868fe535"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp":{"size":8482,"mtime_ns":1779675967547073077,"hash":"ca9f915d92555ac7a267a22a53729dfd6c004ca9c7c39bdaa6f1632915d76e86"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/StaticRoutes.cpp":{"size":317,"mtime_ns":1779675967547937327,"hash":"81545c8b8578b6329bef651a6ca33d29c97d482021ca4957518e5c176d8998cc"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.h":{"size":4558,"mtime_ns":1779675967547222702,"hash":"4aa4e0c22f9648ab5385203138642b4eb1dad361c3dd2d552fca49b0a37f6de3"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/ManagerTaskData.cpp":{"size":482,"mtime_ns":1779675967546607202,"hash":"c8eeddaf9db98d1b8f81b5dd9418929d40cb79bd6b4a37d4ddcd02f3fe576d28"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/StaticRoutes.h":{"size":1347,"mtime_ns":1779675967548126619,"hash":"77f318d02d4cda841eea9cf9ec4179b2510325e458c7aba982c289924123f22f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.cpp":{"size":5175,"mtime_ns":1779675967547561161,"hash":"e3d0f29abcf392f7407135c7b670b7871dcd995ffaecb66e421a0d8005597efa"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.h":{"size":4896,"mtime_ns":1779675967546973619,"hash":"b9bc3b75afff90c6e9ba857674db670ff1d28b9b1446ef53587074632e21bf9a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCHandlerHelper.cpp":{"size":13594,"mtime_ns":1779675967546829286,"hash":"a58389ec68791ad3e53643b098d78d6fc0e8ba0c72ebb5898ea5af880e6b50a9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/SafeClient.h":{"size":2239,"mtime_ns":1779675967547750619,"hash":"2cd504f2a10419ec7bce907eed644b4cccf387e450465d4c1b53d4042cf1d8fb"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/Visualizer.cpp":{"size":2581,"mtime_ns":1779675967581290161,"hash":"9218161297f55b378a0eedcffc5f87a40858763fbe712bbc470290b309a6ff4f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/VisualizerPool.h":{"size":4756,"mtime_ns":1779675967581825994,"hash":"06a77735e1f9a4a365e3562a9767be4ed8d1562e7603ee1ae66bd6e82a61d884"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.cpp":{"size":10422,"mtime_ns":1779675967580785869,"hash":"35e7c09a091ae801e2ad954895e234f07a70bdc0e8ef27b8c6d958fcd400e688"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/VisualizerParameters.cpp":{"size":508,"mtime_ns":1779675967581445827,"hash":"40bd1d02b63ad9d9234a8f93c7d6e12e00abd87cc59d946a3396de20e004822b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshRenderer.cpp":{"size":2896,"mtime_ns":1779675967581109869,"hash":"441780b6211e9f041ab0f3d867b2c50b68a603d6cbb115c36cdc07724e8cfb73"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/VisualizerPool.cpp":{"size":4383,"mtime_ns":1779675967581686286,"hash":"4630da7e8764e8e3155172c8772c723a0b46482f27930af1256dd627b9c1aff1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshBuilder.h":{"size":1884,"mtime_ns":1779675967581011119,"hash":"c25914e99dfc44860c1220c54487067d78b6061c19af4492a07a84a417bd607a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/MeshRenderer.h":{"size":2289,"mtime_ns":1779675967581202411,"hash":"ad8ff9321d7c24563e27e0b979ff7d0fd3c7bb5022e466e2a95721df20456605"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/VisualizerRPCInterface.cpp":{"size":6925,"mtime_ns":1779675967582005869,"hash":"951ee2f13a6eeff9e3e7b1ca3210e14e447c0a85538d5b88d8bc9d55afee4a28"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/VisualizerParameters.h":{"size":2788,"mtime_ns":1779675967581540244,"hash":"f8923f1730096a548e868cf625728f7249fa64918112ef36e754c6ce2795d362"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/VisualizerRPCInterface.h":{"size":2764,"mtime_ns":1779675967582090703,"hash":"23f130c39cd0b08024788716edf24fa49a1138a8564546f52e4d6eba92374ed9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/Visualizer.h":{"size":1601,"mtime_ns":1779675967581365452,"hash":"9ed2539501ad0f286c754ca3a8b31201f74c0a505986cfee2fabd57392bd734c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/ImageProcessorPool/ProcessingTask.h":{"size":2187,"mtime_ns":1779675967580689786,"hash":"8942c35ab51f3cace69bea3e921705de9b0a8ac0d491c25e74e07ddfee0e5cf9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/ImageProcessorPool/Image.cpp":{"size":1032,"mtime_ns":1779675967580187369,"hash":"b64b3722f2713a58933f70ba5c982f02fe9f2488a77f2dbfaf02685978c76a43"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/ImageProcessorPool/ImageProcessorPool.cpp":{"size":6192,"mtime_ns":1779675967580442578,"hash":"7b816682119c72321bb75a770d7bdf7e51e59277a7bfb00a0adafa3d1e75c506"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/ImageProcessorPool/ImageProcessorPool.h":{"size":3886,"mtime_ns":1779675967580518078,"hash":"6ba1f98a33f70ceb8b12ff3b558bb4af8cd5c52dd4b8956abfbb7fba5e8b4efb"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/ImageProcessorPool/ProcessingTask.cpp":{"size":497,"mtime_ns":1779675967580598202,"hash":"747153af3b265c5ba1fc415c67984f6b3941f6c9fd614645030c94004386e441"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Visualizer/ImageProcessorPool/Image.h":{"size":3110,"mtime_ns":1779675967580286703,"hash":"a82f66cedd20339599a9d59af626cc438775d171384454f8e014228674a39c21"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Python/igneous_local.py":{"size":4275,"mtime_ns":1779675967586065202,"hash":"9a088327aabe6a051220d52f9ad53d2709d029252c0b4c8c2696154497fa394d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/CompilePlatformInfo/CompilePlatformInfo.cpp":{"size":232,"mtime_ns":1779675967584677078,"hash":"2378afd81f5243eb51a07fde8baede46299abf6d4aabd9222b4b9975e9b5c61b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/CompileTimeStamp/CompileTimeStamp.cpp":{"size":229,"mtime_ns":1779675967585192327,"hash":"1dbe6399bd6ffc478c74006f1030f3920e0355fd6871df219497348b9776af01"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/VersioningSystem/Version.cpp":{"size":220,"mtime_ns":1779675967585877244,"hash":"dfc90898154b640f72d1b2091cae7e8498923e091c0a8ffdf7980a8077ecfa14"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Tools/GenerateDocs.sh":{"size":198,"mtime_ns":1779675967541791119,"hash":"62016db51fc99623d120df7b3cb19e8b545dd49c13a7402065081bcca681e604"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/example.hpp":{"size":1983,"mtime_ns":1779675967541370244,"hash":"33e2d46a8652993b54a36298d2026963523dbe8731b87164994990688a1f4d90"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp":{"size":548,"mtime_ns":1779675967541461328,"hash":"0317dbbb214d5db2d7ee6ec4e62912d27099e6cbcf2315e00156c5fde8c2705e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Benchmark.sh":{"size":355,"mtime_ns":1779675967527924994,"hash":"523df9fdf777ce744814a0e87d29148dcb62b885432499b83352cc6e55583497"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/Test4.py":{"size":5254,"mtime_ns":1779675967529710911,"hash":"d14a4b36ea49e7dd20460dac9f1229007e36f50dc262e219972bd1b280e19aff"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/Test0.py":{"size":1759,"mtime_ns":1779675967528983411,"hash":"b02e656e176021044f129958195588d1b96f7c8dc61b7beaafc233085b236f34"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/Test1.py":{"size":2928,"mtime_ns":1779675967529097619,"hash":"4cd84fd8e8dae82141de163f6338bdf6f921284c1f5c4b146b561ca9d64ce206"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/Test5.py":{"size":6142,"mtime_ns":1779675967529882744,"hash":"036d6bbb8d68b2faf72808e0c35996255d1fa23d9e04aa349d74f83530579aea"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/Test2.py":{"size":4078,"mtime_ns":1779675967529239078,"hash":"0c99cad3c095cc68d9a3b86e035e3216ab314b255cf847e0beb872e42094bff4"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/Test6.py":{"size":3771,"mtime_ns":1779675967529969911,"hash":"a536b5438648bc27a62bb2c0932805f0efd61785fc7815cf98565b7e8922fd94"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/RenderBenchmarks.py":{"size":889,"mtime_ns":1779675967528875036,"hash":"4e571b493e070ff7852e1197ad24c9166a2a5baea76a5b22e444fc4b108cb785"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Renderer/Test3.py":{"size":5254,"mtime_ns":1779675967529475619,"hash":"4216182e33ef7067273b2b879263ffee84b3d05422c663eb0a196acfdf90d5e8"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CODE_OF_CONDUCT.md":{"size":3359,"mtime_ns":1779675967536423203,"hash":"1c2df07b81d8922d0593b4ffbe0b571c035cd659dfc72c4d60f083f0c283c5e5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CMakeLists.txt":{"size":5879,"mtime_ns":1779675967536335619,"hash":"2fb73b6250052370bc29d6a6ebb9669ae249903e66cded64354681bf946ee555"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/UnFrackList.txt":{"size":868,"mtime_ns":1779675967591787744,"hash":"ec0d95a0b8c5954726d675f7f56b1e182f29336de1c445a360b436a9ceb6305d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/README.md":{"size":3322,"mtime_ns":1779675967543286827,"hash":"a1ab7a321963ba0d9546a48db1f67a95024a90271b7d404c06cdea268b377eea"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/.gitlab-ci.yml":{"size":1425,"mtime_ns":1779675967531078619,"hash":"59887f69580123e550dac2c964bc4257fd0aba8cfc5f481067ffe414dce8cd51"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Test/Ubuntu2004/CI.yml":{"size":368,"mtime_ns":1779675967534728619,"hash":"95465d570a808a10309fad200de0818538f0d43704c334d6aa15d20cd2d9e4b9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Test/Debian11/CI.yml":{"size":362,"mtime_ns":1779675967534412744,"hash":"9bee003a339e107b679221d4f57639eddc8dc48f8fd097d347304399c14ac5db"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Test/Ubuntu2204/CI.yml":{"size":368,"mtime_ns":1779675967534926286,"hash":"d523842b510a8b79f12c4d020e4dfe869b8c77a9d2faa94cf0204bb41d111812"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Test/Debian12/CI.yml":{"size":363,"mtime_ns":1779675967534526869,"hash":"e4ee2a6f6e35b49c35042831c066c90babcfc1f1a360e827d976f6b2a4c15e64"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Images/Ubuntu2004/CI.yml":{"size":2140,"mtime_ns":1779675967533463161,"hash":"c01f675a0dc005b08487e6b4d384abfac6631be3b0aff816c4cc9b026e7c5aea"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Images/Debian11/CI.yml":{"size":2132,"mtime_ns":1779675967532408286,"hash":"a9d7e226ab4b7385cf16c14ab33874b96fc9f2c604a88b1f6865f605969e0ea6"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Images/Drawio/CI.yml":{"size":2099,"mtime_ns":1779675967533084744,"hash":"02529f41baa601b279306e618cd7fa566433a3ec69b84ae29fdb840613d11a10"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Images/Ubuntu2204/CI.yml":{"size":2140,"mtime_ns":1779675967533650036,"hash":"e4380b98254335238f55cea8bcf405dc95638f9ce19289194e3555fc30089ccd"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Images/Doxygen/CI.yml":{"size":2103,"mtime_ns":1779675967532907369,"hash":"af0608235da363a3b1b0073ff26b1d6e1f76f621b464430c043be4dff9c5d985"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Images/Debian12/CI.yml":{"size":2132,"mtime_ns":1779675967532714661,"hash":"3de8b6ad41b3a5e68b216beca96bb46c6780b4e6191493d3fe42a3c3e21eee91"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Deploy/Prod.yml":{"size":529,"mtime_ns":1779675967531996828,"hash":"ad18ed8bf1799a9f68eea2d9ab392e14d68a604703528a255a7c11d690a0799a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Docs/Drawio/CI.yml":{"size":332,"mtime_ns":1779675967532254702,"hash":"a36d4615c4d8552ca0f68f7f43c6f471f730ef4cdad78ae7cf4928512e25ccdf"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Docs/Doxygen/CI.yml":{"size":322,"mtime_ns":1779675967532150494,"hash":"c2ed4c90c5697d5b594ecfdb1bf030540bf140ac3fd4119432fb9b74d098bcff"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Package/Ubuntu2004/CI.yml":{"size":432,"mtime_ns":1779675967534064036,"hash":"2db1d7030826b000a2f5cee35ae0cfd3b9a876d0b63c93783187a2fbc59af03d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Package/Debian11/CI.yml":{"size":426,"mtime_ns":1779675967533859619,"hash":"e8a738e20f4bef7df0fe7c3525dc56ee07d577b7b2841f1489dd2294bcb5de8d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Package/Ubuntu2204/CI.yml":{"size":468,"mtime_ns":1779675967534160619,"hash":"b061272deb098aeb361eb3b0981a3cd034e629c93041d20b70c7569114d6bdad"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/CI/Package/Debian12/CI.yml":{"size":462,"mtime_ns":1779675967533953786,"hash":"73c462fb14bb0a04b080fdcb455005f79a66a7cb3960be124c0125c10d8b19e7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Renderer/CMakeLists.txt":{"size":1562,"mtime_ns":1779675967590159202,"hash":"0b6580056ca424a5f2fd939cfa7d6c50a69cc9e934a0c37c0276f6ade11f5338"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/CMakeLists.txt":{"size":17017,"mtime_ns":1779675967543467786,"hash":"25ffd6f54758d6409c9d1ad370d6a87fa5fa0c4f468cf64fedbc75a72a2d37c6"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/README.md":{"size":11086,"mtime_ns":1779675967574083453,"hash":"13ae0421f2782886eb35691acd1071e991b98d6ae0be3464d09d46a3afdf56e6"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/SimpleCompartmental/README.md":{"size":692,"mtime_ns":1779675967558370369,"hash":"6a1b8186a5e272109621af89b3a8e223e9fe41caee8bdafe0617cf7929f1881f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/LIFCompartmental/README.md":{"size":299,"mtime_ns":1779675967555419536,"hash":"67cfe73bf6b6d93592432dfe0654234cfe8f11f5597bb41acd0461d0f4e64063"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Geometries/README.md":{"size":664,"mtime_ns":1779675967553887161,"hash":"fee75001e501b8f5aa1e419d1e531306d42efd485e764a04004549d9c757c88a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/Updaters/README.md":{"size":2662,"mtime_ns":1779675967562983578,"hash":"3340f240d22dcd0153e39d94ec31803bf58c33d218b0c8b5a8e15247e6f08078"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/Simulator/RPC/BackgroundProcessIdea.md":{"size":2471,"mtime_ns":1779675967555672244,"hash":"3b19f0541b02d3c94aea5b2bdc18d2f96a79f0f57817f39d4d24dbc3330178d2"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/CompilePlatformInfo/CMakeLists.txt":{"size":696,"mtime_ns":1779675967584496661,"hash":"afd6f683d90b7fd840cd0b61c4e856a21b8fe89c65f3a0dff72d52fc1d886b96"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/CompilePlatformInfo/README.md":{"size":121,"mtime_ns":1779675967584865411,"hash":"78d09fa9d78224ee332c457b2e9e3cc6a04abcca32006688aa4b46c99834dabe"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/CompileTimeStamp/CMakeLists.txt":{"size":678,"mtime_ns":1779675967585103494,"hash":"a565e223fc6ca1877def0599231ff8dedfb9bedc40cedefcaf20789a7f279a4f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/CompileTimeStamp/README.md":{"size":90,"mtime_ns":1779675967585283619,"hash":"3f8361bd557cc8df40197f3996d16d6671845c9d5bcb95f90162c64c4f872682"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/VersioningSystem/CMakeLists.txt":{"size":660,"mtime_ns":1779675967585603536,"hash":"d6a4e560d89abf40d6259c242c86e8295ad6b00f1410bbf5fa3a0e30cc8a2ef9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Info/Static/VersioningSystem/README.md":{"size":125,"mtime_ns":1779675967585687536,"hash":"4c8e8da032ab778b110678c78e7b73c023a9aa48856c7237239526ee88762e68"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Data/NES.yaml":{"size":127,"mtime_ns":1779675967582302202,"hash":"9ddfcb13aa1cbaf07cbb046534db1c70bf7d12698b757757dbdf34d6e61c523d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Simulating.md":{"size":4508,"mtime_ns":1779675967542354369,"hash":"2366f53092c16eaf6bb5fa4695f3f344e4b924157fd7eca106d1f43244402d65"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/API.md":{"size":16803,"mtime_ns":1779675967536566077,"hash":"028539de7f821b8bd00aca5520c383d8dd6bae321941e6663c8a3ce32c2218be"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Neuroglancer-legacy-mesh.md":{"size":4002,"mtime_ns":1779675967542113744,"hash":"738c20e7d93c61b612cacb9dec4c279468c4648be86e0ec3f16310a41a453b5e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/SaveModel.md":{"size":1388,"mtime_ns":1779675967542206452,"hash":"1c1ae0bdee4e10976506c2e4161488df28c0edef152718e3049577ec383bf453"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Collected-Documentation.md":{"size":768,"mtime_ns":1779675967536912619,"hash":"a0a5aa8a82d2884a1f6216db9b95e37f83fbde6d1b4ed1a3f4963edaea365e06"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/MacOS.md":{"size":1633,"mtime_ns":1779675967541911161,"hash":"b7f9b394d328bca0ef03f80f079cba08f7e9f2baf0919e5923c0a36267852f8f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md":{"size":11752,"mtime_ns":1779675967538330286,"hash":"8d3f6c8f3f1ec6947d0d726236b2c597a0e7ae0203728491616c50f98e825786"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/footer.html":{"size":1198,"mtime_ns":1779675967539026619,"hash":"534da5ed718a3e3f522a6255c10301a0cabb847a36e70afdd6e297281881722d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/header.html":{"size":4600,"mtime_ns":1779675967539175536,"hash":"028bf55f1ed89a158c3616f618a3403134d686aec349fd02923aed197ea8afb5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/.github/workflows/publish.yaml":{"size":931,"mtime_ns":1779675967537911494,"hash":"2acd4e53a54a1ec0a60029069859109352d6eb0bf40d5963ba023f8f063dbc39"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/agent notes/mac-silicon-change-log.md":{"size":6882,"mtime_ns":1779675967592119994,"hash":"a4d5e11274ba69b58dbec5a4d3dd33440ceee19c706dd86ee63b29d4e6cbb03d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/agent notes/agent-session-notes-2026-05-09.md":{"size":4265,"mtime_ns":1779675967591975411,"hash":"7b9e72e5822fe83ddc14640fedb6b6e401053ea2d9cc5575dfd4178f30738cbe"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/graphify/README.md":{"size":527,"mtime_ns":1779682688597391328,"hash":"bd5fde8a36e51607d97f8881f8b08ab67445297bedb1a18c4ad1afb68562dc9b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/README.md":{"size":1443,"mtime_ns":1779675967528503078,"hash":"ff2d73d44292a0ccdc09f3b75ecc6f464d9851f853c385f522782e2fbc7d58a7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/Ca/VoxelSubsystem/Image Overlap Process.drawio.png":{"size":150837,"mtime_ns":1779675967566791411,"hash":"6d0fbcef8450ab5ac804b50cdb0c2a5e7b310e8af85dd3682d879c5bb40f37c9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/VSDA/EM/VoxelSubsystem/Image Overlap Process.drawio.png":{"size":150837,"mtime_ns":1779675967575112994,"hash":"7522f600507714cff631dc8ac342da07412ae8b5a79afdc74c621b8fdef9d60a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Virtual EM Camera Positioning.jpg":{"size":86571,"mtime_ns":1779675967542704744,"hash":"986492ec6d555790a1cab8e40721a04547417ac88be9717834b84a065b3e7e88"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Source/Assets/Logos/Logo.png":{"size":7270,"mtime_ns":1779675967537260536,"hash":"32535a2b70368cfed0d7752ca2a2fdcda7c44209415440dcc3b3d89e2fd1c692"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/logo.drawio.svg":{"size":3569,"mtime_ns":1779675967541559411,"hash":"b97864aea14f933c223d8ba808c5d699f0b4270b940f0cb85a6e68c0857c0ba1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/img/screenshot.png":{"size":222971,"mtime_ns":1779675967540874702,"hash":"f223ad61847f9f20df60a7417c9d680c0b55bd63409f422f648fd83679c9e04d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Docs/Doxygen/Third-Party/doxygen-awesome-css/img/theme-variations.drawio.svg":{"size":14707,"mtime_ns":1779675967541046994,"hash":"10ff678df5a434c5b5489cc77f0300d4a6d5a4f030333fc52b28e147a0430be9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Slow.png":{"size":201742,"mtime_ns":1779675967530598952,"hash":"5512b4f83452cbafdf1a34ad4118de18eada5bfa884820dd23ae850989df8034"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Benchmarking/Fast.png":{"size":121904,"mtime_ns":1779675967528358828,"hash":"f90f4881d2c2df72ab40c21a9a88922eaa5cf874b89b15842516e88f70636916"}}
+{
+  "vcpkg.json": {
+    "size": 376,
+    "mtime_ns": 1779675967592283786,
+    "hash": "fcecf5b02dec38fc5ad8fc6876dae45a2438e9ab0c5a0e68915a082f953f25e5"
+  },
+  "vcpkg-configuration.json": {
+    "size": 55,
+    "mtime_ns": 1779675967592209161,
+    "hash": "b6f290a9ea9c86f5819ce516279218c9ef723ae8d274bb424076cf1ecb858e46"
+  },
+  "Tools/Setup.sh": {
+    "size": 4591,
+    "mtime_ns": 1779682688596763077,
+    "hash": "35ad945b43e0db4b81c22c00950c849f1bcd528f48c4ab49a69e750d815c0141"
+  },
+  "Tools/RunTest.py": {
+    "size": 1023,
+    "mtime_ns": 1779675967591274619,
+    "hash": "92f2a1979d677ff49e963e63530cc98f88a3b824f7c9663820f1a377d09dc56f"
+  },
+  "Tools/MemLeakCheck.sh": {
+    "size": 219,
+    "mtime_ns": 1779675967590849327,
+    "hash": "2eebc4bc1644db82657486e44a2e008886aafaf7f64ea4c6610252a30e1988ef"
+  },
+  "Tools/Tag.sh": {
+    "size": 5118,
+    "mtime_ns": 1779684253617232077,
+    "hash": "6820aa62527c61f873084c4cad0f54a793076472c03c89f0b72e6121e8425f2b"
+  },
+  "Tools/Run.sh": {
+    "size": 711,
+    "mtime_ns": 1779675967591179994,
+    "hash": "3c8afbb223881bee884e389b4235ed148eea2988b87bb9464ed387a4d38c71f1"
+  },
+  "Tools/Build.sh": {
+    "size": 1779,
+    "mtime_ns": 1779675967590473577,
+    "hash": "f6099fac1d0b83b3482ca76890a6c144f14ff1b0288dbfa2b8468723c0d978ac"
+  },
+  "Tools/Package.sh": {
+    "size": 131,
+    "mtime_ns": 1779675967590923369,
+    "hash": "f8ad121c0f52af67da2778e3d53e1405b41e20629c70eb5f3d8dd0efb4bd684a"
+  },
+  "Tools/Benchmark.sh": {
+    "size": 47,
+    "mtime_ns": 1779675967590389286,
+    "hash": "72674bbfe81df2b6d33ce3636ee8728ab6c15e97722d03c84b68617fafb1200e"
+  },
+  "Tools/Clean.sh": {
+    "size": 205,
+    "mtime_ns": 1779675967590549869,
+    "hash": "d483c16e45713c9c0024e19c84f61c61aeb04f07492033d46d7950f836f8355c"
+  },
+  "Tools/vcpkg.sh": {
+    "size": 35,
+    "mtime_ns": 1779675967591711911,
+    "hash": "f2873cf3a323ed757dca60a80121c61b76145675c10f284a2a3be81d8862d052"
+  },
+  "Tools/Test.sh": {
+    "size": 160,
+    "mtime_ns": 1779675967591509536,
+    "hash": "8927d179a352dbc3c321317352d90cfdbfea2b395df91339335059fcee5d1e62"
+  },
+  "Tools/Deploy/Deploy.sh": {
+    "size": 477,
+    "mtime_ns": 1779675967590668369,
+    "hash": "824c949030240202d6c7eb380088507ac2b62f18d5098b1edc72ced236ddafd0"
+  },
+  "Tools/Docs/GenerateDoxygen.sh": {
+    "size": 102,
+    "mtime_ns": 1779675967590783786,
+    "hash": "0c146daea5e4404905dc7fa87afa0c3def47feaeaa87ae136d56142f992d1d5e"
+  },
+  "Overlays/BG-Logger/vcpkg.json": {
+    "size": 354,
+    "mtime_ns": 1779675967543103494,
+    "hash": "12e1a80479cad00607f2d37bb1269702e9cf044fff41a2299449735c93c9a016"
+  },
+  "Source/Renderer/BG/Renderer/Interface.h": {
+    "size": 6559,
+    "mtime_ns": 1779675967587032536,
+    "hash": "367e023c13383e55a65c30cb5649c64b8343ea9951dc7688142b5073bbfee88e"
+  },
+  "Source/Renderer/BG/Renderer/Interface.cpp": {
+    "size": 4204,
+    "mtime_ns": 1779675967586863536,
+    "hash": "cc3b3011b29dd15beb0a15bd3024aa54368b043ad411cc1faa75b542e4dc2fa2"
+  },
+  "Source/Renderer/BG/Renderer/State/Scene.cpp": {
+    "size": 179,
+    "mtime_ns": 1779675967590022203,
+    "hash": "a558f4936cee477b41fffda49512754f75422e3a3d12166b93e31228e50f10b4"
+  },
+  "Source/Renderer/BG/Renderer/State/RenderData.cpp": {
+    "size": 184,
+    "mtime_ns": 1779675967589873286,
+    "hash": "db32a55eb67fab7915186aafa16105a8cdf5cc77879b380330b20ddf60824720"
+  },
+  "Source/Renderer/BG/Renderer/State/RenderData.h": {
+    "size": 3188,
+    "mtime_ns": 1779675967589951619,
+    "hash": "fe3eb8cf4d1c2cc960b25bd59907c33e8187dfd0ec41f4cea759bfd12d611f77"
+  },
+  "Source/Renderer/BG/Renderer/State/Scene.h": {
+    "size": 1835,
+    "mtime_ns": 1779675967590088869,
+    "hash": "c95e4adabae46b4a66e886ea97185adb361aaf0ad8770c010b90bf1b13f07074"
+  },
+  "Source/Renderer/BG/Renderer/Math/MathHelpers.h": {
+    "size": 2707,
+    "mtime_ns": 1779675967587299702,
+    "hash": "42fe2e5f0f1a1cd69453debf4612973b14696b2d65bf01e67d565f869bc24d1d"
+  },
+  "Source/Renderer/BG/Renderer/Math/MathHelpers.cpp": {
+    "size": 1917,
+    "mtime_ns": 1779675967587217619,
+    "hash": "2aa09db955db82db5a6f54f5ee04527d2dbc346cd56dec2c1d86046b5759e868"
+  },
+  "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.h": {
+    "size": 3477,
+    "mtime_ns": 1779675967586536161,
+    "hash": "c73331ab5e5b6ebe9588731623cb6ce1f9e240bff598f1c23c106d94cdfcc3db"
+  },
+  "Source/Renderer/BG/Renderer/EncoderPool/Image.cpp": {
+    "size": 725,
+    "mtime_ns": 1779675967586609911,
+    "hash": "bb02925a36f9c9373adde21a09619255ec115288180f2e70805806568bb0e45f"
+  },
+  "Source/Renderer/BG/Renderer/EncoderPool/EncoderPool.cpp": {
+    "size": 4390,
+    "mtime_ns": 1779675967586408952,
+    "hash": "8ef944a18a28337e40196c715017f610117378aafb3ee18ab2ef2fda6a208c45"
+  },
+  "Source/Renderer/BG/Renderer/EncoderPool/Image.h": {
+    "size": 3094,
+    "mtime_ns": 1779675967586703286,
+    "hash": "81cfe24c996ba4f4a14688bda116d2ab721e4e47a0deb3e7c949a1a8bcffce76"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/GeometryBuilder.h": {
+    "size": 4322,
+    "mtime_ns": 1779675967588003786,
+    "hash": "7eefe3cb0d6d9720d4c0af7853c8b81ae0c01b05ca3fac33e4282beaa54cde92"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/renderdoc_app.h": {
+    "size": 31606,
+    "mtime_ns": 1779675967589759452,
+    "hash": "f1d0353542500bcf9a9ff80e8a3dd2d6b84ec2f3be1198520c5472c02dcccece"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/OffscreenRenderHelpers.cpp": {
+    "size": 16978,
+    "mtime_ns": 1779675967588375661,
+    "hash": "e6cdb3ec51605a81ce645102e8ef4dfb7e7a4a6ebd24c8279f5b55bfb11ec8ca"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/Manager.h": {
+    "size": 8404,
+    "mtime_ns": 1779675967588233077,
+    "hash": "c5766b037a6df7251da04fc4771bd30f4acb151b3cb4e7cc1d7b4e8938a8bd9e"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.cpp": {
+    "size": 567,
+    "mtime_ns": 1779675967587424661,
+    "hash": "1e8001c604d5b481443ee5b39be8bb841e0e5a1a473ad91e1de40880c7313fe0"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.h": {
+    "size": 2673,
+    "mtime_ns": 1779675967587663661,
+    "hash": "38109d1ed74228009a1dac6d62dbbcbc70835c6fbbb5019f03ed98337c528c81"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/Manager.cpp": {
+    "size": 23144,
+    "mtime_ns": 1779675967588119952,
+    "hash": "17bc4a9fbbcf423a27185804de53d3a799c0c1134f8b353984242772c620c09b"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/OffscreenRenderHelpers.h": {
+    "size": 2335,
+    "mtime_ns": 1779675967588579119,
+    "hash": "d7cb0b96d6c90067c6fdeb8e43f792e8463a5d0bc528e3eeaaf0556f0d6031fe"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/GeometryBuilder.cpp": {
+    "size": 4267,
+    "mtime_ns": 1779675967587863327,
+    "hash": "e02b59eb41c616a19f33fd09e9f810bc020d8e0785881435b37b9d1adc154dac"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cylinder.cpp": {
+    "size": 199,
+    "mtime_ns": 1779675967588997036,
+    "hash": "770d9a41d2c999e9ff6037dceea181e66746bf2ee4f588e58e9d408d3c7d3f81"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Sphere.h": {
+    "size": 1932,
+    "mtime_ns": 1779675967589293494,
+    "hash": "6e47e18855b85e9605ced4b50850c7b209f946442f0339a33bf6b3e333a16dfd"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cylinder.h": {
+    "size": 2061,
+    "mtime_ns": 1779675967589166911,
+    "hash": "255f76f7c1672a3e1773329f6fa94b3e867d0eee5a6dc715d7763c7bca15c2dc"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cube.h": {
+    "size": 2004,
+    "mtime_ns": 1779675967588917869,
+    "hash": "5f9ef9f343e6694ebd351185e0e1cd328a8f8429230179ab30231bf235bd28e7"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Sphere.cpp": {
+    "size": 197,
+    "mtime_ns": 1779675967589230702,
+    "hash": "f965fcac613922122e158648408128c824cf8040eba9c651035f41cf01e9ad02"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cube.cpp": {
+    "size": 195,
+    "mtime_ns": 1779675967588707702,
+    "hash": "85fcb750bf6d409e15c5b936c7523e7ad8d56745d078a8fd18e179cc175453ff"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/Shader/Shader.h": {
+    "size": 1856,
+    "mtime_ns": 1779675967589640452,
+    "hash": "ba396445bb5664aabfbb32b4b93ffcbdbbc5b639cd0acb6a00a7bf2362ae708c"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/Shader/Shader.cpp": {
+    "size": 192,
+    "mtime_ns": 1779675967589557786,
+    "hash": "b8e6aeed122e7b0785567e5f1f8391af06bb57231c930b78fefad5952c309992"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/Shader/Phong.cpp": {
+    "size": 191,
+    "mtime_ns": 1779675967589401786,
+    "hash": "094e90a9bf08a165166934eb6086100944db3ff2ae62327c71d98bfebb3ada6f"
+  },
+  "Source/Renderer/BG/Renderer/SceneGraph/Shader/Phong.h": {
+    "size": 1986,
+    "mtime_ns": 1779675967589484744,
+    "hash": "4f329a6d764ecb529e558e5b6a9ad022198aaac0752a1ea421a9e488ccf3be99"
+  },
+  "Source/Core/Main.h": {
+    "size": 1763,
+    "mtime_ns": 1779675967544792536,
+    "hash": "30a4b1dda384e93df1a8859c4e56a7bf482e27d7aafafafbb2b28a75745cb426"
+  },
+  "Source/Core/Main.cpp": {
+    "size": 2678,
+    "mtime_ns": 1779675967544712161,
+    "hash": "e00b0ff81c902c90b9d6dab8d6d6e017dcd9c95c90a58716b61f567488fde75d"
+  },
+  "Source/Core/Util/LogLogo.h": {
+    "size": 1682,
+    "mtime_ns": 1779675967564371369,
+    "hash": "a0ba8ffa489e4cff5dc5d20df5ea2b7fe79c8c777693e598e9517fac900be2a1"
+  },
+  "Source/Core/Util/LogLogo.cpp": {
+    "size": 2450,
+    "mtime_ns": 1779675967564156702,
+    "hash": "dcfb81e465bdbba1c03e34b361e1761848dedb30e5549bd3e35afe9bf321944c"
+  },
+  "Source/Core/Util/JSONHelpers.h": {
+    "size": 4935,
+    "mtime_ns": 1779675967564052661,
+    "hash": "12b0000394418da7c891f22fedab97dbb412f911ba156bf5aeb20eef64bb7172"
+  },
+  "Source/Core/Util/JSONHelpers.cpp": {
+    "size": 3710,
+    "mtime_ns": 1779675967563907078,
+    "hash": "e02167a9f3561ea4999e4c6976dbb4c9caac5b105e0a3c306d45f7735d623a2c"
+  },
+  "Source/Core/Config/ConfigDefaults.cpp": {
+    "size": 34,
+    "mtime_ns": 1779675967543830452,
+    "hash": "23fabf5107c7fb3c4a214c0a74cf725e9099b5b39e75406c27bb4becbed883fd"
+  },
+  "Source/Core/Config/Config.h": {
+    "size": 2669,
+    "mtime_ns": 1779675967543758827,
+    "hash": "6530d011c754dd07c4a16d0c7d257a89ee709360c83f52fc899298df1f8cdc7a"
+  },
+  "Source/Core/Config/ConfigurationManager.cpp": {
+    "size": 918,
+    "mtime_ns": 1779675967544558411,
+    "hash": "fbb3b492c851aa14283ebbb9b1fad277ce0be5b1615aa8af7dbc086e0d98e1f3"
+  },
+  "Source/Core/Config/ConfigFileParser.cpp": {
+    "size": 1886,
+    "mtime_ns": 1779675967544157494,
+    "hash": "30e3978e1a5fe569706fb195590e569d4ca0db408273283963a7340d8510bdd0"
+  },
+  "Source/Core/Config/ConfigFileParser.h": {
+    "size": 1935,
+    "mtime_ns": 1779675967544376411,
+    "hash": "af8e2814d22a62162727d4a9152495995728f693399d74bf1083a6145daeded6"
+  },
+  "Source/Core/Config/ConfigDefaults.h": {
+    "size": 751,
+    "mtime_ns": 1779675967544063577,
+    "hash": "820b33a024e2ad12f716de055859dc56430bda5e4a47e72b0809cda7b712685e"
+  },
+  "Source/Core/Config/Config.cpp": {
+    "size": 26,
+    "mtime_ns": 1779675967543594036,
+    "hash": "9d83c00e6fbcb96ae9da18176c128c7bf9412c078a3f1faa753cd13272678c20"
+  },
+  "Source/Core/Config/ConfigurationManager.h": {
+    "size": 1904,
+    "mtime_ns": 1779675967544638161,
+    "hash": "773e2feb7e31a110c9f4d85e0c54b7524fcd67f6c290a86696be379dee1eb756"
+  },
+  "Source/Core/Netmorph/NetmorphParameters.cpp": {
+    "size": 504,
+    "mtime_ns": 1779675967545248202,
+    "hash": "d1833e1fd6af7981d794283c460f3fc6ad754b07a3ee70582232c1e48645fa2a"
+  },
+  "Source/Core/Netmorph/NetmorphManagerThread.cpp": {
+    "size": 33410,
+    "mtime_ns": 1779675967544941952,
+    "hash": "3381291b86de2c747c8ccf34b34ed7fb1b5c469d0aba1db96bef3b7009b5a43a"
+  },
+  "Source/Core/Netmorph/NetmorphParameters.h": {
+    "size": 2567,
+    "mtime_ns": 1779675967545428744,
+    "hash": "41838a79ae559473f8e27927a0a1497b13ef64541a9c9cede7bb966414479747"
+  },
+  "Source/Core/Netmorph/NetmorphRPCInterface.cpp": {
+    "size": 6907,
+    "mtime_ns": 1779675967545577661,
+    "hash": "8e9a52c51c0fb45cbb8a9b6da8d0056d3ac43aaf289feae180b09344846309a5"
+  },
+  "Source/Core/Netmorph/NetmorphRPCInterface.h": {
+    "size": 2623,
+    "mtime_ns": 1779675967545814078,
+    "hash": "739293f996fd9ad83aaa3b0b010b86249ff658ace62e9c68594e10542ed58705"
+  },
+  "Source/Core/Netmorph/NetmorphManagerThread.h": {
+    "size": 1858,
+    "mtime_ns": 1779675967545058327,
+    "hash": "c8d95edd24941c121f4b8615212554c738121e22f46c5da7dc62b5272a168d41"
+  },
+  "Source/Core/VSDA/RenderPool.h": {
+    "size": 5824,
+    "mtime_ns": 1779675967579662452,
+    "hash": "60e1d348fabace96002a88331c23d2fd63c41a96bf6973b1dc8b9115b7b02672"
+  },
+  "Source/Core/VSDA/VSDARPCInterface.h": {
+    "size": 5784,
+    "mtime_ns": 1779675967579979994,
+    "hash": "f535a5db45f13d5ce99956c7d35b160af245fa5e8416a5941e36345e2a57a504"
+  },
+  "Source/Core/VSDA/VSDARPCInterface.cpp": {
+    "size": 34940,
+    "mtime_ns": 1779675967579794536,
+    "hash": "3b83802974f374692210e0c2bb50599a37711b6af340c546153d05766f80750a"
+  },
+  "Source/Core/VSDA/RenderPool.cpp": {
+    "size": 5686,
+    "mtime_ns": 1779675967579473869,
+    "hash": "478a98ff9bf234d419b5bd26bf4f8f8e537cdbb404fa1c93ce1637b7270dcfe6"
+  },
+  "Source/Core/VSDA/RPCRoutes/Ca.cpp": {
+    "size": 4264,
+    "mtime_ns": 1779675967578906036,
+    "hash": "ec8f8f8b78bc8156f805b400b872e6337d6a3b3917f442b81a24170ee9a419a3"
+  },
+  "Source/Core/VSDA/RPCRoutes/EM.cpp": {
+    "size": 4227,
+    "mtime_ns": 1779675967579133077,
+    "hash": "23a524964cd095729e319fb0201275634a204b6716f26c61cb9d7be9dcbef310"
+  },
+  "Source/Core/VSDA/RPCRoutes/EM.h": {
+    "size": 4187,
+    "mtime_ns": 1779675967579286077,
+    "hash": "cfcc4bce9f21a4a06d5dd79ab5a2ebc252e850a87b2ed0c2ff23523e762ebe4b"
+  },
+  "Source/Core/VSDA/RPCRoutes/Ca.h": {
+    "size": 4074,
+    "mtime_ns": 1779675967578988494,
+    "hash": "76d003422b6da5c3341560a83efedbe1f663873fd55bb09f4e38a65cb673d224"
+  },
+  "Source/Core/VSDA/Ca/CaRenderer.h": {
+    "size": 1984,
+    "mtime_ns": 1779675967564806911,
+    "hash": "e8382cc2a4f5d25cad67bf0384d720d0a1ec5278882cf3569952ca066f5e0877"
+  },
+  "Source/Core/VSDA/Ca/CaRenderer.cpp": {
+    "size": 11372,
+    "mtime_ns": 1779675967564587577,
+    "hash": "322c074d3f391c48a012383af4600895d7a90afc6a29e5de1ad05eaf48e48907"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.cpp": {
+    "size": 6830,
+    "mtime_ns": 1779675967566276286,
+    "hash": "5849bc42ab683438bd5695c5c3d247ca59a8921a60a5fc8cddd662cdeedc02f0"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.cpp": {
+    "size": 7459,
+    "mtime_ns": 1779675967565719078,
+    "hash": "b0aded27e2e7c90cafdda4e68ad5d056cc353bfda74f810563de2d04074d79f5"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.cpp": {
+    "size": 5283,
+    "mtime_ns": 1779675967565976703,
+    "hash": "37411c799a541fe771a60929cc8ad9194de6c2d14dabb400b35b51a5152664cf"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h": {
+    "size": 2315,
+    "mtime_ns": 1779675967566364577,
+    "hash": "56fb5da5851fd31b7a8bebd8ffd2b099b12618bfc88c89dfd2b35aed039a2b9d"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayGenerator.h": {
+    "size": 2538,
+    "mtime_ns": 1779675967566101702,
+    "hash": "b3f3575efb5ab983b5e5c3272b922daede7de36a15df4c9bc236e02ee3a118fe"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h": {
+    "size": 2171,
+    "mtime_ns": 1779675967565796328,
+    "hash": "6a7b03682ed6b260e1d32c2e4038b911d85403719798667c20e092e974bd69b8"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h": {
+    "size": 3140,
+    "mtime_ns": 1779675967568096203,
+    "hash": "90b298445d9d3b9eb731b5f453e7a3e4c506c1e3347d94e15f6655532d31b59c"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/Image.cpp": {
+    "size": 1088,
+    "mtime_ns": 1779675967567211036,
+    "hash": "21fbf2bf25842e26956320083729d6e4497c9ea31a8c0d7bab540439ecb3ace1"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp": {
+    "size": 12539,
+    "mtime_ns": 1779675967567520619,
+    "hash": "ea365b3de3f26951f8911fc17db229f742bbc931b3710ffc2232352355eb86ca"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h": {
+    "size": 3951,
+    "mtime_ns": 1779675967567705994,
+    "hash": "e0eec4293f0b3abbe21fef147f379e4843d01be02bef11fc74dd820e0641b01f"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp": {
+    "size": 553,
+    "mtime_ns": 1779675967567896286,
+    "hash": "f8dd243a0de512ba44ba6845f41b85675c3306095d8776b818d7c86bb4130e30"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/Image.h": {
+    "size": 3154,
+    "mtime_ns": 1779675967567391161,
+    "hash": "77786a207fd6dfd0bb5e72ca2a583adff1c3b669ce0063179510bf5a69e972ee"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.h": {
+    "size": 4056,
+    "mtime_ns": 1779675967568378911,
+    "hash": "02270d8de5749017dec14cf65e7fbf4a8590ebda51d2dcbef990c48566035c55"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.cpp": {
+    "size": 4215,
+    "mtime_ns": 1779675967568293744,
+    "hash": "c579a84ae0d6e5b4fd7d5e9590624e07066ea70ead5c2bfda4a4dfab3916eb8a"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp": {
+    "size": 3191,
+    "mtime_ns": 1779675967568520869,
+    "hash": "696c132901806b0a8266977f79237b8e7025d80d9235b9ea46c59ae63e9d14eb"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h": {
+    "size": 3068,
+    "mtime_ns": 1779675967568616744,
+    "hash": "8504e547a1e475990a17b6e31f12bf1f056fc5786d36c9079ef5e84c3d5967dc"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/Task.h": {
+    "size": 2843,
+    "mtime_ns": 1779675967565571577,
+    "hash": "96ab30022f86daba58af6607407de625ba823ad57717f35996ce7cd45533b78a"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp": {
+    "size": 8185,
+    "mtime_ns": 1779675967565129702,
+    "hash": "67c652c4b12c4f7bdc59d50bac50443cb7243a23c94ff8da27591cd2656efbde"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/Task.cpp": {
+    "size": 628,
+    "mtime_ns": 1779675967565456286,
+    "hash": "e444c0ab98027d42e644341429d2c936d1e2ff848fbdaa526941354fbff04292"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h": {
+    "size": 4651,
+    "mtime_ns": 1779675967565296994,
+    "hash": "39c5eb14a05100a2b1822e0ee129c806187d12b3c9c827903eda4139e72dbfeb"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaData.h": {
+    "size": 4335,
+    "mtime_ns": 1779675967568996911,
+    "hash": "7f0ec4c9cc3820d9e4993ffc16a08b0c96051d4bee0756b22185bd587f452ada"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaSubRegion.cpp": {
+    "size": 200,
+    "mtime_ns": 1779675967569271786,
+    "hash": "4abb5b0a8e62e66061df43e85045cb9e61fa51aef691706d955ddae48f03c84c"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.h": {
+    "size": 3073,
+    "mtime_ns": 1779675967569175744,
+    "hash": "2905b64b0fdbba8061cbd0b59b24c10a20d12ecbcf294479584929381e52288e"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.cpp": {
+    "size": 66,
+    "mtime_ns": 1779675967569075786,
+    "hash": "45ea4c63eb04c9a13388666421290586b761e09c41df673c0a11027d3e26f604"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.cpp": {
+    "size": 6601,
+    "mtime_ns": 1779675967569503619,
+    "hash": "627662e56de6c4ba125ffd6df4c0171f9b96bd03c3d15e81c7e00a6c665b8068"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h": {
+    "size": 5075,
+    "mtime_ns": 1779675967569642494,
+    "hash": "b2d4307a6a4b98fb69df3e74fc14cc2c4f2ba0d15e01a3a215423d6d53b3cc96"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaData.cpp": {
+    "size": 50,
+    "mtime_ns": 1779675967568845494,
+    "hash": "b647fc4c9112a22926371246e4d9f3d8638c3e59d961ae257ddff6d589d5859c"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaSubRegion.h": {
+    "size": 2869,
+    "mtime_ns": 1779675967569363494,
+    "hash": "4b5e86c7d02b908693afc58c144a86b4ae832d9de67b9f2531ff56db2ca0238a"
+  },
+  "Source/Core/VSDA/EM/EMRenderer.h": {
+    "size": 2608,
+    "mtime_ns": 1779675967571171952,
+    "hash": "68f3edfe90b353bb8a6360b056f143e0f82347b2710c102edf85d054f4b97219"
+  },
+  "Source/Core/VSDA/EM/EMRenderer.cpp": {
+    "size": 15683,
+    "mtime_ns": 1779675967571050869,
+    "hash": "724595b028187fd8c045e56d8d4d99575cb9c8d4b3ff3fabad344c8c00833e7a"
+  },
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/IgneousPipeline.cpp": {
+    "size": 5939,
+    "mtime_ns": 1779675967573669702,
+    "hash": "b53a1edbfbd9734bd105e5e4d294fe3a23a967d0486ccce7a01ae9e2ce00f9b1"
+  },
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/IgneousPipeline.h": {
+    "size": 1214,
+    "mtime_ns": 1779675967573746578,
+    "hash": "3545bd43a8052f3a0b974ec15d74b508520db0f74aac598d5cf5ff2a5fd25410"
+  },
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.cpp": {
+    "size": 16549,
+    "mtime_ns": 1779675967573849161,
+    "hash": "08b22ca46d024aaca2eadda33c0769dc592d6642ea421967032aba0f91cf4f59"
+  },
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.h": {
+    "size": 2254,
+    "mtime_ns": 1779675967573977327,
+    "hash": "82501f13cf1f20927cc0a5af7deb3885f19b4fc86109bc39de20d7ad17280e21"
+  },
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.h": {
+    "size": 2391,
+    "mtime_ns": 1779675967573521119,
+    "hash": "e743ea377a4d4ba4b908c4ca228b4b06d104a6f8ed80c719aa85f6bef2374158"
+  },
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.cpp": {
+    "size": 1058,
+    "mtime_ns": 1779675967573237161,
+    "hash": "e882228480d87926875481fcb9555c7b73440e04fabb49d26239d899edbe4517"
+  },
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.h": {
+    "size": 3656,
+    "mtime_ns": 1779675967573158578,
+    "hash": "fc836102abfe37e6f34f47a565f15ebd18c7a3f02b7e4a0c62535bbe8f9acecd"
+  },
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.cpp": {
+    "size": 9363,
+    "mtime_ns": 1779675967573079077,
+    "hash": "db8c9272ff623b95c4975636b71d961a6e50369d82bcee7832d1e28e2daebec1"
+  },
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ProcessingTask.cpp": {
+    "size": 523,
+    "mtime_ns": 1779675967573430703,
+    "hash": "026a5a6a3c6a8152599170a8a6008e3b0469602263bd6f225bc73c60d6a04eca"
+  },
+  "Source/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/Image.h": {
+    "size": 3113,
+    "mtime_ns": 1779675967573315286,
+    "hash": "834b28688038a3a5d821d2ee2b6277fa0bf0de2d78b98afeaada10637fbd2ffc"
+  },
+  "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp": {
+    "size": 5200,
+    "mtime_ns": 1779675967571525161,
+    "hash": "b975e890eae6734cc88119b0b46f43f09e76d431e521c142cbd7ffe266dc4620"
+  },
+  "Source/Core/VSDA/EM/MeshGenerator/MC.h": {
+    "size": 13556,
+    "mtime_ns": 1779675967571367286,
+    "hash": "1647beb1f28c3f5aaf25d011248a4301988d2829bd370c9344cd892d98ba3788"
+  },
+  "Source/Core/VSDA/EM/MeshGenerator/MeshCombiner.cpp": {
+    "size": 535,
+    "mtime_ns": 1779675967571905536,
+    "hash": "719aa26b5b14d3b20300e684ed5e93e5defc0db935c35a9a8f77a14384e9b6b5"
+  },
+  "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.h": {
+    "size": 1229,
+    "mtime_ns": 1779675967571619994,
+    "hash": "18cc972443221782f386b312ab395331f21ba531924a520d5537ded448ee61d8"
+  },
+  "Source/Core/VSDA/EM/MeshGenerator/OBJWriter.h": {
+    "size": 4715,
+    "mtime_ns": 1779675967572868203,
+    "hash": "d91bb24402dd2baac4a692a8104590d672c98f2c6f04e7247949a8bbcdaf5190"
+  },
+  "Source/Core/VSDA/EM/MeshGenerator/MarchingCubesLookupTable.h": {
+    "size": 17424,
+    "mtime_ns": 1779675967571734911,
+    "hash": "fad6cfedfd1a71180f707cbe8374ec24ce5a2b0a4bea677d95006db8cfca56c6"
+  },
+  "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp": {
+    "size": 2936,
+    "mtime_ns": 1779675967572619203,
+    "hash": "7b6956ae499688c7508e8d69414cc924e28876327fe5c629f52acfed1a9e7e98"
+  },
+  "Source/Core/VSDA/EM/MeshGenerator/MeshCombiner.h": {
+    "size": 271,
+    "mtime_ns": 1779675967572028452,
+    "hash": "c32b0f18e488933e8eb97925f11ee2b49111df1d8336500fff708d6ad15f03d7"
+  },
+  "Source/Core/VSDA/EM/MeshGenerator/MeshTask.h": {
+    "size": 584,
+    "mtime_ns": 1779675967572412327,
+    "hash": "5d5c304bc37e259d7f0790dc13e05c010a3e9b246b8df689b1912f3411ead0a3"
+  },
+  "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp": {
+    "size": 1780,
+    "mtime_ns": 1779675967572104161,
+    "hash": "e58417ccfb2e69dd85a79df50a8e523244fb26beaf5a7b729f1a142a55ef2da3"
+  },
+  "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.h": {
+    "size": 761,
+    "mtime_ns": 1779675967572317161,
+    "hash": "d28dfeccc14e57c6f42be715b98b3bfceb8837979abfaef0b38a9ad9887ffab1"
+  },
+  "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.h": {
+    "size": 740,
+    "mtime_ns": 1779675967572710411,
+    "hash": "c282744588f006eb9bf2fbe475577166181d353af700b85825834962c2956c64"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h": {
+    "size": 2468,
+    "mtime_ns": 1779675967578506327,
+    "hash": "d56507060c4b546c22a66d79efa3550236b647cb42a14789bf354874ea86841e"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h": {
+    "size": 2361,
+    "mtime_ns": 1779675967576793411,
+    "hash": "49b41ffcae11a1737752e676ac6cfe06aaf5cfbd8d72b25d904b7c2098c0edbe"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.cpp": {
+    "size": 7783,
+    "mtime_ns": 1779675967576715702,
+    "hash": "4eca1014d4a2444ee5e41fea55c88337bbf0213caabfab7e5c56ed5c1deb8d55"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/EMSubRegion.h": {
+    "size": 2386,
+    "mtime_ns": 1779675967574717578,
+    "hash": "e21e48f35944e68d7bf844e475535efb6624e1cb1df2f0cd7abc37409e13f0a3"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.cpp": {
+    "size": 13135,
+    "mtime_ns": 1779675967578627494,
+    "hash": "83e2e638bd82a38974cc63cad35657b745bcbeb2318ccb215af6b211ffd88b19"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp": {
+    "size": 18047,
+    "mtime_ns": 1779675967578417661,
+    "hash": "72034a789ec645531e60da3d15c5dc027a7e79ddd64931e3e02e3ec70e1cf896"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.h": {
+    "size": 2208,
+    "mtime_ns": 1779675967578309328,
+    "hash": "6245068b15f73b2dd5395502e66563ff63b0a104dcbad88b28f43c4628b4522c"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.h": {
+    "size": 2904,
+    "mtime_ns": 1779675967578709244,
+    "hash": "d6ec416dfa1aa66a40fefe48b38125a8323d3dd17a3a1eee610347bbd07a77cc"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/EMSubRegion.cpp": {
+    "size": 12085,
+    "mtime_ns": 1779675967574639619,
+    "hash": "7b638df6621413c50d68bf81b6efb0f01dd88d42b261d278b997faad44ad07f9"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/TearGenerator.cpp": {
+    "size": 6073,
+    "mtime_ns": 1779675967578219661,
+    "hash": "960958f89c599e08cc962d8474de871a56ef29a414f70372a46e9b1f37d8177e"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/SegmentationCompression.cpp": {
+    "size": 4506,
+    "mtime_ns": 1779675967576038411,
+    "hash": "1a77ebcccbf8980ccfa10e0d6d1322dbc9df5410eacb7556625b066899993809"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.h": {
+    "size": 5414,
+    "mtime_ns": 1779675967575850952,
+    "hash": "a2a9a7542508d244512f27a9f957204479791c417e4da188245ccd03f4875840"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.cpp": {
+    "size": 1396,
+    "mtime_ns": 1779675967575366994,
+    "hash": "c5bbd60808f529069f4d1c07166864cf612441e4b17d221241c203b9930c1b20"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.cpp": {
+    "size": 22548,
+    "mtime_ns": 1779675967575538577,
+    "hash": "572de9e51ca306e4a1d5cd77d4268801d9d2a2b7f9d7aeba10d59d0671b1e333"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/SegmentationCompression.h": {
+    "size": 930,
+    "mtime_ns": 1779675967576128286,
+    "hash": "935657c86238e88bf1bcf504a0c7f906593d797e3ec5f2a67892cf0f4d7aa2d7"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.h": {
+    "size": 4216,
+    "mtime_ns": 1779675967576540911,
+    "hash": "d5f5e8a1e0eb4138047adb6b66101ad910161183009dc3799f5f5100d4dfadd9"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/iir_gauss_blur.h": {
+    "size": 8960,
+    "mtime_ns": 1779675967576310619,
+    "hash": "a29b00ed911a2f8f223a1ee8fde2ef425bc4def03fa3af34886fb422212239c1"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h": {
+    "size": 4005,
+    "mtime_ns": 1779675967575630369,
+    "hash": "16d8d0fa5cb7804e85f63c9c0fca83c78ccfac738904782c82763897cb28e684"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp": {
+    "size": 510,
+    "mtime_ns": 1779675967575713327,
+    "hash": "05e7a43d3dea8996eac04823b9d105b4ec1a30b4937b8c08754e0b10c630438e"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Working.cpp": {
+    "size": 18476,
+    "mtime_ns": 1779675967576213911,
+    "hash": "1321f16b94281132ee5bbc71469c354a9bbc47e9f412d1557d99323b64077262"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.h": {
+    "size": 3197,
+    "mtime_ns": 1779675967575444869,
+    "hash": "d6ad4f5869a8dcee6b79106a98def362e4737aa85864dd8b431ba1e6c530f188"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc": {
+    "size": 10442,
+    "mtime_ns": 1779675967576408202,
+    "hash": "b239e990b78e9220646d8c58cd5dc98dc0de6f17e0049f025a405fd7785c525c"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.cpp": {
+    "size": 23084,
+    "mtime_ns": 1779675967576930827,
+    "hash": "2759bb625d7fe575909f4e54464e4a1b2f53123d8b1148dc356fcab5ee03d76a"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h": {
+    "size": 3833,
+    "mtime_ns": 1779675967577006786,
+    "hash": "9ec5fff52480558c8bfe4f86ec37d196dd1ee098a6111a622fad4d3567644397"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/Task.h": {
+    "size": 3685,
+    "mtime_ns": 1779675967574539536,
+    "hash": "09a3ab8c9d708185bb9e55cad701c16f1b7132d9d740e47ac23a35dc8f1d9569"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp": {
+    "size": 10202,
+    "mtime_ns": 1779675967574225161,
+    "hash": "295a6e768dc665a8a465865c826e09ea444ed36dfa7d1d908dd50a81eaa1ccdf"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/Task.cpp": {
+    "size": 585,
+    "mtime_ns": 1779675967574452869,
+    "hash": "370e43fe39a9946ec64aa2ec5e6bd2d1929853354de1532a21b2db027e3bd899"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.h": {
+    "size": 4613,
+    "mtime_ns": 1779675967574362869,
+    "hash": "a7fcf7f57fb3372c452d870951c036d9d51023b9c1d281dc73585b90687c9746"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.h": {
+    "size": 6040,
+    "mtime_ns": 1779675967577280119,
+    "hash": "0cd0177a309a7a8a486269bc14eba9acb050579ebc18fe3e9384eb83b64c7285"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/SubRegion.cpp": {
+    "size": 198,
+    "mtime_ns": 1779675967577477827,
+    "hash": "cb5adcf7fd98e95634474762491afe4d0c25821f11743de597d26dc30b13bd62"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/SubRegion.h": {
+    "size": 3027,
+    "mtime_ns": 1779675967577553369,
+    "hash": "6a6c73605a82aecb484e57426b1668c77439e584bcae795bd81feed79b64c4f6"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/MicroscopeParameters.cpp": {
+    "size": 64,
+    "mtime_ns": 1779675967577139702,
+    "hash": "1f5c95ed6d8caab8f927d17db1343db72e3b7c3b4cae8dd3dce43bb34035b6f3"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VSDAData.h": {
+    "size": 5185,
+    "mtime_ns": 1779675967577769577,
+    "hash": "b5bd196d849cae5abc705356aad417167cf1d09d7559edbb07a0b4af5890d9c6"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VSDAData.cpp": {
+    "size": 52,
+    "mtime_ns": 1779675967577626869,
+    "hash": "ce898efbba360d69de5a4d791fd22c297ef5631ff6e74c3591f98d58fa93c19f"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h": {
+    "size": 7898,
+    "mtime_ns": 1779675967578058453,
+    "hash": "d69ea39a130843ab414c6a7a56f8e0a1063a70f157aa8f2bc084ef1dfce26297"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp": {
+    "size": 14339,
+    "mtime_ns": 1779675967577902578,
+    "hash": "a7fc2b6a2b590d77449e81f842e7e9457cf5303e2eaf423cf3de465015cc17c8"
+  },
+  "Source/Core/VSDA/Common/Structs/WorldInfo.cpp": {
+    "size": 179,
+    "mtime_ns": 1779675967569984036,
+    "hash": "7f19f6c12b076d4d012252860bbf1855449568d5c3da09137f41a2be69376dad"
+  },
+  "Source/Core/VSDA/Common/Structs/WorldInfo.h": {
+    "size": 1705,
+    "mtime_ns": 1779675967570113244,
+    "hash": "b39dfa8bb43f06103fe7efde0fb6afca14f85d6b5f261422d79130f53b401d50"
+  },
+  "Source/Core/VSDA/Common/Structs/ScanRegion.h": {
+    "size": 3941,
+    "mtime_ns": 1779675967569907536,
+    "hash": "ece4291638d004d57c497a2b48449bdb0a3a9844a1a8ebaa5470692312ed32b2"
+  },
+  "Source/Core/VSDA/Common/Structs/ScanRegion.cpp": {
+    "size": 2127,
+    "mtime_ns": 1779675967569813953,
+    "hash": "fa46ee5b9a3984e34b27da30ed7441bfde75356837b0c22693ecbf3bfbc14129"
+  },
+  "Source/Core/VSDA/DebugHelpers/MeshBuilder.cpp": {
+    "size": 4270,
+    "mtime_ns": 1779675967570491828,
+    "hash": "0574743a75cb899925f4b4e87595198ebe4553050a1a96f4105438435c4c65d6"
+  },
+  "Source/Core/VSDA/DebugHelpers/MeshConversionHelpers.cpp": {
+    "size": 790,
+    "mtime_ns": 1779675967570725952,
+    "hash": "257b6af3d7834feab6f7e98e12e3dca7b0deab275dd3b5ca18bf7a7b2df95500"
+  },
+  "Source/Core/VSDA/DebugHelpers/MeshBuilder.h": {
+    "size": 1472,
+    "mtime_ns": 1779675967570626161,
+    "hash": "bb292f7237ca2af9802ae1a94b8dc2af04730ebf8535ca9e519a28c84615826d"
+  },
+  "Source/Core/VSDA/DebugHelpers/MeshConversionHelpers.h": {
+    "size": 1247,
+    "mtime_ns": 1779675967570828244,
+    "hash": "2eebb04506825d005eeec0e2be306eaffa21c87e518a6ee0a360ef6128722328"
+  },
+  "Source/Core/Simulator/Engine.h": {
+    "size": 1506,
+    "mtime_ns": 1779675967552670286,
+    "hash": "e3ba2d5c516657ba3992b1ff64bc62920afe96a18004c0c46c8ffdb5fcd0b13e"
+  },
+  "Source/Core/Simulator/EngineController.h": {
+    "size": 1371,
+    "mtime_ns": 1779675967552890327,
+    "hash": "aef64f54349891286f8debe4a3d404d5361da849bf9c6d679581d665f6936bd8"
+  },
+  "Source/Core/Simulator/EngineController.cpp": {
+    "size": 4149,
+    "mtime_ns": 1779675967552808869,
+    "hash": "64086a5806e7b7f3b2c73b8aebc60693de80a807803d5018cf2041b117518a39"
+  },
+  "Source/Core/Simulator/Engine.cpp": {
+    "size": 1461,
+    "mtime_ns": 1779675967552592244,
+    "hash": "713c4256d2568763cf270acdbea605501930f3bbd3b9de7ee61632d35127527f"
+  },
+  "Source/Core/Simulator/BrainRegion/BrainRegion.h": {
+    "size": 1885,
+    "mtime_ns": 1779675967550929327,
+    "hash": "1e1e007e768720e7a62280922205aedc50a522212d603abb02678382f7bebc94"
+  },
+  "Source/Core/Simulator/SimpleCompartmental/SCNeuron.h": {
+    "size": 1956,
+    "mtime_ns": 1779675967558619827,
+    "hash": "97ffd8cab427a790a1104e6641d3c2ca9000a43745aeebc6b9c732d4e923f5ca"
+  },
+  "Source/Core/Simulator/SimpleCompartmental/SCNeuron.cpp": {
+    "size": 4207,
+    "mtime_ns": 1779675967558540994,
+    "hash": "8baf4d5bce8a4d08d9f9cc2d73e7fcc8d41f1476839da4a1f840d22779c230fa"
+  },
+  "Source/Core/Simulator/LIFCompartmental/LIFCNeuron.cpp": {
+    "size": 22263,
+    "mtime_ns": 1779675967555060453,
+    "hash": "a0d86a580b53a95766393310f2ef0cd23815b9893c5ac5808a09992c96193cd5"
+  },
+  "Source/Core/Simulator/LIFCompartmental/LIFCNeuron.h": {
+    "size": 6976,
+    "mtime_ns": 1779675967555223244,
+    "hash": "eeb4823215e4e3871c0c888c4eb6e02b161bc4772e0cfc3f885644f97bebb027"
+  },
+  "Source/Core/Simulator/Receptors/Receptor.cpp": {
+    "size": 7594,
+    "mtime_ns": 1779675967557931911,
+    "hash": "b45a6626206dc9eabf6fedf8bbebc530e330cf30318dc901a60649762c5dcd54"
+  },
+  "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp": {
+    "size": 821,
+    "mtime_ns": 1779675967557353744,
+    "hash": "e7decce1d160c99b950dcd5c49f550db2d643c612cec78d646fba299004d64fd"
+  },
+  "Source/Core/Simulator/Receptors/NMDAReceptor.h": {
+    "size": 5763,
+    "mtime_ns": 1779675967557654994,
+    "hash": "4adf89fb57a048bb26157b68b21d8ef49dcb85a803a2fa7aa6d27a544806db85"
+  },
+  "Source/Core/Simulator/Receptors/AMPAReceptor.h": {
+    "size": 1970,
+    "mtime_ns": 1779675967557165036,
+    "hash": "3744f7f7cabc30853d72618012cc25e2e45b03f2893c4a59abff731dcd0726d4"
+  },
+  "Source/Core/Simulator/Receptors/NMDAReceptor.cpp": {
+    "size": 5755,
+    "mtime_ns": 1779675967557509786,
+    "hash": "7ae7c2bc3b199cee346b1f86e00b9b1d13bcd4b0f4737323fa604cdafb1ab14a"
+  },
+  "Source/Core/Simulator/Receptors/NMDAReceptor.test.cpp": {
+    "size": 5615,
+    "mtime_ns": 1779675967557791077,
+    "hash": "543edd5ddfb4856d566993b3974faa4931337a78d6ce7ad8f48d6aae43332dba"
+  },
+  "Source/Core/Simulator/Receptors/AMPAReceptor.cpp": {
+    "size": 1015,
+    "mtime_ns": 1779675967557076244,
+    "hash": "3b19e9b1ced86174c8fb5df8662a5e42cfa4d68bbdfd579b05d79a621576e77a"
+  },
+  "Source/Core/Simulator/Receptors/Receptor.h": {
+    "size": 3183,
+    "mtime_ns": 1779675967558040577,
+    "hash": "bedaac7cd0e52dd46fc5e8eb01958cc02d69c686de2334eaecd4138ef1cbd651"
+  },
+  "Source/Core/Simulator/Receptors/Receptor.test.cpp": {
+    "size": 10800,
+    "mtime_ns": 1779675967558132494,
+    "hash": "d9f9c9da5663ed446715bfb5bf854f7349504fd23cdee86df6ad660880470d56"
+  },
+  "Source/Core/Simulator/BallAndStick/BSNeuron.cpp": {
+    "size": 14717,
+    "mtime_ns": 1779675967550468244,
+    "hash": "477e309882bbd591d9a5b27268aaffa6d738393f66d609eac0d563fbd50121db"
+  },
+  "Source/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.h": {
+    "size": 1946,
+    "mtime_ns": 1779675967549609703,
+    "hash": "873845b2619345f4a194480766fadbe0c36a7ed468c52e1e7351f3b38446bbfe"
+  },
+  "Source/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.test.cpp": {
+    "size": 1375,
+    "mtime_ns": 1779675967549832952,
+    "hash": "9b1be7b18d10743a086f38e17692199cf34cc1ca80d91a53fe149a78a7a7ee43"
+  },
+  "Source/Core/Simulator/BallAndStick/BSAlignedNC.cpp": {
+    "size": 6293,
+    "mtime_ns": 1779675967548939911,
+    "hash": "b35211ddd1c430ef76cd8a1894391db4a0bcfd960bbee716c74573b2d808dcb5"
+  },
+  "Source/Core/Simulator/BallAndStick/BSMorphology.cpp": {
+    "size": 3825,
+    "mtime_ns": 1779675967550014202,
+    "hash": "fd5b67bcf017dc9496f1acba44bd651808531a5d1b730a5708b26b6c031608e2"
+  },
+  "Source/Core/Simulator/BallAndStick/BSAlignedBrainRegion.h": {
+    "size": 1555,
+    "mtime_ns": 1779675967548802744,
+    "hash": "ec420af74785e11239f44a26f99b99ecab4640de2dd23e954e9b0073703e4d0a"
+  },
+  "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp": {
+    "size": 2822,
+    "mtime_ns": 1779675967550345244,
+    "hash": "be26727430b8890ffda760c0f3eb0aedb9533d53ea5ff2197255a9f4179603b2"
+  },
+  "Source/Core/Simulator/BallAndStick/BSNeuron.h": {
+    "size": 7318,
+    "mtime_ns": 1779675967550599369,
+    "hash": "8e49b35e307f460a2508d63331f6a53ebc9c1aa56b51e84ef995b89e2c410dbf"
+  },
+  "Source/Core/Simulator/BallAndStick/BSNeuron.test.cpp": {
+    "size": 9984,
+    "mtime_ns": 1779675967550683286,
+    "hash": "1a7b724a6302e2435ec8c41d373f38daf8e0e74363629cc3e677b1a6f336b914"
+  },
+  "Source/Core/Simulator/BallAndStick/BSAlignedNC.h": {
+    "size": 3358,
+    "mtime_ns": 1779675967549129578,
+    "hash": "679c38d8b93de9b47e8e49f5ea69e4daf17b3c96bb91b398d9c0d85d75684f01"
+  },
+  "Source/Core/Simulator/BallAndStick/BSAlignedNC.test.cpp": {
+    "size": 10094,
+    "mtime_ns": 1779675967549262078,
+    "hash": "b78d806e179d67e3cd7a4e8968ebf9922fce4606e7204b75ab91b4520790a496"
+  },
+  "Source/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.cpp": {
+    "size": 4188,
+    "mtime_ns": 1779675967549405786,
+    "hash": "b30fc6d532fb801eafadbeeb82b191eeb9b558455495dd229c8f2aa20a9aa75f"
+  },
+  "Source/Core/Simulator/BallAndStick/BSMorphology.h": {
+    "size": 1947,
+    "mtime_ns": 1779675967550190452,
+    "hash": "0c0ac5eed990dba645749115c1445770b58dc9f34c5a51ab66aa58e692e8383f"
+  },
+  "Source/Core/Simulator/BallAndStick/BSAlignedBrainRegion.cpp": {
+    "size": 640,
+    "mtime_ns": 1779675967548607036,
+    "hash": "afe1fb4f572bbfe32fa31071c4b6ce99704b7a3aab76339c095e3c6c86802bcf"
+  },
+  "Source/Core/Simulator/Structs/SignalFunctions.h": {
+    "size": 1311,
+    "mtime_ns": 1779675967561326619,
+    "hash": "1667e2ff7fbe5aeebd5130f5152133ced515bcc8662d15d475be1757ebc948c5"
+  },
+  "Source/Core/Simulator/Structs/Simulation.h": {
+    "size": 12428,
+    "mtime_ns": 1779675967561753952,
+    "hash": "86a3b22d96f6729d0a22f80c94981a3929aab79ff9ae3c8c089998194acf8e6e"
+  },
+  "Source/Core/Simulator/Structs/Staple.h": {
+    "size": 1162,
+    "mtime_ns": 1779675967562153494,
+    "hash": "3eb50be60c34e45ecc53ea1801cca4e820fb53ed1327508dcc7965335514cd23"
+  },
+  "Source/Core/Simulator/Structs/Neuron.cpp": {
+    "size": 24872,
+    "mtime_ns": 1779675967559811369,
+    "hash": "5c06ed71a7eea9474bbfaf59ba93e98a64508071adfbc7895dcc9c2c2310b071"
+  },
+  "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp": {
+    "size": 1140,
+    "mtime_ns": 1779675967562455202,
+    "hash": "177f912c08e09f5a936d260ce84d74127dd0ed0eb1e2cca23edf53fe338a4a5a"
+  },
+  "Source/Core/Simulator/Structs/NeuralCircuit.h": {
+    "size": 5512,
+    "mtime_ns": 1779675967559721494,
+    "hash": "34556284f8bc98c80880954b99831a082015a2d71b3dc5361a91c24441444800"
+  },
+  "Source/Core/Simulator/Structs/PatchClampADC.h": {
+    "size": 1363,
+    "mtime_ns": 1779675967560108911,
+    "hash": "97464b4baf0fe67cdecfce3a89b330b549c559f54442456fd499e5dc19297239"
+  },
+  "Source/Core/Simulator/Structs/BS.cpp": {
+    "size": 33,
+    "mtime_ns": 1779675967558849327,
+    "hash": "cdf345852d4b2a9a5540edd04ca522f9336234be0c608b4f78df791ece531eb6"
+  },
+  "Source/Core/Simulator/Structs/PatchClampDAC.h": {
+    "size": 1641,
+    "mtime_ns": 1779675967560247202,
+    "hash": "77d0fa4acd1407ee430876e563e8a5617d0485cc1a7018ad21b47dec23b568bf"
+  },
+  "Source/Core/Simulator/Structs/Neuron.h": {
+    "size": 12503,
+    "mtime_ns": 1779675967559936869,
+    "hash": "46abee15978c4d1bfdd009c86d52c0601d3ff5d72cc488b16250a9bdd260440b"
+  },
+  "Source/Core/Simulator/Structs/PatchClampADC.cpp": {
+    "size": 44,
+    "mtime_ns": 1779675967560010161,
+    "hash": "7ec8412125b43c243f4b498030daf66e3f9847631789891cc7c669777dc93fc8"
+  },
+  "Source/Core/Simulator/Structs/BoundingBox.h": {
+    "size": 1690,
+    "mtime_ns": 1779675967559127994,
+    "hash": "994ba3d2bef727cc98dbbb7c87ac305aa56c2e27d4a10f5fd205f317081a5ed0"
+  },
+  "Source/Core/Simulator/Structs/Receptor.cpp": {
+    "size": 3162,
+    "mtime_ns": 1779675967560318994,
+    "hash": "d9f2ef669145e89b15c8375b01636b533c807206bf52dea630b3a7229f422115"
+  },
+  "Source/Core/Simulator/Structs/SynTrQuantalRelease.cpp": {
+    "size": 656,
+    "mtime_ns": 1779675967562251077,
+    "hash": "99eca955132f1066302b0a08aed83ee61d2ef46f844deb063537ef602f169812"
+  },
+  "Source/Core/Simulator/Structs/CalciumImaging.cpp": {
+    "size": 6211,
+    "mtime_ns": 1779675967559264119,
+    "hash": "bc708089739e3cf16e7bb85adf82986893fed2a3973044563b135019c1201bc6"
+  },
+  "Source/Core/Simulator/Structs/Simulation.test.cpp": {
+    "size": 14717,
+    "mtime_ns": 1779675967561859078,
+    "hash": "816b71c15aafea83008f2212bd4ed7ed78d9ee417311affa7c7e7f2d6e15c6e7"
+  },
+  "Source/Core/Simulator/Structs/RecordingElectrode.h": {
+    "size": 2949,
+    "mtime_ns": 1779675967560676869,
+    "hash": "d53fda1a81fc19b02d29860e33eedd70e261c50a2a3d36bea1b6c05b5e8b5c51"
+  },
+  "Source/Core/Simulator/Structs/Staple.cpp": {
+    "size": 37,
+    "mtime_ns": 1779675967562044536,
+    "hash": "e99135732fe8a4f3edaefea7461b44417b77dff60e888f661cbd0081814fa6a9"
+  },
+  "Source/Core/Simulator/Structs/RecordingElectrode.cpp": {
+    "size": 5216,
+    "mtime_ns": 1779675967560591411,
+    "hash": "07bcd89da35e9c39291eba064af0f232bcc4a32ab90dedc55c590e496b51fd62"
+  },
+  "Source/Core/Simulator/Structs/SignalFunctions.cpp": {
+    "size": 1746,
+    "mtime_ns": 1779675967561243286,
+    "hash": "f0781f1a46a3b7cf13a994f0dd6ae943246c86d36bd99d72b2e9ae6e1da21306"
+  },
+  "Source/Core/Simulator/Structs/BoundingBox.cpp": {
+    "size": 3991,
+    "mtime_ns": 1779675967559046786,
+    "hash": "7c7da502cc5beeb29071072fa2e9fc4958ae700df947f4d3ae5d859158248eac"
+  },
+  "Source/Core/Simulator/Structs/PatchClampDAC.cpp": {
+    "size": 44,
+    "mtime_ns": 1779675967560177827,
+    "hash": "04471030236883b007eadc41f62571fe60fea52aabb115ae809e170445a58f5f"
+  },
+  "Source/Core/Simulator/Structs/SC.cpp": {
+    "size": 34,
+    "mtime_ns": 1779675967560978619,
+    "hash": "f6a5a8dba87fe4762e002ca018ee305dc230de53cca0ee2395e109bc92b5d18d"
+  },
+  "Source/Core/Simulator/Structs/RecordingElectrode.test.cpp": {
+    "size": 6546,
+    "mtime_ns": 1779675967560825452,
+    "hash": "ac5d226ab1b5c03fee29aa7c05f6d796b3e7a431657ba0ac65aee3cfeed88d1a"
+  },
+  "Source/Core/Simulator/Structs/SignalFunctions.test.cpp": {
+    "size": 2188,
+    "mtime_ns": 1779675967561422952,
+    "hash": "adeac1cfd47d26fb486baf9c011c6d15b47e8e9ff9c617e2b1b49cea6ec635f9"
+  },
+  "Source/Core/Simulator/Structs/LIFC.cpp": {
+    "size": 788,
+    "mtime_ns": 1779675967559406369,
+    "hash": "76b18985ca0a79b8205b559bf438e7f8306c24faeab0147503f5a12c49d93060"
+  },
+  "Source/Core/Simulator/Structs/NeuralCircuit.cpp": {
+    "size": 2008,
+    "mtime_ns": 1779675967559574577,
+    "hash": "7cf4e4c06f1c617f87edf7da438850cf8b2a63a7c7a4a2aa2a86ceeaf9cccc17"
+  },
+  "Source/Core/Simulator/Structs/LIFC.h": {
+    "size": 1971,
+    "mtime_ns": 1779675967559491244,
+    "hash": "dfff7975bea9da3cbf1e4f06c1be3371e54efe684d04d35b978cab77c27a17a7"
+  },
+  "Source/Core/Simulator/Structs/Simulation.cpp": {
+    "size": 79531,
+    "mtime_ns": 1779675967561596036,
+    "hash": "8ebce4281f50544791f45c2bdf6d93b7bf872fbb7da1cf049337a07276c3337f"
+  },
+  "Source/Core/Simulator/Structs/BS.h": {
+    "size": 2564,
+    "mtime_ns": 1779675967558948994,
+    "hash": "768ce475c873e2d338d701cea4e0200ee9cd88cefc9edb6101dfc5e730d2efa1"
+  },
+  "Source/Core/Simulator/Structs/SC.h": {
+    "size": 934,
+    "mtime_ns": 1779675967561155036,
+    "hash": "16cc77632d7ea4eb1f30ef384c821392782205e967408ed2432e433cef80ce48"
+  },
+  "Source/Core/Simulator/Structs/CalciumImaging.h": {
+    "size": 2738,
+    "mtime_ns": 1779675967559342827,
+    "hash": "c07ee0cfa99a4d3d6b8655cec1fb9aa8d35821556f4cb76a65a1aaef6cfc9f12"
+  },
+  "Source/Core/Simulator/Structs/SynTrQuantalRelease.h": {
+    "size": 1304,
+    "mtime_ns": 1779675967562352036,
+    "hash": "04ec3f854b80e3f1f78f9e5ec1eaf756042267edb1eb001940ae3547360b93b9"
+  },
+  "Source/Core/Simulator/Structs/Receptor.h": {
+    "size": 4515,
+    "mtime_ns": 1779675967560453661,
+    "hash": "713b122415259eab472f2c8a2a56d62c69c3108bb3f4bca355eae9a4991ccb82"
+  },
+  "Source/Core/Simulator/Geometries/Box.h": {
+    "size": 2915,
+    "mtime_ns": 1779675967553152911,
+    "hash": "3cf1b4f5f8456c196351dc75808f72a73c9d34907adcb260cc3e68e800a6d958"
+  },
+  "Source/Core/Simulator/Geometries/Geometry.cpp": {
+    "size": 43,
+    "mtime_ns": 1779675967553587286,
+    "hash": "bb0914ff23a7ee5205037a81abaf6bffae9db02cc2cd85efdaebfe62a0cff7ee"
+  },
+  "Source/Core/Simulator/Geometries/Cylinder.cpp": {
+    "size": 14788,
+    "mtime_ns": 1779675967553352661,
+    "hash": "0754571e0f8b22023663b0268b1638e8bc33c177f75cbe6afa8c1b3da2d113f6"
+  },
+  "Source/Core/Simulator/Geometries/GeometryCollection.h": {
+    "size": 5176,
+    "mtime_ns": 1779675967553805202,
+    "hash": "036c1942693be77209037fa4c4de5a43488567293fb0395b992ec01fa4904573"
+  },
+  "Source/Core/Simulator/Geometries/VecTools.cpp": {
+    "size": 6876,
+    "mtime_ns": 1779675967554293952,
+    "hash": "c9cc4556ad3cadeb2b3ee9a81fa0f6a957e0a6f4aac0209cca6bf49f0599570a"
+  },
+  "Source/Core/Simulator/Geometries/VecTools.test.cpp": {
+    "size": 3928,
+    "mtime_ns": 1779675967554606827,
+    "hash": "b1fa1bdc1f11808118ec82fd9513c00f2ed1f01adb1086afae6a149a62d41d4c"
+  },
+  "Source/Core/Simulator/Geometries/Box.cpp": {
+    "size": 8140,
+    "mtime_ns": 1779675967553058619,
+    "hash": "b3365ab77d64f173a76c18074ddf3b12ae283d9f3663cb7cc3dcbf62e8099aad"
+  },
+  "Source/Core/Simulator/Geometries/Wedge.h": {
+    "size": 3219,
+    "mtime_ns": 1779675967554888869,
+    "hash": "512da5f5121f78cdf21ea404500669da67087ab1ef540fd55e220e2e9499ff76"
+  },
+  "Source/Core/Simulator/Geometries/Sphere.h": {
+    "size": 2049,
+    "mtime_ns": 1779675967554053494,
+    "hash": "07ca2a2f53f281306ec56817f5b5ee8d92d069cf560725eb4a8bfa49542f4534"
+  },
+  "Source/Core/Simulator/Geometries/Cylinder.h": {
+    "size": 3211,
+    "mtime_ns": 1779675967553433202,
+    "hash": "cbdf777126b4c4b7c817b877bcebed5847c42caf70ba468ef0d97d3a9522defd"
+  },
+  "Source/Core/Simulator/Geometries/Wedge.cpp": {
+    "size": 669,
+    "mtime_ns": 1779675967554698536,
+    "hash": "7c35fb7f7407174f94d6e0ed584bf311a9573e9771bdcc7e2d912119770f6246"
+  },
+  "Source/Core/Simulator/Geometries/VecTools.h": {
+    "size": 3192,
+    "mtime_ns": 1779675967554398869,
+    "hash": "9e0a5e4f509c8e76624b84e1fddcd2fe7f8175c5976022315b1083ac77390159"
+  },
+  "Source/Core/Simulator/Geometries/Cylinder.test.cpp": {
+    "size": 2616,
+    "mtime_ns": 1779675967553513702,
+    "hash": "da73048349155f2d970c38310003a323afbae24b9c6b78a457a4471249dd3560"
+  },
+  "Source/Core/Simulator/Geometries/Box.test.cpp": {
+    "size": 2263,
+    "mtime_ns": 1779675967553231536,
+    "hash": "3bc006bb6b85867862dee3f696cad9b0cd860cd043fb3c192ca0b8d676f8e639"
+  },
+  "Source/Core/Simulator/Geometries/Sphere.cpp": {
+    "size": 1848,
+    "mtime_ns": 1779675967553975369,
+    "hash": "46fe93dd8d7b6d020b234bb39215ac5aa9cdffb3cbe75b7363f3ae21af7c4b39"
+  },
+  "Source/Core/Simulator/Geometries/Sphere.test.cpp": {
+    "size": 1263,
+    "mtime_ns": 1779675967554130119,
+    "hash": "928e7642063c98477be4a62f4ef88a420aadbd1b64fc6598f34821b0c09ca4ae"
+  },
+  "Source/Core/Simulator/Geometries/Geometry.h": {
+    "size": 2586,
+    "mtime_ns": 1779675967553664452,
+    "hash": "204459aec152343fc0964640102246109bfd3b848f41d2bd24c24f57173fd092"
+  },
+  "Source/Core/Simulator/Updaters/Staple.h": {
+    "size": 1109,
+    "mtime_ns": 1779675967563655994,
+    "hash": "47d020f6f6d1ce08b86f4c375f2485a0b253f895e04b74f6448551195db0421a"
+  },
+  "Source/Core/Simulator/Updaters/PatchClampADC.h": {
+    "size": 1274,
+    "mtime_ns": 1779675967562668244,
+    "hash": "18c4414ecee4e8c5db4a8aa4fddeabfde9c7a9c809e37371eee294e2b1f49e1e"
+  },
+  "Source/Core/Simulator/Updaters/PatchClampDAC.h": {
+    "size": 1151,
+    "mtime_ns": 1779675967562875369,
+    "hash": "e7aa52a44dbad93b3f3e86dace66d96191eb70c49466abad87a2ee166027e19d"
+  },
+  "Source/Core/Simulator/Updaters/PatchClampADC.cpp": {
+    "size": 841,
+    "mtime_ns": 1779675967562571828,
+    "hash": "5519081f21b3e7999bf3205c87906fe23733c148062c9e31db8979a9ee571fdc"
+  },
+  "Source/Core/Simulator/Updaters/Receptor.cpp": {
+    "size": 618,
+    "mtime_ns": 1779675967563174286,
+    "hash": "c7851f84bd5ea21008566acdddb436f2f8e38fe26246b03986361e3cd53df012"
+  },
+  "Source/Core/Simulator/Updaters/Staple.cpp": {
+    "size": 580,
+    "mtime_ns": 1779675967563365202,
+    "hash": "171b031ff0c3bd9e9a5ac49e20b15f4f43ccf7a2be099163a2d0c085837acdda"
+  },
+  "Source/Core/Simulator/Updaters/PatchClampDAC.cpp": {
+    "size": 677,
+    "mtime_ns": 1779675967562780411,
+    "hash": "599c1f781f2ed5fc19cd567db9c8ce8eceb7661100b306c4c135caf9206c8b89"
+  },
+  "Source/Core/Simulator/Updaters/Receptor.h": {
+    "size": 1125,
+    "mtime_ns": 1779675967563276369,
+    "hash": "faae04afd3bf728a1f373d5189f2b42e06fecf7b7b4e8b891dfdb6859234e4e2"
+  },
+  "Source/Core/Simulator/RPC/ModelRPCInterface.cpp": {
+    "size": 44705,
+    "mtime_ns": 1779675967556435869,
+    "hash": "8b0f70612ce3e038c2e011d9d15e9cc282cf39c441ec43729f875714fc2abae3"
+  },
+  "Source/Core/Simulator/RPC/GeometryRPCInterface.cpp": {
+    "size": 3305,
+    "mtime_ns": 1779675967556119869,
+    "hash": "80f03a2182d472a4948f5b61d5e45d757fc341464c071fa15835ddc87aad24ed"
+  },
+  "Source/Core/Simulator/RPC/ModelRPCInterface.h": {
+    "size": 3768,
+    "mtime_ns": 1779675967556538452,
+    "hash": "444b2e0361d1ce8a535c17a4de3f96781ec455b71d5fa901dbadacddc1ce7e30"
+  },
+  "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp": {
+    "size": 61626,
+    "mtime_ns": 1779675967556688619,
+    "hash": "fcef3b07dbd4ecaac5659fb837a116dc1d973e88b4c21f9431ac4e63dcd6b50e"
+  },
+  "Source/Core/Simulator/RPC/SimulationRPCInterface.h": {
+    "size": 7847,
+    "mtime_ns": 1779675967556830369,
+    "hash": "8a8ced23fa984dd1eaa37079c35c8eacde4810886edce4f0123362daae6415d5"
+  },
+  "Source/Core/Simulator/RPC/GeometryRPCInterface.h": {
+    "size": 2660,
+    "mtime_ns": 1779675967556312453,
+    "hash": "a5b27de7df54bf0153ed85469a6a4bc4f96d5932eb45f2a6308dcd574f6eba36"
+  },
+  "Source/Core/Simulator/Distributions/Generic.h": {
+    "size": 1791,
+    "mtime_ns": 1779675967552135452,
+    "hash": "f16c08f2861974df520d2891eb319c971d444ed4a433f54e0cb8b46b9390e793"
+  },
+  "Source/Core/Simulator/Distributions/Distribution.cpp": {
+    "size": 643,
+    "mtime_ns": 1779675967551144161,
+    "hash": "71626e34b1c1b9dcb03c70dd198331ab14d0cf5288ac7b650401dd1660f170f7"
+  },
+  "Source/Core/Simulator/Distributions/TruncNorm.cpp": {
+    "size": 4724,
+    "mtime_ns": 1779675967552276952,
+    "hash": "f05db1f60f72abf7a20d6976097807fa8525e9c88dc4137e8168d08b5e6ebeaf"
+  },
+  "Source/Core/Simulator/Distributions/Generic.cpp": {
+    "size": 628,
+    "mtime_ns": 1779675967551940911,
+    "hash": "4aa8c7a02e2221caa948f47d4cdd334d22e075f77c257fe67e6437a8607b6f16"
+  },
+  "Source/Core/Simulator/Distributions/TruncNorm.h": {
+    "size": 1566,
+    "mtime_ns": 1779675967552342411,
+    "hash": "5dfa72ba57233ee12cd1f6620e155d923a99712364578c49641a44f8ee6e6141"
+  },
+  "Source/Core/Simulator/Distributions/TruncNorm.test.cpp": {
+    "size": 2171,
+    "mtime_ns": 1779675967552512786,
+    "hash": "7192347cd0313128fd8b986c8335b08e96cd212d3ac9cb475947a24f7d115fd1"
+  },
+  "Source/Core/Simulator/Distributions/Distribution.h": {
+    "size": 1756,
+    "mtime_ns": 1779675967551379369,
+    "hash": "b6afde8db70ff790c7cecb2255ff598d528d3579b0e74b73894705149fc792c7"
+  },
+  "Source/Core/Profiling/ProfilingManager.cpp": {
+    "size": 27514,
+    "mtime_ns": 1779675967546020869,
+    "hash": "9ad2cf78651675009432088f140ff1426dd51a3d12530104822174e7f67a8b34"
+  },
+  "Source/Core/Profiling/ProfilingManager.h": {
+    "size": 1419,
+    "mtime_ns": 1779675967546210786,
+    "hash": "d8a52868220bde116e4843e56d70b480f62344694239673cbdb43d843d8aa9fd"
+  },
+  "Source/Core/RPC/ManagerTaskData.h": {
+    "size": 2526,
+    "mtime_ns": 1779675967546699411,
+    "hash": "637b7765bb4a39ec798a0a04547a38bc3a1608a47af25eb5ef62b31328075897"
+  },
+  "Source/Core/RPC/APIStatusCode.cpp": {
+    "size": 480,
+    "mtime_ns": 1779675967546385577,
+    "hash": "552b24d4767bbf4e75fe2a1106cab011ac4a4fd8fa73b142bc83cabbe266c198"
+  },
+  "Source/Core/RPC/RouteAndHandler.cpp": {
+    "size": 482,
+    "mtime_ns": 1779675967547311327,
+    "hash": "82c3eb2ea933194d866ababac4e09f5714dd25c60e304d4d8e36c37e426a8f56"
+  },
+  "Source/Core/RPC/APIStatusCode.h": {
+    "size": 960,
+    "mtime_ns": 1779675967546513494,
+    "hash": "ac1136afa75541c27c4eb27d7122479a367bebc6af0c9627f94e12266c771f1a"
+  },
+  "Source/Core/RPC/RouteAndHandler.h": {
+    "size": 1338,
+    "mtime_ns": 1779675967547406661,
+    "hash": "c6b5116c2a76a32c0fee252e0ba1f747a412705b346b6e3e980f5df0868fe535"
+  },
+  "Source/Core/RPC/RPCManager.cpp": {
+    "size": 8482,
+    "mtime_ns": 1779675967547073077,
+    "hash": "ca9f915d92555ac7a267a22a53729dfd6c004ca9c7c39bdaa6f1632915d76e86"
+  },
+  "Source/Core/RPC/StaticRoutes.cpp": {
+    "size": 317,
+    "mtime_ns": 1779675967547937327,
+    "hash": "81545c8b8578b6329bef651a6ca33d29c97d482021ca4957518e5c176d8998cc"
+  },
+  "Source/Core/RPC/RPCManager.h": {
+    "size": 4558,
+    "mtime_ns": 1779675967547222702,
+    "hash": "4aa4e0c22f9648ab5385203138642b4eb1dad361c3dd2d552fca49b0a37f6de3"
+  },
+  "Source/Core/RPC/ManagerTaskData.cpp": {
+    "size": 482,
+    "mtime_ns": 1779675967546607202,
+    "hash": "c8eeddaf9db98d1b8f81b5dd9418929d40cb79bd6b4a37d4ddcd02f3fe576d28"
+  },
+  "Source/Core/RPC/StaticRoutes.h": {
+    "size": 1347,
+    "mtime_ns": 1779675967548126619,
+    "hash": "77f318d02d4cda841eea9cf9ec4179b2510325e458c7aba982c289924123f22f"
+  },
+  "Source/Core/RPC/SafeClient.cpp": {
+    "size": 5175,
+    "mtime_ns": 1779675967547561161,
+    "hash": "e3d0f29abcf392f7407135c7b670b7871dcd995ffaecb66e421a0d8005597efa"
+  },
+  "Source/Core/RPC/RPCHandlerHelper.h": {
+    "size": 4896,
+    "mtime_ns": 1779675967546973619,
+    "hash": "b9bc3b75afff90c6e9ba857674db670ff1d28b9b1446ef53587074632e21bf9a"
+  },
+  "Source/Core/RPC/RPCHandlerHelper.cpp": {
+    "size": 13594,
+    "mtime_ns": 1779675967546829286,
+    "hash": "a58389ec68791ad3e53643b098d78d6fc0e8ba0c72ebb5898ea5af880e6b50a9"
+  },
+  "Source/Core/RPC/SafeClient.h": {
+    "size": 2239,
+    "mtime_ns": 1779675967547750619,
+    "hash": "2cd504f2a10419ec7bce907eed644b4cccf387e450465d4c1b53d4042cf1d8fb"
+  },
+  "Source/Core/Visualizer/Visualizer.cpp": {
+    "size": 2581,
+    "mtime_ns": 1779675967581290161,
+    "hash": "9218161297f55b378a0eedcffc5f87a40858763fbe712bbc470290b309a6ff4f"
+  },
+  "Source/Core/Visualizer/VisualizerPool.h": {
+    "size": 4756,
+    "mtime_ns": 1779675967581825994,
+    "hash": "06a77735e1f9a4a365e3562a9767be4ed8d1562e7603ee1ae66bd6e82a61d884"
+  },
+  "Source/Core/Visualizer/MeshBuilder.cpp": {
+    "size": 10422,
+    "mtime_ns": 1779675967580785869,
+    "hash": "35e7c09a091ae801e2ad954895e234f07a70bdc0e8ef27b8c6d958fcd400e688"
+  },
+  "Source/Core/Visualizer/VisualizerParameters.cpp": {
+    "size": 508,
+    "mtime_ns": 1779675967581445827,
+    "hash": "40bd1d02b63ad9d9234a8f93c7d6e12e00abd87cc59d946a3396de20e004822b"
+  },
+  "Source/Core/Visualizer/MeshRenderer.cpp": {
+    "size": 2896,
+    "mtime_ns": 1779675967581109869,
+    "hash": "441780b6211e9f041ab0f3d867b2c50b68a603d6cbb115c36cdc07724e8cfb73"
+  },
+  "Source/Core/Visualizer/VisualizerPool.cpp": {
+    "size": 4383,
+    "mtime_ns": 1779675967581686286,
+    "hash": "4630da7e8764e8e3155172c8772c723a0b46482f27930af1256dd627b9c1aff1"
+  },
+  "Source/Core/Visualizer/MeshBuilder.h": {
+    "size": 1884,
+    "mtime_ns": 1779675967581011119,
+    "hash": "c25914e99dfc44860c1220c54487067d78b6061c19af4492a07a84a417bd607a"
+  },
+  "Source/Core/Visualizer/MeshRenderer.h": {
+    "size": 2289,
+    "mtime_ns": 1779675967581202411,
+    "hash": "ad8ff9321d7c24563e27e0b979ff7d0fd3c7bb5022e466e2a95721df20456605"
+  },
+  "Source/Core/Visualizer/VisualizerRPCInterface.cpp": {
+    "size": 6925,
+    "mtime_ns": 1779675967582005869,
+    "hash": "951ee2f13a6eeff9e3e7b1ca3210e14e447c0a85538d5b88d8bc9d55afee4a28"
+  },
+  "Source/Core/Visualizer/VisualizerParameters.h": {
+    "size": 2788,
+    "mtime_ns": 1779675967581540244,
+    "hash": "f8923f1730096a548e868cf625728f7249fa64918112ef36e754c6ce2795d362"
+  },
+  "Source/Core/Visualizer/VisualizerRPCInterface.h": {
+    "size": 2764,
+    "mtime_ns": 1779675967582090703,
+    "hash": "23f130c39cd0b08024788716edf24fa49a1138a8564546f52e4d6eba92374ed9"
+  },
+  "Source/Core/Visualizer/Visualizer.h": {
+    "size": 1601,
+    "mtime_ns": 1779675967581365452,
+    "hash": "9ed2539501ad0f286c754ca3a8b31201f74c0a505986cfee2fabd57392bd734c"
+  },
+  "Source/Core/Visualizer/ImageProcessorPool/ProcessingTask.h": {
+    "size": 2187,
+    "mtime_ns": 1779675967580689786,
+    "hash": "8942c35ab51f3cace69bea3e921705de9b0a8ac0d491c25e74e07ddfee0e5cf9"
+  },
+  "Source/Core/Visualizer/ImageProcessorPool/Image.cpp": {
+    "size": 1032,
+    "mtime_ns": 1779675967580187369,
+    "hash": "b64b3722f2713a58933f70ba5c982f02fe9f2488a77f2dbfaf02685978c76a43"
+  },
+  "Source/Core/Visualizer/ImageProcessorPool/ImageProcessorPool.cpp": {
+    "size": 6192,
+    "mtime_ns": 1779675967580442578,
+    "hash": "7b816682119c72321bb75a770d7bdf7e51e59277a7bfb00a0adafa3d1e75c506"
+  },
+  "Source/Core/Visualizer/ImageProcessorPool/ImageProcessorPool.h": {
+    "size": 3886,
+    "mtime_ns": 1779675967580518078,
+    "hash": "6ba1f98a33f70ceb8b12ff3b558bb4af8cd5c52dd4b8956abfbb7fba5e8b4efb"
+  },
+  "Source/Core/Visualizer/ImageProcessorPool/ProcessingTask.cpp": {
+    "size": 497,
+    "mtime_ns": 1779675967580598202,
+    "hash": "747153af3b265c5ba1fc415c67984f6b3941f6c9fd614645030c94004386e441"
+  },
+  "Source/Core/Visualizer/ImageProcessorPool/Image.h": {
+    "size": 3110,
+    "mtime_ns": 1779675967580286703,
+    "hash": "a82f66cedd20339599a9d59af626cc438775d171384454f8e014228674a39c21"
+  },
+  "Source/Python/igneous_local.py": {
+    "size": 4275,
+    "mtime_ns": 1779675967586065202,
+    "hash": "9a088327aabe6a051220d52f9ad53d2709d029252c0b4c8c2696154497fa394d"
+  },
+  "Source/Info/Static/CompilePlatformInfo/CompilePlatformInfo.cpp": {
+    "size": 232,
+    "mtime_ns": 1779675967584677078,
+    "hash": "2378afd81f5243eb51a07fde8baede46299abf6d4aabd9222b4b9975e9b5c61b"
+  },
+  "Source/Info/Static/CompileTimeStamp/CompileTimeStamp.cpp": {
+    "size": 229,
+    "mtime_ns": 1779675967585192327,
+    "hash": "1dbe6399bd6ffc478c74006f1030f3920e0355fd6871df219497348b9776af01"
+  },
+  "Source/Info/Static/VersioningSystem/Version.cpp": {
+    "size": 220,
+    "mtime_ns": 1779675967585877244,
+    "hash": "dfc90898154b640f72d1b2091cae7e8498923e091c0a8ffdf7980a8077ecfa14"
+  },
+  "Docs/Doxygen/Tools/GenerateDocs.sh": {
+    "size": 198,
+    "mtime_ns": 1779675967541791119,
+    "hash": "62016db51fc99623d120df7b3cb19e8b545dd49c13a7402065081bcca681e604"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/example.hpp": {
+    "size": 1983,
+    "mtime_ns": 1779675967541370244,
+    "hash": "33e2d46a8652993b54a36298d2026963523dbe8731b87164994990688a1f4d90"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp": {
+    "size": 548,
+    "mtime_ns": 1779675967541461328,
+    "hash": "0317dbbb214d5db2d7ee6ec4e62912d27099e6cbcf2315e00156c5fde8c2705e"
+  },
+  "Benchmarking/Benchmark.sh": {
+    "size": 355,
+    "mtime_ns": 1779675967527924994,
+    "hash": "523df9fdf777ce744814a0e87d29148dcb62b885432499b83352cc6e55583497"
+  },
+  "Benchmarking/Renderer/Test4.py": {
+    "size": 5254,
+    "mtime_ns": 1779675967529710911,
+    "hash": "d14a4b36ea49e7dd20460dac9f1229007e36f50dc262e219972bd1b280e19aff"
+  },
+  "Benchmarking/Renderer/Test0.py": {
+    "size": 1759,
+    "mtime_ns": 1779675967528983411,
+    "hash": "b02e656e176021044f129958195588d1b96f7c8dc61b7beaafc233085b236f34"
+  },
+  "Benchmarking/Renderer/Test1.py": {
+    "size": 2928,
+    "mtime_ns": 1779675967529097619,
+    "hash": "4cd84fd8e8dae82141de163f6338bdf6f921284c1f5c4b146b561ca9d64ce206"
+  },
+  "Benchmarking/Renderer/Test5.py": {
+    "size": 6142,
+    "mtime_ns": 1779675967529882744,
+    "hash": "036d6bbb8d68b2faf72808e0c35996255d1fa23d9e04aa349d74f83530579aea"
+  },
+  "Benchmarking/Renderer/Test2.py": {
+    "size": 4078,
+    "mtime_ns": 1779675967529239078,
+    "hash": "0c99cad3c095cc68d9a3b86e035e3216ab314b255cf847e0beb872e42094bff4"
+  },
+  "Benchmarking/Renderer/Test6.py": {
+    "size": 3771,
+    "mtime_ns": 1779675967529969911,
+    "hash": "a536b5438648bc27a62bb2c0932805f0efd61785fc7815cf98565b7e8922fd94"
+  },
+  "Benchmarking/Renderer/RenderBenchmarks.py": {
+    "size": 889,
+    "mtime_ns": 1779675967528875036,
+    "hash": "4e571b493e070ff7852e1197ad24c9166a2a5baea76a5b22e444fc4b108cb785"
+  },
+  "Benchmarking/Renderer/Test3.py": {
+    "size": 5254,
+    "mtime_ns": 1779675967529475619,
+    "hash": "4216182e33ef7067273b2b879263ffee84b3d05422c663eb0a196acfdf90d5e8"
+  },
+  "CODE_OF_CONDUCT.md": {
+    "size": 3359,
+    "mtime_ns": 1779675967536423203,
+    "hash": "1c2df07b81d8922d0593b4ffbe0b571c035cd659dfc72c4d60f083f0c283c5e5"
+  },
+  "CMakeLists.txt": {
+    "size": 5879,
+    "mtime_ns": 1779675967536335619,
+    "hash": "2fb73b6250052370bc29d6a6ebb9669ae249903e66cded64354681bf946ee555"
+  },
+  "UnFrackList.txt": {
+    "size": 868,
+    "mtime_ns": 1779675967591787744,
+    "hash": "ec0d95a0b8c5954726d675f7f56b1e182f29336de1c445a360b436a9ceb6305d"
+  },
+  "README.md": {
+    "size": 3322,
+    "mtime_ns": 1779675967543286827,
+    "hash": "a1ab7a321963ba0d9546a48db1f67a95024a90271b7d404c06cdea268b377eea"
+  },
+  "CI/.gitlab-ci.yml": {
+    "size": 1425,
+    "mtime_ns": 1779675967531078619,
+    "hash": "59887f69580123e550dac2c964bc4257fd0aba8cfc5f481067ffe414dce8cd51"
+  },
+  "CI/Test/Ubuntu2004/CI.yml": {
+    "size": 368,
+    "mtime_ns": 1779675967534728619,
+    "hash": "95465d570a808a10309fad200de0818538f0d43704c334d6aa15d20cd2d9e4b9"
+  },
+  "CI/Test/Debian11/CI.yml": {
+    "size": 362,
+    "mtime_ns": 1779675967534412744,
+    "hash": "9bee003a339e107b679221d4f57639eddc8dc48f8fd097d347304399c14ac5db"
+  },
+  "CI/Test/Ubuntu2204/CI.yml": {
+    "size": 368,
+    "mtime_ns": 1779675967534926286,
+    "hash": "d523842b510a8b79f12c4d020e4dfe869b8c77a9d2faa94cf0204bb41d111812"
+  },
+  "CI/Test/Debian12/CI.yml": {
+    "size": 363,
+    "mtime_ns": 1779675967534526869,
+    "hash": "e4ee2a6f6e35b49c35042831c066c90babcfc1f1a360e827d976f6b2a4c15e64"
+  },
+  "CI/Images/Ubuntu2004/CI.yml": {
+    "size": 2140,
+    "mtime_ns": 1779675967533463161,
+    "hash": "c01f675a0dc005b08487e6b4d384abfac6631be3b0aff816c4cc9b026e7c5aea"
+  },
+  "CI/Images/Debian11/CI.yml": {
+    "size": 2132,
+    "mtime_ns": 1779675967532408286,
+    "hash": "a9d7e226ab4b7385cf16c14ab33874b96fc9f2c604a88b1f6865f605969e0ea6"
+  },
+  "CI/Images/Drawio/CI.yml": {
+    "size": 2099,
+    "mtime_ns": 1779675967533084744,
+    "hash": "02529f41baa601b279306e618cd7fa566433a3ec69b84ae29fdb840613d11a10"
+  },
+  "CI/Images/Ubuntu2204/CI.yml": {
+    "size": 2140,
+    "mtime_ns": 1779675967533650036,
+    "hash": "e4380b98254335238f55cea8bcf405dc95638f9ce19289194e3555fc30089ccd"
+  },
+  "CI/Images/Doxygen/CI.yml": {
+    "size": 2103,
+    "mtime_ns": 1779675967532907369,
+    "hash": "af0608235da363a3b1b0073ff26b1d6e1f76f621b464430c043be4dff9c5d985"
+  },
+  "CI/Images/Debian12/CI.yml": {
+    "size": 2132,
+    "mtime_ns": 1779675967532714661,
+    "hash": "3de8b6ad41b3a5e68b216beca96bb46c6780b4e6191493d3fe42a3c3e21eee91"
+  },
+  "CI/Deploy/Prod.yml": {
+    "size": 529,
+    "mtime_ns": 1779675967531996828,
+    "hash": "ad18ed8bf1799a9f68eea2d9ab392e14d68a604703528a255a7c11d690a0799a"
+  },
+  "CI/Docs/Drawio/CI.yml": {
+    "size": 332,
+    "mtime_ns": 1779675967532254702,
+    "hash": "a36d4615c4d8552ca0f68f7f43c6f471f730ef4cdad78ae7cf4928512e25ccdf"
+  },
+  "CI/Docs/Doxygen/CI.yml": {
+    "size": 322,
+    "mtime_ns": 1779675967532150494,
+    "hash": "c2ed4c90c5697d5b594ecfdb1bf030540bf140ac3fd4119432fb9b74d098bcff"
+  },
+  "CI/Package/Ubuntu2004/CI.yml": {
+    "size": 432,
+    "mtime_ns": 1779675967534064036,
+    "hash": "2db1d7030826b000a2f5cee35ae0cfd3b9a876d0b63c93783187a2fbc59af03d"
+  },
+  "CI/Package/Debian11/CI.yml": {
+    "size": 426,
+    "mtime_ns": 1779675967533859619,
+    "hash": "e8a738e20f4bef7df0fe7c3525dc56ee07d577b7b2841f1489dd2294bcb5de8d"
+  },
+  "CI/Package/Ubuntu2204/CI.yml": {
+    "size": 468,
+    "mtime_ns": 1779675967534160619,
+    "hash": "b061272deb098aeb361eb3b0981a3cd034e629c93041d20b70c7569114d6bdad"
+  },
+  "CI/Package/Debian12/CI.yml": {
+    "size": 462,
+    "mtime_ns": 1779675967533953786,
+    "hash": "73c462fb14bb0a04b080fdcb455005f79a66a7cb3960be124c0125c10d8b19e7"
+  },
+  "Source/Renderer/CMakeLists.txt": {
+    "size": 1562,
+    "mtime_ns": 1779675967590159202,
+    "hash": "0b6580056ca424a5f2fd939cfa7d6c50a69cc9e934a0c37c0276f6ade11f5338"
+  },
+  "Source/Core/CMakeLists.txt": {
+    "size": 17017,
+    "mtime_ns": 1779675967543467786,
+    "hash": "25ffd6f54758d6409c9d1ad370d6a87fa5fa0c4f468cf64fedbc75a72a2d37c6"
+  },
+  "Source/Core/VSDA/EM/README.md": {
+    "size": 11086,
+    "mtime_ns": 1779675967574083453,
+    "hash": "13ae0421f2782886eb35691acd1071e991b98d6ae0be3464d09d46a3afdf56e6"
+  },
+  "Source/Core/Simulator/SimpleCompartmental/README.md": {
+    "size": 692,
+    "mtime_ns": 1779675967558370369,
+    "hash": "6a1b8186a5e272109621af89b3a8e223e9fe41caee8bdafe0617cf7929f1881f"
+  },
+  "Source/Core/Simulator/LIFCompartmental/README.md": {
+    "size": 299,
+    "mtime_ns": 1779675967555419536,
+    "hash": "67cfe73bf6b6d93592432dfe0654234cfe8f11f5597bb41acd0461d0f4e64063"
+  },
+  "Source/Core/Simulator/Geometries/README.md": {
+    "size": 664,
+    "mtime_ns": 1779675967553887161,
+    "hash": "fee75001e501b8f5aa1e419d1e531306d42efd485e764a04004549d9c757c88a"
+  },
+  "Source/Core/Simulator/Updaters/README.md": {
+    "size": 2662,
+    "mtime_ns": 1779675967562983578,
+    "hash": "3340f240d22dcd0153e39d94ec31803bf58c33d218b0c8b5a8e15247e6f08078"
+  },
+  "Source/Core/Simulator/RPC/BackgroundProcessIdea.md": {
+    "size": 2471,
+    "mtime_ns": 1779675967555672244,
+    "hash": "3b19f0541b02d3c94aea5b2bdc18d2f96a79f0f57817f39d4d24dbc3330178d2"
+  },
+  "Source/Info/Static/CompilePlatformInfo/CMakeLists.txt": {
+    "size": 696,
+    "mtime_ns": 1779675967584496661,
+    "hash": "afd6f683d90b7fd840cd0b61c4e856a21b8fe89c65f3a0dff72d52fc1d886b96"
+  },
+  "Source/Info/Static/CompilePlatformInfo/README.md": {
+    "size": 121,
+    "mtime_ns": 1779675967584865411,
+    "hash": "78d09fa9d78224ee332c457b2e9e3cc6a04abcca32006688aa4b46c99834dabe"
+  },
+  "Source/Info/Static/CompileTimeStamp/CMakeLists.txt": {
+    "size": 678,
+    "mtime_ns": 1779675967585103494,
+    "hash": "a565e223fc6ca1877def0599231ff8dedfb9bedc40cedefcaf20789a7f279a4f"
+  },
+  "Source/Info/Static/CompileTimeStamp/README.md": {
+    "size": 90,
+    "mtime_ns": 1779675967585283619,
+    "hash": "3f8361bd557cc8df40197f3996d16d6671845c9d5bcb95f90162c64c4f872682"
+  },
+  "Source/Info/Static/VersioningSystem/CMakeLists.txt": {
+    "size": 660,
+    "mtime_ns": 1779675967585603536,
+    "hash": "d6a4e560d89abf40d6259c242c86e8295ad6b00f1410bbf5fa3a0e30cc8a2ef9"
+  },
+  "Source/Info/Static/VersioningSystem/README.md": {
+    "size": 125,
+    "mtime_ns": 1779675967585687536,
+    "hash": "4c8e8da032ab778b110678c78e7b73c023a9aa48856c7237239526ee88762e68"
+  },
+  "Source/Data/NES.yaml": {
+    "size": 127,
+    "mtime_ns": 1779675967582302202,
+    "hash": "9ddfcb13aa1cbaf07cbb046534db1c70bf7d12698b757757dbdf34d6e61c523d"
+  },
+  "Docs/Simulating.md": {
+    "size": 4508,
+    "mtime_ns": 1779675967542354369,
+    "hash": "2366f53092c16eaf6bb5fa4695f3f344e4b924157fd7eca106d1f43244402d65"
+  },
+  "Docs/API.md": {
+    "size": 16803,
+    "mtime_ns": 1779675967536566077,
+    "hash": "028539de7f821b8bd00aca5520c383d8dd6bae321941e6663c8a3ce32c2218be"
+  },
+  "Docs/Neuroglancer-legacy-mesh.md": {
+    "size": 4002,
+    "mtime_ns": 1779675967542113744,
+    "hash": "738c20e7d93c61b612cacb9dec4c279468c4648be86e0ec3f16310a41a453b5e"
+  },
+  "Docs/SaveModel.md": {
+    "size": 1388,
+    "mtime_ns": 1779675967542206452,
+    "hash": "1c1ae0bdee4e10976506c2e4161488df28c0edef152718e3049577ec383bf453"
+  },
+  "Docs/Collected-Documentation.md": {
+    "size": 768,
+    "mtime_ns": 1779675967536912619,
+    "hash": "a0a5aa8a82d2884a1f6216db9b95e37f83fbde6d1b4ed1a3f4963edaea365e06"
+  },
+  "Docs/MacOS.md": {
+    "size": 1633,
+    "mtime_ns": 1779675967541911161,
+    "hash": "b7f9b394d328bca0ef03f80f079cba08f7e9f2baf0919e5923c0a36267852f8f"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md": {
+    "size": 11752,
+    "mtime_ns": 1779675967538330286,
+    "hash": "8d3f6c8f3f1ec6947d0d726236b2c597a0e7ae0203728491616c50f98e825786"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/footer.html": {
+    "size": 1198,
+    "mtime_ns": 1779675967539026619,
+    "hash": "534da5ed718a3e3f522a6255c10301a0cabb847a36e70afdd6e297281881722d"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/header.html": {
+    "size": 4600,
+    "mtime_ns": 1779675967539175536,
+    "hash": "028bf55f1ed89a158c3616f618a3403134d686aec349fd02923aed197ea8afb5"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/.github/workflows/publish.yaml": {
+    "size": 931,
+    "mtime_ns": 1779675967537911494,
+    "hash": "2acd4e53a54a1ec0a60029069859109352d6eb0bf40d5963ba023f8f063dbc39"
+  },
+  "agent notes/mac-silicon-change-log.md": {
+    "size": 6882,
+    "mtime_ns": 1779675967592119994,
+    "hash": "a4d5e11274ba69b58dbec5a4d3dd33440ceee19c706dd86ee63b29d4e6cbb03d"
+  },
+  "agent notes/agent-session-notes-2026-05-09.md": {
+    "size": 4265,
+    "mtime_ns": 1779675967591975411,
+    "hash": "7b9e72e5822fe83ddc14640fedb6b6e401053ea2d9cc5575dfd4178f30738cbe"
+  },
+  "graphify/README.md": {
+    "size": 527,
+    "mtime_ns": 1779682688597391328,
+    "hash": "bd5fde8a36e51607d97f8881f8b08ab67445297bedb1a18c4ad1afb68562dc9b"
+  },
+  "Benchmarking/README.md": {
+    "size": 1443,
+    "mtime_ns": 1779675967528503078,
+    "hash": "ff2d73d44292a0ccdc09f3b75ecc6f464d9851f853c385f522782e2fbc7d58a7"
+  },
+  "Source/Core/VSDA/Ca/VoxelSubsystem/Image Overlap Process.drawio.png": {
+    "size": 150837,
+    "mtime_ns": 1779675967566791411,
+    "hash": "6d0fbcef8450ab5ac804b50cdb0c2a5e7b310e8af85dd3682d879c5bb40f37c9"
+  },
+  "Source/Core/VSDA/EM/VoxelSubsystem/Image Overlap Process.drawio.png": {
+    "size": 150837,
+    "mtime_ns": 1779675967575112994,
+    "hash": "7522f600507714cff631dc8ac342da07412ae8b5a79afdc74c621b8fdef9d60a"
+  },
+  "Docs/Virtual EM Camera Positioning.jpg": {
+    "size": 86571,
+    "mtime_ns": 1779675967542704744,
+    "hash": "986492ec6d555790a1cab8e40721a04547417ac88be9717834b84a065b3e7e88"
+  },
+  "Docs/Doxygen/Source/Assets/Logos/Logo.png": {
+    "size": 7270,
+    "mtime_ns": 1779675967537260536,
+    "hash": "32535a2b70368cfed0d7752ca2a2fdcda7c44209415440dcc3b3d89e2fd1c692"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/logo.drawio.svg": {
+    "size": 3569,
+    "mtime_ns": 1779675967541559411,
+    "hash": "b97864aea14f933c223d8ba808c5d699f0b4270b940f0cb85a6e68c0857c0ba1"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/img/screenshot.png": {
+    "size": 222971,
+    "mtime_ns": 1779675967540874702,
+    "hash": "f223ad61847f9f20df60a7417c9d680c0b55bd63409f422f648fd83679c9e04d"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/img/theme-variations.drawio.svg": {
+    "size": 14707,
+    "mtime_ns": 1779675967541046994,
+    "hash": "10ff678df5a434c5b5489cc77f0300d4a6d5a4f030333fc52b28e147a0430be9"
+  },
+  "Benchmarking/Slow.png": {
+    "size": 201742,
+    "mtime_ns": 1779675967530598952,
+    "hash": "5512b4f83452cbafdf1a34ad4118de18eada5bfa884820dd23ae850989df8034"
+  },
+  "Benchmarking/Fast.png": {
+    "size": 121904,
+    "mtime_ns": 1779675967528358828,
+    "hash": "f90f4881d2c2df72ab40c21a9a88922eaa5cf874b89b15842516e88f70636916"
+  }
+}

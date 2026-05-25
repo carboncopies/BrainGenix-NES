@@ -1,1 +1,511 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpcmanager_cpp", "label": "RPCManager.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L1"}, {"id": "rpc_rpcmanager_rpcmanager", "label": "RPCManager()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L24"}, {"id": "rpc_rpcmanager_getbgrequestid", "label": "GetBgRequestID()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L66"}, {"id": "rpc_rpcmanager_registerbgapiprocess", "label": "RegisterBgAPIProcess()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L72"}, {"id": "rpc_rpcmanager_unregisterbgapiprocess", "label": "UnRegisterBgAPIProcess()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L76"}, {"id": "rpc_rpcmanager_addroute", "label": "AddRoute()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L89"}, {"id": "rpc_rpcmanager_badreqid", "label": "BadReqID()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L99"}, {"id": "rpc_rpcmanager_nesrequest", "label": "NESRequest()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L125"}, {"id": "rpc_rpcmanager_setupcallback", "label": "SetupCallback()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L216"}, {"id": "rpc_rpcmanager_makeapiquery", "label": "MakeAPIQuery()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L231"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpcmanager_cpp", "target": "thread", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L7", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpcmanager_cpp", "target": "rpcmanager", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L13", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpcmanager_cpp", "target": "rpchandlerhelper", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L15", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpcmanager_cpp", "target": "apistatuscode", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L16", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpcmanager_cpp", "target": "rpc_rpcmanager_rpcmanager", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L24", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpcmanager_cpp", "target": "rpc_rpcmanager_rpcmanager", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L60", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpcmanager_cpp", "target": "rpc_rpcmanager_getbgrequestid", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L66", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpcmanager_cpp", "target": "rpc_rpcmanager_registerbgapiprocess", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L72", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpcmanager_cpp", "target": "rpc_rpcmanager_unregisterbgapiprocess", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L76", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpcmanager_cpp", "target": "rpc_rpcmanager_addroute", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L89", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpcmanager_cpp", "target": "rpc_rpcmanager_badreqid", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L99", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpcmanager_cpp", "target": "rpc_rpcmanager_nesrequest", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L125", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpcmanager_cpp", "target": "rpc_rpcmanager_setupcallback", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L216", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_nes_source_core_rpc_rpcmanager_cpp", "target": "rpc_rpcmanager_makeapiquery", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L231", "weight": 1.0}, {"source": "rpc_rpcmanager_rpcmanager", "target": "rpc_rpcmanager_addroute", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L39", "weight": 1.0}, {"source": "rpc_rpcmanager_rpcmanager", "target": "rpc_rpcmanager_nesrequest", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L41", "weight": 1.0}, {"source": "rpc_rpcmanager_rpcmanager", "target": "rpc_rpcmanager_setupcallback", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L42", "weight": 1.0}], "raw_calls": [{"caller_nid": "rpc_rpcmanager_rpcmanager", "callee": "make_unique<rpc::server>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L33"}, {"caller_nid": "rpc_rpcmanager_rpcmanager", "callee": "make_unique<SafeClient>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L35"}, {"caller_nid": "rpc_rpcmanager_rpcmanager", "callee": "thread::hardware_concurrency", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L45"}, {"caller_nid": "rpc_rpcmanager_rpcmanager", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L54"}, {"caller_nid": "rpc_rpcmanager_rpcmanager", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L54"}, {"caller_nid": "rpc_rpcmanager_rpcmanager", "callee": "async_run", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L57"}, {"caller_nid": "rpc_rpcmanager_unregisterbgapiprocess", "callee": "find", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L77"}, {"caller_nid": "rpc_rpcmanager_unregisterbgapiprocess", "callee": "end", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L77"}, {"caller_nid": "rpc_rpcmanager_unregisterbgapiprocess", "callee": "erase", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L81"}, {"caller_nid": "rpc_rpcmanager_addroute", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L90"}, {"caller_nid": "rpc_rpcmanager_addroute", "callee": "insert", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L91"}, {"caller_nid": "rpc_rpcmanager_addroute", "callee": "pair<std::string, std::function<std::string(std::string _JSONRequest)>>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L91"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "HasError", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L130"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "ErrResponse", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L131"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "is_array", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L134"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "ReqJSON", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L134"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L135"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "ErrResponse", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L136"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "json::array", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L140"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "ReqJSON", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L143"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "items", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L153"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "template get<int>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L155"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "find", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L169"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "end", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L170"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L171"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L178"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "second", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L185"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L185"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "json::parse", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L192"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "push_back", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L198"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "dump", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L202"}, {"caller_nid": "rpc_rpcmanager_nesrequest", "callee": "ResponseAndStoreRequest", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L212"}, {"caller_nid": "rpc_rpcmanager_setupcallback", "callee": "json::parse", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L218"}, {"caller_nid": "rpc_rpcmanager_setupcallback", "callee": "SetHostPort", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L222"}, {"caller_nid": "rpc_rpcmanager_setupcallback", "callee": "SetTimeout", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L223"}, {"caller_nid": "rpc_rpcmanager_setupcallback", "callee": "Reconnect", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L224"}, {"caller_nid": "rpc_rpcmanager_setupcallback", "callee": "Log", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L226"}, {"caller_nid": "rpc_rpcmanager_setupcallback", "callee": "to_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L226"}, {"caller_nid": "rpc_rpcmanager_makeapiquery", "callee": "MakeJSONQuery", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-NES/Source/Core/RPC/RPCManager.cpp", "source_location": "L239"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_rpc_rpcmanager_cpp",
+      "label": "RPCManager.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "rpc_rpcmanager_rpcmanager",
+      "label": "RPCManager()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L24"
+    },
+    {
+      "id": "rpc_rpcmanager_getbgrequestid",
+      "label": "GetBgRequestID()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L66"
+    },
+    {
+      "id": "rpc_rpcmanager_registerbgapiprocess",
+      "label": "RegisterBgAPIProcess()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L72"
+    },
+    {
+      "id": "rpc_rpcmanager_unregisterbgapiprocess",
+      "label": "UnRegisterBgAPIProcess()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L76"
+    },
+    {
+      "id": "rpc_rpcmanager_addroute",
+      "label": "AddRoute()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L89"
+    },
+    {
+      "id": "rpc_rpcmanager_badreqid",
+      "label": "BadReqID()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L99"
+    },
+    {
+      "id": "rpc_rpcmanager_nesrequest",
+      "label": "NESRequest()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L125"
+    },
+    {
+      "id": "rpc_rpcmanager_setupcallback",
+      "label": "SetupCallback()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L216"
+    },
+    {
+      "id": "rpc_rpcmanager_makeapiquery",
+      "label": "MakeAPIQuery()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L231"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_rpc_rpcmanager_cpp",
+      "target": "thread",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_cpp",
+      "target": "rpcmanager",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_cpp",
+      "target": "rpchandlerhelper",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_cpp",
+      "target": "apistatuscode",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_cpp",
+      "target": "rpc_rpcmanager_rpcmanager",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_cpp",
+      "target": "rpc_rpcmanager_rpcmanager",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_cpp",
+      "target": "rpc_rpcmanager_getbgrequestid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_cpp",
+      "target": "rpc_rpcmanager_registerbgapiprocess",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_cpp",
+      "target": "rpc_rpcmanager_unregisterbgapiprocess",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_cpp",
+      "target": "rpc_rpcmanager_addroute",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_cpp",
+      "target": "rpc_rpcmanager_badreqid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_cpp",
+      "target": "rpc_rpcmanager_nesrequest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_cpp",
+      "target": "rpc_rpcmanager_setupcallback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_cpp",
+      "target": "rpc_rpcmanager_makeapiquery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L231",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_rpcmanager_rpcmanager",
+      "target": "rpc_rpcmanager_addroute",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_rpcmanager_rpcmanager",
+      "target": "rpc_rpcmanager_nesrequest",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_rpcmanager_rpcmanager",
+      "target": "rpc_rpcmanager_setupcallback",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L42",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "rpc_rpcmanager_rpcmanager",
+      "callee": "make_unique<rpc::server>",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_rpcmanager",
+      "callee": "make_unique<SafeClient>",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_rpcmanager",
+      "callee": "thread::hardware_concurrency",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_rpcmanager",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_rpcmanager",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_rpcmanager",
+      "callee": "async_run",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_unregisterbgapiprocess",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_unregisterbgapiprocess",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_unregisterbgapiprocess",
+      "callee": "erase",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_addroute",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_addroute",
+      "callee": "insert",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_addroute",
+      "callee": "pair<std::string, std::function<std::string(std::string _JSONRequest)>>",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "is_array",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "ReqJSON",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L135"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L136"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "json::array",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L140"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "ReqJSON",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L143"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "items",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L153"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "template get<int>",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L155"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L169"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L170"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L171"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L178"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "second",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L185"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L185"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "json::parse",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L192"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L198"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L202"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_nesrequest",
+      "callee": "ResponseAndStoreRequest",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L212"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_setupcallback",
+      "callee": "json::parse",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L218"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_setupcallback",
+      "callee": "SetHostPort",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L222"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_setupcallback",
+      "callee": "SetTimeout",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L223"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_setupcallback",
+      "callee": "Reconnect",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L224"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_setupcallback",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L226"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_setupcallback",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L226"
+    },
+    {
+      "caller_nid": "rpc_rpcmanager_makeapiquery",
+      "callee": "MakeJSONQuery",
+      "is_member_call": true,
+      "source_file": "Source/Core/RPC/RPCManager.cpp",
+      "source_location": "L239"
+    }
+  ]
+}
