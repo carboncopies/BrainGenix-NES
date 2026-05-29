@@ -1,0 +1,70 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_geometries_sphere_h",
+      "label": "Sphere.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Sphere.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "geometries_sphere_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Sphere.h",
+      "source_location": "L22"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_geometries_sphere_h",
+      "target": "sstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Sphere.h",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_sphere_h",
+      "target": "vectools",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Sphere.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_sphere_h",
+      "target": "geometry",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Sphere.h",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_sphere_h",
+      "target": "worldinfo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Sphere.h",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_sphere_h",
+      "target": "geometries_sphere_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Sphere.h",
+      "source_location": "L22",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

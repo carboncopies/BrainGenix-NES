@@ -1,0 +1,120 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_rpc_rpcmanager_h",
+      "label": "RPCManager.h",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCManager.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "rpc_rpcmanager_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCManager.h",
+      "source_location": "L34"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_rpc_rpcmanager_h",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_h",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_h",
+      "target": "server",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.h",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_h",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.h",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_h",
+      "target": "staticroutes",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.h",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_h",
+      "target": "routeandhandler",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.h",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_h",
+      "target": "logger",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.h",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_h",
+      "target": "safeclient",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.h",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_h",
+      "target": "config",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.h",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpcmanager_h",
+      "target": "rpc_rpcmanager_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCManager.h",
+      "source_location": "L34",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

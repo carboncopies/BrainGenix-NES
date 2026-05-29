@@ -1,0 +1,40 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_structs_lifc_cpp",
+      "label": "LIFC.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/LIFC.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "structs_lifc_str",
+      "label": "str()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/LIFC.cpp",
+      "source_location": "L8"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_structs_lifc_cpp",
+      "target": "lifc",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/LIFC.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_lifc_cpp",
+      "target": "structs_lifc_str",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/LIFC.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

@@ -1,0 +1,127 @@
+{
+  "nodes": [
+    {
+      "id": "docs_neuroglancer_legacy_mesh_md",
+      "label": "Neuroglancer-legacy-mesh.md",
+      "file_type": "document",
+      "source_file": "Docs/Neuroglancer-legacy-mesh.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_neuroglancer_legacy_mesh_a_simple_breakdown_of_the_neuroglancer_legacy_mesh_definition",
+      "label": "A simple breakdown of the Neuroglancer Legacy Mesh definition",
+      "file_type": "document",
+      "source_file": "Docs/Neuroglancer-legacy-mesh.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_neuroglancer_legacy_mesh_codeblock_1",
+      "label": "code:block1 ({)",
+      "file_type": "document",
+      "source_file": "Docs/Neuroglancer-legacy-mesh.md",
+      "source_location": "L27"
+    },
+    {
+      "id": "docs_neuroglancer_legacy_mesh_codeblock_2",
+      "label": "code:block2 ({)",
+      "file_type": "document",
+      "source_file": "Docs/Neuroglancer-legacy-mesh.md",
+      "source_location": "L40"
+    },
+    {
+      "id": "docs_neuroglancer_legacy_mesh_codeblock_3",
+      "label": "code:block3 (/mesh/3764:1)",
+      "file_type": "document",
+      "source_file": "Docs/Neuroglancer-legacy-mesh.md",
+      "source_location": "L48"
+    },
+    {
+      "id": "docs_neuroglancer_legacy_mesh_codeblock_4",
+      "label": "code:block4 (<uint32> num_vertices)",
+      "file_type": "document",
+      "source_file": "Docs/Neuroglancer-legacy-mesh.md",
+      "source_location": "L56"
+    },
+    {
+      "id": "docs_neuroglancer_legacy_mesh_example_code",
+      "label": "Example code:",
+      "file_type": "document",
+      "source_file": "Docs/Neuroglancer-legacy-mesh.md",
+      "source_location": "L80"
+    },
+    {
+      "id": "docs_neuroglancer_legacy_mesh_codeblock_5",
+      "label": "code:block5 (#include <vector>)",
+      "file_type": "document",
+      "source_file": "Docs/Neuroglancer-legacy-mesh.md",
+      "source_location": "L82"
+    }
+  ],
+  "edges": [
+    {
+      "source": "docs_neuroglancer_legacy_mesh_md",
+      "target": "docs_neuroglancer_legacy_mesh_a_simple_breakdown_of_the_neuroglancer_legacy_mesh_definition",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Neuroglancer-legacy-mesh.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_neuroglancer_legacy_mesh_a_simple_breakdown_of_the_neuroglancer_legacy_mesh_definition",
+      "target": "docs_neuroglancer_legacy_mesh_codeblock_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Neuroglancer-legacy-mesh.md",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_neuroglancer_legacy_mesh_a_simple_breakdown_of_the_neuroglancer_legacy_mesh_definition",
+      "target": "docs_neuroglancer_legacy_mesh_codeblock_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Neuroglancer-legacy-mesh.md",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_neuroglancer_legacy_mesh_a_simple_breakdown_of_the_neuroglancer_legacy_mesh_definition",
+      "target": "docs_neuroglancer_legacy_mesh_codeblock_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Neuroglancer-legacy-mesh.md",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_neuroglancer_legacy_mesh_a_simple_breakdown_of_the_neuroglancer_legacy_mesh_definition",
+      "target": "docs_neuroglancer_legacy_mesh_codeblock_4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Neuroglancer-legacy-mesh.md",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_neuroglancer_legacy_mesh_a_simple_breakdown_of_the_neuroglancer_legacy_mesh_definition",
+      "target": "docs_neuroglancer_legacy_mesh_example_code",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Neuroglancer-legacy-mesh.md",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_neuroglancer_legacy_mesh_example_code",
+      "target": "docs_neuroglancer_legacy_mesh_codeblock_5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Neuroglancer-legacy-mesh.md",
+      "source_location": "L82",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

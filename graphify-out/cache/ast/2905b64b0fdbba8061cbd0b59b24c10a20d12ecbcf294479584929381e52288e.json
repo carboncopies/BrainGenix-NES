@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_ca_voxelsubsystem_structs_camicroscopeparameters_h",
+      "label": "CaMicroscopeParameters.h",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "structs_camicroscopeparameters_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.h",
+      "source_location": "L44"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_camicroscopeparameters_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.h",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_camicroscopeparameters_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.h",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_camicroscopeparameters_h",
+      "target": "structs_camicroscopeparameters_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaMicroscopeParameters.h",
+      "source_location": "L44",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

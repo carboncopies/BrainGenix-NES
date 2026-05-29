@@ -1,0 +1,70 @@
+{
+  "nodes": [
+    {
+      "id": "source_renderer_bg_renderer_scenegraph_primitive_cube_h",
+      "label": "Cube.h",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cube.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "primitive_cube_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cube.h",
+      "source_location": "L45"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_renderer_bg_renderer_scenegraph_primitive_cube_h",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cube.h",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_scenegraph_primitive_cube_h",
+      "target": "assert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cube.h",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_scenegraph_primitive_cube_h",
+      "target": "all",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cube.h",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_scenegraph_primitive_cube_h",
+      "target": "shader",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cube.h",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_scenegraph_primitive_cube_h",
+      "target": "primitive_cube_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/Primitive/Cube.h",
+      "source_location": "L45",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

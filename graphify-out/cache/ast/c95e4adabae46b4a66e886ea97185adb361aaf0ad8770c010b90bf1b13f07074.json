@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": "source_renderer_bg_renderer_state_scene_h",
+      "label": "Scene.h",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/State/Scene.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "state_scene_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/State/Scene.h",
+      "source_location": "L45"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_renderer_bg_renderer_state_scene_h",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/State/Scene.h",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_state_scene_h",
+      "target": "assert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/State/Scene.h",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_state_scene_h",
+      "target": "all",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/State/Scene.h",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_state_scene_h",
+      "target": "state_scene_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/State/Scene.h",
+      "source_location": "L45",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

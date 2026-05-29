@@ -1,0 +1,154 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_meshgenerator_meshingstage_cpp",
+      "label": "MeshingStage.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "meshgenerator_meshingstage_meshingstage",
+      "label": "MeshingStage()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L11"
+    },
+    {
+      "id": "meshgenerator_meshingstage_process",
+      "label": "Process()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L20"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_meshgenerator_meshingstage_cpp",
+      "target": "meshingstage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_meshingstage_cpp",
+      "target": "objwriter",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_meshingstage_cpp",
+      "target": "source_core_vsda_em_meshgenerator_mc_h",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_meshingstage_cpp",
+      "target": "meshgenerator_meshingstage_meshingstage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_meshingstage_cpp",
+      "target": "meshgenerator_meshingstage_process",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L20",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "meshgenerator_meshingstage_process",
+      "callee": "GetSize",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "meshgenerator_meshingstage_process",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L24"
+    },
+    {
+      "caller_nid": "meshgenerator_meshingstage_process",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L28"
+    },
+    {
+      "caller_nid": "meshgenerator_meshingstage_process",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "meshgenerator_meshingstage_process",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "meshgenerator_meshingstage_process",
+      "callee": "GetVoxel",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "meshgenerator_meshingstage_process",
+      "callee": "marching_cube",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "meshgenerator_meshingstage_process",
+      "callee": "data",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "meshgenerator_meshingstage_process",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "meshgenerator_meshingstage_process",
+      "callee": "WriteChunk",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "meshgenerator_meshingstage_process",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshingStage.cpp",
+      "source_location": "L70"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_structs_syntrquantalrelease_test_cpp",
+      "label": "SynTrQuantalRelease.test.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "structs_syntrquantalrelease_test_syntrquantalreleasetest",
+      "label": "SynTrQuantalReleaseTest",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L19"
+    },
+    {
+      "id": "test",
+      "label": "Test",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "structs_syntrquantalrelease_test_syntrquantalreleasetest_testsyntrquantalrelease",
+      "label": "testSynTrQuantalRelease",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L21"
+    },
+    {
+      "id": "structs_syntrquantalrelease_test_syntrquantalreleasetest_tol",
+      "label": "tol",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L22"
+    },
+    {
+      "id": "structs_syntrquantalrelease_test_syntrquantalreleasetest_setup",
+      "label": ".SetUp()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L24"
+    },
+    {
+      "id": "structs_syntrquantalrelease_test_syntrquantalreleasetest_teardown",
+      "label": ".TearDown()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L30"
+    },
+    {
+      "id": "structs_syntrquantalrelease_test_test_f",
+      "label": "TEST_F()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L33"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_structs_syntrquantalrelease_test_cpp",
+      "target": "gtest",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_syntrquantalrelease_test_cpp",
+      "target": "syntrquantalrelease",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_syntrquantalrelease_test_cpp",
+      "target": "structs_syntrquantalrelease_test_syntrquantalreleasetest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_syntrquantalrelease_test_syntrquantalreleasetest",
+      "target": "test",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_syntrquantalrelease_test_syntrquantalreleasetest",
+      "target": "structs_syntrquantalrelease_test_syntrquantalreleasetest_testsyntrquantalrelease",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "structs_syntrquantalrelease_test_syntrquantalreleasetest",
+      "target": "structs_syntrquantalrelease_test_syntrquantalreleasetest_tol",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "structs_syntrquantalrelease_test_syntrquantalreleasetest",
+      "target": "structs_syntrquantalrelease_test_syntrquantalreleasetest_setup",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_syntrquantalrelease_test_syntrquantalreleasetest",
+      "target": "structs_syntrquantalrelease_test_syntrquantalreleasetest_teardown",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_syntrquantalrelease_test_cpp",
+      "target": "structs_syntrquantalrelease_test_test_f",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L33",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "structs_syntrquantalrelease_test_syntrquantalreleasetest_setup",
+      "callee": "make_unique<BG::NES::Simulator::Tools::SynTrQuantalRelease>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L27"
+    },
+    {
+      "caller_nid": "structs_syntrquantalrelease_test_test_f",
+      "callee": "ASSERT_NEAR",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "structs_syntrquantalrelease_test_test_f",
+      "callee": "QuantalContent_m",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp",
+      "source_location": "L36"
+    }
+  ]
+}

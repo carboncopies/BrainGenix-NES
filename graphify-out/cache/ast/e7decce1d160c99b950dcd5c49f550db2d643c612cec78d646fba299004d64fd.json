@@ -1,0 +1,140 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_receptors_ampareceptor_test_cpp",
+      "label": "AMPAReceptor.test.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "receptors_ampareceptor_test_ampareceptortest",
+      "label": "AMPAReceptorTest",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp",
+      "source_location": "L21"
+    },
+    {
+      "id": "test",
+      "label": "Test",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "receptors_ampareceptor_test_ampareceptortest_testreceptor",
+      "label": "testReceptor",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp",
+      "source_location": "L22"
+    },
+    {
+      "id": "receptors_ampareceptor_test_ampareceptortest_tol",
+      "label": "tol",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp",
+      "source_location": "L25"
+    },
+    {
+      "id": "receptors_ampareceptor_test_ampareceptortest_setup",
+      "label": ".SetUp()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp",
+      "source_location": "L27"
+    },
+    {
+      "id": "receptors_ampareceptor_test_ampareceptortest_teardown",
+      "label": ".TearDown()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp",
+      "source_location": "L32"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_receptors_ampareceptor_test_cpp",
+      "target": "gtest",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_ampareceptor_test_cpp",
+      "target": "ampareceptor",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_ampareceptor_test_cpp",
+      "target": "receptors_ampareceptor_test_ampareceptortest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "receptors_ampareceptor_test_ampareceptortest",
+      "target": "test",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "receptors_ampareceptor_test_ampareceptortest",
+      "target": "receptors_ampareceptor_test_ampareceptortest_testreceptor",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "receptors_ampareceptor_test_ampareceptortest",
+      "target": "receptors_ampareceptor_test_ampareceptortest_tol",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "receptors_ampareceptor_test_ampareceptortest",
+      "target": "receptors_ampareceptor_test_ampareceptortest_setup",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "receptors_ampareceptor_test_ampareceptortest",
+      "target": "receptors_ampareceptor_test_ampareceptortest_teardown",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp",
+      "source_location": "L32",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "receptors_ampareceptor_test_ampareceptortest_setup",
+      "callee": "make_unique<BG::NES::Simulator::Receptors::AMPAReceptor>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.test.cpp",
+      "source_location": "L29"
+    }
+  ]
+}

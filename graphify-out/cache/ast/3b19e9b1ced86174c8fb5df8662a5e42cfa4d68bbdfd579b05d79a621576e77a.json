@@ -1,0 +1,49 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_receptors_ampareceptor_cpp",
+      "label": "AMPAReceptor.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "receptors_ampareceptor_ampareceptor",
+      "label": "AMPAReceptor()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.cpp",
+      "source_location": "L9"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_receptors_ampareceptor_cpp",
+      "target": "ampareceptor",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_ampareceptor_cpp",
+      "target": "receptors_ampareceptor_ampareceptor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_ampareceptor_cpp",
+      "target": "receptors_ampareceptor_ampareceptor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

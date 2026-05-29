@@ -1,0 +1,967 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "label": "BSNeuron.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "ballandstick_bsneuron_bsneuron",
+      "label": "BSNeuron()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L15"
+    },
+    {
+      "id": "ballandstick_bsneuron_getsomaboundingbox",
+      "label": "GetSomaBoundingBox()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L47"
+    },
+    {
+      "id": "ballandstick_bsneuron_getsomaradius",
+      "label": "GetSomaRadius()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L55"
+    },
+    {
+      "id": "ballandstick_bsneuron_attachdirectstim",
+      "label": "AttachDirectStim()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L62"
+    },
+    {
+      "id": "ballandstick_bsneuron_sort_direct_stimulation",
+      "label": "Sort_Direct_Stimulation()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L67"
+    },
+    {
+      "id": "ballandstick_bsneuron_setspontaneousactivity",
+      "label": "SetSpontaneousActivity()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L73"
+    },
+    {
+      "id": "ballandstick_bsneuron_record",
+      "label": "Record()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L83"
+    },
+    {
+      "id": "ballandstick_bsneuron_getrecording",
+      "label": "GetRecording()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L90"
+    },
+    {
+      "id": "ballandstick_bsneuron_getrecordingjson",
+      "label": "GetRecordingJSON()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L96"
+    },
+    {
+      "id": "ballandstick_bsneuron_hasspiked",
+      "label": "HasSpiked()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L103"
+    },
+    {
+      "id": "ballandstick_bsneuron_dtact_ms",
+      "label": "DtAct_ms()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L109"
+    },
+    {
+      "id": "ballandstick_bsneuron_vspiket_mv",
+      "label": "VSpikeT_mV()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L133"
+    },
+    {
+      "id": "ballandstick_bsneuron_vahpt_mv",
+      "label": "VAHPT_mV()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L152"
+    },
+    {
+      "id": "ballandstick_bsneuron_vpspt_mv",
+      "label": "VPSPT_mV()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L178"
+    },
+    {
+      "id": "ballandstick_bsneuron_updatevm",
+      "label": "UpdateVm()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L203"
+    },
+    {
+      "id": "ballandstick_bsneuron_detectthreshold",
+      "label": "DetectThreshold()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L239"
+    },
+    {
+      "id": "ballandstick_bsneuron_spontaneousactivity",
+      "label": "SpontaneousActivity()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L251"
+    },
+    {
+      "id": "ballandstick_bsneuron_update",
+      "label": "Update()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L271"
+    },
+    {
+      "id": "ballandstick_bsneuron_setfifo",
+      "label": "SetFIFO()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L310"
+    },
+    {
+      "id": "ballandstick_bsneuron_updateconvolvedfifo",
+      "label": "UpdateConvolvedFIFO()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L331"
+    },
+    {
+      "id": "ballandstick_bsneuron_inputreceptoradded",
+      "label": "InputReceptorAdded()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L365"
+    },
+    {
+      "id": "ballandstick_bsneuron_outputtransmitteradded",
+      "label": "OutputTransmitterAdded()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L370"
+    },
+    {
+      "id": "ballandstick_bsneuron_getconnectiontype",
+      "label": "GetConnectionType()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L381"
+    },
+    {
+      "id": "ballandstick_bsneuron_getconnectometargetsjson",
+      "label": "GetConnectomeTargetsJSON()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L387"
+    },
+    {
+      "id": "ballandstick_bsneuron_updateprepoststrength",
+      "label": "UpdatePrePostStrength()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L396"
+    },
+    {
+      "id": "ballandstick_bsneuron_getabstractconnection",
+      "label": "GetAbstractConnection()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L411"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "bsneuron",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "algorithm",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_bsneuron",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_bsneuron",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_getsomaboundingbox",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_getsomaradius",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_attachdirectstim",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_sort_direct_stimulation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_setspontaneousactivity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_record",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_getrecording",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_getrecordingjson",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_hasspiked",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_dtact_ms",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_vspiket_mv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_vahpt_mv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L152",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_vpspt_mv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_updatevm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L203",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_detectthreshold",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L239",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_spontaneousactivity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L251",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_update",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L271",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_setfifo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L310",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_updateconvolvedfifo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L331",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_inputreceptoradded",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L365",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_outputtransmitteradded",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L370",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_getconnectiontype",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L381",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_getconnectometargetsjson",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L387",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_updateprepoststrength",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L396",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsneuron_cpp",
+      "target": "ballandstick_bsneuron_getabstractconnection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L411",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsneuron_vpspt_mv",
+      "target": "ballandstick_bsneuron_hasspiked",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L185",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsneuron_vpspt_mv",
+      "target": "ballandstick_bsneuron_dtact_ms",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsneuron_updatevm",
+      "target": "ballandstick_bsneuron_hasspiked",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsneuron_updatevm",
+      "target": "ballandstick_bsneuron_dtact_ms",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L210",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsneuron_updatevm",
+      "target": "ballandstick_bsneuron_vspiket_mv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L214",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsneuron_updatevm",
+      "target": "ballandstick_bsneuron_vahpt_mv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L215",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsneuron_updatevm",
+      "target": "ballandstick_bsneuron_vpspt_mv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsneuron_updatevm",
+      "target": "ballandstick_bsneuron_record",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L235",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsneuron_detectthreshold",
+      "target": "ballandstick_bsneuron_dtact_ms",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L242",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsneuron_update",
+      "target": "ballandstick_bsneuron_sort_direct_stimulation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L278",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsneuron_update",
+      "target": "ballandstick_bsneuron_updatevm",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L300",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsneuron_update",
+      "target": "ballandstick_bsneuron_detectthreshold",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L301",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsneuron_update",
+      "target": "ballandstick_bsneuron_spontaneousactivity",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L302",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsneuron_getconnectometargetsjson",
+      "target": "ballandstick_bsneuron_getconnectiontype",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L391",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "ballandstick_bsneuron_getsomaboundingbox",
+      "callee": "GetBoundingBox",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_attachdirectstim",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_attachdirectstim",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_sort_direct_stimulation",
+      "callee": "sort",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_sort_direct_stimulation",
+      "callee": "begin",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_sort_direct_stimulation",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_setspontaneousactivity",
+      "callee": "make_shared<Distributions::TruncNorm>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_setspontaneousactivity",
+      "callee": "SetSeed",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_record",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_record",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L85"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_record",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_getrecordingjson",
+      "callee": "json",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_hasspiked",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L104"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_dtact_ms",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L110"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_dtact_ms",
+      "callee": "back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L112"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_vspiket_mv",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_vahpt_mv",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L153"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_vahpt_mv",
+      "callee": "exp",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L158"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_vpspt_mv",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L179"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_vpspt_mv",
+      "callee": "DoubleExponentExpr",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L191"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_updatevm",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L204"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_updatevm",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L222"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_updatevm",
+      "callee": "pop_front",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L227"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_updatevm",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L231"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_detectthreshold",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L240"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_detectthreshold",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L247"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_spontaneousactivity",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L252"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_spontaneousactivity",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L261"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_spontaneousactivity",
+      "callee": "RandomSample",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L264"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_update",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L272"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_update",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L278"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_update",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L283"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_update",
+      "callee": "at",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L284"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_update",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L286"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_setfifo",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L311"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_setfifo",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L315"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_setfifo",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L317"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_setfifo",
+      "callee": "resize",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L318"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_updateconvolvedfifo",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L332"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_updateconvolvedfifo",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L332"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_updateconvolvedfifo",
+      "callee": "Convolve1D",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L340"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_updateconvolvedfifo",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L344"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_updateconvolvedfifo",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L344"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_updateconvolvedfifo",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L361"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_inputreceptoradded",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L366"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_outputtransmitteradded",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L371"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_getconnectiontype",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L382"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_getconnectiontype",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L383"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_getconnectometargetsjson",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L389"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_getconnectometargetsjson",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L391"
+    },
+    {
+      "caller_nid": "ballandstick_bsneuron_getconnectometargetsjson",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSNeuron.cpp",
+      "source_location": "L392"
+    }
+  ]
+}

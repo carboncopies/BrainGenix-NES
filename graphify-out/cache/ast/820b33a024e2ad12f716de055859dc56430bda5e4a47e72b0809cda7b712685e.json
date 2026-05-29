@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_config_configdefaults_h",
+      "label": "ConfigDefaults.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Config/ConfigDefaults.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

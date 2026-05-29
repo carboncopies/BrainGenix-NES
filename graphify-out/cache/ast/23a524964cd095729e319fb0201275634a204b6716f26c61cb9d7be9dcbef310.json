@@ -1,0 +1,283 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_rpcroutes_em_cpp",
+      "label": "EM.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "rpcroutes_em_vsda_em_initialize",
+      "label": "VSDA_EM_Initialize()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L22"
+    },
+    {
+      "id": "rpcroutes_em_vsda_em_setupmicroscope",
+      "label": "VSDA_EM_SetupMicroscope()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L41"
+    },
+    {
+      "id": "rpcroutes_em_vsda_em_definescanregion",
+      "label": "VSDA_EM_DefineScanRegion()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L63"
+    },
+    {
+      "id": "rpcroutes_em_vsda_em_queuerenderoperation",
+      "label": "VSDA_EM_QueueRenderOperation()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L85"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_rpcroutes_em_cpp",
+      "target": "filesystem",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_rpcroutes_em_cpp",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_rpcroutes_em_cpp",
+      "target": "em",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_rpcroutes_em_cpp",
+      "target": "simulation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_rpcroutes_em_cpp",
+      "target": "voxelarray",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_rpcroutes_em_cpp",
+      "target": "rpcroutes_em_vsda_em_initialize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_rpcroutes_em_cpp",
+      "target": "rpcroutes_em_vsda_em_setupmicroscope",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_rpcroutes_em_cpp",
+      "target": "rpcroutes_em_vsda_em_definescanregion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_rpcroutes_em_cpp",
+      "target": "rpcroutes_em_vsda_em_queuerenderoperation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L85",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_initialize",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_initialize",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L26"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_initialize",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L28"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_setupmicroscope",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_setupmicroscope",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_setupmicroscope",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_definescanregion",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_definescanregion",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_definescanregion",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_definescanregion",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_definescanregion",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_definescanregion",
+      "callee": "Dimensions",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_definescanregion",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_definescanregion",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_definescanregion",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_definescanregion",
+      "callee": "vector<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_queuerenderoperation",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_queuerenderoperation",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L89"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_queuerenderoperation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_queuerenderoperation",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_queuerenderoperation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "rpcroutes_em_vsda_em_queuerenderoperation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/RPCRoutes/EM.cpp",
+      "source_location": "L100"
+    }
+  ]
+}

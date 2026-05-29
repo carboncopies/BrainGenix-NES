@@ -1,0 +1,100 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_receptors_receptor_h",
+      "label": "Receptor.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/Receptor.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "receptors_receptor_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/Receptor.h",
+      "source_location": "L28"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_receptors_receptor_h",
+      "target": "algorithm",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/Receptor.h",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_receptor_h",
+      "target": "cassert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/Receptor.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_receptor_h",
+      "target": "cmath",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/Receptor.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_receptor_h",
+      "target": "cstddef",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/Receptor.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_receptor_h",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/Receptor.h",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_receptor_h",
+      "target": "stdexcept",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/Receptor.h",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_receptor_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/Receptor.h",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_receptor_h",
+      "target": "receptors_receptor_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/Receptor.h",
+      "source_location": "L28",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

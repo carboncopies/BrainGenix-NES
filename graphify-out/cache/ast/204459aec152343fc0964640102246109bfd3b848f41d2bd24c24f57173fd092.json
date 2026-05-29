@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_geometries_geometry_h",
+      "label": "Geometry.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Geometry.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "geometries_geometry_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Geometry.h",
+      "source_location": "L23"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_geometries_geometry_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Geometry.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_geometry_h",
+      "target": "sstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Geometry.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_geometry_h",
+      "target": "vectools",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Geometry.h",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_geometry_h",
+      "target": "boundingbox",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Geometry.h",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_geometry_h",
+      "target": "worldinfo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Geometry.h",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_geometry_h",
+      "target": "geometries_geometry_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Geometry.h",
+      "source_location": "L23",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

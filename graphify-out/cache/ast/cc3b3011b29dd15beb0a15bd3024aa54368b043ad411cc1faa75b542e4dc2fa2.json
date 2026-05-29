@@ -1,0 +1,528 @@
+{
+  "nodes": [
+    {
+      "id": "source_renderer_bg_renderer_interface_cpp",
+      "label": "Interface.cpp",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "renderer_interface_windowedthread",
+      "label": "WindowedThread()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L26"
+    },
+    {
+      "id": "renderer_interface_interface",
+      "label": "Interface()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L38"
+    },
+    {
+      "id": "renderer_interface_initialize",
+      "label": "Initialize()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L61"
+    },
+    {
+      "id": "renderer_interface_drawframe",
+      "label": "DrawFrame()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L85"
+    },
+    {
+      "id": "renderer_interface_renderimage",
+      "label": "RenderImage()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L89"
+    },
+    {
+      "id": "renderer_interface_addbox",
+      "label": "AddBox()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L93"
+    },
+    {
+      "id": "renderer_interface_addsphere",
+      "label": "AddSphere()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L98"
+    },
+    {
+      "id": "renderer_interface_addcylinder",
+      "label": "AddCylinder()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L103"
+    },
+    {
+      "id": "renderer_interface_updatescene",
+      "label": "UpdateScene()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L108"
+    },
+    {
+      "id": "renderer_interface_setresolution",
+      "label": "SetResolution()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L112"
+    },
+    {
+      "id": "renderer_interface_waituntilgpudone",
+      "label": "WaitUntilGPUDone()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L116"
+    },
+    {
+      "id": "renderer_interface_lockscene",
+      "label": "LockScene()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L120"
+    },
+    {
+      "id": "renderer_interface_unlockscene",
+      "label": "UnlockScene()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L124"
+    },
+    {
+      "id": "renderer_interface_resetviewer",
+      "label": "ResetViewer()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L129"
+    },
+    {
+      "id": "renderer_interface_resetscene",
+      "label": "ResetScene()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L137"
+    },
+    {
+      "id": "renderer_interface_updatecameraposition",
+      "label": "UpdateCameraPosition()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L160"
+    },
+    {
+      "id": "renderer_interface_setcamerafov",
+      "label": "SetCameraFOV()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L166"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "interface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_windowedthread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_interface",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_interface",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_initialize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_drawframe",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_renderimage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_addbox",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_addsphere",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_addcylinder",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_updatescene",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_setresolution",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_waituntilgpudone",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_lockscene",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_unlockscene",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_resetviewer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_resetscene",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_updatecameraposition",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_interface_cpp",
+      "target": "renderer_interface_setcamerafov",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L166",
+      "weight": 1.0
+    },
+    {
+      "source": "renderer_interface_windowedthread",
+      "target": "renderer_interface_drawframe",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "renderer_interface_resetviewer",
+      "target": "renderer_interface_lockscene",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "renderer_interface_resetviewer",
+      "target": "renderer_interface_waituntilgpudone",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L131",
+      "weight": 1.0
+    },
+    {
+      "source": "renderer_interface_resetviewer",
+      "target": "renderer_interface_unlockscene",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L134",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "renderer_interface_windowedthread",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "renderer_interface_windowedthread",
+      "callee": "chrono::microseconds",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "renderer_interface_interface",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "renderer_interface_interface",
+      "callee": "make_unique<Manager>",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "renderer_interface_interface",
+      "callee": "make_unique<GeometryBuilder>",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "renderer_interface_interface",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "renderer_interface_interface",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "renderer_interface_interface",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "renderer_interface_initialize",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "renderer_interface_initialize",
+      "callee": "SetupScene",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "renderer_interface_initialize",
+      "callee": "thread",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "renderer_interface_initialize",
+      "callee": "SetupViewer",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "renderer_interface_initialize",
+      "callee": "CompileScene",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "renderer_interface_addbox",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "renderer_interface_addbox",
+      "callee": "CreateCube",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "renderer_interface_addbox",
+      "callee": "GetScene",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "renderer_interface_addsphere",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "renderer_interface_addsphere",
+      "callee": "CreateSphere",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L100"
+    },
+    {
+      "caller_nid": "renderer_interface_addsphere",
+      "callee": "GetScene",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L100"
+    },
+    {
+      "caller_nid": "renderer_interface_addcylinder",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L104"
+    },
+    {
+      "caller_nid": "renderer_interface_addcylinder",
+      "callee": "CreateCylinder",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L105"
+    },
+    {
+      "caller_nid": "renderer_interface_addcylinder",
+      "callee": "GetScene",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L105"
+    },
+    {
+      "caller_nid": "renderer_interface_updatescene",
+      "callee": "CompileScene",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L109"
+    },
+    {
+      "caller_nid": "renderer_interface_resetviewer",
+      "callee": "SetupViewer",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L132"
+    },
+    {
+      "caller_nid": "renderer_interface_resetviewer",
+      "callee": "CompileScene",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "renderer_interface_resetscene",
+      "callee": "ClearScene",
+      "is_member_call": true,
+      "source_file": "Source/Renderer/BG/Renderer/Interface.cpp",
+      "source_location": "L138"
+    }
+  ]
+}

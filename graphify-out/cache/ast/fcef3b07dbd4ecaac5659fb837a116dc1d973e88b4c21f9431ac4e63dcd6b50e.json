@@ -1,0 +1,4603 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "label": "SimulationRPCInterface.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "label": "SimulationRPCInterface()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L39"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_loadfileintostring",
+      "label": "LoadFileIntoString()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L120"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_addmanagertask",
+      "label": "AddManagerTask()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L135"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simloadingtask",
+      "label": "SimLoadingTask()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L181"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simloadingtaskthread",
+      "label": "SimLoadingTaskThread()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L208"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationcreate",
+      "label": "SimulationCreate()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L225"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationreset",
+      "label": "SimulationReset()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L256"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "label": "DeleteResidentByIDTask()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L270"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_deleteresidentbyidtaskthread",
+      "label": "DeleteResidentByIDTaskThread()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L325"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_deleteresidentbyid",
+      "label": "DeleteResidentByID()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L335"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_getresourcestatustask",
+      "label": "GetResourceStatusTask()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L364"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_getresourcestatustaskthread",
+      "label": "GetResourceStatusTaskThread()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L405"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_getresourcestatus",
+      "label": "GetResourceStatus()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L414"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_setresourcechecksincludeheap",
+      "label": "SetResourceChecksIncludeHeap()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L440"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationsetseed",
+      "label": "SimulationSetSeed()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L460"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_lifcabstractedfunctional",
+      "label": "LIFCAbstractedFunctional()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L480"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_lifcprecisespiketimes",
+      "label": "LIFCPreciseSpikeTimes()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L500"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_setstdp",
+      "label": "SetSTDP()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L522"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationrunfor",
+      "label": "SimulationRunFor()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L543"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationrecordall",
+      "label": "SimulationRecordAll()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L573"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_setprepoststrength",
+      "label": "SetPrePostStrength()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L590"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_setallstrength",
+      "label": "SetAllStrength()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L612"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_batchsetprepoststrength",
+      "label": "BatchSetPrePostStrength()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L629"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationgetspiketimes",
+      "label": "SimulationGetSpikeTimes()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L651"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationgetrecording",
+      "label": "SimulationGetRecording()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L665"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationgetstatus",
+      "label": "SimulationGetStatus()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L679"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationsave",
+      "label": "SimulationSave()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L699"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationgetsave",
+      "label": "SimulationGetSave()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L719"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationload",
+      "label": "SimulationLoad()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L784"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationsavemodeltask",
+      "label": "SimulationSaveModelTask()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L823"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationsavemodeltaskthread",
+      "label": "SimulationSaveModelTaskThread()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L839"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationsavemodel",
+      "label": "SimulationSaveModel()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L849"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationloadmodeltask",
+      "label": "SimulationLoadModelTask()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L883"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationloadmodeltaskthread",
+      "label": "SimulationLoadModelTaskThread()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L901"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationloadmodel",
+      "label": "SimulationLoadModel()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L910"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationgetgeocenter",
+      "label": "SimulationGetGeoCenter()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L943"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "label": "SimulationGetBoundingBox()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L961"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "label": "AttachRecordingElectrodes()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1061"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_calciumimagingattach",
+      "label": "CalciumImagingAttach()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1158"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_calciumimagingshowvoxels",
+      "label": "CalciumImagingShowVoxels()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1235"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_calciumimagingrecordaposteriori",
+      "label": "CalciumImagingRecordAposteriori()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1248"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_setrecordinstruments",
+      "label": "SetRecordInstruments()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1260"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_getinstrumentrecordings",
+      "label": "GetInstrumentRecordings()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1277"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_getsomapositions",
+      "label": "GetSomaPositions()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1290"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_getconnectometask",
+      "label": "GetConnectomeTask()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1304"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_getconnectometaskthread",
+      "label": "GetConnectomeTaskThread()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1312"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_getconnectome",
+      "label": "GetConnectome()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1318"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_getabstractconnectometask",
+      "label": "GetAbstractConnectomeTask()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1346"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_getabstractconnectometaskthread",
+      "label": "GetAbstractConnectomeTaskThread()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1354"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_getabstractconnectome",
+      "label": "GetAbstractConnectome()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1360"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_mantaskstatus",
+      "label": "ManTaskStatus()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1410"
+    },
+    {
+      "id": "rpc_simulationrpcinterface_getsimulationvectorptr",
+      "label": "GetSimulationVectorPtr()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1452"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "simulationrpcinterface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "bsneuron",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "apistatuscode",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "vectools",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "recordingelectrode",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "calciumimaging",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "base64",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "fstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "thread",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "mutex",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "chrono",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "malloc",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "sysinfo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "mach",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "mach_host",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_loadfileintostring",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_addmanagertask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simloadingtask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simloadingtaskthread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationcreate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L225",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationreset",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L256",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L270",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_deleteresidentbyidtaskthread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L325",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_deleteresidentbyid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L335",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_getresourcestatustask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L364",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_getresourcestatustaskthread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L405",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_getresourcestatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L414",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_setresourcechecksincludeheap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L440",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationsetseed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L460",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_lifcabstractedfunctional",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L480",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_lifcprecisespiketimes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L500",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_setstdp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L522",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationrunfor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L543",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationrecordall",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L573",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_setprepoststrength",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L590",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_setallstrength",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L612",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_batchsetprepoststrength",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L629",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationgetspiketimes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L651",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationgetrecording",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L665",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationgetstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L679",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationsave",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L699",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationgetsave",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L719",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationload",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L784",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationsavemodeltask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L823",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationsavemodeltaskthread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L839",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationsavemodel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L849",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationloadmodeltask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L883",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationloadmodeltaskthread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L901",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationloadmodel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L910",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationgetgeocenter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L943",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L961",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1061",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_calciumimagingattach",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1158",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_calciumimagingshowvoxels",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1235",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_calciumimagingrecordaposteriori",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1248",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_setrecordinstruments",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1260",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_getinstrumentrecordings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1277",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_getsomapositions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1290",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_getconnectometask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1304",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_getconnectometaskthread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1312",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_getconnectome",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1318",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_getabstractconnectometask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1346",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_getabstractconnectometaskthread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1354",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_getabstractconnectome",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1360",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_mantaskstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1410",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_simulationrpcinterface_cpp",
+      "target": "rpc_simulationrpcinterface_getsimulationvectorptr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1452",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_simulationrpcinterface_simloadingtaskthread",
+      "target": "rpc_simulationrpcinterface_simloadingtask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L210",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_simulationrpcinterface_deleteresidentbyidtaskthread",
+      "target": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L327",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_simulationrpcinterface_deleteresidentbyid",
+      "target": "rpc_simulationrpcinterface_addmanagertask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L353",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_simulationrpcinterface_getresourcestatustaskthread",
+      "target": "rpc_simulationrpcinterface_getresourcestatustask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L407",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_simulationrpcinterface_getresourcestatus",
+      "target": "rpc_simulationrpcinterface_addmanagertask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L430",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_simulationrpcinterface_simulationload",
+      "target": "rpc_simulationrpcinterface_loadfileintostring",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L803",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_simulationrpcinterface_simulationload",
+      "target": "rpc_simulationrpcinterface_addmanagertask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L812",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_simulationrpcinterface_simulationsavemodeltaskthread",
+      "target": "rpc_simulationrpcinterface_simulationsavemodeltask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L841",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_simulationrpcinterface_simulationsavemodel",
+      "target": "rpc_simulationrpcinterface_addmanagertask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L872",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_simulationrpcinterface_simulationloadmodeltaskthread",
+      "target": "rpc_simulationrpcinterface_simulationloadmodeltask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L903",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_simulationrpcinterface_simulationloadmodel",
+      "target": "rpc_simulationrpcinterface_addmanagertask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L933",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_simulationrpcinterface_getconnectometaskthread",
+      "target": "rpc_simulationrpcinterface_getconnectometask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1314",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_simulationrpcinterface_getconnectome",
+      "target": "rpc_simulationrpcinterface_addmanagertask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1335",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_simulationrpcinterface_getabstractconnectometaskthread",
+      "target": "rpc_simulationrpcinterface_getabstractconnectometask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1356",
+      "weight": 1.0
+    },
+    {
+      "source": "rpc_simulationrpcinterface_getabstractconnectome",
+      "target": "rpc_simulationrpcinterface_addmanagertask",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1388",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L58"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L58"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L72"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L72"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L82"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L82"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L111"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L114"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L115"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrpcinterface",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_loadfileintostring",
+      "callee": "is_open",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L123"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_loadfileintostring",
+      "callee": "seekg",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L126"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_loadfileintostring",
+      "callee": "reserve",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_loadfileintostring",
+      "callee": "tellg",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_loadfileintostring",
+      "callee": "seekg",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_loadfileintostring",
+      "callee": "assign",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_loadfileintostring",
+      "callee": "istreambuf_iterator<char>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_loadfileintostring",
+      "callee": "istreambuf_iterator<char>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_addmanagertask",
+      "callee": "reset",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L142"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_addmanagertask",
+      "callee": "release",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L142"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simloadingtask",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L186"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simloadingtask",
+      "callee": "make_unique<Simulation>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L186"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simloadingtask",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L187"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simloadingtask",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L187"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simloadingtask",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L188"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simloadingtask",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L191"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simloadingtask",
+      "callee": "SetRandomSeed",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L192"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simloadingtask",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L195"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simloadingtask",
+      "callee": "thread",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L195"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simloadingtask",
+      "callee": "NESRequest",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L202"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simloadingtask",
+      "callee": "SetStatus",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L204"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simloadingtask",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L205"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simloadingtask",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L205"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationcreate",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L228"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationcreate",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L229"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationcreate",
+      "callee": "GetParString",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L234"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationcreate",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L235"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationcreate",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L237"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationcreate",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L241"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationcreate",
+      "callee": "make_unique<Simulation>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L241"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationcreate",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L242"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationcreate",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L242"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationcreate",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L243"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationcreate",
+      "callee": "SetRandomSeed",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L245"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationcreate",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L247"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationcreate",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L250"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationcreate",
+      "callee": "thread",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L250"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationcreate",
+      "callee": "ResponseWithID",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L253"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationreset",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L259"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationreset",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L260"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationreset",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L263"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationreset",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L264"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationreset",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L267"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L272"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L273"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L273"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "SetStatus",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L274"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L277"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "at",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L277"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L279"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L279"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "SetStatus",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L280"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "get_id",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L284"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "thread::id",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L284"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L285"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "thread",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L286"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "get_id",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L289"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "at",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L289"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "thread::id",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L289"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L290"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "at",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L290"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "thread",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L291"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "reset",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L319"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L320"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L320"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyidtask",
+      "callee": "SetStatus",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L322"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyid",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L338"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyid",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L339"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyid",
+      "callee": "make_unique<API::ManagerTaskData>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L343"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyid",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L346"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyid",
+      "callee": "make_unique<std::thread>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L350"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyid",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L350"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyid",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L355"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyid",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L356"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyid",
+      "callee": "ResetThisSimulation",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L360"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_deleteresidentbyid",
+      "callee": "ResponseWithID",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L361"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatustask",
+      "callee": "sysinfo",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L369"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatustask",
+      "callee": "mach_host_self",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L378"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatustask",
+      "callee": "host_statistics64",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L379"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatustask",
+      "callee": "host_page_size",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L381"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatustask",
+      "callee": "mach_port_deallocate",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L384"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatustask",
+      "callee": "mach_task_self",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L384"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatustask",
+      "callee": "mallinfo2",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L392"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatustask",
+      "callee": "SetStatus",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L402"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatus",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L416"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatus",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L417"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatus",
+      "callee": "make_unique<API::ManagerTaskData>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L421"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatus",
+      "callee": "make_unique<std::thread>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L427"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatus",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L427"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatus",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L432"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatus",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L433"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getresourcestatus",
+      "callee": "ResponseWithID",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L437"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setresourcechecksincludeheap",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L443"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setresourcechecksincludeheap",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L444"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setresourcechecksincludeheap",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L448"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setresourcechecksincludeheap",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L450"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setresourcechecksincludeheap",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L451"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setresourcechecksincludeheap",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L457"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsetseed",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L463"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsetseed",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L464"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsetseed",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L468"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsetseed",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L470"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsetseed",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L471"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsetseed",
+      "callee": "SetRandomSeed",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L474"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsetseed",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L474"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsetseed",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L477"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_lifcabstractedfunctional",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L483"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_lifcabstractedfunctional",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L484"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_lifcabstractedfunctional",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L488"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_lifcabstractedfunctional",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L490"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_lifcabstractedfunctional",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L491"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_lifcabstractedfunctional",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L494"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_lifcabstractedfunctional",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L497"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_lifcprecisespiketimes",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L503"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_lifcprecisespiketimes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L504"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_lifcprecisespiketimes",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L508"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_lifcprecisespiketimes",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L510"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_lifcprecisespiketimes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L511"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_lifcprecisespiketimes",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L514"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_lifcprecisespiketimes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L517"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setstdp",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L525"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setstdp",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L526"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setstdp",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L530"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setstdp",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L532"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setstdp",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L533"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setstdp",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L536"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setstdp",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L539"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrunfor",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L546"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrunfor",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L547"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrunfor",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L552"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrunfor",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L553"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrunfor",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L554"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrunfor",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L557"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrunfor",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L558"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrunfor",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L561"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrunfor",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L562"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrunfor",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L564"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrunfor",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L565"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrunfor",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L566"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrunfor",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L567"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrunfor",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L570"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrecordall",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L576"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrecordall",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L577"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrecordall",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L581"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrecordall",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L582"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrecordall",
+      "callee": "SetRecordAll",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L584"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrecordall",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L584"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationrecordall",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L587"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setprepoststrength",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L592"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setprepoststrength",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L593"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setprepoststrength",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L598"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setprepoststrength",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L599"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setprepoststrength",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L600"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setprepoststrength",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L601"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setprepoststrength",
+      "callee": "UpdatePrePostStrength",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L604"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setprepoststrength",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L604"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setprepoststrength",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L605"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setprepoststrength",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L609"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setallstrength",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L614"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setallstrength",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L615"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setallstrength",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L619"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setallstrength",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L620"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setallstrength",
+      "callee": "UpdateAllStrength",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L623"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setallstrength",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L623"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setallstrength",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L626"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_batchsetprepoststrength",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L631"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_batchsetprepoststrength",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L632"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_batchsetprepoststrength",
+      "callee": "GetParVecInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L637"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_batchsetprepoststrength",
+      "callee": "GetParVecInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L638"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_batchsetprepoststrength",
+      "callee": "GetParVecFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L639"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_batchsetprepoststrength",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L640"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_batchsetprepoststrength",
+      "callee": "UpdateBatchPrePostStrength",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L643"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_batchsetprepoststrength",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L643"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_batchsetprepoststrength",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L644"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_batchsetprepoststrength",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L648"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetspiketimes",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L654"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetspiketimes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L655"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetspiketimes",
+      "callee": "GetSpikeTimesJSON",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L661"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetspiketimes",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L661"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetspiketimes",
+      "callee": "ResponseAndStoreRequest",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L662"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetrecording",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L668"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetrecording",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L669"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetrecording",
+      "callee": "GetRecordingJSON",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L675"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetrecording",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L675"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetrecording",
+      "callee": "ResponseAndStoreRequest",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L676"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetstatus",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L682"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetstatus",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L683"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetstatus",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L689"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetstatus",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L689"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetstatus",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L689"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetstatus",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L692"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetstatus",
+      "callee": "ResponseAndStoreRequest",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L695"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsave",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L702"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsave",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L703"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsave",
+      "callee": "StoredRequestsSave",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L709"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsave",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L709"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsave",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L710"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsave",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L711"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsave",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L713"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsave",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L713"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsave",
+      "callee": "NumStoredRequests",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L713"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsave",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L713"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsave",
+      "callee": "ResponseWithID",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L716"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L722"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L723"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "GetParString",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L730"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L737"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L739"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "erase",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L740"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L740"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L741"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L747"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "good",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L749"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "rdbuf",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L751"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L752"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "close",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L753"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L756"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L759"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "base64_encode",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L763"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L763"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L763"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetsave",
+      "callee": "StringResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L766"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationload",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L787"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationload",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L788"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationload",
+      "callee": "GetParString",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L793"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationload",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L794"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationload",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L797"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationload",
+      "callee": "make_unique<API::ManagerTaskData>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L800"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationload",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L804"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationload",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L805"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationload",
+      "callee": "make_unique<std::thread>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L809"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationload",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L809"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationload",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L814"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationload",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L815"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationload",
+      "callee": "ResponseWithID",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L819"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodeltask",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L825"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodeltask",
+      "callee": "SaveModel",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L827"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodeltask",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L828"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodeltask",
+      "callee": "SetStatus",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L829"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodeltask",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L833"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodeltask",
+      "callee": "SetStatus",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L835"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodel",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L852"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodel",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L853"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodel",
+      "callee": "make_unique<API::ManagerTaskData>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L857"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodel",
+      "callee": "GetParString",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L861"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodel",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L862"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodel",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L865"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodel",
+      "callee": "make_unique<std::thread>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L869"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodel",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L869"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodel",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L874"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodel",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L875"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationsavemodel",
+      "callee": "ResponseWithID",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L879"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodeltask",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L886"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodeltask",
+      "callee": "LoadModel",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L889"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodeltask",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L890"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodeltask",
+      "callee": "SetStatus",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L891"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodeltask",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L895"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodeltask",
+      "callee": "SetStatus",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L897"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodel",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L913"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodel",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L914"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodel",
+      "callee": "make_unique<API::ManagerTaskData>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L918"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodel",
+      "callee": "GetParString",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L922"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodel",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L923"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodel",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L926"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodel",
+      "callee": "make_unique<std::thread>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L930"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodel",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L930"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodel",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L935"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodel",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L936"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationloadmodel",
+      "callee": "ResponseWithID",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L940"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetgeocenter",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L946"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetgeocenter",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L947"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetgeocenter",
+      "callee": "GetGeoCenter",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L950"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetgeocenter",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L950"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetgeocenter",
+      "callee": "SetVec3",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L955"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetgeocenter",
+      "callee": "ResponseAndStoreRequest",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L956"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L964"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L965"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "Size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L977"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L977"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "IsBox",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L979"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L979"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "GetBox",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L980"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L980"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L982"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L983"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L984"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "max",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L985"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "max",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L986"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "max",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L987"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "IsSphere",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L990"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L990"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "GetSphere",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L991"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L991"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L993"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L994"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L995"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "max",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L996"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "max",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L997"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "max",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L998"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "IsCylinder",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1001"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1001"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "GetCylinder",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1002"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1002"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1004"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1005"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1006"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "max",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1007"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "max",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1008"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "max",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1009"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1011"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1012"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1013"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "max",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1014"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "max",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1015"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "max",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1016"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "Vec3D",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1023"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "Vec3D",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1024"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "SetVec3",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1030"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "SetVec3",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1031"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_simulationgetboundingbox",
+      "callee": "ResponseAndStoreRequest",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1032"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1064"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1065"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "FindPar",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1071"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "ReqJSON",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1071"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1072"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1074"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "is_array",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1075"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1076"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1081"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "GetParString",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1082"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1083"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "GetParVecFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1086"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1087"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "GetParVecFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1090"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1091"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1093"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1093"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1094"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1098"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1099"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "FindPar",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1102"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1103"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "is_array",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1105"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1105"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1106"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1108"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "GetParVecFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1110"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1111"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1113"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1114"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1116"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1119"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1119"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1120"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1120"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "make_unique<Tools::RecordingElectrode>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1120"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1122"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_attachrecordingelectrodes",
+      "callee": "ResponseAndStoreRequest",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1129"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_calciumimagingshowvoxels",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1238"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_calciumimagingshowvoxels",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1239"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_calciumimagingshowvoxels",
+      "callee": "GetCaImagingVoxelsJSON",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1243"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_calciumimagingshowvoxels",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1243"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_calciumimagingshowvoxels",
+      "callee": "ResponseAndStoreRequest",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1245"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_calciumimagingrecordaposteriori",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1251"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_calciumimagingrecordaposteriori",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1252"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_calciumimagingrecordaposteriori",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1255"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_calciumimagingrecordaposteriori",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1257"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setrecordinstruments",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1263"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setrecordinstruments",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1264"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setrecordinstruments",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1268"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setrecordinstruments",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1269"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setrecordinstruments",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1271"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_setrecordinstruments",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1274"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getinstrumentrecordings",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1280"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getinstrumentrecordings",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1281"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getinstrumentrecordings",
+      "callee": "GetInstrumentsRecordingJSON",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1285"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getinstrumentrecordings",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1285"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getinstrumentrecordings",
+      "callee": "ResponseAndStoreRequest",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1287"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getsomapositions",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1293"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getsomapositions",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1294"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getsomapositions",
+      "callee": "GetSomaPositionsJSON",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1298"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getsomapositions",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1298"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getsomapositions",
+      "callee": "ResponseAndStoreRequest",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1300"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getconnectometask",
+      "callee": "GetConnectomeJSON",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1306"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getconnectometask",
+      "callee": "SetStatus",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1308"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getconnectome",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1321"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getconnectome",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1322"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getconnectome",
+      "callee": "make_unique<API::ManagerTaskData>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1326"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getconnectome",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1328"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getconnectome",
+      "callee": "make_unique<std::thread>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1332"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getconnectome",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1332"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getconnectome",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1337"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getconnectome",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1338"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getconnectome",
+      "callee": "ResponseWithID",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1342"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getabstractconnectometask",
+      "callee": "GetAbstractConnectomeJSON",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1348"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getabstractconnectometask",
+      "callee": "SetStatus",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1350"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getabstractconnectome",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1363"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getabstractconnectome",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1364"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getabstractconnectome",
+      "callee": "make_unique<API::ManagerTaskData>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1368"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getabstractconnectome",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1375"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getabstractconnectome",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1376"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getabstractconnectome",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1377"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getabstractconnectome",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1381"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getabstractconnectome",
+      "callee": "make_unique<std::thread>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1385"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getabstractconnectome",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1385"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getabstractconnectome",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1390"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getabstractconnectome",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1391"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_getabstractconnectome",
+      "callee": "ResponseWithID",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1395"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_mantaskstatus",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1413"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_mantaskstatus",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1414"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_mantaskstatus",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1425"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_mantaskstatus",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1426"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_mantaskstatus",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1430"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_mantaskstatus",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1431"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_mantaskstatus",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1432"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_mantaskstatus",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1434"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_mantaskstatus",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1436"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_mantaskstatus",
+      "callee": "GetStatus",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1440"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_mantaskstatus",
+      "callee": "IncludeStatusInOutputData",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1441"
+    },
+    {
+      "caller_nid": "rpc_simulationrpcinterface_mantaskstatus",
+      "callee": "ResponseAndStoreRequest",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/RPC/SimulationRPCInterface.cpp",
+      "source_location": "L1444"
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_meshgenerator_meshgeneratorpool_cpp",
+      "label": "MeshGeneratorPool.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "meshgenerator_meshgeneratorpool_meshgeneratorpool",
+      "label": "MeshGeneratorPool()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L7"
+    },
+    {
+      "id": "meshgenerator_meshgeneratorpool_submittask",
+      "label": "SubmitTask()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L24"
+    },
+    {
+      "id": "meshgenerator_meshgeneratorpool_workerthread",
+      "label": "WorkerThread()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L35"
+    },
+    {
+      "id": "meshgenerator_meshgeneratorpool_waitall",
+      "label": "WaitAll()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L54"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_meshgenerator_meshgeneratorpool_cpp",
+      "target": "meshgeneratorpool",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_meshgeneratorpool_cpp",
+      "target": "meshgenerator_meshgeneratorpool_meshgeneratorpool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_meshgeneratorpool_cpp",
+      "target": "meshgenerator_meshgeneratorpool_meshgeneratorpool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_meshgeneratorpool_cpp",
+      "target": "meshgenerator_meshgeneratorpool_submittask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_meshgeneratorpool_cpp",
+      "target": "meshgenerator_meshgeneratorpool_workerthread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_meshgeneratorpool_cpp",
+      "target": "meshgenerator_meshgeneratorpool_waitall",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "meshgenerator_meshgeneratorpool_meshgeneratorpool",
+      "target": "meshgenerator_meshgeneratorpool_workerthread",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_meshgeneratorpool",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L9"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_meshgeneratorpool",
+      "callee": "notify_all",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_meshgeneratorpool",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_submittask",
+      "callee": "get_future",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L26"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_submittask",
+      "callee": "emplace",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_submittask",
+      "callee": "move",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_submittask",
+      "callee": "notify_one",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_workerthread",
+      "callee": "wait",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_workerthread",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_workerthread",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_workerthread",
+      "callee": "move",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_workerthread",
+      "callee": "front",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_workerthread",
+      "callee": "pop",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_workerthread",
+      "callee": "Execute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_workerthread",
+      "callee": "set_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_workerthread",
+      "callee": "set_exception",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_workerthread",
+      "callee": "current_exception",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_waitall",
+      "callee": "wait",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "meshgenerator_meshgeneratorpool_waitall",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MeshGeneratorPool.cpp",
+      "source_location": "L56"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_imageprocessorpool_h",
+      "label": "ImageProcessorPool.h",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "imageprocessorpool_imageprocessorpool_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h",
+      "source_location": "L54"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_imageprocessorpool_h",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_imageprocessorpool_h",
+      "target": "assert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_imageprocessorpool_h",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_imageprocessorpool_h",
+      "target": "queue",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_imageprocessorpool_h",
+      "target": "thread",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_imageprocessorpool_h",
+      "target": "logger",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_imageprocessorpool_h",
+      "target": "image",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_imageprocessorpool_h",
+      "target": "processingtask",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_imageprocessorpool_h",
+      "target": "segmentationcompression",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_imageprocessorpool_h",
+      "target": "imageprocessorpool_imageprocessorpool_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.h",
+      "source_location": "L54",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

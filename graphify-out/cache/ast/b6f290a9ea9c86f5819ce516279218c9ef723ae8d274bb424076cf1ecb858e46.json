@@ -1,0 +1,39 @@
+{
+  "nodes": [
+    {
+      "id": "vcpkg_configuration_json",
+      "label": "vcpkg-configuration.json",
+      "file_type": "code",
+      "source_file": "vcpkg-configuration.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "braingenix_nes_vcpkg_configuration_overlay_ports",
+      "label": "overlay-ports",
+      "file_type": "code",
+      "source_file": "vcpkg-configuration.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "vcpkg_configuration_json",
+      "target": "braingenix_nes_vcpkg_configuration_overlay_ports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vcpkg-configuration.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "braingenix_nes_vcpkg_configuration_overlay_ports",
+      "target": "ref_overlays_bg_logger",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "vcpkg-configuration.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

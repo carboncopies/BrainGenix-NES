@@ -1,0 +1,100 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_ca_voxelsubsystem_cavoxelarrayrenderer_h",
+      "label": "CaVoxelArrayRenderer.h",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "voxelsubsystem_cavoxelarrayrenderer_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h",
+      "source_location": "L50"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_cavoxelarrayrenderer_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_cavoxelarrayrenderer_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_cavoxelarrayrenderer_h",
+      "target": "camicroscopeparameters",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_cavoxelarrayrenderer_h",
+      "target": "cavoxelarray",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_cavoxelarrayrenderer_h",
+      "target": "cadata",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_cavoxelarrayrenderer_h",
+      "target": "imageprocessorpool",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_cavoxelarrayrenderer_h",
+      "target": "logger",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_cavoxelarrayrenderer_h",
+      "target": "voxelsubsystem_cavoxelarrayrenderer_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h",
+      "source_location": "L50",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

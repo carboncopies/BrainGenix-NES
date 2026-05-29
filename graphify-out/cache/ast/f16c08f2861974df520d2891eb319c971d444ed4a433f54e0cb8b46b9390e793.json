@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_distributions_generic_h",
+      "label": "Generic.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "distributions_generic_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.h",
+      "source_location": "L20"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_distributions_generic_h",
+      "target": "cassert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_distributions_generic_h",
+      "target": "cmath",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_distributions_generic_h",
+      "target": "random",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.h",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_distributions_generic_h",
+      "target": "distributions_generic_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.h",
+      "source_location": "L20",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

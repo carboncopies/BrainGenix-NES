@@ -1,0 +1,335 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "em_readme_emrenderer_module_documentation",
+      "label": "EMRenderer Module Documentation",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "em_readme_overview",
+      "label": "Overview",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "em_readme_purpose",
+      "label": "Purpose",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "em_readme_architecture",
+      "label": "Architecture",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "em_readme_core_functions",
+      "label": "Core Functions",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L27"
+    },
+    {
+      "id": "em_readme_executesubrenderoperations",
+      "label": "ExecuteSubRenderOperations",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L29"
+    },
+    {
+      "id": "em_readme_codeblock_1",
+      "label": "code:cpp (bool ExecuteSubRenderOperations()",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L31"
+    },
+    {
+      "id": "em_readme_emrendersubregion",
+      "label": "EMRenderSubRegion",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L57"
+    },
+    {
+      "id": "em_readme_codeblock_2",
+      "label": "code:cpp (bool EMRenderSubRegion()",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L59"
+    },
+    {
+      "id": "em_readme_createvoxelarrayfromsimulation",
+      "label": "CreateVoxelArrayFromSimulation",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L83"
+    },
+    {
+      "id": "em_readme_codeblock_3",
+      "label": "code:cpp (bool CreateVoxelArrayFromSimulation()",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L85"
+    },
+    {
+      "id": "em_readme_renderslicefromarray",
+      "label": "RenderSliceFromArray",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L118"
+    },
+    {
+      "id": "em_readme_codeblock_4",
+      "label": "code:cpp (int RenderSliceFromArray()",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L120"
+    },
+    {
+      "id": "em_readme_configuration_parameters",
+      "label": "Configuration Parameters",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L166"
+    },
+    {
+      "id": "em_readme_memory_settings",
+      "label": "Memory Settings",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L168"
+    },
+    {
+      "id": "em_readme_image_quality",
+      "label": "Image Quality",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L172"
+    },
+    {
+      "id": "em_readme_noise_parameters",
+      "label": "Noise Parameters",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L178"
+    },
+    {
+      "id": "em_readme_common_issues_and_solutions",
+      "label": "Common Issues and Solutions",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L182"
+    },
+    {
+      "id": "em_readme_best_practices",
+      "label": "Best Practices",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L200"
+    },
+    {
+      "id": "em_readme_common_questions_and_answers",
+      "label": "**Common Questions and Answers**",
+      "file_type": "document",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L209"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_readme_md",
+      "target": "em_readme_emrenderer_module_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_emrenderer_module_documentation",
+      "target": "em_readme_overview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_emrenderer_module_documentation",
+      "target": "em_readme_purpose",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_emrenderer_module_documentation",
+      "target": "em_readme_architecture",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_emrenderer_module_documentation",
+      "target": "em_readme_core_functions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_core_functions",
+      "target": "em_readme_executesubrenderoperations",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_executesubrenderoperations",
+      "target": "em_readme_codeblock_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_core_functions",
+      "target": "em_readme_emrendersubregion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_emrendersubregion",
+      "target": "em_readme_codeblock_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_core_functions",
+      "target": "em_readme_createvoxelarrayfromsimulation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_createvoxelarrayfromsimulation",
+      "target": "em_readme_codeblock_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_core_functions",
+      "target": "em_readme_renderslicefromarray",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_renderslicefromarray",
+      "target": "em_readme_codeblock_4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_emrenderer_module_documentation",
+      "target": "em_readme_configuration_parameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L166",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_configuration_parameters",
+      "target": "em_readme_memory_settings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L168",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_configuration_parameters",
+      "target": "em_readme_image_quality",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L172",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_configuration_parameters",
+      "target": "em_readme_noise_parameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_emrenderer_module_documentation",
+      "target": "em_readme_common_issues_and_solutions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L182",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_emrenderer_module_documentation",
+      "target": "em_readme_best_practices",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L200",
+      "weight": 1.0
+    },
+    {
+      "source": "em_readme_emrenderer_module_documentation",
+      "target": "em_readme_common_questions_and_answers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/README.md",
+      "source_location": "L209",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

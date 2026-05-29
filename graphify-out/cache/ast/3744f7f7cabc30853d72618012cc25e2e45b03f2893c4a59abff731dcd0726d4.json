@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_receptors_ampareceptor_h",
+      "label": "AMPAReceptor.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "receptors_ampareceptor_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.h",
+      "source_location": "L17"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_receptors_ampareceptor_h",
+      "target": "cstddef",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.h",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_ampareceptor_h",
+      "target": "receptor",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_receptors_ampareceptor_h",
+      "target": "receptors_ampareceptor_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Receptors/AMPAReceptor.h",
+      "source_location": "L17",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

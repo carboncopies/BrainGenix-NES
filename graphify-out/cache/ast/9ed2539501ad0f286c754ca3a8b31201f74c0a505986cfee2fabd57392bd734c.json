@@ -1,0 +1,120 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_visualizer_visualizer_h",
+      "label": "Visualizer.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/Visualizer.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "visualizer_visualizer_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/Visualizer.h",
+      "source_location": "L30"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_visualizer_visualizer_h",
+      "target": "assert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/Visualizer.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizer_h",
+      "target": "cstdint",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/Visualizer.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizer_h",
+      "target": "logger",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/Visualizer.h",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizer_h",
+      "target": "interface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/Visualizer.h",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizer_h",
+      "target": "simulation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/Visualizer.h",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizer_h",
+      "target": "meshbuilder",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/Visualizer.h",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizer_h",
+      "target": "meshrenderer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/Visualizer.h",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizer_h",
+      "target": "visualizerparameters",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/Visualizer.h",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizer_h",
+      "target": "imageprocessorpool",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/Visualizer.h",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizer_h",
+      "target": "visualizer_visualizer_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/Visualizer.h",
+      "source_location": "L30",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

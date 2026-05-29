@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_brainregion_brainregion_h",
+      "label": "BrainRegion.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BrainRegion/BrainRegion.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "brainregion_brainregion_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BrainRegion/BrainRegion.h",
+      "source_location": "L21"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_brainregion_brainregion_h",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BrainRegion/BrainRegion.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_brainregion_brainregion_h",
+      "target": "geometry",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BrainRegion/BrainRegion.h",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_brainregion_brainregion_h",
+      "target": "neuralcircuit",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BrainRegion/BrainRegion.h",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_brainregion_brainregion_h",
+      "target": "brainregion_brainregion_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BrainRegion/BrainRegion.h",
+      "source_location": "L21",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

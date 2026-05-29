@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_h",
+      "label": "VoxelArrayGenerator.h",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "voxelsubsystem_voxelarraygenerator_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h",
+      "source_location": "L49"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_h",
+      "target": "simulation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_h",
+      "target": "microscopeparameters",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_h",
+      "target": "voxelarray",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_h",
+      "target": "arraygeneratorpool",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_h",
+      "target": "logger",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_voxelarraygenerator_h",
+      "target": "voxelsubsystem_voxelarraygenerator_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.h",
+      "source_location": "L49",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

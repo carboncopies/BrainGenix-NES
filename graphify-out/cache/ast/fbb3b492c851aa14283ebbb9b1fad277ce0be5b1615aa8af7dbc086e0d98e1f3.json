@@ -1,0 +1,64 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_config_configurationmanager_cpp",
+      "label": "ConfigurationManager.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Config/ConfigurationManager.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "config_configurationmanager_manager",
+      "label": "Manager()",
+      "file_type": "code",
+      "source_file": "Source/Core/Config/ConfigurationManager.cpp",
+      "source_location": "L10"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_config_configurationmanager_cpp",
+      "target": "configurationmanager",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ConfigurationManager.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_configurationmanager_cpp",
+      "target": "config_configurationmanager_manager",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ConfigurationManager.cpp",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_configurationmanager_cpp",
+      "target": "config_configurationmanager_manager",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ConfigurationManager.cpp",
+      "source_location": "L27",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "config_configurationmanager_manager",
+      "callee": "~ConfigFileParser",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigurationManager.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "config_configurationmanager_manager",
+      "callee": "atoi",
+      "is_member_call": false,
+      "source_file": "Source/Core/Config/ConfigurationManager.cpp",
+      "source_location": "L22"
+    }
+  ]
+}

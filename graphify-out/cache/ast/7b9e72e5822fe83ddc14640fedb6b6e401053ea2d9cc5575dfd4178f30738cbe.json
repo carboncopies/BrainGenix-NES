@@ -1,0 +1,159 @@
+{
+  "nodes": [
+    {
+      "id": "agent_notes_agent_session_notes_2026_05_09_md",
+      "label": "agent-session-notes-2026-05-09.md",
+      "file_type": "document",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "agent_notes_agent_session_notes_2026_05_09_braingenix_nes_agent_session_notes",
+      "label": "BrainGenix-NES Agent Session Notes",
+      "file_type": "document",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "agent_notes_agent_session_notes_2026_05_09_purpose",
+      "label": "Purpose",
+      "file_type": "document",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "agent_notes_agent_session_notes_2026_05_09_codeblock_1",
+      "label": "code:bash (cd BrainGenix-NES/Tools)",
+      "file_type": "document",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L9"
+    },
+    {
+      "id": "agent_notes_agent_session_notes_2026_05_09_branch_and_state_observed",
+      "label": "Branch and state observed",
+      "file_type": "document",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L18"
+    },
+    {
+      "id": "agent_notes_agent_session_notes_2026_05_09_work_reviewed",
+      "label": "Work reviewed",
+      "file_type": "document",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L31"
+    },
+    {
+      "id": "agent_notes_agent_session_notes_2026_05_09_review_outcome",
+      "label": "Review outcome",
+      "file_type": "document",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L60"
+    },
+    {
+      "id": "agent_notes_agent_session_notes_2026_05_09_verification_performed",
+      "label": "Verification performed",
+      "file_type": "document",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L66"
+    },
+    {
+      "id": "agent_notes_agent_session_notes_2026_05_09_codeblock_2",
+      "label": "code:bash (cd BrainGenix-NES/Tools)",
+      "file_type": "document",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L72"
+    },
+    {
+      "id": "agent_notes_agent_session_notes_2026_05_09_follow_ups_before_merge_request",
+      "label": "Follow-ups before merge request",
+      "file_type": "document",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L81"
+    }
+  ],
+  "edges": [
+    {
+      "source": "agent_notes_agent_session_notes_2026_05_09_md",
+      "target": "agent_notes_agent_session_notes_2026_05_09_braingenix_nes_agent_session_notes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_notes_agent_session_notes_2026_05_09_braingenix_nes_agent_session_notes",
+      "target": "agent_notes_agent_session_notes_2026_05_09_purpose",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_notes_agent_session_notes_2026_05_09_purpose",
+      "target": "agent_notes_agent_session_notes_2026_05_09_codeblock_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_notes_agent_session_notes_2026_05_09_braingenix_nes_agent_session_notes",
+      "target": "agent_notes_agent_session_notes_2026_05_09_branch_and_state_observed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_notes_agent_session_notes_2026_05_09_braingenix_nes_agent_session_notes",
+      "target": "agent_notes_agent_session_notes_2026_05_09_work_reviewed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_notes_agent_session_notes_2026_05_09_braingenix_nes_agent_session_notes",
+      "target": "agent_notes_agent_session_notes_2026_05_09_review_outcome",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_notes_agent_session_notes_2026_05_09_braingenix_nes_agent_session_notes",
+      "target": "agent_notes_agent_session_notes_2026_05_09_verification_performed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_notes_agent_session_notes_2026_05_09_verification_performed",
+      "target": "agent_notes_agent_session_notes_2026_05_09_codeblock_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_notes_agent_session_notes_2026_05_09_braingenix_nes_agent_session_notes",
+      "target": "agent_notes_agent_session_notes_2026_05_09_follow_ups_before_merge_request",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/agent-session-notes-2026-05-09.md",
+      "source_location": "L81",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

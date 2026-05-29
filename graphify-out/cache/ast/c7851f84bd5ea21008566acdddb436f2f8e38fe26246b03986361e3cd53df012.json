@@ -1,0 +1,71 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_updaters_receptor_cpp",
+      "label": "Receptor.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Updaters/Receptor.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "updaters_receptor_receptorreset",
+      "label": "ReceptorReset()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Updaters/Receptor.cpp",
+      "source_location": "L11"
+    },
+    {
+      "id": "updaters_receptor_receptorupdate",
+      "label": "ReceptorUpdate()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Updaters/Receptor.cpp",
+      "source_location": "L21"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_updaters_receptor_cpp",
+      "target": "receptor",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Updaters/Receptor.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_updaters_receptor_cpp",
+      "target": "updaters_receptor_receptorreset",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Updaters/Receptor.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_updaters_receptor_cpp",
+      "target": "updaters_receptor_receptorupdate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Updaters/Receptor.cpp",
+      "source_location": "L21",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "updaters_receptor_receptorreset",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Updaters/Receptor.cpp",
+      "source_location": "L12"
+    },
+    {
+      "caller_nid": "updaters_receptor_receptorupdate",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Updaters/Receptor.cpp",
+      "source_location": "L22"
+    }
+  ]
+}

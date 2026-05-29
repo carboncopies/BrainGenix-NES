@@ -1,0 +1,670 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "label": "VisualizerRPCInterface.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "visualizer_visualizerrpcinterface_visualizerrpcinterface",
+      "label": "VisualizerRPCInterface()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L23"
+    },
+    {
+      "id": "visualizer_visualizerrpcinterface_visualizergetstatus",
+      "label": "VisualizerGetStatus()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L49"
+    },
+    {
+      "id": "visualizer_visualizerrpcinterface_visualizergetimagehandles",
+      "label": "VisualizerGetImageHandles()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L67"
+    },
+    {
+      "id": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "label": "VisualizerGetImage()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L87"
+    },
+    {
+      "id": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "label": "VisualizerGenerateImages()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L161"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "target": "fstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "target": "thread",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "target": "mutex",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "target": "chrono",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "target": "base64",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "target": "visualizerrpcinterface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "target": "visualizer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "target": "apistatuscode",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "target": "visualizer_visualizerrpcinterface_visualizerrpcinterface",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "target": "visualizer_visualizerrpcinterface_visualizerrpcinterface",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "target": "visualizer_visualizerrpcinterface_visualizergetstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "target": "visualizer_visualizerrpcinterface_visualizergetimagehandles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "target": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizerrpcinterface_cpp",
+      "target": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L161",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizerrpcinterface",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L24"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizerrpcinterface",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizerrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizerrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizerrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizerrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizerrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizerrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizerrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L34"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizerrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L34"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetstatus",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetstatus",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetstatus",
+      "callee": "ResponseWithID",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetstatus",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimagehandles",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimagehandles",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimagehandles",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimagehandles",
+      "callee": "json",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimagehandles",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimagehandles",
+      "callee": "StringResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "GetParString",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L96"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L106"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L108"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "erase",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L109"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L109"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L110"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L117"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "good",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "rdbuf",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L121"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "close",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "base64_encode",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergetimage",
+      "callee": "StringResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L138"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "FindPar",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L168"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L169"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L172"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "GetParVec3FromJSON",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L174"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L175"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L175"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "dvec3",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L175"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "GetParVec3FromJSON",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L178"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L179"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L179"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "dvec3",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L179"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L182"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L183"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L183"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L186"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L188"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L188"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L189"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L189"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "GetParVecInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L193"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L193"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L195"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L196"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L201"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L202"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L203"
+    },
+    {
+      "caller_nid": "visualizer_visualizerrpcinterface_visualizergenerateimages",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/VisualizerRPCInterface.cpp",
+      "source_location": "L207"
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "nodes": [
+    {
+      "id": "agent_notes_mac_silicon_change_log_md",
+      "label": "mac-silicon-change-log.md",
+      "file_type": "document",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "agent_notes_mac_silicon_change_log_braingenix_nes_mac_silicon_change_log",
+      "label": "BrainGenix-NES Mac Silicon Change Log",
+      "file_type": "document",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "agent_notes_mac_silicon_change_log_current_branch",
+      "label": "Current branch",
+      "file_type": "document",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "agent_notes_mac_silicon_change_log_intent",
+      "label": "Intent",
+      "file_type": "document",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "agent_notes_mac_silicon_change_log_codeblock_1",
+      "label": "code:bash (cd BrainGenix-NES/Tools)",
+      "file_type": "document",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "agent_notes_mac_silicon_change_log_changes_made",
+      "label": "Changes made",
+      "file_type": "document",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L26"
+    },
+    {
+      "id": "agent_notes_mac_silicon_change_log_cleanup_performed_during_review",
+      "label": "Cleanup performed during review",
+      "file_type": "document",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L78"
+    },
+    {
+      "id": "agent_notes_mac_silicon_change_log_review_notes",
+      "label": "Review notes",
+      "file_type": "document",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L85"
+    },
+    {
+      "id": "agent_notes_mac_silicon_change_log_verification",
+      "label": "Verification",
+      "file_type": "document",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L93"
+    }
+  ],
+  "edges": [
+    {
+      "source": "agent_notes_mac_silicon_change_log_md",
+      "target": "agent_notes_mac_silicon_change_log_braingenix_nes_mac_silicon_change_log",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_notes_mac_silicon_change_log_braingenix_nes_mac_silicon_change_log",
+      "target": "agent_notes_mac_silicon_change_log_current_branch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_notes_mac_silicon_change_log_braingenix_nes_mac_silicon_change_log",
+      "target": "agent_notes_mac_silicon_change_log_intent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_notes_mac_silicon_change_log_intent",
+      "target": "agent_notes_mac_silicon_change_log_codeblock_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_notes_mac_silicon_change_log_braingenix_nes_mac_silicon_change_log",
+      "target": "agent_notes_mac_silicon_change_log_changes_made",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_notes_mac_silicon_change_log_braingenix_nes_mac_silicon_change_log",
+      "target": "agent_notes_mac_silicon_change_log_cleanup_performed_during_review",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_notes_mac_silicon_change_log_braingenix_nes_mac_silicon_change_log",
+      "target": "agent_notes_mac_silicon_change_log_review_notes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "agent_notes_mac_silicon_change_log_braingenix_nes_mac_silicon_change_log",
+      "target": "agent_notes_mac_silicon_change_log_verification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent notes/mac-silicon-change-log.md",
+      "source_location": "L93",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

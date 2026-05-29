@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_h",
+      "label": "CaVoxelArray.h",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "structs_cavoxelarray_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h",
+      "source_location": "L50"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_h",
+      "target": "inttypes",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_h",
+      "target": "math",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_h",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_h",
+      "target": "geometry",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_h",
+      "target": "scanregion",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_structs_cavoxelarray_h",
+      "target": "structs_cavoxelarray_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/Structs/CaVoxelArray.h",
+      "source_location": "L50",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

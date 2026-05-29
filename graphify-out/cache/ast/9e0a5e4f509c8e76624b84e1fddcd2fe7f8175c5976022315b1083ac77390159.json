@@ -1,0 +1,70 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_geometries_vectools_h",
+      "label": "VecTools.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/VecTools.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "geometries_vectools_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/VecTools.h",
+      "source_location": "L17"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_geometries_vectools_h",
+      "target": "cassert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/VecTools.h",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_vectools_h",
+      "target": "cmath",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/VecTools.h",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_vectools_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/VecTools.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_vectools_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/VecTools.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_vectools_h",
+      "target": "geometries_vectools_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/VecTools.h",
+      "source_location": "L17",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

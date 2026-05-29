@@ -1,0 +1,1040 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "label": "VoxelArray.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "structs_voxelarray_voxelarray",
+      "label": "VoxelArray()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L17"
+    },
+    {
+      "id": "structs_voxelarray_cleararray",
+      "label": "ClearArray()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L90"
+    },
+    {
+      "id": "structs_voxelarray_cleararraythreaded",
+      "label": "ClearArrayThreaded()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L102"
+    },
+    {
+      "id": "structs_voxelarray_setbb",
+      "label": "SetBB()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L135"
+    },
+    {
+      "id": "structs_voxelarray_getindex",
+      "label": "GetIndex()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L158"
+    },
+    {
+      "id": "structs_voxelarray_getvoxel",
+      "label": "GetVoxel()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L162"
+    },
+    {
+      "id": "structs_voxelarray_setvoxel",
+      "label": "SetVoxel()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L187"
+    },
+    {
+      "id": "structs_voxelarray_setvoxelatindex",
+      "label": "SetVoxelAtIndex()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L198"
+    },
+    {
+      "id": "structs_voxelarray_setvoxelatposition",
+      "label": "SetVoxelAtPosition()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L208"
+    },
+    {
+      "id": "structs_voxelarray_getpositionatindex",
+      "label": "GetPositionAtIndex()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L224"
+    },
+    {
+      "id": "structs_voxelarray_getxindexatposition",
+      "label": "GetXIndexAtPosition()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L234"
+    },
+    {
+      "id": "structs_voxelarray_getyindexatposition",
+      "label": "GetYIndexAtPosition()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L237"
+    },
+    {
+      "id": "structs_voxelarray_getzindexatposition",
+      "label": "GetZIndexAtPosition()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L240"
+    },
+    {
+      "id": "structs_voxelarray_getsize",
+      "label": "GetSize()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L299"
+    },
+    {
+      "id": "structs_voxelarray_setsize",
+      "label": "SetSize()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L304"
+    },
+    {
+      "id": "structs_voxelarray_getx",
+      "label": "GetX()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L339"
+    },
+    {
+      "id": "structs_voxelarray_gety",
+      "label": "GetY()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L342"
+    },
+    {
+      "id": "structs_voxelarray_getz",
+      "label": "GetZ()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L345"
+    },
+    {
+      "id": "structs_voxelarray_getresolution",
+      "label": "GetResolution()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L349"
+    },
+    {
+      "id": "structs_voxelarray_getboundingbox",
+      "label": "GetBoundingBox()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L353"
+    },
+    {
+      "id": "structs_voxelarray_isinrangex",
+      "label": "IsInRangeX()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L357"
+    },
+    {
+      "id": "structs_voxelarray_isinrangey",
+      "label": "IsInRangeY()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L360"
+    },
+    {
+      "id": "structs_voxelarray_isinrangez",
+      "label": "IsInRangeZ()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L363"
+    },
+    {
+      "id": "structs_voxelarray_getxpositionatindex",
+      "label": "GetXPositionAtIndex()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L367"
+    },
+    {
+      "id": "structs_voxelarray_getypositionatindex",
+      "label": "GetYPositionAtIndex()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L370"
+    },
+    {
+      "id": "structs_voxelarray_getzpositionatindex",
+      "label": "GetZPositionAtIndex()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L373"
+    },
+    {
+      "id": "structs_voxelarray_compositevoxel",
+      "label": "CompositeVoxel()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L377"
+    },
+    {
+      "id": "structs_voxelarray_compositevoxelatindex",
+      "label": "CompositeVoxelAtIndex()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L386"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "cstring",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "future",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "cstdlib",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "voxelarray",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_voxelarray",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_voxelarray",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_voxelarray",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_cleararray",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_cleararraythreaded",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_setbb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_setbb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_getindex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L158",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_getvoxel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L162",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_setvoxel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_setvoxelatindex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_setvoxelatposition",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_getpositionatindex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L224",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_getxindexatposition",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L234",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_getyindexatposition",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L237",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_getzindexatposition",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L240",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_getsize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L299",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_setsize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L304",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_setsize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L324",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_getsize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L335",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_getx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L339",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_gety",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L342",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_getz",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L345",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_getresolution",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L349",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_getboundingbox",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L353",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_isinrangex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L357",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_isinrangey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L360",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_isinrangez",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L363",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_getxpositionatindex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L367",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_getypositionatindex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L370",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_getzpositionatindex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L373",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_compositevoxel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L377",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_structs_voxelarray_cpp",
+      "target": "structs_voxelarray_compositevoxelatindex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L386",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_voxelarray_voxelarray",
+      "target": "structs_voxelarray_cleararraythreaded",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_voxelarray_getvoxel",
+      "target": "structs_voxelarray_getindex",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L174",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_voxelarray_setvoxel",
+      "target": "structs_voxelarray_getindex",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_voxelarray_setvoxelatindex",
+      "target": "structs_voxelarray_getindex",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L200",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_voxelarray_setvoxelatposition",
+      "target": "structs_voxelarray_setvoxel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L220",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_voxelarray_compositevoxel",
+      "target": "structs_voxelarray_compositevoxelatindex",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L384",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_voxelarray_compositevoxelatindex",
+      "target": "structs_voxelarray_getvoxel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_voxelarray_compositevoxelatindex",
+      "target": "structs_voxelarray_setvoxel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L408",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "structs_voxelarray_voxelarray",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "structs_voxelarray_voxelarray",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "structs_voxelarray_voxelarray",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "structs_voxelarray_voxelarray",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "structs_voxelarray_voxelarray",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "structs_voxelarray_voxelarray",
+      "callee": "make_unique<VoxelType[]>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "structs_voxelarray_voxelarray",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L58"
+    },
+    {
+      "caller_nid": "structs_voxelarray_voxelarray",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "structs_voxelarray_voxelarray",
+      "callee": "abs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "structs_voxelarray_voxelarray",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "structs_voxelarray_voxelarray",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "structs_voxelarray_voxelarray",
+      "callee": "malloc",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "structs_voxelarray_voxelarray",
+      "callee": "unique_ptr<VoxelType[]>",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "structs_voxelarray_voxelarray",
+      "callee": "thread::hardware_concurrency",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "structs_voxelarray_cleararray",
+      "callee": "memset",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "structs_voxelarray_cleararray",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "structs_voxelarray_cleararraythreaded",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L117"
+    },
+    {
+      "caller_nid": "structs_voxelarray_cleararraythreaded",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "structs_voxelarray_cleararraythreaded",
+      "callee": "async",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "structs_voxelarray_cleararraythreaded",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "structs_voxelarray_cleararraythreaded",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setbb",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L136"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setbb",
+      "callee": "GetVoxelSize",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L136"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setbb",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L153"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setbb",
+      "callee": "GetVoxelSize",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L153"
+    },
+    {
+      "caller_nid": "structs_voxelarray_getvoxel",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L176"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setvoxel",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L190"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setvoxel",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L190"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setvoxel",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L191"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setvoxel",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L191"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setvoxel",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L191"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setvoxel",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L191"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setvoxel",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L192"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setvoxel",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L192"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setvoxel",
+      "callee": "out_of_range",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L193"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setvoxel",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L193"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setvoxelatposition",
+      "callee": "round",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L211"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setvoxelatposition",
+      "callee": "round",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L212"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setvoxelatposition",
+      "callee": "round",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L213"
+    },
+    {
+      "caller_nid": "structs_voxelarray_getpositionatindex",
+      "callee": "Vec3D",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L230"
+    },
+    {
+      "caller_nid": "structs_voxelarray_getxindexatposition",
+      "callee": "round",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L235"
+    },
+    {
+      "caller_nid": "structs_voxelarray_getyindexatposition",
+      "callee": "round",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L238"
+    },
+    {
+      "caller_nid": "structs_voxelarray_getzindexatposition",
+      "callee": "round",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L241"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setsize",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L310"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setsize",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L311"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setsize",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L311"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setsize",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L311"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setsize",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L311"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setsize",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L319"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setsize",
+      "callee": "SizeX",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L327"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setsize",
+      "callee": "SizeY",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L328"
+    },
+    {
+      "caller_nid": "structs_voxelarray_setsize",
+      "callee": "SizeZ",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L329"
+    },
+    {
+      "caller_nid": "structs_voxelarray_compositevoxel",
+      "callee": "round",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L379"
+    },
+    {
+      "caller_nid": "structs_voxelarray_compositevoxel",
+      "callee": "round",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L380"
+    },
+    {
+      "caller_nid": "structs_voxelarray_compositevoxel",
+      "callee": "round",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L381"
+    },
+    {
+      "caller_nid": "structs_voxelarray_compositevoxelatindex",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp",
+      "source_location": "L400"
+    }
+  ]
+}

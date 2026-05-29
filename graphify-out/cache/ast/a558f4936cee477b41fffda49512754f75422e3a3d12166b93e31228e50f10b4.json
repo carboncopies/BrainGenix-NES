@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {
+      "id": "source_renderer_bg_renderer_state_scene_cpp",
+      "label": "Scene.cpp",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/State/Scene.cpp",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_renderer_bg_renderer_state_scene_cpp",
+      "target": "scene",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/State/Scene.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

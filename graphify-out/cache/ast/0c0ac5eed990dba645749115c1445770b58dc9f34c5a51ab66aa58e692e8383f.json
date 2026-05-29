@@ -1,0 +1,120 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_ballandstick_bsmorphology_h",
+      "label": "BSMorphology.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "ballandstick_bsmorphology_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.h",
+      "source_location": "L30"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_h",
+      "target": "cassert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_h",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_h",
+      "target": "stdexcept",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.h",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.h",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_h",
+      "target": "box",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.h",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_h",
+      "target": "cylinder",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.h",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_h",
+      "target": "sphere",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.h",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_h",
+      "target": "vectools",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.h",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_h",
+      "target": "geometrycollection",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.h",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_h",
+      "target": "ballandstick_bsmorphology_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.h",
+      "source_location": "L30",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

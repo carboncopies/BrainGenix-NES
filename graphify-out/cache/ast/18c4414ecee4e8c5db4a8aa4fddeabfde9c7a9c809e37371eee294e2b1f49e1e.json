@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_updaters_patchclampadc_h",
+      "label": "PatchClampADC.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Updaters/PatchClampADC.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "updaters_patchclampadc_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Updaters/PatchClampADC.h",
+      "source_location": "L24"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_updaters_patchclampadc_h",
+      "target": "assert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Updaters/PatchClampADC.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_updaters_patchclampadc_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Updaters/PatchClampADC.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_updaters_patchclampadc_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Updaters/PatchClampADC.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_updaters_patchclampadc_h",
+      "target": "simulation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Updaters/PatchClampADC.h",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_updaters_patchclampadc_h",
+      "target": "patchclampadc",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Updaters/PatchClampADC.h",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_updaters_patchclampadc_h",
+      "target": "updaters_patchclampadc_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Updaters/PatchClampADC.h",
+      "source_location": "L24",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

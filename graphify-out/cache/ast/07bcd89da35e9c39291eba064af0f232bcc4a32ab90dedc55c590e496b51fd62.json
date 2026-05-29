@@ -1,0 +1,452 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_structs_recordingelectrode_cpp",
+      "label": "RecordingElectrode.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "structs_recordingelectrode_recordingelectrode",
+      "label": "RecordingElectrode()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L9"
+    },
+    {
+      "id": "structs_recordingelectrode_coordselectrodetosystem",
+      "label": "CoordsElectrodeToSystem()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L52"
+    },
+    {
+      "id": "structs_recordingelectrode_initsystemcoordsitelocations",
+      "label": "InitSystemCoordSiteLocations()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L57"
+    },
+    {
+      "id": "structs_recordingelectrode_initneuronreferencesanddistances",
+      "label": "InitNeuronReferencesAndDistances()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L64"
+    },
+    {
+      "id": "structs_recordingelectrode_initrecords",
+      "label": "InitRecords()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L80"
+    },
+    {
+      "id": "structs_recordingelectrode_addnoise",
+      "label": "AddNoise()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L86"
+    },
+    {
+      "id": "structs_recordingelectrode_electricfieldpotential",
+      "label": "ElectricFieldPotential()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L92"
+    },
+    {
+      "id": "structs_recordingelectrode_record",
+      "label": "Record()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L115"
+    },
+    {
+      "id": "structs_recordingelectrode_getrecording",
+      "label": "GetRecording()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L124"
+    },
+    {
+      "id": "structs_recordingelectrode_getrecordingjson",
+      "label": "GetRecordingJSON()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L132"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_structs_recordingelectrode_cpp",
+      "target": "recordingelectrode",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_recordingelectrode_cpp",
+      "target": "structs_recordingelectrode_recordingelectrode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_recordingelectrode_cpp",
+      "target": "structs_recordingelectrode_recordingelectrode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_recordingelectrode_cpp",
+      "target": "structs_recordingelectrode_recordingelectrode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_recordingelectrode_cpp",
+      "target": "structs_recordingelectrode_coordselectrodetosystem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_recordingelectrode_cpp",
+      "target": "structs_recordingelectrode_initsystemcoordsitelocations",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_recordingelectrode_cpp",
+      "target": "structs_recordingelectrode_initneuronreferencesanddistances",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_recordingelectrode_cpp",
+      "target": "structs_recordingelectrode_initrecords",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_recordingelectrode_cpp",
+      "target": "structs_recordingelectrode_addnoise",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_recordingelectrode_cpp",
+      "target": "structs_recordingelectrode_electricfieldpotential",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_recordingelectrode_cpp",
+      "target": "structs_recordingelectrode_record",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_recordingelectrode_cpp",
+      "target": "structs_recordingelectrode_getrecording",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_recordingelectrode_cpp",
+      "target": "structs_recordingelectrode_getrecordingjson",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_recordingelectrode_recordingelectrode",
+      "target": "structs_recordingelectrode_initsystemcoordsitelocations",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_recordingelectrode_recordingelectrode",
+      "target": "structs_recordingelectrode_initneuronreferencesanddistances",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_recordingelectrode_recordingelectrode",
+      "target": "structs_recordingelectrode_initrecords",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_recordingelectrode_initsystemcoordsitelocations",
+      "target": "structs_recordingelectrode_coordselectrodetosystem",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_recordingelectrode_electricfieldpotential",
+      "target": "structs_recordingelectrode_addnoise",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "structs_recordingelectrode_record",
+      "target": "structs_recordingelectrode_electricfieldpotential",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L119",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "structs_recordingelectrode_recordingelectrode",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_recordingelectrode",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_recordingelectrode",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_initsystemcoordsitelocations",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_initneuronreferencesanddistances",
+      "callee": "GetAllNeurons",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_initneuronreferencesanddistances",
+      "callee": "dynamic_pointer_cast<BallAndStick::BSNeuron>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_initneuronreferencesanddistances",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_initneuronreferencesanddistances",
+      "callee": "GetCellCenter",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L72"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_initneuronreferencesanddistances",
+      "callee": "Distance",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_initneuronreferencesanddistances",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_initneuronreferencesanddistances",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_initrecords",
+      "callee": "clear",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_initrecords",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L82"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_initrecords",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_initrecords",
+      "callee": "vector<float>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_addnoise",
+      "callee": "rand",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_electricfieldpotential",
+      "callee": "overflow_error",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_electricfieldpotential",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L96"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_electricfieldpotential",
+      "callee": "out_of_range",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_electricfieldpotential",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L102"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_electricfieldpotential",
+      "callee": "dynamic_pointer_cast<BG::NES::Simulator::BallAndStick::BSNeuron>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L103"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_record",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_record",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L117"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_record",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L118"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_record",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_getrecordingjson",
+      "callee": "json::array",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L135"
+    },
+    {
+      "caller_nid": "structs_recordingelectrode_getrecordingjson",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Structs/RecordingElectrode.cpp",
+      "source_location": "L136"
+    }
+  ]
+}

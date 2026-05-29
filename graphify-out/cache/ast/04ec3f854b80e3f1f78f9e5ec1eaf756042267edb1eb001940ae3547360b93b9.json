@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_structs_syntrquantalrelease_h",
+      "label": "SynTrQuantalRelease.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "structs_syntrquantalrelease_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.h",
+      "source_location": "L16"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_structs_syntrquantalrelease_h",
+      "target": "cassert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.h",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_syntrquantalrelease_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_syntrquantalrelease_h",
+      "target": "structs_syntrquantalrelease_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SynTrQuantalRelease.h",
+      "source_location": "L16",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

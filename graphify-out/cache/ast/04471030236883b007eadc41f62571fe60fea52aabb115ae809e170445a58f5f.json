@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_structs_patchclampdac_cpp",
+      "label": "PatchClampDAC.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/PatchClampDAC.cpp",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_structs_patchclampdac_cpp",
+      "target": "patchclampdac",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/PatchClampDAC.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

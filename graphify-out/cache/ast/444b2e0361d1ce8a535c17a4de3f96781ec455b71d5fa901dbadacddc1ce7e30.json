@@ -1,0 +1,200 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_rpc_modelrpcinterface_h",
+      "label": "ModelRPCInterface.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "rpc_modelrpcinterface_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L39"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "atomic",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "thread",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "mutex",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "chrono",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "assert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "simulation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "sphere",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "cylinder",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "box",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "rpcmanager",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "rpchandlerhelper",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "enginecontroller",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "logger",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_rpc_modelrpcinterface_h",
+      "target": "rpc_modelrpcinterface_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/RPC/ModelRPCInterface.h",
+      "source_location": "L39",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

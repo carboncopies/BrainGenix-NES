@@ -1,0 +1,120 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_geometries_wedge_h",
+      "label": "Wedge.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Wedge.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "geometries_wedge_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Wedge.h",
+      "source_location": "L28"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_geometries_wedge_h",
+      "target": "cmath",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Wedge.h",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_wedge_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Wedge.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_wedge_h",
+      "target": "tuple",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Wedge.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_wedge_h",
+      "target": "mat3x3",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Wedge.h",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_wedge_h",
+      "target": "geometry",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Wedge.h",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_wedge_h",
+      "target": "vectools",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Wedge.h",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_wedge_h",
+      "target": "voxelarray",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Wedge.h",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_wedge_h",
+      "target": "cavoxelarray",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Wedge.h",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_wedge_h",
+      "target": "worldinfo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Wedge.h",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_wedge_h",
+      "target": "geometries_wedge_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Wedge.h",
+      "source_location": "L28",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

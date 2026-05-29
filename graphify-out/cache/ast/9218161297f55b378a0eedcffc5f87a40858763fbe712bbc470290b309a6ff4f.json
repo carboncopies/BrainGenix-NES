@@ -1,0 +1,179 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_visualizer_visualizer_cpp",
+      "label": "Visualizer.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "visualizer_visualizer_vscreatedirectoryrecursive",
+      "label": "VSCreateDirectoryRecursive()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L17"
+    },
+    {
+      "id": "visualizer_visualizer_visualizesimulation",
+      "label": "VisualizeSimulation()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L35"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_visualizer_visualizer_cpp",
+      "target": "visualizer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizer_cpp",
+      "target": "visualizer_visualizer_vscreatedirectoryrecursive",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_visualizer_cpp",
+      "target": "visualizer_visualizer_visualizesimulation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "visualizer_visualizer_visualizesimulation",
+      "target": "visualizer_visualizer_vscreatedirectoryrecursive",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L65",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "visualizer_visualizer_vscreatedirectoryrecursive",
+      "callee": "clear",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "visualizer_visualizer_vscreatedirectoryrecursive",
+      "callee": "filesystem::create_directories",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "visualizer_visualizer_vscreatedirectoryrecursive",
+      "callee": "filesystem::exists",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "visualizer_visualizer_vscreatedirectoryrecursive",
+      "callee": "clear",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L24"
+    },
+    {
+      "caller_nid": "visualizer_visualizer_visualizesimulation",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "visualizer_visualizer_visualizesimulation",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "visualizer_visualizer_visualizesimulation",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "visualizer_visualizer_visualizesimulation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "visualizer_visualizer_visualizesimulation",
+      "callee": "ResetScene",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "visualizer_visualizer_visualizesimulation",
+      "callee": "BuildMeshFromSimulation",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "visualizer_visualizer_visualizesimulation",
+      "callee": "BuildMeshFromElectrodes",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "visualizer_visualizer_visualizesimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "visualizer_visualizer_visualizesimulation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "visualizer_visualizer_visualizesimulation",
+      "callee": "message",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "visualizer_visualizer_visualizesimulation",
+      "callee": "RenderVisualization",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "visualizer_visualizer_visualizesimulation",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/Visualizer.cpp",
+      "source_location": "L69"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "source_renderer_bg_renderer_scenegraph_camerahelpers_h",
+      "label": "CameraHelpers.h",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "scenegraph_camerahelpers_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.h",
+      "source_location": "L46"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_renderer_bg_renderer_scenegraph_camerahelpers_h",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.h",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_scenegraph_camerahelpers_h",
+      "target": "assert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.h",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_scenegraph_camerahelpers_h",
+      "target": "all",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.h",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_scenegraph_camerahelpers_h",
+      "target": "logger",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.h",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_scenegraph_camerahelpers_h",
+      "target": "mathhelpers",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.h",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "source_renderer_bg_renderer_scenegraph_camerahelpers_h",
+      "target": "scenegraph_camerahelpers_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/CameraHelpers.h",
+      "source_location": "L46",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

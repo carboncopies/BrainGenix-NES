@@ -1,0 +1,314 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_ballandstick_bsmorphology_test_cpp",
+      "label": "BSMorphology.test.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "ballandstick_bsmorphology_test_bsmorphologytest",
+      "label": "BSMorphologyTest",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L22"
+    },
+    {
+      "id": "test",
+      "label": "Test",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "ballandstick_bsmorphology_test_bsmorphologytest_collection",
+      "label": "Collection",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L23"
+    },
+    {
+      "id": "ballandstick_bsmorphology_test_bsmorphologytest_tol",
+      "label": "tol",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L25"
+    },
+    {
+      "id": "ballandstick_bsmorphology_test_bsmorphologytest_setup",
+      "label": ".SetUp()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L27"
+    },
+    {
+      "id": "ballandstick_bsmorphology_test_bsmorphologytest_teardown",
+      "label": ".TearDown()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L29"
+    },
+    {
+      "id": "ballandstick_bsmorphology_test_test_f",
+      "label": "TEST_F()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L32"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_test_cpp",
+      "target": "gtest",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_test_cpp",
+      "target": "bsmorphology",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_test_cpp",
+      "target": "ballandstick_bsmorphology_test_bsmorphologytest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsmorphology_test_bsmorphologytest",
+      "target": "test",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsmorphology_test_bsmorphologytest",
+      "target": "ballandstick_bsmorphology_test_bsmorphologytest_collection",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "ballandstick_bsmorphology_test_bsmorphologytest",
+      "target": "ballandstick_bsmorphology_test_bsmorphologytest_tol",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "ballandstick_bsmorphology_test_bsmorphologytest",
+      "target": "ballandstick_bsmorphology_test_bsmorphologytest_setup",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "ballandstick_bsmorphology_test_bsmorphologytest",
+      "target": "ballandstick_bsmorphology_test_bsmorphologytest_teardown",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_test_cpp",
+      "target": "ballandstick_bsmorphology_test_test_f",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_test_cpp",
+      "target": "ballandstick_bsmorphology_test_test_f",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsmorphology_test_cpp",
+      "target": "ballandstick_bsmorphology_test_test_f",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L60",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "CreateBSSoma",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_NEAR",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_NEAR",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_NEAR",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "CreateBSAxon",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_NEAR",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_NEAR",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_NEAR",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_NEAR",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_NEAR",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_NEAR",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "NES::Simulator::BallAndStick::CreateBSReceptor",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "ballandstick_bsmorphology_test_test_f",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/BallAndStick/BSMorphology.test.cpp",
+      "source_location": "L69"
+    }
+  ]
+}

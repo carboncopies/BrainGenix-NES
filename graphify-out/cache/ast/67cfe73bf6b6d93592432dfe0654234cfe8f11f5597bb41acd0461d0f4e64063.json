@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_lifcompartmental_readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "Source/Core/Simulator/LIFCompartmental/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "lifcompartmental_readme_lifcompartmental",
+      "label": "LIFCompartmental",
+      "file_type": "document",
+      "source_file": "Source/Core/Simulator/LIFCompartmental/README.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_lifcompartmental_readme_md",
+      "target": "lifcompartmental_readme_lifcompartmental",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/LIFCompartmental/README.md",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

@@ -1,0 +1,371 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_geometries_geometrycollection_h",
+      "label": "GeometryCollection.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "geometries_geometrycollection_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L23"
+    },
+    {
+      "id": "geometries_geometrycollection_issphere",
+      "label": "IsSphere()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L132"
+    },
+    {
+      "id": "geometries_geometrycollection_iscylinder",
+      "label": "IsCylinder()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L133"
+    },
+    {
+      "id": "geometries_geometrycollection_isbox",
+      "label": "IsBox()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L134"
+    },
+    {
+      "id": "geometries_geometrycollection_getgeometry",
+      "label": "GetGeometry()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L146"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_geometries_geometrycollection_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_geometrycollection_h",
+      "target": "variant",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_geometrycollection_h",
+      "target": "sphere",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_geometrycollection_h",
+      "target": "cylinder",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_geometrycollection_h",
+      "target": "box",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_geometrycollection_h",
+      "target": "geometries_geometrycollection_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_geometrycollection_h",
+      "target": "geometries_geometrycollection_issphere",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_geometrycollection_h",
+      "target": "geometries_geometrycollection_iscylinder",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_geometrycollection_h",
+      "target": "geometries_geometrycollection_isbox",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_geometries_geometrycollection_h",
+      "target": "geometries_geometrycollection_getgeometry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L146",
+      "weight": 1.0
+    },
+    {
+      "source": "geometries_geometrycollection_getgeometry",
+      "target": "geometries_geometrycollection_issphere",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "geometries_geometrycollection_getgeometry",
+      "target": "geometries_geometrycollection_iscylinder",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "geometries_geometrycollection_getgeometry",
+      "target": "geometries_geometrycollection_isbox",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L151",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "AddSphere",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "NextAvailableID",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L100"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L101"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "GetSphere",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L102"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "AddCylinder",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L104"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "NextAvailableID",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L106"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "GetCylinder",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L108"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "AddBox",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L110"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "NextAvailableID",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L112"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L113"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "GetBox",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L114"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "AddBox",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "NextAvailableID",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L118"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "GetBox",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "AddBox",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "NextAvailableID",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "GetBox",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L126"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_bg",
+      "callee": "at",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_issphere",
+      "callee": "GetShapeType",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L132"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_iscylinder",
+      "callee": "GetShapeType",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_isbox",
+      "callee": "GetShapeType",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_getgeometry",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L147"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_getgeometry",
+      "callee": "GetSphere",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L149"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_getgeometry",
+      "callee": "GetCylinder",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L150"
+    },
+    {
+      "caller_nid": "geometries_geometrycollection_getgeometry",
+      "callee": "GetBox",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Geometries/GeometryCollection.h",
+      "source_location": "L151"
+    }
+  ]
+}

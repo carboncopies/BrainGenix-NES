@@ -1,0 +1,235 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_visualizer_meshrenderer_cpp",
+      "label": "MeshRenderer.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "visualizer_meshrenderer_rendervisualization",
+      "label": "RenderVisualization()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L32"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_visualizer_meshrenderer_cpp",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_meshrenderer_cpp",
+      "target": "stb_image",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_meshrenderer_cpp",
+      "target": "stb_image_write",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_meshrenderer_cpp",
+      "target": "meshrenderer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_meshrenderer_cpp",
+      "target": "processingtask",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_meshrenderer_cpp",
+      "target": "visualizer_meshrenderer_rendervisualization",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L32",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L34"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "clear",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "RenderImage",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "SetCameraFOV",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "SetResolution",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L58"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "UpdateCameraPosition",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "make_unique<Visualizer::ProcessingTask>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "RenderImage",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "QueueEncodeOperation",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "visualizer_meshrenderer_rendervisualization",
+      "callee": "chrono::milliseconds",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/MeshRenderer.cpp",
+      "source_location": "L79"
+    }
+  ]
+}

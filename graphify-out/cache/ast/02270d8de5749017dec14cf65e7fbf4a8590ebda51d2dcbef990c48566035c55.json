@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_ca_voxelsubsystem_shapetovoxel_calciumconcentration_h",
+      "label": "CalciumConcentration.h",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "shapetovoxel_calciumconcentration_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.h",
+      "source_location": "L47"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_shapetovoxel_calciumconcentration_h",
+      "target": "logger",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.h",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_shapetovoxel_calciumconcentration_h",
+      "target": "simulation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.h",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_shapetovoxel_calciumconcentration_h",
+      "target": "shapetovoxel_calciumconcentration_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.h",
+      "source_location": "L47",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

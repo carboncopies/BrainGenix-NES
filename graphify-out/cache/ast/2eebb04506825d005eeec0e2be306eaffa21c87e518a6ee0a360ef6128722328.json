@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_debughelpers_meshconversionhelpers_h",
+      "label": "MeshConversionHelpers.h",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/DebugHelpers/MeshConversionHelpers.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "debughelpers_meshconversionhelpers_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/DebugHelpers/MeshConversionHelpers.h",
+      "source_location": "L26"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_debughelpers_meshconversionhelpers_h",
+      "target": "assert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/DebugHelpers/MeshConversionHelpers.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_debughelpers_meshconversionhelpers_h",
+      "target": "all",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/DebugHelpers/MeshConversionHelpers.h",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_debughelpers_meshconversionhelpers_h",
+      "target": "vectools",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/DebugHelpers/MeshConversionHelpers.h",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_debughelpers_meshconversionhelpers_h",
+      "target": "debughelpers_meshconversionhelpers_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/DebugHelpers/MeshConversionHelpers.h",
+      "source_location": "L26",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

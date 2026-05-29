@@ -1,0 +1,3041 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_vsdarpcinterface_cpp",
+      "label": "VSDARPCInterface.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "label": "VSDARPCInterface()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L33"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdaeminitialize",
+      "label": "VSDAEMInitialize()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L73"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "label": "VSDAEMSetupMicroscope()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L91"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "label": "VSDAEMDefineScanRegion()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L175"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "label": "VSDAEMQueueRenderOperation()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L224"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdaemgetrenderstatus",
+      "label": "VSDAEMGetRenderStatus()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L258"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "label": "VSDAEMGetImageStack()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L288"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "label": "VSDAEMGetIndexData()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L327"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "label": "VSDAEMPrepareNeuroglancerDataset()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L399"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "label": "VSDAEMGetDatasetHandle()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L458"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "label": "VSDAEMGetNeuroglancerDatasetURL()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L511"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdagetimage",
+      "label": "VSDAGetImage()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L566"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdacainitialize",
+      "label": "VSDACAInitialize()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L639"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "label": "VSDACASetupMicroscope()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L657"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "label": "VSDACADefineScanRegion()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L693"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdacaqueuerenderoperation",
+      "label": "VSDACAQueueRenderOperation()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L745"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdacagetrenderstatus",
+      "label": "VSDACAGetRenderStatus()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L769"
+    },
+    {
+      "id": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "label": "VSDACAGetImageStack()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L793"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "fstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "cstdint",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "base64",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "compress",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "decompress",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "utils",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "rpchandlerhelper",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsdarpcinterface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "neuroglancerconverter",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdaeminitialize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L175",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L224",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdaemgetrenderstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L258",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L288",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L327",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L399",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L458",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L511",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdagetimage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L566",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdacainitialize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L639",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L657",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L693",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdacaqueuerenderoperation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L745",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdacagetrenderstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L769",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_vsdarpcinterface_cpp",
+      "target": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L793",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L58"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L58"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdarpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaeminitialize",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaeminitialize",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaeminitialize",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaeminitialize",
+      "callee": "VSDA_EM_Initialize",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaeminitialize",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L89"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L96"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L103"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L104"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L105"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L106"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L108"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L109"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L110"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L111"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L112"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L113"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L114"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L115"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L117"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L118"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L121"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L123"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L126"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L132"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L135"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L138"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L139"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L140"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L141"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L142"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L143"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L144"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L145"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L146"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L147"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L148"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L149"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L151"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L152"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "GetParBool",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L153"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L159"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L162"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L163"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "VSDA_EM_SetupMicroscope",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L166"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemsetupmicroscope",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L172"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L179"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L180"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L182"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "GetParVecFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L184"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "GetParVecFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L185"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "GetParVecFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L186"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L187"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L187"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L187"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L189"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L190"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L193"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L193"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L193"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L194"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "VSDA_EM_DefineScanRegion",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L213"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemdefinescanregion",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L220"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L228"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L229"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L231"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L233"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L234"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L234"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L234"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L236"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L237"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L242"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L243"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L243"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L243"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L246"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "VSDA_EM_QueueRenderOperation",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L250"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemqueuerenderoperation",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L255"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetrenderstatus",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L263"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetrenderstatus",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L264"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetrenderstatus",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L266"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetrenderstatus",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L285"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L291"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L292"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L294"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L296"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L297"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L297"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L297"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L299"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L300"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L305"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L306"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L306"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L306"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L309"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L319"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L319"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L319"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L319"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L319"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetimagestack",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L323"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L330"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L331"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L333"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L335"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L336"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L336"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L336"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L338"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L339"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L344"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L345"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L345"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L345"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L348"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L354"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L354"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L355"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L355"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L361"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L372"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L391"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L391"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L391"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L391"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L391"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetindexdata",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L395"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L402"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L403"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L405"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L407"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L408"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L408"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L408"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L410"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L411"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L416"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L417"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L417"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L417"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L420"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L426"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L426"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L427"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L427"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L432"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L432"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L433"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L451"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L451"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L451"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L451"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L451"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemprepareneuroglancerdataset",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L454"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L461"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L462"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L464"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L466"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L467"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L467"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L467"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L469"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L470"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L475"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L476"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L476"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L476"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L479"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L485"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L485"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L486"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L486"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L491"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L491"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L492"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L504"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L504"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L504"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetdatasethandle",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L507"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L514"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L515"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L517"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L519"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L520"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L520"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L520"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L522"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L523"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L528"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L529"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L529"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L529"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L532"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L538"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L538"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L539"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L539"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "GenerateNeuroglancerURL",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L554"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L557"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L557"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L557"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L557"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L557"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdaemgetneuroglancerdataseturl",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L562"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L569"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L570"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "GetParString",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L574"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L575"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L576"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L581"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L583"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "erase",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L584"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L584"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L585"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L590"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "good",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L593"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "open",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L595"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L595"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "good",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L596"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "good",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L599"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "open",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L601"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L601"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "good",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L602"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L603"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L606"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "good",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L612"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "rdbuf",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L614"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "str",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L615"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "close",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L616"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "decompress",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L620"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "data",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L620"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L620"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "base64_encode",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L627"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L627"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L627"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdagetimage",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L634"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacainitialize",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L643"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacainitialize",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L644"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacainitialize",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L646"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacainitialize",
+      "callee": "VSDA::Calcium::VSDA_CA_Initialize",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L649"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacainitialize",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L655"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L661"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L662"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "GetParVecInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L667"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "GetParString",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L668"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L669"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L670"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L671"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L672"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L673"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L674"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L675"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L676"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L677"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L678"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L679"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "GetParFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L680"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L681"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L682"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "VSDA::Calcium::VSDA_CA_SetupMicroscope",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L685"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L685"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "Init",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L687"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L687"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L687"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L687"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacasetupmicroscope",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L690"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L698"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L699"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L701"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "GetParVecFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L704"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "GetParVecFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L705"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "GetParVecFloat",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L706"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L707"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L707"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L707"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L709"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L710"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L713"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L713"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L713"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L714"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "VSDA::Calcium::VSDA_CA_DefineScanRegion",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L734"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacadefinescanregion",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L741"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacaqueuerenderoperation",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L749"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacaqueuerenderoperation",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L750"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacaqueuerenderoperation",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L752"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacaqueuerenderoperation",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L754"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacaqueuerenderoperation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L755"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacaqueuerenderoperation",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L755"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacaqueuerenderoperation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L755"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacaqueuerenderoperation",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L757"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacaqueuerenderoperation",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L758"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacaqueuerenderoperation",
+      "callee": "VSDA::Calcium::VSDA_CA_QueueRenderOperation",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L761"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacaqueuerenderoperation",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L766"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetrenderstatus",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L774"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetrenderstatus",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L775"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetrenderstatus",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L777"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetrenderstatus",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L790"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L796"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L797"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L799"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "GetParInt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L801"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L802"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L802"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L802"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L804"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L805"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L810"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L811"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L811"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L811"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L814"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L824"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L824"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L824"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L824"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L824"
+    },
+    {
+      "caller_nid": "vsda_vsdarpcinterface_vsdacagetimagestack",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/VSDARPCInterface.cpp",
+      "source_location": "L828"
+    }
+  ]
+}

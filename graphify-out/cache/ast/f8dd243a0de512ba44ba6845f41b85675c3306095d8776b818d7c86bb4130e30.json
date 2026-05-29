@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_ca_voxelsubsystem_imageprocessorpool_processingtask_cpp",
+      "label": "ProcessingTask.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_imageprocessorpool_processingtask_cpp",
+      "target": "processingtask",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/ImageProcessorPool/ProcessingTask.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

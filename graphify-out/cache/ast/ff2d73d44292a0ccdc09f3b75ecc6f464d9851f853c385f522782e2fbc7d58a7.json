@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "benchmarking_readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "Benchmarking/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "benchmarking_readme_benchmarking_results",
+      "label": "Benchmarking Results",
+      "file_type": "document",
+      "source_file": "Benchmarking/README.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "benchmarking_readme_md",
+      "target": "benchmarking_readme_benchmarking_results",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Benchmarking/README.md",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

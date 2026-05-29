@@ -1,0 +1,56 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_rpc_staticroutes_cpp",
+      "label": "StaticRoutes.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/StaticRoutes.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "rpc_staticroutes_getapiversion",
+      "label": "GetAPIVersion()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/StaticRoutes.cpp",
+      "source_location": "L9"
+    },
+    {
+      "id": "rpc_staticroutes_echo",
+      "label": "Echo()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/StaticRoutes.cpp",
+      "source_location": "L13"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_rpc_staticroutes_cpp",
+      "target": "staticroutes",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/StaticRoutes.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_staticroutes_cpp",
+      "target": "rpc_staticroutes_getapiversion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/StaticRoutes.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_staticroutes_cpp",
+      "target": "rpc_staticroutes_echo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/StaticRoutes.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

@@ -1,0 +1,221 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_meshgenerator_marchingcubes_cpp",
+      "label": "MarchingCubes.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "meshgenerator_marchingcubes_interpolatevertex",
+      "label": "InterpolateVertex()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L8"
+    },
+    {
+      "id": "meshgenerator_marchingcubes_generatemeshes",
+      "label": "GenerateMeshes()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L21"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_meshgenerator_marchingcubes_cpp",
+      "target": "marchingcubes",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_marchingcubes_cpp",
+      "target": "meshgenerator_marchingcubes_interpolatevertex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_marchingcubes_cpp",
+      "target": "meshgenerator_marchingcubes_generatemeshes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "meshgenerator_marchingcubes_generatemeshes",
+      "target": "meshgenerator_marchingcubes_interpolatevertex",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L68",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "meshgenerator_marchingcubes_interpolatevertex",
+      "callee": "abs",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L9"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "GetVoxel",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "GetVoxel",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "GetVoxel",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "GetVoxel",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "GetVoxel",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "GetVoxel",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "GetVoxel",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "GetVoxel",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "GetPositionAtIndex",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "GetPositionAtIndex",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "GetPositionAtIndex",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "GetPositionAtIndex",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L82"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "GetPositionAtIndex",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "GetPositionAtIndex",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L103"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L104"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L105"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L106"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L108"
+    },
+    {
+      "caller_nid": "meshgenerator_marchingcubes_generatemeshes",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.cpp",
+      "source_location": "L109"
+    }
+  ]
+}

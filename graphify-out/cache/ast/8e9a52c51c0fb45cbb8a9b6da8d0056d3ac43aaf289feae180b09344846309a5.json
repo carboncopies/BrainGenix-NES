@@ -1,0 +1,708 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "label": "NetmorphRPCInterface.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "netmorph_netmorphrpcinterface_netmorphrpcinterface",
+      "label": "NetmorphRPCInterface()",
+      "file_type": "code",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L21"
+    },
+    {
+      "id": "netmorph_netmorphrpcinterface_netmorphsetmodelfile",
+      "label": "NetmorphSetModelfile()",
+      "file_type": "code",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L52"
+    },
+    {
+      "id": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "label": "NetmorphStartSimulation()",
+      "file_type": "code",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L77"
+    },
+    {
+      "id": "netmorph_netmorphrpcinterface_netmorphgetstatus",
+      "label": "NetmorphGetStatus()",
+      "file_type": "code",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L142"
+    },
+    {
+      "id": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "label": "NetmorphGetFile()",
+      "file_type": "code",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L182"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "fstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "thread",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "mutex",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "chrono",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "netmorphrpcinterface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "apistatuscode",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "base64",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "uuid",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "netmorphmanagerthread",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "netmorph_netmorphrpcinterface_netmorphrpcinterface",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "netmorph_netmorphrpcinterface_netmorphrpcinterface",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "netmorph_netmorphrpcinterface_netmorphsetmodelfile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "netmorph_netmorphrpcinterface_netmorphgetstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_netmorph_netmorphrpcinterface_cpp",
+      "target": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L182",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphrpcinterface",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphrpcinterface",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphrpcinterface",
+      "callee": "AddRoute",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphrpcinterface",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphsetmodelfile",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphsetmodelfile",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphsetmodelfile",
+      "callee": "GetParString",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphsetmodelfile",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphsetmodelfile",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphsetmodelfile",
+      "callee": "ResponseWithID",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "GetParString",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L85"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L85"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "GetParString",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L100"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "clear",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L110"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "filesystem::create_directories",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L111"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "filesystem::exists",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L112"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "clear",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L114"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L123"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "thread",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "GetStatus",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphstartsimulation",
+      "callee": "ResponseAndStoreRequest",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetstatus",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L146"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetstatus",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L147"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetstatus",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L152"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetstatus",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L154"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetstatus",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L156"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetstatus",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L163"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetstatus",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L165"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L185"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L186"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "GetParString",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L190"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "HasError",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L191"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L192"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L195"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "get_outputdirectory",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L195"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "Sim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L195"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L199"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "good",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L200"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L201"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "ErrResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L202"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "rdbuf",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L206"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "close",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L207"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "base64_encode",
+      "is_member_call": false,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L210"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L210"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L210"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L210"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L210"
+    },
+    {
+      "caller_nid": "netmorph_netmorphrpcinterface_netmorphgetfile",
+      "callee": "StringResponse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Netmorph/NetmorphRPCInterface.cpp",
+      "source_location": "L212"
+    }
+  ]
+}

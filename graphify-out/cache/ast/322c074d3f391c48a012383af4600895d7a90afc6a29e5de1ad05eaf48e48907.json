@@ -1,0 +1,419 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_ca_carenderer_cpp",
+      "label": "CaRenderer.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "ca_carenderer_gettotalsystemmemory",
+      "label": "getTotalSystemMemory()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L36"
+    },
+    {
+      "id": "ca_carenderer_executecasubrenderoperations",
+      "label": "ExecuteCaSubRenderOperations()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L45"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_ca_carenderer_cpp",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_carenderer_cpp",
+      "target": "chrono",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_carenderer_cpp",
+      "target": "algorithm",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_carenderer_cpp",
+      "target": "unistd",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_carenderer_cpp",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_carenderer_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_carenderer_cpp",
+      "target": "assert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_carenderer_cpp",
+      "target": "carenderer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_carenderer_cpp",
+      "target": "casubregionrenderer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_carenderer_cpp",
+      "target": "cavoxelarraygenerator",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_carenderer_cpp",
+      "target": "cavoxelarrayrenderer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_carenderer_cpp",
+      "target": "ca_carenderer_gettotalsystemmemory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_carenderer_cpp",
+      "target": "ca_carenderer_executecasubrenderoperations",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "ca_carenderer_executecasubrenderoperations",
+      "target": "ca_carenderer_gettotalsystemmemory",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L74",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "ca_carenderer_gettotalsystemmemory",
+      "callee": "sysconf",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "ca_carenderer_gettotalsystemmemory",
+      "callee": "sysconf",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "cbrt",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "round",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "round",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L85"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "ceil",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L101"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "SizeX",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L101"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "ceil",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L102"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "SizeX",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L102"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "floor",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "floor",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L108"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "ceil",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "SizeX",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "ceil",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L123"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "SizeY",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L123"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "ceil",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "SizeZ",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L157"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L158"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L159"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L185"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "ToString",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L185"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L187"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L194"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L200"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L200"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L200"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L201"
+    },
+    {
+      "caller_nid": "ca_carenderer_executecasubrenderoperations",
+      "callee": "CaRenderSubRegion",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Ca/CaRenderer.cpp",
+      "source_location": "L202"
+    }
+  ]
+}

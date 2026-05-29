@@ -1,0 +1,339 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_seung_compress_segmentation_cc",
+      "label": "seung_compress_segmentation.cc",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "imageprocessorpool_seung_compress_segmentation_hashvector",
+      "label": "HashVector",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L27"
+    },
+    {
+      "id": "imageprocessorpool_seung_compress_segmentation_operator",
+      "label": "operator()()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L29"
+    },
+    {
+      "id": "imageprocessorpool_seung_compress_segmentation_writeblockheader",
+      "label": "WriteBlockHeader()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L45"
+    },
+    {
+      "id": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "label": "EncodeBlock()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L87"
+    },
+    {
+      "id": "imageprocessorpool_seung_compress_segmentation_compresschannel",
+      "label": "CompressChannel()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L207"
+    },
+    {
+      "id": "imageprocessorpool_seung_compress_segmentation_compresschannels",
+      "label": "CompressChannels()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L253"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_seung_compress_segmentation_cc",
+      "target": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_seung_compress_segmentation_h",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_seung_compress_segmentation_cc",
+      "target": "algorithm",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_seung_compress_segmentation_cc",
+      "target": "unordered_map",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_seung_compress_segmentation_cc",
+      "target": "imageprocessorpool_seung_compress_segmentation_hashvector",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_seung_compress_segmentation_cc",
+      "target": "imageprocessorpool_seung_compress_segmentation_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_seung_compress_segmentation_cc",
+      "target": "imageprocessorpool_seung_compress_segmentation_writeblockheader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_seung_compress_segmentation_cc",
+      "target": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_seung_compress_segmentation_cc",
+      "target": "imageprocessorpool_seung_compress_segmentation_compresschannel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_imageprocessorpool_seung_compress_segmentation_cc",
+      "target": "imageprocessorpool_seung_compress_segmentation_compresschannels",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L253",
+      "weight": 1.0
+    },
+    {
+      "source": "imageprocessorpool_seung_compress_segmentation_compresschannel",
+      "target": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L235",
+      "weight": 1.0
+    },
+    {
+      "source": "imageprocessorpool_seung_compress_segmentation_compresschannel",
+      "target": "imageprocessorpool_seung_compress_segmentation_writeblockheader",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L238",
+      "weight": 1.0
+    },
+    {
+      "source": "imageprocessorpool_seung_compress_segmentation_compresschannels",
+      "target": "imageprocessorpool_seung_compress_segmentation_compresschannel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L260",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_operator",
+      "callee": "hasher",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "emplace",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L121"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "sort",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "begin",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L135"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L141"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L143"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L151"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L156"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L157"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L159"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "resize",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L168"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "data",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L169"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "at",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L179"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "data",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L195"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_encodeblock",
+      "callee": "emplace",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L202"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_compresschannel",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L212"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_compresschannel",
+      "callee": "resize",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L219"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_compresschannel",
+      "callee": "min",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L230"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_compresschannel",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L233"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_compresschannels",
+      "callee": "resize",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L257"
+    },
+    {
+      "caller_nid": "imageprocessorpool_seung_compress_segmentation_compresschannels",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/seung_compress_segmentation.cc",
+      "source_location": "L259"
+    }
+  ]
+}

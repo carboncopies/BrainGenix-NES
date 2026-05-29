@@ -1,0 +1,120 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_voxelsubsystem_legacyslicegenerator_h",
+      "label": "LegacySliceGenerator.h",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "voxelsubsystem_legacyslicegenerator_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h",
+      "source_location": "L52"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_legacyslicegenerator_h",
+      "target": "filesystem",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_legacyslicegenerator_h",
+      "target": "simulation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_legacyslicegenerator_h",
+      "target": "microscopeparameters",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_legacyslicegenerator_h",
+      "target": "voxelarray",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_legacyslicegenerator_h",
+      "target": "interface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_legacyslicegenerator_h",
+      "target": "cube",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_legacyslicegenerator_h",
+      "target": "image",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_legacyslicegenerator_h",
+      "target": "encoderpool",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_legacyslicegenerator_h",
+      "target": "logger",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_voxelsubsystem_legacyslicegenerator_h",
+      "target": "voxelsubsystem_legacyslicegenerator_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/VoxelSubsystem/LegacySliceGenerator.h",
+      "source_location": "L52",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

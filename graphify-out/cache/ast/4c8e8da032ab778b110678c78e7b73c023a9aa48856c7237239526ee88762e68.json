@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "source_info_static_versioningsystem_readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "Source/Info/Static/VersioningSystem/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "versioningsystem_readme_about",
+      "label": "About",
+      "file_type": "document",
+      "source_file": "Source/Info/Static/VersioningSystem/README.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_info_static_versioningsystem_readme_md",
+      "target": "versioningsystem_readme_about",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Info/Static/VersioningSystem/README.md",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

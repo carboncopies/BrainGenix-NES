@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_rpc_staticroutes_h",
+      "label": "StaticRoutes.h",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/StaticRoutes.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "rpc_staticroutes_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/StaticRoutes.h",
+      "source_location": "L22"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_rpc_staticroutes_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/StaticRoutes.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_staticroutes_h",
+      "target": "version",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/StaticRoutes.h",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_staticroutes_h",
+      "target": "rpc_staticroutes_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/StaticRoutes.h",
+      "source_location": "L22",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

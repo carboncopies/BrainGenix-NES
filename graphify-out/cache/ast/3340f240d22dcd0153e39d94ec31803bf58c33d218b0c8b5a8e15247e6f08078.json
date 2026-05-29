@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_updaters_readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "Source/Core/Simulator/Updaters/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "updaters_readme_a_brief_note_about_how_simulations_are_run_and_how_they_are_created_modified",
+      "label": "A brief note about how simulations are run and how they are created / modified",
+      "file_type": "document",
+      "source_file": "Source/Core/Simulator/Updaters/README.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_updaters_readme_md",
+      "target": "updaters_readme_a_brief_note_about_how_simulations_are_run_and_how_they_are_created_modified",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Updaters/README.md",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

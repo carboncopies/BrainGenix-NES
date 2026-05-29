@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {
+      "id": "source_renderer_bg_renderer_scenegraph_renderdoc_app_h",
+      "label": "renderdoc_app.h",
+      "file_type": "code",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/renderdoc_app.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_renderer_bg_renderer_scenegraph_renderdoc_app_h",
+      "target": "stdint",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Renderer/BG/Renderer/SceneGraph/renderdoc_app.h",
+      "source_location": "L33",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

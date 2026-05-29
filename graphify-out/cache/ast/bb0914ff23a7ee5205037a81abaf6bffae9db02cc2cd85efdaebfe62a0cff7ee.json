@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_geometries_geometry_cpp",
+      "label": "Geometry.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Geometries/Geometry.cpp",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_geometries_geometry_cpp",
+      "target": "geometry",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Geometries/Geometry.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

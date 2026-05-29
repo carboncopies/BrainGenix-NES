@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {
+      "id": "source_info_static_versioningsystem_version_cpp",
+      "label": "Version.cpp",
+      "file_type": "code",
+      "source_file": "Source/Info/Static/VersioningSystem/Version.cpp",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_info_static_versioningsystem_version_cpp",
+      "target": "version",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Info/Static/VersioningSystem/Version.cpp",
+      "source_location": "L5",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

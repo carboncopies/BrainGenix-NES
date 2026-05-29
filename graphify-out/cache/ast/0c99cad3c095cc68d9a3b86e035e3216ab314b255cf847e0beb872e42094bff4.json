@@ -1,0 +1,287 @@
+{
+  "nodes": [
+    {
+      "id": "benchmarking_renderer_test2_py",
+      "label": "Test2.py",
+      "file_type": "code",
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "renderer_test2_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L10"
+    },
+    {
+      "id": "renderer_test2_gettime",
+      "label": "GetTime()",
+      "file_type": "code",
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L128"
+    }
+  ],
+  "edges": [
+    {
+      "source": "benchmarking_renderer_test2_py",
+      "target": "time",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "benchmarking_renderer_test2_py",
+      "target": "braingenix_nes",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "benchmarking_renderer_test2_py",
+      "target": "renderer_test2_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "benchmarking_renderer_test2_py",
+      "target": "renderer_test2_gettime",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "renderer_test2_gettime",
+      "target": "renderer_test2_main",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L131",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "Configuration",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L13"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "Client",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "IsReady",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "Configuration",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "CreateSimulation",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "Configuration",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "AddSphere",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "Configuration",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "AddBSCompartment",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "Configuration",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "AddBox",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "Configuration",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "AddBSCompartment",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "Configuration",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "AddBox",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "Configuration",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "AddBSCompartment",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "Configuration",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "AddBox",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "Configuration",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "AddBSCompartment",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "Configuration",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L111"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "AddVSDAEM",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "DefineScanRegion",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L121"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "QueueRenderOperation",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L123"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "WaitForRender",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "renderer_test2_main",
+      "callee": "SaveImageStack",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L126"
+    },
+    {
+      "caller_nid": "renderer_test2_gettime",
+      "callee": "time",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "renderer_test2_gettime",
+      "callee": "time",
+      "is_member_call": true,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "renderer_test2_gettime",
+      "callee": "print",
+      "is_member_call": false,
+      "source_file": "Benchmarking/Renderer/Test2.py",
+      "source_location": "L134"
+    }
+  ]
+}

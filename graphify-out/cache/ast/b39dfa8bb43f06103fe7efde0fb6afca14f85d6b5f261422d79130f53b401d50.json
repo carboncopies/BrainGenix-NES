@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_common_structs_worldinfo_h",
+      "label": "WorldInfo.h",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Common/Structs/WorldInfo.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "structs_worldinfo_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Common/Structs/WorldInfo.h",
+      "source_location": "L40"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_common_structs_worldinfo_h",
+      "target": "cstdint",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Common/Structs/WorldInfo.h",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_common_structs_worldinfo_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Common/Structs/WorldInfo.h",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_common_structs_worldinfo_h",
+      "target": "structs_worldinfo_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Common/Structs/WorldInfo.h",
+      "source_location": "L40",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

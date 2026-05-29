@@ -1,0 +1,109 @@
+{
+  "nodes": [
+    {
+      "id": "docs_doxygen_third_party_doxygen_awesome_css_include_mylibrary_subclass_example_hpp",
+      "label": "subclass-example.hpp",
+      "file_type": "code",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "mylibrary_subclass_example_subclassexample",
+      "label": "SubclassExample",
+      "file_type": "code",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp",
+      "source_location": "L8"
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "mylibrary_subclass_example_subclassexample_virtualfunc",
+      "label": "virtualfunc",
+      "file_type": "code",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp",
+      "source_location": "L15"
+    },
+    {
+      "id": "mylibrary_subclass_example_subclassexample_super_long_function_with_lots_of_parameters",
+      "label": ".super_long_function_with_lots_of_parameters()",
+      "file_type": "code",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp",
+      "source_location": "L17"
+    }
+  ],
+  "edges": [
+    {
+      "source": "docs_doxygen_third_party_doxygen_awesome_css_include_mylibrary_subclass_example_hpp",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_doxygen_third_party_doxygen_awesome_css_include_mylibrary_subclass_example_hpp",
+      "target": "docs_doxygen_third_party_doxygen_awesome_css_include_mylibrary_example_hpp",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_doxygen_third_party_doxygen_awesome_css_include_mylibrary_subclass_example_hpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_doxygen_third_party_doxygen_awesome_css_include_mylibrary_subclass_example_hpp",
+      "target": "mylibrary_subclass_example_subclassexample",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "mylibrary_subclass_example_subclassexample",
+      "target": "example",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "mylibrary_subclass_example_subclassexample",
+      "target": "mylibrary_subclass_example_subclassexample_virtualfunc",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "mylibrary_subclass_example_subclassexample",
+      "target": "mylibrary_subclass_example_subclassexample_super_long_function_with_lots_of_parameters",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp",
+      "source_location": "L17",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

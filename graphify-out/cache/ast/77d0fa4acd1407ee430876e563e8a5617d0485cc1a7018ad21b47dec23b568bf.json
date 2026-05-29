@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_structs_patchclampdac_h",
+      "label": "PatchClampDAC.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/PatchClampDAC.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "structs_patchclampdac_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/PatchClampDAC.h",
+      "source_location": "L22"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_structs_patchclampdac_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/PatchClampDAC.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_patchclampdac_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/PatchClampDAC.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_patchclampdac_h",
+      "target": "vectools",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/PatchClampDAC.h",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_patchclampdac_h",
+      "target": "structs_patchclampdac_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/PatchClampDAC.h",
+      "source_location": "L22",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

@@ -1,0 +1,110 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_ca_voxelsubsystem_casubregionrenderer_h",
+      "label": "CaSubRegionRenderer.h",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "voxelsubsystem_casubregionrenderer_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h",
+      "source_location": "L52"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_casubregionrenderer_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_casubregionrenderer_h",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_casubregionrenderer_h",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_casubregionrenderer_h",
+      "target": "assert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_casubregionrenderer_h",
+      "target": "imageprocessorpool",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_casubregionrenderer_h",
+      "target": "arraygeneratorpool",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_casubregionrenderer_h",
+      "target": "casubregion",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_casubregionrenderer_h",
+      "target": "logger",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_ca_voxelsubsystem_casubregionrenderer_h",
+      "target": "voxelsubsystem_casubregionrenderer_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Ca/VoxelSubsystem/CaSubRegionRenderer.h",
+      "source_location": "L52",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

@@ -1,0 +1,94 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_visualizer_imageprocessorpool_image_cpp",
+      "label": "Image.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/ImageProcessorPool/Image.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "imageprocessorpool_image_image",
+      "label": "Image()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/ImageProcessorPool/Image.cpp",
+      "source_location": "L19"
+    },
+    {
+      "id": "imageprocessorpool_image_setpixel",
+      "label": "SetPixel()",
+      "file_type": "code",
+      "source_file": "Source/Core/Visualizer/ImageProcessorPool/Image.cpp",
+      "source_location": "L33"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_visualizer_imageprocessorpool_image_cpp",
+      "target": "image",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/ImageProcessorPool/Image.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_imageprocessorpool_image_cpp",
+      "target": "imageprocessorpool_image_image",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/ImageProcessorPool/Image.cpp",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_imageprocessorpool_image_cpp",
+      "target": "imageprocessorpool_image_image",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/ImageProcessorPool/Image.cpp",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_visualizer_imageprocessorpool_image_cpp",
+      "target": "imageprocessorpool_image_setpixel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Visualizer/ImageProcessorPool/Image.cpp",
+      "source_location": "L33",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "imageprocessorpool_image_image",
+      "callee": "unique_ptr<unsigned char>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/ImageProcessorPool/Image.cpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "imageprocessorpool_image_setpixel",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/ImageProcessorPool/Image.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "imageprocessorpool_image_setpixel",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/ImageProcessorPool/Image.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "imageprocessorpool_image_setpixel",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Visualizer/ImageProcessorPool/Image.cpp",
+      "source_location": "L39"
+    }
+  ]
+}

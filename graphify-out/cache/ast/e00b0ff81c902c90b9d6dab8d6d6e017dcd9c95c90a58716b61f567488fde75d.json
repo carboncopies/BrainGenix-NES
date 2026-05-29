@@ -1,0 +1,118 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_main_cpp",
+      "label": "Main.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Main.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "core_main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "Source/Core/Main.cpp",
+      "source_location": "L15"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_main_cpp",
+      "target": "main",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Main.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_main_cpp",
+      "target": "core_main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Main.cpp",
+      "source_location": "L15",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "core_main_main",
+      "callee": "GetConfig",
+      "is_member_call": true,
+      "source_file": "Source/Core/Main.cpp",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "core_main_main",
+      "callee": "SetKeepVectorLogs",
+      "is_member_call": true,
+      "source_file": "Source/Core/Main.cpp",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "core_main_main",
+      "callee": "GetSimulationVectorPtr",
+      "is_member_call": true,
+      "source_file": "Source/Core/Main.cpp",
+      "source_location": "L34"
+    },
+    {
+      "caller_nid": "core_main_main",
+      "callee": "GetSimulationVectorPtr",
+      "is_member_call": true,
+      "source_file": "Source/Core/Main.cpp",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "core_main_main",
+      "callee": "GetSimulationVectorPtr",
+      "is_member_call": true,
+      "source_file": "Source/Core/Main.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "core_main_main",
+      "callee": "GetSimulationVectorPtr",
+      "is_member_call": true,
+      "source_file": "Source/Core/Main.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "core_main_main",
+      "callee": "GetSimulationVectorPtr",
+      "is_member_call": true,
+      "source_file": "Source/Core/Main.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "core_main_main",
+      "callee": "NES::Util::LogLogo",
+      "is_member_call": true,
+      "source_file": "Source/Core/Main.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "core_main_main",
+      "callee": "NES::Profiling::Manager",
+      "is_member_call": true,
+      "source_file": "Source/Core/Main.cpp",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "core_main_main",
+      "callee": "this_thread::sleep_for",
+      "is_member_call": true,
+      "source_file": "Source/Core/Main.cpp",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "core_main_main",
+      "callee": "chrono::milliseconds",
+      "is_member_call": true,
+      "source_file": "Source/Core/Main.cpp",
+      "source_location": "L52"
+    }
+  ]
+}

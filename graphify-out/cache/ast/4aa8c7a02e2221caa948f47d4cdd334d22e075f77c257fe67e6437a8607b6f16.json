@@ -1,0 +1,117 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_distributions_generic_cpp",
+      "label": "Generic.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "distributions_generic_generic",
+      "label": "Generic()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.cpp",
+      "source_location": "L10"
+    },
+    {
+      "id": "distributions_generic_uniformrandomint",
+      "label": "UniformRandomInt()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.cpp",
+      "source_location": "L14"
+    },
+    {
+      "id": "distributions_generic_uniformrandomfloat",
+      "label": "UniformRandomFloat()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.cpp",
+      "source_location": "L19"
+    },
+    {
+      "id": "distributions_generic_normalrandomfloat",
+      "label": "NormalRandomFloat()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.cpp",
+      "source_location": "L24"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_distributions_generic_cpp",
+      "target": "generic",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_distributions_generic_cpp",
+      "target": "distributions_generic_generic",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.cpp",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_distributions_generic_cpp",
+      "target": "distributions_generic_uniformrandomint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.cpp",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_distributions_generic_cpp",
+      "target": "distributions_generic_uniformrandomfloat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.cpp",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_distributions_generic_cpp",
+      "target": "distributions_generic_normalrandomfloat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Distributions/Generic.cpp",
+      "source_location": "L24",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "distributions_generic_generic",
+      "callee": "seed",
+      "is_member_call": true,
+      "source_file": "Source/Core/Simulator/Distributions/Generic.cpp",
+      "source_location": "L11"
+    },
+    {
+      "caller_nid": "distributions_generic_uniformrandomint",
+      "callee": "UniformDistInt_",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Distributions/Generic.cpp",
+      "source_location": "L16"
+    },
+    {
+      "caller_nid": "distributions_generic_uniformrandomfloat",
+      "callee": "UniformDistFloat_",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Distributions/Generic.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "distributions_generic_normalrandomfloat",
+      "callee": "NormalDistFloat_",
+      "is_member_call": false,
+      "source_file": "Source/Core/Simulator/Distributions/Generic.cpp",
+      "source_location": "L26"
+    }
+  ]
+}

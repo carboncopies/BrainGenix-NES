@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_structs_sc_h",
+      "label": "SC.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/SC.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "structs_sc_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/Structs/SC.h",
+      "source_location": "L22"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_structs_sc_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SC.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_sc_h",
+      "target": "geometry",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SC.h",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_sc_h",
+      "target": "bs",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SC.h",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_structs_sc_h",
+      "target": "structs_sc_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/Structs/SC.h",
+      "source_location": "L22",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

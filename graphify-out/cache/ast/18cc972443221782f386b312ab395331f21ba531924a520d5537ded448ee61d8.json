@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_em_meshgenerator_marchingcubes_h",
+      "label": "MarchingCubes.h",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "meshgenerator_marchingcubes_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.h",
+      "source_location": "L10"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_em_meshgenerator_marchingcubes_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.h",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_marchingcubes_h",
+      "target": "unordered_map",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.h",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_marchingcubes_h",
+      "target": "array",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.h",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_marchingcubes_h",
+      "target": "voxelarray",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.h",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_marchingcubes_h",
+      "target": "marchingcubeslookuptable",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.h",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_em_meshgenerator_marchingcubes_h",
+      "target": "meshgenerator_marchingcubes_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/EM/MeshGenerator/MarchingCubes.h",
+      "source_location": "L10",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

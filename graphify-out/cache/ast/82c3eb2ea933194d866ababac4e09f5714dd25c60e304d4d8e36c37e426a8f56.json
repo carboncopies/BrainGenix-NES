@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_rpc_routeandhandler_cpp",
+      "label": "RouteAndHandler.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RouteAndHandler.cpp",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_rpc_routeandhandler_cpp",
+      "target": "thread",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RouteAndHandler.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_routeandhandler_cpp",
+      "target": "managertaskdata",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RouteAndHandler.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

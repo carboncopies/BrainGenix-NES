@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "graphify_readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "graphify/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "graphify_readme_graphify",
+      "label": "Graphify",
+      "file_type": "document",
+      "source_file": "graphify/README.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "graphify_readme_md",
+      "target": "graphify_readme_graphify",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify/README.md",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

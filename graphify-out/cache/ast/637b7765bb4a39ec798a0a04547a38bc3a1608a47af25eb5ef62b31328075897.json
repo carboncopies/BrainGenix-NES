@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_rpc_managertaskdata_h",
+      "label": "ManagerTaskData.h",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/ManagerTaskData.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "rpc_managertaskdata_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/ManagerTaskData.h",
+      "source_location": "L25"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_rpc_managertaskdata_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/ManagerTaskData.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_managertaskdata_h",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/ManagerTaskData.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_managertaskdata_h",
+      "target": "map",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/ManagerTaskData.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_managertaskdata_h",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/ManagerTaskData.h",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_managertaskdata_h",
+      "target": "simulation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/ManagerTaskData.h",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_managertaskdata_h",
+      "target": "rpc_managertaskdata_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/ManagerTaskData.h",
+      "source_location": "L25",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

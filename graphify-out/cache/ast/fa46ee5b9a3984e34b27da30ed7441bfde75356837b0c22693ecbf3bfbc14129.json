@@ -1,0 +1,315 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_vsda_common_structs_scanregion_cpp",
+      "label": "ScanRegion.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "structs_scanregion_dimensions",
+      "label": "Dimensions()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L14"
+    },
+    {
+      "id": "structs_scanregion_tostring",
+      "label": "ToString()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L24"
+    },
+    {
+      "id": "structs_scanregion_getdimensionsinvoxels",
+      "label": "GetDimensionsInVoxels()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L37"
+    },
+    {
+      "id": "structs_scanregion_sizex",
+      "label": "SizeX()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L54"
+    },
+    {
+      "id": "structs_scanregion_sizey",
+      "label": "SizeY()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L58"
+    },
+    {
+      "id": "structs_scanregion_sizez",
+      "label": "SizeZ()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L62"
+    },
+    {
+      "id": "structs_scanregion_getvoxelsize",
+      "label": "GetVoxelSize()",
+      "file_type": "code",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L67"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_vsda_common_structs_scanregion_cpp",
+      "target": "math",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_common_structs_scanregion_cpp",
+      "target": "scanregion",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_common_structs_scanregion_cpp",
+      "target": "structs_scanregion_dimensions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_common_structs_scanregion_cpp",
+      "target": "structs_scanregion_tostring",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_common_structs_scanregion_cpp",
+      "target": "structs_scanregion_getdimensionsinvoxels",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_common_structs_scanregion_cpp",
+      "target": "structs_scanregion_sizex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_common_structs_scanregion_cpp",
+      "target": "structs_scanregion_sizey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_common_structs_scanregion_cpp",
+      "target": "structs_scanregion_sizez",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_vsda_common_structs_scanregion_cpp",
+      "target": "structs_scanregion_getvoxelsize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L67",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "structs_scanregion_dimensions",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L17"
+    },
+    {
+      "caller_nid": "structs_scanregion_dimensions",
+      "callee": "fabs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L17"
+    },
+    {
+      "caller_nid": "structs_scanregion_dimensions",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "structs_scanregion_dimensions",
+      "callee": "fabs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "structs_scanregion_dimensions",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "structs_scanregion_dimensions",
+      "callee": "fabs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "structs_scanregion_tostring",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L26"
+    },
+    {
+      "caller_nid": "structs_scanregion_tostring",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L27"
+    },
+    {
+      "caller_nid": "structs_scanregion_tostring",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L28"
+    },
+    {
+      "caller_nid": "structs_scanregion_tostring",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "structs_scanregion_tostring",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "structs_scanregion_tostring",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "structs_scanregion_getdimensionsinvoxels",
+      "callee": "fabs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "structs_scanregion_getdimensionsinvoxels",
+      "callee": "fabs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "structs_scanregion_getdimensionsinvoxels",
+      "callee": "fabs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "structs_scanregion_getdimensionsinvoxels",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "structs_scanregion_getdimensionsinvoxels",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "structs_scanregion_getdimensionsinvoxels",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "structs_scanregion_sizex",
+      "callee": "fabs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "structs_scanregion_sizey",
+      "callee": "fabs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "structs_scanregion_sizez",
+      "callee": "fabs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "structs_scanregion_getvoxelsize",
+      "callee": "fabs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "structs_scanregion_getvoxelsize",
+      "callee": "fabs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "structs_scanregion_getvoxelsize",
+      "callee": "fabs",
+      "is_member_call": false,
+      "source_file": "Source/Core/VSDA/Common/Structs/ScanRegion.cpp",
+      "source_location": "L70"
+    }
+  ]
+}

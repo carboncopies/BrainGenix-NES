@@ -1,0 +1,65 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_simulator_ballandstick_bsalignedbrainregion_cpp",
+      "label": "BSAlignedBrainRegion.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedBrainRegion.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "ballandstick_bsalignedbrainregion_bsalignedbrainregion",
+      "label": "BSAlignedBrainRegion()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedBrainRegion.cpp",
+      "source_location": "L9"
+    },
+    {
+      "id": "ballandstick_bsalignedbrainregion_show",
+      "label": "Show()",
+      "file_type": "code",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedBrainRegion.cpp",
+      "source_location": "L19"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_simulator_ballandstick_bsalignedbrainregion_cpp",
+      "target": "bsalignedbrainregion",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedBrainRegion.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignedbrainregion_cpp",
+      "target": "ballandstick_bsalignedbrainregion_bsalignedbrainregion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedBrainRegion.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignedbrainregion_cpp",
+      "target": "ballandstick_bsalignedbrainregion_bsalignedbrainregion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedBrainRegion.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_simulator_ballandstick_bsalignedbrainregion_cpp",
+      "target": "ballandstick_bsalignedbrainregion_show",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Simulator/BallAndStick/BSAlignedBrainRegion.cpp",
+      "source_location": "L19",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}
