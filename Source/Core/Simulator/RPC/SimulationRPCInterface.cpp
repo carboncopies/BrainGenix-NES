@@ -133,6 +133,8 @@ bool LoadFileIntoString(const std::string& FilePath, std::string& FileContents) 
 
 // A API::ManagerTaskData struct must have been prepared and the thread already launched.
 int SimulationRPCInterface::AddManagerTask(std::unique_ptr<API::ManagerTaskData>& TaskData) {
+    std::lock_guard<std::mutex> lock(ManTaskMtx); 
+
     // Get Task ID
     int TaskID = NextManTaskID;
     NextManTaskID++;
@@ -179,6 +181,8 @@ int SimulationRPCInterface::AddManagerTask(std::unique_ptr<API::ManagerTaskData>
 // }
 
 void SimulationRPCInterface::SimLoadingTask(API::ManagerTaskData& TaskData) {
+    //std::lock_guard<std::mutex> lock(ManTaskMtx);
+
     // *** Not sure if we should prepend with "std::string loadresponse = " to keep the full
     //     record of the loading requests in the task output JSON.
 
@@ -333,7 +337,6 @@ void DeleteResidentByIDTaskThread(SimulationRPCInterface* _Manager, API::Manager
  * This is a managed request and completion should be tested with ManTaskStatus.
  */
 std::string SimulationRPCInterface::DeleteResidentByID(std::string _JSONRequest) {
-
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/DeleteResidentByID", &Simulations_, false, false);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
@@ -782,7 +785,6 @@ std::string SimulationRPCInterface::SimulationGetSave(std::string _JSONRequest) 
  */
 // This request starts a Manager Task.
 std::string SimulationRPCInterface::SimulationLoad(std::string _JSONRequest) {
-
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Load", &Simulations_, true, true);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
@@ -847,7 +849,6 @@ void SimulationSaveModelTaskThread(SimulationRPCInterface* _Manager, API::Manage
  * parameter values.
  */
 std::string SimulationRPCInterface::SimulationSaveModel(std::string _JSONRequest) {
-
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/SaveModel", &Simulations_, false, false); // false, false if applied to Simulation object
     if (Handle.HasError()) {
         return Handle.ErrResponse();
@@ -908,7 +909,6 @@ void SimulationLoadModelTaskThread(SimulationRPCInterface* _Manager, API::Manage
  * i.e. neurons, compartments, shapes, synapses, and a few other necessary parameter values.
  */
 std::string SimulationRPCInterface::SimulationLoadModel(std::string _JSONRequest) {
-
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/LoadModel", &Simulations_, false, false); // false, false if applied to Simulation object
     if (Handle.HasError()) {
         return Handle.ErrResponse();
@@ -1316,7 +1316,6 @@ void GetConnectomeTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskD
 
 // The API request handling function that needs to return quickly.
 std::string SimulationRPCInterface::GetConnectome(std::string _JSONRequest) {
-
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetConnectome", &Simulations_, false, false); // false, false if applied to Simulation object
     if (Handle.HasError()) {
         return Handle.ErrResponse();
@@ -1358,7 +1357,6 @@ void GetAbstractConnectomeTaskThread(SimulationRPCInterface* _Manager, API::Mana
 
 // The API request handling function that needs to return quickly.
 std::string SimulationRPCInterface::GetAbstractConnectome(std::string _JSONRequest) {
-
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetAbstractConnectome", &Simulations_, false, false); // false, false if applied to Simulation object
     if (Handle.HasError()) {
         return Handle.ErrResponse();
@@ -1408,7 +1406,6 @@ std::string SimulationRPCInterface::GetAbstractConnectome(std::string _JSONReque
  * }
  */
 std::string SimulationRPCInterface::ManTaskStatus(std::string _JSONRequest) {
- 
     API::HandlerData Handle(_JSONRequest, Logger_, "ManTaskStatus", &Simulations_, true, true); // Not Sim specific.
     if (Handle.HasError()) {
         return Handle.ErrResponse();
@@ -1427,6 +1424,7 @@ std::string SimulationRPCInterface::ManTaskStatus(std::string _JSONRequest) {
     }
 
     // Get Manager Task Data
+    std::lock_guard<std::mutex> lock(ManTaskMtx);
     auto it = ManagerTasks.find(ManTaskID);
     if (it == ManagerTasks.end()) {
         return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
@@ -1488,7 +1486,6 @@ void SomethingTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskData*
 
 // The API request handling function that needs to return quickly.
 std::string SimulationRPCInterface::Something(std::string _JSONRequest) {
-
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/Something", &Simulations_, false, false); // false, false if applied to Simulation object
     if (Handle.HasError()) {
         return Handle.ErrResponse();

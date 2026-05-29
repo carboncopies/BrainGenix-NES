@@ -5,6 +5,7 @@ cd ..
 rm -rf Build/
 rm -rf build/
 rm -rf Binaries/
+rm -rf venv/
 
 echo "[BG BUILD SYSTEM] - Build Cleaned"
 
